@@ -12,7 +12,7 @@
     NSNumber * _familyId;
     NSNumber * _inAppAdamId;
     NSString * _inAppVersion;
-    BOOL  _newsAppPurchase;
+    bool  _newsAppPurchase;
     NSString * _offerIdentifier;
     NSNumber * _originalPurchaseDownloadId;
     NSNumber * _purchasabilityType;
@@ -30,7 +30,7 @@
 @property (nonatomic, copy) NSNumber *familyId;
 @property (nonatomic, copy) NSNumber *inAppAdamId;
 @property (nonatomic, copy) NSString *inAppVersion;
-@property (getter=isNewsAppPurchase, nonatomic) BOOL newsAppPurchase;
+@property (getter=isNewsAppPurchase, nonatomic) bool newsAppPurchase;
 @property (nonatomic, copy) NSString *offerIdentifier;
 @property (nonatomic, copy) NSNumber *originalPurchaseDownloadId;
 @property (nonatomic, copy) NSNumber *purchasabilityType;
@@ -51,7 +51,7 @@
 - (id)inAppAdamId;
 - (id)inAppVersion;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isNewsAppPurchase;
+- (bool)isNewsAppPurchase;
 - (id)offerIdentifier;
 - (id)originalPurchaseDownloadId;
 - (id)purchasabilityType;
@@ -66,7 +66,7 @@
 - (void)setFamilyId:(id)arg1;
 - (void)setInAppAdamId:(id)arg1;
 - (void)setInAppVersion:(id)arg1;
-- (void)setNewsAppPurchase:(BOOL)arg1;
+- (void)setNewsAppPurchase:(bool)arg1;
 - (void)setOfferIdentifier:(id)arg1;
 - (void)setOriginalPurchaseDownloadId:(id)arg1;
 - (void)setPurchasabilityType:(id)arg1;

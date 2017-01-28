@@ -10,19 +10,19 @@
     }  _has;
     NSString * _hostAppName;
     NSData * _requestIdentifier;
-    BOOL  _shouldPrompt;
+    bool  _shouldPrompt;
 }
 
 @property (nonatomic, retain) NSString *appBundleIdentifier;
 @property (nonatomic, retain) NSString *errorDescription;
-@property (nonatomic, readonly) BOOL hasAppBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasErrorDescription;
-@property (nonatomic, readonly) BOOL hasHostAppName;
-@property (nonatomic, readonly) BOOL hasRequestIdentifier;
-@property (nonatomic) BOOL hasShouldPrompt;
+@property (nonatomic, readonly) bool hasAppBundleIdentifier;
+@property (nonatomic, readonly) bool hasErrorDescription;
+@property (nonatomic, readonly) bool hasHostAppName;
+@property (nonatomic, readonly) bool hasRequestIdentifier;
+@property (nonatomic) bool hasShouldPrompt;
 @property (nonatomic, retain) NSString *hostAppName;
 @property (nonatomic, retain) NSData *requestIdentifier;
-@property (nonatomic) BOOL shouldPrompt;
+@property (nonatomic) bool shouldPrompt;
 
 - (void).cxx_destruct;
 - (id)appBundleIdentifier;
@@ -31,24 +31,24 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)errorDescription;
-- (BOOL)hasAppBundleIdentifier;
-- (BOOL)hasErrorDescription;
-- (BOOL)hasHostAppName;
-- (BOOL)hasRequestIdentifier;
-- (BOOL)hasShouldPrompt;
-- (unsigned int)hash;
+- (bool)hasAppBundleIdentifier;
+- (bool)hasErrorDescription;
+- (bool)hasHostAppName;
+- (bool)hasRequestIdentifier;
+- (bool)hasShouldPrompt;
+- (unsigned long long)hash;
 - (id)hostAppName;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestIdentifier;
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)setErrorDescription:(id)arg1;
-- (void)setHasShouldPrompt:(BOOL)arg1;
+- (void)setHasShouldPrompt:(bool)arg1;
 - (void)setHostAppName:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;
-- (void)setShouldPrompt:(BOOL)arg1;
-- (BOOL)shouldPrompt;
+- (void)setShouldPrompt:(bool)arg1;
+- (bool)shouldPrompt;
 - (void)writeTo:(id)arg1;
 
 @end

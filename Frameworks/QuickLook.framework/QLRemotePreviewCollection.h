@@ -4,46 +4,46 @@
 
 @interface QLRemotePreviewCollection : _UIRemoteViewController <QLPreviewCollectionProtocol> {
     QLRemotePreviewCollection * _accessoryViewController;
-    BOOL  _allowInteractiveTransitions;
+    bool  _allowInteractiveTransitions;
     QLPreviewCollectionHostContext * _hostContext;
-    BOOL  _isAvailable;
+    bool  _isAvailable;
     id  _request;
     <QLPreviewControllerStateProtocolHostOnly> * _stateManager;
 }
 
 @property (retain) QLRemotePreviewCollection *accessoryViewController;
-@property (nonatomic) BOOL allowInteractiveTransitions;
+@property (nonatomic) bool allowInteractiveTransitions;
 @property (retain) QLPreviewCollectionHostContext *hostContext;
-@property BOOL isAvailable;
+@property bool isAvailable;
 @property (retain) id request;
 
 - (void).cxx_destruct;
 - (id)accessoryView;
 - (id)accessoryViewController;
-- (BOOL)allowInteractiveTransitions;
+- (bool)allowInteractiveTransitions;
 - (void)configureAsAccessoryViewContainerForPreviewCollection:(id)arg1;
-- (void)configureWithNumberOfItems:(int)arg1 currentPreviewItemIndex:(unsigned int)arg2 itemProvider:(id)arg3 stateManager:(id)arg4;
-- (void)getPreviewCollectionUUIDWithCompletionHandler:(id /* block */)arg1;
+- (void)configureWithNumberOfItems:(long long)arg1 currentPreviewItemIndex:(unsigned long long)arg2 itemProvider:(id)arg3 stateManager:(id)arg4;
+- (void)getPreviewCollectionUUIDWithCompletionHandler:(id)arg1;
 - (id)hostContext;
-- (void)hostViewControlerTransitionToState:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)hostViewControlerTransitionToState:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)invalidatePreviewCollection;
-- (BOOL)isAvailable;
-- (BOOL)isRemote;
+- (bool)isAvailable;
+- (bool)isRemote;
 - (void)keyCommandWasPerformed:(id)arg1;
-- (void)keyCommandsWithCompletionHandler:(id /* block */)arg1;
+- (void)keyCommandsWithCompletionHandler:(id)arg1;
 - (id)request;
 - (void)setAccessoryViewController:(id)arg1;
-- (void)setAllowInteractiveTransitions:(BOOL)arg1;
-- (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
-- (void)setCurrentPreviewItemIndex:(int)arg1 animated:(BOOL)arg2;
+- (void)setAllowInteractiveTransitions:(bool)arg1;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
+- (void)setCurrentPreviewItemIndex:(long long)arg1 animated:(bool)arg2;
 - (void)setHostContext:(id)arg1;
-- (void)setIsAvailable:(BOOL)arg1;
+- (void)setIsAvailable:(bool)arg1;
 - (void)setLoadingString:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (void)startTransitionWithSourceViewProvider:(id)arg1 transitionController:(id)arg2 presenting:(BOOL)arg3 completionHandler:(id /* block */)arg4;
-- (void)tearDownTransition:(BOOL)arg1;
+- (void)startTransitionWithSourceViewProvider:(id)arg1 transitionController:(id)arg2 presenting:(bool)arg3 completionHandler:(id)arg4;
+- (void)tearDownTransition:(bool)arg1;
 - (void)toolbarButtonPressedWithIdentifier:(id)arg1;
-- (void)toolbarButtonsWithCompletionHandler:(id /* block */)arg1;
+- (void)toolbarButtonsWithCompletionHandler:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

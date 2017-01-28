@@ -5,17 +5,17 @@
 @interface UIInterfaceActionViewState : UIInterfaceActionVisualStyleViewState <NSCopying> {
     UIInterfaceAction * _action;
     id  _actionViewStateContext;
-    BOOL  _isFocused;
-    BOOL  _isHighlighted;
-    BOOL  _isPreferred;
+    bool  _isFocused;
+    bool  _isHighlighted;
+    bool  _isPreferred;
     UIColor * _legacyPresentationTintColor;
 }
 
 @property (nonatomic, readonly) UIInterfaceAction *action;
 @property (nonatomic, readonly) id actionViewStateContext;
-@property (nonatomic, readonly) BOOL isFocused;
-@property (nonatomic, readonly) BOOL isHighlighted;
-@property (nonatomic, readonly) BOOL isPreferred;
+@property (nonatomic, readonly) bool isFocused;
+@property (nonatomic, readonly) bool isHighlighted;
+@property (nonatomic, readonly) bool isPreferred;
 @property (nonatomic, readonly) UIColor *legacyPresentationTintColor;
 
 + (id)viewStateForActionRepresentationView:(id)arg1 action:(id)arg2;
@@ -30,16 +30,16 @@
 - (void)_collectStateFromActionRepresentationView:(id)arg1;
 - (void)_collectStateFromActionViewState:(id)arg1;
 - (id)_legacyPresentationTintColorForActionRepresentationDescendantView:(id)arg1;
-- (BOOL)_stateEqualToActionViewState:(id)arg1;
+- (bool)_stateEqualToActionViewState:(id)arg1;
 - (id)action;
 - (id)actionViewStateContext;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (id)initWithPropertiesFromActionRepresentationView:(id)arg1 groupView:(id)arg2 action:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFocused;
-- (BOOL)isHighlighted;
-- (BOOL)isPreferred;
+- (bool)isEqual:(id)arg1;
+- (bool)isFocused;
+- (bool)isHighlighted;
+- (bool)isPreferred;
 - (id)legacyPresentationTintColor;
 
 @end

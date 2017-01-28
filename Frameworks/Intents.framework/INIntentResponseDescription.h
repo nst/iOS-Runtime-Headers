@@ -5,7 +5,7 @@
 @interface INIntentResponseDescription : NSObject <INIntentResponseDescriptionExport, NSCopying> {
     Class  _dataClass;
     Class  _facadeClass;
-    BOOL  _isPrivate;
+    bool  _isPrivate;
     NSString * _name;
     NSDictionary * _slotsByName;
     NSString * _type;
@@ -15,8 +15,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) Class facadeClass;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isPrivate;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isPrivate;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSDictionary *slotsByName;
 @property (readonly) Class superclass;
@@ -26,10 +26,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)dataClass;
 - (Class)facadeClass;
-- (unsigned int)hash;
-- (id)initWithName:(id)arg1 facadeClass:(Class)arg2 dataClass:(Class)arg3 type:(id)arg4 isPrivate:(BOOL)arg5 slotsByName:(id)arg6;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPrivate;
+- (unsigned long long)hash;
+- (id)initWithName:(id)arg1 facadeClass:(Class)arg2 dataClass:(Class)arg3 type:(id)arg4 isPrivate:(bool)arg5 slotsByName:(id)arg6;
+- (bool)isEqual:(id)arg1;
+- (bool)isPrivate;
 - (id)name;
 - (id)slotsByName;
 - (id)type;

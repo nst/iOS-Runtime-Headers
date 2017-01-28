@@ -5,15 +5,15 @@
 @interface NSFileWatcher : NSObject {
     NSObject<OS_dispatch_source> * _eventSource;
     struct __FSEventStream { } * _eventStream;
-    BOOL  _eventsAreAboutDirectory;
+    bool  _eventsAreAboutDirectory;
     NSURL * _fileReferenceURL;
     NSString * _formerPath;
     NSURL * _formerURL;
-    BOOL  _isUnsettled;
-    BOOL  _isWatching;
+    bool  _isUnsettled;
+    bool  _isWatching;
     NSFileWatcherObservations * _itemObservations;
     unsigned long long  _lastObservedEventID;
-    id /* block */  _observer;
+    id  _observer;
     int  _pid;
     NSObject<OS_dispatch_queue> * _queue;
     NSMutableDictionary * _subitemObservationsByEventPath;
@@ -22,10 +22,10 @@
 
 - (void)_coalesceSubitemObservations;
 - (void)dealloc;
-- (void)handleFSEventPath:(id)arg1 flags:(unsigned long)arg2 id:(unsigned long long)arg3;
+- (void)handleFSEventPath:(id)arg1 flags:(unsigned int)arg2 id:(unsigned long long)arg3;
 - (id)initWithQueue:(id)arg1 forProcessIdentifier:(int)arg2;
 - (void)setLastObservedEventID:(unsigned long long)arg1;
-- (void)setObserver:(id /* block */)arg1;
+- (void)setObserver:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)settle;
 - (void)start;

@@ -9,11 +9,11 @@
 @property (retain) NSDictionary *atvLUT;
 
 + (void)addTuple:(id)arg1 ToLUT:(id)arg2;
-+ (unsigned int)atvStateFromState:(struct BTStatus { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; BOOL x17; BOOL x18; BOOL x19; }*)arg1;
++ (unsigned long long)atvStateFromState:(struct BTStatus { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; unsigned long long x16; bool x17; bool x18; bool x19; }*)arg1;
 
 - (void).cxx_destruct;
 - (id)atvLUT;
-- (id)findTupleForATVState:(unsigned int)arg1;
+- (id)findTupleForATVState:(unsigned long long)arg1;
 - (id)init;
 - (void)setAtvLUT:(id)arg1;
 

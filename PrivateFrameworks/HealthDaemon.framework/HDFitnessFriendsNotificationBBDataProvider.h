@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,14 +28,14 @@
 - (void)_migrateSectionInfo;
 - (id)_newPrepopulatedBulletinRequestForContact:(id)arg1;
 - (id)_phoneNumberFromDefaults;
-- (void)_queue_addBulletinRequest:(id)arg1 fromContact:(id)arg2 isFakedBulletin:(BOOL)arg3;
+- (void)_queue_addBulletinRequest:(id)arg1 fromContact:(id)arg2 isFakedBulletin:(bool)arg3;
 - (void)_queue_withdrawBulletinRequest:(id)arg1 fromFriendWithID:(id)arg2;
-- (void)_showAchievementEarnedNotificationFromContact:(id)arg1 achievement:(id)arg2 isFakedBulletin:(BOOL)arg3;
+- (void)_showAchievementEarnedNotificationFromContact:(id)arg1 achievement:(id)arg2 isFakedBulletin:(bool)arg3;
 - (void)_showFakeAchievementNotification;
 - (void)_showFakeGoalCompletionNotification;
 - (void)_showFakeWorkoutNotification;
-- (void)_showGoalCompletionNotificationFromContact:(id)arg1 activitySnapshot:(id)arg2 isFakedBulletin:(BOOL)arg3;
-- (void)_showWorkoutFinishedNotificationFromContact:(id)arg1 workout:(id)arg2 isFakedBulletin:(BOOL)arg3;
+- (void)_showGoalCompletionNotificationFromContact:(id)arg1 activitySnapshot:(id)arg2 isFakedBulletin:(bool)arg3;
+- (void)_showWorkoutFinishedNotificationFromContact:(id)arg1 workout:(id)arg2 isFakedBulletin:(bool)arg3;
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
 - (void)dataProviderDidLoad;

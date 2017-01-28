@@ -5,7 +5,7 @@
 @interface FigCaptureAutoFocusPositionSensorCalibrationMonitor : NSObject {
     int  _apsCalibrationSpinLock;
     NSDictionary * _calibrationData;
-    BOOL  _calibrationShouldAbort;
+    bool  _calibrationShouldAbort;
     struct { 
         double x; 
         double y; 
@@ -26,15 +26,15 @@
 
 - (void)_aggdLogging:(id)arg1;
 - (id)_calibrationData;
-- (BOOL)_calibrationShouldAbort;
-- (id)_createAPSCalibrationDictionaryWithError:(int*)arg1 didFirmwareHaveCalibrationError:(BOOL*)arg2;
+- (bool)_calibrationShouldAbort;
+- (id)_createAPSCalibrationDictionaryWithError:(int*)arg1 didFirmwareHaveCalibrationError:(bool*)arg2;
 - (id)_createFailedOutsideFirmwareDictionaryWithReasons:(int)arg1;
 - (double)_getMagneticThresholdFromAttempt;
-- (void)_logAndSaveCalibrationData:(id)arg1 isValidCalibrationData:(BOOL)arg2;
+- (void)_logAndSaveCalibrationData:(id)arg1 isValidCalibrationData:(bool)arg2;
 - (void)_notifyOfGyroCalAbort;
 - (void)_printDebugAPSCalibrationData:(id)arg1;
 - (void)_setCalibrationData:(id)arg1;
-- (void)_setCalibrationShouldAbort:(BOOL)arg1;
+- (void)_setCalibrationShouldAbort:(bool)arg1;
 - (void)_startAPSCalibrationAndLog;
 - (void)_writeCalibrationDataToInternalLogFile:(id)arg1;
 - (id)init;

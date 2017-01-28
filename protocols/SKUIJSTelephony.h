@@ -8,7 +8,7 @@
 - (void)beginObserving;
 - (NSString *)countryCode;
 - (NSString *)formattedPhoneNumber:(NSString *)arg1;
-- (BOOL)isCellularRoaming;
+- (bool)isCellularRoaming;
 - (NSString *)mobileCountryCode;
 - (NSString *)mobileNetworkCode;
 - (NSString *)operatorName;

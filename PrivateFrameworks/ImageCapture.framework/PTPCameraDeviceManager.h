@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)asyncRequestDataOfFilesImp:(id)arg1;
@@ -28,8 +28,8 @@
 - (id)init;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceBrowserDidStopSearch:(id)arg1;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (void)netServiceDidStop:(id)arg1;

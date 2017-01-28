@@ -3,17 +3,17 @@
  */
 
 @interface _UIViewControllerKeyboardAnimationStyleInfo : NSObject {
-    BOOL  _isAnimationCompleting;
-    id /* block */  _previousCompleteHandler;
+    bool  _isAnimationCompleting;
+    id  _previousCompleteHandler;
 }
 
-@property (nonatomic) BOOL isAnimationCompleting;
-@property (nonatomic, copy) id /* block */ previousCompleteHandler;
+@property (nonatomic) bool isAnimationCompleting;
+@property (nonatomic, copy) id previousCompleteHandler;
 
 - (void)dealloc;
-- (BOOL)isAnimationCompleting;
-- (id /* block */)previousCompleteHandler;
-- (void)setIsAnimationCompleting:(BOOL)arg1;
-- (void)setPreviousCompleteHandler:(id /* block */)arg1;
+- (bool)isAnimationCompleting;
+- (id)previousCompleteHandler;
+- (void)setIsAnimationCompleting:(bool)arg1;
+- (void)setPreviousCompleteHandler:(id)arg1;
 
 @end

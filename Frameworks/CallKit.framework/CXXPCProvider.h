@@ -17,7 +17,7 @@
 - (id)initWithConfiguration:(id)arg1;
 - (void)invalidate;
 - (int)notifyToken;
-- (BOOL)requiresProxyingAVAudioSessionState;
+- (bool)requiresProxyingAVAudioSessionState;
 - (void)setConnection:(id)arg1;
 - (void)setNotifyToken:(int)arg1;
 

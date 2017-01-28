@@ -5,10 +5,20 @@
 @interface _KSiCloudDeviceListMonitor : NSObject {
     ACAccount * _account;
     ACAccountStore * _accountStore;
+    long long  _majorVersForCloudKitSyncMacOS;
+    long long  _majorVersForCloudKitSynciOS;
+    long long  _minorSubversionForCloudKitSyncMacOS;
+    long long  _minorVersForCloudKitSyncMacOS;
+    long long  _minorVersForCloudKitSynciOS;
 }
 
 @property (nonatomic, retain) ACAccount *account;
 @property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic) long long majorVersForCloudKitSyncMacOS;
+@property (nonatomic) long long majorVersForCloudKitSynciOS;
+@property (nonatomic) long long minorSubversionForCloudKitSyncMacOS;
+@property (nonatomic) long long minorVersForCloudKitSyncMacOS;
+@property (nonatomic) long long minorVersForCloudKitSynciOS;
 
 + (id)iCloudDeviceListMonitor;
 
@@ -16,13 +26,26 @@
 - (id)account;
 - (id)accountStore;
 - (void)accountStoreDidChange:(id)arg1;
-- (BOOL)canMigrateToCloudKit;
+- (bool)canMigrateToCloudKit;
 - (void)dealloc;
-- (void)fetchCloudKitDevicesWithCompletionBlock:(id /* block */)arg1;
-- (void)fetchSoftwareVersionsFromICloudWithCompletionBlock:(id /* block */)arg1;
+- (void)fetchCloudKitDevicesWithCompletionBlock:(id)arg1;
+- (void)fetchSoftwareVersionsFromICloudWithCompletionBlock:(id)arg1;
 - (id)init;
+- (void)isAccountCompatibleForCloudKitSyncingWithCompletionBlock:(id)arg1;
+- (bool)isSWVersionCloudKitSyncCompatible:(id)arg1;
+- (long long)majorVersForCloudKitSyncMacOS;
+- (long long)majorVersForCloudKitSynciOS;
+- (long long)minorSubversionForCloudKitSyncMacOS;
+- (long long)minorVersForCloudKitSyncMacOS;
+- (long long)minorVersForCloudKitSynciOS;
 - (void)queryMigrationState;
+- (void)resetDataNoAccount;
 - (void)setAccount:(id)arg1;
 - (void)setAccountStore:(id)arg1;
+- (void)setMajorVersForCloudKitSyncMacOS:(long long)arg1;
+- (void)setMajorVersForCloudKitSynciOS:(long long)arg1;
+- (void)setMinorSubversionForCloudKitSyncMacOS:(long long)arg1;
+- (void)setMinorVersForCloudKitSyncMacOS:(long long)arg1;
+- (void)setMinorVersForCloudKitSynciOS:(long long)arg1;
 
 @end

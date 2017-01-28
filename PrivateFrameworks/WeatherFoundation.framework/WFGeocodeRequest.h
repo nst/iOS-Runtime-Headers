@@ -9,14 +9,14 @@
         double longitude; 
     }  _coordinate;
     WFLocation * _geocodedResult;
-    id /* block */  _resultHandler;
+    id  _resultHandler;
     NSString * _searchString;
 }
 
 @property (retain) MKLocalSearchCompletion *autocompleteSearchResult;
 @property struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (retain) WFLocation *geocodedResult;
-@property (readonly) id /* block */ resultHandler;
+@property (readonly) id resultHandler;
 @property (retain) NSString *searchString;
 @property (readonly) NSString *searchTerm;
 
@@ -28,10 +28,10 @@
 - (id)geocodedResult;
 - (void)handleCancellation;
 - (void)handleResponse:(id)arg1;
-- (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 resultHandler:(id /* block */)arg2;
-- (id)initWithSearchCompletion:(id)arg1 resultHandler:(id /* block */)arg2;
-- (id)initWithSearchString:(id)arg1 resultHandler:(id /* block */)arg2;
-- (id /* block */)resultHandler;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 resultHandler:(id)arg2;
+- (id)initWithSearchCompletion:(id)arg1 resultHandler:(id)arg2;
+- (id)initWithSearchString:(id)arg1 resultHandler:(id)arg2;
+- (id)resultHandler;
 - (id)searchString;
 - (id)searchTerm;
 - (void)setAutocompleteSearchResult:(id)arg1;

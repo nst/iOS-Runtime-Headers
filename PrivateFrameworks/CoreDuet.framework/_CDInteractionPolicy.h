@@ -3,48 +3,48 @@
  */
 
 @interface _CDInteractionPolicy : NSObject {
-    unsigned int  _lifespanInSeconds;
-    unsigned int  _maxNumberOfKeywords;
-    unsigned int  _maxNumberOfRecipients;
-    unsigned int  _maxNumberStored;
+    unsigned long long  _lifespanInSeconds;
+    unsigned long long  _maxNumberOfKeywords;
+    unsigned long long  _maxNumberOfRecipients;
+    unsigned long long  _maxNumberStored;
     _CDRateLimiter * _rateLimiter;
-    unsigned int  _timeResolutionInSeconds;
+    unsigned long long  _timeResolutionInSeconds;
 }
 
-@property unsigned int lifespanInSeconds;
-@property unsigned int maxNumberOfKeywords;
-@property unsigned int maxNumberOfRecipients;
-@property unsigned int maxNumberStored;
+@property unsigned long long lifespanInSeconds;
+@property unsigned long long maxNumberOfKeywords;
+@property unsigned long long maxNumberOfRecipients;
+@property unsigned long long maxNumberStored;
 @property (retain) _CDRateLimiter *rateLimiter;
-@property unsigned int timeResolutionInSeconds;
+@property unsigned long long timeResolutionInSeconds;
 
-+ (unsigned int)defaultLifespan;
-+ (unsigned int)defaultMaxNumberOfKeywords;
-+ (unsigned int)defaultMaxNumberOfRecipients;
-+ (unsigned int)defaultMaxNumberStored;
++ (unsigned long long)defaultLifespan;
++ (unsigned long long)defaultMaxNumberOfKeywords;
++ (unsigned long long)defaultMaxNumberOfRecipients;
++ (unsigned long long)defaultMaxNumberStored;
 + (id)defaultPolicy;
 + (id)defaultPolicyForCalls;
 + (id)defaultPolicyForEmail;
 + (id)defaultPolicyForMeetings;
 + (id)defaultPolicyForMessages;
-+ (unsigned int)defaultTimeResolutionInSeconds;
++ (unsigned long long)defaultTimeResolutionInSeconds;
 + (id)policyFromDictionary:(id)arg1;
-+ (id)policyWithRateLimiter:(id)arg1 lifespanInSeconds:(unsigned int)arg2 maxNumberStored:(unsigned int)arg3 timeResolutionInSeconds:(unsigned int)arg4 maxNumberOfRecipients:(unsigned int)arg5 maxNumberOfKeywords:(unsigned int)arg6;
++ (id)policyWithRateLimiter:(id)arg1 lifespanInSeconds:(unsigned long long)arg2 maxNumberStored:(unsigned long long)arg3 timeResolutionInSeconds:(unsigned long long)arg4 maxNumberOfRecipients:(unsigned long long)arg5 maxNumberOfKeywords:(unsigned long long)arg6;
 
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithRateLimiter:(id)arg1 lifespanInSeconds:(unsigned int)arg2 maxNumberStored:(unsigned int)arg3 timeResolutionInSeconds:(unsigned int)arg4 maxNumberOfRecipients:(unsigned int)arg5 maxNumberOfKeywords:(unsigned int)arg6;
-- (unsigned int)lifespanInSeconds;
-- (unsigned int)maxNumberOfKeywords;
-- (unsigned int)maxNumberOfRecipients;
-- (unsigned int)maxNumberStored;
+- (id)initWithRateLimiter:(id)arg1 lifespanInSeconds:(unsigned long long)arg2 maxNumberStored:(unsigned long long)arg3 timeResolutionInSeconds:(unsigned long long)arg4 maxNumberOfRecipients:(unsigned long long)arg5 maxNumberOfKeywords:(unsigned long long)arg6;
+- (unsigned long long)lifespanInSeconds;
+- (unsigned long long)maxNumberOfKeywords;
+- (unsigned long long)maxNumberOfRecipients;
+- (unsigned long long)maxNumberStored;
 - (id)rateLimiter;
-- (void)setLifespanInSeconds:(unsigned int)arg1;
-- (void)setMaxNumberOfKeywords:(unsigned int)arg1;
-- (void)setMaxNumberOfRecipients:(unsigned int)arg1;
-- (void)setMaxNumberStored:(unsigned int)arg1;
+- (void)setLifespanInSeconds:(unsigned long long)arg1;
+- (void)setMaxNumberOfKeywords:(unsigned long long)arg1;
+- (void)setMaxNumberOfRecipients:(unsigned long long)arg1;
+- (void)setMaxNumberStored:(unsigned long long)arg1;
 - (void)setRateLimiter:(id)arg1;
-- (void)setTimeResolutionInSeconds:(unsigned int)arg1;
-- (unsigned int)timeResolutionInSeconds;
+- (void)setTimeResolutionInSeconds:(unsigned long long)arg1;
+- (unsigned long long)timeResolutionInSeconds;
 
 @end

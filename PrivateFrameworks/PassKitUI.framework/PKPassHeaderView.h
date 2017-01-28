@@ -4,7 +4,8 @@
 
 @interface PKPassHeaderView : UIView {
     <PKPassHeaderViewDelegate> * _delegate;
-    BOOL  _largeStyle;
+    PKFelicaPassProperties * _felicaProperties;
+    bool  _largeStyle;
     UIImageView * _maskShadow;
     UILabel * _modificationDate;
     PKPass * _pass;
@@ -14,49 +15,55 @@
     UIColor * _primaryTextColor;
     PKRemoteDataAccessor * _remoteDataAccessor;
     UIColor * _secondaryTextColor;
-    BOOL  _showModificationDate;
-    unsigned int  _suppressedContent;
+    bool  _showModificationDate;
+    unsigned long long  _suppressedContent;
     UILabel * _title;
     UILabel * _type;
+    UILabel * _value;
+    UILabel * _valueTitle;
 }
 
 @property (nonatomic) <PKPassHeaderViewDelegate> *delegate;
-@property (getter=isLargeStyle, nonatomic) BOOL largeStyle;
+@property (nonatomic, retain) PKFelicaPassProperties *felicaProperties;
+@property (getter=isLargeStyle, nonatomic) bool largeStyle;
 @property (nonatomic, readonly) PKPass *pass;
 @property (nonatomic, retain) <PKPassLibraryDataProvider> *passLibraryOverride;
 @property (nonatomic, readonly) PKPassView *passView;
 @property (nonatomic, retain) UIColor *primaryTextColor;
 @property (nonatomic, retain) UIColor *secondaryTextColor;
-@property (nonatomic) BOOL showModificationDate;
-@property (nonatomic) unsigned int suppressedContent;
+@property (nonatomic) bool showModificationDate;
+@property (nonatomic) unsigned long long suppressedContent;
 
 - (void).cxx_destruct;
 - (void)_passLibraryDidChange:(id)arg1;
 - (id)_primaryTextColor;
 - (id)_secondaryTextColor;
 - (void)_updateContent;
+- (void)_updateTextContent;
 - (void)dealloc;
 - (id)delegate;
+- (id)felicaProperties;
 - (id)initWithPass:(id)arg1;
-- (BOOL)isLargeStyle;
+- (bool)isLargeStyle;
 - (void)layoutSubviews;
 - (id)pass;
 - (id)passLibraryOverride;
-- (struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; float x3; })passSizeInfoForHeight:(float)arg1;
+- (struct { struct CGSize { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; double x3; })passSizeInfoForHeight:(double)arg1;
 - (id)passView;
-- (struct CGSize { float x1; float x2; })passViewSizeForHeight:(float)arg1;
+- (struct CGSize { double x1; double x2; })passViewSizeForHeight:(double)arg1;
 - (id)primaryTextColor;
 - (id)secondaryTextColor;
 - (void)setDelegate:(id)arg1;
-- (void)setLargeStyle:(BOOL)arg1;
+- (void)setFelicaProperties:(id)arg1;
+- (void)setLargeStyle:(bool)arg1;
 - (void)setPassLibraryOverride:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;
 - (void)setSecondaryTextColor:(id)arg1;
-- (void)setShowModificationDate:(BOOL)arg1;
-- (void)setSuppressedContent:(unsigned int)arg1;
-- (BOOL)showModificationDate;
-- (unsigned int)suppressedContent;
+- (void)setShowModificationDate:(bool)arg1;
+- (void)setSuppressedContent:(unsigned long long)arg1;
+- (bool)showModificationDate;
+- (unsigned long long)suppressedContent;
 - (void)updateModifiedDate;
-- (void)updateShadow:(float)arg1;
+- (void)updateShadow:(double)arg1;
 
 @end

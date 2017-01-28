@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)scriptXMLHTTPRequest:(SUScriptXMLHTTPRequest *)arg1 requiresCellularForURL:(NSURL *)arg2;
+- (bool)scriptXMLHTTPRequest:(SUScriptXMLHTTPRequest *)arg1 requiresCellularForURL:(NSURL *)arg2;
 
 @end

@@ -25,8 +25,8 @@
 - (id)initWithDirectoryAtPath:(id)arg1 preferredAssetPathExtension:(id)arg2;
 - (id)moveFileAtPath:(id)arg1 withKey:(id)arg2;
 - (id)preferredExtension;
-- (BOOL)removeAllFiles;
-- (BOOL)removeFileWithKey:(id)arg1;
+- (bool)removeAllFiles;
+- (bool)removeFileWithKey:(id)arg1;
 - (void)setDirectoryPath:(id)arg1;
 - (void)setFileURLsByKey:(id)arg1;
 - (void)setPreferredExtension:(id)arg1;

@@ -6,19 +6,19 @@
     NSDate * _installDate;
     NSDate * _timestamp;
     NSDictionary * _updateDictionary;
-    int  _updateState;
+    long long  _updateState;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) NSNumber *externalVersionIdentifier;
 @property (nonatomic, copy) NSDate *installDate;
-@property (nonatomic, readonly) int parentalControlsRank;
+@property (nonatomic, readonly) long long parentalControlsRank;
 @property (nonatomic, readonly) long long storeItemIdentifier;
 @property (nonatomic, copy) NSDate *timestamp;
 @property (nonatomic, readonly) NSDictionary *updateDictionary;
-@property (nonatomic) int updateState;
+@property (nonatomic) long long updateState;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
@@ -28,13 +28,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUpdateDictionary:(id)arg1;
 - (id)installDate;
-- (int)parentalControlsRank;
+- (long long)parentalControlsRank;
 - (void)setInstallDate:(id)arg1;
 - (void)setTimestamp:(id)arg1;
-- (void)setUpdateState:(int)arg1;
+- (void)setUpdateState:(long long)arg1;
 - (long long)storeItemIdentifier;
 - (id)timestamp;
 - (id)updateDictionary;
-- (int)updateState;
+- (long long)updateState;
 
 @end

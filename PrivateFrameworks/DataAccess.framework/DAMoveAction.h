@@ -16,7 +16,7 @@
 - (id)destinationContainerId;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 sourceContainerId:(id)arg3 sourceServerId:(id)arg4 destinationContainerId:(id)arg5;
+- (id)initWithItemChangeType:(long long)arg1 changedItem:(id)arg2 sourceContainerId:(id)arg3 sourceServerId:(id)arg4 destinationContainerId:(id)arg5;
 - (void)setDestinationContainerId:(id)arg1;
 - (void)setSourceContainerId:(id)arg1;
 - (void)setSourceServerId:(id)arg1;

@@ -41,12 +41,12 @@
 - (unsigned int)_knownOrderKeyForObject:(id)arg1 from:(id)arg2 inverseToMany:(id)arg3;
 - (long long)_knownPrimaryKeyForObject:(id)arg1;
 - (long long)_knownPrimaryKeyForObjectID:(id)arg1;
-- (id)_newRowCacheRowForToManyUpdatesForRelationship:(id)arg1 rowCacheOriginal:(id)arg2 originalOrderKeys:(id)arg3 originalSnapshot:(id)arg4 value:(id)arg5 added:(id)arg6 deleted:(id)arg7 sourceRowPK:(long long)arg8 properties:(id)arg9 sourceObject:(id)arg10 newIndexes:(unsigned int**)arg11 reorderedIndexes:(char **)arg12;
+- (id)_newRowCacheRowForToManyUpdatesForRelationship:(id)arg1 rowCacheOriginal:(id)arg2 originalOrderKeys:(id)arg3 originalSnapshot:(id)arg4 value:(id)arg5 added:(id)arg6 deleted:(id)arg7 sourceRowPK:(long long)arg8 properties:(id)arg9 sourceObject:(id)arg10 newIndexes:(unsigned long long**)arg11 reorderedIndexes:(char **)arg12;
 - (unsigned int)_orderKeyForObject:(id)arg1 fromSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 inOrderedSet:(id)arg4;
-- (void)_populateOrderKeysInOrderedSet:(id)arg1 usingSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 newIndexes:(unsigned int**)arg4 reorderedIndexes:(char **)arg5;
-- (void)_populateRow:(id)arg1 fromObject:(id)arg2 timestamp:(double)arg3 inserted:(BOOL)arg4;
+- (void)_populateOrderKeysInOrderedSet:(id)arg1 usingSourceObjectID:(id)arg2 inverseRelationship:(id)arg3 newIndexes:(unsigned long long**)arg4 reorderedIndexes:(char **)arg5;
+- (void)_populateRow:(id)arg1 fromObject:(id)arg2 timestamp:(double)arg3 inserted:(bool)arg4;
 - (void)_prepareForDeletionOfExternalDataReferencesForObject:(id)arg1;
-- (void)_recordToManyChangesForObject:(id)arg1 inRow:(id)arg2 usingTimestamp:(double)arg3 inserted:(BOOL)arg4;
+- (void)_recordToManyChangesForObject:(id)arg1 inRow:(id)arg2 usingTimestamp:(double)arg3 inserted:(bool)arg4;
 - (void)_registerChangedFOKs:(id)arg1 deletions:(id)arg2 forSourceObject:(id)arg3 andRelationship:(id)arg4;
 - (void)dealloc;
 - (id)entityForEntityDescription:(id)arg1;
@@ -54,7 +54,7 @@
 - (id)externalDataReferencesToSave;
 - (id)foreignOrderKeysBeingDeleted;
 - (id)foreignOrderKeysBeingUpdated;
-- (BOOL)hasChangesForWriting;
+- (bool)hasChangesForWriting;
 - (id)initForRequestContext:(id)arg1;
 - (id)newAncillaryRowsUpdatedForRowCache;
 - (id)newCorrelationTableUpdates;

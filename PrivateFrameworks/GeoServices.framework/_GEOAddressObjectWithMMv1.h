@@ -12,8 +12,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasKnownAccuracy;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasKnownAccuracy;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int knownAccuracy;
 @property (readonly) Class superclass;
 
@@ -23,14 +23,14 @@
 - (void).cxx_destruct;
 - (id)address;
 - (id)addressDictionary;
-- (id)cityDisplayNameWithFallback:(BOOL)arg1;
+- (id)cityDisplayNameWithFallback:(bool)arg1;
 - (void)dealloc;
-- (id)fullAddressWithMultiline:(BOOL)arg1;
+- (id)fullAddressWithMultiline:(bool)arg1;
 - (struct shared_ptr<addr_obj::AddressObject> { struct AddressObject {} *x1; struct __shared_weak_count {} *x2; })getConvertedAO;
-- (BOOL)hasKnownAccuracy;
-- (unsigned int)hash;
+- (bool)hasKnownAccuracy;
+- (unsigned long long)hash;
 - (id)initWithPlaceDataAddressObject:(id)arg1 placeDataAddress:(id)arg2 placeDataInfo:(id)arg3 placeDataEntity:(id)arg4 language:(id)arg5 country:(id)arg6 phoneticLocale:(id)arg7;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)knownAccuracy;
 - (id)name;
 - (id)parkingDisplayName;

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isPaused;
+- (bool)isPaused;
 - (double)speedMultiplier;
 
 @end

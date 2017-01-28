@@ -8,7 +8,7 @@
 + (id)fullResolutionAttachmentURLForAttachmentURL:(id)arg1;
 + (id)fullResolutionStorageLocationForAttachmentWithMimePart:(id)arg1 withMessage:(id)arg2;
 
-- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id /* block */)arg3;
+- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id)arg3;
 - (id)storageLocationForAttachment:(id)arg1 withMessage:(id)arg2;
 
 @end

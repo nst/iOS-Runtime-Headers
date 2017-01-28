@@ -11,8 +11,8 @@
 
 - (void).cxx_destruct;
 - (id)_buildLanguageResources;
-- (void)_fetchLanguageResourcesFromMediaLibraryService:(id /* block */)arg1;
-- (void)fetchLanguageResourcesWithCompletion:(id /* block */)arg1;
+- (void)_fetchLanguageResourcesFromMediaLibraryService:(id)arg1;
+- (void)fetchLanguageResourcesWithCompletion:(id)arg1;
 - (id)init;
 - (void)invalidateCachedResources;
 

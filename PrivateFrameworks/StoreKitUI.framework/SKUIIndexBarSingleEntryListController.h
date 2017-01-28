@@ -11,13 +11,13 @@
 @property (nonatomic, readonly) SKUIIndexBarEntryViewElement *entryViewElement;
 
 - (void).cxx_destruct;
-- (id)entryDescriptorAtIndex:(int)arg1;
+- (id)entryDescriptorAtIndex:(long long)arg1;
 - (id)entryViewElement;
-- (BOOL)hidesIndexBar;
+- (bool)hidesIndexBar;
 - (id)initWithEntryViewElement:(id)arg1;
-- (BOOL)needsRootTargetViewElement;
-- (int)numberOfEntryDescriptors;
+- (bool)needsRootTargetViewElement;
+- (long long)numberOfEntryDescriptors;
 - (void)reloadViewElementData;
-- (id)targetIndexBarEntryIDForEntryDescriptorAtIndex:(int)arg1 returningRelativeSectionIndex:(out int*)arg2;
+- (id)targetIndexBarEntryIDForEntryDescriptorAtIndex:(long long)arg1 returningRelativeSectionIndex:(out long long*)arg2;
 
 @end

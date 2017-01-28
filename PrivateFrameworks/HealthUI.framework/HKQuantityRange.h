@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) HKQuantity *minimum;
 
 - (void).cxx_destruct;
-- (BOOL)containsQuantityInclusive:(id)arg1;
+- (bool)containsQuantityInclusive:(id)arg1;
 - (id)init;
 - (id)initWithMinimum:(id)arg1 maximum:(id)arg2;
 - (id)maximum;

@@ -4,7 +4,7 @@
 
 @interface FCPersonalizationData : FCPrivateZoneController <FCAppConfigurationObserving, FCDerivedPersonalizationData, FCOperationThrottlerDelegate> {
     NSMutableDictionary * _aggregates;
-    BOOL  _attemptingUpload;
+    bool  _attemptingUpload;
     NSMutableArray * _closedChangeGroups;
     NSMutableDictionary * _openChangeGroupDeltas;
     NSObject<OS_dispatch_queue> * _readWriteQueue;
@@ -14,11 +14,11 @@
 }
 
 @property (nonatomic, retain) NSMutableDictionary *aggregates;
-@property BOOL attemptingUpload;
+@property bool attemptingUpload;
 @property (nonatomic, retain) NSMutableArray *closedChangeGroups;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *openChangeGroupDeltas;
 @property (nonatomic, readonly) FCPersonalizationTreatment *personalizationTreatment;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *readWriteQueue;
@@ -27,55 +27,55 @@
 @property (readonly) Class superclass;
 @property (retain) FCPersonalizationTreatment *treatment;
 
-+ (int)commandQueueUrgency;
++ (long long)commandQueueUrgency;
 + (id)commandStoreFileName;
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
 + (id)desiredKeys;
 + (void)initialize;
 + (id)localStoreFilename;
 + (id)localStoreMigrator;
-+ (unsigned int)localStoreVersion;
++ (unsigned long long)localStoreVersion;
 + (id)recordIDsToSync;
-+ (BOOL)requiresBatchedSync;
-+ (BOOL)requiresHighPriorityFirstSync;
-+ (BOOL)requiresPushNotificationSupport;
++ (bool)requiresBatchedSync;
++ (bool)requiresHighPriorityFirstSync;
++ (bool)requiresPushNotificationSupport;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_closeOpenChangeGroup;
 - (id)_instanceIdentifier;
 - (void)_updateWithRemoteRecord:(id)arg1 profile:(id)arg2;
-- (void)_writeToLocalStoreWithCompletionHandler:(id /* block */)arg1;
+- (void)_writeToLocalStoreWithCompletionHandler:(id)arg1;
 - (id)aggregateForFeatureKey:(id)arg1;
 - (id)aggregates;
 - (id)aggregatesForFeatureKeys:(id)arg1;
 - (void)appConfigurationDidChange:(id)arg1;
-- (BOOL)attemptingUpload;
+- (bool)attemptingUpload;
 - (void)clearPersonalizationData;
 - (id)closedChangeGroups;
 - (id)d_allGlobalAggregates;
 - (id)featureKeysWithNoAggregates:(id)arg1;
-- (void)generateDerivedDataWithQualityOfService:(int)arg1 completion:(id /* block */)arg2;
+- (void)generateDerivedDataWithQualityOfService:(long long)arg1 completion:(id)arg2;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4 userInfo:(id)arg5;
 - (void)loadLocalCachesFromStore;
-- (id)modifyLocalAggregatesForFeatureKeys:(id)arg1 withAction:(unsigned int)arg2 actionCount:(unsigned int)arg3 defaultClicks:(double)arg4 defaultImpressions:(double)arg5;
+- (id)modifyLocalAggregatesForFeatureKeys:(id)arg1 withAction:(unsigned long long)arg2 actionCount:(unsigned long long)arg3 defaultClicks:(double)arg4 defaultImpressions:(double)arg5;
 - (id)openChangeGroupDeltas;
-- (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
+- (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id)arg2;
 - (id)personalizationTreatment;
 - (id)readWriteQueue;
 - (id)remoteRecord;
 - (id)saveThrottler;
 - (void)setAggregates:(id)arg1;
-- (void)setAttemptingUpload:(BOOL)arg1;
+- (void)setAttemptingUpload:(bool)arg1;
 - (void)setClosedChangeGroups:(id)arg1;
 - (void)setOpenChangeGroupDeltas:(id)arg1;
 - (void)setReadWriteQueue:(id)arg1;
 - (void)setRemoteRecord:(id)arg1;
 - (void)setSaveThrottler:(id)arg1;
 - (void)setTreatment:(id)arg1;
-- (void)syncWithCompletion:(id /* block */)arg1;
+- (void)syncWithCompletion:(id)arg1;
 - (id)treatment;
 
 @end

@@ -14,7 +14,7 @@
 + (Class)valueClass;
 
 - (void).cxx_destruct;
-- (BOOL)canCopyWithCharacteristicTypeSubset:(id)arg1;
+- (bool)canCopyWithCharacteristicTypeSubset:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)copyWithCharacteristicTypes:(id)arg1 valueSource:(id)arg2;
 - (id)incrementalCharacteristicType;

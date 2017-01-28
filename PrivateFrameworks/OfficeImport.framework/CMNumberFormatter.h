@@ -12,6 +12,6 @@
 
 - (void)dealloc;
 - (id)initWithNumberFormat:(int)arg1 language:(int)arg2;
-- (id)stringForNumber:(unsigned int)arg1;
+- (id)stringForNumber:(unsigned long long)arg1;
 
 @end

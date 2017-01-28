@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)numberOfRowsInScrollWheel:(FUScrollWheel *)arg1;
-- (NSString *)scrollWheel:(FUScrollWheel *)arg1 titleForItemAtIndex:(unsigned int)arg2;
+- (unsigned long long)numberOfRowsInScrollWheel:(FUScrollWheel *)arg1;
+- (NSString *)scrollWheel:(FUScrollWheel *)arg1 titleForItemAtIndex:(unsigned long long)arg2;
 
 @end

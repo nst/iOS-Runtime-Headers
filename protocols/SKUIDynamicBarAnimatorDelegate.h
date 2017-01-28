@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)dynamicBarAnimator:(SKUIDynamicBarAnimator *)arg1 canHideBarsByDraggingWithOffset:(float)arg2;
+- (bool)dynamicBarAnimator:(SKUIDynamicBarAnimator *)arg1 canHideBarsByDraggingWithOffset:(double)arg2;
 - (void)dynamicBarAnimatorDidUpdate:(SKUIDynamicBarAnimator *)arg1;
 
 @optional

@@ -3,40 +3,40 @@
  */
 
 @interface WAHourlyForecast : NSObject <NSCopying> {
-    int  _conditionCode;
-    unsigned int  _eventType;
+    long long  _conditionCode;
+    unsigned long long  _eventType;
     NSString * _forecastDetail;
-    int  _hourIndex;
+    long long  _hourIndex;
     float  _percentPrecipitation;
     WFTemperature * _temperature;
     NSString * _time;
 }
 
-@property (nonatomic) int conditionCode;
-@property (nonatomic) unsigned int eventType;
+@property (nonatomic) long long conditionCode;
+@property (nonatomic) unsigned long long eventType;
 @property (nonatomic, copy) NSString *forecastDetail;
-@property (nonatomic) int hourIndex;
+@property (nonatomic) long long hourIndex;
 @property (nonatomic) float percentPrecipitation;
 @property (nonatomic, retain) WFTemperature *temperature;
 @property (nonatomic, copy) NSString *time;
 
-+ (int)TimeValueFromString:(id)arg1;
++ (long long)TimeValueFromString:(id)arg1;
 + (id)hourlyForecastForLocation:(id)arg1 conditions:(id)arg2 sunriseDateComponents:(id)arg3 sunsetDateComponents:(id)arg4;
 
 - (void).cxx_destruct;
-- (int)conditionCode;
+- (long long)conditionCode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)eventType;
+- (unsigned long long)eventType;
 - (id)forecastDetail;
-- (unsigned int)hash;
-- (int)hourIndex;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (long long)hourIndex;
+- (bool)isEqual:(id)arg1;
 - (float)percentPrecipitation;
-- (void)setConditionCode:(int)arg1;
-- (void)setEventType:(unsigned int)arg1;
+- (void)setConditionCode:(long long)arg1;
+- (void)setEventType:(unsigned long long)arg1;
 - (void)setForecastDetail:(id)arg1;
-- (void)setHourIndex:(int)arg1;
+- (void)setHourIndex:(long long)arg1;
 - (void)setPercentPrecipitation:(float)arg1;
 - (void)setTemperature:(id)arg1;
 - (void)setTime:(id)arg1;

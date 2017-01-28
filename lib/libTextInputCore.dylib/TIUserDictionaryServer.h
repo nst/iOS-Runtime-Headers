@@ -5,32 +5,32 @@
 @interface TIUserDictionaryServer : NSObject <TIKeyboardActivityObserving> {
     NSArray * _cache;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    unsigned int  _keyboardActivityState;
+    unsigned long long  _keyboardActivityState;
     NSMutableArray * _observers;
     int  _pendingUpdates;
-    int  _recentClientCount;
-    BOOL  _updating;
+    long long  _recentClientCount;
+    bool  _updating;
     NSUUID * _userDictionaryUUID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSUUID *userDictionaryUUID;
 
 + (double)decrementClientDelay;
 + (id)sharedInstance;
 
-- (id)addObserver:(id /* block */)arg1;
+- (id)addObserver:(id)arg1;
 - (void)dealloc;
 - (void)decrementRecentClientCountAfterDelay;
-- (void)getPhraseShortcutPairs:(id /* block */)arg1;
+- (void)getPhraseShortcutPairs:(id)arg1;
 - (void)handleIdleTimeout;
 - (void)incrementRecentClientCount;
 - (id)init;
 - (void)keyboardActivityDidTransition:(id)arg1;
-- (void)loadPhraseShortcutPairs:(id /* block */)arg1;
+- (void)loadPhraseShortcutPairs:(id)arg1;
 - (void)managedKeyboardSettingsDidChange:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)resetCache;

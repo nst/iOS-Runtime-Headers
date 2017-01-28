@@ -4,7 +4,7 @@
 
 @interface NSCachingFetchRequest : NSFetchRequest {
     struct __CFDictionary { } * _cachedInfo;
-    BOOL  _hasCachedInfo;
+    bool  _hasCachedInfo;
     id  _identifier;
     int  _lock;
     NSDictionary * _substitutionVariables;
@@ -19,7 +19,7 @@
 - (id)_cachedInfoForRequestor:(id)arg1;
 - (id)_copyForDirtyContext;
 - (id)_identifier;
-- (BOOL)_isCachingFetchRequest__;
+- (bool)_isCachingFetchRequest__;
 - (void)_sanityCheckVariables:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -3,25 +3,25 @@
  */
 
 @interface CountedReference : NSObject {
-    BOOL  _didScheduleDealloc;
+    bool  _didScheduleDealloc;
     NSString * _name;
-    unsigned int  _referenceCount;
+    unsigned long long  _referenceCount;
     id  _referencedObject;
 }
 
-@property (nonatomic) BOOL didScheduleDealloc;
+@property (nonatomic) bool didScheduleDealloc;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) unsigned int referenceCount;
+@property (nonatomic) unsigned long long referenceCount;
 @property (nonatomic, retain) id referencedObject;
 
 - (void).cxx_destruct;
-- (BOOL)didScheduleDealloc;
+- (bool)didScheduleDealloc;
 - (id)name;
-- (unsigned int)referenceCount;
+- (unsigned long long)referenceCount;
 - (id)referencedObject;
-- (void)setDidScheduleDealloc:(BOOL)arg1;
+- (void)setDidScheduleDealloc:(bool)arg1;
 - (void)setName:(id)arg1;
-- (void)setReferenceCount:(unsigned int)arg1;
+- (void)setReferenceCount:(unsigned long long)arg1;
 - (void)setReferencedObject:(id)arg1;
 
 @end

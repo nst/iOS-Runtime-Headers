@@ -4,16 +4,16 @@
 
 @interface BBQuietModeOverrideAssertion : NSObject {
     BSAction * _assertionAction;
-    id /* block */  _invalidationHandler;
+    id  _invalidationHandler;
 }
 
-@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) bool isValid;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithAction:(id)arg1;
 - (void)invalidate;
-- (BOOL)isValid;
-- (void)setInvalidationHandler:(id /* block */)arg1;
+- (bool)isValid;
+- (void)setInvalidationHandler:(id)arg1;
 
 @end

@@ -5,19 +5,19 @@
 @interface TSWPShapeStylePropertyChangeSet : TSDShapeStylePropertyChangeSet {
     TSWPSpecColumns * _columns;
     TSWPSpecParagraphStyle * _defaultParagraphStyle;
-    BOOL  _definedColumns;
-    BOOL  _definedDefaultParagraphStyle;
-    BOOL  _definedPadding;
-    BOOL  _definedShrinkTextToFit;
-    BOOL  _definedVerticalAlignment;
-    BOOL  _definedVerticalText;
+    bool  _definedColumns;
+    bool  _definedDefaultParagraphStyle;
+    bool  _definedPadding;
+    bool  _definedShrinkTextToFit;
+    bool  _definedVerticalAlignment;
+    bool  _definedVerticalText;
     TSWPSpecPadding * _padding;
     TSSSpecBool * _shrinkTextToFit;
     TSSSpecInteger * _verticalAlignment;
     TSSSpecBool * _verticalText;
 }
 
-- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setSpec:(id)arg1 forProperty:(int)arg2;
 - (void)setUnsetSpecForProperty:(int)arg1;

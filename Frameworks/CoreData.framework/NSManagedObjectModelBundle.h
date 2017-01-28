@@ -8,7 +8,7 @@
 }
 
 - (id)_modelForVersionHashes:(id)arg1;
-- (id)_modelForVersionHashes:(id)arg1 inStyle:(unsigned int)arg2;
+- (id)_modelForVersionHashes:(id)arg1 inStyle:(unsigned long long)arg2;
 - (id)bundle;
 - (id)currentVersion;
 - (id)currentVersionURL;

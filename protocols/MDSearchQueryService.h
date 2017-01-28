@@ -5,7 +5,7 @@
 
 @required
 
-- (void)cancelWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)startQuery:(void *)arg1 withQueryContext:(void *)arg2 resultProcessor:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: NSString *, CSSearchQueryContext *, <MDSearchQueryResultProcessor> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)cancelWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (void)startQuery:(void *)arg1 withQueryContext:(void *)arg2 resultProcessor:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: NSString *, CSSearchQueryContext *, <MDSearchQueryResultProcessor> *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 
 @end

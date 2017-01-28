@@ -10,16 +10,16 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_isPhotosAccessAllowedWithScope:(int)arg1 forceHandler:(BOOL)arg2 accessAllowedHandler:(id /* block */)arg3;
+- (bool)_isPhotosAccessAllowedWithScope:(long long)arg1 forceHandler:(bool)arg2 accessAllowedHandler:(id)arg3;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isPhotoLibraryReadAccessAllowed;
-- (BOOL)isPhotoLibrarySharingOrModificationAllowed;
-- (void)isPhotosAccessAllowedWithScope:(int)arg1 handler:(id /* block */)arg2;
-- (BOOL)isPhotosAccessAllowedWithScope:(int)arg1 promptIfNeededWithHandler:(id /* block */)arg2;
-- (BOOL)isPhotosTCCAccessAllowed;
-- (BOOL)isPhotosTCCAccessNotAllowed;
-- (BOOL)isPhotosTCCAccessRestricted;
+- (bool)isPhotoLibraryReadAccessAllowed;
+- (bool)isPhotoLibrarySharingOrModificationAllowed;
+- (void)isPhotosAccessAllowedWithScope:(long long)arg1 handler:(id)arg2;
+- (bool)isPhotosAccessAllowedWithScope:(long long)arg1 promptIfNeededWithHandler:(id)arg2;
+- (bool)isPhotosTCCAccessAllowed;
+- (bool)isPhotosTCCAccessNotAllowed;
+- (bool)isPhotosTCCAccessRestricted;
 - (void)photoAccessPowersActive;
 - (int)photosTCCAccessStatus;
 

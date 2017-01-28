@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)basicAccountIdentifier;
@@ -15,6 +15,6 @@
 - (id)predicateForNotes;
 - (id)predicateForSearchableAttachments;
 - (id)predicateForSearchableNotes;
-- (BOOL)supportsVisibilityTestingType:(int)arg1;
+- (bool)supportsVisibilityTestingType:(long long)arg1;
 
 @end

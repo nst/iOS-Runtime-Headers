@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Intents.framework/Intents
  */
 
-@interface INPerson : NSObject <INCacheableContainer, INPersonExport, INSpeakable, NSCopying, NSSecureCoding> {
+@interface INPerson : NSObject <INCacheableContainer, INSpeakable, NSCopying, NSSecureCoding> {
     NSArray * _aliases;
     NSString * _contactIdentifier;
     NSString * _customIdentifier;
@@ -10,52 +10,57 @@
     INImage * _image;
     NSPersonNameComponents * _nameComponents;
     INPersonHandle * _personHandle;
-    int  _suggestionType;
+    NSString * _relationship;
+    long long  _suggestionType;
     NSString * _userInput;
 }
 
 @property (nonatomic, readonly, copy) NSArray *aliases;
-@property (nonatomic, readonly, copy) NSString *contactIdentifier;
-@property (nonatomic, readonly, copy) NSString *customIdentifier;
+@property (nonatomic, copy) NSArray *aliases;
+@property (nonatomic, copy) NSString *contactIdentifier;
+@property (nonatomic, copy) NSString *customIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, copy) NSString *displayName;
+@property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly, copy) NSString *firstName;
 @property (nonatomic, readonly, copy) NSString *fullName;
-@property (nonatomic, readonly, copy) NSString *handle;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly, copy) INImage *image;
+@property (nonatomic, copy) INImage *image;
 @property (nonatomic, readonly, copy) NSString *lastName;
-@property (nonatomic, readonly, copy) NSPersonNameComponents *nameComponents;
-@property (nonatomic, readonly, copy) INPersonHandle *personHandle;
+@property (nonatomic, copy) NSPersonNameComponents *nameComponents;
+@property (nonatomic, copy) INPersonHandle *personHandle;
 @property (nonatomic, readonly) NSString *pronunciationHint;
+@property (nonatomic, copy) NSString *relationship;
 @property (nonatomic, readonly) NSString *spokenPhrase;
-@property (nonatomic, readonly) int suggestionType;
+@property (nonatomic, readonly) long long suggestionType;
+@property (nonatomic) long long suggestionType;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *userIdentifier;
 @property (nonatomic, readonly, copy) NSString *userName;
 @property (nonatomic, readonly, copy) NSString *userURIString;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aliases;
+- (id)_dictionaryRepresentation;
 - (id)_displayName;
 - (id)_initWithUserInput:(id)arg1 handle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6;
-- (id)_initWithUserInput:(id)arg1 personHandle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6 customIdentifier:(id)arg7 aliases:(id)arg8 suggestionType:(int)arg9;
+- (id)_initWithUserInput:(id)arg1 personHandle:(id)arg2 nameComponents:(id)arg3 displayName:(id)arg4 image:(id)arg5 contactIdentifier:(id)arg6 customIdentifier:(id)arg7 relationship:(id)arg8 aliases:(id)arg9 suggestionType:(long long)arg10;
 - (id)_userInput;
 - (id)aliases;
 - (id)cacheableObjects;
 - (id)contactIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customIdentifier;
+- (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstName;
 - (id)fullName;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
@@ -63,14 +68,24 @@
 - (id)initWithHandle:(id)arg1 nameComponents:(id)arg2 contactIdentifier:(id)arg3;
 - (id)initWithHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6;
-- (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 aliases:(id)arg7 suggestionType:(int)arg8;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 aliases:(id)arg7 suggestionType:(long long)arg8;
+- (bool)isEqual:(id)arg1;
 - (id)lastName;
 - (id)nameComponents;
 - (id)personHandle;
 - (id)pronunciationHint;
+- (id)relationship;
+- (void)setAliases:(id)arg1;
+- (void)setContactIdentifier:(id)arg1;
+- (void)setCustomIdentifier:(id)arg1;
+- (void)setDisplayName:(id)arg1;
+- (void)setImage:(id)arg1;
+- (void)setNameComponents:(id)arg1;
+- (void)setPersonHandle:(id)arg1;
+- (void)setRelationship:(id)arg1;
+- (void)setSuggestionType:(long long)arg1;
 - (id)spokenPhrase;
-- (int)suggestionType;
+- (long long)suggestionType;
 - (id)userIdentifier;
 - (id)userName;
 - (id)userURIString;

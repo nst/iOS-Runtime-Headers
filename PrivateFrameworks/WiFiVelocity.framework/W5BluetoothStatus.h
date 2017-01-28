@@ -4,50 +4,50 @@
 
 @interface W5BluetoothStatus : NSObject <NSCopying, NSSecureCoding> {
     NSString * _address;
-    int  _cloudPairedDeviceCount;
-    int  _connectedDeviceCount;
-    BOOL  _isConnectable;
-    BOOL  _isDiscoverable;
-    BOOL  _isScanning;
-    int  _pairedDeviceCount;
-    BOOL  _powerOn;
+    long long  _cloudPairedDeviceCount;
+    long long  _connectedDeviceCount;
+    bool  _isConnectable;
+    bool  _isDiscoverable;
+    bool  _isScanning;
+    long long  _pairedDeviceCount;
+    bool  _powerOn;
 }
 
 @property (nonatomic, copy) NSString *address;
-@property (nonatomic) int cloudPairedDeviceCount;
-@property (nonatomic) int connectedDeviceCount;
-@property (nonatomic) BOOL isConnectable;
-@property (nonatomic) BOOL isDiscoverable;
-@property (nonatomic) BOOL isScanning;
-@property (nonatomic) int pairedDeviceCount;
-@property (nonatomic) BOOL powerOn;
+@property (nonatomic) long long cloudPairedDeviceCount;
+@property (nonatomic) long long connectedDeviceCount;
+@property (nonatomic) bool isConnectable;
+@property (nonatomic) bool isDiscoverable;
+@property (nonatomic) bool isScanning;
+@property (nonatomic) long long pairedDeviceCount;
+@property (nonatomic) bool powerOn;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)address;
-- (int)cloudPairedDeviceCount;
-- (BOOL)conformsToProtocol:(id)arg1;
-- (int)connectedDeviceCount;
+- (long long)cloudPairedDeviceCount;
+- (bool)conformsToProtocol:(id)arg1;
+- (long long)connectedDeviceCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isConnectable;
-- (BOOL)isDiscoverable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToBluetoothStatus:(id)arg1;
-- (BOOL)isScanning;
-- (int)pairedDeviceCount;
-- (BOOL)powerOn;
+- (bool)isConnectable;
+- (bool)isDiscoverable;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToBluetoothStatus:(id)arg1;
+- (bool)isScanning;
+- (long long)pairedDeviceCount;
+- (bool)powerOn;
 - (void)setAddress:(id)arg1;
-- (void)setCloudPairedDeviceCount:(int)arg1;
-- (void)setConnectedDeviceCount:(int)arg1;
-- (void)setIsConnectable:(BOOL)arg1;
-- (void)setIsDiscoverable:(BOOL)arg1;
-- (void)setIsScanning:(BOOL)arg1;
-- (void)setPairedDeviceCount:(int)arg1;
-- (void)setPowerOn:(BOOL)arg1;
+- (void)setCloudPairedDeviceCount:(long long)arg1;
+- (void)setConnectedDeviceCount:(long long)arg1;
+- (void)setIsConnectable:(bool)arg1;
+- (void)setIsDiscoverable:(bool)arg1;
+- (void)setIsScanning:(bool)arg1;
+- (void)setPairedDeviceCount:(long long)arg1;
+- (void)setPowerOn:(bool)arg1;
 
 @end

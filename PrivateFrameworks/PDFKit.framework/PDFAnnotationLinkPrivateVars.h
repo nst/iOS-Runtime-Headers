@@ -4,7 +4,7 @@
 
 @interface PDFAnnotationLinkPrivateVars : NSObject {
     PDFDestination * destination;
-    BOOL  highlight;
+    bool  highlight;
     int  style;
     NSURL * url;
 }

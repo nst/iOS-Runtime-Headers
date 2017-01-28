@@ -3,15 +3,15 @@
  */
 
 @interface SearchUITableView : UITableView {
-    BOOL  _allowHeaderViewsToFloat;
+    bool  _allowHeaderViewsToFloat;
 }
 
-@property BOOL allowHeaderViewsToFloat;
+@property bool allowHeaderViewsToFloat;
 
 - (void)_numberOfRowsDidChange;
-- (BOOL)allowHeaderViewsToFloat;
-- (BOOL)allowsHeaderViewsToFloat;
-- (id)initWithStyle:(unsigned int)arg1;
-- (void)setAllowHeaderViewsToFloat:(BOOL)arg1;
+- (bool)allowHeaderViewsToFloat;
+- (bool)allowsHeaderViewsToFloat;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (void)setAllowHeaderViewsToFloat:(bool)arg1;
 
 @end

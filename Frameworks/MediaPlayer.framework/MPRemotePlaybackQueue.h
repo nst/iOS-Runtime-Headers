@@ -9,9 +9,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isRequestingImmediatePlayback, nonatomic, readonly) BOOL requestingImmediatePlayback;
-@property (nonatomic, readonly) BOOL shouldOverrideManuallyCuratedQueue;
+@property (readonly) unsigned long long hash;
+@property (getter=isRequestingImmediatePlayback, nonatomic, readonly) bool requestingImmediatePlayback;
+@property (nonatomic, readonly) bool shouldOverrideManuallyCuratedQueue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDictionary *userInfo;
 
@@ -24,14 +24,14 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
-- (BOOL)isRequestingImmediatePlayback;
-- (BOOL)shouldOverrideManuallyCuratedQueue;
+- (bool)isRequestingImmediatePlayback;
+- (bool)shouldOverrideManuallyCuratedQueue;
 - (id)userInfo;
-- (BOOL)verifyWithError:(id*)arg1;
+- (bool)verifyWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
 - (id)createPlaybackContext;
-- (void)createPlaybackContextWithCompletion:(id /* block */)arg1;
+- (void)createPlaybackContextWithCompletion:(id)arg1;
 
 @end

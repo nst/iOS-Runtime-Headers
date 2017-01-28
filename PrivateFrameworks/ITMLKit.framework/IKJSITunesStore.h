@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSITunesStore : IKJSObject <IKJSITunesStore, JSExport> {
+@interface IKJSITunesStore : IKJSObject <IKJSITunesStore, NSObject, _IKJSITunesStore, _IKJSITunesStoreProxy> {
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _bagOperationLock;
@@ -21,10 +21,14 @@
 @property (nonatomic, readonly) NSDictionary *accountInfo;
 @property (nonatomic, retain) id cookie;
 @property (nonatomic, retain) NSString *cookieURL;
-@property (getter=isManagedAppleID, nonatomic, readonly) BOOL managedAppleID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (getter=isManagedAppleID, nonatomic, readonly) bool managedAppleID;
 @property (nonatomic, readonly) NSString *networkConnectionType;
 @property (nonatomic) ISLoadURLBagOperation *pendingBagOperation;
 @property (nonatomic, retain) NSString *storefront;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *userAgent;
 
 + (id)_URLBagContext;
@@ -36,10 +40,11 @@
 - (void)_accountStoreChanged;
 - (void)_bagDidLoadNotification:(id)arg1;
 - (void)_subscriptionStatusChanged;
-- (id)_subscriptionStatusDictionaryWithStatus:(id)arg1 isFinal:(BOOL)arg2;
-- (void)_updateBag:(BOOL)arg1;
+- (id)_subscriptionStatusDictionaryWithStatus:(id)arg1 isFinal:(bool)arg2;
+- (void)_updateBag:(bool)arg1;
 - (void)_updateWithBag:(id)arg1;
 - (id)accountInfo;
+- (id)asPrivateIKJSITunesStore;
 - (void)authenticate:(id)arg1 :(id)arg2;
 - (void)clearCookies;
 - (id)cookie;
@@ -52,7 +57,7 @@
 - (void)getServiceEligibility:(id)arg1 :(id)arg2;
 - (id)initWithAppContext:(id)arg1;
 - (void)invalidateBag;
-- (BOOL)isManagedAppleID;
+- (bool)isManagedAppleID;
 - (void)loadStoreContent:(id)arg1 :(id)arg2;
 - (id)makeStoreXMLHttpRequest;
 - (id)networkConnectionType;

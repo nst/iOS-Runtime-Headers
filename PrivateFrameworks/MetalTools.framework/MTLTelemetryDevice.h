@@ -3,7 +3,7 @@
  */
 
 @interface MTLTelemetryDevice : MTLToolsDevice {
-    BOOL  _isGLMTL;
+    bool  _isGLMTL;
     unsigned long long  _startTime;
     NSObject<OS_os_log> * _telemetryLog;
     NSObject<OS_dispatch_source> * _timer;
@@ -18,7 +18,7 @@
                     struct __hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -29,7 +29,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, std::__1::hash<unsigned long long>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, std::__1::equal_to<MTLPixelFormat>, true> > { 
                 float __first_; 
@@ -63,7 +63,7 @@
                     struct __hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -74,7 +74,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, std::__1::hash<unsigned long long>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, std::__1::equal_to<MTLPixelFormat>, true> > { 
                 float __first_; 
@@ -89,7 +89,7 @@
                     struct __hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -100,7 +100,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, std::__1::hash<unsigned long long>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, std::__1::equal_to<MTLPixelFormat>, true> > { 
                 float __first_; 
@@ -119,41 +119,41 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
-- (id)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
-- (void)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
-- (id)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
-- (void)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
-- (id)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
+- (void)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id)arg3;
+- (id)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
+- (void)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id)arg3;
+- (id)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
+- (void)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id)arg3;
+- (id)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (void)emitTelemetry;
 - (bool)enableTelemetry;
-- (struct { unsigned int x1; unsigned int x2; })heapBufferSizeAndAlignWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
-- (struct { unsigned int x1; unsigned int x2; })heapTextureSizeAndAlignWithDescriptor:(id)arg1;
+- (struct { unsigned long long x1; unsigned long long x2; })heapBufferSizeAndAlignWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
+- (struct { unsigned long long x1; unsigned long long x2; })heapTextureSizeAndAlignWithDescriptor:(id)arg1;
 - (void)initDistributions;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
-- (id)newBufferWithBytes:(const void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3;
-- (id)newBufferWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3 deallocator:(id /* block */)arg4;
-- (id)newBufferWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
+- (id)newBufferWithBytes:(const void*)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (id)newBufferWithBytesNoCopy:(void*)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 deallocator:(id)arg4;
+- (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)newCommandQueue;
 - (id)newCommandQueueWithDescriptor:(id)arg1;
-- (id)newCommandQueueWithMaxCommandBufferCount:(unsigned int)arg1;
-- (void)newComputePipelineStateWithDescriptor:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)newCommandQueueWithMaxCommandBufferCount:(unsigned long long)arg1;
+- (void)newComputePipelineStateWithDescriptor:(id)arg1 completionHandler:(id)arg2;
 - (id)newComputePipelineStateWithDescriptor:(id)arg1 error:(id*)arg2;
-- (void)newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
-- (id)newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
-- (void)newComputePipelineStateWithFunction:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id)arg3;
+- (id)newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
+- (void)newComputePipelineStateWithFunction:(id)arg1 completionHandler:(id)arg2;
 - (id)newComputePipelineStateWithFunction:(id)arg1 error:(id*)arg2;
-- (void)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
-- (id)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
+- (void)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id)arg3;
+- (id)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
 - (id)newHeapWithDescriptor:(id)arg1;
-- (void)newRenderPipelineStateWithDescriptor:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)newRenderPipelineStateWithDescriptor:(id)arg1 completionHandler:(id)arg2;
 - (id)newRenderPipelineStateWithDescriptor:(id)arg1 error:(id*)arg2;
-- (void)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
-- (id)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
+- (void)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 completionHandler:(id)arg3;
+- (id)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned long long)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newSamplerStateWithDescriptor:(id)arg1;
 - (id)newTextureWithDescriptor:(id)arg1;
-- (void)setGLMode:(BOOL)arg1;
+- (void)setGLMode:(bool)arg1;
 - (void)setStartTime:(unsigned long long)arg1;
 - (void)setTimerInterval:(double)arg1;
 - (unsigned long long)startTime;

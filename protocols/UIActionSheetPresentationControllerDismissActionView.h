@@ -5,10 +5,10 @@
 
 @required
 
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setTitle:(NSString *)arg1;
-- (void)setUsesShortCompactVerticalLayout:(BOOL)arg1;
+- (void)setUsesShortCompactVerticalLayout:(bool)arg1;
 - (NSString *)title;
-- (BOOL)usesShortCompactVerticalLayout;
+- (bool)usesShortCompactVerticalLayout;
 
 @end

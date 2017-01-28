@@ -9,15 +9,15 @@
 @property (readonly) UIImageView *shadowView;
 
 + (id)backgroundImage;
-+ (float)defaultHeight;
-+ (float)defaultHeightForOrientation:(int)arg1;
++ (double)defaultHeight;
++ (double)defaultHeightForOrientation:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)initWithDefaultSize;
-- (id)initWithDefaultSizeForOrientation:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setOrientation:(int)arg1;
-- (void)setOrientation:(int)arg1 updateFrame:(BOOL)arg2;
+- (id)initWithDefaultSizeForOrientation:(long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setOrientation:(long long)arg1;
+- (void)setOrientation:(long long)arg1 updateFrame:(bool)arg2;
 - (id)shadowView;
 
 @end

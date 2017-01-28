@@ -3,12 +3,12 @@
  */
 
 @interface CKUITheme : NSObject {
-    int  _HUDStyle;
+    long long  _HUDStyle;
     UIColor * _darkAppTintColor;
     UIColor * _detailsCellStaticTextColor;
 }
 
-@property (nonatomic) int HUDStyle;
+@property (nonatomic) long long HUDStyle;
 @property (nonatomic, readonly) UIColor *activeRecordingDotColor;
 @property (nonatomic, readonly) UIColor *appTintColor;
 @property (nonatomic, readonly) UIColor *attachmentBalloonActionColor;
@@ -33,8 +33,8 @@
 @property (nonatomic, readonly) UIColor *conversationListSeperatorColor;
 @property (nonatomic, readonly) UIColor *conversationListSummaryColor;
 @property (nonatomic, readonly) UIColor *darkAppTintColor;
-@property (nonatomic, readonly) int defaultBarStyle;
-@property (nonatomic, readonly) int detailsBackgroundBlurEffectStyle;
+@property (nonatomic, readonly) long long defaultBarStyle;
+@property (nonatomic, readonly) long long detailsBackgroundBlurEffectStyle;
 @property (nonatomic, readonly) UIColor *detailsBackgroundColor;
 @property (nonatomic, readonly) UIColor *detailsCellStaticTextColor;
 @property (nonatomic, readonly) UIColor *detailsSegmentedControlBackgroundColor;
@@ -56,16 +56,16 @@
 @property (nonatomic, readonly) _UIBackdropViewSettings *entryViewDarkBackdropSettings;
 @property (nonatomic, readonly) _UIBackdropViewSettings *entryViewTransparentBackdropSettings;
 @property (nonatomic, readonly) UIColor *grayTextColor;
-@property (nonatomic, readonly) int keyboardAppearance;
-@property (nonatomic, readonly) int keyboardDarkAppearance;
+@property (nonatomic, readonly) long long keyboardAppearance;
+@property (nonatomic, readonly) long long keyboardDarkAppearance;
 @property (nonatomic, readonly) UIColor *lightGrayColor;
 @property (nonatomic, readonly) UIColor *messageAcknowledgmentBalloonBorderColor;
 @property (nonatomic, readonly) UIColor *messagesControllerBackgroundColor;
-@property (nonatomic, readonly) int navBarStyle;
+@property (nonatomic, readonly) long long navBarStyle;
 @property (nonatomic, readonly) UIColor *notificationSubtitleColor;
 @property (nonatomic, readonly) UIColor *progressBarTrackTintColor;
 @property (nonatomic, readonly) UIColor *recipientsDividerColor;
-@property (nonatomic, readonly) int scrollIndicatorStyle;
+@property (nonatomic, readonly) long long scrollIndicatorStyle;
 @property (nonatomic, readonly) UIColor *searchResultsBackgroundColor;
 @property (nonatomic, readonly) UIColor *searchResultsCellBackgroundColor;
 @property (nonatomic, readonly) UIColor *searchResultsCellSelectedColor;
@@ -73,9 +73,9 @@
 @property (nonatomic, readonly) UIColor *segmentedControlSelectionTintColor;
 @property (nonatomic, readonly) UIColor *sharedContentsCellBackgroundColor;
 @property (nonatomic, readonly) UIColor *sharedContentsCellTextColor;
-@property (nonatomic, readonly) int statusBarStyle;
+@property (nonatomic, readonly) long long statusBarStyle;
 @property (nonatomic, readonly) UIColor *stickerDetailsSubheaderTextColor;
-@property (nonatomic, readonly) int toFieldBackdropStyle;
+@property (nonatomic, readonly) long long toFieldBackdropStyle;
 @property (nonatomic, readonly) UIColor *toFieldTextColor;
 @property (nonatomic, readonly) UIColor *transcriptBackgroundColor;
 @property (nonatomic, readonly) UIColor *transcriptBigEmojiColor;
@@ -87,7 +87,7 @@
 @property (nonatomic, readonly) UIColor *waveformUnplayedColor;
 
 - (void).cxx_destruct;
-- (int)HUDStyle;
+- (long long)HUDStyle;
 - (id)activeRecordingDotColor;
 - (id)appTintColor;
 - (id)attachmentBalloonActionColor;
@@ -125,8 +125,8 @@
 - (id)conversationListSeperatorColor;
 - (id)conversationListSummaryColor;
 - (id)darkAppTintColor;
-- (int)defaultBarStyle;
-- (int)detailsBackgroundBlurEffectStyle;
+- (long long)defaultBarStyle;
+- (long long)detailsBackgroundBlurEffectStyle;
 - (id)detailsBackgroundColor;
 - (id)detailsCellStaticTextColor;
 - (id)detailsSegmentedControlBackgroundColor;
@@ -166,17 +166,17 @@
 - (id)green_sendButtonColor;
 - (id)green_unfilledBalloonColor;
 - (id)green_waveformColor;
-- (int)keyboardAppearance;
-- (int)keyboardDarkAppearance;
+- (long long)keyboardAppearance;
+- (long long)keyboardDarkAppearance;
 - (id)lightGrayColor;
-- (id)messageAcknowledgment:(int)arg1 acknowledgmentImageColor:(int)arg2;
-- (id)messageAcknowledgment:(int)arg1 selectedAcknowledgmentImageColor:(int)arg2;
+- (id)messageAcknowledgment:(long long)arg1 acknowledgmentImageColor:(long long)arg2;
+- (id)messageAcknowledgment:(long long)arg1 selectedAcknowledgmentImageColor:(long long)arg2;
 - (id)messageAcknowledgmentBalloonBorderColor;
-- (id)messageAcknowledgmentBalloonColorForStyle:(int)arg1;
-- (BOOL)messageAcknowledgmentBalloonColorTypeForStyle:(int)arg1;
-- (id)messageAcknowledgmentSelectedBalloonColorForStyle:(int)arg1;
+- (id)messageAcknowledgmentBalloonColorForStyle:(long long)arg1;
+- (BOOL)messageAcknowledgmentBalloonColorTypeForStyle:(long long)arg1;
+- (id)messageAcknowledgmentSelectedBalloonColorForStyle:(long long)arg1;
 - (id)messagesControllerBackgroundColor;
-- (int)navBarStyle;
+- (long long)navBarStyle;
 - (id)notificationSubtitleColor;
 - (id)progressBarTrackTintColor;
 - (id)progressViewColorForColorType:(BOOL)arg1;
@@ -191,14 +191,14 @@
 - (id)red_sendButtonColor;
 - (id)red_unfilledBalloonColor;
 - (id)red_waveformColor;
-- (int)scrollIndicatorStyle;
+- (long long)scrollIndicatorStyle;
 - (id)searchResultsBackgroundColor;
 - (id)searchResultsCellBackgroundColor;
 - (id)searchResultsCellSelectedColor;
 - (id)searchResultsSeperatorColor;
 - (id)segmentedControlSelectionTintColor;
 - (id)sendButtonColorForColorType:(BOOL)arg1;
-- (void)setHUDStyle:(int)arg1;
+- (void)setHUDStyle:(long long)arg1;
 - (id)sharedContentsCellBackgroundColor;
 - (id)sharedContentsCellTextColor;
 - (id)siri_balloonColors;
@@ -210,9 +210,9 @@
 - (id)siri_sendButtonColor;
 - (id)siri_unfilledBalloonColor;
 - (id)siri_waveformColor;
-- (int)statusBarStyle;
+- (long long)statusBarStyle;
 - (id)stickerDetailsSubheaderTextColor;
-- (int)toFieldBackdropStyle;
+- (long long)toFieldBackdropStyle;
 - (id)toFieldTextColor;
 - (id)transcriptBackgroundColor;
 - (id)transcriptBigEmojiColor;

@@ -4,15 +4,15 @@
 
 @interface WBSParsecTableRowCardSection : WBSParsecCardSection {
     WBSParsecTableAlignmentSchema * _alignmentSchema;
-    BOOL  _hideDivider;
-    int  _rowType;
+    bool  _hideDivider;
+    long long  _rowType;
     NSString * _tableID;
     NSArray * _values;
 }
 
 @property (nonatomic, readonly) WBSParsecTableAlignmentSchema *alignmentSchema;
-@property (nonatomic, readonly) BOOL hideDivider;
-@property (nonatomic, readonly) int rowType;
+@property (nonatomic, readonly) bool hideDivider;
+@property (nonatomic, readonly) long long rowType;
 @property (nonatomic, readonly, copy) NSString *tableID;
 @property (nonatomic, readonly, copy) NSArray *values;
 
@@ -21,8 +21,8 @@
 - (void).cxx_destruct;
 - (id)_initWithDictionary:(id)arg1;
 - (id)alignmentSchema;
-- (BOOL)hideDivider;
-- (int)rowType;
+- (bool)hideDivider;
+- (long long)rowType;
 - (id)tableID;
 - (id)values;
 

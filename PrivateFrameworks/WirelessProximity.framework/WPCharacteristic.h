@@ -4,33 +4,33 @@
 
 @interface WPCharacteristic : NSObject <NSSecureCoding> {
     NSData * _data;
-    unsigned int  _permissions;
-    unsigned int  _properties;
+    unsigned long long  _permissions;
+    unsigned long long  _properties;
     NSUUID * _uuid;
-    int  _writeType;
+    long long  _writeType;
 }
 
 @property (retain) NSData *data;
-@property unsigned int permissions;
-@property unsigned int properties;
+@property unsigned long long permissions;
+@property unsigned long long properties;
 @property (retain) NSUUID *uuid;
-@property int writeType;
+@property long long writeType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)data;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)permissions;
-- (unsigned int)properties;
+- (unsigned long long)permissions;
+- (unsigned long long)properties;
 - (void)setData:(id)arg1;
-- (void)setPermissions:(unsigned int)arg1;
-- (void)setProperties:(unsigned int)arg1;
+- (void)setPermissions:(unsigned long long)arg1;
+- (void)setProperties:(unsigned long long)arg1;
 - (void)setUuid:(id)arg1;
-- (void)setWriteType:(int)arg1;
+- (void)setWriteType:(long long)arg1;
 - (id)uuid;
-- (int)writeType;
+- (long long)writeType;
 
 @end

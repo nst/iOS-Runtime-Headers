@@ -21,7 +21,7 @@
 - (id)init;
 - (id)initWithDomain:(id)arg1 requestURL:(id)arg2;
 - (id)newRequest;
-- (void)processDataInResponse:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)processDataInResponse:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)requestURL;
 - (void)setActiveRequest:(id)arg1;
 - (void)setRequestURL:(id)arg1;

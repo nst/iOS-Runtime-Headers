@@ -5,12 +5,12 @@
 
 @required
 
-- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 didFinishTransitionToShowGrid:(BOOL)arg2;
-- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 didSelectFilterType:(int)arg2;
-- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 didStartTransitionToShowGrid:(BOOL)arg2 animated:(BOOL)arg3;
-- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 requestsPreviewLayerEnabled:(BOOL)arg2;
-- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 requestsVideoDataOutputEnabled:(BOOL)arg2;
-- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 willTransitionToShowGrid:(BOOL)arg2;
+- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 didFinishTransitionToShowGrid:(bool)arg2;
+- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 didSelectFilterType:(long long)arg2;
+- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 didStartTransitionToShowGrid:(bool)arg2 animated:(bool)arg3;
+- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 requestsPreviewLayerEnabled:(bool)arg2;
+- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 requestsVideoDataOutputEnabled:(bool)arg2;
+- (void)cameraEffectsRenderer:(CAMEffectsRenderer *)arg1 willTransitionToShowGrid:(bool)arg2;
 - (void)cameraEffectsRendererDidStartPreview:(CAMEffectsRenderer *)arg1;
 
 @end

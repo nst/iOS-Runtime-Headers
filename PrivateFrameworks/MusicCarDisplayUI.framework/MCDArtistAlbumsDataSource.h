@@ -10,13 +10,13 @@
 - (void).cxx_destruct;
 - (void)_invalidateCalculatedEntities;
 - (id)entities;
-- (unsigned int)numberOfSections;
-- (void)overlayCompletionForSectionAtIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSectionAtIndex:(unsigned int)arg1;
-- (void)removeOverlayCompletionForSectionAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfSections;
+- (void)overlayCompletionForSectionAtIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfSectionAtIndex:(unsigned long long)arg1;
+- (void)removeOverlayCompletionForSectionAtIndex:(unsigned long long)arg1;
 - (id)sectionEntities;
-- (BOOL)shouldShowCompletions;
-- (BOOL)showsIndexBar;
-- (BOOL)usesSections;
+- (bool)shouldShowCompletions;
+- (bool)showsIndexBar;
+- (bool)usesSections;
 
 @end

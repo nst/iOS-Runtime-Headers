@@ -5,12 +5,12 @@
 @interface PHAssetSceneAnalysisProperties : PHAssetPropertySet {
     NSData * _distanceIdentity;
     NSDate * _sceneAnalysisTimestamp;
-    unsigned int  _sceneAnalysisVersion;
+    unsigned long long  _sceneAnalysisVersion;
 }
 
 @property (nonatomic, readonly) NSData *distanceIdentity;
 @property (nonatomic, readonly) NSDate *sceneAnalysisTimestamp;
-@property (nonatomic, readonly) unsigned int sceneAnalysisVersion;
+@property (nonatomic, readonly) unsigned long long sceneAnalysisVersion;
 @property (nonatomic, readonly, copy) NSSet *sceneClassifications;
 
 + (id)propertiesToFetch;
@@ -18,9 +18,9 @@
 
 - (void).cxx_destruct;
 - (id)distanceIdentity;
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(bool)arg3;
 - (id)sceneAnalysisTimestamp;
-- (unsigned int)sceneAnalysisVersion;
+- (unsigned long long)sceneAnalysisVersion;
 - (id)sceneClassifications;
 
 @end

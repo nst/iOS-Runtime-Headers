@@ -4,54 +4,54 @@
 
 @interface NPEdgeLatency : NSObject <NSSecureCoding> {
     NSDate * _creationDate;
-    unsigned int  _edgeIndex;
-    BOOL  _needReprobe;
-    BOOL  _passedReprobeThreshold;
-    int  _probeCount;
-    int  _reprobeCount;
+    unsigned long long  _edgeIndex;
+    bool  _needReprobe;
+    bool  _passedReprobeThreshold;
+    long long  _probeCount;
+    long long  _reprobeCount;
     NPAverage * _roundTripAverage;
     NPAverage * _roundTripAverageObserved;
-    unsigned int  _roundTripTime;
+    unsigned long long  _roundTripTime;
 }
 
 @property (retain) NSDate *creationDate;
-@property unsigned int edgeIndex;
-@property BOOL needReprobe;
-@property BOOL passedReprobeThreshold;
-@property int probeCount;
-@property int reprobeCount;
+@property unsigned long long edgeIndex;
+@property bool needReprobe;
+@property bool passedReprobeThreshold;
+@property long long probeCount;
+@property long long reprobeCount;
 @property (retain) NPAverage *roundTripAverage;
 @property (retain) NPAverage *roundTripAverageObserved;
-@property unsigned int roundTripTime;
+@property unsigned long long roundTripTime;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addRoundTripSample:(unsigned int)arg1;
-- (void)addRoundTripSampleObserved:(unsigned int)arg1;
-- (int)compare:(id)arg1;
+- (void)addRoundTripSample:(unsigned long long)arg1;
+- (void)addRoundTripSampleObserved:(unsigned long long)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (id)description;
-- (unsigned int)edgeIndex;
+- (unsigned long long)edgeIndex;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRTT:(unsigned int)arg1 edgeIndex:(unsigned int)arg2;
-- (BOOL)needReprobe;
-- (BOOL)passedReprobeThreshold;
-- (int)probeCount;
-- (int)reprobeCount;
+- (id)initWithRTT:(unsigned long long)arg1 edgeIndex:(unsigned long long)arg2;
+- (bool)needReprobe;
+- (bool)passedReprobeThreshold;
+- (long long)probeCount;
+- (long long)reprobeCount;
 - (id)roundTripAverage;
 - (id)roundTripAverageObserved;
-- (unsigned int)roundTripTime;
+- (unsigned long long)roundTripTime;
 - (void)setCreationDate:(id)arg1;
-- (void)setEdgeIndex:(unsigned int)arg1;
-- (void)setNeedReprobe:(BOOL)arg1;
-- (void)setPassedReprobeThreshold:(BOOL)arg1;
-- (void)setProbeCount:(int)arg1;
-- (void)setReprobeCount:(int)arg1;
+- (void)setEdgeIndex:(unsigned long long)arg1;
+- (void)setNeedReprobe:(bool)arg1;
+- (void)setPassedReprobeThreshold:(bool)arg1;
+- (void)setProbeCount:(long long)arg1;
+- (void)setReprobeCount:(long long)arg1;
 - (void)setRoundTripAverage:(id)arg1;
 - (void)setRoundTripAverageObserved:(id)arg1;
-- (void)setRoundTripTime:(unsigned int)arg1;
+- (void)setRoundTripTime:(unsigned long long)arg1;
 
 @end

@@ -4,20 +4,20 @@
 
 @interface ICTrackedParagraph : NSObject {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _characterRange;
     TTParagraphStyle * _paragraph;
 }
 
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } characterRange;
+@property (nonatomic) struct _NSRange { unsigned long long x1; unsigned long long x2; } characterRange;
 @property (nonatomic, retain) TTParagraphStyle *paragraph;
 
 - (void).cxx_destruct;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })characterRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })characterRange;
 - (id)description;
 - (id)paragraph;
-- (void)setCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setCharacterRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)setParagraph:(id)arg1;
 
 @end

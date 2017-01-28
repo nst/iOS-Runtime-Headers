@@ -3,11 +3,11 @@
  */
 
 @interface HDActivitySummaryQueryServer : HDQueryServer {
-    BOOL  _deliversUpdates;
+    bool  _deliversUpdates;
     HDSQLitePredicate * _filterPredicate;
     long long  _lastProcessedAnchor;
     HDActivitySummaryQueryHelper * _queryHelper;
-    BOOL  _shouldIncludePrivateProperties;
+    bool  _shouldIncludePrivateProperties;
 }
 
 - (void).cxx_destruct;

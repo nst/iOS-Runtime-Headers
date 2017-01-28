@@ -3,14 +3,14 @@
  */
 
 @interface CKHandwritingWindow : UIWindow {
-    BOOL  _eatOrientationEvents;
+    bool  _eatOrientationEvents;
 }
 
-@property (nonatomic) BOOL eatOrientationEvents;
+@property (nonatomic) bool eatOrientationEvents;
 
-- (BOOL)_canAffectStatusBarAppearance;
-- (void)_updateInterfaceOrientationFromDeviceOrientation:(BOOL)arg1;
-- (BOOL)eatOrientationEvents;
-- (void)setEatOrientationEvents:(BOOL)arg1;
+- (bool)_canAffectStatusBarAppearance;
+- (void)_updateInterfaceOrientationFromDeviceOrientation:(bool)arg1;
+- (bool)eatOrientationEvents;
+- (void)setEatOrientationEvents:(bool)arg1;
 
 @end

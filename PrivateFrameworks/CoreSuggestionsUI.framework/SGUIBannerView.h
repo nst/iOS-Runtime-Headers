@@ -33,7 +33,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) UIImage *disclosureImage;
 @property (nonatomic, retain) UIImageView *disclosureImageView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *orderedSuggestions;
 @property (nonatomic, readonly, copy) UIImage *secondaryBannerImage;
 @property (nonatomic, retain) UIImageView *secondaryBannerImageView;
@@ -44,20 +44,20 @@
 + (id)_calendarImage;
 + (id)_cancelImage;
 + (id)_contactsImage;
-+ (id)_disclosureChevronImage:(BOOL)arg1;
++ (id)_disclosureChevronImage:(bool)arg1;
 + (id)_suggestionsService;
-+ (float)bannerHeightConstant;
++ (double)bannerHeightConstant;
 + (id)bannerViewForEventSuggestions:(id)arg1 contactSuggestions:(id)arg2;
 + (id)buttonFont;
-+ (float)interLabelBaselineDeltaConstant;
++ (double)interLabelBaselineDeltaConstant;
 + (id)subtitleFont;
 + (id)titleFont;
-+ (float)topMarginConstant;
++ (double)topMarginConstant;
 
 - (void).cxx_destruct;
 - (void)_confirmSuggestion:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
-- (void)_dismissBannerRejectSuggestion:(BOOL)arg1;
+- (void)_dismissBannerRejectSuggestion:(bool)arg1;
 - (id)_filterRealtimeSuggestions:(id)arg1 forClass:(Class)arg2;
 - (id)_findSuggestionsOfClass:(Class)arg1;
 - (void)_installLayoutConstraints;
@@ -67,7 +67,7 @@
 - (void)_update;
 - (void)_updateUI;
 - (id)addButton;
-- (BOOL)areMultipleSuggestionsPresent;
+- (bool)areMultipleSuggestionsPresent;
 - (id)bannerImage;
 - (id)bannerImageView;
 - (id)closeButton;
@@ -82,12 +82,12 @@
 - (id)disclosureImagePressed;
 - (id)disclosureImageView;
 - (void)dismissBanner:(id)arg1;
-- (void)eventViewController:(id)arg1 didCompleteWithAction:(int)arg2;
-- (BOOL)eventViewControllerShouldAlwaysShowNavBar:(id)arg1;
+- (void)eventViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
+- (bool)eventViewControllerShouldAlwaysShowNavBar:(id)arg1;
 - (id)initWithEventSuggestions:(id)arg1 contactSuggestions:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (unsigned int)numberOfSuggestions;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (unsigned long long)numberOfSuggestions;
 - (id)orderedSuggestions;
 - (id)popoverSourceView;
 - (id)secondaryBannerImage;
@@ -101,7 +101,7 @@
 - (void)setSecondaryBannerImageView:(id)arg1;
 - (void)setSuggestionPrefixText:(id)arg1;
 - (void)setSuggestionText:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)suggestionPrefixText;
 - (id)suggestionText;
 

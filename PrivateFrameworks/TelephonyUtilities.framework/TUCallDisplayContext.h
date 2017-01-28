@@ -40,7 +40,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialQueue;
 @property (nonatomic, copy) NSString *suggestedName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_initializeStateWithCall:(id)arg1;
@@ -56,11 +56,11 @@
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCall:(id)arg1 serialQueue:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (int)legacyAddressBookIdentifier;
 - (id)location;

@@ -4,48 +4,48 @@
 
 @interface HMFMessageInternal : NSObject <NSCopying> {
     HMFMessageDestination * _destination;
-    BOOL  _entitledMessage;
+    bool  _entitledMessage;
     NSUUID * _identifier;
-    BOOL  _internalMessage;
-    BOOL  _locationAuthorizedMessage;
+    bool  _internalMessage;
+    bool  _locationAuthorizedMessage;
     NSDictionary * _messagePayload;
     NSString * _name;
-    BOOL  _remoteSource;
-    id /* block */  _responseHandler;
+    bool  _remoteSource;
+    id  _responseHandler;
     HMFMessageTransport * _transport;
 }
 
 @property (nonatomic, retain) HMFMessageDestination *destination;
-@property (getter=isEntitledMessage, nonatomic) BOOL entitledMessage;
+@property (getter=isEntitledMessage, nonatomic) bool entitledMessage;
 @property (nonatomic, copy) NSUUID *identifier;
-@property (getter=isInternalMessage, nonatomic) BOOL internalMessage;
-@property (getter=isLocationAuthorizedMessage, nonatomic) BOOL locationAuthorizedMessage;
+@property (getter=isInternalMessage, nonatomic) bool internalMessage;
+@property (getter=isLocationAuthorizedMessage, nonatomic) bool locationAuthorizedMessage;
 @property (nonatomic, copy) NSDictionary *messagePayload;
 @property (nonatomic, copy) NSString *name;
-@property (getter=isRemoteSource, nonatomic) BOOL remoteSource;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (getter=isRemoteSource, nonatomic) bool remoteSource;
+@property (nonatomic, copy) id responseHandler;
 @property (nonatomic) HMFMessageTransport *transport;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)destination;
 - (id)identifier;
-- (BOOL)isEntitledMessage;
-- (BOOL)isInternalMessage;
-- (BOOL)isLocationAuthorizedMessage;
-- (BOOL)isRemoteSource;
+- (bool)isEntitledMessage;
+- (bool)isInternalMessage;
+- (bool)isLocationAuthorizedMessage;
+- (bool)isRemoteSource;
 - (id)messagePayload;
 - (id)name;
-- (id /* block */)responseHandler;
+- (id)responseHandler;
 - (void)setDestination:(id)arg1;
-- (void)setEntitledMessage:(BOOL)arg1;
+- (void)setEntitledMessage:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setInternalMessage:(BOOL)arg1;
-- (void)setLocationAuthorizedMessage:(BOOL)arg1;
+- (void)setInternalMessage:(bool)arg1;
+- (void)setLocationAuthorizedMessage:(bool)arg1;
 - (void)setMessagePayload:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setRemoteSource:(BOOL)arg1;
-- (void)setResponseHandler:(id /* block */)arg1;
+- (void)setRemoteSource:(bool)arg1;
+- (void)setResponseHandler:(id)arg1;
 - (void)setTransport:(id)arg1;
 - (id)transport;
 

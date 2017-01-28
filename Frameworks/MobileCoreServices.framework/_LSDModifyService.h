@@ -8,6 +8,6 @@
 + (Class)clientClass;
 + (unsigned short)connectionType;
 + (id)dispatchQueue;
-+ (BOOL)isEnabled;
++ (bool)isEnabled;
 
 @end

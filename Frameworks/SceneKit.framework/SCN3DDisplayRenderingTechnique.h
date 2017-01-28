@@ -3,14 +3,14 @@
  */
 
 @interface SCN3DDisplayRenderingTechnique : SCNTechnique <SCNStereoscopicRenderingTechnique> {
-    int  _displayLayout;
+    long long  _displayLayout;
 }
 
-@property (nonatomic, readonly) int displayLayout;
+@property (nonatomic, readonly) long long displayLayout;
 @property (nonatomic) double interaxialDistance;
 
-- (int)displayLayout;
-- (id)initWithDisplayLayout:(int)arg1;
+- (long long)displayLayout;
+- (id)initWithDisplayLayout:(long long)arg1;
 - (double)interaxialDistance;
 - (void)setInteraxialDistance:(double)arg1;
 

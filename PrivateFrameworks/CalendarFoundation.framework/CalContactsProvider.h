@@ -18,7 +18,7 @@
 - (void)meCardDidChange:(id)arg1;
 - (id)myAvatarEncodedString;
 - (id)myFullName;
-- (id)myNameWithStyle:(int)arg1;
+- (id)myNameWithStyle:(long long)arg1;
 - (id)myShortDisplayName;
 - (void)setStore:(id)arg1;
 - (id)store;

@@ -9,12 +9,12 @@
     SEL  _detailPressedAction;
     NSLayoutConstraint * _iconLeadingConstraint;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _insets;
-    BOOL  _isDetail;
+    bool  _isDetail;
     GKTurnBasedMatch * _match;
     GKTurnBasedParticipant * _participant;
     NSLayoutConstraint * _statusImageTrailingConstraint;
@@ -29,8 +29,8 @@
 @property (nonatomic, retain) NSLayoutConstraint *detailButtonConstraint;
 @property (nonatomic) SEL detailPressedAction;
 @property (nonatomic, retain) NSLayoutConstraint *iconLeadingConstraint;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property (nonatomic) BOOL isDetail;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
+@property (nonatomic) bool isDetail;
 @property (nonatomic, retain) GKTurnBasedMatch *match;
 @property (nonatomic, retain) GKTurnBasedParticipant *participant;
 @property (nonatomic, retain) NSLayoutConstraint *statusImageTrailingConstraint;
@@ -39,7 +39,7 @@
 @property (nonatomic, retain) GKContiguousContainerView *textContainerView;
 @property (nonatomic, retain) GKLabel *topLabel;
 
-+ (float)defaultRowHeight;
++ (double)defaultRowHeight;
 + (id)itemHeightList;
 + (void)registerCellClassesForCollectionView:(id)arg1;
 
@@ -54,19 +54,19 @@
 - (void)didUpdateModel;
 - (void)establishConstraints;
 - (id)iconLeadingConstraint;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
-- (BOOL)isDetail;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
+- (bool)isDetail;
 - (id)match;
-- (BOOL)matchWantsLocalPlayerAttention;
+- (bool)matchWantsLocalPlayerAttention;
 - (id)participant;
 - (void)setBottomLabel:(id)arg1;
 - (void)setDetailButton:(id)arg1;
 - (void)setDetailButtonConstraint:(id)arg1;
 - (void)setDetailPressedAction:(SEL)arg1;
 - (void)setIconLeadingConstraint:(id)arg1;
-- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setIsDetail:(BOOL)arg1;
+- (void)setInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setIsDetail:(bool)arg1;
 - (void)setMatch:(id)arg1;
 - (void)setParticipant:(id)arg1;
 - (void)setStatusImageTrailingConstraint:(id)arg1;

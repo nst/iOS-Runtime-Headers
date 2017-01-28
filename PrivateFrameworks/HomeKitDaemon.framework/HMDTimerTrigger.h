@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, retain) NSString *timerID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)validateWholeMinuteDate:(id)arg1 onCalendar:(id)arg2;
 
 - (void).cxx_destruct;
@@ -35,19 +35,19 @@
 - (void)_handleUpdateTimerTriggerPropertiesRequest:(id)arg1;
 - (id)_nextFireDate;
 - (id)_nextSignificantEventFireDate;
-- (BOOL)_reactivateFireDateTrigger:(id)arg1;
-- (BOOL)_reactivateSignificantEventTrigger:(id)arg1;
-- (BOOL)_reactivateTrigger:(id)arg1;
+- (bool)_reactivateFireDateTrigger:(id)arg1;
+- (bool)_reactivateSignificantEventTrigger:(id)arg1;
+- (bool)_reactivateTrigger:(id)arg1;
 - (void)_reactiveTriggerAfterDelay;
 - (void)_registerForMessages;
 - (id)_serializeForAdd;
-- (BOOL)_shouldExecuteActionSet;
+- (bool)_shouldExecuteActionSet;
 - (void)_startTimer:(id)arg1;
 - (void)_startTimerWithFireDate:(id)arg1;
 - (void)_startTimerWithSignificantEventDate:(id)arg1;
 - (void)_stopTimer;
 - (void)_timerTriggered;
-- (void)activate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)activate:(bool)arg1 completionHandler:(id)arg2;
 - (void)completeConfiguration;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
 - (id)currentFireDate;
@@ -82,7 +82,7 @@
 - (id)timer;
 - (id)timerID;
 - (void)timerTriggered;
-- (unsigned int)triggerType;
+- (unsigned long long)triggerType;
 - (id)validateRecurrence:(id)arg1;
 - (id)validateRecurrences:(id)arg1;
 - (id)validateSignificantOffset:(id)arg1;

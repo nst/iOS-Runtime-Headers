@@ -15,12 +15,12 @@
 - (id)country;
 - (void)dealloc;
 - (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(id)arg2 values:(struct Mem {}**)arg3 count:(int)arg4;
-- (BOOL)hasCallback;
+- (bool)hasCallback;
 - (id)homeCountryCode;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)phoneNumber;
 - (id)predicateFormat;
-- (id)queryJoinsInCompound:(BOOL)arg1 predicateIdentifier:(int)arg2;
+- (id)queryJoinsInCompound:(bool)arg1 predicateIdentifier:(int)arg2;
 - (id)queryWhereStringForPredicateIdentifier:(int)arg1;
 - (void)setCountry:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;

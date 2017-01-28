@@ -4,8 +4,9 @@
 
 @interface BWImageQueueSinkNode : BWSinkNode {
     NSMutableArray * _bufferIDsInQueue;
-    unsigned int  _enqueuedBufferContextCount;
+    unsigned long long  _enqueuedBufferContextCount;
     struct _EnqueuedBufferContext {} ** _enqueuedBufferContexts;
+    unsigned long long  _framesSinceLastHarmonicCompensation;
     NSObject<OS_os_transaction> * _holdingBuffersForClientAssertion;
     struct _CAImageQueue { } * _imageQueue;
     unsigned int  _imageQueueCapacity;
@@ -16,17 +17,18 @@
     double  _lastDisplayTime;
     double  _lastFramePTS;
     double  _lateFrameIntervalStartPTS;
-    unsigned int  _numFramesReceived;
+    unsigned long long  _numFramesReceived;
     struct OpaqueFigPreviewSynchronizer { } * _previewSynchronizer;
     <BWImageQueueSinkNodePreviewTapDelegate> * _previewTapDelegate;
-    BOOL  _resetPreviewSynchronizerOnNextFrame;
+    double  _previousFrameDuration;
+    bool  _resetPreviewSynchronizerOnNextFrame;
     unsigned long long * _sharedBufferIDs;
-    unsigned int  _sharedSurfaceCount;
+    unsigned long long  _sharedSurfaceCount;
     NSMutableArray * _sharedSurfaces;
-    BOOL  _surfaceRegistrationComplete;
+    bool  _surfaceRegistrationComplete;
     struct OpaqueFigSimpleMutex { } * _surfaceRegistrationMutex;
     int  _syncStrategy;
-    BOOL  _useGlobalIOSurfaces;
+    bool  _useGlobalIOSurfaces;
 }
 
 @property (nonatomic, readonly) struct _CAImageQueue { }*imageQueue;
@@ -45,10 +47,10 @@
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
-- (BOOL)hasNonLiveConfigurationChanges;
+- (bool)hasNonLiveConfigurationChanges;
 - (struct _CAImageQueue { }*)imageQueue;
 - (unsigned int)imageQueueSlot;
-- (id)initWithHFRSupport:(BOOL)arg1;
+- (id)initWithHFRSupport:(bool)arg1;
 - (void)inputConnectionWillBeEnabled;
 - (void)makeCurrentConfigurationLive;
 - (id)nodeSubType;

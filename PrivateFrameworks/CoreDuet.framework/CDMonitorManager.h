@@ -3,8 +3,8 @@
  */
 
 @interface CDMonitorManager : NSObject {
-    id /* block */  _generalHistoricalHandler;
-    id /* block */  _generalInstantHandler;
+    id  _generalHistoricalHandler;
+    id  _generalInstantHandler;
     NSMutableDictionary * _historicalHandlerMap;
     NSMutableDictionary * _instantHandlerMap;
     NSMutableSet * _lazyMonitorNames;
@@ -21,12 +21,12 @@
 - (id)_allStreamNames;
 - (id)_createMonitorManagers;
 - (id)_currentEventForStreamName:(id)arg1;
-- (BOOL)_hasMonitorForStreamName:(id)arg1;
+- (bool)_hasMonitorForStreamName:(id)arg1;
 - (id)_lastUpdateForStreamName:(id)arg1;
 - (id)_monitorForStreamName:(id)arg1;
 - (void)_removeMonitorForStreamName:(id)arg1;
-- (void)_setHistoricalHandler:(id /* block */)arg1 forStreamName:(id)arg2;
-- (void)_setInstantHandler:(id /* block */)arg1 forStreamName:(id)arg2;
+- (void)_setHistoricalHandler:(id)arg1 forStreamName:(id)arg2;
+- (void)_setInstantHandler:(id)arg1 forStreamName:(id)arg2;
 - (void)_startMonitorForStreamName:(id)arg1;
 - (void)_stopMonitorForStreamName:(id)arg1;
 - (void)_updateForStreamName:(id)arg1;
@@ -34,17 +34,17 @@
 - (id)currentEvent;
 - (id)currentEventForStream:(id)arg1;
 - (void)deliverNotificationEvent:(id)arg1;
-- (BOOL)hasMonitor:(id)arg1;
+- (bool)hasMonitor:(id)arg1;
 - (id)init;
 - (id)initWithEventStreams:(id)arg1;
 - (id)lastUpdate;
 - (id)lastUpdateForStream:(id)arg1;
 - (void)populateCurrentValueForStreamName:(id)arg1;
 - (void)removeMonitor:(id)arg1;
-- (void)setHistoricalHandler:(id /* block */)arg1;
-- (void)setHistoricalHandler:(id /* block */)arg1 forStream:(id)arg2;
-- (void)setInstantHandler:(id /* block */)arg1;
-- (void)setInstantHandler:(id /* block */)arg1 forStream:(id)arg2;
+- (void)setHistoricalHandler:(id)arg1;
+- (void)setHistoricalHandler:(id)arg1 forStream:(id)arg2;
+- (void)setInstantHandler:(id)arg1;
+- (void)setInstantHandler:(id)arg1 forStream:(id)arg2;
 - (void)start;
 - (void)startMonitorForStream:(id)arg1;
 - (void)stop;

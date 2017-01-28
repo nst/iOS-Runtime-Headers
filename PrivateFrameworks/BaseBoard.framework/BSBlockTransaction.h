@@ -3,7 +3,7 @@
  */
 
 @interface BSBlockTransaction : BSTransaction {
-    id /* block */  _block;
+    id  _block;
     NSString * _debugName;
 }
 
@@ -13,7 +13,7 @@
 - (id)_descriptionProem;
 - (void)dealloc;
 - (id)debugName;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (void)setDebugName:(id)arg1;
 
 @end

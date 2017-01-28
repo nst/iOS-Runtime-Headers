@@ -7,13 +7,13 @@
     NSString * _entityType;
     NSNumber * _identifier;
     NSLock * _lock;
-    id /* block */  _outputBlock;
+    id  _outputBlock;
     NSMutableDictionary * _parameters;
 }
 
 @property (copy) NSString *entityType;
 @property (copy) NSNumber *identifier;
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
 - (id)_imageDictionaryFromPhotoUpload:(id)arg1;
@@ -23,10 +23,10 @@
 - (id)identifier;
 - (id)initWithClientContext:(id)arg1;
 - (void)main;
-- (id /* block */)outputBlock;
+- (id)outputBlock;
 - (void)setEntityType:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (void)setOutputBlock:(id)arg1;
 - (void)setValue:(id)arg1 forProfileField:(id)arg2;
 
 @end

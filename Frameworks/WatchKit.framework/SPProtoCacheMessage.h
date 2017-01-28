@@ -15,10 +15,10 @@
 @property (nonatomic, retain) NSString *assetKey;
 @property (nonatomic) int cacheType;
 @property (nonatomic, retain) NSString *gizmoCacheIdentifier;
-@property (nonatomic, readonly) BOOL hasAssetData;
-@property (nonatomic, readonly) BOOL hasAssetKey;
-@property (nonatomic, readonly) BOOL hasGizmoCacheIdentifier;
-@property (nonatomic, readonly) BOOL hasSyncData;
+@property (nonatomic, readonly) bool hasAssetData;
+@property (nonatomic, readonly) bool hasAssetKey;
+@property (nonatomic, readonly) bool hasGizmoCacheIdentifier;
+@property (nonatomic, readonly) bool hasSyncData;
 @property (nonatomic) int messageType;
 @property (nonatomic, retain) SPProtoCacheSyncData *syncData;
 
@@ -31,15 +31,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)gizmoCacheIdentifier;
-- (BOOL)hasAssetData;
-- (BOOL)hasAssetKey;
-- (BOOL)hasGizmoCacheIdentifier;
-- (BOOL)hasSyncData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAssetData;
+- (bool)hasAssetKey;
+- (bool)hasGizmoCacheIdentifier;
+- (bool)hasSyncData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)messageType;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAssetData:(id)arg1;
 - (void)setAssetKey:(id)arg1;
 - (void)setCacheType:(int)arg1;

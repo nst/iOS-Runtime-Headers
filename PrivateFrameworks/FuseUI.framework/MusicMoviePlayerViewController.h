@@ -5,6 +5,6 @@
 @interface MusicMoviePlayerViewController : MPMoviePlayerViewController
 
 - (id)initWithContentURL:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

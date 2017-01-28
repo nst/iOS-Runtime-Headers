@@ -13,22 +13,22 @@
 - (void)clearTrafficIncidentBulletinWithAlertID:(NSData *)arg1;
 - (void)clearTrafficIncidentsBulletin;
 - (void)clearTransitAlightAlertBulletin;
-- (void)fetchCurrentAnnouncement:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GEOAnnouncement *, void*
-- (void)fetchDevicePushToken:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, void*
+- (void)fetchCurrentAnnouncement:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, GEOAnnouncement *, void*
+- (void)fetchDevicePushToken:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSData *, void*
 - (void)fetchProblemStatus;
-- (void)fetchUserRoutingPreferencesWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, MSPUserRoutingPreferences *, NSError *, void*
-- (void)problemStatusResponseWithNotificationID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, GEORPProblemStatusResponse *, void*
+- (void)fetchUserRoutingPreferencesWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, MSPUserRoutingPreferences *, NSError *, void*
+- (void)problemStatusResponseWithNotificationID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, GEORPProblemStatusResponse *, void*
 - (void)registerForTopic;
 - (void)removeProblemStatusResponseWithNotificationID:(NSString *)arg1;
 - (void)resetShownAnnouncements;
-- (void)setShouldUseDevAPNS:(BOOL)arg1;
-- (void)shouldUseDevAPNS:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)setShouldUseDevAPNS:(bool)arg1;
+- (void)shouldUseDevAPNS:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, void*
 - (void)showParkedCarBulletinForEvent:(RTVehicleEvent *)arg1;
 - (void)showParkedCarBulletinForEvent:(RTVehicleEvent *)arg1 afterDelay:(double)arg2;
 - (void)showParkedCarReplacementBulletinForEvent:(RTVehicleEvent *)arg1 replacingEvent:(RTVehicleEvent *)arg2;
 - (void)showParkedCarReplacementBulletinForEvent:(RTVehicleEvent *)arg1 replacingEvent:(RTVehicleEvent *)arg2 afterDelay:(double)arg3;
 - (void)showTrafficConditionsBulletinWithTitle:(NSString *)arg1 message:(NSString *)arg2 actionURL:(NSURL *)arg3;
-- (void)showTrafficIncidentAlertWithID:(NSData *)arg1 type:(unsigned int)arg2 title:(NSString *)arg3 description:(NSString *)arg4;
+- (void)showTrafficIncidentAlertWithID:(NSData *)arg1 type:(unsigned long long)arg2 title:(NSString *)arg3 description:(NSString *)arg4;
 - (void)showTransitAlightAlertWithTitle:(NSString *)arg1 message:(NSString *)arg2;
 - (void)simulateAnnouncement:(GEOAnnouncement *)arg1;
 - (void)simulateProblemResolution;

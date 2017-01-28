@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)addedObjects;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)initWithAddedObjects:(id)arg1 replacedObjects:(id)arg2 replacementObjects:(id)arg3 removedObjects:(id)arg4;
 - (id)removedObjects;
 - (id)replacedObjects;

@@ -4,6 +4,6 @@
 
 @interface PXUITilingControllerZoomAnimationCoordinator : PXTilingControllerZoomAnimationCoordinator
 
-- (void)moveTile:(id)arg1 toView:(id)arg2 restorationBlock:(out id /* block */*)arg3;
+- (void)moveTile:(id)arg1 toView:(id)arg2 restorationBlock:(out id*)arg3;
 
 @end

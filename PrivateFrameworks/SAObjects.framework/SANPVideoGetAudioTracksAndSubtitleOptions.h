@@ -12,7 +12,7 @@
 - (id)desiredLanguage;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setDesiredLanguage:(id)arg1;
 
 @end

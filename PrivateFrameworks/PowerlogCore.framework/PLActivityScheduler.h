@@ -17,7 +17,7 @@
 - (void)cancelActivityWithIdentifier:(id)arg1;
 - (id)init;
 - (id)lastCompletedDateWithIdentifier:(id)arg1;
-- (void)scheduleActivityWithIdentifier:(id)arg1 withCriteria:(id)arg2 withMustRunCriterion:(id)arg3 withQueue:(id)arg4 withInterruptBlock:(id /* block */)arg5 withActivityBlock:(id /* block */)arg6;
+- (void)scheduleActivityWithIdentifier:(id)arg1 withCriteria:(id)arg2 withMustRunCriterion:(id)arg3 withQueue:(id)arg4 withInterruptBlock:(id)arg5 withActivityBlock:(id)arg6;
 - (void)setActivities:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)workQueue;

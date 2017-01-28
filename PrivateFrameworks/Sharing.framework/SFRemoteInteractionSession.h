@@ -3,34 +3,34 @@
  */
 
 @interface SFRemoteInteractionSession : NSObject <NSSecureCoding, SFXPCInterface> {
-    BOOL  _activateCalled;
+    bool  _activateCalled;
     SDRemoteInteractionAgent * _agent;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    id /* block */  _interruptionHandler;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
-    id /* block */  _invalidationHandler;
+    id  _interruptionHandler;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
+    id  _invalidationHandler;
     SFDevice * _peerDevice;
     SFSession * _remoteSession;
-    id /* block */  _textSessionDidBegin;
-    id /* block */  _textSessionDidChange;
-    id /* block */  _textSessionDidEnd;
+    id  _textSessionDidBegin;
+    id  _textSessionDidChange;
+    id  _textSessionDidEnd;
     NSXPCConnection * _xpcCnx;
 }
 
 @property (nonatomic, retain) SDRemoteInteractionAgent *agent;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic, copy) id /* block */ interruptionHandler;
-@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, copy) id interruptionHandler;
+@property (nonatomic, copy) id invalidationHandler;
 @property (nonatomic, retain) SFDevice *peerDevice;
-@property (nonatomic, copy) id /* block */ textSessionDidBegin;
-@property (nonatomic, copy) id /* block */ textSessionDidChange;
-@property (nonatomic, copy) id /* block */ textSessionDidEnd;
+@property (nonatomic, copy) id textSessionDidBegin;
+@property (nonatomic, copy) id textSessionDidChange;
+@property (nonatomic, copy) id textSessionDidEnd;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_activateWithCompletion:(id /* block */)arg1;
+- (void)_activateWithCompletion:(id)arg1;
 - (void)_ensureXPCStarted;
 - (void)_interrupted;
 - (void)_invalidate;
@@ -42,7 +42,7 @@
 - (void)_sessionInsertText:(id)arg1;
 - (void)_sessionSetText:(id)arg1;
 - (void)_sessionStart;
-- (void)activateWithCompletion:(id /* block */)arg1;
+- (void)activateWithCompletion:(id)arg1;
 - (id)agent;
 - (void)clearText;
 - (void)commitText;
@@ -53,24 +53,24 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)insertText:(id)arg1;
-- (id /* block */)interruptionHandler;
+- (id)interruptionHandler;
 - (void)invalidate;
-- (id /* block */)invalidationHandler;
+- (id)invalidationHandler;
 - (id)peerDevice;
 - (void)remoteInteractionSessionTextSessionDidBegin:(id)arg1;
 - (void)remoteInteractionSessionTextSessionDidChange:(id)arg1;
 - (void)remoteInteractionSessionTextSessionDidEnd:(id)arg1;
 - (void)setAgent:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setInterruptionHandler:(id /* block */)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setInterruptionHandler:(id)arg1;
+- (void)setInvalidationHandler:(id)arg1;
 - (void)setPeerDevice:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setTextSessionDidBegin:(id /* block */)arg1;
-- (void)setTextSessionDidChange:(id /* block */)arg1;
-- (void)setTextSessionDidEnd:(id /* block */)arg1;
-- (id /* block */)textSessionDidBegin;
-- (id /* block */)textSessionDidChange;
-- (id /* block */)textSessionDidEnd;
+- (void)setTextSessionDidBegin:(id)arg1;
+- (void)setTextSessionDidChange:(id)arg1;
+- (void)setTextSessionDidEnd:(id)arg1;
+- (id)textSessionDidBegin;
+- (id)textSessionDidChange;
+- (id)textSessionDidEnd;
 
 @end

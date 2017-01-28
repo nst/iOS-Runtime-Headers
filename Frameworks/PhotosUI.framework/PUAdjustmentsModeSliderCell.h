@@ -4,54 +4,54 @@
 
 @interface PUAdjustmentsModeSliderCell : UICollectionViewCell <PUPhotoEditLayoutStaticAdaptable> {
     PUAdjustmentsMode * _adjustmentsMode;
-    BOOL  _enabled;
-    int  _layoutOrientation;
+    bool  _enabled;
+    long long  _layoutOrientation;
     PUPhotoEditLevelSlider * _levelSlider;
     NSArray * _levelSliderConstraints;
-    float  _sliderShortSideLength;
+    double  _sliderShortSideLength;
     NSString * _title;
     PUAdjustmentsModeBadge * _titleBackground;
     NSArray * _titleBackgroundConstraints;
     UILabel * _titleLabel;
     NSArray * _titleLabelConstraints;
-    int  _titleLabelPosition;
-    BOOL  _toggleable;
+    long long  _titleLabelPosition;
+    bool  _toggleable;
 }
 
 @property (nonatomic, retain) PUAdjustmentsMode *adjustmentsMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int layoutOrientation;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long layoutOrientation;
 @property (nonatomic, retain) PUPhotoEditLevelSlider *levelSlider;
-@property (nonatomic) float sliderShortSideLength;
+@property (nonatomic) double sliderShortSideLength;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) int titleLabelPosition;
-@property (getter=isToggleable, nonatomic) BOOL toggleable;
+@property (nonatomic) long long titleLabelPosition;
+@property (getter=isToggleable, nonatomic) bool toggleable;
 
-+ (float)sliderTopMarginVerticalForTitleLabelPosition:(int)arg1;
++ (double)sliderTopMarginVerticalForTitleLabelPosition:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_updateTitleViews;
 - (id)adjustmentsMode;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isEnabled;
-- (BOOL)isToggleable;
-- (int)layoutOrientation;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEnabled;
+- (bool)isToggleable;
+- (long long)layoutOrientation;
 - (id)levelSlider;
 - (void)setAdjustmentsMode:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setLevelSlider:(id)arg1;
-- (void)setSliderShortSideLength:(float)arg1;
+- (void)setSliderShortSideLength:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleLabelPosition:(int)arg1;
-- (void)setToggleable:(BOOL)arg1;
-- (void)setupWithLayoutOrientation:(int)arg1;
-- (float)sliderShortSideLength;
+- (void)setTitleLabelPosition:(long long)arg1;
+- (void)setToggleable:(bool)arg1;
+- (void)setupWithLayoutOrientation:(long long)arg1;
+- (double)sliderShortSideLength;
 - (id)title;
-- (int)titleLabelPosition;
+- (long long)titleLabelPosition;
 - (void)updateConstraints;
 
 @end

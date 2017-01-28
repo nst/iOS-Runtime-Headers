@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) FMFSession *session;
 @property (readonly) Class superclass;
 
@@ -26,13 +26,13 @@
 - (oneway void)didUpdateFavorites:(id)arg1;
 - (oneway void)didUpdateFollowers:(id)arg1;
 - (oneway void)didUpdateFollowing:(id)arg1;
-- (oneway void)didUpdateHideFromFollowersStatus:(BOOL)arg1;
+- (oneway void)didUpdateHideFromFollowersStatus:(bool)arg1;
 - (oneway void)didUpdateLocations:(id)arg1;
 - (oneway void)didUpdatePendingOffersForHandles:(id)arg1;
 - (oneway void)failedToGetLocationForHandle:(id)arg1 error:(id)arg2;
 - (id)initWithFMFSession:(id)arg1;
 - (oneway void)modelDidLoad;
-- (oneway void)networkReachabilityUpdated:(BOOL)arg1;
+- (oneway void)networkReachabilityUpdated:(bool)arg1;
 - (oneway void)sendMappingPacket:(id)arg1 toHandle:(id)arg2;
 - (id)session;
 - (oneway void)setLocations:(id)arg1;

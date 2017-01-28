@@ -3,17 +3,17 @@
  */
 
 @interface IMPurgableObject : NSObject {
-    id /* block */  _cleanupBlock;
+    id  _cleanupBlock;
     id  _instanceObject;
     NSObject<OS_dispatch_queue> * _queue;
-    id /* block */  _setupBlock;
+    id  _setupBlock;
 }
 
 - (void)_cleanupInstance;
 - (void)_receivedMemoryWarning:(id)arg1;
 - (void)_setupInstance;
 - (void)dealloc;
-- (id)initWithSetupBlock:(id /* block */)arg1 cleanupBlock:(id /* block */)arg2 queue:(id)arg3;
+- (id)initWithSetupBlock:(id)arg1 cleanupBlock:(id)arg2 queue:(id)arg3;
 - (id)instance;
 
 @end

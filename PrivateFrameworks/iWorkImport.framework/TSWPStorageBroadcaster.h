@@ -12,7 +12,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::less<id<TSWPStorageObserver> > > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _observers;
@@ -25,7 +25,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::less<id<TSWPStorageParagraphObserver> > > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _paragraphObservers;
@@ -35,11 +35,11 @@
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1;
 - (void)addParagraphObserver:(id)arg1;
-- (void)broadcastStorage:(id)arg1 didChangeParagraphsInIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)broadcastStorage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4;
-- (void)broadcastStorage:(id)arg1 didChangeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 delta:(int)arg3 broadcastKind:(int)arg4 attributeKindChanges:(id)arg5;
-- (void)broadcastStorage:(id)arg1 didDeleteParagraphsInIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)broadcastStorage:(id)arg1 didInsertParagraphsInIndexRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)broadcastStorage:(id)arg1 didChangeParagraphsInIndexRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)broadcastStorage:(id)arg1 didChangeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 delta:(long long)arg3 broadcastKind:(int)arg4;
+- (void)broadcastStorage:(id)arg1 didChangeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 delta:(long long)arg3 broadcastKind:(int)arg4 attributeKindChanges:(id)arg5;
+- (void)broadcastStorage:(id)arg1 didDeleteParagraphsInIndexRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)broadcastStorage:(id)arg1 didInsertParagraphsInIndexRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)dealloc;
 - (void)removeAllObservers;
 - (void)removeObserver:(id)arg1;

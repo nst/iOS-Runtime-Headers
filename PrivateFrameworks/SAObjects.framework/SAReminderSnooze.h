@@ -14,7 +14,7 @@
 - (id)groupIdentifier;
 - (id)offset;
 - (id)reminderIdentifierList;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setOffset:(id)arg1;
 - (void)setReminderIdentifierList:(id)arg1;
 

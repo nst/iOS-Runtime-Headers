@@ -4,24 +4,24 @@
 
 @interface _UITabBarTVTransitioner : NSObject <_UITabBarControllerInterruptibleTransitioning> {
     <UIViewControllerContextTransitioning> * _transitionContext;
-    BOOL  _transitionFromRight;
+    bool  _transitionFromRight;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <UIViewControllerContextTransitioning> *transitionContext;
-@property (nonatomic) BOOL transitionFromRight;
+@property (nonatomic) bool transitionFromRight;
 
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (void)finishTransition;
 - (void)interruptTabBarControllerTransition;
 - (void)setTransitionContext:(id)arg1;
-- (void)setTransitionFromRight:(BOOL)arg1;
+- (void)setTransitionFromRight:(bool)arg1;
 - (id)transitionContext;
 - (double)transitionDuration:(id)arg1;
-- (BOOL)transitionFromRight;
+- (bool)transitionFromRight;
 
 @end

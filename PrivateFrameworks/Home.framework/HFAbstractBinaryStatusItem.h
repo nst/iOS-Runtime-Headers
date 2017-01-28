@@ -6,7 +6,7 @@
 
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)characteristicType;
-- (id /* block */)isAbnormalTest;
+- (id)isAbnormalTest;
 - (id)multipleAbnormalServicesFormatString;
 - (id)multipleAbnormalServicesWithRoomFormatString;
 - (id)oneAbnormalServiceFormatString;

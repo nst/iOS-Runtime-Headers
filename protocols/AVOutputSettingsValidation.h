@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)validateAudioOutputSettings:(AVAudioOutputSettings *)arg1 reason:(id*)arg2;
-- (BOOL)validateVideoOutputSettings:(AVVideoOutputSettings *)arg1 reason:(id*)arg2;
+- (bool)validateAudioOutputSettings:(AVAudioOutputSettings *)arg1 reason:(id*)arg2;
+- (bool)validateVideoOutputSettings:(AVVideoOutputSettings *)arg1 reason:(id*)arg2;
 
 @end

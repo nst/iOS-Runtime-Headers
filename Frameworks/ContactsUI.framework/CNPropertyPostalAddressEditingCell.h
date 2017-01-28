@@ -16,8 +16,8 @@
 - (id)firstResponderItem;
 - (void)layoutChanged:(id)arg1;
 - (void)layoutMarginsDidChange;
-- (float)leftValueMargin;
-- (float)rightContentMargin;
+- (double)leftValueMargin;
+- (double)rightContentMargin;
 - (void)setAddressEditor:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEditorSeparatorColor:(id)arg1;

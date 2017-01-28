@@ -3,7 +3,7 @@
  */
 
 @interface TSUIgnoreInteractionEventsSafeWrapper : NSObject {
-    id /* block */  _operationCompletionHandler;
+    id  _operationCompletionHandler;
     <TSUTraceableResourceToken> * _token;
 }
 

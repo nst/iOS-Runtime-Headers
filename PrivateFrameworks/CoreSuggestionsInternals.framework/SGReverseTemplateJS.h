@@ -14,8 +14,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)emailToJsonLd:(id)arg1 reply:(id /* block */)arg2;
-- (void)emailToOutput:(id)arg1 reply:(id /* block */)arg2;
+- (void)emailToJsonLd:(id)arg1 reply:(id)arg2;
+- (void)emailToOutput:(id)arg1 reply:(id)arg2;
 - (void)freeJSContext;
 - (id)getJSContext;
 - (void)holdXpcTransactionForShortDelay;
@@ -24,12 +24,12 @@
 - (id)loadJSFromASCIIFile:(id)arg1;
 - (id)outputExceptionsFromOutput:(id)arg1;
 - (id)payloadToOutputWithEntryPoint:(id)arg1 arguments:(id)arg2;
-- (void)payloadToOutputWithEntryPoint:(id)arg1 arguments:(id)arg2 reply:(id /* block */)arg3;
+- (void)payloadToOutputWithEntryPoint:(id)arg1 arguments:(id)arg2 reply:(id)arg3;
 - (id)processLoadRequestWithFileName:(id)arg1;
-- (void)schemaOrgToOutput:(id)arg1 reply:(id /* block */)arg2;
+- (void)schemaOrgToOutput:(id)arg1 reply:(id)arg2;
 - (void)setAssetPath:(id)arg1 locale:(id)arg2;
-- (BOOL)shouldDownloadFull:(id)arg1;
-- (void)shouldDownloadFull:(id)arg1 reply:(id /* block */)arg2;
-- (void)textMessageToOutput:(id)arg1 reply:(id /* block */)arg2;
+- (bool)shouldDownloadFull:(id)arg1;
+- (void)shouldDownloadFull:(id)arg1 reply:(id)arg2;
+- (void)textMessageToOutput:(id)arg1 reply:(id)arg2;
 
 @end

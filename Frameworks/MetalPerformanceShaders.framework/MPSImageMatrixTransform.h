@@ -4,6 +4,6 @@
 
 @interface MPSImageMatrixTransform : MPSImageTransform
 
-+ (id)transformWithMatrix:(const float*)arg1 inChannels:(unsigned int)arg2 outChannels:(unsigned int)arg3;
++ (id)transformWithMatrix:(const float*)arg1 inChannels:(unsigned long long)arg2 outChannels:(unsigned long long)arg3;
 
 @end

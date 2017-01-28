@@ -21,8 +21,8 @@
     int  mParagraphIndex;
     GQSDocument * mProcessorState;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  mScale;
     <GQHContext> * mShapeContext;
     int  mShapeIDCounter;
@@ -33,37 +33,37 @@
     unsigned int  mTextScale;
 }
 
-- (struct __CFString { }*)addCacheForCellStyle:(id)arg1 fillStyle:(id)arg2 cellClass:(Class)arg3 vectorStyles:(id*)arg4 groupLevel:(unsigned short)arg5 hasFormula:(BOOL)arg6 baseClassString:(struct __CFString { }*)arg7 cssCachedStyle:(id)arg8;
-- (struct __CFString { }*)addCachedClassStringForTextStyle:(id)arg1 implicitStyle:(id)arg2 isColoredBackground:(BOOL)arg3 outlineLevel:(int)arg4 outlineType:(int)arg5 isSpan:(BOOL)arg6 baseClassString:(struct __CFString { }*)arg7 cssCachedStyle:(id)arg8;
+- (struct __CFString { }*)addCacheForCellStyle:(id)arg1 fillStyle:(id)arg2 cellClass:(Class)arg3 vectorStyles:(id*)arg4 groupLevel:(unsigned short)arg5 hasFormula:(bool)arg6 baseClassString:(struct __CFString { }*)arg7 cssCachedStyle:(id)arg8;
+- (struct __CFString { }*)addCachedClassStringForTextStyle:(id)arg1 implicitStyle:(id)arg2 isColoredBackground:(bool)arg3 outlineLevel:(int)arg4 outlineType:(int)arg5 isSpan:(bool)arg6 baseClassString:(struct __CFString { }*)arg7 cssCachedStyle:(id)arg8;
 - (void)addCachedStyle:(struct __CFString { }*)arg1;
 - (void)addStyle:(struct __CFString { }*)arg1 className:(struct __CFString { }*)arg2 srcStyle:(id)arg3;
-- (void)addedDrawableWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)allowInlineWrap;
-- (struct __CFString { }*)cachedClassStringForCellStyle:(id)arg1 fillStyle:(id)arg2 cellClass:(Class)arg3 vectorStyles:(id*)arg4 groupLevel:(unsigned short)arg5 hasFormula:(BOOL)arg6;
-- (struct __CFString { }*)cachedClassStringForTextStyle:(id)arg1 implicitStyle:(id)arg2 isColoredBackground:(BOOL)arg3 outlineLevel:(int)arg4 outlineType:(int)arg5 isSpan:(BOOL)arg6;
+- (void)addedDrawableWithBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)allowInlineWrap;
+- (struct __CFString { }*)cachedClassStringForCellStyle:(id)arg1 fillStyle:(id)arg2 cellClass:(Class)arg3 vectorStyles:(id*)arg4 groupLevel:(unsigned short)arg5 hasFormula:(bool)arg6;
+- (struct __CFString { }*)cachedClassStringForTextStyle:(id)arg1 implicitStyle:(id)arg2 isColoredBackground:(bool)arg3 outlineLevel:(int)arg4 outlineType:(int)arg5 isSpan:(bool)arg6;
 - (struct __CFString { }*)className:(id)arg1;
-- (BOOL)coloredBackground;
+- (bool)coloredBackground;
 - (struct __CFString { }*)createStyleName:(id)arg1 type:(const char *)arg2;
 - (struct __CFString { }*)createUniqueShapeId:(const char *)arg1;
 - (struct __CFString { }*)cssZOrderClassForDrawable:(id)arg1;
 - (struct __CFString { }*)cssZOrderClassForDrawableUid:(const char *)arg1;
 - (void)dealloc;
-- (BOOL)drawablesNeedCssZOrdering;
+- (bool)drawablesNeedCssZOrdering;
 - (void)enterGraphicObject;
-- (BOOL)finishMainHtml;
+- (bool)finishMainHtml;
 - (struct __CFString { }*)getColorString:(id)arg1;
 - (id)htmlDoc;
 - (id)implicitStyle;
 - (int)indexForStyle:(const char *)arg1;
 - (id)initWithState:(id)arg1;
-- (id)initWithState:(id)arg1 documentSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)initWithState:(id)arg1 needIndexFile:(BOOL)arg2 documentSize:(struct CGSize { float x1; float x2; })arg3;
+- (id)initWithState:(id)arg1 documentSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithState:(id)arg1 needIndexFile:(bool)arg2 documentSize:(struct CGSize { double x1; double x2; })arg3;
 - (void)invalidateTextScale;
 - (void)leaveGraphicObject;
 - (struct __CFString { }*)makeInlineStyle:(struct __CFString { }*)arg1;
 - (struct __CFString { }*)makeInlineStyle:(struct __CFString { }*)arg1 inDocument:(id)arg2;
-- (BOOL)multiColumned;
-- (BOOL)needAbsolutelyPositionedTables;
+- (bool)multiColumned;
+- (bool)needAbsolutelyPositionedTables;
 - (int)outlineLevel;
 - (int)outlineStyleType;
 - (int)paragraphCount;
@@ -71,19 +71,19 @@
 - (void)popImplicitStyle;
 - (id)processorState;
 - (void)pushImplicitStyle:(id)arg1;
-- (struct CGSize { float x1; float x2; })scale;
-- (void)setColoredBackground:(BOOL)arg1;
-- (void)setMultiColumned:(BOOL)arg1;
+- (struct CGSize { double x1; double x2; })scale;
+- (void)setColoredBackground:(bool)arg1;
+- (void)setMultiColumned:(bool)arg1;
 - (void)setOutlineLevel:(int)arg1;
 - (void)setOutlineStyleType:(int)arg1;
 - (void)setParagraphCount:(int)arg1;
 - (void)setParagraphIndex:(int)arg1;
-- (void)setScale:(struct CGSize { float x1; float x2; })arg1;
+- (void)setScale:(struct CGSize { double x1; double x2; })arg1;
 - (void)setTextScale:(unsigned int)arg1;
 - (id)shapeContext;
-- (BOOL)shouldMapLinkWithUrl:(struct __CFString { }*)arg1;
+- (bool)shouldMapLinkWithUrl:(struct __CFString { }*)arg1;
 - (id)tableState;
 - (unsigned int)textScale;
-- (BOOL)useOutline;
+- (bool)useOutline;
 
 @end

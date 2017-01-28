@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSDate *transactionDate;
 @property (nonatomic) unsigned int unpredictableNumber;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)appletIdentifier;
 - (id)countryCode;

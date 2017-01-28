@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSArray *entities;
 @property (nonatomic, copy) NSArray *linkedData;
 
-- (id /* block */).cxx_destruct;
+- (id).cxx_destruct;
 - (id)entities;
 - (id)init;
 - (id)initWithEntities:(id)arg1;

@@ -14,6 +14,6 @@
 
 - (void).cxx_destruct;
 - (id)_initWithRegularExpression:(id)arg1;
-- (BOOL)isMatchedByString:(id)arg1;
+- (bool)isMatchedByString:(id)arg1;
 
 @end

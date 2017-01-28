@@ -9,13 +9,13 @@
 @property (nonatomic) <MFMailComposeRemoteViewControllerDelegate> *delegate;
 
 + (id)exportedInterface;
-+ (id)requestViewControllerWithConnectionHandler:(id /* block */)arg1;
++ (id)requestViewControllerWithConnectionHandler:(id)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void)bodyFinishedDrawing;
 - (id)delegate;
-- (void)serviceCompositionFinishedWithResult:(int)arg1 error:(id)arg2;
-- (void)serviceCompositionRequestsSendWithBody:(id)arg1 recipients:(id)arg2 completion:(id /* block */)arg3;
+- (void)serviceCompositionFinishedWithResult:(long long)arg1 error:(id)arg2;
+- (void)serviceCompositionRequestsSendWithBody:(id)arg1 recipients:(id)arg2 completion:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

@@ -3,13 +3,13 @@
  */
 
 @interface EKUICellRowSeparatorView : UIView {
-    BOOL  _vibrant;
+    bool  _vibrant;
 }
 
-@property (nonatomic) BOOL vibrant;
+@property (nonatomic) bool vibrant;
 
-- (void)setVibrant:(BOOL)arg1;
+- (void)setVibrant:(bool)arg1;
 - (void)tintColorDidChange;
-- (BOOL)vibrant;
+- (bool)vibrant;
 
 @end

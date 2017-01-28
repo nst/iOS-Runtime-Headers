@@ -4,14 +4,14 @@
 
 @interface CNCompoundMultiValuePropertyDescription : CNMultiValuePropertyDescription
 
-@property (nonatomic, readonly) id /* block */ dictionaryTransform;
-@property (nonatomic, readonly) id /* block */ fromDictionaryTransform;
+@property (nonatomic, readonly) id dictionaryTransform;
+@property (nonatomic, readonly) id fromDictionaryTransform;
 @property (nonatomic, readonly) NSArray *summarizationKeys;
 
-- (id /* block */)dictionaryTransform;
-- (id /* block */)fromDictionaryTransform;
-- (id /* block */)fromPlistTransform;
-- (id /* block */)plistTransform;
+- (id)dictionaryTransform;
+- (id)fromDictionaryTransform;
+- (id)fromPlistTransform;
+- (id)plistTransform;
 - (id)stringForIndexingForContact:(id)arg1;
 - (id)summarizationKeys;
 

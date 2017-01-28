@@ -7,9 +7,9 @@
 @property (nonatomic, readonly, copy) SBSApplicationShortcutItem *sbsShortcutItem;
 @property (nonatomic, readonly, copy) UIApplicationShortcutItem *uiShortcutItem;
 
-- (int)UIActionType;
+- (long long)UIActionType;
 - (id)initWithSBSShortcutItem:(id)arg1;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)sbsShortcutItem;
 - (id)uiShortcutItem;
 

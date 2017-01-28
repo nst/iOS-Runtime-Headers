@@ -12,7 +12,7 @@
 
 + (id)sharedClassRegistry;
 
-- (void)_accessMutableStateWithBlock:(id /* block */)arg1;
+- (void)_accessMutableStateWithBlock:(id)arg1;
 - (id)_classesByAceClassNameByGroupIdentifier;
 - (id)_queue;
 - (Class)classForAceClassWithName:(id)arg1 inGroupWithIdentifier:(id)arg2;

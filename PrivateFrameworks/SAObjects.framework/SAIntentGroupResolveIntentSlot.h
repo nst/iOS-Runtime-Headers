@@ -14,7 +14,7 @@
 - (id)groupIdentifier;
 - (id)intent;
 - (id)intentSlotKeyPath;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setIntent:(id)arg1;
 - (void)setIntentSlotKeyPath:(id)arg1;
 

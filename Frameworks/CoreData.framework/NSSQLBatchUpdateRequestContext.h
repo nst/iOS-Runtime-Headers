@@ -20,7 +20,7 @@
 - (void)executeRequestUsingConnection:(id)arg1;
 - (id)fetchRequestDescribingObjectsToUpdate;
 - (id)initWithRequest:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
-- (BOOL)isWritingRequest;
+- (bool)isWritingRequest;
 - (id)request;
 - (id)updateStatement;
 

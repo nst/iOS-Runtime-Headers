@@ -12,7 +12,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::less<long long>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _bySource;
@@ -20,18 +20,18 @@
         double avg; 
         double max; 
         double min; 
-        unsigned int count; 
+        unsigned long long count; 
     }  _currentStats;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addValue:(double)arg1 startTime:(double)arg2 endTime:(double)arg3 sourceID:(long long)arg4;
-- (BOOL)advanceBucket;
-- (int)dataCount;
+- (bool)advanceBucket;
+- (long long)dataCount;
 - (id)description;
-- (void)getCurrentBucketStats:(struct { double x1; double x2; double x3; unsigned int x4; }*)arg1;
-- (BOOL)hasData;
+- (void)getCurrentBucketStats:(struct { double x1; double x2; double x3; unsigned long long x4; }*)arg1;
+- (bool)hasData;
 - (id)initWithBucketBoundaries:(id)arg1;
 - (id)sourceIDsForCurrentBucket;
 - (id)statsBySource;

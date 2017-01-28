@@ -7,7 +7,7 @@
 + (id)sharedInstance;
 
 - (id)_messageWithAssertion:(id)arg1;
-- (void)sendAcquireTerminationAssertion:(id)arg1 handler:(id /* block */)arg2;
+- (void)sendAcquireTerminationAssertion:(id)arg1 handler:(id)arg2;
 - (void)sendRelinquishTerminationAssertion:(id)arg1;
 
 @end

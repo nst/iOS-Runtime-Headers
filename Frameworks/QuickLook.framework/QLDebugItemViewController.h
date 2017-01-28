@@ -3,25 +3,25 @@
  */
 
 @interface QLDebugItemViewController : QLItemViewController {
-    BOOL  _constraintsSetUp;
+    bool  _constraintsSetUp;
     UITextView * _logTextView;
     NSMutableDictionary * _selectorToCount;
 }
 
 - (void).cxx_destruct;
-- (void)_addLog:(id)arg1 logLevel:(unsigned int)arg2;
-- (id)_attributesForLogLevel:(unsigned int)arg1;
+- (void)_addLog:(id)arg1 logLevel:(unsigned long long)arg2;
+- (id)_attributesForLogLevel:(unsigned long long)arg1;
 - (void)_encounterMethodCall:(SEL)arg1;
-- (void)_encounterMethodCall:(SEL)arg1 animatedValue:(unsigned int)arg2;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canPinchToDismiss;
-- (BOOL)canSwipeToDismiss;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewDidDisappear:(BOOL)arg1;
-- (void)previewIsAppearingWithProgress:(float)arg1;
-- (void)previewWillAppear:(BOOL)arg1;
-- (void)previewWillDisappear:(BOOL)arg1;
+- (void)_encounterMethodCall:(SEL)arg1 animatedValue:(unsigned long long)arg2;
+- (bool)canEnterFullScreen;
+- (bool)canPinchToDismiss;
+- (bool)canSwipeToDismiss;
+- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id)arg2;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewDidDisappear:(bool)arg1;
+- (void)previewIsAppearingWithProgress:(double)arg1;
+- (void)previewWillAppear:(bool)arg1;
+- (void)previewWillDisappear:(bool)arg1;
 - (void)previewWillFinishAppearing;
 - (void)setAppearance:(id)arg1;
 

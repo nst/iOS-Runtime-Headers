@@ -4,31 +4,31 @@
 
 @interface _UIKBRTMutableOrderIndexSet : NSObject {
     NSMutableIndexSet * _indexSet;
-    BOOL  _reversed;
+    bool  _reversed;
 }
 
-@property (readonly) unsigned int beginningIndex;
-@property (readonly) unsigned int count;
-@property (readonly) unsigned int endingIndex;
-@property (readonly) unsigned int highestIndex;
+@property (readonly) unsigned long long beginningIndex;
+@property (readonly) unsigned long long count;
+@property (readonly) unsigned long long endingIndex;
+@property (readonly) unsigned long long highestIndex;
 @property (nonatomic, readonly) NSMutableIndexSet *indexSet;
-@property (readonly) unsigned int lowestIndex;
-@property (nonatomic) BOOL reversed;
+@property (readonly) unsigned long long lowestIndex;
+@property (nonatomic) bool reversed;
 
 - (void).cxx_destruct;
-- (void)addIndex:(unsigned int)arg1;
-- (unsigned int)beginningIndex;
-- (unsigned int)count;
+- (void)addIndex:(unsigned long long)arg1;
+- (unsigned long long)beginningIndex;
+- (unsigned long long)count;
 - (id)description;
-- (unsigned int)endingIndex;
-- (unsigned int)highestIndex;
+- (unsigned long long)endingIndex;
+- (unsigned long long)highestIndex;
 - (id)indexSet;
 - (id)init;
-- (id)initWithIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)lowestIndex;
-- (void)removeIndex:(unsigned int)arg1;
+- (id)initWithIndexesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned long long)lowestIndex;
+- (void)removeIndex:(unsigned long long)arg1;
 - (void)removeIndexes:(id)arg1;
-- (BOOL)reversed;
-- (void)setReversed:(BOOL)arg1;
+- (bool)reversed;
+- (void)setReversed:(bool)arg1;
 
 @end

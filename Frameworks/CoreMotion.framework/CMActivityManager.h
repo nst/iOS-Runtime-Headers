@@ -6,15 +6,15 @@
     id  _internal;
 }
 
-@property (getter=isActivityAvailable, nonatomic, readonly) BOOL activityAvailable;
-@property (copy) id /* block */ activityHandler;
+@property (getter=isActivityAvailable, nonatomic, readonly) bool activityAvailable;
+@property (copy) id activityHandler;
 
-- (id /* block */)activityHandler;
+- (id)activityHandler;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isActivityAvailable;
-- (int)overrideOscarSideband:(BOOL)arg1 withState:(int)arg2;
-- (void)setActivityHandler:(id /* block */)arg1;
-- (int)simulateMotionState:(BOOL)arg1 withState:(int)arg2;
+- (bool)isActivityAvailable;
+- (long long)overrideOscarSideband:(bool)arg1 withState:(long long)arg2;
+- (void)setActivityHandler:(id)arg1;
+- (long long)simulateMotionState:(bool)arg1 withState:(long long)arg2;
 
 @end

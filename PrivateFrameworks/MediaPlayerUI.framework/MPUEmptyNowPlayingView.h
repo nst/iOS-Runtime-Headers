@@ -8,23 +8,23 @@
     UIImageView * _appIconImageView;
     UILabel * _continueListeningLabel;
     <MPUEmptyNowPlayingViewDelegate> * _delegate;
-    BOOL  _shouldShowActionText;
+    bool  _shouldShowActionText;
 }
 
 @property (nonatomic, copy) NSString *appBundleIdentifier;
 @property (nonatomic) <MPUEmptyNowPlayingViewDelegate> *delegate;
-@property (nonatomic) BOOL shouldShowActionText;
+@property (nonatomic) bool shouldShowActionText;
 
 - (void).cxx_destruct;
 - (id)_desaturatedImageWithImage:(id)arg1;
 - (id)appBundleIdentifier;
 - (id)delegate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setShouldShowActionText:(BOOL)arg1;
-- (BOOL)shouldShowActionText;
+- (void)setHighlighted:(bool)arg1;
+- (void)setShouldShowActionText:(bool)arg1;
+- (bool)shouldShowActionText;
 
 @end

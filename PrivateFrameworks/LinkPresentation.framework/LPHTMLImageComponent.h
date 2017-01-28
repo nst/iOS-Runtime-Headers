@@ -8,6 +8,6 @@
 + (id)styleSet;
 
 - (id)initWithImage:(id)arg1 style:(id)arg2 themePath:(id)arg3 generator:(id)arg4;
-- (BOOL)shouldUsePreciseImageSize;
+- (bool)shouldUsePreciseImageSize;
 
 @end

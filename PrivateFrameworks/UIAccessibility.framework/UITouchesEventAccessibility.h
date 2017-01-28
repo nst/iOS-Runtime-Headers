@@ -8,8 +8,8 @@
 + (id)safeCategoryTargetClassName;
 
 - (id)_accessibilityHitTestStartsAtElement;
-- (BOOL)_accessibilityHitTestsAnyElement;
+- (bool)_accessibilityHitTestsAnyElement;
 - (void)_setAccessibilityHitTestStartsAtElement:(id)arg1;
-- (void)_setAccessibilityHitTestsAnyElement:(BOOL)arg1;
+- (void)_setAccessibilityHitTestsAnyElement:(bool)arg1;
 
 @end

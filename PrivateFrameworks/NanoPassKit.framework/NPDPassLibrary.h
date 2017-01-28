@@ -9,7 +9,7 @@
     NSObject<OS_dispatch_queue> * _queue;
     NSString * _remoteProcessApplicationIdentifier;
     int  _remoteProcessIdentifier;
-    BOOL  _serviceActive;
+    bool  _serviceActive;
 }
 
 @property (nonatomic) NSXPCConnection *connection;
@@ -17,11 +17,11 @@
 @property (nonatomic) <NPDPassLibraryDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NPKPassLibraryFilter *filter;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) NSString *remoteProcessApplicationIdentifier;
 @property (readonly) int remoteProcessIdentifier;
-@property BOOL serviceActive;
+@property bool serviceActive;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -35,13 +35,13 @@
 - (id)queue;
 - (id)remoteProcessApplicationIdentifier;
 - (int)remoteProcessIdentifier;
-- (BOOL)serviceActive;
+- (bool)serviceActive;
 - (void)serviceResumed;
 - (void)serviceSuspended;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFilter:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setServiceActive:(BOOL)arg1;
+- (void)setServiceActive:(bool)arg1;
 
 @end

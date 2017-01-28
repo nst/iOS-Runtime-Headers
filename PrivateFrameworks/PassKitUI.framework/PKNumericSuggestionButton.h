@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setSuggestion:(id)arg1;
 - (id)suggestion;
 

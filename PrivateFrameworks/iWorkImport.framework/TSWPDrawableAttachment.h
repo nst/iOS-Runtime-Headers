@@ -4,17 +4,17 @@
 
 @interface TSWPDrawableAttachment : TSWPAttachment {
     TSDDrawableInfo * _drawableInfo;
-    float  _hOffset;
+    double  _hOffset;
     int  _hOffsetType;
-    float  _vOffset;
+    double  _vOffset;
     int  _vOffsetType;
 }
 
-@property (nonatomic, readonly) float descent;
+@property (nonatomic, readonly) double descent;
 @property (nonatomic, readonly, retain) TSDDrawableInfo *drawable;
-@property (nonatomic) float hOffset;
+@property (nonatomic) double hOffset;
 @property (nonatomic) int hOffsetType;
-@property (nonatomic) float vOffset;
+@property (nonatomic) double vOffset;
 @property (nonatomic) int vOffsetType;
 
 + (void)setPositionerClass:(Class)arg1;
@@ -25,38 +25,38 @@
 - (void)clearParentStorageForDealloc;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (float)descent;
+- (double)descent;
 - (id)detachDrawable;
 - (id)drawable;
 - (int)elementKind;
-- (float)hOffset;
+- (double)hOffset;
 - (int)hOffsetType;
 - (void)infoChanged;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 drawable:(id)arg2;
 - (void)invalidate;
-- (BOOL)isAnchored;
-- (BOOL)isDrawable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isHTMLWrap;
-- (BOOL)isPartitioned;
-- (BOOL)isSearchable;
+- (bool)isAnchored;
+- (bool)isDrawable;
+- (bool)isEqual:(id)arg1;
+- (bool)isHTMLWrap;
+- (bool)isPartitioned;
+- (bool)isSearchable;
 - (void)loadMessage:(const struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; float x7; unsigned int x8; float x9; }*)arg1 fromUnarchiver:(id)arg2;
 - (id)objectsForStyleMigrating;
 - (Class)positionerClass;
 - (void)saveMessage:(struct DrawableAttachmentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; unsigned int x6; float x7; unsigned int x8; float x9; }*)arg1 toArchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setHOffset:(float)arg1;
+- (void)setHOffset:(double)arg1;
 - (void)setHOffsetType:(int)arg1;
 - (void)setParentStorage:(id)arg1;
-- (void)setVOffset:(float)arg1;
+- (void)setVOffset:(double)arg1;
 - (void)setVOffsetType:(int)arg1;
-- (BOOL)specifiesEnabledKnobMask;
+- (bool)specifiesEnabledKnobMask;
 - (id)subclassInitFromUnarchiver:(id)arg1;
-- (BOOL)supportsUUID;
+- (bool)supportsUUID;
 - (id)textRepresentationForCopy;
 - (id)textStorages;
-- (float)vOffset;
+- (double)vOffset;
 - (int)vOffsetType;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

@@ -6,13 +6,13 @@
     AVAssetResourceLoadingRequestInternal * _loadingRequest;
 }
 
-@property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
+@property (getter=isCancelled, nonatomic, readonly) bool cancelled;
 @property (nonatomic, readonly) AVAssetResourceLoadingContentInformationRequest *contentInformationRequest;
 @property (nonatomic, readonly) AVAssetResourceLoadingDataRequest *dataRequest;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFinished, nonatomic, readonly) BOOL finished;
-@property (readonly) unsigned int hash;
+@property (getter=isFinished, nonatomic, readonly) bool finished;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSURLRequest *redirect;
 @property (nonatomic, readonly) NSURLRequest *request;
 @property (nonatomic, copy) NSURLResponse *response;
@@ -35,10 +35,11 @@
 - (void)_sendDictionaryForURLRequest:(id)arg1 context:(id)arg2;
 - (void)_setContentInformationRequest:(id)arg1;
 - (void)_setDataRequest:(id)arg1;
-- (BOOL)_shouldInformDelegateOfFigCancellation;
-- (BOOL)_tryToMarkAsCancelled;
+- (bool)_shouldInformDelegateOfFigCancellation;
+- (bool)_tryToMarkAsCancelled;
 - (id)_weakReference;
 - (id)contentInformationRequest;
+- (id)createKeyRequestDataUsingCryptorForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 performAsync:(bool)arg4 error:(id*)arg5;
 - (id)dataRequest;
 - (void)dealloc;
 - (id)description;
@@ -46,12 +47,12 @@
 - (void)finishLoading;
 - (void)finishLoadingWithError:(id)arg1;
 - (void)finishLoadingWithResponse:(id)arg1 data:(id)arg2 redirect:(id)arg3;
-- (BOOL)finished;
-- (void)generateStreamingContentKeyRequestDataAsynchronouslyForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
+- (bool)finished;
+- (void)generateStreamingContentKeyRequestDataAsynchronouslyForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
 - (id)init;
 - (id)initWithResourceLoader:(id)arg1 requestDictionary:(id)arg2;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
+- (bool)isCancelled;
+- (bool)isFinished;
 - (id)persistentContentKeyFromKeyVendorResponse:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)redirect;
 - (id)request;

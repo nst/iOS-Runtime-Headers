@@ -4,8 +4,8 @@
 
 @interface AAUICredentialRecoveryController : NSObject <RUILoaderDelegate, RUIObjectModelDelegate> {
     NSObject<AAUICredentialRecoveryPresentationDelegate> * _delegate;
-    BOOL  _isModal;
-    BOOL  _isShowingSpinner;
+    bool  _isModal;
+    bool  _isShowingSpinner;
     RUIPage * _loadingPage;
     UIViewController * _navigationBaseViewController;
     UINavigationController * _navigationController;
@@ -21,7 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) NSObject<AAUICredentialRecoveryPresentationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,16 +30,16 @@
 - (void)_cleanupLoader;
 - (void)_createRemoteUIViewControllerFromURL:(id)arg1;
 - (void)_displayConnectionError;
-- (void)_finishPresentationWithSuccess:(BOOL)arg1;
+- (void)_finishPresentationWithSuccess:(bool)arg1;
 - (void)_hideActivitySpinnerInNavigationBar;
-- (void)_popObjectModelAnimated:(BOOL)arg1;
+- (void)_popObjectModelAnimated:(bool)arg1;
 - (void)_showActivitySpinnerInNavigationBar;
 - (void)cancelPresentation;
 - (id)delegate;
 - (id)init;
-- (id)initWithRemoteUIURL:(id)arg1 modalPresentation:(BOOL)arg2;
+- (id)initWithRemoteUIURL:(id)arg1 modalPresentation:(bool)arg2;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned long long)arg3;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3;
 - (void)objectModelPressedBack:(id)arg1;

@@ -10,7 +10,7 @@
 - (id)aggdKey;
 - (id)glyphImageForState:(int)arg1;
 - (id)init;
-- (BOOL)isRestricted;
+- (bool)isRestricted;
 - (int)orbBehavior;
 
 @end

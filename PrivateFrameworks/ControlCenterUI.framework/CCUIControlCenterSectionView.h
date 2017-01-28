@@ -3,13 +3,13 @@
  */
 
 @interface CCUIControlCenterSectionView : UIView {
-    int  _layoutStyle;
+    long long  _layoutStyle;
 }
 
-@property (nonatomic) int layoutStyle;
+@property (nonatomic) long long layoutStyle;
 
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (int)layoutStyle;
-- (void)setLayoutStyle:(int)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (long long)layoutStyle;
+- (void)setLayoutStyle:(long long)arg1;
 
 @end

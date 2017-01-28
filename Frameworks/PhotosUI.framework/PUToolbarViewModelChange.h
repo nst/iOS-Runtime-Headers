@@ -3,25 +3,25 @@
  */
 
 @interface PUToolbarViewModelChange : PUViewModelChange {
-    BOOL  _accessoryViewChanged;
-    BOOL  _accessoryViewTopOutsetChanged;
-    BOOL  _maximumHeightChanged;
-    BOOL  _toolbarItemsChanged;
+    bool  _accessoryViewChanged;
+    bool  _accessoryViewTopOutsetChanged;
+    bool  _maximumHeightChanged;
+    bool  _toolbarItemsChanged;
 }
 
-@property (setter=_setAccessoryViewChanged:, nonatomic) BOOL accessoryViewChanged;
-@property (setter=_setAccessoryViewTopOutsetChanged:, nonatomic) BOOL accessoryViewTopOutsetChanged;
-@property (setter=_setMaximumHeightChanged:, nonatomic) BOOL maximumHeightChanged;
-@property (setter=_setToolbarItemsChanged:, nonatomic) BOOL toolbarItemsChanged;
+@property (setter=_setAccessoryViewChanged:, nonatomic) bool accessoryViewChanged;
+@property (setter=_setAccessoryViewTopOutsetChanged:, nonatomic) bool accessoryViewTopOutsetChanged;
+@property (setter=_setMaximumHeightChanged:, nonatomic) bool maximumHeightChanged;
+@property (setter=_setToolbarItemsChanged:, nonatomic) bool toolbarItemsChanged;
 
-- (void)_setAccessoryViewChanged:(BOOL)arg1;
-- (void)_setAccessoryViewTopOutsetChanged:(BOOL)arg1;
-- (void)_setMaximumHeightChanged:(BOOL)arg1;
-- (void)_setToolbarItemsChanged:(BOOL)arg1;
-- (BOOL)accessoryViewChanged;
-- (BOOL)accessoryViewTopOutsetChanged;
-- (BOOL)hasChanges;
-- (BOOL)maximumHeightChanged;
-- (BOOL)toolbarItemsChanged;
+- (void)_setAccessoryViewChanged:(bool)arg1;
+- (void)_setAccessoryViewTopOutsetChanged:(bool)arg1;
+- (void)_setMaximumHeightChanged:(bool)arg1;
+- (void)_setToolbarItemsChanged:(bool)arg1;
+- (bool)accessoryViewChanged;
+- (bool)accessoryViewTopOutsetChanged;
+- (bool)hasChanges;
+- (bool)maximumHeightChanged;
+- (bool)toolbarItemsChanged;
 
 @end

@@ -10,7 +10,7 @@
 @property (readonly) NSArray *centroid;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) IFCentroidModelParameters *parameters;
 @property (retain) <IFCentroidStore><IFCentroidStoreInternal> *store;
 @property (readonly) Class superclass;
@@ -27,6 +27,6 @@
 - (void)setParameters:(id)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
-- (BOOL)update;
+- (bool)update;
 
 @end

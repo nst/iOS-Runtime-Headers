@@ -18,7 +18,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addDataSource:(id)arg1 weight:(float)arg2;
-- (void)enumerateDataSourcesAndWeightsUsingBlock:(id /* block */)arg1;
+- (void)enumerateDataSourcesAndWeightsUsingBlock:(id)arg1;
 - (float)totalWeight;
 
 @end

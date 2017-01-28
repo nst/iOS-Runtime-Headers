@@ -11,7 +11,7 @@
     NSString * _applicationShortcutWidgetBundleIdentifier;
     NSURL * _bundleURL;
     NSString * _displayName;
-    BOOL  _systemOrInternalApplication;
+    bool  _systemOrInternalApplication;
 }
 
 @property (nonatomic, readonly) NSNumber *appStoreItemID;
@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSArray *dynamicApplicationShortcutItems;
 @property (nonatomic, readonly) NSArray *staticApplicationShortcutItems;
-@property (getter=isSystemOrInternalApplication, nonatomic, readonly) BOOL systemOrInternalApplication;
+@property (getter=isSystemOrInternalApplication, nonatomic, readonly) bool systemOrInternalApplication;
 
 - (void).cxx_destruct;
 - (void)_updateApplicationShortcutServiceFetchResult;
@@ -34,7 +34,7 @@
 - (id)dynamicApplicationShortcutItems;
 - (id)init;
 - (id)initWithApplicationBundleIdentifier:(id)arg1;
-- (BOOL)isSystemOrInternalApplication;
+- (bool)isSystemOrInternalApplication;
 - (id)staticApplicationShortcutItems;
 
 @end

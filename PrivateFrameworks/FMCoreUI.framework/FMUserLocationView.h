@@ -4,6 +4,6 @@
 
 @interface FMUserLocationView : MKModernUserLocationView
 
-+ (BOOL)_followsTerrain;
++ (bool)_followsTerrain;
 
 @end

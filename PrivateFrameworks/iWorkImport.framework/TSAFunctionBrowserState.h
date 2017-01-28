@@ -12,13 +12,13 @@
 - (id)allBackFunctions;
 - (id)allForwardFunctions;
 - (int)back;
-- (int)backByAmount:(unsigned int)arg1;
-- (BOOL)canGoBack;
-- (BOOL)canGoForward;
+- (int)backByAmount:(unsigned long long)arg1;
+- (bool)canGoBack;
+- (bool)canGoForward;
 - (int)currentFunction;
 - (void)dealloc;
 - (int)forward;
-- (int)forwardByAmount:(unsigned int)arg1;
+- (int)forwardByAmount:(unsigned long long)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (void)p_filterOutUnknownFunctions:(id)arg1;

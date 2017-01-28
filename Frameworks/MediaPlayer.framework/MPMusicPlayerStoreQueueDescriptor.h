@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *startItemID;
 @property (nonatomic, copy) NSArray *storeIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)assetStoreFronts;

@@ -3,59 +3,59 @@
  */
 
 @interface PUScrollViewPageSwipeTestContext : NSObject {
-    int  _currentDirection;
-    int  _currentIteration;
-    int  _currentPage;
+    long long  _currentDirection;
+    long long  _currentIteration;
+    long long  _currentPage;
     double  _currentPageSwipeProgress;
-    int  _currentState;
+    long long  _currentState;
     CADisplayLink * _displayLink;
     double  _lastIncrementTime;
-    int  _numberOfIterations;
-    int  _numberOfPages;
+    long long  _numberOfIterations;
+    long long  _numberOfPages;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _originContentOffset;
     int  _scrollAxis;
     NSString * _testName;
 }
 
-@property (nonatomic) int currentDirection;
-@property (nonatomic) int currentIteration;
-@property (nonatomic) int currentPage;
+@property (nonatomic) long long currentDirection;
+@property (nonatomic) long long currentIteration;
+@property (nonatomic) long long currentPage;
 @property (nonatomic) double currentPageSwipeProgress;
-@property (nonatomic) int currentState;
+@property (nonatomic) long long currentState;
 @property (nonatomic) CADisplayLink *displayLink;
 @property (nonatomic) double lastIncrementTime;
-@property (nonatomic) int numberOfIterations;
-@property (nonatomic) int numberOfPages;
-@property (nonatomic) struct CGPoint { float x1; float x2; } originContentOffset;
+@property (nonatomic) long long numberOfIterations;
+@property (nonatomic) long long numberOfPages;
+@property (nonatomic) struct CGPoint { double x1; double x2; } originContentOffset;
 @property (nonatomic) int scrollAxis;
 @property (nonatomic, copy) NSString *testName;
 
 - (void).cxx_destruct;
-- (int)currentDirection;
-- (int)currentIteration;
-- (int)currentPage;
+- (long long)currentDirection;
+- (long long)currentIteration;
+- (long long)currentPage;
 - (double)currentPageSwipeProgress;
-- (int)currentState;
+- (long long)currentState;
 - (id)displayLink;
 - (id)init;
 - (double)lastIncrementTime;
-- (int)numberOfIterations;
-- (int)numberOfPages;
-- (struct CGPoint { float x1; float x2; })originContentOffset;
+- (long long)numberOfIterations;
+- (long long)numberOfPages;
+- (struct CGPoint { double x1; double x2; })originContentOffset;
 - (int)scrollAxis;
-- (void)setCurrentDirection:(int)arg1;
-- (void)setCurrentIteration:(int)arg1;
-- (void)setCurrentPage:(int)arg1;
+- (void)setCurrentDirection:(long long)arg1;
+- (void)setCurrentIteration:(long long)arg1;
+- (void)setCurrentPage:(long long)arg1;
 - (void)setCurrentPageSwipeProgress:(double)arg1;
-- (void)setCurrentState:(int)arg1;
+- (void)setCurrentState:(long long)arg1;
 - (void)setDisplayLink:(id)arg1;
 - (void)setLastIncrementTime:(double)arg1;
-- (void)setNumberOfIterations:(int)arg1;
-- (void)setNumberOfPages:(int)arg1;
-- (void)setOriginContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setNumberOfIterations:(long long)arg1;
+- (void)setNumberOfPages:(long long)arg1;
+- (void)setOriginContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setScrollAxis:(int)arg1;
 - (void)setTestName:(id)arg1;
 - (id)testName;

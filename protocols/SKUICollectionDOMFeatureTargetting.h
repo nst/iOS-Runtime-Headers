@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isEditing;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (bool)isEditing;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 
 @end

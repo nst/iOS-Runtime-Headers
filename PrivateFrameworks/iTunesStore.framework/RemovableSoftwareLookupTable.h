@@ -11,7 +11,7 @@
 
 + (id)_fallbackItemIdentifier:(id)arg1;
 + (id)_urlForBundleIdentifier:(id)arg1;
-+ (BOOL)isRestrictedAppBundleIdentifier:(id)arg1;
++ (bool)isRestrictedAppBundleIdentifier:(id)arg1;
 + (id)urlForBundleIdentifier:(id)arg1;
 
 - (void).cxx_destruct;

@@ -4,19 +4,19 @@
 
 @interface FBSWorkspaceSceneLayerEvent : FBSWorkspaceSceneEvent {
     FBSSceneLayer * _layer;
-    BOOL  _orderOut;
+    bool  _orderOut;
 }
 
 @property (nonatomic, retain) FBSSceneLayer *layer;
-@property (nonatomic) BOOL orderOut;
+@property (nonatomic) bool orderOut;
 
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)layer;
-- (BOOL)orderOut;
+- (bool)orderOut;
 - (void)setLayer:(id)arg1;
-- (void)setOrderOut:(BOOL)arg1;
+- (void)setOrderOut:(bool)arg1;
 
 @end

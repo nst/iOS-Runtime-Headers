@@ -3,17 +3,17 @@
  */
 
 @interface MANetworkService : NSObject <NSURLSessionDataDelegate> {
-    BOOL  _allowInvalidCert;
+    bool  _allowInvalidCert;
 }
 
-@property BOOL allowInvalidCert;
+@property bool allowInvalidCert;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)allowInvalidCert;
-- (void)setAllowInvalidCert:(BOOL)arg1;
+- (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id)arg3;
+- (bool)allowInvalidCert;
+- (void)setAllowInvalidCert:(bool)arg1;
 
 @end

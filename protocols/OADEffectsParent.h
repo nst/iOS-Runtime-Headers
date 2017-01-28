@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)effects;
-- (BOOL)hasEffects;
+- (bool)hasEffects;
 - (void)setEffects:(NSArray *)arg1;
 
 @end

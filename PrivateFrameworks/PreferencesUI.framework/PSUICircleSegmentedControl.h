@@ -21,19 +21,19 @@
 @property (nonatomic, retain) UILabel *label;
 
 - (void).cxx_destruct;
-- (id)_circleImageWithColor:(id)arg1 fillColor:(id)arg2 diameter:(float)arg3;
+- (id)_circleImageWithColor:(id)arg1 fillColor:(id)arg2 diameter:(double)arg3;
 - (void)addSegmentWithTitle:(id)arg1;
 - (id)delegate;
 - (id)init;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (id)label;
 - (void)menuButtonPressed;
 - (void)segmentTapped:(id)arg1;
-- (void)selectSegmentAtIndex:(unsigned int)arg1;
+- (void)selectSegmentAtIndex:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setPositionConstraintsActive:(BOOL)arg1 forButtonAtIndex:(unsigned int)arg2;
-- (void)setSelectedSegmentIndex:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPositionConstraintsActive:(bool)arg1 forButtonAtIndex:(unsigned long long)arg2;
+- (void)setSelectedSegmentIndex:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -5,14 +5,14 @@
 @interface CalDAVCalendarServerDeletedDetailsItem : CoreDAVItem {
     NSString * _componentType;
     NSString * _displayName;
-    BOOL  _hadMoreInstances;
+    bool  _hadMoreInstances;
     ICSDateValue * _nextInstance;
     NSString * _summary;
 }
 
 @property (nonatomic, retain) NSString *componentType;
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic) BOOL hadMoreInstances;
+@property (nonatomic) bool hadMoreInstances;
 @property (nonatomic, retain) ICSDateValue *nextInstance;
 @property (nonatomic, retain) NSString *summary;
 
@@ -20,14 +20,14 @@
 - (id)componentType;
 - (id)copyParseRules;
 - (id)displayName;
-- (BOOL)hadMoreInstances;
+- (bool)hadMoreInstances;
 - (id)init;
 - (id)nextInstance;
 - (void)setComponentType:(id)arg1;
 - (void)setComponentTypeItem:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDisplayNameItem:(id)arg1;
-- (void)setHadMoreInstances:(BOOL)arg1;
+- (void)setHadMoreInstances:(bool)arg1;
 - (void)setHadMoreInstancesItem:(id)arg1;
 - (void)setNextInstance:(id)arg1;
 - (void)setNextInstanceItem:(id)arg1;

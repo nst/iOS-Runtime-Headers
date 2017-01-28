@@ -13,10 +13,10 @@
 }
 
 @property (nonatomic, retain) NSData *data;
-@property (nonatomic, readonly) BOOL hasData;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasKey;
-@property (nonatomic) BOOL hasTotalLength;
+@property (nonatomic, readonly) bool hasData;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasKey;
+@property (nonatomic) bool hasTotalLength;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *key;
 @property (nonatomic) unsigned long long totalLength;
@@ -27,18 +27,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasData;
-- (BOOL)hasIdentifier;
-- (BOOL)hasKey;
-- (BOOL)hasTotalLength;
-- (unsigned int)hash;
+- (bool)hasData;
+- (bool)hasIdentifier;
+- (bool)hasKey;
+- (bool)hasTotalLength;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setData:(id)arg1;
-- (void)setHasTotalLength:(BOOL)arg1;
+- (void)setHasTotalLength:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setTotalLength:(unsigned long long)arg1;

@@ -4,20 +4,20 @@
 
 @interface NSURLDirectoryEnumerator : NSDirectoryEnumerator {
     struct __CFURLEnumerator { } * _enumerator;
-    id /* block */  _errorHandler;
-    BOOL  shouldContinue;
+    id  _errorHandler;
+    bool  shouldContinue;
 }
 
-@property (copy) id /* block */ errorHandler;
+@property (copy) id errorHandler;
 
 - (void)dealloc;
 - (id)directoryAttributes;
-- (id /* block */)errorHandler;
+- (id)errorHandler;
 - (id)fileAttributes;
-- (id)initWithURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned int)arg3 errorHandler:(id /* block */)arg4;
-- (unsigned int)level;
+- (id)initWithURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned long long)arg3 errorHandler:(id)arg4;
+- (unsigned long long)level;
 - (id)nextObject;
-- (void)setErrorHandler:(id /* block */)arg1;
+- (void)setErrorHandler:(id)arg1;
 - (void)skipDescendants;
 - (void)skipDescendents;
 

@@ -3,12 +3,12 @@
  */
 
 @interface UMUserSyncTask : UMTask {
-    unsigned int  _contentSize;
+    unsigned long long  _contentSize;
 }
 
-@property (nonatomic) unsigned int contentSize;
+@property (nonatomic) unsigned long long contentSize;
 
-- (unsigned int)contentSize;
-- (void)setContentSize:(unsigned int)arg1;
+- (unsigned long long)contentSize;
+- (void)setContentSize:(unsigned long long)arg1;
 
 @end

@@ -5,47 +5,47 @@
 @interface PXNavigationTitleView : UIView <PXPhotosDetailsBarsContentView> {
     NSArray * __constraints;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  __margins;
     UILabel * __subtitleLabel;
-    BOOL  __subtitleVisible;
+    bool  __subtitleVisible;
     UILabel * __titleLabel;
-    BOOL  _isPerformingChanges;
-    BOOL  _isPerformingUpdates;
+    bool  _isPerformingChanges;
+    bool  _isPerformingUpdates;
     struct { 
-        BOOL texts; 
-        BOOL fonts; 
-        BOOL constraints; 
-        BOOL size; 
+        bool texts; 
+        bool fonts; 
+        bool constraints; 
+        bool size; 
     }  _needsUpdateFlags;
     NSString * _subtitle;
     UIFont * _subtitleFont;
-    float  _subviewsAlpha;
+    double  _subviewsAlpha;
     NSString * _title;
     UIFont * _titleFont;
     UIColor * _titleTextColor;
-    int  _verticalSizeClass;
+    long long  _verticalSizeClass;
 }
 
 @property (setter=_setConstraints:, nonatomic, retain) NSArray *_constraints;
-@property (setter=_setMargins:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _margins;
+@property (setter=_setMargins:, nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } _margins;
 @property (nonatomic, readonly) UILabel *_subtitleLabel;
-@property (getter=_isSubtitleVisible, setter=_setSubtitleVisible:, nonatomic) BOOL _subtitleVisible;
+@property (getter=_isSubtitleVisible, setter=_setSubtitleVisible:, nonatomic) bool _subtitleVisible;
 @property (nonatomic, readonly) UILabel *_titleLabel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) UIFont *subtitleFont;
-@property (nonatomic) float subviewsAlpha;
+@property (nonatomic) double subviewsAlpha;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) UIFont *titleFont;
 @property (nonatomic, retain) UIColor *titleTextColor;
-@property (nonatomic) int verticalSizeClass;
+@property (nonatomic) long long verticalSizeClass;
 
 - (void).cxx_destruct;
 - (id)_constraints;
@@ -53,13 +53,13 @@
 - (void)_invalidateFonts;
 - (void)_invalidateSize;
 - (void)_invalidateTexts;
-- (BOOL)_isSubtitleVisible;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_margins;
-- (BOOL)_needsUpdate;
+- (bool)_isSubtitleVisible;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_margins;
+- (bool)_needsUpdate;
 - (void)_setConstraints:(id)arg1;
-- (void)_setMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setNeedsUpdate;
-- (void)_setSubtitleVisible:(BOOL)arg1;
+- (void)_setSubtitleVisible:(bool)arg1;
 - (id)_subtitleLabel;
 - (id)_titleLabel;
 - (void)_updateConstraintsIfNeeded;
@@ -67,22 +67,22 @@
 - (void)_updateIfNeeded;
 - (void)_updateSizeIfNeeded;
 - (void)_updateTextsIfNeeded;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)performChanges:(id /* block */)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)performChanges:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSubtitleFont:(id)arg1;
-- (void)setSubviewsAlpha:(float)arg1;
+- (void)setSubviewsAlpha:(double)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleFont:(id)arg1;
 - (void)setTitleTextColor:(id)arg1;
-- (void)setVerticalSizeClass:(int)arg1;
+- (void)setVerticalSizeClass:(long long)arg1;
 - (id)subtitle;
 - (id)subtitleFont;
-- (float)subviewsAlpha;
+- (double)subviewsAlpha;
 - (id)title;
 - (id)titleFont;
 - (id)titleTextColor;
 - (void)updateConstraints;
-- (int)verticalSizeClass;
+- (long long)verticalSizeClass;
 
 @end

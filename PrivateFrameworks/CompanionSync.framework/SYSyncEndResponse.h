@@ -14,8 +14,8 @@
 
 @property (nonatomic, retain) SYErrorInfo *error;
 @property (nonatomic) int errorResolution;
-@property (nonatomic, readonly) BOOL hasError;
-@property (nonatomic) BOOL hasErrorResolution;
+@property (nonatomic, readonly) bool hasError;
+@property (nonatomic) bool hasErrorResolution;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSString *syncID;
 
@@ -28,16 +28,16 @@
 - (id)error;
 - (int)errorResolution;
 - (id)errorResolutionAsString:(int)arg1;
-- (BOOL)hasError;
-- (BOOL)hasErrorResolution;
-- (unsigned int)hash;
+- (bool)hasError;
+- (bool)hasErrorResolution;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setErrorResolution:(int)arg1;
-- (void)setHasErrorResolution:(BOOL)arg1;
+- (void)setHasErrorResolution:(bool)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setSyncID:(id)arg1;
 - (id)syncID;

@@ -4,9 +4,9 @@
 
 @interface CCUIControlCenterPageControl : UIPageControl
 
-- (float)_indicatorSpacing;
-- (id)_pageIndicatorCurrentImageForPage:(int)arg1;
-- (id)_pageIndicatorImageForPage:(int)arg1;
-- (float)minimumWidth;
+- (double)_indicatorSpacing;
+- (id)_pageIndicatorCurrentImageForPage:(long long)arg1;
+- (id)_pageIndicatorImageForPage:(long long)arg1;
+- (double)minimumWidth;
 
 @end

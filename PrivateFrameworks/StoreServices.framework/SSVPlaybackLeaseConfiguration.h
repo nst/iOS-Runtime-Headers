@@ -6,7 +6,7 @@
     NSURL * _beginLeaseURL;
     NSURL * _certificateURL;
     NSURL * _getAssetURL;
-    int  _leaseType;
+    long long  _leaseType;
     NSURL * _provisionMachineURL;
     NSURL * _refreshLeaseURL;
     NSString * _storeFrontSuffix;
@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSURL *beginLeaseURL;
 @property (nonatomic, copy) NSURL *certificateURL;
 @property (nonatomic, copy) NSURL *getAssetURL;
-@property (nonatomic, readonly) int leaseType;
+@property (nonatomic, readonly) long long leaseType;
 @property (nonatomic, copy) NSURL *provisionMachineURL;
 @property (nonatomic, copy) NSURL *refreshLeaseURL;
 @property (nonatomic, copy) NSString *storeFrontSuffix;
@@ -28,8 +28,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)getAssetURL;
 - (id)initWithURLBagDictionary:(id)arg1;
-- (id)initWithURLBagDictionary:(id)arg1 leaseType:(int)arg2;
-- (int)leaseType;
+- (id)initWithURLBagDictionary:(id)arg1 leaseType:(long long)arg2;
+- (long long)leaseType;
 - (id)provisionMachineURL;
 - (id)refreshLeaseURL;
 - (void)setBeginLeaseURL:(id)arg1;

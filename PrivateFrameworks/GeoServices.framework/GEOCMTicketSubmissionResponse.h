@@ -6,13 +6,13 @@
     struct { 
         unsigned int isNotificationSupported : 1; 
     }  _has;
-    BOOL  _isNotificationSupported;
+    bool  _isNotificationSupported;
     NSString * _ticketId;
 }
 
-@property (nonatomic) BOOL hasIsNotificationSupported;
-@property (nonatomic, readonly) BOOL hasTicketId;
-@property (nonatomic) BOOL isNotificationSupported;
+@property (nonatomic) bool hasIsNotificationSupported;
+@property (nonatomic, readonly) bool hasTicketId;
+@property (nonatomic) bool isNotificationSupported;
 @property (nonatomic, retain) NSString *ticketId;
 
 - (void)copyTo:(id)arg1;
@@ -20,15 +20,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIsNotificationSupported;
-- (BOOL)hasTicketId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isNotificationSupported;
+- (bool)hasIsNotificationSupported;
+- (bool)hasTicketId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isNotificationSupported;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIsNotificationSupported:(BOOL)arg1;
-- (void)setIsNotificationSupported:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsNotificationSupported:(bool)arg1;
+- (void)setIsNotificationSupported:(bool)arg1;
 - (void)setTicketId:(id)arg1;
 - (id)ticketId;
 - (void)writeTo:(id)arg1;

@@ -3,20 +3,20 @@
  */
 
 @interface PUWelcomeSettings : PUSettings {
-    BOOL  _alwaysShowCloudPhotoWelcome;
-    BOOL  _alwaysShowWhatsNewWelcome;
+    bool  _alwaysShowCloudPhotoWelcome;
+    bool  _alwaysShowWhatsNewWelcome;
 }
 
-@property (nonatomic) BOOL alwaysShowCloudPhotoWelcome;
-@property (nonatomic) BOOL alwaysShowWhatsNewWelcome;
+@property (nonatomic) bool alwaysShowCloudPhotoWelcome;
+@property (nonatomic) bool alwaysShowWhatsNewWelcome;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)alwaysShowCloudPhotoWelcome;
-- (BOOL)alwaysShowWhatsNewWelcome;
-- (void)setAlwaysShowCloudPhotoWelcome:(BOOL)arg1;
-- (void)setAlwaysShowWhatsNewWelcome:(BOOL)arg1;
+- (bool)alwaysShowCloudPhotoWelcome;
+- (bool)alwaysShowWhatsNewWelcome;
+- (void)setAlwaysShowCloudPhotoWelcome:(bool)arg1;
+- (void)setAlwaysShowWhatsNewWelcome:(bool)arg1;
 - (void)setDefaultValues;
 
 @end

@@ -6,6 +6,6 @@
 
 - (void)cancelRequest;
 - (struct __CFDictionary { }*)decodeSessionOptions;
-- (id)initWithImageURL:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithImageURL:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2;
 
 @end

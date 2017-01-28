@@ -5,16 +5,16 @@
 @interface PFSharingRemakerOptions : NSObject <NSCopying> {
     NSString * _customAccessibilityLabel;
     NSURL * _outputDirectoryURL;
-    BOOL  _shouldConvertToSRGB;
-    BOOL  _shouldStripAllMetadata;
-    BOOL  _shouldStripLocation;
+    bool  _shouldConvertToSRGB;
+    bool  _shouldStripAllMetadata;
+    bool  _shouldStripLocation;
 }
 
 @property (nonatomic, copy) NSString *customAccessibilityLabel;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
-@property (nonatomic) BOOL shouldConvertToSRGB;
-@property (nonatomic) BOOL shouldStripAllMetadata;
-@property (nonatomic) BOOL shouldStripLocation;
+@property (nonatomic) bool shouldConvertToSRGB;
+@property (nonatomic) bool shouldStripAllMetadata;
+@property (nonatomic) bool shouldStripLocation;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,11 +22,11 @@
 - (id)outputDirectoryURL;
 - (void)setCustomAccessibilityLabel:(id)arg1;
 - (void)setOutputDirectoryURL:(id)arg1;
-- (void)setShouldConvertToSRGB:(BOOL)arg1;
-- (void)setShouldStripAllMetadata:(BOOL)arg1;
-- (void)setShouldStripLocation:(BOOL)arg1;
-- (BOOL)shouldConvertToSRGB;
-- (BOOL)shouldStripAllMetadata;
-- (BOOL)shouldStripLocation;
+- (void)setShouldConvertToSRGB:(bool)arg1;
+- (void)setShouldStripAllMetadata:(bool)arg1;
+- (void)setShouldStripLocation:(bool)arg1;
+- (bool)shouldConvertToSRGB;
+- (bool)shouldStripAllMetadata;
+- (bool)shouldStripLocation;
 
 @end

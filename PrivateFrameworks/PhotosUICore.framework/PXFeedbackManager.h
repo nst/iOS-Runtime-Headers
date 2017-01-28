@@ -3,7 +3,7 @@
  */
 
 @interface PXFeedbackManager : NSObject {
-    unsigned int  _feedbackCollectionType;
+    unsigned long long  _feedbackCollectionType;
     PXFeedbackCollector * _feedbackCollector;
     PXFeedbackSender * _feedbackSender;
 }
@@ -18,7 +18,7 @@
 - (id)feedbackSender;
 - (id)init;
 - (void)provideUserFeedbackEntry:(id)arg1;
-- (id)provideUserFeedbackFromDictionary:(id)arg1 forFeedbackType:(unsigned int)arg2;
+- (id)provideUserFeedbackFromDictionary:(id)arg1 forFeedbackType:(unsigned long long)arg2;
 - (void)removeFeedbackEntry:(id)arg1;
 
 @end

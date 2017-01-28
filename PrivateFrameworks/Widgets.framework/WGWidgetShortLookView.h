@@ -3,47 +3,48 @@
  */
 
 @interface WGWidgetShortLookView : NCShortLookView {
-    int  _buttonMode;
+    long long  _buttonMode;
     UIView * _compatibilityDarkeningView;
     NSString * _longerTitle;
-    BOOL  _showingMoreContent;
+    bool  _showingMoreContent;
     WGWidgetHostingViewController * _widgetHost;
 }
 
 @property (nonatomic, readonly) UIButton *addWidgetButton;
-@property (getter=isAddWidgetButtonVisible, nonatomic) BOOL addWidgetButtonVisible;
-@property (nonatomic) int buttonMode;
+@property (getter=isAddWidgetButtonVisible, nonatomic) bool addWidgetButtonVisible;
+@property (nonatomic) long long buttonMode;
 @property (nonatomic, readonly) UIButton *showMoreButton;
-@property (getter=isShowMoreButtonVisible, nonatomic) BOOL showMoreButtonVisible;
-@property (getter=isShowingMoreContent, nonatomic) BOOL showingMoreContent;
+@property (getter=isShowMoreButtonVisible, nonatomic) bool showMoreButtonVisible;
+@property (getter=isShowingMoreContent, nonatomic) bool showingMoreContent;
 @property (nonatomic) WGWidgetHostingViewController *widgetHost;
 
 - (void).cxx_destruct;
 - (void)_handleAddWidget:(id)arg1;
 - (void)_handleIconButton:(id)arg1;
-- (BOOL)_isUtilityButtonVisible;
-- (void)_setUtilityButtonVisible:(BOOL)arg1;
+- (bool)_isUtilityButtonVisible;
+- (void)_setUtilityButtonVisible:(bool)arg1;
 - (void)_toggleShowMore:(id)arg1;
 - (void)_updateCompatibilityDarkeningViewIfNecessary;
-- (void)_updateUtilityButtonForMode:(int)arg1;
-- (void)_updateUtilityButtonForMoreContentState:(BOOL)arg1;
+- (void)_updateUtilityButtonForMode:(long long)arg1;
+- (void)_updateUtilityButtonForMoreContentState:(bool)arg1;
 - (id)addWidgetButton;
-- (int)buttonMode;
+- (long long)buttonMode;
 - (void)iconDidInvalidate:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andCornerRadius:(float)arg2;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isAddWidgetButtonVisible;
-- (BOOL)isShowMoreButtonVisible;
-- (BOOL)isShowingMoreContent;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 andCornerRadius:(double)arg2;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isAddWidgetButtonVisible;
+- (bool)isShowMoreButtonVisible;
+- (bool)isShowingMoreContent;
 - (void)layoutSubviews;
-- (void)setAddWidgetButtonVisible:(BOOL)arg1;
-- (void)setButtonMode:(int)arg1;
-- (void)setShowMoreButtonVisible:(BOOL)arg1;
-- (void)setShowingMoreContent:(BOOL)arg1;
+- (void)setAddWidgetButtonVisible:(bool)arg1;
+- (void)setBackgroundBlurred:(bool)arg1;
+- (void)setButtonMode:(long long)arg1;
+- (void)setShowMoreButtonVisible:(bool)arg1;
+- (void)setShowingMoreContent:(bool)arg1;
 - (void)setWidgetHost:(id)arg1;
 - (id)showMoreButton;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)widgetHost;
 
 @end

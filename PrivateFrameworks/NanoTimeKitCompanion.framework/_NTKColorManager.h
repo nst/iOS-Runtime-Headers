@@ -18,6 +18,6 @@
 - (id)layer;
 - (void)setColor:(id)arg1;
 - (void)setLayer:(id)arg1;
-- (BOOL)shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)shouldAnimatePropertyWithKey:(id)arg1;
 
 @end

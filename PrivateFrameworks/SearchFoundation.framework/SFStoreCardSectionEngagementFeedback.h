@@ -3,17 +3,17 @@
  */
 
 @interface SFStoreCardSectionEngagementFeedback : SFCardSectionEngagementFeedback {
-    int  _productPageResult;
+    long long  _productPageResult;
 }
 
-@property (nonatomic) int productPageResult;
+@property (nonatomic) long long productPageResult;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithProductPageResult:(int)arg1;
-- (int)productPageResult;
-- (void)setProductPageResult:(int)arg1;
+- (id)initWithProductPageResult:(long long)arg1;
+- (long long)productPageResult;
+- (void)setProductPageResult:(long long)arg1;
 
 @end

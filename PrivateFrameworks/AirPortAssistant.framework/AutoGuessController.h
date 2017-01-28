@@ -5,7 +5,7 @@
 @interface AutoGuessController : AssistantCallbackController {
     struct ACPBrowserSession { } * _acpBrowserSession;
     NSThread * _autoGuessThread;
-    BOOL  _autoJoinState;
+    bool  _autoJoinState;
     int  _bonjourBrowseStatus;
     NSTimer * _browseReadyTimer;
     NSMutableDictionary * _browsedBases;
@@ -17,11 +17,11 @@
     int  _lastAutoGuessUISelector;
     NSDictionary * _lastInstrumentation;
     NSString * _lastParamString;
-    BOOL  _onShortTimer;
+    bool  _onShortTimer;
     NSDictionary * _targetBrowseRecord;
     NSString * _targetMACAddress;
     NSDictionary * _targetScanRecord;
-    BOOL  _updatedTargetInfo;
+    bool  _updatedTargetInfo;
     NSArray * _wifiScanInfos;
     int  _wifiScanStatus;
     NSDictionary * unconfiguredDeviceThatIsBeingSetup;
@@ -43,7 +43,7 @@
 @property (retain) NSDictionary *unconfiguredDeviceThatIsBeingSetup;
 
 + (id)fullAutoGuessDictionaryFromCompletionDict:(id)arg1;
-+ (BOOL)isRestoreAnOptionForTheRecommendations:(id)arg1;
++ (bool)isRestoreAnOptionForTheRecommendations:(id)arg1;
 + (id)primaryRecommendationDictionaryFromCompletionDict:(id)arg1;
 + (id)recommendationStringFromCompletionDict:(id)arg1;
 + (id)recommendationToActionChoice:(id)arg1;
@@ -51,7 +51,7 @@
 + (id)restoreRecommendationDictionaryFromCompletionDict:(id)arg1;
 + (id)shortProductNameForUnconfiguredDeviceFromAutoGuessResults:(id)arg1;
 + (id)shortProductNameFromBaseStationDictionary:(id)arg1;
-+ (BOOL)shouldShowPasswordUIForRecommendation:(id)arg1;
++ (bool)shouldShowPasswordUIForRecommendation:(id)arg1;
 + (id)sourceBaseStationFromRecommendation:(id)arg1;
 + (id)sourceNetworkFromRecommendation:(id)arg1;
 + (id)unconfiguredBaseStationCanBeConfiguredFromCompletionDict:(id)arg1;
@@ -66,7 +66,7 @@
 - (void)bonjourTXTRemoved:(id)arg1;
 - (void)bonjourTXTUpdated:(id)arg1;
 - (void)browseReadyTimerCallback:(id)arg1;
-- (long)cancelAutoGuess;
+- (int)cancelAutoGuess;
 - (void)cancelBonjourBrowser;
 - (void)cancelWiFiScanner;
 - (id)createCompletionDictFromAutoGuessResults:(id)arg1;
@@ -79,9 +79,9 @@
 - (int)lastAutoGuessUISelector;
 - (id)lastInstrumentation;
 - (id)lastParamString;
-- (BOOL)okToSwitchToShortBonjourTimeout:(id)arg1;
+- (bool)okToSwitchToShortBonjourTimeout:(id)arg1;
 - (void)runAutoGuessThread:(id)arg1;
-- (long)runAutoGuessWithWifiScanInfos:(id)arg1;
+- (int)runAutoGuessWithWifiScanInfos:(id)arg1;
 - (void)setBonjourBrowseStatus:(int)arg1;
 - (void)setCurrentAutoGuessUISelector:(int)arg1;
 - (void)setCurrentParamString:(id)arg1;
@@ -98,10 +98,10 @@
 - (void)set_browseReadyTimer:(id)arg1;
 - (void)set_browsedBases:(id)arg1;
 - (void)set_wifiScanInfos:(id)arg1;
-- (long)startAutoGuessForUnconfiguredMACAddress:(id)arg1 withWifiScanInfos:(id)arg2;
+- (int)startAutoGuessForUnconfiguredMACAddress:(id)arg1 withWifiScanInfos:(id)arg2;
 - (void)startAutoGuessIfReady;
-- (long)startBonjourBrowser;
-- (long)startWiFiScanner;
+- (int)startBonjourBrowser;
+- (int)startWiFiScanner;
 - (void)stopBonjourBrowser;
 - (void)stopWiFiScanner;
 - (id)targetBrowseRecord;
@@ -110,7 +110,7 @@
 - (id)targetScanRecord;
 - (void)uiAssetsUpdated:(id)arg1;
 - (id)unconfiguredDeviceThatIsBeingSetup;
-- (void)updateTargetInfo:(BOOL)arg1;
+- (void)updateTargetInfo:(bool)arg1;
 - (int)wifiScanStatus;
 - (void)wirelessScanDone:(id)arg1;
 

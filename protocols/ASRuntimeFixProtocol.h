@@ -5,7 +5,7 @@
 
 @required
 
-- (void)accountsHaveBeenSaved:(BOOL)arg1;
+- (void)accountsHaveBeenSaved:(bool)arg1;
 - (int)fixBasicAccountIfNeeded:(BasicAccount *)arg1 loggingMessage:(NSString *)arg2;
 - (NSSet *)supportedAccountTypes;
 

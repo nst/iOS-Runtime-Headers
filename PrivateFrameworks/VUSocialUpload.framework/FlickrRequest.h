@@ -4,7 +4,7 @@
 
 @interface FlickrRequest : NSObject
 
-- (void)_sendRequestToEndPoint:(id)arg1 withParams:(id)arg2 requestModifications:(id /* block */)arg3 completion:(id /* block */)arg4 failedAttempts:(unsigned int)arg5;
-- (void)sendRequestToEndPoint:(id)arg1 withParams:(id)arg2 requestModifications:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (void)_sendRequestToEndPoint:(id)arg1 withParams:(id)arg2 requestModifications:(id)arg3 completion:(id)arg4 failedAttempts:(unsigned long long)arg5;
+- (void)sendRequestToEndPoint:(id)arg1 withParams:(id)arg2 requestModifications:(id)arg3 completion:(id)arg4;
 
 @end

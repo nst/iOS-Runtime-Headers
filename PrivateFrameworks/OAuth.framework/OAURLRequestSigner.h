@@ -9,7 +9,7 @@
 
 @property (nonatomic) int signatureMethod;
 
-- (id)applyApplicationID:(id)arg1 toRequest:(id)arg2 containsMultiPartData:(BOOL)arg3;
+- (id)applyApplicationID:(id)arg1 toRequest:(id)arg2 containsMultiPartData:(bool)arg3;
 - (void)dealloc;
 - (id)initWithCredential:(id)arg1;
 - (id)oauthAuthorizationHeaderWithSignature:(id)arg1 nonce:(id)arg2 timestamp:(id)arg3;

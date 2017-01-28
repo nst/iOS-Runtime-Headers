@@ -3,39 +3,39 @@
  */
 
 @interface CUIRenditionSliceInformation : NSObject <NSCopying> {
-    float  _boundaries;
+    double  _boundaries;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _destinationRect;
     struct { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _edgeInsets;
-    int  _renditionType;
+    long long  _renditionType;
 }
 
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } destinationRect;
-@property (nonatomic, readonly) struct { float x1; float x2; float x3; float x4; } edgeInsets;
-@property (nonatomic, readonly) int renditionType;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } destinationRect;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } edgeInsets;
+@property (nonatomic, readonly) long long renditionType;
 
-- (struct CGSize { float x1; float x2; })_bottomRightCapSize;
-- (struct CGSize { float x1; float x2; })_topLeftCapSize;
+- (struct CGSize { double x1; double x2; })_bottomRightCapSize;
+- (struct CGSize { double x1; double x2; })_topLeftCapSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })destinationRect;
-- (struct { float x1; float x2; float x3; float x4; })edgeInsets;
-- (id)initWithRenditionType:(int)arg1 destinationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 topLeftInset:(struct CGSize { float x1; float x2; })arg3 bottomRightInset:(struct CGSize { float x1; float x2; })arg4;
-- (id)initWithSliceInformation:(id)arg1 destinationRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (float)positionOfSliceBoundary:(unsigned int)arg1;
-- (int)renditionType;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })destinationRect;
+- (struct { double x1; double x2; double x3; double x4; })edgeInsets;
+- (id)initWithRenditionType:(long long)arg1 destinationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 topLeftInset:(struct CGSize { double x1; double x2; })arg3 bottomRightInset:(struct CGSize { double x1; double x2; })arg4;
+- (id)initWithSliceInformation:(id)arg1 destinationRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (double)positionOfSliceBoundary:(unsigned long long)arg1;
+- (long long)renditionType;
 
 @end

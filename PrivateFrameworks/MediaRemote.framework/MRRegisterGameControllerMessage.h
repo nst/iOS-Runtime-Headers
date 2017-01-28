@@ -11,6 +11,6 @@
 - (void)dealloc;
 - (id)initWithProperties:(void*)arg1;
 - (void*)properties;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

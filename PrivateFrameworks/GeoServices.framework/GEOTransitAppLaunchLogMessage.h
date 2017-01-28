@@ -14,10 +14,10 @@
 
 @property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) GEOLatLng *destination;
-@property (nonatomic, readonly) BOOL hasBundleIdentifier;
-@property (nonatomic, readonly) BOOL hasDestination;
-@property (nonatomic, readonly) BOOL hasSource;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasBundleIdentifier;
+@property (nonatomic, readonly) bool hasDestination;
+@property (nonatomic, readonly) bool hasSource;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) GEOLatLng *source;
 @property (nonatomic) double timestamp;
 
@@ -28,17 +28,17 @@
 - (id)description;
 - (id)destination;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBundleIdentifier;
-- (BOOL)hasDestination;
-- (BOOL)hasSource;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBundleIdentifier;
+- (bool)hasDestination;
+- (bool)hasSource;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setDestination:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSource:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (id)source;

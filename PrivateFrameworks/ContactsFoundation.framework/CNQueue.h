@@ -8,14 +8,14 @@
 }
 
 @property (readonly) NSArray *allObjects;
-@property (readonly) unsigned int count;
+@property (readonly) unsigned long long count;
 
-+ (id)boundedQueueWithCapacity:(unsigned int)arg1;
-+ (id)boundedQueueWithCapacity:(unsigned int)arg1 overflowHandler:(id /* block */)arg2;
-+ (id)priorityQueueWithComparator:(id /* block */)arg1;
++ (id)boundedQueueWithCapacity:(unsigned long long)arg1;
++ (id)boundedQueueWithCapacity:(unsigned long long)arg1 overflowHandler:(id)arg2;
++ (id)priorityQueueWithComparator:(id)arg1;
 
 - (id)allObjects;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)dequeue;
 - (void)dequeueObject:(id)arg1;

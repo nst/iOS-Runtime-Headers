@@ -19,9 +19,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDistance:(double)arg1 duration:(double)arg2;
-- (id)paceValueForActivityType:(unsigned int)arg1;
+- (id)paceValueForActivityType:(unsigned long long)arg1;
 - (void)setDistanceInMeters:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (id)titleValueForUnit:(id)arg1 lapIndex:(int)arg2 shortFormat:(BOOL)arg3;
+- (id)titleValueForUnit:(id)arg1 lapIndex:(long long)arg2 shortFormat:(bool)arg3;
 
 @end

@@ -7,7 +7,7 @@
     unsigned int  _interest;
 }
 
-- (void)activeInterfaceOrientationWithCompletion:(id /* block */)arg1;
+- (void)activeInterfaceOrientationWithCompletion:(id)arg1;
 - (void)configureConnectMessage:(id)arg1;
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (id)initWithDelegate:(id)arg1 calloutQueue:(id)arg2;

@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)jsDialogScripts;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setJsDialogScripts:(id)arg1;
 
 @end

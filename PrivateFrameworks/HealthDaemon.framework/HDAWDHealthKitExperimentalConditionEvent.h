@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic, retain) HDAWDHealthKitExperimentalCondition *experimentalCondition;
-@property (nonatomic, readonly) BOOL hasExperimentalCondition;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasExperimentalCondition;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
@@ -21,14 +21,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)experimentalCondition;
-- (BOOL)hasExperimentalCondition;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasExperimentalCondition;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExperimentalCondition:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

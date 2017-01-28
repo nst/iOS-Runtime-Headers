@@ -15,7 +15,7 @@
 + (id)propertiesAllowingNSNull;
 + (void)saveShapeStyleLayoutPropertyMap:(id)arg1 toArchive:(struct ShapeStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; int x5; bool x6; bool x7; bool x8; bool x9; struct ColumnsArchive {} *x10; struct PaddingArchive {} *x11; unsigned int x12; bool x13; struct Reference {} *x14; }*)arg2 archiver:(id)arg3;
 
-- (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
+- (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
 - (id)defaultParagraphStyle;
 - (id)initFromUnarchiver:(id)arg1;
 - (SEL)mapThemePropertyMapSelector;

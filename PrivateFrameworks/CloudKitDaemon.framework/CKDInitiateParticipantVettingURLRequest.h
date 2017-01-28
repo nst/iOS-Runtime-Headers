@@ -7,14 +7,14 @@
     NSData * _encryptedKey;
     NSString * _participantID;
     CKRecordID * _shareRecordID;
-    id /* block */  _vettingInitiationRequestCompletionBlock;
+    id  _vettingInitiationRequestCompletionBlock;
 }
 
 @property (nonatomic, copy) NSString *baseToken;
 @property (nonatomic, copy) NSData *encryptedKey;
 @property (nonatomic, copy) NSString *participantID;
 @property (nonatomic, copy) CKRecordID *shareRecordID;
-@property (nonatomic, copy) id /* block */ vettingInitiationRequestCompletionBlock;
+@property (nonatomic, copy) id vettingInitiationRequestCompletionBlock;
 
 - (void).cxx_destruct;
 - (id)baseToken;
@@ -30,8 +30,8 @@
 - (void)setEncryptedKey:(id)arg1;
 - (void)setParticipantID:(id)arg1;
 - (void)setShareRecordID:(id)arg1;
-- (void)setVettingInitiationRequestCompletionBlock:(id /* block */)arg1;
+- (void)setVettingInitiationRequestCompletionBlock:(id)arg1;
 - (id)shareRecordID;
-- (id /* block */)vettingInitiationRequestCompletionBlock;
+- (id)vettingInitiationRequestCompletionBlock;
 
 @end

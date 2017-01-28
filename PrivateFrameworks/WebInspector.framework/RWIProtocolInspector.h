@@ -15,12 +15,12 @@
 }
 
 @property (nonatomic, readonly) RWIProtocolConfiguration *configuration;
-@property (nonatomic, readonly) BOOL connected;
+@property (nonatomic, readonly) bool connected;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)configuration;
-- (BOOL)connected;
+- (bool)connected;
 - (void)dealloc;
 - (id)initWithController:(struct AugmentableInspectorController { int (**x1)(); }*)arg1;
 - (void)inspectorControllerDestroyed;

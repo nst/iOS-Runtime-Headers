@@ -5,6 +5,6 @@
 
 @required
 
-- (int)zoomForZoomScale:(float)arg1;
+- (long long)zoomForZoomScale:(double)arg1;
 
 @end

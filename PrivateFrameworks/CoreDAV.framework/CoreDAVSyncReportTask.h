@@ -3,15 +3,15 @@
  */
 
 @interface CoreDAVSyncReportTask : CoreDAVPropertyFindBaseTask {
-    BOOL  _moreToSync;
+    bool  _moreToSync;
     NSString * _nextSyncToken;
     NSString * _previousSyncToken;
-    BOOL  _wasInvalidSyncToken;
+    bool  _wasInvalidSyncToken;
 }
 
-@property (nonatomic, readonly) BOOL moreToSync;
+@property (nonatomic, readonly) bool moreToSync;
 @property (nonatomic, readonly) NSString *nextSyncToken;
-@property (nonatomic, readonly) BOOL wasInvalidSyncToken;
+@property (nonatomic, readonly) bool wasInvalidSyncToken;
 
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;
@@ -19,10 +19,10 @@
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
 - (id)initWithPropertiesToFind:(id)arg1 atURL:(id)arg2 withDepth:(int)arg3 previousSyncToken:(id)arg4;
-- (BOOL)moreToSync;
+- (bool)moreToSync;
 - (id)nextSyncToken;
 - (id)notFoundHREFs;
 - (id)requestBody;
-- (BOOL)wasInvalidSyncToken;
+- (bool)wasInvalidSyncToken;
 
 @end

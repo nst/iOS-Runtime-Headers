@@ -7,14 +7,14 @@
     NSMutableArray * _fixedZones;
     NSMutableDictionary * _pcsInfoByZoneID;
     NSArray * _zoneIDs;
-    id /* block */  _zonePCSRepairProgressBlock;
+    id  _zonePCSRepairProgressBlock;
 }
 
 @property (nonatomic, retain) NSMutableArray *fetchedZones;
 @property (nonatomic, retain) NSMutableArray *fixedZones;
 @property (nonatomic, retain) NSMutableDictionary *pcsInfoByZoneID;
 @property (nonatomic, retain) NSArray *zoneIDs;
-@property (nonatomic, copy) id /* block */ zonePCSRepairProgressBlock;
+@property (nonatomic, copy) id zonePCSRepairProgressBlock;
 
 - (void).cxx_destruct;
 - (id)_checkPCSDataForZone:(id)arg1;
@@ -27,15 +27,15 @@
 - (id)fixedZones;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (id)pcsInfoByZoneID;
 - (void)setFetchedZones:(id)arg1;
 - (void)setFixedZones:(id)arg1;
 - (void)setPcsInfoByZoneID:(id)arg1;
 - (void)setZoneIDs:(id)arg1;
-- (void)setZonePCSRepairProgressBlock:(id /* block */)arg1;
+- (void)setZonePCSRepairProgressBlock:(id)arg1;
 - (id)zoneIDs;
-- (id /* block */)zonePCSRepairProgressBlock;
+- (id)zonePCSRepairProgressBlock;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface _HKDimension : NSObject {
     _HKFactorization * _reduction;
-    long  _reductionToken;
+    long long  _reductionToken;
 }
 
 + (id)dimensionFromString:(id)arg1;

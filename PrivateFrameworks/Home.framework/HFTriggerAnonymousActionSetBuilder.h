@@ -13,7 +13,8 @@
 @property (nonatomic, retain) HMTrigger *containingTrigger;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool requiresDeviceUnlock;
 @property (readonly) Class superclass;
 
 + (Class)homeKitRepresentationClass;
@@ -29,6 +30,7 @@
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
 - (void)removeAction:(id)arg1;
 - (void)removeAllActions;
+- (bool)requiresDeviceUnlock;
 - (void)setActionBuilders:(id)arg1;
 - (void)setActionSet:(id)arg1;
 - (void)setContainingTrigger:(id)arg1;

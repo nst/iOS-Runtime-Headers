@@ -5,22 +5,22 @@
 
 @required
 
-- (float)HUDPageControlBottomMargin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })HUDViewInsets;
-- (float)columnDividerHeightForHUDHeight:(float)arg1;
-- (float)columnDividerWidth;
+- (double)HUDPageControlBottomMargin;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })HUDViewInsets;
+- (double)columnDividerHeightForHUDHeight:(double)arg1;
+- (double)columnDividerWidth;
 - (UIColor *)dividerColor;
 - (UIColor *)inputColor;
-- (float)maxHUDHeightForHeight:(float)arg1;
-- (float)maxHUDWidthForWidth:(float)arg1;
-- (float)minimumFontScaleBeforeTruncation;
-- (float)summaryDescriptionToModifiersSpacing;
+- (double)maxHUDHeightForHeight:(double)arg1;
+- (double)maxHUDWidthForWidth:(double)arg1;
+- (double)minimumFontScaleBeforeTruncation;
+- (double)summaryDescriptionToModifiersSpacing;
 - (UIFont *)summaryFont;
-- (float)summaryLineHeight;
-- (float)summaryLineSpacing;
-- (float)summaryModifiersSpacing;
-- (float)summaryXPadding;
-- (float)summaryYPadding;
+- (double)summaryLineHeight;
+- (double)summaryLineSpacing;
+- (double)summaryModifiersSpacing;
+- (double)summaryXPadding;
+- (double)summaryYPadding;
 - (UIColor *)titleColor;
 
 @end

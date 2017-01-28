@@ -3,7 +3,7 @@
  */
 
 @interface TSgPTPUDPv4EtEPort : TSgPTPFDEtEPort {
-    void * _udpv4PortImpl;
+    NSString * _interfaceName;
 }
 
 @property (nonatomic, readonly, copy) NSString *interfaceName;

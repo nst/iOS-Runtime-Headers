@@ -4,10 +4,10 @@
 
 @interface SGDPowerLog : NSObject
 
-+ (void)endDissectionOfMessage:(id)arg1 inContext:(unsigned int)arg2;
-+ (void)endIngestOfMessages:(unsigned int)arg1;
++ (void)endDissectionOfMessage:(id)arg1 inContext:(unsigned long long)arg2;
++ (void)endIngestOfMessages:(unsigned long long)arg1;
 + (void)logPrewarmWithLastPrewarmTime:(double)arg1;
-+ (void)startDissectionOfMessage:(id)arg1 inContext:(unsigned int)arg2;
-+ (void)startIngestOfMessages:(unsigned int)arg1;
++ (void)startDissectionOfMessage:(id)arg1 inContext:(unsigned long long)arg2;
++ (void)startIngestOfMessages:(unsigned long long)arg1;
 
 @end

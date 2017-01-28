@@ -3,11 +3,11 @@
  */
 
 @interface SKUIBlockAnimationDelegate : NSObject {
-    id /* block */  _block;
+    id  _block;
 }
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)initWithCompletionHandler:(id /* block */)arg1;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (id)initWithCompletionHandler:(id)arg1;
 
 @end

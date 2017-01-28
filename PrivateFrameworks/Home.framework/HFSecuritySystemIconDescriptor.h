@@ -3,13 +3,13 @@
  */
 
 @interface HFSecuritySystemIconDescriptor : HFImageIconDescriptor {
-    int  _securitySystemState;
+    long long  _securitySystemState;
 }
 
-@property (nonatomic, readonly) int securitySystemState;
+@property (nonatomic, readonly) long long securitySystemState;
 
 - (id)imageIdentifier;
-- (id)initWithSecuritySystemState:(int)arg1;
-- (int)securitySystemState;
+- (id)initWithSecuritySystemState:(long long)arg1;
+- (long long)securitySystemState;
 
 @end

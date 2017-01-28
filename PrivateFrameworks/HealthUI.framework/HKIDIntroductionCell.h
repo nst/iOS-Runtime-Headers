@@ -5,7 +5,7 @@
 @interface HKIDIntroductionCell : UITableViewCell {
     UIButton * _actionButton;
     UILabel * _bodyLabel;
-    int  _cellType;
+    long long  _cellType;
     <HKIDIntroductionCellDelegate> * _delegate;
     UIButton * _linkButton;
     UIImageView * _logoImageView;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString *actionButtonTitleText;
 @property (nonatomic, retain) UILabel *bodyLabel;
 @property (nonatomic, retain) NSString *bodyText;
-@property (nonatomic) int cellType;
+@property (nonatomic) long long cellType;
 @property (nonatomic) <HKIDIntroductionCellDelegate> *delegate;
 @property (nonatomic, retain) UIButton *linkButton;
 @property (nonatomic, retain) NSString *linkButtonTitleText;
@@ -31,9 +31,9 @@
 - (id)actionButtonTitleText;
 - (id)bodyLabel;
 - (id)bodyText;
-- (int)cellType;
+- (long long)cellType;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)linkButton;
 - (void)linkButtonTapped:(id)arg1;
 - (id)linkButtonTitleText;
@@ -43,7 +43,7 @@
 - (void)setActionButtonTitleText:(id)arg1;
 - (void)setBodyLabel:(id)arg1;
 - (void)setBodyText:(id)arg1;
-- (void)setCellType:(int)arg1;
+- (void)setCellType:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLinkButton:(id)arg1;
 - (void)setLinkButtonTitleText:(id)arg1;

@@ -8,15 +8,15 @@
 }
 
 @property (nonatomic, copy) NSDecimalNumber *value;
-@property (nonatomic) BOOL wentToMax;
+@property (nonatomic) bool wentToMax;
 
 - (void).cxx_destruct;
 - (id)init;
 - (id)initWithPassSerialNumber:(id)arg1;
 - (void)save;
 - (void)setValue:(id)arg1;
-- (void)setWentToMax:(BOOL)arg1;
+- (void)setWentToMax:(bool)arg1;
 - (id)value;
-- (BOOL)wentToMax;
+- (bool)wentToMax;
 
 @end

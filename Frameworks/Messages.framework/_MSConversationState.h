@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSArray *recipientIdentifiers;
 @property (nonatomic, retain) NSUUID *senderIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activeMessage;

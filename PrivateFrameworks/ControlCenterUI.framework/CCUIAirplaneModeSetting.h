@@ -4,10 +4,10 @@
 
 @interface CCUIAirplaneModeSetting : CCUISettingModule <RadiosPreferencesDelegate> {
     RadiosPreferences * _airplaneModeController;
-    BOOL  _airplaneModeEnabled;
+    bool  _airplaneModeEnabled;
 }
 
-@property (getter=_isAirplaneModeEnabled, setter=_setAirplaneModeEnabled:, nonatomic) BOOL airplaneModeEnabled;
+@property (getter=_isAirplaneModeEnabled, setter=_setAirplaneModeEnabled:, nonatomic) bool airplaneModeEnabled;
 
 + (id)displayName;
 + (id)identifier;
@@ -15,11 +15,11 @@
 + (id)statusOnString;
 
 - (void).cxx_destruct;
-- (BOOL)_isAirplaneModeEnabled;
-- (BOOL)_isStateOverridden;
-- (void)_setAirplaneModeEnabled:(BOOL)arg1;
-- (BOOL)_stateWithEffectiveOverrides;
-- (BOOL)_toggleState;
+- (bool)_isAirplaneModeEnabled;
+- (bool)_isStateOverridden;
+- (void)_setAirplaneModeEnabled:(bool)arg1;
+- (bool)_stateWithEffectiveOverrides;
+- (bool)_toggleState;
 - (void)_updateState;
 - (void)activate;
 - (id)aggdKey;

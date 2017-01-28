@@ -3,20 +3,20 @@
  */
 
 @interface HMUserInviteInformation : NSObject {
-    BOOL  _administrator;
-    BOOL  _remoteAccessAllowed;
+    bool  _administrator;
+    bool  _remoteAccessAllowed;
     NSString * _userID;
 }
 
-@property (getter=isAdministrator, nonatomic, readonly) BOOL administrator;
-@property (getter=isRemoteAccessAllowed, nonatomic, readonly) BOOL remoteAccessAllowed;
+@property (getter=isAdministrator, nonatomic, readonly) bool administrator;
+@property (getter=isRemoteAccessAllowed, nonatomic, readonly) bool remoteAccessAllowed;
 @property (nonatomic, readonly, copy) NSString *userID;
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithUser:(id)arg1 administrator:(BOOL)arg2 remoteAccess:(BOOL)arg3;
-- (BOOL)isAdministrator;
-- (BOOL)isRemoteAccessAllowed;
+- (id)initWithUser:(id)arg1 administrator:(bool)arg2 remoteAccess:(bool)arg3;
+- (bool)isAdministrator;
+- (bool)isRemoteAccessAllowed;
 - (id)userID;
 
 @end

@@ -13,7 +13,7 @@
 @property (nonatomic) <_SFDialogControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <_SFDialogPresenting> *dialogPresenter;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)initialize;
@@ -21,11 +21,11 @@
 - (void).cxx_destruct;
 - (int)_currentWebProcessIdentifier;
 - (void)_dismissDialog;
-- (BOOL)_isPresentingDialog;
+- (bool)_isPresentingDialog;
 - (void)_presentDialog:(id)arg1 forWebProcessIdentifier:(int)arg2;
 - (id)delegate;
 - (id)dialogPresenter;
-- (void)dialogView:(id)arg1 didSelectPrimaryAction:(BOOL)arg2 withPromptText:(id)arg3;
+- (void)dialogView:(id)arg1 didSelectPrimaryAction:(bool)arg2 withPromptText:(id)arg3;
 - (void)dismissAllDialogsIfNeeded;
 - (void)owningWebViewWillBecomeActive;
 - (void)setDelegate:(id)arg1;

@@ -16,15 +16,15 @@
 - (id)_aceObjectDictionaryAtFilepath:(id)arg1;
 - (id)_cachedGuideUpdate;
 - (id)_pathForCachedGuideUpdate;
-- (BOOL)_shouldCheckForUpdateAtDate:(id)arg1 lastAppUpdateTime:(id)arg2;
+- (bool)_shouldCheckForUpdateAtDate:(id)arg1 lastAppUpdateTime:(id)arg2;
 - (void)_updateLastCheckedWithDate:(id)arg1;
 - (id)cachedGuideSnippet;
 - (id)cachedGuideTag;
 - (void)clearCachedGuide;
 - (void)dealloc;
 - (id)init;
-- (BOOL)shouldCheckForUpdateWithLastAppUpdateTime:(id)arg1;
-- (void)updateCacheWithGuideUpdate:(id)arg1 completion:(id /* block */)arg2;
+- (bool)shouldCheckForUpdateWithLastAppUpdateTime:(id)arg1;
+- (void)updateCacheWithGuideUpdate:(id)arg1 completion:(id)arg2;
 - (void)updateLastCheckedDate;
 
 @end

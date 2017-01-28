@@ -12,17 +12,17 @@
 
 @property (nonatomic, readonly) NSSet *_dependencySet;
 @property (nonatomic, readonly) NSLock *_operationLock;
-@property (getter=isCanceled, readonly) BOOL canceled;
-@property (getter=isComplete, readonly) BOOL complete;
+@property (getter=isCanceled, readonly) bool canceled;
+@property (getter=isComplete, readonly) bool complete;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXRunNodeDelegate> *delegate;
 @property (nonatomic, readonly, copy) NSArray *dependencies;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isRunning, readonly) BOOL running;
-@property (readonly) unsigned int state;
+@property (readonly) unsigned long long hash;
+@property (getter=isRunning, readonly) bool running;
+@property (readonly) unsigned long long state;
 @property (readonly) Class superclass;
-@property (getter=isWaiting, readonly) BOOL waiting;
+@property (getter=isWaiting, readonly) bool waiting;
 
 + (id)_defaultNodeRunner;
 + (void)processGraphForRunNode:(id)arg1;
@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 - (id)_dependencySet;
 - (id)_operationLock;
-- (void)_performChangesToOperation:(id /* block */)arg1;
+- (void)_performChangesToOperation:(id)arg1;
 - (void)cancel;
 - (void)cancelWithError:(id)arg1;
 - (void)complete;
@@ -40,13 +40,13 @@
 - (void)didCancel;
 - (id)init;
 - (id)initWithDependencies:(id)arg1;
-- (BOOL)isCanceled;
-- (BOOL)isComplete;
-- (BOOL)isRunning;
-- (BOOL)isWaiting;
+- (bool)isCanceled;
+- (bool)isComplete;
+- (bool)isRunning;
+- (bool)isWaiting;
 - (id)newOperation;
 - (void)run;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

@@ -7,14 +7,14 @@
 }
 
 @property (nonatomic, readonly) NSArray *affectedEntities;
-@property (getter=isBlockingIncident, nonatomic, readonly) BOOL blockingIncident;
+@property (getter=isBlockingIncident, nonatomic, readonly) bool blockingIncident;
 @property (nonatomic, readonly) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) NSString *fullDescription;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int iconType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long iconType;
 @property (nonatomic, readonly) NSDate *lastUpdated;
 @property (nonatomic, readonly) NSString *messageForNonRoutable;
 @property (nonatomic, readonly) NSString *messageForRoutePlanning;
@@ -30,11 +30,11 @@
 - (void)dealloc;
 - (id)endDate;
 - (id)fullDescription;
-- (unsigned int)hash;
-- (int)iconType;
+- (unsigned long long)hash;
+- (long long)iconType;
 - (id)initWithIncident:(id)arg1;
-- (BOOL)isBlockingIncident;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isBlockingIncident;
+- (bool)isEqual:(id)arg1;
 - (id)lastUpdated;
 - (id)messageForNonRoutable;
 - (id)messageForRoutePlanning;

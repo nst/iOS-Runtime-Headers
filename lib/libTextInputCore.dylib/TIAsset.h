@@ -3,46 +3,46 @@
  */
 
 @interface TIAsset : NSObject {
-    int  _compatibilityVersion;
-    int  _contentVersion;
+    long long  _compatibilityVersion;
+    long long  _contentVersion;
     NSArray * _contents;
     NSString * _inputModeLevel;
-    int  _numberOfAssertions;
-    unsigned int  _sizeInBytes;
+    long long  _numberOfAssertions;
+    unsigned long long  _sizeInBytes;
     NSString * _type;
     NSURL * _url;
 }
 
-@property (nonatomic, readonly) int compatibilityVersion;
-@property (nonatomic, readonly) int contentVersion;
+@property (nonatomic, readonly) long long compatibilityVersion;
+@property (nonatomic, readonly) long long contentVersion;
 @property (nonatomic, readonly) NSArray *contents;
 @property (nonatomic, readonly) NSString *inputModeLevel;
-@property (nonatomic, readonly) BOOL isCompatible;
-@property (nonatomic, readonly) unsigned int sizeInBytes;
+@property (nonatomic, readonly) bool isCompatible;
+@property (nonatomic, readonly) unsigned long long sizeInBytes;
 @property (nonatomic, readonly) NSString *type;
 @property (nonatomic, readonly) NSURL *url;
 
 + (id)knownAssetTypes;
-+ (int)supportedCompatibilityVersion;
++ (long long)supportedCompatibilityVersion;
 
 - (void)addAssertion;
 - (id)assetContentItemsForInputModeLevels:(id)arg1 contentType:(id)arg2;
-- (int)compatibilityVersion;
-- (int)contentVersion;
+- (long long)compatibilityVersion;
+- (long long)contentVersion;
 - (id)contents;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasAssertions;
-- (unsigned int)hash;
+- (bool)hasAssertions;
+- (unsigned long long)hash;
 - (id)initWithASAsset:(id)arg1;
-- (id)initWithType:(id)arg1 level:(id)arg2 url:(id)arg3 contentVersion:(int)arg4 compatibilityVersion:(int)arg5 sizeInBytes:(unsigned int)arg6 contents:(id)arg7;
+- (id)initWithType:(id)arg1 level:(id)arg2 url:(id)arg3 contentVersion:(long long)arg4 compatibilityVersion:(long long)arg5 sizeInBytes:(unsigned long long)arg6 contents:(id)arg7;
 - (id)inputModeLevel;
-- (BOOL)isCompatible;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCompatible;
+- (bool)isEqual:(id)arg1;
 - (id)laterAsset:(id)arg1;
 - (id)recursiveDescription;
 - (void)removeAssertion;
-- (unsigned int)sizeInBytes;
+- (unsigned long long)sizeInBytes;
 - (id)type;
 - (id)url;
 

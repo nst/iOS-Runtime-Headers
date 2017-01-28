@@ -10,12 +10,12 @@
 @property (nonatomic, readonly) <PXDisplayAssetCollection> *assetCollection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; } simpleIndexPath;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; } simpleIndexPath;
 @property (readonly) Class superclass;
 
 - (id)asset;
 - (id)assetCollection;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })simpleIndexPath;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })simpleIndexPath;
 
 @end

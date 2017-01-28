@@ -5,7 +5,7 @@
 
 @required
 
-- (int)currentAppearanceStyle;
+- (long long)currentAppearanceStyle;
 - (UIBarButtonItem *)customLeftButton;
 - (UIBarButtonItem *)customRightButton;
 - (<CNFRegFirstRunDelegate> *)delegate;

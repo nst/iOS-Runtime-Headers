@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *iconImage;
 @property (nonatomic, retain) CALayer *iconImageLayer;
 @property (nonatomic, retain) CALayer *largeBubble;
@@ -27,13 +27,13 @@
 - (void).cxx_destruct;
 - (void)_buildIconImage;
 - (void)_buildThinkingDots;
-- (id)_largeBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
-- (id)_largeBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
-- (id)_mediumBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
-- (id)_mediumBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
+- (id)_largeBubbleGrowAnimationsWithSpeed:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_largeBubblePulseAnimationWithSpeed:(double)arg1 delay:(double)arg2;
+- (id)_mediumBubbleGrowAnimationsWithSpeed:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_mediumBubblePulseAnimationWithSpeed:(double)arg1 delay:(double)arg2;
 - (void)_setup;
-- (id)_smallBubbleGrowAnimationsWithSpeed:(float)arg1 offset:(struct CGPoint { float x1; float x2; })arg2;
-- (id)_smallBubblePulseAnimationWithSpeed:(float)arg1 delay:(float)arg2;
+- (id)_smallBubbleGrowAnimationsWithSpeed:(double)arg1 offset:(struct CGPoint { double x1; double x2; })arg2;
+- (id)_smallBubblePulseAnimationWithSpeed:(double)arg1 delay:(double)arg2;
 - (void)_updateForImage;
 - (double)convertedCurrentMediaTime;
 - (id)iconImage;

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isDisabled;
-- (void)setDisabled:(BOOL)arg1;
+- (bool)isDisabled;
+- (void)setDisabled:(bool)arg1;
 
 @end

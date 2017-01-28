@@ -9,7 +9,7 @@
 + (id)sharedInstance;
 
 - (void)_didReceiveFontSizeChangeNotification:(id)arg1;
-- (id)cachedAttributesForIdentifier:(id)arg1 constructionBlock:(id /* block */)arg2;
+- (id)cachedAttributesForIdentifier:(id)arg1 constructionBlock:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

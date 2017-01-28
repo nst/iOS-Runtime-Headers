@@ -7,28 +7,28 @@
     <_SBUIBiometricKitInterfaceDelegate> * _delegate;
     unsigned long long  _enrolledIdentitiesCount;
     int  _enrollmentChangedNotifyToken;
-    BOOL  _isFingerOn;
+    bool  _isFingerOn;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_SBUIBiometricKitInterfaceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_sendDelegateEvent:(unsigned int)arg1;
+- (void)_sendDelegateEvent:(unsigned long long)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)delegate;
-- (long)detectFingerWithOptions:(id)arg1;
-- (long)enableBackgroundFdet:(BOOL)arg1;
-- (BOOL)hasEnrolledIdentities;
+- (int)detectFingerWithOptions:(id)arg1;
+- (int)enableBackgroundFdet:(bool)arg1;
+- (bool)hasEnrolledIdentities;
 - (id)init;
-- (BOOL)isFingerOn;
-- (unsigned int)lockoutState;
+- (bool)isFingerOn;
+- (unsigned long long)lockoutState;
 - (void)matchResult:(id)arg1 withDetails:(id)arg2;
-- (long)matchWithMode:(unsigned int)arg1 andCredentialSet:(id)arg2;
+- (int)matchWithMode:(unsigned long long)arg1 andCredentialSet:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)statusMessage:(unsigned int)arg1;
 

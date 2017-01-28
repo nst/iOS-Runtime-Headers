@@ -6,27 +6,27 @@
     NSArray * _familyFeaturePrimaryDescriptions;
     NSArray * _familyFeatureSecondaryDescriptions;
     NSString * _familyFeatureSecondaryTitle;
-    BOOL  _hasPendingInvites;
+    bool  _hasPendingInvites;
     NSString * _underageEligibilityAlertMessage;
     NSString * _underageEligibilityAlertTitle;
 }
 
-@property (nonatomic, readonly) int eligibilityStatus;
-@property (nonatomic, readonly) BOOL eligible;
+@property (nonatomic, readonly) long long eligibilityStatus;
+@property (nonatomic, readonly) bool eligible;
 @property (nonatomic, readonly) NSArray *familyFeaturePrimaryDescriptions;
 @property (nonatomic, readonly) NSArray *familyFeatureSecondaryDescriptions;
 @property (nonatomic, readonly) NSString *familyFeatureSecondaryTitle;
-@property (nonatomic, readonly) BOOL hasPendingInvites;
+@property (nonatomic, readonly) bool hasPendingInvites;
 @property (nonatomic, readonly) NSString *underageEligibilityAlertMessage;
 @property (nonatomic, readonly) NSString *underageEligibilityAlertTitle;
 
 - (void).cxx_destruct;
-- (int)eligibilityStatus;
-- (BOOL)eligible;
+- (long long)eligibilityStatus;
+- (bool)eligible;
 - (id)familyFeaturePrimaryDescriptions;
 - (id)familyFeatureSecondaryDescriptions;
 - (id)familyFeatureSecondaryTitle;
-- (BOOL)hasPendingInvites;
+- (bool)hasPendingInvites;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (id)underageEligibilityAlertMessage;
 - (id)underageEligibilityAlertTitle;

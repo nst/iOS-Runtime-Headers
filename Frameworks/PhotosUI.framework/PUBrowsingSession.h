@@ -4,7 +4,7 @@
 
 @interface PUBrowsingSession : NSObject <PUAssetActionManagerDelegate, PUAssetsDataSourceManagerDelegate, PULoadingStatusManagerDelegate> {
     PUAssetActionManager * _actionManager;
-    BOOL  _active;
+    bool  _active;
     PUContentTileProvider * _contentTileProvider;
     PUAssetsDataSourceManager * _dataSourceManager;
     PULoadingStatusManager * _loadingStatusManager;
@@ -15,12 +15,12 @@
 }
 
 @property (nonatomic, readonly) PUAssetActionManager *actionManager;
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, retain) PUContentTileProvider *contentTileProvider;
 @property (nonatomic, readonly) PUAssetsDataSourceManager *dataSourceManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PULoadingStatusManager *loadingStatusManager;
 @property (nonatomic, retain) PUMediaProvider *mediaProvider;
 @property (nonatomic, readonly) PXPhotosDetailsContext *photosDetailsContext;
@@ -39,12 +39,12 @@
 - (id)init;
 - (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3;
 - (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3 photosDetailsContext:(id)arg4;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)loadingStatusManager;
 - (void)loadingStatusManager:(id)arg1 didUpdateLoadingStatus:(id)arg2 forItem:(id)arg3;
 - (id)mediaProvider;
 - (id)photosDetailsContext;
-- (void)setActive:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
 - (void)setContentTileProvider:(id)arg1;
 - (void)setMediaProvider:(id)arg1;
 - (void)setTileAnimator:(id)arg1;

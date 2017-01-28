@@ -3,18 +3,18 @@
  */
 
 @interface MKMapItemMetadataDealRequest : MKMapItemMetadataRequest {
-    id /* block */  _dealHandler;
+    id  _dealHandler;
 }
 
-@property (nonatomic, copy) id /* block */ dealHandler;
+@property (nonatomic, copy) id dealHandler;
 
 + (id)requestWithMapItem:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)dealHandler;
+- (id)dealHandler;
 - (void)handleData:(id)arg1;
 - (void)handleError:(id)arg1;
-- (void)setDealHandler:(id /* block */)arg1;
+- (void)setDealHandler:(id)arg1;
 - (id)url;
 - (id)urlRequest;
 

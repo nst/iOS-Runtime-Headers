@@ -9,37 +9,37 @@
     }  _has;
     long long  _objectType;
     NSData * _sourceUUIDs;
-    BOOL  _userOrdered;
+    bool  _userOrdered;
 }
 
-@property (nonatomic) BOOL hasObjectType;
-@property (nonatomic, readonly) BOOL hasSourceUUIDs;
-@property (nonatomic) BOOL hasUserOrdered;
+@property (nonatomic) bool hasObjectType;
+@property (nonatomic, readonly) bool hasSourceUUIDs;
+@property (nonatomic) bool hasUserOrdered;
 @property (nonatomic) long long objectType;
 @property (nonatomic, retain) NSData *sourceUUIDs;
-@property (nonatomic) BOOL userOrdered;
+@property (nonatomic) bool userOrdered;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)decodedDataTypeCode;
+- (long long)decodedDataTypeCode;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasObjectType;
-- (BOOL)hasSourceUUIDs;
-- (BOOL)hasUserOrdered;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasObjectType;
+- (bool)hasSourceUUIDs;
+- (bool)hasUserOrdered;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (long long)objectType;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasObjectType:(BOOL)arg1;
-- (void)setHasUserOrdered:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasObjectType:(bool)arg1;
+- (void)setHasUserOrdered:(bool)arg1;
 - (void)setObjectType:(long long)arg1;
 - (void)setSourceUUIDs:(id)arg1;
-- (void)setUserOrdered:(BOOL)arg1;
+- (void)setUserOrdered:(bool)arg1;
 - (id)sourceUUIDs;
-- (BOOL)userOrdered;
+- (bool)userOrdered;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -4,16 +4,16 @@
 
 @interface HMDFieldWrapper : NSObject {
     NSString * _name;
-    int  _tlvid;
+    long long  _tlvid;
 }
 
 @property (nonatomic) NSString *name;
-@property (nonatomic) int tlvid;
+@property (nonatomic) long long tlvid;
 
-- (id)initWithTlvId:(unsigned int)arg1 name:(id)arg2;
+- (id)initWithTlvId:(unsigned long long)arg1 name:(id)arg2;
 - (id)name;
 - (void)setName:(id)arg1;
-- (void)setTlvid:(int)arg1;
-- (int)tlvid;
+- (void)setTlvid:(long long)arg1;
+- (long long)tlvid;
 
 @end

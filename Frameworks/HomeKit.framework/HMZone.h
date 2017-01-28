@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
@@ -31,22 +31,22 @@
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, readonly) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_addRoom:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_addRoom:(id)arg1 completionHandler:(id)arg2;
 - (void)_configure:(id)arg1 messageDispatcher:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
 - (void)_handleRoomAddedNotification:(id)arg1;
 - (void)_handleRoomRemovedNotification:(id)arg1;
 - (void)_handleZoneRenamedNotification:(id)arg1;
 - (void)_invalidate;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
 - (void)_removeRoom:(id)arg1;
-- (void)_removeRoom:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_removeRoom:(id)arg1 completionHandler:(id)arg2;
 - (void)_unconfigure;
-- (void)_updateName:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)addRoom:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateName:(id)arg1 completionHandler:(id)arg2;
+- (void)addRoom:(id)arg1 completionHandler:(id)arg2;
 - (id)clientQueue;
 - (id)currentRooms;
 - (void)dealloc;
@@ -61,7 +61,7 @@
 - (id)msgDispatcher;
 - (id)name;
 - (id)propertyQueue;
-- (void)removeRoom:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)removeRoom:(id)arg1 completionHandler:(id)arg2;
 - (id)roomWithUUID:(id)arg1;
 - (id)rooms;
 - (void)setClientQueue:(id)arg1;
@@ -73,7 +73,7 @@
 - (void)setPropertyQueue:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uniqueIdentifier;
-- (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateName:(id)arg1 completionHandler:(id)arg2;
 - (id)uuid;
 
 @end

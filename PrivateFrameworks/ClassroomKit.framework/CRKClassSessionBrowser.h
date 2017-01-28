@@ -15,13 +15,13 @@
     CATNetworkReachability * mNetworkReachability;
 }
 
-@property (getter=isBrowsing, nonatomic, readonly) BOOL browsing;
+@property (getter=isBrowsing, nonatomic, readonly) bool browsing;
 @property (nonatomic, retain) id clientIdentity;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CRKClassSessionBrowserDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSSet *enrolledControlGroupIdentifiers;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSSet *organizationUUIDs;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSDictionary *temporarilyEnrolledControlGroupIdentifiersByInstructorIdentifier;
@@ -31,7 +31,7 @@
 - (void)beaconBrowser:(id)arg1 didFailWithError:(id)arg2;
 - (void)beaconBrowser:(id)arg1 didFindBeaconForClassSession:(id)arg2 flags:(unsigned short)arg3;
 - (id)browserStateDictionary;
-- (void)classSession:(id)arg1 didChangeState:(int)arg2 previousState:(int)arg3;
+- (void)classSession:(id)arg1 didChangeState:(long long)arg2 previousState:(long long)arg3;
 - (void)classSession:(id)arg1 didConnectWithTransport:(id)arg2;
 - (void)classSession:(id)arg1 willLoseBeaconAfterTimeInterval:(double)arg2;
 - (void)classSessionDidDisconnect:(id)arg1;
@@ -46,7 +46,7 @@
 - (void)delegateLostConnectionToClassSession:(id)arg1;
 - (id)enrolledControlGroupIdentifiers;
 - (id)init;
-- (BOOL)isBrowsing;
+- (bool)isBrowsing;
 - (void)lostConnectionToClassSession:(id)arg1;
 - (id)organizationUUIDs;
 - (void)reachabilityDidChange:(id)arg1;

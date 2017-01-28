@@ -3,29 +3,29 @@
  */
 
 @interface TKVibrationRecorderProgressDotImageView : UIImageView {
-    float  _accessibilityFrameAdditionalHeight;
+    double  _accessibilityFrameAdditionalHeight;
     double  _duration;
     double  _previousPauseDuration;
     double  _previousPauseTimeInterval;
     double  _timeInterval;
 }
 
-@property (nonatomic) float accessibilityFrameAdditionalHeight;
+@property (nonatomic) double accessibilityFrameAdditionalHeight;
 @property (nonatomic) double duration;
 @property (nonatomic) double previousPauseDuration;
 @property (nonatomic) double previousPauseTimeInterval;
 @property (nonatomic) double timeInterval;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
-- (float)accessibilityFrameAdditionalHeight;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })accessibilityFrame;
+- (double)accessibilityFrameAdditionalHeight;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
 - (double)duration;
-- (BOOL)isAccessibilityElement;
+- (bool)isAccessibilityElement;
 - (double)previousPauseDuration;
 - (double)previousPauseTimeInterval;
-- (void)setAccessibilityFrameAdditionalHeight:(float)arg1;
+- (void)setAccessibilityFrameAdditionalHeight:(double)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setPreviousPauseDuration:(double)arg1;
 - (void)setPreviousPauseTimeInterval:(double)arg1;

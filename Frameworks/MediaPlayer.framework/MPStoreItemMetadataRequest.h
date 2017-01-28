@@ -3,30 +3,30 @@
  */
 
 @interface MPStoreItemMetadataRequest : NSObject {
-    BOOL  _allowLocalEquivalencies;
+    bool  _allowLocalEquivalencies;
     NSArray * _itemIdentifiers;
-    unsigned int  _reason;
+    unsigned long long  _reason;
     NSString * _requestingBundleIdentifier;
     NSString * _requestingBundleVersion;
     NSNumber * _timeoutInterval;
 }
 
-@property (nonatomic) BOOL allowLocalEquivalencies;
+@property (nonatomic) bool allowLocalEquivalencies;
 @property (nonatomic, copy) NSArray *itemIdentifiers;
-@property (nonatomic) unsigned int reason;
+@property (nonatomic) unsigned long long reason;
 @property (nonatomic, copy) NSString *requestingBundleIdentifier;
 @property (nonatomic, copy) NSString *requestingBundleVersion;
 @property (nonatomic, copy) NSNumber *timeoutInterval;
 
 - (void).cxx_destruct;
-- (BOOL)allowLocalEquivalencies;
+- (bool)allowLocalEquivalencies;
 - (id)itemIdentifiers;
-- (unsigned int)reason;
+- (unsigned long long)reason;
 - (id)requestingBundleIdentifier;
 - (id)requestingBundleVersion;
-- (void)setAllowLocalEquivalencies:(BOOL)arg1;
+- (void)setAllowLocalEquivalencies:(bool)arg1;
 - (void)setItemIdentifiers:(id)arg1;
-- (void)setReason:(unsigned int)arg1;
+- (void)setReason:(unsigned long long)arg1;
 - (void)setRequestingBundleIdentifier:(id)arg1;
 - (void)setRequestingBundleVersion:(id)arg1;
 - (void)setTimeoutInterval:(id)arg1;

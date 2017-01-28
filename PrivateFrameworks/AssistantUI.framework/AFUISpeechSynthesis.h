@@ -9,7 +9,7 @@
     <AFUISpeechSynthesisLocalDelegate> * _localDelegate;
     AFVoiceInfo * _outputVoice;
     unsigned int  _sessionID;
-    BOOL  _sessionIDIsValid;
+    bool  _sessionIDIsValid;
     VSSpeechSynthesizer * _synthesizer;
 }
 
@@ -18,13 +18,13 @@
 @property (nonatomic, retain) <AFUISpeechSynthesisDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (getter=_elementQueue, nonatomic, readonly) AFQueue *elementQueue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <AFUISpeechSynthesisLocalDelegate> *localDelegate;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_activeElements;
-- (void)_cancelByCancellingActiveElementsOnly:(BOOL)arg1;
+- (void)_cancelByCancellingActiveElementsOnly:(bool)arg1;
 - (id)_elementQueue;
 - (void)_processElementQueue;
 - (void)_processProvisionalElements;
@@ -33,13 +33,13 @@
 - (void)_updateSynthesizerWithVoice:(id)arg1;
 - (void)cancel;
 - (id)delegate;
-- (void)enqueueText:(id)arg1 completion:(id /* block */)arg2;
-- (void)enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(id)arg5 completion:(id /* block */)arg6 animationIdentifier:(id)arg7;
+- (void)enqueueText:(id)arg1 completion:(id)arg2;
+- (void)enqueueText:(id)arg1 isPhonetic:(bool)arg2 provisionally:(bool)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(id)arg5 completion:(id)arg6 animationIdentifier:(id)arg7 analyticsContext:(id)arg8;
 - (id)init;
 - (void)invalidate;
 - (void)invalidateOnMainThread;
-- (BOOL)isSpeaking;
-- (BOOL)isSynthesisQueueEmpty;
+- (bool)isSpeaking;
+- (bool)isSynthesisQueueEmpty;
 - (id)localDelegate;
 - (void)prewarmIfNeeded;
 - (void)queue:(id)arg1 didEnqueueObjects:(id)arg2;
@@ -49,7 +49,7 @@
 - (void)setOutputVoice:(id)arg1;
 - (void)skipCurrentSynthesis;
 - (void)speechSynthesisElementSynthesisEligibilityDidChange:(id)arg1;
-- (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(BOOL)arg3 withError:(id)arg4;
+- (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(bool)arg3 withError:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 withInstrumentMetrics:(id)arg3;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;
 

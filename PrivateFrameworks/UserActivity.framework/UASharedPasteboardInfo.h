@@ -4,27 +4,27 @@
 
 @interface UASharedPasteboardInfo : NSObject <NSCopying, NSSecureCoding> {
     NSFileHandle * _dataFile;
-    int  _dataSize;
+    long long  _dataSize;
     NSArray * _items;
 }
 
 @property (retain) NSFileHandle *dataFile;
-@property int dataSize;
+@property long long dataSize;
 @property (copy) NSArray *items;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataFile;
-- (int)dataSize;
+- (long long)dataSize;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)items;
 - (void)setDataFile:(id)arg1;
-- (void)setDataSize:(int)arg1;
+- (void)setDataSize:(long long)arg1;
 - (void)setItems:(id)arg1;
 
 @end

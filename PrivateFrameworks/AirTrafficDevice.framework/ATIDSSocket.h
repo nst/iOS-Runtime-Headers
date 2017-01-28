@@ -6,24 +6,24 @@
     unsigned int  _btWriteBufferSize;
     IDSDevice * _device;
     IDSDeviceConnection * _deviceConnection;
-    int  _priority;
+    long long  _priority;
     ATIDSService * _service;
     unsigned int  _wifiWriteBufferSize;
 }
 
 @property (nonatomic, readonly) IDSDevice *device;
-@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) long long priority;
 @property (nonatomic, readonly) ATIDSService *service;
 
 - (void).cxx_destruct;
 - (void)addTransportUpgradeException;
 - (void)closeDescriptor;
-- (void)connectWithCompletion:(id /* block */)arg1;
+- (void)connectWithCompletion:(id)arg1;
 - (void)dealloc;
 - (id)device;
-- (id)initWithDevice:(id)arg1 service:(id)arg2 priority:(int)arg3;
-- (BOOL)open;
-- (int)priority;
+- (id)initWithDevice:(id)arg1 service:(id)arg2 priority:(long long)arg3;
+- (bool)open;
+- (long long)priority;
 - (void)removeTransportUpgradeException;
 - (id)service;
 

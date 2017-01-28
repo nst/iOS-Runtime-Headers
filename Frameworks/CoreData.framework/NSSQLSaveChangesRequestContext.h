@@ -22,9 +22,9 @@
 - (void)executePrologue;
 - (void)executeRequestUsingConnection:(id)arg1;
 - (id)faultHandler;
-- (BOOL)hasChangesForWriting;
+- (bool)hasChangesForWriting;
 - (id)initWithRequest:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
-- (BOOL)isWritingRequest;
+- (bool)isWritingRequest;
 - (id)metadataToWrite;
 - (id)model;
 - (id)originalCachedRows;

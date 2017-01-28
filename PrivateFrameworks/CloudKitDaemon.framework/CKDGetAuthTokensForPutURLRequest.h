@@ -5,12 +5,12 @@
 @interface CKDGetAuthTokensForPutURLRequest : CKDURLRequest {
     NSMapTable * _MMCSItemsByRecordIDs;
     NSMapTable * _recordIDsByRequestIDs;
-    BOOL  _useEncryption;
+    bool  _useEncryption;
 }
 
 @property (nonatomic, readonly) NSMapTable *MMCSItemsByRecordIDs;
 @property (nonatomic, retain) NSMapTable *recordIDsByRequestIDs;
-@property (nonatomic) BOOL useEncryption;
+@property (nonatomic) bool useEncryption;
 
 - (void).cxx_destruct;
 - (id)MMCSItemsByRecordIDs;
@@ -22,7 +22,7 @@
 - (id)requestOperationClasses;
 - (id)requestOperations;
 - (void)setRecordIDsByRequestIDs:(id)arg1;
-- (void)setUseEncryption:(BOOL)arg1;
-- (BOOL)useEncryption;
+- (void)setUseEncryption:(bool)arg1;
+- (bool)useEncryption;
 
 @end

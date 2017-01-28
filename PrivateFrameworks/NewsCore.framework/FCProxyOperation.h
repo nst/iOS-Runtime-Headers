@@ -16,9 +16,9 @@
 - (void)_revisitRelativePriority;
 - (void)operationDidFinishWithError:(id)arg1;
 - (void)performOperation;
-- (unsigned int)propertiesInheritedByChildOperations;
-- (void)setQualityOfService:(int)arg1;
-- (void)setRelativePriority:(int)arg1;
+- (unsigned long long)propertiesInheritedByChildOperations;
+- (void)setQualityOfService:(long long)arg1;
+- (void)setRelativePriority:(long long)arg1;
 - (void)setUnderlyingOperation:(id)arg1;
 - (id)underlyingOperation;
 

@@ -21,11 +21,11 @@
 @property (nonatomic, retain) HFStaticItem *wallpaperThumbnailItem;
 
 - (void).cxx_destruct;
-- (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
+- (id)_comparatorForSectionIdentifier:(id)arg1;
 - (void)_createItemProvidersWithHome:(id)arg1;
-- (id)_identifierForSection:(unsigned int)arg1;
+- (id)_identifierForSection:(unsigned long long)arg1;
 - (id)_itemProviders;
-- (unsigned int)_numberOfSections;
+- (unsigned long long)_numberOfSections;
 - (id)_sectionIdentifierForItem:(id)arg1;
 - (id)_styleForItem:(id)arg1;
 - (id)_titleForSectionWithIdentifier:(id)arg1;

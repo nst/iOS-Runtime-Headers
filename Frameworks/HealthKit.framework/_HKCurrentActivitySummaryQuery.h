@@ -4,7 +4,7 @@
 
 @interface _HKCurrentActivitySummaryQuery : HKQuery {
     NSDictionary * _collectionIntervals;
-    id /* block */  _updateHandler;
+    id  _updateHandler;
 }
 
 @property (getter=_collectionIntervals, setter=_setCollectionIntervals:, nonatomic, copy) NSDictionary *collectionIntervals;
@@ -17,17 +17,17 @@
 - (id)_collectionIntervals;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (id)_queue_errorHandler;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
-- (BOOL)_requiresValidSampleType;
+- (bool)_requiresValidSampleType;
 - (void)_setCollectionIntervals:(id)arg1;
 - (void)deliverActivitySummaries:(id)arg1 queryUUID:(id)arg2;
-- (id)initWithUpdateHandler:(id /* block */)arg1;
+- (id)initWithUpdateHandler:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (Class)hd_queryServerClass;
-+ (BOOL)hd_requiresPrivateEntitlements;
++ (bool)hd_requiresPrivateEntitlements;
 
 @end

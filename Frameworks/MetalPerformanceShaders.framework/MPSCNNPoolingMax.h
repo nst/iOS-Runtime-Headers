@@ -4,6 +4,6 @@
 
 @interface MPSCNNPoolingMax : MPSCNNPooling
 
-- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned int)arg2 kernelHeight:(unsigned int)arg3 strideInPixelsX:(unsigned int)arg4 strideInPixelsY:(unsigned int)arg5;
+- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned long long)arg2 kernelHeight:(unsigned long long)arg3 strideInPixelsX:(unsigned long long)arg4 strideInPixelsY:(unsigned long long)arg5;
 
 @end

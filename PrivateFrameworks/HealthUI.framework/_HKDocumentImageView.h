@@ -5,22 +5,22 @@
 @interface _HKDocumentImageView : UIView {
     UIImageView * _imageView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _margins;
 }
 
 @property (nonatomic, readonly) UIImageView *imageView;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margins;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } margins;
 
 - (void).cxx_destruct;
 - (id)imageView;
 - (id)initWithImage:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
-- (void)setMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })margins;
+- (void)setMargins:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 
 @end

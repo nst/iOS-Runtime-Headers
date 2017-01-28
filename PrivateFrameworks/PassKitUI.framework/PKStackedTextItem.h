@@ -4,7 +4,7 @@
 
 @interface PKStackedTextItem : NSObject {
     NSString * _groupingIdentifier;
-    unsigned int  _numberOfContentRows;
+    unsigned long long  _numberOfContentRows;
     NSString * _primary;
     NSString * _secondary;
     bool  _significantPrimary;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *groupingIdentifier;
-@property (nonatomic, readonly) unsigned int numberOfContentRows;
+@property (nonatomic, readonly) unsigned long long numberOfContentRows;
 @property (nonatomic, copy) NSString *primary;
 @property (nonatomic, copy) NSString *secondary;
 @property (getter=isSignificantPrimary, nonatomic) bool significantPrimary;
@@ -22,12 +22,12 @@
 
 - (void).cxx_destruct;
 - (id)groupingIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithNumberOfContentRows:(unsigned int)arg1 groupingIdentifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithNumberOfContentRows:(unsigned long long)arg1 groupingIdentifier:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (bool)isSignificantPrimary;
-- (unsigned int)numberOfContentRows;
+- (unsigned long long)numberOfContentRows;
 - (id)primary;
 - (id)secondary;
 - (void)setPrimary:(id)arg1;

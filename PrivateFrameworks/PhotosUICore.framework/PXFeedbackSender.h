@@ -3,8 +3,8 @@
  */
 
 @interface PXFeedbackSender : NSObject {
-    unsigned int  _feedbackType;
-    BOOL  _userLikedResults;
+    unsigned long long  _feedbackType;
+    bool  _userLikedResults;
 }
 
 - (void)_incrementAGGDCounterForFeedbackValueKey:(id)arg1 ofEntry:(id)arg2;
@@ -17,10 +17,10 @@
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (id)generateFeedbackParamsStringForEntry:(id)arg1;
-- (void)sendFeedback:(id)arg1 forFeedbackType:(unsigned int)arg2;
+- (void)sendFeedback:(id)arg1 forFeedbackType:(unsigned long long)arg2;
 - (void)sendFeedbackToServer:(id)arg1;
-- (BOOL)sendFeedbackWithFeedbackEntryUUID:(id)arg1;
-- (BOOL)sendPendingFeedbackToServer;
+- (bool)sendFeedbackWithFeedbackEntryUUID:(id)arg1;
+- (bool)sendPendingFeedbackToServer;
 - (void)testTalkToServer;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface DOMHTMLOListElement : DOMHTMLElement
 
-@property BOOL compact;
+@property bool compact;
 @property int start;
 @property (copy) NSString *type;
 
-- (BOOL)compact;
-- (BOOL)reversed;
-- (void)setCompact:(BOOL)arg1;
-- (void)setReversed:(BOOL)arg1;
+- (bool)compact;
+- (bool)reversed;
+- (void)setCompact:(bool)arg1;
+- (void)setReversed:(bool)arg1;
 - (void)setStart:(int)arg1;
 - (void)setType:(id)arg1;
 - (int)start;

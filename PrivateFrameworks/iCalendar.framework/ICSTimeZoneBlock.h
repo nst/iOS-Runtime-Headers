@@ -8,11 +8,11 @@
 @property (nonatomic, retain) NSArray *rdate;
 @property (nonatomic, retain) NSArray *rrule;
 @property (nonatomic) NSArray *tzname;
-@property (nonatomic) int tzoffsetfrom;
-@property (nonatomic) int tzoffsetto;
+@property (nonatomic) long long tzoffsetfrom;
+@property (nonatomic) long long tzoffsetto;
 
 - (void)addRecurrenceDate:(id)arg1;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)computeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
 - (id)dtstart;
 - (id)rdate;
@@ -21,11 +21,11 @@
 - (void)setRdate:(id)arg1;
 - (void)setRrule:(id)arg1;
 - (void)setTzname:(id)arg1;
-- (void)setTzoffsetfrom:(int)arg1;
-- (void)setTzoffsetto:(int)arg1;
+- (void)setTzoffsetfrom:(long long)arg1;
+- (void)setTzoffsetto:(long long)arg1;
 - (id)tzname;
-- (int)tzoffsetfrom;
-- (int)tzoffsetto;
-- (BOOL)validate:(id*)arg1;
+- (long long)tzoffsetfrom;
+- (long long)tzoffsetto;
+- (bool)validate:(id*)arg1;
 
 @end

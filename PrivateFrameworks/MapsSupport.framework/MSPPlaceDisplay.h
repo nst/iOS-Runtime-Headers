@@ -8,8 +8,8 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasPlaceMapItemStorage;
-@property (nonatomic, readonly) BOOL hasSupersededSearchIdentifier;
+@property (nonatomic, readonly) bool hasPlaceMapItemStorage;
+@property (nonatomic, readonly) bool hasSupersededSearchIdentifier;
 @property (nonatomic, retain) GEOMapItemStorage *placeMapItemStorage;
 @property (nonatomic, retain) NSString *supersededSearchIdentifier;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -19,13 +19,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPlaceMapItemStorage;
-- (BOOL)hasSupersededSearchIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPlaceMapItemStorage;
+- (bool)hasSupersededSearchIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeMapItemStorage;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPlaceMapItemStorage:(id)arg1;
 - (void)setSupersededSearchIdentifier:(id)arg1;
 - (id)supersededSearchIdentifier;

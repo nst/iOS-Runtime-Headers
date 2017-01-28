@@ -12,18 +12,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) void*displayedPerson;
-@property (nonatomic, readonly) BOOL hasTelephonyCapability;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasTelephonyCapability;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void*)displayedPerson;
-- (BOOL)hasTelephonyCapability;
+- (bool)hasTelephonyCapability;
 - (id)init;
 - (id)initWithMessageButton:(id)arg1 facetimeButton:(id)arg2 callButton:(id)arg3;
 - (void)setDisplayedPerson:(void*)arg1;
-- (void)showFMFCallButton:(BOOL)arg1 withAction:(id)arg2;
-- (void)showFMFFacetimeButton:(BOOL)arg1 withAction:(id)arg2;
-- (void)showFMFMessageButton:(BOOL)arg1 withAction:(id)arg2;
+- (void)showFMFCallButton:(bool)arg1 withAction:(id)arg2;
+- (void)showFMFFacetimeButton:(bool)arg1 withAction:(id)arg2;
+- (void)showFMFMessageButton:(bool)arg1 withAction:(id)arg2;
 
 @end

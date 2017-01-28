@@ -5,7 +5,7 @@
 @interface MPULockScreenMediaControlsViewController : MPUMediaRemoteViewController <MPULockScreenMediaControlsViewDelegate> {
     MPUNowPlayingArtworkView * _artworkView;
     <MPULockScreenMediaControlsDelegate> * _delegate;
-    BOOL  _lockscreenDisabledForScreenTurnOff;
+    bool  _lockscreenDisabledForScreenTurnOff;
     MPWeakTimer * _longPressInteractionEventTimer;
     NSArray * _notificationObservers;
 }
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPULockScreenMediaControlsDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (Class)controlsViewClass;
@@ -34,13 +34,13 @@
 - (void)lockScreenControlsViewTrackActionsButtonTapped:(id)arg1;
 - (void)nowPlayingController:(id)arg1 nowPlayingApplicationDidChange:(id)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingInfoDidChange:(id)arg2;
-- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(BOOL)arg2;
+- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(bool)arg2;
 - (id)remoteControlInterfaceIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)supportedRemoteControlsDidChange;
-- (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(int)arg2;
-- (void)transportControlsView:(id)arg1 longPressEndOnControlType:(int)arg2;
-- (void)transportControlsView:(id)arg1 tapOnControlType:(int)arg2;
+- (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(long long)arg2;
+- (void)transportControlsView:(id)arg1 longPressEndOnControlType:(long long)arg2;
+- (void)transportControlsView:(id)arg1 tapOnControlType:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

@@ -8,28 +8,28 @@
     NSMutableDictionary * _wifiAllowedCache;
 }
 
-@property (nonatomic, readonly) BOOL _nonWifiFaceTimeEntitled;
-@property (nonatomic) BOOL allowAnyNetwork;
-@property (nonatomic) BOOL cellularFaceTimeEnabled;
+@property (nonatomic, readonly) bool _nonWifiFaceTimeEntitled;
+@property (nonatomic) bool allowAnyNetwork;
+@property (nonatomic) bool cellularFaceTimeEnabled;
 @property (nonatomic) struct __CTServerConnection { }*ctServerConnection;
 
 + (id)sharedInstance;
 
-- (BOOL)_adequateInternalOrCarrierInstall;
+- (bool)_adequateInternalOrCarrierInstall;
 - (void)_clearCaches;
-- (BOOL)_getCellularDataEnabledForBundleID:(id)arg1;
-- (BOOL)_getWifiDataAllowedForBundleID:(id)arg1;
-- (BOOL)_nonWifiFaceTimeEntitled;
-- (void)_setAppCellularDataEnabled:(BOOL)arg1;
-- (BOOL)allowAnyNetwork;
-- (BOOL)cellularDataEnabledForBundleId:(id)arg1;
-- (BOOL)cellularFaceTimeEnabled;
+- (bool)_getCellularDataEnabledForBundleID:(id)arg1;
+- (bool)_getWifiDataAllowedForBundleID:(id)arg1;
+- (bool)_nonWifiFaceTimeEntitled;
+- (void)_setAppCellularDataEnabled:(bool)arg1;
+- (bool)allowAnyNetwork;
+- (bool)cellularDataEnabledForBundleId:(id)arg1;
+- (bool)cellularFaceTimeEnabled;
 - (struct __CTServerConnection { }*)ctServerConnection;
 - (void)dealloc;
 - (id)init;
-- (void)setAllowAnyNetwork:(BOOL)arg1;
-- (void)setCellularFaceTimeEnabled:(BOOL)arg1;
+- (void)setAllowAnyNetwork:(bool)arg1;
+- (void)setCellularFaceTimeEnabled:(bool)arg1;
 - (void)setCtServerConnection:(struct __CTServerConnection { }*)arg1;
-- (BOOL)wifiAllowedForBundleId:(id)arg1;
+- (bool)wifiAllowedForBundleId:(id)arg1;
 
 @end

@@ -4,16 +4,16 @@
 
 @interface HMFMessageDispatcher : NSObject <HMFMessageTransportDelegate> {
     NSMutableDictionary * _notificationHandlers;
-    BOOL  _remoteSource;
+    bool  _remoteSource;
     HMFMessageTransport * _transport;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *notificationHandlers;
-@property (getter=isRemoteSource, nonatomic) BOOL remoteSource;
+@property (getter=isRemoteSource, nonatomic) bool remoteSource;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) HMFMessageTransport *transport;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
@@ -26,17 +26,17 @@
 - (void)dispatchMessage:(id)arg1 target:(id)arg2;
 - (id)init;
 - (id)initWithTransport:(id)arg1;
-- (BOOL)isRemoteSource;
+- (bool)isRemoteSource;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
 - (id)notificationHandlers;
-- (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id /* block */)arg3;
-- (void)sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)registerForMessage:(id)arg1 receiver:(id)arg2 messageHandler:(id)arg3;
+- (void)sendMessage:(id)arg1 completionHandler:(id)arg2;
 - (void)sendMessage:(id)arg1 target:(id)arg2;
-- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id /* block */)arg3;
-- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id /* block */)arg4;
-- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (void)sendMessage:(id)arg1 target:(id)arg2 andInvokeCompletionHandler:(id)arg3;
+- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4;
+- (void)sendMessage:(id)arg1 target:(id)arg2 responseQueue:(id)arg3 responseHandler:(id)arg4 completionHandler:(id)arg5;
 - (void)setNotificationHandlers:(id)arg1;
-- (void)setRemoteSource:(BOOL)arg1;
+- (void)setRemoteSource:(bool)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)transport;
 - (id)workQueue;

@@ -11,7 +11,7 @@
 - (void)dealloc;
 - (id)fileHandle;
 - (id)initWithFileHandle:(id)arg1;
-- (BOOL)processData:(id)arg1 forTask:(id)arg2;
+- (bool)processData:(id)arg1 forTask:(id)arg2;
 - (void)setFileHandle:(id)arg1;
 
 @end

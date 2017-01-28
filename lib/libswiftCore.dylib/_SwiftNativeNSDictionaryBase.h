@@ -7,13 +7,13 @@
     unsigned int  __magic_weakRefCount;
 }
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (BOOL)allowsWeakReference;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (bool)allowsWeakReference;
 - (id)autorelease;
 - (void)dealloc;
 - (oneway void)release;
 - (id)retain;
-- (BOOL)retainWeakReference;
+- (bool)retainWeakReference;
 
 @end

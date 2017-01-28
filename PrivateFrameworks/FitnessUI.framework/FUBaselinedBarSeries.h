@@ -5,48 +5,48 @@
 @interface FUBaselinedBarSeries : FUChartSeries {
     UIColor * _barColor;
     NSArray * _barViews;
-    float  _barWidth;
+    double  _barWidth;
     NSNumber * _baselineAbsoluteYPos;
-    float  _baselineGraphHeightPercent;
-    float  _baselineValue;
-    BOOL  _hideBarsBelowThreshold;
+    double  _baselineGraphHeightPercent;
+    double  _baselineValue;
+    bool  _hideBarsBelowThreshold;
     NSArray * _plotPoints;
 }
 
 @property (nonatomic, retain) UIColor *barColor;
 @property (nonatomic, retain) NSArray *barViews;
-@property (nonatomic) float barWidth;
+@property (nonatomic) double barWidth;
 @property (nonatomic, retain) NSNumber *baselineAbsoluteYPos;
-@property (nonatomic) float baselineGraphHeightPercent;
-@property (nonatomic) float baselineValue;
-@property (nonatomic) BOOL hideBarsBelowThreshold;
+@property (nonatomic) double baselineGraphHeightPercent;
+@property (nonatomic) double baselineValue;
+@property (nonatomic) bool hideBarsBelowThreshold;
 @property (nonatomic, retain) NSArray *plotPoints;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_baselinedRectBoundsForYValue:(float)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_baselinedRectBoundsForYValue:(double)arg1;
 - (id)_getAbsoluteBaselineYPosition;
-- (float)_getBarHeightForPointValue:(id)arg1;
-- (float)_getBaselinedMaxYValueForYPlaneValue:(float)arg1;
-- (float)_getBaselinedMinYValueForYPlaneValue:(float)arg1;
-- (float)_getYValueForPointFromChartPointValue:(id)arg1;
+- (double)_getBarHeightForPointValue:(id)arg1;
+- (double)_getBaselinedMaxYValueForYPlaneValue:(double)arg1;
+- (double)_getBaselinedMinYValueForYPlaneValue:(double)arg1;
+- (double)_getYValueForPointFromChartPointValue:(id)arg1;
 - (id)barColor;
 - (id)barViews;
-- (float)barWidth;
+- (double)barWidth;
 - (id)baselineAbsoluteYPos;
-- (float)baselineGraphHeightPercent;
-- (float)baselineValue;
+- (double)baselineGraphHeightPercent;
+- (double)baselineValue;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (BOOL)hideBarsBelowThreshold;
+- (bool)hideBarsBelowThreshold;
 - (id)init;
 - (void)layoutSubviews;
 - (id)plotPoints;
 - (void)setBarColor:(id)arg1;
 - (void)setBarViews:(id)arg1;
-- (void)setBarWidth:(float)arg1;
+- (void)setBarWidth:(double)arg1;
 - (void)setBaselineAbsoluteYPos:(id)arg1;
-- (void)setBaselineGraphHeightPercent:(float)arg1;
-- (void)setBaselineValue:(float)arg1;
-- (void)setHideBarsBelowThreshold:(BOOL)arg1;
+- (void)setBaselineGraphHeightPercent:(double)arg1;
+- (void)setBaselineValue:(double)arg1;
+- (void)setHideBarsBelowThreshold:(bool)arg1;
 - (void)setPlotPoints:(id)arg1;
 
 @end

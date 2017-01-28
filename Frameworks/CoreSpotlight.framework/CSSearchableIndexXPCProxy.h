@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CSSearchableIndex *index;
 @property (readonly) Class superclass;
 
@@ -16,6 +16,6 @@
 - (id)index;
 - (id)initWithSearchableIndex:(id)arg1;
 - (void)performIndexJob:(id)arg1;
-- (void)performIndexJob:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
+- (void)performIndexJob:(id)arg1 acknowledgementHandler:(id)arg2;
 
 @end

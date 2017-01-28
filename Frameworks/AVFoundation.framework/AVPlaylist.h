@@ -6,12 +6,12 @@
     AVPlaylistInternal * _ivars;
 }
 
-@property (nonatomic, readonly) BOOL appliesChangesImmediately;
+@property (nonatomic, readonly) bool appliesChangesImmediately;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=_figPlaylist, nonatomic, readonly) struct OpaqueFigPlaylist { }*figPlaylist;
 @property (nonatomic, readonly) struct { int x1; union { struct OpaqueFigPlaylist {} *x_2_1_1; struct OpaqueFigPlaylistItem {} *x_2_1_2; } x2; }*figPlaylistNode;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <NSObject><NSCopying><NSSecureCoding> *identifier;
 @property (nonatomic, copy) NSArray *metadata;
 @property (nonatomic, readonly) AVPlaylist *parentPlaylist;
@@ -20,27 +20,27 @@
 + (void)initialize;
 
 - (struct OpaqueFigPlaylist { }*)_figPlaylist;
-- (int)actionAtEnd;
+- (long long)actionAtEnd;
 - (void)appendNode:(id)arg1;
-- (BOOL)appliesChangesImmediately;
-- (void)applyPendingChangesWithCompletionHandler:(id /* block */)arg1;
+- (bool)appliesChangesImmediately;
+- (void)applyPendingChangesWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)fetchPlaylistForIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)fetchPlaylistNodeForIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchPlaylistForIdentifier:(id)arg1 completionHandler:(id)arg2;
+- (void)fetchPlaylistNodeForIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (struct { int x1; union { struct OpaqueFigPlaylist {} *x_2_1_1; struct OpaqueFigPlaylistItem {} *x_2_1_2; } x2; }*)figPlaylistNode;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithFigPlaylist:(struct OpaqueFigPlaylist { }*)arg1;
 - (void)insertNode:(id)arg1 afterNode:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)metadata;
 - (id)parentPlaylist;
 - (void)removeAllNodes;
 - (void)removeNode:(id)arg1;
-- (void)setActionAtEnd:(int)arg1;
+- (void)setActionAtEnd:(long long)arg1;
 - (void)setMetadata:(id)arg1;
 
 @end

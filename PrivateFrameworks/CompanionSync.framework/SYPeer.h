@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, retain) NSString *generationID;
-@property (nonatomic, readonly) BOOL hasGenerationID;
+@property (nonatomic, readonly) bool hasGenerationID;
 @property (nonatomic, retain) NSString *peerID;
 
 - (void).cxx_destruct;
@@ -17,13 +17,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)generationID;
-- (BOOL)hasGenerationID;
-- (unsigned int)hash;
+- (bool)hasGenerationID;
+- (unsigned long long)hash;
 - (id)initWithPeerID:(id)arg1 generation:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)peerID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setGenerationID:(id)arg1;
 - (void)setPeerID:(id)arg1;
 - (void)writeTo:(id)arg1;

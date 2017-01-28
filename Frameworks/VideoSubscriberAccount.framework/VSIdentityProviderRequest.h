@@ -7,17 +7,17 @@
     VSAccountMetadataRequest * _accountMetadataRequest;
     VSAccountStore * _accountStore;
     NSString * _requestingAppDisplayName;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) VSAccount *account;
 @property (nonatomic, retain) VSAccountMetadataRequest *accountMetadataRequest;
 @property (nonatomic, retain) VSAccountStore *accountStore;
-@property (nonatomic, readonly) BOOL allowsUI;
-@property (nonatomic, readonly) BOOL forceAuthentication;
+@property (nonatomic, readonly) bool allowsUI;
+@property (nonatomic, readonly) bool forceAuthentication;
 @property (nonatomic, copy) NSString *requestingAppDisplayName;
-@property (nonatomic, readonly) BOOL requiresUI;
-@property (nonatomic) int type;
+@property (nonatomic, readonly) bool requiresUI;
+@property (nonatomic) long long type;
 
 + (id)accountMetadataRequestWithAccount:(id)arg1 accountStore:(id)arg2 accountMetadataRequest:(id)arg3 requestingAppDisplayName:(id)arg4;
 + (id)deleteAccountRequestWithAccount:(id)arg1 accountStore:(id)arg2;
@@ -25,21 +25,21 @@
 + (id)makeAccountRequestWithAccountStore:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithRequestType:(int)arg1 account:(id)arg2 accountStore:(id)arg3;
+- (id)_initWithRequestType:(long long)arg1 account:(id)arg2 accountStore:(id)arg3;
 - (id)account;
 - (id)accountMetadataRequest;
 - (id)accountStore;
-- (BOOL)allowsUI;
+- (bool)allowsUI;
 - (id)description;
-- (BOOL)forceAuthentication;
+- (bool)forceAuthentication;
 - (id)init;
 - (id)requestingAppDisplayName;
-- (BOOL)requiresUI;
+- (bool)requiresUI;
 - (void)setAccount:(id)arg1;
 - (void)setAccountMetadataRequest:(id)arg1;
 - (void)setAccountStore:(id)arg1;
 - (void)setRequestingAppDisplayName:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

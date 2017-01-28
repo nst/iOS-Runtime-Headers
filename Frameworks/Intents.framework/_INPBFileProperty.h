@@ -13,9 +13,9 @@
     _INPBFilePropertyValue * _value;
 }
 
-@property (nonatomic) BOOL hasName;
-@property (nonatomic) BOOL hasQualifier;
-@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic) bool hasName;
+@property (nonatomic) bool hasQualifier;
+@property (nonatomic, readonly) bool hasValue;
 @property (nonatomic) int name;
 @property (nonatomic) int qualifier;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -27,17 +27,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (BOOL)hasQualifier;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasName;
+- (bool)hasQualifier;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)name;
 - (int)qualifier;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasName:(BOOL)arg1;
-- (void)setHasQualifier:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasName:(bool)arg1;
+- (void)setHasQualifier:(bool)arg1;
 - (void)setName:(int)arg1;
 - (void)setQualifier:(int)arg1;
 - (void)setValue:(id)arg1;

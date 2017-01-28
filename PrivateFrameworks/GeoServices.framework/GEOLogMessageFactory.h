@@ -13,7 +13,7 @@
 
 @property (nonatomic, readonly) NSString *carrierOperatorName;
 
-+ (BOOL)deviceHasRadio;
++ (bool)deviceHasRadio;
 + (id)sharedInstance;
 
 - (int)_bucketValueForTimeDelta:(double)arg1;

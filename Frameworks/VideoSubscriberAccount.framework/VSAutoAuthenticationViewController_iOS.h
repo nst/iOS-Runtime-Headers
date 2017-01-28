@@ -5,9 +5,9 @@
 @interface VSAutoAuthenticationViewController_iOS : UIViewController <VSAutoAuthenticationViewController> {
     UILabel * _accountNameLabel;
     UIBarButtonItem * _cancelButtonItem;
-    BOOL  _cancellationAllowed;
+    bool  _cancellationAllowed;
     id  _contentSizeCategoryObserver;
-    <VSAutoAuthenticationViewControllerDelegate> * _delegate;
+    <VSAuthenticationViewControllerDelegate> * _delegate;
     VSIdentityProviderLogoView * _logoView;
     UIButton * _manualSignInButton;
     UILabel * _manualSignInTitleLabel;
@@ -21,23 +21,23 @@
 
 @property (nonatomic, retain) UILabel *accountNameLabel;
 @property (nonatomic, retain) UIBarButtonItem *cancelButtonItem;
-@property (getter=isCancellationAllowed, nonatomic) BOOL cancellationAllowed;
+@property (getter=isCancellationAllowed, nonatomic) bool cancellationAllowed;
 @property (nonatomic) id contentSizeCategoryObserver;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <VSAutoAuthenticationViewControllerDelegate> *delegate;
+@property (nonatomic) <VSAuthenticationViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSIdentityProviderLogoView *logoView;
 @property (nonatomic, retain) UIButton *manualSignInButton;
 @property (nonatomic, retain) UILabel *manualSignInTitleLabel;
 @property (nonatomic, retain) UILabel *messageLabel;
 @property (nonatomic, retain) UILabel *messageTitleLabel;
 @property (nonatomic, retain) UILabel *noticeLabel;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredLogoSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredLogoSize;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) UIBarButtonItem *signInButtonItem;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) VSAutoAuthenticationViewModel *viewModel;
+@property (nonatomic, readonly) VSViewModel *viewModel;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonPressed:(id)arg1;
@@ -49,7 +49,7 @@
 - (void)_startObservingViewModel:(id)arg1;
 - (void)_startValidation;
 - (void)_stopObservingViewModel:(id)arg1;
-- (void)_stopValidationAndShowButtons:(BOOL)arg1;
+- (void)_stopValidationAndShowButtons:(bool)arg1;
 - (void)_updateFonts;
 - (id)accountNameLabel;
 - (id)cancelButtonItem;
@@ -58,7 +58,7 @@
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isCancellationAllowed;
+- (bool)isCancellationAllowed;
 - (id)logoView;
 - (id)manualSignInButton;
 - (id)manualSignInTitleLabel;
@@ -66,11 +66,11 @@
 - (id)messageTitleLabel;
 - (id)noticeLabel;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (struct CGSize { float x1; float x2; })preferredLogoSize;
+- (struct CGSize { double x1; double x2; })preferredLogoSize;
 - (id)scrollView;
 - (void)setAccountNameLabel:(id)arg1;
 - (void)setCancelButtonItem:(id)arg1;
-- (void)setCancellationAllowed:(BOOL)arg1;
+- (void)setCancellationAllowed:(bool)arg1;
 - (void)setContentSizeCategoryObserver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLogoView:(id)arg1;
@@ -83,12 +83,12 @@
 - (void)setSignInButtonItem:(id)arg1;
 - (void)setViewModel:(id)arg1;
 - (id)signInButtonItem;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)viewModel;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface _NSAutoresizingMaskXAxisAnchor : NSLayoutXAxisAnchor
 
-- (int)_directionAbstraction;
-- (BOOL)isCompatibleWithAnchor:(id)arg1;
-- (BOOL)validateOtherAttribute:(int)arg1;
+- (long long)_directionAbstraction;
+- (bool)isCompatibleWithAnchor:(id)arg1;
+- (bool)validateOtherAttribute:(long long)arg1;
 
 @end

@@ -9,7 +9,7 @@
     NSMutableDictionary * _m_kernelCache_rw;
     NSMutableDictionary * auxLibraries;
     NSObject<OS_dispatch_queue> * dictionary_write_queue;
-    BOOL  isSupportingiOSGPUFamilyV2;
+    bool  isSupportingiOSGPUFamilyV2;
     <MTLLibrary> * m_ShaderLibrary;
 }
 
@@ -28,6 +28,6 @@
 - (void)setKernelPrefix:(id)arg1;
 - (void)setM_kernelCache:(id)arg1;
 - (void)setM_kernelCache_rw:(id)arg1;
-- (BOOL)shouldUseTexArray;
+- (bool)shouldUseTexArray;
 
 @end

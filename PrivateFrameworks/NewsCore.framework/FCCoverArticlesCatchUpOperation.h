@@ -25,6 +25,6 @@
 - (void)setHeadlines:(id)arg1;
 - (void)setSupplementalHeadlines:(id)arg1;
 - (id)supplementalHeadlines;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

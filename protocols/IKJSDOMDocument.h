@@ -17,21 +17,15 @@
 - (IKDOMNodeList *)getElementsByTagName:(NSString *)arg1;
 - (IKDOMImplementation *)implementation;
 - (NSString *)inputEncoding;
-- (NSArray *)matchingImpressions:(NSString *)arg1 :(JSValue *)arg2;
 - (IKJSNavigationDocument *)navigationDocument;
-- (NSArray *)recordedImpressions:(JSValue *)arg1;
-- (void)replace:(IKDOMDocument *)arg1;
-- (void)runTest:(NSString *)arg1 :(NSDictionary *)arg2;
-- (void)scrollToTop;
 - (void)setDocumentURI:(NSString *)arg1;
 - (void)setNeedsUpdate;
-- (void)setStrictErrorChecking:(BOOL)arg1;
-- (void)setXmlStandalone:(BOOL)arg1;
+- (void)setStrictErrorChecking:(bool)arg1;
+- (void)setXmlStandalone:(bool)arg1;
 - (void)setXmlVersion:(NSString *)arg1;
-- (NSArray *)snapshotImpressions;
-- (BOOL)strictErrorChecking;
+- (bool)strictErrorChecking;
 - (NSString *)xmlEncoding;
-- (BOOL)xmlStandalone;
+- (bool)xmlStandalone;
 - (NSString *)xmlVersion;
 
 @end

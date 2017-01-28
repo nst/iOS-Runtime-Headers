@@ -17,7 +17,7 @@
 - (struct OpaqueFigPhotoJPEGDecodeSession { }*)_decodeSession;
 - (id)_memoryWarningSource;
 - (void)dealloc;
-- (void)decodeJPEGData:(id)arg1 withPixelBufferCompletionHandler:(id /* block */)arg2;
+- (void)decodeJPEGData:(id)arg1 withPixelBufferCompletionHandler:(id)arg2;
 - (id)init;
 
 @end

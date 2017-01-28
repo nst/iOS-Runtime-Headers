@@ -6,9 +6,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)itemClass;
-- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id)arg1;
 - (Class)sectionClass;
-- (void)setAllowsDeferringExpensiveProperties:(BOOL)arg1;
+- (void)setAllowsDeferringExpensiveProperties:(bool)arg1;
 - (void)setItemClass:(Class)arg1;
 - (void)setItemProperties:(id)arg1;
 - (void)setItemSortDescriptors:(id)arg1;

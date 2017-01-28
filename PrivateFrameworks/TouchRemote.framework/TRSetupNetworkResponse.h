@@ -3,15 +3,15 @@
  */
 
 @interface TRSetupNetworkResponse : TRResponseMessage {
-    BOOL  _hasNetwork;
+    bool  _hasNetwork;
 }
 
-@property (nonatomic) BOOL hasNetwork;
+@property (nonatomic) bool hasNetwork;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasNetwork;
+- (bool)hasNetwork;
 - (id)initWithCoder:(id)arg1;
-- (void)setHasNetwork:(BOOL)arg1;
+- (void)setHasNetwork:(bool)arg1;
 
 @end

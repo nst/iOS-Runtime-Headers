@@ -3,12 +3,13 @@
  */
 
 @interface UIVisualEffectView : UIView <NSSecureCoding> {
-    BOOL  __blurDisabled;
+    bool  __blurDisabled;
     _UIVisualEffectBackdropView * _backdropSubview;
+    double  _backdropViewBackgroundColorAlpha;
     _UIVisualEffectFilterView * _colorBurnSubview;
     _UIVisualEffectFilterView * _colorSubview;
     _UIVisualEffectContentView * _contentView;
-    float  _cornerRadius;
+    double  _cornerRadius;
     _UIVisualEffectFilterView * _darkeningSubview;
     UIVisualEffect * _effect;
     NSArray * _effectConfigViews;
@@ -26,8 +27,9 @@
     UIVisualEffect * _overrideEffect;
 }
 
-@property (getter=_isBlurDisabled, setter=_setBlurDisabled:, nonatomic) BOOL _blurDisabled;
-@property (setter=_setCornerRadius:, nonatomic) float _cornerRadius;
+@property (getter=_backdropViewBackgroundColorAlpha, setter=_setBackdropViewBackgroundColorAlpha:, nonatomic) double _backdropViewBackgroundColorAlpha;
+@property (getter=_isBlurDisabled, setter=_setBlurDisabled:, nonatomic) bool _blurDisabled;
+@property (setter=_setCornerRadius:, nonatomic) double _cornerRadius;
 @property (nonatomic, readonly) NSArray *_effectViews;
 @property (setter=_setGroupName:, nonatomic, copy) NSString *_groupName;
 @property (setter=_setMaskImage:, nonatomic, retain) UIImage *_maskImage;
@@ -36,39 +38,41 @@
 @property (nonatomic, copy) UIVisualEffect *effect;
 @property (nonatomic, retain) UIVisualEffect *overrideEffect;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_applyCornerRadiusToSubviews;
 - (void)_applyGroupNameToSubviews;
 - (id)_backdropSubview;
+- (double)_backdropViewBackgroundColorAlpha;
 - (void)_commonInit;
 - (void)_configureBackgroundColorForEffectIfNeeded;
 - (void)_configureForCurrentEffect;
 - (void)_configureForEffectConfig:(id)arg1;
 - (void)_configureForEffectSettings:(id)arg1;
-- (float)_continuousCornerRadius;
-- (float)_cornerRadius;
+- (double)_continuousCornerRadius;
+- (double)_cornerRadius;
 - (void)_createContentViewIfNecessary;
 - (id)_effectViews;
 - (id)_groupName;
-- (BOOL)_isBlurDisabled;
+- (bool)_isBlurDisabled;
 - (id)_maskImage;
 - (id)_maskViewImageMask;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rebuildEffectViewForCurrentEffect;
-- (void)_setBlurDisabled:(BOOL)arg1;
-- (void)_setContinuousCornerRadius:(float)arg1;
-- (void)_setCornerRadius:(float)arg1;
+- (void)_setBackdropViewBackgroundColorAlpha:(double)arg1;
+- (void)_setBlurDisabled:(bool)arg1;
+- (void)_setContinuousCornerRadius:(double)arg1;
+- (void)_setCornerRadius:(double)arg1;
 - (void)_setEffect:(id)arg1;
 - (void)_setGroupName:(id)arg1;
 - (void)_setMaskImage:(id)arg1;
-- (void)_setTintOpacity:(float)arg1;
+- (void)_setTintOpacity:(double)arg1;
 - (void)_setupEffectsViewsForSettings:(id)arg1;
-- (BOOL)_shouldRegenerateMasksForNewMaskView:(id)arg1;
+- (bool)_shouldRegenerateMasksForNewMaskView:(id)arg1;
 - (id)_trueEffect;
 - (void)_updateEffectForAccessibilityChanges:(id)arg1;
-- (void)_updateEffectForInterfaceStyle:(int)arg1;
+- (void)_updateEffectForInterfaceStyle:(long long)arg1;
 - (void)_updateEffectViewMasks;
 - (id)_whatsWrongWithThisEffect;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
@@ -78,7 +82,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEffect:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)maskView;
 - (id)overrideEffect;

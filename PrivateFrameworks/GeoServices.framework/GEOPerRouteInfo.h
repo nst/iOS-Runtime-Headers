@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) unsigned long long etaServiceTravelTime;
-@property (nonatomic) BOOL hasEtaServiceTravelTime;
-@property (nonatomic) BOOL hasOriginalTravelTime;
+@property (nonatomic) bool hasEtaServiceTravelTime;
+@property (nonatomic) bool hasOriginalTravelTime;
 @property (nonatomic) unsigned long long originalTravelTime;
 
 - (void)copyTo:(id)arg1;
@@ -21,16 +21,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned long long)etaServiceTravelTime;
-- (BOOL)hasEtaServiceTravelTime;
-- (BOOL)hasOriginalTravelTime;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEtaServiceTravelTime;
+- (bool)hasOriginalTravelTime;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)originalTravelTime;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEtaServiceTravelTime:(unsigned long long)arg1;
-- (void)setHasEtaServiceTravelTime:(BOOL)arg1;
-- (void)setHasOriginalTravelTime:(BOOL)arg1;
+- (void)setHasEtaServiceTravelTime:(bool)arg1;
+- (void)setHasOriginalTravelTime:(bool)arg1;
 - (void)setOriginalTravelTime:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 

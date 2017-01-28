@@ -8,25 +8,24 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)init;
 - (void)navigationSession:(id)arg1 didChangeNavigationState:(int)arg2;
-- (void)navigationSession:(id)arg1 didEnableGuidancePrompts:(BOOL)arg2;
+- (void)navigationSession:(id)arg1 didEnableGuidancePrompts:(bool)arg2;
 - (void)navigationSession:(id)arg1 didReroute:(id)arg2 withLocation:(id)arg3;
 - (void)navigationSession:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3;
 - (void)navigationSession:(id)arg1 didUpdateDestination:(id)arg2;
 - (void)navigationSession:(id)arg1 didUpdateMatchedLocation:(id)arg2;
 - (void)navigationSession:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
-- (void)navigationSession:(id)arg1 displayManeuverAlertForAnnouncementStage:(unsigned int)arg2;
-- (void)navigationSession:(id)arg1 matchedToStepIndex:(unsigned int)arg2 legIndex:(unsigned int)arg3;
-- (void)navigationSession:(id)arg1 willAnnounce:(unsigned int)arg2 inSeconds:(double)arg3;
+- (void)navigationSession:(id)arg1 displayManeuverAlertForAnnouncementStage:(unsigned long long)arg2;
+- (void)navigationSession:(id)arg1 matchedToStepIndex:(unsigned long long)arg2 legIndex:(unsigned long long)arg3;
+- (void)navigationSession:(id)arg1 willAnnounce:(unsigned long long)arg2 inSeconds:(double)arg3;
 - (void)navigationSessionStarted:(id)arg1;
 - (void)navigationSessionStopped:(id)arg1;
-- (void)setDisplayedStepIndex:(unsigned int)arg1;
-- (void)setRideIndex:(unsigned int)arg1 forLegIndex:(unsigned int)arg2;
+- (void)setDisplayedStepIndex:(unsigned long long)arg1;
 - (void)updateClusteredSectionSelectedRideForNavigationSession:(id)arg1;
 
 @end

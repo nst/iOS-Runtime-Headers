@@ -4,14 +4,14 @@
 
 @interface PXTimeAnimateValue : NSObject {
     NSString * mFormula;
-    BOOL  mHasPercentTime;
+    bool  mHasPercentTime;
     double  mPercentTime;
     id  mVariant;
 }
 
 - (void)dealloc;
 - (id)formula;
-- (BOOL)hasPercentTime;
+- (bool)hasPercentTime;
 - (id)init;
 - (double)percentTime;
 - (void)setFormula:(id)arg1;

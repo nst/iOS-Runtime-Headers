@@ -4,9 +4,9 @@
 
 @interface NTKTimelineComplicationController : NTKComplicationController
 
-+ (BOOL)_isLegacy;
++ (bool)_isLegacy;
 
 - (void)_aggdAppLaunchForTimeTravelDate:(id)arg1 timelineEntryDate:(id)arg2;
-- (unsigned int)_animationForTimelineEntryTransitionFrom:(id)arg1 to:(id)arg2 withAnimationBehavior:(unsigned int)arg3;
+- (unsigned long long)_animationForTimelineEntryTransitionFrom:(id)arg1 to:(id)arg2 withAnimationBehavior:(unsigned long long)arg3;
 
 @end

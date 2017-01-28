@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)fitnessFriend;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setFitnessFriend:(id)arg1;
 - (void)setSnapshot:(id)arg1;
 - (id)snapshot;

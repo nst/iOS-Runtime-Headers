@@ -5,11 +5,11 @@
 @interface FCNetworkEvent : NSObject {
     NSError * _error;
     NSDictionary * _httpResponseHeaders;
-    unsigned int  _httpStatusCode;
+    unsigned long long  _httpStatusCode;
     NSString * _requestUUID;
-    unsigned int  _responseSize;
+    unsigned long long  _responseSize;
     double  _startTime;
-    int  _type;
+    long long  _type;
     NSURL * _url;
     NSDictionary * _w3cNavigationTiming;
 }
@@ -19,15 +19,15 @@
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, readonly) double fetchStartTime;
 @property (nonatomic, retain) NSDictionary *httpResponseHeaders;
-@property (nonatomic) unsigned int httpStatusCode;
+@property (nonatomic) unsigned long long httpStatusCode;
 @property (nonatomic, readonly) double requestDuration;
 @property (nonatomic, retain) NSString *requestUUID;
 @property (nonatomic, readonly) double responseDuration;
 @property (nonatomic, readonly) double responseEndTime;
-@property (nonatomic) unsigned int responseSize;
+@property (nonatomic) unsigned long long responseSize;
 @property (nonatomic) double startTime;
 @property (nonatomic, readonly) double totalDuration;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 @property (nonatomic, retain) NSURL *url;
 @property (nonatomic, retain) NSDictionary *w3cNavigationTiming;
 
@@ -37,24 +37,24 @@
 - (id)error;
 - (double)fetchStartTime;
 - (id)httpResponseHeaders;
-- (unsigned int)httpStatusCode;
+- (unsigned long long)httpStatusCode;
 - (double)requestDuration;
 - (id)requestUUID;
 - (double)responseDuration;
 - (double)responseEndTime;
-- (unsigned int)responseSize;
+- (unsigned long long)responseSize;
 - (void)setError:(id)arg1;
 - (void)setHttpResponseHeaders:(id)arg1;
-- (void)setHttpStatusCode:(unsigned int)arg1;
+- (void)setHttpStatusCode:(unsigned long long)arg1;
 - (void)setRequestUUID:(id)arg1;
-- (void)setResponseSize:(unsigned int)arg1;
+- (void)setResponseSize:(unsigned long long)arg1;
 - (void)setStartTime:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setW3cNavigationTiming:(id)arg1;
 - (double)startTime;
 - (double)totalDuration;
-- (int)type;
+- (long long)type;
 - (id)url;
 - (id)w3cNavigationTiming;
 

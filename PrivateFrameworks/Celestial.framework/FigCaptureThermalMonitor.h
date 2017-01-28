@@ -7,7 +7,7 @@
     struct OpaqueFigSimpleMutex { } * _maxTorchLevelLock;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     int  _registrationToken;
-    id /* block */  _torchHandler;
+    id  _torchHandler;
 }
 
 @property (readonly) float maxTorchLevel;
@@ -17,7 +17,7 @@
 - (void)_thermalNotification:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithThermalHandler:(id /* block */)arg1;
+- (id)initWithThermalHandler:(id)arg1;
 - (float)maxTorchLevel;
 
 @end

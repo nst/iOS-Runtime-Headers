@@ -7,8 +7,8 @@
 
 - (void)acceptInvitationWithGUID:(NSString *)arg1;
 - (void)acceptInvitationWithGUID:(NSString *)arg1 info:(NSDictionary *)arg2;
-- (void)acceptInvitationWithToken:(void *)arg1 completionBlock:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)acceptInvitationWithToken:(void *)arg1 info:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
+- (void)acceptInvitationWithToken:(void *)arg1 completionBlock:(void *)arg2; // needs 2 arg types, found 7: NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)acceptInvitationWithToken:(void *)arg1 info:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSDictionary *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSDictionary *, NSError *, void*
 - (MSASModelEnumerator *)accessControlGUIDsForAlbumWithGUID:(NSString *)arg1;
 - (MSASSharingRelationship *)accessControlWithGUID:(NSString *)arg1;
 - (MSASModelEnumerator *)accessControlsForAlbumWithGUID:(NSString *)arg1;
@@ -40,24 +40,24 @@
 - (void)deleteCommentWithGUID:(NSString *)arg1;
 - (void)deleteCommentWithGUID:(NSString *)arg1 info:(NSDictionary *)arg2;
 - (NSString *)earliestUnviewedAssetCollectionGUIDInAlbumWithGUID:(NSString *)arg1;
-- (BOOL)errorIsCancellation:(NSError *)arg1;
+- (bool)errorIsCancellation:(NSError *)arg1;
 - (NSString *)focusAssetCollectionGUID;
 - (void)forgetEverything;
 - (void)forgetEverythingInfo:(NSDictionary *)arg1;
-- (void)forgetEverythingInfo:(void *)arg1 completionBlock:(void *)arg2; // needs 2 arg types, found 6: NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (BOOL)hasCommandsInGroupedCommandQueue;
-- (BOOL)hasEnqueuedActivities;
+- (void)forgetEverythingInfo:(void *)arg1 completionBlock:(void *)arg2; // needs 2 arg types, found 6: NSDictionary *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (bool)hasCommandsInGroupedCommandQueue;
+- (bool)hasEnqueuedActivities;
 - (MSASInvitation *)invitationForAlbumWithGUID:(NSString *)arg1;
 - (MSASModelEnumerator *)invitationGUIDs;
 - (MSASInvitation *)invitationWithGUID:(NSString *)arg1;
 - (MSASModelEnumerator *)invitations;
-- (BOOL)isAlbumWithGUIDMarkedAsUnviewed:(NSString *)arg1;
-- (BOOL)isAssetCollectionWithGUIDMarkedAsUnviewed:(NSString *)arg1;
+- (bool)isAlbumWithGUIDMarkedAsUnviewed:(NSString *)arg1;
+- (bool)isAssetCollectionWithGUIDMarkedAsUnviewed:(NSString *)arg1;
 - (NSNumber *)isPublicAccessEnabledForAlbumWithGUID:(NSString *)arg1;
 - (NSDate *)lastViewedCommentDateForAssetCollectionWithGUID:(NSString *)arg1;
 - (void)markAlbumGUIDAsViewed:(NSString *)arg1;
 - (void)markAlbumGUIDAsViewed:(NSString *)arg1 info:(NSDictionary *)arg2;
-- (void)markAlbumGUIDAsViewed:(NSString *)arg1 moveLastViewedAssetCollectionMarker:(BOOL)arg2 info:(NSDictionary *)arg3;
+- (void)markAlbumGUIDAsViewed:(NSString *)arg1 moveLastViewedAssetCollectionMarker:(bool)arg2 info:(NSDictionary *)arg3;
 - (void)markCommentsForAssetCollectionWithGUID:(NSString *)arg1 asViewedWithLastViewedDate:(NSDate *)arg2;
 - (void)markCommentsForAssetCollectionWithGUID:(NSString *)arg1 asViewedWithLastViewedDate:(NSDate *)arg2 info:(NSDictionary *)arg3;
 - (int)maxGroupedCallbackEventBatchCount;
@@ -68,12 +68,12 @@
 - (NSString *)personID;
 - (void)refreshAccessControlListForAlbumWithGUID:(NSString *)arg1;
 - (void)refreshAccessControlListForAlbumWithGUID:(NSString *)arg1 info:(NSDictionary *)arg2;
-- (void)refreshCommentsForAssetCollectionWithGUID:(NSString *)arg1 resetSync:(BOOL)arg2;
-- (void)refreshCommentsForAssetCollectionWithGUID:(NSString *)arg1 resetSync:(BOOL)arg2 info:(NSDictionary *)arg3;
-- (void)refreshContentOfAlbumWithGUID:(NSString *)arg1 resetSync:(BOOL)arg2;
-- (void)refreshContentOfAlbumWithGUID:(NSString *)arg1 resetSync:(BOOL)arg2 info:(NSDictionary *)arg3;
-- (void)refreshResetSync:(BOOL)arg1;
-- (void)refreshResetSync:(BOOL)arg1 info:(NSDictionary *)arg2;
+- (void)refreshCommentsForAssetCollectionWithGUID:(NSString *)arg1 resetSync:(bool)arg2;
+- (void)refreshCommentsForAssetCollectionWithGUID:(NSString *)arg1 resetSync:(bool)arg2 info:(NSDictionary *)arg3;
+- (void)refreshContentOfAlbumWithGUID:(NSString *)arg1 resetSync:(bool)arg2;
+- (void)refreshContentOfAlbumWithGUID:(NSString *)arg1 resetSync:(bool)arg2 info:(NSDictionary *)arg3;
+- (void)refreshResetSync:(bool)arg1;
+- (void)refreshResetSync:(bool)arg1 info:(NSDictionary *)arg2;
 - (void)rejectInvitationWithGUID:(NSString *)arg1;
 - (void)rejectInvitationWithGUID:(NSString *)arg1 info:(NSDictionary *)arg2;
 - (void)removeAccessControlEntryWithGUID:(NSString *)arg1;
@@ -88,17 +88,17 @@
 - (void)setMaxGroupedCallbackEventBatchCount:(int)arg1;
 - (void)setMaxGroupedCallbackEventIdleInterval:(double)arg1;
 - (void)setMaxGroupedCallbackEventStaleness:(double)arg1;
-- (void)setMultipleContributorsEnabled:(void *)arg1 forAlbumWithGUID:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: BOOL, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)setMultipleContributorsEnabled:(void *)arg1 forAlbumWithGUID:(void *)arg2 info:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 10: BOOL, NSString *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
-- (void)setPublicAccessEnabled:(void *)arg1 forAlbumWithGUID:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: BOOL, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)setPublicAccessEnabled:(void *)arg1 forAlbumWithGUID:(void *)arg2 info:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 10: BOOL, NSString *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
+- (void)setMultipleContributorsEnabled:(void *)arg1 forAlbumWithGUID:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: bool, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)setMultipleContributorsEnabled:(void *)arg1 forAlbumWithGUID:(void *)arg2 info:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 10: bool, NSString *, NSDictionary *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSDictionary *, NSError *, void*
+- (void)setPublicAccessEnabled:(void *)arg1 forAlbumWithGUID:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: bool, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)setPublicAccessEnabled:(void *)arg1 forAlbumWithGUID:(void *)arg2 info:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 10: bool, NSString *, NSDictionary *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSDictionary *, NSError *, void*
 - (void)setUserInfo:(id <NSCoding>)arg1 forAccessControlWithGUID:(NSString *)arg2;
 - (void)setUserInfo:(id <NSCoding>)arg1 forAlbumWithGUID:(NSString *)arg2;
 - (void)setUserInfo:(id <NSCoding>)arg1 forAssetCollectionWithGUID:(NSString *)arg2;
 - (void)setUserInfo:(id <NSCoding>)arg1 forCommentWithGUID:(NSString *)arg2;
 - (void)setUserInfo:(id <NSCoding>)arg1 forInvitationWithGUID:(NSString *)arg2;
 - (void)shutDown;
-- (void)shutDownForDestruction:(void *)arg1 completionBlock:(void *)arg2; // needs 2 arg types, found 6: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)shutDownForDestruction:(void *)arg1 completionBlock:(void *)arg2; // needs 2 arg types, found 6: bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 - (void)start;
 - (void)subscribeToAlbumWithGUID:(NSString *)arg1;
 - (void)subscribeToAlbumWithGUID:(NSString *)arg1 info:(NSDictionary *)arg2;
@@ -111,7 +111,7 @@
 - (id)userInfoForAssetCollectionWithGUID:(NSString *)arg1;
 - (id)userInfoForCommentWithGUID:(NSString *)arg1;
 - (id)userInfoForInvitationWithGUID:(NSString *)arg1;
-- (void)videoURLForAssetCollectionWithGUID:(void *)arg1 completionBlock:(void *)arg2; // needs 2 arg types, found 9: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, NSURL *, NSDate *, void*
-- (void)videoURLsForAssetCollectionWithGUID:(void *)arg1 forMediaAssetType:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 10: NSString *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, NSArray *, NSDate *, void*
+- (void)videoURLForAssetCollectionWithGUID:(void *)arg1 completionBlock:(void *)arg2; // needs 2 arg types, found 9: NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, NSURL *, NSDate *, void*
+- (void)videoURLsForAssetCollectionWithGUID:(void *)arg1 forMediaAssetType:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 10: NSString *, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, NSArray *, NSDate *, void*
 
 @end

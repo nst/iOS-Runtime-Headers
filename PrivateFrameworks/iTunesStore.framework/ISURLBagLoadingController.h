@@ -9,7 +9,7 @@
     NSDictionary * _bagDictionary;
     NSError * _bagLoadingError;
     NSHashTable * _bagObservers;
-    BOOL  _hasSuccessfullyLoadedBag;
+    bool  _hasSuccessfullyLoadedBag;
 }
 
 @property (nonatomic, readonly) NSDictionary *bagDictionary;
@@ -21,13 +21,13 @@
 - (void)_handleAccountStoreDidChangeNotification:(id)arg1;
 - (void)_handleNetworkReachabilityFlagsDidChangeNotification:(id)arg1;
 - (void)_handleStoreFrontDidChangeNotification:(id)arg1;
-- (void)_reloadURLBagAllowingUpdateUsingExistingBagDictionary:(BOOL)arg1;
+- (void)_reloadURLBagAllowingUpdateUsingExistingBagDictionary:(bool)arg1;
 - (void)_updateBagWithDictionary:(id)arg1 error:(id)arg2;
 - (void)addBagObserver:(id)arg1;
 - (id)bagDictionary;
 - (void)dealloc;
 - (id)init;
 - (void)removeBagObserver:(id)arg1;
-- (void)requestAccessToBagUsingBlock:(id /* block */)arg1;
+- (void)requestAccessToBagUsingBlock:(id)arg1;
 
 @end

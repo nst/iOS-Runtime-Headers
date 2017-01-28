@@ -8,11 +8,11 @@
     double  _centerX;
     double  _centerY;
     int  _faceAlgorithmVersion;
-    BOOL  _hidden;
-    BOOL  _isHidden;
-    BOOL  _manual;
-    BOOL  _nameSourceAuto;
-    BOOL  _representative;
+    bool  _hidden;
+    bool  _isHidden;
+    bool  _manual;
+    bool  _nameSourceAuto;
+    bool  _representative;
     double  _size;
 }
 
@@ -23,20 +23,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int faceAlgorithmVersion;
-@property (readonly) unsigned int hash;
-@property (getter=isHidden, nonatomic) BOOL hidden;
-@property (getter=isHidden, nonatomic, readonly) BOOL isHidden;
-@property (getter=isManual, nonatomic) BOOL manual;
-@property (getter=isNameSourceAuto, nonatomic) BOOL nameSourceAuto;
-@property (getter=isRepresentative, nonatomic) BOOL representative;
+@property (readonly) unsigned long long hash;
+@property (getter=isHidden, nonatomic) bool hidden;
+@property (getter=isHidden, nonatomic, readonly) bool isHidden;
+@property (getter=isManual, nonatomic) bool manual;
+@property (getter=isNameSourceAuto, nonatomic) bool nameSourceAuto;
+@property (getter=isRepresentative, nonatomic) bool representative;
 @property (nonatomic) double size;
 @property (readonly) Class superclass;
 
-+ (void)_migratePersistedFaces:(id)arg1 fromVersion:(unsigned int)arg2;
++ (void)_migratePersistedFaces:(id)arg1 fromVersion:(unsigned long long)arg2;
 + (id)detectedFacePropertiesToFetch;
 + (id)detectedFaceRelationshipKeyPathsToPrefetch;
-+ (void)enumerateMatchedAssetsWithMetadata:(id)arg1 inContext:(id)arg2 withBlock:(id /* block */)arg3;
-+ (id)persistedFaceMetadataWithDetectedFace:(id)arg1 isKeyFace:(BOOL)arg2;
++ (void)enumerateMatchedAssetsWithMetadata:(id)arg1 inContext:(id)arg2 withBlock:(id)arg3;
++ (id)persistedFaceMetadataWithDetectedFace:(id)arg1 isKeyFace:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)assetCloudGUID;
@@ -48,20 +48,20 @@
 - (int)faceAlgorithmVersion;
 - (id)initWithCoder:(id)arg1;
 - (id)insertDeferredRebuildFaceFromDataInManagedObjectContext:(id)arg1;
-- (BOOL)isHidden;
-- (BOOL)isHidden;
-- (BOOL)isManual;
-- (BOOL)isNameSourceAuto;
-- (BOOL)isRepresentative;
+- (bool)isHidden;
+- (bool)isHidden;
+- (bool)isManual;
+- (bool)isNameSourceAuto;
+- (bool)isRepresentative;
 - (void)setAssetCloudGUID:(id)arg1;
 - (void)setAssetUUID:(id)arg1;
 - (void)setCenterX:(double)arg1;
 - (void)setCenterY:(double)arg1;
 - (void)setFaceAlgorithmVersion:(int)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)setManual:(BOOL)arg1;
-- (void)setNameSourceAuto:(BOOL)arg1;
-- (void)setRepresentative:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
+- (void)setManual:(bool)arg1;
+- (void)setNameSourceAuto:(bool)arg1;
+- (void)setRepresentative:(bool)arg1;
 - (void)setSize:(double)arg1;
 - (double)size;
 

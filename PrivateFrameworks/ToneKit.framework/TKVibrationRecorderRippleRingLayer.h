@@ -5,20 +5,20 @@
 @interface TKVibrationRecorderRippleRingLayer : CAShapeLayer {
     double  _creationTimestamp;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _normalizedRingLocation;
-    float  _ringSpeed;
+    double  _ringSpeed;
 }
 
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } normalizedRingLocation;
-@property (nonatomic, readonly) float ringSpeed;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } normalizedRingLocation;
+@property (nonatomic, readonly) double ringSpeed;
 
-- (void)configureWithTimeIntervalSinceCreation:(double)arg1 normalizedRingLocation:(struct CGPoint { float x1; float x2; })arg2 ringSpeed:(float)arg3;
+- (void)configureWithTimeIntervalSinceCreation:(double)arg1 normalizedRingLocation:(struct CGPoint { double x1; double x2; })arg2 ringSpeed:(double)arg3;
 - (id)init;
-- (struct CGPoint { float x1; float x2; })normalizedRingLocation;
+- (struct CGPoint { double x1; double x2; })normalizedRingLocation;
 - (void)reset;
-- (float)ringSpeed;
+- (double)ringSpeed;
 - (double)timeIntervalSinceCreation;
 
 @end

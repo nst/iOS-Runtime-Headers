@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BLTSectionInfoListProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -21,7 +21,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (void)reloadWithCompletion:(id /* block */)arg1;
+- (void)reloadWithCompletion:(id)arg1;
 - (void)sectionInfoObserver:(id)arg1 removedSectionWithSectionID:(id)arg2;
 - (void)sectionInfoObserver:(id)arg1 updatedSectionInfo:(id)arg2 withUniversalSectionID:(id)arg3 displayName:(id)arg4;
 - (void)setDelegate:(id)arg1;

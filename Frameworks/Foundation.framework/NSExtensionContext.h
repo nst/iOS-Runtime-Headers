@@ -6,11 +6,11 @@
     NSUUID * __UUID;
     NSXPCConnection * __auxiliaryConnection;
     NSXPCListener * __auxiliaryListener;
-    BOOL  __dummyExtension;
+    bool  __dummyExtension;
     <_NSExtensionContextHosting> * __extensionHostProxy;
     <_NSExtensionContextVending> * __extensionVendorProxy;
     id  __principalObject;
-    id /* block */  __requestCleanUpBlock;
+    id  __requestCleanUpBlock;
     NSObject<OS_os_transaction> * __transaction;
     NSArray * _inputItems;
 }
@@ -18,21 +18,21 @@
 @property (nonatomic, copy) NSUUID *_UUID;
 @property (setter=_setAuxiliaryConnection:, nonatomic, retain) NSXPCConnection *_auxiliaryConnection;
 @property (setter=_setAuxiliaryListener:, nonatomic, retain) NSXPCListener *_auxiliaryListener;
-@property (getter=_isDummyExtension, setter=_setDummyExtension:, nonatomic) BOOL _dummyExtension;
+@property (getter=_isDummyExtension, setter=_setDummyExtension:, nonatomic) bool _dummyExtension;
 @property (setter=_setExtensionHostProxy:, retain) <_NSExtensionContextHosting> *_extensionHostProxy;
 @property (setter=_setExtensionVendorProxy:, nonatomic, retain) <_NSExtensionContextVending> *_extensionVendorProxy;
 @property (setter=_setPrincipalObject:, nonatomic) id _principalObject;
-@property (setter=_setRequestCleanUpBlock:, nonatomic, copy) id /* block */ _requestCleanUpBlock;
+@property (setter=_setRequestCleanUpBlock:, nonatomic, copy) id _requestCleanUpBlock;
 @property (getter=_transaction, setter=_setTransaction:, retain) NSObject<OS_os_transaction> *_transaction;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } hostedViewMaximumAllowedSize;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } hostedViewMinimumAllowedSize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } hostedViewMaximumAllowedSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } hostedViewMinimumAllowedSize;
 @property (setter=_setInputItems:, nonatomic, copy) NSArray *inputItems;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int widgetActiveDisplayMode;
-@property (nonatomic) int widgetLargestAvailableDisplayMode;
+@property (nonatomic, readonly) long long widgetActiveDisplayMode;
+@property (nonatomic) long long widgetLargestAvailableDisplayMode;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -46,36 +46,36 @@
 + (id)_extensionContextHostProtocolWithAllowedErrorClasses:(id)arg1;
 + (id)_extensionContextVendorProtocolWithAllowedErrorClasses:(id)arg1;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_UUID;
-- (void)___nsx_pingHost:(id /* block */)arg1;
+- (void)___nsx_pingHost:(id)arg1;
 - (id)_auxiliaryConnection;
 - (id)_auxiliaryListener;
-- (void)_completeRequestReturningItemsSecondHalf:(id /* block */)arg1;
+- (void)_completeRequestReturningItemsSecondHalf:(id)arg1;
 - (id)_derivedExtensionAuxiliaryHostProtocol;
 - (id)_extensionHostProxy;
 - (id)_extensionVendorProxy;
-- (BOOL)_isDummyExtension;
-- (BOOL)_isHost;
-- (void)_loadItemForPayload:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
+- (bool)_isDummyExtension;
+- (bool)_isHost;
+- (void)_loadItemForPayload:(id)arg1 completionHandler:(id)arg2;
+- (void)_loadPreviewImageForPayload:(id)arg1 completionHandler:(id)arg2;
+- (void)_openURL:(id)arg1 completion:(id)arg2;
 - (id)_principalObject;
-- (id /* block */)_requestCleanUpBlock;
+- (id)_requestCleanUpBlock;
 - (void)_setAuxiliaryConnection:(id)arg1;
 - (void)_setAuxiliaryListener:(id)arg1;
-- (void)_setDummyExtension:(BOOL)arg1;
+- (void)_setDummyExtension:(bool)arg1;
 - (void)_setExtensionHostProxy:(id)arg1;
 - (void)_setExtensionVendorProxy:(id)arg1;
 - (void)_setInputItems:(id)arg1;
 - (void)_setPrincipalObject:(id)arg1;
-- (void)_setRequestCleanUpBlock:(id /* block */)arg1;
+- (void)_setRequestCleanUpBlock:(id)arg1;
 - (void)_setTransaction:(id)arg1;
 - (id)_transaction;
-- (void)_willPerformHostCallback:(id /* block */)arg1;
+- (void)_willPerformHostCallback:(id)arg1;
 - (void)cancelRequestWithError:(id)arg1;
-- (void)completeRequestReturningItems:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)completeRequestReturningItems:(id)arg1 completionHandler:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -88,25 +88,25 @@
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
 - (id)inputItems;
 - (void)invalidate;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)openURL:(id)arg1 completionHandler:(id)arg2;
 - (void)set_UUID:(id)arg1;
 
 // Image: /System/Library/Frameworks/IntentsUI.framework/IntentsUI
 
-- (struct CGSize { float x1; float x2; })hostedViewMaximumAllowedSize;
-- (struct CGSize { float x1; float x2; })hostedViewMinimumAllowedSize;
+- (struct CGSize { double x1; double x2; })hostedViewMaximumAllowedSize;
+- (struct CGSize { double x1; double x2; })hostedViewMinimumAllowedSize;
 
 // Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
 
-- (void)setWidgetLargestAvailableDisplayMode:(int)arg1;
-- (int)widgetActiveDisplayMode;
-- (int)widgetLargestAvailableDisplayMode;
-- (struct CGSize { float x1; float x2; })widgetMaximumSizeForDisplayMode:(int)arg1;
+- (void)setWidgetLargestAvailableDisplayMode:(long long)arg1;
+- (long long)widgetActiveDisplayMode;
+- (long long)widgetLargestAvailableDisplayMode;
+- (struct CGSize { double x1; double x2; })widgetMaximumSizeForDisplayMode:(long long)arg1;
 
 // Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
 
 - (void)completeRequestWithBroadcastURL:(id)arg1 broadcastConfiguration:(id)arg2 setupInfo:(id)arg3;
-- (void)loadBroadcastingApplicationInfoWithCompletion:(id /* block */)arg1;
+- (void)loadBroadcastingApplicationInfoWithCompletion:(id)arg1;
 
 @end

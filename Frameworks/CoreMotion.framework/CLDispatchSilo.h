@@ -8,10 +8,10 @@
 }
 
 - (void).cxx_destruct;
-- (void)afterInterval:(double)arg1 async:(id /* block */)arg2;
+- (void)afterInterval:(double)arg1 async:(id)arg2;
 - (void)assertInside;
 - (void)assertOutside;
-- (void)async:(id /* block */)arg1;
+- (void)async:(id)arg1;
 - (id)debugDescription;
 - (id)initMain;
 - (id)initWithIdentifier:(id)arg1;
@@ -19,6 +19,6 @@
 - (id)newTimer;
 - (id)operationQueue;
 - (id)queue;
-- (void)sync:(id /* block */)arg1;
+- (void)sync:(id)arg1;
 
 @end

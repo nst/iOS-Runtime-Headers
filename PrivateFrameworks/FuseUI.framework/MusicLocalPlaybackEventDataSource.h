@@ -3,27 +3,27 @@
  */
 
 @interface MusicLocalPlaybackEventDataSource : NSObject {
-    BOOL  _hasNetworkConditionsToFetchOffers;
+    bool  _hasNetworkConditionsToFetchOffers;
     NSMutableArray * _historyMediaItems;
     MPMediaPlaylist * _playbackHistoryPlaylist;
-    BOOL  _shouldFetchOffers;
+    bool  _shouldFetchOffers;
     NSMutableSet * _storeIDsToFetchOffers;
     NSMutableDictionary * _storeIDsToOffers;
 }
 
 - (void).cxx_destruct;
 - (id)_adIdentifierForHistoryItem:(id)arg1;
-- (void)_fetchOffersForStoreIDs:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_fetchOffersForStoreIDs:(id)arg1 completionHandler:(id)arg2;
 - (id)_mediaItemsForHistoryPlaylist:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (BOOL)_shouldFetchOfferForItem:(id)arg1;
+- (bool)_shouldFetchOfferForItem:(id)arg1;
 - (id)_storeIDForMediaItem:(id)arg1;
 - (void)addPlaybackEventForMediaItem:(id)arg1;
 - (void)dealloc;
 - (void)fetchStoreOffers;
 - (id)initWithPlaylist:(id)arg1;
-- (id)mediaItemAtIndex:(unsigned int)arg1;
-- (unsigned int)playbackEventCount;
+- (id)mediaItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)playbackEventCount;
 - (id)storeOffersForStoreID:(id)arg1;
 
 @end

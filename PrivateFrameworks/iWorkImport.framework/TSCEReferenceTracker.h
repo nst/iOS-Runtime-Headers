@@ -12,9 +12,9 @@
             struct { /* ? */ } *__first_; 
         } __end_cap_; 
     }  mFormulaIDsToRewrite;
-    BOOL  mIsRegisteredWithCalculationEngine;
-    unsigned int  mNextEmptyTrackedReferencesIndex;
-    unsigned int  mNumberOfTrackedReferences;
+    bool  mIsRegisteredWithCalculationEngine;
+    unsigned long long  mNextEmptyTrackedReferencesIndex;
+    unsigned long long  mNumberOfTrackedReferences;
     NSMutableArray * mTrackedReferences;
     NSLock * mTrackedRefsLock;
     struct __CFUUID { } * mUUID;
@@ -23,7 +23,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <TSCEReferenceTrackerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -41,10 +41,10 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 calculationEngine:(id)arg2 delegate:(id)arg3;
 - (void)invalidateForCalculationEngine:(id)arg1;
-- (unsigned int)numberOfTrackedReferences;
+- (unsigned long long)numberOfTrackedReferences;
 - (id)objectToArchiveInDependencyTracker;
-- (struct { BOOL x1; BOOL x2; BOOL x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
-- (void)registerWithCalculationEngine:(BOOL)arg1;
+- (struct { bool x1; bool x2; bool x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
+- (void)registerWithCalculationEngine:(bool)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
 - (void)retainForCalculationEngine:(id)arg1;
 - (void)rewriteForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 rewriteSpec:(id)arg3;
@@ -54,7 +54,7 @@
 - (void)setFormulaOwnerID:(struct __CFUUID { }*)arg1;
 - (id)trackedReferenceAtID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1;
 - (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerID:(struct __CFUUID { }*)arg2;
-- (BOOL)trackedReferencesExistForTable:(struct __CFUUID { }*)arg1;
+- (bool)trackedReferencesExistForTable:(struct __CFUUID { }*)arg1;
 - (void)unregisterFromCalculationEngine;
 - (void)writeResultsForCalculationEngine:(id)arg1;
 

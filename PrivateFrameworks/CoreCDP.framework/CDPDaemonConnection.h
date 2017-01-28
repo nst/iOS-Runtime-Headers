@@ -10,8 +10,8 @@
 - (void).cxx_destruct;
 - (id)connection;
 - (id)daemon;
-- (id)daemonWithErrorHandler:(id /* block */)arg1;
+- (id)daemonWithErrorHandler:(id)arg1;
 - (id)init;
-- (id)synchronousDaemonWithErrorHandler:(id /* block */)arg1;
+- (id)synchronousDaemonWithErrorHandler:(id)arg1;
 
 @end

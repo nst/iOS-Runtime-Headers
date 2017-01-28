@@ -14,10 +14,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (void)_accessPresenterOperationRecordsUsingBlock:(id /* block */)arg1;
++ (void)_accessPresenterOperationRecordsUsingBlock:(id)arg1;
 + (id)_fetchProviderMessengerForListener:(id)arg1;
 + (id)_fileReactorDebuggingInformation;
 + (id)_idForReactor:(id)arg1;
@@ -27,20 +27,20 @@
 - (id)_onqueue_filePresenters;
 - (id)_onqueue_fileProviders;
 - (void)addFilePresenter:(id)arg1;
-- (void)addFileProvider:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)addFileProvider:(id)arg1 completionHandler:(id)arg2;
 - (oneway void)cancelAccessClaimForID:(id)arg1;
 - (void)dealloc;
 - (id)filePresenters;
 - (id)fileProviders;
-- (void)getDebugInfoWithCompletionHandler:(id /* block */)arg1;
-- (id)grantAccessClaim:(id)arg1 synchronouslyIfPossible:(BOOL)arg2;
+- (void)getDebugInfoWithCompletionHandler:(id)arg1;
+- (id)grantAccessClaim:(id)arg1 synchronouslyIfPossible:(bool)arg2;
 - (void)grantSubarbitrationClaim:(id)arg1 withServer:(id)arg2;
 - (void)handleCanceledServer;
 - (id)idForFileReactor:(id)arg1;
 - (id)initWithServer:(id)arg1 queue:(id)arg2;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performBarrier;
-- (void)performBarrierAsync:(id /* block */)arg1;
+- (void)performBarrierAsync:(id)arg1;
 - (void)removeFilePresenter:(id)arg1;
 - (void)removeFileProvider:(id)arg1;
 - (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;

@@ -6,13 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int mirroringBiasAxis;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long mirroringBiasAxis;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
-- (struct { float x1; float x2; float x3; float x4; })colorForCoordinate:(struct { float x1; float x2; })arg1;
-- (struct { float x1; float x2; })coordinateForColor:(struct { float x1; float x2; float x3; float x4; })arg1 isValid:(out BOOL*)arg2;
-- (unsigned int)type;
+- (struct { double x1; double x2; double x3; double x4; })colorForCoordinate:(struct { double x1; double x2; })arg1;
+- (struct { double x1; double x2; })coordinateForColor:(struct { double x1; double x2; double x3; double x4; })arg1 isValid:(out bool*)arg2;
+- (unsigned long long)type;
 
 @end

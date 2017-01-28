@@ -25,9 +25,9 @@
 - (id)accessoryUUIDs;
 - (void)addAccessory:(id)arg1;
 - (id)commitItem;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)removeAccessory:(id)arg1;
 - (id)room;

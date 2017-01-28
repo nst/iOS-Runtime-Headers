@@ -5,10 +5,10 @@
 @interface CBCharacteristic : CBAttribute {
     NSArray * _descriptors;
     NSNumber * _handle;
-    BOOL  _isBroadcasted;
-    BOOL  _isNotifying;
+    bool  _isBroadcasted;
+    bool  _isNotifying;
     CBPeripheral * _peripheral;
-    unsigned int  _properties;
+    unsigned long long  _properties;
     CBService * _service;
     NSData * _value;
     NSNumber * _valueHandle;
@@ -17,10 +17,10 @@
 
 @property (retain) NSArray *descriptors;
 @property (nonatomic, readonly) NSNumber *handle;
-@property (readonly) BOOL isBroadcasted;
-@property BOOL isNotifying;
+@property (readonly) bool isBroadcasted;
+@property bool isNotifying;
 @property (nonatomic, readonly) CBPeripheral *peripheral;
-@property (nonatomic) unsigned int properties;
+@property (nonatomic) unsigned long long properties;
 @property (nonatomic) CBService *service;
 @property (retain) NSData *value;
 @property (nonatomic, readonly) NSNumber *valueHandle;
@@ -37,14 +37,14 @@
 - (id)handleValueWritten:(id)arg1;
 - (id)initWithService:(id)arg1 dictionary:(id)arg2;
 - (void)invalidate;
-- (BOOL)isBroadcasted;
-- (BOOL)isNotifying;
+- (bool)isBroadcasted;
+- (bool)isNotifying;
 - (id)peripheral;
-- (unsigned int)properties;
+- (unsigned long long)properties;
 - (id)service;
 - (void)setDescriptors:(id)arg1;
-- (void)setIsNotifying:(BOOL)arg1;
-- (void)setProperties:(unsigned int)arg1;
+- (void)setIsNotifying:(bool)arg1;
+- (void)setProperties:(unsigned long long)arg1;
 - (void)setService:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

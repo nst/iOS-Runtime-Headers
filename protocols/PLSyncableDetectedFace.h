@@ -10,9 +10,9 @@
 - (double)centerY;
 - (short)cloudLocalState;
 - (int)faceAlgorithmVersion;
-- (BOOL)hidden;
-- (BOOL)manual;
-- (BOOL)nameSourceAuto;
+- (bool)hidden;
+- (bool)manual;
+- (bool)nameSourceAuto;
 - (<PLSyncablePerson> *)person;
 - (<PLSyncablePerson> *)personBeingKeyFace;
 - (NSSet *)rejectedPeople;
@@ -21,9 +21,9 @@
 - (void)setCenterY:(double)arg1;
 - (void)setCloudLocalState:(short)arg1;
 - (void)setFaceAlgorithmVersion:(int)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)setManual:(BOOL)arg1;
-- (void)setNameSourceAuto:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
+- (void)setManual:(bool)arg1;
+- (void)setNameSourceAuto:(bool)arg1;
 - (void)setPerson:(id <PLSyncablePerson>)arg1;
 - (void)setPersonBeingKeyFace:(id <PLSyncablePerson>)arg1;
 - (void)setRejectedPeople:(NSSet *)arg1;

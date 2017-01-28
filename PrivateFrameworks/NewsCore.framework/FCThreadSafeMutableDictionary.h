@@ -9,24 +9,24 @@
 
 @property (nonatomic, readonly, copy) NSArray *allKeys;
 @property (nonatomic, readonly, copy) NSArray *allValues;
-@property (readonly) unsigned int count;
+@property (readonly) unsigned long long count;
 @property (nonatomic, readonly, copy) NSDictionary *immutableDictionary;
-@property (readonly) BOOL isEmpty;
+@property (readonly) bool isEmpty;
 
 - (void).cxx_destruct;
 - (void)addEntriesFromDictionary:(id)arg1;
 - (id)allKeys;
 - (id)allValues;
-- (unsigned int)count;
-- (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
+- (unsigned long long)count;
+- (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
 - (id)immutableDictionary;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (void)readWithAccessor:(id /* block */)arg1;
-- (void)readWriteWithAccessor:(id /* block */)arg1;
+- (void)readWithAccessor:(id)arg1;
+- (void)readWriteWithAccessor:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)removeObjectsForKeys:(id)arg1;

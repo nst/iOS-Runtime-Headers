@@ -5,6 +5,6 @@
 @interface _WKVideoFileUploadItem : _WKFileUploadItem
 
 - (id)displayImage;
-- (BOOL)isVideo;
+- (bool)isVideo;
 
 @end

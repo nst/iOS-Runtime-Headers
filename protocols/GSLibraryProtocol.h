@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)generationsRemove:(NSArray *)arg1 error:(id*)arg2;
+- (bool)generationsRemove:(NSArray *)arg1 error:(id*)arg2;
 - (NSString *)nameSpace;
 - (struct NSObject { Class x1; }*)storage;
 

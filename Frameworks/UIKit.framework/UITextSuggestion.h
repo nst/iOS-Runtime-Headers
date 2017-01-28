@@ -3,14 +3,14 @@
  */
 
 @interface UITextSuggestion : TIKeyboardCandidate <NSCopying> {
-    BOOL  __shouldPersist;
+    bool  __shouldPersist;
     NSString * _displayText;
     NSString * _headerText;
     NSString * _inputText;
     NSString * _searchText;
 }
 
-@property (nonatomic, readonly) BOOL _shouldPersist;
+@property (nonatomic, readonly) bool _shouldPersist;
 @property (nonatomic, copy) NSString *displayText;
 @property (nonatomic, copy) NSString *headerText;
 @property (nonatomic, readonly, copy) NSString *inputText;
@@ -19,7 +19,7 @@
 + (id)textSuggestionWithInputText:(id)arg1;
 + (id)textSuggestionWithInputText:(id)arg1 searchText:(id)arg2;
 
-- (BOOL)_shouldPersist;
+- (bool)_shouldPersist;
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

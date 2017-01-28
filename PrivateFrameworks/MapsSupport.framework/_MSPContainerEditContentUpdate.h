@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <MSPImmutableObject> *updatedImmutableObject;
 @property (nonatomic, readonly) <MSPMutableObject> *updatedObject;
@@ -20,6 +20,6 @@
 - (id)initWithUpdatedObject:(id)arg1;
 - (id)updatedImmutableObject;
 - (id)updatedObject;
-- (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(id /* block */)arg2;
+- (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(id)arg2;
 
 @end

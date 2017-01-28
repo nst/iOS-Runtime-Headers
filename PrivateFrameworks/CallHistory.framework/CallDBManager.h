@@ -6,18 +6,18 @@
     unsigned char  _dataStoreType;
     DBManager * _dbManager;
     id  _deviceUnlockNotificationRef;
-    BOOL  _deviceUnlocked;
+    bool  _deviceUnlocked;
     unsigned char  _notifyDataStoreChangeReason;
 }
 
 @property unsigned char dataStoreType;
 @property (retain) DBManager *dbManager;
 @property (retain) id deviceUnlockNotificationRef;
-@property BOOL deviceUnlocked;
+@property bool deviceUnlocked;
 @property unsigned char notifyDataStoreChangeReason;
 
 + (id)dataStoreName;
-+ (id)getDBLocationIsSandboxed:(BOOL)arg1 isTemporary:(BOOL)arg2 error:(unsigned char*)arg3;
++ (id)getDBLocationIsSandboxed:(bool)arg1 isTemporary:(bool)arg2 error:(unsigned char*)arg3;
 + (id)modelURL;
 
 - (void).cxx_destruct;
@@ -29,23 +29,23 @@
 - (id)dbManager;
 - (void)dealloc;
 - (id)deviceUnlockNotificationRef;
-- (BOOL)deviceUnlocked;
+- (bool)deviceUnlocked;
 - (void)handlePermanentCreated;
 - (void)handleTemporaryCreated;
 - (id)init;
 - (void)moveCallsFromTempDatabase;
 - (unsigned char)notifyDataStoreChangeReason;
-- (BOOL)notifyDataStoreChanged;
+- (bool)notifyDataStoreChanged;
 - (id)permDBLocation:(unsigned char*)arg1;
 - (void)reFetchState;
 - (void)registerForNotifications;
 - (void)setDataStoreType:(unsigned char)arg1;
 - (void)setDbManager:(id)arg1;
 - (void)setDeviceUnlockNotificationRef:(id)arg1;
-- (void)setDeviceUnlocked:(BOOL)arg1;
+- (void)setDeviceUnlocked:(bool)arg1;
 - (void)setNotifyDataStoreChangeReason:(unsigned char)arg1;
-- (BOOL)shouldCreatePermanent;
-- (BOOL)shouldCreateTemporary;
+- (bool)shouldCreatePermanent;
+- (bool)shouldCreateTemporary;
 - (id)tempDBLocation:(unsigned char*)arg1;
 
 @end

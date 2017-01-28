@@ -4,21 +4,21 @@
 
 @interface _LSApplicationProxiesWithFlagsQuery : _LSQuery {
     unsigned long long  _bundleFlags;
-    unsigned long  _plistFlags;
+    unsigned int  _plistFlags;
 }
 
 @property (nonatomic, readonly) unsigned long long bundleFlags;
-@property (nonatomic, readonly) unsigned long plistFlags;
+@property (nonatomic, readonly) unsigned int plistFlags;
 
-+ (id)queryWithPlistFlags:(unsigned long)arg1 bundleFlags:(unsigned long long)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)queryWithPlistFlags:(unsigned int)arg1 bundleFlags:(unsigned long long)arg2;
++ (bool)supportsSecureCoding;
 
-- (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
+- (void)_enumerateWithXPCConnection:(id)arg1 block:(id)arg2;
 - (unsigned long long)bundleFlags;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned long)plistFlags;
+- (bool)isEqual:(id)arg1;
+- (unsigned int)plistFlags;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface CNContactListTableView : UITableView
 
-- (BOOL)_shouldShowHeadersAndFooters;
+- (bool)_shouldShowHeadersAndFooters;
 
 @end

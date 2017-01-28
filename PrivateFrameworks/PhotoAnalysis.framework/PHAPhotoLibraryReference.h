@@ -12,7 +12,7 @@
 - (id)dictionaryRepresentation;
 - (id)init;
 - (id)initWithLibraryURL:(id)arg1;
-- (BOOL)isEqualToPhotoLibraryReference:(id)arg1;
+- (bool)isEqualToPhotoLibraryReference:(id)arg1;
 - (id)path;
 
 @end

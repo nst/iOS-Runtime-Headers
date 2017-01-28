@@ -12,10 +12,10 @@
 - (id)conversationListSenderColor;
 - (id)conversationListSummaryColor;
 - (id)gray_unfilledBalloonColor;
-- (id)messageAcknowledgment:(int)arg1 acknowledgmentImageColor:(int)arg2;
-- (id)messageAcknowledgment:(int)arg1 selectedAcknowledgmentImageColor:(int)arg2;
+- (id)messageAcknowledgment:(long long)arg1 acknowledgmentImageColor:(long long)arg2;
+- (id)messageAcknowledgment:(long long)arg1 selectedAcknowledgmentImageColor:(long long)arg2;
 - (id)messageAcknowledgmentBalloonBorderColor;
-- (id)messageAcknowledgmentBalloonColorForStyle:(int)arg1;
+- (id)messageAcknowledgmentBalloonColorForStyle:(long long)arg1;
 - (id)messagesControllerBackgroundColor;
 - (id)notificationSubtitleColor;
 - (id)progressBarTrackTintColor;

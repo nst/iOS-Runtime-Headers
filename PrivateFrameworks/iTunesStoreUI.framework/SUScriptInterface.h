@@ -48,7 +48,7 @@
 @property (readonly) SUScriptDevice *device;
 @property (readonly) SUScriptKeyValueStore *deviceLocalStorage;
 @property (readonly) id globalRootObject;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSArray *installedSoftwareApplications;
 @property (readonly) id loggingEnabled;
 @property (readonly) SUScriptMediaLibrary *mediaLibrary;
@@ -68,9 +68,9 @@
 @property (retain) SUScriptWindowContext *scriptWindowContext;
 @property (readonly) SUScriptSectionsController *sectionsController;
 @property (readonly) NSString *storeFrontIdentifier;
-@property (readonly) int storeSheetType;
-@property (readonly) int storeSheetTypeAskToBuy;
-@property (readonly) int storeSheetTypeDefault;
+@property (readonly) long long storeSheetType;
+@property (readonly) long long storeSheetTypeAskToBuy;
+@property (readonly) long long storeSheetTypeDefault;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SUScriptTelephony *telephony;
 @property (readonly) <SUScriptInterfaceDelegate> *threadSafeDelegate;
@@ -79,7 +79,7 @@
 @property (readonly) SUScriptWindow *window;
 
 + (void)initialize;
-+ (int)purchaseAnimationStyleFromString:(id)arg1;
++ (long long)purchaseAnimationStyleFromString:(id)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
 + (id)webScriptNameForSelector:(SEL)arg1;
 
@@ -88,7 +88,7 @@
 - (id)_className;
 - (id)_cookieForURL:(id)arg1;
 - (id)_copyDialogWithMessage:(id)arg1 title:(id)arg2 cancelButtonTitle:(id)arg3 okButtonTitle:(id)arg4;
-- (void)_getSoftwareApplicationWithCompletionFunction:(id)arg1 lookupBlock:(id /* block */)arg2;
+- (void)_getSoftwareApplicationWithCompletionFunction:(id)arg1 lookupBlock:(id)arg2;
 - (void)_globalEventNotification:(id)arg1;
 - (void)_scriptUserInfoDidChangeNotification:(id)arg1;
 - (void)accessibilityPostLayoutChange;
@@ -113,14 +113,14 @@
 - (id)applicationAccessibilityEnabled;
 - (id)applicationLocalStorage;
 - (void)approveInPerson:(id)arg1 completionFunction:(id)arg2;
-- (BOOL)arePodcastsDisabled;
+- (bool)arePodcastsDisabled;
 - (id)askToBuyPrompt;
 - (id)attributeKeys;
 - (void)authenticateForAccount:(id)arg1 withOptions:(id)arg2;
 - (id)authenticationContext;
-- (BOOL)canSendEmail;
+- (bool)canSendEmail;
 - (id)carrierBundlingController;
-- (BOOL)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(BOOL)arg2;
+- (bool)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(bool)arg2;
 - (id)clientIdentifier;
 - (id)clientInterface;
 - (void)composeEmailWithSubject:(id)arg1 body:(id)arg2;
@@ -138,7 +138,7 @@
 - (id)delegate;
 - (id)device;
 - (id)deviceLocalStorage;
-- (int)dialogDisplayCountForKey:(id)arg1;
+- (long long)dialogDisplayCountForKey:(id)arg1;
 - (id)diskSpaceAvailable;
 - (void)dismissSheet;
 - (void)dismissWindowsWithOptions:(id)arg1;
@@ -153,19 +153,19 @@
 - (id)globalRootObject;
 - (void)goBack;
 - (void)gotoStoreURL:(id)arg1;
-- (void)gotoStoreURL:(id)arg1 ofType:(id)arg2 withAuthentication:(BOOL)arg3 forceAuthentication:(BOOL)arg4;
+- (void)gotoStoreURL:(id)arg1 ofType:(id)arg2 withAuthentication:(bool)arg3 forceAuthentication:(bool)arg4;
 - (void)handleDialogPropertyListString:(id)arg1;
 - (void)handleProtocolPropertyListString:(id)arg1;
 - (void)handleRootObjectWithPropertyListString:(id)arg1;
 - (void)handleTrackListWithPropertyListString:(id)arg1;
 - (id)hardwareType;
-- (BOOL)haveAccount;
+- (bool)haveAccount;
 - (id)init;
 - (void)initAuthentication;
 - (id)installedSoftwareApplications;
-- (BOOL)isExplicitContentDisabled;
-- (BOOL)isRunningTest;
-- (BOOL)launchedToTest;
+- (bool)isExplicitContentDisabled;
+- (bool)isRunningTest;
+- (bool)launchedToTest;
 - (void)log:(id)arg1;
 - (id)loggingEnabled;
 - (id)machineGUID;
@@ -190,7 +190,7 @@
 - (id)makeFacebookSessionWithAccount:(id)arg1;
 - (id)makeFamilySetupViewController;
 - (id)makeGiftViewController;
-- (id)makeLinearGradientWithX0:(float)arg1 y0:(float)arg2 x1:(float)arg3 y1:(float)arg4;
+- (id)makeLinearGradientWithX0:(double)arg1 y0:(double)arg2 x1:(double)arg3 y1:(double)arg4;
 - (id)makeLookupRequest;
 - (id)makeMediaPlayerItemWithProperties:(id)arg1;
 - (id)makeMediaPlayerViewControllerWithMediaPlayerItem:(id)arg1;
@@ -198,7 +198,7 @@
 - (id)makeNavigationControllerWithRootViewController:(id)arg1;
 - (id)makeNumberFormatterWithStyle:(id)arg1;
 - (id)makePopOverWithViewController:(id)arg1;
-- (id)makeRadialGradientWithX0:(float)arg1 y0:(float)arg2 r0:(float)arg3 x1:(float)arg4 y1:(float)arg5 r1:(float)arg6;
+- (id)makeRadialGradientWithX0:(double)arg1 y0:(double)arg2 r0:(double)arg3 x1:(double)arg4 y1:(double)arg5 r1:(double)arg6;
 - (id)makeRedeemViewController;
 - (id)makeReportAProblemViewControllerWithAdamID:(id)arg1;
 - (id)makeReviewWithAdamID:(id)arg1;
@@ -243,7 +243,7 @@
 - (id)scriptAttributeKeys;
 - (id)scriptStoreBagDictionary;
 - (id)scriptWindowContext;
-- (BOOL)scriptXMLHTTPRequest:(id)arg1 requiresCellularForURL:(id)arg2;
+- (bool)scriptXMLHTTPRequest:(id)arg1 requiresCellularForURL:(id)arg2;
 - (id)sectionsController;
 - (void)selectSectionWithIdentifier:(id)arg1;
 - (void)selectTrackListItemWithIdentifier:(id)arg1;
@@ -273,9 +273,9 @@
 - (void)setSubscriptionStatusCoordinator:(id)arg1;
 - (void)setWebFrame:(id)arg1;
 - (void)setWindow:(id)arg1;
-- (BOOL)shouldRestrictContentOfSystem:(id)arg1 level:(id)arg2;
+- (bool)shouldRestrictContentOfSystem:(id)arg1 level:(id)arg2;
 - (void)showAlertWithMessage:(id)arg1 title:(id)arg2 buttonTitle:(id)arg3;
-- (BOOL)showConfirmWithMessage:(id)arg1 title:(id)arg2 okButtonTitle:(id)arg3 cancelButtonTitle:(id)arg4;
+- (bool)showConfirmWithMessage:(id)arg1 title:(id)arg2 okButtonTitle:(id)arg3 cancelButtonTitle:(id)arg4;
 - (void)showMediaPlayerWithURLString:(id)arg1 orientation:(id)arg2 title:(id)arg3 subtitle:(id)arg4 bookmarkID:(id)arg5 duration:(id)arg6 type:(id)arg7 imageURL:(id)arg8;
 - (void)showMediaPreviewWithURLString:(id)arg1;
 - (id)showPromptWithMessage:(id)arg1 initialValue:(id)arg2 title:(id)arg3 okButtonTitle:(id)arg4 cancelButtonTitle:(id)arg5;
@@ -284,9 +284,9 @@
 - (id)softwareApplicationWithBundleID:(id)arg1;
 - (void)startedTest:(id)arg1;
 - (id)storeFrontIdentifier;
-- (int)storeSheetType;
-- (int)storeSheetTypeAskToBuy;
-- (int)storeSheetTypeDefault;
+- (long long)storeSheetType;
+- (long long)storeSheetTypeAskToBuy;
+- (long long)storeSheetTypeDefault;
 - (id)subscriptionStatusCoordinator;
 - (id)systemItemAction;
 - (id)systemItemAdd;

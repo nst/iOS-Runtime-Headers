@@ -8,12 +8,12 @@
 
 @property (nonatomic, readonly) CMAltimeterInternal *_internal;
 
-+ (BOOL)isElevationAvailable;
++ (bool)isElevationAvailable;
 
 - (id)_internal;
 - (void)dealloc;
 - (id)init;
-- (void)startElevationUpdatesWithHandler:(id /* block */)arg1;
+- (void)startElevationUpdatesWithHandler:(id)arg1;
 - (void)stopElevationUpdates;
 
 @end

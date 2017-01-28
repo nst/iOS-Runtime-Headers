@@ -5,13 +5,13 @@
 @interface EMFPlayer : NSObject {
     EMFPlusPlayer * m_emfPlusPlayer;
     MFGraphicsDevice * m_gdi;
-    BOOL  m_headerDone;
-    BOOL  m_ignoreEMFPlusRecords;
-    BOOL  m_ignoreEMFRecords;
+    bool  m_headerDone;
+    bool  m_ignoreEMFPlusRecords;
+    bool  m_ignoreEMFRecords;
 }
 
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInLogicalUnits:(id)arg1;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInPoints:(id)arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsInLogicalUnits:(id)arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsInPoints:(id)arg1;
 
 - (void)dealloc;
 - (void)done;
@@ -20,7 +20,7 @@
 - (int)play:(unsigned int)arg1 :(const char *)arg2;
 - (int)playAbortPath:(unsigned int)arg1 :(const char *)arg2;
 - (int)playAlphaBlend:(unsigned int)arg1 :(const char *)arg2;
-- (int)playAngleArc:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
+- (int)playAngleArc:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
 - (int)playArc:(unsigned int)arg1 :(const char *)arg2;
 - (int)playArcTo:(unsigned int)arg1 :(const char *)arg2;
 - (int)playBeginPath:(unsigned int)arg1 :(const char *)arg2;
@@ -38,7 +38,7 @@
 - (int)playExcludeClipRect:(unsigned int)arg1 :(const char *)arg2;
 - (int)playExtCreateFontIndirectW:(unsigned int)arg1 :(const char *)arg2;
 - (int)playExtCreatePen:(unsigned int)arg1 :(const char *)arg2;
-- (int)playExtTextOut:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
+- (int)playExtTextOut:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
 - (int)playExtTextOutA:(unsigned int)arg1 :(const char *)arg2;
 - (int)playExtTextOutW:(unsigned int)arg1 :(const char *)arg2;
 - (int)playFillRgn:(unsigned int)arg1 :(const char *)arg2;
@@ -53,14 +53,14 @@
 - (int)playPaintRgn:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPie:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPlgBlt:(unsigned int)arg1 :(const char *)arg2;
-- (int)playPolyBezier:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
-- (int)playPolyBezierTo:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
-- (int)playPolyDraw:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
-- (int)playPolyLine:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
-- (int)playPolyLineTo:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
-- (int)playPolyPolyLine:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
-- (int)playPolyPolygon:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
-- (int)playPolygon:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
+- (int)playPolyBezier:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
+- (int)playPolyBezierTo:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
+- (int)playPolyDraw:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
+- (int)playPolyLine:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
+- (int)playPolyLineTo:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
+- (int)playPolyPolyLine:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
+- (int)playPolyPolygon:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
+- (int)playPolygon:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3;
 - (int)playRealizePalette:(unsigned int)arg1 :(const char *)arg2;
 - (int)playRectangle:(unsigned int)arg1 :(const char *)arg2;
 - (int)playResizePalette:(unsigned int)arg1 :(const char *)arg2;
@@ -95,11 +95,11 @@
 - (int)playSetWorldTransform:(unsigned int)arg1 :(const char *)arg2;
 - (int)playStretchBlt:(unsigned int)arg1 :(const char *)arg2;
 - (int)playStretchDIBits:(unsigned int)arg1 :(const char *)arg2;
-- (int)playStrokeAndFillPath:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3 :(BOOL)arg4;
+- (int)playStrokeAndFillPath:(unsigned int)arg1 :(const char *)arg2 :(bool)arg3 :(bool)arg4;
 - (int)playUnknown:(unsigned int)arg1 :(unsigned int)arg2 :(const char *)arg3;
 - (int)playUnsupported:(unsigned int)arg1 :(const char *)arg2 :(const char *)arg3;
 - (int)playWidenPath:(unsigned int)arg1 :(const char *)arg2;
-- (void)setIgnoreEMFPlusRecords:(BOOL)arg1;
-- (void)setIgnoreEMFRecords:(BOOL)arg1;
+- (void)setIgnoreEMFPlusRecords:(bool)arg1;
+- (void)setIgnoreEMFRecords:(bool)arg1;
 
 @end

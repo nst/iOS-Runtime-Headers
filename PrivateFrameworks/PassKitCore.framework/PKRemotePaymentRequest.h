@@ -14,7 +14,7 @@
 @property (nonatomic, retain) PKPaymentRequest *paymentRequest;
 @property (nonatomic, copy) NSString *selectedApplicationIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -24,8 +24,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDevice:(id)arg1;
 - (id)initWithDevice:(id)arg1 identifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRemoteRequest:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRemoteRequest:(id)arg1;
 - (id)paymentRequest;
 - (id)selectedApplicationIdentifier;
 - (void)setPaymentRequest:(id)arg1;

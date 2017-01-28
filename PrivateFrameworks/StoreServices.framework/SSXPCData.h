@@ -12,7 +12,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithXPCData:(id)arg1;
-- (unsigned int)length;
+- (unsigned long long)length;
 - (id)xpcData;
 
 @end

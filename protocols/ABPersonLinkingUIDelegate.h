@@ -5,15 +5,15 @@
 
 @required
 
-- (BOOL)canUnlinkCardAtRow:(int)arg1;
-- (BOOL)manuallyLinkPerson:(ABUIPerson *)arg1;
-- (BOOL)manuallyUnlinkCardAtRow:(int)arg1;
+- (bool)canUnlinkCardAtRow:(long long)arg1;
+- (bool)manuallyLinkPerson:(ABUIPerson *)arg1;
+- (bool)manuallyUnlinkCardAtRow:(long long)arg1;
 - (ABPeoplePickerNavigationController *)newPeoplePickerForLinking;
-- (ABPersonViewController *)newPersonViewControllerForLinkedCardAtRow:(int)arg1;
-- (int)numberOfLinkedCardRows;
-- (NSString *)personNameForCardAtRow:(int)arg1;
-- (BOOL)shouldAllowLinkingAnotherContact;
-- (BOOL)shouldAllowLinkingPersonWithRecordID:(int)arg1;
-- (NSString *)sourceNameForCardAtRow:(int)arg1;
+- (ABPersonViewController *)newPersonViewControllerForLinkedCardAtRow:(long long)arg1;
+- (long long)numberOfLinkedCardRows;
+- (NSString *)personNameForCardAtRow:(long long)arg1;
+- (bool)shouldAllowLinkingAnotherContact;
+- (bool)shouldAllowLinkingPersonWithRecordID:(int)arg1;
+- (NSString *)sourceNameForCardAtRow:(long long)arg1;
 
 @end

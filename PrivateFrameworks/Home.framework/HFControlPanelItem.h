@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *displayResults;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *uniqueIdentifier;
 
@@ -28,13 +28,13 @@
 - (id)controlItems;
 - (id)controlItemsByUUID;
 - (id)displayResults;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifierForControlItem:(id)arg1;
 - (id)init;
 - (id)initWithControlItems:(id)arg1 displayResults:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToControlPanelItem:(id)arg1;
-- (int)sortPriority;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToControlPanelItem:(id)arg1;
+- (long long)sortPriority;
 - (id)uniqueIdentifier;
 
 @end

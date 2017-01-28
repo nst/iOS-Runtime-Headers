@@ -15,6 +15,6 @@
 - (id)iconBitmapDataWithResourceDirectoryURL:(id)arg1 boundContainerURL:(id)arg2 dataContainerURL:(id)arg3 bundleIdentifier:(id)arg4 iconsDictionary:(id)arg5 cacheKey:(id)arg6 variant:(int)arg7;
 - (id)iconBitmapDataWithResourceDirectoryURL:(id)arg1 bundleIdentifier:(id)arg2 roleIdentifier:(id)arg3 iconFiles:(id)arg4 variant:(int)arg5 options:(int)arg6;
 - (id)init;
-- (BOOL)invalidateItemsForBundleIdentifier:(id)arg1;
+- (bool)invalidateItemsForBundleIdentifier:(id)arg1;
 
 @end

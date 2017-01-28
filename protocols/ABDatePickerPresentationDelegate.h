@@ -8,7 +8,7 @@
 - (void)dateField:(ABDateField *)arg1 delegateDismissDatePicker:(UIDatePicker *)arg2;
 - (void)dateField:(ABDateField *)arg1 delegatePrepareToPresentDatePicker:(UIDatePicker *)arg2;
 - (void)dateField:(ABDateField *)arg1 delegatePresentDatePicker:(UIDatePicker *)arg2;
-- (BOOL)dateField:(ABDateField *)arg1 shouldPresentDatePicker:(UIDatePicker *)arg2;
+- (bool)dateField:(ABDateField *)arg1 shouldPresentDatePicker:(UIDatePicker *)arg2;
 - (UIDatePicker *)datePickerForDateField:(ABDateField *)arg1;
 
 @end

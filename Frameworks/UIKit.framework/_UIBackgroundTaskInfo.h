@@ -4,9 +4,9 @@
 
 @interface _UIBackgroundTaskInfo : NSObject {
     int  _count;
-    id /* block */  _expireHandler;
+    id  _expireHandler;
     BKSProcessAssertion * _processAssertion;
-    unsigned int  _taskId;
+    unsigned long long  _taskId;
 }
 
 + (id)backgroundTaskAssertionQueue;
@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)fireExpirationHandler;
-- (id)initWithProcessAssertion:(id)arg1 expirationHandler:(id /* block */)arg2;
+- (id)initWithProcessAssertion:(id)arg1 expirationHandler:(id)arg2;
 - (void)invalidate;
 
 @end

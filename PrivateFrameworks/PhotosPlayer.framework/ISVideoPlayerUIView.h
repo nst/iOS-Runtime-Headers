@@ -12,7 +12,7 @@
 - (void).cxx_destruct;
 - (void)_updateVideoGravity;
 - (id)init;
-- (void)setContentMode:(int)arg1;
+- (void)setContentMode:(long long)arg1;
 - (void)setVideoPlayer:(id)arg1;
 - (id)videoPlayer;
 

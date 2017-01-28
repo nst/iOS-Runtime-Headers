@@ -4,36 +4,36 @@
 
 @interface ISLivePhotoPlaybackFilter : ISObservable {
     NSMutableSet * __playbackDisabledReasons;
-    float  _hintProgress;
-    BOOL  _isPerformingInputChanges;
-    BOOL  _playIsSticky;
-    BOOL  _playbackDisabled;
-    int  _state;
+    double  _hintProgress;
+    bool  _isPerformingInputChanges;
+    bool  _playIsSticky;
+    bool  _playbackDisabled;
+    long long  _state;
 }
 
 @property (nonatomic, readonly) NSMutableSet *_playbackDisabledReasons;
-@property (nonatomic, readonly) float hintProgress;
-@property (setter=_setPerformingInputChanges:, nonatomic) BOOL isPerformingInputChanges;
-@property (nonatomic) BOOL playIsSticky;
-@property (getter=isPlaybackDisabled, setter=_setPlaybackDisabled:, nonatomic) BOOL playbackDisabled;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) double hintProgress;
+@property (setter=_setPerformingInputChanges:, nonatomic) bool isPerformingInputChanges;
+@property (nonatomic) bool playIsSticky;
+@property (getter=isPlaybackDisabled, setter=_setPlaybackDisabled:, nonatomic) bool playbackDisabled;
+@property (nonatomic, readonly) long long state;
 
 - (void).cxx_destruct;
 - (id)_playbackDisabledReasons;
-- (void)_setPerformingInputChanges:(BOOL)arg1;
-- (void)_setPlaybackDisabled:(BOOL)arg1;
-- (void)_setState:(int)arg1;
-- (float)hintProgress;
+- (void)_setPerformingInputChanges:(bool)arg1;
+- (void)_setPlaybackDisabled:(bool)arg1;
+- (void)_setState:(long long)arg1;
+- (double)hintProgress;
 - (id)init;
-- (BOOL)isPerformingInputChanges;
-- (BOOL)isPlaybackDisabled;
+- (bool)isPerformingInputChanges;
+- (bool)isPlaybackDisabled;
 - (id)mutableChangeObject;
-- (BOOL)playIsSticky;
+- (bool)playIsSticky;
 - (void)reset;
-- (void)setHintProgress:(float)arg1;
-- (void)setPlayIsSticky:(BOOL)arg1;
-- (void)setPlaybackDisabled:(BOOL)arg1 forReason:(id)arg2;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setHintProgress:(double)arg1;
+- (void)setPlayIsSticky:(bool)arg1;
+- (void)setPlaybackDisabled:(bool)arg1 forReason:(id)arg2;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

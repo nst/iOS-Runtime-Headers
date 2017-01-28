@@ -4,8 +4,8 @@
 
 @interface MPULockScreenMediaControlsView : MPUMediaRemoteControlsView {
     UIButton * _addToLibraryButton;
-    unsigned int  _addToLibraryButtonStyle;
-    BOOL  _addToLibraryButtonVisible;
+    unsigned long long  _addToLibraryButtonStyle;
+    bool  _addToLibraryButtonVisible;
     MPULayoutInterpolator * _bottomMarginLayoutInterpolator;
     MPULayoutInterpolator * _horizontalMarginLayoutInterpolator;
     <MPULockScreenMediaControlsViewDelegate> * _lockScreenDelegate;
@@ -13,34 +13,34 @@
     MPUMediaControlsTitlesView * _titlesView;
     MPULayoutInterpolator * _topMarginLayoutInterpolator;
     UIButton * _trackActionsButton;
-    BOOL  _trackActionsButtonVisible;
+    bool  _trackActionsButtonVisible;
     MPUTransportControlsView * _transportControls;
     MPUMediaControlsVolumeView * _volumeView;
 }
 
-@property (nonatomic) unsigned int addToLibraryButtonStyle;
-@property (nonatomic) BOOL addToLibraryButtonVisible;
+@property (nonatomic) unsigned long long addToLibraryButtonStyle;
+@property (nonatomic) bool addToLibraryButtonVisible;
 @property (nonatomic) <MPULockScreenMediaControlsViewDelegate> *lockScreenDelegate;
-@property (nonatomic) BOOL trackActionsButtonVisible;
+@property (nonatomic) bool trackActionsButtonVisible;
 
 - (void).cxx_destruct;
 - (void)_addToLibraryButtonTapped:(id)arg1;
 - (void)_initLockScreenMediaControlsView;
 - (void)_trackActionsButtonTapped:(id)arg1;
-- (unsigned int)addToLibraryButtonStyle;
-- (BOOL)addToLibraryButtonVisible;
+- (unsigned long long)addToLibraryButtonStyle;
+- (bool)addToLibraryButtonVisible;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)lockScreenDelegate;
-- (void)setAddToLibraryButtonStyle:(unsigned int)arg1;
-- (void)setAddToLibraryButtonVisible:(BOOL)arg1;
+- (void)setAddToLibraryButtonStyle:(unsigned long long)arg1;
+- (void)setAddToLibraryButtonVisible:(bool)arg1;
 - (void)setArtworkImage:(id)arg1;
 - (void)setLockScreenDelegate:(id)arg1;
 - (void)setNowPlayingMetadata:(id)arg1;
-- (void)setTrackActionsButtonVisible:(BOOL)arg1;
+- (void)setTrackActionsButtonVisible:(bool)arg1;
 - (id)timeView;
-- (BOOL)trackActionsButtonVisible;
+- (bool)trackActionsButtonVisible;
 - (id)transportControls;
 - (id)volumeView;
 

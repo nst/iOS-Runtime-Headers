@@ -4,7 +4,7 @@
 
 @interface SBSWallpaperClient : FBSSystemServiceFacilityClient
 
-- (void)fetchThumbnailForVariant:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchThumbnailForVariant:(unsigned int)arg1 completionHandler:(id)arg2;
 - (id)initWithCalloutQueue:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 calloutQueue:(id)arg2;
 

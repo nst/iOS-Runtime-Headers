@@ -7,10 +7,10 @@
 
 - (UIKeyboardEmojiKeyDisplayController *)emojiKeyManager;
 - (void)setEmojiKeyManager:(UIKeyboardEmojiKeyDisplayController *)arg1;
-- (void)updateToCategory:(int)arg1;
+- (void)updateToCategory:(long long)arg1;
 
 @optional
 
-- (int)updateToCategoryWithOffsetPercentage:(float)arg1;
+- (long long)updateToCategoryWithOffsetPercentage:(double)arg1;
 
 @end

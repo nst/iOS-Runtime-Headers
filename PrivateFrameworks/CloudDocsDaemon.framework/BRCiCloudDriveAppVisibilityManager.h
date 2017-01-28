@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_installiCloudDriveApp;
-+ (BOOL)_uninstalliCloudDriveApp;
-+ (BOOL)isiCloudDriveAppInstalled;
++ (bool)_installiCloudDriveApp;
++ (bool)_uninstalliCloudDriveApp;
++ (bool)isiCloudDriveAppInstalled;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
@@ -21,7 +21,7 @@
 - (id)_init;
 - (void)_removeAlliCloudDriveAppInstallationNotificationsUsingNotifier:(id)arg1;
 - (void)_setDefaultVisibility:(id)arg1 forDSID:(id)arg2;
-- (BOOL)_unsafe_setDefaultVisibility:(id)arg1 forDSID:(id)arg2;
+- (bool)_unsafe_setDefaultVisibility:(id)arg1 forDSID:(id)arg2;
 - (id)_unsafe_visibilityForCurrentAccount;
 - (id)_unsafe_visibilityForDSID:(id)arg1;
 - (void)close;

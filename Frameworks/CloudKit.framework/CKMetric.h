@@ -3,20 +3,20 @@
  */
 
 @interface CKMetric : NSObject <NSSecureCoding> {
-    unsigned int  _bytesDownloaded;
-    unsigned int  _bytesUploaded;
-    unsigned int  _connections;
-    unsigned int  _connectionsCreated;
+    unsigned long long  _bytesDownloaded;
+    unsigned long long  _bytesUploaded;
+    unsigned long long  _connections;
+    unsigned long long  _connectionsCreated;
     double  _duration;
     double  _executing;
     double  _queueing;
     NSDate * _startDate;
 }
 
-@property unsigned int bytesDownloaded;
-@property unsigned int bytesUploaded;
-@property unsigned int connections;
-@property unsigned int connectionsCreated;
+@property unsigned long long bytesDownloaded;
+@property unsigned long long bytesUploaded;
+@property unsigned long long connections;
+@property unsigned long long connectionsCreated;
 @property double duration;
 @property double executing;
 @property double queueing;
@@ -24,24 +24,24 @@
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (unsigned int)bytesDownloaded;
-- (unsigned int)bytesUploaded;
-- (unsigned int)connections;
-- (unsigned int)connectionsCreated;
+- (unsigned long long)bytesDownloaded;
+- (unsigned long long)bytesUploaded;
+- (unsigned long long)connections;
+- (unsigned long long)connectionsCreated;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (double)executing;
 - (id)initWithCoder:(id)arg1;
 - (double)queueing;
-- (void)setBytesDownloaded:(unsigned int)arg1;
-- (void)setBytesUploaded:(unsigned int)arg1;
-- (void)setConnections:(unsigned int)arg1;
-- (void)setConnectionsCreated:(unsigned int)arg1;
+- (void)setBytesDownloaded:(unsigned long long)arg1;
+- (void)setBytesUploaded:(unsigned long long)arg1;
+- (void)setConnections:(unsigned long long)arg1;
+- (void)setConnectionsCreated:(unsigned long long)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setExecuting:(double)arg1;
 - (void)setQueueing:(double)arg1;

@@ -3,8 +3,8 @@
  */
 
 @interface _GEOPlaceRequestTicket : NSObject <GEOMapServiceTicket> {
-    BOOL  _canceled;
-    BOOL  _chainResultSet;
+    bool  _canceled;
+    bool  _chainResultSet;
     GEORelatedSearchSuggestion * _defaultRelatedSuggestion;
     <GEOMapItem> * _mapItemToRefine;
     NSArray * _relatedSearchSuggestions;
@@ -13,28 +13,28 @@
     GEOMapRegion * _resultBoundingRegion;
     NSString * _resultDisplayHeader;
     int  _searchResultType;
-    BOOL  _shouldEnableRedoSearch;
+    bool  _shouldEnableRedoSearch;
     GEOMapServiceTraits * _traits;
     NSDictionary * _userInfo;
 }
 
-@property (getter=isCanceled, nonatomic, readonly) BOOL canceled;
-@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
+@property (getter=isCanceled, nonatomic, readonly) bool canceled;
+@property (getter=isChainResultSet, nonatomic, readonly) bool chainResultSet;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
 @property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
 @property (nonatomic, readonly) NSString *resultDisplayHeader;
 @property (nonatomic, readonly) NSString *resultSectionHeader;
 @property (nonatomic, readonly) int searchResultType;
-@property (nonatomic, readonly) BOOL shouldEnableRedoSearch;
+@property (nonatomic, readonly) bool shouldEnableRedoSearch;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
-- (void)_processRequest:(id)arg1 withHandler:(id /* block */)arg2 refinedHandler:(id /* block */)arg3 networkActivity:(id /* block */)arg4;
+- (void)_processRequest:(id)arg1 withHandler:(id)arg2 refinedHandler:(id)arg3 networkActivity:(id)arg4;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)applyToPlaceInfo:(id)arg1;
 - (void)cancel;
@@ -44,23 +44,23 @@
 - (id)init;
 - (id)initWithRequest:(id)arg1 traits:(id)arg2;
 - (id)initWithRequest:(id)arg1 traits:(id)arg2 mapItemToRefine:(id)arg3;
-- (BOOL)isCanceled;
-- (BOOL)isChainResultSet;
+- (bool)isCanceled;
+- (bool)isChainResultSet;
 - (id)relatedSearchSuggestions;
 - (id)responseUserInfo;
 - (id)resultBoundingRegion;
 - (id)resultDisplayHeader;
 - (id)resultSectionHeader;
 - (int)searchResultType;
-- (BOOL)shouldEnableRedoSearch;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2 queue:(id)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3 queue:(id)arg4;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2 queue:(id)arg3;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3 queue:(id)arg4;
+- (bool)shouldEnableRedoSearch;
+- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
+- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2 queue:(id)arg3;
+- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3 queue:(id)arg4;
+- (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
+- (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2 queue:(id)arg3;
+- (void)submitWithRefinedHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
+- (void)submitWithRefinedHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3 queue:(id)arg4;
 - (id)traits;
 
 @end

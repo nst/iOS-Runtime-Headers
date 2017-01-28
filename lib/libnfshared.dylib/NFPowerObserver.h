@@ -7,17 +7,17 @@
     unsigned int  _powerNotificationConnection;
     unsigned int  _powerNotificationNotifier;
     struct IONotificationPort { } * _powerNotificationPort;
-    BOOL  _willSleep;
+    bool  _willSleep;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (readonly) BOOL willSleep;
+@property (readonly) bool willSleep;
 
 - (void)_powerNotificationMessage:(unsigned int)arg1 argument:(void*)arg2;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)registerForEvents;
+- (bool)registerForEvents;
 - (void)unregisterForEvents;
-- (BOOL)willSleep;
+- (bool)willSleep;
 
 @end

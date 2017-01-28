@@ -5,7 +5,7 @@
 @interface BSUIMappedImageCacheFuture : NSObject {
     UIImage * _cacheImage;
     int  _submitted;
-    id /* block */  _waitBlock;
+    id  _waitBlock;
     NSObject<OS_dispatch_semaphore> * _waitableSemaphore;
     int  _waited;
     int  _workCompletionWasCalled;
@@ -15,6 +15,6 @@
 - (id)cacheImage;
 - (void)dealloc;
 - (id)init;
-- (void)submitWorkBlock:(id /* block */)arg1;
+- (void)submitWorkBlock:(id)arg1;
 
 @end

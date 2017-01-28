@@ -3,7 +3,9 @@
  */
 
 @interface TSClock : NSObject {
-    void * _clockImpl;
+    NSMutableArray * _clients;
+    unsigned long long  _clockIdentifier;
+    NSObject<OS_dispatch_queue> * _notificationsQueue;
 }
 
 @property (nonatomic, readonly, retain) NSMutableArray *clients;
@@ -19,17 +21,18 @@
 - (id)clients;
 - (unsigned long long)clockIdentifier;
 - (id)clockName;
-- (BOOL)convertFromDomainTime:(unsigned long long*)arg1 toMachAbsoluteTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (bool)convertFromDomainTime:(unsigned long long*)arg1 toMachAbsoluteTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
 - (unsigned long long)convertFromDomainToMachAbsoluteTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
-- (BOOL)convertFromMachAbsoluteTime:(unsigned long long*)arg1 toDomainTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (bool)convertFromMachAbsoluteTime:(unsigned long long*)arg1 toDomainTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
 - (unsigned long long)convertFromMachAbsoluteToDomainTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
 - (void)dealloc;
-- (BOOL)getRateRatioNumerator:(unsigned long long*)arg1 denominator:(unsigned long long*)arg2 machAnchor:(unsigned long long*)arg3 andDomainAnchor:(unsigned long long*)arg4 withError:(id*)arg5;
+- (bool)getRateRatioNumerator:(unsigned long long*)arg1 denominator:(unsigned long long*)arg2 machAnchor:(unsigned long long*)arg3 andDomainAnchor:(unsigned long long*)arg4 withError:(id*)arg5;
 - (double)hostRateRatio;
 - (id)init;
 - (id)initWithClockIdentifier:(unsigned long long)arg1;
 - (int)lockState;
 - (id)notificationQueue;
 - (void)removeClient:(id)arg1;
+- (void)setClockIdentifier:(unsigned long long)arg1;
 
 @end

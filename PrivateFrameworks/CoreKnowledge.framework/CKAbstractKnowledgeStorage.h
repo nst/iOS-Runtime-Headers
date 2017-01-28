@@ -10,10 +10,8 @@
 
 + (id)instanceNamed:(id)arg1;
 + (id)path;
-+ (void)releaseInstanceNamed:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)dealloc;
 - (id)init;
 - (id)initWithPath:(id)arg1 name:(id)arg2;
 - (id)queue;

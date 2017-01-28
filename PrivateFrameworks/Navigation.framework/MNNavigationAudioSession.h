@@ -3,29 +3,29 @@
  */
 
 @interface MNNavigationAudioSession : NSObject {
-    unsigned int  _appContext;
+    unsigned long long  _appContext;
     <MNNavigationAudioSessionDelegate> * _delegate;
     NSString * _language;
-    BOOL  _muteSpeechOverride;
-    unsigned int  _sessionType;
-    BOOL  _speechEnabled;
+    bool  _muteSpeechOverride;
+    unsigned long long  _sessionType;
+    bool  _speechEnabled;
 }
 
-@property (nonatomic) unsigned int appContext;
+@property (nonatomic) unsigned long long appContext;
 @property (nonatomic) <MNNavigationAudioSessionDelegate> *delegate;
 @property (nonatomic, readonly) NSString *language;
-@property (nonatomic) BOOL muteSpeechOverride;
-@property (nonatomic) unsigned int sessionType;
-@property (nonatomic) BOOL speechEnabled;
+@property (nonatomic) bool muteSpeechOverride;
+@property (nonatomic) unsigned long long sessionType;
+@property (nonatomic) bool speechEnabled;
 
-+ (id)sessionOfType:(unsigned int)arg1 language:(id)arg2;
++ (id)sessionOfType:(unsigned long long)arg1 language:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)_beepIfNecessaryWithShortPromptType:(unsigned int)arg1;
-- (BOOL)_headphonesAreInUse;
-- (BOOL)_isVoiceGuidanceEnabled;
-- (void)_speak:(id)arg1 fallbackPrompt:(unsigned int)arg2 completionBlock:(id /* block */)arg3;
-- (unsigned int)appContext;
+- (bool)_beepIfNecessaryWithShortPromptType:(unsigned long long)arg1;
+- (bool)_headphonesAreInUse;
+- (bool)_isVoiceGuidanceEnabled;
+- (void)_speak:(id)arg1 fallbackPrompt:(unsigned long long)arg2 completionBlock:(id)arg3;
+- (unsigned long long)appContext;
 - (void)beginSession;
 - (void)clearAllAnnouncements;
 - (void)dealloc;
@@ -34,21 +34,21 @@
 - (void)endSession;
 - (id)init;
 - (id)language;
-- (BOOL)muteSpeechOverride;
+- (bool)muteSpeechOverride;
 - (void)prepareToAnnounce;
-- (unsigned int)sessionType;
-- (void)setAppContext:(unsigned int)arg1;
+- (unsigned long long)sessionType;
+- (void)setAppContext:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMuteSpeechOverride:(BOOL)arg1;
-- (void)setSessionType:(unsigned int)arg1;
-- (void)setSpeechEnabled:(BOOL)arg1;
-- (void)speak:(id)arg1 shortPromptType:(unsigned int)arg2;
-- (void)speak:(id)arg1 shortPromptType:(unsigned int)arg2 completionBlock:(id /* block */)arg3;
-- (void)speak:(id)arg1 shortPromptType:(unsigned int)arg2 ignorePromptStyle:(BOOL)arg3;
-- (void)speak:(id)arg1 shortPromptType:(unsigned int)arg2 ignorePromptStyle:(BOOL)arg3 completionBlock:(id /* block */)arg4;
+- (void)setMuteSpeechOverride:(bool)arg1;
+- (void)setSessionType:(unsigned long long)arg1;
+- (void)setSpeechEnabled:(bool)arg1;
+- (void)speak:(id)arg1 shortPromptType:(unsigned long long)arg2;
+- (void)speak:(id)arg1 shortPromptType:(unsigned long long)arg2 completionBlock:(id)arg3;
+- (void)speak:(id)arg1 shortPromptType:(unsigned long long)arg2 ignorePromptStyle:(bool)arg3;
+- (void)speak:(id)arg1 shortPromptType:(unsigned long long)arg2 ignorePromptStyle:(bool)arg3 completionBlock:(id)arg4;
 - (void)speakInitialAnnouncement:(id)arg1;
-- (BOOL)speechEnabled;
+- (bool)speechEnabled;
 - (void)stop;
-- (BOOL)vibrateForPrompt:(unsigned int)arg1;
+- (bool)vibrateForPrompt:(unsigned long long)arg1;
 
 @end

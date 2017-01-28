@@ -6,25 +6,25 @@
     NSArray * _identifierSets;
     MPMediaLibraryView * _libraryView;
     Class  _modelClass;
-    id /* block */  _responseHandler;
+    id  _responseHandler;
 }
 
 @property (nonatomic, copy) NSArray *identifierSets;
 @property (nonatomic, retain) MPMediaLibraryView *libraryView;
 @property (nonatomic) Class modelClass;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, copy) id responseHandler;
 
-+ (BOOL)supportsModelClass:(Class)arg1;
++ (bool)supportsModelClass:(Class)arg1;
 
 - (void).cxx_destruct;
 - (void)execute;
 - (id)identifierSets;
 - (id)libraryView;
 - (Class)modelClass;
-- (id /* block */)responseHandler;
+- (id)responseHandler;
 - (void)setIdentifierSets:(id)arg1;
 - (void)setLibraryView:(id)arg1;
 - (void)setModelClass:(Class)arg1;
-- (void)setResponseHandler:(id /* block */)arg1;
+- (void)setResponseHandler:(id)arg1;
 
 @end

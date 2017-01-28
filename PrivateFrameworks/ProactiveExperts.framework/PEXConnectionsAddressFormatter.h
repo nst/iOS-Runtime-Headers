@@ -8,12 +8,12 @@
 + (id)addressDictionaryForPEXLocation:(id)arg1;
 + (id)addressDictionaryFromAttributeSet:(id)arg1;
 + (id)addressDictionaryFromUserAction:(id)arg1;
-+ (id)formattedAddressWithUISemanticType:(id)arg1 address:(id)arg2 duetEvent:(id)arg3 shortStyle:(BOOL)arg4;
++ (id)formattedAddressWithUISemanticType:(id)arg1 address:(id)arg2 duetEvent:(id)arg3 shortStyle:(bool)arg4;
 + (id)formattedCityAndStateWithCity:(id)arg1 state:(id)arg2;
 + (id)formattedStreetNameWithThoroughfare:(id)arg1 subThoroughfare:(id)arg2;
-+ (BOOL)isValidAddressDictionary:(id)arg1;
++ (bool)isValidAddressDictionary:(id)arg1;
 + (id)postalAddressFromAttributeSet:(id)arg1;
 + (id)postalAddressFromDuetEvent:(id)arg1;
-+ (id)singleLineFormattedAddressWithPostalAddress:(id)arg1 shortStyle:(BOOL)arg2;
++ (id)singleLineFormattedAddressWithPostalAddress:(id)arg1 shortStyle:(bool)arg2;
 
 @end

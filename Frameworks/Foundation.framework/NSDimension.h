@@ -4,24 +4,24 @@
 
 @interface NSDimension : NSUnit <NSSecureCoding> {
     NSUnitConverter * _converter;
-    unsigned int  _reserved;
+    unsigned long long  _reserved;
 }
 
 @property (readonly, copy) NSUnitConverter *converter;
-@property (readonly) unsigned int specifier;
+@property (readonly) unsigned long long specifier;
 
-+ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned int)arg2;
++ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned long long)arg2;
 + (id)baseUnit;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)converter;
 - (void)dealloc;
 - (id)dimension;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSpecifier:(unsigned int)arg1 symbol:(id)arg2 converter:(id)arg3;
+- (id)initWithSpecifier:(unsigned long long)arg1 symbol:(id)arg2 converter:(id)arg3;
 - (id)initWithSymbol:(id)arg1 converter:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)specifier;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)specifier;
 
 @end

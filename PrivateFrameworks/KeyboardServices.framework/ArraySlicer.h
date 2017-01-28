@@ -4,18 +4,18 @@
 
 @interface ArraySlicer : NSObject {
     NSArray * _array;
-    unsigned int  _count;
-    unsigned int  _offset;
-    unsigned int  _sliceSize;
+    unsigned long long  _count;
+    unsigned long long  _offset;
+    unsigned long long  _sliceSize;
 }
 
-@property (nonatomic, readonly) unsigned int remaining;
+@property (nonatomic, readonly) unsigned long long remaining;
 
 - (void).cxx_destruct;
 - (id)consumed;
-- (id)initWithArray:(id)arg1 sliceSize:(unsigned int)arg2;
+- (id)initWithArray:(id)arg1 sliceSize:(unsigned long long)arg2;
 - (id)nextSlice;
-- (unsigned int)remaining;
+- (unsigned long long)remaining;
 - (id)unconsumed;
 
 @end

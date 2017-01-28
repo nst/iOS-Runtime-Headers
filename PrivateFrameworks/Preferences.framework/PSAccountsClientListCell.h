@@ -4,9 +4,9 @@
 
 @interface PSAccountsClientListCell : PSTableCell
 
-+ (int)cellStyle;
++ (long long)cellStyle;
 
-- (BOOL)canReload;
+- (bool)canReload;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 
 @end

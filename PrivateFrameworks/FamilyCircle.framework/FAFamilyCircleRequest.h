@@ -15,7 +15,7 @@
 - (id)passwordOrToken;
 - (id)requestOptions;
 - (id)serviceConnection;
-- (id)serviceRemoteObjectWithErrorHandler:(id /* block */)arg1;
+- (id)serviceRemoteObjectWithErrorHandler:(id)arg1;
 - (void)setPasswordOrToken:(id)arg1;
 - (void)setUsernameOrDSID:(id)arg1;
 - (id)usernameOrDSID;

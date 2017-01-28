@@ -13,12 +13,12 @@
 }
 
 @property (nonatomic, retain) _INPBLocation *dropOffLocation;
-@property (nonatomic, readonly) BOOL hasDropOffLocation;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasPartySize;
-@property (nonatomic, readonly) BOOL hasPaymentMethod;
-@property (nonatomic, readonly) BOOL hasPickupLocation;
-@property (nonatomic, readonly) BOOL hasRideOptionName;
+@property (nonatomic, readonly) bool hasDropOffLocation;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasPartySize;
+@property (nonatomic, readonly) bool hasPaymentMethod;
+@property (nonatomic, readonly) bool hasPickupLocation;
+@property (nonatomic, readonly) bool hasRideOptionName;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBInteger *partySize;
 @property (nonatomic, retain) _INPBPaymentMethod *paymentMethod;
@@ -33,20 +33,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dropOffLocation;
-- (BOOL)hasDropOffLocation;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasPartySize;
-- (BOOL)hasPaymentMethod;
-- (BOOL)hasPickupLocation;
-- (BOOL)hasRideOptionName;
-- (unsigned int)hash;
+- (bool)hasDropOffLocation;
+- (bool)hasIntentMetadata;
+- (bool)hasPartySize;
+- (bool)hasPaymentMethod;
+- (bool)hasPickupLocation;
+- (bool)hasRideOptionName;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)partySize;
 - (id)paymentMethod;
 - (id)pickupLocation;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)rideOptionName;
 - (void)setDropOffLocation:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;

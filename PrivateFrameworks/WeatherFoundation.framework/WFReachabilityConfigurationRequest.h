@@ -3,19 +3,19 @@
  */
 
 @interface WFReachabilityConfigurationRequest : WFTask {
-    id /* block */  _resultHandler;
+    id  _resultHandler;
 }
 
-@property (nonatomic, copy) id /* block */ resultHandler;
+@property (nonatomic, copy) id resultHandler;
 
 - (void).cxx_destruct;
 - (void)cleanup;
 - (void)handleCancellation;
 - (void)handleResponse:(id)arg1;
-- (id)initWithResultHandler:(id /* block */)arg1;
-- (BOOL)requiresResponse;
-- (id /* block */)resultHandler;
-- (void)setResultHandler:(id /* block */)arg1;
+- (id)initWithResultHandler:(id)arg1;
+- (bool)requiresResponse;
+- (id)resultHandler;
+- (void)setResultHandler:(id)arg1;
 - (void)startWithService:(id)arg1;
 
 @end

@@ -7,13 +7,13 @@
 @property (nonatomic, retain) MPMediaPlaylist *mixPlaylist;
 
 + (Class)playbackItemMetadataClass;
-+ (BOOL)supportsStateRestoration;
++ (bool)supportsStateRestoration;
 
 - (id)errorResolverForItem:(id)arg1;
 - (Class)itemClass;
 - (id)mixPlaylist;
-- (int)realRepeatType;
-- (int)realShuffleType;
+- (long long)realRepeatType;
+- (long long)realShuffleType;
 - (void)setMixPlaylist:(id)arg1;
 
 @end

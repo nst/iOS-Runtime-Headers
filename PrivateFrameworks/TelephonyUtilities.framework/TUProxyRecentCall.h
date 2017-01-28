@@ -15,14 +15,14 @@
 @property (readonly) NSString *destinationId;
 @property (readonly) NSString *displayName;
 @property (readonly) NSArray *handles;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSString *idsCanonicalDestination;
 @property (readonly) NSArray *idsCanonicalDestinations;
 @property (readonly) NSString *idsUniqueId;
 @property (readonly) NSString *isoCountryCode;
 @property (readonly) NSString *mostRecentCallInfo;
-@property (readonly) int mostRecentCallType;
-@property (readonly) BOOL mostRecentCallWasMissed;
+@property (readonly) long long mostRecentCallType;
+@property (readonly) bool mostRecentCallWasMissed;
 @property (nonatomic, retain) CHRecentCall *recentCall;
 @property TUSearchController *searchController;
 @property (readonly) Class superclass;
@@ -40,8 +40,8 @@
 - (id)init;
 - (id)initWithRecentCall:(id)arg1;
 - (id)mostRecentCallInfo;
-- (int)mostRecentCallType;
-- (BOOL)mostRecentCallWasMissed;
+- (long long)mostRecentCallType;
+- (bool)mostRecentCallWasMissed;
 - (id)recentCall;
 - (id)searchController;
 - (void)setRecentCall:(id)arg1;

@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)verticalLockupView:(MusicEntityVerticalLockupView *)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
+- (void)verticalLockupView:(MusicEntityVerticalLockupView *)arg1 didSelectPlayButtonAction:(unsigned long long)arg2;
 
 @end

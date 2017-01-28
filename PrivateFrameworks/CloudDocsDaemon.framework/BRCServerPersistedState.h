@@ -11,16 +11,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *lastSyncDownDate;
 @property (nonatomic) long long nextRank;
 @property (retain) BRCServerChangeState *sharedDatabaseChangeState;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)containerIDIsPendingMigration:(id)arg1;
+- (bool)containerIDIsPendingMigration:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dumpMigrationQueriesForContainerID:(id)arg1;

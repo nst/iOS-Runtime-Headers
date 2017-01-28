@@ -15,7 +15,7 @@
 - (void)_flushPendingCompletionHandlersWithPickableRoutes:(id)arg1 forCategory:(id)arg2;
 - (void)_pickableRoutesDidChangeNotification:(id)arg1;
 - (void)dealloc;
-- (void)fetchPickableRoutesForCategory:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchPickableRoutesForCategory:(id)arg1 completion:(id)arg2;
 - (id)init;
 - (id)initWithMediaRemoteService:(struct MRMediaRemoteService { }*)arg1;
 - (struct MRMediaRemoteService { }*)mediaRemoteService;

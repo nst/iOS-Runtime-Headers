@@ -4,32 +4,32 @@
 
 @interface W5DiagnosticsTestRequest : NSObject <NSCopying, NSSecureCoding> {
     NSDictionary * _configuration;
-    int  _testID;
+    long long  _testID;
     NSUUID * _uuid;
 }
 
 @property (nonatomic, copy) NSDictionary *configuration;
-@property (nonatomic) int testID;
+@property (nonatomic) long long testID;
 @property (nonatomic, copy) NSUUID *uuid;
 
-+ (id)requestWithTestID:(int)arg1 configuration:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)requestWithTestID:(long long)arg1 configuration:(id)arg2;
++ (bool)supportsSecureCoding;
 
 - (id)configuration;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDiagnosticsTestRequest:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDiagnosticsTestRequest:(id)arg1;
 - (void)setConfiguration:(id)arg1;
-- (void)setTestID:(int)arg1;
+- (void)setTestID:(long long)arg1;
 - (void)setUuid:(id)arg1;
-- (int)testID;
+- (long long)testID;
 - (id)uuid;
 
 @end

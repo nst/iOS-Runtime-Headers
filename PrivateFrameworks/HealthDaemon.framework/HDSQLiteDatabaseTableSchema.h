@@ -15,9 +15,9 @@
 - (void).cxx_destruct;
 - (id)columns;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)indices;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)setColumns:(id)arg1;
 - (void)setIndices:(id)arg1;

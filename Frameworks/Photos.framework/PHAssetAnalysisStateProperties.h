@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *fetchDictionariesByWorkerType;
 
 + (id)entityName;
-+ (BOOL)isToMany;
++ (bool)isToMany;
 + (id)keyPathFromPrimaryObject;
 + (id)keyPathToPrimaryObject;
 + (id)propertiesToFetch;
@@ -18,6 +18,6 @@
 - (void).cxx_destruct;
 - (int)analysisStateForWorkerType:(short)arg1 outLastIgnoreDate:(id*)arg2 outIgnoreUntilDate:(id*)arg3;
 - (id)fetchDictionariesByWorkerType;
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(bool)arg3;
 
 @end

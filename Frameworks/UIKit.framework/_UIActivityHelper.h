@@ -13,12 +13,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <_UIActivityHelperDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)applicationExtensionDiscovery;
-- (id)availableActivitiesForItemValues:(id)arg1 applicationExtensionActivities:(id)arg2 withActivity:(id)arg3 sourceIsManaged:(BOOL)arg4 shouldMatchOnlyUserElectedExtensions:(BOOL)arg5 activityItems:(id)arg6 applicationActivities:(id)arg7 activityTypeOrder:(id)arg8 includedActivityTypes:(id)arg9 excludedActivityCategories:(int)arg10;
+- (id)availableActivitiesForItemValues:(id)arg1 applicationExtensionActivities:(id)arg2 withActivity:(id)arg3 sourceIsManaged:(bool)arg4 shouldMatchOnlyUserElectedExtensions:(bool)arg5 activityItems:(id)arg6 applicationActivities:(id)arg7 activityTypeOrder:(id)arg8 includedActivityTypes:(id)arg9 excludedActivityCategories:(long long)arg10;
 - (id)cachedBuiltinActivities;
 - (void)cancelUpdatesIfNeeded;
 - (id)delegate;

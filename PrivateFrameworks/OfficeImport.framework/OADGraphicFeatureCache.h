@@ -7,8 +7,8 @@
     NSMutableArray * mFeatureUsageArray;
 }
 
-- (unsigned int)cacheFeature:(id)arg1;
-- (id)countedFeatureAtIndex:(unsigned int)arg1;
+- (unsigned long long)cacheFeature:(id)arg1;
+- (id)countedFeatureAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)featuresSortedByUsageCount;
 - (id)init;

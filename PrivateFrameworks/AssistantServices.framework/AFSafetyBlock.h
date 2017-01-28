@@ -3,13 +3,13 @@
  */
 
 @interface AFSafetyBlock : NSObject {
-    id /* block */  _block;
+    id  _block;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (void)invoke;
-- (void)invokeWithSignal:(int)arg1;
+- (void)invokeWithSignal:(long long)arg1;
 
 @end

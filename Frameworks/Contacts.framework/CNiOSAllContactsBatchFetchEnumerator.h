@@ -3,39 +3,39 @@
  */
 
 @interface CNiOSAllContactsBatchFetchEnumerator : NSObject <CNBatchFetchEnumerator> {
-    int  _batchSize;
+    long long  _batchSize;
     <CNDataMapper> * _dataMapper;
     NSError * _error;
     CNContactFetchRequest * _fetchRequest;
-    unsigned int  _nextStartIndex;
-    int  _totalContactsCount;
+    unsigned long long  _nextStartIndex;
+    long long  _totalContactsCount;
 }
 
-@property (nonatomic) int batchSize;
+@property (nonatomic) long long batchSize;
 @property (nonatomic) <CNDataMapper> *dataMapper;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, retain) CNContactFetchRequest *fetchRequest;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int nextStartIndex;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long nextStartIndex;
 @property (readonly) Class superclass;
-@property (nonatomic) int totalContactsCount;
+@property (nonatomic) long long totalContactsCount;
 
 - (void).cxx_destruct;
-- (int)batchSize;
+- (long long)batchSize;
 - (id)dataMapper;
 - (id)error;
 - (id)fetchRequest;
-- (id)initWithMapper:(id)arg1 fetchRequest:(id)arg2 batchSize:(int)arg3;
+- (id)initWithMapper:(id)arg1 fetchRequest:(id)arg2 batchSize:(long long)arg3;
 - (id)nextContactsAndMatchInfos:(id*)arg1 error:(id*)arg2;
-- (unsigned int)nextStartIndex;
-- (void)setBatchSize:(int)arg1;
+- (unsigned long long)nextStartIndex;
+- (void)setBatchSize:(long long)arg1;
 - (void)setDataMapper:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setFetchRequest:(id)arg1;
-- (void)setNextStartIndex:(unsigned int)arg1;
-- (void)setTotalContactsCount:(int)arg1;
-- (int)totalContactsCount;
+- (void)setNextStartIndex:(unsigned long long)arg1;
+- (void)setTotalContactsCount:(long long)arg1;
+- (long long)totalContactsCount;
 
 @end

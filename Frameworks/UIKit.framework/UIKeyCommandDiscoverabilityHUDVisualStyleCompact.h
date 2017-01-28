@@ -7,12 +7,12 @@
 }
 
 - (void).cxx_destruct;
-- (float)HUDPageControlBottomMargin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })HUDViewInsets;
-- (float)maxHUDWidthForWidth:(float)arg1;
-- (float)summaryDescriptionToModifiersSpacing;
+- (double)HUDPageControlBottomMargin;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })HUDViewInsets;
+- (double)maxHUDWidthForWidth:(double)arg1;
+- (double)summaryDescriptionToModifiersSpacing;
 - (id)summaryFont;
-- (float)summaryModifiersSpacing;
-- (float)summaryXPadding;
+- (double)summaryModifiersSpacing;
+- (double)summaryXPadding;
 
 @end

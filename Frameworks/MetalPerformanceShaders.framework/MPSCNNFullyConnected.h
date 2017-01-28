@@ -7,6 +7,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithDevice:(id)arg1 convolutionDescriptor:(id)arg2 kernelWeights:(const float*)arg3 biasTerms:(const float*)arg4 flags:(unsigned int)arg5;
+- (id)initWithDevice:(id)arg1 convolutionDescriptor:(id)arg2 kernelWeights:(const float*)arg3 biasTerms:(const float*)arg4 flags:(unsigned long long)arg5;
 
 @end

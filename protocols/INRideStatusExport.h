@@ -13,7 +13,7 @@
 - (NSDate *)estimatedPickupDate;
 - (NSDate *)estimatedPickupEndDate;
 - (id)init;
-- (int)phase;
+- (long long)phase;
 - (CLPlacemark *)pickupLocation;
 - (NSString *)rideIdentifier;
 - (INRideOption *)rideOption;
@@ -24,7 +24,7 @@
 - (void)setEstimatedDropOffDate:(NSDate *)arg1;
 - (void)setEstimatedPickupDate:(NSDate *)arg1;
 - (void)setEstimatedPickupEndDate:(NSDate *)arg1;
-- (void)setPhase:(int)arg1;
+- (void)setPhase:(long long)arg1;
 - (void)setPickupLocation:(CLPlacemark *)arg1;
 - (void)setRideIdentifier:(NSString *)arg1;
 - (void)setRideOption:(INRideOption *)arg1;

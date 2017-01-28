@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *providerNames;
 @property (getter=_providerNames, nonatomic, readonly) NSArray *providerNames;
 @property (readonly) Class superclass;
@@ -25,14 +25,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAttribution:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)providerNames;
-- (id)providerNamesAtIndex:(unsigned int)arg1;
-- (unsigned int)providerNamesCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)providerNamesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)providerNamesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setProviderNames:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

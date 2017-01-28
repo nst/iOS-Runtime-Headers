@@ -18,7 +18,7 @@
 - (void)_addCloudHistoryVisit:(id)arg1;
 - (void)_addHistoryTombstone:(id)arg1;
 - (void)_setServerChangeTokenData:(id)arg1;
-- (void)_updateClientVersion:(unsigned int)arg1 seenAt:(id)arg2;
+- (void)_updateClientVersion:(unsigned long long)arg1 seenAt:(id)arg2;
 - (id)clientVersions;
 - (id)cloudHistoryVisits;
 - (id)description;

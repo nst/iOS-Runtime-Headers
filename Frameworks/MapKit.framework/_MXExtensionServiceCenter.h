@@ -20,12 +20,12 @@
 
 - (void).cxx_destruct;
 - (void)_addExtension:(id)arg1;
-- (void)_beginExtensionServiceWithExtension:(id)arg1 inputItems:(id)arg2 beginCompletion:(id /* block */)arg3 serviceCompletion:(id /* block */)arg4;
-- (void)_beginExtensionServiceWithExtension:(id)arg1 inputItems:(id)arg2 remoteViewControllerInstantiationCompletion:(id /* block */)arg3 serviceCompletion:(id /* block */)arg4;
+- (void)_beginExtensionServiceWithExtension:(id)arg1 inputItems:(id)arg2 beginCompletion:(id)arg3 serviceCompletion:(id)arg4;
+- (void)_beginExtensionServiceWithExtension:(id)arg1 inputItems:(id)arg2 remoteViewControllerInstantiationCompletion:(id)arg3 serviceCompletion:(id)arg4;
 - (void)_clearExtensions;
 - (id)_extensionWithIdentifier:(id)arg1;
 - (void)_invokeHandlerWithRequestIdentifier:(id)arg1 returnItems:(id)arg2 error:(id)arg3;
-- (void)_registerRequestIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_registerRequestIdentifier:(id)arg1 withCompletion:(id)arg2;
 - (id)_siblingExtensionsWithContainingAppIdentifer:(id)arg1;
 - (id)allExtensions;
 - (id)containingAppProxies;

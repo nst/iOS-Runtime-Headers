@@ -5,24 +5,24 @@
 @interface UIInterfaceActionSeparatorAttributes : NSObject <NSCopying> {
     UIColor * _backgroundColor;
     NSArray * _filters;
-    float  _opacity;
+    double  _opacity;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) NSArray *filters;
-@property (nonatomic) float opacity;
+@property (nonatomic) double opacity;
 
 - (void).cxx_destruct;
-- (BOOL)_hasNonClearBackgroundColor;
+- (bool)_hasNonClearBackgroundColor;
 - (id)backgroundColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)filters;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)newSeparatorView;
-- (float)opacity;
+- (double)opacity;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setFilters:(id)arg1;
-- (void)setOpacity:(float)arg1;
+- (void)setOpacity:(double)arg1;
 
 @end

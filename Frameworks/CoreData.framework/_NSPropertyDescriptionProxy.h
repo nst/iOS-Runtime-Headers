@@ -9,14 +9,14 @@
     NSPropertyDescription * _underlyingProperty;
 }
 
-+ (BOOL)resolveInstanceMethod:(SEL)arg1;
++ (bool)resolveInstanceMethod:(SEL)arg1;
 
 - (void)_createCachesAndOptimizeState;
 - (unsigned int)_entitysReferenceID;
 - (void)_setEntity:(id)arg1;
 - (void)_setEntitysReferenceID:(unsigned int)arg1;
 - (id)_underlyingProperty;
-- (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2;
+- (void)_versionHash:(char *)arg1 inStyle:(unsigned long long)arg2;
 - (Class)class;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -24,8 +24,8 @@
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPropertyDescription:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isKindOfClass:(Class)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isKindOfClass:(Class)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 
 @end

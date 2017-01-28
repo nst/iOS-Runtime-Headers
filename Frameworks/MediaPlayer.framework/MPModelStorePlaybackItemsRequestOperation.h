@@ -5,16 +5,16 @@
 @interface MPModelStorePlaybackItemsRequestOperation : MPAsyncOperation {
     NSOperationQueue * _operationQueue;
     MPModelStorePlaybackItemsRequest * _request;
-    id /* block */  _responseHandler;
+    id  _responseHandler;
 }
 
 @property (nonatomic, readonly, copy) MPModelStorePlaybackItemsRequest *request;
-@property (nonatomic, readonly, copy) id /* block */ responseHandler;
+@property (nonatomic, readonly, copy) id responseHandler;
 
 - (void).cxx_destruct;
 - (void)execute;
-- (id)initWithRequest:(id)arg1 responseHandler:(id /* block */)arg2;
+- (id)initWithRequest:(id)arg1 responseHandler:(id)arg2;
 - (id)request;
-- (id /* block */)responseHandler;
+- (id)responseHandler;
 
 @end

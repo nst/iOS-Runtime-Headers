@@ -18,7 +18,7 @@
 @property (nonatomic) unsigned long long uploadCompletedSize;
 @property (nonatomic) unsigned long long uploadTotalSize;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -6,7 +6,7 @@
     NSData * __TCPConnectionMetadata;
     NSError * _cancelError;
     unsigned char  _captureStreamsUponCompletion;
-    id /* block */  _disavow;
+    id  _disavow;
     struct shared_ptr<TCPIO_EstablishBase> { 
         struct TCPIO_EstablishBase {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -29,14 +29,14 @@
 - (void)_onqueue_adjustPoolPriority;
 - (void)_onqueue_cancel;
 - (void)_onqueue_cancel_with_error:(id)arg1;
-- (void)_onqueue_connectionEstablishedWithError:(struct { int x1; int x2; })arg1 callbackReferent:(id)arg2;
-- (void)_onqueue_dealWithSessionTrustAuth:(int)arg1 credential:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)_onqueue_needClientCert:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_onqueue_needServerTrust:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_onqueue_postConnectConfiguration:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_onqueue_preConnectionConfiguration:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_onqueue_connectionEstablishedWithError:(struct { long long x1; int x2; })arg1 callbackReferent:(id)arg2;
+- (void)_onqueue_dealWithSessionTrustAuth:(long long)arg1 credential:(id)arg2 completionHandler:(id)arg3;
+- (void)_onqueue_needClientCert:(id)arg1 completionHandler:(id)arg2;
+- (void)_onqueue_needServerTrust:(id)arg1 completionHandler:(id)arg2;
+- (void)_onqueue_postConnectConfiguration:(id)arg1 completionHandler:(id)arg2;
+- (void)_onqueue_preConnectionConfiguration:(id)arg1 completionHandler:(id)arg2;
 - (void)_onqueue_resume;
-- (BOOL)_onqueue_sendSessionChallenge:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)_onqueue_sendSessionChallenge:(id)arg1 completionHandler:(id)arg2;
 - (void)_onqueue_suspend;
 - (void)_task_onqueue_didFinish;
 - (void)cancel;
@@ -45,12 +45,12 @@
 - (void)closeWrite;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithHost:(id)arg1 port:(int)arg2 session:(id)arg3 disavow:(id /* block */)arg4;
+- (id)initWithHost:(id)arg1 port:(long long)arg2 session:(id)arg3 disavow:(id)arg4;
 - (struct shared_ptr<TCPIOConnectionObjCPP> { struct TCPIOConnectionObjCPP {} *x1; struct __shared_weak_count {} *x2; })ios;
-- (void)readDataOfMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 timeout:(double)arg3 completionHandler:(id /* block */)arg4;
+- (void)readDataOfMinLength:(unsigned long long)arg1 maxLength:(unsigned long long)arg2 timeout:(double)arg3 completionHandler:(id)arg4;
 - (void)set_TCPConnectionMetadata:(id)arg1;
 - (void)startSecureConnection;
 - (void)stopSecureConnection;
-- (void)writeData:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;
+- (void)writeData:(id)arg1 timeout:(double)arg2 completionHandler:(id)arg3;
 
 @end

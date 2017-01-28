@@ -8,7 +8,7 @@
     SLComposeSheetConfigurationItem * _audienceConfigurationItem;
     FlickrAudienceController * _audienceController;
     ACAccount * _flickrAccount;
-    BOOL  _hasFlickrAccount;
+    bool  _hasFlickrAccount;
     UIImageView * _logoView;
     FlickrPhotoSetManager * _manager;
     SLComposeSheetConfigurationItem * _photoSetConfigurationItem;
@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) ACAccount *flickrAccount;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -35,6 +35,6 @@
 - (unsigned int)postVisibility;
 - (void)setAccountStore:(id)arg1;
 - (void)setFlickrAccount:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

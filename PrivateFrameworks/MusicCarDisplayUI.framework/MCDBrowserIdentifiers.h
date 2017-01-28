@@ -5,27 +5,26 @@
 @interface MCDBrowserIdentifiers : NSObject {
     NSSet * _activeIdentifiers;
     NSArray * _cellIdentifiers;
-    float  _maxImageWidth;
+    double  _maxImageWidth;
     NSArray * _orderedIdentifiers;
 }
 
 @property (nonatomic, retain) NSSet *activeIdentifiers;
 @property (nonatomic, retain) NSArray *cellIdentifiers;
-@property (nonatomic, readonly) float maxImageWidth;
+@property (nonatomic, readonly) double maxImageWidth;
 @property (nonatomic, retain) NSArray *orderedIdentifiers;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)MCDIdentifiersMusicIdentifiersMapping;
-- (BOOL)_identifiersDidChange;
+- (bool)_identifiersDidChange;
 - (void)_updateCellIdentifiersOrdering;
 - (id)activeIdentifiers;
 - (id)cellIdentifiers;
 - (id)defaultFuseIdentifiers;
-- (id)init;
 - (id)localizedStrings;
-- (float)maxImageWidth;
+- (double)maxImageWidth;
 - (id)orderedIdentifiers;
 - (void)setActiveIdentifiers:(id)arg1;
 - (void)setCellIdentifiers:(id)arg1;

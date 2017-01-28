@@ -4,20 +4,22 @@
 
 @interface INSetAudioSourceInCarIntent : INIntent <INSetAudioSourceInCarIntentExport>
 
-@property (nonatomic, readonly) int audioSource;
+@property (nonatomic, readonly) long long audioSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int relativeAudioSourceReference;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long relativeAudioSourceReference;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1;
 - (id)_typedBackingStore;
-- (int)audioSource;
-- (id)initWithAudioSource:(int)arg1 relativeAudioSourceReference:(int)arg2;
-- (int)relativeAudioSourceReference;
-- (void)setAudioSource:(int)arg1;
-- (void)setRelativeAudioSourceReference:(int)arg1;
+- (long long)audioSource;
+- (id)description;
+- (id)initWithAudioSource:(long long)arg1 relativeAudioSourceReference:(long long)arg2;
+- (long long)relativeAudioSourceReference;
+- (void)setAudioSource:(long long)arg1;
+- (void)setRelativeAudioSourceReference:(long long)arg1;
 
 @end

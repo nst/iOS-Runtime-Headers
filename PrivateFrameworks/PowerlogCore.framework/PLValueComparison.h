@@ -10,10 +10,10 @@
 
 @property (readonly) short comparisonOperation;
 @property (readonly) NSString *comparisonOperationString;
-@property (readonly) BOOL hasEqualComparisonComponent;
-@property (readonly) BOOL hasGreaterThanComparisonComponent;
-@property (readonly) BOOL hasLessThanComparisonComponent;
-@property (readonly) BOOL hasNilComparisonComponent;
+@property (readonly) bool hasEqualComparisonComponent;
+@property (readonly) bool hasGreaterThanComparisonComponent;
+@property (readonly) bool hasLessThanComparisonComponent;
+@property (readonly) bool hasNilComparisonComponent;
 @property (readonly) NSString *key;
 @property (readonly) NSString *sqlWhereClause;
 @property (readonly) id value;
@@ -22,10 +22,10 @@
 - (short)comparisonOperation;
 - (id)comparisonOperationString;
 - (id)description;
-- (BOOL)hasEqualComparisonComponent;
-- (BOOL)hasGreaterThanComparisonComponent;
-- (BOOL)hasLessThanComparisonComponent;
-- (BOOL)hasNilComparisonComponent;
+- (bool)hasEqualComparisonComponent;
+- (bool)hasGreaterThanComparisonComponent;
+- (bool)hasLessThanComparisonComponent;
+- (bool)hasNilComparisonComponent;
 - (id)initWithKey:(id)arg1 withValue:(id)arg2 withComparisonOperation:(short)arg3;
 - (id)key;
 - (id)sqlWhereClause;

@@ -7,12 +7,12 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)automaticallyUpdateScrollViewContentInset;
-- (BOOL)automaticallyUpdateScrollViewContentOffset;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canSwipeToDismiss;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)automaticallyUpdateScrollViewContentInset;
+- (bool)automaticallyUpdateScrollViewContentOffset;
+- (bool)canEnterFullScreen;
+- (bool)canSwipeToDismiss;
+- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id)arg2;
 - (id)scrollView;
-- (BOOL)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
 
 @end

@@ -6,38 +6,38 @@
     NSMutableDictionary * _existingOIDsByUUID;
     NSMutableSet * _existingUUIDs;
     NSMutableDictionary * _existingUUIDsByPath;
-    BOOL  _hasProcessedAnyAssets;
+    bool  _hasProcessedAnyAssets;
     PLPhotoLibrary * _photoLibrary;
     NSString * _photoLibraryStoreUUID;
     NSMutableIndexSet * _thumbIndexes;
-    unsigned int  _thumbnailBatchFetchSize;
+    unsigned long long  _thumbnailBatchFetchSize;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *existingOIDsByUUID;
 @property (nonatomic, retain) NSMutableSet *existingUUIDs;
 @property (nonatomic, retain) NSMutableDictionary *existingUUIDsByPath;
-@property (nonatomic) unsigned int thumbnailBatchFetchSize;
+@property (nonatomic) unsigned long long thumbnailBatchFetchSize;
 
 + (id)_mediaDirectoryPath;
 
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
-- (BOOL)_setupPhotoAsset:(id)arg1 withURL:(id)arg2;
-- (BOOL)_setupPhotoAssetAsPhotoIrisIfNeeded:(id)arg1;
-- (BOOL)_setupVideoAsset:(id)arg1 withURL:(id)arg2;
-- (id)addAssetWithURLs:(id)arg1 forceInsert:(BOOL)arg2 forceUpdate:(BOOL)arg3 fixAddedDate:(BOOL)arg4;
-- (void)addAvailableThumbnailIndex:(unsigned int)arg1;
+- (bool)_setupPhotoAsset:(id)arg1 withURL:(id)arg2;
+- (bool)_setupPhotoAssetAsPhotoIrisIfNeeded:(id)arg1;
+- (bool)_setupVideoAsset:(id)arg1 withURL:(id)arg2;
+- (id)addAssetWithURLs:(id)arg1 forceInsert:(bool)arg2 forceUpdate:(bool)arg3 fixAddedDate:(bool)arg4;
+- (void)addAvailableThumbnailIndex:(unsigned long long)arg1;
 - (id)assetURLisInDatabase:(id)arg1;
 - (void)dealloc;
 - (id)existingOIDsByUUID;
 - (id)existingUUIDs;
 - (id)existingUUIDsByPath;
 - (id)initWithPhotoLibrary:(id)arg1;
-- (unsigned int)nextThumbnailIndex;
+- (unsigned long long)nextThumbnailIndex;
 - (void)setExistingOIDsByUUID:(id)arg1;
 - (void)setExistingUUIDs:(id)arg1;
 - (void)setExistingUUIDsByPath:(id)arg1;
 - (void)setModificationAndCreationDateOnAsset:(id)arg1 withURL:(id)arg2;
-- (void)setThumbnailBatchFetchSize:(unsigned int)arg1;
-- (unsigned int)thumbnailBatchFetchSize;
+- (void)setThumbnailBatchFetchSize:(unsigned long long)arg1;
+- (unsigned long long)thumbnailBatchFetchSize;
 
 @end

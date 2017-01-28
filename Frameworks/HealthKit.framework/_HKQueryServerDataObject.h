@@ -7,18 +7,18 @@
     _HKFilter * _filter;
     HKObjectType * _objectType;
     int  _samplesDeliveredBeforeSuspend;
-    BOOL  _shouldStayAliveAfterInitialResults;
-    BOOL  _waitForStart;
+    bool  _shouldStayAliveAfterInitialResults;
+    bool  _waitForStart;
 }
 
 @property (nonatomic) double collectionInterval;
 @property (nonatomic, retain) _HKFilter *filter;
 @property (nonatomic, retain) HKObjectType *objectType;
 @property (nonatomic) int samplesDeliveredBeforeSuspend;
-@property (nonatomic) BOOL shouldStayAliveAfterInitialResults;
-@property (nonatomic) BOOL waitForStart;
+@property (nonatomic) bool shouldStayAliveAfterInitialResults;
+@property (nonatomic) bool waitForStart;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)collectionInterval;
@@ -31,9 +31,9 @@
 - (void)setFilter:(id)arg1;
 - (void)setObjectType:(id)arg1;
 - (void)setSamplesDeliveredBeforeSuspend:(int)arg1;
-- (void)setShouldStayAliveAfterInitialResults:(BOOL)arg1;
-- (void)setWaitForStart:(BOOL)arg1;
-- (BOOL)shouldStayAliveAfterInitialResults;
-- (BOOL)waitForStart;
+- (void)setShouldStayAliveAfterInitialResults:(bool)arg1;
+- (void)setWaitForStart:(bool)arg1;
+- (bool)shouldStayAliveAfterInitialResults;
+- (bool)waitForStart;
 
 @end

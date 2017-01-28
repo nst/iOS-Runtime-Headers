@@ -7,7 +7,7 @@
     NSError * _eventError;
     NSUUID * _eventType;
     double  _startTime;
-    BOOL  _submitted;
+    bool  _submitted;
 }
 
 @property (readonly) double durationInMilliseconds;
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) NSError *eventError;
 @property (nonatomic, readonly) NSUUID *eventType;
 @property (nonatomic) double startTime;
-@property (getter=isSubmitted, nonatomic) BOOL submitted;
+@property (getter=isSubmitted, nonatomic) bool submitted;
 
 - (void).cxx_destruct;
 - (double)durationInMilliseconds;
@@ -24,11 +24,11 @@
 - (id)eventType;
 - (id)init;
 - (id)initWithEventType:(id)arg1;
-- (BOOL)isSubmitted;
+- (bool)isSubmitted;
 - (void)setEndTime:(double)arg1;
 - (void)setEventError:(id)arg1;
 - (void)setStartTime:(double)arg1;
-- (void)setSubmitted:(BOOL)arg1;
+- (void)setSubmitted:(bool)arg1;
 - (double)startTime;
 - (void)submitAtTime:(double)arg1 error:(id)arg2;
 

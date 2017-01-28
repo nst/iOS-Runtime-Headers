@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> * _eventAccessQueue;
     NSMutableDictionary * _events;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _started;
+    bool  _started;
 }
 
 + (id)sharedInstance;
@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)_postExpiredEvents;
 - (void)_scheduleNextEvent;
-- (BOOL)hasScheduledEvent:(id)arg1;
+- (bool)hasScheduledEvent:(id)arg1;
 - (id)init;
 - (void)removeEvent:(id)arg1;
 - (void)scheduleEvent:(id)arg1 afterDelay:(double)arg2 withUserData:(id)arg3;

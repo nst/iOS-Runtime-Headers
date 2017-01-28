@@ -8,25 +8,31 @@
 @property (readonly, copy) NSDate *endDate;
 @property (readonly, copy) NSDate *startDate;
 
-+ (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)supportsSecureCoding;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-- (int)compare:(id)arg1;
-- (BOOL)containsDate:(id)arg1;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (bool)supportsSecureCoding;
+
+- (long long)compare:(id)arg1;
+- (bool)containsDate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStartDate:(id)arg1 duration:(double)arg2;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)intersectionWithDateInterval:(id)arg1;
-- (BOOL)intersectsDateInterval:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDateInterval:(id)arg1;
+- (bool)intersectsDateInterval:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDateInterval:(id)arg1;
 - (id)startDate;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)hk_dateIntervalWithStart:(double)arg1 end:(double)arg2;
 
 @end

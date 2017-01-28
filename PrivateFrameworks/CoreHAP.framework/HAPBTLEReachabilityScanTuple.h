@@ -3,22 +3,22 @@
  */
 
 @interface HAPBTLEReachabilityScanTuple : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     NSString * _identifier;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
-+ (id)reachabilityScanTupleWithCompletion:(id /* block */)arg1 workQueue:(id)arg2 identifier:(id)arg3;
++ (id)reachabilityScanTupleWithCompletion:(id)arg1 workQueue:(id)arg2 identifier:(id)arg3;
 
 - (void).cxx_destruct;
-- (id /* block */)completion;
+- (id)completion;
 - (id)identifier;
 - (id)queue;
-- (void)setCompletion:(id /* block */)arg1;
+- (void)setCompletion:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setQueue:(id)arg1;
 

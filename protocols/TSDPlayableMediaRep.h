@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isPlayable;
+- (bool)isPlayable;
 
 @end

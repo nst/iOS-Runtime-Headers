@@ -10,7 +10,7 @@
 @property (setter=_setContentIdentifiersToAdd:, nonatomic, copy) NSArray *contentIdentifiersToAdd;
 @property (setter=_setContentIdentifiersToRemove:, nonatomic, copy) NSArray *contentIdentifiersToRemove;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_setContentIdentifiersToAdd:(id)arg1;

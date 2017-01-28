@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic) int acType;
-@property (nonatomic) BOOL hasAcType;
+@property (nonatomic) bool hasAcType;
 
 - (int)StringAsAcType:(id)arg1;
 - (int)acType;
@@ -19,13 +19,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAcType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAcType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAcType:(int)arg1;
-- (void)setHasAcType:(BOOL)arg1;
+- (void)setHasAcType:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -11,7 +11,7 @@
 }
 
 @property (retain) NSMutableSet *interestedObjects;
-@property (readonly) BOOL isActive;
+@property (readonly) bool isActive;
 @property (retain) NSString *key;
 @property (retain) NSMutableSet *pendingDoneObjects;
 @property (retain) NSObject<OS_dispatch_semaphore> *semaphore;
@@ -20,10 +20,10 @@
 + (id)sharedSemaphoreForKey:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)basicWaitWithBlock:(id /* block */)arg1;
+- (void)basicWaitWithBlock:(id)arg1;
 - (id)initWithKey:(id)arg1;
 - (id)interestedObjects;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)key;
 - (id)pendingDoneObjects;
 - (id)semaphore;
@@ -37,7 +37,7 @@
 - (void)signalNonInterestByObject:(id)arg1;
 - (void)signalStartListening;
 - (double)timeout;
-- (void)waitWithBlock:(id /* block */)arg1;
-- (void)waitWithBlockSync:(id /* block */)arg1;
+- (void)waitWithBlock:(id)arg1;
+- (void)waitWithBlockSync:(id)arg1;
 
 @end

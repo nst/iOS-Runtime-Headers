@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *transactionID;
 @property (nonatomic, copy) NSNumber *transactionType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)amount;

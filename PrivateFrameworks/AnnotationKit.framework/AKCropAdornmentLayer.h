@@ -15,15 +15,15 @@
 - (void)_addHandles;
 - (void)_removeGuides;
 - (void)_removeHandles;
-- (BOOL)_shouldShowHandles;
+- (bool)_shouldShowHandles;
 - (void)_updateGuides;
 - (void)_updateHandles;
 - (id)guideLayer;
 - (id)handlesLayer;
-- (BOOL)needsUpdateWhenDraggingStartsOrEnds;
+- (bool)needsUpdateWhenDraggingStartsOrEnds;
 - (void)setGuideLayer:(id)arg1;
 - (void)setHandlesLayer:(id)arg1;
 - (void)updateAdornmentElements;
-- (void)updateSublayersWithScale:(float)arg1;
+- (void)updateSublayersWithScale:(double)arg1;
 
 @end

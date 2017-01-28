@@ -12,16 +12,16 @@
 @property (copy) ICSearchResult *searchResult;
 @property (nonatomic, readonly, copy) ICSearchString *searchString;
 
-+ (unsigned int)numberOfMatchesOfString:(id)arg1 withinString:(id)arg2;
-+ (unsigned int)relevanceBySearchingForString:(id)arg1 withinString:(id)arg2;
++ (unsigned long long)numberOfMatchesOfString:(id)arg1 withinString:(id)arg2;
++ (unsigned long long)relevanceBySearchingForString:(id)arg1 withinString:(id)arg2;
 + (id)tokensFromString:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)initWithObjectToSearch:(id)arg1 searchString:(id)arg2;
 - (void)main;
 - (id)objectToSearch;
-- (unsigned int)relevanceByPerformingSearch;
-- (unsigned int)relevanceBySearchingWithinString:(id)arg1;
+- (unsigned long long)relevanceByPerformingSearch;
+- (unsigned long long)relevanceBySearchingWithinString:(id)arg1;
 - (id)searchResult;
 - (id)searchString;
 - (void)setSearchResult:(id)arg1;

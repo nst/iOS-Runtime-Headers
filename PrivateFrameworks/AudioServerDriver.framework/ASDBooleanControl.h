@@ -3,34 +3,34 @@
  */
 
 @interface ASDBooleanControl : ASDControl {
-    unsigned long  _subclassID;
-    BOOL  _value;
-    BOOL  _valueIsSettable;
+    unsigned int  _subclassID;
+    bool  _value;
+    bool  _valueIsSettable;
     NSObject<OS_dispatch_queue> * _valueQueue;
 }
 
-@property (nonatomic) unsigned long subclassID;
-@property (nonatomic) BOOL value;
+@property (nonatomic) unsigned int subclassID;
+@property (nonatomic) bool value;
 
-+ (id)invertControlWithValue:(BOOL)arg1 isSettable:(BOOL)arg2 forElement:(unsigned long)arg3 inScope:(unsigned long)arg4 withPlugin:(id)arg5;
-+ (id)muteControlWithValue:(BOOL)arg1 isSettable:(BOOL)arg2 forElement:(unsigned long)arg3 inScope:(unsigned long)arg4 withPlugin:(id)arg5;
-+ (id)phantomPowerControlWithValue:(BOOL)arg1 isSettable:(BOOL)arg2 forElement:(unsigned long)arg3 inScope:(unsigned long)arg4 withPlugin:(id)arg5;
++ (id)invertControlWithValue:(bool)arg1 isSettable:(bool)arg2 forElement:(unsigned int)arg3 inScope:(unsigned int)arg4 withPlugin:(id)arg5;
++ (id)muteControlWithValue:(bool)arg1 isSettable:(bool)arg2 forElement:(unsigned int)arg3 inScope:(unsigned int)arg4 withPlugin:(id)arg5;
++ (id)phantomPowerControlWithValue:(bool)arg1 isSettable:(bool)arg2 forElement:(unsigned int)arg3 inScope:(unsigned int)arg4 withPlugin:(id)arg5;
 
 - (void).cxx_destruct;
-- (unsigned long)baseClass;
-- (void)changeValue:(BOOL)arg1;
-- (unsigned long)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 andQualifierData:(const void*)arg3;
-- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(const void*)arg5 forClient:(int)arg6;
-- (BOOL)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
-- (id)initWithElement:(unsigned long)arg1 inScope:(unsigned long)arg2 withPlugin:(id)arg3;
+- (unsigned int)baseClass;
+- (void)changeValue:(bool)arg1;
+- (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
+- (bool)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (bool)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (id)initWithElement:(unsigned int)arg1 inScope:(unsigned int)arg2 withPlugin:(id)arg3;
 - (id)initWithPlugin:(id)arg1;
-- (id)initWithValue:(BOOL)arg1 isSettable:(BOOL)arg2 forElement:(unsigned long)arg3 inScope:(unsigned long)arg4 withPlugin:(id)arg5;
-- (BOOL)isPropertySettable:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
-- (unsigned long)objectClass;
-- (BOOL)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned long)arg4 andData:(const void*)arg5 forClient:(int)arg6;
-- (void)setSubclassID:(unsigned long)arg1;
-- (void)setValue:(BOOL)arg1;
-- (unsigned long)subclassID;
-- (BOOL)value;
+- (id)initWithValue:(bool)arg1 isSettable:(bool)arg2 forElement:(unsigned int)arg3 inScope:(unsigned int)arg4 withPlugin:(id)arg5;
+- (bool)isPropertySettable:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (unsigned int)objectClass;
+- (bool)setProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (void)setSubclassID:(unsigned int)arg1;
+- (void)setValue:(bool)arg1;
+- (unsigned int)subclassID;
+- (bool)value;
 
 @end

@@ -9,7 +9,7 @@
 @property (readonly) NSString *username;
 
 - (id)placeholder;
-- (void)reloadFromModelIncludingRows:(BOOL)arg1;
+- (void)reloadFromModelIncludingRows:(bool)arg1;
 - (id)service;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;

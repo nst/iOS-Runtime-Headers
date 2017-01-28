@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)modelObject;
-- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id)arg1;
 - (void)setModelObject:(id)arg1;
 
 @end

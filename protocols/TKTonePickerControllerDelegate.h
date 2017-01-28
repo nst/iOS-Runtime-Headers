@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)tonePickerController:(TKTonePickerController *)arg1 didUpdateCheckedStatus:(BOOL)arg2 ofTonePickerItem:(TKTonePickerItem *)arg3;
+- (void)tonePickerController:(TKTonePickerController *)arg1 didUpdateCheckedStatus:(bool)arg2 ofTonePickerItem:(TKTonePickerItem *)arg3;
 - (void)tonePickerController:(TKTonePickerController *)arg1 didUpdateDetailText:(NSString *)arg2 ofTonePickerItem:(TKTonePickerItem *)arg3;
 - (void)tonePickerController:(TKTonePickerController *)arg1 selectedToneWithIdentifier:(NSString *)arg2;
 - (void)tonePickerControllerDidReloadTones:(TKTonePickerController *)arg1;

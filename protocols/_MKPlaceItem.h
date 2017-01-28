@@ -7,11 +7,11 @@
 
 - (EKCalendarItem *)calendarItem;
 - (CNContact *)contact;
-- (BOOL)isContactPersisted;
-- (BOOL)isIntermediateMapItem;
+- (bool)isContactPersisted;
+- (bool)isIntermediateMapItem;
 - (MKMapItem *)mapItem;
 - (NSString *)name;
-- (unsigned int)options;
-- (void)setIsSuggestedFavorite:(BOOL)arg1;
+- (unsigned long long)options;
+- (void)setIsSuggestedFavorite:(bool)arg1;
 
 @end

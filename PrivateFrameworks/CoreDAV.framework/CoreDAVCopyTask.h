@@ -9,6 +9,6 @@
 - (void)_callBackToDelegateWithResponses:(id)arg1 error:(id)arg2;
 - (void)dealloc;
 - (id)httpMethod;
-- (BOOL)validate:(id*)arg1;
+- (bool)validate:(id*)arg1;
 
 @end

@@ -20,12 +20,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)disambiguationItems;
-- (id)disambiguationItemsAtIndex:(unsigned int)arg1;
-- (unsigned int)disambiguationItemsCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)disambiguationItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)disambiguationItemsCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDisambiguationItems:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

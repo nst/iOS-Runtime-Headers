@@ -4,15 +4,15 @@
 
 @interface TSDMutableCurvedShadow : TSDCurvedShadow <TSDMutableShadow>
 
-@property (nonatomic) float curve;
+@property (nonatomic) double curve;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setAngle:(float)arg1;
+- (void)setAngle:(double)arg1;
 - (void)setColor:(id)arg1;
-- (void)setCurve:(float)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setOffset:(float)arg1;
-- (void)setOpacity:(float)arg1;
-- (void)setRadius:(float)arg1;
+- (void)setCurve:(double)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setOffset:(double)arg1;
+- (void)setOpacity:(double)arg1;
+- (void)setRadius:(double)arg1;
 
 @end

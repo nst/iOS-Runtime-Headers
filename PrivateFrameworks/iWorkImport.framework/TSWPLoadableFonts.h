@@ -3,7 +3,7 @@
  */
 
 @interface TSWPLoadableFonts : NSObject {
-    BOOL  _allFontsLoaded;
+    bool  _allFontsLoaded;
     unsigned int  _loadableFontCount;
     struct TSWPLoadableFontInfo { id x1; id x2; } * _loadableFonts;
 }
@@ -21,6 +21,6 @@
 - (void)p_loadFontWithInfo:(struct TSWPLoadableFontInfo { id x1; id x2; }*)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

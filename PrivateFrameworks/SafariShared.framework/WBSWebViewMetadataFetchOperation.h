@@ -10,11 +10,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WBSWebViewMetadataFetchOperationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) WKWebView *webView;
 @property (nonatomic, readonly) WKWebViewConfiguration *webViewConfiguration;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } webViewSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } webViewSize;
 
 - (void).cxx_destruct;
 - (void)_webViewWebProcessDidCrash:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (id)webViewConfiguration;
-- (struct CGSize { float x1; float x2; })webViewSize;
+- (struct CGSize { double x1; double x2; })webViewSize;
 - (void)willClearWebView;
 
 @end

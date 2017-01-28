@@ -4,19 +4,19 @@
 
 @interface SUReflectionImageModifier : SUImageModifier {
     UIGradient * _gradient;
-    float  _reflectionHeight;
+    double  _reflectionHeight;
 }
 
 @property (nonatomic, retain) UIGradient *gradient;
-@property (nonatomic) float reflectionHeight;
+@property (nonatomic) double reflectionHeight;
 
 - (void)dealloc;
-- (void)drawAfterImageForContext:(struct CGContext { }*)arg1 imageFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { float x1; float x2; })arg3;
-- (struct CGSize { float x1; float x2; })finalSizeForSize:(struct CGSize { float x1; float x2; })arg1 originalSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)drawAfterImageForContext:(struct CGContext { }*)arg1 imageFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { double x1; double x2; })arg3;
+- (struct CGSize { double x1; double x2; })finalSizeForSize:(struct CGSize { double x1; double x2; })arg1 originalSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)gradient;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageFrameForImage:(id)arg1 currentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { float x1; float x2; })arg3;
-- (float)reflectionHeight;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })imageFrameForImage:(id)arg1 currentFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 finalSize:(struct CGSize { double x1; double x2; })arg3;
+- (double)reflectionHeight;
 - (void)setGradient:(id)arg1;
-- (void)setReflectionHeight:(float)arg1;
+- (void)setReflectionHeight:(double)arg1;
 
 @end

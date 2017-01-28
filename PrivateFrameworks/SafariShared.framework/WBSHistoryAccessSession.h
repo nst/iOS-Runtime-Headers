@@ -8,8 +8,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)getHistoryItemsVisitedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)getHistoryVisitsAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)getHistoryItemsVisitedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id)arg3;
+- (void)getHistoryVisitsAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id)arg3;
 - (id)initWithHistoryService:(id)arg1;
 
 @end

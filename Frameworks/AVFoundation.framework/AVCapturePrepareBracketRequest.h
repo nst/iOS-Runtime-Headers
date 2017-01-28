@@ -3,17 +3,17 @@
  */
 
 @interface AVCapturePrepareBracketRequest : NSObject {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     FigCaptureStillImageSettings * _settings;
 }
 
-@property (readonly) id /* block */ completionBlock;
+@property (readonly) id completionBlock;
 @property (readonly) FigCaptureStillImageSettings *settings;
 
-+ (id)prepareBracketRequestWithCompletionBlock:(id /* block */)arg1 settings:(id)arg2;
++ (id)prepareBracketRequestWithCompletionBlock:(id)arg1 settings:(id)arg2;
 
-- (id)_initWithCompletionBlock:(id /* block */)arg1 settings:(id)arg2;
-- (id /* block */)completionBlock;
+- (id)_initWithCompletionBlock:(id)arg1 settings:(id)arg2;
+- (id)completionBlock;
 - (void)dealloc;
 - (id)settings;
 

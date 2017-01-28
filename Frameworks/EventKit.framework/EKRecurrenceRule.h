@@ -4,7 +4,7 @@
 
 @interface EKRecurrenceRule : EKObject <NSCopying> {
     EKRecurrenceEnd * _cachedEnd;
-    BOOL  _usesEndDate;
+    bool  _usesEndDate;
 }
 
 @property (nonatomic, readonly) NSString *UUID;
@@ -14,23 +14,23 @@
 @property (nonatomic, readonly) NSArray *daysOfTheMonth;
 @property (nonatomic, readonly) NSArray *daysOfTheWeek;
 @property (nonatomic, readonly) NSArray *daysOfTheYear;
-@property (nonatomic, readonly) BOOL dirtyStateMayAffectExceptionDates;
-@property (nonatomic, readonly) int firstDayOfTheWeek;
-@property (nonatomic, readonly) int frequency;
+@property (nonatomic, readonly) bool dirtyStateMayAffectExceptionDates;
+@property (nonatomic, readonly) long long firstDayOfTheWeek;
+@property (nonatomic, readonly) long long frequency;
 @property (nonatomic, readonly) struct { int x1; int x2; int x3; int x4; int x5; double x6; } gregorianUnits;
-@property (nonatomic, readonly) int interval;
+@property (nonatomic, readonly) long long interval;
 @property (nonatomic, readonly) NSArray *monthsOfTheYear;
 @property (nonatomic, retain) EKCalendarItem *owner;
 @property (nonatomic, copy) EKRecurrenceEnd *recurrenceEnd;
 @property (nonatomic, readonly) NSArray *setPositions;
-@property (nonatomic, readonly) BOOL shouldPinMonthDays;
-@property (readonly) BOOL usesEndDate;
+@property (nonatomic, readonly) bool shouldPinMonthDays;
+@property (readonly) bool usesEndDate;
 @property (nonatomic, readonly) NSArray *weeksOfTheYear;
 
-+ (id)iCalendarValueFromDate:(id)arg1 isDateOnly:(BOOL)arg2 isFloating:(BOOL)arg3;
-+ (id)iCalendarValueFromDayOfTheWeek:(unsigned int)arg1;
-+ (id)iCalendarValueFromRecurrenceType:(int)arg1;
-+ (id)recurrenceRuleWithType:(int)arg1 interval:(unsigned int)arg2 end:(id)arg3;
++ (id)iCalendarValueFromDate:(id)arg1 isDateOnly:(bool)arg2 isFloating:(bool)arg3;
++ (id)iCalendarValueFromDayOfTheWeek:(unsigned long long)arg1;
++ (id)iCalendarValueFromRecurrenceType:(long long)arg1;
++ (id)recurrenceRuleWithType:(long long)arg1 interval:(unsigned long long)arg2 end:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)UUID;
@@ -43,20 +43,20 @@
 - (id)daysOfTheWeek;
 - (id)daysOfTheYear;
 - (id)description;
-- (BOOL)dirtyStateMayAffectExceptionDates;
-- (int)firstDayOfTheWeek;
-- (int)frequency;
+- (bool)dirtyStateMayAffectExceptionDates;
+- (long long)firstDayOfTheWeek;
+- (long long)frequency;
 - (struct { int x1; int x2; int x3; int x4; int x5; double x6; })gregorianUnits;
 - (id)init;
-- (id)initRecurrenceWithFrequency:(int)arg1 interval:(int)arg2 daysOfTheWeek:(id)arg3 daysOfTheMonth:(id)arg4 monthsOfTheYear:(id)arg5 weeksOfTheYear:(id)arg6 daysOfTheYear:(id)arg7 setPositions:(id)arg8 end:(id)arg9;
-- (id)initRecurrenceWithFrequency:(int)arg1 interval:(int)arg2 end:(id)arg3;
-- (int)interval;
-- (BOOL)isAnyDayRule;
-- (BOOL)isSimpleRule;
-- (BOOL)isWeekdayRule;
-- (BOOL)isWeekendRule;
+- (id)initRecurrenceWithFrequency:(long long)arg1 interval:(long long)arg2 daysOfTheWeek:(id)arg3 daysOfTheMonth:(id)arg4 monthsOfTheYear:(id)arg5 weeksOfTheYear:(id)arg6 daysOfTheYear:(id)arg7 setPositions:(id)arg8 end:(id)arg9;
+- (id)initRecurrenceWithFrequency:(long long)arg1 interval:(long long)arg2 end:(id)arg3;
+- (long long)interval;
+- (bool)isAnyDayRule;
+- (bool)isSimpleRule;
+- (bool)isWeekdayRule;
+- (bool)isWeekendRule;
 - (id)lazyLoadRelationForKey:(id)arg1;
-- (BOOL)mayOccurAfterDate:(id)arg1;
+- (bool)mayOccurAfterDate:(id)arg1;
 - (id)monthsOfTheYear;
 - (id)owner;
 - (void)pinToEndsOfMonthsWithCalendarItem:(id)arg1;
@@ -66,17 +66,17 @@
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)setDaysOfTheYear:(id)arg1;
-- (void)setFirstDayOfTheWeek:(unsigned int)arg1;
-- (void)setFrequency:(int)arg1;
-- (void)setInterval:(unsigned int)arg1;
+- (void)setFirstDayOfTheWeek:(unsigned long long)arg1;
+- (void)setFrequency:(long long)arg1;
+- (void)setInterval:(unsigned long long)arg1;
 - (void)setMonthsOfTheYear:(id)arg1;
 - (id)setPositions;
 - (void)setRecurrenceEnd:(id)arg1;
 - (void)setSetPositions:(id)arg1;
 - (void)setWeeksOfTheYear:(id)arg1;
-- (BOOL)shouldPinMonthDays;
-- (id)stringValueAsDateOnly:(BOOL)arg1 isFloating:(BOOL)arg2;
-- (BOOL)usesEndDate;
+- (bool)shouldPinMonthDays;
+- (id)stringValueAsDateOnly:(bool)arg1 isFloating:(bool)arg2;
+- (bool)usesEndDate;
 - (id)weeksOfTheYear;
 
 @end

@@ -5,22 +5,22 @@
 @interface TSDAnnotationController : NSObject {
     <TSDAnnotationDelegate> * _delegate;
     TSKSelectionPath * _displayedAnnotationSelectionPath;
-    BOOL  _isNavigatingAnnotations;
+    bool  _isNavigatingAnnotations;
 }
 
-@property (nonatomic, readonly) unsigned int annotationCount;
+@property (nonatomic, readonly) unsigned long long annotationCount;
 @property (nonatomic, readonly) NSString *annotationNavigationString;
 @property (nonatomic) <TSDAnnotationDelegate> *delegate;
 @property (nonatomic, retain) TSKSelectionPath *displayedAnnotationSelectionPath;
-@property (nonatomic, readonly) unsigned int filteredAnnotationCount;
-@property (nonatomic, readonly) BOOL hasAnnotations;
-@property (nonatomic) BOOL isNavigatingAnnotations;
-@property (nonatomic) BOOL textSelectionChangeShouldDismissAnnotations;
+@property (nonatomic, readonly) unsigned long long filteredAnnotationCount;
+@property (nonatomic, readonly) bool hasAnnotations;
+@property (nonatomic) bool isNavigatingAnnotations;
+@property (nonatomic) bool textSelectionChangeShouldDismissAnnotations;
 
-+ (float)commentFontSize;
++ (double)commentFontSize;
 + (id)commentPossibleFontSizes;
 
-- (unsigned int)annotationCount;
+- (unsigned long long)annotationCount;
 - (id)annotationMenuItemTextShowNext;
 - (id)annotationMenuItemTextShowPrevious;
 - (id)annotationNavigationString;
@@ -31,19 +31,19 @@
 - (id)delegate;
 - (void)didShowAnnotation:(id)arg1;
 - (id)displayedAnnotationSelectionPath;
-- (unsigned int)filteredAnnotationCount;
-- (BOOL)hasAnnotations;
+- (unsigned long long)filteredAnnotationCount;
+- (bool)hasAnnotations;
 - (id)init;
 - (void)invalidateAnnotationAuthors;
-- (BOOL)isNavigatingAnnotations;
+- (bool)isNavigatingAnnotations;
 - (void)nextAnnotation:(id)arg1;
 - (void)previousAnnotation:(id)arg1;
 - (void)setAuthorFilter:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayedAnnotationSelectionPath:(id)arg1;
-- (void)setIsNavigatingAnnotations:(BOOL)arg1;
-- (void)setTextSelectionChangeShouldDismissAnnotations:(BOOL)arg1;
-- (BOOL)textSelectionChangeShouldDismissAnnotations;
+- (void)setIsNavigatingAnnotations:(bool)arg1;
+- (void)setTextSelectionChangeShouldDismissAnnotations:(bool)arg1;
+- (bool)textSelectionChangeShouldDismissAnnotations;
 - (void)updateCurrentAnnotation:(id)arg1;
 - (void)willShowAnnotation:(id)arg1;
 

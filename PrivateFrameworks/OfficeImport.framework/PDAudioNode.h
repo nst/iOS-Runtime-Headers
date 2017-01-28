@@ -3,10 +3,10 @@
  */
 
 @interface PDAudioNode : PDMediaNode {
-    BOOL  mIsNarration;
+    bool  mIsNarration;
 }
 
-- (BOOL)isNarration;
-- (void)setIsNarration:(BOOL)arg1;
+- (bool)isNarration;
+- (void)setIsNarration:(bool)arg1;
 
 @end

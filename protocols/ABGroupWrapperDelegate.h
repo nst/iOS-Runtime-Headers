@@ -5,6 +5,6 @@
 
 @required
 
-- (void)groupWrapper:(ABGroupWrapper *)arg1 didBecomeSelected:(BOOL)arg2;
+- (void)groupWrapper:(ABGroupWrapper *)arg1 didBecomeSelected:(bool)arg2;
 
 @end

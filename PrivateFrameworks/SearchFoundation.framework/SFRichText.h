@@ -6,15 +6,15 @@
     NSString * _contentAdvisory;
     NSArray * _formattedTextPieces;
     NSArray * _icons;
-    float  _starRating;
+    double  _starRating;
 }
 
 @property (nonatomic, copy) NSString *contentAdvisory;
 @property (copy) NSArray *formattedTextPieces;
 @property (nonatomic, copy) NSArray *icons;
-@property (nonatomic) float starRating;
+@property (nonatomic) double starRating;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)contentAdvisory;
@@ -22,11 +22,11 @@
 - (id)formattedTextPieces;
 - (id)icons;
 - (id)initWithCoder:(id)arg1;
-- (void)loadRichTextWithCompletionHandler:(id /* block */)arg1;
+- (void)loadRichTextWithCompletionHandler:(id)arg1;
 - (void)setContentAdvisory:(id)arg1;
 - (void)setFormattedTextPieces:(id)arg1;
 - (void)setIcons:(id)arg1;
-- (void)setStarRating:(float)arg1;
-- (float)starRating;
+- (void)setStarRating:(double)arg1;
+- (double)starRating;
 
 @end

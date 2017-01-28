@@ -4,22 +4,22 @@
 
 @interface HLPHelpSearchResult : NSObject {
     NSString * _identifier;
-    int  _matchCount;
-    int  _weight;
+    long long  _matchCount;
+    long long  _weight;
 }
 
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) int matchCount;
-@property (nonatomic) int weight;
+@property (nonatomic) long long matchCount;
+@property (nonatomic) long long weight;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)identifier;
-- (int)matchCount;
+- (long long)matchCount;
 - (void)setIdentifier:(id)arg1;
-- (void)setMatchCount:(int)arg1;
-- (void)setWeight:(int)arg1;
-- (int)weight;
+- (void)setMatchCount:(long long)arg1;
+- (void)setWeight:(long long)arg1;
+- (long long)weight;
 
 @end

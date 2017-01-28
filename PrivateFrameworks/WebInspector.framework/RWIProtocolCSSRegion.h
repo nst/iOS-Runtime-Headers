@@ -5,12 +5,12 @@
 @interface RWIProtocolCSSRegion : RWIProtocolJSONObject
 
 @property (nonatomic) int nodeId;
-@property (nonatomic) int regionOverset;
+@property (nonatomic) long long regionOverset;
 
-- (id)initWithRegionOverset:(int)arg1 nodeId:(int)arg2;
+- (id)initWithRegionOverset:(long long)arg1 nodeId:(int)arg2;
 - (int)nodeId;
-- (int)regionOverset;
+- (long long)regionOverset;
 - (void)setNodeId:(int)arg1;
-- (void)setRegionOverset:(int)arg1;
+- (void)setRegionOverset:(long long)arg1;
 
 @end

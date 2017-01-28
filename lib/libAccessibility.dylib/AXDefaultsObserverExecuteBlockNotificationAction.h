@@ -3,19 +3,19 @@
  */
 
 @interface AXDefaultsObserverExecuteBlockNotificationAction : NSObject <AXDefaultsObserverAction> {
-    id /* block */  _block;
+    id  _block;
 }
 
-@property (nonatomic, copy) id /* block */ block;
+@property (nonatomic, copy) id block;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (id /* block */)block;
+- (id)block;
 - (void)dealloc;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (void)performForChangedDefault:(id)arg1;
-- (void)setBlock:(id /* block */)arg1;
+- (void)setBlock:(id)arg1;
 
 @end

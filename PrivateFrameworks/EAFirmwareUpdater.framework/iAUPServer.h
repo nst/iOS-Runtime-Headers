@@ -4,7 +4,7 @@
 
 @interface iAUPServer : NSObject {
     <iAUPServerDelegate> * _delegate;
-    BOOL  _escapeInProgress;
+    bool  _escapeInProgress;
     unsigned int  _firmwareImageBaseTransferAddress;
     int  _parserState;
     unsigned char  _telegramChecksum;

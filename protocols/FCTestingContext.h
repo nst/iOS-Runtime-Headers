@@ -6,6 +6,6 @@
 @required
 
 - (NSString *)insertTestArticle;
-- (NSSet *)insertTestArticlesWithCount:(unsigned int)arg1;
+- (NSSet *)insertTestArticlesWithCount:(unsigned long long)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface GEONavigationMapMatcher : NSObject {
-    BOOL  _isSimulation;
+    bool  _isSimulation;
     GEOLocationShifter * _locationShifter;
     GEONavigationMatchResult * _previousMatchResult;
     GEORoadMatcher * _roadMatcher;
@@ -11,23 +11,22 @@
     GEORouteMatcher * _routeMatcher;
 }
 
-@property (nonatomic) BOOL isSimulation;
+@property (nonatomic) bool isSimulation;
 @property (nonatomic, retain) GEONavigationMatchResult *previousMatchResult;
 @property (nonatomic, retain) GEOComposedRoute *route;
 
 - (id)_routeMatcherForRoute:(id)arg1;
 - (void)dealloc;
 - (id)initWithRoute:(id)arg1;
-- (BOOL)isSimulation;
+- (bool)isSimulation;
 - (id)matchLocation:(id)arg1 transportType:(int)arg2;
 - (id)previousMatchResult;
 - (void)resetToLocation:(id)arg1;
 - (id)route;
-- (void)setIsSimulation:(BOOL)arg1;
+- (void)setIsSimulation:(bool)arg1;
 - (void)setPreviousMatchResult:(id)arg1;
 - (void)setRoute:(id)arg1;
 - (int)transportType;
 - (id)updateForReroute:(id)arg1 location:(id)arg2;
-- (void)updateForTunnelProjection:(id)arg1 coord:(struct { double x1; double x2; })arg2;
 
 @end

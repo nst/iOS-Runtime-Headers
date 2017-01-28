@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) unsigned int currentTabIndex;
-@property (nonatomic) BOOL hasCurrentTabIndex;
-@property (nonatomic) BOOL hasNumberOfTabsOpen;
+@property (nonatomic) bool hasCurrentTabIndex;
+@property (nonatomic) bool hasNumberOfTabsOpen;
 @property (nonatomic) unsigned int numberOfTabsOpen;
 
 - (void)copyTo:(id)arg1;
@@ -21,16 +21,16 @@
 - (unsigned int)currentTabIndex;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrentTabIndex;
-- (BOOL)hasNumberOfTabsOpen;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCurrentTabIndex;
+- (bool)hasNumberOfTabsOpen;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)numberOfTabsOpen;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrentTabIndex:(unsigned int)arg1;
-- (void)setHasCurrentTabIndex:(BOOL)arg1;
-- (void)setHasNumberOfTabsOpen:(BOOL)arg1;
+- (void)setHasCurrentTabIndex:(bool)arg1;
+- (void)setHasNumberOfTabsOpen:(bool)arg1;
 - (void)setNumberOfTabsOpen:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 

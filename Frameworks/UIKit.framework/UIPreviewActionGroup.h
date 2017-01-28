@@ -7,7 +7,7 @@
     UIColor * _color;
     NSString * _identifier;
     UIImage * _image;
-    int  _style;
+    long long  _style;
     NSString * _title;
 }
 
@@ -15,16 +15,16 @@
 @property (getter=_color, setter=_setColor:, nonatomic, retain) UIColor *color;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 
 + (id)_actionGroupWithPreviewMenuItemWithSubactions:(id)arg1;
-+ (id)_actionGroupWithTitle:(id)arg1 style:(int)arg2 color:(id)arg3 actions:(id)arg4;
-+ (id)actionGroupWithTitle:(id)arg1 style:(int)arg2 actions:(id)arg3;
++ (id)_actionGroupWithTitle:(id)arg1 style:(long long)arg2 color:(id)arg3 actions:(id)arg4;
++ (id)actionGroupWithTitle:(id)arg1 style:(long long)arg2 actions:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_actions;
@@ -38,9 +38,9 @@
 - (id)image;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setTitle:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)title;
 
 @end

@@ -27,8 +27,8 @@
 
 - (void).cxx_destruct;
 - (void)_checkFilterForPreferredLanguages;
-- (id)_feedDescriptorWithIdentifier:(id)arg1 forceRecreate:(BOOL)arg2 tag:(id)arg3;
-- (void)backgroundFetchFeedsWithCompletionHandler:(id /* block */)arg1;
+- (id)_feedDescriptorWithIdentifier:(id)arg1 forceRecreate:(bool)arg2 tag:(id)arg3;
+- (void)backgroundFetchFeedsWithCompletionHandler:(id)arg1;
 - (id)context;
 - (id)feedDescriptorForArticleIDs:(id)arg1;
 - (id)feedDescriptorForArticlesInSameClusterAsArticleID:(id)arg1;
@@ -43,7 +43,7 @@
 - (id)feedUpdateQueue;
 - (id)init;
 - (id)initWithCloudContext:(id)arg1;
-- (void)prefetchForYouWithHighPriority:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)prefetchForYouWithHighPriority:(bool)arg1 completionHandler:(id)arg2;
 - (void)setContext:(id)arg1;
 - (void)setFeedDescriptorsByID:(id)arg1;
 - (void)setFeedDescriptorsLock:(id)arg1;

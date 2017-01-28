@@ -10,13 +10,13 @@
 @property (nonatomic) <FIUIHealthSettingsForceUpdatable> *forceUpdatable;
 
 - (void).cxx_destruct;
-- (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canResignFirstResponder;
+- (bool)becomeFirstResponder;
+- (bool)canBecomeFirstResponder;
+- (bool)canResignFirstResponder;
 - (id)forceUpdatable;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)inputView;
-- (BOOL)resignFirstResponder;
+- (bool)resignFirstResponder;
 - (void)setForceUpdatable:(id)arg1;
 - (void)setInputView:(id)arg1;
 

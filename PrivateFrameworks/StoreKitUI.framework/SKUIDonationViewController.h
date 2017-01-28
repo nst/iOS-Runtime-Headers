@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)_cancelButtonAction:(id)arg1;
-- (void)_configurationDidLoadWithResult:(BOOL)arg1 error:(id)arg2;
+- (void)_configurationDidLoadWithResult:(bool)arg1 error:(id)arg2;
 - (void)_finishAuthenticateWithResponse:(id)arg1 error:(id)arg2;
 - (id)_initSKUIDonationViewController;
 - (void)_loadDonationConfiguration;
@@ -27,6 +27,6 @@
 - (id)operationQueue;
 - (void)setClientContext:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

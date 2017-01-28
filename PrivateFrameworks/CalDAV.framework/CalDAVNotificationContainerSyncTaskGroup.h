@@ -14,6 +14,6 @@
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 accountInfoProvider:(id)arg4 taskManager:(id)arg5;
 - (id)notificationTypeNamesToFetch;
 - (void)setNotificationTypeNamesToFetch:(id)arg1;
-- (BOOL)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
+- (bool)shouldFetchResourceWithEtag:(id)arg1 propertiesToValues:(id)arg2;
 
 @end

@@ -6,7 +6,7 @@
     UIView * _uncroppedView;
 }
 
-+ (void)cropView:(id)arg1 toAvoidNavigationOffset:(float)arg2 presenting:(BOOL)arg3 animationDuration:(float)arg4;
++ (void)cropView:(id)arg1 toAvoidNavigationOffset:(double)arg2 presenting:(bool)arg3 animationDuration:(double)arg4;
 
 - (void).cxx_destruct;
 - (void)_performZoomTransition;

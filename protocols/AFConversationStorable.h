@@ -10,9 +10,9 @@
 - (AFDataStore *)associatedDataStore;
 - (AFDialogPhase *)dialogPhase;
 - (NSUUID *)identifier;
-- (BOOL)isVirgin;
-- (int)presentationState;
+- (bool)isVirgin;
+- (long long)presentationState;
 - (NSUUID *)revisionIdentifier;
-- (int)type;
+- (long long)type;
 
 @end

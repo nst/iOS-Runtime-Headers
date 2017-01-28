@@ -8,6 +8,6 @@
 - (void)decodeUsingCoder:(NSCoder *)arg1 contact:(CNContact *)arg2;
 - (void)encodeUsingCoder:(NSCoder *)arg1 contact:(CNContact *)arg2;
 - (id)init;
-- (BOOL)isEqualForContact:(CNContact *)arg1 other:(CNContact *)arg2;
+- (bool)isEqualForContact:(CNContact *)arg1 other:(CNContact *)arg2;
 
 @end

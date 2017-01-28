@@ -4,8 +4,8 @@
 
 @interface WFPINEntryViewController : UIViewController <WFPINEntryViewControllerProtocol> {
     NSURL * _URL;
-    id /* block */  _completion;
-    id /* block */  _dismissCompletionHandler;
+    id  _completion;
+    id  _dismissCompletionHandler;
     _UIFallbackPresentationViewController * _fallbackPresentationVC;
     NSString * _pageTitle;
     WFRemotePINEntryViewController * _remoteViewController;
@@ -13,25 +13,25 @@
     NSArray * _windowsWithDisabledRotation;
 }
 
-@property (nonatomic, copy) id /* block */ dismissCompletionHandler;
+@property (nonatomic, copy) id dismissCompletionHandler;
 
 + (Class)remoteViewControllerClass;
 + (id)serviceViewControllerClassName;
 
-- (unsigned int)_supportedInterfaceOrientationsForRootViewController;
+- (unsigned long long)_supportedInterfaceOrientationsForRootViewController;
 - (void)dealloc;
 - (id)delegate;
-- (id /* block */)dismissCompletionHandler;
-- (BOOL)hasUIWebViewSubView:(id)arg1;
-- (id)initWithURL:(id)arg1 pageTitle:(id)arg2 completion:(id /* block */)arg3;
+- (id)dismissCompletionHandler;
+- (bool)hasUIWebViewSubView:(id)arg1;
+- (id)initWithURL:(id)arg1 pageTitle:(id)arg2 completion:(id)arg3;
 - (void)insertRemoteViewController:(id)arg1;
-- (void)presentViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)setDismissCompletionHandler:(id /* block */)arg1;
-- (BOOL)shouldAutorotate;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)presentViewControllerAnimated:(bool)arg1 completion:(id)arg2;
+- (void)setDismissCompletionHandler:(id)arg1;
+- (bool)shouldAutorotate;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)userDidCancel;
 - (void)userEnteredCorrectPIN;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

@@ -5,9 +5,9 @@
 
 @required
 
-- (int)numberOfItemsInSlideshowViewController:(UIViewController *)arg1;
-- (SKUIScreenshotDataConsumer *)slideshowViewController:(UIViewController *)arg1 dataConsumerAtIndex:(int)arg2;
-- (NSURL *)slideshowViewController:(UIViewController *)arg1 imageURLAtIndex:(int)arg2;
-- (UIImage *)slideshowViewController:(UIViewController *)arg1 placeholderImageAtIndex:(int)arg2;
+- (long long)numberOfItemsInSlideshowViewController:(UIViewController *)arg1;
+- (SKUIScreenshotDataConsumer *)slideshowViewController:(UIViewController *)arg1 dataConsumerAtIndex:(long long)arg2;
+- (NSURL *)slideshowViewController:(UIViewController *)arg1 imageURLAtIndex:(long long)arg2;
+- (UIImage *)slideshowViewController:(UIViewController *)arg1 placeholderImageAtIndex:(long long)arg2;
 
 @end

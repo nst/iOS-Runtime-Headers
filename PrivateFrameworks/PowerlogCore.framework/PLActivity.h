@@ -3,31 +3,31 @@
  */
 
 @interface PLActivity : NSObject <PLActivityCriterionDelegate> {
-    id /* block */  _activityBlock;
+    id  _activityBlock;
     PLEntry * _activityEntry;
     NSArray * _criteria;
-    BOOL  _enabled;
+    bool  _enabled;
     NSString * _identifier;
-    id /* block */  _interruptBlock;
+    id  _interruptBlock;
     NSDate * _lastCompletedDate;
     PLActivityCriterion * _mustRunCriterion;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _state;
+    long long  _state;
 }
 
-@property (copy) id /* block */ activityBlock;
+@property (copy) id activityBlock;
 @property (retain) PLEntry *activityEntry;
 @property (retain) NSArray *criteria;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSString *identifier;
-@property (copy) id /* block */ interruptBlock;
+@property (copy) id interruptBlock;
 @property (retain) NSDate *lastCompletedDate;
 @property (retain) PLActivityCriterion *mustRunCriterion;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 @property (readonly) Class superclass;
 
 + (id)activityEntryKey;
@@ -35,38 +35,38 @@
 + (id)workQueue;
 
 - (void).cxx_destruct;
-- (id /* block */)activityBlock;
+- (id)activityBlock;
 - (id)activityEntry;
-- (BOOL)allCriteriaSatisfied;
+- (bool)allCriteriaSatisfied;
 - (id)criteria;
 - (id)criteriaString;
 - (id)description;
 - (void)didChangeCriterion:(id)arg1;
 - (void)disable;
 - (void)enable;
-- (BOOL)enabled;
-- (void)enumerateCriteriaWithBlock:(id /* block */)arg1;
+- (bool)enabled;
+- (void)enumerateCriteriaWithBlock:(id)arg1;
 - (id)identifier;
-- (id)initWithIdentifier:(id)arg1 withCriteria:(id)arg2 withMustRunCriterion:(id)arg3 withQueue:(id)arg4 withInterruptBlock:(id /* block */)arg5 withActivityBlock:(id /* block */)arg6;
+- (id)initWithIdentifier:(id)arg1 withCriteria:(id)arg2 withMustRunCriterion:(id)arg3 withQueue:(id)arg4 withInterruptBlock:(id)arg5 withActivityBlock:(id)arg6;
 - (void)interruptActivity;
-- (id /* block */)interruptBlock;
+- (id)interruptBlock;
 - (id)lastCompletedDate;
 - (void)logEntry;
 - (id)mustRunCriterion;
-- (BOOL)mustRunCriterionSatisfied;
+- (bool)mustRunCriterionSatisfied;
 - (id)mustRunCriterionString;
 - (id)queue;
 - (void)runActivity;
-- (void)setActivityBlock:(id /* block */)arg1;
+- (void)setActivityBlock:(id)arg1;
 - (void)setActivityEntry:(id)arg1;
 - (void)setCriteria:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setInterruptBlock:(id /* block */)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setInterruptBlock:(id)arg1;
 - (void)setLastCompletedDate:(id)arg1;
 - (void)setMustRunCriterion:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 - (void)syncWithDB;
 
 @end

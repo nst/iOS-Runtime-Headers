@@ -9,12 +9,12 @@
 + (id)labelMarkerItemWithLabelMarker:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_hasMUID;
-- (BOOL)_hasResolvablePartialInformation;
+- (bool)_hasMUID;
+- (bool)_hasResolvablePartialInformation;
 - (unsigned long long)_muid;
 - (struct { double x1; double x2; })coordinate;
 - (id)initWithLabelMarker:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)name;
 - (int)referenceFrame;
 

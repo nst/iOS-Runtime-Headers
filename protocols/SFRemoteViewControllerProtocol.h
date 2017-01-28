@@ -5,11 +5,11 @@
 
 @required
 
-- (void)didFinishInitialLoad:(BOOL)arg1;
+- (void)didFinishInitialLoad:(bool)arg1;
 - (void)didLoadWebView;
 - (void)executeCustomActivityProxyID:(NSNumber *)arg1;
 - (void)fetchHostAppCustomActivitiesForURL:(NSURL *)arg1 title:(NSString *)arg2;
-- (void)setRemoteSwipeGestureEnabled:(BOOL)arg1;
+- (void)setRemoteSwipeGestureEnabled:(bool)arg1;
 - (void)willDismissServiceViewController;
 - (void)willOpenURLInHostApplication:(NSURL *)arg1;
 - (void)willUpdateStatusBarStyle:(NSNumber *)arg1;

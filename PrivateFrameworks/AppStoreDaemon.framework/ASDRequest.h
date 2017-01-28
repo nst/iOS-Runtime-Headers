@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1 error:(id)arg2;
-- (void)_startRequestType:(unsigned int)arg1 withOptions:(id)arg2;
+- (void)_startRequestType:(unsigned long long)arg1 withOptions:(id)arg2;
 - (void)requestCompletedWithResponse:(id)arg1 error:(id)arg2;
 
 @end

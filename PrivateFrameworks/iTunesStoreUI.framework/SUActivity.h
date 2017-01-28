@@ -17,7 +17,7 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;

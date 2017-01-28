@@ -4,6 +4,6 @@
 
 @interface AFSiriAcousticIDRequest : NSObject <AFSiriExternalRequest>
 
-- (void)performRequestWithCompletion:(id /* block */)arg1;
+- (void)performRequestWithCompletion:(id)arg1;
 
 @end

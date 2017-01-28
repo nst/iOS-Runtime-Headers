@@ -10,14 +10,14 @@
 @property (nonatomic, retain) CNPair *pair;
 @property (nonatomic, readonly) id right;
 
-+ (id)eitherWithBool:(BOOL)arg1 error:(id)arg2;
++ (id)eitherWithBool:(bool)arg1 error:(id)arg2;
 + (id)eitherWithLeft:(id)arg1 right:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithLeft:(id)arg1 right:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)left;
 - (id)pair;
 - (id)right;

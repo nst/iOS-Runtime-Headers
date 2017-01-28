@@ -4,9 +4,9 @@
 
 @interface UIPPTRequestAction : BSAction
 
-- (int)UIActionType;
-- (id)initWithDesiredOrientation:(int)arg1;
-- (int)orientationRequested;
-- (BOOL)shouldChangeOrientation;
+- (long long)UIActionType;
+- (id)initWithDesiredOrientation:(long long)arg1;
+- (long long)orientationRequested;
+- (bool)shouldChangeOrientation;
 
 @end

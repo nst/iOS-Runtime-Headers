@@ -4,16 +4,16 @@
 
 @interface CXCallDirectoryExtensionContext : NSExtensionContext <CXCallDirectoryProviderVendorProtocol> {
     <CXCallDirectoryExtensionContextDelegate> * _delegate;
-    CXCallDirectoryBlockingEntryData * _pendingBlockingEntryData;
-    CXCallDirectoryIdentificationEntryData * _pendingIdentificationEntryData;
+    CXCallDirectoryBlockingEntryMutableData * _pendingBlockingEntryData;
+    CXCallDirectoryIdentificationEntryMutableData * _pendingIdentificationEntryData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CXCallDirectoryExtensionContextDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) CXCallDirectoryBlockingEntryData *pendingBlockingEntryData;
-@property (nonatomic, retain) CXCallDirectoryIdentificationEntryData *pendingIdentificationEntryData;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, retain) CXCallDirectoryBlockingEntryMutableData *pendingBlockingEntryData;
+@property (nonatomic, retain) CXCallDirectoryIdentificationEntryMutableData *pendingIdentificationEntryData;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
@@ -22,14 +22,14 @@
 - (void).cxx_destruct;
 - (void)_flushPendingBlockingEntryData;
 - (void)_flushPendingIdentificationPhoneNumbersAndLabels;
-- (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1 synchronous:(BOOL)arg2;
+- (id)_remoteObjectProxyWithErrorHandler:(id)arg1 synchronous:(bool)arg2;
 - (void)addBlockingEntryWithNextSequentialPhoneNumber:(long long)arg1;
 - (void)addIdentificationEntryWithNextSequentialPhoneNumber:(long long)arg1 label:(id)arg2;
-- (void)completeRequestWithCompletionHandler:(id /* block */)arg1;
+- (void)completeRequestWithCompletionHandler:(id)arg1;
 - (id)delegate;
 - (id)pendingBlockingEntryData;
 - (id)pendingIdentificationEntryData;
-- (oneway void)requestFailedWithError:(id)arg1 reply:(id /* block */)arg2;
+- (oneway void)requestFailedWithError:(id)arg1 reply:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setPendingBlockingEntryData:(id)arg1;
 - (void)setPendingIdentificationEntryData:(id)arg1;

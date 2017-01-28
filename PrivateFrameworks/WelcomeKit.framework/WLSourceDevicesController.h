@@ -15,9 +15,9 @@
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)sourceDevicesWithCompletion:(id /* block */)arg1;
-- (void)startWiFiAndDeviceDiscoveryWithCompletion:(id /* block */)arg1;
-- (void)stopDeviceDiscoveryWithCompletion:(id /* block */)arg1;
-- (void)stopWiFiAndDeviceDiscoveryWithCompletion:(id /* block */)arg1;
+- (void)sourceDevicesWithCompletion:(id)arg1;
+- (void)startWiFiAndDeviceDiscoveryWithCompletion:(id)arg1;
+- (void)stopDeviceDiscoveryWithCompletion:(id)arg1;
+- (void)stopWiFiAndDeviceDiscoveryWithCompletion:(id)arg1;
 
 @end

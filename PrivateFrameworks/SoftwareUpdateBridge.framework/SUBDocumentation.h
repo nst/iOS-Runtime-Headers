@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSData *releaseNotes;
 @property (nonatomic, retain) NSData *releaseNotesSummary;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_loadBundleResources;
 - (id)_resourceFromBundle:(struct __CFBundle { }*)arg1 forKey:(id)arg2;
@@ -29,7 +29,7 @@
 - (id)humanReadableUpdateName;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDocumentationBundleURL:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)licenseAgreement;
 - (id)releaseNotes;
 - (id)releaseNotesSummary;

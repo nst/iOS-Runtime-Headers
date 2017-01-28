@@ -5,27 +5,27 @@
 @interface _SBFVibrantTableViewHeaderFooterView : UITableViewHeaderFooterView {
     _UIBackdropView * _backdrop;
     NSString * _backdropGroupName;
-    int  _graphicsQuality;
+    long long  _graphicsQuality;
     UIView * _plusDView;
-    BOOL  _wantsPlusDLayer;
+    bool  _wantsPlusDLayer;
 }
 
 @property (nonatomic, copy) NSString *backdropGroupName;
-@property (nonatomic) int graphicsQuality;
-@property (nonatomic) BOOL wantsPlusDLayer;
+@property (nonatomic) long long graphicsQuality;
+@property (nonatomic) bool wantsPlusDLayer;
 
-+ (id)defaultBackgroundColorForGraphicsQuality:(int)arg1;
++ (id)defaultBackgroundColorForGraphicsQuality:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)backdropGroupName;
-- (int)graphicsQuality;
+- (long long)graphicsQuality;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (int)initialGraphicsQuality;
+- (long long)initialGraphicsQuality;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setFloating:(BOOL)arg1;
-- (void)setGraphicsQuality:(int)arg1;
-- (void)setWantsPlusDLayer:(BOOL)arg1;
-- (BOOL)wantsPlusDLayer;
+- (void)setFloating:(bool)arg1;
+- (void)setGraphicsQuality:(long long)arg1;
+- (void)setWantsPlusDLayer:(bool)arg1;
+- (bool)wantsPlusDLayer;
 
 @end

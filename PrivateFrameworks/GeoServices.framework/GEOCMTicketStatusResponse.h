@@ -15,11 +15,11 @@
 }
 
 @property (nonatomic, retain) GEORPDetails *details;
-@property (nonatomic, readonly) BOOL hasDetails;
-@property (nonatomic, readonly) BOOL hasNotification;
-@property (nonatomic) BOOL hasSubmissionDate;
-@property (nonatomic, readonly) BOOL hasTicketId;
-@property (nonatomic) BOOL hasTicketState;
+@property (nonatomic, readonly) bool hasDetails;
+@property (nonatomic, readonly) bool hasNotification;
+@property (nonatomic) bool hasSubmissionDate;
+@property (nonatomic, readonly) bool hasTicketId;
+@property (nonatomic) bool hasTicketState;
 @property (nonatomic, retain) GEORPNotification *notification;
 @property (nonatomic) double submissionDate;
 @property (nonatomic, retain) NSString *ticketId;
@@ -32,19 +32,19 @@
 - (id)description;
 - (id)details;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDetails;
-- (BOOL)hasNotification;
-- (BOOL)hasSubmissionDate;
-- (BOOL)hasTicketId;
-- (BOOL)hasTicketState;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDetails;
+- (bool)hasNotification;
+- (bool)hasSubmissionDate;
+- (bool)hasTicketId;
+- (bool)hasTicketState;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)notification;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDetails:(id)arg1;
-- (void)setHasSubmissionDate:(BOOL)arg1;
-- (void)setHasTicketState:(BOOL)arg1;
+- (void)setHasSubmissionDate:(bool)arg1;
+- (void)setHasTicketState:(bool)arg1;
 - (void)setNotification:(id)arg1;
 - (void)setSubmissionDate:(double)arg1;
 - (void)setTicketId:(id)arg1;

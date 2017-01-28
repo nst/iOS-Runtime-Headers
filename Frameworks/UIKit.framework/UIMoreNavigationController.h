@@ -8,11 +8,11 @@
     UIViewController * _originalRootViewController;
 }
 
-@property (nonatomic) BOOL allowsCustomizing;
+@property (nonatomic) bool allowsCustomizing;
 @property (nonatomic) UIViewController *displayedViewController;
 @property (nonatomic, readonly) UIViewController *moreListController;
 @property (nonatomic, retain) NSArray *moreViewControllers;
-@property (nonatomic) BOOL moreViewControllersChanged;
+@property (nonatomic) bool moreViewControllersChanged;
 
 + (Class)_moreListControllerClass;
 
@@ -21,20 +21,20 @@
 - (id)_preparedViewController:(id)arg1;
 - (void)_redisplayMoreTableView;
 - (void)_restoreOriginalNavigationController;
-- (id)_stateRestorationParentForChildViewController:(id)arg1 index:(unsigned int*)arg2;
-- (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
-- (BOOL)allowsCustomizing;
-- (void)didShowViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)_stateRestorationParentForChildViewController:(id)arg1 index:(unsigned long long*)arg2;
+- (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
+- (bool)allowsCustomizing;
+- (void)didShowViewController:(id)arg1 animated:(bool)arg2;
 - (id)displayedViewController;
 - (id)init;
 - (id)moreListController;
 - (id)moreViewControllers;
-- (BOOL)moreViewControllersChanged;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (bool)moreViewControllersChanged;
+- (void)pushViewController:(id)arg1 animated:(bool)arg2;
 - (void)restoreOriginalNavigationControllerIfNecessary:(id)arg1;
-- (void)setAllowsCustomizing:(BOOL)arg1;
+- (void)setAllowsCustomizing:(bool)arg1;
 - (void)setDisplayedViewController:(id)arg1;
 - (void)setMoreViewControllers:(id)arg1;
-- (void)setMoreViewControllersChanged:(BOOL)arg1;
+- (void)setMoreViewControllersChanged:(bool)arg1;
 
 @end

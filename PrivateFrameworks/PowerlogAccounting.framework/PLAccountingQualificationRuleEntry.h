@@ -11,9 +11,9 @@
 + (void)load;
 
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithRootNodeID:(id)arg1 withQualificationID:(id)arg2 withEntryDate:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)qualificationID;
 - (id)rootNodeID;
 

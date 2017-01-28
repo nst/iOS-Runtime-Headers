@@ -29,7 +29,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AWDNFCVersions *metric;
 @property (nonatomic) unsigned int nfccFWRevision;
 @property (nonatomic) unsigned int nfccFWVersion;
@@ -58,7 +58,7 @@
 
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (id)metric;
 - (unsigned int)nfccFWRevision;

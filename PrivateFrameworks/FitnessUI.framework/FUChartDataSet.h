@@ -6,23 +6,23 @@
     NSArray * _data;
     <FUChartDataSetDataSource> * _dataSource;
     NSArray * _labels;
-    int  _tag;
+    long long  _tag;
 }
 
 @property (nonatomic) <FUChartDataSetDataSource> *dataSource;
-@property (nonatomic) int tag;
+@property (nonatomic) long long tag;
 
 - (void).cxx_destruct;
-- (id)_getChartPointAtIndex:(unsigned int)arg1;
+- (id)_getChartPointAtIndex:(unsigned long long)arg1;
 - (id)_getChartPoints;
 - (id)_getLabels;
-- (unsigned int)_getNumberOfDataPoints;
-- (id)_getPointAtIndex:(unsigned int)arg1;
+- (unsigned long long)_getNumberOfDataPoints;
+- (id)_getPointAtIndex:(unsigned long long)arg1;
 - (id)_getPoints;
 - (void)addDataPointWithXValue:(id)arg1 yValue:(id)arg2;
 - (id)dataSource;
 - (id)description;
-- (id)labelsForPointAtIndex:(unsigned int)arg1;
+- (id)labelsForPointAtIndex:(unsigned long long)arg1;
 - (id)labelsForSet;
 - (id)maxXValue;
 - (id)maxYValue;
@@ -30,16 +30,16 @@
 - (id)minYValue;
 - (void)normalizeData;
 - (void)normalizeDataWithMinYValue:(id)arg1 maxYValue:(id)arg2 minXValue:(id)arg3 maxXValue:(id)arg4;
-- (unsigned int)numDataPoints;
-- (id)pointAtIndex:(unsigned int)arg1;
+- (unsigned long long)numDataPoints;
+- (id)pointAtIndex:(unsigned long long)arg1;
 - (void)reloadData;
-- (void)reloadDataPointAtIndex:(unsigned int)arg1;
-- (void)removeDataPointAtIndex:(unsigned int)arg1;
+- (void)reloadDataPointAtIndex:(unsigned long long)arg1;
+- (void)removeDataPointAtIndex:(unsigned long long)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setTag:(int)arg1;
-- (int)tag;
-- (id)xValueForPointAtIndex:(unsigned int)arg1;
-- (id)yValueForPointAtIndex:(unsigned int)arg1;
-- (id)yValueForPointAtIndex:(unsigned int)arg1 key:(id)arg2;
+- (void)setTag:(long long)arg1;
+- (long long)tag;
+- (id)xValueForPointAtIndex:(unsigned long long)arg1;
+- (id)yValueForPointAtIndex:(unsigned long long)arg1;
+- (id)yValueForPointAtIndex:(unsigned long long)arg1 key:(id)arg2;
 
 @end

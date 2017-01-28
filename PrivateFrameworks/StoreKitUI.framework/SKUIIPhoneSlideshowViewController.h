@@ -8,7 +8,7 @@
     <SKUISlideshowViewControllerDataSource> * _dataSource;
     <SKUISlideshowViewControllerDelegate> * _delegate;
     NSMutableArray * _images;
-    int  _indexToScrollToOnLoadView;
+    long long  _indexToScrollToOnLoadView;
     NSOperationQueue * _operationQueue;
     UIPageControl * _pageControl;
     NSMutableDictionary * _placeholderImages;
@@ -16,25 +16,25 @@
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
-@property (nonatomic) int currentIndex;
+@property (nonatomic) long long currentIndex;
 @property (nonatomic) <SKUISlideshowViewControllerDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUISlideshowViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_doneAction:(id)arg1;
-- (id)_imageAtIndex:(int)arg1;
-- (id)_placeholderImageAtIndex:(int)arg1;
+- (id)_imageAtIndex:(long long)arg1;
+- (id)_placeholderImageAtIndex:(long long)arg1;
 - (void)_reloadPageControl;
 - (void)_reloadSize;
-- (void)_setImage:(id)arg1 atIndex:(int)arg2;
+- (void)_setImage:(id)arg1 atIndex:(long long)arg2;
 - (id)clientContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (int)currentIndex;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (long long)currentIndex;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
@@ -43,10 +43,10 @@
 - (void)reloadData;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setCurrentIndex:(int)arg1;
+- (void)setCurrentIndex:(long long)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLayoutSubviews;
 
 @end

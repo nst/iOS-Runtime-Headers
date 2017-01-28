@@ -12,17 +12,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_GEOCountryConfigurationServerProxyDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)_determineCurrentCountryCode:(id /* block */)arg1;
+- (void)_determineCurrentCountryCode:(id)arg1;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_scheduleUpdate;
-- (void)_updateCountryCode:(id /* block */)arg1;
+- (void)_updateCountryCode:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)updateCountryCode:(id /* block */)arg1;
+- (void)updateCountryCode:(id)arg1;
 
 @end

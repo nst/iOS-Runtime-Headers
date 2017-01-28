@@ -5,37 +5,37 @@
 @interface SCRDUSBDevice : NSObject {
     struct IOUSBDeviceStruct300 {} ** _device;
     struct IOUSBInterfaceStruct220 {} ** _interface;
-    BOOL  _isConfigured;
-    BOOL  _isOpen;
+    bool  _isConfigured;
+    bool  _isOpen;
     unsigned int  _notification;
     struct IONotificationPort { } * _notificationPort;
     NSString * _privateRunLoopMode;
 }
 
-- (unsigned long)_transferData:(void*)arg1 withSize:(unsigned long)arg2 toPipe:(unsigned char)arg3 withTimeout:(double)arg4 withFunction:(int (*)arg5;
+- (unsigned long long)_transferData:(void*)arg1 withSize:(unsigned long long)arg2 toPipe:(unsigned char)arg3 withTimeout:(double)arg4 withFunction:(int (*)arg5;
 - (void)abortPipe:(unsigned char)arg1;
-- (BOOL)clearPipe:(unsigned char)arg1 bothEnds:(BOOL)arg2;
-- (BOOL)close;
+- (bool)clearPipe:(unsigned char)arg1 bothEnds:(bool)arg2;
+- (bool)close;
 - (void)dealloc;
-- (BOOL)getInformationForPipe:(unsigned char)arg1 direction:(char *)arg2 number:(char *)arg3 transferType:(char *)arg4 maxPacketSize:(unsigned short*)arg5 interval:(char *)arg6;
+- (bool)getInformationForPipe:(unsigned char)arg1 direction:(char *)arg2 number:(char *)arg3 transferType:(char *)arg4 maxPacketSize:(unsigned short*)arg5 interval:(char *)arg6;
 - (id)initWithIOObject:(unsigned int)arg1;
-- (BOOL)isConfigured;
-- (BOOL)isOpen;
+- (bool)isConfigured;
+- (bool)isOpen;
 - (unsigned char)numberOfConfigurations;
-- (BOOL)open;
-- (BOOL)openWithSeize:(BOOL)arg1;
-- (long)product;
-- (unsigned long)readData:(void*)arg1 withSize:(unsigned long)arg2 fromBulkPipe:(unsigned char)arg3 withNoDataTimeout:(unsigned long)arg4 andCompletionTimeOut:(unsigned long)arg5;
-- (BOOL)readData:(void*)arg1 withSize:(unsigned int*)arg2 fromPipe:(unsigned char)arg3;
-- (unsigned long)readData:(void*)arg1 withSize:(unsigned long)arg2 fromPipe:(unsigned char)arg3 withTimeout:(double)arg4;
-- (void)registerForDisconnectNotifications:(BOOL)arg1;
-- (BOOL)reset;
-- (BOOL)sendControlRequest:(unsigned char)arg1 type:(unsigned char)arg2 value:(unsigned short)arg3 index:(unsigned short)arg4 data:(void*)arg5 size:(unsigned short)arg6 sizeTransferred:(unsigned int*)arg7 pipe:(unsigned char)arg8 timeout:(double)arg9;
-- (BOOL)setAlternateInterface:(unsigned char)arg1;
-- (BOOL)setConfiguration:(unsigned char)arg1;
-- (BOOL)setInterface:(unsigned char)arg1;
-- (long)vendor;
-- (BOOL)writeData:(void*)arg1 withSize:(unsigned long)arg2 toBulkPipe:(unsigned char)arg3 withNoDataTimeout:(unsigned long)arg4 andCompletionTimeOut:(unsigned long)arg5;
-- (unsigned long)writeData:(void*)arg1 withSize:(unsigned long)arg2 toPipe:(unsigned char)arg3 withTimeout:(double)arg4;
+- (bool)open;
+- (bool)openWithSeize:(bool)arg1;
+- (int)product;
+- (unsigned long long)readData:(void*)arg1 withSize:(unsigned long long)arg2 fromBulkPipe:(unsigned char)arg3 withNoDataTimeout:(unsigned int)arg4 andCompletionTimeOut:(unsigned int)arg5;
+- (bool)readData:(void*)arg1 withSize:(unsigned long long*)arg2 fromPipe:(unsigned char)arg3;
+- (unsigned long long)readData:(void*)arg1 withSize:(unsigned long long)arg2 fromPipe:(unsigned char)arg3 withTimeout:(double)arg4;
+- (void)registerForDisconnectNotifications:(bool)arg1;
+- (bool)reset;
+- (bool)sendControlRequest:(unsigned char)arg1 type:(unsigned char)arg2 value:(unsigned short)arg3 index:(unsigned short)arg4 data:(void*)arg5 size:(unsigned short)arg6 sizeTransferred:(unsigned long long*)arg7 pipe:(unsigned char)arg8 timeout:(double)arg9;
+- (bool)setAlternateInterface:(unsigned char)arg1;
+- (bool)setConfiguration:(unsigned char)arg1;
+- (bool)setInterface:(unsigned char)arg1;
+- (int)vendor;
+- (bool)writeData:(void*)arg1 withSize:(unsigned long long)arg2 toBulkPipe:(unsigned char)arg3 withNoDataTimeout:(unsigned int)arg4 andCompletionTimeOut:(unsigned int)arg5;
+- (unsigned long long)writeData:(void*)arg1 withSize:(unsigned long long)arg2 toPipe:(unsigned char)arg3 withTimeout:(double)arg4;
 
 @end

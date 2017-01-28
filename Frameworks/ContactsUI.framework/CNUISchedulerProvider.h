@@ -9,8 +9,8 @@
 @property (nonatomic, retain) <CNScheduler> *lowPriorityBackgroundProvider;
 
 - (void).cxx_destruct;
-- (id)backgroundSchedulerWithQualityOfService:(unsigned int)arg1;
-- (id)initWithBackgroundScheduler:(id)arg1 mainThreadScheduler:(id)arg2 immediateScheduler:(id)arg3 serialSchedulerProvider:(id /* block */)arg4 synchronousSerialSchedulerProvider:(id /* block */)arg5;
+- (id)backgroundSchedulerWithQualityOfService:(unsigned long long)arg1;
+- (id)initWithBackgroundScheduler:(id)arg1 mainThreadScheduler:(id)arg2 immediateScheduler:(id)arg3 serialSchedulerProvider:(id)arg4 synchronousSerialSchedulerProvider:(id)arg5;
 - (id)lowPriorityBackgroundProvider;
 - (void)setLowPriorityBackgroundProvider:(id)arg1;
 

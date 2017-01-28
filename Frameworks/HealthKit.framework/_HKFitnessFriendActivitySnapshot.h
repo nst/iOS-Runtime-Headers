@@ -10,6 +10,7 @@
     double  _energyBurned;
     double  _energyBurnedGoal;
     NSUUID * _friendUUID;
+    bool  _hasCarriedForwardGoals;
     double  _pushCount;
     long long  _snapshotIndex;
     NSDate * _snapshotUploadedDate;
@@ -17,7 +18,7 @@
     double  _stepCount;
     NSNumber * _timeZoneOffsetFromUTCForNoon;
     double  _walkingAndRunningDistance;
-    int  _wheelchairUse;
+    long long  _wheelchairUse;
 }
 
 @property (nonatomic) double activeHours;
@@ -26,6 +27,7 @@
 @property (nonatomic) double briskMinutes;
 @property (nonatomic) double briskMinutesGoal;
 @property (nonatomic, readonly) double briskMinutesGoalPercentage;
+@property (nonatomic, readonly) HDFitnessFriendsCloudKitCodableActivitySnapshot *codableSnapshot;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double energyBurned;
@@ -34,7 +36,8 @@
 @property (nonatomic, readonly) NSDate *filter_date;
 @property (nonatomic, readonly) NSUUID *filter_friendUUID;
 @property (nonatomic, retain) NSUUID *friendUUID;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasCarriedForwardGoals;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double pushCount;
 @property (nonatomic) long long snapshotIndex;
 @property (nonatomic, retain) NSDate *snapshotUploadedDate;
@@ -44,7 +47,7 @@
 @property (nonatomic, readonly) NSTimeZone *timeZone;
 @property (nonatomic, retain) NSNumber *timeZoneOffsetFromUTCForNoon;
 @property (nonatomic) double walkingAndRunningDistance;
-@property (nonatomic) int wheelchairUse;
+@property (nonatomic) long long wheelchairUse;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
@@ -52,7 +55,7 @@
 + (id)_fitnessFriendActivitySnapshotWithSnapshotIndex:(long long)arg1 startDate:(id)arg2 endDate:(id)arg3 sourceUUID:(id)arg4;
 + (id)_mostSignificantSnapshotAmongSnapshots:(id)arg1;
 + (id)snapshotWithActivitySummary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)activeHours;
@@ -68,6 +71,7 @@
 - (double)energyBurnedGoal;
 - (double)energyBurnedGoalPercentage;
 - (id)friendUUID;
+- (bool)hasCarriedForwardGoals;
 - (id)initWithCoder:(id)arg1;
 - (double)pushCount;
 - (void)setActiveHours:(double)arg1;
@@ -77,6 +81,7 @@
 - (void)setEnergyBurned:(double)arg1;
 - (void)setEnergyBurnedGoal:(double)arg1;
 - (void)setFriendUUID:(id)arg1;
+- (void)setHasCarriedForwardGoals:(bool)arg1;
 - (void)setPushCount:(double)arg1;
 - (void)setSnapshotIndex:(long long)arg1;
 - (void)setSnapshotUploadedDate:(id)arg1;
@@ -84,7 +89,7 @@
 - (void)setStepCount:(double)arg1;
 - (void)setTimeZoneOffsetFromUTCForNoon:(id)arg1;
 - (void)setWalkingAndRunningDistance:(double)arg1;
-- (void)setWheelchairUse:(int)arg1;
+- (void)setWheelchairUse:(long long)arg1;
 - (long long)snapshotIndex;
 - (id)snapshotUploadedDate;
 - (id)sourceUUID;
@@ -92,7 +97,7 @@
 - (id)timeZone;
 - (id)timeZoneOffsetFromUTCForNoon;
 - (double)walkingAndRunningDistance;
-- (int)wheelchairUse;
+- (long long)wheelchairUse;
 
 // Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
 
@@ -104,11 +109,13 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (id)fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1 friendUUID:(id)arg2 uploadedDate:(id)arg3;
 + (id)fitnessFriendActivitySnapshotWithRecord:(id)arg1 friendUUID:(id)arg2;
 + (Class)hd_dataEntityClass;
 
-- (BOOL)addCodableRepresentationToCollection:(id)arg1;
+- (bool)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
+- (id)codableSnapshot;
 - (id)filter_date;
 - (id)filter_friendUUID;
 - (id)recordWithZoneID:(id)arg1;

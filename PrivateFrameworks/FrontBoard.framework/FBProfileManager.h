@@ -3,13 +3,13 @@
  */
 
 @interface FBProfileManager : NSObject {
-    BOOL  _started;
+    bool  _started;
     NSObject<OS_dispatch_queue> * _workQueue;
     NSSet * _workQueue_managedApplicationBundleIDs;
     NSMutableDictionary * _workQueue_profilesBySignerIdentity;
 }
 
-@property (getter=isStarted, nonatomic, readonly) BOOL started;
+@property (getter=isStarted, nonatomic, readonly) bool started;
 
 + (id)sharedInstance;
 
@@ -19,8 +19,8 @@
 - (void)_workQueue_reloadProfiles;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isManaged:(id)arg1;
-- (BOOL)isStarted;
+- (bool)isManaged:(id)arg1;
+- (bool)isStarted;
 - (id)profilesForSignerIdentity:(id)arg1;
 - (void)startService;
 

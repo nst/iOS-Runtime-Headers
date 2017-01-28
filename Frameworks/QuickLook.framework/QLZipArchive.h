@@ -10,9 +10,9 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_reopenWithError:(id*)arg1;
+- (bool)_reopenWithError:(id*)arg1;
 - (void)dealloc;
-- (void)enumerateEntriesWithHandler:(id /* block */)arg1;
+- (void)enumerateEntriesWithHandler:(id)arg1;
 - (id)fileWrapper;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (id)initWithURL:(id)arg1 error:(id*)arg2;

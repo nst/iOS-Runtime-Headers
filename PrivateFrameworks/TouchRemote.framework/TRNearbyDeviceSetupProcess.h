@@ -3,44 +3,44 @@
  */
 
 @interface TRNearbyDeviceSetupProcess : NSObject <AKAppleIDAuthenticationInAppContextDelegate> {
-    BOOL  _isCancelling;
+    bool  _isCancelling;
     UIViewController * _presentingViewController;
     AKDevice * _proxiedDevice;
     TRSession * _session;
-    id /* block */  _stateChangedHandler;
+    id  _stateChangedHandler;
     NSSet * _unauthenticatedAccountServices;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isCancelling;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isCancelling;
 @property (nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, retain) AKDevice *proxiedDevice;
 @property (nonatomic, retain) TRSession *session;
-@property (nonatomic, copy) id /* block */ stateChangedHandler;
+@property (nonatomic, copy) id stateChangedHandler;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSSet *unauthenticatedAccountServices;
 
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (void)_abortSetupWithError:(int)arg1;
+- (void)_abortSetupWithError:(long long)arg1;
 - (void)_authenticateWithAccountServices:(id)arg1;
 - (void)_cancelRequestFinished;
-- (void)_companionAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 completion:(id /* block */)arg3;
+- (void)_companionAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 completion:(id)arg3;
 - (void)_handleActivationResponse:(id)arg1 withError:(id)arg2 fromSession:(id)arg3;
 - (void)_handleAuthenticationCompleted;
-- (void)_handleCompanionAuthenticationResponse:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handleCompanionAuthenticationResponse:(id)arg1 completion:(id)arg2;
 - (void)_handleConfigurationResponse:(id)arg1 withError:(id)arg2 fromSession:(id)arg3;
 - (void)_handleHandshakeResponse:(id)arg1 withError:(id)arg2 fromSession:(id)arg3;
 - (void)_handleNetworkResponse:(id)arg1 withError:(id)arg2 fromSession:(id)arg3;
-- (void)_handleProxyAuthenticationResponse:(id)arg1 completion:(id /* block */)arg2;
-- (void)_proxyAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 completion:(id /* block */)arg3;
-- (void)_proxyAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 proxiedDevice:(id)arg3 completion:(id /* block */)arg4;
+- (void)_handleProxyAuthenticationResponse:(id)arg1 completion:(id)arg2;
+- (void)_proxyAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 completion:(id)arg3;
+- (void)_proxyAuthenticationWithAccount:(id)arg1 targetedAccountServices:(id)arg2 proxiedDevice:(id)arg3 completion:(id)arg4;
 - (void)_sendActivationRequestWithSession:(id)arg1;
 - (void)_sendConfigurationRequestWithSession:(id)arg1;
-- (void)_sendFinishedRequest:(BOOL)arg1 error:(int)arg2;
+- (void)_sendFinishedRequest:(bool)arg1 error:(long long)arg2;
 - (void)_sendHandshakeRequestWithSession:(id)arg1;
 - (void)_sendNetworkRequestWithSession:(id)arg1;
 - (void)contextDidDismissLoginAlertController:(id)arg1;
@@ -48,18 +48,18 @@
 - (void)contextWillDismissLoginAlertController:(id)arg1;
 - (id)initWithSession:(id)arg1 presentingViewController:(id)arg2;
 - (void)invalidateProcess;
-- (BOOL)isCancelling;
+- (bool)isCancelling;
 - (id)presentingViewController;
 - (id)proxiedDevice;
 - (id)session;
-- (void)setIsCancelling:(BOOL)arg1;
+- (void)setIsCancelling:(bool)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setProxiedDevice:(id)arg1;
 - (void)setSession:(id)arg1;
-- (void)setStateChangedHandler:(id /* block */)arg1;
+- (void)setStateChangedHandler:(id)arg1;
 - (void)setUnauthenticatedAccountServices:(id)arg1;
 - (void)startProcess;
-- (id /* block */)stateChangedHandler;
+- (id)stateChangedHandler;
 - (id)unauthenticatedAccountServices;
 
 @end

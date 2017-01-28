@@ -13,13 +13,13 @@
 @property (nonatomic, readonly) HDDaemon *daemon;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) HDServer *server;
 @property (readonly) Class superclass;
 
-+ (BOOL)_isClientEntitled:(id)arg1 error:(id*)arg2;
-+ (BOOL)_isDeviceSupportedWithBehavior:(id)arg1 error:(id*)arg2;
++ (bool)_isClientEntitled:(id)arg1 error:(id*)arg2;
++ (bool)_isDeviceSupportedWithBehavior:(id)arg1 error:(id*)arg2;
 + (id)endpointWithClient:(id)arg1 healthDaemon:(id)arg2;
 
 - (void).cxx_destruct;
@@ -28,7 +28,7 @@
 - (id)initWithClient:(id)arg1 healthDaemon:(id)arg2;
 - (void)invalidate;
 - (id)queue;
-- (void)remote_serverForConfiguration:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_serverForConfiguration:(id)arg1 completion:(id)arg2;
 - (id)server;
 
 @end

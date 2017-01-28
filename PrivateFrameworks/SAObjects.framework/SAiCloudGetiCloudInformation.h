@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)query;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setQuery:(id)arg1;
 
 @end

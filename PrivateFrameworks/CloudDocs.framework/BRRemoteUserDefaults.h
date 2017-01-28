@@ -7,16 +7,17 @@
 }
 
 @property (nonatomic, readonly) NSSet *excludedExtensionsWorthPreserving;
-@property (nonatomic, readonly) NSSet *excludedFilenamesWorthPreserving;
+@property (nonatomic, readonly) NSSet *excludedFilenamesWorthWarningAtLogout;
 
 + (id)defaultExcludedExtensionsWorthPreserving;
 + (id)defaultExcludedFilenamesWorthPreserving;
++ (id)defaultExcludedFilenamesWorthWarningAtLogout;
 + (id)sharedDefaults;
 
 - (void).cxx_destruct;
 - (id)_init;
 - (id)excludedExtensionsWorthPreserving;
-- (id)excludedFilenamesWorthPreserving;
+- (id)excludedFilenamesWorthWarningAtLogout;
 - (id)init;
 
 @end

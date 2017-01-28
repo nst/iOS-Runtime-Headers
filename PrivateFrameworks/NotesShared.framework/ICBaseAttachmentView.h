@@ -5,26 +5,26 @@
 @interface ICBaseAttachmentView : UIView {
     ICAttachment * _attachment;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _attachmentContentSize;
-    BOOL  _selected;
+    bool  _selected;
     ICTextAttachment * _textAttachment;
 }
 
 @property (nonatomic) ICAttachment *attachment;
-@property (nonatomic) struct CGSize { float x1; float x2; } attachmentContentSize;
-@property (nonatomic) BOOL selected;
+@property (nonatomic) struct CGSize { double x1; double x2; } attachmentContentSize;
+@property (nonatomic) bool selected;
 @property (nonatomic) ICTextAttachment *textAttachment;
 
 - (void).cxx_destruct;
 - (void)addKVObserversForAttachment:(id)arg1;
 - (id)attachment;
-- (struct CGSize { float x1; float x2; })attachmentContentSize;
+- (struct CGSize { double x1; double x2; })attachmentContentSize;
 - (void)attachmentDidLoad:(id)arg1;
 - (void)attachmentPreviewImagesDidUpdate:(id)arg1;
 - (void)attachmentWillBeDeleted:(id)arg1;
-- (BOOL)cancelDidScrollIntoVisibleRange;
+- (bool)cancelDidScrollIntoVisibleRange;
 - (void)contentSizeCategoryDidChange;
 - (void)dealloc;
 - (void)didChangeAttachment;
@@ -36,10 +36,10 @@
 - (void)mediaDidLoad:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeKVOObserversForAttachment:(id)arg1;
-- (BOOL)selected;
+- (bool)selected;
 - (void)setAttachment:(id)arg1;
-- (void)setAttachmentContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setAttachmentContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setTextAttachment:(id)arg1;
 - (id)textAttachment;
 - (void)willChangeAttachment;

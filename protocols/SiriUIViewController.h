@@ -8,16 +8,17 @@
 - (AceObject *)aceObject;
 - (void)setAceObject:(AceObject *)arg1;
 - (void)siriDidDeactivate;
-- (void)siriWillActivateFromSource:(int)arg1;
+- (void)siriWillActivateFromSource:(long long)arg1;
 - (void)wasAddedToTranscript;
 
 @optional
 
-- (float)desiredHeight;
-- (float)desiredHeightForWidth:(float)arg1;
-- (void)endEditingAndCorrect:(BOOL)arg1;
-- (void)endEditingAndCorrectByTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (double)desiredHeight;
+- (double)desiredHeightForWidth:(double)arg1;
+- (void)endEditingAndCorrect:(bool)arg1;
+- (void)endEditingAndCorrectByTouchPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)handleChangeUtteranceCommand:(AceObject *)arg1;
 - (NSString *)navigationTitle;
+- (void)siriDidScrollVisible:(bool)arg1;
 
 @end

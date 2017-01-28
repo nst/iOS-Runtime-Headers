@@ -58,7 +58,7 @@
 - (double)birthdate;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)geometryCount;
+- (unsigned long long)geometryCount;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (const struct Matrix<double, 4, 4> { double x1[16]; }*)inverseMatrix;
 - (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })key;

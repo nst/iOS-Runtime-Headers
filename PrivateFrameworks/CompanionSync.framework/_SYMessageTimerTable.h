@@ -5,12 +5,12 @@
 @interface _SYMessageTimerTable : NSObject {
     NSMutableDictionary * _byIdent;
     NSMutableDictionary * _bySeqno;
-    id /* block */  _callback;
+    id  _callback;
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<OS_dispatch_queue> * _rwlock;
 }
 
-@property (nonatomic, readonly) unsigned int timerCount;
+@property (nonatomic, readonly) unsigned long long timerCount;
 
 - (void).cxx_destruct;
 - (void)_cleanupTimerForSeqno:(unsigned long long)arg1;
@@ -21,8 +21,8 @@
 - (void)cancelTimerForSequenceNumber:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithQueue:(id)arg1 timerCallback:(id /* block */)arg2;
+- (id)initWithQueue:(id)arg1 timerCallback:(id)arg2;
 - (void)setIdentifier:(id)arg1 forSequenceNumber:(unsigned long long)arg2;
-- (unsigned int)timerCount;
+- (unsigned long long)timerCount;
 
 @end

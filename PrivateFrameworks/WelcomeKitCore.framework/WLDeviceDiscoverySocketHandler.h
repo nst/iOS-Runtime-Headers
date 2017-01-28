@@ -4,26 +4,26 @@
 
 @interface WLDeviceDiscoverySocketHandler : WLSocketHandler <NSXMLParserDelegate> {
     <WLDeviceDiscoverySocketHandlerDelegate> * _delegate;
-    BOOL  _handshakeDataSent;
+    bool  _handshakeDataSent;
     NSObject<OS_dispatch_source> * _readSource;
     int  _sockfd;
     WLSourceDevice * _sourceDevice;
     NSString * _srpPassword;
-    unsigned int  _state;
+    unsigned long long  _state;
     NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WLDeviceDiscoverySocketHandlerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int sockfd;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_commandStringWithData:(id)arg1;
-- (BOOL)_generateSourceDeviceFromHandshakeData:(id)arg1;
-- (void)_handleHandshakeData:(id)arg1 withCompletion:(id /* block */)arg2;
+- (bool)_generateSourceDeviceFromHandshakeData:(id)arg1;
+- (void)_handleHandshakeData:(id)arg1 withCompletion:(id)arg2;
 - (id)_handshakeCommandData;
 - (id)_handshakeResponseData;
 - (void)_observeDataReadEvent;
@@ -36,7 +36,7 @@
 - (id)initWithSocket:(int)arg1 srpPassword:(id)arg2 delegate:(id)arg3;
 - (void)invalidateWithError:(id)arg1;
 - (void)resume;
-- (void)sendData:(id)arg1 completion:(id /* block */)arg2;
+- (void)sendData:(id)arg1 completion:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (int)sockfd;
 - (void)suspend;

@@ -8,7 +8,7 @@
 - (NSString *)appIdentifier;
 - (NSURL *)appJSURL;
 - (<IKAppDataStoring> *)localStorage;
-- (BOOL)shouldIgnoreJSValidation;
+- (bool)shouldIgnoreJSValidation;
 - (<IKAppUserDefaultsStoring> *)userDefaultsStorage;
 - (NSString *)vendorIdentifier;
 - (<IKAppDataStoring> *)vendorStorage;
@@ -16,8 +16,12 @@
 @optional
 
 - (IKAppDocument *)activeDocument;
-- (BOOL)appIsTrusted;
+- (bool)appIsTrusted;
+- (NSURL *)appJSCachePath;
 - (NSDictionary *)appLaunchParams;
-- (BOOL)shouldAllowRemoteInspection;
+- (NSURL *)appLocalJSURL;
+- (NSDictionary *)appTraitCollection;
+- (bool)shouldAllowRemoteInspection;
+- (IKViewElementRegistry *)viewElementRegistry;
 
 @end

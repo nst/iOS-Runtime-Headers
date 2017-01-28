@@ -17,7 +17,7 @@
 - (void)dealloc;
 - (id)description;
 - (void*)group;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)queryWhereStringForPredicateIdentifier:(int)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setGroup:(void*)arg1;

@@ -5,7 +5,7 @@
 @interface FlickrPost : FlickrRequest <NSURLConnectionDelegate> {
     NSURL * _assetURL;
     int  _contentType;
-    BOOL  _hidden;
+    bool  _hidden;
     NSData * _photoData;
     long long  _photoSetID;
     NSString * _postDescription;
@@ -19,8 +19,8 @@
 @property (nonatomic) int contentType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL hidden;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hidden;
 @property (nonatomic, retain) NSData *photoData;
 @property (nonatomic) long long photoSetID;
 @property (nonatomic, retain) NSString *postDescription;
@@ -30,13 +30,13 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) unsigned int visibility;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_uploadData:(id)arg1 toAccount:(id)arg2 completion:(id /* block */)arg3;
+- (void)_uploadData:(id)arg1 toAccount:(id)arg2 completion:(id)arg3;
 - (id)assetURL;
 - (int)contentType;
-- (BOOL)hidden;
+- (bool)hidden;
 - (id)initWithDictionary:(id)arg1;
 - (id)photoData;
 - (long long)photoSetID;
@@ -45,7 +45,7 @@
 - (id)serializedDictionary;
 - (void)setAssetURL:(id)arg1;
 - (void)setContentType:(int)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setPhotoData:(id)arg1;
 - (void)setPhotoSetID:(long long)arg1;
 - (void)setPostDescription:(id)arg1;
@@ -55,7 +55,7 @@
 - (void)setVisibility:(unsigned int)arg1;
 - (id)tags;
 - (id)title;
-- (BOOL)uploadToAccount:(id)arg1 completion:(id /* block */)arg2;
+- (bool)uploadToAccount:(id)arg1 completion:(id)arg2;
 - (unsigned int)visibility;
 
 @end

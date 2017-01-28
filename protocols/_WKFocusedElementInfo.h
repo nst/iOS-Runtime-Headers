@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)isUserInitiated;
-- (int)type;
+- (bool)isUserInitiated;
+- (long long)type;
 - (NSString *)value;
 
 @end

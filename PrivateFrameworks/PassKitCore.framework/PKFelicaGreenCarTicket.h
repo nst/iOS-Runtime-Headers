@@ -14,7 +14,7 @@
 @property (getter=isRefunded, nonatomic, readonly) bool refunded;
 @property (nonatomic, readonly, copy) NSNumber *validityStartDate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)destinationStation;

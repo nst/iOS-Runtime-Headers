@@ -6,34 +6,34 @@
 
 - (int)abCellStyleForGroupsTablePlain;
 - (int)abCellStyleForMembersTable;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonImageInsets;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })cardActionButtonTitleSingleLineInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cardActionButtonImageInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })cardActionButtonTitleSingleLineInsets;
 - (id)cardTableCellBorderColor;
-- (int)composeModalPresentationStyle;
+- (long long)composeModalPresentationStyle;
 - (id)editorViewColor;
 - (id)editorViewLargeFont;
 - (id)editorViewSmallFont;
-- (BOOL)labelPickerShouldPushCustomLabelCreator;
+- (bool)labelPickerShouldPushCustomLabelCreator;
 - (id)membersHeaderBackgroundColor;
-- (BOOL)membersSearchBarIsInTableHeader;
+- (bool)membersSearchBarIsInTableHeader;
 - (id)personActionColor;
 - (id)personActionFont;
-- (float)personEditorFieldVerticalInset;
+- (double)personEditorFieldVerticalInset;
 - (id)personHeaderPasteboardColor;
 - (id)personHeaderShadowColor;
 - (id)personLabelColor;
 - (id)personLabelFont;
-- (float)personLabelFontMinSize;
+- (double)personLabelFontMinSize;
 - (id)personValueColor;
 - (id)personValueEmphasizedColor;
-- (float)personValueFontMinSize;
+- (double)personValueFontMinSize;
 - (id)personValueHighlightColor;
 - (id)personValueImportantColor;
-- (float)personViewHorizontalCellInset;
-- (BOOL)searchControllerForceKeyboardDisplayEnabled;
-- (BOOL)searchIsAlwaysActive;
-- (int)separatorStyleForCellStyle:(int)arg1;
-- (BOOL)serverSearchNavigationBarHidingEnabled;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (double)personViewHorizontalCellInset;
+- (bool)searchControllerForceKeyboardDisplayEnabled;
+- (bool)searchIsAlwaysActive;
+- (long long)separatorStyleForCellStyle:(int)arg1;
+- (bool)serverSearchNavigationBarHidingEnabled;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 
 @end

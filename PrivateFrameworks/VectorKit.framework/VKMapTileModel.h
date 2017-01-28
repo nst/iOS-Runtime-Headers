@@ -17,7 +17,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) VKMapModel *mapModel;
 @property (nonatomic, readonly) unsigned char maximumZ;
 @property (nonatomic, readonly) unsigned char minimumZ;
@@ -27,8 +27,8 @@
 @property (nonatomic, readonly) NSSet *tilesInScene;
 @property (nonatomic, readonly) NSSet *tilesInScenePlusExitingTiles;
 
-+ (BOOL)reloadOnActiveTileGroupChange;
-+ (BOOL)reloadOnStylesheetChange;
++ (bool)reloadOnActiveTileGroupChange;
++ (bool)reloadOnStylesheetChange;
 
 - (id)_visibleExitingTiles:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2;
 - (void)activeTileGroupChanged;
@@ -43,20 +43,20 @@
 - (unsigned long long)mapLayerPosition;
 - (id)mapModel;
 - (unsigned char)maximumZ;
-- (BOOL)maximumZoomLevelBoundsCamera;
+- (bool)maximumZoomLevelBoundsCamera;
 - (unsigned char)minimumZ;
-- (BOOL)minimumZoomLevelBoundsCamera;
+- (bool)minimumZoomLevelBoundsCamera;
 - (void)removePersistingExitingTiles:(id)arg1;
 - (void)reset;
 - (void)setMapModel:(id)arg1;
 - (id)sharedResources;
-- (BOOL)shouldLayoutWithoutStyleManager;
+- (bool)shouldLayoutWithoutStyleManager;
 - (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)stylesheetDidChange;
 - (void)stylesheetWillChange;
 - (id)tilesInScene;
 - (id)tilesInScenePlusExitingTiles;
-- (void)updateTilesInScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 categorize:(BOOL)arg3;
+- (void)updateTilesInScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 categorize:(bool)arg3;
 - (void)willStartDrawingTiles:(id)arg1;
 - (void)willStopDrawingTiles:(id)arg1;
 

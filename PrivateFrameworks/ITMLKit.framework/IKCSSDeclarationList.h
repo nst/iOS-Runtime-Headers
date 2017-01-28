@@ -8,8 +8,8 @@
 
 - (void).cxx_destruct;
 - (void)addDeclaration:(id)arg1;
-- (unsigned int)count;
-- (id)declarationAtIndex:(unsigned int)arg1;
+- (unsigned long long)count;
+- (id)declarationAtIndex:(unsigned long long)arg1;
 - (id)description;
 - (id)init;
 

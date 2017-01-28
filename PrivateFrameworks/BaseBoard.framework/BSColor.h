@@ -3,41 +3,41 @@
  */
 
 @interface BSColor : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
-    float  _alpha;
-    float  _blue;
+    double  _alpha;
+    double  _blue;
     struct CGColor { } * _colorRef;
-    float  _green;
-    float  _red;
+    double  _green;
+    double  _red;
 }
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;
-@property (nonatomic, readonly) float alpha;
-@property (nonatomic, readonly) float blue;
+@property (nonatomic, readonly) double alpha;
+@property (nonatomic, readonly) double blue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) float green;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float red;
+@property (nonatomic, readonly) double green;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) double red;
 @property (readonly) Class superclass;
 
 + (id)blackColor;
-+ (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (BOOL)supportsSecureCoding;
++ (id)colorWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (bool)supportsSecureCoding;
 
 - (struct CGColor { }*)CGColor;
-- (float)alpha;
-- (float)blue;
+- (double)alpha;
+- (double)blue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (float)green;
-- (unsigned int)hash;
+- (double)green;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToColor:(id)arg1;
-- (float)red;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToColor:(id)arg1;
+- (double)red;
 
 @end

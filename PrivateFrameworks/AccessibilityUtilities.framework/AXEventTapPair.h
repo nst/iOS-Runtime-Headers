@@ -3,30 +3,30 @@
  */
 
 @interface AXEventTapPair : NSObject {
-    id /* block */  _matchingServiceHandler;
+    id  _matchingServiceHandler;
     struct __IOHIDEventSystemClient { } * _systemClient;
     int  _type;
-    id /* block */  handler;
+    id  handler;
     NSString * identifier;
     int  priority;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, copy) id /* block */ matchingServiceHandler;
+@property (nonatomic, copy) id matchingServiceHandler;
 @property (nonatomic) int priority;
 @property (nonatomic, retain) struct __IOHIDEventSystemClient { }*systemClient;
 @property (nonatomic) int type;
 
 - (void)dealloc;
 - (id)description;
-- (id /* block */)handler;
+- (id)handler;
 - (id)identifier;
-- (id /* block */)matchingServiceHandler;
+- (id)matchingServiceHandler;
 - (int)priority;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setMatchingServiceHandler:(id /* block */)arg1;
+- (void)setMatchingServiceHandler:(id)arg1;
 - (void)setPriority:(int)arg1;
 - (void)setSystemClient:(struct __IOHIDEventSystemClient { }*)arg1;
 - (void)setType:(int)arg1;

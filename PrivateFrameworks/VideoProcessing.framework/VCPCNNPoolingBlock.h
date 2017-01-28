@@ -10,12 +10,12 @@
 }
 
 - (void).cxx_destruct;
-- (long)constructBlock:(id)arg1 context:(id)arg2;
-- (long)doMaxPoolingChunkFour;
-- (long)doMaxPoolingChunkOne;
-- (long)forward;
+- (int)constructBlock:(id)arg1 context:(id)arg2;
+- (int)doMaxPoolingChunkFour;
+- (int)doMaxPoolingChunkOne;
+- (int)forward;
 - (id)initWithParameters:(int)arg1 poolY:(int)arg2 chunk:(int)arg3;
-- (BOOL)supportGPU;
-- (BOOL)useGPU;
+- (bool)supportGPU;
+- (bool)useGPU;
 
 @end

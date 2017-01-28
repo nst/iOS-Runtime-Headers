@@ -7,26 +7,26 @@
     NSMutableArray * _deletedZoneIDs;
     NSData * _previousServerChangeTokenData;
     CKRecordZoneID * _recordZoneID;
-    unsigned int  _resultsLimit;
+    unsigned long long  _resultsLimit;
     NSData * _serverChangeTokenData;
-    int  _status;
-    id /* block */  _zoneChangedBlock;
-    id /* block */  _zoneDeletedBlock;
+    long long  _status;
+    id  _zoneChangedBlock;
+    id  _zoneDeletedBlock;
 }
 
 @property (nonatomic, readonly) NSArray *changedZoneIDs;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSArray *deletedZoneIDs;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSData *previousServerChangeTokenData;
 @property (nonatomic, retain) CKRecordZoneID *recordZoneID;
-@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic) unsigned long long resultsLimit;
 @property (nonatomic, retain) NSData *serverChangeTokenData;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) id /* block */ zoneChangedBlock;
-@property (nonatomic, copy) id /* block */ zoneDeletedBlock;
+@property (nonatomic, copy) id zoneChangedBlock;
+@property (nonatomic, copy) id zoneDeletedBlock;
 
 - (void).cxx_destruct;
 - (id)changedZoneIDs;
@@ -38,17 +38,17 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (id)serverChangeTokenData;
 - (void)setPreviousServerChangeTokenData:(id)arg1;
 - (void)setRecordZoneID:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setServerChangeTokenData:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (void)setZoneChangedBlock:(id /* block */)arg1;
-- (void)setZoneDeletedBlock:(id /* block */)arg1;
-- (int)status;
-- (id /* block */)zoneChangedBlock;
-- (id /* block */)zoneDeletedBlock;
+- (void)setStatus:(long long)arg1;
+- (void)setZoneChangedBlock:(id)arg1;
+- (void)setZoneDeletedBlock:(id)arg1;
+- (long long)status;
+- (id)zoneChangedBlock;
+- (id)zoneDeletedBlock;
 
 @end

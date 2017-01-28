@@ -16,10 +16,11 @@
 - (void)_setArtworkImageInCache:(id)arg1 forKey:(id)arg2;
 - (void)_shieldPackDidUpdate;
 - (id)artworkManager;
-- (id)imageForArtwork:(id)arg1 size:(int)arg2 view:(id)arg3;
-- (id)imageForArtwork:(id)arg1 size:(int)arg2 view:(id)arg3 widthPaddingMultiple:(float)arg4;
+- (id)imageForArtwork:(id)arg1 size:(long long)arg2 view:(id)arg3;
+- (id)imageForArtwork:(id)arg1 size:(long long)arg2 view:(id)arg3 widthPaddingMultiple:(double)arg4;
 - (id)imageForSizedArtwork:(id)arg1 view:(id)arg2;
 - (id)initWithArtworkManager:(id)arg1;
 - (void)purge;
+- (bool)shouldReverseImageForShieldType:(long long)arg1 onView:(id)arg2;
 
 @end

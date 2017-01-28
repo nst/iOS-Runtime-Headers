@@ -3,26 +3,26 @@
  */
 
 @interface _SlotDescriptor : NSObject <NTKRestrictedApplicationsChangeObserver> {
-    unsigned int  _allowedTypes;
-    int  _family;
-    unsigned int  _slotAllowedTypes;
+    unsigned long long  _allowedTypes;
+    long long  _family;
+    unsigned long long  _slotAllowedTypes;
     NSArray * _typesRankedList;
 }
 
-@property (nonatomic, readonly) unsigned int allowedTypes;
+@property (nonatomic, readonly) unsigned long long allowedTypes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) int family;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long family;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *typesRankedList;
 
-+ (id)descriptorWithComplicationFamily:(int)arg1 complicationTypesRankedList:(id)arg2 allowedComplicationTypes:(unsigned int)arg3;
++ (id)descriptorWithComplicationFamily:(long long)arg1 complicationTypesRankedList:(id)arg2 allowedComplicationTypes:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
-- (unsigned int)allowedTypes;
-- (BOOL)allowsType:(unsigned int)arg1;
-- (int)family;
+- (unsigned long long)allowedTypes;
+- (bool)allowsType:(unsigned long long)arg1;
+- (long long)family;
 - (void)restrictedApplicationsDidChange;
 - (id)typesRankedList;
 

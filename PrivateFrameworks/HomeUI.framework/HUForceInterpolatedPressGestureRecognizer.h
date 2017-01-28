@@ -3,35 +3,35 @@
  */
 
 @interface HUForceInterpolatedPressGestureRecognizer : UILongPressGestureRecognizer {
-    float  _currentSampleForceMultiplier;
+    double  _currentSampleForceMultiplier;
     double  _currentSampleTimestamp;
     NSMutableSet * _hu_activeTouches;
-    float  _overallForceMultiplierExcludingCurrentSample;
+    double  _overallForceMultiplierExcludingCurrentSample;
     double  _touchStartTime;
 }
 
-@property (nonatomic, readonly) float currentForceMultiplier;
-@property (nonatomic) float currentSampleForceMultiplier;
+@property (nonatomic, readonly) double currentForceMultiplier;
+@property (nonatomic) double currentSampleForceMultiplier;
 @property (nonatomic) double currentSampleTimestamp;
 @property (nonatomic, readonly) NSMutableSet *hu_activeTouches;
-@property (nonatomic, readonly) float overallForceMultiplier;
-@property (nonatomic) float overallForceMultiplierExcludingCurrentSample;
+@property (nonatomic, readonly) double overallForceMultiplier;
+@property (nonatomic) double overallForceMultiplierExcludingCurrentSample;
 @property (nonatomic) double touchStartTime;
 
 - (void).cxx_destruct;
-- (float)_forceMultiplierIncludingCurrentSample;
+- (double)_forceMultiplierIncludingCurrentSample;
 - (void)_logForceMultiplierSample;
 - (void)_resetForceSamples;
-- (float)currentForceMultiplier;
-- (float)currentSampleForceMultiplier;
+- (double)currentForceMultiplier;
+- (double)currentSampleForceMultiplier;
 - (double)currentSampleTimestamp;
 - (id)hu_activeTouches;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (float)overallForceMultiplier;
-- (float)overallForceMultiplierExcludingCurrentSample;
-- (void)setCurrentSampleForceMultiplier:(float)arg1;
+- (double)overallForceMultiplier;
+- (double)overallForceMultiplierExcludingCurrentSample;
+- (void)setCurrentSampleForceMultiplier:(double)arg1;
 - (void)setCurrentSampleTimestamp:(double)arg1;
-- (void)setOverallForceMultiplierExcludingCurrentSample:(float)arg1;
+- (void)setOverallForceMultiplierExcludingCurrentSample:(double)arg1;
 - (void)setTouchStartTime:(double)arg1;
 - (double)touchStartTime;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

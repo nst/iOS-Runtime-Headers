@@ -5,7 +5,7 @@
 
 @required
 
-- (float)confirmationDistanceForPrimaryActionInSwipeActionPullView:(UICollectionViewTableLayoutSwipeActionPullView *)arg1;
+- (double)confirmationDistanceForPrimaryActionInSwipeActionPullView:(UICollectionViewTableLayoutSwipeActionPullView *)arg1;
 - (void)swipeActionPullView:(UICollectionViewTableLayoutSwipeActionPullView *)arg1 tappedAction:(UICollectionViewTableLayoutSwipeAction *)arg2 view:(UIView *)arg3;
 
 @end

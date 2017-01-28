@@ -11,7 +11,7 @@
 @property (nonatomic, copy) FBSSceneClientIdentity *clientIdentity;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) FBSSceneIdentity *identity;
 @property (nonatomic, copy) FBSSceneSpecification *specification;
 @property (readonly) Class superclass;
@@ -24,10 +24,10 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identity;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setClientIdentity:(id)arg1;
 - (void)setIdentity:(id)arg1;

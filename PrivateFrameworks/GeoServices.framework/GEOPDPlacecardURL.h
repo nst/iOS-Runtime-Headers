@@ -6,7 +6,7 @@
     NSString * _url;
 }
 
-@property (nonatomic, readonly) BOOL hasUrl;
+@property (nonatomic, readonly) bool hasUrl;
 @property (nonatomic, retain) NSString *url;
 
 - (void)copyTo:(id)arg1;
@@ -14,11 +14,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasUrl;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasUrl;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 - (void)writeTo:(id)arg1;

@@ -12,16 +12,16 @@
 - (id)activityTitle;
 - (void)addExtraParameters:(id)arg1 forRequest:(id)arg2;
 - (id)composeViewController;
-- (BOOL)hasAccounts;
-- (BOOL)isFirstClassService;
-- (int)maximumImageCount;
-- (int)maximumImageDataSize;
-- (int)maximumURLCount;
-- (int)maximumVideoCount;
-- (int)maximumVideoDataSize;
-- (int)maximumVideoTimeLimit;
+- (bool)hasAccounts;
+- (bool)isFirstClassService;
+- (long long)maximumImageCount;
+- (long long)maximumImageDataSize;
+- (long long)maximumURLCount;
+- (long long)maximumVideoCount;
+- (long long)maximumVideoDataSize;
+- (long long)maximumVideoTimeLimit;
 - (id)serviceType;
-- (BOOL)supportsImageURL:(id)arg1;
-- (BOOL)supportsVideoURL:(id)arg1;
+- (bool)supportsImageURL:(id)arg1;
+- (bool)supportsVideoURL:(id)arg1;
 
 @end

@@ -4,17 +4,17 @@
 
 @interface CalSpotlightPendingSearch : NSObject <CalSpotlightQueryPendingSearchProtocol, MDSearchQueryDelegate> {
     NSString * _clientBundleID;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     MDSearchQuery * _query;
     NSMutableOrderedSet * _searchableItemIdentifiers;
     NSMutableOrderedSet * _searchableItems;
 }
 
 @property (copy) NSString *clientBundleID;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) MDSearchQuery *query;
 @property (retain) NSMutableOrderedSet *searchableItemIdentifiers;
 @property (retain) NSMutableOrderedSet *searchableItems;
@@ -31,17 +31,17 @@
 - (void)_startSearchWithQuery:(id)arg1;
 - (void)cancel;
 - (id)clientBundleID;
-- (id /* block */)completionHandler;
-- (id)initWithString:(id)arg1 clientBundleID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)completionHandler;
+- (id)initWithString:(id)arg1 clientBundleID:(id)arg2 completionHandler:(id)arg3;
 - (id)query;
 - (void)searchQuery:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 didReturnItems:(id)arg2;
-- (void)searchQuery:(id)arg1 statusChanged:(unsigned int)arg2;
+- (void)searchQuery:(id)arg1 statusChanged:(unsigned long long)arg2;
 - (void)searchWithString:(id)arg1;
 - (id)searchableItemIdentifiers;
 - (id)searchableItems;
 - (void)setClientBundleID:(id)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setSearchableItemIdentifiers:(id)arg1;
 - (void)setSearchableItems:(id)arg1;

@@ -12,30 +12,30 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
-- (BOOL)addSignatureContentForSession:(id)arg1 key:(id)arg2 content:(id)arg3 reply:(id /* block */)arg4;
-- (BOOL)addToSession:(id)arg1 event:(id)arg2 payload:(id)arg3 reply:(id /* block */)arg4;
-- (BOOL)addToSession:(id)arg1 events:(id)arg2 payload:(id)arg3 reply:(id /* block */)arg4;
-- (BOOL)cancelSession:(id)arg1;
+- (bool)addSignatureContentForSession:(id)arg1 key:(id)arg2 content:(id)arg3 reply:(id)arg4;
+- (bool)addToSession:(id)arg1 event:(id)arg2 payload:(id)arg3 reply:(id)arg4;
+- (bool)addToSession:(id)arg1 events:(id)arg2 payload:(id)arg3 reply:(id)arg4;
+- (bool)cancelSession:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)endLogCollectionForSession:(id)arg1 signature:(id)arg2 reply:(id /* block */)arg3;
-- (BOOL)endSession:(id)arg1;
-- (BOOL)getInProgressDiagnosticDataOutputFiles:(id /* block */)arg1;
+- (bool)endLogCollectionForSession:(id)arg1 signature:(id)arg2 reply:(id)arg3;
+- (bool)endSession:(id)arg1;
+- (bool)getInProgressDiagnosticDataOutputFiles:(id)arg1;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
-- (BOOL)isSignatureValid:(id)arg1;
+- (bool)isSignatureValid:(id)arg1;
 - (id)queue;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setupXPCInterface;
 - (id)signatureWithDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 detectedProcess:(id)arg4 triggerThresholdValues:(id)arg5;
 - (id)signatureWithDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 originatingProcess:(id)arg4 triggerThreshold:(id)arg5;
-- (BOOL)snapshotWithSignature:(id)arg1 duration:(double)arg2 event:(id)arg3 payload:(id)arg4 reply:(id /* block */)arg5;
-- (BOOL)snapshotWithSignature:(id)arg1 duration:(double)arg2 events:(id)arg3 payload:(id)arg4 reply:(id /* block */)arg5;
-- (BOOL)snapshotWithSignature:(id)arg1 duration:(double)arg2 payload:(id)arg3 reply:(id /* block */)arg4;
-- (BOOL)startLogCollectionForSession:(id)arg1 signature:(id)arg2 duration:(double)arg3 reply:(id /* block */)arg4;
-- (BOOL)startSessionWithSignature:(id)arg1 duration:(double)arg2 event:(id)arg3 payload:(id)arg4 reply:(id /* block */)arg5;
-- (BOOL)startSessionWithSignature:(id)arg1 duration:(double)arg2 events:(id)arg3 payload:(id)arg4 reply:(id /* block */)arg5;
-- (BOOL)startSessionWithSignature:(id)arg1 duration:(double)arg2 payload:(id)arg3 reply:(id /* block */)arg4;
+- (bool)snapshotWithSignature:(id)arg1 duration:(double)arg2 event:(id)arg3 payload:(id)arg4 reply:(id)arg5;
+- (bool)snapshotWithSignature:(id)arg1 duration:(double)arg2 events:(id)arg3 payload:(id)arg4 reply:(id)arg5;
+- (bool)snapshotWithSignature:(id)arg1 duration:(double)arg2 payload:(id)arg3 reply:(id)arg4;
+- (bool)startLogCollectionForSession:(id)arg1 signature:(id)arg2 duration:(double)arg3 reply:(id)arg4;
+- (bool)startSessionWithSignature:(id)arg1 duration:(double)arg2 event:(id)arg3 payload:(id)arg4 reply:(id)arg5;
+- (bool)startSessionWithSignature:(id)arg1 duration:(double)arg2 events:(id)arg3 payload:(id)arg4 reply:(id)arg5;
+- (bool)startSessionWithSignature:(id)arg1 duration:(double)arg2 payload:(id)arg3 reply:(id)arg4;
 
 @end

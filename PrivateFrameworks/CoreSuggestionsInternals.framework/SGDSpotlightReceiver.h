@@ -15,7 +15,7 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (BOOL)_isValidBundleID:(id)arg1;
+- (bool)_isValidBundleID:(id)arg1;
 - (void)addInteractions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)addOrUpdateSearchableItems:(id)arg1 bundleID:(id)arg2;
 - (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2;

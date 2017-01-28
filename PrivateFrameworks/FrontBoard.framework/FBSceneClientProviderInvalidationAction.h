@@ -8,7 +8,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)initWithHandler:(id /* block */)arg1;
+- (id)initWithHandler:(id)arg1;
 - (void)invalidate;
 
 @end

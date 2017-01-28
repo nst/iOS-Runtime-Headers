@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic) int command;
-@property (nonatomic) BOOL hasCommand;
-@property (nonatomic, readonly) BOOL hasOptions;
+@property (nonatomic) bool hasCommand;
+@property (nonatomic, readonly) bool hasOptions;
 @property (nonatomic, retain) _MRCommandOptionsProtobuf *options;
 
 - (int)StringAsCommand:(id)arg1;
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCommand;
-- (BOOL)hasOptions;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCommand;
+- (bool)hasOptions;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)options;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCommand:(int)arg1;
-- (void)setHasCommand:(BOOL)arg1;
+- (void)setHasCommand:(bool)arg1;
 - (void)setOptions:(id)arg1;
 - (void)writeTo:(id)arg1;
 

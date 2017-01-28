@@ -16,13 +16,13 @@
 - (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 db:(id)arg3 error:(id*)arg4;
 - (id)_initWithLocalItem:(id)arg1;
 - (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned long long)arg2;
-- (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
-- (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
+- (bool)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
+- (bool)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (id)asSymlink;
 - (id)descriptionWithContext:(id)arg1;
 - (unsigned long long)diffAgainstLocalItem:(id)arg1;
 - (unsigned long long)diffAgainstServerItem:(id)arg1;
-- (BOOL)isSymLink;
+- (bool)isSymLink;
 - (float)prepareEditSyncUpWithOperation:(id)arg1 defaults:(id)arg2;
 - (void)readTargetFromRelativePathAndSyncUp:(id)arg1;
 - (id)symlinkTarget;

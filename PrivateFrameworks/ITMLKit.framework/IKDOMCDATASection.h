@@ -5,6 +5,6 @@
 @interface IKDOMCDATASection : IKDOMText <IKDOMCDATASection>
 
 - (id)nodeName;
-- (int)nodeType;
+- (long long)nodeType;
 
 @end

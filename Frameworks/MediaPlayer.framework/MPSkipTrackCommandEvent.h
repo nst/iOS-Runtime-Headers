@@ -3,12 +3,12 @@
  */
 
 @interface MPSkipTrackCommandEvent : MPRemoteCommandEvent {
-    BOOL  _requestingDefermentToPlaybackQueuePosition;
+    bool  _requestingDefermentToPlaybackQueuePosition;
 }
 
-@property (getter=isRequestingDefermentToPlaybackQueuePosition, nonatomic, readonly) BOOL requestingDefermentToPlaybackQueuePosition;
+@property (getter=isRequestingDefermentToPlaybackQueuePosition, nonatomic, readonly) bool requestingDefermentToPlaybackQueuePosition;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
-- (BOOL)isRequestingDefermentToPlaybackQueuePosition;
+- (bool)isRequestingDefermentToPlaybackQueuePosition;
 
 @end

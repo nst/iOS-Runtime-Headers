@@ -5,7 +5,7 @@
 @interface TSCH3DImageTextureTiling : TSCH3DBaseImageTextureTiling {
     int  _face;
     int  _mode;
-    BOOL  _reveal;
+    bool  _reveal;
     int  _sContinuity;
     int  _tContinuity;
     int  _wrap;
@@ -15,7 +15,7 @@
 
 @property (nonatomic) int face;
 @property (nonatomic) int mode;
-@property (nonatomic) BOOL reveal;
+@property (nonatomic) bool reveal;
 @property (nonatomic) int scontinuity;
 @property (nonatomic) int tcontinuity;
 @property (nonatomic) int wrap;
@@ -27,17 +27,17 @@
 - (void)copyFromBaseImageTextureTiling:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)face;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithArchive:(const struct Chart3DImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DBaseImageTextureTilingArchive {} *x5; int x6; int x7; int x8; int x9; int x10; int x11; int x12; bool x13; }*)arg1 unarchiver:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)mode;
 - (void)restoreDefault;
-- (BOOL)reveal;
+- (bool)reveal;
 - (void)saveToArchive:(struct Chart3DImageTextureTilingArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DBaseImageTextureTilingArchive {} *x5; int x6; int x7; int x8; int x9; int x10; int x11; int x12; bool x13; }*)arg1 archiver:(id)arg2;
 - (int)scontinuity;
 - (void)setFace:(int)arg1;
 - (void)setMode:(int)arg1;
-- (void)setReveal:(BOOL)arg1;
+- (void)setReveal:(bool)arg1;
 - (void)setScontinuity:(int)arg1;
 - (void)setTcontinuity:(int)arg1;
 - (void)setWrap:(int)arg1;

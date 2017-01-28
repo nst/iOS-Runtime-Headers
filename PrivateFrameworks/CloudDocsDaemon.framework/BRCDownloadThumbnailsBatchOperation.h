@@ -3,10 +3,10 @@
  */
 
 @interface BRCDownloadThumbnailsBatchOperation : BRCTransferBatchOperation {
-    id /* block */  _perDownloadCompletionBlock;
+    id  _perDownloadCompletionBlock;
 }
 
-@property (copy) id /* block */ perDownloadCompletionBlock;
+@property (copy) id perDownloadCompletionBlock;
 
 - (void).cxx_destruct;
 - (id)actionPrettyName;
@@ -15,9 +15,9 @@
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithSyncContext:(id)arg1;
 - (void)mainWithTransfers:(id)arg1;
-- (id /* block */)perDownloadCompletionBlock;
+- (id)perDownloadCompletionBlock;
 - (void)sendTransferCompletionCallBack:(id)arg1 error:(id)arg2;
-- (void)setPerDownloadCompletionBlock:(id /* block */)arg1;
+- (void)setPerDownloadCompletionBlock:(id)arg1;
 - (id)transferredObjectsPrettyName;
 
 @end

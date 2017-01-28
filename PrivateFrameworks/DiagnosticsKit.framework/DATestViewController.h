@@ -7,7 +7,7 @@
     CXCallObserver * _callObserver;
     DATestViewOperation * _currentTest;
     NSDictionary * _dataObject;
-    BOOL  _fullScreen;
+    bool  _fullScreen;
     UITapGestureRecognizer * _homeButtonRecognizer;
 }
 
@@ -17,8 +17,8 @@
 @property (nonatomic, retain) NSDictionary *dataObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFullScreen, nonatomic) BOOL fullScreen;
-@property (readonly) unsigned int hash;
+@property (getter=isFullScreen, nonatomic) bool fullScreen;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UITapGestureRecognizer *homeButtonRecognizer;
 @property (readonly) Class superclass;
 
@@ -32,15 +32,15 @@
 - (id)homeButtonRecognizer;
 - (id)init;
 - (id)initWithTest:(id)arg1;
-- (id)initWithTest:(id)arg1 fullScreen:(BOOL)arg2;
-- (BOOL)isFullScreen;
+- (id)initWithTest:(id)arg1 fullScreen:(bool)arg2;
+- (bool)isFullScreen;
 - (void)monitorIncomingCall;
-- (BOOL)prefersStatusBarHidden;
+- (bool)prefersStatusBarHidden;
 - (void)setAllResults:(id)arg1;
 - (void)setCallObserver:(id)arg1;
 - (void)setCurrentTest:(id)arg1;
 - (void)setDataObject:(id)arg1;
-- (void)setFullScreen:(BOOL)arg1;
+- (void)setFullScreen:(bool)arg1;
 - (void)setHomeButtonRecognizer:(id)arg1;
 - (void)viewDidLoad;
 

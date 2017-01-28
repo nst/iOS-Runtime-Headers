@@ -16,7 +16,7 @@
 - (id)crossfadeItem;
 - (id)crossfadeLayer;
 - (id)crossfadePlayer;
-- (void)setContentMode:(int)arg1;
+- (void)setContentMode:(long long)arg1;
 - (void)setCrossfadeItem:(id)arg1;
 - (void)setCrossfadePlayer:(id)arg1;
 

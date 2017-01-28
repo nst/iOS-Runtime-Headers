@@ -6,10 +6,10 @@
 
 + (id)displayName;
 + (id)identifier;
-+ (BOOL)isInternalButton;
++ (bool)isInternalButton;
 
 - (id)_frontmostApplicationDisplayID;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (id)aggdKey;
 - (id)glyphImageForState:(int)arg1;
 - (id)init;

@@ -3,30 +3,30 @@
  */
 
 @interface NEEvaluateConnectionRule : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    int  _action;
+    long long  _action;
     NSArray * _matchDomains;
     NSURL * _probeURL;
     NSArray * _useDNSServers;
 }
 
-@property (readonly) int action;
+@property (readonly) long long action;
 @property (readonly) NSArray *matchDomains;
 @property (copy) NSURL *probeURL;
 @property (copy) NSArray *useDNSServers;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)action;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (long long)action;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMatchDomains:(id)arg1 andAction:(int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithMatchDomains:(id)arg1 andAction:(long long)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)matchDomains;
 - (id)probeURL;
 - (void)setProbeURL:(id)arg1;

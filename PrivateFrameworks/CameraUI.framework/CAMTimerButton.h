@@ -5,13 +5,13 @@
 @interface CAMTimerButton : CAMExpandableMenuButton {
     UIImageView * __glyphView;
     <CAMTimerButtonDelegate> * _delegate;
-    BOOL  _hideOffWhenCollapsed;
+    bool  _hideOffWhenCollapsed;
 }
 
 @property (nonatomic, readonly) UIImageView *_glyphView;
 @property (nonatomic) <CAMTimerButtonDelegate> *delegate;
-@property (nonatomic) int duration;
-@property (nonatomic) BOOL hideOffWhenCollapsed;
+@property (nonatomic) long long duration;
+@property (nonatomic) bool hideOffWhenCollapsed;
 
 - (void).cxx_destruct;
 - (void)_commonCAMTimerButtonInitialization;
@@ -19,19 +19,19 @@
 - (id)_glyphView;
 - (void)_updateCurrentGlyphImage;
 - (id)delegate;
-- (int)duration;
+- (long long)duration;
 - (id)headerView;
-- (BOOL)hideOffWhenCollapsed;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithLayoutStyle:(int)arg1;
-- (int)numberOfMenuItems;
-- (float)padHeaderViewContentInsetLeft;
+- (bool)hideOffWhenCollapsed;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(long long)arg1;
+- (long long)numberOfMenuItems;
+- (double)padHeaderViewContentInsetLeft;
 - (void)reloadData;
 - (void)setDelegate:(id)arg1;
-- (void)setDuration:(int)arg1;
-- (void)setDuration:(int)arg1 animated:(BOOL)arg2;
-- (void)setHideOffWhenCollapsed:(BOOL)arg1;
+- (void)setDuration:(long long)arg1;
+- (void)setDuration:(long long)arg1 animated:(bool)arg2;
+- (void)setHideOffWhenCollapsed:(bool)arg1;
 - (id)shownIndexesWhileCollapsed;
-- (id)titleForMenuItemAtIndex:(int)arg1;
+- (id)titleForMenuItemAtIndex:(long long)arg1;
 
 @end

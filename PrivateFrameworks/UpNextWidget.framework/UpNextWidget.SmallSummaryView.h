@@ -10,22 +10,22 @@
     void time;
 }
 
-@property (nonatomic) BOOL allHappenToday;
-@property (nonatomic) BOOL allHappenTomorrow;
-@property (nonatomic, retain) NSDate *time;
+@property (nonatomic) bool allHappenToday;
+@property (nonatomic) bool allHappenTomorrow;
+@property (nonatomic, copy) NSDate *time;
 
-- (id /* block */).cxx_destruct;
-- (BOOL)allHappenToday;
-- (BOOL)allHappenTomorrow;
-- (float)firstBaselineOffsetFromTop;
+- (id).cxx_destruct;
+- (bool)allHappenToday;
+- (bool)allHappenTomorrow;
+- (double)firstBaselineOffsetFromTop;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)lastBaselineOffsetFromBottom;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lastBaselineOffsetFromBottom;
 - (void)layoutSubviews;
-- (void)setAllHappenToday:(BOOL)arg1;
-- (void)setAllHappenTomorrow:(BOOL)arg1;
+- (void)setAllHappenToday:(bool)arg1;
+- (void)setAllHappenTomorrow:(bool)arg1;
 - (void)setTime:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)time;
 
 @end

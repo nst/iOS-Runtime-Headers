@@ -7,12 +7,12 @@
     AVWeakReference * _playerItemReference;
     AVWeakReference * _playerReference;
     AVPlayerItem * _previousPlayerItem;
-    int  _status;
+    long long  _status;
 }
 
-@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) long long status;
 
-- (BOOL)addItemToPlayQueueAfterPlaybackItemOfItem:(id)arg1;
+- (bool)addItemToPlayQueueAfterPlaybackItemOfItem:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)error;
@@ -20,6 +20,6 @@
 - (id)player;
 - (id)playerItem;
 - (void)removeItemFromPlayQueue;
-- (int)status;
+- (long long)status;
 
 @end

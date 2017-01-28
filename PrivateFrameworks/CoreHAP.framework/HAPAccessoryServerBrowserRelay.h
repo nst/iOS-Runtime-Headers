@@ -20,7 +20,7 @@
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;
 - (id)discoveredAccessoryServers;
 - (id)initWithQueue:(id)arg1;
-- (int)linkType;
+- (long long)linkType;
 - (void)removeAccessoryServerWithStream:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;

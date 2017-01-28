@@ -12,7 +12,7 @@
 @property (nonatomic) HDDaemon *daemon;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PSYSyncCoordinator *pairedSyncCoordinator;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
@@ -32,7 +32,7 @@
 - (id)diagnosticDescription;
 - (id)initWithDaemon:(id)arg1 queue:(id)arg2;
 - (id)pairedSyncCoordinator;
-- (BOOL)permitSynchronization;
+- (bool)permitSynchronization;
 - (id)queue;
 - (void)setDaemon:(id)arg1;
 - (void)setPairedSyncCoordinator:(id)arg1;

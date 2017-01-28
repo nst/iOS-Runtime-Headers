@@ -3,21 +3,21 @@
  */
 
 @interface HAPWACScanContext : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     HAPWACScanner * _originator;
     struct __CFRunLoop { } * _runLoop;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (nonatomic) HAPWACScanner *originator;
 @property (nonatomic) struct __CFRunLoop { }*runLoop;
 
 - (void).cxx_destruct;
-- (id /* block */)completion;
+- (id)completion;
 - (void)dealloc;
 - (id)originator;
 - (struct __CFRunLoop { }*)runLoop;
-- (void)setCompletion:(id /* block */)arg1;
+- (void)setCompletion:(id)arg1;
 - (void)setOriginator:(id)arg1;
 - (void)setRunLoop:(struct __CFRunLoop { }*)arg1;
 

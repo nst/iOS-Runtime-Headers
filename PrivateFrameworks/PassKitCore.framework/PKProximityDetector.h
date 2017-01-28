@@ -4,10 +4,10 @@
 
 @interface PKProximityDetector : NSObject {
     IDSDevice * _detectingDevice;
-    BOOL  _detectingDeviceNearby;
+    bool  _detectingDeviceNearby;
     NSObject<OS_dispatch_queue> * _discoveryQueue;
-    id /* block */  _handler;
-    BOOL  _isDetecting;
+    id  _handler;
+    bool  _isDetecting;
     unsigned int  _powerAssertionIdentifier;
     SFDeviceDiscovery * _sharingDiscovery;
     double  _timeoutDuration;
@@ -16,8 +16,8 @@
 }
 
 @property (nonatomic, readonly) IDSDevice *detectingDevice;
-@property (nonatomic, copy) id /* block */ handler;
-@property (nonatomic, readonly) BOOL isDetecting;
+@property (nonatomic, copy) id handler;
+@property (nonatomic, readonly) bool isDetecting;
 
 - (void).cxx_destruct;
 - (void)_createPowerAssertion;
@@ -25,10 +25,10 @@
 - (void)dealloc;
 - (id)detectingDevice;
 - (void)endDetecting;
-- (id /* block */)handler;
+- (id)handler;
 - (id)initWithDevice:(id)arg1;
-- (BOOL)isDetecting;
-- (void)setHandler:(id /* block */)arg1;
-- (void)startDetectingForDuration:(double)arg1 completion:(id /* block */)arg2;
+- (bool)isDetecting;
+- (void)setHandler:(id)arg1;
+- (void)startDetectingForDuration:(double)arg1 completion:(id)arg2;
 
 @end

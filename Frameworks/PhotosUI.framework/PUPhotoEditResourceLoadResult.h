@@ -6,17 +6,17 @@
     PLPhotoEditMutableModel * _editModel;
     UIImage * _image;
     PUPhotoEditIrisModel * _livePhotoModel;
-    int  _penultimateAvailability;
-    int  _retrievedVersion;
+    long long  _penultimateAvailability;
+    long long  _retrievedVersion;
     AVAsset * _video;
 }
 
 @property (setter=_setEditModel:, nonatomic, retain) PLPhotoEditMutableModel *editModel;
 @property (setter=_setImage:, nonatomic, retain) UIImage *image;
 @property (setter=_setLivePhotoModel:, nonatomic, retain) PUPhotoEditIrisModel *livePhotoModel;
-@property (setter=_setPenultimateAvailability:, nonatomic) int penultimateAvailability;
-@property (getter=isPenultimateAvailable, nonatomic, readonly) BOOL penultimateAvailable;
-@property (setter=_setRetrievedVersion:, nonatomic) int retrievedVersion;
+@property (setter=_setPenultimateAvailability:, nonatomic) long long penultimateAvailability;
+@property (getter=isPenultimateAvailable, nonatomic, readonly) bool penultimateAvailable;
+@property (setter=_setRetrievedVersion:, nonatomic) long long retrievedVersion;
 @property (setter=_setVideo:, nonatomic, retain) AVAsset *video;
 
 + (id)resultWithAdjustmentsLoadResult:(id)arg1;
@@ -25,15 +25,15 @@
 - (void)_setEditModel:(id)arg1;
 - (void)_setImage:(id)arg1;
 - (void)_setLivePhotoModel:(id)arg1;
-- (void)_setPenultimateAvailability:(int)arg1;
-- (void)_setRetrievedVersion:(int)arg1;
+- (void)_setPenultimateAvailability:(long long)arg1;
+- (void)_setRetrievedVersion:(long long)arg1;
 - (void)_setVideo:(id)arg1;
 - (id)editModel;
 - (id)image;
-- (BOOL)isPenultimateAvailable;
+- (bool)isPenultimateAvailable;
 - (id)livePhotoModel;
-- (int)penultimateAvailability;
-- (int)retrievedVersion;
+- (long long)penultimateAvailability;
+- (long long)retrievedVersion;
 - (id)video;
 
 @end

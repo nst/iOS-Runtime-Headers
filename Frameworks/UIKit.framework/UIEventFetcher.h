@@ -3,30 +3,30 @@
  */
 
 @interface UIEventFetcher : NSObject {
-    id /* block */  _addToFilteredEventsBlock;
+    id  _addToFilteredEventsBlock;
     struct __CFRunLoop { } * _cfRunLoop;
-    int  _countOfDigitizerEventsReceivedSinceLastDisplayLinkCallback;
-    BOOL  _didDispatchOneMoveEventSinceLastDisplayLinkCallback;
+    long long  _countOfDigitizerEventsReceivedSinceLastDisplayLinkCallback;
+    bool  _didDispatchOneMoveEventSinceLastDisplayLinkCallback;
     CADisplayLink * _displayLink;
     <UIEventFetcherSink> * _eventFetcherSink;
     NSMutableArray * _eventFilters;
-    id /* block */  _gameControllerEventFilterGenerator;
+    id  _gameControllerEventFilterGenerator;
     NSMutableArray * _incomingHIDEvents;
     NSMutableArray * _incomingHIDEventsFiltered;
-    id /* block */  _receiveBlock;
+    id  _receiveBlock;
     struct __CFRunLoopSource { } * _triggerHandOffEventsRunLoopSource;
-    id /* block */  _watchSystemAppFilter;
+    id  _watchSystemAppFilter;
 }
 
 @property (nonatomic, retain) <UIEventFetcherSink> *eventFetcherSink;
 
 - (void).cxx_destruct;
-- (void)_addHIDEventFilter:(id /* block */)arg1;
+- (void)_addHIDEventFilter:(id)arg1;
 - (void)_receiveHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)_receiveHIDEventInternal:(struct __IOHIDEvent { }*)arg1;
-- (void)_removeHIDEventFilter:(id /* block */)arg1;
+- (void)_removeHIDEventFilter:(id)arg1;
 - (void)_removeHIDGameControllerEventObserver;
-- (void)_setHIDGameControllerEventObserver:(id /* block */)arg1 onQueue:(id)arg2;
+- (void)_setHIDGameControllerEventObserver:(id)arg1 onQueue:(id)arg2;
 - (void)_setupFilterChain;
 - (void)displayLinkDidFire:(id)arg1;
 - (void)drainEventsIntoEnvironment:(id)arg1;

@@ -16,11 +16,11 @@
 - (id)_feedbackWithUpdatedVolume:(id)arg1;
 - (id)_keyboardConfiguration;
 - (double)_lastTypedKeyTimestamp;
-- (void)_playFeedbackForActionType:(int)arg1 withCustomization:(id /* block */)arg2;
+- (void)_playFeedbackForActionType:(long long)arg1 withCustomization:(id)arg2;
 - (void)_setLastTypedKeyTimestamp:(double)arg1;
 - (id)_stats_key;
-- (void)actionOccurred:(int)arg1;
+- (void)actionOccurred:(long long)arg1;
 - (float)scaleVolumeSlow:(float)arg1 fast:(float)arg2 timeSpan:(double)arg3;
-- (void)userTypedOnKeyWithType:(int)arg1;
+- (void)userTypedOnKeyWithType:(long long)arg1;
 
 @end

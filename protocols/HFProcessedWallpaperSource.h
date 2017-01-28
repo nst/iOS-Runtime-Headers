@@ -5,6 +5,6 @@
 
 @required
 
-- (UIImage *)processedImageForVariant:(int)arg1 wallpaper:(HFWallpaper *)arg2 image:(UIImage *)arg3;
+- (UIImage *)processedImageForVariant:(long long)arg1 wallpaper:(HFWallpaper *)arg2 image:(UIImage *)arg3;
 
 @end

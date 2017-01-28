@@ -3,20 +3,20 @@
  */
 
 @interface UpdateAndReportServices : NSObject {
-    id /* block */  _block;
+    id  _block;
     bool  _report;
     bool  _update;
 }
 
-@property (copy) id /* block */ block;
+@property (copy) id block;
 @property (readonly) bool report;
 @property (readonly) bool update;
 
-- (id /* block */)block;
+- (id)block;
 - (void)dealloc;
-- (id)initWithServices:(bool)arg1 needToReport:(bool)arg2 service:(id /* block */)arg3;
+- (id)initWithServices:(bool)arg1 needToReport:(bool)arg2 service:(id)arg3;
 - (bool)report;
-- (void)setBlock:(id /* block */)arg1;
+- (void)setBlock:(id)arg1;
 - (bool)update;
 
 @end

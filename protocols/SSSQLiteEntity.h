@@ -19,10 +19,10 @@
 
 - (NSDictionary *)copyValuesForClientProperties:(NSArray *)arg1;
 - (NSObject<OS_xpc_object> *)copyXPCEncodedValuesForClientProperties:(NSArray *)arg1;
-- (BOOL)deleteFromDatabase;
-- (void)getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned int)arg3;
-- (BOOL)setValue:(id)arg1 forProperty:(NSString *)arg2;
-- (BOOL)setValuesWithDictionary:(NSDictionary *)arg1;
+- (bool)deleteFromDatabase;
+- (void)getValues:(id*)arg1 forProperties:(const id*)arg2 count:(unsigned long long)arg3;
+- (bool)setValue:(id)arg1 forProperty:(NSString *)arg2;
+- (bool)setValuesWithDictionary:(NSDictionary *)arg1;
 - (id)valueForProperty:(NSString *)arg1;
 
 @end

@@ -11,18 +11,19 @@
 @property (nonatomic, retain) UITextView *textView;
 
 - (void).cxx_destruct;
-- (float)bottomBaselineConstant;
+- (double)bottomBaselineConstant;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)labelLabel;
 - (id)labelView;
 - (void)performDefaultAction;
-- (void)setAllowsEditing:(BOOL)arg1;
+- (void)setAllowsEditing:(bool)arg1;
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setProperty:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (void)setValueTextAttributes:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
+- (bool)supportsTintColorValue;
 - (id)textView;
 - (void)textViewChanged:(id)arg1;
 - (void)textViewEditingDidEnd:(id)arg1;

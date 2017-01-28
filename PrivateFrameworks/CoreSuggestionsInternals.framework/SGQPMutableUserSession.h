@@ -6,23 +6,23 @@
     NSString * _abGroup;
     NSString * _conversationId;
     SGQPPrediction * _engagedPrediction;
-    int  _engagedPredictionPosition;
+    long long  _engagedPredictionPosition;
     NSArray * _generatedPredictions;
     NSString * _language;
     NSArray * _messagesInConversation;
     NSArray * _predictionsShown;
-    BOOL  _searchPerformed;
+    bool  _searchPerformed;
 }
 
 @property (readonly) NSString *abGroup;
 @property (readonly) NSString *conversationId;
 @property (retain) SGQPPrediction *engagedPrediction;
-@property int engagedPredictionPosition;
+@property long long engagedPredictionPosition;
 @property (readonly) NSArray *generatedPredictions;
 @property (readonly) NSString *language;
 @property (readonly) NSArray *messagesInConversation;
 @property (retain) NSArray *predictionsShown;
-@property BOOL searchPerformed;
+@property bool searchPerformed;
 
 + (id)sessionWithConversationId:(id)arg1 predictions:(id)arg2 messages:(id)arg3 language:(id)arg4 abGroup:(id)arg5;
 
@@ -31,19 +31,19 @@
 - (void)clearEngagedPrediction;
 - (id)conversationId;
 - (id)engagedPrediction;
-- (int)engagedPredictionPosition;
+- (long long)engagedPredictionPosition;
 - (id)generatedPredictions;
 - (id)initWithConversationId:(id)arg1 predictions:(id)arg2 messages:(id)arg3 language:(id)arg4 abGroup:(id)arg5;
 - (id)language;
 - (id)messagesInConversation;
 - (id)predictionsShown;
-- (BOOL)searchPerformed;
+- (bool)searchPerformed;
 - (void)setEngagedPrediction:(id)arg1;
-- (void)setEngagedPredictionPosition:(int)arg1;
+- (void)setEngagedPredictionPosition:(long long)arg1;
 - (void)setEngagedPredictionWithIdentifier:(id)arg1;
 - (void)setPredictionsShown:(id)arg1;
 - (void)setSearchPerformed;
-- (void)setSearchPerformed:(BOOL)arg1;
+- (void)setSearchPerformed:(bool)arg1;
 - (void)setShowedPredictionsWithIdentifiers:(id)arg1;
 
 @end

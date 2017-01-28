@@ -14,24 +14,24 @@
 @property (nonatomic, readonly) NSSet *reasonCodes;
 @property (nonatomic, readonly) NSSet *reasons;
 
-+ (unsigned int)category;
++ (unsigned long long)category;
 + (id)createFromSearchResult:(id)arg1;
-+ (BOOL)isSearchFoundationCompliant;
++ (bool)isSearchFoundationCompliant;
 + (id)queryWithText:(id)arg1 reasons:(id)arg2 reasonCodes:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isEqualToDECQueryItem:(id)arg1;
+- (bool)_isEqualToDECQueryItem:(id)arg1;
 - (id)abGroupIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithText:(id)arg1 reasons:(id)arg2 reasonCodes:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)queryText;
 - (id)reasonCodes;
 - (id)reasons;

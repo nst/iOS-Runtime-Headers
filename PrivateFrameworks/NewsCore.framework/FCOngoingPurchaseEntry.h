@@ -12,7 +12,7 @@
     NSNumber * _storeExternalVersion;
     NSString * _tagID;
     NSString * _vendorIdentifier;
-    BOOL  _webAccessOptIn;
+    bool  _webAccessOptIn;
 }
 
 @property (nonatomic, copy) NSNumber *appAdamID;
@@ -24,14 +24,14 @@
 @property (nonatomic, copy) NSNumber *storeExternalVersion;
 @property (nonatomic, copy) NSString *tagID;
 @property (nonatomic, copy) NSString *vendorIdentifier;
-@property (nonatomic) BOOL webAccessOptIn;
+@property (nonatomic) bool webAccessOptIn;
 
 - (void).cxx_destruct;
 - (id)appAdamID;
 - (id)dictionaryRepresentation;
 - (id)identifier;
 - (id)initWithEntryID:(id)arg1 dictionaryRepresentation:(id)arg2;
-- (id)initWithEntryID:(id)arg1 tagID:(id)arg2 purchaseID:(id)arg3 productIdentifier:(id)arg4 webAccessOptIn:(BOOL)arg5 appAdamID:(id)arg6 storeExternalVersion:(id)arg7 vendorIdentifier:(id)arg8 purchaseInitiatedTime:(id)arg9 price:(id)arg10;
+- (id)initWithEntryID:(id)arg1 tagID:(id)arg2 purchaseID:(id)arg3 productIdentifier:(id)arg4 webAccessOptIn:(bool)arg5 appAdamID:(id)arg6 storeExternalVersion:(id)arg7 vendorIdentifier:(id)arg8 purchaseInitiatedTime:(id)arg9 price:(id)arg10;
 - (id)price;
 - (id)productIdentifier;
 - (id)purchaseID;
@@ -45,10 +45,10 @@
 - (void)setStoreExternalVersion:(id)arg1;
 - (void)setTagID:(id)arg1;
 - (void)setVendorIdentifier:(id)arg1;
-- (void)setWebAccessOptIn:(BOOL)arg1;
+- (void)setWebAccessOptIn:(bool)arg1;
 - (id)storeExternalVersion;
 - (id)tagID;
 - (id)vendorIdentifier;
-- (BOOL)webAccessOptIn;
+- (bool)webAccessOptIn;
 
 @end

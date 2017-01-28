@@ -15,10 +15,10 @@
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
-- (void)_didCreateWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)_hasAgent;
+- (void)_didCreateWithTransitionContext:(id)arg1 completion:(id)arg2;
+- (bool)_hasAgent;
 - (id)_init;
-- (void)_willDestroyWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)_willDestroyWithTransitionContext:(id)arg1 completion:(id)arg2;
 - (void)attachContext:(id)arg1;
 - (void)attachLayer:(id)arg1;
 - (void)attachSceneContext:(id)arg1;
@@ -36,23 +36,23 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1 identifier:(id)arg2 display:(id)arg3 settings:(id)arg4 clientSettings:(id)arg5;
 - (void)invalidate;
-- (BOOL)invalidateSnapshotWithContext:(id)arg1;
+- (bool)invalidateSnapshotWithContext:(id)arg1;
 - (id)layers;
-- (BOOL)performSnapshotWithContext:(id)arg1;
+- (bool)performSnapshotWithContext:(id)arg1;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)settings;
 - (id)snapshotRequest;
 - (void)updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
-- (void)updateClientSettingsWithBlock:(id /* block */)arg1;
-- (void)updateClientSettingsWithTransitionBlock:(id /* block */)arg1;
+- (void)updateClientSettingsWithBlock:(id)arg1;
+- (void)updateClientSettingsWithTransitionBlock:(id)arg1;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)uiCanReceiveDeviceOrientationEvents;
+- (bool)uiCanReceiveDeviceOrientationEvents;
 - (id)uiClientSettings;
 - (id)uiSettings;
-- (void)updateUIClientSettingsWithBlock:(id /* block */)arg1;
-- (void)updateUIClientSettingsWithTransitionBlock:(id /* block */)arg1;
+- (void)updateUIClientSettingsWithBlock:(id)arg1;
+- (void)updateUIClientSettingsWithTransitionBlock:(id)arg1;
 
 @end

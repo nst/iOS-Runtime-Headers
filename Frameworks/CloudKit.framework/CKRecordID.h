@@ -9,31 +9,31 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *recordName;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
 - (id)CKPropertiesDescription;
 - (id)CKPropertiesDescriptionWithProperties:(id)arg1;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
 - (id)CKXPCSuitableString;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecordName:(id)arg1;
 - (id)initWithRecordName:(id)arg1 zoneID:(id)arg2;
 - (id)initWithSqliteRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)recordName;
 - (void)setRecordName:(id)arg1;
 - (void)setZoneID:(id)arg1;
@@ -42,11 +42,12 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
+- (id)_itemIDWithLibraryRowID:(id)arg1 session:(id)arg2;
 - (id)brc_appLibraryDocumentsZoneName;
 - (id)brc_appLibraryRootZoneName;
-- (BOOL)brc_isAppLibraryDocumentsRecordID;
-- (BOOL)brc_isAppLibraryRootRecordID;
-- (BOOL)brc_isZoneRootRecordID;
+- (bool)brc_isAppLibraryDocumentsRecordID;
+- (bool)brc_isAppLibraryRootRecordID;
+- (bool)brc_isZoneRootRecordID;
 - (id)brc_itemIDOfTargetWithLibraryRowID:(id)arg1 session:(id)arg2;
 - (id)brc_itemIDWithSession:(id)arg1;
 - (BOOL)brc_itemType;
@@ -66,9 +67,9 @@
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (int)databaseScope;
-- (BOOL)ic_isOwnedByCurrentUser;
+- (long long)databaseScope;
+- (bool)ic_isOwnedByCurrentUser;
 - (id)ic_loggingDescription;
-- (id)ic_loggingDescriptionIncludingBrackets:(BOOL)arg1;
+- (id)ic_loggingDescriptionIncludingBrackets:(bool)arg1;
 
 @end

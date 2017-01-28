@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setValid:(BOOL)arg1;
-- (BOOL)valid;
+- (void)setValid:(bool)arg1;
+- (bool)valid;
 
 @end

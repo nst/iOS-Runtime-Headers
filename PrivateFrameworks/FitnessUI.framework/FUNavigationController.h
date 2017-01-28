@@ -5,8 +5,8 @@
 @interface FUNavigationController : UINavigationController
 
 - (id)initWithRootViewController:(id)arg1;
-- (int)preferredInterfaceOrientationForPresentation;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (long long)preferredInterfaceOrientationForPresentation;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

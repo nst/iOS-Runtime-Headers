@@ -6,16 +6,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
-- (void)cancelRemoteDiagnosticWithCompletion:(id /* block */)arg1;
-- (void)enableVolumeHUD:(BOOL)arg1;
-- (void)getAsset:(id)arg1 completion:(id /* block */)arg2;
-- (void)setScreenToBrightness:(float)arg1 animate:(BOOL)arg2;
-- (void)startRemoteDiagnosticWithCompletion:(id /* block */)arg1;
+- (void)cancelRemoteDiagnosticWithCompletion:(id)arg1;
+- (void)enableVolumeHUD:(bool)arg1;
+- (void)getAsset:(id)arg1 completion:(id)arg2;
+- (void)setScreenToBrightness:(float)arg1 animate:(bool)arg2;
+- (void)startRemoteDiagnosticWithCompletion:(id)arg1;
 
 @end

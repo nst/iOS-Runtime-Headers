@@ -3,65 +3,65 @@
  */
 
 @interface NGSGlance : NSObject <NSCopying> {
-    BOOL  _active;
+    bool  _active;
     NSString * _appBundleIdentifier;
-    BOOL  _cannotBeDisabled;
-    BOOL  _defaultGlance;
+    bool  _cannotBeDisabled;
+    bool  _defaultGlance;
     NSString * _glanceBundleIdentifier;
     NSString * _glanceBundlePath;
-    unsigned int  _installState;
+    unsigned long long  _installState;
     NSString * _name;
-    BOOL  _prelaunch;
+    bool  _prelaunch;
     NSString * _sockPuppetIdentifier;
-    BOOL  _systemGlance;
-    unsigned int  _watchKitVersion;
+    bool  _systemGlance;
+    unsigned long long  _watchKitVersion;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, copy) NSString *appBundleIdentifier;
-@property (nonatomic) BOOL cannotBeDisabled;
-@property (getter=isDefaultGlance, nonatomic) BOOL defaultGlance;
+@property (nonatomic) bool cannotBeDisabled;
+@property (getter=isDefaultGlance, nonatomic) bool defaultGlance;
 @property (nonatomic, copy) NSString *glanceBundleIdentifier;
 @property (nonatomic, copy) NSString *glanceBundlePath;
 @property (nonatomic, readonly) NSString *glanceIdentifier;
-@property (nonatomic) unsigned int installState;
-@property (nonatomic, readonly) BOOL isInstalled;
+@property (nonatomic) unsigned long long installState;
+@property (nonatomic, readonly) bool isInstalled;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) BOOL prelaunch;
+@property (nonatomic) bool prelaunch;
 @property (nonatomic, copy) NSString *sockPuppetIdentifier;
-@property (getter=isSystemGlance, nonatomic) BOOL systemGlance;
-@property (nonatomic) unsigned int watchKitVersion;
+@property (getter=isSystemGlance, nonatomic) bool systemGlance;
+@property (nonatomic) unsigned long long watchKitVersion;
 
 - (void).cxx_destruct;
 - (id)_localizedName;
 - (id)appBundleIdentifier;
-- (BOOL)cannotBeDisabled;
+- (bool)cannotBeDisabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)glanceBundleIdentifier;
 - (id)glanceBundlePath;
 - (id)glanceIdentifier;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)installState;
-- (BOOL)isActive;
-- (BOOL)isDefaultGlance;
-- (BOOL)isInstalled;
-- (BOOL)isSystemGlance;
+- (unsigned long long)installState;
+- (bool)isActive;
+- (bool)isDefaultGlance;
+- (bool)isInstalled;
+- (bool)isSystemGlance;
 - (id)name;
-- (BOOL)prelaunch;
-- (void)setActive:(BOOL)arg1;
+- (bool)prelaunch;
+- (void)setActive:(bool)arg1;
 - (void)setAppBundleIdentifier:(id)arg1;
-- (void)setCannotBeDisabled:(BOOL)arg1;
-- (void)setDefaultGlance:(BOOL)arg1;
+- (void)setCannotBeDisabled:(bool)arg1;
+- (void)setDefaultGlance:(bool)arg1;
 - (void)setGlanceBundleIdentifier:(id)arg1;
 - (void)setGlanceBundlePath:(id)arg1;
-- (void)setInstallState:(unsigned int)arg1;
+- (void)setInstallState:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
-- (void)setPrelaunch:(BOOL)arg1;
+- (void)setPrelaunch:(bool)arg1;
 - (void)setSockPuppetIdentifier:(id)arg1;
-- (void)setSystemGlance:(BOOL)arg1;
-- (void)setWatchKitVersion:(unsigned int)arg1;
+- (void)setSystemGlance:(bool)arg1;
+- (void)setWatchKitVersion:(unsigned long long)arg1;
 - (id)sockPuppetIdentifier;
-- (unsigned int)watchKitVersion;
+- (unsigned long long)watchKitVersion;
 
 @end

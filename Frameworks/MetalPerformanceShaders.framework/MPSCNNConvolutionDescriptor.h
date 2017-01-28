@@ -3,49 +3,49 @@
  */
 
 @interface MPSCNNConvolutionDescriptor : NSObject <NSCopying> {
-    unsigned int  _featureChannelsLayout;
-    unsigned int  _groups;
-    unsigned int  _inputFeatureChannels;
-    unsigned int  _kernelHeight;
-    unsigned int  _kernelWidth;
+    unsigned long long  _featureChannelsLayout;
+    unsigned long long  _groups;
+    unsigned long long  _inputFeatureChannels;
+    unsigned long long  _kernelHeight;
+    unsigned long long  _kernelWidth;
     MPSCNNNeuron * _neuron;
-    unsigned int  _outputFeatureChannels;
-    unsigned int  _strideInPixelsX;
-    unsigned int  _strideInPixelsY;
+    unsigned long long  _outputFeatureChannels;
+    unsigned long long  _strideInPixelsX;
+    unsigned long long  _strideInPixelsY;
 }
 
-@property (nonatomic) unsigned int featureChannelsLayout;
-@property (nonatomic) unsigned int groups;
-@property (nonatomic) unsigned int inputFeatureChannels;
-@property (nonatomic) unsigned int kernelHeight;
-@property (nonatomic) unsigned int kernelWidth;
+@property (nonatomic) unsigned long long featureChannelsLayout;
+@property (nonatomic) unsigned long long groups;
+@property (nonatomic) unsigned long long inputFeatureChannels;
+@property (nonatomic) unsigned long long kernelHeight;
+@property (nonatomic) unsigned long long kernelWidth;
 @property (nonatomic, retain) MPSCNNNeuron *neuron;
-@property (nonatomic) unsigned int outputFeatureChannels;
-@property (nonatomic) unsigned int strideInPixelsX;
-@property (nonatomic) unsigned int strideInPixelsY;
+@property (nonatomic) unsigned long long outputFeatureChannels;
+@property (nonatomic) unsigned long long strideInPixelsX;
+@property (nonatomic) unsigned long long strideInPixelsY;
 
-+ (id)cnnConvolutionDescriptorWithKernelWidth:(unsigned int)arg1 kernelHeight:(unsigned int)arg2 inputFeatureChannels:(unsigned int)arg3 outputFeatureChannels:(unsigned int)arg4 neuronFilter:(id)arg5;
++ (id)cnnConvolutionDescriptorWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 neuronFilter:(id)arg5;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)featureChannelsLayout;
-- (unsigned int)groups;
-- (unsigned int)inputFeatureChannels;
-- (id)intWithKernelWidth:(unsigned int)arg1 kernelHeight:(unsigned int)arg2 inputFeatureChannels:(unsigned int)arg3 outputFeatureChannels:(unsigned int)arg4 neuronFilter:(id)arg5;
-- (unsigned int)kernelHeight;
-- (unsigned int)kernelWidth;
+- (unsigned long long)featureChannelsLayout;
+- (unsigned long long)groups;
+- (unsigned long long)inputFeatureChannels;
+- (id)intWithKernelWidth:(unsigned long long)arg1 kernelHeight:(unsigned long long)arg2 inputFeatureChannels:(unsigned long long)arg3 outputFeatureChannels:(unsigned long long)arg4 neuronFilter:(id)arg5;
+- (unsigned long long)kernelHeight;
+- (unsigned long long)kernelWidth;
 - (id)neuron;
-- (unsigned int)outputFeatureChannels;
-- (void)setFeatureChannelsLayout:(unsigned int)arg1;
-- (void)setGroups:(unsigned int)arg1;
-- (void)setInputFeatureChannels:(unsigned int)arg1;
-- (void)setKernelHeight:(unsigned int)arg1;
-- (void)setKernelWidth:(unsigned int)arg1;
+- (unsigned long long)outputFeatureChannels;
+- (void)setFeatureChannelsLayout:(unsigned long long)arg1;
+- (void)setGroups:(unsigned long long)arg1;
+- (void)setInputFeatureChannels:(unsigned long long)arg1;
+- (void)setKernelHeight:(unsigned long long)arg1;
+- (void)setKernelWidth:(unsigned long long)arg1;
 - (void)setNeuron:(id)arg1;
-- (void)setOutputFeatureChannels:(unsigned int)arg1;
-- (void)setStrideInPixelsX:(unsigned int)arg1;
-- (void)setStrideInPixelsY:(unsigned int)arg1;
-- (unsigned int)strideInPixelsX;
-- (unsigned int)strideInPixelsY;
+- (void)setOutputFeatureChannels:(unsigned long long)arg1;
+- (void)setStrideInPixelsX:(unsigned long long)arg1;
+- (void)setStrideInPixelsY:(unsigned long long)arg1;
+- (unsigned long long)strideInPixelsX;
+- (unsigned long long)strideInPixelsY;
 
 @end

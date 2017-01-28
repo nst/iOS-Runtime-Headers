@@ -3,7 +3,7 @@
  */
 
 @interface MPModelStorePlaybackItemsResponse : MPModelResponse <MPModelStoreEquivalencyMapping> {
-    BOOL  _finalResponse;
+    bool  _finalResponse;
     NSMutableDictionary * _localAdamIDToEquivalencySourceAdamIDMap;
     MPStoreLibraryPersonalizationResponse * _personalizationResponse;
     MPModelStorePlaybackItemsResponse * _updatedResponse;
@@ -13,8 +13,8 @@
 @property (getter=_updatedResponse, nonatomic, readonly) MPModelStorePlaybackItemsResponse *_updatedResponse;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFinalResponse, nonatomic) BOOL finalResponse;
-@property (readonly) unsigned int hash;
+@property (getter=isFinalResponse, nonatomic) bool finalResponse;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -26,7 +26,7 @@
 - (id)_updatedResponse;
 - (id)equivalencySourceStoreAdamIDForLocalStoreAdamID:(long long)arg1;
 - (id)initWithRequest:(id)arg1 personalizationResponse:(id)arg2;
-- (BOOL)isFinalResponse;
-- (void)setFinalResponse:(BOOL)arg1;
+- (bool)isFinalResponse;
+- (void)setFinalResponse:(bool)arg1;
 
 @end

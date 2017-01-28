@@ -3,23 +3,23 @@
  */
 
 @interface PARRankerCentroidWeightsParameters : NSObject {
-    int  _client;
-    int  _featureType;
-    int  _func;
+    long long  _client;
+    long long  _featureType;
+    long long  _func;
     double  _weight;
 }
 
-@property (nonatomic, readonly) int client;
-@property (nonatomic, readonly) int featureType;
-@property (nonatomic, readonly) int func;
+@property (nonatomic, readonly) long long client;
+@property (nonatomic, readonly) long long featureType;
+@property (nonatomic, readonly) long long func;
 @property (nonatomic, readonly) double weight;
 
 + (id)defaultValue;
 + (id)responseFromJSON:(id)arg1;
 
-- (int)client;
-- (int)featureType;
-- (int)func;
+- (long long)client;
+- (long long)featureType;
+- (long long)func;
 - (double)weight;
 
 @end

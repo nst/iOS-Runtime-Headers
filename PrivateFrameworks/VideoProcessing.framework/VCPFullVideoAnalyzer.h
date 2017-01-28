@@ -3,8 +3,8 @@
  */
 
 @interface VCPFullVideoAnalyzer : VCPVideoAnalyzer {
-    struct EncodeAnalysis { int x1; int x2; char *x3; struct __CVBuffer {} *x4; struct Translation { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; long long *x6; long long *x7; int *x8; int *x9; int *x10; struct Translation {} *x11; struct FrameBuffer {} *x12; struct EncodeStats {} *x13; float x14; float x15; struct MotionFieldAnalysis { struct EncodeStats {} *x_16_1_1; float *x_16_1_2; float *x_16_1_3; char *x_16_1_4; int x_16_1_5; int x_16_1_6; int x_16_1_7; int x_16_1_8; float x_16_1_9; float x_16_1_10; float x_16_1_11; bool x_16_1_12; int *x_16_1_13[2]; float *x_16_1_14[2]; short *x_16_1_15[2]; int x_16_1_16[2]; int *x_16_1_17[2]; float *x_16_1_18[2]; float *x_16_1_19[2]; struct ObjectDetection { struct Vector<ma::Object *> { struct __CFArray {} *x_1_3_1; } x_20_2_1; struct MotionVector {} *x_20_2_2; float *x_20_2_3; int *x_20_2_4; int *x_20_2_5; int *x_20_2_6; int x_20_2_7; int x_20_2_8; bool x_20_2_9; } x_16_1_20; struct ObjectTracking { struct Object { int x_1_3_1; struct CGRect { struct CGPoint { float x_1_5_1; float x_1_5_2; } x_2_4_1; struct CGSize { float x_2_5_1; float x_2_5_2; } x_2_4_2; } x_1_3_2; struct CGPoint { float x_3_4_1; float x_3_4_2; } x_1_3_3; struct CGPoint { float x_4_4_1; float x_4_4_2; } x_1_3_4; bool x_1_3_5; float x_1_3_6; float x_1_3_7; float x_1_3_8; float x_1_3_9; bool x_1_3_10; } x_21_2_1; struct Object { int x_2_3_1; struct CGRect { struct CGPoint { float x_1_5_1; float x_1_5_2; } x_2_4_1; struct CGSize { float x_2_5_1; float x_2_5_2; } x_2_4_2; } x_2_3_2; struct CGPoint { float x_3_4_1; float x_3_4_2; } x_2_3_3; struct CGPoint { float x_4_4_1; float x_4_4_2; } x_2_3_4; bool x_2_3_5; float x_2_3_6; float x_2_3_7; float x_2_3_8; float x_2_3_9; bool x_2_3_10; } x_21_2_2; bool x_21_2_3; int x_21_2_4; int x_21_2_5; float *x_21_2_6; float *x_21_2_7; float *x_21_2_8; float *x_21_2_9; float *x_21_2_10; float *x_21_2_11; float *x_21_2_12; int x_21_2_13; int x_21_2_14; float *x_21_2_15; int x_21_2_16; int x_21_2_17; int x_21_2_18; } x_16_1_21; } x16; } * _encodeAnalysis;
-    BOOL  _finalized;
+    struct EncodeAnalysis { int x1; int x2; char *x3; struct __CVBuffer {} *x4; struct Translation { float x_5_1_1; float x_5_1_2; float x_5_1_3; } x5; long long *x6; long long *x7; int *x8; int *x9; int *x10; struct Translation {} *x11; struct FrameBuffer {} *x12; struct EncodeStats {} *x13; float x14; float x15; struct MotionFieldAnalysis { struct EncodeStats {} *x_16_1_1; float *x_16_1_2; float *x_16_1_3; char *x_16_1_4; int x_16_1_5; int x_16_1_6; int x_16_1_7; int x_16_1_8; float x_16_1_9; float x_16_1_10; float x_16_1_11; bool x_16_1_12; int *x_16_1_13[2]; float *x_16_1_14[2]; short *x_16_1_15[2]; int x_16_1_16[2]; int *x_16_1_17[2]; float *x_16_1_18[2]; float *x_16_1_19[2]; struct ObjectDetection { struct Vector<ma::Object *> { struct __CFArray {} *x_1_3_1; } x_20_2_1; struct MotionVector {} *x_20_2_2; float *x_20_2_3; int *x_20_2_4; int *x_20_2_5; int *x_20_2_6; int x_20_2_7; int x_20_2_8; bool x_20_2_9; } x_16_1_20; struct ObjectTracking { struct Object { int x_1_3_1; struct CGRect { struct CGPoint { double x_1_5_1; double x_1_5_2; } x_2_4_1; struct CGSize { double x_2_5_1; double x_2_5_2; } x_2_4_2; } x_1_3_2; struct CGPoint { double x_3_4_1; double x_3_4_2; } x_1_3_3; struct CGPoint { double x_4_4_1; double x_4_4_2; } x_1_3_4; bool x_1_3_5; float x_1_3_6; float x_1_3_7; float x_1_3_8; float x_1_3_9; bool x_1_3_10; } x_21_2_1; struct Object { int x_2_3_1; struct CGRect { struct CGPoint { double x_1_5_1; double x_1_5_2; } x_2_4_1; struct CGSize { double x_2_5_1; double x_2_5_2; } x_2_4_2; } x_2_3_2; struct CGPoint { double x_3_4_1; double x_3_4_2; } x_2_3_3; struct CGPoint { double x_4_4_1; double x_4_4_2; } x_2_3_4; bool x_2_3_5; float x_2_3_6; float x_2_3_7; float x_2_3_8; float x_2_3_9; bool x_2_3_10; } x_21_2_2; bool x_21_2_3; int x_21_2_4; int x_21_2_5; float *x_21_2_6; float *x_21_2_7; float *x_21_2_8; float *x_21_2_9; float *x_21_2_10; float *x_21_2_11; float *x_21_2_12; long long x_21_2_13; long long x_21_2_14; float *x_21_2_15; int x_21_2_16; } x_16_1_21; } x16; } * _encodeAnalysis;
+    bool  _finalized;
     struct FrameBuffer { 
         int frame_count_; 
         struct Frame { 
@@ -85,7 +85,7 @@
         } buffer_[35]; 
     }  _frameBuffer;
     struct IrisAnalysis { float x1; float x2; int x3; int x4; bool x5; struct __CFArray {} *x6; } * _irisAnalysis;
-    BOOL  _isIris;
+    bool  _isIris;
     struct MetaDataAnalysis { bool x1; struct FrameBuffer {} *x2; struct Translation { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; struct Translation { float x_4_1_1; float x_4_1_2; float x_4_1_3; } x4; } * _metadataAnalysis;
     struct MotionFilter { struct FrameBuffer {} *x1; bool x2; } * _motionFilter;
     struct ObstructionAnalysis { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct __CFArray {} *x2; int x3; int x4; struct { int x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; struct { int x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; int x_6_1_5; int x_6_1_6; } x6; struct { int x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; int x_7_1_5; int x_7_1_6; } x7; float x8; int x9; struct { long long x_10_1_1; int x_10_1_2; unsigned int x_10_1_3; long long x_10_1_4; } x10; } * _obstructionAnalysis;
@@ -96,14 +96,14 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (long)addResult:(struct __CFArray { }*)arg1 to:(id)arg2 forKey:(id)arg3 optional:(BOOL)arg4;
-- (long)addSceneAnalysisResult:(id)arg1 to:(id)arg2 optional:(BOOL)arg3;
-- (long)analyzeFrame:(struct __CVBuffer { }*)arg1 withTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 andDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 flags:(unsigned int*)arg4;
+- (int)addResult:(struct __CFArray { }*)arg1 to:(id)arg2 forKey:(id)arg3 optional:(bool)arg4;
+- (int)addSceneAnalysisResult:(id)arg1 to:(id)arg2 optional:(bool)arg3;
+- (int)analyzeFrame:(struct __CVBuffer { }*)arg1 withTimestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 andDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 flags:(unsigned long long*)arg4;
 - (void)dealloc;
-- (long)finishAnalysisPass:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
-- (id)initWithVideoTrack:(id)arg1 withMetaOrientation:(id)arg2 isIris:(BOOL)arg3 irisPhotoOffsetSec:(float)arg4 irisPhotoExposureSec:(float)arg5 slowMoRate:(float)arg6;
-- (long)process:(int)arg1;
+- (int)finishAnalysisPass:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (id)initWithVideoTrack:(id)arg1 withMetaOrientation:(id)arg2 isIris:(bool)arg3 irisPhotoOffsetSec:(float)arg4 irisPhotoExposureSec:(float)arg5 slowMoRate:(float)arg6;
+- (int)process:(int)arg1;
 - (id)results;
-- (long)seedAnalyzersWithPixelBuffer:(struct __CVBuffer { }*)arg1 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (int)seedAnalyzersWithPixelBuffer:(struct __CVBuffer { }*)arg1 startTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 
 @end

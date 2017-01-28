@@ -6,8 +6,7 @@
     NSSQLForeignEntityKey * _foreignEntityKey;
     NSSQLForeignKey * _foreignKey;
     NSSQLForeignOrderKey * _foreignOrderKey;
-    BOOL  _isVirtual;
-    unsigned int  _slot;
+    bool  _isVirtual;
 }
 
 - (void)_setForeignOrderKey:(id)arg1;
@@ -22,8 +21,8 @@
 - (id)initWithEntity:(id)arg1 inverseToMany:(id)arg2;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2 virtualForToMany:(id)arg3;
-- (BOOL)isOptional;
-- (BOOL)isVirtual;
+- (bool)isOptional;
+- (bool)isVirtual;
 - (unsigned int)slot;
 
 @end

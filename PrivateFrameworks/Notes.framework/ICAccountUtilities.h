@@ -6,15 +6,15 @@
     ACAccountStore * _accountStore;
     NSDictionary * _currentICloudAccountState;
     ACAccount * _primaryICloudACAccount;
-    BOOL  _primaryICloudACAccountValid;
+    bool  _primaryICloudACAccountValid;
 }
 
 @property (nonatomic, retain) ACAccountStore *accountStore;
 @property (nonatomic, copy) NSDictionary *currentICloudAccountState;
-@property (nonatomic, readonly) BOOL didChooseToMigratePrimaryICloudAccount;
+@property (nonatomic, readonly) bool didChooseToMigratePrimaryICloudAccount;
 @property (readonly) ACAccount *primaryICloudACAccount;
-@property (getter=isPrimaryICloudACAccountValid, nonatomic) BOOL primaryICloudACAccountValid;
-@property (nonatomic, readonly) BOOL primaryICloudAccountEnabled;
+@property (getter=isPrimaryICloudACAccountValid, nonatomic) bool primaryICloudACAccountValid;
+@property (nonatomic, readonly) bool primaryICloudAccountEnabled;
 
 + (id)sharedInstance;
 
@@ -24,17 +24,17 @@
 - (id)allICloudACAccounts;
 - (id)currentICloudAccountState;
 - (void)dealloc;
-- (BOOL)didChooseToMigratePrimaryICloudAccount;
+- (bool)didChooseToMigratePrimaryICloudAccount;
 - (id)init;
-- (id)initForObservingAccountStoreChanges:(BOOL)arg1;
+- (id)initForObservingAccountStoreChanges:(bool)arg1;
 - (void)internalInvalidatePrimaryICloudACAccount;
 - (void)invalidatePrimaryICloudACAccount;
-- (BOOL)isPrimaryICloudACAccountValid;
+- (bool)isPrimaryICloudACAccountValid;
 - (id)primaryICloudACAccount;
-- (BOOL)primaryICloudAccountEnabled;
+- (bool)primaryICloudAccountEnabled;
 - (void)setAccountStore:(id)arg1;
 - (void)setCurrentICloudAccountState:(id)arg1;
-- (void)setPrimaryICloudACAccountValid:(BOOL)arg1;
+- (void)setPrimaryICloudACAccountValid:(bool)arg1;
 - (void)updateICloudACAccountFromStore;
 
 @end

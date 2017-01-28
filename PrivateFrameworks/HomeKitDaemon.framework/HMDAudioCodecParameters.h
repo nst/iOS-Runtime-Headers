@@ -14,10 +14,10 @@
 @property (nonatomic, readonly, copy) NSArray *bitRateSettings;
 @property (nonatomic, readonly, copy) NSNumber *rtpPtime;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (id)audioChannelCount;
 - (id)audioSampleRates;
 - (id)bitRateSettings;

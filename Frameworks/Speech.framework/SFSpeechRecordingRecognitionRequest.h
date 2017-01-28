@@ -3,23 +3,23 @@
  */
 
 @interface SFSpeechRecordingRecognitionRequest : SFSpeechRecognitionRequest {
-    BOOL  _automaticallyEndpoint;
+    bool  _automaticallyEndpoint;
     double  _maximumRecordingDuration;
-    BOOL  _shouldPlayAudioRecordSounds;
+    bool  _shouldPlayAudioRecordSounds;
 }
 
-@property (nonatomic) BOOL automaticallyEndpoint;
+@property (nonatomic) bool automaticallyEndpoint;
 @property (nonatomic) double maximumRecordingDuration;
-@property (nonatomic) BOOL shouldPlayAudioRecordSounds;
+@property (nonatomic) bool shouldPlayAudioRecordSounds;
 
-- (BOOL)_powerMeteringAvailable;
-- (id)_startedConnectionWithLanguageCode:(id)arg1 delegate:(id)arg2 taskHint:(int)arg3 requestIdentifier:(id)arg4;
-- (BOOL)automaticallyEndpoint;
+- (bool)_powerMeteringAvailable;
+- (id)_startedConnectionWithLanguageCode:(id)arg1 delegate:(id)arg2 taskHint:(long long)arg3 requestIdentifier:(id)arg4;
+- (bool)automaticallyEndpoint;
 - (id)init;
 - (double)maximumRecordingDuration;
-- (void)setAutomaticallyEndpoint:(BOOL)arg1;
+- (void)setAutomaticallyEndpoint:(bool)arg1;
 - (void)setMaximumRecordingDuration:(double)arg1;
-- (void)setShouldPlayAudioRecordSounds:(BOOL)arg1;
-- (BOOL)shouldPlayAudioRecordSounds;
+- (void)setShouldPlayAudioRecordSounds:(bool)arg1;
+- (bool)shouldPlayAudioRecordSounds;
 
 @end

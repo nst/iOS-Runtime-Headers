@@ -3,20 +3,20 @@
  */
 
 @interface _QLFileCoordinatorDownloadOperation : _QLDownloadOperation {
-    float  _currentProgress;
+    double  _currentProgress;
     NSFileCoordinator * _fileCoordinator;
     id  _progressSubscriber;
 }
 
 - (void).cxx_destruct;
-- (BOOL)canBeCanceled;
-- (BOOL)cancel;
+- (bool)canBeCanceled;
+- (bool)cancel;
 - (void)dealloc;
 - (id)initWithPreviewItem:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)performDownload;
-- (void)setCompletionBlock:(id /* block */)arg1;
-- (void)setProgressUpdateBlock:(id /* block */)arg1;
+- (bool)performDownload;
+- (void)setCompletionBlock:(id)arg1;
+- (void)setProgressUpdateBlock:(id)arg1;
 - (void)subscribeToPreviewItemProgress;
 
 @end

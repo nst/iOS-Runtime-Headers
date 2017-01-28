@@ -6,7 +6,7 @@
     UIView * _authKitSignInView;
     CNFRegSplashSignInController * _controller;
     UIButton * _learnMoreButton;
-    int  _serviceType;
+    long long  _serviceType;
     UILabel * _signingInLabel;
     UIActivityIndicatorView * _signingInSpinner;
     PSSpecifier * _specifier;
@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic) CNFRegSplashSignInController *controller;
-@property (nonatomic) int serviceType;
+@property (nonatomic) long long serviceType;
 
 - (void).cxx_destruct;
 - (void)_learnMorePressed:(id)arg1;
@@ -25,12 +25,12 @@
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
 - (id)learnMoreButton;
-- (float)preferredHeightForWidth:(float)arg1;
-- (int)serviceType;
+- (double)preferredHeightForWidth:(double)arg1;
+- (long long)serviceType;
 - (void)setAuthKitSignInView:(id)arg1;
 - (void)setController:(id)arg1;
-- (void)setServiceType:(int)arg1;
-- (void)setSigningIn:(BOOL)arg1;
+- (void)setServiceType:(long long)arg1;
+- (void)setSigningIn:(bool)arg1;
 - (id)signingInLabel;
 - (id)signingInSpinner;
 - (id)splashImageView;

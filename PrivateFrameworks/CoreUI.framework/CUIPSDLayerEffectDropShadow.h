@@ -5,39 +5,39 @@
 @interface CUIPSDLayerEffectDropShadow : CUIPSDLayerEffectComponent {
     short  _angle;
     int  _blendMode;
-    unsigned int  _blurSize;
+    unsigned long long  _blurSize;
     CUIColor * _color;
-    unsigned int  _distance;
-    float  _opacity;
-    unsigned int  _spread;
+    unsigned long long  _distance;
+    double  _opacity;
+    unsigned long long  _spread;
 }
 
 @property short angle;
 @property int blendMode;
-@property unsigned int blurSize;
+@property unsigned long long blurSize;
 @property (retain) CUIColor *color;
-@property unsigned int distance;
-@property float opacity;
-@property unsigned int spread;
+@property unsigned long long distance;
+@property double opacity;
+@property unsigned long long spread;
 
 - (short)angle;
 - (int)blendMode;
-- (unsigned int)blurSize;
+- (unsigned long long)blurSize;
 - (id)color;
 - (void)dealloc;
-- (unsigned int)distance;
+- (unsigned long long)distance;
 - (unsigned int)effectType;
 - (id)init;
 - (id)initWithEffectFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
-- (float)opacity;
+- (double)opacity;
 - (void)setAngle:(short)arg1;
 - (void)setBlendMode:(int)arg1;
-- (void)setBlurSize:(unsigned int)arg1;
+- (void)setBlurSize:(unsigned long long)arg1;
 - (void)setColor:(id)arg1;
-- (void)setDistance:(unsigned int)arg1;
-- (void)setOpacity:(float)arg1;
-- (void)setSpread:(unsigned int)arg1;
-- (unsigned int)spread;
-- (BOOL)updateLayerEffectPreset:(id)arg1 error:(id*)arg2;
+- (void)setDistance:(unsigned long long)arg1;
+- (void)setOpacity:(double)arg1;
+- (void)setSpread:(unsigned long long)arg1;
+- (unsigned long long)spread;
+- (bool)updateLayerEffectPreset:(id)arg1 error:(id*)arg2;
 
 @end

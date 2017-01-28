@@ -6,13 +6,13 @@
     TILanguageModelAdaptationContext * _currentAdaptationContext;
     TIInputMode * _inputMode;
     NSDate * _lastAdaptationDate;
-    BOOL  _valid;
+    bool  _valid;
 }
 
 @property (nonatomic, copy) TILanguageModelAdaptationContext *currentAdaptationContext;
 @property (nonatomic, readonly) TIInputMode *inputMode;
 @property (nonatomic, copy) NSDate *lastAdaptationDate;
-@property (getter=isValid, nonatomic) BOOL valid;
+@property (getter=isValid, nonatomic) bool valid;
 
 + (id)handleForInputMode:(id)arg1;
 + (id)handleForLanguageLikelihood;
@@ -23,12 +23,12 @@
 - (void)didFinishLearning;
 - (id)initWithInputMode:(id)arg1;
 - (id)inputMode;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)lastAdaptationDate;
 - (void)load;
 - (void)setCurrentAdaptationContext:(id)arg1;
 - (void)setLastAdaptationDate:(id)arg1;
-- (void)setValid:(BOOL)arg1;
+- (void)setValid:(bool)arg1;
 - (void)updateAdaptationContext:(id)arg1;
 
 @end

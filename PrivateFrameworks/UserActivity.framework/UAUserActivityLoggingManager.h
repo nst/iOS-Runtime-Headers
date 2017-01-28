@@ -3,29 +3,29 @@
  */
 
 @interface UAUserActivityLoggingManager : NSObject {
-    BOOL  _isServer;
-    BOOL  _loggingEnabled;
+    bool  _isServer;
+    bool  _loggingEnabled;
     NSMutableDictionary * _logsForTags;
 }
 
-@property BOOL isServer;
-@property (readonly) BOOL loggingEnabled;
+@property bool isServer;
+@property (readonly) bool loggingEnabled;
 @property (readonly, retain) NSMutableDictionary *logsForTags;
 
 + (id)hexDataDump:(id)arg1;
 + (id)sharedDebugManager;
 
 - (void).cxx_destruct;
-- (id)createLogFileForClient:(id)arg1 rotateLogs:(BOOL)arg2;
+- (id)createLogFileForClient:(id)arg1 rotateLogs:(bool)arg2;
 - (id)init;
-- (BOOL)isServer;
+- (bool)isServer;
 - (id)log;
-- (void)log:(const char *)arg1 line:(long)arg2 queue:(const char *)arg3 format:(const char *)arg4;
+- (void)log:(const char *)arg1 line:(long long)arg2 queue:(const char *)arg3 format:(const char *)arg4;
 - (id)logForCategory:(id)arg1;
-- (BOOL)loggingEnabled;
+- (bool)loggingEnabled;
 - (id)logsForTags;
 - (void)resume;
-- (void)setIsServer:(BOOL)arg1;
+- (void)setIsServer:(bool)arg1;
 - (void)suspend;
 
 @end

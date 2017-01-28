@@ -7,6 +7,6 @@
 + (id)singleton;
 
 - (id)copyWithNewParent:(id)arg1;
-- (BOOL)isTruncatedBacktraceFrame;
+- (bool)isTruncatedBacktraceFrame;
 
 @end

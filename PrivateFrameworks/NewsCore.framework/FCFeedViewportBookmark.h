@@ -17,10 +17,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalGroupID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithExternalGroupID:(id)arg1 internalGroupID:(id)arg2 articleID:(id)arg3;
 - (id)internalGroupID;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -3,25 +3,25 @@
  */
 
 @interface MPLibraryKeepLocalStatusObserverDetailedContainerConfiguration : MPLibraryKeepLocalStatusObserverConfiguration {
-    int  _downloadEnabledItemCount;
-    int  _nonPurgeableItemCount;
+    long long  _downloadEnabledItemCount;
+    long long  _nonPurgeableItemCount;
     NSArray * _pendingItemIdentifiers;
-    int  _redownloadableItemCount;
+    long long  _redownloadableItemCount;
 }
 
-@property (nonatomic) int downloadEnabledItemCount;
-@property (nonatomic) int nonPurgeableItemCount;
+@property (nonatomic) long long downloadEnabledItemCount;
+@property (nonatomic) long long nonPurgeableItemCount;
 @property (nonatomic, copy) NSArray *pendingItemIdentifiers;
-@property (nonatomic) int redownloadableItemCount;
+@property (nonatomic) long long redownloadableItemCount;
 
 - (void).cxx_destruct;
-- (int)downloadEnabledItemCount;
-- (int)nonPurgeableItemCount;
+- (long long)downloadEnabledItemCount;
+- (long long)nonPurgeableItemCount;
 - (id)pendingItemIdentifiers;
-- (int)redownloadableItemCount;
-- (void)setDownloadEnabledItemCount:(int)arg1;
-- (void)setNonPurgeableItemCount:(int)arg1;
+- (long long)redownloadableItemCount;
+- (void)setDownloadEnabledItemCount:(long long)arg1;
+- (void)setNonPurgeableItemCount:(long long)arg1;
 - (void)setPendingItemIdentifiers:(id)arg1;
-- (void)setRedownloadableItemCount:(int)arg1;
+- (void)setRedownloadableItemCount:(long long)arg1;
 
 @end

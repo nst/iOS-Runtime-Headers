@@ -4,14 +4,14 @@
 
 @interface MFAtomIcon : UIImage {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  drawingOffset;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } drawingOffset;
+@property (nonatomic) struct CGPoint { double x1; double x2; } drawingOffset;
 
-- (struct CGPoint { float x1; float x2; })drawingOffset;
-- (void)setDrawingOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { double x1; double x2; })drawingOffset;
+- (void)setDrawingOffset:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

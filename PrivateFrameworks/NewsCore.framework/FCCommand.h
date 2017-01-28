@@ -4,12 +4,12 @@
 
 @interface FCCommand : NSObject <NSCoding>
 
-- (BOOL)canCoalesceWithCommand:(id)arg1;
+- (bool)canCoalesceWithCommand:(id)arg1;
 - (void)coalesceWithCommand:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1 delegate:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)statusForCloudKitError:(id)arg1;
+- (unsigned long long)statusForCloudKitError:(id)arg1;
 
 @end

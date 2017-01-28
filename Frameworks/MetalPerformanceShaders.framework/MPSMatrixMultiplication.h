@@ -3,61 +3,61 @@
  */
 
 @interface MPSMatrixMultiplication : MPSKernel {
-    unsigned int  _K;
-    unsigned int  _M;
-    unsigned int  _N;
+    unsigned long long  _K;
+    unsigned long long  _M;
+    unsigned long long  _N;
     double  _alpha;
     double  _beta;
     int (* _encode;
     void * _encodeData;
     struct { 
-        unsigned int x; 
-        unsigned int y; 
-        unsigned int z; 
+        unsigned long long x; 
+        unsigned long long y; 
+        unsigned long long z; 
     }  _leftMatrixOrigin;
     struct { 
-        unsigned int x; 
-        unsigned int y; 
-        unsigned int z; 
+        unsigned long long x; 
+        unsigned long long y; 
+        unsigned long long z; 
     }  _resultMatrixOrigin;
     struct { 
-        unsigned int x; 
-        unsigned int y; 
-        unsigned int z; 
+        unsigned long long x; 
+        unsigned long long y; 
+        unsigned long long z; 
     }  _rightMatrixOrigin;
-    BOOL  _transA;
-    BOOL  _transB;
+    bool  _transA;
+    bool  _transB;
 }
 
-@property (nonatomic, readonly) unsigned int K;
-@property (nonatomic, readonly) unsigned int M;
-@property (nonatomic, readonly) unsigned int N;
+@property (nonatomic, readonly) unsigned long long K;
+@property (nonatomic, readonly) unsigned long long M;
+@property (nonatomic, readonly) unsigned long long N;
 @property (nonatomic, readonly) double alpha;
 @property (nonatomic, readonly) double beta;
-@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3; } leftMatrixOrigin;
-@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3; } resultMatrixOrigin;
-@property (nonatomic) struct { unsigned int x1; unsigned int x2; unsigned int x3; } rightMatrixOrigin;
-@property (nonatomic, readonly) BOOL transA;
-@property (nonatomic, readonly) BOOL transB;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; } leftMatrixOrigin;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; } resultMatrixOrigin;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; } rightMatrixOrigin;
+@property (nonatomic, readonly) bool transA;
+@property (nonatomic, readonly) bool transB;
 
 + (const struct MPSLibraryInfo { int x1; unsigned int x2; char *x3; struct MPSKernelInfo {} *x4; struct MPSKernelInfo {} *x5; struct MPSKernelInfo {} *x6; struct MPSKernelInfo {} *x7; struct MPSKernelInfo {} *x8; struct MPSKernelInfo {} *x9; struct MPSKernelInfo {} *x10; struct MPSKernelInfo {} *x11; struct MPSKernelInfo {} *x12; struct MPSKernelInfo {} *x13; struct MPSKernelInfo {} *x14; }*)libraryInfo;
 
-- (unsigned int)K;
-- (unsigned int)M;
-- (unsigned int)N;
+- (unsigned long long)K;
+- (unsigned long long)M;
+- (unsigned long long)N;
 - (double)alpha;
 - (double)beta;
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (id)debugDescription;
 - (void)encodeToCommandBuffer:(id)arg1 leftMatrix:(id)arg2 rightMatrix:(id)arg3 resultMatrix:(id)arg4;
-- (id)initWithDevice:(id)arg1 transposeLeft:(BOOL)arg2 transposeRight:(BOOL)arg3 resultRows:(unsigned int)arg4 resultColumns:(unsigned int)arg5 interiorColumns:(unsigned int)arg6 alpha:(double)arg7 beta:(double)arg8;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })leftMatrixOrigin;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })resultMatrixOrigin;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })rightMatrixOrigin;
-- (void)setLeftMatrixOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
-- (void)setResultMatrixOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
-- (void)setRightMatrixOrigin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
-- (BOOL)transA;
-- (BOOL)transB;
+- (id)initWithDevice:(id)arg1 transposeLeft:(bool)arg2 transposeRight:(bool)arg3 resultRows:(unsigned long long)arg4 resultColumns:(unsigned long long)arg5 interiorColumns:(unsigned long long)arg6 alpha:(double)arg7 beta:(double)arg8;
+- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })leftMatrixOrigin;
+- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })resultMatrixOrigin;
+- (struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })rightMatrixOrigin;
+- (void)setLeftMatrixOrigin:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
+- (void)setResultMatrixOrigin:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
+- (void)setRightMatrixOrigin:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
+- (bool)transA;
+- (bool)transB;
 
 @end

@@ -11,7 +11,7 @@
     UIWebSelectionNode * _fromRightByExpanding;
     UIWebSelectionNode * _fromTopByContracting;
     UIWebSelectionNode * _fromTopByExpanding;
-    BOOL  _invalid;
+    bool  _invalid;
     UIWebSelection * _selection;
     UIWebSelectionGraph * _sharedGraph;
 }
@@ -21,8 +21,8 @@
 - (void)dealloc;
 - (id)initWithSelection:(id)arg1 inGraph:(id)arg2;
 - (void)invalidate;
-- (id)nodeByMovingEdge:(int)arg1 outwards:(BOOL)arg2;
-- (id*)nodeByReferenceFromEdge:(int)arg1 outwards:(BOOL)arg2;
+- (id)nodeByMovingEdge:(int)arg1 outwards:(bool)arg2;
+- (id*)nodeByReferenceFromEdge:(int)arg1 outwards:(bool)arg2;
 - (int)oppositeEdge:(int)arg1;
 - (id)selection;
 - (void)setSelection:(id)arg1;

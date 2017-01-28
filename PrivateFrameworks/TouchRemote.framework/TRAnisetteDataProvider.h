@@ -10,13 +10,13 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)eraseAnisetteWithCompletion:(id /* block */)arg1;
-- (void)fetchAnisetteDataAndProvisionIfNecessary:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)eraseAnisetteWithCompletion:(id)arg1;
+- (void)fetchAnisetteDataAndProvisionIfNecessary:(bool)arg1 withCompletion:(id)arg2;
 - (id)initWithSession:(id)arg1;
-- (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)provisionAnisetteWithCompletion:(id /* block */)arg1;
+- (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(id)arg2;
+- (void)provisionAnisetteWithCompletion:(id)arg1;
 - (id)session;
 - (void)setSession:(id)arg1;
-- (void)syncAnisetteWithSIMData:(id)arg1 completion:(id /* block */)arg2;
+- (void)syncAnisetteWithSIMData:(id)arg1 completion:(id)arg2;
 
 @end

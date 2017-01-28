@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSString *keyPath;
 @property (nonatomic) id object;
 
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constantObject:(id)arg7 keyPath:(id)arg8;
++ (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 multiplier:(double)arg6 constantObject:(id)arg7 keyPath:(id)arg8;
 
 - (void).cxx_destruct;
 - (void)_boundValueDidChange;

@@ -4,28 +4,30 @@
 
 @interface _HKAuthorizationRecord : NSObject <NSCopying, NSSecureCoding> {
     long long  _objectAnchor;
-    int  _request;
-    int  _status;
+    long long  _request;
+    long long  _status;
 }
 
 @property (readonly) long long objectAnchor;
-@property (readonly) int request;
-@property (readonly) int status;
+@property (readonly) long long request;
+@property (readonly) long long status;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithAuthorizationStatus:(int)arg1 authorizationRequest:(int)arg2 objectAnchor:(long long)arg3;
+- (unsigned long long)hash;
+- (id)initWithAuthorizationStatus:(long long)arg1 authorizationRequest:(long long)arg2 objectAnchor:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCompatibleStatus:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCompatibleStatus:(long long)arg1;
+- (bool)isEqual:(id)arg1;
 - (long long)objectAnchor;
-- (int)request;
-- (BOOL)requestedReading;
-- (BOOL)requestedSharing;
-- (int)status;
+- (bool)readingEnabled;
+- (long long)request;
+- (bool)requestedReading;
+- (bool)requestedSharing;
+- (bool)sharingEnabled;
+- (long long)status;
 
 @end

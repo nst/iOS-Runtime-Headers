@@ -5,7 +5,7 @@
 @interface XMLWrapperElementFactory : NSObject
 
 + (Class)elementClassByTagName:(id)arg1;
-+ (unsigned int)elementTypeByTagName:(id)arg1;
++ (unsigned long long)elementTypeByTagName:(id)arg1;
 + (void)initialize;
 + (void)registerClass:(Class)arg1 forElementName:(id)arg2;
 + (id)sharedInstance;

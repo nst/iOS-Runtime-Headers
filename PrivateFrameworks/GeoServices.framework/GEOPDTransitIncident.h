@@ -9,7 +9,7 @@
 @property (nonatomic, retain) NSMutableArray *transitIncidents;
 
 + (Class)transitIncidentType;
-+ (id)transitIncidentsForPlaceData:(id)arg1 hasTransitIncidentComponent:(BOOL*)arg2;
++ (id)transitIncidentsForPlaceData:(id)arg1 hasTransitIncidentComponent:(bool*)arg2;
 + (id)transitIncidentsTTLExpirationDateForPlaceData:(id)arg1;
 
 - (void)addTransitIncident:(id)arg1;
@@ -19,14 +19,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setTransitIncidents:(id)arg1;
-- (id)transitIncidentAtIndex:(unsigned int)arg1;
+- (id)transitIncidentAtIndex:(unsigned long long)arg1;
 - (id)transitIncidents;
-- (unsigned int)transitIncidentsCount;
+- (unsigned long long)transitIncidentsCount;
 - (void)writeTo:(id)arg1;
 
 @end

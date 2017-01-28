@@ -13,8 +13,8 @@
 - (void)_addAlertControllerToStack:(id)arg1;
 - (void)_alertControllerDidAppear:(id)arg1;
 - (void)_alertControllerDidDisappear:(id)arg1;
-- (BOOL)_alertControllerShouldBeTrackedInStack:(id)arg1;
-- (int)_alertControllerStackCount;
+- (bool)_alertControllerShouldBeTrackedInStack:(id)arg1;
+- (long long)_alertControllerStackCount;
 - (void)_alertControllerWillAppear:(id)arg1;
 - (void)_alertControllerWillDisappear:(id)arg1;
 - (void)_didHideAlertController:(id)arg1;

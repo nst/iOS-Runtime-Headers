@@ -6,7 +6,7 @@
 
 @property (nonatomic, retain) UIImage *attachmentImage;
 @property (nonatomic, retain) NSDate *date;
-@property (getter=isDateAllDay, nonatomic) BOOL dateAllDay;
+@property (getter=isDateAllDay, nonatomic) bool dateAllDay;
 @property (nonatomic, copy) NSString *header;
 @property (nonatomic, retain) UIImage *icon;
 @property (nonatomic, copy) NSString *message;
@@ -18,7 +18,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAttachmentImage:(id)arg1;
 - (void)setDate:(id)arg1;
-- (void)setDateAllDay:(BOOL)arg1;
+- (void)setDateAllDay:(bool)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setMessage:(id)arg1;

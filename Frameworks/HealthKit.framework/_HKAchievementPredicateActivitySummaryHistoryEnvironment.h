@@ -6,43 +6,43 @@
     double  _bestAchievedBriskMinutes;
     double  _bestAchievedMoveCalories;
     double  _bestAchievedMoveGoal;
-    int  _bestConsecutiveMoveGoalsMet;
-    int  _consecutiveExerciseGoalsMet;
-    int  _consecutiveMoveGoalsMet;
-    int  _consecutiveStandGoalsMet;
+    long long  _bestConsecutiveMoveGoalsMet;
+    long long  _consecutiveExerciseGoalsMet;
+    long long  _consecutiveMoveGoalsMet;
+    long long  _consecutiveStandGoalsMet;
     NSSet * _earnedAchievementDefinitionIdentifiers;
     _HKAchievementPredicateActivitySummaryHistoryEnvironment * _previous;
-    int  _totalDaysOfExerciseHistory;
-    int  _totalDaysOfMoveHistory;
-    int  _totalMoveGoalsMet;
+    long long  _totalDaysOfExerciseHistory;
+    long long  _totalDaysOfMoveHistory;
+    long long  _totalMoveGoalsMet;
 }
 
 @property (nonatomic, readonly) double bestAchievedBriskMinutes;
 @property (nonatomic, readonly) double bestAchievedMoveCalories;
 @property (nonatomic, readonly) double bestAchievedMoveGoal;
-@property (nonatomic, readonly) int bestConsecutiveMoveGoalsMet;
-@property (nonatomic, readonly) int consecutiveExerciseGoalsMet;
-@property (nonatomic, readonly) int consecutiveMoveGoalsMet;
-@property (nonatomic, readonly) int consecutiveStandGoalsMet;
+@property (nonatomic, readonly) long long bestConsecutiveMoveGoalsMet;
+@property (nonatomic, readonly) long long consecutiveExerciseGoalsMet;
+@property (nonatomic, readonly) long long consecutiveMoveGoalsMet;
+@property (nonatomic, readonly) long long consecutiveStandGoalsMet;
 @property (nonatomic, readonly) NSSet *earnedAchievementDefinitionIdentifiers;
 @property (nonatomic, retain) _HKAchievementPredicateActivitySummaryHistoryEnvironment *previous;
-@property (nonatomic, readonly) int totalDaysOfExerciseHistory;
-@property (nonatomic, readonly) int totalDaysOfMoveHistory;
-@property (nonatomic, readonly) int totalMoveGoalsMet;
+@property (nonatomic, readonly) long long totalDaysOfExerciseHistory;
+@property (nonatomic, readonly) long long totalDaysOfMoveHistory;
+@property (nonatomic, readonly) long long totalMoveGoalsMet;
 
 - (void).cxx_destruct;
 - (double)bestAchievedBriskMinutes;
 - (double)bestAchievedMoveCalories;
 - (double)bestAchievedMoveGoal;
-- (int)bestConsecutiveMoveGoalsMet;
-- (int)consecutiveExerciseGoalsMet;
-- (int)consecutiveMoveGoalsMet;
-- (int)consecutiveStandGoalsMet;
+- (long long)bestConsecutiveMoveGoalsMet;
+- (long long)consecutiveExerciseGoalsMet;
+- (long long)consecutiveMoveGoalsMet;
+- (long long)consecutiveStandGoalsMet;
 - (id)earnedAchievementDefinitionIdentifiers;
 - (id)previous;
 - (void)setPrevious:(id)arg1;
-- (int)totalDaysOfExerciseHistory;
-- (int)totalDaysOfMoveHistory;
-- (int)totalMoveGoalsMet;
+- (long long)totalDaysOfExerciseHistory;
+- (long long)totalDaysOfMoveHistory;
+- (long long)totalMoveGoalsMet;
 
 @end

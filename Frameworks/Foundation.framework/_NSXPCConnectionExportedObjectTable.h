@@ -7,7 +7,7 @@
     unsigned long long  _next;
     struct __CFDictionary { } * _objectToProxyNumber;
     struct __CFDictionary { } * _proxyNumberToObject;
-    BOOL  _valid;
+    bool  _valid;
 }
 
 - (void)dealloc;

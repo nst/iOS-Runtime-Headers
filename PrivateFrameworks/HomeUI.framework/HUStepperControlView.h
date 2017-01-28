@@ -12,12 +12,12 @@
     UILabel * _valueLabel;
 }
 
-@property (nonatomic) BOOL canBeHighlighted;
+@property (nonatomic) bool canBeHighlighted;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUControlViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isDisabled, nonatomic) BOOL disabled;
-@property (readonly) unsigned int hash;
+@property (getter=isDisabled, nonatomic) bool disabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) NSArray *layoutConstraints;
 @property (nonatomic) double maxValue;
@@ -29,7 +29,7 @@
 @property (nonatomic, retain) NSFormatter *valueFormatter;
 @property (nonatomic, readonly) UILabel *valueLabel;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 + (Class)valueClass;
 
 - (void).cxx_destruct;
@@ -40,13 +40,13 @@
 - (void)_updateValueLabel;
 - (id)delegate;
 - (id)identifier;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isDisabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isDisabled;
 - (id)layoutConstraints;
 - (double)maxValue;
 - (double)minValue;
 - (void)setDelegate:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLayoutConstraints:(id)arg1;
 - (void)setMaxValue:(double)arg1;

@@ -5,37 +5,37 @@
 @interface SKUIStarRatingControl : UIControl {
     UIImageView * _emptyStarsImageView;
     UIImageView * _filledStarsImageView;
-    int  _previousUserRating;
+    long long  _previousUserRating;
     float  _starSpacing;
     float  _starWidth;
-    int  _userRating;
+    long long  _userRating;
 }
 
 @property (nonatomic, retain) UIImage *emptyStarsImage;
 @property (nonatomic, retain) UIImage *filledStarsImage;
 @property (nonatomic) float starSpacing;
 @property (nonatomic) float starWidth;
-@property (nonatomic) int userRating;
+@property (nonatomic) long long userRating;
 
 - (void).cxx_destruct;
 - (void)_updateUserRatingWithTouch:(id)arg1;
-- (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
-- (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)emptyStarsImage;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)filledStarsImage;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setEmptyStarsImage:(id)arg1;
 - (void)setFilledStarsImage:(id)arg1;
 - (void)setStarSpacing:(float)arg1;
 - (void)setStarWidth:(float)arg1;
-- (void)setUserRating:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setUserRating:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (float)starSpacing;
 - (float)starWidth;
-- (int)userRating;
+- (long long)userRating;
 
 @end

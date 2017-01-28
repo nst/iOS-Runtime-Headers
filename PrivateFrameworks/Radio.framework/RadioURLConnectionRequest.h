@@ -4,6 +4,6 @@
 
 @interface RadioURLConnectionRequest : SSURLConnectionRequest
 
-- (void)startWithConnectionResponseBlock:(id /* block */)arg1;
+- (void)startWithConnectionResponseBlock:(id)arg1;
 
 @end

@@ -3,24 +3,24 @@
  */
 
 @interface BSEventQueueEvent : NSObject {
-    id /* block */  _handler;
+    id  _handler;
     NSString * _name;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 @property (nonatomic, copy) NSString *name;
 
-+ (id)eventWithName:(id)arg1 handler:(id /* block */)arg2;
++ (id)eventWithName:(id)arg1 handler:(id)arg2;
 
 - (void)_execute;
 - (void)dealloc;
 - (id)description;
 - (void)execute;
 - (void)executeFromEventQueue;
-- (id /* block */)handler;
-- (BOOL)isEqualToEvent:(id)arg1;
+- (id)handler;
+- (bool)isEqualToEvent:(id)arg1;
 - (id)name;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 - (void)setName:(id)arg1;
 
 @end

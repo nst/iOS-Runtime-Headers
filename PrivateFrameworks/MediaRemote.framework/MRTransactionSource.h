@@ -8,12 +8,12 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (nonatomic, readonly) unsigned long long name;
 
 - (void)dealloc;
 - (id)initWithName:(unsigned long long)arg1;
-- (BOOL)isActive;
+- (bool)isActive;
 - (unsigned long long)name;
 - (void)removeOrigin:(struct _MROrigin { }*)arg1;
 - (void)sendPackets:(id)arg1 forOrigin:(struct _MROrigin { }*)arg2;

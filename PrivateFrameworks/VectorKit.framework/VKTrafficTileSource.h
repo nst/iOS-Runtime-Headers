@@ -3,7 +3,7 @@
  */
 
 @interface VKTrafficTileSource : VKTileSetBackedTileSource <VKTileSourceClient> {
-    BOOL  _buildTrafficTexture;
+    bool  _buildTrafficTexture;
     VKTileKeyList * _building;
     VKTrafficDynamicTileSource * _dynamicTileSource;
     VKTileKeyMap * _pendingTraffic;
@@ -16,14 +16,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VKTileSource *roadTileSource;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void)_generatedTraffic:(id)arg1;
-- (BOOL)canFetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (BOOL)canFetchTrafficTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (bool)canFetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
+- (bool)canFetchTrafficTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)clearCaches;
 - (void)dealloc;
 - (void)decodeData:(id)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
@@ -35,27 +35,27 @@
 - (void)fetchedTile:(id)arg1 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (id)initWithSkeletonTileSet:(id)arg1 dynamicTileSet:(id)arg2 resourceManifestConfiguration:(id)arg3 locale:(id)arg4 sharedResources:(id)arg5;
 - (void)invalidateTilesFromTileSource:(id)arg1;
-- (int)maximumZoomLevel;
-- (BOOL)minimumZoomLevelBoundsCamera;
+- (long long)maximumZoomLevel;
+- (bool)minimumZoomLevelBoundsCamera;
 - (void)populateVisibleTileSets:(id)arg1 withTiles:(id)arg2;
 - (id)roadTileSource;
 - (void)sawTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (void)setContentScale:(float)arg1;
-- (void)setMapType:(int)arg1;
+- (void)setContentScale:(double)arg1;
+- (void)setMapType:(long long)arg1;
 - (void)setRoadTileSource:(id)arg1;
 - (void)setSharedResources:(id)arg1;
 - (void)setStyleManager:(struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (BOOL)shouldObeyHybridUnavailableRegions;
+- (bool)shouldObeyHybridUnavailableRegions;
 - (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
 - (id)tileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)tileSource:(id)arg1 didFailToDecodeTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)tileSource:(id)arg1 didFailToLoadTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2 error:(id)arg3;
 - (void)tileSource:(id)arg1 didFetchTile:(id)arg2 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
-- (void)tileSource:(id)arg1 dirtyTilesWithinRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg2 level:(int)arg3;
+- (void)tileSource:(id)arg1 dirtyTilesWithinRect:(const struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; }*)arg2 level:(long long)arg3;
 - (void)tileSource:(id)arg1 invalidateKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)tileSource:(id)arg1 invalidateKeys:(id)arg2;
-- (void)tileSource:(id)arg1 invalidateTilesWithState:(unsigned int)arg2;
-- (BOOL)tileSource:(id)arg1 keyIsNeeded:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
+- (void)tileSource:(id)arg1 invalidateTilesWithState:(unsigned long long)arg2;
+- (bool)tileSource:(id)arg1 keyIsNeeded:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)willStartLoadingTiles;
 
 @end

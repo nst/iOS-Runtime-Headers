@@ -4,9 +4,9 @@
 
 @interface CNAvatarCardController : NSObject {
     NSArray * _actionCategories;
-    BOOL  _actionsNeedRefresh;
+    bool  _actionsNeedRefresh;
     CNAvatarView * _avatarView;
-    BOOL  _bypassActionValidation;
+    bool  _bypassActionValidation;
     NSArray * _contacts;
     <CNAvatarCardControllerDelegate> * _delegate;
     CNContactOrbHeaderView * _headerView;
@@ -14,21 +14,21 @@
     UIGestureRecognizer * _rolloverGestureRecognizer;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _sourceRect;
     UIView * _sourceView;
 }
 
 @property (nonatomic, copy) NSArray *actionCategories;
-@property (nonatomic) BOOL actionsNeedRefresh;
+@property (nonatomic) bool actionsNeedRefresh;
 @property (nonatomic) CNAvatarView *avatarView;
-@property (nonatomic) BOOL bypassActionValidation;
+@property (nonatomic) bool bypassActionValidation;
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, retain) NSArray *contacts;
 @property (nonatomic) <CNAvatarCardControllerDelegate> *delegate;
@@ -38,43 +38,43 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) UIViewController *presentingViewController;
 @property (nonatomic, retain) UIGestureRecognizer *rolloverGestureRecognizer;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
 @property (nonatomic, retain) UIView *sourceView;
-@property (getter=isVisible, nonatomic, readonly) BOOL visible;
+@property (getter=isVisible, nonatomic, readonly) bool visible;
 
-+ (int)actionsMode;
-+ (BOOL)avatarCardEnabled;
-+ (int)avatarCardImplementation;
++ (long long)actionsMode;
++ (bool)avatarCardEnabled;
++ (long long)avatarCardImplementation;
 + (id)descriptorForRequiredKeys;
-+ (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(BOOL)arg1;
-+ (BOOL)showsWithTapAndHold;
++ (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(bool)arg1;
++ (bool)showsWithTapAndHold;
 
 - (void).cxx_destruct;
 - (void)_updateCard;
 - (id)actionCategories;
-- (BOOL)actionsNeedRefresh;
+- (bool)actionsNeedRefresh;
 - (id)avatarView;
-- (BOOL)bypassActionValidation;
+- (bool)bypassActionValidation;
 - (id)contact;
 - (id)contacts;
 - (id)delegate;
-- (void)dismissAnimated:(BOOL)arg1;
-- (void)dismissAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)dismissAnimated:(bool)arg1;
+- (void)dismissAnimated:(bool)arg1 completionHandler:(id)arg2;
 - (id)headerView;
 - (id)infoButton;
 - (id)init;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (id)message;
 - (id)name;
 - (id)preparedViewControllerForPresentationWithGestureRecognizer:(id)arg1;
-- (void)presentAnimated:(BOOL)arg1;
-- (void)presentAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)presentAnimated:(bool)arg1;
+- (void)presentAnimated:(bool)arg1 completionHandler:(id)arg2;
 - (id)presentingViewController;
 - (id)rolloverGestureRecognizer;
 - (void)setActionCategories:(id)arg1;
-- (void)setActionsNeedRefresh:(BOOL)arg1;
+- (void)setActionsNeedRefresh:(bool)arg1;
 - (void)setAvatarView:(id)arg1;
-- (void)setBypassActionValidation:(BOOL)arg1;
+- (void)setBypassActionValidation:(bool)arg1;
 - (void)setContact:(id)arg1;
 - (void)setContacts:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -83,11 +83,11 @@
 - (void)setMessage:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setRolloverGestureRecognizer:(id)arg1;
-- (void)setSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSourceView:(id)arg1;
 - (void)showContact;
 - (void)showContact:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
 - (id)sourceView;
 
 @end

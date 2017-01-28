@@ -11,12 +11,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithPlaceholderItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isProxy;
+- (bool)isEqual:(id)arg1;
+- (bool)isProxy;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (Class)superclass;
 
 @end

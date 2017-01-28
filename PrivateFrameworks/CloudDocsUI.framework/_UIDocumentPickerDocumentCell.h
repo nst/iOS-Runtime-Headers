@@ -3,16 +3,16 @@
  */
 
 @interface _UIDocumentPickerDocumentCell : _UIDocumentPickerCell {
-    BOOL  _enabled;
+    bool  _enabled;
 }
 
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 
 - (void)_showPickableDiagnostic;
-- (BOOL)enabled;
+- (bool)enabled;
 - (void)prepareForReuse;
-- (void)reloadItem:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)reloadItem:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateContents;
 - (void)updateThumbnail;

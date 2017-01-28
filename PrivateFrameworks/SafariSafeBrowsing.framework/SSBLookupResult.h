@@ -10,23 +10,23 @@
     }  _lookupResult;
 }
 
-@property (nonatomic, readonly) BOOL URLContainsUserInfo;
-@property (getter=isKnownToBeUnsafe, nonatomic, readonly) BOOL knownToBeUnsafe;
-@property (getter=isMalware, nonatomic, readonly) BOOL malware;
-@property (getter=isPhishing, nonatomic, readonly) BOOL phishing;
-@property (getter=isUnwantedSoftware, nonatomic, readonly) BOOL unwantedSoftware;
+@property (nonatomic, readonly) bool URLContainsUserInfo;
+@property (getter=isKnownToBeUnsafe, nonatomic, readonly) bool knownToBeUnsafe;
+@property (getter=isMalware, nonatomic, readonly) bool malware;
+@property (getter=isPhishing, nonatomic, readonly) bool phishing;
+@property (getter=isUnwantedSoftware, nonatomic, readonly) bool unwantedSoftware;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id).cxx_construct;
-- (BOOL)URLContainsUserInfo;
+- (bool)URLContainsUserInfo;
 - (id)_initWithLookupResult:(struct LookupResult { struct OptionSet<Backend::LookupResult::Type> { unsigned int x_1_1_1; } x1; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isKnownToBeUnsafe;
-- (BOOL)isMalware;
-- (BOOL)isPhishing;
-- (BOOL)isUnwantedSoftware;
+- (bool)isKnownToBeUnsafe;
+- (bool)isMalware;
+- (bool)isPhishing;
+- (bool)isUnwantedSoftware;
 
 @end

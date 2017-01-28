@@ -12,7 +12,7 @@
 + (id)_mergerWithNoConflictsForStore:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_changeCanConflict:(id)arg1;
+- (bool)_changeCanConflict:(id)arg1;
 - (id)initWithEngineStore:(id)arg1;
 - (id)mergerForBatch:(id)arg1 error:(id*)arg2;
 - (id)store;

@@ -4,6 +4,6 @@
 
 @interface TKSmartCardTokenDriver : TKTokenDriver
 
-- (void)getTokenWithAttributes:(id)arg1 reply:(id /* block */)arg2;
+- (void)getTokenWithAttributes:(id)arg1 reply:(id)arg2;
 
 @end

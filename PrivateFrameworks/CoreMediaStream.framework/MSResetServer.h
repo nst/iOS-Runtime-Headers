@@ -12,7 +12,7 @@
 @property (nonatomic) MSMediaStreamDaemon *daemon;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *personID;
 @property (readonly) Class superclass;
 

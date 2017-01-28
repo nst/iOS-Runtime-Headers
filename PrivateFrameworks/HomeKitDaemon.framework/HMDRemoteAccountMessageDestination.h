@@ -4,11 +4,11 @@
 
 @interface HMDRemoteAccountMessageDestination : HMFMessageDestination {
     HMDAccount * _account;
-    BOOL  _multicast;
+    bool  _multicast;
 }
 
 @property (nonatomic, readonly) HMDAccount *account;
-@property (getter=isMulticast, nonatomic, readonly) BOOL multicast;
+@property (getter=isMulticast, nonatomic, readonly) bool multicast;
 
 + (id)allMessageDestinations;
 + (id)shortDescription;
@@ -17,12 +17,12 @@
 - (id)account;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
-- (unsigned int)hash;
+- (id)descriptionWithPointer:(bool)arg1;
+- (unsigned long long)hash;
 - (id)initWithTarget:(id)arg1;
-- (id)initWithTarget:(id)arg1 account:(id)arg2 multicast:(BOOL)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMulticast;
+- (id)initWithTarget:(id)arg1 account:(id)arg2 multicast:(bool)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isMulticast;
 - (id)shortDescription;
 
 @end

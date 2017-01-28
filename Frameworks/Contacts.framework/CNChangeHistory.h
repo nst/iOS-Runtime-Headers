@@ -3,30 +3,30 @@
  */
 
 @interface CNChangeHistory : NSObject <NSSecureCoding> {
-    BOOL  _changesTruncated;
+    bool  _changesTruncated;
     NSArray * _contactChanges;
     NSArray * _groupChanges;
-    int  _latestSequenceNumber;
+    long long  _latestSequenceNumber;
 }
 
-@property (nonatomic) BOOL changesTruncated;
+@property (nonatomic) bool changesTruncated;
 @property (nonatomic, retain) NSArray *contactChanges;
 @property (nonatomic, retain) NSArray *groupChanges;
-@property (nonatomic) int latestSequenceNumber;
+@property (nonatomic) long long latestSequenceNumber;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)changesTruncated;
+- (bool)changesTruncated;
 - (id)contactChanges;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupChanges;
 - (id)initWithCoder:(id)arg1;
-- (int)latestSequenceNumber;
-- (void)setChangesTruncated:(BOOL)arg1;
+- (long long)latestSequenceNumber;
+- (void)setChangesTruncated:(bool)arg1;
 - (void)setContactChanges:(id)arg1;
 - (void)setGroupChanges:(id)arg1;
-- (void)setLatestSequenceNumber:(int)arg1;
+- (void)setLatestSequenceNumber:(long long)arg1;
 
 @end

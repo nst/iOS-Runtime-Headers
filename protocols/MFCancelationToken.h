@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isCanceled;
+- (bool)isCanceled;
 
 @end

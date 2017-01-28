@@ -14,11 +14,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKStoreProductActivityViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_addRemoteView;
-- (void)_didFinishWithResult:(unsigned int)arg1 error:(id)arg2;
+- (void)_didFinishWithResult:(unsigned long long)arg1 error:(id)arg2;
 - (void)_requestRemoteViewController;
 - (void)_viewTapped:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
@@ -30,6 +30,6 @@
 - (id)initWithParameters:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

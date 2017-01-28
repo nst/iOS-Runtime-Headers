@@ -3,23 +3,23 @@
  */
 
 @interface AXPostConnectionTask : NSObject {
-    BOOL  _didTimeout;
-    id /* block */  _postConnectionBlock;
+    bool  _didTimeout;
+    id  _postConnectionBlock;
     AXAccessQueueTimer * _timeoutTimer;
 }
 
-@property (nonatomic) BOOL didTimeout;
-@property (nonatomic, copy) id /* block */ postConnectionBlock;
+@property (nonatomic) bool didTimeout;
+@property (nonatomic, copy) id postConnectionBlock;
 @property (nonatomic, retain) AXAccessQueueTimer *timeoutTimer;
 
 - (void)_performTask;
 - (void)dealloc;
-- (BOOL)didTimeout;
-- (id)initWithConnectBlock:(id /* block */)arg1 timeout:(double)arg2 accessQueue:(id)arg3;
+- (bool)didTimeout;
+- (id)initWithConnectBlock:(id)arg1 timeout:(double)arg2 accessQueue:(id)arg3;
 - (void)performTask;
-- (id /* block */)postConnectionBlock;
-- (void)setDidTimeout:(BOOL)arg1;
-- (void)setPostConnectionBlock:(id /* block */)arg1;
+- (id)postConnectionBlock;
+- (void)setDidTimeout:(bool)arg1;
+- (void)setPostConnectionBlock:(id)arg1;
 - (void)setTimeoutTimer:(id)arg1;
 - (id)timeoutTimer;
 

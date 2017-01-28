@@ -3,29 +3,29 @@
  */
 
 @interface _IntArray2D : NSObject {
-    int * _arrayData;
-    unsigned int  _iSize;
-    unsigned int  _jSize;
-    BOOL  _shouldBoundsCheck;
+    long long * _arrayData;
+    unsigned long long  _iSize;
+    unsigned long long  _jSize;
+    bool  _shouldBoundsCheck;
 }
 
-@property (nonatomic, readonly) unsigned int iSize;
-@property (nonatomic, readonly) unsigned int jSize;
-@property (nonatomic) BOOL shouldBoundsCheck;
+@property (nonatomic, readonly) unsigned long long iSize;
+@property (nonatomic, readonly) unsigned long long jSize;
+@property (nonatomic) bool shouldBoundsCheck;
 
-+ (id)arrayWithISize:(unsigned int)arg1 jSize:(unsigned int)arg2;
++ (id)arrayWithISize:(unsigned long long)arg1 jSize:(unsigned long long)arg2;
 
-- (int):(unsigned int)arg1 :(unsigned int)arg2;
-- (void):(unsigned int)arg1 :(unsigned int)arg2 newValue:(int)arg3;
-- (int):(unsigned int)arg1 :(unsigned int)arg2 outOfBoundsReturnValue:(int)arg3;
-- (void)assertBoundsForIIndex:(unsigned int)arg1 jIndex:(unsigned int)arg2;
+- (long long):(unsigned long long)arg1 :(unsigned long long)arg2;
+- (void):(unsigned long long)arg1 :(unsigned long long)arg2 newValue:(long long)arg3;
+- (long long):(unsigned long long)arg1 :(unsigned long long)arg2 outOfBoundsReturnValue:(long long)arg3;
+- (void)assertBoundsForIIndex:(unsigned long long)arg1 jIndex:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)iSize;
-- (BOOL)inBoundsForIIndex:(unsigned int)arg1 jIndex:(unsigned int)arg2;
-- (id)initWithISize:(unsigned int)arg1 jSize:(unsigned int)arg2;
-- (unsigned int)jSize;
-- (void)setShouldBoundsCheck:(BOOL)arg1;
-- (BOOL)shouldBoundsCheck;
+- (unsigned long long)iSize;
+- (bool)inBoundsForIIndex:(unsigned long long)arg1 jIndex:(unsigned long long)arg2;
+- (id)initWithISize:(unsigned long long)arg1 jSize:(unsigned long long)arg2;
+- (unsigned long long)jSize;
+- (void)setShouldBoundsCheck:(bool)arg1;
+- (bool)shouldBoundsCheck;
 
 @end

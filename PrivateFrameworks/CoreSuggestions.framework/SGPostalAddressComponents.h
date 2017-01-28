@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) NSString *street;
 
 + (id)components:(id)arg1 city:(id)arg2 state:(id)arg3 postalCode:(id)arg4 country:(id)arg5;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)city;
@@ -25,11 +25,11 @@
 - (id)country;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStreet:(id)arg1 city:(id)arg2 state:(id)arg3 postalCode:(id)arg4 country:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPostalAddressComponents:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPostalAddressComponents:(id)arg1;
 - (id)postalCode;
 - (id)state;
 - (id)street;

@@ -5,16 +5,16 @@
 @interface ADPrerollTopBar : UIView {
     <ADPrerollTopBarDelegate> * _delegate;
     ADPrerollButton * _doneButton;
-    BOOL  _isFullscreen;
-    BOOL  _layoutForExpandedSize;
+    bool  _isFullscreen;
+    bool  _layoutForExpandedSize;
     ADProgressView * _progressView;
     UIStatusBar * _statusBar;
 }
 
 @property (nonatomic) <ADPrerollTopBarDelegate> *delegate;
 @property (nonatomic, retain) ADPrerollButton *doneButton;
-@property (nonatomic) BOOL isFullscreen;
-@property (nonatomic) BOOL layoutForExpandedSize;
+@property (nonatomic) bool isFullscreen;
+@property (nonatomic) bool layoutForExpandedSize;
 @property (nonatomic, retain) ADProgressView *progressView;
 @property (nonatomic, retain) UIStatusBar *statusBar;
 
@@ -24,17 +24,17 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)doneButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isFullscreen;
-- (BOOL)layoutForExpandedSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isFullscreen;
+- (bool)layoutForExpandedSize;
 - (void)layoutSubviews;
 - (id)progressView;
-- (float)requiredHeight;
+- (double)requiredHeight;
 - (void)setDelegate:(id)arg1;
 - (void)setDoneButton:(id)arg1;
 - (void)setElapsedTime:(double)arg1 totalTime:(double)arg2;
-- (void)setIsFullscreen:(BOOL)arg1;
-- (void)setLayoutForExpandedSize:(BOOL)arg1;
+- (void)setIsFullscreen:(bool)arg1;
+- (void)setLayoutForExpandedSize:(bool)arg1;
 - (void)setProgressView:(id)arg1;
 - (void)setStatusBar:(id)arg1;
 - (id)statusBar;

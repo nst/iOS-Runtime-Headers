@@ -3,34 +3,34 @@
  */
 
 @interface BLTActionInfo : NSObject <BSDescriptionProviding> {
-    int  _actionType;
+    long long  _actionType;
     NSDictionary * _context;
     NSString * _publisherBulletinID;
     NSString * _recordID;
     NSString * _sectionID;
 }
 
-@property (nonatomic) int actionType;
+@property (nonatomic) long long actionType;
 @property (nonatomic, retain) NSDictionary *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *publisherBulletinID;
 @property (nonatomic, copy) NSString *recordID;
 @property (nonatomic, copy) NSString *sectionID;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)actionType;
+- (long long)actionType;
 - (id)context;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (id)initWithActionType:(int)arg1 publisherBulletinID:(id)arg2 recordID:(id)arg3 sectionID:(id)arg4 context:(id)arg5;
+- (id)initWithActionType:(long long)arg1 publisherBulletinID:(id)arg2 recordID:(id)arg3 sectionID:(id)arg4 context:(id)arg5;
 - (id)publisherBulletinID;
 - (id)recordID;
 - (id)sectionID;
-- (void)setActionType:(int)arg1;
+- (void)setActionType:(long long)arg1;
 - (void)setContext:(id)arg1;
 - (void)setPublisherBulletinID:(id)arg1;
 - (void)setRecordID:(id)arg1;

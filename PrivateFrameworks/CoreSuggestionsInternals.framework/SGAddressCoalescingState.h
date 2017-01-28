@@ -3,8 +3,8 @@
  */
 
 @interface SGAddressCoalescingState : NSObject {
-    long  _lastAddressEndPos;
-    long  _lastAddressIndex;
+    long long  _lastAddressEndPos;
+    long long  _lastAddressIndex;
     struct __DDResult { } * _lastResult;
     NSMutableArray * _matches;
 }

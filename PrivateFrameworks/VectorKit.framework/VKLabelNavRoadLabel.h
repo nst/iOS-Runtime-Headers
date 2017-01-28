@@ -18,10 +18,10 @@
 @property (nonatomic) unsigned char alignment;
 @property (nonatomic) float desiredOffsetDistance;
 @property (nonatomic) unsigned int displayID;
-@property (nonatomic, readonly) BOOL isJunctionLabel;
-@property (nonatomic, readonly) BOOL isManeuverLabel;
-@property (nonatomic, readonly) BOOL isRoadLabel;
-@property (nonatomic, readonly) BOOL isShieldLabel;
+@property (nonatomic, readonly) bool isJunctionLabel;
+@property (nonatomic, readonly) bool isManeuverLabel;
+@property (nonatomic, readonly) bool isRoadLabel;
+@property (nonatomic, readonly) bool isShieldLabel;
 @property (nonatomic, readonly) const struct shared_ptr<md::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*label;
 @property (nonatomic) <VKLabelNavFeature> *navFeature;
 
@@ -34,10 +34,10 @@
 - (id)displayGroup;
 - (unsigned int)displayID;
 - (id)initWithNavFeature:(id)arg1 label:(const struct shared_ptr<md::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*)arg2 navLabelType:(int)arg3;
-- (BOOL)isJunctionLabel;
-- (BOOL)isManeuverLabel;
-- (BOOL)isRoadLabel;
-- (BOOL)isShieldLabel;
+- (bool)isJunctionLabel;
+- (bool)isManeuverLabel;
+- (bool)isRoadLabel;
+- (bool)isShieldLabel;
 - (const struct shared_ptr<md::NavLabel> { struct NavLabel {} *x1; struct __shared_weak_count {} *x2; }*)label;
 - (void)layoutWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
 - (id)navFeature;

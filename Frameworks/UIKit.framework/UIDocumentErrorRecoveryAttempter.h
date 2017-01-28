@@ -3,23 +3,23 @@
  */
 
 @interface UIDocumentErrorRecoveryAttempter : NSObject {
-    id /* block */  _appModalRecoveryAttempter;
-    id /* block */  _continuerOrNil;
+    id  _appModalRecoveryAttempter;
+    id  _continuerOrNil;
     UIDocument * _document;
     struct { 
         unsigned int attemptedRecovery : 1; 
     }  _errorRecoveryAttempterFlags;
-    id /* block */  _recoveryCancelerOrNil;
-    int  _silentRecoveryOptionIndex;
+    id  _recoveryCancelerOrNil;
+    long long  _silentRecoveryOptionIndex;
     id  _wrappedRecoveryAttempter;
 }
 
 - (void).cxx_destruct;
-- (BOOL)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned int)arg2;
-- (BOOL)attemptSilentRecoveryFromError:(id)arg1 error:(id*)arg2;
+- (bool)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2;
+- (bool)attemptSilentRecoveryFromError:(id)arg1 error:(id*)arg2;
 - (void)cancelRecovery;
 - (void)dealloc;
-- (id)initWithDocument:(id)arg1 silentRecoveryOptionIndex:(unsigned int)arg2 appModalRecoveryAttempter:(id /* block */)arg3 recoveryCanceler:(id /* block */)arg4;
+- (id)initWithDocument:(id)arg1 silentRecoveryOptionIndex:(unsigned long long)arg2 appModalRecoveryAttempter:(id)arg3 recoveryCanceler:(id)arg4;
 - (id)initWithDocument:(id)arg1 wrappedRecoveryAttempter:(id)arg2;
 
 @end

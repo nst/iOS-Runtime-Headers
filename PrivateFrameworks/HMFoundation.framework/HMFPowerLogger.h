@@ -6,8 +6,8 @@
 
 + (id)sharedPowerLogger;
 
-- (id)linkTypeDescription:(int)arg1;
-- (void)reportConnection:(id)arg1 linkType:(int)arg2;
+- (id)linkTypeDescription:(long long)arg1;
+- (void)reportConnection:(id)arg1 linkType:(long long)arg2;
 - (void)reportIncomingAdvertisementChange:(id)arg1;
 - (void)reportIncomingBonjour:(id)arg1;
 - (void)reportIncomingCloudPush:(id)arg1;

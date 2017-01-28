@@ -15,14 +15,14 @@
 @property (nonatomic) <SKUIPhysicalCirclesTemplateDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *featureName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)featureName;
 + (id)makeFeatureJSObjectForFeature:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_addDOMUpdateBlock:(id /* block */)arg1;
+- (void)_addDOMUpdateBlock:(id)arg1;
 - (void)_requestAnimation:(id)arg1;
 - (id)appContext;
 - (id)delegate;

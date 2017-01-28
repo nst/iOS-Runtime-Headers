@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NPKCompanionAgentConnection *companionAgentConnection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NPKPaymentWebServiceCompanionTargetDevice *targetDevice;
 @property (nonatomic, retain) PKPaymentWebService *webService;
@@ -27,19 +27,20 @@
 - (void)dealloc;
 - (void)handleAppletState:(id)arg1 forUniqueID:(id)arg2;
 - (void)handlePaymentTransactions:(id)arg1 appletStates:(id)arg2 forUniqueIDs:(id)arg3;
-- (void)handlePreconditionNotMetWithUniqueIDs:(id)arg1 shouldUnregister:(BOOL)arg2;
+- (void)handlePreconditionNotMetWithUniqueIDs:(id)arg1 shouldUnregister:(bool)arg2;
 - (void)handlePreferredAID:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)handlePushToken:(id)arg1;
 - (void)handleRemoveTransactionsWithIdentifiers:(id)arg1;
 - (void)handleUpdatePaymentPassWithTypeIdentifier:(id)arg1;
 - (id)init;
 - (void)loadWebService;
+- (void)sendPaymentOptionsDefaultsToWatch;
 - (void)sendWebServiceContextToWatch;
 - (void)setCompanionAgentConnection:(id)arg1;
-- (void)setNewAuthRandom:(id /* block */)arg1;
+- (void)setNewAuthRandom:(id)arg1;
 - (void)setTargetDevice:(id)arg1;
 - (void)setWebService:(id)arg1;
-- (void)showPaymentSetupForAppDisplayNamea:(id)arg1;
+- (void)showPaymentSetupForAppDisplayName:(id)arg1;
 - (id)targetDevice;
 - (id)webService;
 

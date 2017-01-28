@@ -9,13 +9,13 @@
 
 - (id)_cellularPlanItem;
 - (id)accessoryText;
-- (BOOL)canBeChecked;
+- (bool)canBeChecked;
 - (id)detailText;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (id)planDescription;
 - (id)planStatus;
 - (id)primaryText;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
-- (void)setChecked:(BOOL)arg1;
+- (void)setChecked:(bool)arg1;
 
 @end

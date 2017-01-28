@@ -13,7 +13,7 @@
 + (id)supportedButtonModuleClasses;
 
 - (void).cxx_destruct;
-- (BOOL)buttonEnabledForIdentifier:(id)arg1;
+- (bool)buttonEnabledForIdentifier:(id)arg1;
 - (Class)buttonSettingsClass;
 - (id)buttonSortKeyForIdentifier:(id)arg1;
 - (void)setDefaultValues;

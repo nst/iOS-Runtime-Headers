@@ -4,8 +4,8 @@
 
 @interface SBRotationDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic) int lastLockedOrientation;
-@property (getter=isVideoRotationEnabled, nonatomic, readonly) BOOL videoRotationEnabled;
+@property (nonatomic) long long lastLockedOrientation;
+@property (getter=isVideoRotationEnabled, nonatomic, readonly) bool videoRotationEnabled;
 
 - (void)_bindAndRegisterDefaults;
 

@@ -3,15 +3,15 @@
  */
 
 @interface ISLivePhotoPlaybackBehavior : ISBehavior {
-    int  __currentPlaybackID;
-    BOOL  __preparing;
-    int  __readyToPlayPlaybackID;
-    BOOL  __videoReadyToPlay;
+    long long  __currentPlaybackID;
+    bool  __preparing;
+    long long  __readyToPlayPlaybackID;
+    bool  __videoReadyToPlay;
     double  _crossfadeDuration;
     struct { 
-        BOOL respondsToDidFinish; 
+        bool respondsToDidFinish; 
     }  _delegateFlags;
-    BOOL  _immediatelyShowsPhotoWhenPlaybackEnds;
+    bool  _immediatelyShowsPhotoWhenPlaybackEnds;
     struct { 
         long long value; 
         int timescale; 
@@ -19,45 +19,45 @@
         long long epoch; 
     }  _keyTime;
     double  _photoTransitionDuration;
-    int  _playbackStyle;
+    long long  _playbackStyle;
 }
 
-@property (setter=_setCurrentPlaybackID:, nonatomic) int _currentPlaybackID;
-@property (getter=_isPreparing, setter=_setPreparing:, nonatomic) BOOL _preparing;
-@property (setter=_setReadyToPlayPlaybackID:, nonatomic) int _readyToPlayPlaybackID;
-@property (getter=_isVideoReadyToPlay, setter=_setVideoReadyToPlay:, nonatomic) BOOL _videoReadyToPlay;
+@property (setter=_setCurrentPlaybackID:, nonatomic) long long _currentPlaybackID;
+@property (getter=_isPreparing, setter=_setPreparing:, nonatomic) bool _preparing;
+@property (setter=_setReadyToPlayPlaybackID:, nonatomic) long long _readyToPlayPlaybackID;
+@property (getter=_isVideoReadyToPlay, setter=_setVideoReadyToPlay:, nonatomic) bool _videoReadyToPlay;
 @property (nonatomic, readonly) double crossfadeDuration;
 @property (nonatomic) <ISLivePhotoPlaybackBehaviorDelegate> *delegate;
-@property (nonatomic, readonly) BOOL immediatelyShowsPhotoWhenPlaybackEnds;
+@property (nonatomic, readonly) bool immediatelyShowsPhotoWhenPlaybackEnds;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } keyTime;
 @property (nonatomic, readonly) double photoTransitionDuration;
-@property (nonatomic, readonly) int playbackStyle;
+@property (nonatomic, readonly) long long playbackStyle;
 
-- (int)_currentPlaybackID;
+- (long long)_currentPlaybackID;
 - (void)_didFinishPreparing;
 - (void)_didTransitionToPhoto;
 - (void)_handleDidFinishPreroll;
 - (void)_handleDidSeekToBeginning;
-- (BOOL)_isPreparing;
-- (BOOL)_isVideoReadyToPlay;
+- (bool)_isPreparing;
+- (bool)_isVideoReadyToPlay;
 - (void)_prepareVideoForPlaybackIfNeeded;
-- (void)_prerollWithCompletionHandler:(id /* block */)arg1;
-- (int)_readyToPlayPlaybackID;
-- (void)_setCurrentPlaybackID:(int)arg1;
-- (void)_setPreparing:(BOOL)arg1;
-- (void)_setReadyToPlayPlaybackID:(int)arg1;
-- (void)_setVideoReadyToPlay:(BOOL)arg1;
-- (void)_showVideoWithPlaybackID:(int)arg1;
-- (void)_startPlaybackWithPlaybackID:(int)arg1;
-- (void)_transitionToVideoWithPlaybackID:(int)arg1;
+- (void)_prerollWithCompletionHandler:(id)arg1;
+- (long long)_readyToPlayPlaybackID;
+- (void)_setCurrentPlaybackID:(long long)arg1;
+- (void)_setPreparing:(bool)arg1;
+- (void)_setReadyToPlayPlaybackID:(long long)arg1;
+- (void)_setVideoReadyToPlay:(bool)arg1;
+- (void)_showVideoWithPlaybackID:(long long)arg1;
+- (void)_startPlaybackWithPlaybackID:(long long)arg1;
+- (void)_transitionToVideoWithPlaybackID:(long long)arg1;
 - (void)activeDidChange;
-- (int)behaviorType;
+- (long long)behaviorType;
 - (double)crossfadeDuration;
-- (BOOL)immediatelyShowsPhotoWhenPlaybackEnds;
-- (id)initWithInitialLayoutInfo:(id)arg1 playbackStyle:(int)arg2 keyTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoTransitionDuration:(double)arg4 crossfadeDuration:(double)arg5 immediatelyShowsPhotoWhenPlaybackEnds:(BOOL)arg6;
+- (bool)immediatelyShowsPhotoWhenPlaybackEnds;
+- (id)initWithInitialLayoutInfo:(id)arg1 playbackStyle:(long long)arg2 keyTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 photoTransitionDuration:(double)arg4 crossfadeDuration:(double)arg5 immediatelyShowsPhotoWhenPlaybackEnds:(bool)arg6;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })keyTime;
 - (double)photoTransitionDuration;
-- (int)playbackStyle;
+- (long long)playbackStyle;
 - (void)setDelegate:(id)arg1;
 - (void)startPlayback;
 - (void)videoDidPlayToEnd;

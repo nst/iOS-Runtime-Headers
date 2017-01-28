@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithSpecifier:(id)arg1;
-- (void)layoutForWidth:(float)arg1 inTableView:(id)arg2;
-- (float)preferredHeightForWidth:(float)arg1 inTableView:(id)arg2;
+- (void)layoutForWidth:(double)arg1 inTableView:(id)arg2;
+- (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;
 
 @end

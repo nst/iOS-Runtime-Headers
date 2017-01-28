@@ -5,7 +5,7 @@
 
 @required
 
-- (void)willDisableCertificateSerial:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)willEnableCertificateSerial:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)willDisableCertificateSerial:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: NSData *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (void)willEnableCertificateSerial:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: NSData *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 
 @end

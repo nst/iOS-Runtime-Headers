@@ -7,19 +7,19 @@
 }
 
 @property (readonly, copy) NSString *currentStoreAccountName;
-@property (readonly) BOOL isAccountsChangedError;
-@property (readonly) BOOL isAuthenticationError;
-@property (readonly) BOOL isClampError;
-@property (readonly) BOOL isRecoverableError;
-@property (readonly) BOOL isTransactionCancelledError;
-@property (readonly) BOOL isTransactionMissingInformationError;
+@property (readonly) bool isAccountsChangedError;
+@property (readonly) bool isAuthenticationError;
+@property (readonly) bool isClampError;
+@property (readonly) bool isRecoverableError;
+@property (readonly) bool isTransactionCancelledError;
+@property (readonly) bool isTransactionMissingInformationError;
 @property (readonly, copy) NSString *previousStoreAccountName;
 @property (readonly) double retrySeconds;
 @property (retain) SBKTransaction *transaction;
 
 + (id)delegateCancelledErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)keyValueStoreDisabledErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
-+ (id)keyValueStoreErrorWithCode:(int)arg1 localizedDescription:(id)arg2 transaction:(id)arg3 underlyingError:(id)arg4;
++ (id)keyValueStoreErrorWithCode:(long long)arg1 localizedDescription:(id)arg2 transaction:(id)arg3 underlyingError:(id)arg4;
 + (id)killSwitchErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)networkingBlockedErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)noStoreAccountErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
@@ -29,7 +29,7 @@
 + (id)storeGenericErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)storeLoggedOutErrorWithPreviousStoreAccountName:(id)arg1 transaction:(id)arg2 underlyingError:(id)arg3;
 + (id)storeValidationErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
-+ (id)transactionCancelledErrorWithTransaction:(id)arg1 code:(int)arg2 underlyingError:(id)arg3;
++ (id)transactionCancelledErrorWithTransaction:(id)arg1 code:(long long)arg2 underlyingError:(id)arg3;
 + (id)transactionCancelledErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)transactionMissingDomainErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)transactionMissingURLErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
@@ -43,12 +43,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentStoreAccountName;
 - (id)description;
-- (BOOL)isAccountsChangedError;
-- (BOOL)isAuthenticationError;
-- (BOOL)isClampError;
-- (BOOL)isRecoverableError;
-- (BOOL)isTransactionCancelledError;
-- (BOOL)isTransactionMissingInformationError;
+- (bool)isAccountsChangedError;
+- (bool)isAuthenticationError;
+- (bool)isClampError;
+- (bool)isRecoverableError;
+- (bool)isTransactionCancelledError;
+- (bool)isTransactionMissingInformationError;
 - (id)previousStoreAccountName;
 - (double)retrySeconds;
 - (void)setTransaction:(id)arg1;

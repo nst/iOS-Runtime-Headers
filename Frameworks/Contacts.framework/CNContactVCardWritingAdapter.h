@@ -17,13 +17,13 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) NSArray *emailAddresses;
 @property (readonly) NSString *firstName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSDictionary *imageCropRects;
 @property (readonly) NSData *imageData;
 @property (readonly) NSArray *imageReferences;
 @property (readonly) NSArray *instantMessagingAddresses;
-@property (readonly) BOOL isCompany;
-@property (readonly) BOOL isMe;
+@property (readonly) bool isCompany;
+@property (readonly) bool isMe;
 @property (readonly) NSString *jobTitle;
 @property (readonly) NSDictionary *largeImageCropRects;
 @property (readonly) NSData *largeImageData;
@@ -74,10 +74,10 @@
 - (id)imageReferences;
 - (id)initWithContact:(id)arg1;
 - (id)instantMessagingAddresses;
-- (BOOL)isCompany;
-- (BOOL)isMe;
+- (bool)isCompany;
+- (bool)isMe;
 - (id)jobTitle;
-- (id)jpegImageDataOfAllowableKinds:(id)arg1 maximumLength:(unsigned int)arg2 cropRects:(id*)arg3;
+- (id)jpegImageDataOfAllowableKinds:(id)arg1 maximumLength:(unsigned long long)arg2 cropRects:(id*)arg3;
 - (id)largeImageCropRects;
 - (id)largeImageData;
 - (id)largeImageHashOfType:(id)arg1;
@@ -109,6 +109,6 @@
 - (id)unknownProperties;
 - (id)urls;
 - (id)vCardPropertyItemsForProperty:(id)arg1;
-- (id)vCardPropertyItemsForProperty:(id)arg1 valueTransform:(id /* block */)arg2;
+- (id)vCardPropertyItemsForProperty:(id)arg1 valueTransform:(id)arg2;
 
 @end

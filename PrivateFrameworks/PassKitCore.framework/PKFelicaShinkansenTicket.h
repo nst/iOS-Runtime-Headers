@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) NSNumber *validityStartDate;
 @property (nonatomic, readonly, copy) NSNumber *validityTerm;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

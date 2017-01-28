@@ -4,36 +4,36 @@
 
 @interface FCForYouGroupsConfiguration : NSObject {
     NSString * _configuration;
-    unsigned int  _coverArticlesPosition;
-    unsigned int  _coverArticlesPrecedingGroupsCount;
-    unsigned int  _editorialPosition;
-    unsigned int  _editorialPrecedingGroupsCount;
-    unsigned int  _topStoriesPosition;
-    unsigned int  _topStoriesPrecedingGroupsCount;
-    unsigned int  _trendingStoriesPosition;
-    unsigned int  _trendingStoriesPrecedingGroupsCount;
+    unsigned long long  _coverArticlesPosition;
+    unsigned long long  _coverArticlesPrecedingGroupsCount;
+    unsigned long long  _editorialPosition;
+    unsigned long long  _editorialPrecedingGroupsCount;
+    unsigned long long  _topStoriesPosition;
+    unsigned long long  _topStoriesPrecedingGroupsCount;
+    unsigned long long  _trendingStoriesPosition;
+    unsigned long long  _trendingStoriesPrecedingGroupsCount;
 }
 
-@property (nonatomic, readonly) unsigned int coverArticlesPosition;
-@property (nonatomic, readonly) unsigned int coverArticlesPrecedingGroupsCount;
-@property (nonatomic, readonly) unsigned int editorialPosition;
-@property (nonatomic, readonly) unsigned int editorialPrecedingGroupsCount;
-@property (nonatomic, readonly) unsigned int topStoriesPosition;
-@property (nonatomic, readonly) unsigned int topStoriesPrecedingGroupsCount;
-@property (nonatomic, readonly) unsigned int trendingStoriesPosition;
-@property (nonatomic, readonly) unsigned int trendingStoriesPrecedingGroupsCount;
+@property (nonatomic, readonly) unsigned long long coverArticlesPosition;
+@property (nonatomic, readonly) unsigned long long coverArticlesPrecedingGroupsCount;
+@property (nonatomic, readonly) unsigned long long editorialPosition;
+@property (nonatomic, readonly) unsigned long long editorialPrecedingGroupsCount;
+@property (nonatomic, readonly) unsigned long long topStoriesPosition;
+@property (nonatomic, readonly) unsigned long long topStoriesPrecedingGroupsCount;
+@property (nonatomic, readonly) unsigned long long trendingStoriesPosition;
+@property (nonatomic, readonly) unsigned long long trendingStoriesPrecedingGroupsCount;
 
 - (void).cxx_destruct;
-- (unsigned int)coverArticlesPosition;
-- (unsigned int)coverArticlesPrecedingGroupsCount;
-- (unsigned int)editorialPosition;
-- (unsigned int)editorialPrecedingGroupsCount;
-- (unsigned int)hash;
+- (unsigned long long)coverArticlesPosition;
+- (unsigned long long)coverArticlesPrecedingGroupsCount;
+- (unsigned long long)editorialPosition;
+- (unsigned long long)editorialPrecedingGroupsCount;
+- (unsigned long long)hash;
 - (id)initWithJSONConfiguration:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)topStoriesPosition;
-- (unsigned int)topStoriesPrecedingGroupsCount;
-- (unsigned int)trendingStoriesPosition;
-- (unsigned int)trendingStoriesPrecedingGroupsCount;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)topStoriesPosition;
+- (unsigned long long)topStoriesPrecedingGroupsCount;
+- (unsigned long long)trendingStoriesPosition;
+- (unsigned long long)trendingStoriesPrecedingGroupsCount;
 
 @end

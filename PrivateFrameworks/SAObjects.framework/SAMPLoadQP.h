@@ -13,7 +13,7 @@
 - (id)airplayRouteUID;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAirplayRouteUID:(id)arg1;
 - (void)setStartPlaying:(id)arg1;
 - (id)startPlaying;

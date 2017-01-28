@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSNumber *sequenceNumber;
 @property (nonatomic, readonly) NSArray *standaloneGlances;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;

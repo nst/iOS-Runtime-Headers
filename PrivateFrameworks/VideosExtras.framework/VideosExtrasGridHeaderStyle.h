@@ -3,58 +3,58 @@
  */
 
 @interface VideosExtrasGridHeaderStyle : NSObject {
-    float  _bottomLabelDescender;
+    double  _bottomLabelDescender;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _insets;
-    BOOL  _showsImage;
+    bool  _showsImage;
     UIColor * _subtitleColor;
     NSDictionary * _subtitleDefaultFontAttributes;
-    float  _subtitleLineHeight;
+    double  _subtitleLineHeight;
     NSString * _subtitleTextStyle;
     UIColor * _titleColor;
     NSDictionary * _titleDefaultFontAttributes;
-    float  _titleLineHeight;
+    double  _titleLineHeight;
     NSString * _titleTextStyle;
 }
 
-@property (nonatomic) float bottomLabelDescender;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
-@property (nonatomic) BOOL showsImage;
+@property (nonatomic) double bottomLabelDescender;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
+@property (nonatomic) bool showsImage;
 @property (nonatomic, retain) UIColor *subtitleColor;
 @property (nonatomic, retain) NSDictionary *subtitleDefaultFontAttributes;
-@property (nonatomic) float subtitleLineHeight;
+@property (nonatomic) double subtitleLineHeight;
 @property (nonatomic, retain) NSString *subtitleTextStyle;
 @property (nonatomic, retain) UIColor *titleColor;
 @property (nonatomic, retain) NSDictionary *titleDefaultFontAttributes;
-@property (nonatomic) float titleLineHeight;
+@property (nonatomic) double titleLineHeight;
 @property (nonatomic, retain) NSString *titleTextStyle;
 
 - (void).cxx_destruct;
-- (float)bottomLabelDescender;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
-- (void)setBottomLabelDescender:(float)arg1;
-- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setShowsImage:(BOOL)arg1;
+- (double)bottomLabelDescender;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
+- (void)setBottomLabelDescender:(double)arg1;
+- (void)setInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setShowsImage:(bool)arg1;
 - (void)setSubtitleColor:(id)arg1;
 - (void)setSubtitleDefaultFontAttributes:(id)arg1;
-- (void)setSubtitleLineHeight:(float)arg1;
+- (void)setSubtitleLineHeight:(double)arg1;
 - (void)setSubtitleTextStyle:(id)arg1;
 - (void)setTitleColor:(id)arg1;
 - (void)setTitleDefaultFontAttributes:(id)arg1;
-- (void)setTitleLineHeight:(float)arg1;
+- (void)setTitleLineHeight:(double)arg1;
 - (void)setTitleTextStyle:(id)arg1;
-- (BOOL)showsImage;
+- (bool)showsImage;
 - (id)subtitleColor;
 - (id)subtitleDefaultFontAttributes;
-- (float)subtitleLineHeight;
+- (double)subtitleLineHeight;
 - (id)subtitleTextStyle;
 - (id)titleColor;
 - (id)titleDefaultFontAttributes;
-- (float)titleLineHeight;
+- (double)titleLineHeight;
 - (id)titleTextStyle;
 
 @end

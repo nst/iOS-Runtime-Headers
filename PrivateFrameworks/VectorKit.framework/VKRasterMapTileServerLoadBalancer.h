@@ -11,7 +11,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithTileServers:(id)arg1 snapshotServers:(id)arg2;
-- (void)renderSnapshotRequest:(id)arg1 completion:(id /* block */)arg2;
-- (void)renderTileRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)renderSnapshotRequest:(id)arg1 completion:(id)arg2;
+- (void)renderTileRequest:(id)arg1 completion:(id)arg2;
 
 @end

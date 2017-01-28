@@ -3,45 +3,45 @@
  */
 
 @interface SFTableRowCardSection : SFCardSection {
-    BOOL  _alignRowsToHeader;
+    bool  _alignRowsToHeader;
     SFTableAlignmentSchema * _alignmentSchema;
     NSArray * _data;
-    BOOL  _isSubHeader;
-    BOOL  _reducedRowHeight;
+    bool  _isSubHeader;
+    bool  _reducedRowHeight;
     NSString * _tabGroupIdentifier;
     NSString * _tableIdentifier;
-    int  _verticalAlign;
+    long long  _verticalAlign;
 }
 
-@property (nonatomic) BOOL alignRowsToHeader;
+@property (nonatomic) bool alignRowsToHeader;
 @property (nonatomic, retain) SFTableAlignmentSchema *alignmentSchema;
 @property (nonatomic, copy) NSArray *data;
-@property (nonatomic) BOOL isSubHeader;
-@property (nonatomic) BOOL reducedRowHeight;
+@property (nonatomic) bool isSubHeader;
+@property (nonatomic) bool reducedRowHeight;
 @property (nonatomic, copy) NSString *tabGroupIdentifier;
 @property (nonatomic, copy) NSString *tableIdentifier;
-@property (nonatomic) int verticalAlign;
+@property (nonatomic) long long verticalAlign;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)alignRowsToHeader;
+- (bool)alignRowsToHeader;
 - (id)alignmentSchema;
 - (id)data;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isSubHeader;
-- (BOOL)reducedRowHeight;
-- (void)setAlignRowsToHeader:(BOOL)arg1;
+- (bool)isSubHeader;
+- (bool)reducedRowHeight;
+- (void)setAlignRowsToHeader:(bool)arg1;
 - (void)setAlignmentSchema:(id)arg1;
 - (void)setData:(id)arg1;
-- (void)setIsSubHeader:(BOOL)arg1;
-- (void)setReducedRowHeight:(BOOL)arg1;
+- (void)setIsSubHeader:(bool)arg1;
+- (void)setReducedRowHeight:(bool)arg1;
 - (void)setTabGroupIdentifier:(id)arg1;
 - (void)setTableIdentifier:(id)arg1;
-- (void)setVerticalAlign:(int)arg1;
+- (void)setVerticalAlign:(long long)arg1;
 - (id)tabGroupIdentifier;
 - (id)tableIdentifier;
-- (int)verticalAlign;
+- (long long)verticalAlign;
 
 @end

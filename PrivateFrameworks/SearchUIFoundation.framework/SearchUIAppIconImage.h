@@ -4,34 +4,34 @@
 
 @interface SearchUIAppIconImage : SearchUISFImage <NSSecureCoding> {
     NSString * _bundleID;
-    unsigned int  _variant;
+    unsigned long long  _variant;
 }
 
 @property (nonatomic, retain) NSString *bundleID;
-@property (nonatomic) unsigned int variant;
+@property (nonatomic) unsigned long long variant;
 
 // Image: /System/Library/PrivateFrameworks/SearchUIFoundation.framework/SearchUIFoundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleID;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithBundleID:(id)arg1 variant:(unsigned int)arg2;
+- (id)initWithBundleID:(id)arg1 variant:(unsigned long long)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)setBundleID:(id)arg1;
 - (void)setSize;
-- (void)setVariant:(unsigned int)arg1;
-- (unsigned int)variant;
+- (void)setVariant:(unsigned long long)arg1;
+- (unsigned long long)variant;
 
 // Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
 
-+ (float)cornerRadiusForHomeScreenIcons;
-+ (float)cornerRadiusForSmallSpotlightIcons;
-+ (struct CGSize { float x1; float x2; })homeScreenIconSize;
-+ (float)iconCornerRadiusForFormat:(int)arg1;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleFrameForHomeScreenIcons;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleFrameForSmallSpotlightIcons;
++ (double)cornerRadiusForHomeScreenIcons;
++ (double)cornerRadiusForSmallSpotlightIcons;
++ (struct CGSize { double x1; double x2; })homeScreenIconSize;
++ (double)iconCornerRadiusForFormat:(int)arg1;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrameForHomeScreenIcons;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleFrameForSmallSpotlightIcons;
 
 - (id)generateImageWithFormat:(int)arg1;
 - (id)loadImage;

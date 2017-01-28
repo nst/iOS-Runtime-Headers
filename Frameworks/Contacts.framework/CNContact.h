@@ -10,28 +10,28 @@
     CNActivityAlert * _callAlert;
     NSString * _cardDAVUID;
     NSArray * _contactRelations;
-    int  _contactType;
+    long long  _contactType;
     NSDate * _creationDate;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _cropRect;
     NSArray * _dates;
     NSString * _departmentName;
-    int  _displayNameOrder;
+    long long  _displayNameOrder;
     NSArray * _emailAddresses;
     NSString * _familyName;
     NSData * _fullscreenImageData;
     NSString * _givenName;
     int  _iOSLegacyIdentifier;
     NSData * _imageData;
-    BOOL  _imageDataAvailable;
+    bool  _imageDataAvailable;
     NSArray * _instantMessageAddresses;
     NSString * _internalIdentifier;
     NSString * _jobTitle;
@@ -54,8 +54,8 @@
     NSString * _phoneticOrganizationName;
     NSArray * _postalAddresses;
     NSString * _preferredApplePersonaIdentifier;
-    BOOL  _preferredForImage;
-    BOOL  _preferredForName;
+    bool  _preferredForImage;
+    bool  _preferredForName;
     NSString * _preferredLikenessSource;
     NSString * _previousFamilyName;
     NSString * _pronunciationFamilyName;
@@ -88,17 +88,17 @@
 @property (nonatomic, readonly, copy) NSString *cardDAVUID;
 @property (readonly, copy) NSString *companyName;
 @property (nonatomic, readonly, copy) NSArray *contactRelations;
-@property (nonatomic) unsigned int contactSource;
-@property (nonatomic, readonly) int contactType;
+@property (nonatomic) unsigned long long contactSource;
+@property (nonatomic, readonly) long long contactType;
 @property (nonatomic, readonly, copy) NSDate *creationDate;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } cropRect;
 @property (nonatomic, readonly, copy) NSArray *dates;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSString *departmentName;
 @property (readonly, copy) NSString *description;
 @property (readonly) NSString *destinationId;
 @property (readonly) NSString *displayName;
-@property (nonatomic, readonly) int displayNameOrder;
+@property (nonatomic, readonly) long long displayNameOrder;
 @property (nonatomic, readonly, copy) NSArray *emailAddresses;
 @property (nonatomic, readonly, copy) NSString *familyName;
 @property (readonly, copy) NSString *firstName;
@@ -106,17 +106,17 @@
 @property (nonatomic, readonly, copy) NSData *fullscreenImageData;
 @property (nonatomic, readonly, copy) NSString *givenName;
 @property (readonly) NSArray *handles;
-@property (nonatomic, readonly) BOOL hasBeenPersisted;
-@property (nonatomic, readonly) BOOL hasNonPersistedData;
-@property (nonatomic, readonly) BOOL hasSuggestedProperties;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasBeenPersisted;
+@property (nonatomic, readonly) bool hasNonPersistedData;
+@property (nonatomic, readonly) bool hasSuggestedProperties;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int iOSLegacyIdentifier;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (readonly) NSString *idsCanonicalDestination;
 @property (readonly) NSArray *idsCanonicalDestinations;
 @property (readonly) NSString *idsUniqueId;
 @property (nonatomic, readonly, copy) NSData *imageData;
-@property (nonatomic, readonly) BOOL imageDataAvailable;
+@property (nonatomic, readonly) bool imageDataAvailable;
 @property (nonatomic, readonly, copy) NSArray *instantMessageAddresses;
 @property (nonatomic, readonly, copy) NSString *internalIdentifier;
 @property (readonly) NSString *isoCountryCode;
@@ -130,9 +130,9 @@
 @property (nonatomic, readonly, copy) NSString *mapsData;
 @property (nonatomic, readonly, copy) NSString *middleName;
 @property (nonatomic, readonly, copy) NSDate *modificationDate;
-@property (readonly) int mostRecentCallType;
-@property (readonly) BOOL mostRecentCallWasMissed;
-@property (readonly) int nameOrder;
+@property (readonly) long long mostRecentCallType;
+@property (readonly) bool mostRecentCallWasMissed;
+@property (readonly) long long nameOrder;
 @property (nonatomic, readonly, copy) NSString *namePrefix;
 @property (nonatomic, readonly, copy) NSString *nameSuffix;
 @property (readonly, copy) NSString *nameTitle;
@@ -155,14 +155,14 @@
 @property (nonatomic, readonly, copy) NSArray *postalAddresses;
 @property (nonatomic, readonly, copy) NSString *preferredApplePersonaIdentifier;
 @property (nonatomic, readonly) CNContact *preferredContactForPhoto;
-@property (getter=isPreferredForImage, nonatomic, readonly) BOOL preferredForImage;
-@property (getter=isPreferredForName, nonatomic, readonly) BOOL preferredForName;
-@property (getter=isPreferredForPhoto, nonatomic) BOOL preferredForPhoto;
+@property (getter=isPreferredForImage, nonatomic, readonly) bool preferredForImage;
+@property (getter=isPreferredForName, nonatomic, readonly) bool preferredForName;
+@property (getter=isPreferredForPhoto, nonatomic) bool preferredForPhoto;
 @property (nonatomic, readonly, copy) NSString *preferredLikenessSource;
 @property (nonatomic, readonly, copy) NSString *previousFamilyName;
 @property (nonatomic, readonly, copy) NSString *pronunciationFamilyName;
 @property (nonatomic, readonly, copy) NSString *pronunciationGivenName;
-@property (getter=isReadonly, nonatomic, readonly) BOOL readonly;
+@property (getter=isReadonly, nonatomic, readonly) bool readonly;
 @property (nonatomic, retain) CRRecentContact *recentContact;
 @property (readonly) void*record;
 @property (readonly) int recordID;
@@ -177,26 +177,26 @@
 @property (nonatomic, readonly, copy) NSString *storeIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *storeInfo;
 @property (nonatomic, readonly, copy) NSString *stringForIndexing;
-@property (getter=isSuggested, nonatomic, readonly) BOOL suggested;
+@property (getter=isSuggested, nonatomic, readonly) bool suggested;
 @property (nonatomic, readonly) NSString *suggestionFoundInBundleId;
 @property (nonatomic, readonly) SGRecordId *suggestionRecordId;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsInstantMessageService;
+@property (nonatomic, readonly) bool supportsInstantMessageService;
 @property (nonatomic, readonly, copy) CNActivityAlert *textAlert;
 @property (nonatomic, readonly, copy) NSData *thumbnailImageData;
-@property (getter=isUnified, nonatomic, readonly) BOOL unified;
-@property (getter=isUnknown, nonatomic, readonly) BOOL unknown;
+@property (getter=isUnified, nonatomic, readonly) bool unified;
+@property (getter=isUnknown, nonatomic, readonly) bool unknown;
 @property (nonatomic, readonly, copy) NSArray *urlAddresses;
 @property (nonatomic, readonly) NSData *vCardRepresentation;
 
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 
-+ (id)_contactWithContact:(id)arg1 createNewInstance:(BOOL)arg2 propertyDescriptions:(id)arg3;
++ (id)_contactWithContact:(id)arg1 createNewInstance:(bool)arg2 propertyDescriptions:(id)arg3;
 + (id)alwaysFetchedKeys;
-+ (id /* block */)comparatorForNameSortOrder:(int)arg1;
++ (id)comparatorForNameSortOrder:(long long)arg1;
 + (id)contact;
 + (id)contactFromPerson:(void*)arg1 keysToFetch:(id)arg2;
-+ (id)contactFromPerson:(void*)arg1 keysToFetch:(id)arg2 mutable:(BOOL)arg3;
++ (id)contactFromPerson:(void*)arg1 keysToFetch:(id)arg2 mutable:(bool)arg3;
 + (id)contactFromSuggestion:(id)arg1;
 + (id)contactIdentifierFromSuggestionID:(id)arg1;
 + (id)contactWithContact:(id)arg1;
@@ -223,7 +223,7 @@
 + (id)predicateForContactsMatchingFullTextSearch:(id)arg1 containerIdentifiers:(id)arg2 groupIdentifiers:(id)arg3;
 + (id)predicateForContactsMatchingInstantMessageAddress:(id)arg1;
 + (id)predicateForContactsMatchingName:(id)arg1;
-+ (id)predicateForContactsMatchingName:(id)arg1 options:(unsigned int)arg2;
++ (id)predicateForContactsMatchingName:(id)arg1 options:(unsigned long long)arg2;
 + (id)predicateForContactsMatchingPhoneNumber:(id)arg1;
 + (id)predicateForContactsMatchingPostalAddress:(id)arg1;
 + (id)predicateForContactsMatchingSocialProfile:(id)arg1;
@@ -232,20 +232,20 @@
 + (id)predicateForContactsWithOrganizationName:(id)arg1;
 + (id)predicateForLegacyIdentifier:(unsigned int)arg1;
 + (id)predicateForPreferredNameInContainersWithIdentifiers:(id)arg1 groupsWithIdentifiers:(id)arg2;
-+ (id)predicateForPreferredNameInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (id)predicateForPreferredNameInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 + (id)predicateForSuggestionIdentifier:(unsigned long long)arg1;
-+ (id /* block */)preferredImageComparator;
++ (id)preferredImageComparator;
 + (id)storeInfoFromCoder:(id)arg1 storeIdentifier:(id)arg2 key:(id)arg3;
 + (id)suggestionIDFromContactIdentifier:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)unifyContacts:(id)arg1;
 
 - (id)accountIdentifier;
 - (id)activityAlerts;
-- (BOOL)areAllAvailableKeysEqualToContact:(id)arg1 ignoringIdentifiers:(BOOL)arg2;
-- (BOOL)areAllPropertiesButContactIdentifierEqualToContact:(id)arg1;
-- (BOOL)areAllPropertiesEqualToContactIgnoringIdentifiers:(id)arg1;
-- (BOOL)areKeysAvailable:(id)arg1;
+- (bool)areAllAvailableKeysEqualToContact:(id)arg1 ignoringIdentifiers:(bool)arg2;
+- (bool)areAllPropertiesButContactIdentifierEqualToContact:(id)arg1;
+- (bool)areAllPropertiesEqualToContactIgnoringIdentifiers:(id)arg1;
+- (bool)areKeysAvailable:(id)arg1;
 - (void)assertKeyIsAvailable:(id)arg1;
 - (void)assertKeysAreAvailable:(id)arg1;
 - (id)availableKeys;
@@ -255,13 +255,13 @@
 - (id)cardDAVUID;
 - (id)companyName;
 - (id)contactRelations;
-- (int)contactType;
+- (long long)contactType;
 - (id)copyWithNoSuggestion;
 - (id)copyWithPropertyKeys:(id)arg1;
 - (id)copyWithSelfAsSnapshot;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRect;
 - (id)dates;
 - (void)dealloc;
 - (id)departmentName;
@@ -269,7 +269,7 @@
 - (void*)detachedPerson;
 - (void*)detachedPersonWithError:(id*)arg1;
 - (id)diffToSnapshotAndReturnError:(id*)arg1;
-- (int)displayNameOrder;
+- (long long)displayNameOrder;
 - (id)emailAddresses;
 - (void)encodeWithCoder:(id)arg1;
 - (id)familyName;
@@ -277,30 +277,30 @@
 - (id)fullName;
 - (id)fullscreenImageData;
 - (id)givenName;
-- (BOOL)hasBeenPersisted;
-- (BOOL)hasChanges;
-- (BOOL)hasSuggestedProperties;
-- (unsigned int)hash;
+- (bool)hasBeenPersisted;
+- (bool)hasChanges;
+- (bool)hasSuggestedProperties;
+- (unsigned long long)hash;
 - (int)iOSLegacyIdentifier;
 - (id)identifier;
 - (id)imageData;
-- (BOOL)imageDataAvailable;
+- (bool)imageDataAvailable;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 availableKeys:(id)arg2;
 - (id)instantMessageAddresses;
 - (id)internalIdentifier;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualIgnoringIdentifiers:(id)arg1;
-- (BOOL)isKeyAvailable:(id)arg1;
-- (BOOL)isPreferredForImage;
-- (BOOL)isPreferredForName;
-- (BOOL)isProperty:(id)arg1 equalToOtherIgnoreIdentifiers:(id)arg2;
-- (BOOL)isSuggested;
-- (BOOL)isUnified;
-- (BOOL)isUnifiedWithContactWithIdentifier:(id)arg1;
-- (BOOL)isValid:(id*)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualIgnoringIdentifiers:(id)arg1;
+- (bool)isKeyAvailable:(id)arg1;
+- (bool)isPreferredForImage;
+- (bool)isPreferredForName;
+- (bool)isProperty:(id)arg1 equalToOtherIgnoreIdentifiers:(id)arg2;
+- (bool)isSuggested;
+- (bool)isUnified;
+- (bool)isUnifiedWithContactWithIdentifier:(id)arg1;
+- (bool)isValid:(id*)arg1;
 - (id)jobTitle;
 - (id)lastName;
 - (id)linkIdentifier;
@@ -321,8 +321,8 @@
 - (id)nonGregorianBirthday;
 - (id)note;
 - (id)organizationName;
-- (BOOL)overwritePerson:(void*)arg1;
-- (BOOL)overwritePerson:(void*)arg1 error:(id*)arg2;
+- (bool)overwritePerson:(void*)arg1;
+- (bool)overwritePerson:(void*)arg1 error:(id*)arg2;
 - (id)phoneNumbers;
 - (id)phonemeData;
 - (id)phoneticCompanyName;
@@ -335,8 +335,8 @@
 - (id)phoneticOrganizationName;
 - (id)postalAddresses;
 - (id)preferredApplePersonaIdentifier;
-- (BOOL)preferredForImage;
-- (BOOL)preferredForName;
+- (bool)preferredForImage;
+- (bool)preferredForName;
 - (id)preferredLikenessSource;
 - (id)previousFamilyName;
 - (id)pronunciationFamilyName;
@@ -361,7 +361,7 @@
 // Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
 
 + (id)contactWithRecord:(void*)arg1;
-+ (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
++ (id)contactWithRecord:(void*)arg1 unify:(bool)arg2;
 + (id)contactWithRecordID:(int)arg1 addressBook:(void*)arg2;
 + (id)contactWithStateRestorationCoder:(id)arg1 addressBook:(void*)arg2;
 + (id)contactWithUserActivityUserInfo:(id)arg1 addressBook:(void*)arg2;
@@ -371,36 +371,36 @@
 
 - (void*)addressBook;
 - (id)initWithRecord:(void*)arg1;
-- (BOOL)isPreferredForPhoto;
-- (BOOL)isReadonly;
+- (bool)isPreferredForPhoto;
+- (bool)isReadonly;
 - (id)largestAvailablePhoto;
-- (id)largestAvailablePhotoAndCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
-- (int)nameOrder;
+- (id)largestAvailablePhotoAndCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
+- (long long)nameOrder;
 - (id)photoThumbnail;
 - (id)preferredContactForPhoto;
 - (void*)record;
 - (void*)recordFromAddressBook:(void*)arg1;
 - (int)recordID;
 - (void)setAddressBook:(void*)arg1;
-- (void)setPreferredForPhoto:(BOOL)arg1;
+- (void)setPreferredForPhoto:(bool)arg1;
 - (id)userActivityUserInfo;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
-+ (BOOL)contactRemindersEnabled;
++ (bool)contactRemindersEnabled;
 + (id)contactWithStateRestorationCoder:(id)arg1 store:(id)arg2 keys:(id)arg3;
 + (id)descriptorForAllUIKeys;
 + (id)multiValuePropertiesSupportingPredicateValidation;
-+ (BOOL)quickActionsEnabled;
-+ (BOOL)settableMeCardEnabled;
-+ (BOOL)suggestionsEnabled;
-+ (BOOL)suggestionsShownInEditMode;
++ (bool)quickActionsEnabled;
++ (bool)settableMeCardEnabled;
++ (bool)suggestionsEnabled;
++ (bool)suggestionsShownInEditMode;
 
 - (id)birthdays;
-- (BOOL)hasNonPersistedData;
-- (BOOL)isUnknown;
+- (bool)hasNonPersistedData;
+- (bool)isUnknown;
 - (id)personName;
-- (BOOL)supportsInstantMessageService;
+- (bool)supportsInstantMessageService;
 - (id)vCardRepresentation;
 - (id)validPropertiesByEvaluatingPredicate:(id)arg1 onMultiValueProperties:(id)arg2;
 
@@ -417,6 +417,12 @@
 - (id)identifierForKey:(id)arg1 withDestination:(id)arg2;
 - (id)identifierForKey:(id)arg1 withDestination:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (bool)hasEmailAddress:(id)arg1;
+- (bool)hasPhoneNumber:(id)arg1;
+- (bool)hasPostalAddress:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 + (id)contactWithABRecordRef:(void*)arg1;
@@ -428,7 +434,7 @@
 + (id)pkPassbookRequiredKeys;
 
 - (void*)ABPerson;
-- (unsigned int)contactSource;
+- (unsigned long long)contactSource;
 - (id)nameComponents;
 - (void)pkAddLabeledValues:(id)arg1 withProperty:(id)arg2;
 - (id)pkDictionaryForProperty:(id)arg1;
@@ -436,7 +442,8 @@
 - (id)pkFullName;
 - (id)pkSingleLineFormattedContactAddress;
 - (id)recentContact;
-- (void)setContactSource:(unsigned int)arg1;
+- (id)sanitizedContact;
+- (void)setContactSource:(unsigned long long)arg1;
 - (void)setRecentContact:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
@@ -457,8 +464,8 @@
 - (id)idsCanonicalDestinations;
 - (id)idsUniqueId;
 - (id)isoCountryCode;
-- (int)mostRecentCallType;
-- (BOOL)mostRecentCallWasMissed;
+- (long long)mostRecentCallType;
+- (bool)mostRecentCallWasMissed;
 - (id)phoneNumberStrings;
 
 // Image: /System/Library/PrivateFrameworks/UserManagementUI.framework/UserManagementUI

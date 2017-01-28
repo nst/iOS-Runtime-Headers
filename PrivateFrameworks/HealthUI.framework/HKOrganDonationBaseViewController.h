@@ -5,20 +5,20 @@
 @interface HKOrganDonationBaseViewController : HKTitledBuddyViewController {
     NSString * _completionButtonTitle;
     _HKMedicalIDData * _medicalIDData;
-    id /* block */  _registrationCompletionHandler;
+    id  _registrationCompletionHandler;
 }
 
 @property (nonatomic, retain) NSString *completionButtonTitle;
 @property (nonatomic, retain) _HKMedicalIDData *medicalIDData;
-@property (nonatomic, copy) id /* block */ registrationCompletionHandler;
+@property (nonatomic, copy) id registrationCompletionHandler;
 
 - (void).cxx_destruct;
 - (id)completionButtonTitle;
 - (id)initWithMedicalIDData:(id)arg1;
 - (id)medicalIDData;
-- (id /* block */)registrationCompletionHandler;
+- (id)registrationCompletionHandler;
 - (void)setCompletionButtonTitle:(id)arg1;
 - (void)setMedicalIDData:(id)arg1;
-- (void)setRegistrationCompletionHandler:(id /* block */)arg1;
+- (void)setRegistrationCompletionHandler:(id)arg1;
 
 @end

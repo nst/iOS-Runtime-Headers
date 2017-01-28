@@ -4,49 +4,49 @@
 
 @interface FFReachabilityQueryOperation : NSOperation <IDSBatchIDQueryControllerDelegate> {
     IDSBatchIDQueryController * _batchQueryController;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSSet * _destinations;
-    BOOL  _executing;
-    BOOL  _finished;
+    bool  _executing;
+    bool  _finished;
     NSMutableDictionary * _rawIDSDestinationToOriginalDestination;
     NSMutableSet * _remainingDestinations;
     NSMutableDictionary * _results;
     NSString * _serviceIdentifier;
     FFReachabilityStatusCache * _statusCache;
-    id /* block */  _updateHandler;
+    id  _updateHandler;
     NSObject<OS_dispatch_source> * timer;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSSet *destinations;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *serviceIdentifier;
 @property (nonatomic) FFReachabilityStatusCache *statusCache;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) id /* block */ updateHandler;
+@property (nonatomic, copy) id updateHandler;
 
 - (void).cxx_destruct;
 - (void)_queryTimedOut;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)destinations;
 - (void)finish;
 - (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;
 - (id)init;
-- (BOOL)isAsynchronous;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
-- (BOOL)isReady;
+- (bool)isAsynchronous;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (bool)isReady;
 - (id)serviceIdentifier;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setDestinations:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setStatusCache:(id)arg1;
-- (void)setUpdateHandler:(id /* block */)arg1;
+- (void)setUpdateHandler:(id)arg1;
 - (void)start;
 - (id)statusCache;
-- (id /* block */)updateHandler;
+- (id)updateHandler;
 
 @end

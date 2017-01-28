@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, retain) NSString *appDisplayName;
-@property (nonatomic, readonly) BOOL hasAppDisplayName;
+@property (nonatomic, readonly) bool hasAppDisplayName;
 
 - (void).cxx_destruct;
 - (id)appDisplayName;
@@ -15,11 +15,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAppDisplayName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAppDisplayName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAppDisplayName:(id)arg1;
 - (void)writeTo:(id)arg1;
 

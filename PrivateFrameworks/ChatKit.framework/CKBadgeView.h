@@ -4,28 +4,18 @@
 
 @interface CKBadgeView : UIView {
     UILabel * _countLabel;
-    NSLayoutConstraint * _heightConstraint;
-    NSLayoutConstraint * _pillWidthConstraint;
-    NSLayoutConstraint * _roundWidthConstraint;
-    unsigned int  _value;
-    NSLayoutConstraint * _zeroWidthConstraint;
+    unsigned long long  _value;
 }
 
 @property (nonatomic, readonly) UILabel *countLabel;
-@property (nonatomic, readonly) NSLayoutConstraint *heightConstraint;
-@property (nonatomic, readonly) NSLayoutConstraint *pillWidthConstraint;
-@property (nonatomic, readonly) NSLayoutConstraint *roundWidthConstraint;
-@property (nonatomic) unsigned int value;
-@property (nonatomic, readonly) NSLayoutConstraint *zeroWidthConstraint;
+@property (nonatomic) unsigned long long value;
 
 - (void).cxx_destruct;
 - (id)countLabel;
-- (id)heightConstraint;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)pillWidthConstraint;
-- (id)roundWidthConstraint;
-- (void)setValue:(unsigned int)arg1;
-- (unsigned int)value;
-- (id)zeroWidthConstraint;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (void)setValue:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)value;
 
 @end

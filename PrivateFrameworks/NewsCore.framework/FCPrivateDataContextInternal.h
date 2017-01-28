@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) FCCKRecordZone *channelMembershipsRecordZone;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CKContainer *privateContainer;
 @property (nonatomic, retain) FCCKDatabase *privateDatabase;
 @property (nonatomic, readonly) FCCKRecordZone *readingHistoryRecordZone;

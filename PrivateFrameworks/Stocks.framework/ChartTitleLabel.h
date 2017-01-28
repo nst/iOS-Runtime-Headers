@@ -7,7 +7,7 @@
     LabelSequenceView * _leftView;
     LabelSequenceView * _rightView;
     Stock * _stock;
-    float  _width;
+    double  _width;
 }
 
 - (void).cxx_destruct;
@@ -15,10 +15,10 @@
 - (id)init;
 - (void)layoutSubviews;
 - (void)prepareStringsForDeferredStockIfNeeded;
-- (void)prepareStringsWithStock:(id)arg1 width:(float)arg2;
+- (void)prepareStringsWithStock:(id)arg1 width:(double)arg2;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLabelsHidden:(BOOL)arg1;
-- (void)setOpaque:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setLabelsHidden:(bool)arg1;
+- (void)setOpaque:(bool)arg1;
 
 @end

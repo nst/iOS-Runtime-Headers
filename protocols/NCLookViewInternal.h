@@ -5,6 +5,6 @@
 
 @required
 
-- (int)lookStyle;
+- (long long)lookStyle;
 
 @end

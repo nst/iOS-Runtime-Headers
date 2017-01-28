@@ -13,13 +13,13 @@
 @property (nonatomic, readonly) SKUIJSTabBarItem *transientTab;
 
 - (void).cxx_destruct;
-- (void)_reloadTabBarItemsWithPreludeMainThreadWork:(id /* block */)arg1;
-- (id)_selectedTabBarItemForIndex:(int)arg1;
+- (void)_reloadTabBarItemsWithPreludeMainThreadWork:(id)arg1;
+- (id)_selectedTabBarItemForIndex:(long long)arg1;
 - (id)initWithAppContext:(id)arg1 controller:(id)arg2;
 - (id)selectedTab;
 - (void)sendOnNeedsContentForTabBarItem:(id)arg1;
 - (void)sendOnUpdate;
-- (void)sendOnUpdateWithCompletion:(id /* block */)arg1;
+- (void)sendOnUpdateWithCompletion:(id)arg1;
 - (void)setSelectedTab:(id)arg1;
 - (id)tabs;
 - (id)transientTab;

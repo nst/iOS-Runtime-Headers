@@ -5,6 +5,6 @@
 
 @required
 
-- (void)unexpectedlyLoggedOutNotificationView:(CKUnexpectedlyLoggedOutNotificationView *)arg1 didChangeRequestedHeight:(float)arg2;
+- (void)unexpectedlyLoggedOutNotificationView:(CKUnexpectedlyLoggedOutNotificationView *)arg1 didChangeRequestedHeight:(double)arg2;
 
 @end

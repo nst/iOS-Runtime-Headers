@@ -27,7 +27,7 @@
 - (id)executeFetchRequest:(id)arg1 afterDelay:(double)arg2 delegate:(id)arg3;
 - (id)executeFetchRequest:(id)arg1 delegate:(id)arg2;
 - (double)fetchCoalescingInterval;
-- (void)ignoreResult:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)ignoreResult:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithDelegate:(id)arg1 searchProvider:(id)arg2 probeProvider:(id)arg3 scheduler:(id)arg4;
@@ -40,7 +40,7 @@
 - (void)setCurrentFetchToken:(id)arg1;
 - (void)setFetchCoalescingInterval:(double)arg1;
 - (void)setUserSession:(id)arg1;
-- (void)userSelectedResult:(id)arg1 atSortedIndex:(unsigned int)arg2;
+- (void)userSelectedResult:(id)arg1 atSortedIndex:(unsigned long long)arg2;
 - (id)userSession;
 
 @end

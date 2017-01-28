@@ -4,28 +4,28 @@
 
 @interface CBAdaptationClient : NSObject {
     int  _mode;
-    BOOL  _modeSet;
-    BOOL  _supported;
+    bool  _modeSet;
+    bool  _supported;
     BrightnessSystemClient * bsc;
-    BOOL  ownsClient;
+    bool  ownsClient;
 }
 
-@property BOOL supported;
+@property bool supported;
 
-+ (BOOL)supportsAdaptation;
++ (bool)supportsAdaptation;
 
-- (BOOL)animateFromWeakestAdaptationModeInArray:(int*)arg1 withLength:(int)arg2 toWeakestInArray:(int*)arg3 withLength:(int)arg4 withProgress:(float)arg5 andPeriod:(float)arg6;
+- (bool)animateFromWeakestAdaptationModeInArray:(int*)arg1 withLength:(int)arg2 toWeakestInArray:(int*)arg3 withLength:(int)arg4 withProgress:(float)arg5 andPeriod:(float)arg6;
 - (void)dealloc;
 - (int)getAdaptationMode;
-- (BOOL)getEnabled;
-- (BOOL)getStrengths:(float*)arg1 nStrengths:(int)arg2;
+- (bool)getEnabled;
+- (bool)getStrengths:(float*)arg1 nStrengths:(int)arg2;
 - (id)init;
 - (id)initWithClientObj:(id)arg1;
-- (BOOL)overrideStrengths:(float*)arg1 forModes:(int*)arg2 nModes:(int)arg3;
-- (BOOL)setAdaptationMode:(int)arg1 withPeriod:(float)arg2;
-- (BOOL)setEnabled:(BOOL)arg1;
-- (void)setSupported:(BOOL)arg1;
-- (BOOL)setWeakestAdaptationModeFromArray:(int*)arg1 withLength:(int)arg2 andPeriod:(float)arg3;
-- (BOOL)supported;
+- (bool)overrideStrengths:(float*)arg1 forModes:(int*)arg2 nModes:(int)arg3;
+- (bool)setAdaptationMode:(int)arg1 withPeriod:(float)arg2;
+- (bool)setEnabled:(bool)arg1;
+- (void)setSupported:(bool)arg1;
+- (bool)setWeakestAdaptationModeFromArray:(int*)arg1 withLength:(int)arg2 andPeriod:(float)arg3;
+- (bool)supported;
 
 @end

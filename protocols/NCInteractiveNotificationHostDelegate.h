@@ -5,9 +5,9 @@
 
 @optional
 
-- (void)hostViewController:(UIViewController<NCInteractiveNotificationHost> *)arg1 didEnable:(BOOL)arg2 actionAtIndex:(unsigned int)arg3;
+- (void)hostViewController:(UIViewController<NCInteractiveNotificationHost> *)arg1 didEnable:(bool)arg2 actionAtIndex:(unsigned long long)arg3;
 - (void)hostViewController:(UIViewController<NCInteractiveNotificationHost> *)arg1 didRequestDismissalWithContext:(NSDictionary *)arg2;
-- (void)hostViewController:(UIViewController<NCInteractiveNotificationHost> *)arg1 serviceRequestedDismissalEnabled:(BOOL)arg2;
+- (void)hostViewController:(UIViewController<NCInteractiveNotificationHost> *)arg1 serviceRequestedDismissalEnabled:(bool)arg2;
 - (void)hostViewControllerDidChangePreferredContentSize:(UIViewController<NCInteractiveNotificationHost> *)arg1;
 
 @end

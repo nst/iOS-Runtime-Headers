@@ -3,25 +3,25 @@
  */
 
 @interface PKExtendedTraitCollection : NSObject {
-    float  _displayScale;
-    int  _layoutSizeClass;
-    int  _layoutSizeSubclass;
-    int  _userInterfaceIdiom;
+    double  _displayScale;
+    long long  _layoutSizeClass;
+    long long  _layoutSizeSubclass;
+    long long  _userInterfaceIdiom;
 }
 
-@property (nonatomic) float displayScale;
-@property (nonatomic) int layoutSizeClass;
-@property (nonatomic) int layoutSizeSubclass;
-@property (nonatomic) int userInterfaceIdiom;
+@property (nonatomic) double displayScale;
+@property (nonatomic) long long layoutSizeClass;
+@property (nonatomic) long long layoutSizeSubclass;
+@property (nonatomic) long long userInterfaceIdiom;
 
 - (id)description;
-- (float)displayScale;
-- (int)layoutSizeClass;
-- (int)layoutSizeSubclass;
-- (void)setDisplayScale:(float)arg1;
-- (void)setLayoutSizeClass:(int)arg1;
-- (void)setLayoutSizeSubclass:(int)arg1;
-- (void)setUserInterfaceIdiom:(int)arg1;
-- (int)userInterfaceIdiom;
+- (double)displayScale;
+- (long long)layoutSizeClass;
+- (long long)layoutSizeSubclass;
+- (void)setDisplayScale:(double)arg1;
+- (void)setLayoutSizeClass:(long long)arg1;
+- (void)setLayoutSizeSubclass:(long long)arg1;
+- (void)setUserInterfaceIdiom:(long long)arg1;
+- (long long)userInterfaceIdiom;
 
 @end

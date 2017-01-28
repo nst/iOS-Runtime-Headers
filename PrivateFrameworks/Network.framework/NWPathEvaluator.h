@@ -17,7 +17,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Network.framework/Network
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)copySavedPathEvaluatorForEndpoint:(id)arg1 parameters:(id)arg2;
 + (void)initialize;
 + (void)savePathEvaluator:(id)arg1;
@@ -30,20 +30,20 @@
 - (id)initWithEndpoint:(id)arg1 parameters:(id)arg2;
 - (id)internalEvaluator;
 - (id)internalPath;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)matchesEndpoint:(id)arg1 parameters:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)matchesEndpoint:(id)arg1 parameters:(id)arg2;
 - (id)parameters;
 - (id)path;
-- (BOOL)requestNexus;
-- (void)satisfyPathAgentsWithCompletionHandler:(id /* block */)arg1;
+- (bool)requestNexus;
+- (void)satisfyPathAgentsWithCompletionHandler:(id)arg1;
 - (void)setInternalPath:(id)arg1;
-- (void)triggerPathAgentsIncludingVoluntary:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)triggerVoluntaryPathAgentsWithCompletionHandler:(id /* block */)arg1;
+- (void)triggerPathAgentsIncludingVoluntary:(bool)arg1 withCompletionHandler:(id)arg2;
+- (void)triggerVoluntaryPathAgentsWithCompletionHandler:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
 
 + (id)wf_pathEvaluatorForURL:(id)arg1;
 
-- (BOOL)wf_isReachable;
+- (bool)wf_isReachable;
 
 @end

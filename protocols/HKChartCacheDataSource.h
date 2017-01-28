@@ -5,6 +5,6 @@
 
 @required
 
-- (HKChartCacheFetchOperation *)operationForIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 12: <NSCopying> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, HKChartCacheFetchOperation *, id, void*, inout unsigned short, void*, const const out const void*, void*
+- (HKChartCacheFetchOperation *)operationForIdentifier:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 12: <NSCopying> *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, HKChartCacheFetchOperation *, id, void*, inout unsigned short, void*, const const out const void*, void*
 
 @end

@@ -30,7 +30,7 @@
 - (void)setPendingCompletedChallenge:(id)arg1;
 - (void)setPendingReceivedChallenge:(id)arg1;
 - (void)setUiDelegate:(id)arg1;
-- (void)showBannerForChallenge:(id)arg1 complete:(id /* block */)arg2;
+- (void)showBannerForChallenge:(id)arg1 complete:(id)arg2;
 - (id)uiDelegate;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI

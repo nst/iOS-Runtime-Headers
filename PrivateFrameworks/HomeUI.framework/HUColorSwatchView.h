@@ -3,22 +3,22 @@
  */
 
 @interface HUColorSwatchView : UIView {
-    unsigned int  _selectionState;
+    unsigned long long  _selectionState;
 }
 
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, readonly) CAShapeLayer *layer;
-@property (nonatomic) unsigned int selectionState;
+@property (nonatomic) unsigned long long selectionState;
 
 + (Class)layerClass;
 
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateShapePath;
 - (id)color;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (unsigned int)selectionState;
+- (unsigned long long)selectionState;
 - (void)setColor:(id)arg1;
-- (void)setSelectionState:(unsigned int)arg1;
+- (void)setSelectionState:(unsigned long long)arg1;
 
 @end

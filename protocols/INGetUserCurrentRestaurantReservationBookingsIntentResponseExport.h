@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (id)init;
 - (void)setUserCurrentBookings:(NSArray *)arg1;
 - (NSArray *)userCurrentBookings;

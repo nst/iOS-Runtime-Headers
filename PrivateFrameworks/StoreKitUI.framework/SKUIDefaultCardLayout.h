@@ -6,6 +6,6 @@
 
 - (id)attributedStringForButton:(id)arg1;
 - (id)attributedStringForLabel:(id)arg1;
-- (float)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(float)arg3;
+- (double)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(double)arg3;
 
 @end

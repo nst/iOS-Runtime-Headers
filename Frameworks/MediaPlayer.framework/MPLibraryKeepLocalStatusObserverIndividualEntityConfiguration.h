@@ -3,24 +3,24 @@
  */
 
 @interface MPLibraryKeepLocalStatusObserverIndividualEntityConfiguration : MPLibraryKeepLocalStatusObserverConfiguration {
-    BOOL  _collectionType;
-    BOOL  _hasNonPurgeableAsset;
-    int  _managedStatus;
-    BOOL  _storeRedownloadable;
+    bool  _collectionType;
+    bool  _hasNonPurgeableAsset;
+    long long  _managedStatus;
+    bool  _storeRedownloadable;
 }
 
-@property (getter=isCollectionType, nonatomic) BOOL collectionType;
-@property (nonatomic) BOOL hasNonPurgeableAsset;
-@property (nonatomic) int managedStatus;
-@property (getter=isStoreRedownloadable, nonatomic) BOOL storeRedownloadable;
+@property (getter=isCollectionType, nonatomic) bool collectionType;
+@property (nonatomic) bool hasNonPurgeableAsset;
+@property (nonatomic) long long managedStatus;
+@property (getter=isStoreRedownloadable, nonatomic) bool storeRedownloadable;
 
-- (BOOL)hasNonPurgeableAsset;
-- (BOOL)isCollectionType;
-- (BOOL)isStoreRedownloadable;
-- (int)managedStatus;
-- (void)setCollectionType:(BOOL)arg1;
-- (void)setHasNonPurgeableAsset:(BOOL)arg1;
-- (void)setManagedStatus:(int)arg1;
-- (void)setStoreRedownloadable:(BOOL)arg1;
+- (bool)hasNonPurgeableAsset;
+- (bool)isCollectionType;
+- (bool)isStoreRedownloadable;
+- (long long)managedStatus;
+- (void)setCollectionType:(bool)arg1;
+- (void)setHasNonPurgeableAsset:(bool)arg1;
+- (void)setManagedStatus:(long long)arg1;
+- (void)setStoreRedownloadable:(bool)arg1;
 
 @end

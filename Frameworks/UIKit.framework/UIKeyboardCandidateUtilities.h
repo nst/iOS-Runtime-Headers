@@ -4,7 +4,7 @@
 
 @interface UIKeyboardCandidateUtilities : NSObject
 
-+ (id)candidateBarBackgroundWithHighlight:(BOOL)arg1;
-+ (id)candidateScrollViewBackgroundWithHeight:(float)arg1;
++ (id)candidateBarBackgroundWithHighlight:(bool)arg1;
++ (id)candidateScrollViewBackgroundWithHeight:(double)arg1;
 
 @end

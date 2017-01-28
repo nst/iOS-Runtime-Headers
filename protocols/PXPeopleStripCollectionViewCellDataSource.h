@@ -6,7 +6,7 @@
 @required
 
 - (UIFont *)currentLabelFont;
-- (NSString *)nameStringForPeople:(NSArray *)arg1 withWidth:(float)arg2;
-- (float)verticalSpacingForFaceAndText;
+- (NSString *)nameStringForPeople:(NSArray *)arg1 withWidth:(double)arg2;
+- (double)verticalSpacingForFaceAndText;
 
 @end

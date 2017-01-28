@@ -6,8 +6,8 @@
 
 @property (nonatomic, retain) NSSet *renditions;
 
-- (BOOL)hasCursorProduction;
-- (BOOL)hasProduction;
+- (bool)hasCursorProduction;
+- (bool)hasProduction;
 - (id)imageStackDataWithDocument:(id)arg1;
 
 @end

@@ -3,22 +3,22 @@
  */
 
 @interface BWIrisMovieInfoAndCallback : NSObject {
-    id /* block */  _callback;
+    id  _callback;
     BWIrisMovieInfo * _info;
-    BOOL  _processed;
+    bool  _processed;
 }
 
-@property (nonatomic, readonly) id /* block */ callback;
+@property (nonatomic, readonly) id callback;
 @property (nonatomic, readonly) BWIrisMovieInfo *info;
-@property (nonatomic) BOOL processed;
+@property (nonatomic) bool processed;
 
-+ (id)movieInfoAndCallbackWithMovieInfo:(id)arg1 callback:(id /* block */)arg2;
++ (id)movieInfoAndCallbackWithMovieInfo:(id)arg1 callback:(id)arg2;
 
-- (id)_initWithMovieInfo:(id)arg1 callback:(id /* block */)arg2;
-- (id /* block */)callback;
+- (id)_initWithMovieInfo:(id)arg1 callback:(id)arg2;
+- (id)callback;
 - (void)dealloc;
 - (id)info;
-- (BOOL)processed;
-- (void)setProcessed:(BOOL)arg1;
+- (bool)processed;
+- (void)setProcessed:(bool)arg1;
 
 @end

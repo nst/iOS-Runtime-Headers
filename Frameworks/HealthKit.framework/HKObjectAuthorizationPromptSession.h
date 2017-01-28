@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) NSArray *samplesRequiringAuthorization;
 @property (nonatomic, readonly, copy) NSUUID *sessionIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

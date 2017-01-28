@@ -6,11 +6,11 @@
     TSUPathSet * _claimedPaths;
     NSMutableSet * _deletedIdentifiers;
     NSString * _directoryPath;
-    BOOL  _isCullingDisabled;
+    bool  _isCullingDisabled;
     TSUTemporaryDirectory * _modifiedFilesDirectory;
     NSMutableSet * _modifiedIdentifiers;
     NSMutableSet * _newIdentifiers;
-    BOOL  _shouldCreate;
+    bool  _shouldCreate;
 }
 
 - (void).cxx_destruct;
@@ -21,11 +21,11 @@
 - (void)_writeDataFromInputStream:(id)arg1 length:(long long)arg2 toPath:(id)arg3;
 - (id)addDataFromInputStream:(id)arg1 length:(long long)arg2 filenameHint:(id)arg3;
 - (id)addDataRepresentation:(id)arg1 filenameHint:(id)arg2;
-- (BOOL)commitWithError:(id*)arg1;
+- (bool)commitWithError:(id*)arg1;
 - (void)disableFileCulling;
-- (id)initWithPath:(id)arg1 shouldCreate:(BOOL)arg2;
-- (BOOL)prepareForSaveToPath:(id)arg1 error:(id*)arg2;
-- (BOOL)rehomeOntoPath:(id)arg1;
+- (id)initWithPath:(id)arg1 shouldCreate:(bool)arg2;
+- (bool)prepareForSaveToPath:(id)arg1 error:(id*)arg2;
+- (bool)rehomeOntoPath:(id)arg1;
 - (void)removeIdentifier:(id)arg1;
 - (id)representationForIdentifier:(id)arg1;
 - (void)setDataFromInputStream:(id)arg1 length:(long long)arg2 forIdentifier:(id)arg3;

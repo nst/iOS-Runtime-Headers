@@ -3,39 +3,39 @@
  */
 
 @interface SBFWallpaperSettings : _UISettings {
-    int  _blurReplacementMode;
-    unsigned int  _colorBoxSize;
-    float  _mediumBlurRadius;
-    float  _mediumGrayscaleTintAlpha;
-    float  _mediumGrayscaleTintLevel;
-    float  _mediumSaturationDeltaFactor;
-    BOOL  _replaceBlurs;
+    long long  _blurReplacementMode;
+    unsigned long long  _colorBoxSize;
+    double  _mediumBlurRadius;
+    double  _mediumGrayscaleTintAlpha;
+    double  _mediumGrayscaleTintLevel;
+    double  _mediumSaturationDeltaFactor;
+    bool  _replaceBlurs;
 }
 
-@property (nonatomic) int blurReplacementMode;
-@property (nonatomic) unsigned int colorBoxSize;
-@property (nonatomic) float mediumBlurRadius;
-@property (nonatomic) float mediumGrayscaleTintAlpha;
-@property (nonatomic) float mediumGrayscaleTintLevel;
-@property (nonatomic) float mediumSaturationDeltaFactor;
-@property (nonatomic) BOOL replaceBlurs;
+@property (nonatomic) long long blurReplacementMode;
+@property (nonatomic) unsigned long long colorBoxSize;
+@property (nonatomic) double mediumBlurRadius;
+@property (nonatomic) double mediumGrayscaleTintAlpha;
+@property (nonatomic) double mediumGrayscaleTintLevel;
+@property (nonatomic) double mediumSaturationDeltaFactor;
+@property (nonatomic) bool replaceBlurs;
 
 + (id)settingsControllerModule;
 
-- (int)blurReplacementMode;
-- (unsigned int)colorBoxSize;
-- (float)mediumBlurRadius;
-- (float)mediumGrayscaleTintAlpha;
-- (float)mediumGrayscaleTintLevel;
-- (float)mediumSaturationDeltaFactor;
-- (BOOL)replaceBlurs;
-- (void)setBlurReplacementMode:(int)arg1;
-- (void)setColorBoxSize:(unsigned int)arg1;
+- (long long)blurReplacementMode;
+- (unsigned long long)colorBoxSize;
+- (double)mediumBlurRadius;
+- (double)mediumGrayscaleTintAlpha;
+- (double)mediumGrayscaleTintLevel;
+- (double)mediumSaturationDeltaFactor;
+- (bool)replaceBlurs;
+- (void)setBlurReplacementMode:(long long)arg1;
+- (void)setColorBoxSize:(unsigned long long)arg1;
 - (void)setDefaultValues;
-- (void)setMediumBlurRadius:(float)arg1;
-- (void)setMediumGrayscaleTintAlpha:(float)arg1;
-- (void)setMediumGrayscaleTintLevel:(float)arg1;
-- (void)setMediumSaturationDeltaFactor:(float)arg1;
-- (void)setReplaceBlurs:(BOOL)arg1;
+- (void)setMediumBlurRadius:(double)arg1;
+- (void)setMediumGrayscaleTintAlpha:(double)arg1;
+- (void)setMediumGrayscaleTintLevel:(double)arg1;
+- (void)setMediumSaturationDeltaFactor:(double)arg1;
+- (void)setReplaceBlurs:(bool)arg1;
 
 @end

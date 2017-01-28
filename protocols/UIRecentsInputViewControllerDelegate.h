@@ -7,5 +7,6 @@
 
 - (void)didSelectRecentInput;
 - (void)switchToKeyboard;
+- (UITextInputTraits *)textInputTraits;
 
 @end

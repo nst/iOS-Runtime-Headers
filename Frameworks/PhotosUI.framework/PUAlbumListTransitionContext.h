@@ -8,7 +8,7 @@
     PHCollection * _phCollection;
     PUPhotoDecoration * _photoDecoration;
     UICollectionViewTransitionLayout * _transitionLayout;
-    BOOL  _usesContentOffsetAutoAdjust;
+    bool  _usesContentOffsetAutoAdjust;
 }
 
 @property (nonatomic, retain) <PLAssetContainer> *collection;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) PHCollection *phCollection;
 @property (nonatomic, retain) PUPhotoDecoration *photoDecoration;
 @property (nonatomic, retain) UICollectionViewTransitionLayout *transitionLayout;
-@property (nonatomic) BOOL usesContentOffsetAutoAdjust;
+@property (nonatomic) bool usesContentOffsetAutoAdjust;
 
 - (void).cxx_destruct;
 - (id)collection;
@@ -28,8 +28,8 @@
 - (void)setPhCollection:(id)arg1;
 - (void)setPhotoDecoration:(id)arg1;
 - (void)setTransitionLayout:(id)arg1;
-- (void)setUsesContentOffsetAutoAdjust:(BOOL)arg1;
+- (void)setUsesContentOffsetAutoAdjust:(bool)arg1;
 - (id)transitionLayout;
-- (BOOL)usesContentOffsetAutoAdjust;
+- (bool)usesContentOffsetAutoAdjust;
 
 @end

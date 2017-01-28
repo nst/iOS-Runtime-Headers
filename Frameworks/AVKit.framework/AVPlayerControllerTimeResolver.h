@@ -11,7 +11,7 @@
 }
 
 @property double currentTime;
-@property (getter=isCurrentTimeAtEndOfSeekableTimeRanges, readonly) BOOL currentTimeAtEndOfSeekableTimeRanges;
+@property (getter=isCurrentTimeAtEndOfSeekableTimeRanges, readonly) bool currentTimeAtEndOfSeekableTimeRanges;
 @property double currentTimeWithinEndTimes;
 @property double interval;
 @property (retain) <AVTimeControlling> *playerController;
@@ -21,9 +21,9 @@
 @property double resolution;
 @property double targetTime;
 @property double targetTimeWithinEndTimes;
-@property (getter=isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges, readonly) BOOL thirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
+@property (getter=isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges, readonly) bool thirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 
-+ (BOOL)automaticallyNotifiesObserversOfCurrentTime;
++ (bool)automaticallyNotifiesObserversOfCurrentTime;
 + (id)keyPathsForValuesAffectingCurrentTimeAtEndOfSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingCurrentTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingRemainingTargetTimeWithinEndTimes;
@@ -41,8 +41,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (double)interval;
-- (BOOL)isCurrentTimeAtEndOfSeekableTimeRanges;
-- (BOOL)isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
+- (bool)isCurrentTimeAtEndOfSeekableTimeRanges;
+- (bool)isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)playerController;
 - (double)remainingTargetTimeWithinEndTimes;

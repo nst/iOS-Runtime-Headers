@@ -4,7 +4,7 @@
 
 @interface AXSwitchRegistrar : NSObject {
     AXSwitch * _aSwitch;
-    BOOL  _addLongPressSwitch;
+    bool  _addLongPressSwitch;
     <AXSwitchRegistrarDelegate> * _delegate;
     struct __IOHIDDevice { } * _device;
     struct __IOHIDEventSystemClient { } * _eventSystemClient;
@@ -12,27 +12,27 @@
 }
 
 @property (nonatomic, retain) AXSwitch *aSwitch;
-@property (nonatomic) BOOL addLongPressSwitch;
+@property (nonatomic) bool addLongPressSwitch;
 @property (nonatomic) <AXSwitchRegistrarDelegate> *delegate;
 @property (nonatomic, retain) struct __IOHIDDevice { }*device;
 @property (nonatomic, retain) struct __IOHIDEventSystemClient { }*eventSystemClient;
 @property (nonatomic, retain) struct __IOHIDManager { }*manager;
 
 - (id)_atvRemoteMatching;
-- (void)_filterEvents:(BOOL)arg1;
+- (void)_filterEvents:(bool)arg1;
 - (void)_handleATVRemoteButtonDownEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)_handleApplicationDidBecomeActive:(id)arg1;
 - (void)_handleApplicationWillResignActive:(id)arg1;
 - (void)_handleKeyboardKeyDownEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)_handleMFIButtonDownValue:(struct __IOHIDValue { }*)arg1;
-- (BOOL)_isATVRemoteButtonSwitchWithUsage:(long)arg1 longPress:(BOOL)arg2;
-- (BOOL)_isKeyboardSwitchWithKeyCode:(unsigned short)arg1 longPress:(BOOL)arg2;
-- (BOOL)_isMFISwitchWithButtonNumber:(unsigned int)arg1 longPress:(BOOL)arg2;
-- (BOOL)_isSwitchWithSource:(struct NSString { Class x1; }*)arg1 keyCode:(unsigned short)arg2 buttonNumber:(unsigned int)arg3 ATVRemoteButtonUsage:(long)arg4;
+- (bool)_isATVRemoteButtonSwitchWithUsage:(long long)arg1 longPress:(bool)arg2;
+- (bool)_isKeyboardSwitchWithKeyCode:(unsigned short)arg1 longPress:(bool)arg2;
+- (bool)_isMFISwitchWithButtonNumber:(unsigned int)arg1 longPress:(bool)arg2;
+- (bool)_isSwitchWithSource:(struct NSString { Class x1; }*)arg1 keyCode:(unsigned short)arg2 buttonNumber:(unsigned int)arg3 ATVRemoteButtonUsage:(long long)arg4;
 - (id)_keyboardMatching;
 - (id)_mfiMatching;
 - (id)aSwitch;
-- (BOOL)addLongPressSwitch;
+- (bool)addLongPressSwitch;
 - (void)beginFilteringEvents;
 - (void)dealloc;
 - (id)delegate;
@@ -41,10 +41,10 @@
 - (struct __IOHIDEventSystemClient { }*)eventSystemClient;
 - (id)firstAvailableName;
 - (id)init;
-- (BOOL)isSwitchWithName:(id)arg1;
+- (bool)isSwitchWithName:(id)arg1;
 - (struct __IOHIDManager { }*)manager;
 - (void)setASwitch:(id)arg1;
-- (void)setAddLongPressSwitch:(BOOL)arg1;
+- (void)setAddLongPressSwitch:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDevice:(struct __IOHIDDevice { }*)arg1;
 - (void)setEventSystemClient:(struct __IOHIDEventSystemClient { }*)arg1;

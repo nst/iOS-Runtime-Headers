@@ -13,7 +13,7 @@
 - (id)initWithUIState:(id)arg1 context:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (id)uiState;
-- (BOOL)validateDesktopViewStateWithDocumentRoot:(id)arg1;
-- (BOOL)validateMobileViewStateWithDocumentRoot:(id)arg1;
+- (bool)validateDesktopViewStateWithDocumentRoot:(id)arg1;
+- (bool)validateMobileViewStateWithDocumentRoot:(id)arg1;
 
 @end

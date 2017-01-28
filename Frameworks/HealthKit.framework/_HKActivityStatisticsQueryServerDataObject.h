@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSDate *startDate;
 @property (nonatomic) double updateInterval;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

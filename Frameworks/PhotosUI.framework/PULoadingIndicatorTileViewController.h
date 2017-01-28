@@ -4,24 +4,24 @@
 
 @interface PULoadingIndicatorTileViewController : PUTileViewController {
     PUProgressIndicatorView * __indicatorView;
-    BOOL  __shouldShowIndeterminateActivityIndicator;
+    bool  __shouldShowIndeterminateActivityIndicator;
     PUAssetViewModel * _assetViewModel;
 }
 
 @property (setter=_setIndicatorView:, nonatomic, retain) PUProgressIndicatorView *_indicatorView;
-@property (setter=_setShouldShowIndeterminateActivityIndicator:, nonatomic) BOOL _shouldShowIndeterminateActivityIndicator;
+@property (setter=_setShouldShowIndeterminateActivityIndicator:, nonatomic) bool _shouldShowIndeterminateActivityIndicator;
 @property (nonatomic, retain) PUAssetViewModel *assetViewModel;
 
 + (id)_createIndicatorView;
-+ (BOOL)canShowLoadingIndicatorTileForAsset:(id)arg1;
-+ (struct CGSize { float x1; float x2; })loadingIndicatorTileSize;
++ (bool)canShowLoadingIndicatorTileForAsset:(id)arg1;
++ (struct CGSize { double x1; double x2; })loadingIndicatorTileSize;
 
 - (void).cxx_destruct;
 - (id)_indicatorView;
 - (void)_setIndicatorView:(id)arg1;
-- (void)_setShouldShowIndeterminateActivityIndicator:(BOOL)arg1;
-- (void)_setShouldShowIndeterminateActivityIndicator:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)_shouldShowIndeterminateActivityIndicator;
+- (void)_setShouldShowIndeterminateActivityIndicator:(bool)arg1;
+- (void)_setShouldShowIndeterminateActivityIndicator:(bool)arg1 animated:(bool)arg2;
+- (bool)_shouldShowIndeterminateActivityIndicator;
 - (void)_updateIndicator;
 - (id)assetViewModel;
 - (void)becomeReusable;

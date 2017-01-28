@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSNumber *contentIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *playbackType;
 @property (nonatomic, copy) NSString *playerGUID;
 @property (nonatomic, copy) NSArray *sinfs;

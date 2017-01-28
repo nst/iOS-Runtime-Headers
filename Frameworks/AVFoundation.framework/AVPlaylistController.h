@@ -19,13 +19,13 @@
 - (void)getCurrentItem:(id*)arg1 currentPlaylist:(id*)arg2;
 - (id)init;
 - (id)initWithFigPlaylistController:(struct OpaqueFigPlaylistController { }*)arg1;
-- (BOOL)loopsPlaylistNode:(id)arg1;
+- (bool)loopsPlaylistNode:(id)arg1;
 - (id)mostTightlyScopedCurrentPlaylist;
 - (id)playbackOrderPlaylistForPlaylist:(id)arg1;
 - (id)player;
 - (id)playlist;
 - (void)setDelegate:(id)arg1;
-- (void)setLoopsPlaylistNode:(BOOL)arg1 forPlaylistNode:(id)arg2;
+- (void)setLoopsPlaylistNode:(bool)arg1 forPlaylistNode:(id)arg2;
 - (void)skipToNextLeafPlaylistNode;
 - (void)skipToPlaylistNode:(id)arg1;
 - (void)skipToPreviousLeafPlaylistNode;

@@ -4,6 +4,6 @@
 
 @interface SearchUINowPlayingLabelContainer : NUIContainerStackView
 
-- (id)initWithMovie:(id)arg1 style:(unsigned int)arg2;
+- (id)initWithMovie:(id)arg1 style:(unsigned long long)arg2;
 
 @end

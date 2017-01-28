@@ -3,19 +3,19 @@
  */
 
 @interface FCFeedTransformationLimit : NSObject <FCFeedTransforming> {
-    unsigned int  _limit;
+    unsigned long long  _limit;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int limit;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long limit;
 @property (readonly) Class superclass;
 
-+ (id)transformationWithLimit:(unsigned int)arg1;
++ (id)transformationWithLimit:(unsigned long long)arg1;
 
-- (unsigned int)limit;
-- (void)setLimit:(unsigned int)arg1;
+- (unsigned long long)limit;
+- (void)setLimit:(unsigned long long)arg1;
 - (id)transformFeedItems:(id)arg1;
 
 @end

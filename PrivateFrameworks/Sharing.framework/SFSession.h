@@ -3,60 +3,60 @@
  */
 
 @interface SFSession : NSObject <NSSecureCoding, SFXPCInterface> {
-    BOOL  _activated;
+    bool  _activated;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    id /* block */  _errorHandler;
-    id /* block */  _eventMessageHandler;
+    id  _errorHandler;
+    id  _eventMessageHandler;
     NSUUID * _identifier;
-    id /* block */  _interruptionHandler;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
-    id /* block */  _invalidationHandler;
+    id  _interruptionHandler;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
+    id  _invalidationHandler;
     SFDevice * _peerDevice;
-    id /* block */  _requestMessageHandler;
+    id  _requestMessageHandler;
     struct NSMutableDictionary { Class x1; } * _requestQueue;
-    id /* block */  _responseMessageInternalHandler;
+    id  _responseMessageInternalHandler;
     NSString * _serviceIdentifier;
     NSUUID * _serviceUUID;
     NSXPCConnection * _xpcCnx;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic, copy) id /* block */ errorHandler;
-@property (nonatomic, copy) id /* block */ eventMessageHandler;
+@property (nonatomic, copy) id errorHandler;
+@property (nonatomic, copy) id eventMessageHandler;
 @property (nonatomic, copy) NSUUID *identifier;
-@property (nonatomic, copy) id /* block */ interruptionHandler;
-@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, copy) id interruptionHandler;
+@property (nonatomic, copy) id invalidationHandler;
 @property (nonatomic, retain) SFDevice *peerDevice;
-@property (nonatomic, copy) id /* block */ requestMessageHandler;
-@property (nonatomic, copy) id /* block */ responseMessageInternalHandler;
+@property (nonatomic, copy) id requestMessageHandler;
+@property (nonatomic, copy) id responseMessageInternalHandler;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic, copy) NSUUID *serviceUUID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_activateWithCompletion:(id /* block */)arg1;
+- (void)_activateWithCompletion:(id)arg1;
 - (void)_ensureXPCStarted;
 - (void)_interrupted;
 - (void)_invalidate;
 - (void)_invalidated;
-- (void)activateWithCompletion:(id /* block */)arg1;
+- (void)activateWithCompletion:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dispatchQueue;
 - (void)encodeWithCoder:(id)arg1;
-- (id /* block */)errorHandler;
-- (id /* block */)eventMessageHandler;
+- (id)errorHandler;
+- (id)eventMessageHandler;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id /* block */)interruptionHandler;
+- (id)interruptionHandler;
 - (void)invalidate;
-- (id /* block */)invalidationHandler;
+- (id)invalidationHandler;
 - (id)peerDevice;
-- (id /* block */)requestMessageHandler;
-- (id /* block */)responseMessageInternalHandler;
+- (id)requestMessageHandler;
+- (id)responseMessageInternalHandler;
 - (void)sendEvent:(id)arg1;
 - (void)sendRequest:(id)arg1;
 - (void)sendResponse:(id)arg1;
@@ -67,14 +67,14 @@
 - (void)sessionReceivedRequest:(id)arg1;
 - (void)sessionReceivedResponse:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setErrorHandler:(id /* block */)arg1;
-- (void)setEventMessageHandler:(id /* block */)arg1;
+- (void)setErrorHandler:(id)arg1;
+- (void)setEventMessageHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setInterruptionHandler:(id /* block */)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setInterruptionHandler:(id)arg1;
+- (void)setInvalidationHandler:(id)arg1;
 - (void)setPeerDevice:(id)arg1;
-- (void)setRequestMessageHandler:(id /* block */)arg1;
-- (void)setResponseMessageInternalHandler:(id /* block */)arg1;
+- (void)setRequestMessageHandler:(id)arg1;
+- (void)setResponseMessageInternalHandler:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setServiceUUID:(id)arg1;
 

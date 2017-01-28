@@ -6,10 +6,10 @@
 @required
 
 - (long long)chipId;
-- (int)deviceClass;
+- (long long)deviceClass;
 - (int)screenHeight;
 - (int)screenWidth;
-- (BOOL)useSoftFramerateSwitching;
-- (int)videoEncoderType;
+- (bool)useSoftFramerateSwitching;
+- (long long)videoEncoderType;
 
 @end

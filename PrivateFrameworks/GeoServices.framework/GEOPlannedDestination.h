@@ -14,7 +14,7 @@
 @property (nonatomic, readonly, retain) NSData *handle;
 @property (nonatomic) int transportType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)arrivalDate;
 - (void)dealloc;

@@ -4,7 +4,7 @@
 
 @interface CKStarkNewComposeBarButton : UIButton
 
-- (BOOL)canBecomeFocused;
+- (bool)canBecomeFocused;
 - (void)focusedViewDidChange;
 
 @end

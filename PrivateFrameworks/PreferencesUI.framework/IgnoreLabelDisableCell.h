@@ -4,6 +4,6 @@
 
 @interface IgnoreLabelDisableCell : PSTableCell
 
-- (void)setCellEnabled:(BOOL)arg1;
+- (void)setCellEnabled:(bool)arg1;
 
 @end

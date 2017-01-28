@@ -4,6 +4,6 @@
 
 @interface PSUISubtitleTableCell : PSTableCell
 
-+ (int)cellStyle;
++ (long long)cellStyle;
 
 @end

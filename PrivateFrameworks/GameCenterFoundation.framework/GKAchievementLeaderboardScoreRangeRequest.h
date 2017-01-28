@@ -4,6 +4,6 @@
 
 @interface GKAchievementLeaderboardScoreRangeRequest : GKLeaderboardScoreRangeRequest
 
-+ (id)requestForRankRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (id)requestForRankRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

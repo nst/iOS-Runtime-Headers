@@ -4,36 +4,36 @@
 
 @interface UIKBRenderFactoryiPadFudgeLandscape : UIKBRenderFactoryiPadFudge
 
-- (float)_row4ControlSegmentWidthRight;
+- (double)_row4ControlSegmentWidthRight;
 - (id)capslockKeyImageName;
-- (float)controlKeyFontSize;
-- (struct CGSize { float x1; float x2; })defaultVariantGeometrySize;
-- (float)deleteKeyFontSize;
+- (double)controlKeyFontSize;
+- (struct CGSize { double x1; double x2; })defaultVariantGeometrySize;
+- (double)deleteKeyFontSize;
 - (id)deleteKeyImageName;
-- (struct CGPoint { float x1; float x2; })deleteKeyOffset:(unsigned int)arg1;
+- (struct CGPoint { double x1; double x2; })deleteKeyOffset:(unsigned long long)arg1;
 - (id)deleteOnKeyImageName;
 - (id)dictationKeyImageName;
-- (struct CGPoint { float x1; float x2; })dictationKeyOffset;
+- (struct CGPoint { double x1; double x2; })dictationKeyOffset;
 - (id)dismissKeyImageName;
-- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
-- (float)dualStringKeyBottomFontSize:(unsigned int)arg1;
-- (struct CGPoint { float x1; float x2; })dualStringKeyBottomTextOffset:(unsigned int)arg1;
-- (float)dualStringKeyTopFontSize:(unsigned int)arg1;
-- (struct CGPoint { float x1; float x2; })dualStringKeyTopTextOffset:(unsigned int)arg1;
+- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (double)dualStringKeyBottomFontSize:(unsigned long long)arg1;
+- (struct CGPoint { double x1; double x2; })dualStringKeyBottomTextOffset:(unsigned long long)arg1;
+- (double)dualStringKeyTopFontSize:(unsigned long long)arg1;
+- (struct CGPoint { double x1; double x2; })dualStringKeyTopTextOffset:(unsigned long long)arg1;
 - (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
-- (struct CGPoint { float x1; float x2; })iPadFudgeControlKeyOffset;
-- (struct CGPoint { float x1; float x2; })internationalKeyOffset;
-- (float)keyCornerRadius;
+- (struct CGPoint { double x1; double x2; })iPadFudgeControlKeyOffset;
+- (struct CGPoint { double x1; double x2; })internationalKeyOffset;
+- (double)keyCornerRadius;
 - (id)messagesWriteboardKeyImageName;
-- (float)moreKeyFontSize;
-- (struct CGPoint { float x1; float x2; })moreKeyOffset;
+- (double)moreKeyFontSize;
+- (struct CGPoint { double x1; double x2; })moreKeyOffset;
 - (id)returnKeyImageName;
 - (id)shiftKeyImageName;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
-- (float)spaceKeyFontSize;
-- (float)stringKeyFontSize:(unsigned int)arg1;
+- (double)spaceKeyFontSize;
+- (double)stringKeyFontSize:(unsigned long long)arg1;
 - (id)tabKeyImageName;
 
 @end

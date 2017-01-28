@@ -6,18 +6,18 @@
     AVAsset * _asset;
     UIView * _lineView;
     UIImage * _placeholderImage;
-    struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } * _visibleRect;
+    struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } * _visibleRect;
     UIImage * _waveImage;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _waveSize;
     UIImageView * _waveView;
 }
 
 @property (nonatomic, retain) AVAsset *asset;
 @property (retain) UIImage *placeholderImage;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*visibleRect;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*visibleRect;
 
 - (void).cxx_destruct;
 - (void)_expandWaveform;
@@ -27,8 +27,8 @@
 - (id)placeholderImage;
 - (void)setAsset:(id)arg1;
 - (void)setPlaceholderImage:(id)arg1;
-- (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
 - (void)updateImage;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)visibleRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)visibleRect;
 
 @end

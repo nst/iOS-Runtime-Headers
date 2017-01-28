@@ -3,22 +3,22 @@
  */
 
 @interface CalLogXMLFormatter : NSObject <CalLogFormatter> {
-    BOOL  _shouldPrettyPrint;
-    BOOL  _useTinyElementNames;
+    bool  _shouldPrettyPrint;
+    bool  _useTinyElementNames;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldPrettyPrint;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldPrettyPrint;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useTinyElementNames;
+@property (nonatomic) bool useTinyElementNames;
 
 - (id)init;
 - (id)newFormattedString:(id)arg1;
-- (void)setShouldPrettyPrint:(BOOL)arg1;
-- (void)setUseTinyElementNames:(BOOL)arg1;
-- (BOOL)shouldPrettyPrint;
-- (BOOL)useTinyElementNames;
+- (void)setShouldPrettyPrint:(bool)arg1;
+- (void)setUseTinyElementNames:(bool)arg1;
+- (bool)shouldPrettyPrint;
+- (bool)useTinyElementNames;
 
 @end

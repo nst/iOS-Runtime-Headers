@@ -9,14 +9,14 @@
 - (id)allKeys;
 - (id)allValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (void)dealloc;
 - (void)getObjects:(id*)arg1 andKeys:(id*)arg2;
 - (id)init;
 - (id)initWithCFDictionary:(struct __CFDictionary { }*)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)initWithCapacity:(unsigned int)arg1 keyCallBacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)arg2 valueCallBacks:(const struct { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1 keyCallBacks:(const struct { long long x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); }*)arg2 valueCallBacks:(const struct { long long x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); }*)arg3;
 - (id)keyEnumerator;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;

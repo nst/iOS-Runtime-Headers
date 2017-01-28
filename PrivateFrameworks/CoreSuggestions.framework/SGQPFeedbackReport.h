@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NSString *to;
 
 + (id)feedbackReportForPredictions:(id)arg1 messages:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)body;

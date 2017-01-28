@@ -5,6 +5,6 @@
 
 @required
 
-- (void)deviceOrientationManager:(CKDeviceOrientationManager *)arg1 orientationDidChange:(int)arg2;
+- (void)deviceOrientationManager:(CKDeviceOrientationManager *)arg1 orientationDidChange:(long long)arg2;
 
 @end

@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXPeopleNamePickerViewController *namePicker;
 @property (nonatomic, retain) NSArray *people;
 @property (readonly) Class superclass;
@@ -28,7 +28,7 @@
 - (id)people;
 - (void)setNamePicker:(id)arg1;
 - (void)setPeople:(id)arg1;
-- (BOOL)shouldUpdateStatusBarTitle;
+- (bool)shouldUpdateStatusBarTitle;
 - (void)viewDidLoad;
 
 @end

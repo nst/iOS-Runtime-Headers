@@ -11,13 +11,13 @@
         unsigned int delegateRespondsToDidMoveToWindow : 1; 
     }  _layoutContainerViewFlags;
     UIView * _shadowView;
-    BOOL  _usesInnerShadow;
-    BOOL  _usesRoundedCorners;
+    bool  _usesInnerShadow;
+    bool  _usesRoundedCorners;
 }
 
 @property (nonatomic) <UILayoutContainerViewDelegate> *delegate;
-@property (nonatomic) BOOL usesInnerShadow;
-@property (nonatomic) BOOL usesRoundedCorners;
+@property (nonatomic) bool usesInnerShadow;
+@property (nonatomic) bool usesRoundedCorners;
 
 - (void).cxx_destruct;
 - (void)_installShadowViews;
@@ -31,14 +31,14 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)layoutSubviews;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSemanticContentAttribute:(int)arg1;
-- (void)setUsesInnerShadow:(BOOL)arg1;
-- (void)setUsesRoundedCorners:(BOOL)arg1;
-- (BOOL)usesInnerShadow;
-- (BOOL)usesRoundedCorners;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSemanticContentAttribute:(long long)arg1;
+- (void)setUsesInnerShadow:(bool)arg1;
+- (void)setUsesRoundedCorners:(bool)arg1;
+- (bool)usesInnerShadow;
+- (bool)usesRoundedCorners;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

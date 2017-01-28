@@ -3,7 +3,7 @@
  */
 
 @interface ATDeviceSyncSessionAssetTask : ATDeviceSyncSessionTask <ATAssetLinkControllerObserver> {
-    BOOL  _addedTransportUpgradeException;
+    bool  _addedTransportUpgradeException;
     <ATAssetClient> * _assetClient;
     ATAssetLinkController * _assetController;
     NSMutableSet * _assetStreams;
@@ -11,8 +11,8 @@
     NSMutableOrderedSet * _clientAssetsInProgress;
     NSMutableOrderedSet * _clientAssetsRemaining;
     NSMutableDictionary * _detailedProgress;
-    BOOL  _peerRequestsComplete;
-    BOOL  _requestsComplete;
+    bool  _peerRequestsComplete;
+    bool  _requestsComplete;
     NSMutableOrderedSet * _serverAssetsInProgress;
     double  _taskStartTime;
     ATThroughputCalculator * _throughputCalculator;
@@ -22,7 +22,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

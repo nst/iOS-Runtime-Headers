@@ -10,7 +10,7 @@
     NSMapTable * _devices;
     HMFNetMonitor * _netMonitor;
     NSObject<OS_dispatch_queue> * _propertyQueue;
-    BOOL  _reachable;
+    bool  _reachable;
     IDSService * _service;
 }
 
@@ -20,27 +20,26 @@
 @property <HMDRemoteDeviceMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HMFTimer *deviceHealthTimer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMFNetMonitor *netMonitor;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
-@property (getter=isReachable, readonly) BOOL reachable;
+@property (getter=isReachable, readonly) bool reachable;
 @property (nonatomic, readonly) IDSService *service;
 @property (readonly) Class superclass;
 @property (readonly) NSArray *unreachableDevices;
 
 + (id)logCategory;
-+ (id)pingMessageForDevice:(id)arg1 timeout:(double)arg2 restriction:(unsigned int)arg3;
++ (id)pingMessageForDevice:(id)arg1 timeout:(double)arg2 restriction:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (id)_deviceInformationForDevice:(id)arg1;
 - (void)_handleGlobalReachabilityChange;
-- (void)_notifyDeviceReachabilityChange:(BOOL)arg1 forDevice:(id)arg2;
 - (void)_sendPingToDevice:(id)arg1;
 - (void)_startActivelyMonitoringDevice:(id)arg1;
 - (void)_stopActivelyMonitoringDevice:(id)arg1;
 - (id)accountRegistry;
 - (id)clientQueue;
-- (void)confirmDevice:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;
+- (void)confirmDevice:(id)arg1 timeout:(double)arg2 completionHandler:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)deviceHealthTimer;
@@ -53,16 +52,18 @@
 - (void)handleDeviceRemovedFromAccount:(id)arg1;
 - (id)init;
 - (id)initWithAccountRegistry:(id)arg1;
-- (BOOL)isReachable;
+- (bool)isReachable;
 - (id)netMonitor;
 - (void)networkMonitorIsReachable:(id)arg1;
 - (void)networkMonitorIsUnreachable:(id)arg1;
+- (void)notifyDeviceReachabilityChange:(bool)arg1 forDevice:(id)arg2;
 - (id)propertyQueue;
 - (id)service;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5 context:(id)arg6;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5 context:(id)arg6;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)setDelegate:(id)arg1;
-- (void)setReachable:(BOOL)arg1;
+- (void)setReachable:(bool)arg1;
+- (void)start;
 - (void)startMonitoringDevice:(id)arg1;
 - (void)stopMonitoringDevice:(id)arg1;
 - (void)timerDidFire:(id)arg1;

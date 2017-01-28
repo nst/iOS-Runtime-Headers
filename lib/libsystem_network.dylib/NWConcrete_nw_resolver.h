@@ -3,7 +3,7 @@
  */
 
 @interface NWConcrete_nw_resolver : NSObject <OS_nw_resolver> {
-    id /* block */  cancel_handler;
+    id  cancel_handler;
     NSObject<OS_dispatch_queue> * client_queue;
     NSObject<OS_dispatch_source> * crazy_eyeballs_timer;
     int  dns_error;
@@ -21,12 +21,12 @@
     NSObject<OS_dispatch_source> * query_timer;
     BOOL  resolver_activity;
     int  status;
-    id /* block */  update_block;
+    id  update_block;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

@@ -5,14 +5,14 @@
 
 @required
 
-+ (float)headerHeightInMinimalMode;
++ (double)headerHeightInMinimalMode;
 
 - (GEOAutomobileOptions *)automobileOptions;
-- (float)currentHeaderMinimalModeInterpolationFactor;
-- (void)hideTitle:(BOOL)arg1;
+- (double)currentHeaderMinimalModeInterpolationFactor;
+- (void)hideTitle:(bool)arg1;
 - (<UIScrollViewDelegate> *)scrollViewDelegate;
 - (void)setAutomobileOptions:(GEOAutomobileOptions *)arg1;
-- (void)setCurrentHeaderMinimalModeInterpolationFactor:(float)arg1;
+- (void)setCurrentHeaderMinimalModeInterpolationFactor:(double)arg1;
 - (void)setScrollViewDelegate:(id <UIScrollViewDelegate>)arg1;
 - (void)setTransitOptions:(GEOTransitOptions *)arg1;
 - (GEOTransitOptions *)transitOptions;

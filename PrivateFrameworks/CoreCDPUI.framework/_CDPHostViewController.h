@@ -3,21 +3,21 @@
  */
 
 @interface _CDPHostViewController : _UIRemoteViewController <CDPHostInterface> {
-    id /* block */  _viewServiceTerminationBlock;
+    id  _viewServiceTerminationBlock;
 }
 
-@property (nonatomic, copy) id /* block */ viewServiceTerminationBlock;
+@property (nonatomic, copy) id viewServiceTerminationBlock;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
-- (float)_keyboardHeightOffset;
-- (void)hostKeyboardOffset:(id /* block */)arg1;
-- (void)setViewServiceTerminationBlock:(id /* block */)arg1;
+- (double)_keyboardHeightOffset;
+- (void)hostKeyboardOffset:(id)arg1;
+- (void)setViewServiceTerminationBlock:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
-- (id /* block */)viewServiceTerminationBlock;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (id)viewServiceTerminationBlock;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

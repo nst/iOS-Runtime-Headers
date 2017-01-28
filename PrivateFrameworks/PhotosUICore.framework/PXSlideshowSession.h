@@ -6,17 +6,17 @@
     PHAssetCollection * _assetCollection;
     <PXSlideshowSessionDelegate> * _delegate;
     OKPresentationViewController * _presentationViewController;
-    int  _startIndex;
+    long long  _startIndex;
 }
 
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXSlideshowSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIView *slideshowView;
 @property (nonatomic, readonly) OKPresentationViewController *slideshowViewController;
-@property (nonatomic, readonly) int startIndex;
+@property (nonatomic, readonly) long long startIndex;
 @property (readonly) Class superclass;
 
 + (void*)_loadSlideshowFrameworkIfNeeded;
@@ -30,11 +30,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithAssetCollection:(id)arg1 startIndex:(int)arg2;
+- (id)initWithAssetCollection:(id)arg1 startIndex:(long long)arg2;
 - (void)presentationViewControllerDidPrepare:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)slideshowView;
 - (id)slideshowViewController;
-- (int)startIndex;
+- (long long)startIndex;
 
 @end

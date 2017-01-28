@@ -5,13 +5,13 @@
 
 @required
 
-- (BOOL)canDismiss;
-- (void)implBoundsHeightChangeDone:(float)arg1 suppressNotification:(BOOL)arg2;
-- (BOOL)isActive;
-- (BOOL)isAutomatic;
-- (BOOL)isMinimized;
-- (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;
-- (void)setMinimized:(BOOL)arg1;
-- (BOOL)shouldSaveMinimizationState;
+- (bool)canDismiss;
+- (void)implBoundsHeightChangeDone:(double)arg1 suppressNotification:(bool)arg2;
+- (bool)isActive;
+- (bool)isAutomatic;
+- (bool)isMinimized;
+- (void)prepareForImplBoundsHeightChange:(double)arg1 suppressNotification:(bool)arg2;
+- (void)setMinimized:(bool)arg1;
+- (bool)shouldSaveMinimizationState;
 
 @end

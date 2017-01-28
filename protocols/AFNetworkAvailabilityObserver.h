@@ -5,6 +5,6 @@
 
 @required
 
-- (void)networkAvailability:(AFNetworkAvailability *)arg1 isAvailable:(BOOL)arg2;
+- (void)networkAvailability:(AFNetworkAvailability *)arg1 isAvailable:(bool)arg2;
 
 @end

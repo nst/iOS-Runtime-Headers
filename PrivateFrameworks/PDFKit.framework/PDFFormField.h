@@ -13,7 +13,7 @@
 - (void)addNameValueToDictionaryRef:(struct __CFDictionary { }*)arg1;
 - (void)addStringDefaultValueToDictionaryRef:(struct __CFDictionary { }*)arg1;
 - (void)addStringValueToDictionaryRef:(struct __CFDictionary { }*)arg1;
-- (int)buttonType;
+- (long long)buttonType;
 - (void)clearDictionaryRef;
 - (void)commonCreateDictionaryRef:(struct __CFDictionary { }*)arg1;
 - (void)commonInit;
@@ -28,14 +28,14 @@
 - (int)fieldType;
 - (id)initWithAnnotation:(id)arg1;
 - (id)initWithFormDictionary:(struct CGPDFDictionary { }*)arg1;
-- (void)setButtonType:(int)arg1;
+- (void)setButtonType:(long long)arg1;
 - (void)setDefaultStringValue:(id)arg1;
 - (void)setDocument:(id)arg1;
 - (void)setFieldName:(id)arg1;
 - (void)setFieldType:(int)arg1;
 - (void)setStringValue:(id)arg1;
-- (void)setWriteDefaultValue:(BOOL)arg1;
+- (void)setWriteDefaultValue:(bool)arg1;
 - (id)stringValue;
-- (BOOL)writeDefaultValue;
+- (bool)writeDefaultValue;
 
 @end

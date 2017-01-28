@@ -11,9 +11,9 @@
     UIFont * _nameFont;
     UIFont * _repeatFont;
     NSString * _repeatText;
-    BOOL  _shouldAddLayoutConstraints;
-    int  _style;
-    BOOL  _switchVisible;
+    bool  _shouldAddLayoutConstraints;
+    long long  _style;
+    bool  _switchVisible;
     DigitalClockLabel * _timeLabel;
 }
 
@@ -24,9 +24,9 @@
 @property (nonatomic, retain) UIFont *nameFont;
 @property (nonatomic, retain) UIFont *repeatFont;
 @property (nonatomic, copy) NSString *repeatText;
-@property (nonatomic) BOOL shouldAddLayoutConstraints;
-@property (nonatomic) int style;
-@property (getter=isSwitchVisible, nonatomic) BOOL switchVisible;
+@property (nonatomic) bool shouldAddLayoutConstraints;
+@property (nonatomic) long long style;
+@property (getter=isSwitchVisible, nonatomic) bool switchVisible;
 @property (nonatomic, readonly) DigitalClockLabel *timeLabel;
 @property (nonatomic, readonly) NSDictionary *viewsByIdentifier;
 
@@ -35,8 +35,8 @@
 - (id)currentConstraints;
 - (id)detailLabel;
 - (id)enabledSwitch;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isSwitchVisible;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isSwitchVisible;
 - (id)name;
 - (id)nameFont;
 - (id)repeatFont;
@@ -47,11 +47,11 @@
 - (void)setNameFont:(id)arg1;
 - (void)setRepeatFont:(id)arg1;
 - (void)setRepeatText:(id)arg1;
-- (void)setShouldAddLayoutConstraints:(BOOL)arg1;
-- (void)setStyle:(int)arg1;
-- (void)setSwitchVisible:(BOOL)arg1;
-- (BOOL)shouldAddLayoutConstraints;
-- (int)style;
+- (void)setShouldAddLayoutConstraints:(bool)arg1;
+- (void)setStyle:(long long)arg1;
+- (void)setSwitchVisible:(bool)arg1;
+- (bool)shouldAddLayoutConstraints;
+- (long long)style;
 - (void)tearDownContentSizeChangeObserver;
 - (id)timeLabel;
 - (void)updateConstraints;

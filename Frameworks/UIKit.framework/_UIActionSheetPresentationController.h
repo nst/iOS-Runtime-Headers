@@ -6,7 +6,7 @@
     <UIActionSheetPresentationControllerDelegate> * _actionSheetDelegate;
     _UIActionSheetCompactPresentationController * _compactPresentationController;
     NSString * _dismissActionTitle;
-    BOOL  _dismissActionUsesShorterHeightWhenCompactVertically;
+    bool  _dismissActionUsesShorterHeightWhenCompactVertically;
 }
 
 @property (nonatomic) <UIActionSheetPresentationControllerDelegate> *actionSheetDelegate;
@@ -14,28 +14,28 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *dismissActionTitle;
-@property (nonatomic) BOOL dismissActionUsesShorterHeightWhenCompactVertically;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool dismissActionUsesShorterHeightWhenCompactVertically;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_compactPresentationController;
 - (id)_exceptionStringForNilSourceViewOrBarButtonItem;
-- (int)_presentationContextForViewController:(id)arg1;
+- (long long)_presentationContextForViewController:(id)arg1;
 - (id)_presentationControllerForTraitCollection:(id)arg1;
-- (BOOL)_shouldPresentedViewControllerControlStatusBarAppearance;
+- (bool)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (id)_visualStyleForTraitCollection:(id)arg1;
 - (void)actionSheetCompactPresentationControllerDidDismiss:(id)arg1;
-- (BOOL)actionSheetCompactPresentationControllerShouldPresentInCurrentContext:(id)arg1;
+- (bool)actionSheetCompactPresentationControllerShouldPresentInCurrentContext:(id)arg1;
 - (id)actionSheetDelegate;
 - (id)compactPresentationController;
 - (void)dealloc;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (id)dismissActionTitle;
-- (BOOL)dismissActionUsesShorterHeightWhenCompactVertically;
+- (bool)dismissActionUsesShorterHeightWhenCompactVertically;
 - (void)setActionSheetDelegate:(id)arg1;
 - (void)setCompactPresentationController:(id)arg1;
 - (void)setDismissActionTitle:(id)arg1;
-- (void)setDismissActionUsesShorterHeightWhenCompactVertically:(BOOL)arg1;
+- (void)setDismissActionUsesShorterHeightWhenCompactVertically:(bool)arg1;
 
 @end

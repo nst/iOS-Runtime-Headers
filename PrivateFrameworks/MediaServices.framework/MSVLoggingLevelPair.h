@@ -3,19 +3,19 @@
  */
 
 @interface MSVLoggingLevelPair : NSObject {
-    int  _maxConsoleLoggingLevel;
-    int  _maxFileLoggingLevel;
+    long long  _maxConsoleLoggingLevel;
+    long long  _maxFileLoggingLevel;
 }
 
-@property (nonatomic) int maxConsoleLoggingLevel;
-@property (nonatomic) int maxFileLoggingLevel;
+@property (nonatomic) long long maxConsoleLoggingLevel;
+@property (nonatomic) long long maxFileLoggingLevel;
 
-+ (id)pairWithMaxConsoleLevel:(int)arg1 maxFileLevel:(int)arg2;
++ (id)pairWithMaxConsoleLevel:(long long)arg1 maxFileLevel:(long long)arg2;
 
-- (id)initWithMaxConsoleLevel:(int)arg1 maxFileLevel:(int)arg2;
-- (int)maxConsoleLoggingLevel;
-- (int)maxFileLoggingLevel;
-- (void)setMaxConsoleLoggingLevel:(int)arg1;
-- (void)setMaxFileLoggingLevel:(int)arg1;
+- (id)initWithMaxConsoleLevel:(long long)arg1 maxFileLevel:(long long)arg2;
+- (long long)maxConsoleLoggingLevel;
+- (long long)maxFileLoggingLevel;
+- (void)setMaxConsoleLoggingLevel:(long long)arg1;
+- (void)setMaxFileLoggingLevel:(long long)arg1;
 
 @end

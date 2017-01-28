@@ -40,10 +40,10 @@
 
 - (void).cxx_destruct;
 - (double)_computeBloodGlucoseForDemoPerson:(id)arg1 atTime:(double)arg2 weight:(double)arg3;
-- (double)_computeMealTimeForDemoPerson:(id)arg1 fromTime:(double)arg2 mealTimeType:(int)arg3 timeMean:(double)arg4 stdDev:(double)arg5;
+- (double)_computeMealTimeForDemoPerson:(id)arg1 fromTime:(double)arg2 mealTimeType:(long long)arg3 timeMean:(double)arg4 stdDev:(double)arg5;
 - (double)_computeNutrientForDemoPerson:(id)arg1 atTime:(double)arg2 mealItem:(id)arg3 quantityType:(id)arg4;
-- (BOOL)_isDemoPersonConsumingCaffeine:(id)arg1 atTime:(double)arg2;
-- (BOOL)_isTypicalNutritionTrackingQuantityType:(id)arg1;
+- (bool)_isDemoPersonConsumingCaffeine:(id)arg1 atTime:(double)arg2;
+- (bool)_isTypicalNutritionTrackingQuantityType:(id)arg1;
 - (id)_mealForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)_nextMealTimeForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)bloodGlucoseCarbohydrateGlycemicRate;

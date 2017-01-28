@@ -15,20 +15,20 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CNUIContactsEnvironment *environment;
 @property (nonatomic, retain) CNUIPeopleGroupsGridView *gridView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)dataSource;
 - (void)dataSourceDidChange:(id)arg1;
 - (id)delegate;
 - (id)environment;
 - (id)gridView;
 - (id)initWithEnvironment:(id)arg1 contactStore:(id)arg2;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)loadView;
 - (id)newGridLayout;
 - (void)reloadData;

@@ -14,19 +14,19 @@
 - (void)_calculateDiffs;
 - (id)_changedObjects;
 - (id)_diffDescription;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (bool)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (id)album;
 - (id)changedIndexes;
-- (BOOL)countDidChange;
+- (bool)countDidChange;
 - (void)dealloc;
 - (id)deletedIndexes;
 - (id)description;
 - (id)init;
 - (id)initWithShuffledAlbum:(id)arg1 albumChangeNotification:(id)arg2;
 - (id)insertedIndexes;
-- (BOOL)keyAssetDidChange;
+- (bool)keyAssetDidChange;
 - (id)object;
-- (BOOL)shouldReload;
-- (BOOL)titleDidChange;
+- (bool)shouldReload;
+- (bool)titleDidChange;
 
 @end

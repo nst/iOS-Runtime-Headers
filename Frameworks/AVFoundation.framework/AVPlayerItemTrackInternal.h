@@ -4,12 +4,12 @@
 
 @interface AVPlayerItemTrackInternal : NSObject {
     AVAsset * asset;
-    BOOL  disableColorMatching;
-    BOOL  disableColorMatchingWasSet;
-    BOOL  enabled;
-    BOOL  enabledWasSet;
+    bool  disableColorMatching;
+    bool  disableColorMatchingWasSet;
+    bool  enabled;
+    bool  enabledWasSet;
     struct OpaqueFigPlaybackItem { } * figPlaybackItem;
-    BOOL  figPlaybackItemIsReadyForInspection;
+    bool  figPlaybackItemIsReadyForInspection;
     NSDictionary * loudnessInfo;
     int  trackID;
     NSDictionary * videoEnhancementFilterOptions;

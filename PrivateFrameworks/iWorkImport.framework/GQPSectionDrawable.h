@@ -4,8 +4,8 @@
 
 @interface GQPSectionDrawable : NSObject {
     struct { 
-        int location; 
-        int length; 
+        long long location; 
+        long long length; 
     }  mPageRange;
     GQDSStyle * mStyle;
 }

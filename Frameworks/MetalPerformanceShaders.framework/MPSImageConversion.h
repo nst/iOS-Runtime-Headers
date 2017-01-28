@@ -8,29 +8,29 @@
         /* Warning: Unrecognized filer type: '"' using 'void*' */ void*bgColor; 
     }  convertInfo;
     /* Warning: Unrecognized filer type: ']' using 'void*' */ void* destDecode;
-    unsigned int  destinationAlpha;
+    unsigned long long  destinationAlpha;
     int (* lutFun;
     int (* matFun;
     int (* optionsFun;
-    unsigned int  sourceAlpha;
+    unsigned long long  sourceAlpha;
     /* Warning: Unrecognized filer type: ']' using 'void*' */ void* srcDecode;
     MPSImageTransformSequence * transform;
     int (* trcFun;
 }
 
-@property (nonatomic, readonly) unsigned int destinationAlpha;
-@property (nonatomic, readonly) unsigned int sourceAlpha;
+@property (nonatomic, readonly) unsigned long long destinationAlpha;
+@property (nonatomic, readonly) unsigned long long sourceAlpha;
 
 + (const struct MPSLibraryInfo { int x1; unsigned int x2; char *x3; struct MPSKernelInfo {} *x4; struct MPSKernelInfo {} *x5; struct MPSKernelInfo {} *x6; struct MPSKernelInfo {} *x7; struct MPSKernelInfo {} *x8; struct MPSKernelInfo {} *x9; struct MPSKernelInfo {} *x10; struct MPSKernelInfo {} *x11; struct MPSKernelInfo {} *x12; struct MPSKernelInfo {} *x13; struct MPSKernelInfo {} *x14; }*)libraryInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (void)dealloc;
 - (id)debugDescription;
-- (unsigned int)destinationAlpha;
+- (unsigned long long)destinationAlpha;
 - (void)encodeToCommandBuffer:(id)arg1 sourceTexture:(id)arg2 sourceDecode:(const float*)arg3 destinationTexture:(id)arg4 destinationDecode:(const float*)arg5;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithDevice:(id)arg1 srcAlpha:(unsigned int)arg2 destAlpha:(unsigned int)arg3 backgroundColor:(float*)arg4 conversionInfo:(const struct CGColorConversionInfo { }*)arg5;
+- (id)initWithDevice:(id)arg1 srcAlpha:(unsigned long long)arg2 destAlpha:(unsigned long long)arg3 backgroundColor:(double*)arg4 conversionInfo:(const struct CGColorConversionInfo { }*)arg5;
 - (id)initWithDevice:(id)arg1 transform:(id)arg2;
-- (unsigned int)sourceAlpha;
+- (unsigned long long)sourceAlpha;
 
 @end

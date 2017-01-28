@@ -3,8 +3,8 @@
  */
 
 @interface WBSCompletionQuery : NSObject {
-    BOOL  _forLastSearch;
-    unsigned int  _indexInFeedbackArray;
+    bool  _forLastSearch;
+    unsigned long long  _indexInFeedbackArray;
     NSString * _normalizedQueryStringForParsec;
     NSString * _parsecCompletionString;
     NSString * _parsecFeedbackQueryIdentifier;
@@ -24,11 +24,11 @@
             long long __rep_; 
         } __d_; 
     }  _timestamp;
-    unsigned int  _triggerEvent;
+    unsigned long long  _triggerEvent;
 }
 
-@property (getter=isForLastSearch, nonatomic) BOOL forLastSearch;
-@property (nonatomic) unsigned int indexInFeedbackArray;
+@property (getter=isForLastSearch, nonatomic) bool forLastSearch;
+@property (nonatomic) unsigned long long indexInFeedbackArray;
 @property (nonatomic, readonly) NSString *normalizedQueryStringForParsec;
 @property (nonatomic, copy) NSString *parsecCompletionString;
 @property (nonatomic, copy) NSString *parsecFeedbackQueryIdentifier;
@@ -40,16 +40,16 @@
 @property (nonatomic, copy) NSString *searchSuggestionProviderIdentifier;
 @property (nonatomic) /* Warning: unhandled struct encoding: '{duration<long long' */ struct  searchSuggestionProviderLatency; /* unknown property attribute:  1000> >=q} */
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{time_point<std::__1::chrono::steady_clock' */ struct  timestamp; /* unknown property attribute:  1000000000> >=q}} */
-@property (nonatomic) unsigned int triggerEvent;
+@property (nonatomic) unsigned long long triggerEvent;
 
 + (void)initialize;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)indexInFeedbackArray;
+- (unsigned long long)indexInFeedbackArray;
 - (id)initWithQueryString:(id)arg1;
-- (BOOL)isForLastSearch;
+- (bool)isForLastSearch;
 - (id)normalizedQueryStringForParsec;
 - (id)parsecCompletionString;
 - (id)parsecFeedbackQueryIdentifier;
@@ -60,8 +60,8 @@
 - (id)rewrittenQueryStringFromParsec;
 - (id)searchSuggestionProviderIdentifier;
 - (struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })searchSuggestionProviderLatency;
-- (void)setForLastSearch:(BOOL)arg1;
-- (void)setIndexInFeedbackArray:(unsigned int)arg1;
+- (void)setForLastSearch:(bool)arg1;
+- (void)setIndexInFeedbackArray:(unsigned long long)arg1;
 - (void)setParsecCompletionString:(id)arg1;
 - (void)setParsecFeedbackQueryIdentifier:(id)arg1;
 - (void)setParsecLatency:(struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })arg1;
@@ -70,8 +70,8 @@
 - (void)setRewrittenQueryStringFromParsec:(id)arg1;
 - (void)setSearchSuggestionProviderIdentifier:(id)arg1;
 - (void)setSearchSuggestionProviderLatency:(struct duration<long long, std::__1::ratio<1, 1000> > { long long x1; })arg1;
-- (void)setTriggerEvent:(unsigned int)arg1;
+- (void)setTriggerEvent:(unsigned long long)arg1;
 - (struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { struct duration<long long, std::__1::ratio<1, 1000000000> > { long long x_1_1_1; } x1; })timestamp;
-- (unsigned int)triggerEvent;
+- (unsigned long long)triggerEvent;
 
 @end

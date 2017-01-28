@@ -9,6 +9,7 @@
     UIColor * _secondaryColor;
     UILabel * _secondaryLabel;
     NSString * _secondaryString;
+    bool  _sizeLabels;
     UIColor * _tertiaryColor;
     UILabel * _tertiaryLabel;
     NSString * _tertiaryString;
@@ -27,7 +28,7 @@
 @property (nonatomic, retain) NSString *transactionValueString;
 
 + (id)primaryLabelFont;
-+ (float)rowHeight;
++ (double)rowHeight;
 + (id)secondaryLabelFont;
 + (id)tertiaryLabelFont;
 + (id)transactionValueLabelFont;
@@ -37,7 +38,7 @@
 - (id)defaultSecondaryColor;
 - (id)defaultTertiaryColor;
 - (id)defaultTransactionValueColor;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)primaryColor;

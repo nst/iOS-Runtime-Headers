@@ -8,9 +8,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isHidden, nonatomic, readonly) BOOL hidden;
-@property (nonatomic, readonly) int style;
+@property (readonly) unsigned long long hash;
+@property (getter=isHidden, nonatomic, readonly) bool hidden;
+@property (nonatomic, readonly) long long style;
 @property (readonly) Class superclass;
 
 - (id)_initWithBSSettings:(id)arg1;
@@ -20,10 +20,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isHidden;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (bool)isHidden;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (int)style;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (long long)style;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 @end

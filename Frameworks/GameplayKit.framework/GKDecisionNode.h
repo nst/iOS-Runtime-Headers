@@ -11,7 +11,7 @@
 - (id)attribute;
 - (id)createBranchWithPredicate:(id)arg1 attribute:(id)arg2;
 - (id)createBranchWithValue:(id)arg1 attribute:(id)arg2;
-- (id)createBranchWithWeight:(int)arg1 attribute:(id)arg2;
+- (id)createBranchWithWeight:(long long)arg1 attribute:(id)arg2;
 - (id)createChildWithAttribute:(id)arg1 randomSource:(id)arg2 withBranch:(id)arg3;
 - (void)dealloc;
 - (id)description;

@@ -5,7 +5,7 @@
 @interface AppLaunchStatsWhiteListManager : NSObject <DuetLoggerProtocol, LSApplicationWorkspaceObserverProtocol> {
     NSObject<OS_dispatch_queue> * aplsWLMQueue;
     NSMutableArray * defaultsWriteWhiteList;
-    BOOL  enableWhiteListCheck;
+    bool  enableWhiteListCheck;
     NSMutableArray * launchServiceWhiteListFetch;
     NSMutableArray * launchServiceWhiteListPush;
     AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
@@ -14,8 +14,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enableWhiteListCheck;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool enableWhiteListCheck;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)instance;
@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)addToMultiTaskingQueue:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;
-- (BOOL)enableWhiteListCheck;
+- (bool)enableWhiteListCheck;
 - (id)init;
 - (void)initSetup;
 - (bool)isAppInList:(id)arg1 withBundleID:(id)arg2;
@@ -32,6 +32,6 @@
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)reloadConfiguration;
 - (void)saveContext:(id)arg1;
-- (void)setEnableWhiteListCheck:(BOOL)arg1;
+- (void)setEnableWhiteListCheck:(bool)arg1;
 
 @end

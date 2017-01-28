@@ -4,7 +4,7 @@
 
 @interface VSGenericUpdateEndpoint : NSObject <NSSecureCoding, NSXPCListenerDelegate> {
     NSXPCListenerEndpoint * _endpoint;
-    id /* block */  _handler;
+    id  _handler;
     NSXPCListener * _listener;
     NSObject<OS_dispatch_queue> * _queue;
 }
@@ -12,28 +12,28 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
-@property (nonatomic, copy) id /* block */ handler;
-@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id handler;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSXPCListener *listener;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
-+ (id)configuredEndpointWithUpdateHandler:(id /* block */)arg1 withConnection:(id)arg2;
-+ (id /* block */)remoteUpdateHanderForEndpoint:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)configuredEndpointWithUpdateHandler:(id)arg1 withConnection:(id)arg2;
++ (id)remoteUpdateHanderForEndpoint:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endpoint;
-- (id /* block */)handler;
+- (id)handler;
 - (id)initWithCoder:(id)arg1;
 - (void)invalidate;
 - (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)queue;
 - (void)setEndpoint:(id)arg1;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 - (void)setListener:(id)arg1;
 - (void)setQueue:(id)arg1;
 

@@ -7,14 +7,14 @@
     unsigned char  mOutlineLevel;
     EDReference * mRange;
     EDResources * mResources;
-    unsigned int  mStyleIndex;
+    unsigned long long  mStyleIndex;
     int  mWidth;
     EDWorksheet * mWorksheet;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)columnInfoWithResources:(id)arg1 worksheet:(id)arg2;
@@ -24,7 +24,7 @@
 - (id)description;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
 - (bool)isHidden;
-- (int)key;
+- (long long)key;
 - (unsigned char)outlineLevel;
 - (id)range;
 - (void)setHidden:(bool)arg1;
@@ -32,11 +32,11 @@
 - (void)setRange:(id)arg1;
 - (void)setRangeWithFirstColumn:(int)arg1 lastColumn:(int)arg2;
 - (void)setStyle:(id)arg1;
-- (void)setStyleIndex:(unsigned int)arg1;
+- (void)setStyleIndex:(unsigned long long)arg1;
 - (void)setWidth:(double)arg1;
 - (void)setWidthInXlUnits:(int)arg1;
 - (id)style;
-- (unsigned int)styleIndex;
+- (unsigned long long)styleIndex;
 - (double)width;
 - (int)widthInXlUnits;
 

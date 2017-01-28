@@ -10,7 +10,7 @@
     SCNNode * _cameraRoot;
     struct __CFDictionary { } * _camerasDictionary;
     UIColor * _cyan;
-    int  _displayMask;
+    long long  _displayMask;
     UIColor * _grayDark;
     UIColor * _grayLight;
     UIColor * _grayMedium;
@@ -37,7 +37,7 @@
     UIColor * _yellow;
 }
 
-@property int displayMask;
+@property long long displayMask;
 
 + (id)authoringEnvironmentForScene:(id)arg1;
 
@@ -52,8 +52,8 @@
 - (id)cameraNearPlaneGeometry;
 - (void)cancelSelection;
 - (void)dealloc;
-- (BOOL)didTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (int)displayMask;
+- (bool)didTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (long long)displayMask;
 - (id)initWithScene:(id)arg1;
 - (id)jointGeometry;
 - (id)lightGeometry;
@@ -66,7 +66,7 @@
 - (void)removedNode:(id)arg1;
 - (void)selectNode:(id)arg1;
 - (void)selectNodes:(id)arg1;
-- (void)setDisplayMask:(int)arg1;
+- (void)setDisplayMask:(long long)arg1;
 - (void)updateCameraNode:(id)arg1 withSourceNode:(id)arg2;
 - (void)updateJointNode:(id)arg1 withSourceNode:(id)arg2;
 - (void)updateLightNode:(id)arg1 withSourceNode:(id)arg2;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)buttonStack:(CCUIButtonStack *)arg1 didLayoutWithSpacing:(float)arg2;
+- (void)buttonStack:(CCUIButtonStack *)arg1 didLayoutWithSpacing:(double)arg2;
 
 @end

@@ -16,7 +16,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)closestApproach;
-- (struct CGVector { float x1; float x2; })direction;
+- (struct CGVector { double x1; double x2; })direction;
 - (id)initWithFeatureMarkerPtr:(const struct shared_ptr<md::FeatureMarker> { struct FeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (id)initWithLabelFeatureMarkerPtr:(const struct shared_ptr<md::LabelFeatureMarker> { struct LabelFeatureMarker {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)setViewProximity:(int)arg1;

@@ -6,19 +6,19 @@
     <MusicEntityProviding> * _entityProvider;
     NSString * _groupingProperty;
     <MusicEntityProviding> * _originalEntityProvider;
-    unsigned int  _originalMinimumNumberOfEntitiesForSection;
+    unsigned long long  _originalMinimumNumberOfEntitiesForSection;
     NSString * _wantsGroupingProperty;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *groupingProperty;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *wantsGroupingProperty;
 
 - (void).cxx_destruct;
-- (void)_configureContentDescriptorsForSectioning:(BOOL)arg1;
+- (void)_configureContentDescriptorsForSectioning:(bool)arg1;
 - (void)_configureTracklistTableViewDescriptorWithTintInformation:(id)arg1;
 - (void)_entityProviderDidInvalidate;
 - (void)_groupIfNecessary;

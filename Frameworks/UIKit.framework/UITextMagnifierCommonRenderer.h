@@ -7,19 +7,19 @@
     UIImage * m_hiImageVertical;
     UIImage * m_loImageHorizontal;
     UIImage * m_loImageVertical;
-    BOOL  m_loaded;
+    bool  m_loaded;
     UIImage * m_maskImageHorizontal;
     UIImage * m_maskImageVertical;
 }
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })calculateCompositePointWithOrientation:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })calculateFinalCompositionPointForCompositePoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGImage { }*)captureSnapshotAtRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forMagnifier:(id)arg2 withRotation:(float)arg3 onlyTarget:(BOOL)arg4 outTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg5;
-- (void)drawMagnifier:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGPoint { double x1; double x2; })calculateCompositePointWithOrientation:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })calculateFinalCompositionPointForCompositePoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGImage { }*)captureSnapshotAtRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forMagnifier:(id)arg2 withRotation:(double)arg3 onlyTarget:(bool)arg4 outTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg5;
+- (void)drawMagnifier:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)filenamesForMagnifier;
 - (void)loadImages;
-- (float)offsetForMagnifier:(id)arg1;
-- (void)performOperations:(id /* block */)arg1 forMagnifier:(id)arg2;
+- (double)offsetForMagnifier:(id)arg1;
+- (void)performOperations:(id)arg1 forMagnifier:(id)arg2;
 
 @end

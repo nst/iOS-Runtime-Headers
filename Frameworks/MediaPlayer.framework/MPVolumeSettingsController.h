@@ -23,6 +23,6 @@
 - (id)previousWindow;
 - (void)setHostingWindow:(id)arg1;
 - (void)setPreviousWindow:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

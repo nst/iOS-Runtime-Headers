@@ -5,19 +5,19 @@
 @interface MRTelevisionClientConnection : NSObject <MSVMessageParserDelegate, NSStreamDelegate> {
     MRCryptoPairingSession * _cryptoSession;
     <MRTelevisionClientConnectionDelegate> * _delegate;
-    BOOL  _disconnected;
+    bool  _disconnected;
     unsigned long long  _firstClientNanoseconds;
     unsigned long long  _firstDeviceTicks;
     NSInputStream * _inputStream;
     MRTelevisionMessageQueue * _messageQueue;
     NSOutputStream * _outputStream;
     MSVMessageParser * _parser;
-    BOOL  _registeredKeyboardUpdates;
-    BOOL  _registeredToNowPlayingArtworkUpdates;
-    BOOL  _registeredToNowPlayingUpdates;
-    BOOL  _registeredVolumeControlAvailabilityUpdates;
+    bool  _registeredKeyboardUpdates;
+    bool  _registeredToNowPlayingArtworkUpdates;
+    bool  _registeredToNowPlayingUpdates;
+    bool  _registeredVolumeControlAvailabilityUpdates;
     NSRunLoop * _runLoop;
-    BOOL  _useSSL;
+    bool  _useSSL;
     unsigned int  _voiceRecordingState;
 }
 
@@ -25,16 +25,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MRTelevisionClientConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSInputStream *inputStream;
 @property (nonatomic, readonly) NSOutputStream *outputStream;
-@property (nonatomic) BOOL registeredKeyboardUpdates;
-@property (nonatomic) BOOL registeredToNowPlayingArtworkUpdates;
-@property (nonatomic) BOOL registeredToNowPlayingUpdates;
-@property (nonatomic) BOOL registeredVolumeControlAvailabilityUpdates;
-@property (nonatomic, readonly) BOOL streamsAreValid;
+@property (nonatomic) bool registeredKeyboardUpdates;
+@property (nonatomic) bool registeredToNowPlayingArtworkUpdates;
+@property (nonatomic) bool registeredToNowPlayingUpdates;
+@property (nonatomic) bool registeredVolumeControlAvailabilityUpdates;
+@property (nonatomic, readonly) bool streamsAreValid;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useSSL;
+@property (nonatomic) bool useSSL;
 @property (nonatomic) unsigned int voiceRecordingState;
 
 - (void)_adjustTimestamp:(id)arg1;
@@ -46,27 +46,28 @@
 - (id)cryptoSession;
 - (void)dealloc;
 - (id)delegate;
+- (void)forceDisconnect;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2 runLoop:(id)arg3;
 - (id)inputStream;
 - (id)outputStream;
 - (void)parser:(id)arg1 didParseMessage:(id)arg2;
-- (BOOL)registeredKeyboardUpdates;
-- (BOOL)registeredToNowPlayingArtworkUpdates;
-- (BOOL)registeredToNowPlayingUpdates;
-- (BOOL)registeredVolumeControlAvailabilityUpdates;
+- (bool)registeredKeyboardUpdates;
+- (bool)registeredToNowPlayingArtworkUpdates;
+- (bool)registeredToNowPlayingUpdates;
+- (bool)registeredVolumeControlAvailabilityUpdates;
 - (void)sendMessage:(id)arg1;
-- (void)sendMessage:(id)arg1 queue:(id)arg2 reply:(id /* block */)arg3;
+- (void)sendMessage:(id)arg1 queue:(id)arg2 reply:(id)arg3;
 - (void)setCryptoSession:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRegisteredKeyboardUpdates:(BOOL)arg1;
-- (void)setRegisteredToNowPlayingArtworkUpdates:(BOOL)arg1;
-- (void)setRegisteredToNowPlayingUpdates:(BOOL)arg1;
-- (void)setRegisteredVolumeControlAvailabilityUpdates:(BOOL)arg1;
-- (void)setUseSSL:(BOOL)arg1;
+- (void)setRegisteredKeyboardUpdates:(bool)arg1;
+- (void)setRegisteredToNowPlayingArtworkUpdates:(bool)arg1;
+- (void)setRegisteredToNowPlayingUpdates:(bool)arg1;
+- (void)setRegisteredVolumeControlAvailabilityUpdates:(bool)arg1;
+- (void)setUseSSL:(bool)arg1;
 - (void)setVoiceRecordingState:(unsigned int)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
-- (BOOL)streamsAreValid;
-- (BOOL)useSSL;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
+- (bool)streamsAreValid;
+- (bool)useSSL;
 - (unsigned int)voiceRecordingState;
 
 @end

@@ -10,7 +10,7 @@
 - (id)dataForResourceWithName:(id)arg1;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1;
-- (BOOL)isDevResourceWithName:(id)arg1;
+- (bool)isDevResourceWithName:(id)arg1;
 - (id)pathForResourceWithName:(id)arg1;
 
 @end

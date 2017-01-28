@@ -9,14 +9,14 @@
 @property (nonatomic, retain) CNAvatarView *avatarView;
 
 + (id)identifier;
-+ (float)preferredHeight;
++ (double)preferredHeight;
 
 - (void).cxx_destruct;
 - (void)_updateCellStyle;
 - (id)avatarView;
 - (id)init;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setAvatarView:(id)arg1;
 

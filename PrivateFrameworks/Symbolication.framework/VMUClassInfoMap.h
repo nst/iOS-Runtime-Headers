@@ -19,7 +19,7 @@
 + (void)disableTestingVersion;
 + (void)enableTestingVersion;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_applyTypeOverlay:(id)arg1;
 - (id*)_retainedLinearArrayWithReturnedCount:(unsigned int*)arg1;
@@ -31,14 +31,14 @@
 - (unsigned int)count;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateInfosWithBlock:(id /* block */)arg1;
+- (void)enumerateInfosWithBlock:(id)arg1;
 - (unsigned int)fieldInfoCount;
 - (id)fieldInfoForIndex:(unsigned int)arg1;
 - (unsigned int)indexForClassInfo:(id)arg1;
 - (unsigned int)indexForFieldInfo:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)memoizeSwiftField:(id)arg1 withName:(const char *)arg2 offset:(unsigned int)arg3 kind:(unsigned int)arg4 typeref:(unsigned long)arg5;
-- (id)swiftFieldWithName:(const char *)arg1 offset:(unsigned int)arg2 kind:(unsigned int)arg3 typeref:(unsigned long)arg4;
+- (void)memoizeSwiftField:(id)arg1 withName:(const char *)arg2 offset:(unsigned int)arg3 kind:(unsigned int)arg4 typeref:(unsigned long long)arg5;
+- (id)swiftFieldWithName:(const char *)arg1 offset:(unsigned int)arg2 kind:(unsigned int)arg3 typeref:(unsigned long long)arg4;
 
 @end

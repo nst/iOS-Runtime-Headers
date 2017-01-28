@@ -5,8 +5,8 @@
 
 @required
 
-- (id)initWithCapacity:(unsigned int)arg1;
-- (void)observableAtIndex:(unsigned int)arg1 didCompleteForObserver:(id <CNObserver>)arg2;
-- (void)receiveResult:(id)arg1 fromObservableAtIndex:(unsigned int)arg2 observer:(id <CNObserver>)arg3;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (void)observableAtIndex:(unsigned long long)arg1 didCompleteForObserver:(id <CNObserver>)arg2;
+- (void)receiveResult:(id)arg1 fromObservableAtIndex:(unsigned long long)arg2 observer:(id <CNObserver>)arg3;
 
 @end

@@ -4,30 +4,30 @@
 
 @interface NWConcrete_nw_connection : NSObject <OS_nw_connection> {
     unsigned int  adaptive_read_timeout_count;
-    id /* block */  adaptive_read_timeout_handler;
+    id  adaptive_read_timeout_handler;
     unsigned int  adaptive_write_timeout_count;
-    id /* block */  adaptive_write_timeout_handler;
+    id  adaptive_write_timeout_handler;
     bool  better_path_available;
-    id /* block */  better_path_available_handler;
-    id /* block */  cancel_handler;
+    id  better_path_available_handler;
+    id  cancel_handler;
     NSObject<OS_nw_endpoint_handler> * candidate_endpoint_handler;
-    id /* block */  client_handler;
+    id  client_handler;
     NSObject<OS_dispatch_queue> * client_queue;
     NSObject<OS_nw_endpoint_handler> * connected_endpoint_handler;
     NSObject<OS_nw_endpoint_handler> * dry_run_endpoint_handler;
     NSObject<OS_nw_endpoint> * endpoint;
     struct __CFArray { } * errors;
     unsigned int  excessive_keepalive_count;
-    id /* block */  excessive_keepalive_handler;
+    id  excessive_keepalive_handler;
     unsigned int  excessive_keepalive_interval;
     unsigned int  generic_stats_reported;
     unsigned int  initial_payload_sent;
-    id /* block */  low_throughput_handler;
+    id  low_throughput_handler;
     unsigned short  num_timestamps;
     NSObject<OS_nw_parameters> * parameters;
     NSObject<OS_nw_endpoint_handler> * parent_endpoint_handler;
-    id /* block */  path_changed_handler;
-    id /* block */  read_close_handler;
+    id  path_changed_handler;
+    id  read_close_handler;
     NSObject<OS_nw_endpoint_handler> * ready_dry_run_endpoint_handler;
     unsigned int  should_report_generic_stats;
     unsigned int  should_report_stats;
@@ -44,15 +44,15 @@
         unsigned long long last_bytes; 
         unsigned long long last_time; 
     }  throughput_monitor;
-    struct nw_connection_timestamp_s { unsigned long long x1; unsigned long long x2; struct nw_endpoint_handler_event_s { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; int x4; } * timestamps;
+    struct nw_connection_timestamp_s { unsigned long long x1; unsigned long long x2; struct nw_endpoint_handler_event_s { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; long long x4; } * timestamps;
     unsigned short  used_timestamps;
-    id /* block */  viability_changed_handler;
-    id /* block */  write_close_handler;
+    id  viability_changed_handler;
+    id  write_close_handler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

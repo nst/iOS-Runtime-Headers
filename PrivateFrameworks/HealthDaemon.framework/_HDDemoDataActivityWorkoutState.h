@@ -5,7 +5,7 @@
 @interface _HDDemoDataActivityWorkoutState : NSObject <NSSecureCoding> {
     NSMutableData * _associatedObjectUUIDs;
     HKQuantity * _goal;
-    unsigned int  _goalType;
+    unsigned long long  _goalType;
     NSDate * _nextLapTime;
     NSDate * _startDate;
     double  _totalDistanceCyclingInMeters;
@@ -13,13 +13,13 @@
     double  _totalDistanceWalkingInMeters;
     double  _totalEnergyBurnedInKilocalories;
     double  _totalSwimmingStrokes;
-    unsigned int  _workoutActivityType;
+    unsigned long long  _workoutActivityType;
     NSMutableArray * _workoutEvents;
 }
 
 @property (nonatomic, retain) NSMutableData *associatedObjectUUIDs;
 @property (nonatomic, retain) HKQuantity *goal;
-@property (nonatomic) unsigned int goalType;
+@property (nonatomic) unsigned long long goalType;
 @property (nonatomic, retain) NSDate *nextLapTime;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic) double totalDistanceCyclingInMeters;
@@ -27,26 +27,27 @@
 @property (nonatomic) double totalDistanceWalkingInMeters;
 @property (nonatomic) double totalEnergyBurnedInKilocalories;
 @property (nonatomic) double totalSwimmingStrokes;
-@property (nonatomic) unsigned int workoutActivityType;
+@property (nonatomic) unsigned long long workoutActivityType;
 @property (nonatomic, retain) NSMutableArray *workoutEvents;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addAssociatedObjectUUID:(id)arg1;
+- (void)addLocationSeriesSamplesFromFilePath:(id)arg1 profile:(id)arg2 provenance:(id)arg3;
 - (void)addWorkoutEvent:(id)arg1;
 - (id)associatedObjectUUIDs;
 - (void)encodeWithCoder:(id)arg1;
-- (id)generateWorkoutWithEndDate:(id)arg1;
+- (id)generateWorkoutWithEndDate:(id)arg1 profile:(id)arg2 provenance:(id)arg3;
 - (id)goal;
-- (unsigned int)goalType;
+- (unsigned long long)goalType;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)lapCount;
+- (long long)lapCount;
 - (id)nextLapTime;
 - (void)setAssociatedObjectUUIDs:(id)arg1;
 - (void)setGoal:(id)arg1;
-- (void)setGoalType:(unsigned int)arg1;
+- (void)setGoalType:(unsigned long long)arg1;
 - (void)setNextLapTime:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTotalDistanceCyclingInMeters:(double)arg1;
@@ -54,7 +55,7 @@
 - (void)setTotalDistanceWalkingInMeters:(double)arg1;
 - (void)setTotalEnergyBurnedInKilocalories:(double)arg1;
 - (void)setTotalSwimmingStrokes:(double)arg1;
-- (void)setWorkoutActivityType:(unsigned int)arg1;
+- (void)setWorkoutActivityType:(unsigned long long)arg1;
 - (void)setWorkoutEvents:(id)arg1;
 - (id)startDate;
 - (double)totalDistanceCyclingInMeters;
@@ -62,7 +63,7 @@
 - (double)totalDistanceWalkingInMeters;
 - (double)totalEnergyBurnedInKilocalories;
 - (double)totalSwimmingStrokes;
-- (unsigned int)workoutActivityType;
+- (unsigned long long)workoutActivityType;
 - (id)workoutEvents;
 
 @end

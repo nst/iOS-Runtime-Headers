@@ -5,6 +5,6 @@
 
 @required
 
-- (void)inlineNotificationView:(CKInlineNotificationView *)arg1 didChangeRequestedHeight:(float)arg2;
+- (void)inlineNotificationView:(CKInlineNotificationView *)arg1 didChangeRequestedHeight:(double)arg2;
 
 @end

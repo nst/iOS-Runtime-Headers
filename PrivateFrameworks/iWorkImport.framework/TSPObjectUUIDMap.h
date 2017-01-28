@@ -17,11 +17,11 @@
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (void)object:(id)arg1 didChangeUUIDToValue:(id)arg2 fromValue:(id)arg3;
-- (BOOL)objectUUIDIsInDocument:(id)arg1;
-- (void)objectWasAddedToDocument:(id)arg1 options:(unsigned int)arg2;
+- (bool)objectUUIDIsInDocument:(id)arg1;
+- (void)objectWasAddedToDocument:(id)arg1 options:(unsigned long long)arg2;
 - (void)objectWillBeRemovedFromDocument:(id)arg1;
-- (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(long long*)arg4;
+- (id)objectWithUUID:(id)arg1 onlyIfLoaded:(bool)arg2 validateNewObjects:(bool)arg3 identifier:(long long*)arg4;
 - (void)setPersistedUUIDMap:(id)arg1;
-- (BOOL)shouldSuppressAssertionForObjectUUID:(id)arg1;
+- (bool)shouldSuppressAssertionForObjectUUID:(id)arg1;
 
 @end

@@ -7,17 +7,17 @@
     UILabel * _descriptionLabel;
     UIButton * _goToSettingsButton;
     UIScrollView * _scrollView;
-    BOOL  _shouldShowInviteeInstructions;
+    bool  _shouldShowInviteeInstructions;
     UILabel * _titleLabel;
 }
 
-@property (nonatomic) BOOL shouldShowInviteeInstructions;
+@property (nonatomic) bool shouldShowInviteeInstructions;
 
 - (void).cxx_destruct;
-- (float)_heightForText:(id)arg1 constrainedToWidth:(float)arg2;
+- (double)_heightForText:(id)arg1 constrainedToWidth:(double)arg2;
 - (void)loadView;
-- (void)setShouldShowInviteeInstructions:(BOOL)arg1;
-- (BOOL)shouldShowInviteeInstructions;
+- (void)setShouldShowInviteeInstructions:(bool)arg1;
+- (bool)shouldShowInviteeInstructions;
 - (void)viewWillLayoutSubviews;
 
 @end

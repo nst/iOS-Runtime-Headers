@@ -7,84 +7,84 @@
     NSMutableArray * _blockRunsArray;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _cachedFontBounds;
-    float  _cachedUnderlineAdjustment;
-    float  _cachedUnderlinePosition;
+    double  _cachedUnderlineAdjustment;
+    double  _cachedUnderlinePosition;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _cachedUnderlineRange;
-    float  _cachedUnderlineThickness;
-    unsigned int  _currentAttachmentIndex;
+    double  _cachedUnderlineThickness;
+    unsigned long long  _currentAttachmentIndex;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _currentAttachmentRect;
     NSLock * _fillHoleLock;
     NSTextContainer * _firstTextContainer;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _firstTextViewVisibleCharRange;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _firstTextViewVisibleOffset;
     NSRunStorage * _fragmentRunsExtras;
     struct _NSGlyphTree { 
         struct _NSGlyphNode {} *rootNode; 
         struct _NSGlyphNode {} *curNode; 
-        unsigned int curCharIndex; 
-        unsigned int curGlyphIndex; 
+        unsigned long long curCharIndex; 
+        unsigned long long curGlyphIndex; 
     }  _glyphTree;
-    float  _hyphenationFactor;
+    double  _hyphenationFactor;
     NSMutableArray * _insertionPointCache;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _lastInvalidatedCharRange;
-    float  _lastInvalidatedLongitudinalPosition;
+    double  _lastInvalidatedLongitudinalPosition;
     NSTextContainer * _lastInvalidatedTextContainer;
     struct _NSLayoutTree { 
         struct _NSLayoutNode {} *rootNode; 
         struct _NSLayoutNode {} *curNode; 
-        unsigned int curGlyphIndex; 
-        float curLongitudinalOrigin; 
+        unsigned long long curGlyphIndex; 
+        double curLongitudinalOrigin; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } extraLineFragmentRect; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } extraLineFragmentUsedRect; 
-        unsigned int glyphsPerLineEstimate; 
-        float offsetPerLineEstimate; 
+        unsigned long long glyphsPerLineEstimate; 
+        double offsetPerLineEstimate; 
     }  _layoutTree;
     struct __lmFlags2 { 
         unsigned int glyphCause : 6; 
@@ -106,7 +106,7 @@
     id  _temporaryAttributes;
     struct __CFDictionary { } * _textContainerGlyphIndexes;
     struct __CFDictionary { } * _textContainerIndexes;
-    int  _typesetterBehavior;
+    long long  _typesetterBehavior;
 }
 
 @end

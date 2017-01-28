@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) STMediaChannel *channel;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithChannel:(id)arg1;

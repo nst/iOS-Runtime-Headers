@@ -10,18 +10,18 @@
 }
 
 @property (readonly) void*addressBook;
-@property (readonly) BOOL areAllLinkedPeopleReadonly;
-@property (readonly) BOOL hasLinkedPeople;
-@property (readonly) BOOL hasPhoto;
-@property (readonly) BOOL hasPreferredPhoto;
-@property (readonly) BOOL hasValidRecordID;
-@property (readonly) BOOL isFromFacebook;
-@property (readonly) BOOL isMeCard;
-@property (readonly) BOOL isReadonly;
-@property (readonly) BOOL isRemote;
+@property (readonly) bool areAllLinkedPeopleReadonly;
+@property (readonly) bool hasLinkedPeople;
+@property (readonly) bool hasPhoto;
+@property (readonly) bool hasPreferredPhoto;
+@property (readonly) bool hasValidRecordID;
+@property (readonly) bool isFromFacebook;
+@property (readonly) bool isMeCard;
+@property (readonly) bool isReadonly;
+@property (readonly) bool isRemote;
 @property (readonly) int kind;
 @property (readonly) NSArray *linkedPeople;
-@property (readonly) unsigned int linkedPeopleCount;
+@property (readonly) unsigned long long linkedPeopleCount;
 @property (readonly) NSString *name;
 @property (readonly) NSString *phoneticName;
 @property (readonly) NSData *photoThumbnail;
@@ -34,7 +34,7 @@
 @property (readonly) void*record;
 @property (readonly) int recordID;
 @property (readonly) unsigned int recordType;
-@property (readonly) BOOL recordWasDeleted;
+@property (readonly) bool recordWasDeleted;
 @property (readonly) NSString *secondarySourceName;
 @property (readonly) void*source;
 
@@ -45,36 +45,36 @@
 + (id)personWithABRecordID:(int)arg1 fromAddressBook:(void*)arg2;
 + (void)setAccountStore:(id)arg1;
 
-- (BOOL)_updatePersonKindFromNamePreserveOrganizationKind:(BOOL)arg1;
-- (BOOL)addToAddressBook:(void*)arg1;
-- (BOOL)addToGroup:(void*)arg1;
+- (bool)_updatePersonKindFromNamePreserveOrganizationKind:(bool)arg1;
+- (bool)addToAddressBook:(void*)arg1;
+- (bool)addToGroup:(void*)arg1;
 - (void*)addressBook;
-- (BOOL)allowsCustomLabelsForProperty:(int)arg1;
-- (BOOL)areAllLinkedPeopleReadonly;
+- (bool)allowsCustomLabelsForProperty:(int)arg1;
+- (bool)areAllLinkedPeopleReadonly;
 - (void*)copyPropertyValue:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasLinkedPeople;
-- (BOOL)hasPhoto;
-- (BOOL)hasPreferredPhoto;
-- (BOOL)hasValidRecordID;
-- (unsigned int)hash;
+- (bool)hasLinkedPeople;
+- (bool)hasPhoto;
+- (bool)hasPreferredPhoto;
+- (bool)hasValidRecordID;
+- (unsigned long long)hash;
 - (id)initWithABPerson:(void*)arg1;
 - (id)initWithABRecordID:(int)arg1 fromAddressBook:(void*)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFromFacebook;
-- (BOOL)isMeCard;
-- (BOOL)isReadonly;
-- (BOOL)isRemote;
+- (bool)isEqual:(id)arg1;
+- (bool)isFromFacebook;
+- (bool)isMeCard;
+- (bool)isReadonly;
+- (bool)isRemote;
 - (int)kind;
-- (BOOL)linkToPerson:(id)arg1;
+- (bool)linkToPerson:(id)arg1;
 - (id)linkedPeople;
-- (unsigned int)linkedPeopleCount;
+- (unsigned long long)linkedPeopleCount;
 - (void)mergeProperties:(id)arg1 fromRecord:(void*)arg2;
 - (void)mergeValuesFromRecord:(void*)arg1;
 - (id)name;
-- (id)nameIgnoringOrganization:(BOOL)arg1;
+- (id)nameIgnoringOrganization:(bool)arg1;
 - (id)phoneticName;
 - (id)photoThumbnail;
 - (id)policiesForAllLinkedPeople;
@@ -87,7 +87,7 @@
 - (void*)record;
 - (int)recordID;
 - (unsigned int)recordType;
-- (BOOL)recordWasDeleted;
+- (bool)recordWasDeleted;
 - (id)reloadFromDB;
 - (void)removePropertyValue:(int)arg1;
 - (id)secondarySourceName;
@@ -96,8 +96,8 @@
 - (void)setNamePropertiesFromPerson:(id)arg1;
 - (void)setValue:(void*)arg1 forProperty:(int)arg2;
 - (void*)source;
-- (BOOL)updateNewPersonKindFromName;
-- (BOOL)updatePersonKindFromName;
+- (bool)updateNewPersonKindFromName;
+- (bool)updatePersonKindFromName;
 - (id)valueForProperty:(int)arg1;
 
 @end

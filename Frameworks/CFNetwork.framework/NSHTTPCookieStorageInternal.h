@@ -4,7 +4,7 @@
 
 @interface NSHTTPCookieStorageInternal : NSObject {
     NSRecursiveLock * dataLock;
-    BOOL  privateBrowsing;
+    bool  privateBrowsing;
     struct OpaqueCFHTTPCookieStorage { } * privateStorage;
     struct OpaqueCFHTTPCookieStorage { } * storage;
 }

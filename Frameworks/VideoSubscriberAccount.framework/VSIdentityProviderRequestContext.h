@@ -3,21 +3,21 @@
  */
 
 @interface VSIdentityProviderRequestContext : NSObject {
-    BOOL  _attemptedVerificationStateReset;
-    id /* block */  _completionHandler;
+    bool  _attemptedVerificationStateReset;
+    id  _completionHandler;
     VSIdentityProviderRequest * _request;
 }
 
-@property (nonatomic) BOOL attemptedVerificationStateReset;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic) bool attemptedVerificationStateReset;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic, retain) VSIdentityProviderRequest *request;
 
 - (void).cxx_destruct;
-- (BOOL)attemptedVerificationStateReset;
-- (id /* block */)completionHandler;
+- (bool)attemptedVerificationStateReset;
+- (id)completionHandler;
 - (id)request;
-- (void)setAttemptedVerificationStateReset:(BOOL)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setAttemptedVerificationStateReset:(bool)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setRequest:(id)arg1;
 
 @end

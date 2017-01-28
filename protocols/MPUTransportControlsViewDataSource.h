@@ -5,6 +5,6 @@
 
 @required
 
-- (UIControl<MPUTransportButton> *)transportControlsView:(MPUTransportControlsView *)arg1 buttonForControlType:(int)arg2;
+- (UIControl<MPUTransportButton> *)transportControlsView:(MPUTransportControlsView *)arg1 buttonForControlType:(long long)arg2;
 
 @end

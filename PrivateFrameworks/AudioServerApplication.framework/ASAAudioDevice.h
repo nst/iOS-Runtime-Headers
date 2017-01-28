@@ -4,19 +4,19 @@
 
 @interface ASAAudioDevice : ASAObject
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (nonatomic, readonly) double actualSampleRate;
-@property (getter=isAggregate, nonatomic, readonly) BOOL aggregate;
+@property (getter=isAggregate, nonatomic, readonly) bool aggregate;
 @property (nonatomic, readonly, copy) NSDictionary *aggregateDescription;
 @property (nonatomic, copy) NSString *clockDeviceUID;
 @property (nonatomic, readonly) unsigned int clockDomain;
 @property (nonatomic, readonly, copy) NSArray *controlObjectIDs;
-@property (getter=canBeDefaultDevice, nonatomic, readonly) BOOL defaultDevice;
-@property (getter=canBeDefaultSystemDevice, nonatomic, readonly) BOOL defaultSystemDevice;
+@property (getter=canBeDefaultDevice, nonatomic, readonly) bool defaultDevice;
+@property (getter=canBeDefaultSystemDevice, nonatomic, readonly) bool defaultSystemDevice;
 @property (nonatomic, readonly, copy) NSString *deviceUID;
-@property (nonatomic, readonly) BOOL hasInput;
-@property (nonatomic, readonly) BOOL hasOutput;
-@property (getter=isHidden, nonatomic, readonly) BOOL hidden;
+@property (nonatomic, readonly) bool hasInput;
+@property (nonatomic, readonly) bool hasOutput;
+@property (getter=isHidden, nonatomic, readonly) bool hidden;
 @property (nonatomic, readonly, copy) NSURL *iconURL;
 @property (nonatomic, readonly) unsigned int inputLatency;
 @property (nonatomic, readonly) unsigned int inputSafetyOffset;
@@ -34,24 +34,24 @@
 @property (nonatomic, readonly) unsigned int outputSafetyOffset;
 @property (nonatomic, readonly, copy) NSArray *outputStreamObjectIDs;
 @property (nonatomic, readonly, copy) NSArray *relatedDeviceObjectIDs;
-@property (getter=isRunning, nonatomic, readonly) BOOL running;
+@property (getter=isRunning, nonatomic, readonly) bool running;
 @property (nonatomic, readonly) unsigned int transportType;
 @property (nonatomic, readonly) unsigned int zeroTimestampPeriod;
 
 - (double)actualSampleRate;
 - (id)aggregateDescription;
-- (BOOL)canBeDefaultDevice;
-- (BOOL)canBeDefaultSystemDevice;
+- (bool)canBeDefaultDevice;
+- (bool)canBeDefaultSystemDevice;
 - (id)clockDeviceUID;
 - (unsigned int)clockDomain;
 - (id)controlObjectIDs;
 - (id)coreAudioClassName;
-- (BOOL)createAudioProcID:(int (**)arg1 forIOProc:(int (*)arg2 withClientData:(void*)arg3 error:(id*)arg4;
-- (BOOL)destroyAudioProcID:(int (*)arg1 error:(id*)arg2;
+- (bool)createAudioProcID:(int (**)arg1 forIOProc:(int (*)arg2 withClientData:(void*)arg3 error:(id*)arg4;
+- (bool)destroyAudioProcID:(int (*)arg1 error:(id*)arg2;
 - (id)deviceUID;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
-- (BOOL)hasInput;
-- (BOOL)hasOutput;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
+- (bool)hasInput;
+- (bool)hasOutput;
 - (id)iconURL;
 - (unsigned int)inputLatency;
 - (unsigned int)inputSafetyOffset;
@@ -59,10 +59,10 @@
 - (id)inputStreamUsageForAudioProc:(int (*)arg1;
 - (unsigned int)ioBufferFrameSize;
 - (float)ioCycleUsage;
-- (BOOL)isActive;
-- (BOOL)isAggregate;
-- (BOOL)isHidden;
-- (BOOL)isRunning;
+- (bool)isActive;
+- (bool)isAggregate;
+- (bool)isHidden;
+- (bool)isRunning;
 - (id)manufacturer;
 - (unsigned int)maximumIOBufferFrameSize;
 - (unsigned int)minimumIOBufferFrameSize;
@@ -76,14 +76,14 @@
 - (id)outputStreamUsageForAudioProc:(int (*)arg1;
 - (id)relatedDeviceObjectIDs;
 - (void)setClockDeviceUID:(id)arg1;
-- (BOOL)setInputStreamUsage:(id)arg1 forAudioProc:(int (*)arg2;
+- (bool)setInputStreamUsage:(id)arg1 forAudioProc:(int (*)arg2;
 - (void)setIoBufferFrameSize:(unsigned int)arg1;
 - (void)setIoCycleUsage:(float)arg1;
 - (void)setName:(id)arg1;
 - (void)setNominalSampleRate:(double)arg1;
-- (BOOL)setOutputStreamUsage:(id)arg1 forAudioProc:(int (*)arg2;
-- (BOOL)startAudioProc:(int (*)arg1 error:(id*)arg2;
-- (BOOL)stopAudioProc:(int (*)arg1 error:(id*)arg2;
+- (bool)setOutputStreamUsage:(id)arg1 forAudioProc:(int (*)arg2;
+- (bool)startAudioProc:(int (*)arg1 error:(id*)arg2;
+- (bool)stopAudioProc:(int (*)arg1 error:(id*)arg2;
 - (unsigned int)transportType;
 - (unsigned int)zeroTimestampPeriod;
 

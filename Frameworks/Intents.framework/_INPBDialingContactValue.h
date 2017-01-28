@@ -12,9 +12,9 @@
 @property (nonatomic, retain) _INPBContactValue *dialingContact;
 @property (nonatomic, retain) _INPBStringValue *dialingPhoneLabel;
 @property (nonatomic, retain) _INPBStringValue *dialingPhoneNumber;
-@property (nonatomic, readonly) BOOL hasDialingContact;
-@property (nonatomic, readonly) BOOL hasDialingPhoneLabel;
-@property (nonatomic, readonly) BOOL hasDialingPhoneNumber;
+@property (nonatomic, readonly) bool hasDialingContact;
+@property (nonatomic, readonly) bool hasDialingPhoneLabel;
+@property (nonatomic, readonly) bool hasDialingPhoneNumber;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)options;
@@ -26,13 +26,13 @@
 - (id)dialingPhoneLabel;
 - (id)dialingPhoneNumber;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDialingContact;
-- (BOOL)hasDialingPhoneLabel;
-- (BOOL)hasDialingPhoneNumber;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDialingContact;
+- (bool)hasDialingPhoneLabel;
+- (bool)hasDialingPhoneNumber;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDialingContact:(id)arg1;
 - (void)setDialingPhoneLabel:(id)arg1;
 - (void)setDialingPhoneNumber:(id)arg1;

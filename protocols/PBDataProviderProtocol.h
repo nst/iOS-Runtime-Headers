@@ -5,7 +5,7 @@
 
 @required
 
-- (void)helloCompletionBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)loadRepresentationForItemAtIndex:(void *)arg1 type:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 10: unsigned int, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSFileHandle *, NSError *, void*
+- (void)helloCompletionBlock:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (void)loadRepresentationForItemAtIndex:(void *)arg1 type:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 10: unsigned long long, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSData *, NSFileHandle *, NSError *, void*
 
 @end

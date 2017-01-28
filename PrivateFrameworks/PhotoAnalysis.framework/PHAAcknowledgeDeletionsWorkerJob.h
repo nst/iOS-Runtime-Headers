@@ -8,7 +8,7 @@
 - (void)_deleteStateRecordsForSuccessfulResults;
 - (void)finish;
 - (void)prepare;
-- (BOOL)startProcessingOnWorker:(id)arg1 withError:(id*)arg2;
-- (BOOL)stopProcessingOnWorker:(id)arg1 withError:(id*)arg2;
+- (bool)startProcessingOnWorker:(id)arg1 withError:(id*)arg2;
+- (bool)stopProcessingOnWorker:(id)arg1 withError:(id*)arg2;
 
 @end

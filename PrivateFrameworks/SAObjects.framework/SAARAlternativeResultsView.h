@@ -5,9 +5,9 @@
 @interface SAARAlternativeResultsView : SAAceView
 
 @property (nonatomic, copy) NSString *dialogIdentifier;
-@property (nonatomic) int rank;
+@property (nonatomic) long long rank;
 @property (nonatomic, retain) SAUIAddViews *resultView;
-@property (nonatomic) BOOL suggestedResult;
+@property (nonatomic) bool suggestedResult;
 @property (nonatomic, copy) NSString *utterance;
 
 + (id)alternativeResultsView;
@@ -16,14 +16,14 @@
 - (id)dialogIdentifier;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)rank;
+- (long long)rank;
 - (id)resultView;
 - (void)setDialogIdentifier:(id)arg1;
-- (void)setRank:(int)arg1;
+- (void)setRank:(long long)arg1;
 - (void)setResultView:(id)arg1;
-- (void)setSuggestedResult:(BOOL)arg1;
+- (void)setSuggestedResult:(bool)arg1;
 - (void)setUtterance:(id)arg1;
-- (BOOL)suggestedResult;
+- (bool)suggestedResult;
 - (id)utterance;
 
 @end

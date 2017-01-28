@@ -6,10 +6,10 @@
 
 + (double)_round:(double)arg1 withPlaces:(int)arg2;
 + (void)forceReload;
-+ (BOOL)isAlwaysOn;
-+ (BOOL)isHorseman;
-+ (BOOL)isInternalInstall;
-+ (BOOL)isNano;
++ (bool)isAlwaysOn;
++ (bool)isHorseman;
++ (bool)isInternalInstall;
++ (bool)isNano;
 + (id)sanitizeEventInfoForLogging:(id)arg1;
 + (double)systemUpTime;
 

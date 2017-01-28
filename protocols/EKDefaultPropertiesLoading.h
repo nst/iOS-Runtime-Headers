@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)shouldLoadDefaultProperties;
+- (bool)shouldLoadDefaultProperties;
 
 @optional
 

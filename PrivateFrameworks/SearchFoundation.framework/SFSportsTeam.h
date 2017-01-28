@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *record;
 @property (nonatomic, copy) NSString *score;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessibilityDescription;

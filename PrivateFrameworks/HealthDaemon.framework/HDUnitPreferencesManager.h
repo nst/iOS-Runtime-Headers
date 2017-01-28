@@ -30,7 +30,7 @@
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 - (void)removeUnitPreferenceObserver:(id)arg1;
-- (BOOL)setPreferredUnit:(id)arg1 forType:(id)arg2 error:(id*)arg3;
+- (bool)setPreferredUnit:(id)arg1 forType:(id)arg2 error:(id*)arg3;
 - (void)setPreferredUnitToDefaultIfNotSetForType:(id)arg1;
 - (id)unitPreferencesDictionaryForTypes:(id)arg1 authorizationServer:(id)arg2 error:(id*)arg3;
 

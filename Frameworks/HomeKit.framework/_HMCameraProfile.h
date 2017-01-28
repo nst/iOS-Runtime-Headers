@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) _HMCameraAudioControl *speakerControl;
 @property (nonatomic, readonly) _HMCameraStreamControl *streamControlInternal;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_createControls:(id)arg1;

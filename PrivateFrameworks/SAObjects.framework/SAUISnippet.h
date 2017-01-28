@@ -4,7 +4,7 @@
 
 @interface SAUISnippet : SAAceView
 
-@property (nonatomic) int category;
+@property (nonatomic) long long category;
 @property (nonatomic, retain) SAUIConfirmationOptions *confirmationOptions;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *summaryTitle;
@@ -13,11 +13,11 @@
 + (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;
 
-- (int)category;
+- (long long)category;
 - (id)confirmationOptions;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setCategory:(int)arg1;
+- (void)setCategory:(long long)arg1;
 - (void)setConfirmationOptions:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setSummaryTitle:(id)arg1;

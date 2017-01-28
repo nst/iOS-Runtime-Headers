@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSNumber *disambiguationPromptAmbiguityId;
 @property (nonatomic, copy) NSArray *disambiguationPromptResponseTargets;
 @property (nonatomic, copy) NSString *disambiguationPromptTargetDomain;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *nlInput;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *weightedPromptAbortValues;

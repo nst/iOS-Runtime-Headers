@@ -5,23 +5,23 @@
 @interface _UIFocusMapSnapshotOptions : NSObject <NSCopying> {
     <_UIFocusMapArea> * _containerSearchArea;
     _UIFocusedItemRegion * _focusedRegion;
-    BOOL  _needsContainerSearchAreaRefresh;
-    BOOL  _needsRegionSearchAreaRefresh;
+    bool  _needsContainerSearchAreaRefresh;
+    bool  _needsRegionSearchAreaRefresh;
     <_UIFocusMapArea> * _regionSearchArea;
     <_UIFocusRegionContainer> * _resultsContainer;
     <_UIFocusRegionContainer> * _rootContainer;
     UIScreen * _screen;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _snapshotFrame;
-    BOOL  _snapshotFrameIsEmpty;
+    bool  _snapshotFrameIsEmpty;
 }
 
 @property (nonatomic, readonly, copy) <_UIFocusMapArea> *containerSearchArea;
@@ -30,8 +30,8 @@
 @property (nonatomic) <_UIFocusRegionContainer> *resultsContainer;
 @property (nonatomic) <_UIFocusRegionContainer> *rootContainer;
 @property (nonatomic) UIScreen *screen;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshotFrame;
-@property (nonatomic, readonly) BOOL snapshotFrameIsEmpty;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } snapshotFrame;
+@property (nonatomic, readonly) bool snapshotFrameIsEmpty;
 
 - (void).cxx_destruct;
 - (void)_setNeedsSearchAreaRefresh;
@@ -47,8 +47,8 @@
 - (void)setResultsContainer:(id)arg1;
 - (void)setRootContainer:(id)arg1;
 - (void)setScreen:(id)arg1;
-- (void)setSnapshotFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshotFrame;
-- (BOOL)snapshotFrameIsEmpty;
+- (void)setSnapshotFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })snapshotFrame;
+- (bool)snapshotFrameIsEmpty;
 
 @end

@@ -6,35 +6,35 @@
     NSDictionary * _assetsByCategory;
     NSArray * _categories;
     PXPhotosDataSource * _dataSource;
-    unsigned int  _dataSourceIndex;
-    BOOL  _isPrepared;
-    unsigned int  _maximumAssetCount;
-    BOOL  _running;
-    unsigned int  _sampleIndex;
-    unsigned int  _sampleLength;
+    unsigned long long  _dataSourceIndex;
+    bool  _isPrepared;
+    unsigned long long  _maximumAssetCount;
+    bool  _running;
+    unsigned long long  _sampleIndex;
+    unsigned long long  _sampleLength;
     double  _updateInterval;
 }
 
 @property (setter=_setDataSource:, nonatomic, retain) PXPhotosDataSource *dataSource;
-@property (setter=_setDataSourceIndex:, nonatomic) unsigned int dataSourceIndex;
-@property (nonatomic) unsigned int maximumAssetCount;
-@property (getter=isRunning, nonatomic) BOOL running;
+@property (setter=_setDataSourceIndex:, nonatomic) unsigned long long dataSourceIndex;
+@property (nonatomic) unsigned long long maximumAssetCount;
+@property (getter=isRunning, nonatomic) bool running;
 @property (nonatomic) double updateInterval;
 
 - (void).cxx_destruct;
 - (id)_categoryForAsset:(id)arg1;
 - (void)_prepare;
 - (void)_setDataSource:(id)arg1;
-- (void)_setDataSourceIndex:(unsigned int)arg1;
+- (void)_setDataSourceIndex:(unsigned long long)arg1;
 - (void)_updateDataSource;
 - (id)dataSource;
-- (unsigned int)dataSourceIndex;
+- (unsigned long long)dataSourceIndex;
 - (id)init;
-- (BOOL)isRunning;
-- (unsigned int)maximumAssetCount;
+- (bool)isRunning;
+- (unsigned long long)maximumAssetCount;
 - (id)mutableChangeObject;
-- (void)setMaximumAssetCount:(unsigned int)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (void)setMaximumAssetCount:(unsigned long long)arg1;
+- (void)setRunning:(bool)arg1;
 - (void)setUpdateInterval:(double)arg1;
 - (double)updateInterval;
 

@@ -10,31 +10,31 @@
     }  _has;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _pccPdcchStates;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _scc0PdcchStates;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _scc1PdcchStates;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int durationMs;
-@property (nonatomic) BOOL hasDurationMs;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDurationMs;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, readonly) unsigned int*pccPdcchStates;
-@property (nonatomic, readonly) unsigned int pccPdcchStatesCount;
+@property (nonatomic, readonly) unsigned long long pccPdcchStatesCount;
 @property (nonatomic, readonly) unsigned int*scc0PdcchStates;
-@property (nonatomic, readonly) unsigned int scc0PdcchStatesCount;
+@property (nonatomic, readonly) unsigned long long scc0PdcchStatesCount;
 @property (nonatomic, readonly) unsigned int*scc1PdcchStates;
-@property (nonatomic, readonly) unsigned int scc1PdcchStatesCount;
+@property (nonatomic, readonly) unsigned long long scc1PdcchStatesCount;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)addPccPdcchState:(unsigned int)arg1;
@@ -49,27 +49,27 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)durationMs;
-- (BOOL)hasDurationMs;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDurationMs;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)pccPdcchStateAtIndex:(unsigned int)arg1;
+- (unsigned int)pccPdcchStateAtIndex:(unsigned long long)arg1;
 - (unsigned int*)pccPdcchStates;
-- (unsigned int)pccPdcchStatesCount;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned int)scc0PdcchStateAtIndex:(unsigned int)arg1;
+- (unsigned long long)pccPdcchStatesCount;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)scc0PdcchStateAtIndex:(unsigned long long)arg1;
 - (unsigned int*)scc0PdcchStates;
-- (unsigned int)scc0PdcchStatesCount;
-- (unsigned int)scc1PdcchStateAtIndex:(unsigned int)arg1;
+- (unsigned long long)scc0PdcchStatesCount;
+- (unsigned int)scc1PdcchStateAtIndex:(unsigned long long)arg1;
 - (unsigned int*)scc1PdcchStates;
-- (unsigned int)scc1PdcchStatesCount;
+- (unsigned long long)scc1PdcchStatesCount;
 - (void)setDurationMs:(unsigned int)arg1;
-- (void)setHasDurationMs:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setPccPdcchStates:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setScc0PdcchStates:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (void)setScc1PdcchStates:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setHasDurationMs:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setPccPdcchStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setScc0PdcchStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
+- (void)setScc1PdcchStates:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

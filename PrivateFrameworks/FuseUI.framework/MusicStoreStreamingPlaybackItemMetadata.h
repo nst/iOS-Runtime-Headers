@@ -4,8 +4,8 @@
 
 @interface MusicStoreStreamingPlaybackItemMetadata : MPMediaLibraryPlaybackItemMetadata {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _hasLoadedMediaItem;
-    BOOL  _isLoadingMediaItem;
+    bool  _hasLoadedMediaItem;
+    bool  _isLoadingMediaItem;
     NSMutableArray * _mediaItemLoadCompletionHandlers;
     MPStoreItemMetadata * _storeItemMetadata;
     MusicStoreItemMetadataContext * _storeItemMetadataContext;
@@ -13,8 +13,8 @@
 
 @property (nonatomic, retain) MusicStoreItemMetadataContext *storeItemMetadataContext;
 
-+ (BOOL)_shouldRespectMusicCellularDataSetting;
-+ (BOOL)_shouldRespectStoreCellularDataSetting;
++ (bool)_shouldRespectMusicCellularDataSetting;
++ (bool)_shouldRespectStoreCellularDataSetting;
 
 - (void).cxx_destruct;
 - (void)_registerForNotificationsForStoreItemMetadataContext:(id)arg1;
@@ -24,25 +24,25 @@
 - (id)albumArtistName;
 - (long long)albumStoreAdamID;
 - (id)albumTitle;
-- (BOOL)allowsAssetCaching;
+- (bool)allowsAssetCaching;
 - (id)artistName;
 - (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)composerName;
 - (id)contentTitle;
-- (unsigned int)contentType;
+- (unsigned long long)contentType;
 - (id)copyrightText;
 - (void)dealloc;
-- (int)endpointType;
+- (long long)endpointType;
 - (double)expectedDuration;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithStoreItemMetadataContext:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)loadMediaItemWithCompletionHandler:(id /* block */)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)loadMediaItemWithCompletionHandler:(id)arg1;
 - (void)setStoreItemMetadataContext:(id)arg1;
-- (BOOL)shouldReportPlayEventsToStore;
-- (BOOL)showComposer;
+- (bool)shouldReportPlayEventsToStore;
+- (bool)showComposer;
 - (long long)storeAdamID;
 - (id)storeItemMetadataContext;
 - (long long)storeSubscriptionAdamID;

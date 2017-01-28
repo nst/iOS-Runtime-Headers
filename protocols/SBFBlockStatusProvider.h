@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)isBlocked;
-- (BOOL)isPermanentlyBlocked;
-- (BOOL)isTemporarilyBlocked;
-- (BOOL)isThermallyBlocked;
+- (bool)isBlocked;
+- (bool)isPermanentlyBlocked;
+- (bool)isTemporarilyBlocked;
+- (bool)isThermallyBlocked;
 - (double)timeIntervalUntilUnblockedSinceReferenceDate;
 
 @end

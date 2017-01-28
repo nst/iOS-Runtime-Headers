@@ -3,18 +3,18 @@
  */
 
 @interface MLUBlurryView : UIView {
-    BOOL  _hasActivated;
-    BOOL  _shouldRasterizeForTransition;
+    bool  _hasActivated;
+    bool  _shouldRasterizeForTransition;
 }
 
-@property float blurRadius;
-@property (nonatomic) BOOL shouldRasterizeForTransition;
+@property double blurRadius;
+@property (nonatomic) bool shouldRasterizeForTransition;
 
 - (void)_activateBlurring;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (float)blurRadius;
-- (void)setBlurRadius:(float)arg1;
-- (void)setShouldRasterizeForTransition:(BOOL)arg1;
-- (BOOL)shouldRasterizeForTransition;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (double)blurRadius;
+- (void)setBlurRadius:(double)arg1;
+- (void)setShouldRasterizeForTransition:(bool)arg1;
+- (bool)shouldRasterizeForTransition;
 
 @end

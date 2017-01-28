@@ -4,13 +4,13 @@
 
 @interface SKUISettingsTableViewCell : UITableViewCell {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
     UIImageView * _disclosureChevron;
-    BOOL  _hasDisclosureChevron;
+    bool  _hasDisclosureChevron;
     SKUISettingDescriptionView * _settingDescriptionView;
 }
 
@@ -18,11 +18,11 @@
 
 - (void).cxx_destruct;
 - (void)displaySettingDescriptionView:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setBackgroundColor:(id)arg1;
-- (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
+- (bool)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
 - (id)settingDescriptionView;
 
 @end

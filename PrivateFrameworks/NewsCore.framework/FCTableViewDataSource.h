@@ -3,33 +3,33 @@
  */
 
 @interface FCTableViewDataSource : NSObject {
-    id /* block */  _equalityTest;
-    id /* block */  _identityValueProvider;
+    id  _equalityTest;
+    id  _identityValueProvider;
     NSOrderedSet * _sections;
     UITableView * _tableView;
 }
 
-@property (nonatomic, copy) id /* block */ equalityTest;
-@property (nonatomic, copy) id /* block */ identityValueProvider;
+@property (nonatomic, copy) id equalityTest;
+@property (nonatomic, copy) id identityValueProvider;
 @property (nonatomic, copy) NSOrderedSet *sections;
 @property (nonatomic, retain) UITableView *tableView;
 
 - (void).cxx_destruct;
 - (id)dataForRowAtIndexPath:(id)arg1;
-- (id /* block */)equalityTest;
-- (id /* block */)identityValueProvider;
+- (id)equalityTest;
+- (id)identityValueProvider;
 - (id)init;
-- (id)initWithTableView:(id)arg1 dataEqualityTest:(id /* block */)arg2 identityValueProvider:(id /* block */)arg3;
-- (int)numberOfRows;
-- (int)numberOfRowsInSection:(int)arg1;
-- (int)numberOfSections;
+- (id)initWithTableView:(id)arg1 dataEqualityTest:(id)arg2 identityValueProvider:(id)arg3;
+- (long long)numberOfRows;
+- (long long)numberOfRowsInSection:(long long)arg1;
+- (long long)numberOfSections;
 - (id)sections;
-- (void)setEqualityTest:(id /* block */)arg1;
-- (void)setIdentityValueProvider:(id /* block */)arg1;
+- (void)setEqualityTest:(id)arg1;
+- (void)setIdentityValueProvider:(id)arg1;
 - (void)setSections:(id)arg1;
 - (void)setTableView:(id)arg1;
-- (BOOL)setTableViewSections:(id)arg1;
+- (bool)setTableViewSections:(id)arg1;
 - (id)tableView;
-- (id)titleForHeaderInSection:(int)arg1;
+- (id)titleForHeaderInSection:(long long)arg1;
 
 @end

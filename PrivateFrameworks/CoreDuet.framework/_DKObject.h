@@ -12,21 +12,21 @@
 
 + (id)entityName;
 + (id)fetchObjectWithUUID:(id)arg1 context:(id)arg2;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
-- (BOOL)boolValue;
-- (BOOL)copyBaseObjectInfoFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (bool)boolValue;
+- (bool)copyBaseObjectInfoFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entityName;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)integerValue;
+- (long long)integerValue;
 - (id)metadata;
 - (id)metadataFromData:(id)arg1;
 - (id)metadataFromData:(id)arg1 cache:(id)arg2;

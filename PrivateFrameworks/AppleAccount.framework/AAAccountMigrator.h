@@ -4,6 +4,6 @@
 
 @interface AAAccountMigrator : NSObject
 
-+ (void)migrateAndSaveAccount:(id)arg1 handler:(id /* block */)arg2;
++ (void)migrateAndSaveAccount:(id)arg1 handler:(id)arg2;
 
 @end

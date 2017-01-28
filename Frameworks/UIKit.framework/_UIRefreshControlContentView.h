@@ -10,27 +10,27 @@
 
 @property (nonatomic, retain) NSAttributedString *attributedTitle;
 @property (nonatomic, retain) _UIFeedbackImpactBehavior *impactFeedbackBehavior;
-@property (nonatomic, readonly) float maximumSnappingHeight;
-@property (nonatomic, readonly) float minimumSnappingHeight;
+@property (nonatomic, readonly) double maximumSnappingHeight;
+@property (nonatomic, readonly) double minimumSnappingHeight;
 @property (nonatomic) UIRefreshControl *refreshControl;
-@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) long long style;
 @property (nonatomic, retain) UIColor *tintColor;
 
 - (void).cxx_destruct;
-- (float)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
+- (double)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
 - (id)attributedTitle;
-- (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
+- (void)didTransitionFromState:(long long)arg1 toState:(long long)arg2;
 - (id)impactFeedbackBehavior;
-- (float)maximumSnappingHeight;
-- (float)minimumSnappingHeight;
+- (double)maximumSnappingHeight;
+- (double)minimumSnappingHeight;
 - (id)refreshControl;
 - (void)refreshControlInvalidatedSnappingHeight;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setImpactFeedbackBehavior:(id)arg1;
 - (void)setRefreshControl:(id)arg1;
 - (void)setTintColor:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)tintColor;
-- (void)willTransitionFromState:(int)arg1 toState:(int)arg2;
+- (void)willTransitionFromState:(long long)arg1 toState:(long long)arg2;
 
 @end

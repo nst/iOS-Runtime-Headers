@@ -8,28 +8,28 @@
     NSDictionary * _curatorsByID;
     UIAlertController * _filterAlertController;
     MusicHairlineView * _hairlineView;
-    BOOL  _hasSubscribedPlaylistsCapability;
+    bool  _hasSubscribedPlaylistsCapability;
     MusicSwitcherButtonContainerView * _librarySwitcherButtonContainerView;
     MusicMatchLoadingViewController * _matchLoadingViewController;
     UIViewController * _noContentViewController;
-    unsigned int  _playlistsConfigurationOptions;
+    unsigned long long  _playlistsConfigurationOptions;
     MusicActionableHeaderView * _playlistsHeaderView;
     MusicPlaylistsWithNewActionViewConfiguration * _playlistsViewConfiguration;
     UIViewController * _playlistsViewController;
     SKUIProxyScrollView * _proxyScrollView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _proxyScrollViewContentInsetAdditions;
     MusicActionableHeaderView * _recentlyAddedPlaylistsHeaderView;
     MusicLibraryBrowseCollectionViewController * _recentlyAddedPlaylistsViewController;
     NSString * _selectedFilter;
-    BOOL  _selectedFilterIsCuratorID;
+    bool  _selectedFilterIsCuratorID;
     MusicPlaylistsWithNewActionViewConfiguration * _selectedPlaylistsViewConfiguration;
-    BOOL  _shouldShowMatchLoadingView;
-    BOOL  _shouldShowNoContentView;
+    bool  _shouldShowMatchLoadingView;
+    bool  _shouldShowNoContentView;
     MusicLibraryTopBarController * _topBarController;
     MusicVerticalScrollingContainerViewController * _verticalScrollingContainerViewController;
 }
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_recentlyAddedViewControllerWithClientContext:(id)arg1;
@@ -45,8 +45,8 @@
 
 - (void).cxx_destruct;
 - (void)_alertShowOfflineSwitchValueChangedAction:(id)arg1;
-- (float)_calculateHairlineViewHeight;
-- (BOOL)_calculateHasSubscribedPlaylistsCapability;
+- (double)_calculateHairlineViewHeight;
+- (bool)_calculateHasSubscribedPlaylistsCapability;
 - (void)_cloudUpdateInProgressDidChangeNotification:(id)arg1;
 - (void)_configureForSelectedFilter;
 - (void)_configureNoContentView:(id)arg1;
@@ -72,11 +72,11 @@
 - (id)_titleForPlaylistsOverviewFilter:(id)arg1;
 - (void)_updateChildViewController;
 - (void)_updateCuratorsMapping;
-- (void)_updateLibrarySwitcherButtonWithVerticalContainerItemsReload:(BOOL)arg1;
+- (void)_updateLibrarySwitcherButtonWithVerticalContainerItemsReload:(bool)arg1;
 - (void)_updateMatchLoadingViewVisibility;
-- (void)_updatePlaylistNoContentViewVisibilityForceReload:(BOOL)arg1;
-- (void)_updatePlaylistsHeaderMetricsAllowingInvalidationOfVerticalScrollingContainerLayout:(BOOL)arg1;
-- (void)_updateRecentlyAddedPlaylistsHeaderMetricsAllowingInvalidationOfVerticalScrollingContainerLayout:(BOOL)arg1;
+- (void)_updatePlaylistNoContentViewVisibilityForceReload:(bool)arg1;
+- (void)_updatePlaylistsHeaderMetricsAllowingInvalidationOfVerticalScrollingContainerLayout:(bool)arg1;
+- (void)_updateRecentlyAddedPlaylistsHeaderMetricsAllowingInvalidationOfVerticalScrollingContainerLayout:(bool)arg1;
 - (void)_updateRecentlyAddedViewMoreButton;
 - (void)_updateShouldShowMatchLoadingView;
 - (void)_updateSizeOfLibrarySwitcherButtonContainerView;
@@ -92,12 +92,12 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTabBarItem:(id)arg1;
 - (void)music_handleCreatePlaylistAction;
-- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (void)noContentViewDidTapButton:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)scrollViewDidChangeContentInset:(id)arg1;
 - (void)setClientContext:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)switcherButtonWasSelectedInContainerView:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;

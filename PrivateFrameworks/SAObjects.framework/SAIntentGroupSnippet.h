@@ -10,7 +10,7 @@
 @property (nonatomic, retain) SAIntentGroupProtobufMessage *intentResponse;
 @property (nonatomic, retain) <SAServerBoundCommand> *processSynapseFlowCommand;
 @property (nonatomic, copy) NSArray *snippetTemplates;
-@property (nonatomic) BOOL widgetAllowed;
+@property (nonatomic) bool widgetAllowed;
 @property (nonatomic, copy) NSNumber *widgetIndex;
 
 + (id)snippet;
@@ -29,10 +29,10 @@
 - (void)setIntentResponse:(id)arg1;
 - (void)setProcessSynapseFlowCommand:(id)arg1;
 - (void)setSnippetTemplates:(id)arg1;
-- (void)setWidgetAllowed:(BOOL)arg1;
+- (void)setWidgetAllowed:(bool)arg1;
 - (void)setWidgetIndex:(id)arg1;
 - (id)snippetTemplates;
-- (BOOL)widgetAllowed;
+- (bool)widgetAllowed;
 - (id)widgetIndex;
 
 @end

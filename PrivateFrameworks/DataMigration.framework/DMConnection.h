@@ -6,17 +6,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)changeVisibility:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)forceMigrationOnNextRebootWithCompletion:(id /* block */)arg1;
-- (void)isMigrationNeeded:(id /* block */)arg1;
-- (void)migrateCheckingNecessity:(BOOL)arg1 lastRelevantPlugin:(id)arg2 completion:(id /* block */)arg3;
-- (void)orderedPluginIdentifiersWithCompletion:(id /* block */)arg1;
-- (void)previousBuildVersion:(id /* block */)arg1;
+- (void)changeVisibility:(bool)arg1 completion:(id)arg2;
+- (void)forceMigrationOnNextRebootWithCompletion:(id)arg1;
+- (void)isMigrationNeeded:(id)arg1;
+- (void)migrateCheckingNecessity:(bool)arg1 lastRelevantPlugin:(id)arg2 completion:(id)arg3;
+- (void)orderedPluginIdentifiersWithCompletion:(id)arg1;
+- (void)previousBuildVersion:(id)arg1;
 - (void)reportMigrationFailure;
-- (void)testMigrationUIWithProgress:(BOOL)arg1 forceInvert:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)userDataDisposition:(id /* block */)arg1;
+- (void)testMigrationUIWithProgress:(bool)arg1 forceInvert:(bool)arg2 completion:(id)arg3;
+- (void)userDataDisposition:(id)arg1;
 
 @end

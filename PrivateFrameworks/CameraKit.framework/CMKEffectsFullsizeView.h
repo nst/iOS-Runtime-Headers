@@ -3,21 +3,21 @@
  */
 
 @interface CMKEffectsFullsizeView : CMKGLView {
-    unsigned int  _filterIndex;
+    unsigned long long  _filterIndex;
     CIFilter * _selectedFilter;
-    unsigned int  _selectedFilterIndex;
+    unsigned long long  _selectedFilterIndex;
 }
 
-@property unsigned int filterIndex;
+@property unsigned long long filterIndex;
 
 - (void).cxx_destruct;
 - (void)_layoutGLLayer;
-- (void)_renderWithInputImage:(id)arg1 ciContext:(id)arg2 mirrorRendering:(BOOL)arg3;
+- (void)_renderWithInputImage:(id)arg1 ciContext:(id)arg2 mirrorRendering:(bool)arg3;
 - (id)_updateSelectedFilter;
-- (unsigned int)filterIndex;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)renderPixelBuffer:(struct __CVBuffer { }*)arg1 ciContext:(id)arg2 mirrorRendering:(BOOL)arg3;
-- (void)setFilterIndex:(unsigned int)arg1;
-- (void)setFixedSize:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned long long)filterIndex;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)renderPixelBuffer:(struct __CVBuffer { }*)arg1 ciContext:(id)arg2 mirrorRendering:(bool)arg3;
+- (void)setFilterIndex:(unsigned long long)arg1;
+- (void)setFixedSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -8,6 +8,6 @@
 - (void)allow;
 - (void)deny;
 - (void)denyOnlyThisRequest;
-- (BOOL)shouldClearCache;
+- (bool)shouldClearCache;
 
 @end

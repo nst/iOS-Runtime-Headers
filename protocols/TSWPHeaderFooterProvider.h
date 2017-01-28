@@ -5,14 +5,14 @@
 
 @required
 
-- (float)bodyWidth;
+- (double)bodyWidth;
 - (TSKDocumentRoot *)documentRoot;
 - (TSWPStorage *)headerFooter:(int)arg1 fragmentAtIndex:(int)arg2;
 - (NSEnumerator *)headerFooterFragmentEnumerator;
 - (int)headerFooterTypeForModel:(id <TSKModel>)arg1;
 - (int)headerFragmentIndexForModel:(id <TSKModel>)arg1;
-- (BOOL)isHeaderFooterEmpty:(int)arg1;
-- (BOOL)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
-- (BOOL)usesSingleHeaderFooter;
+- (bool)isHeaderFooterEmpty:(int)arg1;
+- (bool)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
+- (bool)usesSingleHeaderFooter;
 
 @end

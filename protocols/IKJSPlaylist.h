@@ -5,13 +5,13 @@
 
 @required
 
-- (int)endAction;
+- (long long)endAction;
 - (id)init;
-- (IKJSMediaItem *)item:(int)arg1;
-- (unsigned int)length;
+- (IKJSMediaItem *)item:(long long)arg1;
+- (unsigned long long)length;
 - (IKJSMediaItem *)pop;
 - (void)push:(IKJSMediaItem *)arg1;
-- (void)setEndAction:(int)arg1;
-- (NSArray *)splice:(int)arg1 :(int)arg2 :(JSValue *)arg3;
+- (void)setEndAction:(long long)arg1;
+- (NSArray *)splice:(long long)arg1 :(long long)arg2 :(JSValue *)arg3;
 
 @end

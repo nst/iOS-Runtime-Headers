@@ -14,7 +14,7 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isPlayableOffline;
+- (bool)isPlayableOffline;
 - (id)lastModifiedDateOfEntryForKey:(id)arg1;
 - (long long)maxEntrySize;
 - (long long)maxSize;

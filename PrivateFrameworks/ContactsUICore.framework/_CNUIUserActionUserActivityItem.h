@@ -9,13 +9,13 @@
 @property (nonatomic, readonly) NSUserActivity *userActivity;
 
 - (void).cxx_destruct;
-- (unsigned int)_hashForIntent:(id)arg1;
-- (BOOL)_isIntent:(id)arg1 equalToOther:(id)arg2;
+- (unsigned long long)_hashForIntent:(id)arg1;
+- (bool)_isIntent:(id)arg1 equalToOther:(id)arg2;
 - (id)_personFromIntent:(id)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 userActivity:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 userActivity:(id)arg4 group:(long long)arg5 options:(unsigned long long)arg6;
+- (bool)isEqual:(id)arg1;
 - (id)performActionWithContext:(id)arg1;
 - (id)userActivity;
 

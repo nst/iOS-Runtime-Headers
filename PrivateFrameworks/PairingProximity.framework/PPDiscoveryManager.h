@@ -3,31 +3,31 @@
  */
 
 @interface PPDiscoveryManager : NSObject <CBCentralManagerDelegate> {
-    BOOL  _bluetoothIsScanning;
+    bool  _bluetoothIsScanning;
     CBCentralManager * _central;
     <PPDiscoveryManagerDelegate> * _discoveryDelegate;
     NSObject<OS_dispatch_queue> * _discoveryQueue;
-    int  _signalLimitOverride;
+    long long  _signalLimitOverride;
 }
 
-@property (nonatomic) BOOL bluetoothIsScanning;
+@property (nonatomic) bool bluetoothIsScanning;
 @property (nonatomic, retain) CBCentralManager *central;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <PPDiscoveryManagerDelegate> *discoveryDelegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *discoveryQueue;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int signalLimitOverride;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long signalLimitOverride;
 @property (readonly) Class superclass;
 
-+ (BOOL)isBluetoothConnected:(int)arg1;
-+ (BOOL)isBluetoothPoweredOn:(int)arg1;
++ (bool)isBluetoothConnected:(long long)arg1;
++ (bool)isBluetoothPoweredOn:(long long)arg1;
 + (id)sharedDiscoveryManager;
 
 - (void).cxx_destruct;
 - (void)begin;
 - (void)beginDiscovery;
-- (BOOL)bluetoothIsScanning;
+- (bool)bluetoothIsScanning;
 - (id)central;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;
@@ -36,12 +36,12 @@
 - (void)end;
 - (void)forceEndDiscovery;
 - (id)init;
-- (void)setBluetoothIsScanning:(BOOL)arg1;
+- (void)setBluetoothIsScanning:(bool)arg1;
 - (void)setCentral:(id)arg1;
 - (void)setDiscoveryDelegate:(id)arg1;
 - (void)setDiscoveryQueue:(id)arg1;
-- (void)setSignalLimitOverride:(int)arg1;
-- (int)signalLimitOverride;
-- (void)updateFromBTState:(int)arg1;
+- (void)setSignalLimitOverride:(long long)arg1;
+- (long long)signalLimitOverride;
+- (void)updateFromBTState:(long long)arg1;
 
 @end

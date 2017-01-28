@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setRightBarButtonEnabled:(BOOL)arg1;
+- (void)setRightBarButtonEnabled:(bool)arg1;
 - (void)shakeCard;
 
 @end

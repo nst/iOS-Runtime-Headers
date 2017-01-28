@@ -11,30 +11,30 @@
 @property (nonatomic, readonly) NSString *_applicationDataKey;
 @property (nonatomic, readonly) <HMApplicationData> *applicationDataContainer;
 @property (nonatomic, readonly) NSString *category;
-@property (nonatomic, readonly) id /* block */ sortedHomeKitItemComparator;
-@property (nonatomic, readonly) id /* block */ sortedHomeKitObjectComparator;
+@property (nonatomic, readonly) id sortedHomeKitItemComparator;
+@property (nonatomic, readonly) id sortedHomeKitObjectComparator;
 @property (nonatomic, copy) NSArray *sortedHomeKitObjectIdentifiers;
 
 + (id)_dataForHomeKitItem:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)_actionSetTypeComparator;
+- (id)_actionSetTypeComparator;
 - (id)_applicationDataKey;
-- (id /* block */)_homeKitItemDataComparator;
-- (id /* block */)_reorderableObjectDateAddedComparator;
-- (id /* block */)_reorderableObjectTitleComparator;
-- (id /* block */)_sortedHomeKitIdentifierComparator;
+- (id)_homeKitItemDataComparator;
+- (id)_reorderableObjectDateAddedComparator;
+- (id)_reorderableObjectTitleComparator;
+- (id)_sortedHomeKitIdentifierComparator;
 - (id)applicationDataContainer;
 - (id)category;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithApplicationDataContainer:(id)arg1 category:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setSortedHomeKitObjectIdentifiers:(id)arg1;
-- (id /* block */)sortedHomeKitItemComparator;
-- (id /* block */)sortedHomeKitObjectComparator;
+- (id)sortedHomeKitItemComparator;
+- (id)sortedHomeKitObjectComparator;
 - (id)sortedHomeKitObjectIdentifiers;
 
 @end

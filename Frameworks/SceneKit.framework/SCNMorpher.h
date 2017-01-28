@@ -4,35 +4,35 @@
 
 @interface SCNMorpher : NSObject <NSSecureCoding, SCNAnimatable> {
     SCNOrderedDictionary * _animations;
-    int  _calculationMode;
+    long long  _calculationMode;
     unsigned int  _isPresentationInstance;
     struct __C3DMorph { } * _morpher;
     NSString * _name;
-    BOOL  _shouldMorphNormals;
+    bool  _shouldMorphNormals;
     NSArray * _targets;
-    BOOL  _useSparseTargets;
+    bool  _useSparseTargets;
     NSMutableArray * _weights;
 }
 
 @property (readonly) NSArray *animationKeys;
-@property (nonatomic) int calculationMode;
+@property (nonatomic) long long calculationMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *targets;
 
 + (id)morpher;
 + (id)morpherWithMorphRef:(struct __C3DMorph { }*)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (const void*)__CFObject;
-- (BOOL)__removeAnimation:(id)arg1 forKey:(id)arg2;
+- (bool)__removeAnimation:(id)arg1 forKey:(id)arg2;
 - (void)_customDecodingOfSCNMorpher:(id)arg1;
 - (void)_customEncodingOfSCNMorpher:(id)arg1;
 - (void)_didDecodeSCNMorpher:(id)arg1;
-- (BOOL)_isUsingSparseTargets;
-- (void)_pauseAnimation:(BOOL)arg1 forKey:(id)arg2;
+- (bool)_isUsingSparseTargets;
+- (void)_pauseAnimation:(bool)arg1 forKey:(id)arg2;
 - (void)_syncEntityObjCModel;
 - (void)_syncObjCAnimations;
 - (void)_syncObjCModel;
@@ -40,13 +40,13 @@
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (id)animationForKey:(id)arg1;
 - (id)animationKeys;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; struct __CFArray {} *x7; bool x8; bool x9; bool x10; struct _C3DAnimationPendingEvent {} *x11; struct __C3DAllocator {} *x12; struct __CFDictionary {} *x13; struct __CFArray {} *x14; double x15; double x16; double x17; struct _opaque_pthread_mutex_t { long x_18_1_1; BOOL x_18_1_2[40]; } x18; int x19; int x20; int x21; int x22; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; struct __CFArray {} *x7; bool x8; bool x9; bool x10; struct _C3DAnimationPendingEvent {} *x11; struct __C3DAllocator {} *x12; struct __CFDictionary {} *x13; struct __CFArray {} *x14; double x15; double x16; double x17; struct _opaque_pthread_mutex_t { long long x_18_1_1; BOOL x_18_1_2[56]; } x18; int x19; int x20; int x21; int x22; }*)animationManager;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
-- (int)calculationMode;
+- (long long)calculationMode;
 - (void)convertToAdditiveWithBaseGeometry:(id)arg1;
 - (void)convertToSparseWithBaseGeometry:(id)arg1;
 - (id)copy;
-- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
+- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -56,8 +56,8 @@
 - (id)initPresentationMorpherWithMorphRef:(struct __C3DMorph { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMorphRef:(struct __C3DMorph { }*)arg1;
-- (BOOL)isAnimationForKeyPaused:(id)arg1;
-- (BOOL)isPausedOrPausedByInheritance;
+- (bool)isAnimationForKeyPaused:(id)arg1;
+- (bool)isPausedOrPausedByInheritance;
 - (struct __C3DMorph { }*)morphRef;
 - (id)name;
 - (void)pauseAnimationForKey:(id)arg1;
@@ -65,23 +65,23 @@
 - (id)presentationMorpher;
 - (void)removeAllAnimations;
 - (void)removeAnimationForKey:(id)arg1;
-- (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(float)arg2;
+- (void)removeAnimationForKey:(id)arg1 fadeOutDuration:(double)arg2;
 - (void)resumeAnimationForKey:(id)arg1;
 - (id)scene;
 - (struct __C3DScene { }*)sceneRef;
-- (void)setCalculationMode:(int)arg1;
+- (void)setCalculationMode:(long long)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setShouldMorphNormals:(BOOL)arg1;
-- (void)setSpeed:(float)arg1 forAnimationKey:(id)arg2;
+- (void)setShouldMorphNormals:(bool)arg1;
+- (void)setSpeed:(double)arg1 forAnimationKey:(id)arg2;
 - (void)setTargets:(id)arg1;
-- (void)setWantsCPUMorphing:(BOOL)arg1;
-- (void)setWeight:(float)arg1 forTargetAtIndex:(unsigned int)arg2;
+- (void)setWantsCPUMorphing:(bool)arg1;
+- (void)setWeight:(double)arg1 forTargetAtIndex:(unsigned long long)arg2;
 - (void)setWeights:(id)arg1;
-- (BOOL)shouldMorphNormals;
+- (bool)shouldMorphNormals;
 - (id)targets;
 - (void)unbindAnimatablePath:(id)arg1;
-- (BOOL)wantsCPUMorphing;
-- (float)weightForTargetAtIndex:(unsigned int)arg1;
+- (bool)wantsCPUMorphing;
+- (double)weightForTargetAtIndex:(unsigned long long)arg1;
 
 @end

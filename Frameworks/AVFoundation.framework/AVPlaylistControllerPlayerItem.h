@@ -3,7 +3,7 @@
  */
 
 @interface AVPlaylistControllerPlayerItem : AVPlayerItem {
-    BOOL  _duringInit;
+    bool  _duringInit;
     struct OpaqueFigPlaybackItem { } * _figPlaybackItem;
 }
 

@@ -4,7 +4,7 @@
 
 @interface _DPPrivacyBudgetManager : NSObject <_DPMaintenance>
 
-- (BOOL)budgetMaintenance;
+- (bool)budgetMaintenance;
 - (void)scheduleMaintenance;
 - (void)scheduleMaintenanceWithName:(id)arg1;
 

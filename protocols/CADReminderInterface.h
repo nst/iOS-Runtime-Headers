@@ -5,10 +5,10 @@
 
 @required
 
-- (void)CADDatabaseGetCountOfRemindersWithPredicate:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: EKReminderPredicate *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, int, void*
-- (void)CADDatabaseGetDefaultCalendarForNewRemindersWithReply:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, struct { int x1; int x2; }, void*
-- (void)CADDatabaseGetProperties:(void *)arg1 forReminders:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, void*
+- (void)CADDatabaseGetCountOfRemindersWithPredicate:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: EKReminderPredicate *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, int, void*
+- (void)CADDatabaseGetDefaultCalendarForNewRemindersWithReply:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, struct { int x1; int x2; }, void*
+- (void)CADDatabaseGetProperties:(void *)arg1 forReminders:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSArray *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, NSArray *, void*
 - (void)CADDatabaseSetDefaultCalendarForNewReminders:(struct { int x1; int x2; })arg1;
-- (void)CADScheduledTaskCacheGetDaysAndTaskCounts:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, void*
+- (void)CADScheduledTaskCacheGetDaysAndTaskCounts:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, NSArray *, void*
 
 @end

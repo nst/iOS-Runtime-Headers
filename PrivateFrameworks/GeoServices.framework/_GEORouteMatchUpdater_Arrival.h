@@ -18,6 +18,6 @@
 - (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithRoute:(id)arg1 arrivalStep:(id)arg2;
-- (BOOL)updateRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
+- (bool)updateRouteMatch:(id)arg1 previousRouteMatch:(id)arg2 forLocation:(id)arg3;
 
 @end

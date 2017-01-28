@@ -5,12 +5,12 @@
 @interface CHBoxcarFilterPointFIFO : CHPointFIFO {
     struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >="__begin_"^"__end_"^"__end_cap_"{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >="__first_"^ {}  _prevPoints;
     float  _spacing;
-    unsigned int  _width;
+    unsigned long long  _width;
 }
 
 @property (nonatomic) /* Warning: unhandled struct encoding: '{vector<float __attribute__((ext_vector_type(4)))' */ struct  prevPoints; /* unknown property attribute:  std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^}} */
 @property (nonatomic) float spacing;
-@property (nonatomic) unsigned int width;
+@property (nonatomic) unsigned long long width;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -18,13 +18,13 @@
 - (void)clear;
 - (void)emitAveragedPoint;
 - (void)flush;
-- (id)initWithFIFO:(id)arg1 width:(unsigned int)arg2;
-- (id)initWithFIFO:(id)arg1 width:(unsigned int)arg2 spacing:(float)arg3;
+- (id)initWithFIFO:(id)arg1 width:(unsigned long long)arg2;
+- (id)initWithFIFO:(id)arg1 width:(unsigned long long)arg2 spacing:(float)arg3;
 - (struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^ {})prevPoints;
 - (void)setPrevPoints:(struct vector<float __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^^{__compressed_pair<float * __attribute__((ext_vector_type(4))), std::__1::allocator<float __attribute__((ext_vector_type(4)))> >=^ {})arg1;
 - (void)setSpacing:(float)arg1;
-- (void)setWidth:(unsigned int)arg1;
+- (void)setWidth:(unsigned long long)arg1;
 - (float)spacing;
-- (unsigned int)width;
+- (unsigned long long)width;
 
 @end

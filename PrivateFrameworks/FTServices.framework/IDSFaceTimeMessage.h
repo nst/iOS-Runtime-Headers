@@ -10,9 +10,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (BOOL)hasRequiredKeys:(id*)arg1;
+- (bool)hasRequiredKeys:(id*)arg1;
 - (id)init;
-- (BOOL)isValidMessage;
+- (bool)isValidMessage;
 - (id)messageBody;
 - (id)requiredKeys;
 - (id)sessionToken;

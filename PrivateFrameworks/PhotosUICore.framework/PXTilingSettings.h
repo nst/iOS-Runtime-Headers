@@ -3,16 +3,16 @@
  */
 
 @interface PXTilingSettings : PXSettings {
-    BOOL  _flipLayoutsHorizontally;
+    bool  _flipLayoutsHorizontally;
 }
 
-@property (nonatomic) BOOL flipLayoutsHorizontally;
+@property (nonatomic) bool flipLayoutsHorizontally;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)flipLayoutsHorizontally;
+- (bool)flipLayoutsHorizontally;
 - (void)setDefaultValues;
-- (void)setFlipLayoutsHorizontally:(BOOL)arg1;
+- (void)setFlipLayoutsHorizontally:(bool)arg1;
 
 @end

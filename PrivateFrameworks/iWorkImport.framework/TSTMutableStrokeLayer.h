@@ -6,14 +6,14 @@
 
 @property (nonatomic) unsigned short columnOrRowIndex;
 
-- (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
+- (void)appendStroke:(id)arg1 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2 order:(int)arg3;
 - (void)flattenStrokeOrder;
-- (void)insertSpaceAtRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
+- (void)insertSpaceAtRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
 - (void)invalidate;
-- (void)invalidateRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
-- (void)moveRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(int)arg2;
-- (void)removeRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg1;
-- (void)setStroke:(id)arg1 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3;
-- (void)swapSegmentAtIndex:(int)arg1 withSegmentAtIndex:(int)arg2;
+- (void)invalidateRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
+- (void)moveRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toIndex:(long long)arg2;
+- (void)removeRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg1;
+- (void)setStroke:(id)arg1 inRange:(struct TSTSimpleRange { long long x1; unsigned long long x2; })arg2 order:(int)arg3;
+- (void)swapSegmentAtIndex:(long long)arg1 withSegmentAtIndex:(long long)arg2;
 
 @end

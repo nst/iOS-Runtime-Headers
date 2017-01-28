@@ -3,7 +3,7 @@
  */
 
 @interface MPUFontDescriptorCache : NSObject {
-    unsigned int  _maximumCapacity;
+    unsigned long long  _maximumCapacity;
     NSMutableArray * _orderedCachedFontDescriptors;
     MPUMutableFontDescriptor * _reusableMutableFontDescriptor;
 }
@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)_cachedImmutableFontDescriptorMatchingMutableFontDescriptor:(id)arg1;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
-- (id)cachedImmutableFontDescriptorForConfigurationBlock:(id /* block */)arg1;
+- (id)cachedImmutableFontDescriptorForConfigurationBlock:(id)arg1;
 - (id)cachedImmutableFontDescriptorMatchingMutableFontDescriptor:(id)arg1;
 - (void)dealloc;
 - (id)init;

@@ -15,7 +15,7 @@
     NSString * _preferredReachableService;
     NSArray * _relationshipEvents;
     NSUUID * _relationshipUUID;
-    int  _version;
+    long long  _version;
 }
 
 @property (nonatomic, copy) NSSet *addresses;
@@ -24,20 +24,20 @@
 @property (nonatomic, copy) NSData *archivedRemoteActivityDataShareID;
 @property (nonatomic, copy) NSData *archivedRemoteRelationshipShareID;
 @property (nonatomic, copy) NSString *cloudKitAddress;
+@property (nonatomic, readonly) NSDate *dateActivityDataBecameVisible;
 @property (nonatomic, readonly) NSDate *dateForLatestDataHidden;
-@property (nonatomic, readonly) NSDate *dateForLatestDataShown;
 @property (nonatomic, readonly) NSDate *dateForLatestOutgoingInviteRequest;
 @property (nonatomic, readonly) NSDate *dateForLatestRelationshipStart;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasIncomingInviteRequest;
-@property (nonatomic, readonly) BOOL hasOutgoingInviteRequest;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasIncomingInviteRequest;
+@property (nonatomic, readonly) bool hasOutgoingInviteRequest;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *incomingHandshakeToken;
-@property (nonatomic, readonly) BOOL isActivityDataCurrentlyVisible;
-@property (nonatomic, readonly) BOOL isAwaitingInviteResponse;
-@property (nonatomic, readonly) BOOL isFriendshipCurrentlyActive;
-@property (nonatomic, readonly) BOOL isMuteEnabled;
+@property (nonatomic, readonly) bool isActivityDataCurrentlyVisible;
+@property (nonatomic, readonly) bool isAwaitingInviteResponse;
+@property (nonatomic, readonly) bool isFriendshipCurrentlyActive;
+@property (nonatomic, readonly) bool isMuteEnabled;
 @property (nonatomic, copy) NSString *outgoingHandshakeToken;
 @property (nonatomic, copy) NSString *preferredReachableAddress;
 @property (nonatomic, copy) NSString *preferredReachableService;
@@ -45,17 +45,17 @@
 @property (nonatomic, copy) NSUUID *relationshipUUID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDate *timestamp;
-@property (nonatomic) int version;
+@property (nonatomic) long long version;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_enumerateEventsInReverseChronologicalOrderUsingBlock:(id /* block */)arg1;
-- (BOOL)_isActivityDataVisibleForDate:(id)arg1;
-- (id)_mostRecentEventsWithCount:(int)arg1;
-- (unsigned int)_nextAnchor;
+- (void)_enumerateEventsInReverseChronologicalOrderUsingBlock:(id)arg1;
+- (bool)_isActivityDataVisibleForDate:(id)arg1;
+- (id)_mostRecentEventsWithCount:(long long)arg1;
+- (unsigned long long)_nextAnchor;
 - (id)addresses;
 - (id)archivedCloudKitSystemFields;
 - (id)archivedRelationshipShareID;
@@ -63,24 +63,25 @@
 - (id)archivedRemoteRelationshipShareID;
 - (id)cloudKitAddress;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dateActivityDataBecameVisible;
 - (id)dateForLatestDataHidden;
-- (id)dateForLatestDataShown;
 - (id)dateForLatestOutgoingInviteRequest;
 - (id)dateForLatestRelationshipStart;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasIncomingInviteRequest;
-- (BOOL)hasOutgoingInviteRequest;
+- (bool)hasIncomingInviteRequest;
+- (bool)hasOutgoingInviteRequest;
 - (id)incomingHandshakeToken;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)insertEventWithType:(int)arg1;
+- (void)insertEventWithType:(long long)arg1;
 - (void)insertEvents:(id)arg1;
-- (BOOL)isActivityDataCurrentlyVisible;
-- (BOOL)isActivityDataVisibleForDate:(id)arg1;
-- (BOOL)isAwaitingInviteResponse;
-- (BOOL)isFriendshipCurrentlyActive;
-- (BOOL)isMuteEnabled;
+- (bool)isActivityDataCurrentlyVisible;
+- (bool)isActivityDataVisibleForDate:(id)arg1;
+- (bool)isAwaitingInviteResponse;
+- (bool)isFriendshipCurrentlyActive;
+- (bool)isHidingActivityDataForDate:(id)arg1;
+- (bool)isMuteEnabled;
 - (id)outgoingHandshakeToken;
 - (id)preferredReachableAddress;
 - (id)preferredReachableService;
@@ -98,13 +99,13 @@
 - (void)setPreferredReachableService:(id)arg1;
 - (void)setRelationshipEvents:(id)arg1;
 - (void)setRelationshipUUID:(id)arg1;
-- (void)setVersion:(int)arg1;
+- (void)setVersion:(long long)arg1;
 - (id)timestamp;
-- (int)version;
+- (long long)version;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-+ (void)_fitnessFriendRelationshipWithRecord:(id)arg1 relationshipEventRecords:(id)arg2 completion:(id /* block */)arg3;
++ (void)_fitnessFriendRelationshipWithRecord:(id)arg1 relationshipEventRecords:(id)arg2 completion:(id)arg3;
 + (id)fitnessFriendRelationshipsWithRelationshipAndEventRecords:(id)arg1;
 
 - (id)recordFromArchivedSystemFields;

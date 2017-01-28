@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSArray *bundleIdentifiers;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSString *engagedBundleId;
 @property (nonatomic, readonly) NSArray *feedbackItems;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned char)consumerSubType;

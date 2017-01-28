@@ -18,7 +18,7 @@
 @property (nonatomic, retain) LPiTunesMediaAsset *artwork;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *lyrics;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSArray *offers;

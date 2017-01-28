@@ -14,13 +14,13 @@
     NSSet * _whitelistedBundleIDs;
 }
 
-@property (getter=isAdTrackingEnabled, readonly) BOOL adTrackingEnabled;
+@property (getter=isAdTrackingEnabled, readonly) bool adTrackingEnabled;
 @property (readonly) NSSet *blacklistedBundleIDs;
 @property (readonly) NSNumber *maximumRating;
-@property (getter=isOpenInRestrictionInEffect, readonly) BOOL openInRestrictionInEffect;
+@property (getter=isOpenInRestrictionInEffect, readonly) bool openInRestrictionInEffect;
 @property (readonly) NSSet *removedSystemApplications;
 @property (readonly) NSSet *restrictedBundleIDs;
-@property (getter=isWhitelistEnabled, readonly) BOOL whitelistEnabled;
+@property (getter=isWhitelistEnabled, readonly) bool whitelistEnabled;
 @property (readonly) NSSet *whitelistedBundleIDs;
 
 + (id)activeRestrictionIdentifiers;
@@ -28,7 +28,7 @@
 
 - (id)_LSResolveIdentifiers:(id)arg1;
 - (void)addPendingChanges:(id)arg1;
-- (id)allowedOpenInAppBundleIDsAfterApplyingFilterToAppBundleIDs:(id)arg1 originatingAppBundleID:(id)arg2 originatingAccountIsManaged:(BOOL)arg3;
+- (id)allowedOpenInAppBundleIDsAfterApplyingFilterToAppBundleIDs:(id)arg1 originatingAppBundleID:(id)arg2 originatingAccountIsManaged:(bool)arg3;
 - (void)beginListeningForChanges;
 - (id)blacklistedBundleID;
 - (id)blacklistedBundleIDs;
@@ -38,21 +38,22 @@
 - (void)dealloc;
 - (void)handleMCEffectiveSettingsChanged;
 - (void)handleMCRemovedSystemAppsChanged;
+- (id)identifierForRemovedAppPrompt:(id)arg1;
 - (id)init;
-- (BOOL)isAdTrackingEnabled;
-- (BOOL)isAppExtensionRestricted:(id)arg1;
-- (BOOL)isApplicationRemoved:(id)arg1;
-- (BOOL)isApplicationRestricted:(id)arg1;
-- (BOOL)isApplicationRestricted:(id)arg1 checkFeatureRestrictions:(BOOL)arg2;
-- (BOOL)isFeatureAllowed:(unsigned int)arg1;
-- (BOOL)isOpenInRestrictionInEffect;
-- (BOOL)isRatingAllowed:(id)arg1;
-- (BOOL)isWhitelistEnabled;
+- (bool)isAdTrackingEnabled;
+- (bool)isAppExtensionRestricted:(id)arg1;
+- (bool)isApplicationRemoved:(id)arg1;
+- (bool)isApplicationRestricted:(id)arg1;
+- (bool)isApplicationRestricted:(id)arg1 checkFeatureRestrictions:(bool)arg2;
+- (bool)isFeatureAllowed:(unsigned long long)arg1;
+- (bool)isOpenInRestrictionInEffect;
+- (bool)isRatingAllowed:(id)arg1;
+- (bool)isWhitelistEnabled;
 - (id)maximumRating;
 - (id)pendingChanges;
 - (id)removedSystemApplications;
 - (id)restrictedBundleIDs;
-- (BOOL)setApplication:(id)arg1 removed:(BOOL)arg2;
+- (bool)setApplication:(id)arg1 removed:(bool)arg2;
 - (void)setBlacklistedBundleIDs:(id)arg1;
 - (void)setRemovedSystemApplications:(id)arg1;
 - (void)setRestrictedBundleIDs:(id)arg1;

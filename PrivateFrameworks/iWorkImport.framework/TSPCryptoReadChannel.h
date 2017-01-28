@@ -7,26 +7,26 @@
     struct _CCCryptor { } * _cryptor;
     SFUCryptoKey * _decryptionKey;
     NSObject<OS_dispatch_data> * _holdData;
-    unsigned long  _initialBytesIgnored;
+    unsigned long long  _initialBytesIgnored;
     char * _iv;
-    unsigned long  _ivRead;
-    unsigned int  _nextBlockIndex;
+    unsigned long long  _ivRead;
+    unsigned long long  _nextBlockIndex;
     <TSUStreamReadChannel> * _readChannel;
-    unsigned long  _remainingBlockSize;
+    unsigned long long  _remainingBlockSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_readBlocksWithHandler:(id /* block */)arg1;
+- (void)_readBlocksWithHandler:(id)arg1;
 - (void)_resetCryptor;
 - (void)close;
 - (void)dealloc;
 - (id)init;
 - (id)initWithReadChannel:(id)arg1 decryptionKey:(id)arg2 blockInfos:(id)arg3;
-- (void)readWithHandler:(id /* block */)arg1;
+- (void)readWithHandler:(id)arg1;
 
 @end

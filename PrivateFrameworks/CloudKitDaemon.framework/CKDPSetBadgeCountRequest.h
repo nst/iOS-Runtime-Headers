@@ -4,7 +4,7 @@
 
 @interface CKDPSetBadgeCountRequest : PBRequest <NSCopying> {
     unsigned int  _badgeCount;
-    BOOL  _forDevice;
+    bool  _forDevice;
     struct { 
         unsigned int badgeCount : 1; 
         unsigned int forDevice : 1; 
@@ -12,9 +12,9 @@
 }
 
 @property (nonatomic) unsigned int badgeCount;
-@property (nonatomic) BOOL forDevice;
-@property (nonatomic) BOOL hasBadgeCount;
-@property (nonatomic) BOOL hasForDevice;
+@property (nonatomic) bool forDevice;
+@property (nonatomic) bool hasBadgeCount;
+@property (nonatomic) bool hasForDevice;
 
 + (id)options;
 
@@ -23,19 +23,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)forDevice;
-- (BOOL)hasBadgeCount;
-- (BOOL)hasForDevice;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)forDevice;
+- (bool)hasBadgeCount;
+- (bool)hasForDevice;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setBadgeCount:(unsigned int)arg1;
-- (void)setForDevice:(BOOL)arg1;
-- (void)setHasBadgeCount:(BOOL)arg1;
-- (void)setHasForDevice:(BOOL)arg1;
+- (void)setForDevice:(bool)arg1;
+- (void)setHasBadgeCount:(bool)arg1;
+- (void)setHasForDevice:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

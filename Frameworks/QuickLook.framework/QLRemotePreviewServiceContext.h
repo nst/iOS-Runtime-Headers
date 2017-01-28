@@ -8,20 +8,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (void)getPrinterProxyWithCompletionHandler:(id /* block */)arg1;
-- (void)loadPreviewFromPreviewItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)previewBecameFullScreen:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewDidDisappear:(BOOL)arg1;
-- (void)previewWillAppear:(BOOL)arg1;
-- (void)previewWillDisappear:(BOOL)arg1;
+- (void)getPrinterProxyWithCompletionHandler:(id)arg1;
+- (void)loadPreviewFromPreviewItem:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)previewBecameFullScreen:(bool)arg1 animated:(bool)arg2;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewDidDisappear:(bool)arg1;
+- (void)previewWillAppear:(bool)arg1;
+- (void)previewWillDisappear:(bool)arg1;
 - (void)previewWillFinishAppearing;
 - (id)protocolHost;
 

@@ -13,12 +13,12 @@
 @property (nonatomic) id delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 @property (readonly) Class superclass;
 
-+ (BOOL)canDisplayError:(id)arg1;
++ (bool)canDisplayError:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_networkTypeChanged:(id)arg1;

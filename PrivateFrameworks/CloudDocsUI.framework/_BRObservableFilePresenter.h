@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) BRObservableFile *parent;
 @property (retain) NSOperationQueue *presentedItemOperationQueue;
 @property (copy) NSURL *presentedItemURL;
@@ -18,7 +18,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
 - (id)parent;
 - (void)presentedItemDidChange;
 - (void)presentedItemDidMoveToURL:(id)arg1;

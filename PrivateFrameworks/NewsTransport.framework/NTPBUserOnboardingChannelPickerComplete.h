@@ -4,9 +4,11 @@
 
 @interface NTPBUserOnboardingChannelPickerComplete : PBCodable <NSCopying> {
     NSMutableArray * _channelIds;
+    bool  _fromPersonalizeNews;
     struct { 
         unsigned int totalChannelSelections : 1; 
         unsigned int totalTopicSelections : 1; 
+        unsigned int fromPersonalizeNews : 1; 
     }  _has;
     NSMutableArray * _topicIds;
     int  _totalChannelSelections;
@@ -14,8 +16,10 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *channelIds;
-@property (nonatomic) BOOL hasTotalChannelSelections;
-@property (nonatomic) BOOL hasTotalTopicSelections;
+@property (nonatomic) bool fromPersonalizeNews;
+@property (nonatomic) bool hasFromPersonalizeNews;
+@property (nonatomic) bool hasTotalChannelSelections;
+@property (nonatomic) bool hasTotalTopicSelections;
 @property (nonatomic, retain) NSMutableArray *topicIds;
 @property (nonatomic) int totalChannelSelections;
 @property (nonatomic) int totalTopicSelections;
@@ -26,29 +30,33 @@
 - (void).cxx_destruct;
 - (void)addChannelId:(id)arg1;
 - (void)addTopicId:(id)arg1;
-- (id)channelIdAtIndex:(unsigned int)arg1;
+- (id)channelIdAtIndex:(unsigned long long)arg1;
 - (id)channelIds;
-- (unsigned int)channelIdsCount;
+- (unsigned long long)channelIdsCount;
 - (void)clearChannelIds;
 - (void)clearTopicIds;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTotalChannelSelections;
-- (BOOL)hasTotalTopicSelections;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)fromPersonalizeNews;
+- (bool)hasFromPersonalizeNews;
+- (bool)hasTotalChannelSelections;
+- (bool)hasTotalTopicSelections;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setChannelIds:(id)arg1;
-- (void)setHasTotalChannelSelections:(BOOL)arg1;
-- (void)setHasTotalTopicSelections:(BOOL)arg1;
+- (void)setFromPersonalizeNews:(bool)arg1;
+- (void)setHasFromPersonalizeNews:(bool)arg1;
+- (void)setHasTotalChannelSelections:(bool)arg1;
+- (void)setHasTotalTopicSelections:(bool)arg1;
 - (void)setTopicIds:(id)arg1;
 - (void)setTotalChannelSelections:(int)arg1;
 - (void)setTotalTopicSelections:(int)arg1;
-- (id)topicIdAtIndex:(unsigned int)arg1;
+- (id)topicIdAtIndex:(unsigned long long)arg1;
 - (id)topicIds;
-- (unsigned int)topicIdsCount;
+- (unsigned long long)topicIdsCount;
 - (int)totalChannelSelections;
 - (int)totalTopicSelections;
 - (void)writeTo:(id)arg1;

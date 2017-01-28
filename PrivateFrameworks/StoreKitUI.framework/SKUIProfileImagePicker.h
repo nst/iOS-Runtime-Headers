@@ -7,7 +7,7 @@
     UIView * _contentView;
     <SKUIProfileImagePickerDelegate> * _delegate;
     UILabel * _descriptionLabel;
-    BOOL  _firstApperance;
+    bool  _firstApperance;
     UIImagePickerController * _imagePicker;
     UIScrollView * _scrollView;
     UILabel * _titleLabel;
@@ -16,14 +16,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIProfileImagePickerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_fixCropRect:(id)arg1 forOriginalImage:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_didCancel;
-- (void)_presentImagePickerWithSourceType:(int)arg1;
+- (void)_presentImagePickerWithSourceType:(long long)arg1;
 - (void)_showImagePicker;
 - (void)_showImageSourcePicker;
 - (id)delegate;
@@ -32,6 +32,6 @@
 - (id)initWithClientContext:(id)arg1;
 - (void)loadView;
 - (void)setDelegate:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

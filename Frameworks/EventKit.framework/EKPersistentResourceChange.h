@@ -4,7 +4,7 @@
 
 @interface EKPersistentResourceChange : EKPersistentObject
 
-@property (nonatomic, readonly) BOOL alerted;
+@property (nonatomic, readonly) bool alerted;
 @property (nonatomic, readonly, retain) EKPersistentCalendar *calendar;
 @property (nonatomic, readonly, retain) EKPersistentCalendarItem *calendarItem;
 @property (nonatomic, readonly) unsigned int changeType;
@@ -23,7 +23,7 @@
 + (id)defaultPropertiesToLoad;
 + (id)relations;
 
-- (BOOL)alerted;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarItem;
 - (unsigned int)changeType;

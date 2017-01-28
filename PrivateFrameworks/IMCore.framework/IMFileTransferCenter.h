@@ -14,8 +14,8 @@
 
 @property (nonatomic, readonly) NSArray *activeTransferGUIDs;
 @property (nonatomic, readonly) NSArray *activeTransfers;
-@property (nonatomic, readonly) BOOL hasActiveFileTransfers;
-@property (nonatomic, readonly) BOOL hasPendingFileTransfers;
+@property (nonatomic, readonly) bool hasActiveFileTransfers;
+@property (nonatomic, readonly) bool hasPendingFileTransfers;
 @property (nonatomic, readonly) NSArray *orderedTransfers;
 @property (nonatomic, readonly) NSArray *orderedTransfersGUIDs;
 @property (nonatomic, readonly) NSDictionary *transfers;
@@ -28,7 +28,7 @@
 - (void).cxx_destruct;
 - (void)_addActiveTransfer:(id)arg1;
 - (void)_addPendingTransfer:(id)arg1;
-- (void)_addSpotlightProperties:(id)arg1 sender:(id)arg2 recipients:(id)arg3 incoming:(BOOL)arg4;
+- (void)_addSpotlightProperties:(id)arg1 sender:(id)arg2 recipients:(id)arg3 incoming:(bool)arg4;
 - (void)_addTransfer:(id)arg1;
 - (void)_addTransfer:(id)arg1 toAccount:(id)arg2;
 - (void)_clearTransfers;
@@ -43,7 +43,7 @@
 - (void)_removePendingTransfer:(id)arg1;
 - (void)acceptFileTransferIfPreauthorzed:(id)arg1;
 - (void)acceptTransfer:(id)arg1;
-- (void)acceptTransfer:(id)arg1 withPath:(id)arg2 autoRename:(BOOL)arg3 overwrite:(BOOL)arg4;
+- (void)acceptTransfer:(id)arg1 withPath:(id)arg2 autoRename:(bool)arg3 overwrite:(bool)arg4;
 - (void)acknowledgeAllPendingTransfers;
 - (void)acknowledgePendingTransfer:(id)arg1;
 - (id)activeTransferGUIDs;
@@ -53,27 +53,27 @@
 - (id)chatForTransfer:(id)arg1;
 - (void)clearFinishedTransfers;
 - (void)deleteTransfer:(id)arg1;
-- (BOOL)doesLocalURLRequireArchiving:(id)arg1 toHandle:(id)arg2;
+- (bool)doesLocalURLRequireArchiving:(id)arg1 toHandle:(id)arg2;
 - (id)guidForNewOutgoingTransferWithLocalURL:(id)arg1;
 - (id)guidsForStoredAttachmentPayloadData:(id)arg1 messageGUID:(id)arg2;
-- (BOOL)hasActiveFileTransfers;
-- (BOOL)hasPendingFileTransfers;
-- (BOOL)isFileTransfer:(id)arg1 preauthorizedWithDictionary:(id)arg2;
+- (bool)hasActiveFileTransfers;
+- (bool)hasPendingFileTransfers;
+- (bool)isFileTransfer:(id)arg1 preauthorizedWithDictionary:(id)arg2;
 - (id)orderedTransfers;
 - (id)orderedTransfersGUIDs;
 - (void)preauthorizeFileTransferFromOtherPerson:(id)arg1 account:(id)arg2 filename:(id)arg3 saveToPath:(id)arg4;
-- (BOOL)registerGUID:(id)arg1 forNewOutgoingTransferWithLocalURL:(id)arg2;
+- (bool)registerGUID:(id)arg1 forNewOutgoingTransferWithLocalURL:(id)arg2;
 - (void)registerTransferWithDaemon:(id)arg1;
 - (void)removeTransfer:(id)arg1;
 - (void)retargetTransfer:(id)arg1 toPath:(id)arg2;
 - (void)sendTransfer:(id)arg1;
-- (void)setAuxImageForTransfer:(id)arg1 value:(BOOL)arg2;
-- (void)setAuxVideoForTransfer:(id)arg1 value:(BOOL)arg2;
+- (void)setAuxImageForTransfer:(id)arg1 value:(bool)arg2;
+- (void)setAuxVideoForTransfer:(id)arg1 value:(bool)arg2;
 - (void)stopTransfer:(id)arg1;
 - (id)transferForGUID:(id)arg1;
-- (id)transferForGUID:(id)arg1 includeRemoved:(BOOL)arg2;
+- (id)transferForGUID:(id)arg1 includeRemoved:(bool)arg2;
 - (id)transfers;
 - (id)transfersForAccount:(id)arg1;
-- (BOOL)wasFileTransferPreauthorized:(id)arg1;
+- (bool)wasFileTransferPreauthorized:(id)arg1;
 
 @end

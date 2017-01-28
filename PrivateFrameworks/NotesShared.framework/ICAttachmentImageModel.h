@@ -4,17 +4,17 @@
 
 @interface ICAttachmentImageModel : ICAttachmentModel
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 
 - (id)activityItems;
-- (BOOL)canMarkup;
+- (bool)canMarkup;
 - (void)generatePreviewsInOperation:(id)arg1;
-- (id /* block */)genericBrickThumbnailCreator;
-- (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
-- (BOOL)hasThumbnailImage;
-- (BOOL)needToGeneratePreviews;
-- (BOOL)showThumbnailInNoteList;
+- (id)genericBrickThumbnailCreator;
+- (id)genericListThumbnailCreator;
+- (bool)hasPreviews;
+- (bool)hasThumbnailImage;
+- (bool)needToGeneratePreviews;
+- (bool)showThumbnailInNoteList;
 - (void)updateAttachmentSize;
 - (void)updateFileBasedAttributes;
 

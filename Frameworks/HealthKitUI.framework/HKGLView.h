@@ -4,55 +4,63 @@
 
 @interface HKGLView : GLKView {
     CADisplayLink * _displayLink;
-    BOOL  _displayLinkPaused;
+    bool  _displayLinkPaused;
     double  _lastUpdateTime;
     unsigned int  _latestDrawErrror;
-    BOOL  _needsRender;
+    bool  _needsRender;
     float  _preferredFramesPerSecond;
+    BKSProcessAssertion * _renderingAssertion;
     UIScreen * _screen;
-    BOOL  _synchronizesWithCA;
-    BOOL  _viewIsVisible;
-    BOOL  _viewWillMoveToWindow;
+    bool  _shouldBypassApplicationStateChecking;
+    bool  _synchronizesWithCA;
+    bool  _viewIsVisible;
+    bool  _viewWillMoveToWindow;
 }
 
-@property (getter=isPaused, nonatomic) BOOL paused;
+@property (getter=isPaused, nonatomic) bool paused;
 @property (nonatomic) float preferredFramesPerSecond;
-@property (nonatomic) BOOL synchronizesWithCA;
+@property (nonatomic) bool shouldBypassApplicationStateChecking;
+@property (nonatomic) bool synchronizesWithCA;
 @property (nonatomic, readonly) double timeSinceLastUpdate;
 
 + (void)_clearCachedProgramForVertexShader:(id)arg1 fragmentShader:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_acquireRenderingAssertionIfNeeded;
 - (void)_commonInit;
 - (void)_createDisplayLinkForScreen:(id)arg1;
 - (void)_displayLinkFired;
 - (void)_invalidateLastUpdateTime;
-- (BOOL)_isLastUpdateTimeValid;
-- (void)_loadVertexShader:(id)arg1 fragmentShader:(id)arg2 inBundle:(id)arg3 forProgram:(unsigned int*)arg4 cache:(BOOL)arg5;
+- (bool)_isLastUpdateTimeValid;
+- (void)_loadVertexShader:(id)arg1 fragmentShader:(id)arg2 inBundle:(id)arg3 forProgram:(unsigned int*)arg4 cache:(bool)arg5;
 - (void)_loadVertexShaderSource:(id)arg1 fragmentShaderSource:(id)arg2 forProgram:(unsigned int*)arg3;
-- (void)_pauseByNotification;
-- (void)_resumeByNotification;
+- (void)_pauseByNotification:(id)arg1;
+- (void)_releaseRenderingAssertion;
+- (void)_resumeByNotification:(id)arg1;
 - (void)_update;
 - (void)_updateGLLayerIsAsynchronous;
 - (void)_updateScreenIfChanged;
+- (void)_willResignActive:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isPaused;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isPaused;
 - (void)layoutSubviews;
 - (float)preferredFramesPerSecond;
 - (void)setNeedsRender;
-- (void)setPaused:(BOOL)arg1;
+- (void)setPaused:(bool)arg1;
 - (void)setPreferredFramesPerSecond:(float)arg1;
-- (void)setSynchronizesWithCA:(BOOL)arg1;
+- (void)setShouldBypassApplicationStateChecking:(bool)arg1;
+- (void)setSynchronizesWithCA:(bool)arg1;
+- (bool)shouldBypassApplicationStateChecking;
 - (id)snapshot;
-- (BOOL)synchronizesWithCA;
+- (bool)synchronizesWithCA;
 - (double)timeSinceLastUpdate;
 - (void)update;
-- (BOOL)viewIsVisible;
+- (bool)viewIsVisible;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 

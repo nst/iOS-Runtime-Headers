@@ -4,16 +4,16 @@
 
 @interface VMUTaskMemoryCache : NSObject {
     struct mapped_memory_t { } * _memoryRegions;
-    BOOL  _shouldTouchPages;
-    BOOL  _stopped;
+    bool  _shouldTouchPages;
+    bool  _stopped;
     unsigned int  _task;
-    BOOL  _taskIs64Bit;
+    bool  _taskIs64Bit;
 }
 
-+ (BOOL)taskIs64Bit:(unsigned int)arg1;
++ (bool)taskIs64Bit:(unsigned int)arg1;
 + (id)taskMemoryCacheForTask:(unsigned int)arg1;
 
-- (BOOL)copyRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 to:(void*)arg2;
+- (bool)copyRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 to:(void*)arg2;
 - (void)dealloc;
 - (void)finalize;
 - (void)flushMemoryCache;

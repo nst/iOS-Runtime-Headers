@@ -9,7 +9,7 @@
 @property (nonatomic, copy) FBSSceneSettings *settings;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)updateClientSettingsWithBlock:(id /* block */)arg1;
-- (void)updateSettingsWithBlock:(id /* block */)arg1;
+- (void)updateClientSettingsWithBlock:(id)arg1;
+- (void)updateSettingsWithBlock:(id)arg1;
 
 @end

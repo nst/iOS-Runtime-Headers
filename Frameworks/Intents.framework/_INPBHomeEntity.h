@@ -15,9 +15,9 @@
 
 @property (nonatomic) int deviceType;
 @property (nonatomic) int entityType;
-@property (nonatomic) BOOL hasDeviceType;
-@property (nonatomic) BOOL hasEntityType;
-@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) bool hasDeviceType;
+@property (nonatomic) bool hasEntityType;
+@property (nonatomic, readonly) bool hasName;
 @property (nonatomic, retain) _INPBString *name;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -29,18 +29,18 @@
 - (int)deviceType;
 - (id)dictionaryRepresentation;
 - (int)entityType;
-- (BOOL)hasDeviceType;
-- (BOOL)hasEntityType;
-- (BOOL)hasName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeviceType;
+- (bool)hasEntityType;
+- (bool)hasName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeviceType:(int)arg1;
 - (void)setEntityType:(int)arg1;
-- (void)setHasDeviceType:(BOOL)arg1;
-- (void)setHasEntityType:(BOOL)arg1;
+- (void)setHasDeviceType:(bool)arg1;
+- (void)setHasEntityType:(bool)arg1;
 - (void)setName:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

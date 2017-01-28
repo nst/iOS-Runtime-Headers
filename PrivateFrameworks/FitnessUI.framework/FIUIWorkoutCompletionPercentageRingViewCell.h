@@ -16,16 +16,16 @@
 @property (nonatomic, retain) UILabel *typeLabel;
 @property (nonatomic, retain) HKWorkout *workout;
 
-+ (float)_bottomLabelToSeparatorSpacing;
-+ (float)_ringDiameter;
-+ (float)_ringToTypeSpacing;
-+ (float)_ringTopPadding;
-+ (float)_typeToPercentageSpacing;
-+ (float)rowHeightForWorkout:(id)arg1 width:(float)arg2;
++ (double)_bottomLabelToSeparatorSpacing;
++ (double)_ringDiameter;
++ (double)_ringToTypeSpacing;
++ (double)_ringTopPadding;
++ (double)_typeToPercentageSpacing;
++ (double)rowHeightForWorkout:(id)arg1 width:(double)arg2;
 
 - (void).cxx_destruct;
-- (void)animateRingWithCompletion:(id /* block */)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (void)animateRingWithCompletion:(id)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)percentCompleteLabel;
 - (id)ringsView;
@@ -35,7 +35,7 @@
 - (void)setSeparatorView:(id)arg1;
 - (void)setTypeLabel:(id)arg1;
 - (void)setWorkout:(id)arg1;
-- (void)setWorkout:(id)arg1 fillRing:(BOOL)arg2;
+- (void)setWorkout:(id)arg1 fillRing:(bool)arg2;
 - (void)setWorkoutWithoutFillingRing:(id)arg1;
 - (id)typeLabel;
 - (id)workout;

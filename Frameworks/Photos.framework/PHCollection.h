@@ -4,20 +4,20 @@
 
 @interface PHCollection : PHObject {
     NSDate * _creationDate;
-    BOOL  _customSortAscending;
+    bool  _customSortAscending;
     int  _customSortKey;
-    unsigned int  _estimatedPhotosCount;
-    unsigned int  _estimatedVideosCount;
+    unsigned long long  _estimatedPhotosCount;
+    unsigned long long  _estimatedVideosCount;
     NSString * _localizedSubtitle;
 }
 
-@property (nonatomic, readonly) BOOL canContainAssets;
-@property (nonatomic, readonly) BOOL canContainCollections;
+@property (nonatomic, readonly) bool canContainAssets;
+@property (nonatomic, readonly) bool canContainCollections;
 @property (nonatomic, readonly) NSDate *creationDate;
-@property (nonatomic, readonly) BOOL customSortAscending;
+@property (nonatomic, readonly) bool customSortAscending;
 @property (nonatomic, readonly) int customSortKey;
-@property (nonatomic, readonly) unsigned int estimatedPhotosCount;
-@property (nonatomic, readonly) unsigned int estimatedVideosCount;
+@property (nonatomic, readonly) unsigned long long estimatedPhotosCount;
+@property (nonatomic, readonly) unsigned long long estimatedVideosCount;
 @property (nonatomic, readonly) NSString *localizedSubtitle;
 @property (nonatomic, readonly) NSString *localizedTitle;
 
@@ -29,21 +29,21 @@
 + (id)fetchTopLevelUserCollectionsWithOptions:(id)arg1;
 + (id)fetchType;
 + (id)managedEntityName;
-+ (BOOL)managedObjectSupportsTrashedState;
++ (bool)managedObjectSupportsTrashedState;
 
 - (void).cxx_destruct;
-- (BOOL)canContainAssets;
-- (BOOL)canContainCollections;
-- (BOOL)canPerformEditOperation:(int)arg1;
-- (unsigned int)collectionFixedOrderPriority;
-- (BOOL)collectionHasFixedOrder;
+- (bool)canContainAssets;
+- (bool)canContainCollections;
+- (bool)canPerformEditOperation:(long long)arg1;
+- (unsigned long long)collectionFixedOrderPriority;
+- (bool)collectionHasFixedOrder;
 - (id)creationDate;
-- (BOOL)customSortAscending;
+- (bool)customSortAscending;
 - (int)customSortKey;
 - (id)description;
-- (unsigned int)estimatedPhotosCount;
-- (unsigned int)estimatedVideosCount;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
+- (unsigned long long)estimatedPhotosCount;
+- (unsigned long long)estimatedVideosCount;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (id)localizedSubtitle;
 - (id)localizedTitle;
 

@@ -5,15 +5,15 @@
 
 @required
 
-- (void)paymentAuthorizationViewController:(void *)arg1 didAuthorizePayment:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentAuthorizationViewController *, PKPayment *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)paymentAuthorizationViewController:(void *)arg1 didAuthorizePayment:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentAuthorizationViewController *, PKPayment *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, void*
 - (void)paymentAuthorizationViewControllerDidFinish:(PKPaymentAuthorizationViewController *)arg1;
 
 @optional
 
-- (void)paymentAuthorizationViewController:(void *)arg1 didSelectPaymentMethod:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentAuthorizationViewController *, PKPaymentMethod *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
-- (void)paymentAuthorizationViewController:(void *)arg1 didSelectShippingAddress:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 10: PKPaymentAuthorizationViewController *, const void*, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, NSArray *, void*
-- (void)paymentAuthorizationViewController:(void *)arg1 didSelectShippingContact:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 10: PKPaymentAuthorizationViewController *, PKContact *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, NSArray *, void*
-- (void)paymentAuthorizationViewController:(void *)arg1 didSelectShippingMethod:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKPaymentAuthorizationViewController *, PKShippingMethod *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, void*
+- (void)paymentAuthorizationViewController:(void *)arg1 didSelectPaymentMethod:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentAuthorizationViewController *, PKPaymentMethod *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, void*
+- (void)paymentAuthorizationViewController:(void *)arg1 didSelectShippingAddress:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 10: PKPaymentAuthorizationViewController *, const void*, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, NSArray *, NSArray *, void*
+- (void)paymentAuthorizationViewController:(void *)arg1 didSelectShippingContact:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 10: PKPaymentAuthorizationViewController *, PKContact *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, NSArray *, NSArray *, void*
+- (void)paymentAuthorizationViewController:(void *)arg1 didSelectShippingMethod:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: PKPaymentAuthorizationViewController *, PKShippingMethod *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, NSArray *, void*
 - (void)paymentAuthorizationViewControllerWillAuthorizePayment:(PKPaymentAuthorizationViewController *)arg1;
 
 @end

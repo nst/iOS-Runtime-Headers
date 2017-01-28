@@ -6,7 +6,7 @@
     void * _iterator;
 }
 
-- (BOOL)getNextValue:(double*)arg1 secondsInDayOffset:(int*)arg2;
+- (bool)getNextValue:(double*)arg1 secondsInDayOffset:(int*)arg2;
 - (id)initWithIterator:(void*)arg1;
 
 @end

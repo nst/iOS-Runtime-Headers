@@ -6,14 +6,14 @@
 @required
 
 - (<SBDateLabelDelegate> *)delegate;
-- (BOOL)isAllDay;
-- (BOOL)isTimestamp;
+- (bool)isAllDay;
+- (bool)isTimestamp;
 - (int)labelType;
 - (void)prepareForReuse;
-- (void)setAllDay:(BOOL)arg1;
+- (void)setAllDay:(bool)arg1;
 - (void)setDelegate:(id <SBDateLabelDelegate>)arg1;
 - (void)setEndDate:(NSDate *)arg1 withTimeZone:(NSTimeZone *)arg2;
-- (void)setIsTimestamp:(BOOL)arg1;
+- (void)setIsTimestamp:(bool)arg1;
 - (void)setLabelType:(int)arg1;
 - (void)setStartDate:(NSDate *)arg1 withTimeZone:(NSTimeZone *)arg2;
 - (void)startCoalescingUpdates;

@@ -5,9 +5,9 @@
 
 @optional
 
-- (<SKUIIndexBarEntryEntityValueProviding> *)indexBarEntryEntityValueProviderAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfIndexBarEntries;
-- (<IKEntityValueProviding> *)sectionEntityValueProviderAtIndex:(int)arg1;
-- (unsigned int)sectionForSectionIndexBarEntryAtIndex:(unsigned int)arg1;
+- (<SKUIIndexBarEntryEntityValueProviding> *)indexBarEntryEntityValueProviderAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfIndexBarEntries;
+- (<IKEntityValueProviding> *)sectionEntityValueProviderAtIndex:(long long)arg1;
+- (unsigned long long)sectionForSectionIndexBarEntryAtIndex:(unsigned long long)arg1;
 
 @end

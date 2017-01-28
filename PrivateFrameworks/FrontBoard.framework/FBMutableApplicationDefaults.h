@@ -4,11 +4,11 @@
 
 @interface FBMutableApplicationDefaults : FBApplicationDefaults
 
-@property (nonatomic) int backgroundStyle;
-@property (nonatomic) int interfaceOrientation;
+@property (nonatomic) long long backgroundStyle;
+@property (nonatomic) long long interfaceOrientation;
 @property (nonatomic, copy) NSString *launchImageFile;
-@property (nonatomic) BOOL statusBarHidden;
-@property (nonatomic) BOOL statusBarHiddenWhenVerticallyCompact;
-@property (nonatomic) int statusBarStyle;
+@property (nonatomic) bool statusBarHidden;
+@property (nonatomic) bool statusBarHiddenWhenVerticallyCompact;
+@property (nonatomic) long long statusBarStyle;
 
 @end

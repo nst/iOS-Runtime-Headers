@@ -28,14 +28,14 @@
 + (id)predicateForGroupsWithNameMatching:(id)arg1;
 + (id)predicateForSubgroupsInGroupWithIdentifier:(id)arg1;
 + (id)predicateForiOSLegacyIdentifier:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)iOSLegacyIdentifier;
 - (id)identifier;
 - (id)init;
@@ -44,7 +44,7 @@
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 creationDate:(id)arg3 modificationDate:(id)arg4;
 - (id)initWithName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)modificationDate;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;

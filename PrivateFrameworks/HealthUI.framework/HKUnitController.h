@@ -10,17 +10,17 @@
 
 - (void).cxx_destruct;
 - (id)_changedKeysBetweenDictionary:(id)arg1 andDictionary:(id)arg2;
-- (id)_displayNameKey:(id)arg1 withNumber:(BOOL)arg2;
-- (id)_displayNameKeyForDataUnit:(id)arg1 withNumber:(BOOL)arg2;
+- (id)_displayNameKey:(id)arg1 withNumber:(bool)arg2;
+- (id)_displayNameKeyForDataUnit:(id)arg1 withNumber:(bool)arg2;
 - (id)_displayNameKeyForUnit:(id)arg1;
-- (void)_fetchHKUnitPreferencesWithAttempt:(int)arg1;
+- (void)_fetchHKUnitPreferencesWithAttempt:(long long)arg1;
 - (id)_generateDefaultHKUnitPreferences;
 - (void)_initHKUnitPreferences;
 - (void)_localeDidChange:(id)arg1;
 - (id)_longDisplayNameForUnit:(id)arg1;
 - (id)_longDisplayNameOverrideForDataUnit:(id)arg1;
 - (void)_postNotificationWithChangedKeys:(id)arg1;
-- (void)_refreshHKUnitPreferencesWithCompletion:(id /* block */)arg1;
+- (void)_refreshHKUnitPreferencesWithCompletion:(id)arg1;
 - (void)_unitPreferencesDidUpdate:(id)arg1;
 - (void)_updateHKUnitPreferences:(id)arg1;
 - (void)dealloc;

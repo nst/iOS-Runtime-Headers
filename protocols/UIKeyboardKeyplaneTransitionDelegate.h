@@ -5,9 +5,9 @@
 
 @required
 
-- (void)finishTransitionWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)finishTransitionWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 - (void)prepareForTransition;
-- (void)transitionDidFinish:(BOOL)arg1;
-- (void)updateProgress:(float)arg1 startHeight:(float)arg2 endHeight:(float)arg3;
+- (void)transitionDidFinish:(bool)arg1;
+- (void)updateProgress:(double)arg1 startHeight:(double)arg2 endHeight:(double)arg3;
 
 @end

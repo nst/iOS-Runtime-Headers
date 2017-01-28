@@ -6,15 +6,15 @@
 @required
 
 - (int)columnNumber;
-- (BOOL)isCurrentSheet:(NSString *)arg1;
-- (unsigned int)resolveFile:(NSString *)arg1;
-- (unsigned int)resolveFirstSheet:(NSString *)arg1 lastSheet:(NSString *)arg2;
+- (bool)isCurrentSheet:(NSString *)arg1;
+- (unsigned long long)resolveFile:(NSString *)arg1;
+- (unsigned long long)resolveFirstSheet:(NSString *)arg1 lastSheet:(NSString *)arg2;
 - (int)resolveFunctionName:(NSString *)arg1;
-- (unsigned int)resolveName:(NSString *)arg1;
-- (unsigned int)resolveSheet:(NSString *)arg1;
+- (unsigned long long)resolveName:(NSString *)arg1;
+- (unsigned long long)resolveSheet:(NSString *)arg1;
 - (EDTable *)resolveTable:(NSString *)arg1;
-- (unsigned int)resolveTableColumn:(EDTable *)arg1 columnName:(NSString *)arg2;
-- (unsigned int)resolveTableToSheetId:(NSString *)arg1;
+- (unsigned long long)resolveTableColumn:(EDTable *)arg1 columnName:(NSString *)arg2;
+- (unsigned long long)resolveTableToSheetId:(NSString *)arg1;
 - (int)rowNumber;
 
 @end

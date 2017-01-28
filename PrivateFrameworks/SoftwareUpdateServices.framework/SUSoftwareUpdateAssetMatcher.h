@@ -3,7 +3,7 @@
  */
 
 @interface SUSoftwareUpdateAssetMatcher : SUAssetStateMatcher {
-    BOOL  _checkTatsu;
+    bool  _checkTatsu;
     NSString * _fromBuild;
     NSString * _fromProductType;
     NSString * _fromReleaseType;
@@ -11,7 +11,7 @@
     SUPreferences * _preferences;
 }
 
-@property (nonatomic) BOOL compareWithTatsuForEligibility;
+@property (nonatomic) bool compareWithTatsuForEligibility;
 @property (nonatomic, readonly) NSString *fromBuild;
 @property (nonatomic, readonly) NSString *fromProductType;
 @property (nonatomic, readonly) NSString *fromReleaseType;
@@ -26,10 +26,10 @@
 - (id)_createSortedAndFilteredAssetResults:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
 - (id)_fileterPatchesIfNecessary:(id)arg1;
 - (id)_findMatchFromCandidates:(id)arg1 error:(id*)arg2;
-- (unsigned int)_getIndexOfHighestVersionedAsset:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
-- (BOOL)_isDeviceEligibleForUpdate:(id)arg1;
-- (BOOL)_isPossibleSoftwareUpdate:(id)arg1;
-- (BOOL)compareWithTatsuForEligibility;
+- (unsigned long long)_getIndexOfHighestVersionedAsset:(id)arg1 usingFirstKey:(id)arg2 secondKey:(id)arg3;
+- (bool)_isDeviceEligibleForUpdate:(id)arg1;
+- (bool)_isPossibleSoftwareUpdate:(id)arg1;
+- (bool)compareWithTatsuForEligibility;
 - (void)dealloc;
 - (id)fromBuild;
 - (id)fromProductType;
@@ -37,7 +37,7 @@
 - (id)fromVersion;
 - (id)initWithVersion:(id)arg1 build:(id)arg2 productType:(id)arg3 releaseType:(id)arg4 interestedStates:(int)arg5;
 - (id)preferences;
-- (void)setCompareWithTatsuForEligibility:(BOOL)arg1;
+- (void)setCompareWithTatsuForEligibility:(bool)arg1;
 - (void)setPreferences:(id)arg1;
 
 @end

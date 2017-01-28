@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSArray *mandatoryCharacteristics;
 @property (nonatomic, retain) NSArray *optionalCharacteristics;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

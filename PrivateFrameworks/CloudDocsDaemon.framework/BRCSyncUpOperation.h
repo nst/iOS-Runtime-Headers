@@ -18,7 +18,7 @@
     unsigned long long  _requestID;
     BRCServerZone * _serverZone;
     NSString * _stageID;
-    id /* block */  _syncUpCompletionBlock;
+    id  _syncUpCompletionBlock;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *conflictLosersToResolveByRecordID;
@@ -27,7 +27,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSMutableArray *deletedRecordIDs;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BRCLocalItem *itemNeedingPCSChaining;
 @property (nonatomic, retain) NSMutableDictionary *iworkRenamedShareIDsToNames;
 @property (nonatomic, retain) NSMutableArray *iworkUnsharedShareIDs;
@@ -39,15 +39,15 @@
 @property (nonatomic, retain) BRCServerZone *serverZone;
 @property (nonatomic, retain) NSString *stageID;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) id /* block */ syncUpCompletionBlock;
+@property (nonatomic, copy) id syncUpCompletionBlock;
 
 + (id)syncUpOperationForZone:(id)arg1 maxCost:(float)arg2 retryAfter:(unsigned long long*)arg3;
 
 - (void).cxx_destruct;
-- (void)_performModifyRecordsOrPCSChainOperationWithCompletion:(id /* block */)arg1;
-- (BOOL)_performPCSChainOperationIfNecessaryWithCompletion:(id /* block */)arg1;
-- (void)_performShareUpdateAndModifyRecordsWithCompletion:(id /* block */)arg1;
-- (void)_performUpdateSharingProtectionDataIfNecessary:(id /* block */)arg1;
+- (void)_performModifyRecordsOrPCSChainOperationWithCompletion:(id)arg1;
+- (bool)_performPCSChainOperationIfNecessaryWithCompletion:(id)arg1;
+- (void)_performShareUpdateAndModifyRecordsWithCompletion:(id)arg1;
+- (void)_performUpdateSharingProtectionDataIfNecessary:(id)arg1;
 - (void)_scheduleShareUpdateAndModifyRecordsAndZoneCreationOperation;
 - (void)_setSharingFieldsOnContentRecord:(id)arg1 withProtectionData:(id)arg2 baseToken:(id)arg3 routingKey:(id)arg4;
 - (id)conflictLosersToResolveByRecordID;
@@ -63,8 +63,8 @@
 - (id)iworkUnsharedShareIDs;
 - (void)main;
 - (id)packagesInFlight;
-- (void)performShareUpdate:(id /* block */)arg1;
-- (BOOL)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
+- (void)performShareUpdate:(id)arg1;
+- (bool)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsNeedingNewSharingProtectionInfo;
 - (id)recordsNeedingUpdatedSharingProtectionInfo;
@@ -82,9 +82,9 @@
 - (void)setRecordsToSave:(id)arg1;
 - (void)setServerZone:(id)arg1;
 - (void)setStageID:(id)arg1;
-- (void)setSyncUpCompletionBlock:(id /* block */)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (void)setSyncUpCompletionBlock:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 - (id)stageID;
-- (id /* block */)syncUpCompletionBlock;
+- (id)syncUpCompletionBlock;
 
 @end

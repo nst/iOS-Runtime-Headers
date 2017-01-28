@@ -3,29 +3,28 @@
  */
 
 @interface _KSDeviceInfo : NSObject {
-    BOOL  _incompatible;
+    bool  _incompatible;
     NSString * _name;
-    BOOL  _needsUpdate;
+    bool  _needsUpdate;
     NSString * _swVersion;
 }
 
-@property (nonatomic) BOOL incompatible;
+@property (nonatomic) bool incompatible;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) BOOL needsUpdate;
+@property (nonatomic) bool needsUpdate;
 @property (nonatomic, copy) NSString *swVersion;
 
 + (id)ksDeviceWithName:(id)arg1 swVersion:(id)arg2;
-+ (id)ksDeviceWithName:(id)arg1 swVersion:(id)arg2 needsUpgrade:(BOOL)arg3 incompatible:(BOOL)arg4;
++ (id)ksDeviceWithName:(id)arg1 swVersion:(id)arg2 needsUpgrade:(bool)arg3 incompatible:(bool)arg4;
 
 - (void).cxx_destruct;
-- (BOOL)incompatible;
+- (bool)incompatible;
 - (id)name;
-- (BOOL)needsUpdate;
-- (void)setIncompatible:(BOOL)arg1;
+- (bool)needsUpdate;
+- (void)setIncompatible:(bool)arg1;
 - (void)setName:(id)arg1;
-- (void)setNeedsUpdate:(BOOL)arg1;
+- (void)setNeedsUpdate:(bool)arg1;
 - (void)setSwVersion:(id)arg1;
 - (id)swVersion;
-- (BOOL)swVersionIsPostCloudKitSwitch;
 
 @end

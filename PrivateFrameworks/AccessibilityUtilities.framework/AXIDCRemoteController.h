@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AXIDCRemoteControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableData *inputBuffer;
 @property (nonatomic, retain) NSInputStream *inputStream;
 @property (nonatomic, retain) NSMutableData *outputBuffer;
@@ -41,9 +41,9 @@
 - (id)initWithService:(id)arg1;
 - (id)inputBuffer;
 - (id)inputStream;
-- (BOOL)isConnected;
-- (BOOL)isConnecting;
-- (BOOL)isSlave;
+- (bool)isConnected;
+- (bool)isConnecting;
+- (bool)isSlave;
 - (void)messageWasAcked:(id)arg1;
 - (id)name;
 - (id)nextMessageInQueue;
@@ -51,12 +51,12 @@
 - (id)outputBuffer;
 - (id)outputDataQueue;
 - (id)outputStream;
-- (BOOL)outputStreamReady;
+- (bool)outputStreamReady;
 - (void)receivedData:(id)arg1;
 - (void)resetConnection;
 - (void)sendDataChunk;
-- (BOOL)sendObject:(id)arg1;
-- (BOOL)sendObject:(id)arg1 withSendCompletion:(id /* block */)arg2;
+- (bool)sendObject:(id)arg1;
+- (bool)sendObject:(id)arg1 withSendCompletion:(id)arg2;
 - (id)service;
 - (void)setCurrentMessageInFlight:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -68,6 +68,6 @@
 - (void)setSecuritySettingsForStream:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setupStream:(id)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 
 @end

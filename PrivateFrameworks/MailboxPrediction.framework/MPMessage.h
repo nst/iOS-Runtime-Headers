@@ -6,7 +6,7 @@
     NSArray * _ccPeople;
     long long  _conversationID;
     NSDate * _dateSent;
-    BOOL  _isPriority;
+    bool  _isPriority;
     NSString * _listID;
     <MPMailbox> * _mailbox;
     NSString * _persistentID;
@@ -20,8 +20,8 @@
 @property (nonatomic, retain) NSDate *dateSent;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isPriority;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isPriority;
 @property (nonatomic, retain) NSString *listID;
 @property (nonatomic, retain) <MPMailbox> *mailbox;
 @property (nonatomic, retain) NSString *persistentID;
@@ -31,8 +31,8 @@
 @property (nonatomic, retain) NSArray *toPeople;
 
 + (id)messageWithArray:(id)arg1;
-+ (id)messageWithMailbox:(id)arg1 isPriority:(BOOL)arg2 subject:(id)arg3 dateSent:(id)arg4 persistentID:(id)arg5 conversationID:(long long)arg6 listID:(id)arg7 senderPerson:(id)arg8 toPeople:(id)arg9 ccPeople:(id)arg10;
-+ (BOOL)supportsSecureCoding;
++ (id)messageWithMailbox:(id)arg1 isPriority:(bool)arg2 subject:(id)arg3 dateSent:(id)arg4 persistentID:(id)arg5 conversationID:(long long)arg6 listID:(id)arg7 senderPerson:(id)arg8 toPeople:(id)arg9 ccPeople:(id)arg10;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)ccPeople;
@@ -42,9 +42,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMailbox:(id)arg1 isPriority:(BOOL)arg2 subject:(id)arg3 dateSent:(id)arg4 persistentID:(id)arg5 conversationID:(long long)arg6 listID:(id)arg7 senderPerson:(id)arg8 toPeople:(id)arg9 ccPeople:(id)arg10;
+- (id)initWithMailbox:(id)arg1 isPriority:(bool)arg2 subject:(id)arg3 dateSent:(id)arg4 persistentID:(id)arg5 conversationID:(long long)arg6 listID:(id)arg7 senderPerson:(id)arg8 toPeople:(id)arg9 ccPeople:(id)arg10;
 - (id)initWithMessageArray:(id)arg1;
-- (BOOL)isPriority;
+- (bool)isPriority;
 - (id)listID;
 - (id)mailbox;
 - (id)persistentID;
@@ -53,7 +53,7 @@
 - (void)setCcPeople:(id)arg1;
 - (void)setConversationID:(long long)arg1;
 - (void)setDateSent:(id)arg1;
-- (void)setIsPriority:(BOOL)arg1;
+- (void)setIsPriority:(bool)arg1;
 - (void)setListID:(id)arg1;
 - (void)setMailbox:(id)arg1;
 - (void)setPersistentID:(id)arg1;

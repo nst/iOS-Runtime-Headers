@@ -20,7 +20,7 @@
             float p; 
         } ; 
     }  mCenter;
-    BOOL  mDirty;
+    bool  mDirty;
     struct tmat4x4<float> { 
         struct tvec4<float> { 
             union { 

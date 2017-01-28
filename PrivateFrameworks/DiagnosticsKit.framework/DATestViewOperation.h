@@ -3,9 +3,9 @@
  */
 
 @interface DATestViewOperation : NSOperation {
-    BOOL  _cancelled;
-    BOOL  _executing;
-    BOOL  _finished;
+    bool  _cancelled;
+    bool  _executing;
+    bool  _finished;
     NSDictionary * _parameters;
     NSDictionary * _predicates;
     UIViewController * _presentingViewController;
@@ -26,10 +26,10 @@
 - (void)_finish;
 - (void)cancel;
 - (void)finish;
-- (BOOL)isAsynchronous;
-- (BOOL)isCancelled;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isAsynchronous;
+- (bool)isCancelled;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (id)parameters;
 - (id)predicates;
 - (void)presentViewController:(id)arg1;

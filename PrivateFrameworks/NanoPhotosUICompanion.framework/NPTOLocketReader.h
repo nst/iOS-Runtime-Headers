@@ -3,30 +3,30 @@
  */
 
 @interface NPTOLocketReader : NSObject <NSCopying> {
-    NPTOCachingFetchResult * _albumContents;
-    id /* block */  _albumContentsLoaderBlock;
+    PHFetchResult * _albumContents;
+    id  _albumContentsLoaderBlock;
     NPTOLocketSyncProgress * _syncProgress;
 }
 
-@property (nonatomic, retain) NPTOCachingFetchResult *albumContents;
-@property (nonatomic, copy) id /* block */ albumContentsLoaderBlock;
-@property (nonatomic, readonly) unsigned int numberOfLoadedPhotos;
-@property (nonatomic, readonly) unsigned int numberOfTotalPhotos;
+@property (nonatomic, retain) PHFetchResult *albumContents;
+@property (nonatomic, copy) id albumContentsLoaderBlock;
+@property (nonatomic, readonly) unsigned long long numberOfLoadedPhotos;
+@property (nonatomic, readonly) unsigned long long numberOfTotalPhotos;
 @property (nonatomic, retain) NPTOLocketSyncProgress *syncProgress;
 
 - (void).cxx_destruct;
-- (id)_assetsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)_assetsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)albumContents;
-- (id /* block */)albumContentsLoaderBlock;
+- (id)albumContentsLoaderBlock;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)enumerateThumbnailsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 handler:(id /* block */)arg2;
-- (unsigned int)indexOfPhotoWithIdentifier:(id)arg1;
-- (void)loadPhotoAtIndex:(unsigned int)arg1 handler:(id /* block */)arg2;
-- (void)loadPhotosAtIndices:(id)arg1 handler:(id /* block */)arg2;
-- (unsigned int)numberOfLoadedPhotos;
-- (unsigned int)numberOfTotalPhotos;
+- (void)enumerateThumbnailsInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 handler:(id)arg2;
+- (unsigned long long)indexOfPhotoWithIdentifier:(id)arg1;
+- (void)loadPhotoAtIndex:(unsigned long long)arg1 handler:(id)arg2;
+- (void)loadPhotosAtIndices:(id)arg1 handler:(id)arg2;
+- (unsigned long long)numberOfLoadedPhotos;
+- (unsigned long long)numberOfTotalPhotos;
 - (void)setAlbumContents:(id)arg1;
-- (void)setAlbumContentsLoaderBlock:(id /* block */)arg1;
+- (void)setAlbumContentsLoaderBlock:(id)arg1;
 - (void)setSyncProgress:(id)arg1;
 - (id)syncProgress;
 

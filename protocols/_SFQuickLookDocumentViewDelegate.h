@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)quickLookDocumentView:(_SFQuickLookDocumentView *)arg1 didSelectActionAtIndex:(int)arg2;
+- (void)quickLookDocumentView:(_SFQuickLookDocumentView *)arg1 didSelectActionAtIndex:(long long)arg2;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface TSDCAKeyframeAnimationContextCache : TSDCAPropertyAnimationContextCache {
-    BOOL  _isObjectTypeCGColor;
+    bool  _isObjectTypeCGColor;
     NSArray * _keyTimes;
     NSArray * _timingFunctions;
     NSArray * _values;
 }
 
-@property (nonatomic, readonly) BOOL isObjectTypeCGColor;
+@property (nonatomic, readonly) bool isObjectTypeCGColor;
 @property (nonatomic, readonly) NSArray *keyTimes;
 @property (nonatomic, readonly) NSArray *timingFunctions;
 @property (nonatomic, readonly) NSArray *values;
 
 - (id)initWithAnimation:(id)arg1;
-- (BOOL)isObjectTypeCGColor;
+- (bool)isObjectTypeCGColor;
 - (id)keyTimes;
 - (id)timingFunctions;
 - (id)values;

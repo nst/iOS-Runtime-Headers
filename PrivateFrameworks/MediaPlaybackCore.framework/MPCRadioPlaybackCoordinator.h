@@ -4,33 +4,33 @@
 
 @interface MPCRadioPlaybackCoordinator : NSObject <MPAVRoutingControllerDelegate> {
     RadioStation * _currentStation;
-    BOOL  _deviceIsDocked;
-    BOOL  _deviceIsLocked;
-    BOOL  _didPresentNotificationForCurrentItem;
+    bool  _deviceIsDocked;
+    bool  _deviceIsLocked;
+    bool  _didPresentNotificationForCurrentItem;
     int  _lockStateNotifyToken;
-    BOOL  _lockStateNotifyTokenIsValid;
+    bool  _lockStateNotifyTokenIsValid;
     void * _mediaRemoteCommandObserver;
     NSObject<OS_dispatch_source> * _pauseTimeoutTimerSource;
     MPAVRoute * _pickedRoute;
-    BOOL  _playbackIsPaused;
+    bool  _playbackIsPaused;
     RadioStation * _playbackNotificationStation;
     NSDate * _playbackTimeoutBeginDate;
     double  _playbackTimeoutDuration;
     MPCPlaybackTimeoutInfoController * _playbackTimeoutInfoController;
     MPUserNotification * _playbackTimeoutNotification;
-    BOOL  _playbackTimeoutNotificationDidExpire;
+    bool  _playbackTimeoutNotificationDidExpire;
     NSObject<OS_dispatch_source> * _playbackTimeoutNotificationExpirationTimerSource;
     MPAVController * _player;
     NSObject<OS_dispatch_source> * _presentPlaybackTimeoutTimerSource;
     RadioRecentStationsController * _recentStationsController;
     MPCReportingPlaybackObserver * _reportingPlaybackObserver;
     MPAVRoutingController * _routingController;
-    BOOL  _wasUsingBackgroundNetwork;
+    bool  _wasUsingBackgroundNetwork;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MPAVController *player;
 @property (nonatomic, retain) RadioRecentStationsController *recentStationsController;
 @property (nonatomic, retain) MPCReportingPlaybackObserver *reportingPlaybackObserver;
@@ -43,11 +43,11 @@
 - (void)_cancelPlaybackTimeoutNotificationExpirationTimer;
 - (void)_cancelPresentPlaybackTimeoutTimer;
 - (id)_currentStationFromPlayer;
-- (void)_dismissExpiredPlaybackTimeoutNotificationForced:(BOOL)arg1;
+- (void)_dismissExpiredPlaybackTimeoutNotificationForced:(bool)arg1;
 - (void)_effectiveVolumeDidChangeNotification:(id)arg1;
 - (void)_fullMuteDidChangeNotification:(id)arg1;
-- (BOOL)_isPauseTimeoutActive;
-- (BOOL)_isRadioRelevantItem:(id)arg1;
+- (bool)_isPauseTimeoutActive;
+- (bool)_isRadioRelevantItem:(id)arg1;
 - (void)_itemDurationDidBecomeAvailableNotification:(id)arg1;
 - (void)_itemIsInWishListDidChangeNotification:(id)arg1;
 - (void)_itemLikedStateDidChangeNotification:(id)arg1;
@@ -56,7 +56,7 @@
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_presentPlaybackTimeoutNotificationForCurrentItemIfNeeded;
 - (void)_radioModelDidChangeNotification:(id)arg1;
-- (void)_receivedUserNotificationResponseForUserNotification:(struct __CFUserNotification { }*)arg1 withResponseFlags:(unsigned long)arg2;
+- (void)_receivedUserNotificationResponseForUserNotification:(struct __CFUserNotification { }*)arg1 withResponseFlags:(unsigned long long)arg2;
 - (void)_resetPlaybackTimeoutInformation;
 - (void)_schedulePlaybackTimeoutNotificationExpirationTimerIfNeeded;
 - (void)_setCurrentStation:(id)arg1;
@@ -71,6 +71,6 @@
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setRecentStationsController:(id)arg1;
 - (void)setReportingPlaybackObserver:(id)arg1;
-- (void)setupPlaybackQueueWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)setupPlaybackQueueWithPlaybackContext:(id)arg1 completionHandler:(id)arg2;
 
 @end

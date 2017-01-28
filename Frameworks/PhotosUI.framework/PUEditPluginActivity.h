@@ -8,15 +8,15 @@
 
 @property (nonatomic, readonly) PUEditPlugin *plugin;
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 - (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_activitySettingsImage;
-- (BOOL)_isHiddenByDefault;
+- (bool)_isHiddenByDefault;
 - (id)activityTitle;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)initWithPlugin:(id)arg1;
 - (id)plugin;
 

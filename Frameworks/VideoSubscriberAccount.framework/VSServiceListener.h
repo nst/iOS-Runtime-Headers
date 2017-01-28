@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *entitlementName;
 @property (nonatomic, retain) NSXPCInterface *exportedInterface;
 @property (nonatomic, retain) id exportedObject;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -25,7 +25,7 @@
 - (id)exportedInterface;
 - (id)exportedObject;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)setConnectionHandlers:(id)arg1;
 - (void)setEntitlementName:(id)arg1;
 - (void)setExportedInterface:(id)arg1;

@@ -6,8 +6,8 @@
     NSString * clientIdentifier;
     NSObject<OS_xpc_object> * connection;
     NSObject<OS_dispatch_queue> * connectionQueue;
-    BOOL  didStop;
-    id /* block */  messageHandler;
+    bool  didStop;
+    id  messageHandler;
     int  notifyToken;
     NSObject<OS_dispatch_queue> * replyQueue;
     NSObject<OS_dispatch_queue> * sessionQueue;
@@ -15,16 +15,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)createConnection;
-- (BOOL)createSession;
+- (bool)createSession;
 - (void)dealloc;
-- (id)initWithClientName:(id)arg1 replyHandlerQueue:(id)arg2 messageHandler:(id /* block */)arg3;
-- (BOOL)registerForBSDNotifications;
+- (id)initWithClientName:(id)arg1 replyHandlerQueue:(id)arg2 messageHandler:(id)arg3;
+- (bool)registerForBSDNotifications;
 - (void)sendMessageToFud:(id)arg1;
-- (void)sendMessageToFud:(id)arg1 reply:(id /* block */)arg2;
+- (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
 - (void)stop;
 
 @end

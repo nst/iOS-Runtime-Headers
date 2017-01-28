@@ -14,7 +14,7 @@
 - (void)didEncodeData:(id)arg1;
 - (void)didFailWithError:(id)arg1;
 - (void)didSendData;
-- (BOOL)isAsynchronous;
+- (bool)isAsynchronous;
 - (void)main;
 - (id)message;
 - (void)setMessage:(id)arg1;

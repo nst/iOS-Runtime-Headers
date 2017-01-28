@@ -8,12 +8,12 @@
     NSURL * _url;
 }
 
-@property (nonatomic, readonly) int changedRowCount;
+@property (nonatomic, readonly) long long changedRowCount;
 @property (nonatomic, readonly) struct sqlite3 { }*handle;
 @property (nonatomic, readonly) NSError *lastError;
 @property (nonatomic, readonly) int lastErrorCode;
 @property (nonatomic, readonly) NSString *lastErrorMessage;
-@property (nonatomic, readonly) int lastInsertRowID;
+@property (nonatomic, readonly) long long lastInsertRowID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (id)_errorWithErrorCode:(int)arg1;
@@ -22,8 +22,8 @@
 + (id)writeAheadLogURLForDatabaseURL:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_openWithFlags:(int)arg1 error:(id*)arg2;
-- (int)changedRowCount;
+- (bool)_openWithFlags:(int)arg1 error:(id*)arg2;
+- (long long)changedRowCount;
 - (int)checkpointWriteAheadLogWithLogFrameCount:(int*)arg1 checkpointedFrameCount:(int*)arg2;
 - (int)close;
 - (void)dealloc;
@@ -34,8 +34,8 @@
 - (id)lastError;
 - (int)lastErrorCode;
 - (id)lastErrorMessage;
-- (int)lastInsertRowID;
-- (BOOL)openWithAccessType:(int)arg1 error:(id*)arg2;
+- (long long)lastInsertRowID;
+- (bool)openWithAccessType:(long long)arg1 error:(id*)arg2;
 - (id)queue;
 
 @end

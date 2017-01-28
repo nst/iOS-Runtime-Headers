@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) unsigned int efficacy;
-@property (nonatomic) BOOL hasEfficacy;
-@property (nonatomic) BOOL hasSource;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic) bool hasEfficacy;
+@property (nonatomic) bool hasSource;
+@property (nonatomic) bool hasType;
 @property (nonatomic) unsigned int source;
 @property (nonatomic) unsigned int type;
 
@@ -25,17 +25,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)efficacy;
-- (BOOL)hasEfficacy;
-- (BOOL)hasSource;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEfficacy;
+- (bool)hasSource;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEfficacy:(unsigned int)arg1;
-- (void)setHasEfficacy:(BOOL)arg1;
-- (void)setHasSource:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasEfficacy:(bool)arg1;
+- (void)setHasSource:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setSource:(unsigned int)arg1;
 - (void)setType:(unsigned int)arg1;
 - (unsigned int)source;

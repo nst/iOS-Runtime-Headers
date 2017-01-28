@@ -5,12 +5,12 @@
 @interface PXRunNodeOperation : NSOperation {
     NSLock * __stateLock;
     PXRunNode * _runNode;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (nonatomic, readonly) NSLock *_stateLock;
 @property (nonatomic, readonly) PXRunNode *runNode;
-@property (readonly) unsigned int state;
+@property (readonly) unsigned long long state;
 
 + (id)keyPathsForValuesAffectingIsExecuting;
 + (id)keyPathsForValuesAffectingIsFinished;
@@ -18,17 +18,17 @@
 
 - (void).cxx_destruct;
 - (id)_stateLock;
-- (BOOL)_transitionToState:(unsigned int)arg1;
-- (BOOL)cancelIfAble;
-- (BOOL)completeIfAble;
+- (bool)_transitionToState:(unsigned long long)arg1;
+- (bool)cancelIfAble;
+- (bool)completeIfAble;
 - (id)init;
 - (id)initWithRunNode:(id)arg1;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
-- (BOOL)isReady;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (bool)isReady;
 - (id)runNode;
 - (void)start;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

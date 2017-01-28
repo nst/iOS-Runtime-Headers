@@ -4,6 +4,6 @@
 
 @interface VTUIRegularExpressionMatcher : NSObject
 
-+ (int)matchWithString:(id)arg1 TrailingStr:(id)arg2 LeadingStr:(id)arg3 Pattern:(id)arg4;
++ (long long)matchWithString:(id)arg1 TrailingStr:(id)arg2 LeadingStr:(id)arg3 Pattern:(id)arg4;
 
 @end

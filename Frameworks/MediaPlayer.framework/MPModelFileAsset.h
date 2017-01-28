@@ -4,17 +4,17 @@
 
 @interface MPModelFileAsset : MPModelObject {
     NSString * _filePath;
-    BOOL  _nonPurgeable;
-    int  _protectionType;
-    int  _qualityType;
-    BOOL  _usesPurchaseBundle;
+    bool  _nonPurgeable;
+    long long  _protectionType;
+    long long  _qualityType;
+    bool  _usesPurchaseBundle;
 }
 
 @property (nonatomic, copy) NSString *filePath;
-@property (getter=isNonPurgeable, nonatomic) BOOL nonPurgeable;
-@property (nonatomic) int protectionType;
-@property (nonatomic) int qualityType;
-@property (nonatomic) BOOL usesPurchaseBundle;
+@property (getter=isNonPurgeable, nonatomic) bool nonPurgeable;
+@property (nonatomic) long long protectionType;
+@property (nonatomic) long long qualityType;
+@property (nonatomic) bool usesPurchaseBundle;
 
 + (id)__MPModelPropertyFileAssetFilePath__PROPERTY;
 + (id)__MPModelPropertyFileAssetNonPurgeable__PROPERTY;
@@ -29,16 +29,16 @@
 + (id)allSupportedProperties;
 
 - (void).cxx_destruct;
-- (id)descriptionWithType:(int)arg1;
+- (id)descriptionWithType:(long long)arg1;
 - (id)filePath;
-- (BOOL)isNonPurgeable;
-- (int)protectionType;
-- (int)qualityType;
+- (bool)isNonPurgeable;
+- (long long)protectionType;
+- (long long)qualityType;
 - (void)setFilePath:(id)arg1;
-- (void)setNonPurgeable:(BOOL)arg1;
-- (void)setProtectionType:(int)arg1;
-- (void)setQualityType:(int)arg1;
-- (void)setUsesPurchaseBundle:(BOOL)arg1;
-- (BOOL)usesPurchaseBundle;
+- (void)setNonPurgeable:(bool)arg1;
+- (void)setProtectionType:(long long)arg1;
+- (void)setQualityType:(long long)arg1;
+- (void)setUsesPurchaseBundle:(bool)arg1;
+- (bool)usesPurchaseBundle;
 
 @end

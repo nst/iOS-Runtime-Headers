@@ -4,21 +4,21 @@
 
 @interface SAWatchData : AceObject <SAAceSerializable>
 
-@property (nonatomic) BOOL configuredForLeftWrist;
+@property (nonatomic) bool configuredForLeftWrist;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *interfaceOrientation;
 @property (readonly) Class superclass;
 
 + (id)watchData;
 + (id)watchDataWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)configuredForLeftWrist;
+- (bool)configuredForLeftWrist;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)interfaceOrientation;
-- (void)setConfiguredForLeftWrist:(BOOL)arg1;
+- (void)setConfiguredForLeftWrist:(bool)arg1;
 - (void)setInterfaceOrientation:(id)arg1;
 
 @end

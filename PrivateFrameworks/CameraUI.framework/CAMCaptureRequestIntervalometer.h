@@ -7,18 +7,18 @@
     double  _delay;
     <CAMCaptureRequestIntervalometerDelegate> * _delegate;
     double  _interval;
-    int  _maximumCount;
+    long long  _maximumCount;
     CAMCaptureRequest * _prototypeRequest;
-    int  _remaining;
+    long long  _remaining;
 }
 
 @property (nonatomic, readonly) CAMPreciseTimer *_timer;
 @property (nonatomic, readonly) double delay;
 @property (nonatomic, readonly) <CAMCaptureRequestIntervalometerDelegate> *delegate;
 @property (nonatomic, readonly) double interval;
-@property (nonatomic, readonly) int maximumCount;
+@property (nonatomic, readonly) long long maximumCount;
 @property (nonatomic, copy) CAMCaptureRequest *prototypeRequest;
-@property (nonatomic) int remaining;
+@property (nonatomic) long long remaining;
 
 - (void).cxx_destruct;
 - (void)_generateRequestForDelegate;
@@ -26,14 +26,14 @@
 - (double)delay;
 - (id)delegate;
 - (id)init;
-- (id)initWithDelegate:(id)arg1 interval:(double)arg2 delay:(double)arg3 maximumCount:(int)arg4;
+- (id)initWithDelegate:(id)arg1 interval:(double)arg2 delay:(double)arg3 maximumCount:(long long)arg4;
 - (double)interval;
 - (void)manuallyGenerateRequest;
-- (int)maximumCount;
+- (long long)maximumCount;
 - (id)prototypeRequest;
-- (int)remaining;
+- (long long)remaining;
 - (void)setPrototypeRequest:(id)arg1;
-- (void)setRemaining:(int)arg1;
+- (void)setRemaining:(long long)arg1;
 - (void)startGeneratingRequests;
 - (void)stopGeneratingRequests;
 

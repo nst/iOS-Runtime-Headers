@@ -3,28 +3,28 @@
  */
 
 @interface DKHostRequest : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     DKDiagnosticAttributes * _diagnostic;
     NSError * _error;
-    BOOL  _failedToPresentViewController;
-    BOOL  _isCancelled;
+    bool  _failedToPresentViewController;
+    bool  _isCancelled;
     UIViewController * _presentingViewController;
     <NSCopying> * _requestIdentifier;
     DKResult * _result;
-    id /* block */  _setupWithContext;
-    id /* block */  _teardown;
+    id  _setupWithContext;
+    id  _teardown;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (nonatomic, retain) DKDiagnosticAttributes *diagnostic;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL failedToPresentViewController;
-@property (nonatomic) BOOL isCancelled;
+@property (nonatomic) bool failedToPresentViewController;
+@property (nonatomic) bool isCancelled;
 @property (nonatomic, retain) UIViewController *presentingViewController;
 @property (nonatomic, retain) <NSCopying> *requestIdentifier;
 @property (nonatomic, retain) DKResult *result;
-@property (nonatomic, copy) id /* block */ setupWithContext;
-@property (nonatomic, copy) id /* block */ teardown;
+@property (nonatomic, copy) id setupWithContext;
+@property (nonatomic, copy) id teardown;
 
 - (void).cxx_destruct;
 - (void)_beginDiagnosticWithRemoteViewController:(id)arg1;
@@ -36,27 +36,27 @@
 - (void)beginWithParameters:(id)arg1;
 - (void)cancel;
 - (void)cancelTimedOutWithInfo:(id)arg1;
-- (id /* block */)completion;
+- (id)completion;
 - (id)diagnostic;
 - (id)error;
-- (BOOL)failedToPresentViewController;
+- (bool)failedToPresentViewController;
 - (id)init;
-- (id)initWithDiagnostic:(id)arg1 completion:(id /* block */)arg2 presentingViewController:(id)arg3;
-- (BOOL)isCancelled;
+- (id)initWithDiagnostic:(id)arg1 completion:(id)arg2 presentingViewController:(id)arg3;
+- (bool)isCancelled;
 - (id)presentingViewController;
 - (id)requestIdentifier;
 - (id)result;
-- (void)setCompletion:(id /* block */)arg1;
+- (void)setCompletion:(id)arg1;
 - (void)setDiagnostic:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setFailedToPresentViewController:(BOOL)arg1;
-- (void)setIsCancelled:(BOOL)arg1;
+- (void)setFailedToPresentViewController:(bool)arg1;
+- (void)setIsCancelled:(bool)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;
 - (void)setResult:(id)arg1;
-- (void)setSetupWithContext:(id /* block */)arg1;
-- (void)setTeardown:(id /* block */)arg1;
-- (id /* block */)setupWithContext;
-- (id /* block */)teardown;
+- (void)setSetupWithContext:(id)arg1;
+- (void)setTeardown:(id)arg1;
+- (id)setupWithContext;
+- (id)teardown;
 
 @end

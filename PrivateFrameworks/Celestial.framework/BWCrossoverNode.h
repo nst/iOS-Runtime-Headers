@@ -15,7 +15,7 @@
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
-- (id)initWithMediaType:(unsigned long)arg1;
+- (id)initWithMediaType:(unsigned int)arg1;
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;

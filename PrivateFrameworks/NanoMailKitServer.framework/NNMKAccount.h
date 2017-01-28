@@ -6,15 +6,15 @@
     NSString * _accountId;
     NSString * _displayName;
     NSArray * _emailAddresses;
-    BOOL  _shouldArchive;
+    bool  _shouldArchive;
 }
 
 @property (nonatomic, retain) NSString *accountId;
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSArray *emailAddresses;
-@property (nonatomic) BOOL shouldArchive;
+@property (nonatomic) bool shouldArchive;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountId;
@@ -26,7 +26,7 @@
 - (void)setAccountId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEmailAddresses:(id)arg1;
-- (void)setShouldArchive:(BOOL)arg1;
-- (BOOL)shouldArchive;
+- (void)setShouldArchive:(bool)arg1;
+- (bool)shouldArchive;
 
 @end

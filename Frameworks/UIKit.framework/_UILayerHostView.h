@@ -5,7 +5,7 @@
 @interface _UILayerHostView : UIView
 
 @property (nonatomic) unsigned int contextID;
-@property (nonatomic) BOOL inheritsSecurity;
+@property (nonatomic) bool inheritsSecurity;
 @property (nonatomic, readonly, retain) CALayerHost *layerHost;
 
 + (Class)layerClass;
@@ -15,9 +15,9 @@
 - (void)_snapshotAdjustedMediaTiming:(id)arg1;
 - (unsigned int)contextID;
 - (void)dealloc;
-- (BOOL)inheritsSecurity;
+- (bool)inheritsSecurity;
 - (id)layerHost;
 - (void)setContextID:(unsigned int)arg1;
-- (void)setInheritsSecurity:(BOOL)arg1;
+- (void)setInheritsSecurity:(bool)arg1;
 
 @end

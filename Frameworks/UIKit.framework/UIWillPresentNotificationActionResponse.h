@@ -4,13 +4,13 @@
 
 @interface UIWillPresentNotificationActionResponse : BSActionResponse
 
-@property (nonatomic, readonly) unsigned int options;
+@property (nonatomic, readonly) unsigned long long options;
 
-+ (id)responseWithOptions:(unsigned int)arg1;
++ (id)responseWithOptions:(unsigned long long)arg1;
 
 - (id)initWithInfo:(id)arg1 error:(id)arg2;
-- (id)initWithOptions:(unsigned int)arg1;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
-- (unsigned int)options;
+- (id)initWithOptions:(unsigned long long)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
+- (unsigned long long)options;
 
 @end

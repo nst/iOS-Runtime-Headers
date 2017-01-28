@@ -24,7 +24,7 @@
 + (id)propertiesToFetch;
 + (id)propertySetName;
 
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(bool)arg3;
 - (long long)pendingPlayCount;
 - (long long)pendingShareCount;
 - (long long)pendingViewCount;

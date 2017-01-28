@@ -4,33 +4,33 @@
 
 @interface MCJobQueue : NSObject {
     NSObject<OS_dispatch_queue> * _executionQueue;
-    id /* block */  _executionQueueAbortCompletionBlock;
+    id  _executionQueueAbortCompletionBlock;
     NSObject<OS_dispatch_group> * _jobGroup;
     NSObject<OS_dispatch_queue> * _jobQueue;
     <MCJobQueueObserver> * _observer;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *executionQueue;
-@property (nonatomic, copy) id /* block */ executionQueueAbortCompletionBlock;
+@property (nonatomic, copy) id executionQueueAbortCompletionBlock;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *jobGroup;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *jobQueue;
 @property (nonatomic) <MCJobQueueObserver> *observer;
 
 - (void).cxx_destruct;
-- (void)abortEnqueuedJobsCompletionBlock:(id /* block */)arg1;
-- (void)enqueueJob:(id /* block */)arg1;
+- (void)abortEnqueuedJobsCompletionBlock:(id)arg1;
+- (void)enqueueJob:(id)arg1;
 - (id)executionQueue;
-- (id /* block */)executionQueueAbortCompletionBlock;
+- (id)executionQueueAbortCompletionBlock;
 - (id)init;
 - (void)jobDidFinish;
 - (id)jobGroup;
 - (id)jobQueue;
 - (id)observer;
 - (void)setExecutionQueue:(id)arg1;
-- (void)setExecutionQueueAbortCompletionBlock:(id /* block */)arg1;
+- (void)setExecutionQueueAbortCompletionBlock:(id)arg1;
 - (void)setJobGroup:(id)arg1;
 - (void)setJobQueue:(id)arg1;
 - (void)setObserver:(id)arg1;
-- (void)waitForEnqueuedJobsToCompleteCompletionBlock:(id /* block */)arg1;
+- (void)waitForEnqueuedJobsToCompleteCompletionBlock:(id)arg1;
 
 @end

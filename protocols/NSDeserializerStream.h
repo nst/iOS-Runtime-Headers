@@ -5,9 +5,9 @@
 
 @required
 
-- (id)initFromMemoryNoCopy:(const void*)arg1 length:(unsigned int)arg2 freeWhenDone:(BOOL)arg3;
-- (unsigned int)readAlignedDataSize;
-- (void)readData:(void*)arg1 length:(unsigned int)arg2;
+- (id)initFromMemoryNoCopy:(const void*)arg1 length:(unsigned long long)arg2 freeWhenDone:(bool)arg3;
+- (unsigned long long)readAlignedDataSize;
+- (void)readData:(void*)arg1 length:(unsigned long long)arg2;
 - (int)readInt;
 
 @end

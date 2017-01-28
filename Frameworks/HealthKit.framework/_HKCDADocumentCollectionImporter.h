@@ -4,20 +4,20 @@
 
 @interface _HKCDADocumentCollectionImporter : NSObject {
     NSMutableArray * _collection;
-    BOOL  _loaded;
-    BOOL  _passwordProtectedZipArchive;
+    bool  _loaded;
+    bool  _passwordProtectedZipArchive;
     NSURL * _url;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_containsPasswordProtectedData:(id)arg1;
+- (bool)_containsPasswordProtectedData:(id)arg1;
 - (id)_extractFirstOccurrenceOfTagRule:(id)arg1 extactor:(id)arg2;
 - (void)_loadCollection;
 - (void)_loadCollectionFromXMLData:(id)arg1;
 - (void)_loadCollectionFromXMLFile:(id)arg1;
 - (void)_loadCollectionFromZipArchive:(id)arg1;
-- (BOOL)archiveIsPasswordProtected;
-- (void)enumerateDocumentsUsingBlock:(id /* block */)arg1;
+- (bool)archiveIsPasswordProtected;
+- (void)enumerateDocumentsUsingBlock:(id)arg1;
 - (id)initWithURL:(id)arg1;
 
 @end

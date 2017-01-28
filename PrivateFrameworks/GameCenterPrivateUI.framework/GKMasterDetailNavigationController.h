@@ -13,6 +13,6 @@
 - (id)primaryViewControllerForExpandingSplitViewController:(id)arg1;
 - (id)separateSecondaryViewControllerForSplitViewController:(id)arg1;
 - (void)setParentMasterDetailVC:(id)arg1;
-- (BOOL)splitViewShouldCollapseToDetailViewForPad;
+- (bool)splitViewShouldCollapseToDetailViewForPad;
 
 @end

@@ -21,10 +21,10 @@
 - (void)sendHardPauseDigitsForCallWithUniqueProxyIdentifier:(NSString *)arg1;
 - (void)sendMMIOrUSSDCodeWithRequest:(TUDialRequest *)arg1;
 - (void)sendTelephonyDigits:(NSString *)arg1;
-- (void)setDownlinkMuted:(BOOL)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2;
-- (void)setRemoteVideoPresentationSizeForCallWithUniqueProxyIdentifier:(NSString *)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (void)setDownlinkMuted:(bool)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2;
+- (void)setRemoteVideoPresentationSizeForCallWithUniqueProxyIdentifier:(NSString *)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (void)setRemoteVideoPresentationStateForCallWithUniqueProxyIdentifier:(NSString *)arg1 presentationState:(int)arg2;
-- (void)setUplinkMuted:(BOOL)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2;
+- (void)setUplinkMuted:(bool)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2;
 - (void)swapCalls;
 - (void)ungroupCallWithUniqueProxyIdentifier:(NSString *)arg1;
 - (void)unholdCallWithUniqueProxyIdentifier:(NSString *)arg1;

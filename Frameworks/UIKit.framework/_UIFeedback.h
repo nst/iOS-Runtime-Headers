@@ -8,14 +8,14 @@
     <UICoordinateSpace> * _coordinateSpace;
     NSDictionary * _debugDictionary;
     double  _delay;
-    unsigned int  _eventToken;
+    unsigned long long  _eventToken;
     _UIFeedbackParameters * _hapticParameters;
-    unsigned int  _mandatoryFeedbackTypes;
+    unsigned long long  _mandatoryFeedbackTypes;
     NSString * _name;
     _UIFeedbackPattern * _parentPattern;
     <_UIFeedbackPlayer> * _player;
     NSMutableArray * _playerDequeueBlocks;
-    BOOL  _playing;
+    bool  _playing;
     float  _position;
 }
 
@@ -28,18 +28,18 @@
 @property (getter=_delay, setter=_setDelay:, nonatomic) double delay;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (getter=_effectiveDelay, nonatomic, readonly) double effectiveDelay;
-@property (getter=_effectiveEnabledFeedbackTypes, nonatomic, readonly) unsigned int effectiveEnabledFeedbackTypes;
-@property (getter=_effectiveEventType, nonatomic, readonly) unsigned int effectiveEventType;
-@property (getter=_effectiveSystemSoundID, nonatomic, readonly) unsigned long effectiveSystemSoundID;
-@property (getter=_eventToken, setter=_setEventToken:, nonatomic) unsigned int eventToken;
+@property (getter=_effectiveEnabledFeedbackTypes, nonatomic, readonly) unsigned long long effectiveEnabledFeedbackTypes;
+@property (getter=_effectiveEventType, nonatomic, readonly) unsigned long long effectiveEventType;
+@property (getter=_effectiveSystemSoundID, nonatomic, readonly) unsigned int effectiveSystemSoundID;
+@property (getter=_eventToken, setter=_setEventToken:, nonatomic) unsigned long long eventToken;
 @property (nonatomic, readonly) _UIFeedbackParameters *hapticParameters;
-@property (getter=_mandatoryFeedbackTypes, setter=_setMandatoryFeedbackTypes:, nonatomic) unsigned int mandatoryFeedbackTypes;
+@property (getter=_mandatoryFeedbackTypes, setter=_setMandatoryFeedbackTypes:, nonatomic) unsigned long long mandatoryFeedbackTypes;
 @property (getter=_name, setter=_setName:, nonatomic, copy) NSString *name;
 @property (getter=_parentPattern, setter=_setParentPattern:, nonatomic) _UIFeedbackPattern *parentPattern;
 @property (getter=_playableProtocol, nonatomic, readonly) Protocol *playableProtocol;
 @property (getter=_player, setter=_setPlayer:, nonatomic, retain) <_UIFeedbackPlayer> *player;
 @property (getter=_playerDequeueBlocks, setter=_setPlayerDequeueBlocks:, nonatomic, retain) NSMutableArray *playerDequeueBlocks;
-@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (getter=isPlaying, nonatomic, readonly) bool playing;
 @property (nonatomic) float position;
 @property (readonly) NSMutableArray *systemSoundSources;
 @property (readonly) NSMutableArray *visualizerSources;
@@ -47,7 +47,7 @@
 + (Class)_parametersClass;
 + (Class)classForType:(id)arg1;
 + (id)feedbackWithDictionaryRepresentation:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)type;
 
 - (void).cxx_destruct;
@@ -58,11 +58,11 @@
 - (id)_debugDictionary;
 - (double)_delay;
 - (double)_effectiveDelay;
-- (unsigned int)_effectiveEnabledFeedbackTypes;
-- (unsigned int)_effectiveEventType;
-- (unsigned long)_effectiveSystemSoundID;
-- (unsigned int)_eventToken;
-- (unsigned int)_mandatoryFeedbackTypes;
+- (unsigned long long)_effectiveEnabledFeedbackTypes;
+- (unsigned long long)_effectiveEventType;
+- (unsigned int)_effectiveSystemSoundID;
+- (unsigned long long)_eventToken;
+- (unsigned long long)_mandatoryFeedbackTypes;
 - (id)_name;
 - (id)_parentPattern;
 - (void)_playAtTime:(double)arg1;
@@ -72,8 +72,8 @@
 - (void)_setCategory:(id)arg1;
 - (void)_setCoordinateSpace:(id)arg1;
 - (void)_setDelay:(double)arg1;
-- (void)_setEventToken:(unsigned int)arg1;
-- (void)_setMandatoryFeedbackTypes:(unsigned int)arg1;
+- (void)_setEventToken:(unsigned long long)arg1;
+- (void)_setMandatoryFeedbackTypes:(unsigned long long)arg1;
 - (void)_setName:(id)arg1;
 - (void)_setParentPattern:(id)arg1;
 - (void)_setPlayer:(id)arg1;
@@ -87,8 +87,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPlaying;
+- (bool)isEqual:(id)arg1;
+- (bool)isPlaying;
 - (void)play;
 - (float)position;
 - (void)setPosition:(float)arg1;

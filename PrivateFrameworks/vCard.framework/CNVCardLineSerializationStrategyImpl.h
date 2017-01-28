@@ -8,16 +8,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)serializerWithStorage:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)canSerializeArray:(id)arg1;
-- (BOOL)canSerializeData:(id)arg1;
-- (BOOL)canSerializeString:(id)arg1;
-- (unsigned int)estimatedDataLength;
+- (bool)canSerializeArray:(id)arg1;
+- (bool)canSerializeData:(id)arg1;
+- (bool)canSerializeString:(id)arg1;
+- (unsigned long long)estimatedDataLength;
 - (id)initWithStorage:(id)arg1;
 - (void)insertLine:(id)arg1 atMarker:(id)arg2;
 - (id)insertionMarker;

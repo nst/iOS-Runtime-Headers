@@ -5,8 +5,8 @@
 @interface _GEOTransitPreloadBatch : NSObject {
     NSMutableSet * _placeDatasToLoad;
     GEOTileKeyList * _tilesToLoad;
-    unsigned int  bytesLoaded;
-    unsigned int  bytesLoadedFromNetwork;
+    unsigned long long  bytesLoaded;
+    unsigned long long  bytesLoadedFromNetwork;
     struct vector<GEOLocationCoordinate2D, std::__1::allocator<GEOLocationCoordinate2D> > { 
         struct { /* ? */ } *__begin_; 
         struct { /* ? */ } *__end_; 
@@ -16,12 +16,12 @@
     }  coords;
     double  endTime;
     double  endTimeForScheduleFreshness;
-    unsigned int  errCount;
-    unsigned int  generation;
+    unsigned long long  errCount;
+    unsigned long long  generation;
     <GEOMapServiceTicket> * placeDataRequestTicketForBatch;
     unsigned int  priority;
     double  startTime;
-    unsigned int  status;
+    unsigned long long  status;
 }
 
 @property (nonatomic, retain) NSMutableSet *placeDatasToLoad;

@@ -3,19 +3,19 @@
  */
 
 @interface NARApplicationState : NSObject <NSSecureCoding> {
-    BOOL  _removedSystemApp;
-    BOOL  _restricted;
+    bool  _removedSystemApp;
+    bool  _restricted;
 }
 
-@property (getter=isRemovedSystemApp, nonatomic, readonly) BOOL removedSystemApp;
-@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
+@property (getter=isRemovedSystemApp, nonatomic, readonly) bool removedSystemApp;
+@property (getter=isRestricted, nonatomic, readonly) bool restricted;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRestricted:(BOOL)arg1 removedSystemApp:(BOOL)arg2;
-- (BOOL)isRemovedSystemApp;
-- (BOOL)isRestricted;
+- (id)initWithRestricted:(bool)arg1 removedSystemApp:(bool)arg2;
+- (bool)isRemovedSystemApp;
+- (bool)isRestricted;
 
 @end

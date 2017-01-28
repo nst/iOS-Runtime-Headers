@@ -6,9 +6,9 @@
 
 + (id)transportButton;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (id)imageNameForType:(int)arg1;
-- (void)setImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setTransportType:(int)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (id)imageNameForType:(long long)arg1;
+- (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setTransportType:(long long)arg1;
 
 @end

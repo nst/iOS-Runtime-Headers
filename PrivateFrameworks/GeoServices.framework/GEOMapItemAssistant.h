@@ -17,9 +17,9 @@
 }
 
 - (id)_businessURL;
-- (BOOL)_hasMUID;
-- (BOOL)_hasResolvablePartialInformation;
-- (BOOL)_hasUserRatingScore;
+- (bool)_hasMUID;
+- (bool)_hasResolvablePartialInformation;
+- (bool)_hasUserRatingScore;
 - (unsigned long long)_muid;
 - (float)_normalizedUserRatingScore;
 - (id)_place;
@@ -31,7 +31,7 @@
 - (id)description;
 - (id)geoAddress;
 - (id)initWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned long long)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)name;
 - (id)weatherDisplayName;
 

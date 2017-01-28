@@ -13,20 +13,20 @@
     void titleLabel;
 }
 
-@property (nonatomic, retain) NSURL *clockAppSectionURL;
-@property (nonatomic) BOOL showRowSeparator;
+@property (nonatomic, copy) NSURL *clockAppSectionURL;
+@property (nonatomic) bool showRowSeparator;
 
-+ (id)constraintsForBindingFrameWithView:(id)arg1 toFrameOfView:(id)arg2;
-+ (BOOL)requiresConstraintBasedLayout;
++ (id)constraintsForBindingFrame:(id)arg1 toFrameOfView:(id)arg2;
++ (bool)requiresConstraintBasedLayout;
 
-- (id /* block */).cxx_destruct;
+- (id).cxx_destruct;
 - (id)clockAppSectionURL;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setClockAppSectionURL:(id)arg1;
-- (void)setShowRowSeparator:(BOOL)arg1;
-- (BOOL)showRowSeparator;
+- (void)setShowRowSeparator:(bool)arg1;
+- (bool)showRowSeparator;
 - (void)updateConstraints;
-- (void)updateWithAlarmWithAlarm:(id)arg1;
+- (void)updateWithAlarm:(id)arg1;
 
 @end

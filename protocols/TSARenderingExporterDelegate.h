@@ -8,10 +8,10 @@
 - (struct CGContext { }*)newCGContextForURL:(NSURL *)arg1;
 - (void)releaseCGContext:(struct CGContext { }*)arg1;
 - (void)setup;
-- (BOOL)supportsPaging;
-- (BOOL)supportsRenderingQuality;
+- (bool)supportsPaging;
+- (bool)supportsRenderingQuality;
 - (void)teardown;
-- (float)viewScale;
+- (double)viewScale;
 
 @optional
 

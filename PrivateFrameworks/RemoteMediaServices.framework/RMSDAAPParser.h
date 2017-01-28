@@ -9,7 +9,7 @@
 + (id)sharedInstance;
 + (id)typeForDRCPValueType:(int)arg1;
 
-- (void)enumerateDAAPChunksInBytes:(const char *)arg1 length:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateDAAPChunksInBytes:(const char *)arg1 length:(unsigned int)arg2 usingBlock:(id)arg3;
 - (id)parseBrowseResults:(const char *)arg1 length:(unsigned int)arg2;
 - (id)parseContentCodes:(const char *)arg1 length:(unsigned int)arg2;
 - (id)parseContentCollectionDict:(const char *)arg1 length:(unsigned int)arg2;

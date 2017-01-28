@@ -4,8 +4,8 @@
 
 @interface GEOComposedTransitBaseRouteLeg : GEOComposedRouteLeg {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _transitStepRange;
 }
 
@@ -13,8 +13,8 @@
 - (id)endingTransitStop;
 - (id)enterTransitAccessPoints;
 - (id)exitTransitAccessPoints;
-- (id)initWithComposedRoute:(id)arg1 routeLegType:(int)arg2 stepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 transitStepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
+- (id)initWithComposedRoute:(id)arg1 routeLegType:(long long)arg2 stepRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 transitStepRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg4 pointRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5;
 - (id)startingTransitStop;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })transitStepRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })transitStepRange;
 
 @end

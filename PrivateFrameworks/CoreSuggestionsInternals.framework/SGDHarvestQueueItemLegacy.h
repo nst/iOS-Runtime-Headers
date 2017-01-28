@@ -3,7 +3,7 @@
  */
 
 @interface SGDHarvestQueueItemLegacy : SGDHarvestQueueItem {
-    BOOL  _highPriority;
+    bool  _highPriority;
     SGDWorkQueueItem * _workQueueItem;
 }
 
@@ -11,8 +11,8 @@
 - (void)dealloc;
 - (id)description;
 - (void)finish;
-- (BOOL)highPriority;
-- (id)initWithWorkQueueItem:(id)arg1 item:(id)arg2 highPriority:(BOOL)arg3;
+- (bool)highPriority;
+- (id)initWithWorkQueueItem:(id)arg1 item:(id)arg2 highPriority:(bool)arg3;
 - (void)markAsFailed;
 
 @end

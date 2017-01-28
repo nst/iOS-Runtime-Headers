@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> * _connectionCreationQueue;
     NSObject<OS_os_log> * _dasFrameworkLog;
     NSXPCListenerEndpoint * _endpoint;
-    BOOL  _interrupted;
+    bool  _interrupted;
     NSObject<OS_dispatch_queue> * _queue;
     _DASSubmissionRateLimiter * _rateLimiter;
     int  _resubmitToken;
@@ -21,8 +21,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL interrupted;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool interrupted;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) _DASSubmissionRateLimiter *rateLimiter;
 @property (nonatomic) int resubmitToken;
@@ -50,12 +50,12 @@
 - (id)endpoint;
 - (void)establishDaemonConnectionIfInterrupted;
 - (void)forceRunActivities:(id)arg1;
-- (void)handleEligibleActivities:(id /* block */)arg1;
+- (void)handleEligibleActivities:(id)arg1;
 - (void)handleNoLongerRunningActivities:(id)arg1;
 - (void)handleRescindedActivity:(id)arg1;
 - (id)initWithListenerEndpoint:(id)arg1;
-- (BOOL)interrupted;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)interrupted;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)queue;
 - (id)rateLimiter;
 - (void)resubmitPendingActivities;
@@ -69,7 +69,7 @@
 - (void)setConnectionCreationQueue:(id)arg1;
 - (void)setDasFrameworkLog:(id)arg1;
 - (void)setEndpoint:(id)arg1;
-- (void)setInterrupted:(BOOL)arg1;
+- (void)setInterrupted:(bool)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRateLimiter:(id)arg1;
 - (void)setResubmitToken:(int)arg1;

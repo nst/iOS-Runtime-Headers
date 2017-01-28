@@ -4,6 +4,6 @@
 
 @interface MPModelLibraryDownloadQueueRequest : MPModelRequest
 
-- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id)arg1;
 
 @end

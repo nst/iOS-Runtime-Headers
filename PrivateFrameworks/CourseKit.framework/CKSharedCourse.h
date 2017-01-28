@@ -7,7 +7,7 @@
 @property (nonatomic, retain) UIImage *courseCover;
 @property (nonatomic, copy) NSString *courseCoverChecksum;
 @property (nonatomic, copy) NSString *courseID;
-@property (nonatomic) int enrollmentType;
+@property (nonatomic) long long enrollmentType;
 @property (nonatomic, copy) NSString *institutionName;
 @property (nonatomic, copy) NSString *longName;
 @property (nonatomic, retain) NSNumber *managedClassID;
@@ -15,7 +15,7 @@
 
 - (void)setCourseCover:(id)arg1;
 - (void)setCourseID:(id)arg1;
-- (void)setEnrollmentType:(int)arg1;
+- (void)setEnrollmentType:(long long)arg1;
 - (void)setInstitutionName:(id)arg1;
 - (void)setLongName:(id)arg1;
 - (void)setManagedClassID:(id)arg1;

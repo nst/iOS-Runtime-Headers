@@ -4,30 +4,30 @@
 
 @interface PUMiniHTMLParser : NSObject {
     NSString * __string;
-    id /* block */  _parsedCharactersBlock;
-    id /* block */  _parsedErrorBlock;
-    id /* block */  _parsedMarkupElementEndBlock;
-    id /* block */  _parsedMarkupElementStartBlock;
+    id  _parsedCharactersBlock;
+    id  _parsedErrorBlock;
+    id  _parsedMarkupElementEndBlock;
+    id  _parsedMarkupElementStartBlock;
 }
 
 @property (nonatomic, readonly) NSString *_string;
-@property (nonatomic, copy) id /* block */ parsedCharactersBlock;
-@property (nonatomic, copy) id /* block */ parsedErrorBlock;
-@property (nonatomic, copy) id /* block */ parsedMarkupElementEndBlock;
-@property (nonatomic, copy) id /* block */ parsedMarkupElementStartBlock;
+@property (nonatomic, copy) id parsedCharactersBlock;
+@property (nonatomic, copy) id parsedErrorBlock;
+@property (nonatomic, copy) id parsedMarkupElementEndBlock;
+@property (nonatomic, copy) id parsedMarkupElementStartBlock;
 
 - (void).cxx_destruct;
 - (id)_string;
 - (id)init;
 - (id)initWithString:(id)arg1;
 - (void)parse;
-- (id /* block */)parsedCharactersBlock;
-- (id /* block */)parsedErrorBlock;
-- (id /* block */)parsedMarkupElementEndBlock;
-- (id /* block */)parsedMarkupElementStartBlock;
-- (void)setParsedCharactersBlock:(id /* block */)arg1;
-- (void)setParsedErrorBlock:(id /* block */)arg1;
-- (void)setParsedMarkupElementEndBlock:(id /* block */)arg1;
-- (void)setParsedMarkupElementStartBlock:(id /* block */)arg1;
+- (id)parsedCharactersBlock;
+- (id)parsedErrorBlock;
+- (id)parsedMarkupElementEndBlock;
+- (id)parsedMarkupElementStartBlock;
+- (void)setParsedCharactersBlock:(id)arg1;
+- (void)setParsedErrorBlock:(id)arg1;
+- (void)setParsedMarkupElementEndBlock:(id)arg1;
+- (void)setParsedMarkupElementStartBlock:(id)arg1;
 
 @end

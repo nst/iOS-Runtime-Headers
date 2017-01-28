@@ -5,31 +5,31 @@
 @interface CAMFaceResult : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _bounds;
-    int  _identifier;
-    float  _rollAngle;
+    long long  _identifier;
+    double  _rollAngle;
     AVMetadataFaceObject * _underlyingFaceObject;
 }
 
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property (nonatomic, readonly) int identifier;
-@property (nonatomic, readonly) float rollAngle;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) long long identifier;
+@property (nonatomic, readonly) double rollAngle;
 @property (nonatomic, readonly) AVMetadataFaceObject *underlyingFaceObject;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
 - (id)burstMetadataRepresentation;
 - (id)description;
-- (int)identifier;
+- (long long)identifier;
 - (id)initWithFaceObject:(id)arg1;
-- (float)rollAngle;
+- (double)rollAngle;
 - (id)underlyingFaceObject;
 
 @end

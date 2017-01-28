@@ -15,11 +15,12 @@
 + (id)layoutsFileName;
 + (id)sharedKeyboardFactory;
 
+- (void)_createDecoderIfNecessary;
 - (void)dealloc;
 - (id)decoder;
 - (id)init;
 - (id)internalCache;
-- (id)keyboardPrefixForWidth:(float)arg1 andEdge:(BOOL)arg2;
+- (id)keyboardPrefixForWidth:(double)arg1 andEdge:(bool)arg2;
 - (id)keyboardWithName:(id)arg1 inCache:(id)arg2;
 - (void*)layoutsLibraryHandle;
 - (void)setDecoder:(id)arg1;

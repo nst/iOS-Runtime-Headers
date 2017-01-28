@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (int)asyncRequestDataOfFiles:(id)arg1 fromDevice:(id)arg2 withThumbnailSize:(unsigned short)arg3 contextInfo:(void*)arg4;
@@ -28,7 +28,7 @@
 - (void)downloadFileImp:(id)arg1;
 - (int)eject:(id)arg1;
 - (void)ejectImp:(id)arg1;
-- (unsigned long)getMaxObjects:(id)arg1 contextInfo:(void*)arg2;
+- (unsigned int)getMaxObjects:(id)arg1 contextInfo:(void*)arg2;
 - (int)getMetadataOfFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;
 - (void)getMetadataOfFileImp:(id)arg1;
 - (int)getThumbnailOfFile:(id)arg1 fromDevice:(id)arg2 contextInfo:(void*)arg3;

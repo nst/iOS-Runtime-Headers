@@ -6,6 +6,6 @@
 @required
 
 - (double)delayBeforeBeginningNetworkActivity;
-- (BOOL)shouldSearchServers;
+- (bool)shouldSearchServers;
 
 @end

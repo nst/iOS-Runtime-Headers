@@ -4,24 +4,24 @@
 
 @interface RWIProtocolRuntimePropertyPreview : RWIProtocolJSONObject
 
-@property (nonatomic) BOOL internal;
+@property (nonatomic) bool internal;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) int subtype;
-@property (nonatomic) int type;
+@property (nonatomic) long long subtype;
+@property (nonatomic) long long type;
 @property (nonatomic, copy) NSString *value;
 @property (nonatomic, retain) RWIProtocolRuntimeObjectPreview *valuePreview;
 
-- (id)initWithName:(id)arg1 type:(int)arg2;
-- (BOOL)internal;
+- (id)initWithName:(id)arg1 type:(long long)arg2;
+- (bool)internal;
 - (id)name;
-- (void)setInternal:(BOOL)arg1;
+- (void)setInternal:(bool)arg1;
 - (void)setName:(id)arg1;
-- (void)setSubtype:(int)arg1;
-- (void)setType:(int)arg1;
+- (void)setSubtype:(long long)arg1;
+- (void)setType:(long long)arg1;
 - (void)setValue:(id)arg1;
 - (void)setValuePreview:(id)arg1;
-- (int)subtype;
-- (int)type;
+- (long long)subtype;
+- (long long)type;
 - (id)value;
 - (id)valuePreview;
 

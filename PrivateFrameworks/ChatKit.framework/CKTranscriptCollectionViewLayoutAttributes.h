@@ -4,74 +4,74 @@
 
 @interface CKTranscriptCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
     NSMutableArray * _associatedLayoutAttributes;
-    float  _associatedVerticalShift;
+    double  _associatedVerticalShift;
     CKChatItem * _chatItem;
     struct CATransform3D { 
-        float m11; 
-        float m12; 
-        float m13; 
-        float m14; 
-        float m21; 
-        float m22; 
-        float m23; 
-        float m24; 
-        float m31; 
-        float m32; 
-        float m33; 
-        float m34; 
-        float m41; 
-        float m42; 
-        float m43; 
-        float m44; 
+        double m11; 
+        double m12; 
+        double m13; 
+        double m14; 
+        double m21; 
+        double m22; 
+        double m23; 
+        double m24; 
+        double m31; 
+        double m32; 
+        double m33; 
+        double m34; 
+        double m41; 
+        double m42; 
+        double m43; 
+        double m44; 
     }  _contentTransform3D;
-    float  _currentCenterY;
+    double  _currentCenterY;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _currentFrame;
-    float  _easing;
-    float  _factor;
-    float  _height;
-    BOOL  _hidden;
+    double  _easing;
+    double  _factor;
+    double  _height;
+    bool  _hidden;
     CKTranscriptCollectionViewLayoutAttributes * _initialParentLayoutAttributes;
     BOOL  _orientation;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _parentChatItemSize;
-    float  _targetCenterY;
-    float  _targetEasing;
+    double  _targetCenterY;
+    double  _targetEasing;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _targetFrame;
 }
 
 @property (nonatomic, retain) CKChatItem *chatItem;
-@property (nonatomic, readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } contentTransform3D;
-@property (nonatomic) struct CGSize { float x1; float x2; } parentChatItemSize;
+@property (nonatomic, readonly) struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; } contentTransform3D;
+@property (nonatomic) struct CGSize { double x1; double x2; } parentChatItemSize;
 
 - (void).cxx_destruct;
 - (id)chatItem;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })contentTransform3D;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })contentTransform3D;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })parentChatItemSize;
-- (void)setAlphaOrFilterLevel:(float)arg1;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })parentChatItemSize;
+- (void)setAlphaOrFilterLevel:(double)arg1;
 - (void)setChatItem:(id)arg1;
-- (void)setParentChatItemSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setParentChatItemSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

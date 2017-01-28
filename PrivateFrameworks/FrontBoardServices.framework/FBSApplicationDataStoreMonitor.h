@@ -4,13 +4,13 @@
 
 @interface FBSApplicationDataStoreMonitor : NSObject <FBSApplicationDataStoreRepositoryClientObserver> {
     <FBSApplicationDataStoreRepositoryClient> * _client;
-    BOOL  _clientNeedsCheckin;
+    bool  _clientNeedsCheckin;
     NSHashTable * _observers;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)addObserver:(id)arg1;

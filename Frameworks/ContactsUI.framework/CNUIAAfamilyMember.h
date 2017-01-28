@@ -5,28 +5,28 @@
 @interface CNUIAAfamilyMember : NSObject <NSSecureCoding> {
     NSString * _appleID;
     NSString * _firstName;
-    BOOL  _isMe;
+    bool  _isMe;
     NSString * _lastName;
 }
 
 @property (nonatomic, copy) NSString *appleID;
 @property (nonatomic, copy) NSString *firstName;
-@property (nonatomic) BOOL isMe;
+@property (nonatomic) bool isMe;
 @property (nonatomic, copy) NSString *lastName;
 
 + (id)cnuiFamilyMemberWithAAFamilyMember:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appleID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstName;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isMe;
+- (bool)isMe;
 - (id)lastName;
 - (void)setAppleID:(id)arg1;
 - (void)setFirstName:(id)arg1;
-- (void)setIsMe:(BOOL)arg1;
+- (void)setIsMe:(bool)arg1;
 - (void)setLastName:(id)arg1;
 
 @end

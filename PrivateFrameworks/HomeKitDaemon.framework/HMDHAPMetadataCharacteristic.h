@@ -10,7 +10,7 @@
 @property (nonatomic, retain) HAPMetadataCharacteristic *hapCharacteristicMetadata;
 @property (nonatomic, retain) HMDHAPMetadataCharacteristicValue *valueMetadata;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

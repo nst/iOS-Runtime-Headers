@@ -4,6 +4,6 @@
 
 @interface _PUUserTransformScrollView : UIScrollView
 
-- (void)_registerForRotation:(BOOL)arg1 ofWindow:(id)arg2;
+- (void)_registerForRotation:(bool)arg1 ofWindow:(id)arg2;
 
 @end

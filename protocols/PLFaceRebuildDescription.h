@@ -8,10 +8,10 @@
 - (double)centerX;
 - (double)centerY;
 - (int)faceAlgorithmVersion;
-- (BOOL)isHidden;
-- (BOOL)isManual;
-- (BOOL)isNameSourceAuto;
-- (BOOL)isRepresentative;
+- (bool)isHidden;
+- (bool)isManual;
+- (bool)isNameSourceAuto;
+- (bool)isRepresentative;
 - (double)size;
 
 @end

@@ -4,29 +4,29 @@
 
 @interface GKSimpleComposeController : GKBaseComposeController {
     NSString * _defaultMessage;
-    id /* block */  _doneHandler;
+    id  _doneHandler;
     NSArray * _players;
     GKComposeHeaderWithStaticRecipients * _toField;
 }
 
 @property (nonatomic, retain) NSString *defaultMessage;
-@property (nonatomic, copy) id /* block */ doneHandler;
+@property (nonatomic, copy) id doneHandler;
 @property (nonatomic, retain) NSArray *players;
 @property (nonatomic, retain) GKComposeHeaderWithStaticRecipients *toField;
 
 - (void)dealloc;
 - (id)defaultMessage;
-- (id /* block */)doneHandler;
+- (id)doneHandler;
 - (void)donePressed;
 - (void)loadView;
 - (id)players;
-- (void)pushOntoNavigationController:(id)arg1 withDoneHandler:(id /* block */)arg2;
+- (void)pushOntoNavigationController:(id)arg1 withDoneHandler:(id)arg2;
 - (void)setDefaultMessage:(id)arg1;
-- (void)setDoneHandler:(id /* block */)arg1;
+- (void)setDoneHandler:(id)arg1;
 - (void)setPlayers:(id)arg1;
 - (void)setToField:(id)arg1;
 - (void)setupSendButton;
 - (id)toField;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

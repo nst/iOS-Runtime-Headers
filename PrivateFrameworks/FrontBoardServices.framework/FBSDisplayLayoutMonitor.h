@@ -4,27 +4,27 @@
 
 @interface FBSDisplayLayoutMonitor : NSObject <FBSDisplayLayoutMonitorClientDelegate> {
     NSObject<OS_dispatch_queue> * _calloutQueue;
-    unsigned int  _displayType;
-    unsigned int  _qualityOfService;
+    unsigned long long  _displayType;
+    unsigned long long  _qualityOfService;
     NSObject<OS_dispatch_queue> * _queue;
     FBSDisplayLayoutMonitorClient * _queue_client;
     FBSDisplayLayout * _queue_currentLayout;
-    id /* block */  _queue_handler;
-    BOOL  _queue_invalidated;
+    id  _queue_handler;
+    bool  _queue_invalidated;
     NSHashTable * _queue_observers;
-    BOOL  _sharedInstance;
+    bool  _sharedInstance;
 }
 
 @property (nonatomic, readonly, retain) FBSDisplayLayout *currentLayout;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) unsigned int displayType;
-@property (nonatomic, copy) id /* block */ handler;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int qualityOfService;
+@property (nonatomic, readonly) unsigned long long displayType;
+@property (nonatomic, copy) id handler;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long qualityOfService;
 @property (readonly) Class superclass;
 
-+ (id)sharedMonitorForDisplayType:(unsigned int)arg1;
++ (id)sharedMonitorForDisplayType:(unsigned long long)arg1;
 
 - (void)_calloutQueue_postLayout:(id)arg1 withContext:(id)arg2 toObserver:(id)arg3;
 - (id)_observers;
@@ -32,18 +32,18 @@
 - (void)_queue_updateLayout:(id)arg1 withContext:(id)arg2;
 - (void)addObserver:(id)arg1;
 - (void)client:(id)arg1 handleNewDisplayLayout:(id)arg2 withContext:(id)arg3;
-- (unsigned int)clientDisplayType:(id)arg1;
-- (unsigned int)clientQualityOfService:(id)arg1;
+- (unsigned long long)clientDisplayType:(id)arg1;
+- (unsigned long long)clientQualityOfService:(id)arg1;
 - (id)currentLayout;
 - (void)dealloc;
-- (unsigned int)displayType;
-- (id /* block */)handler;
-- (id)initWithDisplayType:(unsigned int)arg1;
-- (id)initWithDisplayType:(unsigned int)arg1 handler:(id /* block */)arg2;
-- (id)initWithDisplayType:(unsigned int)arg1 qualityOfService:(unsigned int)arg2 handler:(id /* block */)arg3;
+- (unsigned long long)displayType;
+- (id)handler;
+- (id)initWithDisplayType:(unsigned long long)arg1;
+- (id)initWithDisplayType:(unsigned long long)arg1 handler:(id)arg2;
+- (id)initWithDisplayType:(unsigned long long)arg1 qualityOfService:(unsigned long long)arg2 handler:(id)arg3;
 - (void)invalidate;
-- (unsigned int)qualityOfService;
+- (unsigned long long)qualityOfService;
 - (void)removeObserver:(id)arg1;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 
 @end

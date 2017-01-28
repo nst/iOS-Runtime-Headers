@@ -5,21 +5,21 @@
 @interface BLTPBFileURLMetaData : NSObject {
     NSDictionary * _extraMetadata;
     NSDictionary * _metadata;
-    int  _sequenceNumberError;
-    unsigned int  _sessionState;
+    long long  _sequenceNumberError;
+    unsigned long long  _sessionState;
 }
 
 @property (nonatomic, readonly) NSDictionary *extraMetadata;
 @property (nonatomic, readonly) NSDictionary *metadata;
-@property (nonatomic, readonly) int sequenceNumberError;
-@property (nonatomic, readonly) unsigned int sessionState;
+@property (nonatomic, readonly) long long sequenceNumberError;
+@property (nonatomic, readonly) unsigned long long sessionState;
 
 - (void).cxx_destruct;
 - (id)extraMetadata;
 - (id)initWithMetadata:(id)arg1 sequenceNumberManager:(id)arg2;
 - (id)initWithSequenceNumberManager:(id)arg1 extraMetadata:(id)arg2;
 - (id)metadata;
-- (int)sequenceNumberError;
-- (unsigned int)sessionState;
+- (long long)sequenceNumberError;
+- (unsigned long long)sessionState;
 
 @end

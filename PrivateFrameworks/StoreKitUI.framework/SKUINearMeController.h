@@ -5,24 +5,24 @@
 @interface SKUINearMeController : NSObject <CLLocationManagerDelegate, SKUIItemStateCenterObserver> {
     int  _authorizationStatus;
     SKUIClientContext * _clientContext;
-    BOOL  _isMonitoring;
+    bool  _isMonitoring;
     NSArray * _items;
     CLLocationManager * _locationManager;
-    int  _locationTimeoutCount;
+    long long  _locationTimeoutCount;
     NSObject<OS_dispatch_source> * _locationTimeoutTimer;
     SSLookupRequest * _lookupRequest;
     NSObject<OS_dispatch_source> * _refreshTimer;
     NSDictionary * _responseDictionary;
-    int  _status;
+    long long  _status;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, readonly) NSDictionary *responseDictionary;
-@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) long long status;
 @property (readonly) Class superclass;
 
 + (id)sharedController;
@@ -34,7 +34,7 @@
 - (void)_lookupItemsForLocation:(id)arg1;
 - (void)_monitorLocationTimeout;
 - (void)_refreshTimeout;
-- (void)_setItems:(id)arg1 responseDictionary:(id)arg2 error:(id)arg3 status:(int)arg4;
+- (void)_setItems:(id)arg1 responseDictionary:(id)arg2 error:(id)arg3 status:(long long)arg4;
 - (void)_startMonitoringLocation;
 - (void)_startRefreshTimer;
 - (void)_stopMonitoringLocation;
@@ -43,7 +43,7 @@
 - (void)disable;
 - (void)getItems;
 - (id)init;
-- (BOOL)isNearMeLocationStatusEnabled;
+- (bool)isNearMeLocationStatusEnabled;
 - (void)itemStateCenterRestrictionsChanged:(id)arg1;
 - (id)items;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
@@ -51,6 +51,6 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)responseDictionary;
 - (void)setClientContext:(id)arg1;
-- (int)status;
+- (long long)status;
 
 @end

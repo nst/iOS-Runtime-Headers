@@ -26,7 +26,7 @@
 @property (nonatomic, retain) NSString *syncID;
 @property (nonatomic, retain) NSNumber *versionID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)DSID;

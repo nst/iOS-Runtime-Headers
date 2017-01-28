@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) NSString *comment;
-@property (nonatomic, readonly) BOOL hasComment;
-@property (nonatomic, readonly) BOOL hasLanguage;
+@property (nonatomic, readonly) bool hasComment;
+@property (nonatomic, readonly) bool hasLanguage;
 @property (nonatomic, retain) NSString *language;
 
 - (id)comment;
@@ -18,13 +18,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasComment;
-- (BOOL)hasLanguage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasComment;
+- (bool)hasLanguage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)language;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setComment:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)writeTo:(id)arg1;

@@ -7,44 +7,44 @@
     NSString * _label;
     NSString * _name;
     NSString * _originatingBundleID;
-    BOOL  _originatingBundleIDWhitelisted;
-    unsigned int  _predictionAge;
+    bool  _originatingBundleIDWhitelisted;
+    unsigned long long  _predictionAge;
     NSString * _shortValue;
-    BOOL  _shouldAggregate;
+    bool  _shouldAggregate;
     NSString * _source;
-    BOOL  _targetBundleIDWhitelisted;
+    bool  _targetBundleIDWhitelisted;
 }
 
 @property (nonatomic, readonly, copy) NSDate *createdAt;
 @property (nonatomic, readonly, copy) NSString *label;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *originatingBundleID;
-@property (getter=isOriginatingBundleIDWhitelisted, nonatomic, readonly) BOOL originatingBundleIDWhitelisted;
-@property (nonatomic, readonly) unsigned int predictionAge;
+@property (getter=isOriginatingBundleIDWhitelisted, nonatomic, readonly) bool originatingBundleIDWhitelisted;
+@property (nonatomic, readonly) unsigned long long predictionAge;
 @property (nonatomic, readonly, copy) NSString *shortValue;
-@property (nonatomic, readonly) BOOL shouldAggregate;
+@property (nonatomic, readonly) bool shouldAggregate;
 @property (nonatomic, readonly, copy) NSString *source;
-@property (getter=isTargetBundleIDWhitelisted, nonatomic, readonly) BOOL targetBundleIDWhitelisted;
+@property (getter=isTargetBundleIDWhitelisted, nonatomic, readonly) bool targetBundleIDWhitelisted;
 
 // Image: /System/Library/PrivateFrameworks/InputContext.framework/InputContext
 
 - (void).cxx_destruct;
 - (id)createdAt;
-- (id)initWithIdentifier:(id)arg1 score:(double)arg2 proactiveTrigger:(id)arg3 name:(id)arg4 label:(id)arg5 value:(id)arg6 shortValue:(id)arg7 originatingBundleID:(id)arg8 shouldAggregate:(BOOL)arg9 metadata:(id)arg10;
-- (BOOL)isOriginatingBundleIDWhitelisted;
-- (BOOL)isTargetBundleIDWhitelisted;
+- (id)initWithIdentifier:(id)arg1 score:(double)arg2 proactiveTrigger:(id)arg3 name:(id)arg4 label:(id)arg5 value:(id)arg6 shortValue:(id)arg7 originatingBundleID:(id)arg8 shouldAggregate:(bool)arg9 metadata:(id)arg10;
+- (bool)isOriginatingBundleIDWhitelisted;
+- (bool)isTargetBundleIDWhitelisted;
 - (id)label;
 - (id)name;
 - (id)originatingBundleID;
-- (unsigned int)predictionAge;
+- (unsigned long long)predictionAge;
 - (id)shortValue;
-- (BOOL)shouldAggregate;
+- (bool)shouldAggregate;
 - (id)source;
 
 // Image: /System/Library/TextInput/libTextInputCore.dylib
 
-- (BOOL)_TI_originatingBundleIDWhitelisted;
-- (unsigned int)_TI_predictionAge;
-- (BOOL)_TI_targetBundleIDWhitelisted;
+- (bool)_TI_originatingBundleIDWhitelisted;
+- (unsigned long long)_TI_predictionAge;
+- (bool)_TI_targetBundleIDWhitelisted;
 
 @end

@@ -3,51 +3,51 @@
  */
 
 @interface TUAnswerRequest : NSObject <NSSecureCoding, TUCallRequest, TUVideoRequest> {
-    int  _behavior;
+    long long  _behavior;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _localLandscapeAspectRatio;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _localPortraitAspectRatio;
     NSString * _sourceIdentifier;
     NSString * _uniqueProxyIdentifier;
-    BOOL  _wantsHoldMusic;
+    bool  _wantsHoldMusic;
 }
 
-@property (nonatomic) int behavior;
+@property (nonatomic) long long behavior;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) struct CGSize { float x1; float x2; } localLandscapeAspectRatio;
-@property (nonatomic) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) struct CGSize { double x1; double x2; } localLandscapeAspectRatio;
+@property (nonatomic) struct CGSize { double x1; double x2; } localPortraitAspectRatio;
 @property (nonatomic, copy) NSString *sourceIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *uniqueProxyIdentifier;
-@property (nonatomic) BOOL wantsHoldMusic;
+@property (nonatomic) bool wantsHoldMusic;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)behavior;
+- (long long)behavior;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCall:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUniqueProxyIdentifier:(id)arg1;
-- (struct CGSize { float x1; float x2; })localLandscapeAspectRatio;
-- (struct CGSize { float x1; float x2; })localPortraitAspectRatio;
-- (void)setBehavior:(int)arg1;
-- (void)setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg1;
-- (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })localLandscapeAspectRatio;
+- (struct CGSize { double x1; double x2; })localPortraitAspectRatio;
+- (void)setBehavior:(long long)arg1;
+- (void)setLocalLandscapeAspectRatio:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLocalPortraitAspectRatio:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSourceIdentifier:(id)arg1;
 - (void)setUniqueProxyIdentifier:(id)arg1;
-- (void)setWantsHoldMusic:(BOOL)arg1;
+- (void)setWantsHoldMusic:(bool)arg1;
 - (id)sourceIdentifier;
 - (id)uniqueProxyIdentifier;
-- (BOOL)wantsHoldMusic;
+- (bool)wantsHoldMusic;
 
 @end

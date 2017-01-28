@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CoreDAVTaskGroupDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *invalidSharees;
 @property (nonatomic, retain) NSSet *shareesToRemove;
 @property (nonatomic, retain) NSSet *shareesToSet;

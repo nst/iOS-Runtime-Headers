@@ -4,7 +4,7 @@
 
 @interface CKDQueuedZoneFetch : CKDQueuedFetch
 
-- (void)addRequestForZoneID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)addRequestForZoneID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id)arg3;
 - (id)fetchOperationForItemIDs:(id)arg1;
 - (Class)operationInfoClass;
 

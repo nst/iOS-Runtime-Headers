@@ -3,21 +3,21 @@
  */
 
 @interface CNActionItem : NSObject {
-    BOOL  _disabled;
+    bool  _disabled;
     UIImage * _image;
     NSString * _title;
     NSString * _type;
 }
 
-@property (nonatomic) BOOL disabled;
+@property (nonatomic) bool disabled;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *type;
 
 - (void).cxx_destruct;
-- (BOOL)disabled;
+- (bool)disabled;
 - (id)image;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setType:(id)arg1;

@@ -5,12 +5,12 @@
 @interface MRCryptoPairingMessage : MRProtocolMessage
 
 @property (nonatomic, readonly) NSData *pairingData;
-@property (nonatomic, readonly) long status;
+@property (nonatomic, readonly) int status;
 
-- (unsigned int)encryptionType;
-- (id)initWithPairingData:(id)arg1 status:(long)arg2;
+- (unsigned long long)encryptionType;
+- (id)initWithPairingData:(id)arg1 status:(int)arg2;
 - (id)pairingData;
-- (long)status;
-- (unsigned int)type;
+- (int)status;
+- (unsigned long long)type;
 
 @end

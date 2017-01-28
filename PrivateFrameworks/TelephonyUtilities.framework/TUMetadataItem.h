@@ -12,7 +12,7 @@
 - (id)callMetadata;
 - (id)description;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)metadataForProvider:(Class)arg1;
 - (void)setCallMetadata:(id)arg1;
 - (void)setMetadata:(id)arg1 forProvider:(Class)arg2;

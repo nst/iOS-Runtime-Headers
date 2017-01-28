@@ -4,7 +4,7 @@
 
 @interface AVMediaSelectionKeyValueOption : AVMediaSelectionOption {
     NSDictionary * _dictionary;
-    BOOL  _displaysNonForcedSubtitles;
+    bool  _displaysNonForcedSubtitles;
     id  _groupID;
     id  _groupMediaType;
     NSString * _optionMediaType;
@@ -18,10 +18,10 @@
 - (void)dealloc;
 - (id)dictionary;
 - (id)group;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPlayable;
+- (bool)isEqual:(id)arg1;
+- (bool)isPlayable;
 - (id)locale;
 - (id)mediaType;
 - (id)metadataForFormat:(id)arg1;

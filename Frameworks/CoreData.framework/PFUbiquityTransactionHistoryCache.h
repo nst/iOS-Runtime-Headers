@@ -7,7 +7,7 @@
     NSMutableArray * _entriesToWrite;
     PFUbiquityGlobalObjectIDCache * _globalIDCache;
     NSMutableDictionary * _globalIDToHistoryArray;
-    BOOL  _hasScheduledWriteBlock;
+    bool  _hasScheduledWriteBlock;
     NSString * _localPeerID;
     PFUbiquityKnowledgeVector * _minCacheKV;
     NSMutableDictionary * _peerIDToHistoryArray;
@@ -24,11 +24,11 @@
 @property (nonatomic, readonly) PFUbiquityKnowledgeVector *minCacheKV;
 @property (nonatomic, readonly) PFUbiquityLocation *ubiquityRootLocation;
 
-- (BOOL)addTransactionEntry:(id)arg1 error:(id*)arg2;
-- (BOOL)addTransactionEntryLight:(id)arg1 needsWrite:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)addTransactionEntryLights:(id)arg1 error:(id*)arg2;
+- (bool)addTransactionEntry:(id)arg1 error:(id*)arg2;
+- (bool)addTransactionEntryLight:(id)arg1 needsWrite:(bool)arg2 error:(id*)arg3;
+- (bool)addTransactionEntryLights:(id)arg1 error:(id*)arg2;
 - (id)cacheKV;
-- (BOOL)cacheTransactionHistory:(id*)arg1;
+- (bool)cacheTransactionHistory:(id*)arg1;
 - (id)cachedGlobalIDs;
 - (id)cachedTransactionHistoryForGlobalID:(id)arg1;
 - (void)dealloc;
@@ -39,9 +39,9 @@
 - (id)init;
 - (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 privateStore:(id)arg3 andUbiquityRootLocation:(id)arg4;
 - (id)minCacheKV;
-- (BOOL)purgeCacheAndWritePendingEntries:(BOOL)arg1 error:(id*)arg2;
+- (bool)purgeCacheAndWritePendingEntries:(bool)arg1 error:(id*)arg2;
 - (void)setGlobalIDCache:(id)arg1;
 - (id)ubiquityRootLocation;
-- (BOOL)writePendingEntries:(id*)arg1;
+- (bool)writePendingEntries:(id*)arg1;
 
 @end

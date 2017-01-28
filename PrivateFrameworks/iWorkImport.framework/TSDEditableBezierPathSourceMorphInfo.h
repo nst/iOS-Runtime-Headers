@@ -15,9 +15,9 @@
 - (id)initWithEditableBezierPathSource:(id)arg1;
 - (id)original;
 - (id)originalNodeForNode:(id)arg1;
-- (unsigned int)originalNodeIndexForNode:(id)arg1;
+- (unsigned long long)originalNodeIndexForNode:(id)arg1;
 - (id)originalSmoothNodeForNode:(id)arg1;
-- (unsigned int)originalSubpathIndexForNode:(id)arg1;
+- (unsigned long long)originalSubpathIndexForNode:(id)arg1;
 - (void)setOriginal:(id)arg1;
 - (void)setSmoothOriginal:(id)arg1;
 - (id)smoothOriginal;

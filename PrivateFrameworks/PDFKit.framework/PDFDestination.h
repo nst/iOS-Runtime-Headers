@@ -7,23 +7,23 @@
 }
 
 @property (nonatomic, readonly) PDFPage *page;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } point;
-@property (nonatomic) float zoom;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } point;
+@property (nonatomic) double zoom;
 
 - (void).cxx_destruct;
 - (void)commonInit;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (const struct __CFArray { }*)createArrayRef;
 - (id)description;
 - (id)document;
 - (id)init;
 - (id)initWithDictionary:(struct CGPDFDictionary { }*)arg1 forDocument:(id)arg2;
-- (id)initWithPage:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (id)initWithPage:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (id)page;
-- (struct CGPoint { float x1; float x2; })point;
-- (void)setZoom:(float)arg1;
+- (struct CGPoint { double x1; double x2; })point;
+- (void)setZoom:(double)arg1;
 - (int)type;
-- (float)zoom;
+- (double)zoom;
 
 @end

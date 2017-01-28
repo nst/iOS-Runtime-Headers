@@ -5,7 +5,7 @@
 
 @required
 
-- (NSArray *)_availableActivitiesMatchingOnlyUserElectedExtensions:(BOOL)arg1;
+- (NSArray *)_availableActivitiesMatchingOnlyUserElectedExtensions:(bool)arg1;
 - (void)_changeActionButtonToDone;
 - (void)_performActivity:(UIActivity *)arg1;
 - (void)_presentUserDefaultsController:(UIViewController *)arg1;

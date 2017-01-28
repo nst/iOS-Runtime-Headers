@@ -4,14 +4,14 @@
 
 @interface CAMIntervalometerTestHarness : CAMPerformanceTestHarness <CAMCaptureRequestIntervalometerDelegate, CAMStillImageCaptureRequestDelegate> {
     CUCaptureController * _captureController;
-    BOOL  _hasOutstandingCapture;
-    BOOL  _nextCaptureIsMyLast;
+    bool  _hasOutstandingCapture;
+    bool  _nextCaptureIsMyLast;
     CAMCaptureRequestIntervalometer * _testIntervalometer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CAMCaptureRequestIntervalometer *testIntervalometer;
 
@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (void)_finishAndCleanupConfiguredTest;
 - (id)initWithTestName:(id)arg1 captureController:(id)arg2;
-- (BOOL)intervalometer:(id)arg1 didGenerateCaptureRequest:(id)arg2;
+- (bool)intervalometer:(id)arg1 didGenerateCaptureRequest:(id)arg2;
 - (void)intervalometerDidReachMaximumCount:(id)arg1;
 - (void)runConfiguredTest;
 - (void)setTestIntervalometer:(id)arg1;

@@ -3,16 +3,16 @@
  */
 
 @interface MPStoreItemLibraryImport : NSObject {
-    BOOL  _addToCloudLibrary;
+    bool  _addToCloudLibrary;
     NSArray * _importElements;
 }
 
-@property (nonatomic, readonly) BOOL addToCloudLibrary;
+@property (nonatomic, readonly) bool addToCloudLibrary;
 @property (nonatomic, readonly) NSArray *importElements;
 
 - (void).cxx_destruct;
-- (BOOL)addToCloudLibrary;
+- (bool)addToCloudLibrary;
 - (id)importElements;
-- (id)initWithImportElements:(id)arg1 usingCloudLibraryDestination:(BOOL)arg2;
+- (id)initWithImportElements:(id)arg1 usingCloudLibraryDestination:(bool)arg2;
 
 @end

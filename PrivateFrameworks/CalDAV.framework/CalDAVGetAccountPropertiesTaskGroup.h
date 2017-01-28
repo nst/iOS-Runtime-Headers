@@ -10,7 +10,7 @@
     NSURL * _notificationURL;
     NSURL * _outboxURL;
     CalDAVServerVersion * _serverVersion;
-    BOOL  _supportsCalendarUserSearch;
+    bool  _supportsCalendarUserSearch;
     NSURL * _updatedPrincipalURL;
     NSSet * _userAddresses;
 }
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) NSURL *notificationURL;
 @property (nonatomic, readonly) NSURL *outboxURL;
 @property (nonatomic, readonly) CalDAVServerVersion *serverVersion;
-@property (nonatomic, readonly) BOOL supportsCalendarUserSearch;
+@property (nonatomic, readonly) bool supportsCalendarUserSearch;
 @property (nonatomic, readonly) NSURL *updatedPrincipalURL;
 @property (nonatomic, readonly) NSSet *userAddresses;
 
@@ -33,7 +33,7 @@
 - (id)delegatePrincipalURL;
 - (id)description;
 - (id)dropboxURL;
-- (BOOL)forceOptionsRequest;
+- (bool)forceOptionsRequest;
 - (id)homeSet;
 - (id)inboxURL;
 - (id)notificationURL;
@@ -42,7 +42,7 @@
 - (id)serverVersion;
 - (void)setDelegatePrincipalURL:(id)arg1;
 - (void)startTaskGroup;
-- (BOOL)supportsCalendarUserSearch;
+- (bool)supportsCalendarUserSearch;
 - (id)updatedPrincipalURL;
 - (id)userAddresses;
 

@@ -8,7 +8,7 @@
 
 - (void)clearShortcutItems;
 - (id)createShortcutForItem:(id)arg1;
-- (BOOL)hasShortcutItems;
+- (bool)hasShortcutItems;
 - (void)removeShortcutItemWithIentifier:(id)arg1;
 - (void)setShortcutItem:(id)arg1;
 - (void)setShortcutItems:(id)arg1;

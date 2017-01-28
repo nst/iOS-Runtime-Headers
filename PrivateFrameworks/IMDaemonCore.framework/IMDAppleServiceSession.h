@@ -21,10 +21,10 @@
 - (id)_aliasStringsForIDSAccount:(id)arg1;
 - (id)_aliases;
 - (id)_aliasesForIDSAccount:(id)arg1;
-- (BOOL)_isDeviceRegistered;
-- (BOOL)_isDeviceRegisteredForAccount:(id)arg1;
-- (void)_updateAccountStatusToUnregistered:(BOOL)arg1 withAccount:(id)arg2;
-- (int)_validationStatusForAlias:(id)arg1 onAccount:(id)arg2;
+- (bool)_isDeviceRegistered;
+- (bool)_isDeviceRegisteredForAccount:(id)arg1;
+- (void)_updateAccountStatusToUnregistered:(bool)arg1 withAccount:(id)arg2;
+- (long long)_validationStatusForAlias:(id)arg1 onAccount:(id)arg2;
 - (void)activeDevicesUpdated;
 - (void)addAliases:(id)arg1 account:(id)arg2;
 - (id)aliases;
@@ -59,8 +59,8 @@
 - (void)updateAuthorizationCredentials:(id)arg1 token:(id)arg2 account:(id)arg3;
 - (void)validateAliases:(id)arg1 account:(id)arg2;
 - (void)validateProfileWithAccount:(id)arg1;
-- (int)validationStatusForAlias:(id)arg1;
-- (int)validationStatusForAlias:(id)arg1 onAccount:(id)arg2;
+- (long long)validationStatusForAlias:(id)arg1;
+- (long long)validationStatusForAlias:(id)arg1 onAccount:(id)arg2;
 - (id)vettedAliases;
 
 @end

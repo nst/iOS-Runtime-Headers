@@ -4,23 +4,23 @@
 
 @interface HDSQLiteDatabaseIndexSchema : NSObject {
     NSArray * _columns;
-    BOOL  _isUnique;
+    bool  _isUnique;
     NSString * _name;
 }
 
 @property (nonatomic, retain) NSArray *columns;
-@property (nonatomic) BOOL isUnique;
+@property (nonatomic) bool isUnique;
 @property (nonatomic, copy) NSString *name;
 
 - (void).cxx_destruct;
 - (id)columns;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUnique;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isUnique;
 - (id)name;
 - (void)setColumns:(id)arg1;
-- (void)setIsUnique:(BOOL)arg1;
+- (void)setIsUnique:(bool)arg1;
 - (void)setName:(id)arg1;
 
 @end

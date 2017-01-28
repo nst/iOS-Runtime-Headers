@@ -4,8 +4,8 @@
 
 @interface _GEOTransitRoutePreloaderData : NSObject {
     _GEOTransitPreloadCamera * _camera;
-    unsigned int  _currentBatchGeneration;
-    BOOL  _isSufficientlyLoaded;
+    unsigned long long  _currentBatchGeneration;
+    bool  _isSufficientlyLoaded;
     NSMutableSet * _placecardsLoadingOrLoaded;
     NSMutableSet * _placecardsMissed;
     NSMutableSet * _placecardsReceived;
@@ -16,8 +16,8 @@
 }
 
 @property (nonatomic, retain) _GEOTransitPreloadCamera *camera;
-@property (nonatomic) unsigned int currentBatchGeneration;
-@property (nonatomic) BOOL isSufficientlyLoaded;
+@property (nonatomic) unsigned long long currentBatchGeneration;
+@property (nonatomic) bool isSufficientlyLoaded;
 @property (nonatomic, retain) NSMutableSet *placecardsLoadingOrLoaded;
 @property (nonatomic, retain) NSMutableSet *placecardsMissed;
 @property (nonatomic, retain) NSMutableSet *placecardsReceived;
@@ -27,17 +27,17 @@
 @property (nonatomic, retain) GEOTileKeyList *tilesReceived;
 
 - (id)camera;
-- (unsigned int)currentBatchGeneration;
+- (unsigned long long)currentBatchGeneration;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isSufficientlyLoaded;
+- (bool)isSufficientlyLoaded;
 - (id)placecardsLoadingOrLoaded;
 - (id)placecardsMissed;
 - (id)placecardsReceived;
 - (id)preloadBatches;
 - (void)setCamera:(id)arg1;
-- (void)setCurrentBatchGeneration:(unsigned int)arg1;
-- (void)setIsSufficientlyLoaded:(BOOL)arg1;
+- (void)setCurrentBatchGeneration:(unsigned long long)arg1;
+- (void)setIsSufficientlyLoaded:(bool)arg1;
 - (void)setPlacecardsLoadingOrLoaded:(id)arg1;
 - (void)setPlacecardsMissed:(id)arg1;
 - (void)setPlacecardsReceived:(id)arg1;

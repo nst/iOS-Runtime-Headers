@@ -10,10 +10,10 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (BOOL)_parseCoreDuetAttributeValue:(id)arg1 aceId:(id*)arg2 duration:(double*)arg3;
+- (bool)_parseCoreDuetAttributeValue:(id)arg1 aceId:(id*)arg2 duration:(double*)arg3;
 - (void)deleteRegisteredIdentifiers;
 - (id)init;
-- (void)registerPunchoutIdentifier:(id)arg1 metricsContext:(id)arg2 handler:(id /* block */)arg3;
-- (void)retrieveMetricsFromPreviousPunchout:(id /* block */)arg1;
+- (void)registerPunchoutIdentifier:(id)arg1 metricsContext:(id)arg2 handler:(id)arg3;
+- (void)retrieveMetricsFromPreviousPunchout:(id)arg1;
 
 @end

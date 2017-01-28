@@ -12,13 +12,13 @@
 @property (retain) NSXPCConnection *XPCConnection;
 @property (retain) NSError *previousPlugInError;
 
-+ (BOOL)canHandleURLComponents:(id)arg1;
++ (bool)canHandleURLComponents:(id)arg1;
 + (Class)plugInClasses;
 
 - (id)URLComponents;
 - (id)XPCConnection;
 - (void)dealloc;
-- (void)getAppLinkWithCompletionHandler:(id /* block */)arg1;
+- (void)getAppLinkWithCompletionHandler:(id)arg1;
 - (id)previousPlugInError;
 - (void)setPreviousPlugInError:(id)arg1;
 - (void)setURLComponents:(id)arg1;

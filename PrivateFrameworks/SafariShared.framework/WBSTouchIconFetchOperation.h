@@ -3,41 +3,41 @@
  */
 
 @interface WBSTouchIconFetchOperation : WBSWebViewMetadataFetchOperation <WBSTouchIconObserver> {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSTimer * _loadingTimeoutTimer;
     NSArray * _pendingTouchIconURLs;
-    int  _state;
+    long long  _state;
     _WKRemoteObjectInterface * _touchIconObserverInterface;
     NSSet * _touchIconURLs;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ completionHandler;
+@property (nonatomic, readonly, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_downloadFirstValidImageWithURLs:(id)arg1 failureHandler:(id /* block */)arg2;
+- (void)_downloadFirstValidImageWithURLs:(id)arg1 failureHandler:(id)arg2;
 - (void)_downloadPendingTouchIconURLs;
 - (void)_scheduleTimeoutWithTimeInterval:(double)arg1;
 - (void)_setUpRemoteObjectProxies;
 - (void)_tearDownRemoteObjectProxies;
 - (void)clearWebView;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)description;
 - (void)didCompleteWithResult:(id)arg1;
 - (void)didCreateWebView;
 - (void)didFailFetch;
 - (void)didFetchTouchIconURLs:(id)arg1 andFaviconURLs:(id)arg2 forURL:(id)arg3;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithRequest:(id)arg1;
-- (id)initWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithRequest:(id)arg1 completionHandler:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (void)loadRequest;
 - (void)resetState;
 - (void)startOffscreenFetching;
-- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id)arg3;
 - (id)webViewConfiguration;
 - (void)willClearWebView;
 

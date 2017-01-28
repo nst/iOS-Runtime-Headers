@@ -4,16 +4,16 @@
 
 @interface PXPeopleIndexedImageContainer : NSObject {
     UIImage * _image;
-    unsigned int  _index;
+    unsigned long long  _index;
 }
 
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) unsigned int index;
+@property (nonatomic) unsigned long long index;
 
 - (void).cxx_destruct;
 - (id)image;
-- (unsigned int)index;
+- (unsigned long long)index;
 - (void)setImage:(id)arg1;
-- (void)setIndex:(unsigned int)arg1;
+- (void)setIndex:(unsigned long long)arg1;
 
 @end

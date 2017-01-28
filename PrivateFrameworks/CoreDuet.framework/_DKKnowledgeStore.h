@@ -21,19 +21,19 @@
 - (id)connection;
 - (void)dealloc;
 - (id)defaultQueue;
-- (unsigned int)deleteAllEventsInEventStream:(id)arg1 error:(id*)arg2;
-- (unsigned int)deleteAllEventsMatchingPredicate:(id)arg1 error:(id*)arg2;
-- (BOOL)deleteObjects:(id)arg1 error:(id*)arg2;
-- (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (unsigned long long)deleteAllEventsInEventStream:(id)arg1 error:(id*)arg2;
+- (unsigned long long)deleteAllEventsMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (bool)deleteObjects:(id)arg1 error:(id*)arg2;
+- (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id)arg3;
 - (id)executeQuery:(id)arg1 error:(id*)arg2;
 - (void)executeQuery:(id)arg1 responseQueue:(id)arg2;
-- (void)executeQuery:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)executeQuery:(id)arg1 responseQueue:(id)arg2 withCompletion:(id)arg3;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1;
 - (id)privacyEnforcer;
 - (id)rateLimitEnforcer;
-- (BOOL)saveObjects:(id)arg1 error:(id*)arg2;
-- (void)saveObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
+- (bool)saveObjects:(id)arg1 error:(id*)arg2;
+- (void)saveObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id)arg3;
 - (void)setConnection:(id)arg1;
 - (void)setDefaultQueue:(id)arg1;
 

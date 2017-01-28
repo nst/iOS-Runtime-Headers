@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)abDataSource:(id)arg1 selectedPerson:(void*)arg2 atIndexPath:(NSIndexPath *)arg3 withMemberCell:(UIView *)arg4 animate:(BOOL)arg5;
-- (BOOL)abDataSource:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
-- (BOOL)abDataSourceAllowsShowingPersonsCards:(id)arg1;
+- (bool)abDataSource:(id)arg1 selectedPerson:(void*)arg2 atIndexPath:(NSIndexPath *)arg3 withMemberCell:(UIView *)arg4 animate:(bool)arg5;
+- (bool)abDataSource:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
+- (bool)abDataSourceAllowsShowingPersonsCards:(id)arg1;
 
 @optional
 

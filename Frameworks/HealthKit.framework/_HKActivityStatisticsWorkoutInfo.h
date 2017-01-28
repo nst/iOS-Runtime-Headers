@@ -12,7 +12,7 @@
 @property (nonatomic, retain) HKSource *source;
 @property (nonatomic, retain) NSDate *startDate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

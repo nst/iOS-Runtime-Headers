@@ -10,10 +10,11 @@
 
 + (id)cylindersNoiseWithFrequency:(double)arg1;
 
-- (struct Module { int (**x1)(); struct Module {} **x2; }*)__newModule;
+- (id)cloneModule;
 - (double)frequency;
 - (id)init;
 - (id)initWithFrequency:(double)arg1;
 - (void)setFrequency:(double)arg1;
+- (double)valueAt;
 
 @end

@@ -6,8 +6,8 @@
 @required
 
 - (NSString *)_briefDescription;
-- (BOOL)_canExcludeOtherExcludables;
+- (bool)_canExcludeOtherExcludables;
 - (void)_exclude;
-- (BOOL)_isExcludedByExcludable:(id <_UIExcludable>)arg1;
+- (bool)_isExcludedByExcludable:(id <_UIExcludable>)arg1;
 
 @end

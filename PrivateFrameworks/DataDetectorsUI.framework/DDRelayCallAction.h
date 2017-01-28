@@ -4,7 +4,7 @@
 
 @interface DDRelayCallAction : DDAssistedCallAction
 
-- (int)TTYType;
+- (long long)TTYType;
 - (id)localizedName;
 
 @end

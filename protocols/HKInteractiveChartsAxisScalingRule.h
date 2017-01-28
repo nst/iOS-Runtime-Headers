@@ -5,11 +5,11 @@
 
 @required
 
-- (HKValueRange *)portraitYValueRangeForRange:(HKValueRange *)arg1 zoomLevel:(int)arg2 allowedDecimalPrecision:(int)arg3;
+- (HKValueRange *)portraitYValueRangeForRange:(HKValueRange *)arg1 zoomLevel:(long long)arg2 allowedDecimalPrecision:(long long)arg3;
 
 @optional
 
-- (BOOL)isCompatibleWithQuantityType:(HKQuantityType *)arg1;
+- (bool)isCompatibleWithQuantityType:(HKQuantityType *)arg1;
 - (void)setUnit:(HKUnit *)arg1;
 
 @end

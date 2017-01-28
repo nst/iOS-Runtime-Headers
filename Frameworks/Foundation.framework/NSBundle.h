@@ -4,11 +4,11 @@
 
 @interface NSBundle : NSObject {
     id  _cfBundle;
-    unsigned int  _flags;
+    unsigned long long  _flags;
     id  _initialPath;
     id  _lock;
     Class  _principalClass;
-    unsigned int  _reserved2;
+    unsigned long long  _reserved2;
     id  _reserved3;
     id  _resolvedPath;
 }
@@ -20,13 +20,13 @@
 @property (readonly, copy) NSString *bundlePath;
 @property (readonly, copy) NSURL *bundleURL;
 @property (nonatomic, readonly, copy) NSString *cx_displayName;
-@property (nonatomic, readonly) BOOL cx_hasVoIPBackgroundMode;
+@property (nonatomic, readonly) bool cx_hasVoIPBackgroundMode;
 @property (readonly, copy) NSString *developmentLocalization;
 @property (readonly, copy) NSArray *executableArchitectures;
 @property (readonly, copy) NSString *executablePath;
 @property (readonly, copy) NSURL *executableURL;
 @property (readonly, copy) NSDictionary *infoDictionary;
-@property (getter=isLoaded, readonly) BOOL loaded;
+@property (getter=isLoaded, readonly) bool loaded;
 @property (readonly, copy) NSArray *localizations;
 @property (readonly, copy) NSDictionary *localizedInfoDictionary;
 @property (readonly, copy) NSArray *preferredLocalizations;
@@ -51,8 +51,8 @@
 + (id)bundleWithPath:(id)arg1;
 + (id)bundleWithURL:(id)arg1;
 + (id)debugDescription;
-+ (id)findBundleResourceURLsCallingMethod:(SEL)arg1 baseURL:(id)arg2 passingTest:(id /* block */)arg3;
-+ (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned int)arg7;
++ (id)findBundleResourceURLsCallingMethod:(SEL)arg1 baseURL:(id)arg2 passingTest:(id)arg3;
++ (id)findBundleResources:(id)arg1 callingMethod:(SEL)arg2 directory:(id)arg3 languages:(id)arg4 name:(id)arg5 types:(id)arg6 limit:(unsigned long long)arg7;
 + (id)loadedBundles;
 + (id)mainBundle;
 + (id)pathForResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
@@ -86,17 +86,16 @@
 - (id)executableArchitectures;
 - (id)executablePath;
 - (id)executableURL;
-- (id)findBundleResourceURLsCallingMethod:(SEL)arg1 passingTest:(id /* block */)arg2;
+- (id)findBundleResourceURLsCallingMethod:(SEL)arg1 passingTest:(id)arg2;
 - (id)infoDictionary;
 - (id)initWithPath:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)invalidateResourceCache;
-- (BOOL)isLoaded;
-- (BOOL)load;
-- (BOOL)loadAndReturnError:(id*)arg1;
+- (bool)isLoaded;
+- (bool)load;
+- (bool)loadAndReturnError:(id*)arg1;
 - (id)localizations;
 - (id)localizedInfoDictionary;
-- (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)objectForInfoDictionaryKey:(id)arg1;
 - (id)pathForAuxiliaryExecutable:(id)arg1;
 - (id)pathForResource:(id)arg1 ofType:(id)arg2;
@@ -107,7 +106,7 @@
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forLanguage:(id)arg3;
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forLocalization:(id)arg3;
 - (id)preferredLocalizations;
-- (BOOL)preflightAndReturnError:(id*)arg1;
+- (bool)preflightAndReturnError:(id*)arg1;
 - (double)preservationPriorityForTag:(id)arg1;
 - (Class)principalClass;
 - (id)privateFrameworksPath;
@@ -120,18 +119,25 @@
 - (id)sharedFrameworksURL;
 - (id)sharedSupportPath;
 - (id)sharedSupportURL;
-- (BOOL)unload;
-- (unsigned int)versionNumber;
+- (bool)unload;
+- (unsigned long long)versionNumber;
+
+// Image: /Library/MobileSubstrate/DynamicLibraries/WinterBoard.dylib
+
++ (id)_wb$bundleWithFile:(id)arg1;
++ (id)wb$bundleWithFile:(id)arg1;
+
+- (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 
 - (id)URLForMovieResource:(id)arg1;
-- (id)imageForResource:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)imageForResource:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
 // Image: /System/Library/Frameworks/CallKit.framework/CallKit
 
 - (id)cx_displayName;
-- (BOOL)cx_hasVoIPBackgroundMode;
+- (bool)cx_hasVoIPBackgroundMode;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -184,11 +190,12 @@
 + (id)afui_assistantUIFrameworkBundle;
 
 - (id)_assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
-- (BOOL)assistantLanguageIsRTL;
+- (bool)assistantLanguageIsRTL;
 - (id)assistantUILocale;
 - (id)assistantUILocalizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)assistantUILocalizedStringFromSiriLanguageForKey:(id)arg1 table:(id)arg2;
+- (id)assistantUILocalizedStringFromSystemLanguageForKey:(id)arg1 table:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
 
@@ -209,16 +216,16 @@
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
 + (id)_gkLocalizedMessageFromPushDictionary:(id)arg1 forBundleID:(id)arg2;
-+ (BOOL)_gkMainBundleIsGameCenterSystemProcess;
++ (bool)_gkMainBundleIsGameCenterSystemProcess;
 
 - (id)_gkBundleShortVersion;
 - (id)_gkBundleVersion;
 - (id)_gkFrameworkVersionDescription;
-- (BOOL)_gkIsBadgingEnabled;
-- (BOOL)_gkIsDaemon;
-- (BOOL)_gkIsGameCenter;
-- (BOOL)_gkIsGameCenterExtension;
-- (BOOL)_gkIsPreferences;
+- (bool)_gkIsBadgingEnabled;
+- (bool)_gkIsDaemon;
+- (bool)_gkIsGameCenter;
+- (bool)_gkIsGameCenterExtension;
+- (bool)_gkIsPreferences;
 - (id)_gkLocalizedName;
 - (id)_gkLocalizedStringForKey:(id)arg1 defaultValue:(id)arg2 arguments:(id)arg3;
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
@@ -228,7 +235,7 @@
 - (id)_gkPathForMessageImage;
 - (id)_gkPathForSoundWithName:(id)arg1;
 - (id)_gkPreferredLanguage;
-- (BOOL)_gkShouldAddQuickActions;
+- (bool)_gkShouldAddQuickActions;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
@@ -251,10 +258,23 @@
 
 + (id)mediaSocialBundle;
 
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
++ (id)localizedFont:(id)arg1;
++ (id)localizedFontName:(id)arg1;
++ (float)localizedFontSize:(id)arg1;
++ (id)localizedString:(id)arg1;
++ (id)localizedString:(id)arg1;
++ (float)localizedValue:(id)arg1;
++ (id)nonLocalizedString:(id)arg1;
++ (id)nonLocalizedString:(id)arg1;
++ (id)nonLocalizedString:(id)arg1 valueIfMissing:(id)arg2;
++ (id)nonLocalizedString:(id)arg1 valueIfMissing:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 + (id)_navigationBundle;
-+ (BOOL)_navigation_isRunningInSiri;
++ (bool)_navigation_isRunningInSiri;
 
 - (id)_navigation_localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 
@@ -286,7 +306,7 @@
 
 + (id)safari_safariSharedBundle;
 
-- (BOOL)safari_primaryLocalizationIsEnglish;
+- (bool)safari_primaryLocalizationIsEnglish;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
 
@@ -297,9 +317,9 @@
 + (id)brailleDriverDeviceDetectionInfo;
 + (id)brailleTableBundleWithTableIdentifier:(id)arg1;
 + (id)brailleTableIdentifiers;
-+ (long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
-+ (BOOL)doesBrailleTableSupportContractions:(id)arg1;
-+ (BOOL)doesBrailleTableSupportEightDot:(id)arg1;
++ (long long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
++ (bool)doesBrailleTableSupportContractions:(id)arg1;
++ (bool)doesBrailleTableSupportEightDot:(id)arg1;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
 + (id)nameForBrailleTableIdentifier:(id)arg1;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
@@ -316,9 +336,9 @@
 + (id)brailleDriverDeviceDetectionInfo;
 + (id)brailleTableBundleWithTableIdentifier:(id)arg1;
 + (id)brailleTableIdentifiers;
-+ (long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
-+ (BOOL)doesBrailleTableSupportContractions:(id)arg1;
-+ (BOOL)doesBrailleTableSupportEightDot:(id)arg1;
++ (long long)bundleIndexForBrailleDriverIdentifier:(id)arg1;
++ (bool)doesBrailleTableSupportContractions:(id)arg1;
++ (bool)doesBrailleTableSupportEightDot:(id)arg1;
 + (id)languageIdentifiersForBrailleTableIdentifier:(id)arg1;
 + (id)nameForBrailleTableIdentifier:(id)arg1;
 + (id)tableIdentifiersForLanguageIdentifier:(id)arg1;
@@ -337,6 +357,11 @@
 - (id)suic_localizedStringForKey:(id)arg1;
 - (id)suic_localizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)suic_localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (id)tv_imageNamed:(id)arg1;
+- (id)tv_launchImage;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

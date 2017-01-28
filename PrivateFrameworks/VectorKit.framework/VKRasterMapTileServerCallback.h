@@ -3,20 +3,20 @@
  */
 
 @interface VKRasterMapTileServerCallback : NSObject {
-    id /* block */  handler;
+    id  handler;
     VKRasterMapTileRequest * request;
     double  startTimestamp;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 @property (nonatomic, retain) VKRasterMapTileRequest *request;
 @property (nonatomic) double startTimestamp;
 
 - (void)dealloc;
 - (id)description;
-- (id /* block */)handler;
+- (id)handler;
 - (id)request;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setStartTimestamp:(double)arg1;
 - (double)startTimestamp;

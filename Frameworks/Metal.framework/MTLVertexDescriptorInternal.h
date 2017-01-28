@@ -13,12 +13,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)layouts;
 - (id)newSerializedDescriptor;
 - (void)reset;
-- (BOOL)validateWithVertexFunction:(id)arg1 error:(id*)arg2;
+- (bool)validateWithVertexFunction:(id)arg1 error:(id*)arg2;
 
 @end

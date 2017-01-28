@@ -9,12 +9,12 @@
 
 @property (nonatomic, copy) NSURL *baseURL;
 @property (nonatomic, retain) SGSuggestionsService *suggestionsService;
-@property (nonatomic, readonly) BOOL useInMemoryStores;
+@property (nonatomic, readonly) bool useInMemoryStores;
 
 + (id)baseURLWithDataLocationName:(id)arg1;
 + (id)currentEnvironment;
 + (id)inMemoryURL;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)unitTestingEnvironment;
 + (id)unitTestingEnvironmentWithDataLocationName:(id)arg1;
 
@@ -26,6 +26,6 @@
 - (void)setBaseURL:(id)arg1;
 - (void)setSuggestionsService:(id)arg1;
 - (id)suggestionsService;
-- (BOOL)useInMemoryStores;
+- (bool)useInMemoryStores;
 
 @end

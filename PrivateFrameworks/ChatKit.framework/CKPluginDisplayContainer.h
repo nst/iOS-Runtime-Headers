@@ -11,7 +11,7 @@
 @property (nonatomic, retain) IMPluginPayload *pluginPayload;
 
 + (id)pluginDisplayContinerWithPluginPayload:(id)arg1 composeImage:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)composeImage;

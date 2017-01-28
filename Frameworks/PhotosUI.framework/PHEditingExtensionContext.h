@@ -17,11 +17,11 @@
 - (id)_contentEditingController;
 - (id)_initialPayload;
 - (void)_releaseSandboxExtensions;
-- (void)beginContentEditingWithCompletionHandler:(id /* block */)arg1;
+- (void)beginContentEditingWithCompletionHandler:(id)arg1;
 - (void)cancelContentEditing;
 - (void)dealloc;
 - (void)finishContentEditing;
-- (void)queryHandlingCapabilityForAdjustmentData:(id)arg1 withResponseHandler:(id /* block */)arg2;
-- (void)queryShouldShowCancelConfirmationWithResponseHandler:(id /* block */)arg1;
+- (void)queryHandlingCapabilityForAdjustmentData:(id)arg1 withResponseHandler:(id)arg2;
+- (void)queryShouldShowCancelConfirmationWithResponseHandler:(id)arg1;
 
 @end

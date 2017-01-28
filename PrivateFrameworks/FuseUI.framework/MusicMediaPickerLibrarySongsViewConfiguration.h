@@ -4,9 +4,9 @@
 
 @interface MusicMediaPickerLibrarySongsViewConfiguration : MusicLibrarySongsViewConfiguration
 
-- (BOOL)canPreviewEntityValueContext:(id)arg1;
+- (bool)canPreviewEntityValueContext:(id)arg1;
 - (void)handleSelectionOfAddButtonForEntityValueProvider:(id)arg1 inEntityProvider:(id)arg2 fromViewController:(id)arg3;
-- (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)init;
 - (id)loadEntityViewDescriptor;
 - (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;

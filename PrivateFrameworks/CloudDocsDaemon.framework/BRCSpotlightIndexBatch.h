@@ -18,6 +18,6 @@
 - (void)addIndexOfDocument:(id)arg1;
 - (id)description;
 - (id)initWithIndex:(id)arg1 queue:(id)arg2 loggedInUserDisplayName:(id)arg3;
-- (void)prepareAndSendIndexBatchForIndexToken:(id)arg1 completion:(id /* block */)arg2;
+- (void)prepareAndSendIndexBatchForIndexToken:(id)arg1 completion:(id)arg2;
 
 @end

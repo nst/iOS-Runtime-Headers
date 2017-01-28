@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) long long stationID;
 @property (nonatomic, readonly, copy) NSString *stationStringID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1;

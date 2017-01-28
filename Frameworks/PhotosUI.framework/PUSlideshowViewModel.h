@@ -3,21 +3,21 @@
  */
 
 @interface PUSlideshowViewModel : PUViewModel {
-    int  _currentState;
-    BOOL  _wantsChromeVisible;
+    long long  _currentState;
+    bool  _wantsChromeVisible;
 }
 
-@property (nonatomic) int currentState;
-@property (setter=setWantsChromeVisible:, nonatomic) BOOL wantsChromeVisible;
+@property (nonatomic) long long currentState;
+@property (setter=setWantsChromeVisible:, nonatomic) bool wantsChromeVisible;
 
 - (id)currentChange;
-- (int)currentState;
+- (long long)currentState;
 - (id)newViewModelChange;
 - (void)registerChangeObserver:(id)arg1;
-- (void)setCurrentState:(int)arg1;
-- (void)setWantsChromeVisible:(BOOL)arg1;
-- (void)setWantsChromeVisible:(BOOL)arg1 changeReason:(int)arg2;
+- (void)setCurrentState:(long long)arg1;
+- (void)setWantsChromeVisible:(bool)arg1;
+- (void)setWantsChromeVisible:(bool)arg1 changeReason:(long long)arg2;
 - (void)unregisterChangeObserver:(id)arg1;
-- (BOOL)wantsChromeVisible;
+- (bool)wantsChromeVisible;
 
 @end

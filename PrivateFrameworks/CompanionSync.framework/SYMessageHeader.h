@@ -14,7 +14,7 @@
     unsigned int  _version;
 }
 
-@property (nonatomic) BOOL hasTimeout;
+@property (nonatomic) bool hasTimeout;
 @property (nonatomic, retain) SYPeer *sender;
 @property (nonatomic) unsigned long long sequenceNumber;
 @property (nonatomic, retain) SYVectorClock *state;
@@ -27,14 +27,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimeout;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTimeout;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sender;
 - (unsigned long long)sequenceNumber;
-- (void)setHasTimeout:(BOOL)arg1;
+- (void)setHasTimeout:(bool)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setState:(id)arg1;

@@ -16,6 +16,7 @@
 - (id)initWithAssetClass:(Class)arg1;
 - (double)launchSequenceDecayHalfLife;
 - (double)sessionObjectLogSamplingRate;
+- (double)shadowLogSamplingRate;
 - (double)spotlightLaunchDecayHalflife;
 
 @end

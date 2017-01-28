@@ -5,24 +5,24 @@
 @interface HMSetupViewController : UIViewController <HMSetupRemoteHost> {
     HMSetupAccessoryDescription * _accessoryDescription;
     _UIAsyncInvocation * _cancelServiceInvocation;
-    BOOL  _cancelling;
-    id /* block */  _completionHandler;
-    BOOL  _disconnected;
+    bool  _cancelling;
+    id  _completionHandler;
+    bool  _disconnected;
     HMHome * _home;
-    id /* block */  _loadHandler;
+    id  _loadHandler;
     HMSetupRemoteViewController * _remoteViewController;
-    BOOL  _shouldPresentWhenLoaded;
+    bool  _shouldPresentWhenLoaded;
 }
 
 @property (nonatomic, retain) HMSetupAccessoryDescription *accessoryDescription;
 @property (nonatomic, retain) _UIAsyncInvocation *cancelServiceInvocation;
-@property (getter=isCancelling, nonatomic) BOOL cancelling;
-@property (nonatomic, copy) id /* block */ completionHandler;
-@property (getter=isDisconnected, nonatomic) BOOL disconnected;
+@property (getter=isCancelling, nonatomic) bool cancelling;
+@property (nonatomic, copy) id completionHandler;
+@property (getter=isDisconnected, nonatomic) bool disconnected;
 @property (nonatomic, retain) HMHome *home;
-@property (nonatomic, copy) id /* block */ loadHandler;
+@property (nonatomic, copy) id loadHandler;
 @property (nonatomic, retain) HMSetupRemoteViewController *remoteViewController;
-@property (nonatomic) BOOL shouldPresentWhenLoaded;
+@property (nonatomic) bool shouldPresentWhenLoaded;
 
 - (void).cxx_destruct;
 - (void)_configureAndAddRemoteViewController;
@@ -33,28 +33,28 @@
 - (void)accessorySetupDidFinishWithError:(id)arg1;
 - (void)accessorySetupDidLoad;
 - (id)cancelServiceInvocation;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)home;
 - (id)init;
-- (id)initWithHome:(id)arg1 accessoryDescription:(id)arg2 loadHandler:(id /* block */)arg3;
-- (BOOL)isCancelling;
-- (BOOL)isDisconnected;
-- (id /* block */)loadHandler;
+- (id)initWithHome:(id)arg1 accessoryDescription:(id)arg2 loadHandler:(id)arg3;
+- (bool)isCancelling;
+- (bool)isDisconnected;
+- (id)loadHandler;
 - (void)presentWhenLoaded;
 - (id)remoteViewController;
 - (void)setAccessoryDescription:(id)arg1;
 - (void)setCancelServiceInvocation:(id)arg1;
-- (void)setCancelling:(BOOL)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setDisconnected:(BOOL)arg1;
+- (void)setCancelling:(bool)arg1;
+- (void)setCompletionHandler:(id)arg1;
+- (void)setDisconnected:(bool)arg1;
 - (void)setHome:(id)arg1;
-- (void)setLoadHandler:(id /* block */)arg1;
+- (void)setLoadHandler:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
-- (void)setShouldPresentWhenLoaded:(BOOL)arg1;
+- (void)setShouldPresentWhenLoaded:(bool)arg1;
 - (void)setupFailedWithError:(id)arg1;
 - (void)setupInterruptedWithError:(id)arg1;
-- (BOOL)shouldPresentWhenLoaded;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldPresentWhenLoaded;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
 
 @end

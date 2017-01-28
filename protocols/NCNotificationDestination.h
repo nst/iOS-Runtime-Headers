@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)canReceiveNotificationRequest:(NCNotificationRequest *)arg1;
+- (bool)canReceiveNotificationRequest:(NCNotificationRequest *)arg1;
 - (<NCNotificationDestinationDelegate> *)delegate;
 - (NSString *)identifier;
 - (void)modifyNotificationRequest:(NCNotificationRequest *)arg1 forCoalescedNotification:(NCCoalescedNotification *)arg2;
@@ -15,7 +15,7 @@
 
 @optional
 
-- (BOOL)interceptsQueueRequest:(NCNotificationRequest *)arg1;
+- (bool)interceptsQueueRequest:(NCNotificationRequest *)arg1;
 - (void)updateNotificationSectionSettings:(NCNotificationSectionSettings *)arg1;
 
 @end

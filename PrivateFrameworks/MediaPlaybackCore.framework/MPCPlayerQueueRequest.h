@@ -10,8 +10,8 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)newOperationWithResponseHandler:(id /* block */)arg1;
-- (void)performWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id)arg1;
+- (void)performWithResponseHandler:(id)arg1;
 - (id)player;
 - (void)setPlayer:(id)arg1;
 

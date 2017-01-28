@@ -15,7 +15,7 @@
 + (id)languageWithCode:(id)arg1 name:(id)arg2 localizedName:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)displayNamesAreEqual;
+- (bool)displayNamesAreEqual;
 - (id)languageCode;
 - (id)languageName;
 - (id)localizedLanguageName;

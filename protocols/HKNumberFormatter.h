@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)returnsUnitWithValueForDisplay;
+- (bool)returnsUnitWithValueForDisplay;
 - (NSString *)stringFromNumber:(NSNumber *)arg1 dataUnit:(HKDataUnit *)arg2 unitController:(HKUnitController *)arg3;
 
 @end

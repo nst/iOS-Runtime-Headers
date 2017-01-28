@@ -21,7 +21,7 @@
 - (id)biggerOriginatorProfileImageURL;
 - (id)description;
 - (id)displayString;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })displayURLRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })displayURLRange;
 - (id)displayURLString;
 - (id)domainString;
 - (id)expandedURLString;

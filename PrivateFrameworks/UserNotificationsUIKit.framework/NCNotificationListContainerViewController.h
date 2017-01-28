@@ -9,14 +9,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NCNotificationListViewController *listViewController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addListViewToHierarchy;
 - (void)_removeListViewFromHierarchy;
-- (void)contentChanged:(BOOL)arg1;
+- (void)contentChanged:(bool)arg1;
 - (id)initWithNotificationListViewController:(id)arg1;
 - (id)listViewController;
 - (void)viewWillLayoutSubviews;

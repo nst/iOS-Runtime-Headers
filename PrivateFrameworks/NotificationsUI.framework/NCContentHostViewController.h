@@ -5,9 +5,9 @@
 @interface NCContentHostViewController : _UIRemoteViewController <NCContentHostInterface>
 
 + (id)exportedInterface;
-+ (void)requestContentViewControllerWithName:(id)arg1 bundleIdentifier:(id)arg2 context:(id)arg3 completion:(id /* block */)arg4;
++ (void)requestContentViewControllerWithName:(id)arg1 bundleIdentifier:(id)arg2 context:(id)arg3 completion:(id)arg4;
 + (id)serviceViewControllerInterface;
 
-- (BOOL)__shouldRemoteViewControllerFenceOperations;
+- (bool)__shouldRemoteViewControllerFenceOperations;
 
 @end

@@ -20,7 +20,7 @@
 - (id)clientQueue;
 - (id)connection;
 - (id)initWithQueue:(id)arg1;
-- (void)isNotificationImminentWithPublisherBulletinID:(id)arg1 sectionID:(id)arg2 completion:(id /* block */)arg3;
+- (void)isNotificationImminentWithPublisherBulletinID:(id)arg1 sectionID:(id)arg2 completion:(id)arg3;
 - (id)queue;
 - (void)setClientQueue:(id)arg1;
 - (void)setConnection:(id)arg1;

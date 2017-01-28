@@ -9,7 +9,7 @@
 - (NSString *)personUUID;
 - (void)setFullName:(NSString *)arg1;
 - (void)setPersonUUID:(NSString *)arg1;
-- (void)setVerified:(BOOL)arg1;
-- (BOOL)verified;
+- (void)setVerified:(bool)arg1;
+- (bool)verified;
 
 @end

@@ -4,26 +4,26 @@
 
 @interface UIApplicationSceneClientSettingsDiffInspector : FBSSceneClientSettingsDiffInspector
 
-- (void)_observeOtherSetting:(unsigned int)arg1 withBlock:(id /* block */)arg2;
-- (void)observeBackgroundStyleWithBlock:(id /* block */)arg1;
-- (void)observeCompatibilityModeWithBlock:(id /* block */)arg1;
-- (void)observeControlCenterRevealModeWithBlock:(id /* block */)arg1;
-- (void)observeDefaultPNGExpirationTimeWithBlock:(id /* block */)arg1;
-- (void)observeDefaultPNGNameWithBlock:(id /* block */)arg1;
-- (void)observeDefaultStatusBarHiddenWithBlock:(id /* block */)arg1;
-- (void)observeDefaultStatusBarStyleWithBlock:(id /* block */)arg1;
-- (void)observeDeviceOrientationEventsEnabledWithBlock:(id /* block */)arg1;
-- (void)observeIdleModeVisualEffectsEnabledWithBlock:(id /* block */)arg1;
-- (void)observeIdleTimerDisabledWithBlock:(id /* block */)arg1;
-- (void)observeInterfaceOrientationChangesDisabledWithBlock:(id /* block */)arg1;
-- (void)observeInterfaceOrientationWithBlock:(id /* block */)arg1;
-- (void)observeNotificationCenterRevealModeWithBlock:(id /* block */)arg1;
-- (void)observeProximityDetectionModesWithBlock:(id /* block */)arg1;
-- (void)observeStatusBarContextIDWithBlock:(id /* block */)arg1;
-- (void)observeStatusBarHiddenWithBlock:(id /* block */)arg1;
-- (void)observeStatusBarStyleWithBlock:(id /* block */)arg1;
-- (void)observeSupportedInterfaceOrientationsWithBlock:(id /* block */)arg1;
-- (void)observeWhitePointAdaptivityStyleWithBlock:(id /* block */)arg1;
-- (void)observeWindowOverlayInsetsWithBlock:(id /* block */)arg1;
+- (void)_observeOtherSetting:(unsigned long long)arg1 withBlock:(id)arg2;
+- (void)observeBackgroundStyleWithBlock:(id)arg1;
+- (void)observeCompatibilityModeWithBlock:(id)arg1;
+- (void)observeControlCenterRevealModeWithBlock:(id)arg1;
+- (void)observeDefaultPNGExpirationTimeWithBlock:(id)arg1;
+- (void)observeDefaultPNGNameWithBlock:(id)arg1;
+- (void)observeDefaultStatusBarHiddenWithBlock:(id)arg1;
+- (void)observeDefaultStatusBarStyleWithBlock:(id)arg1;
+- (void)observeDeviceOrientationEventsEnabledWithBlock:(id)arg1;
+- (void)observeIdleModeVisualEffectsEnabledWithBlock:(id)arg1;
+- (void)observeIdleTimerDisabledWithBlock:(id)arg1;
+- (void)observeInterfaceOrientationChangesDisabledWithBlock:(id)arg1;
+- (void)observeInterfaceOrientationWithBlock:(id)arg1;
+- (void)observeNotificationCenterRevealModeWithBlock:(id)arg1;
+- (void)observeProximityDetectionModesWithBlock:(id)arg1;
+- (void)observeStatusBarContextIDWithBlock:(id)arg1;
+- (void)observeStatusBarHiddenWithBlock:(id)arg1;
+- (void)observeStatusBarStyleWithBlock:(id)arg1;
+- (void)observeSupportedInterfaceOrientationsWithBlock:(id)arg1;
+- (void)observeWhitePointAdaptivityStyleWithBlock:(id)arg1;
+- (void)observeWindowOverlayInsetsWithBlock:(id)arg1;
 
 @end

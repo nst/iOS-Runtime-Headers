@@ -4,18 +4,18 @@
 
 @interface SBLockScreenLegibilitySettings : _UILegibilitySettings {
     UIColor * _backgroundColorHint;
-    BOOL  _vibrancyDisabled;
+    bool  _vibrancyDisabled;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColorHint;
-@property (nonatomic) BOOL vibrancyDisabled;
+@property (nonatomic) bool vibrancyDisabled;
 
 + (id)defaultSettings;
 
 - (void).cxx_destruct;
 - (id)backgroundColorHint;
 - (void)setBackgroundColorHint:(id)arg1;
-- (void)setVibrancyDisabled:(BOOL)arg1;
-- (BOOL)vibrancyDisabled;
+- (void)setVibrancyDisabled:(bool)arg1;
+- (bool)vibrancyDisabled;
 
 @end

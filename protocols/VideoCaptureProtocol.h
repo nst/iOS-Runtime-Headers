@@ -5,21 +5,21 @@
 
 @required
 
-- (long)copyColorInfo:(const struct __CFDictionary {}**)arg1;
-- (BOOL)isPreviewRunning;
-- (long)setWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
-- (long)startCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
-- (long)startPreview;
-- (long)stop:(BOOL)arg1;
+- (int)copyColorInfo:(const struct __CFDictionary {}**)arg1;
+- (bool)isPreviewRunning;
+- (int)setWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
+- (int)startCaptureWithWidth:(int)arg1 height:(int)arg2 frameRate:(int)arg3;
+- (int)startPreview;
+- (int)stop:(bool)arg1;
 
 @optional
 
-- (long)frameBecameAvailableCount:(int*)arg1 figBufferQueueEmptyCount:(int*)arg2 figBufferQueueErrorCount:(int*)arg3;
-- (long)getCamera:(unsigned int*)arg1;
-- (long)getCameraType:(int*)arg1;
-- (long)getPreviewFrameCount:(int*)arg1 captureFrameCount:(int*)arg2 reset:(BOOL)arg3;
-- (long)setCamera:(unsigned long)arg1;
-- (long)setCameraType:(int)arg1;
-- (long)setFrameRatePercentage:(double)arg1 newFramerate:(int*)arg2;
+- (int)frameBecameAvailableCount:(int*)arg1 figBufferQueueEmptyCount:(int*)arg2 figBufferQueueErrorCount:(int*)arg3;
+- (int)getCamera:(unsigned int*)arg1;
+- (int)getCameraType:(int*)arg1;
+- (int)getPreviewFrameCount:(int*)arg1 captureFrameCount:(int*)arg2 reset:(bool)arg3;
+- (int)setCamera:(unsigned int)arg1;
+- (int)setCameraType:(int)arg1;
+- (int)setFrameRatePercentage:(double)arg1 newFramerate:(int*)arg2;
 
 @end

@@ -8,11 +8,11 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithPage:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithPage:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (bool)isEqual:(id)arg1;
 - (id)page;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })range;
 - (void)setPage:(id)arg1;
-- (void)setRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

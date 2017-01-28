@@ -5,15 +5,15 @@
 @interface GEOPlaceDataRequester : GEOServiceRequester
 
 + (int)_experimentDispatcherRequestTypeForRequest:(id)arg1;
-+ (int)_experimentType;
++ (long long)_experimentType;
 + (unsigned char)_requestCounterInfoTypeForRequest:(id)arg1;
 + (id)_serviceTypeNumber;
-+ (BOOL)_shouldThrottleRequests;
-+ (unsigned int)_urlType;
++ (bool)_shouldThrottleRequests;
++ (unsigned long long)_urlType;
 + (id)sharedInstance;
 
 - (id)_validateResponse:(id)arg1;
 - (void)cancelRequest:(id)arg1;
-- (void)startWithRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 auditToken:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)startWithRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 auditToken:(id)arg4 completionHandler:(id)arg5;
 
 @end

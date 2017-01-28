@@ -3,13 +3,13 @@
  */
 
 @interface WLMFAccountValidator : MFAccountValidator {
-    id /* block */  _completion;
+    id  _completion;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 
 - (void).cxx_destruct;
-- (id /* block */)completion;
-- (void)setCompletion:(id /* block */)arg1;
+- (id)completion;
+- (void)setCompletion:(id)arg1;
 
 @end

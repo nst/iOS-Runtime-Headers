@@ -13,8 +13,8 @@
 @property (nonatomic, retain) NSArray *currentHomekitObjects;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int homeCount;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long homeCount;
 @property (nonatomic, readonly) NSArray *homeKitObjects;
 @property (nonatomic) HMDHomeManager *manager;
 @property (nonatomic, readonly) NSString *primaryHomeName;
@@ -32,8 +32,8 @@
 - (id)currentHomeUUID;
 - (id)currentHomekitObjects;
 - (void)gatherHomeKitObjects;
-- (void)getSyncEntityObjectsWithValidity:(id)arg1 completionHandler:(id /* block */)arg2;
-- (int)homeCount;
+- (void)getSyncEntityObjectsWithValidity:(id)arg1 completionHandler:(id)arg2;
+- (long long)homeCount;
 - (id)homeKitObjects;
 - (id)initWithHomeManager:(id)arg1 queue:(id)arg2;
 - (id)manager;

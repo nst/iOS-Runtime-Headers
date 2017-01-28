@@ -7,6 +7,6 @@
 - (id)_URLBagKey;
 - (id)_actionParameterValue;
 - (id)_copyBodyDictionaryWithFairPlaySession:(void**)arg1;
-- (unsigned long)_transactionType;
+- (unsigned int)_transactionType;
 
 @end

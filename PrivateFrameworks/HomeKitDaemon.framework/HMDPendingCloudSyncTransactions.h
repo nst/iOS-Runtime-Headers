@@ -8,11 +8,11 @@
     HMDHomeManager * _homeManager;
     NSMutableArray * _pendingReasonsSaved;
     NSMutableDictionary * _pendingTransactionDictionary;
-    BOOL  _uploadInProgress;
+    bool  _uploadInProgress;
 }
 
 @property (nonatomic, readonly) NSArray *allReasonsSaved;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, retain) NSMutableArray *deltaReasonsSaved;
 @property (nonatomic, retain) NSMutableArray *deltaTransactions;
 @property (nonatomic, readonly) HMDHomeManager *homeManager;
@@ -20,10 +20,10 @@
 @property (nonatomic, retain) NSMutableDictionary *pendingTransactionDictionary;
 @property (nonatomic, readonly) NSArray *reasonsSaved;
 @property (nonatomic, readonly) NSArray *transactions;
-@property (nonatomic) BOOL uploadInProgress;
+@property (nonatomic) bool uploadInProgress;
 
 + (id)convertSaveReasonToTransationReason:(id)arg1;
-+ (BOOL)isValidRequestTypeKey:(id)arg1;
++ (bool)isValidRequestTypeKey:(id)arg1;
 + (id)requestToIdentityTypeMapping;
 
 - (void).cxx_destruct;
@@ -34,7 +34,7 @@
 - (void)addReasonSaved:(id)arg1 information:(id)arg2;
 - (void)addTransaction:(id)arg1;
 - (id)allReasonsSaved;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)deltaReasonsSaved;
 - (id)deltaTransactions;
 - (id)homeManager;
@@ -44,7 +44,7 @@
 - (void)loadReasonsSaved:(id)arg1;
 - (id)pendingReasonsSaved;
 - (id)pendingTransactionDictionary;
-- (unsigned int)preservableTransactionsForHome:(id)arg1;
+- (unsigned long long)preservableTransactionsForHome:(id)arg1;
 - (id)reasonsSaved;
 - (void)removePendingTransactionsForHome:(id)arg1;
 - (void)reset;
@@ -52,11 +52,11 @@
 - (void)setDeltaTransactions:(id)arg1;
 - (void)setPendingReasonsSaved:(id)arg1;
 - (void)setPendingTransactionDictionary:(id)arg1;
-- (void)setUploadInProgress:(BOOL)arg1;
+- (void)setUploadInProgress:(bool)arg1;
 - (void)startUpload;
 - (void)stopUploadAndClean;
 - (void)stopUploadAndResume;
 - (id)transactions;
-- (BOOL)uploadInProgress;
+- (bool)uploadInProgress;
 
 @end

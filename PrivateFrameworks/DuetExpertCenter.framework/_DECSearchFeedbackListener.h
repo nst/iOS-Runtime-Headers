@@ -6,15 +6,15 @@
     unsigned char  _consumerSubType;
     NSArray * _currentZKWItems;
     _DECConsumer * _decConsumer;
-    unsigned int  _decFeedbackState;
-    BOOL  _justSelectedAQueryPrediction;
+    unsigned long long  _decFeedbackState;
+    bool  _justSelectedAQueryPrediction;
     unsigned long long  _lastDidStartSearchTimeStamp;
     int  _lastEngagedQueryPredictionPosition;
     NSSet * _lastEngagedQueryPredictionSourceCodes;
-    BOOL  _lastPredictedQuerySetWasEngagedOn;
+    bool  _lastPredictedQuerySetWasEngagedOn;
     unsigned long long  _lastResultsDidBecomeVisibleTimeStamp;
-    BOOL  _predictedQuerySessionActive;
-    BOOL  _predictedQuerySessionPredictedQueryWasEdited;
+    bool  _predictedQuerySessionActive;
+    bool  _predictedQuerySessionPredictedQueryWasEdited;
     NSString * _qpAbGroupIdentifier;
     PETDistributionEventTracker * _qpEventDelayTracker;
     PETDistributionEventTracker * _qpEventEngagementByQueryCountTracker;
@@ -32,14 +32,14 @@
     PETScalarEventTracker * _qpSpotlightQuerySourceTracker;
     NSString * _query;
     NSMutableArray * _testingDecFeedback;
-    BOOL  _testingMode;
-    BOOL  _waitingForPredictedAppFeedback;
-    BOOL  _waitingForPredictedQueryFeedback;
+    bool  _testingMode;
+    bool  _waitingForPredictedAppFeedback;
+    bool  _waitingForPredictedQueryFeedback;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)flatSourceList:(id)arg1;
@@ -52,9 +52,9 @@
 - (void)_sendAppFeedbackToDuetExpertCenter:(id)arg1 searchResults:(id)arg2;
 - (void)_sendFeedbackAndDoLogging:(id)arg1 searchResults:(id)arg2;
 - (void)_setConsumerSubType:(unsigned char)arg1;
-- (void)_setCurrentZKWItems:(id)arg1 triggerEvent:(unsigned int)arg2;
-- (void)_setDECFeedbackState:(unsigned int)arg1;
-- (void)_setPredictedQuerySessionActive:(BOOL)arg1;
+- (void)_setCurrentZKWItems:(id)arg1 triggerEvent:(unsigned long long)arg2;
+- (void)_setDECFeedbackState:(unsigned long long)arg1;
+- (void)_setPredictedQuerySessionActive:(bool)arg1;
 - (void)_setPredictedQueryWasEdited;
 - (void)_setQpAbGroupIdentifier:(id)arg1;
 - (void)_setQuery:(id)arg1;

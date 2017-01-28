@@ -5,7 +5,7 @@
 @interface MTLIOAccelParallelRenderCommandEncoder : _MTLParallelRenderCommandEncoder
 
 - (void)endEncoding;
-- (unsigned int)getType;
+- (unsigned long long)getType;
 - (id)initWithCommandBuffer:(id)arg1 renderPassDescriptor:(id)arg2;
 - (void)popDebugGroup;
 - (void)pushDebugGroup:(id)arg1;

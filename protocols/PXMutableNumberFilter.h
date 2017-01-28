@@ -5,8 +5,8 @@
 
 @required
 
-- (float)input;
-- (void)setInput:(float)arg1;
+- (double)input;
+- (void)setInput:(double)arg1;
 - (void)setTime:(double)arg1;
 - (double)time;
 

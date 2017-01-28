@@ -3,19 +3,19 @@
  */
 
 @interface PXAssetsSceneSettings : PXSettings {
-    BOOL  _enableImagePreheating;
+    bool  _enableImagePreheating;
     double  _transitionDuration;
 }
 
-@property (nonatomic) BOOL enableImagePreheating;
+@property (nonatomic) bool enableImagePreheating;
 @property (nonatomic) double transitionDuration;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)enableImagePreheating;
+- (bool)enableImagePreheating;
 - (void)setDefaultValues;
-- (void)setEnableImagePreheating:(BOOL)arg1;
+- (void)setEnableImagePreheating:(bool)arg1;
 - (void)setTransitionDuration:(double)arg1;
 - (double)transitionDuration;
 

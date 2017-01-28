@@ -4,39 +4,41 @@
 
 @interface PHPerson : PHObject <PXPerson> {
     NSString * _displayName;
-    int  _faceCount;
-    BOOL  _inPersonNamingModel;
-    int  _manualOrder;
+    long long  _faceCount;
+    bool  _inPersonNamingModel;
+    long long  _manualOrder;
     NSString * _name;
     NSString * _personUri;
-    int  _type;
-    BOOL  _verified;
+    long long  _type;
+    bool  _verified;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayName;
-@property (nonatomic, readonly) int faceCount;
-@property (readonly) unsigned int hash;
-@property (getter=isInPersonNamingModel, nonatomic, readonly) BOOL inPersonNamingModel;
-@property (nonatomic, readonly) int manualOrder;
+@property (nonatomic, readonly) long long faceCount;
+@property (readonly) unsigned long long hash;
+@property (getter=isInPersonNamingModel, nonatomic, readonly) bool inPersonNamingModel;
+@property (nonatomic, readonly) long long manualOrder;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *personUri;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
-@property (nonatomic, readonly) BOOL verified;
+@property (nonatomic, readonly) long long type;
+@property (nonatomic, readonly) bool verified;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
 + (id)_convertFaceSuggestionToFaceCollection:(id)arg1 options:(id)arg2;
-+ (id)_faceLocalIdentifiersFromFaceCollection:(id)arg1 options:(id)arg2;
-+ (int)_faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 fromClient:(id)arg5 completion:(id /* block */)arg6;
++ (long long)_faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 fromClient:(id)arg5 completion:(id)arg6;
++ (id)_faceSuggestionMarkedAsConfirmed:(bool)arg1 fromFaceCollection:(id)arg2 options:(id)arg3;
 + (id)_packageSuggestionList:(id)arg1 options:(id)arg2;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)displayNameFromContact:(id)arg1;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4;
-+ (int)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 completion:(id /* block */)arg5;
++ (long long)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 completion:(id)arg5;
 + (id)fetchAssociatedPersonForFaceGroup:(id)arg1 withOptions:(id)arg2;
++ (id)fetchHomePersonUUIDsGroupedByAssetUUIDForAssetUUIDs:(id)arg1 options:(id)arg2;
 + (id)fetchPersonCountGroupedByAssetLocalIdentifierForAssets:(id)arg1 options:(id)arg2;
 + (id)fetchPersonWithFace:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsForAssetCollection:(id)arg1 options:(id)arg2;
@@ -44,26 +46,27 @@
 + (id)fetchPersonsInAsset:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsWithOptions:(id)arg1;
-+ (id)fetchPersonsWithType:(int)arg1 options:(id)arg2;
++ (id)fetchPersonsWithType:(long long)arg1 options:(id)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchType;
++ (id)fullNameFromContact:(id)arg1;
 + (id)identifierCode;
 + (id)managedEntityName;
-+ (BOOL)managedObjectSupportsPersonFilters;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (bool)managedObjectSupportsPersonFilters;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (Class)changeRequestClass;
 - (id)description;
 - (id)displayName;
-- (int)faceCount;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
-- (BOOL)isInPersonNamingModel;
-- (int)manualOrder;
+- (long long)faceCount;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (bool)isInPersonNamingModel;
+- (long long)manualOrder;
 - (id)name;
 - (id)personUri;
-- (int)type;
-- (BOOL)verified;
+- (long long)type;
+- (bool)verified;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
@@ -72,7 +75,8 @@
 + (id)px_slideshowTitleStringForPeople:(id)arg1;
 + (id)px_titleStringForPeople:(id)arg1;
 
-- (unsigned int)numberOfAssets;
-- (void)requestFaceTileImageWithTargetSize:(struct CGSize { float x1; float x2; })arg1 cropFactor:(unsigned int)arg2 round:(BOOL)arg3 cacheResult:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (unsigned long long)numberOfAssets;
+- (id)px_displayName;
+- (void)requestFaceTileImageWithTargetSize:(struct CGSize { double x1; double x2; })arg1 cropFactor:(unsigned long long)arg2 round:(bool)arg3 cacheResult:(bool)arg4 completionBlock:(id)arg5;
 
 @end

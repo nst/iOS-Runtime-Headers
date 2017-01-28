@@ -12,8 +12,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasObjectType;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasObjectType;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *objectDatas;
 @property (nonatomic) int objectType;
 @property (readonly) Class superclass;
@@ -26,17 +26,17 @@
 - (id)decodedObjects;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasObjectType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasObjectType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
-- (id)objectDataAtIndex:(unsigned int)arg1;
+- (id)objectDataAtIndex:(unsigned long long)arg1;
 - (id)objectDatas;
-- (unsigned int)objectDatasCount;
+- (unsigned long long)objectDatasCount;
 - (int)objectType;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasObjectType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasObjectType:(bool)arg1;
 - (void)setObjectDatas:(id)arg1;
 - (void)setObjectType:(int)arg1;
 - (void)setObjects:(id)arg1;

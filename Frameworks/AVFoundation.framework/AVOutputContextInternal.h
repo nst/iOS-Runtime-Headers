@@ -6,8 +6,8 @@
     int  applicationPID;
     struct __CFString { } * contextUUID;
     struct OpaqueFigEndpointPicker { } * endpointPicker;
-    BOOL  isSystemPicker;
-    unsigned int  pickerFeature;
+    bool  isSystemPicker;
+    unsigned long long  pickerFeature;
     NSObject<OS_dispatch_queue> * pickerQueue;
     AVWeakReference * weakReference;
 }

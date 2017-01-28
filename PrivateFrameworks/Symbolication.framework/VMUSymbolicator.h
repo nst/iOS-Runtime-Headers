@@ -4,8 +4,8 @@
 
 @interface VMUSymbolicator : NSObject {
     struct _CSTypeRef { 
-        unsigned int _opaque_1; 
-        unsigned int _opaque_2; 
+        unsigned long long _opaque_1; 
+        unsigned long long _opaque_2; 
     }  _symbolicator;
 }
 

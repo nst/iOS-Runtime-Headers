@@ -3,27 +3,27 @@
  */
 
 @interface PRLikenessCacheContext : NSObject {
-    unsigned int  _cacheSize;
-    BOOL  _circular;
-    BOOL  _forceDecode;
-    float  _scale;
+    unsigned long long  _cacheSize;
+    bool  _circular;
+    bool  _forceDecode;
+    double  _scale;
 }
 
-@property (nonatomic) unsigned int cacheSize;
-@property (nonatomic) BOOL circular;
-@property (nonatomic) BOOL forceDecode;
-@property (nonatomic) float scale;
+@property (nonatomic) unsigned long long cacheSize;
+@property (nonatomic) bool circular;
+@property (nonatomic) bool forceDecode;
+@property (nonatomic) double scale;
 
-+ (id)contextWithCacheSize:(unsigned int)arg1;
++ (id)contextWithCacheSize:(unsigned long long)arg1;
 
-- (unsigned int)cacheSize;
-- (BOOL)circular;
-- (BOOL)forceDecode;
+- (unsigned long long)cacheSize;
+- (bool)circular;
+- (bool)forceDecode;
 - (id)init;
-- (float)scale;
-- (void)setCacheSize:(unsigned int)arg1;
-- (void)setCircular:(BOOL)arg1;
-- (void)setForceDecode:(BOOL)arg1;
-- (void)setScale:(float)arg1;
+- (double)scale;
+- (void)setCacheSize:(unsigned long long)arg1;
+- (void)setCircular:(bool)arg1;
+- (void)setForceDecode:(bool)arg1;
+- (void)setScale:(double)arg1;
 
 @end

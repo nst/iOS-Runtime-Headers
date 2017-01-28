@@ -6,15 +6,15 @@
     long long  conversationHash;
     unsigned int  dateReceived;
     unsigned int  dateSent;
-    unsigned long  encoding;
+    unsigned int  encoding;
     NSString * externalID;
-    BOOL  isInvalid;
+    bool  isInvalid;
     MFMessageLibrary * library;
     unsigned int  libraryID;
     unsigned int  mailboxID;
     unsigned long long  messageFlags;
     long long  messageIDHash;
-    unsigned long  uid;
+    unsigned int  uid;
 }
 
 - (id)copyMessageInfo;
@@ -23,9 +23,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)externalID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)libraryID;
 - (id)mailbox;
 - (unsigned int)mailboxID;
@@ -33,6 +33,6 @@
 - (id)messageID;
 - (long long)messageIDHash;
 - (id)remoteID;
-- (unsigned long)uid;
+- (unsigned int)uid;
 
 @end

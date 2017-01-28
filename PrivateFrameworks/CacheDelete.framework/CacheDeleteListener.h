@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSXPCListener *listener;
 @property (nonatomic, retain) Protocol *protocol;
 @property (nonatomic, retain) NSMutableSet *requiredEntitlements;
@@ -22,9 +22,9 @@
 
 - (void).cxx_destruct;
 - (void)addRequiredEntitlement:(id)arg1;
-- (id)initWithName:(id)arg1 listener:(id)arg2 protocol:(id)arg3 exportedObj:(id)arg4 isExtension:(BOOL)arg5;
+- (id)initWithName:(id)arg1 listener:(id)arg2 protocol:(id)arg3 exportedObj:(id)arg4 isExtension:(bool)arg5;
 - (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)protocol;
 - (id)requiredEntitlements;
 - (void)resume;

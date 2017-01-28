@@ -3,42 +3,42 @@
  */
 
 @interface SFDiagnostics : NSObject {
-    BOOL  _btUser;
+    bool  _btUser;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    id /* block */  _interruptionHandler;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
-    id /* block */  _invalidationHandler;
+    id  _interruptionHandler;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
+    id  _invalidationHandler;
     NSXPCConnection * _xpcCnx;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic, copy) id /* block */ interruptionHandler;
-@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, copy) id interruptionHandler;
+@property (nonatomic, copy) id invalidationHandler;
 
 - (void).cxx_destruct;
 - (void)_ensureXPCStarted;
-- (void)_getVersionWithCompletion:(id /* block */)arg1;
+- (void)_getVersionWithCompletion:(id)arg1;
 - (void)_interrupted;
 - (void)_invalidate;
 - (void)_invalidated;
-- (void)_logControl:(id)arg1 completion:(id /* block */)arg2;
-- (void)_show:(id)arg1 completion:(id /* block */)arg2;
+- (void)_logControl:(id)arg1 completion:(id)arg2;
+- (void)_show:(id)arg1 completion:(id)arg2;
 - (void)bluetoothUserInteraction;
 - (void)dealloc;
-- (void)diagnosticBLEModeWithCompletion:(id /* block */)arg1;
-- (void)diagnosticControl:(id)arg1 completion:(id /* block */)arg2;
+- (void)diagnosticBLEModeWithCompletion:(id)arg1;
+- (void)diagnosticControl:(id)arg1 completion:(id)arg2;
 - (id)dispatchQueue;
-- (void)getVersionWithCompletion:(id /* block */)arg1;
+- (void)getVersionWithCompletion:(id)arg1;
 - (id)init;
-- (id /* block */)interruptionHandler;
+- (id)interruptionHandler;
 - (void)invalidate;
-- (id /* block */)invalidationHandler;
-- (void)logControl:(id)arg1 completion:(id /* block */)arg2;
+- (id)invalidationHandler;
+- (void)logControl:(id)arg1 completion:(id)arg2;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setInterruptionHandler:(id /* block */)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)show:(id)arg1 completion:(id /* block */)arg2;
+- (void)setInterruptionHandler:(id)arg1;
+- (void)setInvalidationHandler:(id)arg1;
+- (void)show:(id)arg1 completion:(id)arg2;
 - (void)unlockTestClientWithDevice:(id)arg1;
 - (void)unlockTestServer;
 

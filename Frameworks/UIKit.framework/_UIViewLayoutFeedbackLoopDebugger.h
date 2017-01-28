@@ -4,14 +4,14 @@
 
 @interface _UIViewLayoutFeedbackLoopDebugger : NSObject {
     UIView * _currentLayoutView;
-    int  _debuggingState;
-    BOOL  _feedbackLoopConfirmed;
+    long long  _debuggingState;
+    bool  _feedbackLoopConfirmed;
     NSMutableSet * _involvedViews;
     NSMutableArray * _layoutList;
     NSArray * _reducedLayoutList;
     UIView * _rootView;
-    BOOL  _rootViewConfirmed;
-    int  _rootViewLayoutCount;
+    bool  _rootViewConfirmed;
+    long long  _rootViewLayoutCount;
     NSMutableSet * _turningPointViews;
     NSMutableSet * _viewsWithChangingGeometry;
     NSMutableSet * _viewsWithVariableChangesTriggeringLayout;
@@ -32,7 +32,7 @@
 - (void)didSendSetNeedsLayoutToLayerOfView:(id)arg1;
 - (void)didSendViewDidLayoutSubviewsToViewControllerOfView:(id)arg1;
 - (void)didSendViewWillLayoutSubviewsToViewControllerOfView:(id)arg1;
-- (void)dumpInfoWithInfoCollectionSuccess:(BOOL)arg1;
+- (void)dumpInfoWithInfoCollectionSuccess:(bool)arg1;
 - (void)setCurrentLayoutView:(id)arg1;
 - (id)topLevelViewHierarchyTrace;
 - (id)turningPointViewsCreateIfNecessary;
@@ -41,11 +41,11 @@
 - (void)willChangeGeometryForLayerOfView:(id)arg1;
 - (void)willExitLayoutSublayersOfLayerForView:(id)arg1;
 - (void)willSendLayoutSubviewsToView:(id)arg1;
-- (void)willSendSetBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toLayerOfView:(id)arg2;
-- (void)willSendSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toLayerOfView:(id)arg2;
+- (void)willSendSetBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toLayerOfView:(id)arg2;
+- (void)willSendSetFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toLayerOfView:(id)arg2;
 - (void)willSendSetNeedsLayoutToLayerOfView:(id)arg1;
 - (void)willSendSetNeedsLayoutToView:(id)arg1 becauseOfChangeInVariable:(id)arg2 inLayoutEngine:(id)arg3;
-- (void)willSendSetPosition:(struct CGPoint { float x1; float x2; })arg1 toLayerOfView:(id)arg2;
+- (void)willSendSetPosition:(struct CGPoint { double x1; double x2; })arg1 toLayerOfView:(id)arg2;
 - (void)willSendViewDidLayoutSubviewsToViewControllerOfView:(id)arg1;
 - (void)willSendViewWillLayoutSubviewsToViewControllerOfView:(id)arg1;
 

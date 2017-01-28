@@ -3,22 +3,22 @@
  */
 
 @interface SCROIOElement : NSObject <NSCopying, SCROIOElementProtocol> {
-    long  _identifier;
+    int  _identifier;
     unsigned int  _ioObject;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
-- (long)identifier;
+- (unsigned long long)hash;
+- (int)identifier;
 - (id)initWithIOObject:(unsigned int)arg1;
 - (unsigned int)ioObject;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)transport;
 
 @end

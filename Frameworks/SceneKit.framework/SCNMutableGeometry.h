@@ -5,6 +5,6 @@
 @interface SCNMutableGeometry : SCNGeometry
 
 - (id)mutableGeometrySourcesForSemantic:(id)arg1;
-- (void)mutateGeometrySourcesWithSemantics:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)mutateGeometrySourcesWithSemantics:(id)arg1 usingBlock:(id)arg2;
 
 @end

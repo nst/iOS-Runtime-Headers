@@ -7,14 +7,14 @@
 
 - (NSArray *)connections;
 - (NSString *)displayName;
-- (BOOL)hasTransitIncidentComponent;
+- (bool)hasTransitIncidentComponent;
 - (NSArray *)incidents;
-- (BOOL)isTransitIncidentsTTLExpired;
+- (bool)isTransitIncidentsTTLExpired;
 - (NSArray *)labelItems;
 - (NSArray *)lines;
-- (unsigned int)linesCount;
+- (unsigned long long)linesCount;
 - (NSArray *)linesForSystem:(id <GEOTransitSystem>)arg1;
 - (NSArray *)systems;
-- (unsigned int)systemsCount;
+- (unsigned long long)systemsCount;
 
 @end

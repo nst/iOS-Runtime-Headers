@@ -5,24 +5,24 @@
 @interface _MKDistanceDetailProvider : NSObject <MKLocationManagerObserver> {
     NSString * _distanceToPlace;
     MKMapItem * _mapItem;
-    id /* block */  _updateHandler;
-    BOOL  _useMetric;
-    BOOL  _useYardsForShortDistances;
+    id  _updateHandler;
+    bool  _useMetric;
+    bool  _useYardsForShortDistances;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) MKMapItem *mapItem;
 @property (readonly) Class superclass;
-@property (copy) id /* block */ updateHandler;
+@property (copy) id updateHandler;
 
-+ (BOOL)infoAvailable;
++ (bool)infoAvailable;
 
 - (void).cxx_destruct;
 - (void)_handleLocaleChangeNotification:(id)arg1;
 - (void)_updateDistanceToPlace;
-- (void)beginUpdateWithHandler:(id /* block */)arg1;
+- (void)beginUpdateWithHandler:(id)arg1;
 - (void)dealloc;
 - (void)endUpdates;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
@@ -31,11 +31,11 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (id)mapItem;
 - (void)setMapItem:(id)arg1;
-- (void)setUpdateHandler:(id /* block */)arg1;
-- (id /* block */)updateHandler;
+- (void)setUpdateHandler:(id)arg1;
+- (id)updateHandler;
 
 @end

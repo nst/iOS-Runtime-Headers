@@ -13,12 +13,12 @@
 
 - (void).cxx_destruct;
 - (void)boostQualityOfService;
-- (void)dispatchAsynchronousBlock:(id /* block */)arg1;
+- (void)dispatchAsynchronousBlock:(id)arg1;
 - (id)dispatchQueue;
-- (void)dispatchSynchronousBlock:(id /* block */)arg1;
+- (void)dispatchSynchronousBlock:(id)arg1;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithQueue:(id)arg1;
-- (id /* block */)qosUserInteractiveDispatchBlockForBlock:(id /* block */)arg1;
+- (id)qosUserInteractiveDispatchBlockForBlock:(id)arg1;
 
 @end

@@ -9,7 +9,7 @@
 
 - (void)_performCancellationByClient;
 - (NSDictionary *)_requestDictionary;
-- (BOOL)_shouldInformDelegateOfFigCancellation;
+- (bool)_shouldInformDelegateOfFigCancellation;
 - (AVWeakReference *)_weakReference;
 
 @end

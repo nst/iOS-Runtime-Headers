@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *header;
 @property (nonatomic, readonly) NSString *serviceKey;
 
-+ (BOOL)isServiceRestricted:(id)arg1;
++ (bool)isServiceRestricted:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)accesssForSpecifier:(id)arg1;
@@ -30,6 +30,6 @@
 - (void)setSpecifier:(id)arg1;
 - (id)specifiers;
 - (void)updateSpecifiersForImposedSettings;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

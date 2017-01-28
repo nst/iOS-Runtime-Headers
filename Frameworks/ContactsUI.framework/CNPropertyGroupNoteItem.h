@@ -4,8 +4,8 @@
 
 @interface CNPropertyGroupNoteItem : CNPropertyGroupItem
 
-- (BOOL)canRemove;
+- (bool)canRemove;
 - (id)displayLabel;
-- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
+- (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
 
 @end

@@ -5,13 +5,13 @@
 
 @required
 
-- (int)cellularRadioAccessTechnology;
+- (long long)cellularRadioAccessTechnology;
 - (NSDate *)endDate;
 - (NSArray *)eventGroups;
-- (NSData *)generateSessionJSONDataWithOptions:(unsigned int)arg1 error:(id*)arg2;
+- (NSData *)generateSessionJSONDataWithOptions:(unsigned long long)arg1 error:(id*)arg2;
 - (NSDate *)startDate;
-- (unsigned int)totalFailureCount;
-- (unsigned int)totalSuccessCount;
-- (BOOL)wifiReachable;
+- (unsigned long long)totalFailureCount;
+- (unsigned long long)totalSuccessCount;
+- (bool)wifiReachable;
 
 @end

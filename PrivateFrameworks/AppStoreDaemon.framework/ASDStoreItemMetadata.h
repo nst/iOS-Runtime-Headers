@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSDictionary *propertiesDictionary;
 @property (nonatomic, readonly) long long storeItemIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

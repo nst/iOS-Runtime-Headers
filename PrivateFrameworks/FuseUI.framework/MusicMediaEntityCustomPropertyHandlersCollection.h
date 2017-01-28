@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSDictionary *customPropertyValueHandlers;
 
 - (void).cxx_destruct;
-- (void)addCustomProperty:(id)arg1 withValueHandler:(id /* block */)arg2;
+- (void)addCustomProperty:(id)arg1 withValueHandler:(id)arg2;
 - (id)customProperties;
 - (id)customPropertyValueHandlers;
 - (id)init;

@@ -7,14 +7,14 @@
 
 - (<SBLockScreenPluginAgent> *)pluginAgent;
 - (<SBLockScreenPluginAppearance> *)pluginAppearance;
-- (int)pluginPriority;
+- (long long)pluginPriority;
 - (UIViewController<SBLockScreenPluginViewController> *)pluginViewController;
 - (void)setPluginAgent:(id <SBLockScreenPluginAgent>)arg1;
 
 @optional
 
 - (void)pluginDidDeactivateWithContext:(SBLockScreenPluginContext *)arg1;
-- (BOOL)pluginHandleEvent:(int)arg1;
+- (bool)pluginHandleEvent:(long long)arg1;
 - (SBLockScreenPluginAction *)pluginUnlockAction;
 - (void)pluginWillActivateWithContext:(SBLockScreenPluginContext *)arg1;
 - (void)updateForPresentation:(SBLockScreenPluginPresentation *)arg1;

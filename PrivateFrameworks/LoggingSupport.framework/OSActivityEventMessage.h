@@ -19,7 +19,7 @@
 - (id)arguments;
 - (id)bufferData;
 - (id)bufferPrivateData;
-- (void)fillEventData:(const char *)arg1 length:(unsigned long)arg2 privateBuffer:(const char *)arg3 length:(unsigned long)arg4;
+- (void)fillEventData:(const char *)arg1 length:(unsigned long long)arg2 privateBuffer:(const char *)arg3 length:(unsigned long long)arg4;
 - (id)format;
 - (void)setArgumentData:(id)arg1;
 - (void)setBufferData:(id)arg1;

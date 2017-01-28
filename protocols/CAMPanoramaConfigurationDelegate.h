@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)panoramaConfigurationDidChangeWithDirection:(int)arg1;
+- (void)panoramaConfigurationDidChangeWithDirection:(long long)arg1;
 
 @end

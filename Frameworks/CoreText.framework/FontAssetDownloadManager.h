@@ -14,33 +14,33 @@
             /* Warning: Unrecognized filer type: '^' using 'void*' */ void*__a_; 
         } fRef; 
     }  fMandatoryAttributes;
-    id /* block */  fProgressCallbackBlock;
+    id  fProgressCallbackBlock;
     NSMutableDictionary * fProgressParams;
 }
 
-+ (BOOL)activateFontsFromAssetURL:(id)arg1;
++ (bool)activateFontsFromAssetURL:(id)arg1;
 + (id)availableFontAttributesArray;
-+ (id)availableMobileAssets:(BOOL)arg1 error:(id*)arg2;
-+ (unsigned long)calculateDownloadSize:(id)arg1;
++ (id)availableMobileAssets:(bool)arg1 error:(id*)arg2;
++ (unsigned long long)calculateDownloadSize:(id)arg1;
 + (id)displayNameForCurrentUser:(id)arg1;
 + (id)enabledKeyboardLanguages;
-+ (id)extractMatchingAssetsForDescriptor:(struct __CTFontDescriptor { }*)arg1 from:(id)arg2 withFailInfo:(BOOL*)arg3 andFontFilePaths:(id)arg4;
++ (id)extractMatchingAssetsForDescriptor:(struct __CTFontDescriptor { }*)arg1 from:(id)arg2 withFailInfo:(bool*)arg3 andFontFilePaths:(id)arg4;
 + (Class)getASAssetQueryClass;
-+ (BOOL)shouldIgnoreFontAsset:(id)arg1;
-+ (BOOL)shouldRetryWithServer;
-+ (BOOL)shouldTryServer;
++ (bool)shouldIgnoreFontAsset:(id)arg1;
++ (bool)shouldRetryWithServer;
++ (bool)shouldTryServer;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)assetStalled:(id)arg1;
-- (BOOL)callProgressCallback:(unsigned int)arg1;
+- (bool)assetStalled:(id)arg1;
+- (bool)callProgressCallback:(unsigned int)arg1;
 - (void)dealloc;
 - (id)doFinalMatching;
-- (BOOL)downloadAllowed;
+- (bool)downloadAllowed;
 - (void)downloadFontAssets;
-- (BOOL)executeDownloadingFontAssets:(id)arg1 forDescriptors:(id)arg2 andFontFilePaths:(id)arg3;
+- (bool)executeDownloadingFontAssets:(id)arg1 forDescriptors:(id)arg2 andFontFilePaths:(id)arg3;
 - (id)getUnmatchedDescriptors;
-- (id)initWithDescriptors:(struct __CFArray { }*)arg1 andMandatoryAttributes:(struct __CFSet { }*)arg2 withBlock:(id /* block */)arg3;
+- (id)initWithDescriptors:(struct __CFArray { }*)arg1 andMandatoryAttributes:(struct __CFSet { }*)arg2 withBlock:(id)arg3;
 - (id)mobileAssetsForUnmatched:(id)arg1 andFontFilePaths:(id)arg2;
 - (id)preciousFontLanguages;
 - (void)setDownloadOptionsForMobileAsset;

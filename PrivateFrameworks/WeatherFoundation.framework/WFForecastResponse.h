@@ -4,28 +4,28 @@
 
 @interface WFForecastResponse : WFResponse <NSSecureCoding> {
     WFWeatherConditions * _forecast;
-    unsigned int  _forecastType;
+    unsigned long long  _forecastType;
     NSData * _rawAPIData;
-    BOOL  _responseWasFromCache;
+    bool  _responseWasFromCache;
 }
 
 @property (nonatomic, retain) WFWeatherConditions *forecast;
-@property (nonatomic) unsigned int forecastType;
+@property (nonatomic) unsigned long long forecastType;
 @property (nonatomic, retain) NSData *rawAPIData;
-@property (nonatomic) BOOL responseWasFromCache;
+@property (nonatomic) bool responseWasFromCache;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)forecast;
-- (unsigned int)forecastType;
+- (unsigned long long)forecastType;
 - (id)initWithCoder:(id)arg1;
 - (id)rawAPIData;
-- (BOOL)responseWasFromCache;
+- (bool)responseWasFromCache;
 - (void)setForecast:(id)arg1;
-- (void)setForecastType:(unsigned int)arg1;
+- (void)setForecastType:(unsigned long long)arg1;
 - (void)setRawAPIData:(id)arg1;
-- (void)setResponseWasFromCache:(BOOL)arg1;
+- (void)setResponseWasFromCache:(bool)arg1;
 
 @end

@@ -10,6 +10,6 @@
 + (struct __SecIdentity { }*)copyIdentityWithPersistentID:(id)arg1;
 + (void*)copyItemWithPersistentID:(id)arg1;
 + (struct __SecCertificate { }*)copyLeafCertificateForTrust:(struct __SecTrust { }*)arg1;
-+ (BOOL)itemExistsInKeychain:(void*)arg1;
++ (bool)itemExistsInKeychain:(void*)arg1;
 
 @end

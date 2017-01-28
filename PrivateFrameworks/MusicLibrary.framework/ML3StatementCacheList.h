@@ -7,13 +7,13 @@
     ML3StatementCacheNode * _lastNode;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) ML3StatementCacheNode *firstNode;
 @property (nonatomic, readonly) ML3StatementCacheNode *lastNode;
 
 - (void).cxx_destruct;
 - (void)appendNode:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)deleteAllNodes;
 - (void)deleteOldestNode;
 - (id)description;

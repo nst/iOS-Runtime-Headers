@@ -5,38 +5,38 @@
 @interface SearchUIAuxiliaryTextViewController : SearchUIAccessoryViewController <NUIContainerStackViewDelegate> {
     SearchUIVibrantLabel * _bottomLabel;
     UILabel * _middleLabel;
-    unsigned int  _style;
+    unsigned long long  _style;
     UILabel * _topLabel;
 }
 
 @property (retain) SearchUIVibrantLabel *bottomLabel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) UILabel *middleLabel;
-@property unsigned int style;
+@property unsigned long long style;
 @property (readonly) Class superclass;
 @property (retain) UILabel *topLabel;
 
-+ (float)scaledRichTextValue:(float)arg1;
-+ (BOOL)supportsResult:(id)arg1;
++ (double)scaledRichTextValue:(double)arg1;
++ (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)bottomLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })containerStackView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
-- (BOOL)labelHasText:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })containerStackView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
+- (bool)labelHasText:(id)arg1;
 - (id)middleLabel;
-- (BOOL)onlyTopLabelMissing;
+- (bool)onlyTopLabelMissing;
 - (void)setBottomLabel:(id)arg1;
 - (void)setMiddleLabel:(id)arg1;
-- (void)setStyle:(unsigned int)arg1;
+- (void)setStyle:(unsigned long long)arg1;
 - (void)setTopLabel:(id)arg1;
-- (id)setupViewWithStyle:(unsigned int)arg1;
-- (BOOL)shouldVerticallyCenter;
-- (BOOL)showsOnlyMiddleText;
-- (BOOL)showsOnlyTopText;
-- (unsigned int)style;
+- (id)setupViewWithStyle:(unsigned long long)arg1;
+- (bool)shouldVerticallyCenter;
+- (bool)showsOnlyMiddleText;
+- (bool)showsOnlyTopText;
+- (unsigned long long)style;
 - (id)topLabel;
 - (void)updateWithResult:(id)arg1;
 

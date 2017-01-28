@@ -16,7 +16,7 @@
 + (id)standardCharacteristicTypes;
 
 - (void).cxx_destruct;
-- (id /* block */)characteristicStateItemComparator;
+- (id)characteristicStateItemComparator;
 - (id)characteristicStateItems;
 - (id)initWithHome:(id)arg1;
 - (id)initWithValueSource:(id)arg1 serviceItem:(id)arg2;

@@ -10,10 +10,10 @@
 @property (nonatomic, readonly) NSString *queryName;
 @property (nonatomic, readonly) NSString *uuidString;
 
-+ (id)tupleWithQueryType:(int)arg1 uuidString:(id)arg2;
++ (id)tupleWithQueryType:(long long)arg1 uuidString:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)initWithQueryType:(int)arg1 uuidString:(id)arg2;
+- (id)initWithQueryType:(long long)arg1 uuidString:(id)arg2;
 - (id)queryName;
 - (id)uuidString;
 

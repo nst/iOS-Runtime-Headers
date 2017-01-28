@@ -6,8 +6,8 @@
     NSString * _appAdamID;
     SSLookupRequest * _lookupRequest;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _preferredArtworkSize;
     NSOperationQueue * _privateQueue;
     VSFailable * _result;
@@ -15,7 +15,7 @@
 
 @property (nonatomic, copy) NSString *appAdamID;
 @property (nonatomic, retain) SSLookupRequest *lookupRequest;
-@property (nonatomic) struct CGSize { float x1; float x2; } preferredArtworkSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } preferredArtworkSize;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic, retain) VSFailable *result;
 
@@ -26,14 +26,14 @@
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)init;
-- (id)initWithAppAdamID:(id)arg1 preferredArtworkSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithAppAdamID:(id)arg1 preferredArtworkSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)lookupRequest;
-- (struct CGSize { float x1; float x2; })preferredArtworkSize;
+- (struct CGSize { double x1; double x2; })preferredArtworkSize;
 - (id)privateQueue;
 - (id)result;
 - (void)setAppAdamID:(id)arg1;
 - (void)setLookupRequest:(id)arg1;
-- (void)setPreferredArtworkSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setPreferredArtworkSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setPrivateQueue:(id)arg1;
 - (void)setResult:(id)arg1;
 

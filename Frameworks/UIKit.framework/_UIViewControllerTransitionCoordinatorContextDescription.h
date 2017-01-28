@@ -3,60 +3,60 @@
  */
 
 @interface _UIViewControllerTransitionCoordinatorContextDescription : NSObject <NSSecureCoding> {
-    BOOL  _animated;
-    BOOL  _cancelled;
-    int  _completionCurve;
-    float  _completionVelocity;
-    int  _fromOrientation;
-    BOOL  _interactive;
-    float  _percentComplete;
+    bool  _animated;
+    bool  _cancelled;
+    long long  _completionCurve;
+    double  _completionVelocity;
+    long long  _fromOrientation;
+    bool  _interactive;
+    double  _percentComplete;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _targetTransform;
-    int  _toOrientation;
-    float  _transitionDuration;
+    long long  _toOrientation;
+    double  _transitionDuration;
 }
 
-@property (getter=isAnimated, nonatomic) BOOL animated;
-@property (getter=isCancelled, nonatomic) BOOL cancelled;
-@property (nonatomic) int completionCurve;
-@property (nonatomic) float completionVelocity;
-@property (nonatomic) int fromOrientation;
-@property (getter=isInteractive, nonatomic) BOOL interactive;
-@property (nonatomic) float percentComplete;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } targetTransform;
-@property (nonatomic) int toOrientation;
-@property (nonatomic) float transitionDuration;
+@property (getter=isAnimated, nonatomic) bool animated;
+@property (getter=isCancelled, nonatomic) bool cancelled;
+@property (nonatomic) long long completionCurve;
+@property (nonatomic) double completionVelocity;
+@property (nonatomic) long long fromOrientation;
+@property (getter=isInteractive, nonatomic) bool interactive;
+@property (nonatomic) double percentComplete;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } targetTransform;
+@property (nonatomic) long long toOrientation;
+@property (nonatomic) double transitionDuration;
 
 + (id)descriptionForTransitionCoordinatorContext:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)completionCurve;
-- (float)completionVelocity;
+- (long long)completionCurve;
+- (double)completionVelocity;
 - (void)encodeWithCoder:(id)arg1;
-- (int)fromOrientation;
+- (long long)fromOrientation;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isAnimated;
-- (BOOL)isCancelled;
-- (BOOL)isInteractive;
-- (float)percentComplete;
-- (void)setAnimated:(BOOL)arg1;
-- (void)setCancelled:(BOOL)arg1;
-- (void)setCompletionCurve:(int)arg1;
-- (void)setCompletionVelocity:(float)arg1;
-- (void)setFromOrientation:(int)arg1;
-- (void)setInteractive:(BOOL)arg1;
-- (void)setPercentComplete:(float)arg1;
-- (void)setTargetTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setToOrientation:(int)arg1;
-- (void)setTransitionDuration:(float)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })targetTransform;
-- (int)toOrientation;
-- (float)transitionDuration;
+- (bool)isAnimated;
+- (bool)isCancelled;
+- (bool)isInteractive;
+- (double)percentComplete;
+- (void)setAnimated:(bool)arg1;
+- (void)setCancelled:(bool)arg1;
+- (void)setCompletionCurve:(long long)arg1;
+- (void)setCompletionVelocity:(double)arg1;
+- (void)setFromOrientation:(long long)arg1;
+- (void)setInteractive:(bool)arg1;
+- (void)setPercentComplete:(double)arg1;
+- (void)setTargetTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setToOrientation:(long long)arg1;
+- (void)setTransitionDuration:(double)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })targetTransform;
+- (long long)toOrientation;
+- (double)transitionDuration;
 
 @end

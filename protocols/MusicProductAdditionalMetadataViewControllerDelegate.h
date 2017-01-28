@@ -10,7 +10,7 @@
 - (void)productAdditionalMetadataViewControllerDidUpdateProductDescription:(MusicProductAdditionalMetadataViewController *)arg1;
 - (void)productAdditionalMetadataViewControllerDidUpdatePublicSwitchState:(MusicProductAdditionalMetadataViewController *)arg1;
 - (void)productAdditionalMetadataViewControllerDidUpdateVisibleSwitchState:(MusicProductAdditionalMetadataViewController *)arg1;
-- (BOOL)productAdditionalMetadataViewControllerShouldDeferContentHeightAnimationUpdates:(MusicProductAdditionalMetadataViewController *)arg1;
+- (bool)productAdditionalMetadataViewControllerShouldDeferContentHeightAnimationUpdates:(MusicProductAdditionalMetadataViewController *)arg1;
 - (void)productAdditionalMetadataViewControllerWillBeginContentHeightAnimation:(MusicProductAdditionalMetadataViewController *)arg1;
 
 @end

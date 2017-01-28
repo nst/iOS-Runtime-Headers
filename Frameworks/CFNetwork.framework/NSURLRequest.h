@@ -9,29 +9,29 @@
 @property (readonly, copy) NSData *HTTPBody;
 @property (readonly, retain) NSInputStream *HTTPBodyStream;
 @property (readonly, copy) NSString *HTTPMethod;
-@property (readonly) BOOL HTTPShouldHandleCookies;
-@property (readonly) BOOL HTTPShouldUsePipelining;
+@property (readonly) bool HTTPShouldHandleCookies;
+@property (readonly) bool HTTPShouldUsePipelining;
 @property (readonly, copy) NSURL *URL;
 @property (getter=_gkSAPSession, setter=_gkSetSAPSession:, nonatomic, retain) GKFairPlaySAPSession *_gkSAPSession;
 @property (readonly, copy) NSDictionary *allHTTPHeaderFields;
-@property (readonly) BOOL allowsCellularAccess;
-@property (readonly) unsigned int cachePolicy;
+@property (readonly) bool allowsCellularAccess;
+@property (readonly) unsigned long long cachePolicy;
 @property (readonly, copy) NSURL *mainDocumentURL;
-@property (readonly) unsigned int networkServiceType;
+@property (readonly) unsigned long long networkServiceType;
 @property (readonly) double timeoutInterval;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
-+ (BOOL)allowsAnyHTTPSCertificateForHost:(id)arg1;
++ (bool)allowsAnyHTTPSCertificateForHost:(id)arg1;
 + (id)allowsSpecificHTTPSCertificateForHost:(id)arg1;
 + (double)defaultTimeoutInterval;
 + (id)frRequestWithURL:(id)arg1;
-+ (id)frRequestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
-+ (id)getObjectKeyWithIndex:(long)arg1;
-+ (void)setAllowsAnyHTTPSCertificate:(BOOL)arg1 forHost:(id)arg2;
++ (id)frRequestWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
++ (id)getObjectKeyWithIndex:(long long)arg1;
++ (void)setAllowsAnyHTTPSCertificate:(bool)arg1 forHost:(id)arg2;
 + (void)setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 + (void)setDefaultTimeoutInterval:(double)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)HTTPBody;
 - (id)HTTPBodyStream;
@@ -39,48 +39,51 @@
 - (id)HTTPExtraCookies;
 - (id)HTTPMethod;
 - (id)HTTPReferrer;
-- (BOOL)HTTPShouldHandleCookies;
-- (BOOL)HTTPShouldUsePipelining;
+- (bool)HTTPShouldHandleCookies;
+- (bool)HTTPShouldUsePipelining;
 - (id)HTTPUserAgent;
 - (id)URL;
 - (struct _CFURLRequest { }*)_CFURLRequest;
-- (BOOL)_URLHasScheme:(id)arg1;
+- (bool)_URLHasScheme:(id)arg1;
 - (id)_copyReplacingURLWithURL:(id)arg1;
 - (id)_initWithCFURLRequest:(struct _CFURLRequest { }*)arg1;
-- (BOOL)_isSafeRequestForBackgroundDownload;
+- (bool)_isSafeRequestForBackgroundDownload;
 - (double)_payloadTransmissionTimeout;
 - (id)_propertyForKey:(id)arg1;
 - (void)_removePropertyForKey:(id)arg1;
-- (BOOL)_requiresShortConnectionTimeout;
+- (bool)_requiresShortConnectionTimeout;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
 - (id)_startTimeoutDate;
 - (double)_timeWindowDelay;
 - (double)_timeWindowDuration;
 - (id)allHTTPHeaderFields;
-- (BOOL)allowsCellularAccess;
+- (bool)allowsCellularAccess;
 - (id)boundInterfaceIdentifier;
-- (unsigned int)cachePolicy;
+- (unsigned long long)cachePolicy;
 - (id)contentDispositionEncodingFallbackArray;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)expectedWorkload;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (id)initWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mainDocumentURL;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)networkServiceType;
+- (unsigned long long)networkServiceType;
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
 
+// Image: /Library/MobileSubstrate/DynamicLibraries/Activator.dylib
+
+- (id)initWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
+
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 
-- (BOOL)ak_usesHTTPSScheme;
+- (bool)ak_usesHTTPSScheme;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
@@ -97,7 +100,7 @@
 + (void)load;
 + (id)overrideUserAgent;
 + (id)requestWithURL:(id)arg1;
-+ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned int)arg2 timeoutInterval:(double)arg3;
++ (id)requestWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 

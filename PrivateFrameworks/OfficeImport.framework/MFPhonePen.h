@@ -6,7 +6,7 @@
     float  m_PixelSize;
 }
 
-+ (id)penWithStyle:(int)arg1 width:(int)arg2 colour:(id)arg3 styleArray:(double*)arg4 LPToDPTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5;
++ (id)penWithStyle:(int)arg1 width:(int)arg2 colour:(id)arg3 styleArray:(double*)arg4 LPToDPTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5;
 
 - (void)applyDashedLinesToPath:(id)arg1;
 - (void)applyLineCapStyleToPath:(id)arg1;

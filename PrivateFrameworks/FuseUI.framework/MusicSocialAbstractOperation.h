@@ -6,9 +6,9 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     long long  _artistID;
     NSObject<OS_dispatch_queue> * _calloutSerialQueue;
-    BOOL  _follow;
-    BOOL  _isExecuting;
-    BOOL  _isFinished;
+    bool  _follow;
+    bool  _isExecuting;
+    bool  _isFinished;
     ISLoadURLBagOperation * _loadURLBagOperation;
     MusicSocialOperationResponse * _socialResponse;
 }
@@ -23,9 +23,9 @@
 - (void)cancel;
 - (id)createRequest:(id)arg1;
 - (id)init;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
-- (BOOL)parseServerSuccess:(id)arg1;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (bool)parseServerSuccess:(id)arg1;
 - (void)processResponse:(id)arg1 response:(id)arg2;
 - (id)requestProperties:(id)arg1;
 - (id)resolutionResponse;

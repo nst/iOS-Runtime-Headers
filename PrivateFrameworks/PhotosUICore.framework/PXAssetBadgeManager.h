@@ -4,7 +4,7 @@
 
 @interface PXAssetBadgeManager : NSObject
 
-- (unsigned int)badgeTypesForAsset:(id)arg1;
-- (unsigned int)badgeTypesForCollection:(id)arg1;
+- (unsigned long long)badgeTypesForAsset:(id)arg1;
+- (unsigned long long)badgeTypesForCollection:(id)arg1;
 
 @end

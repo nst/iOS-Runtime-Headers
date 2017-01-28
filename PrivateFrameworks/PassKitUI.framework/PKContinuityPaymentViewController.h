@@ -3,7 +3,7 @@
  */
 
 @interface PKContinuityPaymentViewController : UIViewController <PKAuthenticatorDelegate, PKPaymentAuthorizationStateMachineDelegate> {
-    BOOL  _attemptedTimeout;
+    bool  _attemptedTimeout;
     PKAuthenticator * _authenticator;
     PKPaymentAuthorizationFooterView * _authorizationView;
     _UIBackdropView * _backdropView;
@@ -25,12 +25,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKRemotePaymentRequest *remoteRequest;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_authenticatorPolicy;
+- (long long)_authenticatorPolicy;
 - (void)_cancelPassphrasePressed;
 - (void)_didCancel;
 - (void)_didFailWithError:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;
 - (void)authenticatorDidEncounterMatchMiss:(id)arg1;
-- (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
+- (void)authorizationDidAuthorizePaymentCompleteWithStatus:(long long)arg1;
 - (void)cancelPressed;
 - (void)dealloc;
 - (id)delegate;
@@ -56,15 +56,14 @@
 - (void)dismissPassphraseViewController;
 - (id)initWithRemotePaymentRequest:(id)arg1;
 - (void)loadView;
-- (BOOL)paymentAuthorizationStateMachine:(id)arg1 didTransitionFromState:(unsigned int)arg2 toState:(unsigned int)arg3 withParam:(id)arg4;
-- (void)presentPasscodeViewController:(id)arg1 completionHandler:(id /* block */)arg2 reply:(id /* block */)arg3;
-- (void)presentPassphraseViewController:(id)arg1 completionHandler:(id /* block */)arg2 reply:(id /* block */)arg3;
+- (bool)paymentAuthorizationStateMachine:(id)arg1 didTransitionFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3 withParam:(id)arg4;
+- (void)presentPasscodeViewController:(id)arg1 completionHandler:(id)arg2 reply:(id)arg3;
+- (void)presentPassphraseViewController:(id)arg1 completionHandler:(id)arg2 reply:(id)arg3;
 - (id)remoteRequest;
 - (void)setDelegate:(id)arg1;
 - (void)updatePaymentWithClientUpdate:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

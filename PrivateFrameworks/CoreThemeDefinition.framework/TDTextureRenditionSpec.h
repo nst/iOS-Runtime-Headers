@@ -5,11 +5,11 @@
 @interface TDTextureRenditionSpec : TDRenditionSpec
 
 @property (nonatomic, retain) TDThemeCompressionType *compressionType;
-@property (nonatomic) BOOL cubeMap;
+@property (nonatomic) bool cubeMap;
 @property (nonatomic, retain) NSSet *mipLevels;
 @property (nonatomic, retain) TDTexturePixelFormat *pixelFormat;
 
-- (BOOL)canBePackedWithDocument:(id)arg1;
-- (id)createCSIRepresentationWithCompression:(BOOL)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
+- (bool)canBePackedWithDocument:(id)arg1;
+- (id)createCSIRepresentationWithCompression:(bool)arg1 colorSpaceID:(unsigned long long)arg2 document:(id)arg3;
 
 @end

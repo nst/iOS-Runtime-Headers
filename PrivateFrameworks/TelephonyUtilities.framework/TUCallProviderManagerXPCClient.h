@@ -6,7 +6,7 @@
     <TUCallProviderManagerDataSourceDelegate> * _delegate;
     NSDictionary * _providersByIdentifier;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _requestedInitialState;
+    bool  _requestedInitialState;
     int  _token;
     NSXPCConnection * _xpcConnection;
 }
@@ -14,10 +14,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <TUCallProviderManagerDataSourceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDictionary *providersByIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic) BOOL requestedInitialState;
+@property (nonatomic) bool requestedInitialState;
 @property (readonly) Class superclass;
 @property (nonatomic) int token;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
@@ -38,16 +38,16 @@
 - (void)invalidate;
 - (id)providersByIdentifier;
 - (id)queue;
-- (BOOL)requestedInitialState;
+- (bool)requestedInitialState;
 - (id)server;
-- (id)serverWithErrorHandler:(id /* block */)arg1;
+- (id)serverWithErrorHandler:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setProvidersByIdentifier:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRequestedInitialState:(BOOL)arg1;
+- (void)setRequestedInitialState:(bool)arg1;
 - (void)setToken:(int)arg1;
 - (void)setXpcConnection:(id)arg1;
-- (id)synchronousServerWithErrorHandler:(id /* block */)arg1;
+- (id)synchronousServerWithErrorHandler:(id)arg1;
 - (int)token;
 - (oneway void)updateProvidersByIdentifier:(id)arg1;
 - (id)xpcConnection;

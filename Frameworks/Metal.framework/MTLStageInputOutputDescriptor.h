@@ -5,8 +5,8 @@
 @interface MTLStageInputOutputDescriptor : NSObject <NSCopying>
 
 @property (readonly) MTLAttributeDescriptorArray *attributes;
-@property (nonatomic) unsigned int indexBufferIndex;
-@property (nonatomic) unsigned int indexType;
+@property (nonatomic) unsigned long long indexBufferIndex;
+@property (nonatomic) unsigned long long indexType;
 @property (readonly) MTLBufferLayoutDescriptorArray *layouts;
 
 + (id)alloc;

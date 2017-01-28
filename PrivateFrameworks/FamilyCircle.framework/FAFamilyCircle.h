@@ -12,7 +12,7 @@
 @property (readonly) FAFamilyCloudKitProperties *cloudKitProperties;
 @property (readonly) NSArray *members;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_serverResponse;

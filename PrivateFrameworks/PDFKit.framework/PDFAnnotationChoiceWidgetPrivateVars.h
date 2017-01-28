@@ -6,11 +6,11 @@
     PDFAppearanceCharacteristics * appearanceChars;
     NSString * defaultStringValue;
     struct __CFDictionary { } * dictionary;
-    unsigned long  fieldFlags;
+    unsigned long long  fieldFlags;
     NSString * fieldName;
     UIFont * font;
     UIColor * fontColor;
-    BOOL  isList;
+    bool  isList;
     NSArray * options;
     NSString * stringValue;
     NSString * userName;

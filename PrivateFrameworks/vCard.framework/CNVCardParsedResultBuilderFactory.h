@@ -4,6 +4,6 @@
 
 @interface CNVCardParsedResultBuilderFactory : NSObject
 
-+ (id)factoryWithBlock:(id /* block */)arg1;
++ (id)factoryWithBlock:(id)arg1;
 
 @end

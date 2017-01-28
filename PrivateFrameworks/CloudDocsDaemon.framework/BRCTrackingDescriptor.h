@@ -3,16 +3,16 @@
  */
 
 @interface BRCTrackingDescriptor : NSObject {
-    id /* block */  _handler;
-    BOOL  _updateAccessTime;
+    id  _handler;
+    bool  _updateAccessTime;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ handler;
-@property (nonatomic, readonly) BOOL updateAccessTime;
+@property (nonatomic, readonly, copy) id handler;
+@property (nonatomic, readonly) bool updateAccessTime;
 
 - (void).cxx_destruct;
-- (id /* block */)handler;
-- (id)initWithHandler:(id /* block */)arg1 updateAccessTime:(BOOL)arg2;
-- (BOOL)updateAccessTime;
+- (id)handler;
+- (id)initWithHandler:(id)arg1 updateAccessTime:(bool)arg2;
+- (bool)updateAccessTime;
 
 @end

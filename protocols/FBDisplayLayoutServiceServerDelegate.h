@@ -5,6 +5,6 @@
 
 @required
 
-- (FBDisplayLayout *)server:(FBDisplayLayoutServiceServer *)arg1 displayLayoutForDisplayType:(unsigned int)arg2;
+- (FBDisplayLayout *)server:(FBDisplayLayoutServiceServer *)arg1 displayLayoutForDisplayType:(unsigned long long)arg2;
 
 @end

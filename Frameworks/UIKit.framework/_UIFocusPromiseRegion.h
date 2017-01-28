@@ -12,11 +12,11 @@
 - (id)_delegateFulfillFocusPromiseRegion;
 - (id)_destinationItemForFocusMovement:(id)arg1 inMap:(id)arg2;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (unsigned int)_focusableBoundaries;
-- (BOOL)_shouldCropRegionToSearchArea;
-- (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
+- (unsigned long long)_focusableBoundaries;
+- (bool)_shouldCropRegionToSearchArea;
+- (bool)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
 - (id)_visualRepresentationColor;
-- (int)_visualRepresentationPatternType;
+- (long long)_visualRepresentationPatternType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;

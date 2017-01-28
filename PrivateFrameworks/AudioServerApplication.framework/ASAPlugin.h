@@ -14,14 +14,14 @@
 + (id)pluginWithBundleIdentifier:(id)arg1;
 
 - (id)boxObjectIDs;
-- (unsigned long)boxWithUID:(id)arg1;
+- (unsigned int)boxWithUID:(id)arg1;
 - (id)bundleID;
 - (id)clockDeviceObjectIDs;
-- (unsigned long)clockDeviceWithUID:(id)arg1;
+- (unsigned int)clockDeviceWithUID:(id)arg1;
 - (id)coreAudioClassName;
 - (id)deviceObjectIDs;
-- (unsigned long)deviceWithUID:(id)arg1;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
+- (unsigned int)deviceWithUID:(id)arg1;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)manufacturer;
 - (id)resourceBundleURL;

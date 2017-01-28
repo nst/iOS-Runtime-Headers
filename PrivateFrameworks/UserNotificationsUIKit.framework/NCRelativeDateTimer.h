@@ -4,7 +4,7 @@
 
 @interface NCRelativeDateTimer : NSObject {
     int  _currResolution;
-    int  _currValue;
+    long long  _currValue;
     NSDate * _date;
     <NCRelativeDateTimerDelegate> * _delegate;
     NSCalendar * _gregorian;
@@ -20,7 +20,7 @@
 - (void)_fireForEvent;
 - (void)_fireForLocaleEvent:(id)arg1;
 - (void)_fireForWakeEvent:(id)arg1;
-- (double)_nextFireInterval:(id)arg1 resolution:(int)arg2 comparedToNow:(int)arg3;
+- (double)_nextFireInterval:(id)arg1 resolution:(int)arg2 comparedToNow:(long long)arg3;
 - (id)_timeDifferenceFromDate:(id)arg1;
 - (id)date;
 - (void)dealloc;

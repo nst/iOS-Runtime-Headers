@@ -8,14 +8,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)initWithTicket:(id)arg1;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
 - (id)traits;
 
 @end

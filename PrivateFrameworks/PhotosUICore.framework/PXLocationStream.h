@@ -4,15 +4,15 @@
 
 @interface PXLocationStream : NSObject <CLLocationManagerDelegate> {
     double  _accuracy;
-    id /* block */  _handler;
+    id  _handler;
     CLLocationManager * _locationManager;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
-@property (getter=isClosed, nonatomic) BOOL closed;
+@property (getter=isClosed, nonatomic) bool closed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,11 +23,11 @@
 - (void)_requestAuthorization;
 - (void)_requestLocation;
 - (void)dealloc;
-- (id)initWithAccuracy:(double)arg1 handler:(id /* block */)arg2;
-- (BOOL)isClosed;
+- (id)initWithAccuracy:(double)arg1 handler:(id)arg2;
+- (bool)isClosed;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (void)setClosed:(BOOL)arg1;
+- (void)setClosed:(bool)arg1;
 
 @end

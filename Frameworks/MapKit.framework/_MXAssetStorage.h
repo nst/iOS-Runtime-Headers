@@ -11,9 +11,9 @@
 }
 
 - (void).cxx_destruct;
-- (void)fetchAssetForKey:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchAssetForKey:(id)arg1 completion:(id)arg2;
 - (id)init;
-- (void)loadAssetForKey:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)loadAssetForKey:(id)arg1 withBlock:(id)arg2;
 - (id)proxyObjectForKey:(id)arg1;
 - (void)setAsset:(id)arg1 forKey:(id)arg2;
 - (void)setProxyObject:(id)arg1 forKey:(id)arg2;

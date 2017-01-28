@@ -4,6 +4,6 @@
 
 @interface CLKComplicationTemplateCircularMediumSimpleText : CLKComplicationTemplateCircularSmallSimpleText
 
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 
 @end

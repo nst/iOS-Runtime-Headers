@@ -10,7 +10,7 @@
 
 + (id)defaultOverlay;
 
-- (void)addMetadataRefinementRule:(id /* block */)arg1;
+- (void)addMetadataRefinementRule:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)refinementRules;

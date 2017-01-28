@@ -66,7 +66,7 @@
 + (id)mapsDirectory;
 + (id)nanoDirectory;
 + (id)nanoHistorySettingsPath;
-+ (id)pathsAtLocation:(int)arg1;
++ (id)pathsAtLocation:(long long)arg1;
 + (id)pinsSettingsPath;
 + (id)reportAProblemDirectionsRecordingsPath;
 + (id)reportAProblemNotificationsPath;
@@ -74,12 +74,12 @@
 + (id)transitAppRankerPath;
 
 - (void).cxx_destruct;
-- (BOOL)_deleteSyncedFileAtPath:(id)arg1;
-- (BOOL)_shouldSyncMergeAfterCheckingOrCreatingMarkerFileAtPath:(id)arg1;
+- (bool)_deleteSyncedFileAtPath:(id)arg1;
+- (bool)_shouldSyncMergeAfterCheckingOrCreatingMarkerFileAtPath:(id)arg1;
 - (id)bookmarksSettingsPath;
 - (id)cacheDirectory;
-- (BOOL)deleteFavoritesSyncedMarkerFile;
-- (BOOL)deleteHistorySyncedMarkerFile;
+- (bool)deleteFavoritesSyncedMarkerFile;
+- (bool)deleteHistorySyncedMarkerFile;
 - (id)directionsCachePath;
 - (id)directionsSettingsPath;
 - (id)failedDirectionsSettingsPath;
@@ -100,8 +100,8 @@
 - (id)reportAProblemDirectionsRecordingsPath;
 - (id)reportAProblemNotificationsPath;
 - (id)reportAProblemSearchRecordingsPath;
-- (BOOL)shouldSyncMergeFavoritesAfterCheckingOrCreatingMarkerFile;
-- (BOOL)shouldSyncMergeHistoryAfterCheckingOrCreatingMarkerFile;
+- (bool)shouldSyncMergeFavoritesAfterCheckingOrCreatingMarkerFile;
+- (bool)shouldSyncMergeHistoryAfterCheckingOrCreatingMarkerFile;
 - (id)transitAppRankerPath;
 
 @end

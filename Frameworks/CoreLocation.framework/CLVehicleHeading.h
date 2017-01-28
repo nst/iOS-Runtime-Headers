@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSDate *timestamp;
 @property (nonatomic, readonly) double trueHeading;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

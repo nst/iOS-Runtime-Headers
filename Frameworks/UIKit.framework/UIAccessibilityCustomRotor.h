@@ -3,22 +3,22 @@
  */
 
 @interface UIAccessibilityCustomRotor : NSObject {
-    id /* block */  _itemSearchBlock;
+    id  _itemSearchBlock;
     NSString * _name;
     id  targetElement;
     NSUUID * uuid;
 }
 
-@property (nonatomic, copy) id /* block */ itemSearchBlock;
+@property (nonatomic, copy) id itemSearchBlock;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) id targetElement;
 @property (nonatomic, retain) NSUUID *uuid;
 
 - (void).cxx_destruct;
-- (id)initWithName:(id)arg1 itemSearchBlock:(id /* block */)arg2;
-- (id /* block */)itemSearchBlock;
+- (id)initWithName:(id)arg1 itemSearchBlock:(id)arg2;
+- (id)itemSearchBlock;
 - (id)name;
-- (void)setItemSearchBlock:(id /* block */)arg1;
+- (void)setItemSearchBlock:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setTargetElement:(id)arg1;
 - (void)setUuid:(id)arg1;

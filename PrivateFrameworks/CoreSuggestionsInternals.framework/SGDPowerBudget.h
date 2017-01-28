@@ -11,9 +11,9 @@
 + (id)defaultBudget;
 
 - (void).cxx_destruct;
-- (BOOL)_updateAttribute;
-- (BOOL)canDoDiscretionaryWork;
-- (void)doDiscretionaryWork:(id /* block */)arg1 orElse:(id /* block */)arg2;
+- (bool)_updateAttribute;
+- (bool)canDoDiscretionaryWork;
+- (void)doDiscretionaryWork:(id)arg1 orElse:(id)arg2;
 - (void)endWork;
 - (void)startWork;
 

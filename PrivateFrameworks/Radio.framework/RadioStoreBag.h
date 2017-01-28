@@ -17,14 +17,14 @@
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *URLBagDictionary;
-@property (getter=isAdFreeRadioEnabled, nonatomic, readonly) BOOL adFreeRadioEnabled;
+@property (getter=isAdFreeRadioEnabled, nonatomic, readonly) bool adFreeRadioEnabled;
 @property (nonatomic, readonly) NSURL *baseURL;
 @property (nonatomic, readonly) NSString *leaseCertificateURLString;
 @property (nonatomic, readonly) NSString *mescalCertificateURLString;
 @property (nonatomic, readonly) NSString *mescalSetupURLString;
 @property (nonatomic, readonly) NSString *platformLookupURLString;
 @property (nonatomic, readonly) NSDictionary *radioConfigurationDictionary;
-@property (nonatomic, readonly) BOOL shouldSendKBSyncData;
+@property (nonatomic, readonly) bool shouldSendKBSyncData;
 @property (nonatomic, readonly) NSString *storeFrontSuffix;
 @property (nonatomic, readonly) NSString *streamingDownloadURLString;
 
@@ -35,15 +35,15 @@
 - (id)_initWithURLBagDictionary:(id)arg1;
 - (id)_platformContext;
 - (id)baseURL;
-- (BOOL)isAdFreeRadioEnabled;
+- (bool)isAdFreeRadioEnabled;
 - (id)leaseCertificateURLString;
 - (id)mescalCertificateURLString;
 - (id)mescalSetupURLString;
 - (id)platformLookupURLString;
 - (id)radioConfigurationDictionary;
-- (BOOL)shouldMescalSignRequestWithURL:(id)arg1;
-- (BOOL)shouldMescalVerifyResponseFromURL:(id)arg1;
-- (BOOL)shouldSendKBSyncData;
+- (bool)shouldMescalSignRequestWithURL:(id)arg1;
+- (bool)shouldMescalVerifyResponseFromURL:(id)arg1;
+- (bool)shouldSendKBSyncData;
 - (id)storeFrontSuffix;
 - (id)streamingDownloadURLString;
 

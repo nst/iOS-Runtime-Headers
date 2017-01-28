@@ -8,9 +8,9 @@
     NSData * _dPInfo;
     NSData * _hashArrayData;
     NSNumber * _initialODRSize;
-    BOOL  _isExternal;
-    BOOL  _isLocallyCacheable;
-    BOOL  _isZipStreamable;
+    bool  _isExternal;
+    bool  _isLocallyCacheable;
+    bool  _isZipStreamable;
     NSNumber * _numberOfBytesToHash;
     NSArray * _sinfs;
     NSString * _variantID;
@@ -21,14 +21,14 @@
 @property (nonatomic, copy) NSData *dPInfo;
 @property (nonatomic, copy) NSData *hashArrayData;
 @property (nonatomic, copy) NSNumber *initialODRSize;
-@property (nonatomic) BOOL isExternal;
-@property (nonatomic) BOOL isLocallyCacheable;
-@property (nonatomic) BOOL isZipStreamable;
+@property (nonatomic) bool isExternal;
+@property (nonatomic) bool isLocallyCacheable;
+@property (nonatomic) bool isZipStreamable;
 @property (nonatomic, copy) NSNumber *numberOfBytesToHash;
 @property (nonatomic, copy) NSArray *sinfs;
 @property (nonatomic, copy) NSString *variantID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)assetType;
@@ -39,18 +39,18 @@
 - (id)hashArrayData;
 - (id)initWithCoder:(id)arg1;
 - (id)initialODRSize;
-- (BOOL)isExternal;
-- (BOOL)isLocallyCacheable;
-- (BOOL)isZipStreamable;
+- (bool)isExternal;
+- (bool)isLocallyCacheable;
+- (bool)isZipStreamable;
 - (id)numberOfBytesToHash;
 - (void)setAssetType:(id)arg1;
 - (void)setAssetURL:(id)arg1;
 - (void)setDPInfo:(id)arg1;
 - (void)setHashArrayData:(id)arg1;
 - (void)setInitialODRSize:(id)arg1;
-- (void)setIsExternal:(BOOL)arg1;
-- (void)setIsLocallyCacheable:(BOOL)arg1;
-- (void)setIsZipStreamable:(BOOL)arg1;
+- (void)setIsExternal:(bool)arg1;
+- (void)setIsLocallyCacheable:(bool)arg1;
+- (void)setIsZipStreamable:(bool)arg1;
 - (void)setNumberOfBytesToHash:(id)arg1;
 - (void)setSinfs:(id)arg1;
 - (void)setVariantID:(id)arg1;

@@ -14,7 +14,7 @@
 + (id)session;
 
 - (void).cxx_destruct;
-- (id)initWithBundleIdentifier:(id)arg1 discretionary:(BOOL)arg2;
+- (id)initWithBundleIdentifier:(id)arg1 discretionary:(bool)arg2;
 - (id)initWithSecondaryIdentifier:(id)arg1;
 - (void)transferStarted;
 - (void)transferStopped;

@@ -5,14 +5,14 @@
 @interface PLIOHIDOperatorComposition : NSObject {
     struct __IOHIDEventSystemClient { } * _eventSystemClient;
     PLOperator * _operator;
-    id /* block */  _operatorBlock;
+    id  _operatorBlock;
     NSArray * _serviceClients;
     NSString * _serviceName;
 }
 
 @property struct __IOHIDEventSystemClient { }*eventSystemClient;
 @property (retain) PLOperator *operator;
-@property (nonatomic, copy) id /* block */ operatorBlock;
+@property (nonatomic, copy) id operatorBlock;
 @property (retain) NSArray *serviceClients;
 @property (retain) NSString *serviceName;
 
@@ -22,14 +22,14 @@
 - (double)doubleForKey:(id)arg1;
 - (struct __IOHIDEventSystemClient { }*)eventSystemClient;
 - (id)initWithOperator:(id)arg1 forService:(id)arg2;
-- (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id /* block */)arg3;
+- (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id)arg3;
 - (id)operator;
-- (id /* block */)operatorBlock;
+- (id)operatorBlock;
 - (id)serviceClients;
 - (id)serviceName;
 - (void)setEventSystemClient:(struct __IOHIDEventSystemClient { }*)arg1;
 - (void)setOperator:(id)arg1;
-- (void)setOperatorBlock:(id /* block */)arg1;
+- (void)setOperatorBlock:(id)arg1;
 - (void)setServiceClients:(id)arg1;
 - (void)setServiceName:(id)arg1;
 

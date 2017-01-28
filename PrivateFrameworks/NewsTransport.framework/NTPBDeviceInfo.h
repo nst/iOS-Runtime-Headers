@@ -18,10 +18,10 @@
 @property (nonatomic, retain) NSString *deviceTimezone;
 @property (nonatomic) int deviceTokenEnv;
 @property (nonatomic, retain) NSString *deviceType;
-@property (nonatomic, readonly) BOOL hasDevicePushToken;
-@property (nonatomic, readonly) BOOL hasDeviceTimezone;
-@property (nonatomic) BOOL hasDeviceTokenEnv;
-@property (nonatomic, readonly) BOOL hasDeviceType;
+@property (nonatomic, readonly) bool hasDevicePushToken;
+@property (nonatomic, readonly) bool hasDeviceTimezone;
+@property (nonatomic) bool hasDeviceTokenEnv;
+@property (nonatomic, readonly) bool hasDeviceType;
 
 + (Class)devicePreferredLanguageType;
 
@@ -30,28 +30,28 @@
 - (void)clearDevicePreferredLanguages;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)devicePreferredLanguageAtIndex:(unsigned int)arg1;
+- (id)devicePreferredLanguageAtIndex:(unsigned long long)arg1;
 - (id)devicePreferredLanguages;
-- (unsigned int)devicePreferredLanguagesCount;
+- (unsigned long long)devicePreferredLanguagesCount;
 - (id)devicePushToken;
 - (id)deviceTimezone;
 - (int)deviceTokenEnv;
 - (id)deviceType;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDevicePushToken;
-- (BOOL)hasDeviceTimezone;
-- (BOOL)hasDeviceTokenEnv;
-- (BOOL)hasDeviceType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDevicePushToken;
+- (bool)hasDeviceTimezone;
+- (bool)hasDeviceTokenEnv;
+- (bool)hasDeviceType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDevicePreferredLanguages:(id)arg1;
 - (void)setDevicePushToken:(id)arg1;
 - (void)setDeviceTimezone:(id)arg1;
 - (void)setDeviceTokenEnv:(int)arg1;
 - (void)setDeviceType:(id)arg1;
-- (void)setHasDeviceTokenEnv:(BOOL)arg1;
+- (void)setHasDeviceTokenEnv:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

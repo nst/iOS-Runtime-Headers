@@ -10,6 +10,6 @@
 
 - (void).cxx_destruct;
 - (id)elements;
-- (id)initWithArrayLength:(unsigned int)arg1 cubemap:(BOOL)arg2;
+- (id)initWithArrayLength:(unsigned long long)arg1 cubemap:(bool)arg2;
 
 @end

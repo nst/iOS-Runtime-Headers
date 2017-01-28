@@ -3,16 +3,16 @@
  */
 
 @interface NSKeyValueShareableObservationInfoKey : NSObject {
-    BOOL  _addingNotRemoving;
+    bool  _addingNotRemoving;
     void * _additionContext;
     NSObject * _additionObserver;
-    unsigned int  _additionOptions;
+    unsigned long long  _additionOptions;
     NSObject * _additionOriginalObservable;
     NSKeyValueProperty * _additionProperty;
     NSKeyValueObservationInfo * _baseObservationInfo;
-    unsigned int  _cachedHash;
+    unsigned long long  _cachedHash;
     NSKeyValueObservance * _removalObservance;
-    unsigned int  _removalObservanceIndex;
+    unsigned long long  _removalObservanceIndex;
 }
 
 @end

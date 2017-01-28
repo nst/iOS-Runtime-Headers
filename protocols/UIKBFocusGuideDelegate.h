@@ -5,6 +5,6 @@
 
 @required
 
-- (void)didFocusGuideWithHeading:(unsigned int)arg1;
+- (void)didFocusGuideWithHeading:(unsigned long long)arg1;
 
 @end

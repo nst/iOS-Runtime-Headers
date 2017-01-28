@@ -3,55 +3,55 @@
  */
 
 @interface PKEntitlementWhitelist : NSObject {
-    BOOL  _addSilently;
+    bool  _addSilently;
     NSString * _applicationID;
-    BOOL  _inAppPayments;
-    BOOL  _inAppPaymentsPrivate;
+    bool  _inAppPayments;
+    bool  _inAppPaymentsPrivate;
     NSArray * _merchantIdentifiers;
-    BOOL  _passPresentationSuppression;
+    bool  _passPresentationSuppression;
     NSArray * _passTypeIDs;
-    BOOL  _passesAddSilently;
-    BOOL  _passesAllAccess;
-    BOOL  _paymentAllAccess;
-    BOOL  _paymentConfiguration;
-    BOOL  _paymentPresentation;
+    bool  _passesAddSilently;
+    bool  _passesAllAccess;
+    bool  _paymentAllAccess;
+    bool  _paymentConfiguration;
+    bool  _paymentPresentation;
     NSArray * _teamIDs;
 }
 
-@property BOOL addSilently;
-@property (readonly) BOOL allAccess;
+@property bool addSilently;
+@property (readonly) bool allAccess;
 @property (readonly, copy) NSString *applicationID;
-@property (readonly) BOOL inAppPayments;
-@property (readonly) BOOL inAppPaymentsPrivate;
+@property (readonly) bool inAppPayments;
+@property (readonly) bool inAppPaymentsPrivate;
 @property (readonly, copy) NSArray *merchantIdentifiers;
-@property (readonly) BOOL passPresentationSuppression;
+@property (readonly) bool passPresentationSuppression;
 @property (copy) NSArray *passTypeIDs;
-@property (readonly) BOOL passesAddSilently;
-@property (readonly) BOOL passesAllAccess;
-@property (readonly) BOOL paymentAllAccess;
-@property (readonly) BOOL paymentConfiguration;
-@property (readonly) BOOL paymentPresentation;
+@property (readonly) bool passesAddSilently;
+@property (readonly) bool passesAllAccess;
+@property (readonly) bool paymentAllAccess;
+@property (readonly) bool paymentConfiguration;
+@property (readonly) bool paymentPresentation;
 @property (copy) NSArray *teamIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_probeEntitlementsWithConnection:(id)arg1;
-- (BOOL)addSilently;
-- (BOOL)allAccess;
+- (bool)addSilently;
+- (bool)allAccess;
 - (id)applicationID;
-- (BOOL)inAppPayments;
-- (BOOL)inAppPaymentsPrivate;
+- (bool)inAppPayments;
+- (bool)inAppPaymentsPrivate;
 - (id)initWithConnection:(id)arg1;
 - (id)merchantIdentifiers;
-- (BOOL)passPresentationSuppression;
+- (bool)passPresentationSuppression;
 - (id)passTypeIDs;
-- (BOOL)passesAddSilently;
-- (BOOL)passesAllAccess;
-- (BOOL)paymentAllAccess;
-- (BOOL)paymentConfiguration;
-- (BOOL)paymentPresentation;
-- (void)setAddSilently:(BOOL)arg1;
+- (bool)passesAddSilently;
+- (bool)passesAllAccess;
+- (bool)paymentAllAccess;
+- (bool)paymentConfiguration;
+- (bool)paymentPresentation;
+- (void)setAddSilently:(bool)arg1;
 - (void)setPassTypeIDs:(id)arg1;
 - (void)setTeamIDs:(id)arg1;
 - (id)teamIDs;

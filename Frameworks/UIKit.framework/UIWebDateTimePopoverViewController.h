@@ -10,7 +10,7 @@
 
 - (id)_innerWebDateTimeControl;
 - (void)dealloc;
-- (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(int)arg2;
+- (id)initWithDOMHTMLInputElement:(id)arg1 datePickerMode:(long long)arg2;
 - (void)loadView;
 - (void)set_innerWebDateTimeControl:(id)arg1;
 

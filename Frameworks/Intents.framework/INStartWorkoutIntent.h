@@ -7,26 +7,28 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSNumber *goalValue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSNumber *isOpenEnded;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int workoutGoalUnitType;
-@property (nonatomic, readonly) int workoutLocationType;
+@property (nonatomic, readonly) long long workoutGoalUnitType;
+@property (nonatomic, readonly) long long workoutLocationType;
 @property (nonatomic, readonly, copy) INSpeakableString *workoutName;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1;
 - (id)_typedBackingStore;
+- (id)description;
 - (id)goalValue;
-- (id)initWithWorkoutName:(id)arg1 goalValue:(id)arg2 workoutGoalUnitType:(int)arg3 workoutLocationType:(int)arg4 isOpenEnded:(id)arg5;
+- (id)initWithWorkoutName:(id)arg1 goalValue:(id)arg2 workoutGoalUnitType:(long long)arg3 workoutLocationType:(long long)arg4 isOpenEnded:(id)arg5;
 - (id)isOpenEnded;
 - (void)setGoalValue:(id)arg1;
 - (void)setIsOpenEnded:(id)arg1;
-- (void)setWorkoutGoalUnitType:(int)arg1;
-- (void)setWorkoutLocationType:(int)arg1;
+- (void)setWorkoutGoalUnitType:(long long)arg1;
+- (void)setWorkoutLocationType:(long long)arg1;
 - (void)setWorkoutName:(id)arg1;
-- (int)workoutGoalUnitType;
-- (int)workoutLocationType;
+- (long long)workoutGoalUnitType;
+- (long long)workoutLocationType;
 - (id)workoutName;
 
 @end

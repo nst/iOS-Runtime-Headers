@@ -4,9 +4,9 @@
 
 @interface MTLArrayType : NSObject
 
-@property (readonly) unsigned int arrayLength;
-@property (readonly) unsigned int elementType;
-@property (readonly) unsigned int stride;
+@property (readonly) unsigned long long arrayLength;
+@property (readonly) unsigned long long elementType;
+@property (readonly) unsigned long long stride;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

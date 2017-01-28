@@ -11,15 +11,15 @@
 @property (readonly) CLLocation *location;
 
 + (id)datumWithLocation:(id)arg1 date:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_validateWithError:(id*)arg1;
+- (bool)_validateWithError:(id*)arg1;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 
 @end

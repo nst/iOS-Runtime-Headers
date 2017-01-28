@@ -7,6 +7,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedValidator;
 
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 
 @end

@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *entities;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
+@property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -23,14 +23,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)entities;
-- (id)entitiesAtIndex:(unsigned int)arg1;
-- (unsigned int)entitiesCount;
-- (BOOL)hasIntentMetadata;
-- (unsigned int)hash;
+- (id)entitiesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)entitiesCount;
+- (bool)hasIntentMetadata;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntities:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (id)unknownFields;

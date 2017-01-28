@@ -4,13 +4,13 @@
 
 @interface ACRemoteAccountStoreSession : NSObject <NSXPCProxyCreating> {
     NSXPCConnection * _connection;
-    BOOL  _hasConfiguredRemoteAccountStore;
-    BOOL  _notificationsEnabled;
+    bool  _hasConfiguredRemoteAccountStore;
+    bool  _notificationsEnabled;
     NSString * _spoofedBundleID;
-    BOOL  _xpcConnectionHasBeenInvalidated;
+    bool  _xpcConnectionHasBeenInvalidated;
 }
 
-@property (nonatomic) BOOL notificationsEnabled;
+@property (nonatomic) bool notificationsEnabled;
 @property (nonatomic, copy) NSString *spoofedBundleID;
 
 - (void).cxx_destruct;
@@ -20,10 +20,10 @@
 - (void)connect;
 - (void)disconnect;
 - (id)initWithXPCConnection:(id)arg1;
-- (BOOL)notificationsEnabled;
+- (bool)notificationsEnabled;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (void)setNotificationsEnabled:(BOOL)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (void)setNotificationsEnabled:(bool)arg1;
 - (void)setSpoofedBundleID:(id)arg1;
 - (id)spoofedBundleID;
 

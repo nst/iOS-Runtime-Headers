@@ -4,11 +4,11 @@
 
 @interface IKCSSParseObject : NSObject {
     NSArray * _cssValue;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSArray *cssValue;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 + (id)stringifyList:(id)arg1;
 
@@ -17,7 +17,7 @@
 - (id)description;
 - (id)init;
 - (void)setCssValue:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

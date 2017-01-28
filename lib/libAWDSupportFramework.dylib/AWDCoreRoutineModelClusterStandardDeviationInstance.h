@@ -13,8 +13,8 @@
 
 @property (nonatomic) int entryStandardDeviation;
 @property (nonatomic) int exitStandardDeviation;
-@property (nonatomic) BOOL hasEntryStandardDeviation;
-@property (nonatomic) BOOL hasExitStandardDeviation;
+@property (nonatomic) bool hasEntryStandardDeviation;
+@property (nonatomic) bool hasExitStandardDeviation;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,16 +22,16 @@
 - (id)dictionaryRepresentation;
 - (int)entryStandardDeviation;
 - (int)exitStandardDeviation;
-- (BOOL)hasEntryStandardDeviation;
-- (BOOL)hasExitStandardDeviation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEntryStandardDeviation;
+- (bool)hasExitStandardDeviation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntryStandardDeviation:(int)arg1;
 - (void)setExitStandardDeviation:(int)arg1;
-- (void)setHasEntryStandardDeviation:(BOOL)arg1;
-- (void)setHasExitStandardDeviation:(BOOL)arg1;
+- (void)setHasEntryStandardDeviation:(bool)arg1;
+- (void)setHasExitStandardDeviation:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

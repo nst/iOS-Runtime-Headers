@@ -20,7 +20,7 @@
 - (void)setItemIDs:(id)arg1;
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTracks:(id)arg1;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 - (id)timedMetadata;
 - (id)tracks;
 

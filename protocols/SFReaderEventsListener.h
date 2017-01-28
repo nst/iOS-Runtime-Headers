@@ -7,7 +7,7 @@
 
 - (void)didCollectReaderContentForMail:(NSString *)arg1;
 - (void)didCollectReadingListItemInfo:(NSDictionary *)arg1 bookmarkID:(NSNumber *)arg2;
-- (void)didDetermineReaderAvailability:(BOOL)arg1;
+- (void)didDetermineReaderAvailability:(bool)arg1;
 - (void)didPrepareReaderContentForDisplay:(NSString *)arg1;
 - (void)didPrepareReaderContentForPrinting:(_WKFrameHandle *)arg1;
 - (void)didSetReaderConfiguration:(NSDictionary *)arg1;

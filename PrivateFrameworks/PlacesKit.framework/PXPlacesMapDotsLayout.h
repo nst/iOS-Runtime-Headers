@@ -3,14 +3,14 @@
  */
 
 @interface PXPlacesMapDotsLayout : PXPlacesMapLayout {
-    BOOL  _initialLayoutReturned;
+    bool  _initialLayoutReturned;
 }
 
-@property BOOL initialLayoutReturned;
+@property bool initialLayoutReturned;
 
-- (BOOL)initialLayoutReturned;
+- (bool)initialLayoutReturned;
 - (id)layoutForViewPort:(id)arg1 andDataSourceChange:(id)arg2;
 - (void)reset;
-- (void)setInitialLayoutReturned:(BOOL)arg1;
+- (void)setInitialLayoutReturned:(bool)arg1;
 
 @end

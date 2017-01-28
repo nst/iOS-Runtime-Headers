@@ -7,23 +7,23 @@
     NSMutableArray * _childRequests;
     NSError * _error;
     NSObject<OS_dispatch_queue> * _serialQueue;
-    BOOL  _success;
+    bool  _success;
 }
 
 @property (nonatomic, copy) NSError *error;
-@property (nonatomic) BOOL success;
+@property (nonatomic) bool success;
 
 - (void).cxx_destruct;
 - (void)addChildRequest:(id)arg1;
 - (void)cancel;
-- (void)dispatchAsync:(id /* block */)arg1;
-- (void)dispatchSync:(id /* block */)arg1;
+- (void)dispatchAsync:(id)arg1;
+- (void)dispatchSync:(id)arg1;
 - (id)error;
 - (id)init;
 - (void)removeChildRequest:(id)arg1;
 - (void)runChildOperation:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setSuccess:(BOOL)arg1;
-- (BOOL)success;
+- (void)setSuccess:(bool)arg1;
+- (bool)success;
 
 @end

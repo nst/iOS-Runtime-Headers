@@ -13,9 +13,9 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasReason;
-@property (nonatomic) BOOL hasStatus;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasReason;
+@property (nonatomic) bool hasStatus;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int reason;
 @property (nonatomic) unsigned int status;
 @property (nonatomic) unsigned long long timestamp;
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasReason;
-- (BOOL)hasStatus;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasReason;
+- (bool)hasStatus;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)reason;
-- (void)setHasReason:(BOOL)arg1;
-- (void)setHasStatus:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasReason:(bool)arg1;
+- (void)setHasStatus:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setReason:(unsigned int)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

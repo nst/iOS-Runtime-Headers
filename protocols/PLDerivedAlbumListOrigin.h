@@ -5,7 +5,7 @@
 
 @required
 
-- (void)enumerateDerivedAlbumLists:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct NSObject { Class x1; }*, void*
+- (void)enumerateDerivedAlbumLists:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, struct NSObject { Class x1; }*, void*
 - (void)registerDerivedAlbumList:(struct NSObject { Class x1; }*)arg1;
 - (void)unregisterAllDerivedAlbums;
 

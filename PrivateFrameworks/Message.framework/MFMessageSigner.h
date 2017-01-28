@@ -24,7 +24,7 @@
 - (void)dealloc;
 - (id)emailAddress;
 - (id)error;
-- (BOOL)hasTrustException;
+- (bool)hasTrustException;
 - (id)initWithSender:(id)arg1 trust:(struct __SecTrust { }*)arg2 verification:(int)arg3;
 - (void)removeTrustException;
 - (id)sender;

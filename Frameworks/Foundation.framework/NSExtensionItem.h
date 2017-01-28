@@ -14,7 +14,7 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_matchingDictionaryRepresentation;
 - (id)attachments;

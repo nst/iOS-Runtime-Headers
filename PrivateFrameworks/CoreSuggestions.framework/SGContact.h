@@ -9,7 +9,7 @@
     NSArray * _phones;
     NSArray * _postalAddresses;
     SGRecordId * _recordId;
-    unsigned int  _significance;
+    unsigned long long  _significance;
     NSArray * _socialProfiles;
 }
 
@@ -19,42 +19,42 @@
 @property (nonatomic, copy) NSArray *phones;
 @property (nonatomic, copy) NSArray *postalAddresses;
 @property (nonatomic, readonly) SGRecordId *recordId;
-@property (nonatomic) unsigned int significance;
+@property (nonatomic) unsigned long long significance;
 @property (nonatomic, copy) NSArray *socialProfiles;
 
 + (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5;
 + (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5 instantMessageAddresses:(id)arg6 socialProfiles:(id)arg7;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)addresses;
 - (id)cnContact;
-- (BOOL)containsSuggestions;
+- (bool)containsSuggestions;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)detailForRecordId:(id)arg1;
 - (id)emailAddresses;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasNonTrivialInfo;
-- (unsigned int)hash;
+- (bool)hasNonTrivialInfo;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5 instantMessageAddresses:(id)arg6 socialProfiles:(id)arg7;
 - (id)instantMessageAddresses;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToContact:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToContact:(id)arg1;
 - (id)name;
 - (id)phones;
 - (id)postalAddresses;
 - (id)recordId;
-- (unsigned int)richness;
+- (unsigned long long)richness;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setInstantMessageAddresses:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhones:(id)arg1;
 - (void)setPostalAddresses:(id)arg1;
-- (void)setSignificance:(unsigned int)arg1;
+- (void)setSignificance:(unsigned long long)arg1;
 - (void)setSocialProfiles:(id)arg1;
-- (unsigned int)significance;
+- (unsigned long long)significance;
 - (id)socialProfiles;
 
 @end

@@ -5,14 +5,14 @@
 @interface CKDModifySubscriptionsURLRequest : CKDURLRequest {
     NSMutableDictionary * _subscriptionIDByRequestID;
     NSArray * _subscriptionIDsToDelete;
-    id /* block */  _subscriptionModifiedBlock;
+    id  _subscriptionModifiedBlock;
     NSArray * _subscriptionsToSave;
     CKRecordZoneID * _zoneID;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *subscriptionIDByRequestID;
 @property (nonatomic, retain) NSArray *subscriptionIDsToDelete;
-@property (nonatomic, copy) id /* block */ subscriptionModifiedBlock;
+@property (nonatomic, copy) id subscriptionModifiedBlock;
 @property (nonatomic, retain) NSArray *subscriptionsToSave;
 @property (nonatomic, copy) CKRecordZoneID *zoneID;
 
@@ -25,12 +25,12 @@
 - (id)requestOperations;
 - (void)setSubscriptionIDByRequestID:(id)arg1;
 - (void)setSubscriptionIDsToDelete:(id)arg1;
-- (void)setSubscriptionModifiedBlock:(id /* block */)arg1;
+- (void)setSubscriptionModifiedBlock:(id)arg1;
 - (void)setSubscriptionsToSave:(id)arg1;
 - (void)setZoneID:(id)arg1;
 - (id)subscriptionIDByRequestID;
 - (id)subscriptionIDsToDelete;
-- (id /* block */)subscriptionModifiedBlock;
+- (id)subscriptionModifiedBlock;
 - (id)subscriptionsToSave;
 - (id)zoneID;
 

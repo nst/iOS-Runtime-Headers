@@ -3,22 +3,22 @@
  */
 
 @interface SKUINavigationBarViewElement : SKUIViewElement {
-    BOOL  _hidesBackButton;
-    BOOL  _hidesShadow;
+    bool  _hidesBackButton;
+    bool  _hidesShadow;
 }
 
-@property (nonatomic, readonly) BOOL hidesBackButton;
-@property (nonatomic, readonly) BOOL hidesShadow;
-@property (nonatomic, readonly) BOOL isTransparent;
+@property (nonatomic, readonly) bool hidesBackButton;
+@property (nonatomic, readonly) bool hidesShadow;
+@property (nonatomic, readonly) bool isTransparent;
 @property (nonatomic, readonly) NSArray *mainViewElements;
 @property (nonatomic, readonly) NSArray *navigationPalettes;
 @property (nonatomic, readonly) UIColor *tintColor;
 
 - (id)applyUpdatesWithElement:(id)arg1;
-- (BOOL)hidesBackButton;
-- (BOOL)hidesShadow;
+- (bool)hidesBackButton;
+- (bool)hidesShadow;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isTransparent;
+- (bool)isTransparent;
 - (id)mainViewElements;
 - (id)navigationPalettes;
 - (id)tintColor;

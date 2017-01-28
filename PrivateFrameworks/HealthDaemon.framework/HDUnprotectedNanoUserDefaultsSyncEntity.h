@@ -6,14 +6,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_didReceiveKeysAndValuesNotificationName;
-+ (int)category;
++ (long long)category;
 + (int)nanoSyncObjectType;
-+ (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
-+ (BOOL)supportsSpeculativeNanoSyncChanges;
-+ (int)syncEntityType;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (bool)supportsSpeculativeNanoSyncChanges;
++ (long long)syncEntityType;
 
 @end

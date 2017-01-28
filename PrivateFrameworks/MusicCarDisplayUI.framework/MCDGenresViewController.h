@@ -4,10 +4,10 @@
 
 @interface MCDGenresViewController : MCDTableViewController
 
-+ (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
++ (id)actionCellConfigurationClassesForLocation:(unsigned long long)arg1;
 
 - (void)_limitedUIDidChange;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 
 @end

@@ -3,20 +3,20 @@
  */
 
 @interface MKCALayerCompletionDelegate : NSObject <CAAnimationDelegate> {
-    id /* block */  _completion;
+    id  _completion;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)delegateWithCompletion:(id /* block */)arg1;
++ (id)delegateWithCompletion:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id /* block */)completion;
-- (void)setCompletion:(id /* block */)arg1;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (id)completion;
+- (void)setCompletion:(id)arg1;
 
 @end

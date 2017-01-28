@@ -7,7 +7,7 @@
 
 - (NSDictionary *)getPreprocessedPayloadContents;
 - (id)initWithPayload:(NSDictionary *)arg1;
-- (BOOL)setPostprocessedPayloadContents:(NSDictionary *)arg1;
+- (bool)setPostprocessedPayloadContents:(NSDictionary *)arg1;
 - (NSError *)validatePayload;
 
 @end

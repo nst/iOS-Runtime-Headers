@@ -14,7 +14,7 @@
 @property (readonly) DOMDocument *contentDocument;
 @property (nonatomic, readonly) WebFrame *contentFrame;
 @property (copy) NSString *data;
-@property BOOL declare;
+@property bool declare;
 @property (readonly) DOMHTMLFormElement *form;
 @property (copy) NSString *height;
 @property int hspace;
@@ -31,13 +31,13 @@
 - (id)align;
 - (id)archive;
 - (id)border;
-- (BOOL)checkValidity;
+- (bool)checkValidity;
 - (id)code;
 - (id)codeBase;
 - (id)codeType;
 - (id)contentDocument;
 - (id)data;
-- (BOOL)declare;
+- (bool)declare;
 - (id)form;
 - (id)height;
 - (int)hspace;
@@ -50,7 +50,7 @@
 - (void)setCodeType:(id)arg1;
 - (void)setCustomValidity:(id)arg1;
 - (void)setData:(id)arg1;
-- (void)setDeclare:(BOOL)arg1;
+- (void)setDeclare:(bool)arg1;
 - (void)setHeight:(id)arg1;
 - (void)setHspace:(int)arg1;
 - (void)setName:(id)arg1;
@@ -66,11 +66,11 @@
 - (id)validity;
 - (int)vspace;
 - (id)width;
-- (BOOL)willValidate;
+- (bool)willValidate;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)showsTapHighlight;
+- (bool)showsTapHighlight;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

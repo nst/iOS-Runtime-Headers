@@ -5,7 +5,7 @@
 @interface GKFallbackAnimator : GKBubblePathAnimator
 
 - (void)animateTransition:(id)arg1;
-- (int)animatorType;
+- (long long)animatorType;
 - (double)minimumDurationForViewAnimations;
 
 @end

@@ -8,6 +8,7 @@
 + (id)appreciationKeywords;
 + (id)categoryKeywordMap;
 + (id)constantClasses;
++ (id)contractedResponses;
 + (id)fixedPhrases;
 + (id)localizedStrings;
 + (id)momentsPhrases;

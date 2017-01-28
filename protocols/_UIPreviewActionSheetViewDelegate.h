@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)previewActionSheetCanSelectItem:(_UIPreviewActionSheetView *)arg1;
+- (bool)previewActionSheetCanSelectItem:(_UIPreviewActionSheetView *)arg1;
 
 @end

@@ -13,9 +13,9 @@
 - (void)dealloc;
 - (id)initWithUpdateQueueContext:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)start;
-- (void)startWithCompletionBlock:(id /* block */)arg1;
-- (void)startWithUpdatesResponseBlock:(id /* block */)arg1;
+- (bool)start;
+- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithUpdatesResponseBlock:(id)arg1;
 - (id)updateQueueContext;
 
 @end

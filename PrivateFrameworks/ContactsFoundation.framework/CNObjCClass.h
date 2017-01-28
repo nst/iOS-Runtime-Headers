@@ -6,15 +6,15 @@
     Class  _cls;
 }
 
-+ (BOOL)addMethod:(id)arg1 toClass:(Class)arg2;
++ (bool)addMethod:(id)arg1 toClass:(Class)arg2;
 + (id)allMethodsOfClass:(Class)arg1;
 + (id)classWithClass:(Class)arg1;
-+ (void)enumerateMethodsOfClass:(Class)arg1 withBlock:(id /* block */)arg2;
++ (void)enumerateMethodsOfClass:(Class)arg1 withBlock:(id)arg2;
 + (id)instanceMethodOfClass:(Class)arg1 forSelector:(SEL)arg2;
 
-- (BOOL)addMethod:(id)arg1;
+- (bool)addMethod:(id)arg1;
 - (id)allMethods;
-- (void)enumerateMethodsWithBlock:(id /* block */)arg1;
+- (void)enumerateMethodsWithBlock:(id)arg1;
 - (id)initWithClass:(Class)arg1;
 - (id)instanceMethodForSelector:(SEL)arg1;
 

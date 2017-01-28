@@ -3,20 +3,20 @@
  */
 
 @interface MPModelArtist : MPModelPerson {
-    int  _albumCount;
-    id /* block */  _artworkCatalogBlock;
-    id /* block */  _editorialArtworkCatalogBlock;
+    long long  _albumCount;
+    id  _artworkCatalogBlock;
+    id  _editorialArtworkCatalogBlock;
     MPModelGenre * _genre;
-    BOOL  _hasBiography;
-    int  _songCount;
+    bool  _hasBiography;
+    long long  _songCount;
 }
 
-@property (nonatomic) int albumCount;
-@property (nonatomic, copy) id /* block */ artworkCatalogBlock;
-@property (nonatomic, copy) id /* block */ editorialArtworkCatalogBlock;
+@property (nonatomic) long long albumCount;
+@property (nonatomic, copy) id artworkCatalogBlock;
+@property (nonatomic, copy) id editorialArtworkCatalogBlock;
 @property (nonatomic, copy) MPModelGenre *genre;
-@property (nonatomic) BOOL hasBiography;
-@property (nonatomic) int songCount;
+@property (nonatomic) bool hasBiography;
+@property (nonatomic) long long songCount;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -34,24 +34,24 @@
 + (id)__songCount__KEY;
 
 - (void).cxx_destruct;
-- (int)albumCount;
+- (long long)albumCount;
 - (id)artworkCatalog;
-- (id /* block */)artworkCatalogBlock;
+- (id)artworkCatalogBlock;
 - (id)editorialArtworkCatalog;
-- (id /* block */)editorialArtworkCatalogBlock;
+- (id)editorialArtworkCatalogBlock;
 - (id)genre;
-- (BOOL)hasBiography;
-- (void)setAlbumCount:(int)arg1;
-- (void)setArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setEditorialArtworkCatalogBlock:(id /* block */)arg1;
+- (bool)hasBiography;
+- (void)setAlbumCount:(long long)arg1;
+- (void)setArtworkCatalogBlock:(id)arg1;
+- (void)setEditorialArtworkCatalogBlock:(id)arg1;
 - (void)setGenre:(id)arg1;
-- (void)setHasBiography:(BOOL)arg1;
-- (void)setSongCount:(int)arg1;
-- (int)songCount;
+- (void)setHasBiography:(bool)arg1;
+- (void)setSongCount:(long long)arg1;
+- (long long)songCount;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
 - (id)_radioStationMatchMetadata;
-- (BOOL)_shouldMatchArtist;
+- (bool)_shouldMatchArtist;
 
 @end

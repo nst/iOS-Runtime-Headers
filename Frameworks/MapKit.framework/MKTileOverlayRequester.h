@@ -3,7 +3,7 @@
  */
 
 @interface MKTileOverlayRequester : GEOTileRequester {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSMutableArray * _errors;
     NSMutableSet * _running;
     NSMutableArray * _waiting;
@@ -20,7 +20,7 @@
 - (void)_operationFinished:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (BOOL)isRunning;
+- (bool)isRunning;
 - (void)start;
 
 @end

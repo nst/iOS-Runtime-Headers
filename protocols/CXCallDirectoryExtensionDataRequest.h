@@ -5,7 +5,8 @@
 
 @required
 
-- (void)beginWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)setDelegate:(id <CXCallDirectoryExtensionDataRequestDelegate>)arg1 queue:(NSObject<OS_dispatch_queue> *)arg2;
+- (void)beginWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (<CXCallDirectoryExtensionDataRequestDelegate> *)delegate;
+- (void)setDelegate:(id <CXCallDirectoryExtensionDataRequestDelegate>)arg1;
 
 @end

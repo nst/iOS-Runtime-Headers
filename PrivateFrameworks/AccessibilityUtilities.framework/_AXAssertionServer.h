@@ -3,25 +3,25 @@
  */
 
 @interface _AXAssertionServer : NSObject {
-    id /* block */  _assertionWasAcquiredHandler;
-    id /* block */  _assertionWasReleasedHandler;
+    id  _assertionWasAcquiredHandler;
+    id  _assertionWasReleasedHandler;
     NSMutableDictionary * _healdAssertionMap;
 }
 
-@property (nonatomic, copy) id /* block */ assertionWasAcquiredHandler;
-@property (nonatomic, copy) id /* block */ assertionWasReleasedHandler;
+@property (nonatomic, copy) id assertionWasAcquiredHandler;
+@property (nonatomic, copy) id assertionWasReleasedHandler;
 @property (nonatomic, retain) NSMutableDictionary *healdAssertionMap;
 
 - (void)addHeldAssertionOfType:(id)arg1 byClient:(id)arg2;
-- (id /* block */)assertionWasAcquiredHandler;
-- (id /* block */)assertionWasReleasedHandler;
+- (id)assertionWasAcquiredHandler;
+- (id)assertionWasReleasedHandler;
 - (void)dealloc;
 - (id)description;
 - (id)healdAssertionMap;
 - (id)init;
 - (void)removeHeldAssertionOfType:(id)arg1 byClient:(id)arg2;
-- (void)setAssertionWasAcquiredHandler:(id /* block */)arg1;
-- (void)setAssertionWasReleasedHandler:(id /* block */)arg1;
+- (void)setAssertionWasAcquiredHandler:(id)arg1;
+- (void)setAssertionWasReleasedHandler:(id)arg1;
 - (void)setHealdAssertionMap:(id)arg1;
 
 @end

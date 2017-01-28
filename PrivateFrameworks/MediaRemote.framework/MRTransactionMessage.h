@@ -13,6 +13,6 @@
 - (id)initWithName:(unsigned long long)arg1 packets:(id)arg2;
 - (unsigned long long)name;
 - (id)packets;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

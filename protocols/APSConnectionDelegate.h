@@ -9,7 +9,7 @@
 
 @optional
 
-- (void)connection:(APSConnection *)arg1 didChangeConnectedStatus:(BOOL)arg2;
+- (void)connection:(APSConnection *)arg1 didChangeConnectedStatus:(bool)arg2;
 - (void)connection:(APSConnection *)arg1 didFailToSendOutgoingMessage:(APSOutgoingMessage *)arg2 error:(NSError *)arg3;
 - (void)connection:(APSConnection *)arg1 didReceiveIncomingMessage:(APSIncomingMessage *)arg2;
 - (void)connection:(APSConnection *)arg1 didReceiveMessageForTopic:(NSString *)arg2 userInfo:(NSDictionary *)arg3;

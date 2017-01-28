@@ -17,7 +17,7 @@
 @property (nonatomic) <HDDataCollectionManagerDelegate> *delegate;
 @property (nonatomic, retain) HDDemoManager *demoManager;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *observersByType;
 @property (nonatomic) HDPrimaryProfile *primaryProfile;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
@@ -25,13 +25,13 @@
 
 - (void).cxx_destruct;
 - (id)_dataCollectorsDiagnosticDescription;
-- (void)_demoObjectsReceived:(id)arg1 completion:(id /* block */)arg2;
+- (void)_demoObjectsReceived:(id)arg1 completion:(id)arg2;
 - (id)_observersDescription;
 - (void)_queue_addDataCollector:(id)arg1;
-- (void)_queue_adjustDataCollectionForType:(id)arg1 block:(id /* block */)arg2;
+- (void)_queue_adjustDataCollectionForType:(id)arg1 block:(id)arg2;
 - (void)_queue_alertCollectorsOfTypesWithObservers;
-- (struct { double x1; BOOL x2; })_queue_collectionStateForType:(id)arg1;
-- (BOOL)_queue_dataReceived:(id)arg1 provenance:(id)arg2 isDemoData:(BOOL)arg3 error:(id*)arg4;
+- (struct { double x1; bool x2; })_queue_collectionStateForType:(id)arg1;
+- (bool)_queue_dataReceived:(id)arg1 provenance:(id)arg2 isDemoData:(bool)arg3 error:(id*)arg4;
 - (double)_queue_defaultCollectionIntervalForType:(id)arg1;
 - (id)_queue_demoManagerCreatingIfNecessary;
 - (id)_queue_observerMapForType:(id)arg1;
@@ -47,8 +47,8 @@
 - (id)delegate;
 - (id)demoManager;
 - (id)diagnosticDescription;
-- (void)generateFakeDataForActivityType:(int)arg1 minutes:(double)arg2 completion:(id /* block */)arg3;
-- (void)immediateUpdateForType:(id)arg1 completion:(id /* block */)arg2;
+- (void)generateFakeDataForActivityType:(long long)arg1 minutes:(double)arg2 completion:(id)arg3;
+- (void)immediateUpdateForType:(id)arg1 completion:(id)arg2;
 - (id)initWithPrimaryProfile:(id)arg1 delegate:(id)arg2;
 - (id)observersByType;
 - (void)periodicUpdate;
@@ -56,7 +56,7 @@
 - (id)queue;
 - (void)removeDataCollectionObserver:(id)arg1;
 - (void)removeDataCollectionObserver:(id)arg1 type:(id)arg2;
-- (void)sensorDataArrayReceived:(id)arg1 deviceEntity:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)sensorDataArrayReceived:(id)arg1 deviceEntity:(id)arg2 withCompletion:(id)arg3;
 - (void)sensorDataReceived:(id)arg1 deviceEntity:(id)arg2;
 - (void)setDataCollectorsByType:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -65,8 +65,8 @@
 - (void)setPrimaryProfile:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)startDataCollectionForType:(id)arg1 observer:(id)arg2 collectionInterval:(double)arg3;
-- (void)startFakingDataWithActivityType:(int)arg1 speed:(id)arg2;
-- (void)startFakingWithHKWorkoutActivityType:(unsigned int)arg1;
+- (void)startFakingDataWithActivityType:(long long)arg1 speed:(id)arg2;
+- (void)startFakingWithHKWorkoutActivityType:(unsigned long long)arg1;
 - (void)stopDataCollectionForType:(id)arg1 observer:(id)arg2;
 - (void)stopFakingData;
 - (void)updateCollectionInterval:(double)arg1 type:(id)arg2 observer:(id)arg3;

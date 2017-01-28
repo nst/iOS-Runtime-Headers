@@ -5,7 +5,7 @@
 @interface _WKExperimentalFeature : NSObject <WKObject> {
     struct ObjectStorage<API::ExperimentalFeature> { 
         struct type { 
-            unsigned char __lx[20]; 
+            unsigned char __lx[40]; 
         } data; 
     }  _experimentalFeature;
 }
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *details;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *key;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (readonly) Class superclass;

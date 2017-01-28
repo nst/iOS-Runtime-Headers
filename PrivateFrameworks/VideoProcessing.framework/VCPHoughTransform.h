@@ -14,7 +14,7 @@
     bool  _verbose;
 }
 
-- (long)DetectLinesWithThreshold:(int)arg1 output:(id)arg2;
+- (int)DetectLinesWithThreshold:(int)arg1 output:(id)arg2;
 - (void)Transform;
 - (void)dealloc;
 - (id)initWithEdgeMap:(float*)arg1 mapWidth:(int)arg2 mapHeight:(int)arg3 angleStep:(float)arg4;

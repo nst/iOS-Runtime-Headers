@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) long long corrupted;
-@property (nonatomic) BOOL hasCorrupted;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasCorrupted;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -21,15 +21,15 @@
 - (long long)corrupted;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCorrupted;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCorrupted;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCorrupted:(long long)arg1;
-- (void)setHasCorrupted:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasCorrupted:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

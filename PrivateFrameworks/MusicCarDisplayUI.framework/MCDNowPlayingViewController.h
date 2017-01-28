@@ -11,15 +11,16 @@
     <MCDNowPlayingViewControllerDelegate> * _delegate;
     UILongPressGestureRecognizer * _fastForwardButtonLongPressRecognizer;
     NSString * _forwardTransportButtonImageIdentifier;
-    int  _heldAction;
-    BOOL  _highTouchMode;
-    BOOL  _isScrubbing;
+    bool  _handledWillAppear;
+    long long  _heldAction;
+    bool  _highTouchMode;
+    bool  _isScrubbing;
     UITapGestureRecognizer * _knobPressRecognizer;
     UILongPressGestureRecognizer * _leftButtonLongPressRecognizer;
     UILongPressGestureRecognizer * _leftNudgeLongPressRecognizer;
     UITapGestureRecognizer * _leftNudgePressRecognizer;
     UIColor * _navbarColor;
-    BOOL  _navbarHidesShadow;
+    bool  _navbarHidesShadow;
     UINavigationBar * _navigationBar;
     MCDPlayModeControlView * _playModeControlView;
     UIViewController * _playModeViewController;
@@ -27,7 +28,7 @@
     MCDProgressView * _progressView;
     UILongPressGestureRecognizer * _rightNudgeLongPressRecognizer;
     UITapGestureRecognizer * _rightNudgePressRecognizer;
-    BOOL  _titleUpdated;
+    bool  _titleUpdated;
     MCDTitleView * _titleView;
     MCDTransportControlView * _transportControlView;
     UIViewController * _transportViewController;
@@ -49,7 +50,7 @@
 @property (nonatomic, readonly) MCDProgressView *progressView;
 @property (nonatomic, retain) UILongPressGestureRecognizer *rightNudgeLongPressRecognizer;
 @property (nonatomic, retain) UITapGestureRecognizer *rightNudgePressRecognizer;
-@property (nonatomic) BOOL titleUpdated;
+@property (nonatomic) bool titleUpdated;
 @property (nonatomic, readonly) MCDTitleView *titleView;
 @property (nonatomic, readonly) MCDTransportControlView *transportControlView;
 
@@ -59,6 +60,7 @@
 - (void)_fastForwardButtonLongPress:(id)arg1;
 - (void)_fastForwardButtonTouchDown:(id)arg1;
 - (void)_fastForwardButtonTouchUp:(id)arg1;
+- (void)_handleWillAppear;
 - (void)_initializeTransportControls;
 - (void)_itemChanged:(id)arg1;
 - (void)_leftButtonLongPress:(id)arg1;
@@ -70,13 +72,13 @@
 - (void)_repeatButtonTouchUp:(id)arg1;
 - (void)_respondToHeldAction;
 - (void)_rightNudgePress:(id)arg1;
-- (void)_sendAction:(int)arg1 withState:(int)arg2;
+- (void)_sendAction:(long long)arg1 withState:(long long)arg2;
 - (void)_sendHeldAction;
 - (void)_shuffleButtonTouchUp:(id)arg1;
 - (void)_updatePlayModesState;
-- (void)_updateRepeatStateWithType:(int)arg1;
-- (void)_updateShuffleStateWithType:(int)arg1;
-- (void)_updateTransportControl:(id)arg1 withDefaultImage:(id)arg2 actionType:(int)arg3;
+- (void)_updateRepeatStateWithType:(long long)arg1;
+- (void)_updateShuffleStateWithType:(long long)arg1;
+- (void)_updateTransportControl:(id)arg1 withDefaultImage:(id)arg2 actionType:(long long)arg3;
 - (id)artworkView;
 - (id)backPressRecognizer;
 - (id)controlsFocusContainerGuide;
@@ -112,12 +114,14 @@
 - (void)setPreviousTransportButtonImageIdentifier:(id)arg1;
 - (void)setRightNudgeLongPressRecognizer:(id)arg1;
 - (void)setRightNudgePressRecognizer:(id)arg1;
-- (void)setTitleUpdated:(BOOL)arg1;
-- (BOOL)titleUpdated;
+- (void)setTitleUpdated:(bool)arg1;
+- (bool)titleUpdated;
 - (id)titleView;
 - (id)transportControlView;
 - (void)updatePlayControlsWithElapsedTime:(double)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

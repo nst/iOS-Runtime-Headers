@@ -8,16 +8,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CSIndexExtensionRequestHandler *requestHandler;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (void)getLastUpdateTimeWithCompletionHandler:(id /* block */)arg1;
+- (void)getLastUpdateTimeWithCompletionHandler:(id)arg1;
 - (id)hostContext;
-- (void)performJob:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
+- (void)performJob:(id)arg1 acknowledgementHandler:(id)arg2;
 - (id)requestHandler;
 - (void)setRequestHandler:(id)arg1;
 

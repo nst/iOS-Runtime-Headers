@@ -9,11 +9,11 @@
 @property (nonatomic, retain) NSMutableDictionary *appDataDictionary;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
-@property (readonly) unsigned int hash;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appDataDictionary;
@@ -24,7 +24,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (void)removeApplicationDataForIdentifier:(id)arg1;
 - (void)setAppDataDictionary:(id)arg1;
 - (void)setApplicationData:(id)arg1 forIdentifier:(id)arg2;

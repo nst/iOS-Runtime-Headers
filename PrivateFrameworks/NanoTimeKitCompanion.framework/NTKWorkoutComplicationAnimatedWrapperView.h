@@ -7,21 +7,21 @@
     CLKImageProvider * _imageProvider;
     UIImageView * _imageView;
     UIColor * _overrideColor;
-    BOOL  _usesLegibility;
+    bool  _usesLegibility;
 }
 
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, readonly) UIColor *contentColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CLKImageProvider *imageProvider;
 @property (nonatomic, retain) UIColor *overrideColor;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usesLegibility;
+@property (nonatomic) bool usesLegibility;
 
 - (void).cxx_destruct;
-- (void)_applyAnimationForPauseState:(BOOL)arg1;
+- (void)_applyAnimationForPauseState:(bool)arg1;
 - (void)_updateState;
 - (void)_updateTint;
 - (id)color;
@@ -32,8 +32,8 @@
 - (void)setColor:(id)arg1;
 - (void)setImageProvider:(id)arg1;
 - (void)setOverrideColor:(id)arg1;
-- (void)setUsesLegibility:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)usesLegibility;
+- (void)setUsesLegibility:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)usesLegibility;
 
 @end

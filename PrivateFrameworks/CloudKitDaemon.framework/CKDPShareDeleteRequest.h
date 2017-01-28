@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) NSString *etag;
-@property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasOBSOLETESelfAddedPcs;
-@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, readonly) bool hasEtag;
+@property (nonatomic, readonly) bool hasOBSOLETESelfAddedPcs;
+@property (nonatomic, readonly) bool hasShareId;
 @property (nonatomic, retain) CKDPProtectionInfo *oBSOLETESelfAddedPcs;
 @property (nonatomic, retain) CKDPShareIdentifier *shareId;
 
@@ -23,14 +23,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (BOOL)hasOBSOLETESelfAddedPcs;
-- (BOOL)hasShareId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEtag;
+- (bool)hasOBSOLETESelfAddedPcs;
+- (bool)hasShareId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)oBSOLETESelfAddedPcs;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setEtag:(id)arg1;

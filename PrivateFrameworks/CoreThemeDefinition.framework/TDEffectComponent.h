@@ -5,7 +5,7 @@
 @interface TDEffectComponent : NSManagedObject
 
 @property (nonatomic, retain) TDEffectType *effectType;
-@property (nonatomic) BOOL isEnabled;
+@property (nonatomic) bool isEnabled;
 @property (nonatomic, retain) NSSet *parameters;
 @property (nonatomic, retain) TDEffectRenditionSpec *rendition;
 
@@ -36,7 +36,7 @@
 - (id)CUIEffectParameterTintable;
 - (void)addParametersToPreset:(id)arg1;
 - (id)parameterOfType:(unsigned int)arg1;
-- (void)setEffectParametersFromPreset:(id)arg1 atIndex:(unsigned int)arg2 withDocument:(id)arg3;
-- (void)updatePresetParameters:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)setEffectParametersFromPreset:(id)arg1 atIndex:(unsigned long long)arg2 withDocument:(id)arg3;
+- (void)updatePresetParameters:(id)arg1 atIndex:(unsigned long long)arg2;
 
 @end

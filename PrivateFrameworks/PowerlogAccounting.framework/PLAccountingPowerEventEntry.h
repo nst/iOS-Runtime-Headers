@@ -13,8 +13,8 @@
 
 - (id)initWithRootNodeID:(id)arg1 withPower:(double)arg2 withRange:(id)arg3;
 - (int)instanceDirectionality;
-- (BOOL)isEmptyEvent;
-- (BOOL)isEqualContentsWithEvent:(id)arg1;
+- (bool)isEmptyEvent;
+- (bool)isEqualContentsWithEvent:(id)arg1;
 - (double)power;
 - (id)rootNodeID;
 - (id)subEntryKey;

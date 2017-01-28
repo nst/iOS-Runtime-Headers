@@ -8,44 +8,44 @@
     NSDictionary * _valueTextAttributes;
 }
 
-@property (nonatomic, readonly) float bottomBaselineConstant;
+@property (nonatomic, readonly) double bottomBaselineConstant;
 @property (nonatomic, readonly) UIImageView *chevron;
-@property (nonatomic, readonly) float chevronWidth;
+@property (nonatomic, readonly) double chevronWidth;
 @property (nonatomic, readonly) NSString *labelString;
 @property (nonatomic, copy) NSDictionary *labelTextAttributes;
 @property (nonatomic, readonly) UIView<ABText> *labelView;
 @property (nonatomic, readonly) UIView *rightMostView;
 @property (nonatomic, readonly) UILabel *standardLabelView;
 @property (nonatomic, readonly) UILabel *standardValueView;
-@property (nonatomic, readonly) float topBaselineConstant;
+@property (nonatomic, readonly) double topBaselineConstant;
 @property (nonatomic, readonly) NSString *valueString;
 @property (nonatomic, copy) NSDictionary *valueTextAttributes;
 @property (nonatomic, readonly) UIView<ABText> *valueView;
 
-+ (BOOL)wantsChevron;
-+ (BOOL)wantsHorizontalLayout;
-+ (BOOL)wantsStandardConstraints;
++ (bool)wantsChevron;
++ (bool)wantsHorizontalLayout;
++ (bool)wantsStandardConstraints;
 
 - (void).cxx_destruct;
-- (float)bottomBaselineConstant;
+- (double)bottomBaselineConstant;
 - (id)chevron;
-- (float)chevronWidth;
+- (double)chevronWidth;
 - (id)constantConstraints;
 - (id)constantConstraintsForHorizontalLayout;
 - (id)constantConstraintsForStandardLayout;
 - (id)constantConstraintsForVerticalLayout;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)labelString;
 - (id)labelTextAttributes;
 - (id)labelView;
-- (float)minCellHeight;
+- (double)minCellHeight;
 - (id)rightMostView;
 - (void)setLabelTextAttributes:(id)arg1;
 - (void)setValueTextAttributes:(id)arg1;
 - (id)standardLabelView;
 - (id)standardValueView;
 - (void)tintColorDidChange;
-- (float)topBaselineConstant;
+- (double)topBaselineConstant;
 - (id)valueString;
 - (id)valueTextAttributes;
 - (id)valueView;

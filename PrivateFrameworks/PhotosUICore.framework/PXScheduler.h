@@ -3,8 +3,8 @@
  */
 
 @interface PXScheduler : NSObject {
-    BOOL  _hasPendingPerformInDefaultRunLoopMode;
-    BOOL  _isPerformingPendingBlocks;
+    bool  _hasPendingPerformInDefaultRunLoopMode;
+    bool  _isPerformingPendingBlocks;
     NSMutableArray * _pendingBlocks;
 }
 
@@ -14,8 +14,8 @@
 - (void)_enteredDefaultRunLoopMode;
 - (void)_performPendingBlocks;
 - (void)_performPendingBlocksIfNeeded;
-- (void)dispatchInMainTransaction:(id /* block */)arg1;
-- (void)dispatchInMainTransactionAfterDelay:(double)arg1 block:(id /* block */)arg2;
+- (void)dispatchInMainTransaction:(id)arg1;
+- (void)dispatchInMainTransactionAfterDelay:(double)arg1 block:(id)arg2;
 - (id)init;
 - (void)scrollViewDidScroll;
 - (void)scrollViewWillLayoutSubviews;

@@ -4,25 +4,25 @@
 
 @interface CPLPersonChange : CPLRecordChange {
     NSString * _fullName;
-    int  _manualSortOrder;
+    long long  _manualSortOrder;
     NSString * _personID;
-    int  _personType;
+    long long  _personType;
 }
 
 @property (nonatomic, copy) NSString *fullName;
-@property (nonatomic) int manualSortOrder;
+@property (nonatomic) long long manualSortOrder;
 @property (nonatomic, copy) NSString *personID;
-@property (nonatomic) int personType;
+@property (nonatomic) long long personType;
 
 - (void).cxx_destruct;
 - (id)fullName;
-- (int)manualSortOrder;
+- (long long)manualSortOrder;
 - (id)personID;
-- (int)personType;
+- (long long)personType;
 - (void)setFullName:(id)arg1;
-- (void)setManualSortOrder:(int)arg1;
+- (void)setManualSortOrder:(long long)arg1;
 - (void)setPersonID:(id)arg1;
-- (void)setPersonType:(int)arg1;
-- (BOOL)supportsDeletion;
+- (void)setPersonType:(long long)arg1;
+- (bool)supportsDeletion;
 
 @end

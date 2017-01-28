@@ -7,7 +7,7 @@
     UIView * _contentView;
     NSArray * _contentViewConstraints;
     CCUIControlCenterButton * _homeButton;
-    int  _layoutStyle;
+    long long  _layoutStyle;
     CCUIControlCenterButton * _pageSwitchButton;
     UILabel * _titleLabel;
 }
@@ -16,27 +16,27 @@
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic, retain) NSArray *contentViewConstraints;
 @property (nonatomic, readonly) CCUIControlCenterButton *homeButton;
-@property (nonatomic) int layoutStyle;
+@property (nonatomic) long long layoutStyle;
 @property (nonatomic, readonly) CCUIControlCenterButton *pageSwitchButton;
 @property (nonatomic, readonly) UILabel *titleLabel;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentLayoutMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_contentLayoutMargins;
 - (void)_invalidateAllConstraints;
 - (void)_updateFonts;
 - (id)chromeConstraints;
 - (id)contentView;
 - (id)contentViewConstraints;
 - (id)homeButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)layoutStyle;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (long long)layoutStyle;
 - (id)pageSwitchButton;
 - (void)setChromeConstraints:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setContentViewConstraints:(id)arg1;
-- (void)setLayoutStyle:(int)arg1;
+- (void)setLayoutStyle:(long long)arg1;
 - (id)titleLabel;
 - (void)updateConstraints;
 

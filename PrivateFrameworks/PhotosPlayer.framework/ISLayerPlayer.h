@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)_enumerateLayersWithBlock:(id /* block */)arg1;
+- (void)_enumerateLayersWithBlock:(id)arg1;
 - (void)addLayer:(id)arg1;
 - (double)currentTime;
 - (id)init;

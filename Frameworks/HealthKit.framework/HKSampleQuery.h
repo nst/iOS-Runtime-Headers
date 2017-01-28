@@ -3,13 +3,13 @@
  */
 
 @interface HKSampleQuery : HKQuery {
-    unsigned int  _limit;
-    id /* block */  _resultHandler;
+    unsigned long long  _limit;
+    id  _resultHandler;
     NSArray * _sortDescriptors;
 }
 
-@property (readonly) unsigned int limit;
-@property (nonatomic, readonly) id /* block */ resultHandler;
+@property (readonly) unsigned long long limit;
+@property (nonatomic, readonly) id resultHandler;
 @property (readonly, copy) NSArray *sortDescriptors;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
@@ -17,15 +17,15 @@
 + (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
-- (BOOL)_prepareSamplesForDelivery:(id)arg1 error:(id*)arg2;
+- (bool)_prepareSamplesForDelivery:(id)arg1 error:(id*)arg2;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id /* block */)_queue_errorHandler;
+- (id)_queue_errorHandler;
 - (void)_queue_validate;
 - (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;
-- (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 sortDescriptors:(id)arg4 resultsHandler:(id /* block */)arg5;
-- (unsigned int)limit;
-- (id /* block */)resultHandler;
+- (id)initWithSampleType:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 sortDescriptors:(id)arg4 resultsHandler:(id)arg5;
+- (unsigned long long)limit;
+- (id)resultHandler;
 - (id)sortDescriptors;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon

@@ -4,7 +4,7 @@
 
 @interface _SFFolderPickerTableViewCellLayoutManager : UITableViewCellLayoutManagerValue1
 
-+ (float)indentationWidth;
++ (double)indentationWidth;
 
 - (void)layoutSubviewsOfCell:(id)arg1;
 

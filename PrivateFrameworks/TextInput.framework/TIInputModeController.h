@@ -19,7 +19,7 @@
 @property (readonly) NSArray *supportedInputModeIdentifiers;
 @property (readonly) NSArray *supportedInputModeLanguageAndRegions;
 
-+ (id)_inputModesForLocale:(id)arg1 language:(id)arg2 modeFetcher:(id /* block */)arg3;
++ (id)_inputModesForLocale:(id)arg1 language:(id)arg2 modeFetcher:(id)arg3;
 + (id)sharedInputModeController;
 
 - (id)currentLocale;

@@ -16,13 +16,13 @@
     struct _CCECCryptor { } * _ecPublicKeyB;
     NSData * _localCertPEMData;
     NSMutableData * _pendingBlobData;
-    unsigned int  _pendingBlobDataSize;
+    unsigned long long  _pendingBlobDataSize;
     NSObject<OS_dispatch_source> * _readSource;
     NSData * _rnAData;
     NSData * _rnBData;
     int  _sockfd;
     NSData * _sourceCommitmentData;
-    unsigned int  _state;
+    unsigned long long  _state;
     NSObject<OS_dispatch_queue> * _writeQueue;
 }
 
@@ -35,18 +35,18 @@
 - (id)_authenticateCommandData;
 - (void)_authenticationDidSucceed;
 - (id)_commandStringWithData:(id)arg1;
-- (unsigned long)_curveDERLength;
-- (unsigned long)_ecPublicKeyEncodedDERLength;
+- (unsigned long long)_curveDERLength;
+- (unsigned long long)_ecPublicKeyEncodedDERLength;
 - (char *)_fieldIntegerBytes;
-- (unsigned long)_fieldTypeDERLength;
+- (unsigned long long)_fieldTypeDERLength;
 - (char *)_fieldTypeOID;
 - (void)_generateAndSendPublicKey;
-- (BOOL)_handleCertificateSignatureWithData:(id)arg1;
-- (BOOL)_handleCertificateWithData:(id)arg1;
+- (bool)_handleCertificateSignatureWithData:(id)arg1;
+- (bool)_handleCertificateWithData:(id)arg1;
 - (void)_handleCommitmentValueOKWithData:(id)arg1;
-- (BOOL)_handleCommitmentValueWithData:(id)arg1;
-- (BOOL)_handlePublicKeyWithData:(id)arg1;
-- (BOOL)_handleRandomNumberWithData:(id)arg1;
+- (bool)_handleCommitmentValueWithData:(id)arg1;
+- (bool)_handlePublicKeyWithData:(id)arg1;
+- (bool)_handleRandomNumberWithData:(id)arg1;
 - (void)_handleVerificationValueOKWithData:(id)arg1;
 - (char *)_keyACoefficientBytes;
 - (char *)_keyBCoefficientBytes;
@@ -58,10 +58,10 @@
 - (char *)_keyVersionBytes;
 - (void)_observeDataReadEvent;
 - (id)_okResponseData;
-- (unsigned long)_paramsDERLength;
-- (unsigned long)_publicKeyDERLength;
-- (BOOL)_shouldForceAuthenticationError;
-- (void)cancelAuthenticationWithReply:(id /* block */)arg1;
+- (unsigned long long)_paramsDERLength;
+- (unsigned long long)_publicKeyDERLength;
+- (bool)_shouldForceAuthenticationError;
+- (void)cancelAuthenticationWithReply:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)device;
@@ -71,9 +71,9 @@
 - (id)initWithSourceDevice:(id)arg1 delegate:(id)arg2;
 - (void)invalidateWithError:(id)arg1;
 - (id)parseDataAsBlob:(id)arg1;
-- (void)parsePublicKeyDER:(id)arg1 completion:(id /* block */)arg2;
+- (void)parsePublicKeyDER:(id)arg1 completion:(id)arg2;
 - (void)resume;
-- (void)sendData:(id)arg1 completion:(id /* block */)arg2;
-- (void)sendDataAsBlob:(id)arg1 completion:(id /* block */)arg2;
+- (void)sendData:(id)arg1 completion:(id)arg2;
+- (void)sendDataAsBlob:(id)arg1 completion:(id)arg2;
 
 @end

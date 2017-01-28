@@ -10,7 +10,7 @@
 - (id)asSharedAppLibrary;
 - (id)clientZone;
 - (id)fetchRootItemInDB:(id)arg1 withEnclosureUUID:(id)arg2;
-- (BOOL)isSharedAppLibrary;
+- (bool)isSharedAppLibrary;
 - (id)pathRelativeToRoot;
 - (id)rootItemIDWithEnclosureUUID:(id)arg1;
 

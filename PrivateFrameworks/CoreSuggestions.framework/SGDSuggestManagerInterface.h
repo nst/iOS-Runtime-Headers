@@ -4,7 +4,7 @@
 
 @interface SGDSuggestManagerInterface : NSObject
 
-+ (void)_registerWhitelistBlock:(id /* block */)arg1 forProtocol:(id)arg2;
++ (void)_registerWhitelistBlock:(id)arg1 forProtocol:(id)arg2;
 + (void)_whitelistXPCInterface:(id)arg1 forProtocol:(id)arg2 alreadyWhitelisted:(id)arg3;
 + (void)initialize;
 + (void)interface:(id)arg1 returns:(Class)arg2 forSelector:(SEL)arg3;

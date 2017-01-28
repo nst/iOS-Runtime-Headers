@@ -10,20 +10,20 @@
 }
 
 @property (getter=getImpl, nonatomic, readonly) void*impl;
-@property (getter=getMatrixSize, nonatomic, readonly) unsigned int matrixSize;
+@property (getter=getMatrixSize, nonatomic, readonly) unsigned long long matrixSize;
 @property (getter=getMaximumValidMatrixDistance, nonatomic, readonly) float maximumValidMatrixDistance;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)addDescriptors:(id)arg1 error:(id*)arg2;
-- (BOOL)containsId:(unsigned int)arg1;
+- (bool)addDescriptors:(id)arg1 error:(id*)arg2;
+- (bool)containsId:(unsigned long long)arg1;
 - (id)createCopyForDescriptorIds:(id)arg1;
 - (void)deleteDescriptors:(id)arg1;
-- (id)getAllDistancesForId:(unsigned int)arg1;
-- (id)getDescriptorIdsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (float)getDistanceBetweenDescriptor:(unsigned int)arg1 andDescriptor:(unsigned int)arg2;
+- (id)getAllDistancesForId:(unsigned long long)arg1;
+- (id)getDescriptorIdsForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (float)getDistanceBetweenDescriptor:(unsigned long long)arg1 andDescriptor:(unsigned long long)arg2;
 - (void*)getImpl;
-- (unsigned int)getMatrixSize;
+- (unsigned long long)getMatrixSize;
 - (float)getMaximumValidMatrixDistance;
 - (id)initWithOptions:(id)arg1 error:(id*)arg2;
 

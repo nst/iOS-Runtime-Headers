@@ -3,45 +3,45 @@
  */
 
 @interface TIKeyboardActivityController : NSObject <TIKeyboardAssertionManagerDelegate> {
-    unsigned int  _activityState;
-    BOOL  _hadRecentActivity;
-    BOOL  _hasBackgroundActivity;
-    int  _inactiveMemoryPressureCount;
+    unsigned long long  _activityState;
+    bool  _hadRecentActivity;
+    bool  _hasBackgroundActivity;
+    long long  _inactiveMemoryPressureCount;
     NSTimer * _inactivityTimer;
-    BOOL  _isDirty;
+    bool  _isDirty;
     NSObject<OS_dispatch_source> * _memoryPressureSource;
     NSHashTable * _observers;
 }
 
-@property (nonatomic, readonly) unsigned int activityState;
+@property (nonatomic, readonly) unsigned long long activityState;
 @property (nonatomic, retain) NSTimer *inactivityTimer;
 @property (nonatomic, readonly) NSHashTable *observers;
 
 + (double)keyboardIdleTimeoutInterval;
 + (id)sharedController;
 
-- (unsigned int)activityState;
+- (unsigned long long)activityState;
 - (void)addActivityObserver:(id)arg1;
 - (void)backgroundActivityAssertionsDidChange;
 - (id)createMemoryPressureSource;
 - (void)dealloc;
-- (unsigned int)getExcessMemoryInBytes;
-- (void)handleMemoryStatusPressure:(unsigned long)arg1;
+- (unsigned long long)getExcessMemoryInBytes;
+- (void)handleMemoryStatusPressure:(unsigned long long)arg1;
 - (id)inactivityTimer;
 - (void)inactivityTimerFired:(id)arg1;
 - (id)init;
 - (void)keyboardAssertionsDidChange;
 - (void)keyboardAssertionsDidChange:(id)arg1;
 - (void)keyboardBackgroundActivityAssertionsDidChange:(id)arg1;
-- (void)notifyMemoryPressureLevel:(unsigned int)arg1 excessMemoryInBytes:(unsigned int)arg2;
+- (void)notifyMemoryPressureLevel:(unsigned long long)arg1 excessMemoryInBytes:(unsigned long long)arg2;
 - (void)notifyTransitionWithContext:(id)arg1;
 - (id)observers;
 - (void)removeActivityObserver:(id)arg1;
 - (void)setInactivityTimer:(id)arg1;
 - (void)setKeyboardCleanIfNecessary;
 - (void)setKeyboardDirtyIfNecessary;
-- (BOOL)shouldBecomeClean;
-- (BOOL)shouldBecomeDirty;
+- (bool)shouldBecomeClean;
+- (bool)shouldBecomeDirty;
 - (void)touchInactivityTimer;
 - (void)updateActivityState;
 

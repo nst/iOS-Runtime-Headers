@@ -9,8 +9,8 @@
 @property (nonatomic, readonly) MFMessageLoadingContext *context;
 @property (nonatomic, readonly) MFMessageSigner *firstSigner;
 @property (nonatomic, readonly) MFMessageLoadingContextEvent *loadEvent;
-@property (getter=isMessageEncrypted, nonatomic, readonly) BOOL messageEncrypted;
-@property (getter=isMessageSigned, nonatomic, readonly) BOOL messageSigned;
+@property (getter=isMessageEncrypted, nonatomic, readonly) bool messageEncrypted;
+@property (getter=isMessageSigned, nonatomic, readonly) bool messageSigned;
 @property (nonatomic, readonly) NSArray *signers;
 
 + (id)smimeInfoForLoadEvent:(id)arg1;
@@ -21,10 +21,10 @@
 - (void)dealloc;
 - (id)firstSigner;
 - (id)initWithLoadEvent:(id)arg1;
-- (BOOL)isCertificateStoredInKeychain;
-- (BOOL)isMessageEncrypted;
-- (BOOL)isMessageSigned;
-- (unsigned int)keychainCertificateStatus;
+- (bool)isCertificateStoredInKeychain;
+- (bool)isMessageEncrypted;
+- (bool)isMessageSigned;
+- (unsigned long long)keychainCertificateStatus;
 - (id)loadEvent;
 - (void)removeSavedEncryptionCertificate;
 - (void)saveEncryptionCertificate;

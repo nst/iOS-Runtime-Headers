@@ -7,10 +7,10 @@
 }
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 toPageView:(id)arg2;
+- (struct CGPoint { double x1; double x2; })_convertPoint:(struct CGPoint { double x1; double x2; })arg1 toPageView:(id)arg2;
 - (void)_prepareHandleSelection;
 - (void)_updateHandleSelection;
-- (void)_updateWordSelectionForPage:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_updateWordSelectionForPage:(id)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (void)clearSelectionState;
 - (int)didTapSelectionHandlersForGesture:(id)arg1;
 - (id)initWithView:(id)arg1;

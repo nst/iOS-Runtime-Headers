@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)animateTransition:(id)arg1;
@@ -14,6 +14,6 @@
 - (void)didRelayoutSearchBarForController:(id)arg1;
 - (void)didUnfocusSearchBarForController:(id)arg1;
 - (double)transitionDuration:(id)arg1;
-- (void)willFocusOffscreenViewForController:(id)arg1 withHeading:(unsigned int)arg2;
+- (void)willFocusOffscreenViewForController:(id)arg1 withHeading:(unsigned long long)arg2;
 
 @end

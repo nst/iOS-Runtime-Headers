@@ -10,8 +10,8 @@
     NSData * _syncContinuationToken;
 }
 
-@property (nonatomic) BOOL hasMaxChangedZones;
-@property (nonatomic, readonly) BOOL hasSyncContinuationToken;
+@property (nonatomic) bool hasMaxChangedZones;
+@property (nonatomic, readonly) bool hasSyncContinuationToken;
 @property (nonatomic) unsigned int maxChangedZones;
 @property (nonatomic, retain) NSData *syncContinuationToken;
 
@@ -22,16 +22,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMaxChangedZones;
-- (BOOL)hasSyncContinuationToken;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMaxChangedZones;
+- (bool)hasSyncContinuationToken;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)maxChangedZones;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setHasMaxChangedZones:(BOOL)arg1;
+- (void)setHasMaxChangedZones:(bool)arg1;
 - (void)setMaxChangedZones:(unsigned int)arg1;
 - (void)setSyncContinuationToken:(id)arg1;
 - (id)syncContinuationToken;

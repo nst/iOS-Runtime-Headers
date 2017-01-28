@@ -3,23 +3,23 @@
  */
 
 @interface PARSearchRequest : PARRequest <NSSecureCoding> {
-    unsigned int  _bingWebResultsType;
+    unsigned long long  _bingWebResultsType;
     NSString * _queryString;
     NSDictionary * _topics;
 }
 
-@property (nonatomic) unsigned int bingWebResultsType;
+@property (nonatomic) unsigned long long bingWebResultsType;
 @property (nonatomic, copy) NSString *queryString;
 @property (nonatomic, retain) NSDictionary *topics;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)bingWebResultsType;
+- (unsigned long long)bingWebResultsType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)queryString;
-- (void)setBingWebResultsType:(unsigned int)arg1;
+- (void)setBingWebResultsType:(unsigned long long)arg1;
 - (void)setQueryString:(id)arg1;
 - (void)setTopics:(id)arg1;
 - (id)topics;

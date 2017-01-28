@@ -37,8 +37,8 @@
 - (void).cxx_destruct;
 - (void)cacheTZLatestDestination;
 - (id)cachedTZDataLocation;
-- (BOOL)createExpansionDirectoryWithVersionString:(id)arg1 withError:(id*)arg2;
-- (BOOL)createLatestLinkWithDestination:(id)arg1 error:(id*)arg2;
+- (bool)createExpansionDirectoryURLWithVersionString:(id)arg1 withError:(id*)arg2;
+- (bool)createLatestLinkWithDestination:(id)arg1 error:(id*)arg2;
 - (id)createTemporaryExpansionDirectoryPathWithError:(id*)arg1;
 - (id)currentVersionInfo;
 - (id)currentZoneinfoLinkURL;

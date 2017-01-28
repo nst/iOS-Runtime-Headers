@@ -32,6 +32,6 @@
 - (void)setListener:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)startThrottlePolicyEventListener;
-- (BOOL)startXPCListener;
+- (bool)startXPCListener;
 
 @end

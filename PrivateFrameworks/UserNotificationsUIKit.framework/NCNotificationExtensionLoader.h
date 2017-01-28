@@ -11,10 +11,10 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_loadViewControllerForExtension:(id)arg1 notificationRequest:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)_loadViewControllerForExtension:(id)arg1 notificationRequest:(id)arg2 withCompletion:(id)arg3;
 - (void)clearCacheForNotificationRequest:(id)arg1;
 - (id)init;
-- (void)loadViewControllerForExtension:(id)arg1 notificationRequest:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)loadViewControllerForExtension:(id)arg1 notificationRequest:(id)arg2 withCompletion:(id)arg3;
 - (id)loadedHostViewControllerCache;
 - (void)setLoadedHostViewControllerCache:(id)arg1;
 

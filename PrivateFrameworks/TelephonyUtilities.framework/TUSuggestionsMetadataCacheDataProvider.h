@@ -10,7 +10,7 @@
 
 + (id)newestSuggestedContactForDestinationID:(id)arg1;
 + (id)sharedService;
-+ (void)suggestedNamesForDestinationID:(id)arg1 withCompletion:(id /* block */)arg2;
++ (void)suggestedNamesForDestinationID:(id)arg1 withCompletion:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)init;

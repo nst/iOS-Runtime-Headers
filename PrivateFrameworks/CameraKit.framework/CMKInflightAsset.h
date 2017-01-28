@@ -3,59 +3,59 @@
  */
 
 @interface CMKInflightAsset : NSObject {
-    BOOL  __didPersistAvalanche;
-    BOOL  __hasPendingAvalanchePersistenceUpdate;
+    bool  __didPersistAvalanche;
+    bool  __hasPendingAvalanchePersistenceUpdate;
     int  _avalanchePickType;
     NSString * _avalancheUUID;
-    int  _captureDeviceDuringCapture;
+    long long  _captureDeviceDuringCapture;
     NSDate * _dateCreated;
-    int  _deviceOrientationDuringCapture;
+    long long  _deviceOrientationDuringCapture;
     NSString * _directory;
     NSString * _filename;
-    BOOL  _isVideo;
+    bool  _isVideo;
     NSString * _uuid;
     short  _visibilityState;
 }
 
-@property (nonatomic, readonly) BOOL _didPersistAvalanche;
-@property (nonatomic, readonly) BOOL _hasPendingAvalanchePersistenceUpdate;
+@property (nonatomic, readonly) bool _didPersistAvalanche;
+@property (nonatomic, readonly) bool _hasPendingAvalanchePersistenceUpdate;
 @property (nonatomic) int avalanchePickType;
 @property (nonatomic, retain) NSString *avalancheUUID;
-@property (nonatomic) int captureDeviceDuringCapture;
+@property (nonatomic) long long captureDeviceDuringCapture;
 @property (nonatomic, retain) NSDate *dateCreated;
-@property (nonatomic) int deviceOrientationDuringCapture;
+@property (nonatomic) long long deviceOrientationDuringCapture;
 @property (nonatomic, retain) NSString *directory;
 @property (nonatomic, retain) NSString *filename;
-@property (nonatomic) BOOL isVideo;
+@property (nonatomic) bool isVideo;
 @property (nonatomic, retain) NSString *uuid;
 @property (nonatomic) short visibilityState;
 
 - (void).cxx_destruct;
 - (void)_avalanchePersistenceStateDidChange;
-- (BOOL)_didPersistAvalanche;
-- (BOOL)_hasPendingAvalanchePersistenceUpdate;
+- (bool)_didPersistAvalanche;
+- (bool)_hasPendingAvalanchePersistenceUpdate;
 - (void)_persistAvalancheToFilesystem;
 - (int)avalanchePickType;
 - (id)avalancheUUID;
-- (int)captureDeviceDuringCapture;
+- (long long)captureDeviceDuringCapture;
 - (id)dateCreated;
-- (int)deviceOrientationDuringCapture;
+- (long long)deviceOrientationDuringCapture;
 - (id)directory;
 - (id)filename;
 - (id)init;
-- (BOOL)isVideo;
+- (bool)isVideo;
 - (id)mainFileURL;
 - (id)pathForImageFile;
 - (id)pathForOriginalFile;
 - (id)pathForVideoFile;
 - (void)setAvalanchePickType:(int)arg1;
 - (void)setAvalancheUUID:(id)arg1;
-- (void)setCaptureDeviceDuringCapture:(int)arg1;
+- (void)setCaptureDeviceDuringCapture:(long long)arg1;
 - (void)setDateCreated:(id)arg1;
-- (void)setDeviceOrientationDuringCapture:(int)arg1;
+- (void)setDeviceOrientationDuringCapture:(long long)arg1;
 - (void)setDirectory:(id)arg1;
 - (void)setFilename:(id)arg1;
-- (void)setIsVideo:(BOOL)arg1;
+- (void)setIsVideo:(bool)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setVisibilityState:(short)arg1;
 - (id)uuid;

@@ -3,21 +3,21 @@
  */
 
 @interface HFRoomItemProvider : HFItemProvider {
-    id /* block */  _filter;
+    id  _filter;
     NSMutableSet * _roomItems;
 }
 
-@property (nonatomic, copy) id /* block */ filter;
+@property (nonatomic, copy) id filter;
 @property (nonatomic, retain) NSMutableSet *roomItems;
 
 - (void).cxx_destruct;
-- (id /* block */)filter;
+- (id)filter;
 - (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;
 - (id)roomItems;
-- (void)setFilter:(id /* block */)arg1;
+- (void)setFilter:(id)arg1;
 - (void)setRoomItems:(id)arg1;
 
 @end

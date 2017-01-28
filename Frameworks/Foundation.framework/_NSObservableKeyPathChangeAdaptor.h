@@ -4,6 +4,6 @@
 
 @interface _NSObservableKeyPathChangeAdaptor : NSObservableKeyPath
 
-- (BOOL)_wantsChanges;
+- (bool)_wantsChanges;
 
 @end

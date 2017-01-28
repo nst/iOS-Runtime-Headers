@@ -3,12 +3,12 @@
  */
 
 @interface _PASNotificationToken : NSObject {
-    unsigned int  _token;
+    unsigned long long  _token;
 }
 
-@property (nonatomic) unsigned int token;
+@property (nonatomic) unsigned long long token;
 
-- (void)setToken:(unsigned int)arg1;
-- (unsigned int)token;
+- (void)setToken:(unsigned long long)arg1;
+- (unsigned long long)token;
 
 @end

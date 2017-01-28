@@ -3,14 +3,14 @@
  */
 
 @interface WBUTextSuggestion : UITextSuggestion {
-    unsigned int  _index;
+    unsigned long long  _index;
 }
 
-@property (nonatomic) unsigned int index;
+@property (nonatomic) unsigned long long index;
 
-- (BOOL)_shouldPersist;
-- (unsigned int)index;
-- (id)initWithIndex:(unsigned int)arg1;
-- (void)setIndex:(unsigned int)arg1;
+- (bool)_shouldPersist;
+- (unsigned long long)index;
+- (id)initWithIndex:(unsigned long long)arg1;
+- (void)setIndex:(unsigned long long)arg1;
 
 @end

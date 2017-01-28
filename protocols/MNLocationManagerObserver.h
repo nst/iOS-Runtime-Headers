@@ -11,7 +11,7 @@
 - (void)locationManagerDidReset:(MNLocationManager *)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(MNLocationManager *)arg1;
 - (void)locationManagerFailedToUpdateLocation:(MNLocationManager *)arg1 withError:(NSError *)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(MNLocationManager *)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(MNLocationManager *)arg1;
 - (void)locationManagerUpdatedLocation:(MNLocationManager *)arg1;
 
 @end

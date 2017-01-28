@@ -13,10 +13,10 @@
 @property (nonatomic, retain) NSMutableOrderedSet *typeOrder;
 
 - (void).cxx_destruct;
-- (void)addCoercionFromType:(id)arg1 block:(id /* block */)arg2;
+- (void)addCoercionFromType:(id)arg1 block:(id)arg2;
 - (id)availableImportTypes;
 - (id)blockByType;
-- (BOOL)canCoerceFromType:(id)arg1;
+- (bool)canCoerceFromType:(id)arg1;
 - (id)createObjectFromRepresentationConformingToType:(id)arg1 data:(id)arg2 URL:(id)arg3 outError:(id*)arg4;
 - (id)initWithClass:(Class)arg1;
 - (void)setBlockByType:(id)arg1;

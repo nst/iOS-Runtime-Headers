@@ -8,11 +8,11 @@
 @property (nonatomic, copy) NSString *completionType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *interactionId;
 @property (nonatomic, copy) NSArray *listenedItems;
 @property (nonatomic, copy) NSString *refId;
-@property (nonatomic) int selectedItemIndex;
+@property (nonatomic) long long selectedItemIndex;
 @property (nonatomic, copy) NSString *sessionId;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *timesListened;
@@ -25,12 +25,12 @@
 - (id)groupIdentifier;
 - (id)interactionId;
 - (id)listenedItems;
-- (int)selectedItemIndex;
+- (long long)selectedItemIndex;
 - (id)sessionId;
 - (void)setCompletionType:(id)arg1;
 - (void)setInteractionId:(id)arg1;
 - (void)setListenedItems:(id)arg1;
-- (void)setSelectedItemIndex:(int)arg1;
+- (void)setSelectedItemIndex:(long long)arg1;
 - (void)setSessionId:(id)arg1;
 - (void)setTimesListened:(id)arg1;
 - (id)timesListened;

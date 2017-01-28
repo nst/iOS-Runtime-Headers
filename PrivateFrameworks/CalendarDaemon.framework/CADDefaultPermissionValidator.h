@@ -6,30 +6,30 @@
     ClientConnection * _connection;
 }
 
-@property (readonly) BOOL canMakeSpotlightChanges;
-@property (readonly) BOOL canModifyCalendarDatabase;
-@property (readonly) BOOL canModifySuggestedEventCalendar;
-@property (readonly) BOOL canSetAutomaticLocationGeocodingAllowedValue;
+@property (readonly) bool canMakeSpotlightChanges;
+@property (readonly) bool canModifyCalendarDatabase;
+@property (readonly) bool canModifySuggestedEventCalendar;
+@property (readonly) bool canSetAutomaticLocationGeocodingAllowedValue;
 @property (retain) ClientConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) BOOL hasContactsUIEntitlement;
-@property (readonly) unsigned int hash;
-@property (readonly) BOOL internalAccessLevelGranted;
+@property (readonly) bool hasContactsUIEntitlement;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool internalAccessLevelGranted;
 @property (readonly) Class superclass;
-@property (readonly) BOOL testingAccessLevelGranted;
+@property (readonly) bool testingAccessLevelGranted;
 
 - (void).cxx_destruct;
-- (BOOL)_valueForBooleanEntitlement:(id)arg1 defaultValue:(BOOL)arg2;
-- (BOOL)canMakeSpotlightChanges;
-- (BOOL)canModifyCalendarDatabase;
-- (BOOL)canModifySuggestedEventCalendar;
-- (BOOL)canSetAutomaticLocationGeocodingAllowedValue;
+- (bool)_valueForBooleanEntitlement:(id)arg1 defaultValue:(bool)arg2;
+- (bool)canMakeSpotlightChanges;
+- (bool)canModifyCalendarDatabase;
+- (bool)canModifySuggestedEventCalendar;
+- (bool)canSetAutomaticLocationGeocodingAllowedValue;
 - (id)connection;
-- (BOOL)hasContactsUIEntitlement;
+- (bool)hasContactsUIEntitlement;
 - (id)initWithClientConnection:(id)arg1;
-- (BOOL)internalAccessLevelGranted;
+- (bool)internalAccessLevelGranted;
 - (void)setConnection:(id)arg1;
-- (BOOL)testingAccessLevelGranted;
+- (bool)testingAccessLevelGranted;
 
 @end

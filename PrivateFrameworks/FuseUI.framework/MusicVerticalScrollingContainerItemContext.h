@@ -6,23 +6,23 @@
     UICollectionViewCell * _containerCell;
     UICollectionView * _containerCollectionView;
     UIScrollView * _contentScrollView;
-    BOOL  _contentScrollViewCanPanVertically;
-    BOOL  _contentScrollViewScrollsToTop;
+    bool  _contentScrollViewCanPanVertically;
+    bool  _contentScrollViewScrollsToTop;
     <MusicVerticalScrollingContainerItemContextDelegate> * _delegate;
-    BOOL  _hasSetupContentScrollView;
-    BOOL  _isChangingContentScrollViewContentOffset;
+    bool  _hasSetupContentScrollView;
+    bool  _isChangingContentScrollViewContentOffset;
     MusicVerticalScrollingContainerItem * _item;
-    float  _lastSeenContentHeight;
-    unsigned int  _originalAutoresizingMask;
+    double  _lastSeenContentHeight;
+    unsigned long long  _originalAutoresizingMask;
     NSMutableArray * _overriddenContentHeightStack;
-    BOOL  _readyForDisplay;
-    BOOL  _shouldIgnoreContentScrollViewChanges;
+    bool  _readyForDisplay;
+    bool  _shouldIgnoreContentScrollViewChanges;
 }
 
 @property (nonatomic) <MusicVerticalScrollingContainerItemContextDelegate> *delegate;
 @property (nonatomic, readonly) MusicVerticalScrollingContainerItem *item;
 @property (nonatomic, readonly) UIView *itemView;
-@property (getter=isOverridingContentHeight, nonatomic, readonly) BOOL overridingContentHeight;
+@property (getter=isOverridingContentHeight, nonatomic, readonly) bool overridingContentHeight;
 
 - (void).cxx_destruct;
 - (id)_contentScrollView;
@@ -30,15 +30,15 @@
 - (void)_notifyDelegateOfUpdatedContentHeightInContentScrollView;
 - (void)_tearDownContentScrollView;
 - (void)_updateLayoutOfItemView:(id)arg1 inCell:(id)arg2 withContainerCollectionView:(id)arg3;
-- (id)_verticallyAdjustableScrollViewAllowingForcedLayoutUpToContentScrollView:(BOOL)arg1;
-- (id)_viewAllowingLoadingFromViewController:(BOOL)arg1;
-- (void)beginOverridingContentHeightToValue:(float)arg1;
-- (float)contentHeightForContentWidth:(float)arg1 withTemporaryParentView:(id)arg2;
+- (id)_verticallyAdjustableScrollViewAllowingForcedLayoutUpToContentScrollView:(bool)arg1;
+- (id)_viewAllowingLoadingFromViewController:(bool)arg1;
+- (void)beginOverridingContentHeightToValue:(double)arg1;
+- (double)contentHeightForContentWidth:(double)arg1 withTemporaryParentView:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)endOverridingContentHeight;
 - (id)initWithItem:(id)arg1;
-- (BOOL)isOverridingContentHeight;
+- (bool)isOverridingContentHeight;
 - (id)item;
 - (id)itemView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

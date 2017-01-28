@@ -10,15 +10,15 @@
 @property (nonatomic, readonly, copy) NSString *label;
 @property (nonatomic, readonly, copy) NSString *value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (id)value;
 

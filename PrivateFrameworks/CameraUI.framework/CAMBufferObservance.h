@@ -3,28 +3,28 @@
  */
 
 @interface CAMBufferObservance : NSObject {
-    BOOL  _enabled;
-    BOOL  _fulfilled;
-    id /* block */  _predicate;
-    BOOL  _removedOnceEnabled;
+    bool  _enabled;
+    bool  _fulfilled;
+    id  _predicate;
+    bool  _removedOnceEnabled;
 }
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (getter=isFulfilled, nonatomic) BOOL fulfilled;
-@property (nonatomic, readonly, copy) id /* block */ predicate;
-@property (getter=isRemovedOnceEnabled, nonatomic, readonly) BOOL removedOnceEnabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (getter=isFulfilled, nonatomic) bool fulfilled;
+@property (nonatomic, readonly, copy) id predicate;
+@property (getter=isRemovedOnceEnabled, nonatomic, readonly) bool removedOnceEnabled;
 
 - (void).cxx_destruct;
 - (void)fulfillWithChange:(id)arg1;
-- (id)initWithPredicate:(id /* block */)arg1 removedOnceEnabled:(BOOL)arg2;
-- (BOOL)isEnabled;
-- (BOOL)isFulfilled;
-- (BOOL)isRemovedOnceEnabled;
-- (id /* block */)predicate;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setFulfilled:(BOOL)arg1;
+- (id)initWithPredicate:(id)arg1 removedOnceEnabled:(bool)arg2;
+- (bool)isEnabled;
+- (bool)isFulfilled;
+- (bool)isRemovedOnceEnabled;
+- (id)predicate;
+- (void)setEnabled:(bool)arg1;
+- (void)setFulfilled:(bool)arg1;
 - (void)setupObservanceForBuffer:(id)arg1;
-- (BOOL)shouldBeFulfilledByChange:(id)arg1;
+- (bool)shouldBeFulfilledByChange:(id)arg1;
 - (void)teardownObservanceForBuffer:(id)arg1;
 
 @end

@@ -16,7 +16,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)mediaItem;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAirplayRouteUID:(id)arg1;
 - (void)setMediaItem:(id)arg1;
 - (void)setStartPlaying:(id)arg1;

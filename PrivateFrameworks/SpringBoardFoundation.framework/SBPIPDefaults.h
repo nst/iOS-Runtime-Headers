@@ -4,7 +4,7 @@
 
 @interface SBPIPDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL allowAutoPIP;
+@property (nonatomic, readonly) bool allowAutoPIP;
 
 - (void)_bindAndRegisterDefaults;
 

@@ -4,13 +4,13 @@
 
 @interface FCFeedViewportExpandGroupGapOperation : FCOperation {
     FCCloudContext * _context;
-    unsigned int  _desiredHeadlineCount;
-    id /* block */  _expandGapCompletionHandler;
+    unsigned long long  _desiredHeadlineCount;
+    id  _expandGapCompletionHandler;
     FCFeedDescriptor * _feedDescriptor;
     NSArray * _feedGroupEmitters;
     NSMutableDictionary * _forYouCatchUpOperationsByEdition;
     FCFeedViewportGap * _gap;
-    int  _gapExpansionPolicy;
+    long long  _gapExpansionPolicy;
     FCDateRange * _refreshDateRange;
     NSError * _resultError;
     FCFeedGroup * _resultInsertedGroup;
@@ -20,13 +20,13 @@
 }
 
 @property (nonatomic, retain) FCCloudContext *context;
-@property (nonatomic) unsigned int desiredHeadlineCount;
-@property (nonatomic, copy) id /* block */ expandGapCompletionHandler;
+@property (nonatomic) unsigned long long desiredHeadlineCount;
+@property (nonatomic, copy) id expandGapCompletionHandler;
 @property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
 @property (nonatomic, retain) NSArray *feedGroupEmitters;
 @property (nonatomic, retain) NSMutableDictionary *forYouCatchUpOperationsByEdition;
 @property (nonatomic, copy) FCFeedViewportGap *gap;
-@property (nonatomic) int gapExpansionPolicy;
+@property (nonatomic) long long gapExpansionPolicy;
 @property (nonatomic, retain) FCDateRange *refreshDateRange;
 @property (nonatomic, retain) NSError *resultError;
 @property (nonatomic, retain) FCFeedGroup *resultInsertedGroup;
@@ -37,17 +37,14 @@
 - (void).cxx_destruct;
 - (id)_associatedForYouCatchUpOperationForEdition:(id)arg1;
 - (id)_groupsFromRefreshSessionContainingGap:(id)arg1 internalElements:(id)arg2;
-- (id)_nextFeedGroupEmitterWithContext:(id)arg1 gap:(id)arg2 restrictToGroupEmitterIdentifier:(id)arg3 cursor:(id*)arg4 toCursor:(id*)arg5;
-- (BOOL)_reachedEndOfGap:(id)arg1 internalElements:(id)arg2;
-- (id)_restrictedGroupEmitterIdentifierForBoardingGroup:(id)arg1 andGroup:(id)arg2;
 - (id)context;
-- (unsigned int)desiredHeadlineCount;
-- (id /* block */)expandGapCompletionHandler;
+- (unsigned long long)desiredHeadlineCount;
+- (id)expandGapCompletionHandler;
 - (id)feedDescriptor;
 - (id)feedGroupEmitters;
 - (id)forYouCatchUpOperationsByEdition;
 - (id)gap;
-- (int)gapExpansionPolicy;
+- (long long)gapExpansionPolicy;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (void)prepareOperation;
@@ -56,13 +53,13 @@
 - (id)resultInsertedGroup;
 - (id)resultInternalElements;
 - (void)setContext:(id)arg1;
-- (void)setDesiredHeadlineCount:(unsigned int)arg1;
-- (void)setExpandGapCompletionHandler:(id /* block */)arg1;
+- (void)setDesiredHeadlineCount:(unsigned long long)arg1;
+- (void)setExpandGapCompletionHandler:(id)arg1;
 - (void)setFeedDescriptor:(id)arg1;
 - (void)setFeedGroupEmitters:(id)arg1;
 - (void)setForYouCatchUpOperationsByEdition:(id)arg1;
 - (void)setGap:(id)arg1;
-- (void)setGapExpansionPolicy:(int)arg1;
+- (void)setGapExpansionPolicy:(long long)arg1;
 - (void)setRefreshDateRange:(id)arg1;
 - (void)setResultError:(id)arg1;
 - (void)setResultInsertedGroup:(id)arg1;

@@ -3,17 +3,17 @@
  */
 
 @interface AXEventListenerContainer : NSObject {
-    id /* block */  handler;
+    id  handler;
     NSString * identifier;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 @property (nonatomic, retain) NSString *identifier;
 
 - (void)dealloc;
-- (id /* block */)handler;
+- (id)handler;
 - (id)identifier;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 
 @end

@@ -7,24 +7,24 @@
 }
 
 @property (copy) NSString *cameraMode;
-@property int cameraPosition;
-@property unsigned int captureCount;
-@property (getter=isCaptureMode) BOOL captureMode;
+@property long long cameraPosition;
+@property unsigned long long captureCount;
+@property (getter=isCaptureMode) bool captureMode;
 @property (readonly, copy) NSString *debugDescription;
 @property <CRCodeRedeemerControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property int exposureMode;
-@property int focusMode;
-@property (readonly) unsigned int hash;
+@property long long exposureMode;
+@property long long focusMode;
+@property (readonly) unsigned long long hash;
 @property double sessionTimeout;
-@property BOOL showDiagnosticHUD;
+@property bool showDiagnosticHUD;
 @property (readonly) Class superclass;
-@property int torchMode;
-@property int whiteBalanceMode;
+@property long long torchMode;
+@property long long whiteBalanceMode;
 
-+ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2;
-+ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1 maxStage:(unsigned int)arg2 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
-+ (unsigned int)isCRCodeRedeemerAvailable;
++ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1 maxStage:(unsigned long long)arg2;
++ (id)findCodeInImage:(struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1 maxStage:(unsigned long long)arg2 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3;
++ (unsigned long long)isCRCodeRedeemerAvailable;
 
 - (void).cxx_destruct;
 - (void)cameraReader:(id)arg1 didFailWithError:(id)arg2;
@@ -36,6 +36,6 @@
 - (id)delegate;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)showMessage:(id)arg1 color:(id)arg2 style:(unsigned int)arg3 duration:(double)arg4;
+- (void)showMessage:(id)arg1 color:(id)arg2 style:(unsigned long long)arg3 duration:(double)arg4;
 
 @end

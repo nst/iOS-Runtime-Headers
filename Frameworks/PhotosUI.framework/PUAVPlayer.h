@@ -5,9 +5,9 @@
 @interface PUAVPlayer : AVPlayer {
     <PUAVPlayerDelegate> * _delegate;
     struct { 
-        BOOL respondsToRateDidChange; 
-        BOOL respondsToStatusDidChange; 
-        BOOL respondsToDidDeallocate; 
+        bool respondsToRateDidChange; 
+        bool respondsToStatusDidChange; 
+        bool respondsToDidDeallocate; 
     }  _delegateFlags;
 }
 

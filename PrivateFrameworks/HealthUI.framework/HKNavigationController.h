@@ -8,13 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)commonProfileBarButtonItem;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 - (id)initWithRootViewController:(id)arg1;
-- (unsigned int)navigationControllerSupportedInterfaceOrientations:(id)arg1;
+- (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 
 @end

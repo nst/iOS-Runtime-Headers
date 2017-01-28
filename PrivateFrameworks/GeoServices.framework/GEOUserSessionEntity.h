@@ -23,7 +23,7 @@
 @property (readonly) double sessionRelativeTimestamp;
 @property (nonatomic, readonly) NSString *sessionUUIDString;
 
-- (BOOL)_isValidSessionIDHighOrLowString:(id)arg1;
+- (bool)_isValidSessionIDHighOrLowString:(id)arg1;
 - (id)description;
 - (id)init;
 - (id)initWithSessionEntityString:(id)arg1;

@@ -3,23 +3,23 @@
  */
 
 @interface PKUISpringAnimationFactory : PKSpringAnimationFactory <_UIBasicAnimationFactory> {
-    id /* block */  _animationDelayHandler;
+    id  _animationDelayHandler;
     double  _maximumVendedDelay;
 }
 
-@property (nonatomic, copy) id /* block */ animationDelayHandler;
+@property (nonatomic, copy) id animationDelayHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double maximumVendedDelay;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_basicAnimationForView:(struct UIView { Class x1; }*)arg1 withKeyPath:(id)arg2;
 - (id)_springAnimationForView:(struct UIView { Class x1; }*)arg1 withKeyPath:(id)arg2;
-- (id /* block */)animationDelayHandler;
+- (id)animationDelayHandler;
 - (double)maximumVendedDelay;
-- (void)setAnimationDelayHandler:(id /* block */)arg1;
+- (void)setAnimationDelayHandler:(id)arg1;
 - (id)springAnimationForView:(struct UIView { Class x1; }*)arg1 withKeyPath:(id)arg2;
 
 @end

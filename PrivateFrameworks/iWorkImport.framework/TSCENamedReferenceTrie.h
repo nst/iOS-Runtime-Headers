@@ -13,7 +13,7 @@
                         struct __hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, void *> *> > { 
-                                unsigned long __first_; 
+                                unsigned long long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -24,7 +24,7 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned short, std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, std::__1::hash<unsigned short>, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned short, std::__1::__hash_value_type<unsigned short, TSCENamedReferenceTrieNode *>, std::__1::equal_to<unsigned short>, true> > { 
                     float __first_; 
@@ -40,8 +40,8 @@
 - (void)deleteName:(id)arg1 inTable:(struct __CFUUID { }*)arg2 trackedReference:(id)arg3;
 - (id)description;
 - (id)initWithLocale:(id)arg1;
-- (BOOL)insertName:(id)arg1 inTable:(struct __CFUUID { }*)arg2 trackedReference:(id)arg3;
-- (BOOL)replaceName:(id)arg1 withName:(id)arg2 inTable:(struct __CFUUID { }*)arg3 trackedReference:(id)arg4;
+- (bool)insertName:(id)arg1 inTable:(struct __CFUUID { }*)arg2 trackedReference:(id)arg3;
+- (bool)replaceName:(id)arg1 withName:(id)arg2 inTable:(struct __CFUUID { }*)arg3 trackedReference:(id)arg4;
 - (id)trackedReferencesExactlyMatchingString:(id)arg1 scopedToTable:(struct __CFUUID { }*)arg2;
 - (id)trackedReferencesMatchingString:(id)arg1 scopedToTable:(struct __CFUUID { }*)arg2;
 

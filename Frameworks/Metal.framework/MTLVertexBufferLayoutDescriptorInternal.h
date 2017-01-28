@@ -3,18 +3,18 @@
  */
 
 @interface MTLVertexBufferLayoutDescriptorInternal : MTLVertexBufferLayoutDescriptor {
-    unsigned int  _instanceStepRate;
-    unsigned int  _stepFunction;
-    unsigned int  _stride;
+    unsigned long long  _instanceStepRate;
+    unsigned long long  _stepFunction;
+    unsigned long long  _stride;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)setStepFunction:(unsigned int)arg1;
-- (void)setStepRate:(unsigned int)arg1;
-- (void)setStride:(unsigned int)arg1;
-- (unsigned int)stepFunction;
-- (unsigned int)stepRate;
-- (unsigned int)stride;
+- (void)setStepFunction:(unsigned long long)arg1;
+- (void)setStepRate:(unsigned long long)arg1;
+- (void)setStride:(unsigned long long)arg1;
+- (unsigned long long)stepFunction;
+- (unsigned long long)stepRate;
+- (unsigned long long)stride;
 
 @end

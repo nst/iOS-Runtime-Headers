@@ -4,8 +4,8 @@
 
 @interface BPSApplePayLocallyStoredValueManager : NSObject
 
-+ (BOOL)_networkConnectivityAvailable;
-+ (void)presentApplePayLocallyStoredValueOfflineWarningIfNeededInController:(id)arg1 withCompletion:(id /* block */)arg2;
++ (bool)_networkConnectivityAvailable;
++ (void)presentApplePayLocallyStoredValueOfflineWarningIfNeededInController:(id)arg1 withCompletion:(id)arg2;
 + (id)remoteLocallyStoredValuePassNames;
 
 @end

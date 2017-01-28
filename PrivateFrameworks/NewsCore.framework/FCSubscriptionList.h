@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *mutableSubscriptionsBySubscriptionID;
 @property (nonatomic, copy) NSSet *mutedSubscribedTagIDs;
 @property (nonatomic, readonly, copy) NSSet *mutedTagIDs;
@@ -21,16 +21,16 @@
 @property (nonatomic, copy) NSDictionary *subscriptionsBySubscriptionID;
 @property (readonly) Class superclass;
 
-+ (int)commandQueueUrgency;
++ (long long)commandQueueUrgency;
 + (id)commandStoreFileName;
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
 + (id)desiredKeys;
 + (id)localStoreFilename;
-+ (unsigned int)localStoreVersion;
++ (unsigned long long)localStoreVersion;
 + (id)mutedSubscriptionIDForTagID:(id)arg1;
-+ (BOOL)requiresBatchedSync;
-+ (BOOL)requiresHighPriorityFirstSync;
-+ (BOOL)requiresPushNotificationSupport;
++ (bool)requiresBatchedSync;
++ (bool)requiresHighPriorityFirstSync;
++ (bool)requiresPushNotificationSupport;
 + (id)subscriptionIDForTagID:(id)arg1;
 + (id)subscriptionIDForUrl:(id)arg1;
 
@@ -41,17 +41,17 @@
 - (void)_regenerateSortedSubscriptions;
 - (void)_removeRemoteSubscription:(id)arg1;
 - (id)_subscriptionFromRecord:(id)arg1;
-- (BOOL)addMutedSubscriptionForTagID:(id)arg1;
+- (bool)addMutedSubscriptionForTagID:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)addPendingSubscription:(id)arg1;
 - (id)addSubscriptionForTagID:(id)arg1;
-- (id)addSubscriptionForTagID:(id)arg1 notificationsEnabled:(BOOL)arg2;
+- (id)addSubscriptionForTagID:(id)arg1 notificationsEnabled:(bool)arg2;
 - (id)addSubscriptionForTagID:(id)arg1 replacingPendingSubscriptionWithPollingURL:(id)arg2;
-- (BOOL)canAddSubscription;
+- (bool)canAddSubscription;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
-- (BOOL)hasMutedSubscriptionForTagID:(id)arg1;
-- (BOOL)hasNotificationsEnabledForTagID:(id)arg1;
-- (BOOL)hasSubscriptionForTagID:(id)arg1;
+- (bool)hasMutedSubscriptionForTagID:(id)arg1;
+- (bool)hasNotificationsEnabledForTagID:(id)arg1;
+- (bool)hasSubscriptionForTagID:(id)arg1;
 - (void)loadLocalCachesFromStore;
 - (void)modifyPendingSubscription:(id)arg1;
 - (id)mutableSubscriptionsBySubscriptionID;
@@ -65,7 +65,7 @@
 - (void)removeSubscriptionForTagID:(id)arg1;
 - (void)setMutableSubscriptionsBySubscriptionID:(id)arg1;
 - (void)setMutedSubscribedTagIDs:(id)arg1;
-- (BOOL)setNotificationsEnabled:(BOOL)arg1 forTagID:(id)arg2;
+- (bool)setNotificationsEnabled:(bool)arg1 forTagID:(id)arg2;
 - (void)setPendingSubscriptionsBySubscriptionID:(id)arg1;
 - (void)setSubscribedTagIDs:(id)arg1;
 - (void)setSubscriptionsBySubscriptionID:(id)arg1;

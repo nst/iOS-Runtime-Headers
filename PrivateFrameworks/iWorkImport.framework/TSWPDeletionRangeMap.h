@@ -5,19 +5,19 @@
 @interface TSWPDeletionRangeMap : NSObject {
     TSWPRangeArray * _removedRanges;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _subRange;
 }
 
-- (void)adjustByDelta:(int)arg1 startingAt:(unsigned int)arg2;
-- (BOOL)containsCharIndex:(unsigned int)arg1;
+- (void)adjustByDelta:(long long)arg1 startingAt:(unsigned long long)arg2;
+- (bool)containsCharIndex:(unsigned long long)arg1;
 - (void)dealloc;
-- (id)initWithSubRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 removeRanges:(id)arg2;
-- (id)inverseRangesInStorageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)mappedCharIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })mappedCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (unsigned int)unmappedCharIndex:(unsigned int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })unmappedCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)initWithSubRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 removeRanges:(id)arg2;
+- (id)inverseRangesInStorageRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned long long)mappedCharIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })mappedCharRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (unsigned long long)unmappedCharIndex:(unsigned long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })unmappedCharRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

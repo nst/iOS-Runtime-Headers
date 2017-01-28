@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) TSPObject *hostingModel;
 @property (nonatomic) TSWPStorage *parentStorage;
 @property (nonatomic, copy) TSDCommentStorage *storage;
@@ -43,8 +43,8 @@
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 commentStorage:(id)arg2;
-- (BOOL)isCommentEmpty;
-- (BOOL)isEquivalentToObject:(id)arg1;
+- (bool)isCommentEmpty;
+- (bool)isEquivalentToObject:(id)arg1;
 - (void)loadFromArchive:(const struct HighlightArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (void)p_invalidateAnnotationResultsForDocumentRoot:(id)arg1 key:(id)arg2;
 - (id)parentStorage;

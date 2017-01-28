@@ -3,35 +3,35 @@
  */
 
 @interface CKInvisibleInkEffectCoverageTracker : NSObject {
-    float  _cellHeight;
-    float  _cellWidth;
+    double  _cellHeight;
+    double  _cellWidth;
     <CKInvisibleInkEffectCoverageTrackerDelegate> * _delegate;
     double * _expiryTimes;
-    unsigned long  _height;
+    unsigned long long  _height;
     NSTimer * _recoverTimer;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
     double  _touchLifetime;
-    BOOL  _uncovered;
-    unsigned long  _width;
+    bool  _uncovered;
+    unsigned long long  _width;
 }
 
 @property (nonatomic) <CKInvisibleInkEffectCoverageTrackerDelegate> *delegate;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, readonly) double touchLifetime;
 
 - (void).cxx_destruct;
 - (void)_checkForCover:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 touchLifetime:(double)arg2;
-- (void)recordTouchAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 touchLifetime:(double)arg2;
+- (void)recordTouchAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)reset;
 - (void)setDelegate:(id)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })size;
 - (double)touchLifetime;
 
 @end

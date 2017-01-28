@@ -5,6 +5,6 @@
 
 @required
 
-- (void)iconContentView:(HUIconContentView *)arg1 didChangeAspectRatio:(float)arg2;
+- (void)iconContentView:(HUIconContentView *)arg1 didChangeAspectRatio:(double)arg2;
 
 @end

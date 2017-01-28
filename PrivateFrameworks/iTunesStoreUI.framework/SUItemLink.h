@@ -3,24 +3,24 @@
  */
 
 @interface SUItemLink : NSObject <NSCopying> {
-    int  _linkTarget;
-    int  _linkType;
+    long long  _linkTarget;
+    long long  _linkType;
     NSString * _title;
     NSURL * _url;
 }
 
 @property (nonatomic, retain) NSURL *URL;
-@property (nonatomic) int linkTarget;
-@property (nonatomic) int linkType;
+@property (nonatomic) long long linkTarget;
+@property (nonatomic) long long linkType;
 @property (nonatomic, copy) NSString *title;
 
 - (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (int)linkTarget;
-- (int)linkType;
-- (void)setLinkTarget:(int)arg1;
-- (void)setLinkType:(int)arg1;
+- (long long)linkTarget;
+- (long long)linkType;
+- (void)setLinkTarget:(long long)arg1;
+- (void)setLinkType:(long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)title;

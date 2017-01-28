@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PFUbiquityLocation *presentedItemLocation;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
@@ -18,15 +18,15 @@
 
 + (void)initialize;
 
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithMetadataStoreFileLocation:(id)arg1;
 - (id)presentedItemLocation;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
-- (void)relinquishPresentedItemToReader:(id /* block */)arg1;
-- (void)relinquishPresentedItemToWriter:(id /* block */)arg1;
-- (void)savePresentedItemChangesWithCompletionHandler:(id /* block */)arg1;
+- (void)relinquishPresentedItemToReader:(id)arg1;
+- (void)relinquishPresentedItemToWriter:(id)arg1;
+- (void)savePresentedItemChangesWithCompletionHandler:(id)arg1;
 
 @end

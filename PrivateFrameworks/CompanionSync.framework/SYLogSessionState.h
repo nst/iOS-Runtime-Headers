@@ -3,9 +3,9 @@
  */
 
 @interface SYLogSessionState : PBCodable <NSCopying> {
-    BOOL  _canRestart;
-    BOOL  _canRollback;
-    BOOL  _canceled;
+    bool  _canRestart;
+    bool  _canRollback;
+    bool  _canceled;
     SYLogErrorInfo * _error;
     double  _fullSessionTimeout;
     struct { 
@@ -17,8 +17,8 @@
         unsigned int isReset : 1; 
     }  _has;
     NSString * _identifier;
-    BOOL  _isReset;
-    BOOL  _isSending;
+    bool  _isReset;
+    bool  _isSending;
     unsigned long long  _maxConcurrentMessages;
     NSMutableArray * _peers;
     double  _perMessageTimeout;
@@ -26,38 +26,38 @@
     NSMutableArray * _transportOptions;
 }
 
-@property (nonatomic) BOOL canRestart;
-@property (nonatomic) BOOL canRollback;
-@property (nonatomic) BOOL canceled;
+@property (nonatomic) bool canRestart;
+@property (nonatomic) bool canRollback;
+@property (nonatomic) bool canceled;
 @property (nonatomic, retain) NSDictionary *cocoaTransportOptions;
 @property (nonatomic, retain) SYLogErrorInfo *error;
 @property (nonatomic) double fullSessionTimeout;
-@property (nonatomic) BOOL hasCanRestart;
-@property (nonatomic) BOOL hasCanRollback;
-@property (nonatomic) BOOL hasCanceled;
-@property (nonatomic, readonly) BOOL hasError;
-@property (nonatomic) BOOL hasFullSessionTimeout;
-@property (nonatomic) BOOL hasIsReset;
-@property (nonatomic) BOOL hasPerMessageTimeout;
+@property (nonatomic) bool hasCanRestart;
+@property (nonatomic) bool hasCanRollback;
+@property (nonatomic) bool hasCanceled;
+@property (nonatomic, readonly) bool hasError;
+@property (nonatomic) bool hasFullSessionTimeout;
+@property (nonatomic) bool hasIsReset;
+@property (nonatomic) bool hasPerMessageTimeout;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) BOOL isReset;
-@property (nonatomic) BOOL isSending;
+@property (nonatomic) bool isReset;
+@property (nonatomic) bool isSending;
 @property (nonatomic) unsigned long long maxConcurrentMessages;
 @property (nonatomic, retain) NSMutableArray *peers;
 @property (nonatomic) double perMessageTimeout;
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSMutableArray *transportOptions;
 
-+ (Class)peersType;
++ (Class)peerType;
 + (Class)transportOptionsType;
 
 - (void).cxx_destruct;
 - (int)StringAsState:(id)arg1;
-- (void)addPeers:(id)arg1;
+- (void)addPeer:(id)arg1;
 - (void)addTransportOptions:(id)arg1;
-- (BOOL)canRestart;
-- (BOOL)canRollback;
-- (BOOL)canceled;
+- (bool)canRestart;
+- (bool)canRollback;
+- (bool)canceled;
 - (void)clearPeers;
 - (void)clearTransportOptions;
 - (id)cocoaTransportOptions;
@@ -67,40 +67,40 @@
 - (id)dictionaryRepresentation;
 - (id)error;
 - (double)fullSessionTimeout;
-- (BOOL)hasCanRestart;
-- (BOOL)hasCanRollback;
-- (BOOL)hasCanceled;
-- (BOOL)hasError;
-- (BOOL)hasFullSessionTimeout;
-- (BOOL)hasIsReset;
-- (BOOL)hasPerMessageTimeout;
-- (unsigned int)hash;
+- (bool)hasCanRestart;
+- (bool)hasCanRollback;
+- (bool)hasCanceled;
+- (bool)hasError;
+- (bool)hasFullSessionTimeout;
+- (bool)hasIsReset;
+- (bool)hasPerMessageTimeout;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isReset;
-- (BOOL)isSending;
+- (bool)isEqual:(id)arg1;
+- (bool)isReset;
+- (bool)isSending;
 - (unsigned long long)maxConcurrentMessages;
 - (void)mergeFrom:(id)arg1;
+- (id)peerAtIndex:(unsigned long long)arg1;
 - (id)peers;
-- (id)peersAtIndex:(unsigned int)arg1;
-- (unsigned int)peersCount;
+- (unsigned long long)peersCount;
 - (double)perMessageTimeout;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCanRestart:(BOOL)arg1;
-- (void)setCanRollback:(BOOL)arg1;
-- (void)setCanceled:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCanRestart:(bool)arg1;
+- (void)setCanRollback:(bool)arg1;
+- (void)setCanceled:(bool)arg1;
 - (void)setCocoaTransportOptions:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setFullSessionTimeout:(double)arg1;
-- (void)setHasCanRestart:(BOOL)arg1;
-- (void)setHasCanRollback:(BOOL)arg1;
-- (void)setHasCanceled:(BOOL)arg1;
-- (void)setHasFullSessionTimeout:(BOOL)arg1;
-- (void)setHasIsReset:(BOOL)arg1;
-- (void)setHasPerMessageTimeout:(BOOL)arg1;
+- (void)setHasCanRestart:(bool)arg1;
+- (void)setHasCanRollback:(bool)arg1;
+- (void)setHasCanceled:(bool)arg1;
+- (void)setHasFullSessionTimeout:(bool)arg1;
+- (void)setHasIsReset:(bool)arg1;
+- (void)setHasPerMessageTimeout:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsReset:(BOOL)arg1;
-- (void)setIsSending:(BOOL)arg1;
+- (void)setIsReset:(bool)arg1;
+- (void)setIsSending:(bool)arg1;
 - (void)setMaxConcurrentMessages:(unsigned long long)arg1;
 - (void)setPeers:(id)arg1;
 - (void)setPerMessageTimeout:(double)arg1;
@@ -109,8 +109,8 @@
 - (int)state;
 - (id)stateAsString:(int)arg1;
 - (id)transportOptions;
-- (id)transportOptionsAtIndex:(unsigned int)arg1;
-- (unsigned int)transportOptionsCount;
+- (id)transportOptionsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)transportOptionsCount;
 - (void)writeTo:(id)arg1;
 
 @end

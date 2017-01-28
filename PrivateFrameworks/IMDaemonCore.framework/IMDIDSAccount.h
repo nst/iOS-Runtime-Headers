@@ -9,7 +9,7 @@
 @property (nonatomic, readonly, retain) IDSAccount *idsAccount;
 
 - (id)accountDefaults;
-- (BOOL)canMakeDowngradeRoutingChecks;
+- (bool)canMakeDowngradeRoutingChecks;
 - (void)dealloc;
 - (id)idsAccount;
 - (id)initWithAccountID:(id)arg1 defaults:(id)arg2 service:(id)arg3 idsAccount:(id)arg4;

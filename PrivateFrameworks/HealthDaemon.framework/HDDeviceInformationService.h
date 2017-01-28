@@ -4,7 +4,7 @@
 
 @interface HDDeviceInformationService : HDHealthService {
     NSMutableDictionary * _characteristics;
-    BOOL  _deviceInformationHasBeenLoaded;
+    bool  _deviceInformationHasBeenLoaded;
     NSMutableArray * _pendingDeviceInformationLoadedBlocks;
     NSMutableSet * _propertiesLeftToFetch;
     HDHealthServicePropertyManager * _propertyManager;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, retain) NSMutableDictionary *characteristics;
-@property (nonatomic) BOOL deviceInformationHasBeenLoaded;
+@property (nonatomic) bool deviceInformationHasBeenLoaded;
 @property (readonly) NSString *firmwareRevision;
 @property (readonly) NSString *hardwareRevision;
 @property (readonly) NSString *manufacturerName;
@@ -27,7 +27,7 @@
 @property (readonly) NSString *softwareRevision;
 
 + (id)implementedProperties;
-+ (int)serviceType;
++ (long long)serviceType;
 + (id)serviceUUID;
 
 - (void).cxx_destruct;
@@ -39,14 +39,14 @@
 - (void)_queue_setDeviceInformationHasBeenLoaded;
 - (void)_startDeviceInformationLoadingTimeoutTimer;
 - (id)characteristics;
-- (BOOL)deviceInformationHasBeenLoaded;
+- (bool)deviceInformationHasBeenLoaded;
 - (id)firmwareRevision;
 - (id)hardwareRevision;
 - (id)initWithDevicePropertyManager:(id)arg1 healthDaemon:(id)arg2 peripheral:(id)arg3;
 - (id)manufacturerName;
 - (id)modelNumber;
 - (id)pendingDeviceInformationLoadedBlocks;
-- (void)performWhenDeviceInformationHasBeenLoaded:(id /* block */)arg1;
+- (void)performWhenDeviceInformationHasBeenLoaded:(id)arg1;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristic:(id)arg2;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (id)propertiesLeftToFetch;
@@ -56,7 +56,7 @@
 - (void)readProperty:(id)arg1;
 - (id)serialNumber;
 - (void)setCharacteristics:(id)arg1;
-- (void)setDeviceInformationHasBeenLoaded:(BOOL)arg1;
+- (void)setDeviceInformationHasBeenLoaded:(bool)arg1;
 - (void)setPendingDeviceInformationLoadedBlocks:(id)arg1;
 - (void)setPropertiesLeftToFetch:(id)arg1;
 - (void)setPropertyManager:(id)arg1;

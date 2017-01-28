@@ -35,9 +35,9 @@
 - (void)dealloc;
 - (void)getMinCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; }*)arg1 maxCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; }*)arg2;
 - (id)initWithTreeLevel:(unsigned int)arg1 quantizedX:(unsigned int)arg2 quantizedY:(unsigned int)arg3;
-- (id)nextLevelForQuantizedX:(unsigned int)arg1 quantizedY:(unsigned int)arg2 createIfMissing:(BOOL)arg3;
+- (id)nextLevelForQuantizedX:(unsigned int)arg1 quantizedY:(unsigned int)arg2 createIfMissing:(bool)arg3;
 - (void)removeAnnotation:(id)arg1;
-- (BOOL)removeAnnotation:(id)arg1 withCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 quantizedX:(unsigned int)arg3 quantizedY:(unsigned int)arg4;
+- (bool)removeAnnotation:(id)arg1 withCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg2 quantizedX:(unsigned int)arg3 quantizedY:(unsigned int)arg4;
 - (void)setDataSource:(id)arg1;
 
 @end

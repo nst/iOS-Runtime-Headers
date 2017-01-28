@@ -11,8 +11,8 @@
     unsigned int  _triggerCount;
 }
 
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasTriggerCount;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasTriggerCount;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int triggerCount;
 
@@ -20,14 +20,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimestamp;
-- (BOOL)hasTriggerCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTimestamp;
+- (bool)hasTriggerCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasTriggerCount:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasTriggerCount:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setTriggerCount:(unsigned int)arg1;
 - (unsigned long long)timestamp;

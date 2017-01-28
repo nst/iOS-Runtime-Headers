@@ -5,34 +5,34 @@
 @interface AVHapticPlayer : NSObject {
     NSArray * _channelArray;
     HapticClient * _client;
-    BOOL  _resourcesAllocated;
+    bool  _resourcesAllocated;
 }
 
 @property (nonatomic, readonly) NSArray *channels;
 @property (readonly) HapticClient *client;
-@property (readonly) BOOL resourcesAllocated;
+@property (readonly) bool resourcesAllocated;
 
 - (void).cxx_destruct;
-- (void)allocateRenderResourcesWithCompletionHandler:(id /* block */)arg1;
+- (void)allocateRenderResourcesWithCompletionHandler:(id)arg1;
 - (id)channels;
 - (id)client;
 - (void)dealloc;
 - (void)deallocateRenderResources;
-- (BOOL)detachHapticSequence:(unsigned int)arg1 atTime:(double)arg2;
-- (BOOL)enableSequenceLooping:(unsigned int)arg1 enable:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)finishWithCompletionHandler:(id /* block */)arg1;
+- (bool)detachHapticSequence:(unsigned long long)arg1 atTime:(double)arg2;
+- (bool)enableSequenceLooping:(unsigned long long)arg1 enable:(bool)arg2 error:(id*)arg3;
+- (bool)finishWithCompletionHandler:(id)arg1;
 - (id)initAndReturnError:(id*)arg1;
 - (void)invalidateChannels;
-- (BOOL)loadHapticPreset:(id)arg1 reply:(id /* block */)arg2;
-- (BOOL)loadHapticSequence:(id)arg1 reply:(id /* block */)arg2;
-- (BOOL)playHapticSequence:(unsigned int)arg1 atTime:(double)arg2 offset:(double)arg3;
-- (BOOL)prepareHapticSequence:(unsigned int)arg1 error:(id*)arg2;
-- (void)prewarmWithCompletionHandler:(id /* block */)arg1;
+- (bool)loadHapticPreset:(id)arg1 reply:(id)arg2;
+- (bool)loadHapticSequence:(id)arg1 reply:(id)arg2;
+- (bool)playHapticSequence:(unsigned long long)arg1 atTime:(double)arg2 offset:(double)arg3;
+- (bool)prepareHapticSequence:(unsigned long long)arg1 error:(id*)arg2;
+- (void)prewarmWithCompletionHandler:(id)arg1;
 - (void)releaseChannels;
-- (BOOL)resourcesAllocated;
-- (BOOL)setNumberOfChannels:(unsigned int)arg1 error:(id*)arg2;
-- (void)startRunningWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)stopHapticSequence:(unsigned int)arg1 atTime:(double)arg2;
+- (bool)resourcesAllocated;
+- (bool)setNumberOfChannels:(unsigned long long)arg1 error:(id*)arg2;
+- (void)startRunningWithCompletionHandler:(id)arg1;
+- (bool)stopHapticSequence:(unsigned long long)arg1 atTime:(double)arg2;
 - (void)stopPrewarm;
 - (void)stopRunning;
 

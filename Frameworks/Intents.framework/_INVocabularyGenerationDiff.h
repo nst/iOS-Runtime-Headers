@@ -4,33 +4,33 @@
 
 @interface _INVocabularyGenerationDiff : NSObject {
     NSString * _appBundleID;
-    int  _countOfVocabularyItemsAfterApplying;
+    long long  _countOfVocabularyItemsAfterApplying;
     NSSet * _deletedSiriIDs;
     NSString * _intentSlotName;
-    BOOL  _isFullReset;
+    bool  _isFullReset;
     NSArray * _updatedVocabularyItems;
 }
 
 @property (nonatomic, copy) NSString *appBundleID;
-@property (nonatomic) int countOfVocabularyItemsAfterApplying;
+@property (nonatomic) long long countOfVocabularyItemsAfterApplying;
 @property (nonatomic, copy) NSSet *deletedSiriIDs;
 @property (nonatomic, copy) NSString *intentSlotName;
-@property (nonatomic) BOOL isFullReset;
+@property (nonatomic) bool isFullReset;
 @property (nonatomic, copy) NSArray *updatedVocabularyItems;
 
 - (void).cxx_destruct;
 - (id)appBundleID;
-- (int)countOfVocabularyItemsAfterApplying;
+- (long long)countOfVocabularyItemsAfterApplying;
 - (id)deletedSiriIDs;
 - (id)description;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)intentSlotName;
-- (BOOL)isFullReset;
+- (bool)isFullReset;
 - (void)setAppBundleID:(id)arg1;
-- (void)setCountOfVocabularyItemsAfterApplying:(int)arg1;
+- (void)setCountOfVocabularyItemsAfterApplying:(long long)arg1;
 - (void)setDeletedSiriIDs:(id)arg1;
 - (void)setIntentSlotName:(id)arg1;
-- (void)setIsFullReset:(BOOL)arg1;
+- (void)setIsFullReset:(bool)arg1;
 - (void)setUpdatedVocabularyItems:(id)arg1;
 - (id)updatedVocabularyItems;
 

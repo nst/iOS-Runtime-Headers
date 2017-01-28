@@ -4,10 +4,10 @@
 
 @interface PUIndexPathSet : NSObject <NSCopying, NSMutableCopying>
 
-- (BOOL)containsIndexPath:(id)arg1;
+- (bool)containsIndexPath:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)count;
-- (void)enumerateIndexPathsUsingBlock:(id /* block */)arg1;
+- (long long)count;
+- (void)enumerateIndexPathsUsingBlock:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

@@ -6,21 +6,21 @@
     NSDictionary * __parameterStorage;
     NSDictionary * _additionalInformation;
     CMKInflightAsset * _asset;
-    BOOL  _completed;
+    bool  _completed;
     NSDictionary * _diagnostics;
     NSMutableDictionary * _metadata;
     CMKCaptureRequest * _request;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *_parameterStorage;
 @property (nonatomic, copy) NSDictionary *additionalInformation;
 @property (nonatomic, retain) CMKInflightAsset *asset;
-@property (getter=isCompleted, nonatomic) BOOL completed;
+@property (getter=isCompleted, nonatomic) bool completed;
 @property (nonatomic, copy) NSDictionary *diagnostics;
 @property (nonatomic, retain) NSMutableDictionary *metadata;
 @property (nonatomic, copy) CMKCaptureRequest *request;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)_parameterStorage;
@@ -28,18 +28,18 @@
 - (id)asset;
 - (id)diagnostics;
 - (id)init;
-- (id)initWithType:(int)arg1;
-- (BOOL)isCompleted;
+- (id)initWithType:(long long)arg1;
+- (bool)isCompleted;
 - (id)metadata;
 - (id)parameterForKey:(id)arg1;
 - (void)releaseCachedImages;
 - (id)request;
 - (void)setAdditionalInformation:(id)arg1;
 - (void)setAsset:(id)arg1;
-- (void)setCompleted:(BOOL)arg1;
+- (void)setCompleted:(bool)arg1;
 - (void)setDiagnostics:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

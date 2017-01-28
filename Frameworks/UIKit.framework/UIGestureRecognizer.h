@@ -4,7 +4,7 @@
 
 @interface UIGestureRecognizer : NSObject <_UIExcludable, _UIForceLevelClassifierDelegate, _UITouchable> {
     NSArray * _allowedPressTypes;
-    int  _allowedTouchTypes;
+    long long  _allowedTouchTypes;
     NSObservationSource * _beganObservable;
     NSMutableArray * _delayedPresses;
     NSMutableArray * _delayedTouches;
@@ -12,7 +12,7 @@
     NSMutableSet * _failureDependents;
     NSMutableSet * _failureRequirements;
     _UIForceLevelClassifier * _forceClassifier;
-    unsigned int  _forcePressCount;
+    unsigned long long  _forcePressCount;
     NSMutableArray * _forceTargets;
     UIGestureEnvironment * _gestureEnvironment;
     struct { 
@@ -55,11 +55,11 @@
         unsigned int initialTouchTypeIsValid : 1; 
         unsigned int forceRequirementSatisfied : 1; 
     }  _gestureFlags;
-    int  _initialTouchType;
+    long long  _initialTouchType;
     NSMutableSet * _internalActiveTouches;
     double  _lastTouchTimestamp;
-    int  _requiredPreviewForceState;
-    int  _state;
+    long long  _requiredPreviewForceState;
+    long long  _state;
     NSMutableArray * _targets;
     _UITouchForceObservable * _touchForceObservable;
     NSObservation * _touchForceObservableAndClassifierObservation;
@@ -68,65 +68,65 @@
 
 @property (nonatomic, readonly) NSSet *_failureDependents;
 @property (nonatomic, readonly) NSSet *_failureRequirements;
-@property (readonly) unsigned int akNumberOfTouches;
+@property (readonly) unsigned long long akNumberOfTouches;
 @property (nonatomic, copy) NSArray *allowedPressTypes;
 @property (nonatomic, copy) NSArray *allowedTouchTypes;
-@property (nonatomic) BOOL cancelsTouchesInView;
+@property (nonatomic) bool cancelsTouchesInView;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) BOOL delaysTouchesBegan;
-@property (nonatomic) BOOL delaysTouchesEnded;
+@property (nonatomic) bool delaysTouchesBegan;
+@property (nonatomic) bool delaysTouchesEnded;
 @property (nonatomic) <UIGestureRecognizerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic) UIGestureEnvironment *gestureEnvironment;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int numberOfTouches;
-@property (nonatomic, readonly) BOOL pu_isScrollViewPanGestureRecognizer;
-@property (nonatomic) BOOL requiresExclusiveTouchType;
-@property (nonatomic, readonly) int state;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long numberOfTouches;
+@property (nonatomic, readonly) bool pu_isScrollViewPanGestureRecognizer;
+@property (nonatomic) bool requiresExclusiveTouchType;
+@property (nonatomic, readonly) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIView *view;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (BOOL)_shouldDefaultToTouches;
-+ (BOOL)_shouldSupportStylusTouches;
-+ (BOOL)_shouldUseLinearForceLevelClassifier;
++ (bool)_shouldDefaultToTouches;
++ (bool)_shouldSupportStylusTouches;
++ (bool)_shouldUseLinearForceLevelClassifier;
 
 - (void).cxx_destruct;
-- (BOOL)_acceptsFailureRequirements;
+- (bool)_acceptsFailureRequirements;
 - (id)_activeTouchesForEvent:(id)arg1;
 - (void)_addFailureDependent:(id)arg1;
 - (void)_addForceTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)_affectedByGesture:(id)arg1;
+- (bool)_affectedByGesture:(id)arg1;
 - (void)_appendDescription:(id)arg1 forDependencies:(id)arg2 toString:(id)arg3 atLevel:(int)arg4;
-- (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2 includingDependencies:(BOOL)arg3;
+- (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2 includingDependencies:(bool)arg3;
 - (void)_appendSubclassDescription:(id)arg1;
 - (id)_beganObservable;
 - (id)_briefDescription;
-- (BOOL)_canExcludeOtherExcludables;
+- (bool)_canExcludeOtherExcludables;
 - (void)_cancelRecognition;
-- (struct CGPoint { float x1; float x2; })_centroidOfTouches:(id)arg1 excludingEnded:(BOOL)arg2;
+- (struct CGPoint { double x1; double x2; })_centroidOfTouches:(id)arg1 excludingEnded:(bool)arg2;
 - (void)_clearDelayedPresses;
 - (void)_clearDelayedTouches;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
-- (int)_currentForceLevel;
+- (long long)_currentForceLevel;
 - (id)_defaultAllowedPressTypes;
 - (id)_defaultAllowedTouchTypes;
 - (void)_delayPress:(id)arg1 forEvent:(id)arg2;
-- (void)_delayPressesForEvent:(id)arg1 inPhase:(int)arg2;
+- (void)_delayPressesForEvent:(id)arg1 inPhase:(long long)arg2;
 - (void)_delayPressesForEventIfNeeded:(id)arg1;
 - (void)_delayTouch:(id)arg1 forEvent:(id)arg2;
-- (void)_delayTouchesForEvent:(id)arg1 inPhase:(int)arg2;
+- (void)_delayTouchesForEvent:(id)arg1 inPhase:(long long)arg2;
 - (void)_delayTouchesForEventIfNeeded:(id)arg1;
 - (id)_delayedTouches;
-- (BOOL)_delegateCanBePreventedByGestureRecognizer:(id)arg1;
-- (BOOL)_delegateCanPreventGestureRecognizer:(id)arg1;
-- (BOOL)_delegateShouldReceivePress:(id)arg1;
-- (BOOL)_delegateShouldReceiveTouch:(id)arg1;
-- (int)_depthFirstViewCompare:(id)arg1;
+- (bool)_delegateCanBePreventedByGestureRecognizer:(id)arg1;
+- (bool)_delegateCanPreventGestureRecognizer:(id)arg1;
+- (bool)_delegateShouldReceivePress:(id)arg1;
+- (bool)_delegateShouldReceiveTouch:(id)arg1;
+- (long long)_depthFirstViewCompare:(id)arg1;
 - (void)_detach;
-- (float)_distanceBetweenTouches:(id)arg1;
+- (double)_distanceBetweenTouches:(id)arg1;
 - (void)_enqueueDelayedPressToSend:(id)arg1;
 - (void)_enqueueDelayedPressesToSend;
 - (void)_enqueueDelayedTouchToSend:(id)arg1;
@@ -134,44 +134,44 @@
 - (void)_enqueueDelayedTouchesToSend;
 - (void)_ensureForceObservationChain;
 - (void)_exclude;
-- (int)_exclusiveDirectionalPressAxis;
+- (long long)_exclusiveDirectionalPressAxis;
 - (id)_failureDependents;
 - (id)_failureRequirements;
 - (id)_forceLevelClassifier;
-- (void)_forceLevelClassifier:(id)arg1 currentForceLevelDidChange:(int)arg2;
-- (unsigned int)_forcePressCount;
-- (BOOL)_forceRequirementSatisfied;
+- (void)_forceLevelClassifier:(id)arg1 currentForceLevelDidChange:(long long)arg2;
+- (unsigned long long)_forcePressCount;
+- (bool)_forceRequirementSatisfied;
 - (void)_ignoreTouchesAndPressesFromEvent:(id)arg1 pressesEvent:(id)arg2;
-- (BOOL)_inForceCapableEnvironment;
+- (bool)_inForceCapableEnvironment;
 - (void)_invalidateInitialTouchType;
-- (BOOL)_isActive;
-- (BOOL)_isDirty;
-- (BOOL)_isExcludedByExcludable:(id)arg1;
-- (BOOL)_isRecognized;
-- (BOOL)_needsDynamicDependentRequirementForGestureRecognizer:(id)arg1;
-- (BOOL)_needsDynamicFailureRequirementForGestureRecognizer:(id)arg1;
+- (bool)_isActive;
+- (bool)_isDirty;
+- (bool)_isExcludedByExcludable:(id)arg1;
+- (bool)_isRecognized;
+- (bool)_needsDynamicDependentRequirementForGestureRecognizer:(id)arg1;
+- (bool)_needsDynamicFailureRequirementForGestureRecognizer:(id)arg1;
 - (void)_pressWasCancelled:(id)arg1;
 - (void)_registerTouches:(id)arg1 forEstimationUpdatesWithEvent:(id)arg2;
 - (void)_removeFailureDependent:(id)arg1;
 - (void)_removeForceTarget:(id)arg1 action:(SEL)arg2;
-- (int)_requiredForceLevel;
+- (long long)_requiredForceLevel;
 - (void)_requiredGestureRecognizerCompleted:(id)arg1 withEvent:(id)arg2 pressesEvent:(id)arg3;
-- (BOOL)_requiredPreviewForceStateSatisfiedByForceLevel:(int)arg1;
-- (BOOL)_requiresGestureRecognizerToFail:(id)arg1;
-- (BOOL)_requiresSystemGesturesToFail;
+- (bool)_requiredPreviewForceStateSatisfiedByForceLevel:(long long)arg1;
+- (bool)_requiresGestureRecognizerToFail:(id)arg1;
+- (bool)_requiresSystemGesturesToFail;
 - (void)_resetGestureRecognizer;
-- (void)_setAcceptsFailureRequiments:(BOOL)arg1;
+- (void)_setAcceptsFailureRequiments:(bool)arg1;
 - (void)_setDirty;
 - (void)_setForceLevelClassifier:(id)arg1;
-- (void)_setInitialTouchType:(int)arg1;
-- (void)_setRequiredForceLevel:(int)arg1;
-- (void)_setRequiresSystemGesturesToFail:(BOOL)arg1;
-- (BOOL)_shouldBegin;
-- (BOOL)_shouldDelayUntilForceLevelRequirementIsMet;
-- (BOOL)_shouldReceivePress:(id)arg1;
-- (BOOL)_shouldReceiveTouch:(id)arg1 recognizerView:(id)arg2 touchView:(id)arg3;
+- (void)_setInitialTouchType:(long long)arg1;
+- (void)_setRequiredForceLevel:(long long)arg1;
+- (void)_setRequiresSystemGesturesToFail:(bool)arg1;
+- (bool)_shouldBegin;
+- (bool)_shouldDelayUntilForceLevelRequirementIsMet;
+- (bool)_shouldReceivePress:(id)arg1;
+- (bool)_shouldReceiveTouch:(id)arg1 recognizerView:(id)arg2 touchView:(id)arg3;
 - (id)_touchForceObservable;
-- (BOOL)_touchTypeIsAllowed:(id)arg1;
+- (bool)_touchTypeIsAllowed:(id)arg1;
 - (void)_touchWasCancelled:(id)arg1;
 - (void)_touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_touchesCancelled:(id)arg1 withEvent:(id)arg2;
@@ -179,18 +179,18 @@
 - (void)_touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_updateForceClassifierWithEvent:(id)arg1;
 - (void)_updateGestureWithEvent:(id)arg1 buttonEvent:(id)arg2;
-- (BOOL)_wantsPartialTouchSequences;
+- (bool)_wantsPartialTouchSequences;
 - (void)_willBeginAfterSatisfyingFailureRequirements;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 - (id)allowedPressTypes;
 - (id)allowedTouchTypes;
-- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
-- (BOOL)cancelsTouchesInView;
-- (int)currentPreviewForceState;
+- (bool)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)canPreventGestureRecognizer:(id)arg1;
+- (bool)cancelsTouchesInView;
+- (long long)currentPreviewForceState;
 - (void)dealloc;
-- (BOOL)delaysTouchesBegan;
-- (BOOL)delaysTouchesEnded;
+- (bool)delaysTouchesBegan;
+- (bool)delaysTouchesEnded;
 - (id)delegate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -200,11 +200,11 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (double)lastTouchTimestamp;
-- (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
-- (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
-- (unsigned int)numberOfTouches;
+- (struct CGPoint { double x1; double x2; })locationInView:(id)arg1;
+- (struct CGPoint { double x1; double x2; })locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
+- (unsigned long long)numberOfTouches;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
@@ -212,24 +212,24 @@
 - (void)removeFailureRequirement:(id)arg1;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)requireGestureRecognizerToFail:(id)arg1;
-- (int)requiredPreviewForceState;
-- (BOOL)requiresExclusiveTouchType;
+- (long long)requiredPreviewForceState;
+- (bool)requiresExclusiveTouchType;
 - (void)reset;
 - (void)setAllowedPressTypes:(id)arg1;
 - (void)setAllowedTouchTypes:(id)arg1;
-- (void)setCancelsTouchesInView:(BOOL)arg1;
-- (void)setDelaysTouchesBegan:(BOOL)arg1;
-- (void)setDelaysTouchesEnded:(BOOL)arg1;
+- (void)setCancelsTouchesInView:(bool)arg1;
+- (void)setDelaysTouchesBegan:(bool)arg1;
+- (void)setDelaysTouchesEnded:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setGestureEnvironment:(id)arg1;
-- (void)setRequiredPreviewForceState:(int)arg1;
-- (void)setRequiresExclusiveTouchType:(BOOL)arg1;
-- (void)setState:(int)arg1;
+- (void)setRequiredPreviewForceState:(long long)arg1;
+- (void)setRequiresExclusiveTouchType:(bool)arg1;
+- (void)setState:(long long)arg1;
 - (void)setView:(id)arg1;
-- (BOOL)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
-- (BOOL)shouldRequireFailureOfGestureRecognizer:(id)arg1;
-- (int)state;
+- (bool)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
+- (bool)shouldRequireFailureOfGestureRecognizer:(id)arg1;
+- (long long)state;
 - (id)stringValue;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
@@ -241,22 +241,22 @@
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 - (void)pu_cancel;
-- (BOOL)pu_isPanGestureRecognizerOfScrollView:(id*)arg1;
-- (BOOL)pu_isScrollViewPanGestureRecognizer;
+- (bool)pu_isPanGestureRecognizerOfScrollView:(id*)arg1;
+- (bool)pu_isScrollViewPanGestureRecognizer;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
-- (struct CGPoint { float x1; float x2; })akLocationInWindow;
-- (unsigned int)akNumberOfTouches;
+- (struct CGPoint { double x1; double x2; })akLocationInWindow;
+- (unsigned long long)akNumberOfTouches;
 
 // Image: /System/Library/PrivateFrameworks/HomeUI.framework/HomeUI
 
-- (struct CGPoint { float x1; float x2; })hu_locationInGlobalCoordinateSpace;
+- (struct CGPoint { double x1; double x2; })hu_locationInGlobalCoordinateSpace;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 - (void)px_cancel;
-- (struct CGPoint { float x1; float x2; })px_locationInCoordinateSpace:(id)arg1;
+- (struct CGPoint { double x1; double x2; })px_locationInCoordinateSpace:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 

@@ -7,7 +7,7 @@
     Class  _dataClass;
     Class  _facadeClass;
     SEL  _handleSelector;
-    BOOL  _isPrivate;
+    bool  _isPrivate;
     NSString * _name;
     NSString * _responseName;
     NSDictionary * _slotsByName;
@@ -20,8 +20,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) Class facadeClass;
 @property (nonatomic, readonly) SEL handleSelector;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isPrivate;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isPrivate;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *responseName;
 @property (nonatomic, readonly, copy) NSDictionary *slotsByName;
@@ -34,10 +34,10 @@
 - (Class)dataClass;
 - (Class)facadeClass;
 - (SEL)handleSelector;
-- (unsigned int)hash;
-- (id)initWithName:(id)arg1 responseName:(id)arg2 facadeClass:(Class)arg3 dataClass:(Class)arg4 type:(id)arg5 isPrivate:(BOOL)arg6 handleSelector:(SEL)arg7 confirmSelector:(SEL)arg8 slotsByName:(id)arg9;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPrivate;
+- (unsigned long long)hash;
+- (id)initWithName:(id)arg1 responseName:(id)arg2 facadeClass:(Class)arg3 dataClass:(Class)arg4 type:(id)arg5 isPrivate:(bool)arg6 handleSelector:(SEL)arg7 confirmSelector:(SEL)arg8 slotsByName:(id)arg9;
+- (bool)isEqual:(id)arg1;
+- (bool)isPrivate;
 - (id)name;
 - (id)responseName;
 - (id)slotsByName;

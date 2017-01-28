@@ -7,14 +7,14 @@
     NSObject<OS_dispatch_queue> * _cacheDiskQueue;
     IMScheduledUpdater * _evictionUpdater;
     IMDoubleLinkedList * _orderedKeys;
-    BOOL  _test_throwExceptionDuringInflate;
+    bool  _test_throwExceptionDuringInflate;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *cache;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *cacheDiskQueue;
 @property (nonatomic, retain) IMScheduledUpdater *evictionUpdater;
 @property (nonatomic, retain) IMDoubleLinkedList *orderedKeys;
-@property (nonatomic) BOOL test_throwExceptionDuringInflate;
+@property (nonatomic) bool test_throwExceptionDuringInflate;
 
 + (id)sharedInstance;
 + (id)test_cachePath;
@@ -26,21 +26,21 @@
 - (void)_persistCache;
 - (id)cache;
 - (id)cacheDiskQueue;
-- (id)cacheKeyForChatItem:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)cachedSizeForChatItem:(id)arg1 size:(out struct CGSize { float x1; float x2; }*)arg2 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg3 fittingSize:(struct CGSize { float x1; float x2; })arg4;
+- (id)cacheKeyForChatItem:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2;
+- (bool)cachedSizeForChatItem:(id)arg1 size:(out struct CGSize { double x1; double x2; }*)arg2 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg3 fittingSize:(struct CGSize { double x1; double x2; })arg4;
 - (void)dealloc;
 - (id)evictionUpdater;
 - (id)init;
-- (id)initForTestAndThrowException:(BOOL)arg1;
+- (id)initForTestAndThrowException:(bool)arg1;
 - (void)invalidateCachedSizeForChatItem:(id)arg1;
 - (id)orderedKeys;
 - (void)setCache:(id)arg1;
 - (void)setCacheDiskQueue:(id)arg1;
-- (void)setCachedSizeForChatItem:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 fittingSize:(struct CGSize { float x1; float x2; })arg4;
+- (void)setCachedSizeForChatItem:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 textAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg3 fittingSize:(struct CGSize { double x1; double x2; })arg4;
 - (void)setEvictionUpdater:(id)arg1;
 - (void)setOrderedKeys:(id)arg1;
-- (void)setTest_throwExceptionDuringInflate:(BOOL)arg1;
+- (void)setTest_throwExceptionDuringInflate:(bool)arg1;
 - (void)systemApplicationDidSuspend;
-- (BOOL)test_throwExceptionDuringInflate;
+- (bool)test_throwExceptionDuringInflate;
 
 @end

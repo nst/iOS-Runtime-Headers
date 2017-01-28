@@ -8,7 +8,7 @@
     NSString * _bookingIdentifier;
     INRestaurantGuest * _guest;
     NSString * _guestProvidedSpecialRequestText;
-    unsigned int  _partySize;
+    unsigned long long  _partySize;
     INRestaurant * _restaurant;
     INRestaurantOffer * _selectedOffer;
 }
@@ -20,26 +20,28 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) INRestaurantGuest *guest;
 @property (nonatomic, copy) NSString *guestProvidedSpecialRequestText;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int partySize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long partySize;
 @property (nonatomic, copy) INRestaurant *restaurant;
 @property (nonatomic, copy) INRestaurantOffer *selectedOffer;
 @property (readonly) Class superclass;
 
 + (id)intentDescription;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)bookingDate;
 - (id)bookingDateComponents;
 - (id)bookingIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)guest;
 - (id)guestProvidedSpecialRequestText;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)partySize;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)partySize;
 - (id)restaurant;
 - (id)selectedOffer;
 - (void)setBookingDate:(id)arg1;
@@ -47,7 +49,7 @@
 - (void)setBookingIdentifier:(id)arg1;
 - (void)setGuest:(id)arg1;
 - (void)setGuestProvidedSpecialRequestText:(id)arg1;
-- (void)setPartySize:(unsigned int)arg1;
+- (void)setPartySize:(unsigned long long)arg1;
 - (void)setRestaurant:(id)arg1;
 - (void)setSelectedOffer:(id)arg1;
 

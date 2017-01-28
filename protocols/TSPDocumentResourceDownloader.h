@@ -8,7 +8,7 @@
 - (void)cancelDownloads;
 - (TSUDownloadSession *)downloadWithDelegate:(id <TSUDownloadSessionDelegate>)arg1 description:(NSString *)arg2;
 - (long long)estimatedDownloadSize;
-- (BOOL)isEstimatedDownloadSizePrecise;
-- (BOOL)needsDownload;
+- (bool)isEstimatedDownloadSizePrecise;
+- (bool)needsDownload;
 
 @end

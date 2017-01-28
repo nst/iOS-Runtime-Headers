@@ -21,16 +21,16 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)addButtonEventDelegate:(id)arg1 buttons:(unsigned int)arg2 allowPropagation:(BOOL)arg3;
+- (id)addButtonEventDelegate:(id)arg1 buttons:(unsigned long long)arg2 allowPropagation:(bool)arg3;
 - (id)buttonDelegateChangeLock;
 - (id)buttonEventHandlers;
 - (struct __IOHIDEventSystemClient { }*)buttonHIDSystemClient;
 - (void)cleanUpSystemClient;
 - (id)delegateQueue;
-- (id)handlersForButton:(unsigned int)arg1;
+- (id)handlersForButton:(unsigned long long)arg1;
 - (id)init;
 - (id)mButtonEventQueue;
-- (void)postButtonEventsCompletedNotification:(int)arg1 upEvent:(BOOL)arg2;
+- (void)postButtonEventsCompletedNotification:(int)arg1 upEvent:(bool)arg2;
 - (void)removeDelegateWithHandle:(id)arg1;
 - (void)setButtonDelegateChangeLock:(id)arg1;
 - (void)setButtonEventHandlers:(id)arg1;
@@ -38,9 +38,9 @@
 - (void)setDelegateQueue:(id)arg1;
 - (void)setMButtonEventQueue:(id)arg1;
 - (void)setTestAutomation:(id)arg1;
-- (BOOL)startEventManagerWithPriority:(int)arg1;
+- (bool)startEventManagerWithPriority:(long long)arg1;
 - (void)stopEventManager;
 - (id)testAutomation;
-- (int)triggerEventWithHandlers:(id)arg1 event:(unsigned int)arg2;
+- (int)triggerEventWithHandlers:(id)arg1 event:(unsigned long long)arg2;
 
 @end

@@ -10,6 +10,6 @@
 - (void)addVersionSupported:(id)arg1;
 - (id)copyParseRules;
 - (id)init;
-- (BOOL)supportsVersion:(id)arg1;
+- (bool)supportsVersion:(id)arg1;
 
 @end

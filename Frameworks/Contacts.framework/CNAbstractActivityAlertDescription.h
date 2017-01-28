@@ -6,12 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void*)ABValueFromCNValue:(id)arg1;
 - (id)CNValueFromABValue:(void*)arg1;
-- (BOOL)isValue:(id)arg1 equivalentToValue:(id)arg2;
+- (bool)isValue:(id)arg1 equivalentToValue:(id)arg2;
 - (Class)valueClass;
 
 @end

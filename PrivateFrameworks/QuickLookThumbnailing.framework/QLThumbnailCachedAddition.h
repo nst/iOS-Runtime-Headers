@@ -11,10 +11,10 @@
 
 - (id)addition;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAddition:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isStillValid;
+- (bool)isEqual:(id)arg1;
+- (bool)isStillValid;
 - (void)setAddition:(id)arg1;
 
 @end

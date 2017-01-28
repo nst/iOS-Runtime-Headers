@@ -6,24 +6,24 @@
     struct { 
         unsigned int includeSpokenNames : 1; 
     }  _has;
-    BOOL  _includeSpokenNames;
+    bool  _includeSpokenNames;
 }
 
-@property (nonatomic) BOOL hasIncludeSpokenNames;
-@property (nonatomic) BOOL includeSpokenNames;
+@property (nonatomic) bool hasIncludeSpokenNames;
+@property (nonatomic) bool includeSpokenNames;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIncludeSpokenNames;
-- (unsigned int)hash;
-- (BOOL)includeSpokenNames;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasIncludeSpokenNames;
+- (unsigned long long)hash;
+- (bool)includeSpokenNames;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIncludeSpokenNames:(BOOL)arg1;
-- (void)setIncludeSpokenNames:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIncludeSpokenNames:(bool)arg1;
+- (void)setIncludeSpokenNames:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface _NSQueryGenerationToken : NSQueryGenerationToken {
-    BOOL  _freeValueOnDealloc;
+    bool  _freeValueOnDealloc;
     id  _generationIdentifier;
-    BOOL  _isCompound;
-    BOOL  _isSingleton;
+    bool  _isCompound;
+    bool  _isSingleton;
     id  _store;
-    BOOL  _unsupportedForStore;
+    bool  _unsupportedForStore;
 }
 
 - (id)_generationalComponentForStore:(id)arg1;
-- (id)_initWithValue:(id)arg1 singleton:(BOOL)arg2;
+- (id)_initWithValue:(id)arg1 singleton:(bool)arg2;
 - (id)_store;
 - (id)_storesForRequestRoutingFrom:(id)arg1;
 - (id)_token;
@@ -22,8 +22,8 @@
 - (id)initForNonGenerationalStore:(id)arg1;
 - (id)initWithCompoundValue:(id)arg1;
 - (id)initWithValue:(id)arg1 store:(id)arg2;
-- (id)initWithValue:(id)arg1 store:(id)arg2 freeValueOnDealloc:(BOOL)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithValue:(id)arg1 store:(id)arg2 freeValueOnDealloc:(bool)arg3;
+- (bool)isEqual:(id)arg1;
 - (oneway void)release;
 - (id)retain;
 

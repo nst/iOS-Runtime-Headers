@@ -4,11 +4,11 @@
 
 @interface WLDeviceDiscoveryController : NSObject <WLDeviceDiscoverySocketHandlerDelegate> {
     NSString * _allowedAddress;
-    unsigned int  _countOfPairingAttemptsWithCurrentSecret;
+    unsigned long long  _countOfPairingAttemptsWithCurrentSecret;
     NSObject<OS_dispatch_queue> * _discoveryRequestSerialQueue;
     NSObject<OS_dispatch_source> * _incomingConnSource;
     int  _listenerSocket;
-    id /* block */  _nextIncomingConnectionHandler;
+    id  _nextIncomingConnectionHandler;
     NSString * _pairingSecret;
     NSMutableArray * _socketHandlers;
     NSMutableArray * _sourceDevices;
@@ -23,22 +23,22 @@
 - (id)_generatePairingSecret;
 - (id)_legacyPairingWifiPskWithSecret:(id)arg1;
 - (void)_postSourceDevicesDidChangeNotification;
-- (void)_queue_startDiscoveryWithCompletion:(id /* block */)arg1;
-- (void)_queue_stopDeviceDiscoveryWithCompletion:(id /* block */)arg1;
-- (void)_queue_stopWiFiAndDeviceDiscoveryWithCompletion:(id /* block */)arg1;
-- (BOOL)_shouldForceDiscoveryError;
+- (void)_queue_startDiscoveryWithCompletion:(id)arg1;
+- (void)_queue_stopDeviceDiscoveryWithCompletion:(id)arg1;
+- (void)_queue_stopWiFiAndDeviceDiscoveryWithCompletion:(id)arg1;
+- (bool)_shouldForceDiscoveryError;
 - (id)_ssidWithSecret:(id)arg1;
-- (int)acceptIncomingConnectionWithListenerSocket:(int)arg1 nonBlocking:(BOOL)arg2;
+- (int)acceptIncomingConnectionWithListenerSocket:(int)arg1 nonBlocking:(bool)arg2;
 - (void)attemptDirectConnectionToAddress:(id)arg1;
-- (int)createListenerSocketOnPort:(unsigned int)arg1;
+- (int)createListenerSocketOnPort:(unsigned long long)arg1;
 - (void)deviceDiscoverySocketHandler:(id)arg1 didFailToHandshakeWithSourceDevice:(id)arg2 error:(id)arg3;
 - (void)deviceDiscoverySocketHandler:(id)arg1 didFinishHandshakeWithSourceDevice:(id)arg2;
 - (id)init;
-- (id)listenForConnectionOnSocket:(int)arg1 withConnectionHandler:(id /* block */)arg2;
-- (void)setNextIncomingConnectionHandler:(id /* block */)arg1;
+- (id)listenForConnectionOnSocket:(int)arg1 withConnectionHandler:(id)arg2;
+- (void)setNextIncomingConnectionHandler:(id)arg1;
 - (id)sourceDevices;
-- (void)startWiFiAndDeviceDiscoveryWithCompletion:(id /* block */)arg1;
-- (void)stopDeviceDiscoveryWithCompletion:(id /* block */)arg1;
-- (void)stopWiFiAndDeviceDiscoveryWithCompletion:(id /* block */)arg1;
+- (void)startWiFiAndDeviceDiscoveryWithCompletion:(id)arg1;
+- (void)stopDeviceDiscoveryWithCompletion:(id)arg1;
+- (void)stopWiFiAndDeviceDiscoveryWithCompletion:(id)arg1;
 
 @end

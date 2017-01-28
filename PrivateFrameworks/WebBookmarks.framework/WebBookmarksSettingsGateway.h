@@ -11,9 +11,9 @@
 - (void)deleteAllSafariSecurityOrigins;
 - (void)deleteSafariPersistentURLCacheStorage;
 - (void)deleteSafariWebsiteDataRecord:(id)arg1;
-- (void)getCurrentlySelectedSearchEngineWithCompletion:(id /* block */)arg1;
-- (void)getSafariDataUsageByteCountWithCompletionHandler:(id /* block */)arg1;
-- (void)getSafariWebDataUsageWithCompletion:(id /* block */)arg1;
+- (void)getCurrentlySelectedSearchEngineWithCompletion:(id)arg1;
+- (void)getSafariDataUsageByteCountWithCompletionHandler:(id)arg1;
+- (void)getSafariWebDataUsageWithCompletion:(id)arg1;
 - (id)init;
 - (void)scheduleBookmarksDatabaseMaintenance;
 

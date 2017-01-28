@@ -4,9 +4,9 @@
 
 @interface DOMHTMLDetailsElement : DOMHTMLElement
 
-@property BOOL open;
+@property bool open;
 
-- (BOOL)open;
-- (void)setOpen:(BOOL)arg1;
+- (bool)open;
+- (void)setOpen:(bool)arg1;
 
 @end

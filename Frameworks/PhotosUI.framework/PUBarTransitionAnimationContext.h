@@ -4,27 +4,27 @@
 
 @interface PUBarTransitionAnimationContext : NSObject {
     UIView * _customAnimationContainerView;
-    float  _heightWhenHidden;
-    float  _heightWhenVisible;
-    BOOL  _isAppearing;
+    double  _heightWhenHidden;
+    double  _heightWhenVisible;
+    bool  _isAppearing;
     <UIViewControllerTransitionCoordinator> * _transitionCoordinator;
 }
 
 @property (nonatomic, retain) UIView *customAnimationContainerView;
-@property (nonatomic) float heightWhenHidden;
-@property (nonatomic) float heightWhenVisible;
-@property (setter=setAppearing:, nonatomic) BOOL isAppearing;
+@property (nonatomic) double heightWhenHidden;
+@property (nonatomic) double heightWhenVisible;
+@property (setter=setAppearing:, nonatomic) bool isAppearing;
 @property (nonatomic, retain) <UIViewControllerTransitionCoordinator> *transitionCoordinator;
 
 - (void).cxx_destruct;
 - (id)customAnimationContainerView;
-- (float)heightWhenHidden;
-- (float)heightWhenVisible;
-- (BOOL)isAppearing;
-- (void)setAppearing:(BOOL)arg1;
+- (double)heightWhenHidden;
+- (double)heightWhenVisible;
+- (bool)isAppearing;
+- (void)setAppearing:(bool)arg1;
 - (void)setCustomAnimationContainerView:(id)arg1;
-- (void)setHeightWhenHidden:(float)arg1;
-- (void)setHeightWhenVisible:(float)arg1;
+- (void)setHeightWhenHidden:(double)arg1;
+- (void)setHeightWhenVisible:(double)arg1;
 - (void)setTransitionCoordinator:(id)arg1;
 - (id)transitionCoordinator;
 

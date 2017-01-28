@@ -4,20 +4,20 @@
 
 @interface MTLIndexedConstantValue : NSObject {
     char * _data;
-    unsigned int  _dataType;
-    unsigned int  _index;
+    unsigned long long  _dataType;
+    unsigned long long  _index;
 }
 
 @property (readonly) void*data;
-@property (readonly) unsigned int dataType;
-@property (readonly) unsigned int index;
+@property (readonly) unsigned long long dataType;
+@property (readonly) unsigned long long index;
 
 - (void*)data;
-- (unsigned int)dataType;
+- (unsigned long long)dataType;
 - (void)dealloc;
 - (id)describe;
 - (id)description;
-- (unsigned int)index;
-- (id)initWithValue:(const void*)arg1 type:(unsigned int)arg2 index:(unsigned int)arg3;
+- (unsigned long long)index;
+- (id)initWithValue:(const void*)arg1 type:(unsigned long long)arg2 index:(unsigned long long)arg3;
 
 @end

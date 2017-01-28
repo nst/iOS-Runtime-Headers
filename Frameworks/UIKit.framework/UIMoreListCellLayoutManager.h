@@ -3,10 +3,10 @@
  */
 
 @interface UIMoreListCellLayoutManager : UITableViewCellLayoutManager {
-    float  _widestImageWidth;
+    double  _widestImageWidth;
 }
 
 - (void)layoutSubviewsOfCell:(id)arg1;
-- (float)setWidestImageWidthFromViewControllers:(id)arg1;
+- (double)setWidestImageWidthFromViewControllers:(id)arg1;
 
 @end

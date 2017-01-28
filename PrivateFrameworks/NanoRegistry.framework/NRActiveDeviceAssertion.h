@@ -5,13 +5,13 @@
 @interface NRActiveDeviceAssertion : NSObject {
     NRDevice * _device;
     NSString * _identifier;
-    BOOL  _isActive;
+    bool  _isActive;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (nonatomic, retain) NRDevice *device;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) BOOL isActive;
+@property (nonatomic) bool isActive;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
@@ -22,11 +22,11 @@
 - (id)identifier;
 - (id)initWithDevice:(id)arg1 identifier:(id)arg2;
 - (void)invalidate;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)queue;
 - (void)setDevice:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsActive:(BOOL)arg1;
+- (void)setIsActive:(bool)arg1;
 - (void)setQueue:(id)arg1;
 
 @end

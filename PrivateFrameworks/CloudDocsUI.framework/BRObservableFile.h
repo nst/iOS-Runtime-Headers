@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, retain) _BRObservableFilePresenter *presenter;
 @property (readonly) Class superclass;
@@ -23,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (void)_presenterDidChange;
-- (id)addObserverBlock:(id /* block */)arg1;
+- (id)addObserverBlock:(id)arg1;
 - (void)dealloc;
 - (id)initWithKey:(id)arg1 fileURL:(id)arg2;
 - (id)key;

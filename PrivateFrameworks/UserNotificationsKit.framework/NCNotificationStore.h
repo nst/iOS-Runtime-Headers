@@ -8,10 +8,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *notificationSections;
-@property (nonatomic, readonly) unsigned int notificationsCount;
-@property (nonatomic, readonly) unsigned int sectionsCount;
+@property (nonatomic, readonly) unsigned long long notificationsCount;
+@property (nonatomic, readonly) unsigned long long sectionsCount;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,10 +20,10 @@
 - (id)debugInfoPlist;
 - (id)init;
 - (id)notificationSections;
-- (unsigned int)notificationsCount;
+- (unsigned long long)notificationsCount;
 - (id)removeNotificationRequest:(id)arg1;
 - (id)replaceNotificationRequest:(id)arg1;
-- (unsigned int)sectionsCount;
+- (unsigned long long)sectionsCount;
 - (void)setNotificationSections:(id)arg1;
 
 @end

@@ -30,8 +30,8 @@
         bool m_initialized; 
         struct aligned_storage<unsigned long> { 
             union dummy_u { 
-                BOOL data[4]; 
-                struct a4 { } aligner_; 
+                BOOL data[8]; 
+                struct a8 { } aligner_; 
             } dummy_; 
         } m_storage; 
     }  _tilePrefetchMaxCount;
@@ -68,7 +68,7 @@
 @property (nonatomic) bool pipelinedEnabled;
 @property (nonatomic) struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; } prefetchClusterMergeRadius;
 @property (nonatomic) /* Warning: unhandled struct encoding: '{duration<long long' */ struct  tilePrefetchActivityInterval; /* unknown property attribute:  1> >=q} */
-@property (nonatomic) struct optional<unsigned long> { bool x1; struct aligned_storage<unsigned long> { union dummy_u { BOOL x_1_2_1[4]; struct a4 { } x_1_2_2; } x_2_1_1; } x2; } tilePrefetchMaxCount;
+@property (nonatomic) struct optional<unsigned long> { bool x1; struct aligned_storage<unsigned long> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; } tilePrefetchMaxCount;
 @property (nonatomic) struct optional<unsigned int> { bool x1; struct aligned_storage<unsigned int> { union dummy_u { BOOL x_1_2_1[4]; struct a4 { } x_1_2_2; } x_2_1_1; } x2; } tilePrefetchPredictionActivityCycleAllowance;
 @property (nonatomic) struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; } tilePrefetchRadius;
 @property (nonatomic) /* Warning: unhandled struct encoding: '{duration<long long' */ struct  tilePrefetchRelevancyWindow; /* unknown property attribute:  1> >=q} */
@@ -97,13 +97,13 @@
 - (void)setPipelinedEnabled:(bool)arg1;
 - (void)setPrefetchClusterMergeRadius:(struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
 - (void)setTilePrefetchActivityInterval:(struct duration<long long, std::__1::ratio<1, 1> > { long long x1; })arg1;
-- (void)setTilePrefetchMaxCount:(struct optional<unsigned long> { bool x1; struct aligned_storage<unsigned long> { union dummy_u { BOOL x_1_2_1[4]; struct a4 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
+- (void)setTilePrefetchMaxCount:(struct optional<unsigned long> { bool x1; struct aligned_storage<unsigned long> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
 - (void)setTilePrefetchPredictionActivityCycleAllowance:(struct optional<unsigned int> { bool x1; struct aligned_storage<unsigned int> { union dummy_u { BOOL x_1_2_1[4]; struct a4 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
 - (void)setTilePrefetchRadius:(struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; })arg1;
 - (void)setTilePrefetchRelevancyWindow:(struct duration<long long, std::__1::ratio<1, 1> > { long long x1; })arg1;
 - (void)setVenueGroupDistance:(double)arg1;
 - (struct duration<long long, std::__1::ratio<1, 1> > { long long x1; })tilePrefetchActivityInterval;
-- (const struct optional<unsigned long> { bool x1; struct aligned_storage<unsigned long> { union dummy_u { BOOL x_1_2_1[4]; struct a4 { } x_1_2_2; } x_2_1_1; } x2; }*)tilePrefetchMaxCount;
+- (const struct optional<unsigned long> { bool x1; struct aligned_storage<unsigned long> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; }*)tilePrefetchMaxCount;
 - (struct optional<unsigned int> { bool x1; struct aligned_storage<unsigned int> { union dummy_u { BOOL x_1_2_1[4]; struct a4 { } x_1_2_2; } x_2_1_1; } x2; })tilePrefetchPredictionActivityCycleAllowance;
 - (const struct optional<double> { bool x1; struct aligned_storage<double> { union dummy_u { BOOL x_1_2_1[8]; struct a8 { } x_1_2_2; } x_2_1_1; } x2; }*)tilePrefetchRadius;
 - (struct duration<long long, std::__1::ratio<1, 1> > { long long x1; })tilePrefetchRelevancyWindow;

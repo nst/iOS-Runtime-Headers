@@ -4,10 +4,10 @@
 
 @interface PFUbiquityEventLogging : NSObject {
     NSMutableSet * _logEvents;
-    int  _logLevel;
+    long long  _logLevel;
 }
 
-@property int logLevel;
+@property long long logLevel;
 
 + (void)initialize;
 + (id)sharedEventLogger;
@@ -26,8 +26,8 @@
 - (id)init;
 - (void)logEvent:(id)arg1 ID:(id)arg2 message:(id)arg3;
 - (void)logEventData:(id)arg1 message:(id)arg2;
-- (int)logLevel;
-- (void)setLogLevel:(int)arg1;
+- (long long)logLevel;
+- (void)setLogLevel:(long long)arg1;
 - (void)warning:(id)arg1 message:(id)arg2;
 
 @end

@@ -11,18 +11,18 @@
         unsigned int supportsRestaurantReservations : 1; 
     }  _has;
     int  _restaurantReservationExtensionSupport;
-    BOOL  _supportsRestaurantQueueing;
-    BOOL  _supportsRestaurantReservations;
+    bool  _supportsRestaurantQueueing;
+    bool  _supportsRestaurantReservations;
 }
 
 @property (nonatomic, retain) NSString *appBundleIdentifier;
 @property (nonatomic, retain) NSMutableArray *handledSchemes;
-@property (nonatomic) BOOL hasRestaurantReservationExtensionSupport;
-@property (nonatomic) BOOL hasSupportsRestaurantQueueing;
-@property (nonatomic) BOOL hasSupportsRestaurantReservations;
+@property (nonatomic) bool hasRestaurantReservationExtensionSupport;
+@property (nonatomic) bool hasSupportsRestaurantQueueing;
+@property (nonatomic) bool hasSupportsRestaurantReservations;
 @property (nonatomic) int restaurantReservationExtensionSupport;
-@property (nonatomic) BOOL supportsRestaurantQueueing;
-@property (nonatomic) BOOL supportsRestaurantReservations;
+@property (nonatomic) bool supportsRestaurantQueueing;
+@property (nonatomic) bool supportsRestaurantReservations;
 
 + (Class)handledSchemesType;
 
@@ -36,27 +36,27 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)handledSchemes;
-- (id)handledSchemesAtIndex:(unsigned int)arg1;
-- (unsigned int)handledSchemesCount;
-- (BOOL)hasRestaurantReservationExtensionSupport;
-- (BOOL)hasSupportsRestaurantQueueing;
-- (BOOL)hasSupportsRestaurantReservations;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)handledSchemesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)handledSchemesCount;
+- (bool)hasRestaurantReservationExtensionSupport;
+- (bool)hasSupportsRestaurantQueueing;
+- (bool)hasSupportsRestaurantReservations;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)restaurantReservationExtensionSupport;
 - (id)restaurantReservationExtensionSupportAsString:(int)arg1;
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)setHandledSchemes:(id)arg1;
-- (void)setHasRestaurantReservationExtensionSupport:(BOOL)arg1;
-- (void)setHasSupportsRestaurantQueueing:(BOOL)arg1;
-- (void)setHasSupportsRestaurantReservations:(BOOL)arg1;
+- (void)setHasRestaurantReservationExtensionSupport:(bool)arg1;
+- (void)setHasSupportsRestaurantQueueing:(bool)arg1;
+- (void)setHasSupportsRestaurantReservations:(bool)arg1;
 - (void)setRestaurantReservationExtensionSupport:(int)arg1;
-- (void)setSupportsRestaurantQueueing:(BOOL)arg1;
-- (void)setSupportsRestaurantReservations:(BOOL)arg1;
-- (BOOL)supportsRestaurantQueueing;
-- (BOOL)supportsRestaurantReservations;
+- (void)setSupportsRestaurantQueueing:(bool)arg1;
+- (void)setSupportsRestaurantReservations:(bool)arg1;
+- (bool)supportsRestaurantQueueing;
+- (bool)supportsRestaurantReservations;
 - (void)writeTo:(id)arg1;
 
 @end

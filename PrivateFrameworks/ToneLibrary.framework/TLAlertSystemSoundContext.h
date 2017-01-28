@@ -3,24 +3,24 @@
  */
 
 @interface TLAlertSystemSoundContext : NSObject {
-    BOOL  _beingInterrupted;
-    id /* block */  _completionHandler;
-    int  _playbackCompletionType;
+    bool  _beingInterrupted;
+    id  _completionHandler;
+    long long  _playbackCompletionType;
     TLSystemSound * _sound;
 }
 
-@property (getter=isBeingInterrupted, nonatomic) BOOL beingInterrupted;
-@property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic) int playbackCompletionType;
+@property (getter=isBeingInterrupted, nonatomic) bool beingInterrupted;
+@property (nonatomic, copy) id completionHandler;
+@property (nonatomic) long long playbackCompletionType;
 @property (nonatomic, retain) TLSystemSound *sound;
 
 - (void).cxx_destruct;
-- (id /* block */)completionHandler;
-- (BOOL)isBeingInterrupted;
-- (int)playbackCompletionType;
-- (void)setBeingInterrupted:(BOOL)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setPlaybackCompletionType:(int)arg1;
+- (id)completionHandler;
+- (bool)isBeingInterrupted;
+- (long long)playbackCompletionType;
+- (void)setBeingInterrupted:(bool)arg1;
+- (void)setCompletionHandler:(id)arg1;
+- (void)setPlaybackCompletionType:(long long)arg1;
 - (void)setSound:(id)arg1;
 - (id)sound;
 

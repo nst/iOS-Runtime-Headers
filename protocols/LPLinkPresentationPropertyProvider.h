@@ -11,13 +11,13 @@
 - (LPiTunesPlaybackInformation *)iTunesPlaybackInformation;
 - (LPImage *)icon;
 - (LPImage *)image;
-- (BOOL)isPreliminary;
+- (bool)isPreliminary;
 - (NSString *)mediaBottomCaption;
 - (LPCaptionBarPresentationProperties *)mediaBottomCaptionBar;
 - (NSString *)mediaTopCaption;
 - (LPCaptionBarPresentationProperties *)mediaTopCaptionBar;
 - (NSString *)quotedText;
-- (int)style;
+- (long long)style;
 - (NSString *)topCaption;
 - (NSString *)trailingBottomCaption;
 - (NSString *)trailingTopCaption;

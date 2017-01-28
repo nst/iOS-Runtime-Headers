@@ -4,16 +4,16 @@
 
 @interface _INPBSaveProfileInCarIntent : PBCodable <NSCopying> {
     _INPBIntentMetadata * _intentMetadata;
-    _INPBString * _profileLabel;
+    _INPBString * _profileName;
     _INPBInteger * _profileNumber;
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasProfileLabel;
-@property (nonatomic, readonly) BOOL hasProfileNumber;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasProfileName;
+@property (nonatomic, readonly) bool hasProfileNumber;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
-@property (nonatomic, retain) _INPBString *profileLabel;
+@property (nonatomic, retain) _INPBString *profileName;
 @property (nonatomic, retain) _INPBInteger *profileNumber;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -23,18 +23,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasProfileLabel;
-- (BOOL)hasProfileNumber;
-- (unsigned int)hash;
+- (bool)hasIntentMetadata;
+- (bool)hasProfileName;
+- (bool)hasProfileNumber;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)profileLabel;
+- (id)profileName;
 - (id)profileNumber;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;
-- (void)setProfileLabel:(id)arg1;
+- (void)setProfileName:(id)arg1;
 - (void)setProfileNumber:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

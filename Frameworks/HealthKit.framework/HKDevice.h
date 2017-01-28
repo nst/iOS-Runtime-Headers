@@ -23,7 +23,7 @@
 @property (readonly) NSString *softwareVersion;
 
 + (id)localDevice;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UDIDeviceIdentifier;
@@ -41,11 +41,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)firmwareVersion;
 - (id)hardwareVersion;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 manufacturer:(id)arg2 model:(id)arg3 hardwareVersion:(id)arg4 firmwareVersion:(id)arg5 softwareVersion:(id)arg6 localIdentifier:(id)arg7 UDIDeviceIdentifier:(id)arg8;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localIdentifier;
 - (id)manufacturer;
 - (id)model;

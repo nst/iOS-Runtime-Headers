@@ -16,13 +16,13 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_newSampleWithType:(id)arg1 startDate:(double)arg2 endDate:(double)arg3 device:(id)arg4 metadata:(id)arg5 config:(id /* block */)arg6;
++ (id)_newSampleWithType:(id)arg1 startDate:(double)arg2 endDate:(double)arg3 device:(id)arg4 metadata:(id)arg5 config:(id)arg6;
 + (id)_sampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4 sampleType:(id)arg5 startDate:(double)arg6 endDate:(double)arg7;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)_endTimestamp;
-- (void)_enumerateTimePeriodsWithBlock:(id /* block */)arg1;
+- (void)_enumerateTimePeriodsWithBlock:(id)arg1;
 - (void)_setEndTimestamp:(double)arg1;
 - (void)_setSampleType:(id)arg1;
 - (void)_setStartTimestamp:(double)arg1;
@@ -40,7 +40,7 @@
 + (id)hd_sampleTypesForObjects:(id)arg1;
 
 - (id)codableRepresentationForSync;
-- (int)entityType;
+- (long long)entityType;
 - (id)hd_associatedSampleTypes;
 - (id)hd_sampleType;
 

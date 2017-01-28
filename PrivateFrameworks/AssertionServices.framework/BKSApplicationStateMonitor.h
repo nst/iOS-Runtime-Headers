@@ -4,9 +4,9 @@
 
 @interface BKSApplicationStateMonitor : NSObject {
     NSObject<OS_xpc_object> * _connection;
-    BOOL  _denied;
-    BOOL  _elevatedPriority;
-    id /* block */  _handler;
+    bool  _denied;
+    bool  _elevatedPriority;
+    id  _handler;
     NSArray * _interestedBundleIDs;
     unsigned int  _interestedStates;
     BSSignal * _invalidationSignal;
@@ -15,43 +15,43 @@
     NSObject<OS_xpc_object> * _serverEndpoint;
 }
 
-@property (nonatomic, readonly) BOOL elevatedPriority;
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, readonly) bool elevatedPriority;
+@property (nonatomic, copy) id handler;
 @property (nonatomic, copy) NSArray *interestedBundleIDs;
 @property (nonatomic) unsigned int interestedStates;
 
 - (id)_connection;
 - (void)_setEndpoint:(id)arg1;
-- (void)applicationInfoForApplication:(id)arg1 completion:(id /* block */)arg2;
-- (void)applicationInfoForPID:(int)arg1 completion:(id /* block */)arg2;
+- (void)applicationInfoForApplication:(id)arg1 completion:(id)arg2;
+- (void)applicationInfoForPID:(int)arg1 completion:(id)arg2;
 - (unsigned int)applicationStateForApplication:(id)arg1;
 - (id)bundleInfoValueForKey:(id)arg1 PID:(int)arg2;
 - (void)dealloc;
-- (BOOL)elevatedPriority;
-- (id /* block */)handler;
+- (bool)elevatedPriority;
+- (id)handler;
 - (id)init;
 - (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2;
-- (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2 elevatedPriority:(BOOL)arg3;
-- (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2 isUserInteractive:(BOOL)arg3;
-- (id)initWithEndpoint:(id)arg1 bundleIDs:(id)arg2 states:(unsigned int)arg3 elevatedPriority:(BOOL)arg4;
+- (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2 elevatedPriority:(bool)arg3;
+- (id)initWithBundleIDs:(id)arg1 states:(unsigned int)arg2 isUserInteractive:(bool)arg3;
+- (id)initWithEndpoint:(id)arg1 bundleIDs:(id)arg2 states:(unsigned int)arg3 elevatedPriority:(bool)arg4;
 - (id)interestedBundleIDs;
 - (unsigned int)interestedStates;
 - (void)invalidate;
-- (BOOL)isApplicationBeingDebugged:(id)arg1;
+- (bool)isApplicationBeingDebugged:(id)arg1;
 - (unsigned int)mostElevatedApplicationStateForPID:(int)arg1;
 - (void)queue_connectionWasInvalidated;
 - (void)queue_handleMessage:(id)arg1;
 - (void)queue_invalidate;
 - (void)queue_registerWithServer;
 - (void)queue_reregister;
-- (void)queue_setElevatedPriority:(BOOL)arg1;
-- (void)queue_setHandler:(id /* block */)arg1;
+- (void)queue_setElevatedPriority:(bool)arg1;
+- (void)queue_setHandler:(id)arg1;
 - (void)queue_setInterestedBundleIDs:(id)arg1;
 - (void)queue_setInterestedStates:(unsigned int)arg1;
 - (void)queue_updateInterestedStates;
-- (void)queue_updateInterestedStates:(BOOL)arg1;
-- (void)setElevatedPriority:(BOOL)arg1;
-- (void)setHandler:(id /* block */)arg1;
+- (void)queue_updateInterestedStates:(bool)arg1;
+- (void)setElevatedPriority:(bool)arg1;
+- (void)setHandler:(id)arg1;
 - (void)setInterestedBundleIDs:(id)arg1;
 - (void)setInterestedStates:(unsigned int)arg1;
 - (void)updateInterestedBundleIDs:(id)arg1;

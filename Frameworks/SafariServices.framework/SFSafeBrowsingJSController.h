@@ -12,7 +12,7 @@
 - (void)goBackSelected;
 - (void)ignoreWarningSelected;
 - (id)initWithSafeBrowsingController:(id)arg1;
-- (BOOL)isRTL;
+- (bool)isRTL;
 - (void)loaded;
 
 @end

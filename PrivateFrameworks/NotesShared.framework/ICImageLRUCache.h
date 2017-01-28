@@ -4,33 +4,33 @@
 
 @interface ICImageLRUCache : NSObject {
     ICLRUCache * _bigImageCache;
-    unsigned int  _bigImageCacheCount;
-    unsigned int  _imagePixelThreshold;
+    unsigned long long  _bigImageCacheCount;
+    unsigned long long  _imagePixelThreshold;
     ICLRUCache * _smallImageCache;
-    unsigned int  _smallImageCacheCount;
+    unsigned long long  _smallImageCacheCount;
     NSMapTable * _weakImageMap;
 }
 
 @property (readonly) ICLRUCache *bigImageCache;
-@property (nonatomic, readonly) unsigned int bigImageCacheCount;
-@property (nonatomic, readonly) unsigned int imagePixelThreshold;
+@property (nonatomic, readonly) unsigned long long bigImageCacheCount;
+@property (nonatomic, readonly) unsigned long long imagePixelThreshold;
 @property (readonly) ICLRUCache *smallImageCache;
-@property (nonatomic, readonly) unsigned int smallImageCacheCount;
+@property (nonatomic, readonly) unsigned long long smallImageCacheCount;
 @property (readonly) NSMapTable *weakImageMap;
 
 - (void).cxx_destruct;
 - (id)bigImageCache;
-- (unsigned int)bigImageCacheCount;
+- (unsigned long long)bigImageCacheCount;
 - (void)dealloc;
-- (unsigned int)imagePixelThreshold;
-- (id)initWithBigImageCount:(unsigned int)arg1 smallImageCount:(unsigned int)arg2 pixelThreshold:(unsigned int)arg3;
+- (unsigned long long)imagePixelThreshold;
+- (id)initWithBigImageCount:(unsigned long long)arg1 smallImageCount:(unsigned long long)arg2 pixelThreshold:(unsigned long long)arg3;
 - (struct UIImage { Class x1; }*)objectForKey:(id)arg1;
 - (void)receivedMemoryWarning:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
 - (void)setObject:(struct UIImage { Class x1; }*)arg1 forKey:(id)arg2;
 - (id)smallImageCache;
-- (unsigned int)smallImageCacheCount;
+- (unsigned long long)smallImageCacheCount;
 - (id)weakImageMap;
 
 @end

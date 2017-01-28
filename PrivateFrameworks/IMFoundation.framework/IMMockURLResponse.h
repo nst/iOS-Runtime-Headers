@@ -15,7 +15,7 @@
 @property (retain) NSHTTPURLResponse *response;
 
 + (id)objectFromPlist:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)data;
 - (void)encodeWithCoder:(id)arg1;

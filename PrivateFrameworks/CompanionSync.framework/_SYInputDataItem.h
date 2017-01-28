@@ -3,23 +3,23 @@
  */
 
 @interface _SYInputDataItem : NSObject {
-    id /* block */  _callback;
+    id  _callback;
     NSMutableData * _data;
-    unsigned int  _length;
+    unsigned long long  _length;
 }
 
-@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, copy) id callback;
 @property (nonatomic, readonly) NSMutableData *data;
-@property (nonatomic) unsigned int length;
-@property (nonatomic, readonly) unsigned int lengthRemaining;
+@property (nonatomic) unsigned long long length;
+@property (nonatomic, readonly) unsigned long long lengthRemaining;
 
 - (void).cxx_destruct;
-- (id /* block */)callback;
+- (id)callback;
 - (id)data;
 - (id)init;
-- (unsigned int)length;
-- (unsigned int)lengthRemaining;
-- (void)setCallback:(id /* block */)arg1;
-- (void)setLength:(unsigned int)arg1;
+- (unsigned long long)length;
+- (unsigned long long)lengthRemaining;
+- (void)setCallback:(id)arg1;
+- (void)setLength:(unsigned long long)arg1;
 
 @end

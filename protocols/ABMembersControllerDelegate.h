@@ -5,17 +5,17 @@
 
 @required
 
-- (BOOL)allowsShowingPersonsCards;
+- (bool)allowsShowingPersonsCards;
 - (int)behavior;
-- (BOOL)membersController:(ABMembersController *)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
+- (bool)membersController:(ABMembersController *)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;
 - (void)membersControllerDidEndSearching:(ABMembersController *)arg1;
 - (void)membersControllerDidEndServerSearch:(ABMembersController *)arg1;
 - (void)membersControllerWillEndSearching:(ABMembersController *)arg1;
 - (void)membersControllerWillStartSearching:(ABMembersController *)arg1;
 - (ABModel *)model;
 - (void)personWasSelected:(void*)arg1;
-- (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;
-- (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(UIView *)arg2 animate:(BOOL)arg3;
-- (void)showInsertEditorForPerson:(void*)arg1 animate:(BOOL)arg2;
+- (bool)showCardForPerson:(void*)arg1 animate:(bool)arg2;
+- (bool)showCardForPerson:(void*)arg1 withMemberCell:(UIView *)arg2 animate:(bool)arg3;
+- (void)showInsertEditorForPerson:(void*)arg1 animate:(bool)arg2;
 
 @end

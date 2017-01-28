@@ -6,16 +6,16 @@
     struct sqlite3_stmt { } * _handle;
 }
 
-- (BOOL)_isNullAtIndex:(unsigned int)arg1;
-- (BOOL)boolAtIndex:(unsigned int)arg1;
-- (id)dataAtIndex:(unsigned int)arg1;
+- (bool)_isNullAtIndex:(unsigned long long)arg1;
+- (bool)boolAtIndex:(unsigned long long)arg1;
+- (id)dataAtIndex:(unsigned long long)arg1;
 - (id)debugDictionaryRepresentationWithStatement:(id)arg1;
-- (double)doubleAtIndex:(unsigned int)arg1;
+- (double)doubleAtIndex:(unsigned long long)arg1;
 - (id)initWithCurrentRowOfEnumerator:(id)arg1;
-- (long long)int64AtIndex:(unsigned int)arg1;
-- (int)intAtIndex:(unsigned int)arg1;
-- (id)stringAtIndex:(unsigned int)arg1;
-- (id)uncopiedDataAtIndex:(unsigned int)arg1;
-- (struct RawData { bool x1; void *x2; int x3; })uncopiedRawDataAtIndex:(unsigned int)arg1;
+- (long long)int64AtIndex:(unsigned long long)arg1;
+- (int)intAtIndex:(unsigned long long)arg1;
+- (id)stringAtIndex:(unsigned long long)arg1;
+- (id)uncopiedDataAtIndex:(unsigned long long)arg1;
+- (struct RawData { bool x1; void *x2; int x3; })uncopiedRawDataAtIndex:(unsigned long long)arg1;
 
 @end

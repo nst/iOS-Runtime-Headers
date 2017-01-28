@@ -10,13 +10,13 @@
     NSMutableArray * _localizedNames;
 }
 
-@property (nonatomic) BOOL hasLevel;
+@property (nonatomic) bool hasLevel;
 @property (nonatomic) int level;
 @property (nonatomic, retain) NSMutableArray *localizedNames;
 
 + (id)_allCategoriesForPlaceData:(id)arg1 type:(unsigned int)arg2;
 + (id)categoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;
-+ (BOOL)hasCategoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;
++ (bool)hasCategoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;
 + (Class)localizedNameType;
 
 - (void)addLocalizedName:(id)arg1;
@@ -26,16 +26,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLevel;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLevel;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)level;
-- (id)localizedNameAtIndex:(unsigned int)arg1;
+- (id)localizedNameAtIndex:(unsigned long long)arg1;
 - (id)localizedNames;
-- (unsigned int)localizedNamesCount;
+- (unsigned long long)localizedNamesCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLevel:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLevel:(bool)arg1;
 - (void)setLevel:(int)arg1;
 - (void)setLocalizedNames:(id)arg1;
 - (void)writeTo:(id)arg1;

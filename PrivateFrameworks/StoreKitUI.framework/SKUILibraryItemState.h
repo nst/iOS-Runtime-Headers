@@ -3,51 +3,51 @@
  */
 
 @interface SKUILibraryItemState : NSObject <NSCopying> {
-    unsigned int  _avTypes;
-    int  _availability;
+    unsigned long long  _avTypes;
+    long long  _availability;
     NSString * _bundleIdentifier;
     NSString * _bundleVersion;
-    BOOL  _highDefinition;
-    BOOL  _preview;
-    BOOL  _rental;
+    bool  _highDefinition;
+    bool  _preview;
+    bool  _rental;
     NSNumber * _storeAccountIdentifier;
     NSString * _storeFlavorIdentifier;
     NSString * _storePlatformKind;
     NSNumber * _storeVersionIdentifier;
 }
 
-@property (nonatomic) unsigned int AVTypes;
-@property (nonatomic) int availability;
+@property (nonatomic) unsigned long long AVTypes;
+@property (nonatomic) long long availability;
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *bundleVersion;
-@property (getter=isHighDefinition, nonatomic) BOOL highDefinition;
+@property (getter=isHighDefinition, nonatomic) bool highDefinition;
 @property (nonatomic, readonly) NSString *itemStateVariantIdentifier;
-@property (getter=isPreview, nonatomic) BOOL preview;
-@property (getter=isRental, nonatomic) BOOL rental;
+@property (getter=isPreview, nonatomic) bool preview;
+@property (getter=isRental, nonatomic) bool rental;
 @property (nonatomic, copy) NSNumber *storeAccountIdentifier;
 @property (nonatomic, copy) NSString *storeFlavorIdentifier;
 @property (nonatomic, copy) NSString *storePlatformKind;
 @property (nonatomic, copy) NSNumber *storeVersionIdentifier;
 
 - (void).cxx_destruct;
-- (unsigned int)AVTypes;
-- (int)availability;
+- (unsigned long long)AVTypes;
+- (long long)availability;
 - (id)bundleIdentifier;
 - (id)bundleVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithApplication:(id)arg1;
-- (BOOL)isHighDefinition;
-- (BOOL)isPreview;
-- (BOOL)isRental;
+- (bool)isHighDefinition;
+- (bool)isPreview;
+- (bool)isRental;
 - (id)itemStateVariantIdentifier;
 - (id)newJavaScriptRepresentation;
-- (void)setAVTypes:(unsigned int)arg1;
-- (void)setAvailability:(int)arg1;
+- (void)setAVTypes:(unsigned long long)arg1;
+- (void)setAvailability:(long long)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
-- (void)setHighDefinition:(BOOL)arg1;
-- (void)setPreview:(BOOL)arg1;
-- (void)setRental:(BOOL)arg1;
+- (void)setHighDefinition:(bool)arg1;
+- (void)setPreview:(bool)arg1;
+- (void)setRental:(bool)arg1;
 - (void)setStoreAccountIdentifier:(id)arg1;
 - (void)setStoreFlavorIdentifier:(id)arg1;
 - (void)setStorePlatformKind:(id)arg1;

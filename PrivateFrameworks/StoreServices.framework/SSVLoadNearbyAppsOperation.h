@@ -7,7 +7,7 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     CLLocation * _location;
     NSMutableDictionary * _parameters;
-    id /* block */  _responseBlock;
+    id  _responseBlock;
     NSString * _storeFrontSuffix;
     NSString * _userAgent;
 }
@@ -16,7 +16,7 @@
 @property (copy) NSString *pointOfInterestIdentifier;
 @property (copy) NSString *pointOfInterestProviderIdentifier;
 @property (copy) NSString *pointOfInterestProviderURL;
-@property (copy) id /* block */ responseBlock;
+@property (copy) id responseBlock;
 @property (copy) NSString *storeFrontSuffix;
 @property (copy) NSString *userAgent;
 
@@ -29,11 +29,11 @@
 - (id)pointOfInterestIdentifier;
 - (id)pointOfInterestProviderIdentifier;
 - (id)pointOfInterestProviderURL;
-- (id /* block */)responseBlock;
+- (id)responseBlock;
 - (void)setPointOfInterestIdentifier:(id)arg1;
 - (void)setPointOfInterestProviderIdentifier:(id)arg1;
 - (void)setPointOfInterestProviderURL:(id)arg1;
-- (void)setResponseBlock:(id /* block */)arg1;
+- (void)setResponseBlock:(id)arg1;
 - (void)setStoreFrontSuffix:(id)arg1;
 - (void)setUserAgent:(id)arg1;
 - (id)storeFrontSuffix;

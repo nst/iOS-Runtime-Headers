@@ -20,8 +20,8 @@
     int (* report_callback;
     int  state;
     NSObject<OS_dispatch_queue> * tls_client_queue;
-    id /* block */  tls_message_block;
-    id /* block */  tls_prepare_block;
+    id  tls_message_block;
+    id  tls_prepare_block;
     bool  tls_server;
     NSObject<OS_xpc_object> * triggered_agent_uuids;
     bool  triggering_voluntary_agents;
@@ -29,7 +29,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

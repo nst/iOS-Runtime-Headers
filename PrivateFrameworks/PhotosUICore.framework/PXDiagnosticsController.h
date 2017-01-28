@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) UIWindow *_window;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedController;
@@ -29,7 +29,7 @@
 - (id)_window;
 - (id)consoleDescriptionForServices:(id)arg1;
 - (id)currentItemProviders;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)presentContextualViewControllerForServices:(id)arg1;
 - (id)servicesWithItemProviders:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

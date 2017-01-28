@@ -11,8 +11,8 @@
 - (id)commentStorage;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initObjectWithCommentStorage:(id)arg1 refCount:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

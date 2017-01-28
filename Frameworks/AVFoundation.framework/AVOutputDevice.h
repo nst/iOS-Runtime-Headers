@@ -8,8 +8,8 @@
 
 @property (nonatomic, readonly) NSString *ID;
 @property (nonatomic, readonly) float batteryLevel;
-@property (nonatomic, readonly) int deviceType;
-@property (nonatomic, readonly) BOOL hasBatteryLevel;
+@property (nonatomic, readonly) long long deviceType;
+@property (nonatomic, readonly) bool hasBatteryLevel;
 @property (nonatomic, readonly) NSString *modelID;
 @property (nonatomic, readonly) NSDictionary *modelSpecificInformation;
 @property (nonatomic, readonly) NSString *name;
@@ -22,19 +22,19 @@
 - (float)batteryLevel;
 - (void)dealloc;
 - (id)description;
-- (int)deviceType;
+- (long long)deviceType;
 - (struct OpaqueFigEndpoint { }*)figEndpoint;
 - (void)finalize;
 - (double)frecencyScore;
-- (BOOL)hasBatteryLevel;
-- (unsigned int)hash;
+- (bool)hasBatteryLevel;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithFigEndpoint:(struct OpaqueFigEndpoint { }*)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)modelID;
 - (id)modelSpecificInformation;
 - (id)name;
-- (void)setSecondDisplayEnabled:(BOOL)arg1;
+- (void)setSecondDisplayEnabled:(bool)arg1;
 - (void)updateFrecencyScore;
 
 @end

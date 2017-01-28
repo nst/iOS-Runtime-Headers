@@ -3,7 +3,7 @@
  */
 
 @interface UIClassicController : NSObject {
-    BOOL  _hidesStatusBarFiller;
+    bool  _hidesStatusBarFiller;
     UIStatusBarViewController * _statusBarViewController;
     UIWindow * _window;
     UIZoomViewController * _zoomViewController;
@@ -13,20 +13,20 @@
 
 - (void).cxx_destruct;
 - (void)_classicChangeStatusBarOrientation:(id)arg1;
-- (void)_classicChangeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(id)arg3;
+- (void)_classicChangeStatusBarOrientationFinished:(id)arg1 finished:(bool)arg2 context:(id)arg3;
 - (void)_initializeStatusBarOrientation;
 - (void)_setupWindow;
-- (BOOL)_shouldHideStatusBar;
-- (BOOL)_supportsZoom;
+- (bool)_shouldHideStatusBar;
+- (bool)_supportsZoom;
 - (id)_window;
-- (BOOL)drawsStatusBarFiller;
-- (BOOL)isClassicControlWindow:(id)arg1;
-- (BOOL)isZoomed;
-- (void)setDrawsStatusBarFiller:(BOOL)arg1;
-- (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2;
-- (void)setStatusBarOrientation:(int)arg1 animationParameters:(id)arg2;
-- (void)setStatusBarStyle:(int)arg1 animationParameters:(id)arg2;
-- (void)setZoomed:(BOOL)arg1;
-- (void)setZoomed:(BOOL)arg1 animated:(BOOL)arg2;
+- (bool)drawsStatusBarFiller;
+- (bool)isClassicControlWindow:(id)arg1;
+- (bool)isZoomed;
+- (void)setDrawsStatusBarFiller:(bool)arg1;
+- (void)setStatusBarHidden:(bool)arg1 animationParameters:(id)arg2;
+- (void)setStatusBarOrientation:(long long)arg1 animationParameters:(id)arg2;
+- (void)setStatusBarStyle:(long long)arg1 animationParameters:(id)arg2;
+- (void)setZoomed:(bool)arg1;
+- (void)setZoomed:(bool)arg1 animated:(bool)arg2;
 
 @end

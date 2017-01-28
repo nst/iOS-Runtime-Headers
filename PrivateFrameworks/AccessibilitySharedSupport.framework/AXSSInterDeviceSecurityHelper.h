@@ -15,6 +15,6 @@
 - (void)dealloc;
 - (id)init;
 - (id)securityIdentity;
-- (BOOL)shouldTrustCertificate:(id)arg1;
+- (bool)shouldTrustCertificate:(id)arg1;
 
 @end

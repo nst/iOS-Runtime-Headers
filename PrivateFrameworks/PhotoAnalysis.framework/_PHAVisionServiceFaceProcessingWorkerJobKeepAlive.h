@@ -3,7 +3,7 @@
  */
 
 @interface _PHAVisionServiceFaceProcessingWorkerJobKeepAlive : NSObject {
-    BOOL  _continueReporting;
+    bool  _continueReporting;
     PHAWorkerJob * _job;
     NSObject<OS_dispatch_queue> * _queue;
 }

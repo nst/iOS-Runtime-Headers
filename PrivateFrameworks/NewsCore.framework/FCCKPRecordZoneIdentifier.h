@@ -7,8 +7,8 @@
     FCCKPIdentifier * _value;
 }
 
-@property (nonatomic, readonly) BOOL hasOwnerIdentifier;
-@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, readonly) bool hasOwnerIdentifier;
+@property (nonatomic, readonly) bool hasValue;
 @property (nonatomic, retain) FCCKPIdentifier *ownerIdentifier;
 @property (nonatomic, retain) FCCKPIdentifier *value;
 
@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasOwnerIdentifier;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasOwnerIdentifier;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)ownerIdentifier;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setOwnerIdentifier:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

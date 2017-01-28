@@ -17,7 +17,7 @@
 - (id)columnDefinitionsSQL;
 - (id)columns;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)createTableSQLWithExistenceClause:(BOOL)arg1;
+- (id)createTableSQLWithExistenceClause:(bool)arg1;
 - (id)foreignKeyConstraints;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;

@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIWebView *webView;
 
@@ -18,8 +18,8 @@
 - (id)localizedStringFromDictionary:(id)arg1;
 - (void)setWebView:(id)arg1;
 - (void)showErrorAlert;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)webView;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 

@@ -11,8 +11,8 @@
 - (UIFont *)boldBodyFont;
 - (UIColor *)highlightedRowColor;
 - (UIFont *)iconFontToMatch:(UIFont *)arg1;
-- (BOOL)isDarkTheme;
-- (BOOL)isVibrantTheme;
+- (bool)isDarkTheme;
+- (bool)isVibrantTheme;
 - (UIFont *)largeTitleFont;
 - (UIColor *)lightTextColor;
 - (UIFont *)mediumBodyFont;
@@ -22,7 +22,7 @@
 - (UIColor *)separatorLineColor;
 - (UIFont *)smallAttributionFont;
 - (UIColor *)textColor;
-- (unsigned int)themeType;
+- (unsigned long long)themeType;
 - (UIColor *)tintColor;
 - (UIFont *)titleFont;
 

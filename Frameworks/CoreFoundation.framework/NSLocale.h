@@ -4,7 +4,7 @@
 
 @interface NSLocale : NSObject <NSCopying, NSSecureCoding>
 
-@property (readonly) int _calendarDirection;
+@property (readonly) long long _calendarDirection;
 @property (nonatomic, readonly) NSString *languageIdentifier;
 @property (nonatomic) int wf_temperatureUnit;
 
@@ -17,21 +17,21 @@
 + (id)availableLocaleIdentifiers;
 + (id)canonicalLanguageIdentifierFromString:(id)arg1;
 + (id)canonicalLocaleIdentifierFromString:(id)arg1;
-+ (unsigned int)characterDirectionForLanguage:(id)arg1;
++ (unsigned long long)characterDirectionForLanguage:(id)arg1;
 + (id)commonISOCurrencyCodes;
 + (id)componentsFromLocaleIdentifier:(id)arg1;
 + (id)currentLocale;
 + (id)internetServicesRegion;
-+ (unsigned int)lineDirectionForLanguage:(id)arg1;
++ (unsigned long long)lineDirectionForLanguage:(id)arg1;
 + (id)localeIdentifierFromComponents:(id)arg1;
 + (id)localeIdentifierFromWindowsLocaleCode:(unsigned int)arg1;
 + (id)localeWithLocaleIdentifier:(id)arg1;
 + (id)preferredLanguages;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)systemLocale;
 + (unsigned int)windowsLocaleCodeFromLocaleIdentifier:(id)arg1;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (id)_copyDisplayNameForKey:(id)arg1 value:(id)arg2;
 - (unsigned char)_nullLocale;
 - (id)_prefs;
@@ -50,12 +50,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)exemplarCharacterSet;
 - (id)groupingSeparator;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocaleIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)languageCode;
 - (id)localeIdentifier;
 - (id)localizedStringForAlternateQuotationBeginDelimiter:(id)arg1;
@@ -78,7 +78,7 @@
 - (id)quotationBeginDelimiter;
 - (id)quotationEndDelimiter;
 - (id)scriptCode;
-- (BOOL)usesMetricSystem;
+- (bool)usesMetricSystem;
 - (id)variantCode;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -86,13 +86,13 @@
 + (id)_preferredTemperatureUnit;
 + (void)_setPreferredTemperatureUnit:(id)arg1;
 + (id)autoupdatingCurrentLocale;
-+ (id)mostPreferredLanguageOf:(id)arg1 forUsage:(unsigned int)arg2 options:(unsigned int)arg3;
-+ (id)mostPreferredLanguageOf:(id)arg1 withPreferredLanguages:(id)arg2 forUsage:(unsigned int)arg3 options:(unsigned int)arg4;
-+ (void)registerPreferredLanguage:(id)arg1 usage:(unsigned int)arg2 confidence:(float)arg3;
++ (id)mostPreferredLanguageOf:(id)arg1 forUsage:(unsigned long long)arg2 options:(unsigned long long)arg3;
++ (id)mostPreferredLanguageOf:(id)arg1 withPreferredLanguages:(id)arg2 forUsage:(unsigned long long)arg3 options:(unsigned long long)arg4;
++ (void)registerPreferredLanguage:(id)arg1 usage:(unsigned long long)arg2 confidence:(float)arg3;
 + (void)setPreferredLanguages:(id)arg1;
 + (id)systemLanguages;
 
-- (int)_calendarDirection;
+- (long long)_calendarDirection;
 - (Class)classForCoder;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
@@ -100,7 +100,7 @@
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
-+ (unsigned int)pu_currentCharacterDirection;
++ (unsigned long long)pu_currentCharacterDirection;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
@@ -126,7 +126,7 @@
 + (id)deviceLanguageLocale;
 + (void)enableDefaultKeyboardForPreferredLanguages;
 + (id)languageArrayAfterSettingLanguage:(id)arg1 fallback:(id)arg2 toLanguageArray:(id)arg3;
-+ (BOOL)localeLanguageMatchesPrimaryLanguage;
++ (bool)localeLanguageMatchesPrimaryLanguage;
 + (void)registerPreferredLanguageForAddedKeyboardLanguage:(id)arg1;
 + (id)renderableLanguagesFromList:(id)arg1;
 + (id)renderableLocaleLanguages;
@@ -137,10 +137,10 @@
 + (void)setLocaleAfterRegionChange:(id)arg1;
 + (void)setLocaleAndResetTimeFormat:(id)arg1;
 + (void)setLocaleOnly:(id)arg1;
-+ (BOOL)shouldShowPreferredLanguages;
++ (bool)shouldShowPreferredLanguages;
 + (id)string:(id)arg1 withCapitalizedDisplayNamesForFirstLanguageIdentifier:(id)arg2 secondLanguageIdentifier:(id)arg3 thirdLanguageIdentifier:(id)arg4;
 + (id)supportedCJLanguageIdentifiers;
-+ (void)updateShouldShowPreferredLanguages:(BOOL)arg1;
++ (void)updateShouldShowPreferredLanguages:(bool)arg1;
 + (id)validateLocale:(id)arg1;
 
 - (id)languageIdentifier;
@@ -149,11 +149,11 @@
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 + (id)_localeOverridesForLocaleWithIdentifier:(id)arg1;
-+ (void)_navigation_overrideDistanceUnit:(int)arg1;
++ (void)_navigation_overrideDistanceUnit:(long long)arg1;
 
-- (BOOL)_navigation_distanceUsesMetricSystem;
+- (bool)_navigation_distanceUsesMetricSystem;
 - (id)_navigation_objectForKey:(id)arg1;
-- (BOOL)_navigation_useYardsForShortDistances;
+- (bool)_navigation_useYardsForShortDistances;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
@@ -165,7 +165,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
-+ (unsigned int)px_currentCharacterDirection;
++ (unsigned long long)px_currentCharacterDirection;
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
@@ -173,7 +173,7 @@
 
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
-+ (int)_vk_indexForLocale:(id)arg1;
++ (long long)_vk_indexForLocale:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
 

@@ -15,9 +15,9 @@
 @property (nonatomic, retain) NSString *currencyCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasAmount;
-@property (nonatomic, readonly) BOOL hasCurrencyCode;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasAmount;
+@property (nonatomic, readonly) bool hasCurrencyCode;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double value;
 
@@ -28,15 +28,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAmount;
-- (BOOL)hasCurrencyCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAmount;
+- (bool)hasCurrencyCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAmount:(float)arg1;
 - (void)setCurrencyCode:(id)arg1;
-- (void)setHasAmount:(BOOL)arg1;
+- (void)setHasAmount:(bool)arg1;
 - (double)value;
 - (void)writeTo:(id)arg1;
 

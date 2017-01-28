@@ -3,43 +3,43 @@
  */
 
 @interface SKKeyframeSequence : NSObject <NSCoding, NSCopying> {
-    struct SKCKeyframeSequence { int x1; int x2; int x3; int x4; float *x5; float *x6; } * _cKeyframeSequence;
-    unsigned int  _count;
-    int  _interpolationMode;
-    int  _repeatMode;
+    struct SKCKeyframeSequence { int x1; int x2; long long x3; long long x4; float *x5; float *x6; } * _cKeyframeSequence;
+    unsigned long long  _count;
+    long long  _interpolationMode;
+    long long  _repeatMode;
     NSMutableArray * _times;
     NSMutableArray * _values;
 }
 
-@property (nonatomic) int interpolationMode;
-@property (nonatomic) int repeatMode;
+@property (nonatomic) long long interpolationMode;
+@property (nonatomic) long long repeatMode;
 
 - (void).cxx_destruct;
-- (struct SKCKeyframeSequence { int x1; int x2; int x3; int x4; float *x5; float *x6; }*)_createSKCKeyframeSequence;
+- (struct SKCKeyframeSequence { int x1; int x2; long long x3; long long x4; float *x5; float *x6; }*)_createSKCKeyframeSequence;
 - (void)_dirtySKCKeyframeSequence;
 - (Class)_valueClass;
-- (void)addKeyframeValue:(id)arg1 time:(float)arg2;
+- (void)addKeyframeValue:(id)arg1 time:(double)arg2;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)encodeWithCoder:(id)arg1;
-- (float)getKeyframeTimeForIndex:(unsigned int)arg1;
-- (id)getKeyframeValueForIndex:(unsigned int)arg1;
+- (double)getKeyframeTimeForIndex:(unsigned long long)arg1;
+- (id)getKeyframeValueForIndex:(unsigned long long)arg1;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCount:(unsigned int)arg1;
+- (id)initWithCount:(unsigned long long)arg1;
 - (id)initWithKeyframeValues:(id)arg1 times:(id)arg2;
-- (int)interpolationMode;
+- (long long)interpolationMode;
 - (void)removeAllKeyframes;
-- (void)removeKeyframeAtIndex:(unsigned int)arg1;
+- (void)removeKeyframeAtIndex:(unsigned long long)arg1;
 - (void)removeLastKeyframe;
-- (int)repeatMode;
-- (id)sampleAtTime:(float)arg1;
-- (void)setInterpolationMode:(int)arg1;
-- (void)setKeyframeTime:(float)arg1 forIndex:(unsigned int)arg2;
-- (void)setKeyframeValue:(id)arg1 forIndex:(unsigned int)arg2;
-- (void)setKeyframeValue:(id)arg1 time:(float)arg2 forIndex:(unsigned int)arg3;
-- (void)setRepeatMode:(int)arg1;
+- (long long)repeatMode;
+- (id)sampleAtTime:(double)arg1;
+- (void)setInterpolationMode:(long long)arg1;
+- (void)setKeyframeTime:(double)arg1 forIndex:(unsigned long long)arg2;
+- (void)setKeyframeValue:(id)arg1 forIndex:(unsigned long long)arg2;
+- (void)setKeyframeValue:(id)arg1 time:(double)arg2 forIndex:(unsigned long long)arg3;
+- (void)setRepeatMode:(long long)arg1;
 
 @end

@@ -4,28 +4,28 @@
 
 @interface SFFormattedText : SFText <NSSecureCoding> {
     SFImage * _glyph;
-    BOOL  _isBold;
-    BOOL  _isEmphasized;
-    unsigned int  _textColor;
+    bool  _isBold;
+    bool  _isEmphasized;
+    unsigned long long  _textColor;
 }
 
 @property (nonatomic, retain) SFImage *glyph;
-@property (nonatomic) BOOL isBold;
-@property (nonatomic) BOOL isEmphasized;
-@property (nonatomic) unsigned int textColor;
+@property (nonatomic) bool isBold;
+@property (nonatomic) bool isEmphasized;
+@property (nonatomic) unsigned long long textColor;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)glyph;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isBold;
-- (BOOL)isEmphasized;
+- (bool)isBold;
+- (bool)isEmphasized;
 - (void)setGlyph:(id)arg1;
-- (void)setIsBold:(BOOL)arg1;
-- (void)setIsEmphasized:(BOOL)arg1;
-- (void)setTextColor:(unsigned int)arg1;
-- (unsigned int)textColor;
+- (void)setIsBold:(bool)arg1;
+- (void)setIsEmphasized:(bool)arg1;
+- (void)setTextColor:(unsigned long long)arg1;
+- (unsigned long long)textColor;
 
 @end

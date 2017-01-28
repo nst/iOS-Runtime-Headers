@@ -5,35 +5,35 @@
 @interface HKBarButtonItemControl : UIControl {
     UIBarButtonItem * _barButtonItem;
     UIControl * _barButtonItemControl;
-    BOOL  _collapseHeight;
-    float  _horizontalMargin;
-    int  _preferredHeight;
+    bool  _collapseHeight;
+    double  _horizontalMargin;
+    long long  _preferredHeight;
     UIToolbar * _toolbar;
 }
 
 @property (nonatomic, readonly) UIBarButtonItem *barButtonItem;
 @property (nonatomic, readonly) UIControl *barButtonItemControl;
-@property (nonatomic) BOOL collapseHeight;
-@property (nonatomic) float horizontalMargin;
-@property (nonatomic) int preferredHeight;
+@property (nonatomic) bool collapseHeight;
+@property (nonatomic) double horizontalMargin;
+@property (nonatomic) long long preferredHeight;
 @property (nonatomic, readonly) UIToolbar *toolbar;
 
 - (void).cxx_destruct;
 - (void)_barButtonAction:(id)arg1;
 - (id)barButtonItem;
 - (id)barButtonItemControl;
-- (BOOL)collapseHeight;
-- (float)horizontalMargin;
-- (id)initWithSystemItem:(int)arg1 preferredHeight:(float)arg2 collapseHeight:(BOOL)arg3;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isEnabled;
+- (bool)collapseHeight;
+- (double)horizontalMargin;
+- (id)initWithSystemItem:(long long)arg1 preferredHeight:(double)arg2 collapseHeight:(bool)arg3;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isEnabled;
 - (void)layoutSubviews;
-- (int)preferredHeight;
+- (long long)preferredHeight;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setCollapseHeight:(BOOL)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHorizontalMargin:(float)arg1;
-- (void)setPreferredHeight:(int)arg1;
+- (void)setCollapseHeight:(bool)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHorizontalMargin:(double)arg1;
+- (void)setPreferredHeight:(long long)arg1;
 - (void)setTintColor:(id)arg1;
 - (id)toolbar;
 

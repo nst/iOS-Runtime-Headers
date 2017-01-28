@@ -18,13 +18,13 @@
 - (id)groupIdentifier;
 - (id)listenAfterSpeaking;
 - (id)message;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setContext:(id)arg1;
 - (void)setListenAfterSpeaking:(id)arg1;
 - (void)setMessage:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (int)_afui_usefulUserResultType;
+- (long long)_afui_usefulUserResultType;
 
 @end

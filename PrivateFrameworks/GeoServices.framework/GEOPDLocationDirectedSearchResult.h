@@ -10,7 +10,7 @@
 
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
-@property (nonatomic, readonly) BOOL hasDisplayMapRegion;
+@property (nonatomic, readonly) bool hasDisplayMapRegion;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)disambiguationLabelType;
@@ -22,15 +22,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)disambiguationLabelAtIndex:(unsigned int)arg1;
+- (id)disambiguationLabelAtIndex:(unsigned long long)arg1;
 - (id)disambiguationLabels;
-- (unsigned int)disambiguationLabelsCount;
+- (unsigned long long)disambiguationLabelsCount;
 - (id)displayMapRegion;
-- (BOOL)hasDisplayMapRegion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDisplayMapRegion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDisambiguationLabels:(id)arg1;
 - (void)setDisplayMapRegion:(id)arg1;
 - (id)unknownFields;

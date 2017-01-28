@@ -13,11 +13,11 @@
 @property (nonatomic, retain) _HKLocationSeriesStore *seriesSamplesStore;
 
 - (void).cxx_destruct;
-- (id)_locationSeriesQueryForWorkout:(id)arg1 isUpdate:(BOOL)arg2 withUpdateHandler:(id /* block */)arg3;
+- (id)_locationSeriesQueryForWorkout:(id)arg1 isUpdate:(bool)arg2 withUpdateHandler:(id)arg3;
 - (void)dealloc;
-- (void)fetchLocationsFromWorkout:(id)arg1 withSamplesHandler:(id /* block */)arg2;
-- (void)fetchSeriesSamplesFromWorkout:(id)arg1 withUpdateHandler:(id /* block */)arg2;
-- (void)handleAndShiftLocations:(id)arg1 withSamplesHandler:(id /* block */)arg2;
+- (void)fetchLocationsFromWorkout:(id)arg1 withSamplesHandler:(id)arg2;
+- (void)fetchSeriesSamplesFromWorkout:(id)arg1 withUpdateHandler:(id)arg2;
+- (void)handleAndShiftLocations:(id)arg1 withSamplesHandler:(id)arg2;
 - (id)healthStore;
 - (id)initWithHealthStore:(id)arg1;
 - (id)seriesSamplesStore;

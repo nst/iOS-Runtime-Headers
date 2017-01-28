@@ -5,7 +5,7 @@
 @interface WFHourlyForecastRequest : WFAggregateForecastRequest
 
 - (id)description;
-- (id)initWithLocation:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)initWithLocation:(id)arg1 completionHandler:(id)arg2;
 - (void)startWithService:(id)arg1;
 
 @end

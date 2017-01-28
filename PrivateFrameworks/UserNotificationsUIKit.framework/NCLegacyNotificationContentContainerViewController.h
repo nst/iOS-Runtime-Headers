@@ -5,7 +5,7 @@
 @interface NCLegacyNotificationContentContainerViewController : UIViewController <NCNotificationCustomContent, NCNotificationCustomContentDelegate> {
     UIViewController<NCNotificationCustomContent> * _contentViewController;
     <NCNotificationCustomContentDelegate> * _delegate;
-    BOOL  _hasMinimalActions;
+    bool  _hasMinimalActions;
     NCNotificationRequest * _notificationRequest;
     NCNotificationAction * _presentationSourceAction;
 }
@@ -15,40 +15,41 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NCNotificationCustomContentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasMinimalActions;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasMinimalActions;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
 @property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)_contentView;
 - (void)_loadContentViewControllerForNotificationRequest:(id)arg1;
-- (BOOL)allowManualDismiss;
+- (bool)allowManualDismiss;
 - (id)contentViewController;
 - (void)customContent:(id)arg1 didLoadAudioAccessoryView:(id)arg2;
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
-- (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(id)arg5;
 - (void)customContentDidLoadExtension:(id)arg1;
-- (unsigned int)customContentLocation;
+- (unsigned long long)customContentLocation;
 - (void)customContentRequestsDismiss:(id)arg1;
-- (BOOL)defaultContentHidden;
+- (bool)defaultContentHidden;
 - (id)delegate;
-- (void)didReceiveNotificationRequest:(id)arg1;
-- (BOOL)hasMinimalActions;
+- (bool)didReceiveNotificationRequest:(id)arg1;
+- (bool)hasMinimalActions;
 - (id)initWithNotificationRequest:(id)arg1;
 - (void)loadAudioAccessoryView;
 - (void)loadExtension;
 - (void)loadView;
 - (id)notificationRequest;
-- (BOOL)performAction:(id)arg1 forNotification:(id)arg2;
-- (BOOL)performAction:(id)arg1 forNotification:(id)arg2 withUserInfo:(id)arg3;
+- (bool)performAction:(id)arg1 forNotification:(id)arg2;
+- (bool)performAction:(id)arg1 forNotification:(id)arg2 withUserInfo:(id)arg3;
 - (void)playAudioMessage;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)presentationSourceAction;
 - (void)setContentViewController:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHasMinimalActions:(BOOL)arg1;
+- (void)setHasMinimalActions:(bool)arg1;
 - (void)setNotificationRequest:(id)arg1;
 - (void)setPresentationSourceAction:(id)arg1;
 

@@ -13,12 +13,12 @@
 @property (readonly) NSString *verbPhrase;
 
 + (id)entityName;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
 + (id)relationWithSubject:(id)arg1 verbPhrase:(id)arg2 object:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

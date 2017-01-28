@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSNumber *length;
 @property (nonatomic, copy) NSString *property;
 @property (nonatomic, copy) NSNumber *start;
@@ -28,6 +28,6 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
-- (struct _NSRange { unsigned int x1; unsigned int x2; })siriui_range;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })siriui_range;
 
 @end

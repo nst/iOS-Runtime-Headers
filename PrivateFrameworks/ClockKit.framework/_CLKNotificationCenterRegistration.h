@@ -4,7 +4,7 @@
 
 @interface _CLKNotificationCenterRegistration : NSObject {
     id  _observer;
-    unsigned int  _registrationIdentifier;
+    unsigned long long  _registrationIdentifier;
     SEL  _selector;
 }
 
@@ -12,11 +12,11 @@
 @property (nonatomic) SEL selector;
 
 + (void)recycleRegistration:(id)arg1;
-+ (id)recycledRegistrationWithIdentifier:(unsigned int)arg1;
++ (id)recycledRegistrationWithIdentifier:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)observer;
 - (id)recycledCopy;
 - (SEL)selector;

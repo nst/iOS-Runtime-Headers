@@ -4,6 +4,6 @@
 
 @interface _PUEditPluginApplicationExtensionActivity : UIApplicationExtensionActivity
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 @end

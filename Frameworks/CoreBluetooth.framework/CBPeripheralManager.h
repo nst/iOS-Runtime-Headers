@@ -18,26 +18,26 @@
         unsigned int centralDidConnect : 1; 
         unsigned int centralDidUpdateConnectionParameters : 1; 
     }  _delegateFlags;
-    BOOL  _isAdvertising;
+    bool  _isAdvertising;
     NSNumber * _multipleAdvertisingSupported;
-    BOOL  _readyForUpdates;
+    bool  _readyForUpdates;
     NSMutableArray * _services;
     NSLock * _updateLock;
-    BOOL  _waitingForReady;
+    bool  _waitingForReady;
 }
 
 @property (nonatomic, readonly, retain) NSMapTable *centrals;
 @property (nonatomic, readonly, retain) NSMutableDictionary *characteristicIDs;
 @property (nonatomic) <CBPeripheralManagerDelegate> *delegate;
-@property (nonatomic) BOOL isAdvertising;
-@property (getter=supportsMultipleAdvertising, nonatomic, readonly) BOOL isSupportingMultipleAdvertising;
+@property (nonatomic) bool isAdvertising;
+@property (getter=supportsMultipleAdvertising, nonatomic, readonly) bool isSupportingMultipleAdvertising;
 @property (nonatomic, retain) NSNumber *multipleAdvertisingSupported;
-@property (nonatomic, readonly) BOOL readyForUpdates;
+@property (nonatomic, readonly) bool readyForUpdates;
 @property (nonatomic, readonly, retain) NSMutableArray *services;
 @property (nonatomic, readonly, retain) NSLock *updateLock;
-@property (nonatomic, readonly) BOOL waitingForReady;
+@property (nonatomic, readonly) bool waitingForReady;
 
-+ (int)authorizationStatus;
++ (long long)authorizationStatus;
 
 - (void).cxx_destruct;
 - (void)addService:(id)arg1;
@@ -46,7 +46,7 @@
 - (id)characteristicIDs;
 - (void)dealloc;
 - (id)delegate;
-- (void)forEachCentral:(id /* block */)arg1;
+- (void)forEachCentral:(id)arg1;
 - (void)handleAdvertisingStarted:(id)arg1;
 - (void)handleAdvertisingStopped:(id)arg1;
 - (void)handleConnectionParametersUpdated:(id)arg1;
@@ -62,27 +62,27 @@
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2 options:(id)arg3;
-- (BOOL)isAdvertising;
-- (BOOL)isMsgAllowedAlways:(unsigned short)arg1;
-- (BOOL)isMsgAllowedWhenOff:(unsigned short)arg1;
+- (bool)isAdvertising;
+- (bool)isMsgAllowedAlways:(unsigned short)arg1;
+- (bool)isMsgAllowedWhenOff:(unsigned short)arg1;
 - (id)multipleAdvertisingSupported;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)peerWithInfo:(id)arg1;
-- (BOOL)readyForUpdates;
+- (bool)readyForUpdates;
 - (void)removeAllServices;
 - (void)removeService:(id)arg1;
-- (void)respondToRequest:(id)arg1 withResult:(int)arg2;
-- (void)respondToTransaction:(id)arg1 value:(id)arg2 attributeID:(id)arg3 result:(int)arg4;
+- (void)respondToRequest:(id)arg1 withResult:(long long)arg2;
+- (void)respondToTransaction:(id)arg1 value:(id)arg2 attributeID:(id)arg3 result:(long long)arg4;
 - (id)services;
 - (void)setDelegate:(id)arg1;
-- (void)setDesiredConnectionLatency:(int)arg1 forCentral:(id)arg2;
-- (void)setIsAdvertising:(BOOL)arg1;
+- (void)setDesiredConnectionLatency:(long long)arg1 forCentral:(id)arg2;
+- (void)setIsAdvertising:(bool)arg1;
 - (void)setMultipleAdvertisingSupported:(id)arg1;
 - (void)startAdvertising:(id)arg1;
 - (void)stopAdvertising;
-- (BOOL)supportsMultipleAdvertising;
+- (bool)supportsMultipleAdvertising;
 - (id)updateLock;
-- (BOOL)updateValue:(id)arg1 forCharacteristic:(id)arg2 onSubscribedCentrals:(id)arg3;
-- (BOOL)waitingForReady;
+- (bool)updateValue:(id)arg1 forCharacteristic:(id)arg2 onSubscribedCentrals:(id)arg3;
+- (bool)waitingForReady;
 
 @end

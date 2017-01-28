@@ -3,26 +3,26 @@
  */
 
 @interface MCTeslaConfiguration : NSObject {
-    id /* block */  _callback;
+    id  _callback;
     NSXPCConnection * _connection;
-    BOOL  _fetching;
+    bool  _fetching;
 }
 
-@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, copy) id callback;
 @property (nonatomic, retain) NSXPCConnection *connection;
-@property (getter=isFetching, nonatomic) BOOL fetching;
+@property (getter=isFetching, nonatomic) bool fetching;
 
 - (void).cxx_destruct;
-- (id /* block */)callback;
+- (id)callback;
 - (id)connection;
 - (id)connectionError;
 - (void)dealloc;
-- (void)fetchConfigurationWithCompletionBlock:(id /* block */)arg1;
+- (void)fetchConfigurationWithCompletionBlock:(id)arg1;
 - (void)fetchDidFailWithError:(id)arg1;
 - (id)init;
-- (BOOL)isFetching;
-- (void)setCallback:(id /* block */)arg1;
+- (bool)isFetching;
+- (void)setCallback:(id)arg1;
 - (void)setConnection:(id)arg1;
-- (void)setFetching:(BOOL)arg1;
+- (void)setFetching:(bool)arg1;
 
 @end

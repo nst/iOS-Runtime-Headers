@@ -6,8 +6,8 @@
 @required
 
 - (NSString *)burstIdentifier;
-- (BOOL)isHDR;
-- (unsigned int)numberOfRepresentedAssets;
+- (bool)isHDR;
+- (unsigned long long)numberOfRepresentedAssets;
 - (NSURL *)persistenceURL;
 - (UIImage *)placeholderImage;
 

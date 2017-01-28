@@ -8,10 +8,10 @@
 
 @property (readonly) unsigned short type;
 
-- (BOOL)_checkSize:(unsigned long)arg1;
-- (BOOL)_checkType:(unsigned short)arg1;
+- (bool)_checkSize:(unsigned long long)arg1;
+- (bool)_checkType:(unsigned short)arg1;
 - (id)data;
-- (id)initWithBytes:(const void*)arg1 length:(unsigned long)arg2;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned long long)arg2;
 - (id)initWithMessageType:(unsigned short)arg1;
 - (unsigned short)type;
 

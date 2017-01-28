@@ -7,17 +7,17 @@
     NSDate * _creation;
     int  _role;
     NSUUID * _sessionID;
-    BOOL  _submitted;
+    bool  _submitted;
 }
 
 @property (nonatomic, readonly) int closeReason;
 @property (nonatomic, retain) NSDate *creation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int role;
 @property (nonatomic, readonly) NSUUID *sessionID;
-@property (nonatomic) BOOL submitted;
+@property (nonatomic) bool submitted;
 @property (readonly) Class superclass;
 
 + (int)closeReasonFromError:(id)arg1;
@@ -28,13 +28,13 @@
 - (unsigned int)AWDMessageType;
 - (int)closeReason;
 - (id)creation;
-- (id)initWithClientMode:(BOOL)arg1 sessionID:(id)arg2;
+- (id)initWithClientMode:(bool)arg1 sessionID:(id)arg2;
 - (id)metricForAWD;
 - (void)open;
 - (int)role;
 - (id)sessionID;
 - (void)setCreation:(id)arg1;
-- (void)setSubmitted:(BOOL)arg1;
-- (BOOL)submitted;
+- (void)setSubmitted:(bool)arg1;
+- (bool)submitted;
 
 @end

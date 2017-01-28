@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSMutableSet *connections;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<SpotlightReceiver> *receiver;
 @property (readonly) Class superclass;
 
@@ -18,18 +18,18 @@
 + (void)startListening:(id)arg1 withReceiver:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id)arg4;
+- (void)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id)arg4;
 - (id)connections;
-- (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)deleteFromBundle:(id)arg1 sinceDate:(id)arg2 domains:(id)arg3 deletes:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)fetchSetupInfoWithCompletionHandler:(id /* block */)arg1;
-- (void)indexFromBundle:(id)arg1 protectionClass:(id)arg2 items:(id)arg3 itemsContent:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2 completionHandler:(id)arg3;
+- (void)deleteFromBundle:(id)arg1 sinceDate:(id)arg2 domains:(id)arg3 deletes:(id)arg4 completionHandler:(id)arg5;
+- (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id)arg4;
+- (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(id)arg4;
+- (void)fetchSetupInfoWithCompletionHandler:(id)arg1;
+- (void)indexFromBundle:(id)arg1 protectionClass:(id)arg2 items:(id)arg3 itemsContent:(id)arg4 completionHandler:(id)arg5;
 - (id)initWithReceiver:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)purgeFromBundle:(id)arg1 identifiers:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)purgeFromBundle:(id)arg1 identifiers:(id)arg2 completionHandler:(id)arg3;
 - (id)receiver;
 - (void)setConnections:(id)arg1;
 - (id)xpcInterface;

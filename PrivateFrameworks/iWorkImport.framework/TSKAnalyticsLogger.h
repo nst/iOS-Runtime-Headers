@@ -5,56 +5,56 @@
 @interface TSKAnalyticsLogger : NSObject {
     NSString * _domain;
     struct { 
-        int majorVersion; 
-        int minorVersion; 
-        int patchVersion; 
+        long long majorVersion; 
+        long long minorVersion; 
+        long long patchVersion; 
     }  _minOSXVersion;
     struct { 
-        int majorVersion; 
-        int minorVersion; 
-        int patchVersion; 
+        long long majorVersion; 
+        long long minorVersion; 
+        long long patchVersion; 
     }  _miniOSVersion;
-    BOOL  _recalculateWillLog;
-    int  _samplingPercentage;
-    BOOL  _shouldSummarize;
-    BOOL  _willLogAnalytics;
+    bool  _recalculateWillLog;
+    long long  _samplingPercentage;
+    bool  _shouldSummarize;
+    bool  _willLogAnalytics;
 }
 
-@property (nonatomic, readonly) BOOL canLogAnalytics;
+@property (nonatomic, readonly) bool canLogAnalytics;
 @property (nonatomic, readonly) NSString *domain;
-@property (nonatomic) struct { int x1; int x2; int x3; } minOSXVersion;
-@property (nonatomic) struct { int x1; int x2; int x3; } miniOSVersion;
-@property (nonatomic) int samplingPercentage;
-@property (nonatomic) BOOL shouldSummarize;
-@property (nonatomic, readonly) BOOL willLogAnalytics;
+@property (nonatomic) struct { long long x1; long long x2; long long x3; } minOSXVersion;
+@property (nonatomic) struct { long long x1; long long x2; long long x3; } miniOSVersion;
+@property (nonatomic) long long samplingPercentage;
+@property (nonatomic) bool shouldSummarize;
+@property (nonatomic, readonly) bool willLogAnalytics;
 
-+ (void)logBoolValue:(BOOL)arg1 forKey:(id)arg2 inDomain:(id)arg3;
++ (void)logBoolValue:(bool)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (void)logDoubleValue:(double)arg1 forKey:(id)arg2 inDomain:(id)arg3;
-+ (void)logIntegerValue:(int)arg1 forKey:(id)arg2 inDomain:(id)arg3;
++ (void)logIntegerValue:(long long)arg1 forKey:(id)arg2 inDomain:(id)arg3;
 + (id)loggerWithDomain:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)canLogAnalytics;
+- (bool)canLogAnalytics;
 - (id)domain;
 - (void)finishMessage;
 - (id)init;
 - (id)initWithDomain:(id)arg1;
-- (void)logBoolValue:(BOOL)arg1 forKey:(id)arg2;
+- (void)logBoolValue:(bool)arg1 forKey:(id)arg2;
 - (void)logDoubleValue:(double)arg1 forKey:(id)arg2;
-- (void)logIntegerValue:(int)arg1 forKey:(id)arg2;
-- (struct { int x1; int x2; int x3; })minOSXVersion;
-- (struct { int x1; int x2; int x3; })miniOSVersion;
+- (void)logIntegerValue:(long long)arg1 forKey:(id)arg2;
+- (struct { long long x1; long long x2; long long x3; })minOSXVersion;
+- (struct { long long x1; long long x2; long long x3; })miniOSVersion;
 - (void)p_logASLMessageWithDoubleValue:(double)arg1 forKey:(id)arg2;
-- (void)p_logASLMessageWithIntegerValue:(int)arg1 forKey:(id)arg2;
+- (void)p_logASLMessageWithIntegerValue:(long long)arg1 forKey:(id)arg2;
 - (void)p_logASLMessageWithValueString:(char *)arg1 forKey:(id)arg2;
 - (id)p_qualifiedStringForKey:(id)arg1;
-- (int)samplingPercentage;
-- (void)setMinOSXVersion:(struct { int x1; int x2; int x3; })arg1;
-- (void)setMiniOSVersion:(struct { int x1; int x2; int x3; })arg1;
-- (void)setSamplingPercentage:(int)arg1;
-- (void)setShouldSummarize:(BOOL)arg1;
-- (BOOL)shouldSummarize;
+- (long long)samplingPercentage;
+- (void)setMinOSXVersion:(struct { long long x1; long long x2; long long x3; })arg1;
+- (void)setMiniOSVersion:(struct { long long x1; long long x2; long long x3; })arg1;
+- (void)setSamplingPercentage:(long long)arg1;
+- (void)setShouldSummarize:(bool)arg1;
+- (bool)shouldSummarize;
 - (void)startMessage;
-- (BOOL)willLogAnalytics;
+- (bool)willLogAnalytics;
 
 @end

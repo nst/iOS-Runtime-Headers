@@ -11,7 +11,7 @@
     unsigned short  mType;
 }
 
-- (BOOL)autoInsets;
+- (bool)autoInsets;
 - (void)dealloc;
 - (float)fillAngle;
 - (float)fillBgAlpha;
@@ -21,20 +21,20 @@
 - (float)fillFocus;
 - (id)fillGradientColors;
 - (id)fillType;
-- (BOOL)fitShapeToText;
+- (bool)fitShapeToText;
 - (id)imageFillId;
 - (id)imageFillTitle;
 - (id)imageRelId;
 - (id)initWithShape:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 type:(unsigned short)arg2 packagePart:(id)arg3 state:(id)arg4;
-- (BOOL)isFillOK;
-- (BOOL)isFilled;
-- (BOOL)isImage;
-- (BOOL)isPolyline;
-- (BOOL)isShadowOK;
-- (BOOL)isShadowed;
-- (BOOL)isStrokeOK;
-- (BOOL)isStroked;
-- (BOOL)isWordArt;
+- (bool)isFillOK;
+- (bool)isFilled;
+- (bool)isImage;
+- (bool)isPolyline;
+- (bool)isShadowOK;
+- (bool)isShadowed;
+- (bool)isStrokeOK;
+- (bool)isStroked;
+- (bool)isWordArt;
 - (id)limo;
 - (id)movieRelId;
 - (id)oavState;
@@ -43,7 +43,7 @@
 - (id)points;
 - (float)shadowAlpha;
 - (id)shadowColor;
-- (struct CGPoint { float x1; float x2; })shadowOffsets;
+- (struct CGPoint { double x1; double x2; })shadowOffsets;
 - (id)shadowType;
 - (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)shape;
 - (id)strokeBgColor;

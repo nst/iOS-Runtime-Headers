@@ -9,7 +9,7 @@
 }
 
 + (id)addParams:(id)arg1 toParameterizedString:(id)arg2;
-+ (id)addParams:(id)arg1 toParameterizedString:(id)arg2 allowAlternatives:(BOOL)arg3;
++ (id)addParams:(id)arg1 toParameterizedString:(id)arg2 allowAlternatives:(bool)arg3;
 + (id)addressDictionaryToString:(id)arg1;
 + (id)parseISO8601:(id)arg1;
 
@@ -20,6 +20,6 @@
 - (id)init;
 - (id)jsonLdOutputFromEntity:(id)arg1;
 - (id)packedEntityForJS:(id)arg1;
-- (BOOL)shouldIgnorePipelineEntity:(id)arg1;
+- (bool)shouldIgnorePipelineEntity:(id)arg1;
 
 @end

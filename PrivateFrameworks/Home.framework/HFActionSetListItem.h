@@ -4,12 +4,12 @@
 
 @interface HFActionSetListItem : HFItem {
     HMHome * _home;
-    BOOL  _onlyShowsFavorites;
+    bool  _onlyShowsFavorites;
     HMRoom * _room;
 }
 
 @property (nonatomic, readonly) HMHome *home;
-@property (nonatomic) BOOL onlyShowsFavorites;
+@property (nonatomic) bool onlyShowsFavorites;
 @property (nonatomic, readonly) HMRoom *room;
 
 - (void).cxx_destruct;
@@ -17,8 +17,8 @@
 - (id)home;
 - (id)init;
 - (id)initWithHome:(id)arg1 room:(id)arg2;
-- (BOOL)onlyShowsFavorites;
+- (bool)onlyShowsFavorites;
 - (id)room;
-- (void)setOnlyShowsFavorites:(BOOL)arg1;
+- (void)setOnlyShowsFavorites:(bool)arg1;
 
 @end

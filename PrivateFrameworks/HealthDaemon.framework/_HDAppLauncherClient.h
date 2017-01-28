@@ -4,25 +4,25 @@
 
 @interface _HDAppLauncherClient : NSObject {
     NSMutableDictionary * _expirationDateByRegistrationIdentifier;
-    BOOL  _launching;
-    BOOL  _retry;
+    bool  _launching;
+    bool  _retry;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *expirationDateByRegistrationIdentifier;
-@property (nonatomic) BOOL launching;
-@property (nonatomic) BOOL retry;
+@property (nonatomic) bool launching;
+@property (nonatomic) bool retry;
 
 - (void).cxx_destruct;
-- (BOOL)cleanUpExpiredRegistrationsWithDate:(id)arg1;
+- (bool)cleanUpExpiredRegistrationsWithDate:(id)arg1;
 - (id)expirationDateByRegistrationIdentifier;
-- (BOOL)hasValidRegistrationByDate:(id)arg1;
+- (bool)hasValidRegistrationByDate:(id)arg1;
 - (id)init;
-- (BOOL)launching;
+- (bool)launching;
 - (void)registerIdentifier:(id)arg1 withDate:(id)arg2;
-- (BOOL)retry;
+- (bool)retry;
 - (void)setExpirationDateByRegistrationIdentifier:(id)arg1;
-- (void)setLaunching:(BOOL)arg1;
-- (void)setRetry:(BOOL)arg1;
+- (void)setLaunching:(bool)arg1;
+- (void)setRetry:(bool)arg1;
 - (void)unregisterIdentifier:(id)arg1;
 
 @end

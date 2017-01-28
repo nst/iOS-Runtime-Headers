@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSAppDocumentControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) IKViewElement *templateElement;
 @property (nonatomic, retain) VSViewModel *viewModel;
@@ -27,10 +27,11 @@
 - (void)_notiftyDidUpdateViewModel;
 - (void)_startObservingViewModel:(id)arg1;
 - (void)_stopObservingViewModel:(id)arg1;
-- (BOOL)_updateViewModel:(id)arg1 WithError:(id*)arg2;
+- (bool)_updateViewModel:(id)arg1 WithError:(id*)arg2;
 - (id)appDocument;
 - (void)dealloc;
 - (id)delegate;
+- (bool)document:(id)arg1 evaluateStyleMediaQuery:(id)arg2;
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
 - (id)init;

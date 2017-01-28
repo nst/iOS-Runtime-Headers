@@ -11,7 +11,7 @@
 - (void)locationManagerDidReset:(MKLocationManager *)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(MKLocationManager *)arg1;
 - (void)locationManagerFailedToUpdateLocation:(MKLocationManager *)arg1 withError:(NSError *)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(MKLocationManager *)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(MKLocationManager *)arg1;
 - (void)locationManagerUpdatedLocation:(MKLocationManager *)arg1;
 
 @end

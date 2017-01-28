@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) LPImageViewStyle *trailingIcon;
 
 - (void).cxx_destruct;
-- (id)initWithPlatform:(int)arg1;
+- (id)initWithPlatform:(long long)arg1;
 - (id)leadingAccessory;
 - (id)leadingIcon;
 - (id)minimumWidth;

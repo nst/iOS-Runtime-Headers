@@ -9,15 +9,15 @@
 @property (nonatomic, retain) NSString *mimeType;
 @property (nonatomic, retain) NoteObject *note;
 
-+ (BOOL)applyFileAttributesForAttachment:(id)arg1 error:(id*)arg2;
++ (bool)applyFileAttributesForAttachment:(id)arg1 error:(id*)arg2;
 + (id)attachmentDirectoryPathForAttachmentObjectID:(id)arg1 error:(id*)arg2;
 + (id)attachmentDirectoryURLForAttachmentObjectID:(id)arg1 error:(id*)arg2;
-+ (BOOL)migrateAttachmentRelatedFilesInContext:(id)arg1 error:(id*)arg2;
-+ (BOOL)migrateFileForAttachment:(id)arg1 toCurrentAttachmentPathWithError:(id*)arg2;
++ (bool)migrateAttachmentRelatedFilesInContext:(id)arg1 error:(id*)arg2;
++ (bool)migrateFileForAttachment:(id)arg1 toCurrentAttachmentPathWithError:(id*)arg2;
 
 - (id)attachmentDataFileURLWithError:(id*)arg1;
 - (id)attachmentDataWithError:(id*)arg1;
-- (BOOL)persistAttachmentData:(id)arg1 error:(id*)arg2;
+- (bool)persistAttachmentData:(id)arg1 error:(id*)arg2;
 - (void)prepareForDeletion;
 
 @end

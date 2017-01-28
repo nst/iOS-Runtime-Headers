@@ -23,6 +23,6 @@
 - (void*)playbackQueue;
 - (unsigned int)playbackState;
 - (id)supportedCommands;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

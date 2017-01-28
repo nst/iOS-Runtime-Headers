@@ -5,6 +5,6 @@
 @interface UIStatusBarNavigationItemView : UIStatusBarAppIconItemView
 
 - (id)_appBundleIdentifier;
-- (int)buttonType;
+- (long long)buttonType;
 
 @end

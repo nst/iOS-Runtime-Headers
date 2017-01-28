@@ -4,7 +4,7 @@
 
 @interface WGCalendarWidgetInfo : WGWidgetInfo
 
-+ (BOOL)isCalendarExtension:(id)arg1;
++ (bool)isCalendarExtension:(id)arg1;
 
 - (void)_handleSignificantTimeChange:(id)arg1;
 - (id)_iconWithFormat:(int)arg1;

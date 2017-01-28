@@ -3,24 +3,24 @@
  */
 
 @interface PKUIAnimationDelegate : NSObject <CAAnimationDelegate> {
-    id /* block */  _completionHandler;
-    id /* block */  _didStartHandler;
+    id  _completionHandler;
+    id  _didStartHandler;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ didStartHandler;
-@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id didStartHandler;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)animationDidStart:(id)arg1;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id /* block */)completionHandler;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (id)completionHandler;
 - (void)dealloc;
-- (id /* block */)didStartHandler;
-- (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setDidStartHandler:(id /* block */)arg1;
+- (id)didStartHandler;
+- (void)setCompletionHandler:(id)arg1;
+- (void)setDidStartHandler:(id)arg1;
 
 @end

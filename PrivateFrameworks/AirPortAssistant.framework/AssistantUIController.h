@@ -3,7 +3,7 @@
  */
 
 @interface AssistantUIController : NSObject <AssistantUIDelegateResult, AutoGuessUIDelegate, SetupUIConfigDelegate, SetupUIDelegate, StepByStepUIDelegate> {
-    long  _assistantResult;
+    int  _assistantResult;
     AutoGuessController * _autoGuessController;
     int  _connectionStatusSelectorAwaitingResolution;
     id  _delegate;
@@ -22,7 +22,7 @@
     NSDictionary * _targetScanRecord;
 }
 
-@property (readonly) long assistantResult;
+@property (readonly) int assistantResult;
 @property (retain) AutoGuessController *autoGuessController;
 @property (readonly) int connectionStatusSelectorAwaitingResolution;
 @property id delegate;
@@ -40,19 +40,19 @@
 @property (retain) NSString *targetMACAddress;
 @property (retain) NSDictionary *targetScanRecord;
 
-- (long)assistantResult;
+- (int)assistantResult;
 - (id)autoGuessController;
 - (void)autoguessProgressComplete:(id)arg1;
 - (void)autoguessProgressUpdated:(int)arg1 paramString:(id)arg2;
 - (void)autoguessUpdateTargetInfo:(id)arg1;
-- (long)cancelCurrentAssistantState:(BOOL)arg1;
+- (int)cancelCurrentAssistantState:(bool)arg1;
 - (int)connectionStatusSelectorAwaitingResolution;
 - (void)dealloc;
 - (id)delegate;
-- (void)deliverSetupUIConfigResult:(long)arg1 withOptions:(id)arg2;
-- (long)doneWithAssistant:(BOOL)arg1;
+- (void)deliverSetupUIConfigResult:(int)arg1 withOptions:(id)arg2;
+- (int)doneWithAssistant:(bool)arg1;
 - (id)guessCompleteDict;
-- (void)handlePresentAutoGuessUIFromAutoGuessCompleteResult:(BOOL)arg1;
+- (void)handlePresentAutoGuessUIFromAutoGuessCompleteResult:(bool)arg1;
 - (id)init;
 - (id)lastAssociatedInfo;
 - (id)lastAutoguessInstrumentation;
@@ -60,12 +60,12 @@
 - (id)lastStepByStepInstrumentation;
 - (id)modifyTopoUIInLayer:(id)arg1 withLayout:(id)arg2 andOwningView:(id)arg3 targetProductID:(id)arg4 targetDeviceKind:(id)arg5 targetName:(id)arg6 targetWiFiName:(id)arg7 sourceProductID:(id)arg8 sourceDeviceKind:(id)arg9 sourceName:(id)arg10 sourceWiFiName:(id)arg11 connectionType:(id)arg12;
 - (id)paramScanResults;
-- (void)presentUIForConnectionVerification:(int)arg1 status:(long)arg2 paramDict:(id)arg3;
-- (void)presentUIForConnectionVerificationResult:(long)arg1 withOptions:(id)arg2;
-- (void)presentUIForStepByStepNextStepResult:(long)arg1 withOptions:(id)arg2;
+- (void)presentUIForConnectionVerification:(int)arg1 status:(int)arg2 paramDict:(id)arg3;
+- (void)presentUIForConnectionVerificationResult:(int)arg1 withOptions:(id)arg2;
+- (void)presentUIForStepByStepNextStepResult:(int)arg1 withOptions:(id)arg2;
 - (void)presentUIForUIConfigPrompt:(int)arg1 paramDict:(id)arg2;
 - (void)restoreNetworkDone:(id)arg1;
-- (BOOL)restoreNetworkIfNeeded:(BOOL)arg1 disassociateIfNeeded:(BOOL)arg2 forceQuit:(BOOL)arg3;
+- (bool)restoreNetworkIfNeeded:(bool)arg1 disassociateIfNeeded:(bool)arg2 forceQuit:(bool)arg3;
 - (void)setAutoGuessController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGuessCompleteDict:(id)arg1;
@@ -80,25 +80,25 @@
 - (void)setTargetBrowseRecord:(id)arg1;
 - (void)setTargetMACAddress:(id)arg1;
 - (void)setTargetScanRecord:(id)arg1;
-- (void)setupCompleteWithResult:(long)arg1 baseStationInfo:(id)arg2 forController:(id)arg3;
+- (void)setupCompleteWithResult:(int)arg1 baseStationInfo:(id)arg2 forController:(id)arg3;
 - (id)setupController;
 - (id)setupOptions;
-- (void)setupProgressUpdated:(int)arg1 status:(long)arg2 paramDict:(id)arg3 forController:(id)arg4;
-- (id)setupPromptStringForBaseInfo:(id)arg1 andResult:(long)arg2;
-- (void)setupUIConfigConnectionStatusUpdated:(int)arg1 status:(long)arg2 paramDict:(id)arg3 forController:(id)arg4;
+- (void)setupProgressUpdated:(int)arg1 status:(int)arg2 paramDict:(id)arg3 forController:(id)arg4;
+- (id)setupPromptStringForBaseInfo:(id)arg1 andResult:(int)arg2;
+- (void)setupUIConfigConnectionStatusUpdated:(int)arg1 status:(int)arg2 paramDict:(id)arg3 forController:(id)arg4;
 - (void)setupUIConfigPrompt:(int)arg1 paramDict:(id)arg2 forController:(id)arg3;
-- (void)showUIConfigPromptResult:(long)arg1 withOptions:(id)arg2;
-- (long)startAutoGuess;
-- (long)startRestoreFromAutoGuessRecommendation;
-- (long)startRestoreNetwork:(id)arg1;
-- (long)startSetupFromAutoGuessRecommendation:(id)arg1;
-- (long)startSetupFromStepByStepResults:(id)arg1;
-- (long)startStepByStepFromAutoGuessRecommendation;
+- (void)showUIConfigPromptResult:(int)arg1 withOptions:(id)arg2;
+- (int)startAutoGuess;
+- (int)startRestoreFromAutoGuessRecommendation;
+- (int)startRestoreNetwork:(id)arg1;
+- (int)startSetupFromAutoGuessRecommendation:(id)arg1;
+- (int)startSetupFromStepByStepResults:(id)arg1;
+- (int)startStepByStepFromAutoGuessRecommendation;
 - (int)state;
-- (void)stepByStepCompleteWithResult:(long)arg1 paramDict:(id)arg2;
+- (void)stepByStepCompleteWithResult:(int)arg1 paramDict:(id)arg2;
 - (id)stepByStepController;
 - (void)stepByStepNextStep:(int)arg1 paramDict:(id)arg2;
-- (void)stepByStepProgressUpdated:(int)arg1 status:(long)arg2 paramString:(id)arg3;
+- (void)stepByStepProgressUpdated:(int)arg1 status:(int)arg2 paramString:(id)arg3;
 - (id)targetBrowseRecord;
 - (id)targetMACAddress;
 - (id)targetScanRecord;

@@ -4,6 +4,6 @@
 
 @interface SKUIAdFeedbackElement : SKUIViewElement
 
-+ (BOOL)isEnabled;
++ (bool)isEnabled;
 
 @end

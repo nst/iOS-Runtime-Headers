@@ -20,28 +20,24 @@
     void timelinessAuthority;
 }
 
-@property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } lastKnownCoordinate;
 @property (nonatomic, retain) EKTravelEngineHypothesis *lastKnownHypothesis;
 @property (nonatomic, retain) UIImage *lastKnownMapImage;
-@property (nonatomic) BOOL showExpandedMode;
+@property (nonatomic) bool showExpandedMode;
 
-- (id /* block */).cxx_destruct;
+- (id).cxx_destruct;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (struct CLLocationCoordinate2D { double x1; double x2; })lastKnownCoordinate;
 - (id)lastKnownHypothesis;
 - (id)lastKnownMapImage;
 - (void)loadView;
-- (void)locationManager:(id)arg1 didChangeAuthorization:(int)arg2;
-- (void)refreshWithAlarms:(id)arg1 events:(id)arg2 reminders:(id)arg3;
-- (void)restoreWithHypothesis:(id)arg1 mapImage:(id)arg2 showExpandedMode:(BOOL)arg3 lastKnownCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg4;
-- (void)setLastKnownCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+- (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (void)refresh:(id)arg1 events:(id)arg2 reminders:(id)arg3;
 - (void)setLastKnownHypothesis:(id)arg1;
 - (void)setLastKnownMapImage:(id)arg1;
-- (void)setShowExpandedMode:(BOOL)arg1;
-- (BOOL)showExpandedMode;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)setShowExpandedMode:(bool)arg1;
+- (bool)showExpandedMode;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

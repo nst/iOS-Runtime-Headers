@@ -3,24 +3,24 @@
  */
 
 @interface SFText : NSObject <NSSecureCoding> {
-    unsigned int  _maxLines;
+    unsigned long long  _maxLines;
     NSString * _text;
 }
 
-@property (nonatomic) unsigned int maxLines;
+@property (nonatomic) unsigned long long maxLines;
 @property (nonatomic, copy) NSString *text;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)textWithString:(id)arg1;
 
 - (void).cxx_destruct;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)length;
-- (unsigned int)maxLines;
-- (void)setMaxLines:(unsigned int)arg1;
+- (unsigned long long)length;
+- (unsigned long long)maxLines;
+- (void)setMaxLines:(unsigned long long)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 

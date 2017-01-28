@@ -5,7 +5,7 @@
 @interface MecabraAnalysisContextImpl : NSObject {
     NSMutableArray * _candidateContext;
     NSMutableString * _candidateContextString;
-    BOOL  _rebuildCandidateContextString;
+    bool  _rebuildCandidateContextString;
     NSString * _stringBeforeCaret;
     NSString * _stringContext;
 }
@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSMutableArray *candidateContext;
 @property (nonatomic, readonly) NSArray *candidateContextForAnalysis;
 @property (nonatomic, retain) NSMutableString *candidateContextString;
-@property (nonatomic) BOOL rebuildCandidateContextString;
+@property (nonatomic) bool rebuildCandidateContextString;
 @property (nonatomic, retain) NSString *stringBeforeCaret;
 @property (nonatomic, retain) NSString *stringContext;
 @property (nonatomic, readonly) NSString *stringContextForAnalysis;
@@ -26,13 +26,13 @@
 - (void)clearContextForAddition;
 - (void)dealloc;
 - (id)init;
-- (struct { unsigned int x1; unsigned int x2; })positionInContextWithPartialDocumentStringLength:(unsigned int)arg1;
-- (BOOL)rebuildCandidateContextString;
+- (struct { unsigned long long x1; unsigned long long x2; })positionInContextWithPartialDocumentStringLength:(unsigned long long)arg1;
+- (bool)rebuildCandidateContextString;
 - (void)reset;
 - (void)revertLastCommittedCandidate;
 - (void)setCandidateContext:(id)arg1;
 - (void)setCandidateContextString:(id)arg1;
-- (void)setRebuildCandidateContextString:(BOOL)arg1;
+- (void)setRebuildCandidateContextString:(bool)arg1;
 - (void)setStringBeforeCaret:(id)arg1;
 - (void)setStringContext:(id)arg1;
 - (id)stringBeforeCaret;

@@ -13,7 +13,7 @@
 - (void)_updateConstraints;
 - (id)constraintsToUpdate;
 - (void)dealloc;
-- (void)registerConstraint:(id)arg1 leading:(float)arg2 forFontTextStyle:(id)arg3;
+- (void)registerConstraint:(id)arg1 leading:(double)arg2 forFontTextStyle:(id)arg3;
 - (void)setConstraintsToUpdate:(id)arg1;
 - (void)updateConstraint:(id)arg1;
 

@@ -5,6 +5,6 @@
 
 @required
 
-- (int)barPosition;
+- (long long)barPosition;
 
 @end

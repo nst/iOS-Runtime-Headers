@@ -21,9 +21,9 @@
     id  _tmpRefObjMap;
 }
 
-@property int decodingFailurePolicy;
+@property long long decodingFailurePolicy;
 @property <NSKeyedUnarchiverDelegate> *delegate;
-@property BOOL requiresSecureCoding;
+@property bool requiresSecureCoding;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -37,7 +37,7 @@
 
 - (void)__setError:(id)arg1;
 - (id)_allowedClassNames;
-- (BOOL)_allowsValueCoding;
+- (bool)_allowsValueCoding;
 - (id)_blobForCurrentObject;
 - (unsigned int)_currentUniqueIdentifier;
 - (id)_decodeArrayOfObjectsForKey:(id)arg1;
@@ -46,16 +46,16 @@
 - (void)_replaceObject:(id)arg1 withObject:(id)arg2;
 - (void)_setAllowedClassNames:(id)arg1;
 - (void)_temporaryMapReplaceObject:(id)arg1 withObject:(id)arg2;
-- (BOOL)_validatePropertyListClass:(Class)arg1 forKey:(id)arg2;
+- (bool)_validatePropertyListClass:(Class)arg1 forKey:(id)arg2;
 - (id)allowedClasses;
-- (BOOL)allowsKeyedCoding;
+- (bool)allowsKeyedCoding;
 - (Class)classForClassName:(id)arg1;
-- (BOOL)containsValueForKey:(id)arg1;
+- (bool)containsValueForKey:(id)arg1;
 - (void)dealloc;
-- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
-- (BOOL)decodeBoolForKey:(id)arg1;
-- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int*)arg2;
-- (void*)decodeBytesWithReturnedLength:(unsigned int*)arg1;
+- (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned long long)arg2 at:(void*)arg3;
+- (bool)decodeBoolForKey:(id)arg1;
+- (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned long long*)arg2;
+- (void*)decodeBytesWithReturnedLength:(unsigned long long*)arg1;
 - (id)decodeDataObject;
 - (double)decodeDoubleForKey:(id)arg1;
 - (float)decodeFloatForKey:(id)arg1;
@@ -68,7 +68,7 @@
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (void)decodeValuesOfObjCTypes:(const char *)arg1;
-- (int)decodingFailurePolicy;
+- (long long)decodingFailurePolicy;
 - (id)delegate;
 - (id)description;
 - (id)error;
@@ -77,14 +77,14 @@
 - (id)initForReadingWithData:(id)arg1;
 - (id)initWithStream:(id)arg1;
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
-- (BOOL)requiresSecureCoding;
+- (bool)requiresSecureCoding;
 - (void)setAllowedClasses:(id)arg1;
 - (void)setClass:(Class)arg1 forClassName:(id)arg2;
-- (void)setDecodingFailurePolicy:(int)arg1;
+- (void)setDecodingFailurePolicy:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRequiresSecureCoding:(BOOL)arg1;
+- (void)setRequiresSecureCoding:(bool)arg1;
 - (unsigned int)systemVersion;
-- (int)versionForClassName:(id)arg1;
+- (long long)versionForClassName:(id)arg1;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 

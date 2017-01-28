@@ -6,31 +6,31 @@
     NSLock * _alertLock;
     NSObject<OS_dispatch_queue> * _alertQueue;
     NSObject<OS_dispatch_semaphore> * _alertSema;
-    int  _alertState;
+    long long  _alertState;
     struct __CFUserNotification { } * _cfAlert;
-    BOOL  _handleActionsBeforeCallingCompletionHandler;
+    bool  _handleActionsBeforeCallingCompletionHandler;
     ICQOffer * _offer;
-    BOOL  _showOnlyInSpringboard;
+    bool  _showOnlyInSpringboard;
 }
 
-@property (nonatomic) BOOL handleActionsBeforeCallingCompletionHandler;
+@property (nonatomic) bool handleActionsBeforeCallingCompletionHandler;
 @property (nonatomic, readonly) ICQOffer *offer;
-@property (nonatomic) BOOL showOnlyInSpringboard;
+@property (nonatomic) bool showOnlyInSpringboard;
 
 + (void)dismissAlertsWithNotificationID:(id)arg1;
-+ (BOOL)shouldShowForOffer:(id)arg1;
++ (bool)shouldShowForOffer:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_handleLink:(id)arg1;
 - (void)dealloc;
 - (void)dismissAlert;
-- (BOOL)handleActionsBeforeCallingCompletionHandler;
+- (bool)handleActionsBeforeCallingCompletionHandler;
 - (id)init;
 - (id)initWithOffer:(id)arg1;
 - (id)offer;
-- (void)setHandleActionsBeforeCallingCompletionHandler:(BOOL)arg1;
-- (void)setShowOnlyInSpringboard:(BOOL)arg1;
-- (BOOL)showAlertWithCompletion:(id /* block */)arg1;
-- (BOOL)showOnlyInSpringboard;
+- (void)setHandleActionsBeforeCallingCompletionHandler:(bool)arg1;
+- (void)setShowOnlyInSpringboard:(bool)arg1;
+- (bool)showAlertWithCompletion:(id)arg1;
+- (bool)showOnlyInSpringboard;
 
 @end

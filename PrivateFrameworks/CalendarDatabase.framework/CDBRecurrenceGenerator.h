@@ -3,26 +3,26 @@
  */
 
 @interface CDBRecurrenceGenerator : NSObject {
-    BOOL  _allDay;
+    bool  _allDay;
     NSCalendar * _calendar;
     NSArray * _daysOfTheMonth;
     NSArray * _daysOfTheWeek;
     NSArray * _daysOfTheYear;
-    unsigned int  _duration;
+    unsigned long long  _duration;
     NSDate * _endDate;
     NSDate * _eventEndDate;
     NSDate * _eventStartDate;
     NSTimeZone * _eventTimeZone;
     int  _frequency;
-    long  _interval;
+    int  _interval;
     NSArray * _monthsOfTheYear;
     NSArray * _setPositions;
-    BOOL  _shouldPinMonthDays;
+    bool  _shouldPinMonthDays;
     int  _weekStart;
     NSArray * _weeksOfTheYear;
 }
 
-@property (nonatomic) BOOL allDay;
+@property (nonatomic) bool allDay;
 @property (nonatomic, copy) NSArray *daysOfTheMonth;
 @property (nonatomic, copy) NSArray *daysOfTheWeek;
 @property (nonatomic, copy) NSArray *daysOfTheYear;
@@ -36,21 +36,21 @@
 
 - (void).cxx_destruct;
 - (double)_convertAbsoluteTime:(double)arg1 fromTimeZone:(id)arg2 toTimeZone:(id)arg3;
-- (id)_copyDailyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
-- (id)_copyMonthlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
-- (id)_copyOccurrenceDatesWithBirthdayEvent:(void*)arg1 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg3 timeZone:(id)arg4 limit:(int)arg5 locked:(BOOL)arg6;
-- (id)_copySimpleYearlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
-- (id)_copyWeeklyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
-- (id)_copyYearlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned int)arg4;
-- (BOOL)_isSimpleYearlyRecurrence;
-- (void)_prepareForCalRecurrence:(void*)arg1 locked:(BOOL)arg2;
-- (void)_setupForCalEvent:(void*)arg1 locked:(BOOL)arg2;
-- (BOOL)_validateCalDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 pinned:(BOOL)arg2;
-- (BOOL)allDay;
-- (id)computeRecurrenceEndDate:(unsigned int)arg1;
-- (id)computeRecurrenceEndDateForCalEvent:(void*)arg1 recurrenceRule:(void*)arg2 count:(unsigned int)arg3 locked:(BOOL)arg4;
-- (id)copyOccurrenceDatesBetweenStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 timeZone:(id)arg3 limit:(int)arg4;
-- (id)copyOccurrenceDatesWithCalEvent:(void*)arg1 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg3 timeZone:(id)arg4 limit:(int)arg5 locked:(BOOL)arg6;
+- (id)_copyDailyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (id)_copyMonthlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (id)_copyOccurrenceDatesWithBirthdayEvent:(void*)arg1 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg3 timeZone:(id)arg4 limit:(long long)arg5 locked:(bool)arg6;
+- (id)_copySimpleYearlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (id)_copyWeeklyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (id)_copyYearlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
+- (bool)_isSimpleYearlyRecurrence;
+- (void)_prepareForCalRecurrence:(void*)arg1 locked:(bool)arg2;
+- (void)_setupForCalEvent:(void*)arg1 locked:(bool)arg2;
+- (bool)_validateCalDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 pinned:(bool)arg2;
+- (bool)allDay;
+- (id)computeRecurrenceEndDate:(unsigned long long)arg1;
+- (id)computeRecurrenceEndDateForCalEvent:(void*)arg1 recurrenceRule:(void*)arg2 count:(unsigned long long)arg3 locked:(bool)arg4;
+- (id)copyOccurrenceDatesBetweenStartDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg1 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 timeZone:(id)arg3 limit:(long long)arg4;
+- (id)copyOccurrenceDatesWithCalEvent:(void*)arg1 startDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg2 endDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })arg3 timeZone:(id)arg4 limit:(long long)arg5 locked:(bool)arg6;
 - (id)copyOccurrenceDatesWithInitialDate:(id)arg1 calRecurrences:(id)arg2 rangeStart:(id)arg3 rangeEnd:(id)arg4 timeZone:(id)arg5;
 - (id)daysOfTheMonth;
 - (id)daysOfTheWeek;
@@ -61,7 +61,7 @@
 - (id)eventTimeZone;
 - (id)init;
 - (id)monthsOfTheYear;
-- (void)setAllDay:(BOOL)arg1;
+- (void)setAllDay:(bool)arg1;
 - (void)setDaysOfTheMonth:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)setDaysOfTheYear:(id)arg1;

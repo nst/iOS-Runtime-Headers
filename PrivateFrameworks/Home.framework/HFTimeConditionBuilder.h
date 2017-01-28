@@ -3,12 +3,12 @@
  */
 
 @interface HFTimeConditionBuilder : HFConditionBuilder {
-    unsigned int  _comparisonType;
+    unsigned long long  _comparisonType;
 }
 
-@property (nonatomic) unsigned int comparisonType;
+@property (nonatomic) unsigned long long comparisonType;
 
-- (unsigned int)comparisonType;
-- (void)setComparisonType:(unsigned int)arg1;
+- (unsigned long long)comparisonType;
+- (void)setComparisonType:(unsigned long long)arg1;
 
 @end

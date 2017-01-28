@@ -11,15 +11,15 @@
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (id)detailGoalTextForPlayer:(id)arg1 withLeaderboard:(id)arg2;
-- (BOOL)detailsLoaded;
+- (bool)detailsLoaded;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)leaderboard;
-- (void)loadDetailsWithCompletionHandler:(id /* block */)arg1;
+- (void)loadDetailsWithCompletionHandler:(id)arg1;
 - (id)score;
 - (void)setInternal:(id)arg1;
 - (void)setScore:(id)arg1;

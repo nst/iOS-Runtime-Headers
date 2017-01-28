@@ -8,14 +8,14 @@
 
 @property (nonatomic, copy) NSString *reportsDirectoryPath;
 
-+ (BOOL)removeFilesFrom:(id)arg1 olderThanSecond:(double)arg2;
++ (bool)removeFilesFrom:(id)arg1 olderThanSecond:(double)arg2;
 + (id)submittedReports;
 + (id)submittedReportsInDirectory:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)init;
 - (id)initWithDirectoryPath:(id)arg1;
-- (BOOL)reportFilesMaintenance;
+- (bool)reportFilesMaintenance;
 - (id)reportsDirectoryPath;
 - (void)scheduleMaintenance;
 - (void)scheduleMaintenanceWithName:(id)arg1;

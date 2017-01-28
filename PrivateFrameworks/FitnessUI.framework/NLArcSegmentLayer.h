@@ -3,28 +3,28 @@
  */
 
 @interface NLArcSegmentLayer : CAShapeLayer {
-    float  _arcLineWidth;
-    int  _numberOfSegments;
-    float  _percentageFull;
-    float  _radius;
+    double  _arcLineWidth;
+    long long  _numberOfSegments;
+    double  _percentageFull;
+    double  _radius;
 }
 
-@property (nonatomic) float arcLineWidth;
-@property (nonatomic) int numberOfSegments;
-@property (nonatomic) float percentageFull;
-@property (nonatomic) float radius;
+@property (nonatomic) double arcLineWidth;
+@property (nonatomic) long long numberOfSegments;
+@property (nonatomic) double percentageFull;
+@property (nonatomic) double radius;
 
 - (void)_regeneratePath;
 - (id)actionForKey:(id)arg1;
-- (float)arcLineWidth;
+- (double)arcLineWidth;
 - (id)init;
-- (int)numberOfSegments;
-- (float)percentageFull;
-- (float)radius;
-- (void)setArcLineWidth:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNumberOfSegments:(int)arg1;
-- (void)setPercentageFull:(float)arg1;
-- (void)setRadius:(float)arg1;
+- (long long)numberOfSegments;
+- (double)percentageFull;
+- (double)radius;
+- (void)setArcLineWidth:(double)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNumberOfSegments:(long long)arg1;
+- (void)setPercentageFull:(double)arg1;
+- (void)setRadius:(double)arg1;
 
 @end

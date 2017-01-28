@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _MFMessageContext *messageContext;
 @property (readonly) Class superclass;
 
@@ -21,8 +21,8 @@
 - (id)messageContext;
 - (id)remoteProxy;
 - (void)setMessageContext:(id)arg1;
-- (void)stageAppItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)stageMediaItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)stageAppItem:(id)arg1 completionHandler:(id)arg2;
+- (void)stageMediaItem:(id)arg1 completionHandler:(id)arg2;
 - (id)viewController;
 
 @end

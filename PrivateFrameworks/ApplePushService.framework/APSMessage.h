@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, retain) NSString *correlationIdentifier;
-@property (nonatomic) unsigned int identifier;
+@property (nonatomic) unsigned long long identifier;
 @property (nonatomic, retain) NSString *topic;
 @property (nonatomic, retain) NSDictionary *userInfo;
 
@@ -21,7 +21,7 @@
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)guid;
-- (unsigned int)identifier;
+- (unsigned long long)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1 xpcMessage:(id)arg2;
@@ -30,7 +30,7 @@
 - (id)objectForKey:(id)arg1;
 - (void)setCorrelationIdentifier:(id)arg1;
 - (void)setGuid:(id)arg1;
-- (void)setIdentifier:(unsigned int)arg1;
+- (void)setIdentifier:(unsigned long long)arg1;
 - (void)setInstanceObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setTopic:(id)arg1;

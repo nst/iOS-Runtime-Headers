@@ -3,28 +3,28 @@
  */
 
 @interface NCNotificationListCellActionButtonsView : UIView <NCContentSizeCategoryAdjusting> {
-    BOOL  _adjustsFontForContentSizeCategory;
-    BOOL  _backgroundBlurred;
+    bool  _adjustsFontForContentSizeCategory;
+    bool  _backgroundBlurred;
     UIStackView * _buttonsStackView;
     UIView * _clippingView;
-    float  _defaultWidth;
-    float  _stretchedWidth;
+    double  _defaultWidth;
+    double  _stretchedWidth;
 }
 
-@property (nonatomic) BOOL adjustsFontForContentSizeCategory;
-@property (getter=isBackgroundBlurred, nonatomic) BOOL backgroundBlurred;
+@property (nonatomic) bool adjustsFontForContentSizeCategory;
+@property (getter=isBackgroundBlurred, nonatomic) bool backgroundBlurred;
 @property (nonatomic, retain) UIStackView *buttonsStackView;
 @property (nonatomic, retain) UIView *clippingView;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) float defaultWidth;
+@property (nonatomic, readonly) double defaultWidth;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
-@property (nonatomic) float stretchedWidth;
+@property (nonatomic) double stretchedWidth;
 @property (readonly) Class superclass;
 
 + (id)_actionButtonDescriptionsForNotificationRequest:(id)arg1 cell:(id)arg2;
-+ (unsigned int)numberOfActionButtonsForNotificationRequest:(id)arg1 cell:(id)arg2;
++ (unsigned long long)numberOfActionButtonsForNotificationRequest:(id)arg1 cell:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_configureButtonsStackViewIfNecessary;
@@ -32,22 +32,22 @@
 - (void)_configureDefaultWidth;
 - (void)_layoutButtonsStackView;
 - (void)_layoutClippingView;
-- (float)_maxAllowedButtonWidth;
-- (BOOL)adjustForContentSizeCategoryChange;
-- (BOOL)adjustsFontForContentSizeCategory;
+- (double)_maxAllowedButtonWidth;
+- (bool)adjustForContentSizeCategoryChange;
+- (bool)adjustsFontForContentSizeCategory;
 - (id)buttonsStackView;
 - (id)clippingView;
 - (void)configureCellActionButtonsForNotificationRequest:(id)arg1 cell:(id)arg2;
-- (float)defaultWidth;
-- (BOOL)isBackgroundBlurred;
+- (double)defaultWidth;
+- (bool)isBackgroundBlurred;
 - (void)layoutSubviews;
-- (void)setAdjustsFontForContentSizeCategory:(BOOL)arg1;
-- (void)setBackgroundBlurred:(BOOL)arg1;
+- (void)setAdjustsFontForContentSizeCategory:(bool)arg1;
+- (void)setBackgroundBlurred:(bool)arg1;
 - (void)setButtonsStackView:(id)arg1;
 - (void)setClippingView:(id)arg1;
-- (void)setStretchedWidth:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (float)stretchedWidth;
+- (void)setStretchedWidth:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (double)stretchedWidth;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 

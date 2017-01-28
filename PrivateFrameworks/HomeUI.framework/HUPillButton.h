@@ -5,29 +5,29 @@
 @interface HUPillButton : UIButton {
     UIView * _backgroundView;
     UILabel * _buttonLabel;
-    unsigned int  _style;
+    unsigned long long  _style;
 }
 
-@property (nonatomic) BOOL adjustsFontSizeToFitWidth;
+@property (nonatomic) bool adjustsFontSizeToFitWidth;
 @property (nonatomic, readonly) UIView *backgroundView;
 @property (nonatomic, readonly) UILabel *buttonLabel;
 @property (nonatomic, copy) NSString *buttonText;
-@property (nonatomic, readonly) unsigned int style;
+@property (nonatomic, readonly) unsigned long long style;
 
 - (void).cxx_destruct;
 - (void)_setupConstraints;
-- (BOOL)adjustsFontSizeToFitWidth;
+- (bool)adjustsFontSizeToFitWidth;
 - (id)backgroundView;
 - (id)buttonLabel;
 - (id)buttonText;
 - (void)didMoveToSuperview;
-- (id)initWithBackgroundStyle:(unsigned int)arg1;
+- (id)initWithBackgroundStyle:(unsigned long long)arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setAdjustsFontSizeToFitWidth:(bool)arg1;
 - (void)setButtonText:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (unsigned int)style;
+- (void)setHighlighted:(bool)arg1;
+- (unsigned long long)style;
 - (void)tintColorDidChange;
 
 @end

@@ -6,6 +6,6 @@
 
 + (id)sharedManager;
 
-- (void)setHoldWiFiAssertion:(BOOL)arg1;
+- (void)setHoldWiFiAssertion:(bool)arg1;
 
 @end

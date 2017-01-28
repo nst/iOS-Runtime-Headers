@@ -3,9 +3,9 @@
  */
 
 @interface _UIScreenEdgePanRecognizerSettings : _UISettings {
-    BOOL  _analysisFailureOverlayVisible;
-    BOOL  _analysisLoggingEnabled;
-    BOOL  _analysisLoggingOverlayVisible;
+    bool  _analysisFailureOverlayVisible;
+    bool  _analysisLoggingEnabled;
+    bool  _analysisLoggingOverlayVisible;
     _UIScreenEdgePanRecognizerCornerSettings * _cornerSettings;
     _UIScreenEdgePanRecognizerDwellSettings * _dwellSettings;
     _UIScreenEdgePanRecognizerEdgeSettings * _edgeSettings;
@@ -13,9 +13,9 @@
     NSString * _navigationGestureMode;
 }
 
-@property (nonatomic) BOOL analysisFailureOverlayVisible;
-@property (nonatomic) BOOL analysisLoggingEnabled;
-@property (nonatomic) BOOL analysisLoggingOverlayVisible;
+@property (nonatomic) bool analysisFailureOverlayVisible;
+@property (nonatomic) bool analysisLoggingEnabled;
+@property (nonatomic) bool analysisLoggingOverlayVisible;
 @property (nonatomic, retain) _UIScreenEdgePanRecognizerCornerSettings *cornerSettings;
 @property (nonatomic, retain) _UIScreenEdgePanRecognizerDwellSettings *dwellSettings;
 @property (nonatomic, retain) _UIScreenEdgePanRecognizerEdgeSettings *edgeSettings;
@@ -25,9 +25,9 @@
 + (id)settingsControllerModule;
 
 - (void).cxx_destruct;
-- (BOOL)analysisFailureOverlayVisible;
-- (BOOL)analysisLoggingEnabled;
-- (BOOL)analysisLoggingOverlayVisible;
+- (bool)analysisFailureOverlayVisible;
+- (bool)analysisLoggingEnabled;
+- (bool)analysisLoggingOverlayVisible;
 - (id)cornerSettings;
 - (id)dwellSettings;
 - (id)edgeSettings;
@@ -35,9 +35,9 @@
 - (id)multitaskingGestureModePost351;
 - (id)navigationGestureMode;
 - (id)navigationGestureModePost351;
-- (void)setAnalysisFailureOverlayVisible:(BOOL)arg1;
-- (void)setAnalysisLoggingEnabled:(BOOL)arg1;
-- (void)setAnalysisLoggingOverlayVisible:(BOOL)arg1;
+- (void)setAnalysisFailureOverlayVisible:(bool)arg1;
+- (void)setAnalysisLoggingEnabled:(bool)arg1;
+- (void)setAnalysisLoggingOverlayVisible:(bool)arg1;
 - (void)setCornerSettings:(id)arg1;
 - (void)setDefaultValues;
 - (void)setDwellSettings:(id)arg1;

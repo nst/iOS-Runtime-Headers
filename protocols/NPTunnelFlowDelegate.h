@@ -6,6 +6,6 @@
 @required
 
 - (void)flowDidClose:(NPTunnelFlow *)arg1;
-- (int)flowGetCurrentMTU;
+- (long long)flowGetCurrentMTU;
 
 @end

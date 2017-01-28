@@ -7,7 +7,7 @@
 
 - (_UILegibilitySettings *)legibilitySettings;
 - (void)setLegibilitySettings:(_UILegibilitySettings *)arg1;
-- (void)setStrength:(float)arg1;
-- (float)strength;
+- (void)setStrength:(double)arg1;
+- (double)strength;
 
 @end

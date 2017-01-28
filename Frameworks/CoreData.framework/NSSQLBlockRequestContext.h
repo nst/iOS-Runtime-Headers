@@ -3,12 +3,12 @@
  */
 
 @interface NSSQLBlockRequestContext : NSSQLStoreRequestContext {
-    id /* block */  _workBlock;
+    id  _workBlock;
 }
 
 - (void)dealloc;
 - (void)executeRequestUsingConnection:(id)arg1;
-- (id)initWithBlock:(id /* block */)arg1 context:(id)arg2 sqlCore:(id)arg3;
-- (BOOL)isWritingRequest;
+- (id)initWithBlock:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
+- (bool)isWritingRequest;
 
 @end

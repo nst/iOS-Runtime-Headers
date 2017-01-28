@@ -13,8 +13,8 @@
 - (void)_invalidateClientReplyTimer;
 - (void)_startClientReplyTimerWithFireDate:(id)arg1;
 - (void)_startNextClientReplyTimer;
-- (id)addClientReplyTimeoutForBulletin:(id)arg1 sectionID:(id)arg2 timeout:(double)arg3 handler:(id /* block */)arg4;
+- (id)addClientReplyTimeoutForBulletin:(id)arg1 sectionID:(id)arg2 timeout:(double)arg3 handler:(id)arg4;
 - (id)initWithQueue:(id)arg1;
-- (BOOL)invalidateClientReplyTimeout:(id)arg1;
+- (bool)invalidateClientReplyTimeout:(id)arg1;
 
 @end

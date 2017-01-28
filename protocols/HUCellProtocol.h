@@ -7,6 +7,6 @@
 
 - (HFItem *)item;
 - (void)setItem:(HFItem *)arg1;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 
 @end

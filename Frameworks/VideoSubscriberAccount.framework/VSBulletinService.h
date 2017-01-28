@@ -4,6 +4,6 @@
 
 @interface VSBulletinService : VSServiceListener
 
-+ (id)sharedService;
+- (id)init;
 
 @end

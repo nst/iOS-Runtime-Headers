@@ -5,7 +5,7 @@
 @interface _WKUserContentWorld : NSObject <WKObject> {
     struct ObjectStorage<API::UserContentWorld> { 
         struct type { 
-            unsigned char __lx[20]; 
+            unsigned char __lx[32]; 
         } data; 
     }  _userContentWorld;
 }
@@ -13,7 +13,7 @@
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (readonly) Class superclass;
 

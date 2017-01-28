@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)pictureInPictureViewController:(PGPictureInPictureViewController *)arg1 updateHostedWindowSize:(struct CGSize { float x1; float x2; })arg2 animationType:(int)arg3 initialSpringVelocity:(float)arg4;
+- (void)pictureInPictureViewController:(PGPictureInPictureViewController *)arg1 updateHostedWindowSize:(struct CGSize { double x1; double x2; })arg2 animationType:(long long)arg3 initialSpringVelocity:(double)arg4;
 - (void)pictureInPictureViewControllerActionButtonTapped:(PGPictureInPictureViewController *)arg1;
 - (void)pictureInPictureViewControllerCancelButtonTapped:(PGPictureInPictureViewController *)arg1;
 - (void)pictureInPictureViewControllerHostedWindowSizeChangeBegan:(PGPictureInPictureViewController *)arg1;

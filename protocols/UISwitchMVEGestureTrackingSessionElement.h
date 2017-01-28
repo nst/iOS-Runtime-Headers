@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)displayedOn;
-- (void)interactiveChangeToDisplayedOn:(BOOL)arg1;
+- (bool)displayedOn;
+- (void)interactiveChangeToDisplayedOn:(bool)arg1;
 - (void)sendStateChangeActions;
 
 @end

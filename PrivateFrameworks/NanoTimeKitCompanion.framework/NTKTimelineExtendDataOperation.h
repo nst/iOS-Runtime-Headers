@@ -4,11 +4,11 @@
 
 @interface NTKTimelineExtendDataOperation : NTKTimelineDataOperation {
     NSDate * _boundaryDate;
-    BOOL  _extendsLeft;
-    id /* block */  _handler;
+    bool  _extendsLeft;
+    id  _handler;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 
 - (void).cxx_destruct;
 - (void)_cancel;
@@ -16,9 +16,9 @@
 - (void)_extendRight;
 - (void)_invokeHandlerWithEntries:(id)arg1;
 - (void)_start;
-- (id /* block */)handler;
+- (id)handler;
 - (void)setExtendsLeftFromDate:(id)arg1;
 - (void)setExtendsRightFromDate:(id)arg1;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 
 @end

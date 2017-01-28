@@ -5,6 +5,6 @@
 
 @required
 
-- (void)logICSMessage:(NSString *)arg1 atLevel:(int)arg2;
+- (void)logICSMessage:(NSString *)arg1 atLevel:(long long)arg2;
 
 @end

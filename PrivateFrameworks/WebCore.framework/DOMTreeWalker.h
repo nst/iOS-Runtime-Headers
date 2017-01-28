@@ -5,14 +5,14 @@
 @interface DOMTreeWalker : DOMObject
 
 @property (retain) DOMNode *currentNode;
-@property (readonly) BOOL expandEntityReferences;
+@property (readonly) bool expandEntityReferences;
 @property (readonly) <DOMNodeFilter> *filter;
 @property (readonly) DOMNode *root;
 @property (readonly) unsigned int whatToShow;
 
 - (id)currentNode;
 - (void)dealloc;
-- (BOOL)expandEntityReferences;
+- (bool)expandEntityReferences;
 - (id)filter;
 - (id)firstChild;
 - (id)lastChild;

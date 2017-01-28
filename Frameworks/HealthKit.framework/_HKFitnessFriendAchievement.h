@@ -7,9 +7,10 @@
     NSString * _definitionIdentifier;
     NSUUID * _friendUUID;
     NSNumber * _value;
-    unsigned int  _workoutActivityType;
+    unsigned long long  _workoutActivityType;
 }
 
+@property (nonatomic, readonly) HDFitnessFriendsCloudKitCodableAchievement *codableAchievement;
 @property (nonatomic, retain) NSDate *completedDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSString *definitionIdentifier;
@@ -17,16 +18,16 @@
 @property (nonatomic, readonly) NSDate *filter_date;
 @property (nonatomic, readonly) NSUUID *filter_friendUUID;
 @property (nonatomic, retain) NSUUID *friendUUID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *value;
-@property (nonatomic) unsigned int workoutActivityType;
+@property (nonatomic) unsigned long long workoutActivityType;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)achievementWithDefinitionIdentifier:(id)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned int)arg4 friendUUID:(id)arg5;
++ (id)achievementWithDefinitionIdentifier:(id)arg1 completedDate:(id)arg2 value:(id)arg3 workoutActivityType:(unsigned long long)arg4 friendUUID:(id)arg5;
 + (id)fitnessFriendAchievementFromHKAchievement:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)completedDate;
@@ -40,17 +41,19 @@
 - (void)setDefinitionIdentifier:(id)arg1;
 - (void)setFriendUUID:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setWorkoutActivityType:(unsigned int)arg1;
+- (void)setWorkoutActivityType:(unsigned long long)arg1;
 - (id)value;
-- (unsigned int)workoutActivityType;
+- (unsigned long long)workoutActivityType;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (id)fitnessFriendAchievementWithCodableAchievement:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendAchievementWithRecord:(id)arg1 friendUUID:(id)arg2;
 + (Class)hd_dataEntityClass;
 
-- (BOOL)addCodableRepresentationToCollection:(id)arg1;
+- (bool)addCodableRepresentationToCollection:(id)arg1;
+- (id)codableAchievement;
 - (id)codableRepresentationForSync;
 - (id)filter_date;
 - (id)filter_friendUUID;

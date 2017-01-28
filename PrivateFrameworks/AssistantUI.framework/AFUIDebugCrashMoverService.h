@@ -11,6 +11,6 @@
 - (void).cxx_destruct;
 - (id)_connection;
 - (const char *)_errorDescriptionForXPCObject:(id)arg1;
-- (void)moveLogsWithExtensions:(id)arg1 completion:(id /* block */)arg2;
+- (void)moveLogsWithExtensions:(id)arg1 completion:(id)arg2;
 
 @end

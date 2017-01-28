@@ -3,45 +3,45 @@
  */
 
 @interface CalDAVCalendarUserSearchTask : CoreDAVPropertyFindBaseTask {
-    BOOL  _findAttendees;
-    BOOL  _findGroups;
-    BOOL  _findLocations;
-    BOOL  _findResources;
-    BOOL  _findUsers;
-    unsigned int  _resultLimit;
+    bool  _findAttendees;
+    bool  _findGroups;
+    bool  _findLocations;
+    bool  _findResources;
+    bool  _findUsers;
+    unsigned long long  _resultLimit;
     NSSet * _searchStrings;
 }
 
-@property (nonatomic) BOOL findAttendees;
-@property BOOL findGroups;
-@property (nonatomic) BOOL findLocations;
-@property BOOL findResources;
-@property BOOL findUsers;
-@property (nonatomic) unsigned int resultLimit;
+@property (nonatomic) bool findAttendees;
+@property bool findGroups;
+@property (nonatomic) bool findLocations;
+@property bool findResources;
+@property bool findUsers;
+@property (nonatomic) unsigned long long resultLimit;
 @property (nonatomic, retain) NSSet *searchStrings;
 
-+ (BOOL)tokensAreLegal:(id)arg1;
++ (bool)tokensAreLegal:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)extraAttributes;
-- (BOOL)findAttendees;
-- (BOOL)findGroups;
-- (BOOL)findLocations;
-- (BOOL)findResources;
-- (BOOL)findUsers;
+- (bool)findAttendees;
+- (bool)findGroups;
+- (bool)findLocations;
+- (bool)findResources;
+- (bool)findUsers;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
 - (id)initWithSearchStrings:(id)arg1 atURL:(id)arg2;
 - (id)requestBody;
-- (unsigned int)resultLimit;
+- (unsigned long long)resultLimit;
 - (id)searchItems;
 - (id)searchStrings;
-- (void)setFindAttendees:(BOOL)arg1;
-- (void)setFindGroups:(BOOL)arg1;
-- (void)setFindLocations:(BOOL)arg1;
-- (void)setFindResources:(BOOL)arg1;
-- (void)setFindUsers:(BOOL)arg1;
-- (void)setResultLimit:(unsigned int)arg1;
+- (void)setFindAttendees:(bool)arg1;
+- (void)setFindGroups:(bool)arg1;
+- (void)setFindLocations:(bool)arg1;
+- (void)setFindResources:(bool)arg1;
+- (void)setFindUsers:(bool)arg1;
+- (void)setResultLimit:(unsigned long long)arg1;
 - (void)setSearchStrings:(id)arg1;
 
 @end

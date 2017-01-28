@@ -14,9 +14,9 @@
 
 @property (nonatomic, retain) NSMutableArray *comments;
 @property (nonatomic, retain) NSData *continuationMarker;
-@property (nonatomic, readonly) BOOL hasContinuationMarker;
-@property (nonatomic, readonly) BOOL hasSummary;
-@property (nonatomic) BOOL hasTotalCount;
+@property (nonatomic, readonly) bool hasContinuationMarker;
+@property (nonatomic, readonly) bool hasSummary;
+@property (nonatomic) bool hasTotalCount;
 @property (nonatomic, retain) CKDPCommentSummary *summary;
 @property (nonatomic) int totalCount;
 
@@ -26,23 +26,23 @@
 - (void)addComments:(id)arg1;
 - (void)clearComments;
 - (id)comments;
-- (id)commentsAtIndex:(unsigned int)arg1;
-- (unsigned int)commentsCount;
+- (id)commentsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)commentsCount;
 - (id)continuationMarker;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContinuationMarker;
-- (BOOL)hasSummary;
-- (BOOL)hasTotalCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContinuationMarker;
+- (bool)hasSummary;
+- (bool)hasTotalCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setComments:(id)arg1;
 - (void)setContinuationMarker:(id)arg1;
-- (void)setHasTotalCount:(BOOL)arg1;
+- (void)setHasTotalCount:(bool)arg1;
 - (void)setSummary:(id)arg1;
 - (void)setTotalCount:(int)arg1;
 - (id)summary;

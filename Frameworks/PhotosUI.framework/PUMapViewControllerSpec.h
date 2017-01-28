@@ -4,21 +4,21 @@
 
 @interface PUMapViewControllerSpec : NSObject
 
-@property (readonly) BOOL alwaysFadeRemoves;
-@property (readonly) struct CGSize { float x1; float x2; } annotationSize;
-@property (readonly) float annotationWidth;
-@property (readonly) float borderAnnotationPadding;
-@property (readonly) int thumbnailContentMode;
-@property (readonly) struct CGSize { float x1; float x2; } thumbnailSize;
+@property (readonly) bool alwaysFadeRemoves;
+@property (readonly) struct CGSize { double x1; double x2; } annotationSize;
+@property (readonly) double annotationWidth;
+@property (readonly) double borderAnnotationPadding;
+@property (readonly) long long thumbnailContentMode;
+@property (readonly) struct CGSize { double x1; double x2; } thumbnailSize;
 
-- (BOOL)alwaysFadeRemoves;
-- (struct CGSize { float x1; float x2; })annotationSize;
-- (float)annotationWidth;
-- (float)borderAnnotationPadding;
+- (bool)alwaysFadeRemoves;
+- (struct CGSize { double x1; double x2; })annotationSize;
+- (double)annotationWidth;
+- (double)borderAnnotationPadding;
 - (void)configureStackView:(id)arg1;
 - (id)gridViewControllerSpec;
-- (float)stackWidth;
-- (int)thumbnailContentMode;
-- (struct CGSize { float x1; float x2; })thumbnailSize;
+- (double)stackWidth;
+- (long long)thumbnailContentMode;
+- (struct CGSize { double x1; double x2; })thumbnailSize;
 
 @end

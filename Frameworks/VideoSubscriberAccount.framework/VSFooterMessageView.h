@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithSpecifier:(id)arg1;
-- (float)preferredHeightForWidth:(float)arg1;
+- (double)preferredHeightForWidth:(double)arg1;
 - (id)primaryMessage;
 - (id)secondaryMessage;
 - (void)setPrimaryMessage:(id)arg1;

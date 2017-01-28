@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setEndpoint:(struct OpaqueFigEndpoint { }*)arg1 isAllowed:(BOOL)arg2;
+- (void)setEndpoint:(struct OpaqueFigEndpoint { }*)arg1 isAllowed:(bool)arg2;
 
 @end

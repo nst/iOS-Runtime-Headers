@@ -3,32 +3,32 @@
  */
 
 @interface CKElasticFunction : NSObject {
-    float  _currentValue;
-    float  _elastic;
-    float  _friction;
+    double  _currentValue;
+    double  _elastic;
+    double  _friction;
     double  _lastTime;
-    float  _oldForce;
-    float  _tension;
-    float  _velocity;
+    double  _oldForce;
+    double  _tension;
+    double  _velocity;
 }
 
-@property (nonatomic) float friction;
-@property (nonatomic) float input;
-@property (nonatomic, readonly) float output;
-@property (nonatomic) float tension;
-@property (nonatomic, readonly) float velocity;
+@property (nonatomic) double friction;
+@property (nonatomic) double input;
+@property (nonatomic, readonly) double output;
+@property (nonatomic) double tension;
+@property (nonatomic, readonly) double velocity;
 
-+ (id)functionWithTension:(float)arg1 friction:(float)arg2 initialValue:(float)arg3;
++ (id)functionWithTension:(double)arg1 friction:(double)arg2 initialValue:(double)arg3;
 
 - (void)_update;
-- (float)friction;
+- (double)friction;
 - (id)init;
-- (float)input;
-- (float)output;
-- (void)setFriction:(float)arg1;
-- (void)setInput:(float)arg1;
-- (void)setTension:(float)arg1;
-- (float)tension;
-- (float)velocity;
+- (double)input;
+- (double)output;
+- (void)setFriction:(double)arg1;
+- (void)setInput:(double)arg1;
+- (void)setTension:(double)arg1;
+- (double)tension;
+- (double)velocity;
 
 @end

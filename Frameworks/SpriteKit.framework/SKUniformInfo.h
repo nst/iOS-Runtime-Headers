@@ -3,22 +3,22 @@
  */
 
 @interface SKUniformInfo : NSObject {
-    unsigned int  seed;
-    unsigned int  textureTarget;
+    unsigned long long  seed;
+    unsigned long long  textureTarget;
     SKUniform * uniform;
 }
 
-@property unsigned int seed;
-@property unsigned int textureTarget;
+@property unsigned long long seed;
+@property unsigned long long textureTarget;
 @property (retain) SKUniform *uniform;
 
 - (void).cxx_destruct;
 - (id)init;
-- (unsigned int)seed;
-- (void)setSeed:(unsigned int)arg1;
-- (void)setTextureTarget:(unsigned int)arg1;
+- (unsigned long long)seed;
+- (void)setSeed:(unsigned long long)arg1;
+- (void)setTextureTarget:(unsigned long long)arg1;
 - (void)setUniform:(id)arg1;
-- (unsigned int)textureTarget;
+- (unsigned long long)textureTarget;
 - (id)uniform;
 
 @end

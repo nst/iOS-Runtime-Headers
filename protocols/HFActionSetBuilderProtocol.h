@@ -9,6 +9,7 @@
 - (void)addAction:(HFActionBuilder *)arg1;
 - (void)removeAction:(HFActionBuilder *)arg1;
 - (void)removeAllActions;
+- (bool)requiresDeviceUnlock;
 - (void)updateAction:(HFActionBuilder *)arg1;
 
 @end

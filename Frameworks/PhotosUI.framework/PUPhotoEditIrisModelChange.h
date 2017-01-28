@@ -3,13 +3,13 @@
  */
 
 @interface PUPhotoEditIrisModelChange : PUViewModelChange {
-    BOOL  _videoEnabledDidChange;
+    bool  _videoEnabledDidChange;
 }
 
-@property (setter=_setVideoEnabledDidChange:, nonatomic) BOOL videoEnabledDidChange;
+@property (setter=_setVideoEnabledDidChange:, nonatomic) bool videoEnabledDidChange;
 
-- (void)_setVideoEnabledDidChange:(BOOL)arg1;
-- (BOOL)hasChanges;
-- (BOOL)videoEnabledDidChange;
+- (void)_setVideoEnabledDidChange:(bool)arg1;
+- (bool)hasChanges;
+- (bool)videoEnabledDidChange;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface NTKAstronomyFace : NTKFace
 
-- (BOOL)_snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
-- (BOOL)isSingular;
+- (bool)_snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
+- (bool)isSingular;
 
 @end

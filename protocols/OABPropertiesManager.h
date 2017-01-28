@@ -5,19 +5,19 @@
 
 @required
 
-- (BOOL)hidden;
-- (BOOL)isFillOK;
-- (BOOL)isShadowOK;
-- (BOOL)isStrokeOK;
-- (BOOL)isTextPath;
-- (BOOL)textPathBold;
+- (bool)hidden;
+- (bool)isFillOK;
+- (bool)isShadowOK;
+- (bool)isStrokeOK;
+- (bool)isTextPath;
+- (bool)textPathBold;
 - (NSString *)textPathFontFamily;
 - (int)textPathFontSize;
-- (BOOL)textPathItalic;
-- (BOOL)textPathSmallcaps;
-- (BOOL)textPathStrikethrough;
+- (bool)textPathItalic;
+- (bool)textPathSmallcaps;
+- (bool)textPathStrikethrough;
 - (int)textPathTextAlignment;
-- (BOOL)textPathUnderline;
+- (bool)textPathUnderline;
 - (NSString *)textPathUnicodeString;
 
 @end

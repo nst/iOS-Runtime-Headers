@@ -8,13 +8,13 @@
             void *base; 
             struct { /* ? */ } *hdr; 
         } ; 
-        unsigned int size; 
+        unsigned long long size; 
         int fd; 
     }  _pb;
 }
 
 - (void)dealloc;
-- (void)enumerateEntitiesInText:(id)arg1 block:(id /* block */)arg2;
+- (void)enumerateEntitiesInText:(id)arg1 block:(id)arg2;
 - (id)initWithPath:(id)arg1;
 
 @end

@@ -7,8 +7,8 @@
 
 - (void)cancel;
 - (NSArray *)mapItemsForParameters:(GEOSpatialLookupParameters *)arg1;
-- (void)submitWithHandler:(void *)arg1 networkActivity:(void *)arg2; // needs 2 arg types, found 12: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*, id /* block */, void*, void, id /* block */, BOOL, void*
-- (void)submitWithHandler:(void *)arg1 networkActivity:(void *)arg2 queue:(void *)arg3; // needs 3 arg types, found 13: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*, id /* block */, void*, void, id /* block */, BOOL, void*, NSObject<OS_dispatch_queue> *
+- (void)submitWithHandler:(void *)arg1 networkActivity:(void *)arg2; // needs 2 arg types, found 12: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*, id, void*, void, id, bool, void*
+- (void)submitWithHandler:(void *)arg1 networkActivity:(void *)arg2 queue:(void *)arg3; // needs 3 arg types, found 13: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*, id, void*, void, id, bool, void*, NSObject<OS_dispatch_queue> *
 - (GEOMapServiceTraits *)traits;
 
 @end

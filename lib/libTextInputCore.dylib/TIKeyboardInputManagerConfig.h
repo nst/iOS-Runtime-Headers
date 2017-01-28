@@ -3,60 +3,60 @@
  */
 
 @interface TIKeyboardInputManagerConfig : NSObject {
-    BOOL  _allowsSpaceCorrections;
-    BOOL  _completionsShouldSharePrefix;
+    bool  _allowsSpaceCorrections;
+    bool  _completionsShouldSharePrefix;
     NSString * _dynamicResourcePath;
     TIInputMode * _inputMode;
-    unsigned int  _maxWordsPerPrediction;
+    unsigned long long  _maxWordsPerPrediction;
     NSString * _ngramModelPath;
     NSString * _staticDictionaryPath;
-    BOOL  _testing;
-    BOOL  _usesRetrocorrection;
-    BOOL  _usesTextChecker;
-    BOOL  _usesWordNgramModel;
-    BOOL  _usesWordNgramModelAdaptation;
+    bool  _testing;
+    bool  _usesRetrocorrection;
+    bool  _usesTextChecker;
+    bool  _usesWordNgramModel;
+    bool  _usesWordNgramModelAdaptation;
 }
 
-@property (nonatomic) BOOL allowsSpaceCorrections;
-@property (nonatomic) BOOL completionsShouldSharePrefix;
+@property (nonatomic) bool allowsSpaceCorrections;
+@property (nonatomic) bool completionsShouldSharePrefix;
 @property (nonatomic, copy) NSString *dynamicResourcePath;
 @property (nonatomic, retain) TIInputMode *inputMode;
-@property (nonatomic) unsigned int maxWordsPerPrediction;
+@property (nonatomic) unsigned long long maxWordsPerPrediction;
 @property (nonatomic, copy) NSString *ngramModelPath;
 @property (nonatomic, copy) NSString *staticDictionaryPath;
-@property (getter=isTesting, nonatomic) BOOL testing;
-@property (nonatomic) BOOL usesRetrocorrection;
-@property (nonatomic) BOOL usesTextChecker;
-@property (nonatomic) BOOL usesWordNgramModel;
-@property (nonatomic) BOOL usesWordNgramModelAdaptation;
+@property (getter=isTesting, nonatomic) bool testing;
+@property (nonatomic) bool usesRetrocorrection;
+@property (nonatomic) bool usesTextChecker;
+@property (nonatomic) bool usesWordNgramModel;
+@property (nonatomic) bool usesWordNgramModelAdaptation;
 
 + (id)configurationForInputMode:(id)arg1;
 
-- (BOOL)allowsSpaceCorrections;
-- (BOOL)completionsShouldSharePrefix;
+- (bool)allowsSpaceCorrections;
+- (bool)completionsShouldSharePrefix;
 - (void)dealloc;
 - (id)dynamicResourcePath;
 - (id)inputMode;
-- (BOOL)isTesting;
-- (unsigned int)maxWordsPerPrediction;
+- (bool)isTesting;
+- (unsigned long long)maxWordsPerPrediction;
 - (id)ngramModelPath;
 - (id)propertyList;
-- (void)setAllowsSpaceCorrections:(BOOL)arg1;
-- (void)setCompletionsShouldSharePrefix:(BOOL)arg1;
+- (void)setAllowsSpaceCorrections:(bool)arg1;
+- (void)setCompletionsShouldSharePrefix:(bool)arg1;
 - (void)setDynamicResourcePath:(id)arg1;
 - (void)setInputMode:(id)arg1;
-- (void)setMaxWordsPerPrediction:(unsigned int)arg1;
+- (void)setMaxWordsPerPrediction:(unsigned long long)arg1;
 - (void)setNgramModelPath:(id)arg1;
 - (void)setStaticDictionaryPath:(id)arg1;
-- (void)setTesting:(BOOL)arg1;
-- (void)setUsesRetrocorrection:(BOOL)arg1;
-- (void)setUsesTextChecker:(BOOL)arg1;
-- (void)setUsesWordNgramModel:(BOOL)arg1;
-- (void)setUsesWordNgramModelAdaptation:(BOOL)arg1;
+- (void)setTesting:(bool)arg1;
+- (void)setUsesRetrocorrection:(bool)arg1;
+- (void)setUsesTextChecker:(bool)arg1;
+- (void)setUsesWordNgramModel:(bool)arg1;
+- (void)setUsesWordNgramModelAdaptation:(bool)arg1;
 - (id)staticDictionaryPath;
-- (BOOL)usesRetrocorrection;
-- (BOOL)usesTextChecker;
-- (BOOL)usesWordNgramModel;
-- (BOOL)usesWordNgramModelAdaptation;
+- (bool)usesRetrocorrection;
+- (bool)usesTextChecker;
+- (bool)usesWordNgramModel;
+- (bool)usesWordNgramModelAdaptation;
 
 @end

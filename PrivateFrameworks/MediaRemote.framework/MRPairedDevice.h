@@ -3,24 +3,24 @@
  */
 
 @interface MRPairedDevice : NSObject <NSSecureCoding> {
-    BOOL  _connected;
+    bool  _connected;
     NSString * _identifier;
     NSString * _name;
 }
 
-@property (getter=isConnected, nonatomic) BOOL connected;
+@property (getter=isConnected, nonatomic) bool connected;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *name;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 identifier:(id)arg2;
-- (BOOL)isConnected;
+- (bool)isConnected;
 - (id)name;
-- (void)setConnected:(BOOL)arg1;
+- (void)setConnected:(bool)arg1;
 
 @end

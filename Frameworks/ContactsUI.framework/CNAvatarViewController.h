@@ -10,16 +10,16 @@
 @property (nonatomic, copy) NSArray *contacts;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNUIPRLikenessResolver> *likenessResolver;
 @property (nonatomic) <CNUIObjectViewControllerDelegate> *objectViewControllerDelegate;
 @property (nonatomic, readonly) PRPersonaStore *personaStore;
 @property (readonly) Class superclass;
-@property (getter=isThreeDTouchEnabled, nonatomic) BOOL threeDTouchEnabled;
+@property (getter=isThreeDTouchEnabled, nonatomic) bool threeDTouchEnabled;
 @property (nonatomic, readonly) UIView *view;
 
 + (Class)defaultImplementation;
-+ (id)descriptorForRequiredKeysWithThreeDTouchEnabled:(BOOL)arg1;
++ (id)descriptorForRequiredKeysWithThreeDTouchEnabled:(bool)arg1;
 
 - (void).cxx_destruct;
 - (id)descriptorForRequiredKeys;

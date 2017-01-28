@@ -8,12 +8,12 @@
     float  _inliersRatioThreshold;
     float  _naturalClusteringDistanceThreshold;
     int  _numberOfKeypointsToConsider;
-    BOOL  _performClustersPostprocessing;
-    BOOL  _performSceneClassification;
+    bool  _performClustersPostprocessing;
+    bool  _performSceneClassification;
     NSArray * _qualityCriteriaList;
     float  _roiAreaThreshold;
     int  _timerMode;
-    BOOL  _useTimestampAdjustedDistances;
+    bool  _useTimestampAdjustedDistances;
 }
 
 @property int clusterSplitDistanceType;
@@ -21,12 +21,12 @@
 @property float inliersRatioThreshold;
 @property float naturalClusteringDistanceThreshold;
 @property int numberOfKeypointsToConsider;
-@property BOOL performClustersPostprocessing;
-@property BOOL performSceneClassification;
+@property bool performClustersPostprocessing;
+@property bool performSceneClassification;
 @property (retain) NSArray *qualityCriteriaList;
 @property float roiAreaThreshold;
 @property int timerMode;
-@property BOOL useTimestampAdjustedDistances;
+@property bool useTimestampAdjustedDistances;
 
 - (void).cxx_destruct;
 - (int)clusterSplitDistanceType;
@@ -34,8 +34,8 @@
 - (float)inliersRatioThreshold;
 - (float)naturalClusteringDistanceThreshold;
 - (int)numberOfKeypointsToConsider;
-- (BOOL)performClustersPostprocessing;
-- (BOOL)performSceneClassification;
+- (bool)performClustersPostprocessing;
+- (bool)performSceneClassification;
 - (id)qualityCriteriaList;
 - (float)roiAreaThreshold;
 - (void)setClusterSplitDistanceType:(int)arg1;
@@ -43,13 +43,13 @@
 - (void)setInliersRatioThreshold:(float)arg1;
 - (void)setNaturalClusteringDistanceThreshold:(float)arg1;
 - (void)setNumberOfKeypointsToConsider:(int)arg1;
-- (void)setPerformClustersPostprocessing:(BOOL)arg1;
-- (void)setPerformSceneClassification:(BOOL)arg1;
+- (void)setPerformClustersPostprocessing:(bool)arg1;
+- (void)setPerformSceneClassification:(bool)arg1;
 - (void)setQualityCriteriaList:(id)arg1;
 - (void)setRoiAreaThreshold:(float)arg1;
 - (void)setTimerMode:(int)arg1;
-- (void)setUseTimestampAdjustedDistances:(BOOL)arg1;
+- (void)setUseTimestampAdjustedDistances:(bool)arg1;
 - (int)timerMode;
-- (BOOL)useTimestampAdjustedDistances;
+- (bool)useTimestampAdjustedDistances;
 
 @end

@@ -16,7 +16,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)recognition;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)sessionId;
 - (void)setRecognition:(id)arg1;
 - (void)setSessionId:(id)arg1;
@@ -27,9 +27,9 @@
 
 - (id)af_bestTextInterpretation;
 - (id)af_correctionContext;
-- (BOOL)af_isUserUtterance;
-- (BOOL)af_isUtterance;
+- (bool)af_isUserUtterance;
+- (bool)af_isUtterance;
 - (id)af_userUtteranceValue;
-- (BOOL)af_waitsForConfirmation;
+- (bool)af_waitsForConfirmation;
 
 @end

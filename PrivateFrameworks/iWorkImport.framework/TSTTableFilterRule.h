@@ -3,7 +3,7 @@
  */
 
 @interface TSTTableFilterRule : NSObject <NSCopying> {
-    BOOL  mDoesNotNeedFormulaRewriteForImport;
+    bool  mDoesNotNeedFormulaRewriteForImport;
     TSTFormulaPredicate * mPredicate;
 }
 
@@ -11,22 +11,22 @@
 + (id)ruleWithFormulaPredicate:(id)arg1;
 
 - (unsigned char)columnIndexForFilterRuleInTableModel:(id)arg1;
-- (id)copyByRewritingToGeometricFormWithTableModel:(id)arg1 containsBadRef:(BOOL*)arg2;
+- (id)copyByRewritingToGeometricFormWithTableModel:(id)arg1 containsBadRef:(bool*)arg2;
 - (id)copyByRewritingToUidFormWithTableModel:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeToArchive:(struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FormulaPredicateArchive {} *x5; bool x6; }*)arg1 archiver:(id)arg2;
 - (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; unsigned int x_2_1_3 : 1; } x2; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_3_1_1; } x3; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_4_1_1; } x4; }*)formula;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initFromArchive:(const struct FilterRuleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct FormulaPredicateArchive {} *x5; bool x6; }*)arg1;
 - (id)initRuleWhereValuesInTable:(id)arg1 inColumn:(unsigned char)arg2 matchCell:(id)arg3;
 - (id)initWithFormulaPredicate:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)matchesCell:(id)arg1;
-- (BOOL)matchesRow:(unsigned short)arg1 withFormulaTableID:(struct __CFUUID { }*)arg2 withCalculationEngine:(id)arg3;
-- (BOOL)needsFormulaRewriteForImport;
-- (BOOL)needsThreshold;
+- (bool)isEqual:(id)arg1;
+- (bool)matchesCell:(id)arg1;
+- (bool)matchesRow:(unsigned short)arg1 withFormulaTableID:(struct __CFUUID { }*)arg2 withCalculationEngine:(id)arg3;
+- (bool)needsFormulaRewriteForImport;
+- (bool)needsThreshold;
 - (id)predicate;
 - (void)setDoesNotNeedFormulaRewriteForImport;
 

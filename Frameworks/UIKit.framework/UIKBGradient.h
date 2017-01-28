@@ -4,23 +4,23 @@
 
 @interface UIKBGradient : NSObject <NSCopying> {
     NSArray * _colors;
-    BOOL  _didQueryRGBColors;
+    bool  _didQueryRGBColors;
     NSString * _endColorName;
     NSString * _flatColorName;
     NSString * _gradientName;
-    BOOL  _horizontal;
-    float  _middleLocation;
-    float  _opacity;
+    bool  _horizontal;
+    double  _middleLocation;
+    double  _opacity;
     NSString * _startColorName;
-    BOOL  _usesRGBColors;
+    bool  _usesRGBColors;
 }
 
 @property (nonatomic, readonly) NSString *flatColorName;
-@property (nonatomic) BOOL horizontal;
-@property (nonatomic) float opacity;
-@property (nonatomic, readonly) BOOL usesRGBColors;
+@property (nonatomic) bool horizontal;
+@property (nonatomic) double opacity;
+@property (nonatomic, readonly) bool usesRGBColors;
 
-+ (id)gradientWith3Colors:(id)arg1 middleLocation:(float)arg2;
++ (id)gradientWith3Colors:(id)arg1 middleLocation:(double)arg2;
 + (id)gradientWithFlatColor:(id)arg1;
 + (id)gradientWithName:(id)arg1;
 + (id)gradientWithStartColor:(id)arg1 endColor:(id)arg2;
@@ -30,15 +30,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)flatColorName;
-- (BOOL)horizontal;
-- (id)initWith3Colors:(id)arg1 middleLocation:(float)arg2;
+- (bool)horizontal;
+- (id)initWith3Colors:(id)arg1 middleLocation:(double)arg2;
 - (id)initWithFlatColor:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (id)initWithStartColor:(id)arg1 endColor:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (float)opacity;
-- (void)setHorizontal:(BOOL)arg1;
-- (void)setOpacity:(float)arg1;
-- (BOOL)usesRGBColors;
+- (bool)isEqual:(id)arg1;
+- (double)opacity;
+- (void)setHorizontal:(bool)arg1;
+- (void)setOpacity:(double)arg1;
+- (bool)usesRGBColors;
 
 @end

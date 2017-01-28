@@ -3,7 +3,7 @@
  */
 
 @interface PFVideoComplement : NSObject {
-    BOOL  _didReadOriginalMetadata;
+    bool  _didReadOriginalMetadata;
     NSString * _imagePath;
     NSDictionary * _metadata;
     struct { 
@@ -45,6 +45,6 @@
 - (id)pairingIdentifier;
 - (id)propertyListRepresentation;
 - (id)videoPath;
-- (BOOL)writeToBundleAtURL:(id)arg1 error:(id*)arg2;
+- (bool)writeToBundleAtURL:(id)arg1 error:(id*)arg2;
 
 @end

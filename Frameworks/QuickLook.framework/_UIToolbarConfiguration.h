@@ -5,25 +5,25 @@
 @interface _UIToolbarConfiguration : NSObject {
     UIColor * _backgroundColor;
     UIImage * _backgroundImage;
-    int  _barStyle;
+    long long  _barStyle;
     UIColor * _barTintColor;
     UIImage * _shadowImage;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIImage *backgroundImage;
-@property (nonatomic) int barStyle;
+@property (nonatomic) long long barStyle;
 @property (nonatomic, retain) UIColor *barTintColor;
 @property (nonatomic, retain) UIImage *shadowImage;
 
 - (void).cxx_destruct;
 - (id)backgroundColor;
 - (id)backgroundImage;
-- (int)barStyle;
+- (long long)barStyle;
 - (id)barTintColor;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
-- (void)setBarStyle:(int)arg1;
+- (void)setBarStyle:(long long)arg1;
 - (void)setBarTintColor:(id)arg1;
 - (void)setShadowImage:(id)arg1;
 - (id)shadowImage;

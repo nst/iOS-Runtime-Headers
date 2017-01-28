@@ -5,37 +5,37 @@
 @interface SPSearchQueryContext : NSObject {
     NSArray * _disabledBundles;
     NSArray * _disabledDomains;
-    BOOL  _forceQueryEvenIfSame;
+    bool  _forceQueryEvenIfSame;
     NSString * _keyboardLanguage;
     NSString * _keyboardPrimaryLanguage;
     NSArray * _markedTextArray;
     unsigned long long  _queryIdent;
     NSArray * _searchDomains;
     NSString * _searchString;
-    unsigned int  _whyClear;
-    unsigned int  _whyQuery;
+    unsigned long long  _whyClear;
+    unsigned long long  _whyQuery;
 }
 
 @property (nonatomic, retain) NSArray *disabledBundles;
 @property (nonatomic, retain) NSArray *disabledDomains;
-@property (nonatomic) BOOL forceQueryEvenIfSame;
-@property (nonatomic, readonly) BOOL hasMarkedText;
+@property (nonatomic) bool forceQueryEvenIfSame;
+@property (nonatomic, readonly) bool hasMarkedText;
 @property (nonatomic, retain) NSString *keyboardLanguage;
 @property (nonatomic, retain) NSString *keyboardPrimaryLanguage;
 @property (nonatomic, retain) NSArray *markedTextArray;
 @property (nonatomic) unsigned long long queryIdent;
 @property (nonatomic, retain) NSArray *searchDomains;
 @property (nonatomic, retain) NSString *searchString;
-@property (nonatomic) unsigned int whyClear;
-@property (nonatomic) unsigned int whyQuery;
+@property (nonatomic) unsigned long long whyClear;
+@property (nonatomic) unsigned long long whyQuery;
 
 + (id)queryContextWithSearchString:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)disabledBundles;
 - (id)disabledDomains;
-- (BOOL)forceQueryEvenIfSame;
-- (BOOL)hasMarkedText;
+- (bool)forceQueryEvenIfSame;
+- (bool)hasMarkedText;
 - (id)initWithSearchString:(id)arg1;
 - (id)keyboardLanguage;
 - (id)keyboardPrimaryLanguage;
@@ -45,16 +45,16 @@
 - (id)searchString;
 - (void)setDisabledBundles:(id)arg1;
 - (void)setDisabledDomains:(id)arg1;
-- (void)setForceQueryEvenIfSame:(BOOL)arg1;
+- (void)setForceQueryEvenIfSame:(bool)arg1;
 - (void)setKeyboardLanguage:(id)arg1;
 - (void)setKeyboardPrimaryLanguage:(id)arg1;
 - (void)setMarkedTextArray:(id)arg1;
 - (void)setQueryIdent:(unsigned long long)arg1;
 - (void)setSearchDomains:(id)arg1;
 - (void)setSearchString:(id)arg1;
-- (void)setWhyClear:(unsigned int)arg1;
-- (void)setWhyQuery:(unsigned int)arg1;
-- (unsigned int)whyClear;
-- (unsigned int)whyQuery;
+- (void)setWhyClear:(unsigned long long)arg1;
+- (void)setWhyQuery:(unsigned long long)arg1;
+- (unsigned long long)whyClear;
+- (unsigned long long)whyQuery;
 
 @end

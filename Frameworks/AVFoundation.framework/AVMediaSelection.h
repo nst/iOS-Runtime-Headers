@@ -18,10 +18,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAsset:(id)arg1 propertyList:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)propertyList;
 - (id)selectedMediaOptionInMediaSelectionGroup:(id)arg1;

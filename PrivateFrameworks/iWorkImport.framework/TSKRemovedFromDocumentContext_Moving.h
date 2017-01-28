@@ -6,6 +6,6 @@
 
 - (id)description;
 - (id)undoContext;
-- (BOOL)wasMoved;
+- (bool)wasMoved;
 
 @end

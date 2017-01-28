@@ -4,24 +4,24 @@
 
 @interface FCIAdConfiguration : NSObject {
     NTPBIAdConfig * _pbConfig;
-    BOOL  _segmentsEnabled;
+    bool  _segmentsEnabled;
     long long  _segmentsHistoryWindowInterval;
     long long  _segmentsMinimumArticleCount;
     long long  _segmentsSubmissionFrequency;
     double  _segmentsThreshold;
 }
 
-@property (getter=areSegmentsEnabled, nonatomic, readonly) BOOL segmentsEnabled;
+@property (getter=areSegmentsEnabled, nonatomic, readonly) bool segmentsEnabled;
 @property (nonatomic, readonly) long long segmentsHistoryWindowInterval;
 @property (nonatomic, readonly) long long segmentsMinimumArticleCount;
 @property (nonatomic, readonly) long long segmentsSubmissionFrequency;
 @property (nonatomic, readonly) double segmentsThreshold;
 
 - (void).cxx_destruct;
-- (BOOL)areSegmentsEnabled;
-- (unsigned int)hash;
+- (bool)areSegmentsEnabled;
+- (unsigned long long)hash;
 - (id)initWithPBIAdConfig:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (long long)segmentsHistoryWindowInterval;
 - (long long)segmentsMinimumArticleCount;
 - (long long)segmentsSubmissionFrequency;

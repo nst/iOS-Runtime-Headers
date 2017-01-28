@@ -11,6 +11,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)registerBlock:(id /* block */)arg1;
+- (void)registerBlock:(id)arg1;
 
 @end

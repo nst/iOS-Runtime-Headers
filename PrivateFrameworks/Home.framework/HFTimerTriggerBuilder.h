@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)_executionTime;
-- (BOOL)_hasWeekdayRecurrence;
+- (bool)_hasWeekdayRecurrence;
 - (id)_performValidation;
 - (id)_updateRecurrences;
 - (id)_updateTimeZone;
@@ -22,7 +22,7 @@
 - (id)commitEditTrigger;
 - (id)executionTime;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (id)naturalLanguageNameOfType:(unsigned int)arg1;
+- (id)naturalLanguageNameOfType:(unsigned long long)arg1;
 - (id)recurrences;
 - (void)setExecutionTime:(id)arg1;
 - (void)setRecurrences:(id)arg1;

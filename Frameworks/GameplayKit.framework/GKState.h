@@ -14,7 +14,7 @@
 - (void)_setStateMachine:(id)arg1;
 - (void)didEnterWithPreviousState:(id)arg1;
 - (id)init;
-- (BOOL)isValidNextState:(Class)arg1;
+- (bool)isValidNextState:(Class)arg1;
 - (id)stateMachine;
 - (void)updateWithDeltaTime:(double)arg1;
 - (void)willExitWithNextState:(id)arg1;

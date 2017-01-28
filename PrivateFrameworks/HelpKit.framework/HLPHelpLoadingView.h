@@ -20,7 +20,7 @@
 - (void)removeErrorView;
 - (void)setActivityIndicatorView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)showActivityIndicator:(BOOL)arg1;
+- (void)showActivityIndicator:(bool)arg1;
 - (void)showDefaultErrorMessage;
 - (void)showErrorWithTitle:(id)arg1 message:(id)arg2;
 - (void)showHelpBookInfo;

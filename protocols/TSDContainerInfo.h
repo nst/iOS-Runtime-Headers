@@ -9,6 +9,6 @@
 
 @optional
 
-- (BOOL)prohibitsModificationToChildren;
+- (bool)prohibitsModificationToChildren;
 
 @end

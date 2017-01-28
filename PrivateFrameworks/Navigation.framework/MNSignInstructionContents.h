@@ -6,20 +6,20 @@
     NSArray * _continueFormats;
     NSArray * _maneuverFormats;
     NSArray * _mergeFormats;
-    BOOL  _useNames;
+    bool  _useNames;
 }
 
-@property (nonatomic, readonly) int context;
+@property (nonatomic, readonly) long long context;
 @property (nonatomic, retain) NSArray *continueFormats;
-@property (nonatomic, readonly) BOOL hasServerContent;
+@property (nonatomic, readonly) bool hasServerContent;
 @property (nonatomic, retain) NSArray *maneuverFormats;
 @property (nonatomic, retain) NSArray *mergeFormats;
 @property (nonatomic, retain) NSString *roadName;
-@property (nonatomic) BOOL suppressFallback;
-@property (nonatomic) BOOL suppressNames;
-@property (nonatomic) BOOL useNames;
+@property (nonatomic) bool suppressFallback;
+@property (nonatomic) bool suppressNames;
+@property (nonatomic) bool useNames;
 
-+ (id)contentsWithStep:(id)arg1 transportType:(int)arg2 destination:(id)arg3 useNames:(BOOL)arg4;
++ (id)contentsWithStep:(id)arg1 transportType:(int)arg2 destination:(id)arg3 useNames:(bool)arg4;
 
 - (void).cxx_destruct;
 - (id)_instructionsForFormats:(id)arg1;
@@ -41,21 +41,21 @@
 - (id)_signWalkingInstructionForStartWithShorterAlternatives:(id*)arg1;
 - (id)_signWalkingInstructionForTurnWithShorterAlternatives:(id*)arg1;
 - (id)_signWalkingInstructionForUTurnWithShorterAlternatives:(id*)arg1;
-- (int)context;
+- (long long)context;
 - (id)continueFormats;
-- (BOOL)hasServerContent;
-- (id)instructionForStage:(unsigned int)arg1 distance:(double)arg2;
+- (bool)hasServerContent;
+- (id)instructionForStage:(unsigned long long)arg1 distance:(double)arg2;
 - (id)instructionWithShorterAlternatives;
 - (id)maneuverFormats;
 - (id)mergeFormats;
 - (void)setContinueFormats:(id)arg1;
 - (void)setManeuverFormats:(id)arg1;
 - (void)setMergeFormats:(id)arg1;
-- (void)setUseNames:(BOOL)arg1;
-- (BOOL)useDestinationName;
-- (BOOL)useIntersectionName;
-- (BOOL)useNames;
-- (BOOL)useRoadName;
-- (BOOL)useTowardNames;
+- (void)setUseNames:(bool)arg1;
+- (bool)useDestinationName;
+- (bool)useIntersectionName;
+- (bool)useNames;
+- (bool)useRoadName;
+- (bool)useTowardNames;
 
 @end

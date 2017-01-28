@@ -3,7 +3,7 @@
  */
 
 @interface BRCSpotlightIndexer : NSObject <BRCModule, CSSearchableIndexDelegate> {
-    unsigned int  _clientState;
+    unsigned long long  _clientState;
     BRCThrottle * _failureThrottle;
     NSObject<OS_dispatch_source> * _failureTimer;
     unsigned long long  _flushedNotifRank;
@@ -13,21 +13,21 @@
     unsigned long long  _minNotifRank;
     br_pacer * _pacer;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _readyForIndexing;
+    bool  _readyForIndexing;
     BRCAccountSession * _session;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <BRCIndexingArbiter> *indexingArbiter;
-@property (nonatomic, readonly) BOOL isCancelled;
+@property (nonatomic, readonly) bool isCancelled;
 @property (readonly) Class superclass;
 
-+ (void)dropAllContainersIndexForSession:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)dropAllContainersIndexForSession:(id)arg1 completionHandler:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)_deleteAllItemsAndReindexResumingIndexing:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)_deleteAllItemsAndReindexResumingIndexing:(bool)arg1 completion:(id)arg2;
 - (void)_deleteAllRanks;
 - (id)_deletedDocIdResultSetWithMinNotifRank:(unsigned long long)arg1 maxNotifRank:(unsigned long long)arg2;
 - (void)_failedIndexing;
@@ -36,21 +36,21 @@
 - (void)_readyForIndexingWithAckedRank:(unsigned long long)arg1;
 - (void)_saveStateForNotifRank:(unsigned long long)arg1;
 - (void)_scheduleIndexing;
-- (void)_scheduleThrottledTask:(id /* block */)arg1 taskName:(const char *)arg2;
+- (void)_scheduleThrottledTask:(id)arg1 taskName:(const char *)arg2;
 - (void)_signalIndexing;
 - (void)cancel;
 - (void)close;
 - (void)dealloc;
-- (void)docID:(unsigned long long)arg1 wasDeletedForNotifRank:(unsigned long long)arg2;
+- (void)docID:(unsigned long long)arg1 isNoLongerIndexableForNotifRank:(unsigned long long)arg2 itemIsLive:(bool)arg3;
 - (void)dropIndexForClientZone:(id)arg1;
 - (void)garbageCollectSupersededRanks;
 - (id)indexingArbiter;
 - (id)initWithAccountSession:(id)arg1;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (void)maxNotifRankWasFlushed;
 - (void)resume;
-- (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(id /* block */)arg2;
-- (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id /* block */)arg3;
+- (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(id)arg2;
+- (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id)arg3;
 - (void)setIndexingArbiter:(id)arg1;
 
 @end

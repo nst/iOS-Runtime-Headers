@@ -9,7 +9,7 @@
 @property (nonatomic, retain) UIImage *logoImage;
 
 - (void).cxx_destruct;
-- (id)initWithTopInset:(float)arg1 linkButtonTitle:(id)arg2;
+- (id)initWithTopInset:(double)arg1 linkButtonTitle:(id)arg2;
 - (id)logoImage;
 - (id)logoImageView;
 - (void)setLogoImage:(id)arg1;

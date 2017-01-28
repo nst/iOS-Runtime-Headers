@@ -7,8 +7,8 @@
     MPModelArtist * _artist;
     NSString * _artistUploadedContentType;
     MPModelCurator * _curator;
-    int  _detailedItemType;
-    unsigned int  _itemType;
+    long long  _detailedItemType;
+    unsigned long long  _itemType;
     MPModelPlaylist * _playlist;
     MPModelRadioStation * _radioStation;
     MPModelSong * _song;
@@ -18,8 +18,8 @@
 @property (nonatomic, retain) MPModelArtist *artist;
 @property (nonatomic, copy) NSString *artistUploadedContentType;
 @property (nonatomic, retain) MPModelCurator *curator;
-@property (nonatomic) int detailedItemType;
-@property (nonatomic) unsigned int itemType;
+@property (nonatomic) long long detailedItemType;
+@property (nonatomic) unsigned long long itemType;
 @property (nonatomic, retain) MPModelPlaylist *playlist;
 @property (nonatomic, retain) MPModelRadioStation *radioStation;
 @property (nonatomic, retain) MPModelSong *song;
@@ -49,10 +49,10 @@
 - (id)artist;
 - (id)artistUploadedContentType;
 - (id)curator;
-- (id)descriptionWithType:(int)arg1;
-- (int)detailedItemType;
+- (id)descriptionWithType:(long long)arg1;
+- (long long)detailedItemType;
 - (id)innerObject;
-- (unsigned int)itemType;
+- (unsigned long long)itemType;
 - (id)objectWithStoreLibraryPersonalizationRelativeModelObject:(id)arg1;
 - (id)personalizationScopedPropertiesForProperties:(id)arg1;
 - (id)playlist;
@@ -62,8 +62,8 @@
 - (void)setArtist:(id)arg1;
 - (void)setArtistUploadedContentType:(id)arg1;
 - (void)setCurator:(id)arg1;
-- (void)setDetailedItemType:(int)arg1;
-- (void)setItemType:(unsigned int)arg1;
+- (void)setDetailedItemType:(long long)arg1;
+- (void)setItemType:(unsigned long long)arg1;
 - (void)setPlaylist:(id)arg1;
 - (void)setRadioStation:(id)arg1;
 - (void)setSong:(id)arg1;

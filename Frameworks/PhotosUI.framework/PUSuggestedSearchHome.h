@@ -5,7 +5,7 @@
 @interface PUSuggestedSearchHome : PUSuggestedSearch
 
 - (void)_inqRestart;
-- (BOOL)_isTargetGroupResult:(id)arg1;
+- (bool)_isTargetGroupResult:(id)arg1;
 - (id)init;
 
 @end

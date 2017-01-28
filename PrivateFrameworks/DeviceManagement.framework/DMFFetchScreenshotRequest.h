@@ -3,21 +3,21 @@
  */
 
 @interface DMFFetchScreenshotRequest : CATTaskRequest {
-    unsigned int  _maxHeight;
-    unsigned int  _maxWidth;
+    unsigned long long  _maxHeight;
+    unsigned long long  _maxWidth;
 }
 
-@property (nonatomic) unsigned int maxHeight;
-@property (nonatomic) unsigned int maxWidth;
+@property (nonatomic) unsigned long long maxHeight;
+@property (nonatomic) unsigned long long maxWidth;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)maxHeight;
-- (unsigned int)maxWidth;
-- (void)setMaxHeight:(unsigned int)arg1;
-- (void)setMaxWidth:(unsigned int)arg1;
+- (unsigned long long)maxHeight;
+- (unsigned long long)maxWidth;
+- (void)setMaxHeight:(unsigned long long)arg1;
+- (void)setMaxWidth:(unsigned long long)arg1;
 
 @end

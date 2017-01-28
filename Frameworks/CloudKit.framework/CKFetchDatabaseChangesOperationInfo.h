@@ -3,25 +3,25 @@
  */
 
 @interface CKFetchDatabaseChangesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    BOOL  _fetchAllChanges;
+    bool  _fetchAllChanges;
     CKServerChangeToken * _previousServerChangeToken;
-    unsigned int  _resultsLimit;
+    unsigned long long  _resultsLimit;
 }
 
-@property (nonatomic) BOOL fetchAllChanges;
+@property (nonatomic) bool fetchAllChanges;
 @property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
-@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic) unsigned long long resultsLimit;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)fetchAllChanges;
+- (bool)fetchAllChanges;
 - (id)initWithCoder:(id)arg1;
 - (id)previousServerChangeToken;
-- (unsigned int)resultsLimit;
-- (void)setFetchAllChanges:(BOOL)arg1;
+- (unsigned long long)resultsLimit;
+- (void)setFetchAllChanges:(bool)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 
 @end

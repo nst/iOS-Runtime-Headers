@@ -4,7 +4,7 @@
 
 @interface SearchUIInlineCardSectionsTableViewCell : SearchUITableViewCell
 
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (BOOL)supportsRecycling;
+- (id)initWithResult:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (bool)supportsRecycling;
 
 @end

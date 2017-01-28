@@ -4,10 +4,10 @@
 
 @interface APBluetoothClient : NSObject <WPAirPlaySoloDelegate> {
     <APBluetoothClientDelegate> * _delegate;
-    BOOL  _isFirstCycle;
-    BOOL  _isSourcePresenceAdvertising;
-    BOOL  _isStartAdvertisingPending;
-    BOOL  _isStopAdvertisingPending;
+    bool  _isFirstCycle;
+    bool  _isSourcePresenceAdvertising;
+    bool  _isStartAdvertisingPending;
+    bool  _isStopAdvertisingPending;
     NSMutableDictionary * _nearbyDevices;
     NSObject<OS_dispatch_queue> * _queue;
     NSDictionary * _sourcePresenceAdvertisingData;
@@ -18,17 +18,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isFirstCycle;
-@property (nonatomic) BOOL isSourcePresenceAdvertising;
-@property (nonatomic) BOOL isStartAdvertisingPending;
-@property (nonatomic) BOOL isStopAdvertisingPending;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isFirstCycle;
+@property (nonatomic) bool isSourcePresenceAdvertising;
+@property (nonatomic) bool isStartAdvertisingPending;
+@property (nonatomic) bool isStopAdvertisingPending;
 @property (nonatomic, retain) NSMutableDictionary *nearbyDevices;
 @property (nonatomic) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, copy) NSDictionary *sourcePresenceAdvertisingData;
 @property (nonatomic) NSObject<OS_dispatch_source> *sourcePresenceAdvertisingTimer;
 @property (nonatomic) NSObject<OS_dispatch_source> *sourcePresenceWaitingTimer;
-@property (readonly) int state;
+@property (readonly) long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) WPAirPlaySolo *wpAirPlaySolo;
 
@@ -48,17 +48,17 @@
 - (id)delegate;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
-- (BOOL)isFirstCycle;
-- (BOOL)isSourcePresenceAdvertising;
-- (BOOL)isStartAdvertisingPending;
-- (BOOL)isStopAdvertisingPending;
+- (bool)isFirstCycle;
+- (bool)isSourcePresenceAdvertising;
+- (bool)isStartAdvertisingPending;
+- (bool)isStopAdvertisingPending;
 - (id)nearbyDevices;
 - (id)queue;
 - (void)setDelegate:(id)arg1;
-- (void)setIsFirstCycle:(BOOL)arg1;
-- (void)setIsSourcePresenceAdvertising:(BOOL)arg1;
-- (void)setIsStartAdvertisingPending:(BOOL)arg1;
-- (void)setIsStopAdvertisingPending:(BOOL)arg1;
+- (void)setIsFirstCycle:(bool)arg1;
+- (void)setIsSourcePresenceAdvertising:(bool)arg1;
+- (void)setIsStartAdvertisingPending:(bool)arg1;
+- (void)setIsStopAdvertisingPending:(bool)arg1;
 - (void)setNearbyDevices:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setSourcePresenceAdvertisingData:(id)arg1;
@@ -74,7 +74,7 @@
 - (void)startSourcePresenceConnectionlessAdvertising;
 - (void)startSourcePresenceWaitingCycle;
 - (void)startTrackingPeer:(id)arg1 withData:(id)arg2;
-- (int)state;
+- (long long)state;
 - (void)stopConnectionlessAdvertising;
 - (void)stopConnectionlessScanningWithData:(id)arg1;
 - (void)stopSourcePresenceAdvertisingCycle;

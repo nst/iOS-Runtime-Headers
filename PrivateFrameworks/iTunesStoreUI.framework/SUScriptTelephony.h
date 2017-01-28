@@ -20,7 +20,7 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_checkIfIsAllowed;
+- (bool)_checkIfIsAllowed;
 - (id)_className;
 - (id)attributeKeys;
 - (id)countryCode;

@@ -21,7 +21,7 @@
     NSMutableDictionary * _removedMembersByGroupIdentifier;
     NSMutableDictionary * _removedSubgroupsByGroupIdentifier;
     NSString * _saveRequestIdentifier;
-    BOOL  _unsafeApplyChangesOnly;
+    bool  _unsafeApplyChangesOnly;
     NSMutableArray * _updatedContacts;
     NSMutableArray * _updatedContainers;
     NSMutableArray * _updatedGroups;
@@ -48,7 +48,7 @@
 @property (nonatomic, readonly, copy) NSArray *deletedContainers;
 @property (nonatomic, readonly, copy) NSArray *deletedGroups;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *meCardIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *movedContainersByParentContainerIdentifier;
 @property (nonatomic, readonly, copy) NSDictionary *removedMembersByGroupIdentifier;
@@ -56,12 +56,12 @@
 @property (nonatomic, readonly, copy) NSString *saveRequestIdentifier;
 @property (nonatomic, readonly, copy) NSString *storeIdentifier;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL unsafeApplyChangesOnly;
+@property (nonatomic) bool unsafeApplyChangesOnly;
 @property (nonatomic, readonly, copy) NSArray *updatedContacts;
 @property (nonatomic, readonly, copy) NSArray *updatedContainers;
 @property (nonatomic, readonly, copy) NSArray *updatedGroups;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_dictionaryOfArraysFromDictionaryOfDictionaries:(id)arg1;
 - (void)_insertContact:(id)arg1 intoDictionary:(id)arg2 complementDictionary:(id)arg3;
@@ -83,8 +83,8 @@
 - (id)allAccountIdentifiers;
 - (id)allContactIdentifiers;
 - (id)allContacts;
-- (id)allContainerIdentifierStrings:(BOOL*)arg1;
-- (id)allContainerIdentifiers:(BOOL*)arg1;
+- (id)allContainerIdentifierStrings:(bool*)arg1;
+- (id)allContainerIdentifiers:(bool*)arg1;
 - (id)allContainers;
 - (id)allGroupIdentifiers;
 - (id)allGroups;
@@ -106,7 +106,7 @@
 - (id)groupWithRemovedSubgroupForGroupIdentifier:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isValid:(id*)arg1;
+- (bool)isValid:(id*)arg1;
 - (void)linkContact:(id)arg1 toContact:(id)arg2;
 - (id)meCardIdentifier;
 - (void)moveContainer:(id)arg1 toContainerWithIdentifier:(id)arg2;
@@ -122,10 +122,10 @@
 - (void)setClientIdentifier:(id)arg1;
 - (void)setLinkIdentifier:(id)arg1 forContact:(id)arg2;
 - (void)setMeCardIdentifier:(id)arg1;
-- (void)setUnsafeApplyChangesOnly:(BOOL)arg1;
+- (void)setUnsafeApplyChangesOnly:(bool)arg1;
 - (id)storeIdentifier;
 - (void)unlinkContact:(id)arg1;
-- (BOOL)unsafeApplyChangesOnly;
+- (bool)unsafeApplyChangesOnly;
 - (void)updateContact:(id)arg1;
 - (void)updateContainer:(id)arg1;
 - (void)updateGroup:(id)arg1;

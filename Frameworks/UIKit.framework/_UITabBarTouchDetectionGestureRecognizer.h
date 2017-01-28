@@ -4,7 +4,7 @@
 
 @interface _UITabBarTouchDetectionGestureRecognizer : UIGestureRecognizer
 
-+ (BOOL)_shouldDefaultToTouches;
++ (bool)_shouldDefaultToTouches;
 
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

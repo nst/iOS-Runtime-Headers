@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, copy) NSData *secureRangingKeyID;
 
 + (id)hexStringMacAddressFromUInt:(unsigned long long)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (unsigned long long)uintMacAddressFromString:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -18,14 +18,14 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)getMacAddressAsString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMacAddressAsData:(id)arg1 secureRangingKeyID:(id)arg2;
 - (id)initWithMacAddressAsString:(id)arg1 secureRangingKeyID:(id)arg2;
 - (id)initWithMacAddressAsUInt:(unsigned long long)arg1 secureRangingKeyID:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPeer:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPeer:(id)arg1;
 - (unsigned long long)macAddress;
 - (id)secureRangingKeyID;
 

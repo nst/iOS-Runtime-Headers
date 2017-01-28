@@ -14,9 +14,9 @@
 
 @property (nonatomic) unsigned int deduplicationInterval;
 @property (nonatomic, retain) NSString *guid;
-@property (nonatomic) BOOL hasDeduplicationInterval;
-@property (nonatomic, readonly) BOOL hasGuid;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDeduplicationInterval;
+@property (nonatomic, readonly) bool hasGuid;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -26,17 +26,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)guid;
-- (BOOL)hasDeduplicationInterval;
-- (BOOL)hasGuid;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeduplicationInterval;
+- (bool)hasGuid;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeduplicationInterval:(unsigned int)arg1;
 - (void)setGuid:(id)arg1;
-- (void)setHasDeduplicationInterval:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDeduplicationInterval:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

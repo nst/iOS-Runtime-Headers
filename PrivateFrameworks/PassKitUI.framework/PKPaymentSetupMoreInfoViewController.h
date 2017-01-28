@@ -3,17 +3,17 @@
  */
 
 @interface PKPaymentSetupMoreInfoViewController : UIViewController {
-    int  _context;
-    id /* block */  _dismissalHandler;
-    BOOL  _isFinalViewController;
+    long long  _context;
+    id  _dismissalHandler;
+    bool  _isFinalViewController;
     NSArray * _moreInfoItems;
     PKPaymentSetupMoreInfoView * _moreInfoView;
     PKPaymentPass * _pass;
 }
 
-@property (nonatomic, readonly) int context;
-@property (nonatomic, copy) id /* block */ dismissalHandler;
-@property (nonatomic) BOOL isFinalViewController;
+@property (nonatomic, readonly) long long context;
+@property (nonatomic, copy) id dismissalHandler;
+@property (nonatomic) bool isFinalViewController;
 @property (nonatomic, readonly, retain) NSArray *moreInfoItems;
 @property (nonatomic, readonly, retain) PKPaymentSetupMoreInfoView *moreInfoView;
 @property (nonatomic, readonly, retain) PKPaymentPass *pass;
@@ -25,17 +25,17 @@
 - (void)_handlePush;
 - (id)_nextItems;
 - (void)_nextTapped:(id)arg1;
-- (int)context;
-- (id /* block */)dismissalHandler;
-- (unsigned int)edgesForExtendedLayout;
-- (id)initWithMoreInfoItems:(id)arg1 paymentPass:(id)arg2 context:(int)arg3 dismissalHandler:(id /* block */)arg4;
-- (BOOL)isFinalViewController;
+- (long long)context;
+- (id)dismissalHandler;
+- (unsigned long long)edgesForExtendedLayout;
+- (id)initWithMoreInfoItems:(id)arg1 paymentPass:(id)arg2 context:(long long)arg3 dismissalHandler:(id)arg4;
+- (bool)isFinalViewController;
 - (void)loadView;
 - (id)moreInfoItems;
 - (id)moreInfoView;
 - (id)pass;
-- (void)setDismissalHandler:(id /* block */)arg1;
-- (void)setIsFinalViewController:(BOOL)arg1;
+- (void)setDismissalHandler:(id)arg1;
+- (void)setIsFinalViewController:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

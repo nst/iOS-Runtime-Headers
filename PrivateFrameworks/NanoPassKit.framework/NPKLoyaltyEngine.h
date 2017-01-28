@@ -15,7 +15,7 @@
 @property (readonly) NSArray *whitelistedLoyaltyCardDescriptions;
 
 + (id)sharedQuickPaymentLoyaltyEngine;
-+ (id)shouldAutomaticallyPresentForSettings:(unsigned int)arg1;
++ (id)shouldAutomaticallyPresentForSettings:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_init;

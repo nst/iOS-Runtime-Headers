@@ -11,8 +11,8 @@
 @property (nonatomic) long long stationID;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
 - (id)stationHash;

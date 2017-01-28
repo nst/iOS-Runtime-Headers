@@ -8,7 +8,7 @@
 
 @property (nonatomic) unsigned int displayFlags;
 
-- (BOOL)allowsPasteAsSmartField;
+- (bool)allowsPasteAsSmartField;
 - (id)copyWithContext:(id)arg1;
 - (unsigned int)displayFlags;
 - (id)initFromUnarchiver:(id)arg1;

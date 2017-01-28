@@ -6,9 +6,9 @@
 
 - (id)_burnColor;
 - (id)_darkenColor;
-- (BOOL)_inputReversed;
-- (float)alpha;
+- (bool)_inputReversed;
+- (double)alpha;
 - (id)color;
-- (int)style;
+- (long long)style;
 
 @end

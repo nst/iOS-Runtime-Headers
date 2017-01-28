@@ -14,9 +14,9 @@
 
 @property (nonatomic) int amountInCents;
 @property (nonatomic, retain) NSString *currencyCode;
-@property (nonatomic) BOOL hasAmountInCents;
-@property (nonatomic, readonly) BOOL hasCurrencyCode;
-@property (nonatomic) BOOL hasSubunit;
+@property (nonatomic) bool hasAmountInCents;
+@property (nonatomic, readonly) bool hasCurrencyCode;
+@property (nonatomic) bool hasSubunit;
 @property (nonatomic) unsigned int subunit;
 
 - (int)amountInCents;
@@ -26,17 +26,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAmountInCents;
-- (BOOL)hasCurrencyCode;
-- (BOOL)hasSubunit;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAmountInCents;
+- (bool)hasCurrencyCode;
+- (bool)hasSubunit;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAmountInCents:(int)arg1;
 - (void)setCurrencyCode:(id)arg1;
-- (void)setHasAmountInCents:(BOOL)arg1;
-- (void)setHasSubunit:(BOOL)arg1;
+- (void)setHasAmountInCents:(bool)arg1;
+- (void)setHasSubunit:(bool)arg1;
 - (void)setSubunit:(unsigned int)arg1;
 - (unsigned int)subunit;
 - (void)writeTo:(id)arg1;

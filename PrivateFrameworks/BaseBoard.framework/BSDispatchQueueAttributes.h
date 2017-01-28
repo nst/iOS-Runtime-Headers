@@ -13,7 +13,7 @@
 + (id)serial;
 
 - (id)attributes;
-- (id)autoreleaseFrequency:(unsigned long)arg1;
+- (id)autoreleaseFrequency:(unsigned long long)arg1;
 - (id)inactive;
 - (id)serviceClass:(unsigned int)arg1;
 - (void)setAttributes:(id)arg1;

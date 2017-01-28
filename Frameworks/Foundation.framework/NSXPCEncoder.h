@@ -3,7 +3,7 @@
  */
 
 @interface NSXPCEncoder : NSXPCCoder {
-    BOOL  _askForReplacement;
+    bool  _askForReplacement;
     NSXPCConnection * _connection;
     <NSXPCEncoderDelegate> * _delegate;
     void ** _encoder;
@@ -25,13 +25,13 @@
 - (void)_insertIntoXPCObject:(id)arg1;
 - (id)_newRootXPCObject;
 - (id)_replaceObject:(id)arg1;
-- (BOOL)allowsKeyedCoding;
+- (bool)allowsKeyedCoding;
 - (id)connection;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
-- (void)encodeBool:(BOOL)arg1 forKey:(id)arg2;
-- (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;
+- (void)encodeBool:(bool)arg1 forKey:(id)arg2;
+- (void)encodeBytes:(const char *)arg1 length:(unsigned long long)arg2 forKey:(id)arg3;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeDataObject:(id)arg1;
 - (void)encodeDouble:(double)arg1 forKey:(id)arg2;
@@ -39,7 +39,7 @@
 - (void)encodeInt32:(int)arg1 forKey:(id)arg2;
 - (void)encodeInt64:(long long)arg1 forKey:(id)arg2;
 - (void)encodeInt:(int)arg1 forKey:(id)arg2;
-- (void)encodeInteger:(int)arg1 forKey:(id)arg2;
+- (void)encodeInteger:(long long)arg1 forKey:(id)arg2;
 - (void)encodeInvocation:(id)arg1;
 - (void)encodeObject:(id)arg1;
 - (void)encodeObject:(id)arg1 forKey:(id)arg2;

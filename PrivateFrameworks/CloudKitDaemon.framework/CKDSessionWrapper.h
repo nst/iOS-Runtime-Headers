@@ -4,23 +4,23 @@
 
 @interface CKDSessionWrapper : NSObject {
     NSMutableDictionary * _delegateByTaskDescription;
-    BOOL  _isEphemeral;
+    bool  _isEphemeral;
     NSURLSession * _session;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *delegateByTaskDescription;
-@property (nonatomic, readonly) BOOL isEphemeral;
+@property (nonatomic, readonly) bool isEphemeral;
 @property (nonatomic, readonly) NSURLSession *session;
 
-+ (id)wrapperWithSession:(id)arg1 isEphemeral:(BOOL)arg2;
++ (id)wrapperWithSession:(id)arg1 isEphemeral:(bool)arg2;
 
 - (void).cxx_destruct;
-- (id)_initWithSession:(id)arg1 isEphemeral:(BOOL)arg2;
+- (id)_initWithSession:(id)arg1 isEphemeral:(bool)arg2;
 - (void)_recalculateSessionDelegateQueuePriority;
 - (void)addDelegate:(id)arg1 forTask:(id)arg2;
 - (id)delegateByTaskDescription;
 - (id)delegateForTask:(id)arg1;
-- (BOOL)isEphemeral;
+- (bool)isEphemeral;
 - (void)removeDelegateForTask:(id)arg1;
 - (id)session;
 

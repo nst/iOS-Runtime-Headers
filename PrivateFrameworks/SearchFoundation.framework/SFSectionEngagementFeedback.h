@@ -4,22 +4,22 @@
 
 @interface SFSectionEngagementFeedback : SFFeedback <NSCopying> {
     SFResultSection * _section;
-    unsigned int  _triggerEvent;
+    unsigned long long  _triggerEvent;
 }
 
 @property (nonatomic, copy) SFResultSection *section;
-@property (nonatomic) unsigned int triggerEvent;
+@property (nonatomic) unsigned long long triggerEvent;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSection:(id)arg1 triggerEvent:(unsigned int)arg2;
+- (id)initWithSection:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (id)section;
 - (void)setSection:(id)arg1;
-- (void)setTriggerEvent:(unsigned int)arg1;
-- (unsigned int)triggerEvent;
+- (void)setTriggerEvent:(unsigned long long)arg1;
+- (unsigned long long)triggerEvent;
 
 @end

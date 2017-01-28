@@ -3,28 +3,28 @@
  */
 
 @interface HMHomeAccessControl : NSObject {
-    BOOL  _administrator;
+    bool  _administrator;
     NSObject<OS_dispatch_queue> * _propertyQueue;
-    BOOL  _remoteAccessAllowed;
+    bool  _remoteAccessAllowed;
     HMUser * _user;
 }
 
-@property (getter=isAdministrator, nonatomic) BOOL administrator;
+@property (getter=isAdministrator, nonatomic) bool administrator;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
-@property (getter=isRemoteAccessAllowed, nonatomic) BOOL remoteAccessAllowed;
+@property (getter=isRemoteAccessAllowed, nonatomic) bool remoteAccessAllowed;
 @property (nonatomic) HMUser *user;
 
 - (void).cxx_destruct;
-- (id)initWithUser:(id)arg1 administratorPrivilege:(BOOL)arg2 remoteAccess:(BOOL)arg3;
-- (BOOL)isAdministrator;
-- (BOOL)isRemoteAccessAllowed;
+- (id)initWithUser:(id)arg1 administratorPrivilege:(bool)arg2 remoteAccess:(bool)arg3;
+- (bool)isAdministrator;
+- (bool)isRemoteAccessAllowed;
 - (id)propertyQueue;
-- (void)setAdministrator:(BOOL)arg1;
+- (void)setAdministrator:(bool)arg1;
 - (void)setPropertyQueue:(id)arg1;
-- (void)setRemoteAccessAllowed:(BOOL)arg1;
+- (void)setRemoteAccessAllowed:(bool)arg1;
 - (void)setUser:(id)arg1;
-- (void)updateAdministratorAccess:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (void)updateRemoteAccess:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateAdministratorAccess:(bool)arg1 completionHandler:(id)arg2;
+- (void)updateRemoteAccess:(bool)arg1 completionHandler:(id)arg2;
 - (id)user;
 
 @end

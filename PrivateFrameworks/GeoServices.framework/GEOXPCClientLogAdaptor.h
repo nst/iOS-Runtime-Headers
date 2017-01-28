@@ -5,9 +5,9 @@
 @interface GEOXPCClientLogAdaptor : GEOBaseLogAdaptor {
     NSMutableArray * _failedLogMessages;
     NSLock * _failedLogMessagesLock;
-    BOOL  _flushLogsFailed;
+    bool  _flushLogsFailed;
     NSObject<OS_dispatch_queue> * _serverConnectionQueue;
-    id /* block */  _xpcConnectionEstablishedCallback;
+    id  _xpcConnectionEstablishedCallback;
 }
 
 - (void)_createAndSendXPCMessageWithName:(id)arg1 userInfo:(id)arg2;
@@ -17,10 +17,11 @@
 - (void)disableLogMsgInstrumentation;
 - (void)enableLogMsgInstrumentation;
 - (void)flushLogs;
+- (void)forceFlushLogs;
 - (id)init;
 - (void)queueLogMessage:(id)arg1;
 - (void)registerLogMsgState:(id)arg1;
-- (void)setupXPCRemoteAdatorsWithOptions:(id)arg1 connectionEstablishedCallback:(id /* block */)arg2;
+- (void)setupXPCRemoteAdatorsWithOptions:(id)arg1 connectionEstablishedCallback:(id)arg2;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
 
 @end

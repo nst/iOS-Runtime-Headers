@@ -4,16 +4,16 @@
 
 @interface AVPlayerItemVideoOutputInternal : NSObject {
     double  advanceWakeUpInterval;
-    BOOL  advanceWakeUpIntervalIsValid;
+    bool  advanceWakeUpIntervalIsValid;
     double  currentRate;
     <AVPlayerItemOutputPullDelegate> * delegate;
     NSObject<OS_dispatch_queue> * delegateQueue;
     NSObject<OS_dispatch_source> * delegateWakeupSource;
     struct OpaqueVTPixelBufferConformer { } * pixelBufferConformer;
     AVWeakReference * playerItemWeakReference;
-    BOOL  shouldTagBuffersWithInfo;
+    bool  shouldTagBuffersWithInfo;
     NSObject<OS_dispatch_queue> * stateQueue;
-    BOOL  suppressesPlayerRendering;
+    bool  suppressesPlayerRendering;
     struct OpaqueCMTimebase { } * timebase;
     struct OpaqueFigVisualContext { } * vc;
     AVVideoOutputSettings * videoSettings;

@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)containsForms;
-- (BOOL)isTableLinkedToAForm:(struct __CFUUID { }*)arg1;
+- (bool)containsForms;
+- (bool)isTableLinkedToAForm:(struct __CFUUID { }*)arg1;
 - (void)tableID:(struct __CFUUID { }*)arg1 changedToTableID:(struct __CFUUID { }*)arg2;
 
 @end

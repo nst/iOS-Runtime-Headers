@@ -5,7 +5,7 @@
 
 @required
 
-- (UIInterfaceActionVisualStyle *)defaultVisualStyleForTraitCollection:(UITraitCollection *)arg1 presentationStyle:(int)arg2;
+- (UIInterfaceActionVisualStyle *)defaultVisualStyleForTraitCollection:(UITraitCollection *)arg1 presentationStyle:(long long)arg2;
 - (void)reloadVisualStyle;
 - (void)setVisualStyleProvider:(id <UIInterfaceActionVisualStyleProviding>)arg1;
 - (UIInterfaceActionVisualStyle *)visualStyle;

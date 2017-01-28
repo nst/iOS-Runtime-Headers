@@ -9,19 +9,19 @@
     NSCache * _queue_queryCache;
 }
 
-+ (int)_sqliteOpenFlagsForDataProtectionClass:(unsigned int)arg1;
++ (int)_sqliteOpenFlagsForDataProtectionClass:(unsigned long long)arg1;
 
-- (id)_initWithSqlitePath:(id)arg1 dataProtectionClass:(unsigned int)arg2;
+- (id)_initWithSqlitePath:(id)arg1 dataProtectionClass:(unsigned long long)arg2;
 - (void)_queue_close;
 - (void)addObserver:(id)arg1;
 - (void)close;
 - (void)dealloc;
 - (id)initWithInMemoryDatabase;
 - (id)initWithURL:(id)arg1;
-- (id)initWithURL:(id)arg1 dataProtectionClass:(unsigned int)arg2;
+- (id)initWithURL:(id)arg1 dataProtectionClass:(unsigned long long)arg2;
 - (id)lastErrorMessage;
-- (void)performSyncWithDatabase:(id /* block */)arg1;
-- (void)performWithDatabase:(id /* block */)arg1;
+- (void)performSyncWithDatabase:(id)arg1;
+- (void)performWithDatabase:(id)arg1;
 - (id)prepareStatement:(id)arg1;
 - (void)removeObserver:(id)arg1;
 

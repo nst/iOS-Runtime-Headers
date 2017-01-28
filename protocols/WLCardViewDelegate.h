@@ -5,18 +5,18 @@
 
 @optional
 
-- (BOOL)passView:(PKPassView *)arg1 deleteButtonEnabledForPass:(PKPass *)arg2;
+- (bool)passView:(PKPassView *)arg1 deleteButtonEnabledForPass:(PKPass *)arg2;
 - (void)passView:(PKPassView *)arg1 deleteButtonPressedForPass:(PKPass *)arg2;
 - (void)passView:(PKPassView *)arg1 flipButtonPressedForPass:(PKPass *)arg2;
 - (void)passView:(PKPassView *)arg1 resizeButtonPressedForPass:(PKPass *)arg2;
-- (BOOL)passViewBackGrowsCentered:(PKPassView *)arg1;
+- (bool)passViewBackGrowsCentered:(PKPassView *)arg1;
 - (void)passViewDidBeginAuthenticating:(PKPassView *)arg1;
 - (void)passViewDidEndAuthenticating:(PKPassView *)arg1;
-- (void)passViewDidFlip:(PKPassView *)arg1 animated:(BOOL)arg2;
-- (void)passViewDidResize:(PKPassView *)arg1 animated:(BOOL)arg2;
-- (BOOL)passViewShouldFlip:(PKPassView *)arg1;
-- (BOOL)passViewShouldResize:(PKPassView *)arg1;
+- (void)passViewDidFlip:(PKPassView *)arg1 animated:(bool)arg2;
+- (void)passViewDidResize:(PKPassView *)arg1 animated:(bool)arg2;
+- (bool)passViewShouldFlip:(PKPassView *)arg1;
+- (bool)passViewShouldResize:(PKPassView *)arg1;
 - (void)passViewTapped:(PKPassView *)arg1;
-- (void)passViewWillFlip:(PKPassView *)arg1 animated:(BOOL)arg2;
+- (void)passViewWillFlip:(PKPassView *)arg1 animated:(bool)arg2;
 
 @end

@@ -15,19 +15,19 @@
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
-- (void)firstIdentificationEntriesForPhoneNumbers:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)firstIdentificationEntryForPhoneNumber:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)getEnabledStatusForExtensionWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)getPrioritizedExtensionIdentifiersWithCompletionHandler:(id /* block */)arg1;
+- (void)firstIdentificationEntriesForPhoneNumbers:(id)arg1 completionHandler:(id)arg2;
+- (void)firstIdentificationEntryForPhoneNumber:(id)arg1 completionHandler:(id)arg2;
+- (void)getEnabledStatusForExtensionWithIdentifier:(id)arg1 completionHandler:(id)arg2;
+- (void)getPrioritizedExtensionIdentifiersWithCompletionHandler:(id)arg1;
 - (id)init;
 - (id)queue;
-- (void)reloadExtensionWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)reloadExtensionWithIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (void)removeDataForExtensionWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (void)removeDataForExtensionWithIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (void)setConnection:(id)arg1;
-- (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(id)arg2;
 - (void)setQueue:(id)arg1;
-- (void)synchronizeExtensionsWithCompletionHandler:(id /* block */)arg1;
+- (void)synchronizeExtensionsWithCompletionHandler:(id)arg1;
 
 @end

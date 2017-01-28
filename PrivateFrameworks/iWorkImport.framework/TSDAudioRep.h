@@ -6,31 +6,31 @@
     AVAsset * mAssetForPlayabilityCheck;
     <TSDAudioHUDController> * mAudioHUDController;
     CALayer * mAudioImageLayer;
-    BOOL  mDidCheckPlayability;
+    bool  mDidCheckPlayability;
     float  mDynamicVolume;
-    BOOL  mIsChangingDynamicVolume;
-    BOOL  mIsPlayable;
+    bool  mIsChangingDynamicVolume;
+    bool  mIsPlayable;
     TSKAVPlayerController * mPlayerController;
     CALayer * mSpinnerLayer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) TSDMovieInfo *movieInfo;
-@property (getter=isPlayable, nonatomic, readonly) BOOL playable;
+@property (getter=isPlayable, nonatomic, readonly) bool playable;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (BOOL)directlyManagesLayerContent;
+- (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(BOOL)arg2 strokeDrawOptions:(unsigned int)arg3 withOpacity:(BOOL)arg4 forAlphaOnly:(BOOL)arg5 drawChildren:(BOOL)arg6;
+- (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(bool)arg4 forAlphaOnly:(bool)arg5 drawChildren:(bool)arg6;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (BOOL)isPlayable;
+- (bool)isPlayable;
 - (Class)layerClass;
 - (id)movieInfo;
-- (BOOL)shouldAllowReplacementFromDrop;
-- (BOOL)shouldAllowReplacementFromPaste;
-- (BOOL)shouldShowMediaReplaceUI;
+- (bool)shouldAllowReplacementFromDrop;
+- (bool)shouldAllowReplacementFromPaste;
+- (bool)shouldShowMediaReplaceUI;
 
 @end

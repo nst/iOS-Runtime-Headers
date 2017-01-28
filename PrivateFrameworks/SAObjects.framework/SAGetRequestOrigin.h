@@ -15,7 +15,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)maxAge;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)searchTimeout;
 - (void)setDesiredAccuracy:(id)arg1;
 - (void)setMaxAge:(id)arg1;

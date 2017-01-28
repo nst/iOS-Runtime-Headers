@@ -3,15 +3,14 @@
  */
 
 @interface TSgPTPTime : NSObject {
-    void * _gptpTimeImpl;
+    unsigned int  _nanoseconds;
+    unsigned long long  _seconds;
 }
 
 @property (nonatomic) unsigned int nanoseconds;
 @property (nonatomic) unsigned long long nanoseconds64Representation;
 @property (nonatomic) unsigned long long seconds;
 
-- (void)dealloc;
-- (id)init;
 - (unsigned int)nanoseconds;
 - (unsigned long long)nanoseconds64Representation;
 - (unsigned long long)seconds;

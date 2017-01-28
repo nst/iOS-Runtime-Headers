@@ -13,7 +13,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1;
-- (BOOL)isCustom;
+- (bool)isCustom;
 - (id)parameters;
 - (id)reversedAction;
 

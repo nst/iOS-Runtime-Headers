@@ -15,7 +15,7 @@
 + (id)sharedRuntimeStatistics;
 
 - (void)_logStatistics:(int)arg1;
-- (void)addStatisticAllocatedImageSize:(unsigned long)arg1 roundedSize:(unsigned long)arg2;
+- (void)addStatisticAllocatedImageSize:(unsigned long long)arg1 roundedSize:(unsigned long long)arg2;
 - (void)dealloc;
 - (void)incrementStatisticDidShortCircuitImageLookup;
 - (void)incrementStatisticLookup;

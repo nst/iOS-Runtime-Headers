@@ -3,7 +3,7 @@
  */
 
 @interface PDFPageLayerPrivate : NSObject {
-    int  displayBox;
+    long long  displayBox;
     struct CGDisplayList { } * displayList;
     bool  hasZoomed;
     bool  isZooming;
@@ -13,15 +13,15 @@
     int  layoutUpdateCount;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  oldPageRect;
-    int  oldRotation;
+    long long  oldRotation;
     PDFPage * page;
     PDFPageView * parentView;
     bool  requestedLayout;

@@ -5,7 +5,7 @@
 @interface CNPropertyPhoneNumberCell : CNPropertySimpleTransportCell
 
 - (void)setProperty:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 - (void)updateTransportButtons;
 
 @end

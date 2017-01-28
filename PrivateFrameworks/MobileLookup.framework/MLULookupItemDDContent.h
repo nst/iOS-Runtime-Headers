@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (unsigned int)commitType;
+- (unsigned long long)commitType;
 - (id)commitURL;
 - (id)contact;
 - (void)dismissViewController;

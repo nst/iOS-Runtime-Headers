@@ -41,7 +41,7 @@
 - (id)overlayView;
 - (void)performActionForSender:(id)arg1;
 - (void)reloadVisibleToolbarItemIdentifiers;
-- (void)setOverlayShouldPixelate:(BOOL)arg1;
+- (void)setOverlayShouldPixelate:(bool)arg1;
 - (void)setTestingActionController:(id)arg1;
 - (void)setTestingAttributeController:(id)arg1;
 - (void)setTestingDelegate:(id)arg1;
@@ -68,7 +68,7 @@
 - (id)toolController;
 - (id)toolbarView;
 - (id)undoController;
-- (void)updateOverlayViewAtIndex:(unsigned int)arg1;
-- (BOOL)validateSender:(id)arg1;
+- (void)updateOverlayViewAtIndex:(unsigned long long)arg1;
+- (bool)validateSender:(id)arg1;
 
 @end

@@ -3,46 +3,46 @@
  */
 
 @interface ICCollapsibleBaseView : UIView {
-    BOOL  _collapsed;
+    bool  _collapsed;
     struct UIView { Class x1; } * _contentView;
     NSLayoutConstraint * _leadingConstraint;
-    float  _leadingSpace;
-    BOOL  _setupComplete;
+    double  _leadingSpace;
+    bool  _setupComplete;
     NSLayoutConstraint * _trailingConstraint;
-    float  _trailingSpace;
+    double  _trailingSpace;
     NSLayoutConstraint * _zeroWidthConstraint;
 }
 
-@property (getter=isCollapsed, nonatomic) BOOL collapsed;
+@property (getter=isCollapsed, nonatomic) bool collapsed;
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic, retain) NSLayoutConstraint *leadingConstraint;
-@property (nonatomic) float leadingSpace;
-@property (nonatomic) BOOL setupComplete;
+@property (nonatomic) double leadingSpace;
+@property (nonatomic) bool setupComplete;
 @property (nonatomic, retain) NSLayoutConstraint *trailingConstraint;
-@property (nonatomic) float trailingSpace;
+@property (nonatomic) double trailingSpace;
 @property (nonatomic, retain) NSLayoutConstraint *zeroWidthConstraint;
 
 - (void).cxx_destruct;
 - (struct UIView { Class x1; }*)contentView;
 - (void)ic_setNeedsUpdateConstraints;
-- (BOOL)isCollapsed;
+- (bool)isCollapsed;
 - (id)leadingConstraint;
-- (float)leadingSpace;
+- (double)leadingSpace;
 - (void)performSetUpWithContentView:(struct UIView { Class x1; }*)arg1;
 - (void)performSetup;
-- (void)setCollapsed:(BOOL)arg1;
+- (void)setCollapsed:(bool)arg1;
 - (void)setContentView:(struct UIView { Class x1; }*)arg1;
 - (void)setLeadingConstraint:(id)arg1;
-- (void)setLeadingSpace:(float)arg1;
-- (void)setSetupComplete:(BOOL)arg1;
+- (void)setLeadingSpace:(double)arg1;
+- (void)setSetupComplete:(bool)arg1;
 - (void)setTrailingConstraint:(id)arg1;
-- (void)setTrailingSpace:(float)arg1;
+- (void)setTrailingSpace:(double)arg1;
 - (void)setUpIfNeeded;
 - (void)setZeroWidthConstraint:(id)arg1;
-- (BOOL)setupComplete;
+- (bool)setupComplete;
 - (id)trailingConstraint;
-- (float)trailingSpace;
-- (BOOL)wantsLayer;
+- (double)trailingSpace;
+- (bool)wantsLayer;
 - (id)zeroWidthConstraint;
 
 @end

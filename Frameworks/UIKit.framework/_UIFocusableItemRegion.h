@@ -4,7 +4,7 @@
 
 @interface _UIFocusableItemRegion : _UIFocusRegion {
     <UIFocusItem> * _item;
-    BOOL  _itemCanBecomeFocused;
+    bool  _itemCanBecomeFocused;
 }
 
 @property (nonatomic, readonly) <UIFocusItem> *item;
@@ -13,16 +13,17 @@
 - (id)_defaultFocusItem;
 - (id)_destinationItemForFocusMovement:(id)arg1 inMap:(id)arg2;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (unsigned int)_focusableBoundaries;
-- (BOOL)_shouldBeOccludedByRegion:(id)arg1;
-- (BOOL)_shouldCropRegionToSearchArea;
-- (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
+- (unsigned long long)_focusableBoundaries;
+- (long long)_preferredDistanceComparisonType;
+- (bool)_shouldBeOccludedByRegion:(id)arg1;
+- (bool)_shouldCropRegionToSearchArea;
+- (bool)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
 - (id)_visualRepresentationColor;
-- (int)_visualRepresentationPatternType;
+- (long long)_visualRepresentationPatternType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 item:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 item:(id)arg2;
 - (id)item;
 
 @end

@@ -9,10 +9,10 @@
     FCCKPOperation * _request;
 }
 
-@property (nonatomic, readonly) BOOL hasHeader;
-@property (nonatomic, readonly) BOOL hasQueryRetrieveRequest;
-@property (nonatomic, readonly) BOOL hasRecordRetrieveRequest;
-@property (nonatomic, readonly) BOOL hasRequest;
+@property (nonatomic, readonly) bool hasHeader;
+@property (nonatomic, readonly) bool hasQueryRetrieveRequest;
+@property (nonatomic, readonly) bool hasRecordRetrieveRequest;
+@property (nonatomic, readonly) bool hasRequest;
 @property (nonatomic, retain) FCCKPRequestOperationHeader *header;
 @property (nonatomic, retain) FCCKPQueryRetrieveRequest *queryRetrieveRequest;
 @property (nonatomic, retain) FCCKPRecordRetrieveRequest *recordRetrieveRequest;
@@ -23,16 +23,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHeader;
-- (BOOL)hasQueryRetrieveRequest;
-- (BOOL)hasRecordRetrieveRequest;
-- (BOOL)hasRequest;
-- (unsigned int)hash;
+- (bool)hasHeader;
+- (bool)hasQueryRetrieveRequest;
+- (bool)hasRecordRetrieveRequest;
+- (bool)hasRequest;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)queryRetrieveRequest;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordRetrieveRequest;
 - (id)request;
 - (void)setHeader:(id)arg1;

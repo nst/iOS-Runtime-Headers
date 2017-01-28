@@ -7,10 +7,10 @@
     HKQuantity * _averageCyclingDistance;
     HKQuantity * _averageWalkRunDistance;
     double  _averageWorkoutDuration;
-    BOOL  _isAllOutdoorCycling;
-    BOOL  _isAllRunning;
-    int  _numberOfCyclingWorkouts;
-    int  _numberOfWalkRunWorkouts;
+    bool  _isAllOutdoorCycling;
+    bool  _isAllRunning;
+    long long  _numberOfCyclingWorkouts;
+    long long  _numberOfWalkRunWorkouts;
     NSDate * _startOfMonth;
     HKQuantity * _totalActiveEnergyBurn;
     HKQuantity * _totalCyclingDistance;
@@ -32,7 +32,7 @@
 @property (nonatomic, readonly) HKQuantity *totalWalkRunDistance;
 @property (nonatomic, readonly) double totalWalkRunDuration;
 @property (nonatomic, readonly) double totalWorkoutDuration;
-@property (nonatomic, readonly) unsigned int workoutCount;
+@property (nonatomic, readonly) unsigned long long workoutCount;
 
 + (id)_monthFormatter;
 
@@ -73,6 +73,6 @@
 - (id)totalWalkRunDistance;
 - (double)totalWalkRunDuration;
 - (double)totalWorkoutDuration;
-- (unsigned int)workoutCount;
+- (unsigned long long)workoutCount;
 
 @end

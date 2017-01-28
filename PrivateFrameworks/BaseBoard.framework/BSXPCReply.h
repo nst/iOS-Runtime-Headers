@@ -16,6 +16,6 @@
 - (id)initWithReply:(id)arg1;
 - (id)message;
 - (long long)messageKind;
-- (void)sendReply:(id /* block */)arg1;
+- (void)sendReply:(id)arg1;
 
 @end

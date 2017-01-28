@@ -4,6 +4,6 @@
 
 @interface CNAutocompleteDuetContactResult : CNAutocompleteResult
 
-+ (unsigned int)category;
++ (unsigned long long)category;
 
 @end

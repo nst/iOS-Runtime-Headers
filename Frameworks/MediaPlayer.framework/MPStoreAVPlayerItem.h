@@ -3,14 +3,14 @@
  */
 
 @interface MPStoreAVPlayerItem : AVPlayerItem {
-    id /* block */  _deallocationHandler;
+    id  _deallocationHandler;
 }
 
-@property (nonatomic, copy) id /* block */ deallocationHandler;
+@property (nonatomic, copy) id deallocationHandler;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id /* block */)deallocationHandler;
-- (void)setDeallocationHandler:(id /* block */)arg1;
+- (id)deallocationHandler;
+- (void)setDeallocationHandler:(id)arg1;
 
 @end

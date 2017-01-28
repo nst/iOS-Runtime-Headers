@@ -3,34 +3,34 @@
  */
 
 @interface ISPlayerState : NSObject {
-    float  _crossfadeAlpha;
-    float  _crossfadeBlurRadius;
+    double  _crossfadeAlpha;
+    double  _crossfadeBlurRadius;
     NSString * _diagnosticLabel;
-    float  _photoBlurRadius;
-    float  _scale;
-    float  _videoAlpha;
-    float  _videoBlurRadius;
+    double  _photoBlurRadius;
+    double  _scale;
+    double  _videoAlpha;
+    double  _videoBlurRadius;
 }
 
-@property (nonatomic, readonly) float crossfadeAlpha;
-@property (nonatomic, readonly) float crossfadeBlurRadius;
+@property (nonatomic, readonly) double crossfadeAlpha;
+@property (nonatomic, readonly) double crossfadeBlurRadius;
 @property (nonatomic, readonly) NSString *diagnosticLabel;
-@property (nonatomic, readonly) float photoBlurRadius;
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) float videoAlpha;
-@property (nonatomic, readonly) float videoBlurRadius;
+@property (nonatomic, readonly) double photoBlurRadius;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) double videoAlpha;
+@property (nonatomic, readonly) double videoBlurRadius;
 
-+ (id)outputInfoWithScale:(float)arg1 photoBlurRadius:(float)arg2 videoAlpha:(float)arg3 videoBlurRadius:(float)arg4 crossfadeAlpha:(float)arg5 crossfadeBlurRadius:(float)arg6 label:(id)arg7;
++ (id)outputInfoWithScale:(double)arg1 photoBlurRadius:(double)arg2 videoAlpha:(double)arg3 videoBlurRadius:(double)arg4 crossfadeAlpha:(double)arg5 crossfadeBlurRadius:(double)arg6 label:(id)arg7;
 
 - (void).cxx_destruct;
-- (float)crossfadeAlpha;
-- (float)crossfadeBlurRadius;
+- (double)crossfadeAlpha;
+- (double)crossfadeBlurRadius;
 - (id)description;
 - (id)diagnosticLabel;
-- (id)initWithScale:(float)arg1 photoBlurRadius:(float)arg2 videoAlpha:(float)arg3 videoBlurRadius:(float)arg4 crossfadeAlpha:(float)arg5 crossfadeBlurRadius:(float)arg6 label:(id)arg7;
-- (float)photoBlurRadius;
-- (float)scale;
-- (float)videoAlpha;
-- (float)videoBlurRadius;
+- (id)initWithScale:(double)arg1 photoBlurRadius:(double)arg2 videoAlpha:(double)arg3 videoBlurRadius:(double)arg4 crossfadeAlpha:(double)arg5 crossfadeBlurRadius:(double)arg6 label:(id)arg7;
+- (double)photoBlurRadius;
+- (double)scale;
+- (double)videoAlpha;
+- (double)videoBlurRadius;
 
 @end

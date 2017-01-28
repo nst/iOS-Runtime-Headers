@@ -4,41 +4,41 @@
 
 @interface PXPeopleProgressManager : NSObject {
     <PXPeopleProgressDatasource> * _datasource;
-    BOOL  _monitoringProgress;
-    unsigned int  _processingStatus;
-    float  _progress;
-    float  _updateInterval;
+    bool  _monitoringProgress;
+    unsigned long long  _processingStatus;
+    double  _progress;
+    double  _updateInterval;
 }
 
 @property (nonatomic, retain) <PXPeopleProgressDatasource> *datasource;
-@property (getter=isMonitoringProgress, nonatomic) BOOL monitoringProgress;
-@property (readonly) BOOL processingComplete;
-@property unsigned int processingStatus;
-@property float progress;
-@property (nonatomic) float updateInterval;
+@property (getter=isMonitoringProgress, nonatomic) bool monitoringProgress;
+@property (readonly) bool processingComplete;
+@property unsigned long long processingStatus;
+@property double progress;
+@property (nonatomic) double updateInterval;
 
 - (void).cxx_destruct;
-- (void)_handleMonitorUpdateWithProgress:(float)arg1;
-- (unsigned int)_homeAndPlusCount:(unsigned int)arg1;
-- (BOOL)_homeMeetsThresholdForProgress:(float)arg1;
-- (BOOL)_progressComplete:(float)arg1;
+- (void)_handleMonitorUpdateWithProgress:(double)arg1;
+- (unsigned long long)_homeAndPlusCount:(unsigned long long)arg1;
+- (bool)_homeMeetsThresholdForProgress:(double)arg1;
+- (bool)_progressComplete:(double)arg1;
 - (void)_updateProgress;
-- (void)_updateStatusForProgress:(float)arg1 processCount:(unsigned int)arg2;
-- (void)_updateWithStatus:(unsigned int)arg1 progress:(float)arg2;
+- (void)_updateStatusForProgress:(double)arg1 processCount:(unsigned long long)arg2;
+- (void)_updateWithStatus:(unsigned long long)arg1 progress:(double)arg2;
 - (id)datasource;
-- (BOOL)featureUnlocked;
-- (BOOL)hasSubstantialProcessingTodo;
+- (bool)featureUnlocked;
+- (bool)hasSubstantialProcessingTodo;
 - (id)init;
 - (id)initWithDatasource:(id)arg1;
-- (BOOL)isMonitoringProgress;
-- (BOOL)processingComplete;
-- (unsigned int)processingStatus;
-- (float)progress;
+- (bool)isMonitoringProgress;
+- (bool)processingComplete;
+- (unsigned long long)processingStatus;
+- (double)progress;
 - (void)setDatasource:(id)arg1;
-- (void)setMonitoringProgress:(BOOL)arg1;
-- (void)setProcessingStatus:(unsigned int)arg1;
-- (void)setProgress:(float)arg1;
-- (void)setUpdateInterval:(float)arg1;
-- (float)updateInterval;
+- (void)setMonitoringProgress:(bool)arg1;
+- (void)setProcessingStatus:(unsigned long long)arg1;
+- (void)setProgress:(double)arg1;
+- (void)setUpdateInterval:(double)arg1;
+- (double)updateInterval;
 
 @end

@@ -14,6 +14,6 @@
 - (id)accessoryUUIDList;
 - (id)device;
 - (id)initWithDevice:(id)arg1 accessoryList:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

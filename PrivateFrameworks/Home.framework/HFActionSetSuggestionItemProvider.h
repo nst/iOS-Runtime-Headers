@@ -3,20 +3,20 @@
  */
 
 @interface HFActionSetSuggestionItemProvider : HFItemProvider {
-    BOOL  _hasProvidedStaticSuggestionItems;
+    bool  _hasProvidedStaticSuggestionItems;
     NSSet * _staticSuggestionItems;
 }
 
-@property (nonatomic) BOOL hasProvidedStaticSuggestionItems;
+@property (nonatomic) bool hasProvidedStaticSuggestionItems;
 @property (nonatomic, retain) NSSet *staticSuggestionItems;
 
 - (void).cxx_destruct;
-- (BOOL)hasProvidedStaticSuggestionItems;
+- (bool)hasProvidedStaticSuggestionItems;
 - (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;
-- (void)setHasProvidedStaticSuggestionItems:(BOOL)arg1;
+- (void)setHasProvidedStaticSuggestionItems:(bool)arg1;
 - (void)setStaticSuggestionItems:(id)arg1;
 - (id)staticSuggestionItems;
 

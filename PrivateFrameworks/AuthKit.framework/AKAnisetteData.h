@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *oneTimePassword;
 @property (nonatomic) unsigned long long routingInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

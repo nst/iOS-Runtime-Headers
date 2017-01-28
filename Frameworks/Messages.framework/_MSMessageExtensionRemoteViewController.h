@@ -4,6 +4,6 @@
 
 @interface _MSMessageExtensionRemoteViewController : _UIRemoteViewController
 
-- (BOOL)__shouldRemoteViewControllerFenceOperations;
+- (bool)__shouldRemoteViewControllerFenceOperations;
 
 @end

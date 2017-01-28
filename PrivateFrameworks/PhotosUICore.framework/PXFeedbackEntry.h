@@ -3,19 +3,19 @@
  */
 
 @interface PXFeedbackEntry : NSObject <NSCoding> {
-    BOOL  _alreadyCollected;
+    bool  _alreadyCollected;
     NSString * _appVersion;
     NSDictionary * _feedbackItemDetails;
     NSMutableDictionary * _feedbackItemsDict;
-    int  _generalFeedback;
+    long long  _generalFeedback;
     NSString * _systemID;
     NSDate * _timestamp;
 }
 
-@property (nonatomic) BOOL alreadyCollected;
+@property (nonatomic) bool alreadyCollected;
 @property (nonatomic, copy) NSString *appVersion;
 @property (nonatomic, retain) NSMutableDictionary *feedbackItemsDict;
-@property (nonatomic) int generalFeedback;
+@property (nonatomic) long long generalFeedback;
 @property (nonatomic, copy) NSString *systemID;
 @property (nonatomic, retain) NSDate *timestamp;
 
@@ -27,26 +27,26 @@
 + (id)positiveFeedbackForMemoryDetailsKeys;
 
 - (void).cxx_destruct;
-- (BOOL)alreadyCollected;
+- (bool)alreadyCollected;
 - (id)appVersion;
 - (id)asTextForItemKey:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)feedbackItemsDict;
-- (int)generalFeedback;
+- (long long)generalFeedback;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSystemID:(id)arg1 timestamp:(id)arg2;
 - (id)longDescription;
 - (id)osKeyForItemKey:(id)arg1;
-- (void)setAlreadyCollected:(BOOL)arg1;
+- (void)setAlreadyCollected:(bool)arg1;
 - (void)setAppVersion:(id)arg1;
 - (void)setFeedbackItemsDict:(id)arg1;
-- (void)setGeneralFeedback:(int)arg1;
+- (void)setGeneralFeedback:(long long)arg1;
 - (void)setSystemID:(id)arg1;
 - (void)setTimestamp:(id)arg1;
 - (id)systemID;
 - (id)timestamp;
 - (id)uniqueID;
-- (BOOL)userLikedResults;
+- (bool)userLikedResults;
 
 @end

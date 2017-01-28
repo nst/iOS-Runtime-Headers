@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSString *formatString;
 @property (nonatomic, readonly) NSArray *formatStrings;
 @property (nonatomic, readonly) NSArray *formatTokens;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *separators;
 @property (readonly) Class superclass;
 

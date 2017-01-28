@@ -9,8 +9,8 @@
         unsigned int flags; 
         long long epoch; 
     }  _audioOffset;
-    BOOL  _finalEnqueuedIrisRequest;
-    BOOL  _finalReferenceMovie;
+    bool  _finalEnqueuedIrisRequest;
+    bool  _finalReferenceMovie;
     struct { 
         long long value; 
         int timescale; 
@@ -43,7 +43,7 @@
         unsigned int flags; 
         long long epoch; 
     }  _movieTrimStartTime;
-    BOOL  _originalPhotoRecording;
+    bool  _originalPhotoRecording;
     NSURL * _outputMovieURL;
     NSURL * _outputURLForSDOFOriginalMovie;
     unsigned int  _requestedSDOFVariants;
@@ -60,16 +60,16 @@
         unsigned int flags; 
         long long epoch; 
     }  _stillImageCaptureTime;
-    BOOL  _stillImageEncoderKeyFrameEmitted;
-    BOOL  _stillImageVISKeyFrameTagged;
+    bool  _stillImageEncoderKeyFrameEmitted;
+    bool  _stillImageVISKeyFrameTagged;
     NSURL * _temporaryMovieURL;
     NSURL * _temporaryURLForSDOFOriginalMovie;
 }
 
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } audioOffset;
-@property (nonatomic, readonly) BOOL containsTrims;
-@property (getter=isFinalEnqueuedIrisRequest, nonatomic) BOOL finalEnqueuedIrisRequest;
-@property (getter=isFinalReferenceMovie, nonatomic) BOOL finalReferenceMovie;
+@property (nonatomic, readonly) bool containsTrims;
+@property (getter=isFinalEnqueuedIrisRequest, nonatomic) bool finalEnqueuedIrisRequest;
+@property (getter=isFinalReferenceMovie, nonatomic) bool finalReferenceMovie;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } masterMovieStartTime;
 @property (nonatomic, retain) NSURL *masterMovieURL;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieEndTime;
@@ -78,30 +78,30 @@
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieTrimEndTime;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieTrimStartTime;
 @property (nonatomic, readonly) int numberOfRequestedVariants;
-@property (getter=isOriginalPhotoRecording, nonatomic) BOOL originalPhotoRecording;
+@property (getter=isOriginalPhotoRecording, nonatomic) bool originalPhotoRecording;
 @property (nonatomic, retain) NSURL *outputMovieURL;
 @property (nonatomic, copy) NSURL *outputURLForSDOFOriginalMovie;
 @property (nonatomic) unsigned int requestedSDOFVariants;
 @property (nonatomic, readonly) FigCaptureMovieFileRecordingSettings *settings;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } stillImageCaptureHostTime;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } stillImageCaptureTime;
-@property (nonatomic) BOOL stillImageEncoderKeyFrameEmitted;
-@property (nonatomic) BOOL stillImageVISKeyFrameTagged;
+@property (nonatomic) bool stillImageEncoderKeyFrameEmitted;
+@property (nonatomic) bool stillImageVISKeyFrameTagged;
 @property (nonatomic, retain) NSURL *temporaryMovieURL;
 @property (nonatomic, copy) NSURL *temporaryURLForSDOFOriginalMovie;
 
-+ (id)irisMovieInfoWithFigCaptureMovieFileRecordingSettings:(id)arg1 stillImageCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 stillImageCaptureHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 originalPhotoRecording:(BOOL)arg4;
++ (id)irisMovieInfoWithFigCaptureMovieFileRecordingSettings:(id)arg1 stillImageCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 stillImageCaptureHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 originalPhotoRecording:(bool)arg4;
 
-- (id)_initWithFigCaptureMovieFileRecordingSettings:(id)arg1 stillImageCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 stillImageCaptureHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 originalPhotoRecording:(BOOL)arg4;
+- (id)_initWithFigCaptureMovieFileRecordingSettings:(id)arg1 stillImageCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 stillImageCaptureHostTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 originalPhotoRecording:(bool)arg4;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })audioOffset;
-- (BOOL)containsTrims;
+- (bool)containsTrims;
 - (id)copyMovieInfosForRequestedSDOFVariants;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isFinalEnqueuedIrisRequest;
-- (BOOL)isFinalReferenceMovie;
-- (BOOL)isOriginalPhotoRecording;
+- (bool)isFinalEnqueuedIrisRequest;
+- (bool)isFinalReferenceMovie;
+- (bool)isOriginalPhotoRecording;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })masterMovieStartTime;
 - (id)masterMovieURL;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieEndTime;
@@ -114,8 +114,8 @@
 - (id)outputURLForSDOFOriginalMovie;
 - (unsigned int)requestedSDOFVariants;
 - (void)setAudioOffset:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setFinalEnqueuedIrisRequest:(BOOL)arg1;
-- (void)setFinalReferenceMovie:(BOOL)arg1;
+- (void)setFinalEnqueuedIrisRequest:(bool)arg1;
+- (void)setFinalReferenceMovie:(bool)arg1;
 - (void)setMasterMovieStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMasterMovieURL:(id)arg1;
 - (void)setMovieEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -123,20 +123,20 @@
 - (void)setMovieStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTrimEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTrimStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setOriginalPhotoRecording:(BOOL)arg1;
+- (void)setOriginalPhotoRecording:(bool)arg1;
 - (void)setOutputMovieURL:(id)arg1;
 - (void)setOutputURLForSDOFOriginalMovie:(id)arg1;
 - (void)setRequestedSDOFVariants:(unsigned int)arg1;
 - (void)setStillImageCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setStillImageEncoderKeyFrameEmitted:(BOOL)arg1;
-- (void)setStillImageVISKeyFrameTagged:(BOOL)arg1;
+- (void)setStillImageEncoderKeyFrameEmitted:(bool)arg1;
+- (void)setStillImageVISKeyFrameTagged:(bool)arg1;
 - (void)setTemporaryMovieURL:(id)arg1;
 - (void)setTemporaryURLForSDOFOriginalMovie:(id)arg1;
 - (id)settings;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })stillImageCaptureHostTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })stillImageCaptureTime;
-- (BOOL)stillImageEncoderKeyFrameEmitted;
-- (BOOL)stillImageVISKeyFrameTagged;
+- (bool)stillImageEncoderKeyFrameEmitted;
+- (bool)stillImageVISKeyFrameTagged;
 - (id)temporaryMovieURL;
 - (id)temporaryURLForSDOFOriginalMovie;
 

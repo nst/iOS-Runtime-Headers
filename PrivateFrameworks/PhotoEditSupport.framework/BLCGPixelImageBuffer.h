@@ -5,18 +5,18 @@
 @interface BLCGPixelImageBuffer : BLPixelImageBuffer {
     struct CGContext { } * _bitmapContext;
     NSMutableData * _bitmapData;
-    unsigned long  _rowBytes;
+    unsigned long long  _rowBytes;
 }
 
 @property (nonatomic, retain) NSMutableData *bitmapData;
 
-- (void)accessPixelsByAddressInBlock:(id /* block */)arg1;
-- (void)accessPixelsByContextInBlock:(id /* block */)arg1;
+- (void)accessPixelsByAddressInBlock:(id)arg1;
+- (void)accessPixelsByContextInBlock:(id)arg1;
 - (id)bitmapData;
 - (id)ciImage;
 - (void)dealloc;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 colorManagement:(int)arg2;
-- (void)readPixelsByAddressInBlock:(id /* block */)arg1;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 colorManagement:(int)arg2;
+- (void)readPixelsByAddressInBlock:(id)arg1;
 - (void)renderCIImage:(id)arg1;
 - (void)setBitmapData:(id)arg1;
 

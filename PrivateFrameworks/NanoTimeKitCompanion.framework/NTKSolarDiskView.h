@@ -3,21 +3,21 @@
  */
 
 @interface NTKSolarDiskView : UIView {
-    float  _horizonLine;
+    double  _horizonLine;
     UIView * _sunDownView;
     UIView * _sunUpView;
 }
 
-@property (nonatomic) float horizonLine;
+@property (nonatomic) double horizonLine;
 @property (nonatomic, retain) UIView *sunDownView;
 @property (nonatomic, retain) UIView *sunUpView;
 
 - (void).cxx_destruct;
-- (float)horizonLine;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)horizonLine;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setHorizonLine:(float)arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setHorizonLine:(double)arg1;
 - (void)setSunDownView:(id)arg1;
 - (void)setSunUpView:(id)arg1;
 - (id)sunDownView;

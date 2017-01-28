@@ -9,8 +9,8 @@
 
 @property (nonatomic, retain) NSString *addressID;
 @property (nonatomic, retain) GEOLocation *addressLocation;
-@property (nonatomic, readonly) BOOL hasAddressID;
-@property (nonatomic, readonly) BOOL hasAddressLocation;
+@property (nonatomic, readonly) bool hasAddressID;
+@property (nonatomic, readonly) bool hasAddressLocation;
 
 - (id)addressID;
 - (id)addressLocation;
@@ -19,12 +19,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddressID;
-- (BOOL)hasAddressLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddressID;
+- (bool)hasAddressLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAddressID:(id)arg1;
 - (void)setAddressLocation:(id)arg1;
 - (void)writeTo:(id)arg1;

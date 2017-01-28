@@ -13,11 +13,11 @@
 @property (nonatomic) GKFriendRequestComposeViewController *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int rid;
 @property (readonly) Class superclass;
 
-+ (BOOL)dismissAutomaticallyAfterExtensionCompletion;
++ (bool)dismissAutomaticallyAfterExtensionCompletion;
 + (id)friendRequestExtension;
 
 - (void)addRecipientPlayerInternals:(id)arg1;
@@ -29,7 +29,7 @@
 - (void)remoteViewControllerIsCanceling;
 - (void)remoteViewControllerIsFinishing;
 - (unsigned int)rid;
-- (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
+- (void)sendFinishedMessageToDelegateCancelled:(bool)arg1;
 - (void)setDefaultMessage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRid:(unsigned int)arg1;

@@ -5,7 +5,7 @@
 
 @required
 
-- (void)reachabilityMonitor:(BRReachabilityMonitor *)arg1 didChangeReachabilityStatusTo:(BOOL)arg2;
+- (void)reachabilityMonitor:(BRReachabilityMonitor *)arg1 didChangeReachabilityStatusTo:(bool)arg2;
 
 @optional
 

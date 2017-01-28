@@ -5,42 +5,42 @@
 @interface _HKMessageStreamReader : NSObject <NSStreamDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSError * _error;
-    unsigned int  _headerOffset;
+    unsigned long long  _headerOffset;
     unsigned int  _headerValue;
     NSInputStream * _inputStream;
     int  _invalidated;
     NSMutableData * _messageData;
-    unsigned int  _messageDataOffset;
-    id /* block */  _messageHandler;
-    int  _state;
+    unsigned long long  _messageDataOffset;
+    id  _messageHandler;
+    long long  _state;
     NSObject<OS_dispatch_queue> * _streamQueue;
     unsigned int  _streamVersion;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ messageHandler;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id messageHandler;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_invokeMessageHandlerWithData:(id)arg1 finished:(BOOL)arg2 error:(id)arg3;
+- (void)_invokeMessageHandlerWithData:(id)arg1 finished:(bool)arg2 error:(id)arg3;
 - (void)_streamQueue_close;
 - (void)_streamQueue_finish;
 - (void)_streamQueue_readBytes;
-- (int)_streamQueue_readHeader;
-- (int)_streamQueue_readMessage;
+- (long long)_streamQueue_readHeader;
+- (long long)_streamQueue_readMessage;
 - (void)_streamQueue_transistionToError:(id)arg1;
-- (void)_streamQueue_transistionToReadingMessageBytesWithLength:(unsigned int)arg1;
+- (void)_streamQueue_transistionToReadingMessageBytesWithLength:(unsigned long long)arg1;
 - (void)_streamQueue_transistionToReadingMessageLength;
 - (void)dealloc;
 - (id)init;
 - (id)initWithData:(id)arg1;
 - (id)initWithInputStream:(id)arg1;
 - (void)invalidate;
-- (id /* block */)messageHandler;
+- (id)messageHandler;
 - (void)open;
-- (void)setMessageHandler:(id /* block */)arg1;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)setMessageHandler:(id)arg1;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 
 @end

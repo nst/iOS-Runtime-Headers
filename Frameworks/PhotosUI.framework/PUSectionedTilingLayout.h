@@ -4,51 +4,51 @@
 
 @interface PUSectionedTilingLayout : PUTilingLayout {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _computedSections;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _interSectionSpacing;
-    BOOL  _leftToRight;
-    int  _numberOfSections;
+    bool  _leftToRight;
+    long long  _numberOfSections;
     NSMutableDictionary * _sectionInfos;
-    int  _seedSection;
+    long long  _seedSection;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _seedSectionOrigin;
 }
 
-@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } computedSections;
-@property (nonatomic) struct CGSize { float x1; float x2; } interSectionSpacing;
-@property (nonatomic) BOOL leftToRight;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } computedSections;
+@property (nonatomic) struct CGSize { double x1; double x2; } interSectionSpacing;
+@property (nonatomic) bool leftToRight;
 
 - (void).cxx_destruct;
 - (void)_computeSeedSectionIfNeeded;
 - (void)_ensureComputedSectionsHaveBeenSeeded;
 - (void)_invalidateNumberOfSections;
-- (int)_numberOfSections;
-- (BOOL)_scrollsHorizontallyNotVertically;
-- (id)_sectionInfoForSection:(int)arg1;
-- (void)addLayoutInfosForTilesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 section:(int)arg2 toSet:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsForSection:(int)arg1;
-- (void)computeSectionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })computedSections;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentBounds;
+- (long long)_numberOfSections;
+- (bool)_scrollsHorizontallyNotVertically;
+- (id)_sectionInfoForSection:(long long)arg1;
+- (void)addLayoutInfosForTilesInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 section:(long long)arg2 toSet:(id)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsForSection:(long long)arg1;
+- (void)computeSectionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })computedSections;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentBounds;
 - (id)init;
-- (struct CGSize { float x1; float x2; })interSectionSpacing;
+- (struct CGSize { double x1; double x2; })interSectionSpacing;
 - (void)invalidateLayoutForUpdateWithItems:(id)arg1;
 - (void)invalidateSectionInfos;
-- (id)layoutInfosForTilesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)leftToRight;
-- (int)numberOfItemsInSection:(int)arg1;
+- (id)layoutInfosForTilesInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)leftToRight;
+- (long long)numberOfItemsInSection:(long long)arg1;
 - (void)prepareLayout;
-- (void)setInterSectionSpacing:(struct CGSize { float x1; float x2; })arg1;
-- (void)setLeftToRight:(BOOL)arg1;
-- (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })sizeForSection:(int)arg1 numberOfItems:(int)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRectForScrollingToItemAtIndexPath:(id)arg1 scrollPosition:(int)arg2;
+- (void)setInterSectionSpacing:(struct CGSize { double x1; double x2; })arg1;
+- (void)setLeftToRight:(bool)arg1;
+- (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeForSection:(long long)arg1 numberOfItems:(long long)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRectForScrollingToItemAtIndexPath:(id)arg1 scrollPosition:(long long)arg2;
 
 @end

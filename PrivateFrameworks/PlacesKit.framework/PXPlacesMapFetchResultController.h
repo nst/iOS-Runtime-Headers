@@ -5,7 +5,7 @@
 @interface PXPlacesMapFetchResultController : NSObject {
     PXPlacesPhotoAssetsStore * _albumAssetStore;
     PXPlacesMapPipeline * _albumPipeline;
-    unsigned int  _contentMode;
+    unsigned long long  _contentMode;
     PXPlacesMapPipeline * _currentPipeline;
     <PXPlacesMapGeotaggableInfoDelegate> * _geotaggableInfoDelegate;
     <PXPlacesMapControllerAccess> * _mapViewController;
@@ -16,7 +16,7 @@
 
 @property (nonatomic, retain) PXPlacesPhotoAssetsStore *albumAssetStore;
 @property (nonatomic, retain) PXPlacesMapPipeline *albumPipeline;
-@property (nonatomic) unsigned int contentMode;
+@property (nonatomic) unsigned long long contentMode;
 @property (nonatomic, retain) PXPlacesMapPipeline *currentPipeline;
 @property (nonatomic) <PXPlacesMapGeotaggableInfoDelegate> *geotaggableInfoDelegate;
 @property (nonatomic, readonly) PXPlacesMapController *mapController;
@@ -29,28 +29,28 @@
 - (void).cxx_destruct;
 - (id)albumAssetStore;
 - (id)albumPipeline;
-- (unsigned int)contentMode;
+- (unsigned long long)contentMode;
 - (id)currentAssetStore;
 - (id)currentPipeline;
-- (void)focusOnGeotaggablesAnimated:(BOOL)arg1;
-- (void)focusOnProvidedAssetsAnimated:(BOOL)arg1;
+- (void)focusOnGeotaggablesAnimated:(bool)arg1;
+- (void)focusOnProvidedAssetsAnimated:(bool)arg1;
 - (void)focusOnProvidedAssetsImmediately;
 - (id)geotaggableInfoDelegate;
 - (id)initWithGeotaggableInfoDelegate:(id)arg1 andMapViewController:(id)arg2;
-- (void)loadFetchResult:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)loadFetchResults:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)loadProvidedAssetStoreWithCompletion:(id /* block */)arg1;
+- (void)loadFetchResult:(id)arg1 withCompletion:(id)arg2;
+- (void)loadFetchResults:(id)arg1 withCompletion:(id)arg2;
+- (void)loadProvidedAssetStoreWithCompletion:(id)arg1;
 - (id)mapController;
 - (id)mapView;
 - (id)mapViewController;
 - (id)providedAssetStore;
 - (id)providedPipeline;
-- (void)reloadContentModeWithCompletion:(id /* block */)arg1;
-- (void)resumeWithCompletion:(id /* block */)arg1;
+- (void)reloadContentModeWithCompletion:(id)arg1;
+- (void)resumeWithCompletion:(id)arg1;
 - (id)serialQueue;
 - (void)setAlbumAssetStore:(id)arg1;
 - (void)setAlbumPipeline:(id)arg1;
-- (void)setContentMode:(unsigned int)arg1;
+- (void)setContentMode:(unsigned long long)arg1;
 - (void)setCurrentPipeline:(id)arg1;
 - (void)setGeotaggableInfoDelegate:(id)arg1;
 - (void)setMapViewController:(id)arg1;

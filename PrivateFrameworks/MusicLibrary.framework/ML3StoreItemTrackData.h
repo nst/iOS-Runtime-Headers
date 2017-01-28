@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *parsedStoreItemsImportProperties;
-@property (nonatomic, readonly) unsigned int trackCount;
+@property (nonatomic, readonly) unsigned long long trackCount;
 @property (nonatomic, readonly) NSData *trackData;
 
 + (id)_allSongItemsFromCollectionLookupItem:(id)arg1;
@@ -28,7 +28,7 @@
 - (id)initWithLookupItems:(id)arg1;
 - (id)initWithTrackData:(id)arg1;
 - (id)parsedStoreItemsImportProperties;
-- (unsigned int)trackCount;
+- (unsigned long long)trackCount;
 - (id)trackData;
 
 @end

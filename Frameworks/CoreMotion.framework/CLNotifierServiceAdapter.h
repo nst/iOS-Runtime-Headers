@@ -12,7 +12,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, int>, std::__1::less<unsigned long>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _clients;
@@ -21,10 +21,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct CLNotifierBase { int (**x1)(); }*notifier;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL valid;
+@property (nonatomic) bool valid;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

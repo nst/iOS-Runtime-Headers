@@ -4,6 +4,6 @@
 
 @interface FCSingleTopicFeedGroupEmittingOperation : FCSingleTagFeedGroupEmittingOperation
 
-- (void)supplementFeedItems:(id)arg1 fromCursor:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)supplementFeedItems:(id)arg1 fromCursor:(id)arg2 completionHandler:(id)arg3;
 
 @end

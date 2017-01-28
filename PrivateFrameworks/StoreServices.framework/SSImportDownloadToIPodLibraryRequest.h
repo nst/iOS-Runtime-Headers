@@ -17,6 +17,6 @@
 - (id)initWithPurchase:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)purchaseResponse;
-- (void)startWithResponseBlock:(id /* block */)arg1;
+- (void)startWithResponseBlock:(id)arg1;
 
 @end

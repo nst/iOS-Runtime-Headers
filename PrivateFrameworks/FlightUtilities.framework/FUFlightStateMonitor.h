@@ -13,7 +13,7 @@
 + (id)sharedMonitor;
 
 - (void).cxx_destruct;
-- (id)addObserverForFlight:(id)arg1 updateBlock:(id /* block */)arg2;
+- (id)addObserverForFlight:(id)arg1 updateBlock:(id)arg2;
 - (void)addTimersForFlight:(id)arg1 flightTicket:(id)arg2;
 - (void)dealloc;
 - (id)flightFactoryProvider;

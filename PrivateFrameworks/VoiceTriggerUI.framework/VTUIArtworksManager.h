@@ -4,11 +4,11 @@
 
 @interface VTUIArtworksManager : NSObject
 
-+ (float)FontWeightButton;
-+ (float)FontWeightButtonSmall;
-+ (float)FontWeightFooter;
-+ (float)FontWeightMain;
-+ (float)FontWeightProgress;
-+ (float)FontWeightTitle;
++ (double)FontWeightButton;
++ (double)FontWeightButtonSmall;
++ (double)FontWeightFooter;
++ (double)FontWeightMain;
++ (double)FontWeightProgress;
++ (double)FontWeightTitle;
 
 @end

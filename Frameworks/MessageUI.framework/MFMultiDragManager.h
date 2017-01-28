@@ -8,16 +8,16 @@
     NSMutableArray * _dragContextValues;
     NSMutableArray * _dragDestinations;
     NSMutableArray * _dragSources;
-    BOOL  _dragWasSuccessful;
+    bool  _dragWasSuccessful;
     UIWindow * _dragWindow;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _draggedItemOriginalFrame;
     NSArray * _draggedItems;
@@ -26,29 +26,29 @@
     NSMutableDictionary * _gestureRecognizersForSource;
     MFGobblerGestureRecognizer * _gobblerGestureRecognizer;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _offsetCenterOfDraggedView;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _previousGestureLocation;
     NSTimer * _scrollTimer;
-    BOOL  _scrollingForDrag;
+    bool  _scrollingForDrag;
     NSMutableDictionary * _sourceForGestureRecognizer;
     double  _timeOfLastBigUpdate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void)_beginGobblingAllDisruptiveEventsForWindow:(id)arg1;
 - (void)_cleanUpAfterDragCompleted;
-- (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)_handleLongPress:(id)arg1;
 - (void)_longPressGestureBegan:(id)arg1;
 - (void)_longPressGestureEnded:(id)arg1;
@@ -60,8 +60,8 @@
 - (void)addDragSource:(id)arg1;
 - (void)cancelCurrentDragOperation;
 - (void)dealloc;
-- (void)enumerateDragContextsUsingBlock:(id /* block */)arg1;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (void)enumerateDragContextsUsingBlock:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (void)removeDragContext:(id)arg1;
 - (void)removeDragDestination:(id)arg1;

@@ -6,11 +6,11 @@
     AVAsset * _asset;
     NSMutableDictionary * _assetByIndexPath;
     NSMapTable * _indexPathByAsset;
-    int  _numberOfIndexes;
+    long long  _numberOfIndexes;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;
-@property (nonatomic, readonly) int numberOfIndexes;
+@property (nonatomic, readonly) long long numberOfIndexes;
 
 - (void).cxx_destruct;
 - (double)_normalizedTimeForIndexPath:(id)arg1;
@@ -18,8 +18,8 @@
 - (id)assetAtIndexPath:(id)arg1;
 - (id)indexPathForAsset:(id)arg1;
 - (id)init;
-- (id)initWithAsset:(id)arg1 numberOfIndexes:(int)arg2;
-- (int)numberOfIndexes;
-- (int)numberOfSubItemsAtIndexPath:(id)arg1;
+- (id)initWithAsset:(id)arg1 numberOfIndexes:(long long)arg2;
+- (long long)numberOfIndexes;
+- (long long)numberOfSubItemsAtIndexPath:(id)arg1;
 
 @end

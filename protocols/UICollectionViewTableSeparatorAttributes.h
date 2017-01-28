@@ -7,9 +7,9 @@
 
 - (UIColor *)separatorColor;
 - (UIVisualEffect *)separatorEffect;
-- (int)separatorStyle;
+- (long long)separatorStyle;
 - (void)setSeparatorColor:(UIColor *)arg1;
 - (void)setSeparatorEffect:(UIVisualEffect *)arg1;
-- (void)setSeparatorStyle:(int)arg1;
+- (void)setSeparatorStyle:(long long)arg1;
 
 @end

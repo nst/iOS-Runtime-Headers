@@ -3,7 +3,7 @@
  */
 
 @interface HDSyncSession : NSObject {
-    BOOL  _attemptWhileLocking;
+    bool  _attemptWhileLocking;
     NSCalendar * _calendar;
     <HDSyncSessionDelegate> * _delegate;
     NSString * _reason;
@@ -12,7 +12,7 @@
     <HDSyncStore> * _syncStore;
 }
 
-@property (nonatomic, readonly) BOOL attemptWhileLocking;
+@property (nonatomic, readonly) bool attemptWhileLocking;
 @property (nonatomic, readonly) NSCalendar *calendar;
 @property (nonatomic, readonly) <HDSyncSessionDelegate> *delegate;
 @property (nonatomic, readonly, copy) NSString *reason;
@@ -21,21 +21,21 @@
 @property (nonatomic, readonly) <HDSyncStore> *syncStore;
 
 - (void).cxx_destruct;
-- (BOOL)attemptWhileLocking;
+- (bool)attemptWhileLocking;
 - (id)calendar;
 - (id)delegate;
 - (id)description;
 - (id)init;
-- (id)initWithSyncStore:(id)arg1 attemptWhileLocking:(BOOL)arg2 reason:(id)arg3 delegate:(id)arg4;
-- (int)maxEncodedBytesPerMessageForSyncEntityClass:(Class)arg1;
+- (id)initWithSyncStore:(id)arg1 attemptWhileLocking:(bool)arg2 reason:(id)arg3 delegate:(id)arg4;
+- (long long)maxEncodedBytesPerMessageForSyncEntityClass:(Class)arg1;
 - (id)newChangeWithSyncEntityClass:(Class)arg1;
 - (id)predicateForSyncEntityClass:(Class)arg1;
 - (id)reason;
-- (void)sendChanges:(id)arg1 completion:(id /* block */)arg2;
+- (void)sendChanges:(id)arg1 completion:(id)arg2;
 - (id)sessionUUID;
 - (id)startDate;
-- (void)syncDidFinishWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (unsigned int)syncObjectLimitForEntityClass:(Class)arg1;
+- (void)syncDidFinishWithSuccess:(bool)arg1 error:(id)arg2;
+- (unsigned long long)syncObjectLimitForEntityClass:(Class)arg1;
 - (id)syncStore;
 - (void)syncWillBegin;
 

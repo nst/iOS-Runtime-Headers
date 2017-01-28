@@ -2,44 +2,50 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface NCMaterialView : UIView {
+@interface NCMaterialView : UIView <_UISettingsKeyObserver> {
     _UIBackdropView * _backdropView;
-    UIView * _colorInfusionView;
-    float  _colorInfusionViewAlpha;
+    bool  _captureOnly;
+    bool  _cornerRadiusIsContinuous;
     UIView * _cutoutOverlayView;
     UIView * _lightOverlayView;
-    unsigned int  _styleOptions;
-    float  _subviewsContinuousCornerRadius;
+    NCMaterialSettings * _settings;
+    unsigned long long  _styleOptions;
+    double  _subviewsContinuousCornerRadius;
     UIView * _whiteOverlayView;
 }
 
-@property (nonatomic, retain) UIView *colorInfusionView;
-@property (getter=_colorInfusionViewAlpha, setter=_setColorInfusionViewAlpha:, nonatomic) float colorInfusionViewAlpha;
-@property (nonatomic) float grayscaleValue;
+@property (nonatomic) double cornerRadius;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double grayscaleValue;
 @property (nonatomic, copy) NSString *groupName;
-@property (getter=_subviewsContinuousCornerRadius, setter=_setSubviewsContinuousCornerRadius:, nonatomic) float subviewsContinuousCornerRadius;
+@property (readonly) unsigned long long hash;
+@property (getter=_subviewsContinuousCornerRadius, setter=_setSubviewsContinuousCornerRadius:, nonatomic) double subviewsContinuousCornerRadius;
+@property (readonly) Class superclass;
 
-+ (id)materialViewWithStyleOptions:(unsigned int)arg1;
++ (id)materialViewWithStyleOptions:(unsigned long long)arg1;
++ (id)materialViewWithStyleOptions:(unsigned long long)arg1 materialSettings:(id)arg2;
++ (id)materialViewWithStyleOptions:(unsigned long long)arg1 materialSettings:(id)arg2 captureOnly:(bool)arg3;
 
 - (void).cxx_destruct;
-- (float)_colorInfusionViewAlpha;
 - (void)_configureBackdropViewIfNecessary;
-- (void)_configureColorInfusionViewIfNecessary;
 - (void)_configureCutoutOverlayViewIfNecessary;
 - (void)_configureIfNecessary;
 - (void)_configureLightOverlayViewIfNecessary;
 - (void)_configureWhiteOverlayViewIfNecessary;
+- (double)_continuousCornerRadius;
 - (void)_reduceTransparencyStatusDidChange;
-- (void)_setColorInfusionViewAlpha:(float)arg1;
-- (void)_setSubviewsContinuousCornerRadius:(float)arg1;
-- (float)_subviewsContinuousCornerRadius;
-- (id)colorInfusionView;
+- (void)_setContinuousCornerRadius:(double)arg1;
+- (void)_setSubviewsContinuousCornerRadius:(double)arg1;
+- (double)_subviewsContinuousCornerRadius;
+- (double)cornerRadius;
 - (void)dealloc;
-- (float)grayscaleValue;
+- (double)grayscaleValue;
 - (id)groupName;
-- (id)initWithStyleOptions:(unsigned int)arg1;
-- (void)setColorInfusionView:(id)arg1;
-- (void)setGrayscaleValue:(float)arg1;
+- (id)initWithStyleOptions:(unsigned long long)arg1 materialSettings:(id)arg2 captureOnly:(bool)arg3;
+- (void)setCornerRadius:(double)arg1;
+- (void)setGrayscaleValue:(double)arg1;
 - (void)setGroupName:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 
 @end

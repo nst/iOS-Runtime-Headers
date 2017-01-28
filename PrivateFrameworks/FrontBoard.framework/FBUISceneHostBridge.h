@@ -4,7 +4,7 @@
 
 @interface FBUISceneHostBridge : NSObject <FBSceneClient, FBUISceneHost> {
     FBUISceneIdentity * _identity;
-    BOOL  _invalidated;
+    bool  _invalidated;
     <FBSceneHost> * _legacyHost;
     FBSSceneParameters * _parameters;
     <FBUISceneClientProxy> * _sceneClient;
@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) FBUISceneIdentity *identity;
 @property <FBSceneHost> *legacyHost;
 @property (retain) <FBUISceneClientProxy> *sceneClient;
@@ -27,9 +27,9 @@
 - (void)didInvalidateSceneClient:(id)arg1;
 - (void)host:(id)arg1 configureWithDefinition:(id)arg2 parameters:(id)arg3;
 - (void)host:(id)arg1 configureWithInitialClientSettings:(id)arg2;
-- (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id)arg3;
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;
-- (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
+- (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id)arg5;
 - (id)identity;
 - (id)initWithSceneIdentity:(id)arg1 initialParameters:(id)arg2;
 - (void)invalidateSceneClient;

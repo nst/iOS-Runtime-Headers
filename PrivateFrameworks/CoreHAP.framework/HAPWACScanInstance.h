@@ -3,45 +3,54 @@
  */
 
 @interface HAPWACScanInstance : NSObject <HMFTimerDelegate> {
-    id /* block */  _completion;
-    unsigned int  _filterMethod;
+    id  _completion;
+    bool  _fastAgeOut;
+    unsigned long long  _filterMethod;
     NSObject<OS_dispatch_queue> * _queue;
     HAPWACScanFilter * _scanFilter;
+    double  _scanInterval;
     HMFTimer * _scanRepeatTimer;
     NSObject<OS_dispatch_semaphore> * _scanStopSemaphore;
-    BOOL  _shouldContinueScan;
+    bool  _shouldContinueScan;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int filterMethod;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool fastAgeOut;
+@property (nonatomic) unsigned long long filterMethod;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) HAPWACScanFilter *scanFilter;
+@property (nonatomic) double scanInterval;
 @property (nonatomic, retain) HMFTimer *scanRepeatTimer;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *scanStopSemaphore;
-@property (nonatomic) BOOL shouldContinueScan;
+@property (nonatomic) bool shouldContinueScan;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addScanRequest;
-- (id /* block */)completion;
+- (void)_handleFastAgeOutChange;
+- (id)completion;
 - (void)dealloc;
-- (unsigned int)filterMethod;
-- (id)initWithFilter:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (bool)fastAgeOut;
+- (unsigned long long)filterMethod;
+- (id)initWithFilter:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (id)queue;
 - (id)scanFilter;
+- (double)scanInterval;
 - (id)scanRepeatTimer;
 - (id)scanStopSemaphore;
-- (void)setCompletion:(id /* block */)arg1;
-- (void)setFilterMethod:(unsigned int)arg1;
+- (void)setCompletion:(id)arg1;
+- (void)setFastAgeOut:(bool)arg1;
+- (void)setFilterMethod:(unsigned long long)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setScanFilter:(id)arg1;
+- (void)setScanInterval:(double)arg1;
 - (void)setScanRepeatTimer:(id)arg1;
 - (void)setScanStopSemaphore:(id)arg1;
-- (void)setShouldContinueScan:(BOOL)arg1;
-- (BOOL)shouldContinueScan;
+- (void)setShouldContinueScan:(bool)arg1;
+- (bool)shouldContinueScan;
 - (void)startWACScan;
 - (void)stopWACScan;
 - (void)timerDidFire:(id)arg1;

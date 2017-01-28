@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) UIStackView *stackView;
 
 - (void).cxx_destruct;
-- (void)_navigationBarDividingLine:(BOOL)arg1;
+- (void)_navigationBarDividingLine:(bool)arg1;
 - (void)_replaceLastArrangedViewWith:(id)arg1;
 - (void)changeReportDisplayed:(id)arg1;
 - (id)formattedReportController;
@@ -32,6 +32,6 @@
 - (id)stackView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

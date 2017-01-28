@@ -5,12 +5,12 @@
 @interface SASTCountdownTimerItem : AceObject <SASTActionableTemplateItem>
 
 @property (nonatomic, retain) <SASTTemplateAction> *action;
-@property (nonatomic) int actionDelayInSeconds;
+@property (nonatomic) long long actionDelayInSeconds;
 @property (nonatomic, retain) SAUIColor *bodyBackgroundColor;
 @property (nonatomic, retain) SAUIColor *countdownTextColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAUIColor *headerBackgroundColor;
 @property (nonatomic, copy) NSString *headerText;
 @property (nonatomic, retain) SAUIColor *headerTextColor;
@@ -20,7 +20,7 @@
 + (id)countdownTimerItemWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)action;
-- (int)actionDelayInSeconds;
+- (long long)actionDelayInSeconds;
 - (id)bodyBackgroundColor;
 - (id)countdownTextColor;
 - (id)encodedClassName;
@@ -29,7 +29,7 @@
 - (id)headerText;
 - (id)headerTextColor;
 - (void)setAction:(id)arg1;
-- (void)setActionDelayInSeconds:(int)arg1;
+- (void)setActionDelayInSeconds:(long long)arg1;
 - (void)setBodyBackgroundColor:(id)arg1;
 - (void)setCountdownTextColor:(id)arg1;
 - (void)setHeaderBackgroundColor:(id)arg1;

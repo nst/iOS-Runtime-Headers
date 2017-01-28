@@ -3,36 +3,36 @@
  */
 
 @interface PBBridgeAssetsManager : NSObject {
-    id /* block */  _allAssetsDownloadCompletion;
-    id /* block */  _assetDownloadCompletion;
+    id  _allAssetsDownloadCompletion;
+    id  _assetDownloadCompletion;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, copy) id /* block */ allAssetsDownloadCompletion;
-@property (nonatomic, copy) id /* block */ assetDownloadCompletion;
+@property (nonatomic, copy) id allAssetsDownloadCompletion;
+@property (nonatomic, copy) id assetDownloadCompletion;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
 - (id)_assetQueryForPredicate:(id)arg1;
-- (id)_assetQueryForType:(unsigned int)arg1 deviceAttributes:(id)arg2 atlasDetails:(id)arg3;
-- (id)_assetQueryForType:(unsigned int)arg1 forDevice:(id)arg2 atlasDetails:(id)arg3;
+- (id)_assetQueryForType:(unsigned long long)arg1 deviceAttributes:(id)arg2 atlasDetails:(id)arg3;
+- (id)_assetQueryForType:(unsigned long long)arg1 forDevice:(id)arg2 atlasDetails:(id)arg3;
 - (void)_beginDownloadsForAssets:(id)arg1;
-- (void)_beginPullingAssetsForDeviceAttributes:(id)arg1 completion:(id /* block */)arg2;
+- (void)_beginPullingAssetsForDeviceAttributes:(id)arg1 completion:(id)arg2;
 - (void)_checkAssetDownloadStateWithAssets:(id)arg1;
 - (id)_defaultDownloadOptions;
-- (void)_runAssetQuery:(id)arg1 completion:(id /* block */)arg2;
-- (id /* block */)allAssetsDownloadCompletion;
-- (id /* block */)assetDownloadCompletion;
-- (void)beginPullingAssetsForAdvertisingName:(id)arg1 completion:(id /* block */)arg2;
-- (void)beginPullingAssetsForDevice:(id)arg1 completion:(id /* block */)arg2;
-- (void)beginPullingAssetsForDeviceMaterial:(unsigned int)arg1 size:(unsigned int)arg2 branding:(unsigned int)arg3 completion:(id /* block */)arg4;
-- (unsigned int)hardwareGenerationForProductType:(id)arg1;
+- (void)_runAssetQuery:(id)arg1 completion:(id)arg2;
+- (id)allAssetsDownloadCompletion;
+- (id)assetDownloadCompletion;
+- (void)beginPullingAssetsForAdvertisingName:(id)arg1 completion:(id)arg2;
+- (void)beginPullingAssetsForDevice:(id)arg1 completion:(id)arg2;
+- (void)beginPullingAssetsForDeviceMaterial:(unsigned long long)arg1 size:(unsigned long long)arg2 branding:(unsigned long long)arg3 completion:(id)arg4;
+- (unsigned long long)hardwareGenerationForProductType:(id)arg1;
 - (id)init;
-- (id)purgeAllAssetsAndReturnErrorLocalOnly:(BOOL)arg1;
-- (void)purgeAllAssetsLocalOnly:(BOOL)arg1;
+- (id)purgeAllAssetsAndReturnErrorLocalOnly:(bool)arg1;
+- (void)purgeAllAssetsLocalOnly:(bool)arg1;
 - (id)queue;
-- (void)setAllAssetsDownloadCompletion:(id /* block */)arg1;
-- (void)setAssetDownloadCompletion:(id /* block */)arg1;
+- (void)setAllAssetsDownloadCompletion:(id)arg1;
+- (void)setAssetDownloadCompletion:(id)arg1;
 - (void)setQueue:(id)arg1;
 
 @end

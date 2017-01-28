@@ -7,18 +7,18 @@
     NSUUID * _friendUUID;
     long long  _triggerSnapshotIndex;
     NSUUID * _triggerUUID;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSUUID *friendUUID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) long long triggerSnapshotIndex;
 @property (nonatomic, retain) NSUUID *triggerUUID;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 + (id)achievementCompletionEventWithAchievement:(id)arg1;
 + (id)fitnessFriendNotificationEventWithRecord:(id)arg1 friendUUID:(id)arg2;
@@ -34,9 +34,9 @@
 - (void)setFriendUUID:(id)arg1;
 - (void)setTriggerSnapshotIndex:(long long)arg1;
 - (void)setTriggerUUID:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (long long)triggerSnapshotIndex;
 - (id)triggerUUID;
-- (int)type;
+- (long long)type;
 
 @end

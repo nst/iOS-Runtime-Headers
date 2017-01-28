@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly, copy) CNPostalAddress *postalAddress;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

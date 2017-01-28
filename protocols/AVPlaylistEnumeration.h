@@ -5,11 +5,11 @@
 
 @required
 
-- (int)direction;
+- (long long)direction;
 - (id)enumeratorForContinuingFromEnd;
 - (id)enumeratorForContinuingFromStart;
-- (int)maximumNodeCount;
-- (void)setDirection:(int)arg1;
-- (void)setMaximumNodeCount:(int)arg1;
+- (long long)maximumNodeCount;
+- (void)setDirection:(long long)arg1;
+- (void)setMaximumNodeCount:(long long)arg1;
 
 @end

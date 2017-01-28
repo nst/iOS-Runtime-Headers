@@ -3,19 +3,19 @@
  */
 
 @interface _UICachedSceneProperties : NSObject {
-    BOOL  _isBackgrounded;
-    BOOL  _isOccluded;
+    bool  _isBackgrounded;
+    bool  _isOccluded;
 }
 
-@property (nonatomic) BOOL isBackgrounded;
-@property (nonatomic) BOOL isOccluded;
+@property (nonatomic) bool isBackgrounded;
+@property (nonatomic) bool isOccluded;
 
 + (id)propertiesOfScene:(id)arg1;
 
-- (BOOL)isBackgrounded;
-- (BOOL)isEqualToScene:(id)arg1;
-- (BOOL)isOccluded;
-- (void)setIsBackgrounded:(BOOL)arg1;
-- (void)setIsOccluded:(BOOL)arg1;
+- (bool)isBackgrounded;
+- (bool)isEqualToScene:(id)arg1;
+- (bool)isOccluded;
+- (void)setIsBackgrounded:(bool)arg1;
+- (void)setIsOccluded:(bool)arg1;
 
 @end

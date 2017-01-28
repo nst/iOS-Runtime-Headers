@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSSet *namedImages;
 
 + (void)load;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -17,12 +17,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feedItems;
-- (id)feedItemsAtIndex:(unsigned int)arg1;
-- (unsigned int)feedItemsCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)feedItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)feedItemsCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFeedItems:(id)arg1;
 - (void)writeTo:(id)arg1;
 

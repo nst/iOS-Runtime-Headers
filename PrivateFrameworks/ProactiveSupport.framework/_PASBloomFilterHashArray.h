@@ -10,6 +10,6 @@
 
 - (void).cxx_destruct;
 - (int*)hashes;
-- (id)initWithHashCount:(unsigned int)arg1;
+- (id)initWithHashCount:(unsigned long long)arg1;
 
 @end

@@ -5,12 +5,12 @@
 @interface CKDModifyShareTokenURLRequest : CKDURLRequest {
     NSArray * _shareTokenInfos;
     NSMutableDictionary * _shareTokenInfosByRequestID;
-    id /* block */  _shareTokenModifiedBlock;
+    id  _shareTokenModifiedBlock;
 }
 
 @property (nonatomic, retain) NSArray *shareTokenInfos;
 @property (nonatomic, retain) NSMutableDictionary *shareTokenInfosByRequestID;
-@property (nonatomic, copy) id /* block */ shareTokenModifiedBlock;
+@property (nonatomic, copy) id shareTokenModifiedBlock;
 
 - (void).cxx_destruct;
 - (id)initWithShareTokenInfos:(id)arg1;
@@ -21,9 +21,9 @@
 - (id)requestOperations;
 - (void)setShareTokenInfos:(id)arg1;
 - (void)setShareTokenInfosByRequestID:(id)arg1;
-- (void)setShareTokenModifiedBlock:(id /* block */)arg1;
+- (void)setShareTokenModifiedBlock:(id)arg1;
 - (id)shareTokenInfos;
 - (id)shareTokenInfosByRequestID;
-- (id /* block */)shareTokenModifiedBlock;
+- (id)shareTokenModifiedBlock;
 
 @end

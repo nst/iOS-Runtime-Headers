@@ -18,11 +18,11 @@
 - (id)bundleId;
 - (id)date;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLaunch:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLaunch:(id)arg1;
 - (id)reason;
 - (id)timeZone;
 

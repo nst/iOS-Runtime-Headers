@@ -9,14 +9,14 @@
 
 @property (nonatomic, copy) NSUUID *UUID;
 @property (nonatomic, readonly, copy) NSArray *actions;
-@property (getter=isComplete, nonatomic, readonly) BOOL complete;
+@property (getter=isComplete, nonatomic, readonly) bool complete;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableOrderedSet *mutableActions;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;
@@ -31,7 +31,7 @@
 - (id)initWithAction:(id)arg1;
 - (id)initWithActions:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isComplete;
+- (bool)isComplete;
 - (id)mutableActions;
 - (id)sanitizedCopy;
 - (id)sanitizedCopyWithZone:(struct _NSZone { }*)arg1;

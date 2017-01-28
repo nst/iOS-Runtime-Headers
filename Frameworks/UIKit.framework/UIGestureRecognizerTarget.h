@@ -16,7 +16,7 @@
 - (void)_sendActionWithGestureRecognizer:(id)arg1;
 - (SEL)action;
 - (id)description;
-- (BOOL)isEqualToTarget:(id)arg1 action:(SEL)arg2;
+- (bool)isEqualToTarget:(id)arg1 action:(SEL)arg2;
 - (id)target;
 
 @end

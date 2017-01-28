@@ -4,19 +4,19 @@
 
 @interface SANPSetVolumeLevel : SABaseClientBoundCommand
 
-@property (nonatomic) BOOL acknowledgedExceedingVolumeLimit;
+@property (nonatomic) bool acknowledgedExceedingVolumeLimit;
 @property (nonatomic, copy) NSString *actionType;
 @property (nonatomic, copy) NSNumber *volumeValue;
 
 + (id)setVolumeLevel;
 + (id)setVolumeLevelWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)acknowledgedExceedingVolumeLimit;
+- (bool)acknowledgedExceedingVolumeLimit;
 - (id)actionType;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
-- (void)setAcknowledgedExceedingVolumeLimit:(BOOL)arg1;
+- (bool)requiresResponse;
+- (void)setAcknowledgedExceedingVolumeLimit:(bool)arg1;
 - (void)setActionType:(id)arg1;
 - (void)setVolumeValue:(id)arg1;
 - (id)volumeValue;

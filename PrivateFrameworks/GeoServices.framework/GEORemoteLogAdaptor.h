@@ -3,8 +3,8 @@
  */
 
 @interface GEORemoteLogAdaptor : GEOBaseLogAdaptor <GEOPBSessionRequesterDelegate> {
-    id /* block */  _backgroundTaskEnd;
-    id /* block */  _backgroundTaskStart;
+    id  _backgroundTaskEnd;
+    id  _backgroundTaskStart;
     NSString * _debugRequestName;
     NSURL * _remoteURL;
     GEOLogMessageCollectionRequest * _request;
@@ -15,12 +15,12 @@
     NSLock * _sendLogMessageTimerLock;
 }
 
-@property (nonatomic, copy) id /* block */ backgroundTaskEnd;
-@property (nonatomic, copy) id /* block */ backgroundTaskStart;
+@property (nonatomic, copy) id backgroundTaskEnd;
+@property (nonatomic, copy) id backgroundTaskStart;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSString *debugRequestName;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSURL *remoteURL;
 @property (readonly) Class superclass;
 
@@ -31,8 +31,8 @@
 - (void)_scheduleSendLogMessageTimer;
 - (void)_sendPendingLogMessageToRemoteServer;
 - (void)_startBackgroundTaskForRequester:(id)arg1;
-- (id /* block */)backgroundTaskEnd;
-- (id /* block */)backgroundTaskStart;
+- (id)backgroundTaskEnd;
+- (id)backgroundTaskStart;
 - (void)dealloc;
 - (id)debugRequestName;
 - (void)flushLogs;
@@ -43,8 +43,8 @@
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)setBackgroundTaskEnd:(id /* block */)arg1;
-- (void)setBackgroundTaskStart:(id /* block */)arg1;
+- (void)setBackgroundTaskEnd:(id)arg1;
+- (void)setBackgroundTaskStart:(id)arg1;
 - (void)setDebugRequestName:(id)arg1;
 - (void)setRemoteURL:(id)arg1;
 

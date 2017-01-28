@@ -3,27 +3,27 @@
  */
 
 @interface _CNAutocompleteUserSessionDisplayedResults : NSObject {
-    BOOL  _containsDuetResults;
+    bool  _containsDuetResults;
     NSMutableDictionary * _datesByBatchIndexes;
-    BOOL  _ignored;
+    bool  _ignored;
     CNAutocompleteFetchRequest * _request;
 }
 
-@property (nonatomic) BOOL containsDuetResults;
+@property (nonatomic) bool containsDuetResults;
 @property (nonatomic, retain) NSMutableDictionary *datesByBatchIndexes;
-@property (nonatomic) BOOL ignored;
+@property (nonatomic) bool ignored;
 @property (nonatomic, readonly) CNAutocompleteFetchRequest *request;
 
 - (void).cxx_destruct;
-- (BOOL)containsDuetResults;
+- (bool)containsDuetResults;
 - (id)datesByBatchIndexes;
-- (void)didReceiveBatch:(unsigned int)arg1;
-- (BOOL)ignored;
+- (void)didReceiveBatch:(unsigned long long)arg1;
+- (bool)ignored;
 - (id)initWithRequest:(id)arg1;
-- (BOOL)relevantForRequest:(id)arg1;
+- (bool)relevantForRequest:(id)arg1;
 - (id)request;
-- (void)setContainsDuetResults:(BOOL)arg1;
+- (void)setContainsDuetResults:(bool)arg1;
 - (void)setDatesByBatchIndexes:(id)arg1;
-- (void)setIgnored:(BOOL)arg1;
+- (void)setIgnored:(bool)arg1;
 
 @end

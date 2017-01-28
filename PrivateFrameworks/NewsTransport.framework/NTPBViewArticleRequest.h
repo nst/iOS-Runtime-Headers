@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) NSString *feedUri;
-@property (nonatomic, readonly) BOOL hasFeedUri;
-@property (nonatomic, readonly) BOOL hasStoreFrontId;
-@property (nonatomic, readonly) BOOL hasWebPageUri;
+@property (nonatomic, readonly) bool hasFeedUri;
+@property (nonatomic, readonly) bool hasStoreFrontId;
+@property (nonatomic, readonly) bool hasWebPageUri;
 @property (nonatomic, retain) NSString *storeFrontId;
 @property (nonatomic, retain) NSString *webPageUri;
 
@@ -20,13 +20,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feedUri;
-- (BOOL)hasFeedUri;
-- (BOOL)hasStoreFrontId;
-- (BOOL)hasWebPageUri;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFeedUri;
+- (bool)hasStoreFrontId;
+- (bool)hasWebPageUri;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFeedUri:(id)arg1;
 - (void)setStoreFrontId:(id)arg1;
 - (void)setWebPageUri:(id)arg1;

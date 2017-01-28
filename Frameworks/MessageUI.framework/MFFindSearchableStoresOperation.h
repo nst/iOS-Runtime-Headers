@@ -5,6 +5,6 @@
 @interface MFFindSearchableStoresOperation : MFContactsSearchOperation
 
 - (void)main;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

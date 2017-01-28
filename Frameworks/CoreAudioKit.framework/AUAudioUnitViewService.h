@@ -9,14 +9,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property AURemoteExtensionContext *extensionContext;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
-- (void)_connectChildView:(id /* block */)arg1;
-- (void)connectToContextWithSessionID:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_connectChildView:(id)arg1;
+- (void)connectToContextWithSessionID:(id)arg1 withCompletion:(id)arg2;
 - (id)exportedInterface;
 - (id)extensionContext;
 - (void)loadView;

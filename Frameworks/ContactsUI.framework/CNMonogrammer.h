@@ -4,34 +4,34 @@
 
 @interface CNMonogrammer : NSObject {
     UIColor * _backgroundColor;
-    float  _diameter;
+    double  _diameter;
     UIFont * _font;
-    float  _innerBorderWidth;
+    double  _innerBorderWidth;
     UIImage * _knockoutMaskMonogram;
-    int  _monogrammerStyle;
+    long long  _monogrammerStyle;
     UIImage * _questionMarkMonogram;
-    float  _scale;
+    double  _scale;
     NSString * _silhouetteImageName;
     UIImage * _silhouetteMonogram;
     CNMonogrammer * _subMonogrammer;
     UIColor * _textColor;
-    BOOL  _textKnockout;
+    bool  _textKnockout;
     UIColor * _tintColor;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
-@property (nonatomic) float diameter;
+@property (nonatomic) double diameter;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, readonly) NSArray *keysToFetch;
 @property (nonatomic, readonly) UIImage *knockoutMaskMonogram;
 @property (nonatomic, readonly) UIImage *questionMarkMonogram;
 @property (nonatomic, readonly) UIImage *silhouetteMonogram;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic) BOOL textKnockout;
+@property (nonatomic) bool textKnockout;
 
 + (id)_initialsForContact:(id)arg1;
-+ (id)descriptorForRequiredKeysIncludingImage:(BOOL)arg1;
-+ (int)monogramTypeForContact:(id)arg1;
++ (id)descriptorForRequiredKeysIncludingImage:(bool)arg1;
++ (long long)monogramTypeForContact:(id)arg1;
 + (id)requiredKeyDescriptor;
 
 - (void).cxx_destruct;
@@ -43,15 +43,15 @@
 - (id)_initialsForFirstName:(id)arg1 lastName:(id)arg2;
 - (id)backgroundColor;
 - (void)dealloc;
-- (float)diameter;
+- (double)diameter;
 - (id)font;
 - (id)init;
-- (id)initWithStyle:(int)arg1 diameter:(float)arg2;
-- (float)innerBorderWidth;
+- (id)initWithStyle:(long long)arg1 diameter:(double)arg2;
+- (double)innerBorderWidth;
 - (id)keysToFetch;
 - (id)knockoutMaskMonogram;
 - (id)monogramForContact:(id)arg1;
-- (id)monogramForContact:(id)arg1 isContactImage:(BOOL*)arg2;
+- (id)monogramForContact:(id)arg1 isContactImage:(bool*)arg2;
 - (id)monogramForContacts:(id)arg1;
 - (id)monogramForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (void)monogramsAsFlatImages;
@@ -59,13 +59,13 @@
 - (void)monogramsWithTint:(id)arg1;
 - (id)questionMarkMonogram;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setDiameter:(float)arg1;
+- (void)setDiameter:(double)arg1;
 - (void)setFont:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTextKnockout:(BOOL)arg1;
+- (void)setTextKnockout:(bool)arg1;
 - (id)silhouetteImageName;
 - (id)silhouetteMonogram;
 - (id)textColor;
-- (BOOL)textKnockout;
+- (bool)textKnockout;
 
 @end

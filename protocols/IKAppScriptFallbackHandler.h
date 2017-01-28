@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)canFallbackForError:(NSError *)arg1;
+- (bool)canFallbackForError:(NSError *)arg1;
 - (NSString *)retrieveScript:(id*)arg1;
 - (void)scriptEvaluated:(NSString *)arg1;
 

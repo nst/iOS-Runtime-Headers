@@ -11,17 +11,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)acceptsComplicationType:(unsigned int)arg1 withFamily:(int)arg2;
++ (bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2;
 
 - (void).cxx_destruct;
 - (void)_activeDeviceChanged;
 - (void)_invalidate;
 - (void)_invalidateIfComplicationCorrespondsToApp:(id)arg1;
 - (void)_loadCollection;
-- (BOOL)_remoteIsCompanion;
+- (bool)_remoteIsCompanion;
 - (id)_templateFromApp:(id)arg1;
 - (void)appLibrary:(id)arg1 didAddApp:(id)arg2;
 - (void)appLibrary:(id)arg1 didUpdateApp:(id)arg2;
@@ -30,6 +30,6 @@
 - (void)complicationCollectionDidLoad:(id)arg1;
 - (id)currentSwitcherTemplate;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2;
 
 @end

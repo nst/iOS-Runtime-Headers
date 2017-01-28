@@ -10,9 +10,9 @@
 - (void).cxx_destruct;
 - (id)_URLTitleView;
 - (id)_URLView;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 style:(int)arg3;
-- (void)layoutForWidth:(float)arg1 position:(int)arg2;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2 style:(long long)arg3;
+- (void)layoutForWidth:(double)arg1 position:(int)arg2;
 - (void)setURL:(id)arg1;
-- (BOOL)update;
+- (bool)update;
 
 @end

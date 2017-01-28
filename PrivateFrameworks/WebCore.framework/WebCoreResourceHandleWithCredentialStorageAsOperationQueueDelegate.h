@@ -4,6 +4,6 @@
 
 @interface WebCoreResourceHandleWithCredentialStorageAsOperationQueueDelegate : WebCoreResourceHandleAsOperationQueueDelegate
 
-- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
+- (bool)connectionShouldUseCredentialStorage:(id)arg1;
 
 @end

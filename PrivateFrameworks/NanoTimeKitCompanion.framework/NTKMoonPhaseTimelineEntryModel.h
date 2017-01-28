@@ -4,23 +4,23 @@
 
 @interface NTKMoonPhaseTimelineEntryModel : NTKTimelineEntryModel {
     NSString * _animationGroup;
-    BOOL  _currentEvent;
-    int  _event;
+    bool  _currentEvent;
+    long long  _event;
     NSDate * _eventDate;
-    int  _hemisphere;
+    long long  _hemisphere;
     NSString * _phaseName;
-    unsigned int  _phaseNumber;
+    unsigned long long  _phaseNumber;
 }
 
 @property (nonatomic, retain) NSString *animationGroup;
-@property (nonatomic) BOOL currentEvent;
-@property (nonatomic) int event;
+@property (nonatomic) bool currentEvent;
+@property (nonatomic) long long event;
 @property (nonatomic, retain) NSDate *eventDate;
-@property (nonatomic) int hemisphere;
+@property (nonatomic) long long hemisphere;
 @property (nonatomic, retain) NSString *phaseName;
-@property (nonatomic) unsigned int phaseNumber;
+@property (nonatomic) unsigned long long phaseNumber;
 
-+ (id)circular:(id)arg1 isMedium:(BOOL)arg2;
++ (id)circular:(id)arg1 isMedium:(bool)arg2;
 + (id)extraLarge:(id)arg1;
 + (id)imageProviderWithOnePieceImage:(id)arg1;
 + (id)largeModular:(id)arg1;
@@ -28,24 +28,24 @@
 + (id)providerWithText:(id)arg1;
 + (id)smallModular:(id)arg1;
 + (id)smallUtility:(id)arg1;
-+ (id)textForMoonPhaseEvent:(int)arg1;
-+ (id)textForMoonPhaseEvent:(int)arg1 useShort:(BOOL)arg2;
++ (id)textForMoonPhaseEvent:(long long)arg1;
++ (id)textForMoonPhaseEvent:(long long)arg1 useShort:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)animationGroup;
-- (BOOL)currentEvent;
-- (int)event;
+- (bool)currentEvent;
+- (long long)event;
 - (id)eventDate;
-- (int)hemisphere;
+- (long long)hemisphere;
 - (id)phaseName;
-- (unsigned int)phaseNumber;
+- (unsigned long long)phaseNumber;
 - (void)setAnimationGroup:(id)arg1;
-- (void)setCurrentEvent:(BOOL)arg1;
-- (void)setEvent:(int)arg1;
+- (void)setCurrentEvent:(bool)arg1;
+- (void)setEvent:(long long)arg1;
 - (void)setEventDate:(id)arg1;
-- (void)setHemisphere:(int)arg1;
+- (void)setHemisphere:(long long)arg1;
 - (void)setPhaseName:(id)arg1;
-- (void)setPhaseNumber:(unsigned int)arg1;
-- (id)templateForComplicationFamily:(int)arg1;
+- (void)setPhaseNumber:(unsigned long long)arg1;
+- (id)templateForComplicationFamily:(long long)arg1;
 
 @end

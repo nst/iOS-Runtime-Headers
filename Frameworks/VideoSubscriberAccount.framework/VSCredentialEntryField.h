@@ -3,35 +3,35 @@
  */
 
 @interface VSCredentialEntryField : NSObject {
-    int  _autocapitalizationType;
-    int  _autocorrectionType;
-    int  _keyboardType;
+    long long  _autocapitalizationType;
+    long long  _autocorrectionType;
+    long long  _keyboardType;
     NSString * _placeholder;
-    BOOL  _secure;
+    bool  _secure;
     NSString * _text;
     NSString * _title;
 }
 
-@property (nonatomic) int autocapitalizationType;
-@property (nonatomic) int autocorrectionType;
-@property (nonatomic) int keyboardType;
+@property (nonatomic) long long autocapitalizationType;
+@property (nonatomic) long long autocorrectionType;
+@property (nonatomic) long long keyboardType;
 @property (nonatomic, copy) NSString *placeholder;
-@property (getter=isSecure, nonatomic) BOOL secure;
+@property (getter=isSecure, nonatomic) bool secure;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (int)autocapitalizationType;
-- (int)autocorrectionType;
+- (long long)autocapitalizationType;
+- (long long)autocorrectionType;
 - (id)init;
-- (BOOL)isSecure;
-- (int)keyboardType;
+- (bool)isSecure;
+- (long long)keyboardType;
 - (id)placeholder;
-- (void)setAutocapitalizationType:(int)arg1;
-- (void)setAutocorrectionType:(int)arg1;
-- (void)setKeyboardType:(int)arg1;
+- (void)setAutocapitalizationType:(long long)arg1;
+- (void)setAutocorrectionType:(long long)arg1;
+- (void)setKeyboardType:(long long)arg1;
 - (void)setPlaceholder:(id)arg1;
-- (void)setSecure:(BOOL)arg1;
+- (void)setSecure:(bool)arg1;
 - (void)setText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)text;

@@ -5,7 +5,7 @@
 @interface ABVCardParameter : NSObject {
     NSString * _grouping;
     NSString * _name;
-    BOOL  _primary;
+    bool  _primary;
     NSMutableArray * _types;
     id  _value;
 }
@@ -17,10 +17,10 @@
 - (void)finalize;
 - (id)grouping;
 - (id)initWithName:(id)arg1;
-- (BOOL)isPrimary;
+- (bool)isPrimary;
 - (id)name;
 - (void)setGrouping:(id)arg1;
-- (void)setIsPrimary:(BOOL)arg1;
+- (void)setIsPrimary:(bool)arg1;
 - (void)setValue:(id)arg1;
 - (id)types;
 - (id)value;

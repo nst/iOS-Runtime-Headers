@@ -3,40 +3,40 @@
  */
 
 @interface FCFetchGroup : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     NSObject<OS_dispatch_queue> * _completionQueue;
     id  _context;
-    BOOL  _isUserFacing;
+    bool  _isUserFacing;
     NSSet * _keys;
-    int  _qualityOfService;
-    int  _relativePriority;
+    long long  _qualityOfService;
+    long long  _relativePriority;
     NSDate * _requestDate;
-    BOOL  _shouldFilter;
+    bool  _shouldFilter;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ completion;
+@property (nonatomic, readonly, copy) id completion;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *completionQueue;
 @property (nonatomic, readonly) id context;
-@property (nonatomic, readonly) BOOL isUserFacing;
+@property (nonatomic, readonly) bool isUserFacing;
 @property (nonatomic, readonly, copy) NSSet *keys;
-@property (nonatomic, readonly) int qualityOfService;
-@property (nonatomic, readonly) int relativePriority;
+@property (nonatomic, readonly) long long qualityOfService;
+@property (nonatomic, readonly) long long relativePriority;
 @property (nonatomic, retain) NSDate *requestDate;
-@property (nonatomic, readonly) BOOL shouldFilter;
+@property (nonatomic, readonly) bool shouldFilter;
 
 - (void).cxx_destruct;
-- (int)comparePriority:(id)arg1;
-- (id /* block */)completion;
+- (long long)comparePriority:(id)arg1;
+- (id)completion;
 - (id)completionQueue;
 - (id)context;
 - (void)fireCompletion;
-- (id)initWithKeys:(id)arg1 context:(id)arg2 shouldFilter:(BOOL)arg3 qualityOfService:(int)arg4 relativePriority:(int)arg5 completionQueue:(id)arg6 completion:(id /* block */)arg7;
-- (BOOL)isUserFacing;
+- (id)initWithKeys:(id)arg1 context:(id)arg2 shouldFilter:(bool)arg3 qualityOfService:(long long)arg4 relativePriority:(long long)arg5 completionQueue:(id)arg6 completion:(id)arg7;
+- (bool)isUserFacing;
 - (id)keys;
-- (int)qualityOfService;
-- (int)relativePriority;
+- (long long)qualityOfService;
+- (long long)relativePriority;
 - (id)requestDate;
 - (void)setRequestDate:(id)arg1;
-- (BOOL)shouldFilter;
+- (bool)shouldFilter;
 
 @end

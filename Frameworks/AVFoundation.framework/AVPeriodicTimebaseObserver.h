@@ -3,7 +3,7 @@
  */
 
 @interface AVPeriodicTimebaseObserver : AVTimebaseObserver {
-    id /* block */  _block;
+    id  _block;
     struct { 
         long long value; 
         int timescale; 
@@ -42,6 +42,6 @@
 - (void)_handleTimeDiscontinuity;
 - (void)_resetNextFireTime;
 - (void)dealloc;
-- (id)initWithTimebase:(struct OpaqueCMTimebase { }*)arg1 interval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(id)arg3 block:(id /* block */)arg4;
+- (id)initWithTimebase:(struct OpaqueCMTimebase { }*)arg1 interval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(id)arg3 block:(id)arg4;
 
 @end

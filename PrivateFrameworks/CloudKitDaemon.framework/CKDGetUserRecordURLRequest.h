@@ -3,20 +3,20 @@
  */
 
 @interface CKDGetUserRecordURLRequest : CKDURLRequest {
-    id /* block */  _recordFetchedBlock;
+    id  _recordFetchedBlock;
     CKRecord * _userRecord;
 }
 
-@property (nonatomic, copy) id /* block */ recordFetchedBlock;
+@property (nonatomic, copy) id recordFetchedBlock;
 @property (nonatomic, retain) CKRecord *userRecord;
 
 - (void).cxx_destruct;
 - (int)operationType;
-- (id /* block */)recordFetchedBlock;
+- (id)recordFetchedBlock;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setRecordFetchedBlock:(id /* block */)arg1;
+- (void)setRecordFetchedBlock:(id)arg1;
 - (void)setUserRecord:(id)arg1;
 - (id)userRecord;
 

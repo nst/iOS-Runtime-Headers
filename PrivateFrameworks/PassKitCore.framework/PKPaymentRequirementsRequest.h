@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)_cardDictionary;
-- (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3 certChain:(id)arg4 devSigned:(BOOL)arg5 deviceData:(id)arg6 webService:(id)arg7 completion:(id /* block */)arg8;
+- (void)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3 certChain:(id)arg4 devSigned:(bool)arg5 deviceData:(id)arg6 webService:(id)arg7 completion:(id)arg8;
 - (id)cardholderName;
 - (id)initWithCardholderName:(id)arg1 primaryAccountNumber:(id)arg2;
 - (id)initWithPaymentCredential:(id)arg1;

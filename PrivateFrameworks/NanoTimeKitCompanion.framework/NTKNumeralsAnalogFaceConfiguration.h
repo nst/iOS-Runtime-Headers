@@ -3,24 +3,24 @@
  */
 
 @interface NTKNumeralsAnalogFaceConfiguration : NSObject {
-    BOOL  _areAllComplicationsOff;
-    unsigned int  _colorSchemeUnits;
-    unsigned int  _faceColor;
-    unsigned int  _selectedStyle;
-    int  _utilitySlot;
+    bool  _areAllComplicationsOff;
+    unsigned long long  _colorSchemeUnits;
+    unsigned long long  _faceColor;
+    unsigned long long  _selectedStyle;
+    long long  _utilitySlot;
 }
 
-@property (nonatomic, readonly) BOOL areAllComplicationsOff;
-@property (nonatomic, readonly) unsigned int colorSchemeUnits;
-@property (nonatomic, readonly) unsigned int faceColor;
-@property (nonatomic, readonly) unsigned int selectedStyle;
-@property (nonatomic, readonly) int utilitySlot;
+@property (nonatomic, readonly) bool areAllComplicationsOff;
+@property (nonatomic, readonly) unsigned long long colorSchemeUnits;
+@property (nonatomic, readonly) unsigned long long faceColor;
+@property (nonatomic, readonly) unsigned long long selectedStyle;
+@property (nonatomic, readonly) long long utilitySlot;
 
-- (BOOL)areAllComplicationsOff;
-- (unsigned int)colorSchemeUnits;
-- (unsigned int)faceColor;
-- (id)initWithFaceColor:(unsigned int)arg1 colorSchemeUnits:(unsigned int)arg2 areAllComplicationsOff:(BOOL)arg3 utilitySlot:(int)arg4 selectedStyle:(unsigned int)arg5;
-- (unsigned int)selectedStyle;
-- (int)utilitySlot;
+- (bool)areAllComplicationsOff;
+- (unsigned long long)colorSchemeUnits;
+- (unsigned long long)faceColor;
+- (id)initWithFaceColor:(unsigned long long)arg1 colorSchemeUnits:(unsigned long long)arg2 areAllComplicationsOff:(bool)arg3 utilitySlot:(long long)arg4 selectedStyle:(unsigned long long)arg5;
+- (unsigned long long)selectedStyle;
+- (long long)utilitySlot;
 
 @end

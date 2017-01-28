@@ -15,16 +15,16 @@
 - (void).cxx_destruct;
 - (void)_addOperation:(id)arg1;
 - (void)_cancelPlaybackPreparation;
-- (void)_preparePlaybackWithPrepareRadioPlaybackOperation:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)_preparePlaybackWithPrepareRadioPlaybackOperation:(id)arg1 completionBlock:(id)arg2;
 - (void)addGetTracksOperation:(id)arg1;
-- (void)addStationWithRequest:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)addStationWithRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)cancelPlaybackPreparation;
-- (void)getHistoryWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getHistoryWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
-- (void)loadRadioConfigurationWithCompletionBlock:(id /* block */)arg1;
-- (void)preparePlaybackWithOperation:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)loadRadioConfigurationWithCompletionBlock:(id)arg1;
+- (void)preparePlaybackWithOperation:(id)arg1 withCompletionBlock:(id)arg2;
 - (id)requestContext;
-- (void)sendPlayEventCollection:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)sendPlayEventCollection:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)setRequestContext:(id)arg1;
 
 @end

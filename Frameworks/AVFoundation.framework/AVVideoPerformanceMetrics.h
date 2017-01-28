@@ -6,18 +6,18 @@
     AVVideoPerformanceMetricsInternal * _performanceMetricsInternal;
 }
 
-@property (nonatomic, readonly) unsigned long numberOfCorruptedVideoFrames;
-@property (nonatomic, readonly) unsigned long numberOfDroppedVideoFrames;
+@property (nonatomic, readonly) unsigned long long numberOfCorruptedVideoFrames;
+@property (nonatomic, readonly) unsigned long long numberOfDroppedVideoFrames;
 @property (nonatomic, readonly) double totalFrameDelay;
-@property (nonatomic, readonly) unsigned long totalNumberOfVideoFrames;
+@property (nonatomic, readonly) unsigned long long totalNumberOfVideoFrames;
 
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned long)numberOfCorruptedVideoFrames;
-- (unsigned long)numberOfDroppedVideoFrames;
+- (unsigned long long)numberOfCorruptedVideoFrames;
+- (unsigned long long)numberOfDroppedVideoFrames;
 - (double)totalFrameDelay;
-- (unsigned long)totalNumberOfVideoFrames;
+- (unsigned long long)totalNumberOfVideoFrames;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isPlaceholder;
+- (bool)isPlaceholder;
 - (PHAssetCollection *)relatedAssetCollection;
 - (PHAsset *)relatedKeyAsset;
 - (NSString *)relatedLocalizedSubtitle;

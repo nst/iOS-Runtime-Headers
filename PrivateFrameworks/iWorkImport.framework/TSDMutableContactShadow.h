@@ -4,17 +4,17 @@
 
 @interface TSDMutableContactShadow : TSDContactShadow <TSDMutableShadow>
 
-@property (nonatomic) float height;
-@property (nonatomic) float perspective;
+@property (nonatomic) double height;
+@property (nonatomic) double perspective;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setAngle:(float)arg1;
+- (void)setAngle:(double)arg1;
 - (void)setColor:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHeight:(float)arg1;
-- (void)setOffset:(float)arg1;
-- (void)setOpacity:(float)arg1;
-- (void)setPerspective:(float)arg1;
-- (void)setRadius:(float)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHeight:(double)arg1;
+- (void)setOffset:(double)arg1;
+- (void)setOpacity:(double)arg1;
+- (void)setPerspective:(double)arg1;
+- (void)setRadius:(double)arg1;
 
 @end

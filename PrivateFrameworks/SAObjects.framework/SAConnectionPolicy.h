@@ -6,9 +6,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property (nonatomic, copy) NSNumber *globalTimeout;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *policyId;
 @property (nonatomic, copy) NSArray *routes;
 @property (readonly) Class superclass;
@@ -17,13 +17,13 @@
 + (id)connectionPolicy;
 + (id)connectionPolicyWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)encodedClassName;
 - (id)globalTimeout;
 - (id)groupIdentifier;
 - (id)policyId;
 - (id)routes;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setGlobalTimeout:(id)arg1;
 - (void)setPolicyId:(id)arg1;
 - (void)setRoutes:(id)arg1;

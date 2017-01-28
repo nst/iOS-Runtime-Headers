@@ -8,15 +8,15 @@
 
 @property (nonatomic, retain) CCUIButtonModule *module;
 
-+ (BOOL)presentAlertItemForButtonModule:(id)arg1;
++ (bool)presentAlertItemForButtonModule:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)allowMenuButtonDismissal;
-- (void)configure:(BOOL)arg1 requirePasscodeForActions:(BOOL)arg2;
-- (BOOL)dismissOnLock;
+- (bool)allowMenuButtonDismissal;
+- (void)configure:(bool)arg1 requirePasscodeForActions:(bool)arg2;
+- (bool)dismissOnLock;
 - (id)module;
 - (void)setModule:(id)arg1;
-- (BOOL)shouldShowInLockScreen;
-- (BOOL)supportsAlertController;
+- (bool)shouldShowInLockScreen;
+- (bool)supportsAlertController;
 
 @end

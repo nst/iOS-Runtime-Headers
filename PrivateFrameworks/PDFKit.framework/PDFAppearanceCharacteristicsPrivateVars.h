@@ -7,12 +7,12 @@
     UIColor * borderColor;
     NSString * caption;
     NSString * downCaption;
-    int  flavor;
+    long long  flavor;
     struct CGPDFForm { } * icon;
     NSString * rolloverCaption;
     int  rotation;
     int  scaleCircumstance;
-    BOOL  scaleProportional;
+    bool  scaleProportional;
 }
 
 - (void).cxx_destruct;

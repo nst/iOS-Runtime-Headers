@@ -5,7 +5,7 @@
 
 @required
 
-- (SKUIIndexBarEntry *)indexBarEntryAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfIndexBarEntries;
+- (SKUIIndexBarEntry *)indexBarEntryAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfIndexBarEntries;
 
 @end

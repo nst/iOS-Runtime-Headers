@@ -4,11 +4,11 @@
 
 @interface _UIFeedbackModulationBehaviorConfiguration : _UIFeedbackGeneratorConfiguration {
     _UIFeedback<_UIFeedbackContinuousPlayable> * _feedback;
-    id /* block */  _feedbackUpdateBlock;
+    id  _feedbackUpdateBlock;
 }
 
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackContinuousPlayable> *feedback;
-@property (nonatomic, copy) id /* block */ feedbackUpdateBlock;
+@property (nonatomic, copy) id feedbackUpdateBlock;
 
 + (id)defaultConfiguration;
 + (id)sliderConfiguration;
@@ -17,9 +17,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)feedback;
 - (id)feedbackKeyPaths;
-- (id /* block */)feedbackUpdateBlock;
-- (int)requiredSupportLevel;
+- (id)feedbackUpdateBlock;
+- (long long)requiredSupportLevel;
 - (void)setFeedback:(id)arg1;
-- (void)setFeedbackUpdateBlock:(id /* block */)arg1;
+- (void)setFeedbackUpdateBlock:(id)arg1;
 
 @end

@@ -7,12 +7,12 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_isAchievementDefinitionExpired:(id)arg1;
-- (BOOL)_wasAchievementDefinitionEverEarned:(id)arg1;
-- (BOOL)areAssetsNeededForAchievementDefinition:(id)arg1;
-- (BOOL)areStickersEarnedForAchievementDefinition:(id)arg1;
-- (BOOL)areStickersNeededAtAll;
-- (BOOL)areStickersNeededForAchievementDefinition:(id)arg1;
+- (bool)_isAchievementDefinitionExpired:(id)arg1;
+- (bool)_wasAchievementDefinitionEverEarned:(id)arg1;
+- (bool)areAssetsNeededForAchievementDefinition:(id)arg1;
+- (bool)areStickersEarnedForAchievementDefinition:(id)arg1;
+- (bool)areStickersNeededAtAll;
+- (bool)areStickersNeededForAchievementDefinition:(id)arg1;
 - (id)initWithAllEarnedDefinitionIdentifiers:(id)arg1;
 
 @end

@@ -9,6 +9,6 @@
 - (void)searchFieldController:(SKUISearchFieldController *)arg1 requestSearchWithSearchTerm:(NSString *)arg2 metricsEvent:(SSMetricsSearchEvent *)arg3;
 - (void)searchFieldController:(SKUISearchFieldController *)arg1 requestSearchWithURL:(NSURL *)arg2 metricsEvent:(SSMetricsSearchEvent *)arg3;
 - (void)searchFieldController:(SKUISearchFieldController *)arg1 searchBarDidChangeText:(NSString *)arg2;
-- (BOOL)searchFieldControllerShouldBeginEditing:(SKUISearchFieldController *)arg1;
+- (bool)searchFieldControllerShouldBeginEditing:(SKUISearchFieldController *)arg1;
 
 @end

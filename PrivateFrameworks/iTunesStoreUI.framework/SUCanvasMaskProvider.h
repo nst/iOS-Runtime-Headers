@@ -6,8 +6,8 @@
     SUScriptCanvasFunction * _function;
 }
 
-- (id)copyMaskImageWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGPath { }*)copyPathForMaskWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)copyMaskImageWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGPath { }*)copyPathForMaskWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)dealloc;
 - (id)initWithFunction:(id)arg1;
 

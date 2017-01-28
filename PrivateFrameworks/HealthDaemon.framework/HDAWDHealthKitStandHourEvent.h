@@ -3,7 +3,7 @@
  */
 
 @interface HDAWDHealthKitStandHourEvent : PBCodable <NSCopying> {
-    BOOL  _didStand;
+    bool  _didStand;
     struct { 
         unsigned int standHourTimestamp : 1; 
         unsigned int timestamp : 1; 
@@ -13,10 +13,10 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL didStand;
-@property (nonatomic) BOOL hasDidStand;
-@property (nonatomic) BOOL hasStandHourTimestamp;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool didStand;
+@property (nonatomic) bool hasDidStand;
+@property (nonatomic) bool hasStandHourTimestamp;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) long long standHourTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -24,18 +24,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)didStand;
-- (BOOL)hasDidStand;
-- (BOOL)hasStandHourTimestamp;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)didStand;
+- (bool)hasDidStand;
+- (bool)hasStandHourTimestamp;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDidStand:(BOOL)arg1;
-- (void)setHasDidStand:(BOOL)arg1;
-- (void)setHasStandHourTimestamp:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDidStand:(bool)arg1;
+- (void)setHasDidStand:(bool)arg1;
+- (void)setHasStandHourTimestamp:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setStandHourTimestamp:(long long)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (long long)standHourTimestamp;

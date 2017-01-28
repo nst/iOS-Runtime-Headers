@@ -15,10 +15,10 @@
 + (id)getSharedObjWithOperator:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)doesInterfereWithChargerWithStartDate:(id)arg1 withEndDate:(id)arg2;
-- (BOOL)dropFirstEntryReceived:(id)arg1 usingFilter:(id)arg2 andStartTime:(id)arg3;
-- (double)getRailEnergyWithEntry:(id)arg1 withFilter:(id)arg2 isRailForward:(BOOL)arg3;
-- (void)handleChargerChangeWithState:(BOOL)arg1 withDate:(id)arg2;
+- (bool)doesInterfereWithChargerWithStartDate:(id)arg1 withEndDate:(id)arg2;
+- (bool)dropFirstEntryReceived:(id)arg1 usingFilter:(id)arg2 andStartTime:(id)arg3;
+- (double)getRailEnergyWithEntry:(id)arg1 withFilter:(id)arg2 isRailForward:(bool)arg3;
+- (void)handleChargerChangeWithState:(bool)arg1 withDate:(id)arg2;
 - (id)initWithOperator:(id)arg1;
 - (id)operator;
 - (void)resetTableWithEntryKey:(id)arg1;
@@ -27,6 +27,6 @@
 - (void)setRunningMetrics:(id)arg1;
 - (void)startMetricCollection:(id)arg1;
 - (void)stopMetricCollection:(id)arg1;
-- (BOOL)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
+- (bool)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
 
 @end

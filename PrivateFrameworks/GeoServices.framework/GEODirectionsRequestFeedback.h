@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic, retain) NSString *appIdentifier;
-@property (nonatomic, readonly) BOOL hasAppIdentifier;
-@property (nonatomic) BOOL hasPurpose;
-@property (nonatomic) BOOL hasSource;
+@property (nonatomic, readonly) bool hasAppIdentifier;
+@property (nonatomic) bool hasPurpose;
+@property (nonatomic) bool hasSource;
 @property (nonatomic) int purpose;
 @property (nonatomic) int source;
 
@@ -27,21 +27,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAppIdentifier;
-- (BOOL)hasPurpose;
-- (BOOL)hasSource;
-- (unsigned int)hash;
+- (bool)hasAppIdentifier;
+- (bool)hasPurpose;
+- (bool)hasSource;
+- (unsigned long long)hash;
 - (id)initWithPurpose:(int)arg1;
 - (id)initWithPurpose:(int)arg1 andSource:(int)arg2;
 - (id)initWithPurpose:(int)arg1 andSource:(int)arg2 andIdentifier:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)purpose;
 - (id)purposeAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAppIdentifier:(id)arg1;
-- (void)setHasPurpose:(BOOL)arg1;
-- (void)setHasSource:(BOOL)arg1;
+- (void)setHasPurpose:(bool)arg1;
+- (void)setHasSource:(bool)arg1;
 - (void)setPurpose:(int)arg1;
 - (void)setSource:(int)arg1;
 - (int)source;

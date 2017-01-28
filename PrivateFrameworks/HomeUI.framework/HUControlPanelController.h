@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <HUControlPanelControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableDictionary *interactionStateByControlID;
 @property (readonly) Class superclass;
 
@@ -41,8 +41,8 @@
 - (id)interactionStateByControlID;
 - (void)removeItem:(id)arg1;
 - (void)setupCell:(id)arg1 forItem:(id)arg2;
-- (BOOL)shouldDisplayItem:(id)arg1;
-- (BOOL)shouldShowSectionTitleForItem:(id)arg1;
-- (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(BOOL)arg3;
+- (bool)shouldDisplayItem:(id)arg1;
+- (bool)shouldShowSectionTitleForItem:(id)arg1;
+- (void)updateCell:(id)arg1 forItem:(id)arg2 animated:(bool)arg3;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)maximumNumberOfItems;
-- (void)setMaximumNumberOfItems:(unsigned int)arg1;
+- (unsigned long long)maximumNumberOfItems;
+- (void)setMaximumNumberOfItems:(unsigned long long)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface WUIGradientLayer : CAGradientLayer {
-    BOOL  _allowsActions;
+    bool  _allowsActions;
 }
 
-@property (nonatomic) BOOL allowsActions;
+@property (nonatomic) bool allowsActions;
 
 - (id)actionForKey:(id)arg1;
-- (BOOL)allowsActions;
-- (void)setAllowsActions:(BOOL)arg1;
+- (bool)allowsActions;
+- (void)setAllowsActions:(bool)arg1;
 
 @end

@@ -4,26 +4,26 @@
 
 @interface SUICFauxFlamesView : UIView {
     struct { 
-        float imageHeight; 
-        float imageWidth; 
+        double imageHeight; 
+        double imageWidth; 
         int frameCount; 
         char *fileName; 
     }  _sequenceAttributes;
-    int  _style;
-    float  _width;
+    long long  _style;
+    double  _width;
 }
 
-+ (id)_frameImagesForSequence:(struct { float x1; float x2; int x3; char *x4; })arg1;
++ (id)_frameImagesForSequence:(struct { double x1; double x2; int x3; char *x4; })arg1;
 
 - (void)_cleanupView;
 - (void)didMoveToSuperview;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(int)arg1;
-- (id)initWithStyle:(int)arg1 screenSize:(int)arg2;
-- (BOOL)isAnimating;
-- (void)setHidden:(BOOL)arg1;
-- (void)start:(BOOL)arg1;
-- (void)stop:(BOOL)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(long long)arg1;
+- (id)initWithStyle:(long long)arg1 screenSize:(long long)arg2;
+- (bool)isAnimating;
+- (void)setHidden:(bool)arg1;
+- (void)start:(bool)arg1;
+- (void)stop:(bool)arg1;
 
 @end

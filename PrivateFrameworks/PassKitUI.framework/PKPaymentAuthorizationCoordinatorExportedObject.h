@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationCoordinatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <PKPaymentAuthorizationCoordinatorPrivateDelegate> *privateDelegate;
 @property (nonatomic, retain) <PKPaymentAuthorizationServiceProtocol> *serviceProxy;
 @property (readonly) Class superclass;

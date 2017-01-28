@@ -5,6 +5,6 @@
 @interface ICStateHandler : NSObject
 
 + (void)addAccountsFrameworkStateHandler;
-+ (void)addStateHandlerWithName:(const char *)arg1 stateBlock:(id /* block */)arg2;
++ (void)addStateHandlerWithName:(const char *)arg1 stateBlock:(id)arg2;
 
 @end

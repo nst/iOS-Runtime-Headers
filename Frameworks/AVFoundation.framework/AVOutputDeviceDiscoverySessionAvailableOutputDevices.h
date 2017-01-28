@@ -12,10 +12,10 @@
 - (void)_loadOutputDevices;
 - (void)dealloc;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithAvailableFigEndpoints:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)otherDevices;
 - (id)recentlyUsedDevices;
 

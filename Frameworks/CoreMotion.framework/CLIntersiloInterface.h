@@ -13,7 +13,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<SEL *, std::__1::__value_type<SEL *, CLIntersiloInterfaceSelectorInfo *>, std::__1::less<SEL *>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _selectors;
@@ -25,7 +25,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)debugDescription;
 - (id)getInfoForSelector:(SEL)arg1;
 - (id)initWithProtocol:(id)arg1 base:(id)arg2;

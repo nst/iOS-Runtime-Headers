@@ -8,8 +8,8 @@
 
 - (void)dealloc;
 - (id)font;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithFont:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -4,20 +4,20 @@
 
 @interface PXFileBackedImageKey : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
     NSURL * _url;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, readonly) NSURL *url;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (id)initWithUrl:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
+- (unsigned long long)hash;
+- (id)initWithUrl:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })size;
 - (id)url;
 
 @end

@@ -19,20 +19,20 @@
 + (id)sharedInstance;
 
 - (void)_cancelActiveUserNotificationForIdentifier:(id)arg1;
-- (id /* block */)_dequeueBlockForIdentifier:(id)arg1;
+- (id)_dequeueBlockForIdentifier:(id)arg1;
 - (id)_dequeueListenerForIdentifier:(id)arg1;
 - (id)_dequeueUserNotificationForIdentifier:(id)arg1;
 - (void)_displayNextUserNotificationForIdentifier:(id)arg1;
-- (void)_enqueueBlock:(id /* block */)arg1 forIdentifier:(id)arg2;
+- (void)_enqueueBlock:(id)arg1 forIdentifier:(id)arg2;
 - (void)_enqueueListener:(id)arg1 forIdentifier:(id)arg2;
 - (void)_enqueueUserNotification:(id)arg1 forIdentifier:(id)arg2;
-- (id /* block */)_frontBlockForIdentifier:(id)arg1;
+- (id)_frontBlockForIdentifier:(id)arg1;
 - (id)_frontListenerForIdentifier:(id)arg1;
 - (id)_frontUserNotificationForIdentifier:(id)arg1;
-- (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long)arg2;
+- (void)_handleUserNotification:(struct __CFUserNotification { }*)arg1 responseFlags:(unsigned long long)arg2;
 - (void)addUserNotification:(id)arg1 listener:(id)arg2;
-- (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id /* block */)arg3;
-- (unsigned int)countForIdentifier:(id)arg1;
+- (void)addUserNotification:(id)arg1 listener:(id)arg2 completionHandler:(id)arg3;
+- (unsigned long long)countForIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)identifierToBlockQueueMap;
 - (id)identifierToCFUserNotificationMap;

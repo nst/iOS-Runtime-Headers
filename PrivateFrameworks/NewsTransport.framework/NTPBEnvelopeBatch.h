@@ -15,9 +15,9 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *envelopes;
-@property (nonatomic) BOOL hasMajorVersion;
-@property (nonatomic) BOOL hasMinorVersion;
-@property (nonatomic) BOOL hasPatchVersion;
+@property (nonatomic) bool hasMajorVersion;
+@property (nonatomic) bool hasMinorVersion;
+@property (nonatomic) bool hasPatchVersion;
 @property (nonatomic) int majorVersion;
 @property (nonatomic) int minorVersion;
 @property (nonatomic) int patchVersion;
@@ -30,23 +30,23 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)envelopeAtIndex:(unsigned int)arg1;
+- (id)envelopeAtIndex:(unsigned long long)arg1;
 - (id)envelopes;
-- (unsigned int)envelopesCount;
-- (BOOL)hasMajorVersion;
-- (BOOL)hasMinorVersion;
-- (BOOL)hasPatchVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)envelopesCount;
+- (bool)hasMajorVersion;
+- (bool)hasMinorVersion;
+- (bool)hasPatchVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)majorVersion;
 - (void)mergeFrom:(id)arg1;
 - (int)minorVersion;
 - (int)patchVersion;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEnvelopes:(id)arg1;
-- (void)setHasMajorVersion:(BOOL)arg1;
-- (void)setHasMinorVersion:(BOOL)arg1;
-- (void)setHasPatchVersion:(BOOL)arg1;
+- (void)setHasMajorVersion:(bool)arg1;
+- (void)setHasMinorVersion:(bool)arg1;
+- (void)setHasPatchVersion:(bool)arg1;
 - (void)setMajorVersion:(int)arg1;
 - (void)setMinorVersion:(int)arg1;
 - (void)setPatchVersion:(int)arg1;

@@ -4,9 +4,9 @@
 
 @interface VCPVideoMetaAnalyzer : NSObject
 
-+ (id)analyzerForTrackType:(id)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
++ (id)analyzerForTrackType:(id)arg1 withTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg2;
 
-- (long)processMetadataGroup:(id)arg1 flags:(unsigned int*)arg2;
+- (int)processMetadataGroup:(id)arg1 flags:(unsigned long long*)arg2;
 - (id)results;
 
 @end

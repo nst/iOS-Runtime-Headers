@@ -14,9 +14,9 @@
 - (id)applicationIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithSessionID:(id)arg1 applicationIdentifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)sessionID;
 
 @end

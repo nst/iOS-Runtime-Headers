@@ -12,11 +12,11 @@
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)init;
 - (id)initWithReloadOptionsController:(id)arg1;
 - (void)performActivity;
-- (void)performActivityWithCompletion:(id /* block */)arg1;
+- (void)performActivityWithCompletion:(id)arg1;
 - (id)reloadOptionsController;
 
 @end

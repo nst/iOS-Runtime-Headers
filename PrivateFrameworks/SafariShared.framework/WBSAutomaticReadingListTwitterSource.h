@@ -3,23 +3,23 @@
  */
 
 @interface WBSAutomaticReadingListTwitterSource : WBSAutomaticReadingListSocialSource {
-    unsigned int  _numberOfRequestsAllowedInRateLimitWindow;
+    unsigned long long  _numberOfRequestsAllowedInRateLimitWindow;
 }
 
-@property (nonatomic) unsigned int numberOfRequestsAllowedInRateLimitWindow;
+@property (nonatomic) unsigned long long numberOfRequestsAllowedInRateLimitWindow;
 
 + (id)sharedSource;
 
 - (id)accountTypeIdentifier;
 - (Class)itemClass;
 - (double)minimumTimeBetweenRequests;
-- (unsigned int)numberOfRequestsAllowedInRateLimitWindow;
+- (unsigned long long)numberOfRequestsAllowedInRateLimitWindow;
 - (id)repostResourceURLStringForItem:(id)arg1;
 - (id)requestParametersForRecordsWithAge:(int)arg1 relativeTo:(id)arg2;
 - (id)resourceURLString;
 - (id)serviceName;
 - (id)serviceType;
-- (void)setNumberOfRequestsAllowedInRateLimitWindow:(unsigned int)arg1;
+- (void)setNumberOfRequestsAllowedInRateLimitWindow:(unsigned long long)arg1;
 - (void)updateMinimumTimeBetweenRequestsFromResponseHeaders:(id)arg1;
 
 @end

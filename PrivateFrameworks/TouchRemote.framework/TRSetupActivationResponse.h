@@ -3,15 +3,15 @@
  */
 
 @interface TRSetupActivationResponse : TRResponseMessage {
-    BOOL  _activated;
+    bool  _activated;
 }
 
-@property (nonatomic) BOOL activated;
+@property (nonatomic) bool activated;
 
-- (BOOL)activated;
+- (bool)activated;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setActivated:(BOOL)arg1;
+- (void)setActivated:(bool)arg1;
 
 @end

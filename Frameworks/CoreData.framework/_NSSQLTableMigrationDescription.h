@@ -22,7 +22,7 @@
 @property (readonly) NSSQLEntity *rootEntity;
 
 - (id)_addedManyToManys;
-- (BOOL)_hasTransformedTableSchema;
+- (bool)_hasTransformedTableSchema;
 - (id)_removedManyToManys;
 - (id)_retainedRemovedSubEntitiesOfEntity:(id)arg1;
 - (id)_sourceRootEntity;
@@ -41,7 +41,7 @@
 - (id)description;
 - (id)initWithRootEntity:(id)arg1 migrationType:(int)arg2;
 - (int)migrationType;
-- (id)newCopyAndInsertStatementForToOne:(id)arg1 toManyToMany:(id)arg2 fromTableName:(id)arg3 invertColumns:(BOOL)arg4 migrationContext:(/* Warning: unhandled struct encoding: '{_NSSQLMigrationContext=@}' */ struct _NSSQLMigrationContext { id x1; })arg5;
+- (id)newCopyAndInsertStatementForToOne:(id)arg1 toManyToMany:(id)arg2 fromTableName:(id)arg3 invertColumns:(bool)arg4 migrationContext:(/* Warning: unhandled struct encoding: '{_NSSQLMigrationContext=@}' */ struct _NSSQLMigrationContext { id x1; })arg5;
 - (id)rootEntity;
 
 @end

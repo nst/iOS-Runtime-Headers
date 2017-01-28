@@ -8,8 +8,8 @@
     unsigned int  __currentTraits;
     NSDictionary * __defaultAttributes;
     NSString * __htmlString;
-    id /* block */  _parsedAttributedStringBlock;
-    id /* block */  _parsedErrorBlock;
+    id  _parsedAttributedStringBlock;
+    id  _parsedErrorBlock;
 }
 
 @property (setter=_setCurrentAttributes:, nonatomic, copy) NSDictionary *_currentAttributes;
@@ -17,8 +17,8 @@
 @property (setter=_setCurrentTraits:, nonatomic) unsigned int _currentTraits;
 @property (nonatomic, readonly, copy) NSDictionary *_defaultAttributes;
 @property (nonatomic, readonly) NSString *_htmlString;
-@property (nonatomic, copy) id /* block */ parsedAttributedStringBlock;
-@property (nonatomic, copy) id /* block */ parsedErrorBlock;
+@property (nonatomic, copy) id parsedAttributedStringBlock;
+@property (nonatomic, copy) id parsedErrorBlock;
 
 - (void).cxx_destruct;
 - (id)_currentAttributes;
@@ -32,9 +32,9 @@
 - (id)init;
 - (id)initWithHTMLString:(id)arg1 defaultAttributes:(id)arg2;
 - (void)parse;
-- (id /* block */)parsedAttributedStringBlock;
-- (id /* block */)parsedErrorBlock;
-- (void)setParsedAttributedStringBlock:(id /* block */)arg1;
-- (void)setParsedErrorBlock:(id /* block */)arg1;
+- (id)parsedAttributedStringBlock;
+- (id)parsedErrorBlock;
+- (void)setParsedAttributedStringBlock:(id)arg1;
+- (void)setParsedErrorBlock:(id)arg1;
 
 @end

@@ -23,8 +23,8 @@
 - (void)invalidate;
 - (id)profile;
 - (id)queue;
-- (void)requireEntitlement:(id)arg1 usingBlock:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
-- (void)requirePrivateHealthKitEntitlementUsingBlock:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
+- (void)requireEntitlement:(id)arg1 usingBlock:(id)arg2 errorHandler:(id)arg3;
+- (void)requirePrivateHealthKitEntitlementUsingBlock:(id)arg1 errorHandler:(id)arg2;
 - (id)server;
 
 @end

@@ -8,32 +8,32 @@
         unsigned int refCount : 24; 
         unsigned int unused : 4; 
     }  _flags;
-    float  _location;
+    double  _location;
     id  _reserved;
 }
 
-@property (nonatomic, readonly) int alignment;
-@property (nonatomic, readonly) float location;
+@property (nonatomic, readonly) long long alignment;
+@property (nonatomic, readonly) double location;
 @property (nonatomic, readonly) NSDictionary *options;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)columnTerminatorsForLocale:(id)arg1;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)alignment;
+- (long long)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTextAlignment:(int)arg1 location:(float)arg2 options:(id)arg3;
-- (id)initWithType:(unsigned int)arg1 location:(float)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (float)location;
+- (id)initWithTextAlignment:(long long)arg1 location:(double)arg2 options:(id)arg3;
+- (id)initWithType:(unsigned long long)arg1 location:(double)arg2;
+- (bool)isEqual:(id)arg1;
+- (double)location;
 - (id)options;
 - (oneway void)release;
-- (unsigned int)tabStopType;
+- (unsigned long long)tabStopType;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)firstRunControllerDidFinish:(CNFRegWizardController *)arg1 finished:(BOOL)arg2;
+- (void)firstRunControllerDidFinish:(CNFRegWizardController *)arg1 finished:(bool)arg2;
 
 @end

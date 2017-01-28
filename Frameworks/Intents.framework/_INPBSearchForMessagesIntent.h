@@ -5,8 +5,8 @@
 @interface _INPBSearchForMessagesIntent : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _attributes;
     _INPBDateTimeRange * _dateTimeRange;
     _INPBStringList * _groupName;
@@ -20,17 +20,17 @@
 }
 
 @property (nonatomic, readonly) int*attributes;
-@property (nonatomic, readonly) unsigned int attributesCount;
+@property (nonatomic, readonly) unsigned long long attributesCount;
 @property (nonatomic, retain) _INPBDateTimeRange *dateTimeRange;
 @property (nonatomic, retain) _INPBStringList *groupName;
-@property (nonatomic, readonly) BOOL hasDateTimeRange;
-@property (nonatomic, readonly) BOOL hasGroupName;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasNotificationIdentifier;
-@property (nonatomic, readonly) BOOL hasRecipient;
-@property (nonatomic, readonly) BOOL hasSearchTerm;
-@property (nonatomic, readonly) BOOL hasSender;
+@property (nonatomic, readonly) bool hasDateTimeRange;
+@property (nonatomic, readonly) bool hasGroupName;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasNotificationIdentifier;
+@property (nonatomic, readonly) bool hasRecipient;
+@property (nonatomic, readonly) bool hasSearchTerm;
+@property (nonatomic, readonly) bool hasSender;
 @property (nonatomic, retain) _INPBStringList *identifier;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBStringList *notificationIdentifier;
@@ -43,9 +43,9 @@
 
 - (void).cxx_destruct;
 - (void)addAttribute:(int)arg1;
-- (int)attributeAtIndex:(unsigned int)arg1;
+- (int)attributeAtIndex:(unsigned long long)arg1;
 - (int*)attributes;
-- (unsigned int)attributesCount;
+- (unsigned long long)attributesCount;
 - (void)clearAttributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateTimeRange;
@@ -53,25 +53,25 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)groupName;
-- (BOOL)hasDateTimeRange;
-- (BOOL)hasGroupName;
-- (BOOL)hasIdentifier;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasNotificationIdentifier;
-- (BOOL)hasRecipient;
-- (BOOL)hasSearchTerm;
-- (BOOL)hasSender;
-- (unsigned int)hash;
+- (bool)hasDateTimeRange;
+- (bool)hasGroupName;
+- (bool)hasIdentifier;
+- (bool)hasIntentMetadata;
+- (bool)hasNotificationIdentifier;
+- (bool)hasRecipient;
+- (bool)hasSearchTerm;
+- (bool)hasSender;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)notificationIdentifier;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recipient;
 - (id)searchTerm;
 - (id)sender;
-- (void)setAttributes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setAttributes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setDateTimeRange:(id)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setIdentifier:(id)arg1;

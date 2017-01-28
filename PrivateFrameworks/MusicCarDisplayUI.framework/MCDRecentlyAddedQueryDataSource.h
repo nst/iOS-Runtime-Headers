@@ -4,6 +4,6 @@
 
 @interface MCDRecentlyAddedQueryDataSource : MCDQueryDataSource
 
-- (BOOL)_updateQueryPredicatesAndOrdering;
+- (bool)_updateQueryPredicatesAndOrdering;
 
 @end

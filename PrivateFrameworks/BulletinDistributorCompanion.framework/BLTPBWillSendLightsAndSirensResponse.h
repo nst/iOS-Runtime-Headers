@@ -6,24 +6,24 @@
     struct { 
         unsigned int willSend : 1; 
     }  _has;
-    BOOL  _willSend;
+    bool  _willSend;
 }
 
-@property (nonatomic) BOOL hasWillSend;
-@property (nonatomic) BOOL willSend;
+@property (nonatomic) bool hasWillSend;
+@property (nonatomic) bool willSend;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasWillSend;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasWillSend;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasWillSend:(BOOL)arg1;
-- (void)setWillSend:(BOOL)arg1;
-- (BOOL)willSend;
+- (bool)readFrom:(id)arg1;
+- (void)setHasWillSend:(bool)arg1;
+- (void)setWillSend:(bool)arg1;
+- (bool)willSend;
 - (void)writeTo:(id)arg1;
 
 @end

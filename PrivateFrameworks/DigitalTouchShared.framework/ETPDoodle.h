@@ -15,10 +15,10 @@
 @property (nonatomic, retain) NSData *colorData;
 @property (nonatomic) unsigned int doodleCount;
 @property (nonatomic, retain) NSData *doodleData;
-@property (nonatomic, readonly) BOOL hasColorData;
-@property (nonatomic) BOOL hasDoodleCount;
-@property (nonatomic, readonly) BOOL hasDoodleData;
-@property (nonatomic, readonly) BOOL hasPointTimeDeltaData;
+@property (nonatomic, readonly) bool hasColorData;
+@property (nonatomic) bool hasDoodleCount;
+@property (nonatomic, readonly) bool hasDoodleData;
+@property (nonatomic, readonly) bool hasPointTimeDeltaData;
 @property (nonatomic, retain) NSData *pointTimeDeltaData;
 
 - (void).cxx_destruct;
@@ -28,19 +28,19 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)doodleCount;
 - (id)doodleData;
-- (BOOL)hasColorData;
-- (BOOL)hasDoodleCount;
-- (BOOL)hasDoodleData;
-- (BOOL)hasPointTimeDeltaData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasColorData;
+- (bool)hasDoodleCount;
+- (bool)hasDoodleData;
+- (bool)hasPointTimeDeltaData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)pointTimeDeltaData;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setColorData:(id)arg1;
 - (void)setDoodleCount:(unsigned int)arg1;
 - (void)setDoodleData:(id)arg1;
-- (void)setHasDoodleCount:(BOOL)arg1;
+- (void)setHasDoodleCount:(bool)arg1;
 - (void)setPointTimeDeltaData:(id)arg1;
 - (void)writeTo:(id)arg1;
 

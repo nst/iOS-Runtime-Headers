@@ -21,14 +21,14 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (void)performWhenConnected:(id /* block */)arg1;
+- (void)performWhenConnected:(id)arg1;
 - (id)performWhenConnectedBlocks;
 - (id)rpcProxy;
-- (id)rpcProxyWithErrorHandler:(id /* block */)arg1;
+- (id)rpcProxyWithErrorHandler:(id)arg1;
 - (void)setAdSheetConnection:(id)arg1;
 - (void)setConnectionQueue:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPerformWhenConnectedBlocks:(id)arg1;
-- (void)withAssertion:(id)arg1 performWhenConnected:(id /* block */)arg2;
+- (void)withAssertion:(id)arg1 performWhenConnected:(id)arg2;
 
 @end

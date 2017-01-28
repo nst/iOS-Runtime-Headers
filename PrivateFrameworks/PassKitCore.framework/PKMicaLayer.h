@@ -8,18 +8,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CALayer *rootLayer;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })boundsSizeToMatchPointScale:(float)arg1;
+- (struct CGSize { double x1; double x2; })boundsSizeToMatchPointScale:(double)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 package:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 package:(id)arg2;
 - (void)layoutSublayers;
-- (float)pointScaleToMatchBoundsSize:(struct CGSize { float x1; float x2; })arg1;
+- (double)pointScaleToMatchBoundsSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)rootLayer;
 
 @end

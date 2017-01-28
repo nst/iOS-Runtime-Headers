@@ -3,13 +3,13 @@
  */
 
 @interface CDPDNetworkObserverClient : NSObject {
-    id /* block */  _eventHandler;
+    id  _eventHandler;
 }
 
-@property (copy) id /* block */ eventHandler;
+@property (copy) id eventHandler;
 
 - (void).cxx_destruct;
-- (id /* block */)eventHandler;
-- (void)setEventHandler:(id /* block */)arg1;
+- (id)eventHandler;
+- (void)setEventHandler:(id)arg1;
 
 @end

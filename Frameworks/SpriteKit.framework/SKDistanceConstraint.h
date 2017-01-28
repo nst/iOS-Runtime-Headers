@@ -6,29 +6,29 @@
     SKRange * _distanceRange;
     SKNode * _node;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _point;
 }
 
 @property (copy) SKRange *distanceRange;
 @property SKNode *node;
-@property struct CGPoint { float x1; float x2; } point;
+@property struct CGPoint { double x1; double x2; } point;
 
 + (id)constraintWithNode:(id)arg1 distanceRange:(id)arg2;
-+ (id)constraintWithPoint:(struct CGPoint { float x1; float x2; })arg1 distanceRange:(id)arg2;
-+ (id)constraintWithPoint:(struct CGPoint { float x1; float x2; })arg1 inNode:(id)arg2 distanceRange:(id)arg3;
++ (id)constraintWithPoint:(struct CGPoint { double x1; double x2; })arg1 distanceRange:(id)arg2;
++ (id)constraintWithPoint:(struct CGPoint { double x1; double x2; })arg1 inNode:(id)arg2 distanceRange:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)distanceRange;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPoint:(struct CGPoint { float x1; float x2; })arg1 inNode:(id)arg2 distanceRange:(id)arg3;
+- (id)initWithPoint:(struct CGPoint { double x1; double x2; })arg1 inNode:(id)arg2 distanceRange:(id)arg3;
 - (id)node;
-- (struct CGPoint { float x1; float x2; })point;
+- (struct CGPoint { double x1; double x2; })point;
 - (void)setDistanceRange:(id)arg1;
 - (void)setNode:(id)arg1;
-- (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

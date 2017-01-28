@@ -6,14 +6,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_reportErrorIfAny:(id)arg1;
-- (void)commitEditedContents:(id)arg1 completion:(id /* block */)arg2;
+- (void)commitEditedContents:(id)arg1 completion:(id)arg2;
 - (void)dealloc;
 - (void)favoritesDidChange;
-- (void)fetchContentsWithCompletion:(id /* block */)arg1;
+- (void)fetchContentsWithCompletion:(id)arg1;
 - (void)historyDidChange;
 - (id)init;
 - (void)pushDaemonProxyReceivedNotificationData:(id)arg1 forType:(id)arg2 recordIdentifier:(id)arg3;

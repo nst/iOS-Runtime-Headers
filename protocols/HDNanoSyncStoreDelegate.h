@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)isMaster;
+- (bool)isMaster;
 - (void)nanoSyncStore:(HDNanoSyncStore *)arg1 deviceNameDidChange:(NSString *)arg2;
 - (void)nanoSyncStore:(HDNanoSyncStore *)arg1 remoteSystemBuildVersionDidChange:(NSString *)arg2;
-- (void)nanoSyncStore:(HDNanoSyncStore *)arg1 restoreStateDidChange:(int)arg2;
+- (void)nanoSyncStore:(HDNanoSyncStore *)arg1 restoreStateDidChange:(long long)arg2;
 
 @end

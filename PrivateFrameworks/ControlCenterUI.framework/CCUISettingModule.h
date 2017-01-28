@@ -3,19 +3,19 @@
  */
 
 @interface CCUISettingModule : CCUIButtonModule {
-    BOOL  _needsStateUpdateOnNextPresentation;
+    bool  _needsStateUpdateOnNextPresentation;
 }
 
-@property (nonatomic) BOOL needsStateUpdateOnNextPresentation;
+@property (nonatomic) bool needsStateUpdateOnNextPresentation;
 @property (nonatomic, readonly) UIColor *selectedStateColor;
 
 + (id)statusOffString;
 + (id)statusOnString;
 
-- (BOOL)_isStateOverridden;
-- (BOOL)needsStateUpdateOnNextPresentation;
+- (bool)_isStateOverridden;
+- (bool)needsStateUpdateOnNextPresentation;
 - (id)selectedStateColor;
-- (void)setNeedsStateUpdateOnNextPresentation:(BOOL)arg1;
+- (void)setNeedsStateUpdateOnNextPresentation:(bool)arg1;
 - (id)statusUpdate;
 - (id)unavailableText;
 - (void)warmup;

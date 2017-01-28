@@ -13,25 +13,25 @@
 }
 
 @property (nonatomic, readonly) NSString *bundleID;
-@property (nonatomic, readonly) int effectiveEnabledLevel;
-@property (nonatomic, readonly) int effectivePersistedLevel;
-@property (nonatomic) int enabledLevel;
-@property (nonatomic, readonly) BOOL isLocked;
-@property (nonatomic) int persistedLevel;
+@property (nonatomic, readonly) long long effectiveEnabledLevel;
+@property (nonatomic, readonly) long long effectivePersistedLevel;
+@property (nonatomic) long long enabledLevel;
+@property (nonatomic, readonly) bool isLocked;
+@property (nonatomic) long long persistedLevel;
 
 - (void).cxx_destruct;
 - (id)_levelPrefs;
 - (id)bundleID;
-- (int)defaultEnabledLevel;
-- (int)defaultPersistedLevel;
-- (int)effectiveEnabledLevel;
-- (int)effectivePersistedLevel;
-- (int)enabledLevel;
+- (long long)defaultEnabledLevel;
+- (long long)defaultPersistedLevel;
+- (long long)effectiveEnabledLevel;
+- (long long)effectivePersistedLevel;
+- (long long)enabledLevel;
 - (id)initWithBundleID:(id)arg1;
-- (BOOL)isLocked;
-- (int)persistedLevel;
+- (bool)isLocked;
+- (long long)persistedLevel;
 - (void)reset;
-- (void)setEnabledLevel:(int)arg1;
-- (void)setPersistedLevel:(int)arg1;
+- (void)setEnabledLevel:(long long)arg1;
+- (void)setPersistedLevel:(long long)arg1;
 
 @end

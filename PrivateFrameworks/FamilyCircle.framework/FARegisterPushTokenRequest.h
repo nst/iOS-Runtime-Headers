@@ -11,6 +11,6 @@
 - (void).cxx_destruct;
 - (id)initWithPushToken:(id)arg1;
 - (id)pushToken;
-- (void)startRequestWithCompletionHandler:(id /* block */)arg1;
+- (void)startRequestWithCompletionHandler:(id)arg1;
 
 @end

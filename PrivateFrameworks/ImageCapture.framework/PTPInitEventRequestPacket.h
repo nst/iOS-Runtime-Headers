@@ -3,14 +3,14 @@
  */
 
 @interface PTPInitEventRequestPacket : NSObject {
-    unsigned long  _connectionNumber;
+    unsigned int  _connectionNumber;
 }
 
-- (unsigned long)connectionNumber;
+- (unsigned int)connectionNumber;
 - (id)contentForTCP;
 - (id)description;
-- (id)initWithConnectionNumber:(unsigned long)arg1;
+- (id)initWithConnectionNumber:(unsigned int)arg1;
 - (id)initWithTCPBuffer:(void*)arg1;
-- (void)setConnectionNumber:(unsigned long)arg1;
+- (void)setConnectionNumber:(unsigned int)arg1;
 
 @end

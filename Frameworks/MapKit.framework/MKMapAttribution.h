@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (id)attributedStringWithImage:(id)arg1;
 - (id)disclosureArrow;
-- (id)initWithStringAttributes:(id)arg1 regionalAttributions:(id)arg2 globalAttributions:(id)arg3 scale:(float)arg4 allowMultiLine:(BOOL)arg5;
+- (id)initWithStringAttributes:(id)arg1 regionalAttributions:(id)arg2 globalAttributions:(id)arg3 scale:(double)arg4 allowMultiLine:(bool)arg5;
 - (id)providerImage;
 - (id)providerName;
 - (id)providerString;

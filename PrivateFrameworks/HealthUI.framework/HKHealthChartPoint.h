@@ -13,14 +13,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) id userInfo;
 
 - (void).cxx_destruct;
 - (id)allYValues;
 - (id)description;
-- (id)initWithStatistics:(id)arg1 options:(unsigned int)arg2 unit:(id)arg3 dataUnit:(id)arg4;
+- (id)initWithStatistics:(id)arg1 options:(unsigned long long)arg2 unit:(id)arg3 dataUnit:(id)arg4;
 - (id)maxXValue;
 - (id)maxYValue;
 - (id)minXValue;

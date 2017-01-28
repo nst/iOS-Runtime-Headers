@@ -3,25 +3,25 @@
  */
 
 @interface PHAssetPhotoCommentProperties : PHAssetPropertySet {
-    unsigned int  _commentCount;
-    BOOL  _hasUserLiked;
-    unsigned int  _likeCount;
+    unsigned long long  _commentCount;
+    bool  _hasUserLiked;
+    unsigned long long  _likeCount;
 }
 
-@property (nonatomic, readonly) unsigned int commentCount;
-@property (nonatomic, readonly) BOOL hasUserLiked;
-@property (nonatomic, readonly) unsigned int likeCount;
+@property (nonatomic, readonly) unsigned long long commentCount;
+@property (nonatomic, readonly) bool hasUserLiked;
+@property (nonatomic, readonly) unsigned long long likeCount;
 
 + (id)entityName;
-+ (BOOL)isToMany;
++ (bool)isToMany;
 + (id)keyPathFromPrimaryObject;
 + (id)keyPathToPrimaryObject;
 + (id)propertiesToFetch;
 + (id)propertySetName;
 
-- (unsigned int)commentCount;
-- (BOOL)hasUserLiked;
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
-- (unsigned int)likeCount;
+- (unsigned long long)commentCount;
+- (bool)hasUserLiked;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(bool)arg3;
+- (unsigned long long)likeCount;
 
 @end

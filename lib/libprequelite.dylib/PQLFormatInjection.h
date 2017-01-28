@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *sql;
 @property (readonly) Class superclass;
 
@@ -18,6 +18,6 @@
 - (id)bindValuesToKeepAlive;
 - (int)bindWithStatement:(struct sqlite3_stmt { }*)arg1 startingAtIndex:(int)arg2;
 - (id)description;
-- (id)initWithFormat:(id)arg1 arguments:(void*)arg2;
+- (id)initWithFormat:(id)arg1 arguments:(char *)arg2;
 
 @end

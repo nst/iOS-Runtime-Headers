@@ -8,13 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)buffer:(id)arg1 didReceiveResults:(id)arg2 forObserver:(id)arg3;
 - (void)bufferDidSendResults:(id)arg1;
-- (void)eachStrategy:(id /* block */)arg1;
+- (void)eachStrategy:(id)arg1;
 - (id)initWithStrategies:(id)arg1;
 
 @end

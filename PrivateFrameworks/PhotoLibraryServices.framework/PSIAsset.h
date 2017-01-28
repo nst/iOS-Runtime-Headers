@@ -16,9 +16,9 @@
 @property (nonatomic, readonly, retain) struct __CFArray { }*owningCategories;
 @property (setter=setUUID:, nonatomic, copy) NSString *uuid;
 
-- (id)_initForCopy:(BOOL)arg1;
+- (id)_initForCopy:(bool)arg1;
 - (void)addContentString:(id)arg1 category:(short)arg2 owningCategory:(short)arg3;
-- (void)addContentString:(id)arg1 category:(short)arg2 owningCategory:(short)arg3 categoryAndOwningCategoryArePaired:(BOOL)arg4;
+- (void)addContentString:(id)arg1 category:(short)arg2 owningCategory:(short)arg3 categoryAndOwningCategoryArePaired:(bool)arg4;
 - (void)addSynonym:(id)arg1 category:(short)arg2 originalContentString:(id)arg3;
 - (struct __CFArray { }*)categories;
 - (void)clear;
@@ -26,7 +26,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateSynonymsForOriginalContentString:(id)arg1 handler:(id /* block */)arg2;
+- (void)enumerateSynonymsForOriginalContentString:(id)arg1 handler:(id)arg2;
 - (id)init;
 - (struct __CFArray { }*)owningCategories;
 - (id)pairedCategoryForCategory:(short)arg1;

@@ -13,10 +13,10 @@
     struct __SecIdentity { } * _identity;
     NSString * _method;
     NSURL * _permanentlyRedirectedURL;
-    BOOL  _rememberData;
+    bool  _rememberData;
     NSURL * _requestURL;
     NSMutableData * _responseData;
-    int  _statusCode;
+    long long  _statusCode;
     double  _timeout;
     NSString * _userAgent;
 }
@@ -28,7 +28,7 @@
 @property (nonatomic, retain) NSString *method;
 @property (nonatomic, readonly, retain) NSURL *permanentlyRedirectedURL;
 @property (nonatomic, readonly, retain) NSData *responseData;
-@property (nonatomic, readonly) int statusCode;
+@property (nonatomic, readonly) long long statusCode;
 @property (nonatomic) double timeout;
 @property (nonatomic, retain) NSURL *url;
 @property (nonatomic, retain) NSString *userAgent;
@@ -39,15 +39,15 @@
 - (void).cxx_destruct;
 - (id)CMSSignatureHeaderName;
 - (void)_beginTransaction;
-- (BOOL)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (bool)_shouldAllowTrust:(struct __SecTrust { }*)arg1 forHost:(id)arg2;
+- (bool)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)connectionDidFinishLoading:(id)arg1;
-- (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
+- (bool)connectionShouldUseCredentialStorage:(id)arg1;
 - (id)contentType;
 - (struct __SecIdentity { }*)copyIdentity;
 - (id)data;
@@ -55,7 +55,7 @@
 - (id)error;
 - (id)initWithURL:(id)arg1 method:(id)arg2;
 - (id)method;
-- (void)performCompletionBlock:(id /* block */)arg1;
+- (void)performCompletionBlock:(id)arg1;
 - (void)performSynchronously;
 - (id)permanentlyRedirectedURL;
 - (id)responseData;
@@ -67,7 +67,7 @@
 - (void)setTimeout:(double)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUserAgent:(id)arg1;
-- (int)statusCode;
+- (long long)statusCode;
 - (double)timeout;
 - (id)url;
 - (id)userAgent;

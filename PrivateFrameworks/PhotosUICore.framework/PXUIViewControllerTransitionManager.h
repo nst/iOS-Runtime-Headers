@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NSMutableSet *_pinchTransitions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedManager;
@@ -23,16 +23,16 @@
 - (void)_handlePinchGestureRecognizer:(id)arg1;
 - (id)_lastViewControllerTransitions;
 - (id)_navigationControllerAtLocationOfGestureRecognizer:(id)arg1;
-- (BOOL)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
+- (bool)_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 - (id)_pinchGestureRecognizerForViewController:(id)arg1;
 - (id)_pinchGestureRecognizers;
 - (id)_pinchTransitionForGestureRecognizer:(id)arg1;
 - (id)_pinchTransitions;
 - (id)_windowForViewController:(id)arg1;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (id)lastTransitionForViewController:(id)arg1;
-- (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
+- (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
 - (id)navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 - (void)setLastTransition:(id)arg1 forViewController:(id)arg2;

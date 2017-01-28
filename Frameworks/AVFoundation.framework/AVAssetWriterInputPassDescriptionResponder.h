@@ -3,20 +3,20 @@
  */
 
 @interface AVAssetWriterInputPassDescriptionResponder : NSObject {
-    id /* block */  _callbackBlock;
+    id  _callbackBlock;
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    BOOL  _hasRespondedAtLeastOnce;
+    bool  _hasRespondedAtLeastOnce;
     AVAssetWriterInputPassDescription * _mostRecentPassDescription;
     NSObject<OS_dispatch_queue> * _serializationQueue;
     int  _stoppedResponding;
 }
 
-- (BOOL)_hasStoppedResponding;
+- (bool)_hasStoppedResponding;
 - (void)_releaseAndClearCallbackBlock_invokeOnSerializationQueue;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
-- (id)initWithCallbackQueue:(id)arg1 block:(id /* block */)arg2;
+- (id)initWithCallbackQueue:(id)arg1 block:(id)arg2;
 - (void)respondToNewPassDescription:(id)arg1;
 - (void)stopRespondingToPassDescriptions;
 

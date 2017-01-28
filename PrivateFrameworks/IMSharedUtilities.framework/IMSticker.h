@@ -30,12 +30,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)fileURL;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithStickerID:(struct NSString { Class x1; }*)arg1 stickerPackID:(struct NSString { Class x1; }*)arg2 fileURL:(id)arg3 accessibilityLabel:(id)arg4 moodCategory:(id)arg5 stickerName:(id)arg6;
 - (id)initWithStickerPropertyDictionary:(id)arg1 stickerPackID:(struct NSString { Class x1; }*)arg2 stickerPackBundlePath:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)moodCategory;
 - (id)recipe;
 - (void)setAccessibilityLabel:(id)arg1;

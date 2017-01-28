@@ -5,21 +5,21 @@
 
 @required
 
-- (void)setPause:(BOOL)arg1;
-- (BOOL)setStreamConfig:(NSDictionary *)arg1 withError:(id*)arg2;
+- (void)setPause:(bool)arg1;
+- (bool)setStreamConfig:(NSDictionary *)arg1 withError:(id*)arg2;
 - (void)start;
 - (void)stop;
 
 @optional
 
 - (NSDictionary *)setLocalParticipantInfo:(NSDictionary *)arg1 networkSockets:(NSObject<OS_xpc_object> *)arg2 withError:(id*)arg3;
-- (void)setRtcpEnabled:(BOOL)arg1;
+- (void)setRtcpEnabled:(bool)arg1;
 - (void)setRtcpSendInterval:(double)arg1;
-- (void)setRtcpTimeOutEnabled:(BOOL)arg1;
+- (void)setRtcpTimeOutEnabled:(bool)arg1;
 - (void)setRtcpTimeOutInterval:(double)arg1;
-- (void)setRtpTimeOutEnabled:(BOOL)arg1;
+- (void)setRtpTimeOutEnabled:(bool)arg1;
 - (void)setRtpTimeOutInterval:(double)arg1;
-- (void)setStreamDirection:(int)arg1;
-- (int)streamDirection;
+- (void)setStreamDirection:(long long)arg1;
+- (long long)streamDirection;
 
 @end

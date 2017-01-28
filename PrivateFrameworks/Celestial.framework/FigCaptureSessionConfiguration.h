@@ -3,31 +3,31 @@
  */
 
 @interface FigCaptureSessionConfiguration : NSObject <FigXPCCoding, NSCopying> {
-    BOOL  _allowedToRunInWindowedLayout;
+    bool  _allowedToRunInWindowedLayout;
     long long  _configurationID;
-    BOOL  _configuresAppAudioSession;
+    bool  _configuresAppAudioSession;
     NSMutableArray * _connections;
-    BOOL  _usesAppAudioSession;
+    bool  _usesAppAudioSession;
 }
 
-@property (nonatomic) BOOL allowedToRunInWindowedLayout;
+@property (nonatomic) bool allowedToRunInWindowedLayout;
 @property (nonatomic) long long configurationID;
-@property (nonatomic) BOOL configuresAppAudioSession;
+@property (nonatomic) bool configuresAppAudioSession;
 @property (nonatomic, readonly) NSArray *connectionConfigurations;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *sinkConfigurations;
 @property (nonatomic, readonly) NSArray *sourceConfigurations;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usesAppAudioSession;
+@property (nonatomic) bool usesAppAudioSession;
 
 + (void)initialize;
 
 - (void)addConnectionConfiguration:(id)arg1;
-- (BOOL)allowedToRunInWindowedLayout;
+- (bool)allowedToRunInWindowedLayout;
 - (long long)configurationID;
-- (BOOL)configuresAppAudioSession;
+- (bool)configuresAppAudioSession;
 - (id)connectionConfigurations;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
@@ -35,14 +35,14 @@
 - (id)description;
 - (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)removeConnectionConfiguration:(id)arg1;
-- (void)setAllowedToRunInWindowedLayout:(BOOL)arg1;
+- (void)setAllowedToRunInWindowedLayout:(bool)arg1;
 - (void)setConfigurationID:(long long)arg1;
-- (void)setConfiguresAppAudioSession:(BOOL)arg1;
-- (void)setUsesAppAudioSession:(BOOL)arg1;
+- (void)setConfiguresAppAudioSession:(bool)arg1;
+- (void)setUsesAppAudioSession:(bool)arg1;
 - (id)sinkConfigurations;
 - (id)sourceConfigurations;
-- (BOOL)usesAppAudioSession;
+- (bool)usesAppAudioSession;
 
 @end

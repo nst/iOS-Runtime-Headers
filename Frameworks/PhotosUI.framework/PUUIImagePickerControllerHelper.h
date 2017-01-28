@@ -15,14 +15,14 @@
 + (id)collectionsFilterPredicateForMediaTypes:(id)arg1;
 + (id)gridViewControllerSpec;
 + (id)imagePickerControllerForViewController:(id)arg1;
-+ (unsigned int)imagePickerTypesForMediaTypes:(id)arg1;
++ (unsigned long long)imagePickerTypesForMediaTypes:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_notifyImagePickerOfAssetAvailability:(id)arg1;
-- (void)_pushImageViewControllerForAsset:(id)arg1 allowEditing:(BOOL)arg2 expectsLivePhoto:(BOOL)arg3;
+- (void)_pushImageViewControllerForAsset:(id)arg1 allowEditing:(bool)arg2 expectsLivePhoto:(bool)arg3;
 - (void)_selectAsset:(id)arg1 withHintCollection:(id)arg2 hintIndexPath:(id)arg3;
 - (void)cancelCurrentAssetDownload;
-- (BOOL)clientSuppressesForchTouch;
+- (bool)clientSuppressesForchTouch;
 - (id)gridViewController;
 - (void)handleSelectionOfAsset:(id)arg1 inCollection:(id)arg2;
 - (void)handleToggleSelectionOfItemAtIndexPath:(id)arg1;

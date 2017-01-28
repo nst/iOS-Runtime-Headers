@@ -7,15 +7,15 @@
 @property (nonatomic, retain) NSPredicate *predicate;
 
 + (id)_singleConditionBuilderForPredicate:(id)arg1 home:(id)arg2;
-+ (BOOL)canHandlePredicate:(id)arg1;
++ (bool)canHandlePredicate:(id)arg1;
 + (id)conditionBuildersForPredicate:(id)arg1 home:(id)arg2;
 + (Class)homeKitRepresentationClass;
 
 - (id)_performValidation;
 - (id)commitItem;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicate;
 - (void)setPredicate:(id)arg1;
 

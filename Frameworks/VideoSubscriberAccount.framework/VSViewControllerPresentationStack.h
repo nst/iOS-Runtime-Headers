@@ -16,18 +16,18 @@
 
 - (void).cxx_destruct;
 - (void)_notifyRootViewControllerDidAppear;
-- (void)_updatePresentedViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)_updatePresentedViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (id)delegate;
-- (void)dismissAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissAnimated:(bool)arg1 completion:(id)arg2;
 - (id)init;
 - (id)initWithPresentingViewController:(id)arg1;
-- (void)popToRootViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)popViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)popToRootViewControllerAnimated:(bool)arg1 completion:(id)arg2;
+- (void)popViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (id)presentingViewController;
 - (id)privateQueue;
-- (void)pushViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)replaceAllViewControllersWithViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)replaceLastViewControllerWithViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)pushViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (void)replaceAllViewControllersWithViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (void)replaceLastViewControllerWithViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;
 - (void)setPrivateQueue:(id)arg1;

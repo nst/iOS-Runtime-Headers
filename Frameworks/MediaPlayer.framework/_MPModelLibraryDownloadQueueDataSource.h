@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -22,8 +22,8 @@
 - (id)identifiersForItemAtIndexPath:(id)arg1;
 - (id)initWithRequest:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
-- (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
-- (unsigned int)numberOfSections;
-- (id)sectionAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
+- (id)sectionAtIndex:(unsigned long long)arg1;
 
 @end

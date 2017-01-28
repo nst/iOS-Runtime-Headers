@@ -16,12 +16,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)applyWithHandler:(id)arg1 toChildren:(id /* block */)arg2;
-- (void)cancelWithHandler:(id)arg1 forced:(BOOL)arg2;
+- (void)applyWithHandler:(id)arg1 toChildren:(id)arg2;
+- (void)cancelWithHandler:(id)arg1 forced:(bool)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)startWithHandler:(id)arg1;

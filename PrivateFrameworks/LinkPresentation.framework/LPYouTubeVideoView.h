@@ -3,24 +3,24 @@
  */
 
 @interface LPYouTubeVideoView : LPVideoView <LPYouTubePlayerDelegate> {
-    BOOL  _hasEverPlayed;
+    bool  _hasEverPlayed;
     LPYouTubePlayerView * _platformYouTubeView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)createVideoPlayerView;
-- (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 disablePlayback:(BOOL)arg5;
-- (BOOL)isMuted;
-- (void)setMuted:(BOOL)arg1;
-- (void)setPlaying:(BOOL)arg1;
-- (BOOL)shouldShowMuteButton;
-- (BOOL)usesSharedAudioSession;
-- (void)youTubePlayer:(id)arg1 didChangeToState:(int)arg2;
+- (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 disablePlayback:(bool)arg5;
+- (bool)isMuted;
+- (void)setMuted:(bool)arg1;
+- (void)setPlaying:(bool)arg1;
+- (bool)shouldShowMuteButton;
+- (bool)usesSharedAudioSession;
+- (void)youTubePlayer:(id)arg1 didChangeToState:(long long)arg2;
 - (void)youTubePlayer:(id)arg1 didReceiveError:(id)arg2;
 
 @end

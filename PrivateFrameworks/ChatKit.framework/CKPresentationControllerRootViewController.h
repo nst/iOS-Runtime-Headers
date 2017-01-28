@@ -3,13 +3,13 @@
  */
 
 @interface CKPresentationControllerRootViewController : UIViewController {
-    BOOL  _allowsRotation;
+    bool  _allowsRotation;
 }
 
-@property (nonatomic) BOOL allowsRotation;
+@property (nonatomic) bool allowsRotation;
 
-- (BOOL)allowsRotation;
-- (void)setAllowsRotation:(BOOL)arg1;
-- (BOOL)shouldAutorotate;
+- (bool)allowsRotation;
+- (void)setAllowsRotation:(bool)arg1;
+- (bool)shouldAutorotate;
 
 @end

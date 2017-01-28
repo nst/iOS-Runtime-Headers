@@ -3,23 +3,23 @@
  */
 
 @interface AKStarAnnotation : AKPolygonAnnotation {
-    float  _innerRadiusFactor;
+    double  _innerRadiusFactor;
 }
 
-@property float innerRadiusFactor;
+@property double innerRadiusFactor;
 
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (float)innerRadiusFactor;
+- (double)innerRadiusFactor;
 - (id)keysForValuesToObserveForAdornments;
 - (id)keysForValuesToObserveForRedrawing;
 - (id)keysForValuesToObserveForUndo;
-- (void)setInnerRadiusFactor:(float)arg1;
+- (void)setInnerRadiusFactor:(double)arg1;
 
 @end

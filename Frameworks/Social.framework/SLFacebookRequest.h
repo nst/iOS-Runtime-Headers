@@ -8,7 +8,7 @@
 @property int responseDataFormat;
 
 - (id)accessToken;
-- (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(int)arg3;
+- (id)initWithURL:(id)arg1 parameters:(id)arg2 requestMethod:(long long)arg3;
 - (void)preflightRequest;
 - (id)preparedURLRequest;
 - (int)responseDataFormat;

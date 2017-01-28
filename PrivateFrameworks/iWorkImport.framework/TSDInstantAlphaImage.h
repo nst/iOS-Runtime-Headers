@@ -3,13 +3,13 @@
  */
 
 @interface TSDInstantAlphaImage : NSObject {
-    int  mHeight;
+    long long  mHeight;
     unsigned int * mImageData;
-    int  mWidth;
+    long long  mWidth;
 }
 
-- (unsigned int)averageColorAtXPosition:(int)arg1 yPosition:(int)arg2;
+- (unsigned int)averageColorAtXPosition:(long long)arg1 yPosition:(long long)arg2;
 - (void)dealloc;
-- (id)initWithWidth:(int)arg1 height:(int)arg2;
+- (id)initWithWidth:(long long)arg1 height:(long long)arg2;
 
 @end

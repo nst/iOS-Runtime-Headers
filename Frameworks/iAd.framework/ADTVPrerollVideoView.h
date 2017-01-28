@@ -7,6 +7,6 @@
 + (Class)layerClass;
 
 - (void)attachToAVPlayer:(id)arg1;
-- (void)fadeToBlackWithCompletionHandler:(id /* block */)arg1;
+- (void)fadeToBlackWithCompletionHandler:(id)arg1;
 
 @end

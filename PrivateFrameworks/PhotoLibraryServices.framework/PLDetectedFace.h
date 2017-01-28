@@ -25,20 +25,20 @@
 @property (nonatomic, retain) PLDetectedFaceGroup *faceGroupBeingKeyFace;
 @property (nonatomic, retain) NSSet *faceGroups;
 @property (nonatomic, retain) PLDetectedFaceprint *faceprint;
-@property (nonatomic) BOOL hasSmile;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL hidden;
-@property (nonatomic) BOOL isInTrash;
-@property (nonatomic) BOOL isLeftEyeClosed;
-@property (nonatomic) BOOL isRightEyeClosed;
+@property (nonatomic) bool hasSmile;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hidden;
+@property (nonatomic) bool isInTrash;
+@property (nonatomic) bool isLeftEyeClosed;
+@property (nonatomic) bool isRightEyeClosed;
 @property (nonatomic) double leftEyeX;
 @property (nonatomic) double leftEyeY;
-@property (nonatomic) BOOL manual;
+@property (nonatomic) bool manual;
 @property (nonatomic, retain) NSString *masterIdentifier;
 @property (nonatomic) double mouthX;
 @property (nonatomic) double mouthY;
 @property (nonatomic) int nameSource;
-@property (nonatomic) BOOL nameSourceAuto;
+@property (nonatomic) bool nameSourceAuto;
 @property (nonatomic, retain) <PLSyncablePerson> *person;
 @property (nonatomic, retain) PLPerson *person;
 @property (nonatomic, retain) <PLSyncablePerson> *personBeingKeyFace;
@@ -57,17 +57,18 @@
 @property (nonatomic, retain) NSString *uuid;
 
 + (id)_allSyncableFacesInManagedObjectContext:(id)arg1;
-+ (void)batchFetchDetectedFacesByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
-+ (unsigned int)countOfHiddenFacesOnAssetsWithObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
++ (void)batchFetchDetectedFacesByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id)arg3;
++ (void)batchFetchKeyFacesByPersonUUIDWithPersonUUIDs:(id)arg1 completion:(id)arg2;
++ (unsigned long long)countOfHiddenFacesOnAssetsWithObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)detectedFaceWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (void)enumerateAssetUUIDsForSearchIndexingWithDetctedFaceUUIDs:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id /* block */)arg3;
-+ (id)findExistingFaceMatchingDimension:(struct PLFaceDimension { double x1; double x2; double x3; int x4; int x5; })arg1 inFaces:(id)arg2 inAsset:(id)arg3;
++ (void)enumerateAssetUUIDsForSearchIndexingWithDetctedFaceUUIDs:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id)arg3;
++ (id)findExistingFaceMatchingDimension:(struct PLFaceDimension { double x1; double x2; double x3; long long x4; long long x5; })arg1 inFaces:(id)arg2 inAsset:(id)arg3;
 + (id)findExistingFaceMatchingRef:(id)arg1 inFaces:(id)arg2 inAsset:(id)arg3;
 + (id)insertInManagedObjectContext:(id)arg1;
 + (id)predicatesToExcludeNonVisibleFaces;
-+ (int)resetAssetForAllSyncableFacesInManagedObjectContext:(id)arg1 error:(id*)arg2;
++ (long long)resetAssetForAllSyncableFacesInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (id)userCuratedFacePredicate;
 
 - (void)_updateFaceGroupIfNeeded;
@@ -76,10 +77,10 @@
 - (void)awakeFromInsert;
 - (id)debugLogDescription;
 - (void)delete;
-- (BOOL)nameSourceAuto;
+- (bool)nameSourceAuto;
 - (id)rejectedPeople;
 - (void)removeFaceprint;
-- (void)setNameSourceAuto:(BOOL)arg1;
+- (void)setNameSourceAuto:(bool)arg1;
 - (void)setRejectedPeople:(id)arg1;
 - (void)willSave;
 

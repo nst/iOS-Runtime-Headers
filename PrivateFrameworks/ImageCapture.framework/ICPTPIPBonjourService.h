@@ -8,18 +8,18 @@
 
 - (void)addClient:(id)arg1;
 - (id)clientForAddress:(struct __CFData { }*)arg1;
-- (id)clientForPID:(unsigned long)arg1;
+- (id)clientForPID:(unsigned long long)arg1;
 - (void)clientTerminated:(id)arg1;
-- (BOOL)createAndPublishNetService;
+- (bool)createAndPublishNetService;
 - (int)createPTPDIPInstanceWithAddress:(struct __CFData { }*)arg1 fileDescriptor:(int)arg2;
-- (BOOL)createSocket;
+- (bool)createSocket;
 - (void)dealloc;
 - (id)delegate;
 - (int)destroyPTPDIPInstance:(id)arg1;
 - (void)disconnectClient:(id)arg1;
 - (void)dispatchConnectionFromSocket:(int)arg1 withAddress:(struct __CFData { }*)arg2;
-- (void)handleNetServiceError:(struct { int x1; int x2; }*)arg1;
-- (id)initWithHostPort:(unsigned long)arg1 hostName:(id)arg2 hostGUID:(id)arg3 bonjourServiceType:(id)arg4 bonjourTXTRecords:(id)arg5;
+- (void)handleNetServiceError:(struct { long long x1; int x2; }*)arg1;
+- (id)initWithHostPort:(unsigned int)arg1 hostName:(id)arg2 hostGUID:(id)arg3 bonjourServiceType:(id)arg4 bonjourTXTRecords:(id)arg5;
 - (int)messagePTPDIPInstance:(id)arg1 withSocket:(int)arg2;
 - (int)numClients;
 - (struct __CFNetService { }*)publishedService;
@@ -27,7 +27,7 @@
 - (void)releaseSocket;
 - (void)removeClient:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)startService;
+- (bool)startService;
 - (void)unlockDeviceForClient:(id)arg1;
 
 @end

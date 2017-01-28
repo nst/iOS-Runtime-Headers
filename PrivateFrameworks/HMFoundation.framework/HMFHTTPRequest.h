@@ -22,13 +22,13 @@
 - (id)body;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)headerFields;
 - (id)init;
 - (id)initWithInternalRequest:(id)arg1;
 - (id)internal;
 - (id)method;
-- (id)responseWithStatusCode:(int)arg1;
+- (id)responseWithStatusCode:(long long)arg1;
 - (void)setTimeoutInterval:(double)arg1;
 - (id)shortDescription;
 - (double)timeoutInterval;

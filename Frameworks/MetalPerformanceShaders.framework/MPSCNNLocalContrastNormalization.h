@@ -6,8 +6,8 @@
     float  _alpha;
     float  _beta;
     float  _delta;
-    unsigned int  _kernelHeight;
-    unsigned int  _kernelWidth;
+    unsigned long long  _kernelHeight;
+    unsigned long long  _kernelWidth;
     float  _p0;
     float  _pm;
     float  _ps;
@@ -16,8 +16,8 @@
 @property (nonatomic) float alpha;
 @property (nonatomic) float beta;
 @property (nonatomic) float delta;
-@property (nonatomic, readonly) unsigned int kernelHeight;
-@property (nonatomic, readonly) unsigned int kernelWidth;
+@property (nonatomic, readonly) unsigned long long kernelHeight;
+@property (nonatomic, readonly) unsigned long long kernelWidth;
 @property (nonatomic) float p0;
 @property (nonatomic) float pm;
 @property (nonatomic) float ps;
@@ -29,9 +29,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (float)delta;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned int)arg2 kernelHeight:(unsigned int)arg3;
-- (unsigned int)kernelHeight;
-- (unsigned int)kernelWidth;
+- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned long long)arg2 kernelHeight:(unsigned long long)arg3;
+- (unsigned long long)kernelHeight;
+- (unsigned long long)kernelWidth;
 - (float)p0;
 - (float)pm;
 - (float)ps;

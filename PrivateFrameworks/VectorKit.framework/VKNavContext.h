@@ -5,7 +5,7 @@
 @interface VKNavContext : NSObject {
     GEOComposedRoute * _alternateRoute;
     unsigned int  _alternateRouteStartPointIndex;
-    unsigned int  _currentStepIndex;
+    unsigned long long  _currentStepIndex;
     NSArray * _groupedManeuverCounts;
     NSHashTable * _observers;
     struct vector<GEOLocationCoordinate2D, std::__1::allocator<GEOLocationCoordinate2D> > { 
@@ -22,8 +22,8 @@
 
 @property (nonatomic, retain) GEOComposedRoute *alternateRoute;
 @property (nonatomic) unsigned int alternateRouteStartPointIndex;
-@property (nonatomic) unsigned int currentStepIndex;
-@property (nonatomic, readonly) unsigned int groupedManeuverCount;
+@property (nonatomic) unsigned long long currentStepIndex;
+@property (nonatomic, readonly) unsigned long long groupedManeuverCount;
 @property (nonatomic, copy) NSArray *groupedManeuverCounts;
 @property (nonatomic, readonly) GEOComposedRoute *route;
 @property (nonatomic, retain) GEORouteMatch *routeMatch;
@@ -37,10 +37,10 @@
 - (id)alternateRoute;
 - (unsigned int)alternateRouteStartPointIndex;
 - (void)clearPointsToFrame;
-- (unsigned int)currentStepIndex;
+- (unsigned long long)currentStepIndex;
 - (void)dealloc;
-- (void)enumeratePointsToFrameUsingBlock:(id /* block */)arg1;
-- (unsigned int)groupedManeuverCount;
+- (void)enumeratePointsToFrameUsingBlock:(id)arg1;
+- (unsigned long long)groupedManeuverCount;
 - (id)groupedManeuverCounts;
 - (id)init;
 - (void)removeObserver:(id)arg1;
@@ -49,9 +49,9 @@
 - (id)routeMatcher;
 - (void)setAlternateRoute:(id)arg1;
 - (void)setAlternateRouteStartPointIndex:(unsigned int)arg1;
-- (void)setCurrentStepIndex:(unsigned int)arg1;
+- (void)setCurrentStepIndex:(unsigned long long)arg1;
 - (void)setGroupedManeuverCounts:(id)arg1;
 - (void)setRouteMatch:(id)arg1;
-- (void)updateWithNewRoute:(id)arg1 currentStepIndex:(unsigned int)arg2;
+- (void)updateWithNewRoute:(id)arg1 currentStepIndex:(unsigned long long)arg2;
 
 @end

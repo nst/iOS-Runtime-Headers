@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithUnpersonalizedRequest:(id)arg1 unpersonalizedContentDescriptors:(id)arg2;
-- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id)arg1;
 - (id)representedObjects;
 - (void)setRepresentedObjects:(id)arg1;
 - (id)unpersonalizedContentDescriptors;

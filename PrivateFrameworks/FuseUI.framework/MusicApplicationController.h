@@ -8,17 +8,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (Class)_JSITunesStoreClass;
-- (BOOL)_sendNativeBackButtonMetricEvents;
+- (bool)_sendNativeBackButtonMetricEvents;
 - (id)activeDocument;
 - (void)dealloc;
 - (void)loadApplicationWithOptions:(id)arg1;
-- (id)modalDocumentController:(id)arg1 alertControllerForDocument:(id)arg2 withDismissObserverBlock:(id /* block */)arg3 options:(id)arg4;
-- (BOOL)modalDocumentController:(id)arg1 willPushDocument:(id)arg2 options:(id)arg3;
+- (id)modalDocumentController:(id)arg1 alertControllerForDocument:(id)arg2 withDismissObserverBlock:(id)arg3 options:(id)arg4;
+- (bool)modalDocumentController:(id)arg1 willPushDocument:(id)arg2 options:(id)arg3;
 - (void)uploadQueue:(id)arg1 uploadsDidChange:(id)arg2;
 
 @end

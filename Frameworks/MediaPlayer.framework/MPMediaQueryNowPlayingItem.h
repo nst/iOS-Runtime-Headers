@@ -4,6 +4,6 @@
 
 @interface MPMediaQueryNowPlayingItem : MPStoreAVItem
 
-+ (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
++ (void)applyVolumeNormalizationWithSoundCheckEnabled:(bool)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
 
 @end

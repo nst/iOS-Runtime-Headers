@@ -10,7 +10,7 @@
 - (id)_asset;
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1;
-- (BOOL)isPlayableOffline;
+- (bool)isPlayableOffline;
 - (id)mediaSelectionOptionsInMediaSelectionGroup:(id)arg1;
 
 @end

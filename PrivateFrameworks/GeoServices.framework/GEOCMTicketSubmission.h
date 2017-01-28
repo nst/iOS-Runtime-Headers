@@ -13,23 +13,23 @@
     NSString * _userEmail;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _userPaths;
 }
 
 @property (nonatomic, retain) NSData *devicePushToken;
-@property (nonatomic, readonly) BOOL hasDevicePushToken;
-@property (nonatomic, readonly) BOOL hasProblemContext;
-@property (nonatomic, readonly) BOOL hasProblemCorrections;
-@property (nonatomic) BOOL hasProblemType;
-@property (nonatomic, readonly) BOOL hasUserEmail;
+@property (nonatomic, readonly) bool hasDevicePushToken;
+@property (nonatomic, readonly) bool hasProblemContext;
+@property (nonatomic, readonly) bool hasProblemCorrections;
+@property (nonatomic) bool hasProblemType;
+@property (nonatomic, readonly) bool hasUserEmail;
 @property (nonatomic, retain) GEORPProblemContext *problemContext;
 @property (nonatomic, retain) GEORPProblemCorrections *problemCorrections;
 @property (nonatomic) int problemType;
 @property (nonatomic, retain) NSString *userEmail;
 @property (nonatomic, readonly) int*userPaths;
-@property (nonatomic, readonly) unsigned int userPathsCount;
+@property (nonatomic, readonly) unsigned long long userPathsCount;
 
 - (int)StringAsProblemType:(id)arg1;
 - (int)StringAsUserPaths:(id)arg1;
@@ -41,31 +41,31 @@
 - (id)description;
 - (id)devicePushToken;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDevicePushToken;
-- (BOOL)hasProblemContext;
-- (BOOL)hasProblemCorrections;
-- (BOOL)hasProblemType;
-- (BOOL)hasUserEmail;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDevicePushToken;
+- (bool)hasProblemContext;
+- (bool)hasProblemCorrections;
+- (bool)hasProblemType;
+- (bool)hasUserEmail;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)problemContext;
 - (id)problemCorrections;
 - (int)problemType;
 - (id)problemTypeAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDevicePushToken:(id)arg1;
-- (void)setHasProblemType:(BOOL)arg1;
+- (void)setHasProblemType:(bool)arg1;
 - (void)setProblemContext:(id)arg1;
 - (void)setProblemCorrections:(id)arg1;
 - (void)setProblemType:(int)arg1;
 - (void)setUserEmail:(id)arg1;
-- (void)setUserPaths:(int*)arg1 count:(unsigned int)arg2;
+- (void)setUserPaths:(int*)arg1 count:(unsigned long long)arg2;
 - (id)userEmail;
-- (int)userPathAtIndex:(unsigned int)arg1;
+- (int)userPathAtIndex:(unsigned long long)arg1;
 - (int*)userPaths;
 - (id)userPathsAsString:(int)arg1;
-- (unsigned int)userPathsCount;
+- (unsigned long long)userPathsCount;
 - (void)writeTo:(id)arg1;
 
 @end

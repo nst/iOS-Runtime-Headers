@@ -19,10 +19,10 @@
 
 - (void)_populateBaselineAndTransactionLogLocations;
 - (id)baselineLocationsByModelVersionHash;
-- (BOOL)canUseReceipts;
+- (bool)canUseReceipts;
 - (id)currentModelVersionHash;
 - (void)dealloc;
-- (BOOL)electPreviousModelVersionHashFromTransactionLogsError:(id*)arg1;
+- (bool)electPreviousModelVersionHashFromTransactionLogsError:(id*)arg1;
 - (id)initWithUbiquityRootLocation:(id)arg1 peerID:(id)arg2 ubiquityName:(id)arg3 modelVersionHash:(id)arg4;
 - (id)latestBaselineLocationSkipModelVersionHash:(id)arg1;
 - (id)latestTransactionLogForModelVersionHash:(id)arg1;

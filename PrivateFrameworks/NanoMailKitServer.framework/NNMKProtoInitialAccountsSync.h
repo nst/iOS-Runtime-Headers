@@ -15,13 +15,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (id)initialAccountAtIndex:(unsigned int)arg1;
+- (unsigned long long)hash;
+- (id)initialAccountAtIndex:(unsigned long long)arg1;
 - (id)initialAccounts;
-- (unsigned int)initialAccountsCount;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)initialAccountsCount;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setInitialAccounts:(id)arg1;
 - (void)writeTo:(id)arg1;
 

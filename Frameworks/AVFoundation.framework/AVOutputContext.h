@@ -11,14 +11,14 @@
 + (struct OpaqueFigEndpointPicker { }*)copySystemVideoPicker;
 + (id)iTunesAudioContext;
 + (id)outputContext;
-+ (BOOL)outputContextExistsWithRemoteOutputDevice;
++ (bool)outputContextExistsWithRemoteOutputDevice;
 + (void)resetOutputDeviceForAllOutputContexts;
 + (id)sharedSystemAudioContext;
 + (id)sharedSystemScreenContext;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_addFigEndpointPickerNotifications;
-- (long)_configureFigEndpointPickerWithFeature:(unsigned int)arg1 options:(id)arg2;
+- (int)_configureFigEndpointPickerWithFeature:(unsigned long long)arg1 options:(id)arg2;
 - (void)_handlePickerServerConnectionDiedNotification;
 - (void)_removeFigEndpointPickerNotifications;
 - (id)_weakReference;
@@ -29,14 +29,14 @@
 - (id)deviceName;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContextUUID:(id)arg1;
-- (id)initWithFeature:(unsigned int)arg1 options:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithFeature:(unsigned long long)arg1 options:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)outputDevice;
 - (void)setApplicationProcessID:(int)arg1;
-- (BOOL)setOutputDevice:(id)arg1 forFeatures:(unsigned int)arg2;
+- (bool)setOutputDevice:(id)arg1 forFeatures:(unsigned long long)arg2;
 
 @end

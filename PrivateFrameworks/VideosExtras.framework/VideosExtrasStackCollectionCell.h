@@ -4,7 +4,7 @@
 
 @interface VideosExtrasStackCollectionCell : UICollectionViewCell {
     NSArray * _fitConstraints;
-    BOOL  _needsViewWillAppear;
+    bool  _needsViewWillAppear;
     VideosExtrasStackTemplateViewController * _parentViewController;
     VideosExtrasGridSectionHeaderStyle * _sectionStyle;
     VideosExtrasGridElementViewController * _viewController;

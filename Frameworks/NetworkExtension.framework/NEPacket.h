@@ -12,7 +12,7 @@
 @property (readonly) NEFlowMetaData *metadata;
 @property (readonly) unsigned char protocolFamily;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

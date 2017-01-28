@@ -5,7 +5,7 @@
 @interface PDFActionURLPrivateVars : NSObject {
     struct CGPDFDictionary { } * lazyInitDictionary;
     PDFDocument * lazyInitDocument;
-    unsigned int  lazyInitPageIndex;
+    unsigned long long  lazyInitPageIndex;
     NSURL * url;
 }
 

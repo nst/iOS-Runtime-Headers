@@ -4,18 +4,18 @@
 
 @interface PBMessageStreamReader : NSObject {
     Class  _classOfNextMessage;
-    unsigned int  _position;
+    unsigned long long  _position;
     NSInputStream * _stream;
 }
 
 @property Class classOfNextMessage;
-@property (readonly) unsigned int position;
+@property (readonly) unsigned long long position;
 
 - (Class)classOfNextMessage;
 - (void)dealloc;
 - (id)initWithStream:(id)arg1;
 - (id)nextMessage;
-- (unsigned int)position;
+- (unsigned long long)position;
 - (void)setClassOfNextMessage:(Class)arg1;
 
 @end

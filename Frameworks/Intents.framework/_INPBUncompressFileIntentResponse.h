@@ -7,14 +7,14 @@
     struct { 
         unsigned int success : 1; 
     }  _has;
-    BOOL  _success;
+    bool  _success;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, retain) _INPBString *entityName;
-@property (nonatomic, readonly) BOOL hasEntityName;
-@property (nonatomic) BOOL hasSuccess;
-@property (nonatomic) BOOL success;
+@property (nonatomic, readonly) bool hasEntityName;
+@property (nonatomic) bool hasSuccess;
+@property (nonatomic) bool success;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)options;
@@ -24,16 +24,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)entityName;
-- (BOOL)hasEntityName;
-- (BOOL)hasSuccess;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEntityName;
+- (bool)hasSuccess;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntityName:(id)arg1;
-- (void)setHasSuccess:(BOOL)arg1;
-- (void)setSuccess:(BOOL)arg1;
-- (BOOL)success;
+- (void)setHasSuccess:(bool)arg1;
+- (void)setSuccess:(bool)arg1;
+- (bool)success;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

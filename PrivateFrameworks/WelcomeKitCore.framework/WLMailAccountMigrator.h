@@ -9,12 +9,12 @@
 + (id)contentType;
 
 - (void).cxx_destruct;
-- (void)_importGoogleAccountWithUsername:(id)arg1 completion:(id /* block */)arg2;
-- (void)accountValidator:(id)arg1 finishedValidationOfAccount:(id)arg2 usedSSL:(BOOL)arg3;
+- (void)_importGoogleAccountWithUsername:(id)arg1 completion:(id)arg2;
+- (void)accountValidator:(id)arg1 finishedValidationOfAccount:(id)arg2 usedSSL:(bool)arg3;
 - (id)contentType;
 - (void)estimateItemSizeForSummary:(id)arg1 account:(id)arg2;
 - (void)importDidEnd;
-- (void)importRecordData:(id)arg1 summary:(id)arg2 account:(id)arg3 completion:(id /* block */)arg4;
+- (void)importRecordData:(id)arg1 summary:(id)arg2 account:(id)arg3 completion:(id)arg4;
 - (id)importWillBegin;
 
 @end

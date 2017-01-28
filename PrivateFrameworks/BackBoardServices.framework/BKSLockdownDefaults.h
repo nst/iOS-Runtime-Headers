@@ -4,7 +4,7 @@
 
 @interface BKSLockdownDefaults : BSAbstractDefaultDomain
 
-@property (nonatomic, readonly) BOOL tetheredDisplayPortMode;
+@property (nonatomic, readonly) bool tetheredDisplayPortMode;
 
 - (void)_bindAndRegisterDefaults;
 - (id)init;

@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, copy) NSMutableSet *edges;
-@property (nonatomic, readonly) unsigned int indegree;
+@property (nonatomic, readonly) unsigned long long indegree;
 @property (nonatomic, readonly, copy) NSMutableSet *indegrees;
 @property (nonatomic, retain) CKRecord *record;
 
@@ -17,11 +17,11 @@
 - (id)CKPropertiesDescription;
 - (id)description;
 - (id)edges;
-- (unsigned int)hash;
-- (unsigned int)indegree;
+- (unsigned long long)hash;
+- (unsigned long long)indegree;
 - (id)indegrees;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)record;
 - (void)setEdges:(id)arg1;
 - (void)setRecord:(id)arg1;

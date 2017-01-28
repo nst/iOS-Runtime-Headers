@@ -4,16 +4,16 @@
 
 @interface UIKBRenderFactoryiPadHWR_Landscape : UIKBRenderFactoryiPadHWR_Portrait
 
-- (float)controlColumnWidthFactor;
-- (float)deleteKeyFontSize;
-- (float)dictationKeyFontSize;
-- (float)dismissKeyFontSize;
-- (struct CGPoint { float x1; float x2; })dismissKeyOffset;
-- (float)internationalKeyFontSize;
-- (float)keyCornerRadius;
+- (double)controlColumnWidthFactor;
+- (double)deleteKeyFontSize;
+- (double)dictationKeyFontSize;
+- (double)dismissKeyFontSize;
+- (struct CGPoint { double x1; double x2; })dismissKeyOffset;
+- (double)internationalKeyFontSize;
+- (double)keyCornerRadius;
 - (id)messagesWriteboardKeyImageName;
-- (float)moreKeyFontSize;
-- (float)spaceKeyFontSize;
-- (struct CGPoint { float x1; float x2; })spaceReturnKeyTextOffset;
+- (double)moreKeyFontSize;
+- (double)spaceKeyFontSize;
+- (struct CGPoint { double x1; double x2; })spaceReturnKeyTextOffset;
 
 @end

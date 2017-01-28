@@ -3,36 +3,36 @@
  */
 
 @interface _MNDistanceFormatOptions : NSObject {
-    unsigned int  _minimumFractionDigits;
-    BOOL  abbreviateUnits;
-    unsigned int  maximumFractionDigits;
-    BOOL  metric;
-    int  rounding;
-    BOOL  spoken;
-    BOOL  yards;
+    unsigned long long  _minimumFractionDigits;
+    bool  abbreviateUnits;
+    unsigned long long  maximumFractionDigits;
+    bool  metric;
+    long long  rounding;
+    bool  spoken;
+    bool  yards;
 }
 
-@property (nonatomic) BOOL abbreviateUnits;
-@property (nonatomic) unsigned int maximumFractionDigits;
-@property (nonatomic) BOOL metric;
-@property (nonatomic) unsigned int minimumFractionDigits;
-@property (nonatomic) int rounding;
-@property (nonatomic) BOOL spoken;
-@property (nonatomic) BOOL yards;
+@property (nonatomic) bool abbreviateUnits;
+@property (nonatomic) unsigned long long maximumFractionDigits;
+@property (nonatomic) bool metric;
+@property (nonatomic) unsigned long long minimumFractionDigits;
+@property (nonatomic) long long rounding;
+@property (nonatomic) bool spoken;
+@property (nonatomic) bool yards;
 
-- (BOOL)abbreviateUnits;
-- (unsigned int)maximumFractionDigits;
-- (BOOL)metric;
-- (unsigned int)minimumFractionDigits;
-- (int)rounding;
-- (void)setAbbreviateUnits:(BOOL)arg1;
-- (void)setMaximumFractionDigits:(unsigned int)arg1;
-- (void)setMetric:(BOOL)arg1;
-- (void)setMinimumFractionDigits:(unsigned int)arg1;
-- (void)setRounding:(int)arg1;
-- (void)setSpoken:(BOOL)arg1;
-- (void)setYards:(BOOL)arg1;
-- (BOOL)spoken;
-- (BOOL)yards;
+- (bool)abbreviateUnits;
+- (unsigned long long)maximumFractionDigits;
+- (bool)metric;
+- (unsigned long long)minimumFractionDigits;
+- (long long)rounding;
+- (void)setAbbreviateUnits:(bool)arg1;
+- (void)setMaximumFractionDigits:(unsigned long long)arg1;
+- (void)setMetric:(bool)arg1;
+- (void)setMinimumFractionDigits:(unsigned long long)arg1;
+- (void)setRounding:(long long)arg1;
+- (void)setSpoken:(bool)arg1;
+- (void)setYards:(bool)arg1;
+- (bool)spoken;
+- (bool)yards;
 
 @end

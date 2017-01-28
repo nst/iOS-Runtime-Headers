@@ -5,7 +5,7 @@
 @interface HMDActionSet : NSObject <HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
     HMDApplicationData * _appData;
     NSMutableArray * _currentActions;
-    BOOL  _executionInProgress;
+    bool  _executionInProgress;
     HMDHome * _home;
     NSDate * _lastExecutionDate;
     HMFMessageDispatcher * _msgDispatcher;
@@ -20,8 +20,8 @@
 @property (nonatomic, retain) NSMutableArray *currentActions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL executionInProgress;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool executionInProgress;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, retain) NSDate *lastExecutionDate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -34,11 +34,11 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_execute:(id)arg1 writeRequestTuples:(id)arg2;
-- (BOOL)_fixupActions;
+- (bool)_fixupActions;
 - (id)_generateOverallError:(id)arg1;
 - (void)_handleAddActionRequest:(id)arg1;
 - (void)_handleRemoveActionRequest:(id)arg1;
@@ -53,16 +53,16 @@
 - (id)allCharacteristicsInActionsForServices:(id)arg1;
 - (id)appData;
 - (id)assistantObject;
-- (BOOL)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
-- (BOOL)containsSecureCharacteristic;
+- (bool)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
+- (bool)containsSecureCharacteristic;
 - (id)currentActions;
 - (void)dealloc;
 - (id)description;
 - (id)dumpState;
 - (void)encodeWithCoder:(id)arg1;
 - (void)execute:(id)arg1;
-- (void)executeWithTriggerSource:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)executionInProgress;
+- (void)executeWithTriggerSource:(id)arg1 completionHandler:(id)arg2;
+- (bool)executionInProgress;
 - (void)fixupActionsForReplacementAccessory:(id)arg1;
 - (void)handleExecutionCompleted:(id)arg1 startDate:(id)arg2 error:(id)arg3 response:(id)arg4;
 - (id)home;
@@ -79,7 +79,7 @@
 - (id)serializedIdentifier;
 - (void)setAppData:(id)arg1;
 - (void)setCurrentActions:(id)arg1;
-- (void)setExecutionInProgress:(BOOL)arg1;
+- (void)setExecutionInProgress:(bool)arg1;
 - (void)setHome:(id)arg1;
 - (void)setLastExecutionDate:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;

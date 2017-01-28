@@ -4,7 +4,7 @@
 
 @interface _CDDeviceInfo : NSObject
 
-+ (BOOL)isMonarchLowEndHardware;
-+ (BOOL)isRunningOnInternalBuild;
++ (bool)isMonarchLowEndHardware;
++ (bool)isRunningOnInternalBuild;
 
 @end

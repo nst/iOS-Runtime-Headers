@@ -5,12 +5,12 @@
 
 @required
 
-- (NWTCPConnection *)tunnel:(NPTunnel *)arg1 openConnectionToEndpoint:(NWEndpoint *)arg2 enableTFO:(BOOL)arg3 initialData:(NSData *)arg4 enableMultipath:(BOOL)arg5 enableTLS:(BOOL)arg6 TLSParameters:(NWTLSParameters *)arg7 TLSDelegate:(id <NWTCPConnectionAuthenticationDelegate>)arg8 URL:(NSURL *)arg9;
+- (NWTCPConnection *)tunnel:(NPTunnel *)arg1 openConnectionToEndpoint:(NWEndpoint *)arg2 enableTFO:(bool)arg3 initialData:(NSData *)arg4 enableMultipath:(bool)arg5 enableTLS:(bool)arg6 TLSParameters:(NWTLSParameters *)arg7 TLSDelegate:(id <NWTCPConnectionAuthenticationDelegate>)arg8 URL:(NSURL *)arg9;
 - (NWUDPSession *)tunnel:(NPTunnel *)arg1 openSessionToEndpoint:(NWEndpoint *)arg2 fromEndpoint:(NWHostEndpoint *)arg3;
 - (void)tunnelDidConnect;
 - (void)tunnelDidDisconnect;
-- (int)tunnelGetCurrentMTU:(NPTunnel *)arg1;
-- (BOOL)tunnelGetIsNetworkCaptive;
-- (BOOL)tunnelGetNetworkHasProxy;
+- (long long)tunnelGetCurrentMTU:(NPTunnel *)arg1;
+- (bool)tunnelGetIsNetworkCaptive;
+- (bool)tunnelGetNetworkHasProxy;
 
 @end

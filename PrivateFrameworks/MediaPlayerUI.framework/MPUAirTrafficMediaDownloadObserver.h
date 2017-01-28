@@ -17,6 +17,6 @@
 - (void)dealloc;
 - (double)downloadProgress;
 - (id)initWithAssetIdentifier:(id)arg1;
-- (BOOL)isPurchasing;
+- (bool)isPurchasing;
 
 @end

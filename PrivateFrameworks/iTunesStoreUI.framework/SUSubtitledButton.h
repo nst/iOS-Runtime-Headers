@@ -14,23 +14,23 @@
 
 - (void)_setupSubtitleView;
 - (id)_subtitleFont;
-- (int)_subtitleLineBreakMode;
-- (id)_subtitledContentForState:(unsigned int)arg1;
+- (long long)_subtitleLineBreakMode;
+- (id)_subtitledContentForState:(unsigned long long)arg1;
 - (void)configureFromScriptButton:(id)arg1;
 - (id)currentSubtitle;
 - (id)currentSubtitleColor;
 - (id)currentSubtitleShadowColor;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (void)setSubtitle:(id)arg1 forState:(unsigned int)arg2;
-- (void)setSubtitleColor:(id)arg1 forState:(unsigned int)arg2;
-- (void)setSubtitleShadowColor:(id)arg1 forState:(unsigned int)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (id)subtitleColorForState:(unsigned int)arg1;
-- (id)subtitleForState:(unsigned int)arg1;
+- (void)setSubtitle:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setSubtitleColor:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setSubtitleShadowColor:(id)arg1 forState:(unsigned long long)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (id)subtitleColorForState:(unsigned long long)arg1;
+- (id)subtitleForState:(unsigned long long)arg1;
 - (id)subtitleLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })subtitleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)subtitleShadowColorForState:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })subtitleRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)subtitleShadowColorForState:(unsigned long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })titleRectForContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

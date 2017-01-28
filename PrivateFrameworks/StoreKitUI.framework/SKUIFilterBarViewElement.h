@@ -7,8 +7,8 @@
 @property (nonatomic, readonly) SKUIDividerViewElement *bottomDivider;
 
 - (id)bottomDivider;
-- (id)childViewElementsForAlignment:(unsigned int)arg1;
-- (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
-- (int)pageComponentType;
+- (id)childViewElementsForAlignment:(unsigned long long)arg1;
+- (void)enumerateChildrenUsingBlock:(id)arg1;
+- (long long)pageComponentType;
 
 @end

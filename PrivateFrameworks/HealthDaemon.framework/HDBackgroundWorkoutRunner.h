@@ -12,13 +12,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_queue_hasBackgroundPermission;
+- (bool)_queue_hasBackgroundPermission;
 - (void)_queue_releaseAssertion;
-- (BOOL)_queue_takeAssertion;
+- (bool)_queue_takeAssertion;
 - (id)description;
 - (id)initWithClient:(id)arg1 profile:(id)arg2;
 - (void)processDidEnterForeground:(id)arg1;

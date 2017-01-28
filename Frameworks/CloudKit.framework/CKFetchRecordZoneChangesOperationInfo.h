@@ -3,33 +3,33 @@
  */
 
 @interface CKFetchRecordZoneChangesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    int  _changeTypes;
-    BOOL  _fetchAllChanges;
+    long long  _changeTypes;
+    bool  _fetchAllChanges;
     NSDictionary * _optionsByRecordZoneID;
     NSArray * _recordZoneIDs;
-    BOOL  _shouldFetchAssetContents;
+    bool  _shouldFetchAssetContents;
 }
 
-@property (nonatomic) int changeTypes;
-@property (nonatomic) BOOL fetchAllChanges;
+@property (nonatomic) long long changeTypes;
+@property (nonatomic) bool fetchAllChanges;
 @property (nonatomic, retain) NSDictionary *optionsByRecordZoneID;
 @property (nonatomic, retain) NSArray *recordZoneIDs;
-@property (nonatomic) BOOL shouldFetchAssetContents;
+@property (nonatomic) bool shouldFetchAssetContents;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)changeTypes;
+- (long long)changeTypes;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)fetchAllChanges;
+- (bool)fetchAllChanges;
 - (id)initWithCoder:(id)arg1;
 - (id)optionsByRecordZoneID;
 - (id)recordZoneIDs;
-- (void)setChangeTypes:(int)arg1;
-- (void)setFetchAllChanges:(BOOL)arg1;
+- (void)setChangeTypes:(long long)arg1;
+- (void)setFetchAllChanges:(bool)arg1;
 - (void)setOptionsByRecordZoneID:(id)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
-- (void)setShouldFetchAssetContents:(BOOL)arg1;
-- (BOOL)shouldFetchAssetContents;
+- (void)setShouldFetchAssetContents:(bool)arg1;
+- (bool)shouldFetchAssetContents;
 
 @end

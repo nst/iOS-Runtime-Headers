@@ -4,17 +4,17 @@
 
 @interface _MPStoreFollowingOperation : MPAsyncOperation {
     MPStoreFollowingRequest * _request;
-    id /* block */  _responseHandler;
+    id  _responseHandler;
 }
 
 @property (nonatomic, retain) MPStoreFollowingRequest *request;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, copy) id responseHandler;
 
 - (void).cxx_destruct;
 - (void)execute;
 - (id)request;
-- (id /* block */)responseHandler;
+- (id)responseHandler;
 - (void)setRequest:(id)arg1;
-- (void)setResponseHandler:(id /* block */)arg1;
+- (void)setResponseHandler:(id)arg1;
 
 @end

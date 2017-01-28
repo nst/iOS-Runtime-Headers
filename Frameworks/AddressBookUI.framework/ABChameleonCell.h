@@ -4,7 +4,7 @@
 
 @interface ABChameleonCell : UITableViewCell {
     int  _abCellStyle;
-    BOOL  _hasConfiguredBackgroundViews;
+    bool  _hasConfiguredBackgroundViews;
     <ABStyleProvider> * _styleProvider;
 }
 
@@ -16,7 +16,7 @@
 - (int)abCellStyle;
 - (void)dealloc;
 - (void)setAbCellStyle:(int)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
 

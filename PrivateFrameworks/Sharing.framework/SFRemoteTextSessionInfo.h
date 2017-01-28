@@ -4,23 +4,23 @@
 
 @interface SFRemoteTextSessionInfo : NSObject <NSSecureCoding> {
     NSString * _identifier;
-    int  _keyboardType;
+    long long  _keyboardType;
     NSString * _prompt;
-    int  _returnKeyType;
-    BOOL  _secureTextEntry;
+    long long  _returnKeyType;
+    bool  _secureTextEntry;
     NSString * _text;
     NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) int keyboardType;
+@property (nonatomic) long long keyboardType;
 @property (nonatomic, copy) NSString *prompt;
-@property (nonatomic) int returnKeyType;
-@property (nonatomic) BOOL secureTextEntry;
+@property (nonatomic) long long returnKeyType;
+@property (nonatomic) bool secureTextEntry;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -29,15 +29,15 @@
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (int)keyboardType;
+- (long long)keyboardType;
 - (id)prompt;
-- (int)returnKeyType;
-- (BOOL)secureTextEntry;
+- (long long)returnKeyType;
+- (bool)secureTextEntry;
 - (void)setIdentifier:(id)arg1;
-- (void)setKeyboardType:(int)arg1;
+- (void)setKeyboardType:(long long)arg1;
 - (void)setPrompt:(id)arg1;
-- (void)setReturnKeyType:(int)arg1;
-- (void)setSecureTextEntry:(BOOL)arg1;
+- (void)setReturnKeyType:(long long)arg1;
+- (void)setSecureTextEntry:(bool)arg1;
 - (void)setText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)text;

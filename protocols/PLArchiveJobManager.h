@@ -5,7 +5,7 @@
 
 @required
 
-- (void)handleFailure:(int)arg1 forArchiveEntry:(PLArchiveEntry *)arg2;
-- (BOOL)isInterrupted;
+- (void)handleFailure:(long long)arg1 forArchiveEntry:(PLArchiveEntry *)arg2;
+- (bool)isInterrupted;
 
 @end

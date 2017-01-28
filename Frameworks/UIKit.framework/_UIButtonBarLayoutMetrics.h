@@ -17,14 +17,14 @@
 @property (nonatomic, retain) NSLayoutDimension *flexibleSpaceGuide;
 @property (nonatomic, retain) NSLayoutDimension *groupSizeGuide;
 @property (nonatomic, retain) NSLayoutDimension *groupSpacingGuide;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSLayoutDimension *minimumSpaceGuide;
 @property (nonatomic, retain) NSLayoutYAxisAnchor *popoverGuideTopAnchor;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSLayoutDimension *verticalSizeGuide;
 
 - (void).cxx_destruct;
-- (id)_copyWithModifications:(id /* block */)arg1;
+- (id)_copyWithModifications:(id)arg1;
 - (id)_upcastIfReadOnly;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

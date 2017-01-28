@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)editDisabled;
-- (void)setEditDisabled:(BOOL)arg1;
-- (void)toggleMissingState:(BOOL)arg1 forKey:(NSString *)arg2;
+- (bool)editDisabled;
+- (void)setEditDisabled:(bool)arg1;
+- (void)toggleMissingState:(bool)arg1 forKey:(NSString *)arg2;
 
 @end

@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (Class)implementationClass;
-- (BOOL)isSuperclassAlsoValueType;
+- (bool)isSuperclassAlsoValueType;
 - (id)properties;
 - (void)setImplementationClass:(Class)arg1;
 - (void)setProperties:(id)arg1;

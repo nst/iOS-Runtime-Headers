@@ -6,30 +6,31 @@
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSObject<OS_dispatch_queue> * _calloutQueue;
     NSXPCConnection * _connection;
-    BOOL  _hasUpdatesEntitlement;
+    bool  _hasUpdatesEntitlement;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_call:(id)arg1 run:(id /* block */)arg2 error:(id /* block */)arg3;
+- (void)_call:(id)arg1 run:(id)arg2 error:(id)arg3;
 - (void)_setupConnection;
-- (void)clearExpiredUpdateHistoryWithCompletionBlock:(id /* block */)arg1;
+- (void)clearExpiredUpdateHistoryWithCompletionBlock:(id)arg1;
 - (void)dealloc;
-- (void)getUpdateableFirstPartyAppMetadataWithCompletion:(id /* block */)arg1;
-- (void)getUpdatesWithCompletionBlock:(id /* block */)arg1;
-- (BOOL)hasEntitlement;
+- (void)getUpdateableFirstPartyAppMetadataWithCompletion:(id)arg1;
+- (void)getUpdatesWithCompletionBlock:(id)arg1;
+- (bool)hasEntitlement;
 - (void)hideApplicationBadgeForPendingUpdates;
 - (id)init;
-- (void)reloadForSettingsFromServerWithCompletionBlock:(id /* block */)arg1;
-- (void)reloadFromServerInBackgroundWithCompletionBlock:(id /* block */)arg1;
-- (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;
+- (void)refreshUpdateCountWithCompletionBlock:(id)arg1;
+- (void)reloadForSettingsFromServerWithCompletionBlock:(id)arg1;
+- (void)reloadFromServerInBackgroundWithCompletionBlock:(id)arg1;
+- (void)reloadFromServerWithCompletionBlock:(id)arg1;
 - (void)removeUpdateBulletins;
 - (void)showApplicationBadgeForPendingUpdates;
 - (void)showApplicationUpdateBulletin;
-- (void)updateAllWithCompletionBlock:(id /* block */)arg1;
+- (void)updateAllWithCompletionBlock:(id)arg1;
 
 @end

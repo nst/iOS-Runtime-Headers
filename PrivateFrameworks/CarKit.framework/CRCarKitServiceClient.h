@@ -18,7 +18,7 @@
 - (id)_serviceSemaphore;
 - (id)init;
 - (id)outstandingSemaphores;
-- (void)performServiceCallBlock:(id /* block */)arg1;
+- (void)performServiceCallBlock:(id)arg1;
 - (id)service;
 - (id)serviceConnection;
 - (void)setOutstandingSemaphores:(id)arg1;

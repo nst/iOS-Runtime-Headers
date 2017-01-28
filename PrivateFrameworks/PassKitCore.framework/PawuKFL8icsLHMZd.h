@@ -6,24 +6,24 @@
     NSString * _firstName;
     NSString * _fullName;
     NSString * _lastName;
-    unsigned int  _source;
+    unsigned long long  _source;
 }
 
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *fullName;
 @property (nonatomic, retain) NSString *lastName;
-@property (nonatomic) unsigned int source;
+@property (nonatomic) unsigned long long source;
 
 - (void).cxx_destruct;
 - (id)firstName;
 - (id)fullName;
-- (id)initWithFirstName:(id)arg1 lastName:(id)arg2 source:(unsigned int)arg3;
-- (id)initWithFullName:(id)arg1 source:(unsigned int)arg2;
+- (id)initWithFirstName:(id)arg1 lastName:(id)arg2 source:(unsigned long long)arg3;
+- (id)initWithFullName:(id)arg1 source:(unsigned long long)arg2;
 - (id)lastName;
 - (void)setFirstName:(id)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setLastName:(id)arg1;
-- (void)setSource:(unsigned int)arg1;
-- (unsigned int)source;
+- (void)setSource:(unsigned long long)arg1;
+- (unsigned long long)source;
 
 @end

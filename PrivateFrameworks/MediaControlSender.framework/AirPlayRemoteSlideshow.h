@@ -7,7 +7,7 @@
     <AirPlayRemoteSlideshowDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _internalQueue;
     double  _startTime;
-    BOOL  _started;
+    bool  _started;
     NSObject<OS_dispatch_queue> * _userQueue;
 }
 
@@ -16,14 +16,14 @@
 - (void)_configureEventHandler;
 - (void)dealloc;
 - (id)delegate;
-- (void)getFeaturesWithCompletion:(id /* block */)arg1;
-- (void)getFeaturesWithOptions:(unsigned int)arg1 completion:(id /* block */)arg2;
+- (void)getFeaturesWithCompletion:(id)arg1;
+- (void)getFeaturesWithOptions:(unsigned int)arg1 completion:(id)arg2;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setPassword:(id)arg1;
-- (void)startWithOptions:(id)arg1 completion:(id /* block */)arg2;
-- (void)stopWithOptions:(id)arg1 completion:(id /* block */)arg2;
+- (void)startWithOptions:(id)arg1 completion:(id)arg2;
+- (void)stopWithOptions:(id)arg1 completion:(id)arg2;
 
 @end

@@ -6,6 +6,6 @@
 @required
 
 - (void)longLookTransitionDelegate:(NCLongLookTransitionDelegate *)arg1 didBeginTransitionWithAnimator:(id <NCLongLookAnimator>)arg2;
-- (void)longLookTransitionDelegate:(NCLongLookTransitionDelegate *)arg1 didEndTransitionWithAnimator:(id <NCLongLookAnimator>)arg2 completed:(BOOL)arg3;
+- (void)longLookTransitionDelegate:(NCLongLookTransitionDelegate *)arg1 didEndTransitionWithAnimator:(id <NCLongLookAnimator>)arg2 completed:(bool)arg3;
 
 @end

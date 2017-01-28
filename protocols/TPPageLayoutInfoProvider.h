@@ -5,13 +5,13 @@
 
 @required
 
-- (BOOL)canProvideInfoForPageIndex:(unsigned int)arg1;
-- (BOOL)canProvideNumberingInfoForPageIndex:(unsigned int)arg1;
-- (int)contentFlagsForPageIndex:(unsigned int)arg1;
-- (<TSWPHeaderFooterProvider> *)headerFooterProviderForPageIndex:(unsigned int)arg1;
-- (<TPMasterDrawableProvider> *)masterDrawableProviderForPageIndex:(unsigned int)arg1;
-- (unsigned int)pageCountForPageIndex:(unsigned int)arg1;
-- (unsigned int)pageNumberForPageIndex:(unsigned int)arg1;
-- (BOOL)shouldHeaderFooterBeVisibleForPageIndex:(unsigned int)arg1;
+- (bool)canProvideInfoForPageIndex:(unsigned long long)arg1;
+- (bool)canProvideNumberingInfoForPageIndex:(unsigned long long)arg1;
+- (int)contentFlagsForPageIndex:(unsigned long long)arg1;
+- (<TSWPHeaderFooterProvider> *)headerFooterProviderForPageIndex:(unsigned long long)arg1;
+- (<TPMasterDrawableProvider> *)masterDrawableProviderForPageIndex:(unsigned long long)arg1;
+- (unsigned long long)pageCountForPageIndex:(unsigned long long)arg1;
+- (unsigned long long)pageNumberForPageIndex:(unsigned long long)arg1;
+- (bool)shouldHeaderFooterBeVisibleForPageIndex:(unsigned long long)arg1;
 
 @end

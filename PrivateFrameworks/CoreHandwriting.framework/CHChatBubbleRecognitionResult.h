@@ -4,17 +4,17 @@
 
 @interface CHChatBubbleRecognitionResult : CHEllipseRecognitionResult {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _stemLocation;
-    float  _stemWidth;
+    double  _stemWidth;
 }
 
-@property (readonly) struct CGPoint { float x1; float x2; } stemLocation;
-@property (readonly) float stemWidth;
+@property (readonly) struct CGPoint { double x1; double x2; } stemLocation;
+@property (readonly) double stemWidth;
 
-- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 center:(struct CGPoint { float x1; float x2; })arg4 size:(struct CGSize { float x1; float x2; })arg5 stemLocation:(struct CGPoint { float x1; float x2; })arg6 stemWidth:(float)arg7;
-- (struct CGPoint { float x1; float x2; })stemLocation;
-- (float)stemWidth;
+- (id)initWithString:(id)arg1 score:(double)arg2 rotation:(double)arg3 center:(struct CGPoint { double x1; double x2; })arg4 size:(struct CGSize { double x1; double x2; })arg5 stemLocation:(struct CGPoint { double x1; double x2; })arg6 stemWidth:(double)arg7;
+- (struct CGPoint { double x1; double x2; })stemLocation;
+- (double)stemWidth;
 
 @end

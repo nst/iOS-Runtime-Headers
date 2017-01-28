@@ -10,7 +10,7 @@
     NSOperation * __lastOperation;
     NSOperation * __lastPriOperation;
     unsigned char  __mainQ;
-    int  __maxNumOps;
+    long long  __maxNumOps;
     BOOL  __nameBuffer;
     int  __numExecOps;
     unsigned char  __overcommit;
@@ -19,8 +19,8 @@
     NSObject<OS_dispatch_queue> * __pending_barrier;
     BOOL  __propertyQOS;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  __queueLock;
     unsigned char  __suspended;
     unsigned int  __unused2;

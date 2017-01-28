@@ -14,7 +14,7 @@
 - (id)init;
 - (id)locale;
 - (void)setLocale:(id)arg1;
-- (id)stringFromDistance:(double)arg1 isDataMetric:(BOOL)arg2;
+- (id)stringFromDistance:(double)arg1 isDataMetric:(bool)arg2;
 - (id)stringFromKilometers:(double)arg1;
 - (id)stringFromMiles:(double)arg1;
 

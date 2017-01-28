@@ -16,13 +16,13 @@
 @property (nonatomic, copy) NSIndexSet *deletedSections;
 @property (nonatomic, copy) NSArray *insertedRows;
 @property (nonatomic, copy) NSIndexSet *insertedSections;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic, copy) NSDictionary *movedRows;
 @property (nonatomic, copy) NSDictionary *movedSections;
 @property (nonatomic, copy) NSArray *updatedRows;
 
 - (void).cxx_destruct;
-- (void)applyToTableView:(id)arg1 withDataUpdateBlock:(id /* block */)arg2;
+- (void)applyToTableView:(id)arg1 withDataUpdateBlock:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)deletedRows;
 - (id)deletedSections;
@@ -31,7 +31,7 @@
 - (id)initWithInsertedSections:(id)arg1 deletedSections:(id)arg2 movedSections:(id)arg3 insertedRows:(id)arg4 deletedRows:(id)arg5 movedRows:(id)arg6 updatedRows:(id)arg7;
 - (id)insertedRows;
 - (id)insertedSections;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)movedRows;
 - (id)movedSections;
 - (void)setDeletedRows:(id)arg1;

@@ -3,19 +3,19 @@
  */
 
 @interface _CNBlockObserver : NSObject <CNObserver> {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     CNObservableContractEnforcement * _enforcement;
-    id /* block */  _failureBlock;
-    id /* block */  _resultBlock;
+    id  _failureBlock;
+    id  _resultBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)initWithResultBlock:(id /* block */)arg1 completionBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
+- (id)initWithResultBlock:(id)arg1 completionBlock:(id)arg2 failureBlock:(id)arg3;
 - (void)observerDidComplete;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidReceiveResult:(id)arg1;

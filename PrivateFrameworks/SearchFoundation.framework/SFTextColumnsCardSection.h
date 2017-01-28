@@ -5,14 +5,14 @@
 @interface SFTextColumnsCardSection : SFCardSection {
     NSArray * _columns;
     NSString * _title;
-    int  _titleWeight;
+    long long  _titleWeight;
 }
 
 @property (nonatomic, copy) NSArray *columns;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic) int titleWeight;
+@property (nonatomic) long long titleWeight;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)columns;
@@ -20,8 +20,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)setColumns:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleWeight:(int)arg1;
+- (void)setTitleWeight:(long long)arg1;
 - (id)title;
-- (int)titleWeight;
+- (long long)titleWeight;
 
 @end

@@ -5,14 +5,14 @@
 @interface MDLObject : NSObject <MDLNamed> {
     <MDLObjectContainerComponent> * _children;
     NSMapTable * _components;
-    BOOL  _hidden;
+    bool  _hidden;
     MDLObject * _instance;
     MDLObject * _parent;
     NSString * name;
 }
 
 @property (nonatomic, retain) <MDLObjectContainerComponent> *children;
-@property (nonatomic) BOOL hidden;
+@property (nonatomic) bool hidden;
 @property (nonatomic, retain) MDLObject *instance;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) MDLObject *parent;
@@ -26,7 +26,8 @@
 - (struct { })boundingBoxAtTime:(double)arg1;
 - (id)children;
 - (id)componentConformingToProtocol:(id)arg1;
-- (BOOL)hidden;
+- (void)enumerateChildObjectsOfClass:(Class)arg1 root:(id)arg2 usingBlock:(id)arg3 stopPointer:(bool*)arg4;
+- (bool)hidden;
 - (id)init;
 - (id)instance;
 - (id)name;
@@ -35,7 +36,7 @@
 - (id)path;
 - (void)setChildren:(id)arg1;
 - (void)setComponent:(id)arg1 forProtocol:(id)arg2;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setInstance:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setParent:(id)arg1;
@@ -48,6 +49,6 @@
 + (id)objectWithSCNNode:(id)arg1 bufferAllocator:(id)arg2;
 
 - (id)_associatedSCNNode;
-- (void)_updateAssociatedSCNNodeWithGeometrySetter:(id /* block */)arg1 texturePathProvider:(id /* block */)arg2 vertexAttributeNamed:(id)arg3 materialPropertyNamed:(id)arg4;
+- (void)_updateAssociatedSCNNodeWithGeometrySetter:(id)arg1 texturePathProvider:(id)arg2 vertexAttributeNamed:(id)arg3 materialPropertyNamed:(id)arg4;
 
 @end

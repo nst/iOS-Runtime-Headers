@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)staticThreadgroupMemoryLength;
+- (unsigned long long)staticThreadgroupMemoryLength;
 
 @end

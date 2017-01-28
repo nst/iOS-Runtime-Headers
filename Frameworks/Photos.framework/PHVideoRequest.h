@@ -4,21 +4,21 @@
 
 @interface PHVideoRequest : PHImageManagerRequest {
     PHVideoRequestOptions * _options;
-    id /* block */  _resultHandler;
+    id  _resultHandler;
 }
 
 @property (nonatomic, readonly) PHVideoRequestOptions *options;
-@property (nonatomic, readonly, copy) id /* block */ resultHandler;
+@property (nonatomic, readonly, copy) id resultHandler;
 
-+ (id)videoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id /* block */)arg4;
++ (id)videoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id)arg4;
 
 - (void).cxx_destruct;
 - (void)clearResultHandler;
 - (void)cloneIDAndResultHandlerFromRequest:(id)arg1;
 - (id)description;
-- (id)initVideoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id /* block */)arg4;
-- (BOOL)isVideo;
+- (id)initVideoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id)arg4;
+- (bool)isVideo;
 - (id)options;
-- (id /* block */)resultHandler;
+- (id)resultHandler;
 
 @end

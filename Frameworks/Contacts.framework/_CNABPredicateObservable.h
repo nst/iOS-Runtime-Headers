@@ -6,7 +6,7 @@
     void * _addressBook;
     CNCancelationToken * _cancelationToken;
     <CNObserver> * _observer;
-    unsigned int  _options;
+    unsigned long long  _options;
     ABPredicate * _predicate;
     unsigned int  _sortOrdering;
 }
@@ -15,9 +15,9 @@
 @property (retain) CNCancelationToken *cancelationToken;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <CNObserver> *observer;
-@property (nonatomic) unsigned int options;
+@property (nonatomic) unsigned long long options;
 @property (nonatomic, retain) ABPredicate *predicate;
 @property (nonatomic) unsigned int sortOrdering;
 @property (readonly) Class superclass;
@@ -27,18 +27,18 @@
 - (void*)addressBook;
 - (id)cancelationToken;
 - (void)dealloc;
-- (id)initWithPredicate:(id)arg1 sortOrdering:(unsigned int)arg2 options:(unsigned int)arg3 addressBook:(void*)arg4;
+- (id)initWithPredicate:(id)arg1 sortOrdering:(unsigned int)arg2 options:(unsigned long long)arg3 addressBook:(void*)arg4;
 - (id)observer;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (id)predicate;
-- (BOOL)predicateShouldContinue:(id)arg1;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 metadata:(id)arg3;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 moreComing:(BOOL)arg3;
+- (bool)predicateShouldContinue:(id)arg1;
+- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
+- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 metadata:(id)arg3;
+- (bool)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 moreComing:(bool)arg3;
 - (void)setAddressBook:(void*)arg1;
 - (void)setCancelationToken:(id)arg1;
 - (void)setObserver:(id)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setSortOrdering:(unsigned int)arg1;
 - (unsigned int)sortOrdering;

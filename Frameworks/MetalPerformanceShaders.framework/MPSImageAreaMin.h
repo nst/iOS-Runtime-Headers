@@ -4,6 +4,6 @@
 
 @interface MPSImageAreaMin : MPSImageAreaMax
 
-- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned int)arg2 kernelHeight:(unsigned int)arg3;
+- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned long long)arg2 kernelHeight:(unsigned long long)arg3;
 
 @end

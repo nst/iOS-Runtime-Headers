@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSMutableDictionary *imageCache;
 
-+ (id)letterpressedImageForImage:(id)arg1 tintColor:(id)arg2 scale:(float)arg3;
++ (id)letterpressedImageForImage:(id)arg1 tintColor:(id)arg2 scale:(double)arg3;
 + (id)sharedCache;
 
 - (void).cxx_destruct;

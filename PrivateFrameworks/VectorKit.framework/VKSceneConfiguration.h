@@ -4,7 +4,7 @@
 
 @interface VKSceneConfiguration : NSObject {
     unsigned char  _cameraMode;
-    unsigned int  _currentGroupedManeuverCount;
+    unsigned long long  _currentGroupedManeuverCount;
     unsigned char  _currentIncidentType;
     unsigned char  _currentManeuverComplexity;
     int  _currentManeuverType;
@@ -33,7 +33,7 @@
     }  _pointsOfInterest;
     int  _rampType;
     unsigned char  _roadSpeed;
-    unsigned int  _roadSpeedZeroes;
+    unsigned long long  _roadSpeedZeroes;
     struct shared_ptr<gss::StylesheetManager<gss::ScenePropertyID> > { 
         struct StylesheetManager<gss::ScenePropertyID> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -48,23 +48,23 @@
 - (id)analyticsLogContextWithNavigationState;
 - (id)init;
 - (unsigned char)navigationState;
-- (void)setCurrentGroupedManeuverCount:(unsigned int)arg1;
-- (void)setCurrentIncidentType:(unsigned int)arg1;
-- (void)setCurrentManeuverJunctionsCount:(unsigned int)arg1;
+- (void)setCurrentGroupedManeuverCount:(unsigned long long)arg1;
+- (void)setCurrentIncidentType:(unsigned long long)arg1;
+- (void)setCurrentManeuverJunctionsCount:(unsigned long long)arg1;
 - (void)setCurrentManeuverType:(int)arg1;
 - (void)setCurrentStepLength:(double)arg1;
 - (void)setCurrentTransportationType:(int)arg1;
 - (void)setDistanceToCurrentManeuver:(double)arg1;
 - (void)setDistanceToDestination:(double)arg1;
 - (void)setLineType:(unsigned int)arg1;
-- (void)setNavCameraMode:(unsigned int)arg1;
+- (void)setNavCameraMode:(unsigned long long)arg1;
 - (void)setNavigationState:(int)arg1;
 - (void)setNextManeuverRampType:(int)arg1;
 - (void)setNextStepLength:(double)arg1;
 - (void)setRampType:(int)arg1;
 - (void)setRoadSpeed:(double)arg1;
 - (void)setSceneManager:(struct shared_ptr<gss::StylesheetManager<gss::ScenePropertyID> > { struct StylesheetManager<gss::ScenePropertyID> {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (void)setSearchAlongTheRoute:(BOOL)arg1;
+- (void)setSearchAlongTheRoute:(bool)arg1;
 - (void)setStyleManager:(struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setVehicleSpeed:(double)arg1;
 

@@ -6,31 +6,31 @@
     HAPWACScanRequest * _activeRequest;
     NSMutableArray * _pendingRequests;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _scanInProgres;
+    bool  _scanInProgres;
 }
 
 @property (nonatomic, retain) HAPWACScanRequest *activeRequest;
 @property (nonatomic, retain) NSMutableArray *pendingRequests;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (getter=isScanInProgress, nonatomic, readonly) BOOL scanInProgres;
+@property (getter=isScanInProgress, nonatomic, readonly) bool scanInProgres;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)__nextRequest;
 - (id)__pendingRequestWithUUID:(id)arg1;
-- (void)__runRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)__runRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)activeRequest;
-- (BOOL)activeScan;
+- (bool)activeScan;
 - (void)addRequest:(id)arg1;
-- (void)cancelRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)cancelRequest:(id)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initPrivate;
-- (BOOL)isScanInProgress;
+- (bool)isScanInProgress;
 - (id)pendingRequests;
 - (id)queue;
-- (void)scanForWACAndExtractSetupDictWithNumberOfScans:(unsigned int)arg1 andCompletion:(id /* block */)arg2;
+- (void)scanForWACAndExtractSetupDictWithNumberOfScans:(unsigned long long)arg1 andCompletion:(id)arg2;
 - (void)setActiveRequest:(id)arg1;
 - (void)setPendingRequests:(id)arg1;
 - (void)setQueue:(id)arg1;

@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic) int assertionToken;
-@property (nonatomic, readonly) BOOL hasActiveAssertion;
+@property (nonatomic, readonly) bool hasActiveAssertion;
 @property (nonatomic, retain) NSHashTable *observers;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
@@ -19,7 +19,7 @@
 - (id)_init;
 - (void)addObserver:(id)arg1;
 - (int)assertionToken;
-- (BOOL)hasActiveAssertion;
+- (bool)hasActiveAssertion;
 - (void)notifyObserversWithTokenValue:(int)arg1;
 - (id)observers;
 - (void)removeObserver:(id)arg1;

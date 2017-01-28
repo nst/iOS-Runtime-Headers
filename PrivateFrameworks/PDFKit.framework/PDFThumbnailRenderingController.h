@@ -14,12 +14,12 @@
 - (void).cxx_destruct;
 - (void)_cancelOperationForContext:(id)arg1;
 - (id)_initInternal;
-- (BOOL)_isOperationScheduledForContext:(id)arg1;
+- (bool)_isOperationScheduledForContext:(id)arg1;
 - (void)_scheduleOperationForContext:(id)arg1;
 - (id)init;
-- (void)registerThumbnailBlock:(id /* block */)arg1 withPreferredSize:(unsigned int)arg2 forPage:(id)arg3 context:(id)arg4 withPlaceholder:(BOOL)arg5 orClearFirst:(BOOL)arg6;
-- (id)thumbnailOfSize:(unsigned int)arg1 forPage:(id)arg2;
+- (void)registerThumbnailBlock:(id)arg1 withPreferredSize:(unsigned long long)arg2 forPage:(id)arg3 context:(id)arg4 withPlaceholder:(bool)arg5 orClearFirst:(bool)arg6;
+- (id)thumbnailOfSize:(unsigned long long)arg1 forPage:(id)arg2;
 - (void)unregisterThumbnailBlockForContext:(id)arg1;
-- (void)updatePreferredSize:(unsigned int)arg1 forContext:(id)arg2;
+- (void)updatePreferredSize:(unsigned long long)arg1 forContext:(id)arg2;
 
 @end

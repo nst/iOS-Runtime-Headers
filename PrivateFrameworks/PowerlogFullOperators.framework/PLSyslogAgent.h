@@ -6,8 +6,8 @@
     PLEntryNotificationOperatorComposition * _batteryLevelChanged;
     struct __CFRunLoopSource { } * fileDescriptorSource;
     int  kq;
-    unsigned int  lastMessageID;
-    unsigned int  syslogdPid;
+    unsigned long long  lastMessageID;
+    unsigned long long  syslogdPid;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
@@ -25,7 +25,7 @@
 
 - (void).cxx_destruct;
 - (id)batteryLevelChanged;
-- (void)enumerateResultsOfASLQuery:(struct __asl_object_s { }*)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateResultsOfASLQuery:(struct __asl_object_s { }*)arg1 usingBlock:(id)arg2;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)listenForSyslogDeath;

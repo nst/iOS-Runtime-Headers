@@ -3,22 +3,22 @@
  */
 
 @interface HMDWatchSync : NSObject {
-    BOOL  _inProgress;
+    bool  _inProgress;
     NSUUID * _syncIdentifier;
-    unsigned int  _syncOption;
+    unsigned long long  _syncOption;
 }
 
-@property (nonatomic) BOOL inProgress;
+@property (nonatomic) bool inProgress;
 @property (nonatomic, readonly, copy) NSUUID *syncIdentifier;
-@property (nonatomic) unsigned int syncOption;
+@property (nonatomic) unsigned long long syncOption;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)inProgress;
-- (id)initWithSyncOption:(unsigned int)arg1;
-- (void)setInProgress:(BOOL)arg1;
-- (void)setSyncOption:(unsigned int)arg1;
+- (bool)inProgress;
+- (id)initWithSyncOption:(unsigned long long)arg1;
+- (void)setInProgress:(bool)arg1;
+- (void)setSyncOption:(unsigned long long)arg1;
 - (id)syncIdentifier;
-- (unsigned int)syncOption;
+- (unsigned long long)syncOption;
 
 @end

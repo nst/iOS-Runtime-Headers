@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CLGeocoder *geocoder;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedContext;
@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)geocoder;
 - (id)init;
-- (void)lookupPlaceAtLatitude:(double)arg1 longitude:(double)arg2 handler:(id /* block */)arg3;
+- (void)lookupPlaceAtLatitude:(double)arg1 longitude:(double)arg2 handler:(id)arg3;
 - (void)setGeocoder:(id)arg1;
 
 @end

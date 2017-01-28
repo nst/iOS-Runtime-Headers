@@ -3,14 +3,14 @@
  */
 
 @interface FCContextConfiguration : NSObject <NSCopying> {
-    int  _containerEnvironment;
+    long long  _containerEnvironment;
     NSString * _contentContainerCombinationIdentifier;
     NSString * _contentContainerIdentifier;
     NSString * _privateDataContainerCombinationIdentifier;
     NSString * _privateDataContainerIdentifier;
 }
 
-@property (nonatomic, readonly) int containerEnvironment;
+@property (nonatomic, readonly) long long containerEnvironment;
 @property (nonatomic, readonly, copy) NSString *contentContainerCombinationIdentifier;
 @property (nonatomic, readonly, copy) NSString *contentContainerIdentifier;
 @property (nonatomic, readonly, copy) NSString *privateDataContainerCombinationIdentifier;
@@ -19,12 +19,12 @@
 + (id)defaultConfiguration;
 
 - (void).cxx_destruct;
-- (int)containerEnvironment;
+- (long long)containerEnvironment;
 - (id)contentContainerCombinationIdentifier;
 - (id)contentContainerIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id)initWithContainerEnvironment:(int)arg1 contentContainerIdentifier:(id)arg2 privateDataContainerIdentifier:(id)arg3 storeFrontID:(id)arg4;
+- (id)initWithContainerEnvironment:(long long)arg1 contentContainerIdentifier:(id)arg2 privateDataContainerIdentifier:(id)arg3 storeFrontID:(id)arg4;
 - (id)privateDataContainerCombinationIdentifier;
 - (id)privateDataContainerIdentifier;
 

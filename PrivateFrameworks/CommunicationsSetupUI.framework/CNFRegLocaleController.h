@@ -3,12 +3,12 @@
  */
 
 @interface CNFRegLocaleController : CNFRegFirstRunController <CNFRegRegionChooserDelegate> {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     PSSpecifier * _countryFieldSpecifier;
     NSString * _currentPhoneValue;
     NSString * _currentRegionID;
-    BOOL  _isError;
-    BOOL  _isLoading;
+    bool  _isError;
+    bool  _isLoading;
     PSSpecifier * _phoneNumberFieldSpecifier;
     PSSpecifier * _phoneNumberGroupSpecifier;
     NSArray * _phoneNumberSpecifiers;
@@ -16,12 +16,12 @@
     id  _regionListChangeObserver;
 }
 
-@property (copy) id /* block */ completionBlock;
+@property (copy) id completionBlock;
 @property (nonatomic, copy) NSString *currentPhoneValue;
 @property (nonatomic, copy) NSString *currentRegionID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *regionData;
 @property (readonly) Class superclass;
 
@@ -34,18 +34,18 @@
 - (void)_finishValidation;
 - (void)_handleRegionListLoad;
 - (void)_handleTimeout;
-- (void)_hideCountryPickerAnimated:(BOOL)arg1;
+- (void)_hideCountryPickerAnimated:(bool)arg1;
 - (void)_loadInitialValues;
 - (void)_loadRegionsIfNecessary;
 - (id)_phoneTextField;
-- (void)_refreshCountryFieldAnimated:(BOOL)arg1;
-- (void)_refreshPhoneFieldAnimated:(BOOL)arg1;
+- (void)_refreshCountryFieldAnimated:(bool)arg1;
+- (void)_refreshPhoneFieldAnimated:(bool)arg1;
 - (id)_rightButtonItem;
 - (void)_rightButtonTapped;
-- (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setFieldsEnabled:(bool)arg1 animated:(bool)arg2;
 - (void)_setupEventHandlers;
-- (void)_showCountryPickerAnimated:(BOOL)arg1;
-- (void)_showPhoneField:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_showCountryPickerAnimated:(bool)arg1;
+- (void)_showPhoneField:(bool)arg1 animated:(bool)arg2;
 - (void)_startListeningForRegionListChanges;
 - (void)_startTimeout;
 - (void)_stopListeningForRegionListChanges;
@@ -53,7 +53,7 @@
 - (void)_updateControllerState;
 - (void)_updateUI;
 - (id)bundle;
-- (id /* block */)completionBlock;
+- (id)completionBlock;
 - (id)controllerForSpecifier:(id)arg1;
 - (id)countryList;
 - (id)currentCountryValueForSpecifier:(id)arg1;
@@ -67,7 +67,7 @@
 - (id)logName;
 - (void)regionChooser:(id)arg1 selectedRegionID:(id)arg2;
 - (id)regionData;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setCurrentPhoneNumber:(id)arg1 forSpecifier:(id)arg2;
 - (void)setCurrentPhoneValue:(id)arg1;
 - (void)setCurrentRegionID:(id)arg1;
@@ -77,9 +77,9 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)titleString;
 - (id)validationString;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

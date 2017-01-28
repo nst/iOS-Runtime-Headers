@@ -7,26 +7,25 @@
     TSDShapeStyle * mStyle;
 }
 
-@property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
-@property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
-@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
+@property (getter=isAnchoredToText, nonatomic, readonly) bool anchoredToText;
+@property (getter=isAttachedToBodyText, nonatomic, readonly) bool attachedToBodyText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) TSDFill *fill;
-@property (getter=isFloatingAboveText, nonatomic, readonly) BOOL floatingAboveText;
+@property (getter=isFloatingAboveText, nonatomic, readonly) bool floatingAboveText;
 @property (nonatomic, copy) TSDInfoGeometry *geometry;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) TSDLineEnd *headLineEnd;
-@property (getter=isInlineWithText, nonatomic, readonly) BOOL inlineWithText;
-@property (nonatomic) BOOL matchesObjectPlaceholderGeometry;
+@property (getter=isInlineWithText, nonatomic, readonly) bool inlineWithText;
+@property (nonatomic) bool matchesObjectPlaceholderGeometry;
 @property (nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment;
 @property (nonatomic, readonly) TSPObject<TSDOwningAttachment> *owningAttachmentNoRecurse;
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property (nonatomic, retain) TSDPathSource *pathSource;
 @property (nonatomic, readonly) TSDShapeStyle *shapeStyle;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsShrinkTextToFit;
-@property (nonatomic, readonly) BOOL supportsTextInset;
+@property (nonatomic, readonly) bool supportsShrinkTextToFit;
+@property (nonatomic, readonly) bool supportsTextInset;
 @property (nonatomic, copy) TSDLineEnd *tailLineEnd;
 
 - (id)animationFilters;
@@ -40,20 +39,20 @@
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4;
-- (BOOL)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
-- (BOOL)isLine;
-- (BOOL)isOpenPath;
-- (BOOL)isTailEndOnLeftFromTemporaryLayoutForPasteboard;
-- (BOOL)isValidShapeToUnarchive;
+- (bool)isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
+- (bool)isLine;
+- (bool)isOpenPath;
+- (bool)isTailEndOnLeftFromTemporaryLayoutForPasteboard;
+- (bool)isValidShapeToUnarchive;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ShapeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct Reference {} *x6; struct PathSourceArchive {} *x7; struct LineEndArchive {} *x8; struct LineEndArchive {} *x9; }*)arg1 unarchiver:(id)arg2;
-- (int)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (long long)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)objectForProperty:(int)arg1;
 - (void)p_correctLineSegmentGeometry;
 - (void)p_correctNearZeroWidthLines;
-- (BOOL)pathIsOpen;
+- (bool)pathIsOpen;
 - (id)pathSource;
 - (Class)repClass;
 - (void)saveToArchive:(struct ShapeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct Reference {} *x6; struct PathSourceArchive {} *x7; struct LineEndArchive {} *x8; struct LineEndArchive {} *x9; }*)arg1 archiver:(id)arg2;
@@ -65,13 +64,13 @@
 - (void)setTailLineEnd:(id)arg1;
 - (void)setValuesForProperties:(id)arg1;
 - (id)shapeStyle;
-- (BOOL)shouldFlipLineEndsForStyle:(id)arg1 isStyleTailEndOnLeft:(int)arg2;
+- (bool)shouldFlipLineEndsForStyle:(id)arg1 isStyleTailEndOnLeft:(int)arg2;
 - (id)style;
 - (Class)styleClass;
 - (id)subclassInitFromUnarchiver:(id)arg1;
-- (BOOL)supportsShrinkTextToFit;
-- (BOOL)supportsTextInset;
+- (bool)supportsShrinkTextToFit;
+- (bool)supportsTextInset;
 - (id)tailLineEnd;
-- (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
+- (struct CGSize { double x1; double x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 
 @end

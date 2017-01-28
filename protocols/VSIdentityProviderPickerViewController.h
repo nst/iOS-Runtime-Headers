@@ -5,14 +5,14 @@
 
 @required
 
-- (unsigned int)additionalProvidersMode;
+- (unsigned long long)additionalProvidersMode;
 - (<VSIdentityProviderPickerViewControllerDelegate> *)delegate;
 - (NSArray *)identityProviders;
-- (BOOL)isCancellationAllowed;
+- (bool)isCancellationAllowed;
 - (NSString *)requestingAppDisplayName;
 - (NSString *)resourceTitle;
-- (void)setAdditionalProvidersMode:(unsigned int)arg1;
-- (void)setCancellationAllowed:(BOOL)arg1;
+- (void)setAdditionalProvidersMode:(unsigned long long)arg1;
+- (void)setCancellationAllowed:(bool)arg1;
 - (void)setDelegate:(id <VSIdentityProviderPickerViewControllerDelegate>)arg1;
 - (void)setIdentityProviders:(NSArray *)arg1;
 - (void)setRequestingAppDisplayName:(NSString *)arg1;
@@ -20,6 +20,6 @@
 
 @optional
 
-- (void)deselectSelectedProviderAnimated:(BOOL)arg1;
+- (void)deselectSelectedProviderAnimated:(bool)arg1;
 
 @end

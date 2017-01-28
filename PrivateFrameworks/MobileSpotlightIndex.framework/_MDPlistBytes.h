@@ -3,10 +3,10 @@
  */
 
 @interface _MDPlistBytes : NSObject {
-    unsigned int  _byteVector;
+    unsigned long long  _byteVector;
     unsigned int  _byteVectorCapacity;
     unsigned int  _byteVectorCnt;
-    id /* block */  _deallocator;
+    id  _deallocator;
     unsigned int  _didFinalize;
     unsigned int  _isBad;
     unsigned int  _isMutable;
@@ -19,24 +19,24 @@
     unsigned long long * _wrapperPtr;
 }
 
-+ (struct __MDPlistBytes { }*)createArrayPlistBytesUsingBlock:(id /* block */)arg1;
-+ (struct __MDPlistBytes { }*)createDictionaryPlistBytesUsingBlock:(id /* block */)arg1;
++ (struct __MDPlistBytes { }*)createArrayPlistBytesUsingBlock:(id)arg1;
++ (struct __MDPlistBytes { }*)createDictionaryPlistBytesUsingBlock:(id)arg1;
 + (struct __MDPlistBytes { }*)createPlistBytes:(id)arg1;
 + (struct __MDPlistBytes { }*)emptyArrayPlistBytes;
 + (struct __MDPlistBytes { }*)emptyDictionaryPlistBytes;
-+ (void)enumerateObjectsFromPlistBytes:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(BOOL)arg3 usingBlock:(id /* block */)arg4;
++ (void)enumerateObjectsFromPlistBytes:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(bool)arg3 usingBlock:(id)arg4;
 + (struct __MDPlistBytes { }*)nullObjectPlistBytes;
 
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (struct __CFData { }*)copyData;
 - (struct __CFData { }*)copyDataWithBytesNoCopy;
 - (id)createDispatchData;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateObjectsUsingBlock:(id)arg1;
 - (void)finalize;
-- (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 deallocator:(id /* block */)arg3;
-- (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(BOOL)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 deallocator:(id)arg3;
+- (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(bool)arg3;
+- (bool)isEqual:(id)arg1;
 
 @end

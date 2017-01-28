@@ -24,15 +24,15 @@
 - (int)cpuType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCpuType:(int)arg1 cpuSubtype:(int)arg2;
-- (BOOL)is32Bit;
-- (BOOL)is64Bit;
-- (BOOL)isBigEndian;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToArchitecture:(id)arg1;
-- (BOOL)isLittleEndian;
-- (BOOL)matchesArchitecture:(id)arg1;
+- (bool)is32Bit;
+- (bool)is64Bit;
+- (bool)isBigEndian;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToArchitecture:(id)arg1;
+- (bool)isLittleEndian;
+- (bool)matchesArchitecture:(id)arg1;
 
 @end

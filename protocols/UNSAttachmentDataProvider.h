@@ -7,9 +7,4 @@
 
 - (NSData *)data;
 
-@optional
-
-- (struct CGSize { float x1; float x2; })naturalSizeForAttachment:(UNNotificationAttachment *)arg1;
-- (NSData *)thumbnailPNGOfSize:(struct CGSize { float x1; float x2; })arg1 forAttachment:(UNNotificationAttachment *)arg2;
-
 @end

@@ -9,9 +9,9 @@
 
 + (void)useLocalResolver;
 
-- (void)_alePackResolution:(id)arg1 handler:(id /* block */)arg2 queue:(id)arg3;
+- (void)_alePackResolution:(id)arg1 handler:(id)arg2 queue:(id)arg3;
 - (void)dealloc;
 - (id)init;
-- (void)resolvePhoneNumbers:(id)arg1 handler:(id /* block */)arg2 queue:(id)arg3;
+- (void)resolvePhoneNumbers:(id)arg1 handler:(id)arg2 queue:(id)arg3;
 
 @end

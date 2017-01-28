@@ -5,7 +5,7 @@
 
 @required
 
-- (TKPickerItem *)childItemAtIndex:(int)arg1;
-- (int)numberOfChildren;
+- (TKPickerItem *)childItemAtIndex:(long long)arg1;
+- (long long)numberOfChildren;
 
 @end

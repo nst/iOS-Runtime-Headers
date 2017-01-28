@@ -3,20 +3,20 @@
  */
 
 @interface MFProgressFilterDataConsumer : MFBaseFilterDataConsumer {
-    unsigned int  _currentBytes;
-    unsigned int  _expectedSize;
-    id /* block */  _progressBlock;
+    unsigned long long  _currentBytes;
+    unsigned long long  _expectedSize;
+    id  _progressBlock;
 }
 
-@property (readonly) unsigned int expectedSize;
-@property (nonatomic, copy) id /* block */ progressBlock;
+@property (readonly) unsigned long long expectedSize;
+@property (nonatomic, copy) id progressBlock;
 
-- (int)appendData:(id)arg1;
+- (long long)appendData:(id)arg1;
 - (void)dealloc;
-- (unsigned int)expectedSize;
-- (id)initWithConsumer:(id)arg1 expectedSize:(unsigned int)arg2;
-- (id)initWithConsumers:(id)arg1 expectedSize:(unsigned int)arg2;
-- (id /* block */)progressBlock;
-- (void)setProgressBlock:(id /* block */)arg1;
+- (unsigned long long)expectedSize;
+- (id)initWithConsumer:(id)arg1 expectedSize:(unsigned long long)arg2;
+- (id)initWithConsumers:(id)arg1 expectedSize:(unsigned long long)arg2;
+- (id)progressBlock;
+- (void)setProgressBlock:(id)arg1;
 
 @end

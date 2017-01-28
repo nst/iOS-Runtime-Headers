@@ -10,13 +10,13 @@
     NSMutableSet * _positiveSet;
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<SpotlightReceiverJob> * _receiver;
-    unsigned int  _requestCount;
+    unsigned long long  _requestCount;
     NSString * _serviceName;
-    BOOL  _wantsHTML;
-    BOOL  _wantsIndexUpdates;
-    BOOL  _wantsInteractions;
-    BOOL  _wantsText;
-    BOOL  _wantsUAs;
+    bool  _wantsHTML;
+    bool  _wantsIndexUpdates;
+    bool  _wantsInteractions;
+    bool  _wantsText;
+    bool  _wantsUAs;
 }
 
 @property (nonatomic, readonly) NSSet *INIntentClassNames;
@@ -24,20 +24,20 @@
 @property (nonatomic, readonly) NSArray *contentTypes;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) NSObject<SpotlightReceiverJob> *receiver;
-@property (nonatomic, readonly) unsigned int requestCount;
+@property (nonatomic, readonly) unsigned long long requestCount;
 @property (nonatomic, readonly) NSString *serviceName;
-@property (nonatomic) BOOL wantsHTML;
-@property (nonatomic) BOOL wantsIndexUpdates;
-@property (nonatomic) BOOL wantsInteractions;
-@property (nonatomic) BOOL wantsText;
-@property (nonatomic) BOOL wantsUAs;
+@property (nonatomic) bool wantsHTML;
+@property (nonatomic) bool wantsIndexUpdates;
+@property (nonatomic) bool wantsInteractions;
+@property (nonatomic) bool wantsText;
+@property (nonatomic) bool wantsUAs;
 
 + (void)setup;
 
 - (void).cxx_destruct;
 - (id)INIntentClassNames;
-- (BOOL)_wantsBundleID:(id)arg1;
-- (BOOL)_wantsContentType:(id)arg1;
+- (bool)_wantsBundleID:(id)arg1;
+- (bool)_wantsContentType:(id)arg1;
 - (void)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)addUserActions:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (id)bundleIDs;
@@ -51,21 +51,21 @@
 - (void)deleteInteractionsWithGroupIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3;
 - (void)indexFromBundle:(id)arg1 protectionClass:(id)arg2 items:(id)arg3 itemsContent:(id)arg4;
-- (id)initWithServiceName:(id)arg1 clientID:(int)arg2 wantsText:(BOOL)arg3 wantsHTML:(BOOL)arg4;
+- (id)initWithServiceName:(id)arg1 clientID:(long long)arg2 wantsText:(bool)arg3 wantsHTML:(bool)arg4;
 - (void)purgeFromBundle:(id)arg1 identifiers:(id)arg2;
 - (id)queue;
 - (id)receiver;
-- (unsigned int)requestCount;
+- (unsigned long long)requestCount;
 - (id)serviceName;
-- (void)setWantsHTML:(BOOL)arg1;
-- (void)setWantsIndexUpdates:(BOOL)arg1;
-- (void)setWantsInteractions:(BOOL)arg1;
-- (void)setWantsText:(BOOL)arg1;
-- (void)setWantsUAs:(BOOL)arg1;
-- (BOOL)wantsHTML;
-- (BOOL)wantsIndexUpdates;
-- (BOOL)wantsInteractions;
-- (BOOL)wantsText;
-- (BOOL)wantsUAs;
+- (void)setWantsHTML:(bool)arg1;
+- (void)setWantsIndexUpdates:(bool)arg1;
+- (void)setWantsInteractions:(bool)arg1;
+- (void)setWantsText:(bool)arg1;
+- (void)setWantsUAs:(bool)arg1;
+- (bool)wantsHTML;
+- (bool)wantsIndexUpdates;
+- (bool)wantsInteractions;
+- (bool)wantsText;
+- (bool)wantsUAs;
 
 @end

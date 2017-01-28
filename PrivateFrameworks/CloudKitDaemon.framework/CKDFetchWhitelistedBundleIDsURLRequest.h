@@ -3,20 +3,20 @@
  */
 
 @interface CKDFetchWhitelistedBundleIDsURLRequest : CKDURLRequest {
-    id /* block */  _bundleIDsFetchedBlock;
+    id  _bundleIDsFetchedBlock;
 }
 
-@property (nonatomic, copy) id /* block */ bundleIDsFetchedBlock;
+@property (nonatomic, copy) id bundleIDsFetchedBlock;
 
 - (void).cxx_destruct;
-- (id /* block */)bundleIDsFetchedBlock;
+- (id)bundleIDsFetchedBlock;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (BOOL)requiresTokenRegistration;
-- (void)setBundleIDsFetchedBlock:(id /* block */)arg1;
+- (bool)requiresTokenRegistration;
+- (void)setBundleIDsFetchedBlock:(id)arg1;
 - (id)sourceApplicationBundleIdentifier;
 
 @end

@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{?={Matrix<float' */ struct  color; /* unknown property attribute:  1>=[4f]}} */
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *locale;
 @property (nonatomic, readonly) NSString *shieldColorString;
 @property (nonatomic, readonly) NSString *shieldText;

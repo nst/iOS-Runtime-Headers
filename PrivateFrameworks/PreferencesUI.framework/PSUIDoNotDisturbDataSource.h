@@ -2,15 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIDoNotDisturbDataSource : PSSpecifierDataSource <PSTimeRangeCellDelegate> {
+@interface PSUIDoNotDisturbDataSource : PSSpecifierDataSource <PSListControllerTestableSpecifiers, PSTimeRangeCellDelegate> {
     PSSpecifier * _dndRangeSpec;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PSSpecifier *dndRangeSpec;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
 
 - (void).cxx_destruct;
 - (id)_allowedGroupsFooterText;
-- (BOOL)_isScheduled;
+- (bool)_isScheduled;
 - (void)_loadBBState;
 - (id)allowedDisruptionsGroup:(id)arg1;
 - (id)allowedDisruptionsGroupID;
@@ -23,7 +29,7 @@
 - (id)scheduledModeEnabled:(id)arg1;
 - (void)setDndRangeSpec:(id)arg1;
 - (void)setDoNotDisturb:(id)arg1 specifier:(id)arg2;
-- (void)setIsEffectiveWhileUnlocked:(BOOL)arg1;
+- (void)setIsEffectiveWhileUnlocked:(bool)arg1;
 - (void)setRepeatedCallsEnabled:(id)arg1;
 - (void)setScheduledModeEnabled:(id)arg1 specifier:(id)arg2;
 - (id)specifiersForSpecifier:(id)arg1 observer:(id)arg2;

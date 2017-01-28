@@ -6,22 +6,22 @@
     NSHashTable * _assetGroupInternals;
     ALAssetsLibrary * _assetsLibrary;
     NSMutableDictionary * _groupURLSByAlbumOID;
-    BOOL  _isValid;
+    bool  _isValid;
     PLPhotoLibrary * _photoLibrary;
 }
 
 @property (nonatomic) ALAssetsLibrary *assetsLibrary;
-@property (nonatomic) BOOL isValid;
+@property (nonatomic) bool isValid;
 @property (nonatomic, readonly, retain) PLPhotoLibrary *photoLibrary;
 
 - (id)assetsLibrary;
 - (void)dealloc;
 - (id)initWithAssetsLibrary:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)photoLibrary;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)registerAlbum:(struct NSObject { Class x1; }*)arg1 assetGroupPrivate:(id)arg2;
 - (void)setAssetsLibrary:(id)arg1;
-- (void)setIsValid:(BOOL)arg1;
+- (void)setIsValid:(bool)arg1;
 
 @end

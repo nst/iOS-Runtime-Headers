@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *sessions;
 @property (readonly) Class superclass;
 
@@ -20,8 +20,8 @@
 - (int)_cacheStateFromEvent:(id)arg1;
 - (id)_respondingPOPFromEvent:(id)arg1;
 - (void)_sanitizeNetworkEvent:(id)arg1;
-- (BOOL)_shouldFilterNetworkEvent:(id)arg1;
-- (void)_visitEventGroupsFromDate:(id)arg1 toDate:(id)arg2 block:(id /* block */)arg3;
+- (bool)_shouldFilterNetworkEvent:(id)arg1;
+- (void)_visitEventGroupsFromDate:(id)arg1 toDate:(id)arg2 block:(id)arg3;
 - (id)init;
 - (id)initWithCacheDirectory:(id)arg1;
 - (void)logNetworkEvent:(id)arg1;

@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)URL;
 - (void)dealloc;
-- (BOOL)receivedValidResponse:(id)arg1;
+- (bool)receivedValidResponse:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)start;
 

@@ -16,10 +16,10 @@
 
 @property (nonatomic) unsigned int domain;
 @property (nonatomic) unsigned int error;
-@property (nonatomic) BOOL hasDomain;
-@property (nonatomic) BOOL hasError;
-@property (nonatomic, readonly) BOOL hasTable;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDomain;
+@property (nonatomic) bool hasError;
+@property (nonatomic, readonly) bool hasTable;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *table;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -30,19 +30,19 @@
 - (id)dictionaryRepresentation;
 - (unsigned int)domain;
 - (unsigned int)error;
-- (BOOL)hasDomain;
-- (BOOL)hasError;
-- (BOOL)hasTable;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDomain;
+- (bool)hasError;
+- (bool)hasTable;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDomain:(unsigned int)arg1;
 - (void)setError:(unsigned int)arg1;
-- (void)setHasDomain:(BOOL)arg1;
-- (void)setHasError:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDomain:(bool)arg1;
+- (void)setHasError:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTable:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (id)table;

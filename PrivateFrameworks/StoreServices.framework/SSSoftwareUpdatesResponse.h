@@ -4,12 +4,12 @@
 
 @interface SSSoftwareUpdatesResponse : NSObject {
     NSError * _error;
-    BOOL  _failed;
+    bool  _failed;
     NSArray * _updateItems;
 }
 
 @property (readonly) NSError *error;
-@property (getter=isFailed, readonly) BOOL failed;
+@property (getter=isFailed, readonly) bool failed;
 @property (readonly) NSArray *updateItems;
 
 - (id)copyUpdateItemDictionaries;
@@ -19,7 +19,7 @@
 - (id)error;
 - (id)initWithError:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isFailed;
+- (bool)isFailed;
 - (void)setUpdateItemsWithItemDictionaries:(id)arg1;
 - (id)updateItems;
 

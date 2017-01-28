@@ -7,7 +7,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
@@ -15,6 +15,6 @@
 
 - (void)didFinishWithPlayerIDs:(id)arg1 message:(id)arg2;
 - (id)extensionObjectProxy;
-- (void)setChallenge:(id)arg1 playerInternals:(id)arg2 defaultMessage:(id)arg3 forcePicker:(BOOL)arg4;
+- (void)setChallenge:(id)arg1 playerInternals:(id)arg2 defaultMessage:(id)arg3 forcePicker:(bool)arg4;
 
 @end

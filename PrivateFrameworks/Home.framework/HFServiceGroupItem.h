@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSSet *controlItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (nonatomic, readonly) HMServiceGroup *serviceGroup;
 @property (nonatomic, retain) NSSet *serviceItemUUIDs;
@@ -25,20 +25,20 @@
 
 - (void).cxx_destruct;
 - (id)_aggregatedValueSource;
-- (float)_averageNumericalValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
+- (double)_averageNumericalValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (id)_initForCopyWithValueSource:(id)arg1 serviceGroup:(id)arg2 serviceItems:(id)arg3 controlItems:(id)arg4;
-- (BOOL)_isControlItem:(id)arg1 identicalToControlItem:(id)arg2;
-- (BOOL)_isControlItem:(id)arg1 similarToControlItem:(id)arg2;
+- (bool)_isControlItem:(id)arg1 identicalToControlItem:(id)arg2;
+- (bool)_isControlItem:(id)arg1 similarToControlItem:(id)arg2;
 - (id)_mergedIconDescriptorForServiceItems:(id)arg1;
 - (id)_mostCommonValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
-- (id)_mostCommonValueInServiceItems:(id)arg1 valueProvider:(id /* block */)arg2;
-- (BOOL)_reloadServiceItems;
+- (id)_mostCommonValueInServiceItems:(id)arg1 valueProvider:(id)arg2;
+- (bool)_reloadServiceItems;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)_unanimousValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (void)_updateControlItems;
 - (id)accessories;
 - (id)allControlItems;
-- (BOOL)containsActionableCharacteristics;
+- (bool)containsActionableCharacteristics;
 - (id)controlItems;
 - (id)controlPanelItems;
 - (id)copyWithValueSource:(id)arg1;

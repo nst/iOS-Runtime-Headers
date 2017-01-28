@@ -4,7 +4,7 @@
 
 @interface NSUnitPressure : NSDimension <NSSecureCoding>
 
-+ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned int)arg2;
++ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned long long)arg2;
 + (id)bars;
 + (id)baseUnit;
 + (id)gigapascals;

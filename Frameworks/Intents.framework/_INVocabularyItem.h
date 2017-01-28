@@ -10,15 +10,15 @@
 @property (setter=_setSiriID:, nonatomic, copy) NSUUID *_siriID;
 @property (nonatomic, readonly) NSString *string;
 
-+ (BOOL)isValidVocabularyString:(id)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (unsigned int)validateVocabularyString:(id)arg1;
++ (bool)isValidVocabularyString:(id)arg1;
++ (bool)supportsSecureCoding;
++ (unsigned long long)validateVocabularyString:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_dictionaryForSaving;
 - (id)_initWithUncheckedString:(id)arg1;
 - (id)_initWithVocabularyItem:(id)arg1;
-- (BOOL)_isSimilarEnoughToNotSync:(id)arg1;
+- (bool)_isSimilarEnoughToNotSync:(id)arg1;
 - (void)_setSiriID:(id)arg1;
 - (void)_setString:(id)arg1;
 - (id)_siriID;

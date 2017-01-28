@@ -3,15 +3,15 @@
  */
 
 @interface NSHTTPURLRequestParameters : NSObject {
-    BOOL  _pad1;
-    BOOL  _pad2;
-    BOOL  _pad3;
+    bool  _pad1;
+    bool  _pad2;
+    bool  _pad3;
     NSData * data;
     NSArray * extraCookies;
     NSMutableDictionary * fields;
     NSString * method;
-    unsigned int  pageNotFoundCacheLifetime;
-    BOOL  shouldHandleCookies;
+    unsigned long long  pageNotFoundCacheLifetime;
+    bool  shouldHandleCookies;
 }
 
 - (void)dealloc;

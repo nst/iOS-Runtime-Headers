@@ -3,16 +3,16 @@
  */
 
 @interface HMDRemoteDeviceConfirmationHandler : NSObject <HMFTimerDelegate> {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     double  _timeout;
     HMFTimer * _timer;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (copy) id /* block */ completionHandler;
+@property (copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (readonly) double timeout;
 @property (readonly) HMFTimer *timer;
@@ -20,10 +20,10 @@
 
 - (void).cxx_destruct;
 - (void)completeWithError:(id)arg1;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)init;
-- (id)initWithTimeout:(double)arg1 completionHandler:(id /* block */)arg2;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (id)initWithTimeout:(double)arg1 completionHandler:(id)arg2;
+- (void)setCompletionHandler:(id)arg1;
 - (void)start;
 - (double)timeout;
 - (id)timer;

@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <EKTimeZoneViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSTimeZone *timeZone;
 
@@ -25,18 +25,18 @@
 - (id)cities;
 - (id)delegate;
 - (id)initWithChooserStyle:(int)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)setCities:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)timeZone;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)willDismissSearchController:(id)arg1;
 
 @end

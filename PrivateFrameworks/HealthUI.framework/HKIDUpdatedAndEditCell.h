@@ -7,16 +7,16 @@
     NSDate * _dateSaved;
     <HKIDUpdatedAndEditCellDelegate> * _delegate;
     UIButton * _editButton;
-    BOOL  _hideEditButton;
+    bool  _hideEditButton;
     UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UILabel *dateLabel;
 @property (nonatomic, retain) NSDate *dateSaved;
 @property (nonatomic) <HKIDUpdatedAndEditCellDelegate> *delegate;
-@property (getter=isEditButtonDisabled, nonatomic) BOOL disableEditButton;
+@property (getter=isEditButtonDisabled, nonatomic) bool disableEditButton;
 @property (nonatomic, retain) UIButton *editButton;
-@property (getter=isEditButtonHidden, nonatomic) BOOL hideEditButton;
+@property (getter=isEditButtonHidden, nonatomic) bool hideEditButton;
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, retain) NSString *titleText;
 
@@ -26,15 +26,15 @@
 - (id)dateSaved;
 - (id)delegate;
 - (id)editButton;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isEditButtonDisabled;
-- (BOOL)isEditButtonHidden;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isEditButtonDisabled;
+- (bool)isEditButtonHidden;
 - (void)setDateLabel:(id)arg1;
 - (void)setDateSaved:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDisableEditButton:(BOOL)arg1;
+- (void)setDisableEditButton:(bool)arg1;
 - (void)setEditButton:(id)arg1;
-- (void)setHideEditButton:(BOOL)arg1;
+- (void)setHideEditButton:(bool)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (id)titleLabel;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)getVisibility:(BOOL*)arg1 offset:(double*)arg2 targetVisibilityOffset:(double*)arg3 forView:(struct NSObject { Class x1; }*)arg4;
+- (void)getVisibility:(bool*)arg1 offset:(double*)arg2 targetVisibilityOffset:(double*)arg3 forView:(struct NSObject { Class x1; }*)arg4;
 
 @end

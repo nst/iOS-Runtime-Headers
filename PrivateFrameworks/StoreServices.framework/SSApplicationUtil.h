@@ -10,6 +10,6 @@
 - (void).cxx_destruct;
 - (id)_connection;
 - (id)init;
-- (void)restartApplication:(id /* block */)arg1;
+- (void)restartApplication:(id)arg1;
 
 @end

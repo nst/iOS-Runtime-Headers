@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)updateFindCompletionProviderWithMatchesCount:(unsigned int)arg1 forString:(NSString *)arg2 forFindOnPageView:(_SFFindOnPageView *)arg3;
+- (void)updateFindCompletionProviderWithMatchesCount:(unsigned long long)arg1 forString:(NSString *)arg2 forFindOnPageView:(_SFFindOnPageView *)arg3;
 - (void)visibilityWillChangeForFindOnPageView:(_SFFindOnPageView *)arg1;
 - (WKWebView *)webViewForFindOnPageView:(_SFFindOnPageView *)arg1;
 

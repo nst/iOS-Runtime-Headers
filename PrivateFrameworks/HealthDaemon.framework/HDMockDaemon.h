@@ -9,6 +9,7 @@
     HDPluginManager * _pluginManager;
     <HDSyncEngine> * _syncEngine;
     HDAchievementAssetManager * achievementAssetManager;
+    HDAchievementDefinitionAlertManager * achievementDefinitionAlertManager;
     <HDNanoAlertSuppressionService> * alertSuppressionService;
     HDAuthorizationManager * authorizationManager;
     HDCurrentActivitySummaryHelper * currentActivitySummaryHelper;
@@ -25,6 +26,7 @@
 }
 
 @property (nonatomic, retain) HDAchievementAssetManager *achievementAssetManager;
+@property (nonatomic, retain) HDAchievementDefinitionAlertManager *achievementDefinitionAlertManager;
 @property (nonatomic, retain) <HDNanoAlertSuppressionService> *alertSuppressionService;
 @property (nonatomic, readonly) HDAuthorizationManager *authorizationManager;
 @property (retain) HDBackgroundTaskScheduler *backgroundTaskScheduler;
@@ -35,13 +37,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HDFitnessFriendsManager *fitnessFriendsManager;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) <HDHealthDatabase> *healthDatabase;
 @property (readonly) HDDeviceManager *healthDeviceManager;
 @property (retain) HDHealthServiceManager *healthServiceManager;
 @property (readonly) NSString *homeDirectoryPath;
 @property (readonly) NSURL *homeDirectoryURL;
-@property (readonly) BOOL isAppleWatch;
+@property (readonly) bool isAppleWatch;
 @property (readonly) NSObject<OS_dispatch_queue> *mainQueue;
 @property (nonatomic, readonly) HDMockPrimaryProfile *mockPrimaryProfile;
 @property (nonatomic, readonly) HDNanoSyncManager *nanoSyncManager;
@@ -58,6 +60,7 @@
 
 - (void).cxx_destruct;
 - (id)achievementAssetManager;
+- (id)achievementDefinitionAlertManager;
 - (id)alertSuppressionService;
 - (id)authorizationManager;
 - (id)backgroundTaskScheduler;
@@ -70,7 +73,7 @@
 - (void)endTransaction:(id)arg1;
 - (id)firstPartyWorkoutSnapshot;
 - (id)fitnessFriendsManager;
-- (BOOL)hasAnyActiveWorkouts;
+- (bool)hasAnyActiveWorkouts;
 - (id)healthDataCollectionManager;
 - (id)healthDataManager;
 - (id)healthDatabase;
@@ -80,14 +83,14 @@
 - (id)homeDirectoryPath;
 - (id)homeDirectoryURL;
 - (id)init;
-- (BOOL)isAppleWatch;
+- (bool)isAppleWatch;
 - (id)mainQueue;
 - (id)mockPrimaryProfile;
 - (id)nanoSyncManager;
-- (void)pauseAllActiveWorkoutsWithCompletion:(id /* block */)arg1;
-- (void)performBlockWithPowerAssertionIdentifier:(id)arg1 transactionName:(id)arg2 powerAssertionInterval:(double)arg3 block:(id /* block */)arg4;
-- (BOOL)persistAndNotifyDataObject:(id)arg1 device:(id)arg2 error:(id*)arg3;
-- (BOOL)persistAndNotifyDataObjects:(id)arg1 device:(id)arg2 error:(id*)arg3;
+- (void)pauseAllActiveWorkoutsWithCompletion:(id)arg1;
+- (void)performBlockWithPowerAssertionIdentifier:(id)arg1 transactionName:(id)arg2 powerAssertionInterval:(double)arg3 block:(id)arg4;
+- (bool)persistAndNotifyDataObject:(id)arg1 device:(id)arg2 error:(id*)arg3;
+- (bool)persistAndNotifyDataObjects:(id)arg1 device:(id)arg2 error:(id*)arg3;
 - (id)pluginManager;
 - (id)primaryProfile;
 - (id)processStateManager;
@@ -96,10 +99,11 @@
 - (id)routineGateway;
 - (id)serviceConnectionManager;
 - (void)setAchievementAssetManager:(id)arg1;
+- (void)setAchievementDefinitionAlertManager:(id)arg1;
 - (void)setAlertSuppressionService:(id)arg1;
 - (void)setBackgroundTaskScheduler:(id)arg1;
 - (void)setContentProtectionManager:(id)arg1;
-- (void)setCurrentActivityCacheOverrideDate:(id)arg1 timeZone:(id)arg2 completion:(id /* block */)arg3;
+- (void)setCurrentActivityCacheOverrideDate:(id)arg1 timeZone:(id)arg2 completion:(id)arg3;
 - (void)setCurrentActivitySummaryHelper:(id)arg1;
 - (void)setDataCollectionOptions:(id)arg1 forKey:(id)arg2 type:(id)arg3 clientUUID:(id)arg4;
 - (void)setHealthServiceManager:(id)arg1;

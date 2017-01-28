@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSSet *types;
 
 + (void)applyEntries:(id)arg1 withProfile:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

@@ -7,8 +7,8 @@
 }
 
 @property (nonatomic, readonly) BRCSharedAppLibrary *appLibrary;
-@property (nonatomic, readonly) BOOL isPrivateZone;
-@property (nonatomic, readonly) BOOL isSharedZone;
+@property (nonatomic, readonly) bool isPrivateZone;
+@property (nonatomic, readonly) bool isSharedZone;
 @property (nonatomic, readonly) NSString *mangledZoneID;
 @property (nonatomic, readonly) NSString *ownerName;
 @property (nonatomic, readonly) BRCSharedServerZone *sharedZone;
@@ -17,7 +17,7 @@
 - (void)addAcceptOperation:(id)arg1 forItemID:(id)arg2;
 - (id)appLibrary;
 - (id)asSharedClientZone;
-- (BOOL)isSharedZone;
+- (bool)isSharedZone;
 - (id)mangledZoneID;
 - (id)ownerName;
 - (void)removeAllShareAcceptationSidefaults;

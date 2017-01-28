@@ -6,44 +6,44 @@
     MPIdentifierSet * _identifiers;
     NSMutableSet * _initializedProperties;
     MPModelObject * _originalObject;
-    BOOL  _wasFullyInitialized;
+    bool  _wasFullyInitialized;
 }
 
 @property (nonatomic, readonly, copy) MPIdentifierSet *identifiers;
-@property (nonatomic, readonly) struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; } libraryAddStatusObserverConfiguration;
-@property (nonatomic, readonly) int libraryRemovalSupportedOptions;
+@property (nonatomic, readonly) struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; } libraryAddStatusObserverConfiguration;
+@property (nonatomic, readonly) long long libraryRemovalSupportedOptions;
 @property (nonatomic, readonly) MPIdentifierSet *originalIdentifierSet;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (void)initialize;
-+ (void)performWithoutEnforcement:(id /* block */)arg1;
++ (void)performWithoutEnforcement:(id)arg1;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
 + (id)requiredLibraryRemovalProperties;
-+ (BOOL)supportsKeepLocalStatusObservation;
-+ (BOOL)supportsLibraryAddStatusObservation;
-+ (BOOL)supportsLibraryRemoval;
++ (bool)supportsKeepLocalStatusObservation;
++ (bool)supportsLibraryAddStatusObservation;
++ (bool)supportsLibraryRemoval;
 
 - (void).cxx_destruct;
 - (void)appendIdentifiersToDescription:(id)arg1;
-- (id)copyWithIdentifiers:(id)arg1 block:(id /* block */)arg2;
+- (id)copyWithIdentifiers:(id)arg1 block:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)hasLoadedValueForKey:(id)arg1;
-- (BOOL)hasLoadedValuesForProperties:(id)arg1;
+- (id)descriptionWithType:(long long)arg1;
+- (bool)hasLoadedValueForKey:(id)arg1;
+- (bool)hasLoadedValuesForProperties:(id)arg1;
 - (id)identifiers;
-- (id)initWithIdentifiers:(id)arg1 block:(id /* block */)arg2;
-- (struct MPLibraryAddStatusObserverConfiguration { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; })libraryAddStatusObserverConfiguration;
-- (int)libraryRemovalSupportedOptions;
+- (id)initWithIdentifiers:(id)arg1 block:(id)arg2;
+- (struct MPLibraryAddStatusObserverConfiguration { bool x1; bool x2; bool x3; bool x4; bool x5; })libraryAddStatusObserverConfiguration;
+- (long long)libraryRemovalSupportedOptions;
 - (id)newKeepLocalStatusObserverConfiguration;
 - (id)originalIdentifierSet;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
 - (id)_radioStationMatchMetadata;
-- (BOOL)_shouldMatchArtist;
+- (bool)_shouldMatchArtist;
 - (id)radioStationMatchContext;
 
 @end

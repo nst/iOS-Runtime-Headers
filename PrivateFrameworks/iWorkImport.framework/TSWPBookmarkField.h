@@ -3,29 +3,29 @@
  */
 
 @interface TSWPBookmarkField : TSWPSmartField {
-    BOOL  _forRange;
-    BOOL  _hidden;
+    bool  _forRange;
+    bool  _hidden;
     NSString * _name;
 }
 
-@property (nonatomic) BOOL forRange;
-@property (nonatomic) BOOL hidden;
+@property (nonatomic) bool forRange;
+@property (nonatomic) bool hidden;
 @property (nonatomic, retain) NSString *name;
 
-- (BOOL)allowsEditing;
+- (bool)allowsEditing;
 - (int)attributeArrayKind;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
-- (BOOL)forRange;
-- (BOOL)hidden;
+- (bool)forRange;
+- (bool)hidden;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (void)loadFromArchive:(const struct BookmarkFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct SmartFieldArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; unsigned int x7; unsigned int x8; }*)arg1 unarchiver:(id)arg2;
 - (id)name;
 - (void)saveToArchive:(struct BookmarkFieldArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct SmartFieldArchive {} *x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; unsigned int x7; unsigned int x8; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
-- (void)setForRange:(BOOL)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setForRange:(bool)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setName:(id)arg1;
 - (int)smartFieldKind;
 - (int)styleAttributeArrayKind;

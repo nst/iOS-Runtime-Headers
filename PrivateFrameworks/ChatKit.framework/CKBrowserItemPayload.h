@@ -26,8 +26,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileURL;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPluginPayload:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPluginPayload:(id)arg1;
 - (id)mediaObject;
 - (id)mediaObjectFromPayload;
 - (id)photoShelfViewController;
@@ -36,9 +36,9 @@
 - (void)setMediaObject:(id)arg1;
 - (void)setPhotoShelfViewController:(id)arg1;
 - (void)setVideoComplementFileURL:(id)arg1;
-- (BOOL)shouldSendAsMediaObject;
-- (BOOL)shouldSendAsRichLink;
-- (BOOL)shouldSendAsText;
+- (bool)shouldSendAsMediaObject;
+- (bool)shouldSendAsRichLink;
+- (bool)shouldSendAsText;
 - (id)videoComplementFileURL;
 
 @end

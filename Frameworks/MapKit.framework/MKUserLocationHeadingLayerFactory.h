@@ -4,6 +4,6 @@
 
 @interface MKUserLocationHeadingLayerFactory : NSObject
 
-+ (id)headingLayerWithStyle:(int)arg1 userLocationView:(id)arg2;
++ (id)headingLayerWithStyle:(long long)arg1 userLocationView:(id)arg2;
 
 @end

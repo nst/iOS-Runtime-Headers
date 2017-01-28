@@ -6,7 +6,7 @@
 
 - (id)g_genericToSpecificPropertyMapMixedArea;
 - (id)genericToSpecificPropertyMap;
-- (BOOL)supportsSymbolDrawing;
-- (BOOL)supportsSymbolFillForSymbolType:(int)arg1;
+- (bool)supportsSymbolDrawing;
+- (bool)supportsSymbolFillForSymbolType:(int)arg1;
 
 @end

@@ -13,15 +13,15 @@
 @property (nonatomic) float originalScreenBrightness;
 
 + (id)exportedInterface;
-+ (void)requestDiagnosticsRemoteViewControllerWithConnectionHandler:(id /* block */)arg1;
++ (void)requestDiagnosticsRemoteViewControllerWithConnectionHandler:(id)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
 - (id)_diagnosticsServiceViewControllerProxy;
 - (id)delegate;
-- (void)didEnableVolumeHUD:(BOOL)arg1;
+- (void)didEnableVolumeHUD:(bool)arg1;
 - (void)didFinishWithError:(id)arg1;
-- (void)didSetScreenToBrightness:(float)arg1 animate:(BOOL)arg2;
+- (void)didSetScreenToBrightness:(float)arg1 animate:(bool)arg2;
 - (void)disconnect;
 - (id)localResponder;
 - (float)originalScreenBrightness;
@@ -29,8 +29,8 @@
 - (void)setLocalResponder:(id)arg1;
 - (void)setOriginalScreenBrightness:(float)arg1;
 - (void)teardown;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

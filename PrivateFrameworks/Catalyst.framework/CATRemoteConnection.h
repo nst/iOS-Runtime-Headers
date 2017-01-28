@@ -9,16 +9,16 @@
     NSString * _name;
     NSOutputStream * _outputStream;
     CATRemoteConnectionSocketOptions * _socketOptions;
-    BOOL  _usesSSL;
+    bool  _usesSSL;
     NSObject<OS_dispatch_source> * mConnectionTimeoutTimer;
     NSMutableArray * mEnqueuedStreamEvents;
     NSError * mInterruptionError;
-    BOOL  mIsScheduled;
+    bool  mIsScheduled;
     CATHTTPMessageParser * mMessageParser;
-    int  mPeerTrustState;
+    long long  mPeerTrustState;
     NSMutableArray * mPendingSendDataContexts;
     NSMutableData * mReadBuffer;
-    int  mState;
+    long long  mState;
     NSArray * mTrustedCertificates;
 }
 
@@ -26,19 +26,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CATRemoteConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSInputStream *inputStream;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSOutputStream *outputStream;
 @property (nonatomic, readonly) struct __SecTrust { }*peerTrust;
 @property (nonatomic, copy) CATRemoteConnectionSocketOptions *socketOptions;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usesSSL;
+@property (nonatomic) bool usesSSL;
 
 + (void)createConnectionPairWithConnection:(id*)arg1 andConnection:(id*)arg2;
 
 - (void).cxx_destruct;
-- (void)_stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)_stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)close;
 - (void)configureStreamSocketOptions;
 - (void)connectionDidInterruptWithError:(id)arg1;
@@ -59,8 +59,8 @@
 - (void)delegateDidSecureUsingServerIdentity:(struct __SecIdentity { }*)arg1 trustedCertificates:(id)arg2;
 - (void)delegateDidSendData:(id)arg1 userInfo:(id)arg2;
 - (id)description;
-- (void)enqueueEvent:(unsigned int)arg1 forStream:(id)arg2;
-- (BOOL)evaluatePeerTrust:(struct __SecTrust { }*)arg1;
+- (void)enqueueEvent:(unsigned long long)arg1 forStream:(id)arg2;
+- (bool)evaluatePeerTrust:(struct __SecTrust { }*)arg1;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (id)initWithNetService:(id)arg1;
 - (id)inputStream;
@@ -71,7 +71,7 @@
 - (struct __SecTrust { }*)peerTrust;
 - (void)scheduleStreams;
 - (void)secureUsingClientIdentity:(struct __SecIdentity { }*)arg1 trustedCertificates:(id)arg2;
-- (BOOL)secureUsingIdentity:(struct __SecIdentity { }*)arg1 trustedCertificates:(id)arg2 isServer:(BOOL)arg3;
+- (bool)secureUsingIdentity:(struct __SecIdentity { }*)arg1 trustedCertificates:(id)arg2 isServer:(bool)arg3;
 - (void)secureUsingServerIdentity:(struct __SecIdentity { }*)arg1 trustedCertificates:(id)arg2;
 - (void)sendData:(id)arg1 userInfo:(id)arg2;
 - (void)sendDataDidFail:(id)arg1 withError:(id)arg2;
@@ -82,12 +82,12 @@
 - (void)setName:(id)arg1;
 - (void)setOutputStream:(id)arg1;
 - (void)setSocketOptions:(id)arg1;
-- (void)setUsesSSL:(BOOL)arg1;
+- (void)setUsesSSL:(bool)arg1;
 - (id)socketOptions;
-- (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
+- (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)tryEvaluatingPeerTrustWithStream:(id)arg1;
-- (BOOL)trySendingData:(id)arg1 error:(id*)arg2;
+- (bool)trySendingData:(id)arg1 error:(id*)arg2;
 - (void)unscheduleStreams;
-- (BOOL)usesSSL;
+- (bool)usesSSL;
 
 @end

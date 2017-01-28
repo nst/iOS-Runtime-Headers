@@ -16,10 +16,10 @@
 
 @property (nonatomic) unsigned int count;
 @property (nonatomic, retain) NSData *data;
-@property (nonatomic) BOOL hasCount;
-@property (nonatomic, readonly) BOOL hasData;
-@property (nonatomic) BOOL hasServerID;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic) bool hasCount;
+@property (nonatomic, readonly) bool hasData;
+@property (nonatomic) bool hasServerID;
+@property (nonatomic) bool hasType;
 @property (nonatomic) unsigned int serverID;
 @property (nonatomic) int type;
 
@@ -31,20 +31,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCount;
-- (BOOL)hasData;
-- (BOOL)hasServerID;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCount;
+- (bool)hasData;
+- (bool)hasServerID;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)serverID;
 - (void)setCount:(unsigned int)arg1;
 - (void)setData:(id)arg1;
-- (void)setHasCount:(BOOL)arg1;
-- (void)setHasServerID:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasCount:(bool)arg1;
+- (void)setHasServerID:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setServerID:(unsigned int)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

@@ -10,7 +10,7 @@
     CLLocation * _location;
     NSArray * _peopleNames;
     PHPhotoLibrary * _photoLibrary;
-    unsigned int  _reason;
+    unsigned long long  _reason;
 }
 
 @property (nonatomic, retain) NSArray *blacklistedMemories;
@@ -20,7 +20,7 @@
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, retain) NSArray *peopleNames;
 @property (nonatomic, retain) PHPhotoLibrary *photoLibrary;
-@property (nonatomic) unsigned int reason;
+@property (nonatomic) unsigned long long reason;
 
 - (void).cxx_destruct;
 - (id)blacklistedMemories;
@@ -33,7 +33,7 @@
 - (id)location;
 - (id)peopleNames;
 - (id)photoLibrary;
-- (unsigned int)reason;
+- (unsigned long long)reason;
 - (void)setBlacklistedMemories:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setExistingMemories:(id)arg1;
@@ -41,6 +41,6 @@
 - (void)setLocation:(id)arg1;
 - (void)setPeopleNames:(id)arg1;
 - (void)setPhotoLibrary:(id)arg1;
-- (void)setReason:(unsigned int)arg1;
+- (void)setReason:(unsigned long long)arg1;
 
 @end

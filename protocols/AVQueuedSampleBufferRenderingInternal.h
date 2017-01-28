@@ -6,6 +6,6 @@
 @required
 
 - (void)copyFigSampleBufferAudioRenderer:(struct OpaqueFigSampleBufferAudioRenderer {}**)arg1;
-- (BOOL)setRenderSynchronizer:(AVSampleBufferRenderSynchronizer *)arg1 error:(id*)arg2;
+- (bool)setRenderSynchronizer:(AVSampleBufferRenderSynchronizer *)arg1 error:(id*)arg2;
 
 @end

@@ -8,7 +8,7 @@
 - (NSArray *)ccPeople;
 - (long long)conversationID;
 - (NSDate *)dateSent;
-- (BOOL)isPriority;
+- (bool)isPriority;
 - (NSString *)listID;
 - (<MPMailbox> *)mailbox;
 - (NSString *)persistentID;

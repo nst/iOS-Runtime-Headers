@@ -3,11 +3,11 @@
  */
 
 @interface HKPersonWeightFormatter : NSObject {
-    int  _localWeightUnit;
+    long long  _localWeightUnit;
     NSMassFormatter * _massFormatter;
 }
 
-@property (nonatomic, readonly) int localWeightUnit;
+@property (nonatomic, readonly) long long localWeightUnit;
 
 + (id)sharedFormatter;
 
@@ -17,8 +17,8 @@
 - (void)_updateRoundingIncrement;
 - (void)dealloc;
 - (id)init;
-- (int)localWeightUnit;
+- (long long)localWeightUnit;
 - (id)stringFromWeightInKilograms:(id)arg1;
-- (id)stringFromWeightValue:(double)arg1 inUnit:(int)arg2;
+- (id)stringFromWeightValue:(double)arg1 inUnit:(long long)arg2;
 
 @end

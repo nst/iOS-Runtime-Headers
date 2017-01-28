@@ -5,7 +5,7 @@
 
 @required
 
-- (long)setupWithTargetBaseStation:(NSDictionary *)arg1 andSettings:(NSDictionary *)arg2;
-- (long)setupWithTargetNetwork:(NSDictionary *)arg1;
+- (int)setupWithTargetBaseStation:(NSDictionary *)arg1 andSettings:(NSDictionary *)arg2;
+- (int)setupWithTargetNetwork:(NSDictionary *)arg1;
 
 @end

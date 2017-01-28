@@ -11,11 +11,11 @@
     }  _time;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)valueWithCMTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })CMTimeValue;
-- (BOOL)boolValue;
+- (bool)boolValue;
 - (BOOL)charValue;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,20 +24,20 @@
 - (void)encodeWithCoder:(id)arg1;
 - (float)floatValue;
 - (void)getValue:(void*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (int)intValue;
-- (int)integerValue;
-- (BOOL)isEqualToValue:(id)arg1;
+- (long long)integerValue;
+- (bool)isEqualToValue:(id)arg1;
 - (long long)longLongValue;
-- (long)longValue;
+- (long long)longValue;
 - (const char *)objCType;
 - (short)shortValue;
 - (unsigned char)unsignedCharValue;
 - (unsigned int)unsignedIntValue;
-- (unsigned int)unsignedIntegerValue;
+- (unsigned long long)unsignedIntegerValue;
 - (unsigned long long)unsignedLongLongValue;
-- (unsigned long)unsignedLongValue;
+- (unsigned long long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 
 @end

@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)addHashesForURL:(id)arg1;
 - (void)clear;
-- (BOOL)containsHashesForURL:(id)arg1;
+- (bool)containsHashesForURL:(id)arg1;
 - (id)init;
 
 @end

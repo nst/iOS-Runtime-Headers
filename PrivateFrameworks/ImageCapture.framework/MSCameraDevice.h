@@ -7,10 +7,10 @@
 }
 
 - (void)dealloc;
-- (BOOL)eject;
+- (bool)eject;
 - (void)enumerateContent;
 - (void)finalize;
 - (id)initWithVolumePath:(id)arg1 mediaPaths:(id)arg2;
-- (unsigned int)itemsInFolder:(char *)arg1;
+- (unsigned long long)itemsInFolder:(char *)arg1;
 
 @end

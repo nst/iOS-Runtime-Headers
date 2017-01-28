@@ -10,7 +10,7 @@
     PSSpecifier * _companionCardsGroupSpecifier;
     NSArray * _companionPassSpecifiers;
     NSArray * _companionPasses;
-    int  _context;
+    long long  _context;
     <PKPassbookSettingsDataSource> * _dataSource;
     NSString * _defaultCardIdentifier;
     PKPaymentPreferencesViewController * _defaultCardsController;
@@ -37,13 +37,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPassbookSettingsDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addPaymentCard;
 - (id)_bridgeSpecifiers;
-- (void)_canTransferForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_canTransferForPaymentPass:(id)arg1 withCompletion:(id)arg2;
 - (id)_companionPassSpecifiers;
 - (id)_currentDefaultPaymentPass;
 - (id)_defaultContactEmailSpecifier;
@@ -60,7 +60,7 @@
 - (id)_getDefaultPaymentCard;
 - (id)_getDefaultShippingAddress;
 - (void)_handleDefaultExpressFelicaTransitPassChangedTo:(id)arg1 withContainer:(id)arg2 preference:(id)arg3;
-- (void)_handleDefaultPaymentPassChangedTo:(id)arg1 withSender:(id)arg2 optionsController:(id)arg3 canPrompt:(BOOL)arg4;
+- (void)_handleDefaultPaymentPassChangedTo:(id)arg1 withSender:(id)arg2 optionsController:(id)arg3 canPrompt:(bool)arg4;
 - (void)_handleProvisioningError:(id)arg1 viewController:(id)arg2;
 - (id)_handoffSwitchGroupSpecifiers;
 - (id)_handoffSwitchSettingForSpecifier:(id)arg1;
@@ -69,7 +69,7 @@
 - (void)_openPrivacyLink;
 - (id)_passSpecifiers;
 - (int)_paymentPreferencesStyle;
-- (int)_paymentSetupContextForSettingsContext:(int)arg1;
+- (long long)_paymentSetupContextForSettingsContext:(long long)arg1;
 - (void)_performPhoneToWatchProvisioningForPaymentPass:(id)arg1;
 - (void)_presentCannotTransferAlert;
 - (void)_presentProvisioningPaymentPassNavController:(id)arg1 paymentPass:(id)arg2;
@@ -77,7 +77,7 @@
 - (void)_reloadPassData;
 - (void)_requestDelegatePresentViewController:(id)arg1;
 - (id)_restrictedModeSpecifier;
-- (void)_setCardAddProvisioningButtonEnabled:(BOOL)arg1 forPaymentPass:(id)arg2;
+- (void)_setCardAddProvisioningButtonEnabled:(bool)arg1 forPaymentPass:(id)arg2;
 - (void)_setHandoffSwitchSetting:(id)arg1 forSpecifier:(id)arg2;
 - (void)_setLockscreenSwitchSetting:(id)arg1 forSpecifier:(id)arg2;
 - (id)_settingsSpecifiers;
@@ -99,7 +99,7 @@
 - (void)addCardTappedForPaymentPassWithUniqueID:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 context:(int)arg3;
+- (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 context:(long long)arg3;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
 - (void)refreshDefaultCard;
 - (void)refreshExpressFelicaTransitCard;

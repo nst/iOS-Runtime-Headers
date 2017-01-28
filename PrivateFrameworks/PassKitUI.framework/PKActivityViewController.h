@@ -6,8 +6,8 @@
     NSArray * _additionalEvents;
     NSArray * _events;
     UIRefreshControl * _refreshControl;
-    BOOL  _refreshing;
-    BOOL  _visible;
+    bool  _refreshing;
+    bool  _visible;
 }
 
 - (void).cxx_destruct;
@@ -15,16 +15,16 @@
 - (void)_updateRefreshControl;
 - (void)dealloc;
 - (id)init;
-- (id)initWithStyle:(int)arg1 numberOfSections:(unsigned int)arg2;
+- (id)initWithStyle:(long long)arg1 numberOfSections:(unsigned long long)arg2;
 - (void)loadView;
 - (void)refresh:(id)arg1;
-- (BOOL)shouldMapSection:(unsigned int)arg1;
+- (bool)shouldMapSection:(unsigned long long)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)title;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

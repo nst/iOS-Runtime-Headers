@@ -7,8 +7,8 @@
     NSString * _shareEtag;
 }
 
-@property (nonatomic, readonly) BOOL hasRoutingKey;
-@property (nonatomic, readonly) BOOL hasShareEtag;
+@property (nonatomic, readonly) bool hasRoutingKey;
+@property (nonatomic, readonly) bool hasShareEtag;
 @property (nonatomic, retain) NSString *routingKey;
 @property (nonatomic, retain) NSString *shareEtag;
 
@@ -17,12 +17,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRoutingKey;
-- (BOOL)hasShareEtag;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRoutingKey;
+- (bool)hasShareEtag;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routingKey;
 - (void)setRoutingKey:(id)arg1;
 - (void)setShareEtag:(id)arg1;

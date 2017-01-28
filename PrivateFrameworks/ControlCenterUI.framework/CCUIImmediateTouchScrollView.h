@@ -3,14 +3,14 @@
  */
 
 @interface CCUIImmediateTouchScrollView : UIScrollView {
-    BOOL  _hitTestToContentArea;
+    bool  _hitTestToContentArea;
 }
 
-@property (nonatomic) BOOL hitTestToContentArea;
+@property (nonatomic) bool hitTestToContentArea;
 
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (BOOL)hitTestToContentArea;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)setHitTestToContentArea:(BOOL)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)hitTestToContentArea;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setHitTestToContentArea:(bool)arg1;
 
 @end

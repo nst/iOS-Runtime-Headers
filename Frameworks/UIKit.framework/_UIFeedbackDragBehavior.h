@@ -4,26 +4,26 @@
 
 @interface _UIFeedbackDragBehavior : UIFeedbackGenerator <UIFeedbackGeneratorUserInteractionDriven> {
     _UIFeedback<_UIFeedbackContinuousPlayable> * _playingContinuousFeedback;
-    int  _state;
+    long long  _state;
 }
 
 @property (getter=_dragConfiguration, nonatomic, readonly) _UIFeedbackDragBehaviorConfiguration *dragConfiguration;
 @property (getter=_playingContinuousFeedback, setter=_setPlayingContinuousFeedback:, nonatomic, retain) _UIFeedback<_UIFeedbackContinuousPlayable> *playingContinuousFeedback;
-@property (getter=_state, setter=_setState:, nonatomic) int state;
+@property (getter=_state, setter=_setState:, nonatomic) long long state;
 
 + (Class)_configurationClass;
 + (id)dragBehaviorWithCoordinateSpace:(id)arg1 configuration:(id)arg2;
-+ (id)dragBehaviorWithStyle:(int)arg1 coordinateSpace:(id)arg2;
-+ (id)retargetBehaviorWithStyle:(int)arg1 coordinateSpace:(id)arg2;
++ (id)dragBehaviorWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
++ (id)retargetBehaviorWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_dragConfiguration;
 - (id)_playingContinuousFeedback;
 - (void)_setPlayingContinuousFeedback:(id)arg1;
-- (void)_setState:(int)arg1;
+- (void)_setState:(long long)arg1;
 - (void)_startPlayingContinuousFeedback;
 - (void)_startPlayingContinuousFeedbackNow;
-- (int)_state;
+- (long long)_state;
 - (id)_stats_key;
 - (void)_stopPlayingContinuousFeedback;
 - (void)dropTargetUpdated;

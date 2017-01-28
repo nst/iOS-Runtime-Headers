@@ -5,6 +5,6 @@
 
 @required
 
-- (void)enableVolumeHUD:(BOOL)arg1;
+- (void)enableVolumeHUD:(bool)arg1;
 
 @end

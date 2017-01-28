@@ -35,14 +35,14 @@
 @property (nonatomic, retain) SGMUnknownContactInformationShown *unknownContactInformationShown;
 
 + (id)instance;
-+ (void)recordBannerConfirmedWithContact:(id)arg1 proposedCNContact:(id)arg2 confirmedCNContact:(id)arg3 inApp:(struct SGMBannerDisplayApp_ { unsigned int x1; })arg4;
-+ (void)recordBannerConfirmedWithEvent:(id)arg1 proposedEKEvent:(id)arg2 confirmedEKEvent:(id)arg3 inApp:(struct SGMBannerDisplayApp_ { unsigned int x1; })arg4;
-+ (void)recordBannerRejectedWithContact:(id)arg1 inApp:(struct SGMBannerDisplayApp_ { unsigned int x1; })arg2;
-+ (void)recordBannerRejectedWithEvent:(id)arg1 inApp:(struct SGMBannerDisplayApp_ { unsigned int x1; })arg2;
-+ (void)recordBannerShownWithContacts:(id)arg1 events:(id)arg2 inApp:(struct SGMBannerDisplayApp_ { unsigned int x1; })arg3;
-+ (void)recordContactDetailEngagementWithResolution:(int)arg1 detailType:(struct SGMContactDetailType_ { unsigned int x1; })arg2 extractionType:(unsigned int)arg3;
++ (void)recordBannerConfirmedWithContact:(id)arg1 proposedCNContact:(id)arg2 confirmedCNContact:(id)arg3 inApp:(struct SGMBannerDisplayApp_ { unsigned long long x1; })arg4;
++ (void)recordBannerConfirmedWithEvent:(id)arg1 proposedEKEvent:(id)arg2 confirmedEKEvent:(id)arg3 inApp:(struct SGMBannerDisplayApp_ { unsigned long long x1; })arg4;
++ (void)recordBannerRejectedWithContact:(id)arg1 inApp:(struct SGMBannerDisplayApp_ { unsigned long long x1; })arg2;
++ (void)recordBannerRejectedWithEvent:(id)arg1 inApp:(struct SGMBannerDisplayApp_ { unsigned long long x1; })arg2;
++ (void)recordBannerShownWithContacts:(id)arg1 events:(id)arg2 inApp:(struct SGMBannerDisplayApp_ { unsigned long long x1; })arg3;
++ (void)recordContactDetailEngagementWithResolution:(long long)arg1 detailType:(struct SGMContactDetailType_ { unsigned long long x1; })arg2 extractionType:(unsigned long long)arg3;
 + (void)recordContactDetailUsage:(id)arg1 withApp:(id)arg2;
-+ (void)recordMaybeContactFrom:(unsigned int)arg1;
++ (void)recordMaybeContactFrom:(unsigned long long)arg1;
 + (void)recordMaybeContactRequested;
 
 - (void).cxx_destruct;

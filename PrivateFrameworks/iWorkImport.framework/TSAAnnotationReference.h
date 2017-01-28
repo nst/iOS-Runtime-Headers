@@ -4,17 +4,17 @@
 
 @interface TSAAnnotationReference : NSObject {
     <TSKAnnotation> * _annotation;
-    unsigned int  _pageIndex;
+    unsigned long long  _pageIndex;
 }
 
 @property (nonatomic, retain) <TSKAnnotation> *annotation;
-@property (nonatomic) unsigned int pageIndex;
+@property (nonatomic) unsigned long long pageIndex;
 
 - (id)annotation;
 - (void)dealloc;
-- (unsigned int)pageIndex;
-- (BOOL)referencesAnnotation:(id)arg1;
+- (unsigned long long)pageIndex;
+- (bool)referencesAnnotation:(id)arg1;
 - (void)setAnnotation:(id)arg1;
-- (void)setPageIndex:(unsigned int)arg1;
+- (void)setPageIndex:(unsigned long long)arg1;
 
 @end

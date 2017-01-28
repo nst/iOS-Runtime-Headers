@@ -4,15 +4,15 @@
 
 @interface SAMPRateMediaEntity : SABaseClientBoundCommand
 
-@property (nonatomic) int rating;
+@property (nonatomic) long long rating;
 
 + (id)rateMediaEntity;
 + (id)rateMediaEntityWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)rating;
-- (BOOL)requiresResponse;
-- (void)setRating:(int)arg1;
+- (long long)rating;
+- (bool)requiresResponse;
+- (void)setRating:(long long)arg1;
 
 @end

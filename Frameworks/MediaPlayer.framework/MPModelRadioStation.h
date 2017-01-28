@@ -3,15 +3,15 @@
  */
 
 @interface MPModelRadioStation : MPModelObject {
-    id /* block */  _artworkCatalogBlock;
-    BOOL  _beats1;
+    id  _artworkCatalogBlock;
+    bool  _beats1;
     NSString * _editorNotes;
     NSString * _name;
     NSString * _shortEditorNotes;
 }
 
-@property (nonatomic, copy) id /* block */ artworkCatalogBlock;
-@property (getter=isBeats1, nonatomic) BOOL beats1;
+@property (nonatomic, copy) id artworkCatalogBlock;
+@property (getter=isBeats1, nonatomic) bool beats1;
 @property (nonatomic, copy) NSString *editorNotes;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *shortEditorNotes;
@@ -29,13 +29,13 @@
 
 - (void).cxx_destruct;
 - (id)artworkCatalog;
-- (id /* block */)artworkCatalogBlock;
-- (id)descriptionWithType:(int)arg1;
+- (id)artworkCatalogBlock;
+- (id)descriptionWithType:(long long)arg1;
 - (id)editorNotes;
-- (BOOL)isBeats1;
+- (bool)isBeats1;
 - (id)name;
-- (void)setArtworkCatalogBlock:(id /* block */)arg1;
-- (void)setBeats1:(BOOL)arg1;
+- (void)setArtworkCatalogBlock:(id)arg1;
+- (void)setBeats1:(bool)arg1;
 - (void)setEditorNotes:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setShortEditorNotes:(id)arg1;

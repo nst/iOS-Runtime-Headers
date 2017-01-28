@@ -6,30 +6,30 @@
     AVVideoCompositionRenderContextInternal * _internal;
 }
 
-@property (nonatomic, readonly) struct { float x1; float x2; float x3; float x4; } edgeWidths;
-@property (nonatomic, readonly) BOOL highQualityRendering;
-@property (nonatomic, readonly) struct { int x1; int x2; } pixelAspectRatio;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } edgeWidths;
+@property (nonatomic, readonly) bool highQualityRendering;
+@property (nonatomic, readonly) struct { long long x1; long long x2; } pixelAspectRatio;
 @property (nonatomic, readonly) float renderScale;
-@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } renderTransform;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } renderTransform;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 @property (nonatomic, readonly) AVVideoComposition *videoComposition;
 
 + (id)renderContextPropertiesFromFigCompositor:(struct OpaqueFigVideoCompositor { }*)arg1;
 
 - (void)_willDeallocOrFinalize;
 - (void)dealloc;
-- (struct { float x1; float x2; float x3; float x4; })edgeWidths;
+- (struct { double x1; double x2; double x3; double x4; })edgeWidths;
 - (void)finalize;
-- (BOOL)hasEqualPropertiesToFigVideoCompositor:(struct OpaqueFigVideoCompositor { }*)arg1;
-- (BOOL)highQualityRendering;
+- (bool)hasEqualPropertiesToFigVideoCompositor:(struct OpaqueFigVideoCompositor { }*)arg1;
+- (bool)highQualityRendering;
 - (id)initWithFigVideoCompositor:(struct OpaqueFigVideoCompositor { }*)arg1 clientRequiredPixelBufferAttributes:(id)arg2 videoComposition:(id)arg3 pixelBufferPool:(struct __CVPixelBufferPool { }*)arg4;
-- (BOOL)isBufferYCbCr:(struct __CVBuffer { }*)arg1;
+- (bool)isBufferYCbCr:(struct __CVBuffer { }*)arg1;
 - (struct __CVBuffer { }*)newPixelBuffer;
-- (struct { int x1; int x2; })pixelAspectRatio;
+- (struct { long long x1; long long x2; })pixelAspectRatio;
 - (struct __CVPixelBufferPool { }*)pixelBufferPool;
 - (float)renderScale;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })renderTransform;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })renderTransform;
+- (struct CGSize { double x1; double x2; })size;
 - (id)videoComposition;
 
 @end

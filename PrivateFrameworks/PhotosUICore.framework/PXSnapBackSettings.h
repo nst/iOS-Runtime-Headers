@@ -3,16 +3,16 @@
  */
 
 @interface PXSnapBackSettings : PXSettings {
-    BOOL  _allowSnapBackHistoryMenu;
+    bool  _allowSnapBackHistoryMenu;
 }
 
-@property (nonatomic) BOOL allowSnapBackHistoryMenu;
+@property (nonatomic) bool allowSnapBackHistoryMenu;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)allowSnapBackHistoryMenu;
-- (void)setAllowSnapBackHistoryMenu:(BOOL)arg1;
+- (bool)allowSnapBackHistoryMenu;
+- (void)setAllowSnapBackHistoryMenu:(bool)arg1;
 - (void)setDefaultValues;
 
 @end

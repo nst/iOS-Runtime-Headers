@@ -5,11 +5,11 @@
 
 @optional
 
-- (int)largestAvailableDisplayModeForWidget:(WGWidgetHostingViewController *)arg1;
-- (BOOL)shouldPurgeArchivedSnapshotsForWidget:(WGWidgetHostingViewController *)arg1;
-- (int)userSpecifiedDisplayModeForWidget:(WGWidgetHostingViewController *)arg1;
-- (void)widget:(WGWidgetHostingViewController *)arg1 didChangeLargestAvailableDisplayMode:(int)arg2;
-- (void)widget:(WGWidgetHostingViewController *)arg1 didChangeUserSpecifiedDisplayMode:(int)arg2;
+- (long long)largestAvailableDisplayModeForWidget:(WGWidgetHostingViewController *)arg1;
+- (bool)shouldPurgeArchivedSnapshotsForWidget:(WGWidgetHostingViewController *)arg1;
+- (long long)userSpecifiedDisplayModeForWidget:(WGWidgetHostingViewController *)arg1;
+- (void)widget:(WGWidgetHostingViewController *)arg1 didChangeLargestAvailableDisplayMode:(long long)arg2;
+- (void)widget:(WGWidgetHostingViewController *)arg1 didChangeUserSpecifiedDisplayMode:(long long)arg2;
 - (void)widget:(WGWidgetHostingViewController *)arg1 didEncounterProblematicSnapshotAtURL:(NSURL *)arg2;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface ADCountdownButton : UIControl {
     UIImageView * _backgroundView;
-    BOOL  _dimmed;
+    bool  _dimmed;
     UIImage * _dimmedIconImage;
     UIImage * _iconImage;
     UIImageView * _iconView;
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, retain) UIImageView *backgroundView;
-@property (nonatomic) BOOL dimmed;
+@property (nonatomic) bool dimmed;
 @property (nonatomic, retain) UIImage *dimmedIconImage;
 @property (nonatomic, retain) UIImage *iconImage;
 @property (nonatomic, retain) UIImageView *iconView;
@@ -27,27 +27,27 @@
 - (id)backgroundView;
 - (double)countdownProgress;
 - (void)dealloc;
-- (BOOL)dimmed;
+- (bool)dimmed;
 - (id)dimmedIconImage;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)iconImage;
 - (id)iconView;
 - (id)init;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isAccessibilityElement;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isAccessibilityElement;
 - (id)outlineProgressLayer;
 - (id)outlineView;
 - (void)setBackgroundView:(id)arg1;
 - (void)setCountdownProgress:(double)arg1;
-- (void)setDimmed:(BOOL)arg1;
-- (void)setDimmed:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setDimmed:(bool)arg1;
+- (void)setDimmed:(bool)arg1 animated:(bool)arg2;
 - (void)setDimmedIconImage:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setIconImage:(id)arg1;
 - (void)setIconView:(id)arg1;
 - (void)setOutlineProgressLayer:(id)arg1;
 - (void)setOutlineView:(id)arg1;
-- (void)startEnablingButtonWithCountdownDuration:(double)arg1 completionHandler:(id /* block */)arg2;
+- (void)startEnablingButtonWithCountdownDuration:(double)arg1 completionHandler:(id)arg2;
 
 @end

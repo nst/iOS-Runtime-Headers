@@ -6,10 +6,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAUIImageResource *image;
 @property (nonatomic, copy) NSArray *monogramName;
-@property (nonatomic) BOOL sizeToFitImage;
+@property (nonatomic) bool sizeToFitImage;
 @property (nonatomic, copy) NSString *subtitleText;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *titleText;
@@ -23,10 +23,10 @@
 - (id)monogramName;
 - (void)setImage:(id)arg1;
 - (void)setMonogramName:(id)arg1;
-- (void)setSizeToFitImage:(BOOL)arg1;
+- (void)setSizeToFitImage:(bool)arg1;
 - (void)setSubtitleText:(id)arg1;
 - (void)setTitleText:(id)arg1;
-- (BOOL)sizeToFitImage;
+- (bool)sizeToFitImage;
 - (id)subtitleText;
 - (id)titleText;
 

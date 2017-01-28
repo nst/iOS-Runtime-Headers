@@ -12,21 +12,21 @@
 
 - (void)configureDataSource;
 - (void)configureNearbyDataSource;
-- (void)dataSource:(id)arg1 didUpdatePlaceholderVisibility:(BOOL)arg2;
+- (void)dataSource:(id)arg1 didUpdatePlaceholderVisibility:(bool)arg2;
 - (void)dealloc;
 - (void)didEnterLoadedState;
 - (void)didEnterNoContentState;
 - (id)hiddenPlayers;
 - (id)initWithGame:(id)arg1 hiddenPlayers:(id)arg2;
 - (id)invitePickerDataSource;
-- (void)segmentedSectionDataSource:(id)arg1 inSection:(unsigned int)arg2 didSelectDataSourceWithIndex:(int)arg3;
+- (void)segmentedSectionDataSource:(id)arg1 inSection:(unsigned long long)arg2 didSelectDataSourceWithIndex:(long long)arg3;
 - (void)setHiddenPlayers:(id)arg1;
 - (void)setInvitePickerDataSource:(id)arg1;
-- (void)setSupportsNearby:(BOOL)arg1;
+- (void)setSupportsNearby:(bool)arg1;
 - (id)splitingDataSource;
 - (void)updateNoContentTitles;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

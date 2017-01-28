@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSMutableDictionary *data;
 @property (nonatomic, retain) NSString *reason;
 
-+ (id)errorStatusWithCode:(int)arg1;
++ (id)errorStatusWithCode:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)code;

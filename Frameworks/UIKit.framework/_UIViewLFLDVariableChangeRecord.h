@@ -3,19 +3,19 @@
  */
 
 @interface _UIViewLFLDVariableChangeRecord : _UIViewLFLDChangeRecord {
-    float  _value;
+    double  _value;
     NSISVariable * _variable;
     UIView * _variableDelegate;
 }
 
-@property (nonatomic, readonly) float value;
+@property (nonatomic, readonly) double value;
 @property (nonatomic, readonly) NSISVariable *variable;
 @property (nonatomic, readonly) UIView *variableDelegate;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithVariable:(id)arg1 inLayoutEngine:(id)arg2;
-- (float)value;
+- (double)value;
 - (id)variable;
 - (id)variableDelegate;
 

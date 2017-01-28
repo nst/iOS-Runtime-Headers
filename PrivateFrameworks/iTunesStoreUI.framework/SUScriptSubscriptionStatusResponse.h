@@ -63,10 +63,10 @@
 - (id)eligibilityStatusUnknown;
 - (id)hasFamily;
 - (id)hasFamilyMembers;
-- (unsigned int)hash;
-- (id)initWithSubscriptionStatus:(id)arg1 isFinal:(BOOL)arg2;
+- (unsigned long long)hash;
+- (id)initWithSubscriptionStatus:(id)arg1 isFinal:(bool)arg2;
 - (id)isDiscoveryModeEligible;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)isFamilyOrganizer;
 - (id)isFamilySubscription;
 - (id)isFinal;

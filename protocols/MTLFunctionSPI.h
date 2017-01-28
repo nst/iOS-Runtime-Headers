@@ -6,6 +6,6 @@
 @required
 
 - (NSString *)filePath;
-- (int)lineNumber;
+- (long long)lineNumber;
 
 @end

@@ -4,29 +4,29 @@
 
 @interface TDTextureAssetInfo : NSObject <NSCopying> {
     NSURL * _fileURL;
-    BOOL  _flipped;
-    unsigned int  _mipLevel;
-    int  _textureFace;
+    bool  _flipped;
+    unsigned long long  _mipLevel;
+    long long  _textureFace;
 }
 
 @property (nonatomic, copy) NSURL *fileURL;
-@property (nonatomic) BOOL flipped;
-@property (nonatomic) unsigned int mipLevel;
+@property (nonatomic) bool flipped;
+@property (nonatomic) unsigned long long mipLevel;
 @property (nonatomic, copy) NSURL *mipsURL;
-@property (nonatomic) int textureFace;
+@property (nonatomic) long long textureFace;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)fileURL;
-- (BOOL)flipped;
-- (unsigned int)mipLevel;
+- (bool)flipped;
+- (unsigned long long)mipLevel;
 - (id)mipsURL;
 - (void)setFileURL:(id)arg1;
-- (void)setFlipped:(BOOL)arg1;
-- (void)setMipLevel:(unsigned int)arg1;
+- (void)setFlipped:(bool)arg1;
+- (void)setMipLevel:(unsigned long long)arg1;
 - (void)setMipsURL:(id)arg1;
-- (void)setTextureFace:(int)arg1;
-- (int)textureFace;
+- (void)setTextureFace:(long long)arg1;
+- (long long)textureFace;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface FCTrendingStoriesFeedGroupEmittingOperation : FCFeedGroupEmittingOperation {
-    int  _desiredArticlesCount;
+    long long  _desiredArticlesCount;
 }
 
-@property (nonatomic) int desiredArticlesCount;
+@property (nonatomic) long long desiredArticlesCount;
 
 - (id)_filterTrendingHeadlines:(id)arg1;
-- (int)desiredArticlesCount;
+- (long long)desiredArticlesCount;
 - (void)performOperation;
-- (void)setDesiredArticlesCount:(int)arg1;
+- (void)setDesiredArticlesCount:(long long)arg1;
 
 @end

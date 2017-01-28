@@ -5,11 +5,11 @@
 
 @required
 
-- (unsigned int)height;
-- (BOOL)scaleToFit;
-- (void)setHeight:(unsigned int)arg1;
-- (void)setScaleToFit:(BOOL)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)width;
+- (unsigned long long)height;
+- (bool)scaleToFit;
+- (void)setHeight:(unsigned long long)arg1;
+- (void)setScaleToFit:(bool)arg1;
+- (void)setWidth:(unsigned long long)arg1;
+- (unsigned long long)width;
 
 @end

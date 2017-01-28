@@ -9,7 +9,7 @@
 @property (nonatomic, copy) NSString *requestCode;
 
 - (void).cxx_destruct;
-- (BOOL)isUserInitiated;
+- (bool)isUserInitiated;
 - (id)requestCode;
 - (void)setRequestCode:(id)arg1;
 - (id)urlRequest;

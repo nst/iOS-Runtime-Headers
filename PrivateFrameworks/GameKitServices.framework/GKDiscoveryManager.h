@@ -7,19 +7,19 @@
     NSString * _deviceID;
     NSMutableDictionary * _peers;
     NSObject<OS_dispatch_queue> * _peersQueue;
-    id /* block */  _playerFoundHandler;
+    id  _playerFoundHandler;
     NSString * _playerID;
-    id /* block */  _playerLostHandler;
-    id /* block */  _receiveDataHandler;
+    id  _playerLostHandler;
+    id  _receiveDataHandler;
 }
 
 @property (nonatomic, retain) GKDiscoveryBonjour *bonjour;
 @property (nonatomic, copy) NSString *deviceID;
 @property (nonatomic, retain) NSMutableDictionary *peers;
-@property (nonatomic, copy) id /* block */ playerFoundHandler;
+@property (nonatomic, copy) id playerFoundHandler;
 @property (nonatomic, copy) NSString *playerID;
-@property (nonatomic, copy) id /* block */ playerLostHandler;
-@property (nonatomic, copy) id /* block */ receiveDataHandler;
+@property (nonatomic, copy) id playerLostHandler;
+@property (nonatomic, copy) id receiveDataHandler;
 
 + (id)parseDeviceIDFromServiceName:(id)arg1;
 
@@ -38,22 +38,22 @@
 - (void)passDataToGKLayer:(id)arg1 fromPeer:(id)arg2;
 - (id)peers;
 - (id)peersList;
-- (id /* block */)playerFoundHandler;
+- (id)playerFoundHandler;
 - (id)playerID;
-- (id /* block */)playerLostHandler;
+- (id)playerLostHandler;
 - (void)processEvent:(int)arg1 forPeer:(id)arg2 withUserInfo:(id)arg3;
-- (id /* block */)receiveDataHandler;
+- (id)receiveDataHandler;
 - (void)removeInterface:(unsigned int)arg1 forPeerWithServiceName:(id)arg2;
 - (void)resolveForPeer:(id)arg1;
-- (void)sendDataToParticipant:(id)arg1 deviceID:(id)arg2 data:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)sendDataToParticipant:(id)arg1 deviceID:(id)arg2 data:(id)arg3 withCompletionHandler:(id)arg4;
 - (id)serviceNameforDeviceID:(id)arg1 playerID:(id)arg2;
 - (void)setBonjour:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setPeers:(id)arg1;
-- (void)setPlayerFoundHandler:(id /* block */)arg1;
+- (void)setPlayerFoundHandler:(id)arg1;
 - (void)setPlayerID:(id)arg1;
-- (void)setPlayerLostHandler:(id /* block */)arg1;
-- (void)setReceiveDataHandler:(id /* block */)arg1;
+- (void)setPlayerLostHandler:(id)arg1;
+- (void)setReceiveDataHandler:(id)arg1;
 - (id)startAdvertisingLocalPlayer:(id)arg1 discoveryInfo:(id)arg2;
 - (void)startBrowsingLocalPlayer:(id)arg1;
 - (void)stopAdvertising;

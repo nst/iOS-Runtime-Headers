@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridge, IKStyleMediaQueryEvaluator> {
+@interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridgeInternal, IKStyleMediaQueryEvaluator> {
     IKAppContext * _appContext;
     <IKAppDocumentDelegate> * _delegate;
     NSError * _error;
@@ -11,14 +11,16 @@
     double  _impressionThreshold;
     NSMutableDictionary * _impressions;
     IKDOMDocument * _jsDocument;
+    NSMutableDictionary * _mediaQueryCache;
     IKViewElement * _navigationBarElement;
     IKJSObject * _owner;
+    bool  _parsingDOM;
     NSHashTable * _styleChangeObservers;
     IKViewElementStyleFactory * _styleFactory;
-    BOOL  _subtreeUpdated;
+    bool  _subtreeUpdated;
     IKViewElement * _templateElement;
     IKViewElement * _toolbarElement;
-    BOOL  _updated;
+    bool  _updated;
 }
 
 @property (readonly) IKAppContext *appContext;
@@ -26,7 +28,7 @@
 @property (nonatomic) <IKAppDocumentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) IKHeadElement *headElement;
 @property (retain) NSString *identifier;
 @property (nonatomic) double impressionThreshold;
@@ -37,15 +39,16 @@
 @property (nonatomic, readonly) IKJSObject *owner;
 @property (nonatomic, retain) NSHashTable *styleChangeObservers;
 @property (nonatomic, retain) IKViewElementStyleFactory *styleFactory;
-@property (getter=isSubtreeUpdated) BOOL subtreeUpdated;
+@property (getter=isSubtreeUpdated) bool subtreeUpdated;
 @property (readonly) Class superclass;
 @property (retain) IKViewElement *templateElement;
 @property (retain) IKViewElement *toolbarElement;
-@property (getter=isUpdated, nonatomic) BOOL updated;
+@property (getter=isUpdated, nonatomic) bool updated;
 
 - (void).cxx_destruct;
 - (void)_addStyleChangeObserver:(id)arg1;
-- (BOOL)_clearUpdatesForElement:(id)arg1;
+- (bool)_clearUpdatesForElement:(id)arg1;
+- (bool)_isUpdateAllowed;
 - (void)_removeStyleChangeObserver:(id)arg1;
 - (void)_setViewElementStylesDirty;
 - (void)_updateWithXML:(id)arg1;
@@ -54,15 +57,15 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)error;
-- (BOOL)evaluateStyleMediaQueryList:(id)arg1;
+- (bool)evaluateStyleMediaQueryList:(id)arg1;
 - (id)headElement;
 - (id)identifier;
 - (double)impressionThreshold;
 - (id)impressions;
-- (id)impressionsMatching:(id)arg1 reset:(BOOL)arg2;
+- (id)impressionsMatching:(id)arg1 reset:(bool)arg2;
 - (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3;
-- (BOOL)isSubtreeUpdated;
-- (BOOL)isUpdated;
+- (bool)isSubtreeUpdated;
+- (bool)isUpdated;
 - (id)jsDocument;
 - (id)navigationBarElement;
 - (id)navigationDocument;
@@ -70,14 +73,14 @@
 - (void)onDisappear;
 - (void)onImpressionsChange:(id)arg1;
 - (void)onLoad;
-- (void)onNeedsUpdateWithCompletion:(id /* block */)arg1;
+- (void)onNeedsUpdateWithCompletion:(id)arg1;
 - (void)onUnload;
 - (void)onUpdate;
-- (void)onViewAttributesChangeWithArguments:(id)arg1 completion:(id /* block */)arg2;
+- (void)onViewAttributesChangeWithArguments:(id)arg1 completion:(id)arg2;
 - (id)owner;
 - (void)recordImpressionsForViewElements:(id)arg1;
 - (id)recordedImpressions;
-- (id)recordedImpressions:(BOOL)arg1;
+- (id)recordedImpressions:(bool)arg1;
 - (id)retrieveJSElementForViewElement:(id)arg1 jsContext:(id)arg2;
 - (void)runTestWithName:(id)arg1 options:(id)arg2;
 - (void)scrollToTop;
@@ -91,10 +94,10 @@
 - (void)setNeedsUpdateForDocument:(id)arg1;
 - (void)setStyleChangeObservers:(id)arg1;
 - (void)setStyleFactory:(id)arg1;
-- (void)setSubtreeUpdated:(BOOL)arg1;
+- (void)setSubtreeUpdated:(bool)arg1;
 - (void)setTemplateElement:(id)arg1;
 - (void)setToolbarElement:(id)arg1;
-- (void)setUpdated:(BOOL)arg1;
+- (void)setUpdated:(bool)arg1;
 - (void)setViewElementStylesDirty;
 - (id)snapshotImpressions;
 - (id)styleChangeObservers;

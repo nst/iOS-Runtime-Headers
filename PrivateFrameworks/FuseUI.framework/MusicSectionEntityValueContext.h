@@ -4,18 +4,18 @@
 
 @interface MusicSectionEntityValueContext : MusicEntityValueContext {
     NSString * _localizedTitle;
-    BOOL  _wantsLocalizedTitle;
+    bool  _wantsLocalizedTitle;
 }
 
 @property (nonatomic, copy) NSString *localizedTitle;
-@property (nonatomic) BOOL wantsLocalizedTitle;
+@property (nonatomic) bool wantsLocalizedTitle;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)localizedTitle;
 - (void)resetOutputValues;
 - (void)setLocalizedTitle:(id)arg1;
-- (void)setWantsLocalizedTitle:(BOOL)arg1;
-- (BOOL)wantsLocalizedTitle;
+- (void)setWantsLocalizedTitle:(bool)arg1;
+- (bool)wantsLocalizedTitle;
 
 @end

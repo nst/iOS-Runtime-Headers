@@ -14,17 +14,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __CFDictionary { }*)createDictionaryRef;
 - (id)downCaption;
-- (int)flavor;
+- (long long)flavor;
 - (struct CGPDFForm { }*)icon;
 - (id)init;
-- (id)initWithAnnotationDictionary:(struct CGPDFDictionary { }*)arg1 forFlavor:(int)arg2;
+- (id)initWithAnnotationDictionary:(struct CGPDFDictionary { }*)arg1 forFlavor:(long long)arg2;
 - (id)rolloverCaption;
 - (int)rotation;
-- (BOOL)scaleProportional;
+- (bool)scaleProportional;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCaption:(id)arg1;
 - (void)setDownCaption:(id)arg1;
-- (void)setFlavor:(int)arg1;
+- (void)setFlavor:(long long)arg1;
 - (void)setRolloverCaption:(id)arg1;
 - (void)setRotation:(int)arg1;
 

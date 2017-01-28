@@ -7,7 +7,7 @@
     NSString * _directoryPath;
     NSXPCListener * _listener;
     APSConnection * _pushConnection;
-    BOOL  _setupAssistanceRunning;
+    bool  _setupAssistanceRunning;
     _KSTextReplacementManager * _textReplacementManager;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -15,21 +15,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *directoryPath;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSXPCListener *listener;
 @property (nonatomic, retain) APSConnection *pushConnection;
-@property (nonatomic) BOOL setupAssistanceRunning;
+@property (nonatomic) bool setupAssistanceRunning;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) _KSTextReplacementManager *textReplacementManager;
 
-+ (BOOL)isBlackListed:(unsigned int)arg1;
++ (bool)isBlackListed:(unsigned int)arg1;
 + (id)textReplacementServer;
 
 - (void).cxx_destruct;
-- (BOOL)_cancelPendingUpdateForClient:(id)arg1;
+- (bool)_cancelPendingUpdateForClient:(id)arg1;
 - (void)_performCleanup;
-- (void)addEntries:(id)arg1 removeEntries:(id)arg2 forClient:(id)arg3 withCompletionHandler:(id /* block */)arg4;
-- (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)addEntries:(id)arg1 removeEntries:(id)arg2 forClient:(id)arg3 withCompletionHandler:(id)arg4;
+- (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)buddySetupDidFinish;
 - (void)cancelPendingUpdates;
 - (void)cleanup;
@@ -40,24 +40,24 @@
 - (id)directoryPath;
 - (id)init;
 - (id)initWithDatabaseDirectoryPath:(id)arg1;
-- (BOOL)isSetupAssistantRunning;
+- (bool)isSetupAssistantRunning;
 - (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)pushConnection;
-- (void)queryTextReplacementsWithCallback:(id /* block */)arg1;
-- (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(id /* block */)arg2;
+- (void)queryTextReplacementsWithCallback:(id)arg1;
+- (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(id)arg2;
 - (void)registerForPushNotifications;
 - (void)removeAllEntries;
 - (void)requestPeriodicSync;
-- (void)requestSyncWithCompletionBlock:(id /* block */)arg1;
+- (void)requestSyncWithCompletionBlock:(id)arg1;
 - (void)runMigration;
 - (void)scheduleSyncTask;
 - (void)setDirectoryPath:(id)arg1;
 - (void)setListener:(id)arg1;
 - (void)setPushConnection:(id)arg1;
-- (void)setSetupAssistanceRunning:(BOOL)arg1;
+- (void)setSetupAssistanceRunning:(bool)arg1;
 - (void)setTextReplacementManager:(id)arg1;
-- (BOOL)setupAssistanceRunning;
+- (bool)setupAssistanceRunning;
 - (void)shutdown;
 - (void)start;
 - (id)textReplacementEntries;

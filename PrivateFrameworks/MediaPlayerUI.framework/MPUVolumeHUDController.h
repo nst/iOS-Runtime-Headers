@@ -12,7 +12,7 @@
 - (id)categoriesToEnabledStates;
 - (void)dealloc;
 - (id)init;
-- (void)setVolumeHUDEnabled:(BOOL)arg1 forCategory:(id)arg2;
-- (BOOL)volumeHUDEnabledForCategory:(id)arg1;
+- (void)setVolumeHUDEnabled:(bool)arg1 forCategory:(id)arg2;
+- (bool)volumeHUDEnabledForCategory:(id)arg1;
 
 @end

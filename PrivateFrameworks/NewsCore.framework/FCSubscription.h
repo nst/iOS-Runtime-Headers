@@ -3,25 +3,25 @@
  */
 
 @interface FCSubscription : NSObject {
-    BOOL  _canRetry;
+    bool  _canRetry;
     NSDate * _dateAdded;
     NSString * _errorMessage;
-    BOOL  _notificationsEnabled;
+    bool  _notificationsEnabled;
     NSURL * _pollingURL;
     NSString * _subscriptionID;
-    unsigned int  _subscriptionType;
+    unsigned long long  _subscriptionType;
     NSString * _tagID;
     NSString * _title;
     NSURL * _url;
 }
 
-@property (nonatomic, readonly) BOOL canRetry;
+@property (nonatomic, readonly) bool canRetry;
 @property (nonatomic, readonly, copy) NSDate *dateAdded;
 @property (nonatomic, readonly) NSString *errorMessage;
-@property (nonatomic, readonly) BOOL notificationsEnabled;
+@property (nonatomic, readonly) bool notificationsEnabled;
 @property (nonatomic, readonly) NSURL *pollingURL;
 @property (nonatomic, readonly, copy) NSString *subscriptionID;
-@property (nonatomic, readonly) unsigned int subscriptionType;
+@property (nonatomic, readonly) unsigned long long subscriptionType;
 @property (nonatomic, retain) NSString *tagID;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) NSURL *url;
@@ -29,23 +29,23 @@
 + (id)mutedSubscriptionWithSubscriptionID:(id)arg1 tagID:(id)arg2 dateAdded:(id)arg3;
 + (id)pendingSubscriptionWithSubscriptionID:(id)arg1 url:(id)arg2 title:(id)arg3 pollingURL:(id)arg4 dateAdded:(id)arg5;
 + (id)subscriptionWithSubscriptionID:(id)arg1 dictionaryRepresentation:(id)arg2;
-+ (id)subscriptionWithSubscriptionID:(id)arg1 tagID:(id)arg2 dateAdded:(id)arg3 notificationsEnabled:(BOOL)arg4;
++ (id)subscriptionWithSubscriptionID:(id)arg1 tagID:(id)arg2 dateAdded:(id)arg3 notificationsEnabled:(bool)arg4;
 
 - (void).cxx_destruct;
-- (BOOL)canRetry;
+- (bool)canRetry;
 - (id)dateAdded;
 - (id)dictionaryRepresentation;
 - (id)errorMessage;
-- (id)initWithSubscriptionID:(id)arg1 tagID:(id)arg2 dateAdded:(id)arg3 subscriptionType:(unsigned int)arg4 notificationsEnabled:(BOOL)arg5;
+- (id)initWithSubscriptionID:(id)arg1 tagID:(id)arg2 dateAdded:(id)arg3 subscriptionType:(unsigned long long)arg4 notificationsEnabled:(bool)arg5;
 - (id)initWithSubscriptionID:(id)arg1 url:(id)arg2 title:(id)arg3 pollingURL:(id)arg4 dateAdded:(id)arg5;
-- (BOOL)isTypeMutedTag;
-- (BOOL)isTypePending;
-- (BOOL)isTypeTag;
-- (BOOL)notificationsEnabled;
+- (bool)isTypeMutedTag;
+- (bool)isTypePending;
+- (bool)isTypeTag;
+- (bool)notificationsEnabled;
 - (id)pollingURL;
 - (void)setTagID:(id)arg1;
 - (id)subscriptionID;
-- (unsigned int)subscriptionType;
+- (unsigned long long)subscriptionType;
 - (id)tagID;
 - (id)title;
 - (id)url;

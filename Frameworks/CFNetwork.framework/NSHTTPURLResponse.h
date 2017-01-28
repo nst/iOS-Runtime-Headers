@@ -7,14 +7,14 @@
 }
 
 @property (readonly, copy) NSDictionary *allHeaderFields;
-@property (readonly) int statusCode;
-@property (readonly) BOOL tsu_isSuccess;
+@property (readonly) long long statusCode;
+@property (readonly) bool tsu_isSuccess;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
-+ (BOOL)isErrorStatusCode:(int)arg1;
-+ (id)localizedStringForStatusCode:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)isErrorStatusCode:(long long)arg1;
++ (id)localizedStringForStatusCode:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)_clientCertificateChain;
 - (id)_clientCertificateState;
@@ -27,9 +27,12 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
-- (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
-- (int)statusCode;
+- (id)initWithURL:(id)arg1 statusCode:(long long)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
+- (id)initWithURL:(id)arg1 statusCode:(long long)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
+
+// Image: /Library/MobileSubstrate/DynamicLibraries/Activator.dylib
+
+- (long long)statusCode;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
@@ -37,7 +40,7 @@
 + (id)sl_twitterResponseObjectErrorCode:(id)arg1;
 
 - (int)sl_twitterResponseType:(id)arg1;
-- (int)sl_twitterResponseTypeFromResponseObject:(id)arg1 looseAuthFailureMatching:(BOOL)arg2;
+- (int)sl_twitterResponseTypeFromResponseObject:(id)arg1 looseAuthFailureMatching:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -55,7 +58,7 @@
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 
 - (id)_dateFromExpires;
-- (BOOL)_getCacheControlMaxAge:(double*)arg1;
+- (bool)_getCacheControlMaxAge:(double*)arg1;
 - (id)_iTunesStore_valueForHTTPHeader:(id)arg1;
 - (id)expirationDate;
 - (double)expirationInterval;
@@ -63,6 +66,6 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-- (BOOL)tsu_isSuccess;
+- (bool)tsu_isSuccess;
 
 @end

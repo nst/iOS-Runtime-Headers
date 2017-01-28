@@ -6,9 +6,9 @@
 
 + (id)_arrayByAddingValuesFromArrayOfDictionaries:(id)arg1;
 + (id)_entriesBySectionIndexForArrayOfStringEntries:(id)arg1 currentCollation:(id)arg2;
-+ (BOOL)isAppTrusted;
-+ (BOOL)isAppleTV;
-+ (BOOL)runningAnInternalBuild;
++ (bool)isAppTrusted;
++ (bool)isAppleTV;
++ (bool)runningAnInternalBuild;
 + (id)sort:(id)arg1 options:(id)arg2;
 
 @end

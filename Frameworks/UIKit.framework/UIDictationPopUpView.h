@@ -4,7 +4,7 @@
 
 @interface UIDictationPopUpView : UIDictationView
 
-- (BOOL)drawsOwnBackground;
+- (bool)drawsOwnBackground;
 - (void)layoutSubviews;
 - (void)returnToKeyboard;
 - (void)setState:(int)arg1;

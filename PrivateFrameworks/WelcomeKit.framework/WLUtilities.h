@@ -4,6 +4,6 @@
 
 @interface WLUtilities : NSObject
 
-+ (BOOL)shouldUseLegacyPairingScheme;
++ (bool)shouldUseLegacyPairingScheme;
 
 @end

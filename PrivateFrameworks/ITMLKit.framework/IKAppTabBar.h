@@ -14,7 +14,6 @@
 - (id)controller;
 - (id)initWithTabBarController:(id)arg1;
 - (id)jsTabBar;
-- (void)onReload;
 - (void)onSelect;
 - (void)setJsTabBar:(id)arg1;
 

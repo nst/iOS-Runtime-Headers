@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isWidgetExtensionVisible:(NSString *)arg1;
+- (bool)isWidgetExtensionVisible:(NSString *)arg1;
 
 @end

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSString *deviceId;
 @property (nonatomic, readonly) CMMotionTimeRange *timeRange;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

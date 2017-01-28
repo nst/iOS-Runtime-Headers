@@ -5,7 +5,7 @@
 @interface PSBiometricIdentity : NSObject
 
 + (id)identities;
-+ (int)maximumIdentityCount;
++ (long long)maximumIdentityCount;
 + (id)nameForIdentity:(id)arg1;
 + (id)nextIdentityName;
 + (void)removeIdentity:(id)arg1;

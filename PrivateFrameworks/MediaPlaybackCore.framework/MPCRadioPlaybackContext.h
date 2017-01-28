@@ -8,7 +8,7 @@
     RadioStation * _station;
     RadioStationMatchContext * _stationMatchContext;
     NSArray * _tracks;
-    BOOL  _willContinuePlayback;
+    bool  _willContinuePlayback;
 }
 
 @property (nonatomic, retain) RadioStationMatchContext *nowPlayingMatchContext;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) RadioStation *station;
 @property (nonatomic, retain) RadioStationMatchContext *stationMatchContext;
 @property (nonatomic, copy) NSArray *tracks;
-@property (nonatomic) BOOL willContinuePlayback;
+@property (nonatomic) bool willContinuePlayback;
 
 + (Class)queueFeederClass;
 
@@ -30,10 +30,10 @@
 - (void)setStation:(id)arg1;
 - (void)setStationMatchContext:(id)arg1;
 - (void)setTracks:(id)arg1;
-- (void)setWillContinuePlayback:(BOOL)arg1;
+- (void)setWillContinuePlayback:(bool)arg1;
 - (id)station;
 - (id)stationMatchContext;
 - (id)tracks;
-- (BOOL)willContinuePlayback;
+- (bool)willContinuePlayback;
 
 @end

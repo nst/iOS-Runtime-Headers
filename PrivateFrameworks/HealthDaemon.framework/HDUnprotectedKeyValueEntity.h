@@ -5,6 +5,6 @@
 @interface HDUnprotectedKeyValueEntity : HDKeyValueEntity
 
 + (id)databaseTable;
-+ (int)protectionClass;
++ (long long)protectionClass;
 
 @end

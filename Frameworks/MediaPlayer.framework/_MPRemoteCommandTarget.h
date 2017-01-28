@@ -3,15 +3,15 @@
  */
 
 @interface _MPRemoteCommandTarget : NSObject {
-    id /* block */  _block;
+    id  _block;
 }
 
-@property (nonatomic, copy) id /* block */ block;
+@property (nonatomic, copy) id block;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
-- (id)initWithTargetBlock:(id /* block */)arg1;
-- (int)invokeWithRemoteCommandEvent:(id)arg1;
-- (void)setBlock:(id /* block */)arg1;
+- (id)block;
+- (id)initWithTargetBlock:(id)arg1;
+- (long long)invokeWithRemoteCommandEvent:(id)arg1;
+- (void)setBlock:(id)arg1;
 
 @end

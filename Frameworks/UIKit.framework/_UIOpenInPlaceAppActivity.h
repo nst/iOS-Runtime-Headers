@@ -4,7 +4,7 @@
 
 @interface _UIOpenInPlaceAppActivity : _UIOpenInAppActivity
 
-- (BOOL)_activitySupportsPromiseURLs;
+- (bool)_activitySupportsPromiseURLs;
 - (id)_nonImportActivityTitle;
 - (id)activityType;
 - (void)performActivity;

@@ -3,39 +3,39 @@
  */
 
 @interface IMMessageStatusChatItem : IMTranscriptChatItem {
-    unsigned int  _count;
-    int  _expireStatusType;
-    int  _statusType;
+    unsigned long long  _count;
+    long long  _expireStatusType;
+    long long  _statusType;
     NSDate * _time;
     NSDate * _timeAdded;
     NSDate * _timeStale;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) NSString *errorText;
-@property (nonatomic, readonly) int expireStatusType;
-@property (nonatomic, readonly) BOOL isFromMe;
-@property (nonatomic, readonly) int messageStatusType;
-@property (nonatomic, readonly) int statusType;
+@property (nonatomic, readonly) long long expireStatusType;
+@property (nonatomic, readonly) bool isFromMe;
+@property (nonatomic, readonly) long long messageStatusType;
+@property (nonatomic, readonly) long long statusType;
 @property (nonatomic, readonly) NSDate *time;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 - (void).cxx_destruct;
-- (id)_initWithItem:(id)arg1 expireStatusType:(int)arg2 count:(unsigned int)arg3;
-- (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4;
-- (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4 expireStatusType:(int)arg5;
+- (id)_initWithItem:(id)arg1 expireStatusType:(long long)arg2 count:(unsigned long long)arg3;
+- (id)_initWithItem:(id)arg1 statusType:(long long)arg2 time:(id)arg3 count:(unsigned long long)arg4;
+- (id)_initWithItem:(id)arg1 statusType:(long long)arg2 time:(id)arg3 count:(unsigned long long)arg4 expireStatusType:(long long)arg5;
 - (void)_setTimeAdded:(id)arg1;
 - (id)_timeAdded;
 - (id)_timeStale;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (id)errorText;
-- (int)expireStatusType;
-- (BOOL)isFromMe;
-- (int)messageStatusType;
-- (int)statusType;
+- (long long)expireStatusType;
+- (bool)isFromMe;
+- (long long)messageStatusType;
+- (long long)statusType;
 - (id)time;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit

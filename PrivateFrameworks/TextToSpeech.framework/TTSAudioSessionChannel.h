@@ -4,16 +4,16 @@
 
 @interface TTSAudioSessionChannel : NSObject {
     AVAudioSessionChannelDescription * _channel;
-    unsigned long  _channelLabel;
+    unsigned int  _channelLabel;
     NSString * _channelName;
-    unsigned int  _channelNumber;
+    unsigned long long  _channelNumber;
     NSString * _owningPortUID;
 }
 
 @property (nonatomic, retain) AVAudioSessionChannelDescription *channel;
-@property (nonatomic) unsigned long channelLabel;
+@property (nonatomic) unsigned int channelLabel;
 @property (nonatomic, retain) NSString *channelName;
-@property (nonatomic) unsigned int channelNumber;
+@property (nonatomic) unsigned long long channelNumber;
 @property (nonatomic, retain) NSString *owningPortUID;
 
 + (id)channelWithChannel:(id)arg1;
@@ -21,18 +21,18 @@
 
 - (void).cxx_destruct;
 - (id)channel;
-- (unsigned long)channelLabel;
+- (unsigned int)channelLabel;
 - (id)channelName;
-- (unsigned int)channelNumber;
+- (unsigned long long)channelNumber;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)owningPortUID;
 - (void)setChannel:(id)arg1;
-- (void)setChannelLabel:(unsigned long)arg1;
+- (void)setChannelLabel:(unsigned int)arg1;
 - (void)setChannelName:(id)arg1;
-- (void)setChannelNumber:(unsigned int)arg1;
+- (void)setChannelNumber:(unsigned long long)arg1;
 - (void)setOwningPortUID:(id)arg1;
 
 @end

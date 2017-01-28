@@ -10,6 +10,6 @@
 
 @optional
 
-- (int)compare:(id <CPLReference>)arg1;
+- (long long)compare:(id <CPLReference>)arg1;
 
 @end

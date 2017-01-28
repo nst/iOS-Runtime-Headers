@@ -34,23 +34,23 @@
 @property (nonatomic, copy) NSString *storeRecommendationID;
 @property (nonatomic) long long storeSubscriptionAdamID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)appendIdentifiersToDescription:(id)arg1 withIdentifiersPrefix:(id)arg2;
 - (id)contentItemID;
-- (id)copyWithBlock:(id /* block */)arg1;
+- (id)copyWithBlock:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (long long)deviceLibraryPersistentID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)globalPlaylistID;
-- (BOOL)hasCommonIdentifierWithIdentifierSet:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasCommonIdentifierWithIdentifierSet:(id)arg1;
+- (unsigned long long)hash;
 - (long long)homeSharingLibraryID;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lyricsID;
 - (id)radioStationHash;
 - (long long)radioStationID;

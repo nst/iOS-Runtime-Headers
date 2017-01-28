@@ -10,6 +10,6 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 withName:(id)arg2 withTimeout:(double)arg3 withCallback:(id /* block */)arg4;
+- (id)initWithQueue:(id)arg1 withName:(id)arg2 withTimeout:(double)arg3 withCallback:(id)arg4;
 
 @end

@@ -5,30 +5,30 @@
 @interface NPTunnelFlowUDP : NPTunnelFlow {
     NWUDPSession * _directSession;
     NSDate * _firstPacketDate;
-    unsigned int  _savedDataSize;
+    unsigned long long  _savedDataSize;
     NSMutableArray * _savedDirectData;
 }
 
 @property (retain) NWUDPSession *directSession;
 @property (retain) NSDate *firstPacketDate;
-@property unsigned int savedDataSize;
+@property unsigned long long savedDataSize;
 @property (retain) NSMutableArray *savedDirectData;
 
 - (void).cxx_destruct;
-- (unsigned int)currentMaxSendDataSize;
+- (unsigned long long)currentMaxSendDataSize;
 - (id)directSession;
 - (id)firstPacketDate;
 - (void)handleAppData:(id)arg1 andError:(id)arg2;
 - (void)handleIncomingData:(id)arg1 andError:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)readDataFromClient;
-- (unsigned int)savedDataSize;
+- (unsigned long long)savedDataSize;
 - (id)savedDirectData;
 - (void)sendDataOnDirectSession:(id)arg1;
-- (void)sendDataToClient:(id)arg1 fromTunnel:(BOOL)arg2;
+- (void)sendDataToClient:(id)arg1 fromTunnel:(bool)arg2;
 - (void)setDirectSession:(id)arg1;
 - (void)setFirstPacketDate:(id)arg1;
-- (void)setSavedDataSize:(unsigned int)arg1;
+- (void)setSavedDataSize:(unsigned long long)arg1;
 - (void)setSavedDirectData:(id)arg1;
 - (void)startDirectConnection;
 - (void)startHandlingIncomingData;

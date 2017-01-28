@@ -10,16 +10,16 @@
 @property (nonatomic, readonly) UINavigationController *containedNavController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) id hostingViewController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_updatedContentSizeForPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })_updatedContentSizeForPreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)containedNavController;
 - (id)hostingViewController;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(bool)arg3;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setContainedNavController:(id)arg1;
 - (void)viewDidLayoutSubviews;

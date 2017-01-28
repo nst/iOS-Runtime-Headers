@@ -3,15 +3,15 @@
  */
 
 @interface CKComparisonOptionsValidator : CKPredicateValidatorInstance {
-    unsigned int  _options;
+    unsigned long long  _options;
 }
 
-@property (nonatomic) unsigned int options;
+@property (nonatomic) unsigned long long options;
 
 - (id)CKPropertiesDescription;
-- (id)initWithOptions:(unsigned int)arg1;
-- (unsigned int)options;
-- (void)setOptions:(unsigned int)arg1;
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (id)initWithOptions:(unsigned long long)arg1;
+- (unsigned long long)options;
+- (void)setOptions:(unsigned long long)arg1;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 
 @end

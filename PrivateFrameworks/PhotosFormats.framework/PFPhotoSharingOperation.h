@@ -8,13 +8,13 @@
     NSObject<OS_dispatch_queue> * _externalIsolation;
     NSString * _generatedFileName;
     NSURL * _imageURL;
-    BOOL  _operationComplete;
+    bool  _operationComplete;
     NSError * _operationError;
-    BOOL  _operationSuccess;
+    bool  _operationSuccess;
     NSURL * _outputDirectoryURL;
-    BOOL  _shouldConvertToSRGB;
-    BOOL  _shouldStripLocation;
-    BOOL  _shouldStripMetadata;
+    bool  _shouldConvertToSRGB;
+    bool  _shouldStripLocation;
+    bool  _shouldStripMetadata;
 }
 
 @property (setter=_setAdjustments:, nonatomic, retain) PFAssetAdjustments *_adjustments;
@@ -24,10 +24,10 @@
 @property (nonatomic, readonly) NSError *operationError;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
 @property (nonatomic, readonly) float progress;
-@property (nonatomic) BOOL shouldConvertToSRGB;
-@property (nonatomic) BOOL shouldStripLocation;
-@property (nonatomic) BOOL shouldStripMetadata;
-@property (nonatomic, readonly) BOOL success;
+@property (nonatomic) bool shouldConvertToSRGB;
+@property (nonatomic) bool shouldStripLocation;
+@property (nonatomic) bool shouldStripMetadata;
+@property (nonatomic, readonly) bool success;
 
 - (void).cxx_destruct;
 - (id)_adjustments;
@@ -44,12 +44,12 @@
 - (void)setCustomAccessibilityLabel:(id)arg1;
 - (void)setGeneratedFileName:(id)arg1;
 - (void)setOutputDirectoryURL:(id)arg1;
-- (void)setShouldConvertToSRGB:(BOOL)arg1;
-- (void)setShouldStripLocation:(BOOL)arg1;
-- (void)setShouldStripMetadata:(BOOL)arg1;
-- (BOOL)shouldConvertToSRGB;
-- (BOOL)shouldStripLocation;
-- (BOOL)shouldStripMetadata;
-- (BOOL)success;
+- (void)setShouldConvertToSRGB:(bool)arg1;
+- (void)setShouldStripLocation:(bool)arg1;
+- (void)setShouldStripMetadata:(bool)arg1;
+- (bool)shouldConvertToSRGB;
+- (bool)shouldStripLocation;
+- (bool)shouldStripMetadata;
+- (bool)success;
 
 @end

@@ -5,7 +5,7 @@
 @interface PKWalletVisibility : NSObject
 
 + (id)_currentWalletVisibilityRestrictions;
-+ (BOOL)isWalletVisible;
++ (bool)isWalletVisible;
 + (id)setOfActiveRestrictionUUIDs;
 + (void)updateWalletVisibility;
 

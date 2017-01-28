@@ -10,7 +10,7 @@
     int  _statusCode;
 }
 
-@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic) bool hasStatusCode;
 @property (nonatomic, retain) NSMutableArray *places;
 @property (nonatomic) int statusCode;
 
@@ -24,15 +24,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasStatusCode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasStatusCode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)placeAtIndex:(unsigned int)arg1;
+- (id)placeAtIndex:(unsigned long long)arg1;
 - (id)places;
-- (unsigned int)placesCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
+- (unsigned long long)placesCount;
+- (bool)readFrom:(id)arg1;
+- (void)setHasStatusCode:(bool)arg1;
 - (void)setPlaces:(id)arg1;
 - (void)setStatusCode:(int)arg1;
 - (int)statusCode;

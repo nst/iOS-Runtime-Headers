@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)sample;
 - (void)setSample:(id)arg1;
 - (void)setUnsmoothedLocations:(id)arg1;

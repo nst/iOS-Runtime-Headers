@@ -4,15 +4,15 @@
 
 @interface NTKTimelineSetupOperation : NTKTimelineDataOperation {
     CLKComplicationTimelineEntry * _currentEntry;
-    unsigned int  _directions;
+    unsigned long long  _directions;
     NSDate * _endDate;
-    id /* block */  _handler;
-    unsigned int  _privacyBehavior;
+    id  _handler;
+    unsigned long long  _privacyBehavior;
     NSDate * _startDate;
-    unsigned int  _timelineAnimationBehavior;
+    unsigned long long  _timelineAnimationBehavior;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 
 - (void).cxx_destruct;
 - (void)_cancel;
@@ -24,7 +24,7 @@
 - (void)_getTimelineAnimationBehavior;
 - (void)_invokeHandler;
 - (void)_start;
-- (id /* block */)handler;
-- (void)setHandler:(id /* block */)arg1;
+- (id)handler;
+- (void)setHandler:(id)arg1;
 
 @end

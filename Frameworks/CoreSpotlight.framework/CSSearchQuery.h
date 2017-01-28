@@ -3,27 +3,27 @@
  */
 
 @interface CSSearchQuery : NSObject <MDSearchQueryResultProcessor> {
-    BOOL  _cancelled;
-    id /* block */  _completionHandler;
+    bool  _cancelled;
+    id  _completionHandler;
     NSXPCConnection * _connection;
-    BOOL  _fetchesURLs;
-    BOOL  _finished;
-    unsigned int  _foundItemCount;
-    id /* block */  _foundItemsHandler;
+    bool  _fetchesURLs;
+    bool  _finished;
+    unsigned long long  _foundItemCount;
+    id  _foundItemsHandler;
     CSSearchQueryContext * _queryContext;
     NSString * _queryString;
     NSObject<OS_dispatch_queue> * _queue;
     NSArray * _resolvedFetchAttributes;
     <MDSearchQueryService> * _serviceProxy;
-    BOOL  _started;
+    bool  _started;
 }
 
-@property (getter=isCancelled, readonly) BOOL cancelled;
-@property (copy) id /* block */ completionHandler;
+@property (getter=isCancelled, readonly) bool cancelled;
+@property (copy) id completionHandler;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (nonatomic, readonly) NSArray *fetchAttributes;
-@property (readonly) unsigned int foundItemCount;
-@property (copy) id /* block */ foundItemsHandler;
+@property (readonly) unsigned long long foundItemCount;
+@property (copy) id foundItemsHandler;
 @property (copy) NSArray *protectionClasses;
 @property (nonatomic, retain) CSSearchQueryContext *queryContext;
 @property (nonatomic, copy) NSString *queryString;
@@ -32,7 +32,7 @@
 @property (retain) <MDSearchQueryService> *serviceProxy;
 
 + (id)_attributesForURLs;
-+ (id)_makeQueryErrorWithErrorCode:(int)arg1 description:(id)arg2 underlyingError:(id)arg3;
++ (id)_makeQueryErrorWithErrorCode:(long long)arg1 description:(id)arg2 underlyingError:(id)arg3;
 + (id)_makeUniqueFetchAttributesWithAttributes:(id)arg1;
 + (id)_requiredAttributeSet;
 + (id)_requiredAttributes;
@@ -42,20 +42,20 @@
 - (id)_makeConnectionIfNecessary;
 - (id)bundleIDs;
 - (void)cancel;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)connection;
 - (id)description;
 - (void)didFinishWithError:(id)arg1;
 - (void)didResolveFriendlyAttributeNames:(id)arg1;
-- (void)didReturnResultsData:(id)arg1 protectionClass:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)didReturnResultsData:(id)arg1 protectionClass:(id)arg2 completionHandler:(id)arg3;
 - (id)fetchAttributes;
-- (unsigned int)foundItemCount;
-- (id /* block */)foundItemsHandler;
+- (unsigned long long)foundItemCount;
+- (id)foundItemsHandler;
 - (id)init;
 - (id)initWithQueryString:(id)arg1 attributes:(id)arg2;
 - (id)initWithQueryString:(id)arg1 context:(id)arg2;
 - (id)initWithQueryString:(id)arg1 options:(id)arg2;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (id)options;
 - (id)protectionClasses;
 - (id)queryContext;
@@ -64,9 +64,9 @@
 - (id)resolvedFetchAttributes;
 - (id)serviceProxy;
 - (void)setBundleIDs:(id)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setConnection:(id)arg1;
-- (void)setFoundItemsHandler:(id /* block */)arg1;
+- (void)setFoundItemsHandler:(id)arg1;
 - (void)setProtectionClasses:(id)arg1;
 - (void)setQueryContext:(id)arg1;
 - (void)setQueryString:(id)arg1;

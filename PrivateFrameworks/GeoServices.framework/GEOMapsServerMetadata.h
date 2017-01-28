@@ -8,7 +8,7 @@
     NSData * _suggestionEntryMetadataTappedOn;
 }
 
-@property (nonatomic, readonly) BOOL hasSuggestionEntryMetadataTappedOn;
+@property (nonatomic, readonly) bool hasSuggestionEntryMetadataTappedOn;
 @property (nonatomic, retain) NSMutableArray *mapsSearchResults;
 @property (nonatomic, retain) NSMutableArray *suggestionEntryMetadataDisplayeds;
 @property (nonatomic, retain) NSData *suggestionEntryMetadataTappedOn;
@@ -25,20 +25,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSuggestionEntryMetadataTappedOn;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)mapsSearchResultAtIndex:(unsigned int)arg1;
+- (bool)hasSuggestionEntryMetadataTappedOn;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)mapsSearchResultAtIndex:(unsigned long long)arg1;
 - (id)mapsSearchResults;
-- (unsigned int)mapsSearchResultsCount;
+- (unsigned long long)mapsSearchResultsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setMapsSearchResults:(id)arg1;
 - (void)setSuggestionEntryMetadataDisplayeds:(id)arg1;
 - (void)setSuggestionEntryMetadataTappedOn:(id)arg1;
-- (id)suggestionEntryMetadataDisplayedAtIndex:(unsigned int)arg1;
+- (id)suggestionEntryMetadataDisplayedAtIndex:(unsigned long long)arg1;
 - (id)suggestionEntryMetadataDisplayeds;
-- (unsigned int)suggestionEntryMetadataDisplayedsCount;
+- (unsigned long long)suggestionEntryMetadataDisplayedsCount;
 - (id)suggestionEntryMetadataTappedOn;
 - (void)writeTo:(id)arg1;
 

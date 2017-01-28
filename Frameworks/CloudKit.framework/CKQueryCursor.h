@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

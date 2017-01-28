@@ -6,7 +6,7 @@
     CLKComplicationTemplate * _complicationTemplate;
 }
 
-+ (BOOL)acceptsComplicationType:(unsigned int)arg1 withFamily:(int)arg2;
++ (bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2;
 
 - (void).cxx_destruct;
 - (id)_alarmTemplate;
@@ -21,7 +21,7 @@
 - (id)_stocksTemplate;
 - (id)_stopwatchTemplate;
 - (id)_sunriseTemplate;
-- (id)_temperatureStringForDegreesFahrenheit:(int)arg1 convertToCelsius:(BOOL)arg2;
+- (id)_temperatureStringForDegreesFahrenheit:(long long)arg1 convertToCelsius:(bool)arg2;
 - (id)_timerTemplate;
 - (id)_weatherConditionsTemplate;
 - (id)_weatherTemplate;
@@ -30,6 +30,6 @@
 - (id)_worldClockTemplate;
 - (id)currentSwitcherTemplate;
 - (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2;
 
 @end

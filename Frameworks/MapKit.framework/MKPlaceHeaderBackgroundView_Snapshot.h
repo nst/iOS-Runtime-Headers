@@ -5,38 +5,38 @@
 @interface MKPlaceHeaderBackgroundView_Snapshot : MKPlaceHeaderBackgroundView <MKMapViewDelegate> {
     MKMapView * _mapView;
     MKMapCamera * _orbitCamera;
-    BOOL  _orbiting;
+    bool  _orbiting;
     UIColor * _pinTintColor;
-    BOOL  _renderingMap;
-    BOOL  _settingUpOrbitAnimation;
-    BOOL  _showsPin;
-    float  _zoomLevel;
+    bool  _renderingMap;
+    bool  _settingUpOrbitAnimation;
+    bool  _showsPin;
+    double  _zoomLevel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapCamera *orbitCamera;
-@property (nonatomic) BOOL orbiting;
+@property (nonatomic) bool orbiting;
 @property (nonatomic) UIColor *pinTintColor;
-@property (nonatomic) BOOL settingUpOrbitAnimation;
-@property (nonatomic) BOOL showsPin;
+@property (nonatomic) bool settingUpOrbitAnimation;
+@property (nonatomic) bool showsPin;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL useSatellite;
-@property (nonatomic) float zoomLevel;
+@property (nonatomic, readonly) bool useSatellite;
+@property (nonatomic) double zoomLevel;
 
 - (void).cxx_destruct;
 - (void)_orbitNextThird;
 - (void)beginOrbit;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mapItem:(id)arg2;
-- (void)mapFinishedLoading:(BOOL)arg1;
-- (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 mapItem:(id)arg2;
+- (void)mapFinishedLoading:(bool)arg1;
+- (void)mapView:(id)arg1 regionDidChangeAnimated:(bool)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)mapViewDidFailLoadingMap:(id)arg1 withError:(id)arg2;
-- (void)mapViewDidFinishRenderingMap:(id)arg1 fullyRendered:(BOOL)arg2;
+- (void)mapViewDidFinishRenderingMap:(id)arg1 fullyRendered:(bool)arg2;
 - (id)orbitCamera;
-- (BOOL)orbiting;
+- (bool)orbiting;
 - (void)pause;
 - (void)pauseOrbit;
 - (id)pinTintColor;
@@ -47,14 +47,14 @@
 - (void)resume;
 - (void)setMapItem:(id)arg1;
 - (void)setOrbitCamera:(id)arg1;
-- (void)setOrbiting:(BOOL)arg1;
+- (void)setOrbiting:(bool)arg1;
 - (void)setPinTintColor:(id)arg1;
-- (void)setSettingUpOrbitAnimation:(BOOL)arg1;
-- (void)setShowsPin:(BOOL)arg1;
-- (void)setZoomLevel:(float)arg1;
-- (BOOL)settingUpOrbitAnimation;
-- (BOOL)showsPin;
-- (BOOL)useSatellite;
-- (float)zoomLevel;
+- (void)setSettingUpOrbitAnimation:(bool)arg1;
+- (void)setShowsPin:(bool)arg1;
+- (void)setZoomLevel:(double)arg1;
+- (bool)settingUpOrbitAnimation;
+- (bool)showsPin;
+- (bool)useSatellite;
+- (double)zoomLevel;
 
 @end

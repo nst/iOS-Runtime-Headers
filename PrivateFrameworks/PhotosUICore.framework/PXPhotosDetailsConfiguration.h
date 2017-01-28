@@ -4,17 +4,17 @@
 
 @interface PXPhotosDetailsConfiguration : NSObject <NSCopying> {
     Class  _barsControllerClass;
-    unsigned int  _options;
+    unsigned long long  _options;
 }
 
 @property (nonatomic, retain) Class barsControllerClass;
-@property (nonatomic) unsigned int options;
+@property (nonatomic) unsigned long long options;
 
 - (void).cxx_destruct;
 - (Class)barsControllerClass;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (void)setBarsControllerClass:(Class)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 
 @end

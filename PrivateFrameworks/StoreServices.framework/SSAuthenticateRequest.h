@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SSAuthenticateRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)authenticationContext;
@@ -19,8 +19,8 @@
 - (id)initWithAccount:(id)arg1;
 - (id)initWithAuthenticationContext:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)start;
-- (void)startWithAuthenticateResponseBlock:(id /* block */)arg1;
-- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (bool)start;
+- (void)startWithAuthenticateResponseBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
 
 @end

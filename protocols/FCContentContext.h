@@ -11,7 +11,7 @@
 - (NSString *)contentDirectory;
 - (NSString *)contentStoreFrontID;
 - (FCFlintResourceManager *)flintResourceManager;
-- (BOOL)hasBeenRateLimited;
+- (bool)hasBeenRateLimited;
 - (<FCContentContextInternal> *)internalContentContext;
 - (FCTagController *)tagController;
 

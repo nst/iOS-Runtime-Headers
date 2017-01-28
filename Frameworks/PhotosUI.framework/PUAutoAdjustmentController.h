@@ -3,26 +3,26 @@
  */
 
 @interface PUAutoAdjustmentController : NSObject {
-    BOOL  _busy;
+    bool  _busy;
     NSArray * _cachedRedEyeCorrections;
-    float  _cachedSmartColorLevel;
-    float  _cachedSmartToneLevel;
-    BOOL  _cachedValuesAreValid;
+    double  _cachedSmartColorLevel;
+    double  _cachedSmartToneLevel;
+    bool  _cachedValuesAreValid;
     NSDictionary * _cachedWhiteBalanceSettings;
     PLPhotoEditModel * _stashedPreviousManualModel;
 }
 
-@property (getter=isBusy, setter=_setBusy:, nonatomic) BOOL busy;
+@property (getter=isBusy, setter=_setBusy:, nonatomic) bool busy;
 
 - (void).cxx_destruct;
-- (void)_applyAutoValuesOnModel:(id)arg1 whiteBalanceSettings:(id)arg2 redEyeCorrections:(id)arg3 smartToneLevel:(float)arg4 smartColorLevel:(float)arg5 valuesCalculator:(id)arg6 animated:(BOOL)arg7;
+- (void)_applyAutoValuesOnModel:(id)arg1 whiteBalanceSettings:(id)arg2 redEyeCorrections:(id)arg3 smartToneLevel:(double)arg4 smartColorLevel:(double)arg5 valuesCalculator:(id)arg6 animated:(bool)arg7;
 - (void)_removeLegacyAutoEnhanceFromModel:(id)arg1;
 - (void)_revertAutoValuesOnModel:(id)arg1;
-- (void)_setBusy:(BOOL)arg1;
+- (void)_setBusy:(bool)arg1;
 - (void)disableAutoEnhanceOnModel:(id)arg1;
-- (void)enableAutoEnhanceOnModel:(id)arg1 baseImage:(id)arg2 valuesCalculator:(id)arg3 allowRedEye:(BOOL)arg4 animated:(BOOL)arg5 completionHandler:(id /* block */)arg6;
+- (void)enableAutoEnhanceOnModel:(id)arg1 baseImage:(id)arg2 valuesCalculator:(id)arg3 allowRedEye:(bool)arg4 animated:(bool)arg5 completionHandler:(id)arg6;
 - (void)invalidateCachedAdjustments;
-- (BOOL)isAutoEnhanceEnabledForModel:(id)arg1;
-- (BOOL)isBusy;
+- (bool)isAutoEnhanceEnabledForModel:(id)arg1;
+- (bool)isBusy;
 
 @end

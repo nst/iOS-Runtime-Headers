@@ -12,6 +12,6 @@
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)initWithDelegate:(id)arg1;
 - (void)layoutSublayersOfLayer:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 
 @end

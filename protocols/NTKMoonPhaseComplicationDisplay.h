@@ -5,10 +5,10 @@
 
 @optional
 
-- (void)setLocked:(BOOL)arg1;
-- (void)setMoonEvent:(int)arg1 date:(NSDate *)arg2;
-- (void)setPaused:(BOOL)arg1;
+- (void)setLocked:(bool)arg1;
+- (void)setMoonEvent:(long long)arg1 date:(NSDate *)arg2;
+- (void)setPaused:(bool)arg1;
 - (void)setPhaseName:(NSString *)arg1;
-- (void)setPhaseNumber:(unsigned int)arg1 hemisphere:(int)arg2;
+- (void)setPhaseNumber:(unsigned long long)arg1 hemisphere:(long long)arg2;
 
 @end

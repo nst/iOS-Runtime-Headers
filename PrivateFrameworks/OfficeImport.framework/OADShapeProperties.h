@@ -3,14 +3,14 @@
  */
 
 @interface OADShapeProperties : OADGraphicProperties {
-    BOOL  mIsTextBox;
+    bool  mIsTextBox;
 }
 
 + (id)defaultProperties;
 
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTextBox;
-- (void)setIsTextBox:(BOOL)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isTextBox;
+- (void)setIsTextBox:(bool)arg1;
 
 @end

@@ -13,8 +13,8 @@
 @property (nonatomic, readonly) NSSet *activeScenarios;
 @property (nonatomic) <GEOResourceFiltersManagerDelegate> *delegate;
 
-- (void)_activateFilters:(id /* block */)arg1 setValueBlock:(id /* block */)arg2;
-- (void)_deactivateFilters:(id /* block */)arg1;
+- (void)_activateFilters:(id)arg1 setValueBlock:(id)arg2;
+- (void)_deactivateFilters:(id)arg1;
 - (void)_writeToDisk;
 - (void)activateScale:(int)arg1;
 - (void)activateScenario:(int)arg1;

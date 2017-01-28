@@ -17,7 +17,7 @@
 - (void)advanceSweep;
 - (void)dealloc;
 - (id)debugValues;
-- (BOOL)finished;
+- (bool)finished;
 - (void)setStepCount:(int)arg1;
 - (int)stepCount;
 - (id)sweepStateHeader;

@@ -10,7 +10,7 @@
 
 @property (readonly) NSError *error;
 
-- (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
+- (void)actionFailed:(long long)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)dealloc;
 - (id)error;
 - (id)init;

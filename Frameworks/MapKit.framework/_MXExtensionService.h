@@ -8,7 +8,7 @@
     struct UIViewController { Class x1; } * _remoteViewController;
     NSArray * _returnItems;
     NSUUID * _serviceIdentifier;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (nonatomic, copy) NSError *error;
@@ -17,7 +17,7 @@
 @property (nonatomic) UIViewController *remoteViewController;
 @property (nonatomic, retain) NSArray *returnItems;
 @property (nonatomic, retain) NSUUID *serviceIdentifier;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 
 - (void).cxx_destruct;
 - (void)_completeServiceIfNeededWithError:(id)arg1;
@@ -38,9 +38,9 @@
 - (void)setRemoteViewController:(struct UIViewController { Class x1; }*)arg1;
 - (void)setReturnItems:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
 - (id)vendorContext;
-- (id)vendorContextWithErrorHandler:(id /* block */)arg1;
+- (id)vendorContextWithErrorHandler:(id)arg1;
 
 @end

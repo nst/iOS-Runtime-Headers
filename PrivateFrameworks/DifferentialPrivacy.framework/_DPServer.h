@@ -10,22 +10,22 @@
 @property (nonatomic, readonly) _DPStorage *db;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSXPCListener *listener;
 @property (readonly) Class superclass;
 
-+ (BOOL)shouldNotRecord:(id)arg1;
++ (bool)shouldNotRecord:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)db;
 - (id)init;
-- (id)initWithDatabaseDirectoryPath:(id)arg1 reportsDirectoryPath:(id)arg2 enablePeriodicTasks:(BOOL)arg3 enterSandbox:(BOOL)arg4;
+- (id)initWithDatabaseDirectoryPath:(id)arg1 reportsDirectoryPath:(id)arg2 enablePeriodicTasks:(bool)arg3 enterSandbox:(bool)arg4;
 - (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)recordNumbers:(id)arg1 forKey:(id)arg2 withReply:(id /* block */)arg3;
-- (void)recordStrings:(id)arg1 forKey:(id)arg2 withReply:(id /* block */)arg3;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)recordNumbers:(id)arg1 forKey:(id)arg2 withReply:(id)arg3;
+- (void)recordStrings:(id)arg1 forKey:(id)arg2 withReply:(id)arg3;
 - (void)recordValues:(id)arg1 forKey:(id)arg2 usingSelector:(SEL)arg3;
-- (void)recordWords:(id)arg1 forKey:(id)arg2 withReply:(id /* block */)arg3;
+- (void)recordWords:(id)arg1 forKey:(id)arg2 withReply:(id)arg3;
 - (void)start;
 
 @end

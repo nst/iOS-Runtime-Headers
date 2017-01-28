@@ -8,7 +8,7 @@
     PUActivityViewController * _activityViewController;
     NSMutableOrderedSet * _assetItemSources;
     NSMutableOrderedSet * _assetItems;
-    id /* block */  _progressHandler;
+    id  _progressHandler;
     int  _taskId;
 }
 
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly, copy) NSOrderedSet *assetItemSources;
 @property (nonatomic, copy) NSOrderedSet *assetItems;
 @property (nonatomic, readonly, copy) NSOrderedSet *assets;
-@property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic, copy) id progressHandler;
 
 - (void).cxx_destruct;
 - (id)_activeItemSources;
@@ -32,12 +32,12 @@
 - (id)assetItems;
 - (id)assets;
 - (void)cancel;
-- (int)countOfAssetType:(int)arg1;
-- (id /* block */)progressHandler;
+- (long long)countOfAssetType:(long long)arg1;
+- (id)progressHandler;
 - (void)removeAssetItem:(id)arg1;
-- (void)runExplicitly:(BOOL)arg1 withActivityType:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)runExplicitly:(bool)arg1 withActivityType:(id)arg2 completionHandler:(id)arg3;
 - (void)setActivityViewController:(id)arg1;
 - (void)setAssetItems:(id)arg1;
-- (void)setProgressHandler:(id /* block */)arg1;
+- (void)setProgressHandler:(id)arg1;
 
 @end

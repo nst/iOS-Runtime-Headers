@@ -3,29 +3,29 @@
  */
 
 @interface PUAirPlayActivity : PUActivity <PHAirPlayControllerRouteObserver> {
-    BOOL  __needsUpdateRouteAvailable;
-    BOOL  __routeAvailable;
+    bool  __needsUpdateRouteAvailable;
+    bool  __routeAvailable;
 }
 
-@property (setter=_setNeedsUpdateRouteAvailable:, nonatomic) BOOL _needsUpdateRouteAvailable;
-@property (getter=_isRouteAvailable, setter=_setRouteAvailable:, nonatomic) BOOL _routeAvailable;
+@property (setter=_setNeedsUpdateRouteAvailable:, nonatomic) bool _needsUpdateRouteAvailable;
+@property (getter=_isRouteAvailable, setter=_setRouteAvailable:, nonatomic) bool _routeAvailable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)_isRouteAvailable;
-- (BOOL)_needsUpdateRouteAvailable;
+- (bool)_isRouteAvailable;
+- (bool)_needsUpdateRouteAvailable;
 - (void)_registerForAirPlayNotifications;
-- (void)_setNeedsUpdateRouteAvailable:(BOOL)arg1;
-- (void)_setRouteAvailable:(BOOL)arg1;
+- (void)_setNeedsUpdateRouteAvailable:(bool)arg1;
+- (void)_setRouteAvailable:(bool)arg1;
 - (void)_unregisterForAirPlayNotifications;
 - (void)_updateRouteAvailabilityIfNeeded;
 - (id)activityImage;
 - (id)activityTitle;
 - (id)activityType;
 - (void)airPlayControllerRouteAvailabilityChanged:(id)arg1;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)performActivity;

@@ -3,20 +3,20 @@
  */
 
 @interface AKSignatureBaselineView : UIView {
-    float  _baselinePercent;
+    double  _baselinePercent;
 }
 
-@property (nonatomic) float baselinePercent;
+@property (nonatomic) double baselinePercent;
 
 - (void)_commonInit;
 - (void)_drawBaselineInContext:(struct CGContext { }*)arg1;
-- (BOOL)_isRTL;
-- (float)baselinePercent;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)_isRTL;
+- (double)baselinePercent;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)scaleFactor;
-- (void)setBaselinePercent:(float)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)scaleFactor;
+- (void)setBaselinePercent:(double)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

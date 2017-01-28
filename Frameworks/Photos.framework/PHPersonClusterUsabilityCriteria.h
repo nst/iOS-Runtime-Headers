@@ -4,17 +4,17 @@
 
 @interface PHPersonClusterUsabilityCriteria : NSObject
 
-@property (nonatomic) unsigned int persistentTargetFaceCount;
+@property (nonatomic) unsigned long long persistentTargetFaceCount;
 
 + (id)sharedInstance;
 
-- (unsigned int)calculateTargetFaceCount;
-- (unsigned int)calculateTargetFaceCountFromDataSource:(id)arg1 withMaxUnverifiedClusters:(unsigned int)arg2;
-- (unsigned int)calculateTargetFaceCountFromDataSource:(id)arg1 withMaxUnverifiedClusters:(unsigned int)arg2 verifiedPeopleCount:(unsigned int)arg3;
+- (unsigned long long)calculateTargetFaceCount;
+- (unsigned long long)calculateTargetFaceCountFromDataSource:(id)arg1 withMaxUnverifiedClusters:(unsigned long long)arg2;
+- (unsigned long long)calculateTargetFaceCountFromDataSource:(id)arg1 withMaxUnverifiedClusters:(unsigned long long)arg2 verifiedPeopleCount:(unsigned long long)arg3;
 - (id)fetchUnverifiedBySortedByFaceCount;
-- (unsigned int)fetchVerifiedPeopleCount;
-- (unsigned int)persistentTargetFaceCount;
-- (void)setPersistentTargetFaceCount:(unsigned int)arg1;
+- (unsigned long long)fetchVerifiedPeopleCount;
+- (unsigned long long)persistentTargetFaceCount;
+- (void)setPersistentTargetFaceCount:(unsigned long long)arg1;
 - (void)updatePersistentTargetFaceCount;
 
 @end

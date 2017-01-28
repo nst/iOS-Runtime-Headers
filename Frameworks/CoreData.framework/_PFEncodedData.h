@@ -5,33 +5,34 @@
 @interface _PFEncodedData : NSData {
     NSData * _aData;
     unsigned int  _byteCount;
+    unsigned int  _reserved;
 }
 
 + (Class)classForCoder;
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
 - (const void*)bytes;
 - (Class)classForArchiver;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (void)getBytes:(void*)arg1 length:(unsigned int)arg2;
-- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getBytes:(void*)arg1 length:(unsigned long long)arg2;
+- (void)getBytes:(void*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqualToData:(id)arg1;
-- (unsigned int)length;
+- (bool)isEqualToData:(id)arg1;
+- (unsigned long long)length;
 - (id)mutableCopy;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)privateCopy;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfData:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfData:(id)arg1 options:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (id)subdataWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
-- (BOOL)writeToURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (unsigned long long)retainCount;
+- (id)subdataWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (bool)writeToFile:(id)arg1 atomically:(bool)arg2;
+- (bool)writeToFile:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (bool)writeToURL:(id)arg1 atomically:(bool)arg2;
+- (bool)writeToURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 
 @end

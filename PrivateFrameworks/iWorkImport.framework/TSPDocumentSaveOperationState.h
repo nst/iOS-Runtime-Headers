@@ -4,8 +4,8 @@
 
 @interface TSPDocumentSaveOperationState : TSPSaveOperationState {
     NSURL * _URL;
-    BOOL  _didEndWriteOperation;
-    BOOL  _didResetDocumentRevision;
+    bool  _didEndWriteOperation;
+    bool  _didResetDocumentRevision;
     TSPObject * _documentObject;
     TSPPackageWriter * _documentPackageWriter;
     NSString * _documentPasswordHint;
@@ -15,20 +15,20 @@
     NSUUID * _documentUUID;
     SFUCryptoKey * _encryptionKey;
     NSURL * _originalSupportURL;
-    int  _packageType;
+    long long  _packageType;
     NSData * _passwordVerifier;
     NSProgress * _progress;
     NSURL * _relativeURLForExternalData;
     unsigned long long  _saveToken;
-    BOOL  _shouldLeavePendingEndSave;
-    BOOL  _shouldResumeAsynchronousModifications;
+    bool  _shouldLeavePendingEndSave;
+    bool  _shouldResumeAsynchronousModifications;
     TSPObject * _supportObject;
     TSPPackageWriter * _supportPackageWriter;
 }
 
 @property (nonatomic, readonly) NSURL *URL;
-@property (nonatomic) BOOL didEndWriteOperation;
-@property (nonatomic) BOOL didResetDocumentRevision;
+@property (nonatomic) bool didEndWriteOperation;
+@property (nonatomic) bool didResetDocumentRevision;
 @property (nonatomic, retain) TSPObject *documentObject;
 @property (nonatomic, retain) TSPPackageWriter *documentPackageWriter;
 @property (nonatomic, copy) NSString *documentPasswordHint;
@@ -38,20 +38,20 @@
 @property (nonatomic, copy) NSUUID *documentUUID;
 @property (nonatomic, retain) SFUCryptoKey *encryptionKey;
 @property (nonatomic, copy) NSURL *originalSupportURL;
-@property (nonatomic, readonly) int packageType;
+@property (nonatomic, readonly) long long packageType;
 @property (nonatomic, retain) NSData *passwordVerifier;
 @property (nonatomic, retain) NSProgress *progress;
 @property (nonatomic, copy) NSURL *relativeURLForExternalData;
 @property (nonatomic) unsigned long long saveToken;
-@property (nonatomic) BOOL shouldLeavePendingEndSave;
-@property (nonatomic) BOOL shouldResumeAsynchronousModifications;
+@property (nonatomic) bool shouldLeavePendingEndSave;
+@property (nonatomic) bool shouldResumeAsynchronousModifications;
 @property (nonatomic, retain) TSPObject *supportObject;
 @property (nonatomic, retain) TSPPackageWriter *supportPackageWriter;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (BOOL)didEndWriteOperation;
-- (BOOL)didResetDocumentRevision;
+- (bool)didEndWriteOperation;
+- (bool)didResetDocumentRevision;
 - (id)documentObject;
 - (id)documentPackageWriter;
 - (id)documentPasswordHint;
@@ -61,15 +61,15 @@
 - (id)documentUUID;
 - (id)encryptionKey;
 - (id)init;
-- (id)initWithURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3;
+- (id)initWithURL:(id)arg1 updateType:(long long)arg2 packageType:(long long)arg3;
 - (id)originalSupportURL;
-- (int)packageType;
+- (long long)packageType;
 - (id)passwordVerifier;
 - (id)progress;
 - (id)relativeURLForExternalData;
 - (unsigned long long)saveToken;
-- (void)setDidEndWriteOperation:(BOOL)arg1;
-- (void)setDidResetDocumentRevision:(BOOL)arg1;
+- (void)setDidEndWriteOperation:(bool)arg1;
+- (void)setDidResetDocumentRevision:(bool)arg1;
 - (void)setDocumentObject:(id)arg1;
 - (void)setDocumentPackageWriter:(id)arg1;
 - (void)setDocumentPasswordHint:(id)arg1;
@@ -83,12 +83,12 @@
 - (void)setProgress:(id)arg1;
 - (void)setRelativeURLForExternalData:(id)arg1;
 - (void)setSaveToken:(unsigned long long)arg1;
-- (void)setShouldLeavePendingEndSave:(BOOL)arg1;
-- (void)setShouldResumeAsynchronousModifications:(BOOL)arg1;
+- (void)setShouldLeavePendingEndSave:(bool)arg1;
+- (void)setShouldResumeAsynchronousModifications:(bool)arg1;
 - (void)setSupportObject:(id)arg1;
 - (void)setSupportPackageWriter:(id)arg1;
-- (BOOL)shouldLeavePendingEndSave;
-- (BOOL)shouldResumeAsynchronousModifications;
+- (bool)shouldLeavePendingEndSave;
+- (bool)shouldResumeAsynchronousModifications;
 - (id)supportObject;
 - (id)supportPackageWriter;
 

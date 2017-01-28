@@ -4,9 +4,9 @@
 
 @interface _UIRemoteInputViewController : _UIRemoteViewController
 
-+ (BOOL)__shouldHostRemoteTextEffectsWindow;
++ (bool)__shouldHostRemoteTextEffectsWindow;
 
-- (struct CGSize { float x1; float x2; })intrinsicContentSizeForServiceSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSizeForServiceSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)viewDidInvalidateIntrinsicContentSize;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

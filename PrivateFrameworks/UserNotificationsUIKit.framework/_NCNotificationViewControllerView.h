@@ -11,17 +11,18 @@
 @property (nonatomic) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float inputRadius;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double inputRadius;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)blurringView;
 - (id)contentView;
-- (float)inputRadius;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (double)inputRadius;
 - (void)setBlurringView:(id)arg1;
 - (void)setContentView:(id)arg1;
-- (void)setInputRadius:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setInputRadius:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -26,8 +26,8 @@
 @property (nonatomic, retain) NSString *countryCode;
 @property (nonatomic, retain) NSString *guid;
 @property (nonatomic, retain) NSString *handle;
-@property (nonatomic, readonly) BOOL isFromMe;
-@property (nonatomic, readonly) BOOL isLastMessageCandidate;
+@property (nonatomic, readonly) bool isFromMe;
+@property (nonatomic, readonly) bool isLastMessageCandidate;
 @property (setter=_setMessageID:, nonatomic) long long messageID;
 @property (nonatomic, retain) NSString *roomName;
 @property (nonatomic, retain) NSString *sender;
@@ -46,7 +46,7 @@
 - (id)account;
 - (id)accountID;
 - (id)associatedMessageGUID;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })associatedMessageRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })associatedMessageRange;
 - (long long)associatedMessageType;
 - (id)balloonBundleID;
 - (id)consumedSessionPayloads;
@@ -61,20 +61,20 @@
 - (void)encodeWithIMRemoteObjectSerializedDictionary:(id)arg1;
 - (id)guid;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithIMRemoteObjectSerializedDictionary:(id)arg1;
 - (id)initWithSender:(id)arg1 time:(id)arg2 guid:(id)arg3 type:(long long)arg4;
 - (id)initWithSenderInfo:(id)arg1 time:(id)arg2 guid:(id)arg3 messageID:(long long)arg4 account:(id)arg5 accountID:(id)arg6 service:(id)arg7 handle:(id)arg8 roomName:(id)arg9 unformattedID:(id)arg10 countryCode:(id)arg11 type:(long long)arg12;
-- (BOOL)isAssociatedMessageItem;
-- (BOOL)isBreadcrumb;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFromMe;
-- (BOOL)isLastMessageCandidate;
-- (BOOL)isMessageAcknowledgment;
-- (BOOL)isMessageEdit;
-- (BOOL)isSticker;
+- (bool)isAssociatedMessageItem;
+- (bool)isBreadcrumb;
+- (bool)isEqual:(id)arg1;
+- (bool)isFromMe;
+- (bool)isLastMessageCandidate;
+- (bool)isMessageAcknowledgment;
+- (bool)isMessageEdit;
+- (bool)isSticker;
 - (long long)messageID;
 - (id)pluginSessionGUID;
 - (id)roomName;
@@ -104,18 +104,18 @@
 + (Class)contextClass;
 
 - (id)_copy;
-- (BOOL)_hasMessageChatItem;
-- (BOOL)_isInvitation;
+- (bool)_hasMessageChatItem;
+- (bool)_isInvitation;
 - (id)_newChatItems;
 - (id)_otherHandle;
 - (id)_senderHandle;
 - (id)_service;
 - (id)_serviceHandle;
-- (void)_setInvitation:(BOOL)arg1;
+- (void)_setInvitation:(bool)arg1;
 - (void)_updateContextWithSenderHandle:(id)arg1 otherHandle:(id)arg2;
-- (BOOL)isIncomingTypingOrCancelTypingMessage;
-- (BOOL)isTypingOrCancelTypingMessage;
+- (bool)isIncomingTypingOrCancelTypingMessage;
+- (bool)isTypingOrCancelTypingMessage;
 - (id)message;
-- (BOOL)shouldGenerateTopLevelChatItem;
+- (bool)shouldGenerateTopLevelChatItem;
 
 @end

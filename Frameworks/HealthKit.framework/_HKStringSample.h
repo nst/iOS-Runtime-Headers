@@ -9,9 +9,9 @@
 @property (readonly) _HKStringSampleType *stringType;
 @property (readonly) NSString *stringValue;
 
-+ (BOOL)_isConcreteObjectClass;
++ (bool)_isConcreteObjectClass;
 + (id)stringSampleWithType:(id)arg1 stringValue:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 device:(id)arg5 metadata:(id)arg6;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_setPayload:(id)arg1;

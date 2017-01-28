@@ -6,8 +6,8 @@
 @required
 
 - (CNContactStore *)contactStore;
-- (BOOL)isThreeDTouchEnabled;
+- (bool)isThreeDTouchEnabled;
 - (PRPersonaStore *)personaStore;
-- (void)setThreeDTouchEnabled:(BOOL)arg1;
+- (void)setThreeDTouchEnabled:(bool)arg1;
 
 @end

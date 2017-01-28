@@ -18,6 +18,6 @@
 - (NSString *)changeTrackingTitleString;
 - (void)setStorage:(TSDCommentStorage *)arg1;
 - (TSDCommentStorage *)storage;
-- (BOOL)wantsAnnotationPopover;
+- (bool)wantsAnnotationPopover;
 
 @end

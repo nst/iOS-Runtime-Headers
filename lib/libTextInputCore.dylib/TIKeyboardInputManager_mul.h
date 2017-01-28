@@ -3,13 +3,13 @@
  */
 
 @interface TIKeyboardInputManager_mul : TIKeyboardInputManagerZephyr {
-    BOOL  _isSuspended;
+    bool  _isSuspended;
 }
 
 - (void)dealloc;
 - (void)didUpdateInputModeProbabilities:(id)arg1;
 - (void)didUpdateInputModes:(id)arg1;
-- (void)enumerateInputModesWithBlock:(id /* block */)arg1;
+- (void)enumerateInputModesWithBlock:(id)arg1;
 - (id)keyboardConfiguration;
 - (struct LanguageModelContainer { int (**x1)(); struct vector<std::__1::shared_ptr<KB::LanguageModel>, std::__1::allocator<std::__1::shared_ptr<KB::LanguageModel> > > { struct shared_ptr<KB::LanguageModel> {} *x_2_1_1; struct shared_ptr<KB::LanguageModel> {} *x_2_1_2; struct __compressed_pair<std::__1::shared_ptr<KB::LanguageModel> *, std::__1::allocator<std::__1::shared_ptr<KB::LanguageModel> > > { struct shared_ptr<KB::LanguageModel> {} *x_3_2_1; } x_2_1_3; } x2; struct vector<float, std::__1::allocator<float> > { float *x_3_1_1; float *x_3_1_2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_2_1; } x_3_1_3; } x3; }*)languageModelContainer;
 - (unsigned int)lexiconIDForInputMode:(id)arg1;
@@ -18,9 +18,9 @@
 - (void)loadDictionaries;
 - (id)resourceInputModes;
 - (void)resume;
-- (BOOL)shouldUpdateDictionary;
+- (bool)shouldUpdateDictionary;
 - (void)suspend;
-- (BOOL)updateLanguageModelForKeyboardState;
+- (bool)updateLanguageModelForKeyboardState;
 - (void)updateLanguagePriors;
 - (float)weightForInputMode:(id)arg1;
 

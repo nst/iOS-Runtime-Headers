@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString *sceneType;
 @property (nonatomic, copy) NSString *serviceGroup;
 @property (nonatomic, copy) NSArray *serviceGroupIdentifiers;
+@property (nonatomic, copy) NSString *serviceSubType;
 @property (nonatomic, copy) NSString *serviceType;
 @property (nonatomic, copy) NSArray *targetAttributes;
 @property (nonatomic, copy) NSString *zone;
@@ -40,6 +41,7 @@
 - (id)sceneType;
 - (id)serviceGroup;
 - (id)serviceGroupIdentifiers;
+- (id)serviceSubType;
 - (id)serviceType;
 - (void)setAccessory:(id)arg1;
 - (void)setAccessoryIdentifier:(id)arg1;
@@ -53,6 +55,7 @@
 - (void)setSceneType:(id)arg1;
 - (void)setServiceGroup:(id)arg1;
 - (void)setServiceGroupIdentifiers:(id)arg1;
+- (void)setServiceSubType:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setTargetAttributes:(id)arg1;
 - (void)setZone:(id)arg1;

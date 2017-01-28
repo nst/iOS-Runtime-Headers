@@ -3,8 +3,8 @@
  */
 
 @interface HMDTrigger : NSObject <HMDBulletinIdentifiers, HMFDumpState, HMFMessageReceiver, NSSecureCoding> {
-    BOOL  _active;
-    BOOL  _activeOnLocalDevice;
+    bool  _active;
+    bool  _activeOnLocalDevice;
     NSMutableArray * _currentActionSets;
     HMDHome * _home;
     NSDate * _mostRecentFireDate;
@@ -17,44 +17,44 @@
 }
 
 @property (nonatomic, readonly) NSDictionary *actionContext;
-@property (nonatomic) BOOL active;
-@property (getter=isActiveOnLocalDevice, nonatomic) BOOL activeOnLocalDevice;
+@property (nonatomic) bool active;
+@property (getter=isActiveOnLocalDevice, nonatomic) bool activeOnLocalDevice;
 @property (nonatomic, readonly) NSDictionary *bulletinContext;
 @property (nonatomic, readonly, copy) NSString *contextID;
 @property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
 @property (nonatomic, retain) NSMutableArray *currentActionSets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, copy) NSDate *mostRecentFireDate;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
-@property (getter=isOwnedByThisDevice, nonatomic, readonly) BOOL ownedByThisDevice;
+@property (getter=isOwnedByThisDevice, nonatomic, readonly) bool ownedByThisDevice;
 @property (nonatomic, retain) HMDUser *owner;
 @property (nonatomic, retain) HMDDevice *owningDevice;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_directlyExecuteActionSetsWithCompletionHandler:(id /* block */)arg1;
-- (void)_executeActionSetsWithCompletionHandler:(id /* block */)arg1;
+- (void)_directlyExecuteActionSetsWithCompletionHandler:(id)arg1;
+- (void)_executeActionSetsWithCompletionHandler:(id)arg1;
 - (void)_handleActivateTriggerRequest:(id)arg1;
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_handleUpdateActionSetRequest:(id)arg1;
 - (void)_registerForMessages;
-- (id)_updateActionSet:(id)arg1 add:(BOOL)arg2;
+- (id)_updateActionSet:(id)arg1 add:(bool)arg2;
 - (struct NSDictionary { Class x1; }*)actionContext;
 - (id)actionSetWithUUID:(id)arg1;
 - (id)actionSets;
-- (void)activate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)activate:(bool)arg1 completionHandler:(id)arg2;
 - (void)activateOnLocalDevice;
-- (BOOL)active;
+- (bool)active;
 - (struct NSDictionary { Class x1; }*)bulletinContext;
 - (void)checkForNoActions;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
@@ -70,8 +70,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (void)invalidate;
-- (BOOL)isActiveOnLocalDevice;
-- (BOOL)isOwnedByThisDevice;
+- (bool)isActiveOnLocalDevice;
+- (bool)isOwnedByThisDevice;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)mostRecentFireDate;
@@ -84,8 +84,8 @@
 - (void)removeAccessory:(id)arg1;
 - (void)removeActionSet:(id)arg1;
 - (void)sendTriggerFiredNotification:(id)arg1;
-- (void)setActive:(BOOL)arg1;
-- (void)setActiveOnLocalDevice:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
+- (void)setActiveOnLocalDevice:(bool)arg1;
 - (void)setCurrentActionSets:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMostRecentFireDate:(id)arg1;
@@ -95,10 +95,10 @@
 - (void)setOwningDevice:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (BOOL)shouldEncodeLastFireDate:(id)arg1;
+- (bool)shouldEncodeLastFireDate:(id)arg1;
 - (void)triggerFired;
-- (unsigned int)triggerType;
-- (void)userDidConfirmExecute:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (unsigned long long)triggerType;
+- (void)userDidConfirmExecute:(bool)arg1 completionHandler:(id)arg2;
 - (id)uuid;
 - (id)workQueue;
 

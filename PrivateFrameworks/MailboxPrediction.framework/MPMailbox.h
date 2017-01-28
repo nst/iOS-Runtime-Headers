@@ -11,13 +11,13 @@
 @property (nonatomic, retain) <MPAccount> *account;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *persistentID;
 @property (readonly) Class superclass;
 
 + (id)mailboxWithAccount:(id)arg1 name:(id)arg2 persistentID:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)account;

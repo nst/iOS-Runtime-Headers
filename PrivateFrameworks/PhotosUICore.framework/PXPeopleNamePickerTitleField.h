@@ -3,13 +3,13 @@
  */
 
 @interface PXPeopleNamePickerTitleField : UITextField {
-    float  _maxWidth;
+    double  _maxWidth;
 }
 
-@property (nonatomic) float maxWidth;
+@property (nonatomic) double maxWidth;
 
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (float)maxWidth;
-- (void)setMaxWidth:(float)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (double)maxWidth;
+- (void)setMaxWidth:(double)arg1;
 
 @end

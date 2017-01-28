@@ -8,7 +8,7 @@
 @property (nonatomic, readonly) SKUILabelViewElement *textElement;
 
 - (id)imageElements;
-- (int)pageComponentType;
+- (long long)pageComponentType;
 - (id)textElement;
 
 @end

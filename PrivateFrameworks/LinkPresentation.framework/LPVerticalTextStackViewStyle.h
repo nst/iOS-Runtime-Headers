@@ -29,7 +29,7 @@
 - (id)captionTextPadding;
 - (id)emailCompatibleMargin;
 - (id)firstLineLeading;
-- (id)initWithPlatform:(int)arg1;
+- (id)initWithPlatform:(long long)arg1;
 - (id)lastLineDescent;
 - (void)setFirstLineLeading:(id)arg1;
 - (void)setLastLineDescent:(id)arg1;

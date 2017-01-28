@@ -11,7 +11,7 @@
 
 @property (nonatomic) double sampleRate;
 
-+ (id)_sharedStatisticWithDomain:(id)arg1 statisticsClass:(Class)arg2 identifierReporting:(int)arg3;
++ (id)_sharedStatisticWithDomain:(id)arg1 statisticsClass:(Class)arg2 identifierReporting:(long long)arg3;
 + (id)alertButtonTapCount;
 + (id)controlInteractionDurationDistributionWithCategory:(id)arg1 suffix:(id)arg2;
 + (id)controlTapCountWithCategory:(id)arg1 suffix:(id)arg2;
@@ -54,11 +54,11 @@
 - (void)_resetDistributionToValue:(double)arg1;
 - (void)_resetValue;
 - (void)_setValue:(long long)arg1;
-- (BOOL)_shouldSample;
+- (bool)_shouldSample;
 - (id)description;
 - (id)init;
 - (id)initWithDomain:(id)arg1;
-- (id)initWithDomain:(id)arg1 identifierReporting:(int)arg2;
+- (id)initWithDomain:(id)arg1 identifierReporting:(long long)arg2;
 - (void)randomizeSampleValue;
 - (double)sampleRate;
 - (void)setSampleRate:(double)arg1;

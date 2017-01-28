@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSMutableDictionary *dependencyIDToDependenciesInRange;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property <PLAccountingOwnerManager> *manager;
 @property (nonatomic, retain) NSMutableSet *observingDependencyIDs;
 @property (nonatomic, retain) PLAccountingRange *range;
@@ -34,7 +34,7 @@
 - (id)dependencyIDToDependenciesInRange;
 - (id)description;
 - (void)didReceiveDependency:(id)arg1;
-- (BOOL)hasRun;
+- (bool)hasRun;
 - (id)manager;
 - (id)observingDependencyIDs;
 - (id)range;

@@ -4,10 +4,10 @@
 
 @interface TPSuperBottomBar : UIView
 
-+ (float)defaultBottomMargin;
-+ (float)defaultInterButtonSpacing;
-+ (float)defaultSideMarginForDoubleButton;
-+ (float)defaultSideMarginForSingleButton;
-+ (float)defaultWidth;
++ (double)defaultBottomMargin;
++ (double)defaultInterButtonSpacing;
++ (double)defaultSideMarginForDoubleButton;
++ (double)defaultSideMarginForSingleButton;
++ (double)defaultWidth;
 
 @end

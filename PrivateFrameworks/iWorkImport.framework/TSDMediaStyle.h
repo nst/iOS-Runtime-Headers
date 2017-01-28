@@ -15,14 +15,14 @@
 + (id)properties;
 + (id)propertiesAllowingNSNull;
 + (void)saveMediaStylePropertyMap:(id)arg1 toArchive:(struct MediaStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StrokeArchive {} *x5; struct ShadowArchive {} *x6; struct ReflectionArchive {} *x7; float x8; }*)arg2 archiver:(id)arg3;
-+ (BOOL)validateFloatValue:(float*)arg1 forProperty:(int)arg2;
++ (bool)validateFloatValue:(float*)arg1 forProperty:(int)arg2;
 
-- (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
+- (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg3;
 - (id)initFromUnarchiver:(id)arg1;
 - (void)loadFromArchive:(const struct MediaStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StyleArchive {} *x5; struct MediaStylePropertiesArchive {} *x6; unsigned int x7; }*)arg1 unarchiver:(id)arg2;
 - (SEL)mapThemePropertyMapSelector;
-- (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
-- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
+- (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
 - (id)presetKind;
 - (void)saveToArchive:(struct MediaStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StyleArchive {} *x5; struct MediaStylePropertiesArchive {} *x6; unsigned int x7; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;

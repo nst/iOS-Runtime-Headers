@@ -4,6 +4,6 @@
 
 @interface AKHighlightAppearanceHelper : NSObject
 
-+ (id)colorForHighlightAttributeWithTag:(int)arg1;
++ (id)colorForHighlightAttributeWithTag:(long long)arg1;
 
 @end

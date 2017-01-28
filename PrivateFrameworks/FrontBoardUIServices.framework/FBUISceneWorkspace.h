@@ -6,12 +6,12 @@
     NSString * _identifier;
     FBSScene * _parentScene;
     NSMutableDictionary * _scenes;
-    BOOL  _valid;
+    bool  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSSet *scenes;
 @property (readonly) Class superclass;

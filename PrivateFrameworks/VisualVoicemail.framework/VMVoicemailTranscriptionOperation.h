@@ -3,49 +3,49 @@
  */
 
 @interface VMVoicemailTranscriptionOperation : NSOperation {
-    BOOL  _executing;
-    BOOL  _finished;
+    bool  _executing;
+    bool  _finished;
     SFSpeechRecognizer * _recognizer;
     SFSpeechURLRecognitionRequest * _request;
-    id /* block */  _resultBlock;
+    id  _resultBlock;
     SFSpeechRecognitionTask * _task;
     double  _timeSinceLastReceivedResult;
     double  _timeout;
-    id /* block */  _timeoutBlock;
+    id  _timeoutBlock;
 }
 
 @property (nonatomic) SFSpeechRecognizer *recognizer;
 @property (nonatomic, retain) SFSpeechURLRecognitionRequest *request;
-@property (nonatomic, copy) id /* block */ resultBlock;
+@property (nonatomic, copy) id resultBlock;
 @property (nonatomic, retain) SFSpeechRecognitionTask *task;
 @property (nonatomic) double timeSinceLastReceivedResult;
 @property (nonatomic) double timeout;
-@property (nonatomic, copy) id /* block */ timeoutBlock;
+@property (nonatomic, copy) id timeoutBlock;
 
 - (void).cxx_destruct;
 - (void)_completeOperation;
 - (void)cancel;
 - (void)cancelTimeout;
 - (void)dealloc;
-- (id)initWithRecognizer:(id)arg1 URL:(id)arg2 forceOfflineRecognition:(BOOL)arg3 resultBlock:(id /* block */)arg4;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (id)initWithRecognizer:(id)arg1 URL:(id)arg2 forceOfflineRecognition:(bool)arg3 resultBlock:(id)arg4;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (id)recognizer;
 - (void)registerForTimeoutCancellingPreviousIfNecessary;
 - (id)request;
-- (id /* block */)resultBlock;
+- (id)resultBlock;
 - (void)setRecognizer:(id)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setResultBlock:(id /* block */)arg1;
+- (void)setResultBlock:(id)arg1;
 - (void)setTask:(id)arg1;
 - (void)setTimeSinceLastReceivedResult:(double)arg1;
 - (void)setTimeout:(double)arg1;
-- (void)setTimeoutBlock:(id /* block */)arg1;
+- (void)setTimeoutBlock:(id)arg1;
 - (void)start;
 - (id)task;
 - (double)timeSinceLastReceivedResult;
 - (double)timeout;
-- (id /* block */)timeoutBlock;
+- (id)timeoutBlock;
 
 @end

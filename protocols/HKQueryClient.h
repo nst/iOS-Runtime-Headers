@@ -6,7 +6,7 @@
 @required
 
 - (void)deliverError:(NSError *)arg1 forQuery:(NSUUID *)arg2;
-- (void)deliverSampleBatch:(NSArray *)arg1 deletedBatch:(NSArray *)arg2 final:(BOOL)arg3 anchor:(HKQueryAnchor *)arg4 forQuery:(NSUUID *)arg5;
+- (void)deliverSampleBatch:(NSArray *)arg1 deletedBatch:(NSArray *)arg2 final:(bool)arg3 anchor:(HKQueryAnchor *)arg4 forQuery:(NSUUID *)arg5;
 
 @optional
 
@@ -17,16 +17,16 @@
 - (void)deliverDateRangeDictionary:(NSDictionary *)arg1 forQuery:(NSUUID *)arg2;
 - (void)deliverFitnessFriends:(NSSet *)arg1 queryUUID:(NSUUID *)arg2;
 - (void)deliverInitialStatisticsObjects:(NSArray *)arg1 anchor:(NSNumber *)arg2 forQuery:(NSUUID *)arg3;
-- (void)deliverLocationSeriesDatum:(NSArray *)arg1 final:(BOOL)arg2 forQuery:(NSUUID *)arg3;
+- (void)deliverLocationSeriesDatum:(NSArray *)arg1 final:(bool)arg2 forQuery:(NSUUID *)arg3;
 - (void)deliverResetStatisticsObjects:(NSArray *)arg1 forQuery:(NSUUID *)arg2;
 - (void)deliverResetSummaries:(NSArray *)arg1 forQuery:(NSUUID *)arg2;
-- (void)deliverResultsResetWithAnchor:(HKQueryAnchor *)arg1 final:(BOOL)arg2 forQuery:(NSUUID *)arg3;
+- (void)deliverResultsResetWithAnchor:(HKQueryAnchor *)arg1 final:(bool)arg2 forQuery:(NSUUID *)arg3;
 - (void)deliverSample:(HKSample *)arg1 forQuery:(NSUUID *)arg2;
 - (void)deliverSampleObjects:(NSArray *)arg1 deletedObjects:(NSArray *)arg2 withAnchor:(HKQueryAnchor *)arg3 forQuery:(NSUUID *)arg4;
 - (void)deliverSampleTypes:(NSArray *)arg1 forQuery:(NSUUID *)arg2;
 - (void)deliverSources:(NSSet *)arg1 forQuery:(NSUUID *)arg2;
 - (void)deliverStatistics:(HKStatistics *)arg1 forQuery:(NSUUID *)arg2;
-- (void)deliverStatisticsBatch:(NSArray *)arg1 initialDelivery:(BOOL)arg2 finalBatch:(BOOL)arg3 anchor:(NSNumber *)arg4 forQuery:(NSUUID *)arg5;
+- (void)deliverStatisticsBatch:(NSArray *)arg1 initialDelivery:(bool)arg2 finalBatch:(bool)arg3 anchor:(NSNumber *)arg4 forQuery:(NSUUID *)arg5;
 - (void)deliverSummaries:(NSArray *)arg1 forQuery:(NSUUID *)arg2;
 - (void)deliverUpdatedSources:(NSSet *)arg1 added:(NSSet *)arg2 forQuery:(NSUUID *)arg3;
 - (void)deliverUpdatedStatistics:(HKStatistics *)arg1 anchor:(NSNumber *)arg2 forQuery:(NSUUID *)arg3;

@@ -3,19 +3,19 @@
  */
 
 @interface NTKUserPhotoContentEditOption : NTKEditOption {
-    BOOL  _isDefaultPhoto;
+    bool  _isDefaultPhoto;
     NSString * _path;
 }
 
-@property (nonatomic, readonly) BOOL isDefaultPhoto;
+@property (nonatomic, readonly) bool isDefaultPhoto;
 @property (nonatomic, readonly) NSString *path;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDefaultPhoto;
+- (bool)isDefaultPhoto;
 - (id)path;
 
 @end

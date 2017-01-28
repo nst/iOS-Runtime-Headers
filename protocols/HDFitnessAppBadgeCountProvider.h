@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)badgeCount;
+- (unsigned long long)badgeCount;
 
 @end

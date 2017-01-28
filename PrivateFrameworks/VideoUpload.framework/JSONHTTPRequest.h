@@ -5,32 +5,32 @@
 @interface JSONHTTPRequest : NSObject <NSURLConnectionDelegate> {
     int  _HTTPMethod;
     NSString * _HTTPRequestBoundary;
-    BOOL  _allowsCellularAccess;
+    bool  _allowsCellularAccess;
     NSURLConnection * _connection;
     <JSONHTTPRequestDelegate> * _delegate;
     NSDictionary * _getParams;
     NSData * _overridePostBody;
     NSDictionary * _postParams;
     NSMutableData * _rawData;
-    BOOL  _receivedValidResponse;
+    bool  _receivedValidResponse;
     NSMutableURLRequest * _request;
     NSHTTPURLResponse * _response;
     int  _responseType;
     OAURLRequestSigner * _signer;
-    BOOL  _signsMultipartPOSTData;
+    bool  _signsMultipartPOSTData;
     NSDictionary * _unsignedPostParams;
 }
 
 @property (nonatomic) int HTTPMethod;
-@property (nonatomic) BOOL allowsCellularAccess;
+@property (nonatomic) bool allowsCellularAccess;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDictionary *getParams;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *postParams;
 @property (nonatomic, readonly) NSHTTPURLResponse *response;
 @property (nonatomic) int responseType;
-@property (nonatomic) BOOL signsMultipartPOSTData;
+@property (nonatomic) bool signsMultipartPOSTData;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDictionary *unsignedPostParams;
 
@@ -40,12 +40,12 @@
 - (int)HTTPMethod;
 - (id)HTTPRequestBoundary;
 - (id)_multipartParamData:(id)arg1;
-- (BOOL)allowsCellularAccess;
+- (bool)allowsCellularAccess;
 - (void)cancel;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
+- (void)connection:(id)arg1 didSendBodyData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
 - (id)getParams;
@@ -54,16 +54,16 @@
 - (id)postParams;
 - (id)response;
 - (int)responseType;
-- (void)setAllowsCellularAccess:(BOOL)arg1;
+- (void)setAllowsCellularAccess:(bool)arg1;
 - (void)setGetParams:(id)arg1;
 - (void)setHTTPHeader:(id)arg1 value:(id)arg2;
 - (void)setHTTPMethod:(int)arg1;
 - (void)setOverridePostBody:(id)arg1;
 - (void)setPostParams:(id)arg1;
 - (void)setResponseType:(int)arg1;
-- (void)setSignsMultipartPOSTData:(BOOL)arg1;
+- (void)setSignsMultipartPOSTData:(bool)arg1;
 - (void)setUnsignedPostParams:(id)arg1;
-- (BOOL)signsMultipartPOSTData;
+- (bool)signsMultipartPOSTData;
 - (void)start;
 - (id)unsignedPostParams;
 

@@ -12,7 +12,7 @@
 
 + (id)encodeHosts:(id)arg1;
 + (unsigned int)endpointType;
-+ (BOOL)supportsResolverCallback;
++ (bool)supportsResolverCallback;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -21,6 +21,6 @@
 - (id)hostsData;
 - (id)initWithEncodedData:(id)arg1;
 - (id)initWithHosts:(id)arg1;
-- (void)resolveEndpointWithCompletionHandler:(id /* block */)arg1;
+- (void)resolveEndpointWithCompletionHandler:(id)arg1;
 
 @end

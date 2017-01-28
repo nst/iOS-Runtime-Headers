@@ -13,8 +13,8 @@
 - (void).cxx_destruct;
 - (id)domain;
 - (id)fingerprintsToClassifications;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDomain:(id)arg1 fingerprintsToClassifications:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

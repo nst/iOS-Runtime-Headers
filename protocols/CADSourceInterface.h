@@ -5,8 +5,8 @@
 
 @required
 
-- (void)CADDatabaseGetSources:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, void*
-- (void)CADSourceGetConstraints:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 10: struct { int x1; int x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, int, int, unsigned long long, void*
-- (void)CADSourceRefresh:(void *)arg1 isUserRequested:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: struct { int x1; int x2; }, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)CADDatabaseGetSources:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, NSArray *, void*
+- (void)CADSourceGetConstraints:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 10: struct { int x1; int x2; }, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, int, int, unsigned long long, void*
+- (void)CADSourceRefresh:(void *)arg1 isUserRequested:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: struct { int x1; int x2; }, bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
 
 @end

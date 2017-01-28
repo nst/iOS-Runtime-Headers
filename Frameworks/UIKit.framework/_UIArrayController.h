@@ -4,8 +4,8 @@
 
 @interface _UIArrayController : NSObject {
     <_UIArrayControllerDelegate> * _delegate;
-    BOOL  _firstUpdateSent;
-    BOOL  _invalidated;
+    bool  _firstUpdateSent;
+    bool  _invalidated;
     NSOrderedSet * _lastSnapshot;
     NSOperationQueue * _operationQueue;
     NSPredicate * _predicate;
@@ -26,7 +26,7 @@
 - (id)initWithDelegate:(id)arg1;
 - (void)invalidate;
 - (id)lastSnapshot;
-- (BOOL)objectAttributeModified:(id)arg1 newObject:(id)arg2;
+- (bool)objectAttributeModified:(id)arg1 newObject:(id)arg2;
 - (id)operationQueue;
 - (id)predicate;
 - (void)processUpdate:(id)arg1 changedObjects:(id)arg2;

@@ -4,13 +4,13 @@
 
 @interface CMKMutableVideoCaptureRequest : CMKVideoCaptureRequest
 
-@property (nonatomic) int captureDevice;
-@property (nonatomic) int deviceOrientation;
-@property (nonatomic) int torchMode;
+@property (nonatomic) long long captureDevice;
+@property (nonatomic) long long deviceOrientation;
+@property (nonatomic) long long torchMode;
 
-- (void)setCaptureDevice:(int)arg1;
-- (void)setDeviceOrientation:(int)arg1;
+- (void)setCaptureDevice:(long long)arg1;
+- (void)setDeviceOrientation:(long long)arg1;
 - (void)setParameter:(id)arg1 forKey:(id)arg2;
-- (void)setTorchMode:(int)arg1;
+- (void)setTorchMode:(long long)arg1;
 
 @end

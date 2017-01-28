@@ -15,8 +15,8 @@
 - (void).cxx_destruct;
 - (id)_failureFutureWithReason:(id)arg1;
 - (id)commitItem;
-- (id)commitItemBuilderSetDiff:(id)arg1 addBlock:(id /* block */)arg2 deleteBlock:(id /* block */)arg3;
-- (id)commitSetDiff:(id)arg1 addBlock:(id /* block */)arg2 updateBlock:(id /* block */)arg3 deleteBlock:(id /* block */)arg4;
+- (id)commitItemBuilderSetDiff:(id)arg1 addBlock:(id)arg2 deleteBlock:(id)arg3;
+- (id)commitSetDiff:(id)arg1 addBlock:(id)arg2 updateBlock:(id)arg3 deleteBlock:(id)arg4;
 - (id)home;
 - (id)homeKitRepresentation;
 - (id)init;
@@ -26,7 +26,7 @@
 - (void)setHomeKitRepresentation:(id)arg1;
 - (id)verifyNameIsNotEmpty:(id)arg1;
 - (id)verifyPropertiesAreSet:(id)arg1;
-- (id)verifyProperty:(id)arg1 matchesCondition:(id /* block */)arg2 description:(id)arg3;
+- (id)verifyProperty:(id)arg1 matchesCondition:(id)arg2 description:(id)arg3;
 - (id)verifyPropertyIsSet:(id)arg1;
 
 @end

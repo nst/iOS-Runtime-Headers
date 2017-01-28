@@ -11,7 +11,7 @@
     GKPlayerInternal * _player;
     unsigned int  _rank;
     long long  _value;
-    BOOL  _valueSet;
+    bool  _valueSet;
 }
 
 @property (nonatomic, retain) NSString *category;
@@ -25,10 +25,10 @@
 @property (nonatomic, readonly) NSString *playerID;
 @property (nonatomic) unsigned int rank;
 @property (nonatomic) long long value;
-@property (nonatomic) BOOL valueSet;
+@property (nonatomic) bool valueSet;
 
 + (id)secureCodedPropertyKeys;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)category;
 - (unsigned long long)context;
@@ -38,9 +38,9 @@
 - (id)formattedValue;
 - (id)groupCategory;
 - (id)groupLeaderboardIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)leaderboardIdentifier;
 - (id)player;
 - (id)playerID;
@@ -56,8 +56,8 @@
 - (void)setPlayer:(id)arg1;
 - (void)setRank:(unsigned int)arg1;
 - (void)setValue:(long long)arg1;
-- (void)setValueSet:(BOOL)arg1;
+- (void)setValueSet:(bool)arg1;
 - (long long)value;
-- (BOOL)valueSet;
+- (bool)valueSet;
 
 @end

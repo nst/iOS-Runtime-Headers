@@ -3,14 +3,14 @@
  */
 
 @interface SFAirDropTransferStateMachine : SFStateMachine {
-    BOOL  _restoring;
+    bool  _restoring;
 }
 
-@property (nonatomic) BOOL restoring;
+@property (nonatomic) bool restoring;
 
 - (id)init;
 - (id)missingTransitionFromState:(id)arg1 toState:(id)arg2;
-- (BOOL)restoring;
-- (void)setRestoring:(BOOL)arg1;
+- (bool)restoring;
+- (void)setRestoring:(bool)arg1;
 
 @end

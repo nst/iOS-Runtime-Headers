@@ -15,17 +15,17 @@
 + (id)ODRConnection;
 + (id)ODRUsageForBundleIdentifier:(id)arg1 error:(id*)arg2;
 + (id)dynamicUsageForBundleIdentifier:(id)arg1 error:(id*)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_fetchWithXPCConnection:(id)arg1 error:(id*)arg2;
+- (bool)_fetchWithXPCConnection:(id)arg1 error:(id*)arg2;
 - (id)_initWithBundleIdentifier:(id)arg1 alreadyKnownUsage:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)dynamicUsage;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)fetchClientSideWithError:(id*)arg1;
-- (BOOL)fetchServerSideWithError:(id*)arg1;
+- (bool)fetchClientSideWithError:(id*)arg1;
+- (bool)fetchServerSideWithError:(id*)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)onDemandResourcesUsage;

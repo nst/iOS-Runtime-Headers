@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isReadyForMoreMediaData;
+- (bool)isReadyForMoreMediaData;
 
 @end

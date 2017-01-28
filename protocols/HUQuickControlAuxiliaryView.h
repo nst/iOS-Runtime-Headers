@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)hasCenteredContent;
+- (bool)hasCenteredContent;
 
 @end

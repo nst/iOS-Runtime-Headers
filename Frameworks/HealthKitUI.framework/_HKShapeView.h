@@ -9,7 +9,7 @@
 
 + (Class)layerClass;
 
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)path;
 - (void)setPath:(id)arg1;
 - (id)shapeLayer;

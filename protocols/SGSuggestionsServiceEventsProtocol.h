@@ -5,11 +5,11 @@
 
 @required
 
-- (NSArray *)allEventsLimitedTo:(unsigned int)arg1 error:(id*)arg2;
-- (void)allEventsLimitedTo:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (NSArray *)allEventsLimitedTo:(unsigned long long)arg1 error:(id*)arg2;
+- (void)allEventsLimitedTo:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
 - (SGEvent *)eventFromUniqueId:(NSString *)arg1 error:(id*)arg2;
-- (void)eventFromUniqueId:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, SGEvent *, NSError *, void*
-- (void)eventsForSchemas:(void *)arg1 usingStore:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSArray *, EKEventStore *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
-- (void)keysForSchemas:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)eventFromUniqueId:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, SGEvent *, NSError *, void*
+- (void)eventsForSchemas:(void *)arg1 usingStore:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSArray *, EKEventStore *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
+- (void)keysForSchemas:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
 
 @end

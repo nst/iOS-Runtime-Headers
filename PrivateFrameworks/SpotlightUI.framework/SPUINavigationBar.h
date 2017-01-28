@@ -3,29 +3,30 @@
  */
 
 @interface SPUINavigationBar : UINavigationBar {
-    float  _currentBlurProgress;
+    double  _currentBlurProgress;
     UIView * _topDividerView;
 }
 
-@property float currentBlurProgress;
+@property double currentBlurProgress;
 @property (retain) UIView *topDividerView;
 
-+ (BOOL)_supportsCanvasView;
++ (bool)_supportsCanvasView;
 
 - (void).cxx_destruct;
 - (id)_popNavigationItemWithTransition:(int)arg1;
-- (float)currentBlurProgress;
+- (double)currentBlurProgress;
 - (void)didAddSubview:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isLocked;
-- (void)performShowSeparator:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)performUpdateBlurProgress:(float)arg1 animated:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isLocked;
+- (void)performShowSeparator:(bool)arg1 animated:(bool)arg2;
+- (void)performUpdateBlurProgress:(double)arg1 animated:(bool)arg2;
 - (void)pushNavigationItem:(id)arg1;
-- (void)setCurrentBlurProgress:(float)arg1;
+- (void)setCurrentBlurProgress:(double)arg1;
+- (void)setRoundedCornerVisible:(bool)arg1;
 - (void)setTopDividerView:(id)arg1;
-- (void)showSeparator:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)showSeparator:(bool)arg1 animated:(bool)arg2;
 - (id)topDividerView;
 - (void)updateBackgroundViewVisibility;
-- (void)updateBlurProgress:(float)arg1 animated:(BOOL)arg2;
+- (void)updateBlurProgress:(double)arg1 animated:(bool)arg2;
 
 @end

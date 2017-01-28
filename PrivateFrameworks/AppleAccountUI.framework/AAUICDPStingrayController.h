@@ -3,7 +3,7 @@
  */
 
 @interface AAUICDPStingrayController : NSObject <DevicePINControllerDelegate> {
-    id /* block */  __passcodeValidationCompletion;
+    id  __passcodeValidationCompletion;
     AAUICDPHelper * _helper;
     PSSetupController * _navController;
     UIBarButtonItem * _previousRightButton;
@@ -11,18 +11,18 @@
     NSString * _stingrayPendingState;
 }
 
-@property (nonatomic, copy) id /* block */ _passcodeValidationCompletion;
+@property (nonatomic, copy) id _passcodeValidationCompletion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *stingrayPendingState;
 @property (readonly) Class superclass;
 
-+ (BOOL)isValidStingrayIndicator:(id)arg1;
++ (bool)isValidStingrayIndicator:(id)arg1;
 + (id)stingrayControllerWithPresenter:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)_passcodeValidationCompletion;
+- (id)_passcodeValidationCompletion;
 - (id)_presentingViewController;
 - (void)_setupNavController;
 - (void)_showPasscodePromptWithMode:(int)arg1;
@@ -35,11 +35,11 @@
 - (void)disableUserInteractionAndStartSpinner;
 - (void)enableUserInteractionAndStopSpinner;
 - (void)setStingrayPendingState:(id)arg1;
-- (void)set_passcodeValidationCompletion:(id /* block */)arg1;
+- (void)set_passcodeValidationCompletion:(id)arg1;
 - (id)stingrayPendingState;
 - (id)stingrayRefreshRequestWithInfo:(id)arg1 serverInfo:(id)arg2 attributes:(id)arg3;
-- (void)updateStingrayStateToEnabled:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)updateStingrayStateWithKey:(id)arg1 completion:(id /* block */)arg2;
-- (void)validateStingrayPasscodeStateWithCompletion:(id /* block */)arg1;
+- (void)updateStingrayStateToEnabled:(bool)arg1 completion:(id)arg2;
+- (void)updateStingrayStateWithKey:(id)arg1 completion:(id)arg2;
+- (void)validateStingrayPasscodeStateWithCompletion:(id)arg1;
 
 @end

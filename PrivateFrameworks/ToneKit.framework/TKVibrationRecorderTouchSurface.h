@@ -5,11 +5,11 @@
 @interface TKVibrationRecorderTouchSurface : TKVibrationRecorderRippleView {
     <TKVibrationRecorderTouchSurfaceDelegate> * _delegate;
     <NSCopying> * _displayLinkManagerObserverToken;
-    BOOL  _isRecordingModeEnabled;
-    BOOL  _isReplayModeEnabled;
+    bool  _isRecordingModeEnabled;
+    bool  _isReplayModeEnabled;
     TKVibrationRecorderTouchSurfaceRecordedDataWrapper * _recordedDataWrapper;
     double  _replayModeWasEnteredStartTime;
-    BOOL  _shouldIgnoreCurrentTouch;
+    bool  _shouldIgnoreCurrentTouch;
     double  _vibrationPatternMaximumDuration;
     TLVibrationPattern * _vibrationPatternToReplay;
 }
@@ -17,7 +17,7 @@
 @property (nonatomic) <TKVibrationRecorderTouchSurfaceDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)_recordTouchLocation:(struct CGPoint { float x1; float x2; })arg1 touchPhase:(int)arg2;
+- (void)_recordTouchLocation:(struct CGPoint { double x1; double x2; })arg1 touchPhase:(int)arg2;
 - (void)_updateTouchLocationForReplayMode:(id)arg1;
 - (void)currentVibrationComponentShouldEnd;
 - (void)dealloc;

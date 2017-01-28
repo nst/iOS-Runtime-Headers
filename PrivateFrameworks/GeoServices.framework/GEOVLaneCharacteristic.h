@@ -12,7 +12,7 @@
     unsigned int  _roadLaneCount;
 }
 
-@property (nonatomic) BOOL hasRoadLaneCount;
+@property (nonatomic) bool hasRoadLaneCount;
 @property (nonatomic, retain) NSMutableArray *laneDirections;
 @property (nonatomic, retain) NSMutableArray *laneDividers;
 @property (nonatomic, retain) NSMutableArray *laneTypes;
@@ -29,21 +29,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRoadLaneCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)laneDirectionAtIndex:(unsigned int)arg1;
+- (bool)hasRoadLaneCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)laneDirectionAtIndex:(unsigned long long)arg1;
 - (id)laneDirections;
-- (unsigned int)laneDirectionsCount;
-- (id)laneDividerAtIndex:(unsigned int)arg1;
+- (unsigned long long)laneDirectionsCount;
+- (id)laneDividerAtIndex:(unsigned long long)arg1;
 - (id)laneDividers;
-- (unsigned int)laneDividersCount;
-- (id)laneTypeAtIndex:(unsigned int)arg1;
+- (unsigned long long)laneDividersCount;
+- (id)laneTypeAtIndex:(unsigned long long)arg1;
 - (id)laneTypes;
-- (unsigned int)laneTypesCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)laneTypesCount;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)roadLaneCount;
-- (void)setHasRoadLaneCount:(BOOL)arg1;
+- (void)setHasRoadLaneCount:(bool)arg1;
 - (void)setLaneDirections:(id)arg1;
 - (void)setLaneDividers:(id)arg1;
 - (void)setLaneTypes:(id)arg1;

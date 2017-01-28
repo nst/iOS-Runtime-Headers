@@ -10,12 +10,11 @@
     NSDictionary * _installedBundleIDToDisplayName;
     NSDictionary * _installedPluginBundleIDToPluginEntry;
     NSSet * _intermediateRootNodes;
-    NSSet * _internalAppNames;
     NSDictionary * _nodeIDToNodeName;
     NSSet * _nonAppNames;
     NSDictionary * _rootNodeNameToRootNodeEnergyKey;
     NSSet * _rootNodeNames;
-    BOOL  _showGizmoQualifier;
+    bool  _showGizmoQualifier;
     NSSet * _webAppNames;
 }
 
@@ -26,16 +25,15 @@
 @property (nonatomic, retain) NSDictionary *installedBundleIDToDisplayName;
 @property (nonatomic, retain) NSDictionary *installedPluginBundleIDToPluginEntry;
 @property (nonatomic, retain) NSSet *intermediateRootNodes;
-@property (nonatomic, retain) NSSet *internalAppNames;
 @property (nonatomic, retain) NSDictionary *nodeIDToNodeName;
 @property (nonatomic, retain) NSSet *nonAppNames;
 @property (nonatomic, retain) NSDictionary *rootNodeNameToRootNodeEnergyKey;
 @property (nonatomic, retain) NSSet *rootNodeNames;
-@property BOOL showGizmoQualifier;
+@property bool showGizmoQualifier;
 @property (nonatomic, retain) NSSet *webAppNames;
 
 + (id)appNameForBundleID:(id)arg1;
-+ (BOOL)canSetQualifier:(int)arg1 forBundleID:(id)arg2;
++ (bool)canSetQualifier:(int)arg1 forBundleID:(id)arg2;
 + (id)combineQualifiers:(id)arg1;
 + (id)installedPlugins;
 + (void)load;
@@ -66,7 +64,6 @@
 - (id)installedBundleIDToDisplayName;
 - (id)installedPluginBundleIDToPluginEntry;
 - (id)intermediateRootNodes;
-- (id)internalAppNames;
 - (id)mapCloudDocsToAppsWithEnergyEntries:(id)arg1;
 - (id)mapDeletedAppsWithEnergyEntries:(id)arg1;
 - (id)mapGizmoToAppsWithEnergyEntries:(id)arg1;
@@ -90,22 +87,21 @@
 - (void)setInstalledBundleIDToDisplayName:(id)arg1;
 - (void)setInstalledPluginBundleIDToPluginEntry:(id)arg1;
 - (void)setIntermediateRootNodes:(id)arg1;
-- (void)setInternalAppNames:(id)arg1;
 - (void)setNodeIDToNodeName:(id)arg1;
 - (void)setNonAppNames:(id)arg1;
 - (void)setRootNodeNameToRootNodeEnergyKey:(id)arg1;
 - (void)setRootNodeNames:(id)arg1;
-- (void)setShowGizmoQualifier:(BOOL)arg1;
+- (void)setShowGizmoQualifier:(bool)arg1;
 - (void)setWebAppNames:(id)arg1;
-- (BOOL)shouldShowBatteryBreakdownWithTotalSumEnergy:(double)arg1;
-- (BOOL)shouldSuggestAutoBrightnessWithEnergyEntries:(id)arg1;
-- (BOOL)shouldSuggestAutoLockWithEnergyEntries:(id)arg1;
-- (BOOL)shouldSuggestReduceBrightnessWithEnergyEntries:(id)arg1;
-- (BOOL)showGizmoQualifier;
-- (BOOL)showRootNodesInInternal;
+- (bool)shouldShowBatteryBreakdownWithTotalSumEnergy:(double)arg1;
+- (bool)shouldSuggestAutoBrightnessWithEnergyEntries:(id)arg1;
+- (bool)shouldSuggestAutoLockWithEnergyEntries:(id)arg1;
+- (bool)shouldSuggestReduceBrightnessWithEnergyEntries:(id)arg1;
+- (bool)showGizmoQualifier;
+- (bool)showRootNodesInInternal;
 - (id)suggestionsWithEnergyEntries:(id)arg1;
 - (double)totalDuration;
-- (BOOL)wasGizmoConnectedInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
+- (bool)wasGizmoConnectedInRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg1;
 - (id)webAppNames;
 
 @end

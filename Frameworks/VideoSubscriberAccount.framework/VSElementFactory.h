@@ -4,7 +4,7 @@
 
 @interface VSElementFactory : NSObject
 
-+ (void)_registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned int)arg3;
++ (void)_registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3;
 + (void)_registerDefaultElements;
 + (void)initialize;
 

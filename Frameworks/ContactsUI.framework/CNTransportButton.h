@@ -5,31 +5,31 @@
 @interface CNTransportButton : UIButton {
     UIColor * _glyphColor;
     UIImage * _image;
-    BOOL  _showBackgroundPlatter;
-    int  _transportType;
+    bool  _showBackgroundPlatter;
+    long long  _transportType;
 }
 
 @property (nonatomic, retain) UIColor *glyphColor;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) BOOL showBackgroundPlatter;
-@property (nonatomic) int transportType;
+@property (nonatomic) bool showBackgroundPlatter;
+@property (nonatomic) long long transportType;
 
 + (id)transportButton;
-+ (id)transportButtonWithType:(int)arg1;
++ (id)transportButtonWithType:(long long)arg1;
 
 - (void).cxx_destruct;
-- (void)_updateImageWithType:(int)arg1;
+- (void)_updateImageWithType:(long long)arg1;
 - (id)glyphColor;
 - (id)image;
-- (id)imageNameForType:(int)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)imageNameForType:(long long)arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)setGlyphColor:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setShowBackgroundPlatter:(BOOL)arg1;
-- (void)setTransportType:(int)arg1;
-- (BOOL)showBackgroundPlatter;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShowBackgroundPlatter:(bool)arg1;
+- (void)setTransportType:(long long)arg1;
+- (bool)showBackgroundPlatter;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tintColorDidChange;
-- (int)transportType;
+- (long long)transportType;
 
 @end

@@ -10,7 +10,7 @@
 @property (getter=_date, nonatomic, readonly) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (getter=_identifier, nonatomic, readonly) NSString *identifier;
 @property (getter=_localizedSnippet, nonatomic, readonly) NSString *localizedSnippet;
 @property (getter=_maxScore, nonatomic, readonly) double maxScore;

@@ -7,18 +7,18 @@
     CNUIUserActionDisambiguationModeler * _modeler;
     CNCache * _models;
     <CNSchedulerProvider> * _schedulerProvider;
-    BOOL  _tracksChanges;
+    bool  _tracksChanges;
 }
 
 @property (nonatomic, copy) CNContact *contact;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CNUIUserActionDisambiguationModeler *modeler;
 @property (nonatomic, retain) CNCache *models;
 @property (nonatomic, readonly) <CNSchedulerProvider> *schedulerProvider;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL tracksChanges;
+@property (nonatomic) bool tracksChanges;
 
 + (id)allActionTypes;
 + (id)allSupportedActionTypes;
@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 - (id)actionTypesForConsumer:(id)arg1;
 - (id)consumer:(id)arg1 actionModelsForActionType:(id)arg2;
-- (id)consumer:(id)arg1 actionModelsForActionType:(id)arg2 handler:(id /* block */)arg3;
+- (id)consumer:(id)arg1 actionModelsForActionType:(id)arg2 handler:(id)arg3;
 - (id)consumer:(id)arg1 imageForActionType:(id)arg2;
 - (id)consumer:(id)arg1 localizedButtonDisplayNameForActionType:(id)arg2;
 - (id)consumer:(id)arg1 localizedDisplayNameForActionType:(id)arg2;
@@ -51,10 +51,10 @@
 - (void)setContactStore:(id)arg1;
 - (void)setModeler:(id)arg1;
 - (void)setModels:(id)arg1;
-- (void)setTracksChanges:(BOOL)arg1;
+- (void)setTracksChanges:(bool)arg1;
 - (id)thirdPartyActionsForContactProperty:(id)arg1;
 - (id)thirdPartyActionsForCurrentContactAndPropertyKey:(id)arg1 identifier:(id)arg2;
 - (id)thirdPartyTargetsForActionTypes:(id)arg1;
-- (BOOL)tracksChanges;
+- (bool)tracksChanges;
 
 @end

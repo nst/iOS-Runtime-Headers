@@ -8,6 +8,6 @@
 + (void)resetRestrictions;
 + (void)resetRestrictionsPassword;
 + (id)restrictionSpecifiers;
-+ (void)setSpringBoardCapability:(id)arg1 enabled:(BOOL)arg2;
++ (void)setSpringBoardCapability:(id)arg1 enabled:(bool)arg2;
 
 @end

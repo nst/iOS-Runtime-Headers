@@ -4,6 +4,6 @@
 
 @interface CKQLDetailsPreviewController : CKQLPreviewController
 
-- (BOOL)ckCanDismissWhenSuspending;
+- (bool)ckCanDismissWhenSuspending;
 
 @end

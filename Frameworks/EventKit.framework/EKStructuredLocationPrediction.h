@@ -6,7 +6,7 @@
 
 + (id)_mockLocationForEvent:(id)arg1;
 + (id)locationPredictionForEvent:(id)arg1 error:(id*)arg2 timeout:(double)arg3;
-+ (BOOL)shouldDoLocationPredictionForEvent:(id)arg1;
-+ (void)userInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned int)arg2;
++ (bool)shouldDoLocationPredictionForEvent:(id)arg1;
++ (void)userInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned long long)arg2;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface _NCLookViewDarkenedBlurBackdropViewSettings : NCLookViewBackdropViewSettings
 
-- (BOOL)_isBlurred;
-- (BOOL)_isDarkened;
+- (bool)_isBlurred;
+- (bool)_isDarkened;
 
 @end

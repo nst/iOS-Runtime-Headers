@@ -20,13 +20,13 @@
 + (void)load;
 
 - (void).cxx_destruct;
-- (void)auxClassWrapper:(id)arg1 withAction:(int)arg2;
+- (void)auxClassWrapper:(id)arg1 withAction:(long long)arg2;
 - (id)awdServerConn;
 - (id)classDictionary;
-- (BOOL)connectToAWDServer;
+- (bool)connectToAWDServer;
 - (id)currRunningMetrics;
 - (id)init;
-- (BOOL)initAWDInterface;
+- (bool)initAWDInterface;
 - (void)initOperatorDependancies;
 - (void)setAwdServerConn:(id)arg1;
 - (void)setClassDictionary:(id)arg1;

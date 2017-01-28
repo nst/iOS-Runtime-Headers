@@ -3,15 +3,15 @@
  */
 
 @interface HUQuickControlVisualEffect : UIVisualEffect {
-    unsigned int  _effectType;
+    unsigned long long  _effectType;
 }
 
-@property (nonatomic, readonly) unsigned int effectType;
+@property (nonatomic, readonly) unsigned long long effectType;
 
-+ (id)effectWithType:(unsigned int)arg1;
++ (id)effectWithType:(unsigned long long)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
-- (unsigned int)effectType;
+- (unsigned long long)effectType;
 
 @end

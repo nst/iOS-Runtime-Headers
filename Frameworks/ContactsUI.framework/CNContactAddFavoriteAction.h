@@ -9,12 +9,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CNUIFavoritesEntryPicker *favoritesEntryPicker;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_saveFavorite:(id)arg1;
-- (BOOL)canPerformAction;
+- (bool)canPerformAction;
 - (id)favoritesEntryPicker;
 - (void)favoritesEntryPicker:(id)arg1 didPickEntry:(id)arg2;
 - (void)performActionWithSender:(id)arg1;

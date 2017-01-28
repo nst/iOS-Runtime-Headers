@@ -28,7 +28,7 @@
 - (void)feedback:(id)arg1 withItemsVisited:(id)arg2;
 - (id)hysteresis;
 - (id)learnedWeights;
-- (id)rankItems:(id)arg1 withMetaInfo:(id)arg2 withNumOfRankItem:(unsigned int)arg3;
+- (id)rankItems:(id)arg1 withMetaInfo:(id)arg2 withNumOfRankItem:(unsigned long long)arg3;
 - (void)setCdBundleIdAttribute:(id)arg1;
 - (void)setCdSession:(id)arg1;
 - (void)setConfigPList:(id)arg1;

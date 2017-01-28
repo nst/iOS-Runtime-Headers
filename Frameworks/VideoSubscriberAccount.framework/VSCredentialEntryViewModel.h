@@ -2,34 +2,36 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSCredentialEntryViewModel : VSViewModel {
+@interface VSCredentialEntryViewModel : VSCuratedViewModel {
     NSArray * _fields;
     NSString * _linkTitle;
     NSURL * _linkURL;
-    BOOL  _needsUpdateValidationButtonState;
+    bool  _needsUpdateValidationButtonState;
     NSArray * _originalFieldTextValues;
 }
 
 @property (nonatomic, copy) NSArray *fields;
 @property (nonatomic, copy) NSString *linkTitle;
 @property (nonatomic, copy) NSURL *linkURL;
-@property (nonatomic) BOOL needsUpdateValidationButtonState;
+@property (nonatomic) bool needsUpdateValidationButtonState;
 @property (nonatomic, retain) NSArray *originalFieldTextValues;
 
 - (void).cxx_destruct;
 - (void)_setNeedsUpdateValidationButtonState;
+- (void)_startObservingFields:(id)arg1;
+- (void)_stopObservingFields:(id)arg1;
 - (void)_updateValidationButtonState;
 - (void)dealloc;
 - (id)fields;
 - (id)linkTitle;
 - (id)linkURL;
-- (BOOL)needsUpdateValidationButtonState;
+- (bool)needsUpdateValidationButtonState;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)originalFieldTextValues;
 - (void)setFields:(id)arg1;
 - (void)setLinkTitle:(id)arg1;
 - (void)setLinkURL:(id)arg1;
-- (void)setNeedsUpdateValidationButtonState:(BOOL)arg1;
+- (void)setNeedsUpdateValidationButtonState:(bool)arg1;
 - (void)setOriginalFieldTextValues:(id)arg1;
 
 @end

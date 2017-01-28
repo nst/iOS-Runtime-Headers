@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_allConfigurations;
@@ -15,7 +15,7 @@
 + (id)dataSourceForViewControllerIdentifier:(id)arg1;
 + (id)dataSourceForViewControllerIdentifier:(id)arg1 withQuery:(id)arg2;
 + (void)registerViewControllerIdentifier:(id)arg1 withConfiguration:(id)arg2;
-+ (void)registerViewControllerIdentifier:(id)arg1 withConfigurationBlock:(id /* block */)arg2;
++ (void)registerViewControllerIdentifier:(id)arg1 withConfigurationBlock:(id)arg2;
 + (void)registerViewControllerIdentifiers;
 + (id)viewControllerForIdentifier:(id)arg1;
 + (id)viewControllerForIdentifier:(id)arg1 withDataSource:(id)arg2;

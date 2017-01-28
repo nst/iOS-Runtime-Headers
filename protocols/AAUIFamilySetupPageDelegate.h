@@ -5,6 +5,6 @@
 
 @required
 
-- (void)familySetupPage:(UIViewController<AAUIFamilySetupPage> *)arg1 didCompleteWithSuccess:(BOOL)arg2;
+- (void)familySetupPage:(UIViewController<AAUIFamilySetupPage> *)arg1 didCompleteWithSuccess:(bool)arg2;
 
 @end

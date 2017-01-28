@@ -19,7 +19,7 @@
 - (id)description;
 - (id)deviceName;
 - (id)fileURL;
-- (void)loadDataWithCompletionHandler:(id /* block */)arg1;
+- (void)loadDataWithCompletionHandler:(id)arg1;
 - (id)modificationDate;
 - (id)name;
 - (void)setDeviceName:(id)arg1;

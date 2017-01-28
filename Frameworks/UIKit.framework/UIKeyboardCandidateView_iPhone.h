@@ -8,17 +8,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (float)defaultExtendedControlHeight;
++ (double)defaultExtendedControlHeight;
 
 - (void)_handleKeyboardShowOrHide:(id)arg1;
 - (void)_setupKeyboardInteraction;
-- (BOOL)_shouldShowHideKeyboard;
-- (BOOL)_shouldUseFullMetrics;
+- (bool)_shouldShowHideKeyboard;
+- (bool)_shouldUseFullMetrics;
 - (void)dealloc;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleTap;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 

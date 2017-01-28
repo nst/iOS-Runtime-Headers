@@ -3,19 +3,19 @@
  */
 
 @interface UIScrollViewScrollAnimation : UIAnimation {
-    float  _accuracy;
-    BOOL  _adjustsForContentOffsetDelta;
+    double  _accuracy;
+    bool  _adjustsForContentOffsetDelta;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _originalOffset;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _targetOffset;
 }
 
-- (void)adjustForContentOffsetDelta:(struct CGPoint { float x1; float x2; })arg1;
+- (void)adjustForContentOffsetDelta:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
 - (void)setProgress:(float)arg1;
 

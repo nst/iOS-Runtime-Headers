@@ -12,6 +12,6 @@
 - (void).cxx_destruct;
 - (void)clearExtensions;
 - (id)init;
-- (id)receiveExtensions:(id)arg1 withIndex:(unsigned int)arg2;
+- (id)receiveExtensions:(id)arg1 withIndex:(unsigned long long)arg2;
 
 @end

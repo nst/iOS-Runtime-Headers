@@ -27,7 +27,7 @@
 - (id)digit;
 - (id)digitBaseline;
 - (void)doLayoutNow;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)letterBaseline;
 - (id)letters;
 - (id)plus;
@@ -36,7 +36,7 @@
 - (void)setDigit:(id)arg1;
 - (void)setDigit:(id)arg1 primaryLetters:(id)arg2 secondaryLetters:(id)arg3;
 - (void)setDigitBaseline:(id)arg1;
-- (void)setFontStylesForHighlightState:(BOOL)arg1 language:(unsigned int)arg2 showLocalizedLetters:(BOOL)arg3 shouldCenterDigit:(BOOL)arg4 fontColor:(BOOL)arg5 circleDiameter:(float)arg6;
+- (void)setFontStylesForHighlightState:(bool)arg1 language:(unsigned long long)arg2 showLocalizedLetters:(bool)arg3 shouldCenterDigit:(bool)arg4 fontColor:(bool)arg5 circleDiameter:(double)arg6;
 - (void)setLetterBaseline:(id)arg1;
 - (void)setLetters:(id)arg1;
 - (void)setPlus:(id)arg1;

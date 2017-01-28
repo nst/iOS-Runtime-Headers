@@ -27,8 +27,8 @@
 - (void)log;
 - (void)logEventForwardConfig;
 - (void)logEventPointCache;
-- (int)pollingInterval;
+- (long long)pollingInterval;
 - (id)preferencesChangedNotification;
-- (BOOL)pushEnabled;
+- (bool)pushEnabled;
 
 @end

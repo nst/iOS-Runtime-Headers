@@ -11,21 +11,21 @@
 @property (nonatomic, readonly, copy) NSString *CIFilterName;
 @property (nonatomic, readonly, copy) NSString *displayName;
 @property (nonatomic, readonly, copy) NSString *filterIdentifier;
-@property (nonatomic, readonly) int latestVersion;
+@property (nonatomic, readonly) long long latestVersion;
 
 + (id)_effectWithIdentifier:(id)arg1 CIFilterName:(id)arg2 displayName:(id)arg3;
 + (id)allEffects;
 + (id)effectWithCIFilterName:(id)arg1;
 + (id)effectWithIdentifier:(id)arg1;
-+ (unsigned int)indexOfEffectWithIdentifier:(id)arg1;
-+ (BOOL)isEffectNoneForIdentifier:(id)arg1;
-+ (BOOL)isEffectWithIdentifier:(id)arg1 equalToEffectWithIdentifier:(id)arg2;
++ (unsigned long long)indexOfEffectWithIdentifier:(id)arg1;
++ (bool)isEffectNoneForIdentifier:(id)arg1;
++ (bool)isEffectWithIdentifier:(id)arg1 equalToEffectWithIdentifier:(id)arg2;
 
 - (id)CIFilterName;
 - (id)description;
 - (id)displayName;
 - (id)filterIdentifier;
-- (int)latestVersion;
+- (long long)latestVersion;
 - (id)newEffectFilter;
 
 @end

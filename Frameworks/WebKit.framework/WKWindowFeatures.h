@@ -5,7 +5,7 @@
 @interface WKWindowFeatures : NSObject <WKObject> {
     struct ObjectStorage<API::WindowFeatures> { 
         struct type { 
-            unsigned char __lx[60]; 
+            unsigned char __lx[72]; 
         } data; 
     }  _windowFeatures;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSNumber *allowsResizing;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSNumber *height;
 @property (nonatomic, readonly) NSNumber *menuBarVisibility;
 @property (nonatomic, readonly) NSNumber *statusBarVisibility;

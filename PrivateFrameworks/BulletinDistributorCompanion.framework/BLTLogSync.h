@@ -29,7 +29,7 @@
 - (void)setSyncCount:(unsigned int)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (unsigned int)syncCount;
-- (id)syncLogsOnlyIfWatchLogsEnabled:(BOOL)arg1 completion:(id /* block */)arg2;
+- (id)syncLogsOnlyIfWatchLogsEnabled:(bool)arg1 completion:(id)arg2;
 - (id)syncQueue;
 
 @end

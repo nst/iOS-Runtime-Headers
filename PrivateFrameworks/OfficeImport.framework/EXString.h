@@ -15,6 +15,6 @@
 + (id)readStringWithAsciiCodeFromXmlStringElement:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
 + (void)replaceEscapeAsciiCodes:(id)arg1;
 + (id)stringInEDString:(id)arg1 forRunIndex:(unsigned int)arg2;
-+ (id)stringInEDString:(id)arg1 start:(unsigned int)arg2 end:(unsigned int)arg3;
++ (id)stringInEDString:(id)arg1 start:(unsigned long long)arg2 end:(unsigned long long)arg3;
 
 @end

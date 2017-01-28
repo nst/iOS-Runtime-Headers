@@ -3,7 +3,7 @@
  */
 
 @interface CoreDAVValidatePrincipalsTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate> {
-    BOOL  _authError;
+    bool  _authError;
     NSMutableSet * _principalURLs;
     NSURL * _urlBeingExamined;
     NSMutableSet * _urlsToExamine;
@@ -11,8 +11,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL didReceiveAuthenticationError;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool didReceiveAuthenticationError;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *principalURLs;
 @property (nonatomic, readonly) NSSet *resultPrincipalURLs;
 @property (readonly) Class superclass;
@@ -23,7 +23,7 @@
 - (void)_finishWithError:(id)arg1;
 - (void)cancelTaskGroup;
 - (void)dealloc;
-- (BOOL)didReceiveAuthenticationError;
+- (bool)didReceiveAuthenticationError;
 - (id)initWithAccountInfoProvider:(id)arg1 urls:(id)arg2 taskManager:(id)arg3;
 - (id)principalURLs;
 - (id)resultPrincipalURLs;

@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *caption;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *secondarySubcaption;
 @property (nonatomic, copy) NSString *subcaption;
 @property (readonly) Class superclass;
@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *trailingCaption;
 @property (nonatomic, copy) NSString *trailingSubcaption;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

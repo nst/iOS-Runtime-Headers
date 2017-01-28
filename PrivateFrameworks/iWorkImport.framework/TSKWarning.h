@@ -20,9 +20,9 @@
 
 - (id)affectedObjects;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithMessage:(id)arg1 affectedObjects:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedLocation;
 - (id)message;
 - (void)setAffectedObjects:(id)arg1;

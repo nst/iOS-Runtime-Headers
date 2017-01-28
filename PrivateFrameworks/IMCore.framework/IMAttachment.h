@@ -5,7 +5,7 @@
 @interface IMAttachment : NSObject {
     NSDate * _createdDate;
     NSString * _guid;
-    BOOL  _isSticker;
+    bool  _isSticker;
     NSString * _path;
 }
 
@@ -15,8 +15,8 @@
 - (id)fileTransfer;
 - (id)guid;
 - (id)initWithPath:(id)arg1 guid:(id)arg2;
-- (id)initWithPath:(id)arg1 guid:(id)arg2 createdDate:(id)arg3 isSticker:(BOOL)arg4;
-- (BOOL)isSticker;
+- (id)initWithPath:(id)arg1 guid:(id)arg2 createdDate:(id)arg3 isSticker:(bool)arg4;
+- (bool)isSticker;
 - (id)path;
 
 @end

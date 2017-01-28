@@ -19,6 +19,6 @@
 - (id)initFlowDivertDataSocket;
 - (id)initFromDictionary:(id)arg1;
 - (id)keyMaterial;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

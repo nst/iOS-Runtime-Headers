@@ -22,47 +22,47 @@
     NSLayoutConstraint * _trailingMargin;
 }
 
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIControlCenterPageContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL wantsVisible;
+@property (nonatomic, readonly) bool wantsVisible;
 
 - (void).cxx_destruct;
-- (void)_acknowledgeAndDismissFirstUsePanelAnimated:(BOOL)arg1;
+- (void)_acknowledgeAndDismissFirstUsePanelAnimated:(bool)arg1;
 - (id)_createColumnStackView;
-- (int)_currentLayoutStyle;
-- (void)_dismissAirDropWithCompletion:(id /* block */)arg1;
-- (void)_dismissButtonActionPlatterWithCompletion:(id /* block */)arg1;
-- (void)_presentAirDropWithCompletion:(id /* block */)arg1;
-- (void)_presentButtonActionPlatterWithCompletion:(id /* block */)arg1;
-- (void)_updateAllSectionVisibilityAnimated:(BOOL)arg1;
+- (long long)_currentLayoutStyle;
+- (void)_dismissAirDropWithCompletion:(id)arg1;
+- (void)_dismissButtonActionPlatterWithCompletion:(id)arg1;
+- (void)_presentAirDropWithCompletion:(id)arg1;
+- (void)_presentButtonActionPlatterWithCompletion:(id)arg1;
+- (void)_updateAllSectionVisibilityAnimated:(bool)arg1;
 - (void)_updateColumns;
 - (void)_updateSectionViews;
-- (void)_updateSectionVisibility:(id)arg1 animated:(BOOL)arg2;
+- (void)_updateSectionVisibility:(id)arg1 animated:(bool)arg2;
 - (void)_updateStackViewMarginsAndSpacing;
 - (void)beginSuppressingPunchOutMaskCachingForReason:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterDidFinishTransition;
-- (void)controlCenterDidScrollToThisPage:(BOOL)arg1;
+- (void)controlCenterDidScrollToThisPage:(bool)arg1;
 - (id)controlCenterSystemAgent;
 - (void)controlCenterWillBeginTransition;
-- (void)controlCenterWillFinishTransitionOpen:(BOOL)arg1 withDuration:(double)arg2;
+- (void)controlCenterWillFinishTransitionOpen:(bool)arg1 withDuration:(double)arg2;
 - (void)controlCenterWillPresent;
 - (id)delegate;
-- (BOOL)dismissModalFullScreenIfNeeded;
+- (bool)dismissModalFullScreenIfNeeded;
 - (void)endSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (void)firstUsePanelWasAcknowledged:(id)arg1;
-- (int)layoutStyle;
+- (long long)layoutStyle;
 - (void)loadView;
 - (void)noteSectionEnabledStateDidChange:(id)arg1;
 - (id)pageContainerViewController;
 - (void)section:(id)arg1 publishStatusUpdate:(id)arg2;
 - (void)sectionWantsControlCenterDismissal:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

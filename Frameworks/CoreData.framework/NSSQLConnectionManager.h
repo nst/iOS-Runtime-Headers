@@ -3,24 +3,24 @@
  */
 
 @interface NSSQLConnectionManager : NSObject {
-    id /* block */  _filter;
+    id  _filter;
     NSSQLCore * _sqlCore;
 }
 
-@property (nonatomic, copy) id /* block */ filter;
+@property (nonatomic, copy) id filter;
 
 - (void)dealloc;
 - (void)disconnectAllConnections;
-- (id /* block */)filter;
-- (BOOL)handleStoreRequest:(id)arg1;
-- (id)initWithSQLCore:(id)arg1 priority:(unsigned int)arg2 seedConnection:(id)arg3;
+- (id)filter;
+- (bool)handleStoreRequest:(id)arg1;
+- (id)initWithSQLCore:(id)arg1 priority:(unsigned long long)arg2 seedConnection:(id)arg3;
 - (id)initWithSQLCore:(id)arg1 seedConnection:(id)arg2;
 - (id)initializationConnection;
-- (void)scheduleBarrierBlock:(id /* block */)arg1;
-- (void)scheduleConnectionsBarrier:(id /* block */)arg1;
-- (void)setExclusiveLockingMode:(BOOL)arg1;
-- (void)setFilter:(id /* block */)arg1;
+- (void)scheduleBarrierBlock:(id)arg1;
+- (void)scheduleConnectionsBarrier:(id)arg1;
+- (void)setExclusiveLockingMode:(bool)arg1;
+- (void)setFilter:(id)arg1;
 - (id)sqlCore;
-- (BOOL)willHandleStoreRequest:(id)arg1;
+- (bool)willHandleStoreRequest:(id)arg1;
 
 @end

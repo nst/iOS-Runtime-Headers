@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (id)init;
 - (void)setUserBooking:(INRestaurantReservationUserBooking *)arg1;
 - (INRestaurantReservationUserBooking *)userBooking;

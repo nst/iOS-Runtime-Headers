@@ -6,8 +6,8 @@
     NSString * mBy;
     int  mCalcMode;
     NSString * mFrom;
-    BOOL  mHasCalcMode;
-    BOOL  mHasValueType;
+    bool  mHasCalcMode;
+    bool  mHasValueType;
     NSString * mTo;
     int  mValueType;
 }
@@ -16,8 +16,8 @@
 - (int)calcMode;
 - (void)dealloc;
 - (id)from;
-- (BOOL)hasCalcMode;
-- (BOOL)hasValueType;
+- (bool)hasCalcMode;
+- (bool)hasValueType;
 - (id)init;
 - (void)setBy:(id)arg1;
 - (void)setCalcMode:(int)arg1;

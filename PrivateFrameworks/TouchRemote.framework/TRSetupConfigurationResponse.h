@@ -3,11 +3,11 @@
  */
 
 @interface TRSetupConfigurationResponse : TRResponseMessage {
-    BOOL  _needsNetwork;
+    bool  _needsNetwork;
     NSSet * _unauthenticatedAccountServices;
 }
 
-@property (nonatomic) BOOL needsNetwork;
+@property (nonatomic) bool needsNetwork;
 @property (nonatomic, copy) NSSet *unauthenticatedAccountServices;
 
 - (void).cxx_destruct;
@@ -15,8 +15,8 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)needsNetwork;
-- (void)setNeedsNetwork:(BOOL)arg1;
+- (bool)needsNetwork;
+- (void)setNeedsNetwork:(bool)arg1;
 - (void)setUnauthenticatedAccountServices:(id)arg1;
 - (id)unauthenticatedAccountServices;
 

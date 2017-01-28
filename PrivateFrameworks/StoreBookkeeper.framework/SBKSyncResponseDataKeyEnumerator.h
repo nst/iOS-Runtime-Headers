@@ -3,38 +3,38 @@
  */
 
 @interface SBKSyncResponseDataKeyEnumerator : NSObject {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     NSEnumerator * _conflictedKeysEnumerator;
     NSEnumerator * _deletedKeysEnumerator;
-    BOOL  _resolvedConflictsNeedSyncToServer;
+    bool  _resolvedConflictsNeedSyncToServer;
     SBKSyncResponseData * _responseData;
     SBKSyncTransaction * _transaction;
     NSEnumerator * _updatedKeysEnumerator;
 }
 
-@property (copy) id /* block */ completionBlock;
+@property (copy) id completionBlock;
 @property (retain) NSEnumerator *conflictedKeysEnumerator;
 @property (retain) NSEnumerator *deletedKeysEnumerator;
-@property BOOL resolvedConflictsNeedSyncToServer;
+@property bool resolvedConflictsNeedSyncToServer;
 @property (retain) SBKSyncResponseData *responseData;
 @property (retain) SBKSyncTransaction *transaction;
 @property (retain) NSEnumerator *updatedKeysEnumerator;
 
 - (void).cxx_destruct;
-- (void)_processDeletedKey:(id)arg1 isDirty:(BOOL*)arg2;
+- (void)_processDeletedKey:(id)arg1 isDirty:(bool*)arg2;
 - (void)_processNextKey;
-- (void)_processUpdatedKey:(id)arg1 isConflict:(BOOL)arg2 isDirty:(BOOL*)arg3;
-- (id /* block */)completionBlock;
+- (void)_processUpdatedKey:(id)arg1 isConflict:(bool)arg2 isDirty:(bool*)arg3;
+- (id)completionBlock;
 - (id)conflictedKeysEnumerator;
 - (id)deletedKeysEnumerator;
-- (void)enumerateKeysInResponseForTransaction:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)enumerateKeysInResponseForTransaction:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithResponseData:(id)arg1;
-- (BOOL)resolvedConflictsNeedSyncToServer;
+- (bool)resolvedConflictsNeedSyncToServer;
 - (id)responseData;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setConflictedKeysEnumerator:(id)arg1;
 - (void)setDeletedKeysEnumerator:(id)arg1;
-- (void)setResolvedConflictsNeedSyncToServer:(BOOL)arg1;
+- (void)setResolvedConflictsNeedSyncToServer:(bool)arg1;
 - (void)setResponseData:(id)arg1;
 - (void)setTransaction:(id)arg1;
 - (void)setUpdatedKeysEnumerator:(id)arg1;

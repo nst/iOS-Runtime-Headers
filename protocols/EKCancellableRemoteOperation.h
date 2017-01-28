@@ -10,6 +10,6 @@
 
 @optional
 
-- (void)receivedBatchResultsFromServer:(id)arg1 finished:(BOOL)arg2;
+- (void)receivedBatchResultsFromServer:(id)arg1 finished:(bool)arg2;
 
 @end

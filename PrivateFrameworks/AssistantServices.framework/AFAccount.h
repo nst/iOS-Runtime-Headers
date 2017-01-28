@@ -11,7 +11,7 @@
     NSString * _group;
     NSString * _hostname;
     NSString * _identifier;
-    BOOL  _isActive;
+    bool  _isActive;
     NSString * _label;
     NSDictionary * _lastSyncDates;
     NSString * _localeIdentifier;
@@ -27,7 +27,7 @@
 @property (nonatomic, copy) NSString *group;
 @property (nonatomic, copy) NSString *hostname;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, readonly) bool isActive;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSDictionary *lastSyncDates;
 @property (nonatomic, copy) NSString *localeIdentifier;
@@ -45,7 +45,7 @@
 - (id)hostname;
 - (id)identifier;
 - (id)initWithMessageDictionary:(id)arg1;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)label;
 - (id)lastSyncDates;
 - (id)localeIdentifier;

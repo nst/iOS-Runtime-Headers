@@ -3,12 +3,12 @@
  */
 
 @interface _NCWidgetViewControllerTransitionContext : _UIViewControllerTransitionContext {
-    BOOL  _autoLayoutTransition;
+    bool  _autoLayoutTransition;
 }
 
-@property (getter=isAutoLayoutTransition, nonatomic) BOOL autoLayoutTransition;
+@property (getter=isAutoLayoutTransition, nonatomic) bool autoLayoutTransition;
 
-- (BOOL)isAutoLayoutTransition;
-- (void)setAutoLayoutTransition:(BOOL)arg1;
+- (bool)isAutoLayoutTransition;
+- (void)setAutoLayoutTransition:(bool)arg1;
 
 @end

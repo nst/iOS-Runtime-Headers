@@ -4,18 +4,18 @@
 
 @interface SKUIPlaceholderIndexBarEntry : SKUIIndexBarEntry {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _placeholderSize;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } placeholderSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } placeholderSize;
 
-- (struct CGSize { float x1; float x2; })_calculatedContentSize;
+- (struct CGSize { double x1; double x2; })_calculatedContentSize;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithPlaceholderSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })placeholderSize;
+- (unsigned long long)hash;
+- (id)initWithPlaceholderSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })placeholderSize;
 
 @end

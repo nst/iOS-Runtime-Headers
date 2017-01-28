@@ -9,9 +9,9 @@
     UIView * _containerView;
     NSArray * _framesOfAddedChatItems;
     NSString * _impactIdentifier;
-    BOOL  _isSender;
+    bool  _isSender;
     NSArray * _messages;
-    BOOL  _shouldRepeat;
+    bool  _shouldRepeat;
     NSArray * _throwBalloonViewAttributesCollection;
     NSArray * _throwBalloonViews;
 }
@@ -23,11 +23,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *framesOfAddedChatItems;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *impactIdentifier;
-@property (nonatomic) BOOL isSender;
+@property (nonatomic) bool isSender;
 @property (nonatomic, retain) NSArray *messages;
-@property (nonatomic) BOOL shouldRepeat;
+@property (nonatomic) bool shouldRepeat;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *throwBalloonViewAttributesCollection;
 @property (nonatomic, copy) NSArray *throwBalloonViews;
@@ -39,7 +39,7 @@
 - (id)containerView;
 - (id)framesOfAddedChatItems;
 - (id)impactIdentifier;
-- (BOOL)isSender;
+- (bool)isSender;
 - (id)messages;
 - (void)setAnimatableTextViews:(id)arg1;
 - (void)setAnimatableViews:(id)arg1;
@@ -47,12 +47,12 @@
 - (void)setContainerView:(id)arg1;
 - (void)setFramesOfAddedChatItems:(id)arg1;
 - (void)setImpactIdentifier:(id)arg1;
-- (void)setIsSender:(BOOL)arg1;
+- (void)setIsSender:(bool)arg1;
 - (void)setMessages:(id)arg1;
-- (void)setShouldRepeat:(BOOL)arg1;
+- (void)setShouldRepeat:(bool)arg1;
 - (void)setThrowBalloonViewAttributesCollection:(id)arg1;
 - (void)setThrowBalloonViews:(id)arg1;
-- (BOOL)shouldRepeat;
+- (bool)shouldRepeat;
 - (id)throwBalloonViewAttributesCollection;
 - (id)throwBalloonViews;
 

@@ -5,23 +5,23 @@
 @interface _UIDocumentActivityViewController : UIActivityViewController {
     UIDocumentInteractionController * _documentInteractionController;
     UIDocumentInteractionController * _documentInteractionControllerRetained;
-    BOOL  _hideSystemActivities;
+    bool  _hideSystemActivities;
 }
 
 @property (nonatomic) UIDocumentInteractionController *documentInteractionController;
 @property (nonatomic, retain) UIDocumentInteractionController *documentInteractionControllerRetained;
-@property (nonatomic) BOOL hideSystemActivities;
+@property (nonatomic) bool hideSystemActivities;
 
 - (void).cxx_destruct;
 - (void)_performActivity:(id)arg1;
 - (void)_prepareActivity:(id)arg1;
-- (BOOL)_shouldShowSystemActivity:(id)arg1;
+- (bool)_shouldShowSystemActivity:(id)arg1;
 - (id)documentInteractionController;
 - (id)documentInteractionControllerRetained;
-- (BOOL)hideSystemActivities;
+- (bool)hideSystemActivities;
 - (void)setDocumentInteractionController:(id)arg1;
 - (void)setDocumentInteractionControllerRetained:(id)arg1;
-- (void)setHideSystemActivities:(BOOL)arg1;
-- (BOOL)sourceIsManaged;
+- (void)setHideSystemActivities:(bool)arg1;
+- (bool)sourceIsManaged;
 
 @end

@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSArray *likenessViews;
 @property (nonatomic, copy) NSArray *subviewsConstraints;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (id)delegate;

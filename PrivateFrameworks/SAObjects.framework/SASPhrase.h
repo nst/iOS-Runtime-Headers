@@ -6,10 +6,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *interpretations;
-@property (nonatomic) BOOL lowConfidence;
-@property (nonatomic) BOOL speechRepairApplied;
+@property (nonatomic) bool lowConfidence;
+@property (nonatomic) bool speechRepairApplied;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
@@ -20,11 +20,11 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)interpretations;
-- (BOOL)lowConfidence;
+- (bool)lowConfidence;
 - (void)setInterpretations:(id)arg1;
-- (void)setLowConfidence:(BOOL)arg1;
-- (void)setSpeechRepairApplied:(BOOL)arg1;
-- (BOOL)speechRepairApplied;
+- (void)setLowConfidence:(bool)arg1;
+- (void)setSpeechRepairApplied:(bool)arg1;
+- (bool)speechRepairApplied;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 

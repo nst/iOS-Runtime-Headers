@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (id)_init;
 - (void)_updateTemperatureUnit;
-- (id)addBlockObserver:(id /* block */)arg1;
+- (id)addBlockObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)blockObserversForUUID;
 - (id)callbackQueue;
@@ -31,8 +31,8 @@
 - (id)observerObjects;
 - (id)observerQueue;
 - (void)removeAllObservers;
-- (BOOL)removeBlockObserverWithHandle:(id)arg1;
-- (BOOL)removeObserver:(id)arg1;
+- (bool)removeBlockObserverWithHandle:(id)arg1;
+- (bool)removeObserver:(id)arg1;
 - (void)setBlockObserversForUUID:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setObserverObjects:(id)arg1;

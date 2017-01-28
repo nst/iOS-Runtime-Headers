@@ -13,9 +13,9 @@
 @property (nonatomic, readonly) PHAssetCollection *assetCollection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PHAsset *keyAsset;
-@property (getter=isPlaceholder, nonatomic, readonly) BOOL placeholder;
+@property (getter=isPlaceholder, nonatomic, readonly) bool placeholder;
 @property (nonatomic, readonly) PHObject *referenceObject;
 @property (nonatomic, readonly) PHAssetCollection *relatedAssetCollection;
 @property (nonatomic, readonly) PHAsset *relatedKeyAsset;
@@ -30,7 +30,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (id)initWithAssetCollection:(id)arg1 keyAsset:(id)arg2 referenceObject:(id)arg3;
-- (BOOL)isPlaceholder;
+- (bool)isPlaceholder;
 - (id)keyAsset;
 - (id)referenceObject;
 - (id)relatedAssetCollection;

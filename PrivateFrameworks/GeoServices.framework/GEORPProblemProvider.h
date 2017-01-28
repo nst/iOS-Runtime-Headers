@@ -5,7 +5,7 @@
 @interface GEORPProblemProvider : NSObject
 
 - (void)cancelRequest;
-- (void)startStatusRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
-- (void)startSubmissionRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
+- (void)startStatusRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 
 @end

@@ -16,7 +16,7 @@
 @property (nonatomic, retain) PARRankerSearchRequestParameters *searchRequestParameters;
 @property (nonatomic, retain) PARURLToTopicsMaps *urlToTopicsMap;
 
-+ (id)responseFromJSON:(id)arg1 includeURLTopics:(BOOL)arg2;
++ (id)responseFromJSON:(id)arg1 includeURLTopics:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)centroidParameters;

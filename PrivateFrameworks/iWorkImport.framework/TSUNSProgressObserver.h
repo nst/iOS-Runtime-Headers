@@ -5,7 +5,7 @@
 @interface TSUNSProgressObserver : NSObject {
     TSUBasicProgress * _basicProgress;
     double  _basicProgressMaxValue;
-    BOOL  _didStart;
+    bool  _didStart;
     NSProgress * _nsProgress;
     TSUProgressContext * _progressContext;
 }

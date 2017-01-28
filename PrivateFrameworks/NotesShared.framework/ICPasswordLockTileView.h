@@ -5,9 +5,9 @@
 @interface ICPasswordLockTileView : UIView <CAAnimationDelegate> {
     CALayer * _backdropLayer;
     UIView * _containerView;
-    id /* block */  _fadeInCompletionHandler;
-    id /* block */  _fadeOutCompletionHandler;
-    BOOL  _isLocked;
+    id  _fadeInCompletionHandler;
+    id  _fadeOutCompletionHandler;
+    bool  _isLocked;
     UILabel * _label;
     CALayer * _lockBase;
     CALayer * _lockGroupLayer;
@@ -18,10 +18,10 @@
 @property (nonatomic) UIView *containerView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ fadeInCompletionHandler;
-@property (nonatomic, copy) id /* block */ fadeOutCompletionHandler;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isLocked;
+@property (nonatomic, copy) id fadeInCompletionHandler;
+@property (nonatomic, copy) id fadeOutCompletionHandler;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isLocked;
 @property (nonatomic) UILabel *label;
 @property (nonatomic, retain) CALayer *lockBase;
 @property (nonatomic, retain) CALayer *lockGroupLayer;
@@ -31,31 +31,31 @@
 + (id)lockTileView;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)awakeFromNib;
 - (id)backdropLayer;
 - (id)containerView;
-- (id)fadeAnimationWithStartAlpha:(float)arg1 endAlpha:(float)arg2 beginTime:(float)arg3 duration:(float)arg4;
-- (id /* block */)fadeInCompletionHandler;
-- (id /* block */)fadeOutCompletionHandler;
-- (BOOL)isLocked;
+- (id)fadeAnimationWithStartAlpha:(double)arg1 endAlpha:(double)arg2 beginTime:(double)arg3 duration:(double)arg4;
+- (id)fadeInCompletionHandler;
+- (id)fadeOutCompletionHandler;
+- (bool)isLocked;
 - (id)label;
 - (void)layoutSubviews;
-- (id)lockAnimationWithBeginTime:(float)arg1;
+- (id)lockAnimationWithBeginTime:(double)arg1;
 - (id)lockBase;
 - (id)lockGroupLayer;
 - (id)lockHandle;
 - (void)setBackdropLayer:(id)arg1;
 - (void)setContainerView:(id)arg1;
-- (void)setFadeInCompletionHandler:(id /* block */)arg1;
-- (void)setFadeOutCompletionHandler:(id /* block */)arg1;
-- (void)setIsLocked:(BOOL)arg1;
+- (void)setFadeInCompletionHandler:(id)arg1;
+- (void)setFadeOutCompletionHandler:(id)arg1;
+- (void)setIsLocked:(bool)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setLockBase:(id)arg1;
 - (void)setLockGroupLayer:(id)arg1;
 - (void)setLockHandle:(id)arg1;
-- (void)showFadeInAnimationForActivityType:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
-- (void)showFadeOutAnimationForActivityType:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
-- (id)unLockAnimationWithBeginTime:(float)arg1;
+- (void)showFadeInAnimationForActivityType:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)showFadeOutAnimationForActivityType:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (id)unLockAnimationWithBeginTime:(double)arg1;
 
 @end

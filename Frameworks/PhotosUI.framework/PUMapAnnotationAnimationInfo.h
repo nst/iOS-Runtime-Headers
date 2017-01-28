@@ -10,9 +10,9 @@
         double latitude; 
         double longitude; 
     }  _destinationCoordinate;
-    int  _fadeType;
-    int  _reason;
-    BOOL  _remove;
+    long long  _fadeType;
+    long long  _reason;
+    bool  _remove;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
@@ -23,9 +23,9 @@
 @property (nonatomic, readonly, retain) id annotationForCountSwap;
 @property (nonatomic, readonly, retain) id destinationAnnotation;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } destinationCoordinate;
-@property (nonatomic, readonly) int fadeType;
-@property (nonatomic, readonly) int reason;
-@property (nonatomic, readonly) BOOL remove;
+@property (nonatomic, readonly) long long fadeType;
+@property (nonatomic, readonly) long long reason;
+@property (nonatomic, readonly) bool remove;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } sourceCoordinate;
 
 - (void).cxx_destruct;
@@ -33,10 +33,10 @@
 - (id)annotationForCountSwap;
 - (id)destinationAnnotation;
 - (struct CLLocationCoordinate2D { double x1; double x2; })destinationCoordinate;
-- (int)fadeType;
-- (id)initWithAnnotation:(id)arg1 destinationAnnotation:(id)arg2 sourceCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg3 destinationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg4 fadeType:(int)arg5 remove:(BOOL)arg6 annotationForCountSwap:(id)arg7 reason:(int)arg8;
-- (int)reason;
-- (BOOL)remove;
+- (long long)fadeType;
+- (id)initWithAnnotation:(id)arg1 destinationAnnotation:(id)arg2 sourceCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg3 destinationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg4 fadeType:(long long)arg5 remove:(bool)arg6 annotationForCountSwap:(id)arg7 reason:(long long)arg8;
+- (long long)reason;
+- (bool)remove;
 - (struct CLLocationCoordinate2D { double x1; double x2; })sourceCoordinate;
 
 @end

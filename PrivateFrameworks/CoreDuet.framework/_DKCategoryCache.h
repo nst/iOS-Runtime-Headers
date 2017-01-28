@@ -6,6 +6,6 @@
 
 + (id)sharedCached;
 
-- (id)categoryWithInteger:(int)arg1 type:(id)arg2;
+- (id)categoryWithInteger:(long long)arg1 type:(id)arg2;
 
 @end

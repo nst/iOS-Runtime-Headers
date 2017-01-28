@@ -4,22 +4,22 @@
 
 @interface SSClientAccountStore : SSAccountStore {
     NSArray * _accounts;
-    BOOL  _accountsValid;
+    bool  _accountsValid;
 }
 
 @property (copy) NSArray *accounts;
 
 - (id)_accountWithUniqueIdentifier:(id)arg1;
 - (id)_accountsFromDaemon;
-- (id)_addAccount:(id)arg1 asActiveAccount:(BOOL)arg2 activeLockerAccount:(BOOL)arg3;
+- (id)_addAccount:(id)arg1 asActiveAccount:(bool)arg2 activeLockerAccount:(bool)arg3;
 - (id)_copyDaemonAccounts;
 - (id)_copyReloadedAccounts;
 - (void)_invalidateAccounts;
 - (void)_reloadAccountsIfNeeded;
-- (void)_signOutWithAccountIDs:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)_signOutWithAccountIDs:(id)arg1 completionBlock:(id)arg2;
 - (id)accountWithUniqueIdentifier:(id)arg1;
-- (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(BOOL)arg2;
-- (id)accountWithUniqueIdentifier:(id)arg1 scope:(int)arg2;
+- (id)accountWithUniqueIdentifier:(id)arg1 reloadIfNecessary:(bool)arg2;
+- (id)accountWithUniqueIdentifier:(id)arg1 scope:(long long)arg2;
 - (id)accounts;
 - (id)activeAccount;
 - (id)activeLockerAccount;
@@ -33,7 +33,7 @@
 - (id)setActiveLockerAccount:(id)arg1;
 - (void)signOutAccount:(id)arg1;
 - (void)signOutAllAccounts;
-- (void)signOutAllAccountsWithCompletionBlock:(id /* block */)arg1;
-- (void)updateAccountsWithMessage:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)signOutAllAccountsWithCompletionBlock:(id)arg1;
+- (void)updateAccountsWithMessage:(id)arg1 completionBlock:(id)arg2;
 
 @end

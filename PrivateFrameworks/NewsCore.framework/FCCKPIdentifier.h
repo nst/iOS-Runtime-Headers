@@ -10,8 +10,8 @@
     int  _type;
 }
 
-@property (nonatomic, readonly) BOOL hasName;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) bool hasName;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) int type;
 
@@ -20,14 +20,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasName;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)getSnapshot:(unsigned int)arg1;
+- (void)getSnapshot:(unsigned long long)arg1;
 
 @end

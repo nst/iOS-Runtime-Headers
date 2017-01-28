@@ -15,10 +15,10 @@
 - (void)imagePickerWillBeRemoved:(UIWindow *)arg1;
 - (void)imagePickerWillBeShown:(UIWindow *)arg1;
 - (ABPersonImageView *)personImageView;
-- (BOOL)popoverSizeUpdatesDisabled;
+- (bool)popoverSizeUpdatesDisabled;
 - (void)removeImagePickerControllerFromUI;
 - (NSArray *)selectedPeople;
-- (void)setPopoverSizeUpdatesDisabled:(BOOL)arg1;
+- (void)setPopoverSizeUpdatesDisabled:(bool)arg1;
 - (void)showImageMenuForHelper:(ABPersonViewControllerHelper *)arg1;
 - (<ABStyleProvider> *)styleProvider;
 

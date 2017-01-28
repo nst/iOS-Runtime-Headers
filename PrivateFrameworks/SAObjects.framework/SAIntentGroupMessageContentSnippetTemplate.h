@@ -5,7 +5,7 @@
 @interface SAIntentGroupMessageContentSnippetTemplate : SAIntentGroupSnippetTemplate
 
 @property (nonatomic, copy) NSString *content;
-@property (nonatomic) BOOL sentStatus;
+@property (nonatomic) bool sentStatus;
 
 + (id)messageContentSnippetTemplate;
 + (id)messageContentSnippetTemplateWithDictionary:(id)arg1 context:(id)arg2;
@@ -13,8 +13,8 @@
 - (id)content;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)sentStatus;
+- (bool)sentStatus;
 - (void)setContent:(id)arg1;
-- (void)setSentStatus:(BOOL)arg1;
+- (void)setSentStatus:(bool)arg1;
 
 @end

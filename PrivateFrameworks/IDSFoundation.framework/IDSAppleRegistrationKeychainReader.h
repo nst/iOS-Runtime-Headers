@@ -3,15 +3,15 @@
  */
 
 @interface IDSAppleRegistrationKeychainReader : NSObject {
-    id /* block */  _purgeCancelBlock;
-    id /* block */  _purgeEnqueueBlock;
+    id  _purgeCancelBlock;
+    id  _purgeEnqueueBlock;
     IMTimer * _purgeTimer;
     NSMutableArray * _registrationData;
 }
 
-+ (id)keychainAccessGroupForVersion:(unsigned int)arg1;
-+ (id)keychainAccountForVersion:(unsigned int)arg1;
-+ (id)keychainServiceForVersion:(unsigned int)arg1;
++ (id)keychainAccessGroupForVersion:(unsigned long long)arg1;
++ (id)keychainAccountForVersion:(unsigned long long)arg1;
++ (id)keychainServiceForVersion:(unsigned long long)arg1;
 + (id)sharedInstance;
 
 - (void)_flush;

@@ -9,13 +9,13 @@
 @property (nonatomic) id connectionDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)closeConnection;
-- (void)connectRemoteProxyFromHost:(id)arg1 supportingProtocolName:(id)arg2 reply:(id /* block */)arg3;
+- (void)connectRemoteProxyFromHost:(id)arg1 supportingProtocolName:(id)arg2 reply:(id)arg3;
 - (id)hostContext;
-- (id)hostContextWithErrorHandler:(id /* block */)arg1;
+- (id)hostContextWithErrorHandler:(id)arg1;
 
 @end

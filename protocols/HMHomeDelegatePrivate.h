@@ -6,7 +6,7 @@
 @optional
 
 - (void)home:(HMHome *)arg1 didAddResidentDevice:(HMResidentDevice *)arg2;
-- (void)home:(HMHome *)arg1 didEnableNotifications:(BOOL)arg2;
+- (void)home:(HMHome *)arg1 didEnableNotifications:(bool)arg2;
 - (void)home:(HMHome *)arg1 didRemoveResidentDevice:(HMResidentDevice *)arg2;
 - (void)home:(HMHome *)arg1 didUpdateAccesoryInvitationsForUser:(HMUser *)arg2;
 - (void)home:(HMHome *)arg1 didUpdateAccessControlForUser:(HMUser *)arg2;

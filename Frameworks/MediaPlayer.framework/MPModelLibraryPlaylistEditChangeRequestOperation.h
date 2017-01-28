@@ -3,25 +3,25 @@
  */
 
 @interface MPModelLibraryPlaylistEditChangeRequestOperation : MPAsyncOperation {
-    id /* block */  _completeResponseHandler;
-    id /* block */  _localPersistenceResponseHandler;
+    id  _completeResponseHandler;
+    id  _localPersistenceResponseHandler;
     MPModelLibraryPlaylistEditChangeRequest * _request;
 }
 
-@property (nonatomic, copy) id /* block */ completeResponseHandler;
-@property (nonatomic, copy) id /* block */ localPersistenceResponseHandler;
+@property (nonatomic, copy) id completeResponseHandler;
+@property (nonatomic, copy) id localPersistenceResponseHandler;
 @property (nonatomic, copy) MPModelLibraryPlaylistEditChangeRequest *request;
 
 + (id)requiredPlaylistEntryProperties;
 
 - (void).cxx_destruct;
-- (BOOL)_isCloudLibraryEnabled;
-- (id /* block */)completeResponseHandler;
+- (bool)_isCloudLibraryEnabled;
+- (id)completeResponseHandler;
 - (void)execute;
-- (id /* block */)localPersistenceResponseHandler;
+- (id)localPersistenceResponseHandler;
 - (id)request;
-- (void)setCompleteResponseHandler:(id /* block */)arg1;
-- (void)setLocalPersistenceResponseHandler:(id /* block */)arg1;
+- (void)setCompleteResponseHandler:(id)arg1;
+- (void)setLocalPersistenceResponseHandler:(id)arg1;
 - (void)setRequest:(id)arg1;
 
 @end

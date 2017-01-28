@@ -6,10 +6,10 @@
     NSArray * _plists;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_getValue:(id*)arg1 forPropertyListKey:(id)arg2;
-- (id)_loadPropertyListPeeking:(BOOL)arg1;
+- (bool)_getValue:(id*)arg1 forPropertyListKey:(id)arg2;
+- (id)_loadPropertyListPeeking:(bool)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

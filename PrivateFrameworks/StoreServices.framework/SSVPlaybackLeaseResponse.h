@@ -11,14 +11,14 @@
 @property (nonatomic, copy) NSData *certificateData;
 @property (nonatomic, readonly) double leaseDuration;
 @property (nonatomic, readonly, copy) NSData *leaseInfoData;
-@property (getter=isOfflineSlotAvailable, nonatomic, readonly) BOOL offlineSlotAvailable;
+@property (getter=isOfflineSlotAvailable, nonatomic, readonly) bool offlineSlotAvailable;
 @property (nonatomic, readonly, copy) NSData *subscriptionKeyBagData;
 
 - (void).cxx_destruct;
 - (unsigned long long)KDMovieIdentifier;
 - (id)certificateData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isOfflineSlotAvailable;
+- (bool)isOfflineSlotAvailable;
 - (id)itemForItemIdentifier:(id)arg1;
 - (double)leaseDuration;
 - (id)leaseInfoData;

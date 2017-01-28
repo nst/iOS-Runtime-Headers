@@ -4,7 +4,7 @@
 
 @interface _UIPopoverBackgroundVisualEffectView : UIVisualEffectView
 
-- (BOOL)_shouldRegenerateMasksForNewMaskView:(id)arg1;
+- (bool)_shouldRegenerateMasksForNewMaskView:(id)arg1;
 - (void)_updateEffectViewMasks;
 - (void)replicateMaskViewIfNecessary:(id)arg1 forEffectView:(id)arg2;
 - (void)updateMasks;

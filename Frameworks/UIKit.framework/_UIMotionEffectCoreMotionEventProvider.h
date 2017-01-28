@@ -12,8 +12,8 @@
 - (void)dealloc;
 - (double)fastUpdateIntervalForLogs;
 - (id)init;
-- (void)setSlowUpdatesEnabled:(BOOL)arg1;
-- (BOOL)shouldLogEvents;
+- (void)setSlowUpdatesEnabled:(bool)arg1;
+- (bool)shouldLogEvents;
 - (double)slowUpdateIntervalForLogs;
 - (void)startGeneratingEvents;
 - (void)stopGeneratingEvents;

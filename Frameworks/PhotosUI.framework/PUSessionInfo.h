@@ -3,64 +3,64 @@
  */
 
 @interface PUSessionInfo : NSObject <PUPhotoSelectionManagerDelegate> {
-    id /* block */  _bannerGenerator;
+    id  _bannerGenerator;
     NSString * _localizedPrompt;
     NSPointerArray * _observers;
     PUPhotoSelectionManager * _photoSelectionManager;
-    int  _promptLocation;
-    BOOL  _selectingAssets;
-    BOOL  _selectingTargetAlbum;
+    long long  _promptLocation;
+    bool  _selectingAssets;
+    bool  _selectingTargetAlbum;
     struct NSObject { Class x1; } * _sourceAlbum;
-    int  _status;
+    long long  _status;
     struct NSObject { Class x1; } * _targetAlbum;
-    BOOL  _targetAlbumIsNewLocalAlbum;
+    bool  _targetAlbumIsNewLocalAlbum;
     NSString * _targetAlbumName;
     NSOrderedSet * _transferredAssets;
 }
 
-@property (nonatomic, copy) id /* block */ bannerGenerator;
+@property (nonatomic, copy) id bannerGenerator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *localizedPrompt;
 @property (nonatomic, retain) PUPhotoSelectionManager *photoSelectionManager;
-@property (nonatomic) int promptLocation;
-@property (getter=isSelectingAssets, nonatomic, readonly) BOOL selectingAssets;
-@property (getter=isSelectingTargetAlbum, nonatomic, readonly) BOOL selectingTargetAlbum;
+@property (nonatomic) long long promptLocation;
+@property (getter=isSelectingAssets, nonatomic, readonly) bool selectingAssets;
+@property (getter=isSelectingTargetAlbum, nonatomic, readonly) bool selectingTargetAlbum;
 @property (nonatomic, retain) NSObject<PLAlbumProtocol> *sourceAlbum;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<PLAlbumProtocol> *targetAlbum;
-@property (nonatomic) BOOL targetAlbumIsNewLocalAlbum;
+@property (nonatomic) bool targetAlbumIsNewLocalAlbum;
 @property (nonatomic, retain) NSString *targetAlbumName;
 @property (nonatomic, copy) NSOrderedSet *transferredAssets;
 
 - (void).cxx_destruct;
-- (void)_enumerateObserversWithBlock:(id /* block */)arg1;
+- (void)_enumerateObserversWithBlock:(id)arg1;
 - (void)addSessionInfoObserver:(id)arg1;
-- (id /* block */)bannerGenerator;
+- (id)bannerGenerator;
 - (id)init;
-- (BOOL)isSelectingAssets;
-- (BOOL)isSelectingTargetAlbum;
+- (bool)isSelectingAssets;
+- (bool)isSelectingTargetAlbum;
 - (id)localizedPrompt;
 - (id)photoSelectionManager;
 - (void)photoSelectionManagerSelectionDidChange:(id)arg1;
-- (int)promptLocation;
+- (long long)promptLocation;
 - (void)removeSessionInfoObserver:(id)arg1;
-- (void)setBannerGenerator:(id /* block */)arg1;
+- (void)setBannerGenerator:(id)arg1;
 - (void)setLocalizedPrompt:(id)arg1;
 - (void)setPhotoSelectionManager:(id)arg1;
-- (void)setPromptLocation:(int)arg1;
+- (void)setPromptLocation:(long long)arg1;
 - (void)setSourceAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)setStatus:(int)arg1;
+- (void)setStatus:(long long)arg1;
 - (void)setTargetAlbum:(struct NSObject { Class x1; }*)arg1;
-- (void)setTargetAlbumIsNewLocalAlbum:(BOOL)arg1;
+- (void)setTargetAlbumIsNewLocalAlbum:(bool)arg1;
 - (void)setTargetAlbumName:(id)arg1;
 - (void)setTransferredAssets:(id)arg1;
 - (struct NSObject { Class x1; }*)sourceAlbum;
-- (int)status;
+- (long long)status;
 - (struct NSObject { Class x1; }*)targetAlbum;
-- (BOOL)targetAlbumIsNewLocalAlbum;
+- (bool)targetAlbumIsNewLocalAlbum;
 - (id)targetAlbumName;
 - (id)transferredAssets;
 

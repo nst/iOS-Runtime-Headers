@@ -4,7 +4,7 @@
 
 @interface FBUICurrentProcess : FBUIProcess
 
-- (BOOL)isRunning;
-- (BOOL)isSystemApplicationProcess;
+- (bool)isRunning;
+- (bool)isSystemApplicationProcess;
 
 @end

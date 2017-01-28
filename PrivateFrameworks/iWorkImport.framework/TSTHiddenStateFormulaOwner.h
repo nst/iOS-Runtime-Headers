@@ -18,7 +18,7 @@
             unsigned short *__first_; 
         } __end_cap_; 
     }  mHiddenRowIndices;
-    BOOL  mNeedsToUpdateFilterSetForImport;
+    bool  mNeedsToUpdateFilterSetForImport;
     struct __CFUUID { } * mOwnerID;
     struct vector<std::__1::pair<unsigned short, bool>, std::__1::allocator<std::__1::pair<unsigned short, bool> > > { 
         struct pair<unsigned short, bool> {} *__begin_; 
@@ -35,7 +35,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -54,7 +54,7 @@
 - (void)p_registerAllFormulaToCalculationEngine;
 - (void)p_removeAllFormulaFromCalculationEngine;
 - (struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })rangeReferenceFromIndex:(unsigned short)arg1 toIndex:(unsigned short)arg2;
-- (struct { BOOL x1; BOOL x2; BOOL x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
+- (struct { bool x1; bool x2; bool x3; })recalculateForCalculationEngine:(id)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(bool)arg3 hasCalculatedPrecedents:(bool)arg4;
 - (int)registerWithCalculationEngine:(id)arg1;
 - (void)releaseForCalculationEngine:(id)arg1;
 - (void)retainForCalculationEngine:(id)arg1;

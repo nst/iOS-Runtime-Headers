@@ -6,10 +6,10 @@
     NSString * _album;
     NSString * _artist;
     double  _durationFromExternalMetadata;
-    BOOL  _explicitTrack;
-    BOOL  _likeStateEnabled;
+    bool  _explicitTrack;
+    bool  _likeStateEnabled;
     NSString * _mainTitle;
-    BOOL  _supportsLikedState;
+    bool  _supportsLikedState;
 }
 
 @property (nonatomic, retain) NSString *album;
@@ -17,12 +17,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double durationFromExternalMetadata;
-@property (getter=isExplicitTrack, nonatomic) BOOL explicitTrack;
-@property (readonly) unsigned int hash;
-@property (getter=isLikedStateEnabled, nonatomic) BOOL likedStateEnabled;
+@property (getter=isExplicitTrack, nonatomic) bool explicitTrack;
+@property (readonly) unsigned long long hash;
+@property (getter=isLikedStateEnabled, nonatomic) bool likedStateEnabled;
 @property (nonatomic, retain) NSString *mainTitle;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL supportsLikedState;
+@property (nonatomic) bool supportsLikedState;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -30,25 +30,25 @@
 - (id)album;
 - (id)artist;
 - (double)durationFromExternalMetadata;
-- (BOOL)isExplicitTrack;
-- (BOOL)isLikedStateEnabled;
-- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (bool)isExplicitTrack;
+- (bool)isLikedStateEnabled;
+- (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (void)setAlbum:(id)arg1;
 - (void)setArtist:(id)arg1;
 - (void)setDurationFromExternalMetadata:(double)arg1;
-- (void)setExplicitTrack:(BOOL)arg1;
-- (void)setLikedStateEnabled:(BOOL)arg1;
+- (void)setExplicitTrack:(bool)arg1;
+- (void)setLikedStateEnabled:(bool)arg1;
 - (void)setMainTitle:(id)arg1;
-- (void)setSupportsLikedState:(BOOL)arg1;
-- (BOOL)supportsLikedState;
-- (BOOL)supportsSettingCurrentTime;
-- (BOOL)supportsSkip;
+- (void)setSupportsLikedState:(bool)arg1;
+- (bool)supportsLikedState;
+- (bool)supportsSettingCurrentTime;
+- (bool)supportsSkip;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 
-- (BOOL)mpcReporting_isValidReportingItem;
+- (bool)mpcReporting_isValidReportingItem;
 - (id)radioIdentifier;
 
 @end

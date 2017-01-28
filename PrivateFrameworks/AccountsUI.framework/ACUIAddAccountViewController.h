@@ -4,7 +4,7 @@
 
 @interface ACUIAddAccountViewController : PSListController <ACUISetupViewControllerDelegate> {
     ACAccountStore * _accountStore;
-    BOOL  _dontShowSecondLevelOtherAccountTypes;
+    bool  _dontShowSecondLevelOtherAccountTypes;
     NSString * _filteredDataclass;
     PSSpecifier * _gmailSpecifier;
     unsigned char  _originalCellFlag;
@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) ACUIAccountViewProvidersManager *viewProvidersManager;
 
@@ -32,13 +32,13 @@
 - (void)dealloc;
 - (id)giantSpecifierWithName:(id)arg1 forAccountTypeID:(id)arg2;
 - (id)init;
-- (void)nonModalDataclassConfigurationControllerDidCompleteWithSuccess:(BOOL)arg1;
+- (void)nonModalDataclassConfigurationControllerDidCompleteWithSuccess:(bool)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)setupViewControllerDidDismiss:(id)arg1;
-- (BOOL)shouldAddSpecifierForAccountTypeID:(id)arg1;
+- (bool)shouldAddSpecifierForAccountTypeID:(id)arg1;
 - (id)specifierForOtherAccounts;
 - (id)specifiers;
 - (id)viewProvidersManager;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

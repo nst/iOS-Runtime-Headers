@@ -5,7 +5,7 @@
 
 @required
 
-- (void)photoPickerController:(CKPhotoPickerController *)arg1 requestsSendAssets:(NSArray *)arg2 sendImmediately:(BOOL)arg3;
+- (void)photoPickerController:(CKPhotoPickerController *)arg1 requestsSendAssets:(NSArray *)arg2 sendImmediately:(bool)arg3;
 - (void)photoPickerControllerRequestPresentCamera:(CKPhotoPickerController *)arg1;
 - (void)photoPickerControllerRequestPresentPhotoLibrary:(CKPhotoPickerController *)arg1;
 - (void)photoPickerControllerWillCancel:(CKPhotoPickerController *)arg1;

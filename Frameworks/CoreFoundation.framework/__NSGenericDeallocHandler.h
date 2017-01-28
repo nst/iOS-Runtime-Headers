@@ -3,7 +3,7 @@
  */
 
 @interface __NSGenericDeallocHandler  {
-    id /* block */  _block;
+    id  _block;
     Class  isa;
 }
 
@@ -12,6 +12,6 @@
 - (void)finalize;
 - (void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

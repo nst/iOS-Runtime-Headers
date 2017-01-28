@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic, retain) RMSControlInterfaceMessage *controlInterface;
-@property (nonatomic, readonly) BOOL hasControlInterface;
-@property (nonatomic) BOOL hasResponseCode;
-@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic, readonly) bool hasControlInterface;
+@property (nonatomic) bool hasResponseCode;
+@property (nonatomic) bool hasSessionIdentifier;
 @property (nonatomic) int responseCode;
 @property (nonatomic) int sessionIdentifier;
 
@@ -25,18 +25,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasControlInterface;
-- (BOOL)hasResponseCode;
-- (BOOL)hasSessionIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasControlInterface;
+- (bool)hasResponseCode;
+- (bool)hasSessionIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)responseCode;
 - (int)sessionIdentifier;
 - (void)setControlInterface:(id)arg1;
-- (void)setHasResponseCode:(BOOL)arg1;
-- (void)setHasSessionIdentifier:(BOOL)arg1;
+- (void)setHasResponseCode:(bool)arg1;
+- (void)setHasSessionIdentifier:(bool)arg1;
 - (void)setResponseCode:(int)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;

@@ -6,7 +6,7 @@
     NSMutableDictionary * _cachedContents;
     NSDictionary * _contents;
     NSData * _data;
-    int  _desc;
+    long long  _desc;
     NSArray * _names;
     NSString * _path;
     NSDictionary * _properties;
@@ -28,15 +28,15 @@
 - (id)contentsForEntryName:(id)arg1;
 - (void)dealloc;
 - (id)entryNames;
-- (id)initWithData:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initWithEntryNames:(id)arg1 contents:(id)arg2 properties:(id)arg3 options:(unsigned int)arg4;
-- (id)initWithEntryNames:(id)arg1 dataProvider:(id)arg2 options:(unsigned int)arg3;
-- (id)initWithPath:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (id)initWithData:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (id)initWithEntryNames:(id)arg1 contents:(id)arg2 properties:(id)arg3 options:(unsigned long long)arg4;
+- (id)initWithEntryNames:(id)arg1 dataProvider:(id)arg2 options:(unsigned long long)arg3;
+- (id)initWithPath:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)propertiesForEntryName:(id)arg1;
 - (id)streamForEntryName:(id)arg1;
-- (BOOL)writeContentsForEntryName:(id)arg1 toFile:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
-- (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+- (bool)writeContentsForEntryName:(id)arg1 toFile:(id)arg2 options:(unsigned long long)arg3 error:(id*)arg4;
+- (bool)writeToFile:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
 
 @end

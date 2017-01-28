@@ -11,7 +11,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)addDeactivationBlock:(id /* block */)arg1;
+- (void)addDeactivationBlock:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

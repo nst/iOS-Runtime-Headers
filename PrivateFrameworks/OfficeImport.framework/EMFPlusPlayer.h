@@ -12,13 +12,13 @@
     EMFPlayer * mOwner;
 }
 
-+ (float)firstTabPosPastPos:(float)arg1 stringFormat:(id)arg2 isExplicit:(BOOL*)arg3;
++ (float)firstTabPosPastPos:(float)arg1 stringFormat:(id)arg2 isExplicit:(bool*)arg3;
 + (int)serializableObjectTypeForGUID:(id)arg1;
 
 - (id)canvasInWorldCoordinates;
 - (void)dealloc;
 - (id)effect;
-- (id)initWithOwner:(id)arg1 canvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)initWithOwner:(id)arg1 canvas:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (int)play:(const char *)arg1 :(unsigned int)arg2;
 - (int)playBeginContainer:(const char *)arg1 :(unsigned int)arg2 :(unsigned short)arg3;
 - (int)playBeginContainerNoParams:(const char *)arg1 :(unsigned int)arg2 :(unsigned short)arg3;

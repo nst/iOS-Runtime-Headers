@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)_commitEditWithFinalContents:(id)arg1 context:(id)arg2 completion:(id /* block */)arg3;
+- (void)_commitEditWithFinalContents:(id)arg1 context:(id)arg2 completion:(id)arg3;
 - (void)_processNewEditedContents:(id)arg1;
 - (void)_processNewLoadedContents:(id)arg1;
 - (void)addDependent:(id)arg1;

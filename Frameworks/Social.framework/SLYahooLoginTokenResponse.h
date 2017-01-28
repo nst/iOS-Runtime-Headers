@@ -6,19 +6,19 @@
     NSString * _body;
     NSError * _error;
     NSString * _loginToken;
-    int  _statusCode;
+    long long  _statusCode;
 }
 
 @property (readonly) NSString *body;
 @property (readonly) NSError *error;
 @property (readonly) NSString *loginToken;
-@property (readonly) int statusCode;
+@property (readonly) long long statusCode;
 
 - (void).cxx_destruct;
 - (id)body;
 - (id)error;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 - (id)loginToken;
-- (int)statusCode;
+- (long long)statusCode;
 
 @end

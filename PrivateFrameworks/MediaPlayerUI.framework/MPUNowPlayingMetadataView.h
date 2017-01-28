@@ -6,35 +6,35 @@
     NSAttributedString * _attributedText;
     UIButton * _button;
     UILabel * _label;
-    BOOL  _marqueeEnabled;
+    bool  _marqueeEnabled;
     MPUMarqueeView * _marqueeView;
-    unsigned int  _numberOfLines;
+    unsigned long long  _numberOfLines;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedText;
-@property (nonatomic, readonly) float baselineOffsetFromBottom;
-@property (nonatomic, readonly) float firstBaselineOffsetFromTop;
-@property (nonatomic) BOOL marqueeEnabled;
-@property (nonatomic) unsigned int numberOfLines;
+@property (nonatomic, readonly) double baselineOffsetFromBottom;
+@property (nonatomic, readonly) double firstBaselineOffsetFromTop;
+@property (nonatomic) bool marqueeEnabled;
+@property (nonatomic) unsigned long long numberOfLines;
 
 + (Class)labelClass;
 
 - (void).cxx_destruct;
 - (void)_touchControlActivate:(id)arg1;
 - (void)_touchControlDeactivate:(id)arg1;
-- (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
+- (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (id)attributedText;
-- (float)baselineOffsetFromBottom;
-- (float)firstBaselineOffsetFromTop;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)baselineOffsetFromBottom;
+- (double)firstBaselineOffsetFromTop;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;
 - (void)layoutSubviews;
-- (BOOL)marqueeEnabled;
-- (unsigned int)numberOfLines;
-- (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
+- (bool)marqueeEnabled;
+- (unsigned long long)numberOfLines;
+- (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (void)setAttributedText:(id)arg1;
-- (void)setMarqueeEnabled:(BOOL)arg1;
-- (void)setNumberOfLines:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMarqueeEnabled:(bool)arg1;
+- (void)setNumberOfLines:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

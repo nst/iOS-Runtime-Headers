@@ -3,15 +3,15 @@
  */
 
 @interface PDFPageSearchLayerPrivate : NSObject {
-    int  displayBox;
+    long long  displayBox;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  firstPageRect;
     bool  isOnFirstPage;
@@ -19,19 +19,19 @@
     bool  isZooming;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  lastPageRect;
     UIImage * magnifierImage;
     CALayer * magnifierLayer;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  magnifierSize;
     PDFPage * page;
     PDFSelection * selection;

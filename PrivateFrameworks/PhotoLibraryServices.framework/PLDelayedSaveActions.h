@@ -29,9 +29,9 @@
 + (void)delayedMomentDataFromChangeHubEvent:(id)arg1 insertsAndUpdates:(id*)arg2 deletes:(id*)arg3;
 + (void)delayedSearchIndexUpdatesFromChangeHubEvent:(id)arg1 updates:(id*)arg2;
 
-- (void)_recordAlbumUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
+- (void)_recordAlbumUUIDForSearchIndexUpdate:(id)arg1 isInsert:(bool)arg2;
 - (void)_recordAssetForSearchIndexUpdate:(id)arg1;
-- (void)_recordAssetUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
+- (void)_recordAssetUUIDForSearchIndexUpdate:(id)arg1 isInsert:(bool)arg2;
 - (void)_recordDelayedAlbumCountUpdate:(id)arg1;
 - (void)_recordDelayedCloudFeedAlbumUpdate:(id)arg1;
 - (void)_recordDelayedCloudFeedAssetInsert:(id)arg1;
@@ -43,7 +43,7 @@
 - (void)_recordDelayedMomentAssetUpdates:(id)arg1;
 - (void)_recordDetectedFaceUUIDInsertForSearchIndexUpdate:(id)arg1;
 - (void)_recordManagedObjectUUID:(id)arg1 forSearchIndexUpdateKey:(id)arg2;
-- (void)_recordMemoryUUIDForSearchIndexUpdate:(id)arg1 isInsert:(BOOL)arg2;
+- (void)_recordMemoryUUIDForSearchIndexUpdate:(id)arg1 isInsert:(bool)arg2;
 - (void)_recordNormalAssetForDupeAnalysis:(id)arg1;
 - (void)_recordPersonUUIDInsertForSearchIndexUpdate:(id)arg1;
 - (void)_recordStreamAssetForDupeAnalysis:(id)arg1;

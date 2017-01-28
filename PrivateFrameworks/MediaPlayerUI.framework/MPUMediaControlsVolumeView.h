@@ -4,20 +4,20 @@
 
 @interface MPUMediaControlsVolumeView : UIView <MPVolumeControllerDelegate> {
     UISlider * _slider;
-    int  _style;
+    long long  _style;
     double  _timeStoppedTracking;
     NSTimer * _volumeCommitTimer;
     MPVolumeController * _volumeController;
     NSTimer * _warningBlinkTimer;
-    BOOL  _warningIndicatorBlinking;
+    bool  _warningIndicatorBlinking;
     UIView * _warningView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UISlider *slider;
-@property (nonatomic, readonly) int style;
+@property (nonatomic, readonly) long long style;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MPVolumeController *volumeController;
 
@@ -30,27 +30,28 @@
 - (id)_createVolumeSliderView;
 - (void)_layoutVolumeWarningView;
 - (void)_removeVolumeSliderInertia;
-- (BOOL)_shouldStartBlinkingVolumeWarningIndicator;
+- (bool)_shouldStartBlinkingVolumeWarningIndicator;
 - (void)_stopBlinkingWarningView;
 - (void)_stopVolumeCommitTimer;
-- (id)_trackImageWithAlternateStyle:(BOOL)arg1 rounded:(BOOL)arg2;
+- (id)_trackImageWithAlternateStyle:(bool)arg1 rounded:(bool)arg2;
 - (void)_volumeSliderBeganChanging:(id)arg1;
-- (BOOL)_volumeSliderDynamicsEnabled;
+- (bool)_volumeSliderDynamicsEnabled;
 - (void)_volumeSliderStoppedChanging:(id)arg1;
 - (void)_volumeSliderValueChanged:(id)arg1;
 - (id)_warningTrackImage;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)layoutSubviews;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)slider;
-- (int)style;
+- (long long)style;
 - (void)updateSystemVolumeLevel;
 - (id)volumeController;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
-- (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(BOOL)arg2;
+- (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(bool)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
-- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(int)arg2;
+- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(long long)arg2;
 
 @end

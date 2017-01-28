@@ -3,7 +3,7 @@
  */
 
 @interface MusicSearchHintsViewController : UITableViewController <MusicClientContextConsuming> {
-    BOOL  _appendRadioTabParameter;
+    bool  _appendRadioTabParameter;
     NSString * _baseHintsURLString;
     MusicClientContext * _clientContext;
     SKUICompletionList * _completionList;
@@ -13,30 +13,30 @@
     UISearchBar * _searchBar;
 }
 
-@property (nonatomic) BOOL appendRadioTabParameter;
+@property (nonatomic) bool appendRadioTabParameter;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicSearchHintsViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UISearchBar *searchBar;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_setResponse:(id)arg1 error:(id)arg2;
-- (BOOL)appendRadioTabParameter;
+- (bool)appendRadioTabParameter;
 - (id)clientContext;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)reloadData;
 - (id)searchBar;
-- (void)setAppendRadioTabParameter:(BOOL)arg1;
+- (void)setAppendRadioTabParameter:(bool)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSearchBar:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

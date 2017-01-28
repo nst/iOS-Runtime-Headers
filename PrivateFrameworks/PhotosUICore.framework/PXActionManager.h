@@ -8,14 +8,14 @@
 
 @property (nonatomic) <PXActionPerformerDelegate> *performerDelegate;
 
-+ (id /* block */)_unlockDeviceHandler;
-+ (void)setEnsureUnlockedDeviceHandler:(id /* block */)arg1;
++ (id)_unlockDeviceHandler;
++ (void)setEnsureUnlockedDeviceHandler:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)actionPerformerForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;
-- (BOOL)canPerformActionType:(id)arg1;
-- (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned int)arg2;
+- (bool)canPerformActionType:(id)arg1;
+- (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)performerDelegate;
 - (id)previewActionForActionType:(id)arg1;
 - (void)setPerformerDelegate:(id)arg1;

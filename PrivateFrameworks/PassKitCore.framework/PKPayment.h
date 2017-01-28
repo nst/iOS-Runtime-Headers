@@ -17,8 +17,8 @@
 @property (nonatomic, retain) PKPaymentToken *token;
 
 + (id)paymentWithProtobuf:(id)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (int)version;
++ (bool)supportsSecureCoding;
++ (long long)version;
 
 - (void).cxx_destruct;
 - (const void*)billingAddress;

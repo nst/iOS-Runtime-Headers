@@ -6,15 +6,15 @@
 @required
 
 - (id)itemAtIndexPath:(NSIndexPath *)arg1;
-- (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
-- (unsigned int)numberOfSections;
-- (id)sectionAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
+- (id)sectionAtIndex:(unsigned long long)arg1;
 
 @optional
 
-- (BOOL)hasSameContentAsDataSource:(id <MPLazySectionedCollectionDataSource>)arg1;
-- (int)indexOfSectionForSectionIndexTitleAtIndex:(int)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })optionalSectionIndexTitlesRange;
+- (bool)hasSameContentAsDataSource:(id <MPLazySectionedCollectionDataSource>)arg1;
+- (long long)indexOfSectionForSectionIndexTitleAtIndex:(long long)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })optionalSectionIndexTitlesRange;
 - (NSArray *)sectionIndexTitles;
 
 @end

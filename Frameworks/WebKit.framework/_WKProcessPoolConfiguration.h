@@ -5,7 +5,7 @@
 @interface _WKProcessPoolConfiguration : NSObject <NSCopying, WKObject> {
     struct ObjectStorage<API::ProcessPoolConfiguration> { 
         struct type { 
-            unsigned char __lx[112]; 
+            unsigned char __lx[176]; 
         } data; 
     }  _processPoolConfiguration;
 }
@@ -15,12 +15,12 @@
 @property (nonatomic, copy) NSArray *cachePartitionedURLSchemes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int diskCacheSizeOverride;
-@property (nonatomic) BOOL diskCacheSpeculativeValidationEnabled;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL ignoreSynchronousMessagingTimeoutsForTesting;
+@property (nonatomic) long long diskCacheSizeOverride;
+@property (nonatomic) bool diskCacheSpeculativeValidationEnabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool ignoreSynchronousMessagingTimeoutsForTesting;
 @property (nonatomic, copy) NSURL *injectedBundleURL;
-@property (nonatomic) unsigned int maximumProcessCount;
+@property (nonatomic) unsigned long long maximumProcessCount;
 @property (readonly) Class superclass;
 
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
@@ -29,18 +29,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (int)diskCacheSizeOverride;
-- (BOOL)diskCacheSpeculativeValidationEnabled;
-- (BOOL)ignoreSynchronousMessagingTimeoutsForTesting;
+- (long long)diskCacheSizeOverride;
+- (bool)diskCacheSpeculativeValidationEnabled;
+- (bool)ignoreSynchronousMessagingTimeoutsForTesting;
 - (id)init;
 - (id)injectedBundleURL;
-- (unsigned int)maximumProcessCount;
+- (unsigned long long)maximumProcessCount;
 - (void)setAlwaysRevalidatedURLSchemes:(id)arg1;
 - (void)setCachePartitionedURLSchemes:(id)arg1;
-- (void)setDiskCacheSizeOverride:(int)arg1;
-- (void)setDiskCacheSpeculativeValidationEnabled:(BOOL)arg1;
-- (void)setIgnoreSynchronousMessagingTimeoutsForTesting:(BOOL)arg1;
+- (void)setDiskCacheSizeOverride:(long long)arg1;
+- (void)setDiskCacheSpeculativeValidationEnabled:(bool)arg1;
+- (void)setIgnoreSynchronousMessagingTimeoutsForTesting:(bool)arg1;
 - (void)setInjectedBundleURL:(id)arg1;
-- (void)setMaximumProcessCount:(unsigned int)arg1;
+- (void)setMaximumProcessCount:(unsigned long long)arg1;
 
 @end

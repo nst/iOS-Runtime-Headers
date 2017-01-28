@@ -4,7 +4,7 @@
 
 @interface HKCoordinateTransform : NSObject
 
-- (int)compareValue:(id)arg1 toValue:(id)arg2;
+- (long long)compareValue:(id)arg1 toValue:(id)arg2;
 - (double)coordinateForValue:(id)arg1;
 - (id)valueForCoordinate:(double)arg1;
 

@@ -5,7 +5,7 @@
 @interface NSValueTransformer : NSObject
 
 + (id)_transformerRegistry;
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (void)setValueTransformer:(id)arg1 forName:(id)arg2;
 + (Class)transformedValueClass;
 + (id)valueTransformerForName:(id)arg1;

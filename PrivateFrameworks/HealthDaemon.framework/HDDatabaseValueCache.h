@@ -17,7 +17,7 @@
 - (void)_resourceQueue_removeThreadLocalObjectForKey:(id)arg1;
 - (void)_resourceQueue_storeThreadLocalObject:(id)arg1 forKey:(id)arg2;
 - (id)cache;
-- (id)fetchObjectForKey:(id)arg1 database:(id)arg2 error:(id*)arg3 faultHandler:(id /* block */)arg4;
+- (id)fetchObjectForKey:(id)arg1 database:(id)arg2 error:(id*)arg3 faultHandler:(id)arg4;
 - (id)init;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjectsWithDatabase:(id)arg1;

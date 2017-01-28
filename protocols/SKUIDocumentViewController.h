@@ -13,7 +13,7 @@
 - (void)documentMediaQueriesDidUpdate:(IKAppDocument *)arg1;
 - (NSArray *)impressionableViewElements;
 - (NSArray *)leftBarButtonItemsForDocument:(IKAppDocument *)arg1;
-- (BOOL)managesNavigationBarContents;
+- (bool)managesNavigationBarContents;
 - (UIView *)navigationPaletteView;
 
 @end

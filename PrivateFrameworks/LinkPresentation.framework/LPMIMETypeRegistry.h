@@ -4,7 +4,7 @@
 
 @interface LPMIMETypeRegistry : NSObject
 
-+ (BOOL)isHTMLType:(id)arg1;
-+ (BOOL)isImageType:(id)arg1;
++ (bool)isHTMLType:(id)arg1;
++ (bool)isImageType:(id)arg1;
 
 @end

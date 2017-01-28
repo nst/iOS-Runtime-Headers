@@ -13,9 +13,9 @@
 
 - (id)description;
 - (id)distributionID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithNodeID:(id)arg1 withRootNodeID:(id)arg2 withDistributionID:(id)arg3 withEntryDate:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)nodeID;
 - (id)rootNodeID;
 

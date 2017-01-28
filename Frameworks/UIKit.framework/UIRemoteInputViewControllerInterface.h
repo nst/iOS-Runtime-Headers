@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <_UIIVCResponseDelegate> *responseDelegate;
 @property (readonly) Class superclass;
 
@@ -16,7 +16,7 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void)_handleInputViewControllerState:(id)arg1;
-- (void)_openURL:(id)arg1 completion:(id /* block */)arg2;
+- (void)_openURL:(id)arg1 completion:(id)arg2;
 - (void)_performInputViewControllerOutput:(id)arg1;
 - (void)_tearDownRemoteService;
 - (void)dealloc;

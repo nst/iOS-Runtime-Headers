@@ -6,40 +6,40 @@
     int  _blendMode;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _frame;
     UIImage * _imageObj;
     NSString * _name;
-    float  _opacity;
+    double  _opacity;
 }
 
 @property (nonatomic) int blendMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL fixedFrame;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool fixedFrame;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *imageObj;
 @property (nonatomic, retain) NSString *name;
-@property (nonatomic) float opacity;
+@property (nonatomic) double opacity;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)blendMode;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frame;
 - (id)imageObj;
 - (id)name;
-- (float)opacity;
+- (double)opacity;
 - (void)setBlendMode:(int)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setImageObj:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setOpacity:(float)arg1;
+- (void)setOpacity:(double)arg1;
 
 @end

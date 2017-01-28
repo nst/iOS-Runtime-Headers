@@ -8,7 +8,7 @@
     FLFollowUpAction * _dismissAction;
     NSString * _informativeText;
     NSDate * _relevanceDate;
-    unsigned int  _sqlID;
+    unsigned long long  _sqlID;
     NSString * _title;
     NSString * _unlockActionLabel;
 }
@@ -18,11 +18,11 @@
 @property (nonatomic, retain) FLFollowUpAction *dismissAction;
 @property (nonatomic, copy) NSString *informativeText;
 @property (nonatomic, copy) NSDate *relevanceDate;
-@property (nonatomic) unsigned int sqlID;
+@property (nonatomic) unsigned long long sqlID;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *unlockActionLabel;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activateAction;
@@ -37,10 +37,10 @@
 - (void)setDismissAction:(id)arg1;
 - (void)setInformativeText:(id)arg1;
 - (void)setRelevanceDate:(id)arg1;
-- (void)setSqlID:(unsigned int)arg1;
+- (void)setSqlID:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUnlockActionLabel:(id)arg1;
-- (unsigned int)sqlID;
+- (unsigned long long)sqlID;
 - (id)title;
 - (id)unlockActionLabel;
 

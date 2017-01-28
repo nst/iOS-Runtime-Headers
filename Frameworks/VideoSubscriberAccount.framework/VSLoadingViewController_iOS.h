@@ -3,28 +3,28 @@
  */
 
 @interface VSLoadingViewController_iOS : UIViewController <VSLoadingViewController> {
-    BOOL  _cancellationAllowed;
+    bool  _cancellationAllowed;
     <VSLoadingViewControllerDelegate> * _delegate;
     UIActivityIndicatorView * _loadingIndicator;
 }
 
-@property (getter=isCancellationAllowed, nonatomic) BOOL cancellationAllowed;
+@property (getter=isCancellationAllowed, nonatomic) bool cancellationAllowed;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSLoadingViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIActivityIndicatorView *loadingIndicator;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonPressed:(id)arg1;
 - (id)delegate;
-- (BOOL)isCancellationAllowed;
+- (bool)isCancellationAllowed;
 - (id)loadingIndicator;
-- (void)setCancellationAllowed:(BOOL)arg1;
+- (void)setCancellationAllowed:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLoadingIndicator:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

@@ -27,7 +27,7 @@
 - (id)_initWithSearchArea:(id)arg1 inScreen:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugQuickLookObject;
-- (id)filteredFocusRegionsUsingBlock:(id /* block */)arg1;
+- (id)filteredFocusRegionsUsingBlock:(id)arg1;
 - (id)focusRegions;
 - (id)focusedRegion;
 - (id)rawFocusRegions;

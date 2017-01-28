@@ -10,11 +10,11 @@
 @property (nonatomic) GKHostedAuthenticateViewController *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)authenticateExtension;
-+ (BOOL)dismissAutomaticallyAfterExtensionCompletion;
++ (bool)dismissAutomaticallyAfterExtensionCompletion;
 
 - (void)dealloc;
 - (id)delegate;

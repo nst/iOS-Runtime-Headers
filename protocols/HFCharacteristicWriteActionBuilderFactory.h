@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)containsActionableCharacteristics;
+- (bool)containsActionableCharacteristics;
 - (NAFuture *)currentStateActionBuildersForHome:(HMHome *)arg1;
 
 @end

@@ -44,7 +44,7 @@
 @property (nonatomic, readonly) float tip;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } userAcceleration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)attitude;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

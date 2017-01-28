@@ -3,15 +3,15 @@
  */
 
 @interface CKCustomBlockValidator : CKPredicateValidatorInstance {
-    id /* block */  _block;
+    id  _block;
 }
 
-@property (nonatomic, copy) id /* block */ block;
+@property (nonatomic, copy) id block;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
-- (id)initWithBlock:(id /* block */)arg1;
-- (void)setBlock:(id /* block */)arg1;
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (id)block;
+- (id)initWithBlock:(id)arg1;
+- (void)setBlock:(id)arg1;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 
 @end

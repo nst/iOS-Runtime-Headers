@@ -9,7 +9,7 @@
 - (void)closePageSelected;
 - (void)goBackSelected;
 - (void)ignoreWarningSelected;
-- (BOOL)isRTL;
+- (bool)isRTL;
 - (void)loaded;
 
 @end

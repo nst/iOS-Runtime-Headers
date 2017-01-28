@@ -5,19 +5,19 @@
 @interface PXFaceCollectionItem : NSObject {
     id  _modelObject;
     NSString * _name;
-    unsigned int  _photosCount;
+    unsigned long long  _photosCount;
 }
 
 @property (nonatomic, retain) id modelObject;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) unsigned int photosCount;
+@property (nonatomic) unsigned long long photosCount;
 
 - (void).cxx_destruct;
 - (id)modelObject;
 - (id)name;
-- (unsigned int)photosCount;
+- (unsigned long long)photosCount;
 - (void)setModelObject:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPhotosCount:(unsigned int)arg1;
+- (void)setPhotosCount:(unsigned long long)arg1;
 
 @end

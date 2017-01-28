@@ -13,7 +13,7 @@
 @property (nonatomic, retain) CNUIUserActionItem *defaultAction;
 @property (nonatomic, copy) NSArray *directoryServiceActions;
 @property (nonatomic, copy) NSArray *foundOnDeviceActions;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 
 + (id)emptyModel;
 
@@ -26,7 +26,7 @@
 - (id)foundOnDeviceActions;
 - (id)initWithDefaultAction:(id)arg1 actions:(id)arg2 directoryServiceActions:(id)arg3 foundOnDeviceActions:(id)arg4;
 - (id)initWithModel:(id)arg1 actions:(id)arg2;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (void)setActions:(id)arg1;
 - (void)setDefaultAction:(id)arg1;
 - (void)setDirectoryServiceActions:(id)arg1;

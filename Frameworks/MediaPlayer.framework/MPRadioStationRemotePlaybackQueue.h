@@ -17,7 +17,7 @@
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 - (long long)stationID;
 - (id)stationStringID;
-- (BOOL)verifyWithError:(id*)arg1;
+- (bool)verifyWithError:(id*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

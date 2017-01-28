@@ -10,8 +10,8 @@
 
 - (int)format;
 - (id)init;
-- (BOOL)isEmpty;
-- (BOOL)isSimilarToTextRun:(id)arg1;
+- (bool)isEmpty;
+- (bool)isSimilarToTextRun:(id)arg1;
 - (void)setFormat:(int)arg1;
 
 @end

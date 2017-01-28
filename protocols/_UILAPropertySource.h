@@ -7,11 +7,11 @@
 
 - (NSSet *)_newlyHiddenItems;
 - (NSSet *)_newlyUnhiddenItems;
-- (int)axis;
-- (BOOL)layoutFillsCanvas;
-- (BOOL)layoutUsesCanvasMarginsWhenFilling;
-- (void)setAxis:(int)arg1;
-- (void)setLayoutFillsCanvas:(BOOL)arg1;
-- (void)setLayoutUsesCanvasMarginsWhenFilling:(BOOL)arg1;
+- (long long)axis;
+- (bool)layoutFillsCanvas;
+- (bool)layoutUsesCanvasMarginsWhenFilling;
+- (void)setAxis:(long long)arg1;
+- (void)setLayoutFillsCanvas:(bool)arg1;
+- (void)setLayoutUsesCanvasMarginsWhenFilling:(bool)arg1;
 
 @end

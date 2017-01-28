@@ -6,7 +6,7 @@
 @required
 
 - (SKUIJSColor *)backgroundColor;
-- (BOOL)isBackgroundLight;
+- (bool)isBackgroundLight;
 - (SKUIJSColor *)textPrimaryColor;
 - (SKUIJSColor *)textSecondaryColor;
 

@@ -13,7 +13,7 @@
 - (void)_handleFaceDefaultsChanged;
 - (void)_handleFaceLibraryReloaded;
 - (void)_loadTimeOffset;
-- (void)_updateTimeOffset:(BOOL)arg1;
+- (void)_updateTimeOffset:(bool)arg1;
 - (void)dealloc;
 - (id)displayTimeForRealTime:(id)arg1;
 - (id)faceDisplayTime;

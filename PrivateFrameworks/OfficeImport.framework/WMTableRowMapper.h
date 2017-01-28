@@ -7,7 +7,7 @@
     WDTableRow * mWdTableRow;
 }
 
-+ (BOOL)isTableRowDeleted:(id)arg1;
++ (bool)isTableRowDeleted:(id)arg1;
 
 - (double)height;
 - (id)initWithWDTableRow:(id)arg1 parent:(id)arg2;

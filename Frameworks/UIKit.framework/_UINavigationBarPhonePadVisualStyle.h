@@ -4,15 +4,15 @@
 
 @interface _UINavigationBarPhonePadVisualStyle : _UINavigationBarVisualStyle
 
-- (float)backIndicatorBottomMargin;
-- (float)barHeight;
-- (float)barPromptHeight;
-- (float)buttonHeight;
-- (float)leftEdgeMargin;
-- (int)navigationBar:(id)arg1 metricsForOrientation:(int)arg2 hasPrompt:(BOOL)arg3;
-- (float)navigationItemBaselineOffset;
-- (float)topBackMargin;
-- (float)topMargin;
-- (float)topTitleMargin;
+- (double)backIndicatorBottomMargin;
+- (double)barHeight;
+- (double)barPromptHeight;
+- (double)buttonHeight;
+- (double)leftEdgeMargin;
+- (long long)navigationBar:(id)arg1 metricsForOrientation:(long long)arg2 hasPrompt:(bool)arg3;
+- (double)navigationItemBaselineOffset;
+- (double)topBackMargin;
+- (double)topMargin;
+- (double)topTitleMargin;
 
 @end

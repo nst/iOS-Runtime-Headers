@@ -3,36 +3,36 @@
  */
 
 @interface CKAcceptSharesOperation : CKOperation {
-    id /* block */  _acceptSharesCompletionBlock;
+    id  _acceptSharesCompletionBlock;
     NSMutableDictionary * _errorsByShareURL;
-    id /* block */  _perShareCompletionBlock;
+    id  _perShareCompletionBlock;
     NSArray * _shareMetadatas;
     NSMutableDictionary * _shareMetadatasByShareURL;
 }
 
-@property (nonatomic, copy) id /* block */ acceptSharesCompletionBlock;
+@property (nonatomic, copy) id acceptSharesCompletionBlock;
 @property (nonatomic, retain) NSMutableDictionary *errorsByShareURL;
-@property (nonatomic, copy) id /* block */ perShareCompletionBlock;
+@property (nonatomic, copy) id perShareCompletionBlock;
 @property (nonatomic, copy) NSArray *shareMetadatas;
 @property (nonatomic, retain) NSMutableDictionary *shareMetadatasByShareURL;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
-- (id /* block */)acceptSharesCompletionBlock;
+- (id)acceptSharesCompletionBlock;
 - (id)activityCreate;
 - (id)errorsByShareURL;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithShareMetadatas:(id)arg1;
-- (id /* block */)perShareCompletionBlock;
+- (id)perShareCompletionBlock;
 - (void)performCKOperation;
-- (void)setAcceptSharesCompletionBlock:(id /* block */)arg1;
+- (void)setAcceptSharesCompletionBlock:(id)arg1;
 - (void)setErrorsByShareURL:(id)arg1;
-- (void)setPerShareCompletionBlock:(id /* block */)arg1;
+- (void)setPerShareCompletionBlock:(id)arg1;
 - (void)setShareMetadatas:(id)arg1;
 - (void)setShareMetadatasByShareURL:(id)arg1;
 - (id)shareMetadatas;

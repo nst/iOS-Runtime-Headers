@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) NSString *etag;
-@property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasProtectionInfo;
-@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic, readonly) bool hasEtag;
+@property (nonatomic, readonly) bool hasProtectionInfo;
+@property (nonatomic, readonly) bool hasZoneIdentifier;
 @property (nonatomic, retain) CKDPProtectionInfo *protectionInfo;
 @property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
@@ -21,14 +21,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (BOOL)hasProtectionInfo;
-- (BOOL)hasZoneIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEtag;
+- (bool)hasProtectionInfo;
+- (bool)hasZoneIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)protectionInfo;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setProtectionInfo:(id)arg1;
 - (void)setZoneIdentifier:(id)arg1;

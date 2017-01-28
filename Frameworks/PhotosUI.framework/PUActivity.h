@@ -7,8 +7,8 @@
     UIImage * _cachedSmallCustomImage;
     <PUActivityDataSource> * _dataSource;
     struct { 
-        BOOL respondsToActivityViewControllerForActivity; 
-        BOOL respondsToActivityItemsForActivity; 
+        bool respondsToActivityViewControllerForActivity; 
+        bool respondsToActivityItemsForActivity; 
     }  _dataSourceFlags;
     PUActivityItemSourceController * _itemSourceController;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic) <PUActivityDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) PUActivityItemSourceController *itemSourceController;
 @property (readonly) Class superclass;
 

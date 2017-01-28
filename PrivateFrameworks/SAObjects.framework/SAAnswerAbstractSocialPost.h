@@ -11,9 +11,9 @@
 @property (nonatomic, copy) NSDate *dateModified;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSURL *icon;
-@property (nonatomic) int rank;
+@property (nonatomic) long long rank;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *title;
@@ -29,14 +29,14 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)icon;
-- (int)rank;
+- (long long)rank;
 - (void)setAuthor:(id)arg1;
 - (void)setAuthorTitle:(id)arg1;
 - (void)setComments:(id)arg1;
 - (void)setDateCreated:(id)arg1;
 - (void)setDateModified:(id)arg1;
 - (void)setIcon:(id)arg1;
-- (void)setRank:(int)arg1;
+- (void)setRank:(long long)arg1;
 - (void)setText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)text;

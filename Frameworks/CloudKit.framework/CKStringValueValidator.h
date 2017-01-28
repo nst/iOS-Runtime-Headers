@@ -12,7 +12,7 @@
 - (id)CKPropertiesDescription;
 - (id)initWithValue:(id)arg1;
 - (void)setValue:(id)arg1;
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 - (id)value;
 
 @end

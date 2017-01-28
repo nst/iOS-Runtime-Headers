@@ -13,7 +13,7 @@
 - (id)_defaultTitleAttributes;
 - (id)_newButton;
 - (void)configureButton:(id)arg1 fromBarItem:(id)arg2;
-- (void)updateButton:(id)arg1 forEnabledState:(BOOL)arg2;
-- (void)updateButton:(id)arg1 forHighlightedState:(BOOL)arg2;
+- (void)updateButton:(id)arg1 forEnabledState:(bool)arg2;
+- (void)updateButton:(id)arg1 forHighlightedState:(bool)arg2;
 
 @end

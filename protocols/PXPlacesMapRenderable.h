@@ -6,11 +6,11 @@
 @required
 
 - (NSOrderedSet *)geotaggables;
-- (int)index;
+- (long long)index;
 - (<PXPlacesMapRenderer> *)renderer;
 - (<PXPlacesMapSelectionHandler> *)selectionHandler;
 - (void)setGeotaggables:(NSOrderedSet *)arg1;
-- (void)setIndex:(int)arg1;
+- (void)setIndex:(long long)arg1;
 - (void)setRenderer:(id <PXPlacesMapRenderer>)arg1;
 - (void)setSelectionHandler:(id <PXPlacesMapSelectionHandler>)arg1;
 

@@ -3,24 +3,28 @@
  */
 
 @interface HUQuickControlSliderValueOverlayView : UIView {
-    BOOL  _off;
-    BOOL  _showsSecondGrabber;
+    bool  _off;
+    unsigned long long  _primaryGrabberLocation;
+    bool  _showsSecondGrabber;
 }
 
 @property (nonatomic, readonly) CAShapeLayer *layer;
-@property (getter=isOff, nonatomic) BOOL off;
-@property (nonatomic) BOOL showsSecondGrabber;
+@property (getter=isOff, nonatomic) bool off;
+@property (nonatomic) unsigned long long primaryGrabberLocation;
+@property (nonatomic) bool showsSecondGrabber;
 
 + (Class)layerClass;
 
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateBlendMode;
 - (void)_updateShape;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isOff;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isOff;
 - (void)layoutSubviews;
-- (void)setOff:(BOOL)arg1;
-- (void)setShowsSecondGrabber:(BOOL)arg1;
-- (BOOL)showsSecondGrabber;
+- (unsigned long long)primaryGrabberLocation;
+- (void)setOff:(bool)arg1;
+- (void)setPrimaryGrabberLocation:(unsigned long long)arg1;
+- (void)setShowsSecondGrabber:(bool)arg1;
+- (bool)showsSecondGrabber;
 
 @end

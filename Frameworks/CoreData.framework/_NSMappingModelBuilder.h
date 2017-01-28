@@ -12,10 +12,10 @@
 + (int)migrationDebugLevel;
 + (void)setMigrationDebugLevel:(int)arg1;
 
-- (BOOL)_canTransformSourceAttributeType:(unsigned int)arg1 toDestinationAttributeType:(unsigned int)arg2;
+- (bool)_canTransformSourceAttributeType:(unsigned long long)arg1 toDestinationAttributeType:(unsigned long long)arg2;
 - (void)_resetCaches;
 - (void)dealloc;
-- (BOOL)inferPropertyMappingsForEntityMapping:(id)arg1;
+- (bool)inferPropertyMappingsForEntityMapping:(id)arg1;
 - (id)initWithSourceModel:(id)arg1 destinationModel:(id)arg2;
 - (id)newEntityMappingWithSource:(id)arg1 destination:(id)arg2;
 - (id)newInferredMappingModel:(id*)arg1;

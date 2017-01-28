@@ -10,10 +10,10 @@
 @property (nonatomic, readonly, copy) NSDictionary *codecConfigurations;
 @property (nonatomic, readonly, copy) NSNumber *supportsComfortNoise;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (id)codecConfigurations;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

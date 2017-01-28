@@ -4,7 +4,7 @@
 
 @interface HFTemperatureServiceStatusItem : HFStatusItem
 
-+ (id)displayTitleStringForService:(id)arg1 withResponse:(id)arg2 multipleServices:(BOOL)arg3;
++ (id)displayTitleStringForService:(id)arg1 withResponse:(id)arg2 multipleServices:(bool)arg3;
 
 - (id)_subclass_updateWithOptions:(id)arg1;
 

@@ -8,17 +8,18 @@
 - (void)beginInteractiveTransition;
 - (void)expandContentOfCurrentItem;
 - (void)openURLIfAllowed:(NSURL *)arg1;
-- (void)presentAlertControllerForScenario:(int)arg1;
-- (void)previewCollectionPrefersWhitePointAdaptivityStyle:(int)arg1;
-- (void)previewCollectionUpdatePreviewItem:(int)arg1;
-- (void)setAccessoryViewVisible:(BOOL)arg1;
-- (void)setCanChangeCurrentPage:(BOOL)arg1;
-- (void)setFullScreen:(BOOL)arg1;
+- (void)presentAlertControllerForScenario:(long long)arg1;
+- (void)previewCollectionPrefersWhitePointAdaptivityStyle:(long long)arg1;
+- (void)previewCollectionUpdatePreviewItem:(long long)arg1;
+- (void)setAccessoryViewVisible:(bool)arg1;
+- (void)setCanChangeCurrentPage:(bool)arg1;
+- (void)setFullScreen:(bool)arg1;
 - (void)setPrinter:(id <QLPrintingProtocol>)arg1;
-- (void)setToolbarCanBeVisible:(BOOL)arg1;
+- (void)setRotationEnabled:(bool)arg1;
+- (void)setToolbarCanBeVisible:(bool)arg1;
 - (void)updateKeyCommands;
-- (void)updateOverlayButtons:(BOOL)arg1;
-- (void)updatePreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)updatePreviewItemAtIndex:(unsigned int)arg1 updatedContentsURL:(NSURL *)arg2 sandboxExtension:(NSData *)arg3;
+- (void)updateOverlayButtons:(bool)arg1;
+- (void)updatePreferredContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)updatePreviewItemAtIndex:(unsigned long long)arg1 updatedContentsURL:(NSURL *)arg2 sandboxExtension:(NSData *)arg3;
 
 @end

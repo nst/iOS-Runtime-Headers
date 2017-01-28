@@ -3,27 +3,27 @@
  */
 
 @interface PKPaymentSetupCardDetailsFooterView : PKTableFooterView {
-    int  _context;
+    long long  _context;
     UIButton * _manualEntryButton;
     UIButton * _setupLaterButton;
 }
 
-@property (nonatomic) int context;
+@property (nonatomic) long long context;
 @property (nonatomic, retain) UIButton *manualEntryButton;
 @property (nonatomic, retain) UIButton *setupLaterButton;
 
 - (void).cxx_destruct;
-- (int)context;
+- (long long)context;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2;
-- (BOOL)isBuddyiPad;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 context:(long long)arg2;
+- (bool)isBuddyiPad;
 - (void)layoutSubviews;
 - (id)manualEntryButton;
-- (void)setButtonsEnabled:(BOOL)arg1;
-- (void)setContext:(int)arg1;
+- (void)setButtonsEnabled:(bool)arg1;
+- (void)setContext:(long long)arg1;
 - (void)setManualEntryButton:(id)arg1;
 - (void)setSetupLaterButton:(id)arg1;
 - (id)setupLaterButton;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

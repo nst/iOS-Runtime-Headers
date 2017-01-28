@@ -15,8 +15,8 @@
 @property (readonly, copy) NSString *innerText;
 @property (readonly) DOMElement *lastElementChild;
 @property (readonly) DOMElement *mf_containingQuoteBlockElement;
-@property (readonly) BOOL mf_isContainedInQuoteBlock;
-@property (readonly) BOOL mf_isContainedInTable;
+@property (readonly) bool mf_isContainedInQuoteBlock;
+@property (readonly) bool mf_isContainedInTable;
 @property (readonly) DOMElement *nextElementSibling;
 @property (readonly) int offsetHeight;
 @property (readonly) int offsetLeft;
@@ -58,14 +58,14 @@
 - (id)getElementsByTagName:(id)arg1;
 - (id)getElementsByTagNameNS:(id)arg1 :(id)arg2;
 - (id)getElementsByTagNameNS:(id)arg1 localName:(id)arg2;
-- (BOOL)hasAttribute:(id)arg1;
-- (BOOL)hasAttributeNS:(id)arg1 :(id)arg2;
-- (BOOL)hasAttributeNS:(id)arg1 localName:(id)arg2;
+- (bool)hasAttribute:(id)arg1;
+- (bool)hasAttributeNS:(id)arg1 :(id)arg2;
+- (bool)hasAttributeNS:(id)arg1 localName:(id)arg2;
 - (id)innerHTML;
 - (id)innerText;
-- (BOOL)isFocused;
+- (bool)isFocused;
 - (id)lastElementChild;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (id)nextElementSibling;
 - (int)offsetHeight;
 - (int)offsetLeft;
@@ -84,8 +84,8 @@
 - (void)scrollByLines:(int)arg1;
 - (void)scrollByPages:(int)arg1;
 - (int)scrollHeight;
-- (void)scrollIntoView:(BOOL)arg1;
-- (void)scrollIntoViewIfNeeded:(BOOL)arg1;
+- (void)scrollIntoView:(bool)arg1;
+- (void)scrollIntoViewIfNeeded:(bool)arg1;
 - (int)scrollLeft;
 - (int)scrollTop;
 - (int)scrollWidth;
@@ -103,36 +103,36 @@
 - (int)structuralComplexityContribution;
 - (id)style;
 - (id)tagName;
-- (BOOL)webkitMatchesSelector:(id)arg1;
+- (bool)webkitMatchesSelector:(id)arg1;
 - (id)webkitRegionOverset;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-+ (BOOL)isRichTextStyle:(id)arg1;
++ (bool)isRichTextStyle:(id)arg1;
 
-- (BOOL)hasMarginsOfZero;
-- (BOOL)isRichTextElement;
-- (BOOL)isRichTextElementType;
+- (bool)hasMarginsOfZero;
+- (bool)isRichTextElement;
+- (bool)isRichTextElementType;
 - (id)mf_computedBackgroundColor;
 - (id)mf_containingQuoteBlockElement;
-- (BOOL)mf_hasBackgroundColorOrImage;
-- (BOOL)mf_isContainedInAnyElementInSet:(id)arg1;
-- (BOOL)mf_isContainedInQuoteBlock;
-- (BOOL)mf_isContainedInTable;
+- (bool)mf_hasBackgroundColorOrImage;
+- (bool)mf_isContainedInAnyElementInSet:(id)arg1;
+- (bool)mf_isContainedInQuoteBlock;
+- (bool)mf_isContainedInTable;
 - (int)mf_quoteLevelDelta;
 - (void)mf_stripCSSStyle;
 - (void)recursivelyRemoveMailAttributes;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)exceedsStructuralComplexity:(int)arg1;
-- (void)getTextWritingDirection:(int*)arg1 override:(BOOL*)arg2;
-- (BOOL)hasCustomLineHeight;
-- (BOOL)inDocument;
-- (BOOL)isHidden;
-- (BOOL)selectable;
+- (bool)exceedsStructuralComplexity:(int)arg1;
+- (void)getTextWritingDirection:(long long*)arg1 override:(bool*)arg2;
+- (bool)hasCustomLineHeight;
+- (bool)inDocument;
+- (bool)isHidden;
+- (bool)selectable;
 - (id)tapHighlightColor;
-- (BOOL)touchCalloutEnabled;
+- (bool)touchCalloutEnabled;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

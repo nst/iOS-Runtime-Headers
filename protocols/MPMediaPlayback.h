@@ -10,7 +10,7 @@
 - (float)currentPlaybackRate;
 - (double)currentPlaybackTime;
 - (void)endSeeking;
-- (BOOL)isPreparedToPlay;
+- (bool)isPreparedToPlay;
 - (void)pause;
 - (void)play;
 - (void)prepareToPlay;

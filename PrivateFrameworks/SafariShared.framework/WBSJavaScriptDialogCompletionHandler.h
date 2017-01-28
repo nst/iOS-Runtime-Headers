@@ -3,29 +3,29 @@
  */
 
 @interface WBSJavaScriptDialogCompletionHandler : NSObject {
-    id /* block */  _alertCompletionHandler;
-    id /* block */  _confirmCompletionHandler;
-    int  _dialogMode;
-    id /* block */  _promptCompletionHandler;
+    id  _alertCompletionHandler;
+    id  _confirmCompletionHandler;
+    long long  _dialogMode;
+    id  _promptCompletionHandler;
 }
 
-@property (nonatomic, copy) id /* block */ alertCompletionHandler;
-@property (nonatomic, copy) id /* block */ confirmCompletionHandler;
-@property (nonatomic) int dialogMode;
-@property (nonatomic, copy) id /* block */ promptCompletionHandler;
+@property (nonatomic, copy) id alertCompletionHandler;
+@property (nonatomic, copy) id confirmCompletionHandler;
+@property (nonatomic) long long dialogMode;
+@property (nonatomic, copy) id promptCompletionHandler;
 
 - (void).cxx_destruct;
-- (id /* block */)alertCompletionHandler;
+- (id)alertCompletionHandler;
 - (void)cancel;
-- (id /* block */)confirmCompletionHandler;
-- (int)dialogMode;
-- (id)initWithAlertCompletionHandler:(id /* block */)arg1;
-- (id)initWithConfirmCompletionHandler:(id /* block */)arg1;
-- (id)initWithPromptCompletionHandler:(id /* block */)arg1;
-- (id /* block */)promptCompletionHandler;
-- (void)setAlertCompletionHandler:(id /* block */)arg1;
-- (void)setConfirmCompletionHandler:(id /* block */)arg1;
-- (void)setDialogMode:(int)arg1;
-- (void)setPromptCompletionHandler:(id /* block */)arg1;
+- (id)confirmCompletionHandler;
+- (long long)dialogMode;
+- (id)initWithAlertCompletionHandler:(id)arg1;
+- (id)initWithConfirmCompletionHandler:(id)arg1;
+- (id)initWithPromptCompletionHandler:(id)arg1;
+- (id)promptCompletionHandler;
+- (void)setAlertCompletionHandler:(id)arg1;
+- (void)setConfirmCompletionHandler:(id)arg1;
+- (void)setDialogMode:(long long)arg1;
+- (void)setPromptCompletionHandler:(id)arg1;
 
 @end

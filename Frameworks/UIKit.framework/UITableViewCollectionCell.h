@@ -4,34 +4,34 @@
 
 @interface UITableViewCollectionCell : UITableViewCell <UICollectionViewTableAllRowAttributes>
 
-@property (nonatomic) int accessoryType;
+@property (nonatomic) long long accessoryType;
 @property (nonatomic, copy) UIColor *backgroundColor;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInset;
-@property (nonatomic) float defaultMarginWidth;
-@property (nonatomic) BOOL drawsSeparatorAtBottomOfSection;
-@property (nonatomic) BOOL drawsSeparatorAtTopOfSection;
-@property (nonatomic) int editingStyle;
-@property (nonatomic) int indentationLevel;
-@property (nonatomic) BOOL layoutMarginsFollowReadableWidth;
-@property (nonatomic) float sectionBorderWidth;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } backgroundInset;
+@property (nonatomic) double defaultMarginWidth;
+@property (nonatomic) bool drawsSeparatorAtBottomOfSection;
+@property (nonatomic) bool drawsSeparatorAtTopOfSection;
+@property (nonatomic) long long editingStyle;
+@property (nonatomic) long long indentationLevel;
+@property (nonatomic) bool layoutMarginsFollowReadableWidth;
+@property (nonatomic) double sectionBorderWidth;
 @property (nonatomic) int sectionLocation;
 @property (nonatomic, copy) UIColor *separatorColor;
 @property (nonatomic, retain) UIVisualEffect *separatorEffect;
-@property (nonatomic) int separatorStyle;
-@property (nonatomic) BOOL shouldIndentWhileEditing;
-@property (nonatomic) BOOL showsReorderControl;
+@property (nonatomic) long long separatorStyle;
+@property (nonatomic) bool shouldIndentWhileEditing;
+@property (nonatomic) bool showsReorderControl;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInset;
-- (float)defaultMarginWidth;
-- (BOOL)drawsSeparatorAtBottomOfSection;
-- (BOOL)drawsSeparatorAtTopOfSection;
-- (float)sectionBorderWidth;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })backgroundInset;
+- (double)defaultMarginWidth;
+- (bool)drawsSeparatorAtBottomOfSection;
+- (bool)drawsSeparatorAtTopOfSection;
+- (double)sectionBorderWidth;
 - (id)separatorEffect;
-- (void)setBackgroundInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setDefaultMarginWidth:(float)arg1;
-- (void)setDrawsSeparatorAtBottomOfSection:(BOOL)arg1;
-- (void)setDrawsSeparatorAtTopOfSection:(BOOL)arg1;
-- (void)setSectionBorderWidth:(float)arg1;
+- (void)setBackgroundInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setDefaultMarginWidth:(double)arg1;
+- (void)setDrawsSeparatorAtBottomOfSection:(bool)arg1;
+- (void)setDrawsSeparatorAtTopOfSection:(bool)arg1;
+- (void)setSectionBorderWidth:(double)arg1;
 - (void)setSeparatorEffect:(id)arg1;
 
 @end

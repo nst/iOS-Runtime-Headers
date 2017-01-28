@@ -6,7 +6,7 @@
     NSDictionary * _URLAppendStringMap;
     NSMutableDictionary * _browserFlows;
     NSObject<OS_xpc_object> * _clientListener;
-    BOOL  _controlProviderExists;
+    bool  _controlProviderExists;
     NSXPCListenerEndpoint * _listenerEndpoint;
     NSMutableArray * _pendingConnections;
     NSDictionary * _remediationMap;
@@ -18,10 +18,10 @@
 @property (retain) NSDictionary *URLAppendStringMap;
 @property (retain) NSMutableDictionary *browserFlows;
 @property (retain) NSObject<OS_xpc_object> *clientListener;
-@property BOOL controlProviderExists;
+@property bool controlProviderExists;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSXPCListenerEndpoint *listenerEndpoint;
 @property (retain) NSMutableArray *pendingConnections;
 @property (retain) NSDictionary *remediationMap;
@@ -42,10 +42,10 @@
 - (void)closeBrowserFilterFlow:(id)arg1 forUUID:(id)arg2;
 - (void)closePendingConnections;
 - (void)closeSocketFlow:(id)arg1 socketID:(unsigned long long)arg2;
-- (BOOL)controlProviderExists;
+- (bool)controlProviderExists;
 - (void)dispose;
-- (void)fetchCurrentRulesForFlow:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)fetchProviderConnectionWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchCurrentRulesForFlow:(id)arg1 completionHandler:(id)arg2;
+- (void)fetchProviderConnectionWithCompletionHandler:(id)arg1;
 - (void)handleAddDataMessage:(id)arg1 forConnection:(id)arg2;
 - (void)handleClientMessage:(id)arg1 forConnection:(id)arg2;
 - (void)handleDataCompleteMessage:(id)arg1 forConnection:(id)arg2;
@@ -64,7 +64,7 @@
 - (void)sendSocketContentFilterRequest;
 - (void)setBrowserFlows:(id)arg1;
 - (void)setClientListener:(id)arg1;
-- (void)setControlProviderExists:(BOOL)arg1;
+- (void)setControlProviderExists:(bool)arg1;
 - (void)setListenerEndpoint:(id)arg1;
 - (void)setPendingConnections:(id)arg1;
 - (void)setRemediationMap:(id)arg1;
@@ -74,11 +74,11 @@
 - (void)setURLAppendStringMap:(id)arg1;
 - (void)setupSocketContentFilterWithControlSocket:(int)arg1;
 - (void)setupSocketSourceWithControlSocket:(int)arg1;
-- (BOOL)socketContentFilterWriteMessageWithControlSocket:(int)arg1 socketID:(unsigned long long)arg2 drop:(BOOL)arg3 inboundPassOffset:(unsigned long long)arg4 inboundPeekOffset:(unsigned long long)arg5 outboundPassOffset:(unsigned long long)arg6 outboundPeekOffset:(unsigned long long)arg7;
+- (bool)socketContentFilterWriteMessageWithControlSocket:(int)arg1 socketID:(unsigned long long)arg2 drop:(bool)arg3 inboundPassOffset:(unsigned long long)arg4 inboundPeekOffset:(unsigned long long)arg5 outboundPassOffset:(unsigned long long)arg6 outboundPeekOffset:(unsigned long long)arg7;
 - (id)socketExceptions;
 - (id)socketFlows;
 - (id)source;
-- (void)startFilterWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)startFilterWithOptions:(id)arg1 completionHandler:(id)arg2;
 - (void)stopWithReason:(int)arg1;
 - (void)teardownSocketSource;
 

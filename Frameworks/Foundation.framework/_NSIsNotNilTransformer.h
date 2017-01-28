@@ -4,7 +4,7 @@
 
 @interface _NSIsNotNilTransformer : _NSNegateBooleanTransformer
 
-+ (BOOL)supportsReverseTransformation;
++ (bool)supportsReverseTransformation;
 
 - (id)description;
 - (id)transformedValue:(id)arg1;

@@ -4,10 +4,10 @@
 
 @interface PSTouchIDPINController : DevicePINController
 
-- (BOOL)_asyncSetPinCompatible;
+- (bool)_asyncSetPinCompatible;
 - (id)pinInstructionsPrompt;
 - (void)setPane:(id)arg1;
-- (BOOL)showSimplePINCancelButtonOnLeft;
+- (bool)showSimplePINCancelButtonOnLeft;
 - (id)stringsBundle;
 
 @end

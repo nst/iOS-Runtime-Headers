@@ -8,20 +8,20 @@
     NSDate * _lastLOIUpdateTimestamp;
     CLLocationManager * _locationManager;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     RTRoutineManager * _routineManager;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)clearLocationOfInterest;
-- (void)fetchAllLocationsOfInterestWithHandler:(id /* block */)arg1;
+- (void)fetchAllLocationsOfInterestWithHandler:(id)arg1;
 - (id)fetchLocationOfInterestAtCurrentLocation;
 - (id)getCurrentLocation;
 - (id)init;

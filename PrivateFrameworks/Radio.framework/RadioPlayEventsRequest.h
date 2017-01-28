@@ -17,6 +17,6 @@
 - (id)initWithStationHash:(id)arg1 stationID:(long long)arg2 playEvents:(id)arg3;
 - (id)playEventCollection;
 - (void)setDeviceName:(id)arg1;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 
 @end

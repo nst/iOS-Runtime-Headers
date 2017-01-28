@@ -3,45 +3,45 @@
  */
 
 @interface DEExtension : NSObject {
-    BOOL  _allowUserAttachmentSelection;
+    bool  _allowUserAttachmentSelection;
     NSString * _attachmentsName;
     DEExtensionHostContext * _context;
     NSExtension * _extension;
     NSString * _identifier;
-    BOOL  _isLoggingEnabled;
+    bool  _isLoggingEnabled;
     NSString * _loggingConsent;
 }
 
-@property (nonatomic) BOOL allowUserAttachmentSelection;
+@property (nonatomic) bool allowUserAttachmentSelection;
 @property (nonatomic, retain) NSString *attachmentsName;
 @property (nonatomic, retain) DEExtensionHostContext *context;
 @property (nonatomic, retain) NSExtension *extension;
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) BOOL isLoggingEnabled;
+@property (nonatomic) bool isLoggingEnabled;
 @property (nonatomic, retain) NSString *loggingConsent;
 
 - (void).cxx_destruct;
-- (BOOL)allowUserAttachmentSelection;
-- (void)attachmentListWithHandler:(id /* block */)arg1;
-- (void)attachmentsForParameters:(id)arg1 andHandler:(id /* block */)arg2;
+- (bool)allowUserAttachmentSelection;
+- (void)attachmentListWithHandler:(id)arg1;
+- (void)attachmentsForParameters:(id)arg1 andHandler:(id)arg2;
 - (id)attachmentsName;
 - (id)context;
 - (id)description;
 - (void)endUsingExtension;
 - (id)extension;
-- (void)getAttachmentsWithParameters:(id)arg1 andHandler:(id /* block */)arg2;
+- (void)getAttachmentsWithParameters:(id)arg1 andHandler:(id)arg2;
 - (id)identifier;
 - (id)initWithNSExtension:(id)arg1;
-- (BOOL)isLoggingEnabled;
+- (bool)isLoggingEnabled;
 - (void)loadExtendedInfo;
 - (id)loggingConsent;
-- (void)performWithHostContext:(id /* block */)arg1;
-- (void)setAllowUserAttachmentSelection:(BOOL)arg1;
+- (void)performWithHostContext:(id)arg1;
+- (void)setAllowUserAttachmentSelection:(bool)arg1;
 - (void)setAttachmentsName:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setIsLoggingEnabled:(BOOL)arg1;
+- (void)setIsLoggingEnabled:(bool)arg1;
 - (void)setLoggingConsent:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @interface BKSAnimationFenceHandle : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
     BSMachPortSendRight * _caFence;
     int  _invalidated;
-    BOOL  _notObservable;
+    bool  _notObservable;
     BSMachPortSendRight * _preFence;
     BSMachPortSendRight * _preFenceTrigger;
 }
@@ -13,19 +13,19 @@
 @property (nonatomic, readonly, retain) BSMachPortSendRight *_caFence;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) BSMachPortSendRight *preFenceTrigger;
 @property (readonly) Class superclass;
-@property (getter=isUsable, nonatomic, readonly) BOOL usable;
+@property (getter=isUsable, nonatomic, readonly) bool usable;
 
 + (id)_xpcClient;
 + (id)newHandleWithCAPort:(unsigned int)arg1;
 + (id)newSystemFenceHandle;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (unsigned int)CAPort;
 - (id)_caFence;
-- (id)_initWithCAFence:(id)arg1 preFence:(id)arg2 preFenceTrigger:(id)arg3 notObservable:(BOOL)arg4;
+- (id)_initWithCAFence:(id)arg1 preFence:(id)arg2 preFenceTrigger:(id)arg3 notObservable:(bool)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -35,7 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)invalidate;
-- (BOOL)isUsable;
+- (bool)isUsable;
 - (id)preFenceTrigger;
 
 @end

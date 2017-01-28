@@ -4,19 +4,19 @@
 
 @interface PRMonogram : NSObject {
     UIColor * _color;
-    unsigned int  _fontIndex;
+    unsigned long long  _fontIndex;
     NSString * _text;
 }
 
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) unsigned int fontIndex;
+@property (nonatomic) unsigned long long fontIndex;
 @property (nonatomic, copy) NSString *text;
 
 + (id)_defaultMonogramColor;
 + (id)_fontSpecs;
-+ (unsigned int)countOfFonts;
-+ (id)fontForIndex:(unsigned int)arg1 plateDiameter:(float)arg2;
-+ (float)kerningForFontIndex:(unsigned int)arg1 fontSize:(float)arg2;
++ (unsigned long long)countOfFonts;
++ (id)fontForIndex:(unsigned long long)arg1 plateDiameter:(double)arg2;
++ (double)kerningForFontIndex:(unsigned long long)arg1 fontSize:(double)arg2;
 + (id)monogram;
 + (id)monogramColors;
 + (id)monogramWithData:(id)arg1;
@@ -29,14 +29,14 @@
 - (id)color;
 - (id)dataRepresentation;
 - (id)description;
-- (unsigned int)fontIndex;
+- (unsigned long long)fontIndex;
 - (id)init;
 - (void)setColor:(id)arg1;
-- (void)setFontIndex:(unsigned int)arg1;
+- (void)setFontIndex:(unsigned long long)arg1;
 - (void)setFontIndexToUnsupportedValue;
 - (void)setText:(id)arg1;
 - (id)snapshotWithOptions:(id)arg1;
-- (id)snapshotWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(id)arg3;
+- (id)snapshotWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2 options:(id)arg3;
 - (id)text;
 
 @end

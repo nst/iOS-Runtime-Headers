@@ -3,24 +3,24 @@
  */
 
 @interface CURetrier : NSObject {
-    id /* block */  _action;
+    id  _action;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     double  _interval;
-    BOOL  _invalidateCalled;
-    id /* block */  _invalidationHandler;
+    bool  _invalidateCalled;
+    id  _invalidationHandler;
     double  _leeway;
     NSObject<OS_dispatch_source> * _retryTimer;
     double  _startTime;
 }
 
-@property (nonatomic, copy) id /* block */ action;
+@property (nonatomic, copy) id action;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
 @property (nonatomic) double interval;
-@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, copy) id invalidationHandler;
 @property (nonatomic) double leeway;
 
 - (void).cxx_destruct;
-- (id /* block */)action;
+- (id)action;
 - (id)dispatchQueue;
 - (void)failed;
 - (void)failedDirect;
@@ -28,12 +28,12 @@
 - (double)interval;
 - (void)invalidate;
 - (void)invalidateDirect;
-- (id /* block */)invalidationHandler;
+- (id)invalidationHandler;
 - (double)leeway;
-- (void)setAction:(id /* block */)arg1;
+- (void)setAction:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)setInterval:(double)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setInvalidationHandler:(id)arg1;
 - (void)setLeeway:(double)arg1;
 - (void)start;
 - (void)startDirect;

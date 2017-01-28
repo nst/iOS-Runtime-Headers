@@ -19,10 +19,11 @@
 - (void)_addLogAdaptor:(id)arg1;
 - (void)_applicationDeactivating:(id)arg1;
 - (void)_applicationWillTerminate:(id)arg1;
-- (void)_disableLogMsgInstrumentationWithBlock:(id /* block */)arg1;
-- (BOOL)_disableUsageLoggingForCountry;
+- (void)_disableLogMsgInstrumentationWithBlock:(id)arg1;
+- (bool)_disableUsageLoggingForCountry;
 - (void)_enableLogMsgInstrumentation;
 - (void)_flushLogs;
+- (void)_forceFlushLogs;
 - (id)_logMessageUsageURL;
 - (void)_queueLogMessage:(id)arg1;
 - (void)_registerLogMsgState:(id)arg1;
@@ -32,13 +33,14 @@
 - (void)_setupXPCRemoteAdators;
 - (void)_unregisterLogMsgStateOfType:(int)arg1;
 - (void)_updateAndSetupRemoteAdaptors;
-- (BOOL)_updateRemoteAdaptorOptions;
+- (bool)_updateRemoteAdaptorOptions;
 - (void)addLogAdaptor:(id)arg1;
 - (void)dealloc;
 - (void)disableLogMsgInstrumentation;
-- (void)disableLogMsgInstrumentationWithBlock:(id /* block */)arg1;
+- (void)disableLogMsgInstrumentationWithBlock:(id)arg1;
 - (void)enableLogMsgInstrumentation;
 - (void)flushLogs;
+- (void)forceFlushLogs;
 - (id)init;
 - (void)queueLogMessage:(id)arg1;
 - (void)registerLogMsgState:(id)arg1;
@@ -46,8 +48,8 @@
 - (void)removeLogAdaptor:(id)arg1;
 - (id)serverLogAdaptorManager;
 - (void)setServerLogAdaptorManager:(id)arg1;
-- (BOOL)shouldSendUsageUsingNewLogManager;
+- (bool)shouldSendUsageUsingNewLogManager;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
-- (void)waitForEmptyLoggingQueue:(id /* block */)arg1;
+- (void)waitForEmptyLoggingQueue:(id)arg1;
 
 @end

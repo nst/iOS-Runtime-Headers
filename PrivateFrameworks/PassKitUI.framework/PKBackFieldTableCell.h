@@ -4,15 +4,15 @@
 
 @interface PKBackFieldTableCell : PKTableViewCell <UITextViewDelegate> {
     PKPassField * _field;
-    BOOL  _showLinks;
+    bool  _showLinks;
     UITextView * _valueTextView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PKPassField *field;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL showLinks;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool showLinks;
 @property (readonly) Class superclass;
 
 + (id)_linkColor;
@@ -24,15 +24,15 @@
 - (void).cxx_destruct;
 - (void)_detectLinks;
 - (void)_setupTextAttributes;
-- (struct CGSize { float x1; float x2; })_sizeForValueTextWithWidth:(float)arg1;
+- (struct CGSize { double x1; double x2; })_sizeForValueTextWithWidth:(double)arg1;
 - (void)dealloc;
 - (id)field;
-- (id)initWithField:(id)arg1 showLinks:(BOOL)arg2;
+- (id)initWithField:(id)arg1 showLinks:(bool)arg2;
 - (void)layoutSubviews;
 - (void)setField:(id)arg1;
-- (void)setShowLinks:(BOOL)arg1;
-- (BOOL)showLinks;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
+- (void)setShowLinks:(bool)arg1;
+- (bool)showLinks;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
 
 @end

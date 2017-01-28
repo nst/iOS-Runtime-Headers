@@ -9,19 +9,19 @@
     int  _timeSinceStart;
 }
 
-@property (nonatomic) BOOL hasTimeSinceStart;
+@property (nonatomic) bool hasTimeSinceStart;
 @property (nonatomic) int timeSinceStart;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTimeSinceStart;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTimeSinceStart;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimeSinceStart:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimeSinceStart:(bool)arg1;
 - (void)setTimeSinceStart:(int)arg1;
 - (int)timeSinceStart;
 - (void)writeTo:(id)arg1;

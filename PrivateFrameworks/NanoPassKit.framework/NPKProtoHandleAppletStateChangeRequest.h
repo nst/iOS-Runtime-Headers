@@ -7,8 +7,8 @@
     NSString * _passID;
 }
 
-@property (nonatomic, readonly) BOOL hasPassAppletState;
-@property (nonatomic, readonly) BOOL hasPassID;
+@property (nonatomic, readonly) bool hasPassAppletState;
+@property (nonatomic, readonly) bool hasPassID;
 @property (nonatomic, retain) NSData *passAppletState;
 @property (nonatomic, retain) NSString *passID;
 
@@ -17,14 +17,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPassAppletState;
-- (BOOL)hasPassID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPassAppletState;
+- (bool)hasPassID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)passAppletState;
 - (id)passID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPassAppletState:(id)arg1;
 - (void)setPassID:(id)arg1;
 - (void)writeTo:(id)arg1;

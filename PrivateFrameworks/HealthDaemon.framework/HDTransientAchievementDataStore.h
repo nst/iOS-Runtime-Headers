@@ -28,15 +28,15 @@
 - (id)cachedDateValueForKey:(id)arg1;
 - (id)cachedNumberValueForKey:(id)arg1;
 - (void)clearAddedAchievements;
-- (BOOL)commit:(id*)arg1;
+- (bool)commit:(id*)arg1;
 - (id)commitExpects;
 - (id)committedKeyValues;
 - (id)committedValues;
-- (unsigned int)countOfUnalertedAchievements;
+- (unsigned long long)countOfUnalertedAchievements;
 - (id)dateForKey:(id)arg1;
 - (double)doubleForKey:(id)arg1;
 - (id)earnedAchievementDefinitionIdentifiers;
-- (void)expectCommitWithCompletion:(id /* block */)arg1;
+- (void)expectCommitWithCompletion:(id)arg1;
 - (id)initWithProfile:(id)arg1;
 - (long long)int64ForKey:(id)arg1;
 - (void)markAchievementAlerted:(id)arg1;
@@ -50,10 +50,10 @@
 - (void)setInt64:(long long)arg1 forKey:(id)arg2;
 - (void)setUnalertedAchievements:(id)arg1;
 - (void)setUncommittedValues:(id)arg1;
-- (void)setUnsignedInteger:(unsigned int)arg1 forKey:(id)arg2;
+- (void)setUnsignedInteger:(unsigned long long)arg1 forKey:(id)arg2;
 - (id)unalertedAchievements;
 - (id)uncommittedAchievements;
 - (id)uncommittedValues;
-- (unsigned int)unsignedIntegerForKey:(id)arg1;
+- (unsigned long long)unsignedIntegerForKey:(id)arg1;
 
 @end

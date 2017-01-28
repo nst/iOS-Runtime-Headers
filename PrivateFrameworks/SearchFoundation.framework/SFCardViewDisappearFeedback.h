@@ -3,17 +3,17 @@
  */
 
 @interface SFCardViewDisappearFeedback : SFFeedback {
-    unsigned int  _cardDisappearEvent;
+    unsigned long long  _cardDisappearEvent;
 }
 
-@property (nonatomic) unsigned int cardDisappearEvent;
+@property (nonatomic) unsigned long long cardDisappearEvent;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)cardDisappearEvent;
+- (unsigned long long)cardDisappearEvent;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEvent:(unsigned int)arg1;
-- (void)setCardDisappearEvent:(unsigned int)arg1;
+- (id)initWithEvent:(unsigned long long)arg1;
+- (void)setCardDisappearEvent:(unsigned long long)arg1;
 
 @end

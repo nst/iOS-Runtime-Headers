@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *incidentDescription;
 @property (nonatomic, retain) NSDate *lastUpdated;
 @property (readonly) Class superclass;
@@ -32,7 +32,7 @@
 - (id)lastUpdated;
 - (void)setIncidentDescription:(id)arg1;
 - (void)setLastUpdated:(id)arg1;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 interaction:(long long)arg4;
 - (void)updateConstraints;
 
 @end

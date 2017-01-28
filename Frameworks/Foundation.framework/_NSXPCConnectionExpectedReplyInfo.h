@@ -3,8 +3,8 @@
  */
 
 @interface _NSXPCConnectionExpectedReplyInfo : NSObject {
-    id /* block */  _cleanupBlock;
-    id /* block */  _errorBlock;
+    id  _cleanupBlock;
+    id  _errorBlock;
     NSXPCInterface * _interface;
     unsigned long long  _proxyNumber;
     NSBlock * _replyBlock;
@@ -12,23 +12,23 @@
     NSDictionary * _userInfo;
 }
 
-@property (copy) id /* block */ cleanupBlock;
-@property (copy) id /* block */ errorBlock;
+@property (copy) id cleanupBlock;
+@property (copy) id errorBlock;
 @property (retain) NSXPCInterface *interface;
 @property unsigned long long proxyNumber;
 @property (copy) NSBlock *replyBlock;
 @property SEL selector;
 @property (retain) NSDictionary *userInfo;
 
-- (id /* block */)cleanupBlock;
+- (id)cleanupBlock;
 - (void)dealloc;
-- (id /* block */)errorBlock;
+- (id)errorBlock;
 - (id)interface;
 - (unsigned long long)proxyNumber;
 - (id)replyBlock;
 - (SEL)selector;
-- (void)setCleanupBlock:(id /* block */)arg1;
-- (void)setErrorBlock:(id /* block */)arg1;
+- (void)setCleanupBlock:(id)arg1;
+- (void)setErrorBlock:(id)arg1;
 - (void)setInterface:(id)arg1;
 - (void)setProxyNumber:(unsigned long long)arg1;
 - (void)setReplyBlock:(id)arg1;

@@ -3,16 +3,16 @@
  */
 
 @interface NTKDateComplicationController : NTKComplicationController <NTKTimeTravel> {
-    unsigned int  _displayDateStyle;
+    unsigned long long  _displayDateStyle;
     NSDate * _timeTravelDate;
 }
 
 @property (nonatomic, readonly) NTKDateComplication *complication;
 @property (nonatomic, readonly) <NTKDateComplicationDisplay> *legacyDisplay;
 
-+ (BOOL)_acceptsComplicationType:(unsigned int)arg1;
-+ (id)_textForDate:(id)arg1 dateStyle:(unsigned int)arg2;
-+ (id)textForDateStyle:(unsigned int)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (id)_textForDate:(id)arg1 dateStyle:(unsigned long long)arg2;
++ (id)textForDateStyle:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_activate;
@@ -22,8 +22,8 @@
 - (void)_setTextInDisplayIfNeededWithDate:(id)arg1;
 - (void)_updateDisplay;
 - (id)complicationApplicationIdentifier;
-- (BOOL)hasTapAction;
+- (bool)hasTapAction;
 - (void)performTapAction;
-- (void)setTimeTravelDate:(id)arg1 animated:(BOOL)arg2;
+- (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;
 
 @end

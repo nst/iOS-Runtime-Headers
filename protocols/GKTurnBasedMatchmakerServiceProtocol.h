@@ -7,8 +7,8 @@
 
 - (void)refreshMatches;
 - (void)setMatchRequestInternal:(GKMatchRequestInternal *)arg1;
-- (void)setShowExistingMatches:(BOOL)arg1;
-- (void)setShowPlay:(BOOL)arg1;
-- (void)setShowQuit:(BOOL)arg1;
+- (void)setShowExistingMatches:(bool)arg1;
+- (void)setShowPlay:(bool)arg1;
+- (void)setShowQuit:(bool)arg1;
 
 @end

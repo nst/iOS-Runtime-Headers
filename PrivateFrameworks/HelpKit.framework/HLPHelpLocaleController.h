@@ -20,7 +20,7 @@
 - (id)locales;
 - (id)preferredLanguagesOverride;
 - (void)processData:(id)arg1 formattedData:(id)arg2;
-- (void)processFileURLWithCompletionHandler:(id /* block */)arg1;
+- (void)processFileURLWithCompletionHandler:(id)arg1;
 - (void)setLocales:(id)arg1;
 - (void)setPreferredLanguagesOverride:(id)arg1;
 

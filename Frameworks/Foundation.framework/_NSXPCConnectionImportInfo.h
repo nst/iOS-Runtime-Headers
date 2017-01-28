@@ -11,6 +11,6 @@
 - (void)addProxy:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)removeProxy:(id)arg1;
+- (bool)removeProxy:(id)arg1;
 
 @end

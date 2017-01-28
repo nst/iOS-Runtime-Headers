@@ -14,10 +14,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)applicationIsForeground:(id)arg1;
++ (bool)applicationIsForeground:(id)arg1;
 + (id)bundleVersionStringForProcessIdentifier:(int)arg1;
 + (int)processIdentifierForApplicationIdentifier:(id)arg1;
 
@@ -31,10 +31,10 @@
 - (id)diagnosticDescription;
 - (id)init;
 - (id)initWithDaemon:(id)arg1;
-- (BOOL)isApplicationStateForegroundForBundleIdentifier:(id)arg1;
-- (BOOL)isApplicationStateSuspendedForBundleIdentifier:(id)arg1;
+- (bool)isApplicationStateForegroundForBundleIdentifier:(id)arg1;
+- (bool)isApplicationStateSuspendedForBundleIdentifier:(id)arg1;
 - (void)registerForegroundClientProcessObserver:(id)arg1;
-- (BOOL)registerObserver:(id)arg1 forBundleIdentifier:(id)arg2;
+- (bool)registerObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)unregisterForegroundClientProcessObserver:(id)arg1;
 - (void)unregisterObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 

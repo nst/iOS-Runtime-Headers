@@ -5,7 +5,7 @@
 
 @required
 
-- (void)networkReachabilityChanged:(BOOL)arg1;
+- (void)networkReachabilityChanged:(bool)arg1;
 
 @optional
 

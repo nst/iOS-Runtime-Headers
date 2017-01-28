@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (id)error;
 - (id)initWithClient:(id)arg1 error:(id)arg2;
-- (void)remote_serverForConfiguration:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_serverForConfiguration:(id)arg1 completion:(id)arg2;
 - (void)setError:(id)arg1;
 
 @end

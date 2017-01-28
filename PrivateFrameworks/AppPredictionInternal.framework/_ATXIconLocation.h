@@ -3,21 +3,21 @@
  */
 
 @interface _ATXIconLocation : NSObject {
-    int  _folderPage;
-    int  _idx;
-    int  _page;
+    long long  _folderPage;
+    long long  _idx;
+    long long  _page;
 }
 
-@property (nonatomic) int folderPage;
-@property (nonatomic) int idx;
-@property (nonatomic) int page;
+@property (nonatomic) long long folderPage;
+@property (nonatomic) long long idx;
+@property (nonatomic) long long page;
 
-- (int)folderPage;
-- (int)idx;
-- (id)initWithPage:(int)arg1 pageIndex:(int)arg2 folderPage:(int)arg3;
-- (int)page;
-- (void)setFolderPage:(int)arg1;
-- (void)setIdx:(int)arg1;
-- (void)setPage:(int)arg1;
+- (long long)folderPage;
+- (long long)idx;
+- (id)initWithPage:(long long)arg1 pageIndex:(long long)arg2 folderPage:(long long)arg3;
+- (long long)page;
+- (void)setFolderPage:(long long)arg1;
+- (void)setIdx:(long long)arg1;
+- (void)setPage:(long long)arg1;
 
 @end

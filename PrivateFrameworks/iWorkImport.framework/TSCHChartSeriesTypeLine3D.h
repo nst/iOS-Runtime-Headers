@@ -10,8 +10,8 @@
 - (id)genericToSpecificPropertyMap;
 - (int)legendBadgeType;
 - (id)propertiesForReferenceColors;
-- (BOOL)supportsLineConnectionStyle;
-- (BOOL)supportsLineTypeNone;
-- (BOOL)supportsSymbolDrawing;
+- (bool)supportsLineConnectionStyle;
+- (bool)supportsLineTypeNone;
+- (bool)supportsSymbolDrawing;
 
 @end

@@ -12,7 +12,7 @@
     NSMutableArray * _nonFullScreenApps;
 }
 
-+ (long)_openFrontBoardServicesFramework;
++ (int)_openFrontBoardServicesFramework;
 + (id)sharedDisplayLayoutMonitor;
 
 - (void)_updateCurrentLayout:(id)arg1;

@@ -13,18 +13,18 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)_createImageWithBlockInAutoreleasePoolIfNeeded:(id /* block */)arg1;
+- (id)_createImageWithBlockInAutoreleasePoolIfNeeded:(id)arg1;
 - (id)_imageFroMVKImage:(id)arg1;
-- (id)_imageWithDataSource:(id)arg1 size:(int)arg2 scale:(float)arg3 withWidthPaddingMultiple:(float)arg4 fullBleedColor:(id*)arg5;
-- (BOOL)_isMemoryConstrained;
-- (id)_vkImageWithShieldDataSource:(id)arg1 size:(int)arg2 scale:(float)arg3 widthPaddingMultiple:(float)arg4;
+- (id)_imageWithDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3 withWidthPaddingMultiple:(double)arg4 fullBleedColor:(id*)arg5;
+- (bool)_isMemoryConstrained;
+- (id)_vkImageWithShieldDataSource:(id)arg1 size:(long long)arg2 scale:(double)arg3 widthPaddingMultiple:(double)arg4;
 - (id)iconManager;
 - (id)initWithShieldManager:(id)arg1 iconManager:(id)arg2;
 - (void)purge;
 - (id)shieldManager;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 forView:(id)arg3;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 forView:(id)arg3 withWidthPaddingMultiple:(float)arg4;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 forView:(id)arg3 withWidthPaddingMultiple:(float)arg4 fullBleedColor:(id*)arg5;
-- (id)transitArtworkImageWithShieldDataSource:(id)arg1 size:(int)arg2 forView:(id)arg3;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 forView:(id)arg3;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 forView:(id)arg3 withWidthPaddingMultiple:(double)arg4;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(long long)arg2 forView:(id)arg3 withWidthPaddingMultiple:(double)arg4 fullBleedColor:(id*)arg5;
+- (id)transitArtworkImageWithShieldDataSource:(id)arg1 size:(long long)arg2 forView:(id)arg3;
 
 @end

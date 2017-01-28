@@ -14,8 +14,8 @@
 - (void)_saveDownloadKeyCookie:(id)arg1 forURL:(id)arg2;
 - (id)_sinfsByRemovingEmptyPinfsFromSinfs:(id)arg1;
 - (id)assetFlavor;
-- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
-- (BOOL)supportsRadioTrackActions;
+- (bool)supportsRadioTrackActions;
 
 @end

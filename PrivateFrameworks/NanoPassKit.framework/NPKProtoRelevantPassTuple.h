@@ -7,7 +7,7 @@
     NSString * _relevantText;
 }
 
-@property (nonatomic, readonly) BOOL hasRelevantText;
+@property (nonatomic, readonly) bool hasRelevantText;
 @property (nonatomic, retain) NSString *passID;
 @property (nonatomic, retain) NSString *relevantText;
 
@@ -16,12 +16,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRelevantText;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRelevantText;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)passID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)relevantText;
 - (void)setPassID:(id)arg1;
 - (void)setRelevantText:(id)arg1;

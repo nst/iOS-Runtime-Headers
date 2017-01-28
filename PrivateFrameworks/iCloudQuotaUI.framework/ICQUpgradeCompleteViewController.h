@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) _ICQUpgradeCompletePageSpecification *upgradeCompletePageSpecification;
 
-+ (BOOL)supportsPageClassIdentifier:(id)arg1;
++ (bool)supportsPageClassIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)initWithPageSpecification:(id)arg1;

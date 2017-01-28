@@ -11,11 +11,11 @@
 - (id)init;
 - (int)legendBadgeType;
 - (id)propertiesForReferenceColors;
-- (BOOL)supportsFillSetFill;
-- (BOOL)supportsLineConnectionStyle;
-- (BOOL)supportsSeriesFill;
-- (BOOL)supportsSymbolDrawing;
-- (BOOL)supportsSymbolFillForSymbolType:(int)arg1;
-- (unsigned int)valueDimensions;
+- (bool)supportsFillSetFill;
+- (bool)supportsLineConnectionStyle;
+- (bool)supportsSeriesFill;
+- (bool)supportsSymbolDrawing;
+- (bool)supportsSymbolFillForSymbolType:(int)arg1;
+- (unsigned long long)valueDimensions;
 
 @end

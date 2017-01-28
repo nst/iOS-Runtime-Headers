@@ -3,7 +3,7 @@
  */
 
 @interface SYEndSyncSessionResponse : PBCodable <NSCopying> {
-    BOOL  _didRollback;
+    bool  _didRollback;
     SYErrorInfo * _error;
     struct { 
         unsigned int didRollback : 1; 
@@ -12,10 +12,10 @@
     NSString * _sessionID;
 }
 
-@property (nonatomic) BOOL didRollback;
+@property (nonatomic) bool didRollback;
 @property (nonatomic, retain) SYErrorInfo *error;
-@property (nonatomic) BOOL hasDidRollback;
-@property (nonatomic, readonly) BOOL hasError;
+@property (nonatomic) bool hasDidRollback;
+@property (nonatomic, readonly) bool hasError;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSString *sessionID;
 
@@ -24,19 +24,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)didRollback;
+- (bool)didRollback;
 - (id)error;
-- (BOOL)hasDidRollback;
-- (BOOL)hasError;
-- (unsigned int)hash;
+- (bool)hasDidRollback;
+- (bool)hasError;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionID;
-- (void)setDidRollback:(BOOL)arg1;
+- (void)setDidRollback:(bool)arg1;
 - (void)setError:(id)arg1;
-- (void)setHasDidRollback:(BOOL)arg1;
+- (void)setHasDidRollback:(bool)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)writeTo:(id)arg1;

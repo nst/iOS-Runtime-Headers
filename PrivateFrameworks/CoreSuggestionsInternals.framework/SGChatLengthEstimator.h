@@ -7,23 +7,23 @@
     unsigned short * _countPtr;
     int  _fd;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     NSString * _path;
     char * _sketch;
 }
 
-@property (readonly) unsigned int count;
+@property (readonly) unsigned long long count;
 @property (readonly) NSString *path;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (unsigned int)estimateMessagesInChat:(id)arg1;
+- (unsigned long long)estimateMessagesInChat:(id)arg1;
 - (id)init;
 - (id)initInMemory;
 - (id)initWithPath:(id)arg1;

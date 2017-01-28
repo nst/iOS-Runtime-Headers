@@ -11,10 +11,10 @@
 @property (nonatomic, retain) HMDSupportedAudioStreamConfiguration *supportedAudioStreamConfiguration;
 @property (nonatomic, retain) HMDSupportedRTPConfiguration *supportedRTPConfiguration;
 @property (nonatomic, retain) HMDSupportedVideoStreamConfiguration *supportedVideoStreamConfiguration;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 - (void).cxx_destruct;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)setSupportedAudioStreamConfiguration:(id)arg1;
 - (void)setSupportedRTPConfiguration:(id)arg1;
 - (void)setSupportedVideoStreamConfiguration:(id)arg1;

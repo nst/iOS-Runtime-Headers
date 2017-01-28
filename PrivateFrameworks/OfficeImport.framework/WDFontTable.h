@@ -8,15 +8,15 @@
 }
 
 - (void)clear;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)createFontWithName:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)fontAtIndex:(unsigned int)arg1;
+- (id)fontAtIndex:(unsigned long long)arg1;
 - (id)fontWithName:(id)arg1;
-- (id)fontWithName:(id)arg1 create:(BOOL)arg2;
+- (id)fontWithName:(id)arg1 create:(bool)arg2;
 - (id)fonts;
-- (unsigned int)indexOfFont:(id)arg1;
+- (unsigned long long)indexOfFont:(id)arg1;
 - (id)init;
 
 @end

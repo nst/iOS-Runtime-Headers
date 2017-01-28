@@ -20,10 +20,10 @@
 - (void)dealloc;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)foreachLayer:(id /* block */)arg1;
+- (void)foreachLayer:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 - (id)save;
 - (void)setSource:(id)arg1;
 - (void)setTarget:(id)arg1;

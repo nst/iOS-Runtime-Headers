@@ -3,28 +3,28 @@
  */
 
 @interface PUIrisBadgeVisibilityController : NSObject <PUAssetViewModelChangeObserver> {
-    unsigned int  _appearanceState;
+    unsigned long long  _appearanceState;
     PUAssetViewModel * _assetViewModel;
     <PUIrisBadgeVisibilityControllerDelegate> * _delegate;
-    unsigned int  _requestID;
-    BOOL  _requestIsInProgress;
+    unsigned long long  _requestID;
+    bool  _requestIsInProgress;
 }
 
-@property (setter=_transitionToAppearanceState:, nonatomic) unsigned int appearanceState;
+@property (setter=_transitionToAppearanceState:, nonatomic) unsigned long long appearanceState;
 @property (nonatomic) PUAssetViewModel *assetViewModel;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUIrisBadgeVisibilityControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelHideRequest;
-- (unsigned int)_defaultAppearanceState;
+- (unsigned long long)_defaultAppearanceState;
 - (void)_enqueueHideRequest;
-- (void)_transitionToAppearanceState:(unsigned int)arg1;
+- (void)_transitionToAppearanceState:(unsigned long long)arg1;
 - (void)_updateAppearance;
-- (unsigned int)appearanceState;
+- (unsigned long long)appearanceState;
 - (id)assetViewModel;
 - (id)delegate;
 - (id)init;

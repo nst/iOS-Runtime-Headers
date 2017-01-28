@@ -6,11 +6,11 @@
     NSSet * _allSamples;
     <HKDocumentPickerViewControllerDelegate> * _delegate;
     NSMutableSet * _enabledSamples;
-    BOOL  _hasPendingDocumentFetch;
+    bool  _hasPendingDocumentFetch;
     HKHealthStore * _healthStore;
-    int  _presentationStyle;
+    long long  _presentationStyle;
     NSMutableArray * _samplesList;
-    BOOL  _showCheckboxes;
+    bool  _showCheckboxes;
     HKSource * _source;
 }
 
@@ -23,10 +23,10 @@
 - (void)_addCancelAndDoneButtons;
 - (void)_cancel:(id)arg1;
 - (void)_done:(id)arg1;
-- (void)_enableDocumentSample:(id)arg1 enabled:(BOOL)arg2;
+- (void)_enableDocumentSample:(id)arg1 enabled:(bool)arg2;
 - (void)_finishWithError:(id)arg1;
-- (BOOL)_isPrompting;
-- (BOOL)_needsSampleRequestDescription;
+- (bool)_isPrompting;
+- (bool)_needsSampleRequestDescription;
 - (id)_tableHeaderView;
 - (id)allSamples;
 - (void)cdaDocumentTableViewCellDidChangeValue:(id)arg1;
@@ -34,8 +34,8 @@
 - (id)enabledSamples;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDocumentAuthorizations:(id)arg1;
-- (id)initWithDocuments:(id)arg1 presentationStyle:(int)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithDocuments:(id)arg1 presentationStyle:(long long)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)pushDetailForDocumentSample:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabledSamples:(id)arg1;
@@ -43,8 +43,8 @@
 - (id)source;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

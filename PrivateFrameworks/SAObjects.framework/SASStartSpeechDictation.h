@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSData *activationToken;
 @property (nonatomic, copy) NSString *applicationName;
 @property (nonatomic, copy) NSString *applicationVersion;
-@property (nonatomic) BOOL censorSpeech;
+@property (nonatomic) bool censorSpeech;
 @property (nonatomic, copy) NSString *fieldId;
 @property (nonatomic, copy) NSString *fieldLabel;
 @property (nonatomic, copy) NSArray *inlineItemList;
@@ -18,9 +18,9 @@
 @property (nonatomic, copy) NSString *postfixText;
 @property (nonatomic, copy) NSString *prefixText;
 @property (nonatomic, copy) NSString *region;
-@property (nonatomic) BOOL saveRequestAudio;
+@property (nonatomic) bool saveRequestAudio;
 @property (nonatomic, copy) NSString *selectedText;
-@property (nonatomic) BOOL speakerIndependentRecognition;
+@property (nonatomic) bool speakerIndependentRecognition;
 
 + (id)startSpeechDictation;
 + (id)startSpeechDictationWithDictionary:(id)arg1 context:(id)arg2;
@@ -28,7 +28,7 @@
 - (id)activationToken;
 - (id)applicationName;
 - (id)applicationVersion;
-- (BOOL)censorSpeech;
+- (bool)censorSpeech;
 - (id)encodedClassName;
 - (id)fieldId;
 - (id)fieldLabel;
@@ -41,12 +41,12 @@
 - (id)postfixText;
 - (id)prefixText;
 - (id)region;
-- (BOOL)saveRequestAudio;
+- (bool)saveRequestAudio;
 - (id)selectedText;
 - (void)setActivationToken:(id)arg1;
 - (void)setApplicationName:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
-- (void)setCensorSpeech:(BOOL)arg1;
+- (void)setCensorSpeech:(bool)arg1;
 - (void)setFieldId:(id)arg1;
 - (void)setFieldLabel:(id)arg1;
 - (void)setInlineItemList:(id)arg1;
@@ -57,9 +57,9 @@
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;
 - (void)setRegion:(id)arg1;
-- (void)setSaveRequestAudio:(BOOL)arg1;
+- (void)setSaveRequestAudio:(bool)arg1;
 - (void)setSelectedText:(id)arg1;
-- (void)setSpeakerIndependentRecognition:(BOOL)arg1;
-- (BOOL)speakerIndependentRecognition;
+- (void)setSpeakerIndependentRecognition:(bool)arg1;
+- (bool)speakerIndependentRecognition;
 
 @end

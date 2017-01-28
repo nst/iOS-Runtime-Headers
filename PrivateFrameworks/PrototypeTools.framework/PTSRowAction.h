@@ -3,23 +3,23 @@
  */
 
 @interface PTSRowAction : NSObject <NSCopying> {
-    BOOL  _deselectRowOnSuccess;
-    id /* block */  _handler;
+    bool  _deselectRowOnSuccess;
+    id  _handler;
 }
 
-@property (nonatomic) BOOL deselectRowOnSuccess;
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic) bool deselectRowOnSuccess;
+@property (nonatomic, copy) id handler;
 
 + (id)action;
-+ (id)actionWithHandler:(id /* block */)arg1;
++ (id)actionWithHandler:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)deselectRowOnSuccess;
-- (id /* block */)handler;
+- (bool)deselectRowOnSuccess;
+- (id)handler;
 - (id)init;
-- (void)resolveTemplatesWithIndex:(unsigned int)arg1;
-- (void)setDeselectRowOnSuccess:(BOOL)arg1;
-- (void)setHandler:(id /* block */)arg1;
+- (void)resolveTemplatesWithIndex:(unsigned long long)arg1;
+- (void)setDeselectRowOnSuccess:(bool)arg1;
+- (void)setHandler:(id)arg1;
 
 @end

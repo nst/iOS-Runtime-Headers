@@ -14,7 +14,7 @@
 @property (retain) NSLock *lock;
 @property (nonatomic, retain) NSMutableArray *updateQueue;
 
-- (void)addUpdate:(id /* block */)arg1 error:(id)arg2;
+- (void)addUpdate:(id)arg1 error:(id)arg2;
 - (void)addUpdatesFromGroup:(id)arg1;
 - (void)dealloc;
 - (id)error;

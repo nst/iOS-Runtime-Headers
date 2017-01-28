@@ -16,9 +16,9 @@
 @property (nonatomic) double cubicGain;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double initialLinearGain;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic) double parabolicGain;
 @property (nonatomic) double quarticGain;
 @property (readonly) Class superclass;
@@ -36,7 +36,7 @@
 - (double)gainForPower:(int)arg1;
 - (id)init;
 - (double)initialLinearGain;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (double)parabolicGain;
 - (double)piecewiseCubicAcceleratedSpeed:(double)arg1;
 - (double)quarticDerivative:(double)arg1;

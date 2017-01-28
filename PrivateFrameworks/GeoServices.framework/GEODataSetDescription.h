@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic, retain) NSString *dataSetDescription;
-@property (nonatomic, readonly) BOOL hasDataSetDescription;
-@property (nonatomic) BOOL hasIdentifier;
+@property (nonatomic, readonly) bool hasDataSetDescription;
+@property (nonatomic) bool hasIdentifier;
 @property (nonatomic) unsigned int identifier;
 
 - (void)copyTo:(id)arg1;
@@ -21,15 +21,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDataSetDescription;
-- (BOOL)hasIdentifier;
-- (unsigned int)hash;
+- (bool)hasDataSetDescription;
+- (bool)hasIdentifier;
+- (unsigned long long)hash;
 - (unsigned int)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDataSetDescription:(id)arg1;
-- (void)setHasIdentifier:(BOOL)arg1;
+- (void)setHasIdentifier:(bool)arg1;
 - (void)setIdentifier:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 

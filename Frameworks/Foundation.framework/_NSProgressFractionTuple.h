@@ -14,7 +14,7 @@
 - (id)description;
 - (id)next;
 - (id)previous;
-- (BOOL)previousIsEqualToNext;
+- (bool)previousIsEqualToNext;
 - (void)setNext:(id)arg1;
 - (void)setPrevious:(id)arg1;
 

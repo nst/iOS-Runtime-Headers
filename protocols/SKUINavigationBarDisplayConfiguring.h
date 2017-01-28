@@ -6,12 +6,12 @@
 @required
 
 - (UIColor *)navigationBarTintColor;
-- (BOOL)prefersNavigationBarBackgroundViewHidden;
+- (bool)prefersNavigationBarBackgroundViewHidden;
 
 @optional
 
-- (int)navigationBarTintAdjustmentMode;
+- (long long)navigationBarTintAdjustmentMode;
 - (UIColor *)navigationBarTitleTextTintColor;
-- (BOOL)prefersNavigationBarHidden;
+- (bool)prefersNavigationBarHidden;
 
 @end

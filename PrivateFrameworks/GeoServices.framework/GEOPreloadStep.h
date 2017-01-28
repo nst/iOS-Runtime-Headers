@@ -25,7 +25,7 @@
 - (double)dataRateKB;
 - (void)dealloc;
 - (double)networkDataRateKB;
-- (BOOL)okToLoad;
+- (bool)okToLoad;
 - (void)resetErrors;
 
 @end

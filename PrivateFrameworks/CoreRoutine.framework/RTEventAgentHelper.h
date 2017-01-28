@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSString *restorationIdentifier;
 
-+ (BOOL)launchdManaged;
++ (bool)launchdManaged;
 + (id)signingIdentifierFromSelf;
 
 - (void).cxx_destruct;

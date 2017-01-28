@@ -6,30 +6,30 @@
     NSRegularExpression * _comparisonExpression;
     NSString * _comparisonValue;
     NSString * _keyPath;
-    unsigned int  _operatorType;
+    unsigned long long  _operatorType;
 }
 
 @property (nonatomic, readonly) NSRegularExpression *comparisonExpression;
 @property (nonatomic, readonly) NSString *comparisonValue;
 @property (nonatomic, readonly) NSString *keyPath;
-@property (nonatomic, readonly) unsigned int operatorType;
+@property (nonatomic, readonly) unsigned long long operatorType;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
-+ (id)filterWithOperatorType:(unsigned int)arg1 keyPath:(id)arg2 comparisonValue:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
++ (id)filterWithOperatorType:(unsigned long long)arg1 keyPath:(id)arg2 comparisonValue:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_comparisonExpression;
-- (BOOL)acceptsDataObject:(id)arg1;
+- (bool)acceptsDataObject:(id)arg1;
 - (id)comparisonExpression;
 - (id)comparisonValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
-- (unsigned int)operatorType;
+- (unsigned long long)operatorType;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

@@ -3,14 +3,14 @@
  */
 
 @interface CKDRecentProxyInfo : NSObject {
-    unsigned int  _connectionCount;
+    unsigned long long  _connectionCount;
     NSMutableSet * _containerIdentifiers;
     NSDate * _lastSeen;
     NSMutableDictionary * _operationStatisticsByClassName;
     NSString * _processName;
 }
 
-@property (readonly) unsigned int connectionCount;
+@property (readonly) unsigned long long connectionCount;
 @property (nonatomic, readonly) NSMutableSet *containerIdentifiers;
 @property (nonatomic, readonly) NSDate *lastSeen;
 @property (nonatomic, readonly) NSMutableDictionary *operationStatisticsByClassName;
@@ -18,7 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)CKStatusReportArray;
-- (unsigned int)connectionCount;
+- (unsigned long long)connectionCount;
 - (id)containerIdentifiers;
 - (id)initWithProxy:(id)arg1;
 - (id)lastSeen;

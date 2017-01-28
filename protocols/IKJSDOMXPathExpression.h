@@ -5,6 +5,6 @@
 
 @required
 
-- (id)evaluate:(IKDOMNode *)arg1 :(int)arg2 :(id)arg3;
+- (id)evaluate:(IKDOMNode *)arg1 :(long long)arg2 :(id)arg3;
 
 @end

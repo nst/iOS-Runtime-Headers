@@ -4,6 +4,6 @@
 
 @interface CATTaskMessageCancel : CATTaskMessage
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

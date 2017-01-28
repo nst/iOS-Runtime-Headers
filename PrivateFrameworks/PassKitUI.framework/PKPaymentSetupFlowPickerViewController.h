@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PKTableHeaderView *headerView;
 @property (nonatomic, readonly) NSArray *pickerItems;
 @property (nonatomic, readonly) <PKPaymentSetupViewControllerDelegate> *setupDelegate;
@@ -20,25 +20,25 @@
 @property (nonatomic, readonly) PKPaymentWebService *webService;
 
 - (void).cxx_destruct;
-- (void)_setNavigationBarEnabled:(BOOL)arg1;
+- (void)_setNavigationBarEnabled:(bool)arg1;
 - (void)_setupLater:(id)arg1;
 - (void)addPickerItem:(id)arg1;
 - (id)footerView;
 - (id)headerView;
 - (void)hideActivitySpinner;
-- (id)initWithWebService:(id)arg1 setupDelegate:(id)arg2 context:(int)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithWebService:(id)arg1 setupDelegate:(id)arg2 context:(long long)arg3;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)pickerItems;
 - (id)setupDelegate;
 - (void)showActivitySpinner;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (id)webService;
 
 @end

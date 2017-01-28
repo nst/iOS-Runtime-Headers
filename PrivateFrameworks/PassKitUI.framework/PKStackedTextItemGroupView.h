@@ -5,41 +5,41 @@
 @interface PKStackedTextItemGroupView : UIView {
     bool  _animated;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _boundsSize;
     PKStackedTextItemGroup * _content;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
     bool  _initialLayout;
-    float  _intrinsicHeight;
+    double  _intrinsicHeight;
     NSMutableArray * _itemViews;
-    int  _slideMode;
+    long long  _slideMode;
     NSMutableArray * _snapshotsToRemove;
-    int  _style;
+    long long  _style;
 }
 
 @property (nonatomic, retain) PKStackedTextItemGroup *content;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property (nonatomic, readonly) int style;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
+@property (nonatomic, readonly) long long style;
 
 - (void).cxx_destruct;
 - (void)_updateSubviewsAnimated:(bool)arg1;
 - (id)content;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithStyle:(int)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(long long)arg1;
 - (void)layoutIfNeededAnimated:(bool)arg1;
 - (void)layoutSubviews;
 - (void)setContent:(id)arg1;
 - (void)setContent:(id)arg1 animated:(bool)arg2;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (int)style;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (long long)style;
 
 @end

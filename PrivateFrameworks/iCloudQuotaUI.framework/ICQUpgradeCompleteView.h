@@ -11,7 +11,7 @@
     <ICQPageDelegate> * _delegate;
     UIButton * _doneButton;
     ICQLink * _doneLink;
-    BOOL  _layoutGuideProblem;
+    bool  _layoutGuideProblem;
     UILabel * _messageLabel;
     UILayoutGuide * _navigationBarLayoutGuide;
     UILabel * _titleLabel;
@@ -32,7 +32,7 @@
 @property (nonatomic, retain) _ICQUpgradeCompletePageSpecification *upgradeCompletePageSpecification;
 
 - (void).cxx_destruct;
-- (float)_superGetTopMargin;
+- (double)_superGetTopMargin;
 - (id)aboveCheckLayoutGuide;
 - (id)activeConstraints;
 - (id)belowDoneLayoutGuide;
@@ -42,7 +42,7 @@
 - (id)doneButton;
 - (void)doneButtonTapped:(id)arg1;
 - (id)doneLink;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)messageLabel;
 - (id)navigationBarLayoutGuide;

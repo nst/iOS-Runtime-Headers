@@ -3,45 +3,45 @@
  */
 
 @interface NTKVictoryDigitalTimeView : UIView <CLKTimeFormatterObserver, NTKTimeView> {
-    unsigned int  _color;
+    unsigned long long  _color;
     NTKVictoryDigitsView * _flipDigitsView;
-    BOOL  _flipViewIsLower;
-    BOOL  _frozen;
+    bool  _flipViewIsLower;
+    bool  _frozen;
     NTKVictoryDigitsView * _lowerDigitsView;
-    unsigned int  _style;
+    unsigned long long  _style;
     CLKTimeFormatter * _timeFormatter;
     NTKVictoryDigitsView * _upperDigitsView;
 }
 
-@property (nonatomic) unsigned int color;
+@property (nonatomic) unsigned long long color;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFrozen, nonatomic) BOOL frozen;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int style;
+@property (getter=isFrozen, nonatomic) bool frozen;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long style;
 @property (readonly) Class superclass;
 
 + (id)transitionTimingFunction;
 
 - (void).cxx_destruct;
-- (int)_lowerDigitAppearanceForStyle:(unsigned int)arg1;
-- (void)_resetDigitAppearanceForStyle:(unsigned int)arg1;
-- (void)_setFlipViewIsLower:(BOOL)arg1;
-- (int)_upperDigitAppearanceForStyle:(unsigned int)arg1;
-- (void)applyTransitionFraction:(float)arg1 fromColor:(unsigned int)arg2 toColor:(unsigned int)arg3;
-- (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
+- (long long)_lowerDigitAppearanceForStyle:(unsigned long long)arg1;
+- (void)_resetDigitAppearanceForStyle:(unsigned long long)arg1;
+- (void)_setFlipViewIsLower:(bool)arg1;
+- (long long)_upperDigitAppearanceForStyle:(unsigned long long)arg1;
+- (void)applyTransitionFraction:(double)arg1 fromColor:(unsigned long long)arg2 toColor:(unsigned long long)arg3;
+- (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;
 - (void)clearEditingTransitions;
-- (unsigned int)color;
+- (unsigned long long)color;
 - (id)init;
-- (BOOL)isFrozen;
+- (bool)isFrozen;
 - (void)layoutSubviews;
-- (void)setColor:(unsigned int)arg1;
-- (void)setFrozen:(BOOL)arg1;
+- (void)setColor:(unsigned long long)arg1;
+- (void)setFrozen:(bool)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
-- (void)setStyle:(unsigned int)arg1;
+- (void)setStyle:(unsigned long long)arg1;
 - (void)setTimeOffset:(double)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned int)style;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned long long)style;
 - (void)timeFormatterTextDidChange:(id)arg1;
 - (void)willBeginEditing;
 

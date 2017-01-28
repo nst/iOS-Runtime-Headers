@@ -6,9 +6,9 @@
 @required
 
 - (UIView *)backgroundView;
-- (float)minimumBottomInset;
+- (double)minimumBottomInset;
 - (void)setBackgroundView:(UIView *)arg1;
-- (void)setMinimumBottomInset:(float)arg1;
+- (void)setMinimumBottomInset:(double)arg1;
 - (void)setTabsLayoutManager:(id <ABPersonTabsLayoutManager>)arg1;
 - (<ABPersonTabsLayoutManager> *)tabsLayoutManager;
 

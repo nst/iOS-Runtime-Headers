@@ -10,8 +10,8 @@
     int  _tappedItemIndex;
 }
 
-@property (nonatomic, readonly) BOOL hasServerMetadata;
-@property (nonatomic) BOOL hasTappedItemIndex;
+@property (nonatomic, readonly) bool hasServerMetadata;
+@property (nonatomic) bool hasTappedItemIndex;
 @property (nonatomic, retain) GEOMapsServerMetadata *serverMetadata;
 @property (nonatomic) int tappedItemIndex;
 
@@ -20,14 +20,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasServerMetadata;
-- (BOOL)hasTappedItemIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasServerMetadata;
+- (bool)hasTappedItemIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)serverMetadata;
-- (void)setHasTappedItemIndex:(BOOL)arg1;
+- (void)setHasTappedItemIndex:(bool)arg1;
 - (void)setServerMetadata:(id)arg1;
 - (void)setTappedItemIndex:(int)arg1;
 - (int)tappedItemIndex;

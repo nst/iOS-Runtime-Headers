@@ -16,7 +16,7 @@
 - (id)_activeLogFilePath;
 - (void)_checkLogFileSize;
 - (void)_closeLogFile;
-- (id)_logFilePathWithIndex:(int)arg1;
+- (id)_logFilePathWithIndex:(long long)arg1;
 - (void)_openLogFile;
 - (void)_rollLogFiles;
 - (void)dealloc;

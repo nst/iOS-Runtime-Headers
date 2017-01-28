@@ -4,17 +4,17 @@
 
 @interface MRClientUpdatesConfigMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) BOOL artworkUpdates;
-@property (nonatomic, readonly) BOOL keyboardUpdates;
-@property (nonatomic, readonly) BOOL nowPlayingUpdates;
-@property (nonatomic, readonly) BOOL volumeUpdates;
+@property (nonatomic, readonly) bool artworkUpdates;
+@property (nonatomic, readonly) bool keyboardUpdates;
+@property (nonatomic, readonly) bool nowPlayingUpdates;
+@property (nonatomic, readonly) bool volumeUpdates;
 
-- (BOOL)artworkUpdates;
+- (bool)artworkUpdates;
 - (void)dealloc;
-- (id)initWithNowPlayingUpdates:(BOOL)arg1 artworkUpdates:(BOOL)arg2 volumeUpdates:(BOOL)arg3 keyboardUpdates:(BOOL)arg4;
-- (BOOL)keyboardUpdates;
-- (BOOL)nowPlayingUpdates;
-- (unsigned int)type;
-- (BOOL)volumeUpdates;
+- (id)initWithNowPlayingUpdates:(bool)arg1 artworkUpdates:(bool)arg2 volumeUpdates:(bool)arg3 keyboardUpdates:(bool)arg4;
+- (bool)keyboardUpdates;
+- (bool)nowPlayingUpdates;
+- (unsigned long long)type;
+- (bool)volumeUpdates;
 
 @end

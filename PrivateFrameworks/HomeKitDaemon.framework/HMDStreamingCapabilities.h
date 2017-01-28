@@ -3,7 +3,7 @@
  */
 
 @interface HMDStreamingCapabilities : NSObject <NSSecureCoding> {
-    unsigned int  _streamingTierType;
+    unsigned long long  _streamingTierType;
     NSDictionary * _supportedAudioCodecs;
     NSSet * _supportedAudioSampleRates;
     NSSet * _supportedBitRateSettings;
@@ -12,10 +12,10 @@
     NSSet * _supportedPacketizationModes;
     NSSet * _supportedVideoCodecs;
     NSSet * _supportedVideoResolutions;
-    BOOL  _supportsComfortNoise;
+    bool  _supportsComfortNoise;
 }
 
-@property (nonatomic) unsigned int streamingTierType;
+@property (nonatomic) unsigned long long streamingTierType;
 @property (nonatomic, readonly) NSDictionary *supportedAudioCodecs;
 @property (nonatomic, readonly) NSSet *supportedAudioSampleRates;
 @property (nonatomic, readonly) NSSet *supportedBitRateSettings;
@@ -24,11 +24,11 @@
 @property (nonatomic, readonly) NSSet *supportedPacketizationModes;
 @property (nonatomic, readonly) NSSet *supportedVideoCodecs;
 @property (nonatomic, readonly) NSSet *supportedVideoResolutions;
-@property (nonatomic) BOOL supportsComfortNoise;
+@property (nonatomic) bool supportsComfortNoise;
 
-+ (BOOL)is16x9Resolution:(id)arg1;
-+ (BOOL)is4x3Resolution:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)is16x9Resolution:(id)arg1;
++ (bool)is4x3Resolution:(id)arg1;
++ (bool)supportsSecureCoding;
 + (void)translateCapabilities:(id)arg1;
 
 - (void).cxx_destruct;
@@ -36,9 +36,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)setStreamingTierType:(unsigned int)arg1;
-- (void)setSupportsComfortNoise:(BOOL)arg1;
-- (unsigned int)streamingTierType;
+- (void)setStreamingTierType:(unsigned long long)arg1;
+- (void)setSupportsComfortNoise:(bool)arg1;
+- (unsigned long long)streamingTierType;
 - (id)supportedAudioCodecs;
 - (id)supportedAudioSampleRates;
 - (id)supportedBitRateSettings;
@@ -47,7 +47,7 @@
 - (id)supportedPacketizationModes;
 - (id)supportedVideoCodecs;
 - (id)supportedVideoResolutions;
-- (BOOL)supportsComfortNoise;
+- (bool)supportsComfortNoise;
 - (void)updateWithRemoteSettings:(id)arg1;
 
 @end

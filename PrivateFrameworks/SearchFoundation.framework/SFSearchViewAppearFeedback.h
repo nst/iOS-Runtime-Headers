@@ -3,25 +3,25 @@
  */
 
 @interface SFSearchViewAppearFeedback : SFFeedback {
-    BOOL  _isOnLockScreen;
-    BOOL  _isOverApp;
-    unsigned int  _viewAppearEvent;
+    bool  _isOnLockScreen;
+    bool  _isOverApp;
+    unsigned long long  _viewAppearEvent;
 }
 
-@property (nonatomic) BOOL isOnLockScreen;
-@property (nonatomic) BOOL isOverApp;
-@property (nonatomic) unsigned int viewAppearEvent;
+@property (nonatomic) bool isOnLockScreen;
+@property (nonatomic) bool isOverApp;
+@property (nonatomic) unsigned long long viewAppearEvent;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEvent:(unsigned int)arg1;
-- (BOOL)isOnLockScreen;
-- (BOOL)isOverApp;
-- (void)setIsOnLockScreen:(BOOL)arg1;
-- (void)setIsOverApp:(BOOL)arg1;
-- (void)setViewAppearEvent:(unsigned int)arg1;
-- (unsigned int)viewAppearEvent;
+- (id)initWithEvent:(unsigned long long)arg1;
+- (bool)isOnLockScreen;
+- (bool)isOverApp;
+- (void)setIsOnLockScreen:(bool)arg1;
+- (void)setIsOverApp:(bool)arg1;
+- (void)setViewAppearEvent:(unsigned long long)arg1;
+- (unsigned long long)viewAppearEvent;
 
 @end

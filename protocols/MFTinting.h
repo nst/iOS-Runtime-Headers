@@ -5,9 +5,9 @@
 
 @required
 
-- (void)setShouldDim:(BOOL)arg1;
-- (void)setTintColor:(UIColor *)arg1 animated:(BOOL)arg2;
-- (BOOL)shouldDim;
+- (void)setShouldDim:(bool)arg1;
+- (void)setTintColor:(UIColor *)arg1 animated:(bool)arg2;
+- (bool)shouldDim;
 - (UIColor *)tintColor;
 
 @end

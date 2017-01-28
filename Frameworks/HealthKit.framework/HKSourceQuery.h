@@ -3,26 +3,26 @@
  */
 
 @interface HKSourceQuery : HKQuery {
-    id /* block */  _completionHandler;
-    id /* block */  _updateHandler;
+    id  _completionHandler;
+    id  _updateHandler;
 }
 
-@property (nonatomic, readonly) id /* block */ completionHandler;
-@property (nonatomic, copy) id /* block */ updateHandler;
+@property (nonatomic, readonly) id completionHandler;
+@property (nonatomic, copy) id updateHandler;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (id)_queue_errorHandler;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)deliverSources:(id)arg1 forQuery:(id)arg2;
 - (void)deliverUpdatedSources:(id)arg1 added:(id)arg2 forQuery:(id)arg3;
-- (id)initWithSampleType:(id)arg1 samplePredicate:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)setUpdateHandler:(id /* block */)arg1;
-- (id /* block */)updateHandler;
+- (id)initWithSampleType:(id)arg1 samplePredicate:(id)arg2 completionHandler:(id)arg3;
+- (void)setUpdateHandler:(id)arg1;
+- (id)updateHandler;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

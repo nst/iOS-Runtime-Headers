@@ -18,7 +18,7 @@
     CKShareMetadata * _shareMetadata;
     NSURL * _shareURL;
     BRCItemID * _sharedItemID;
-    unsigned int  _stepIndex;
+    unsigned long long  _stepIndex;
     NSString * _unsaltedBookmarkData;
     <BRCUserNotifier> * _userNotification;
     BRCXPCClient * _xpcClient;
@@ -26,7 +26,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *identifier;
 @property (readonly) Class superclass;
 
@@ -48,23 +48,23 @@
 - (void)_isAccountRestricted;
 - (void)_isAppInstalled;
 - (void)_isDocumentSharingSupported;
-- (BOOL)_isOwner;
-- (BOOL)_isOwnerOrShareAlreadyAccepted;
+- (bool)_isOwner;
+- (bool)_isOwnerOrShareAlreadyAccepted;
 - (void)_isURLWellFormed;
 - (void)_isUserSignedInToiCloudDrive;
-- (BOOL)_isiWorkShare;
+- (bool)_isiWorkShare;
 - (void)_jumpToSelector:(SEL)arg1;
 - (void)_jumpToSelectorInQueue:(SEL)arg1;
 - (void)_openSharedDownloadedDocumentIfStillNeeded;
 - (void)_openSharedSideFaultFile;
-- (BOOL)_openiWorkAppPreemptively;
+- (bool)_openiWorkAppPreemptively;
 - (void)_parseShareMetadata;
 - (void)_performNextStep;
 - (void)_performNextStepInQueue;
 - (void)_prepareToDownloadSharedDocument;
 - (void)_showGenericErrorAndFinish:(id)arg1;
 - (void)_showSharingJoinDialog;
-- (id)_stepNameAtIndex:(unsigned int)arg1 withPrefix:(id)arg2;
+- (id)_stepNameAtIndex:(unsigned long long)arg1 withPrefix:(id)arg2;
 - (void)_waitForFaultToBeOnDiskOnOwner;
 - (void)_waitForFaultToBeOnDiskOnRecipient;
 - (void)_waitForSharedItemToSyncDownOnOwner;
@@ -77,7 +77,7 @@
 - (id)localClientZone;
 - (void)main;
 - (void)moveDialogToFront;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 - (id)subclassableDescriptionWithContext:(id)arg1;
 
 @end

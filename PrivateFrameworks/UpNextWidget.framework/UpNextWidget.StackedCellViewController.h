@@ -7,13 +7,13 @@
     void stackView;
 }
 
-- (id /* block */).cxx_destruct;
-- (void)alarmTappedWithGestureRecognizer:(id)arg1;
-- (void)eventTappedWithGestureRecognizer:(id)arg1;
+- (id).cxx_destruct;
+- (void)alarmTapped:(id)arg1;
+- (void)eventTapped:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void)refreshWithAlarms:(id)arg1 events:(id)arg2 reminders:(id)arg3;
-- (void)reminderTappedWithGestureRecognizer:(id)arg1;
+- (void)refresh:(id)arg1 events:(id)arg2 reminders:(id)arg3;
+- (void)reminderTapped:(id)arg1;
 
 @end

@@ -10,8 +10,8 @@
     int  _viewType;
 }
 
-@property (nonatomic, readonly) BOOL hasViewId;
-@property (nonatomic) BOOL hasViewType;
+@property (nonatomic, readonly) bool hasViewId;
+@property (nonatomic) bool hasViewType;
 @property (nonatomic, retain) NSString *viewId;
 @property (nonatomic) int viewType;
 
@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasViewId;
-- (BOOL)hasViewType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasViewId;
+- (bool)hasViewType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasViewType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasViewType:(bool)arg1;
 - (void)setViewId:(id)arg1;
 - (void)setViewType:(int)arg1;
 - (id)viewId;

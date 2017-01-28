@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)trackEventWithScalar:(unsigned int)arg1 app:(struct SGMBannerDisplayApp_ { unsigned int x1; })arg2 eventType:(id)arg3 titleAdj:(struct SGMEventStringAdj_ { unsigned int x1; })arg4 dateAdj:(struct SGMEventDateAdj_ { unsigned int x1; })arg5 duratAdj:(struct SGMEventDurationAdj_ { unsigned int x1; })arg6;
+- (void)trackEventWithScalar:(unsigned long long)arg1 app:(struct SGMBannerDisplayApp_ { unsigned long long x1; })arg2 eventType:(id)arg3 titleAdj:(struct SGMEventStringAdj_ { unsigned long long x1; })arg4 dateAdj:(struct SGMEventDateAdj_ { unsigned long long x1; })arg5 duratAdj:(struct SGMEventDurationAdj_ { unsigned long long x1; })arg6;
 - (id)tracker;
 
 @end

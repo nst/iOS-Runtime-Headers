@@ -5,6 +5,6 @@
 
 @required
 
-- (NSString *)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (NSString *)descriptionWithIndent:(int)arg1 showFullContent:(bool)arg2;
 
 @end

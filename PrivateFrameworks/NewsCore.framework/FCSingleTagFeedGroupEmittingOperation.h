@@ -4,11 +4,11 @@
 
 @interface FCSingleTagFeedGroupEmittingOperation : FCFeedGroupEmittingOperation
 
-- (void)_fetchOrdinaryHeadlinesWithCompletionHandler:(id /* block */)arg1;
-- (void)_fetchPinnedHeadlinesWithCompletionHandler:(id /* block */)arg1;
-- (unsigned int)feedItemsToFetchForDesiredHeadlineCount:(unsigned int)arg1;
+- (void)_fetchOrdinaryHeadlinesWithCompletionHandler:(id)arg1;
+- (void)_fetchPinnedHeadlinesWithCompletionHandler:(id)arg1;
+- (unsigned long long)feedItemsToFetchForDesiredHeadlineCount:(unsigned long long)arg1;
 - (id)feedTransformations;
 - (void)performOperation;
-- (void)supplementFeedItems:(id)arg1 fromCursor:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)supplementFeedItems:(id)arg1 fromCursor:(id)arg2 completionHandler:(id)arg3;
 
 @end

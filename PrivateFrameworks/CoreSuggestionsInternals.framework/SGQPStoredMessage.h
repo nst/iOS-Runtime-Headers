@@ -7,17 +7,17 @@
     struct SGUnixTimestamp_ { 
         double secondsFromUnixEpoch; 
     }  _creationTimestamp;
-    BOOL  _isSent;
+    bool  _isSent;
     SGQPWordBoundaries * _wordBoundaries;
 }
 
 @property (nonatomic, readonly) NSString *content;
 @property (nonatomic, readonly) struct SGUnixTimestamp_ { double x1; } creationTimestamp;
-@property (nonatomic, readonly) BOOL isSent;
+@property (nonatomic, readonly) bool isSent;
 @property (nonatomic, readonly) SGQPWordBoundaries *wordBoundaries;
 
-+ (id)messageWithContent:(id)arg1 isSent:(BOOL)arg2;
-+ (id)messageWithContent:(id)arg1 isSent:(BOOL)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3;
++ (id)messageWithContent:(id)arg1 isSent:(bool)arg2;
++ (id)messageWithContent:(id)arg1 isSent:(bool)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3;
 + (id)sortByCreationDesc:(id)arg1;
 
 - (void).cxx_destruct;
@@ -25,10 +25,10 @@
 - (struct SGUnixTimestamp_ { double x1; })creationTimestamp;
 - (id)description;
 - (id)init;
-- (id)initWithContent:(id)arg1 isSent:(BOOL)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3;
-- (BOOL)isMostRecentReceivedMessageInMessages:(id)arg1;
-- (BOOL)isMostRecentSentMessageInMessages:(id)arg1;
-- (BOOL)isSent;
+- (id)initWithContent:(id)arg1 isSent:(bool)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3;
+- (bool)isMostRecentReceivedMessageInMessages:(id)arg1;
+- (bool)isMostRecentSentMessageInMessages:(id)arg1;
+- (bool)isSent;
 - (id)wordBoundaries;
 
 @end

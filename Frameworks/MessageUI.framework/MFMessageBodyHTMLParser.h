@@ -8,12 +8,12 @@
 
 - (void)_consumeNodesFromNode:(id)arg1 upToNode:(id)arg2;
 - (void)_findBody;
-- (BOOL)_isMilestoneTagName:(id)arg1;
+- (bool)_isMilestoneTagName:(id)arg1;
 - (void)dealloc;
 - (void)didFindError:(id)arg1;
 - (id)initWithHTML:(id)arg1;
 - (Class)messageBodyElementClass;
 - (int)messageBodyStringAccumulatorDefaultOptions;
-- (BOOL)parse;
+- (bool)parse;
 
 @end

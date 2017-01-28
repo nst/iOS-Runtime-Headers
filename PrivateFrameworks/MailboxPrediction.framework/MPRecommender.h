@@ -6,22 +6,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)featureSetWithSubject;
 + (id)featureSetWithoutSubject;
 + (id)recommenderWithModelPath:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)addMessages:(id)arg1;
-- (BOOL)clear;
+- (bool)addMessages:(id)arg1;
+- (bool)clear;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithModelPath:(id)arg1;
 - (id)recommendationsForMessage:(id)arg1 error:(id*)arg2;
-- (BOOL)removeMessage:(id)arg1;
-- (BOOL)synchronize;
-- (BOOL)train;
+- (bool)removeMessage:(id)arg1;
+- (bool)synchronize;
+- (bool)train;
 
 @end

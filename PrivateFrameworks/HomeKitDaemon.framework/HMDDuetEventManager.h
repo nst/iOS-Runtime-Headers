@@ -14,23 +14,23 @@
 @property (nonatomic, retain) <_DKKnowledgeSaving> *saveStore;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (id)eventStreamForType:(unsigned int)arg1;
-+ (id)eventTypeAsString:(unsigned int)arg1;
-+ (id)identifierForType:(unsigned int)arg1 eventValue:(id)arg2;
++ (id)eventStreamForType:(unsigned long long)arg1;
++ (id)eventTypeAsString:(unsigned long long)arg1;
++ (id)identifierForType:(unsigned long long)arg1 eventValue:(id)arg2;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_deleteEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
-- (id)_dumpEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
-- (void)_logEventWithType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 typeIdentifier:(id)arg4 metadata:(id)arg5;
-- (id)_queryEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
-- (void)deleteEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
+- (void)_deleteEventsOfType:(unsigned long long)arg1 fromDate:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4;
+- (id)_dumpEventsOfType:(unsigned long long)arg1 fromDate:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4;
+- (void)_logEventWithType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 typeIdentifier:(id)arg4 metadata:(id)arg5;
+- (id)_queryEventsOfType:(unsigned long long)arg1 fromDate:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4;
+- (void)deleteEventsOfType:(unsigned long long)arg1 fromDate:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4;
 - (id)deleteStore;
 - (id)dumpAllEvents;
-- (id)dumpEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
+- (id)dumpEventsOfType:(unsigned long long)arg1 fromDate:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4;
 - (id)init;
-- (void)logEventWithType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 typeIdentifier:(id)arg4 metadata:(id)arg5;
-- (id)queryEventsOfType:(unsigned int)arg1 fromDate:(id)arg2 offset:(unsigned int)arg3 limit:(unsigned int)arg4;
+- (void)logEventWithType:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 typeIdentifier:(id)arg4 metadata:(id)arg5;
+- (id)queryEventsOfType:(unsigned long long)arg1 fromDate:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4;
 - (id)queryStore;
 - (void)resetAllEvents;
 - (id)saveStore;

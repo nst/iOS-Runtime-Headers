@@ -7,15 +7,15 @@
 }
 
 - (void).cxx_destruct;
-- (id)_playbackTimeoutIdentifierForBase:(id)arg1 playbackType:(int)arg2;
+- (id)_playbackTimeoutIdentifierForBase:(id)arg1 playbackType:(long long)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (double)dockedPlaybackTimeoutForPlaybackType:(int)arg1;
-- (unsigned int)hash;
+- (double)dockedPlaybackTimeoutForPlaybackType:(long long)arg1;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (double)lockedPlaybackTimeoutForPlaybackType:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (double)lockedPlaybackTimeoutForPlaybackType:(long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (double)pausedPlaybackTimeoutForPlaybackType:(int)arg1;
-- (double)unlockedPlaybackTimeoutForPlaybackType:(int)arg1;
+- (double)pausedPlaybackTimeoutForPlaybackType:(long long)arg1;
+- (double)unlockedPlaybackTimeoutForPlaybackType:(long long)arg1;
 
 @end

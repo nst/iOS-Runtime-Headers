@@ -5,11 +5,11 @@
 @interface GEOSpatialLookupRequester : GEOServiceRequester
 
 + (unsigned char)_requestCounterInfoTypeForRequest:(id)arg1;
-+ (unsigned int)_urlType;
++ (unsigned long long)_urlType;
 + (id)sharedInstance;
 
 - (id)_validateResponse:(id)arg1;
 - (void)cancelRequest:(id)arg1;
-- (void)startWithRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 auditToken:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)startWithRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 auditToken:(id)arg4 completionHandler:(id)arg5;
 
 @end

@@ -3,24 +3,24 @@
  */
 
 @interface SLSheetPhotoAlbumImageView : SLSheetImagePreviewView {
-    BOOL  _allAttachmentsAreImages;
+    bool  _allAttachmentsAreImages;
     CALayer * _frameLayer;
     NSMutableArray * _frameViews;
     CALayer * _glossLayer;
     UILabel * _imageCountLabel;
-    int  _imageQuantity;
-    int  _numPreviewImagesAdded;
+    long long  _imageQuantity;
+    long long  _numPreviewImagesAdded;
 }
 
-+ (unsigned int)displayedFrameMaximum;
++ (unsigned long long)displayedFrameMaximum;
 
 - (void).cxx_destruct;
 - (id)_itemCountString;
-- (BOOL)_shouldDisplayImageCountLabel;
+- (bool)_shouldDisplayImageCountLabel;
 - (void)addPreviewImage:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
 - (id)initWithPrincipalAttachments:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setItemCountString:(id)arg1;
 - (void)setPreviewImage:(id)arg1 forAttachment:(id)arg2;

@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NTKPhotoAnalysis *analysis;
 @property (nonatomic) int sequenceNumber;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)analysis;

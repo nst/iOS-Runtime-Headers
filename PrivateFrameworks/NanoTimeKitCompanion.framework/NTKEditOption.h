@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) NSString *dailySnapshotKey;
 @property (nonatomic, readonly) NSString *localizedName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)JSONObjectRepresentation;
 - (id)dailySnapshotKey;
@@ -15,7 +15,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithJSONObjectRepresentation:(id)arg1;
-- (BOOL)isValidOption;
+- (bool)isValidOption;
 - (id)localizedName;
 
 @end

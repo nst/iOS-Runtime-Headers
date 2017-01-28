@@ -9,14 +9,14 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_clearCacheDatabase;
-- (BOOL)_closeDatabase;
+- (bool)_clearCacheDatabase;
+- (bool)_closeDatabase;
 - (id)_databasePath;
-- (BOOL)_internalSetAppleID:(id)arg1 forDSID:(unsigned long long)arg2;
-- (BOOL)_openDatabase;
-- (BOOL)_openDatabaseIsRetry:(BOOL)arg1;
+- (bool)_internalSetAppleID:(id)arg1 forDSID:(unsigned long long)arg2;
+- (bool)_openDatabase;
+- (bool)_openDatabaseIsRetry:(bool)arg1;
 - (id)appleIDForDSID:(unsigned long long)arg1;
 - (id)init;
-- (BOOL)setAppleID:(id)arg1 forDSID:(unsigned long long)arg2;
+- (bool)setAppleID:(id)arg1 forDSID:(unsigned long long)arg2;
 
 @end

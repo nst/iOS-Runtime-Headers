@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *filename;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)allCloudObjectsInContext:(id)arg1;
@@ -29,10 +29,10 @@
 + (id)mediaWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)newCloudObjectForRecord:(id)arg1 context:(id)arg2;
 + (id)newMediaWithAttachment:(id)arg1 context:(id)arg2;
-+ (id)newMediaWithAttachment:(id)arg1 forData:(id)arg2 filename:(id)arg3 forceAsynchronous:(BOOL)arg4 forceSynchronous:(BOOL)arg5 context:(id)arg6 completionBlock:(id /* block */)arg7;
-+ (id)newMediaWithAttachment:(id)arg1 forFileWrapper:(id)arg2 context:(id)arg3 completionBlock:(id /* block */)arg4;
-+ (id)newMediaWithAttachment:(id)arg1 forURL:(id)arg2 context:(id)arg3 completionBlock:(id /* block */)arg4;
-+ (id)newMediaWithAttachment:(id)arg1 forURL:(id)arg2 context:(id)arg3 waitUntilDone:(BOOL)arg4 completionBlock:(id /* block */)arg5;
++ (id)newMediaWithAttachment:(id)arg1 forData:(id)arg2 filename:(id)arg3 forceAsynchronous:(bool)arg4 forceSynchronous:(bool)arg5 context:(id)arg6 completionBlock:(id)arg7;
++ (id)newMediaWithAttachment:(id)arg1 forFileWrapper:(id)arg2 context:(id)arg3 completionBlock:(id)arg4;
++ (id)newMediaWithAttachment:(id)arg1 forURL:(id)arg2 context:(id)arg3 completionBlock:(id)arg4;
++ (id)newMediaWithAttachment:(id)arg1 forURL:(id)arg2 context:(id)arg3 waitUntilDone:(bool)arg4 completionBlock:(id)arg5;
 + (id)newMediaWithIdentifier:(id)arg1 context:(id)arg2;
 + (void)purgeAllMediaFiles;
 + (void)purgeAllMediaInContext:(id)arg1;
@@ -41,7 +41,7 @@
 
 - (id)containerDirectoryURL;
 - (id)data;
-- (id)dataWithoutImageMarkupMetadata:(BOOL)arg1;
+- (id)dataWithoutImageMarkupMetadata:(bool)arg1;
 - (id)decryptedData;
 - (void)deleteExportableMedia;
 - (void)deleteFromLocalDatabase;
@@ -50,14 +50,14 @@
 - (id)exportableMediaURL;
 - (id)exportableMediaURLWithUpdatedFileIfNecessary;
 - (id)filename;
-- (BOOL)hasAllMandatoryFields;
-- (BOOL)hasFile;
+- (bool)hasAllMandatoryFields;
+- (bool)hasFile;
 - (id)ic_loggingValues;
-- (BOOL)isArchivedDirectory;
-- (BOOL)isInICloudAccount;
-- (BOOL)isValid;
-- (BOOL)makeSureExportableMediaDirectoryExists:(id*)arg1;
-- (BOOL)makeSureMediaDirectoryExists:(id*)arg1;
+- (bool)isArchivedDirectory;
+- (bool)isInICloudAccount;
+- (bool)isValid;
+- (bool)makeSureExportableMediaDirectoryExists:(id*)arg1;
+- (bool)makeSureMediaDirectoryExists:(id*)arg1;
 - (id)mediaArchiveURL;
 - (id)mediaTarArchiveURL;
 - (id)mediaURL;
@@ -72,16 +72,16 @@
 - (void)resetUniqueIdentifier;
 - (void)saveAndClearDecryptedData;
 - (void)setFilename:(id)arg1;
-- (BOOL)shouldFallBackToCheckAllCryptoKeys;
-- (BOOL)supportsDeletionByTTL;
+- (bool)shouldFallBackToCheckAllCryptoKeys;
+- (bool)supportsDeletionByTTL;
 - (void)updateFlagToExcludeFromBackup;
-- (void)updateFlagToExcludeFromBackupTouchFileIfNecessary:(BOOL)arg1;
-- (void)writeData:(id)arg1 forceAsynchronous:(BOOL)arg2 forceSynchronous:(BOOL)arg3 completionBlock:(id /* block */)arg4;
-- (void)writeDataFromAsset:(id)arg1 isArchivedDirectory:(BOOL)arg2;
-- (void)writeDataFromFileURL:(id)arg1 completionBlock:(id /* block */)arg2;
-- (void)writeDataFromFileURL:(id)arg1 waitUntilDone:(BOOL)arg2 completionBlock:(id /* block */)arg3;
-- (void)writeDataFromFileWrapper:(id)arg1 waitUntilDone:(BOOL)arg2 completionBlock:(id /* block */)arg3;
-- (void)writeDataFromItemProvider:(id)arg1 checkForMarkupData:(BOOL)arg2 completionBlock:(id /* block */)arg3;
-- (void)writeDataWithFileSize:(unsigned long long)arg1 writeBlock:(id /* block */)arg2 completionBlock:(id /* block */)arg3;
+- (void)updateFlagToExcludeFromBackupTouchFileIfNecessary:(bool)arg1;
+- (void)writeData:(id)arg1 forceAsynchronous:(bool)arg2 forceSynchronous:(bool)arg3 completionBlock:(id)arg4;
+- (void)writeDataFromAsset:(id)arg1 isArchivedDirectory:(bool)arg2;
+- (void)writeDataFromFileURL:(id)arg1 completionBlock:(id)arg2;
+- (void)writeDataFromFileURL:(id)arg1 waitUntilDone:(bool)arg2 completionBlock:(id)arg3;
+- (void)writeDataFromFileWrapper:(id)arg1 waitUntilDone:(bool)arg2 completionBlock:(id)arg3;
+- (void)writeDataFromItemProvider:(id)arg1 checkForMarkupData:(bool)arg2 completionBlock:(id)arg3;
+- (void)writeDataWithFileSize:(unsigned long long)arg1 writeBlock:(id)arg2 completionBlock:(id)arg3;
 
 @end

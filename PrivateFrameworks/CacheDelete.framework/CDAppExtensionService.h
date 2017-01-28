@@ -14,12 +14,12 @@
 - (id)extension;
 - (id)initWithInfo:(id)arg1 extension:(id)arg2;
 - (void)invalidateConnection;
-- (void)obtainXPCConnection:(id /* block */)arg1;
+- (void)obtainXPCConnection:(id)arg1;
 - (id)requestId;
 - (void)resumeConnection;
-- (void)setCompletionBlock:(id /* block */)arg1;
-- (void)setInterruptionBlock:(id /* block */)arg1;
-- (void)setInvalidationBlock:(id /* block */)arg1;
+- (void)setCompletionBlock:(id)arg1;
+- (void)setInterruptionBlock:(id)arg1;
+- (void)setInvalidationBlock:(id)arg1;
 - (void)setRequestId:(id)arg1;
 
 @end

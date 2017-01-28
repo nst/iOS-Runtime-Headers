@@ -5,6 +5,6 @@
 
 @required
 
-- (int)layoutOrientation;
+- (long long)layoutOrientation;
 
 @end

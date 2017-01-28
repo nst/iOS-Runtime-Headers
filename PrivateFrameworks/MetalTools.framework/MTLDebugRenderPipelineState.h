@@ -3,13 +3,13 @@
  */
 
 @interface MTLDebugRenderPipelineState : MTLToolsRenderPipelineState {
-    unsigned int  _colorPixelFormat;
-    unsigned int  _depthPixelFormat;
+    unsigned long long  _colorPixelFormat;
+    unsigned long long  _depthPixelFormat;
     MTLRenderPipelineDescriptor * _descriptor;
     MTLRenderPipelineReflection * _reflection;
-    unsigned int  _sampleCount;
-    unsigned int  _stencilPixelFormat;
-    unsigned int  _vertexBufferStride;
+    unsigned long long  _sampleCount;
+    unsigned long long  _stencilPixelFormat;
+    unsigned long long  _vertexBufferStride;
 }
 
 @property (nonatomic, readonly) MTLRenderPipelineDescriptor *descriptor;

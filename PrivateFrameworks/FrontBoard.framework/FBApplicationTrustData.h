@@ -4,9 +4,9 @@
 
 @interface FBApplicationTrustData : NSObject {
     FBApplicationInfo * _appInfo;
-    BOOL  _hasFreeDeveloperProvisioningProfile;
-    BOOL  _hasUniversalProvisioningProfile;
-    BOOL  _isManaged;
+    bool  _hasFreeDeveloperProvisioningProfile;
+    bool  _hasUniversalProvisioningProfile;
+    bool  _isManaged;
     NSArray * _provisioningProfiles;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -14,14 +14,14 @@
 @property (nonatomic, readonly) NSArray *profiles;
 
 - (void)_acceptApplicationSignatureIdentity;
-- (id)_initWithApplicationInfo:(id)arg1 andProvisioningProfiles:(id)arg2 isManaged:(BOOL)arg3;
+- (id)_initWithApplicationInfo:(id)arg1 andProvisioningProfiles:(id)arg2 isManaged:(bool)arg3;
 - (void)_initializeProfiles:(id)arg1;
 - (id)_workQueue_expirationDateForProvisioningProfile;
-- (BOOL)_workQueue_signatureNeedsExplicitUserTrust;
+- (bool)_workQueue_signatureNeedsExplicitUserTrust;
 - (void)acknowledgeTrust;
 - (void)dealloc;
 - (id)profiles;
-- (unsigned int)trustState;
-- (unsigned int)trustStateWithTrustRequiredReasons:(unsigned int*)arg1;
+- (unsigned long long)trustState;
+- (unsigned long long)trustStateWithTrustRequiredReasons:(unsigned long long*)arg1;
 
 @end

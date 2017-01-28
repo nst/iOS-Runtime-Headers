@@ -2,21 +2,22 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFStaticItem : HFItem {
-    id /* block */  _resultsBlock;
+@interface HFStaticItem : HFItem <NSCopying> {
+    id  _resultsBlock;
     NSDictionary * _staticResults;
 }
 
-@property (nonatomic, copy) id /* block */ resultsBlock;
+@property (nonatomic, copy) id resultsBlock;
 @property (nonatomic, retain) NSDictionary *staticResults;
 
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (id)initWithResults:(id)arg1;
-- (id)initWithResultsBlock:(id /* block */)arg1;
-- (id /* block */)resultsBlock;
-- (void)setResultsBlock:(id /* block */)arg1;
+- (id)initWithResultsBlock:(id)arg1;
+- (id)resultsBlock;
+- (void)setResultsBlock:(id)arg1;
 - (void)setStaticResults:(id)arg1;
 - (id)staticResults;
 

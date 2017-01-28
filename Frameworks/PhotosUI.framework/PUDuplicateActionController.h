@@ -4,66 +4,66 @@
 
 @interface PUDuplicateActionController : NSObject {
     NSDictionary * __assetsByAssetCollection;
-    BOOL  __canDuplicate;
-    BOOL  __canExtractStill;
-    BOOL  __didCheckDuplicateCapabilities;
+    bool  __canDuplicate;
+    bool  __canExtractStill;
+    bool  __didCheckDuplicateCapabilities;
     NSProgress * __downloadingProgress;
     NSProgress * __duplicatingProgress;
-    id /* block */  __onFinishDownloadCompletionHandler;
+    id  __onFinishDownloadCompletionHandler;
     NSProgress * __overallProgress;
     PUActivityProgressController * __progressController;
-    int  _itemCount;
+    long long  _itemCount;
     NSMutableArray * _resourceDownloadRequests;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *_assetsByAssetCollection;
-@property (nonatomic, readonly) BOOL _canDuplicate;
-@property (nonatomic, readonly) BOOL _canExtractStill;
-@property (setter=_setDidCheckDuplicateCapabilities:, nonatomic) BOOL _didCheckDuplicateCapabilities;
+@property (nonatomic, readonly) bool _canDuplicate;
+@property (nonatomic, readonly) bool _canExtractStill;
+@property (setter=_setDidCheckDuplicateCapabilities:, nonatomic) bool _didCheckDuplicateCapabilities;
 @property (setter=_setDownloadingProgress:, nonatomic, retain) NSProgress *_downloadingProgress;
 @property (setter=_setDuplicatingProgress:, nonatomic, retain) NSProgress *_duplicatingProgress;
-@property (setter=_setOnFinishDownloadCompletionHandler:, nonatomic, copy) id /* block */ _onFinishDownloadCompletionHandler;
+@property (setter=_setOnFinishDownloadCompletionHandler:, nonatomic, copy) id _onFinishDownloadCompletionHandler;
 @property (setter=_setOverallProgress:, nonatomic, retain) NSProgress *_overallProgress;
 @property (setter=_setProgressController:, nonatomic, retain) PUActivityProgressController *_progressController;
-@property (nonatomic, readonly) BOOL shouldUseAlertController;
+@property (nonatomic, readonly) bool shouldUseAlertController;
 
-+ (void)_showDuplicationWasInterruptedWithItemCount:(int)arg1 completionHandler:(id /* block */)arg2;
-+ (BOOL)canPerformDuplicateActionOnAssets:(id)arg1 orAssetsByAssetCollection:(id)arg2;
++ (void)_showDuplicationWasInterruptedWithItemCount:(long long)arg1 completionHandler:(id)arg2;
++ (bool)canPerformDuplicateActionOnAssets:(id)arg1 orAssetsByAssetCollection:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_assetsByAssetCollection;
-- (BOOL)_canDuplicate;
-- (BOOL)_canExtractStill;
+- (bool)_canDuplicate;
+- (bool)_canExtractStill;
 - (void)_checkDuplicateCapabilities;
-- (BOOL)_didCheckDuplicateCapabilities;
-- (void)_downloadResourcesForDuplicateAction:(int)arg1 completionHandler:(id /* block */)arg2;
+- (bool)_didCheckDuplicateCapabilities;
+- (void)_downloadResourcesForDuplicateAction:(long long)arg1 completionHandler:(id)arg2;
 - (id)_downloadingProgress;
 - (id)_duplicatingProgress;
-- (void)_finishedDownloadWithSuccess:(BOOL)arg1;
-- (void)_finishedDuplicationWithSuccess:(BOOL)arg1;
+- (void)_finishedDownloadWithSuccess:(bool)arg1;
+- (void)_finishedDuplicationWithSuccess:(bool)arg1;
 - (void)_handleDownloadResourcesCompletionForRequest:(id)arg1 error:(id)arg2;
 - (void)_handleDownloadResourcesCompletionForRequest:(id)arg1 withError:(id)arg2;
 - (void)_handleOperationCompletionWithError:(id)arg1;
-- (void)_handlePhotoLibraryDuplicationCompletionWithSuccess:(BOOL)arg1 error:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_handlePhotoLibraryDuplicationCompletionWithSuccess:(bool)arg1 error:(id)arg2 completionHandler:(id)arg3;
 - (void)_handleProgressUserCancellation;
-- (id /* block */)_onFinishDownloadCompletionHandler;
+- (id)_onFinishDownloadCompletionHandler;
 - (id)_overallProgress;
 - (void)_overallProgressFractionCompletedDidChange;
 - (void)_overallProgressIsCancelledDidChange;
-- (void)_performPhotoLibraryChangeForAction:(int)arg1 completionHandler:(id /* block */)arg2;
+- (void)_performPhotoLibraryChangeForAction:(long long)arg1 completionHandler:(id)arg2;
 - (id)_progressController;
-- (void)_setDidCheckDuplicateCapabilities:(BOOL)arg1;
+- (void)_setDidCheckDuplicateCapabilities:(bool)arg1;
 - (void)_setDownloadingProgress:(id)arg1;
 - (void)_setDuplicatingProgress:(id)arg1;
-- (void)_setOnFinishDownloadCompletionHandler:(id /* block */)arg1;
+- (void)_setOnFinishDownloadCompletionHandler:(id)arg1;
 - (void)_setOverallProgress:(id)arg1;
 - (void)_setProgressController:(id)arg1;
-- (id)alertControllerForDuplicateActionWithUserConfirmationHandler:(id /* block */)arg1;
+- (id)alertControllerForDuplicateActionWithUserConfirmationHandler:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithAssetsByAssetCollection:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)performDuplicateAction:(int)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)shouldUseAlertController;
+- (void)performDuplicateAction:(long long)arg1 completionHandler:(id)arg2;
+- (bool)shouldUseAlertController;
 
 @end

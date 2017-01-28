@@ -10,11 +10,11 @@
 @property (nonatomic, readonly) NSMapTable *clientSessions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMapTable *serverSessions;
 @property (readonly) Class superclass;
 
-+ (BOOL)transportSupportsDevice:(id)arg1;
++ (bool)transportSupportsDevice:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_handleClientSessionInvalidationMessage:(id)arg1;
@@ -24,7 +24,7 @@
 - (id)clientSessions;
 - (id)initWithAccountRegistry:(id)arg1;
 - (void)messageTransport:(id)arg1 didReceiveMessage:(id)arg2;
-- (void)sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)sendMessage:(id)arg1 completionHandler:(id)arg2;
 - (id)serverSessions;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)watchSession:(id)arg1 receivedRequestToSendMessage:(id)arg2;

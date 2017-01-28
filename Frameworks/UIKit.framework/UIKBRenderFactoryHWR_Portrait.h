@@ -5,12 +5,12 @@
 @interface UIKBRenderFactoryHWR_Portrait : UIKBRenderFactory10Key
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (struct CGPoint { float x1; float x2; })deleteGlyphOffset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })handwritingAreaInsets;
-- (float)handwritingGradientStartLocation;
-- (struct CGPoint { float x1; float x2; })moreKeyTextOffset;
+- (struct CGPoint { double x1; double x2; })deleteGlyphOffset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })handwritingAreaInsets;
+- (double)handwritingGradientStartLocation;
+- (struct CGPoint { double x1; double x2; })moreKeyTextOffset;
 - (void)setupLayoutSegments;
-- (float)spaceKeyFontSize;
-- (struct CGPoint { float x1; float x2; })spaceKeyTextOffset;
+- (double)spaceKeyFontSize;
+- (struct CGPoint { double x1; double x2; })spaceKeyTextOffset;
 
 @end

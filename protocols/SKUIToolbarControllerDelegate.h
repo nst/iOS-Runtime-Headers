@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)toolbarController:(SKUIToolbarController *)arg1 shouldDispatchEventForButton:(SKUIButtonViewElement *)arg2;
+- (bool)toolbarController:(SKUIToolbarController *)arg1 shouldDispatchEventForButton:(SKUIButtonViewElement *)arg2;
 
 @end

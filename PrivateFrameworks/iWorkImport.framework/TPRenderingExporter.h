@@ -3,30 +3,30 @@
  */
 
 @interface TPRenderingExporter : TSARenderingExporter {
-    BOOL  mDidLimitPageLayout;
+    bool  mDidLimitPageLayout;
     TPPdfHyperlinkController * mHyperlinkController;
-    int  mLastPageIndexForLayout;
-    unsigned int  mPageCount;
-    unsigned int  mPageIndex;
+    long long  mLastPageIndexForLayout;
+    unsigned long long  mPageCount;
+    unsigned long long  mPageIndex;
 }
 
-@property (readonly) BOOL didLimitPageLayout;
-@property (nonatomic) int lastPageIndexForLayout;
+@property (readonly) bool didLimitPageLayout;
+@property (nonatomic) long long lastPageIndexForLayout;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })boundsRect;
 - (id)currentInfos;
 - (void)dealloc;
-- (BOOL)didLimitPageLayout;
-- (BOOL)incrementPage;
+- (bool)didLimitPageLayout;
+- (bool)incrementPage;
 - (id)initWithDocumentRoot:(id)arg1;
-- (int)lastPageIndexForLayout;
-- (unsigned int)pageCount;
-- (BOOL)preparePage:(unsigned int)arg1;
+- (long long)lastPageIndexForLayout;
+- (unsigned long long)pageCount;
+- (bool)preparePage:(unsigned long long)arg1;
 - (double)progressForCurrentPage;
-- (void)setLastPageIndexForLayout:(int)arg1;
+- (void)setLastPageIndexForLayout:(long long)arg1;
 - (void)setup;
 - (void)teardown;
 - (double)totalProgess;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })unscaledClipRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })unscaledClipRect;
 
 @end

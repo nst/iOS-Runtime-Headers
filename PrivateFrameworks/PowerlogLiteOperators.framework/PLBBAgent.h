@@ -4,14 +4,14 @@
 
 @interface PLBBAgent : PLAgent <PLABMClientMessageDelegate, PLBasebandLogChannelDelegate> {
     PLABMClient * _abmClient;
-    BOOL  _agentInited;
+    bool  _agentInited;
     PLEntryNotificationOperatorComposition * _batteryLevelChanged;
     PLNSNotificationOperatorComposition * _bbICEModelLTEMetricsNotification;
     PLTimer * _cacheCommitTimer;
     PLEntryNotificationOperatorComposition * _canSleepNotification;
     PLCFNotificationOperatorComposition * _cfNotifyBBReport;
     PLCFNotificationOperatorComposition * _cfNotifyBBReport30s;
-    BOOL  _changed;
+    bool  _changed;
     PLTimer * _channelReconnectTimer;
     PLTelephonyConnection * _connection;
     NSMutableDictionary * _currentCallList;
@@ -26,7 +26,7 @@
     NSDate * _lastOOSTimestamp;
     NSDate * _lastReportRequestDate;
     NSNumber * _lastReportedSignal;
-    BOOL  _lteCurrentState;
+    bool  _lteCurrentState;
     double  _oosCDMAPower;
     double  _oosGWPower;
     double  _oosHDRPower;
@@ -48,21 +48,21 @@
 }
 
 @property (retain) PLABMClient *abmClient;
-@property BOOL agentInited;
+@property bool agentInited;
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
 @property (retain) PLNSNotificationOperatorComposition *bbICEModelLTEMetricsNotification;
 @property (retain) PLTimer *cacheCommitTimer;
 @property (retain) PLEntryNotificationOperatorComposition *canSleepNotification;
 @property (retain) PLCFNotificationOperatorComposition *cfNotifyBBReport;
 @property (retain) PLCFNotificationOperatorComposition *cfNotifyBBReport30s;
-@property BOOL changed;
+@property bool changed;
 @property (retain) PLTimer *channelReconnectTimer;
 @property (nonatomic, readonly) PLTelephonyConnection *connection;
 @property (retain) NSMutableDictionary *currentCallList;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) PLEntryNotificationOperatorComposition *didNotSleepNotification;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSNumber *inDCH;
 @property (retain) NSNumber *inUTBF;
 @property (retain) NSDate *lastBBActivityTimestamp;
@@ -73,7 +73,7 @@
 @property (retain) NSDate *lastOOSTimestamp;
 @property (retain) NSDate *lastReportRequestDate;
 @property (retain) NSNumber *lastReportedSignal;
-@property BOOL lteCurrentState;
+@property bool lteCurrentState;
 @property double oosCDMAPower;
 @property double oosGWPower;
 @property double oosHDRPower;
@@ -101,14 +101,14 @@
 + (id)getBBAgent;
 + (id)getNameBBReport;
 + (id)humanReadableStateFromKey:(id)arg1;
-+ (id)indexToRat:(unsigned int)arg1;
++ (id)indexToRat:(unsigned long long)arg1;
 + (void)load;
 + (void)logICEReportFor:(id)arg1 withAgent:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)abmClient;
 - (void)accountVoicePower:(id)arg1 state:(id)arg2;
-- (BOOL)agentInited;
+- (bool)agentInited;
 - (id)batteryLevelChanged;
 - (id)bbICEModelLTEMetricsNotification;
 - (void)bootStateChange:(id)arg1;
@@ -118,18 +118,18 @@
 - (void)cancelCacheCommitTimer;
 - (id)cfNotifyBBReport;
 - (id)cfNotifyBBReport30s;
-- (BOOL)changed;
+- (bool)changed;
 - (void)channel:(id)arg1 hasDataAvailable:(id)arg2;
 - (void)channelDidBecomeInvalid:(id)arg1;
 - (id)channelReconnectTimer;
-- (void)commitBBCacheWithClientInfo:(int)arg1;
+- (void)commitBBCacheWithClientInfo:(long long)arg1;
 - (id)connection;
 - (void)createOOSAccountingEvent:(id)arg1;
 - (id)currentCallList;
 - (id)didNotSleepNotification;
 - (void)eventToCommitCacheOccurred;
 - (void)eventToFlushCacheOccurred;
-- (void)flushBBCacheWithClientInfo:(int)arg1;
+- (void)flushBBCacheWithClientInfo:(long long)arg1;
 - (void)handlePLBasebandEventNotification:(id)arg1;
 - (void)handlePostCDRXCapabilityNo:(id)arg1;
 - (id)humanReadableDataActiveString;
@@ -141,9 +141,9 @@
 - (id)init;
 - (void)initCacheCommitTimer;
 - (void)initOperatorDependancies;
-- (BOOL)isChangedAndSetAirplaneMode;
+- (bool)isChangedAndSetAirplaneMode;
 - (bool)isEarfcnHighBand:(int)arg1;
-- (BOOL)isTimeToRequestReport;
+- (bool)isTimeToRequestReport;
 - (id)lastBBActivityTimestamp;
 - (double)lastBBProtoPower;
 - (double)lastGWPower;
@@ -158,14 +158,14 @@
 - (void)logEntries:(id)arg1 withGroupID:(id)arg2;
 - (void)logEntry:(id)arg1;
 - (void)logEventBackwardLTESleepStatsQuery;
-- (void)logEventNoneBBReportBy:(int)arg1 withAction:(int)arg2;
+- (void)logEventNoneBBReportBy:(long long)arg1 withAction:(long long)arg2;
 - (void)logMessage:(id)arg1 andState:(id)arg2;
 - (void)logOperatorName;
 - (void)logTelephonyActivity;
 - (void)logTelephonyActivityAtInit;
 - (void)logTelephonyRegMsgWith:(id)arg1;
 - (void)logTelephonyRegistrationAtInit;
-- (BOOL)lteCurrentState;
+- (bool)lteCurrentState;
 - (void)metricMessage:(id)arg1;
 - (void)modelBB16Power:(id)arg1;
 - (void)modelBBICEPower:(id)arg1;
@@ -184,7 +184,7 @@
 - (double)oosGWPower;
 - (double)oosHDRPower;
 - (id)operatorName;
-- (void)postCDRXCapability:(BOOL)arg1;
+- (void)postCDRXCapability:(bool)arg1;
 - (void)processTimeUpdateInfoDict:(id)arg1;
 - (void)reconnectTimerFired;
 - (void)refreshBBReport;
@@ -195,14 +195,14 @@
 - (void)scheduleFlushPostCacheCommit;
 - (void)scheduleReconnect;
 - (void)setAbmClient:(id)arg1;
-- (void)setAgentInited:(BOOL)arg1;
+- (void)setAgentInited:(bool)arg1;
 - (void)setBatteryLevelChanged:(id)arg1;
 - (void)setBbICEModelLTEMetricsNotification:(id)arg1;
 - (void)setCacheCommitTimer:(id)arg1;
 - (void)setCanSleepNotification:(id)arg1;
 - (void)setCfNotifyBBReport30s:(id)arg1;
 - (void)setCfNotifyBBReport:(id)arg1;
-- (void)setChanged:(BOOL)arg1;
+- (void)setChanged:(bool)arg1;
 - (void)setChannelReconnectTimer:(id)arg1;
 - (void)setCurrentCallList:(id)arg1;
 - (void)setDidNotSleepNotification:(id)arg1;
@@ -216,7 +216,7 @@
 - (void)setLastOOSTimestamp:(id)arg1;
 - (void)setLastReportRequestDate:(id)arg1;
 - (void)setLastReportedSignal:(id)arg1;
-- (void)setLteCurrentState:(BOOL)arg1;
+- (void)setLteCurrentState:(bool)arg1;
 - (void)setOosCDMAPower:(double)arg1;
 - (void)setOosGWPower:(double)arg1;
 - (void)setOosHDRPower:(double)arg1;
@@ -229,8 +229,8 @@
 - (void)setTotalOosCDMAScanEnergy:(double)arg1;
 - (void)setTotalOosGWScanEnergy:(double)arg1;
 - (void)setTotalOosHDRScanEnergy:(double)arg1;
-- (void)setupBBChannelsWithAction:(int)arg1;
-- (BOOL)setupChannel:(id)arg1 withLogCodes:(id)arg2 andEvents:(id)arg3 andExtracode:(id)arg4;
+- (void)setupBBChannelsWithAction:(long long)arg1;
+- (bool)setupChannel:(id)arg1 withLogCodes:(id)arg2 andEvents:(id)arg3 andExtracode:(id)arg4;
 - (void)setupICEChannels;
 - (id)setupIOKitNotifications;
 - (void)setupKICEChannels;

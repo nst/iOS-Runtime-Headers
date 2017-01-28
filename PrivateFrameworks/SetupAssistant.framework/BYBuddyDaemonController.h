@@ -10,6 +10,6 @@
 - (void).cxx_destruct;
 - (id)_daemonConnection;
 - (id)init;
-- (BOOL)setupAssistantNeedsToRun;
+- (bool)setupAssistantNeedsToRun;
 
 @end

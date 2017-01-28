@@ -11,14 +11,14 @@
         double longitude; 
     }  _coordinate;
     NSDate * _eventDate;
-    BOOL  _eventIsAllDay;
+    bool  _eventIsAllDay;
     NSString * _eventName;
     NSString * _eventTitle;
     GEOPlace * _place;
 }
 
 - (id)_clientAttributes;
-- (BOOL)_hasResolvablePartialInformation;
+- (bool)_hasResolvablePartialInformation;
 - (id)_place;
 - (id)addressDictionary;
 - (id)addressObject;
@@ -28,9 +28,9 @@
 - (id)eventDate;
 - (id)eventName;
 - (id)geoAddress;
-- (id)initWithAddressDictionary:(id)arg1 eventName:(id)arg2 eventTitle:(id)arg3 eventDate:(id)arg4 eventIsAllDay:(BOOL)arg5 coordinate:(struct { double x1; double x2; })arg6 clientAttributes:(id)arg7;
-- (BOOL)isEventAllDay;
-- (BOOL)isValid;
+- (id)initWithAddressDictionary:(id)arg1 eventName:(id)arg2 eventTitle:(id)arg3 eventDate:(id)arg4 eventIsAllDay:(bool)arg5 coordinate:(struct { double x1; double x2; })arg6 clientAttributes:(id)arg7;
+- (bool)isEventAllDay;
+- (bool)isValid;
 - (id)name;
 - (id)weatherDisplayName;
 

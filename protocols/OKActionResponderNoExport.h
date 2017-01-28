@@ -6,8 +6,8 @@
 @required
 
 - (OFUIView *)actionView;
-- (BOOL)canPerformAction:(OKAction *)arg1;
-- (BOOL)interactivityEnabled;
-- (BOOL)performActionScript:(NSString *)arg1 withAction:(OKAction *)arg2;
+- (bool)canPerformAction:(OKAction *)arg1;
+- (bool)interactivityEnabled;
+- (bool)performActionScript:(NSString *)arg1 withAction:(OKAction *)arg2;
 
 @end

@@ -5,21 +5,21 @@
 @interface SKUIMediaSocialLoadProfilePhotoOperation : SSVComplexOperation {
     SKUIClientContext * _clientContext;
     NSLock * _lock;
-    id /* block */  _outputBlock;
+    id  _outputBlock;
     SKUIMediaSocialProfile * _profile;
 }
 
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
 - (void)_fetchMonogram;
 - (void)_fetchPhoto;
 - (void)_fetchProfile;
-- (void)_returnPhoto:(id)arg1 isFinal:(BOOL)arg2;
+- (void)_returnPhoto:(id)arg1 isFinal:(bool)arg2;
 - (id)_silhouette;
 - (id)initWithClientContext:(id)arg1;
 - (void)main;
-- (id /* block */)outputBlock;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (id)outputBlock;
+- (void)setOutputBlock:(id)arg1;
 
 @end

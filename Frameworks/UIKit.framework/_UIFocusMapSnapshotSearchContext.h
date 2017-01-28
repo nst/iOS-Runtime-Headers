@@ -5,8 +5,8 @@
 @interface _UIFocusMapSnapshotSearchContext : NSObject <_UIFocusRegionSearchContext> {
     NSMutableArray * _allFocusRegions;
     NSMutableArray * _focusRegionContainers;
-    BOOL  _hasResultsContainer;
-    BOOL  _isSearchingResultsContainer;
+    bool  _hasResultsContainer;
+    bool  _isSearchingResultsContainer;
     _UIFocusMapSnapshotOptions * _options;
     NSMutableArray * _resultFocusRegions;
 }
@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMutableArray *focusRegionContainers;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) _UIFocusMapSnapshotOptions *options;
 @property (nonatomic, readonly) NSMutableArray *resultFocusRegions;
 @property (nonatomic, readonly) UIScreen *screen;

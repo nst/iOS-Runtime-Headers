@@ -4,19 +4,19 @@
 
 @interface SCNFixedSizePage : NSObject {
     <MTLBuffer> * _buffer;
-    unsigned int  _elementSize;
+    unsigned long long  _elementSize;
     NSMutableIndexSet * _freeIndices;
 }
 
 @property (nonatomic, readonly) <MTLBuffer> *buffer;
 
-- (unsigned int)_allocateElement;
+- (unsigned long long)_allocateElement;
 - (id)buffer;
 - (void)dealloc;
-- (void)deallocateElementAtOffset:(unsigned int)arg1;
-- (BOOL)hasFreeElementsLeft;
-- (id)initWithBuffer:(id)arg1 elementSize:(unsigned int)arg2;
-- (BOOL)isFull;
+- (void)deallocateElementAtOffset:(unsigned long long)arg1;
+- (bool)hasFreeElementsLeft;
+- (id)initWithBuffer:(id)arg1 elementSize:(unsigned long long)arg2;
+- (bool)isFull;
 - (id)newSubBuffer;
 
 @end

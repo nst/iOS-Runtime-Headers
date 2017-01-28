@@ -5,8 +5,6 @@
 
 @required
 
-- (<VSAutoAuthenticationViewControllerDelegate> *)delegate;
-- (void)setDelegate:(id <VSAutoAuthenticationViewControllerDelegate>)arg1;
 - (void)setViewModel:(VSAutoAuthenticationViewModel *)arg1;
 - (VSAutoAuthenticationViewModel *)viewModel;
 

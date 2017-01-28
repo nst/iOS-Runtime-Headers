@@ -6,35 +6,35 @@
     float * _confidenceMap;
     float * _edgeWeightMap;
     VCPGaborFilter * _gaborFilter;
-    unsigned long  _height;
-    unsigned long  _heightPadded;
+    unsigned long long  _height;
+    unsigned long long  _heightPadded;
     float * _image;
-    long  _offset;
+    long long  _offset;
     float * _orientationResponses;
     float * _orientionMap;
     float  _pixelMean;
     float  _pixelVar;
-    long  _stride;
-    long  _stridePadded;
+    long long  _stride;
+    long long  _stridePadded;
     bool  _validDimension;
-    unsigned long  _width;
-    unsigned long  _widthPadded;
+    unsigned long long  _width;
+    unsigned long long  _widthPadded;
 }
 
 - (void).cxx_destruct;
 - (void)averageOrientationResponses:(int)arg1 withCurrentMap:(float*)arg2;
-- (long)calculateConfidence:(id)arg1 lineDistance:(float)arg2 vaninshingPoint:(struct CGPoint { float x1; float x2; })arg3 vanishingPointConfidence:(float*)arg4;
-- (long)calculateOrientationResponses;
+- (int)calculateConfidence:(id)arg1 lineDistance:(float)arg2 vaninshingPoint:(struct CGPoint { double x1; double x2; })arg3 vanishingPointConfidence:(float*)arg4;
+- (int)calculateOrientationResponses;
 - (void)dealloc;
-- (long)detect:(struct CGPoint { float x1; float x2; }*)arg1 withConfidence:(float*)arg2 dominantLine:(id*)arg3;
-- (void)extractUsefulAreaFrom:(float*)arg1 to:(float*)arg2 withOffset:(unsigned long)arg3 stridePadded:(unsigned long)arg4 width:(unsigned long)arg5 height:(unsigned long)arg6;
-- (long)generateLineWeightMap:(id)arg1 weightMap:(float*)arg2;
-- (long)generateOrientationMap;
+- (int)detect:(struct CGPoint { double x1; double x2; }*)arg1 withConfidence:(float*)arg2 dominantLine:(id*)arg3;
+- (void)extractUsefulAreaFrom:(float*)arg1 to:(float*)arg2 withOffset:(unsigned long long)arg3 stridePadded:(unsigned long long)arg4 width:(unsigned long long)arg5 height:(unsigned long long)arg6;
+- (int)generateLineWeightMap:(id)arg1 weightMap:(float*)arg2;
+- (int)generateOrientationMap;
 - (id)initWithImage:(struct __CVBuffer { }*)arg1;
-- (BOOL)isVerticalOrHorizontal:(int)arg1;
-- (long)prepareImage:(struct __CVBuffer { }*)arg1;
-- (long)searchVanishingPointandDominantLine:(float*)arg1 lineGroup:(id)arg2 vanishingPoint:(struct CGPoint { float x1; float x2; }*)arg3 vanishingPointConfidence:(float*)arg4 dominantLine:(id*)arg5;
-- (void)smoothFiltering:(float*)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3;
-- (long)voteVanishingPoint:(float*)arg1;
+- (bool)isVerticalOrHorizontal:(int)arg1;
+- (int)prepareImage:(struct __CVBuffer { }*)arg1;
+- (int)searchVanishingPointandDominantLine:(float*)arg1 lineGroup:(id)arg2 vanishingPoint:(struct CGPoint { double x1; double x2; }*)arg3 vanishingPointConfidence:(float*)arg4 dominantLine:(id*)arg5;
+- (void)smoothFiltering:(float*)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3;
+- (int)voteVanishingPoint:(float*)arg1;
 
 @end

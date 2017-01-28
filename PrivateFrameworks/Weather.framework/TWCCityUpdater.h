@@ -20,7 +20,7 @@
 - (id)delegate;
 - (id)forecastModelController;
 - (id)init;
-- (BOOL)isUpdatingCity:(id)arg1;
+- (bool)isUpdatingCity:(id)arg1;
 - (id)locale;
 - (void)setDelegate:(id)arg1;
 - (void)setForecastModelController:(id)arg1;
@@ -28,7 +28,7 @@
 - (void)setTrackingParameter:(id)arg1;
 - (id)trackingParameter;
 - (void)updateWeatherForCities:(id)arg1;
-- (void)updateWeatherForCities:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)updateWeatherForCities:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)updateWeatherForCity:(id)arg1;
 
 @end

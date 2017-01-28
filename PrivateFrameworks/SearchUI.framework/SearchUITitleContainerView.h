@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SearchUIImageView *secondaryImageView;
 @property (nonatomic, retain) UILabel *secondaryLabel;
 @property (readonly) Class superclass;
@@ -19,7 +19,7 @@
 + (id)titleFont;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(unsigned int)arg1;
+- (id)initWithStyle:(unsigned long long)arg1;
 - (id)secondaryImageView;
 - (id)secondaryLabel;
 - (void)setSecondaryImageView:(id)arg1;

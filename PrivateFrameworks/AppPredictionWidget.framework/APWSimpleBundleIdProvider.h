@@ -4,16 +4,16 @@
 
 @interface APWSimpleBundleIdProvider : NSObject <APWBundleIdProviding> {
     NSString * _bundleIdentifier;
-    int  _reason;
-    int  _sources;
+    long long  _reason;
+    long long  _sources;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int reason;
-@property (nonatomic, readonly) int sources;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long reason;
+@property (nonatomic, readonly) long long sources;
 @property (readonly) Class superclass;
 
 + (id)simpleBundleIdProvidersWithStrings:(id)arg1;
@@ -21,8 +21,8 @@
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)description;
-- (id)initWithBundleIdentifier:(id)arg1 sources:(int)arg2 reason:(int)arg3;
-- (int)reason;
-- (int)sources;
+- (id)initWithBundleIdentifier:(id)arg1 sources:(long long)arg2 reason:(long long)arg3;
+- (long long)reason;
+- (long long)sources;
 
 @end

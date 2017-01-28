@@ -20,6 +20,6 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotoVision.framework/PhotoVision
 
-- (unsigned int)photoVisionAlgorithmRevision;
+- (unsigned long long)photoVisionAlgorithmRevision;
 
 @end

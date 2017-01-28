@@ -11,12 +11,12 @@
 @property (nonatomic, copy) NSString *transactionToken;
 
 + (id)_allTransactionPaths;
-+ (BOOL)_archiveRecoveryHistoryWithError:(id*)arg1;
++ (bool)_archiveRecoveryHistoryWithError:(id*)arg1;
 + (void)_checkForAndHandleExcessiveRecoveryAttempts;
 + (id)_fileManager;
 + (id)_filePathForTransactionWithToken:(id)arg1;
-+ (BOOL)_hasExcessiveRecoveryAttempts;
-+ (BOOL)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned long long*)arg2;
++ (bool)_hasExcessiveRecoveryAttempts;
++ (bool)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned long long*)arg2;
 + (id)_outstandingTransactionScopesByPath;
 + (unsigned long long)_readScopeValuesFromFileDescriptor:(int)arg1;
 + (void)_recordRecoveryAttempt;
@@ -30,7 +30,7 @@
 + (id)beginServerTransactionWithToken:(id)arg1 changeScopes:(id)arg2;
 + (id)changeScopesFromXPCDictionary:(id)arg1;
 + (id)descriptionOfAllTransactionFiles;
-+ (void)handleOutstandingTransactions:(id /* block */)arg1;
++ (void)handleOutstandingTransactions:(id)arg1;
 + (void)removeTransactionFromUserInfo:(id)arg1;
 + (unsigned long long)scopeValuesFromScopes:(id)arg1;
 + (id)scopesFromScopeValues:(unsigned long long)arg1;
@@ -44,7 +44,7 @@
 - (void)completeTransaction;
 - (void)completeTransactionScope:(id)arg1;
 - (void)dealloc;
-- (BOOL)isClientTransaction;
+- (bool)isClientTransaction;
 - (void)popChangeScopesBatch;
 - (void)pushChangeScopesBatch;
 - (void)setTransactionToken:(id)arg1;

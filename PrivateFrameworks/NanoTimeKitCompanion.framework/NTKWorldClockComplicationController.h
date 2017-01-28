@@ -13,23 +13,23 @@
 @property (nonatomic, readonly) NTKWorldClockComplication *complication;
 @property (nonatomic, readonly) <NTKWorldClockComplicationDisplay> *legacyDisplay;
 
-+ (BOOL)_acceptsComplicationType:(unsigned int)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_activate;
 - (void)_configureForLegacyDisplay:(id)arg1;
 - (void)_deactivate;
-- (void)_endTimeTravelAnimated:(BOOL)arg1;
+- (void)_endTimeTravelAnimated:(bool)arg1;
 - (void)_handleAbbreviationStoreChange:(id)arg1;
 - (void)_handleLocaleChange;
 - (void)_handleTimeZoneChange;
-- (void)_startTimeTravelAnimated:(BOOL)arg1;
+- (void)_startTimeTravelAnimated:(bool)arg1;
 - (void)_updateDisplay;
 - (id)complicationApplicationIdentifier;
-- (BOOL)hasTapAction;
+- (bool)hasTapAction;
 - (void)performTapAction;
-- (void)setDataMode:(int)arg1 forDisplayWrapper:(id)arg2;
+- (void)setDataMode:(long long)arg1 forDisplayWrapper:(id)arg2;
 - (void)setPauseDate:(id)arg1;
-- (void)setTimeTravelDate:(id)arg1 animated:(BOOL)arg2;
+- (void)setTimeTravelDate:(id)arg1 animated:(bool)arg2;
 
 @end

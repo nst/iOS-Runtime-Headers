@@ -11,7 +11,7 @@
     HKQuantity * _appleStandHours;
     HKQuantity * _appleStandHoursGoal;
     NSDate * _creationDate;
-    BOOL  _dataLoading;
+    bool  _dataLoading;
     NSDateComponents * _dateComponents;
     HKQuantity * _deepBreathingDuration;
     HKQuantity * _distanceWalkingRunning;
@@ -21,7 +21,7 @@
     HKQuantity * _pushCount;
     NSDate * _startDate;
     HKQuantity * _stepCount;
-    int  _wheelchairUse;
+    long long  _wheelchairUse;
 }
 
 @property (nonatomic, retain) HKQuantity *activeEnergyBurned;
@@ -33,7 +33,7 @@
 @property (nonatomic, retain) HKQuantity *appleStandHours;
 @property (nonatomic, retain) HKQuantity *appleStandHoursGoal;
 @property (getter=_creationDate, setter=_setCreationDate:, nonatomic, retain) NSDate *creationDate;
-@property (getter=_isDataLoading, setter=_setDataLoading:, nonatomic) BOOL dataLoading;
+@property (getter=_isDataLoading, setter=_setDataLoading:, nonatomic) bool dataLoading;
 @property (getter=_deepBreathingDuration, setter=_setDeepBreathingDuration:, nonatomic, retain) HKQuantity *deepBreathingDuration;
 @property (getter=_deepBreathingSessionCount, nonatomic, readonly) HKQuantity *deepBreathingSessionCount;
 @property (nonatomic, retain) HKQuantity *distanceWalkingRunning;
@@ -42,25 +42,25 @@
 @property (getter=_exerciseTimeCompletionPercentage, nonatomic, readonly) double exerciseTimeCompletionPercentage;
 @property (getter=_flightsClimbed, setter=_setFlightsClimbed:, nonatomic, retain) HKQuantity *flightsClimbed;
 @property (getter=_gregorianDateComponents, setter=_setGregorianDateComponents:, nonatomic, copy) NSDateComponents *gregorianDateComponents;
-@property (getter=_hasMoveGoal, nonatomic, readonly) BOOL hasMoveGoal;
+@property (getter=_hasMoveGoal, nonatomic, readonly) bool hasMoveGoal;
 @property (getter=_pushCount, setter=_setPushCount:, nonatomic, retain) HKQuantity *pushCount;
 @property (getter=_standHoursCompletionPercentage, nonatomic, readonly) double standHoursCompletionPercentage;
 @property (getter=_startDate, setter=_setStartDate:, nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) HKQuantity *stepCount;
-@property (getter=_wheelchairUse, setter=_setWheelchairUse:, nonatomic) int wheelchairUse;
+@property (getter=_wheelchairUse, setter=_setWheelchairUse:, nonatomic) long long wheelchairUse;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_highestEnergyBurnedActivityCacheAmongCaches:(id)arg1;
 + (id)_mostSignificantCacheAmongCaches:(id)arg1;
-+ (BOOL)_validateActivitySummaryDateComponents:(id)arg1 errorMessage:(id*)arg2;
-+ (BOOL)_validateActivitySummaryDateComponentsRange:(id)arg1 endDateComponents:(id)arg2 errorMessage:(id*)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)_validateActivitySummaryDateComponents:(id)arg1 errorMessage:(id*)arg2;
++ (bool)_validateActivitySummaryDateComponentsRange:(id)arg1 endDateComponents:(id)arg2 errorMessage:(id*)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)_activeEnergyCompletionPercentage;
 - (long long)_activitySummaryIndex;
-- (BOOL)_allFieldsAreEqual:(id)arg1;
+- (bool)_allFieldsAreEqual:(id)arg1;
 - (id)_creationDate;
 - (id)_decodeQuantityFromCoder:(id)arg1 forKey:(id)arg2 unit:(id)arg3;
 - (id)_deepBreathingDuration;
@@ -71,14 +71,14 @@
 - (double)_exerciseTimeCompletionPercentage;
 - (id)_flightsClimbed;
 - (id)_gregorianDateComponents;
-- (BOOL)_hasMoveGoal;
-- (id)_initWithActivityCache:(id)arg1 shouldIncludePrivateProperties:(BOOL)arg2;
-- (BOOL)_isDataLoading;
+- (bool)_hasMoveGoal;
+- (id)_initWithActivityCache:(id)arg1 shouldIncludePrivateProperties:(bool)arg2;
+- (bool)_isDataLoading;
 - (double)_percentageCompleteWithQuantity:(id)arg1 goalQuantity:(id)arg2 unit:(id)arg3;
 - (id)_pushCount;
 - (void)_setActivitySummaryIndex:(long long)arg1;
 - (void)_setCreationDate:(id)arg1;
-- (void)_setDataLoading:(BOOL)arg1;
+- (void)_setDataLoading:(bool)arg1;
 - (void)_setDeepBreathingDuration:(id)arg1;
 - (void)_setEndDate:(id)arg1;
 - (void)_setEnergyBurnedGoalDate:(id)arg1;
@@ -86,11 +86,11 @@
 - (void)_setGregorianDateComponents:(id)arg1;
 - (void)_setPushCount:(id)arg1;
 - (void)_setStartDate:(id)arg1;
-- (void)_setWheelchairUse:(int)arg1;
+- (void)_setWheelchairUse:(long long)arg1;
 - (double)_standHoursCompletionPercentage;
 - (id)_startDate;
 - (void)_validateQuantityAssignment:(id)arg1 expectedUnit:(id)arg2 propertyName:(id)arg3;
-- (int)_wheelchairUse;
+- (long long)_wheelchairUse;
 - (id)activeEnergyBurned;
 - (id)activeEnergyBurnedGoal;
 - (id)appleExerciseTime;
@@ -102,9 +102,9 @@
 - (id)description;
 - (id)distanceWalkingRunning;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setActiveEnergyBurned:(id)arg1;
 - (void)setActiveEnergyBurnedGoal:(id)arg1;
 - (void)setAppleExerciseTime:(id)arg1;
@@ -118,6 +118,8 @@
 // Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
 
 - (id)_activeEnergyStringWithFont:(id)arg1 smallCapsFont:(id)arg2 color:(id)arg3;
+- (bool)_isEmptyExerciseSummary;
+- (bool)_isEmptyMoveSummary;
 - (id)ff_activeEnergyProgressStringWithContext:(id)arg1;
 - (id)ff_activeEnergyStringWithContext:(id)arg1;
 - (id)ff_distanceStringWithContext:(id)arg1;
@@ -129,6 +131,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (BOOL)hd_isEnergyBurnedGoalSet;
+- (bool)hd_isEnergyBurnedGoalSet;
 
 @end

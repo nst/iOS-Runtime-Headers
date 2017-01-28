@@ -3,19 +3,19 @@
  */
 
 @interface _MTLFakeComputePipelineState : _MTLComputePipelineState <MTLComputePipelineState> {
-    unsigned int  _maxTotalThreadsPerThreadgroup;
-    unsigned int  _threadExecutionWidth;
+    unsigned long long  _maxTotalThreadsPerThreadgroup;
+    unsigned long long  _threadExecutionWidth;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) <MTLDevice> *device;
-@property (readonly) unsigned int hash;
-@property (readonly) unsigned int maxTotalThreadsPerThreadgroup;
+@property (readonly) unsigned long long hash;
+@property (readonly) unsigned long long maxTotalThreadsPerThreadgroup;
 @property (readonly) Class superclass;
-@property (readonly) unsigned int threadExecutionWidth;
+@property (readonly) unsigned long long threadExecutionWidth;
 
-- (unsigned int)maxTotalThreadsPerThreadgroup;
-- (unsigned int)threadExecutionWidth;
+- (unsigned long long)maxTotalThreadsPerThreadgroup;
+- (unsigned long long)threadExecutionWidth;
 
 @end

@@ -9,6 +9,6 @@
 
 @optional
 
-- (BOOL)XPCServiceListener:(XPCServiceListener *)arg1 shouldAcceptNewConnection:(NSObject<OS_xpc_object> *)arg2;
+- (bool)XPCServiceListener:(XPCServiceListener *)arg1 shouldAcceptNewConnection:(NSObject<OS_xpc_object> *)arg2;
 
 @end

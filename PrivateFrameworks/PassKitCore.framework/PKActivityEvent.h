@@ -11,7 +11,7 @@
     NSString * _name;
     NSString * _phoneNumber;
     NSString * _summary;
-    BOOL  _unread;
+    bool  _unread;
 }
 
 @property (nonatomic, readonly, copy) NSDecimalNumber *amount;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSString *phoneNumber;
 @property (nonatomic, readonly, copy) NSString *summary;
-@property (getter=isUnread, nonatomic, readonly) BOOL unread;
+@property (getter=isUnread, nonatomic, readonly) bool unread;
 
 - (void).cxx_destruct;
 - (id)amount;
@@ -30,13 +30,13 @@
 - (id)date;
 - (void)dealloc;
 - (id)email;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToActivityEvent:(id)arg1;
-- (BOOL)isUnread;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToActivityEvent:(id)arg1;
+- (bool)isUnread;
 - (id)name;
 - (id)phoneNumber;
 - (id)summary;

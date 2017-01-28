@@ -5,10 +5,10 @@
 
 @required
 
-- (void)changeRepeatType:(int)arg1;
-- (void)changeShuffleType:(int)arg1;
+- (void)changeRepeatType:(long long)arg1;
+- (void)changeShuffleType:(long long)arg1;
 - (void)reloadPlayer:(MPAVController *)arg1 mediaQuery:(MPMediaQuery *)arg2 options:(NSDictionary *)arg3;
-- (void)reloadPlayer:(void *)arg1 radioMetadata:(void *)arg2 options:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: MPAVController *, MPCRadioStationPlaybackMetadata *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)reloadPlayer:(void *)arg1 radioStation:(void *)arg2 options:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: MPAVController *, RadioStation *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)reloadPlayer:(void *)arg1 radioMetadata:(void *)arg2 options:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: MPAVController *, MPCRadioStationPlaybackMetadata *, NSDictionary *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)reloadPlayer:(void *)arg1 radioStation:(void *)arg2 options:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 9: MPAVController *, RadioStation *, NSDictionary *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
 
 @end

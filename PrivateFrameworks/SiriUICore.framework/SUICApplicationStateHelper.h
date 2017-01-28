@@ -5,15 +5,16 @@
 @interface SUICApplicationStateHelper : NSObject <FBSDisplayLayoutObserver> {
     BKSApplicationStateMonitor * _appStateMonitor;
     NSMutableArray * _foregroundAppInfos;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_appInfoDictionariesForDisplayLayout:(id)arg1 completion:(id /* block */)arg2;
+- (void)_appInfoDictionariesForDisplayLayout:(id)arg1 completion:(id)arg2;
 - (void)_handleApplicationStateUpdate:(id)arg1;
 - (void)_updateForAppInfoDictionaries:(id)arg1;
 - (void)dealloc;

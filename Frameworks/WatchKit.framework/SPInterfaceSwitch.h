@@ -4,7 +4,7 @@
 
 @interface SPInterfaceSwitch : SPInterfaceObject
 
-- (void)setEnabled:(BOOL)arg1;
-- (void)setOn:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setOn:(bool)arg1;
 
 @end

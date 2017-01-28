@@ -7,7 +7,7 @@
     id  _changedAttendees;
     id  _changedItem;
     id  _instanceId;
-    int  _itemChangeType;
+    long long  _itemChangeType;
     id  _serverId;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, retain) id changedAttendees;
 @property (setter=_setChangedItem:, nonatomic, retain) id changedItem;
 @property (nonatomic, retain) id instanceId;
-@property (nonatomic) int itemChangeType;
+@property (nonatomic) long long itemChangeType;
 @property (nonatomic, retain) id serverId;
 
 - (void).cxx_destruct;
@@ -23,30 +23,30 @@
 - (int)changeId;
 - (id)changedAttendees;
 - (id)changedItem;
-- (/* Warning: unhandled struct encoding: '{ASContact=#@@ii@i@?i@}' */ struct ASContact { Class x1; id x2; int x3; int x4; id x5; id /* block */ x6; int x7; id x8; }*)contact;
+- (/* Warning: unhandled struct encoding: '{ASContact=#@@ii@i@?i@}' */ struct ASContact { Class x1; id x2; int x3; int x4; id x5; id x6; int x7; id x8; }*)contact;
 - (id)deletedContactID;
 - (id)deletedEventID;
 - (id)deletedNoteID;
 - (id)deletedToDoID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (/* Warning: unhandled struct encoding: '{ASEvent=#@@ii@i@?i@}' */ struct ASEvent { Class x1; id x2; int x3; int x4; id x5; id /* block */ x6; int x7; id x8; }*)event;
-- (unsigned int)hash;
+- (/* Warning: unhandled struct encoding: '{ASEvent=#@@ii@i@?i@}' */ struct ASEvent { Class x1; id x2; int x3; int x4; id x5; id x6; int x7; id x8; }*)event;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3;
-- (id)initWithItemChangeType:(int)arg1 changedItem:(id)arg2 serverId:(id)arg3 instanceId:(id)arg4;
+- (id)initWithItemChangeType:(long long)arg1 changedItem:(id)arg2 serverId:(id)arg3;
+- (id)initWithItemChangeType:(long long)arg1 changedItem:(id)arg2 serverId:(id)arg3 instanceId:(id)arg4;
 - (id)instanceId;
-- (BOOL)isEqual:(id)arg1;
-- (int)itemChangeType;
+- (bool)isEqual:(id)arg1;
+- (long long)itemChangeType;
 - (id)message;
-- (/* Warning: unhandled struct encoding: '{ASNote=#@@ii@i@?i@}' */ struct ASNote { Class x1; id x2; int x3; int x4; id x5; id /* block */ x6; int x7; id x8; }*)note;
+- (/* Warning: unhandled struct encoding: '{ASNote=#@@ii@i@?i@}' */ struct ASNote { Class x1; id x2; int x3; int x4; id x5; id x6; int x7; id x8; }*)note;
 - (id)serverId;
 - (void)setChangeId:(int)arg1;
 - (void)setChangedAttendees:(id)arg1;
 - (void)setInstanceId:(id)arg1;
-- (void)setItemChangeType:(int)arg1;
+- (void)setItemChangeType:(long long)arg1;
 - (void)setServerId:(id)arg1;
-- (id)stringForItemChangeType:(int)arg1;
-- (/* Warning: unhandled struct encoding: '{ASToDo=#@@ii@i@?i@}' */ struct ASToDo { Class x1; id x2; int x3; int x4; id x5; id /* block */ x6; int x7; id x8; }*)toDo;
+- (id)stringForItemChangeType:(long long)arg1;
+- (/* Warning: unhandled struct encoding: '{ASToDo=#@@ii@i@?i@}' */ struct ASToDo { Class x1; id x2; int x3; int x4; id x5; id x6; int x7; id x8; }*)toDo;
 
 @end

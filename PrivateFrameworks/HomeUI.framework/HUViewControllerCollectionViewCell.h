@@ -9,13 +9,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UIViewController *parentViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (void)_removeFromParentViewControllerAndClearProperty:(BOOL)arg1;
+- (void)_removeFromParentViewControllerAndClearProperty:(bool)arg1;
 - (void)addToParentViewController:(id)arg1;
 - (void)layoutSubviews;
 - (id)parentViewController;

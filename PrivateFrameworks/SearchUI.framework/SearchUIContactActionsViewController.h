@@ -8,18 +8,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) CNContactInlineActionsViewController *inlineActionsViewController;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsResult:(id)arg1;
++ (bool)supportsResult:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)contactInlineActionsViewController:(id)arg1 willPerformActionOfType:(id)arg2;
 - (id)hostingViewControllerForController:(id)arg1;
 - (id)inlineActionsViewController;
 - (void)setInlineActionsViewController:(id)arg1;
-- (id)setupViewWithStyle:(unsigned int)arg1;
+- (id)setupViewWithStyle:(unsigned long long)arg1;
 - (void)updateWithResult:(id)arg1;
 
 @end

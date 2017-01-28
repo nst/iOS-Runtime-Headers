@@ -12,10 +12,10 @@
 @property (nonatomic, readonly) CATAddress *address;
 @property (nonatomic) <CATNetworkReachabilityDelegate> *delegate;
 @property (nonatomic) unsigned int flags;
-@property (getter=isReachable, nonatomic, readonly) BOOL reachable;
+@property (getter=isReachable, nonatomic, readonly) bool reachable;
 
-+ (BOOL)isReachableForLocalWiFiWithFlags:(unsigned int)arg1;
-+ (BOOL)isReachableForNetworkWithFlags:(unsigned int)arg1;
++ (bool)isReachableForLocalWiFiWithFlags:(unsigned int)arg1;
++ (bool)isReachableForNetworkWithFlags:(unsigned int)arg1;
 + (id)keyPathsForValuesAffectingReachable;
 + (id)reachabilityForInternetConnection;
 + (id)reachabilityForLocalWiFi;
@@ -30,7 +30,7 @@
 - (void)delegateDidChange;
 - (unsigned int)flags;
 - (id)initWithAddress:(id)arg1;
-- (BOOL)isReachable;
+- (bool)isReachable;
 - (void)reachabilityDidChangeWithFlags:(unsigned int)arg1;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;

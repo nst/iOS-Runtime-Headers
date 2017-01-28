@@ -3,14 +3,14 @@
  */
 
 @interface __NSOrderedSetReversed : NSOrderedSet {
-    unsigned int  _cnt;
+    unsigned long long  _cnt;
     id  _orderedSet;
 }
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (unsigned int)indexOfObject:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1;
 - (id)initWithOrderedSet:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
 
 @end

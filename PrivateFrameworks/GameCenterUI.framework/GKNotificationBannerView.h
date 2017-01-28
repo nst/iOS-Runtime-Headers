@@ -5,39 +5,39 @@
 @interface GKNotificationBannerView : UIView {
     UILabel * _actionLabel;
     UIView * _centeringView;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     double  _duration;
     UIImageView * _imageView;
     UILabel * _messageLabel;
     UILabel * _messageLabel2;
-    float  _preferredWidthPad;
+    double  _preferredWidthPad;
     UILabel * _titleLabel;
-    id /* block */  _touchHandler;
+    id  _touchHandler;
 }
 
 @property (nonatomic, retain) UILabel *actionLabel;
 @property (nonatomic, retain) UIView *centeringView;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic) double duration;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UILabel *messageLabel;
 @property (nonatomic, retain) UILabel *messageLabel2;
-@property (nonatomic, readonly) float preferredWidthPad;
+@property (nonatomic, readonly) double preferredWidthPad;
 @property (nonatomic, retain) UILabel *titleLabel;
-@property (nonatomic, copy) id /* block */ touchHandler;
+@property (nonatomic, copy) id touchHandler;
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 
 - (void)_wasTouched:(id)arg1;
 - (id)actionLabel;
 - (void)awakeFromNib;
 - (void)callCompletionHandler;
 - (id)centeringView;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)dealloc;
 - (double)duration;
-- (void)fadeInWithCompletionHandler:(id /* block */)arg1;
-- (void)fadeOutQuickly:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)fadeInWithCompletionHandler:(id)arg1;
+- (void)fadeOutQuickly:(bool)arg1 withCompletionHandler:(id)arg2;
 - (void)hideBanner;
 - (id)imageView;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
@@ -47,19 +47,19 @@
 - (void)layoutSubviews;
 - (id)messageLabel;
 - (id)messageLabel2;
-- (float)preferredWidthPad;
+- (double)preferredWidthPad;
 - (void)setActionLabel:(id)arg1;
 - (void)setCenteringView:(id)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setMessageLabel2:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (void)setTouchHandler:(id /* block */)arg1;
-- (void)showWithCompletionHandler:(id /* block */)arg1;
-- (void)showWithTouchHandler:(id /* block */)arg1;
+- (void)setTouchHandler:(id)arg1;
+- (void)showWithCompletionHandler:(id)arg1;
+- (void)showWithTouchHandler:(id)arg1;
 - (id)titleLabel;
-- (id /* block */)touchHandler;
+- (id)touchHandler;
 
 @end

@@ -6,21 +6,21 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)_performPCSBlock:(id /* block */)arg1 error:(id*)arg2;
+- (bool)_performPCSBlock:(id)arg1 error:(id*)arg2;
 - (struct _PCSIdentitySetData { }*)pcsIdentityCreateWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateCloseDoorWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateDropStingrayWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateRestoreHSMWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateToStingrayWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityMigrateToiCDPWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityPlesioLocalWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityPlesioNetworkedWithInfo:(id)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentityPlesioStateWithInfo:(id)arg1 networked:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)pcsIdentitySetIsInICDPLocal:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
-- (BOOL)pcsIdentitySetIsInICDPNetwork:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
+- (bool)pcsIdentityMigrateCloseDoorWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentityMigrateDropStingrayWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentityMigrateRestoreHSMWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentityMigrateToStingrayWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentityMigrateToiCDPWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentityPlesioLocalWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentityPlesioNetworkedWithInfo:(id)arg1 error:(id*)arg2;
+- (bool)pcsIdentityPlesioStateWithInfo:(id)arg1 networked:(bool)arg2 error:(id*)arg3;
+- (bool)pcsIdentitySetIsInICDPLocal:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
+- (bool)pcsIdentitySetIsInICDPNetwork:(struct _PCSIdentitySetData { }*)arg1 error:(id*)arg2;
 - (struct _PCSIdentitySetData { }*)pcsIdentitySetupWithInfo:(id)arg1 error:(id*)arg2;
 
 @end

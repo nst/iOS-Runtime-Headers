@@ -3,24 +3,24 @@
  */
 
 @interface _HKContextFreeGrammar : NSObject {
-    id /* block */  _emptyStringEvaluator;
+    id  _emptyStringEvaluator;
     NSMutableSet * _nonTerminals;
     _HKCFGNonTerminal * _rootNonTerminal;
     NSCharacterSet * _terminalCharacters;
     NSMutableSet * _terminals;
 }
 
-@property (nonatomic, readonly) id /* block */ emptyStringEvaluator;
+@property (nonatomic, readonly) id emptyStringEvaluator;
 @property (nonatomic, readonly) _HKCFGNonTerminal *rootNonTerminal;
 
 + (id)grammarWithRootNonTerminal:(id)arg1;
-+ (id)grammarWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id /* block */)arg2;
++ (id)grammarWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_gatherExpressions;
 - (void)_gatherExpressionsStartingAt:(id)arg1;
-- (id /* block */)emptyStringEvaluator;
-- (id)initWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id /* block */)arg2;
+- (id)emptyStringEvaluator;
+- (id)initWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(id)arg2;
 - (void)invalidate;
 - (id)parseTreeForString:(id)arg1;
 - (id)rootNonTerminal;

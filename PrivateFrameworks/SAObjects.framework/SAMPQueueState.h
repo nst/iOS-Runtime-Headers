@@ -8,7 +8,7 @@
 @property (nonatomic, retain) SANPVideoAudioAndSubtitleLanguageOptions *audioAndSubtitleLanguageOptions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAMPMediaItem *listeningToItem;
 @property (nonatomic, retain) SANPCommandInfo *nowPlayingCommandInfo;
 @property (nonatomic, retain) SAMPNowPlayingQueuePosition *playbackQueuePosition;

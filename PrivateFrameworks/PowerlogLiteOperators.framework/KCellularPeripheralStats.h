@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic) unsigned int durationMs;
-@property (nonatomic) BOOL hasDurationMs;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDurationMs;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSMutableArray *peripherals;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -26,18 +26,18 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)durationMs;
-- (BOOL)hasDurationMs;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDurationMs;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)peripherals;
-- (id)peripheralsAtIndex:(unsigned int)arg1;
-- (unsigned int)peripheralsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)peripheralsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)peripheralsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setDurationMs:(unsigned int)arg1;
-- (void)setHasDurationMs:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDurationMs:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setPeripherals:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

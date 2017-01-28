@@ -3,16 +3,16 @@
  */
 
 @interface CKFetchSubscriptionsOperation : CKDatabaseOperation {
-    id /* block */  _fetchSubscriptionCompletionBlock;
-    BOOL  _isFetchAllSubscriptionsOperation;
+    id  _fetchSubscriptionCompletionBlock;
+    bool  _isFetchAllSubscriptionsOperation;
     NSMutableDictionary * _subscriptionErrors;
     NSArray * _subscriptionIDs;
     NSArray * _subscriptions;
     NSMutableDictionary * _subscriptionsBySubscriptionID;
 }
 
-@property (nonatomic, copy) id /* block */ fetchSubscriptionCompletionBlock;
-@property (nonatomic) BOOL isFetchAllSubscriptionsOperation;
+@property (nonatomic, copy) id fetchSubscriptionCompletionBlock;
+@property (nonatomic) bool isFetchAllSubscriptionsOperation;
 @property (nonatomic, retain) NSMutableDictionary *subscriptionErrors;
 @property (nonatomic, copy) NSArray *subscriptionIDs;
 @property (nonatomic, retain) NSArray *subscriptions;
@@ -21,20 +21,20 @@
 + (id)fetchAllSubscriptionsOperation;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
-- (id /* block */)fetchSubscriptionCompletionBlock;
+- (id)fetchSubscriptionCompletionBlock;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithSubscriptionIDs:(id)arg1;
-- (BOOL)isFetchAllSubscriptionsOperation;
+- (bool)isFetchAllSubscriptionsOperation;
 - (void)performCKOperation;
-- (void)setFetchSubscriptionCompletionBlock:(id /* block */)arg1;
-- (void)setIsFetchAllSubscriptionsOperation:(BOOL)arg1;
+- (void)setFetchSubscriptionCompletionBlock:(id)arg1;
+- (void)setIsFetchAllSubscriptionsOperation:(bool)arg1;
 - (void)setSubscriptionErrors:(id)arg1;
 - (void)setSubscriptionIDs:(id)arg1;
 - (void)setSubscriptions:(id)arg1;

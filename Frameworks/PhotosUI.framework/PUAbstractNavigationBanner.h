@@ -7,12 +7,12 @@
 }
 
 @property (nonatomic) <PUAbstractNavigationBannerDelegate> *delegate;
-@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) double height;
 @property (nonatomic, readonly) UIView *view;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (float)height;
+- (double)height;
 - (void)setDelegate:(id)arg1;
 - (id)view;
 

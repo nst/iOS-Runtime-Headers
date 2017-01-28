@@ -6,6 +6,8 @@
     NSObject<OS_nw_channel> * channel;
     NSObject<OS_nw_path> * connected_path;
     NSObject<OS_nw_path_evaluator> * connected_path_evaluator;
+    NSObject<OS_dispatch_data> * final_data;
+    int  final_error;
     NSObject<OS_nw_endpoint> * flow_divert_endpoint;
     NSObject<OS_xpc_object> * flow_divert_token;
     bool  has_connected;
@@ -69,11 +71,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)cancelWithHandler:(id)arg1 forced:(BOOL)arg2;
+- (void)cancelWithHandler:(id)arg1 forced:(bool)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)startWithHandler:(id)arg1;

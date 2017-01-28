@@ -4,20 +4,20 @@
 
 @interface FCSolMergeableArticle : NSObject {
     FCSolArticleID * _articleId;
-    int  _degree;
+    long long  _degree;
     NSSet * _tagIds;
 }
 
 @property (nonatomic, retain) FCSolArticleID *articleId;
-@property (nonatomic) int degree;
+@property (nonatomic) long long degree;
 @property (nonatomic, retain) NSSet *tagIds;
 
 - (void).cxx_destruct;
 - (id)articleId;
-- (int)degree;
-- (id)initWithArticleId:(id)arg1 tagIds:(id)arg2 degree:(int)arg3;
+- (long long)degree;
+- (id)initWithArticleId:(id)arg1 tagIds:(id)arg2 degree:(long long)arg3;
 - (void)setArticleId:(id)arg1;
-- (void)setDegree:(int)arg1;
+- (void)setDegree:(long long)arg1;
 - (void)setTagIds:(id)arg1;
 - (id)tagIds;
 

@@ -8,7 +8,7 @@
     CLIntersiloInterface * _delegateInterface;
     CLSilo * _delegateSilo;
     CLIntersiloInterfaceSelectorInfo * _last;
-    unsigned long  _opaqueTag;
+    unsigned long long  _opaqueTag;
     CLIntersiloProxy * _peer;
     CLIntersiloInterface * _proxiedInterface;
 }
@@ -21,7 +21,7 @@
 + (id)proxyForRecipientObject:(id)arg1 inSilo:(id)arg2 withInboundInterface:(id)arg3 andOutboundInterface:(id)arg4;
 
 - (void).cxx_destruct;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)delegate;
 - (id)delegateInterface;
 - (id)delegateSilo;

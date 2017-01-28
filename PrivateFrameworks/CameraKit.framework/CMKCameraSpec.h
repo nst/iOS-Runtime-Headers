@@ -4,41 +4,41 @@
 
 @interface CMKCameraSpec : NSObject
 
-@property (nonatomic, readonly) BOOL shouldCreateAvalancheIndicator;
-@property (nonatomic, readonly) BOOL shouldCreateElapsedTimeView;
-@property (nonatomic, readonly) BOOL shouldCreateFiltersButton;
-@property (nonatomic, readonly) BOOL shouldCreateFlashButton;
-@property (nonatomic, readonly) BOOL shouldCreateFlipButton;
-@property (nonatomic, readonly) BOOL shouldCreateHDRButton;
-@property (nonatomic, readonly) BOOL shouldCreateImageWell;
-@property (nonatomic, readonly) BOOL shouldCreateModeDial;
-@property (nonatomic, readonly) BOOL shouldCreatePanoramaView;
-@property (nonatomic, readonly) BOOL shouldCreateShutterButton;
-@property (nonatomic, readonly) BOOL shouldCreateSlalomIndicator;
-@property (nonatomic, readonly) BOOL shouldCreateStillDuringVideo;
-@property (nonatomic, readonly) BOOL shouldCreateTimerButton;
-@property (nonatomic, readonly) BOOL shouldCreateZoomSlider;
+@property (nonatomic, readonly) bool shouldCreateAvalancheIndicator;
+@property (nonatomic, readonly) bool shouldCreateElapsedTimeView;
+@property (nonatomic, readonly) bool shouldCreateFiltersButton;
+@property (nonatomic, readonly) bool shouldCreateFlashButton;
+@property (nonatomic, readonly) bool shouldCreateFlipButton;
+@property (nonatomic, readonly) bool shouldCreateHDRButton;
+@property (nonatomic, readonly) bool shouldCreateImageWell;
+@property (nonatomic, readonly) bool shouldCreateModeDial;
+@property (nonatomic, readonly) bool shouldCreatePanoramaView;
+@property (nonatomic, readonly) bool shouldCreateShutterButton;
+@property (nonatomic, readonly) bool shouldCreateSlalomIndicator;
+@property (nonatomic, readonly) bool shouldCreateStillDuringVideo;
+@property (nonatomic, readonly) bool shouldCreateTimerButton;
+@property (nonatomic, readonly) bool shouldCreateZoomSlider;
 
 + (id)specForCurrentPlatform;
 + (id)specForPad;
 + (id)specForPhone;
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrameForOrientation:(int)arg1;
-- (BOOL)isCameraApp;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFrameForOrientation:(long long)arg1;
+- (bool)isCameraApp;
 - (int)rotationStyle;
-- (BOOL)shouldCreateAvalancheIndicator;
-- (BOOL)shouldCreateElapsedTimeView;
-- (BOOL)shouldCreateFiltersButton;
-- (BOOL)shouldCreateFlashButton;
-- (BOOL)shouldCreateFlipButton;
-- (BOOL)shouldCreateHDRButton;
-- (BOOL)shouldCreateImageWell;
-- (BOOL)shouldCreateModeDial;
-- (BOOL)shouldCreatePanoramaView;
-- (BOOL)shouldCreateShutterButton;
-- (BOOL)shouldCreateSlalomIndicator;
-- (BOOL)shouldCreateStillDuringVideo;
-- (BOOL)shouldCreateTimerButton;
-- (BOOL)shouldCreateZoomSlider;
+- (bool)shouldCreateAvalancheIndicator;
+- (bool)shouldCreateElapsedTimeView;
+- (bool)shouldCreateFiltersButton;
+- (bool)shouldCreateFlashButton;
+- (bool)shouldCreateFlipButton;
+- (bool)shouldCreateHDRButton;
+- (bool)shouldCreateImageWell;
+- (bool)shouldCreateModeDial;
+- (bool)shouldCreatePanoramaView;
+- (bool)shouldCreateShutterButton;
+- (bool)shouldCreateSlalomIndicator;
+- (bool)shouldCreateStillDuringVideo;
+- (bool)shouldCreateTimerButton;
+- (bool)shouldCreateZoomSlider;
 
 @end

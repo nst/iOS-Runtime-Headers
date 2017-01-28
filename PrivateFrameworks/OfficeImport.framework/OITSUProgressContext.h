@@ -10,7 +10,7 @@
 }
 
 - (void)addProgressObserver:(id)arg1 selector:(SEL)arg2;
-- (id)addProgressObserverBlock:(id /* block */)arg1;
+- (id)addProgressObserverBlock:(id)arg1;
 - (void)advanceProgress:(double)arg1;
 - (void)createStageWithSteps:(double)arg1;
 - (void)createStageWithSteps:(double)arg1 takingSteps:(double)arg2;

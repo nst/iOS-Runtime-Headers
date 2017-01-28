@@ -6,6 +6,6 @@
 
 @property (nonatomic) <MUImageScrollViewDelegate> *delegate;
 
-- (void)_centerContentIfNecessaryAdjustingContentOffset:(BOOL)arg1;
+- (void)_centerContentIfNecessaryAdjustingContentOffset:(bool)arg1;
 
 @end

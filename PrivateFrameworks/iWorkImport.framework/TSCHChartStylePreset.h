@@ -5,7 +5,7 @@
 @interface TSCHChartStylePreset : TSPObject <TSCHStyleSwapSupporting, TSPCopying, TSSCustomPresetMigration, TSSPreset> {
     NSArray * mCategoryAxisStylesList;
     TSCHChartStyle * mChartStyle;
-    BOOL  mHasUpgradedFromFinalizeHandler;
+    bool  mHasUpgradedFromFinalizeHandler;
     TSCHLegendStyle * mLegendStyle;
     NSArray * mParagraphStylesList;
     TSCHReferenceLineStyle * mRefLineStyle;
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) TSCHChartStyle *chartStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) TSCHLegendStyle *legendStyle;
 @property (nonatomic, readonly) NSArray *paragraphStyles;
 @property (nonatomic, readonly) NSString *presetKind;
@@ -28,7 +28,7 @@
 @property (nonatomic, readonly) NSUUID *uuid;
 @property (nonatomic, readonly) NSArray *valueAxisStyles;
 
-+ (BOOL)needsObjectUUID;
++ (bool)needsObjectUUID;
 + (id)p_getDefaultErrorBarColor:(id)arg1 valueAxisStyles:(id)arg2;
 + (id)p_getDefaultTrendLineShadowColor:(id)arg1;
 + (id)p_getDefaultTrendLineStrokeColor:(id)arg1;
@@ -51,16 +51,16 @@
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8;
 - (id)initWithContext:(id)arg1 chartStyle:(id)arg2 legendStyle:(id)arg3 valueAxisStyles:(id)arg4 categoryAxisStyles:(id)arg5 seriesStyles:(id)arg6 paragraphStyles:(id)arg7 refLineStyle:(id)arg8 uuid:(id)arg9;
-- (BOOL)isEquivalentToPreset:(id)arg1;
-- (BOOL)isEquivalentToPreset:(id)arg1 outReasons:(id*)arg2;
+- (bool)isEquivalentToPreset:(id)arg1;
+- (bool)isEquivalentToPreset:(id)arg1 outReasons:(id*)arg2;
 - (id)legendStyle;
-- (id)migratedPresetInTheme:(id)arg1 followReplacements:(BOOL)arg2;
+- (id)migratedPresetInTheme:(id)arg1 followReplacements:(bool)arg2;
 - (id)p_initWithContext:(id)arg1;
 - (id)paragraphStyles;
 - (id)presetByAdoptingStylesheet:(id)arg1 withMapper:(id)arg2;
@@ -68,7 +68,7 @@
 - (id)refLineStyle;
 - (void)saveToArchiver:(id)arg1;
 - (id)seriesStyles;
-- (id)styleOwnerFromSwapType:(int)arg1 andIndex:(unsigned int)arg2;
+- (id)styleOwnerFromSwapType:(int)arg1 andIndex:(unsigned long long)arg2;
 - (id)stylesheet;
 - (id)swatchImage;
 - (void)upgradePresetIfNecessaryFromFinalizeHandlerWithOptionalPreUFFVersion:(const unsigned long long*)arg1;

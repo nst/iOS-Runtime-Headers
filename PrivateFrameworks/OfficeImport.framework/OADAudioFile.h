@@ -4,7 +4,7 @@
 
 @interface OADAudioFile : OADLinkedMediaFile
 
-- (BOOL)isAudioOnly;
-- (void)setIsAudioOnly:(BOOL)arg1;
+- (bool)isAudioOnly;
+- (void)setIsAudioOnly:(bool)arg1;
 
 @end

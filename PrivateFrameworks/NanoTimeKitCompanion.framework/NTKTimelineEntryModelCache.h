@@ -19,8 +19,8 @@
 + (id)_startOfDayForDate:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_cachedEntryModelAfterDate:(id)arg1 limit:(unsigned int)arg2;
-- (id)_cachedEntryModelBeforeDate:(id)arg1 limit:(unsigned int)arg2;
+- (id)_cachedEntryModelAfterDate:(id)arg1 limit:(unsigned long long)arg2;
+- (id)_cachedEntryModelBeforeDate:(id)arg1 limit:(unsigned long long)arg2;
 - (id)_cachedEntryModelForDate:(id)arg1;
 - (void)_extendCacheTowardDate:(id)arg1;
 - (id)cacheEndDate;
@@ -28,9 +28,9 @@
 - (id)calendar;
 - (id)dataSource;
 - (id)entryModelForDate:(id)arg1;
-- (id)entryModelsAfterDate:(id)arg1 limit:(unsigned int)arg2;
-- (id)entryModelsBeforeDate:(id)arg1 limit:(unsigned int)arg2;
-- (BOOL)hasEntryModelForDate:(id)arg1;
+- (id)entryModelsAfterDate:(id)arg1 limit:(unsigned long long)arg2;
+- (id)entryModelsBeforeDate:(id)arg1 limit:(unsigned long long)arg2;
+- (bool)hasEntryModelForDate:(id)arg1;
 - (id)init;
 - (void)invalidate;
 - (void)setDataSource:(id)arg1;

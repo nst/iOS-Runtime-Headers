@@ -5,7 +5,7 @@
 @interface SUAudioPlayer : NSObject <AVAssetResourceLoaderDelegate> {
     AVURLAsset * _asset;
     NSURL * _certificateUrl;
-    BOOL  _didPostForPreviewHistory;
+    bool  _didPostForPreviewHistory;
     NSURL * _keyUrl;
     NSMutableDictionary * _nowPlayingInfo;
     AVPlayer * _player;
@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSURL *certificateURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSURL *keyURL;
 @property (nonatomic, readonly) SUPlayerStatus *playerStatus;
 @property (nonatomic) long long storeItemIdentifier;
@@ -36,7 +36,7 @@
 - (void)_itemPlayedToEndNotification:(id)arg1;
 - (id)_newFadeInAudioMixForAsset:(id)arg1;
 - (void)_postStatusChangeNotification;
-- (void)_setPlayerState:(int)arg1;
+- (void)_setPlayerState:(long long)arg1;
 - (void)_updateForPeriodicTickWithTime:(double)arg1;
 - (id)certificateURL;
 - (void)dealloc;
@@ -46,7 +46,7 @@
 - (void)pause;
 - (void)play;
 - (id)playerStatus;
-- (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
+- (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)seekToTime:(double)arg1;
 - (void)setCertificateURL:(id)arg1;
 - (void)setKeyURL:(id)arg1;

@@ -6,8 +6,8 @@
     double  _maxSupportedVersion;
     double  _minSupportedVersion;
     id  _plist;
-    BOOL  _protect;
-    BOOL  _protected;
+    bool  _protect;
+    bool  _protected;
 }
 
 @property (nonatomic, retain) NSString *activeAppleID;
@@ -17,17 +17,19 @@
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, readonly) NSString *deviceID;
 @property (nonatomic, readonly) NSString *deviceName;
-@property (nonatomic) BOOL encrypted;
-@property (nonatomic, readonly) BOOL hasCorruptSQLiteDBs;
-@property (nonatomic, readonly) BOOL hasManifestDB;
+@property (nonatomic) bool encrypted;
+@property (nonatomic, readonly) bool hasCorruptSQLiteDBs;
+@property (nonatomic, readonly) bool hasEncryptedManifestDB;
+@property (nonatomic, readonly) bool hasManifestDB;
 @property (nonatomic, retain) NSData *keybagData;
 @property (nonatomic, retain) NSDictionary *lockdownKeys;
+@property (nonatomic) NSData *manifestEncryptionKey;
 @property (nonatomic) double maxSupportedVersion;
 @property (nonatomic) double minSupportedVersion;
-@property (getter=wasPasscodeSet, nonatomic) BOOL passcodeSet;
+@property (getter=wasPasscodeSet, nonatomic) bool passcodeSet;
 @property (nonatomic, readonly) NSString *productType;
 @property (nonatomic, readonly) id propertyList;
-@property (getter=isProtected, nonatomic) BOOL protected;
+@property (getter=isProtected, nonatomic) bool protected;
 @property (nonatomic, readonly) NSString *serialNumber;
 @property (nonatomic) double systemDomainsVersion;
 @property (nonatomic) double version;
@@ -35,10 +37,10 @@
 + (id)properties;
 + (id)propertiesWithFile:(id)arg1 error:(id*)arg2;
 
-- (BOOL)_boolForKey:(id)arg1;
+- (bool)_boolForKey:(id)arg1;
 - (id)_dataForKey:(id)arg1;
 - (id)_dictionaryForKey:(id)arg1;
-- (void)_setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)_setBool:(bool)arg1 forKey:(id)arg2;
 - (void)_setData:(id)arg1 forKey:(id)arg2;
 - (void)_setDictionary:(id)arg1 forKey:(id)arg2;
 - (id)_stringForLockdownKey:(id)arg1;
@@ -56,16 +58,18 @@
 - (id)description;
 - (id)deviceID;
 - (id)deviceName;
-- (BOOL)encrypted;
-- (BOOL)hasCorruptSQLiteDBs;
-- (BOOL)hasManifestDB;
+- (bool)encrypted;
+- (bool)hasCorruptSQLiteDBs;
+- (bool)hasEncryptedManifestDB;
+- (bool)hasManifestDB;
 - (id)init;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (id)initWithFile:(id)arg1 error:(id*)arg2;
 - (id)initWithVersion:(double)arg1 minVersion:(double)arg2 maxVersion:(double)arg3;
-- (BOOL)isProtected;
+- (bool)isProtected;
 - (id)keybagData;
 - (id)lockdownKeys;
+- (id)manifestEncryptionKey;
 - (double)maxSupportedVersion;
 - (double)minSupportedVersion;
 - (id)objectForKey:(id)arg1;
@@ -76,19 +80,20 @@
 - (id)serialNumber;
 - (void)setActiveAppleID:(id)arg1;
 - (void)setDate:(id)arg1;
-- (void)setEncrypted:(BOOL)arg1;
+- (void)setEncrypted:(bool)arg1;
 - (void)setKeybagData:(id)arg1;
 - (void)setLockdownKeys:(id)arg1;
+- (void)setManifestEncryptionKey:(id)arg1;
 - (void)setMaxSupportedVersion:(double)arg1;
 - (void)setMinSupportedVersion:(double)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)setPasscodeSet:(BOOL)arg1;
-- (void)setProtected:(BOOL)arg1;
+- (void)setPasscodeSet:(bool)arg1;
+- (void)setProtected:(bool)arg1;
 - (void)setSystemDomainsVersion:(double)arg1;
 - (void)setVersion:(double)arg1;
 - (double)systemDomainsVersion;
 - (double)version;
-- (BOOL)wasPasscodeSet;
-- (BOOL)writeToFile:(id)arg1 error:(id*)arg2;
+- (bool)wasPasscodeSet;
+- (bool)writeToFile:(id)arg1 error:(id*)arg2;
 
 @end

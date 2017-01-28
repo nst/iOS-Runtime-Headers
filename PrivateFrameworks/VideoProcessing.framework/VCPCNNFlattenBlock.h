@@ -6,8 +6,8 @@
     int  _chunk;
 }
 
-- (long)constructBlock:(id)arg1 context:(id)arg2;
-- (long)forward;
+- (int)constructBlock:(id)arg1 context:(id)arg2;
+- (int)forward;
 - (id)initWithParameters:(int)arg1;
 
 @end

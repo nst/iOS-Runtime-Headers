@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) struct MDLAABB { } _bounds;
 @property (nonatomic, readonly) struct { } boundingBox;
 @property (nonatomic, readonly, retain) <MDLMeshBufferAllocator> *bufferAllocator;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic) double endTime;
 @property (nonatomic) double frameInterval;
 @property (nonatomic, retain) <MDLObjectContainerComponent> *masters;
@@ -26,34 +26,36 @@
 
 // Image: /System/Library/Frameworks/ModelIO.framework/ModelIO
 
-+ (BOOL)canExportFileExtension:(id)arg1;
-+ (BOOL)canImportFileExtension:(id)arg1;
-+ (id)placeLightProbesWithDensity:(float)arg1 heuristic:(int)arg2 usingIrradianceDataSource:(id)arg3;
++ (bool)canExportFileExtension:(id)arg1;
++ (bool)canImportFileExtension:(id)arg1;
++ (id)placeLightProbesWithDensity:(float)arg1 heuristic:(long long)arg2 usingIrradianceDataSource:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (struct MDLAABB { })_bounds;
 - (void)_commonInit;
+- (void)_conformVertexBuffers:(id)arg1 error:(id*)arg2;
 - (void)addObject:(id)arg1;
 - (struct { })boundingBox;
 - (struct { })boundingBoxAtTime:(double)arg1;
 - (id)bufferAllocator;
 - (id)childObjectsOfClass:(Class)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned long long)count;
+- (unsigned long long)countByEnumeratingWithState:(struct { unsigned long long x1; id *x2; unsigned long long x3; unsigned long long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned long long)arg3;
 - (double)endTime;
-- (BOOL)exportAssetToURL:(id)arg1;
-- (BOOL)exportAssetToURL:(id)arg1 error:(id*)arg2;
+- (void)enumerateChildObjectsOfClass:(Class)arg1 usingBlock:(id)arg2 stopPointer:(bool*)arg3;
+- (bool)exportAssetToURL:(id)arg1;
+- (bool)exportAssetToURL:(id)arg1 error:(id*)arg2;
 - (double)frameInterval;
 - (id)init;
 - (id)initWithBufferAllocator:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 vertexDescriptor:(id)arg2 bufferAllocator:(id)arg3;
-- (id)initWithURL:(id)arg1 vertexDescriptor:(id)arg2 bufferAllocator:(id)arg3 preserveTopology:(BOOL)arg4 error:(id*)arg5;
+- (id)initWithURL:(id)arg1 vertexDescriptor:(id)arg2 bufferAllocator:(id)arg3 preserveTopology:(bool)arg4 error:(id*)arg5;
 - (id)masters;
-- (id)objectAtIndex:(unsigned int)arg1;
-- (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
+- (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objects;
 - (void)removeObject:(id)arg1;
 - (void)setEndTime:(double)arg1;

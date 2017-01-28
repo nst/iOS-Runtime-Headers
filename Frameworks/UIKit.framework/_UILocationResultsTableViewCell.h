@@ -3,38 +3,38 @@
  */
 
 @interface _UILocationResultsTableViewCell : UITableViewCell {
-    float  _additionalLeftSidePadding;
+    double  _additionalLeftSidePadding;
     NSLayoutConstraint * _bottomMarginConstraint;
     UIView * _cellHeightStrut;
     UIImage * _customLocationImage;
     NSLayoutConstraint * _interLabelSpaceConstraint;
-    int  _locationImageType;
+    long long  _locationImageType;
     UILabel * _searchDetailTextLabel;
     UIImageView * _searchImageView;
     UILabel * _searchTextLabel;
     NSLayoutConstraint * _topMarginConstraint;
 }
 
-@property (nonatomic) float additionalLeftSidePadding;
+@property (nonatomic) double additionalLeftSidePadding;
 @property (nonatomic, retain) NSLayoutConstraint *bottomMarginConstraint;
 @property (nonatomic, retain) UIView *cellHeightStrut;
 @property (nonatomic, copy) UIImage *customLocationImage;
 @property (nonatomic, retain) NSLayoutConstraint *interLabelSpaceConstraint;
-@property (nonatomic) int locationImageType;
+@property (nonatomic) long long locationImageType;
 @property (nonatomic, retain) UILabel *searchDetailTextLabel;
 @property (nonatomic, retain) UIImageView *searchImageView;
 @property (nonatomic, retain) UILabel *searchTextLabel;
 @property (nonatomic, retain) NSLayoutConstraint *topMarginConstraint;
 
 - (void)_applyLeftAndRightAlignmentConstraints:(id)arg1;
-- (float)_defaultCellBottomMargin;
-- (float)_defaultCellTopMargin;
+- (double)_defaultCellBottomMargin;
+- (double)_defaultCellTopMargin;
 - (id)_searchImageView;
-- (float)_subtitleCellBottomMargin;
-- (float)_subtitleCellInterLabelSpace;
-- (float)_subtitleCellTopMargin;
+- (double)_subtitleCellBottomMargin;
+- (double)_subtitleCellInterLabelSpace;
+- (double)_subtitleCellTopMargin;
 - (void)_updateLabelFontsAndConstraints;
-- (float)additionalLeftSidePadding;
+- (double)additionalLeftSidePadding;
 - (id)bottomMarginConstraint;
 - (id)cellHeightStrut;
 - (id)contentView;
@@ -42,20 +42,20 @@
 - (void)dealloc;
 - (id)detailTextLabel;
 - (id)imageView;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)interLabelSpaceConstraint;
 - (void)layoutSubviews;
-- (int)locationImageType;
+- (long long)locationImageType;
 - (void)prepareForReuse;
 - (id)searchDetailTextLabel;
 - (id)searchImageView;
 - (id)searchTextLabel;
-- (void)setAdditionalLeftSidePadding:(float)arg1;
+- (void)setAdditionalLeftSidePadding:(double)arg1;
 - (void)setBottomMarginConstraint:(id)arg1;
 - (void)setCellHeightStrut:(id)arg1;
 - (void)setCustomLocationImage:(id)arg1;
 - (void)setInterLabelSpaceConstraint:(id)arg1;
-- (void)setLocationImageType:(int)arg1;
+- (void)setLocationImageType:(long long)arg1;
 - (void)setSearchDetailTextLabel:(id)arg1;
 - (void)setSearchImageView:(id)arg1;
 - (void)setSearchTextLabel:(id)arg1;

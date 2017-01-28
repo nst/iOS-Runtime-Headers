@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned int errorCode;
 @property (nonatomic, readonly) NSArray *handlerReturnStatuses;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDate *serializationDate;
 @property (readonly) Class superclass;
 

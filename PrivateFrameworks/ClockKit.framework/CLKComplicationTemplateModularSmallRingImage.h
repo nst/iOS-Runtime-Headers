@@ -5,23 +5,23 @@
 @interface CLKComplicationTemplateModularSmallRingImage : CLKComplicationTemplate {
     float  _fillFraction;
     CLKImageProvider * _imageProvider;
-    int  _ringStyle;
+    long long  _ringStyle;
 }
 
 @property (nonatomic) float fillFraction;
 @property (nonatomic, copy) CLKImageProvider *imageProvider;
-@property (nonatomic) int ringStyle;
+@property (nonatomic) long long ringStyle;
 
 - (void).cxx_destruct;
-- (void)_enumerateFloatKeysWithBlock:(id /* block */)arg1;
-- (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
-- (void)_enumerateIntegerKeysWithBlock:(id /* block */)arg1;
+- (void)_enumerateFloatKeysWithBlock:(id)arg1;
+- (void)_enumerateImageProviderKeysWithBlock:(id)arg1;
+- (void)_enumerateIntegerKeysWithBlock:(id)arg1;
 - (float)fillFraction;
 - (id)imageProvider;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
-- (int)ringStyle;
+- (bool)isCompatibleWithFamily:(long long)arg1;
+- (long long)ringStyle;
 - (void)setFillFraction:(float)arg1;
 - (void)setImageProvider:(id)arg1;
-- (void)setRingStyle:(int)arg1;
+- (void)setRingStyle:(long long)arg1;
 
 @end

@@ -11,13 +11,13 @@
 @property (nonatomic, retain) NSString *loadingTitle;
 
 - (void).cxx_destruct;
-- (void)_updateCloudProgressAnimated:(BOOL)arg1;
+- (void)_updateCloudProgressAnimated:(bool)arg1;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)loadingTitle;
 - (void)setLoadingTitle:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

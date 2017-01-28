@@ -4,13 +4,13 @@
 
 @interface IMExpirableMessageChatItem : IMAttachmentMessagePartChatItem
 
-@property (nonatomic, readonly) BOOL isPlayed;
-@property (nonatomic, readonly) BOOL isSaved;
+@property (nonatomic, readonly) bool isPlayed;
+@property (nonatomic, readonly) bool isSaved;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-- (BOOL)isPlayed;
-- (BOOL)isSaved;
+- (bool)isPlayed;
+- (bool)isSaved;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

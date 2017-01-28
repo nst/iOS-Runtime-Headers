@@ -7,11 +7,11 @@
     <RCAVPlayerDelegate> * _delegate;
     id  _periodicTimeObserverToken;
     double  _updateRate;
-    BOOL  _valid;
+    bool  _valid;
 }
 
 @property (nonatomic) <RCAVPlayerDelegate> *delegate;
-@property (nonatomic, readonly) BOOL isReadyToPlay;
+@property (nonatomic, readonly) bool isReadyToPlay;
 @property (nonatomic) double updateRate;
 
 - (void).cxx_destruct;
@@ -26,7 +26,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)isReadyToPlay;
+- (bool)isReadyToPlay;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)setDelegate:(id)arg1;

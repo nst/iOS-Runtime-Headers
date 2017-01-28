@@ -12,12 +12,12 @@
 
 - (id)_cachedPathForStickerWithProperties:(id)arg1;
 - (id)_filePathInStickerPacksForStickerGUID:(struct NSString { Class x1; }*)arg1 stickerPackGUID:(struct NSString { Class x1; }*)arg2 stickerHash:(id)arg3;
-- (BOOL)_isRecipeBasedSticker:(id)arg1;
+- (bool)_isRecipeBasedSticker:(id)arg1;
 - (id)allDownloadedStickerPacks;
 - (id)allDownloadedStickers;
 - (void)dealloc;
 - (id)init;
-- (void)retrieveStickerWithProperties:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)retrieveStickerWithProperties:(id)arg1 completionBlock:(id)arg2;
 - (void)setStickerPackGUIDToPackMap:(id)arg1;
 - (id)stickerPackGUIDToPackMap;
 

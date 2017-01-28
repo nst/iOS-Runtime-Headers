@@ -11,14 +11,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int type;
 @property (nonatomic) float x;
 @property (nonatomic) float y;
 @property (nonatomic) float z;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)accessibilityEventRepresentationTabularDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

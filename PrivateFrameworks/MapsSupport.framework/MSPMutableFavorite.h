@@ -4,15 +4,15 @@
 
 @interface MSPMutableFavorite : NSObject <MSPFavorite, MSPIdentifiableFavorite, MSPMutableObject> {
     MSPBookmarkStorage * _bookmarkStorage;
-    BOOL  _immutable;
+    bool  _immutable;
     NSUUID * _storageIdentifier;
 }
 
 @property (nonatomic, readonly) MSPBookmarkStorage *bookmarkStorage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=_isImmutable, nonatomic, readonly) BOOL immutable;
+@property (readonly) unsigned long long hash;
+@property (getter=_isImmutable, nonatomic, readonly) bool immutable;
 @property (nonatomic, readonly) NSUUID *storageIdentifier;
 @property (readonly) Class superclass;
 
@@ -25,13 +25,13 @@
 
 - (void).cxx_destruct;
 - (void)_assertNotImmutable;
-- (BOOL)_isImmutable;
+- (bool)_isImmutable;
 - (void)_markImmutable;
 - (id)abridgedBookmarkStorageForSpotlightStorage;
 - (id)bookmarkStorage;
 - (id)copyIfValidWithError:(out id*)arg1;
-- (void)ifMutablePlace:(id /* block */)arg1 ifMutableRoute:(id /* block */)arg2 ifMutableRegion:(id /* block */)arg3 ifMutableTransitLine:(id /* block */)arg4;
-- (void)ifPlace:(id /* block */)arg1 ifRoute:(id /* block */)arg2 ifRegion:(id /* block */)arg3 ifTransitLine:(id /* block */)arg4;
+- (void)ifMutablePlace:(id)arg1 ifMutableRoute:(id)arg2 ifMutableRegion:(id)arg3 ifMutableTransitLine:(id)arg4;
+- (void)ifPlace:(id)arg1 ifRoute:(id)arg2 ifRegion:(id)arg3 ifTransitLine:(id)arg4;
 - (id)init;
 - (id)initWithBookmarkStorage:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

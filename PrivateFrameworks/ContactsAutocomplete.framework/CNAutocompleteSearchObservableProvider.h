@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CNAutocompleteFetchRequest *fetchRequest;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNScheduler> *scheduler;
 @property (nonatomic, readonly) <CNAutocompleteSearchProvider> *searchProvider;
 @property (readonly) Class superclass;
@@ -24,7 +24,7 @@
 - (id)fetchRequest;
 - (id)initWithSearchProvider:(id)arg1 fetchRequest:(id)arg2 scheduler:(id)arg3;
 - (id)localSearchObservable;
-- (id)observableWithWrappedSearchProviderGetter:(id /* block */)arg1 name:(id)arg2;
+- (id)observableWithWrappedSearchProviderGetter:(id)arg1 name:(id)arg2;
 - (id)predictionsSearchObservableWithUnfilteredResultPromise:(id)arg1;
 - (id)recentsSearchObservable;
 - (id)scheduler;

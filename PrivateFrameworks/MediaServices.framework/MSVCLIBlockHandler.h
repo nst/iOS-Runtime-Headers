@@ -3,14 +3,14 @@
  */
 
 @interface MSVCLIBlockHandler : NSObject {
-    id /* block */  _block;
+    id  _block;
 }
 
-@property (nonatomic, readonly) id /* block */ block;
+@property (nonatomic, readonly) id block;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)block;
+- (id)initWithBlock:(id)arg1;
 - (void)invokeWithCommand:(id)arg1;
 
 @end

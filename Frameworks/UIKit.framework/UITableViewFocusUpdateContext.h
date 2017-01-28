@@ -3,8 +3,8 @@
  */
 
 @interface UITableViewFocusUpdateContext : UIFocusUpdateContext {
-    BOOL  _didSetNextFocusedIndexPath;
-    BOOL  _didSetPreviouslyFocusedIndexPath;
+    bool  _didSetNextFocusedIndexPath;
+    bool  _didSetPreviouslyFocusedIndexPath;
     NSIndexPath * _nextFocusedIndexPath;
     NSIndexPath * _previouslyFocusedIndexPath;
     UITableView * _tableView;

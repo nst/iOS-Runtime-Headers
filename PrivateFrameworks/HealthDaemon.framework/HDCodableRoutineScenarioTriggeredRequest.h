@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic, retain) HDCodableRoutineLocation *currentLocation;
-@property (nonatomic, readonly) BOOL hasCurrentLocation;
-@property (nonatomic) BOOL hasTriggerTypes;
+@property (nonatomic, readonly) bool hasCurrentLocation;
+@property (nonatomic) bool hasTriggerTypes;
 @property (nonatomic) unsigned long long triggerTypes;
 
 - (void).cxx_destruct;
@@ -21,14 +21,14 @@
 - (id)currentLocation;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCurrentLocation;
-- (BOOL)hasTriggerTypes;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCurrentLocation;
+- (bool)hasTriggerTypes;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCurrentLocation:(id)arg1;
-- (void)setHasTriggerTypes:(BOOL)arg1;
+- (void)setHasTriggerTypes:(bool)arg1;
 - (void)setTriggerTypes:(unsigned long long)arg1;
 - (unsigned long long)triggerTypes;
 - (void)writeTo:(id)arg1;

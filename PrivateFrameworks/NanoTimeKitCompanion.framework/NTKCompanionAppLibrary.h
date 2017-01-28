@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NRDevice *device;
 @property (nonatomic, retain) NSArray *firstPartyApps;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *observerCallbackQueue;
 @property (readonly) Class superclass;

@@ -5,7 +5,7 @@
 @interface HUAnimationSettings : NSObject <NSCopying, _UIBasicAnimationFactory> {
     double  _delay;
     double  _duration;
-    float  _speed;
+    double  _speed;
     CAMediaTimingFunction * _timingFunction;
 }
 
@@ -14,13 +14,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double duration;
 @property (nonatomic, readonly) double durationWithSpeed;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float speed;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double speed;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 + (id)settingsWithDuration:(double)arg1;
-+ (id)settingsWithDuration:(double)arg1 curve:(int)arg2;
++ (id)settingsWithDuration:(double)arg1 curve:(long long)arg2;
 
 - (void).cxx_destruct;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
@@ -30,14 +30,14 @@
 - (double)duration;
 - (double)durationWithSpeed;
 - (id)init;
-- (float)interpolatedProgressForProgress:(float)arg1;
-- (float)interpolatedProgressForTime:(double)arg1;
+- (double)interpolatedProgressForProgress:(double)arg1;
+- (double)interpolatedProgressForTime:(double)arg1;
 - (void)setDelay:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setSpeed:(float)arg1;
+- (void)setSpeed:(double)arg1;
 - (void)setTimingFunction:(id)arg1;
-- (id)settingsSpedUpByFactor:(float)arg1;
-- (float)speed;
+- (id)settingsSpedUpByFactor:(double)arg1;
+- (double)speed;
 - (id)timingFunction;
 
 @end

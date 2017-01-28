@@ -3,38 +3,38 @@
  */
 
 @interface LPVideoView : LPComponentView <LPMediaPlayer, UIGestureRecognizerDelegate> {
-    BOOL  _disablePlayback;
-    BOOL  _hasBuilt;
+    bool  _disablePlayback;
+    bool  _hasBuilt;
     UIImageView * _muteButtonView;
     UIView * _playButtonContainerView;
     UIView * _playButtonView;
     LPStatisticsTimingToken * _playbackDelayTimingToken;
-    BOOL  _playing;
+    bool  _playing;
     LPImage * _posterFrame;
     LPImageViewStyle * _posterFrameStyle;
     UIView * _pulsingLoadView;
     LPVideoViewStyle * _style;
-    BOOL  _usesSharedAudioSession;
+    bool  _usesSharedAudioSession;
     LPVideo * _video;
     UIView * _videoPlaceholderView;
     UIView * _videoView;
     UIView * _visualEffectView;
-    BOOL  _wasPlayingWhenSuspended;
-    BOOL  _wasPlayingWhenUnparented;
+    bool  _wasPlayingWhenSuspended;
+    bool  _wasPlayingWhenUnparented;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isMuted;
-@property (nonatomic, readonly) BOOL isPlaying;
-@property (getter=isMuted, nonatomic) BOOL muted;
-@property (getter=isPlaying, nonatomic) BOOL playing;
-@property (nonatomic, readonly) BOOL shouldAutoPlay;
-@property (nonatomic, readonly) BOOL shouldShowMuteButton;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isMuted;
+@property (nonatomic, readonly) bool isPlaying;
+@property (getter=isMuted, nonatomic) bool muted;
+@property (getter=isPlaying, nonatomic) bool playing;
+@property (nonatomic, readonly) bool shouldAutoPlay;
+@property (nonatomic, readonly) bool shouldShowMuteButton;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL usesSharedAudioSession;
+@property (nonatomic, readonly) bool usesSharedAudioSession;
 @property (nonatomic, readonly) LPVideo *video;
 
 - (void).cxx_destruct;
@@ -49,27 +49,27 @@
 - (void)componentViewDidMoveToWindow;
 - (id)createVideoPlayerView;
 - (void)dealloc;
-- (void)didChangeMutedState:(BOOL)arg1;
-- (void)didChangePlayingState:(BOOL)arg1;
+- (void)didChangeMutedState:(bool)arg1;
+- (void)didChangePlayingState:(bool)arg1;
 - (void)didEncounterPlaybackError;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)init;
-- (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 disablePlayback:(BOOL)arg5;
-- (BOOL)isActive;
-- (BOOL)isMuted;
-- (BOOL)isPlaying;
+- (id)initWithVideo:(id)arg1 style:(id)arg2 posterFrame:(id)arg3 posterFrameStyle:(id)arg4 disablePlayback:(bool)arg5;
+- (bool)isActive;
+- (bool)isMuted;
+- (bool)isPlaying;
 - (void)layoutComponentView;
 - (void)removePlaceholderViews;
-- (void)setActive:(BOOL)arg1;
-- (void)setMuted:(BOOL)arg1;
-- (void)setPlaying:(BOOL)arg1;
-- (BOOL)shouldAutoPlay;
-- (BOOL)shouldShowMuteButton;
+- (void)setActive:(bool)arg1;
+- (void)setMuted:(bool)arg1;
+- (void)setPlaying:(bool)arg1;
+- (bool)shouldAutoPlay;
+- (bool)shouldShowMuteButton;
 - (void)showMuteButton;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tapRecognized:(id)arg1;
 - (void)updateMuteButtonImage;
-- (BOOL)usesSharedAudioSession;
+- (bool)usesSharedAudioSession;
 - (id)video;
 
 @end

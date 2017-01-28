@@ -7,29 +7,29 @@
         unsigned int timestamp : 1; 
         unsigned int isInTddMode : 1; 
     }  _has;
-    BOOL  _isInTddMode;
+    bool  _isInTddMode;
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasIsInTddMode;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL isInTddMode;
+@property (nonatomic) bool hasIsInTddMode;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool isInTddMode;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIsInTddMode;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isInTddMode;
+- (bool)hasIsInTddMode;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isInTddMode;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIsInTddMode:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setIsInTddMode:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsInTddMode:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setIsInTddMode:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

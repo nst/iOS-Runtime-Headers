@@ -4,9 +4,9 @@
 
 @interface DKDiagnosticViewController : UIViewController <CXCallObserverDelegate, DKDiagnostic, DKDiagnostic_Internal, NSExtensionRequestHandling> {
     CXCallObserver * _callObserver;
-    BOOL  _cancelled;
+    bool  _cancelled;
     DKDiagnosticContext * _context;
-    BOOL  _finished;
+    bool  _finished;
     NSLock * _finishedLock;
     NSDictionary * _parameters;
     NSDictionary * _predicates;
@@ -15,13 +15,13 @@
 }
 
 @property (nonatomic, retain) CXCallObserver *callObserver;
-@property (getter=isCancelled, nonatomic, readonly) BOOL cancelled;
+@property (getter=isCancelled, nonatomic, readonly) bool cancelled;
 @property (nonatomic, retain) DKDiagnosticContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFinished, nonatomic) BOOL finished;
+@property (getter=isFinished, nonatomic) bool finished;
 @property (nonatomic, retain) NSLock *finishedLock;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *parameters;
 @property (nonatomic, readonly) NSDictionary *predicates;
 @property (nonatomic, retain) DKMutableResult *result;
@@ -36,16 +36,16 @@
 - (id)context;
 - (id)finishedLock;
 - (id)init;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
+- (bool)isCancelled;
+- (bool)isFinished;
 - (void)monitorIncomingCall;
 - (id)parameters;
 - (id)predicates;
 - (id)result;
 - (void)setCallObserver:(id)arg1;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setContext:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setFinishedLock:(id)arg1;
 - (void)setResult:(id)arg1;
 - (void)setupWithContext:(id)arg1;

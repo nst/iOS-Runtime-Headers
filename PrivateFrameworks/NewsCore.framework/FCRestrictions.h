@@ -4,29 +4,29 @@
 
 @interface FCRestrictions : NSObject {
     long long  _buildVersionNumber;
-    int  _isExplicitContentAllowedOverride;
-    BOOL  _testing;
+    long long  _isExplicitContentAllowedOverride;
+    bool  _testing;
 }
 
 @property (nonatomic) long long buildVersionNumber;
-@property (nonatomic, readonly) BOOL isExplicitContentAllowed;
-@property (nonatomic) int isExplicitContentAllowedOverride;
-@property (nonatomic) BOOL testing;
+@property (nonatomic, readonly) bool isExplicitContentAllowed;
+@property (nonatomic) long long isExplicitContentAllowedOverride;
+@property (nonatomic) bool testing;
 
 + (long long)integerRepresentationOfShortVersionString:(id)arg1;
 + (id)sharedInstance;
 
 - (long long)buildVersionNumber;
 - (id)init;
-- (BOOL)isContentBlockedInStorefrontID:(id)arg1 withAllowedStorefrontIDs:(id)arg2 blockedStorefrontIDs:(id)arg3;
-- (BOOL)isExplicitContentAllowed;
-- (int)isExplicitContentAllowedOverride;
-- (BOOL)isNewsVersionAllowed:(long long)arg1;
+- (bool)isContentBlockedInStorefrontID:(id)arg1 withAllowedStorefrontIDs:(id)arg2 blockedStorefrontIDs:(id)arg3;
+- (bool)isExplicitContentAllowed;
+- (long long)isExplicitContentAllowedOverride;
+- (bool)isNewsVersionAllowed:(long long)arg1;
 - (void)setBuildVersionNumber:(long long)arg1;
-- (void)setIsExplicitContentAllowedOverride:(int)arg1;
-- (void)setTesting:(BOOL)arg1;
+- (void)setIsExplicitContentAllowedOverride:(long long)arg1;
+- (void)setTesting:(bool)arg1;
 - (void)t_startForcingExplicitContentDisallowed;
 - (void)t_stopForcingExplicitContentDisallowed;
-- (BOOL)testing;
+- (bool)testing;
 
 @end

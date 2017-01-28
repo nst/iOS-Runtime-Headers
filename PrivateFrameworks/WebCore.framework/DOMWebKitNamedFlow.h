@@ -6,7 +6,7 @@
 
 @property (readonly) int firstEmptyRegionIndex;
 @property (readonly, copy) NSString *name;
-@property (readonly) BOOL overset;
+@property (readonly) bool overset;
 
 - (void)dealloc;
 - (int)firstEmptyRegionIndex;
@@ -14,6 +14,6 @@
 - (id)getRegions;
 - (id)getRegionsByContent:(id)arg1;
 - (id)name;
-- (BOOL)overset;
+- (bool)overset;
 
 @end

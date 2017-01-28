@@ -3,8 +3,8 @@
  */
 
 @interface UITextInputArrowKeyHistory : NSObject {
-    BOOL  affinityDownstream;
-    int  amount;
+    bool  affinityDownstream;
+    long long  amount;
     int  anchor;
     UITextPosition * cursor;
     UITextPosition * end;
@@ -12,22 +12,22 @@
     UITextPosition * startPosition;
 }
 
-@property (nonatomic) BOOL affinityDownstream;
-@property (nonatomic) int amount;
+@property (nonatomic) bool affinityDownstream;
+@property (nonatomic) long long amount;
 @property (nonatomic) int anchor;
 @property (nonatomic, retain) UITextPosition *cursor;
 @property (nonatomic, retain) UITextPosition *end;
 @property (nonatomic, retain) UITextPosition *start;
 @property (nonatomic, retain) UITextPosition *startPosition;
 
-- (BOOL)affinityDownstream;
-- (int)amount;
+- (bool)affinityDownstream;
+- (long long)amount;
 - (int)anchor;
 - (id)cursor;
 - (void)dealloc;
 - (id)end;
-- (void)setAffinityDownstream:(BOOL)arg1;
-- (void)setAmount:(int)arg1;
+- (void)setAffinityDownstream:(bool)arg1;
+- (void)setAmount:(long long)arg1;
 - (void)setAnchor:(int)arg1;
 - (void)setCursor:(id)arg1;
 - (void)setEnd:(id)arg1;

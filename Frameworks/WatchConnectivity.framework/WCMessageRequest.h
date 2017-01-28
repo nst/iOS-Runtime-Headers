@@ -3,20 +3,20 @@
  */
 
 @interface WCMessageRequest : WCMessage <NSSecureCoding> {
-    BOOL  _expectsResponse;
+    bool  _expectsResponse;
 }
 
-@property BOOL expectsResponse;
+@property bool expectsResponse;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)expectsResponse;
-- (unsigned int)hash;
+- (bool)expectsResponse;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPairingID:(id)arg1 identifier:(id)arg2 data:(id)arg3 dictionaryMessage:(BOOL)arg4 expectsResponse:(BOOL)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (void)setExpectsResponse:(BOOL)arg1;
+- (id)initWithPairingID:(id)arg1 identifier:(id)arg2 data:(id)arg3 dictionaryMessage:(bool)arg4 expectsResponse:(bool)arg5;
+- (bool)isEqual:(id)arg1;
+- (void)setExpectsResponse:(bool)arg1;
 
 @end

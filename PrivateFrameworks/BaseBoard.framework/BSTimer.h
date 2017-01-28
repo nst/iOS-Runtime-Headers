@@ -3,32 +3,36 @@
  */
 
 @interface BSTimer : NSObject {
-    unsigned int  _fireCount;
+    NSObject<OS_dispatch_queue> * _callOutQueue;
+    unsigned long long  _fireCount;
     double  _fireInterval;
-    id /* block */  _handler;
+    id  _handler;
     double  _leewayInterval;
+    bool  _oneShot;
     NSObject<OS_dispatch_queue> * _queue;
     double  _repeatInterval;
-    BOOL  _scheduled;
+    bool  _scheduled;
     BSDispatchSource * _source;
     double  _startTime;
 }
 
-@property (nonatomic, readonly) unsigned int fireCount;
+@property (nonatomic, readonly) unsigned long long fireCount;
 @property (nonatomic, readonly) double fireInterval;
 @property (nonatomic, readonly) double repeatInterval;
-@property (getter=isScheduled, nonatomic, readonly) BOOL scheduled;
+@property (getter=isScheduled, nonatomic, readonly) bool scheduled;
 @property (nonatomic, readonly) double startTime;
 
-+ (id)scheduledTimerWithFireInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
++ (id)scheduledTimerWithFireInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
 
+- (void)_queue_cancel;
+- (void)_queue_noteTimerFired;
 - (void)cancel;
 - (void)dealloc;
-- (unsigned int)fireCount;
+- (unsigned long long)fireCount;
 - (double)fireInterval;
-- (id)initWithFireInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
-- (id)initWithFireInterval:(double)arg1 repeatInterval:(double)arg2 leewayInterval:(double)arg3 queue:(id)arg4 handler:(id /* block */)arg5;
-- (BOOL)isScheduled;
+- (id)initWithFireInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
+- (id)initWithFireInterval:(double)arg1 repeatInterval:(double)arg2 leewayInterval:(double)arg3 queue:(id)arg4 handler:(id)arg5;
+- (bool)isScheduled;
 - (double)repeatInterval;
 - (void)schedule;
 - (double)startTime;

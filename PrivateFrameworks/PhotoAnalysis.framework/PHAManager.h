@@ -20,30 +20,30 @@
 @property (retain) NSURL *libraryURL;
 @property (retain) NSDictionary *photoAnalysisWorkersByType;
 @property (retain) PHPhotoLibrary *photoLibrary;
-@property (getter=isQuiescent, readonly) BOOL quiescent;
-@property (getter=isTurboMode, readonly) BOOL turboMode;
+@property (getter=isQuiescent, readonly) bool quiescent;
+@property (getter=isTurboMode, readonly) bool turboMode;
 
 + (id)allWorkerClasses;
-+ (void)enumerateWorkerClassesUsingBlock:(id /* block */)arg1;
++ (void)enumerateWorkerClassesUsingBlock:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)backgroundActivityDidBegin;
 - (id)changeListener;
 - (void)checkForQuiescence;
 - (id)description;
-- (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(id /* block */)arg2;
-- (void)enumerateWorkersUsingBlock:(id /* block */)arg1;
+- (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(id)arg2;
+- (void)enumerateWorkersUsingBlock:(id)arg1;
 - (id)executiveStateQueue;
 - (id)faceProcessingServiceWorker;
 - (id)graphServiceWorker;
 - (id)init;
 - (id)initWithPhotoLibraryURL:(id)arg1 executiveStateQueue:(id)arg2 delegate:(id)arg3;
-- (BOOL)isQuiescent;
-- (BOOL)isTurboMode;
+- (bool)isQuiescent;
+- (bool)isTurboMode;
 - (id)jobCoordinator;
 - (id)libraryURL;
 - (id)monitoring;
-- (void)notifyPhotoLibraryOpenedWithContext:(id)arg1 reply:(id /* block */)arg2;
+- (void)notifyPhotoLibraryOpenedWithContext:(id)arg1 reply:(id)arg2;
 - (id)photoAnalysisWorkersByType;
 - (id)photoLibrary;
 - (id)sceneClassificationServiceWorker;

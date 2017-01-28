@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)canEditAnimations;
+- (bool)canEditAnimations;
 - (NSSet *)inspectableAttributes;
 
 @end

@@ -15,9 +15,9 @@
 - (void).cxx_destruct;
 - (id)clientAPIBaseURLString;
 - (id)eventRelayBaseURLString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithClientAPIBaseURLString:(id)arg1 eventRelayBaseURLString:(id)arg2 notificationsBaseURLString:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)notificationsBaseURLString;
 
 @end

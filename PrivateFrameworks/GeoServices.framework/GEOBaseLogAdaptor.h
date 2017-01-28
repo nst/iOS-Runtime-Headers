@@ -10,16 +10,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)acceptsLogMessageOfType:(int)arg1 subType:(int)arg2;
+- (bool)acceptsLogMessageOfType:(int)arg1 subType:(int)arg2;
 - (id)adaptorQueue;
 - (void)addSupportForLogMessageType:(int)arg1 subType:(int)arg2;
 - (void)dealloc;
 - (void)flushLogs;
 - (id)init;
-- (BOOL)isLogFrameworkAdaptor;
+- (bool)isLogFrameworkAdaptor;
 - (void)queueLogMessage:(id)arg1;
 - (void)removeSupportForLogMessageType:(int)arg1 subType:(int)arg2;
 

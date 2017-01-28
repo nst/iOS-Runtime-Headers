@@ -4,22 +4,22 @@
 
 @interface LPiTunesMediaURLComponents : NSObject {
     NSString * _identifier;
-    int  _itemType;
+    long long  _itemType;
     NSString * _storefrontCountryCode;
 }
 
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (nonatomic, readonly) int itemType;
+@property (nonatomic, readonly) long long itemType;
 @property (nonatomic, readonly, copy) NSString *storefrontCountryCode;
 
 + (id)identifierFromQueryItems:(id)arg1 pathComponent:(id)arg2;
-+ (int)itemTypeFromPathComponent:(id)arg1;
++ (long long)itemTypeFromPathComponent:(id)arg1;
 + (id)storefrontCountryCodeFromPathComponent:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)identifier;
 - (id)initWithURL:(id)arg1;
-- (int)itemType;
+- (long long)itemType;
 - (id)storefrontCountryCode;
 
 @end

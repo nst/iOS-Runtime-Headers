@@ -4,28 +4,28 @@
 
 @interface _UIMotionEffectFocusEventProvider : _UIMotionEffectEventProvider {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _focusPosition;
-    BOOL  _isGeneratingEvents;
+    bool  _isGeneratingEvents;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _lastReportedPosition;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } focusPosition;
+@property (nonatomic) struct CGPoint { double x1; double x2; } focusPosition;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)sharedInstance;
 
 - (id)currentEvent;
-- (struct CGPoint { float x1; float x2; })focusPosition;
+- (struct CGPoint { double x1; double x2; })focusPosition;
 - (id)init;
-- (void)setFocusPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFocusPosition:(struct CGPoint { double x1; double x2; })arg1;
 - (void)startGeneratingEvents;
 - (void)stopGeneratingEvents;
-- (BOOL)wantsSynchronizedUpdates;
+- (bool)wantsSynchronizedUpdates;
 
 @end

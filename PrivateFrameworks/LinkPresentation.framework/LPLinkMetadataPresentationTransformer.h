@@ -4,41 +4,41 @@
 
 @interface LPLinkMetadataPresentationTransformer : NSObject {
     NSURL * _URL;
-    BOOL  _allowsTapToLoad;
-    BOOL  _complete;
-    BOOL  _forceMiniStyle;
+    bool  _allowsTapToLoad;
+    bool  _complete;
+    bool  _forceMiniStyle;
     LPLinkMetadata * _metadata;
 }
 
 @property (nonatomic, copy) NSURL *URL;
-@property (nonatomic) BOOL allowsTapToLoad;
+@property (nonatomic) bool allowsTapToLoad;
 @property (nonatomic, readonly, copy) NSURL *canonicalURL;
-@property (getter=isComplete, nonatomic) BOOL complete;
-@property (nonatomic) BOOL forceMiniStyle;
+@property (getter=isComplete, nonatomic) bool complete;
+@property (nonatomic) bool forceMiniStyle;
 @property (nonatomic, copy) LPLinkMetadata *metadata;
 @property (nonatomic, readonly, copy) NSURL *originalURL;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (BOOL)allowsTapToLoad;
-- (id)backgroundColorForStyle:(int)arg1;
-- (id)bottomCaptionForStyle:(int)arg1;
+- (bool)allowsTapToLoad;
+- (id)backgroundColorForStyle:(long long)arg1;
+- (id)bottomCaptionForStyle:(long long)arg1;
 - (id)canonicalURL;
-- (BOOL)forceMiniStyle;
-- (id)imageForStyle:(int)arg1 icon:(id*)arg2;
-- (BOOL)isComplete;
-- (id)mainCaptionBarForStyle:(int)arg1;
+- (bool)forceMiniStyle;
+- (id)imageForStyle:(long long)arg1 icon:(id*)arg2;
+- (bool)isComplete;
+- (id)mainCaptionBarForStyle:(long long)arg1;
 - (id)metadata;
 - (id)originalURL;
 - (id)presentationProperties;
-- (id)quotedTextForStyle:(int)arg1;
-- (int)rendererStyle;
-- (void)setAllowsTapToLoad:(BOOL)arg1;
-- (void)setComplete:(BOOL)arg1;
-- (void)setForceMiniStyle:(BOOL)arg1;
+- (id)quotedTextForStyle:(long long)arg1;
+- (long long)rendererStyle;
+- (void)setAllowsTapToLoad:(bool)arg1;
+- (void)setComplete:(bool)arg1;
+- (void)setForceMiniStyle:(bool)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setURL:(id)arg1;
-- (id)topCaptionForStyle:(int)arg1;
-- (id)videoForStyle:(int)arg1;
+- (id)topCaptionForStyle:(long long)arg1;
+- (id)videoForStyle:(long long)arg1;
 
 @end

@@ -3,21 +3,21 @@
  */
 
 @interface STSetting : STSiriModelObject {
-    int  _type;
+    long long  _type;
     id  _value;
 }
 
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 @property (nonatomic, retain) id value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setValue:(id)arg1;
-- (int)type;
+- (long long)type;
 - (id)value;
 
 @end

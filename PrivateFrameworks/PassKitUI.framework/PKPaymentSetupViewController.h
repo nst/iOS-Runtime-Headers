@@ -4,28 +4,28 @@
 
 @interface PKPaymentSetupViewController : UIViewController <PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupPrivacyFooterViewDelegate> {
     ACAccountStore * _accountStore;
-    BOOL  _allowsManualEntry;
-    int  _context;
+    bool  _allowsManualEntry;
+    long long  _context;
     <PKPaymentSetupViewControllerDelegate> * _delegate;
-    BOOL  _hideSetupLater;
-    BOOL  _nextButtonPushed;
-    int  _paymentSetupMode;
+    bool  _hideSetupLater;
+    bool  _nextButtonPushed;
+    long long  _paymentSetupMode;
     PKPaymentProvisioningController * _provisioningController;
     PKPaymentSetupIntroView * _splashView;
 }
 
-@property (nonatomic) BOOL allowsManualEntry;
-@property (nonatomic) int context;
+@property (nonatomic) bool allowsManualEntry;
+@property (nonatomic) long long context;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentSetupViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int paymentSetupMode;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long paymentSetupMode;
 @property (nonatomic, readonly, retain) PKPaymentProvisioningController *provisioningController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) PKPaymentWebService *webService;
 
-+ (id)configuredManualProvisioningViewControllerForProduct:(id)arg1 provisioningController:(id)arg2 context:(int)arg3 delegate:(id)arg4;
++ (id)configuredManualProvisioningViewControllerForProduct:(id)arg1 provisioningController:(id)arg2 context:(long long)arg3 delegate:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)_actionViewControllerForAssociatedCredentials:(id)arg1 product:(id)arg2;
@@ -35,27 +35,27 @@
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (id)_filteredPaymentSetupProductsForFlowPicker:(id)arg1;
 - (id)_flowPicker;
-- (void)_flowPicker:(id)arg1 didSelectProducts:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_flowPicker:(id)arg1 didSelectProducts:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)_next:(id)arg1;
-- (void)_productSelectionViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)_pushNextActionViewController:(id)arg1 withCompletion:(id /* block */)arg2;
-- (BOOL)allowsManualEntry;
-- (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_productSelectionViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)_pushNextActionViewController:(id)arg1 withCompletion:(id)arg2;
+- (bool)allowsManualEntry;
+- (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id)arg3;
 - (id)configuredNextActionViewController;
-- (int)context;
+- (long long)context;
 - (id)delegate;
-- (unsigned int)edgesForExtendedLayout;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 delegate:(id)arg3;
+- (unsigned long long)edgesForExtendedLayout;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 delegate:(id)arg3;
 - (void)loadView;
-- (int)paymentSetupMode;
+- (long long)paymentSetupMode;
 - (void)privacyFooterLinkTapped:(id)arg1;
 - (id)provisioningController;
-- (void)setAllowsManualEntry:(BOOL)arg1;
-- (void)setContext:(int)arg1;
+- (void)setAllowsManualEntry:(bool)arg1;
+- (void)setContext:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPaymentSetupMode:(int)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)setPaymentSetupMode:(long long)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)webService;

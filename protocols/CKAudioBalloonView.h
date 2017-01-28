@@ -6,15 +6,15 @@
 @required
 
 - (double)duration;
-- (BOOL)isPlayed;
-- (BOOL)isPlaying;
+- (bool)isPlayed;
+- (bool)isPlaying;
 - (void)setDuration:(double)arg1;
-- (void)setPlayed:(BOOL)arg1;
-- (void)setPlaying:(BOOL)arg1;
+- (void)setPlayed:(bool)arg1;
+- (void)setPlaying:(bool)arg1;
 - (void)setTime:(double)arg1;
 - (void)setWaveform:(UIImage *)arg1;
-- (void)setWaveformContentMode:(int)arg1;
+- (void)setWaveformContentMode:(long long)arg1;
 - (double)time;
-- (int)waveformContentMode;
+- (long long)waveformContentMode;
 
 @end

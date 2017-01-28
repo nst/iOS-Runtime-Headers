@@ -4,6 +4,6 @@
 
 @interface MPImageQuality : NSObject
 
-+ (float)computeImageQuality:(struct vImage_Buffer { void *x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1 forCriteria:(id)arg2 error:(id*)arg3;
++ (float)computeImageQuality:(struct vImage_Buffer { void *x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; }*)arg1 forCriteria:(id)arg2 error:(id*)arg3;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface BLSleepAssertionManager : NSObject {
-    int  m_assertionCount;
+    long long  m_assertionCount;
     int  m_assertionLock;
     NSObject<OS_dispatch_semaphore> * m_assertionSemaphore;
-    int  m_idleCount;
+    long long  m_idleCount;
     int  m_idleLock;
-    BOOL  m_waiting;
+    bool  m_waiting;
 }
 
 + (id)sharedInstance;

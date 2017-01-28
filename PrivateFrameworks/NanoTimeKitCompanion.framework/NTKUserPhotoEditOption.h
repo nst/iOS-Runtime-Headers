@@ -3,23 +3,23 @@
  */
 
 @interface NTKUserPhotoEditOption : NTKEditOption {
-    BOOL  _usesDefaultPhoto;
+    bool  _usesDefaultPhoto;
 }
 
-@property (nonatomic) BOOL usesDefaultPhoto;
+@property (nonatomic) bool usesDefaultPhoto;
 
-+ (id)optionUsingDefaultPhoto:(BOOL)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)optionUsingDefaultPhoto:(bool)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)JSONObjectRepresentation;
 - (id)dailySnapshotKey;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithJSONObjectRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValidOption;
-- (void)setUsesDefaultPhoto:(BOOL)arg1;
-- (BOOL)usesDefaultPhoto;
+- (bool)isEqual:(id)arg1;
+- (bool)isValidOption;
+- (void)setUsesDefaultPhoto:(bool)arg1;
+- (bool)usesDefaultPhoto;
 
 @end

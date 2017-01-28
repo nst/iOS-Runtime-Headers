@@ -11,12 +11,12 @@
     NSString * _transactionIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasInstrumentName;
-@property (nonatomic, readonly) BOOL hasNetwork;
-@property (nonatomic, readonly) BOOL hasPaymentData;
-@property (nonatomic, readonly) BOOL hasPaymentMethod;
-@property (nonatomic, readonly) BOOL hasRedeemURL;
-@property (nonatomic, readonly) BOOL hasTransactionIdentifier;
+@property (nonatomic, readonly) bool hasInstrumentName;
+@property (nonatomic, readonly) bool hasNetwork;
+@property (nonatomic, readonly) bool hasPaymentData;
+@property (nonatomic, readonly) bool hasPaymentMethod;
+@property (nonatomic, readonly) bool hasRedeemURL;
+@property (nonatomic, readonly) bool hasTransactionIdentifier;
 @property (nonatomic, retain) NSString *instrumentName;
 @property (nonatomic, retain) NSString *network;
 @property (nonatomic, retain) NSData *paymentData;
@@ -29,20 +29,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInstrumentName;
-- (BOOL)hasNetwork;
-- (BOOL)hasPaymentData;
-- (BOOL)hasPaymentMethod;
-- (BOOL)hasRedeemURL;
-- (BOOL)hasTransactionIdentifier;
-- (unsigned int)hash;
+- (bool)hasInstrumentName;
+- (bool)hasNetwork;
+- (bool)hasPaymentData;
+- (bool)hasPaymentMethod;
+- (bool)hasRedeemURL;
+- (bool)hasTransactionIdentifier;
+- (unsigned long long)hash;
 - (id)instrumentName;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)network;
 - (id)paymentData;
 - (id)paymentMethod;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)redeemURL;
 - (void)setInstrumentName:(id)arg1;
 - (void)setNetwork:(id)arg1;

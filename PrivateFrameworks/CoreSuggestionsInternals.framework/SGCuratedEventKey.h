@@ -9,19 +9,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *externalId;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (bool)isSupportedEntityType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)externalId;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithExternalId:(id)arg1;
 - (id)initWithSerialized:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToCuratedEventKey:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToCuratedEventKey:(id)arg1;
 - (id)serialize;
 
 @end

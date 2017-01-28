@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)port;
 - (void)setIdentifier:(id)arg1;
 - (void)setPort:(unsigned int)arg1;

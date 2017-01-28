@@ -16,7 +16,7 @@
 - (id)_localGenerationIdentifierFullPath;
 - (id)_parentContentsMetadataForChildAtRelativePath:(id)arg1;
 - (id)contents;
-- (BOOL)isDropBox;
+- (bool)isDropBox;
 - (id)localItems;
 
 @end

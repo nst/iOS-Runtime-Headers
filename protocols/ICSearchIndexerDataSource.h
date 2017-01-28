@@ -7,8 +7,8 @@
 
 - (NSArray *)allSearchableItems;
 - (NSString *)dataSourceIdentifier;
-- (BOOL)isObservingChanges;
-- (BOOL)needsReindexing;
+- (bool)isObservingChanges;
+- (bool)needsReindexing;
 - (<ICSearchIndexable> *)objectForSearchableItem:(CSSearchableItem *)arg1 context:(NSManagedObjectContext *)arg2;
 - (<ICSearchIndexable> *)objectForSearchableItemIdentifier:(NSString *)arg1 context:(NSManagedObjectContext *)arg2;
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;

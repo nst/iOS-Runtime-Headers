@@ -3,20 +3,20 @@
  */
 
 @interface TSKSharingState : NSObject <NSCopying> {
-    BOOL  _shared;
+    bool  _shared;
 }
 
-@property (nonatomic, readonly) BOOL shared;
+@property (nonatomic, readonly) bool shared;
 
 + (id)notSharedSharingState;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithShared:(BOOL)arg1 shareIdentifier:(struct NSObject { Class x1; }*)arg2;
-- (id)initWithShared:(BOOL)arg1 sharedToMe:(BOOL)arg2 ownerName:(id)arg3;
-- (id)initWithShared:(BOOL)arg1 sharedToMe:(BOOL)arg2 ownerName:(id)arg3 readOnlyPublicPermissions:(BOOL)arg4 readOnlyUserPermissions:(BOOL)arg5;
+- (id)initWithShared:(bool)arg1 shareIdentifier:(struct NSObject { Class x1; }*)arg2;
+- (id)initWithShared:(bool)arg1 sharedToMe:(bool)arg2 ownerName:(id)arg3;
+- (id)initWithShared:(bool)arg1 sharedToMe:(bool)arg2 ownerName:(id)arg3 readOnlyPublicPermissions:(bool)arg4 readOnlyUserPermissions:(bool)arg5;
 - (id)initWithSharingState:(id)arg1;
-- (BOOL)shared;
+- (bool)shared;
 
 @end

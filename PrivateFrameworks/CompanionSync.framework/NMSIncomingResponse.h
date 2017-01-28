@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *idsIdentifier;
 @property (nonatomic) unsigned short messageID;
 @property (nonatomic, retain) id pbResponse;

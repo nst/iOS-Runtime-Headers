@@ -7,7 +7,7 @@
     PLEntryNotificationOperatorComposition * _batteryLevelChanged;
     NSDate * _currentCachedDate;
     double  _currentCachedTotalCPUTime;
-    BOOL  _firstBoot;
+    bool  _firstBoot;
     PLMonotonicTimer * _logTimer;
     NSDate * _previousCacheDate;
     NSMutableSet * _processes;
@@ -17,7 +17,7 @@
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
 @property (retain) NSDate *currentCachedDate;
 @property double currentCachedTotalCPUTime;
-@property BOOL firstBoot;
+@property bool firstBoot;
 @property (retain) PLMonotonicTimer *logTimer;
 @property (retain) NSDate *previousCacheDate;
 @property (retain) NSMutableSet *processes;
@@ -29,6 +29,7 @@
 + (id)entryEventForwardDefinitions;
 + (id)entryEventForwardProcessID;
 + (id)entryEventIntervalDefinitionProcessMonitorDiff;
++ (id)entryEventIntervalDefinitionQoSUsage;
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
@@ -40,13 +41,15 @@
 - (id)batteryLevelChanged;
 - (id)currentCachedDate;
 - (double)currentCachedTotalCPUTime;
+- (void)debugProcessMonitorAgent;
 - (id)eventForwardProcessIDForPID:(int)arg1;
-- (BOOL)firstBoot;
+- (void)fillQoSTime:(unsigned long long)arg1 withEntry:(id)arg2 withCPUTimeKey:(id)arg3 withCPUTimeDiffKey:(id)arg4;
+- (bool)firstBoot;
 - (void)getCpuUsageForPid:(int)arg1 withBuffer:(void*)arg2 withNewProcessArray:(id)arg3 withTotalCpu:(double*)arg4 withActiveProcesses:(id)arg5;
 - (id)init;
 - (void)initOperatorDependancies;
-- (BOOL)isCachedForProcessID:(int)arg1;
-- (BOOL)isCachedForProcessID:(int)arg1 andName:(id)arg2;
+- (bool)isCachedForProcessID:(int)arg1;
+- (bool)isCachedForProcessID:(int)arg1 andName:(id)arg2;
 - (void)log;
 - (void)logEventBackwardProcessMonitor;
 - (void)logEventBackwardProcessMonitorUsingCache;
@@ -62,7 +65,7 @@
 - (void)setBatteryLevelChanged:(id)arg1;
 - (void)setCurrentCachedDate:(id)arg1;
 - (void)setCurrentCachedTotalCPUTime:(double)arg1;
-- (void)setFirstBoot:(BOOL)arg1;
+- (void)setFirstBoot:(bool)arg1;
 - (void)setLogTimer:(id)arg1;
 - (void)setPreviousCacheDate:(id)arg1;
 - (void)setProcesses:(id)arg1;

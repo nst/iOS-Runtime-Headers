@@ -14,11 +14,11 @@
 @property (nonatomic, readonly, copy) NSNumber *imageWidth;
 @property (nonatomic, readonly, copy) HMDVideoResolution *videoResolution;
 
-+ (BOOL)supportsSecureCoding;
-+ (BOOL)translateImageResolution:(id)arg1 imageWidth:(id*)arg2 imageHeight:(id*)arg3;
++ (bool)supportsSecureCoding;
++ (bool)translateImageResolution:(id)arg1 imageWidth:(id*)arg2 imageHeight:(id*)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)framerate;

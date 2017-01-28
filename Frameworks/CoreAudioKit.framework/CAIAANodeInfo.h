@@ -8,14 +8,14 @@
 }
 
 @property (retain) UIColor *labelColor;
-@property (readonly) unsigned int numNodes;
+@property (readonly) unsigned long long numNodes;
 
 - (void)createNodeList;
 - (id)init;
 - (id)labelColor;
-- (id)nodeAtIndex:(unsigned int)arg1;
+- (id)nodeAtIndex:(unsigned long long)arg1;
 - (id)nodeWithNodeInfo:(id)arg1;
-- (unsigned int)numNodes;
+- (unsigned long long)numNodes;
 - (void)refresh;
 - (void)setLabelColor:(id)arg1;
 

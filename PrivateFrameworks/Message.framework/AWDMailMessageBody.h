@@ -11,9 +11,9 @@
     unsigned long long  _totalTextSize;
 }
 
-@property (nonatomic, readonly) BOOL hasMimeSubtype;
-@property (nonatomic, readonly) BOOL hasMimeType;
-@property (nonatomic) BOOL hasTotalTextSize;
+@property (nonatomic, readonly) bool hasMimeSubtype;
+@property (nonatomic, readonly) bool hasMimeType;
+@property (nonatomic) bool hasTotalTextSize;
 @property (nonatomic, retain) NSString *mimeSubtype;
 @property (nonatomic, retain) NSString *mimeType;
 @property (nonatomic) unsigned long long totalTextSize;
@@ -23,17 +23,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMimeSubtype;
-- (BOOL)hasMimeType;
-- (BOOL)hasTotalTextSize;
-- (unsigned int)hash;
+- (bool)hasMimeSubtype;
+- (bool)hasMimeType;
+- (bool)hasTotalTextSize;
+- (unsigned long long)hash;
 - (id)initWithMIMEBody:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)mimeSubtype;
 - (id)mimeType;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTotalTextSize:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTotalTextSize:(bool)arg1;
 - (void)setMimeSubtype:(id)arg1;
 - (void)setMimeType:(id)arg1;
 - (void)setTotalTextSize:(unsigned long long)arg1;

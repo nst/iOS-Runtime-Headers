@@ -20,10 +20,10 @@
 - (id)client;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithType:(id)arg1 term:(id)arg2 client:(id)arg3 score:(double)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToFeature:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToFeature:(id)arg1;
 - (double)score;
 - (id)term;
 - (id)type;

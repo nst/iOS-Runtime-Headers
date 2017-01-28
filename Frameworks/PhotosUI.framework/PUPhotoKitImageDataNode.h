@@ -6,37 +6,37 @@
     PHAsset * _asset;
     NSData * _imageData;
     NSURL * _imageDataURL;
-    int  _imageExifOrientation;
+    long long  _imageExifOrientation;
     int  _requestID;
-    int  _version;
+    long long  _version;
 }
 
 @property (nonatomic, readonly) PHAsset *asset;
-@property (getter=isCanceled, readonly) BOOL canceled;
-@property (getter=isComplete, readonly) BOOL complete;
+@property (getter=isCanceled, readonly) bool canceled;
+@property (getter=isComplete, readonly) bool complete;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXRunNodeDelegate> *delegate;
 @property (nonatomic, readonly, copy) NSArray *dependencies;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSData *imageData;
 @property (nonatomic, readonly) NSURL *imageDataURL;
-@property (nonatomic, readonly) int imageExifOrientation;
-@property (getter=isRunning, readonly) BOOL running;
-@property (readonly) unsigned int state;
+@property (nonatomic, readonly) long long imageExifOrientation;
+@property (getter=isRunning, readonly) bool running;
+@property (readonly) unsigned long long state;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int version;
-@property (getter=isWaiting, readonly) BOOL waiting;
+@property (nonatomic, readonly) long long version;
+@property (getter=isWaiting, readonly) bool waiting;
 
 - (void).cxx_destruct;
-- (void)_handleLoadedImageData:(id)arg1 imageOrientation:(int)arg2 info:(id)arg3;
+- (void)_handleLoadedImageData:(id)arg1 imageOrientation:(long long)arg2 info:(id)arg3;
 - (id)asset;
 - (void)didCancel;
 - (id)imageData;
 - (id)imageDataURL;
-- (int)imageExifOrientation;
-- (id)initWithAsset:(id)arg1 version:(int)arg2;
+- (long long)imageExifOrientation;
+- (id)initWithAsset:(id)arg1 version:(long long)arg2;
 - (void)run;
-- (int)version;
+- (long long)version;
 
 @end

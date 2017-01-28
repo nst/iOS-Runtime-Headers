@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSArray *services;
 @property (nonatomic, retain) NSString *title;
 
-+ (id)upgradeOfferPageSpecificationSampleForLevel:(int)arg1;
++ (id)upgradeOfferPageSpecificationSampleForLevel:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)debugDescription;

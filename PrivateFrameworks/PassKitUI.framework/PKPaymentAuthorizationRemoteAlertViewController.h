@@ -3,9 +3,9 @@
  */
 
 @interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentAuthorizationHostProtocol> {
-    BOOL  _didForceDismiss;
+    bool  _didForceDismiss;
     PKPaymentAuthorizationRemoteAlertViewControllerExportedObject * _exportedObject;
-    int  _hostAppInterfaceOrientation;
+    long long  _hostAppInterfaceOrientation;
     NSString * _hostApplicationIdentifier;
     NSXPCConnection * _hostConnection;
     PKInAppPaymentService * _inAppPaymentService;
@@ -16,20 +16,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PKPaymentAuthorizationRemoteAlertViewControllerExportedObject *exportedObject;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSXPCConnection *hostConnection;
 @property (nonatomic, retain) PKInAppPaymentService *inAppPaymentService;
 @property (nonatomic, retain) PKPaymentAuthorizationServiceNavigationController *navigationController;
 @property (nonatomic, retain) PKPaymentRequest *paymentRequest;
 @property (readonly) Class superclass;
 
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (void)_dismiss;
 - (void)_forceDismiss;
 - (id)_remoteObjectProxy;
-- (BOOL)_shouldRemoveViewFromHierarchyOnDisappear;
+- (bool)_shouldRemoveViewFromHierarchyOnDisappear;
 - (void)_willAppearInRemoteViewController;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
 - (void)authorizationDidAuthorizePurchase:(id)arg1;
@@ -54,10 +54,10 @@
 - (void)setNavigationController:(id)arg1;
 - (void)setPaymentRequest:(id)arg1;
 - (void)setUserInfo:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

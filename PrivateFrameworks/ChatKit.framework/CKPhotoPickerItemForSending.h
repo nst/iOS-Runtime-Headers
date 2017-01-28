@@ -6,19 +6,19 @@
     NSURL * _assetURL;
     <CKPhotoPickerItemForSendingDelegate> * _delegate;
     NSURL * _extraVideoURL;
-    BOOL  _isVideo;
+    bool  _isVideo;
     NSURL * _localURL;
     NSObject<OS_dispatch_semaphore> * _outstandingWork;
-    BOOL  _sendIris;
+    bool  _sendIris;
     UIImage * _thumbnail;
 }
 
 @property (nonatomic, readonly) NSURL *assetURL;
 @property (nonatomic) <CKPhotoPickerItemForSendingDelegate> *delegate;
 @property (nonatomic, retain) NSURL *extraVideoURL;
-@property (nonatomic, readonly) BOOL isVideo;
+@property (nonatomic, readonly) bool isVideo;
 @property (nonatomic, readonly) NSURL *localURL;
-@property (nonatomic) BOOL sendIris;
+@property (nonatomic) bool sendIris;
 @property (retain) UIImage *thumbnail;
 
 - (void).cxx_destruct;
@@ -28,14 +28,14 @@
 - (id)delegate;
 - (id)description;
 - (id)extraVideoURL;
-- (id)initWithAssetURL:(id)arg1 isVideo:(BOOL)arg2;
+- (id)initWithAssetURL:(id)arg1 isVideo:(bool)arg2;
 - (id)initWithImageManager:(id)arg1 asset:(id)arg2 delegate:(id)arg3;
-- (BOOL)isVideo;
+- (bool)isVideo;
 - (id)localURL;
-- (BOOL)sendIris;
+- (bool)sendIris;
 - (void)setDelegate:(id)arg1;
 - (void)setExtraVideoURL:(id)arg1;
-- (void)setSendIris:(BOOL)arg1;
+- (void)setSendIris:(bool)arg1;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;
 - (void)waitForOutstandingWork;

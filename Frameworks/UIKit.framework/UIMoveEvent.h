@@ -3,18 +3,18 @@
  */
 
 @interface UIMoveEvent : UIEvent {
-    unsigned int  _focusHeading;
-    int  _moveDirection;
+    unsigned long long  _focusHeading;
+    long long  _moveDirection;
 }
 
-@property (setter=_setFocusHeading:, nonatomic) unsigned int _focusHeading;
-@property (setter=_setMoveDirection:, nonatomic) int _moveDirection;
+@property (setter=_setFocusHeading:, nonatomic) unsigned long long _focusHeading;
+@property (setter=_setMoveDirection:, nonatomic) long long _moveDirection;
 
-- (unsigned int)_focusHeading;
-- (int)_moveDirection;
+- (unsigned long long)_focusHeading;
+- (long long)_moveDirection;
 - (void)_sendEventToResponder:(id)arg1;
-- (void)_setFocusHeading:(unsigned int)arg1;
-- (void)_setMoveDirection:(int)arg1;
-- (int)type;
+- (void)_setFocusHeading:(unsigned long long)arg1;
+- (void)_setMoveDirection:(long long)arg1;
+- (long long)type;
 
 @end

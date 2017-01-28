@@ -4,8 +4,8 @@
 
 @interface MTLIOAccelBlitCommandEncoder : MTLIOAccelCommandEncoder
 
-- (unsigned int)getType;
+- (unsigned long long)getType;
 - (void)synchronizeResource:(id)arg1;
-- (void)synchronizeTexture:(id)arg1 slice:(unsigned int)arg2 level:(unsigned int)arg3;
+- (void)synchronizeTexture:(id)arg1 slice:(unsigned long long)arg2 level:(unsigned long long)arg3;
 
 @end

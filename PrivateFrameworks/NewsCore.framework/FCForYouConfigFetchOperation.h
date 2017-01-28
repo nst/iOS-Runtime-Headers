@@ -6,25 +6,25 @@
     NSArray * _configIDs;
     NSArray * _configs;
     <FCContentContext> * _context;
-    BOOL  _shouldDownloadAssets;
+    bool  _shouldDownloadAssets;
 }
 
 @property (nonatomic, readonly) NSArray *configIDs;
 @property (nonatomic, retain) NSArray *configs;
 @property (nonatomic, retain) <FCContentContext> *context;
-@property (nonatomic) BOOL shouldDownloadAssets;
+@property (nonatomic) bool shouldDownloadAssets;
 
 - (void).cxx_destruct;
 - (id)completeFetchOperation;
 - (id)configIDs;
 - (id)configs;
 - (id)context;
-- (id)fetchForYouRecordWithCompletion:(id /* block */)arg1;
+- (id)fetchForYouRecordWithCompletion:(id)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1 configIDs:(id)arg2;
 - (void)setConfigs:(id)arg1;
 - (void)setContext:(id)arg1;
-- (void)setShouldDownloadAssets:(BOOL)arg1;
-- (BOOL)shouldDownloadAssets;
+- (void)setShouldDownloadAssets:(bool)arg1;
+- (bool)shouldDownloadAssets;
 
 @end

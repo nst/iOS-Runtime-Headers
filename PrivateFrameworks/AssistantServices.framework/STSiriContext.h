@@ -6,7 +6,7 @@
     NSArray * _modelObjects;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceValue;

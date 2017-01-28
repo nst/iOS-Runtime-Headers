@@ -6,6 +6,6 @@
 @required
 
 - (oneway void)modelDidLoad;
-- (oneway void)networkReachabilityUpdated:(BOOL)arg1;
+- (oneway void)networkReachabilityUpdated:(bool)arg1;
 
 @end

@@ -9,16 +9,16 @@
     struct { 
         unsigned int shouldArchive : 1; 
     }  _has;
-    BOOL  _shouldArchive;
+    bool  _shouldArchive;
 }
 
 @property (nonatomic, retain) NSString *accountId;
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSMutableArray *emails;
-@property (nonatomic, readonly) BOOL hasAccountId;
-@property (nonatomic, readonly) BOOL hasDisplayName;
-@property (nonatomic) BOOL hasShouldArchive;
-@property (nonatomic) BOOL shouldArchive;
+@property (nonatomic, readonly) bool hasAccountId;
+@property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic) bool hasShouldArchive;
+@property (nonatomic) bool shouldArchive;
 
 - (void).cxx_destruct;
 - (id)accountId;
@@ -29,22 +29,22 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (id)emailAtIndex:(unsigned int)arg1;
+- (id)emailAtIndex:(unsigned long long)arg1;
 - (id)emails;
-- (unsigned int)emailsCount;
-- (BOOL)hasAccountId;
-- (BOOL)hasDisplayName;
-- (BOOL)hasShouldArchive;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)emailsCount;
+- (bool)hasAccountId;
+- (bool)hasDisplayName;
+- (bool)hasShouldArchive;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAccountId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEmails:(id)arg1;
-- (void)setHasShouldArchive:(BOOL)arg1;
-- (void)setShouldArchive:(BOOL)arg1;
-- (BOOL)shouldArchive;
+- (void)setHasShouldArchive:(bool)arg1;
+- (void)setShouldArchive:(bool)arg1;
+- (bool)shouldArchive;
 - (void)writeTo:(id)arg1;
 
 @end

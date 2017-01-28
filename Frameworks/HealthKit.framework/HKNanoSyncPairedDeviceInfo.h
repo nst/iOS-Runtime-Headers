@@ -3,13 +3,13 @@
  */
 
 @interface HKNanoSyncPairedDeviceInfo : NSObject <NSCopying> {
-    BOOL  _active;
+    bool  _active;
     int  _protocolVersion;
     NSString * _sourceBundleIdentifier;
     NSString * _systemBuildVersion;
 }
 
-@property (getter=isActive, readonly) BOOL active;
+@property (getter=isActive, readonly) bool active;
 @property (readonly) int protocolVersion;
 @property (readonly, copy) NSString *sourceBundleIdentifier;
 @property (readonly, copy) NSString *systemBuildVersion;
@@ -17,10 +17,10 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithSourceBundleIdentifier:(id)arg1 systemBuildVersion:(id)arg2 active:(BOOL)arg3 protocolVersion:(int)arg4;
-- (BOOL)isActive;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithSourceBundleIdentifier:(id)arg1 systemBuildVersion:(id)arg2 active:(bool)arg3 protocolVersion:(int)arg4;
+- (bool)isActive;
+- (bool)isEqual:(id)arg1;
 - (int)protocolVersion;
 - (id)sourceBundleIdentifier;
 - (id)systemBuildVersion;

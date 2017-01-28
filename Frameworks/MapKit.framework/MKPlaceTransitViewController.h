@@ -3,40 +3,40 @@
  */
 
 @interface MKPlaceTransitViewController : MKTransitDeparturesViewController <MKStackingViewControllerPreferredSizeUse> {
-    BOOL  _analyticsAwaitingMapItemLoad;
-    BOOL  _displayError;
+    bool  _analyticsAwaitingMapItemLoad;
+    bool  _displayError;
     NSString * _errorString;
-    BOOL  _mapItemIsLoading;
+    bool  _mapItemIsLoading;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL mapItemIsLoading;
-@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool mapItemIsLoading;
+@property (nonatomic, readonly) bool requiresPreferredContentSizeInStackingView;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_errorCell;
 - (id)_errorString;
-- (BOOL)_shouldDisplayError;
+- (bool)_shouldDisplayError;
 - (void)errorLoadingMapItem:(id)arg1;
-- (id)initWithMapItem:(id)arg1 allowTransitLineSelection:(BOOL)arg2;
-- (BOOL)mapItemIsLoading;
+- (id)initWithMapItem:(id)arg1 allowTransitLineSelection:(bool)arg2;
+- (bool)mapItemIsLoading;
 - (void)mapItemLoadingResolved;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (BOOL)requiresPreferredContentSizeInStackingView;
-- (void)setMapItemIsLoading:(BOOL)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (bool)requiresPreferredContentSizeInStackingView;
+- (void)setMapItemIsLoading:(bool)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
+- (double)tableView:(id)arg1 estimatedHeightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

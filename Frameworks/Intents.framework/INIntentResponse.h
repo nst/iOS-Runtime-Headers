@@ -4,45 +4,48 @@
 
 @interface INIntentResponse : NSObject <INCacheableContainer, INIntentResponseExport, NSCopying, NSSecureCoding> {
     _INPBIntentResponse * _backingStore;
-    int  _code;
+    long long  _code;
     NSUserActivity * _userActivity;
 }
 
 @property (nonatomic, readonly, copy) _INPBIntentResponse *backingStore;
-@property (nonatomic, readonly) int code;
+@property (nonatomic, readonly) long long code;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldOpenContainingApplication;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldOpenContainingApplication;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUserActivity *userActivity;
 
-+ (BOOL)_appLaunchRequestedFromCode:(int)arg1;
-+ (int)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(BOOL)arg3;
-+ (int)_errorCodeFromCode:(int)arg1;
-+ (int)_intentHandlingStatusFromCode:(int)arg1;
-+ (int)_typeFromCode:(int)arg1;
++ (bool)_appLaunchRequestedFromCode:(long long)arg1;
++ (long long)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(bool)arg3;
++ (int)_errorCodeFromCode:(long long)arg1;
++ (long long)_intentHandlingStatusFromCode:(long long)arg1;
++ (int)_typeFromCode:(long long)arg1;
++ (void)load;
 + (id)responseFailure;
 + (id)responseSuccess;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)_impl;
-- (int)_intentHandlingStatus;
+- (long long)_intentHandlingStatus;
 - (id)_payloadResponseMessageData;
 - (void)_setPayloadResponseMessageData:(id)arg1;
 - (id)backingStore;
 - (id)cacheableObjects;
-- (int)code;
+- (long long)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithBackingStore:(id)arg1;
-- (id)initWithCode:(int)arg1 userActivity:(id)arg2;
+- (id)initWithCode:(long long)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)protoData;
-- (void)setShouldOpenContainingApplication:(BOOL)arg1;
-- (BOOL)shouldOpenContainingApplication;
+- (void)setShouldOpenContainingApplication:(bool)arg1;
+- (bool)shouldOpenContainingApplication;
 - (id)userActivity;
 
 @end

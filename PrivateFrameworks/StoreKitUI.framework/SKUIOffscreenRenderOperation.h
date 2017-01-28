@@ -4,20 +4,20 @@
 
 @interface SKUIOffscreenRenderOperation : NSOperation {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    id /* block */  _createLayerBlock;
+    id  _createLayerBlock;
     UIImage * _outputImage;
 }
 
-@property (nonatomic, copy) id /* block */ createLayerBlock;
+@property (nonatomic, copy) id createLayerBlock;
 @property (nonatomic, readonly) UIImage *outputImage;
 
 + (void)preheatOffscreenRenderOperations;
 
 - (void).cxx_destruct;
-- (id /* block */)createLayerBlock;
+- (id)createLayerBlock;
 - (id)init;
 - (void)main;
 - (id)outputImage;
-- (void)setCreateLayerBlock:(id /* block */)arg1;
+- (void)setCreateLayerBlock:(id)arg1;
 
 @end

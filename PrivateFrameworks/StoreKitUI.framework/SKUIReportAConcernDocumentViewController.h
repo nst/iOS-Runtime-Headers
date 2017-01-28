@@ -5,7 +5,7 @@
 @interface SKUIReportAConcernDocumentViewController : SKUIViewController <SKUIDocumentViewController, SKUIReportAConcernTemplateViewDelegate> {
     NSArray * _concernIdentifiers;
     NSArray * _concernStrings;
-    BOOL  _didSelectConcern;
+    bool  _didSelectConcern;
     SKUIViewElementLayoutContext * _layoutContext;
     SKUIReportAConcernTemplateView * _reportAConcernView;
     SKUIReportAConcernTemplateViewElement * _templateElement;
@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,18 +23,18 @@
 - (id)_layoutContext;
 - (void)_layoutNavigation;
 - (void)_layoutReportAConcernView;
-- (void)_loadConcernsForConcernType:(int)arg1 withReportAConcernBagDictionary:(id)arg2;
+- (void)_loadConcernsForConcernType:(long long)arg1 withReportAConcernBagDictionary:(id)arg2;
 - (void)_loadViewWithConcernStrings;
 - (void)_sendCancelEventAndDismiss;
-- (void)_sendDoneEventAndDismissWithSelectedIndex:(int)arg1 andComment:(id)arg2;
+- (void)_sendDoneEventAndDismissWithSelectedIndex:(long long)arg1 andComment:(id)arg2;
 - (void)dealloc;
 - (void)documentDidUpdate:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
-- (float)navigationBarHeightForReportAConcernTemplateView:(id)arg1;
+- (double)navigationBarHeightForReportAConcernTemplateView:(id)arg1;
 - (void)reportAConcernTemplateViewDidSelectConcern:(id)arg1;
-- (float)tabBarHeightForReportAConcernTemplateView:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (double)tabBarHeightForReportAConcernTemplateView:(id)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

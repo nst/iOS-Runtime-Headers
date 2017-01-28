@@ -109,7 +109,7 @@
 - (id)pauseRoutineWithPayload:(id)arg1;
 - (id)processMonitorResults;
 - (id)processNetworkResults;
-- (void)registerNotificationWithAgent:(id)arg1 withType:(id)arg2 withTableName:(id)arg3 withCallBackType:(BOOL)arg4 withBlock:(id /* block */)arg5;
+- (void)registerNotificationWithAgent:(id)arg1 withType:(id)arg2 withTableName:(id)arg3 withCallBackType:(bool)arg4 withBlock:(id)arg5;
 - (id)reported;
 - (id)reportedApplication;
 - (id)reportedLocation;

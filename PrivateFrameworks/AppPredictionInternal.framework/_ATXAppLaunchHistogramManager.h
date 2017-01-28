@@ -4,16 +4,16 @@
 
 @interface _ATXAppLaunchHistogramManager : NSObject {
     NSMutableDictionary * _histograms;
-    BOOL  _persistentStore;
+    bool  _persistentStore;
 }
 
 + (void)resetSharedInstance;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)histogramForLaunchType:(int)arg1;
+- (id)histogramForLaunchType:(long long)arg1;
 - (id)init;
-- (id)initAndPersist:(BOOL)arg1;
+- (id)initAndPersist:(bool)arg1;
 - (id)initWithInMemoryStore;
 - (id)initWithPersistentStore;
 

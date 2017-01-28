@@ -3,20 +3,20 @@
  */
 
 @interface CNUIMeContactMonitor : NSObject {
-    BOOL  _hasRegistered;
+    bool  _hasRegistered;
     <CNScheduler> * _lock;
     CNContact * _meContact;
-    BOOL  _meContactIsUpToDate;
+    bool  _meContactIsUpToDate;
     <CNCancelable> * _meNotificationToken;
     NSNotificationCenter * _notificationCenter;
     CNContactStore * _store;
     <CNMeContactComparisonStrategy> * _strategy;
 }
 
-@property (nonatomic) BOOL hasRegistered;
+@property (nonatomic) bool hasRegistered;
 @property (nonatomic, retain) <CNScheduler> *lock;
 @property (nonatomic, retain) CNContact *meContact;
-@property (nonatomic) BOOL meContactIsUpToDate;
+@property (nonatomic) bool meContactIsUpToDate;
 @property (nonatomic, retain) <CNCancelable> *meNotificationToken;
 @property (nonatomic, retain) NSNotificationCenter *notificationCenter;
 @property (nonatomic, retain) CNContactStore *store;
@@ -28,23 +28,23 @@
 - (void).cxx_destruct;
 - (void)_updateMeContact;
 - (void)dealloc;
-- (BOOL)hasRegistered;
+- (bool)hasRegistered;
 - (id)init;
 - (id)initWithComparisonStrategy:(id)arg1;
 - (id)initWithComparisonStrategy:(id)arg1 contactStore:(id)arg2;
 - (id)initWithComparisonStrategy:(id)arg1 contactStore:(id)arg2 notificationCenter:(id)arg3;
 - (id)initWithContactStore:(id)arg1;
-- (BOOL)isMeContact:(id)arg1;
+- (bool)isMeContact:(id)arg1;
 - (id)lock;
 - (void)meChanged:(id)arg1;
 - (id)meContact;
-- (BOOL)meContactIsUpToDate;
+- (bool)meContactIsUpToDate;
 - (id)meNotificationToken;
 - (id)notificationCenter;
-- (void)setHasRegistered:(BOOL)arg1;
+- (void)setHasRegistered:(bool)arg1;
 - (void)setLock:(id)arg1;
 - (void)setMeContact:(id)arg1;
-- (void)setMeContactIsUpToDate:(BOOL)arg1;
+- (void)setMeContactIsUpToDate:(bool)arg1;
 - (void)setMeNotificationToken:(id)arg1;
 - (void)setNotificationCenter:(id)arg1;
 - (void)setStore:(id)arg1;

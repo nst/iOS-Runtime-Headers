@@ -4,36 +4,36 @@
 
 @interface RKClassification : NSObject {
     NSArray * _customResponses;
-    unsigned int  _gender;
+    unsigned long long  _gender;
     NSString * _language;
     int  _sensitive;
     NSArray * _sentenceEntities;
-    unsigned int  _sentenceType;
+    unsigned long long  _sentenceType;
     NSString * _taggedText;
 }
 
 @property (retain) NSArray *customResponses;
-@property unsigned int gender;
+@property unsigned long long gender;
 @property (retain) NSString *language;
 @property (getter=isSensitive) int sensitive;
 @property (retain) NSArray *sentenceEntities;
-@property unsigned int sentenceType;
+@property unsigned long long sentenceType;
 @property (retain) NSString *taggedText;
 
 - (void).cxx_destruct;
 - (id)customResponses;
-- (unsigned int)gender;
+- (unsigned long long)gender;
 - (id)init;
 - (int)isSensitive;
 - (id)language;
 - (id)sentenceEntities;
-- (unsigned int)sentenceType;
+- (unsigned long long)sentenceType;
 - (void)setCustomResponses:(id)arg1;
-- (void)setGender:(unsigned int)arg1;
+- (void)setGender:(unsigned long long)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setSensitive:(int)arg1;
 - (void)setSentenceEntities:(id)arg1;
-- (void)setSentenceType:(unsigned int)arg1;
+- (void)setSentenceType:(unsigned long long)arg1;
 - (void)setTaggedText:(id)arg1;
 - (id)taggedText;
 

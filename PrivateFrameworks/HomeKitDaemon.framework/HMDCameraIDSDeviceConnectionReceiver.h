@@ -11,7 +11,7 @@
 @property (nonatomic) <HMDCameraIDSDeviceConnectionReceiverDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int remoteAudioSocket;
 @property (nonatomic, readonly) int remoteVideoSocket;
 @property (nonatomic, readonly) IDSSession *session;

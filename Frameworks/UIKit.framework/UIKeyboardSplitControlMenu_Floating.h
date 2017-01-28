@@ -6,13 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly, retain) NSString *label;
 @property (readonly) Class superclass;
-@property (readonly) BOOL visible;
+@property (readonly) bool visible;
 
 - (void)actionForMenu:(id)arg1;
 - (id)label;
-- (BOOL)visible;
+- (bool)visible;
 
 @end

@@ -15,11 +15,11 @@
 @property (readonly) NSString *contentProviderID;
 @property (readonly) NSString *directionsDestinationAddressString;
 @property (readonly) NSString *directionsSourceAddressString;
-@property (readonly) BOOL exactPositionSpecified;
-@property (readonly) int favoritesType;
+@property (readonly) bool exactPositionSpecified;
+@property (readonly) long long favoritesType;
 @property (readonly) unsigned long long lineMUID;
 @property (readonly, copy) NSString *lineName;
-@property (readonly) unsigned int mapType;
+@property (readonly) unsigned long long mapType;
 @property (readonly) double roll;
 @property (readonly) double rotation;
 @property (readonly) struct CLLocationCoordinate2D { double x1; double x2; } searchCoordinate;
@@ -28,14 +28,14 @@
 @property (readonly) struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } searchRegion;
 @property (readonly) unsigned long long searchUID;
 @property (readonly) struct { double x1; double x2; } span;
-@property (readonly) BOOL tester;
+@property (readonly) bool tester;
 @property (readonly) double tilt;
-@property (readonly) int trackingMode;
-@property (readonly) unsigned int transportType;
+@property (readonly) long long trackingMode;
+@property (readonly) unsigned long long transportType;
 @property (readonly) GEOUserSessionEntity *userSessionEntity;
 @property (readonly) float zoomLevel;
 
-+ (BOOL)isValidMapURL:(id)arg1;
++ (bool)isValidMapURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)abAddressID;
@@ -47,13 +47,13 @@
 - (id)contentProviderID;
 - (id)directionsDestinationAddressString;
 - (id)directionsSourceAddressString;
-- (BOOL)exactPositionSpecified;
-- (int)favoritesType;
+- (bool)exactPositionSpecified;
+- (long long)favoritesType;
 - (id)initWithURL:(id)arg1;
 - (unsigned long long)lineMUID;
 - (id)lineName;
-- (unsigned int)mapType;
-- (BOOL)parseIncludingCustomParameters:(BOOL)arg1;
+- (unsigned long long)mapType;
+- (bool)parseIncludingCustomParameters:(bool)arg1;
 - (double)roll;
 - (double)rotation;
 - (struct CLLocationCoordinate2D { double x1; double x2; })searchCoordinate;
@@ -62,10 +62,10 @@
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })searchRegion;
 - (unsigned long long)searchUID;
 - (struct { double x1; double x2; })span;
-- (BOOL)tester;
+- (bool)tester;
 - (double)tilt;
-- (int)trackingMode;
-- (unsigned int)transportType;
+- (long long)trackingMode;
+- (unsigned long long)transportType;
 - (id)userSessionEntity;
 - (float)zoomLevel;
 

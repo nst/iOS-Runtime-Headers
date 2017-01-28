@@ -4,12 +4,12 @@
 
 @interface CKDFetchShareParticipantsOperation : CKDOperation {
     CKDPublicIdentityLookupRequest * _pendingRequest;
-    id /* block */  _shareParticipantFetchedBlock;
+    id  _shareParticipantFetchedBlock;
     NSArray * _userIdentityLookupInfos;
 }
 
 @property (nonatomic, retain) CKDPublicIdentityLookupRequest *pendingRequest;
-@property (nonatomic, copy) id /* block */ shareParticipantFetchedBlock;
+@property (nonatomic, copy) id shareParticipantFetchedBlock;
 @property (nonatomic, retain) NSArray *userIdentityLookupInfos;
 
 - (void).cxx_destruct;
@@ -22,9 +22,9 @@
 - (void)main;
 - (id)pendingRequest;
 - (void)setPendingRequest:(id)arg1;
-- (void)setShareParticipantFetchedBlock:(id /* block */)arg1;
+- (void)setShareParticipantFetchedBlock:(id)arg1;
 - (void)setUserIdentityLookupInfos:(id)arg1;
-- (id /* block */)shareParticipantFetchedBlock;
+- (id)shareParticipantFetchedBlock;
 - (id)userIdentityLookupInfos;
 
 @end

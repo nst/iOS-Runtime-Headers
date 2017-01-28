@@ -3,14 +3,14 @@
  */
 
 @interface DMFConnection : NSObject <CATTaskClientDelegate> {
-    BOOL  mConnected;
+    bool  mConnected;
     CATOperationQueue * mOperationQueue;
     CATTaskClient * mTaskClient;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedConnection;
@@ -29,7 +29,7 @@
 - (void)operationDidProgress:(id)arg1 progressBlock:(id)arg2;
 - (id)prepareOperationForRequest:(id)arg1;
 - (id)progressForAllInflightRequests;
-- (void)runRequest:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)runRequest:(id)arg1 progress:(id)arg2 completion:(id)arg3;
 - (id)runRequestSync:(id)arg1 error:(id*)arg2;
 
 @end

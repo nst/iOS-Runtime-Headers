@@ -18,26 +18,26 @@
 @property (nonatomic, copy) NSDate *bestInitialDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSDate *repeatEndDate;
 @property (readonly) Class superclass;
 
 + (id)_neverLocalizedString;
 
 - (void).cxx_destruct;
-- (id)_cellForRow:(int)arg1;
+- (id)_cellForRow:(long long)arg1;
 - (id)_endDateStringForCurrentShorteningStatus;
 - (void)_localeChanged;
 - (id)_stringForEndDate;
-- (void)_updateSelectionForCell:(id)arg1 atRow:(int)arg2;
+- (void)_updateSelectionForCell:(id)arg1 atRow:(long long)arg2;
 - (void)applyMinimumEndDateToPicker;
 - (id)bestInitialDate;
 - (void)datePickerChanged:(id)arg1;
 - (void)dealloc;
-- (BOOL)fitsPopoverWhenKeyboardActive;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (bool)fitsPopoverWhenKeyboardActive;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)repeatEndDate;
 - (void)setBestInitialDate:(id)arg1;
 - (void)setMinimumEndDate:(id)arg1;
@@ -45,8 +45,8 @@
 - (void)shortenCell:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

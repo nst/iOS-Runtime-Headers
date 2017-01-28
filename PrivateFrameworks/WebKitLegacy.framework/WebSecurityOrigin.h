@@ -18,7 +18,7 @@
 - (void)dealloc;
 - (id)host;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned short)port;
 - (id)protocol;
 - (unsigned long long)quota;

@@ -5,9 +5,9 @@
 
 @required
 
-- (struct CGPoint { float x1; float x2; })centroid;
-- (BOOL)shouldFilterDueToSystemGestures;
+- (struct CGPoint { double x1; double x2; })centroid;
+- (bool)shouldFilterDueToSystemGestures;
 - (double)timestamp;
-- (float)touchForce;
+- (double)touchForce;
 
 @end

@@ -5,27 +5,27 @@
 @interface CCUIFlashlightSetting : CCUISettingModule {
     AVFlashlight * _flashlight;
     float  _flashlightLevel;
-    BOOL  _flashlightOn;
+    bool  _flashlightOn;
     NSObject<OS_dispatch_queue> * _flashlightQueue;
-    BOOL  _stayWarm;
+    bool  _stayWarm;
 }
 
-@property (getter=isFlashlightOn, nonatomic) BOOL flashlightOn;
+@property (getter=isFlashlightOn, nonatomic) bool flashlightOn;
 
 + (id)displayName;
 + (id)identifier;
-+ (BOOL)isSupported:(int)arg1;
++ (bool)isSupported:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)_deviceBlockStateDidChangeNotification:(id)arg1;
-- (BOOL)_enableTorch:(BOOL)arg1;
+- (bool)_enableTorch:(bool)arg1;
 - (void)_featureLockStateDidChangeNotification:(id)arg1;
 - (id)_imageNameForState:(int)arg1 section:(int)arg2;
 - (void)_setTorchLevel:(float)arg1;
 - (id)_settingImageNameForState:(int)arg1;
 - (id)_shortcutImageNameForState:(int)arg1;
 - (void)_tearDown;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)_updateFlashlightPowerState;
 - (void)_updateState;
 - (void)activate;
@@ -36,10 +36,10 @@
 - (void)dealloc;
 - (id)displayName;
 - (id)glyphImageForState:(int)arg1 section:(int)arg2;
-- (BOOL)isFlashlightOn;
+- (bool)isFlashlightOn;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (int)orbBehavior;
-- (void)setFlashlightOn:(BOOL)arg1;
+- (void)setFlashlightOn:(bool)arg1;
 - (id)statusUpdate;
 - (id)unavailableText;
 - (void)warmup;

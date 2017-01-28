@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *discoveredAccessoryServers;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *pendingBonjourEvents;
 @property (nonatomic, retain) HAPWACScanInstance *scanInstance;
 @property (nonatomic, copy) NSArray *scanResults;
@@ -27,21 +27,22 @@
 
 - (void).cxx_destruct;
 - (void)_addDevice:(id)arg1;
-- (BOOL)_delegateRespondsToSelector:(SEL)arg1;
+- (bool)_delegateRespondsToSelector:(SEL)arg1;
 - (void)_handleBonjourAddOrUpdateWithEventInfo:(id)arg1;
 - (void)_handleBonjourBrowserEvent:(unsigned int)arg1 eventInfo:(id)arg2;
 - (void)_handleBonjourRemoveWithEventInfo:(id)arg1;
-- (long)_initializeAndStartBonjourBrowser;
-- (void)_invalidateAccessoryServers:(BOOL)arg1;
+- (int)_initializeAndStartBonjourBrowser;
+- (void)_invalidateAccessoryServers:(bool)arg1;
+- (void)_invalidateAndRemoveAccessoryServer:(id)arg1;
 - (void)_invalidateWACServers;
 - (void)_pendBonjourEvent:(id)arg1;
 - (void)_pendBonjourRemoveEvent:(id)arg1;
 - (void)_processPendingBonjourEvent:(id)arg1;
-- (int)_purgePendingBonjourEvents:(id)arg1 withProcessing:(BOOL)arg2;
+- (int)_purgePendingBonjourEvents:(id)arg1 withProcessing:(bool)arg2;
 - (void)_removeDevice:(id)arg1;
-- (long)_server:(id*)arg1 forBonjourDevice:(id)arg2;
-- (long)_server:(id*)arg1 forWACDevice:(id)arg2;
-- (void)_setReachability:(BOOL)arg1 forServer:(id)arg2;
+- (int)_server:(id*)arg1 forBonjourDevice:(id)arg2;
+- (int)_server:(id*)arg1 forWACDevice:(id)arg2;
+- (void)_setReachability:(bool)arg1 forServer:(id)arg2;
 - (void)_timerDidExpire:(id)arg1;
 - (id)bonjourEventTimer;
 - (id)delegate;
@@ -49,7 +50,7 @@
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;
 - (id)discoveredAccessoryServers;
 - (id)initWithQueue:(id)arg1;
-- (int)linkType;
+- (long long)linkType;
 - (void)mergeScanResults:(id)arg1;
 - (id)pendingBonjourEvents;
 - (void)processPendingBonjourRemoveEvents:(id)arg1;
@@ -70,5 +71,6 @@
 - (void)stopDiscoveringWACAccessoryServers;
 - (void)stopWACScan;
 - (void)timerDidFire:(id)arg1;
+- (void)updateFastAgeOut:(bool)arg1;
 
 @end

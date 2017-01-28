@@ -5,8 +5,9 @@
 
 @required
 
-- (int)firstDirectionsErrorCode;
-- (BOOL)hasError:(int)arg1;
+- (long long)firstDirectionsErrorCode;
+- (bool)hasError:(long long)arg1;
+- (<GEOTransitRoutingIncidentMessage> *)incidentMessage;
 - (NSString *)localizedDescription;
 - (NSString *)localizedTitle;
 

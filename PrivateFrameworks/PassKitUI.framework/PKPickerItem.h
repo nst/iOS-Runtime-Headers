@@ -3,19 +3,19 @@
  */
 
 @interface PKPickerItem : NSObject {
-    id /* block */  _selectionHandler;
+    id  _selectionHandler;
     NSString * _title;
 }
 
-@property (nonatomic, copy) id /* block */ selectionHandler;
+@property (nonatomic, copy) id selectionHandler;
 @property (nonatomic, copy) NSString *title;
 
-+ (id)itemWithTitle:(id)arg1 selectionHandler:(id /* block */)arg2;
++ (id)itemWithTitle:(id)arg1 selectionHandler:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)handleSelectionWithCompletionHandler:(id /* block */)arg1;
-- (id /* block */)selectionHandler;
-- (void)setSelectionHandler:(id /* block */)arg1;
+- (void)handleSelectionWithCompletionHandler:(id)arg1;
+- (id)selectionHandler;
+- (void)setSelectionHandler:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

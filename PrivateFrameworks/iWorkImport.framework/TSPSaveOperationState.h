@@ -6,27 +6,27 @@
     NSMapTable * _newDataStorages;
     NSHashTable * _remoteData;
     int  _sampleID;
-    int  _updateType;
+    long long  _updateType;
 }
 
-@property (nonatomic, readonly) BOOL hasRemoteData;
-@property (nonatomic, readonly) BOOL preserveDocumentUUID;
+@property (nonatomic, readonly) bool hasRemoteData;
+@property (nonatomic, readonly) bool preserveDocumentUUID;
 @property (nonatomic) int sampleID;
-@property (nonatomic, readonly) BOOL shouldUpdate;
-@property (nonatomic, readonly) int updateType;
+@property (nonatomic, readonly) bool shouldUpdate;
+@property (nonatomic, readonly) long long updateType;
 
 - (void).cxx_destruct;
 - (void)addNewStorage:(id)arg1 forData:(id)arg2;
 - (void)addRemoteData:(id)arg1;
-- (void)enumerateDatasAndStoragesUsingBlock:(id /* block */)arg1;
-- (BOOL)hasNewStorageForData:(id)arg1;
-- (BOOL)hasRemoteData;
+- (void)enumerateDatasAndStoragesUsingBlock:(id)arg1;
+- (bool)hasNewStorageForData:(id)arg1;
+- (bool)hasRemoteData;
 - (id)init;
-- (id)initWithUpdateType:(int)arg1;
-- (BOOL)preserveDocumentUUID;
+- (id)initWithUpdateType:(long long)arg1;
+- (bool)preserveDocumentUUID;
 - (int)sampleID;
 - (void)setSampleID:(int)arg1;
-- (BOOL)shouldUpdate;
-- (int)updateType;
+- (bool)shouldUpdate;
+- (long long)updateType;
 
 @end

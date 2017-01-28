@@ -9,34 +9,34 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL passwordChangeFlowNeedsToRun;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool passwordChangeFlowNeedsToRun;
 @property (nonatomic, readonly, copy) NSString *shortLivedToken;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UMUserSwitchContext *userSwitchContext;
 
 + (id)delegateBundleIDsForManagedAccount;
-+ (BOOL)isMultiUser;
++ (bool)isMultiUser;
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (void)_createAppleAccountWithUsername:(id)arg1 password:(id)arg2 rawPassword:(id)arg3 completion:(id /* block */)arg4;
+- (void)_createAppleAccountWithUsername:(id)arg1 password:(id)arg2 rawPassword:(id)arg3 completion:(id)arg4;
 - (id)_languageConfigurationDictionary;
-- (void)_runSilentLoginUpgradeWithCompletion:(id /* block */)arg1;
-- (void)_upgradeShortLivedTokenCompletion:(id /* block */)arg1;
+- (void)_runSilentLoginUpgradeWithCompletion:(id)arg1;
+- (void)_upgradeShortLivedTokenCompletion:(id)arg1;
 - (void)dealloc;
 - (void)ingestManagedBuddyData;
 - (id)init;
-- (BOOL)isLoginUser;
-- (BOOL)needsToUpgradeShortLivedToken;
-- (BOOL)passwordChangeFlowNeedsToRun;
+- (bool)isLoginUser;
+- (bool)needsToUpgradeShortLivedToken;
+- (bool)passwordChangeFlowNeedsToRun;
 - (void)postUserSwitchContextHasBeenUsed;
-- (void)recoverEMCSWithCompletion:(id /* block */)arg1;
-- (void)runSilentLoginUpgradeIfNeededWithCompletion:(id /* block */)arg1;
+- (void)recoverEMCSWithCompletion:(id)arg1;
+- (void)runSilentLoginUpgradeIfNeededWithCompletion:(id)arg1;
 - (id)shortLivedToken;
 - (void)switchToLoginWindowDueToError:(id)arg1;
 - (id)userSwitchContext;
 - (void)userSwitchContextHasBeenUsed;
-- (void)writeAccountConfigurationIfNeededWithCompletion:(id /* block */)arg1;
+- (void)writeAccountConfigurationIfNeededWithCompletion:(id)arg1;
 
 @end

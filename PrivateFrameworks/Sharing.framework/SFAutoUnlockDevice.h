@@ -3,45 +3,54 @@
  */
 
 @interface SFAutoUnlockDevice : SFPeerDevice <NSSecureCoding> {
-    BOOL  _bluetoothCloudPaired;
+    bool  _bluetoothCloudPaired;
     NSUUID * _bluetoothID;
-    BOOL  _keyExists;
+    bool  _keyExists;
+    NSString * _modelDescription;
     NSString * _modelName;
+    bool  _placeholder;
     NSUUID * _proxyBluetoothID;
     NSDictionary * _results;
-    BOOL  _unlockEnabled;
+    bool  _unlockEnabled;
 }
 
-@property (nonatomic) BOOL bluetoothCloudPaired;
+@property (nonatomic) bool bluetoothCloudPaired;
 @property (nonatomic, retain) NSUUID *bluetoothID;
-@property (nonatomic) BOOL keyExists;
+@property (nonatomic) bool keyExists;
+@property (nonatomic, copy) NSString *modelDescription;
 @property (nonatomic, retain) NSString *modelName;
+@property (nonatomic) bool placeholder;
 @property (nonatomic, copy) NSUUID *proxyBluetoothID;
 @property (nonatomic, retain) NSDictionary *results;
-@property (nonatomic, readonly) int type;
-@property (nonatomic) BOOL unlockEnabled;
+@property (nonatomic, readonly) long long type;
+@property (nonatomic) bool unlockEnabled;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)bluetoothCloudPaired;
+- (bool)bluetoothCloudPaired;
 - (id)bluetoothID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)keyExists;
+- (bool)isEqual:(id)arg1;
+- (bool)keyExists;
+- (id)modelDescription;
 - (id)modelName;
+- (bool)placeholder;
 - (id)proxyBluetoothID;
 - (id)results;
-- (void)setBluetoothCloudPaired:(BOOL)arg1;
+- (void)setBluetoothCloudPaired:(bool)arg1;
 - (void)setBluetoothID:(id)arg1;
-- (void)setKeyExists:(BOOL)arg1;
+- (void)setKeyExists:(bool)arg1;
+- (void)setModelDescription:(id)arg1;
 - (void)setModelName:(id)arg1;
+- (void)setPlaceholder:(bool)arg1;
 - (void)setProxyBluetoothID:(id)arg1;
 - (void)setResults:(id)arg1;
-- (void)setUnlockEnabled:(BOOL)arg1;
-- (int)type;
-- (BOOL)unlockEnabled;
+- (void)setUnlockEnabled:(bool)arg1;
+- (long long)type;
+- (bool)unlockEnabled;
 
 @end

@@ -12,7 +12,7 @@
     NSURL * _attachmentURL;
     struct CGImageBlockSet { } * _blockSet;
     struct __IOSurface { } * _previewImage;
-    BOOL  _previewIsFullyRealizedByChatKit;
+    bool  _previewIsFullyRealizedByChatKit;
 }
 
 @property (nonatomic, retain) NSURL *appendedBundleURL;
@@ -24,11 +24,11 @@
 @property (nonatomic, retain) NSURL *attachmentURL;
 @property (nonatomic) struct CGImageBlockSet { }*blockSet;
 @property (nonatomic) struct __IOSurface { }*previewImage;
-@property (nonatomic) BOOL previewIsFullyRealizedByChatKit;
+@property (nonatomic) bool previewIsFullyRealizedByChatKit;
 
-+ (BOOL)hasAppendedVideo:(id)arg1;
++ (bool)hasAppendedVideo:(id)arg1;
 + (id)previewQueue;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_setPreviewUIImage:(id)arg1;
@@ -50,7 +50,7 @@
 - (id)initWithMSMessage:(id)arg1;
 - (id)initWithRichLinkWithURL:(id)arg1 data:(id)arg2;
 - (struct __IOSurface { }*)previewImage;
-- (BOOL)previewIsFullyRealizedByChatKit;
+- (bool)previewIsFullyRealizedByChatKit;
 - (id)previewUIImage;
 - (void)setAppendedBundleURL:(id)arg1;
 - (void)setAppendedMessage:(id)arg1;
@@ -61,7 +61,7 @@
 - (void)setAttachmentURL:(id)arg1;
 - (void)setBlockSet:(struct CGImageBlockSet { }*)arg1;
 - (void)setPreviewImage:(struct __IOSurface { }*)arg1;
-- (void)setPreviewIsFullyRealizedByChatKit:(BOOL)arg1;
+- (void)setPreviewIsFullyRealizedByChatKit:(bool)arg1;
 - (void)waitForPreviewCreation;
 
 @end

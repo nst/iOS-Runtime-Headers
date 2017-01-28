@@ -3,26 +3,26 @@
  */
 
 @interface _CATRemoteConnectionSendDataContext : NSObject {
-    int  _bytesWritten;
+    long long  _bytesWritten;
     NSData * _data;
     NSData * _encodedData;
     id  _userInfo;
 }
 
-@property (nonatomic) int bytesWritten;
+@property (nonatomic) long long bytesWritten;
 @property (nonatomic, readonly, copy) NSData *data;
 @property (nonatomic, readonly) NSData *encodedData;
-@property (nonatomic, readonly) int remainingBytes;
+@property (nonatomic, readonly) long long remainingBytes;
 @property (nonatomic, readonly) id userInfo;
 
 - (void).cxx_destruct;
-- (int)bytesWritten;
+- (long long)bytesWritten;
 - (id)data;
 - (id)encodedData;
 - (id)initWithData:(id)arg1 userInfo:(id)arg2;
-- (int)remainingBytes;
+- (long long)remainingBytes;
 - (id)remainingData;
-- (void)setBytesWritten:(int)arg1;
+- (void)setBytesWritten:(long long)arg1;
 - (id)userInfo;
 
 @end

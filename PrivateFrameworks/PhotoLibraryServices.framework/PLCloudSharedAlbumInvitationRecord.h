@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString *inviteeLastName;
 @property (nonatomic, readonly) NSArray *inviteePhones;
 @property (nonatomic, retain) NSDate *inviteeSubscriptionDate;
-@property (nonatomic) BOOL isMine;
+@property (nonatomic) bool isMine;
 
 + (id)cloudSharedAlbumInvitationRecordWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)cloudSharedAlbumInvitationRecordsWithAlbumGUID:(id)arg1 inLibrary:(id)arg2;
@@ -30,7 +30,7 @@
 - (void)delete;
 - (id)init;
 - (id)invitationStateDescription;
-- (id)inviteeDisplayNameIncludingEmail:(BOOL)arg1;
+- (id)inviteeDisplayNameIncludingEmail:(bool)arg1;
 - (id)inviteeEmails;
 - (id)inviteePhones;
 - (void)prepareForDeletion;

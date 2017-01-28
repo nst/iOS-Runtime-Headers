@@ -10,13 +10,13 @@
 @property (nonatomic, readonly) NSArray *members;
 @property (nonatomic, readonly) NSDictionary *namesByLanguage;
 
-- (BOOL)allFamilyIsBold;
-- (BOOL)allFamilyIsItalic;
-- (id)bestMatchForStyling:(struct TCFontStyling { int x1; unsigned int x2; BOOL x3; BOOL x4; int x5; })arg1;
-- (unsigned int)boldFontIndexInWeightVariants:(id)arg1;
+- (bool)allFamilyIsBold;
+- (bool)allFamilyIsItalic;
+- (id)bestMatchForStyling:(struct TCFontStyling { int x1; unsigned int x2; BOOL x3; bool x4; int x5; })arg1;
+- (unsigned long long)boldFontIndexInWeightVariants:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)doesAnyNonBoldVariantExistForFont:(id)arg1;
+- (bool)doesAnyNonBoldVariantExistForFont:(id)arg1;
 - (id)englishName;
 - (id)equivalentDictionary;
 - (id)initWithDictionary:(id)arg1;
@@ -25,9 +25,9 @@
 - (id)memberForPSName:(id)arg1;
 - (id)members;
 - (id)namesByLanguage;
-- (unsigned int)regularFontIndexInWeightVariants:(id)arg1;
-- (id)regularVariant:(BOOL)arg1;
-- (BOOL)traitsAreAdditive;
+- (unsigned long long)regularFontIndexInWeightVariants:(id)arg1;
+- (id)regularVariant:(bool)arg1;
+- (bool)traitsAreAdditive;
 - (id)variantByAddingBoldToFont:(id)arg1;
 - (id)variantByRemovingBoldFromFont:(id)arg1;
 - (id)variantByTogglingItalicOfFont:(id)arg1;

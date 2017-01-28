@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)engagementDestination;
+- (unsigned long long)engagementDestination;
 - (NSString *)parsecDomainIdentifier;
 - (SFSearchResult *)sfSearchResultValue;
 

@@ -5,6 +5,6 @@
 
 @optional
 
-- (int)maximumFontSize;
+- (long long)maximumFontSize;
 
 @end

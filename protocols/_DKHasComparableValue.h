@@ -5,6 +5,6 @@
 
 @required
 
-- (int)compareValue:(id)arg1;
+- (long long)compareValue:(id)arg1;
 
 @end

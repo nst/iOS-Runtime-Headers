@@ -3,23 +3,23 @@
  */
 
 @interface MusicCarPlayApplicationCapabilitiesController : NSObject {
-    BOOL  _allowsRadioContent;
+    bool  _allowsRadioContent;
     MPModelRadioStation * _prominentRadioStation;
-    int  _userSubscriptionState;
+    long long  _userSubscriptionState;
 }
 
-@property (nonatomic) BOOL allowsRadioContent;
+@property (nonatomic) bool allowsRadioContent;
 @property (nonatomic, retain) MPModelRadioStation *prominentRadioStation;
-@property (nonatomic) int userSubscriptionState;
+@property (nonatomic) long long userSubscriptionState;
 
 + (id)sharedController;
 
 - (void).cxx_destruct;
-- (BOOL)allowsRadioContent;
+- (bool)allowsRadioContent;
 - (id)prominentRadioStation;
-- (void)setAllowsRadioContent:(BOOL)arg1;
+- (void)setAllowsRadioContent:(bool)arg1;
 - (void)setProminentRadioStation:(id)arg1;
-- (void)setUserSubscriptionState:(int)arg1;
-- (int)userSubscriptionState;
+- (void)setUserSubscriptionState:(long long)arg1;
+- (long long)userSubscriptionState;
 
 @end

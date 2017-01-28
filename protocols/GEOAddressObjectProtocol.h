@@ -9,9 +9,9 @@
 
 - (GEOAddress *)address;
 - (NSDictionary *)addressDictionary;
-- (NSString *)cityDisplayNameWithFallback:(BOOL)arg1;
-- (NSString *)fullAddressWithMultiline:(BOOL)arg1;
-- (BOOL)hasKnownAccuracy;
+- (NSString *)cityDisplayNameWithFallback:(bool)arg1;
+- (NSString *)fullAddressWithMultiline:(bool)arg1;
+- (bool)hasKnownAccuracy;
 - (id)initWithPlaceDataAddressObject:(GEOPDAddressObject *)arg1 placeDataAddress:(GEOPDAddress *)arg2 placeDataInfo:(GEOPDPlaceInfo *)arg3 placeDataEntity:(GEOPDEntity *)arg4 language:(NSString *)arg5 country:(NSString *)arg6 phoneticLocale:(NSString *)arg7;
 - (int)knownAccuracy;
 - (NSString *)name;

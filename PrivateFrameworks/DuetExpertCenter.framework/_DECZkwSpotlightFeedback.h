@@ -3,21 +3,21 @@
  */
 
 @interface _DECZkwSpotlightFeedback : _DECAppPredictionFeedback {
-    int  _launchSource;
+    long long  _launchSource;
     NSString * _query;
 }
 
-@property (nonatomic, readonly) int launchSource;
+@property (nonatomic, readonly) long long launchSource;
 @property (nonatomic, readonly) NSString *query;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFeedbackItems:(id)arg1 engagedBundleId:(id)arg2 query:(id)arg3 launchSource:(int)arg4 consumerSubType:(unsigned char)arg5;
-- (int)launchSource;
+- (id)initWithFeedbackItems:(id)arg1 engagedBundleId:(id)arg2 query:(id)arg3 launchSource:(long long)arg4 consumerSubType:(unsigned char)arg5;
+- (long long)launchSource;
 - (id)query;
 
 @end

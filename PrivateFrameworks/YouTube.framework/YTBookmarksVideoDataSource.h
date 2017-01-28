@@ -5,14 +5,14 @@
 @interface YTBookmarksVideoDataSource : YTVideoDataSource {
     NSMutableArray * _bookmarkedShortIDs;
     YTSearchRequest * _bookmarksSearchRequest;
-    BOOL  _lastReloadWasAccountsFavorites;
+    bool  _lastReloadWasAccountsFavorites;
 }
 
 - (void)_nextBatch;
 - (void)addVideo:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (unsigned int)maxVideosToSave;
 - (void)reloadData;
 - (void)searchRequest:(id)arg1 foundBatchURL:(id)arg2;

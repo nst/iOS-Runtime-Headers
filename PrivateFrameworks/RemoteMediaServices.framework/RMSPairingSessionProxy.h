@@ -8,7 +8,7 @@
     NSString * _advertisedDeviceName;
     <RMSPairingSessionDelegate> * _delegate;
     RMSIDSClient * _idsClient;
-    BOOL  _pairing;
+    bool  _pairing;
     NSString * _passcode;
 }
 
@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RMSPairingSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *passcode;
 @property (readonly) Class superclass;
 

@@ -3,30 +3,30 @@
  */
 
 @interface CKTranscriptSpeakerBalloonCell : CKTranscriptBalloonCell {
-    BOOL  _adjustSpeakerForAcknowledgment;
-    BOOL  _shouldShowText;
+    bool  _adjustSpeakerForAcknowledgment;
+    bool  _shouldShowText;
     CKSpeakerButton * _speakerButton;
-    BOOL  _speakerEnabled;
+    bool  _speakerEnabled;
 }
 
-@property (nonatomic) BOOL adjustSpeakerForAcknowledgment;
-@property (nonatomic) BOOL shouldShowText;
+@property (nonatomic) bool adjustSpeakerForAcknowledgment;
+@property (nonatomic) bool shouldShowText;
 @property (nonatomic, retain) CKSpeakerButton *speakerButton;
-@property (getter=isSpeakerEnabled, nonatomic) BOOL speakerEnabled;
-@property (getter=isSpeakerHidden, nonatomic) BOOL speakerHidden;
+@property (getter=isSpeakerEnabled, nonatomic) bool speakerEnabled;
+@property (getter=isSpeakerHidden, nonatomic) bool speakerHidden;
 
 - (void).cxx_destruct;
-- (BOOL)adjustSpeakerForAcknowledgment;
-- (BOOL)isSpeakerEnabled;
-- (BOOL)isSpeakerHidden;
+- (bool)adjustSpeakerForAcknowledgment;
+- (bool)isSpeakerEnabled;
+- (bool)isSpeakerHidden;
 - (void)layoutSubviewsForAlignmentContents;
-- (void)setAdjustSpeakerForAcknowledgment:(BOOL)arg1;
+- (void)setAdjustSpeakerForAcknowledgment:(bool)arg1;
 - (void)setOrientation:(BOOL)arg1;
-- (void)setShouldShowText:(BOOL)arg1;
+- (void)setShouldShowText:(bool)arg1;
 - (void)setSpeakerButton:(id)arg1;
-- (void)setSpeakerEnabled:(BOOL)arg1;
-- (void)setSpeakerHidden:(BOOL)arg1;
-- (BOOL)shouldShowText;
+- (void)setSpeakerEnabled:(bool)arg1;
+- (void)setSpeakerHidden:(bool)arg1;
+- (bool)shouldShowText;
 - (id)speakerButton;
 
 @end

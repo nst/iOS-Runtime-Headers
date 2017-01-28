@@ -3,7 +3,7 @@
  */
 
 @interface CNContactViewController2 : UIViewController <CNContactPropertyModelDelegate, CNContactPropertyRemoteModelDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL  _ignoreViewWillBePresented;
+    bool  _ignoreViewWillBePresented;
     CNContactPropertyModel * _model;
     CNContactViewHostViewController * _remoteHostViewController;
     UITableView * _tableView;
@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) id displayedObject;
 @property (nonatomic, retain) NSArray *displayedProperties;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) CNContactPropertyModel *model;
 @property (nonatomic, retain) CNContactViewHostViewController *remoteHostViewController;
 @property (readonly) Class superclass;
@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)_endDelayingPresentation;
-- (BOOL)_isDelayingPresentation;
+- (bool)_isDelayingPresentation;
 - (void)_prepareViewController;
 - (void)_setupViewController;
 - (void)cancel:(id)arg1;
@@ -30,8 +30,8 @@
 - (id)init;
 - (void)loadView;
 - (id)model;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (BOOL)outOfProcess;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (bool)outOfProcess;
 - (void)pendingRemoteTransactions:(id)arg1;
 - (void)pendingTransactions;
 - (id)remoteHostViewController;
@@ -40,12 +40,12 @@
 - (void)setModel:(id)arg1;
 - (void)setRemoteHostViewController:(id)arg1;
 - (void)setTableView:(id)arg1;
-- (void)setupWithOptions:(id)arg1 readyBlock:(id /* block */)arg2;
+- (void)setupWithOptions:(id)arg1 readyBlock:(id)arg2;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)updatedTransactions:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

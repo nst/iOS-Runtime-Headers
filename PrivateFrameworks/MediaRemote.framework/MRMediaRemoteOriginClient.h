@@ -3,54 +3,66 @@
  */
 
 @interface MRMediaRemoteOriginClient : NSObject {
-    BOOL  _canBeNowPlayingApp;
+    NSArray * _applicationPickedRoutes;
+    id  _audioAmplitudeSamplesCallback;
+    bool  _canBeNowPlayingApp;
     NSMutableDictionary * _commandHandlerBlocks;
-    BOOL  _isOverrideApp;
+    bool  _isOverrideApp;
     int  _notifyDidLaunchToken;
     int  _notifyRestoreClientStateForLaunch;
     MRNowPlayingArtwork * _nowPlayingArtwork;
     NSDictionary * _nowPlayingInfo;
     struct _MROrigin { } * _origin;
-    id /* block */  _playbackQueueCallback;
+    id  _playbackQueueCallback;
     unsigned int  _routeDiscoveryMode;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSArray * _supportedCommands;
     NSMutableDictionary * _transactionCallbacks;
+    id  _videoThumbnailsCallback;
 }
 
-@property (nonatomic) BOOL canBeNowPlayingApp;
+@property (nonatomic, copy) NSArray *applicationPickedRoutes;
+@property (nonatomic, copy) id audioAmplitudeSamplesCallback;
+@property (nonatomic) bool canBeNowPlayingApp;
 @property (nonatomic, readonly, copy) NSArray *commandHandlerBlocks;
-@property (nonatomic) BOOL isOverrideApp;
+@property (nonatomic) bool isOverrideApp;
 @property (nonatomic, retain) MRNowPlayingArtwork *nowPlayingArtwork;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
 @property (nonatomic, readonly) struct _MROrigin { }*origin;
-@property (nonatomic, copy) id /* block */ playbackQueueCallback;
+@property (nonatomic, copy) id playbackQueueCallback;
 @property (nonatomic) unsigned int routeDiscoveryMode;
 @property (nonatomic, copy) NSArray *supportedCommands;
+@property (nonatomic, copy) id videoThumbnailsCallback;
 
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
 - (void)_registerDefaultCallbacks;
-- (void)addCommandHandlerBlock:(id /* block */)arg1 forKey:(id)arg2;
-- (BOOL)canBeNowPlayingApp;
+- (void)addCommandHandlerBlock:(id)arg1 forKey:(id)arg2;
+- (id)applicationPickedRoutes;
+- (id)audioAmplitudeSamplesCallback;
+- (bool)canBeNowPlayingApp;
 - (id)commandHandlerBlocks;
 - (void)dealloc;
 - (id)initWithOrigin:(struct _MROrigin { }*)arg1;
-- (BOOL)isOverrideApp;
+- (bool)isOverrideApp;
 - (id)nowPlayingArtwork;
 - (id)nowPlayingInfo;
 - (struct _MROrigin { }*)origin;
-- (id /* block */)playbackQueueCallback;
+- (id)playbackQueueCallback;
 - (void)removeCommandHandlerBlockForKey:(id)arg1;
 - (unsigned int)routeDiscoveryMode;
-- (void)setCanBeNowPlayingApp:(BOOL)arg1;
-- (void)setIsOverrideApp:(BOOL)arg1;
+- (void)setApplicationPickedRoutes:(id)arg1;
+- (void)setAudioAmplitudeSamplesCallback:(id)arg1;
+- (void)setCanBeNowPlayingApp:(bool)arg1;
+- (void)setIsOverrideApp:(bool)arg1;
 - (void)setNowPlayingArtwork:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
-- (void)setPlaybackQueueCallback:(id /* block */)arg1;
+- (void)setPlaybackQueueCallback:(id)arg1;
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;
 - (void)setSupportedCommands:(id)arg1;
-- (void)setTransactionCallback:(id /* block */)arg1 forName:(unsigned long long)arg2;
+- (void)setTransactionCallback:(id)arg1 forName:(unsigned long long)arg2;
+- (void)setVideoThumbnailsCallback:(id)arg1;
 - (id)supportedCommands;
-- (id /* block */)transactionCallbackForName:(unsigned long long)arg1;
+- (id)transactionCallbackForName:(unsigned long long)arg1;
+- (id)videoThumbnailsCallback;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface SKUISizeValue : NSObject <NSCopying> {
-    int  _height;
-    int  _width;
+    long long  _height;
+    long long  _width;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (void)unionWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned long long)hash;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (void)unionWithSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSArray *addedImmutableObjects;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSIndexSet *indexesOfAddedObjects;
 @property (nonatomic, readonly) NSArray *objects;
 @property (readonly) Class superclass;
@@ -24,6 +24,6 @@
 - (id)indexesOfAddedObjects;
 - (id)initWithObjects:(id)arg1 indexes:(id)arg2 identifiersAtop:(id)arg3;
 - (id)objects;
-- (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(id /* block */)arg2;
+- (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(id)arg2;
 
 @end

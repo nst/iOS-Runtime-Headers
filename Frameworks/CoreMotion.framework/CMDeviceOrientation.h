@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) int orientation;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

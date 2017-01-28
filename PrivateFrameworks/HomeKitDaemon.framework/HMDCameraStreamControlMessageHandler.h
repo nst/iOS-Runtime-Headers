@@ -4,7 +4,7 @@
 
 @interface HMDCameraStreamControlMessageHandler : NSObject <HMDCameraSettingsControlManagerDelegate, HMDCameraStreamControlManagerDelegate, HMFLogging, HMFTimerDelegate> {
     HMDAccessory * _accessory;
-    id /* block */  _messageSender;
+    id  _messageSender;
     HMFMessageDispatcher * _msgDispatcher;
     HMFNetMonitor * _networkMonitor;
     HMDNotificationRegistration * _notificationRegistration;
@@ -23,8 +23,8 @@
 @property (nonatomic, readonly) HMDAccessory *accessory;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) id /* block */ messageSender;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) id messageSender;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) HMFNetMonitor *networkMonitor;
 @property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
@@ -36,7 +36,7 @@
 @property (nonatomic, readonly, copy) NSString *streamSessionID;
 @property (nonatomic, readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler;
 @property (nonatomic, readonly) HMDCameraSettingsControlManager *streamStatusManager;
-@property (nonatomic, readonly) unsigned int streamingStatus;
+@property (nonatomic, readonly) unsigned long long streamingStatus;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) HMDCameraSupportedConfigurationCache *supportedConfigCache;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
@@ -51,26 +51,26 @@
 - (void)_handleSetAudioState:(id)arg1;
 - (void)_handleStartMessage:(id)arg1;
 - (void)_handleStopMessage:(id)arg1;
-- (BOOL)_isNegotiateMessage:(id)arg1;
-- (BOOL)_isReconfigureMessage:(id)arg1;
-- (BOOL)_isRemoteSetupMessage:(id)arg1;
-- (BOOL)_isSetAudioStreamSettingMessage:(id)arg1;
-- (BOOL)_isStartMessage:(id)arg1;
-- (BOOL)_isStopMessage:(id)arg1;
-- (void)_resetCurrentStreamState;
-- (void)_sendStreamStoppedNotification;
-- (void)_stopStream;
+- (bool)_isNegotiateMessage:(id)arg1;
+- (bool)_isReconfigureMessage:(id)arg1;
+- (bool)_isRemoteSetupMessage:(id)arg1;
+- (bool)_isSetAudioStreamSettingMessage:(id)arg1;
+- (bool)_isStartMessage:(id)arg1;
+- (bool)_isStopMessage:(id)arg1;
+- (void)_resetCurrentStreamState:(id)arg1;
+- (void)_sendStreamStoppedNotification:(id)arg1;
+- (void)_stopStream:(id)arg1;
 - (id)accessory;
 - (void)dealloc;
 - (void)handleAccessoryIsNotReachable:(id)arg1;
 - (void)handleActivePhoneCallEstablishedNotification:(id)arg1;
 - (void)handleForegroundAppsNotification:(id)arg1;
 - (void)handleMessage:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithWorkQueue:(id)arg1 streamSnapshotHandler:(id)arg2 messageSender:(id /* block */)arg3 accessory:(id)arg4 streamManagementService:(id)arg5 msgDispatcher:(id)arg6 profileUniqueIdentifier:(id)arg7 networkMonitor:(id)arg8 residentMessageHandler:(id)arg9;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithWorkQueue:(id)arg1 streamSnapshotHandler:(id)arg2 messageSender:(id)arg3 accessory:(id)arg4 streamManagementService:(id)arg5 msgDispatcher:(id)arg6 profileUniqueIdentifier:(id)arg7 networkMonitor:(id)arg8 residentMessageHandler:(id)arg9;
+- (bool)isEqual:(id)arg1;
 - (id)logIdentifier;
-- (id /* block */)messageSender;
+- (id)messageSender;
 - (id)msgDispatcher;
 - (id)networkMonitor;
 - (id)notificationRegistration;
@@ -84,7 +84,7 @@
 - (id)settingsControlManager;
 - (void)streamControlManager:(id)arg1 didFail:(id)arg2;
 - (void)streamControlManagerDidNegotiateStream:(id)arg1 selectedParameters:(id)arg2;
-- (void)streamControlManagerDidReceiveFirstFrame:(id)arg1 audioStreamSetting:(unsigned int)arg2 aspectRatio:(id)arg3;
+- (void)streamControlManagerDidReceiveFirstFrame:(id)arg1 audioStreamSetting:(unsigned long long)arg2 aspectRatio:(id)arg3 slotIdentifier:(id)arg4;
 - (void)streamControlManagerDidReconfigureStream:(id)arg1;
 - (void)streamControlManagerDidSetupRemoteConnection:(id)arg1;
 - (void)streamControlManagerDidStartStream:(id)arg1 slotIdentifier:(id)arg2;
@@ -94,7 +94,7 @@
 - (id)streamSessionID;
 - (id)streamSnapshotHandler;
 - (id)streamStatusManager;
-- (unsigned int)streamingStatus;
+- (unsigned long long)streamingStatus;
 - (id)supportedConfigCache;
 - (void)timerDidFire:(id)arg1;
 - (id)uniqueIdentifier;

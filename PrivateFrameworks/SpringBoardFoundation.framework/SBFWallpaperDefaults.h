@@ -11,17 +11,17 @@
 + (id)defaults;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRectForVariant:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cropRectForVariant:(long long)arg1;
 - (id)defaultsStore;
 - (id)description;
-- (BOOL)hasVideo;
-- (BOOL)hasVideoForVariant:(int)arg1;
+- (bool)hasVideo;
+- (bool)hasVideoForVariant:(long long)arg1;
 - (id)init;
 - (id)initWithDefaultsStore:(id)arg1;
-- (BOOL)isPortraitForVariant:(int)arg1;
-- (BOOL)magnifyEnabledForVariant:(int)arg1;
-- (id)nameForVariant:(int)arg1;
-- (float)parallaxFactorForVariant:(int)arg1;
+- (bool)isPortraitForVariant:(long long)arg1;
+- (bool)magnifyEnabledForVariant:(long long)arg1;
+- (id)nameForVariant:(long long)arg1;
+- (double)parallaxFactorForVariant:(long long)arg1;
 - (void)resetCroppingDefaults;
 - (void)resetDefaults;
 - (void)resetHasVideoDefaults;
@@ -31,20 +31,20 @@
 - (void)resetPortraitDefaults;
 - (void)resetStillTimeInVideoDefaults;
 - (void)resetZoomScaleDefaults;
-- (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLocations:(int)arg2;
-- (void)setHasVideo:(BOOL)arg1;
-- (void)setMagnifyEnabled:(BOOL)arg1 forLocations:(int)arg2;
-- (void)setName:(id)arg1 forLocations:(int)arg2;
-- (void)setParallaxFactor:(float)arg1 forLocations:(int)arg2;
-- (void)setPortrait:(BOOL)arg1 forLocations:(int)arg2;
+- (void)setCropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 forLocations:(long long)arg2;
+- (void)setHasVideo:(bool)arg1;
+- (void)setMagnifyEnabled:(bool)arg1 forLocations:(long long)arg2;
+- (void)setName:(id)arg1 forLocations:(long long)arg2;
+- (void)setParallaxFactor:(double)arg1 forLocations:(long long)arg2;
+- (void)setPortrait:(bool)arg1 forLocations:(long long)arg2;
 - (void)setStillTimeInVideo:(double)arg1;
-- (void)setSupportsCropping:(BOOL)arg1 forLocations:(int)arg2;
-- (void)setWallpaperOptions:(id)arg1 forLocations:(int)arg2;
-- (void)setZoomScale:(float)arg1 forLocations:(int)arg2;
+- (void)setSupportsCropping:(bool)arg1 forLocations:(long long)arg2;
+- (void)setWallpaperOptions:(id)arg1 forLocations:(long long)arg2;
+- (void)setZoomScale:(double)arg1 forLocations:(long long)arg2;
 - (double)stillTimeInVideo;
-- (double)stillTimeInVideoForVariant:(int)arg1;
-- (BOOL)supportsCroppingForVariant:(int)arg1;
-- (id)wallpaperOptionsForVariant:(int)arg1;
-- (float)zoomScaleForVariant:(int)arg1;
+- (double)stillTimeInVideoForVariant:(long long)arg1;
+- (bool)supportsCroppingForVariant:(long long)arg1;
+- (id)wallpaperOptionsForVariant:(long long)arg1;
+- (double)zoomScaleForVariant:(long long)arg1;
 
 @end

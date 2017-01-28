@@ -10,10 +10,10 @@
     NSMutableDictionary * _storedObjects;
 }
 
-@property (readonly) unsigned int count;
+@property (readonly) unsigned long long count;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *plistPath;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUbiquitousKeyValueStore *ubiquitousKeyValueStore;
@@ -27,7 +27,7 @@
 - (void)_storeChangedExternally:(id)arg1;
 - (void)_synchronize;
 - (void)_writeToPlist;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;

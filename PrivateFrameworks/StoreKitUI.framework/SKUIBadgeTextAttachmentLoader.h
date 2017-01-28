@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -18,6 +18,6 @@
 - (void)connectStringView:(id)arg1;
 - (void)disconnectStringView:(id)arg1;
 - (id)initWithResourceLoader:(id)arg1;
-- (BOOL)loadImageForBadge:(id)arg1 layout:(id)arg2 reason:(int)arg3;
+- (bool)loadImageForBadge:(id)arg1 layout:(id)arg2 reason:(long long)arg3;
 
 @end

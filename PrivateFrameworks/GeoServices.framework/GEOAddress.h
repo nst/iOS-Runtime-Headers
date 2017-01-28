@@ -15,9 +15,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableArray *formattedAddressLines;
 @property (nonatomic) int formattedAddressType;
-@property (nonatomic) BOOL hasFormattedAddressType;
-@property (nonatomic, readonly) BOOL hasStructuredAddress;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasFormattedAddressType;
+@property (nonatomic, readonly) bool hasStructuredAddress;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GEOStructuredAddress *structuredAddress;
 @property (readonly) Class superclass;
 
@@ -27,7 +27,7 @@
 + (id)geoAddressForPlaceData:(id)arg1;
 
 - (int)StringAsFormattedAddressType:(id)arg1;
-- (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
+- (bool)_isEquivalentURLRepresentationTo:(id)arg1;
 - (void)addFormattedAddressLine:(id)arg1;
 - (id)addressDictionary;
 - (id)bestName;
@@ -37,22 +37,22 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)formattedAddressLineAtIndex:(unsigned int)arg1;
+- (id)formattedAddressLineAtIndex:(unsigned long long)arg1;
 - (id)formattedAddressLines;
-- (unsigned int)formattedAddressLinesCount;
+- (unsigned long long)formattedAddressLinesCount;
 - (int)formattedAddressType;
 - (id)formattedAddressTypeAsString:(int)arg1;
-- (BOOL)hasFormattedAddressType;
-- (BOOL)hasStructuredAddress;
-- (unsigned int)hash;
+- (bool)hasFormattedAddressType;
+- (bool)hasStructuredAddress;
+- (unsigned long long)hash;
 - (id)initWithAddressDictionary:(id)arg1;
 - (id)initWithUrlRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFormattedAddressLines:(id)arg1;
 - (void)setFormattedAddressType:(int)arg1;
-- (void)setHasFormattedAddressType:(BOOL)arg1;
+- (void)setHasFormattedAddressType:(bool)arg1;
 - (void)setStructuredAddress:(id)arg1;
 - (id)structuredAddress;
 - (id)urlRepresentation;

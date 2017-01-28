@@ -6,7 +6,7 @@
 @required
 
 - (void)deactivate;
-- (void)deactivateRemoveAllFiles:(BOOL)arg1;
+- (void)deactivateRemoveAllFiles:(bool)arg1;
 - (void)didFinishUsingAssets:(NSArray *)arg1;
 
 @end

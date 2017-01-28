@@ -7,15 +7,15 @@
     PKEntitlementWhitelist * _whitelist;
 }
 
-@property (readonly) BOOL allowsSilentAdd;
+@property (readonly) bool allowsSilentAdd;
 @property (retain) NSXPCConnection *connection;
 @property (retain) PKEntitlementWhitelist *whitelist;
 
 - (void).cxx_destruct;
-- (BOOL)_entitledForObject:(id)arg1;
-- (BOOL)_entitledForPassTypeID:(id)arg1 teamID:(id)arg2 associatedPassTypeIdentifiers:(id)arg3;
-- (BOOL)allowAccessToPass:(id)arg1;
-- (BOOL)allowsSilentAdd;
+- (bool)_entitledForObject:(id)arg1;
+- (bool)_entitledForPassTypeID:(id)arg1 teamID:(id)arg2 associatedPassTypeIdentifiers:(id)arg3;
+- (bool)allowAccessToPass:(id)arg1;
+- (bool)allowsSilentAdd;
 - (id)connection;
 - (id)entitlementFilteredPasses:(id)arg1;
 - (id)filterPassIfNeeded:(id)arg1;

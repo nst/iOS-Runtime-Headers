@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)clientIsAliveForWatchdog:(BKSSystemApplicationClient *)arg1;
+- (bool)clientIsAliveForWatchdog:(BKSSystemApplicationClient *)arg1;
 
 @end

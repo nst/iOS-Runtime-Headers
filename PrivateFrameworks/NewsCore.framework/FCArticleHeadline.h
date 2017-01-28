@@ -11,28 +11,29 @@
     unsigned long long  _backendArticleVersion;
     long long  _behaviorFlags;
     NSArray * _blockedStorefrontIDs;
+    bool  _canBePurchased;
     NSString * _clusterID;
     unsigned long long  _contentType;
     NSURL * _contentURL;
     FCCoverArt * _coverArt;
-    BOOL  _deleted;
-    BOOL  _featureCandidate;
-    BOOL  _hasThumbnail;
+    bool  _deleted;
+    bool  _featureCandidate;
+    bool  _hasThumbnail;
     NSArray * _iAdCategories;
     NSArray * _iAdKeywords;
     NSArray * _iAdSectionIDs;
     NSString * _identifier;
-    BOOL  _isDraft;
+    bool  _isDraft;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _largestThumbnailSize;
     NSDate * _lastFetchedDate;
     NSDate * _lastModifiedDate;
     long long  _minimumNewsVersion;
     NSArray * _moreFromPublisherArticleIDs;
-    BOOL  _needsRapidUpdates;
-    BOOL  _paid;
+    bool  _needsRapidUpdates;
+    bool  _paid;
     NSString * _primaryAudience;
     NSDate * _publishDate;
     unsigned long long  _publisherArticleVersion;
@@ -41,19 +42,19 @@
     NSString * _shortExcerpt;
     NSObject<FCChannelProviding> * _sourceChannel;
     NSString * _sourceName;
-    BOOL  _sponsored;
+    bool  _sponsored;
     FCTopStoriesStyleConfiguration * _storyStyle;
-    unsigned int  _storyType;
+    unsigned long long  _storyType;
     NSString * _subtitle;
     FCHeadlineThumbnail * _thumbnail;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _thumbnailFocalFrame;
     FCHeadlineThumbnail * _thumbnailHQ;
@@ -68,7 +69,7 @@
     NSArray * _topicIDs;
     NSArray * _topicScores;
     NSString * _versionIdentifier;
-    float  _videoDuration;
+    double  _videoDuration;
     NSURL * _videoURL;
 }
 
@@ -77,8 +78,8 @@
 @property (nonatomic) long long behaviorFlags;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)_forceArticlesToBeShownAsSponsored;
-+ (BOOL)_simulateTopStoriesBadges;
++ (bool)_forceArticlesToBeShownAsSponsored;
++ (bool)_simulateTopStoriesBadges;
 
 - (void).cxx_destruct;
 - (id)accessoryText;
@@ -89,30 +90,31 @@
 - (unsigned long long)backendArticleVersion;
 - (long long)behaviorFlags;
 - (id)blockedStorefrontIDs;
+- (bool)canBePurchased;
 - (id)clusterID;
 - (id)contentManifestWithContext:(id)arg1;
 - (unsigned long long)contentType;
 - (id)contentURL;
 - (id)coverArt;
 - (id)endOfArticleTopicIDs;
-- (BOOL)hasThumbnail;
+- (bool)hasThumbnail;
 - (id)iAdCategories;
 - (id)iAdKeywords;
 - (id)iAdSectionIDs;
 - (id)identifier;
 - (id)init;
 - (id)initWithArticleRecord:(id)arg1 articleInterestToken:(id)arg2 sourceChannel:(id)arg3 storyStyleConfigs:(id)arg4 storyTypeTimeout:(long long)arg5 rapidUpdatesTimeout:(long long)arg6 assetManager:(id)arg7;
-- (BOOL)isDeleted;
-- (BOOL)isDraft;
-- (BOOL)isFeatureCandidate;
-- (BOOL)isPaid;
-- (BOOL)isSponsored;
-- (struct CGSize { float x1; float x2; })largestThumbnailSize;
+- (bool)isDeleted;
+- (bool)isDraft;
+- (bool)isFeatureCandidate;
+- (bool)isPaid;
+- (bool)isSponsored;
+- (struct CGSize { double x1; double x2; })largestThumbnailSize;
 - (id)lastFetchedDate;
 - (id)lastModifiedDate;
 - (long long)minimumNewsVersion;
 - (id)moreFromPublisherArticleIDs;
-- (BOOL)needsRapidUpdates;
+- (bool)needsRapidUpdates;
 - (id)primaryAudience;
 - (id)publishDate;
 - (unsigned long long)publisherArticleVersion;
@@ -123,23 +125,25 @@
 - (void)setArticleRecord:(id)arg1;
 - (void)setBehaviorFlags:(long long)arg1;
 - (void)setContentType:(unsigned long long)arg1;
-- (void)setDeleted:(BOOL)arg1;
+- (void)setDeleted:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPublishDate:(id)arg1;
 - (void)setShortExcerpt:(id)arg1;
 - (void)setSourceChannel:(id)arg1;
 - (void)setSourceName:(id)arg1;
-- (void)setThumbnailFocalFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setStoryStyle:(id)arg1;
+- (void)setStoryType:(unsigned long long)arg1;
+- (void)setThumbnailFocalFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTopicIDs:(id)arg1;
 - (id)shortExcerpt;
 - (id)sourceChannel;
 - (id)sourceName;
 - (id)storyStyle;
-- (unsigned int)storyType;
+- (unsigned long long)storyType;
 - (id)subtitle;
 - (id)thumbnail;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })thumbnailFocalFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })thumbnailFocalFrame;
 - (id)thumbnailHQ;
 - (id)thumbnailLQ;
 - (id)thumbnailMedium;
@@ -152,7 +156,7 @@
 - (id)topicIDs;
 - (id)topicScores;
 - (id)versionIdentifier;
-- (float)videoDuration;
+- (double)videoDuration;
 - (id)videoURL;
 
 @end

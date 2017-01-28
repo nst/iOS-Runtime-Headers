@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSMutableDictionary *pendingRequests;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly, copy) NSSet *requestIdentifiers;
@@ -26,11 +26,11 @@
 - (void).cxx_destruct;
 - (void)__sendReponseForRequest:(id)arg1 response:(id)arg2 error:(id)arg3;
 - (id)activeMessageTracker;
-- (void)addRequestWithIdentifier:(id)arg1 messageName:(id)arg2 responseHandler:(id /* block */)arg3;
+- (void)addRequestWithIdentifier:(id)arg1 messageName:(id)arg2 responseHandler:(id)arg3;
 - (void)clear;
 - (id)clientName;
 - (id)clientQueue;
-- (BOOL)containsMessageWithIdentifier:(id)arg1;
+- (bool)containsMessageWithIdentifier:(id)arg1;
 - (id)initWithGroup:(id)arg1;
 - (id)pendingRequests;
 - (id)propertyQueue;

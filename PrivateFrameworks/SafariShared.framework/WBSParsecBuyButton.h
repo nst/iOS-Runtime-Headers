@@ -4,8 +4,8 @@
 
 @interface WBSParsecBuyButton : WBSParsecModel {
     NSString * _adamID;
-    BOOL  _enabled;
-    int  _imageAlignment;
+    bool  _enabled;
+    long long  _imageAlignment;
     WBSParsecImageRepresentation * _imageRepresentation;
     NSString * _offerIdentifier;
     NSString * _subtitle;
@@ -14,8 +14,8 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *adamID;
-@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
-@property (nonatomic, readonly) int imageAlignment;
+@property (getter=isEnabled, nonatomic, readonly) bool enabled;
+@property (nonatomic, readonly) long long imageAlignment;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *imageRepresentation;
 @property (nonatomic, readonly, copy) NSString *offerIdentifier;
 @property (nonatomic, readonly, copy) NSString *subtitle;
@@ -26,10 +26,10 @@
 
 - (void).cxx_destruct;
 - (id)adamID;
-- (int)imageAlignment;
+- (long long)imageAlignment;
 - (id)imageRepresentation;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)offerIdentifier;
 - (id)subtitle;
 - (id)title;

@@ -11,13 +11,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) ATSession *session;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithSession:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)session;
 - (void)sessionDidFinish:(id)arg1;
 - (void)start;

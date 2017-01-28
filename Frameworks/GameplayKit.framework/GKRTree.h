@@ -4,20 +4,20 @@
 
 @interface GKRTree : NSObject {
     struct GKCRTree<NSObject, float __attribute__((ext_vector_type(2)))>={GKCRTreeNode<NSObject, float __attribute__((ext_vector_type(2)))>=I{vector<GKCRTreeNode<NSObject, float __attribute__((ext_vector_type(2)))>, std::__1::allocator<GKCRTreeNode<NSObject, float __attribute__((ext_vector_type(2)))> > >=^{GKCRTreeNode<NSObject, float __attribute__((ext_vector_type(2)))> {} * _cRTree;
-    unsigned int  _queryReserve;
+    unsigned long long  _queryReserve;
 }
 
-@property unsigned int queryReserve;
+@property unsigned long long queryReserve;
 
-+ (id)treeWithMaxNumberOfChildren:(unsigned int)arg1;
++ (id)treeWithMaxNumberOfChildren:(unsigned long long)arg1;
 
-- (void)addElement:(void *)arg1 boundingRectMin:(void *)arg2 boundingRectMax:(void *)arg3 splitStrategy:(void *)arg4; // needs 4 arg types, found 2: id, int
+- (void)addElement:(void *)arg1 boundingRectMin:(void *)arg2 boundingRectMax:(void *)arg3 splitStrategy:(void *)arg4; // needs 4 arg types, found 2: id, long long
 - (void)dealloc;
 - (id)elementsInBoundingRectMinrectMax;
 - (id)init;
-- (id)initWithMaxNumberOfChildren:(unsigned int)arg1;
-- (unsigned int)queryReserve;
+- (id)initWithMaxNumberOfChildren:(unsigned long long)arg1;
+- (unsigned long long)queryReserve;
 - (void)removeElement:(void *)arg1 boundingRectMin:(void *)arg2 boundingRectMax:(void *)arg3; // needs 3 arg types, found 1: id
-- (void)setQueryReserve:(unsigned int)arg1;
+- (void)setQueryReserve:(unsigned long long)arg1;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface MCDForYouContentManager : NSObject {
-    unsigned int  _additionalRecommendationsLoadedCount;
-    BOOL  _hasAdditionalRecommendations;
+    unsigned long long  _additionalRecommendationsLoadedCount;
+    bool  _hasAdditionalRecommendations;
     long long  _modelRevisionID;
     NSOperationQueue * _operationQueue;
     MusicForYouRecommendationsResponse * _recommendationsResponse;
 }
 
-@property (nonatomic) unsigned int additionalRecommendationsLoadedCount;
-@property (nonatomic) BOOL hasAdditionalRecommendations;
+@property (nonatomic) unsigned long long additionalRecommendationsLoadedCount;
+@property (nonatomic) bool hasAdditionalRecommendations;
 @property (nonatomic) long long modelRevisionID;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
 @property (nonatomic, retain) MusicForYouRecommendationsResponse *recommendationsResponse;
@@ -19,19 +19,19 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_additionalRecommendationsWithCompletion:(id /* block */)arg1;
-- (id)_newForYouRecommendationsRequestWithType:(unsigned int)arg1;
-- (BOOL)_responseHasContent:(id)arg1;
-- (unsigned int)additionalRecommendationsLoadedCount;
-- (BOOL)hasAdditionalRecommendations;
+- (void)_additionalRecommendationsWithCompletion:(id)arg1;
+- (id)_newForYouRecommendationsRequestWithType:(unsigned long long)arg1;
+- (bool)_responseHasContent:(id)arg1;
+- (unsigned long long)additionalRecommendationsLoadedCount;
+- (bool)hasAdditionalRecommendations;
 - (id)init;
 - (id)lastRecommendation;
-- (void)loadMCDForYouContentWithCompletion:(id /* block */)arg1;
+- (void)loadMCDForYouContentWithCompletion:(id)arg1;
 - (long long)modelRevisionID;
 - (id)operationQueue;
 - (id)recommendationsResponse;
-- (void)setAdditionalRecommendationsLoadedCount:(unsigned int)arg1;
-- (void)setHasAdditionalRecommendations:(BOOL)arg1;
+- (void)setAdditionalRecommendationsLoadedCount:(unsigned long long)arg1;
+- (void)setHasAdditionalRecommendations:(bool)arg1;
 - (void)setModelRevisionID:(long long)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)setRecommendationsResponse:(id)arg1;

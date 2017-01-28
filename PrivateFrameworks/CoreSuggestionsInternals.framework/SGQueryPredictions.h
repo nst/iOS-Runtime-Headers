@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) SGQPMetricsTracker *metricsTracker;
 @property (retain) SGQPLanguageContext *noLanguageContext;
 @property (retain) SGQPLanguageContext *primaryLanguageContext;
@@ -32,7 +32,7 @@
 - (id)languageContextForMessages:(id)arg1;
 - (id)metricsTracker;
 - (id)noLanguageContext;
-- (id)predictionsForConversation:(id)arg1 count:(unsigned int)arg2;
+- (id)predictionsForConversation:(id)arg1 count:(unsigned long long)arg2;
 - (void)primaryAssetUpdated:(id)arg1;
 - (id)primaryLanguageContext;
 - (id)queryPredictionsFeedbackReportForConversation:(id)arg1;

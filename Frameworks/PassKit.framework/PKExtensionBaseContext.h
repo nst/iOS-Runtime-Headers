@@ -8,6 +8,6 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (id)remoteContext;
-- (id)remoteContextWithErrorHandler:(id /* block */)arg1;
+- (id)remoteContextWithErrorHandler:(id)arg1;
 
 @end

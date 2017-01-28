@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) <HMDCameraSnapshotRemoteRelayStreamDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraSnapshotRemoteRelayReceiver *relayReceiver;
 @property (nonatomic, readonly) HMDCameraSnapshotRemoteStreamSender *streamSender;
 @property (readonly) Class superclass;
@@ -29,11 +29,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (void)getSnapshot:(unsigned int)arg1;
+- (void)getSnapshot:(unsigned long long)arg1;
 - (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 options:(id)arg3 destinationID:(id)arg4 accessory:(id)arg5 delegate:(id)arg6 delegateQueue:(id)arg7 uniqueIdentifier:(id)arg8 snapshotRequestHandler:(id)arg9 residentMessageHandler:(id)arg10;
 - (id)logIdentifier;
 - (id)relayReceiver;
-- (void)snapShotSendFailed;
+- (void)snapShotSendFailed:(id)arg1;
 - (void)snapShotTransferComplete;
 - (void)snapshotRelayReceiver:(id)arg1 didSaveSnapshotFile:(id)arg2 error:(id)arg3 sessionID:(id)arg4;
 - (void)snapshotRelayReceiver:(id)arg1 didStartGettingImage:(id)arg2 sessionID:(id)arg3;

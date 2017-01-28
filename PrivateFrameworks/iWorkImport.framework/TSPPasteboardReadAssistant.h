@@ -16,13 +16,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned long long fileFormatVersion;
-@property (nonatomic, readonly) BOOL hasDocumentVersionUUID;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCrossAppPaste;
-@property (nonatomic, readonly) BOOL isCrossDocumentPaste;
+@property (nonatomic, readonly) bool hasDocumentVersionUUID;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCrossAppPaste;
+@property (nonatomic, readonly) bool isCrossDocumentPaste;
 @property (nonatomic, readonly) TSPObjectContext *pasteboardContext;
 @property (nonatomic, readonly) TSPPasteboardObject *pasteboardObject;
-@property (nonatomic, readonly) int sourceType;
+@property (nonatomic, readonly) long long sourceType;
 @property (readonly) Class superclass;
 
 + (id)contentDescriptionFromPasteboard:(id)arg1;
@@ -30,26 +30,26 @@
 - (void).cxx_destruct;
 - (id)cachedDataForIdentifier:(long long)arg1;
 - (id)cachedMetadataObject;
-- (BOOL)canResolveExternalReferences;
+- (bool)canResolveExternalReferences;
 - (id)dataInfoForIdentifier:(long long)arg1;
 - (unsigned long long)fileFormatVersion;
-- (BOOL)hasDocumentVersionUUID;
+- (bool)hasDocumentVersionUUID;
 - (id)init;
 - (id)initWithPasteboard:(id)arg1 targetContext:(id)arg2;
 - (id)initWithPasteboardNativeDataProvider:(id)arg1 targetContext:(id)arg2;
 - (id)initWithTargetContext:(id)arg1;
-- (BOOL)isCrossAppPaste;
-- (BOOL)isCrossDocumentPaste;
+- (bool)isCrossAppPaste;
+- (bool)isCrossDocumentPaste;
 - (id)metadataComponent;
 - (long long)objectIdentifierForUUID:(id)arg1;
 - (id)objectUUIDForExternalReferenceToIdentifier:(long long)arg1;
 - (id)pasteboardContext;
 - (id)pasteboardObject;
-- (BOOL)processMetadataObject:(id)arg1 error:(id*)arg2;
-- (BOOL)readPasteboardObjectWithDecoder:(id)arg1 error:(id*)arg2;
+- (bool)processMetadataObject:(id)arg1 error:(id*)arg2;
+- (bool)readPasteboardObjectWithDecoder:(id)arg1 error:(id*)arg2;
 - (id)rootObjectComponent;
-- (BOOL)shouldDecodeMissingDataAsRemote;
-- (BOOL)shouldResolveExternalReferencesUsingObjectUUID;
-- (int)sourceType;
+- (bool)shouldDecodeMissingDataAsRemote;
+- (bool)shouldResolveExternalReferencesUsingObjectUUID;
+- (long long)sourceType;
 
 @end

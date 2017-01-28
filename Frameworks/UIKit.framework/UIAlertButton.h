@@ -4,32 +4,32 @@
 
 @interface UIAlertButton : UIButton {
     UIImageView * _highlightView;
-    float  _imageOffset;
-    BOOL  _isNewStyle;
+    double  _imageOffset;
+    bool  _isNewStyle;
 }
 
 @property (nonatomic, retain) UIImage *highlightImage;
 @property (readonly) UIImageView *highlightView;
-@property (nonatomic) float imageOffset;
-@property (nonatomic) BOOL isNewStyle;
+@property (nonatomic) double imageOffset;
+@property (nonatomic) bool isNewStyle;
 
-- (void)_transitionHighlightViewToHighlighted:(BOOL)arg1;
-- (BOOL)canBecomeFocused;
+- (void)_transitionHighlightViewToHighlighted:(bool)arg1;
+- (bool)canBecomeFocused;
 - (void)dealloc;
 - (void)focusedViewDidChange;
 - (id)highlightImage;
 - (id)highlightView;
 - (id)image;
-- (float)imageOffset;
+- (double)imageOffset;
 - (id)initWithTitle:(id)arg1;
-- (BOOL)isNewStyle;
+- (bool)isNewStyle;
 - (void)layoutSubviews;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setHighlightImage:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setImage:(id)arg1 forState:(unsigned int)arg2;
-- (void)setImageOffset:(float)arg1;
-- (void)setIsNewStyle:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setImage:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setImageOffset:(double)arg1;
+- (void)setIsNewStyle:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

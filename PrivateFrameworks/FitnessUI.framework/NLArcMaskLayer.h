@@ -3,30 +3,30 @@
  */
 
 @interface NLArcMaskLayer : CAShapeLayer {
-    float  _arcStart;
+    double  _arcStart;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _center;
-    float  _radius;
+    double  _radius;
 }
 
-@property (nonatomic) float arcStart;
-@property (nonatomic) struct CGPoint { float x1; float x2; } center;
-@property (nonatomic) float radius;
+@property (nonatomic) double arcStart;
+@property (nonatomic) struct CGPoint { double x1; double x2; } center;
+@property (nonatomic) double radius;
 
-+ (BOOL)needsDisplayForKey:(id)arg1;
++ (bool)needsDisplayForKey:(id)arg1;
 
 - (void)_regeneratePath;
 - (id)actionForKey:(id)arg1;
-- (void)animatePathCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 lineWidth:(float)arg3 duration:(float)arg4;
-- (float)arcStart;
-- (struct CGPoint { float x1; float x2; })center;
+- (void)animatePathCenter:(struct CGPoint { double x1; double x2; })arg1 radius:(double)arg2 lineWidth:(double)arg3 duration:(double)arg4;
+- (double)arcStart;
+- (struct CGPoint { double x1; double x2; })center;
 - (id)init;
-- (float)radius;
-- (void)setArcStart:(float)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRadius:(float)arg1;
+- (double)radius;
+- (void)setArcStart:(double)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRadius:(double)arg1;
 
 @end

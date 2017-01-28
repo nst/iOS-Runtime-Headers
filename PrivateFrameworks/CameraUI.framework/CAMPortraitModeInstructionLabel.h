@@ -3,23 +3,23 @@
  */
 
 @interface CAMPortraitModeInstructionLabel : CAMInstructionLabel {
-    unsigned int  _numberOfPeopleFound;
-    int  _shallowDepthOfFieldStatus;
+    unsigned long long  _numberOfPeopleFound;
+    long long  _shallowDepthOfFieldStatus;
 }
 
-@property (nonatomic) unsigned int numberOfPeopleFound;
-@property (nonatomic) int shallowDepthOfFieldStatus;
+@property (nonatomic) unsigned long long numberOfPeopleFound;
+@property (nonatomic) long long shallowDepthOfFieldStatus;
 
-+ (id)_textForShallowDepthOfFieldStatus:(int)arg1 numberOfPeopleFound:(unsigned int)arg2;
-+ (BOOL)shouldDisplayInstructionForShallowDepthOfFieldStatus:(int)arg1;
++ (id)_textForShallowDepthOfFieldStatus:(long long)arg1 numberOfPeopleFound:(unsigned long long)arg2;
++ (bool)shouldDisplayInstructionForShallowDepthOfFieldStatus:(long long)arg1;
 
-- (float)_backgroundAlpha;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_textInsets;
+- (double)_backgroundAlpha;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_textInsets;
 - (void)_updateText;
-- (unsigned int)numberOfPeopleFound;
-- (void)setNumberOfPeopleFound:(unsigned int)arg1;
-- (void)setShallowDepthOfFieldStatus:(int)arg1;
-- (int)shallowDepthOfFieldStatus;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned long long)numberOfPeopleFound;
+- (void)setNumberOfPeopleFound:(unsigned long long)arg1;
+- (void)setShallowDepthOfFieldStatus:(long long)arg1;
+- (long long)shallowDepthOfFieldStatus;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -3,30 +3,30 @@
  */
 
 @interface ABLabelViewWithVariablePositioning : UIView {
-    float  _bottomPadding;
-    float  _horizontalPadding;
+    double  _bottomPadding;
+    double  _horizontalPadding;
     UILabel * _label;
-    float  _topPadding;
+    double  _topPadding;
 }
 
-@property (nonatomic) float bottomPadding;
-@property (nonatomic) float horizontalPadding;
-@property (nonatomic) float topPadding;
+@property (nonatomic) double bottomPadding;
+@property (nonatomic) double horizontalPadding;
+@property (nonatomic) double topPadding;
 
-- (float)bottomPadding;
+- (double)bottomPadding;
 - (void)dealloc;
-- (float)horizontalPadding;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)horizontalPadding;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setBottomPadding:(float)arg1;
-- (void)setHorizontalPadding:(float)arg1;
+- (void)setBottomPadding:(double)arg1;
+- (void)setHorizontalPadding:(double)arg1;
 - (void)setLabelFont:(id)arg1;
 - (void)setLabelShadowColor:(id)arg1;
-- (void)setLabelShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLabelShadowOffset:(struct CGSize { double x1; double x2; })arg1;
 - (void)setLabelText:(id)arg1;
 - (void)setLabelTextColor:(id)arg1;
-- (void)setTopPadding:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (float)topPadding;
+- (void)setTopPadding:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (double)topPadding;
 
 @end

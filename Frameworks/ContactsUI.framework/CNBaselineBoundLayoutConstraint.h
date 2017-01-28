@@ -3,16 +3,16 @@
  */
 
 @interface CNBaselineBoundLayoutConstraint : CNBoundLayoutConstraint {
-    float  _baselineConstant;
-    BOOL  _ignoreAccessibilitySizes;
+    double  _baselineConstant;
+    bool  _ignoreAccessibilitySizes;
 }
 
-@property BOOL ignoreAccessibilitySizes;
+@property bool ignoreAccessibilitySizes;
 
-+ (id)constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 textAttributesObject:(id)arg6 keyPath:(id)arg7 baselineConstant:(float)arg8;
++ (id)constraintWithItem:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toItem:(id)arg4 attribute:(long long)arg5 textAttributesObject:(id)arg6 keyPath:(id)arg7 baselineConstant:(double)arg8;
 
 - (void)_boundValueDidChange;
-- (BOOL)ignoreAccessibilitySizes;
-- (void)setIgnoreAccessibilitySizes:(BOOL)arg1;
+- (bool)ignoreAccessibilitySizes;
+- (void)setIgnoreAccessibilitySizes:(bool)arg1;
 
 @end

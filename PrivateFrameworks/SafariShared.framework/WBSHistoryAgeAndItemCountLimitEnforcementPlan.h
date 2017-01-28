@@ -5,11 +5,11 @@
 @interface WBSHistoryAgeAndItemCountLimitEnforcementPlan : NSObject {
     double  _ageLimit;
     WBSHistoryDeletionPlan * _deletionPlan;
-    unsigned int  _itemCountLimit;
+    unsigned long long  _itemCountLimit;
     NSSet * _items;
     NSSet * _itemsToDiscard;
     NSSet * _itemsToKeep;
-    int  _reason;
+    long long  _reason;
     WBSHistorySQLiteStore * _store;
 }
 
@@ -21,7 +21,7 @@
 - (id)_itemsToDiscard;
 - (id)deletionPlan;
 - (void)execute;
-- (id)initWithSQLiteStore:(id)arg1 items:(id)arg2 ageLimit:(double)arg3 itemCountLimit:(unsigned int)arg4 reason:(int)arg5;
+- (id)initWithSQLiteStore:(id)arg1 items:(id)arg2 ageLimit:(double)arg3 itemCountLimit:(unsigned long long)arg4 reason:(long long)arg5;
 - (id)itemsToDiscard;
 - (id)itemsToKeep;
 - (void)prepare;

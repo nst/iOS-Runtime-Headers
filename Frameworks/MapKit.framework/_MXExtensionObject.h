@@ -5,10 +5,10 @@
 @interface _MXExtensionObject : NSObject <NSSecureCoding>
 
 + (Class)classForItemProvider:(id)arg1;
-+ (void)extensionObjectFromExtensionItem:(id)arg1 completion:(id /* block */)arg2;
++ (void)extensionObjectFromExtensionItem:(id)arg1 completion:(id)arg2;
 + (void)load;
 + (void)registerTypeIdentifier;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)typeIdentifier;
 
 - (void)encodeWithCoder:(id)arg1;

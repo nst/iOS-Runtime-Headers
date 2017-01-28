@@ -10,8 +10,8 @@
 
 @optional
 
-- (BOOL)assetExplorerReviewScreenViewController:(PUAssetExplorerReviewScreenViewController *)arg1 canPerformActionType:(unsigned int)arg2 onAsset:(id <PUDisplayAsset>)arg3 inAssetCollection:(id <PUDisplayAssetCollection>)arg4;
-- (BOOL)assetExplorerReviewScreenViewController:(PUAssetExplorerReviewScreenViewController *)arg1 shouldEnableActionType:(unsigned int)arg2 onAsset:(id <PUDisplayAsset>)arg3 inAssetCollection:(id <PUDisplayAssetCollection>)arg4;
+- (bool)assetExplorerReviewScreenViewController:(PUAssetExplorerReviewScreenViewController *)arg1 canPerformActionType:(unsigned long long)arg2 onAsset:(id <PUDisplayAsset>)arg3 inAssetCollection:(id <PUDisplayAssetCollection>)arg4;
+- (bool)assetExplorerReviewScreenViewController:(PUAssetExplorerReviewScreenViewController *)arg1 shouldEnableActionType:(unsigned long long)arg2 onAsset:(id <PUDisplayAsset>)arg3 inAssetCollection:(id <PUDisplayAssetCollection>)arg4;
 - (void)assetExplorerReviewScreenViewControllerDidPressRetake:(PUAssetExplorerReviewScreenViewController *)arg1;
 
 @end

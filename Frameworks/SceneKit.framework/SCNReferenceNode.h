@@ -4,20 +4,20 @@
 
 @interface SCNReferenceNode : SCNNode {
     NSURL * _catalogURL;
-    BOOL  _loaded;
-    int  _loadingPolicy;
+    bool  _loaded;
+    long long  _loadingPolicy;
     NSURL * _referenceURL;
 }
 
-@property (getter=isLoaded, readonly) BOOL loaded;
-@property (nonatomic) int loadingPolicy;
+@property (getter=isLoaded, readonly) bool loaded;
+@property (nonatomic) long long loadingPolicy;
 @property (nonatomic, copy) NSURL *referenceURL;
 
 + (id)referenceNodeWithURL:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_catalog;
-- (BOOL)_isAReference;
+- (bool)_isAReference;
 - (void)_loadWithCatalog:(id)arg1;
 - (id)_resolveURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -26,11 +26,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isLoaded;
+- (bool)isLoaded;
 - (void)load;
-- (int)loadingPolicy;
+- (long long)loadingPolicy;
 - (id)referenceURL;
-- (void)setLoadingPolicy:(int)arg1;
+- (void)setLoadingPolicy:(long long)arg1;
 - (void)setReferenceURL:(id)arg1;
 - (void)unload;
 

@@ -10,7 +10,7 @@
     double  _expectedTravelTime;
     NSArray * _sortedETAs;
     MKMapItem * _source;
-    unsigned int  _transportType;
+    unsigned long long  _transportType;
 }
 
 @property (nonatomic, readonly) MKMapItem *destination;
@@ -20,11 +20,11 @@
 @property (nonatomic, readonly) double expectedTravelTime;
 @property (getter=_sortedETAs, nonatomic, readonly) NSArray *sortedETAs;
 @property (nonatomic, readonly) MKMapItem *source;
-@property (nonatomic, readonly) unsigned int transportType;
+@property (nonatomic, readonly) unsigned long long transportType;
 
 - (void).cxx_destruct;
 - (id)_sortedETAs;
-- (unsigned int)_transportType:(int)arg1;
+- (unsigned long long)_transportType:(int)arg1;
 - (id)destination;
 - (double)distance;
 - (id)expectedArrivalDate;
@@ -34,6 +34,6 @@
 - (void)setExpectedArrivalDate:(id)arg1;
 - (void)setExpectedDepartureDate:(id)arg1;
 - (id)source;
-- (unsigned int)transportType;
+- (unsigned long long)transportType;
 
 @end

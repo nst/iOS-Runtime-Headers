@@ -11,7 +11,7 @@
     FIUIActivitySettingsController * _preEditSettingsController;
     FIUIActivitySettingsController * _settingsController;
     FIUIHealthSettingsSexPickerController * _sexPickerController;
-    BOOL  _showWheelchair;
+    bool  _showWheelchair;
     FIUIHealthSettingsTableViewCell * _weightCell;
     FIUIHealthSettingsWeightPickerController * _weightPickerController;
     FIUIHealthSettingsTableViewCell * _wheelchairUseCell;
@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) FIUIActivitySettingsController *editedSettingsController;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FIUIHealthSettingsHeightPickerController *heightPickerController;
 @property (nonatomic, retain) FIUIActivitySettingsController *settingsController;
 @property (nonatomic, retain) FIUIHealthSettingsSexPickerController *sexPickerController;
@@ -43,10 +43,10 @@
 - (void)cellDidBecomeFirstResponder:(id)arg1;
 - (void)cellDidResignFirstResponder:(id)arg1;
 - (id)editedSettingsController;
-- (void)endEditingAndDiscardChanges:(BOOL)arg1;
+- (void)endEditingAndDiscardChanges:(bool)arg1;
 - (id)heightCell;
 - (id)heightPickerController;
-- (id)initWithActivitySettingsController:(id)arg1 showWheelchair:(BOOL)arg2;
+- (id)initWithActivitySettingsController:(id)arg1 showWheelchair:(bool)arg2;
 - (void)setBirthDatePickerController:(id)arg1;
 - (void)setHeightPickerController:(id)arg1;
 - (void)setSettingsController:(id)arg1;
@@ -57,7 +57,7 @@
 - (id)sexPickerController;
 - (void)startEditing;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)weightCell;
 - (id)weightPickerController;
 - (id)wheelchairUseCell;

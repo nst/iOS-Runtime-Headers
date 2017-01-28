@@ -14,19 +14,19 @@
     void viewTapped;
 }
 
-@property (nonatomic, retain) NSDate *dueDate;
+@property (nonatomic, copy) NSDate *dueDate;
 @property (nonatomic, retain) UIColor *listColor;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) id /* block */ viewTapped;
+@property (nonatomic, copy) id viewTapped;
 
-- (id /* block */).cxx_destruct;
+- (id).cxx_destruct;
 - (id)dueDate;
-- (float)firstBaselineOffsetFromTop;
+- (double)firstBaselineOffsetFromTop;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)lastBaselineOffsetFromBottom;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lastBaselineOffsetFromBottom;
 - (void)layoutSubviews;
 - (id)listColor;
 - (id)location;
@@ -36,10 +36,10 @@
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setViewTapped:(id /* block */)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)tappedWithGestureRecognizer:(id)arg1;
+- (void)setViewTapped:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (void)tapped:(id)arg1;
 - (id)title;
-- (id /* block */)viewTapped;
+- (id)viewTapped;
 
 @end

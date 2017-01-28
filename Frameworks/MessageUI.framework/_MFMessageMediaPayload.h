@@ -5,18 +5,18 @@
 @interface _MFMessageMediaPayload : NSObject <NSSecureCoding> {
     NSString * _accessibilityLabel;
     UIImage * _image;
-    BOOL  _isSticker;
+    bool  _isSticker;
     NSURL * _mediaURL;
     NSString * _text;
 }
 
 @property (nonatomic, copy) NSString *accessibilityLabel;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) BOOL isSticker;
+@property (nonatomic) bool isSticker;
 @property (nonatomic, retain) NSURL *mediaURL;
 @property (nonatomic, retain) NSString *text;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
@@ -24,11 +24,11 @@
 - (id)image;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isSticker;
+- (bool)isSticker;
 - (id)mediaURL;
 - (void)setAccessibilityLabel:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setIsSticker:(BOOL)arg1;
+- (void)setIsSticker:(bool)arg1;
 - (void)setMediaURL:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;

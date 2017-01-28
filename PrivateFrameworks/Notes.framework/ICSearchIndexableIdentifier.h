@@ -16,12 +16,12 @@
 - (id)contextIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)forAnyContext;
-- (BOOL)hasContextIdentifier:(id)arg1;
-- (unsigned int)hash;
+- (bool)forAnyContext;
+- (bool)hasContextIdentifier:(id)arg1;
+- (unsigned long long)hash;
 - (id)initForAnyContextWithObjectIdentifier:(id)arg1 managedObjectContext:(id)arg2;
 - (id)initWithContextIdentifier:(id)arg1 objectIdentifier:(id)arg2 managedObjectContext:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)managedObjectContext;
 - (id)objectIdentifier;
 - (id)specificIdentifierForContextIdentifier:(id)arg1;

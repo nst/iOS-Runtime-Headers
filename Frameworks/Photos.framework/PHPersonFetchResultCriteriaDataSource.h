@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned int)count;
-- (int)faceCountAtIndex:(unsigned int)arg1;
+- (unsigned long long)count;
+- (long long)faceCountAtIndex:(unsigned long long)arg1;
 - (id)initWithFetchResut:(id)arg1;
 
 @end

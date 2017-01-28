@@ -4,6 +4,6 @@
 
 @interface NSURLSessionDownloadTask : NSURLSessionTask
 
-- (void)cancelByProducingResumeData:(id /* block */)arg1;
+- (void)cancelByProducingResumeData:(id)arg1;
 
 @end

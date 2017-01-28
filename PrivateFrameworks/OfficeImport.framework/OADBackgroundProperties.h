@@ -10,7 +10,7 @@
 - (void)dealloc;
 - (id)effects;
 - (id)fill;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
 

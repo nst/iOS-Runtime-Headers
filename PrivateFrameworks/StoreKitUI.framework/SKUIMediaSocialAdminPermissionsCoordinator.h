@@ -18,14 +18,14 @@
 + (id)sharedCoordinator;
 
 - (void).cxx_destruct;
-- (void)_authenticateOnCompletion:(id /* block */)arg1;
+- (void)_authenticateOnCompletion:(id)arg1;
 - (void)_fireResultsBlocksWithAuthors:(id)arg1 error:(id)arg2;
 - (void)_getAuthors;
 - (void)_handleOperationResponseWithAuthors:(id)arg1 error:(id)arg2;
-- (void)_queueResultBlock:(id /* block */)arg1;
-- (void)getAdminStatusWithOptions:(id)arg1 resultBlock:(id /* block */)arg2;
-- (void)getAuthorsAndWaitWithOptions:(id)arg1 authorsBlock:(id /* block */)arg2;
-- (void)getAuthorsWithOptions:(id)arg1 authorsBlock:(id /* block */)arg2;
+- (void)_queueResultBlock:(id)arg1;
+- (void)getAdminStatusWithOptions:(id)arg1 resultBlock:(id)arg2;
+- (void)getAuthorsAndWaitWithOptions:(id)arg1 authorsBlock:(id)arg2;
+- (void)getAuthorsWithOptions:(id)arg1 authorsBlock:(id)arg2;
 - (id)init;
 - (id)lastKnownAdminStatus;
 - (id)lastKnownAuthors;

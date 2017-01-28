@@ -18,14 +18,14 @@
 - (id)_filterIndexExtensions:(id)arg1;
 - (id)_loadExtensionsSynchronously;
 - (id)extensionsByBundleId;
-- (void)findExtensionsWithCompletionBlock:(id /* block */)arg1;
+- (void)findExtensionsWithCompletionBlock:(id)arg1;
 - (id)init;
 - (id)matchingContext;
 - (id)queue;
 - (void)setExtensionsByBundleId:(id)arg1;
 - (void)setMatchingContext:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)startLookingForExtensionsWithMatchUpdateHandler:(id /* block */)arg1;
+- (void)startLookingForExtensionsWithMatchUpdateHandler:(id)arg1;
 - (void)stopLookingForExtensions;
 
 @end

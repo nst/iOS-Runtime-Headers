@@ -4,13 +4,13 @@
 
 @interface WPZoneTracker : WPClient {
     <WPZoneTrackerDelegate> * _delegate;
-    BOOL  _wantEntry;
-    BOOL  _wantExit;
+    bool  _wantEntry;
+    bool  _wantExit;
 }
 
 @property (nonatomic) <WPZoneTrackerDelegate> *delegate;
-@property (nonatomic) BOOL wantEntry;
-@property (nonatomic) BOOL wantExit;
+@property (nonatomic) bool wantEntry;
+@property (nonatomic) bool wantExit;
 
 - (void).cxx_destruct;
 - (id)clientAsString;
@@ -26,12 +26,12 @@
 - (void)invalidate;
 - (void)registerForZoneChangesMatching:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setWantEntry:(BOOL)arg1;
-- (void)setWantExit:(BOOL)arg1;
-- (void)stateDidChange:(int)arg1;
+- (void)setWantEntry:(bool)arg1;
+- (void)setWantExit:(bool)arg1;
+- (void)stateDidChange:(long long)arg1;
 - (void)unregisterAllZoneChanges;
 - (void)unregisterForZoneChanges:(id)arg1;
-- (BOOL)wantEntry;
-- (BOOL)wantExit;
+- (bool)wantEntry;
+- (bool)wantExit;
 
 @end

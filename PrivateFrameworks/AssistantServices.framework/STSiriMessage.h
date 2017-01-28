@@ -9,7 +9,7 @@
     NSString * _effect;
     NSString * _groupName;
     NSString * _groupNameId;
-    BOOL  _outbound;
+    bool  _outbound;
     NSArray * _recipientAddresses;
     NSDate * _sendDate;
     STContactAddress * _senderAddress;
@@ -17,7 +17,7 @@
     NSString * _subjectText;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;
@@ -31,7 +31,7 @@
 - (id)groupNameId;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isOutbound;
+- (bool)isOutbound;
 - (id)recipientAddresses;
 - (id)sendDate;
 - (id)senderAddress;
@@ -42,7 +42,7 @@
 - (void)setEffect:(id)arg1;
 - (void)setGroupName:(id)arg1;
 - (void)setGroupNameId:(id)arg1;
-- (void)setOutbound:(BOOL)arg1;
+- (void)setOutbound:(bool)arg1;
 - (void)setRecipientAddresses:(id)arg1;
 - (void)setSendDate:(id)arg1;
 - (void)setSenderAddress:(id)arg1;

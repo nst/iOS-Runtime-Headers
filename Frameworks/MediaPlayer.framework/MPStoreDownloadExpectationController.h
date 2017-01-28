@@ -4,17 +4,17 @@
 
 @interface MPStoreDownloadExpectationController : NSObject <MPStoreDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSObject<OS_dispatch_source> * _dispatchSource;
-    unsigned int  _downloadManagerMonitorCount;
-    id /* block */  _searchBlock;
+    unsigned long long  _downloadManagerMonitorCount;
+    id  _searchBlock;
     double  _timeout;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ searchBlock;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id searchBlock;
 @property (readonly) Class superclass;
 @property (nonatomic) double timeout;
 
@@ -26,10 +26,10 @@
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
 - (id)init;
-- (id /* block */)searchBlock;
-- (void)setSearchBlock:(id /* block */)arg1;
+- (id)searchBlock;
+- (void)setSearchBlock:(id)arg1;
 - (void)setTimeout:(double)arg1;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 - (double)timeout;
 
 @end

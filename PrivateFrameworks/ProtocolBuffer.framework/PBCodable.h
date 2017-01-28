@@ -7,13 +7,13 @@
 @property (nonatomic, readonly) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
 
 + (id)options;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)data;
 - (id)dictionaryRepresentation;
@@ -22,12 +22,12 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
 
-- (BOOL)_isRedactable:(id)arg1;
+- (bool)_isRedactable:(id)arg1;
 - (id)_redact:(id)arg1;
 - (id)redact;
 
@@ -36,11 +36,6 @@
 + (id)newFromSqliteValue:(struct Mem { }*)arg1;
 
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
-- (BOOL)_hasIvar:(struct objc_ivar { }*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 

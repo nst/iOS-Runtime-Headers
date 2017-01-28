@@ -10,13 +10,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) ABGroupWrapper *groupWrapper;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ABStyleProvider *styleProvider;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)groupWrapper;
-- (void)groupWrapper:(id)arg1 didBecomeSelected:(BOOL)arg2;
+- (void)groupWrapper:(id)arg1 didBecomeSelected:(bool)arg2;
 - (void)setGroupWrapper:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;

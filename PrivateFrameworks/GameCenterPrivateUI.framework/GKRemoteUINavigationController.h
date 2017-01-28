@@ -8,16 +8,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) GKRemoteUIController *remoteUIController;
 @property (readonly) Class superclass;
 
-- (BOOL)_gkCanBeRemovedFromParentWhenCovered;
-- (BOOL)_gkUsesBubbleFlowModalPresentation;
+- (bool)_gkCanBeRemovedFromParentWhenCovered;
+- (bool)_gkUsesBubbleFlowModalPresentation;
 - (void)dealloc;
 - (id)initWithRemoteUIController:(id)arg1;
 - (void)loadView;
 - (id)remoteUIController;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

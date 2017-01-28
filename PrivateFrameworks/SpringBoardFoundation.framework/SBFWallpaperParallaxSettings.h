@@ -3,35 +3,35 @@
  */
 
 @interface SBFWallpaperParallaxSettings : SBFParallaxSettings {
-    float  _overhangX;
-    float  _overhangY;
-    float  _perspectiveTransform;
+    double  _overhangX;
+    double  _overhangY;
+    double  _perspectiveTransform;
 }
 
-@property float overhangX;
-@property float overhangY;
-@property float perspectiveTransform;
+@property double overhangX;
+@property double overhangY;
+@property double perspectiveTransform;
 
-+ (int)_currentDeviceType;
-+ (struct CGSize { float x1; float x2; })_requiredOverhangSizeForCurrentDevice;
-+ (struct CGSize { float x1; float x2; })_requiredOverhangSizeForDeviceType:(int)arg1;
-+ (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1;
-+ (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1 portrait:(BOOL)arg2;
-+ (struct CGSize { float x1; float x2; })bestWallpaperSizeForWallpaperSize:(struct CGSize { float x1; float x2; })arg1 deviceType:(int)arg2 parallaxFactor:(float)arg3 portrait:(BOOL)arg4;
-+ (struct CGSize { float x1; float x2; })minimumWallpaperSizeForCurrentDevice;
-+ (struct CGSize { float x1; float x2; })minimumWallpaperSizeForWallpaperSize:(struct CGSize { float x1; float x2; })arg1 deviceType:(int)arg2;
-+ (float)minimumZoomScaleForCurrentDeviceForWallpaperSize:(struct CGSize { float x1; float x2; })arg1 parallaxFactor:(float)arg2;
-+ (float)minimumZoomScaleForWallpaperSize:(struct CGSize { float x1; float x2; })arg1 parallaxFactor:(float)arg2 deviceType:(int)arg3;
-+ (struct CGSize { float x1; float x2; })overhangSizeForCurrentDevice;
-+ (struct CGSize { float x1; float x2; })overhangSizeForDeviceType:(int)arg1;
++ (long long)_currentDeviceType;
++ (struct CGSize { double x1; double x2; })_requiredOverhangSizeForCurrentDevice;
++ (struct CGSize { double x1; double x2; })_requiredOverhangSizeForDeviceType:(long long)arg1;
++ (struct CGSize { double x1; double x2; })bestWallpaperSizeForParallaxFactor:(double)arg1;
++ (struct CGSize { double x1; double x2; })bestWallpaperSizeForParallaxFactor:(double)arg1 portrait:(bool)arg2;
++ (struct CGSize { double x1; double x2; })bestWallpaperSizeForWallpaperSize:(struct CGSize { double x1; double x2; })arg1 deviceType:(long long)arg2 parallaxFactor:(double)arg3 portrait:(bool)arg4;
++ (struct CGSize { double x1; double x2; })minimumWallpaperSizeForCurrentDevice;
++ (struct CGSize { double x1; double x2; })minimumWallpaperSizeForWallpaperSize:(struct CGSize { double x1; double x2; })arg1 deviceType:(long long)arg2;
++ (double)minimumZoomScaleForCurrentDeviceForWallpaperSize:(struct CGSize { double x1; double x2; })arg1 parallaxFactor:(double)arg2;
++ (double)minimumZoomScaleForWallpaperSize:(struct CGSize { double x1; double x2; })arg1 parallaxFactor:(double)arg2 deviceType:(long long)arg3;
++ (struct CGSize { double x1; double x2; })overhangSizeForCurrentDevice;
++ (struct CGSize { double x1; double x2; })overhangSizeForDeviceType:(long long)arg1;
 + (id)settingsControllerModule;
 
-- (float)overhangX;
-- (float)overhangY;
-- (float)perspectiveTransform;
+- (double)overhangX;
+- (double)overhangY;
+- (double)perspectiveTransform;
 - (void)setDefaultValues;
-- (void)setOverhangX:(float)arg1;
-- (void)setOverhangY:(float)arg1;
-- (void)setPerspectiveTransform:(float)arg1;
+- (void)setOverhangX:(double)arg1;
+- (void)setOverhangY:(double)arg1;
+- (void)setPerspectiveTransform:(double)arg1;
 
 @end

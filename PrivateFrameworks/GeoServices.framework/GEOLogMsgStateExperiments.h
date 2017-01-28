@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) GEOABClientConfig *clientAbExperimentAssignment;
-@property (nonatomic, readonly) BOOL hasClientAbExperimentAssignment;
-@property (nonatomic, readonly) BOOL hasTilesAbExperimentAssignment;
+@property (nonatomic, readonly) bool hasClientAbExperimentAssignment;
+@property (nonatomic, readonly) bool hasTilesAbExperimentAssignment;
 @property (nonatomic, retain) GEOABExperimentAssignment *tilesAbExperimentAssignment;
 
 - (id)clientAbExperimentAssignment;
@@ -18,12 +18,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasClientAbExperimentAssignment;
-- (BOOL)hasTilesAbExperimentAssignment;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasClientAbExperimentAssignment;
+- (bool)hasTilesAbExperimentAssignment;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setClientAbExperimentAssignment:(id)arg1;
 - (void)setTilesAbExperimentAssignment:(id)arg1;
 - (id)tilesAbExperimentAssignment;

@@ -5,7 +5,7 @@
 @interface BBDataProviderConnection : NSObject <NSXPCListenerDelegate> {
     NSString * _bundleID;
     NSObject<OS_dispatch_queue> * _clientCalloutQueue;
-    BOOL  _connected;
+    bool  _connected;
     NSObject<OS_dispatch_queue> * _connectionQueue;
     BBDataProviderConnectionResolver * _connectionResolver;
     NSMutableDictionary * _dataProvidersBySectionID;
@@ -18,17 +18,17 @@
 @property (nonatomic, copy) NSString *bundleID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *serviceName;
 @property (readonly) Class superclass;
 
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (id)_addDataProvider:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)_addDataProvider:(id)arg1 withCompletion:(id)arg2;
 - (void)_invalidate;
 - (id)addDataProvider:(id)arg1;
-- (void)addDataProvider:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)addDataProvider:(id)arg1 withCompletion:(id)arg2;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 universalSectionID:(id)arg4;
 - (void)addParentSectionInfo:(id)arg1 displayName:(id)arg2 icon:(id)arg3 unversalSectionID:(id)arg4;
@@ -36,7 +36,7 @@
 - (void)dealloc;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
 - (void)invalidate;
-- (void)ping:(id /* block */)arg1;
+- (void)ping:(id)arg1;
 - (void)removeDataProviderWithSectionID:(id)arg1;
 - (id)serviceName;
 - (void)setBundleID:(id)arg1;

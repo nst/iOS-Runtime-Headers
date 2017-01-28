@@ -3,23 +3,23 @@
  */
 
 @interface _DRTopicInterestSummary : NSObject <NSCoding, NSCopying> {
-    unsigned int  _topicPresentationsCount;
-    unsigned int  _topicSelectionsCount;
+    unsigned long long  _topicPresentationsCount;
+    unsigned long long  _topicSelectionsCount;
 }
 
-@property unsigned int topicPresentationsCount;
-@property unsigned int topicSelectionsCount;
+@property unsigned long long topicPresentationsCount;
+@property unsigned long long topicSelectionsCount;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPresentationsCount:(unsigned int)arg1 selectionsCount:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (void)setTopicPresentationsCount:(unsigned int)arg1;
-- (void)setTopicSelectionsCount:(unsigned int)arg1;
-- (unsigned int)topicPresentationsCount;
-- (unsigned int)topicSelectionsCount;
+- (id)initWithPresentationsCount:(unsigned long long)arg1 selectionsCount:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (void)setTopicPresentationsCount:(unsigned long long)arg1;
+- (void)setTopicSelectionsCount:(unsigned long long)arg1;
+- (unsigned long long)topicPresentationsCount;
+- (unsigned long long)topicSelectionsCount;
 
 @end

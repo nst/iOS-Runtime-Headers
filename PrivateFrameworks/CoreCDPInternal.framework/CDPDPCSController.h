@@ -10,21 +10,21 @@
 @property (nonatomic, retain) <CDPDProtectedCloudStorageProxy> *pcsProxy;
 
 - (void).cxx_destruct;
-- (void)_checkiCDPStatusNetwork:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)_checkiCDPStatusNetwork:(bool)arg1 withCompletion:(id)arg2;
 - (id)_contextSetupDictionary;
-- (void)_disableCDPWithCompletion:(id /* block */)arg1;
-- (void)_enableCDPWithCompletion:(id /* block */)arg1;
+- (void)_disableCDPWithCompletion:(id)arg1;
+- (void)_enableCDPWithCompletion:(id)arg1;
 - (struct _PCSIdentitySetData { }*)_getOrSetupIdentitySetRef:(id*)arg1;
-- (void)_reauthenticateAndCheckiCDPStatusWithNetwork:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)checkiCDPStatusNetwork:(BOOL)arg1 withCompletion:(id /* block */)arg2;
-- (void)disableCDPWithCompletion:(id /* block */)arg1;
-- (void)enableCDPWithCompletion:(id /* block */)arg1;
-- (void)getStringrayStatusWithCompletion:(id /* block */)arg1;
+- (void)_reauthenticateAndCheckiCDPStatusWithNetwork:(bool)arg1 completion:(id)arg2;
+- (void)checkiCDPStatusNetwork:(bool)arg1 withCompletion:(id)arg2;
+- (void)disableCDPWithCompletion:(id)arg1;
+- (void)enableCDPWithCompletion:(id)arg1;
+- (void)getStringrayStatusWithCompletion:(id)arg1;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (BOOL)isStingrayDisabledUnauthenticatedNetworked:(BOOL)arg1 error:(id*)arg2;
+- (bool)isStingrayDisabledUnauthenticatedNetworked:(bool)arg1 error:(id*)arg2;
 - (id)pcsProxy;
 - (void)setPcsProxy:(id)arg1;
-- (void)setStingrayState:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)setStingrayState:(bool)arg1 completion:(id)arg2;
 
 @end

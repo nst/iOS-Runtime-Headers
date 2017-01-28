@@ -3,24 +3,24 @@
  */
 
 @interface MusicLibraryActionPendingValues : NSObject {
-    BOOL  _hasPendingKeepLocalValue;
-    BOOL  _hasPendingLibraryState;
-    int  _pendingKeepLocalValue;
-    unsigned int  _pendingLibraryState;
+    bool  _hasPendingKeepLocalValue;
+    bool  _hasPendingLibraryState;
+    long long  _pendingKeepLocalValue;
+    unsigned long long  _pendingLibraryState;
 }
 
-@property (nonatomic) BOOL hasPendingKeepLocalValue;
-@property (nonatomic) BOOL hasPendingLibraryState;
-@property (nonatomic) int pendingKeepLocalValue;
-@property (nonatomic) unsigned int pendingLibraryState;
+@property (nonatomic) bool hasPendingKeepLocalValue;
+@property (nonatomic) bool hasPendingLibraryState;
+@property (nonatomic) long long pendingKeepLocalValue;
+@property (nonatomic) unsigned long long pendingLibraryState;
 
-- (BOOL)hasPendingKeepLocalValue;
-- (BOOL)hasPendingLibraryState;
-- (int)pendingKeepLocalValue;
-- (unsigned int)pendingLibraryState;
-- (void)setHasPendingKeepLocalValue:(BOOL)arg1;
-- (void)setHasPendingLibraryState:(BOOL)arg1;
-- (void)setPendingKeepLocalValue:(int)arg1;
-- (void)setPendingLibraryState:(unsigned int)arg1;
+- (bool)hasPendingKeepLocalValue;
+- (bool)hasPendingLibraryState;
+- (long long)pendingKeepLocalValue;
+- (unsigned long long)pendingLibraryState;
+- (void)setHasPendingKeepLocalValue:(bool)arg1;
+- (void)setHasPendingLibraryState:(bool)arg1;
+- (void)setPendingKeepLocalValue:(long long)arg1;
+- (void)setPendingLibraryState:(unsigned long long)arg1;
 
 @end

@@ -6,7 +6,7 @@
     NSMutableArray * _array;
     NSMutableArray * _arrayByLocale;
     NSBundle * _bundle;
-    unsigned int  _clients;
+    unsigned long long  _clients;
     struct NUMemFile { 
         int descriptor; 
         int length; 
@@ -44,18 +44,18 @@
 
 - (void).cxx_destruct;
 - (void)_asyncDeallocInstance;
-- (struct NUMemFile { int x1; int x2; char *x3; })_loadBank:(id)arg1 toArrays:(unsigned int)arg2 allowNewKeys:(BOOL)arg3;
+- (struct NUMemFile { int x1; int x2; char *x3; })_loadBank:(id)arg1 toArrays:(unsigned long long)arg2 allowNewKeys:(bool)arg3;
 - (void)_loadPrograms;
 - (void)_loadTextures;
 - (void)addClient;
-- (void)bindProgram:(unsigned int)arg1;
+- (void)bindProgram:(unsigned long long)arg1;
 - (void)bindTexture:(id)arg1;
 - (id)context;
 - (void)dealloc;
 - (id)init;
 - (void)localeChanged;
 - (void)prime;
-- (unsigned int)programUniformLocation:(unsigned int)arg1 uniform:(int)arg2;
+- (unsigned int)programUniformLocation:(unsigned long long)arg1 uniform:(int)arg2;
 - (void)removeClient;
 - (id)textureWithName:(id)arg1;
 - (id)textureWithName:(id)arg1 prefix:(id)arg2;

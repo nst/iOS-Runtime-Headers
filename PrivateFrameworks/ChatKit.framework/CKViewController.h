@@ -3,33 +3,33 @@
  */
 
 @interface CKViewController : UIViewController {
-    BOOL  _appeared;
-    BOOL  _appearing;
-    BOOL  _dissapearing;
+    bool  _appeared;
+    bool  _appearing;
+    bool  _dissapearing;
 }
 
-@property (nonatomic) BOOL appeared;
-@property (nonatomic) BOOL appearing;
-@property (nonatomic) BOOL dissapearing;
+@property (nonatomic) bool appeared;
+@property (nonatomic) bool appearing;
+@property (nonatomic) bool dissapearing;
 
-- (BOOL)appeared;
-- (BOOL)appearing;
+- (bool)appeared;
+- (bool)appearing;
 - (void)childViewControllersPerform:(SEL)arg1;
-- (BOOL)dissapearing;
+- (bool)dissapearing;
 - (void)parentControllerDidBecomeActive;
-- (void)parentControllerDidResume:(BOOL)arg1 animating:(BOOL)arg2;
+- (void)parentControllerDidResume:(bool)arg1 animating:(bool)arg2;
 - (void)performResumeDeferredSetup;
 - (void)prepareForResume;
 - (void)prepareForSuspend;
-- (void)setAppeared:(BOOL)arg1;
-- (void)setAppearing:(BOOL)arg1;
-- (void)setDissapearing:(BOOL)arg1;
+- (void)setAppeared:(bool)arg1;
+- (void)setAppearing:(bool)arg1;
+- (void)setDissapearing:(bool)arg1;
 - (void)significantTimeChange;
 - (void)systemApplicationWillEnterForeground;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidAppearDeferredSetup;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

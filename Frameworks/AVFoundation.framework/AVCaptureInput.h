@@ -17,7 +17,7 @@
 - (void)detachFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)init;
-- (void)performFigCaptureSessionOperationSafelyUsingBlock:(id /* block */)arg1;
+- (void)performFigCaptureSessionOperationSafelyUsingBlock:(id)arg1;
 - (id)ports;
 - (id)session;
 - (void)setSession:(id)arg1;

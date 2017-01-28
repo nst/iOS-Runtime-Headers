@@ -15,7 +15,7 @@
 - (void)_trimScoresForWorkerType:(short)arg1;
 - (float)averageScoreForWorkerType:(short)arg1;
 - (id)init;
-- (BOOL)isHealthyForWorkerType:(short)arg1;
+- (bool)isHealthyForWorkerType:(short)arg1;
 - (double)maxScoreRecentnessInterval;
 - (void)recordResultsFromWorkerJob:(id)arg1;
 - (void)reset;

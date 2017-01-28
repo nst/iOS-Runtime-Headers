@@ -4,7 +4,7 @@
 
 @interface SAMLLogoutResponseElement : SAMLResponseElement
 
-- (BOOL)assertionMeetsConditions:(id*)arg1;
+- (bool)assertionMeetsConditions:(id*)arg1;
 - (id)assertions;
 
 @end

@@ -14,7 +14,7 @@
 - (float)decibelFromScalar:(float)arg1;
 - (struct AudioValueRange { double x1; double x2; })decibelRange;
 - (float)decibelValue;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
 - (float)maximumDecibelValue;
 - (float)minimumDecibelValue;
 - (float)scalarFromDecibel:(float)arg1;

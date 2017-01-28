@@ -3,7 +3,7 @@
  */
 
 @interface SKUIRedeemITunesPassLearnMoreViewController : SKUIRedeemStepViewController <SKUIPassbookLoaderDelegate> {
-    BOOL  _didTapAddPassbookButton;
+    bool  _didTapAddPassbookButton;
     SKUIRedeemITunesPassLearnMoreView * _learnMoreView;
     SKUIPassbookLoader * _passbookLoader;
     NSURL * _passbookURL;
@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,7 +27,7 @@
 - (void)loadView;
 - (void)passbookLoaderDidFinish:(id)arg1;
 - (id)presentationViewControllerForPassbookLoader:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -13,7 +13,7 @@
 @property (nonatomic, readonly, copy) NSString *digits;
 @property (nonatomic, readonly, copy) NSString *formattedInternationalStringValue;
 @property (nonatomic, readonly, copy) NSString *formattedStringValue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *normalizedStringValue;
 @property (nonatomic, readonly) struct __CFPhoneNumber { }*phoneNumberRef;
 @property (nonatomic, readonly, copy) NSString *stringValue;
@@ -26,7 +26,7 @@
 + (id)phoneNumberWithCFPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 + (id)phoneNumberWithStringValue:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)countryCode;
@@ -36,16 +36,16 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)formattedInternationalStringValue;
 - (id)formattedStringValue;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCFPhoneNumberRef:(struct __CFPhoneNumber { }*)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDigits:(id)arg1 countryCode:(id)arg2;
 - (id)initWithStringValue:(id)arg1;
 - (id)initWithStringValue:(id)arg1 countryCode:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLikePhoneNumber:(id)arg1;
-- (BOOL)isValid:(id*)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isLikePhoneNumber:(id)arg1;
+- (bool)isValid:(id*)arg1;
 - (id)lastFourDigits;
 - (struct __CFPhoneNumber { }*)phoneNumberRef;
 - (id)stringValue;
@@ -58,5 +58,9 @@
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 
 - (id)_cnui_URLDestinationID;
+
+// Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
+
+- (id)pkFormattedStringValue;
 
 @end

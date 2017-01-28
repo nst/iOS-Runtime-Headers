@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)allowAuthenticationRevocation;
-- (BOOL)shouldClearBlockStateOnSync;
-- (BOOL)usesSecureMode;
+- (bool)allowAuthenticationRevocation;
+- (bool)shouldClearBlockStateOnSync;
+- (bool)usesSecureMode;
 - (void)wipeDeviceWithReason:(NSString *)arg1;
 
 @optional

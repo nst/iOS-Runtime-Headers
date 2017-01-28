@@ -14,10 +14,10 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasRssi;
-@property (nonatomic, readonly) BOOL hasSessionUUID;
-@property (nonatomic) BOOL hasSmoothedRSSI;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasRssi;
+@property (nonatomic, readonly) bool hasSessionUUID;
+@property (nonatomic) bool hasSmoothedRSSI;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int rssi;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) int smoothedRSSI;
@@ -28,19 +28,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRssi;
-- (BOOL)hasSessionUUID;
-- (BOOL)hasSmoothedRSSI;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRssi;
+- (bool)hasSessionUUID;
+- (bool)hasSmoothedRSSI;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)rssi;
 - (id)sessionUUID;
-- (void)setHasRssi:(BOOL)arg1;
-- (void)setHasSmoothedRSSI:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasRssi:(bool)arg1;
+- (void)setHasSmoothedRSSI:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setRssi:(int)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setSmoothedRSSI:(int)arg1;

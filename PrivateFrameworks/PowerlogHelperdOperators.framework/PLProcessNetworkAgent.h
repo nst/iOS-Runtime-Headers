@@ -47,7 +47,7 @@
 - (void)logEventBackwardUsageWithOutcome:(id)arg1;
 - (void)logEventPointConnectionEvent:(id)arg1 forSource:(id)arg2;
 - (id)logUsageTimer;
-- (BOOL)outcomeHasDataUsage:(id)arg1;
+- (bool)outcomeHasDataUsage:(id)arg1;
 - (id)processes;
 - (void)processesOfInterest:(id)arg1;
 - (void)setBatteryLevelChanged:(id)arg1;

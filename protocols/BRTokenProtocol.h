@@ -5,6 +5,6 @@
 
 @required
 
-- (void)currentAccountCopyTokenWithBundleID:(void *)arg1 version:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
+- (void)currentAccountCopyTokenWithBundleID:(void *)arg1 version:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSData *, NSError *, void*
 
 @end

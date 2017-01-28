@@ -15,6 +15,6 @@
 - (id)description;
 - (id)init;
 - (void)removeAttachmentForURL:(id)arg1;
-- (BOOL)setAttachment:(id)arg1 forURL:(id)arg2;
+- (bool)setAttachment:(id)arg1 forURL:(id)arg2;
 
 @end

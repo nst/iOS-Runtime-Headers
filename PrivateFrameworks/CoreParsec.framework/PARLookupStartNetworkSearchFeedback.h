@@ -3,16 +3,16 @@
  */
 
 @interface PARLookupStartNetworkSearchFeedback : SFStartNetworkSearchFeedback {
-    int  _lookupSelectionType;
+    long long  _lookupSelectionType;
 }
 
-@property (nonatomic, readonly) int lookupSelectionType;
+@property (nonatomic, readonly) long long lookupSelectionType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInput:(id)arg1 url:(id)arg2 headers:(id)arg3 triggerEvent:(unsigned int)arg4 endpoint:(unsigned int)arg5 lookupSelectionType:(int)arg6;
-- (int)lookupSelectionType;
+- (id)initWithInput:(id)arg1 url:(id)arg2 headers:(id)arg3 triggerEvent:(unsigned long long)arg4 endpoint:(unsigned long long)arg5 lookupSelectionType:(long long)arg6;
+- (long long)lookupSelectionType;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic) <GKLeaderboardViewControllerDelegate> *leaderboardDelegate;
-@property (nonatomic) int timeScope;
+@property (nonatomic) long long timeScope;
 
 - (id)category;
 - (id)init;
@@ -16,7 +16,7 @@
 - (void)notifyDelegateOnWillFinish;
 - (void)setCategory:(id)arg1;
 - (void)setLeaderboardDelegate:(id)arg1;
-- (void)setTimeScope:(int)arg1;
-- (int)timeScope;
+- (void)setTimeScope:(long long)arg1;
+- (long long)timeScope;
 
 @end

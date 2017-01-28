@@ -19,8 +19,8 @@
 - (id)initWithDistributionID:(id)arg1 withChildNodeIDToWeight:(id)arg2 withRange:(id)arg3;
 - (id)initWithDistributionID:(id)arg1 withChildNodeNameToWeight:(id)arg2 withRange:(id)arg3;
 - (int)instanceDirectionality;
-- (BOOL)isEmptyEvent;
-- (BOOL)isEqualContentsWithEvent:(id)arg1;
+- (bool)isEmptyEvent;
+- (bool)isEqualContentsWithEvent:(id)arg1;
 - (id)subEntryKey;
 
 @end

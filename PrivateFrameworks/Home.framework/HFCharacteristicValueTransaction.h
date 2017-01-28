@@ -9,7 +9,7 @@
     NSMutableSet * _clientReasons;
     NAFuture * _commitFuture;
     HFUpdateLogger * _logger;
-    BOOL  _loggerIsExternal;
+    bool  _loggerIsExternal;
     NSObject<OS_dispatch_group> * _onFinishGroup;
     NSError * _overallReadError;
     NSError * _overallWriteError;
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) NSMutableSet *clientReasons;
 @property (nonatomic, retain) NAFuture *commitFuture;
 @property (nonatomic, retain) HFUpdateLogger *logger;
-@property (nonatomic) BOOL loggerIsExternal;
+@property (nonatomic) bool loggerIsExternal;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *onFinishGroup;
 @property (nonatomic, retain) NSError *overallReadError;
 @property (nonatomic, retain) NSError *overallWriteError;
@@ -43,7 +43,7 @@
 - (id)executionErrorForActionSet:(id)arg1;
 - (id)init;
 - (id)logger;
-- (BOOL)loggerIsExternal;
+- (bool)loggerIsExternal;
 - (id)onFinishGroup;
 - (id)overallReadError;
 - (id)overallWriteError;
@@ -55,7 +55,7 @@
 - (void)setClientReasons:(id)arg1;
 - (void)setCommitFuture:(id)arg1;
 - (void)setLogger:(id)arg1;
-- (void)setLoggerIsExternal:(BOOL)arg1;
+- (void)setLoggerIsExternal:(bool)arg1;
 - (void)setOnFinishGroup:(id)arg1;
 - (void)setOverallReadError:(id)arg1;
 - (void)setOverallWriteError:(id)arg1;
@@ -63,7 +63,7 @@
 - (void)setReadValidators:(id)arg1;
 - (void)setWriteCharacteristicRequests:(id)arg1;
 - (void)setWriteFuturesKeyedByCharacteristicIdentifier:(id)arg1;
-- (BOOL)shouldReadCharacteristic:(id)arg1 error:(id*)arg2;
+- (bool)shouldReadCharacteristic:(id)arg1 error:(id*)arg2;
 - (id)writeCharacteristicRequests;
 - (id)writeFuturesKeyedByCharacteristicIdentifier;
 

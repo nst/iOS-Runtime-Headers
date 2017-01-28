@@ -11,6 +11,6 @@
 
 @optional
 
-- (void)searchDaemonQuery:(SPDaemonQueryToken *)arg1 gotResultSet:(SPResultSet *)arg2 replace:(BOOL)arg3 complete:(BOOL)arg4 finished:(BOOL)arg5 blendingDuration:(double)arg6 geoEntityString:(NSString *)arg7;
+- (void)searchDaemonQuery:(SPDaemonQueryToken *)arg1 gotResultSet:(SPResultSet *)arg2 replace:(bool)arg3 complete:(bool)arg4 finished:(bool)arg5 blendingDuration:(double)arg6 geoEntityString:(NSString *)arg7;
 
 @end

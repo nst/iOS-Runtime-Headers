@@ -4,10 +4,10 @@
 
 @interface MRSetHiliteModeMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) BOOL hiliteMode;
+@property (nonatomic, readonly) bool hiliteMode;
 
-- (BOOL)hiliteMode;
-- (id)initWithHiliteMode:(BOOL)arg1;
-- (unsigned int)type;
+- (bool)hiliteMode;
+- (id)initWithHiliteMode:(bool)arg1;
+- (unsigned long long)type;
 
 @end

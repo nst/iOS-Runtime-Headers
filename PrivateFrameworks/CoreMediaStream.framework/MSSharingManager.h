@@ -13,7 +13,7 @@
     NSString * _manifestPath;
     NSString * _personID;
     MSSharingProtocol * _protocol;
-    BOOL  _requestCurrentStateRequested;
+    bool  _requestCurrentStateRequested;
     NSArray * _shares;
     NSMutableArray * _sharesWithLocalModifications;
     int  _state;
@@ -23,7 +23,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MSSharingManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *personID;
 @property (nonatomic, retain) NSArray *shares;
 @property (readonly) Class superclass;
@@ -52,7 +52,7 @@
 - (id)personID;
 - (void)refreshCurrentShareState;
 - (void)removeShare:(id)arg1;
-- (void)respondToInvitation:(id)arg1 accept:(BOOL)arg2;
+- (void)respondToInvitation:(id)arg1 accept:(bool)arg2;
 - (void)sendInvitationsForShares:(id)arg1;
 - (void)setDaemon:(id)arg1;
 - (void)setDelegate:(id)arg1;

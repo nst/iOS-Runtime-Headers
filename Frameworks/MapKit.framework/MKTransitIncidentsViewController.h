@@ -9,20 +9,20 @@
 @property (nonatomic, copy) NSArray *incidents;
 
 - (void).cxx_destruct;
-- (id)_cellForRow:(int)arg1 inSection:(int)arg2;
+- (id)_cellForRow:(long long)arg1 inSection:(long long)arg2;
 - (void)_localeDidChange;
 - (void)_updateTitle;
 - (void)dealloc;
 - (id)incidents;
 - (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithIncidents:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setIncidents:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
+- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

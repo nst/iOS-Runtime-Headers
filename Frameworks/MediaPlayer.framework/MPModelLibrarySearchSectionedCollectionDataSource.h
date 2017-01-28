@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <MPMediaLibraryEntityTranslatingContext> *entityTranslationContext;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *resultContainers;
 @property (readonly) Class superclass;
 
@@ -18,9 +18,9 @@
 - (id)entityTranslationContext;
 - (id)initWithEntitiesQueryResultContainers:(id)arg1 entityTranslationContext:(id)arg2;
 - (id)itemAtIndexPath:(id)arg1;
-- (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
-- (unsigned int)numberOfSections;
+- (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
 - (id)resultContainers;
-- (id)sectionAtIndex:(unsigned int)arg1;
+- (id)sectionAtIndex:(unsigned long long)arg1;
 
 @end

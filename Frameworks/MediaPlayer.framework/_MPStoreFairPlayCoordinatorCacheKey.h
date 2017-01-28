@@ -3,27 +3,27 @@
  */
 
 @interface _MPStoreFairPlayCoordinatorCacheKey : NSObject {
-    int  _SAPVersion;
+    long long  _SAPVersion;
     NSURL * _mescalCertificateURL;
     NSURL * _mescalPrimingURL;
     NSURL * _mescalSetupURL;
 }
 
-@property (nonatomic) int SAPVersion;
+@property (nonatomic) long long SAPVersion;
 @property (nonatomic, copy) NSURL *mescalCertificateURL;
 @property (nonatomic, copy) NSURL *mescalPrimingURL;
 @property (nonatomic, copy) NSURL *mescalSetupURL;
 
 - (void).cxx_destruct;
-- (int)SAPVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (long long)SAPVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)mescalCertificateURL;
 - (id)mescalPrimingURL;
 - (id)mescalSetupURL;
 - (void)setMescalCertificateURL:(id)arg1;
 - (void)setMescalPrimingURL:(id)arg1;
 - (void)setMescalSetupURL:(id)arg1;
-- (void)setSAPVersion:(int)arg1;
+- (void)setSAPVersion:(long long)arg1;
 
 @end

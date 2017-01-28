@@ -8,16 +8,16 @@
     NSArray * _disableBundles;
     NSArray * _fetchAttributes;
     NSString * _filterQuery;
-    BOOL  _grouped;
-    BOOL  _internal;
+    bool  _grouped;
+    bool  _internal;
     NSString * _keyboardLanguage;
     NSArray * _markedTextArray;
-    int  _maxCount;
+    long long  _maxCount;
     NSArray * _preferredLanguages;
     NSArray * _protectionClasses;
-    int  _queryID;
+    long long  _queryID;
     NSArray * _rankingQueries;
-    int  _strongRankingQueryCount;
+    long long  _strongRankingQueryCount;
 }
 
 @property (nonatomic, retain) NSArray *bundleIDs;
@@ -25,19 +25,19 @@
 @property (nonatomic, retain) NSArray *disableBundles;
 @property (nonatomic, retain) NSArray *fetchAttributes;
 @property (nonatomic, retain) NSString *filterQuery;
-@property (nonatomic) BOOL grouped;
-@property (nonatomic) BOOL internal;
+@property (nonatomic) bool grouped;
+@property (nonatomic) bool internal;
 @property (nonatomic, retain) NSString *keyboardLanguage;
 @property (nonatomic, retain) NSArray *markedTextArray;
-@property (nonatomic) int maxCount;
+@property (nonatomic) long long maxCount;
 @property (nonatomic, copy) NSDictionary *options;
 @property (nonatomic, retain) NSArray *preferredLanguages;
 @property (nonatomic, retain) NSArray *protectionClasses;
-@property (nonatomic) int queryID;
+@property (nonatomic) long long queryID;
 @property (nonatomic, retain) NSArray *rankingQueries;
-@property (nonatomic) int strongRankingQueryCount;
+@property (nonatomic) long long strongRankingQueryCount;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIDs;
@@ -48,34 +48,34 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fetchAttributes;
 - (id)filterQuery;
-- (BOOL)grouped;
+- (bool)grouped;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)internal;
+- (bool)internal;
 - (id)keyboardLanguage;
 - (id)markedTextArray;
-- (int)maxCount;
+- (long long)maxCount;
 - (id)options;
 - (id)preferredLanguages;
 - (id)protectionClasses;
-- (int)queryID;
+- (long long)queryID;
 - (id)rankingQueries;
 - (void)setBundleIDs:(id)arg1;
 - (void)setClientBundleID:(id)arg1;
 - (void)setDisableBundles:(id)arg1;
 - (void)setFetchAttributes:(id)arg1;
 - (void)setFilterQuery:(id)arg1;
-- (void)setGrouped:(BOOL)arg1;
-- (void)setInternal:(BOOL)arg1;
+- (void)setGrouped:(bool)arg1;
+- (void)setInternal:(bool)arg1;
 - (void)setKeyboardLanguage:(id)arg1;
 - (void)setMarkedTextArray:(id)arg1;
-- (void)setMaxCount:(int)arg1;
+- (void)setMaxCount:(long long)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setPreferredLanguages:(id)arg1;
 - (void)setProtectionClasses:(id)arg1;
-- (void)setQueryID:(int)arg1;
+- (void)setQueryID:(long long)arg1;
 - (void)setRankingQueries:(id)arg1;
-- (void)setStrongRankingQueryCount:(int)arg1;
-- (int)strongRankingQueryCount;
+- (void)setStrongRankingQueryCount:(long long)arg1;
+- (long long)strongRankingQueryCount;
 
 @end

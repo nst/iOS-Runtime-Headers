@@ -3,7 +3,7 @@
  */
 
 @interface PURepeater : NSObject {
-    id /* block */  _block;
+    id  _block;
     NSObject<OS_dispatch_queue> * _queue;
     double  _timeInterval;
 }
@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)_fire;
 - (id)init;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (id)queue;
 - (void)setQueue:(id)arg1;
 - (void)setTimeInterval:(double)arg1;

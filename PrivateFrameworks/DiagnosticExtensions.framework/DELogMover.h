@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithServiceName:(id)arg1;
-- (BOOL)sendRequestReturningBooleanResponse:(id)arg1 withSuccessKey:(char *)arg2;
+- (bool)sendRequestReturningBooleanResponse:(id)arg1 withSuccessKey:(char *)arg2;
 - (id)serviceName;
 
 @end

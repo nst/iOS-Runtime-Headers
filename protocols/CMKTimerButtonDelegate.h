@@ -5,6 +5,6 @@
 
 @required
 
-- (double)timeIntervalForDuration:(int)arg1;
+- (double)timeIntervalForDuration:(long long)arg1;
 
 @end

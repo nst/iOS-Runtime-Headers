@@ -5,44 +5,44 @@
 @interface HKDataUnitChartingRules : NSObject {
     <HKDecimalPrecisionRule> * _allowedDecimalPrecisionRule;
     <HKInteractiveChartsAxisScalingRule> * _axisScalingRule;
-    int  _defaultChartStyle;
-    int  _defaultStyle;
+    long long  _defaultChartStyle;
+    long long  _defaultStyle;
     NSDictionary * _perUnitDecimalPrecision;
     NSMutableDictionary * _rulesByTimeScope;
-    BOOL  _shouldConnectSamplesWithLines;
-    BOOL  _shouldHideAverageLine;
-    BOOL  _shouldStartDayAtNoon;
+    bool  _shouldConnectSamplesWithLines;
+    bool  _shouldHideAverageLine;
+    bool  _shouldStartDayAtNoon;
 }
 
 @property (nonatomic, retain) <HKInteractiveChartsAxisScalingRule> *axisScalingRule;
-@property (nonatomic, readonly) int defaultChartStyle;
-@property (nonatomic) BOOL shouldConnectSamplesWithLines;
-@property (nonatomic) BOOL shouldHideAverageLine;
-@property (nonatomic) BOOL shouldStartDayAtNoon;
+@property (nonatomic, readonly) long long defaultChartStyle;
+@property (nonatomic) bool shouldConnectSamplesWithLines;
+@property (nonatomic) bool shouldHideAverageLine;
+@property (nonatomic) bool shouldStartDayAtNoon;
 
 - (void).cxx_destruct;
-- (id)_ruleForKey:(id)arg1 timeScope:(int)arg2;
-- (void)_setRule:(id)arg1 forKey:(id)arg2 timeScope:(int)arg3;
-- (void)adjustedBoundsForPortraitChartWithMin:(double)arg1 max:(double)arg2 minOut:(double*)arg3 maxOut:(double*)arg4 decimalPrecision:(int*)arg5 unit:(id)arg6 timeScope:(int)arg7;
+- (id)_ruleForKey:(id)arg1 timeScope:(long long)arg2;
+- (void)_setRule:(id)arg1 forKey:(id)arg2 timeScope:(long long)arg3;
+- (void)adjustedBoundsForPortraitChartWithMin:(double)arg1 max:(double)arg2 minOut:(double*)arg3 maxOut:(double*)arg4 decimalPrecision:(long long*)arg5 unit:(id)arg6 timeScope:(long long)arg7;
 - (id)allowedDecimalPrecisionRuleForUnit:(id)arg1;
 - (id)axisScalingRule;
-- (float)chartPointLineWidthForTimeScope:(int)arg1;
-- (float)chartPointRadiusForTimeScope:(int)arg1;
-- (int)chartStyleForTimeScope:(int)arg1;
-- (int)defaultChartStyle;
-- (id)initWithDefaultChartStyle:(int)arg1;
-- (id)intervalComponentsForTimeScope:(int)arg1;
+- (double)chartPointLineWidthForTimeScope:(long long)arg1;
+- (double)chartPointRadiusForTimeScope:(long long)arg1;
+- (long long)chartStyleForTimeScope:(long long)arg1;
+- (long long)defaultChartStyle;
+- (id)initWithDefaultChartStyle:(long long)arg1;
+- (id)intervalComponentsForTimeScope:(long long)arg1;
 - (void)setAllowedDecimalPrecisionRule:(id)arg1 perUnitPrecisionRules:(id)arg2;
 - (void)setAxisScalingRule:(id)arg1;
-- (void)setChartPointLineWidth:(float)arg1 forTimeScope:(int)arg2;
-- (void)setChartPointRadius:(float)arg1 forTimeScope:(int)arg2;
-- (void)setChartStyle:(int)arg1 forTimeScope:(int)arg2;
-- (void)setIntervalComponents:(id)arg1 forTimeScope:(int)arg2;
-- (void)setShouldConnectSamplesWithLines:(BOOL)arg1;
-- (void)setShouldHideAverageLine:(BOOL)arg1;
-- (void)setShouldStartDayAtNoon:(BOOL)arg1;
-- (BOOL)shouldConnectSamplesWithLines;
-- (BOOL)shouldHideAverageLine;
-- (BOOL)shouldStartDayAtNoon;
+- (void)setChartPointLineWidth:(double)arg1 forTimeScope:(long long)arg2;
+- (void)setChartPointRadius:(double)arg1 forTimeScope:(long long)arg2;
+- (void)setChartStyle:(long long)arg1 forTimeScope:(long long)arg2;
+- (void)setIntervalComponents:(id)arg1 forTimeScope:(long long)arg2;
+- (void)setShouldConnectSamplesWithLines:(bool)arg1;
+- (void)setShouldHideAverageLine:(bool)arg1;
+- (void)setShouldStartDayAtNoon:(bool)arg1;
+- (bool)shouldConnectSamplesWithLines;
+- (bool)shouldHideAverageLine;
+- (bool)shouldStartDayAtNoon;
 
 @end

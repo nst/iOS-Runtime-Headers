@@ -4,7 +4,7 @@
 
 @interface TCDumpSettings : NSObject
 
-+ (BOOL)isDumpForQA;
-+ (void)setDumpForQA:(BOOL)arg1;
++ (bool)isDumpForQA;
++ (void)setDumpForQA:(bool)arg1;
 
 @end

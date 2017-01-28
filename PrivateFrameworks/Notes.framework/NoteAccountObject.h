@@ -14,11 +14,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NoteStoreObject *defaultStore;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL didChooseToMigrate;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool didChooseToMigrate;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *pathToConstraintsPlist;
-@property (nonatomic, readonly) BOOL preventMovingNotesToOtherAccounts;
+@property (nonatomic, readonly) bool preventMovingNotesToOtherAccounts;
 @property (nonatomic, retain) NSSet *stores;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *type;
@@ -36,14 +36,14 @@
 - (id)objectIdentifier;
 - (id)pathToConstraintsPlist;
 - (id)predicateForNotes;
-- (BOOL)preventMovingNotesToOtherAccounts;
+- (bool)preventMovingNotesToOtherAccounts;
 - (void)setAccountType:(int)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setPathToConstraintsPlist:(id)arg1;
-- (BOOL)shouldMarkNotesAsDeleted;
+- (bool)shouldMarkNotesAsDeleted;
 - (id)storeForExternalId:(id)arg1;
-- (BOOL)supportsAttachments;
-- (BOOL)validateDefaultStore:(id*)arg1 error:(id*)arg2;
+- (bool)supportsAttachments;
+- (bool)validateDefaultStore:(id*)arg1 error:(id*)arg2;
 - (void)willSave;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) CKEncryptedData *encryptedChainPCSPrivateKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

@@ -4,7 +4,7 @@
 
 @interface MusicLibraryMusicVideosViewConfiguration : MusicLibraryBrowseTableViewConfiguration
 
-- (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)init;
 - (id)loadEntityViewDescriptor;
 

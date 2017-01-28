@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)shouldShowChangeKind:(int)arg1 date:(NSDate *)arg2;
-- (BOOL)shouldShowMarkupForChangeKind:(int)arg1 date:(NSDate *)arg2;
+- (bool)shouldShowChangeKind:(int)arg1 date:(NSDate *)arg2;
+- (bool)shouldShowMarkupForChangeKind:(int)arg1 date:(NSDate *)arg2;
 
 @end

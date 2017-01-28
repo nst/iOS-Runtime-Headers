@@ -5,10 +5,17 @@
 @interface CNContactHeaderDisplayView : CNContactHeaderView <CNUIReusableView> {
     NSString * _alternateName;
     NSLayoutConstraint * _avatarNameSpacingConstraint;
-    BOOL  _centersPhotoAndLabels;
+    bool  _centersPhotoAndLabels;
     CNContactFormatter * _contactFormatter;
-    float  _maxHeight;
+    double  _lastViewWidth;
+    double  _maxHeight;
+    struct CGSize { 
+        double width; 
+        double height; 
+    }  _maxNameSize;
     NSString * _message;
+    double  _minHeight;
+    NSLayoutConstraint * _nameWidthConstraint;
     UIView * _personHeaderView;
     NSLayoutConstraint * _photoHeightConstraint;
     NSLayoutConstraint * _photoTopConstraint;
@@ -18,24 +25,27 @@
 
 @property (nonatomic, retain) NSString *alternateName;
 @property (retain) NSLayoutConstraint *avatarNameSpacingConstraint;
-@property (nonatomic) BOOL centersPhotoAndLabels;
+@property (nonatomic) bool centersPhotoAndLabels;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float maxHeight;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double lastViewWidth;
+@property (nonatomic) double maxHeight;
+@property (nonatomic) struct CGSize { double x1; double x2; } maxNameSize;
 @property (nonatomic, retain) NSString *message;
-@property (nonatomic, readonly) float minHeight;
+@property (nonatomic) double minHeight;
+@property (retain) NSLayoutConstraint *nameWidthConstraint;
 @property (nonatomic, retain) UIView *personHeaderView;
 @property (retain) NSLayoutConstraint *photoHeightConstraint;
-@property (nonatomic, readonly) float photoLabelSpacing;
+@property (nonatomic, readonly) double photoLabelSpacing;
 @property (retain) NSLayoutConstraint *photoTopConstraint;
 @property (readonly) Class superclass;
 @property (retain) UILabel *taglineLabel;
 @property (nonatomic, copy) NSDictionary *taglineTextAttributes;
 
 + (id)contactHeaderViewWithContact:(id)arg1;
-+ (id)descriptorForRequiredKeysForContactFormatter:(id)arg1 includingAvatarViewDescriptors:(BOOL)arg2;
++ (id)descriptorForRequiredKeysForContactFormatter:(id)arg1 includingAvatarViewDescriptors:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)_headerStringForContacts:(id)arg1;
@@ -43,32 +53,40 @@
 - (void)_updatePhotoView;
 - (id)alternateName;
 - (id)avatarNameSpacingConstraint;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (BOOL)centersPhotoAndLabels;
+- (void)calculateLabelSizes;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (bool)centersPhotoAndLabels;
 - (id)contactFormatter;
 - (void)copy:(id)arg1;
 - (id)descriptorForRequiredKeys;
 - (void)disablePhotoTapGesture;
 - (void)handleNameLabelLongPress:(id)arg1;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 monogrammerStyle:(int)arg3;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 monogrammerStyle:(long long)arg3;
+- (double)lastViewWidth;
 - (void)layoutSubviews;
-- (float)maxHeight;
+- (double)maxHeight;
+- (struct CGSize { double x1; double x2; })maxNameSize;
 - (void)menuWillHide:(id)arg1;
 - (id)message;
-- (float)minHeight;
+- (double)minHeight;
+- (id)nameWidthConstraint;
 - (id)personHeaderView;
 - (id)photoHeightConstraint;
-- (float)photoLabelSpacing;
+- (double)photoLabelSpacing;
 - (id)photoTopConstraint;
-- (void)reloadDataPreservingChanges:(BOOL)arg1;
+- (void)reloadDataPreservingChanges:(bool)arg1;
 - (void)setAlternateName:(id)arg1;
 - (void)setAvatarNameSpacingConstraint:(id)arg1;
-- (void)setCentersPhotoAndLabels:(BOOL)arg1;
+- (void)setCentersPhotoAndLabels:(bool)arg1;
 - (void)setContactFormatter:(id)arg1;
-- (void)setMaxHeight:(float)arg1;
+- (void)setLastViewWidth:(double)arg1;
+- (void)setMaxHeight:(double)arg1;
+- (void)setMaxNameSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setMessage:(id)arg1;
+- (void)setMinHeight:(double)arg1;
 - (void)setNameTextAttributes:(id)arg1;
+- (void)setNameWidthConstraint:(id)arg1;
 - (void)setPersonHeaderView:(id)arg1;
 - (void)setPhotoHeightConstraint:(id)arg1;
 - (void)setPhotoTopConstraint:(id)arg1;
@@ -80,6 +98,5 @@
 - (void)updateConstraints;
 - (void)updateFontSizes;
 - (void)updateSizeDependentAttributes;
-- (void)updateWithContacts:(id)arg1;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setHideSetupLaterButton:(BOOL)arg1;
+- (void)setHideSetupLaterButton:(bool)arg1;
 
 @end

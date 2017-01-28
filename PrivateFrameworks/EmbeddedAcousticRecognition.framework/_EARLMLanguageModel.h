@@ -11,7 +11,7 @@
                     struct __hash_node<std::__1::__hash_value_type<int, unsigned int>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, unsigned int>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<int, unsigned int>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -22,7 +22,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<int, std::__1::__hash_value_type<int, unsigned int>, std::__1::hash<int>, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<int, std::__1::__hash_value_type<int, unsigned int>, std::__1::equal_to<int>, true> > { 
                 float __first_; 
@@ -33,12 +33,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (float)condititionalProbabilityOfWordID:(int)arg1 contextWordIDs:(const int*)arg2 count:(unsigned int)arg3 symbolLookupBlock:(id /* block */)arg4;
+- (float)condititionalProbabilityOfWordID:(int)arg1 contextWordIDs:(const int*)arg2 count:(unsigned long long)arg3 symbolLookupBlock:(id)arg4;
 - (void)dealloc;
 - (id)initWithLMLanguageModel:(void*)arg1;
 

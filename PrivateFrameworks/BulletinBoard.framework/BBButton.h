@@ -19,7 +19,7 @@
 + (id)buttonWithTitle:(id)arg1 action:(id)arg2 identifier:(id)arg3;
 + (id)buttonWithTitle:(id)arg1 glyphData:(id)arg2 action:(id)arg3 identifier:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 image:(id)arg2 action:(id)arg3 identifier:(id)arg4;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)action;
@@ -28,12 +28,12 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)glyphData;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)image;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 action:(id)arg3 identifier:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (void)setAction:(id)arg1;
 - (void)setIdentifier:(id)arg1;

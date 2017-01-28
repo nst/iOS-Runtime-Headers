@@ -4,51 +4,51 @@
 
 @interface FCTagsSearchOperation : FCOperation {
     FCAssetManager * _assetManager;
-    unsigned int  _batchSize;
+    unsigned long long  _batchSize;
     FCCKDatabase * _contentDatabase;
     NSError * _searchError;
     FCStreamingResults * _searchResults;
-    id /* block */  _searchResultsBlock;
+    id  _searchResultsBlock;
     NSString * _searchString;
     FCTagRecordSource * _tagRecordSource;
-    unsigned int  _tagType;
+    unsigned long long  _tagType;
 }
 
 @property (nonatomic, retain) FCAssetManager *assetManager;
-@property (nonatomic) unsigned int batchSize;
+@property (nonatomic) unsigned long long batchSize;
 @property (nonatomic, retain) FCCKDatabase *contentDatabase;
 @property (nonatomic, retain) NSError *searchError;
 @property (nonatomic, retain) FCStreamingResults *searchResults;
-@property (copy) id /* block */ searchResultsBlock;
+@property (copy) id searchResultsBlock;
 @property (nonatomic, copy) NSString *searchString;
 @property (nonatomic, retain) FCTagRecordSource *tagRecordSource;
-@property (nonatomic) unsigned int tagType;
+@property (nonatomic) unsigned long long tagType;
 
 - (void).cxx_destruct;
 - (id)_establishStreamOfTags;
-- (void)_performSearchQuery:(id /* block */)arg1;
+- (void)_performSearchQuery:(id)arg1;
 - (id)assetManager;
-- (unsigned int)batchSize;
+- (unsigned long long)batchSize;
 - (id)contentDatabase;
 - (id)init;
-- (id)initWithTagRecordSource:(id)arg1 contentDatabase:(id)arg2 assetManager:(id)arg3 searchString:(id)arg4 tagType:(unsigned int)arg5 batchSize:(unsigned int)arg6;
+- (id)initWithTagRecordSource:(id)arg1 contentDatabase:(id)arg2 assetManager:(id)arg3 searchString:(id)arg4 tagType:(unsigned long long)arg5 batchSize:(unsigned long long)arg6;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (id)searchError;
 - (id)searchResults;
-- (id /* block */)searchResultsBlock;
+- (id)searchResultsBlock;
 - (id)searchString;
 - (void)setAssetManager:(id)arg1;
-- (void)setBatchSize:(unsigned int)arg1;
+- (void)setBatchSize:(unsigned long long)arg1;
 - (void)setContentDatabase:(id)arg1;
 - (void)setSearchError:(id)arg1;
 - (void)setSearchResults:(id)arg1;
-- (void)setSearchResultsBlock:(id /* block */)arg1;
+- (void)setSearchResultsBlock:(id)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setTagRecordSource:(id)arg1;
-- (void)setTagType:(unsigned int)arg1;
+- (void)setTagType:(unsigned long long)arg1;
 - (id)tagRecordSource;
-- (unsigned int)tagType;
-- (BOOL)validateOperation;
+- (unsigned long long)tagType;
+- (bool)validateOperation;
 
 @end

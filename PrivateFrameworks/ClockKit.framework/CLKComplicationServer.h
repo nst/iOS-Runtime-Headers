@@ -8,19 +8,19 @@
     <CLKComplicationDataSource> * _dataSource;
     Class  _dataSourceClass;
     struct { 
-        BOOL supportsGetTimeTravelDirections; 
-        BOOL supportsGetTimelineStartDate; 
-        BOOL supportsGetTimelineEndDate; 
-        BOOL supportsGetPrivacyBehavior; 
-        BOOL supportsGetTimelineAnimationBehavior; 
-        BOOL supportsExtendAfter; 
-        BOOL supportsExtendBefore; 
-        BOOL supportsGetRequestedUpdate; 
-        BOOL supportsNotifyRequestedUpdate; 
-        BOOL supportsNotifyBudgetExhausted; 
-        BOOL supportsGetPlaceholderTemplate; 
-        BOOL supportsGetLocalizableDescriptionProvider; 
-        BOOL supportsGetLocalizableSampleTemplate; 
+        bool supportsGetTimeTravelDirections; 
+        bool supportsGetTimelineStartDate; 
+        bool supportsGetTimelineEndDate; 
+        bool supportsGetPrivacyBehavior; 
+        bool supportsGetTimelineAnimationBehavior; 
+        bool supportsExtendAfter; 
+        bool supportsExtendBefore; 
+        bool supportsGetRequestedUpdate; 
+        bool supportsNotifyRequestedUpdate; 
+        bool supportsNotifyBudgetExhausted; 
+        bool supportsGetPlaceholderTemplate; 
+        bool supportsGetLocalizableDescriptionProvider; 
+        bool supportsGetLocalizableSampleTemplate; 
     }  _dataSourceFlags;
     NSXPCConnection * _serverConnection;
 }
@@ -29,7 +29,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDate *earliestTimeTravelDate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDate *latestTimeTravelDate;
 @property (readonly) Class superclass;
 
@@ -43,16 +43,16 @@
 - (id)activeComplications;
 - (id)earliestTimeTravelDate;
 - (void)extendTimelineForComplication:(id)arg1;
-- (void)getCurrentTimelineEntryForComplication:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getLocalizableSampleTemplateForComplication:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getNextRequestedUpdateDateWithHandler:(id /* block */)arg1;
-- (void)getPrivacyBehaviorForComplication:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getSupportedTimeTravelDirectionsForComplication:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getTimelineAnimationBehaviorForComplication:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getTimelineEndDateForComplication:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)getTimelineEntriesForComplication:(id)arg1 afterDate:(id)arg2 limit:(unsigned int)arg3 withHandler:(id /* block */)arg4;
-- (void)getTimelineEntriesForComplication:(id)arg1 beforeDate:(id)arg2 limit:(unsigned int)arg3 withHandler:(id /* block */)arg4;
-- (void)getTimelineStartDateForComplication:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getCurrentTimelineEntryForComplication:(id)arg1 withHandler:(id)arg2;
+- (void)getLocalizableSampleTemplateForComplication:(id)arg1 withHandler:(id)arg2;
+- (void)getNextRequestedUpdateDateWithHandler:(id)arg1;
+- (void)getPrivacyBehaviorForComplication:(id)arg1 withHandler:(id)arg2;
+- (void)getSupportedTimeTravelDirectionsForComplication:(id)arg1 withHandler:(id)arg2;
+- (void)getTimelineAnimationBehaviorForComplication:(id)arg1 withHandler:(id)arg2;
+- (void)getTimelineEndDateForComplication:(id)arg1 withHandler:(id)arg2;
+- (void)getTimelineEntriesForComplication:(id)arg1 afterDate:(id)arg2 limit:(unsigned long long)arg3 withHandler:(id)arg4;
+- (void)getTimelineEntriesForComplication:(id)arg1 beforeDate:(id)arg2 limit:(unsigned long long)arg3 withHandler:(id)arg4;
+- (void)getTimelineStartDateForComplication:(id)arg1 withHandler:(id)arg2;
 - (id)init;
 - (id)initWithClientIdentifier:(id)arg1;
 - (id)latestTimeTravelDate;

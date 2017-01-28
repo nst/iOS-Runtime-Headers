@@ -6,7 +6,7 @@
     NSString * _emailAddress;
     EKObjectToOneRelation * _locationRelation;
     NSString * _soundName;
-    int  _type;
+    long long  _type;
     NSURL * _url;
 }
 
@@ -14,20 +14,20 @@
 @property (nonatomic, copy) NSDate *absoluteDate;
 @property (nonatomic, retain) EKCalendarItem *calendarItemOwner;
 @property (nonatomic, retain) EKCalendar *calendarOwner;
-@property (getter=isDefaultAlarm, nonatomic) BOOL defaultAlarm;
+@property (getter=isDefaultAlarm, nonatomic) bool defaultAlarm;
 @property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, readonly) NSString *externalID;
-@property (nonatomic, readonly) BOOL isAbsolute;
-@property (nonatomic) BOOL isSnoozed;
+@property (nonatomic, readonly) bool isAbsolute;
+@property (nonatomic) bool isSnoozed;
 @property (nonatomic, retain) EKObjectToOneRelation *locationRelation;
 @property (nonatomic, retain) EKAlarm *originalAlarm;
 @property (nonatomic, readonly) EKObject *owner;
-@property (nonatomic) int proximity;
+@property (nonatomic) long long proximity;
 @property (nonatomic) double relativeOffset;
 @property (nonatomic, copy) NSArray *snoozedAlarms;
 @property (nonatomic, copy) NSString *soundName;
 @property (nonatomic, copy) EKStructuredLocation *structuredLocation;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic, copy) NSURL *url;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
@@ -36,12 +36,12 @@
 + (id)alarmWithAbsoluteDate:(id)arg1;
 + (id)alarmWithAlarm:(id)arg1;
 + (id)alarmWithRelativeOffset:(double)arg1;
-+ (BOOL)areLocationsAllowed;
-+ (BOOL)areLocationsAllowedWithAuthorizationStatus:(int)arg1;
-+ (BOOL)areLocationsAvailable;
-+ (BOOL)areLocationsCurrentlyEnabled;
++ (bool)areLocationsAllowed;
++ (bool)areLocationsAllowedWithAuthorizationStatus:(int)arg1;
++ (bool)areLocationsAvailable;
++ (bool)areLocationsCurrentlyEnabled;
 + (double)defaultGeofencedReminderRadius;
-+ (int)maxPublicProximity;
++ (long long)maxPublicProximity;
 + (id)noneTriggerDate;
 
 - (void).cxx_destruct;
@@ -54,7 +54,7 @@
 - (void)addSnoozedAlarm:(id)arg1;
 - (id)calendarItemOwner;
 - (id)calendarOwner;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)emailAddress;
@@ -62,48 +62,48 @@
 - (id)init;
 - (id)initWithAbsoluteDate:(id)arg1;
 - (id)initWithRelativeOffset:(double)arg1;
-- (BOOL)isAbsolute;
-- (BOOL)isDefaultAlarm;
-- (BOOL)isSnoozed;
-- (BOOL)isTimeToLeaveAlarm;
-- (BOOL)isTopographicallyEqualToAlarm:(id)arg1;
-- (BOOL)isVehicleAlarm;
+- (bool)isAbsolute;
+- (bool)isDefaultAlarm;
+- (bool)isSnoozed;
+- (bool)isTimeToLeaveAlarm;
+- (bool)isTopographicallyEqualToAlarm:(id)arg1;
+- (bool)isVehicleAlarm;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)locationRelation;
 - (id)originalAlarm;
 - (id)owner;
 - (id)ownerUUID;
-- (int)proximity;
-- (BOOL)rebase;
+- (long long)proximity;
+- (bool)rebase;
 - (double)relativeOffset;
 - (void)removeSnoozedAlarm:(id)arg1;
 - (void)setAbsoluteDate:(id)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
-- (void)setDefaultAlarm:(BOOL)arg1;
+- (void)setDefaultAlarm:(bool)arg1;
 - (void)setEmailAddress:(id)arg1;
-- (void)setIsSnoozed:(BOOL)arg1;
-- (void)setIsTimeToLeaveAlarm:(BOOL)arg1;
+- (void)setIsSnoozed:(bool)arg1;
+- (void)setIsTimeToLeaveAlarm:(bool)arg1;
 - (void)setLocationRelation:(id)arg1;
 - (void)setOriginalAlarm:(id)arg1;
-- (void)setProximity:(int)arg1;
+- (void)setProximity:(long long)arg1;
 - (void)setRelativeOffset:(double)arg1;
 - (void)setSnoozedAlarms:(id)arg1;
 - (void)setSoundName:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;
-- (void)setTriggerIsNotRelativeToTravelTime:(BOOL)arg1;
+- (void)setTriggerIsNotRelativeToTravelTime:(bool)arg1;
 - (void)setUrl:(id)arg1;
-- (BOOL)shouldIncludeInNormalAlarms;
+- (bool)shouldIncludeInNormalAlarms;
 - (id)snoozedAlarms;
 - (id)soundName;
 - (id)structuredLocation;
-- (BOOL)triggerIsNotRelativeToTravelTime;
-- (int)type;
+- (bool)triggerIsNotRelativeToTravelTime;
+- (long long)type;
 - (id)url;
-- (BOOL)validate:(id*)arg1;
+- (bool)validate:(id*)arg1;
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
-- (id)_localizedDescription:(BOOL)arg1 isAllDay:(BOOL)arg2;
+- (id)_localizedDescription:(bool)arg1 isAllDay:(bool)arg2;
 - (id)localizedAllDayDescription;
 - (id)localizedDescription;
 - (id)longLocalizedAllDayDescription;

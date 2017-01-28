@@ -17,11 +17,11 @@
 - (void)_stopListeningForNotifications;
 - (id)accountNameForSpecifier:(id)arg1;
 - (void)accountTappedWithSpecifier:(id)arg1;
-- (id)initWithServiceType:(int)arg1;
+- (id)initWithServiceType:(long long)arg1;
 - (id)service;
 - (void)setService:(id)arg1;
 - (id)specifiers;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

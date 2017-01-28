@@ -4,54 +4,57 @@
 
 @interface CKMessageStatusChatItem : CKChatItem {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _buttonSize;
-    BOOL  _buttonSizeLoaded;
+    bool  _buttonSizeLoaded;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _buttonTextAlignmentInsets;
     NSAttributedString * _transcriptButtonText;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } buttonSize;
-@property (getter=isButtonSizeLoaded, nonatomic) BOOL buttonSizeLoaded;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } buttonTextAlignmentInsets;
-@property (nonatomic, readonly) int buttonType;
+@property (nonatomic, readonly) bool allowsEffectAutoPlayback;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } buttonSize;
+@property (getter=isButtonSizeLoaded, nonatomic) bool buttonSizeLoaded;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } buttonTextAlignmentInsets;
+@property (nonatomic, readonly) long long buttonType;
 @property (nonatomic, copy) NSAttributedString *transcriptButtonText;
 
++ (id)createImageAsTextAttachment;
 + (id)thePastDateFormatter;
 + (id)thisWeekRelativeDateFormatter;
 + (id)todayDateFormatter;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })buttonSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })buttonTextAlignmentInsets;
-- (int)buttonType;
+- (bool)allowsEffectAutoPlayback;
+- (struct CGSize { double x1; double x2; })buttonSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })buttonTextAlignmentInsets;
+- (long long)buttonType;
 - (Class)cellClass;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (unsigned int)count;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (unsigned long long)count;
 - (id)effectsControlStatusTextForEffectStyleID:(id)arg1;
-- (int)expireStatusType;
-- (BOOL)isButtonSizeLoaded;
-- (BOOL)isFromMe;
-- (struct CGSize { float x1; float x2; })loadButtonSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
-- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (long long)expireStatusType;
+- (bool)isButtonSizeLoaded;
+- (bool)isFromMe;
+- (struct CGSize { double x1; double x2; })loadButtonSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (id)loadTranscriptButtonText;
 - (id)loadTranscriptText;
 - (id)now;
-- (void)setButtonSizeLoaded:(BOOL)arg1;
+- (void)setButtonSizeLoaded:(bool)arg1;
 - (void)setTranscriptButtonText:(id)arg1;
-- (int)statusType;
+- (long long)statusType;
 - (id)time;
 - (id)transcriptButtonText;
 - (BOOL)transcriptOrientation;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })transcriptTextAlignmentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })transcriptTextAlignmentInsets;
 - (void)unloadSize;
 - (void)unloadTranscriptText;
-- (BOOL)wantsDrawerLayout;
+- (bool)wantsDrawerLayout;
 
 @end

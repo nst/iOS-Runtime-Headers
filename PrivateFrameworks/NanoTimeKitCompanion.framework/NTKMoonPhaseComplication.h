@@ -4,7 +4,7 @@
 
 @interface NTKMoonPhaseComplication : NTKComplication
 
-- (BOOL)appearsInDailySnapshotForFamily:(int)arg1;
-- (BOOL)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
+- (bool)appearsInDailySnapshotForFamily:(long long)arg1;
+- (bool)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
 
 @end

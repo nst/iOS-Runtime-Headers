@@ -5,6 +5,6 @@
 
 @required
 
-- (void)forceStopTimelapseCaptureWithReasons:(int)arg1;
+- (void)forceStopTimelapseCaptureWithReasons:(long long)arg1;
 
 @end

@@ -7,6 +7,6 @@
 + (id)defaultConfiguration;
 + (id)destructiveConfiguration;
 
-- (int)requiredSupportLevel;
+- (long long)requiredSupportLevel;
 
 @end

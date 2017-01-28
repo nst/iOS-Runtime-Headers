@@ -3,29 +3,29 @@
  */
 
 @interface TRConnection : NSObject {
-    id /* block */  _eventMessageHandler;
-    id /* block */  _interruptionHandler;
-    id /* block */  _invalidationHandler;
-    id /* block */  _requestMessageHandler;
+    id  _eventMessageHandler;
+    id  _interruptionHandler;
+    id  _invalidationHandler;
+    id  _requestMessageHandler;
 }
 
-@property (nonatomic, copy) id /* block */ eventMessageHandler;
-@property (nonatomic, copy) id /* block */ interruptionHandler;
-@property (nonatomic, copy) id /* block */ invalidationHandler;
-@property (nonatomic, copy) id /* block */ requestMessageHandler;
+@property (nonatomic, copy) id eventMessageHandler;
+@property (nonatomic, copy) id interruptionHandler;
+@property (nonatomic, copy) id invalidationHandler;
+@property (nonatomic, copy) id requestMessageHandler;
 
 - (void).cxx_destruct;
-- (id /* block */)eventMessageHandler;
-- (id /* block */)interruptionHandler;
+- (id)eventMessageHandler;
+- (id)interruptionHandler;
 - (void)invalidate;
-- (id /* block */)invalidationHandler;
-- (id /* block */)requestMessageHandler;
+- (id)invalidationHandler;
+- (id)requestMessageHandler;
 - (void)sendEvent:(id)arg1;
 - (void)sendRequest:(id)arg1;
 - (void)sendResponse:(id)arg1;
-- (void)setEventMessageHandler:(id /* block */)arg1;
-- (void)setInterruptionHandler:(id /* block */)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setRequestMessageHandler:(id /* block */)arg1;
+- (void)setEventMessageHandler:(id)arg1;
+- (void)setInterruptionHandler:(id)arg1;
+- (void)setInvalidationHandler:(id)arg1;
+- (void)setRequestMessageHandler:(id)arg1;
 
 @end

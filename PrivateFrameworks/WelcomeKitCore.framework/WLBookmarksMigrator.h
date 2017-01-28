@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)contentType;
 - (void)estimateItemSizeForSummary:(id)arg1 account:(id)arg2;
-- (void)importDataFromProvider:(id /* block */)arg1 forSummaries:(id)arg2 summaryStart:(id /* block */)arg3 summaryCompletion:(id /* block */)arg4;
+- (void)importDataFromProvider:(id)arg1 forSummaries:(id)arg2 summaryStart:(id)arg3 summaryCompletion:(id)arg4;
 - (void)importDidEnd;
 - (id)importWillBegin;
 

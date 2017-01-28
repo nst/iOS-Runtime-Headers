@@ -4,7 +4,7 @@
 
 @interface CNLocalization : NSObject
 
-+ (id)localizedStringForString:(id)arg1 bundle:(id)arg2 table:(id)arg3 returningNilIfNotFound:(BOOL)arg4;
-+ (id)localizedStringForString:(id)arg1 class:(Class)arg2 returningNilIfNotFound:(BOOL)arg3;
++ (id)localizedStringForString:(id)arg1 bundle:(id)arg2 table:(id)arg3 returningNilIfNotFound:(bool)arg4;
++ (id)localizedStringForString:(id)arg1 class:(Class)arg2 returningNilIfNotFound:(bool)arg3;
 
 @end

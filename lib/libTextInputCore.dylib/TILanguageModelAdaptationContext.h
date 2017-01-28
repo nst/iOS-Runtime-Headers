@@ -4,7 +4,7 @@
 
 @interface TILanguageModelAdaptationContext : NSObject <NSCopying> {
     NSString * _appContext;
-    BOOL  _isOnline;
+    bool  _isOnline;
     NSDictionary * _recipientContext;
     NSString * _recipientNameDigest;
 }
@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSString *appContext;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *identifierForResponseKit;
-@property (nonatomic) BOOL isOnline;
+@property (nonatomic) bool isOnline;
 @property (nonatomic, readonly) NSDictionary *recipientContext;
 @property (nonatomic, readonly) NSString *recipientNameDigest;
 
@@ -24,9 +24,9 @@
 - (id)identifierForResponseKit;
 - (id)initWithClientIdentifier:(id)arg1 andRecipientContactInfo:(id)arg2;
 - (id)initWithClientIdentifier:(id)arg1 andRecipientRecord:(id)arg2;
-- (BOOL)isOnline;
+- (bool)isOnline;
 - (id)recipientContext;
 - (id)recipientNameDigest;
-- (void)setIsOnline:(BOOL)arg1;
+- (void)setIsOnline:(bool)arg1;
 
 @end

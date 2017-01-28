@@ -19,7 +19,7 @@
     int  _mode;
     int  _scaleConfig;
     int  _scalingMode;
-    BOOL  _useGPUScaler;
+    bool  _useGPUScaler;
     NSString * _weights;
     struct vector<std::__1::shared_ptr<Espresso::blob<float, 3> >, std::__1::allocator<std::__1::shared_ptr<Espresso::blob<float, 3> > > > { 
         struct shared_ptr<Espresso::blob<float, 3> > {} *__begin_; 
@@ -131,13 +131,13 @@
 @property (nonatomic) int mode;
 @property (nonatomic) int scaleConfig;
 @property (nonatomic) int scalingMode;
-@property (nonatomic) BOOL useGPUScaler;
+@property (nonatomic) bool useGPUScaler;
 @property (nonatomic, retain) NSString *weights;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)autoResizeForAspectRatio:(float)arg1 useLowPriorityMode:(BOOL)arg2 gpuPriority:(unsigned int)arg3;
-- (void)autoSetupNetBaseName:(id)arg1 weights:(id)arg2 scaleConfig:(int)arg3 setupMode:(int)arg4 computePath:(int)arg5 autoAspectRatio:(float)arg6 forceReset:(BOOL)arg7 useLowPriorityMode:(BOOL)arg8 gpuPriority:(unsigned int)arg9;
+- (void)autoResizeForAspectRatio:(float)arg1 useLowPriorityMode:(bool)arg2 gpuPriority:(unsigned long long)arg3;
+- (void)autoSetupNetBaseName:(id)arg1 weights:(id)arg2 scaleConfig:(int)arg3 setupMode:(int)arg4 computePath:(int)arg5 autoAspectRatio:(float)arg6 forceReset:(bool)arg7 useLowPriorityMode:(bool)arg8 gpuPriority:(unsigned long long)arg9;
 - (id)basename;
 - (struct shared_ptr<Espresso::blob<float, 3> > { struct blob<float, 3> {} *x1; struct __shared_weak_count {} *x2; })boxBlobForScale:(int)arg1;
 - (void)buildPyramid:(struct CGImage { }*)arg1 ci:(id)arg2 resizer:(struct shared_ptr<Espresso::fast_pyramid_resizer> { struct fast_pyramid_resizer {} *x1; struct __shared_weak_count {} *x2; })arg3;
@@ -157,12 +157,12 @@
 - (id)init;
 - (float)maxScale;
 - (int)mode;
-- (BOOL)needRetiling:(int)arg1;
+- (bool)needRetiling:(int)arg1;
 - (struct shared_ptr<Espresso::blob<float, 3> > { struct blob<float, 3> {} *x1; struct __shared_weak_count {} *x2; })probBlobForScale:(int)arg1;
 - (void)processBlob:(const struct shared_ptr<Espresso::blob<unsigned char __attribute__((ext_vector_type(4))), 2> >=^{blob<unsigned char __attribute__((ext_vector_type(4))), 2> {}*)arg1 tex:(id)arg2;
-- (void)processBlobNoRotation:(const struct shared_ptr<Espresso::blob<unsigned char __attribute__((ext_vector_type(4))), 2> >=^{blob<unsigned char __attribute__((ext_vector_type(4))), 2> {}*)arg1 tex:(id)arg2 doBGRA2RGBA:(BOOL)arg3;
+- (void)processBlobNoRotation:(const struct shared_ptr<Espresso::blob<unsigned char __attribute__((ext_vector_type(4))), 2> >=^{blob<unsigned char __attribute__((ext_vector_type(4))), 2> {}*)arg1 tex:(id)arg2 doBGRA2RGBA:(bool)arg3;
 - (void)processCGImage:(struct CGImage { }*)arg1;
-- (void)processCGImageBatch:(id /* block */)arg1 block:(id /* block */)arg2;
+- (void)processCGImageBatch:(id)arg1 block:(id)arg2;
 - (void)processCIImage:(id)arg1;
 - (void)processPyramid:(struct shared_ptr<Espresso::fast_pyramid_resizer> { struct fast_pyramid_resizer {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)processPyramid:(struct shared_ptr<Espresso::fast_pyramid_resizer> { struct fast_pyramid_resizer {} *x1; struct __shared_weak_count {} *x2; })arg1 gpu_resizer:(id)arg2;
@@ -183,12 +183,12 @@
 - (void)setMode:(int)arg1;
 - (void)setScaleConfig:(int)arg1;
 - (void)setScalingMode:(int)arg1;
-- (void)setUseGPUScaler:(BOOL)arg1;
+- (void)setUseGPUScaler:(bool)arg1;
 - (void)setWeights:(id)arg1;
 - (void)setup_retile;
 - (void)storeDataForPruning:(struct shared_ptr<Espresso::blob<float, 4> > { struct blob<float, 4> {} *x1; struct __shared_weak_count {} *x2; })arg1 prob:(float)arg2;
 - (struct net_strides_configuration { int x1; struct vector<int, std::__1::allocator<int> > { int *x_2_1_1; int *x_2_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_2_1_3; } x2; struct vector<int, std::__1::allocator<int> > { int *x_3_1_1; int *x_3_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_3_1_3; } x3; struct vector<int, std::__1::allocator<int> > { int *x_4_1_1; int *x_4_1_2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_2_1; } x_4_1_3; } x4; })strideConfiguration;
-- (BOOL)useGPUScaler;
+- (bool)useGPUScaler;
 - (id)weights;
 - (void)wipeLayersMemory;
 

@@ -6,7 +6,7 @@
     unsigned short  _deviceClass;
     NSUUID * _deviceID;
     unsigned char  _goodness;
-    BOOL  _isMe;
+    bool  _isMe;
     unsigned short  _pHash;
     unsigned char  _tieBreaker;
     unsigned char  _userConfidence;
@@ -15,7 +15,7 @@
 @property (nonatomic) unsigned short deviceClass;
 @property (nonatomic, retain) NSUUID *deviceID;
 @property (nonatomic) unsigned char goodness;
-@property (nonatomic) BOOL isMe;
+@property (nonatomic) bool isMe;
 @property (nonatomic) unsigned short pHash;
 @property (nonatomic) unsigned char tieBreaker;
 @property (nonatomic) unsigned char userConfidence;
@@ -31,13 +31,13 @@
 - (id)init;
 - (id)initWithAudioData:(id)arg1;
 - (id)initWithDeviceID:(id)arg1 data:(id)arg2;
-- (BOOL)isATrump;
-- (BOOL)isMe;
+- (bool)isATrump;
+- (bool)isMe;
 - (unsigned short)pHash;
 - (void)setDeviceClass:(unsigned short)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setGoodness:(unsigned char)arg1;
-- (void)setIsMe:(BOOL)arg1;
+- (void)setIsMe:(bool)arg1;
 - (void)setPHash:(unsigned short)arg1;
 - (void)setTieBreaker:(unsigned char)arg1;
 - (void)setUserConfidence:(unsigned char)arg1;

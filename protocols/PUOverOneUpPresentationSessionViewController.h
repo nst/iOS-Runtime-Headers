@@ -5,6 +5,6 @@
 
 @required
 
-- (PUOverOneUpPresentationSession *)overOneUpPresentationSessionCreateIfNeeded:(BOOL)arg1;
+- (PUOverOneUpPresentationSession *)overOneUpPresentationSessionCreateIfNeeded:(bool)arg1;
 
 @end

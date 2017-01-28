@@ -5,6 +5,6 @@
 @interface SKUIMessageBannerCloseButton : UIButton
 
 - (void)layoutSubviews;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 
 @end

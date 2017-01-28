@@ -10,9 +10,9 @@
 - (<HKSimpleDataEntryItemDelegate> *)delegate;
 - (NSDictionary *)formattedKeyAndValue;
 - (void)localeDidChange:(NSNotification *)arg1;
-- (unsigned int)placeholderType;
+- (unsigned long long)placeholderType;
 - (void)setDelegate:(id <HKSimpleDataEntryItemDelegate>)arg1;
-- (void)setPlaceholderType:(unsigned int)arg1;
+- (void)setPlaceholderType:(unsigned long long)arg1;
 - (void)updateCellDisplay;
 
 @end

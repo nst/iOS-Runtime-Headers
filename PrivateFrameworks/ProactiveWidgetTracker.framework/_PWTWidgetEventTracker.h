@@ -3,17 +3,17 @@
  */
 
 @interface _PWTWidgetEventTracker : NSObject {
-    int  _activeDisplayMode;
+    long long  _activeDisplayMode;
     PETGoalConversionEventTracker * _conversionTracker;
-    BOOL  _didBecomeVisibleWhileLocked;
-    BOOL  _hasReceivedActiveDisplayModeChangeNotificationOnce;
+    bool  _didBecomeVisibleWhileLocked;
+    bool  _hasReceivedActiveDisplayModeChangeNotificationOnce;
     NSString * _identifier;
-    BOOL  _isCurrentlyVisible;
+    bool  _isCurrentlyVisible;
     double  _lastAppearTime;
     PETScalarEventTracker * _resizeTracker;
     PETDistributionEventTracker * _screenLingerTracker;
     PETScalarEventTracker * _updateTracker;
-    BOOL  _willBecomeVisible;
+    bool  _willBecomeVisible;
 }
 
 @property (nonatomic, readonly) NSString *identifier;
@@ -22,10 +22,10 @@
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
 - (void)userEngagedWithWidget;
-- (void)widgetActiveDisplayModeDidChange:(int)arg1 withMaximumSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)widgetActiveDisplayModeDidChange:(long long)arg1 withMaximumSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)widgetDidAppear;
 - (void)widgetDidDisappear;
-- (void)widgetPerformedUpdateWithResult:(unsigned int)arg1;
+- (void)widgetPerformedUpdateWithResult:(unsigned long long)arg1;
 - (void)widgetWillAppear;
 - (void)widgetWillDisappear;
 

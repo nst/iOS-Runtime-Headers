@@ -3,69 +3,69 @@
  */
 
 @interface HUGridCell : UICollectionViewCell <HUGridCellProtocol> {
-    BOOL  _cellContentsHidden;
+    bool  _cellContentsHidden;
     UIVisualEffect * _contentEffect;
     HUGridCellBackgroundView * _gridBackgroundView;
     UIVisualEffectView * _gridForegroundView;
     HUGridCellLayoutOptions * _layoutOptions;
-    int  _primaryState;
-    BOOL  _rearranging;
-    float  _secondaryContentDimmingFactor;
+    long long  _primaryState;
+    bool  _rearranging;
+    double  _secondaryContentDimmingFactor;
 }
 
-@property (getter=areCellContentsHidden, nonatomic) BOOL cellContentsHidden;
+@property (getter=areCellContentsHidden, nonatomic) bool cellContentsHidden;
 @property (nonatomic, retain) UIVisualEffect *contentEffect;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HUGridCellBackgroundView *gridBackgroundView;
 @property (nonatomic, readonly) UIView *gridForegroundContentView;
 @property (nonatomic, retain) UIVisualEffectView *gridForegroundView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HFItem *item;
 @property (nonatomic, retain) HUGridCellLayoutOptions *layoutOptions;
-@property (nonatomic) int primaryState;
-@property (getter=isRearranging, nonatomic) BOOL rearranging;
-@property (nonatomic) float secondaryContentDimmingFactor;
+@property (nonatomic) long long primaryState;
+@property (getter=isRearranging, nonatomic) bool rearranging;
+@property (nonatomic) double secondaryContentDimmingFactor;
 @property (readonly) Class superclass;
 
 + (id)_jitterPositionAnimation;
-+ (id)_jitterTransformAnimationWithAspectRatio:(float)arg1;
++ (id)_jitterTransformAnimationWithAspectRatio:(double)arg1;
 + (Class)layoutOptionsClass;
 
 - (void).cxx_destruct;
 - (void)_setupCommonCellAppearance;
 - (void)_updateForegroundStyle;
-- (void)_updateTintColorSettingsForSubviewsOfView:(id)arg1 desiredDisplayStyle:(unsigned int)arg2;
+- (void)_updateTintColorSettingsForSubviewsOfView:(id)arg1 desiredDisplayStyle:(unsigned long long)arg2;
 - (void)applyLayoutAttributes:(id)arg1;
-- (BOOL)areCellContentsHidden;
+- (bool)areCellContentsHidden;
 - (id)contentEffect;
 - (void)displayStyleDidChange;
 - (id)gridBackgroundView;
 - (id)gridForegroundContentView;
 - (id)gridForegroundView;
-- (unsigned int)iconDisplayStyleForPrimaryState:(int)arg1;
+- (unsigned long long)iconDisplayStyleForPrimaryState:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isRearranging;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isRearranging;
 - (id)item;
 - (id)layoutOptions;
 - (void)layoutOptionsDidChange;
 - (void)layoutSubviews;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)prepareForReuse;
-- (int)primaryState;
-- (float)secondaryContentDimmingFactor;
-- (void)setCellContentsHidden:(BOOL)arg1;
+- (long long)primaryState;
+- (double)secondaryContentDimmingFactor;
+- (void)setCellContentsHidden:(bool)arg1;
 - (void)setContentEffect:(id)arg1;
 - (void)setGridBackgroundView:(id)arg1;
 - (void)setGridForegroundView:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setItem:(id)arg1;
 - (void)setLayoutOptions:(id)arg1;
-- (void)setPrimaryState:(int)arg1;
-- (void)setRearranging:(BOOL)arg1;
-- (void)setSecondaryContentDimmingFactor:(float)arg1;
-- (void)updateUIWithAnimation:(BOOL)arg1;
-- (void)updateUIWithPrimaryState:(int)arg1 animate:(BOOL)arg2;
+- (void)setPrimaryState:(long long)arg1;
+- (void)setRearranging:(bool)arg1;
+- (void)setSecondaryContentDimmingFactor:(double)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
+- (void)updateUIWithPrimaryState:(long long)arg1 animate:(bool)arg2;
 
 @end

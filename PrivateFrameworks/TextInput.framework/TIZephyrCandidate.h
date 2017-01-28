@@ -3,61 +3,61 @@
  */
 
 @interface TIZephyrCandidate : TIKeyboardCandidateSingle {
-    unsigned int  _ageForConnectionsMetrics;
+    unsigned long long  _ageForConnectionsMetrics;
     NSString * _fromBundleId;
-    BOOL  _fromBundleIdWhitelistedForMetrics;
-    BOOL  _isFromPhraseDictionary;
-    BOOL  _isFromTextChecker;
-    BOOL  _isSecureContentCandidate;
-    BOOL  _isSendCurrentLocation;
+    bool  _fromBundleIdWhitelistedForMetrics;
+    bool  _isFromPhraseDictionary;
+    bool  _isFromTextChecker;
+    bool  _isSecureContentCandidate;
+    bool  _isSendCurrentLocation;
     NSString * _label;
     TIProactiveTrigger * _proactiveTrigger;
-    BOOL  _targetBundleIdWhitelistedForMetrics;
+    bool  _targetBundleIdWhitelistedForMetrics;
     unsigned int  _usageTrackingMask;
-    unsigned int  _wordOriginFeedbackID;
+    unsigned long long  _wordOriginFeedbackID;
 }
 
-@property (nonatomic) unsigned int ageForConnectionsMetrics;
+@property (nonatomic) unsigned long long ageForConnectionsMetrics;
 @property (nonatomic, copy) NSString *fromBundleId;
-@property (nonatomic) BOOL fromBundleIdWhitelistedForMetrics;
-@property (nonatomic) BOOL isFromPhraseDictionary;
-@property (nonatomic) BOOL isFromTextChecker;
-@property (nonatomic) BOOL isSendCurrentLocation;
+@property (nonatomic) bool fromBundleIdWhitelistedForMetrics;
+@property (nonatomic) bool isFromPhraseDictionary;
+@property (nonatomic) bool isFromTextChecker;
+@property (nonatomic) bool isSendCurrentLocation;
 @property (nonatomic, copy) NSString *label;
-@property (nonatomic) BOOL targetBundleIdWhitelistedForMetrics;
+@property (nonatomic) bool targetBundleIdWhitelistedForMetrics;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
-- (unsigned int)ageForConnectionsMetrics;
+- (unsigned long long)ageForConnectionsMetrics;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fromBundleId;
-- (BOOL)fromBundleIdWhitelistedForMetrics;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3 usageTrackingMask:(unsigned int)arg4;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned int)arg3 usageTrackingMask:(unsigned int)arg4 secureContentCandidate:(BOOL)arg5 proactiveTrigger:(id)arg6;
+- (bool)fromBundleIdWhitelistedForMetrics;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned long long)arg3;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned long long)arg3 usageTrackingMask:(unsigned int)arg4;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 wordOriginFeedbackID:(unsigned long long)arg3 usageTrackingMask:(unsigned int)arg4 secureContentCandidate:(bool)arg5 proactiveTrigger:(id)arg6;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isAutocorrection;
-- (BOOL)isFromPhraseDictionary;
-- (BOOL)isFromTextChecker;
-- (BOOL)isSecureContentCandidate;
-- (BOOL)isSendCurrentLocation;
+- (bool)isAutocorrection;
+- (bool)isFromPhraseDictionary;
+- (bool)isFromTextChecker;
+- (bool)isSecureContentCandidate;
+- (bool)isSendCurrentLocation;
 - (id)label;
 - (id)proactiveTrigger;
-- (void)setAgeForConnectionsMetrics:(unsigned int)arg1;
+- (void)setAgeForConnectionsMetrics:(unsigned long long)arg1;
 - (void)setFromBundleId:(id)arg1;
-- (void)setFromBundleIdWhitelistedForMetrics:(BOOL)arg1;
-- (void)setIsFromPhraseDictionary:(BOOL)arg1;
-- (void)setIsFromTextChecker:(BOOL)arg1;
-- (void)setIsSendCurrentLocation:(BOOL)arg1;
+- (void)setFromBundleIdWhitelistedForMetrics:(bool)arg1;
+- (void)setIsFromPhraseDictionary:(bool)arg1;
+- (void)setIsFromTextChecker:(bool)arg1;
+- (void)setIsSendCurrentLocation:(bool)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setTargetBundleIdWhitelistedForMetrics:(BOOL)arg1;
-- (BOOL)targetBundleIdWhitelistedForMetrics;
+- (void)setTargetBundleIdWhitelistedForMetrics:(bool)arg1;
+- (bool)targetBundleIdWhitelistedForMetrics;
 - (unsigned int)usageTrackingMask;
-- (unsigned int)wordOriginFeedbackID;
+- (unsigned long long)wordOriginFeedbackID;
 
 @end

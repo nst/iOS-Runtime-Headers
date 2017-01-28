@@ -6,7 +6,7 @@
     NSData * _requestData;
 }
 
-@property (nonatomic, readonly) BOOL hasRequestData;
+@property (nonatomic, readonly) bool hasRequestData;
 @property (nonatomic, retain) NSData *requestData;
 
 + (id)options;
@@ -16,11 +16,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRequestData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRequestData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestData;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;

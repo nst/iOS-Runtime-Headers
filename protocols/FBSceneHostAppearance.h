@@ -5,17 +5,19 @@
 
 @required
 
-- (unsigned int)appearanceStyle;
+- (unsigned long long)appearanceStyle;
 - (UIColor *)backgroundColorWhileHosting;
 - (UIColor *)backgroundColorWhileNotHosting;
-- (unsigned int)hostedLayerTypes;
-- (BOOL)isContextHosted;
-- (BOOL)isHosting;
-- (float)level;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })referenceFrame;
-- (void)setAppearanceStyle:(unsigned int)arg1;
+- (unsigned long long)hostedLayerTypes;
+- (bool)isClippingDisabled;
+- (bool)isContextHosted;
+- (bool)isHosting;
+- (double)level;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })referenceFrame;
+- (void)setAppearanceStyle:(unsigned long long)arg1;
 - (void)setBackgroundColorWhileHosting:(UIColor *)arg1;
 - (void)setBackgroundColorWhileNotHosting:(UIColor *)arg1;
-- (void)setHostedLayerTypes:(unsigned int)arg1;
+- (void)setClippingDisabled:(bool)arg1;
+- (void)setHostedLayerTypes:(unsigned long long)arg1;
 
 @end

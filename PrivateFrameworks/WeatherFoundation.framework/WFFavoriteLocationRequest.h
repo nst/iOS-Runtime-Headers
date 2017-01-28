@@ -3,16 +3,16 @@
  */
 
 @interface WFFavoriteLocationRequest : WFTask {
-    id /* block */  _resultHandler;
+    id  _resultHandler;
 }
 
-@property (readonly) id /* block */ resultHandler;
+@property (readonly) id resultHandler;
 
 - (void).cxx_destruct;
 - (void)handleCancellation;
 - (void)handleResponse:(id)arg1;
-- (id)initWithResultHandler:(id /* block */)arg1;
-- (id /* block */)resultHandler;
+- (id)initWithResultHandler:(id)arg1;
+- (id)resultHandler;
 - (void)startWithService:(id)arg1;
 
 @end

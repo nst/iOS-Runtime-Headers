@@ -3,20 +3,20 @@
  */
 
 @interface CMKVideoCaptureRequest : CMKCaptureRequest <NSCopying, NSMutableCopying> {
-    int  _captureDevice;
-    int  _deviceOrientation;
-    int  _torchMode;
+    long long  _captureDevice;
+    long long  _deviceOrientation;
+    long long  _torchMode;
 }
 
-@property (nonatomic, readonly) int captureDevice;
-@property (nonatomic, readonly) int deviceOrientation;
-@property (nonatomic, readonly) int torchMode;
+@property (nonatomic, readonly) long long captureDevice;
+@property (nonatomic, readonly) long long deviceOrientation;
+@property (nonatomic, readonly) long long torchMode;
 
-- (int)captureDevice;
+- (long long)captureDevice;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)deviceOrientation;
+- (long long)deviceOrientation;
 - (id)init;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (int)torchMode;
+- (long long)torchMode;
 
 @end

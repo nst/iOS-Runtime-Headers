@@ -10,7 +10,7 @@
 @property (nonatomic, retain) SFText *content;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)content;

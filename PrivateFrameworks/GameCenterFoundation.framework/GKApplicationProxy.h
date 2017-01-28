@@ -13,12 +13,12 @@
 @property (nonatomic, readonly, retain) NSString *bundleShortVersion;
 @property (nonatomic, readonly, retain) NSString *bundleVersion;
 @property (nonatomic, readonly, retain) NSNumber *externalVersion;
-@property (getter=isGameCenterEnabled, nonatomic, readonly) BOOL gameCenterEnabled;
-@property (getter=isInstalled, nonatomic, readonly) BOOL installed;
+@property (getter=isGameCenterEnabled, nonatomic, readonly) bool gameCenterEnabled;
+@property (getter=isInstalled, nonatomic, readonly) bool installed;
 @property (nonatomic, retain) LSApplicationProxy *lsProxy;
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, readonly, retain) NSDate *purchaseDate;
-@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
+@property (getter=isRestricted, nonatomic, readonly) bool restricted;
 
 + (id)metadataForBundleURL:(id)arg1;
 
@@ -32,9 +32,9 @@
 - (id)externalVersion;
 - (id)initWithBundleID:(id)arg1;
 - (id)initWithProxy:(id)arg1;
-- (BOOL)isGameCenterEnabled;
-- (BOOL)isInstalled;
-- (BOOL)isRestricted;
+- (bool)isGameCenterEnabled;
+- (bool)isInstalled;
+- (bool)isRestricted;
 - (id)lsProxy;
 - (id)metadata;
 - (id)purchaseDate;

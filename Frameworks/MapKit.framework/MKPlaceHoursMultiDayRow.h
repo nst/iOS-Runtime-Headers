@@ -5,25 +5,25 @@
 @interface MKPlaceHoursMultiDayRow : MKPlaceSectionRowView {
     NSArray * _baselineToBaseline;
     NSLayoutConstraint * _baselineToBottom;
-    float  _baselineToBottomConstant;
+    double  _baselineToBottomConstant;
     NSLayoutConstraint * _baselineToTop;
     _MKUILabel * _daysLabel;
-    BOOL  _hasMultipleHours;
+    bool  _hasMultipleHours;
     NSArray * _hoursLabels;
 }
 
-@property (nonatomic) float baselineToBottomConstant;
-@property (nonatomic) BOOL hasMultipleHours;
+@property (nonatomic) double baselineToBottomConstant;
+@property (nonatomic) bool hasMultipleHours;
 
 - (void).cxx_destruct;
 - (void)_contentSizeDidChange;
 - (id)_standardLabel;
-- (float)baselineToBottomConstant;
-- (BOOL)hasMultipleHours;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setBaselineToBottomConstant:(float)arg1;
+- (double)baselineToBottomConstant;
+- (bool)hasMultipleHours;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setBaselineToBottomConstant:(double)arg1;
 - (void)setDays:(id)arg1 hours:(id)arg2;
-- (void)setHasMultipleHours:(BOOL)arg1;
-- (BOOL)wantsDefaultClipping;
+- (void)setHasMultipleHours:(bool)arg1;
+- (bool)wantsDefaultClipping;
 
 @end

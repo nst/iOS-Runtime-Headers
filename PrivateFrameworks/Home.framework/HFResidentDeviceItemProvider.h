@@ -3,21 +3,21 @@
  */
 
 @interface HFResidentDeviceItemProvider : HFItemProvider {
-    id /* block */  _filter;
+    id  _filter;
     NSMutableSet * _residentDeviceItems;
 }
 
-@property (nonatomic, copy) id /* block */ filter;
+@property (nonatomic, copy) id filter;
 @property (nonatomic, retain) NSMutableSet *residentDeviceItems;
 
 - (void).cxx_destruct;
-- (id /* block */)filter;
+- (id)filter;
 - (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;
 - (id)residentDeviceItems;
-- (void)setFilter:(id /* block */)arg1;
+- (void)setFilter:(id)arg1;
 - (void)setResidentDeviceItems:(id)arg1;
 
 @end

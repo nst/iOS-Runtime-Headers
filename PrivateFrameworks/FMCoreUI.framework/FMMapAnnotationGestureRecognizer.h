@@ -8,8 +8,8 @@
 
 @property (nonatomic) <FMMapAnnotationGestureRecognizerDelegate> *touchDelegate;
 
-- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (bool)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)canPreventGestureRecognizer:(id)arg1;
 - (id)init;
 - (void)setTouchDelegate:(id)arg1;
 - (id)touchDelegate;

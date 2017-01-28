@@ -5,7 +5,7 @@
 @interface MPStoreOfferMediaItemArtwork : MPConcreteMediaItemArtwork
 
 - (id)_artworkDescriptor;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 
 @end

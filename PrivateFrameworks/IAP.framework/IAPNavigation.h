@@ -4,7 +4,7 @@
 
 @interface IAPNavigation : NSObject {
     NSSet * _availableAccessories;
-    BOOL  _connected;
+    bool  _connected;
     struct __CFNotificationCenter { } * _darwinNotificationCenter;
     <IAPNavigationDelegate> * _delegate;
     NSObject<OS_xpc_object> * _iap2d_connection;
@@ -13,7 +13,7 @@
 }
 
 @property (retain) NSSet *availableAccessories;
-@property BOOL connected;
+@property bool connected;
 @property <IAPNavigationDelegate> *delegate;
 @property (retain) NSObject<OS_xpc_object> *iap2d_connection;
 @property (retain) NSObject<OS_dispatch_queue> *processingQ;
@@ -25,7 +25,7 @@
 - (void)_iap2d_server_did_launch;
 - (void)_updateInternalStateWithArrayOfAccessories:(id)arg1;
 - (id)availableAccessories;
-- (BOOL)connected;
+- (bool)connected;
 - (void)dealloc;
 - (id)delegate;
 - (id)iap2d_connection;
@@ -33,7 +33,7 @@
 - (id)initWithDelegate:(id)arg1;
 - (id)processingQ;
 - (void)setAvailableAccessories:(id)arg1;
-- (void)setConnected:(BOOL)arg1;
+- (void)setConnected:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIap2d_connection:(id)arg1;
 - (void)setProcessingQ:(id)arg1;

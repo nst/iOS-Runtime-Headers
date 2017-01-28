@@ -7,7 +7,7 @@
 + (id)globalAsyncScheduler;
 + (id)immediateScheduler;
 + (id)mainThreadScheduler;
-+ (id)operationQueueSchedulerWithMaxConcurrentOperationCount:(int)arg1;
++ (id)operationQueueSchedulerWithMaxConcurrentOperationCount:(long long)arg1;
 + (id)serialDispatchQueueSchedulerWithName:(id)arg1;
 + (id)synchronousSerialDispatchQueueWithName:(id)arg1;
 

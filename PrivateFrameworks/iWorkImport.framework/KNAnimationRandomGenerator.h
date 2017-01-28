@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double randomDouble;
 @property (nonatomic) unsigned long long seed;
 @property (readonly) Class superclass;
@@ -24,7 +24,7 @@
 - (void)dealloc;
 - (double)doubleBetween:(double)arg1 :(double)arg2;
 - (id)initWithSeed:(id)arg1;
-- (int)intBetween:(int)arg1 :(int)arg2;
+- (long long)intBetween:(long long)arg1 :(long long)arg2;
 - (double)randomDouble;
 - (unsigned long long)seed;
 - (void)setSeed:(unsigned long long)arg1;

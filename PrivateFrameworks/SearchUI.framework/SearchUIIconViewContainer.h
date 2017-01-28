@@ -16,14 +16,14 @@
 @property (retain) NSArray *spacerLayoutGuides;
 @property (retain) NSLayoutConstraint *trailingConstraint;
 
-+ (unsigned int)maximumNumberOfColumns;
-+ (unsigned int)numberOfColumnsForCurrentOrientation;
-+ (unsigned int)numberOfColumnsForLandscape;
-+ (unsigned int)numberOfColumnsForPortrait;
++ (unsigned long long)maximumNumberOfColumns;
++ (unsigned long long)numberOfColumnsForCurrentOrientation;
++ (unsigned long long)numberOfColumnsForLandscape;
++ (unsigned long long)numberOfColumnsForPortrait;
 
 - (void).cxx_destruct;
 - (id)iconViews;
-- (id)initWithStyle:(unsigned int)arg1 cell:(id)arg2;
+- (id)initWithStyle:(unsigned long long)arg1 cell:(id)arg2;
 - (id)lastLayoutGuideWidthConstraint;
 - (void)setIconViews:(id)arg1;
 - (void)setLastLayoutGuideWidthConstraint:(id)arg1;

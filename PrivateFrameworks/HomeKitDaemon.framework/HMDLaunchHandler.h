@@ -19,7 +19,7 @@
 - (void)_removeAssertionPlist;
 - (void)_saveAssertionPlist;
 - (int)beingConfigured;
-- (void)beingConfigured:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)beingConfigured:(bool)arg1 completionHandler:(id)arg2;
 - (void)deregisterForRelaunch:(id)arg1;
 - (id)handlerQueue;
 - (id)init;

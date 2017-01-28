@@ -7,14 +7,14 @@
     double  _contentWidth;
     int  _edCellType;
     EDStyle * _edStyle;
-    BOOL  _isColumnZero;
-    BOOL  _isRowZero;
-    BOOL  _resolvedProperties;
-    BOOL  _truncateContents;
+    bool  _isColumnZero;
+    bool  _isRowZero;
+    bool  _resolvedProperties;
+    bool  _truncateContents;
 }
 
-+ (id)_parseFontName:(id)arg1 nameContainsBold:(BOOL*)arg2 nameContainsItalic:(BOOL*)arg3;
-+ (float)contentWidthForColumnWidth:(float)arg1;
++ (id)_parseFontName:(id)arg1 nameContainsBold:(bool*)arg2 nameContainsItalic:(bool*)arg3;
++ (double)contentWidthForColumnWidth:(double)arg1;
 + (id)styleForFont:(id)arg1;
 
 - (void)addAlignmentStyle:(id)arg1;
@@ -24,9 +24,9 @@
 - (id)cacheFriendlyCSSStyleString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cssStyleString;
-- (unsigned int)hash;
-- (id)initWithEDStyle:(id)arg1 type:(int)arg2 rowIndex:(unsigned int)arg3 columnIndex:(unsigned int)arg4 columnWidth:(unsigned int)arg5 contentWidth:(unsigned int)arg6 truncateContents:(BOOL)arg7;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithEDStyle:(id)arg1 type:(int)arg2 rowIndex:(unsigned long long)arg3 columnIndex:(unsigned long long)arg4 columnWidth:(unsigned long long)arg5 contentWidth:(unsigned long long)arg6 truncateContents:(bool)arg7;
+- (bool)isEqual:(id)arg1;
 - (void)resolveBorders;
 - (void)resolveContentWidth;
 - (void)resolveFormatType;

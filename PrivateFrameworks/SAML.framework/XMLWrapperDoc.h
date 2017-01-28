@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSData *xmlData;
 
 - (void).cxx_destruct;
-- (BOOL)createDocument:(id*)arg1;
+- (bool)createDocument:(id*)arg1;
 - (id)createDocumentElement:(id*)arg1;
 - (void)dealloc;
 - (struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; }*)docNode:(id*)arg1;
@@ -37,7 +37,7 @@
 - (void)setNamespace:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setSchemaData:(id)arg1;
-- (BOOL)setXMLDoc:(id*)arg1;
+- (bool)setXMLDoc:(id*)arg1;
 - (void)setXmlData:(id)arg1;
 - (id)xmlData;
 - (id)xmlString:(id*)arg1;

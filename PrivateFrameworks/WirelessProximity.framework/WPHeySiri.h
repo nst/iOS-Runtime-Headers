@@ -25,7 +25,7 @@
 - (void)startAdvertisingWithData:(id)arg1;
 - (void)startScanning;
 - (void)startScanningAndAdvertisingWithData:(id)arg1;
-- (void)stateDidChange:(int)arg1;
+- (void)stateDidChange:(long long)arg1;
 - (void)stopAdvertising;
 - (void)stopScanning;
 - (void)stopScanningAndAdvertising;

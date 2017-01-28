@@ -5,8 +5,8 @@
 @interface _UIRemoteViewControllerConnectionInfo : NSObject {
     _UIHostedWindowHostingHandle * _hostedWindowHostingHandle;
     _UIViewServiceInterface * _interface;
-    int  _preferredStatusBarStyle;
-    BOOL  _prefersStatusBarHidden;
+    long long  _preferredStatusBarStyle;
+    bool  _prefersStatusBarHidden;
     _UIHostedWindowHostingHandle * _remoteKeyboardsWindowHostingHandle;
     BSMachPortSendRight * _serviceAccessibilityServerPortWrapper;
     id  _serviceViewControllerControlMessageProxy;
@@ -20,8 +20,8 @@
 
 @property (retain) _UIHostedWindowHostingHandle *hostedWindowHostingHandle;
 @property (retain) _UIViewServiceInterface *interface;
-@property int preferredStatusBarStyle;
-@property BOOL prefersStatusBarHidden;
+@property long long preferredStatusBarStyle;
+@property bool prefersStatusBarHidden;
 @property (retain) _UIHostedWindowHostingHandle *remoteKeyboardsWindowHostingHandle;
 @property (retain) BSMachPortSendRight *serviceAccessibilityServerPortWrapper;
 @property (retain) id serviceViewControllerControlMessageProxy;
@@ -35,8 +35,8 @@
 - (void).cxx_destruct;
 - (id)hostedWindowHostingHandle;
 - (id)interface;
-- (int)preferredStatusBarStyle;
-- (BOOL)prefersStatusBarHidden;
+- (long long)preferredStatusBarStyle;
+- (bool)prefersStatusBarHidden;
 - (id)remoteKeyboardsWindowHostingHandle;
 - (id)serviceAccessibilityServerPortWrapper;
 - (id)serviceViewControllerControlMessageProxy;
@@ -44,8 +44,8 @@
 - (id)serviceViewControllerSupportedInterfaceOrientations;
 - (void)setHostedWindowHostingHandle:(id)arg1;
 - (void)setInterface:(id)arg1;
-- (void)setPreferredStatusBarStyle:(int)arg1;
-- (void)setPrefersStatusBarHidden:(BOOL)arg1;
+- (void)setPreferredStatusBarStyle:(long long)arg1;
+- (void)setPrefersStatusBarHidden:(bool)arg1;
 - (void)setRemoteKeyboardsWindowHostingHandle:(id)arg1;
 - (void)setServiceAccessibilityServerPortWrapper:(id)arg1;
 - (void)setServiceViewControllerControlMessageProxy:(id)arg1;

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)contains:(NSDate *)arg1;
+- (bool)contains:(NSDate *)arg1;
 - (double)duration;
 - (NSDate *)endDate;
 - (NSDate *)startDate;

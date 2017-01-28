@@ -18,13 +18,13 @@
 - (void)chatInputControllerWillTransitionExpanded:(CKChatInputController *)arg1;
 - (void)chatInputDidChangeSize;
 - (void)chatInputDidSelectPhotoPicker;
-- (void)chatInputDidUpdateInputViewShowingBrowser:(BOOL)arg1 entryFieldCollapsed:(BOOL)arg2 animated:(BOOL)arg3;
+- (void)chatInputDidUpdateInputViewShowingBrowser:(bool)arg1 entryFieldCollapsed:(bool)arg2 animated:(bool)arg3;
 - (void)chatInputDidUpdateWithNewInputViewController:(UIInputViewController *)arg1;
 - (void)chatInputSentComposition:(CKComposition *)arg1;
 - (<CKBrowserDragControllerTranscriptDelegate> *)dragControllerTranscriptDelegate;
 - (void)sendSticker:(IMSticker *)arg1;
 - (void)sendSticker:(IMSticker *)arg1 withDragTarget:(CKBrowserDragControllerTarget *)arg2;
-- (void)setLocalUserIsComposing:(BOOL)arg1 withPluginBundleID:(NSString *)arg2 typingIndicatorData:(NSData *)arg3;
+- (void)setLocalUserIsComposing:(bool)arg1 withPluginBundleID:(NSString *)arg2 typingIndicatorData:(NSData *)arg3;
 - (UIViewController *)viewControllerForChatInputModalPresentation;
 - (UIView *)viewForDragAndChatInputDropTarget;
 

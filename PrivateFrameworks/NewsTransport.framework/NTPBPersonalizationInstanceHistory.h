@@ -10,8 +10,8 @@
     unsigned long long  _lastChangeNumber;
 }
 
-@property (nonatomic, readonly) BOOL hasInstanceIdentifier;
-@property (nonatomic) BOOL hasLastChangeNumber;
+@property (nonatomic, readonly) bool hasInstanceIdentifier;
+@property (nonatomic) bool hasLastChangeNumber;
 @property (nonatomic, retain) NSString *instanceIdentifier;
 @property (nonatomic) unsigned long long lastChangeNumber;
 
@@ -19,15 +19,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInstanceIdentifier;
-- (BOOL)hasLastChangeNumber;
-- (unsigned int)hash;
+- (bool)hasInstanceIdentifier;
+- (bool)hasLastChangeNumber;
+- (unsigned long long)hash;
 - (id)instanceIdentifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)lastChangeNumber;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLastChangeNumber:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLastChangeNumber:(bool)arg1;
 - (void)setInstanceIdentifier:(id)arg1;
 - (void)setLastChangeNumber:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;

@@ -7,7 +7,7 @@
 
 - (NAFuture *)commitCreateTimerTriggerBuilder;
 - (NAFuture *)commitUpdateExecutionTime;
-- (NSString *)naturalLanguageNameOfType:(unsigned int)arg1;
+- (NSString *)naturalLanguageNameOfType:(unsigned long long)arg1;
 - (NAFuture *)performValidation;
 - (void)setTimerTriggerBuilder:(HFTimerTriggerBuilder *)arg1;
 - (HFTimerTriggerBuilder *)timerTriggerBuilder;

@@ -7,10 +7,10 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)canPreviewEntityValueContext:(id)arg1;
+- (bool)canPreviewEntityValueContext:(id)arg1;
 - (void)handleCommitPreviewViewController:(id)arg1 fromViewController:(id)arg2;
-- (int)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
-- (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (long long)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
+- (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)init;
 - (id)initWithBrowseCollectionViewConfiguration:(id)arg1;
 - (id)loadEntityViewDescriptor;

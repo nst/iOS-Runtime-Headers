@@ -3,25 +3,25 @@
  */
 
 @interface SSVFairPlaySubscriptionStatus : NSObject <SSXPCCoding> {
-    BOOL  _hasSubscriptionLease;
-    BOOL  _hasSubscriptionSlot;
+    bool  _hasSubscriptionLease;
+    bool  _hasSubscriptionSlot;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasSubscriptionLease;
-@property (nonatomic) BOOL hasSubscriptionSlot;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasSubscriptionLease;
+@property (nonatomic) bool hasSubscriptionSlot;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)copyXPCEncoding;
 - (id)description;
-- (BOOL)hasSubscriptionLease;
-- (BOOL)hasSubscriptionSlot;
-- (unsigned int)hash;
+- (bool)hasSubscriptionLease;
+- (bool)hasSubscriptionSlot;
+- (unsigned long long)hash;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)setHasSubscriptionLease:(BOOL)arg1;
-- (void)setHasSubscriptionSlot:(BOOL)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setHasSubscriptionLease:(bool)arg1;
+- (void)setHasSubscriptionSlot:(bool)arg1;
 
 @end

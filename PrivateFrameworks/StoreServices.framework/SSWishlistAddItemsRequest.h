@@ -21,7 +21,7 @@
 - (id)initWithItems:(id)arg1 caller:(id)arg2 version:(id)arg3;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)items;
-- (void)startWithAddItemsResponseBlock:(id /* block */)arg1;
+- (void)startWithAddItemsResponseBlock:(id)arg1;
 - (id)version;
 
 @end

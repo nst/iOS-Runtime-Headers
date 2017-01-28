@@ -20,7 +20,7 @@
 - (void)_queue_performSend;
 - (void)_queue_queuePending;
 - (void)_queue_startTimerWithFireDate:(id)arg1;
-- (void)_sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 isTrafficRestricted:(BOOL)arg4 attachmentURL:(id)arg5 attachmentKey:(id)arg6 didSend:(id /* block */)arg7 didQueue:(id /* block */)arg8;
+- (void)_sendRequest:(id)arg1 type:(unsigned short)arg2 withTimeout:(id)arg3 isTrafficRestricted:(bool)arg4 attachmentURL:(id)arg5 attachmentKey:(id)arg6 didSend:(id)arg7 didQueue:(id)arg8;
 - (void)handleFileURL:(id)arg1;
 - (id)init;
 - (void)queuePending;

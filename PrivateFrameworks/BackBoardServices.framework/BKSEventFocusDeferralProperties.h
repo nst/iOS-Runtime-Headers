@@ -18,7 +18,7 @@
 + (id)propertiesWithClientID:(id)arg1 pid:(int)arg2 displayUUID:(id)arg3 contextID:(unsigned int)arg4;
 + (id)propertiesWithMainDisplayAndClientID:(id)arg1 contextID:(unsigned int)arg2;
 + (id)propertiesWithMainDisplayAndClientID:(id)arg1 pid:(int)arg2 contextID:(unsigned int)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)clientID;
 - (unsigned int)contextID;
@@ -26,11 +26,11 @@
 - (id)description;
 - (id)displayUUID;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithClientID:(id)arg1 pid:(int)arg2 displayUUID:(id)arg3 contextID:(unsigned int)arg4;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualNotIncludingClientIDAndPid:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualNotIncludingClientIDAndPid:(id)arg1;
 - (int)pid;
 - (id)propertiesOneLevelMoreGeneric;
 - (void)setPid:(int)arg1;

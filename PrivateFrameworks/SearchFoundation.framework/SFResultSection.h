@@ -5,24 +5,24 @@
 @interface SFResultSection : NSObject <NSCopying, NSSecureCoding> {
     NSString * _bundleIdentifier;
     NSString * _identifier;
-    unsigned int  _maxInitiallyVisibleResults;
+    unsigned long long  _maxInitiallyVisibleResults;
     NSString * _moreText;
-    float  _rankingScore;
+    double  _rankingScore;
     NSArray * _results;
     NSString * _title;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) unsigned int maxInitiallyVisibleResults;
+@property (nonatomic) unsigned long long maxInitiallyVisibleResults;
 @property (nonatomic, copy) NSString *moreText;
-@property (nonatomic) float rankingScore;
+@property (nonatomic) double rankingScore;
 @property (nonatomic, retain) NSArray *results;
 @property (nonatomic, copy) NSString *title;
 
 // Image: /System/Library/PrivateFrameworks/SearchFoundation.framework/SearchFoundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
@@ -31,15 +31,15 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)maxInitiallyVisibleResults;
+- (unsigned long long)maxInitiallyVisibleResults;
 - (id)moreText;
-- (float)rankingScore;
+- (double)rankingScore;
 - (id)results;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setMaxInitiallyVisibleResults:(unsigned int)arg1;
+- (void)setMaxInitiallyVisibleResults:(unsigned long long)arg1;
 - (void)setMoreText:(id)arg1;
-- (void)setRankingScore:(float)arg1;
+- (void)setRankingScore:(double)arg1;
 - (void)setResults:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

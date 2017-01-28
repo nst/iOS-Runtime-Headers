@@ -7,7 +7,7 @@
     NSMutableArray * _fetchedRecords;
     NSDictionary * _knownRecordIDsToEtags;
     NSMutableSet * _missingRecordIDs;
-    id /* block */  _queryCompletionHandler;
+    id  _queryCompletionHandler;
     NSArray * _recordIDs;
     NSArray * _recordSpecs;
     NSDictionary * _recordSpecsByType;
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSMutableArray *fetchedRecords;
 @property (nonatomic, retain) NSDictionary *knownRecordIDsToEtags;
 @property (nonatomic, retain) NSMutableSet *missingRecordIDs;
-@property (nonatomic, copy) id /* block */ queryCompletionHandler;
+@property (nonatomic, copy) id queryCompletionHandler;
 @property (nonatomic, retain) NSArray *recordIDs;
 @property (nonatomic, retain) NSArray *recordSpecs;
 @property (nonatomic, retain) NSDictionary *recordSpecsByType;
@@ -31,7 +31,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (void)prepareOperation;
-- (id /* block */)queryCompletionHandler;
+- (id)queryCompletionHandler;
 - (id)recordIDs;
 - (id)recordSpecs;
 - (id)recordSpecsByType;
@@ -39,10 +39,10 @@
 - (void)setFetchedRecords:(id)arg1;
 - (void)setKnownRecordIDsToEtags:(id)arg1;
 - (void)setMissingRecordIDs:(id)arg1;
-- (void)setQueryCompletionHandler:(id /* block */)arg1;
+- (void)setQueryCompletionHandler:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordSpecs:(id)arg1;
 - (void)setRecordSpecsByType:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

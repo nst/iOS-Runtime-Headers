@@ -7,10 +7,10 @@
 }
 
 - (id)connectionLineLayout;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)dealloc;
-- (float)shortestDistanceToPoint:(struct CGPoint { float x1; float x2; })arg1 countAsHit:(BOOL*)arg2;
-- (BOOL)shouldSetPathSourceWhenChangingInfoGeometry;
+- (double)shortestDistanceToPoint:(struct CGPoint { double x1; double x2; })arg1 countAsHit:(bool*)arg2;
+- (bool)shouldSetPathSourceWhenChangingInfoGeometry;
 - (void)updateFromLayout;
 
 @end

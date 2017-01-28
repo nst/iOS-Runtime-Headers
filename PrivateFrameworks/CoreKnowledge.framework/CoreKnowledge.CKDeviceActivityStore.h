@@ -6,21 +6,34 @@
     void store;
 }
 
+@property (nonatomic, readonly) NSDictionary *activities;
 @property (nonatomic, readonly) _TtC13CoreKnowledge16CKKnowledgeStore *backingStore;
+@property (nonatomic, readonly) _TtC13CoreKnowledge16CKKnowledgeStore *store;
 
 + (id)dateFormat;
++ (id)defaultStore;
++ (id)identifierWithPrefix:(id)arg1 intent:(id)arg2 error:(id*)arg3;
 
-- (id /* block */).cxx_destruct;
+- (id).cxx_destruct;
+- (id)activities;
+- (id)activitiesWithSourceBundleIdentifier:(id)arg1 intent:(id)arg2 error:(id*)arg3;
+- (id)activityWithIdentifier:(id)arg1;
 - (id)backingStore;
-- (BOOL)deleteActivityWithIdentifier:(id)arg1 error:(id*)arg2;
+- (id)createActivityWithIdentifier:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
+- (bool)deleteActivityWithIdentifier:(id)arg1 error:(id*)arg2;
 - (id)init;
-- (BOOL)recordActivityWithIdentifier:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 error:(id*)arg4;
+- (id)initWithStore:(id)arg1;
+- (bool)recordActivityWithIdentifier:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 error:(id*)arg4;
+- (void)recordInteraction:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 completionHandler:(id)arg4;
+- (bool)recordInteraction:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 error:(id*)arg4;
 - (id)recordedActivities;
 - (id)recordedActivityWithIdentifier:(id)arg1;
-- (BOOL)setFirstSeen:(id)arg1 forActivityId:(id)arg2 error:(id*)arg3;
-- (BOOL)setFrequency:(long)arg1 forActivityId:(id)arg2 error:(id*)arg3;
-- (BOOL)setLastDuration:(double)arg1 forActivityId:(id)arg2 error:(id*)arg3;
-- (BOOL)setLastSeen:(id)arg1 forActivityId:(id)arg2 error:(id*)arg3;
-- (BOOL)setTotalDuration:(double)arg1 forActivityId:(id)arg2 error:(id*)arg3;
+- (bool)setFirstSeen:(id)arg1 forActivityId:(id)arg2 error:(id*)arg3;
+- (bool)setFrequency:(long long)arg1 forActivityId:(id)arg2 error:(id*)arg3;
+- (bool)setLastDuration:(double)arg1 forActivityId:(id)arg2 error:(id*)arg3;
+- (bool)setLastSeen:(id)arg1 forActivityId:(id)arg2 error:(id*)arg3;
+- (bool)setTotalDuration:(double)arg1 forActivityId:(id)arg2 error:(id*)arg3;
+- (bool)setValue:(id)arg1 forActivityId:(id)arg2 error:(id*)arg3;
+- (id)store;
 
 @end

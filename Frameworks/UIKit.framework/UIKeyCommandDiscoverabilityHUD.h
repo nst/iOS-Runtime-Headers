@@ -4,7 +4,7 @@
 
 @interface UIKeyCommandDiscoverabilityHUD : NSObject {
     NSTimer * _HUDPopTimer;
-    BOOL  _commandKeyIsDown;
+    bool  _commandKeyIsDown;
     _UIKeyCommandDiscoverabilityHUDWindow * _window;
 }
 

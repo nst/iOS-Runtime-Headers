@@ -10,8 +10,8 @@
 @property (nonatomic) <_PXCompletionHandlerManagerDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)_handleTimeoutOfCompletionHandler:(id /* block */)arg1;
-- (void)addCompletionHandler:(id /* block */)arg1;
+- (void)_handleTimeoutOfCompletionHandler:(id)arg1;
+- (void)addCompletionHandler:(id)arg1;
 - (void)callCompletionHandlers;
 - (id)delegate;
 - (id)init;

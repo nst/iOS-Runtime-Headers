@@ -9,10 +9,10 @@
     MPChangeDetails * _changeDetails;
     MusicStoreBrowseContentItemBuilder * _contentItemBuilder;
     struct { 
-        BOOL useCarPlayBrowseTopLevelContentOnly; 
-        BOOL useCarPlayBrowseTopLevelRequestReorderingHeuristics; 
+        bool useCarPlayBrowseTopLevelContentOnly; 
+        bool useCarPlayBrowseTopLevelRequestReorderingHeuristics; 
     }  _options;
-    long  _parseOnceToken;
+    long long  _parseOnceToken;
     MusicStoreBrowseResponseParser * _previousParser;
     id  _rawResponseOutput;
     MPSectionedCollection * _results;
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) NSArray *allAdditionalContentIdentifiersNeedingLookup;
 @property (nonatomic, readonly) MPChangeDetails *changeDetails;
 @property (nonatomic, readonly) MusicStoreBrowseContentItemBuilder *contentItemBuilder;
-@property (nonatomic, readonly) struct { BOOL x1; BOOL x2; } options;
+@property (nonatomic, readonly) struct { bool x1; bool x2; } options;
 @property (nonatomic, readonly) MusicStoreBrowseResponseParser *previousParser;
 @property (nonatomic, readonly) id rawResponseOutput;
 @property (nonatomic, readonly) MPSectionedCollection *results;
@@ -34,22 +34,22 @@
 
 - (void).cxx_destruct;
 - (void)_parse;
-- (BOOL)_parseFeaturedContentChild:(id)arg1 isMemberOfChartSet:(BOOL)arg2 insertingResultsToSectionedCollection:(id)arg3 atSectionIndex:(int)arg4 additionalContentIdentifiers:(id)arg5 allAdditionalContentIdentifiersNeedingLookup:(id)arg6;
+- (bool)_parseFeaturedContentChild:(id)arg1 isMemberOfChartSet:(bool)arg2 insertingResultsToSectionedCollection:(id)arg3 atSectionIndex:(long long)arg4 additionalContentIdentifiers:(id)arg5 allAdditionalContentIdentifiersNeedingLookup:(id)arg6;
 - (void)_parseFeaturedContentStructureModelChildren:(id)arg1;
-- (void)_parseSingleContentListFromPageDataDictionary:(id)arg1 isMemberOfChartSet:(BOOL)arg2;
+- (void)_parseSingleContentListFromPageDataDictionary:(id)arg1 isMemberOfChartSet:(bool)arg2;
 - (void)_parseUsingAdditionalContentIdentifiersFromPreviousParser;
 - (void)_populateStorePlatformDataResultsFromRawResponseOutputDictionary:(id)arg1;
 - (void)_populateUnavailableContentIdentifiersFromPageDataDictionary:(id)arg1;
 - (id)_storeItemMetadataForContentIdentifier:(id)arg1;
-- (BOOL)_storeItemMetadataIsAvailableForContentIdentifier:(id)arg1;
+- (bool)_storeItemMetadataIsAvailableForContentIdentifier:(id)arg1;
 - (id)additionalContentIdentifiers;
 - (id)additionalStoreItemMetadataResponse;
 - (id)allAdditionalContentIdentifiersNeedingLookup;
 - (id)changeDetails;
 - (id)contentItemBuilder;
-- (id)initWithPreviousParser:(id)arg1 additionalStoreItemMetadataResponse:(id)arg2 options:(struct { BOOL x1; BOOL x2; })arg3 sectionBuilder:(id)arg4 contentItemBuilder:(id)arg5;
-- (id)initWithRawResponseOutput:(id)arg1 options:(struct { BOOL x1; BOOL x2; })arg2 sectionBuilder:(id)arg3 contentItemBuilder:(id)arg4;
-- (struct { BOOL x1; BOOL x2; })options;
+- (id)initWithPreviousParser:(id)arg1 additionalStoreItemMetadataResponse:(id)arg2 options:(struct { bool x1; bool x2; })arg3 sectionBuilder:(id)arg4 contentItemBuilder:(id)arg5;
+- (id)initWithRawResponseOutput:(id)arg1 options:(struct { bool x1; bool x2; })arg2 sectionBuilder:(id)arg3 contentItemBuilder:(id)arg4;
+- (struct { bool x1; bool x2; })options;
 - (id)previousParser;
 - (id)rawResponseOutput;
 - (id)results;

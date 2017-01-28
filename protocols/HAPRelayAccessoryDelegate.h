@@ -7,8 +7,8 @@
 
 - (void)accessory:(HAPRelayAccessory *)arg1 didActivateRelayWithError:(NSError *)arg2;
 - (void)accessory:(HAPRelayAccessory *)arg1 didPairRelayWithError:(NSError *)arg2;
-- (void)accessory:(HAPRelayAccessory *)arg1 didUpdateRelayEnabled:(BOOL)arg2;
-- (void)accessory:(HAPRelayAccessory *)arg1 didUpdateRelayState:(unsigned int)arg2;
+- (void)accessory:(HAPRelayAccessory *)arg1 didUpdateRelayEnabled:(bool)arg2;
+- (void)accessory:(HAPRelayAccessory *)arg1 didUpdateRelayState:(unsigned long long)arg2;
 
 @optional
 

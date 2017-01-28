@@ -3,7 +3,7 @@
  */
 
 @interface OITSUTemporaryDirectory : NSObject {
-    BOOL  _leak;
+    bool  _leak;
     NSString * _path;
 }
 

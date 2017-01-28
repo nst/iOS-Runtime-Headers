@@ -4,7 +4,7 @@
 
 @interface CKAsset : NSObject <CKRecordValue, NSSecureCoding> {
     NSString * _UUID;
-    int  _arrayIndex;
+    long long  _arrayIndex;
     NSData * _assetContent;
     NSData * _assetKey;
     NSData * _authRequest;
@@ -15,11 +15,11 @@
     unsigned long long  _downloadTokenExpiration;
     NSURL * _downloadURL;
     NSDate * _downloadURLExpiration;
-    BOOL  _downloaded;
+    bool  _downloaded;
     NSNumber * _fileID;
     NSURL * _fileURL;
     NSNumber * _generationCountToSave;
-    BOOL  _hasSize;
+    bool  _hasSize;
     NSData * _inlineData;
     NSString * _itemTypeHint;
     NSString * _owner;
@@ -28,19 +28,19 @@
     NSString * _recordKey;
     NSData * _referenceSignature;
     NSString * _requestor;
-    BOOL  _shouldReadRawEncryptedData;
+    bool  _shouldReadRawEncryptedData;
     NSData * _signature;
     unsigned long long  _size;
-    int  _storageGroupingPolicy;
-    int  _uploadRank;
+    long long  _storageGroupingPolicy;
+    long long  _uploadRank;
     NSString * _uploadReceipt;
-    BOOL  _uploaded;
-    BOOL  _wasCached;
+    bool  _uploaded;
+    bool  _wasCached;
     NSData * _wrappedAssetKey;
 }
 
 @property (nonatomic, retain) NSString *UUID;
-@property (nonatomic) int arrayIndex;
+@property (nonatomic) long long arrayIndex;
 @property (nonatomic, copy) NSData *assetContent;
 @property (nonatomic, readonly) NSString *assetHandleUUID;
 @property (nonatomic, retain) NSData *assetKey;
@@ -54,12 +54,12 @@
 @property (nonatomic) unsigned long long downloadTokenExpiration;
 @property (nonatomic, retain) NSURL *downloadURL;
 @property (nonatomic, retain) NSDate *downloadURLExpiration;
-@property (nonatomic) BOOL downloaded;
+@property (nonatomic) bool downloaded;
 @property (nonatomic, readonly) NSNumber *fileID;
 @property (nonatomic, copy) NSURL *fileURL;
 @property (nonatomic, retain) NSNumber *generationCountToSave;
-@property (nonatomic) BOOL hasSize;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasSize;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSData *inlineData;
 @property (nonatomic, retain) NSString *itemTypeHint;
 @property (nonatomic, retain) NSString *owner;
@@ -68,15 +68,15 @@
 @property (nonatomic, copy) NSString *recordKey;
 @property (nonatomic, retain) NSData *referenceSignature;
 @property (nonatomic, retain) NSString *requestor;
-@property (nonatomic) BOOL shouldReadRawEncryptedData;
+@property (nonatomic) bool shouldReadRawEncryptedData;
 @property (nonatomic, copy) NSData *signature;
 @property (nonatomic) unsigned long long size;
-@property (nonatomic) int storageGroupingPolicy;
+@property (nonatomic) long long storageGroupingPolicy;
 @property (readonly) Class superclass;
-@property (nonatomic) int uploadRank;
+@property (nonatomic) long long uploadRank;
 @property (nonatomic, copy) NSString *uploadReceipt;
-@property (nonatomic) BOOL uploaded;
-@property (nonatomic) BOOL wasCached;
+@property (nonatomic) bool uploaded;
+@property (nonatomic) bool wasCached;
 @property (nonatomic, retain) NSData *wrappedAssetKey;
 
 + (id)assetWithFileURL:(id)arg1;
@@ -86,13 +86,13 @@
 + (id)getFileSizeWithOpenInfo:(id)arg1 error:(id*)arg2;
 + (id)openToReadRawEncryptedDataWithOpenInfo:(id)arg1 error:(id*)arg2;
 + (id)openWithOpenInfo:(id)arg1 error:(id*)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
 - (id)UUID;
 - (id)_initBare;
-- (int)arrayIndex;
+- (long long)arrayIndex;
 - (id)assetContent;
 - (id)assetHandleUUID;
 - (id)assetKey;
@@ -105,12 +105,12 @@
 - (unsigned long long)downloadTokenExpiration;
 - (id)downloadURL;
 - (id)downloadURLExpiration;
-- (BOOL)downloaded;
+- (bool)downloaded;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileID;
 - (id)fileURL;
 - (id)generationCountToSave;
-- (BOOL)hasSize;
+- (bool)hasSize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3;
@@ -126,7 +126,7 @@
 - (id)recordKey;
 - (id)referenceSignature;
 - (id)requestor;
-- (void)setArrayIndex:(int)arg1;
+- (void)setArrayIndex:(long long)arg1;
 - (void)setAssetContent:(id)arg1;
 - (void)setAssetKey:(id)arg1;
 - (void)setAuthRequest:(id)arg1;
@@ -136,10 +136,10 @@
 - (void)setDownloadTokenExpiration:(unsigned long long)arg1;
 - (void)setDownloadURL:(id)arg1;
 - (void)setDownloadURLExpiration:(id)arg1;
-- (void)setDownloaded:(BOOL)arg1;
+- (void)setDownloaded:(bool)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setGenerationCountToSave:(id)arg1;
-- (void)setHasSize:(BOOL)arg1;
+- (void)setHasSize:(bool)arg1;
 - (void)setInlineData:(id)arg1;
 - (void)setItemTypeHint:(id)arg1;
 - (void)setOwner:(id)arg1;
@@ -148,24 +148,24 @@
 - (void)setRecordKey:(id)arg1;
 - (void)setReferenceSignature:(id)arg1;
 - (void)setRequestor:(id)arg1;
-- (void)setShouldReadRawEncryptedData:(BOOL)arg1;
+- (void)setShouldReadRawEncryptedData:(bool)arg1;
 - (void)setSignature:(id)arg1;
 - (void)setSize:(unsigned long long)arg1;
-- (void)setStorageGroupingPolicy:(int)arg1;
+- (void)setStorageGroupingPolicy:(long long)arg1;
 - (void)setUUID:(id)arg1;
-- (void)setUploadRank:(int)arg1;
+- (void)setUploadRank:(long long)arg1;
 - (void)setUploadReceipt:(id)arg1;
-- (void)setUploaded:(BOOL)arg1;
-- (void)setWasCached:(BOOL)arg1;
+- (void)setUploaded:(bool)arg1;
+- (void)setWasCached:(bool)arg1;
 - (void)setWrappedAssetKey:(id)arg1;
-- (BOOL)shouldReadRawEncryptedData;
+- (bool)shouldReadRawEncryptedData;
 - (id)signature;
 - (unsigned long long)size;
-- (int)storageGroupingPolicy;
-- (int)uploadRank;
+- (long long)storageGroupingPolicy;
+- (long long)uploadRank;
 - (id)uploadReceipt;
-- (BOOL)uploaded;
-- (BOOL)wasCached;
+- (bool)uploaded;
+- (bool)wasCached;
 - (id)wrappedAssetKey;
 
 @end

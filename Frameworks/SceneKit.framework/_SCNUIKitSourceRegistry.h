@@ -11,7 +11,7 @@
 + (void)unregisterUIKitSource:(id)arg1;
 
 - (void)add:(id)arg1;
-- (void)apply:(id /* block */)arg1;
+- (void)apply:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)remove:(id)arg1;

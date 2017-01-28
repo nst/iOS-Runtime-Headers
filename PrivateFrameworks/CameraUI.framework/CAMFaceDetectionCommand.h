@@ -3,20 +3,20 @@
  */
 
 @interface CAMFaceDetectionCommand : CAMCaptureCommand {
-    BOOL  __faceDetectionEnabled;
-    BOOL  __usesFacesForImageProcessing;
+    bool  __faceDetectionEnabled;
+    bool  __usesFacesForImageProcessing;
 }
 
-@property (getter=_isFaceDetectionEnabled, nonatomic, readonly) BOOL _faceDetectionEnabled;
-@property (nonatomic, readonly) BOOL _usesFacesForImageProcessing;
+@property (getter=_isFaceDetectionEnabled, nonatomic, readonly) bool _faceDetectionEnabled;
+@property (nonatomic, readonly) bool _usesFacesForImageProcessing;
 
-- (BOOL)_isFaceDetectionEnabled;
-- (BOOL)_usesFacesForImageProcessing;
+- (bool)_isFaceDetectionEnabled;
+- (bool)_usesFacesForImageProcessing;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFaceDetectionEnabled:(BOOL)arg1;
-- (id)initWithFaceDetectionEnabled:(BOOL)arg1 usesFacesForImageProcessing:(BOOL)arg2;
+- (id)initWithFaceDetectionEnabled:(bool)arg1;
+- (id)initWithFaceDetectionEnabled:(bool)arg1 usesFacesForImageProcessing:(bool)arg2;
 
 @end

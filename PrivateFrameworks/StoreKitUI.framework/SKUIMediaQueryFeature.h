@@ -10,10 +10,10 @@
 @property (nonatomic, readonly) NSArray *notificationNames;
 @property (nonatomic, readonly) NSArray *requiredKeys;
 
-+ (BOOL)supportsFeatureName:(id)arg1;
++ (bool)supportsFeatureName:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)evaluateWithValues:(id)arg1;
+- (bool)evaluateWithValues:(id)arg1;
 - (id)featureName;
 - (id)initWithFeatureName:(id)arg1 value:(id)arg2;
 - (id)notificationNames;

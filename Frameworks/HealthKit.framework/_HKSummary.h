@@ -6,35 +6,35 @@
     NSDate * _latestSampleDate;
     NSDate * _summaryEndDate;
     NSDate * _summaryStartDate;
-    int  _typeCode;
+    long long  _typeCode;
     id  _value;
 }
 
 @property (nonatomic, retain) NSDate *latestSampleDate;
 @property (nonatomic, retain) NSDate *summaryEndDate;
 @property (nonatomic, retain) NSDate *summaryStartDate;
-@property (nonatomic) int typeCode;
+@property (nonatomic) long long typeCode;
 @property (nonatomic, retain) id value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)valuesByTypeFromSummaries:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTypeCode:(int)arg1;
-- (id)initWithTypeCode:(int)arg1 value:(id)arg2 sampleDate:(id)arg3 usingCalendar:(id)arg4;
+- (id)initWithTypeCode:(long long)arg1;
+- (id)initWithTypeCode:(long long)arg1 value:(id)arg2 sampleDate:(id)arg3 usingCalendar:(id)arg4;
 - (id)latestSampleDate;
 - (void)setLatestSampleDate:(id)arg1;
 - (void)setSummaryDatesUsingCalendar:(id)arg1;
 - (void)setSummaryEndDate:(id)arg1;
 - (void)setSummaryStartDate:(id)arg1;
-- (void)setTypeCode:(int)arg1;
+- (void)setTypeCode:(long long)arg1;
 - (void)setValue:(id)arg1;
 - (id)summaryEndDate;
 - (id)summaryStartDate;
-- (int)typeCode;
+- (long long)typeCode;
 - (id)value;
 
 @end

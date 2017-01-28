@@ -6,7 +6,7 @@
 @required
 
 - (void)avPlayer:(ISWrappedAVPlayer *)arg1 didChangeToItem:(AVPlayerItem *)arg2;
-- (void)avPlayer:(ISWrappedAVPlayer *)arg1 didChangeToStatus:(int)arg2;
-- (void)avPlayer:(ISWrappedAVPlayer *)arg1 item:(AVPlayerItem *)arg2 didChangeToStatus:(int)arg3;
+- (void)avPlayer:(ISWrappedAVPlayer *)arg1 didChangeToStatus:(long long)arg2;
+- (void)avPlayer:(ISWrappedAVPlayer *)arg1 item:(AVPlayerItem *)arg2 didChangeToStatus:(long long)arg3;
 
 @end

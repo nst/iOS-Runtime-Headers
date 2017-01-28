@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)_lp_CSSText;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })asInsetsForView:(id)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })asInsetsForView:(id)arg1;
 - (id)bottom;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;

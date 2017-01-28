@@ -5,8 +5,8 @@
 @interface _INPBSearchCallHistoryIntent : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _callCapabilities;
     int  _callType;
     _INPBDateTimeRange * _dateCreated;
@@ -19,13 +19,13 @@
 }
 
 @property (nonatomic, readonly) int*callCapabilities;
-@property (nonatomic, readonly) unsigned int callCapabilitiesCount;
+@property (nonatomic, readonly) unsigned long long callCapabilitiesCount;
 @property (nonatomic) int callType;
 @property (nonatomic, retain) _INPBDateTimeRange *dateCreated;
-@property (nonatomic) BOOL hasCallType;
-@property (nonatomic, readonly) BOOL hasDateCreated;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasRecipient;
+@property (nonatomic) bool hasCallType;
+@property (nonatomic, readonly) bool hasDateCreated;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasRecipient;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBContact *recipient;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -35,8 +35,8 @@
 - (void).cxx_destruct;
 - (void)addCallCapabilities:(int)arg1;
 - (int*)callCapabilities;
-- (int)callCapabilitiesAtIndex:(unsigned int)arg1;
-- (unsigned int)callCapabilitiesCount;
+- (int)callCapabilitiesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)callCapabilitiesCount;
 - (int)callType;
 - (void)clearCallCapabilities;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -44,20 +44,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCallType;
-- (BOOL)hasDateCreated;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasRecipient;
-- (unsigned int)hash;
+- (bool)hasCallType;
+- (bool)hasDateCreated;
+- (bool)hasIntentMetadata;
+- (bool)hasRecipient;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recipient;
-- (void)setCallCapabilities:(int*)arg1 count:(unsigned int)arg2;
+- (void)setCallCapabilities:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setCallType:(int)arg1;
 - (void)setDateCreated:(id)arg1;
-- (void)setHasCallType:(BOOL)arg1;
+- (void)setHasCallType:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setRecipient:(id)arg1;
 - (id)unknownFields;

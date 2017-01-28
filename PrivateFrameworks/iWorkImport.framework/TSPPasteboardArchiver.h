@@ -4,6 +4,6 @@
 
 @interface TSPPasteboardArchiver : TSPWeakAsStrongCopyArchiver
 
-- (int)targetType;
+- (long long)targetType;
 
 @end

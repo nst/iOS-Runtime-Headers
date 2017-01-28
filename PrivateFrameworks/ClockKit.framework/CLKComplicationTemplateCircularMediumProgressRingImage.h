@@ -4,7 +4,7 @@
 
 @interface CLKComplicationTemplateCircularMediumProgressRingImage : CLKComplicationTemplateCircularSmallProgressRingImage
 
-- (struct CGSize { float x1; float x2; })_imageSize;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (struct CGSize { double x1; double x2; })_imageSize;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 
 @end

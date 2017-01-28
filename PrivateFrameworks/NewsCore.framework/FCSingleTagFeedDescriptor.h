@@ -3,7 +3,7 @@
  */
 
 @interface FCSingleTagFeedDescriptor : FCMultiTagFeedDescriptor {
-    int  _feedType;
+    long long  _feedType;
     <FCTagProviding> * _masterTag;
     <FCTagProviding> * _tag;
 }
@@ -16,12 +16,12 @@
 - (id)backingSectionID;
 - (id)backingTag;
 - (id)backingTopicID;
-- (BOOL)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
-- (int)feedFilterOptions;
-- (int)feedSortMethod;
-- (int)feedType;
-- (BOOL)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
-- (BOOL)hideAccessoryText;
+- (bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
+- (long long)feedFilterOptions;
+- (long long)feedSortMethod;
+- (long long)feedType;
+- (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
+- (bool)hideAccessoryText;
 - (id)iAdCategories;
 - (long long)iAdContentProvider;
 - (id)iAdFeedID;
@@ -29,14 +29,14 @@
 - (id)iAdPrimaryAudience;
 - (id)iAdSectionID;
 - (id)initWithContext:(id)arg1 identifier:(id)arg2 tag:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSubscribable;
-- (BOOL)isSubscribedToWithSubscriptionController:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isSubscribable;
+- (bool)isSubscribedToWithSubscriptionController:(id)arg1;
 - (id)masterTag;
 - (id)name;
-- (void)setFeedType:(int)arg1;
+- (void)setFeedType:(long long)arg1;
 - (void)setTag:(id)arg1;
-- (BOOL)subscribeToWithSubscriptionController:(id)arg1 error:(id*)arg2;
+- (bool)subscribeToWithSubscriptionController:(id)arg1 error:(id*)arg2;
 - (id)tag;
 - (id)theme;
 - (void)unsubscribeToWithSubscriptionController:(id)arg1;

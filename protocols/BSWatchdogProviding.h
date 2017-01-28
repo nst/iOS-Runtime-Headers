@@ -9,6 +9,6 @@
 
 @optional
 
-- (BOOL)shouldWatchdog:(id*)arg1;
+- (bool)shouldWatchdog:(id*)arg1;
 
 @end

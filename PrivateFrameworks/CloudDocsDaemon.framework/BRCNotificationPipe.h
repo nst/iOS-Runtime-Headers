@@ -3,20 +3,20 @@
  */
 
 @interface BRCNotificationPipe : NSObject <BRItemNotificationSending> {
-    id /* block */  _boostReply;
+    id  _boostReply;
     BRCXPCClient * _client;
     <BRCNotificationPipeDelegate> * _delegate;
     NSMutableSet * _externalAppLibraries;
     BRCDataOrDocsScopeGatherer * _gatherer;
-    BOOL  _hasProgressUpdatesInFlight;
-    BOOL  _hasUpdatesInFlight;
+    bool  _hasProgressUpdatesInFlight;
+    bool  _hasUpdatesInFlight;
     BRCNotificationManager * _manager;
     BRNotificationQueue * _notifs;
     BRCItemID * _oldWatchedAncestorItemID;
     NSMutableDictionary * _pendingProgressUpdatesByID;
     NSObject<OS_dispatch_queue> * _queue;
     <BRItemNotificationReceiving> * _receiver;
-    BOOL  _volumeIsCaseSensitive;
+    bool  _volumeIsCaseSensitive;
     NSString * _watchForBundleID;
     unsigned short  _watchItemOptions;
     int  _watchKind;
@@ -25,14 +25,14 @@
     NSString * _watchedAncestorFilenameToItem;
     BRCItemID * _watchedAncestorItemID;
     NSSet * _watchedAppLibraries;
-    unsigned int  _watchedAppLibrariesFlags;
+    unsigned long long  _watchedAppLibrariesFlags;
     NSSet * _watchedAppLibraryIDs;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BRCNotificationPipeDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) BRCNotificationManager *manager;
 @property (retain) BRCItemID *oldWatchedAncestorItemID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
@@ -50,9 +50,9 @@
 - (int)_isInterestingUpdate:(id)arg1;
 - (void)_processProgressUpdates:(id)arg1;
 - (void)_stopWatchingItems;
-- (void)addDequeueCallback:(id /* block */)arg1;
-- (void)addNotification:(id)arg1 asDead:(BOOL)arg2;
-- (void)boostPriority:(id /* block */)arg1;
+- (void)addDequeueCallback:(id)arg1;
+- (void)addNotification:(id)arg1 asDead:(bool)arg2;
+- (void)boostPriority:(id)arg1;
 - (void)close;
 - (void)dealloc;
 - (id)delegate;
@@ -72,13 +72,13 @@
 - (void)setWatchedAncestorFileObjectID:(id)arg1;
 - (void)setWatchedAncestorFilenameToItem:(id)arg1;
 - (void)setWatchedAncestorItemID:(id)arg1;
-- (void)watchItemAtURL:(id)arg1 lookup:(id)arg2 options:(unsigned short)arg3 reply:(id /* block */)arg4;
-- (void)watchItemAtURL:(id)arg1 options:(unsigned short)arg2 reply:(id /* block */)arg3;
-- (void)watchItemInProcessAtURL:(id)arg1 options:(unsigned short)arg2 reply:(id /* block */)arg3;
-- (void)watchItemsNamesPrefixedBy:(id)arg1 inScopes:(unsigned short)arg2 appLibraryIDs:(id)arg3 gatheringDone:(id /* block */)arg4;
-- (void)watchScopes:(unsigned short)arg1 appLibraryIDs:(id)arg2 gatheringDone:(id /* block */)arg3;
-- (void)watchScopes:(unsigned short)arg1 gatheringDone:(id /* block */)arg2;
-- (void)watchScopes:(unsigned short)arg1 trustedAppLibraryIDs:(id)arg2 gatheringDone:(id /* block */)arg3;
+- (void)watchItemAtURL:(id)arg1 lookup:(id)arg2 options:(unsigned short)arg3 reply:(id)arg4;
+- (void)watchItemAtURL:(id)arg1 options:(unsigned short)arg2 reply:(id)arg3;
+- (void)watchItemInProcessAtURL:(id)arg1 options:(unsigned short)arg2 reply:(id)arg3;
+- (void)watchItemsNamesPrefixedBy:(id)arg1 inScopes:(unsigned short)arg2 appLibraryIDs:(id)arg3 gatheringDone:(id)arg4;
+- (void)watchScopes:(unsigned short)arg1 appLibraryIDs:(id)arg2 gatheringDone:(id)arg3;
+- (void)watchScopes:(unsigned short)arg1 gatheringDone:(id)arg2;
+- (void)watchScopes:(unsigned short)arg1 trustedAppLibraryIDs:(id)arg2 gatheringDone:(id)arg3;
 - (id)watchedAncestorFileObjectID;
 - (id)watchedAncestorFilenameToItem;
 - (id)watchedAncestorItemID;

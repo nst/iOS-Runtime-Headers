@@ -4,39 +4,39 @@
 
 @interface PLKQueue : NSObject {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _enabled;
+    bool  _enabled;
     int  _fileDescriptor;
     int  _kQueue;
-    id /* block */  _kQueueBlock;
+    id  _kQueueBlock;
     struct __CFFileDescriptor { } * _kqueueDescriptorRef;
     struct __CFRunLoopSource { } * _kqueueDescriptorSource;
     NSString * _path;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property int fileDescriptor;
 @property int kQueue;
-@property (nonatomic, copy) id /* block */ kQueueBlock;
+@property (nonatomic, copy) id kQueueBlock;
 @property struct __CFFileDescriptor { }*kqueueDescriptorRef;
 @property struct __CFRunLoopSource { }*kqueueDescriptorSource;
 @property (copy) NSString *path;
 
 - (void).cxx_destruct;
 - (id)dispatchQueue;
-- (BOOL)enabled;
+- (bool)enabled;
 - (int)fileDescriptor;
-- (id)initWithPath:(id)arg1 withDispatchQueue:(id)arg2 withBlock:(id /* block */)arg3;
+- (id)initWithPath:(id)arg1 withDispatchQueue:(id)arg2 withBlock:(id)arg3;
 - (int)kQueue;
-- (id /* block */)kQueueBlock;
+- (id)kQueueBlock;
 - (struct __CFFileDescriptor { }*)kqueueDescriptorRef;
 - (struct __CFRunLoopSource { }*)kqueueDescriptorSource;
 - (id)path;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setFileDescriptor:(int)arg1;
 - (void)setKQueue:(int)arg1;
-- (void)setKQueueBlock:(id /* block */)arg1;
+- (void)setKQueueBlock:(id)arg1;
 - (void)setKqueueDescriptorRef:(struct __CFFileDescriptor { }*)arg1;
 - (void)setKqueueDescriptorSource:(struct __CFRunLoopSource { }*)arg1;
 - (void)setPath:(id)arg1;

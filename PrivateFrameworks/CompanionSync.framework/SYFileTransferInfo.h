@@ -11,8 +11,8 @@
 
 @property (nonatomic) unsigned long long decompressedFileSize;
 @property (nonatomic, retain) NSString *endAnchor;
-@property (nonatomic, readonly) BOOL hasEndAnchor;
-@property (nonatomic, readonly) BOOL hasStartAnchor;
+@property (nonatomic, readonly) bool hasEndAnchor;
+@property (nonatomic, readonly) bool hasStartAnchor;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSString *startAnchor;
 
@@ -23,13 +23,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)endAnchor;
-- (BOOL)hasEndAnchor;
-- (BOOL)hasStartAnchor;
-- (unsigned int)hash;
+- (bool)hasEndAnchor;
+- (bool)hasStartAnchor;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDecompressedFileSize:(unsigned long long)arg1;
 - (void)setEndAnchor:(id)arg1;
 - (void)setHeader:(id)arg1;

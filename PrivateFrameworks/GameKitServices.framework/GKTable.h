@@ -3,22 +3,22 @@
  */
 
 @interface GKTable : NSObject {
-    unsigned long  _count;
+    unsigned long long  _count;
     struct _gktableitem { unsigned int x1; id x2; double x3; } * _items;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
-    unsigned long  _size;
+    unsigned long long  _size;
 }
 
-@property (readonly) unsigned long count;
+@property (readonly) unsigned long long count;
 
 - (id)allObjects;
-- (unsigned long)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)init;
-- (id)initWithSize:(unsigned long)arg1;
+- (id)initWithSize:(unsigned long long)arg1;
 - (void)lock;
 - (void)makeObjectsPerformSelector:(SEL)arg1;
 - (void)makeObjectsPerformSelector:(SEL)arg1 withObject:(id)arg2;

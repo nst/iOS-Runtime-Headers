@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AFUIAudioPlayerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AceObject *playbackCommand;
 @property (getter=_player, setter=_setPlayer:, nonatomic, retain) AVAudioPlayer *player;
 @property (readonly) Class superclass;
@@ -23,11 +23,11 @@
 
 - (void).cxx_destruct;
 - (id)_audioCategory;
-- (unsigned int)_audioOptions;
+- (unsigned long long)_audioOptions;
 - (id)_audioURL;
 - (id)_player;
 - (void)_setPlayer:(id)arg1;
-- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
+- (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(bool)arg2;
 - (id)conversationItemIdentifier;
 - (id)delegate;
 - (id)playbackCommand;

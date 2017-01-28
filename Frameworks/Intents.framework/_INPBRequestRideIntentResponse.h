@@ -7,7 +7,7 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasRideStatus;
+@property (nonatomic, readonly) bool hasRideStatus;
 @property (nonatomic, retain) _INPBRideStatus *rideStatus;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -17,11 +17,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRideStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRideStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)rideStatus;
 - (void)setRideStatus:(id)arg1;
 - (id)unknownFields;

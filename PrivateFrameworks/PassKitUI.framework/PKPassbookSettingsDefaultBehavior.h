@@ -10,21 +10,21 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (BOOL)deviceInRestrictedMode;
+- (bool)deviceInRestrictedMode;
 - (id)deviceName;
-- (BOOL)deviceSupportsInAppPayments;
-- (BOOL)hasFelicaSecureElement;
+- (bool)deviceSupportsInAppPayments;
+- (bool)hasFelicaSecureElement;
 - (id)init;
 - (id)optionsDelegate;
 - (id)passLibraryDataProvider;
 - (id)paymentDataProvider;
 - (id)secureElementID;
-- (BOOL)secureElementIsProductionSigned;
+- (bool)secureElementIsProductionSigned;
 - (id)setupDelegate;
 - (id)setupFeaturedNetworksForDevice;
 

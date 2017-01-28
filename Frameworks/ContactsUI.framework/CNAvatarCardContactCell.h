@@ -12,7 +12,7 @@
 - (void)_updateFonts;
 - (void)awakeFromNib;
 - (id)contactImageView;
-- (BOOL)moreHighlighted;
+- (bool)moreHighlighted;
 - (void)prepareForReuse;
 - (void)reloadData;
 - (void)setContactImageView:(id)arg1;

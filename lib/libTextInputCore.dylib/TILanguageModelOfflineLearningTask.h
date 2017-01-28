@@ -3,41 +3,41 @@
  */
 
 @interface TILanguageModelOfflineLearningTask : NSObject {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSString * _clientIdentifier;
     TILanguageModelOfflineLearningHandle * _handleForLanguageLikelihood;
     NSMutableDictionary * _handles;
-    BOOL  _oneTimeTask;
+    bool  _oneTimeTask;
 }
 
-@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (getter=isCancelled, nonatomic) bool cancelled;
 @property (nonatomic, readonly) NSString *clientIdentifier;
 @property (nonatomic, readonly) <TILinguisticDataSource> *dataSource;
 @property (nonatomic, readonly) NSSet *forwardedMessageSeparators;
 @property (nonatomic, readonly) TILanguageModelOfflineLearningHandle *handleForLanguageLikelihood;
 @property (nonatomic, readonly) NSMutableDictionary *handles;
 @property (nonatomic, readonly) NSCharacterSet *linePaddingCharacters;
-@property (nonatomic, readonly) BOOL oneTimeTask;
+@property (nonatomic, readonly) bool oneTimeTask;
 
 + (id)dataSourceForTask;
-+ (id)taskWithClientIdentifier:(id)arg1 oneTimeTask:(BOOL)arg2;
++ (id)taskWithClientIdentifier:(id)arg1 oneTimeTask:(bool)arg2;
 
 - (id)clientIdentifier;
 - (id)dataSource;
 - (void)dealloc;
 - (void)didFinishLearning;
-- (void)enumerateHandlesForLanguage:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)enumerateHandlesForLanguage:(id)arg1 withBlock:(id)arg2;
 - (id)forwardedMessageSeparators;
 - (id)handleForLanguage:(id)arg1;
 - (id)handleForLanguageLikelihood;
 - (id)handles;
-- (BOOL)incrementUsageCountsForMessages:(id)arg1 forLanguage:(id)arg2 adaptationContext:(id)arg3;
-- (BOOL)incrementUsageCountsForMessages:(id)arg1 withHandle:(id)arg2;
-- (id)initWithClientIdentifier:(id)arg1 oneTimeTask:(BOOL)arg2;
-- (BOOL)isCancelled;
+- (bool)incrementUsageCountsForMessages:(id)arg1 forLanguage:(id)arg2 adaptationContext:(id)arg3;
+- (bool)incrementUsageCountsForMessages:(id)arg1 withHandle:(id)arg2;
+- (id)initWithClientIdentifier:(id)arg1 oneTimeTask:(bool)arg2;
+- (bool)isCancelled;
 - (id)linePaddingCharacters;
-- (BOOL)oneTimeTask;
+- (bool)oneTimeTask;
 - (void)setAdaptationContext:(id)arg1 onHandle:(id)arg2;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 
 @end

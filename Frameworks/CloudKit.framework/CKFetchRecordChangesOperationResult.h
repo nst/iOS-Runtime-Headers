@@ -12,7 +12,7 @@
 @property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
 @property (nonatomic, retain) NSNumber *status;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

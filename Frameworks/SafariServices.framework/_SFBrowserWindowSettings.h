@@ -6,25 +6,25 @@
     NSMutableDictionary * _settingsDictionary;
 }
 
-@property (nonatomic, readonly) BOOL hasPrivateBrowsingWindow;
+@property (nonatomic, readonly) bool hasPrivateBrowsingWindow;
 
 + (void)setSharedSettings:(id)arg1;
 + (id)settings;
 
 - (void).cxx_destruct;
-- (BOOL)_boolValueForKey:(id)arg1 windowUUID:(id)arg2;
+- (bool)_boolValueForKey:(id)arg1 windowUUID:(id)arg2;
 - (void)_initializeSettingsDictionaryIfNeeded;
 - (id)_numberForKey:(id)arg1 windowUUID:(id)arg2;
-- (void)_setBool:(BOOL)arg1 forKey:(id)arg2 windowUUID:(id)arg3;
-- (BOOL)activeDocumentIsValidForWindowWithUUID:(id)arg1;
-- (BOOL)hasPrivateBrowsingWindow;
+- (void)_setBool:(bool)arg1 forKey:(id)arg2 windowUUID:(id)arg3;
+- (bool)activeDocumentIsValidForWindowWithUUID:(id)arg1;
+- (bool)hasPrivateBrowsingWindow;
 - (id)init;
-- (BOOL)isShowingTabViewForWindowWithUUID:(id)arg1;
-- (BOOL)privateBrowsingEnabledForWindowWithUUID:(id)arg1;
+- (bool)isShowingTabViewForWindowWithUUID:(id)arg1;
+- (bool)privateBrowsingEnabledForWindowWithUUID:(id)arg1;
 - (void)removeWindowWithUUID:(id)arg1;
-- (void)setActiveDocumentIsValid:(BOOL)arg1 forWindowWithUUID:(id)arg2;
-- (void)setIsShowingTabView:(BOOL)arg1 forWindowWithUUID:(id)arg2;
-- (void)setPrivateBrowsingEnabled:(BOOL)arg1 forWindowWithUUID:(id)arg2;
+- (void)setActiveDocumentIsValid:(bool)arg1 forWindowWithUUID:(id)arg2;
+- (void)setIsShowingTabView:(bool)arg1 forWindowWithUUID:(id)arg2;
+- (void)setPrivateBrowsingEnabled:(bool)arg1 forWindowWithUUID:(id)arg2;
 - (void)synchronize;
 - (void)validateWindowSettingsWithUUIDs:(id)arg1;
 

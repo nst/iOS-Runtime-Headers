@@ -4,6 +4,6 @@
 
 @interface VSIdentityProviderController_iOS : VSIdentityProviderController
 
-- (void)_showViewController:(id)arg1 currentlyShowingViewController:(BOOL)arg2;
+- (void)_showViewController:(id)arg1 currentlyShowingViewController:(bool)arg2;
 
 @end

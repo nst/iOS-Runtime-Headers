@@ -3,25 +3,25 @@
  */
 
 @interface _QLDownloadOperation : NSObject {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     QLItem * _previewItem;
-    id /* block */  _progressUpdateBlock;
+    id  _progressUpdateBlock;
 }
 
-@property (copy) id /* block */ completionBlock;
+@property (copy) id completionBlock;
 @property (readonly) QLItem *previewItem;
-@property (copy) id /* block */ progressUpdateBlock;
+@property (copy) id progressUpdateBlock;
 
 - (void).cxx_destruct;
-- (BOOL)canBeCanceled;
-- (BOOL)cancel;
-- (id /* block */)completionBlock;
+- (bool)canBeCanceled;
+- (bool)cancel;
+- (id)completionBlock;
 - (id)initWithPreviewItem:(id)arg1;
-- (BOOL)performDownload;
+- (bool)performDownload;
 - (id)previewItem;
-- (id /* block */)progressUpdateBlock;
-- (void)setCompletionBlock:(id /* block */)arg1;
-- (void)setProgressUpdateBlock:(id /* block */)arg1;
+- (id)progressUpdateBlock;
+- (void)setCompletionBlock:(id)arg1;
+- (void)setProgressUpdateBlock:(id)arg1;
 - (void)subscribeToPreviewItemProgress;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface PSSSSubscriptionManagerClientInternal : NSObject <PSSSSubscriptionManagerServiceInternal>
 
-- (void)getActiveSubscriptionServicesMatchingBundleIdentifiers:(id)arg1 domainIdentifiers:(id)arg2 maximumExpirationLimit:(double)arg3 completionHandler:(id /* block */)arg4;
+- (void)getActiveSubscriptionServicesMatchingBundleIdentifiers:(id)arg1 domainIdentifiers:(id)arg2 maximumExpirationLimit:(double)arg3 completionHandler:(id)arg4;
 - (void)registerSubscriptionServiceForURL:(id)arg1 withSubscriptionInfo:(id)arg2 expirationDate:(id)arg3;
 - (void)removeSubscriptionServiceForURL:(id)arg1;
 - (void)removeWebSubscriptionServicesCreatedAfterDate:(id)arg1;

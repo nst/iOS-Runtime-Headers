@@ -2,19 +2,26 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUISoundsPrefController : PSListController {
-    BOOL  _hasTelephony;
+@interface PSUISoundsPrefController : PSListController <PSListControllerTestableSpecifiers> {
+    bool  _hasTelephony;
     int  _lastPlayedSound;
     double  _lastTime;
     float  _rateLimitedVolume;
     PSSpecifier * _voiceMailSpecifier;
-    int  _voiceMailSpecifierIndex;
+    long long  _voiceMailSpecifierIndex;
     float  _volume;
-    BOOL  _volumeHUDSupressed;
+    bool  _volumeHUDSupressed;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
+
 - (void).cxx_destruct;
-- (BOOL)_canChangeRingtoneWithButtons;
+- (bool)_canChangeRingtoneWithButtons;
 - (int)_deviceType;
 - (id)canChangeRingtoneWithButtons:(id)arg1;
 - (void)dealloc;
@@ -32,9 +39,9 @@
 - (void)setVibrate:(id)arg1 specifier:(id)arg2;
 - (void)setVolume:(id)arg1 specifier:(id)arg2;
 - (void)setVolumeAfterRateLimiting;
-- (void)setVolumeHUDSupression:(BOOL)arg1;
+- (void)setVolumeHUDSupression:(bool)arg1;
 - (id)shouldPlayCalendarSound:(id)arg1;
-- (void)showController:(id)arg1 animate:(BOOL)arg2;
+- (void)showController:(id)arg1 animate:(bool)arg2;
 - (id)soundEffects:(id)arg1;
 - (id)specifiers;
 - (id)systemHapticsEnabled:(id)arg1;
@@ -42,8 +49,8 @@
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)updateVoiceMailVisibility;
 - (void)updateVolume;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)volume:(id)arg1;
 - (void)volumeChangedExternally:(id)arg1;
 - (void)willBecomeActive;

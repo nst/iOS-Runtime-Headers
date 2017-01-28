@@ -7,8 +7,8 @@
     NSString * _userEmail;
 }
 
-@property (nonatomic, readonly) BOOL hasTicketId;
-@property (nonatomic, readonly) BOOL hasUserEmail;
+@property (nonatomic, readonly) bool hasTicketId;
+@property (nonatomic, readonly) bool hasUserEmail;
 @property (nonatomic, retain) NSString *ticketId;
 @property (nonatomic, retain) NSString *userEmail;
 
@@ -17,12 +17,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTicketId;
-- (BOOL)hasUserEmail;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTicketId;
+- (bool)hasUserEmail;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setTicketId:(id)arg1;
 - (void)setUserEmail:(id)arg1;
 - (id)ticketId;

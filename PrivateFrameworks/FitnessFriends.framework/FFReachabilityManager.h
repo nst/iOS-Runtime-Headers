@@ -13,11 +13,11 @@
 + (id)sharedInstanceForServiceIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_addDestinationsToQuery:(id)arg1 updateHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (void)_addDestinationsToQuery:(id)arg1 updateHandler:(id)arg2 completionHandler:(id)arg3;
 - (id)_initWithServiceIdentifer:(id)arg1;
 - (id)init;
-- (int)numberOfScheduledQueries;
-- (void)queryDestinations:(id)arg1 updateHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (long long)numberOfScheduledQueries;
+- (void)queryDestinations:(id)arg1 updateHandler:(id)arg2 completionHandler:(id)arg3;
 - (id)serviceIdentifier;
 
 @end

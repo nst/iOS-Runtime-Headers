@@ -4,22 +4,22 @@
 
 @interface BLTBulletinDistributorBulletinUpdate : NSObject {
     BBBulletin * _bulletin;
-    unsigned int  _feed;
-    unsigned int  _updateType;
+    unsigned long long  _feed;
+    unsigned long long  _updateType;
 }
 
 @property (nonatomic, retain) BBBulletin *bulletin;
-@property (nonatomic) unsigned int feed;
-@property (nonatomic) unsigned int updateType;
+@property (nonatomic) unsigned long long feed;
+@property (nonatomic) unsigned long long updateType;
 
-+ (id)bulletinUpdateWithType:(unsigned int)arg1 bulletin:(id)arg2 feed:(unsigned int)arg3;
++ (id)bulletinUpdateWithType:(unsigned long long)arg1 bulletin:(id)arg2 feed:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (id)bulletin;
-- (unsigned int)feed;
+- (unsigned long long)feed;
 - (void)setBulletin:(id)arg1;
-- (void)setFeed:(unsigned int)arg1;
-- (void)setUpdateType:(unsigned int)arg1;
-- (unsigned int)updateType;
+- (void)setFeed:(unsigned long long)arg1;
+- (void)setUpdateType:(unsigned long long)arg1;
+- (unsigned long long)updateType;
 
 @end

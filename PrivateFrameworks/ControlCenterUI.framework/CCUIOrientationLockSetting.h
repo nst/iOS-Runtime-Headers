@@ -3,29 +3,29 @@
  */
 
 @interface CCUIOrientationLockSetting : CCUISettingModule {
-    BOOL  _orientationLockEnabled;
+    bool  _orientationLockEnabled;
 }
 
-@property (getter=_isOrientationLockEnabled, setter=_setOrientationLockEnabled:, nonatomic) BOOL orientationLockEnabled;
+@property (getter=_isOrientationLockEnabled, setter=_setOrientationLockEnabled:, nonatomic) bool orientationLockEnabled;
 
 + (id)displayName;
 + (id)identifier;
 + (id)statusOffString;
 + (id)statusOnString;
 
-- (BOOL)_isOrientationLockEnabled;
-- (BOOL)_isStateOverridden;
-- (void)_setOrientationLockEnabled:(BOOL)arg1;
-- (BOOL)_stateWithEffectiveOverrides;
+- (bool)_isOrientationLockEnabled;
+- (bool)_isStateOverridden;
+- (void)_setOrientationLockEnabled:(bool)arg1;
+- (bool)_stateWithEffectiveOverrides;
 - (void)_tearDown;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)_updateState;
 - (void)activate;
 - (id)aggdKey;
 - (void)deactivate;
 - (void)dealloc;
 - (id)glyphImageForState:(int)arg1;
-- (BOOL)isRestricted;
+- (bool)isRestricted;
 - (id)selectedStateColor;
 
 @end

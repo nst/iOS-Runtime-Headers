@@ -3,7 +3,7 @@
  */
 
 @interface GEOTimestampData : PBCodable <GEOServerFormatTokenTimeStampValue, NSCopying> {
-    BOOL  _displayTimezone;
+    bool  _displayTimezone;
     struct { 
         unsigned int timestampVal : 1; 
         unsigned int displayTimezone : 1; 
@@ -14,12 +14,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL displayTimeZone;
-@property (nonatomic) BOOL displayTimezone;
-@property (nonatomic) BOOL hasDisplayTimezone;
-@property (nonatomic) BOOL hasTimestampVal;
-@property (nonatomic, readonly) BOOL hasTimezone;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool displayTimeZone;
+@property (nonatomic) bool displayTimezone;
+@property (nonatomic) bool hasDisplayTimezone;
+@property (nonatomic) bool hasTimestampVal;
+@property (nonatomic, readonly) bool hasTimezone;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeStamp;
 @property (nonatomic, readonly) NSTimeZone *timeZone;
@@ -31,18 +31,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)displayTimeZone;
-- (BOOL)displayTimezone;
-- (BOOL)hasDisplayTimezone;
-- (BOOL)hasTimestampVal;
-- (BOOL)hasTimezone;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)displayTimeZone;
+- (bool)displayTimezone;
+- (bool)hasDisplayTimezone;
+- (bool)hasTimestampVal;
+- (bool)hasTimezone;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setDisplayTimezone:(BOOL)arg1;
-- (void)setHasDisplayTimezone:(BOOL)arg1;
-- (void)setHasTimestampVal:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setDisplayTimezone:(bool)arg1;
+- (void)setHasDisplayTimezone:(bool)arg1;
+- (void)setHasTimestampVal:(bool)arg1;
 - (void)setTimestampVal:(unsigned int)arg1;
 - (void)setTimezone:(id)arg1;
 - (double)timeStamp;

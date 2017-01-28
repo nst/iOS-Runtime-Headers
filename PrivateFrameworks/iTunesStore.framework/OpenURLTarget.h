@@ -9,10 +9,10 @@
         NSString *normalScheme; 
         NSString *secureScheme; 
     }  _targetData;
-    int  _targetIndex;
+    long long  _targetIndex;
 }
 
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)copyURLForURL:(id)arg1;
 - (id)description;
 - (id)init;

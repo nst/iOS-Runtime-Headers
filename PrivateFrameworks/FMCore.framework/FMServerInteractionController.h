@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSOperationQueue *queue;
 @property (nonatomic, retain) NSURLSession *session;
 @property (nonatomic, retain) NSURLSessionConfiguration *sessionConfiguration;
@@ -25,10 +25,10 @@
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (void)networkActivityStatus:(BOOL)arg1;
-- (void)processResponseForCommand:(id)arg1 callback:(id /* block */)arg2;
+- (void)networkActivityStatus:(bool)arg1;
+- (void)processResponseForCommand:(id)arg1 callback:(id)arg2;
 - (id)queue;
-- (void)sendCommand:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)sendCommand:(id)arg1 completionBlock:(id)arg2;
 - (id)session;
 - (id)sessionConfiguration;
 - (void)setQueue:(id)arg1;

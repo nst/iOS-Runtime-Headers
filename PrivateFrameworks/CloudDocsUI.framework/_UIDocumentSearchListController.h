@@ -14,9 +14,9 @@
 - (Class)_classForChildren;
 - (id)init;
 - (id)initWithModel:(id)arg1;
-- (void)itemsOrSelectionDidChange:(BOOL)arg1;
+- (void)itemsOrSelectionDidChange:(bool)arg1;
 - (id)queryString;
 - (void)setQueryString:(id)arg1;
-- (BOOL)shouldShowSearch;
+- (bool)shouldShowSearch;
 
 @end

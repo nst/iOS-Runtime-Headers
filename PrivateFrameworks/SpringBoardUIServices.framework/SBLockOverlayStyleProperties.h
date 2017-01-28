@@ -3,20 +3,20 @@
  */
 
 @interface SBLockOverlayStyleProperties : NSObject {
-    float  _blurRadius;
+    double  _blurRadius;
     UIColor * _primaryColor;
-    int  _quality;
+    long long  _quality;
     UIColor * _secondaryColor;
     _UIBackdropViewSettings * _settings;
-    unsigned int  _style;
-    float  _tintAlpha;
+    unsigned long long  _style;
+    double  _tintAlpha;
     UIColor * _tintColor;
 }
 
-@property (nonatomic, readonly) float blurRadius;
-@property (nonatomic, readonly) int graphicsQuality;
-@property (nonatomic, readonly) unsigned int style;
-@property (nonatomic, readonly) float tintAlpha;
+@property (nonatomic, readonly) double blurRadius;
+@property (nonatomic, readonly) long long graphicsQuality;
+@property (nonatomic, readonly) unsigned long long style;
+@property (nonatomic, readonly) double tintAlpha;
 @property (nonatomic, readonly) UIColor *tintColor;
 
 - (void).cxx_destruct;
@@ -24,12 +24,12 @@
 - (id)_settingsForStyle;
 - (id)_stringForQuality;
 - (id)_stringForStyle;
-- (float)blurRadius;
+- (double)blurRadius;
 - (id)description;
-- (int)graphicsQuality;
-- (id)initWithStyle:(unsigned int)arg1 quality:(int)arg2;
-- (unsigned int)style;
-- (float)tintAlpha;
+- (long long)graphicsQuality;
+- (id)initWithStyle:(unsigned long long)arg1 quality:(long long)arg2;
+- (unsigned long long)style;
+- (double)tintAlpha;
 - (id)tintColor;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface PASampleFrameStackshotIterator : NSObject <PASampleFrameIterator> {
-    BOOL  _hideKernelFrames;
-    BOOL  _hideUserFrames;
+    bool  _hideKernelFrames;
+    bool  _hideUserFrames;
     PASampleKernelFrame * _kernel;
     PAStackshotThread * _stackshotThread;
     PASampleUserFrame * _user;
@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) PAStackshotThread *stackshotThread;
 @property (readonly) Class superclass;
 
@@ -20,7 +20,7 @@
 - (void)exposeAllFrames;
 - (void)exposeKernelFramesOnly;
 - (void)exposeUserFramesOnly;
-- (void)iterateFrames:(id /* block */)arg1;
+- (void)iterateFrames:(id)arg1;
 - (void)setStackshotThread:(id)arg1;
 - (id)stackshotThread;
 

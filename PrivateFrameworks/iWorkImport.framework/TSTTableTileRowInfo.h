@@ -6,7 +6,7 @@
     unsigned short  mBufferSize;
     unsigned short  mCellCount;
     unsigned char  mMaxTileColumnIndex;
-    BOOL  mMaxTileColumnIndexValid;
+    bool  mMaxTileColumnIndexValid;
     struct __CFData { } * mStorageBuffer;
     unsigned short  mStorageOffsets;
     unsigned char  mStorageVersion;
@@ -20,7 +20,7 @@
 - (void)dealloc;
 - (void)debugDump;
 - (id)description;
-- (void)enumerateStoragesInColumnRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBlock:(id /* block */)arg2;
+- (void)enumerateStoragesInColumnRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 withBlock:(id)arg2;
 - (void)i_upgradeWithDataStore:(id)arg1;
 - (id)initWithArchive:(const struct TileRowInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned int x5; unsigned int x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; unsigned int x9; }*)arg1 owner:(id)arg2;
 - (id)initWithOwner:(id)arg1 tileRowIndex:(unsigned short)arg2;

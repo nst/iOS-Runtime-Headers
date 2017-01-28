@@ -39,7 +39,7 @@
 - (id)dictionaryRepresentation;
 - (id)init;
 - (id)insertedAssets;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)memoriesToDelete;
 - (id)memoryChanges;
 - (id)personChanges;

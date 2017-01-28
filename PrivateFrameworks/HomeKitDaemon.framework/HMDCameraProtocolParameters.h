@@ -20,7 +20,7 @@
 @property (nonatomic, retain) HMDSupportedRTPConfiguration *supportedRTPConfiguration;
 @property (nonatomic, retain) HMDSupportedVideoStreamConfiguration *supportedVideoStreamConfiguration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

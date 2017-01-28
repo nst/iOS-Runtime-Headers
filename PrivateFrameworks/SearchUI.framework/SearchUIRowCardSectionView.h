@@ -10,10 +10,10 @@
 @property (nonatomic, readonly) SFRowCardSection *section;
 
 - (void).cxx_destruct;
-- (id)addContainerWithImage:(id)arg1 text:(id)arg2 formatter:(id)arg3 left:(BOOL)arg4;
+- (id)addContainerWithImage:(id)arg1 text:(id)arg2 formatter:(id)arg3 left:(bool)arg4;
 - (id)initWithCardSection:(id)arg1 controller:(id)arg2;
 - (id)leftImageView;
-- (float)separatorLeftInset;
+- (double)separatorLeftInset;
 - (void)setLeftImageView:(id)arg1;
 
 @end

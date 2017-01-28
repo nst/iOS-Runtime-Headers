@@ -5,11 +5,11 @@
 @interface EKDeclinedCalendarItemInfo : EKCalendarInfo
 
 - (id)description;
-- (BOOL)excludeFromSelectAll;
+- (bool)excludeFromSelectAll;
 - (id)icon;
 - (id)init;
-- (BOOL)isEditable;
-- (void)setSelected:(BOOL)arg1;
+- (bool)isEditable;
+- (void)setSelected:(bool)arg1;
 - (id)title;
 
 @end

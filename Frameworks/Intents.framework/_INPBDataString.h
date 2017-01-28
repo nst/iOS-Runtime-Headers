@@ -8,8 +8,8 @@
     NSString * _vocabularyIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasLocalizedValue;
-@property (nonatomic, readonly) BOOL hasVocabularyIdentifier;
+@property (nonatomic, readonly) bool hasLocalizedValue;
+@property (nonatomic, readonly) bool hasVocabularyIdentifier;
 @property (nonatomic, retain) NSString *localizedValue;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *vocabularyIdentifier;
@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocalizedValue;
-- (BOOL)hasVocabularyIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocalizedValue;
+- (bool)hasVocabularyIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)localizedValue;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLocalizedValue:(id)arg1;
 - (void)setVocabularyIdentifier:(id)arg1;
 - (id)unknownFields;

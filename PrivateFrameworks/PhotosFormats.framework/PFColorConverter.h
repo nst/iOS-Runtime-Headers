@@ -9,11 +9,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)adjustPixelBuffer:(struct __CVBuffer { }*)arg1 toOutputBuffer:(struct __CVBuffer { }*)arg2;
-- (void)convertWithVideoURL:(id)arg1 outURL:(id)arg2 progress:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (void)convertWithVideoURL:(id)arg1 outURL:(id)arg2 progress:(id)arg3 completion:(id)arg4;
 
 @end

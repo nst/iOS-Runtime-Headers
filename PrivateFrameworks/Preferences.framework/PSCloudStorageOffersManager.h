@@ -11,13 +11,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSCloudStorageOffersManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long requiredStorageThreshold;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)beginFlowWithNavigationController:(id)arg1 modally:(BOOL)arg2;
-- (void)beginFlowWithNavigationController:(id)arg1 purchaseToken:(id)arg2 buyParameters:(id)arg3 requestHeaders:(id)arg4 modally:(BOOL)arg5;
+- (void)beginFlowWithNavigationController:(id)arg1 modally:(bool)arg2;
+- (void)beginFlowWithNavigationController:(id)arg1 purchaseToken:(id)arg2 buyParameters:(id)arg3 requestHeaders:(id)arg4 modally:(bool)arg5;
 - (void)cancelLoad;
 - (void)commerceDelegate:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)commerceDelegate:(id)arg1 willPresentObjectModel:(id)arg2 page:(id)arg3;

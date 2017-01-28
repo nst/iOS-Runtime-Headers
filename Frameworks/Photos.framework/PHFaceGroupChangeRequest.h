@@ -3,7 +3,7 @@
  */
 
 @interface PHFaceGroupChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
-    BOOL  _clientEntitled;
+    bool  _clientEntitled;
     NSString * _clientName;
     int  _clientProcessID;
     PHRelationshipChangeRequestHelper * _facesHelper;
@@ -12,23 +12,23 @@
     PHFaceGroup * _originalFaceGroup;
 }
 
-@property (getter=isClientEntitled, nonatomic, readonly) BOOL clientEntitled;
+@property (getter=isClientEntitled, nonatomic, readonly) bool clientEntitled;
 @property (nonatomic, readonly) NSString *clientName;
 @property (nonatomic, readonly) int clientProcessID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int faceGroupType;
+@property (nonatomic) long long faceGroupType;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *facesHelper;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PHChangeRequestHelper *helper;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *keyFaceHelper;
 @property (nonatomic, readonly) NSString *managedEntityName;
-@property (getter=isMutated, readonly) BOOL mutated;
-@property (getter=isNew, readonly) BOOL new;
+@property (getter=isMutated, readonly) bool mutated;
+@property (getter=isNew, readonly) bool new;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
 @property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedFaceGroup;
 @property (readonly) Class superclass;
-@property (nonatomic) int unnamedFaceCount;
+@property (nonatomic) long long unnamedFaceCount;
 @property (nonatomic, readonly) NSString *uuid;
 
 + (id)changeRequestForFaceGroup:(id)arg1;
@@ -45,23 +45,23 @@
 - (void)_prepareKeyFaceHelperIfNeeded;
 - (void)_setOriginalFaceGroup:(id)arg1;
 - (void)addFaces:(id)arg1;
-- (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
-- (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
-- (BOOL)canGenerateUUIDLocally;
+- (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (bool)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)canGenerateUUIDLocally;
 - (id)clientName;
 - (int)clientProcessID;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
 - (void)didMutate;
 - (void)encodeToXPCDict:(id)arg1;
-- (int)faceGroupType;
+- (long long)faceGroupType;
 - (id)facesHelper;
 - (id)helper;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
-- (BOOL)isClientEntitled;
-- (BOOL)isMutated;
-- (BOOL)isNew;
+- (bool)isClientEntitled;
+- (bool)isMutated;
+- (bool)isNew;
 - (id)keyFaceHelper;
 - (id)managedEntityName;
 - (id)mutations;
@@ -69,12 +69,12 @@
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)placeholderForCreatedFaceGroup;
 - (void)removeFaces:(id)arg1;
-- (void)setFaceGroupType:(int)arg1;
+- (void)setFaceGroupType:(long long)arg1;
 - (void)setKeyFace:(id)arg1;
-- (void)setUnnamedFaceCount:(int)arg1;
-- (int)unnamedFaceCount;
+- (void)setUnnamedFaceCount:(long long)arg1;
+- (long long)unnamedFaceCount;
 - (id)uuid;
-- (BOOL)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
-- (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
 
 @end

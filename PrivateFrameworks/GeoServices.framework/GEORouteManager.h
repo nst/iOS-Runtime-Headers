@@ -8,11 +8,11 @@
 
 @property (nonatomic) <GEORouteManagerDelegate> *delegate;
 
-+ (void)setShouldRequestServerLatencyInfo:(BOOL)arg1;
++ (void)setShouldRequestServerLatencyInfo:(bool)arg1;
 
 - (void)addedRoutesToRouteSet:(id)arg1;
 - (id)delegate;
-- (void)fetchDirectionsForTicket:(id)arg1 routeSet:(id)arg2 networkActivity:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (void)fetchDirectionsForTicket:(id)arg1 routeSet:(id)arg2 networkActivity:(id)arg3 completionHandler:(id)arg4;
 - (void)handleError:(id)arg1 directionsError:(id)arg2 forTicket:(id)arg3;
 - (void)handleResponse:(id)arg1 routeSet:(id)arg2 forTicket:(id)arg3;
 - (void)setDelegate:(id)arg1;

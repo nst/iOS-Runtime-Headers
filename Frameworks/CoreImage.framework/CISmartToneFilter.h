@@ -35,7 +35,7 @@
 
 + (id)customAttributes;
 
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)_kernelBneg;
 - (id)_kernelBpos;
 - (id)_kernelC;

@@ -11,21 +11,21 @@
 @property (nonatomic, copy) NSSet *applicationStates;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)addApplicationState:(int)arg1;
+- (void)addApplicationState:(long long)arg1;
 - (id)applicationIdentifier;
 - (id)applicationStates;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithApplicationIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationStates:(id)arg1;
 - (void)setNotRunningApplicationStates;

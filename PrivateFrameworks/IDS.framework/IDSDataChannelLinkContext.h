@@ -7,32 +7,32 @@
     unsigned int  _maxBitrate;
 }
 
-@property (readonly) unsigned int RATType;
-@property (readonly) int connectionType;
+@property (readonly) unsigned long long RATType;
+@property (readonly) long long connectionType;
 @property (readonly) unsigned char flags;
 @property (readonly) BOOL linkID;
 @property (readonly) unsigned int maxBitrate;
 @property (readonly) unsigned short maxMTU;
 @property (readonly) unsigned char networkType;
-@property (readonly) int remoteConnectionType;
+@property (readonly) long long remoteConnectionType;
 @property (readonly) unsigned char remoteNetworkType;
-@property (readonly) unsigned int remoteRATType;
+@property (readonly) unsigned long long remoteRATType;
 
-- (unsigned int)RATType;
-- (int)connectionType;
+- (unsigned long long)RATType;
+- (long long)connectionType;
 - (id)description;
 - (unsigned char)flags;
 - (id)initWithDummyInformation;
-- (id)initWithLinkID:(BOOL)arg1 flags:(unsigned char)arg2 networkType:(unsigned char)arg3 connectionType:(int)arg4 RATType:(unsigned int)arg5 MTU:(unsigned short)arg6 remoteNetworkType:(unsigned char)arg7 remoteConnectionType:(int)arg8 remoteRATType:(unsigned int)arg9 maxBitrate:(unsigned int)arg10;
+- (id)initWithLinkID:(BOOL)arg1 flags:(unsigned char)arg2 networkType:(unsigned char)arg3 connectionType:(long long)arg4 RATType:(unsigned long long)arg5 MTU:(unsigned short)arg6 remoteNetworkType:(unsigned char)arg7 remoteConnectionType:(long long)arg8 remoteRATType:(unsigned long long)arg9 maxBitrate:(unsigned int)arg10;
 - (BOOL)linkID;
 - (unsigned int)maxBitrate;
 - (unsigned short)maxMTU;
 - (unsigned char)networkType;
-- (int)remoteConnectionType;
+- (long long)remoteConnectionType;
 - (unsigned char)remoteNetworkType;
-- (unsigned int)remoteRATType;
+- (unsigned long long)remoteRATType;
 - (void)setMTU:(unsigned short)arg1;
 - (void)setMaxBitrate:(unsigned int)arg1;
-- (void)setRATType:(unsigned int)arg1;
+- (void)setRATType:(unsigned long long)arg1;
 
 @end

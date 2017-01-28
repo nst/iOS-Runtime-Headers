@@ -7,15 +7,15 @@
 
 - (NSArray *)accepted;
 - (NSArray *)declined;
-- (BOOL)groupsNames;
+- (bool)groupsNames;
 - (UIColor *)highlightedTextColor;
-- (BOOL)isHighlighted;
+- (bool)isHighlighted;
 - (NSArray *)maybe;
 - (NSArray *)noReply;
 - (void)setAccepted:(NSArray *)arg1;
 - (void)setDeclined:(NSArray *)arg1;
-- (void)setGroupsNames:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setGroupsNames:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setHighlightedTextColor:(UIColor *)arg1;
 - (void)setMaybe:(NSArray *)arg1;
 - (void)setNoReply:(NSArray *)arg1;

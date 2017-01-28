@@ -11,7 +11,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (long)recv:(void*)arg1 length:(unsigned long)arg2 err:(int*)arg3;
-- (long)send:(void*)arg1 length:(unsigned long)arg2 err:(int*)arg3;
+- (long long)recv:(void*)arg1 length:(unsigned long long)arg2 err:(int*)arg3;
+- (long long)send:(void*)arg1 length:(unsigned long long)arg2 err:(int*)arg3;
 
 @end

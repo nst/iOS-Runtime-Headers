@@ -4,10 +4,10 @@
 
 @interface LPTestingOverrides : NSObject
 
-+ (unsigned int)forceImageLoadingScaleFactor;
-+ (BOOL)forceRTL;
++ (unsigned long long)forceImageLoadingScaleFactor;
++ (bool)forceRTL;
 + (void)reset;
-+ (void)setForceImageLoadingScaleFactor:(unsigned int)arg1;
-+ (void)setForceRTL:(BOOL)arg1;
++ (void)setForceImageLoadingScaleFactor:(unsigned long long)arg1;
++ (void)setForceRTL:(bool)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface HTTPSASLClientSession : NSObject {
-    id /* block */  _authCompletionHandler;
+    id  _authCompletionHandler;
     NSString * _authMechanism;
     NSString * _authPassword;
     NSURLSession * _authSession;
@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)_authStep:(id)arg1 state:(int)arg2;
 - (void)_completeSRP:(id)arg1;
-- (void)_startAuthWithURL:(id)arg1 mechanism:(id)arg2 username:(id)arg3 password:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)_startAuthWithURL:(id)arg1 mechanism:(id)arg2 username:(id)arg3 password:(id)arg4 completionHandler:(id)arg5;
 - (void)_stepPLAIN:(id)arg1;
 - (void)_stepSRP:(id)arg1;
 - (void)_tryAuthFallbackIfAllowed:(id)arg1;
@@ -33,6 +33,6 @@
 - (void)setAuthMechanism:(id)arg1;
 - (void)setAuthenticatedCookie:(id)arg1;
 - (void)setAuthenticatedSessionDelegate:(id)arg1;
-- (void)startAuthWithURL:(id)arg1 username:(id)arg2 password:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)startAuthWithURL:(id)arg1 username:(id)arg2 password:(id)arg3 completionHandler:(id)arg4;
 
 @end

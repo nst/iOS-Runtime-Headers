@@ -12,10 +12,10 @@
     NSString * _radioStationID;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasLocalizedTitle;
-@property (nonatomic) BOOL hasQueueType;
-@property (nonatomic, readonly) BOOL hasRadioStationID;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasLocalizedTitle;
+@property (nonatomic) bool hasQueueType;
+@property (nonatomic, readonly) bool hasRadioStationID;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *localizedTitle;
 @property (nonatomic) unsigned int queueType;
@@ -26,19 +26,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasLocalizedTitle;
-- (BOOL)hasQueueType;
-- (BOOL)hasRadioStationID;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasLocalizedTitle;
+- (bool)hasQueueType;
+- (bool)hasRadioStationID;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedTitle;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)queueType;
 - (id)radioStationID;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasQueueType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasQueueType:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;
 - (void)setQueueType:(unsigned int)arg1;

@@ -4,19 +4,19 @@
 
 @interface AXIDCMessage : AXSimpleMessage {
     NSString * _UUID;
-    id /* block */  _sendCompletion;
+    id  _sendCompletion;
 }
 
 @property (nonatomic, retain) NSString *UUID;
-@property (nonatomic, copy) id /* block */ sendCompletion;
+@property (nonatomic, copy) id sendCompletion;
 
-+ (id)messageWithPayload:(id)arg1 andSendCompletion:(id /* block */)arg2;
++ (id)messageWithPayload:(id)arg1 andSendCompletion:(id)arg2;
 
 - (id)UUID;
 - (void)dealloc;
 - (id)initWithPayload:(id)arg1;
-- (id /* block */)sendCompletion;
-- (void)setSendCompletion:(id /* block */)arg1;
+- (id)sendCompletion;
+- (void)setSendCompletion:(id)arg1;
 - (void)setUUID:(id)arg1;
 - (id)transportPayload;
 

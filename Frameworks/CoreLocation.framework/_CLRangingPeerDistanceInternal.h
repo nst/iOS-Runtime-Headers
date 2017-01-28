@@ -6,13 +6,13 @@
     NSNumber * _accuracyMeters;
     NSDate * _date;
     NSNumber * _distanceMeters;
-    BOOL  _initiator;
+    bool  _initiator;
     _CLRangingPeer * _peer;
-    BOOL  _shouldUnlock;
+    bool  _shouldUnlock;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithPeer:(id)arg1 date:(id)arg2 distanceMeters:(id)arg3 accuracyMeters:(id)arg4 initiator:(BOOL)arg5 shouldUnlock:(BOOL)arg6;
+- (id)initWithPeer:(id)arg1 date:(id)arg2 distanceMeters:(id)arg3 accuracyMeters:(id)arg4 initiator:(bool)arg5 shouldUnlock:(bool)arg6;
 
 @end

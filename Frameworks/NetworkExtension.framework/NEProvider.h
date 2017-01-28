@@ -17,25 +17,25 @@
 @property (retain) NWPathEvaluator *defaultPathEvaluator;
 @property (readonly, copy) NSString *description;
 @property (retain) NSString *deviceIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isNEProviderBundle:(id)arg1 forExtensionPoint:(id)arg2;
-+ (BOOL)isRunningInProvider;
++ (bool)isNEProviderBundle:(id)arg1 forExtensionPoint:(id)arg2;
++ (bool)isRunningInProvider;
 
 - (void).cxx_destruct;
 - (id)appName;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (id)context;
-- (id)createTCPConnectionToEndpoint:(id)arg1 enableTFO:(BOOL)arg2 initialData:(id)arg3 enableMultipath:(BOOL)arg4 enableTLS:(BOOL)arg5 TLSParameters:(id)arg6 delegate:(id)arg7;
-- (id)createTCPConnectionToEndpoint:(id)arg1 enableTFO:(BOOL)arg2 initialData:(id)arg3 enableMultipath:(BOOL)arg4 enableTLS:(BOOL)arg5 TLSParameters:(id)arg6 delegate:(id)arg7 URL:(id)arg8;
-- (id)createTCPConnectionToEndpoint:(id)arg1 enableTLS:(BOOL)arg2 TLSParameters:(id)arg3 delegate:(id)arg4;
+- (id)createTCPConnectionToEndpoint:(id)arg1 enableTFO:(bool)arg2 initialData:(id)arg3 enableMultipath:(bool)arg4 enableTLS:(bool)arg5 TLSParameters:(id)arg6 delegate:(id)arg7;
+- (id)createTCPConnectionToEndpoint:(id)arg1 enableTFO:(bool)arg2 initialData:(id)arg3 enableMultipath:(bool)arg4 enableTLS:(bool)arg5 TLSParameters:(id)arg6 delegate:(id)arg7 URL:(id)arg8;
+- (id)createTCPConnectionToEndpoint:(id)arg1 enableTLS:(bool)arg2 TLSParameters:(id)arg3 delegate:(id)arg4;
 - (id)createUDPSessionToEndpoint:(id)arg1 fromEndpoint:(id)arg2;
 - (void)dealloc;
 - (id)defaultPath;
 - (id)defaultPathEvaluator;
 - (id)deviceIdentifier;
-- (void)displayMessage:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)displayMessage:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (void)observerHelperHandler:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setAppName:(id)arg1;
@@ -43,7 +43,7 @@
 - (void)setDefaultPath:(id)arg1;
 - (void)setDefaultPathEvaluator:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
-- (void)sleepWithCompletionHandler:(id /* block */)arg1;
+- (void)sleepWithCompletionHandler:(id)arg1;
 - (void)wake;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface SKReferenceNode : SKNode {
-    BOOL  _hasResolvedURL;
+    bool  _hasResolvedURL;
     NSString * _referenceFileName;
     NSURL * _referenceURL;
     SKNode * _resolvedNode;

@@ -6,8 +6,8 @@
     NSString * _applicationIdentifier;
     LSApplicationProxy * _applicationProxy;
     NSOperation * _operation;
-    BOOL  _shouldUnlinkFile;
-    BOOL  _sourceIsManaged;
+    bool  _shouldUnlinkFile;
+    bool  _sourceIsManaged;
     NSURL * _url;
 }
 
@@ -15,14 +15,14 @@
 @property (nonatomic, retain) LSApplicationProxy *applicationProxy;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSOperation *operation;
-@property (nonatomic) BOOL shouldUnlinkFile;
-@property (nonatomic) BOOL sourceIsManaged;
+@property (nonatomic) bool shouldUnlinkFile;
+@property (nonatomic) bool sourceIsManaged;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSURL *url;
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 + (id)bestJobNameForActivityItems:(id)arg1;
 + (id)defaultJobName;
 + (id)jobNameFormatForFile;
@@ -37,7 +37,7 @@
 - (id)activityType;
 - (id)applicationIdentifier;
 - (id)applicationProxy;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
 - (id)operation;
 - (void)performActivity;
@@ -46,11 +46,11 @@
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationProxy:(id)arg1;
 - (void)setOperation:(id)arg1;
-- (void)setShouldUnlinkFile:(BOOL)arg1;
-- (void)setSourceIsManaged:(BOOL)arg1;
+- (void)setShouldUnlinkFile:(bool)arg1;
+- (void)setSourceIsManaged:(bool)arg1;
 - (void)setUrl:(id)arg1;
-- (BOOL)shouldUnlinkFile;
-- (BOOL)sourceIsManaged;
+- (bool)shouldUnlinkFile;
+- (bool)sourceIsManaged;
 - (id)url;
 
 @end

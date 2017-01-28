@@ -5,6 +5,6 @@
 @interface PXFeedbackSupportUtilities : NSObject
 
 + (id)feedbackCollectionMenuTitle;
-+ (BOOL)isAppleInternal;
++ (bool)isAppleInternal;
 
 @end

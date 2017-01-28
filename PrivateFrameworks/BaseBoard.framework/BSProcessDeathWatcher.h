@@ -3,12 +3,12 @@
  */
 
 @interface BSProcessDeathWatcher : NSObject {
-    id /* block */  _deathHandler;
+    id  _deathHandler;
     BSDispatchSource * _source;
 }
 
 - (void)dealloc;
-- (id)initWithPID:(int)arg1 queue:(id)arg2 deathHandler:(id /* block */)arg3;
+- (id)initWithPID:(int)arg1 queue:(id)arg2 deathHandler:(id)arg3;
 - (void)invalidate;
 
 @end

@@ -10,11 +10,11 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)disablePhoneLocatorWithMessageString:(id)arg1 buttonTitle:(id)arg2 presentingViewController:(id)arg3 completion:(id /* block */)arg4;
-- (void)enablePhoneLocatorWithCompletion:(id /* block */)arg1;
+- (void)disablePhoneLocatorWithMessageString:(id)arg1 buttonTitle:(id)arg2 presentingViewController:(id)arg3 completion:(id)arg4;
+- (void)enablePhoneLocatorWithCompletion:(id)arg1;
 - (id)init;
-- (BOOL)isFindMyiPhoneEnabled;
-- (BOOL)isFindMyiPhoneProvisioned;
+- (bool)isFindMyiPhoneEnabled;
+- (bool)isFindMyiPhoneProvisioned;
 - (void)locatorStateDidChange:(id)arg1;
 - (id)preferredFindMyiPhoneAccount;
 

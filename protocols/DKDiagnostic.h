@@ -5,12 +5,12 @@
 
 @required
 
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
+- (bool)isCancelled;
+- (bool)isFinished;
 - (NSDictionary *)parameters;
 - (NSDictionary *)predicates;
 - (DKMutableResult *)result;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setResult:(DKMutableResult *)arg1;
 - (void)setupWithContext:(DKDiagnosticContext *)arg1;
 - (NSDictionary *)specifications;

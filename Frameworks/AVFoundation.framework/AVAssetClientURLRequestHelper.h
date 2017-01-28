@@ -4,7 +4,7 @@
 
 @interface AVAssetClientURLRequestHelper : NSObject {
     void * _URLRequestOriginator;
-    id /* block */  _figAssetProvider;
+    id  _figAssetProvider;
     AVCMNotificationDispatcher * _figNotificationDispatcher;
     AVWeakReference * _weakReferenceToResourceLoader;
     AVWeakReference * _weakReferenceToSelf;
@@ -12,7 +12,7 @@
 
 @property (nonatomic, retain) const void*URLRequestOriginator;
 @property (nonatomic, readonly) const struct OpaqueFigAsset { }*figAsset;
-@property (nonatomic, copy) id /* block */ figAssetProvider;
+@property (nonatomic, copy) id figAssetProvider;
 @property (nonatomic) AVAssetResourceLoader *resourceLoader;
 
 - (const void*)URLRequestOriginator;
@@ -21,12 +21,12 @@
 - (void)_stopHandlingURLRequestsFromRequestOriginator:(void*)arg1;
 - (void)dealloc;
 - (const struct OpaqueFigAsset { }*)figAsset;
-- (id /* block */)figAssetProvider;
+- (id)figAssetProvider;
 - (void)finalize;
 - (void)handleURLRequest:(id)arg1;
 - (id)init;
 - (id)resourceLoader;
-- (void)setFigAssetProvider:(id /* block */)arg1;
+- (void)setFigAssetProvider:(id)arg1;
 - (void)setResourceLoader:(id)arg1;
 - (void)setURLRequestOriginator:(void*)arg1;
 

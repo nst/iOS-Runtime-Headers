@@ -8,9 +8,9 @@
     GEOTraitsTransitScheduleTimeRange * _operatingHoursRange;
 }
 
-@property (nonatomic, readonly) BOOL hasHighFrequencyFilter;
-@property (nonatomic, readonly) BOOL hasLowFrequencyFilter;
-@property (nonatomic, readonly) BOOL hasOperatingHoursRange;
+@property (nonatomic, readonly) bool hasHighFrequencyFilter;
+@property (nonatomic, readonly) bool hasLowFrequencyFilter;
+@property (nonatomic, readonly) bool hasOperatingHoursRange;
 @property (nonatomic, retain) GEOTraitsTransitScheduleModeFilter *highFrequencyFilter;
 @property (nonatomic, retain) GEOTraitsTransitScheduleModeFilter *lowFrequencyFilter;
 @property (nonatomic, retain) GEOTraitsTransitScheduleTimeRange *operatingHoursRange;
@@ -20,16 +20,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHighFrequencyFilter;
-- (BOOL)hasLowFrequencyFilter;
-- (BOOL)hasOperatingHoursRange;
-- (unsigned int)hash;
+- (bool)hasHighFrequencyFilter;
+- (bool)hasLowFrequencyFilter;
+- (bool)hasOperatingHoursRange;
+- (unsigned long long)hash;
 - (id)highFrequencyFilter;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lowFrequencyFilter;
 - (void)mergeFrom:(id)arg1;
 - (id)operatingHoursRange;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setHighFrequencyFilter:(id)arg1;
 - (void)setLowFrequencyFilter:(id)arg1;
 - (void)setOperatingHoursRange:(id)arg1;

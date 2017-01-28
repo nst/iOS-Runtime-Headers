@@ -4,7 +4,7 @@
 
 @interface AKTextBoxAnnotationEventHandler : AKRectangularAnnotationEventHandler
 
-- (BOOL)canLockAspectRatio;
-- (void)updateModelWithCurrentPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)canLockAspectRatio;
+- (void)updateModelWithCurrentPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

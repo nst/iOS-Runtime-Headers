@@ -3,25 +3,25 @@
  */
 
 @interface SFCrossfadingLabel : UILabel {
-    float  _fromBrightness;
+    double  _fromBrightness;
     UIColor * _fromColor;
-    float  _fromHue;
-    float  _fromSaturation;
-    int  _mode;
-    float  _progress;
+    double  _fromHue;
+    double  _fromSaturation;
+    long long  _mode;
+    double  _progress;
 }
 
 @property (nonatomic, retain) UIColor *fromColor;
-@property (nonatomic) int mode;
-@property (nonatomic) float progress;
+@property (nonatomic) long long mode;
+@property (nonatomic) double progress;
 
 - (void).cxx_destruct;
 - (void)_updateCrossfade;
 - (id)fromColor;
-- (int)mode;
-- (float)progress;
+- (long long)mode;
+- (double)progress;
 - (void)setFromColor:(id)arg1;
-- (void)setMode:(int)arg1;
-- (void)setProgress:(float)arg1;
+- (void)setMode:(long long)arg1;
+- (void)setProgress:(double)arg1;
 
 @end

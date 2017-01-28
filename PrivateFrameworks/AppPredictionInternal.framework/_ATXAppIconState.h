@@ -15,14 +15,14 @@
 - (id)allAppsOnSpringboard;
 - (id)allDockedApps;
 - (id)allFolderApps;
-- (BOOL)appInFolderWithBundleId:(id)arg1;
-- (BOOL)appOnDockWithBundleId:(id)arg1;
-- (int)folderPageNumberForBundleId:(id)arg1;
+- (bool)appInFolderWithBundleId:(id)arg1;
+- (bool)appOnDockWithBundleId:(id)arg1;
+- (long long)folderPageNumberForBundleId:(id)arg1;
 - (id)init;
 - (id)loadIconState;
 - (void)parseIconState:(id)arg1;
 - (void)reload;
-- (int)springboardPageLocationForBundleId:(id)arg1;
-- (int)springboardPageNumberForBundleId:(id)arg1;
+- (long long)springboardPageLocationForBundleId:(id)arg1;
+- (long long)springboardPageNumberForBundleId:(id)arg1;
 
 @end

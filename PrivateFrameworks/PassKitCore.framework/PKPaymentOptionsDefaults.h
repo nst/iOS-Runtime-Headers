@@ -9,7 +9,7 @@
     CNContact * _defaultContactPhone;
     CNContact * _defaultShippingAddress;
     int  _defaultsChangedNotifyToken;
-    unsigned int  _postedNotificationCount;
+    unsigned long long  _postedNotificationCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) CNContact *defaultContactPhone;
 @property (nonatomic, retain) CNContact *defaultShippingAddress;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)defaults;

@@ -4,7 +4,7 @@
 
 @interface NSVisualFormatLayoutRelationship : NSObject <NSLayoutRelationship> {
     NSLayoutRect * _containerRect;
-    unsigned int  _formatOptions;
+    unsigned long long  _formatOptions;
     NSDictionary * _metricMapping;
     NSDictionary * _rectMapping;
     NSString * _visualFormatString;
@@ -12,20 +12,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly, copy) NSString *identifier;
 @property (readonly, copy) NSString *relationshipDescription;
 @property (readonly) Class superclass;
 
-+ (id)relationshipWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 rects:(id)arg4 containerRect:(id)arg5;
++ (id)relationshipWithVisualFormat:(id)arg1 options:(unsigned long long)arg2 metrics:(id)arg3 rects:(id)arg4 containerRect:(id)arg5;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
-- (id)initWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 rects:(id)arg4 containerRect:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithVisualFormat:(id)arg1 options:(unsigned long long)arg2 metrics:(id)arg3 rects:(id)arg4 containerRect:(id)arg5;
+- (bool)isEqual:(id)arg1;
 - (id)makeChildrenRelationships;
 - (id)relationshipDescription;
 

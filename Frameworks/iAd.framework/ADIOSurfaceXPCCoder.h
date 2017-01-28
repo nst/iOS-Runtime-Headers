@@ -4,19 +4,19 @@
 
 @interface ADIOSurfaceXPCCoder : NSXPCCoder <NSSecureCoding> {
     struct __IOSurface { } * _ioSurface;
-    float  _scale;
+    double  _scale;
 }
 
 @property struct __IOSurface { }*ioSurface;
-@property float scale;
+@property double scale;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (struct __IOSurface { }*)ioSurface;
-- (float)scale;
+- (double)scale;
 - (void)setIoSurface:(struct __IOSurface { }*)arg1;
-- (void)setScale:(float)arg1;
+- (void)setScale:(double)arg1;
 
 @end

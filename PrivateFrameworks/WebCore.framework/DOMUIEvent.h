@@ -16,8 +16,8 @@
 
 - (int)charCode;
 - (int)detail;
-- (void)initUIEvent:(id)arg1 :(BOOL)arg2 :(BOOL)arg3 :(id)arg4 :(int)arg5;
-- (void)initUIEvent:(id)arg1 canBubble:(BOOL)arg2 cancelable:(BOOL)arg3 view:(id)arg4 detail:(int)arg5;
+- (void)initUIEvent:(id)arg1 :(bool)arg2 :(bool)arg3 :(id)arg4 :(int)arg5;
+- (void)initUIEvent:(id)arg1 canBubble:(bool)arg2 cancelable:(bool)arg3 view:(id)arg4 detail:(int)arg5;
 - (int)keyCode;
 - (int)layerX;
 - (int)layerY;

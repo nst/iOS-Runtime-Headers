@@ -4,6 +4,6 @@
 
 @interface CNAutocompleteCalendarServerOperationFactory : NSObject
 
-- (id)eventKitDirectorySearchOperationForSource:(id)arg1 query:(id)arg2 resultsBlock:(id /* block */)arg3;
+- (id)eventKitDirectorySearchOperationForSource:(id)arg1 query:(id)arg2 resultsBlock:(id)arg3;
 
 @end

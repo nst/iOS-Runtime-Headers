@@ -12,7 +12,7 @@
 + (id)tokensFromString:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)expandCJKNames;
+- (id)expandCJKNames;
 - (id)init;
 - (id)initWithLocale:(id)arg1;
 - (id)nameStringTokenizer;

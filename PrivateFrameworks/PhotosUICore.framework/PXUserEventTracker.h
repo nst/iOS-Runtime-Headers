@@ -3,11 +3,11 @@
  */
 
 @interface PXUserEventTracker : PXUserEventTrackerCommon {
-    unsigned int  _MaxDepthOfRelatedJumps;
+    unsigned long long  _MaxDepthOfRelatedJumps;
     NSHashTable * __relatedLookupTable;
     double  _timeLoggedOnDetailViewWillAppear;
     double  _timeLoggedOnMemoriesFeedWillAppear;
-    unsigned int  _totalNumberOfRelatedJumps;
+    unsigned long long  _totalNumberOfRelatedJumps;
 }
 
 @property (setter=_setRelatedLookupTable:, nonatomic, retain) NSHashTable *_relatedLookupTable;
@@ -17,8 +17,8 @@
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_logAggdDurationCounterForLogState:(unsigned int)arg1 duration:(double)arg2;
-- (void)_logAggdRelatedJumpStatistics:(unsigned int)arg1 totalJumpCount:(unsigned int)arg2;
+- (void)_logAggdDurationCounterForLogState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_logAggdRelatedJumpStatistics:(unsigned long long)arg1 totalJumpCount:(unsigned long long)arg2;
 - (id)_relatedLookupTable;
 - (void)_resetDetailViewTraversalStatistics;
 - (void)_setRelatedLookupTable:(id)arg1;
@@ -30,7 +30,7 @@
 - (void)didPlayMiroMovieForAssetCollection:(id)arg1;
 - (void)didViewDetailsForAssetCollection:(id)arg1;
 - (id)init;
-- (void)logCounterValuesForLogState:(unsigned int)arg1 duration:(double)arg2;
+- (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)willViewDetailsWithCurrentContext:(id)arg1;
 - (void)willViewMemoriesFeedView;
 

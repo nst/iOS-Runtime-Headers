@@ -16,7 +16,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)groupKeyPath;
 - (id)init;
-- (void)resolveTemplatesWithIndex:(unsigned int)arg1;
+- (void)resolveTemplatesWithIndex:(unsigned long long)arg1;
 - (void)setGroupKeyPath:(id)arg1;
 - (void)setSettingsClass:(Class)arg1;
 - (Class)settingsClass;

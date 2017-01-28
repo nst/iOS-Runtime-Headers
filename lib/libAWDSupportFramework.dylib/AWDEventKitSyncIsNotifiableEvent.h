@@ -13,19 +13,19 @@
     }  _has;
     NSString * _reason;
     unsigned long long  _timestamp;
-    BOOL  _willTriggerNotification;
+    bool  _willTriggerNotification;
 }
 
 @property (nonatomic) unsigned long long deltaProcessingTime;
 @property (nonatomic) unsigned long long deltaTransitTime;
-@property (nonatomic) BOOL hasDeltaProcessingTime;
-@property (nonatomic) BOOL hasDeltaTransitTime;
-@property (nonatomic, readonly) BOOL hasReason;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasWillTriggerNotification;
+@property (nonatomic) bool hasDeltaProcessingTime;
+@property (nonatomic) bool hasDeltaTransitTime;
+@property (nonatomic, readonly) bool hasReason;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasWillTriggerNotification;
 @property (nonatomic, retain) NSString *reason;
 @property (nonatomic) unsigned long long timestamp;
-@property (nonatomic) BOOL willTriggerNotification;
+@property (nonatomic) bool willTriggerNotification;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -34,27 +34,27 @@
 - (unsigned long long)deltaTransitTime;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeltaProcessingTime;
-- (BOOL)hasDeltaTransitTime;
-- (BOOL)hasReason;
-- (BOOL)hasTimestamp;
-- (BOOL)hasWillTriggerNotification;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeltaProcessingTime;
+- (bool)hasDeltaTransitTime;
+- (bool)hasReason;
+- (bool)hasTimestamp;
+- (bool)hasWillTriggerNotification;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)reason;
 - (void)setDeltaProcessingTime:(unsigned long long)arg1;
 - (void)setDeltaTransitTime:(unsigned long long)arg1;
-- (void)setHasDeltaProcessingTime:(BOOL)arg1;
-- (void)setHasDeltaTransitTime:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasWillTriggerNotification:(BOOL)arg1;
+- (void)setHasDeltaProcessingTime:(bool)arg1;
+- (void)setHasDeltaTransitTime:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasWillTriggerNotification:(bool)arg1;
 - (void)setReason:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (void)setWillTriggerNotification:(BOOL)arg1;
+- (void)setWillTriggerNotification:(bool)arg1;
 - (unsigned long long)timestamp;
-- (BOOL)willTriggerNotification;
+- (bool)willTriggerNotification;
 - (void)writeTo:(id)arg1;
 
 @end

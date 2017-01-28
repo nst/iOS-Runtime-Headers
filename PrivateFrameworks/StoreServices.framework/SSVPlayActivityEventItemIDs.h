@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) long long radioAdamID;
 @property (nonatomic, readonly) long long subscriptionAdamID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_copyWithClass:(Class)arg1;

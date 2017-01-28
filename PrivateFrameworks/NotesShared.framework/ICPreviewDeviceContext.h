@@ -9,7 +9,7 @@
 }
 
 @property (readonly) NSArray *deviceScales;
-@property (readonly) float maxDeviceScale;
+@property (readonly) double maxDeviceScale;
 @property (copy) NSArray *nonScalableDeviceInfo;
 @property (copy) NSArray *scalableDeviceInfo;
 
@@ -17,11 +17,11 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)deviceInfoScalable:(BOOL)arg1;
+- (id)deviceInfoScalable:(bool)arg1;
 - (id)deviceScales;
 - (id)init;
-- (float)maxDeviceScale;
-- (float)maxSizeOfPreviewDeviceInfoImage;
+- (double)maxDeviceScale;
+- (double)maxSizeOfPreviewDeviceInfoImage;
 - (id)nonScalableDeviceInfo;
 - (id)scalableDeviceInfo;
 - (void)screensChangedNotification:(id)arg1;

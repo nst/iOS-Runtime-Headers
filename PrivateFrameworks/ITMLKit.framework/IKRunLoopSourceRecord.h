@@ -3,18 +3,18 @@
  */
 
 @interface IKRunLoopSourceRecord : NSObject {
-    id /* block */  _completionBlock;
-    id /* block */  _evaluateBlock;
+    id  _completionBlock;
+    id  _evaluateBlock;
 }
 
-@property (nonatomic, copy) id /* block */ completionBlock;
-@property (nonatomic, copy) id /* block */ evaluateBlock;
+@property (nonatomic, copy) id completionBlock;
+@property (nonatomic, copy) id evaluateBlock;
 
 - (void).cxx_destruct;
-- (id /* block */)completionBlock;
-- (id /* block */)evaluateBlock;
-- (id)initWithEvaluateBlock:(id /* block */)arg1 completionBlock:(id /* block */)arg2;
-- (void)setCompletionBlock:(id /* block */)arg1;
-- (void)setEvaluateBlock:(id /* block */)arg1;
+- (id)completionBlock;
+- (id)evaluateBlock;
+- (id)initWithEvaluateBlock:(id)arg1 completionBlock:(id)arg2;
+- (void)setCompletionBlock:(id)arg1;
+- (void)setEvaluateBlock:(id)arg1;
 
 @end

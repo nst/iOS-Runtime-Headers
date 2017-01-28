@@ -4,7 +4,7 @@
 
 @interface SFTrack : NSObject <NSSecureCoding> {
     NSString * _duration;
-    BOOL  _highlighted;
+    bool  _highlighted;
     NSString * _number;
     SFActionItem * _playAction;
     NSURL * _preview;
@@ -12,24 +12,24 @@
 }
 
 @property (nonatomic, copy) NSString *duration;
-@property (nonatomic) BOOL highlighted;
+@property (nonatomic) bool highlighted;
 @property (nonatomic, copy) NSString *number;
 @property (nonatomic, retain) SFActionItem *playAction;
 @property (nonatomic, copy) NSURL *preview;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)duration;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)highlighted;
+- (bool)highlighted;
 - (id)initWithCoder:(id)arg1;
 - (id)number;
 - (id)playAction;
 - (id)preview;
 - (void)setDuration:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setNumber:(id)arg1;
 - (void)setPlayAction:(id)arg1;
 - (void)setPreview:(id)arg1;

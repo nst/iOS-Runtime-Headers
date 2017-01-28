@@ -4,11 +4,11 @@
 
 @interface CNMultiValuePropertyDescription : CNPropertyDescription
 
-@property (nonatomic, readonly) id /* block */ fromPlistTransform;
-@property (nonatomic, readonly) BOOL isMultiValue;
-@property (nonatomic, readonly) BOOL isSingleValue;
+@property (nonatomic, readonly) id fromPlistTransform;
+@property (nonatomic, readonly) bool isMultiValue;
+@property (nonatomic, readonly) bool isSingleValue;
 @property (nonatomic, readonly) Class labeledValueClass;
-@property (nonatomic, readonly) id /* block */ plistTransform;
+@property (nonatomic, readonly) id plistTransform;
 @property (nonatomic, readonly) NSArray *standardLabels;
 @property (nonatomic, readonly) Class valueClass;
 
@@ -23,14 +23,14 @@
 - (id)CNValueFromABValue:(void*)arg1;
 - (unsigned int)abPropertyType;
 - (void)assertValueType:(id)arg1;
-- (id /* block */)fromPlistTransform;
-- (BOOL)isEqualIgnoringIdentifiersForContact:(id)arg1 other:(id)arg2;
-- (BOOL)isMultiValue;
-- (BOOL)isSingleValue;
-- (BOOL)isValidMultiValueValue:(id)arg1 error:(id*)arg2;
-- (BOOL)isValidValue:(id)arg1 error:(id*)arg2;
+- (id)fromPlistTransform;
+- (bool)isEqualIgnoringIdentifiersForContact:(id)arg1 other:(id)arg2;
+- (bool)isMultiValue;
+- (bool)isSingleValue;
+- (bool)isValidMultiValueValue:(id)arg1 error:(id*)arg2;
+- (bool)isValidValue:(id)arg1 error:(id*)arg2;
 - (Class)labeledValueClass;
-- (id /* block */)plistTransform;
+- (id)plistTransform;
 - (id)standardLabels;
 - (id)stringForIndexingForContact:(id)arg1;
 - (Class)valueClass;

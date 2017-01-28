@@ -9,22 +9,22 @@
 + (id)collection;
 + (id)collectionWithObject:(id)arg1;
 
-- (unsigned int)addObject:(id)arg1;
-- (unsigned int)addOrEquivalentObject:(id)arg1;
+- (unsigned long long)addObject:(id)arg1;
+- (unsigned long long)addOrEquivalentObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (unsigned int)indexOfObject:(id)arg1;
+- (unsigned long long)hash;
+- (unsigned long long)indexOfObject:(id)arg1;
 - (id)init;
 - (id)initWithObject:(id)arg1;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToCollection:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToCollection:(id)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (void)removeAllObjects;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 
 @end

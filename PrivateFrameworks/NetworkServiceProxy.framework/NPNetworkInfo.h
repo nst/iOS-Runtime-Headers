@@ -12,10 +12,10 @@
 @property (retain) NSDate *lastVisited;
 @property (readonly) NSString *lastVisitedDesc;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)compareLastVisited:(id)arg1;
+- (long long)compareLastVisited:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

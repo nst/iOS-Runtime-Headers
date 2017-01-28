@@ -11,7 +11,7 @@
     NSNumber * _currentFontSize;
     id  _currentStyle;
     AKFontChooserUIItemDelegate * _fontUIItemDelegate;
-    int  _lastActionID;
+    long long  _lastActionID;
     id  _lastActionValue;
     AKFontListController * _presetFontController;
     UITableViewCell * _sizeTableCell;
@@ -28,8 +28,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) AKFontChooserUIItemDelegate *fontUIItemDelegate;
-@property (readonly) unsigned int hash;
-@property int lastActionID;
+@property (readonly) unsigned long long hash;
+@property long long lastActionID;
 @property (retain) id lastActionValue;
 @property (nonatomic, retain) AKFontListController *presetFontController;
 @property (nonatomic, retain) UITableViewCell *sizeTableCell;
@@ -59,9 +59,9 @@
 - (void)didSelectFont:(id)arg1;
 - (id)fontUIItemDelegate;
 - (id)initWithController:(id)arg1;
-- (int)lastActionID;
+- (long long)lastActionID;
 - (id)lastActionValue;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)presetFontController;
 - (void)setAlignmentTableCell:(id)arg1;
 - (void)setController:(id)arg1;
@@ -71,7 +71,7 @@
 - (void)setCurrentFontSize:(id)arg1;
 - (void)setCurrentStyle:(id)arg1;
 - (void)setFontUIItemDelegate:(id)arg1;
-- (void)setLastActionID:(int)arg1;
+- (void)setLastActionID:(long long)arg1;
 - (void)setLastActionValue:(id)arg1;
 - (void)setPresetFontController:(id)arg1;
 - (void)setSizeTableCell:(id)arg1;
@@ -81,11 +81,11 @@
 - (void)syncTextAttributesToUI:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (id)textAttributesUIItemDelegate;
-- (BOOL)validateUserInterfaceItems;
+- (bool)validateUserInterfaceItems;
 - (void)viewDidLoad;
 
 @end

@@ -13,26 +13,26 @@
 @property (nonatomic, retain) UIColor *titleColor;
 
 - (void).cxx_destruct;
-- (float)HUDPageControlBottomMargin;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })HUDViewInsets;
-- (float)columnDividerHeightForHUDHeight:(float)arg1;
-- (float)columnDividerWidth;
+- (double)HUDPageControlBottomMargin;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })HUDViewInsets;
+- (double)columnDividerHeightForHUDHeight:(double)arg1;
+- (double)columnDividerWidth;
 - (id)dividerColor;
 - (id)init;
 - (id)inputColor;
-- (float)maxHUDHeightForHeight:(float)arg1;
-- (float)maxHUDWidthForWidth:(float)arg1;
-- (float)minimumFontScaleBeforeTruncation;
+- (double)maxHUDHeightForHeight:(double)arg1;
+- (double)maxHUDWidthForWidth:(double)arg1;
+- (double)minimumFontScaleBeforeTruncation;
 - (void)setDividerColor:(id)arg1;
 - (void)setInputColor:(id)arg1;
 - (void)setTitleColor:(id)arg1;
-- (float)summaryDescriptionToModifiersSpacing;
+- (double)summaryDescriptionToModifiersSpacing;
 - (id)summaryFont;
-- (float)summaryLineHeight;
-- (float)summaryLineSpacing;
-- (float)summaryModifiersSpacing;
-- (float)summaryXPadding;
-- (float)summaryYPadding;
+- (double)summaryLineHeight;
+- (double)summaryLineSpacing;
+- (double)summaryModifiersSpacing;
+- (double)summaryXPadding;
+- (double)summaryYPadding;
 - (id)titleColor;
 
 @end

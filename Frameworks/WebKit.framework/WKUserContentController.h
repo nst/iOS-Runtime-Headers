@@ -5,7 +5,7 @@
 @interface WKUserContentController : NSObject <NSCoding, WKObject> {
     struct ObjectStorage<WebKit::WebUserContentControllerProxy> { 
         struct type { 
-            unsigned char __lx[108]; 
+            unsigned char __lx[144]; 
         } data; 
     }  _userContentControllerProxy;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic, readonly, copy) NSArray *_userStyleSheets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSArray *userScripts;
 

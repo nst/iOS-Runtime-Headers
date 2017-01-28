@@ -15,10 +15,10 @@
 }
 
 @property (nonatomic) int expertType;
-@property (nonatomic) BOOL hasExpertType;
-@property (nonatomic) BOOL hasModelType;
-@property (nonatomic, readonly) BOOL hasSuggestionId;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasExpertType;
+@property (nonatomic) bool hasModelType;
+@property (nonatomic, readonly) bool hasSuggestionId;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int modelType;
 @property (nonatomic, retain) NSString *suggestionId;
 @property (nonatomic) unsigned long long timestamp;
@@ -29,19 +29,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)expertType;
-- (BOOL)hasExpertType;
-- (BOOL)hasModelType;
-- (BOOL)hasSuggestionId;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasExpertType;
+- (bool)hasModelType;
+- (bool)hasSuggestionId;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)modelType;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExpertType:(int)arg1;
-- (void)setHasExpertType:(BOOL)arg1;
-- (void)setHasModelType:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasExpertType:(bool)arg1;
+- (void)setHasModelType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setModelType:(int)arg1;
 - (void)setSuggestionId:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

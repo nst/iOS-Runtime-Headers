@@ -8,8 +8,8 @@
 - (void)dateFieldDateDidChange:(ABDateField *)arg1;
 - (void)dateFieldDidBeginEditing:(ABDateField *)arg1;
 - (void)dateFieldDidEndEditing:(ABDateField *)arg1;
-- (BOOL)dateFieldShouldBeginEditing:(ABDateField *)arg1;
-- (BOOL)dateFieldShouldClear:(ABDateField *)arg1;
-- (BOOL)dateFieldShouldEndEditing:(ABDateField *)arg1;
+- (bool)dateFieldShouldBeginEditing:(ABDateField *)arg1;
+- (bool)dateFieldShouldClear:(ABDateField *)arg1;
+- (bool)dateFieldShouldEndEditing:(ABDateField *)arg1;
 
 @end

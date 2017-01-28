@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) long long downloadHandlerIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedController;
@@ -29,16 +29,16 @@
 - (void)_endDownloadObservationForDownload:(id)arg1;
 - (void)_endPrioritizingDownload:(id)arg1;
 - (void)_endPrioritizingDownloadSession:(id)arg1;
-- (void)_getDownloadPropertiesForStoreDownload:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)_getDownloadTokenForStoreDownload:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_getDownloadPropertiesForStoreDownload:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)_getDownloadTokenForStoreDownload:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)_handleDownloadPrioritization;
-- (BOOL)_isStoreDownloadValidForPlayWhileDownload:(id)arg1;
+- (bool)_isStoreDownloadValidForPlayWhileDownload:(id)arg1;
 - (void)_postActiveSessionsDidFinishForStoreDownload:(id)arg1;
-- (void)_suspendUntilValidDownloadStateForStoreDownload:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_suspendUntilValidDownloadStateForStoreDownload:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)_updateActiveSessionsForDownload:(id)arg1;
 - (void)_updateForDownloadStateRefreshWithDownload:(id)arg1;
 - (void)_updateForDownloadTokenRefreshWithDownload:(id)arg1;
-- (void)acquirePlayWhileDownloadSessionForDownload:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)acquirePlayWhileDownloadSessionForDownload:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)beginPrioritizingDownloadSession:(id)arg1;
 - (void)dealloc;
 - (void)downloadHandler:(id)arg1 cancelSession:(id)arg2;

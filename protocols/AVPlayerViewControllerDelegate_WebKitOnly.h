@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)playerViewController:(AVPlayerViewController *)arg1 shouldExitFullScreenWithReason:(int)arg2;
+- (bool)playerViewController:(AVPlayerViewController *)arg1 shouldExitFullScreenWithReason:(long long)arg2;
 
 @end

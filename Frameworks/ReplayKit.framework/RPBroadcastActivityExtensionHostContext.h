@@ -12,10 +12,10 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(BOOL)arg4;
+- (oneway void)extensionDidFinishWithLaunchURL:(id)arg1 broadcastURL:(id)arg2 extensionBundleID:(id)arg3 cancelled:(bool)arg4;
 - (id)extensionObjectProxy;
 - (id)hostViewController;
-- (oneway void)presentationInfoWithCompletion:(id /* block */)arg1;
+- (oneway void)presentationInfoWithCompletion:(id)arg1;
 - (void)setHostViewController:(id)arg1;
 
 @end

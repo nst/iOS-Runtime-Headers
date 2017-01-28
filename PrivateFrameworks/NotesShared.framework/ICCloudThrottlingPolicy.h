@@ -3,8 +3,8 @@
  */
 
 @interface ICCloudThrottlingPolicy : NSObject {
-    unsigned int  _currentBatchCount;
-    unsigned int  _currentLevelIndex;
+    unsigned long long  _currentBatchCount;
+    unsigned long long  _currentLevelIndex;
     NSTimer * _policyResetTimer;
     NSDate * _policyStartDate;
     double  _resetInterval;
@@ -12,9 +12,9 @@
 }
 
 @property (nonatomic, readonly) double batchInterval;
-@property (nonatomic) unsigned int currentBatchCount;
+@property (nonatomic) unsigned long long currentBatchCount;
 @property (nonatomic, readonly) ICCloudThrottlingLevel *currentLevel;
-@property (nonatomic) unsigned int currentLevelIndex;
+@property (nonatomic) unsigned long long currentLevelIndex;
 @property (retain) NSTimer *policyResetTimer;
 @property (retain) NSDate *policyStartDate;
 @property double resetInterval;
@@ -25,9 +25,9 @@
 - (void).cxx_destruct;
 - (double)batchInterval;
 - (void)changeLevelIfNecessary;
-- (unsigned int)currentBatchCount;
+- (unsigned long long)currentBatchCount;
 - (id)currentLevel;
-- (unsigned int)currentLevelIndex;
+- (unsigned long long)currentLevelIndex;
 - (void)dealloc;
 - (void)incrementBatchCount;
 - (id)init;
@@ -38,8 +38,8 @@
 - (double)resetInterval;
 - (void)resetPolicy;
 - (void)savePolicyState;
-- (void)setCurrentBatchCount:(unsigned int)arg1;
-- (void)setCurrentLevelIndex:(unsigned int)arg1;
+- (void)setCurrentBatchCount:(unsigned long long)arg1;
+- (void)setCurrentLevelIndex:(unsigned long long)arg1;
 - (void)setPolicyResetTimer:(id)arg1;
 - (void)setPolicyStartDate:(id)arg1;
 - (void)setResetInterval:(double)arg1;

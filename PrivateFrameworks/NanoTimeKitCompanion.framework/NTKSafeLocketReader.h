@@ -5,23 +5,23 @@
 @interface NTKSafeLocketReader : NSObject {
     NSString * _defaultPhotoPath;
     <NTKSafeLocketReaderDelegate> * _delegate;
-    BOOL  _isPhotoLibraryAvailable;
+    bool  _isPhotoLibraryAvailable;
     NPTOLocket * _locket;
 }
 
 @property (nonatomic) <NTKSafeLocketReaderDelegate> *delegate;
-@property (nonatomic, readonly) BOOL firstUnlockHasOccurred;
-@property (nonatomic, readonly) unsigned int numberOfLoadedPhotos;
-@property (nonatomic, readonly) unsigned int numberOfTotalPhotos;
+@property (nonatomic, readonly) bool firstUnlockHasOccurred;
+@property (nonatomic, readonly) unsigned long long numberOfLoadedPhotos;
+@property (nonatomic, readonly) unsigned long long numberOfTotalPhotos;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (BOOL)firstUnlockHasOccurred;
-- (unsigned int)indexOfPhotoWithIdentifier:(id)arg1;
+- (bool)firstUnlockHasOccurred;
+- (unsigned long long)indexOfPhotoWithIdentifier:(id)arg1;
 - (id)initWithDefaultPhotoPath:(id)arg1;
-- (void)loadPhotoAtIndex:(unsigned int)arg1 handler:(id /* block */)arg2;
-- (unsigned int)numberOfLoadedPhotos;
-- (unsigned int)numberOfTotalPhotos;
+- (void)loadPhotoAtIndex:(unsigned long long)arg1 handler:(id)arg2;
+- (unsigned long long)numberOfLoadedPhotos;
+- (unsigned long long)numberOfTotalPhotos;
 - (void)setDelegate:(id)arg1;
 
 @end

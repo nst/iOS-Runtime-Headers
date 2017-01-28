@@ -3,9 +3,9 @@
  */
 
 @interface PLImageWriter : NSObject <PLPhotoBakedThumbnailsDelegate> {
-    BOOL  _databaseIsCorrupt;
+    bool  _databaseIsCorrupt;
     NSMutableArray * _highPriorityJobs;
-    unsigned int  _highPrioritySequentialJobCount;
+    unsigned long long  _highPrioritySequentialJobCount;
     NSMutableDictionary * _inProgressAvalancheFds;
     int  _jobQueueAvailabilityToken;
     NSRecursiveLock * _jobsLock;
@@ -14,56 +14,56 @@
     NSCountedSet * _unfinishedHighPriorityJobs;
     int  _unfinishedJobCount;
     NSCountedSet * _unfinishedLowPriorityJobs;
-    BOOL  _writerThreadRunning;
+    bool  _writerThreadRunning;
 }
 
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
-+ (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(id)arg5;
-+ (BOOL)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 filteredImagePath:(id)arg3 isSubstandardRender:(BOOL)arg4;
++ (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 size:(struct CGSize { double x1; double x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(id)arg5;
++ (bool)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 filteredImagePath:(id)arg3 isSubstandardRender:(bool)arg4;
 + (id)sharedWriter;
 
 - (void)_decorateThumbnail:(id)arg1;
 - (void)_decrementJobCount:(id)arg1;
-- (void)_enablePhotoStreamJob:(id)arg1 completion:(id /* block */)arg2;
+- (void)_enablePhotoStreamJob:(id)arg1 completion:(id)arg2;
 - (id)_fetchPhotoAssetForMediaGroupUUID:(id)arg1 moc:(id)arg2;
 - (id)_fetchPhotoAssetForUUID:(id)arg1 moc:(id)arg2;
 - (void)_handleAvalancheCrashRecovery:(id)arg1;
 - (void)_handlePhotoIrisCrashRecoveryForPhotoIndicatorFiles:(id)arg1;
 - (void)_handlePhotoIrisCrashRecoveryForVideos:(id)arg1;
 - (void)_incrementJobCount:(id)arg1;
-- (BOOL)_isHighPriorityJob:(id)arg1;
-- (void)_photoIrisPairingDidSucceed:(BOOL)arg1 fileIndicatorPath:(id)arg2 photoAsset:(id)arg3 photoLibrary:(id)arg4;
-- (void)_postJobQueueNotificationIsAvailable:(BOOL)arg1;
-- (void)_processAutodeleteEmptyAlbumJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processAvalancheJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processAvalanchesValidationJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processBatchImageJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processCrashRecoveryJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processDaemonJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1 withReason:(id)arg2 completion:(id /* block */)arg3;
-- (void)_processDeletePhotoStreamDataJob:(id)arg1 withReason:(id)arg2 completion:(id /* block */)arg3;
-- (void)_processImageJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processImportImageJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processIngestedSyncedAssetJob:(id)arg1 completion:(id /* block */)arg2;
+- (bool)_isHighPriorityJob:(id)arg1;
+- (void)_photoIrisPairingDidSucceed:(bool)arg1 fileIndicatorPath:(id)arg2 photoAsset:(id)arg3 photoLibrary:(id)arg4;
+- (void)_postJobQueueNotificationIsAvailable:(bool)arg1;
+- (void)_processAutodeleteEmptyAlbumJob:(id)arg1 completion:(id)arg2;
+- (void)_processAvalancheJob:(id)arg1 completion:(id)arg2;
+- (void)_processAvalanchesValidationJob:(id)arg1 completion:(id)arg2;
+- (void)_processBatchImageJob:(id)arg1 completion:(id)arg2;
+- (void)_processCrashRecoveryJob:(id)arg1 completion:(id)arg2;
+- (void)_processDaemonJob:(id)arg1 completion:(id)arg2;
+- (void)_processDeletePhotoStreamAssetsWithUUIDs:(id)arg1 withReason:(id)arg2 completion:(id)arg3;
+- (void)_processDeletePhotoStreamDataJob:(id)arg1 withReason:(id)arg2 completion:(id)arg3;
+- (void)_processImageJob:(id)arg1 completion:(id)arg2;
+- (void)_processImportImageJob:(id)arg1 completion:(id)arg2;
+- (void)_processIngestedSyncedAssetJob:(id)arg1 completion:(id)arg2;
 - (void)_processJob:(id)arg1;
-- (void)_processReenqueueAssetUUIDsToPhotoStreamJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processSavePhotoStreamImageToCameraRollJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processSyncedVideoSaveJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processVideoJob:(id)arg1 completion:(id /* block */)arg2;
-- (void)_processVideoSaveJob:(id)arg1 completion:(id /* block */)arg2;
+- (void)_processReenqueueAssetUUIDsToPhotoStreamJob:(id)arg1 completion:(id)arg2;
+- (void)_processSavePhotoStreamImageToCameraRollJob:(id)arg1 completion:(id)arg2;
+- (void)_processSyncedVideoSaveJob:(id)arg1 completion:(id)arg2;
+- (void)_processVideoJob:(id)arg1 completion:(id)arg2;
+- (void)_processVideoSaveJob:(id)arg1 completion:(id)arg2;
 - (void)_removeInProgressExtendedAttributesForFileAtURL:(id)arg1;
 - (void)_removeTransientKeys:(id)arg1;
 - (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2;
-- (BOOL)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(BOOL*)arg3 error:(id*)arg4;
+- (bool)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(bool*)arg3 error:(id*)arg4;
 - (void)_writerThread;
 - (id)cameraAssetPathForNewAssetWithExtension:(id)arg1;
-- (BOOL)canEnqueueJob:(id)arg1;
+- (bool)canEnqueueJob:(id)arg1;
 - (void)dealloc;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (BOOL)enqueueJob:(id)arg1;
+- (bool)enqueueJob:(id)arg1;
 - (id)init;
 - (id)pathForNewAssetPathAtAlbumDirectoryPath:(id)arg1 assetType:(unsigned int)arg2 extension:(id)arg3;
-- (void)setAvalancheInProgress:(BOOL)arg1 uuid:(id)arg2;
+- (void)setAvalancheInProgress:(bool)arg1 uuid:(id)arg2;
 - (id)uuidFromIncomingFilename:(id)arg1;
 
 @end

@@ -4,13 +4,13 @@
 
 @interface NSAutoLocale : NSLocale {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     NSLocale * loc;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_init;
 - (unsigned char)_nullLocale;

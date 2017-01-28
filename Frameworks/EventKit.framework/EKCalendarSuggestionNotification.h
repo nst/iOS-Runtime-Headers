@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (Class)_SGSuggestionsServiceClass;
-- (BOOL)hiddenFromNotificationCenter;
+- (bool)hiddenFromNotificationCenter;
 - (id)suggestedEvent;
 - (void)updateSuggestedEventWithEventStore:(id)arg1;
 

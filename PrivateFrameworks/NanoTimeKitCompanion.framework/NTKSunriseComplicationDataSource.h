@@ -11,43 +11,43 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, retain) NSString *locationName;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *token;
 
-+ (BOOL)acceptsComplicationFamily:(int)arg1;
-+ (BOOL)acceptsComplicationType:(unsigned int)arg1;
++ (bool)acceptsComplicationFamily:(long long)arg1;
++ (bool)acceptsComplicationType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (id)_animationGroupForDate:(id)arg1 showingSunrise:(BOOL)arg2 constantSun:(int)arg3;
-- (id)_animationGroupForDate:(id)arg1 showingSunrise:(BOOL)arg2 constantSun:(int)arg3 haveLocation:(BOOL)arg4;
+- (id)_animationGroupForDate:(id)arg1 showingSunrise:(bool)arg2 constantSun:(long long)arg3;
+- (id)_animationGroupForDate:(id)arg1 showingSunrise:(bool)arg2 constantSun:(long long)arg3 haveLocation:(bool)arg4;
 - (id)_animationGroupForNoLocation;
-- (id)_currentEntry:(BOOL)arg1;
+- (id)_currentEntry:(bool)arg1;
 - (id)_entryModelsForDate:(id)arg1 nextEvaluationDate:(id*)arg2;
 - (void)_invalidate;
-- (BOOL)_needCurrentEventEntry;
+- (bool)_needCurrentEventEntry;
 - (void)_startObserving;
 - (void)_stopObserving;
 - (id)_timelineEntryFromModel:(id)arg1;
 - (id)currentSwitcherTemplate;
 - (void)dealloc;
-- (void)getCurrentTimelineEntryWithHandler:(id /* block */)arg1;
-- (void)getSupportedTimeTravelDirectionsWithHandler:(id /* block */)arg1;
-- (void)getTimelineEndDateWithHandler:(id /* block */)arg1;
-- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(id /* block */)arg3;
-- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(id /* block */)arg3;
-- (void)getTimelineStartDateWithHandler:(id /* block */)arg1;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (void)getCurrentTimelineEntryWithHandler:(id)arg1;
+- (void)getSupportedTimeTravelDirectionsWithHandler:(id)arg1;
+- (void)getTimelineEndDateWithHandler:(id)arg1;
+- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned long long)arg2 withHandler:(id)arg3;
+- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned long long)arg2 withHandler:(id)arg3;
+- (void)getTimelineStartDateWithHandler:(id)arg1;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2;
 - (id)loadEntryModelsForDay:(id)arg1;
 - (id)location;
 - (id)locationName;
 - (void)setLocation:(id)arg1;
 - (void)setLocationName:(id)arg1;
 - (void)setToken:(struct NSNumber { Class x1; }*)arg1;
-- (BOOL)supportsTapAction;
-- (unsigned int)timelineAnimationBehavior;
+- (bool)supportsTapAction;
+- (unsigned long long)timelineAnimationBehavior;
 - (struct NSNumber { Class x1; }*)token;
 
 @end

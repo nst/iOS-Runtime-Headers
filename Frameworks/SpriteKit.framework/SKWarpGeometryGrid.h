@@ -11,31 +11,31 @@
 }
 
 @property (nonatomic, readonly) const /* Warning: Unrecognized filer type: '' using 'void*' */ void**destPositions;
-@property (nonatomic, readonly) int numberOfColumns;
-@property (nonatomic, readonly) int numberOfRows;
+@property (nonatomic, readonly) long long numberOfColumns;
+@property (nonatomic, readonly) long long numberOfRows;
 @property (nonatomic, readonly) const /* Warning: Unrecognized filer type: '' using 'void*' */ void**sourcePositions;
-@property (nonatomic, readonly) int vertexCount;
+@property (nonatomic, readonly) long long vertexCount;
 
 + (id)grid;
-+ (id)gridWithColumns:(int)arg1 rows:(int)arg2;
-+ (id)gridWithColumns:(int)arg1 rows:(int)arg2 sourcePositions:(const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg3 destPositions:(const /* Warning: Unrecognized filer type: '2' using 'void*' */ void**)arg4;
++ (id)gridWithColumns:(long long)arg1 rows:(long long)arg2;
++ (id)gridWithColumns:(long long)arg1 rows:(long long)arg2 sourcePositions:(const /* Warning: Unrecognized filer type: '3' using 'void*' */ void**)arg3 destPositions:(const /* Warning: Unrecognized filer type: '4' using 'void*' */ void**)arg4;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)destPositionAtIndex:(int)arg1;
-- (const /* Warning: Unrecognized filer type: '8' using 'void*' */ void**)destPositions;
+- (void)destPositionAtIndex:(long long)arg1;
+- (const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)destPositions;
 - (void)encodeWithCoder:(id)arg1;
-- (id)gridByReplacingDestPositions:(const /* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1;
-- (id)gridByReplacingSourcePositions:(const /* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1;
+- (id)gridByReplacingDestPositions:(const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1;
+- (id)gridByReplacingSourcePositions:(const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithColumns:(int)arg1 rows:(int)arg2 sourcePositions:(const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg3 destPositions:(const /* Warning: Unrecognized filer type: '2' using 'void*' */ void**)arg4;
-- (BOOL)isIdentityWarp;
-- (int)numberOfColumns;
-- (int)numberOfRows;
-- (void)sourcePositionAtIndex:(int)arg1;
-- (const /* Warning: Unrecognized filer type: '8' using 'void*' */ void**)sourcePositions;
-- (int)vertexCount;
+- (id)initWithColumns:(long long)arg1 rows:(long long)arg2 sourcePositions:(const /* Warning: Unrecognized filer type: '3' using 'void*' */ void**)arg3 destPositions:(const /* Warning: Unrecognized filer type: '4' using 'void*' */ void**)arg4;
+- (bool)isIdentityWarp;
+- (long long)numberOfColumns;
+- (long long)numberOfRows;
+- (void)sourcePositionAtIndex:(long long)arg1;
+- (const /* Warning: Unrecognized filer type: '1' using 'void*' */ void**)sourcePositions;
+- (long long)vertexCount;
 
 @end

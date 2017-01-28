@@ -6,8 +6,8 @@
 @required
 
 - (NSArray *)allowedItemIdentifiers;
-- (unsigned int)filteringOptions;
-- (BOOL)isMultiQuery;
+- (unsigned long long)filteringOptions;
+- (bool)isMultiQuery;
 - (MPMediaLibrary *)mediaLibrary;
 - (NSArray *)scopedContainers;
 

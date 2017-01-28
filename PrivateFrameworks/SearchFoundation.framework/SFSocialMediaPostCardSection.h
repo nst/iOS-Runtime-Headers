@@ -7,7 +7,7 @@
     NSString * _handle;
     NSString * _name;
     NSNumber * _nameMaxLines;
-    BOOL  _nameNoWrap;
+    bool  _nameNoWrap;
     SFImage * _picture;
     SFRichText * _post;
     SFImage * _profilePicture;
@@ -19,14 +19,14 @@
 @property (nonatomic, copy) NSString *handle;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSNumber *nameMaxLines;
-@property (nonatomic) BOOL nameNoWrap;
+@property (nonatomic) bool nameNoWrap;
 @property (nonatomic, retain) SFImage *picture;
 @property (nonatomic, retain) SFRichText *post;
 @property (nonatomic, retain) SFImage *profilePicture;
 @property (nonatomic, copy) NSString *timestamp;
 @property (nonatomic, retain) SFImage *verifiedGlyph;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -35,7 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)name;
 - (id)nameMaxLines;
-- (BOOL)nameNoWrap;
+- (bool)nameNoWrap;
 - (id)picture;
 - (id)post;
 - (id)profilePicture;
@@ -43,7 +43,7 @@
 - (void)setHandle:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameMaxLines:(id)arg1;
-- (void)setNameNoWrap:(BOOL)arg1;
+- (void)setNameNoWrap:(bool)arg1;
 - (void)setPicture:(id)arg1;
 - (void)setPost:(id)arg1;
 - (void)setProfilePicture:(id)arg1;

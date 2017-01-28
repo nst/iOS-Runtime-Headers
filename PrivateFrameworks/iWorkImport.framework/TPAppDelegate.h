@@ -3,8 +3,8 @@
  */
 
 @interface TPAppDelegate : TSABaseApplicationDelegate {
-    BOOL  _appDoneLaunching;
-    BOOL  _cachedBidiIsSupported;
+    bool  _appDoneLaunching;
+    bool  _cachedBidiIsSupported;
 }
 
 @property (nonatomic, readonly) NSArray *wordDocumentTypes;
@@ -53,13 +53,13 @@
 - (id)stringForStopSharingAlertConfirmationMessage;
 - (id)stringForStopSharingAlertConfirmationTitle;
 - (id)stringForUpdatingDocument;
-- (BOOL)supportsRTL;
-- (BOOL)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
+- (bool)supportsRTL;
+- (bool)tableHeaderInspectorShowsRepeatHeaderRowsSwitch;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;
 - (id)templateTypeDisplayName;
-- (BOOL)textInspectorShowsMoreSubpane;
+- (bool)textInspectorShowsMoreSubpane;
 - (id)universalPreviewImageNameForDocumentType:(id)arg1;
 - (id)wordDocumentTypes;
 

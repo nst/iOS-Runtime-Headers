@@ -4,7 +4,7 @@
 
 @interface OITSUObjectSnapshot : NSObject {
     NSArray * mCompared;
-    unsigned long  mEntryCount;
+    unsigned long long  mEntryCount;
     void ** mSnapshot;
 }
 

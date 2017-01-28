@@ -9,8 +9,8 @@
 - (UIColor *)overrideColor;
 - (void)setColor:(UIColor *)arg1;
 - (void)setOverrideColor:(UIColor *)arg1;
-- (void)setUsesLegibility:(BOOL)arg1;
-- (BOOL)usesLegibility;
+- (void)setUsesLegibility:(bool)arg1;
+- (bool)usesLegibility;
 
 @optional
 

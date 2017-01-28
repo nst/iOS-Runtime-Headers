@@ -3,7 +3,9 @@
  */
 
 @interface TSKernelClock : TSClock {
-    void * _kernelClockImpl;
+    unsigned int  _connection;
+    struct IONotificationPort { } * _notificationPort;
+    unsigned int  _service;
 }
 
 @property (nonatomic, readonly) unsigned int connection;
@@ -16,17 +18,17 @@
 - (void)_handleNotification:(unsigned int)arg1 withArg1:(unsigned long long)arg2 andArg2:(unsigned long long)arg3;
 - (id)clockName;
 - (unsigned int)connection;
-- (BOOL)convertFromDomainTime:(unsigned long long*)arg1 toMachAbsoluteTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (bool)convertFromDomainTime:(unsigned long long*)arg1 toMachAbsoluteTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
 - (unsigned long long)convertFromDomainToMachAbsoluteTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
-- (BOOL)convertFromMachAbsoluteTime:(unsigned long long*)arg1 toDomainTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
+- (bool)convertFromMachAbsoluteTime:(unsigned long long*)arg1 toDomainTime:(unsigned long long*)arg2 withCount:(unsigned int)arg3;
 - (unsigned long long)convertFromMachAbsoluteToDomainTime:(unsigned long long)arg1 withFlags:(unsigned int*)arg2;
 - (void)dealloc;
-- (BOOL)deregisterAsyncDCLCallback;
-- (BOOL)getRateRatioNumerator:(unsigned long long*)arg1 denominator:(unsigned long long*)arg2 machAnchor:(unsigned long long*)arg3 andDomainAnchor:(unsigned long long*)arg4 withError:(id*)arg5;
+- (bool)deregisterAsyncDCLCallback;
+- (bool)getRateRatioNumerator:(unsigned long long*)arg1 denominator:(unsigned long long*)arg2 machAnchor:(unsigned long long*)arg3 andDomainAnchor:(unsigned long long*)arg4 withError:(id*)arg5;
 - (double)hostRateRatio;
 - (id)initWithClockIdentifier:(unsigned long long)arg1;
 - (int)lockState;
-- (BOOL)registerAsyncCallback;
+- (bool)registerAsyncCallback;
 - (unsigned int)service;
 
 @end

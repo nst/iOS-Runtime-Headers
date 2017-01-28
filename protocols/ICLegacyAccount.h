@@ -13,6 +13,6 @@
 - (NSString *)name;
 - (NSManagedObjectID *)objectID;
 - (NSString *)objectIdentifier;
-- (BOOL)supportsAttachments;
+- (bool)supportsAttachments;
 
 @end

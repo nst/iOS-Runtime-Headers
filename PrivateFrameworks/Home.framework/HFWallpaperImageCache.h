@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)imageCache;
-- (id)imageForVariant:(int)arg1 wallpaper:(id)arg2 withOriginalImageGenerator:(id /* block */)arg3;
+- (id)imageForVariant:(long long)arg1 wallpaper:(id)arg2 withOriginalImageGenerator:(id)arg3;
 - (id)init;
 - (id)processedWallpaperSource;
 - (void)pruneUnusedWallpaperVariants:(id)arg1;

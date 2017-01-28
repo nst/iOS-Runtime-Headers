@@ -3,27 +3,27 @@
  */
 
 @interface SUNavigationController : UINavigationController <SUScriptNativeObject> {
-    BOOL  _canBeWeakScriptReference;
+    bool  _canBeWeakScriptReference;
     SUClientInterface * _clientInterface;
     SUSection * _section;
-    BOOL  _skLoading;
-    int  _storeBarStyle;
+    bool  _skLoading;
+    long long  _storeBarStyle;
 }
 
 @property (nonatomic, retain) SUClientInterface *clientInterface;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SUSection *section;
-@property (getter=isSkLoading, nonatomic) BOOL skLoading;
+@property (getter=isSkLoading, nonatomic) bool skLoading;
 @property (readonly) Class superclass;
 
-- (int)ITunesStoreUIBarStyle;
+- (long long)ITunesStoreUIBarStyle;
 - (void)_loadingDidChangeNotification:(id)arg1;
 - (id)_sectionForViewController:(id)arg1;
-- (void)_setStoreBarStyle:(int)arg1 clientInterface:(id)arg2;
+- (void)_setStoreBarStyle:(long long)arg1 clientInterface:(id)arg2;
 - (void)addChildViewController:(id)arg1;
-- (BOOL)clearsWeakScriptReferences;
+- (bool)clearsWeakScriptReferences;
 - (id)clientInterface;
 - (id)copyArchivableContext;
 - (id)copyScriptViewController;
@@ -33,7 +33,7 @@
 - (id)initWithRootViewController:(id)arg1;
 - (id)initWithSection:(id)arg1;
 - (id)initWithSection:(id)arg1 rootViewController:(id)arg2;
-- (BOOL)isSkLoading;
+- (bool)isSkLoading;
 - (void)loadView;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
@@ -43,13 +43,13 @@
 - (void)setClientInterface:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSection:(id)arg1;
-- (void)setSkLoading:(BOOL)arg1;
-- (void)setToolbarHidden:(BOOL)arg1;
-- (void)setToolbarHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSkLoading:(bool)arg1;
+- (void)setToolbarHidden:(bool)arg1;
+- (void)setToolbarHidden:(bool)arg1 animated:(bool)arg2;
 - (void)setViewControllers:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (bool)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(long long)arg2;
 
 @end

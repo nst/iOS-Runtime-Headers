@@ -3,8 +3,8 @@
  */
 
 @interface NCWidgetDataSourceManager : NSObject <NCWidgetVisibilityDelegate, _NCDataSourceManager> {
-    id /* block */  _didStartBlock;
-    BOOL  _isPublishing;
+    id  _didStartBlock;
+    bool  _isPublishing;
     <_NCParentDataSourceManager> * _parentDataSourceManager;
     id  _plugInDiscoveryToken;
     NCWidgetDataSource * _widgetDataSource;
@@ -14,14 +14,14 @@
 @property (nonatomic, readonly) NSArray *dataSources;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <_NCParentDataSourceManager> *parentDataSourceManager;
 @property (getter=_plugInDiscoveryToken, setter=_setPlugInDiscoveryToken:, nonatomic, retain) id plugInDiscoveryToken;
 @property (readonly) Class superclass;
 @property (getter=_widgetVisbilityManager, nonatomic, retain) NCWidgetVisibilityManager *widgetVisbilityManager;
 
 + (id)_widgetExtensionsDiscoveryAttributes;
-+ (void)availableWidgetsWithCompletion:(id /* block */)arg1;
++ (void)availableWidgetsWithCompletion:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_beginContinuousPlugInDiscovery;
@@ -29,9 +29,9 @@
 - (id)_plugInDiscoveryToken;
 - (void)_revokeExtensionWithIdentifier:(id)arg1;
 - (void)_setPlugInDiscoveryToken:(id)arg1;
-- (BOOL)_shouldPublishWidgetExtension:(id)arg1;
-- (void)_start:(id /* block */)arg1;
-- (void)_stop:(id /* block */)arg1;
+- (bool)_shouldPublishWidgetExtension:(id)arg1;
+- (void)_start:(id)arg1;
+- (void)_stop:(id)arg1;
 - (void)_updateDataSourceWithExtension:(id)arg1;
 - (void)_updatePublishedWidgetExtensions:(id)arg1;
 - (id)_widgetVisbilityManager;

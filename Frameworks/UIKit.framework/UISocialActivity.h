@@ -10,18 +10,18 @@
 @property (nonatomic, copy) NSString *builtinActivityType;
 @property (nonatomic, retain) SLComposeViewController *socialComposeViewController;
 
-+ (int)activityCategory;
++ (long long)activityCategory;
 
 - (void).cxx_destruct;
-- (BOOL)_canBeExcludedByActivityViewController:(id)arg1;
+- (bool)_canBeExcludedByActivityViewController:(id)arg1;
 - (void)_cleanup;
-- (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (struct CGSize { float x1; float x2; })_thumbnailSize;
+- (bool)_dismissActivityFromViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (bool)_presentActivityOnViewController:(id)arg1 animated:(bool)arg2 completion:(id)arg3;
+- (struct CGSize { double x1; double x2; })_thumbnailSize;
 - (id)activityType;
 - (id)activityViewController;
 - (id)builtinActivityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (id)debugDescription;
 - (id)initWithActivityType:(id)arg1;
 - (id)initWithApplicationExtension:(id)arg1;

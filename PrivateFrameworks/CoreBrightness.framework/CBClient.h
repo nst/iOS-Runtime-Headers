@@ -11,8 +11,8 @@
 @property (readonly) CBAdaptationClient *adaptationClient;
 @property (readonly) CBBlueLightClient *blueLightClient;
 
-+ (BOOL)supportsAdaptation;
-+ (BOOL)supportsBlueLightReduction;
++ (bool)supportsAdaptation;
++ (bool)supportsBlueLightReduction;
 
 - (id)adaptationClient;
 - (id)blueLightClient;

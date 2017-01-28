@@ -4,9 +4,9 @@
 
 @interface GKPlaceholderContentStateMachine : _GKStateMachine
 
-@property (nonatomic, readonly) BOOL isInPlaceholderState;
+@property (nonatomic, readonly) bool isInPlaceholderState;
 
 - (id)init;
-- (BOOL)isInPlaceholderState;
+- (bool)isInPlaceholderState;
 
 @end

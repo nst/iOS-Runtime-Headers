@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)_setDaemonProcessInfo:(id)arg1;
@@ -20,27 +20,27 @@
 
 - (void).cxx_destruct;
 - (id)_serviceConnection;
-- (void)attemptDatabaseFileRecoveryAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned int)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
-- (void)cancelImportOperation:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)attemptDatabaseFileRecoveryAtPath:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned long long)arg2 options:(unsigned long long)arg3 completionHandler:(id)arg4;
+- (void)cancelImportOperation:(unsigned long long)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
-- (void)endTransaction:(id)arg1 shouldCommit:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)executeQuery:(id)arg1 withParameters:(id)arg2 options:(id)arg3 onTransaction:(id)arg4 withCompletionHandler:(id /* block */)arg5;
-- (void)executeUpdate:(id)arg1 withParameters:(id)arg2 onTransaction:(id)arg3 withCompletionHandler:(id /* block */)arg4;
-- (void)getDeviceSharedLibraryPath:(id /* block */)arg1;
-- (void)getLanguageResourcesWithCompletion:(id /* block */)arg1;
+- (void)endTransaction:(id)arg1 shouldCommit:(bool)arg2 withCompletionHandler:(id)arg3;
+- (void)executeQuery:(id)arg1 withParameters:(id)arg2 options:(id)arg3 onTransaction:(id)arg4 withCompletionHandler:(id)arg5;
+- (void)executeUpdate:(id)arg1 withParameters:(id)arg2 onTransaction:(id)arg3 withCompletionHandler:(id)arg4;
+- (void)getDeviceSharedLibraryPath:(id)arg1;
+- (void)getLanguageResourcesWithCompletion:(id)arg1;
 - (void)importOperationWithIdentifier:(id)arg1 didUpdateWithProgress:(float)arg2;
 - (id)init;
-- (void)lockDatabaseForReason:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)performDatabaseOperation:(unsigned int)arg1 withAttributes:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)performImport:(id)arg1 fromSource:(unsigned int)arg2 withProgressBlock:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)lockDatabaseForReason:(id)arg1 withCompletion:(id)arg2;
+- (void)performDatabaseOperation:(unsigned long long)arg1 withAttributes:(id)arg2 options:(id)arg3 completionHandler:(id)arg4;
+- (void)performImport:(id)arg1 fromSource:(unsigned long long)arg2 withProgressBlock:(id)arg3 completionHandler:(id)arg4;
+- (void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)serviceTerminatedTransactionWithIdentifier:(id)arg1 error:(id)arg2;
-- (void)setDeviceSharedLibraryPath:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)setOptions:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)unlockDatabaseWithCompletion:(id /* block */)arg1;
-- (void)updateSpotlightIndexForBundleID:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)validateDatabaseAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setDeviceSharedLibraryPath:(id)arg1 withCompletion:(id)arg2;
+- (void)setOptions:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)unlockDatabaseWithCompletion:(id)arg1;
+- (void)updateSpotlightIndexForBundleID:(id)arg1 withCompletion:(id)arg2;
+- (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 withCompletion:(id)arg3;
+- (void)validateDatabaseAtPath:(id)arg1 withCompletionHandler:(id)arg2;
 
 @end

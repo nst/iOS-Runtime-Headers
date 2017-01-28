@@ -3,19 +3,19 @@
  */
 
 @interface TSWPListStylePropertyChangeSet : TSSStylePropertyChangeSet {
-    BOOL  _definedFontColor;
-    BOOL  _definedFontName;
-    BOOL  _definedListClassicTextIndentArray;
-    BOOL  _definedListLabelGeometryArray;
-    BOOL  _definedListLabelImageDataArray;
-    BOOL  _definedListLabelIndentArray;
-    BOOL  _definedListLabelNumberArray;
-    BOOL  _definedListLabelStringArray;
-    BOOL  _definedListLabelTieredNumberArray;
-    BOOL  _definedListLabelTypeArray;
-    BOOL  _definedListTextIndentArray;
-    BOOL  _definedTextShadow;
-    BOOL  _definedWritingDirection;
+    bool  _definedFontColor;
+    bool  _definedFontName;
+    bool  _definedListClassicTextIndentArray;
+    bool  _definedListLabelGeometryArray;
+    bool  _definedListLabelImageDataArray;
+    bool  _definedListLabelIndentArray;
+    bool  _definedListLabelNumberArray;
+    bool  _definedListLabelStringArray;
+    bool  _definedListLabelTieredNumberArray;
+    bool  _definedListLabelTypeArray;
+    bool  _definedListTextIndentArray;
+    bool  _definedTextShadow;
+    bool  _definedWritingDirection;
     TSSSpecColor * _fontColor;
     TSSSpecString * _fontName;
     TSWPSpecListStyleFloatArray * _listClassicTextIndentArray;
@@ -31,7 +31,7 @@
     TSSSpecInteger * _writingDirection;
 }
 
-- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setSpec:(id)arg1 forProperty:(int)arg2;
 - (void)setUnsetSpecForProperty:(int)arg1;

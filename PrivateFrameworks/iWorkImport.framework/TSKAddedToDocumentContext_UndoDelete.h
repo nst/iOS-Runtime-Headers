@@ -5,6 +5,6 @@
 @interface TSKAddedToDocumentContext_UndoDelete : TSKAddedToDocumentContext
 
 - (id)description;
-- (BOOL)wasUndoDelete;
+- (bool)wasUndoDelete;
 
 @end

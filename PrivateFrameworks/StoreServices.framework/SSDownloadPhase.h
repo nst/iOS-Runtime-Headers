@@ -9,11 +9,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) double estimatedSecondsRemaining;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) SSOperationProgress *operationProgress;
-@property (readonly) int phaseType;
+@property (readonly) long long phaseType;
 @property (readonly) float progressChangeRate;
-@property (readonly) int progressUnits;
+@property (readonly) long long progressUnits;
 @property (readonly) long long progressValue;
 @property (readonly) Class superclass;
 @property (readonly) long long totalProgressValue;
@@ -26,9 +26,9 @@
 - (id)initWithOperationProgress:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)operationProgress;
-- (int)phaseType;
+- (long long)phaseType;
 - (float)progressChangeRate;
-- (int)progressUnits;
+- (long long)progressUnits;
 - (long long)progressValue;
 - (long long)totalProgressValue;
 

@@ -7,7 +7,7 @@
 @property (nonatomic, retain) <SAClientBoundCommand> *command;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *name;
 @property (readonly) Class superclass;
 

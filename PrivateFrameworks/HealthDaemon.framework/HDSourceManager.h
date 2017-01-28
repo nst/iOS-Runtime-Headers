@@ -11,28 +11,28 @@
 }
 
 + (id)_applicationNameForBundleIdentifier:(id)arg1;
-+ (BOOL)_isLocalDeviceBundleIdentifier:(id)arg1;
++ (bool)_isLocalDeviceBundleIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addToSourceCache:(id)arg1;
 - (id)_authorizedSourcesForType:(id)arg1 error:(id*)arg2;
-- (id)_createSourceEntityForBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(BOOL)arg4 productType:(id)arg5 error:(id*)arg6;
+- (id)_createSourceEntityForBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(bool)arg4 productType:(id)arg5 error:(id*)arg6;
 - (id)_createSourceEntityForClientWithBundleIdentifier:(id)arg1 name:(id)arg2 entitlements:(id)arg3 error:(id*)arg4;
 - (id)_createSourceEntityForExternalHealthDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 error:(id*)arg4;
 - (id)_createSourceEntityForLocalDeviceWithError:(id*)arg1;
 - (id)_defaultSourceCacheItem;
 - (id)_defaultSourceOrdering:(id)arg1;
-- (BOOL)_deleteSourceWithEntity:(id)arg1 bundleIdentifier:(id)arg2 error:(id*)arg3;
+- (bool)_deleteSourceWithEntity:(id)arg1 bundleIdentifier:(id)arg2 error:(id*)arg3;
 - (id)_fetchClientSourceForPersistentID:(id)arg1 error:(id*)arg2;
-- (id)_getNameForBundleIdentifier:(id)arg1 isCurrentDevice:(BOOL)arg2;
+- (id)_getNameForBundleIdentifier:(id)arg1 isCurrentDevice:(bool)arg2;
 - (id)_loadAllSourceIDsForType:(id)arg1 error:(id*)arg2;
-- (id /* block */)_setNameModifyBlockWithName:(id)arg1;
+- (id)_setNameModifyBlockWithName:(id)arg1;
 - (id)_sourceCacheItemForObjectType:(id)arg1 error:(id*)arg2;
-- (id)_sourceCacheItemFromOrderedIDs:(id)arg1 userOrdered:(BOOL)arg2;
+- (id)_sourceCacheItemFromOrderedIDs:(id)arg1 userOrdered:(bool)arg2;
 - (id)_sourceCacheItemFromUnorderedIDs:(id)arg1;
-- (id)_sourceForBundleIdentifier:(id)arg1 createSourceBlock:(id /* block */)arg2 modifySourceBlock:(id /* block */)arg3 error:(id*)arg4;
-- (void)_updateOrderedSources:(id)arg1 sourceIDs:(id)arg2 forObjectType:(id)arg3 userOrdered:(BOOL)arg4 completion:(id /* block */)arg5;
-- (void)addOrderedSource:(id)arg1 forType:(id)arg2 completion:(id /* block */)arg3;
+- (id)_sourceForBundleIdentifier:(id)arg1 createSourceBlock:(id)arg2 modifySourceBlock:(id)arg3 error:(id*)arg4;
+- (void)_updateOrderedSources:(id)arg1 sourceIDs:(id)arg2 forObjectType:(id)arg3 userOrdered:(bool)arg4 completion:(id)arg5;
+- (void)addOrderedSource:(id)arg1 forType:(id)arg2 completion:(id)arg3;
 - (id)allSourcesByIDWithError:(id*)arg1;
 - (id)allWatchSourcesByIDWithError:(id*)arg1;
 - (id)clientSourceForBundleIdentifier:(id)arg1 error:(id*)arg2;
@@ -40,26 +40,26 @@
 - (id)clientSourceForSourceEntity:(id)arg1 error:(id*)arg2;
 - (id)clientSourceForUUID:(id)arg1 error:(id*)arg2;
 - (id)clientSourcesForSourceIDs:(id)arg1 error:(id*)arg2;
-- (BOOL)createSourceOrdersWithCodables:(id)arg1 syncStore:(id)arg2 error:(id*)arg3;
-- (BOOL)createSourcesWithCodables:(id)arg1 provenance:(long long)arg2 error:(id*)arg3;
-- (void)deleteSourceWithBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (bool)createSourceOrdersWithCodables:(id)arg1 syncStore:(id)arg2 error:(id*)arg3;
+- (bool)createSourcesWithCodables:(id)arg1 provenance:(long long)arg2 error:(id*)arg3;
+- (void)deleteSourceWithBundleIdentifier:(id)arg1 completion:(id)arg2;
 - (id)healthAppSourceWithError:(id*)arg1;
 - (id)init;
 - (id)initWithProfile:(id)arg1;
 - (id)localDeviceSourceWithError:(id*)arg1;
-- (id)orderedSourceIDsForObjectType:(id)arg1 userOrdered:(BOOL*)arg2 error:(id*)arg3;
+- (id)orderedSourceIDsForObjectType:(id)arg1 userOrdered:(bool*)arg2 error:(id*)arg3;
 - (id)orderedSourcesForObjectType:(id)arg1 error:(id*)arg2;
-- (void)removeOrderedSource:(id)arg1 forType:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)setLocalDeviceSourceUUID:(id)arg1 bundleIdentifier:(id)arg2 error:(id*)arg3;
+- (void)removeOrderedSource:(id)arg1 forType:(id)arg2 completion:(id)arg3;
+- (bool)setLocalDeviceSourceUUID:(id)arg1 bundleIdentifier:(id)arg2 error:(id*)arg3;
 - (id)setSourceName:(id)arg1 forBundleIdentifier:(id)arg2 error:(id*)arg3;
-- (id)sourceForAppleDeviceWithUUID:(id)arg1 identifier:(id)arg2 name:(id)arg3 productType:(id)arg4 createIfNecessary:(BOOL)arg5 error:(id*)arg6;
-- (id)sourceForApplicationIdentifier:(id)arg1 entitlements:(id)arg2 name:(id)arg3 createIfNecessary:(BOOL)arg4 error:(id*)arg5;
+- (id)sourceForAppleDeviceWithUUID:(id)arg1 identifier:(id)arg2 name:(id)arg3 productType:(id)arg4 createIfNecessary:(bool)arg5 error:(id*)arg6;
+- (id)sourceForApplicationIdentifier:(id)arg1 entitlements:(id)arg2 name:(id)arg3 createIfNecessary:(bool)arg4 error:(id*)arg5;
 - (id)sourceForBundleIdentifier:(id)arg1 error:(id*)arg2;
-- (id)sourceForClient:(id)arg1 createIfNecessary:(BOOL)arg2 error:(id*)arg3;
-- (id)sourceForCodableSource:(id)arg1 provenance:(long long)arg2 createIfNecessary:(BOOL)arg3 error:(id*)arg4;
-- (id)sourceForExternalHealthDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 createIfNecessary:(BOOL)arg4 error:(id*)arg5;
+- (id)sourceForClient:(id)arg1 createIfNecessary:(bool)arg2 error:(id*)arg3;
+- (id)sourceForCodableSource:(id)arg1 provenance:(long long)arg2 createIfNecessary:(bool)arg3 error:(id*)arg4;
+- (id)sourceForExternalHealthDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 createIfNecessary:(bool)arg4 error:(id*)arg5;
 - (id)sourceUUIDForBundleIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)updateCurrentDeviceNameInDatabase:(id)arg1 error:(id*)arg2;
-- (void)updateOrderedSources:(id)arg1 forObjectType:(id)arg2 completion:(id /* block */)arg3;
+- (bool)updateCurrentDeviceNameInDatabase:(id)arg1 error:(id*)arg2;
+- (void)updateOrderedSources:(id)arg1 forObjectType:(id)arg2 completion:(id)arg3;
 
 @end

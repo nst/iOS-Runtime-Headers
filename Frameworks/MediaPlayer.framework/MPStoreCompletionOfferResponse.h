@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithResponseDictionary:(id)arg1;
-- (id)mediaItemsWithStoreOfferVariant:(int)arg1;
+- (id)mediaItemsWithStoreOfferVariant:(long long)arg1;
 - (id)responseDictionary;
 
 @end

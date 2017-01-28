@@ -9,13 +9,13 @@
     NSLayoutConstraint * _minimumSize;
     NSLayoutConstraint * _requestedSize;
     UIView * _spacer;
-    int  _spacerType;
+    long long  _spacerType;
 }
 
-@property (nonatomic, readonly) int spacerType;
+@property (nonatomic, readonly) long long spacerType;
 
 + (id)spacerForLayoutMetrics:(id)arg1 betweenLayout:(id)arg2 andLayout:(id)arg3;
-+ (int)typeOfSpacerBetweenLayout:(id)arg1 andLayout:(id)arg2;
++ (long long)typeOfSpacerBetweenLayout:(id)arg1 andLayout:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_addConstraintsToActivate:(id)arg1 toDeactivate:(id)arg2;
@@ -26,7 +26,7 @@
 - (id)description;
 - (id)initWithLayoutMetrics:(id)arg1;
 - (id)initWithLayoutMetrics:(id)arg1 barButtonItem:(id)arg2;
-- (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
-- (int)spacerType;
+- (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
+- (long long)spacerType;
 
 @end

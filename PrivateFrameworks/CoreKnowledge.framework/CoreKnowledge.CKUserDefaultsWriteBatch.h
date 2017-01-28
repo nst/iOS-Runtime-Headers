@@ -4,6 +4,6 @@
 
 @interface CoreKnowledge.CKUserDefaultsWriteBatch : CoreKnowledge.CKAbstractWriteBatch <CoreKnowledge.CKKnowledgeStoreWriteBatch>
 
-- (BOOL)writeAndReturnError:(id*)arg1;
+- (bool)writeAndReturnError:(id*)arg1;
 
 @end

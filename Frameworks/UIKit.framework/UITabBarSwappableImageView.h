@@ -4,7 +4,7 @@
 
 @interface UITabBarSwappableImageView : UIImageView {
     UIImage * _alternate;
-    BOOL  _showAlternate;
+    bool  _showAlternate;
     UIImage * _value;
 }
 
@@ -13,6 +13,6 @@
 - (void)setAlternateImage:(id)arg1;
 - (void)setCurrentImage;
 - (void)setImage:(id)arg1;
-- (void)showAlternateImage:(BOOL)arg1;
+- (void)showAlternateImage:(bool)arg1;
 
 @end

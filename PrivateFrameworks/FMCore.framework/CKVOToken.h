@@ -3,22 +3,22 @@
  */
 
 @interface CKVOToken : NSObject {
-    id /* block */  _block;
-    int  _index;
+    id  _block;
+    long long  _index;
     NSString * _keypath;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ block;
+@property (nonatomic, readonly, copy) id block;
 @property (nonatomic, readonly) void*context;
-@property (nonatomic, readonly) int index;
+@property (nonatomic, readonly) long long index;
 @property (nonatomic, readonly, copy) NSString *keypath;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
+- (id)block;
 - (void*)context;
 - (id)description;
-- (int)index;
-- (id)initWithKeyPath:(id)arg1 index:(int)arg2 block:(id /* block */)arg3;
+- (long long)index;
+- (id)initWithKeyPath:(id)arg1 index:(long long)arg2 block:(id)arg3;
 - (id)keypath;
 
 @end

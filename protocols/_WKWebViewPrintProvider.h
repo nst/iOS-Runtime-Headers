@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)_wk_pageCountForPrintFormatter:(_WKWebViewPrintFormatter *)arg1;
+- (unsigned long long)_wk_pageCountForPrintFormatter:(_WKWebViewPrintFormatter *)arg1;
 - (struct CGPDFDocument { }*)_wk_printedDocument;
 
 @end

@@ -3,46 +3,46 @@
  */
 
 @interface PUPhotoEditResourceLoadRequest : NSObject <NSCopying> {
-    int  __resolvedVersion;
+    long long  __resolvedVersion;
     <PUPhotoEditResourceLoaderDelegate> * _delegate;
-    BOOL  _requireAdjustments;
-    BOOL  _requireLocalResources;
+    bool  _requireAdjustments;
+    bool  _requireLocalResources;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _targetSize;
-    int  _version;
+    long long  _version;
 }
 
-@property (setter=_setResolvedVersion:, nonatomic) int _resolvedVersion;
+@property (setter=_setResolvedVersion:, nonatomic) long long _resolvedVersion;
 @property (nonatomic) <PUPhotoEditResourceLoaderDelegate> *delegate;
-@property (nonatomic) BOOL requireAdjustments;
-@property (nonatomic) BOOL requireLocalResources;
-@property (nonatomic) struct CGSize { float x1; float x2; } targetSize;
-@property (nonatomic) int version;
+@property (nonatomic) bool requireAdjustments;
+@property (nonatomic) bool requireLocalResources;
+@property (nonatomic) struct CGSize { double x1; double x2; } targetSize;
+@property (nonatomic) long long version;
 
 - (void).cxx_destruct;
 - (id)_adjustmentsRequestOptions;
 - (void)_assertWorkVersionResolved;
 - (id)_imageRequestOptions;
-- (int)_imageRequestVersion;
-- (BOOL)_isWorkVersionResolved;
-- (BOOL)_needsLoadAdjustments;
+- (long long)_imageRequestVersion;
+- (bool)_isWorkVersionResolved;
+- (bool)_needsLoadAdjustments;
 - (void)_resolveVersionIfNeededWithAdjustmentsResult:(id)arg1;
-- (int)_resolvedVersion;
-- (void)_setResolvedVersion:(int)arg1;
+- (long long)_resolvedVersion;
+- (void)_setResolvedVersion:(long long)arg1;
 - (id)_videoRequestOptions;
-- (int)_videoRequestVersion;
+- (long long)_videoRequestVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
-- (BOOL)requireAdjustments;
-- (BOOL)requireLocalResources;
+- (bool)requireAdjustments;
+- (bool)requireLocalResources;
 - (void)setDelegate:(id)arg1;
-- (void)setRequireAdjustments:(BOOL)arg1;
-- (void)setRequireLocalResources:(BOOL)arg1;
-- (void)setTargetSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setVersion:(int)arg1;
-- (struct CGSize { float x1; float x2; })targetSize;
-- (int)version;
+- (void)setRequireAdjustments:(bool)arg1;
+- (void)setRequireLocalResources:(bool)arg1;
+- (void)setTargetSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setVersion:(long long)arg1;
+- (struct CGSize { double x1; double x2; })targetSize;
+- (long long)version;
 
 @end

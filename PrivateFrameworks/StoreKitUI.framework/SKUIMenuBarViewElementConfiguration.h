@@ -5,47 +5,47 @@
 @interface SKUIMenuBarViewElementConfiguration : NSObject <IKAppMenuBarDocumentDelegate> {
     <SKUIMenuBarViewElementConfigurationDelegate> * _delegate;
     IKAppMenuBarDocument * _menuBarDocument;
-    int  _menuBarStyle;
+    long long  _menuBarStyle;
     NSArray * _menuItemViewElements;
-    BOOL  _needsReload;
+    bool  _needsReload;
     <_SKUIMenuBarViewElementConfigurationReloadDelegate> * _reloadDelegate;
-    BOOL  _scrollEnabled;
+    bool  _scrollEnabled;
     SKUIMenuItemViewElement * _selectedMenuItemViewElement;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIMenuBarViewElementConfigurationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int menuBarStyle;
-@property (getter=_needsReload, setter=_setNeedsReload:, nonatomic) BOOL needsReload;
-@property (nonatomic, readonly) unsigned int numberOfMenuItems;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long menuBarStyle;
+@property (getter=_needsReload, setter=_setNeedsReload:, nonatomic) bool needsReload;
+@property (nonatomic, readonly) unsigned long long numberOfMenuItems;
 @property (getter=_reloadDelegate, setter=_setReloadDelegate:, nonatomic) <_SKUIMenuBarViewElementConfigurationReloadDelegate> *reloadDelegate;
-@property (nonatomic, readonly) BOOL scrollEnabled;
+@property (nonatomic, readonly) bool scrollEnabled;
 @property (nonatomic, readonly) SKUIMenuItemViewElement *selectedMenuItemViewElement;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_ensureDataLoaded;
 - (id)_initWithMenuBarDocument:(id)arg1;
-- (BOOL)_needsReload;
+- (bool)_needsReload;
 - (id)_reloadDelegate;
-- (void)_reloadWithMenuBarStyle:(int)arg1 menuItemViewElements:(id)arg2 scrollEnabled:(BOOL)arg3;
-- (void)_setNeedsReload:(BOOL)arg1;
+- (void)_reloadWithMenuBarStyle:(long long)arg1 menuItemViewElements:(id)arg2 scrollEnabled:(bool)arg3;
+- (void)_setNeedsReload:(bool)arg1;
 - (void)_setReloadDelegate:(id)arg1;
-- (void)contentWillAppearForMenuItemAtIndex:(unsigned int)arg1 withEntityValueProvider:(id)arg2 clientContext:(id)arg3;
+- (void)contentWillAppearForMenuItemAtIndex:(unsigned long long)arg1 withEntityValueProvider:(id)arg2 clientContext:(id)arg3;
 - (id)delegate;
 - (id)documentForEntityUniqueIdentifier:(id)arg1;
-- (id)documentForMenuItemAtIndex:(unsigned int)arg1;
+- (id)documentForMenuItemAtIndex:(unsigned long long)arg1;
 - (id)documentOptionsForEntityUniqueIdentifier:(id)arg1;
-- (id)documentOptionsForMenuItemAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfMenuItemViewElement:(id)arg1;
+- (id)documentOptionsForMenuItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)indexOfMenuItemViewElement:(id)arg1;
 - (void)menuBarDocument:(id)arg1 didReplaceDocumentForEntityWithUniqueIdentifier:(id)arg2;
 - (void)menuBarDocument:(id)arg1 didReplaceDocumentForMenuItem:(id)arg2;
-- (void)menuBarDocument:(id)arg1 didSelectMenuItem:(id)arg2 animated:(BOOL)arg3;
-- (int)menuBarStyle;
-- (unsigned int)numberOfMenuItems;
-- (BOOL)scrollEnabled;
+- (void)menuBarDocument:(id)arg1 didSelectMenuItem:(id)arg2 animated:(bool)arg3;
+- (long long)menuBarStyle;
+- (unsigned long long)numberOfMenuItems;
+- (bool)scrollEnabled;
 - (id)selectedMenuItemViewElement;
 - (void)setDelegate:(id)arg1;
 

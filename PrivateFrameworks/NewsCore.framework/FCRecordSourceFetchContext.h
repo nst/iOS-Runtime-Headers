@@ -3,20 +3,20 @@
  */
 
 @interface FCRecordSourceFetchContext : NSObject {
-    unsigned int  _cachePolicy;
+    unsigned long long  _cachePolicy;
     double  _maxCachedAge;
-    BOOL  _refresh;
+    bool  _refresh;
 }
 
-@property (nonatomic) unsigned int cachePolicy;
+@property (nonatomic) unsigned long long cachePolicy;
 @property (nonatomic) double maxCachedAge;
-@property (nonatomic) BOOL refresh;
+@property (nonatomic) bool refresh;
 
-- (unsigned int)cachePolicy;
+- (unsigned long long)cachePolicy;
 - (double)maxCachedAge;
-- (BOOL)refresh;
-- (void)setCachePolicy:(unsigned int)arg1;
+- (bool)refresh;
+- (void)setCachePolicy:(unsigned long long)arg1;
 - (void)setMaxCachedAge:(double)arg1;
-- (void)setRefresh:(BOOL)arg1;
+- (void)setRefresh:(bool)arg1;
 
 @end

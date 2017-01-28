@@ -6,7 +6,7 @@
 @required
 
 - (<MTLDevice> *)device;
-- (unsigned int)maxTotalThreadsPerThreadgroup;
-- (unsigned int)threadExecutionWidth;
+- (unsigned long long)maxTotalThreadsPerThreadgroup;
+- (unsigned long long)threadExecutionWidth;
 
 @end

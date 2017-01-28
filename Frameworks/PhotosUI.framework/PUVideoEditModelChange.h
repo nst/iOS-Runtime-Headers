@@ -3,25 +3,25 @@
  */
 
 @interface PUVideoEditModelChange : PUViewModelChange {
-    BOOL  _videoBuilderChanged;
-    BOOL  _videoDurationChanged;
-    BOOL  _videoSizeChanged;
-    BOOL  _videoTrimRegionChanged;
+    bool  _videoBuilderChanged;
+    bool  _videoDurationChanged;
+    bool  _videoSizeChanged;
+    bool  _videoTrimRegionChanged;
 }
 
-@property (setter=_setVideoBuilderChanged:, nonatomic) BOOL videoBuilderChanged;
-@property (setter=_setVideoDurationChanged:, nonatomic) BOOL videoDurationChanged;
-@property (setter=_setVideoSizeChanged:, nonatomic) BOOL videoSizeChanged;
-@property (setter=_setVideoTrimRegionChanged:, nonatomic) BOOL videoTrimRegionChanged;
+@property (setter=_setVideoBuilderChanged:, nonatomic) bool videoBuilderChanged;
+@property (setter=_setVideoDurationChanged:, nonatomic) bool videoDurationChanged;
+@property (setter=_setVideoSizeChanged:, nonatomic) bool videoSizeChanged;
+@property (setter=_setVideoTrimRegionChanged:, nonatomic) bool videoTrimRegionChanged;
 
-- (void)_setVideoBuilderChanged:(BOOL)arg1;
-- (void)_setVideoDurationChanged:(BOOL)arg1;
-- (void)_setVideoSizeChanged:(BOOL)arg1;
-- (void)_setVideoTrimRegionChanged:(BOOL)arg1;
-- (BOOL)hasChanges;
-- (BOOL)videoBuilderChanged;
-- (BOOL)videoDurationChanged;
-- (BOOL)videoSizeChanged;
-- (BOOL)videoTrimRegionChanged;
+- (void)_setVideoBuilderChanged:(bool)arg1;
+- (void)_setVideoDurationChanged:(bool)arg1;
+- (void)_setVideoSizeChanged:(bool)arg1;
+- (void)_setVideoTrimRegionChanged:(bool)arg1;
+- (bool)hasChanges;
+- (bool)videoBuilderChanged;
+- (bool)videoDurationChanged;
+- (bool)videoSizeChanged;
+- (bool)videoTrimRegionChanged;
 
 @end

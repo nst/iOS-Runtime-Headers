@@ -10,8 +10,8 @@
 
 + (id)bundleIDFromPrimaryIdentifier:(id)arg1 secondaryIdentifier:(id)arg2;
 + (id)containerIDFromPrimaryIdentifier:(id)arg1 secondaryIdentifier:(id)arg2;
-+ (BOOL)isContainerID:(id)arg1;
-+ (BOOL)isContainerIDForeground:(id)arg1;
++ (bool)isContainerID:(id)arg1;
++ (bool)isContainerIDForeground:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1 forContainerID:(id)arg2;

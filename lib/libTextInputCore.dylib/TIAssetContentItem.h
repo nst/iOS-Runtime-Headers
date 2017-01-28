@@ -20,7 +20,7 @@
 - (id)description;
 - (id)initWithAsset:(id)arg1 inputModeLevel:(id)arg2 contentType:(id)arg3 url:(id)arg4;
 - (id)inputModeLevel;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)url;
 
 @end

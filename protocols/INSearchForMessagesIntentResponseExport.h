@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (NSArray *)messages;
 - (void)setMessages:(NSArray *)arg1;
 

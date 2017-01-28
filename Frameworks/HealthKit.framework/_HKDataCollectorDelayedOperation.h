@@ -3,7 +3,7 @@
  */
 
 @interface _HKDataCollectorDelayedOperation : NSObject {
-    id /* block */  _block;
+    id  _block;
     double  _lastExecution;
     int  _pendingRunCount;
     NSObject<OS_dispatch_queue> * _queue;
@@ -11,7 +11,7 @@
 
 - (void).cxx_destruct;
 - (void)executeWithDelay:(double)arg1;
-- (id)initWithQueue:(id)arg1 block:(id /* block */)arg2;
+- (id)initWithQueue:(id)arg1 block:(id)arg2;
 - (void)invalidate;
 
 @end

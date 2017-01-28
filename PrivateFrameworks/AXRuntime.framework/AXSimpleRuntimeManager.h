@@ -3,48 +3,48 @@
  */
 
 @interface AXSimpleRuntimeManager : NSObject {
-    id /* block */  _applicationElementCallback;
-    id /* block */  _attributeCallback;
-    id /* block */  _clientObserverCallback;
-    id /* block */  _hitTestCallback;
-    id /* block */  _outgoingValuePreprocessor;
-    id /* block */  _parameterizedAttributeCallback;
-    id /* block */  _performActionCallback;
-    id /* block */  _setAttributeCallback;
-    BOOL  _systemWideServer;
+    id  _applicationElementCallback;
+    id  _attributeCallback;
+    id  _clientObserverCallback;
+    id  _hitTestCallback;
+    id  _outgoingValuePreprocessor;
+    id  _parameterizedAttributeCallback;
+    id  _performActionCallback;
+    id  _setAttributeCallback;
+    bool  _systemWideServer;
 }
 
-@property (nonatomic, copy) id /* block */ applicationElementCallback;
-@property (nonatomic, copy) id /* block */ attributeCallback;
-@property (nonatomic, copy) id /* block */ clientObserverCallback;
-@property (nonatomic, copy) id /* block */ hitTestCallback;
-@property (nonatomic, copy) id /* block */ outgoingValuePreprocessor;
-@property (nonatomic, copy) id /* block */ parameterizedAttributeCallback;
-@property (nonatomic, copy) id /* block */ performActionCallback;
-@property (nonatomic, copy) id /* block */ setAttributeCallback;
-@property (nonatomic) BOOL systemWideServer;
+@property (nonatomic, copy) id applicationElementCallback;
+@property (nonatomic, copy) id attributeCallback;
+@property (nonatomic, copy) id clientObserverCallback;
+@property (nonatomic, copy) id hitTestCallback;
+@property (nonatomic, copy) id outgoingValuePreprocessor;
+@property (nonatomic, copy) id parameterizedAttributeCallback;
+@property (nonatomic, copy) id performActionCallback;
+@property (nonatomic, copy) id setAttributeCallback;
+@property (nonatomic) bool systemWideServer;
 
 + (id)sharedManager;
 
-- (id /* block */)applicationElementCallback;
-- (id /* block */)attributeCallback;
-- (id /* block */)clientObserverCallback;
+- (id)applicationElementCallback;
+- (id)attributeCallback;
+- (id)clientObserverCallback;
 - (void)dealloc;
-- (id /* block */)hitTestCallback;
-- (id /* block */)outgoingValuePreprocessor;
-- (id /* block */)parameterizedAttributeCallback;
-- (id /* block */)performActionCallback;
-- (void)setApplicationElementCallback:(id /* block */)arg1;
-- (id /* block */)setAttributeCallback;
-- (void)setAttributeCallback:(id /* block */)arg1;
-- (void)setClientObserverCallback:(id /* block */)arg1;
-- (void)setHitTestCallback:(id /* block */)arg1;
-- (void)setOutgoingValuePreprocessor:(id /* block */)arg1;
-- (void)setParameterizedAttributeCallback:(id /* block */)arg1;
-- (void)setPerformActionCallback:(id /* block */)arg1;
-- (void)setSetAttributeCallback:(id /* block */)arg1;
-- (void)setSystemWideServer:(BOOL)arg1;
+- (id)hitTestCallback;
+- (id)outgoingValuePreprocessor;
+- (id)parameterizedAttributeCallback;
+- (id)performActionCallback;
+- (void)setApplicationElementCallback:(id)arg1;
+- (id)setAttributeCallback;
+- (void)setAttributeCallback:(id)arg1;
+- (void)setClientObserverCallback:(id)arg1;
+- (void)setHitTestCallback:(id)arg1;
+- (void)setOutgoingValuePreprocessor:(id)arg1;
+- (void)setParameterizedAttributeCallback:(id)arg1;
+- (void)setPerformActionCallback:(id)arg1;
+- (void)setSetAttributeCallback:(id)arg1;
+- (void)setSystemWideServer:(bool)arg1;
 - (void)start;
-- (BOOL)systemWideServer;
+- (bool)systemWideServer;
 
 @end

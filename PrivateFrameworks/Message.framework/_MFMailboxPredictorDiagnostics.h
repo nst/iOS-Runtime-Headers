@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSString *debugOutput;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *modelInfo;
 @property (readonly) Class superclass;
 

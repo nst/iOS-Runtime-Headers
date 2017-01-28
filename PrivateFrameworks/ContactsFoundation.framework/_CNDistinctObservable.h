@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_resultIsDistinct:(id)arg1;
+- (bool)_resultIsDistinct:(id)arg1;
 - (id)initWithObservable:(id)arg1;
 - (id)subscribe:(id)arg1;
 

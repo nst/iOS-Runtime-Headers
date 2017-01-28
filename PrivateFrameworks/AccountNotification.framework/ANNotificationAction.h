@@ -3,28 +3,28 @@
  */
 
 @interface ANNotificationAction : NSObject <NSSecureCoding> {
-    BOOL  _isInternalURL;
+    bool  _isInternalURL;
     NSDictionary * _options;
     NSURL * _url;
 }
 
-@property (nonatomic) BOOL isInternalURL;
+@property (nonatomic) bool isInternalURL;
 @property (nonatomic, copy) NSDictionary *options;
 @property (nonatomic, copy) NSURL *url;
 
 + (id)actionForLaunchingApp:(id)arg1;
 + (id)actionForLaunchingApp:(id)arg1 withOptions:(id)arg2;
 + (id)actionForOpeningWebURL:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithManagedObject:(id)arg1;
-- (BOOL)isInternalURL;
+- (bool)isInternalURL;
 - (id)options;
 - (void)perform;
-- (void)setIsInternalURL:(BOOL)arg1;
+- (void)setIsInternalURL:(bool)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;

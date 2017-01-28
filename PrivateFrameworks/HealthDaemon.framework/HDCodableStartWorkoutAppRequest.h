@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) NSString *applicationIdentifier;
-@property (nonatomic, readonly) BOOL hasApplicationIdentifier;
-@property (nonatomic, readonly) BOOL hasRequestIdentifier;
-@property (nonatomic, readonly) BOOL hasWorkoutConfiguration;
+@property (nonatomic, readonly) bool hasApplicationIdentifier;
+@property (nonatomic, readonly) bool hasRequestIdentifier;
+@property (nonatomic, readonly) bool hasWorkoutConfiguration;
 @property (nonatomic, retain) NSString *requestIdentifier;
 @property (nonatomic, retain) HDCodableWorkoutConfiguration *workoutConfiguration;
 
@@ -21,13 +21,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasApplicationIdentifier;
-- (BOOL)hasRequestIdentifier;
-- (BOOL)hasWorkoutConfiguration;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasApplicationIdentifier;
+- (bool)hasRequestIdentifier;
+- (bool)hasWorkoutConfiguration;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestIdentifier;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;

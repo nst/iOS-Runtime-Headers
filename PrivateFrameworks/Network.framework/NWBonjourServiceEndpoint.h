@@ -11,7 +11,7 @@
 + (unsigned int)endpointType;
 + (id)endpointWithName:(id)arg1 type:(id)arg2 domain:(id)arg3;
 
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(bool)arg2;
 - (id)domain;
 - (id)name;
 - (id)type;

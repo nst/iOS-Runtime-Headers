@@ -4,18 +4,18 @@
 
 @interface CalSimpleStack : NSObject {
     NSMutableArray * _objects;
-    BOOL  _objectsProbablyAvailable;
+    bool  _objectsProbablyAvailable;
 }
 
 @property (readonly) NSMutableArray *objects;
-@property BOOL objectsProbablyAvailable;
+@property bool objectsProbablyAvailable;
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
 - (id)init;
 - (id)objects;
-- (BOOL)objectsProbablyAvailable;
+- (bool)objectsProbablyAvailable;
 - (id)popObject;
-- (void)setObjectsProbablyAvailable:(BOOL)arg1;
+- (void)setObjectsProbablyAvailable:(bool)arg1;
 
 @end

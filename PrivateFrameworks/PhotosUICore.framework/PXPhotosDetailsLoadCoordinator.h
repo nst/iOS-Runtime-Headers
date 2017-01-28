@@ -17,15 +17,15 @@
 + (id)loadCoordinatorForContext:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_canPerformRelatedFetch;
-- (BOOL)_canPerformSuggestionsFetch;
+- (bool)_canPerformRelatedFetch;
+- (bool)_canPerformSuggestionsFetch;
 - (id)_relatedBlocks;
 - (id)_suggestionsBlocks;
 - (void)_tokenDidComplete:(id)arg1;
 - (id)_tokens;
 - (id)init;
-- (void)performBlockWhenReadyToFetchRelated:(id /* block */)arg1;
-- (void)performBlockWhenReadyToFetchSuggestions:(id /* block */)arg1;
+- (void)performBlockWhenReadyToFetchRelated:(id)arg1;
+- (void)performBlockWhenReadyToFetchSuggestions:(id)arg1;
 - (void)setTimeoutDelay:(double)arg1;
 - (double)timeoutDelay;
 - (id)tokenForCuratedFetch;

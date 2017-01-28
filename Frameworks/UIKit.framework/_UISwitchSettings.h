@@ -4,17 +4,17 @@
 
 @interface _UISwitchSettings : NSObject
 
-@property (nonatomic, readonly) BOOL feedbackEnabled;
-@property (nonatomic, readonly) float hapticDelay;
-@property (nonatomic, readonly) float impactIntensity;
-@property (nonatomic, readonly) float knobSpringDampingAnimationTouchDown;
-@property (nonatomic, readonly) float knobSpringDampingAnimationTouchUp;
-@property (nonatomic, readonly) float knobSpringDurationAnimationTouchDown;
-@property (nonatomic, readonly) float knobSpringDurationAnimationTouchUp;
-@property (nonatomic, readonly) float knobSpringMassAnimationTouchDown;
-@property (nonatomic, readonly) float knobSpringMassAnimationTouchUp;
-@property (nonatomic, readonly) float knobSpringStiffnessAnimationTouchDown;
-@property (nonatomic, readonly) float knobSpringStiffnessAnimationTouchUp;
+@property (nonatomic, readonly) bool feedbackEnabled;
+@property (nonatomic, readonly) double hapticDelay;
+@property (nonatomic, readonly) double impactIntensity;
+@property (nonatomic, readonly) double knobSpringDampingAnimationTouchDown;
+@property (nonatomic, readonly) double knobSpringDampingAnimationTouchUp;
+@property (nonatomic, readonly) double knobSpringDurationAnimationTouchDown;
+@property (nonatomic, readonly) double knobSpringDurationAnimationTouchUp;
+@property (nonatomic, readonly) double knobSpringMassAnimationTouchDown;
+@property (nonatomic, readonly) double knobSpringMassAnimationTouchUp;
+@property (nonatomic, readonly) double knobSpringStiffnessAnimationTouchDown;
+@property (nonatomic, readonly) double knobSpringStiffnessAnimationTouchUp;
 @property (nonatomic, readonly) double trackBorderGoingOffAnimationBeginTimeOffset;
 @property (nonatomic, readonly) double trackBorderGoingOffAnimationDuration;
 @property (nonatomic, readonly) double trackBorderGoingOnAnimationDuration;
@@ -22,17 +22,17 @@
 
 + (id)sharedSettings;
 
-- (BOOL)feedbackEnabled;
-- (float)hapticDelay;
-- (float)impactIntensity;
-- (float)knobSpringDampingAnimationTouchDown;
-- (float)knobSpringDampingAnimationTouchUp;
-- (float)knobSpringDurationAnimationTouchDown;
-- (float)knobSpringDurationAnimationTouchUp;
-- (float)knobSpringMassAnimationTouchDown;
-- (float)knobSpringMassAnimationTouchUp;
-- (float)knobSpringStiffnessAnimationTouchDown;
-- (float)knobSpringStiffnessAnimationTouchUp;
+- (bool)feedbackEnabled;
+- (double)hapticDelay;
+- (double)impactIntensity;
+- (double)knobSpringDampingAnimationTouchDown;
+- (double)knobSpringDampingAnimationTouchUp;
+- (double)knobSpringDurationAnimationTouchDown;
+- (double)knobSpringDurationAnimationTouchUp;
+- (double)knobSpringMassAnimationTouchDown;
+- (double)knobSpringMassAnimationTouchUp;
+- (double)knobSpringStiffnessAnimationTouchDown;
+- (double)knobSpringStiffnessAnimationTouchUp;
 - (double)trackBorderGoingOffAnimationBeginTimeOffset;
 - (double)trackBorderGoingOffAnimationDuration;
 - (double)trackBorderGoingOnAnimationDuration;

@@ -18,7 +18,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -34,7 +34,7 @@
 - (void)_applicationStateDidRestore;
 - (void)_backgroundRefreshApplicationsDidChange;
 - (void)_ensureAttachmentsIntegrity;
-- (BOOL)_isBundleIdentifierAuthorizedForRegionMonitoring:(id)arg1;
+- (bool)_isBundleIdentifierAuthorizedForRegionMonitoring:(id)arg1;
 - (void)_localeDidChange;
 - (void)_migrateNotificationCategories;
 - (void)_migrateNotificationRepository;
@@ -49,6 +49,6 @@
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)initWithSystemStateProvider:(id)arg1;
-- (void)willPresentNotification:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)willPresentNotification:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id)arg3;
 
 @end

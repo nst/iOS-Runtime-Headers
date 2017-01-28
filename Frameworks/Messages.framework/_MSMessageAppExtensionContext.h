@@ -7,15 +7,15 @@
     NSMapTable * _conversationsByIdentifier;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _initialFrameOfHostView;
-    unsigned int  _presentationStyle;
+    unsigned long long  _presentationStyle;
     struct __CFRunLoopObserver { } * _principalObjectCreationObserver;
 }
 
@@ -23,9 +23,9 @@
 @property (nonatomic, readonly) NSMapTable *conversationsByIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialFrameOfHostView;
-@property (nonatomic) unsigned int presentationStyle;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } initialFrameOfHostView;
+@property (nonatomic) unsigned long long presentationStyle;
 @property (nonatomic, readonly) struct __CFRunLoopObserver { }*principalObjectCreationObserver;
 @property (readonly) Class superclass;
 
@@ -45,7 +45,7 @@
 - (void)_presentationDidChangeToPresentationState:(id)arg1;
 - (void)_presentationWillChangeToPresentationState:(id)arg1;
 - (void)_remoteViewDidBecomeReadyForDisplay;
-- (void)_requestSnapshotWithCompletion:(id /* block */)arg1;
+- (void)_requestSnapshotWithCompletion:(id)arg1;
 - (void)_resignActive;
 - (void)_uninstallPrincipalObjectObserverIfNeeded;
 - (id)activeConversation;
@@ -53,22 +53,22 @@
 - (id)conversationsByIdentifier;
 - (void)dealloc;
 - (void)dismiss;
-- (void)dismissToKeyboard:(BOOL)arg1;
+- (void)dismissToKeyboard:(bool)arg1;
 - (void)endDisablingUserInteraction;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrameOfHostView;
-- (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (unsigned int)presentationStyle;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })initialFrameOfHostView;
+- (void)openURL:(id)arg1 completionHandler:(id)arg2;
+- (unsigned long long)presentationStyle;
 - (struct __CFRunLoopObserver { }*)principalObjectCreationObserver;
 - (id)remoteProxy;
-- (void)requestPresentationStyle:(unsigned int)arg1;
-- (void)requestPresentationStyleExpanded:(BOOL)arg1;
+- (void)requestPresentationStyle:(unsigned long long)arg1;
+- (void)requestPresentationStyleExpanded:(bool)arg1;
 - (void)setActiveConversation:(id)arg1;
-- (void)setPresentationStyle:(unsigned int)arg1;
-- (void)stageAppItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)stageMediaItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)stageRichLink:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)startDragMediaItem:(id)arg1 frameInRemoteView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fence:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)setPresentationStyle:(unsigned long long)arg1;
+- (void)stageAppItem:(id)arg1 completionHandler:(id)arg2;
+- (void)stageMediaItem:(id)arg1 completionHandler:(id)arg2;
+- (void)stageRichLink:(id)arg1 completionHandler:(id)arg2;
+- (void)startDragMediaItem:(id)arg1 frameInRemoteView:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 fence:(id)arg3 completionHandler:(id)arg4;
 - (id)updatedConversationForConversationState:(id)arg1;
 - (id)viewController;
 

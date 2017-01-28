@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) UIColor *color;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)wrapperForColor:(id)arg1;
 
 - (void).cxx_destruct;

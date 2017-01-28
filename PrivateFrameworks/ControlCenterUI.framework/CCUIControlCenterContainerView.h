@@ -3,55 +3,55 @@
  */
 
 @interface CCUIControlCenterContainerView : UIView <CCUIControlCenterObserver, _UISettingsKeyObserver> {
-    BOOL  _adjustingBrightness;
-    BOOL  _animatingDynamically;
+    bool  _adjustingBrightness;
+    bool  _animatingDynamically;
     UIView * _darkeningContainer;
     <CCUIControlCenterContainerViewDelegate> * _delegate;
     UIView * _dynamicsContainerView;
     UIPageControl * _pageControl;
     UIScrollView * _pageScrollView;
     NSMapTable * _plattersToDarkeningViews;
-    float  _revealPercentage;
+    double  _revealPercentage;
     CCUIControlCenterSettings * _settings;
-    BOOL  _useMaxDarkness;
+    bool  _useMaxDarkness;
 }
 
-@property (getter=isAdjustingBrightness, nonatomic) BOOL adjustingBrightness;
-@property (nonatomic) BOOL animatingDynamically;
+@property (getter=isAdjustingBrightness, nonatomic) bool adjustingBrightness;
+@property (nonatomic) bool animatingDynamically;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIControlCenterContainerViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIView *dynamicsContainerView;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float revealPercentage;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double revealPercentage;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applyAlphaToDarkeningViews;
-- (float)_contentHeight;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_marginInsets;
-- (void)_removeAnimationsForKeys:(id)arg1 onView:(id)arg2 update:(id /* block */)arg3;
+- (double)_contentHeight;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_marginInsets;
+- (void)_removeAnimationsForKeys:(id)arg1 onView:(id)arg2 update:(id)arg3;
 - (void)_resetControlCenterToOffscreenState;
 - (void)_updateContentFrame;
 - (void)_updateMasks;
 - (void)abortAnimatedTransition;
-- (BOOL)animatingDynamically;
+- (bool)animatingDynamically;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterDidFinishTransition;
 - (void)controlCenterWillBeginTransition;
-- (void)controlCenterWillFinishTransitionOpen:(BOOL)arg1 withDuration:(double)arg2;
+- (void)controlCenterWillFinishTransitionOpen:(bool)arg1 withDuration:(double)arg2;
 - (void)controlCenterWillPresent;
 - (void)dealloc;
 - (id)delegate;
 - (id)dynamicsContainerView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 delegate:(id)arg2;
-- (BOOL)isAdjustingBrightness;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 delegate:(id)arg2;
+- (bool)isAdjustingBrightness;
 - (void)layoutSubviews;
-- (float)revealPercentage;
-- (void)setAdjustingBrightness:(BOOL)arg1;
-- (void)setAnimatingDynamically:(BOOL)arg1;
+- (double)revealPercentage;
+- (void)setAdjustingBrightness:(bool)arg1;
+- (void)setAnimatingDynamically:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRevealPercentage:(float)arg1;
+- (void)setRevealPercentage:(double)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 
 @end

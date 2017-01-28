@@ -8,8 +8,8 @@
     NSXPCListenerEndpoint * _endpoint;
     id  _exportInfo;
     id  _importInfo;
-    id /* block */  _interruptionHandler;
-    id /* block */  _invalidationHandler;
+    id  _interruptionHandler;
+    id  _invalidationHandler;
     id  _lock;
     <NSObject> * _otherInfo;
     NSXPCInterface * _remoteObjectInterface;
@@ -28,7 +28,7 @@
 @property (nonatomic, readonly) NSBundle *cx_bundle;
 @property (nonatomic, readonly, copy) NSSet *cx_capabilities;
 @property (nonatomic, readonly, copy) NSString *cx_developerTeamIdentifier;
-@property (nonatomic, readonly) BOOL cx_hasVoIPBackgroundMode;
+@property (nonatomic, readonly) bool cx_hasVoIPBackgroundMode;
 @property (nonatomic, readonly, copy) NSString *cx_processName;
 @property (readonly) unsigned int effectiveGroupIdentifier;
 @property (readonly) unsigned int effectiveUserIdentifier;
@@ -36,10 +36,10 @@
 @property (retain) NSXPCInterface *exportedInterface;
 @property (retain) id exportedObject;
 @property (nonatomic, readonly, copy) NSString *hk_bundleIdentifier;
-@property (nonatomic, readonly) BOOL hk_isAppExtension;
+@property (nonatomic, readonly) bool hk_isAppExtension;
 @property (nonatomic, readonly, copy) NSString *hk_signingIdentifier;
-@property (copy) id /* block */ interruptionHandler;
-@property (copy) id /* block */ invalidationHandler;
+@property (copy) id interruptionHandler;
+@property (copy) id invalidationHandler;
 @property (nonatomic, readonly) NSString *processBundleIdentifier;
 @property (readonly) int processIdentifier;
 @property (nonatomic, readonly) NSString *processName;
@@ -60,13 +60,13 @@
 - (void)_cancelProgress:(unsigned long long)arg1;
 - (void)_decodeAndInvokeMessageWithData:(id)arg1;
 - (void)_decodeAndInvokeReplyBlockWithData:(id)arg1 sequence:(unsigned long long)arg2 replyInfo:(id)arg3;
-- (BOOL)_decodeCacheContainsClass:(Class)arg1;
+- (bool)_decodeCacheContainsClass:(Class)arg1;
 - (void)_decodeProgressMessageWithData:(id)arg1;
-- (BOOL)_encodeCacheContainsClass:(Class)arg1;
+- (bool)_encodeCacheContainsClass:(Class)arg1;
 - (id)_errorDescription;
 - (id)_exportTable;
 - (unsigned long long)_generationCount;
-- (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned int)arg3;
+- (id)_initWithPeerConnection:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3;
 - (void)_killConnection:(int)arg1;
 - (void)_pauseProgress:(unsigned long long)arg1;
 - (id)_queue;
@@ -74,16 +74,16 @@
 - (void)_resumeProgress:(unsigned long long)arg1;
 - (void)_sendDesistForProxy:(id)arg1;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5;
-- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5 userInfo:(id)arg6;
+- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4;
+- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5;
+- (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id)arg4 timeout:(double)arg5 userInfo:(id)arg6;
 - (void)_sendProgressMessage:(id)arg1 forSequence:(unsigned long long)arg2;
 - (void)_setQueue:(id)arg1;
 - (void)_setTargetUserIdentifier:(unsigned int)arg1;
 - (void)_setUUID:(id)arg1;
 - (id)_unboostingRemoteObjectProxy;
 - (id)_xpcConnection;
-- (void)addBarrierBlock:(id /* block */)arg1;
+- (void)addBarrierBlock:(id)arg1;
 - (int)auditSessionIdentifier;
 - (struct { unsigned int x1[8]; })auditToken;
 - (void)dealloc;
@@ -98,33 +98,33 @@
 - (id)initWithEndpoint:(id)arg1;
 - (id)initWithListenerEndpoint:(id)arg1;
 - (id)initWithMachServiceName:(id)arg1;
-- (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithMachServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithServiceName:(id)arg1;
-- (id)initWithServiceName:(id)arg1 options:(unsigned int)arg2;
-- (id /* block */)interruptionHandler;
+- (id)initWithServiceName:(id)arg1 options:(unsigned long long)arg2;
+- (id)interruptionHandler;
 - (void)invalidate;
-- (id /* block */)invalidationHandler;
+- (id)invalidationHandler;
 - (int)processIdentifier;
 - (id)remoteObjectInterface;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id /* block */)arg2;
-- (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id /* block */)arg2;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id)arg2;
+- (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id)arg2;
 - (id)replacementObjectForEncoder:(id)arg1 object:(id)arg2;
 - (void)resume;
 - (id)serviceName;
 - (void)setDelegate:(id)arg1;
 - (void)setExportedInterface:(id)arg1;
 - (void)setExportedObject:(id)arg1;
-- (void)setInterruptionHandler:(id /* block */)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setInterruptionHandler:(id)arg1;
+- (void)setInvalidationHandler:(id)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)setRemoteObjectInterface:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)start;
 - (void)stop;
 - (void)suspend;
-- (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(id)arg1;
 - (id)userInfo;
 - (id)valueForEntitlement:(id)arg1;
 
@@ -134,19 +134,19 @@
 - (id)cx_bundle;
 - (id)cx_capabilities;
 - (id)cx_developerTeamIdentifier;
-- (BOOL)cx_hasVoIPBackgroundMode;
+- (bool)cx_hasVoIPBackgroundMode;
 - (id)cx_processName;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (id)hk_bundleIdentifier;
-- (BOOL)hk_isAppExtension;
+- (bool)hk_isAppExtension;
 - (id)hk_signingIdentifier;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
 - (id)_clientBundleID;
-- (BOOL)sl_clientHasEntitlement:(id)arg1;
+- (bool)sl_clientHasEntitlement:(id)arg1;
 - (id)sl_localizedClientName;
 
 // Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
@@ -154,10 +154,14 @@
 - (id)initCellularPlanDatabaseClient;
 - (id)initVinylTestClient;
 
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (id)sgd_clientName;
+
 // Image: /System/Library/PrivateFrameworks/Pegasus.framework/Pegasus
 
 - (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1;
-- (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1 errorHandler:(id /* block */)arg2;
+- (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1 errorHandler:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
@@ -169,6 +173,6 @@
 
 // Image: /System/Library/PrivateFrameworks/UserManagement.framework/UserManagement
 
-- (BOOL)hasEntitlement:(id)arg1;
+- (bool)hasEntitlement:(id)arg1;
 
 @end

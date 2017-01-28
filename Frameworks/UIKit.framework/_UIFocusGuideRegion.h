@@ -13,12 +13,13 @@
 - (id)_destinationItemForFocusMovement:(id)arg1 inMap:(id)arg2;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (id)_fallbackFocusItemForMovement:(id)arg1 inFocusMap:(id)arg2;
-- (unsigned int)_focusableBoundaries;
-- (BOOL)_isEnabledForFocusedRegion:(id)arg1;
-- (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
-- (BOOL)_shouldOccludeRegion:(id)arg1;
+- (unsigned long long)_focusableBoundaries;
+- (bool)_isEnabledForFocusedRegion:(id)arg1;
+- (long long)_preferredDistanceComparisonType;
+- (bool)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
+- (bool)_shouldOccludeRegion:(id)arg1;
 - (id)_visualRepresentationColor;
-- (int)_visualRepresentationPatternType;
+- (long long)_visualRepresentationPatternType;
 - (void)_willParticipateAsDestinationRegionInFocusUpdate:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;

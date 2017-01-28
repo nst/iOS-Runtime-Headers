@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CCUIControlCenterButtonSectionSettings *settings;
 @property (readonly) Class superclass;
 
@@ -22,7 +22,7 @@
 - (void)_addButtonModule:(id)arg1;
 - (id)_allButtonControllers;
 - (id)_allButtonModules;
-- (BOOL)_buttonEnabledForIdentifier:(id)arg1;
+- (bool)_buttonEnabledForIdentifier:(id)arg1;
 - (id)_controllerForIdentifier:(id)arg1;
 - (id)_controllerForModule:(id)arg1;
 - (void)_deactivateModule:(id)arg1;
@@ -32,11 +32,11 @@
 - (void)_updateSettings;
 - (void)beginSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (void)buttonController:(id)arg1 publishStatusUpdate:(id)arg2;
-- (BOOL)buttonControllerShouldUseSmallButtons:(id)arg1;
+- (bool)buttonControllerShouldUseSmallButtons:(id)arg1;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;
 - (void)dealloc;
-- (BOOL)dismissModalFullScreenIfNeeded;
+- (bool)dismissModalFullScreenIfNeeded;
 - (void)endSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (id)init;
 - (id)sectionIdentifier;
@@ -44,6 +44,6 @@
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
 - (id)view;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

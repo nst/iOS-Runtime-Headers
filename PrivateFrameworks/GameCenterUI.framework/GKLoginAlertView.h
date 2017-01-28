@@ -3,13 +3,13 @@
  */
 
 @interface GKLoginAlertView : UIAlertView <UITextFieldDelegate> {
-    unsigned int  _passwordFieldIndex;
+    unsigned long long  _passwordFieldIndex;
     NSString * _username;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *password;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *username;
@@ -20,7 +20,7 @@
 - (id)password;
 - (void)setPassword:(id)arg1;
 - (void)setUsername:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (id)username;
 
 @end

@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKCodeAcquisitionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,10 +30,10 @@
 - (void)_handleFoundCode:(id)arg1;
 - (void)_handleSingleTap:(id)arg1;
 - (void)_restartCaptureSession;
-- (void)_setCaptureUIState:(int)arg1 animated:(BOOL)arg2;
+- (void)_setCaptureUIState:(long long)arg1 animated:(bool)arg2;
 - (void)cancel;
 - (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 fromConnection:(id)arg3;
-- (void)captureSession:(id)arg1 isRunning:(BOOL)arg2;
+- (void)captureSession:(id)arg1 isRunning:(bool)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
@@ -42,16 +42,16 @@
 - (id)delegate;
 - (id)init;
 - (void)passPersonalizationViewController:(id)arg1 didFinishPersonalizingPass:(id)arg2;
-- (int)preferredStatusBarStyle;
+- (long long)preferredStatusBarStyle;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

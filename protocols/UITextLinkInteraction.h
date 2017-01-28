@@ -6,13 +6,13 @@
 @required
 
 - (void)cancelInteractionWithLink;
-- (BOOL)isInteractingWithLink;
-- (BOOL)mightHaveLinks;
-- (void)startInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startLongInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)tapLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)updateInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)validateInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)willInteractWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)isInteractingWithLink;
+- (bool)mightHaveLinks;
+- (void)startInteractionWithLinkAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)startLongInteractionWithLinkAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)tapLinkAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)updateInteractionWithLinkAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)validateInteractionWithLinkAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)willInteractWithLinkAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

@@ -7,8 +7,8 @@
     NSString * _placeDataRequestingAppIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasPlaceDataRequest;
-@property (nonatomic, readonly) BOOL hasPlaceDataRequestingAppIdentifier;
+@property (nonatomic, readonly) bool hasPlaceDataRequest;
+@property (nonatomic, readonly) bool hasPlaceDataRequestingAppIdentifier;
 @property (nonatomic, retain) GEOPDPlaceRequest *placeDataRequest;
 @property (nonatomic, retain) NSString *placeDataRequestingAppIdentifier;
 
@@ -17,14 +17,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPlaceDataRequest;
-- (BOOL)hasPlaceDataRequestingAppIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPlaceDataRequest;
+- (bool)hasPlaceDataRequestingAppIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeDataRequest;
 - (id)placeDataRequestingAppIdentifier;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPlaceDataRequest:(id)arg1;
 - (void)setPlaceDataRequestingAppIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;

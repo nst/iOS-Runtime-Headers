@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

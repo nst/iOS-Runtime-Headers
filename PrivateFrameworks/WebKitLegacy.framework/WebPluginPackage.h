@@ -9,7 +9,7 @@
 - (id)bundle;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
-- (BOOL)load;
+- (bool)load;
 - (Class)viewFactory;
 
 @end

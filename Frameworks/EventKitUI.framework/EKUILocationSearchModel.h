@@ -37,7 +37,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *eventsSearchResults;
 @property (nonatomic, readonly) NSArray *frequentsSearchResults;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <GEOMapServiceCompletionTicket> *lastTicket;
 @property (nonatomic, readonly) NSArray *mapCompletionSearchResults;
 @property (nonatomic, readonly) NSArray *recentsSearchResults;
@@ -50,7 +50,7 @@
 - (void)addLocationToRecents:(id)arg1 addressString:(id)arg2;
 - (void)beginSearchForTerm:(id)arg1;
 - (void)cancelSearch;
-- (void)completerDidUpdateResults:(id)arg1 finished:(BOOL)arg2;
+- (void)completerDidUpdateResults:(id)arg1 finished:(bool)arg2;
 - (id)conferenceRoomSearchResults;
 - (id)contactsSearchResults;
 - (id)currentLocation;
@@ -65,14 +65,14 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)mapCompletionSearchResults;
 - (id)recentsSearchResults;
-- (BOOL)removeRecentLocation:(id)arg1;
+- (bool)removeRecentLocation:(id)arg1;
 - (void)resetConferenceRoomSearchResults;
 - (void)resetContactsSearchResults;
 - (void)resetEventsSearchResults;
-- (void)resetSearchResults:(BOOL)arg1;
+- (void)resetSearchResults:(bool)arg1;
 - (void)searchConferenceRooms:(id)arg1;
 - (void)searchFrequentLocations:(id)arg1;
-- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
+- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(bool)arg3;
 - (void)selectCurrentLocation;
 - (void)selectLocation:(id)arg1;
 - (void)selectMapSearchCompletion:(id)arg1;

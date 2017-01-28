@@ -20,7 +20,7 @@
 
 - (void).cxx_destruct;
 - (id)computeSummaryWithFilter:(id)arg1;
-- (void)enumerateTopicCountsWithFilter:(id)arg1 block:(id /* block */)arg2;
+- (void)enumerateTopicCountsWithFilter:(id)arg1 block:(id)arg2;
 - (id)init;
 - (id)initWithStorageDirectory:(id)arg1;
 - (void)purgeEntriesEarlierThanDate:(id)arg1;

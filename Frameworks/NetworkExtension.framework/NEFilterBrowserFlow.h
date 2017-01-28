@@ -12,7 +12,7 @@
 @property (retain) NSURLRequest *request;
 @property (retain) NSURLResponse *response;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

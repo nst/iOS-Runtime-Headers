@@ -3,17 +3,17 @@
  */
 
 @interface DBMigrationResult : NSObject {
-    int  _dbVersion;
-    int  _errorCode;
+    long long  _dbVersion;
+    long long  _errorCode;
 }
 
-@property (nonatomic) int dbVersion;
-@property (nonatomic) int errorCode;
+@property (nonatomic) long long dbVersion;
+@property (nonatomic) long long errorCode;
 
-- (int)dbVersion;
-- (int)errorCode;
-- (id)initWithErrorCode:(int)arg1 andDBVersion:(int)arg2;
-- (void)setDbVersion:(int)arg1;
-- (void)setErrorCode:(int)arg1;
+- (long long)dbVersion;
+- (long long)errorCode;
+- (id)initWithErrorCode:(long long)arg1 andDBVersion:(long long)arg2;
+- (void)setDbVersion:(long long)arg1;
+- (void)setErrorCode:(long long)arg1;
 
 @end

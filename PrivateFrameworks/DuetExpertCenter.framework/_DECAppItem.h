@@ -4,36 +4,36 @@
 
 @interface _DECAppItem : _DECItem {
     NSString * _bundleIdentifier;
-    int  _reason;
-    int  _sources;
+    long long  _reason;
+    long long  _sources;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
-@property (nonatomic) int reason;
-@property (nonatomic, readonly) int sources;
+@property (nonatomic) long long reason;
+@property (nonatomic, readonly) long long sources;
 
 + (id)appWithBundleIdentifier:(id)arg1;
-+ (id)appWithBundleIdentifier:(id)arg1 sources:(int)arg2;
-+ (unsigned int)category;
++ (id)appWithBundleIdentifier:(id)arg1 sources:(long long)arg2;
++ (unsigned long long)category;
 + (id)fromSearchResult:(id)arg1;
-+ (BOOL)isSearchFoundationCompliant;
-+ (BOOL)supportsSecureCoding;
++ (bool)isSearchFoundationCompliant;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isEqualToDECAppItem:(id)arg1;
+- (bool)_isEqualToDECAppItem:(id)arg1;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithBundleIdentifier:(id)arg1 sources:(int)arg2;
+- (unsigned long long)hash;
+- (id)initWithBundleIdentifier:(id)arg1 sources:(long long)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (int)reason;
-- (void)setReason:(int)arg1;
-- (int)sources;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
+- (long long)reason;
+- (void)setReason:(long long)arg1;
+- (long long)sources;
 - (id)toSearchResult;
 
 @end

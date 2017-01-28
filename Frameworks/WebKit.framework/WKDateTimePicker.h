@@ -7,8 +7,8 @@
         void *m_ptr; 
     }  _datePicker;
     NSString * _formatString;
-    BOOL  _isTimeInput;
-    BOOL  _shouldRemoveTimeZoneInformation;
+    bool  _isTimeInput;
+    bool  _shouldRemoveTimeZoneInformation;
     WKContentView * _view;
 }
 
@@ -19,13 +19,13 @@
 - (void)_dateChangedSetAsNumber;
 - (void)_dateChangedSetAsString;
 - (id)_sanitizeInputValueForFormatter:(id)arg1;
-- (int)_timeZoneOffsetFromGMT:(id)arg1;
+- (long long)_timeZoneOffsetFromGMT:(id)arg1;
 - (void)controlBeginEditing;
 - (void)controlEndEditing;
 - (id)controlView;
 - (struct RetainPtr<NSDateFormatter> { void *x1; })dateFormatterForPicker;
 - (id)datePicker;
 - (void)dealloc;
-- (id)initWithView:(id)arg1 datePickerMode:(int)arg2;
+- (id)initWithView:(id)arg1 datePickerMode:(long long)arg2;
 
 @end

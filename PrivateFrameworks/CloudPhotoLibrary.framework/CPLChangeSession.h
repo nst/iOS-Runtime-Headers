@@ -7,27 +7,27 @@
     CPLPlatformObject * _platformObject;
     NSString * _sessionIdentifier;
     NSProgress * _sessionProgress;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CPLLibraryManager *libraryManager;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (nonatomic, readonly) NSString *sessionIdentifier;
 @property (nonatomic, readonly) NSProgress *sessionProgress;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 @property (readonly) Class superclass;
 
 + (id)platformImplementationProtocol;
-+ (id)stateDescriptionForState:(unsigned int)arg1;
++ (id)stateDescriptionForState:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_sessionLogDomain;
-- (void)beginSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)beginSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
-- (void)finalizeWithCompletionHandler:(id /* block */)arg1;
+- (void)finalizeWithCompletionHandler:(id)arg1;
 - (id)init;
 - (id)initWithLibraryManager:(id)arg1;
 - (id)libraryManager;
@@ -36,8 +36,8 @@
 - (void)resume;
 - (id)sessionIdentifier;
 - (id)sessionProgress;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
-- (void)tearDownWithCompletionHandler:(id /* block */)arg1;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
+- (void)tearDownWithCompletionHandler:(id)arg1;
 
 @end

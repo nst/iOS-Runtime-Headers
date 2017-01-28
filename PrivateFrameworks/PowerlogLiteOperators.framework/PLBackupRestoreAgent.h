@@ -4,13 +4,13 @@
 
 @interface PLBackupRestoreAgent : PLAgent {
     MBManager * _backupRestoreManager;
-    BOOL  _backupState;
-    BOOL  _restoreState;
+    bool  _backupState;
+    bool  _restoreState;
 }
 
 @property (readonly) MBManager *backupRestoreManager;
-@property (nonatomic) BOOL backupState;
-@property (nonatomic) BOOL restoreState;
+@property (nonatomic) bool backupState;
+@property (nonatomic) bool restoreState;
 
 + (id)defaults;
 + (id)entryAggregateDefinitions;
@@ -23,13 +23,13 @@
 
 - (void).cxx_destruct;
 - (id)backupRestoreManager;
-- (BOOL)backupState;
-- (void)didChangeEvent:(id)arg1 toState:(BOOL)arg2;
+- (bool)backupState;
+- (void)didChangeEvent:(id)arg1 toState:(bool)arg2;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
-- (BOOL)restoreState;
-- (void)setBackupState:(BOOL)arg1;
-- (void)setRestoreState:(BOOL)arg1;
+- (bool)restoreState;
+- (void)setBackupState:(bool)arg1;
+- (void)setRestoreState:(bool)arg1;
 
 @end

@@ -18,8 +18,8 @@
 @property (nonatomic, readonly) NSLocale *locale;
 @property (nonatomic, readonly) Class multilingualInputManagerClass;
 @property (nonatomic, readonly) NSString *normalizedIdentifier;
-@property (nonatomic, readonly) BOOL spaceAutocorrectionEnabled;
-@property (nonatomic, readonly) BOOL supportsMultilingualKeyboard;
+@property (nonatomic, readonly) bool spaceAutocorrectionEnabled;
+@property (nonatomic, readonly) bool supportsMultilingualKeyboard;
 @property (nonatomic, readonly) NSString *variant;
 
 + (id)inputModeWithIdentifier:(id)arg1;
@@ -27,17 +27,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithNormalizedIdentifier:(id)arg1;
 - (Class)inputManagerClass;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (Class)keyboardFeatureSpecializationClass;
 - (id)languageWithRegion;
 - (id)locale;
 - (Class)multilingualInputManagerClass;
 - (id)normalizedIdentifier;
-- (BOOL)spaceAutocorrectionEnabled;
-- (BOOL)supportsMultilingualKeyboard;
+- (bool)spaceAutocorrectionEnabled;
+- (bool)supportsMultilingualKeyboard;
 - (id)variant;
 
 @end

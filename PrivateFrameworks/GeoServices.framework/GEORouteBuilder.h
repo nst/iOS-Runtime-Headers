@@ -9,7 +9,7 @@
     NSData * _pointsData;
     GEORoute * _route;
     NSMutableArray * _steps;
-    BOOL  _usesZilch;
+    bool  _usesZilch;
 }
 
 - (void)_buildPointSectionsForRoute:(id)arg1;

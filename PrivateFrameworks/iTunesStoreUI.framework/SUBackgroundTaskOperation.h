@@ -5,7 +5,7 @@
 @interface SUBackgroundTaskOperation : ISOperation {
     ISOperation * _operation;
     NSString * _permissionIdentifier;
-    unsigned int  _taskIdentifier;
+    unsigned long long  _taskIdentifier;
 }
 
 @property (readonly) ISOperation *operation;

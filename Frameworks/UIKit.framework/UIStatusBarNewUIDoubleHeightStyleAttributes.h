@@ -4,8 +4,8 @@
 
 @interface UIStatusBarNewUIDoubleHeightStyleAttributes : UIStatusBarNewUIStyleAttributes
 
-- (float)heightForMetrics:(int)arg1;
-- (id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3 hasBusyBackground:(BOOL)arg4;
-- (BOOL)isDoubleHeight;
+- (double)heightForMetrics:(long long)arg1;
+- (id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3 hasBusyBackground:(bool)arg4;
+- (bool)isDoubleHeight;
 
 @end

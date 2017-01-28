@@ -14,10 +14,10 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasLoadingError;
-@property (nonatomic, readonly) BOOL hasMessage;
-@property (nonatomic) BOOL hasMimeError;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasLoadingError;
+@property (nonatomic, readonly) bool hasMessage;
+@property (nonatomic) bool hasMimeError;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int loadingError;
 @property (nonatomic, retain) AWDMailMessage *message;
 @property (nonatomic) int mimeError;
@@ -30,22 +30,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLoadingError;
-- (BOOL)hasMessage;
-- (BOOL)hasMimeError;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLoadingError;
+- (bool)hasMessage;
+- (bool)hasMimeError;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)loadingError;
 - (id)loadingErrorAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)message;
 - (int)mimeError;
 - (id)mimeErrorAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLoadingError:(BOOL)arg1;
-- (void)setHasMimeError:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLoadingError:(bool)arg1;
+- (void)setHasMimeError:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setLoadingError:(int)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMimeError:(int)arg1;

@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HMDDevice *device;
 @property (nonatomic, readonly) NSMapTable *dispatchedReadRequests;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSUUID *homeUUID;
 @property (nonatomic, retain) HMFTimer *multiReadCoalesceTimer;
 @property (nonatomic, readonly) NSMutableArray *pendingReadRequests;

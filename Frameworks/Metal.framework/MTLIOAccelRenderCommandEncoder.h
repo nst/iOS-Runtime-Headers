@@ -4,14 +4,14 @@
 
 @interface MTLIOAccelRenderCommandEncoder : MTLIOAccelCommandEncoder
 
-- (unsigned int)getType;
+- (unsigned long long)getType;
 - (id)initWithCommandBuffer:(id)arg1 descriptor:(id)arg2;
-- (void)setColorStoreAction:(unsigned int)arg1 atIndex:(unsigned int)arg2;
+- (void)setColorStoreAction:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
 - (void)setDepthCleared;
-- (void)setDepthClipModeSPI:(unsigned int)arg1;
-- (void)setDepthStoreAction:(unsigned int)arg1;
+- (void)setDepthClipModeSPI:(unsigned long long)arg1;
+- (void)setDepthStoreAction:(unsigned long long)arg1;
 - (void)setStencilCleared;
-- (void)setStencilStoreAction:(unsigned int)arg1;
+- (void)setStencilStoreAction:(unsigned long long)arg1;
 - (void)textureBarrier;
 
 @end

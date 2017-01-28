@@ -5,14 +5,14 @@
 @interface CKDProtocolTranslator : NSObject {
     NSString * _bundleIdentifier;
     NSString * _containerScopedUserID;
-    BOOL  _dontCreateValidatingParentReferences;
+    bool  _dontCreateValidatingParentReferences;
     <CKDProtocolTranslatorIdentityDelegate> * _identityDelegate;
     NSString * _overriddenContainerScopedUserID;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *containerScopedUserID;
-@property (nonatomic) BOOL dontCreateValidatingParentReferences;
+@property (nonatomic) bool dontCreateValidatingParentReferences;
 @property (nonatomic) <CKDProtocolTranslatorIdentityDelegate> *identityDelegate;
 @property (nonatomic, copy) NSString *overriddenContainerScopedUserID;
 @property (nonatomic, readonly) CKDPIdentifier *pUserID;
@@ -22,16 +22,16 @@
 - (void).cxx_destruct;
 - (id)_canonicalizedPhoneNumber:(id)arg1;
 - (id)_initWithContainerScopedUserID:(id)arg1 bundleIdentifier:(id)arg2;
-- (BOOL)_isDefaultUserNameFromClient:(id)arg1;
-- (BOOL)_isDefaultUserNameFromServer:(id)arg1;
-- (id)_pRecordFromRecordSansValues:(id)arg1 forCache:(BOOL)arg2;
+- (bool)_isDefaultUserNameFromClient:(id)arg1;
+- (bool)_isDefaultUserNameFromServer:(id)arg1;
+- (id)_pRecordFromRecordSansValues:(id)arg1 forCache:(bool)arg2;
 - (id)ancestorFromPAncestor:(id)arg1 error:(id*)arg2;
 - (id)assetFromPAsset:(id)arg1 error:(id*)arg2;
 - (id)bundleIdentifier;
 - (id)containerPrivacySettingsFromPContainerPrivacySettings:(id)arg1;
 - (id)containerScopedUserID;
-- (id)deltaPRecordFromRecord:(id)arg1 withAllFields:(BOOL)arg2 outDeletedMergeFields:(id*)arg3 outKeysToSend:(id*)arg4;
-- (BOOL)dontCreateValidatingParentReferences;
+- (id)deltaPRecordFromRecord:(id)arg1 withAllFields:(bool)arg2 outDeletedMergeFields:(id*)arg3 outKeysToSend:(id*)arg4;
+- (bool)dontCreateValidatingParentReferences;
 - (id)fieldValueFromObject:(id)arg1;
 - (id)fieldValueListOfType:(int)arg1 withList:(id)arg2;
 - (id)fieldValueOfType:(int)arg1 withObject:(id)arg2;
@@ -52,16 +52,16 @@
 - (id)pFieldWithKey:(id)arg1 value:(id)arg2;
 - (id)pIdentifierFromUserRecordID:(id)arg1;
 - (id)pPackageFromPackage:(id)arg1;
-- (id)pParticipantFromShareParticipant:(id)arg1 forCache:(BOOL)arg2;
+- (id)pParticipantFromShareParticipant:(id)arg1 forCache:(bool)arg2;
 - (id)pQueryFromQuery:(id)arg1 error:(id*)arg2;
 - (id)pRecordFromRecord:(id)arg1;
-- (id)pRecordFromRecord:(id)arg1 forCache:(BOOL)arg2;
+- (id)pRecordFromRecord:(id)arg1 forCache:(bool)arg2;
 - (id)pRecordIdentifierFromRecordID:(id)arg1;
 - (id)pRecordIdentifierFromUserRecordName:(id)arg1;
 - (id)pRecordZoneFromRecordZone:(id)arg1;
 - (id)pRecordZoneIdentifierFromRecordZoneID:(id)arg1;
 - (id)pReferenceFromReference:(id)arg1 error:(id*)arg2;
-- (id)pShareFromShare:(id)arg1 forCache:(BOOL)arg2;
+- (id)pShareFromShare:(id)arg1 forCache:(bool)arg2;
 - (id)pShareIdentifierFromRecordID:(id)arg1;
 - (id)pSubscriptionFromSubscription:(id)arg1 error:(id*)arg2;
 - (id)pUserID;
@@ -71,11 +71,11 @@
 - (id)recordIDFromPRecordIdentifier:(id)arg1 error:(id*)arg2;
 - (id)recordIDFromPShareIdentifier:(id)arg1 error:(id*)arg2;
 - (id)recordIDFromPUserName:(id)arg1 error:(id*)arg2;
-- (id)recordZoneFromPRecordZone:(id)arg1 withDatabaseScope:(int)arg2 error:(id*)arg3;
+- (id)recordZoneFromPRecordZone:(id)arg1 withDatabaseScope:(long long)arg2 error:(id*)arg3;
 - (id)recordZoneIDFromPRecordZoneIdentifier:(id)arg1 error:(id*)arg2;
 - (id)referenceFromPReference:(id)arg1 error:(id*)arg2;
 - (void)setContainerScopedUserID:(id)arg1;
-- (void)setDontCreateValidatingParentReferences:(BOOL)arg1;
+- (void)setDontCreateValidatingParentReferences:(bool)arg1;
 - (void)setIdentityDelegate:(id)arg1;
 - (void)setOverriddenContainerScopedUserID:(id)arg1;
 - (id)shareFromPShare:(id)arg1 error:(id*)arg2;

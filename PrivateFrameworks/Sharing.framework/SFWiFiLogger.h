@@ -9,7 +9,7 @@
 + (id)sharedLogger;
 
 - (void).cxx_destruct;
-- (long)_captureLogs;
+- (int)_captureLogs;
 - (void)captureLogs;
 - (void)dealloc;
 - (id)init;

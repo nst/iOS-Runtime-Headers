@@ -3,14 +3,14 @@
  */
 
 @interface _NCWidgetControllerRequestLimiter : NSObject {
-    BOOL  _isThrottled;
+    bool  _isThrottled;
     NSDate * _lastRequestDate;
-    int  _requestCount;
+    long long  _requestCount;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (BOOL)isRequestPermitted;
+- (bool)isRequestPermitted;
 
 @end

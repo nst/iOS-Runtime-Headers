@@ -19,13 +19,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (id)searchResultsForCategoryEntryAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (id)searchResultsForCategoryEntryAtIndex:(unsigned long long)arg1;
 - (id)searchResultsForCategoryEntrys;
-- (unsigned int)searchResultsForCategoryEntrysCount;
+- (unsigned long long)searchResultsForCategoryEntrysCount;
 - (void)setSearchResultsForCategoryEntrys:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

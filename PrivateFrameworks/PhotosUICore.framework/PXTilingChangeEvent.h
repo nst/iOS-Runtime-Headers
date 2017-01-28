@@ -4,38 +4,38 @@
 
 @interface PXTilingChangeEvent : NSObject {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
     PXTilingLayoutInvalidationContext * _context;
     PXTilingLayout * _layout;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _referenceSize;
-    int  _type;
+    long long  _type;
 }
 
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInset;
 @property (nonatomic, readonly) PXTilingLayoutInvalidationContext *context;
 @property (nonatomic, readonly) PXTilingLayout *layout;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } referenceSize;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } referenceSize;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInset;
 - (id)context;
 - (id)description;
 - (id)init;
-- (id)initWithChangeToContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)initWithChangeToContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)initWithChangeToLayout:(id)arg1;
-- (id)initWithChangeToReferenceSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithChangeToReferenceSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)initWithCoordinateSpaceChange;
 - (id)initWithLayoutInvalidationContext:(id)arg1;
 - (id)layout;
-- (struct CGSize { float x1; float x2; })referenceSize;
-- (int)type;
+- (struct CGSize { double x1; double x2; })referenceSize;
+- (long long)type;
 
 @end

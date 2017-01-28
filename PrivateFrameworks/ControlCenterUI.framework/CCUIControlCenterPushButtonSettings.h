@@ -4,12 +4,12 @@
 
 @interface CCUIControlCenterPushButtonSettings : _UISettings {
     NSString * _displayName;
-    BOOL  _enabled;
+    bool  _enabled;
     NSString * _identifier;
 }
 
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property (nonatomic, retain) NSString *identifier;
 
 + (id)createWithSettingClass:(Class)arg1;
@@ -17,11 +17,11 @@
 
 - (void).cxx_destruct;
 - (id)displayName;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)identifier;
 - (void)setDefaultValues;
 - (void)setDisplayName:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 
 @end

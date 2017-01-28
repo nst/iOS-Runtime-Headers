@@ -23,13 +23,13 @@
 - (id)change;
 - (id)changeFromDataSourceIdentifier;
 - (id)convertIndexPath:(id)arg1 fromAssetsDataSource:(id)arg2;
-- (BOOL)couldAssetReferenceAppear:(id)arg1;
+- (bool)couldAssetReferenceAppear:(id)arg1;
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)indexPathForAssetReference:(id)arg1;
 - (id)initWithImmutablePhotosDataSource:(id)arg1 withChange:(id)arg2 fromDataSourceIdentifier:(id)arg3;
-- (BOOL)isEmpty;
-- (int)numberOfAssetsWithMaximum:(int)arg1;
-- (int)numberOfSubItemsAtIndexPath:(id)arg1;
+- (bool)isEmpty;
+- (long long)numberOfAssetsWithMaximum:(long long)arg1;
+- (long long)numberOfSubItemsAtIndexPath:(id)arg1;
 - (id)photosDataSource;
 - (id)startingAssetReference;
 

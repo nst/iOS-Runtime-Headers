@@ -5,20 +5,20 @@
 @interface ICLearnMoreTextView : UITextView {
     NSString * _helpTopicID;
     NSString * _helpVersion;
-    BOOL  _isShowingLearnMore;
+    bool  _isShowingLearnMore;
     UIViewController * _parentViewController;
     UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (nonatomic, retain) NSString *helpTopicID;
 @property (nonatomic, retain) NSString *helpVersion;
-@property (nonatomic) BOOL isShowingLearnMore;
+@property (nonatomic) bool isShowingLearnMore;
 @property (nonatomic) UIViewController *parentViewController;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 
 - (void).cxx_destruct;
-- (BOOL)_accessibilityHasTextOperations;
-- (BOOL)accessibilityActivate;
+- (bool)_accessibilityHasTextOperations;
+- (bool)accessibilityActivate;
 - (id)accessibilityHint;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;
@@ -27,18 +27,18 @@
 - (void)didTapLearnMore;
 - (id)helpTopicID;
 - (id)helpVersion;
-- (BOOL)isShowingLearnMore;
+- (bool)isShowingLearnMore;
 - (id)letterpressedString:(id)arg1 withColor:(id)arg2 font:(id)arg3;
 - (id)parentViewController;
 - (void)resetTextView;
-- (void)setAttributedText:(id)arg1 addLearnMore:(BOOL)arg2 letterpress:(BOOL)arg3;
-- (void)setAttributedText:(id)arg1 font:(id)arg2 lineSpacing:(float)arg3 addLearnMore:(BOOL)arg4;
+- (void)setAttributedText:(id)arg1 addLearnMore:(bool)arg2 letterpress:(bool)arg3;
+- (void)setAttributedText:(id)arg1 font:(id)arg2 lineSpacing:(double)arg3 addLearnMore:(bool)arg4;
 - (void)setHelpTopicID:(id)arg1;
 - (void)setHelpVersion:(id)arg1;
-- (void)setIsShowingLearnMore:(BOOL)arg1;
+- (void)setIsShowingLearnMore:(bool)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setTapGestureRecognizer:(id)arg1;
-- (void)setText:(id)arg1 font:(id)arg2 color:(id)arg3 lineSpacing:(float)arg4 addLearnMore:(BOOL)arg5;
+- (void)setText:(id)arg1 font:(id)arg2 color:(id)arg3 lineSpacing:(double)arg4 addLearnMore:(bool)arg5;
 - (void)sizeToFitWidthUsingHeightConstraint:(id)arg1;
 - (void)tapGesture:(id)arg1;
 - (id)tapGestureRecognizer;

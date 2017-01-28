@@ -3,16 +3,16 @@
  */
 
 @interface SCNAnimationEvent : NSObject {
-    id /* block */  _eventBlock;
+    id  _eventBlock;
     double  _eventTime;
 }
 
-+ (id)animationEventWithKeyTime:(float)arg1 block:(id /* block */)arg2;
++ (id)animationEventWithKeyTime:(double)arg1 block:(id)arg2;
 
 - (void)dealloc;
-- (id /* block */)eventBlock;
+- (id)eventBlock;
 - (id)init;
-- (void)setEventBlock:(id /* block */)arg1;
+- (void)setEventBlock:(id)arg1;
 - (void)setTime:(double)arg1;
 - (double)time;
 

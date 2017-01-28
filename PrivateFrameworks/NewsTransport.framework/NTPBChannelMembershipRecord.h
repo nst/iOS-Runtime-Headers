@@ -4,44 +4,44 @@
 
 @interface NTPBChannelMembershipRecord : PBCodable <NSCopying> {
     NTPBRecordBase * _base;
-    BOOL  _canAccessDrafts;
-    NSString * _channelId;
-    NSString * _draftListId;
+    bool  _canAccessDrafts;
+    NSString * _channelID;
+    NSString * _draftListID;
     struct { 
         unsigned int canAccessDrafts : 1; 
     }  _has;
 }
 
 @property (nonatomic, retain) NTPBRecordBase *base;
-@property (nonatomic) BOOL canAccessDrafts;
-@property (nonatomic, retain) NSString *channelId;
-@property (nonatomic, retain) NSString *draftListId;
-@property (nonatomic, readonly) BOOL hasBase;
-@property (nonatomic) BOOL hasCanAccessDrafts;
-@property (nonatomic, readonly) BOOL hasChannelId;
-@property (nonatomic, readonly) BOOL hasDraftListId;
+@property (nonatomic) bool canAccessDrafts;
+@property (nonatomic, retain) NSString *channelID;
+@property (nonatomic, retain) NSString *draftListID;
+@property (nonatomic, readonly) bool hasBase;
+@property (nonatomic) bool hasCanAccessDrafts;
+@property (nonatomic, readonly) bool hasChannelID;
+@property (nonatomic, readonly) bool hasDraftListID;
 
 - (id)base;
-- (BOOL)canAccessDrafts;
-- (id)channelId;
+- (bool)canAccessDrafts;
+- (id)channelID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)draftListId;
-- (BOOL)hasBase;
-- (BOOL)hasCanAccessDrafts;
-- (BOOL)hasChannelId;
-- (BOOL)hasDraftListId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)draftListID;
+- (bool)hasBase;
+- (bool)hasCanAccessDrafts;
+- (bool)hasChannelID;
+- (bool)hasDraftListID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBase:(id)arg1;
-- (void)setCanAccessDrafts:(BOOL)arg1;
-- (void)setChannelId:(id)arg1;
-- (void)setDraftListId:(id)arg1;
-- (void)setHasCanAccessDrafts:(BOOL)arg1;
+- (void)setCanAccessDrafts:(bool)arg1;
+- (void)setChannelID:(id)arg1;
+- (void)setDraftListID:(id)arg1;
+- (void)setHasCanAccessDrafts:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

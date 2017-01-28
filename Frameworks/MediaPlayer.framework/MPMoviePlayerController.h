@@ -8,17 +8,17 @@
 
 @property (nonatomic, readonly) UIView *backgroundView;
 @property (nonatomic, copy) NSURL *contentURL;
-@property (nonatomic) int controlStyle;
+@property (nonatomic) long long controlStyle;
 @property (nonatomic) float currentPlaybackRate;
 @property (nonatomic) double currentPlaybackTime;
-@property (getter=isFullscreen, nonatomic) BOOL fullscreen;
-@property (nonatomic, readonly) BOOL isPreparedToPlay;
-@property (nonatomic, readonly) unsigned int loadState;
-@property (nonatomic, readonly) int playbackState;
-@property (nonatomic, readonly) BOOL readyForDisplay;
-@property (nonatomic) int repeatMode;
-@property (nonatomic) int scalingMode;
-@property (nonatomic) BOOL shouldAutoplay;
+@property (getter=isFullscreen, nonatomic) bool fullscreen;
+@property (nonatomic, readonly) bool isPreparedToPlay;
+@property (nonatomic, readonly) unsigned long long loadState;
+@property (nonatomic, readonly) long long playbackState;
+@property (nonatomic, readonly) bool readyForDisplay;
+@property (nonatomic) long long repeatMode;
+@property (nonatomic) long long scalingMode;
+@property (nonatomic) bool shouldAutoplay;
 @property (nonatomic, readonly) UIView *view;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -26,14 +26,14 @@
 + (void)allInstancesResignActive;
 
 - (void).cxx_destruct;
-- (BOOL)_isReadyForDisplay;
+- (bool)_isReadyForDisplay;
 - (void)_resignActive;
-- (BOOL)allowsAirPlay;
+- (bool)allowsAirPlay;
 - (id)backgroundView;
 - (void)beginSeekingBackward;
 - (void)beginSeekingForward;
 - (id)contentURL;
-- (int)controlStyle;
+- (long long)controlStyle;
 - (float)currentPlaybackRate;
 - (double)currentPlaybackTime;
 - (void)dealloc;
@@ -46,36 +46,36 @@
 - (id)initWithContentURL:(id)arg1;
 - (id)initWithPlayerItem:(id)arg1;
 - (double)initialPlaybackTime;
-- (BOOL)isAirPlayVideoActive;
-- (BOOL)isFullscreen;
-- (BOOL)isPreparedToPlay;
-- (unsigned int)loadState;
+- (bool)isAirPlayVideoActive;
+- (bool)isFullscreen;
+- (bool)isPreparedToPlay;
+- (unsigned long long)loadState;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (unsigned int)movieMediaTypes;
-- (int)movieSourceType;
-- (struct CGSize { float x1; float x2; })naturalSize;
+- (unsigned long long)movieMediaTypes;
+- (long long)movieSourceType;
+- (struct CGSize { double x1; double x2; })naturalSize;
 - (void)pause;
 - (void)play;
 - (double)playableDuration;
-- (int)playbackState;
+- (long long)playbackState;
 - (void)prepareToPlay;
-- (BOOL)readyForDisplay;
-- (int)repeatMode;
-- (int)scalingMode;
-- (void)setAllowsAirPlay:(BOOL)arg1;
+- (bool)readyForDisplay;
+- (long long)repeatMode;
+- (long long)scalingMode;
+- (void)setAllowsAirPlay:(bool)arg1;
 - (void)setContentURL:(id)arg1;
-- (void)setControlStyle:(int)arg1;
+- (void)setControlStyle:(long long)arg1;
 - (void)setCurrentPlaybackRate:(float)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
 - (void)setEndPlaybackTime:(double)arg1;
-- (void)setFullscreen:(BOOL)arg1;
-- (void)setFullscreen:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setFullscreen:(bool)arg1;
+- (void)setFullscreen:(bool)arg1 animated:(bool)arg2;
 - (void)setInitialPlaybackTime:(double)arg1;
-- (void)setMovieSourceType:(int)arg1;
-- (void)setRepeatMode:(int)arg1;
-- (void)setScalingMode:(int)arg1;
-- (void)setShouldAutoplay:(BOOL)arg1;
-- (BOOL)shouldAutoplay;
+- (void)setMovieSourceType:(long long)arg1;
+- (void)setRepeatMode:(long long)arg1;
+- (void)setScalingMode:(long long)arg1;
+- (void)setShouldAutoplay:(bool)arg1;
+- (bool)shouldAutoplay;
 - (void)skipToBeginning;
 - (void)skipToNextItem;
 - (void)skipToPreviousItem;
@@ -88,7 +88,7 @@
 
 - (id)_iAd_prerollController;
 - (void)cancelPreroll;
-- (void)playPrerollAdWithCompletionHandler:(id /* block */)arg1;
+- (void)playPrerollAdWithCompletionHandler:(id)arg1;
 - (void)set_iAd_prerollController:(id)arg1;
 
 @end

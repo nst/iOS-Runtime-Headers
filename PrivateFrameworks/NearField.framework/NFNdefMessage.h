@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) NSArray *records;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addRecord:(id)arg1;
 - (id)asData;

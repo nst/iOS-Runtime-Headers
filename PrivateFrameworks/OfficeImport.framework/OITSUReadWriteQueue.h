@@ -11,9 +11,9 @@
 
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;
-- (void)performAsyncWrite:(id /* block */)arg1;
-- (void)performSyncRead:(id /* block */)arg1;
-- (void)performSyncWrite:(id /* block */)arg1;
+- (void)performAsyncWrite:(id)arg1;
+- (void)performSyncRead:(id)arg1;
+- (void)performSyncWrite:(id)arg1;
 - (void)waitOnInFlightWriters;
 
 @end

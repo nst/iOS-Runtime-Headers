@@ -4,6 +4,6 @@
 
 @interface EDCollectionWithPointerEquality : EDCollection
 
-- (BOOL)isEqualToCollection:(id)arg1;
+- (bool)isEqualToCollection:(id)arg1;
 
 @end

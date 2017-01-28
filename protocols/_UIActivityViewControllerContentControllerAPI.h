@@ -6,16 +6,16 @@
 @required
 
 - (void)cleanupWithSelectedActivityType:(NSString *)arg1;
-- (void)createContentViewControllersWithActivityItems:(NSArray *)arg1 availableActivities:(NSArray *)arg2 excludedActivityTypes:(NSArray *)arg3 includedActivityTypes:(NSArray *)arg4 excludedActivityCategories:(int)arg5 sourceIsManaged:(BOOL)arg6 allowsEmbedding:(BOOL)arg7;
-- (float)displayHeight;
-- (BOOL)hasAirDrop;
+- (void)createContentViewControllersWithActivityItems:(NSArray *)arg1 availableActivities:(NSArray *)arg2 excludedActivityTypes:(NSArray *)arg3 includedActivityTypes:(NSArray *)arg4 excludedActivityCategories:(long long)arg5 sourceIsManaged:(bool)arg6 allowsEmbedding:(bool)arg7;
+- (double)displayHeight;
+- (bool)hasAirDrop;
 - (void)invalidateLayout;
 - (void)reloadImageForActivityType:(NSString *)arg1;
-- (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
+- (void)setDarkStyleOnLegacyApp:(bool)arg1;
 - (void)setNeedsRequestingSharedItems;
-- (void)setOtherActivityViewPresented:(BOOL)arg1;
-- (void)setSharedItemsAvailable:(BOOL)arg1;
-- (void)updateActivities:(NSArray *)arg1 animated:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })updatePreferredContentSizeWithWidth:(float)arg1;
+- (void)setOtherActivityViewPresented:(bool)arg1;
+- (void)setSharedItemsAvailable:(bool)arg1;
+- (void)updateActivities:(NSArray *)arg1 animated:(bool)arg2;
+- (struct CGSize { double x1; double x2; })updatePreferredContentSizeWithWidth:(double)arg1;
 
 @end

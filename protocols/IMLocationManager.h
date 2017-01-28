@@ -7,7 +7,7 @@
 
 - (NSError *)error;
 - (CLLocation *)location;
-- (BOOL)locationAuthorizationDenied;
-- (void)startUpdatingCurrentLocationWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CLLocation *, NSError *, void*
+- (bool)locationAuthorizationDenied;
+- (void)startUpdatingCurrentLocationWithHandler:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, CLLocation *, NSError *, void*
 
 @end

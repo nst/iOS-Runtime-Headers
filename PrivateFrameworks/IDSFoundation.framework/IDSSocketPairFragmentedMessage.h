@@ -6,7 +6,7 @@
     NSData * _data;
     unsigned int  _fragmentIndex;
     unsigned int  _fragmentedMessageID;
-    unsigned int  _offset;
+    unsigned long long  _offset;
     unsigned int  _totalFragmentCount;
 }
 

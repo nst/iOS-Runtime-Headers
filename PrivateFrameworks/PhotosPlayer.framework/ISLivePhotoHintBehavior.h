@@ -3,10 +3,10 @@
  */
 
 @interface ISLivePhotoHintBehavior : ISBehavior {
-    BOOL  __didFinishPreparing;
-    float  __lastProgress;
-    BOOL  __preparing;
-    BOOL  _playDuringHint;
+    bool  __didFinishPreparing;
+    double  __lastProgress;
+    bool  __preparing;
+    bool  _playDuringHint;
     float  _prerollRate;
     struct { 
         long long value; 
@@ -16,30 +16,30 @@
     }  _seekTime;
 }
 
-@property (setter=_setDidFinishPreparing:, nonatomic) BOOL _didFinishPreparing;
-@property (setter=_setLastProgress:, nonatomic) float _lastProgress;
-@property (getter=_isPreparing, setter=_setPreparing:, nonatomic) BOOL _preparing;
-@property (nonatomic, readonly) BOOL playDuringHint;
+@property (setter=_setDidFinishPreparing:, nonatomic) bool _didFinishPreparing;
+@property (setter=_setLastProgress:, nonatomic) double _lastProgress;
+@property (getter=_isPreparing, setter=_setPreparing:, nonatomic) bool _preparing;
+@property (nonatomic, readonly) bool playDuringHint;
 @property (nonatomic, readonly) float prerollRate;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } seekTime;
 
-- (BOOL)_didFinishPreparing;
+- (bool)_didFinishPreparing;
 - (void)_handleDidFinishPreparing;
 - (void)_handleDidPreroll;
 - (void)_handleDidSeekToBeginning;
-- (BOOL)_isPreparing;
-- (float)_lastProgress;
+- (bool)_isPreparing;
+- (double)_lastProgress;
 - (void)_prepareIfNeeded;
 - (void)_preroll;
 - (void)_seekToBeginning;
-- (void)_setDidFinishPreparing:(BOOL)arg1;
-- (void)_setLastProgress:(float)arg1;
-- (void)_setPreparing:(BOOL)arg1;
+- (void)_setDidFinishPreparing:(bool)arg1;
+- (void)_setLastProgress:(double)arg1;
+- (void)_setPreparing:(bool)arg1;
 - (void)activeDidChange;
-- (int)behaviorType;
+- (long long)behaviorType;
 - (void)hintWithProgress:(float)arg1;
-- (id)initWithInitialLayoutInfo:(id)arg1 seekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 prerollRate:(float)arg3 playDuringHint:(BOOL)arg4;
-- (BOOL)playDuringHint;
+- (id)initWithInitialLayoutInfo:(id)arg1 seekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 prerollRate:(float)arg3 playDuringHint:(bool)arg4;
+- (bool)playDuringHint;
 - (float)prerollRate;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })seekTime;
 

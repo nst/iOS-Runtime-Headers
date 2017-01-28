@@ -9,6 +9,6 @@
 
 - (void).cxx_destruct;
 - (id)initWithQuery:(id)arg1;
-- (void)performAsyncOnReceiver:(id /* block */)arg1;
+- (void)performAsyncOnReceiver:(id)arg1;
 
 @end

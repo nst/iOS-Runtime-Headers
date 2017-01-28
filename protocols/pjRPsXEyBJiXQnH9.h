@@ -6,6 +6,6 @@
 @required
 
 - (NSData *)GLYQkLbyLXRMxf6D:(VD9LmqazgfzMqjuy *)arg1 error:(id*)arg2;
-- (void)QFYEmRJgRag2HkWc:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: VD9LmqazgfzMqjuy *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
+- (void)QFYEmRJgRag2HkWc:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: VD9LmqazgfzMqjuy *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSData *, NSError *, void*
 
 @end

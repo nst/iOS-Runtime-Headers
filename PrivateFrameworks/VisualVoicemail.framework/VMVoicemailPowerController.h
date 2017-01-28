@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, retain) BCBatteryDeviceController *controller;
-@property (getter=isDeviceCharging, nonatomic, readonly) BOOL deviceCharging;
+@property (getter=isDeviceCharging, nonatomic, readonly) bool deviceCharging;
 
 + (id)sharedController;
 
@@ -15,7 +15,7 @@
 - (id)controller;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isDeviceCharging;
+- (bool)isDeviceCharging;
 - (void)setController:(id)arg1;
 
 @end

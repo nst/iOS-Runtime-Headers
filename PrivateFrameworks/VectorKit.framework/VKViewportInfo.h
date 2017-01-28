@@ -8,7 +8,7 @@
         double longitude; 
     }  _centerCoordinate;
     double  _pitch;
-    int  _tileSize;
+    long long  _tileSize;
     double  _yaw;
     float  _zoomLevel;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic) struct { double x1; double x2; } centerCoordinate;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic) double pitch;
-@property (nonatomic) int tileSize;
+@property (nonatomic) long long tileSize;
 @property (nonatomic) double yaw;
 @property (nonatomic) float zoomLevel;
 
@@ -26,10 +26,10 @@
 - (double)pitch;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setPitch:(double)arg1;
-- (void)setTileSize:(int)arg1;
+- (void)setTileSize:(long long)arg1;
 - (void)setYaw:(double)arg1;
 - (void)setZoomLevel:(float)arg1;
-- (int)tileSize;
+- (long long)tileSize;
 - (double)yaw;
 - (float)zoomLevel;
 

@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) id embeddedPrincipal;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) id hostPrincipal;
 @property (readonly) NSString *identifier;
 @property (readonly) NSDictionary *plugInDictionary;
@@ -27,7 +27,7 @@
 @property (readonly) NSString *version;
 
 - (void).cxx_destruct;
-- (void)beginUsingPlugIn:(id)arg1 ready:(id /* block */)arg2;
+- (void)beginUsingPlugIn:(id)arg1 ready:(id)arg2;
 - (id)connection;
 - (id)defaultPrincipalObject;
 - (id)description;
@@ -37,10 +37,10 @@
 - (id)initWithConnection:(id)arg1;
 - (id)plugInPrincipal;
 - (id)preferences;
-- (void)prefsObjectForKey:(id)arg1 inPlugIn:(id)arg2 result:(id /* block */)arg3;
-- (void)prefsSetObject:(id)arg1 forKey:(id)arg2 inPlugIn:(id)arg3 result:(id /* block */)arg4;
-- (void)prepareUsing:(id)arg1 reply:(id /* block */)arg2;
-- (void)prepareUsingPlugIn:(id)arg1 hostProtocol:(id)arg2 reply:(id /* block */)arg3;
+- (void)prefsObjectForKey:(id)arg1 inPlugIn:(id)arg2 result:(id)arg3;
+- (void)prefsSetObject:(id)arg1 forKey:(id)arg2 inPlugIn:(id)arg3 result:(id)arg4;
+- (void)prepareUsing:(id)arg1 reply:(id)arg2;
+- (void)prepareUsingPlugIn:(id)arg1 hostProtocol:(id)arg2 reply:(id)arg3;
 - (void)setConnection:(id)arg1;
 - (void)setEmbeddedPrincipal:(id)arg1;
 - (void)setHostPrincipal:(id)arg1;

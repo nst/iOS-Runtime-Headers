@@ -18,7 +18,7 @@
 - (long long)curatorStoreAdamID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id)arg1;
 - (id)previousResponse;
 - (void)setCuratorStoreAdamID:(long long)arg1;
 - (void)setPreviousResponse:(id)arg1;

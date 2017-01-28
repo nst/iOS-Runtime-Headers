@@ -4,7 +4,7 @@
 
 @interface _UIDynamicValueAnimation : _UIDynamicAnimation {
     NSMutableArray * _activeValues;
-    id /* block */  _applier;
+    id  _applier;
     double  _decelerationFactor;
     double  _decelerationLnFactor;
     double  _friction;
@@ -13,7 +13,7 @@
     double  _unitSize;
     double  _value;
     double  _velocity;
-    id /* block */  _viewApplier;
+    id  _viewApplier;
 }
 
 @property (nonatomic, copy) NSArray *activeValues;
@@ -25,7 +25,7 @@
 
 + (id)_dynamicValueAnimationMatchingCASpringAnimationWithMass:(double)arg1 stiffness:(double)arg2 damping:(float)arg3 velocity:(float)arg4 fromValue:(double)arg5 toValue:(double)arg6;
 
-- (BOOL)_animateForInterval:(double)arg1;
+- (bool)_animateForInterval:(double)arg1;
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
 - (double)_multiplier;
 - (void)_setDecelerationFactor:(double)arg1;
@@ -41,9 +41,9 @@
 - (id)initWithValue:(double)arg1 velocity:(double)arg2 unitSize:(double)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)removeActiveValue:(id)arg1;
-- (void)runWithCompletion:(id /* block */)arg1;
-- (void)runWithValueApplier:(id /* block */)arg1 completion:(id /* block */)arg2;
-- (void)runWithValueApplier:(id /* block */)arg1 completion:(id /* block */)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
+- (void)runWithCompletion:(id)arg1;
+- (void)runWithValueApplier:(id)arg1 completion:(id)arg2;
+- (void)runWithValueApplier:(id)arg1 completion:(id)arg2 forScreen:(id)arg3 runLoopMode:(id)arg4;
 - (void)setActiveValues:(id)arg1;
 - (void)setFriction:(double)arg1;
 - (void)setValue:(double)arg1;

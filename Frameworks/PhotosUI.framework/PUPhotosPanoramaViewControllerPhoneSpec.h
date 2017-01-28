@@ -4,7 +4,7 @@
 
 @interface PUPhotosPanoramaViewControllerPhoneSpec : PUPhotosPanoramaViewControllerSpec
 
-- (struct CGSize { float x1; float x2; })_itemSizeForWidth:(float)arg1;
+- (struct CGSize { double x1; double x2; })_itemSizeForWidth:(double)arg1;
 - (id)gridSpec;
 
 @end

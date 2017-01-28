@@ -8,9 +8,9 @@
     NSData * _shortTokenHash;
 }
 
-@property (nonatomic, readonly) BOOL hasProtectedFullToken;
-@property (nonatomic, readonly) BOOL hasShareId;
-@property (nonatomic, readonly) BOOL hasShortTokenHash;
+@property (nonatomic, readonly) bool hasProtectedFullToken;
+@property (nonatomic, readonly) bool hasShareId;
+@property (nonatomic, readonly) bool hasShortTokenHash;
 @property (nonatomic, retain) NSData *protectedFullToken;
 @property (nonatomic, retain) CKDPShareIdentifier *shareId;
 @property (nonatomic, retain) NSData *shortTokenHash;
@@ -22,14 +22,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasProtectedFullToken;
-- (BOOL)hasShareId;
-- (BOOL)hasShortTokenHash;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasProtectedFullToken;
+- (bool)hasShareId;
+- (bool)hasShortTokenHash;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)protectedFullToken;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setProtectedFullToken:(id)arg1;

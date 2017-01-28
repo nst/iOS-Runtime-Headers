@@ -5,13 +5,13 @@
 @interface WebBookmarkChange : NSObject {
     WebBookmark * _bookmark;
     int  _bookmarkID;
-    int  _changeType;
+    long long  _changeType;
     int  _parentID;
 }
 
 @property (nonatomic, readonly) WebBookmark *bookmark;
 @property (nonatomic) int bookmarkID;
-@property (nonatomic, readonly) int changeType;
+@property (nonatomic, readonly) long long changeType;
 @property (nonatomic, readonly, copy) NSDictionary *dictionaryRepresentation;
 @property (nonatomic) int parentID;
 
@@ -20,10 +20,10 @@
 - (void).cxx_destruct;
 - (id)bookmark;
 - (int)bookmarkID;
-- (int)changeType;
+- (long long)changeType;
 - (id)dictionaryRepresentation;
-- (id)initWithBookmark:(id)arg1 bookmarkID:(int)arg2 parentID:(int)arg3 changeType:(int)arg4;
-- (id)initWithBookmarkID:(int)arg1 parentID:(int)arg2 changeType:(int)arg3;
+- (id)initWithBookmark:(id)arg1 bookmarkID:(int)arg2 parentID:(int)arg3 changeType:(long long)arg4;
+- (id)initWithBookmarkID:(int)arg1 parentID:(int)arg2 changeType:(long long)arg3;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (int)parentID;
 - (void)setBookmarkID:(int)arg1;

@@ -16,11 +16,11 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithMin:(id)arg1 max:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToValueRange:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToValueRange:(id)arg1;
 - (id)maxPossible;
 - (id)minPossible;
 - (id)range;

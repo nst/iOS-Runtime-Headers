@@ -4,12 +4,12 @@
 
 @interface CKAvatarTitleCollectionReusableView : UICollectionReusableView {
     NSMutableArray * _pendingTitles;
-    int  _style;
+    long long  _style;
     UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) NSMutableArray *pendingTitles;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 @property (nonatomic, retain) UILabel *titleLabel;
 
 + (id)reuseIdentifier;
@@ -18,14 +18,14 @@
 - (void).cxx_destruct;
 - (void)_animateFromQueue;
 - (void)configureWithTitle:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)pendingTitles;
 - (void)setPendingTitles:(id)arg1;
-- (void)setStyle:(int)arg1;
-- (void)setTitle:(id)arg1 animated:(BOOL)arg2;
+- (void)setStyle:(long long)arg1;
+- (void)setTitle:(id)arg1 animated:(bool)arg2;
 - (void)setTitleLabel:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)titleLabel;
 
 @end

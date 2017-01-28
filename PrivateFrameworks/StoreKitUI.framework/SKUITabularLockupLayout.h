@@ -13,6 +13,6 @@
 - (void).cxx_destruct;
 - (id)columns;
 - (id)initWithLockup:(id)arg1 context:(id)arg2;
-- (void)sizeColumnsToFitWidth:(float)arg1 context:(id)arg2;
+- (void)sizeColumnsToFitWidth:(double)arg1 context:(id)arg2;
 
 @end

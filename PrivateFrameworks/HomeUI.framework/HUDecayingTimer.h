@@ -3,29 +3,29 @@
  */
 
 @interface HUDecayingTimer : NSObject {
-    id /* block */  _block;
-    unsigned int  _minimumUnit;
+    id  _block;
+    unsigned long long  _minimumUnit;
     NSDate * _referenceDate;
     NSTimer * _timer;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ block;
-@property (nonatomic, readonly) unsigned int minimumUnit;
+@property (nonatomic, readonly, copy) id block;
+@property (nonatomic, readonly) unsigned long long minimumUnit;
 @property (nonatomic, readonly) NSDate *referenceDate;
 @property (nonatomic, retain) NSTimer *timer;
 
-+ (id)scheduledTimerWithReferenceDate:(id)arg1 minimumUnit:(unsigned int)arg2 block:(id /* block */)arg3;
++ (id)scheduledTimerWithReferenceDate:(id)arg1 minimumUnit:(unsigned long long)arg2 block:(id)arg3;
 
 - (void).cxx_destruct;
-- (unsigned int)_mostSignificantUnitForDateComponents:(id)arg1;
+- (unsigned long long)_mostSignificantUnitForDateComponents:(id)arg1;
 - (id)_nextFireDate;
 - (void)_scheduleNextTimer;
 - (void)_timerEvent;
-- (id /* block */)block;
+- (id)block;
 - (void)dealloc;
-- (id)initWithReferenceDate:(id)arg1 minimumUnit:(unsigned int)arg2 block:(id /* block */)arg3;
+- (id)initWithReferenceDate:(id)arg1 minimumUnit:(unsigned long long)arg2 block:(id)arg3;
 - (void)invalidate;
-- (unsigned int)minimumUnit;
+- (unsigned long long)minimumUnit;
 - (id)referenceDate;
 - (void)setTimer:(id)arg1;
 - (id)timer;

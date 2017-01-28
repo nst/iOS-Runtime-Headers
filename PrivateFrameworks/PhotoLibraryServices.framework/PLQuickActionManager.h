@@ -8,7 +8,7 @@
     Class  __SBSApplicationShortcutServiceClass;
     SBSApplicationShortcutService * __appShortcutService;
     NSData * __cachedMostRecentPhotoData;
-    BOOL  __mostRecentPhotoIsInvalid;
+    bool  __mostRecentPhotoIsInvalid;
 }
 
 @property (setter=_setSBSApplicationShortcutCustomImageIconClass:, nonatomic, retain) Class _SBSApplicationShortcutCustomImageIconClass;
@@ -16,7 +16,7 @@
 @property (setter=_setSBSApplicationShortcutServiceClass:, nonatomic, retain) Class _SBSApplicationShortcutServiceClass;
 @property (setter=_setAppShortcutService:, nonatomic, retain) SBSApplicationShortcutService *_appShortcutService;
 @property (setter=_setCachedMostRecentPhotoData:, nonatomic, retain) NSData *_cachedMostRecentPhotoData;
-@property (setter=_setMostRecentPhotoIsInvalid:, nonatomic) BOOL _mostRecentPhotoIsInvalid;
+@property (setter=_setMostRecentPhotoIsInvalid:, nonatomic) bool _mostRecentPhotoIsInvalid;
 
 + (id)sharedManager;
 
@@ -29,16 +29,16 @@
 - (id)_buildOneYearAgoQuickAction;
 - (id)_buildSearchQuickAction;
 - (id)_cachedMostRecentPhotoData;
-- (BOOL)_mostRecentPhotoIsInvalid;
+- (bool)_mostRecentPhotoIsInvalid;
 - (void)_setAppShortcutService:(id)arg1;
 - (void)_setCachedMostRecentPhotoData:(id)arg1;
-- (void)_setMostRecentPhotoIsInvalid:(BOOL)arg1;
+- (void)_setMostRecentPhotoIsInvalid:(bool)arg1;
 - (void)_setSBSApplicationShortcutCustomImageIconClass:(Class)arg1;
 - (void)_setSBSApplicationShortcutItemClass:(Class)arg1;
 - (void)_setSBSApplicationShortcutServiceClass:(Class)arg1;
 - (id)_shortcutImageNamed:(id)arg1;
-- (BOOL)_userHasPhotos;
-- (BOOL)_userHasPhotosFromLastYear;
+- (bool)_userHasPhotos;
+- (bool)_userHasPhotosFromLastYear;
 - (void)buildQuickActionItems;
 - (void)cameraPreviewWellImageDidChange:(id)arg1;
 - (void)dealloc;

@@ -5,19 +5,19 @@
 @interface _SFSearchRequest : NSObject {
     NSDictionary * _headerFields;
     NSDictionary * _queryParameters;
-    int  _searchTypes;
+    long long  _searchTypes;
 }
 
 @property (nonatomic, copy) NSDictionary *headerFields;
 @property (nonatomic, copy) NSDictionary *queryParameters;
-@property (nonatomic) int searchTypes;
+@property (nonatomic) long long searchTypes;
 
 - (void).cxx_destruct;
 - (id)headerFields;
 - (id)queryParameters;
-- (int)searchTypes;
+- (long long)searchTypes;
 - (void)setHeaderFields:(id)arg1;
 - (void)setQueryParameters:(id)arg1;
-- (void)setSearchTypes:(int)arg1;
+- (void)setSearchTypes:(long long)arg1;
 
 @end

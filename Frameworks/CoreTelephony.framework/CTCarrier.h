@@ -3,29 +3,29 @@
  */
 
 @interface CTCarrier : NSObject {
-    BOOL  _allowsVOIP;
+    bool  _allowsVOIP;
     NSString * _carrierName;
     NSString * _isoCountryCode;
     NSString * _mobileCountryCode;
     NSString * _mobileNetworkCode;
 }
 
-@property (nonatomic) BOOL allowsVOIP;
+@property (nonatomic) bool allowsVOIP;
 @property (nonatomic, retain) NSString *carrierName;
 @property (nonatomic, retain) NSString *isoCountryCode;
 @property (nonatomic, retain) NSString *mobileCountryCode;
 @property (nonatomic, retain) NSString *mobileNetworkCode;
 
-- (BOOL)allowsVOIP;
+- (bool)allowsVOIP;
 - (id)carrierName;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)isoCountryCode;
 - (id)mobileCountryCode;
 - (id)mobileNetworkCode;
-- (void)setAllowsVOIP:(BOOL)arg1;
+- (void)setAllowsVOIP:(bool)arg1;
 - (void)setCarrierName:(id)arg1;
 - (void)setIsoCountryCode:(id)arg1;
 - (void)setMobileCountryCode:(id)arg1;

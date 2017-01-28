@@ -3,21 +3,21 @@
  */
 
 @interface PUPXPhotoKitDuplicateAssetActionPerformer : PXPhotoKitAssetActionPerformer {
-    int  _action;
+    long long  _action;
     PUDuplicateActionController * _duplicateActionController;
 }
 
-@property (nonatomic) int action;
+@property (nonatomic) long long action;
 @property (nonatomic, retain) PUDuplicateActionController *duplicateActionController;
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
 
 - (void).cxx_destruct;
-- (int)action;
+- (long long)action;
 - (id)duplicateActionController;
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
-- (void)setAction:(int)arg1;
+- (void)setAction:(long long)arg1;
 - (void)setDuplicateActionController:(id)arg1;
 
 @end

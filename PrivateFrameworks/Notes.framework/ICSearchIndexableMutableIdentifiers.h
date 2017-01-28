@@ -11,7 +11,7 @@
 - (id)mutableIdentifiers;
 - (void)removeAllObjects;
 - (void)removeSearchIndexableIdentifier:(id)arg1;
-- (void)removeSearchIndexableIdentifierAtIndex:(unsigned int)arg1;
+- (void)removeSearchIndexableIdentifierAtIndex:(unsigned long long)arg1;
 - (void)unionIdentifiers:(id)arg1;
 
 @end

@@ -13,6 +13,6 @@
 - (void)removeSourceRenderersForEngineContext:(struct __C3DEngineContext { }*)arg1;
 - (void)removeSourceRenderersForSource:(id)arg1;
 - (void)rendererDidChange:(id)arg1;
-- (id)sourceRendererForEngineContext:(struct __C3DEngineContext { }*)arg1 source:(id)arg2;
+- (id)sourceRendererForEngineContext:(struct __C3DEngineContext { }*)arg1 source:(id)arg2 textureSource:(id)arg3;
 
 @end

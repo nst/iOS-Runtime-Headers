@@ -7,9 +7,9 @@
     NSArray * _dataSource;
     UINavigationController * _nowPlayingNavigationController;
     NSArray * _queuedDataSource;
-    BOOL  _rankedList;
+    bool  _rankedList;
     NSIndexPath * _selectedIndexPath;
-    BOOL  _shouldQueueDataSource;
+    bool  _shouldQueueDataSource;
     MCDNewPlaylistsTableViewController * _viewController;
 }
 
@@ -17,18 +17,18 @@
 @property (nonatomic, retain) NSArray *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UINavigationController *nowPlayingNavigationController;
 @property (nonatomic, retain) NSArray *queuedDataSource;
-@property (nonatomic) BOOL rankedList;
+@property (nonatomic) bool rankedList;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
-@property (nonatomic) BOOL shouldQueueDataSource;
+@property (nonatomic) bool shouldQueueDataSource;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) MCDNewPlaylistsTableViewController *viewController;
 
 - (void).cxx_destruct;
-- (void)_addTrackNumberAndArtworkToCell:(id)arg1 artworkCatalog:(id)arg2 trackNumber:(unsigned int)arg3 currentlyPlaying:(BOOL)arg4;
-- (void)_animateActivityIndicatorForCell:(id)arg1 shouldBegin:(BOOL)arg2;
+- (void)_addTrackNumberAndArtworkToCell:(id)arg1 artworkCatalog:(id)arg2 trackNumber:(unsigned long long)arg3 currentlyPlaying:(bool)arg4;
+- (void)_animateActivityIndicatorForCell:(id)arg1 shouldBegin:(bool)arg2;
 - (void)_initiatePlaybackWithError:(id)arg1 forCell:(id)arg2;
 - (void)_itemDidChange;
 - (void)_limitedUIDidChange;
@@ -37,29 +37,29 @@
 - (void)_setupDataSourceQueue;
 - (id)_setupMetadataContextForContentItem:(id)arg1;
 - (id)_setupPlaybackContextForContentItem:(id)arg1;
-- (id)_setupPlaybackContextForQueuedSongsLength:(int)arg1;
+- (id)_setupPlaybackContextForQueuedSongsLength:(long long)arg1;
 - (id)activityIndicator;
 - (id)dataSource;
 - (void)didStartPlaying:(id)arg1;
 - (id)initWithPlayer:(id)arg1 serviceProvider:(id)arg2 dataSource:(id)arg3;
 - (id)nowPlayingNavigationController;
 - (id)queuedDataSource;
-- (BOOL)rankedList;
+- (bool)rankedList;
 - (id)selectedIndexPath;
 - (void)setActivityIndicator:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setNowPlayingNavigationController:(id)arg1;
 - (void)setQueuedDataSource:(id)arg1;
-- (void)setRankedList:(BOOL)arg1;
+- (void)setRankedList:(bool)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
-- (void)setShouldQueueDataSource:(BOOL)arg1;
+- (void)setShouldQueueDataSource:(bool)arg1;
 - (void)setViewController:(id)arg1;
-- (BOOL)shouldQueueDataSource;
+- (bool)shouldQueueDataSource;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)viewController;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

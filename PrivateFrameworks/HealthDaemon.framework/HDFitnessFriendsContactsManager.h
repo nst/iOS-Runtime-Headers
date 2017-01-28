@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSSet *contacts;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSSet *placeholderContacts;
 @property (readonly) Class superclass;
 
@@ -27,10 +27,10 @@
 - (id)_findMatchingContactStoreContactForDestinations:(id)arg1;
 - (void)_notifyObservers;
 - (void)_persistContacts;
-- (void)_setContacts:(id)arg1 waitForTransaction:(BOOL)arg2;
+- (void)_setContacts:(id)arg1 waitForTransaction:(bool)arg2;
 - (void)_waitForTransaction;
 - (void)addObserver:(id)arg1;
-- (id)contactMatchingCriteriaBlock:(id /* block */)arg1;
+- (id)contactMatchingCriteriaBlock:(id)arg1;
 - (id)contactWithDestinations:(id)arg1;
 - (id)contactWithUUID:(id)arg1;
 - (id)contacts;
@@ -38,11 +38,12 @@
 - (id)init;
 - (id)placeholderContactWithUUID:(id)arg1;
 - (id)placeholderContacts;
+- (void)removeAllPlaceholderContacts;
 - (void)removeObserver:(id)arg1;
-- (void)removePlaceholderContact:(id)arg1;
+- (void)removePlaceholderContactWithToken:(id)arg1;
 - (void)saveContact:(id)arg1;
-- (void)savePlaceholderContact:(id)arg1;
+- (id)savePlaceholderContact:(id)arg1;
 - (void)setContacts:(id)arg1;
-- (void)setContactsUsingTransaction:(id /* block */)arg1;
+- (void)setContactsUsingTransaction:(id)arg1;
 
 @end

@@ -4,12 +4,12 @@
 
 @interface MPCRadioStationPlaybackMetadata : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     RadioArtworkCollection * _artworkCollection;
-    BOOL  _hasSetArtworkCollection;
-    BOOL  _hasSetStationHash;
-    BOOL  _hasSetStationID;
-    BOOL  _hasSetStationName;
-    BOOL  _hasSetStationStringID;
-    BOOL  _hasValidRadioStation;
+    bool  _hasSetArtworkCollection;
+    bool  _hasSetStationHash;
+    bool  _hasSetStationID;
+    bool  _hasSetStationName;
+    bool  _hasSetStationStringID;
+    bool  _hasValidRadioStation;
     RadioStation * _station;
     NSString * _stationHash;
     long long  _stationID;
@@ -25,7 +25,7 @@
 @property (nonatomic, readonly, copy) NSString *stationName;
 @property (nonatomic, readonly, copy) NSString *stationStringID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 class:(Class)arg2;
@@ -34,12 +34,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStation:(id)arg1;
 - (id)initWithStationStringID:(id)arg1;
-- (BOOL)isEffectivelyEqualStationWithPlaybackMetadata:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEffectivelyEqualStationWithPlaybackMetadata:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)station;
 - (id)stationDictionary;

@@ -4,16 +4,16 @@
 
 @interface PLModelingUtilities : NSObject
 
-+ (BOOL)alsCurveHigherThanDefault;
++ (bool)alsCurveHigherThanDefault;
 + (double)defaultBatteryEnergyCapacity;
 + (double)duetDiscretionaryBudget;
-+ (BOOL)internalBuild;
-+ (BOOL)isHeySiriAlwaysOn;
-+ (BOOL)isIPod;
-+ (BOOL)isLowPowerModeSupported;
-+ (BOOL)isNarrowScreen;
-+ (BOOL)isiPad;
-+ (BOOL)isiPhone;
++ (bool)internalBuild;
++ (bool)isHeySiriAlwaysOn;
++ (bool)isIPod;
++ (bool)isLowPowerModeSupported;
++ (bool)isNarrowScreen;
++ (bool)isiPad;
++ (bool)isiPhone;
 + (id)valueForMobileGestaltCapability:(id)arg1;
 
 @end

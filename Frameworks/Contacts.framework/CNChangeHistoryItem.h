@@ -3,22 +3,22 @@
  */
 
 @interface CNChangeHistoryItem : NSObject <NSSecureCoding> {
-    int  _changeType;
+    long long  _changeType;
     NSString * _identifier;
 }
 
-@property (nonatomic) int changeType;
+@property (nonatomic) long long changeType;
 @property (nonatomic, retain) NSString *identifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)changeType;
+- (long long)changeType;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (void)setChangeType:(int)arg1;
+- (void)setChangeType:(long long)arg1;
 - (void)setIdentifier:(id)arg1;
 
 @end

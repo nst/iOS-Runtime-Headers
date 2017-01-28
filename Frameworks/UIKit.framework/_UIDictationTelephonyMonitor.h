@@ -3,24 +3,24 @@
  */
 
 @interface _UIDictationTelephonyMonitor : NSObject {
-    id /* block */  _activityChanged;
+    id  _activityChanged;
     CTCallCenter * _callCentre;
     IMAVCallManager * _facetimeCallManager;
     <NSObject> * _notificationToken;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _telephonyActivity;
+    bool  _telephonyActivity;
 }
 
-@property (copy) id /* block */ activityChanged;
-@property (nonatomic, readonly) BOOL telephonyActivity;
+@property (copy) id activityChanged;
+@property (nonatomic, readonly) bool telephonyActivity;
 
 - (void)_backgroundInit;
 - (void)_backgroundReset;
-- (id /* block */)activityChanged;
+- (id)activityChanged;
 - (void)dealloc;
 - (id)init;
-- (void)setActivityChanged:(id /* block */)arg1;
+- (void)setActivityChanged:(id)arg1;
 - (void)start;
-- (BOOL)telephonyActivity;
+- (bool)telephonyActivity;
 
 @end

@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-- (void)addOperationWithBlock:(id /* block */)arg1;
+- (void)addOperationWithBlock:(id)arg1;
 - (void)dealloc;
 - (id)initWithDispatchQueue:(id)arg1;
 - (int)maxConcurrentOperationCount;

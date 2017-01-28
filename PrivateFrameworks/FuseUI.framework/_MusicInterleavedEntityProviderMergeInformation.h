@@ -15,13 +15,13 @@
 @property (nonatomic, copy) NSIndexPath *indexPath;
 
 - (void).cxx_destruct;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)entityComparisonObject;
 - (id)entityProvider;
 - (id)entityUniqueIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)indexPath;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setEntityComparisonObject:(id)arg1;
 - (void)setEntityProvider:(id)arg1;
 - (void)setEntityUniqueIdentifier:(id)arg1;

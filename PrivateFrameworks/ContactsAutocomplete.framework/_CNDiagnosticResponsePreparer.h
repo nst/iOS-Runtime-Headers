@@ -9,7 +9,7 @@
 @property (readonly) <CNFuture> *logFuture;
 
 - (void).cxx_destruct;
-- (id)initWithResponsePreparer:(id)arg1 delegate:(id)arg2 log:(id /* block */)arg3;
+- (id)initWithResponsePreparer:(id)arg1 delegate:(id)arg2 log:(id)arg3;
 - (id)logFuture;
 - (id)prepareResults:(id)arg1;
 

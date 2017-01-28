@@ -5,8 +5,8 @@
 
 @required
 
-- (float)rotationX;
-- (float)rotationY;
-- (float)rotationZ;
+- (double)rotationX;
+- (double)rotationY;
+- (double)rotationZ;
 
 @end

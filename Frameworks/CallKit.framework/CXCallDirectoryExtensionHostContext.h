@@ -9,19 +9,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CXCallDirectoryProviderHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (oneway void)addBlockingEntriesWithData:(id)arg1 reply:(id /* block */)arg2;
-- (oneway void)addIdentificationEntriesWithData:(id)arg1 reply:(id /* block */)arg2;
-- (oneway void)completeRequestWithReply:(id /* block */)arg1;
+- (oneway void)addBlockingEntriesWithData:(id)arg1 reply:(id)arg2;
+- (oneway void)addIdentificationEntriesWithData:(id)arg1 reply:(id)arg2;
+- (oneway void)completeRequestWithReply:(id)arg1;
 - (id)delegate;
-- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (void)requestFailedWithError:(id)arg1 completion:(id /* block */)arg2;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (void)requestFailedWithError:(id)arg1 completion:(id)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

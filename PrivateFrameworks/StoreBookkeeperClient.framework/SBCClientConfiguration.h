@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) SBCPlaybackPositionDomain *playbackPositionDomain;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

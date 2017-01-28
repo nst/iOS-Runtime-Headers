@@ -9,6 +9,6 @@
 + (id)sharedInstance;
 
 - (id)init;
-- (void)logToAggregateInstallationLog:(unsigned int)arg1 step:(unsigned int)arg2 success:(BOOL)arg3 bundleID:(id)arg4 description:(id)arg5;
+- (void)logToAggregateInstallationLog:(unsigned long long)arg1 step:(unsigned long long)arg2 success:(bool)arg3 bundleID:(id)arg4 description:(id)arg5;
 
 @end

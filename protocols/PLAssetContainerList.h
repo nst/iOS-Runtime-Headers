@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)canEditContainers;
+- (bool)canEditContainers;
 - (NSOrderedSet *)containers;
-- (unsigned int)containersCount;
+- (unsigned long long)containersCount;
 - (NSString *)containersRelationshipName;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (NSManagedObjectContext *)managedObjectContext;
 - (PLPhotoLibrary *)photoLibrary;
 

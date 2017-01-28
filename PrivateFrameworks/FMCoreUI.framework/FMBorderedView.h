@@ -3,21 +3,21 @@
  */
 
 @interface FMBorderedView : UIView {
-    BOOL  _hairlineBorder;
+    bool  _hairlineBorder;
 }
 
 @property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic) float borderWidth;
-@property (nonatomic) float cornerRadius;
-@property (nonatomic) BOOL hairlineBorder;
+@property (nonatomic) double borderWidth;
+@property (nonatomic) double cornerRadius;
+@property (nonatomic) bool hairlineBorder;
 
 - (id)borderColor;
-- (float)borderWidth;
-- (float)cornerRadius;
-- (BOOL)hairlineBorder;
+- (double)borderWidth;
+- (double)cornerRadius;
+- (bool)hairlineBorder;
 - (void)setBorderColor:(id)arg1;
-- (void)setBorderWidth:(float)arg1;
-- (void)setCornerRadius:(float)arg1;
-- (void)setHairlineBorder:(BOOL)arg1;
+- (void)setBorderWidth:(double)arg1;
+- (void)setCornerRadius:(double)arg1;
+- (void)setHairlineBorder:(bool)arg1;
 
 @end

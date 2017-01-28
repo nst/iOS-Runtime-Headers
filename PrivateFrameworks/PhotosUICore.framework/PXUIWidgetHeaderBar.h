@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)createView;
@@ -16,7 +16,7 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)updateView;
-- (float)viewHeight;
+- (double)viewHeight;
 - (void)widgetHeaderView:(id)arg1 didSelectCaption:(id)arg2;
 - (void)widgetHeaderView:(id)arg1 didSelectSubtitle:(id)arg2;
 

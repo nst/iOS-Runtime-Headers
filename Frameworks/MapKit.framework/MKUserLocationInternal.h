@@ -13,7 +13,7 @@
     NSString * subtitle;
     double  timestamp;
     NSString * title;
-    BOOL  updating;
+    bool  updating;
 }
 
 @property (nonatomic, readonly) <MKAnnotation> *annotation;
@@ -25,14 +25,14 @@
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic) double timestamp;
 @property (nonatomic, retain) NSString *title;
-@property (getter=isUpdating, nonatomic) BOOL updating;
+@property (getter=isUpdating, nonatomic) bool updating;
 
 - (void).cxx_destruct;
 - (id)annotation;
 - (double)course;
 - (id)fixedLocation;
 - (id)heading;
-- (BOOL)isUpdating;
+- (bool)isUpdating;
 - (id)location;
 - (id)predictedLocation;
 - (void)setCourse:(double)arg1;
@@ -43,7 +43,7 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUpdating:(BOOL)arg1;
+- (void)setUpdating:(bool)arg1;
 - (id)subtitle;
 - (double)timestamp;
 - (id)title;

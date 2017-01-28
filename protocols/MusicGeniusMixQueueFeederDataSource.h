@@ -5,10 +5,10 @@
 
 @required
 
-- (unsigned int)geniusMixQueueFeeder:(MusicGeniusMixQueueFeeder *)arg1 indexOfMediaItem:(MPMediaItem *)arg2;
-- (MPMediaItem *)geniusMixQueueFeeder:(MusicGeniusMixQueueFeeder *)arg1 mediaItemAtIndex:(unsigned int)arg2;
-- (MPMediaQuery *)geniusMixQueueFeeder:(MusicGeniusMixQueueFeeder *)arg1 queryForMediaItemAtIndex:(unsigned int)arg2;
-- (unsigned int)geniusMixQueueFeederMediaItemCount:(MusicGeniusMixQueueFeeder *)arg1;
+- (unsigned long long)geniusMixQueueFeeder:(MusicGeniusMixQueueFeeder *)arg1 indexOfMediaItem:(MPMediaItem *)arg2;
+- (MPMediaItem *)geniusMixQueueFeeder:(MusicGeniusMixQueueFeeder *)arg1 mediaItemAtIndex:(unsigned long long)arg2;
+- (MPMediaQuery *)geniusMixQueueFeeder:(MusicGeniusMixQueueFeeder *)arg1 queryForMediaItemAtIndex:(unsigned long long)arg2;
+- (unsigned long long)geniusMixQueueFeederMediaItemCount:(MusicGeniusMixQueueFeeder *)arg1;
 - (MPMediaPlaylist *)mixPlaylist;
 - (MPMediaItem *)requiredInitialMediaItem;
 

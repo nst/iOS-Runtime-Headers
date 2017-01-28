@@ -6,20 +6,20 @@
     AWDNFCJCOPRestrictedModeEvent * _metric;
 }
 
-@property (nonatomic) BOOL contactlessMode;
+@property (nonatomic) bool contactlessMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AWDNFCJCOPRestrictedModeEvent *metric;
 @property (readonly) Class superclass;
 
-- (BOOL)contactlessMode;
+- (bool)contactlessMode;
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (id)metric;
-- (void)setContactlessMode:(BOOL)arg1;
+- (void)setContactlessMode:(bool)arg1;
 - (void)setMetric:(id)arg1;
 - (void)updateExceptionUUID:(id)arg1;
 

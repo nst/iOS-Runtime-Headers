@@ -5,6 +5,6 @@
 @interface DKUtilities : NSObject
 
 + (id)acceptableDecoderClasses;
-+ (void)parseExtensionInputItems:(id)arg1 completion:(id /* block */)arg2;
++ (void)parseExtensionInputItems:(id)arg1 completion:(id)arg2;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (retain) NSArray *propertyKeys;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

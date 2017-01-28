@@ -7,7 +7,7 @@
     NSString * _name;
     NSDictionary * _outValues;
     NSString * _readHAPCharacteristicName;
-    BOOL  _supportsLocalization;
+    bool  _supportsLocalization;
     NSDictionary * _values;
     NSString * _writeHAPCharacteristicName;
 }
@@ -16,11 +16,11 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSDictionary *outValues;
 @property (nonatomic, retain) NSString *readHAPCharacteristicName;
-@property (nonatomic) BOOL supportsLocalization;
+@property (nonatomic) bool supportsLocalization;
 @property (nonatomic, retain) NSDictionary *values;
 @property (nonatomic, retain) NSString *writeHAPCharacteristicName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -38,10 +38,10 @@
 - (void)setName:(id)arg1;
 - (void)setOutValues:(id)arg1;
 - (void)setReadHAPCharacteristicName:(id)arg1;
-- (void)setSupportsLocalization:(BOOL)arg1;
+- (void)setSupportsLocalization:(bool)arg1;
 - (void)setValues:(id)arg1;
 - (void)setWriteHAPCharacteristicName:(id)arg1;
-- (BOOL)supportsLocalization;
+- (bool)supportsLocalization;
 - (id)values;
 - (id)writeHAPCharacteristicName;
 

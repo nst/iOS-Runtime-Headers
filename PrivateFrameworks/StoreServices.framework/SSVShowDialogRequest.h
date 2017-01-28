@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSObject<OS_xpc_object> *encodedDialog;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -17,6 +17,6 @@
 - (id)encodedDialog;
 - (id)initWithEncodedDialog:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (void)startWithDialogResponseBlock:(id /* block */)arg1;
+- (void)startWithDialogResponseBlock:(id)arg1;
 
 @end

@@ -5,23 +5,23 @@
 @interface FBSDisplay : NSObject <BSDescriptionProviding, BSXPCCoding, NSCopying, NSSecureCoding> {
     CADisplay * _caDisplay;
     unsigned int  _displayID;
-    BOOL  _external;
-    float  _orientation;
+    bool  _external;
+    double  _orientation;
     int  _pid;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _referenceBounds;
-    float  _scale;
+    double  _scale;
     unsigned int  _seed;
-    int  _tags;
-    unsigned int  _type;
+    long long  _tags;
+    unsigned long long  _type;
     NSString * _uniqueID;
 }
 
@@ -29,26 +29,26 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned int displayID;
-@property (getter=isExternal, nonatomic, readonly) BOOL external;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float orientation;
+@property (getter=isExternal, nonatomic, readonly) bool external;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) double orientation;
 @property (nonatomic, readonly) int pid;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } referenceBounds;
-@property (nonatomic, readonly) float scale;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } referenceBounds;
+@property (nonatomic, readonly) double scale;
 @property (nonatomic) unsigned int seed;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int tags;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) long long tags;
+@property (nonatomic, readonly) unsigned long long type;
 @property (nonatomic, readonly, copy) NSString *uniqueID;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 + (id)_CADisplayForId:(unsigned int)arg1;
-+ (id)_nameForDisplayType:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)_nameForDisplayType:(unsigned long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)_nameForDisplayType;
-- (unsigned int)_typeFromTags:(unsigned int)arg1;
+- (unsigned long long)_typeFromTags:(unsigned long long)arg1;
 - (id)caDisplay;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -58,31 +58,31 @@
 - (unsigned int)displayID;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCADisplay:(id)arg1;
-- (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2;
+- (id)initWithCADisplay:(id)arg1 isMainDisplay:(bool)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isAirPlayDisplay;
-- (BOOL)isCarDisplay;
-- (BOOL)isConnected;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExternal;
-- (BOOL)isHiddenDisplay;
-- (BOOL)isMainDisplay;
-- (BOOL)isMusicOnlyDisplay;
-- (BOOL)isRestrictedAirPlayDisplay;
-- (BOOL)isiPodOnlyDisplay;
-- (float)orientation;
+- (bool)isAirPlayDisplay;
+- (bool)isCarDisplay;
+- (bool)isConnected;
+- (bool)isEqual:(id)arg1;
+- (bool)isExternal;
+- (bool)isHiddenDisplay;
+- (bool)isMainDisplay;
+- (bool)isMusicOnlyDisplay;
+- (bool)isRestrictedAirPlayDisplay;
+- (bool)isiPodOnlyDisplay;
+- (double)orientation;
 - (int)pid;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })referenceBounds;
-- (float)scale;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })referenceBounds;
+- (double)scale;
 - (unsigned int)seed;
 - (void)setSeed:(unsigned int)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (int)tags;
-- (unsigned int)type;
+- (long long)tags;
+- (unsigned long long)type;
 - (id)uniqueID;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard

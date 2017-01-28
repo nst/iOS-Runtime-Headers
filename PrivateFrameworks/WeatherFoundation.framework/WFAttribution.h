@@ -13,7 +13,7 @@
 + (id)weatherSourceAttributionURLForTrafficParameter:(id)arg1;
 
 - (id)localizedSourceAttribution;
-- (id)sourceAttributionImageForStyle:(unsigned int)arg1;
+- (id)sourceAttributionImageForStyle:(unsigned long long)arg1;
 - (id)sourceAttributionURL;
 - (id)sourceName;
 

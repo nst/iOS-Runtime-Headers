@@ -6,7 +6,7 @@
     NSExtension * _extension;
 }
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 @property (nonatomic, retain) NSExtension *extension;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly) NSString *localizedContainingAppName;
@@ -19,12 +19,12 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithExtension:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)localizedContainingAppName;
 - (id)localizedName;
 - (id)plugInKitProxy;
 - (void)resetEnabledStatus;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setExtension:(id)arg1;
 
 @end

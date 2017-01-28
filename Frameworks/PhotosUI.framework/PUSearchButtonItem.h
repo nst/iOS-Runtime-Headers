@@ -5,45 +5,45 @@
 @interface PUSearchButtonItem : UIBarButtonItem {
     PUSearchButtonItemCustomView * _customView;
     UINavigationItem * _navigationItem;
-    BOOL  _nudgesSearchIcon;
+    bool  _nudgesSearchIcon;
     UISearchBar * _searchBar;
     <UISearchBarDelegate> * _searchBarDelegate;
     UIView * _searchIcon;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _searchIconDefaultBounds;
-    BOOL  _showingSearchBar;
-    BOOL  _wantsShowingSearchBar;
+    bool  _showingSearchBar;
+    bool  _wantsShowingSearchBar;
 }
 
-@property (nonatomic) float maxSearchBarWidth;
+@property (nonatomic) double maxSearchBarWidth;
 @property (nonatomic, readonly) UINavigationItem *navigationItem;
-@property (nonatomic) BOOL nudgesSearchIcon;
+@property (nonatomic) bool nudgesSearchIcon;
 @property (nonatomic, readonly) UISearchBar *searchBar;
 @property (nonatomic) <UISearchBarDelegate> *searchBarDelegate;
-@property (nonatomic, readonly) BOOL showingSearchBar;
+@property (nonatomic, readonly) bool showingSearchBar;
 
 - (void).cxx_destruct;
 - (id)_allNavigationButtonItems;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_targetBoundsForSearchBarInNavigationBar:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_targetBoundsForSearchBarInNavigationBar:(id)arg1;
 - (id)initWithNavigationItem:(id)arg1 target:(id)arg2 action:(SEL)arg3;
-- (float)maxSearchBarWidth;
+- (double)maxSearchBarWidth;
 - (void)navigationBarDidUpdate;
 - (id)navigationItem;
-- (BOOL)nudgesSearchIcon;
+- (bool)nudgesSearchIcon;
 - (id)searchBar;
 - (id)searchBarDelegate;
-- (void)setMaxSearchBarWidth:(float)arg1;
-- (void)setNudgesSearchIcon:(BOOL)arg1;
+- (void)setMaxSearchBarWidth:(double)arg1;
+- (void)setNudgesSearchIcon:(bool)arg1;
 - (void)setSearchBarDelegate:(id)arg1;
-- (void)setShowingSearchBar:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)showingSearchBar;
+- (void)setShowingSearchBar:(bool)arg1 animated:(bool)arg2;
+- (bool)showingSearchBar;
 
 @end

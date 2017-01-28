@@ -4,42 +4,42 @@
 
 @interface DKDrawableView : UIView {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _originPoint;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _rectangle;
     UIColor * _rectangleEdgeColor;
     UIColor * _rectangleFillColor;
-    BOOL  _shouldDraw;
+    bool  _shouldDraw;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } originPoint;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rectangle;
+@property (nonatomic) struct CGPoint { double x1; double x2; } originPoint;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rectangle;
 @property (nonatomic, retain) UIColor *rectangleEdgeColor;
 @property (nonatomic, retain) UIColor *rectangleFillColor;
-@property (nonatomic) BOOL shouldDraw;
+@property (nonatomic) bool shouldDraw;
 
 - (void).cxx_destruct;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 rectangleFillColor:(id)arg2 rectangleEdgeColor:(id)arg3;
-- (struct CGPoint { float x1; float x2; })originPoint;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangle;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 rectangleFillColor:(id)arg2 rectangleEdgeColor:(id)arg3;
+- (struct CGPoint { double x1; double x2; })originPoint;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rectangle;
 - (id)rectangleEdgeColor;
 - (id)rectangleFillColor;
-- (void)setOriginPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setOriginPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRectangle:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setRectangleEdgeColor:(id)arg1;
 - (void)setRectangleFillColor:(id)arg1;
-- (void)setShouldDraw:(BOOL)arg1;
-- (BOOL)shouldDraw;
+- (void)setShouldDraw:(bool)arg1;
+- (bool)shouldDraw;
 
 @end

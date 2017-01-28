@@ -9,7 +9,7 @@
 - (NSString *)chartFormattedStringForValue:(id <TSCHChartGridValue>)arg1 locale:(TSULocale *)arg2;
 - (<TSCHDataFormatterPersistableStyleObject> *)convertToPersistableStyleObject;
 - (<TSCHDataFormatterSupportedClientFormatObject> *)convertToSupportedClientFormatObjectWithLocale:(TSULocale *)arg1;
-- (BOOL)isCompatibleWithDataFormatter:(id <TSCHDataFormatter>)arg1;
-- (int)numberOfDecimalPlaces;
+- (bool)isCompatibleWithDataFormatter:(id <TSCHDataFormatter>)arg1;
+- (long long)numberOfDecimalPlaces;
 
 @end

@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) ACAccountType *authKitAccountType;
 @property (nonatomic, retain) ACAccountStore *store;
 
-+ (BOOL)isAccountsFrameworkAvailable;
++ (bool)isAccountsFrameworkAvailable;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -36,27 +36,29 @@
 - (id)authKitAccountWithAppleID:(id)arg1;
 - (id)authKitAccountWithDSID:(id)arg1;
 - (id)continuationTokenForAccount:(id)arg1;
-- (BOOL)hasPrimaryiCloudAccountForAppleID:(id)arg1;
+- (bool)hasPrimaryiCloudAccountForAppleID:(id)arg1;
 - (id)hearbeatTokenForAccount:(id)arg1;
 - (id)iCloudAccountForAltDSID:(id)arg1;
 - (id)iCloudAccountForAppleID:(id)arg1;
 - (id)init;
-- (BOOL)isPrimaryiCloudAccount:(id)arg1;
+- (bool)isPrimaryiCloudAccount:(id)arg1;
 - (id)masterTokenForAccount:(id)arg1;
 - (id)mostRecentlyUsedAuthKitAccount;
 - (id)passwordResetTokenBackupForAccount:(id)arg1;
 - (id)passwordResetTokenForAccount:(id)arg1;
 - (void)removeAllPasswordResetTokens;
 - (void)removeContinuationTokenForAccount:(id)arg1;
+- (void)removeMasterTokenForAccount:(id)arg1;
 - (void)removeUnusedAuthKitAccounts;
-- (unsigned int)securityLevelForAccount:(id)arg1;
+- (unsigned long long)securityLevelForAccount:(id)arg1;
 - (id)servicesUsingAccount:(id)arg1;
-- (void)setAccount:(id)arg1 inUse:(BOOL)arg2 byService:(int)arg3;
+- (void)setAccount:(id)arg1 inUse:(bool)arg2 byService:(long long)arg3;
 - (void)setAliases:(id)arg1 forAccount:(id)arg2;
 - (void)setAltDSID:(id)arg1 forAccount:(id)arg2;
 - (void)setDSID:(id)arg1 forAccount:(id)arg2;
-- (void)setSecurityLevel:(unsigned int)arg1 forAccount:(id)arg2;
+- (void)setSecurityLevel:(unsigned long long)arg1 forAccount:(id)arg2;
 - (void)setStore:(id)arg1;
 - (id)store;
+- (id)transportableAuthKitAccount:(id)arg1;
 
 @end

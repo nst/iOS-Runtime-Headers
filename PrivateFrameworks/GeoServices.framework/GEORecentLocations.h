@@ -8,6 +8,6 @@
 
 - (void)dealloc;
 - (id)init;
-- (void)requestRecentLocationsWithResponse:(id /* block */)arg1;
+- (void)requestRecentLocationsWithResponse:(id)arg1;
 
 @end

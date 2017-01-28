@@ -9,19 +9,19 @@
 @property (nonatomic, readonly) NSString *fileFormat;
 @property (nonatomic, readonly) NSString *fileName;
 @property (nonatomic, readonly) NSNumber *fileSize;
-@property (nonatomic, readonly) BOOL isBinary;
+@property (nonatomic, readonly) bool isBinary;
 @property (nonatomic, readonly) NSURL *localURL;
 
 - (id)URL;
 - (id)UUID;
-- (int)compareFileNames:(id)arg1;
+- (long long)compareFileNames:(id)arg1;
 - (id)description;
 - (id)fileFormat;
 - (id)fileName;
 - (id)fileSize;
 - (id)init;
-- (BOOL)isBinary;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isBinary;
+- (bool)isEqual:(id)arg1;
 - (id)localURL;
 
 @end

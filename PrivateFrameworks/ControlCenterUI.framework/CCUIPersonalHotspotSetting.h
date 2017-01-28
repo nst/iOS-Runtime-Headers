@@ -6,12 +6,12 @@
 
 + (id)displayName;
 + (id)identifier;
-+ (BOOL)isInternalButton;
-+ (BOOL)isSupported:(int)arg1;
++ (bool)isInternalButton;
++ (bool)isSupported:(int)arg1;
 + (id)statusOffString;
 + (id)statusOnString;
 
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)_updateState;
 - (void)activate;
 - (id)aggdKey;

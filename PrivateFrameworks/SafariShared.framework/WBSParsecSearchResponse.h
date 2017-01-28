@@ -6,13 +6,13 @@
     WBSParsecSearchCompletionResultSet * _bestResultSet;
     NSArray * _completionResultSets;
     double  _maxAge;
-    unsigned int  _sizeInBytes;
+    unsigned long long  _sizeInBytes;
 }
 
 @property (nonatomic, readonly) WBSParsecSearchCompletionResultSet *bestCompletionResultSet;
 @property (nonatomic, readonly) NSArray *completionResultSets;
 @property (nonatomic, readonly) double maxAge;
-@property (nonatomic, readonly) unsigned int sizeInBytes;
+@property (nonatomic, readonly) unsigned long long sizeInBytes;
 @property (nonatomic, readonly) NSArray *statusCodesForCompletionResultSets;
 
 + (id)searchResponseSchemaWithCache:(id)arg1;
@@ -20,9 +20,9 @@
 - (void).cxx_destruct;
 - (id)bestCompletionResultSet;
 - (id)completionResultSets;
-- (id)initWithArray:(id)arg1 responseHeaders:(id)arg2 sizeInBytes:(unsigned int)arg3 cache:(id)arg4;
+- (id)initWithArray:(id)arg1 responseHeaders:(id)arg2 sizeInBytes:(unsigned long long)arg3 cache:(id)arg4;
 - (double)maxAge;
-- (unsigned int)sizeInBytes;
+- (unsigned long long)sizeInBytes;
 - (id)statusCodesForCompletionResultSets;
 
 @end

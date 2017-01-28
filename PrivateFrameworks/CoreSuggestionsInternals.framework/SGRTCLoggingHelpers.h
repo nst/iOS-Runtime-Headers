@@ -4,7 +4,7 @@
 
 @interface SGRTCLoggingHelpers : NSObject
 
-+ (unsigned int)bucketizeInteger:(unsigned int)arg1 withBucketSize:(unsigned int)arg2 limit:(unsigned int)arg3;
-+ (double)round:(double)arg1 toSignificantFigures:(int)arg2;
++ (unsigned long long)bucketizeInteger:(unsigned long long)arg1 withBucketSize:(unsigned long long)arg2 limit:(unsigned long long)arg3;
++ (double)round:(double)arg1 toSignificantFigures:(long long)arg2;
 
 @end

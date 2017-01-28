@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)_observerQueue;
 - (id)_observers;
-- (void)enumerateObserversWithBlock:(id /* block */)arg1;
+- (void)enumerateObserversWithBlock:(id)arg1;
 - (id)init;
 - (void)registerObserver:(id)arg1;
 - (void)unregisterObserver:(id)arg1;

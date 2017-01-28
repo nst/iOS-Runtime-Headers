@@ -4,16 +4,16 @@
 
 @interface CKTranscriptHeaderViewController : UIViewController {
     CKConversation * _conversation;
-    BOOL  _shouldInvalidateOnAddressBookChange;
+    bool  _shouldInvalidateOnAddressBookChange;
 }
 
 @property (nonatomic, retain) CKConversation *conversation;
-@property (nonatomic, readonly) BOOL shouldInvalidateOnAddressBookChange;
+@property (nonatomic, readonly) bool shouldInvalidateOnAddressBookChange;
 
 - (void).cxx_destruct;
 - (id)conversation;
 - (id)initWithConversation:(id)arg1;
 - (void)setConversation:(id)arg1;
-- (BOOL)shouldInvalidateOnAddressBookChange;
+- (bool)shouldInvalidateOnAddressBookChange;
 
 @end

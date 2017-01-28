@@ -3,12 +3,12 @@
  */
 
 @interface TUAudioRoutePreferredRouteOptions : NSObject {
-    BOOL  _active;
+    bool  _active;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 
-- (BOOL)isActive;
-- (void)setActive:(BOOL)arg1;
+- (bool)isActive;
+- (void)setActive:(bool)arg1;
 
 @end

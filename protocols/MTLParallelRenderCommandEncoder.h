@@ -6,8 +6,8 @@
 @required
 
 - (<MTLRenderCommandEncoder> *)renderCommandEncoder;
-- (void)setColorStoreAction:(unsigned int)arg1 atIndex:(unsigned int)arg2;
-- (void)setDepthStoreAction:(unsigned int)arg1;
-- (void)setStencilStoreAction:(unsigned int)arg1;
+- (void)setColorStoreAction:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
+- (void)setDepthStoreAction:(unsigned long long)arg1;
+- (void)setStencilStoreAction:(unsigned long long)arg1;
 
 @end

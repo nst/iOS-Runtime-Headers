@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)_cachedCurrentContent;
 - (id)_contentProviders;
-- (unsigned int)_indexOfContentProvider:(id)arg1;
+- (unsigned long long)_indexOfContentProvider:(id)arg1;
 - (void)_invalidateCurrentContent;
 - (void)_setCachedCurrentContent:(id)arg1;
 - (void)_setContentProviders:(id)arg1;

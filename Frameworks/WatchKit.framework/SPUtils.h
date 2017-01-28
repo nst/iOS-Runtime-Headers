@@ -6,22 +6,23 @@
 
 + (id)SPURLQueryAllowedCharacterSet;
 + (id)UIColorFromString:(id)arg1;
-+ (BOOL)appExtensionFirstUnlock;
-+ (id)companionConnectionClientIdentifier:(BOOL)arg1;
++ (bool)appExtensionFirstUnlock;
++ (id)companionConnectionClientIdentifier:(bool)arg1 isNotification:(bool)arg2;
 + (id)deserializeObject:(id)arg1;
-+ (void)dispatchAsyncToMainThread:(id /* block */)arg1;
-+ (void)dispatchSyncToMainThread:(id /* block */)arg1;
-+ (unsigned long long)folderSizeAtPath:(id)arg1 volumeBlockSize:(unsigned int)arg2;
-+ (BOOL)isApplicationCompanionConnectionClientIdentifier:(id)arg1;
-+ (BOOL)isRTL;
-+ (BOOL)isRunningInAnyDemoMode;
-+ (BOOL)isRunningInF201DemoMode;
-+ (BOOL)isRunningInF5DemoMode;
++ (void)dispatchAsyncToMainThread:(id)arg1;
++ (void)dispatchSyncToMainThread:(id)arg1;
++ (unsigned long long)folderSizeAtPath:(id)arg1 volumeBlockSize:(unsigned long long)arg2;
++ (bool)isApplicationCompanionConnectionClientIdentifier:(id)arg1;
++ (bool)isNotificationCompanionConnectionClientIdentifier:(id)arg1;
++ (bool)isRTL;
++ (bool)isRunningInAnyDemoMode;
++ (bool)isRunningInF201DemoMode;
++ (bool)isRunningInF5DemoMode;
 + (id)localizedStringForSystemLanguage:(id)arg1 fromBundlePath:(id)arg2;
 + (id)machTime;
 + (id)serializeObject:(id)arg1;
-+ (BOOL)subclassForObject:(id)arg1 overridesSelector:(SEL)arg2 fromSuperclass:(Class)arg3;
++ (bool)subclassForObject:(id)arg1 overridesSelector:(SEL)arg2 fromSuperclass:(Class)arg3;
 + (id)uniqueNumber;
-+ (unsigned int)userVolumeBlockSize;
++ (unsigned long long)userVolumeBlockSize;
 
 @end

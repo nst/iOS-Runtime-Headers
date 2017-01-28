@@ -19,9 +19,9 @@
 + (id)sharedFactory;
 
 - (void).cxx_destruct;
-- (int)_continuousFeedbackTypeFromIdentifier:(id)arg1;
-- (BOOL)_customEventType:(unsigned int*)arg1 andSystemSoundID:(unsigned int*)arg2 fromIdentifier:(id)arg3;
-- (int)_discreteFeedbackTypeFromIdentifier:(id)arg1;
+- (long long)_continuousFeedbackTypeFromIdentifier:(id)arg1;
+- (bool)_customEventType:(unsigned long long*)arg1 andSystemSoundID:(unsigned int*)arg2 fromIdentifier:(id)arg3;
+- (long long)_discreteFeedbackTypeFromIdentifier:(id)arg1;
 - (id)_patternIdentifierFromIdentifier:(id)arg1;
 - (void)addLocalPatterns:(id)arg1;
 - (id)continuousFeedbackIdentifiers;
@@ -32,13 +32,13 @@
 - (id)discreteFeedbackIdentifiers;
 - (id)discreteFeedbackWithIdentifier:(id)arg1;
 - (id)feedbackWithIdentifier:(id)arg1;
-- (id)identifierForContinuousFeedbackType:(int)arg1;
-- (id)identifierForCustomDiscreteFeedbackWithEventType:(unsigned int)arg1 systemSoundID:(unsigned long)arg2;
-- (id)identifierForDiscreteFeedbackType:(int)arg1;
+- (id)identifierForContinuousFeedbackType:(long long)arg1;
+- (id)identifierForCustomDiscreteFeedbackWithEventType:(unsigned long long)arg1 systemSoundID:(unsigned int)arg2;
+- (id)identifierForDiscreteFeedbackType:(long long)arg1;
 - (id)identifierForLocalPatternFeedbackWithName:(id)arg1;
 - (id)identifierForPatternFeedbackWithFilename:(id)arg1;
 - (id)localIdentifier;
-- (void)performWithLocalIdentifier:(id)arg1 block:(id /* block */)arg2;
+- (void)performWithLocalIdentifier:(id)arg1 block:(id)arg2;
 - (void)setCustomContinuousFeedbacks:(id)arg1;
 - (void)setCustomDiscreteFeedbacks:(id)arg1;
 - (void)setLocalIdentifier:(id)arg1;

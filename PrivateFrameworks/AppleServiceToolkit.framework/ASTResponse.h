@@ -3,7 +3,7 @@
  */
 
 @interface ASTResponse : NSObject {
-    int  _command;
+    long long  _command;
     NSString * _commandString;
     NSDictionary * _data;
     NSNumber * _progress;
@@ -11,7 +11,7 @@
     NSNumber * _testId;
 }
 
-@property (nonatomic, readonly) int command;
+@property (nonatomic, readonly) long long command;
 @property (nonatomic, retain) NSString *commandString;
 @property (nonatomic, readonly) NSDictionary *data;
 @property (nonatomic, readonly) NSNumber *progress;
@@ -21,7 +21,7 @@
 + (id)responseWithDictionary:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)command;
+- (long long)command;
 - (id)commandString;
 - (id)data;
 - (id)description;
@@ -32,8 +32,8 @@
 - (void)setStringToCommand:(id)arg1;
 - (id)stringToCommand;
 - (id)testId;
-- (id)validateData:(id)arg1 command:(int)arg2;
-- (BOOL)validateResponse:(id)arg1 key:(id)arg2 expectedClass:(Class)arg3;
-- (BOOL)validateTestId:(id)arg1 command:(int)arg2;
+- (id)validateData:(id)arg1 command:(long long)arg2;
+- (bool)validateResponse:(id)arg1 key:(id)arg2 expectedClass:(Class)arg3;
+- (bool)validateTestId:(id)arg1 command:(long long)arg2;
 
 @end

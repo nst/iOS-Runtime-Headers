@@ -12,9 +12,9 @@
 - (void*)_referenceView;
 - (NSMutableSet *)_uili_existingBaseFrameVariables;
 - (NSMutableSet *)_uili_existingLayoutVariables;
-- (NSISEngine *)_uili_observableLayoutEngineForBaseFrameVariables:(BOOL)arg1;
-- (void)_uili_removeLayoutVariableObservationsOnlyToSupportTAMICChange:(BOOL)arg1;
-- (BOOL)_uili_requiresObservationForVariable:(NSISVariable *)arg1;
+- (NSISEngine *)_uili_observableLayoutEngineForBaseFrameVariables:(bool)arg1;
+- (void)_uili_removeLayoutVariableObservationsOnlyToSupportTAMICChange:(bool)arg1;
+- (bool)_uili_requiresObservationForVariable:(NSISVariable *)arg1;
 - (void)_uili_stashLayoutVariableObservation:(NSObservation *)arg1 forVariable:(NSISVariable *)arg2;
 - (NSISVariable *)nsli_boundsHeightVariable;
 - (NSISVariable *)nsli_boundsWidthVariable;

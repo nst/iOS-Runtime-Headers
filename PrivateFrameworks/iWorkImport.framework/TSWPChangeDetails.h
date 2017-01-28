@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *formattedString;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) TSPObject *hostingModel;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
@@ -41,13 +41,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)formattedString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)hostingModel;
 - (id)initWithChange:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChangeDetails:(id)arg1;
-- (BOOL)isEquivalentToObject:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })p_rangeInStorage;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChangeDetails:(id)arg1;
+- (bool)isEquivalentToObject:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })p_rangeInStorage;
 - (void)p_updateChangeStrings;
 - (void)setAuthor:(id)arg1;
 - (void)setChange:(id)arg1;

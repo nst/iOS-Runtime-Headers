@@ -5,8 +5,8 @@
 @interface CNFRegTableHeaderLabel : CNFRegTableLabel
 
 - (id)_labelText;
-- (int)_labelTextAlignment;
+- (long long)_labelTextAlignment;
 - (id)initWithSpecifier:(id)arg1;
-- (float)preferredHeightForWidth:(float)arg1;
+- (double)preferredHeightForWidth:(double)arg1;
 
 @end

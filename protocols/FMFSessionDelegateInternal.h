@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)networkReachabilityUpdated:(BOOL)arg1;
+- (void)networkReachabilityUpdated:(bool)arg1;
 - (void)removeAllFriendLocationsFromMap;
 
 @end

@@ -11,13 +11,13 @@
 - (void).cxx_destruct;
 - (id)_autoDownloadedAssets;
 - (void)_automaticallyDownloadVoiceAssetsIfNeeded;
-- (id)_voiceAssetForASAsset:(id)arg1 voiceType:(long)arg2;
-- (id)_voiceAssetQueryForVoiceName:(id)arg1 language:(id)arg2 gender:(int)arg3 footprint:(int)arg4 version:(id)arg5 voiceType:(long)arg6 localOnly:(BOOL)arg7;
+- (id)_voiceAssetForASAsset:(id)arg1 voiceType:(long long)arg2;
+- (id)_voiceAssetQueryForVoiceName:(id)arg1 language:(id)arg2 gender:(long long)arg3 footprint:(long long)arg4 version:(id)arg5 voiceType:(long long)arg6 localOnly:(bool)arg7;
 - (void)automaticallyDownloadVoiceAssetsIfNeeded;
-- (void)getAutoDownloadedVoiceAssets:(id /* block */)arg1;
-- (void)getCustomVoiceAssetsLocalOnly:(BOOL)arg1 language:(id)arg2 voiceType:(long)arg3 reply:(id /* block */)arg4;
-- (id)resourcePathForLanguage:(id)arg1 gender:(int)arg2 footprint:(int)arg3 voiceName:(id)arg4 voiceType:(long)arg5 outAsset:(id*)arg6;
+- (void)getAutoDownloadedVoiceAssets:(id)arg1;
+- (void)getCustomVoiceAssetsLocalOnly:(bool)arg1 language:(id)arg2 voiceType:(long long)arg3 reply:(id)arg4;
+- (id)resourcePathForLanguage:(id)arg1 gender:(long long)arg2 footprint:(long long)arg3 voiceName:(id)arg4 voiceType:(long long)arg5 outAsset:(id*)arg6;
 - (void)setAutoDownloadedVoiceAssets:(id)arg1;
-- (void)startDownloadingVoiceAsset:(id)arg1 progress:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)startDownloadingVoiceAsset:(id)arg1 progress:(id)arg2 completion:(id)arg3;
 
 @end

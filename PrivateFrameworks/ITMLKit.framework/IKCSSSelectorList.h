@@ -8,9 +8,9 @@
 
 - (void).cxx_destruct;
 - (void)addSelector:(id)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (id)init;
-- (id)selectorAtIndex:(unsigned int)arg1;
+- (id)selectorAtIndex:(unsigned long long)arg1;
 
 @end

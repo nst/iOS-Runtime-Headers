@@ -5,7 +5,7 @@
 @interface MRTelevisionController : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
     <MRTelevisionDelegate> * _delegate;
     NSMutableSet * _discoveredTelevisions;
-    BOOL  _discovering;
+    bool  _discovering;
     NSMutableSet * _resolvingServices;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSNetServiceBrowser * _serviceBrowser;
@@ -14,8 +14,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MRTelevisionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isDiscovering, nonatomic, readonly) BOOL discovering;
-@property (readonly) unsigned int hash;
+@property (getter=isDiscovering, nonatomic, readonly) bool discovering;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)beginDiscovery;
@@ -23,9 +23,9 @@
 - (id)delegate;
 - (void)endDiscovery;
 - (id)init;
-- (BOOL)isDiscovering;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
+- (bool)isDiscovering;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

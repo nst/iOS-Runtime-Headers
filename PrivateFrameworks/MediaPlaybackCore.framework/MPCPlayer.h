@@ -10,8 +10,8 @@
     NSPointerArray * _nowPlayingInfoHandlers;
     NSPointerArray * _playbackErrorObservers;
     NSPointerArray * _playbackIntentObservers;
-    BOOL  _restoringPlaybackState;
-    int  _state;
+    bool  _restoringPlaybackState;
+    long long  _state;
     AVPlayerLayer * _videoLayer;
 }
 
@@ -22,22 +22,22 @@
 @property (nonatomic, readonly, copy) NSArray *nowPlayingInfoHandlers;
 @property (nonatomic, readonly, copy) NSArray *playbackErrorObservers;
 @property (nonatomic, readonly, copy) NSArray *playbackIntentObservers;
-@property (getter=isRestoringPlaybackState, nonatomic, readonly) BOOL restoringPlaybackState;
-@property (nonatomic) int state;
+@property (getter=isRestoringPlaybackState, nonatomic, readonly) bool restoringPlaybackState;
+@property (nonatomic) long long state;
 @property (nonatomic, readonly) AVPlayerLayer *videoLayer;
 
 + (Class)queueRequestOperationClass;
 
 - (void).cxx_destruct;
 - (id)activeRouteName;
-- (void)addPlaybackIntent:(id)arg1 withOptions:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)clearPlaybackQueueWithCompletion:(id /* block */)arg1;
+- (void)addPlaybackIntent:(id)arg1 withOptions:(unsigned long long)arg2 completion:(id)arg3;
+- (void)clearPlaybackQueueWithCompletion:(id)arg1;
 - (id)commandCenter;
 - (id)currentContainer;
 - (id)currentItem;
-- (BOOL)isRestoringPlaybackState;
+- (bool)isRestoringPlaybackState;
 - (id)nowPlayingInfoHandlers;
-- (void)performCommandEvent:(id)arg1 completion:(id /* block */)arg2;
+- (void)performCommandEvent:(id)arg1 completion:(id)arg2;
 - (id)playbackErrorObservers;
 - (id)playbackIntentObservers;
 - (void)preservePlaybackStateImmediately;
@@ -45,13 +45,13 @@
 - (void)registerNowPlayingInfoHandler:(id)arg1;
 - (void)registerPlaybackErrorObserver:(id)arg1;
 - (void)registerPlaybackIntentObserver:(id)arg1;
-- (void)restorePlaybackStateCompletionHandler:(id /* block */)arg1;
+- (void)restorePlaybackStateCompletionHandler:(id)arg1;
 - (void)schedulePlaybackStatePreservation;
 - (void)setCommandCenter:(id)arg1;
 - (void)setCurrentContainer:(id)arg1;
 - (void)setCurrentItem:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 - (void)unregisterNowPlayingInfoHandler:(id)arg1;
 - (void)unregisterPlaybackErrorObserver:(id)arg1;
 - (void)unregisterPlaybackIntentObserver:(id)arg1;

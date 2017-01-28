@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic) double endDate;
-@property (nonatomic) BOOL hasEndDate;
-@property (nonatomic) BOOL hasStartDate;
-@property (nonatomic, readonly) BOOL hasUuid;
+@property (nonatomic) bool hasEndDate;
+@property (nonatomic) bool hasStartDate;
+@property (nonatomic, readonly) bool hasUuid;
 @property (nonatomic) double startDate;
 @property (nonatomic, retain) NSData *uuid;
 
@@ -25,16 +25,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)endDate;
-- (BOOL)hasEndDate;
-- (BOOL)hasStartDate;
-- (BOOL)hasUuid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEndDate;
+- (bool)hasStartDate;
+- (bool)hasUuid;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEndDate:(double)arg1;
-- (void)setHasEndDate:(BOOL)arg1;
-- (void)setHasStartDate:(BOOL)arg1;
+- (void)setHasEndDate:(bool)arg1;
+- (void)setHasStartDate:(bool)arg1;
 - (void)setStartDate:(double)arg1;
 - (void)setUuid:(id)arg1;
 - (double)startDate;

@@ -11,7 +11,7 @@
 }
 
 + (id)_livingInstance;
-+ (unsigned int)_timeoutInterval;
++ (unsigned long long)_timeoutInterval;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -23,10 +23,10 @@
 - (void)_setValue:(void*)arg1 forKey:(id)arg2;
 - (void)_tearDown;
 - (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
-- (int)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
+- (long long)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setAccountsWithAccountTypeIdentifier:(id)arg1 exist:(BOOL)arg2;
-- (void)setCountOfAccounts:(int)arg1 withAccountTypeIdentifier:(id)arg2;
+- (void)setAccountsWithAccountTypeIdentifier:(id)arg1 exist:(bool)arg2;
+- (void)setCountOfAccounts:(long long)arg1 withAccountTypeIdentifier:(id)arg2;
 
 @end

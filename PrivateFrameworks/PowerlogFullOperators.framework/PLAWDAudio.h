@@ -24,6 +24,6 @@
 - (void)startMetricCollection:(id)arg1;
 - (id)startTime;
 - (void)stopMetricCollection:(id)arg1;
-- (BOOL)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
+- (bool)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
 
 @end

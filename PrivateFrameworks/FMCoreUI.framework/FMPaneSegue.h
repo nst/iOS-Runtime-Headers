@@ -3,14 +3,14 @@
  */
 
 @interface FMPaneSegue : UIStoryboardSegue {
-    BOOL  _disableAnimation;
+    bool  _disableAnimation;
 }
 
-@property (nonatomic) BOOL disableAnimation;
+@property (nonatomic) bool disableAnimation;
 
-- (BOOL)disableAnimation;
+- (bool)disableAnimation;
 - (void)perform;
-- (void)performFromEdge:(unsigned int)arg1;
-- (void)setDisableAnimation:(BOOL)arg1;
+- (void)performFromEdge:(unsigned long long)arg1;
+- (void)setDisableAnimation:(bool)arg1;
 
 @end

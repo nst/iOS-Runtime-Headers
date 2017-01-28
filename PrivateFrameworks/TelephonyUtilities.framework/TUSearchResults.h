@@ -14,8 +14,8 @@
 @property (nonatomic, retain) NSMutableArray *allDataItemsCache;
 @property (readonly) NSArray *allSearchItems;
 @property (nonatomic, retain) NSMutableArray *allSearchItemsCache;
-@property (readonly) int numberOfResults;
-@property (readonly) int numberOfSections;
+@property (readonly) long long numberOfResults;
+@property (readonly) long long numberOfSections;
 @property (nonatomic, retain) NSMutableArray *resultGroups;
 @property TUSearchController *searchController;
 @property (nonatomic, retain) NSString *searchTerm;
@@ -33,12 +33,12 @@
 - (id)description;
 - (void)finalizeSearchResults;
 - (id)initWithSearchTerm:(id)arg1;
-- (int)numberOfResults;
-- (int)numberOfSections;
-- (int)numberOfTableViewRows;
+- (long long)numberOfResults;
+- (long long)numberOfSections;
+- (long long)numberOfTableViewRows;
 - (void)removeDuplicateResults;
 - (void)removeSearchItem:(id)arg1;
-- (id)resultGroupForSection:(int)arg1;
+- (id)resultGroupForSection:(long long)arg1;
 - (id)resultGroups;
 - (id)searchController;
 - (id)searchTerm;

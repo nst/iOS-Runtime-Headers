@@ -5,6 +5,6 @@
 
 @required
 
-- (NSOrderedSet *)orderTopicsWithClusteredHeadlines:(void *)arg1 additionalHeadlines:(void *)arg2 scoresByArticleID:(void *)arg3 personalizer:(void *)arg4 tagNameProvider:(void *)arg5; // needs 5 arg types, found 10: NSDictionary *, NSArray *, NSDictionary *, <FCFeedPersonalizing> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, NSString *, id /* block */, NSString *, void*
+- (NSOrderedSet *)orderTopicsWithClusteredHeadlines:(void *)arg1 additionalHeadlines:(void *)arg2 scoresByArticleID:(void *)arg3 personalizer:(void *)arg4 tagNameProvider:(void *)arg5; // needs 5 arg types, found 10: NSDictionary *, NSArray *, NSDictionary *, <FCFeedPersonalizing> *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, NSString *, id, NSString *, void*
 
 @end

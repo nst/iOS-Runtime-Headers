@@ -11,11 +11,11 @@
         } __end_cap_; 
     }  mCache;
     TSCH3DValueEnumerator * mCachee;
-    unsigned int  mCount;
+    unsigned long long  mCount;
     TSCH3DAxisLabelKind * mKind;
     int  mLabelPosition;
-    BOOL  mShouldRender;
-    BOOL  mValid;
+    bool  mShouldRender;
+    bool  mValid;
 }
 
 @property (nonatomic, readonly) TSCH3DAxisLabelKind *kind;
@@ -25,13 +25,13 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)cache;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)enumerator;
 - (id)initWithAxisLabelEnumerator:(id)arg1;
 - (id)kind;
 - (int)labelPosition;
-- (BOOL)shouldRender;
+- (bool)shouldRender;
 - (id)string;
 - (void)update;
 

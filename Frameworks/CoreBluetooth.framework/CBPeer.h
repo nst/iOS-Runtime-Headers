@@ -3,18 +3,20 @@
  */
 
 @interface CBPeer : NSObject <NSCopying> {
-    int  _hostState;
+    long long  _hostState;
     NSUUID * _identifier;
-    BOOL  _isLinkEncrypted;
-    unsigned int  _mtuLength;
-    int  _pairingState;
+    bool  _isLinkEncrypted;
+    unsigned long long  _mtuLength;
+    long long  _pairingState;
+    long long  _role;
 }
 
-@property (nonatomic) int hostState;
+@property (nonatomic) long long hostState;
 @property (nonatomic, readonly) NSUUID *identifier;
-@property (nonatomic) BOOL isLinkEncrypted;
-@property (nonatomic) unsigned int mtuLength;
-@property (nonatomic) int pairingState;
+@property (nonatomic) bool isLinkEncrypted;
+@property (nonatomic) unsigned long long mtuLength;
+@property (nonatomic) long long pairingState;
+@property (nonatomic) long long role;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,15 +24,17 @@
 - (void)handleLinkEncryptionChanged:(id)arg1;
 - (void)handleMTUChanged:(id)arg1;
 - (void)handleMsg:(int)arg1 args:(id)arg2;
-- (int)hostState;
+- (long long)hostState;
 - (id)identifier;
 - (id)initWithInfo:(id)arg1;
-- (BOOL)isLinkEncrypted;
-- (unsigned int)mtuLength;
-- (int)pairingState;
-- (void)setHostState:(int)arg1;
-- (void)setIsLinkEncrypted:(BOOL)arg1;
-- (void)setMtuLength:(unsigned int)arg1;
-- (void)setPairingState:(int)arg1;
+- (bool)isLinkEncrypted;
+- (unsigned long long)mtuLength;
+- (long long)pairingState;
+- (long long)role;
+- (void)setHostState:(long long)arg1;
+- (void)setIsLinkEncrypted:(bool)arg1;
+- (void)setMtuLength:(unsigned long long)arg1;
+- (void)setPairingState:(long long)arg1;
+- (void)setRole:(long long)arg1;
 
 @end

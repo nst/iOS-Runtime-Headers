@@ -7,6 +7,6 @@
 
 - (UICubicTimingParameters *)cubicTimingParameters;
 - (UISpringTimingParameters *)springTimingParameters;
-- (int)timingCurveType;
+- (long long)timingCurveType;
 
 @end

@@ -8,7 +8,7 @@
 - (void)stillImageCoordinator:(BWStillImageCoordinatorNode *)arg1 didCapturePhotoForSettings:(FigCaptureStillImageSettings *)arg2 resolvedCaptureType:(int)arg3 pts:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
 - (void)stillImageCoordinator:(BWStillImageCoordinatorNode *)arg1 didCapturePreBracketedEV0ImageForSettings:(FigCaptureStillImageSettings *)arg2 resolvedCaptureType:(int)arg3 pts:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
 - (void)stillImageCoordinator:(BWStillImageCoordinatorNode *)arg1 willBeginCaptureForSettings:(FigCaptureStillImageSettings *)arg2 resolvedCaptureSetings:(BWStillImageCaptureSettings *)arg3;
-- (void)stillImageCoordinator:(BWStillImageCoordinatorNode *)arg1 willCapturePhotoForSettings:(FigCaptureStillImageSettings *)arg2 sisActive:(BOOL)arg3;
-- (void)stillImageCoordinator:(BWStillImageCoordinatorNode *)arg1 willPrepareStillImageCaptureWithSettings:(FigCaptureStillImageSettings *)arg2 clientInitiated:(BOOL)arg3;
+- (void)stillImageCoordinator:(BWStillImageCoordinatorNode *)arg1 willCapturePhotoForSettings:(FigCaptureStillImageSettings *)arg2 sisActive:(bool)arg3;
+- (void)stillImageCoordinator:(BWStillImageCoordinatorNode *)arg1 willPrepareStillImageCaptureWithSettings:(FigCaptureStillImageSettings *)arg2 clientInitiated:(bool)arg3;
 
 @end

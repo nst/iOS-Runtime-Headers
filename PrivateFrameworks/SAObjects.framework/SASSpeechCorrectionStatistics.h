@@ -5,13 +5,13 @@
 @interface SASSpeechCorrectionStatistics : SABaseCommand <SAServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
-@property (nonatomic) int alternativeSelectCount;
-@property (nonatomic) int characterChangeCount;
+@property (nonatomic) long long alternativeSelectCount;
+@property (nonatomic) long long characterChangeCount;
 @property (nonatomic, copy) NSString *correctionSource;
 @property (nonatomic, copy) NSString *correctionText;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *interactionId;
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSString *sessionId;
@@ -20,16 +20,16 @@
 + (id)speechCorrectionStatistics;
 + (id)speechCorrectionStatisticsWithDictionary:(id)arg1 context:(id)arg2;
 
-- (int)alternativeSelectCount;
-- (int)characterChangeCount;
+- (long long)alternativeSelectCount;
+- (long long)characterChangeCount;
 - (id)correctionSource;
 - (id)correctionText;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)interactionId;
 - (id)sessionId;
-- (void)setAlternativeSelectCount:(int)arg1;
-- (void)setCharacterChangeCount:(int)arg1;
+- (void)setAlternativeSelectCount:(long long)arg1;
+- (void)setCharacterChangeCount:(long long)arg1;
 - (void)setCorrectionSource:(id)arg1;
 - (void)setCorrectionText:(id)arg1;
 - (void)setInteractionId:(id)arg1;

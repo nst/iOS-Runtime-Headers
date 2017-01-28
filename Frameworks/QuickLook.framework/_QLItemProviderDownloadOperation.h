@@ -6,12 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)canBeCanceled;
-- (BOOL)cancel;
-- (BOOL)performDownload;
-- (void)updatedURLWithProgress:(float)arg1;
+- (bool)canBeCanceled;
+- (bool)cancel;
+- (bool)performDownload;
+- (void)updatedURLWithProgress:(double)arg1;
 
 @end

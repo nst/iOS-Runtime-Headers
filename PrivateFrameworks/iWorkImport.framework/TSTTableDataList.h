@@ -9,7 +9,7 @@
     unsigned int  mNextID;
 }
 
-@property (nonatomic, readonly) int count;
+@property (nonatomic, readonly) long long count;
 @property (nonatomic, retain) TSTIntegerKeyDict *data;
 @property (nonatomic, retain) TSTTableDataObjectKeyDict *dataToKeyDict;
 @property (nonatomic) int listType;
@@ -31,16 +31,16 @@
 - (struct { int x1; union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 8; unsigned int x_1_2_3 : 3; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 1; } x_2_1_1; struct { unsigned int x_2_2_1 : 8; } x_2_1_2; struct { unsigned int x_3_2_1 : 8; unsigned int x_3_2_2 : 8; unsigned int x_3_2_3 : 1; } x_2_1_3; struct { unsigned int x_4_2_1 : 1; unsigned int x_4_2_2 : 1; id x_4_2_3; struct { unsigned int x_4_3_1 : 1; int x_4_3_2; int x_4_3_3; int x_4_3_4; } x_4_2_4; struct { id x_5_3_1; unsigned int x_5_3_2; unsigned char x_5_3_3; } x_4_2_5; struct { double x_6_3_1; double x_6_3_2; double x_6_3_3; int x_6_3_4; unsigned int x_6_3_5 : 2; unsigned int x_6_3_6 : 2; } x_4_2_6; struct { int x_7_3_1; unsigned int x_7_3_2; id x_7_3_3; /* Warning: Unrecognized filer type: ')' using 'void*' */ void*x_7_3_4; } x_4_2_7; } x_2_1_4; } x2; })cellFormatForKey:(unsigned int)arg1;
 - (id)commentStorageForKey:(unsigned int)arg1;
 - (id)conditionalStyleSetForKey:(unsigned int)arg1;
-- (int)count;
+- (long long)count;
 - (id)data;
 - (id)dataToKeyDict;
 - (void)dealloc;
 - (id)deduplicateAndReturnMapping;
 - (void)dropReferenceForKey:(unsigned int)arg1;
-- (void)enumerateDataObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateDataObjectsUsingBlock:(id)arg1;
 - (id)formulaErrorForKey:(unsigned int)arg1;
 - (struct TSCEFormula { struct TSCEASTNodeArray {} *x1; struct TSCEFormulaTranslationFlags { unsigned int x_2_1_1 : 1; unsigned int x_2_1_2 : 1; unsigned int x_2_1_3 : 1; } x2; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_3_1_1; } x3; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_4_1_1; } x4; }*)formulaForKey:(unsigned int)arg1;
-- (BOOL)hasDuplicatedElements;
+- (bool)hasDuplicatedElements;
 - (id)importWarningSetForKey:(unsigned int)arg1;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithType:(int)arg1 context:(id)arg2;
@@ -63,7 +63,7 @@
 - (unsigned int)setObject:(id)arg1 forKey:(unsigned int)arg2;
 - (id)stringForKey:(unsigned int)arg1;
 - (id)styleForKey:(unsigned int)arg1;
-- (BOOL)supportsIDMapForType:(int)arg1;
+- (bool)supportsIDMapForType:(int)arg1;
 - (void)takeReferenceForKey:(unsigned int)arg1;
 - (void)upgradeCellFormatsU2_0;
 

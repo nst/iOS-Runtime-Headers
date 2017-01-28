@@ -5,12 +5,12 @@
 @interface SGJournalEntry : NSObject {
     SGStorageContact * _contact;
     SGStorageEvent * _event;
-    unsigned int  _operation;
+    unsigned long long  _operation;
 }
 
 @property (nonatomic, readonly) SGStorageContact *contact;
 @property (nonatomic, readonly) SGStorageEvent *event;
-@property (nonatomic, readonly) unsigned int operation;
+@property (nonatomic, readonly) unsigned long long operation;
 
 - (void).cxx_destruct;
 - (id)contact;
@@ -18,11 +18,11 @@
 - (id)description;
 - (id)event;
 - (id)init;
-- (id)initWithOperation:(unsigned int)arg1;
-- (id)initWithOperation:(unsigned int)arg1 contact:(id)arg2;
-- (id)initWithOperation:(unsigned int)arg1 event:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToJournalEntry:(id)arg1;
-- (unsigned int)operation;
+- (id)initWithOperation:(unsigned long long)arg1;
+- (id)initWithOperation:(unsigned long long)arg1 contact:(id)arg2;
+- (id)initWithOperation:(unsigned long long)arg1 event:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToJournalEntry:(id)arg1;
+- (unsigned long long)operation;
 
 @end

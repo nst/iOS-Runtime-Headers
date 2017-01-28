@@ -12,9 +12,9 @@
 - (void)dealloc;
 - (void)disableWiFiTimeout;
 - (void)enableWiFiTimeout;
-- (BOOL)hasAssociatedNetwork;
+- (bool)hasAssociatedNetwork;
 - (id)init;
-- (BOOL)isWifiEnabled;
-- (void)registerOneShotEnabledHandler:(id /* block */)arg1;
+- (bool)isWifiEnabled;
+- (void)registerOneShotEnabledHandler:(id)arg1;
 
 @end

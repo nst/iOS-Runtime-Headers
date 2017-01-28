@@ -10,10 +10,10 @@
 @property (nonatomic, readonly, copy) HMDReselectedRTPParameters *rtpParameters;
 @property (nonatomic, readonly, copy) HMDVideoAttributes *videoAttributes;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAttribute:(id)arg1 rtpParameter:(id)arg2;

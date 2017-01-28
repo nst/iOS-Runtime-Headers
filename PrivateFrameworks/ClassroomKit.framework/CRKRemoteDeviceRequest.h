@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSString *deviceIdentifier;
 @property (nonatomic, retain) CATTaskRequest *remoteRequest;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 - (void).cxx_destruct;

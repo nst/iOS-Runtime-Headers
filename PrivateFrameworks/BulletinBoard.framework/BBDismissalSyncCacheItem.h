@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSMutableDictionary *dismissalIDToFeeds;
 
 - (void).cxx_destruct;
-- (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 forFeeds:(unsigned int)arg3;
+- (void)cacheDismissalDictionaries:(id)arg1 dismissalIDs:(id)arg2 forFeeds:(unsigned long long)arg3;
 - (id)description;
 - (id)dismissalDictionariesAndFeeds;
 - (id)dismissalIDToFeeds;

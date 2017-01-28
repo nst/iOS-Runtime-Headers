@@ -8,8 +8,8 @@
     NSArray * _recordIDsToShare;
     NSArray * _recordIDsToShareReadWrite;
     NSArray * _recordIDsToUnshare;
-    id /* block */  _recordWebSharedBlock;
-    id /* block */  _recordWebUnsharedBlock;
+    id  _recordWebSharedBlock;
+    id  _recordWebUnsharedBlock;
     NSMutableDictionary * _recordsToSaveByID;
 }
 
@@ -18,8 +18,8 @@
 @property (nonatomic, retain) NSArray *recordIDsToShare;
 @property (nonatomic, retain) NSArray *recordIDsToShareReadWrite;
 @property (nonatomic, retain) NSArray *recordIDsToUnshare;
-@property (nonatomic, copy) id /* block */ recordWebSharedBlock;
-@property (nonatomic, copy) id /* block */ recordWebUnsharedBlock;
+@property (nonatomic, copy) id recordWebSharedBlock;
+@property (nonatomic, copy) id recordWebUnsharedBlock;
 @property (nonatomic, retain) NSMutableDictionary *recordsToSaveByID;
 
 - (void).cxx_destruct;
@@ -33,22 +33,22 @@
 - (id)fetchedRecordIDs;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (int)numSaveAttempts;
 - (id)recordIDsToShare;
 - (id)recordIDsToShareReadWrite;
 - (id)recordIDsToUnshare;
-- (id /* block */)recordWebSharedBlock;
-- (id /* block */)recordWebUnsharedBlock;
+- (id)recordWebSharedBlock;
+- (id)recordWebUnsharedBlock;
 - (id)recordsToSaveByID;
 - (void)setFetchedRecordIDs:(id)arg1;
 - (void)setNumSaveAttempts:(int)arg1;
 - (void)setRecordIDsToShare:(id)arg1;
 - (void)setRecordIDsToShareReadWrite:(id)arg1;
 - (void)setRecordIDsToUnshare:(id)arg1;
-- (void)setRecordWebSharedBlock:(id /* block */)arg1;
-- (void)setRecordWebUnsharedBlock:(id /* block */)arg1;
+- (void)setRecordWebSharedBlock:(id)arg1;
+- (void)setRecordWebUnsharedBlock:(id)arg1;
 - (void)setRecordsToSaveByID:(id)arg1;
 
 @end

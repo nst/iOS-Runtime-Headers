@@ -5,7 +5,7 @@
 @interface MPPMediaQuery : PBCodable <NSCopying> {
     int  _entityOrder;
     NSMutableArray * _filterPredicates;
-    BOOL  _filteringDisabled;
+    bool  _filteringDisabled;
     int  _groupingType;
     struct { 
         unsigned int entityOrder : 1; 
@@ -19,12 +19,12 @@
 
 @property (nonatomic) int entityOrder;
 @property (nonatomic, retain) NSMutableArray *filterPredicates;
-@property (nonatomic) BOOL filteringDisabled;
+@property (nonatomic) bool filteringDisabled;
 @property (nonatomic) int groupingType;
-@property (nonatomic) BOOL hasEntityOrder;
-@property (nonatomic) BOOL hasFilteringDisabled;
-@property (nonatomic) BOOL hasGroupingType;
-@property (nonatomic) BOOL hasStaticEntityType;
+@property (nonatomic) bool hasEntityOrder;
+@property (nonatomic) bool hasFilteringDisabled;
+@property (nonatomic) bool hasGroupingType;
+@property (nonatomic) bool hasStaticEntityType;
 @property (nonatomic, retain) NSMutableArray *staticEntityIdentifiers;
 @property (nonatomic) int staticEntityType;
 
@@ -40,30 +40,30 @@
 - (id)dictionaryRepresentation;
 - (int)entityOrder;
 - (id)filterPredicates;
-- (id)filterPredicatesAtIndex:(unsigned int)arg1;
-- (unsigned int)filterPredicatesCount;
-- (BOOL)filteringDisabled;
+- (id)filterPredicatesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)filterPredicatesCount;
+- (bool)filteringDisabled;
 - (int)groupingType;
-- (BOOL)hasEntityOrder;
-- (BOOL)hasFilteringDisabled;
-- (BOOL)hasGroupingType;
-- (BOOL)hasStaticEntityType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)hasEntityOrder;
+- (bool)hasFilteringDisabled;
+- (bool)hasGroupingType;
+- (bool)hasStaticEntityType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntityOrder:(int)arg1;
 - (void)setFilterPredicates:(id)arg1;
-- (void)setFilteringDisabled:(BOOL)arg1;
+- (void)setFilteringDisabled:(bool)arg1;
 - (void)setGroupingType:(int)arg1;
-- (void)setHasEntityOrder:(BOOL)arg1;
-- (void)setHasFilteringDisabled:(BOOL)arg1;
-- (void)setHasGroupingType:(BOOL)arg1;
-- (void)setHasStaticEntityType:(BOOL)arg1;
+- (void)setHasEntityOrder:(bool)arg1;
+- (void)setHasFilteringDisabled:(bool)arg1;
+- (void)setHasGroupingType:(bool)arg1;
+- (void)setHasStaticEntityType:(bool)arg1;
 - (void)setStaticEntityIdentifiers:(id)arg1;
 - (void)setStaticEntityType:(int)arg1;
 - (id)staticEntityIdentifiers;
-- (id)staticEntityIdentifiersAtIndex:(unsigned int)arg1;
-- (unsigned int)staticEntityIdentifiersCount;
+- (id)staticEntityIdentifiersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)staticEntityIdentifiersCount;
 - (int)staticEntityType;
 - (void)writeTo:(id)arg1;
 

@@ -5,6 +5,6 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 
 @end

@@ -21,8 +21,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) FCFlintResourceManager *flintResourceManager;
-@property (nonatomic, readonly) BOOL hasBeenRateLimited;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasBeenRateLimited;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCContentContextInternal *internalContentContext;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) <FCNetworkReachabilityRequirement> *supportedCountryNetworkReachabilityRequirement;
@@ -40,11 +40,11 @@
 - (id)contentStoreFrontID;
 - (void)databaseHasBeenRateLimited:(id)arg1 retryAfter:(double)arg2;
 - (void)dealloc;
-- (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)flintResourceManager;
-- (BOOL)hasBeenRateLimited;
-- (id)initWithContentDatabase:(id)arg1 contentContainer:(id)arg2 contentHostDirectory:(id)arg3 contentDirectory:(id)arg4 networkBehaviorMonitor:(id)arg5 setupExcerptURLProtocol:(BOOL)arg6 desiredHeadlineFieldOptions:(unsigned int)arg7 feedUsage:(int)arg8;
-- (id)initWithContentHostDirectory:(id)arg1 networkBehaviorMonitor:(id)arg2 desiredHeadlineFieldOptions:(unsigned int)arg3 feedUsage:(int)arg4;
+- (bool)hasBeenRateLimited;
+- (id)initWithContentDatabase:(id)arg1 contentContainer:(id)arg2 contentHostDirectory:(id)arg3 contentDirectory:(id)arg4 networkBehaviorMonitor:(id)arg5 setupExcerptURLProtocol:(bool)arg6 desiredHeadlineFieldOptions:(unsigned long long)arg7 feedUsage:(long long)arg8;
+- (id)initWithContentHostDirectory:(id)arg1 networkBehaviorMonitor:(id)arg2 desiredHeadlineFieldOptions:(unsigned long long)arg3 feedUsage:(long long)arg4;
 - (id)internalContentContext;
 - (void)networkReachabilityRequirementDidBecomeDirty:(id)arg1;
 - (void)setContentDirectory:(id)arg1;

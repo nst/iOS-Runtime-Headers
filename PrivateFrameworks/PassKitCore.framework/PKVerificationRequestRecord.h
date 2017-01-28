@@ -10,7 +10,7 @@
     NSString * _passUniqueID;
     NSString * _previousStepIdentifier;
     NSDictionary * _requiredFieldData;
-    int  _verificationStatus;
+    long long  _verificationStatus;
 }
 
 @property (nonatomic, copy) NSArray *allChannels;
@@ -20,9 +20,9 @@
 @property (nonatomic, copy) NSString *passUniqueID;
 @property (nonatomic, copy) NSString *previousStepIdentifier;
 @property (nonatomic, copy) NSDictionary *requiredFieldData;
-@property (nonatomic) int verificationStatus;
+@property (nonatomic) long long verificationStatus;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)verificationRequestRecordForPass:(id)arg1;
 
 - (void).cxx_destruct;
@@ -43,7 +43,7 @@
 - (void)setPassUniqueID:(id)arg1;
 - (void)setPreviousStepIdentifier:(id)arg1;
 - (void)setRequiredFieldData:(id)arg1;
-- (void)setVerificationStatus:(int)arg1;
-- (int)verificationStatus;
+- (void)setVerificationStatus:(long long)arg1;
+- (long long)verificationStatus;
 
 @end

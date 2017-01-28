@@ -13,35 +13,35 @@
 }
 
 @property (nonatomic, readonly) NSArray *categories;
-@property (nonatomic, readonly) int effectiveEnabledLevel;
-@property (nonatomic, readonly) int effectivePersistedLevel;
-@property (nonatomic) int enabledLevel;
-@property (nonatomic, readonly) BOOL isLocked;
+@property (nonatomic, readonly) long long effectiveEnabledLevel;
+@property (nonatomic, readonly) long long effectivePersistedLevel;
+@property (nonatomic) long long enabledLevel;
+@property (nonatomic, readonly) bool isLocked;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic) int persistedLevel;
+@property (nonatomic) long long persistedLevel;
 
 - (void).cxx_destruct;
-- (int)_defaultEnabledLevelForCategory:(id)arg1;
-- (int)_defaultPersistedLevelForCategory:(id)arg1;
-- (int)_enabledLevelForCategory:(id)arg1;
+- (long long)_defaultEnabledLevelForCategory:(id)arg1;
+- (long long)_defaultPersistedLevelForCategory:(id)arg1;
+- (long long)_enabledLevelForCategory:(id)arg1;
 - (id)_levelPrefsForCategory:(id)arg1;
-- (int)_persistedLevelForCategory:(id)arg1;
+- (long long)_persistedLevelForCategory:(id)arg1;
 - (void)_resetCategory:(id)arg1;
-- (void)_setEnabledLevel:(int)arg1 forCategory:(id)arg2;
-- (void)_setPersistedLevel:(int)arg1 forCategory:(id)arg2;
+- (void)_setEnabledLevel:(long long)arg1 forCategory:(id)arg2;
+- (void)_setPersistedLevel:(long long)arg1 forCategory:(id)arg2;
 - (id)categories;
-- (int)defaultEnabledLevel;
-- (int)defaultPersistedLevel;
-- (int)effectiveEnabledLevel;
-- (int)effectivePersistedLevel;
-- (int)enabledLevel;
+- (long long)defaultEnabledLevel;
+- (long long)defaultPersistedLevel;
+- (long long)effectiveEnabledLevel;
+- (long long)effectivePersistedLevel;
+- (long long)enabledLevel;
 - (id)initWithName:(id)arg1;
-- (BOOL)isLocked;
+- (bool)isLocked;
 - (id)name;
-- (int)persistedLevel;
+- (long long)persistedLevel;
 - (void)reset;
 - (void)resetAll;
-- (void)setEnabledLevel:(int)arg1;
-- (void)setPersistedLevel:(int)arg1;
+- (void)setEnabledLevel:(long long)arg1;
+- (void)setPersistedLevel:(long long)arg1;
 
 @end

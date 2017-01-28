@@ -14,7 +14,7 @@
 @property (nonatomic, copy) id targetValue;
 @property (nonatomic, readonly, copy) NSUUID *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actionSet;

@@ -3,24 +3,24 @@
  */
 
 @interface ASTSession : NSObject <ASTConnectionManagerDelegate> {
-    int  _backoffCounter;
+    long long  _backoffCounter;
     NSObject<OS_dispatch_semaphore> * _backoffTimer;
     NSError * _clientStatusLoopError;
     ASTConnectionManager * _connectionManager;
     <ASTSessionDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSMutableDictionary * _pendingTestResults;
-    int  _phase;
+    long long  _phase;
     NSLock * _phaseLock;
-    int  _retryCounter;
+    long long  _retryCounter;
     NSMutableDictionary * _runningTests;
     NSString * _serialNumber;
     NSString * _sessionId;
-    BOOL  _shouldContinueRequestLoop;
-    BOOL  _shouldUnenroll;
+    bool  _shouldContinueRequestLoop;
+    bool  _shouldUnenroll;
 }
 
-@property (nonatomic) int backoffCounter;
+@property (nonatomic) long long backoffCounter;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *backoffTimer;
 @property (nonatomic, retain) NSError *clientStatusLoopError;
 @property (nonatomic, retain) ASTConnectionManager *connectionManager;
@@ -28,25 +28,25 @@
 @property (nonatomic) <ASTSessionDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *pendingTestResults;
-@property (nonatomic) int phase;
+@property (nonatomic) long long phase;
 @property (nonatomic, retain) NSLock *phaseLock;
-@property (nonatomic) int retryCounter;
+@property (nonatomic) long long retryCounter;
 @property (nonatomic, retain) NSMutableDictionary *runningTests;
 @property (nonatomic, retain) NSString *serialNumber;
 @property (nonatomic, retain) NSString *sessionId;
-@property (nonatomic) BOOL shouldContinueRequestLoop;
-@property (nonatomic) BOOL shouldUnenroll;
+@property (nonatomic) bool shouldContinueRequestLoop;
+@property (nonatomic) bool shouldUnenroll;
 @property (readonly) Class superclass;
 
 + (id)_destinationURLForAsset:(id)arg1 sessionId:(id)arg2;
-+ (void)_downloadAsset:(id)arg1 sessionId:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (BOOL)auditToken:(struct { unsigned int x1[8]; }*)arg1 hasEntitlement:(id)arg2;
-+ (BOOL)currentProcessHasEntitlement;
-+ (void)requestAsset:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (void)sessionExistsForSerialNumbers:(id)arg1 ticketNumber:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (void)sessionExistsForSerialNumbers:(id)arg1 ticketNumber:(id)arg2 timeout:(double)arg3 completionHandler:(id /* block */)arg4;
++ (void)_downloadAsset:(id)arg1 sessionId:(id)arg2 completionHandler:(id)arg3;
++ (bool)auditToken:(struct { unsigned int x1[8]; }*)arg1 hasEntitlement:(id)arg2;
++ (bool)currentProcessHasEntitlement;
++ (void)requestAsset:(id)arg1 completionHandler:(id)arg2;
++ (void)sessionExistsForSerialNumbers:(id)arg1 ticketNumber:(id)arg2 completionHandler:(id)arg3;
++ (void)sessionExistsForSerialNumbers:(id)arg1 ticketNumber:(id)arg2 timeout:(double)arg3 completionHandler:(id)arg4;
 + (id)sessionWithSerialNumber:(id)arg1;
 
 - (void).cxx_destruct;
@@ -56,7 +56,7 @@
 - (void)_cancelRunningTests;
 - (id)_continueWithLastRequest:(id)arg1;
 - (id)_idle;
-- (BOOL)_profile;
+- (bool)_profile;
 - (void)_removeDownloadedAssets;
 - (id)_retryRequest;
 - (id)_sendPropertiesWithData:(id)arg1;
@@ -69,14 +69,14 @@
 - (void)_updateProgress:(id)arg1;
 - (id)_updateSessionSettingsWithData:(id)arg1;
 - (id)_updateUIWithData:(id)arg1;
-- (BOOL)_validateCommand:(int)arg1 clientStatus:(int)arg2;
-- (int)backoffCounter;
+- (bool)_validateCommand:(long long)arg1 clientStatus:(long long)arg2;
+- (long long)backoffCounter;
 - (id)backoffTimer;
 - (void)cancelSendingResultsForAllTests;
 - (void)cancelSendingResultsForTest:(id)arg1;
 - (id)clientStatusLoopError;
 - (id)connectionManager;
-- (void)connectionManager:(id)arg1 pausedSendingResultForTest:(id)arg2 reason:(int)arg3;
+- (void)connectionManager:(id)arg1 pausedSendingResultForTest:(id)arg2 reason:(long long)arg3;
 - (void)connectionManager:(id)arg1 resumedSendingResultForTest:(id)arg2;
 - (void)connectionManagerRequestPaused:(id)arg1;
 - (void)connectionManagerRequestResumed:(id)arg1;
@@ -86,31 +86,31 @@
 - (id)init;
 - (id)initWithSerialNumber:(id)arg1;
 - (id)pendingTestResults;
-- (int)phase;
+- (long long)phase;
 - (id)phaseLock;
-- (void)requestAsset:(id)arg1 completionHandler:(id /* block */)arg2;
-- (int)retryCounter;
+- (void)requestAsset:(id)arg1 completionHandler:(id)arg2;
+- (long long)retryCounter;
 - (id)runningTests;
 - (void)sendTestResult:(id)arg1;
 - (id)serialNumber;
 - (id)sessionId;
-- (void)setBackoffCounter:(int)arg1;
+- (void)setBackoffCounter:(long long)arg1;
 - (void)setBackoffTimer:(id)arg1;
 - (void)setClientStatusLoopError:(id)arg1;
 - (void)setConnectionManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateQueue:(id)arg1;
 - (void)setPendingTestResults:(id)arg1;
-- (void)setPhase:(int)arg1;
+- (void)setPhase:(long long)arg1;
 - (void)setPhaseLock:(id)arg1;
-- (void)setRetryCounter:(int)arg1;
+- (void)setRetryCounter:(long long)arg1;
 - (void)setRunningTests:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
 - (void)setSessionId:(id)arg1;
-- (void)setShouldContinueRequestLoop:(BOOL)arg1;
-- (void)setShouldUnenroll:(BOOL)arg1;
-- (BOOL)shouldContinueRequestLoop;
-- (BOOL)shouldUnenroll;
+- (void)setShouldContinueRequestLoop:(bool)arg1;
+- (void)setShouldUnenroll:(bool)arg1;
+- (bool)shouldContinueRequestLoop;
+- (bool)shouldUnenroll;
 - (void)start;
 
 @end

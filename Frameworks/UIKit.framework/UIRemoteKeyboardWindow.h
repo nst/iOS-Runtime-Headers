@@ -3,27 +3,27 @@
  */
 
 @interface UIRemoteKeyboardWindow : UITextEffectsWindow {
-    BOOL  _arePlaceholdersInitialised;
+    bool  _arePlaceholdersInitialised;
 }
 
-+ (id)remoteKeyboardWindowForScreen:(id)arg1 create:(BOOL)arg2;
++ (id)remoteKeyboardWindowForScreen:(id)arg1 create:(bool)arg2;
 
-- (BOOL)_alwaysGetsContexts;
+- (bool)_alwaysGetsContexts;
 - (void)_attachSceneLayer;
 - (void)_detachSceneLayer;
 - (id)_initBasicWithScreen:(id)arg1 options:(id)arg2;
-- (BOOL)_isFullscreen;
-- (BOOL)_isHostedInAnotherProcess;
-- (BOOL)_isTextEffectsWindowNotificationOwner;
-- (BOOL)_isWindowServerHostingManaged;
-- (BOOL)_matchingOptions:(id)arg1;
+- (bool)_isFullscreen;
+- (bool)_isHostedInAnotherProcess;
+- (bool)_isTextEffectsWindowNotificationOwner;
+- (bool)_isWindowServerHostingManaged;
+- (bool)_matchingOptions:(id)arg1;
 - (id)_newSceneLayer;
-- (void)_setRotatableClient:(id)arg1 toOrientation:(int)arg2 updateStatusBar:(BOOL)arg3 duration:(double)arg4 force:(BOOL)arg5 isRotating:(BOOL)arg6;
-- (BOOL)_usesWindowServerHitTesting;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_viewTransformForInterfaceOrientation:(int)arg1;
-- (BOOL)_wantsSceneAssociation;
+- (void)_setRotatableClient:(id)arg1 toOrientation:(long long)arg2 updateStatusBar:(bool)arg3 duration:(double)arg4 force:(bool)arg5 isRotating:(bool)arg6;
+- (bool)_usesWindowServerHitTesting;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })_viewTransformForInterfaceOrientation:(long long)arg1;
+- (bool)_wantsSceneAssociation;
 - (void)dealloc;
 - (void)invalidate;
-- (void)setWindowLevel:(float)arg1;
+- (void)setWindowLevel:(double)arg1;
 
 @end

@@ -11,16 +11,16 @@
 - (void).cxx_destruct;
 - (void)_configureExtendedLaunchTestIfNeeded;
 - (id)_extendLaunchTest;
-- (void)_registerPreviewStartBlock:(id /* block */)arg1;
+- (void)_registerPreviewStartBlock:(id)arg1;
 - (id)currentTestHarness;
-- (void)didChangeToMode:(int)arg1 device:(int)arg2;
+- (void)didChangeToMode:(long long)arg1 device:(long long)arg2;
 - (void)prepareForDefaultImageSnapshotForScreen:(id)arg1;
-- (BOOL)runSwitchCamerasTestWithName:(id)arg1 options:(id)arg2;
-- (BOOL)runSwitchModesTestWithName:(id)arg1 options:(id)arg2;
-- (BOOL)runTakePictureTestWithFrontCamera:(id)arg1 options:(id)arg2 prototype:(id)arg3;
-- (BOOL)runTakePictureTestWithTestName:(id)arg1 options:(id)arg2 prototype:(id)arg3;
-- (BOOL)runTest:(id)arg1 options:(id)arg2;
+- (bool)runSwitchCamerasTestWithName:(id)arg1 options:(id)arg2;
+- (bool)runSwitchModesTestWithName:(id)arg1 options:(id)arg2;
+- (bool)runTakePictureTestWithFrontCamera:(id)arg1 options:(id)arg2 prototype:(id)arg3;
+- (bool)runTakePictureTestWithTestName:(id)arg1 options:(id)arg2 prototype:(id)arg3;
+- (bool)runTest:(id)arg1 options:(id)arg2;
 - (void)setCurrentTestHarness:(id)arg1;
-- (unsigned int)supportedInterfaceOrientationsForWindow:(id)arg1;
+- (unsigned long long)supportedInterfaceOrientationsForWindow:(id)arg1;
 
 @end

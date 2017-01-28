@@ -3,10 +3,10 @@
  */
 
 @interface WBSAutomaticReadingListWebFeedSource : WBSAutomaticReadingListSocialSource {
-    BOOL  _canFetchFeeds;
-    BOOL  _cloudSyncEnabled;
+    bool  _canFetchFeeds;
+    bool  _cloudSyncEnabled;
     NSMutableSet * _feedURLs;
-    BOOL  _hasStartedFetchingFeeds;
+    bool  _hasStartedFetchingFeeds;
     NSMutableDictionary * _posts;
     NSMutableSet * _potentialFeedSubscriptions;
     NSMutableSet * _subscribedFeeds;
@@ -16,7 +16,7 @@
     NSObject<OS_dispatch_queue> * _webFeedSourceDataSynchronizationQueue;
 }
 
-@property (nonatomic) BOOL cloudSyncEnabled;
+@property (nonatomic) bool cloudSyncEnabled;
 @property (nonatomic, retain) NSXPCConnection *webFeedParserConnection;
 
 + (id)sharedSource;
@@ -46,14 +46,14 @@
 - (void)addPairingFromSourceURL:(id)arg1 toFeedURL:(id)arg2 title:(id)arg3 iconURLs:(id)arg4;
 - (void)blockFeedWithFeedURL:(id)arg1;
 - (void)blockFeedWithItem:(id)arg1;
-- (BOOL)cloudSyncEnabled;
+- (bool)cloudSyncEnabled;
 - (void)debugClearWebFeedSubscriptionsKeyValueStore;
-- (void)fetchPotentialSubscriptionFeedSources:(id /* block */)arg1;
-- (void)getFeedSourcesWithState:(int)arg1 completionBlock:(id /* block */)arg2;
-- (void)getSiteIconURLsForFeedURL:(id)arg1 completionBlock:(id /* block */)arg2;
-- (void)getSourceURLsForFeedURL:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)fetchPotentialSubscriptionFeedSources:(id)arg1;
+- (void)getFeedSourcesWithState:(long long)arg1 completionBlock:(id)arg2;
+- (void)getSiteIconURLsForFeedURL:(id)arg1 completionBlock:(id)arg2;
+- (void)getSourceURLsForFeedURL:(id)arg1 completionBlock:(id)arg2;
 - (id)init;
-- (BOOL)isActive;
+- (bool)isActive;
 - (void)loadFeedSourcesIfNecessary;
 - (id)recordsInfo;
 - (void)requestMoreItemsWithAge:(int)arg1;
@@ -62,7 +62,7 @@
 - (id)serviceImage;
 - (id)serviceName;
 - (id)serviceType;
-- (void)setCloudSyncEnabled:(BOOL)arg1;
+- (void)setCloudSyncEnabled:(bool)arg1;
 - (void)setWebFeedParserConnection:(id)arg1;
 - (void)subscribeToFeedURL:(id)arg1 fromSourceURL:(id)arg2 siteIconURLs:(id)arg3;
 - (id)webFeedParserConnection;

@@ -5,6 +5,6 @@
 @interface WKNSURLSessionLocal : NSObject
 
 - (struct __CFDictionary { }*)_copyCookiesForRequestUsingAllAppropriateStorageSemantics:(struct _CFURLRequest { }*)arg1;
-- (void)_getCookieHeadersForTask:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_getCookieHeadersForTask:(id)arg1 completionHandler:(id)arg2;
 
 @end

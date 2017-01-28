@@ -5,6 +5,6 @@
 @interface _DKAnyIntegerCategory : NSObject
 
 + (id)type;
-+ (id)withValue:(int)arg1;
++ (id)withValue:(long long)arg1;
 
 @end

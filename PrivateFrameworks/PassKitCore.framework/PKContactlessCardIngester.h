@@ -3,34 +3,34 @@
  */
 
 @interface PKContactlessCardIngester : NSObject <NFRemoteAdminEventListener> {
-    id /* block */  _cardSessionTokenCompletionHandler;
+    id  _cardSessionTokenCompletionHandler;
     NSObject<OS_dispatch_queue> * _contactlessCardIngesterQueue;
     <PKContactlessCardIngesterDelegate> * _delegate;
-    id /* block */  _disableCardCompletionHandler;
-    BOOL  _listening;
+    id  _disableCardCompletionHandler;
+    bool  _listening;
     NSString * _pushTopic;
     NSDictionary * _readerModeMetadata;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)_displayableErrorForSPStatusCode:(unsigned int)arg1;
-+ (id)debugDescriptionForStatus:(unsigned int)arg1;
++ (id)_displayableErrorForSPStatusCode:(unsigned long long)arg1 seldError:(id)arg2;
++ (id)debugDescriptionForStatus:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_cancelCardIngestion;
-- (void)_ingestCardWithCardSessionToken:(id)arg1 completion:(id /* block */)arg2;
-- (void)_ingestCardWithCompletion:(id /* block */)arg1;
+- (void)_ingestCardWithCardSessionToken:(id)arg1 completion:(id)arg2;
+- (void)_ingestCardWithCompletion:(id)arg1;
 - (void)_startListeningToRemoteAdminEventsIfRequired;
 - (void)_stopListeningToRemoteAdminEvents;
-- (void)ingestCardWithCardSessionToken:(id)arg1 successHandler:(id /* block */)arg2;
-- (void)ingestCardWithSuccessHandler:(id /* block */)arg1;
+- (void)ingestCardWithCardSessionToken:(id)arg1 successHandler:(id)arg2;
+- (void)ingestCardWithSuccessHandler:(id)arg1;
 - (id)initWithPaymentSetupProduct:(id)arg1 delegate:(id)arg2;
 - (void)invalidate;
-- (void)readerModeCardIngestionStatus:(unsigned int)arg1;
+- (void)readerModeCardIngestionStatus:(unsigned long long)arg1;
 - (void)readerModeCardSessionToken:(id)arg1;
 
 @end

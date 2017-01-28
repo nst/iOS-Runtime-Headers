@@ -3,7 +3,7 @@
  */
 
 @interface MPMediaCollectionDownloadObserver : MPUMediaDownloadObserver {
-    BOOL  _callingProgressHandler;
+    bool  _callingProgressHandler;
     NSMutableArray * _downloadObservers;
 }
 
@@ -12,10 +12,10 @@
 - (void)_onQueue_invalidate;
 - (void)dealloc;
 - (double)downloadProgress;
-- (unsigned int)downloadsCount;
+- (unsigned long long)downloadsCount;
 - (id)initWithCollection:(id)arg1;
-- (BOOL)isCurrentlyPlayable;
-- (BOOL)isPaused;
-- (BOOL)isPurchasing;
+- (bool)isCurrentlyPlayable;
+- (bool)isPaused;
+- (bool)isPurchasing;
 
 @end

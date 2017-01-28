@@ -14,6 +14,6 @@
 - (id)initWithCommand:(unsigned int)arg1 options:(id)arg2;
 - (id)options;
 - (id)serializationDate;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

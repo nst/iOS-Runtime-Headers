@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString *detailsString;
 @property (nonatomic, retain) NSString *displayString;
 @property (nonatomic, retain) NSArray *handles;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *lastMessageDate;
 @property (nonatomic, retain) CKIMComposeRecipient *matchingRecipient;
 @property (readonly) Class superclass;
@@ -34,7 +34,7 @@
 - (id)detailsString;
 - (id)handles;
 - (id)initWithGUID:(id)arg1 displayString:(id)arg2 detailsString:(id)arg3 handles:(id)arg4 lastMessageDate:(id)arg5 searchTerm:(id)arg6 matchingRecipient:(id)arg7;
-- (BOOL)isRemovableFromSearchResults;
+- (bool)isRemovableFromSearchResults;
 - (id)lastMessageDate;
 - (id)matchingRecipient;
 - (void)releaseIMReferences;

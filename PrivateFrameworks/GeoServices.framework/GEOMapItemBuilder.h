@@ -19,7 +19,7 @@
 @property (nonatomic, retain) GEOMapRegion *mapRegion;
 @property (nonatomic) int referenceFrame;
 
-+ (id)buildWithSetterBlock:(id /* block */)arg1;
++ (id)buildWithSetterBlock:(id)arg1;
 
 - (id)address;
 - (id)build;

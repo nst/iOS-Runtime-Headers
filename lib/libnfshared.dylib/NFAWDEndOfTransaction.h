@@ -23,7 +23,7 @@
 @property (nonatomic) unsigned int currencyCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long iad;
 @property (nonatomic) unsigned int informative;
 @property (nonatomic, retain) NSData *maid;
@@ -45,7 +45,7 @@
 - (unsigned int)currencyCode;
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (unsigned long long)iad;
 - (unsigned int)informative;
 - (id)init;
@@ -75,7 +75,7 @@
 - (id)transactionId;
 - (unsigned int)transactionStatus;
 - (unsigned int)transactionType;
-- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (unsigned long long)updateTransactionStateInfoWithPreviousState:(unsigned long long)arg1;
 - (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 - (unsigned int)version;
 

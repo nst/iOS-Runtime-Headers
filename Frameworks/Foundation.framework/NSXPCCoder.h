@@ -16,7 +16,7 @@
 - (id)decodeXPCObjectOfType:(struct _xpc_type_s { }*)arg1 forKey:(id)arg2;
 - (void)encodeXPCObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
-- (BOOL)requiresSecureCoding;
+- (bool)requiresSecureCoding;
 - (void)setUserInfo:(id)arg1;
 - (id)userInfo;
 

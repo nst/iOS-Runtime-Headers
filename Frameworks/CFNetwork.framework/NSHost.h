@@ -19,10 +19,10 @@
 + (void)flushHostCache;
 + (id)hostWithAddress:(id)arg1;
 + (id)hostWithName:(id)arg1;
-+ (BOOL)isHostCacheEnabled;
-+ (void)setHostCacheEnabled:(BOOL)arg1;
++ (bool)isHostCacheEnabled;
++ (void)setHostCacheEnabled:(bool)arg1;
 
-- (void)__resolveWithFlags:(int)arg1 resultArray:(id)arg2 handler:(id /* block */)arg3;
+- (void)__resolveWithFlags:(int)arg1 resultArray:(id)arg2 handler:(id)arg3;
 - (id)_thingToResolve;
 - (id)address;
 - (id)addresses;
@@ -30,13 +30,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)initToResolve:(id)arg1 as:(int)arg2;
-- (BOOL)isEqualToHost:(id)arg1;
+- (bool)isEqualToHost:(id)arg1;
 - (id)localizedName;
 - (id)name;
 - (id)names;
 - (id)reserved;
-- (void)resolve:(id /* block */)arg1;
-- (void)resolveCurrentHostWithHandler:(id /* block */)arg1;
+- (void)resolve:(id)arg1;
+- (void)resolveCurrentHostWithHandler:(id)arg1;
 - (void)setReserved:(id)arg1;
 
 @end

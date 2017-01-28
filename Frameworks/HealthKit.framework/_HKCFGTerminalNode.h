@@ -6,7 +6,7 @@
     id  _value;
 }
 
-+ (id)nodeWithValue:(id)arg1 rangeOfString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)nodeWithValue:(id)arg1 rangeOfString:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
 - (void).cxx_destruct;
 - (id)evaluate;

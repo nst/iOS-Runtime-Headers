@@ -5,13 +5,13 @@
 @interface AppLaunchStatsLaunchQueue : NSObject <DuetLoggerProtocol> {
     NSDate * ageWifiChargerQueue;
     long long  allowedAppLaunchCap;
-    id /* block */  highPriorityBlock;
+    id  highPriorityBlock;
     NSMutableArray * highPriorityPushQueue;
     NSMutableArray * highPriorityRetryList;
     bool  inBatterySaverMode;
     NSDate * lastRetryTrigTime;
     NSObject<OS_dispatch_queue> * launchQueue;
-    id /* block */  lowPriorityBlock;
+    id  lowPriorityBlock;
     NSMutableArray * lowPriorityPushQueue;
     NSMutableArray * lowPriorityRetryList;
     bool  pushHigh;
@@ -19,20 +19,20 @@
     unsigned long long  scheduleLaunchQueue;
     NSMutableArray * trendingQueue;
     NSMutableArray * whatToLaunchQueue;
-    id /* block */  wifiChargerCheck;
+    id  wifiChargerCheck;
     long long  wifiChargerDuration;
     NSMutableArray * wifiChargerQueue;
 }
 
 - (void).cxx_destruct;
 - (bool)acquireReservationStation:(id)arg1;
-- (void)addToHighPriorityQueue:(id)arg1 withLaunchBlock:(id /* block */)arg2;
-- (void)addToLaunchQueue:(id)arg1 withQueueType:(int)arg2 withItem:(id /* block */)arg3;
-- (void)addToLowPriorityQueue:(id)arg1 withLaunchBlock:(id /* block */)arg2;
-- (bool)confirmReservationStation:(id)arg1 seqNum:(long long)arg2 type:(int)arg3 release:(id /* block */)arg4;
+- (void)addToHighPriorityQueue:(id)arg1 withLaunchBlock:(id)arg2;
+- (void)addToLaunchQueue:(id)arg1 withQueueType:(int)arg2 withItem:(id)arg3;
+- (void)addToLowPriorityQueue:(id)arg1 withLaunchBlock:(id)arg2;
+- (bool)confirmReservationStation:(id)arg1 seqNum:(long long)arg2 type:(int)arg3 release:(id)arg4;
 - (void)doDispatchQueuedLPLaunches;
 - (void)doDispatchQueuedLaunches;
-- (void)enableWifiChargerQueue:(id /* block */)arg1;
+- (void)enableWifiChargerQueue:(id)arg1;
 - (id)init;
 - (int)launchObject:(id)arg1;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;

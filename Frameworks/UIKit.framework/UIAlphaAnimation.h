@@ -3,14 +3,14 @@
  */
 
 @interface UIAlphaAnimation : UIAnimation {
-    float  _endAlpha;
-    float  _startAlpha;
+    double  _endAlpha;
+    double  _startAlpha;
 }
 
-- (float)_alphaForMultiplier:(float)arg1;
-- (float)alphaForFraction:(float)arg1;
-- (void)setEndAlpha:(float)arg1;
+- (double)_alphaForMultiplier:(float)arg1;
+- (double)alphaForFraction:(float)arg1;
+- (void)setEndAlpha:(double)arg1;
 - (void)setProgress:(float)arg1;
-- (void)setStartAlpha:(float)arg1;
+- (void)setStartAlpha:(double)arg1;
 
 @end

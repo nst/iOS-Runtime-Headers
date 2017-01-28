@@ -6,33 +6,33 @@
     <CNScheduler> * _backgroundScheduler;
     <CNScheduler> * _immediateScheduler;
     <CNScheduler> * _mainThreadScheduler;
-    id /* block */  _serialSchedulerProvider;
-    id /* block */  _synchronousSerialSchedulerProvider;
+    id  _serialSchedulerProvider;
+    id  _synchronousSerialSchedulerProvider;
 }
 
 @property (nonatomic, readonly) <CNScheduler> *backgroundScheduler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNScheduler> *immediateScheduler;
 @property (nonatomic, readonly) <CNScheduler> *mainThreadScheduler;
-@property (nonatomic, readonly, copy) id /* block */ serialSchedulerProvider;
+@property (nonatomic, readonly, copy) id serialSchedulerProvider;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, copy) id /* block */ synchronousSerialSchedulerProvider;
+@property (nonatomic, readonly, copy) id synchronousSerialSchedulerProvider;
 
 + (id)defaultProvider;
 + (id)makeDefaultProvider;
-+ (id)providerWithBackgroundConcurrencyLimit:(int)arg1;
++ (id)providerWithBackgroundConcurrencyLimit:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)backgroundScheduler;
-- (id)backgroundSchedulerWithQualityOfService:(unsigned int)arg1;
+- (id)backgroundSchedulerWithQualityOfService:(unsigned long long)arg1;
 - (id)immediateScheduler;
-- (id)initWithBackgroundScheduler:(id)arg1 mainThreadScheduler:(id)arg2 immediateScheduler:(id)arg3 serialSchedulerProvider:(id /* block */)arg4 synchronousSerialSchedulerProvider:(id /* block */)arg5;
+- (id)initWithBackgroundScheduler:(id)arg1 mainThreadScheduler:(id)arg2 immediateScheduler:(id)arg3 serialSchedulerProvider:(id)arg4 synchronousSerialSchedulerProvider:(id)arg5;
 - (id)mainThreadScheduler;
 - (id)newSerialSchedulerWithName:(id)arg1;
 - (id)newSynchronousSerialSchedulerWithName:(id)arg1;
-- (id /* block */)serialSchedulerProvider;
-- (id /* block */)synchronousSerialSchedulerProvider;
+- (id)serialSchedulerProvider;
+- (id)synchronousSerialSchedulerProvider;
 
 @end

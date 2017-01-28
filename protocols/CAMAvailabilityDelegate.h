@@ -5,9 +5,9 @@
 
 @required
 
-- (void)captureController:(CUCaptureController *)arg1 didOutputCaptureAvailability:(BOOL)arg2;
-- (void)captureController:(CUCaptureController *)arg1 didOutputConfigurationAvailability:(BOOL)arg2;
-- (void)captureController:(CUCaptureController *)arg1 didOutputFlashAvailability:(BOOL)arg2;
-- (void)captureController:(CUCaptureController *)arg1 didOutputTorchAvailability:(BOOL)arg2;
+- (void)captureController:(CUCaptureController *)arg1 didOutputCaptureAvailability:(bool)arg2;
+- (void)captureController:(CUCaptureController *)arg1 didOutputConfigurationAvailability:(bool)arg2;
+- (void)captureController:(CUCaptureController *)arg1 didOutputFlashAvailability:(bool)arg2;
+- (void)captureController:(CUCaptureController *)arg1 didOutputTorchAvailability:(bool)arg2;
 
 @end

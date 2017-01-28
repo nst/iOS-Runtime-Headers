@@ -3,18 +3,18 @@
  */
 
 @interface BLTBlockHolder : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     NSObject<OS_dispatch_source> * _fileMonitor;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *fileMonitor;
 
 - (void).cxx_destruct;
-- (id /* block */)completion;
+- (id)completion;
 - (void)dealloc;
 - (id)fileMonitor;
-- (void)setCompletion:(id /* block */)arg1;
+- (void)setCompletion:(id)arg1;
 - (void)setFileMonitor:(id)arg1;
 
 @end

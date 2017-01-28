@@ -14,7 +14,7 @@
 @property (nonatomic, retain) _UIBackdropViewSettings *effectSettings;
 @property (nonatomic, retain) UIView *referenceView;
 
-+ (void)coordinateAsyncEffectViewPropertyChanges:(id /* block */)arg1 withAnimationBlock:(id /* block */)arg2;
++ (void)coordinateAsyncEffectViewPropertyChanges:(id)arg1 withAnimationBlock:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)effectCache;

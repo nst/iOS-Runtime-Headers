@@ -21,7 +21,7 @@
 @property (nonatomic, readonly) CAMTimelapseBackendController *_timelapseBackendController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -35,7 +35,7 @@
 - (id)allowedProtocolForClientAccess:(id)arg1;
 - (void)daemonConnectionManagerHasBeenDisconnected:(id)arg1;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performPendingWorkAfterDelay:(double)arg1;
 - (void)persistenceController:(id)arg1 didGenerateVideoLocalPersistenceResult:(id)arg2 forCaptureResult:(id)arg3 fromRequest:(id)arg4;
 

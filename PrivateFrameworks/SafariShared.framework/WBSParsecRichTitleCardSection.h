@@ -3,9 +3,9 @@
  */
 
 @interface WBSParsecRichTitleCardSection : WBSParsecCardSection {
-    BOOL  _centered;
+    bool  _centered;
     WBSParsecImageRepresentation * _image;
-    BOOL  _includesSeparateLineForRottenTomatoes;
+    bool  _includesSeparateLineForRottenTomatoes;
     NSArray * _moreGlyphs;
     NSNumber * _rating;
     NSString * _ratingText;
@@ -15,9 +15,9 @@
     NSString * _titleText;
 }
 
-@property (getter=isCentered, nonatomic, readonly) BOOL centered;
+@property (getter=isCentered, nonatomic, readonly) bool centered;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *image;
-@property (nonatomic, readonly) BOOL includesSeparateLineForRottenTomatoes;
+@property (nonatomic, readonly) bool includesSeparateLineForRottenTomatoes;
 @property (nonatomic, readonly) NSArray *moreGlyphs;
 @property (nonatomic, readonly) NSNumber *rating;
 @property (nonatomic, readonly, copy) NSString *ratingText;
@@ -31,8 +31,8 @@
 - (void).cxx_destruct;
 - (id)_initWithDictionary:(id)arg1;
 - (id)image;
-- (BOOL)includesSeparateLineForRottenTomatoes;
-- (BOOL)isCentered;
+- (bool)includesSeparateLineForRottenTomatoes;
+- (bool)isCentered;
 - (id)moreGlyphs;
 - (id)rating;
 - (id)ratingText;

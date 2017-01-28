@@ -9,7 +9,7 @@
     PSSpecifier * _radioGroup;
     PSSpecifier * _scheduleRadioSpecifier;
     PSSpecifier * _selectedTimeSpecifier;
-    BOOL  _showingScheduleSpecifiers;
+    bool  _showingScheduleSpecifiers;
     PSSpecifier * _startTimePickerSpecifier;
     PSSpecifier * _startTimeSpecifier;
     PSSpecifier * _sunsetToSunriseRadioSpecifier;
@@ -23,10 +23,10 @@
 - (id)datePickerForSpecifier:(id)arg1;
 - (void)dealloc;
 - (id)endTime;
-- (void)handleBlueLightStatusChanged:(struct { BOOL x1; BOOL x2; BOOL x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long x6; }*)arg1;
+- (void)handleBlueLightStatusChanged:(struct { bool x1; bool x2; bool x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long long x6; }*)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)showPickerSpecifierForSpecifier:(id)arg1;
-- (void)showScheduleSpecifiers:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)showScheduleSpecifiers:(bool)arg1 animated:(bool)arg2;
 - (id)specifiers;
 - (id)startTime;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

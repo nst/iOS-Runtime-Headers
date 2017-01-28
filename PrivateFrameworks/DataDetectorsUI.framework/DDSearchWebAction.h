@@ -4,7 +4,7 @@
 
 @interface DDSearchWebAction : DDAction
 
-- (BOOL)canBePerformedByOpeningURL;
+- (bool)canBePerformedByOpeningURL;
 - (id)localizedName;
 - (void)performFromView:(id)arg1;
 

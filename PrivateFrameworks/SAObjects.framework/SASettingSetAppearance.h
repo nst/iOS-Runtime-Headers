@@ -12,7 +12,7 @@
 - (id)appearance;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAppearance:(id)arg1;
 
 @end

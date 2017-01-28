@@ -3,14 +3,14 @@
  */
 
 @interface SFRequestMessage : SFMessage {
-    id /* block */  _responseHandler;
+    id  _responseHandler;
 }
 
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, copy) id responseHandler;
 
 - (void).cxx_destruct;
 - (void)invalidate;
-- (id /* block */)responseHandler;
-- (void)setResponseHandler:(id /* block */)arg1;
+- (id)responseHandler;
+- (void)setResponseHandler:(id)arg1;
 
 @end

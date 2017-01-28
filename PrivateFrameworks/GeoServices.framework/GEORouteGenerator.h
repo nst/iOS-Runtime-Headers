@@ -19,7 +19,7 @@
 - (id)initWithRequest:(id)arg1 response:(id)arg2;
 - (id)lookupHubStationOrStopFromMuid:(unsigned long long)arg1;
 - (id)request;
-- (void)rerouteFromWaypoint:(id)arg1 completion:(id /* block */)arg2;
+- (void)rerouteFromWaypoint:(id)arg1 completion:(id)arg2;
 - (id)response;
 
 @end

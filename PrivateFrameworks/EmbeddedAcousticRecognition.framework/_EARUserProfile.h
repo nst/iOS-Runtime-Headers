@@ -7,17 +7,19 @@
         struct LmeDataFactory {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _dataFactory;
-    struct shared_ptr<quasar::G2P> { 
-        struct G2P {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<quasar::G2P, std::__1::default_delete<quasar::G2P> > { 
+        struct __compressed_pair<quasar::G2P *, std::__1::default_delete<quasar::G2P> > { 
+            struct G2P {} *__first_; 
+        } __ptr_; 
     }  _g2p;
     struct shared_ptr<quasar::PronCache<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > > > { 
         struct PronCache<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > > {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _pronCache;
-    struct shared_ptr<quasar::LmeData> { 
-        struct LmeData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<quasar::LmeData, std::__1::default_delete<quasar::LmeData> > { 
+        struct __compressed_pair<quasar::LmeData *, std::__1::default_delete<quasar::LmeData> > { 
+            struct LmeData {} *__first_; 
+        } __ptr_; 
     }  _quasarLmeData;
     struct BasicTextSanitizer { 
         int (**_vptr$TextSanitizer)(); 
@@ -45,7 +47,7 @@
                         struct __hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, void *> *> > { 
-                                unsigned long __first_; 
+                                unsigned long long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -56,7 +58,7 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::hash<std::__1::basic_string<char> >, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, std::__1::basic_string<char> >, std::__1::equal_to<std::__1::basic_string<char> >, true> > { 
                     float __first_; 
@@ -70,7 +72,7 @@
                         struct __hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<char32_t, char32_t>, void *> *> > { 
-                                unsigned long __first_; 
+                                unsigned long long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -81,7 +83,7 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::hash<char32_t>, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<char32_t, std::__1::__hash_value_type<char32_t, char32_t>, std::__1::equal_to<char32_t>, true> > { 
                     float __first_; 
@@ -89,9 +91,10 @@
             } __table_; 
         } unicode_map; 
     }  _sanitizer;
-    struct shared_ptr<sdapi::SdapiTokenizer> { 
-        struct SdapiTokenizer {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<sdapi::SdapiTokenizer, std::__1::default_delete<sdapi::SdapiTokenizer> > { 
+        struct __compressed_pair<sdapi::SdapiTokenizer *, std::__1::default_delete<sdapi::SdapiTokenizer> > { 
+            struct SdapiTokenizer {} *__first_; 
+        } __ptr_; 
     }  _tokenizer;
     struct map<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > >, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > > > > { 
         struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > >, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > >, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > > > > { 
@@ -102,7 +105,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > >, std::__1::less<std::__1::basic_string<char> >, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  _userData;

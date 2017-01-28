@@ -7,6 +7,6 @@
 }
 
 - (void).cxx_destruct;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 
 @end

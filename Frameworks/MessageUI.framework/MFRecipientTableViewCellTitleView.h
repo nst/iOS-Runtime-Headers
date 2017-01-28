@@ -4,33 +4,33 @@
 
 @interface MFRecipientTableViewCellTitleView : UIView <MFTinting> {
     NSAttributedString * _deselectedAttributedString;
-    BOOL  _highlighted;
-    BOOL  _shouldDim;
+    bool  _highlighted;
+    bool  _shouldDim;
     UIColor * _tintColor;
     UILabel * _titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL highlighted;
-@property (nonatomic) BOOL shouldDim;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool highlighted;
+@property (nonatomic) bool shouldDim;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UILabel *titleLabel;
 
 + (id)defaultStringAttributes;
-+ (float)height;
++ (double)height;
 + (id)highlightedStringAttributes;
 + (id)regularStringAttributes;
 
 - (void)dealloc;
-- (BOOL)highlighted;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)highlighted;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setShouldDim:(BOOL)arg1;
-- (void)setTintColor:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)shouldDim;
+- (void)setHighlighted:(bool)arg1;
+- (void)setShouldDim:(bool)arg1;
+- (void)setTintColor:(id)arg1 animated:(bool)arg2;
+- (bool)shouldDim;
 - (id)tintColor;
 - (id)titleLabel;
 

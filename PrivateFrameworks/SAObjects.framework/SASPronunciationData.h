@@ -7,11 +7,11 @@
 @property (nonatomic, copy) NSString *apgId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *language;
 @property (nonatomic, copy) NSString *orthography;
 @property (readonly) Class superclass;
-@property (nonatomic) int tokenOffset;
+@property (nonatomic) long long tokenOffset;
 @property (nonatomic, copy) NSArray *ttsPronunciations;
 @property (nonatomic, copy) NSString *ttsVersion;
 
@@ -26,10 +26,10 @@
 - (void)setApgId:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)setOrthography:(id)arg1;
-- (void)setTokenOffset:(int)arg1;
+- (void)setTokenOffset:(long long)arg1;
 - (void)setTtsPronunciations:(id)arg1;
 - (void)setTtsVersion:(id)arg1;
-- (int)tokenOffset;
+- (long long)tokenOffset;
 - (id)ttsPronunciations;
 - (id)ttsVersion;
 

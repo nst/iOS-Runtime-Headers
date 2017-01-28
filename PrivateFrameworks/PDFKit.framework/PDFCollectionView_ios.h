@@ -4,17 +4,17 @@
 
 @interface PDFCollectionView_ios : PDFCollectionView {
     UITouch * _currentTouch;
-    BOOL  _inDelayedUpdate;
-    BOOL  _isInScrubbingGesture;
-    BOOL  _isUpdatingScrollPosition;
+    bool  _inDelayedUpdate;
+    bool  _isInScrubbingGesture;
+    bool  _isUpdatingScrollPosition;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _lastFrame;
     PDFPage * _lastScrubbedToPage;
@@ -22,40 +22,40 @@
 }
 
 @property (retain) UITouch *currentTouch;
-@property BOOL inDelayedUpdate;
-@property BOOL isInScrubbingGesture;
-@property BOOL isUpdatingScrollPosition;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } lastFrame;
+@property bool inDelayedUpdate;
+@property bool isInScrubbingGesture;
+@property bool isUpdatingScrollPosition;
+@property struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } lastFrame;
 @property PDFPage *lastScrubbedToPage;
 @property (retain) PDFThumbnailItem_ios *scrubbingItemView;
 
-+ (struct CGSize { float x1; float x2; })defaultThumbnailSize;
++ (struct CGSize { double x1; double x2; })defaultThumbnailSize;
 + (id)layoutForPlatform;
 
 - (void).cxx_destruct;
 - (void)_hideScrubber;
 - (void)_reloadDataForFrameChangeAfterDelay:(id)arg1;
-- (void)_showScrubberForLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_showScrubberForPage:(id)arg1 withCenter:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_showScrubberForLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_showScrubberForPage:(id)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_updateScrubberToShowCurrentPage;
 - (id)currentTouch;
 - (void)dealloc;
-- (BOOL)inDelayedUpdate;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
-- (BOOL)isInScrubbingGesture;
-- (BOOL)isUpdatingScrollPosition;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })lastFrame;
+- (bool)inDelayedUpdate;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
+- (bool)isInScrubbingGesture;
+- (bool)isUpdatingScrollPosition;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })lastFrame;
 - (id)lastScrubbedToPage;
 - (void)layoutSubviews;
-- (unsigned int)maxFittingItems;
+- (unsigned long long)maxFittingItems;
 - (void)pageDidChangeNotification:(id)arg1;
 - (void)reloadDataAndRecenter;
 - (id)scrubbingItemView;
 - (void)setCurrentTouch:(id)arg1;
-- (void)setInDelayedUpdate:(BOOL)arg1;
-- (void)setIsInScrubbingGesture:(BOOL)arg1;
-- (void)setIsUpdatingScrollPosition:(BOOL)arg1;
-- (void)setLastFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setInDelayedUpdate:(bool)arg1;
+- (void)setIsInScrubbingGesture:(bool)arg1;
+- (void)setIsUpdatingScrollPosition:(bool)arg1;
+- (void)setLastFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setLastScrubbedToPage:(id)arg1;
 - (void)setScrubbingItemView:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

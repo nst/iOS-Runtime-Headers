@@ -4,7 +4,7 @@
 
 @interface MPErrorUtilities : NSObject
 
-+ (id)errorWithCode:(unsigned int)arg1;
-+ (void)setError:(id*)arg1 withCode:(unsigned int)arg2;
++ (id)errorWithCode:(unsigned long long)arg1;
++ (void)setError:(id*)arg1 withCode:(unsigned long long)arg2;
 
 @end

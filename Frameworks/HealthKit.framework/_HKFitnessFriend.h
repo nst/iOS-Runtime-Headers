@@ -10,41 +10,46 @@
     NSDictionary * _snapshots;
 }
 
-@property (nonatomic, readonly) BOOL canSeeMyActivityData;
+@property (nonatomic, readonly) bool canSeeMyActivityData;
 @property (nonatomic, retain) _HKFitnessFriendContact *contact;
+@property (nonatomic, readonly) NSNumber *currentCacheIndex;
+@property (nonatomic, readonly) _HKFitnessFriendActivitySnapshot *currentSnapshot;
+@property (nonatomic, readonly) _HKFitnessFriendActivitySnapshot *currentSnapshotWithGoalsCarriedForward;
+@property (nonatomic, readonly) NSDate *dateActivityDataBecameVisibleToMe;
 @property (nonatomic, readonly) NSDate *dateForLatestDataHidden;
 @property (nonatomic, readonly) NSDate *dateForLatestDataHiddenFromMe;
-@property (nonatomic, readonly) NSDate *dateForLatestDataShown;
-@property (nonatomic, readonly) NSDate *dateForLatestDataShownToMe;
 @property (nonatomic, readonly) NSDate *dateForLatestOutgoingInviteRequest;
 @property (nonatomic, readonly) NSDate *dateForLatestRelationshipStart;
 @property (nonatomic, retain) NSDictionary *friendAchievements;
 @property (readonly) NSUUID *friendUUID;
 @property (nonatomic, retain) NSDictionary *friendWorkouts;
-@property (nonatomic, readonly) BOOL hasInviteRequestFromMe;
-@property (nonatomic, readonly) BOOL inviteRequestToMeWasAccepted;
-@property (nonatomic, readonly) BOOL isActivityDataCurrentlyVisibleToMe;
-@property (nonatomic, readonly) BOOL isAwaitingInviteResponseFromMe;
-@property (nonatomic, readonly) BOOL isFriendshipCurrentlyActive;
-@property (nonatomic, readonly) BOOL isMuted;
-@property (nonatomic, readonly) BOOL sentInviteRequestToMe;
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) bool hasInviteRequestFromMe;
+@property (nonatomic, readonly) bool inviteRequestToMeWasAccepted;
+@property (nonatomic, readonly) bool isActivityDataCurrentlyVisibleToMe;
+@property (nonatomic, readonly) bool isAwaitingInviteResponseFromMe;
+@property (nonatomic, readonly) bool isFriendshipCurrentlyActive;
+@property (nonatomic, readonly) bool isMuted;
+@property (getter=isMe, nonatomic, readonly) bool me;
+@property (nonatomic, readonly) _HKFitnessFriendActivitySnapshot *mostRecentSnapshot;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) bool sentInviteRequestToMe;
 @property (nonatomic, retain) NSDictionary *snapshots;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_mostRecentSnapshot;
-- (BOOL)canSeeMyActivityData;
+- (bool)canSeeMyActivityData;
 - (id)contact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentCacheIndex;
 - (id)currentDateComponents;
 - (id)currentSnapshot;
+- (id)dateActivityDataBecameVisibleToMe;
 - (id)dateForLatestDataHidden;
 - (id)dateForLatestDataHiddenFromMe;
-- (id)dateForLatestDataShown;
-- (id)dateForLatestDataShownToMe;
 - (id)dateForLatestOutgoingInviteRequest;
 - (id)dateForLatestRelationshipStart;
 - (id)description;
@@ -52,17 +57,19 @@
 - (id)friendAchievements;
 - (id)friendUUID;
 - (id)friendWorkouts;
-- (BOOL)hasInviteRequestFromMe;
+- (bool)hasInviteRequestFromMe;
 - (id)init;
 - (id)initWithActivitySnapshots:(id)arg1 friendAchievements:(id)arg2 friendWorkouts:(id)arg3 contact:(id)arg4;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)inviteRequestToMeWasAccepted;
-- (BOOL)isActivityDataCurrentlyVisibleToMe;
-- (BOOL)isActivityDataVisibleToMeForDate:(id)arg1;
-- (BOOL)isAwaitingInviteResponseFromMe;
-- (BOOL)isFriendshipCurrentlyActive;
-- (BOOL)isMuted;
-- (BOOL)sentInviteRequestToMe;
+- (bool)inviteRequestToMeWasAccepted;
+- (bool)isActivityDataCurrentlyVisibleToMe;
+- (bool)isActivityDataVisibleToMeForDate:(id)arg1;
+- (bool)isAwaitingInviteResponseFromMe;
+- (bool)isFriendshipCurrentlyActive;
+- (bool)isHidingDataFromMeForDate:(id)arg1;
+- (bool)isMuted;
+- (id)mostRecentSnapshot;
+- (bool)sentInviteRequestToMe;
 - (void)setContact:(id)arg1;
 - (void)setFriendAchievements:(id)arg1;
 - (void)setFriendWorkouts:(id)arg1;
@@ -72,13 +79,15 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
 
+- (id)_emptySnapshotWithGoalsCarriedForwardForIndex:(long long)arg1;
+- (id)currentSnapshotWithGoalsCarriedForward;
 - (id)detailedSharingDurationString;
 - (id)fullName;
 - (id)invitedDurationString;
-- (BOOL)isMe;
+- (bool)isMe;
 - (id)name;
 - (id)simpleHiddenFromString;
 - (id)simpleSharingDurationString;
-- (id)snapshotForIndex:(int)arg1;
+- (id)snapshotWithGoalsCarriedForwardForIndex:(id)arg1;
 
 @end

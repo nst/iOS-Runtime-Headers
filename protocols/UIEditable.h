@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)canBeEdited;
-- (BOOL)isEditing;
-- (void)setEditing:(BOOL)arg1;
+- (bool)canBeEdited;
+- (bool)isEditing;
+- (void)setEditing:(bool)arg1;
 
 @end

@@ -9,8 +9,8 @@
 - (void)readerController:(SFReaderController *)arg1 didClickLinkRequestingNewWindowInReaderWithRequest:(NSURLRequest *)arg2;
 - (void)readerController:(SFReaderController *)arg1 didCollectReaderContentForMail:(NSString *)arg2;
 - (void)readerController:(SFReaderController *)arg1 didCollectReadingListItemInfo:(NSDictionary *)arg2 bookmarkID:(NSNumber *)arg3;
-- (void)readerController:(SFReaderController *)arg1 didDeactivateReaderWithMode:(unsigned int)arg2;
-- (void)readerController:(SFReaderController *)arg1 didDetermineReaderAvailability:(BOOL)arg2;
+- (void)readerController:(SFReaderController *)arg1 didDeactivateReaderWithMode:(unsigned long long)arg2;
+- (void)readerController:(SFReaderController *)arg1 didDetermineReaderAvailability:(bool)arg2;
 - (void)readerController:(SFReaderController *)arg1 didPrepareReaderContentForDisplay:(NSString *)arg2;
 - (void)readerController:(SFReaderController *)arg1 didPrepareReaderContentForPrinting:(_WKFrameHandle *)arg2;
 - (void)readerController:(SFReaderController *)arg1 didSetReaderConfiguration:(NSDictionary *)arg2;

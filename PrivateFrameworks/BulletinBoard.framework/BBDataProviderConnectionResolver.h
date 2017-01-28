@@ -13,7 +13,7 @@
 @property (nonatomic) BBDataProviderConnection *dataProviderConnection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)resolverForConnection:(id)arg1;
@@ -21,14 +21,14 @@
 
 - (void).cxx_destruct;
 - (void)_invalidate;
-- (void)_queue_registerWithServer:(id /* block */)arg1;
+- (void)_queue_registerWithServer:(id)arg1;
 - (void)_registerForPublicationNotification;
 - (id)dataProviderConnection;
 - (void)dealloc;
 - (id)initWithConnection:(id)arg1;
 - (void)invalidate;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)ping:(id /* block */)arg1;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)ping:(id)arg1;
 - (void)setDataProviderConnection:(id)arg1;
 
 @end

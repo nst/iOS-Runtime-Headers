@@ -5,14 +5,14 @@
 
 @required
 
-- (int)activateTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (int)alphaBlend:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(BOOL)arg12 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg13 :(unsigned int)arg14;
+- (int)activateTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (int)alphaBlend:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(bool)arg12 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg13 :(unsigned int)arg14;
 - (int)angleArc:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(unsigned int)arg4 :(double)arg5 :(double)arg6;
 - (int)arc:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (int)arcTo:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (int)bezier:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (int)bezierTo:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7;
-- (int)bitBlt:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(unsigned int)arg9 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg10 :(unsigned int)arg11;
+- (int)bitBlt:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(unsigned int)arg9 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg10 :(unsigned int)arg11;
 - (int)chord:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (MFBitmap *)createBitmap:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(const char *)arg6 :(unsigned int)arg7;
 - (MFBitmap *)createDIBitmap:(MFDeviceContext *)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
@@ -23,30 +23,30 @@
 - (MFBrush *)createHatchBrush:(OITSUColor *)arg1 :(int)arg2;
 - (MFBrush *)createNullBrush;
 - (MFPath *)createPath;
-- (MFBrush *)createPatternBrush:(MFBitmap *)arg1 usePaletteForBilevel:(BOOL)arg2;
+- (MFBrush *)createPatternBrush:(MFBitmap *)arg1 usePaletteForBilevel:(bool)arg2;
 - (MFPen *)createPen;
 - (MFPen *)createPen:(int)arg1 :(int)arg2 :(OITSUColor *)arg3 :(double*)arg4;
 - (MFRegion *)createRegionWithPath:(MFPath *)arg1;
 - (MFRegion *)createRegionWithRects:(NSArray *)arg1 :(MFDeviceContext *)arg2;
 - (MFBrush *)createSolidBrush:(OITSUColor *)arg1;
 - (int)ellipse:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5;
-- (int)excludeClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)excludeClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)extTextOut:(MFDeviceContext *)arg1 :(int*)arg2 :(int*)arg3 :(id)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int*)arg10 :(int)arg11;
-- (int)intersectClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)intersectClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)lineTo:(MFDeviceContext *)arg1 :(double)arg2 :(double)arg3;
-- (int)maskBlt:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(MFBitmap *)arg9 :(int)arg10 :(int)arg11 :(unsigned int)arg12 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg13 :(unsigned int)arg14;
+- (int)maskBlt:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(MFBitmap *)arg9 :(int)arg10 :(int)arg11 :(unsigned int)arg12 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg13 :(unsigned int)arg14;
 - (int)patBlt:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(unsigned int)arg6;
 - (int)pie:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
-- (int)plgBlt:(MFDeviceContext *)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(MFBitmap *)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(MFBitmap *)arg8 :(int)arg9 :(int)arg10 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg11 :(unsigned int)arg12;
-- (int)polyPolygon:(MFDeviceContext *)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int*)arg3 :(int)arg4;
-- (int)polyPolyline:(MFDeviceContext *)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int*)arg3 :(int)arg4;
-- (int)polygon:(MFDeviceContext *)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int)arg3;
-- (int)polyline:(MFDeviceContext *)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int)arg3;
+- (int)plgBlt:(MFDeviceContext *)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(MFBitmap *)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(MFBitmap *)arg8 :(int)arg9 :(int)arg10 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg11 :(unsigned int)arg12;
+- (int)polyPolygon:(MFDeviceContext *)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(int*)arg3 :(int)arg4;
+- (int)polyPolyline:(MFDeviceContext *)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(int*)arg3 :(int)arg4;
+- (int)polygon:(MFDeviceContext *)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(int)arg3;
+- (int)polyline:(MFDeviceContext *)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(int)arg3;
 - (int)rectangle:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5;
 - (int)roundRect:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(double)arg6 :(double)arg7;
 - (int)setMetaRgn;
 - (int)setViewBox:(double)arg1 :(double)arg2 :(double)arg3 :(double)arg4;
-- (int)stretchBlt:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned int)arg11 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg12 :(unsigned int)arg13;
+- (int)stretchBlt:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned int)arg11 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg12 :(unsigned int)arg13;
 - (int)textOut:(MFDeviceContext *)arg1 :(int*)arg2 :(int*)arg3 :(NSString *)arg4;
 
 @end

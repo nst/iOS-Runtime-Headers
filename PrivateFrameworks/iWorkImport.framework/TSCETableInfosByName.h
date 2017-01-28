@@ -18,7 +18,7 @@
 - (id)initWithCalcEngine:(id)arg1;
 - (void)renameTableInfo:(id)arg1 fromName:(id)arg2;
 - (id)resolverMatchingName:(id)arg1;
-- (BOOL)resolverNameIsUsed:(id)arg1;
+- (bool)resolverNameIsUsed:(id)arg1;
 - (id)resolversMatchingPrefix:(id)arg1;
 - (id)tableInfoForTableName:(id)arg1 containerName:(id)arg2;
 

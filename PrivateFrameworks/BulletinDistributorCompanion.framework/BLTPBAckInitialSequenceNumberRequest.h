@@ -3,7 +3,7 @@
  */
 
 @interface BLTPBAckInitialSequenceNumberRequest : PBRequest <NSCopying> {
-    BOOL  _assert;
+    bool  _assert;
     struct { 
         unsigned int sessionState : 1; 
         unsigned int assert : 1; 
@@ -12,31 +12,31 @@
     unsigned int  _sessionState;
 }
 
-@property (nonatomic) BOOL assert;
-@property (nonatomic) BOOL hasAssert;
-@property (nonatomic, readonly) BOOL hasSessionIdentifier;
-@property (nonatomic) BOOL hasSessionState;
+@property (nonatomic) bool assert;
+@property (nonatomic) bool hasAssert;
+@property (nonatomic, readonly) bool hasSessionIdentifier;
+@property (nonatomic) bool hasSessionState;
 @property (nonatomic, retain) NSData *sessionIdentifier;
 @property (nonatomic) unsigned int sessionState;
 
 - (void).cxx_destruct;
-- (BOOL)assert;
+- (bool)assert;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAssert;
-- (BOOL)hasSessionIdentifier;
-- (BOOL)hasSessionState;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAssert;
+- (bool)hasSessionIdentifier;
+- (bool)hasSessionState;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionIdentifier;
 - (unsigned int)sessionState;
-- (void)setAssert:(BOOL)arg1;
-- (void)setHasAssert:(BOOL)arg1;
-- (void)setHasSessionState:(BOOL)arg1;
+- (void)setAssert:(bool)arg1;
+- (void)setHasAssert:(bool)arg1;
+- (void)setHasSessionState:(bool)arg1;
 - (void)setSessionIdentifier:(id)arg1;
 - (void)setSessionState:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *participantID;
 @property (nonatomic, retain) CKShareMetadata *shareMetadata;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)address;

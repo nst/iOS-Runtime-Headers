@@ -14,8 +14,8 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)isLocationShiftRequiredForItem:(id)arg1;
-- (BOOL)isLocationShiftRequiredForItems:(id)arg1;
+- (bool)isLocationShiftRequiredForItem:(id)arg1;
+- (bool)isLocationShiftRequiredForItems:(id)arg1;
 - (id)locationShifter;
 - (id)queue;
 - (id)semaphore;
@@ -23,8 +23,8 @@
 - (void)setQueue:(id)arg1;
 - (void)setSemaphore:(id)arg1;
 - (id)shiftLocation:(id)arg1 timeout:(double)arg2;
-- (void)shiftLocation:(id)arg1 withCompletionHandler:(id /* block */)arg2 callbackQueue:(id)arg3;
+- (void)shiftLocation:(id)arg1 withCompletionHandler:(id)arg2 callbackQueue:(id)arg3;
 - (id)shiftLocations:(id)arg1 timeout:(double)arg2;
-- (void)shiftLocations:(id)arg1 withCompletionHandler:(id /* block */)arg2 callbackQueue:(id)arg3;
+- (void)shiftLocations:(id)arg1 withCompletionHandler:(id)arg2 callbackQueue:(id)arg3;
 
 @end

@@ -21,7 +21,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double failedConnectionRetryInterval;
 @property (nonatomic) unsigned short flags;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) DMFControlSessionIdentifier *identifier;
 @property (nonatomic) double lostBeaconTimeout;
 @property (nonatomic, retain) CATStateMachine *stateMachine;
@@ -35,7 +35,7 @@
 - (id)clientIdentity;
 - (id)delegate;
 - (void)delegateConnected;
-- (void)delegateDidChangeState:(int)arg1 previousState:(int)arg2;
+- (void)delegateDidChangeState:(long long)arg1 previousState:(long long)arg2;
 - (void)delegateDisconnected;
 - (void)delegateIdleWithContext:(id)arg1;
 - (void)delegateInRangeWithContext:(id)arg1;

@@ -7,35 +7,35 @@
     unsigned long long  _activeRecommendationType;
     unsigned short  _connectCount;
     NSObject<OS_xpc_object> * _connection;
-    id /* block */  _delegateBlock;
+    id  _delegateBlock;
     NSObject<OS_dispatch_queue> * _delegateQueue;
-    BOOL  _isPaired;
+    bool  _isPaired;
     int  _isPairedNotifyToken;
     IDSWRMMetricContainer * _metrics;
     unsigned long long  _nearbyOverWiFi;
     NSObject<OS_dispatch_queue> * _queue;
     unsigned long long  _recommendedLinkType;
-    BOOL  _registered;
+    bool  _registered;
     unsigned long long  _reportInterval;
-    BOOL  _shouldSendReport;
-    BOOL  _subscribed;
+    bool  _shouldSendReport;
+    bool  _subscribed;
 }
 
 + (id)sharedInstance;
 
-- (void)_dispatchAfter:(double)arg1 block:(id /* block */)arg2;
-- (BOOL)_isXPCDictionary:(id)arg1;
+- (void)_dispatchAfter:(double)arg1 block:(id)arg2;
+- (bool)_isXPCDictionary:(id)arg1;
 - (id)_newMetricReportMessage;
-- (id)_newPrefSubscribeMessage:(BOOL)arg1;
+- (id)_newPrefSubscribeMessage:(bool)arg1;
 - (id)_newRegisterMessage;
 - (id)_newSubscribeMessage;
 - (id)_newSubscribeStatusUpdateMessage;
 - (id)_newUnsubscribeMessage;
 - (void)_notifyDelegate;
-- (BOOL)_processLinkPreferenceNotificationEvent:(id)arg1;
-- (BOOL)_processMetricsConfigEvent:(id)arg1;
+- (bool)_processLinkPreferenceNotificationEvent:(id)arg1;
+- (bool)_processMetricsConfigEvent:(id)arg1;
 - (void)_processXPCEvent:(id)arg1;
-- (BOOL)_processXPCMessage:(id)arg1;
+- (bool)_processXPCMessage:(id)arg1;
 - (void)_reconnectUntilTimeout;
 - (void)_registerWithWRM;
 - (void)_resetLocalMetric;
@@ -44,21 +44,21 @@
 - (void)_sendMetricReport;
 - (void)_sendMetricReportPeriodically;
 - (void)_sendXPCMessage:(id)arg1;
-- (BOOL)_setRecommendedLinkType:(unsigned long long)arg1;
+- (bool)_setRecommendedLinkType:(unsigned long long)arg1;
 - (void)_setReportInterval:(unsigned long long)arg1;
 - (void)_startXPCConnection;
 - (void)_stopXPCConnection;
-- (void)_submitBlockAsync:(id /* block */)arg1;
+- (void)_submitBlockAsync:(id)arg1;
 - (void)_updateLocalMetric:(id)arg1;
 - (void)dealloc;
 - (void)handleActiveLinkChange:(unsigned long long)arg1;
-- (void)handleNetworkStateChangeUpdate:(BOOL)arg1 nearby:(BOOL)arg2;
+- (void)handleNetworkStateChangeUpdate:(bool)arg1 nearby:(bool)arg2;
 - (id)init;
-- (BOOL)isBTRecommended;
-- (BOOL)isWiFiRecommended;
+- (bool)isBTRecommended;
+- (bool)isWiFiRecommended;
 - (unsigned long long)recommendedLinkType;
 - (void)submitMetric:(id)arg1;
-- (void)subscribeForRecommendation:(id)arg1 recommendationType:(unsigned long long)arg2 block:(id /* block */)arg3;
+- (void)subscribeForRecommendation:(id)arg1 recommendationType:(unsigned long long)arg2 block:(id)arg3;
 - (void)unsubscribeForRecommendation;
 
 @end

@@ -4,25 +4,27 @@
 
 @interface INSearchCallHistoryIntent : INIntent <INSearchCallHistoryIntentExport>
 
-@property (nonatomic, readonly) unsigned int callCapabilities;
-@property (nonatomic, readonly) int callType;
+@property (nonatomic, readonly) unsigned long long callCapabilities;
+@property (nonatomic, readonly) long long callType;
 @property (nonatomic, readonly, copy) INDateComponentsRange *dateCreated;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) INPerson *recipient;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1;
 - (id)_typedBackingStore;
-- (unsigned int)callCapabilities;
-- (int)callType;
+- (unsigned long long)callCapabilities;
+- (long long)callType;
 - (id)dateCreated;
-- (id)initWithCallType:(int)arg1 dateCreated:(id)arg2 recipient:(id)arg3 callCapabilities:(unsigned int)arg4;
+- (id)description;
+- (id)initWithCallType:(long long)arg1 dateCreated:(id)arg2 recipient:(id)arg3 callCapabilities:(unsigned long long)arg4;
 - (id)recipient;
-- (void)setCallCapabilities:(unsigned int)arg1;
-- (void)setCallType:(int)arg1;
+- (void)setCallCapabilities:(unsigned long long)arg1;
+- (void)setCallType:(long long)arg1;
 - (void)setDateCreated:(id)arg1;
 - (void)setRecipient:(id)arg1;
 

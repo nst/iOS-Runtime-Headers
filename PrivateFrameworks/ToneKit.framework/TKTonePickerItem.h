@@ -4,32 +4,32 @@
 
 @interface TKTonePickerItem : TKPickerSelectableItem <TKPickerContainerItem> {
     TKTonePickerController * __parentTonePickerController;
-    unsigned int  _itemKind;
-    BOOL  _needsRoomForCheckmark;
-    int  _numberOfChildren;
+    unsigned long long  _itemKind;
+    bool  _needsRoomForCheckmark;
+    long long  _numberOfChildren;
 }
 
 @property (setter=_setParentTonePickerController:, nonatomic) TKTonePickerController *_parentTonePickerController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (setter=_setItemKind:, nonatomic) unsigned int itemKind;
-@property (setter=_setNeedsRoomForCheckmark:, nonatomic) BOOL needsRoomForCheckmark;
-@property (setter=_setNumberOfChildren:, nonatomic) int numberOfChildren;
+@property (readonly) unsigned long long hash;
+@property (setter=_setItemKind:, nonatomic) unsigned long long itemKind;
+@property (setter=_setNeedsRoomForCheckmark:, nonatomic) bool needsRoomForCheckmark;
+@property (setter=_setNumberOfChildren:, nonatomic) long long numberOfChildren;
 @property (nonatomic, readonly) TKTonePickerSectionItem *parentSectionItem;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (id)_parentTonePickerController;
-- (void)_setItemKind:(unsigned int)arg1;
-- (void)_setNeedsRoomForCheckmark:(BOOL)arg1;
-- (void)_setNumberOfChildren:(int)arg1;
+- (void)_setItemKind:(unsigned long long)arg1;
+- (void)_setNeedsRoomForCheckmark:(bool)arg1;
+- (void)_setNumberOfChildren:(long long)arg1;
 - (void)_setParentTonePickerController:(id)arg1;
-- (id)childItemAtIndex:(int)arg1;
-- (unsigned int)itemKind;
-- (BOOL)needsRoomForCheckmark;
-- (int)numberOfChildren;
+- (id)childItemAtIndex:(long long)arg1;
+- (unsigned long long)itemKind;
+- (bool)needsRoomForCheckmark;
+- (long long)numberOfChildren;
 - (id)parentSectionItem;
 
 @end

@@ -5,29 +5,29 @@
 @interface HDRoutinePredictedLocationOfInterest : NSObject {
     double  _confidence;
     HDRoutineLocationOfInterest * _locationOfInterest;
-    int  _modeOfTransportation;
+    long long  _modeOfTransportation;
     NSDate * _nextEntryTime;
-    int  _sourceType;
+    long long  _sourceType;
 }
 
 @property (nonatomic) double confidence;
 @property (nonatomic, retain) HDRoutineLocationOfInterest *locationOfInterest;
-@property (nonatomic) int modeOfTransportation;
+@property (nonatomic) long long modeOfTransportation;
 @property (nonatomic, retain) NSDate *nextEntryTime;
-@property (nonatomic) int sourceType;
+@property (nonatomic) long long sourceType;
 
 - (void).cxx_destruct;
 - (double)confidence;
 - (id)initWithCodable:(id)arg1;
 - (id)initWithPredictedLocationOfInterest:(id)arg1;
 - (id)locationOfInterest;
-- (int)modeOfTransportation;
+- (long long)modeOfTransportation;
 - (id)nextEntryTime;
 - (void)setConfidence:(double)arg1;
 - (void)setLocationOfInterest:(id)arg1;
-- (void)setModeOfTransportation:(int)arg1;
+- (void)setModeOfTransportation:(long long)arg1;
 - (void)setNextEntryTime:(id)arg1;
-- (void)setSourceType:(int)arg1;
-- (int)sourceType;
+- (void)setSourceType:(long long)arg1;
+- (long long)sourceType;
 
 @end

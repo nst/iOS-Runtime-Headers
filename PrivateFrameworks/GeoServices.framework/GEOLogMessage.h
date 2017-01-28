@@ -12,8 +12,8 @@
     NSMutableArray * _logMsgEvents;
 }
 
-@property (nonatomic) BOOL hasLogMessageSubType;
-@property (nonatomic) BOOL hasLogMessageType;
+@property (nonatomic) bool hasLogMessageSubType;
+@property (nonatomic) bool hasLogMessageType;
 @property (nonatomic) int logMessageSubType;
 @property (nonatomic) int logMessageType;
 @property (nonatomic, retain) NSMutableArray *logMsgEvents;
@@ -21,13 +21,13 @@
 + (id)acceptedLogMsgEvents;
 + (id)acceptedLogMsgEventsForLogMessageType:(int)arg1;
 + (void)initializeAcceptedLogMsgEventTypes;
-+ (BOOL)logMessageType:(int)arg1 acceptsLogMsgEventType:(int)arg2;
++ (bool)logMessageType:(int)arg1 acceptsLogMsgEventType:(int)arg2;
 + (id)logMessagesForEvent:(id)arg1;
 + (Class)logMsgEventType;
 
 - (int)StringAsLogMessageSubType:(id)arg1;
 - (int)StringAsLogMessageType:(id)arg1;
-- (BOOL)acceptsLogMsgEventType:(int)arg1;
+- (bool)acceptsLogMsgEventType:(int)arg1;
 - (void)addLogMsgEvent:(id)arg1;
 - (void)clearLogMsgEvents;
 - (void)copyTo:(id)arg1;
@@ -37,21 +37,21 @@
 - (id)dictionaryRepresentation;
 - (id)groupIdentifier;
 - (unsigned int)groupSequenceNumber;
-- (BOOL)hasLogMessageSubType;
-- (BOOL)hasLogMessageType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLogMessageSubType;
+- (bool)hasLogMessageType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)logMessageSubType;
 - (id)logMessageSubTypeAsString:(int)arg1;
 - (int)logMessageType;
 - (id)logMessageTypeAsString:(int)arg1;
-- (id)logMsgEventAtIndex:(unsigned int)arg1;
+- (id)logMsgEventAtIndex:(unsigned long long)arg1;
 - (id)logMsgEvents;
-- (unsigned int)logMsgEventsCount;
+- (unsigned long long)logMsgEventsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLogMessageSubType:(BOOL)arg1;
-- (void)setHasLogMessageType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLogMessageSubType:(bool)arg1;
+- (void)setHasLogMessageType:(bool)arg1;
 - (void)setLogMessageSubType:(int)arg1;
 - (void)setLogMessageType:(int)arg1;
 - (void)setLogMsgEvents:(id)arg1;

@@ -4,9 +4,9 @@
 
 @interface PXWidgetCompositionViewElementLayout : PXSingleTileLayout
 
-+ (struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })viewTileIdentifier;
++ (struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })viewTileIdentifier;
 
 - (id)init;
-- (id)initWithTileIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1;
+- (id)initWithTileIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; })arg1;
 
 @end

@@ -8,7 +8,7 @@
 + (id)entryKey;
 + (void)load;
 
-- (BOOL)canMergeWithEvent:(id)arg1;
+- (bool)canMergeWithEvent:(id)arg1;
 - (id)initWithRootNodeID:(id)arg1 withPower:(double)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 
 @end

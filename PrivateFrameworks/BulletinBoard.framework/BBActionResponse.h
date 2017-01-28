@@ -3,10 +3,10 @@
  */
 
 @interface BBActionResponse : NSObject <NSSecureCoding> {
-    unsigned int  _actionActivationMode;
-    int  _actionBehavior;
+    unsigned long long  _actionActivationMode;
+    long long  _actionBehavior;
     NSString * _actionID;
-    int  _actionType;
+    long long  _actionType;
     NSString * _bulletinButtonID;
     NSDictionary * _bulletinContext;
     NSString * _bulletinPublisherID;
@@ -15,10 +15,10 @@
     NSString * _originID;
 }
 
-@property (nonatomic) unsigned int actionActivationMode;
-@property (nonatomic) int actionBehavior;
+@property (nonatomic) unsigned long long actionActivationMode;
+@property (nonatomic) long long actionBehavior;
 @property (nonatomic, copy) NSString *actionID;
-@property (nonatomic) int actionType;
+@property (nonatomic) long long actionType;
 @property (nonatomic, copy) NSString *bulletinButtonID;
 @property (nonatomic, copy) NSDictionary *bulletinContext;
 @property (nonatomic, copy) NSString *bulletinPublisherID;
@@ -27,13 +27,13 @@
 @property (nonatomic, copy) NSString *originID;
 
 + (id)actionResponseForResponse:(id)arg1 bulletinRequest:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)actionActivationMode;
-- (int)actionBehavior;
+- (unsigned long long)actionActivationMode;
+- (long long)actionBehavior;
 - (id)actionID;
-- (int)actionType;
+- (long long)actionType;
 - (id)bulletinButtonID;
 - (id)bulletinContext;
 - (id)bulletinPublisherID;
@@ -43,10 +43,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)originID;
-- (void)setActionActivationMode:(unsigned int)arg1;
-- (void)setActionBehavior:(int)arg1;
+- (void)setActionActivationMode:(unsigned long long)arg1;
+- (void)setActionBehavior:(long long)arg1;
 - (void)setActionID:(id)arg1;
-- (void)setActionType:(int)arg1;
+- (void)setActionType:(long long)arg1;
 - (void)setBulletinButtonID:(id)arg1;
 - (void)setBulletinContext:(id)arg1;
 - (void)setBulletinPublisherID:(id)arg1;

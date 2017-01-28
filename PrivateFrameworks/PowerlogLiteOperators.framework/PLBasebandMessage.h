@@ -41,8 +41,8 @@
 - (id)date;
 - (void)dealloc;
 - (id)initWithData:(id)arg1;
-- (BOOL)isCalibratedDateGood;
-- (BOOL)isTimestampValid:(char *)arg1;
+- (bool)isCalibratedDateGood;
+- (bool)isTimestampValid:(char *)arg1;
 - (void)logEntry:(id)arg1 withBody:(id)arg2;
 - (void)logMsgAll;
 - (void)logWithLogger:(id)arg1;

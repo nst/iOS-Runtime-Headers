@@ -57,7 +57,7 @@
 - (id)prodMetrics;
 - (void)queueAperiodicMetricId:(id)arg1 payload:(id)arg2 profileId:(id)arg3;
 - (void)queuePeriodicMetricId:(id)arg1 payload:(id)arg2 forTrigger:(id)arg3;
-- (BOOL)registerForNotifClient:(id)arg1 andProfile:(id)arg2;
+- (bool)registerForNotifClient:(id)arg1 andProfile:(id)arg2;
 - (id)sendSimMetrics;
 - (void)setAPeriodicProfileId:(id)arg1;
 - (void)setAPeriodicTriggerCnt:(id)arg1;

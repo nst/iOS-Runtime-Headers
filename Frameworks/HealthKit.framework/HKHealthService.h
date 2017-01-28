@@ -7,41 +7,41 @@
     double  _lastConnection;
     NSString * _name;
     NSString * _serviceId;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) NSUUID *identifier;
 @property (nonatomic) double lastConnection;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, copy) NSString *serviceId;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithType:(int)arg1 identifier:(id)arg2 name:(id)arg3 serviceId:(id)arg4;
+- (id)_initWithType:(long long)arg1 identifier:(id)arg2 name:(id)arg3 serviceId:(id)arg4;
 - (id)_localizedHealthServiceType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initUnknownServiceWithIdentifier:(id)arg1 name:(id)arg2 serviceId:(id)arg3;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(int)arg1 identifier:(id)arg2 name:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithType:(long long)arg1 identifier:(id)arg2 name:(id)arg3;
+- (bool)isEqual:(id)arg1;
 - (double)lastConnection;
 - (id)name;
 - (id)serviceId;
 - (void)setLastConnection:(double)arg1;
 - (void)setServiceId:(id)arg1;
-- (int)type;
+- (long long)type;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (id)initWithType:(int)arg1 peripheral:(id)arg2;
+- (id)initWithType:(long long)arg1 peripheral:(id)arg2;
 
 @end

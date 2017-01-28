@@ -3,12 +3,12 @@
  */
 
 @interface MRNotification : NSObject {
-    id /* block */  _callback;
+    id  _callback;
     NSString * _name;
 }
 
 - (void)dealloc;
-- (id)initWithName:(id)arg1 callback:(id /* block */)arg2;
+- (id)initWithName:(id)arg1 callback:(id)arg2;
 - (void)onNotification:(id)arg1;
 
 @end

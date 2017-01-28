@@ -16,6 +16,7 @@
 - (id)browserIconView;
 - (id)iconView;
 - (id)installation;
+- (void)layoutSubviews;
 - (void)setBrowserIconView:(id)arg1;
 - (void)setInstallation:(id)arg1;
 

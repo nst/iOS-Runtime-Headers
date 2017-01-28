@@ -7,17 +7,17 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_executeQuery:(id)arg1 rowHandler:(id /* block */)arg2;
-- (BOOL)_loadCompassHeadingDataTable;
-- (BOOL)_loadDirectionsTable;
-- (BOOL)_loadETAUpdatesTable;
-- (BOOL)_loadInfoTable;
-- (BOOL)_loadLocationsTable;
-- (BOOL)_loadMotionDataTable;
-- (BOOL)_loadRouteSelectionsTable;
-- (BOOL)_loadTraceVersion;
-- (BOOL)_loadVehicleDataTable;
-- (BOOL)_updateTraceFromVersion:(unsigned int)arg1;
+- (bool)_executeQuery:(id)arg1 rowHandler:(id)arg2;
+- (bool)_loadCompassHeadingDataTable;
+- (bool)_loadDirectionsTable;
+- (bool)_loadETAUpdatesTable;
+- (bool)_loadInfoTable;
+- (bool)_loadLocationsTable;
+- (bool)_loadMotionDataTable;
+- (bool)_loadRouteSelectionsTable;
+- (bool)_loadTraceVersion;
+- (bool)_loadVehicleDataTable;
+- (bool)_updateTraceFromVersion:(unsigned long long)arg1;
 - (id)loadTraceWithPath:(id)arg1;
 
 @end

@@ -10,7 +10,7 @@
 
 - (float)_curlUpDY;
 - (void)_setCurlUpDY:(float)arg1;
-- (BOOL)_shouldReceiveTouch:(id)arg1 recognizerView:(id)arg2 touchView:(id)arg3;
-- (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
+- (bool)_shouldReceiveTouch:(id)arg1 recognizerView:(id)arg2 touchView:(id)arg3;
+- (bool)canBePreventedByGestureRecognizer:(id)arg1;
 
 @end

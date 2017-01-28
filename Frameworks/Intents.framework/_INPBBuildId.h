@@ -9,8 +9,8 @@
 }
 
 @property (nonatomic, retain) NSString *buildNumber;
-@property (nonatomic, readonly) BOOL hasBuildNumber;
-@property (nonatomic, readonly) BOOL hasVersionNumber;
+@property (nonatomic, readonly) bool hasBuildNumber;
+@property (nonatomic, readonly) bool hasVersionNumber;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *versionNumber;
 
@@ -21,12 +21,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBuildNumber;
-- (BOOL)hasVersionNumber;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBuildNumber;
+- (bool)hasVersionNumber;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBuildNumber:(id)arg1;
 - (void)setVersionNumber:(id)arg1;
 - (id)unknownFields;

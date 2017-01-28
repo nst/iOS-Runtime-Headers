@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) _MRGameControllerAccelerationProtobuf *gravity;
-@property (nonatomic, readonly) BOOL hasGravity;
-@property (nonatomic, readonly) BOOL hasUserAcceleration;
+@property (nonatomic, readonly) bool hasGravity;
+@property (nonatomic, readonly) bool hasUserAcceleration;
 @property (nonatomic, retain) _MRGameControllerAccelerationProtobuf *userAcceleration;
 
 - (void)copyTo:(id)arg1;
@@ -18,12 +18,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)gravity;
-- (BOOL)hasGravity;
-- (BOOL)hasUserAcceleration;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasGravity;
+- (bool)hasUserAcceleration;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setGravity:(id)arg1;
 - (void)setUserAcceleration:(id)arg1;
 - (id)userAcceleration;

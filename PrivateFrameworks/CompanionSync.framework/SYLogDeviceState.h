@@ -14,10 +14,10 @@
 
 @property (nonatomic, retain) NSString *buildVersion;
 @property (nonatomic, retain) NSString *deviceClass;
-@property (nonatomic, readonly) BOOL hasBuildVersion;
-@property (nonatomic, readonly) BOOL hasDeviceClass;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic) BOOL hasState;
+@property (nonatomic, readonly) bool hasBuildVersion;
+@property (nonatomic, readonly) bool hasDeviceClass;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic) bool hasState;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) unsigned int state;
 
@@ -28,18 +28,18 @@
 - (id)description;
 - (id)deviceClass;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBuildVersion;
-- (BOOL)hasDeviceClass;
-- (BOOL)hasIdentifier;
-- (BOOL)hasState;
-- (unsigned int)hash;
+- (bool)hasBuildVersion;
+- (bool)hasDeviceClass;
+- (bool)hasIdentifier;
+- (bool)hasState;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBuildVersion:(id)arg1;
 - (void)setDeviceClass:(id)arg1;
-- (void)setHasState:(BOOL)arg1;
+- (void)setHasState:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setState:(unsigned int)arg1;
 - (unsigned int)state;

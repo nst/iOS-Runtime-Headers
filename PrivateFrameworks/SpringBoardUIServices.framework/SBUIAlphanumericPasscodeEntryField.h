@@ -12,12 +12,12 @@
 @property (nonatomic, readonly) UITextInputTraits *textInputTraits;
 
 - (void).cxx_destruct;
-- (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
-- (void)_resetForFailedPasscode:(BOOL)arg1;
-- (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
+- (void)_autofillForMesaWithCompletion:(id)arg1;
+- (void)_resetForFailedPasscode:(bool)arg1;
+- (id)initWithDefaultSizeAndLightStyle:(bool)arg1;
 - (void)layoutSubviews;
 - (void)notePasscodeFieldTextDidChange;
-- (void)setBackgroundAlpha:(float)arg1;
+- (void)setBackgroundAlpha:(double)arg1;
 - (void)setCustomBackgroundColor:(id)arg1;
 - (id)textInputTraits;
 

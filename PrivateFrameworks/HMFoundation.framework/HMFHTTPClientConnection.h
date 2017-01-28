@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <HMFHTTPClientConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) _HMFCFHTTPServerConnection *internal;
 @property (nonatomic, readonly) HMFNetAddress *peerAddress;
 @property (nonatomic, readonly) NSMutableArray *pendingRespones;
@@ -29,13 +29,13 @@
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)internal;
-- (void)openWithCompletionHandler:(id /* block */)arg1;
+- (void)openWithCompletionHandler:(id)arg1;
 - (id)peerAddress;
 - (id)pendingRespones;
-- (void)sendResponse:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)sendResponse:(id)arg1 completionHandler:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (id)shortDescription;
 

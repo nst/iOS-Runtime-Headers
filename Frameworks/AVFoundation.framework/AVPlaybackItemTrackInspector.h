@@ -3,28 +3,28 @@
  */
 
 @interface AVPlaybackItemTrackInspector : AVAssetTrackInspector {
-    unsigned long  _mediaType;
+    unsigned int  _mediaType;
     struct OpaqueFigPlaybackItem { } * _playbackItem;
     int  _trackID;
     AVWeakReference * _weakReferenceToAsset;
 }
 
-- (unsigned long)_figMediaType;
-- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
+- (unsigned int)_figMediaType;
+- (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long long)arg3;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void*)_valueAsCFTypeForProperty:(struct __CFString { }*)arg1;
 - (id)asset;
 - (void)dealloc;
-- (struct CGSize { float x1; float x2; })dimensions;
+- (struct CGSize { double x1; double x2; })dimensions;
 - (float)estimatedDataRate;
 - (void)finalize;
 - (id)formatDescriptions;
-- (unsigned int)hash;
-- (BOOL)isEnabled;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEnabled;
+- (bool)isEqual:(id)arg1;
 - (id)mediaType;
-- (struct CGSize { float x1; float x2; })naturalSize;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGSize { double x1; double x2; })naturalSize;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })samplePresentationTimeForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timeRange;
 - (int)trackID;

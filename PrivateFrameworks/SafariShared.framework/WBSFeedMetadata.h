@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSURL *imageURL;
 @property (nonatomic, readonly) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

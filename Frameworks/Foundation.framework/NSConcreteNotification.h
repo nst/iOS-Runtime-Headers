@@ -3,7 +3,7 @@
  */
 
 @interface NSConcreteNotification : NSNotification {
-    BOOL  dyingObject;
+    bool  dyingObject;
     NSString * name;
     id  object;
     NSDictionary * userInfo;

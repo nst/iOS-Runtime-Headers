@@ -4,6 +4,6 @@
 
 @interface MFUnreadCountProbe : NSObject
 
-+ (BOOL)addProbeWithConnection:(id)arg1;
++ (bool)addProbeWithConnection:(id)arg1;
 
 @end

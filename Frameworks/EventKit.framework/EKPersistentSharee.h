@@ -11,8 +11,8 @@
 @property (nonatomic, copy) NSString *externalID;
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSString *lastName;
-@property (nonatomic) unsigned int shareeAccessLevel;
-@property (nonatomic) unsigned int shareeStatus;
+@property (nonatomic) unsigned long long shareeAccessLevel;
+@property (nonatomic) unsigned long long shareeStatus;
 
 + (id)defaultPropertiesToLoad;
 + (id)relations;
@@ -28,7 +28,7 @@
 - (int)entityType;
 - (id)externalID;
 - (id)firstName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
@@ -41,9 +41,9 @@
 - (void)setFirstName:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setOwner:(id)arg1;
-- (void)setShareeAccessLevel:(unsigned int)arg1;
-- (void)setShareeStatus:(unsigned int)arg1;
-- (unsigned int)shareeAccessLevel;
-- (unsigned int)shareeStatus;
+- (void)setShareeAccessLevel:(unsigned long long)arg1;
+- (void)setShareeStatus:(unsigned long long)arg1;
+- (unsigned long long)shareeAccessLevel;
+- (unsigned long long)shareeStatus;
 
 @end

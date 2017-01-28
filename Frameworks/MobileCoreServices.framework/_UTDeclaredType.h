@@ -8,7 +8,7 @@
     NSData * _declaringBundleBookmark;
     NSString * _declaringBundleDelegate;
     NSURL * _declaringBundleURL;
-    unsigned long  _flags;
+    unsigned int  _flags;
     NSArray * _iconFiles;
     NSString * _kextName;
     NSString * _localizedDescription;
@@ -21,12 +21,12 @@
     NSNumber * _version;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_iconURL;
-- (BOOL)_isActive;
-- (BOOL)_isAppleInternal;
-- (BOOL)_isPublic;
+- (bool)_isActive;
+- (bool)_isAppleInternal;
+- (bool)_isPublic;
 - (id)_kernelExtensionName;
 - (id)_localizedDescriptionDictionary;
 - (id)_localizedDescriptionWithPreferredLocalizations:(id)arg1;
@@ -37,12 +37,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContext:(struct LSContext { struct LSDatabase {} *x1; }*)arg1 UTTypeID:(unsigned int)arg2 UTTypeData:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned char x5[16]; int x6; unsigned int x7; unsigned int x8; unsigned int x9[8]; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; }*)arg3;
-- (BOOL)isDeclared;
-- (BOOL)needsWorkaroundFor22092605;
+- (bool)isDeclared;
+- (bool)needsWorkaroundFor22092605;
 - (id)parentIdentifiers;
 - (id)referenceURL;
 - (id)tagSpecification;
-- (BOOL)validateCollectionTypes;
+- (bool)validateCollectionTypes;
 - (id)version;
 
 @end

@@ -4,12 +4,12 @@
 
 @interface MCDComposersViewController : MCDArtistsViewController
 
-+ (int)containerItemType;
++ (long long)containerItemType;
 + (id)itemPersistentIDProperty;
 + (id)persistentIDProperty;
 
 - (void)_limitedUIDidChange;
 - (void)defaultsDidChange;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 
 @end

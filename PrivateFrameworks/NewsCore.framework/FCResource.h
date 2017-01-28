@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSURL *fileURL;
 @property (nonatomic, retain) FCInterestToken *interestToken;
 @property (nonatomic, readonly) NSString *mimeType;
-@property (getter=isOnDisk, nonatomic, readonly) BOOL onDisk;
+@property (getter=isOnDisk, nonatomic, readonly) bool onDisk;
 @property (nonatomic, readonly) NSString *resourceID;
 @property (nonatomic, retain) NTPBResourceRecord *resourceRecord;
 
@@ -25,7 +25,7 @@
 - (id)fileURL;
 - (id)initWithRecord:(id)arg1 interestToken:(id)arg2 assetManager:(id)arg3;
 - (id)interestToken;
-- (BOOL)isOnDisk;
+- (bool)isOnDisk;
 - (id)mimeType;
 - (id)resourceID;
 - (id)resourceRecord;

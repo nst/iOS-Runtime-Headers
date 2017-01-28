@@ -12,13 +12,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <_UINonEditableTextSelectionForceGestureDelegate> *forceGestureDelegate;
 @property (nonatomic, retain) _UIKeyboardTextSelectionGestureController *gestureController;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIKeyboardTaskQueue *taskQueue;
 @property (nonatomic, retain) _UIKeyboardTextSelectionController *textSelectionController;
 @property (nonatomic, readonly) double timestampOfLastTouchesEnded;
 
-- (BOOL)_shouldDelayUntilForceLevelRequirementIsMet;
+- (bool)_shouldDelayUntilForceLevelRequirementIsMet;
 - (void)dealloc;
 - (id)forceGestureDelegate;
 - (id)gestureController;

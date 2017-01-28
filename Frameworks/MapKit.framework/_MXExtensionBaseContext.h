@@ -12,15 +12,15 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (void)__MXExtensionContextBaseOpenURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (void)__MXExtensionContextBaseOpenURL:(id)arg1 completionHandler:(id)arg2;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)connectionDelegate;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)receivedURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)openURL:(id)arg1 completionHandler:(id)arg2;
+- (void)receivedURL:(id)arg1 completionHandler:(id)arg2;
 - (id)remoteContext;
-- (id)remoteContextWithErrorHandler:(id /* block */)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (id)remoteContextWithErrorHandler:(id)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)setConnectionDelegate:(id)arg1;
 
 @end

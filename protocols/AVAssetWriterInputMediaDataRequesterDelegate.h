@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)mediaDataRequesterShouldRequestMediaData:(AVAssetWriterInputMediaDataRequester *)arg1;
+- (bool)mediaDataRequesterShouldRequestMediaData:(AVAssetWriterInputMediaDataRequester *)arg1;
 
 @end

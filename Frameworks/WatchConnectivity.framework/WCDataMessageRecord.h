@@ -3,15 +3,15 @@
  */
 
 @interface WCDataMessageRecord : WCMessageRecord {
-    id /* block */  _responseHandler;
+    id  _responseHandler;
 }
 
-@property (readonly, copy) id /* block */ responseHandler;
+@property (readonly, copy) id responseHandler;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)expectsResponse;
-- (id)initWithIdentifier:(id)arg1 responseHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
-- (id /* block */)responseHandler;
+- (bool)expectsResponse;
+- (id)initWithIdentifier:(id)arg1 responseHandler:(id)arg2 errorHandler:(id)arg3;
+- (id)responseHandler;
 
 @end

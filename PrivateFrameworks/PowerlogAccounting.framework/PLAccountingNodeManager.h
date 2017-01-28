@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)childNodeIDsFromChildNodeNames:(id)arg1;
 - (id)init;
-- (id)nodeIDForNodeName:(id)arg1 isPermanent:(BOOL)arg2;
+- (id)nodeIDForNodeName:(id)arg1 isPermanent:(bool)arg2;
 - (id)nodeIDToNodeName;
 - (id)nodeNameForNodeID:(id)arg1;
 - (id)nodeNameToNodeID;

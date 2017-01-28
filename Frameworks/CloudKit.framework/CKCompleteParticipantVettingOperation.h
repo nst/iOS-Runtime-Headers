@@ -4,7 +4,7 @@
 
 @interface CKCompleteParticipantVettingOperation : CKOperation {
     NSString * _baseToken;
-    id /* block */  _completeParticipantVettingCompletionBlock;
+    id  _completeParticipantVettingCompletionBlock;
     NSData * _encryptedKey;
     NSURL * _reconstructedShareURL;
     NSString * _routingKey;
@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, copy) NSString *baseToken;
-@property (nonatomic, copy) id /* block */ completeParticipantVettingCompletionBlock;
+@property (nonatomic, copy) id completeParticipantVettingCompletionBlock;
 @property (nonatomic, copy) NSData *encryptedKey;
 @property (nonatomic, copy) NSURL *reconstructedShareURL;
 @property (nonatomic, copy) NSString *routingKey;
@@ -27,12 +27,12 @@
 @property (nonatomic, copy) NSString *vettingToken;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
 - (id)baseToken;
-- (id /* block */)completeParticipantVettingCompletionBlock;
+- (id)completeParticipantVettingCompletionBlock;
 - (id)encryptedKey;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
@@ -42,7 +42,7 @@
 - (id)reconstructedShareURL;
 - (id)routingKey;
 - (void)setBaseToken:(id)arg1;
-- (void)setCompleteParticipantVettingCompletionBlock:(id /* block */)arg1;
+- (void)setCompleteParticipantVettingCompletionBlock:(id)arg1;
 - (void)setEncryptedKey:(id)arg1;
 - (void)setReconstructedShareURL:(id)arg1;
 - (void)setRoutingKey:(id)arg1;

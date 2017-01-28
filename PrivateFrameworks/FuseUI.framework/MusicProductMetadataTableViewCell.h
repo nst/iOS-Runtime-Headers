@@ -9,31 +9,31 @@
     }  _delegateRespondsToSelector;
     UIColor * _originalTextColor;
     UISwitch * _switch;
-    BOOL  _switchOn;
-    BOOL  _textLabelColorFollowsTintColor;
-    BOOL  _wantsSwitchAccessoryView;
+    bool  _switchOn;
+    bool  _textLabelColorFollowsTintColor;
+    bool  _wantsSwitchAccessoryView;
 }
 
 @property (nonatomic) <MusicProductMetadataTableViewCellDelegate> *delegate;
-@property (getter=isSwitchOn, nonatomic) BOOL switchOn;
-@property (nonatomic) BOOL textLabelColorFollowsTintColor;
-@property (nonatomic) BOOL wantsSwitchAccessoryView;
+@property (getter=isSwitchOn, nonatomic) bool switchOn;
+@property (nonatomic) bool textLabelColorFollowsTintColor;
+@property (nonatomic) bool wantsSwitchAccessoryView;
 
-+ (float)defaultHeightForTraitCollection:(id)arg1;
++ (double)defaultHeightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_handlePreferredContentSizeDidChangeNotification:(id)arg1;
 - (void)_handleSwitchStateDidChange:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isSwitchOn;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isSwitchOn;
 - (void)setDelegate:(id)arg1;
-- (void)setSwitchOn:(BOOL)arg1;
-- (void)setTextLabelColorFollowsTintColor:(BOOL)arg1;
-- (void)setWantsSwitchAccessoryView:(BOOL)arg1;
-- (BOOL)textLabelColorFollowsTintColor;
+- (void)setSwitchOn:(bool)arg1;
+- (void)setTextLabelColorFollowsTintColor:(bool)arg1;
+- (void)setWantsSwitchAccessoryView:(bool)arg1;
+- (bool)textLabelColorFollowsTintColor;
 - (void)tintColorDidChange;
-- (BOOL)wantsSwitchAccessoryView;
+- (bool)wantsSwitchAccessoryView;
 
 @end

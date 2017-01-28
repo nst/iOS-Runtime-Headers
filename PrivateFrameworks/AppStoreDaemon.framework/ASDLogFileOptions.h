@@ -5,14 +5,14 @@
 @interface ASDLogFileOptions : NSObject <NSCopying> {
     NSString * _directoryPath;
     NSString * _fileName;
-    int  _maxNumberOfLogFiles;
-    unsigned long  _maxSizeInBytes;
+    long long  _maxNumberOfLogFiles;
+    unsigned long long  _maxSizeInBytes;
 }
 
 @property (nonatomic, copy) NSString *logDirectoryPath;
 @property (nonatomic, copy) NSString *logFileBaseName;
-@property (nonatomic) unsigned long maxLogFileSize;
-@property (nonatomic) int maxNumberOfLogFiles;
+@property (nonatomic) unsigned long long maxLogFileSize;
+@property (nonatomic) long long maxNumberOfLogFiles;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -20,11 +20,11 @@
 - (id)init;
 - (id)logDirectoryPath;
 - (id)logFileBaseName;
-- (unsigned long)maxLogFileSize;
-- (int)maxNumberOfLogFiles;
+- (unsigned long long)maxLogFileSize;
+- (long long)maxNumberOfLogFiles;
 - (void)setLogDirectoryPath:(id)arg1;
 - (void)setLogFileBaseName:(id)arg1;
-- (void)setMaxLogFileSize:(unsigned long)arg1;
-- (void)setMaxNumberOfLogFiles:(int)arg1;
+- (void)setMaxLogFileSize:(unsigned long long)arg1;
+- (void)setMaxNumberOfLogFiles:(long long)arg1;
 
 @end

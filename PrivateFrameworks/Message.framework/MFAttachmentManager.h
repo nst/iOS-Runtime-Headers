@@ -22,7 +22,7 @@
 - (void)_fetchCompletedForAttachment:(id)arg1 error:(id)arg2;
 - (id)_fetchDataForAttachment:(id)arg1 withProvider:(id)arg2 syncLock:(id*)arg3;
 - (id)_filePathForAttachment:(id)arg1;
-- (BOOL)_setupAttachment:(id)arg1 withMimeBody:(id)arg2 error:(id*)arg3;
+- (bool)_setupAttachment:(id)arg1 withMimeBody:(id)arg2 error:(id*)arg3;
 - (void)addProvider:(id)arg1 forBaseURL:(id)arg2;
 - (id)attachmentForCID:(id)arg1;
 - (id)attachmentForContentID:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)clearMetadataForAttachment:(id)arg1;
 - (void)dealloc;
 - (void)fetchDataForAttachment:(id)arg1;
-- (void)fetchDataForAttachment:(id)arg1 completion:(id /* block */)arg2;
+- (void)fetchDataForAttachment:(id)arg1 completion:(id)arg2;
 - (void)fetchDataSynchronouslyForAttachment:(id)arg1;
 - (id)imageScalingQueue;
 - (id)init;
@@ -50,10 +50,10 @@
 - (void)removeProviderForBaseURL:(id)arg1;
 - (void)setContentID:(id)arg1 forAttachment:(id)arg2;
 - (void)setMetadataForAttachment:(id)arg1 toValue:(id)arg2 forKey:(id)arg3;
-- (BOOL)updateAttachment:(id)arg1 withNewData:(id)arg2;
+- (bool)updateAttachment:(id)arg1 withNewData:(id)arg2;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
-- (unsigned long)sizeForScale:(unsigned int)arg1 imagesOnly:(BOOL)arg2 forContext:(id)arg3;
+- (unsigned long long)sizeForScale:(unsigned long long)arg1 imagesOnly:(bool)arg2 forContext:(id)arg3;
 
 @end

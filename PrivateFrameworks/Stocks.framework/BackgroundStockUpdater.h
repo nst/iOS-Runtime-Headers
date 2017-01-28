@@ -4,7 +4,12 @@
 
 @interface BackgroundStockUpdater : StockUpdater
 
-- (id)init;
+@property (nonatomic, readonly) NSURLSession *session;
+
+- (id)_backgroundSession;
+- (void)_createDefaultSession;
+- (void)reestablishBackgroundSession;
+- (id)session;
 - (id)taskForRequest:(id)arg1 delegate:(id)arg2;
 
 @end

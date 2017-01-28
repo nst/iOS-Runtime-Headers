@@ -5,12 +5,12 @@
 
 @required
 
-- (BOOL)preserveModalPresentationStyle;
-- (BOOL)wantsWindowedPresentation;
+- (bool)preserveModalPresentationStyle;
+- (bool)wantsWindowedPresentation;
 
 @optional
 
-- (BOOL)constrainToPresentingVCBounds;
-- (BOOL)forceWindowedPresentation;
+- (bool)constrainToPresentingVCBounds;
+- (bool)forceWindowedPresentation;
 
 @end

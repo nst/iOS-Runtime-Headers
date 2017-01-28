@@ -5,23 +5,23 @@
 
 @required
 
-- (NSArray *)fullDownloadRequestBatch:(unsigned int)arg1 error:(id*)arg2;
-- (void)fullDownloadRequestBatch:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
-- (NSArray *)harvestedSuggestionsFromSearchableItem:(CSSearchableItem *)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (void)harvestedSuggestionsFromSearchableItem:(void *)arg1 options:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 9: CSSearchableItem *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
-- (void)messagesToRefreshWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (NSArray *)fullDownloadRequestBatch:(unsigned long long)arg1 error:(id*)arg2;
+- (void)fullDownloadRequestBatch:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
+- (NSArray *)harvestedSuggestionsFromSearchableItem:(CSSearchableItem *)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (void)harvestedSuggestionsFromSearchableItem:(void *)arg1 options:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 9: CSSearchableItem *, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
+- (void)messagesToRefreshWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
 - (NSArray *)messagesToRefreshWithError:(id*)arg1;
-- (BOOL)prepareForRealtimeExtraction:(id*)arg1;
-- (void)prepareForRealtimeExtractionWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)reportMessagesFound:(NSArray *)arg1 lost:(NSArray *)arg2 error:(id*)arg3;
-- (void)reportMessagesFound:(void *)arg1 lost:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 8: NSArray *, NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)resolveFullDownloadRequests:(NSArray *)arg1 error:(id*)arg2;
-- (void)resolveFullDownloadRequests:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (NSArray *)suggestionsFromEmailContent:(NSString *)arg1 headers:(NSData *)arg2 source:(NSString *)arg3 options:(unsigned int)arg4 error:(id*)arg5;
-- (void)suggestionsFromEmailContent:(void *)arg1 headers:(void *)arg2 source:(void *)arg3 options:(void *)arg4 withCompletion:(void *)arg5; // needs 5 arg types, found 11: NSString *, NSData *, NSString *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
-- (NSArray *)suggestionsFromSearchableItem:(CSSearchableItem *)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (void)suggestionsFromSearchableItem:(void *)arg1 options:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 9: CSSearchableItem *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
-- (BOOL)updateMessages:(NSArray *)arg1 state:(unsigned int)arg2 error:(id*)arg3;
-- (void)updateMessages:(void *)arg1 state:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 8: NSArray *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (bool)prepareForRealtimeExtraction:(id*)arg1;
+- (void)prepareForRealtimeExtractionWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (bool)reportMessagesFound:(NSArray *)arg1 lost:(NSArray *)arg2 error:(id*)arg3;
+- (void)reportMessagesFound:(void *)arg1 lost:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 8: NSArray *, NSArray *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (bool)resolveFullDownloadRequests:(NSArray *)arg1 error:(id*)arg2;
+- (void)resolveFullDownloadRequests:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: NSArray *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (NSArray *)suggestionsFromEmailContent:(NSString *)arg1 headers:(NSData *)arg2 source:(NSString *)arg3 options:(unsigned long long)arg4 error:(id*)arg5;
+- (void)suggestionsFromEmailContent:(void *)arg1 headers:(void *)arg2 source:(void *)arg3 options:(void *)arg4 withCompletion:(void *)arg5; // needs 5 arg types, found 11: NSString *, NSData *, NSString *, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
+- (NSArray *)suggestionsFromSearchableItem:(CSSearchableItem *)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (void)suggestionsFromSearchableItem:(void *)arg1 options:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 9: CSSearchableItem *, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
+- (bool)updateMessages:(NSArray *)arg1 state:(unsigned long long)arg2 error:(id*)arg3;
+- (void)updateMessages:(void *)arg1 state:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 8: NSArray *, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
 
 @end

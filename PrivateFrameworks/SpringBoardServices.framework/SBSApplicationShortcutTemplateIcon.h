@@ -11,10 +11,10 @@
 - (void).cxx_destruct;
 - (id)_initForSubclass;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithTemplateImageName:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)templateImageName;
 
 @end

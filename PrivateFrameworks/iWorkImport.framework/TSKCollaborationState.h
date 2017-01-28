@@ -4,11 +4,11 @@
 
 @interface TSKCollaborationState : TSKSharingState
 
-@property (nonatomic, readonly) BOOL collaborative;
+@property (nonatomic, readonly) bool collaborative;
 
 + (id)notSharedCollaborationState;
 
-- (BOOL)collaborative;
+- (bool)collaborative;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithSharingState:(id)arg1;

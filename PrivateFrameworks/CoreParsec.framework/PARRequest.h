@@ -9,9 +9,9 @@
     NSString * _keyboardLocale;
     long long  _queryId;
     NSArray * _queryItems;
-    float  _scale;
-    unsigned int  _triggerEvent;
-    BOOL  _verboseReply;
+    double  _scale;
+    unsigned long long  _triggerEvent;
+    bool  _verboseReply;
 }
 
 @property (nonatomic) unsigned long long clientQueryId;
@@ -20,22 +20,22 @@
 @property (nonatomic, copy) NSString *keyboardLocale;
 @property (nonatomic) long long queryId;
 @property (nonatomic, copy) NSArray *queryItems;
-@property (nonatomic) float scale;
-@property (nonatomic) unsigned int triggerEvent;
-@property (nonatomic) BOOL verboseReply;
+@property (nonatomic) double scale;
+@property (nonatomic) unsigned long long triggerEvent;
+@property (nonatomic) bool verboseReply;
 
 + (id)cardRequestWithURL:(id)arg1;
 + (id)cardRequestWithURL:(id)arg1 queryId:(unsigned long long)arg2;
 + (id)flightRequestForId:(id)arg1;
 + (id)flightRequestForQuery:(id)arg1 timezone:(id)arg2 dateComponents:(id)arg3;
-+ (id)lookupRequestWithString:(id)arg1 queryContext:(id)arg2 domain:(id)arg3 lookupSelectionType:(int)arg4 appBundleId:(id)arg5;
-+ (id)lookupRequestWithString:(id)arg1 queryContext:(id)arg2 domain:(id)arg3 lookupSelectionType:(int)arg4 appBundleId:(id)arg5 queryId:(unsigned long long)arg6;
++ (id)lookupRequestWithString:(id)arg1 queryContext:(id)arg2 domain:(id)arg3 lookupSelectionType:(long long)arg4 appBundleId:(id)arg5;
++ (id)lookupRequestWithString:(id)arg1 queryContext:(id)arg2 domain:(id)arg3 lookupSelectionType:(long long)arg4 appBundleId:(id)arg5 queryId:(unsigned long long)arg6;
 + (id)moreResultsRequestWithURL:(id)arg1;
 + (id)moreResultsRequestWithURL:(id)arg1 queryId:(unsigned long long)arg2;
 + (id)searchRequestWithString:(id)arg1;
-+ (id)searchRequestWithString:(id)arg1 triggerEvent:(unsigned int)arg2;
-+ (id)searchRequestWithString:(id)arg1 triggerEvent:(unsigned int)arg2 queryId:(unsigned long long)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)searchRequestWithString:(id)arg1 triggerEvent:(unsigned long long)arg2;
++ (id)searchRequestWithString:(id)arg1 triggerEvent:(unsigned long long)arg2 queryId:(unsigned long long)arg3;
++ (bool)supportsSecureCoding;
 + (id)zeroKeywordRequest;
 + (id)zeroKeywordRequest:(unsigned long long)arg1;
 
@@ -49,17 +49,17 @@
 - (long long)queryId;
 - (id)queryItems;
 - (Class)responseClass;
-- (float)scale;
+- (double)scale;
 - (void)setClientQueryId:(unsigned long long)arg1;
 - (void)setHeaderItems:(id)arg1;
 - (void)setKeyboardInputMode:(id)arg1;
 - (void)setKeyboardLocale:(id)arg1;
 - (void)setQueryId:(long long)arg1;
 - (void)setQueryItems:(id)arg1;
-- (void)setScale:(float)arg1;
-- (void)setTriggerEvent:(unsigned int)arg1;
-- (void)setVerboseReply:(BOOL)arg1;
-- (unsigned int)triggerEvent;
-- (BOOL)verboseReply;
+- (void)setScale:(double)arg1;
+- (void)setTriggerEvent:(unsigned long long)arg1;
+- (void)setVerboseReply:(bool)arg1;
+- (unsigned long long)triggerEvent;
+- (bool)verboseReply;
 
 @end

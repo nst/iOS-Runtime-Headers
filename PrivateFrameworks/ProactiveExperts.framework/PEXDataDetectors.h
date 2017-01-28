@@ -7,7 +7,7 @@
 + (void)addAddressComponentsInResult:(struct __DDResult { }*)arg1 toDictionary:(id)arg2;
 + (id)addressComponentValueWithSemanticType:(id)arg1 forDataDetectorsMatch:(id)arg2 addressComponents:(id)arg3;
 + (id)addressComponentsFromString:(id)arg1 extractedAddress:(id*)arg2;
-+ (BOOL)isValidDataDetectorsMatch:(struct __DDResult { }*)arg1 addressComponents:(id*)arg2;
-+ (void)scanString:(id)arg1 inRange:(struct { int x1; int x2; })arg2 withScanner:(struct __DDScanner { }*)arg3 options:(long)arg4 block:(id /* block */)arg5;
++ (bool)isValidDataDetectorsMatch:(struct __DDResult { }*)arg1 addressComponents:(id*)arg2;
++ (void)scanString:(id)arg1 inRange:(struct { long long x1; long long x2; })arg2 withScanner:(struct __DDScanner { }*)arg3 options:(long long)arg4 block:(id)arg5;
 
 @end

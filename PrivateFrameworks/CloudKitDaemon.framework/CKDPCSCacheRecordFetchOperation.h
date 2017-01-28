@@ -3,32 +3,32 @@
  */
 
 @interface CKDPCSCacheRecordFetchOperation : CKDPCSCacheFetchOperation {
-    BOOL  _serverRecordHasNoProtectionData;
+    bool  _serverRecordHasNoProtectionData;
     NSString * _serverRecordType;
 }
 
 @property (nonatomic, readonly) CKRecordID *recordID;
 @property (nonatomic, retain) CKDRecordPCSData *recordPCSData;
-@property (nonatomic) BOOL serverRecordHasNoProtectionData;
+@property (nonatomic) bool serverRecordHasNoProtectionData;
 @property (nonatomic, retain) NSString *serverRecordType;
 
 - (void).cxx_destruct;
-- (BOOL)_createParentPCS;
-- (BOOL)_decryptPCS;
-- (BOOL)_fetchPCSDataFromDatabase;
-- (BOOL)_fetchPCSDataFromServer;
-- (BOOL)_fetchParentPCS;
+- (bool)_createParentPCS;
+- (bool)_decryptPCS;
+- (bool)_fetchPCSDataFromDatabase;
+- (bool)_fetchPCSDataFromServer;
+- (bool)_fetchParentPCS;
 - (void)_handlePCSDataFetched:(id)arg1 withError:(id)arg2;
-- (BOOL)_savePCSDataToCache;
-- (BOOL)hasAllPCSData;
-- (id)initWithRecordID:(id)arg1 parentOperation:(id)arg2 cache:(id)arg3 options:(unsigned int)arg4;
+- (bool)_savePCSDataToCache;
+- (bool)hasAllPCSData;
+- (id)initWithRecordID:(id)arg1 parentOperation:(id)arg2 cache:(id)arg3 options:(unsigned long long)arg4;
 - (id)itemTypeName;
 - (id)recordID;
 - (id)recordPCSData;
-- (BOOL)serverRecordHasNoProtectionData;
+- (bool)serverRecordHasNoProtectionData;
 - (id)serverRecordType;
 - (void)setRecordPCSData:(id)arg1;
-- (void)setServerRecordHasNoProtectionData:(BOOL)arg1;
+- (void)setServerRecordHasNoProtectionData:(bool)arg1;
 - (void)setServerRecordType:(id)arg1;
 
 @end

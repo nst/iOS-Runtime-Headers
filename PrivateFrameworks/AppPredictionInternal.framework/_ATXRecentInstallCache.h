@@ -6,8 +6,8 @@
     _ATXInternalInstallNotification * _installNotificationMonitor;
     NSMutableDictionary * _recentInstallations;
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     }  _rwlock;
     double  _timeInterval;
     _ATXInternalUninstallNotification * _uninstallNotificationMonitor;

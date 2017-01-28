@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)getRoute;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setGetRoute:(id)arg1;
 
 @end

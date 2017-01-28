@@ -5,7 +5,7 @@
 @interface YTCategoriesRequest : YTXMLHTTPRequest {
     NSMutableArray * _categories;
     id  _delegate;
-    BOOL  _responseIndicatesAuthenticationFailure;
+    bool  _responseIndicatesAuthenticationFailure;
 }
 
 - (id)_categoriesURL;
@@ -17,7 +17,7 @@
 - (id)init;
 - (void)loadRequest:(id)arg1;
 - (int)parseData:(id)arg1;
-- (BOOL)receivedValidResponse:(id)arg1;
+- (bool)receivedValidResponse:(id)arg1;
 - (void)requestCategoriesWithDelegate:(id)arg1;
 
 @end

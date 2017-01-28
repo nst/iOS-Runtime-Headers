@@ -3,12 +3,12 @@
  */
 
 @interface _IDSAccountController : NSObject <IDSDaemonListenerProtocol> {
-    BOOL  _accountsLoaded;
+    bool  _accountsLoaded;
     NSMutableSet * _cachedAccounts;
     id  _delegateContext;
     NSMapTable * _delegateToInfo;
     NSMutableSet * _enabledAccounts;
-    BOOL  _isLocalAccountVisible;
+    bool  _isLocalAccountVisible;
     NSString * _service;
     NSString * _serviceToken;
     NSMutableDictionary * _transactionIDToHandlersMap;
@@ -18,21 +18,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSSet *enabledAccounts;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSSet *internalAccounts;
 @property (nonatomic, readonly, retain) NSString *serviceName;
 @property (readonly) Class superclass;
 
-- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4;
-- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4 group:(id)arg5;
-- (void)_callDelegatesWithBlock:(id /* block */)arg1;
-- (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
+- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id)arg2 callbackBlock:(id)arg3 postCallbacksBlock:(id)arg4;
+- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id)arg2 callbackBlock:(id)arg3 postCallbacksBlock:(id)arg4 group:(id)arg5;
+- (void)_callDelegatesWithBlock:(id)arg1;
+- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
 - (void)_connect;
 - (void)_loadCachedAccounts;
 - (void)_loadCachedAccountsWithDictionaries:(id)arg1;
 - (void)_removeAccount:(id)arg1;
 - (void)_removeAndDeregisterAccount:(id)arg1;
-- (void)_setupAccountWithLoginID:(id)arg1 accountConfig:(id)arg2 authToken:(id)arg3 password:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)_setupAccountWithLoginID:(id)arg1 accountConfig:(id)arg2 authToken:(id)arg3 password:(id)arg4 completionHandler:(id)arg5;
 - (void)_updateDelegatesWithOldAccounts:(id)arg1 newAccounts:(id)arg2;
 - (void)_updateLocalAccountVisibility;
 - (void)accountAdded:(id)arg1;
@@ -55,11 +55,11 @@
 - (id)internalAccounts;
 - (void)removeDelegate:(id)arg1;
 - (id)serviceName;
-- (void)setupAccountWithLoginID:(id)arg1 aliases:(id)arg2 password:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 aliases:(id)arg5 completionHandler:(id /* block */)arg6;
-- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)setupAccountWithLoginID:(id)arg1 password:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)setupAccountWithSetupParameters:(id)arg1 aliases:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setupAccountWithLoginID:(id)arg1 aliases:(id)arg2 password:(id)arg3 completionHandler:(id)arg4;
+- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 aliases:(id)arg5 completionHandler:(id)arg6;
+- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 completionHandler:(id)arg5;
+- (void)setupAccountWithLoginID:(id)arg1 password:(id)arg2 completionHandler:(id)arg3;
+- (void)setupAccountWithSetupParameters:(id)arg1 aliases:(id)arg2 completionHandler:(id)arg3;
 - (void)setupCompleteForAccount:(id)arg1 transactionID:(id)arg2 setupError:(id)arg3;
 
 @end

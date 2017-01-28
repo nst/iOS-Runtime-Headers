@@ -5,7 +5,7 @@
 
 @required
 
-- (int)reloadCategoryForOffsetPercentage:(float)arg1 withSender:(id)arg2;
-- (void)reloadForCategory:(int)arg1 withSender:(id)arg2;
+- (long long)reloadCategoryForOffsetPercentage:(double)arg1 withSender:(id)arg2;
+- (void)reloadForCategory:(long long)arg1 withSender:(id)arg2;
 
 @end

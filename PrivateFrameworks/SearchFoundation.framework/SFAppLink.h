@@ -5,26 +5,26 @@
 @interface SFAppLink : NSObject <NSSecureCoding> {
     SFPunchout * _appPunchout;
     SFImage * _image;
-    unsigned int  _imageAlign;
+    unsigned long long  _imageAlign;
     NSString * _title;
 }
 
 @property (nonatomic, retain) SFPunchout *appPunchout;
 @property (nonatomic, retain) SFImage *image;
-@property (nonatomic) unsigned int imageAlign;
+@property (nonatomic) unsigned long long imageAlign;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appPunchout;
 - (void)encodeWithCoder:(id)arg1;
 - (id)image;
-- (unsigned int)imageAlign;
+- (unsigned long long)imageAlign;
 - (id)initWithCoder:(id)arg1;
 - (void)setAppPunchout:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageAlign:(unsigned int)arg1;
+- (void)setImageAlign:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

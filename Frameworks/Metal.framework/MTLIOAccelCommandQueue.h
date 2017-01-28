@@ -18,12 +18,12 @@
 - (void)dealloc;
 - (id)device;
 - (id)initWithDevice:(id)arg1 descriptor:(id)arg2;
-- (BOOL)setBackgroundGPUPriority:(unsigned int)arg1;
-- (BOOL)setBackgroundGPUPriority:(unsigned int)arg1 offset:(unsigned short)arg2;
+- (bool)setBackgroundGPUPriority:(unsigned long long)arg1;
+- (bool)setBackgroundGPUPriority:(unsigned long long)arg1 offset:(unsigned short)arg2;
 - (void)setCompletionQueue:(id)arg1;
-- (BOOL)setGPUPriority:(unsigned int)arg1;
-- (BOOL)setGPUPriority:(unsigned int)arg1 offset:(unsigned short)arg2;
+- (bool)setGPUPriority:(unsigned long long)arg1;
+- (bool)setGPUPriority:(unsigned long long)arg1 offset:(unsigned short)arg2;
 - (void)setLabel:(id)arg1;
-- (void)submitCommandBuffers:(id*)arg1 count:(unsigned int)arg2;
+- (void)submitCommandBuffers:(id*)arg1 count:(unsigned long long)arg2;
 
 @end

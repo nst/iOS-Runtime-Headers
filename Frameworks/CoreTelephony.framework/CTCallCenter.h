@@ -3,7 +3,7 @@
  */
 
 @interface CTCallCenter : NSObject <CXCallObserverDelegate> {
-    id /* block */  _callEventHandler;
+    id  _callEventHandler;
     CXCallObserver * _callKitObserver;
     NSSet * _currentCalls;
     struct queue { 
@@ -18,30 +18,30 @@
     }  clientQueue;
 }
 
-@property (nonatomic, copy) id /* block */ callEventHandler;
+@property (nonatomic, copy) id callEventHandler;
 @property CXCallObserver *callKitObserver;
 @property (retain) NSSet *currentCalls;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)broadcastCallStateChangesIfNeededWithFailureLogMessage:(id)arg1;
-- (BOOL)calculateCallStateChanges_sync:(id)arg1;
-- (id /* block */)callEventHandler;
+- (bool)calculateCallStateChanges_sync:(id)arg1;
+- (id)callEventHandler;
 - (id)callKitObserver;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;
 - (id)currentCalls;
 - (void)dealloc;
 - (id)description;
-- (BOOL)getCurrentCallSetFromServer_sync:(id)arg1;
+- (bool)getCurrentCallSetFromServer_sync:(id)arg1;
 - (void)handleCallStatusChange_sync:(id)arg1;
 - (id)init;
 - (id)initWithQueue:(struct dispatch_queue_s { }*)arg1;
 - (void)initialize;
-- (void)setCallEventHandler:(id /* block */)arg1;
+- (void)setCallEventHandler:(id)arg1;
 - (void)setCallKitObserver:(id)arg1;
 - (void)setCurrentCalls:(id)arg1;
 

@@ -10,7 +10,7 @@
     <NACancelable> * _valueUpdateCancelationToken;
 }
 
-@property (nonatomic, readonly) BOOL hasPendingValueChange;
+@property (nonatomic, readonly) bool hasPendingValueChange;
 @property (nonatomic, readonly) NSMutableSet *observerBlocks;
 @property (nonatomic, readonly) double throttleInterval;
 @property (nonatomic, retain) <NAScheduler> *updateScheduler;
@@ -22,11 +22,11 @@
 - (void)_notifyObserversOfValueUpdate;
 - (void)dealloc;
 - (void)flushValueChanges;
-- (BOOL)hasPendingValueChange;
+- (bool)hasPendingValueChange;
 - (id)init;
 - (id)initWithThrottleInterval:(double)arg1;
 - (id)initWithThrottleInterval:(double)arg1 initialValue:(id)arg2;
-- (id)observeValueChangesWithBlock:(id /* block */)arg1;
+- (id)observeValueChangesWithBlock:(id)arg1;
 - (id)observerBlocks;
 - (void)setUpdateScheduler:(id)arg1;
 - (void)setValue:(id)arg1;

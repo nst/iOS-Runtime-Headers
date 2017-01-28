@@ -27,8 +27,8 @@
 - (id)init;
 - (long long)liveConfigurationID;
 - (id)nodeType;
-- (void)notifyWhenActive:(id /* block */)arg1;
-- (void)notifyWhenConfigurationID:(long long)arg1 becomesLive:(id /* block */)arg2;
-- (void)notifyWhenIdle:(id /* block */)arg1;
+- (void)notifyWhenActive:(id)arg1;
+- (void)notifyWhenConfigurationID:(long long)arg1 becomesLive:(id)arg2;
+- (void)notifyWhenIdle:(id)arg1;
 
 @end

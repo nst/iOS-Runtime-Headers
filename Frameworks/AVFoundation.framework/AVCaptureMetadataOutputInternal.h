@@ -8,12 +8,12 @@
     NSObject<OS_dispatch_queue> * objectQueue;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  rectOfInterest;
     struct OpaqueFigSimpleMutex { } * remoteQueueMutex;

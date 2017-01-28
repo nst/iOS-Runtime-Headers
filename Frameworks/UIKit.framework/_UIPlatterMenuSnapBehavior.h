@@ -7,17 +7,17 @@
     UIAttachmentBehavior * _spring2;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
-@property (nonatomic) float damping;
-@property (nonatomic) float frequency;
+@property (nonatomic) struct CGPoint { double x1; double x2; } anchorPoint;
+@property (nonatomic) double damping;
+@property (nonatomic) double frequency;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })anchorPoint;
-- (float)damping;
-- (float)frequency;
-- (id)initWithItem:(id)arg1 attachedToAnchor:(struct CGPoint { float x1; float x2; })arg2;
-- (void)setAnchorPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDamping:(float)arg1;
-- (void)setFrequency:(float)arg1;
+- (struct CGPoint { double x1; double x2; })anchorPoint;
+- (double)damping;
+- (double)frequency;
+- (id)initWithItem:(id)arg1 attachedToAnchor:(struct CGPoint { double x1; double x2; })arg2;
+- (void)setAnchorPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDamping:(double)arg1;
+- (void)setFrequency:(double)arg1;
 
 @end

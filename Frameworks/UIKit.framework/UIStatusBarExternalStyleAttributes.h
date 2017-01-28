@@ -6,9 +6,9 @@
 
 - (id)backgroundImageName;
 - (Class)foregroundStyleClass;
-- (float)heightForMetrics:(int)arg1;
-- (int)idiom;
-- (BOOL)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
-- (int)tapButtonType;
+- (double)heightForMetrics:(long long)arg1;
+- (long long)idiom;
+- (bool)shouldShowInternalItemType:(int)arg1 withScreenCapabilities:(id)arg2;
+- (long long)tapButtonType;
 
 @end

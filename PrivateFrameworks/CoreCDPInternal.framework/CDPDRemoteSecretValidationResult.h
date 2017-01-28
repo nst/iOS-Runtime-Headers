@@ -5,31 +5,31 @@
 @interface CDPDRemoteSecretValidationResult : NSObject {
     CDPDevice * _device;
     NSDictionary * _recoveredInfo;
-    unsigned int  _secretType;
-    BOOL  _userDidCancel;
-    BOOL  _userDidReset;
+    unsigned long long  _secretType;
+    bool  _userDidCancel;
+    bool  _userDidReset;
     NSString * _validSecret;
 }
 
 @property (nonatomic, copy) CDPDevice *device;
 @property (nonatomic, copy) NSDictionary *recoveredInfo;
-@property (nonatomic) unsigned int secretType;
-@property (nonatomic) BOOL userDidCancel;
-@property (nonatomic) BOOL userDidReset;
+@property (nonatomic) unsigned long long secretType;
+@property (nonatomic) bool userDidCancel;
+@property (nonatomic) bool userDidReset;
 @property (nonatomic, copy) NSString *validSecret;
 
 - (void).cxx_destruct;
 - (id)device;
 - (id)recoveredInfo;
-- (unsigned int)secretType;
+- (unsigned long long)secretType;
 - (void)setDevice:(id)arg1;
 - (void)setRecoveredInfo:(id)arg1;
-- (void)setSecretType:(unsigned int)arg1;
-- (void)setUserDidCancel:(BOOL)arg1;
-- (void)setUserDidReset:(BOOL)arg1;
+- (void)setSecretType:(unsigned long long)arg1;
+- (void)setUserDidCancel:(bool)arg1;
+- (void)setUserDidReset:(bool)arg1;
 - (void)setValidSecret:(id)arg1;
-- (BOOL)userDidCancel;
-- (BOOL)userDidReset;
+- (bool)userDidCancel;
+- (bool)userDidReset;
 - (id)validSecret;
 
 @end

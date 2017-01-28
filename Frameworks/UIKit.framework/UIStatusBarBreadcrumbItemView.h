@@ -12,13 +12,13 @@
 
 - (void).cxx_destruct;
 - (id)destinationText;
-- (float)extraRightPadding;
-- (int)labelLineBreakMode;
+- (double)extraRightPadding;
+- (long long)labelLineBreakMode;
 - (void)setDestinationText:(id)arg1;
 - (void)setSystemNavigationAction:(id)arg1;
 - (id)shortenedTitleWithCompressionLevel:(int)arg1;
 - (id)systemNavigationAction;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 - (void)userDidActivateButton:(id)arg1;
 
 @end

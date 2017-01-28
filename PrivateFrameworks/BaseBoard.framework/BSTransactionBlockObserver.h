@@ -11,13 +11,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)addTransactionDidBeginBlock:(id /* block */)arg1;
-- (void)addTransactionDidCompleteBlock:(id /* block */)arg1;
-- (void)addTransactionDidFinishWorkBlock:(id /* block */)arg1;
-- (void)addTransactionWillBeginBlock:(id /* block */)arg1;
+- (void)addTransactionDidBeginBlock:(id)arg1;
+- (void)addTransactionDidCompleteBlock:(id)arg1;
+- (void)addTransactionDidFinishWorkBlock:(id)arg1;
+- (void)addTransactionWillBeginBlock:(id)arg1;
 - (void)dealloc;
 - (void)transactionDidBegin:(id)arg1;
 - (void)transactionDidComplete:(id)arg1;

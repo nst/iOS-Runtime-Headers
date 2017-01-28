@@ -3,39 +3,39 @@
  */
 
 @interface HFActionSetItemProvider : HFItemProvider {
-    unsigned int  _actionSetItemStyle;
+    unsigned long long  _actionSetItemStyle;
     NSMutableSet * _actionSetItems;
-    id /* block */  _filter;
-    BOOL  _onlyShowsFavorites;
+    id  _filter;
+    bool  _onlyShowsFavorites;
     <HFCharacteristicValueSource> * _overrideValueSource;
     HMRoom * _room;
 }
 
-@property (nonatomic, readonly) unsigned int actionSetItemStyle;
+@property (nonatomic, readonly) unsigned long long actionSetItemStyle;
 @property (nonatomic, retain) NSMutableSet *actionSetItems;
-@property (nonatomic, copy) id /* block */ filter;
-@property (nonatomic) BOOL onlyShowsFavorites;
+@property (nonatomic, copy) id filter;
+@property (nonatomic) bool onlyShowsFavorites;
 @property (nonatomic, retain) <HFCharacteristicValueSource> *overrideValueSource;
 @property (nonatomic, retain) HMRoom *room;
 @property (nonatomic, retain) <HFCharacteristicValueSource> *valueSource;
 
 - (void).cxx_destruct;
-- (id /* block */)_favoriteFilter;
-- (id /* block */)_roomFilter;
-- (unsigned int)actionSetItemStyle;
+- (id)_favoriteFilter;
+- (id)_roomFilter;
+- (unsigned long long)actionSetItemStyle;
 - (id)actionSetItems;
-- (id /* block */)filter;
+- (id)filter;
 - (id)initWithHome:(id)arg1;
-- (id)initWithHome:(id)arg1 actionSetItemStyle:(unsigned int)arg2;
+- (id)initWithHome:(id)arg1 actionSetItemStyle:(unsigned long long)arg2;
 - (id)invalidationReasons;
 - (id)items;
-- (BOOL)onlyShowsFavorites;
+- (bool)onlyShowsFavorites;
 - (id)overrideValueSource;
 - (id)reloadItems;
 - (id)room;
 - (void)setActionSetItems:(id)arg1;
-- (void)setFilter:(id /* block */)arg1;
-- (void)setOnlyShowsFavorites:(BOOL)arg1;
+- (void)setFilter:(id)arg1;
+- (void)setOnlyShowsFavorites:(bool)arg1;
 - (void)setOverrideValueSource:(id)arg1;
 - (void)setRoom:(id)arg1;
 - (void)setValueSource:(id)arg1;

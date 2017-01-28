@@ -13,7 +13,7 @@
 - (void)add:(id)arg1;
 - (void)addAsync:(id)arg1;
 - (id)counts;
-- (BOOL)exists:(id)arg1;
+- (bool)exists:(id)arg1;
 - (id)initWithDirectory:(id)arg1 name:(id)arg2;
 - (id)initWithHead:(id)arg1 tail:(id)arg2;
 - (id)initWithInMemoryStorage;

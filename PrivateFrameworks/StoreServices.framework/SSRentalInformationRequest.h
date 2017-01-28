@@ -10,7 +10,7 @@
 @property (readonly) NSNumber *accountIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSNumber *rentalKeyIdentifier;
 @property (readonly) Class superclass;
 
@@ -20,6 +20,6 @@
 - (id)initWithAccountIdentifier:(id)arg1 rentalKeyIdentifier:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)rentalKeyIdentifier;
-- (void)startWithResponseBlock:(id /* block */)arg1;
+- (void)startWithResponseBlock:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface FLUtilities : NSObject
 
-+ (BOOL)launchPasswordChangeForAppleID:(id)arg1;
-+ (BOOL)launchPasswordResetForAppleID:(id)arg1;
++ (bool)launchPasswordChangeForAppleID:(id)arg1;
++ (bool)launchPasswordResetForAppleID:(id)arg1;
 
 @end

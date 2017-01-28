@@ -4,69 +4,69 @@
 
 @interface SKUISlideshowViewController : UIViewController <SKUISlideshowItemViewControllerDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIViewControllerTransitioningDelegate> {
     SKUIClientContext * _clientContext;
-    int  _currentIndex;
+    long long  _currentIndex;
     <SKUISlideshowViewControllerDataSource> * _dataSource;
     <SKUISlideshowViewControllerDelegate> * _delegate;
     NSMutableDictionary * _itemViewControllersCache;
-    BOOL  _lockOverlayControlsVisible;
-    BOOL  _overlayVisibilityWillChangeWithDelay;
-    BOOL  _overlayVisible;
+    bool  _lockOverlayControlsVisible;
+    bool  _overlayVisibilityWillChangeWithDelay;
+    bool  _overlayVisible;
     UIPageViewController * _pageViewController;
     NSOperationQueue * _remoteLoadQueue;
     struct { 
-        int style; 
-        BOOL hidden; 
+        long long style; 
+        bool hidden; 
     }  _savedStatusBarState;
-    BOOL  _shouldCancelDelayedOverlayVisibilityChange;
+    bool  _shouldCancelDelayedOverlayVisibilityChange;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
-@property (nonatomic) int currentIndex;
+@property (nonatomic) long long currentIndex;
 @property (nonatomic) <SKUISlideshowViewControllerDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUISlideshowViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_contentViewTapped:(id)arg1;
 - (void)_doneButtonTapped:(id)arg1;
-- (void)_fadeOutOverlayAfterDelay:(unsigned int)arg1;
-- (id)_itemViewControllerForIndex:(int)arg1;
+- (void)_fadeOutOverlayAfterDelay:(unsigned long long)arg1;
+- (id)_itemViewControllerForIndex:(long long)arg1;
 - (void)_restoreStatusBarAppearanceState;
 - (void)_saveStatusBarAppearanceState;
-- (void)_setOverlayVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setOverlayVisible:(bool)arg1 animated:(bool)arg2;
 - (void)_toggleFadeOverlay;
 - (void)_updateCurrentIndex;
-- (void)_updateTitleWithIndex:(int)arg1;
+- (void)_updateTitleWithIndex:(long long)arg1;
 - (id)animatorForDismissedController:(id)arg1;
 - (id)animatorForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)clientContext;
-- (int)currentIndex;
+- (long long)currentIndex;
 - (id)currentItemViewController;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void)pageViewController:(id)arg1 didFinishAnimating:(BOOL)arg2 previousViewControllers:(id)arg3 transitionCompleted:(BOOL)arg4;
+- (void)pageViewController:(id)arg1 didFinishAnimating:(bool)arg2 previousViewControllers:(id)arg3 transitionCompleted:(bool)arg4;
 - (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;
 - (id)pageViewController:(id)arg1 viewControllerBeforeViewController:(id)arg2;
 - (void)pageViewController:(id)arg1 willTransitionToViewControllers:(id)arg2;
 - (void)reloadData;
 - (void)setClientContext:(id)arg1;
-- (void)setCurrentIndex:(int)arg1;
+- (void)setCurrentIndex:(long long)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)slideshowItemViewControllerDidBeginPinchGesture:(id)arg1;
-- (void)slideshowItemViewControllerDidDismissWithPinchGesture:(id)arg1 ratio:(float)arg2;
-- (unsigned int)supportedInterfaceOrientations;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)slideshowItemViewControllerDidDismissWithPinchGesture:(id)arg1 ratio:(double)arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
+- (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 
 @end

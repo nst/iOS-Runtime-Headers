@@ -15,20 +15,20 @@
 @property <TPSlidingButtonDelegateProtocol> *delegate;
 @property (readonly, copy) NSString *description;
 @property (retain) UIImageView *dialImageView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) UIButton *sideButtonRight;
 @property (readonly) Class superclass;
 @property int type;
 
 - (void).cxx_destruct;
 - (id)acceptButton;
-- (void)actionSlider:(id)arg1 didUpdateSlideWithValue:(float)arg2;
+- (void)actionSlider:(id)arg1 didUpdateSlideWithValue:(double)arg2;
 - (void)actionSliderDidCompleteSlide:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)dialImageView;
 - (id)initWithSlidingButtonType:(int)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)setAcceptButton:(id)arg1;
 - (void)setDelegate:(id)arg1;

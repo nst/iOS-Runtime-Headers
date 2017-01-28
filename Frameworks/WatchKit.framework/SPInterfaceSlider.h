@@ -4,7 +4,7 @@
 
 @interface SPInterfaceSlider : SPInterfaceObject
 
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setValue:(float)arg1;
 
 @end

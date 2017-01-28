@@ -5,14 +5,14 @@
 @interface FFDisplayContext : NSObject {
     NSString * _contentSizeCategory;
     UIFont * _dataFont;
-    float  _dataFontSize;
+    double  _dataFontSize;
     UIFont * _descriptionFont;
     NSDictionary * _keyColors;
     UIFont * _multilineDataFont;
-    float  _multilineDataFontSize;
+    double  _multilineDataFontSize;
     UIFont * _multilineUnitFont;
     UIFont * _nameFont;
-    float  _nameFontSize;
+    double  _nameFontSize;
     NSDictionary * _titleColors;
     UIFont * _unitFont;
 }
@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (id)dataFont;
 - (id)descriptionFont;
-- (id)keyColorForDisplayMode:(int)arg1;
+- (id)keyColorForDisplayMode:(long long)arg1;
 - (id)keyColors;
 - (id)multilineDataFont;
 - (id)multilineUnitFont;
@@ -46,7 +46,7 @@
 - (void)setNameFont:(id)arg1;
 - (void)setTitleColors:(id)arg1;
 - (void)setUnitFont:(id)arg1;
-- (id)titleColorForDisplayMode:(int)arg1;
+- (id)titleColorForDisplayMode:(long long)arg1;
 - (id)titleColors;
 - (id)unitFont;
 

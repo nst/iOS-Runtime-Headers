@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) <NTKStopwatchComplicationDisplay> *legacyDisplay;
 
-+ (BOOL)_acceptsComplicationType:(unsigned int)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1;
 
 - (void)_activate;
 - (void)_configureForLegacyDisplay:(id)arg1;
@@ -18,8 +18,8 @@
 - (void)_stopStopwatchTimerUpdates;
 - (void)_updateDisplay;
 - (id)complicationApplicationIdentifier;
-- (BOOL)hasTapAction;
+- (bool)hasTapAction;
 - (void)performTapAction;
-- (void)setDataMode:(int)arg1 forDisplayWrapper:(id)arg2;
+- (void)setDataMode:(long long)arg1 forDisplayWrapper:(id)arg2;
 
 @end

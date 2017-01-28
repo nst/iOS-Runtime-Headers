@@ -3,32 +3,32 @@
  */
 
 @interface NPKProtoEnableServiceModeRequest : PBRequest <NSCopying> {
-    BOOL  _cancelOutstandingRequests;
+    bool  _cancelOutstandingRequests;
     struct { 
         unsigned int cancelOutstandingRequests : 1; 
     }  _has;
     NSString * _uniqueID;
 }
 
-@property (nonatomic) BOOL cancelOutstandingRequests;
-@property (nonatomic) BOOL hasCancelOutstandingRequests;
-@property (nonatomic, readonly) BOOL hasUniqueID;
+@property (nonatomic) bool cancelOutstandingRequests;
+@property (nonatomic) bool hasCancelOutstandingRequests;
+@property (nonatomic, readonly) bool hasUniqueID;
 @property (nonatomic, retain) NSString *uniqueID;
 
 - (void).cxx_destruct;
-- (BOOL)cancelOutstandingRequests;
+- (bool)cancelOutstandingRequests;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCancelOutstandingRequests;
-- (BOOL)hasUniqueID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCancelOutstandingRequests;
+- (bool)hasUniqueID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCancelOutstandingRequests:(BOOL)arg1;
-- (void)setHasCancelOutstandingRequests:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setCancelOutstandingRequests:(bool)arg1;
+- (void)setHasCancelOutstandingRequests:(bool)arg1;
 - (void)setUniqueID:(id)arg1;
 - (id)uniqueID;
 - (void)writeTo:(id)arg1;

@@ -5,14 +5,14 @@
 @interface DAECalendarAvailabilitySpan : NSObject <NSSecureCoding> {
     NSDate * _endDate;
     NSDate * _startDate;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) NSDate *startDate;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -20,8 +20,8 @@
 - (id)endDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(id)arg1 endDate:(id)arg2 type:(int)arg3;
+- (id)initWithStartDate:(id)arg1 endDate:(id)arg2 type:(long long)arg3;
 - (id)startDate;
-- (int)type;
+- (long long)type;
 
 @end

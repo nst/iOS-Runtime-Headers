@@ -3,18 +3,18 @@
  */
 
 @interface _NSFileWatcherFileHandleInfo : NSObject {
-    BOOL  closed;
+    bool  closed;
     int  fileHandle;
 }
 
-@property (readonly) BOOL isDirectory;
+@property (readonly) bool isDirectory;
 
 + (id)openFileWithPath:(id)arg1;
 
 - (void)close;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isDirectory;
-- (BOOL)verifyAccessByProcessIdentifier:(int)arg1;
+- (bool)isDirectory;
+- (bool)verifyAccessByProcessIdentifier:(int)arg1;
 
 @end

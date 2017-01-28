@@ -7,18 +7,18 @@
     NSMutableArray * _addedRemovedModifications;
     char * _buffer;
     void * _connection;
-    unsigned int  _endIndex;
-    unsigned int  _lastIndexes;
-    BOOL  _lastSyllableIsPartial;
-    unsigned int  _length;
-    unsigned int  _lengthBeforeApostrophes;
+    unsigned long long  _endIndex;
+    unsigned long long  _lastIndexes;
+    bool  _lastSyllableIsPartial;
+    unsigned long long  _length;
+    unsigned long long  _lengthBeforeApostrophes;
     NSMutableArray * _modifications;
-    unsigned int  _nextIndexes;
+    unsigned long long  _nextIndexes;
     NSMutableArray * _prefixes;
     NSMutableArray * _removedModifications;
-    unsigned int  _startIndex;
-    unsigned int  _startingPoint;
-    unsigned int * _syllableLengthArray;
+    unsigned long long  _startIndex;
+    unsigned long long  _startingPoint;
+    unsigned long long * _syllableLengthArray;
 }
 
 - (void)_addDeletions;
@@ -34,7 +34,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (void)removeNumberOfInputCharacters:(unsigned int)arg1;
+- (void)removeNumberOfInputCharacters:(unsigned long long)arg1;
 - (id)removedModifications;
 - (void)reset;
 

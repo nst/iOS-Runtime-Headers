@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) MSASEnqueuedCommand *lastEnqueuedCommand;
 
-+ (id /* block */)calloutBlockForCommand:(id)arg1;
++ (id)calloutBlockForCommand:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)MSASModel:(id)arg1 didDeleteComment:(id)arg2 forAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5;
@@ -22,7 +22,7 @@
 - (void)MSASModel:(id)arg1 didFindNewComment:(id)arg2 forAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5;
 - (void)MSASModel:(id)arg1 didFindNewInvitation:(id)arg2 info:(id)arg3;
 - (void)flushQueue;
-- (BOOL)hasEnqueuedItems;
+- (bool)hasEnqueuedItems;
 - (id)lastEnqueuedCommand;
 - (void)setLastEnqueuedCommand:(id)arg1;
 - (void)workQueueEnqueueCommand:(id)arg1 variantParam:(id)arg2 invariantParam:(id)arg3;

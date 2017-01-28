@@ -4,7 +4,7 @@
 
 @interface TSCH3DChartSeriesNameLabelsSceneObject : TSCH3DChartLabelsContainingSceneObject
 
-- (void)dispatchElementLabelHandler:(id /* block */)arg1;
+- (void)dispatchElementLabelHandler:(id)arg1;
 - (int)knobsModeForLabelType:(int)arg1 scene:(id)arg2;
 - (id)p_axisLabelsFromScene:(id)arg1;
 - (void)renderAnnotatedLabels:(id)arg1;

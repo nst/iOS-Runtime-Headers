@@ -6,6 +6,6 @@
 @required
 
 - (void)clearParallaxOffset;
-- (void)handleParallaxOffset:(struct CGPoint { float x1; float x2; })arg1 lockStatus:(int)arg2 strength:(float)arg3;
+- (void)handleParallaxOffset:(struct CGPoint { double x1; double x2; })arg1 lockStatus:(long long)arg2 strength:(double)arg3;
 
 @end

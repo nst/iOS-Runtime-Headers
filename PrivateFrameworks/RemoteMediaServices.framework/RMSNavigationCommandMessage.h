@@ -11,8 +11,8 @@
     int  _sessionIdentifier;
 }
 
-@property (nonatomic) BOOL hasNavigationCommand;
-@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) bool hasNavigationCommand;
+@property (nonatomic) bool hasSessionIdentifier;
 @property (nonatomic) int navigationCommand;
 @property (nonatomic) int sessionIdentifier;
 
@@ -20,16 +20,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNavigationCommand;
-- (BOOL)hasSessionIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasNavigationCommand;
+- (bool)hasSessionIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)navigationCommand;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)sessionIdentifier;
-- (void)setHasNavigationCommand:(BOOL)arg1;
-- (void)setHasSessionIdentifier:(BOOL)arg1;
+- (void)setHasNavigationCommand:(bool)arg1;
+- (void)setHasSessionIdentifier:(bool)arg1;
 - (void)setNavigationCommand:(int)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;

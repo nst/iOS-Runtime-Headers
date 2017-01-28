@@ -4,16 +4,16 @@
 
 @interface _UINavigationBarStarkVisualStyle : _UINavigationBarVisualStyle
 
-- (float)backIndicatorBottomMargin;
-- (float)buttonHeight;
-- (float)horizontalMarginAdjustment;
-- (float)imageButtonMarginInNavigationBar:(id)arg1;
-- (float)leftBackTitleMargin;
-- (float)leftTitleMargin;
-- (int)navigationBar:(id)arg1 metricsForOrientation:(int)arg2 hasPrompt:(BOOL)arg3;
-- (BOOL)shouldForceLegacyLeftBackTitleMarginForView:(id)arg1 withCustomBackButtonBackground:(id)arg2 useAdditionalLetterpressPadding:(BOOL)arg3;
-- (float)textButtonMarginInNavigationBar:(id)arg1;
-- (float)topMargin;
-- (float)topTitleMargin;
+- (double)backIndicatorBottomMargin;
+- (double)buttonHeight;
+- (double)horizontalMarginAdjustment;
+- (double)imageButtonMarginInNavigationBar:(id)arg1;
+- (double)leftBackTitleMargin;
+- (double)leftTitleMargin;
+- (long long)navigationBar:(id)arg1 metricsForOrientation:(long long)arg2 hasPrompt:(bool)arg3;
+- (bool)shouldForceLegacyLeftBackTitleMarginForView:(id)arg1 withCustomBackButtonBackground:(id)arg2 useAdditionalLetterpressPadding:(bool)arg3;
+- (double)textButtonMarginInNavigationBar:(id)arg1;
+- (double)topMargin;
+- (double)topTitleMargin;
 
 @end

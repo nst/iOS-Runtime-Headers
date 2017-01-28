@@ -4,6 +4,6 @@
 
 @interface MusicContextualAddToPlaylistAlertAction : MusicContextualAlertAction
 
-+ (id)contextualAddToPlaylistActionForEntityValueContext:(id)arg1 shouldDismissHandler:(id /* block */)arg2 additionalPresentationHandler:(id /* block */)arg3 didDismissHandler:(id /* block */)arg4;
++ (id)contextualAddToPlaylistActionForEntityValueContext:(id)arg1 shouldDismissHandler:(id)arg2 additionalPresentationHandler:(id)arg3 didDismissHandler:(id)arg4;
 
 @end

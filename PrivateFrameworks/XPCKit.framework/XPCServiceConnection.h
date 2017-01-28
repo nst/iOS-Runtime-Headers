@@ -25,14 +25,14 @@
 - (id)delegate;
 - (id)initWithServiceName:(id)arg1 client:(id)arg2 queue:(id)arg3;
 - (void)resume;
-- (void)sendMessage:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)sendMessage:(id)arg1 withHandler:(id)arg2;
 - (id)serviceListener;
 - (id)serviceName;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setServiceListener:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (void)shutDownCompletionBlock:(id /* block */)arg1;
+- (void)shutDownCompletionBlock:(id)arg1;
 - (id)workQueue;
 - (void)workQueueHandleIncomingMessage:(id)arg1;
 - (void)workQueueShutDown;

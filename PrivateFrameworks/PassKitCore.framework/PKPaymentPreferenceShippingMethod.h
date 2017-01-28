@@ -12,6 +12,6 @@
 - (void).cxx_destruct;
 - (id)currency;
 - (void)setCurrency:(id)arg1;
-- (BOOL)supportsDeletion;
+- (bool)supportsDeletion;
 
 @end

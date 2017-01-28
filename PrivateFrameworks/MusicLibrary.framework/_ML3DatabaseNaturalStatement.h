@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)init;
 - (id)parameters;
-- (void)setParameter:(id)arg1 forPosition:(unsigned int)arg2;
+- (void)setParameter:(id)arg1 forPosition:(unsigned long long)arg2;
 - (void)setParameters:(id)arg1;
 - (void)setSql:(id)arg1;
 - (id)sql;

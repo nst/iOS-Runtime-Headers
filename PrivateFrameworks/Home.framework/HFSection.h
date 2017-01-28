@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)footerTitle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;

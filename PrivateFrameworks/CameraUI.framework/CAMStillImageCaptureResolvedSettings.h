@@ -3,15 +3,15 @@
  */
 
 @interface CAMStillImageCaptureResolvedSettings : NSObject {
-    BOOL  _HDREnabled;
-    BOOL  _portraitEffectEnabled;
+    bool  _HDREnabled;
+    bool  _portraitEffectEnabled;
 }
 
-@property (getter=isHDREnabled, nonatomic, readonly) BOOL HDREnabled;
-@property (getter=isPortraitEffectEnabled, nonatomic, readonly) BOOL portraitEffectEnabled;
+@property (getter=isHDREnabled, nonatomic, readonly) bool HDREnabled;
+@property (getter=isPortraitEffectEnabled, nonatomic, readonly) bool portraitEffectEnabled;
 
-- (id)initWithHDREnabled:(BOOL)arg1 portraitEffectEnabled:(BOOL)arg2;
-- (BOOL)isHDREnabled;
-- (BOOL)isPortraitEffectEnabled;
+- (id)initWithHDREnabled:(bool)arg1 portraitEffectEnabled:(bool)arg2;
+- (bool)isHDREnabled;
+- (bool)isPortraitEffectEnabled;
 
 @end

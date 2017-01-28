@@ -6,7 +6,7 @@
     HDBackgroundWorkoutRunner * _backgroundRunner;
     HDClient * _client;
     CMWorkout * _cmWorkout;
-    BOOL  _isFirstParty;
+    bool  _isFirstParty;
     <HDServer> * _server;
     _HKWorkoutSession * _workoutSession;
 }
@@ -14,7 +14,7 @@
 @property (nonatomic, retain) HDBackgroundWorkoutRunner *backgroundRunner;
 @property (nonatomic) HDClient *client;
 @property (nonatomic, retain) CMWorkout *cmWorkout;
-@property (nonatomic) BOOL isFirstParty;
+@property (nonatomic) bool isFirstParty;
 @property (nonatomic) <HDServer> *server;
 @property (nonatomic, retain) _HKWorkoutSession *workoutSession;
 
@@ -22,16 +22,16 @@
 - (id)backgroundRunner;
 - (id)client;
 - (id)cmWorkout;
-- (void)deliverChangeToState:(int)arg1 fromState:(int)arg2 date:(id)arg3;
+- (void)deliverChangeToState:(long long)arg1 fromState:(long long)arg2 date:(id)arg3;
 - (void)deliverError:(id)arg1;
 - (void)deliverEvent:(id)arg1;
-- (id)initWithWorkoutSession:(id)arg1 client:(id)arg2 server:(id)arg3 isFirstParty:(BOOL)arg4;
-- (BOOL)isFirstParty;
+- (id)initWithWorkoutSession:(id)arg1 client:(id)arg2 server:(id)arg3 isFirstParty:(bool)arg4;
+- (bool)isFirstParty;
 - (id)server;
 - (void)setBackgroundRunner:(id)arg1;
 - (void)setClient:(id)arg1;
 - (void)setCmWorkout:(id)arg1;
-- (void)setIsFirstParty:(BOOL)arg1;
+- (void)setIsFirstParty:(bool)arg1;
 - (void)setServer:(id)arg1;
 - (void)setWorkoutSession:(id)arg1;
 - (id)workoutSession;

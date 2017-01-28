@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSXPCConnection *clientConnection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *nonWakingRegistration;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) _CDUserContextService *service;
@@ -30,27 +30,27 @@
 - (id)activateMonitorQueue;
 - (id)clientConnection;
 - (void)dealloc;
-- (void)deregisterAllCallbacks:(BOOL)arg1;
+- (void)deregisterAllCallbacks:(bool)arg1;
 - (void)deregisterCallback:(id)arg1;
-- (void)evaluatePredicate:(id)arg1 handler:(id /* block */)arg2;
+- (void)evaluatePredicate:(id)arg1 handler:(id)arg2;
 - (void)handlePreviouslyFiredRegistration:(id)arg1;
-- (void)hasKnowledgeOfPath:(id)arg1 handler:(id /* block */)arg2;
+- (void)hasKnowledgeOfPath:(id)arg1 handler:(id)arg2;
 - (id)initForService:(id)arg1 withConnection:(id)arg2 andContext:(id)arg3;
 - (id)nonWakingRegistration;
-- (void)propertiesOfPath:(id)arg1 handler:(id /* block */)arg2;
+- (void)propertiesOfPath:(id)arg1 handler:(id)arg2;
 - (id)queue;
 - (void)registerCallback:(id)arg1;
 - (id)service;
 - (void)setActivateMonitorQueue:(id)arg1;
 - (void)setClientConnection:(id)arg1;
 - (void)setNonWakingRegistration:(id)arg1;
-- (void)setObject:(id)arg1 forPath:(id)arg2 handler:(id /* block */)arg3;
+- (void)setObject:(id)arg1 forPath:(id)arg2 handler:(id)arg3;
 - (void)setQueue:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setUserContext:(id)arg1;
 - (void)setWakingRegistrations:(id)arg1;
 - (id)userContext;
-- (void)valuesForPaths:(id)arg1 inContextsMatching:(id)arg2 handler:(id /* block */)arg3;
+- (void)valuesForPaths:(id)arg1 inContextsMatching:(id)arg2 handler:(id)arg3;
 - (id)wakingRegistrations;
 
 @end

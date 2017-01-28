@@ -4,6 +4,6 @@
 
 @interface MusicContextualShowInStoreAlertAction : MusicContextualAlertAction
 
-+ (id)contextualShowInStoreActionWithEntityValueContext:(id)arg1 didDismissHandler:(id /* block */)arg2;
++ (id)contextualShowInStoreActionWithEntityValueContext:(id)arg1 didDismissHandler:(id)arg2;
 
 @end

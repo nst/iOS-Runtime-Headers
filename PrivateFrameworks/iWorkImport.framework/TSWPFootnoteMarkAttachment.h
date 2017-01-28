@@ -7,7 +7,7 @@
 - (id)copyWithContext:(id)arg1;
 - (int)elementKind;
 - (void)saveToArchiver:(id)arg1;
-- (BOOL)shouldStyleBeExtended;
+- (bool)shouldStyleBeExtended;
 - (id)stringEquivalent;
 
 @end

@@ -3,22 +3,22 @@
  */
 
 @interface _CNUIIDSHandleAvailability : NSObject <CNUIIDSHandleAvailability> {
-    BOOL  _available;
+    bool  _available;
     <CNUIIDSHandle> * _handle;
 }
 
-@property (getter=isAvailable, nonatomic, readonly) BOOL available;
+@property (getter=isAvailable, nonatomic, readonly) bool available;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <CNUIIDSHandle> *handle;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isAvailable;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isAvailable;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)handle;
-- (id)initWithHandle:(id)arg1 available:(BOOL)arg2;
-- (BOOL)isAvailable;
+- (id)initWithHandle:(id)arg1 available:(bool)arg2;
+- (bool)isAvailable;
 
 @end

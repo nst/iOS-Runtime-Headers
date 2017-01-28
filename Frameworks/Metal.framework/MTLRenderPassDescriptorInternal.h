@@ -6,37 +6,37 @@
     struct MTLRenderPassDescriptorPrivate { 
         MTLRenderPassColorAttachmentDescriptorArrayInternal *attachments; 
         <MTLBuffer> *visibilityResultBuffer; 
-        unsigned int framebufferWidth; 
-        unsigned int framebufferHeight; 
-        BOOL ditherEnabled; 
-        BOOL openGLModeEnabled; 
+        unsigned long long framebufferWidth; 
+        unsigned long long framebufferHeight; 
+        bool ditherEnabled; 
+        bool openGLModeEnabled; 
     }  _private;
 }
 
 + (id)renderPassDescriptor;
 
-- (const struct MTLRenderPassDescriptorPrivate { id x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; }*)_descriptorPrivate;
+- (const struct MTLRenderPassDescriptorPrivate { id x1; unsigned long long x2; unsigned long long x3; bool x4; bool x5; }*)_descriptorPrivate;
 - (id)colorAttachments;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)depthAttachment;
 - (id)description;
-- (unsigned int)framebufferHeight;
-- (unsigned int)framebufferWidth;
-- (unsigned int)hash;
+- (unsigned long long)framebufferHeight;
+- (unsigned long long)framebufferWidth;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isDitherEnabled;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)openGLModeEnabled;
+- (bool)isDitherEnabled;
+- (bool)isEqual:(id)arg1;
+- (bool)openGLModeEnabled;
 - (void)setDepthAttachment:(id)arg1;
-- (void)setDitherEnabled:(BOOL)arg1;
-- (void)setFramebufferHeight:(unsigned int)arg1;
-- (void)setFramebufferWidth:(unsigned int)arg1;
-- (void)setOpenGLModeEnabled:(BOOL)arg1;
+- (void)setDitherEnabled:(bool)arg1;
+- (void)setFramebufferHeight:(unsigned long long)arg1;
+- (void)setFramebufferWidth:(unsigned long long)arg1;
+- (void)setOpenGLModeEnabled:(bool)arg1;
 - (void)setStencilAttachment:(id)arg1;
 - (void)setVisibilityResultBuffer:(id)arg1;
 - (id)stencilAttachment;
-- (BOOL)validate:(id)arg1 width:(unsigned int*)arg2 height:(unsigned int*)arg3;
+- (bool)validate:(id)arg1 width:(unsigned long long*)arg2 height:(unsigned long long*)arg3;
 - (id)visibilityResultBuffer;
 
 @end

@@ -13,20 +13,20 @@
 @property (nonatomic, retain) NSString *venueUuid;
 
 + (id)prefetchRequestForFloor:(id)arg1 inVenue:(id)arg2 lastRelevant:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)floorUid;
 - (id)floorUuid;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFloor:(id)arg1 inVenue:(id)arg2 lastRelevant:(id)arg3;
 - (id)initWithFloor:(id)arg1 lastRelevant:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRequest:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRequest:(id)arg1;
 - (id)relevancy;
 - (void)setFloorUid:(id)arg1;
 - (void)setFloorUuid:(id)arg1;

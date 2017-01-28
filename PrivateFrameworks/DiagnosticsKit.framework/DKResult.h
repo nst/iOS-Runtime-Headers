@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSArray *files;
 @property (nonatomic, readonly) NSNumber *statusCode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

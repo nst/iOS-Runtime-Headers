@@ -11,13 +11,13 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)additionalRequestForParentSection:(id)arg1 completion:(id /* block */)arg2;
-- (void)additionalRequestForRadioGenresForParentSection:(id)arg1 completion:(id /* block */)arg2;
+- (void)additionalRequestForParentSection:(id)arg1 completion:(id)arg2;
+- (void)additionalRequestForRadioGenresForParentSection:(id)arg1 completion:(id)arg2;
 - (id)createRequest;
 - (id)init;
-- (void)loadCuratedPlaylistStoreAdamID:(unsigned long long)arg1 requestWithCompletion:(id /* block */)arg2;
-- (void)loadRequestForRadioGenresWithCompletion:(id /* block */)arg1;
-- (void)loadRequestWithCompletion:(id /* block */)arg1;
+- (void)loadCuratedPlaylistStoreAdamID:(unsigned long long)arg1 requestWithCompletion:(id)arg2;
+- (void)loadRequestForRadioGenresWithCompletion:(id)arg1;
+- (void)loadRequestWithCompletion:(id)arg1;
 - (id)operationQueue;
 - (void)setOperationQueue:(id)arg1;
 

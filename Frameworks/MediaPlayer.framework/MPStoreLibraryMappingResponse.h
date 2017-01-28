@@ -3,16 +3,16 @@
  */
 
 @interface MPStoreLibraryMappingResponse : NSObject {
-    int  _libraryAddedStatus;
+    long long  _libraryAddedStatus;
     NSMutableDictionary * _storeIdentifierSetToLibraryIdentifierSet;
 }
 
-@property (nonatomic) int libraryAddedStatus;
+@property (nonatomic) long long libraryAddedStatus;
 
 - (void).cxx_destruct;
-- (int)libraryAddedStatus;
+- (long long)libraryAddedStatus;
 - (id)libraryIdentifierSetForIdentifierSet:(id)arg1;
-- (void)setLibraryAddedStatus:(int)arg1;
+- (void)setLibraryAddedStatus:(long long)arg1;
 - (void)setLibraryIdentifierSet:(id)arg1 forIdentifierSet:(id)arg2;
 
 @end

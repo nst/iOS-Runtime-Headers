@@ -4,21 +4,21 @@
 
 @interface FCCKFetchRecordZoneChangesResult : NSObject {
     NSError * _error;
-    BOOL  _moreChangesToFetch;
+    bool  _moreChangesToFetch;
     CKServerChangeToken * _serverChangeToken;
 }
 
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic) BOOL moreChangesToFetch;
+@property (nonatomic) bool moreChangesToFetch;
 @property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)error;
-- (BOOL)moreChangesToFetch;
+- (bool)moreChangesToFetch;
 - (id)serverChangeToken;
 - (void)setError:(id)arg1;
-- (void)setMoreChangesToFetch:(BOOL)arg1;
+- (void)setMoreChangesToFetch:(bool)arg1;
 - (void)setServerChangeToken:(id)arg1;
 
 @end

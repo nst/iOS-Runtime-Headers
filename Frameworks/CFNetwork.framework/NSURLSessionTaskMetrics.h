@@ -4,7 +4,7 @@
 
 @interface NSURLSessionTaskMetrics : NSObject
 
-@property unsigned int redirectCount;
+@property unsigned long long redirectCount;
 @property (copy) NSDateInterval *taskInterval;
 @property (copy) NSArray *transactionMetrics;
 

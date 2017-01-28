@@ -3,13 +3,13 @@
  */
 
 @interface MSVXPCTransactionController : NSObject {
-    BOOL  _inTransaction;
+    bool  _inTransaction;
     NSMapTable * _openTransactions;
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSObject<OS_dispatch_source> * _signalUSR2DispatchSource;
 }
 
-@property (getter=isInTransaction, nonatomic, readonly) BOOL inTransaction;
+@property (getter=isInTransaction, nonatomic, readonly) bool inTransaction;
 
 + (id)sharedInstance;
 
@@ -23,8 +23,8 @@
 - (void)addActiveTransaction:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isInTransaction;
-- (BOOL)isTransactionActive:(id)arg1;
+- (bool)isInTransaction;
+- (bool)isTransactionActive:(id)arg1;
 - (void)removeActiveTransaction:(id)arg1;
 
 @end

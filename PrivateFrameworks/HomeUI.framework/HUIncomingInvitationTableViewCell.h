@@ -43,7 +43,7 @@
 - (void)hideInvitationSpinner;
 - (id)homeNameLabel;
 - (id)infoLabel;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)invitation;
 - (void)setAcceptButton:(id)arg1;
 - (void)setAcceptButtonHiddenConstraint:(id)arg1;

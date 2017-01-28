@@ -12,7 +12,7 @@
     FCFeedViewportDiff * _resultDiff;
     FCFeedViewport * _resultViewport;
     FCFeedViewportBookmark * _toBookmark;
-    id /* block */  _updateHeadlinesCompletionHandler;
+    id  _updateHeadlinesCompletionHandler;
     FCFeedViewport * _viewport;
 }
 
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) FCFeedViewportDiff *resultDiff;
 @property (nonatomic, retain) FCFeedViewport *resultViewport;
 @property (nonatomic, copy) FCFeedViewportBookmark *toBookmark;
-@property (nonatomic, copy) id /* block */ updateHeadlinesCompletionHandler;
+@property (nonatomic, copy) id updateHeadlinesCompletionHandler;
 @property (nonatomic, retain) FCFeedViewport *viewport;
 
 - (void).cxx_destruct;
@@ -48,11 +48,11 @@
 - (void)setResultDiff:(id)arg1;
 - (void)setResultViewport:(id)arg1;
 - (void)setToBookmark:(id)arg1;
-- (void)setUpdateHeadlinesCompletionHandler:(id /* block */)arg1;
+- (void)setUpdateHeadlinesCompletionHandler:(id)arg1;
 - (void)setViewport:(id)arg1;
 - (id)toBookmark;
-- (id /* block */)updateHeadlinesCompletionHandler;
-- (BOOL)validateOperation;
+- (id)updateHeadlinesCompletionHandler;
+- (bool)validateOperation;
 - (id)viewport;
 
 @end

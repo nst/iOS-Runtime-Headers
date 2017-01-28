@@ -22,22 +22,22 @@
 @property (readonly) NSString *versionString;
 
 + (id)_tzDataVersionFromZoneinfoDirectory:(id)arg1 withError:(id*)arg2;
-+ (BOOL)_verifyVersionInfoDictionary:(id)arg1;
++ (bool)_verifyVersionInfoDictionary:(id)arg1;
 + (id)blankVersionInfo;
 + (id)versionInfoFromContainerDirectory:(id)arg1;
 + (id)versionInfoFromDefaultSystem;
-+ (id)versionInfoWithDictionary:(id)arg1 isPartial:(BOOL)arg2;
++ (id)versionInfoWithDictionary:(id)arg1 isPartial:(bool)arg2;
 
 - (void).cxx_destruct;
-- (id)_initWithVersionInfoDictionary:(id)arg1 isPartial:(BOOL)arg2;
+- (id)_initWithVersionInfoDictionary:(id)arg1 isPartial:(bool)arg2;
 - (id)alertZones;
 - (id)bundleVersion;
 - (id)changedFiles;
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)description;
 - (id)diskLocation;
 - (id)icuTZSchemaVersion;
-- (BOOL)isBlank;
+- (bool)isBlank;
 - (void)setAlertZones:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
 - (void)setChangedFiles:(id)arg1;

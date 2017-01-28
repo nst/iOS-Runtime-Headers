@@ -3,23 +3,23 @@
  */
 
 @interface UNPushNotificationTrigger : UNNotificationTrigger {
-    BOOL  _isContentAvailable;
-    BOOL  _isMutableContent;
+    bool  _isContentAvailable;
+    bool  _isMutableContent;
 }
 
-@property (nonatomic, readonly) BOOL isContentAvailable;
-@property (nonatomic, readonly) BOOL isMutableContent;
+@property (nonatomic, readonly) bool isContentAvailable;
+@property (nonatomic, readonly) bool isMutableContent;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)triggerWithContentAvailable:(BOOL)arg1 mutableContent:(BOOL)arg2;
++ (bool)supportsSecureCoding;
++ (id)triggerWithContentAvailable:(bool)arg1 mutableContent:(bool)arg2;
 
-- (id)_initWithContentAvailable:(BOOL)arg1 mutableContent:(BOOL)arg2;
+- (id)_initWithContentAvailable:(bool)arg1 mutableContent:(bool)arg2;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isContentAvailable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMutableContent;
+- (bool)isContentAvailable;
+- (bool)isEqual:(id)arg1;
+- (bool)isMutableContent;
 
 @end

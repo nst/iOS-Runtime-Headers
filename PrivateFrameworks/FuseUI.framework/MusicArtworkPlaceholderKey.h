@@ -3,26 +3,26 @@
  */
 
 @interface MusicArtworkPlaceholderKey : NSObject <NSCopying> {
-    int  _integerHeight;
-    int  _integerScale;
-    int  _integerWidth;
-    float  _scale;
+    long long  _integerHeight;
+    long long  _integerScale;
+    long long  _integerWidth;
+    double  _scale;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (float)scale;
-- (struct CGSize { float x1; float x2; })size;
+- (id)initWithSize:(struct CGSize { double x1; double x2; })arg1 scale:(double)arg2;
+- (bool)isEqual:(id)arg1;
+- (double)scale;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

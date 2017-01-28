@@ -5,7 +5,7 @@
 @interface SBKMutableStoreURLBagContext : SBKStoreURLBagContext
 
 @property (copy) NSString *domain;
-@property BOOL domainDisabled;
+@property bool domainDisabled;
 @property double pollingIntervalInSeconds;
 @property (retain) NSURL *pullAllKeyValueRequestURL;
 @property (retain) NSURL *pullKeyValueRequestURL;

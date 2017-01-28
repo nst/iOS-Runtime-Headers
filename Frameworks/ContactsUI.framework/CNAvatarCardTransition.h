@@ -5,32 +5,32 @@
 @interface CNAvatarCardTransition : NSObject <UIViewControllerAnimatedTransitioning> {
     <UIViewControllerContextTransitioning> * _context;
     UIPanGestureRecognizer * _gestureRecognizer;
-    BOOL  _interactive;
+    bool  _interactive;
     UIView * _presentedView;
-    BOOL  _reversed;
+    bool  _reversed;
 }
 
 @property (nonatomic, retain) <UIViewControllerContextTransitioning> *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIPanGestureRecognizer *gestureRecognizer;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL interactive;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool interactive;
 @property (nonatomic, retain) UIView *presentedView;
-@property BOOL reversed;
+@property bool reversed;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (id)context;
 - (id)gestureRecognizer;
-- (BOOL)interactive;
+- (bool)interactive;
 - (id)presentedView;
-- (BOOL)reversed;
+- (bool)reversed;
 - (void)setContext:(id)arg1;
 - (void)setGestureRecognizer:(id)arg1;
 - (void)setPresentedView:(id)arg1;
-- (void)setReversed:(BOOL)arg1;
+- (void)setReversed:(bool)arg1;
 - (double)transitionDuration:(id)arg1;
 
 @end

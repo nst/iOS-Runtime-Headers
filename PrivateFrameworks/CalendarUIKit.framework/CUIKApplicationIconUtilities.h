@@ -5,6 +5,6 @@
 @interface CUIKApplicationIconUtilities : NSObject
 
 + (id)dateFormatterWithCalendar:(id)arg1;
-+ (int)dateNameFormatType:(int)arg1;
++ (long long)dateNameFormatType:(int)arg1;
 
 @end

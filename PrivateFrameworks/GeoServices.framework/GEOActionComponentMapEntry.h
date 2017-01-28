@@ -9,15 +9,15 @@
     }  _has;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _placeDataComponents;
 }
 
 @property (nonatomic) int actionComponent;
-@property (nonatomic) BOOL hasActionComponent;
+@property (nonatomic) bool hasActionComponent;
 @property (nonatomic, readonly) int*placeDataComponents;
-@property (nonatomic, readonly) unsigned int placeDataComponentsCount;
+@property (nonatomic, readonly) unsigned long long placeDataComponentsCount;
 
 - (int)StringAsActionComponent:(id)arg1;
 - (int)actionComponent;
@@ -29,17 +29,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasActionComponent;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasActionComponent;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int*)placeDataComponents;
-- (int)placeDataComponentsAtIndex:(unsigned int)arg1;
-- (unsigned int)placeDataComponentsCount;
-- (BOOL)readFrom:(id)arg1;
+- (int)placeDataComponentsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)placeDataComponentsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setActionComponent:(int)arg1;
-- (void)setHasActionComponent:(BOOL)arg1;
-- (void)setPlaceDataComponents:(int*)arg1 count:(unsigned int)arg2;
+- (void)setHasActionComponent:(bool)arg1;
+- (void)setPlaceDataComponents:(int*)arg1 count:(unsigned long long)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

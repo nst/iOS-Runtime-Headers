@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSString *field;
 
-+ (id)wrappertlv:(unsigned int)arg1 name:(id)arg2;
++ (id)wrappertlv:(unsigned long long)arg1 name:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)field;

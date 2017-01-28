@@ -4,21 +4,21 @@
 
 @interface UIEventEnvironment : NSObject {
     UIApplication * _application;
-    int  _currentNudgePressType;
+    long long  _currentNudgePressType;
     UITouch * _currentTouch;
-    BOOL  _didDelayedInit;
-    int  _disableTouchCoalescingCount;
+    bool  _didDelayedInit;
+    long long  _disableTouchCoalescingCount;
     NSMutableDictionary * _estimatedTouchRecordsByContextIDAndEstimationIndex;
     NSMutableArray * _estimatedTouchRecordsInIncomingOrder;
     NSMutableArray * _eventQueue;
-    float  _externalTouchScaleFactor;
+    double  _externalTouchScaleFactor;
     _UIGameControllerEvent * _gameControllerEvent;
-    BOOL  _hasSeenAnyStylusEvents;
-    BOOL  _isSystemApplication;
+    bool  _hasSeenAnyStylusEvents;
+    bool  _isSystemApplication;
     UIPhysicalKeyboardEvent * _physicalKeyboardEvent;
     UIPressesEvent * _pressesEvent;
     NSMutableDictionary * _pressesMap;
-    BOOL  _shouldRoundTouchLocation;
+    bool  _shouldRoundTouchLocation;
     UITouchesEvent * _touchesEvent;
     UIWheelEvent * _wheelEvent;
 }
@@ -28,19 +28,19 @@
 
 - (void).cxx_destruct;
 - (id)UIKitEventForHIDEvent:(struct __IOHIDEvent { }*)arg1;
-- (void)_disableTouchCoalescingWithCount:(int)arg1;
+- (void)_disableTouchCoalescingWithCount:(long long)arg1;
 - (void)_dispatchAndRemoveStaleEstimationUpdateRecordsWithEventTime:(double)arg1 upToRecord:(id)arg2;
-- (void)_enableTouchCoalescingWithCount:(int)arg1;
+- (void)_enableTouchCoalescingWithCount:(long long)arg1;
 - (void)_enqueueHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (id)_estimatedTouchRecordForContextID:(id)arg1 estimationIndex:(id)arg2;
-- (BOOL)_isTouchCoalescingDisabled;
-- (id)_pressForType:(int)arg1;
+- (bool)_isTouchCoalescingDisabled;
+- (id)_pressForType:(long long)arg1;
 - (void)_registerEstimatedTouches:(id)arg1 event:(id)arg2 forTouchable:(id)arg3;
 - (void)_removeEstimatedTouchRecord:(id)arg1;
-- (void)_setPress:(id)arg1 forType:(int)arg2;
+- (void)_setPress:(id)arg1 forType:(long long)arg2;
 - (id)application;
 - (id)eventQueue;
-- (BOOL)eventWantsLowLatency:(id)arg1;
+- (bool)eventWantsLowLatency:(id)arg1;
 - (id)initWithApplication:(id)arg1;
 - (void)setApplication:(id)arg1;
 - (void)setEventQueue:(id)arg1;

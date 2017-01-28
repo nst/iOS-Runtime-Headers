@@ -3,7 +3,7 @@
  */
 
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
-    BOOL  _pendingRetryAfterAirplaneMode;
+    bool  _pendingRetryAfterAirplaneMode;
     IDSRemoteURLConnection * _remoteConnection;
     double  _retryTimeAfterAirplaneMode;
 }
@@ -17,19 +17,19 @@
 - (void)_printDictionaryToRegistrationLogs:(id)arg1 indentationLevel:(unsigned int)arg2;
 - (void)_printObjectToRegistrationLogs:(id)arg1 key:(id)arg2 identationLevel:(unsigned int)arg3;
 - (id)_processResultData:(id)arg1 forMessage:(id)arg2 error:(id*)arg3;
-- (BOOL)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
+- (bool)_sendMessageAsynchronously:(id)arg1 error:(id*)arg2;
 - (void)_serverBagLoaded:(id)arg1;
-- (BOOL)_tryRetryMessageWithTimeInterval:(double)arg1;
+- (bool)_tryRetryMessageWithTimeInterval:(double)arg1;
 - (void)_updateWiFiAssertions;
-- (void)_urlRequestWithURL:(id)arg1 andData:(id)arg2 message:(id)arg3 missingAnisetteHeaders:(BOOL*)arg4 completionBlock:(id /* block */)arg5;
-- (BOOL)busy;
+- (void)_urlRequestWithURL:(id)arg1 andData:(id)arg2 message:(id)arg3 missingAnisetteHeaders:(bool*)arg4 completionBlock:(id)arg5;
+- (bool)busy;
 - (void)cancelMessage:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
 - (void)networkStateChanged;
 - (void)queue:(id)arg1 hitTimeoutForMessage:(id)arg2;
-- (BOOL)sendMessage:(id)arg1;
-- (BOOL)sendMessageAtTopOfTheQueue:(id)arg1;
+- (bool)sendMessage:(id)arg1;
+- (bool)sendMessageAtTopOfTheQueue:(id)arg1;
 
 @end

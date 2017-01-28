@@ -10,12 +10,12 @@
 @property (nonatomic, copy) NSString *code;
 @property (nonatomic, copy) NSString *name;
 
-+ (id /* block */)comparatorForLocale:(id)arg1;
++ (id)comparatorForLocale:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)code;
 - (id)description;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (void)setCode:(id)arg1;
 - (void)setName:(id)arg1;

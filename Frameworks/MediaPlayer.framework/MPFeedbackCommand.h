@@ -3,26 +3,26 @@
  */
 
 @interface MPFeedbackCommand : MPRemoteCommand {
-    BOOL  _active;
+    bool  _active;
     NSString * _localizedShortTitle;
     NSString * _localizedTitle;
-    int  _presentationStyle;
+    long long  _presentationStyle;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, copy) NSString *localizedShortTitle;
 @property (nonatomic, copy) NSString *localizedTitle;
 
 - (void).cxx_destruct;
 - (id)_mediaRemoteCommandInfoOptions;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)localizedShortTitle;
 - (id)localizedTitle;
-- (id)newCommandEventWithState:(int)arg1;
-- (int)presentationStyle;
-- (void)setActive:(BOOL)arg1;
+- (id)newCommandEventWithState:(long long)arg1;
+- (long long)presentationStyle;
+- (void)setActive:(bool)arg1;
 - (void)setLocalizedShortTitle:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;
-- (void)setPresentationStyle:(int)arg1;
+- (void)setPresentationStyle:(long long)arg1;
 
 @end

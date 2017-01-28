@@ -4,14 +4,14 @@
 
 @interface UIPhraseBoundaryGestureRecognizer : UILongPressGestureRecognizer {
     double  _secondDelay;
-    BOOL  _secondDelayElapsed;
+    bool  _secondDelayElapsed;
     UIDelayedAction * _secondDelayTimer;
     UIResponder<UITextInput> * _textInput;
     id  _userData;
 }
 
 @property (nonatomic) double secondDelay;
-@property (nonatomic, readonly) BOOL secondDelayElapsed;
+@property (nonatomic, readonly) bool secondDelayElapsed;
 @property (nonatomic) UIResponder<UITextInput> *textInput;
 @property (nonatomic) id userData;
 
@@ -19,10 +19,10 @@
 - (void)_resetGestureRecognizer;
 - (void)clearTimer;
 - (double)secondDelay;
-- (BOOL)secondDelayElapsed;
+- (bool)secondDelayElapsed;
 - (void)secondDelayElapsed:(id)arg1;
 - (void)setSecondDelay:(double)arg1;
-- (void)setState:(int)arg1;
+- (void)setState:(long long)arg1;
 - (void)setTextInput:(id)arg1;
 - (void)setUserData:(id)arg1;
 - (void)startTimer;

@@ -15,7 +15,7 @@
 - (id)description;
 - (id)initWithConfigurationDictionaries:(id)arg1;
 - (void)setArtworkConfiguration:(id)arg1;
-- (id)sizesToAutogenerateForMediaType:(unsigned int)arg1 artworkType:(int)arg2;
-- (id)supportedSizesForMediaType:(unsigned int)arg1 artworkType:(int)arg2;
+- (id)sizesToAutogenerateForMediaType:(unsigned long long)arg1 artworkType:(long long)arg2;
+- (id)supportedSizesForMediaType:(unsigned long long)arg1 artworkType:(long long)arg2;
 
 @end

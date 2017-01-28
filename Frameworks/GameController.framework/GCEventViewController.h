@@ -3,12 +3,12 @@
  */
 
 @interface GCEventViewController : UIViewController {
-    BOOL  _controllerUserInteractionEnabled;
+    bool  _controllerUserInteractionEnabled;
 }
 
-@property (nonatomic) BOOL controllerUserInteractionEnabled;
+@property (nonatomic) bool controllerUserInteractionEnabled;
 
-- (BOOL)controllerUserInteractionEnabled;
-- (void)setControllerUserInteractionEnabled:(BOOL)arg1;
+- (bool)controllerUserInteractionEnabled;
+- (void)setControllerUserInteractionEnabled:(bool)arg1;
 
 @end

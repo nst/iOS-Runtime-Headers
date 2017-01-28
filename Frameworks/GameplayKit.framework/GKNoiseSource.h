@@ -4,6 +4,10 @@
 
 @interface GKNoiseSource : NSObject
 
-- (struct Module { int (**x1)(); struct Module {} **x2; }*)__newModule;
+- (id)cloneModule;
+- (id)inputModuleAtIndex:(int)arg1;
+- (int)requiredInputModuleCount;
+- (void)setInputModule:(id)arg1 atIndex:(int)arg2;
+- (double)valueAt;
 
 @end

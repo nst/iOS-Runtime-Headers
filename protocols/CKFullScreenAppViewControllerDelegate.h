@@ -6,7 +6,7 @@
 @required
 
 - (void)fullscreenAppViewController:(CKFullScreenAppViewController *)arg1 wantsToSwitchToPlugin:(IMBalloonPlugin *)arg2;
-- (void)fullscreenAppViewControllerDidTransitionFromOrientation:(int)arg1 toOrientation:(int)arg2;
+- (void)fullscreenAppViewControllerDidTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppStore:(CKFullScreenAppViewController *)arg1;
 - (void)fullscreenAppViewControllerWantsToCollapse:(CKFullScreenAppViewController *)arg1;
 

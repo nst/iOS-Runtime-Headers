@@ -3,12 +3,12 @@
  */
 
 @interface MTLRenderPassDescriptor : NSObject <NSCopying> {
-    unsigned int  _renderTargetArrayLength;
+    unsigned long long  _renderTargetArrayLength;
 }
 
 @property (readonly) MTLRenderPassColorAttachmentDescriptorArray *colorAttachments;
 @property (nonatomic, copy) MTLRenderPassDepthAttachmentDescriptor *depthAttachment;
-@property (nonatomic) unsigned int renderTargetArrayLength;
+@property (nonatomic) unsigned long long renderTargetArrayLength;
 @property (nonatomic, copy) MTLRenderPassStencilAttachmentDescriptor *stencilAttachment;
 @property (nonatomic, retain) <MTLBuffer> *visibilityResultBuffer;
 
@@ -17,7 +17,7 @@
 + (id)renderPassDescriptor;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)renderTargetArrayLength;
-- (void)setRenderTargetArrayLength:(unsigned int)arg1;
+- (unsigned long long)renderTargetArrayLength;
+- (void)setRenderTargetArrayLength:(unsigned long long)arg1;
 
 @end

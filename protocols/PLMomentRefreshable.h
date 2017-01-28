@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 
 @end

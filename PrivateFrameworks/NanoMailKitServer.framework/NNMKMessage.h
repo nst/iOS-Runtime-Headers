@@ -14,7 +14,7 @@
     NSString * _messageIdHeader;
     NSString * _notificationMessageId;
     NSString * _preview;
-    unsigned int  _status;
+    unsigned long long  _status;
     NSString * _subject;
     NSArray * _to;
 }
@@ -28,29 +28,29 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *from;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *messageId;
 @property (nonatomic, retain) NSString *messageIdHeader;
 @property (nonatomic, retain) NSString *notificationMessageId;
 @property (nonatomic, retain) NSString *preview;
-@property (nonatomic) unsigned int status;
+@property (nonatomic) unsigned long long status;
 @property (nonatomic, retain) NSString *subject;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *to;
 
 + (id)URLForMessageId:(id)arg1;
-+ (BOOL)_isOldMessageIdFormat:(id)arg1;
-+ (BOOL)isMessageURL:(id)arg1;
-+ (BOOL)messageHasMultipleRecipients:(id)arg1;
++ (bool)_isOldMessageIdFormat:(id)arg1;
++ (bool)isMessageURL:(id)arg1;
++ (bool)messageHasMultipleRecipients:(id)arg1;
 + (id)messageIdForURL:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountId;
-- (void)addState:(unsigned int)arg1;
+- (void)addState:(unsigned long long)arg1;
 - (id)bcc;
 - (id)cc;
-- (BOOL)checkState:(unsigned int)arg1;
+- (bool)checkState:(unsigned long long)arg1;
 - (id)conversationId;
 - (id)dateReceived;
 - (id)dateSent;
@@ -62,7 +62,7 @@
 - (id)messageIdHeader;
 - (id)notificationMessageId;
 - (id)preview;
-- (void)removeState:(unsigned int)arg1;
+- (void)removeState:(unsigned long long)arg1;
 - (void)setAccountId:(id)arg1;
 - (void)setBcc:(id)arg1;
 - (void)setCc:(id)arg1;
@@ -74,10 +74,10 @@
 - (void)setMessageIdHeader:(id)arg1;
 - (void)setNotificationMessageId:(id)arg1;
 - (void)setPreview:(id)arg1;
-- (void)setStatus:(unsigned int)arg1;
+- (void)setStatus:(unsigned long long)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTo:(id)arg1;
-- (unsigned int)status;
+- (unsigned long long)status;
 - (id)subject;
 - (id)to;
 

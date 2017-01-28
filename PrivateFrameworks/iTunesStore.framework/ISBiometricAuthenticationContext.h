@@ -6,24 +6,26 @@
     NSNumber * _accountIdentifier;
     NSString * _accountName;
     NSString * _challenge;
-    BOOL  _didAuthenticate;
-    BOOL  _didFallbackToPassword;
+    bool  _didAuthenticate;
+    bool  _didBuyParamsChange;
+    bool  _didFallbackToPassword;
     NSString * _reason;
     NSURL * _redirectURL;
-    BOOL  _shouldContinueTouchIDSession;
-    BOOL  _shouldSendFallbackHeader;
+    bool  _shouldContinueTouchIDSession;
+    bool  _shouldSendFallbackHeader;
     NSString * _signature;
 }
 
 @property (copy) NSNumber *accountIdentifier;
 @property (copy) NSString *accountName;
 @property (copy) NSString *challenge;
-@property BOOL didAuthenticate;
-@property BOOL didFallbackToPassword;
+@property bool didAuthenticate;
+@property bool didBuyParamsChange;
+@property bool didFallbackToPassword;
 @property (copy) NSString *reason;
 @property (copy) NSURL *redirectURL;
-@property BOOL shouldContinueTouchIDSession;
-@property BOOL shouldSendFallbackHeader;
+@property bool shouldContinueTouchIDSession;
+@property bool shouldSendFallbackHeader;
 @property (copy) NSString *signature;
 
 - (void).cxx_destruct;
@@ -31,22 +33,24 @@
 - (id)accountName;
 - (id)challenge;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)didAuthenticate;
-- (BOOL)didFallbackToPassword;
+- (bool)didAuthenticate;
+- (bool)didBuyParamsChange;
+- (bool)didFallbackToPassword;
 - (id)reason;
 - (id)redirectURL;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAccountName:(id)arg1;
 - (void)setChallenge:(id)arg1;
-- (void)setDidAuthenticate:(BOOL)arg1;
-- (void)setDidFallbackToPassword:(BOOL)arg1;
+- (void)setDidAuthenticate:(bool)arg1;
+- (void)setDidBuyParamsChange:(bool)arg1;
+- (void)setDidFallbackToPassword:(bool)arg1;
 - (void)setReason:(id)arg1;
 - (void)setRedirectURL:(id)arg1;
-- (void)setShouldContinueTouchIDSession:(BOOL)arg1;
-- (void)setShouldSendFallbackHeader:(BOOL)arg1;
+- (void)setShouldContinueTouchIDSession:(bool)arg1;
+- (void)setShouldSendFallbackHeader:(bool)arg1;
 - (void)setSignature:(id)arg1;
-- (BOOL)shouldContinueTouchIDSession;
-- (BOOL)shouldSendFallbackHeader;
+- (bool)shouldContinueTouchIDSession;
+- (bool)shouldSendFallbackHeader;
 - (id)signature;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)albumListTableViewCell:(PUAlbumListTableViewCell *)arg1 willChangeState:(unsigned int)arg2;
+- (void)albumListTableViewCell:(PUAlbumListTableViewCell *)arg1 willChangeState:(unsigned long long)arg2;
 
 @end

@@ -11,14 +11,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *merchantPayload;
 @property (nonatomic, readonly) PKPass *pass;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)downloadMerchantPayloadWithCompletion:(id /* block */)arg1;
-- (void)downloadPassWithCompletion:(id /* block */)arg1;
+- (void)downloadMerchantPayloadWithCompletion:(id)arg1;
+- (void)downloadPassWithCompletion:(id)arg1;
 - (id)initWithValueAddedServiceTransaction:(id)arg1;
 - (id)merchantPayload;
 - (id)pass;

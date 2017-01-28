@@ -7,6 +7,7 @@
 + (id)entryEventForwardDefinitionActivityStates;
 + (id)entryEventForwardDefinitionConfiguration;
 + (id)entryEventForwardDefinitionSchemaChange;
++ (id)entryEventForwardDefinitionTaskingMode;
 + (id)entryEventForwardDefinitionTimeOffset;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventIntervalDefinitionCacheSize;
@@ -26,6 +27,7 @@
 - (void)log;
 - (void)logEventForwardConfiguration:(id)arg1;
 - (void)logEventForwardSchemaChange:(id)arg1;
+- (void)logEventForwardTaskingMode:(id)arg1;
 - (void)logEventForwardTimeOffset:(id)arg1;
 - (void)logEventPointArchive:(id)arg1;
 - (void)logEventPointCacheFlush:(id)arg1;

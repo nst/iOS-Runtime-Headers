@@ -11,11 +11,11 @@
 
 - (void).cxx_destruct;
 - (id)deletionDelegate;
-- (id)initInEditMode:(BOOL)arg1;
+- (id)initInEditMode:(bool)arg1;
 - (void)setDeletionDelegate:(id)arg1;
-- (BOOL)shouldHighlightRowAtIndex:(int)arg1;
-- (id)tableView:(id)arg1 cellForRowAtIndex:(int)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
+- (bool)shouldHighlightRowAtIndex:(long long)arg1;
+- (id)tableView:(id)arg1 cellForRowAtIndex:(long long)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndex:(long long)arg2;
 - (id)title;
 
 @end

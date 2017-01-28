@@ -6,13 +6,13 @@
     PHLivePhotoView * __livePhotoView;
     <PUIrisImageTileViewControllerDelegate> * _delegate;
     struct { 
-        BOOL respondsToDidBeginPlaying; 
-        BOOL respondsToWillEndPlaying; 
-        BOOL respondsToDidEndPlaying; 
-        BOOL respondsToDidEndVitality; 
-        BOOL respondsToDidBeginHinting; 
-        BOOL respondsToViewHostingGestureRecognizers; 
-        BOOL respondsToDelegateForGestureRecognizer; 
+        bool respondsToDidBeginPlaying; 
+        bool respondsToWillEndPlaying; 
+        bool respondsToDidEndPlaying; 
+        bool respondsToDidEndVitality; 
+        bool respondsToDidBeginHinting; 
+        bool respondsToViewHostingGestureRecognizers; 
+        bool respondsToDelegateForGestureRecognizer; 
     }  _delegateFlags;
 }
 
@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUIrisImageTileViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -36,8 +36,8 @@
 - (void)applyLayoutInfo:(id)arg1;
 - (void)assetViewModelDidChange;
 - (id)delegate;
-- (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(int)arg2;
-- (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(int)arg2;
+- (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(long long)arg2;
+- (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(long long)arg2;
 - (void)livePhotoViewDidBeginHinting:(id)arg1;
 - (void)livePhotoViewDidEndPlayingVitality:(id)arg1;
 - (id)loadView;

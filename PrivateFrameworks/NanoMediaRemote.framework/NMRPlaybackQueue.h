@@ -7,38 +7,38 @@
     <NMRPlaybackQueueDelegate> * _delegate;
     struct _MROrigin { } * _mediaRemoteOrigin;
     struct { 
-        int location; 
-        int length; 
+        long long location; 
+        long long length; 
     }  _observedRange;
-    BOOL  _observingMediaRemote;
+    bool  _observingMediaRemote;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
 @property (nonatomic) <NMRPlaybackQueueDelegate> *delegate;
 @property (nonatomic, readonly) NSData *fullPlaybackQueueData;
-@property (nonatomic) struct { int x1; int x2; } observedRange;
+@property (nonatomic) struct { long long x1; long long x2; } observedRange;
 
 - (void).cxx_destruct;
 - (id)_itemWithIdentifier:(id)arg1;
-- (void*)_mediaRemotePlaybackQueueWithRange:(struct { int x1; int x2; })arg1 includeMetadata:(BOOL)arg2;
+- (void*)_mediaRemotePlaybackQueueWithRange:(struct { long long x1; long long x2; })arg1 includeMetadata:(bool)arg2;
 - (id)_metadataForItemWithIdentifier:(id)arg1;
-- (BOOL)_needsMetadataForMediaRemoteItem:(struct _MRContentItem { }*)arg1;
-- (BOOL)_needsUpdateForMediaRemoteQueue:(void*)arg1;
-- (struct { int x1; int x2; })_rangeOfItemsNeedingMetadataForMediaRemoteQueue:(void*)arg1;
+- (bool)_needsMetadataForMediaRemoteItem:(struct _MRContentItem { }*)arg1;
+- (bool)_needsUpdateForMediaRemoteQueue:(void*)arg1;
+- (struct { long long x1; long long x2; })_rangeOfItemsNeedingMetadataForMediaRemoteQueue:(void*)arg1;
 - (void)_refreshCurrentPlaybackQueueFromMediaRemote;
 - (void)_updateMetadataWithMediaRemoteItems:(id)arg1;
 - (void)_updateWithMediaRemoteQueue:(void*)arg1 metadataQueue:(void*)arg2;
 - (void)beginObservingMediaRemotePlaybackQueueForOrigin:(struct _MROrigin { }*)arg1;
-- (void*)copyFullMediaRemotePlaybackQueueIncludingMetadata:(BOOL)arg1;
-- (void*)copyMediaRemotePlaybackQueueWithRange:(struct { int x1; int x2; })arg1 includeMetadata:(BOOL)arg2;
+- (void*)copyFullMediaRemotePlaybackQueueIncludingMetadata:(bool)arg1;
+- (void*)copyMediaRemotePlaybackQueueWithRange:(struct { long long x1; long long x2; })arg1 includeMetadata:(bool)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)deltaPlaybackQueueDataFromPreviousData:(id)arg1 invalidatedMetadataIdentifiers:(id)arg2;
 - (id)fullPlaybackQueueData;
 - (id)init;
-- (struct { int x1; int x2; })observedRange;
+- (struct { long long x1; long long x2; })observedRange;
 - (void)setDelegate:(id)arg1;
-- (void)setObservedRange:(struct { int x1; int x2; })arg1;
+- (void)setObservedRange:(struct { long long x1; long long x2; })arg1;
 - (void)updateWithData:(id)arg1;
 
 @end

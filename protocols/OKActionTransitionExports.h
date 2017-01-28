@@ -6,7 +6,7 @@
 @required
 
 - (float)progress;
-- (unsigned int)target;
+- (unsigned long long)target;
 - (float)velocity;
 
 @end

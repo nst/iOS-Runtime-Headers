@@ -11,17 +11,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_makeAutomaticQueueRequestWithCompletionBlock:(id /* block */)arg1;
-- (void)_makeRequestWithCompletionBlock:(id /* block */)arg1;
-- (void)_sendRequestWithCompletionBlock:(id /* block */)arg1;
+- (void)_makeAutomaticQueueRequestWithCompletionBlock:(id)arg1;
+- (void)_makeRequestWithCompletionBlock:(id)arg1;
+- (void)_sendRequestWithCompletionBlock:(id)arg1;
 - (void)_setupConnection;
-- (void)checkAutomaticCheckWithCompletionBlock:(id /* block */)arg1;
-- (void)checkPendingCheckWithCompletionBlock:(id /* block */)arg1;
+- (void)checkAutomaticCheckWithCompletionBlock:(id)arg1;
+- (void)checkPendingCheckWithCompletionBlock:(id)arg1;
 - (id)initWithOptions:(id)arg1;
-- (void)sendRequestCompletionBlock:(id /* block */)arg1;
+- (void)sendRequestCompletionBlock:(id)arg1;
 
 @end

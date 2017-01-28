@@ -14,6 +14,6 @@
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)startObservingPreference:(struct __CFString { }*)arg1 andBroadcastDarwinNotification:(struct __CFString { }*)arg2;
-- (void)startObservingPreference:(struct __CFString { }*)arg1 andPerformBlock:(id /* block */)arg2;
+- (void)startObservingPreference:(struct __CFString { }*)arg1 andPerformBlock:(id)arg2;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface SKUIProductPageReviewsViewController : UIViewController <SKComposeReviewDelegate, SKUILayoutCacheDelegate, SKUIProductPageChildViewController, SKUIReviewsFacebookViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    BOOL  _askPermission;
+    bool  _askPermission;
     SKUIClientContext * _clientContext;
     SKComposeReviewViewController * _composeViewController;
     <SKUIProductPageChildViewControllerDelegate> * _delegate;
@@ -11,27 +11,27 @@
     SKUIReviewsFacebookViewController * _facebookViewController;
     SKUIProductPageHeaderViewController * _headerViewController;
     SKUIReviewsHistogramViewController * _histogramViewController;
-    BOOL  _isPad;
+    bool  _isPad;
     SKUILayoutCache * _layoutCache;
     SSVLoadURLOperation * _loadOperation;
-    int  _loadedPageCount;
+    long long  _loadedPageCount;
     NSOperationQueue * _operationQueue;
     SKUIProductPage * _productPage;
     SKUIReviewList * _reviewList;
     SKUIIPadCustomerReviewsHeaderView * _reviewsHeaderView;
-    BOOL  _showAllVersions;
-    int  _sortOrder;
+    bool  _showAllVersions;
+    long long  _sortOrder;
     SKUIStarRatingQueue * _starRatingQueue;
     SKUIProductPageTableView * _tableView;
 }
 
-@property (nonatomic) BOOL askPermission;
+@property (nonatomic) bool askPermission;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIProductPageChildViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) SKUIFacebookLikeStatus *facebookLikeStatus;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
 @property (nonatomic, readonly) NSOperationQueue *operationQueue;
 @property (nonatomic, readonly) SKUIProductPage *productPage;
@@ -43,24 +43,24 @@
 - (void)_addReviewsFromResponse:(id)arg1 error:(id)arg2;
 - (void)_appSupportAction:(id)arg1;
 - (id)_bottomBorderColorForScheme:(id)arg1;
-- (float)_defaultPageWidth;
+- (double)_defaultPageWidth;
 - (id)_histogramViewController;
 - (id)_loadMoreCellForTableView:(id)arg1 indexPath:(id)arg2;
-- (void)_loadNextPageIfNecessaryForOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_loadNextPageIfNecessaryForOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_reloadData;
 - (void)_resetPersonalStarRating;
 - (id)_reviewsHeaderView;
 - (void)_setReviewListWithResponse:(id)arg1 error:(id)arg2;
-- (BOOL)_shouldShowLoadMoreCell;
+- (bool)_shouldShowLoadMoreCell;
 - (void)_sortSelectionAction:(id)arg1;
 - (void)_starRatingAction:(id)arg1;
 - (id)_tableView;
 - (id)_textBoxCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (id)_textLayoutRequestWithText:(id)arg1;
-- (id)_urlStringWithPageNumber:(int)arg1;
+- (id)_urlStringWithPageNumber:(long long)arg1;
 - (void)_versionSelectionAction:(id)arg1;
 - (void)_writeAReviewAction:(id)arg1;
-- (BOOL)askPermission;
+- (bool)askPermission;
 - (id)clientContext;
 - (void)dealloc;
 - (id)delegate;
@@ -69,7 +69,7 @@
 - (id)initWithProductPage:(id)arg1;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)operationQueue;
 - (id)productPage;
 - (void)reloadData;
@@ -77,8 +77,8 @@
 - (void)reviewsFacebookViewControllerDidChange:(id)arg1;
 - (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
-- (void)setAskPermission:(BOOL)arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { double x1; double x2; })arg2 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg3;
+- (void)setAskPermission:(bool)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFacebookLikeStatus:(id)arg1;
@@ -86,12 +86,12 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

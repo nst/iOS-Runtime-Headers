@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *desiredAccuracy;
 @property (nonatomic) double direction;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double horizontalAccuracy;
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;

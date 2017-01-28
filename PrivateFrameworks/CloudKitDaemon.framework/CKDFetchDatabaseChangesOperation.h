@@ -3,35 +3,35 @@
  */
 
 @interface CKDFetchDatabaseChangesOperation : CKDDatabaseOperation <CKDOperationPipelining> {
-    BOOL  _fetchAllChanges;
+    bool  _fetchAllChanges;
     NSObject<OS_dispatch_group> * _fetchZonesGroup;
-    unsigned int  _numRequestsSent;
+    unsigned long long  _numRequestsSent;
     CKServerChangeToken * _previousServerChangeToken;
-    id /* block */  _recordZoneWithIDChangedBlock;
-    id /* block */  _recordZoneWithIDWasDeletedBlock;
+    id  _recordZoneWithIDChangedBlock;
+    id  _recordZoneWithIDWasDeletedBlock;
     NSMutableArray * _requestInfos;
-    unsigned int  _resultsLimit;
+    unsigned long long  _resultsLimit;
     CKServerChangeToken * _serverChangeToken;
-    id /* block */  _serverChangeTokenUpdatedBlock;
-    int  _status;
+    id  _serverChangeTokenUpdatedBlock;
+    long long  _status;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL fetchAllChanges;
+@property (nonatomic) bool fetchAllChanges;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *fetchZonesGroup;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int numRequestsSent;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long numRequestsSent;
 @property (nonatomic, readonly) NSString *pipeliningDescription;
 @property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
-@property (nonatomic, copy) id /* block */ recordZoneWithIDChangedBlock;
-@property (nonatomic, copy) id /* block */ recordZoneWithIDWasDeletedBlock;
+@property (nonatomic, copy) id recordZoneWithIDChangedBlock;
+@property (nonatomic, copy) id recordZoneWithIDWasDeletedBlock;
 @property (nonatomic, retain) NSMutableArray *requestInfos;
-@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic) unsigned long long resultsLimit;
 @property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
-@property (nonatomic, copy) id /* block */ serverChangeTokenUpdatedBlock;
-@property (nonatomic) int status;
+@property (nonatomic, copy) id serverChangeTokenUpdatedBlock;
+@property (nonatomic) long long status;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -39,32 +39,32 @@
 - (void)_handleFetchDatabaseChangesRequestFinishedWithSchedulerInfo:(id)arg1;
 - (void)_sendFetchDatabaseChangesRequestWithChangeToken:(id)arg1 previousRequestSchedulerInfo:(id)arg2;
 - (id)activityCreate;
-- (BOOL)fetchAllChanges;
+- (bool)fetchAllChanges;
 - (id)fetchZonesGroup;
 - (void)fillOutOperationResult:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (unsigned int)numRequestsSent;
+- (unsigned long long)numRequestsSent;
 - (Class)operationResultClass;
 - (id)pipeliningDescription;
 - (id)previousServerChangeToken;
-- (id /* block */)recordZoneWithIDChangedBlock;
-- (id /* block */)recordZoneWithIDWasDeletedBlock;
+- (id)recordZoneWithIDChangedBlock;
+- (id)recordZoneWithIDWasDeletedBlock;
 - (id)requestInfos;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (id)serverChangeToken;
-- (id /* block */)serverChangeTokenUpdatedBlock;
-- (void)setFetchAllChanges:(BOOL)arg1;
+- (id)serverChangeTokenUpdatedBlock;
+- (void)setFetchAllChanges:(bool)arg1;
 - (void)setFetchZonesGroup:(id)arg1;
-- (void)setNumRequestsSent:(unsigned int)arg1;
+- (void)setNumRequestsSent:(unsigned long long)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
-- (void)setRecordZoneWithIDChangedBlock:(id /* block */)arg1;
-- (void)setRecordZoneWithIDWasDeletedBlock:(id /* block */)arg1;
+- (void)setRecordZoneWithIDChangedBlock:(id)arg1;
+- (void)setRecordZoneWithIDWasDeletedBlock:(id)arg1;
 - (void)setRequestInfos:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 - (void)setServerChangeToken:(id)arg1;
-- (void)setServerChangeTokenUpdatedBlock:(id /* block */)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setServerChangeTokenUpdatedBlock:(id)arg1;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 @end

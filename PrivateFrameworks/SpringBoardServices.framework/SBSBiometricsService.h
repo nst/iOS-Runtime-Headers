@@ -4,7 +4,7 @@
 
 @interface SBSBiometricsService : SBSAbstractSystemService
 
-- (void)acquireUnlockSuppressionAssertionForReason:(id)arg1 completion:(id /* block */)arg2;
-- (void)fetchUnlockCredentialSetWithCompletion:(id /* block */)arg1;
+- (void)acquireUnlockSuppressionAssertionForReason:(id)arg1 completion:(id)arg2;
+- (void)fetchUnlockCredentialSetWithCompletion:(id)arg1;
 
 @end

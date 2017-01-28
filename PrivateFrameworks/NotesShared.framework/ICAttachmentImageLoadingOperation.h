@@ -17,15 +17,15 @@
 @property (nonatomic, retain) NSURL *mediaURL;
 
 - (void).cxx_destruct;
-- (id /* block */)addCompletionHandler:(id /* block */)arg1;
+- (id)addCompletionHandler:(id)arg1;
 - (short)attachmentType;
 - (id)cache;
 - (id)completionHandlers;
-- (id)initWithCache:(id)arg1 media:(id)arg2 attachmentType:(short)arg3 completionHandler:(id /* block */)arg4;
+- (id)initWithCache:(id)arg1 media:(id)arg2 attachmentType:(short)arg3 completionHandler:(id)arg4;
 - (void)main;
 - (id)mediaObjectID;
 - (id)mediaURL;
-- (void)removeCompletionHandler:(id /* block */)arg1 cancelIfNoneLeft:(BOOL)arg2;
+- (void)removeCompletionHandler:(id)arg1 cancelIfNoneLeft:(bool)arg2;
 - (void)setAttachmentType:(short)arg1;
 - (void)setCache:(id)arg1;
 - (void)setCompletionHandlers:(id)arg1;

@@ -2,33 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSACirrusDocument : NSObject <TSADocumentRootDelegate, TSPObjectContextDelegate> {
+@interface TSACirrusDocument : NSObject <TSPObjectContextDelegate> {
     TSPObjectContext * _context;
     NSString * _documentPasswordHint;
     NSURL * _fileURL;
-    BOOL  _isClosed;
+    bool  _isClosed;
     TSUTemporaryDirectory * _tempDirForSupport;
 }
 
 @property (nonatomic, readonly) NSDictionary *additionalDocumentPropertiesForWrite;
 @property (nonatomic, readonly) NSDictionary *additionalDocumentSupportPropertiesForWrite;
-@property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
+@property (nonatomic, readonly) bool areNewExternalReferencesToDataAllowed;
 @property (nonatomic, readonly) NSUUID *baseUUIDForObjectUUID;
 @property (nonatomic, retain) TSPObjectContext *context;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) NSString *defaultDraftName;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSString *documentCachePath;
 @property (nonatomic, readonly) NSString *documentPasswordHint;
 @property (nonatomic, readonly) TSADocumentRoot *documentRoot;
 @property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
 @property (nonatomic, copy) NSURL *fileURL;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL ignoreDocumentSupport;
-@property (nonatomic, readonly) BOOL isDocumentSupportTemporary;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) TSAUbiquitousRefreshQueue *refreshQueue;
-@property (nonatomic, readonly) BOOL skipDocumentUpgrade;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool ignoreDocumentSupport;
+@property (nonatomic, readonly) bool isDocumentSupportTemporary;
+@property (nonatomic, readonly) bool skipDocumentUpgrade;
 @property (readonly) Class superclass;
 
 - (void)close;
@@ -45,7 +41,7 @@
 - (void)presentPersistenceError:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFileURL:(id)arg1;
-- (BOOL)skipDocumentUpgrade;
+- (bool)skipDocumentUpgrade;
 - (id)supportDirectoryURL;
 
 @end

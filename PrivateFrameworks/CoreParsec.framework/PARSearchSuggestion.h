@@ -8,15 +8,15 @@
 
 @property (nonatomic, copy) NSString *fbr;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fbr;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 suggestion:(id)arg2 query:(id)arg3 score:(float)arg4 fbr:(id)arg5;
-- (id)initWithIdentifier:(id)arg1 suggestion:(id)arg2 query:(id)arg3 score:(float)arg4 type:(unsigned int)arg5;
-- (id)initWithSuggestion:(id)arg1 query:(id)arg2 score:(float)arg3 fbr:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 suggestion:(id)arg2 query:(id)arg3 score:(double)arg4 fbr:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 suggestion:(id)arg2 query:(id)arg3 score:(double)arg4 type:(unsigned long long)arg5;
+- (id)initWithSuggestion:(id)arg1 query:(id)arg2 score:(double)arg3 fbr:(id)arg4;
 - (void)setFbr:(id)arg1;
 
 @end

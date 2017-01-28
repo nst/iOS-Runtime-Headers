@@ -8,8 +8,8 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasItem;
-@property (nonatomic, readonly) BOOL hasSubKeyPath;
+@property (nonatomic, readonly) bool hasItem;
+@property (nonatomic, readonly) bool hasSubKeyPath;
 @property (nonatomic, retain) _INPBSelectionItem *item;
 @property (nonatomic, retain) NSString *subKeyPath;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasItem;
-- (BOOL)hasSubKeyPath;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasItem;
+- (bool)hasSubKeyPath;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)item;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setSubKeyPath:(id)arg1;
 - (id)subKeyPath;

@@ -4,49 +4,49 @@
 
 @interface MSCLConfiguration : NSObject <NSCopying> {
     NSArray * _allowedExternalServices;
-    BOOL  _allowsCamera;
-    BOOL  _allowsMicrophone;
+    bool  _allowsCamera;
+    bool  _allowsMicrophone;
     NSArray * _audioCategoryNames;
     SKUIMediaSocialAuthor * _authorForActiveAccount;
     NSURL * _baseTagLookupURL;
     MSCLStoreItem * _item;
-    int  _maximumNumberOfAttachments;
+    long long  _maximumNumberOfAttachments;
     double  _maximumSoundBiteDuration;
     NSArray * _potentalAuthors;
     NSArray * _suggestedTags;
 }
 
 @property (nonatomic, copy) NSArray *allowedExternalServices;
-@property (nonatomic) BOOL allowsCamera;
-@property (nonatomic) BOOL allowsMicrophone;
+@property (nonatomic) bool allowsCamera;
+@property (nonatomic) bool allowsMicrophone;
 @property (nonatomic, copy) NSArray *audioCategoryNames;
 @property (nonatomic, copy) SKUIMediaSocialAuthor *authorForActiveAccount;
 @property (nonatomic, copy) MSCLStoreItem *item;
-@property (nonatomic) int maximumNumberOfAttachments;
+@property (nonatomic) long long maximumNumberOfAttachments;
 @property (nonatomic) double maximumSoundBiteDuration;
 @property (nonatomic, copy) NSArray *potentalAuthors;
 @property (nonatomic, copy) NSArray *suggestedTags;
 
 - (void).cxx_destruct;
 - (id)allowedExternalServices;
-- (BOOL)allowsCamera;
-- (BOOL)allowsMicrophone;
+- (bool)allowsCamera;
+- (bool)allowsMicrophone;
 - (id)audioCategoryNames;
 - (id)authorForActiveAccount;
 - (id)authorsForSharing;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (id)item;
-- (int)maximumNumberOfAttachments;
+- (long long)maximumNumberOfAttachments;
 - (double)maximumSoundBiteDuration;
 - (id)potentalAuthors;
 - (void)setAllowedExternalServices:(id)arg1;
-- (void)setAllowsCamera:(BOOL)arg1;
-- (void)setAllowsMicrophone:(BOOL)arg1;
+- (void)setAllowsCamera:(bool)arg1;
+- (void)setAllowsMicrophone:(bool)arg1;
 - (void)setAudioCategoryNames:(id)arg1;
 - (void)setAuthorForActiveAccount:(id)arg1;
 - (void)setItem:(id)arg1;
-- (void)setMaximumNumberOfAttachments:(int)arg1;
+- (void)setMaximumNumberOfAttachments:(long long)arg1;
 - (void)setMaximumSoundBiteDuration:(double)arg1;
 - (void)setPotentalAuthors:(id)arg1;
 - (void)setSuggestedTags:(id)arg1;

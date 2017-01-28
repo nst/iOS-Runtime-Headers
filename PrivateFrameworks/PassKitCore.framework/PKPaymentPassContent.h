@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *transactionPushTopic;
 @property (nonatomic, copy) NSURL *transactionServiceURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appURLScheme;

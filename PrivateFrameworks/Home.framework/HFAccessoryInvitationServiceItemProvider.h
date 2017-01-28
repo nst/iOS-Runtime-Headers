@@ -9,7 +9,7 @@
 @property (nonatomic, retain) HMUser *user;
 
 - (void).cxx_destruct;
-- (id /* block */)filter;
+- (id)filter;
 - (id)initWithHome:(id)arg1 user:(id)arg2;
 - (id)invalidationReasons;
 - (void)setUser:(id)arg1;

@@ -3,12 +3,12 @@
  */
 
 @interface PXFeedbackLikeItOrNotUIViewController : UIViewController {
-    unsigned int  _feedbackCollectionType;
+    unsigned long long  _feedbackCollectionType;
 }
 
 - (void)_dislikedIt:(id)arg1;
 - (void)_likedIt:(id)arg1;
-- (id)initWithCollectionType:(unsigned int)arg1;
+- (id)initWithCollectionType:(unsigned long long)arg1;
 - (void)viewDidLoad;
 
 @end

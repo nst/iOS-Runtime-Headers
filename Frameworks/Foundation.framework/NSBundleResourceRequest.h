@@ -13,7 +13,7 @@
 @property (readonly) NSBundle *bundle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property double loadingPriority;
 @property (readonly) NSProgress *progress;
 @property (readonly) Class superclass;
@@ -27,9 +27,9 @@
 + (id)_manifestWithBundle:(id)arg1 error:(id*)arg2;
 + (void)_setConnection:(id)arg1;
 
-- (void)beginAccessingResourcesWithCompletionHandler:(id /* block */)arg1;
+- (void)beginAccessingResourcesWithCompletionHandler:(id)arg1;
 - (id)bundle;
-- (void)conditionallyBeginAccessingResourcesWithCompletionHandler:(id /* block */)arg1;
+- (void)conditionallyBeginAccessingResourcesWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (void)endAccessingResources;
 - (id)init;

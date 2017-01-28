@@ -4,33 +4,33 @@
 
 @interface _UIFeedbackEdgeBehaviorConfiguration : _UIFeedbackGeneratorUserInteractionDrivenConfiguration {
     _UIFeedback<_UIFeedbackDiscretePlayable> * _animatingMaximumExtentFeedback;
-    id /* block */  _animatingMaximumExtentFeedbackUpdateBlock;
+    id  _animatingMaximumExtentFeedbackUpdateBlock;
     _UIFeedback<_UIFeedbackDiscretePlayable> * _animatingThresholdFeedback;
-    id /* block */  _animatingThresholdFeedbackUpdateBlock;
-    int  _defaultAxis;
-    float  _minDistanceFromEdge;
+    id  _animatingThresholdFeedbackUpdateBlock;
+    long long  _defaultAxis;
+    double  _minDistanceFromEdge;
     _UIFeedback<_UIFeedbackContinuousPlayable> * _userInteractingBeyondEdgeFeedback;
-    id /* block */  _userInteractingBeyondEdgeFeedbackUpdateBlock;
+    id  _userInteractingBeyondEdgeFeedbackUpdateBlock;
     _UIFeedback<_UIFeedbackDiscretePlayable> * _userInteractingReleaseFeedback;
-    id /* block */  _userInteractingReleaseFeedbackUpdateBlock;
+    id  _userInteractingReleaseFeedbackUpdateBlock;
     _UIFeedback<_UIFeedbackDiscretePlayable> * _userInteractingThresholdFeedback;
-    id /* block */  _userInteractingThresholdFeedbackUpdateBlock;
+    id  _userInteractingThresholdFeedbackUpdateBlock;
 }
 
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *animatingMaximumExtentFeedback;
-@property (nonatomic, copy) id /* block */ animatingMaximumExtentFeedbackUpdateBlock;
+@property (nonatomic, copy) id animatingMaximumExtentFeedbackUpdateBlock;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *animatingThresholdFeedback;
-@property (nonatomic, copy) id /* block */ animatingThresholdFeedbackUpdateBlock;
-@property (getter=_defaultAxis, setter=_setDefaultAxis:, nonatomic) int defaultAxis;
-@property (nonatomic) float minDistanceFromEdge;
+@property (nonatomic, copy) id animatingThresholdFeedbackUpdateBlock;
+@property (getter=_defaultAxis, setter=_setDefaultAxis:, nonatomic) long long defaultAxis;
+@property (nonatomic) double minDistanceFromEdge;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackContinuousPlayable> *userInteractingBeyondEdgeFeedback;
-@property (nonatomic, copy) id /* block */ userInteractingBeyondEdgeFeedbackUpdateBlock;
+@property (nonatomic, copy) id userInteractingBeyondEdgeFeedbackUpdateBlock;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *userInteractingReleaseFeedback;
-@property (nonatomic, copy) id /* block */ userInteractingReleaseFeedbackUpdateBlock;
+@property (nonatomic, copy) id userInteractingReleaseFeedbackUpdateBlock;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *userInteractingThresholdFeedback;
-@property (nonatomic, copy) id /* block */ userInteractingThresholdFeedbackUpdateBlock;
+@property (nonatomic, copy) id userInteractingThresholdFeedbackUpdateBlock;
 
-+ (id)_scrollConfigurationWithAxis:(int)arg1;
++ (id)_scrollConfigurationWithAxis:(long long)arg1;
 + (id)_zoomConfiguration;
 + (id)defaultConfiguration;
 + (id)horizontalScrollConfiguration;
@@ -39,32 +39,32 @@
 + (id)verticalScrollConfiguration;
 
 - (void).cxx_destruct;
-- (int)_defaultAxis;
-- (void)_setDefaultAxis:(int)arg1;
+- (long long)_defaultAxis;
+- (void)_setDefaultAxis:(long long)arg1;
 - (id)animatingMaximumExtentFeedback;
-- (id /* block */)animatingMaximumExtentFeedbackUpdateBlock;
+- (id)animatingMaximumExtentFeedbackUpdateBlock;
 - (id)animatingThresholdFeedback;
-- (id /* block */)animatingThresholdFeedbackUpdateBlock;
+- (id)animatingThresholdFeedbackUpdateBlock;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)feedbackKeyPaths;
-- (float)minDistanceFromEdge;
-- (int)requiredSupportLevel;
+- (double)minDistanceFromEdge;
+- (long long)requiredSupportLevel;
 - (void)setAnimatingMaximumExtentFeedback:(id)arg1;
-- (void)setAnimatingMaximumExtentFeedbackUpdateBlock:(id /* block */)arg1;
+- (void)setAnimatingMaximumExtentFeedbackUpdateBlock:(id)arg1;
 - (void)setAnimatingThresholdFeedback:(id)arg1;
-- (void)setAnimatingThresholdFeedbackUpdateBlock:(id /* block */)arg1;
-- (void)setMinDistanceFromEdge:(float)arg1;
+- (void)setAnimatingThresholdFeedbackUpdateBlock:(id)arg1;
+- (void)setMinDistanceFromEdge:(double)arg1;
 - (void)setUserInteractingBeyondEdgeFeedback:(id)arg1;
-- (void)setUserInteractingBeyondEdgeFeedbackUpdateBlock:(id /* block */)arg1;
+- (void)setUserInteractingBeyondEdgeFeedbackUpdateBlock:(id)arg1;
 - (void)setUserInteractingReleaseFeedback:(id)arg1;
-- (void)setUserInteractingReleaseFeedbackUpdateBlock:(id /* block */)arg1;
+- (void)setUserInteractingReleaseFeedbackUpdateBlock:(id)arg1;
 - (void)setUserInteractingThresholdFeedback:(id)arg1;
-- (void)setUserInteractingThresholdFeedbackUpdateBlock:(id /* block */)arg1;
+- (void)setUserInteractingThresholdFeedbackUpdateBlock:(id)arg1;
 - (id)userInteractingBeyondEdgeFeedback;
-- (id /* block */)userInteractingBeyondEdgeFeedbackUpdateBlock;
+- (id)userInteractingBeyondEdgeFeedbackUpdateBlock;
 - (id)userInteractingReleaseFeedback;
-- (id /* block */)userInteractingReleaseFeedbackUpdateBlock;
+- (id)userInteractingReleaseFeedbackUpdateBlock;
 - (id)userInteractingThresholdFeedback;
-- (id /* block */)userInteractingThresholdFeedbackUpdateBlock;
+- (id)userInteractingThresholdFeedbackUpdateBlock;
 
 @end

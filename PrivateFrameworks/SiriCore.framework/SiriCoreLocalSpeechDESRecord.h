@@ -14,7 +14,7 @@
     NSArray * _locationOfInterestSpokenNames;
     NSData * _profile;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _samplingRate;
+    unsigned long long  _samplingRate;
     NSString * _task;
     NSDictionary * _userData;
 }
@@ -28,14 +28,14 @@
 @property (nonatomic, readonly, copy) NSArray *locationOfInterestNames;
 @property (nonatomic, readonly, copy) NSArray *locationOfInterestSpokenNames;
 @property (nonatomic, copy) NSData *profile;
-@property (nonatomic, readonly) unsigned int samplingRate;
+@property (nonatomic, readonly) unsigned long long samplingRate;
 @property (nonatomic, readonly, copy) NSString *task;
 @property (nonatomic, copy) NSDictionary *userData;
 
-+ (void)DeleteAllRecordsWithCompletion:(id /* block */)arg1;
-+ (void)fetchRecordWithLanguage:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)DeleteAllRecordsWithCompletion:(id)arg1;
++ (void)fetchRecordWithLanguage:(id)arg1 completionHandler:(id)arg2;
 + (id)recordsWithLanguage:(id)arg1 error:(id*)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUIDString;
@@ -47,18 +47,18 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)fetchContextualData;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLanguage:(id)arg1 task:(id)arg2 context:(id)arg3 narrowband:(BOOL)arg4;
+- (id)initWithLanguage:(id)arg1 task:(id)arg2 context:(id)arg3 narrowband:(bool)arg4;
 - (id)interactionSenderDisplayNames;
 - (id)keyboardLMDynamicVocabularyItems;
 - (id)language;
 - (id)locationOfInterestNames;
 - (id)locationOfInterestSpokenNames;
 - (id)profile;
-- (unsigned int)samplingRate;
+- (unsigned long long)samplingRate;
 - (void)setProfile:(id)arg1;
 - (void)setUserData:(id)arg1;
 - (id)task;
 - (id)userData;
-- (void)writeToFileWithCompletionHandler:(id /* block */)arg1;
+- (void)writeToFileWithCompletionHandler:(id)arg1;
 
 @end

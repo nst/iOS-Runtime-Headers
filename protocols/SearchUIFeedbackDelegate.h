@@ -5,8 +5,8 @@
 
 @optional
 
-- (void)didEngageActionItem:(SFResultEngagementFeedback *)arg1 actionPerformed:(BOOL)arg2;
+- (void)didEngageActionItem:(SFResultEngagementFeedback *)arg1 actionPerformed:(bool)arg2;
 - (void)didEngageCardSection:(SFCardSectionEngagementFeedback *)arg1;
-- (BOOL)didHandleCardSectionEngagement:(SFCardSectionEngagementFeedback *)arg1;
+- (bool)didHandleCardSectionEngagement:(SFCardSectionEngagementFeedback *)arg1;
 
 @end

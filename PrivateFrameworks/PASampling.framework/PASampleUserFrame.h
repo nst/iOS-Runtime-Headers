@@ -4,6 +4,6 @@
 
 @interface PASampleUserFrame : PASampleFrame
 
-- (BOOL)isKernel;
+- (bool)isKernel;
 
 @end

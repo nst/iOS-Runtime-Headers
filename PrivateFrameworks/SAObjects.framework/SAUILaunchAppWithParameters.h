@@ -14,7 +14,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)parameters;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAppBundleId:(id)arg1;
 - (void)setParameters:(id)arg1;
 

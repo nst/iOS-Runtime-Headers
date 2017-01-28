@@ -15,10 +15,10 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasPrevState;
-@property (nonatomic) BOOL hasPrevStateDurMs;
-@property (nonatomic) BOOL hasState;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasPrevState;
+@property (nonatomic) bool hasPrevStateDurMs;
+@property (nonatomic) bool hasState;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int prevState;
 @property (nonatomic) unsigned int prevStateDurMs;
 @property (nonatomic) int state;
@@ -28,20 +28,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPrevState;
-- (BOOL)hasPrevStateDurMs;
-- (BOOL)hasState;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPrevState;
+- (bool)hasPrevStateDurMs;
+- (bool)hasState;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)prevState;
 - (unsigned int)prevStateDurMs;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPrevState:(BOOL)arg1;
-- (void)setHasPrevStateDurMs:(BOOL)arg1;
-- (void)setHasState:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPrevState:(bool)arg1;
+- (void)setHasPrevStateDurMs:(bool)arg1;
+- (void)setHasState:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setPrevState:(int)arg1;
 - (void)setPrevStateDurMs:(unsigned int)arg1;
 - (void)setState:(int)arg1;

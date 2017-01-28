@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) ICDrawing *drawing;
 @property (nonatomic, readonly) UIImage *imageForActivityItem;
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)activityItem;
@@ -18,24 +18,24 @@
 - (id)drawing;
 - (id)drawingDocument;
 - (void)drawingPreviewIsUpToDate;
-- (BOOL)generatePreviewsDuringCloudActivity;
+- (bool)generatePreviewsDuringCloudActivity;
 - (void)generatePreviewsInOperation:(id)arg1;
-- (id /* block */)genericBrickThumbnailCreator;
-- (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
+- (id)genericBrickThumbnailCreator;
+- (id)genericListThumbnailCreator;
+- (bool)hasPreviews;
 - (struct UIImage { Class x1; }*)imageForActivityItem;
 - (id)initWithAttachment:(id)arg1;
 - (void)mergeWithMergeableData:(id)arg1;
-- (BOOL)needToGeneratePreviews;
+- (bool)needToGeneratePreviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (int)previewImageOrientation;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })previewImageOrientationTransform;
+- (long long)previewImageOrientation;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })previewImageOrientationTransform;
 - (id)previewImageURL;
 - (id)previewItemTitle;
 - (id)previewItemURL;
 - (void)saveDrawing:(id)arg1 withImage:(struct UIImage { Class x1; }*)arg2 forImageDrawing:(id)arg3;
 - (id)sharedDrawingController;
-- (BOOL)showThumbnailInNoteList;
+- (bool)showThumbnailInNoteList;
 - (void)writeMergeableData;
 
 @end

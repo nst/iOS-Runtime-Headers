@@ -3,27 +3,27 @@
  */
 
 @interface MPCReportingPlaybackObserver : NSObject {
-    BOOL  _SBEnabled;
+    bool  _SBEnabled;
     NSData * _currentJingleReportingTimedMetadata;
-    BOOL  _hasPendingContainerChange;
-    BOOL  _hasSetLastPlayEventTimeStamp;
-    BOOL  _isReloadingWithPlaybackContext;
-    BOOL  _isScrubbing;
+    bool  _hasPendingContainerChange;
+    bool  _hasSetLastPlayEventTimeStamp;
+    bool  _isReloadingWithPlaybackContext;
+    bool  _isScrubbing;
     MPAVItem * _itemForCurrentTimeChange;
     double  _lastPlayEventEndTimeForCurrentItem;
     double  _lastPlayEventTimeStamp;
-    BOOL  _offline;
+    bool  _offline;
     NSString * _playbackSessionID;
     MPAVController * _player;
     MPCReportingController * _reportingController;
-    BOOL  _shouldReportAsPlaying;
+    bool  _shouldReportAsPlaying;
     double  _startTimeForCurrentTimeChange;
     unsigned long long  _storeAccountID;
     NSString * _storeFrontID;
 }
 
-@property (getter=isSBEnabled, nonatomic) BOOL SBEnabled;
-@property (getter=isOffline, nonatomic) BOOL offline;
+@property (getter=isSBEnabled, nonatomic) bool SBEnabled;
+@property (getter=isOffline, nonatomic) bool offline;
 @property (nonatomic, readonly) MPAVController *player;
 @property (nonatomic, readonly) MPCReportingController *reportingController;
 @property (nonatomic) unsigned long long storeAccountID;
@@ -45,22 +45,22 @@
 - (void)_setLastPlayEventEndTimeForCurrentItem:(double)arg1;
 - (void)_updatePlaybackSessionID;
 - (void)dealloc;
-- (void)didHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
+- (void)didHitPlaybackTimeoutEndingPlayback:(bool)arg1 withCurrentItem:(id)arg2;
 - (void)didTransitionItemForBan:(id)arg1;
 - (id)initWithPlayer:(id)arg1 reportingController:(id)arg2;
-- (BOOL)isOffline;
-- (BOOL)isSBEnabled;
+- (bool)isOffline;
+- (bool)isSBEnabled;
 - (id)newPlayActivityEventForSource:(id)arg1;
 - (id)newReportingPlaybackActivityEventForPlayActivityEvent:(id)arg1 eventSource:(id)arg2;
 - (id)player;
 - (id)reportingController;
-- (void)setOffline:(BOOL)arg1;
-- (void)setSBEnabled:(BOOL)arg1;
+- (void)setOffline:(bool)arg1;
+- (void)setSBEnabled:(bool)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;
 - (void)setStoreFrontID:(id)arg1;
 - (unsigned long long)storeAccountID;
 - (id)storeFrontID;
-- (void)willHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
+- (void)willHitPlaybackTimeoutEndingPlayback:(bool)arg1 withCurrentItem:(id)arg2;
 - (void)willTransitionItemForBan:(id)arg1;
 
 @end

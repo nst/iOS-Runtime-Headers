@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (id)initWithTimeInterval:(double)arg1 queue:(id)arg2 block:(id /* block */)arg3 repeats:(BOOL)arg4;
+- (id)initWithTimeInterval:(double)arg1 queue:(id)arg2 block:(id)arg3 repeats:(bool)arg4;
 - (double)interval;
 - (void)invalidate;
 

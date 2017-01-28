@@ -21,9 +21,9 @@
 @property (nonatomic, readonly) NSString *br_lastEditorName;
 @property (nonatomic, readonly) NSPersonNameComponents *br_lastEditorNameComponents;
 @property (readonly) int callService;
-@property (nonatomic, readonly) BOOL ckAllowRetargeting;
-@property (nonatomic, readonly) BOOL ckShouldShowComposeUI;
-@property (nonatomic, readonly) BOOL ckShouldShowDigitalTouchCanvas;
+@property (nonatomic, readonly) bool ckAllowRetargeting;
+@property (nonatomic, readonly) bool ckShouldShowComposeUI;
+@property (nonatomic, readonly) bool ckShouldShowDigitalTouchCanvas;
 @property (nonatomic, readonly) NSArray *ckSuggestedReplies;
 @property (readonly, copy) NSData *dataRepresentation;
 @property (readonly, copy) NSString *debugDescription;
@@ -32,25 +32,25 @@
 @property (nonatomic, readonly) NSURL *downloadURL;
 @property (readonly, copy) NSURL *filePathURL;
 @property (readonly) const char *fileSystemRepresentation;
-@property (getter=isFileURL, readonly) BOOL fileURL;
-@property (readonly) BOOL forceAssist;
+@property (getter=isFileURL, readonly) bool fileURL;
+@property (readonly) bool forceAssist;
 @property (readonly, copy) NSString *fragment;
-@property (readonly) BOOL hasDirectoryPath;
-@property (readonly) unsigned int hash;
+@property (readonly) bool hasDirectoryPath;
+@property (readonly) unsigned long long hash;
 @property (readonly, copy) NSString *host;
-@property (nonatomic, readonly) BOOL isAppStoreURL;
-@property (readonly) BOOL isBasebandLogURL;
-@property (readonly) BOOL isEmergencyCallURL;
-@property (readonly) BOOL isEmergencyURL;
-@property (nonatomic, readonly) BOOL isMapURL;
-@property (nonatomic, readonly) BOOL isNewsURL;
-@property (readonly) BOOL isVoicemailURL;
-@property (nonatomic, readonly) BOOL isiTunesURL;
+@property (nonatomic, readonly) bool isAppStoreURL;
+@property (readonly) bool isBasebandLogURL;
+@property (readonly) bool isEmergencyCallURL;
+@property (readonly) bool isEmergencyURL;
+@property (nonatomic, readonly) bool isMapURL;
+@property (nonatomic, readonly) bool isNewsURL;
+@property (readonly) bool isVoicemailURL;
+@property (nonatomic, readonly) bool isiTunesURL;
 @property (readonly, copy) NSString *lastPathComponent;
 @property (setter=ls_setPreferredLocalizations:, retain) NSArray *ls_preferredLocalizations;
 @property (nonatomic, readonly) NSString *mpUniversalTrackIDBaseID;
-@property (nonatomic, readonly) int mpUniversalTrackIDType;
-@property (nonatomic, readonly) BOOL needsDownload;
+@property (nonatomic, readonly) long long mpUniversalTrackIDType;
+@property (nonatomic, readonly) bool needsDownload;
 @property (readonly) NSString *originatingUIIdentifier;
 @property (readonly, copy) NSString *parameterString;
 @property (readonly, copy) NSString *password;
@@ -67,41 +67,41 @@
 @property (readonly, copy) NSString *resourceSpecifier;
 @property (readonly, copy) NSString *scheme;
 @property (nonatomic, readonly) LSAppLink *sf_appLink;
-@property (nonatomic, readonly) BOOL sf_isOfflineReadingListURL;
-@property (nonatomic, readonly) BOOL sf_isWebSearchURL;
-@property (nonatomic, readonly) BOOL ssb_hasUserInfo;
-@property (nonatomic, readonly) BOOL ssb_isSafeURL;
+@property (nonatomic, readonly) bool sf_isOfflineReadingListURL;
+@property (nonatomic, readonly) bool sf_isWebSearchURL;
+@property (nonatomic, readonly) bool ssb_hasUserInfo;
+@property (nonatomic, readonly) bool ssb_isSafeURL;
 @property (readonly, copy) NSURL *standardizedURL;
 @property (readonly) Class superclass;
-@property (readonly) BOOL suppressAssist;
+@property (readonly) bool suppressAssist;
 @property (nonatomic, readonly) long long totalBytesExpectedToBeDownloaded;
 @property (nonatomic, readonly) NSString *tsu_UTI;
 @property (nonatomic, readonly) NSURL *uniquedURL;
 @property (readonly, copy) NSString *user;
-@property (readonly) BOOL wasAlreadyAssisted;
+@property (readonly) bool wasAlreadyAssisted;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
 + (id)__unurl;
 + (id)bookmarkDataWithContentsOfURL:(id)arg1 error:(id*)arg2;
 + (id)resourceValuesForKeys:(id)arg1 fromBookmarkData:(id)arg2;
-+ (BOOL)supportsSecureCoding;
-+ (BOOL)writeBookmarkData:(id)arg1 toURL:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
++ (bool)supportsSecureCoding;
++ (bool)writeBookmarkData:(id)arg1 toURL:(id)arg2 options:(unsigned long long)arg3 error:(id*)arg4;
 
 - (id)bookmarkDataWithAliasRecord:(id)arg1;
-- (id)bookmarkDataWithOptions:(unsigned int)arg1 includingResourceValuesForKeys:(id)arg2 relativeToURL:(id)arg3 error:(id*)arg4;
-- (BOOL)checkResourceIsReachableAndReturnError:(id*)arg1;
+- (id)bookmarkDataWithOptions:(unsigned long long)arg1 includingResourceValuesForKeys:(id)arg2 relativeToURL:(id)arg3 error:(id*)arg4;
+- (bool)checkResourceIsReachableAndReturnError:(id*)arg1;
 - (id)filePathURL;
 - (id)fileReferenceURL;
-- (BOOL)getResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
-- (BOOL)isFileReferenceURL;
+- (bool)getResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
+- (bool)isFileReferenceURL;
 - (void)removeAllCachedResourceValues;
 - (void)removeCachedResourceValueForKey:(id)arg1;
 - (id)resourceValuesForKeys:(id)arg1 error:(id*)arg2;
-- (BOOL)setResourceValue:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
-- (BOOL)setResourceValues:(id)arg1 error:(id*)arg2;
+- (bool)setResourceValue:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (bool)setResourceValues:(id)arg1 error:(id*)arg2;
 - (void)setTemporaryResourceValue:(id)arg1 forKey:(id)arg2;
-- (BOOL)startAccessingSecurityScopedResource;
+- (bool)startAccessingSecurityScopedResource;
 - (void)stopAccessingSecurityScopedResource;
 
 // Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
@@ -111,8 +111,8 @@
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
-- (BOOL)_isSafeDirectoryForDownloads:(int)arg1;
-- (BOOL)_isSafeFileForBackgroundUpload:(int)arg1;
+- (bool)_isSafeDirectoryForDownloads:(int)arg1;
+- (bool)_isSafeFileForBackgroundUpload:(int)arg1;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -121,62 +121,62 @@
 
 // Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
-- (BOOL)cs_addDocumentTracking;
-- (BOOL)cs_isInMobileDocuments;
+- (bool)cs_addDocumentTracking;
+- (bool)cs_isInMobileDocuments;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (id)URLByResolvingAliasFileAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-+ (id)URLByResolvingBookmarkData:(id)arg1 options:(unsigned int)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(BOOL*)arg4 error:(id*)arg5;
++ (id)URLByResolvingAliasFileAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
++ (id)URLByResolvingBookmarkData:(id)arg1 options:(unsigned long long)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(bool*)arg4 error:(id*)arg5;
 + (id)URLWithDataRepresentation:(id)arg1 relativeToURL:(id)arg2;
 + (id)URLWithString:(id)arg1;
 + (id)URLWithString:(id)arg1 relativeToURL:(id)arg2;
 + (id)_URLWithData:(id)arg1 relativeToURL:(id)arg2;
 + (id)_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
-+ (id)_web_URLWithComponents:(/* Warning: unhandled struct encoding: '{?=@@@@i@@@}' */ struct { id x1; id x2; int x3; id x4; id x5; })arg1;
++ (id)_web_URLWithComponents:(/* Warning: unhandled struct encoding: '{?=@@@@q@@@}' */ struct { id x1; id x2; long long x3; id x4; id x5; })arg1;
 + (id)_web_URLWithString:(id)arg1 relativeToURL:(id)arg2;
 + (id)absoluteURLWithDataRepresentation:(id)arg1 relativeToURL:(id)arg2;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)fileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)fileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(bool)arg2 relativeToURL:(id)arg3;
 + (id)fileURLWithPath:(id)arg1;
-+ (id)fileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
-+ (id)fileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
++ (id)fileURLWithPath:(id)arg1 isDirectory:(bool)arg2;
++ (id)fileURLWithPath:(id)arg1 isDirectory:(bool)arg2 relativeToURL:(id)arg3;
 + (id)fileURLWithPath:(id)arg1 relativeToURL:(id)arg2;
 + (id)fileURLWithPathComponents:(id)arg1;
 
 - (id)URLByAppendingPathComponent:(id)arg1;
-- (id)URLByAppendingPathComponent:(id)arg1 isDirectory:(BOOL)arg2;
+- (id)URLByAppendingPathComponent:(id)arg1 isDirectory:(bool)arg2;
 - (id)URLByAppendingPathExtension:(id)arg1;
 - (id)URLByDeletingLastPathComponent;
 - (id)URLByDeletingPathExtension;
 - (id)URLByResolvingSymlinksInPath;
 - (id)URLByStandardizingPath;
 - (id)_URLByEscapingSpacesAndControlChars;
-- (unsigned long)_cfTypeID;
+- (unsigned long long)_cfTypeID;
 - (struct __CFURL { }*)_cfurl;
-- (struct __CFDictionary { }*)_clientsCreatingIfNecessary:(BOOL)arg1;
+- (struct __CFDictionary { }*)_clientsCreatingIfNecessary:(bool)arg1;
 - (id)_fixedUpSideFaultError:(id)arg1;
 - (void)_freeClients;
 - (id)_hostString;
-- (BOOL)_isAbsolute;
-- (BOOL)_isDeallocating;
-- (void)_performWithPhysicalURL:(id /* block */)arg1;
+- (bool)_isAbsolute;
+- (bool)_isDeallocating;
+- (void)_performWithPhysicalURL:(id)arg1;
 - (long long)_promiseExtensionConsume;
 - (void)_promiseExtensionRelease:(long long)arg1;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (id)_valueFromFaultDictionary:(id)arg1 forKey:(id)arg2;
 - (id)_web_URLByRemovingLastPathComponent_nowarn;
 - (id)_web_URLByRemovingUserAndPath_nowarn;
 - (id)_web_URLByRemovingUserAndQueryAndFragment_nowarn;
-- (/* Warning: unhandled struct encoding: '{?=@@@@i@@@}' */ struct { id x1; id x2; int x3; id x4; id x5; })_web_URLComponents;
-- (BOOL)_web_isJavaScriptURL;
+- (/* Warning: unhandled struct encoding: '{?=@@@@q@@@}' */ struct { id x1; id x2; long long x3; id x4; id x5; })_web_URLComponents;
+- (bool)_web_isJavaScriptURL;
 - (id)_web_scriptIfJavaScriptURL;
 - (id)_web_suggestedFilenameWithMIMEType:(id)arg1;
 - (id)absoluteString;
 - (id)absoluteURL;
 - (id)baseURL;
-- (BOOL)checkPromisedItemIsReachableAndReturnError:(id*)arg1;
+- (bool)checkPromisedItemIsReachableAndReturnError:(id*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataRepresentation;
 - (void)dealloc;
@@ -184,29 +184,29 @@
 - (void)encodeWithCoder:(id)arg1;
 - (const char *)fileSystemRepresentation;
 - (id)fragment;
-- (BOOL)getFileSystemRepresentation:(char *)arg1 maxLength:(unsigned int)arg2;
-- (BOOL)getPromisedItemResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
-- (BOOL)hasDirectoryPath;
-- (unsigned int)hash;
+- (bool)getFileSystemRepresentation:(char *)arg1 maxLength:(unsigned long long)arg2;
+- (bool)getPromisedItemResourceValue:(out id*)arg1 forKey:(id)arg2 error:(out id*)arg3;
+- (bool)hasDirectoryPath;
+- (unsigned long long)hash;
 - (id)host;
 - (id)init;
 - (id)initAbsoluteURLWithDataRepresentation:(id)arg1 relativeToURL:(id)arg2;
-- (id)initByResolvingAliasFileAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (id)initByResolvingBookmarkData:(id)arg1 options:(unsigned int)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(BOOL*)arg4 error:(id*)arg5;
-- (id)initFileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
+- (id)initByResolvingAliasFileAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3;
+- (id)initByResolvingBookmarkData:(id)arg1 options:(unsigned long long)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(bool*)arg4 error:(id*)arg5;
+- (id)initFileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(bool)arg2 relativeToURL:(id)arg3;
 - (id)initFileURLWithPath:(id)arg1;
-- (id)initFileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2;
-- (id)initFileURLWithPath:(id)arg1 isDirectory:(BOOL)arg2 relativeToURL:(id)arg3;
+- (id)initFileURLWithPath:(id)arg1 isDirectory:(bool)arg2;
+- (id)initFileURLWithPath:(id)arg1 isDirectory:(bool)arg2 relativeToURL:(id)arg3;
 - (id)initFileURLWithPath:(id)arg1 relativeToURL:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDataRepresentation:(id)arg1 relativeToURL:(id)arg2;
 - (id)initWithScheme:(id)arg1 host:(id)arg2 path:(id)arg3;
 - (id)initWithString:(id)arg1;
 - (id)initWithString:(id)arg1 relativeToURL:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isFileURL;
-- (BOOL)isKindOfClass:(Class)arg1;
-- (BOOL)isMemberOfClass:(Class)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isFileURL;
+- (bool)isKindOfClass:(Class)arg1;
+- (bool)isMemberOfClass:(Class)arg1;
 - (id)lastPathComponent;
 - (id)parameterString;
 - (id)password;
@@ -221,27 +221,27 @@
 - (oneway void)release;
 - (id)resourceSpecifier;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (id)scheme;
 - (id)standardizedURL;
 - (id)user;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-- (int)_mpUTITypeFromMRUTIType:(unsigned int)arg1;
+- (long long)_mpUTITypeFromMRUTIType:(unsigned int)arg1;
 - (id)mpUniversalTrackIDBaseID;
-- (int)mpUniversalTrackIDType;
+- (long long)mpUniversalTrackIDType;
 
 // Image: /System/Library/Frameworks/Messages.framework/Messages
 
 - (id)__ms_UTI;
-- (BOOL)__ms_conformsToUTI:(id)arg1;
+- (bool)__ms_conformsToUTI:(id)arg1;
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
 - (id)LS_nooverride:(id)arg1;
-- (BOOL)LS_pathHasCaseInsensitivePrefix:(id)arg1;
-- (BOOL)conformsToOverridePatternWithKey:(id)arg1;
+- (bool)LS_pathHasCaseInsensitivePrefix:(id)arg1;
+- (bool)conformsToOverridePatternWithKey:(id)arg1;
 - (id)fmfURL;
 - (id)fmipURL;
 - (id)iCloudEmailPrefsURL;
@@ -250,7 +250,7 @@
 - (id)iTunesStoreURL;
 - (id)iWorkApplicationName;
 - (id)iWorkDocumentName;
-- (BOOL)isiWorkURL;
+- (bool)isiWorkURL;
 - (id)keynoteLiveURL;
 - (id)keynoteLiveURL_noFragment;
 - (id)ls_preferredLocalizations;
@@ -270,8 +270,8 @@
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 
 - (id)sf_appLink;
-- (BOOL)sf_isOfflineReadingListURL;
-- (BOOL)sf_isWebSearchURL;
+- (bool)sf_isOfflineReadingListURL;
+- (bool)sf_isWebSearchURL;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
@@ -296,12 +296,12 @@
 + (id)URLForFacebookGraphAPIWithPath:(id)arg1;
 + (id)URLForFacebookPageAtPath:(id)arg1;
 + (id)URLForFacebookRESTMethod:(id)arg1;
-+ (BOOL)_isBetaSwitchEnabledForKey:(struct __CFString { }*)arg1;
++ (bool)_isBetaSwitchEnabledForKey:(struct __CFString { }*)arg1;
 
-- (BOOL)isAppStoreURL;
-- (BOOL)isAssetURL;
-- (BOOL)isMusicStoreURL;
-- (BOOL)loadingInUIWebViewWillLaunchAnotherApp;
+- (bool)isAppStoreURL;
+- (bool)isAssetURL;
+- (bool)isMusicStoreURL;
+- (bool)loadingInUIWebViewWillLaunchAnotherApp;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -310,36 +310,36 @@
 + (id)mapsURLWithSourceAddress:(id)arg1 destinationAddress:(id)arg2;
 + (id)ui_URLFromExportBookmark:(id)arg1;
 + (id)ui_cloudDocsContainerURL;
-+ (id)ui_incomingDirectory:(BOOL)arg1;
++ (id)ui_incomingDirectory:(bool)arg1;
 
 - (void)_domain:(id*)arg1 subdomain:(id*)arg2;
-- (BOOL)_isGoogleMapsDomain:(id)arg1 subdomain:(id)arg2 path:(id)arg3 queryKeysAndValues:(id)arg4;
+- (bool)_isGoogleMapsDomain:(id)arg1 subdomain:(id)arg2 path:(id)arg3 queryKeysAndValues:(id)arg4;
 - (id)appleStoreURL;
-- (BOOL)isAccountURL;
-- (BOOL)isGoogleMapsURL;
-- (BOOL)isHTTPOrHTTPSURL;
-- (BOOL)isInternalUIKitURL;
-- (BOOL)isJavaScriptURL;
-- (BOOL)isSpringboardHandledURL;
-- (BOOL)isWebcalURL;
+- (bool)isAccountURL;
+- (bool)isGoogleMapsURL;
+- (bool)isHTTPOrHTTPSURL;
+- (bool)isInternalUIKitURL;
+- (bool)isJavaScriptURL;
+- (bool)isSpringboardHandledURL;
+- (bool)isWebcalURL;
 - (id)itmsURL;
 - (id)phobosURL;
 - (id)radarWebURL;
 - (id)searchResultDomain;
 - (id)searchResultIdentifier;
 - (id)ui_bookmarkForExportWithError:(id*)arg1;
-- (BOOL)ui_canOpenInPlace;
+- (bool)ui_canOpenInPlace;
 - (id)ui_downloadOperationForActivity:(id)arg1;
-- (BOOL)ui_hasReadSandboxExtended;
-- (BOOL)ui_hasSandboxExtendedForClass:(const char *)arg1;
-- (BOOL)ui_isFileProviderURL;
-- (BOOL)ui_isUnfulfilledPromiseURL;
+- (bool)ui_hasReadSandboxExtended;
+- (bool)ui_hasSandboxExtendedForClass:(const char *)arg1;
+- (bool)ui_isFileProviderURL;
+- (bool)ui_isUnfulfilledPromiseURL;
 - (id)ui_issueReadSandboxExtensionWithError:(id*)arg1;
 - (id)ui_issueReadWriteSandboxExtensionWithError:(id*)arg1;
 - (id)ui_issueSandboxExtensionOfClass:(const char *)arg1 error:(id*)arg2;
 - (id)ui_resolveOnDiskBookmarkAndPromise;
 - (void)ui_scheduleForCleanup;
-- (void)ui_setIsFileProviderURL:(BOOL)arg1;
+- (void)ui_setIsFileProviderURL:(bool)arg1;
 
 // Image: /System/Library/Frameworks/UserNotifications.framework/UserNotifications
 
@@ -358,16 +358,16 @@
 + (id)_af_URLWithMessageIdentifier:(id)arg1;
 
 - (id)_af_messageIdentifierValue;
-- (BOOL)isAMOSCommittedIdentifier;
-- (BOOL)isAMOSIdentifier;
+- (bool)isAMOSCommittedIdentifier;
+- (bool)isAMOSIdentifier;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (BOOL)afui_hasMapItemScheme;
+- (bool)afui_hasMapItemScheme;
 
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
 
-- (BOOL)MD5:(unsigned char)arg1;
+- (bool)MD5:(unsigned char)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
 
@@ -381,10 +381,10 @@
 - (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
 - (id)URLWithoutPassword;
 - (id)URLWithoutUsername;
-- (BOOL)absoluteURLisEqual:(id)arg1;
+- (bool)absoluteURLisEqual:(id)arg1;
 - (id)initWithDirtyString:(id)arg1;
 - (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 path:(id)arg4;
-- (BOOL)isEqualToURL:(id)arg1;
+- (bool)isEqualToURL:(id)arg1;
 - (id)pathWithoutDecodingAndRemovingTrailingSlash;
 - (id)pathWithoutTrailingRemovingSlash;
 - (id)queryParameters;
@@ -398,14 +398,14 @@
 + (id)davCompatibleFilenameForFilename:(id)arg1;
 
 - (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
-- (BOOL)compareToLocalString:(id)arg1;
-- (BOOL)compareToLocalURL:(id)arg1;
+- (bool)compareToLocalString:(id)arg1;
+- (bool)compareToLocalURL:(id)arg1;
 - (id)hostWithoutWWW;
 - (id)initWithCalDirtyString:(id)arg1;
 - (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 path:(id)arg4;
-- (BOOL)isEqualToURL:(id)arg1;
-- (BOOL)isEqualToURLIgnoringScheme:(id)arg1;
-- (BOOL)isOnRemoteFileSystem;
+- (bool)isEqualToURL:(id)arg1;
+- (bool)isEqualToURLIgnoringScheme:(id)arg1;
+- (bool)isOnRemoteFileSystem;
 - (id)pathDecodedAndWithoutTrailingSlashRemoved;
 - (id)pathWithoutTrailingRemovingSlash;
 - (id)queryParameters;
@@ -416,72 +416,75 @@
 
 - (id)_caseSensitiveQueryKeysAndValues;
 - (id)configurationRequest;
-- (BOOL)isConfigurationURL;
+- (bool)isConfigurationURL;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 + (id)ckURLForChatIdentifier:(id)arg1 entryBody:(id)arg2;
 + (id)ckURLForResource:(id)arg1 withExtension:(id)arg2;
 
-- (BOOL)ckAllowRetargeting;
-- (BOOL)ckShouldShowComposeUI;
-- (BOOL)ckShouldShowDigitalTouchCanvas;
+- (bool)ckAllowRetargeting;
+- (bool)ckShouldShowComposeUI;
+- (bool)ckShouldShowDigitalTouchCanvas;
 - (id)ckSuggestedReplies;
 - (id)ckWillNotLaunchComposeUIURL;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
-+ (void)br_containerIDsWithExternalReferencesTo:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (void)br_documentURLFromBookmarkableString:(id)arg1 completion:(id /* block */)arg2;
++ (void)br_containerIDsWithExternalReferencesTo:(id)arg1 completionHandler:(id)arg2;
++ (void)br_documentURLFromBookmarkableString:(id)arg1 completion:(id)arg2;
 + (id)brc_fileURLWithFileDescriptor:(int)arg1;
-+ (id)brc_fileURLWithVolumeDeviceID:(id)arg1 fileID:(id)arg2 isDirectory:(BOOL)arg3;
++ (id)brc_fileURLWithVolumeDeviceID:(id)arg1 fileID:(id)arg2 isDirectory:(bool)arg3;
 
-- (BOOL)_br_isInSyncedLocationStrictly:(BOOL)arg1;
+- (bool)_br_isInSyncedLocationStrictly:(bool)arg1;
 - (id)br_URLByResolvingExternalDocumentReferenceWithError:(id*)arg1;
+- (id)br_URLByResolvingInProcessExternalDocumentReferenceWithProperties:(id)arg1;
 - (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 error:(id*)arg3;
 - (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 lastEditorUserName:(id)arg3 error:(id*)arg4;
 - (void)br_addPhysicalProperty;
-- (void)br_bookmarkableStringForRemoteOpeningAppWithBundleID:(id)arg1 completion:(id /* block */)arg2;
-- (void)br_bookmarkableStringWithEtag:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)br_bookmarkableStringForRemoteOpeningAppWithBundleID:(id)arg1 completion:(id)arg2;
+- (void)br_bookmarkableStringWithEtag:(bool)arg1 completion:(id)arg2;
 - (id)br_cloudDocsContainer;
+- (id)br_cloudDocsContainerWithResolveInnerSharedContainerID:(bool)arg1;
 - (id)br_containerID;
 - (id)br_containerIDIfIsDesktopOrDocumentsURL;
 - (id)br_containerIDIfIsDocumentsContainerURL;
-- (id)br_containerIDWithResolveInnerSharedContainerID:(BOOL)arg1;
-- (void)br_containerIDsWithExternalReferencesWithHandler:(id /* block */)arg1;
+- (id)br_containerIDWithResolveInnerSharedContainerID:(bool)arg1;
+- (void)br_containerIDsWithExternalReferencesWithHandler:(id)arg1;
 - (id)br_debugDescription;
-- (BOOL)br_getTagNames:(id*)arg1 error:(id*)arg2;
-- (void)br_isConflictedWithHandler:(id /* block */)arg1;
-- (BOOL)br_isDocumentsContainer;
-- (BOOL)br_isExternalDocumentReference;
-- (BOOL)br_isInCloudDocsPrivateStorages;
-- (BOOL)br_isInCloudDocsPrivateStoragesForRemoteDocumentVersions;
-- (BOOL)br_isInLocalHomeDirectory;
-- (BOOL)br_isInMobileDocuments;
-- (BOOL)br_isInSharedDocsContainer;
-- (BOOL)br_isInSyncedDesktop;
-- (BOOL)br_isInSyncedDocuments;
-- (BOOL)br_isInSyncedLocation;
-- (BOOL)br_isInTrash;
-- (BOOL)br_isParentOfURL:(id)arg1;
-- (BOOL)br_isParentOfURL:(id)arg1 strictly:(BOOL)arg2;
-- (BOOL)br_isStrictlyInSyncedLocation;
+- (id)br_externalDocumentPropertiesWithError:(id*)arg1;
+- (bool)br_getTagNames:(id*)arg1 error:(id*)arg2;
+- (void)br_isConflictedWithHandler:(id)arg1;
+- (bool)br_isDocumentsContainer;
+- (bool)br_isExternalDocumentReference;
+- (bool)br_isInCloudDocsPrivateStorages;
+- (bool)br_isInCloudDocsPrivateStoragesForRemoteDocumentVersions;
+- (bool)br_isInLocalHomeDirectory;
+- (bool)br_isInMobileDocuments;
+- (bool)br_isInSharedDocsContainer;
+- (bool)br_isInSyncedDesktop;
+- (bool)br_isInSyncedDocuments;
+- (bool)br_isInSyncedLocation;
+- (bool)br_isInTrash;
+- (bool)br_isParentOfURL:(id)arg1;
+- (bool)br_isParentOfURL:(id)arg1 strictly:(bool)arg2;
+- (bool)br_isStrictlyInSyncedLocation;
 - (id)br_itemID;
 - (id)br_lastEditorDeviceName;
 - (id)br_lastEditorName;
 - (id)br_lastEditorNameComponents;
 - (id)br_logicalURL;
-- (BOOL)br_mightBeBRAlias;
+- (bool)br_mightBeBRAlias;
 - (id)br_pathRelativeToMobileDocuments;
 - (id)br_pathRelativeToSyncedRootURL:(id)arg1;
 - (id)br_pathRelativeToSyncedRootURLForContainerID:(id)arg1;
 - (id)br_physicalURL;
 - (void)br_preCacheBookmarkData:(id)arg1 versionEtag:(id)arg2;
 - (id)br_realpathURL;
-- (BOOL)br_setAccessTime:(unsigned long long)arg1 error:(id*)arg2;
-- (BOOL)br_setTagNames:(id)arg1 error:(id*)arg2;
+- (bool)br_setAccessTime:(unsigned long long)arg1 error:(id*)arg2;
+- (bool)br_setTagNames:(id)arg1 error:(id*)arg2;
 - (id)br_typeIdentifierWithError:(id*)arg1;
-- (BOOL)br_wouldBeExcludedFromSync;
+- (bool)br_wouldBeExcludedFromSync;
 - (id)brc_issueSandboxExtensionOfClass:(const char *)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
@@ -514,12 +517,12 @@
 
 // Image: /System/Library/PrivateFrameworks/Conference.framework/Conference
 
-- (BOOL)_isPhoneNumberID:(id)arg1;
+- (bool)_isPhoneNumberID:(id)arg1;
 - (id)formattedFaceTimeDestinationAccount;
 
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 
-+ (id)_cnui_dialRequestURLWithDestinationID:(id)arg1 contact:(id)arg2 faceTime:(BOOL)arg3 video:(BOOL)arg4 ttyType:(int)arg5;
++ (id)_cnui_dialRequestURLWithDestinationID:(id)arg1 contact:(id)arg2 faceTime:(bool)arg3 video:(bool)arg4 ttyType:(long long)arg5;
 + (id)_cnui_faceTimeAudioURLFutureWithDestinationID:(id)arg1 contact:(id)arg2;
 + (id)_cnui_faceTimeAudioURLWithDestinationID:(id)arg1 contact:(id)arg2;
 + (id)_cnui_faceTimeVideoURLFutureWithDestinationID:(id)arg1 contact:(id)arg2;
@@ -548,18 +551,18 @@
 + (id)CDVURLWithScheme:(id)arg1 user:(id)arg2 password:(id)arg3 host:(id)arg4 port:(id)arg5 path:(id)arg6;
 
 - (id)CDVFileSystemSafePath;
-- (BOOL)CDVIsEqualToURL:(id)arg1;
-- (BOOL)CDVIsSafeRedirectForRequestURL:(id)arg1;
+- (bool)CDVIsEqualToURL:(id)arg1;
+- (bool)CDVIsSafeRedirectForRequestURL:(id)arg1;
 - (id)CDVPassword;
 - (id)CDVRawLastPathComponent;
 - (id)CDVRawLastPathComponentPreservingEscapes;
 - (id)CDVRawPath;
 - (id)CDVServerURL;
-- (id)CDVServerURLWithPath:(BOOL)arg1;
+- (id)CDVServerURLWithPath:(bool)arg1;
 - (id)CDVURLByDeletingLastPathComponent;
 - (id)CDVURLWithPassword:(id)arg1;
 - (id)CDVURLWithPath:(id)arg1;
-- (id)CDVURLWithScheme:(id)arg1 userandpass:(id)arg2 host:(id)arg3 port:(id)arg4 path:(id)arg5 parameters:(id)arg6 encodePercents:(BOOL)arg7;
+- (id)CDVURLWithScheme:(id)arg1 userandpass:(id)arg2 host:(id)arg3 port:(id)arg4 path:(id)arg5 parameters:(id)arg6 encodePercents:(bool)arg7;
 - (id)CDVURLWithUser:(id)arg1;
 - (id)CDVfixedURLByAppendingPathComponent:(id)arg1;
 - (id)initWithCDVScheme:(id)arg1 user:(id)arg2 password:(id)arg3 host:(id)arg4 port:(id)arg5 path:(id)arg6 parameterString:(id)arg7 query:(id)arg8 fragment:(id)arg9;
@@ -579,19 +582,19 @@
 - (id)URLWithUsername:(id)arg1;
 - (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
 - (id)URLWithoutUsername;
-- (BOOL)da_isEqualToDAVURL:(id)arg1;
+- (bool)da_isEqualToDAVURL:(id)arg1;
 - (id)da_leastInfoStringRepresentationRelativeToParentURL:(id)arg1;
 - (id)da_pathWithoutTrailingRemovingSlash;
 - (id)da_rawPath;
 - (id)da_urlByRemovingUsername;
 - (id)da_urlBySettingHost:(id)arg1;
-- (id)da_urlBySettingHost:(id)arg1 keepUsername:(BOOL)arg2;
+- (id)da_urlBySettingHost:(id)arg1 keepUsername:(bool)arg2;
 - (id)da_urlBySettingPath:(id)arg1;
-- (id)da_urlBySettingPath:(id)arg1 keepUsername:(BOOL)arg2;
+- (id)da_urlBySettingPath:(id)arg1 keepUsername:(bool)arg2;
 - (id)da_urlBySettingPort:(id)arg1;
-- (id)da_urlBySettingPort:(id)arg1 keepUsername:(BOOL)arg2;
+- (id)da_urlBySettingPort:(id)arg1 keepUsername:(bool)arg2;
 - (id)da_urlBySettingScheme:(id)arg1;
-- (id)da_urlBySettingScheme:(id)arg1 keepUsername:(BOOL)arg2;
+- (id)da_urlBySettingScheme:(id)arg1 keepUsername:(bool)arg2;
 - (id)da_urlBySettingUsername:(id)arg1;
 - (id)uri;
 
@@ -609,8 +612,8 @@
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
-- (BOOL)_gkIsSecure;
-- (BOOL)_gkIsValidServerURL;
+- (bool)_gkIsSecure;
+- (bool)_gkIsValidServerURL;
 - (id)_gkQueryDictionary;
 - (id)_gkURLByAddingQueryParameters:(id)arg1;
 - (id)_gkURLByReplacingSchemeWithScheme:(id)arg1;
@@ -634,18 +637,51 @@
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
 + (id)_lp_URLWithData:(id)arg1 baseURL:(id)arg2;
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })_lp_hostAndPortRangeFromUserTypedString:(id)arg1;
++ (struct _NSRange { unsigned long long x1; unsigned long long x2; })_lp_hostAndPortRangeFromUserTypedString:(id)arg1;
 
 - (id)_lp_fullySimplifiedUserVisibleURLString;
-- (BOOL)_lp_isHTTPFamilyURL;
+- (bool)_lp_isHTTPFamilyURL;
 - (id)_lp_originalData;
 - (id)_lp_userVisibleString;
+
+// Image: /System/Library/PrivateFrameworks/Memories.framework/Memories
+
++ (id)generateImportedKenBurnsIdentifierURL;
++ (id)generateRecordedKenBurnsIdentifierURL;
++ (id)localIdentifierURLForAsset:(id)arg1;
++ (id)localIdentifierURLForAssetRepresentation:(id)arg1;
++ (id)perThreadPhotosQueryDateFormatter;
++ (id)photosIdentifierURLWithQuery:(id)arg1;
++ (id)pluginEditedAssetURL;
+
+- (bool)isAdjustedVersion;
+- (bool)isAssetsLibraryPersistentURL;
+- (bool)isImported;
+- (bool)isKenBurnsFileURL;
+- (bool)isKenBurnsIdentifierURL;
+- (bool)isMediaPlayerPersistentURL;
+- (bool)isPhotoKitCompatibleIdentifierURL;
+- (bool)isPhotosIdentifierURL;
+- (bool)isPluginEditedAssetURL;
+- (bool)isRecorded;
+- (bool)isSFXorThemeMusicURL;
+- (bool)isSharedMediaURL;
+- (id)kenBurnsIdentifier;
+- (id)localIdentifier;
+- (id)localIdentifierURLByRemovingModificationDate;
+- (id)localIdentifierURLWithModificationDate:(id)arg1;
+- (long long)mediaType;
+- (id)modificationDate;
+- (id)modificationDateString;
+- (id)shortQuery;
+- (id)standardizedQuery;
+- (id)valueForQueryKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
 - (id)mf_firstPartNumber;
-- (BOOL)mf_isResourceURL;
-- (BOOL)mf_isValidAttachmentURL;
+- (bool)mf_isResourceURL;
+- (bool)mf_isValidAttachmentURL;
 - (id)mf_lastPartNumber;
 - (id)mf_partNumbers;
 - (unsigned int)mf_rowID;
@@ -657,15 +693,15 @@
 + (id)fc_urlForUserDomainDocumentsDirectory;
 + (id)fc_urlForUserDomainLibraryDirectory;
 
-- (BOOL)fc_isResourceURL;
+- (bool)fc_isResourceURL;
 - (id)fc_resourceID;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (BOOL)isAppStoreURL;
-- (BOOL)isMapURL;
-- (BOOL)isNewsURL;
-- (BOOL)isiTunesURL;
+- (bool)isAppStoreURL;
+- (bool)isMapURL;
+- (bool)isNewsURL;
+- (bool)isiTunesURL;
 - (id)queryComponents;
 - (id)uniquedURL;
 
@@ -678,42 +714,42 @@
 + (id)sfu_relativeURLWithEscapes:(id)arg1;
 
 - (id)initWithPackagePart:(id)arg1;
-- (BOOL)isInternalToPackage;
-- (BOOL)sfu_isRelative;
+- (bool)isInternalToPackage;
+- (bool)sfu_isRelative;
 - (id)tsu_UTI;
-- (BOOL)tsu_conformsToUTI:(id)arg1;
+- (bool)tsu_conformsToUTI:(id)arg1;
 - (id)tsu_displayName;
 - (id)tsu_documentIdentifier;
 - (unsigned long long)tsu_fileSize;
-- (BOOL)tsu_isFileSizeTooLargeForSharing;
-- (BOOL)tsu_isShared;
-- (BOOL)tsu_isSharedWithMe;
-- (void)tsu_performSecurityScopedResourceAccessAsynchronouslyUsingBlock:(id /* block */)arg1;
-- (void)tsu_performSecurityScopedResourceAccessUsingBlock:(id /* block */)arg1;
+- (bool)tsu_isFileSizeTooLargeForSharing;
+- (bool)tsu_isShared;
+- (bool)tsu_isSharedWithMe;
+- (void)tsu_performSecurityScopedResourceAccessAsynchronouslyUsingBlock:(id)arg1;
+- (void)tsu_performSecurityScopedResourceAccessUsingBlock:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
-- (BOOL)isAppleURL;
+- (bool)isAppleURL;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
-+ (id)userCachesDirectoryURL:(BOOL)arg1;
++ (id)userCachesDirectoryURL:(bool)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/SafariSafeBrowsing
 
-- (BOOL)ssb_hasUserInfo;
-- (BOOL)ssb_isSafeURL;
+- (bool)ssb_hasUserInfo;
+- (bool)ssb_isSafeURL;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 + (id)safari_URLWithDataAsString:(id)arg1;
 + (id)safari_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
 + (id)safari_URLWithUserTypedString:(id)arg1;
-+ (void)safari_enumeratePossibleURLsForUserTypedString:(id)arg1 withBlock:(id /* block */)arg2;
-+ (struct _NSRange { unsigned int x1; unsigned int x2; })safari_hostAndPortRangeFromUserTypedString:(id)arg1;
++ (void)safari_enumeratePossibleURLsForUserTypedString:(id)arg1 withBlock:(id)arg2;
++ (struct _NSRange { unsigned long long x1; unsigned long long x2; })safari_hostAndPortRangeFromUserTypedString:(id)arg1;
 
-- (id)_safari_URLByReplacingComponent:(long)arg1 includingSeparators:(BOOL)arg2 withString:(id)arg3;
-- (id)_safari_URLByReplacingComponent:(long)arg1 withString:(id)arg2;
+- (id)_safari_URLByReplacingComponent:(long long)arg1 includingSeparators:(bool)arg2 withString:(id)arg3;
+- (id)_safari_URLByReplacingComponent:(long long)arg1 withString:(id)arg2;
 - (id)safari_URLByDeletingPort;
 - (id)safari_URLByDeletingScheme;
 - (id)safari_URLByReplacingHostWithString:(id)arg1;
@@ -721,11 +757,11 @@
 - (id)safari_URLByReplacingSchemeWithString:(id)arg1;
 - (id)safari_canonicalURL;
 - (id)safari_displayNameWithTitle:(id)arg1;
-- (BOOL)safari_hasCharactersBeyondPath;
-- (BOOL)safari_hasSameOriginAsURL:(id)arg1;
-- (BOOL)safari_hasScheme:(id)arg1;
-- (BOOL)safari_isDataURL;
-- (BOOL)safari_isHTTPFamilyURL;
+- (bool)safari_hasCharactersBeyondPath;
+- (bool)safari_hasSameOriginAsURL:(id)arg1;
+- (bool)safari_hasScheme:(id)arg1;
+- (bool)safari_isDataURL;
+- (bool)safari_isHTTPFamilyURL;
 - (id)safari_originalDataAsString;
 - (id)safari_path;
 - (id)safari_userVisibleHost;
@@ -740,30 +776,30 @@
 // Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
 
 - (id)URLByReallyResolvingSymlinksInPath;
-- (BOOL)sd_containsOrIsItemAtURL:(id)arg1 error:(id*)arg2;
-- (BOOL)sd_strictlyContainsItemAtURL:(id)arg1 error:(id*)arg2;
+- (bool)sd_containsOrIsItemAtURL:(id)arg1 error:(id*)arg2;
+- (bool)sd_strictlyContainsItemAtURL:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
 + (id)_contentModificationDate:(id)arg1;
 + (id)_displayName:(id)arg1;
-+ (BOOL)_hasUnresolvedConflict:(id)arg1;
-+ (BOOL)_isDownloaded:(id)arg1;
-+ (BOOL)_isDownloading:(id)arg1;
-+ (BOOL)_isInCloud:(id)arg1;
-+ (BOOL)_isUploaded:(id)arg1;
-+ (BOOL)_isUploading:(id)arg1;
-+ (int)isHostnameReachable:(id)arg1;
++ (bool)_hasUnresolvedConflict:(id)arg1;
++ (bool)_isDownloaded:(id)arg1;
++ (bool)_isDownloading:(id)arg1;
++ (bool)_isInCloud:(id)arg1;
++ (bool)_isUploaded:(id)arg1;
++ (bool)_isUploading:(id)arg1;
++ (long long)isHostnameReachable:(id)arg1;
 + (id)parseURLParams:(id)arg1;
 
 - (id)contentModificationDate;
 - (id)displayName;
-- (BOOL)hasUnresolvedConflict;
-- (BOOL)isDownloaded;
-- (BOOL)isDownloading;
-- (BOOL)isInCloud;
-- (BOOL)isUploaded;
-- (BOOL)isUploading;
+- (bool)hasUnresolvedConflict;
+- (bool)isDownloaded;
+- (bool)isDownloading;
+- (bool)isInCloud;
+- (bool)isUploaded;
+- (bool)isUploading;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
 
@@ -773,77 +809,104 @@
 
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isStoreServicesURL;
+- (bool)isStoreServicesURL;
 
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+// Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
 
-- (id)initWithFileReferenceLiteral:(id)arg1;
++ (bool)canHandleDownloadTask:(id)arg1;
++ (void)downloadManager:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
++ (void)downloadManager:(id)arg1 task:(id)arg2 didFinishDownloadingToURL:(id)arg3;
++ (id)filePathURLWithEscapes:(id)arg1;
++ (id)improperlyEscapedString:(id)arg1;
++ (id)properlyEscapedString:(id)arg1;
++ (id)relativeURLWithEscapes:(id)arg1;
+
+- (id)downloadTaskDescription;
+- (id)downloadURL;
+- (bool)isRelative;
+- (long long)totalBytesExpectedToBeDownloaded;
+- (id)tsu_UTI;
+- (bool)tsu_conformsToUTI:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (long long)tv_imageURLType;
+- (bool)tv_isAppIconURL;
+- (bool)tv_isResourceURL;
+- (id)tv_resourceName;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
++ (id)launchQueryForValue:(id)arg1;
++ (id)tp_inCallServiceURLWithReason:(long long)arg1;
+
+- (bool)tp_isInCallServiceURLWithReason:(long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
 + (id)URLWithTelephoneNumber:(id)arg1;
 + (id)URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2;
-+ (id)URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
-+ (id)URLWithTelephoneNumber:(id)arg1 promptUser:(BOOL)arg2;
++ (id)URLWithTelephoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(bool)arg3 suppressAssist:(bool)arg4 wasAssisted:(bool)arg5;
++ (id)URLWithTelephoneNumber:(id)arg1 promptUser:(bool)arg2;
 + (id)_applyFaceTimeScheme:(id)arg1 toFaceTimeURL:(id)arg2;
-+ (id)_faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3;
++ (id)_faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(bool)arg3;
 + (id)faceTimeLaunchForIncomingCallURL;
 + (id)faceTimePromptURLWithURL:(id)arg1;
 + (id)faceTimeShowInCallUIURL;
 + (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1;
-+ (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1 showPrompt:(BOOL)arg2;
++ (id)faceTimeTelephonyURLWithPhoneNumber:(id)arg1 showPrompt:(bool)arg2;
 + (id)faceTimeURLWithDestinationID:(id)arg1;
 + (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2;
-+ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3;
-+ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5 audioOnly:(BOOL)arg6;
-+ (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 audioOnly:(BOOL)arg3 forceAssist:(BOOL)arg4 suppressAssist:(BOOL)arg5 wasAssisted:(BOOL)arg6;
-+ (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
++ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 audioOnly:(bool)arg3;
++ (id)faceTimeURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 forceAssist:(bool)arg3 suppressAssist:(bool)arg4 wasAssisted:(bool)arg5 audioOnly:(bool)arg6;
++ (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 audioOnly:(bool)arg3 forceAssist:(bool)arg4 suppressAssist:(bool)arg5 wasAssisted:(bool)arg6;
++ (id)faceTimeURLWithPhoneNumber:(id)arg1 addressBookUID:(int)arg2 forceAssist:(bool)arg3 suppressAssist:(bool)arg4 wasAssisted:(bool)arg5;
 + (id)faceTimeURLWithURL:(id)arg1;
 + (id)telephonyURLForTelEmergencyCall;
 + (id)telephonyURLForVoicemail;
 + (id)telephonyURLWithDestinationID:(id)arg1;
 + (id)telephonyURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2;
-+ (id)telephonyURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 forceAssist:(BOOL)arg3 suppressAssist:(BOOL)arg4 wasAssisted:(BOOL)arg5;
-+ (id)telephonyURLWithDestinationID:(id)arg1 promptUser:(BOOL)arg2;
++ (id)telephonyURLWithDestinationID:(id)arg1 addressBookUID:(int)arg2 forceAssist:(bool)arg3 suppressAssist:(bool)arg4 wasAssisted:(bool)arg5;
++ (id)telephonyURLWithDestinationID:(id)arg1 promptUser:(bool)arg2;
 
 - (id)URLByDeletingQueryParameterWithKey:(id)arg1;
 - (id)URLBySettingQueryParameterValue:(id)arg1 forKey:(id)arg2;
 - (id)URLWithNewQueryParameterDictionary:(id)arg1;
-- (id)_destinationIDConvertingNumbersToLatin:(BOOL)arg1;
-- (BOOL)_dialAssistBooleanQueryParameterValueForKey:(id)arg1;
-- (BOOL)_hasScheme:(id)arg1;
-- (BOOL)_isPhoneNumberID:(id)arg1;
+- (id)_destinationIDConvertingNumbersToLatin:(bool)arg1;
+- (bool)_dialAssistBooleanQueryParameterValueForKey:(id)arg1;
+- (bool)_hasScheme:(id)arg1;
+- (bool)_isPhoneNumberID:(id)arg1;
 - (id)_mobilePhonePathParameters;
 - (id)_mobilePhoneQueryParameters;
 - (int)addressBookUID;
 - (int)callService;
 - (id)faceTimeDestinationAccount;
-- (BOOL)forceAssist;
+- (bool)forceAssist;
 - (id)formattedPhoneNumber;
-- (BOOL)hasNoPromptOption;
-- (BOOL)hasTelephonyScheme;
-- (BOOL)isBasebandLogURL;
-- (BOOL)isDialCallURL;
-- (BOOL)isEmergencyCallURL;
-- (BOOL)isEmergencyURL;
-- (BOOL)isFaceTimeAudioPromptURL;
-- (BOOL)isFaceTimeAudioURL;
-- (BOOL)isFaceTimePromptURL;
-- (BOOL)isFaceTimeURL;
-- (BOOL)isLaunchForIncomingCallURL;
-- (BOOL)isShowInCallUIURL;
-- (BOOL)isTelephonyPromptURL;
-- (BOOL)isTelephonyURL;
-- (BOOL)isVoicemailURL;
-- (BOOL)isWebSafeTelephoneURL;
+- (bool)hasNoPromptOption;
+- (bool)hasTelephonyScheme;
+- (bool)isBasebandLogURL;
+- (bool)isDialCallURL;
+- (bool)isEmergencyCallURL;
+- (bool)isEmergencyURL;
+- (bool)isFaceTimeAudioPromptURL;
+- (bool)isFaceTimeAudioURL;
+- (bool)isFaceTimePromptURL;
+- (bool)isFaceTimeURL;
+- (bool)isLaunchForIncomingCallURL;
+- (bool)isShowInCallUIURL;
+- (bool)isTelephonyPromptURL;
+- (bool)isTelephonyURL;
+- (bool)isVoicemailURL;
+- (bool)isWebSafeTelephoneURL;
 - (id)numberQualifiedForAddressBook;
 - (id)originatingUIIdentifier;
 - (id)phoneNumber;
 - (id)queryParameters;
-- (BOOL)suppressAssist;
+- (bool)suppressAssist;
 - (id)telephonyParameterDictionary;
 - (id)tuQueryParameters;
-- (BOOL)wasAlreadyAssisted;
+- (bool)wasAlreadyAssisted;
 - (id)webSafeTelephoneURL;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
@@ -857,17 +920,17 @@
 
 + (id)wf_inMemoryAddress;
 
-- (BOOL)wf_URLHasParameter:(id)arg1;
+- (bool)wf_URLHasParameter:(id)arg1;
 - (id)wf_URLWithTracking:(id)arg1;
-- (BOOL)wf_isInMemoryAddress;
+- (bool)wf_isInMemoryAddress;
 
 // Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
 
-- (BOOL)_webBookmarks_isHTTPFamilyURL;
+- (bool)_webBookmarks_isHTTPFamilyURL;
 
 // Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
 
-- (BOOL)WF_hostnameIsIPAddress;
+- (bool)WF_hostnameIsIPAddress;
 - (id)WF_normalizedRelativePath;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
@@ -885,10 +948,10 @@
 
 - (id)_web_URLByRemovingUserInfo;
 - (const char *)_web_URLCString;
-- (id)_web_dataForURLComponentType:(long)arg1;
+- (id)_web_dataForURLComponentType:(long long)arg1;
 - (id)_web_hostData;
 - (id)_web_hostString;
-- (BOOL)_web_isEmpty;
+- (bool)_web_isEmpty;
 - (id)_web_originalData;
 - (id)_web_originalDataAsString;
 - (id)_web_schemeData;
@@ -897,37 +960,37 @@
 - (id)_webkit_URLByRemovingFragment;
 - (id)_webkit_URLFromURLOrSchemelessFileURL;
 - (id)_webkit_canonicalize;
-- (BOOL)_webkit_isFileURL;
-- (BOOL)_webkit_isJavaScriptURL;
+- (bool)_webkit_isFileURL;
+- (bool)_webkit_isJavaScriptURL;
 - (id)_webkit_scriptIfJavaScriptURL;
 - (id)_webkit_suggestedFilenameWithMIMEType:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
 
-- (BOOL)isStoreServicesURL;
+- (bool)isStoreServicesURL;
 
 // Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iCloudQuotaUI.framework/iCloudQuotaUI
 
-+ (id)icqURLForIndex:(int)arg1;
++ (id)icqURLForIndex:(long long)arg1;
 
-- (int)icqIndex;
+- (long long)icqIndex;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 
 + (id)_URLQueryParameterValueAllowedCharacterSet;
-+ (id)copyDictionaryForQueryString:(id)arg1 unescapedValues:(BOOL)arg2;
++ (id)copyDictionaryForQueryString:(id)arg1 unescapedValues:(bool)arg2;
 + (id)escapedStringForString:(id)arg1;
-+ (id)queryStringForDictionary:(id)arg1 escapedValues:(BOOL)arg2;
++ (id)queryStringForDictionary:(id)arg1 escapedValues:(bool)arg2;
 + (id)unescapedStringForString:(id)arg1;
 
 - (id)URLByAppendingQueryParameter:(id)arg1 value:(id)arg2;
-- (id)copyQueryStringDictionaryWithUnescapedValues:(BOOL)arg1;
-- (void)enumerateQueryWithBlock:(id /* block */)arg1;
-- (BOOL)isSafeExternalURL;
+- (id)copyQueryStringDictionaryWithUnescapedValues:(bool)arg1;
+- (void)enumerateQueryWithBlock:(id)arg1;
+- (bool)isSafeExternalURL;
 - (id)sanitizedURL;
 - (id)schemeSwizzledURL;
 - (id)urlByReplacingSchemeWithScheme:(id)arg1;
@@ -937,32 +1000,32 @@
 
 + (id)termsAndConditionsURL;
 
-- (int)storeURLType;
+- (long long)storeURLType;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-+ (BOOL)canHandleDownloadTask:(id)arg1;
++ (bool)canHandleDownloadTask:(id)arg1;
 + (void)downloadManager:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
-+ (BOOL)downloadManager:(id)arg1 task:(id)arg2 didFinishDownloadingToURL:(id)arg3 error:(id*)arg4;
++ (bool)downloadManager:(id)arg1 task:(id)arg2 didFinishDownloadingToURL:(id)arg3 error:(id*)arg4;
 
 - (id)downloadTaskDescription;
 - (id)downloadURL;
 - (long long)totalBytesExpectedToBeDownloaded;
 - (id)tsp_URLExceptPrivate;
 - (id)tsp_documentIdentifier;
-- (id)tsp_documentIdentifierWithFallback:(BOOL)arg1;
+- (id)tsp_documentIdentifierWithFallback:(bool)arg1;
 - (id)tsp_embeddedUTI;
-- (BOOL)tsp_getIsUbiquitousValue:(BOOL*)arg1 promised:(BOOL)arg2 error:(id*)arg3;
-- (BOOL)tsp_isEqualToURLExceptPrivate:(id)arg1;
-- (BOOL)tsp_isIWorkAVAssetURL;
-- (BOOL)tsp_isOnNonHFSVolume;
-- (BOOL)tsp_isUbiquitous;
-- (BOOL)tsp_isUbiquitousPromised:(BOOL)arg1;
-- (BOOL)tsp_matchesURL:(id)arg1;
+- (bool)tsp_getIsUbiquitousValue:(bool*)arg1 promised:(bool)arg2 error:(id*)arg3;
+- (bool)tsp_isEqualToURLExceptPrivate:(id)arg1;
+- (bool)tsp_isIWorkAVAssetURL;
+- (bool)tsp_isOnNonHFSVolume;
+- (bool)tsp_isUbiquitous;
+- (bool)tsp_isUbiquitousPromised:(bool)arg1;
+- (bool)tsp_matchesURL:(id)arg1;
 - (id)tsp_pathExceptPrivate;
 - (id)tsu_UTI;
-- (BOOL)tsu_conformsToAnyUTI:(id)arg1;
-- (BOOL)tsu_conformsToUTI:(id)arg1;
+- (bool)tsu_conformsToAnyUTI:(id)arg1;
+- (bool)tsu_conformsToUTI:(id)arg1;
 
 // Image: /usr/lib/libprequelite.dylib
 

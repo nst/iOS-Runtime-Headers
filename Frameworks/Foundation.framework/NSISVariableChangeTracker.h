@@ -8,7 +8,7 @@
     struct __CFDictionary { } * _variableMap;
 }
 
-- (int)count;
+- (long long)count;
 - (void)dealloc;
 - (id)initWithEngine:(id)arg1;
 - (void)noteVariable:(id)arg1 changedFrom:(double)arg2;

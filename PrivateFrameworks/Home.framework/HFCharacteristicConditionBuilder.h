@@ -4,25 +4,25 @@
 
 @interface HFCharacteristicConditionBuilder : HFConditionBuilder {
     HMCharacteristic * _characteristic;
-    unsigned int  _operatorType;
+    unsigned long long  _operatorType;
     id  _value;
 }
 
 @property (nonatomic, retain) HMCharacteristic *characteristic;
-@property (nonatomic) unsigned int operatorType;
+@property (nonatomic) unsigned long long operatorType;
 @property (nonatomic, retain) id value;
 
 + (id)_characteristicPredicateInCompoundPredicate:(id)arg1;
 + (id)_valuePredicateInCompoundPredicate:(id)arg1;
-+ (BOOL)canHandlePredicate:(id)arg1;
++ (bool)canHandlePredicate:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_updatePredicate;
 - (id)characteristic;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (unsigned int)operatorType;
+- (unsigned long long)operatorType;
 - (void)setCharacteristic:(id)arg1;
-- (void)setOperatorType:(unsigned int)arg1;
+- (void)setOperatorType:(unsigned long long)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 

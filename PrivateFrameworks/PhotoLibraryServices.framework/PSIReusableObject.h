@@ -3,16 +3,16 @@
  */
 
 @interface PSIReusableObject : NSObject {
-    BOOL  _isPreparedForReuse;
-    BOOL  _isPreparedFromStatement;
-    BOOL  _isPreparingFromStatement;
+    bool  _isPreparedForReuse;
+    bool  _isPreparedFromStatement;
+    bool  _isPreparingFromStatement;
 }
 
-@property (nonatomic, readonly) BOOL isPreparedFromStatement;
+@property (nonatomic, readonly) bool isPreparedFromStatement;
 
 - (void)didPrepareFromStatement:(struct sqlite3_stmt { }*)arg1;
 - (id)init;
-- (BOOL)isPreparedFromStatement;
+- (bool)isPreparedFromStatement;
 - (void)prepareForReuse;
 - (void)prepareFromStatement:(struct sqlite3_stmt { }*)arg1;
 

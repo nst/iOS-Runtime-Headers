@@ -3,7 +3,7 @@
  */
 
 @interface GEOPDBusinessClaim : PBCodable <NSCopying> {
-    BOOL  _buttonEnabled;
+    bool  _buttonEnabled;
     NSString * _buttonLabel;
     NSString * _descriptionText;
     struct { 
@@ -12,18 +12,18 @@
     NSString * _titleText;
 }
 
-@property (nonatomic) BOOL buttonEnabled;
+@property (nonatomic) bool buttonEnabled;
 @property (nonatomic, retain) NSString *buttonLabel;
 @property (nonatomic, retain) NSString *descriptionText;
-@property (nonatomic) BOOL hasButtonEnabled;
-@property (nonatomic, readonly) BOOL hasButtonLabel;
-@property (nonatomic, readonly) BOOL hasDescriptionText;
-@property (nonatomic, readonly) BOOL hasTitleText;
+@property (nonatomic) bool hasButtonEnabled;
+@property (nonatomic, readonly) bool hasButtonLabel;
+@property (nonatomic, readonly) bool hasDescriptionText;
+@property (nonatomic, readonly) bool hasTitleText;
 @property (nonatomic, retain) NSString *titleText;
 
 + (id)businessClaimForPlaceData:(id)arg1;
 
-- (BOOL)buttonEnabled;
+- (bool)buttonEnabled;
 - (id)buttonLabel;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -31,18 +31,18 @@
 - (id)description;
 - (id)descriptionText;
 - (id)dictionaryRepresentation;
-- (BOOL)hasButtonEnabled;
-- (BOOL)hasButtonLabel;
-- (BOOL)hasDescriptionText;
-- (BOOL)hasTitleText;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasButtonEnabled;
+- (bool)hasButtonLabel;
+- (bool)hasDescriptionText;
+- (bool)hasTitleText;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setButtonEnabled:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setButtonEnabled:(bool)arg1;
 - (void)setButtonLabel:(id)arg1;
 - (void)setDescriptionText:(id)arg1;
-- (void)setHasButtonEnabled:(BOOL)arg1;
+- (void)setHasButtonEnabled:(bool)arg1;
 - (void)setTitleText:(id)arg1;
 - (id)titleText;
 - (void)writeTo:(id)arg1;

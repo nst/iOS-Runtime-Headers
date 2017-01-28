@@ -18,16 +18,16 @@
 @property (nonatomic, readonly, copy) NSString *cacheIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
-+ (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
++ (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(id)arg3;
 + (id)imageNamed:(id)arg1;
 + (id)imageWithImageData:(id)arg1;
 + (id)imageWithURL:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_bundlePath;
@@ -44,13 +44,13 @@
 - (id)cacheIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)generateCachePayloadWithCompletion:(id /* block */)arg1;
+- (void)generateCachePayloadWithCompletion:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 
 // Image: /System/Library/Frameworks/IntentsUI.framework/IntentsUI
 
-+ (struct CGSize { float x1; float x2; })imageSizeForIntentResponse:(id)arg1;
++ (struct CGSize { double x1; double x2; })imageSizeForIntentResponse:(id)arg1;
 + (id)imageWithCGImage:(struct CGImage { }*)arg1;
 + (id)imageWithUIImage:(id)arg1;
 

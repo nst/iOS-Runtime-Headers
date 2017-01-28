@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, retain) NSArray *allKeysToFetchForTransientContacts;
-@property (nonatomic, readonly) BOOL canReload;
+@property (nonatomic, readonly) bool canReload;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, readonly) NSDictionary *contactMatchInfos;
 @property (nonatomic, readonly) NSArray *contacts;
@@ -25,22 +25,22 @@
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) CNContactFilter *effectiveFilter;
 @property (nonatomic, copy) CNContactStoreFilter *filter;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *indexSections;
-@property (nonatomic, readonly) NSString *meContactIdentifier;
+@property (nonatomic, readonly) NSString *mainStorePreferredForNameMeContactIdentifier;
 @property (nonatomic, retain) <CNSchedulerProvider> *reloadSchedulerProvider;
 @property (nonatomic, retain) CNManualObservable *reloadStream;
 @property (nonatomic, retain) NSMutableArray *resultingContacts;
 @property (nonatomic, retain) <CNCancelable> *searchCancelationToken;
 @property (nonatomic, readonly) NSArray *sections;
-@property (nonatomic, readonly) BOOL shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
+@property (nonatomic, readonly) bool shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
 @property (nonatomic, retain) CNContactStore *store;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)allKeysToFetchForTransientContacts;
-- (BOOL)canReload;
-- (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(BOOL)arg2 keysToFetch:(id)arg3;
+- (bool)canReload;
+- (id)completeContactFromContact:(id)arg1 fromMainStoreOnly:(bool)arg2 keysToFetch:(id)arg3;
 - (id)contactFormatter;
 - (id)contactMatchInfos;
 - (id)contacts;
@@ -56,7 +56,7 @@
 - (void)invalidate;
 - (void)invalidateResults;
 - (void)invalidateSearch;
-- (id)meContactIdentifier;
+- (id)mainStorePreferredForNameMeContactIdentifier;
 - (void)reload;
 - (id)reloadSchedulerProvider;
 - (id)reloadStream;
@@ -73,7 +73,7 @@
 - (void)setResultingContacts:(id)arg1;
 - (void)setSearchCancelationToken:(id)arg1;
 - (void)setStore:(id)arg1;
-- (BOOL)shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
+- (bool)shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
 - (id)store;
 
 @end

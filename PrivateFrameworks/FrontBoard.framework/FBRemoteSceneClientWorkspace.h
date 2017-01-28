@@ -7,7 +7,7 @@
     NSMutableDictionary * _clientsByIdentity;
     NSMutableDictionary * _handlerByIdentity;
     NSMutableDictionary * _hostsByIdentifer;
-    BOOL  _invalidated;
+    bool  _invalidated;
     FBSceneClientProviderInvalidationAction * _invalidationAction;
     FBApplicationProcessLaunchTransaction * _launchTransaction;
     FBWorkspace * _processWorkspace;
@@ -17,7 +17,7 @@
 @property (nonatomic, readonly, retain) FBProcess<FBUIProcess> *clientProcess;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FBWorkspace *processWorkspace;
 @property (readonly) Class superclass;
 
@@ -42,7 +42,7 @@
 - (id)processWorkspace;
 - (id)registerHost:(id)arg1;
 - (void)registerInvalidationAction:(id)arg1;
-- (void)registerSceneWithIdentity:(id)arg1 acquisitionHandler:(id /* block */)arg2;
+- (void)registerSceneWithIdentity:(id)arg1 acquisitionHandler:(id)arg2;
 - (void)setProcessWorkspace:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

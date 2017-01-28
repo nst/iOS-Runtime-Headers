@@ -3,59 +3,59 @@
  */
 
 @interface CPLEngineResourceDownloadTask : CPLResourceTransferTask {
-    BOOL  _backgroundTask;
-    id /* block */  _cancelHandler;
-    BOOL  _cancelledByEngine;
+    bool  _backgroundTask;
+    id  _cancelHandler;
+    bool  _cancelledByEngine;
     NSString * _clientBundleID;
     CPLResource * _cloudResource;
-    id /* block */  _completionHandler;
-    id /* block */  _didStartHandler;
-    id /* block */  _launchHandler;
-    id /* block */  _progressHandler;
-    unsigned int  _taskIdentifierForQueue;
-    BOOL  _transportOwnsTask;
+    id  _completionHandler;
+    id  _didStartHandler;
+    id  _launchHandler;
+    id  _progressHandler;
+    unsigned long long  _taskIdentifierForQueue;
+    bool  _transportOwnsTask;
     <CPLEngineTransportTask> * _transportTask;
-    BOOL  _wantsTransportTask;
+    bool  _wantsTransportTask;
 }
 
-@property (getter=isBackgroundTask, nonatomic) BOOL backgroundTask;
-@property (nonatomic, readonly) id /* block */ cancelHandler;
-@property (getter=isCancelledByEngine, nonatomic) BOOL cancelledByEngine;
+@property (getter=isBackgroundTask, nonatomic) bool backgroundTask;
+@property (nonatomic, readonly) id cancelHandler;
+@property (getter=isCancelledByEngine, nonatomic) bool cancelledByEngine;
 @property (nonatomic, retain) NSString *clientBundleID;
 @property (nonatomic, retain) CPLResource *cloudResource;
-@property (nonatomic, readonly) id /* block */ completionHandler;
-@property (nonatomic, readonly) id /* block */ didStartHandler;
-@property (nonatomic, readonly) id /* block */ launchHandler;
-@property (nonatomic, readonly) id /* block */ progressHandler;
-@property (nonatomic) unsigned int taskIdentifierForQueue;
-@property (nonatomic) BOOL transportOwnsTask;
+@property (nonatomic, readonly) id completionHandler;
+@property (nonatomic, readonly) id didStartHandler;
+@property (nonatomic, readonly) id launchHandler;
+@property (nonatomic, readonly) id progressHandler;
+@property (nonatomic) unsigned long long taskIdentifierForQueue;
+@property (nonatomic) bool transportOwnsTask;
 @property (nonatomic, retain) <CPLEngineTransportTask> *transportTask;
-@property (nonatomic) BOOL wantsTransportTask;
+@property (nonatomic) bool wantsTransportTask;
 
 - (void).cxx_destruct;
-- (id /* block */)cancelHandler;
+- (id)cancelHandler;
 - (void)cancelTask;
 - (id)clientBundleID;
 - (id)cloudResource;
-- (id /* block */)completionHandler;
-- (id /* block */)didStartHandler;
-- (id)initWithLaunchHandler:(id /* block */)arg1 cancelHandler:(id /* block */)arg2 didStartHandler:(id /* block */)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
-- (BOOL)isBackgroundTask;
-- (BOOL)isCancelledByEngine;
+- (id)completionHandler;
+- (id)didStartHandler;
+- (id)initWithLaunchHandler:(id)arg1 cancelHandler:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
+- (bool)isBackgroundTask;
+- (bool)isCancelledByEngine;
 - (void)launch;
-- (id /* block */)launchHandler;
-- (id /* block */)progressHandler;
-- (void)setBackgroundTask:(BOOL)arg1;
-- (void)setCancelledByEngine:(BOOL)arg1;
+- (id)launchHandler;
+- (id)progressHandler;
+- (void)setBackgroundTask:(bool)arg1;
+- (void)setCancelledByEngine:(bool)arg1;
 - (void)setClientBundleID:(id)arg1;
 - (void)setCloudResource:(id)arg1;
-- (void)setTaskIdentifierForQueue:(unsigned int)arg1;
-- (void)setTransportOwnsTask:(BOOL)arg1;
+- (void)setTaskIdentifierForQueue:(unsigned long long)arg1;
+- (void)setTransportOwnsTask:(bool)arg1;
 - (void)setTransportTask:(id)arg1;
-- (void)setWantsTransportTask:(BOOL)arg1;
-- (unsigned int)taskIdentifierForQueue;
-- (BOOL)transportOwnsTask;
+- (void)setWantsTransportTask:(bool)arg1;
+- (unsigned long long)taskIdentifierForQueue;
+- (bool)transportOwnsTask;
 - (id)transportTask;
-- (BOOL)wantsTransportTask;
+- (bool)wantsTransportTask;
 
 @end

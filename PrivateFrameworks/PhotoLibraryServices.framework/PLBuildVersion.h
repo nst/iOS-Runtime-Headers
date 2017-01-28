@@ -4,26 +4,26 @@
 
 @interface PLBuildVersion : NSObject {
     NSString * _majorBuildLetterString;
-    int  _majorBuildNumber;
+    long long  _majorBuildNumber;
     NSString * _minorBuildLetterString;
-    int  _minorBuildNumber;
+    long long  _minorBuildNumber;
     NSString * _stringRepresentation;
 }
 
 @property (nonatomic, readonly, copy) NSString *majorBuildLetterString;
-@property (nonatomic, readonly) int majorBuildNumber;
+@property (nonatomic, readonly) long long majorBuildNumber;
 @property (nonatomic, readonly, copy) NSString *minorBuildLetterString;
-@property (nonatomic, readonly) int minorBuildNumber;
+@property (nonatomic, readonly) long long minorBuildNumber;
 @property (nonatomic, readonly, copy) NSString *stringRepresentation;
 
-- (int)compareBuildVersion:(id)arg1 withPrecision:(int)arg2;
-- (int)compareBuildVersionString:(id)arg1 withPrecision:(int)arg2;
+- (long long)compareBuildVersion:(id)arg1 withPrecision:(long long)arg2;
+- (long long)compareBuildVersionString:(id)arg1 withPrecision:(long long)arg2;
 - (id)description;
 - (id)initWithString:(id)arg1;
 - (id)majorBuildLetterString;
-- (int)majorBuildNumber;
+- (long long)majorBuildNumber;
 - (id)minorBuildLetterString;
-- (int)minorBuildNumber;
+- (long long)minorBuildNumber;
 - (id)stringRepresentation;
 
 @end

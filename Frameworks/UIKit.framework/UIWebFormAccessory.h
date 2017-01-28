@@ -14,7 +14,7 @@
     UIBarButtonItem * _previousItem;
     UIToolbar * _rightToolbar;
     UISegmentedControl * _tab;
-    BOOL  _usesUCB;
+    bool  _usesUCB;
     <UIWebFormAccessoryDelegate> * delegate;
 }
 
@@ -22,8 +22,8 @@
 @property (nonatomic, retain) UIBarButtonItem *_clearButton;
 @property (nonatomic, retain) UISegmentedControl *_tab;
 @property (nonatomic) <UIWebFormAccessoryDelegate> *delegate;
-@property (getter=isNextEnabled, nonatomic) BOOL nextEnabled;
-@property (getter=isPreviousEnabled, nonatomic) BOOL previousEnabled;
+@property (getter=isNextEnabled, nonatomic) bool nextEnabled;
+@property (getter=isPreviousEnabled, nonatomic) bool previousEnabled;
 
 + (id)toolbarWithItems:(id)arg1;
 
@@ -47,13 +47,13 @@
 - (void)hideAutoFillButton;
 - (void)initForUCB:(id)arg1;
 - (id)initWithInputAssistantItem:(id)arg1;
-- (BOOL)isNextEnabled;
-- (BOOL)isPreviousEnabled;
+- (bool)isNextEnabled;
+- (bool)isPreviousEnabled;
 - (void)layoutSubviews;
-- (void)setClearVisible:(BOOL)arg1;
+- (void)setClearVisible:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setNextEnabled:(BOOL)arg1;
-- (void)setPreviousEnabled:(BOOL)arg1;
+- (void)setNextEnabled:(bool)arg1;
+- (void)setPreviousEnabled:(bool)arg1;
 - (void)set_autofill:(id)arg1;
 - (void)set_clearButton:(id)arg1;
 - (void)set_tab:(id)arg1;

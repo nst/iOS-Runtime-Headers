@@ -6,10 +6,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)_animateTransitionWithOperation:(int)arg1;
+- (void)_animateTransitionWithOperation:(long long)arg1;
 - (void)_prepareViewForTransition;
 - (void)animatePopTransition;
 - (void)animatePushTransition;

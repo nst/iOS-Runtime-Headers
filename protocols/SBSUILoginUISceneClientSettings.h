@@ -5,8 +5,8 @@
 
 @required
 
-- (int)idleTimerMode;
-- (int)rotationMode;
+- (long long)idleTimerMode;
+- (long long)rotationMode;
 - (NSString *)statusBarUserNameOverride;
 
 @end

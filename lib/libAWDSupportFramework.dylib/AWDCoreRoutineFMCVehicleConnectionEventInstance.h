@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) int eventType;
-@property (nonatomic) BOOL hasEventType;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasValue;
+@property (nonatomic) bool hasEventType;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasValue;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) int value;
 
@@ -25,17 +25,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)eventType;
-- (BOOL)hasEventType;
-- (BOOL)hasTimestamp;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEventType;
+- (bool)hasTimestamp;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEventType:(int)arg1;
-- (void)setHasEventType:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasValue:(BOOL)arg1;
+- (void)setHasEventType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasValue:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setValue:(int)arg1;
 - (unsigned long long)timestamp;

@@ -3,21 +3,21 @@
  */
 
 @interface SUMarkupCellContext : SUItemCellContext {
-    int  _pendingWebViewLoads;
+    long long  _pendingWebViewLoads;
     NSString * _stylesheet;
     struct __CFDictionary { } * _webViewCache;
-    float  _webViewWidth;
+    double  _webViewWidth;
 }
 
 @property (nonatomic, retain) NSString *stylesheet;
-@property (nonatomic) float webViewWidth;
+@property (nonatomic) double webViewWidth;
 
 - (void)dealloc;
 - (void)setStylesheet:(id)arg1;
-- (void)setWebViewWidth:(float)arg1;
+- (void)setWebViewWidth:(double)arg1;
 - (id)stylesheet;
 - (void)webViewDidFinishLoading:(id)arg1;
 - (id)webViewForMarkup:(id)arg1;
-- (float)webViewWidth;
+- (double)webViewWidth;
 
 @end

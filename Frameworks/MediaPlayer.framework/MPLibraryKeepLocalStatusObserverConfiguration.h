@@ -3,17 +3,17 @@
  */
 
 @interface MPLibraryKeepLocalStatusObserverConfiguration : NSObject {
-    int  _enableState;
+    long long  _enableState;
     MPModelObject * _identifyingModelObject;
 }
 
-@property (nonatomic) int enableState;
+@property (nonatomic) long long enableState;
 @property (nonatomic, retain) MPModelObject *identifyingModelObject;
 
 - (void).cxx_destruct;
-- (int)enableState;
+- (long long)enableState;
 - (id)identifyingModelObject;
-- (void)setEnableState:(int)arg1;
+- (void)setEnableState:(long long)arg1;
 - (void)setIdentifyingModelObject:(id)arg1;
 
 @end

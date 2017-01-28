@@ -4,30 +4,30 @@
 
 @interface CKDDiscoverUserIdentitiesURLRequest : CKDURLRequest {
     NSArray * _infosToDiscover;
-    id /* block */  _progressBlock;
+    id  _progressBlock;
     NSMutableDictionary * _submittedInfos;
-    BOOL  _wantsProtectionInfo;
+    bool  _wantsProtectionInfo;
 }
 
 @property (nonatomic, retain) NSArray *infosToDiscover;
-@property (nonatomic, copy) id /* block */ progressBlock;
+@property (nonatomic, copy) id progressBlock;
 @property (nonatomic, retain) NSMutableDictionary *submittedInfos;
-@property (nonatomic) BOOL wantsProtectionInfo;
+@property (nonatomic) bool wantsProtectionInfo;
 
 - (void).cxx_destruct;
 - (id)infosToDiscover;
 - (id)initWithLookupInfos:(id)arg1;
 - (int)operationType;
-- (id /* block */)progressBlock;
+- (id)progressBlock;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
 - (void)setInfosToDiscover:(id)arg1;
-- (void)setProgressBlock:(id /* block */)arg1;
+- (void)setProgressBlock:(id)arg1;
 - (void)setSubmittedInfos:(id)arg1;
-- (void)setWantsProtectionInfo:(BOOL)arg1;
+- (void)setWantsProtectionInfo:(bool)arg1;
 - (id)submittedInfos;
-- (BOOL)wantsProtectionInfo;
+- (bool)wantsProtectionInfo;
 
 @end

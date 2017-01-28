@@ -29,7 +29,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)fontWithResources:(id)arg1;
@@ -45,8 +45,8 @@
 - (id)initWithResources:(id)arg1;
 - (bool)isBold;
 - (bool)isBoldOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToFont:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToFont:(id)arg1;
 - (bool)isHeightOverridden;
 - (bool)isItalic;
 - (bool)isItalicOverridden;

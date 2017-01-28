@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) SEL selector;
 @property (getter=_shortName, setter=_setShortName:, nonatomic, retain) NSString *shortName;
-@property (nonatomic) BOOL shouldSuppressActionHint;
+@property (nonatomic) bool shouldSuppressActionHint;
 @property (nonatomic) id target;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
@@ -30,13 +30,13 @@
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 
 - (id)_accessibilityCustomActionIdentifier;
-- (BOOL)_accessibilityMatchesCustomActionIdentifier:(id)arg1;
+- (bool)_accessibilityMatchesCustomActionIdentifier:(id)arg1;
 - (id)_image;
 - (void)_setImage:(id)arg1;
 - (void)_setShortName:(id)arg1;
 - (id)_shortName;
 - (id)description;
-- (void)setShouldSuppressActionHint:(BOOL)arg1;
-- (BOOL)shouldSuppressActionHint;
+- (void)setShouldSuppressActionHint:(bool)arg1;
+- (bool)shouldSuppressActionHint;
 
 @end

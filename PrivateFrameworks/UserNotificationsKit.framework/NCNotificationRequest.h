@@ -6,11 +6,11 @@
     NSString * _categoryIdentifier;
     NCNotificationAction * _clearAction;
     NCNotificationAction * _closeAction;
-    unsigned int  _collapsedNotificationsCount;
+    unsigned long long  _collapsedNotificationsCount;
     NCNotificationContent * _content;
     NSDictionary * _context;
     NCNotificationAction * _defaultAction;
-    BOOL  _isCollapsedNotification;
+    bool  _isCollapsedNotification;
     NSString * _notificationIdentifier;
     NCNotificationOptions * _options;
     NSString * _parentSectionIdentifier;
@@ -32,17 +32,17 @@
 @property (nonatomic, readonly, copy) NSString *categoryIdentifier;
 @property (nonatomic, readonly) NCNotificationAction *clearAction;
 @property (nonatomic, readonly) NCNotificationAction *closeAction;
-@property (nonatomic, readonly) unsigned int collapsedNotificationsCount;
+@property (nonatomic, readonly) unsigned long long collapsedNotificationsCount;
 @property (nonatomic, readonly) NCNotificationContent *content;
 @property (nonatomic, readonly, copy) NSDictionary *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NCNotificationAction *defaultAction;
 @property (nonatomic, readonly, copy) NSArray *defaultEnvironmentActions;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasOnlySingleMinimalTextInputAction;
-@property (nonatomic, readonly) BOOL hasOnlySingleTextInputAction;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCollapsedNotification;
+@property (nonatomic, readonly) bool hasOnlySingleMinimalTextInputAction;
+@property (nonatomic, readonly) bool hasOnlySingleTextInputAction;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCollapsedNotification;
 @property (nonatomic, readonly, copy) NSArray *minimalEnvironmentActions;
 @property (nonatomic, readonly, copy) NSString *notificationIdentifier;
 @property (nonatomic, readonly) BBObserver *observer;
@@ -67,9 +67,9 @@
 + (id)notificationRequest;
 + (id)notificationRequestWithActionWithId:(id)arg1 runner:(id)arg2;
 + (id)notificationRequestWithNotificationId:(id)arg1;
-+ (id)notificationRequestWithNotificationId:(id)arg1 lockScreenPriority:(unsigned int)arg2;
-+ (id)notificationRequestWithNotificationId:(id)arg1 lockScreenPriority:(unsigned int)arg2 lockScreenPersistence:(unsigned int)arg3;
-+ (id)notificationRequestWithNotificationId:(id)arg1 requestDestinations:(id)arg2 isCritical:(BOOL)arg3;
++ (id)notificationRequestWithNotificationId:(id)arg1 lockScreenPriority:(unsigned long long)arg2;
++ (id)notificationRequestWithNotificationId:(id)arg1 lockScreenPriority:(unsigned long long)arg2 lockScreenPersistence:(unsigned long long)arg3;
++ (id)notificationRequestWithNotificationId:(id)arg1 requestDestinations:(id)arg2 isCritical:(bool)arg3;
 + (id)notificationRequestWithNotificationId:(id)arg1 threadId:(id)arg2;
 + (id)notificationRequestWithNotificationId:(id)arg1 threadId:(id)arg2 timestamp:(id)arg3;
 + (id)notificationRequestWithNotificationId:(id)arg1 timestamp:(id)arg2;
@@ -97,7 +97,7 @@
 - (id)categoryIdentifier;
 - (id)clearAction;
 - (id)closeAction;
-- (unsigned int)collapsedNotificationsCount;
+- (unsigned long long)collapsedNotificationsCount;
 - (id)content;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -106,13 +106,13 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithNotificationRequest:(id)arg1;
-- (BOOL)isCollapsedNotification;
-- (BOOL)isCollapsibleWithNotificationRequest:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isCollapsedNotification;
+- (bool)isCollapsibleWithNotificationRequest:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)loggingDescription;
-- (BOOL)matchesRequest:(id)arg1;
+- (bool)matchesRequest:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)notificationIdentifier;
 - (id)options;
@@ -134,14 +134,14 @@
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 
-+ (id)notificationRequestForBulletin:(id)arg1 observer:(id)arg2 sectionInfo:(id)arg3 feed:(unsigned int)arg4 playLightsAndSirens:(BOOL)arg5;
++ (id)notificationRequestForBulletin:(id)arg1 observer:(id)arg2 sectionInfo:(id)arg3 feed:(unsigned long long)arg4 playLightsAndSirens:(bool)arg5;
 
 - (id)bulletin;
 - (id)defaultEnvironmentActions;
-- (BOOL)hasOnlySingleMinimalTextInputAction;
-- (BOOL)hasOnlySingleTextInputAction;
-- (BOOL)hasSameContactAsNotificationRequest:(id)arg1;
-- (BOOL)isAudioMessageNotificationRequest;
+- (bool)hasOnlySingleMinimalTextInputAction;
+- (bool)hasOnlySingleTextInputAction;
+- (bool)hasSameContactAsNotificationRequest:(id)arg1;
+- (bool)isAudioMessageNotificationRequest;
 - (id)minimalEnvironmentActions;
 - (id)observer;
 

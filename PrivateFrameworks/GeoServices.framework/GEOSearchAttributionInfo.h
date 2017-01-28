@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) unsigned int version;
 @property (nonatomic, readonly) NSString *webBaseActionURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addLogoPath:(id)arg1;
 - (id)attributionApps;
@@ -27,16 +27,16 @@
 - (id)dictionaryRepresentation;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasAttributionRequirement:(int)arg1;
+- (bool)hasAttributionRequirement:(int)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithSource:(id)arg1 localizedAttribution:(id)arg2 logoPaths:(id)arg3 snippetLogoPaths:(id)arg4;
-- (id)logoPathForScale:(float)arg1;
+- (id)logoPathForScale:(double)arg1;
 - (unsigned int)requirementsMask;
-- (id)snippetLogoPathForScale:(float)arg1;
+- (id)snippetLogoPathForScale:(double)arg1;
 - (id)source;
-- (BOOL)supportsActionURLs;
+- (bool)supportsActionURLs;
 - (unsigned int)version;
 - (id)webBaseActionURL;
 

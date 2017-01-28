@@ -3,7 +3,7 @@
  */
 
 @interface PLPerson : PLManagedObject <PLSyncablePerson> {
-    BOOL  _needsPersistenceUpdate;
+    bool  _needsPersistenceUpdate;
 }
 
 @property (nonatomic, retain) PLDetectedFaceGroup *associatedFaceGroup;
@@ -14,31 +14,36 @@
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic) int faceCount;
 @property (nonatomic, retain) NSString *fullName;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL inPersonNamingModel;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool inPersonNamingModel;
 @property (nonatomic, retain) PLDetectedFace *keyFace;
 @property (nonatomic) int manualOrder;
-@property (nonatomic) BOOL needsPersistenceUpdate;
+@property (nonatomic) bool needsPersistenceUpdate;
 @property (nonatomic, retain) NSSet *personReferences;
 @property (nonatomic, retain) NSString *personUUID;
 @property (nonatomic, retain) NSString *personUri;
 @property (nonatomic, retain) PLDetectedFaceGroup *rejectedFacesGroup;
 @property (readonly) Class superclass;
 @property (nonatomic) int type;
-@property (nonatomic) BOOL verified;
+@property (nonatomic) bool verified;
 
++ (id)_persistenceUpdateQueue;
++ (id)_stringFromContact:(id)arg1 preferGivenName:(bool)arg2;
 + (id)allPersonsInManagedObjectContext:(id)arg1;
-+ (void)batchFetchPersonsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
++ (void)batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id)arg3;
++ (void)batchFetchPersonsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id)arg3;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1 inManagedObjectContext:(id)arg2;
 + (void)deleteAllPersonsInManagedObjectContext:(id)arg1;
++ (id)displayNameFromContact:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (void)enumerateAssetUUIDsForSearchIndexingWithPersonUUID:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id /* block */)arg3;
++ (void)enumerateAssetUUIDsForSearchIndexingWithPersonUUID:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id)arg3;
 + (id)fetchPersonCountByAssetUUIDForAssetUUIDs:(id)arg1 predicate:(id)arg2 error:(id*)arg3;
-+ (id)insertIntoManagedObjectContext:(id)arg1 withPersonUUID:(id)arg2 fullName:(id)arg3 verified:(BOOL)arg4;
-+ (id)insertIntoPhotoLibrary:(id)arg1 withPersonUUID:(id)arg2 fullName:(id)arg3 verified:(BOOL)arg4;
-+ (id)peopleToUploadInPhotoLibrary:(id)arg1 limit:(int)arg2;
++ (id)fullNameFromContact:(id)arg1;
++ (id)insertIntoManagedObjectContext:(id)arg1 withPersonUUID:(id)arg2 fullName:(id)arg3 verified:(bool)arg4;
++ (id)insertIntoPhotoLibrary:(id)arg1 withPersonUUID:(id)arg2 fullName:(id)arg3 verified:(bool)arg4;
++ (id)peopleToUploadInPhotoLibrary:(id)arg1 limit:(long long)arg2;
 + (id)peopleWithUUIDs:(id)arg1 inPhotoLibrary:(id)arg2;
 + (id)personWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (void)resetCloudStateInPhotoLibrary:(id)arg1;
@@ -46,16 +51,16 @@
 - (id)cplPersonChange;
 - (id)debugLogDescription;
 - (void)didSave;
-- (BOOL)isValidForPersistence;
+- (bool)isValidForPersistence;
 - (id)mutableFaces;
-- (BOOL)needsPersistenceUpdate;
+- (bool)needsPersistenceUpdate;
 - (void)persistMetadataToFileSystem;
 - (void)prepareForDeletion;
 - (void)refreshFaces;
 - (id)rejectedFacesGroupInsertingIfNeeded;
 - (void)removePersistedFileSystemData;
-- (void)setNeedsPersistenceUpdate:(BOOL)arg1;
-- (BOOL)shouldIndexForSearch;
+- (void)setNeedsPersistenceUpdate:(bool)arg1;
+- (bool)shouldIndexForSearch;
 - (void)willSave;
 
 @end

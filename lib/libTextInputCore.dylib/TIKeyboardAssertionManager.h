@@ -4,41 +4,41 @@
 
 @interface TIKeyboardAssertionManager : NSObject {
     NSHashTable * _assertions;
-    int  _backgroundActivityAssertions;
+    long long  _backgroundActivityAssertions;
     <TIKeyboardAssertionManagerDelegate> * _delegate;
-    BOOL  _hasAssertions;
-    BOOL  _hasBackgroundActivityAssertions;
-    BOOL  _pendingUpdate;
+    bool  _hasAssertions;
+    bool  _hasBackgroundActivityAssertions;
+    bool  _pendingUpdate;
 }
 
 @property (nonatomic, readonly) NSHashTable *assertions;
-@property (nonatomic) int backgroundActivityAssertions;
+@property (nonatomic) long long backgroundActivityAssertions;
 @property (nonatomic) <TIKeyboardAssertionManagerDelegate> *delegate;
-@property (nonatomic) BOOL hasAssertions;
-@property (nonatomic) BOOL hasBackgroundActivityAssertions;
-@property (nonatomic) BOOL pendingUpdate;
+@property (nonatomic) bool hasAssertions;
+@property (nonatomic) bool hasBackgroundActivityAssertions;
+@property (nonatomic) bool pendingUpdate;
 
 + (id)sharedAssertionManager;
 
 - (void)addAssertionForObject:(id)arg1;
 - (id)assertions;
-- (int)backgroundActivityAssertions;
+- (long long)backgroundActivityAssertions;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)hasAssertions;
-- (BOOL)hasBackgroundActivityAssertions;
+- (bool)hasAssertions;
+- (bool)hasBackgroundActivityAssertions;
 - (id)init;
-- (BOOL)pendingUpdate;
+- (bool)pendingUpdate;
 - (void)performBackgroundActivityUpdate;
 - (void)performUpdate;
 - (void)releaseBackgroundActivityAssertion;
 - (void)removeAssertionForObject:(id)arg1;
 - (void)retainBackgroundActivityAssertion;
 - (void)scheduleUpdate;
-- (void)setBackgroundActivityAssertions:(int)arg1;
+- (void)setBackgroundActivityAssertions:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHasAssertions:(BOOL)arg1;
-- (void)setHasBackgroundActivityAssertions:(BOOL)arg1;
-- (void)setPendingUpdate:(BOOL)arg1;
+- (void)setHasAssertions:(bool)arg1;
+- (void)setHasBackgroundActivityAssertions:(bool)arg1;
+- (void)setPendingUpdate:(bool)arg1;
 
 @end

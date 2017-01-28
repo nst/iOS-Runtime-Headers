@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (id)_paginationInfo;
-- (int)numberOfPages;
-- (id)pdfDataForPageAtIndex:(int)arg1;
+- (long long)numberOfPages;
+- (id)pdfDataForPageAtIndex:(long long)arg1;
 
 @end

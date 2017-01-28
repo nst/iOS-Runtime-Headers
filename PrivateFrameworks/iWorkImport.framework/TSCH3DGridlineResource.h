@@ -6,14 +6,14 @@
     TSCH3DAxisGridEnumerator * mAxis;
 }
 
-@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic, readonly) bool enabled;
 @property (nonatomic, readonly) float opacity;
 @property (nonatomic, readonly) TSDStroke *stroke;
 
 + (id)resourceWithAxisEnumerator:(id)arg1;
 
 - (void)dealloc;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)get;
 - (id)initWithAxisEnumerator:(id)arg1;
 - (float)opacity;

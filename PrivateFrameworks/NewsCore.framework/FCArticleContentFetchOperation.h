@@ -26,11 +26,11 @@
 - (id)completeFetchOperation;
 - (id)contentManifest;
 - (id)context;
-- (id)fetchContentManifestWithCompletion:(id /* block */)arg1;
-- (id)fetchFlintDocumentWithCompletion:(id /* block */)arg1;
-- (id)fetchFlintResourcesWithCompletion:(id /* block */)arg1;
-- (id)fetchWebArchiveWithCompletion:(id /* block */)arg1;
-- (id)fetchWebExcerptWithCompletion:(id /* block */)arg1;
+- (id)fetchContentManifestWithCompletion:(id)arg1;
+- (id)fetchFlintDocumentWithCompletion:(id)arg1;
+- (id)fetchFlintResourcesWithCompletion:(id)arg1;
+- (id)fetchWebArchiveWithCompletion:(id)arg1;
+- (id)fetchWebExcerptWithCompletion:(id)arg1;
 - (id)flintResources;
 - (id)heldArticleRecords;
 - (id)initWithContext:(id)arg1 articleID:(id)arg2;

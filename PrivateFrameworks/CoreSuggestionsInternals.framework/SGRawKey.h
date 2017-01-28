@@ -8,17 +8,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isSupportedEntityType:(long long)arg1;
++ (bool)isSupportedEntityType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithSerialized:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRawKey:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRawKey:(id)arg1;
 - (id)serialize;
 
 @end

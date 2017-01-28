@@ -10,6 +10,6 @@
 - (void)_layoutRemindMeLaterButton;
 - (void)_layoutStatusView;
 - (void)_remindMeLaterButtonHit;
-- (id)initWithLightStyle:(BOOL)arg1;
+- (id)initWithLightStyle:(bool)arg1;
 
 @end

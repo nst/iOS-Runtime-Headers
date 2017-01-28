@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) SFCardSection *cardSection;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cardSection;

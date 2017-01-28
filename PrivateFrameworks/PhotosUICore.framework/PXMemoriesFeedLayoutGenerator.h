@@ -3,14 +3,14 @@
  */
 
 @interface PXMemoriesFeedLayoutGenerator : PXLayoutGenerator {
-    BOOL  _includeDateHeader;
+    bool  _includeDateHeader;
 }
 
-@property (nonatomic) BOOL includeDateHeader;
+@property (nonatomic) bool includeDateHeader;
 @property (nonatomic, readonly, copy) PXMemoriesFeedLayoutMetrics *metrics;
 
-- (BOOL)includeDateHeader;
+- (bool)includeDateHeader;
 - (id)initWithMetrics:(id)arg1;
-- (void)setIncludeDateHeader:(BOOL)arg1;
+- (void)setIncludeDateHeader:(bool)arg1;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface HKLandscapeSpecificQuantityFixedAxisScalingRule : HKQuantityFixedAxisScalingRule
 
-- (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(int)arg2 allowedDecimalPrecision:(int)arg3;
+- (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(long long)arg2 allowedDecimalPrecision:(long long)arg3;
 
 @end

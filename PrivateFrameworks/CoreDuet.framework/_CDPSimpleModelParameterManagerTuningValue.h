@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) float threshold;
 @property (nonatomic, readonly) float w0;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

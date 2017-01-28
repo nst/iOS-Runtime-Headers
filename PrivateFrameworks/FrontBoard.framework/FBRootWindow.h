@@ -10,24 +10,24 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_isSecure;
++ (bool)_isSecure;
 
-- (BOOL)_appearsInLoupe;
-- (BOOL)_canBecomeKeyWindow;
-- (BOOL)_shouldPrepareScreenForWindow;
+- (bool)_appearsInLoupe;
+- (bool)_canBecomeKeyWindow;
+- (bool)_shouldPrepareScreenForWindow;
 - (id)_systemGestureView;
 - (void)_updateTransforms;
-- (BOOL)_usesWindowServerHitTesting;
+- (bool)_usesWindowServerHitTesting;
 - (void)attachSceneTransform:(id)arg1;
 - (void)dealloc;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (id)initWithDisplay:(id)arg1;
 - (void)removeSceneTransform:(id)arg1;
 - (id)sceneContainerView;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)transformDidInvalidate:(id)arg1;
 - (void)transformDidUpdate:(id)arg1;
 

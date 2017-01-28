@@ -8,20 +8,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)cancelPendingUpdates;
 - (id)init;
-- (void)modifyEntry:(id)arg1 toEntry:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)performTransaction:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)modifyEntry:(id)arg1 toEntry:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)performTransaction:(id)arg1 completionHandler:(id)arg2;
 - (id)phraseShortcuts;
-- (void)queryTextReplacementsWithCallback:(id /* block */)arg1;
-- (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(id /* block */)arg2;
+- (void)queryTextReplacementsWithCallback:(id)arg1;
+- (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(id)arg2;
 - (void)removeAllEntries;
-- (void)requestSyncWithCompletionBlock:(id /* block */)arg1;
+- (void)requestSyncWithCompletionBlock:(id)arg1;
 - (id)textReplacementEntries;
 
 @end

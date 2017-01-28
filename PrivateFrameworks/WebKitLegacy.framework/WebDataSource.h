@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly, copy) NSData *data;
 @property (nonatomic, readonly) NSURLRequest *initialRequest;
-@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (getter=isLoading, nonatomic, readonly) bool loading;
 @property (nonatomic, readonly) WebResource *mainResource;
 @property (nonatomic, readonly, copy) NSString *pageTitle;
 @property (nonatomic, readonly) <WebDocumentRepresentation> *representation;
@@ -20,8 +20,8 @@
 @property (nonatomic, readonly) WebArchive *webArchive;
 @property (nonatomic, readonly) WebFrame *webFrame;
 
-+ (id)_repTypesAllowImageTypeOmission:(BOOL)arg1;
-+ (Class)_representationClassForMIMEType:(id)arg1 allowingPlugins:(BOOL)arg2;
++ (id)_repTypesAllowImageTypeOmission:(bool)arg1;
++ (Class)_representationClassForMIMEType:(id)arg1 allowingPlugins:(bool)arg2;
 + (void)initialize;
 
 - (id)_URL;
@@ -32,15 +32,15 @@
 - (void)_finishedLoading;
 - (id)_imageElementWithImageResource:(id)arg1;
 - (id)_initWithDocumentLoader:(struct PassRefPtr<WebDocumentLoaderMac> { struct WebDocumentLoaderMac {} *x1; })arg1;
-- (BOOL)_isDocumentHTML;
+- (bool)_isDocumentHTML;
 - (id)_mainDocumentError;
 - (void)_makeRepresentation;
 - (void)_receivedData:(id)arg1;
-- (void)_replaceSelectionWithArchive:(id)arg1 selectReplacement:(BOOL)arg2;
+- (void)_replaceSelectionWithArchive:(id)arg1 selectReplacement:(bool)arg2;
 - (id)_responseMIMEType;
 - (void)_revertToProvisionalState;
 - (void)_setAllowToBeMemoryMapped;
-- (void)_setDeferMainResourceDataLoad:(BOOL)arg1;
+- (void)_setDeferMainResourceDataLoad:(bool)arg1;
 - (void)_setMainDocumentError:(id)arg1;
 - (void)_setOverrideTextEncodingName:(id)arg1;
 - (void)_setRepresentation:(id)arg1;
@@ -51,7 +51,7 @@
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1;
 - (id)initialRequest;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (id)mainResource;
 - (id)pageTitle;
 - (id)representation;

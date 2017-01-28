@@ -3,9 +3,10 @@
  */
 
 @interface PKPaymentSetupIntroView : UIView {
-    int  _context;
-    BOOL  _hasSupportingHardware;
+    long long  _context;
+    bool  _hasSupportingHardware;
     PKPaymentSetupInfoView * _infoView;
+    NSString * _region;
 }
 
 @property (nonatomic, retain) PKPaymentSetupInfoView *infoView;
@@ -14,10 +15,10 @@
 - (void)_createSubviewsWithHeroImageController:(id)arg1;
 - (void)dealloc;
 - (id)infoView;
-- (id)initWithContext:(int)arg1;
-- (id)initWithContext:(int)arg1 heroImageController:(id)arg2;
-- (id)initWithContext:(int)arg1 heroImageController:(id)arg2 hasSupportingHardware:(BOOL)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithContext:(long long)arg1;
+- (id)initWithContext:(long long)arg1 heroImageController:(id)arg2;
+- (id)initWithContext:(long long)arg1 heroImageController:(id)arg2 hasSupportingHardware:(bool)arg3 region:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setInfoView:(id)arg1;
 - (void)startAnimation;

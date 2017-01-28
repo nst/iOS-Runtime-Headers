@@ -4,6 +4,7 @@
 
 @interface CKNavigationController : UINavigationController
 
-- (BOOL)shouldAutorotate;
+- (long long)preferredStatusBarStyle;
+- (bool)shouldAutorotate;
 
 @end

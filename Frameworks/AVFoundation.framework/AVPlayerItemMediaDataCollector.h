@@ -6,7 +6,7 @@
     AVPlayerItemMediaDataCollectorInternal * _collectorInternal;
 }
 
-- (BOOL)_attachToPlayerItem:(id)arg1;
+- (bool)_attachToPlayerItem:(id)arg1;
 - (void)_detatchFromPlayerItem;
 - (id)_weakReference;
 - (void)dealloc;

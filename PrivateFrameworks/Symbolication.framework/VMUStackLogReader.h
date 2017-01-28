@@ -4,18 +4,18 @@
 
 @interface VMUStackLogReader : NSObject {
     unsigned int  _task;
-    BOOL  _usesLiteMode;
+    bool  _usesLiteMode;
 }
 
-@property (readonly) BOOL usesLiteMode;
+@property (readonly) bool usesLiteMode;
 
-+ (BOOL)isLiteZone:(id)arg1;
++ (bool)isLiteZone:(id)arg1;
 
 - (void)dealloc;
 - (int)enumerateRecordsWithEnumerator:(void*)arg1 context:(void*)arg2;
-- (int)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(BOOL)arg3 stackFramesBuffer:(unsigned long long*)arg4;
+- (long long)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(bool)arg3 stackFramesBuffer:(unsigned long long*)arg4;
 - (id)initWithTask:(unsigned int)arg1;
 - (unsigned long long)liteModeStackIDforAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
-- (BOOL)usesLiteMode;
+- (bool)usesLiteMode;
 
 @end

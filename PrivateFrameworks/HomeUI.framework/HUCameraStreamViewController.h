@@ -3,8 +3,8 @@
  */
 
 @interface HUCameraStreamViewController : UIViewController <HFHomeObserver, HFItemManagerDelegate, HUPresentationDelegate, HUPresentationDelegateHost> {
-    BOOL  _barsHidden;
-    BOOL  _beingPreviewed;
+    bool  _barsHidden;
+    bool  _beingPreviewed;
     HFCameraAudioManager * _cameraAudioManager;
     HUCameraView * _cameraView;
     <HUCameraStreamViewControllerDelegate> * _delegate;
@@ -13,13 +13,13 @@
     HUCameraMicrophoneButton * _microphoneButton;
     <HUPresentationDelegate> * _presentationDelegate;
     NSArray * _viewConstraints;
-    BOOL  _viewFullyVisible;
+    bool  _viewFullyVisible;
     UIBarButtonItem * _volumeBarButtonItem;
     MPVolumeSlider * _volumeSlider;
 }
 
-@property (getter=areBarsHidden, nonatomic) BOOL barsHidden;
-@property (getter=isBeingPreviewed, nonatomic) BOOL beingPreviewed;
+@property (getter=areBarsHidden, nonatomic) bool barsHidden;
+@property (getter=isBeingPreviewed, nonatomic) bool beingPreviewed;
 @property (nonatomic, retain) HFCameraAudioManager *cameraAudioManager;
 @property (nonatomic, readonly) UIView *cameraOverlaySnapshot;
 @property (nonatomic, retain) HUCameraView *cameraView;
@@ -27,18 +27,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUCameraStreamViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HFItemManager *itemManager;
 @property (nonatomic, retain) UIBarButtonItem *microphoneBarButtonItem;
 @property (nonatomic, retain) HUCameraMicrophoneButton *microphoneButton;
 @property (nonatomic) <HUPresentationDelegate> *presentationDelegate;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *viewConstraints;
-@property (getter=isViewFullyVisible, nonatomic) BOOL viewFullyVisible;
+@property (getter=isViewFullyVisible, nonatomic) bool viewFullyVisible;
 @property (nonatomic, retain) UIBarButtonItem *volumeBarButtonItem;
 @property (nonatomic, retain) MPVolumeSlider *volumeSlider;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (id)_cameraItem;
@@ -48,36 +48,36 @@
 - (void)_detailsButtonPressed:(id)arg1;
 - (void)_doneButtonPressed:(id)arg1;
 - (void)_handleBarHideTapGesture:(id)arg1;
-- (BOOL)_isStreaming;
+- (bool)_isStreaming;
 - (void)_microphoneButtonPressed:(id)arg1;
 - (id)_preferredCameraSource;
 - (void)_setupNavigationController;
-- (void)_updateCameraViewsIncludingError:(BOOL)arg1;
+- (void)_updateCameraViewsIncludingError:(bool)arg1;
 - (void)_updateIncomingAudioStreamSetting;
 - (void)_updateNavigationItemTitle;
 - (void)_updatePreferredContentSize;
-- (void)_updateToolbarButtonFramesForSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_updateToolbarButtonFramesForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_updateToolbarButtons;
-- (BOOL)areBarsHidden;
+- (bool)areBarsHidden;
 - (id)cameraAudioManager;
 - (id)cameraOverlaySnapshot;
 - (id)cameraView;
 - (id)cameraViewSnapshot;
 - (id)delegate;
-- (void)finishPresentation:(id)arg1 animated:(BOOL)arg2;
+- (void)finishPresentation:(id)arg1 animated:(bool)arg2;
 - (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
 - (id)initWithCameraItem:(id)arg1 delegate:(id)arg2;
-- (BOOL)isBeingPreviewed;
-- (BOOL)isViewFullyVisible;
+- (bool)isBeingPreviewed;
+- (bool)isViewFullyVisible;
 - (id)itemManager;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;
 - (id)microphoneBarButtonItem;
 - (id)microphoneButton;
-- (int)preferredStatusBarUpdateAnimation;
-- (BOOL)prefersStatusBarHidden;
+- (long long)preferredStatusBarUpdateAnimation;
+- (bool)prefersStatusBarHidden;
 - (id)presentationDelegate;
-- (void)setBarsHidden:(BOOL)arg1;
-- (void)setBeingPreviewed:(BOOL)arg1;
+- (void)setBarsHidden:(bool)arg1;
+- (void)setBeingPreviewed:(bool)arg1;
 - (void)setCameraAudioManager:(id)arg1;
 - (void)setCameraView:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -86,19 +86,19 @@
 - (void)setMicrophoneButton:(id)arg1;
 - (void)setPresentationDelegate:(id)arg1;
 - (void)setViewConstraints:(id)arg1;
-- (void)setViewFullyVisible:(BOOL)arg1;
+- (void)setViewFullyVisible:(bool)arg1;
 - (void)setVolumeBarButtonItem:(id)arg1;
 - (void)setVolumeSlider:(id)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)updateViewConstraints;
 - (id)viewConstraints;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { double x1; double x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)volumeBarButtonItem;
 - (id)volumeSlider;
 

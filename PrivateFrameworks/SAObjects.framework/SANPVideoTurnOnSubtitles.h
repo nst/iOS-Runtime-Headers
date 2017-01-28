@@ -12,7 +12,7 @@
 - (id)desiredOptionId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setDesiredOptionId:(id)arg1;
 
 @end

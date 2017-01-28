@@ -4,17 +4,17 @@
 
 @interface ICQUpgradeOfferViewController : ICQViewController
 
-@property (getter=isCancelEnabled, nonatomic) BOOL cancelEnabled;
+@property (getter=isCancelEnabled, nonatomic) bool cancelEnabled;
 @property (nonatomic, readonly) _ICQUpgradeOfferPageSpecification *upgradeOfferPageSpecification;
 
-+ (BOOL)supportsPageClassIdentifier:(id)arg1;
++ (bool)supportsPageClassIdentifier:(id)arg1;
 
 - (void)cancel:(id)arg1;
 - (id)initWithPageSpecification:(id)arg1;
 - (id)initWithUpgradeOfferPageSpecification:(id)arg1;
-- (BOOL)isCancelEnabled;
+- (bool)isCancelEnabled;
 - (void)loadView;
-- (void)setCancelEnabled:(BOOL)arg1;
+- (void)setCancelEnabled:(bool)arg1;
 - (id)upgradeOfferPageSpecification;
 
 @end

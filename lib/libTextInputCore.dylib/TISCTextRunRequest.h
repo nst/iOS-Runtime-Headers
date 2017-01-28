@@ -3,24 +3,24 @@
  */
 
 @interface TISCTextRunRequest : NSObject {
-    BOOL  _allowTruncation;
+    bool  _allowTruncation;
     struct CGColor { } * _color;
-    float  _maxFontSize;
-    float  _minFontSize;
+    double  _maxFontSize;
+    double  _minFontSize;
     NSArray * _strings;
     NSString * _truncationSentinel;
-    unsigned int  _widthGroup;
+    unsigned long long  _widthGroup;
 }
 
-+ (id)textRunRequestWithStrings:(id)arg1 color:(struct CGColor { }*)arg2 maxFontSize:(float)arg3 minFontSize:(float)arg4 allowTruncation:(BOOL)arg5 truncationSentinel:(id)arg6 widthGroup:(unsigned int)arg7;
++ (id)textRunRequestWithStrings:(id)arg1 color:(struct CGColor { }*)arg2 maxFontSize:(double)arg3 minFontSize:(double)arg4 allowTruncation:(bool)arg5 truncationSentinel:(id)arg6 widthGroup:(unsigned long long)arg7;
 
-- (BOOL)allowTruncation;
+- (bool)allowTruncation;
 - (struct CGColor { }*)color;
 - (void)dealloc;
-- (float)maxFontSize;
-- (float)minFontSize;
+- (double)maxFontSize;
+- (double)minFontSize;
 - (id)strings;
 - (id)truncationSentinel;
-- (unsigned int)widthGroup;
+- (unsigned long long)widthGroup;
 
 @end

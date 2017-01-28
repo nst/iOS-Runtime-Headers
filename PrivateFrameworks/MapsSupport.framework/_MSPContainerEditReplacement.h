@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSIndexSet *indexesOfReplacedObjects;
 @property (nonatomic, readonly) NSArray *originalImmutableObjects;
 @property (nonatomic, readonly) NSArray *originalObjects;
@@ -28,6 +28,6 @@
 - (id)originalObjects;
 - (id)replacementImmutableObjects;
 - (id)replacementObjects;
-- (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(id /* block */)arg2;
+- (void)useImmutableObjectsFromMap:(id)arg1 intermediateMutableObjectTransferBlock:(id)arg2;
 
 @end

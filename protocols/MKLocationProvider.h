@@ -5,8 +5,8 @@
 
 @required
 
-- (int)activityType;
-- (id /* block */)authorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 10: id /* block */, id /* block */, void*, void, id /* block */, BOOL, void*, void*, id, SEL
+- (long long)activityType;
+- (id)authorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 10: id, id, void*, void, id, bool, void*, void*, id, SEL
 - (int)authorizationStatus;
 - (<MKLocationProviderDelegate> *)delegate;
 - (double)desiredAccuracy;
@@ -16,22 +16,22 @@
 - (NSString *)effectiveBundleIdentifier;
 - (double)expectedGpsUpdateInterval;
 - (int)headingOrientation;
-- (BOOL)isLocationServicesPreferencesDialogEnabled;
-- (BOOL)isTracePlayer;
-- (BOOL)matchInfoEnabled;
+- (bool)isLocationServicesPreferencesDialogEnabled;
+- (bool)isTracePlayer;
+- (bool)matchInfoEnabled;
 - (void)requestWhenInUseAuthorization;
 - (void)requestWhenInUseAuthorizationWithPrompt;
-- (void)setActivityType:(int)arg1;
-- (void)setAuthorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id /* block */, void*, void, id /* block */, BOOL, void*, void*
+- (void)setActivityType:(long long)arg1;
+- (void)setAuthorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 11: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, id, void*, void, id, bool, void*, void*
 - (void)setDelegate:(id <MKLocationProviderDelegate>)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
 - (void)setEffectiveBundle:(NSBundle *)arg1;
 - (void)setEffectiveBundleIdentifier:(NSString *)arg1;
 - (void)setHeadingOrientation:(int)arg1;
-- (void)setLocationServicesPreferencesDialogEnabled:(BOOL)arg1;
-- (void)setMatchInfoEnabled:(BOOL)arg1;
-- (BOOL)shouldShiftIfNecessary;
+- (void)setLocationServicesPreferencesDialogEnabled:(bool)arg1;
+- (void)setMatchInfoEnabled:(bool)arg1;
+- (bool)shouldShiftIfNecessary;
 - (void)startUpdatingHeading;
 - (void)startUpdatingLocation;
 - (void)startUpdatingVehicleHeading;
@@ -41,7 +41,7 @@
 - (void)stopUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
 - (double)timeScale;
-- (BOOL)usesCLMapCorrection;
+- (bool)usesCLMapCorrection;
 
 @optional
 

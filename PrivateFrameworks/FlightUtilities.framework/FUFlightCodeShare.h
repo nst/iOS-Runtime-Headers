@@ -4,16 +4,16 @@
 
 @interface FUFlightCodeShare : NSObject {
     FUAirline * _airline;
-    int  _flightNumber;
+    long long  _flightNumber;
 }
 
 @property (retain) FUAirline *airline;
-@property int flightNumber;
+@property long long flightNumber;
 
 - (void).cxx_destruct;
 - (id)airline;
-- (int)flightNumber;
+- (long long)flightNumber;
 - (void)setAirline:(id)arg1;
-- (void)setFlightNumber:(int)arg1;
+- (void)setFlightNumber:(long long)arg1;
 
 @end

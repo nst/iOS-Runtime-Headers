@@ -4,9 +4,9 @@
 
 @interface _UIVisualEffectFilterView : _UIVisualEffectSubview
 
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 config:(id)arg2;
-- (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 settings:(id)arg2 type:(int)arg3;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 config:(id)arg2;
+- (id)_initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 settings:(id)arg2 type:(long long)arg3;
 - (void)applyConfig:(id)arg1;
-- (void)applySettings:(id)arg1 type:(int)arg2;
+- (void)applySettings:(id)arg1 type:(long long)arg2;
 
 @end

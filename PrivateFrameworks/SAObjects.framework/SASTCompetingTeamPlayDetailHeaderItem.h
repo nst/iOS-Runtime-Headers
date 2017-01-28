@@ -7,7 +7,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SAUIDecoratedText *firstTeam;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAUIDecoratedText *secondTeam;
 @property (readonly) Class superclass;
 

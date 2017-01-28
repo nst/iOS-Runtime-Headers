@@ -11,9 +11,9 @@
 - (id)encryptBlob:(id)arg1 withKeyLabel:(id)arg2;
 - (id)getEncryptionKeyWithLabel:(id)arg1;
 - (id)getPasscodeBlobWithLabel:(id)arg1;
-- (BOOL)hasKeyWithLabel:(id)arg1 isPublic:(BOOL)arg2;
-- (id)newKeyWithLabel:(id)arg1 allowAccessWhenLocked:(BOOL)arg2;
-- (void)storeEncryptionKey:(id)arg1 withLabel:(id)arg2 allowAccessWhenLocked:(BOOL)arg3;
-- (BOOL)storePasscodeBlob:(id)arg1 withLabel:(id)arg2;
+- (bool)hasKeyWithLabel:(id)arg1 isPublic:(bool)arg2;
+- (id)newKeyWithLabel:(id)arg1 allowAccessWhenLocked:(bool)arg2;
+- (void)storeEncryptionKey:(id)arg1 withLabel:(id)arg2 allowAccessWhenLocked:(bool)arg3;
+- (bool)storePasscodeBlob:(id)arg1 withLabel:(id)arg2;
 
 @end

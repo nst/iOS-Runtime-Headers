@@ -6,11 +6,11 @@
     NSString * _authorIdentifier;
     SKUIClientContext * _clientContext;
     NSLock * _lock;
-    id /* block */  _outputBlock;
+    id  _outputBlock;
 }
 
 @property (nonatomic, readonly, copy) NSString *authorIdentifier;
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
 - (id)_loadAlbumsWithItemIdentifiers:(id)arg1 platformContext:(id)arg2;
@@ -20,7 +20,7 @@
 - (id)init;
 - (id)initWithAuthorIdentifier:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (id /* block */)outputBlock;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (id)outputBlock;
+- (void)setOutputBlock:(id)arg1;
 
 @end

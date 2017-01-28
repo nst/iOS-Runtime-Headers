@@ -6,19 +6,19 @@
     NSString * _inviteeDestinationAddress;
     NSUUID * _messageIdentifier;
     NSArray * _operations;
-    BOOL  _responseReceived;
+    bool  _responseReceived;
     HMDUser * _user;
 }
 
 @property (nonatomic, readonly) NSArray *accessoryInvitationsInformation;
-@property (getter=isComplete, nonatomic, readonly) BOOL complete;
+@property (getter=isComplete, nonatomic, readonly) bool complete;
 @property (nonatomic, retain) NSString *inviteeDestinationAddress;
 @property (nonatomic, readonly) NSUUID *messageIdentifier;
 @property (nonatomic, retain) NSArray *operations;
-@property (nonatomic) BOOL responseReceived;
+@property (nonatomic) bool responseReceived;
 @property (nonatomic, readonly) HMDUser *user;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessoryInvitationsInformation;
@@ -28,17 +28,17 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInvitee:(id)arg1 invitationState:(int)arg2 forHome:(id)arg3 expiryDate:(id)arg4 messageIdentifier:(id)arg5;
+- (id)initWithInvitee:(id)arg1 invitationState:(long long)arg2 forHome:(id)arg3 expiryDate:(id)arg4 messageIdentifier:(id)arg5;
 - (void)invitationRemovedDuringMerge;
 - (id)inviteeDestinationAddress;
-- (BOOL)isComplete;
-- (BOOL)mergeWithInvitation:(id)arg1;
+- (bool)isComplete;
+- (bool)mergeWithInvitation:(id)arg1;
 - (id)messageIdentifier;
 - (id)operations;
-- (BOOL)responseReceived;
+- (bool)responseReceived;
 - (void)setInviteeDestinationAddress:(id)arg1;
 - (void)setOperations:(id)arg1;
-- (void)setResponseReceived:(BOOL)arg1;
+- (void)setResponseReceived:(bool)arg1;
 - (id)shortDescription;
 - (id)user;
 

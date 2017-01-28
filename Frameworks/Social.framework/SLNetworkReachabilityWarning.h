@@ -3,14 +3,14 @@
  */
 
 @interface SLNetworkReachabilityWarning : NSObject {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSString * _serviceType;
 }
 
 - (void).cxx_destruct;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (id)initWithServiceType:(id)arg1;
 - (void)showIfNecessary;
-- (void)showIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)showIfNecessaryWithCompletion:(id)arg1;
 
 @end

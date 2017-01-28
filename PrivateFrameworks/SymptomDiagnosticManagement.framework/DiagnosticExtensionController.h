@@ -6,7 +6,7 @@
     NSDateFormatter * dateFormatter;
 }
 
-+ (BOOL)addPayloadToStoredDictionary:(id)arg1;
++ (bool)addPayloadToStoredDictionary:(id)arg1;
 + (id)destinationRootDirectory;
 + (void)initialize;
 + (void)removeCasesFromStoredDictionary:(id)arg1;
@@ -15,8 +15,8 @@
 + (void)updatePayloadStoreDictionaryWithResults:(id)arg1 forIdentifier:(id)arg2;
 
 - (void).cxx_destruct;
-- (void)collectDEPayloadsWithIdentifier:(id)arg1 diagnosticExtensions:(id)arg2 queue:(id)arg3 reply:(id /* block */)arg4;
-- (void)collectDEPayloadsWithIdentifier:(id)arg1 diagnosticExtensionsWithParameters:(id)arg2 queue:(id)arg3 reply:(id /* block */)arg4;
+- (void)collectDEPayloadsWithIdentifier:(id)arg1 diagnosticExtensions:(id)arg2 queue:(id)arg3 reply:(id)arg4;
+- (void)collectDEPayloadsWithIdentifier:(id)arg1 diagnosticExtensionsWithParameters:(id)arg2 queue:(id)arg3 reply:(id)arg4;
 - (id)init;
 
 @end

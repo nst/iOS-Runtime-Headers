@@ -4,10 +4,10 @@
 
 @interface WBSURLCompletionUserTypedString : NSObject {
     const char * _chars;
-    BOOL  _containsAnySpaces;
+    bool  _containsAnySpaces;
     int  _length;
-    BOOL  _ownsChars;
-    BOOL  _ownsUnichars;
+    bool  _ownsChars;
+    bool  _ownsUnichars;
     NSString * _string;
     const unsigned short * _unichars;
 }

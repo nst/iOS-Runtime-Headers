@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) <HFCharacteristicOperationContextProviding> *contextProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFCharacteristicValueSource> *originalValueSource;
 @property (nonatomic) <HFOverrideCharacteristicValueProvider> *overrideValueProvider;
 @property (readonly) Class superclass;

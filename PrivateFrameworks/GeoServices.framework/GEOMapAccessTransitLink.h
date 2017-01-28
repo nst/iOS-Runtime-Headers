@@ -18,11 +18,11 @@
     }  _transitEdge;
 }
 
-@property (nonatomic, readonly) unsigned long coordinateCount;
+@property (nonatomic, readonly) unsigned long long coordinateCount;
 @property (nonatomic, readonly) struct { double x1; double x2; }*coordinates;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *internalLineName;
 @property (nonatomic, readonly) double length;
 @property (nonatomic, readonly) unsigned int minimumTravelTime;

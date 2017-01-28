@@ -14,7 +14,7 @@
 @property (nonatomic) CalPersistentLRUCacheItem *previousItem;
 @property (nonatomic, readonly) <NSSecureCoding> *value;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

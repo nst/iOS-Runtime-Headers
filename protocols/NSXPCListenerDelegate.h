@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)listener:(NSXPCListener *)arg1 shouldAcceptNewConnection:(NSXPCConnection *)arg2;
+- (bool)listener:(NSXPCListener *)arg1 shouldAcceptNewConnection:(NSXPCConnection *)arg2;
 
 @end

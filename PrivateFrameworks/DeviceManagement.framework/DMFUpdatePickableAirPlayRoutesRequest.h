@@ -4,6 +4,6 @@
 
 @interface DMFUpdatePickableAirPlayRoutesRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 @end

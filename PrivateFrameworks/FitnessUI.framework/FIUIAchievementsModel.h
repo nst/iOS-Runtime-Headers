@@ -9,11 +9,11 @@
 
 @property (nonatomic) <FIUIAchievementsModelDelegate> *delegate;
 
-+ (int)compareAchievement:(id)arg1 toAchievement:(id)arg2;
++ (long long)compareAchievement:(id)arg1 toAchievement:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)fetchAchievementsOnDay:(id)arg1 inCalendar:(id)arg2 completion:(id /* block */)arg3;
+- (void)fetchAchievementsOnDay:(id)arg1 inCalendar:(id)arg2 completion:(id)arg3;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 

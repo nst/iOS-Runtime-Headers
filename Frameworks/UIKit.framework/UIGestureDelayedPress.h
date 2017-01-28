@@ -3,33 +3,33 @@
  */
 
 @interface UIGestureDelayedPress : NSObject <NSCopying> {
-    BOOL  _cloneForSecondDelivery;
-    int  _delayCount;
+    bool  _cloneForSecondDelivery;
+    long long  _delayCount;
     UIPressesEvent * _event;
     UIPress * _press;
     UIPress * _stateWhenDelayed;
     UIPress * _stateWhenDelivered;
 }
 
-@property BOOL cloneForSecondDelivery;
+@property bool cloneForSecondDelivery;
 @property (nonatomic, retain) UIPressesEvent *event;
 @property (nonatomic, retain) UIPress *press;
 @property (nonatomic, retain) UIPress *stateWhenDelayed;
 @property (nonatomic, retain) UIPress *stateWhenDelivered;
 
 - (void).cxx_destruct;
-- (BOOL)cloneForSecondDelivery;
+- (bool)cloneForSecondDelivery;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)decrementDelayCount;
-- (int)delayCount;
+- (long long)decrementDelayCount;
+- (long long)delayCount;
 - (id)description;
 - (id)event;
 - (void)incrementDelayCount;
 - (id)init;
-- (int)phaseForDelivery;
+- (long long)phaseForDelivery;
 - (id)press;
 - (void)saveCurrentPressState;
-- (void)setCloneForSecondDelivery:(BOOL)arg1;
+- (void)setCloneForSecondDelivery:(bool)arg1;
 - (void)setEvent:(id)arg1;
 - (void)setPress:(id)arg1;
 - (void)setStateWhenDelayed:(id)arg1;

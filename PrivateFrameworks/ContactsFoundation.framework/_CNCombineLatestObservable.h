@@ -22,12 +22,12 @@
 - (id)activeObservableIndexes;
 - (id)initWithObservables:(id)arg1;
 - (id)initWithObservables:(id)arg1 schedulerProvider:(id)arg2;
-- (void)observableAtIndex:(unsigned int)arg1 didFailWithError:(id)arg2 forObserver:(id)arg3;
-- (void)observableAtIndex:(unsigned int)arg1 didReceiveResult:(id)arg2 forObserver:(id)arg3;
-- (void)observableAtIndexDidComplete:(unsigned int)arg1 forObserver:(id)arg2;
+- (void)observableAtIndex:(unsigned long long)arg1 didFailWithError:(id)arg2 forObserver:(id)arg3;
+- (void)observableAtIndex:(unsigned long long)arg1 didReceiveResult:(id)arg2 forObserver:(id)arg3;
+- (void)observableAtIndexDidComplete:(unsigned long long)arg1 forObserver:(id)arg2;
 - (id)observables;
 - (id)observerScheduler;
-- (void)performWithResourceLock:(id /* block */)arg1;
+- (void)performWithResourceLock:(id)arg1;
 - (id)results;
 - (id)silentObservableIndexes;
 - (id)subscribe:(id)arg1;

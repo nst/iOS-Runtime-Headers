@@ -11,13 +11,13 @@
 @property (nonatomic, retain) UIView *blinderView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *initialSnapshotView;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *updatedSnapshotView;
 
 - (void).cxx_destruct;
-- (id)_newSnapshotViewForPreviewingContext:(id)arg1 afterScreenUpdates:(BOOL)arg2;
+- (id)_newSnapshotViewForPreviewingContext:(id)arg1 afterScreenUpdates:(bool)arg2;
 - (id)blinderView;
 - (void)dealloc;
 - (void)finalizeHighlightForPreviewingContext:(id)arg1;

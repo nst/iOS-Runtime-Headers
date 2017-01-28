@@ -5,6 +5,6 @@
 
 @required
 
-- (void)serviceViewControllerDesiresConstrainedSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)serviceViewControllerDesiresConstrainedSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

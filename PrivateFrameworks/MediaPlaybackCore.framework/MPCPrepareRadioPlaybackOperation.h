@@ -3,25 +3,26 @@
  */
 
 @interface MPCPrepareRadioPlaybackOperation : NSOperation {
-    id /* block */  _firstTrackBlock;
+    SSAuthenticateRequest * _authenticateRequest;
+    id  _firstTrackBlock;
     MPCRadioGetTracksOperation * _getTracksOperation;
     NSLock * _lock;
     RadioStationMatchContext * _nowPlayingMatchContext;
     SSVPlaybackLease * _playbackLease;
-    id /* block */  _preparedBlock;
+    id  _preparedBlock;
     RadioRequestContext * _requestContext;
     RadioStation * _station;
     RadioStationMatchContext * _stationMatchContext;
-    BOOL  _willContinuePlayback;
+    bool  _willContinuePlayback;
 }
 
 @property (retain) RadioStationMatchContext *nowPlayingMatchContext;
 @property (retain) SSVPlaybackLease *playbackLease;
-@property (copy) id /* block */ preparedBlock;
+@property (copy) id preparedBlock;
 @property (copy) RadioRequestContext *requestContext;
 @property (retain) RadioStation *station;
 @property (retain) RadioStationMatchContext *stationMatchContext;
-@property BOOL willContinuePlayback;
+@property bool willContinuePlayback;
 
 - (void).cxx_destruct;
 - (void)cancel;
@@ -29,17 +30,17 @@
 - (void)main;
 - (id)nowPlayingMatchContext;
 - (id)playbackLease;
-- (id /* block */)preparedBlock;
+- (id)preparedBlock;
 - (id)requestContext;
 - (void)setNowPlayingMatchContext:(id)arg1;
 - (void)setPlaybackLease:(id)arg1;
-- (void)setPreparedBlock:(id /* block */)arg1;
+- (void)setPreparedBlock:(id)arg1;
 - (void)setRequestContext:(id)arg1;
 - (void)setStation:(id)arg1;
 - (void)setStationMatchContext:(id)arg1;
-- (void)setWillContinuePlayback:(BOOL)arg1;
+- (void)setWillContinuePlayback:(bool)arg1;
 - (id)station;
 - (id)stationMatchContext;
-- (BOOL)willContinuePlayback;
+- (bool)willContinuePlayback;
 
 @end

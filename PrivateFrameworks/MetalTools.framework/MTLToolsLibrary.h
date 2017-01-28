@@ -11,7 +11,7 @@
 @property (readonly) <MTLDevice> *device;
 @property (readonly) NSArray *functionNames;
 @property (nonatomic, readonly) MTLToolsPointerArray *functions;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) NSString *label;
 @property (readonly) Class superclass;
 
@@ -23,7 +23,7 @@
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)label;
 - (id)newFunctionWithName:(id)arg1;
-- (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 completionHandler:(id)arg3;
 - (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 error:(id*)arg3;
 - (void)setLabel:(id)arg1;
 

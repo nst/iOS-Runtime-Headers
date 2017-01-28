@@ -4,13 +4,13 @@
 
 @interface HDAppSubscriptionDataCodeAnchorEntity : HDHealthEntity
 
-+ (BOOL)_getAnchorsWithArray:(id)arg1 predicate:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
-+ (id)_predicateForDataCode:(int)arg1;
-+ (id)anchorForDataCode:(int)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
++ (bool)_getAnchorsWithArray:(id)arg1 predicate:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (id)_predicateForDataCode:(long long)arg1;
++ (id)anchorForDataCode:(long long)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (id)columnsDefinition;
 + (id)databaseTable;
-+ (int)protectionClass;
-+ (BOOL)setAnchor:(id)arg1 forDataCode:(int)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (long long)protectionClass;
++ (bool)setAnchor:(id)arg1 forDataCode:(long long)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)tableAliases;
 
 @end

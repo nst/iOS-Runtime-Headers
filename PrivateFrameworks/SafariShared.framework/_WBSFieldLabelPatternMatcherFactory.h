@@ -6,10 +6,10 @@
     NSMutableDictionary * _trie;
 }
 
-+ (struct __WBSFieldLabelPatternMatcherArray { }*)createFieldLabelPatternMatcherArrayFromWordArrays:(id)arg1 allowingEndOfWordMatches:(BOOL)arg2;
++ (struct __WBSFieldLabelPatternMatcherArray { }*)createFieldLabelPatternMatcherArrayFromWordArrays:(id)arg1 allowingEndOfWordMatches:(bool)arg2;
 
 - (void).cxx_destruct;
-- (void)_addWord:(id)arg1 allowingEndOfWordMatch:(BOOL)arg2;
+- (void)_addWord:(id)arg1 allowingEndOfWordMatch:(bool)arg2;
 - (id)init;
 
 @end

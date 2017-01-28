@@ -3,7 +3,7 @@
  */
 
 @interface PLDisplayAgent : PLAgent {
-    BOOL  _alsOn;
+    bool  _alsOn;
     PLTimer * _backlightFilterTimer;
     NSTimer * _bluelightFilterTimer;
     PLEntry * _bluelightStatusEntry;
@@ -11,16 +11,16 @@
     CBAdaptationClient * _colorAdaptationClient;
     NSString * _displayHardware;
     NSDictionary * _displayPowerModel;
-    BOOL  _firstEntryOnInit;
+    bool  _firstEntryOnInit;
     PLIOKitOperatorComposition * _iokitBacklight;
     PLIOKitOperatorComposition * _iokitBacklightControl;
     PLIOKitOperatorComposition * _iokitDisplay;
     PLIOKitOperatorComposition * _iokitTouch;
-    BOOL  _isDisplayHighBrightness;
-    BOOL  _isDisplayOn;
-    BOOL  _isFirstTimeModeling;
-    BOOL  _isMIEActive;
-    BOOL  _isMultitouchLoggingEnabled;
+    bool  _isDisplayHighBrightness;
+    bool  _isDisplayOn;
+    bool  _isFirstTimeModeling;
+    bool  _isMIEActive;
+    bool  _isMultitouchLoggingEnabled;
     double  _lastALSPowerSaved;
     PLMonotonicTimer * _logLastALSPowerSavedTimer;
     PLXPCListenerOperatorComposition * _multitouchXPCListener;
@@ -29,11 +29,11 @@
     struct __IOHIDEventSystemClient { } * _touchHIDClientRef;
     PLEventForwardDisplayEntry * _uAmpsEntry;
     NSTimer * _uAmpsFilterTimer;
-    BOOL  _userTouch;
+    bool  _userTouch;
     NSDate * _userTouchDownTime;
 }
 
-@property BOOL alsOn;
+@property bool alsOn;
 @property (retain) PLTimer *backlightFilterTimer;
 @property (retain) NSTimer *bluelightFilterTimer;
 @property (retain) PLEntry *bluelightStatusEntry;
@@ -41,16 +41,16 @@
 @property (retain) CBAdaptationClient *colorAdaptationClient;
 @property (readonly) NSString *displayHardware;
 @property (readonly) NSDictionary *displayPowerModel;
-@property BOOL firstEntryOnInit;
+@property bool firstEntryOnInit;
 @property (readonly) PLIOKitOperatorComposition *iokitBacklight;
 @property (readonly) PLIOKitOperatorComposition *iokitBacklightControl;
 @property (readonly) PLIOKitOperatorComposition *iokitDisplay;
 @property (readonly) PLIOKitOperatorComposition *iokitTouch;
-@property BOOL isDisplayHighBrightness;
-@property BOOL isDisplayOn;
-@property BOOL isFirstTimeModeling;
-@property BOOL isMIEActive;
-@property BOOL isMultitouchLoggingEnabled;
+@property bool isDisplayHighBrightness;
+@property bool isDisplayOn;
+@property bool isFirstTimeModeling;
+@property bool isMIEActive;
+@property bool isMultitouchLoggingEnabled;
 @property double lastALSPowerSaved;
 @property (retain) PLMonotonicTimer *logLastALSPowerSavedTimer;
 @property (retain) PLXPCListenerOperatorComposition *multitouchXPCListener;
@@ -59,7 +59,7 @@
 @property struct __IOHIDEventSystemClient { }*touchHIDClientRef;
 @property (retain) PLEventForwardDisplayEntry *uAmpsEntry;
 @property (retain) NSTimer *uAmpsFilterTimer;
-@property BOOL userTouch;
+@property bool userTouch;
 @property (retain) NSDate *userTouchDownTime;
 
 + (id)entryAggregateDefinitionUserTouch;
@@ -83,7 +83,7 @@
 + (void)load;
 
 - (void).cxx_destruct;
-- (BOOL)alsOn;
+- (bool)alsOn;
 - (id)backlightFilterTimer;
 - (id)bluelightFilterTimer;
 - (id)bluelightStatusEntry;
@@ -92,7 +92,7 @@
 - (id)displayHardware;
 - (id)displayPowerModel;
 - (void)extractDataWithEntry:(id)arg1 withColName:(id)arg2 withDataArray:(id)arg3;
-- (BOOL)firstEntryOnInit;
+- (bool)firstEntryOnInit;
 - (unsigned long long)getBacklightEnabledTimestamp:(unsigned int)arg1;
 - (void)handleBrightnessClientNotification:(id)arg1 withValue:(id)arg2;
 - (id)init;
@@ -101,18 +101,18 @@
 - (id)iokitBacklightControl;
 - (id)iokitDisplay;
 - (id)iokitTouch;
-- (BOOL)isAlsEnabled;
-- (BOOL)isDisplayHighBrightness;
-- (BOOL)isDisplayOn;
-- (BOOL)isFirstTimeModeling;
-- (BOOL)isMIEActive;
-- (BOOL)isMultitouchLoggingEnabled;
+- (bool)isAlsEnabled;
+- (bool)isDisplayHighBrightness;
+- (bool)isDisplayOn;
+- (bool)isFirstTimeModeling;
+- (bool)isMIEActive;
+- (bool)isMultitouchLoggingEnabled;
 - (double)lastALSPowerSaved;
 - (void)log;
 - (void)logBlueLightDataWithDictionary:(id)arg1;
 - (void)logBrightnessDataWithEntryKey:(id)arg1 withColName:(id)arg2 withValue:(id)arg3;
 - (void)logEventBackwardTouch;
-- (void)logEventBackwardUserTouch:(BOOL)arg1;
+- (void)logEventBackwardUserTouch:(bool)arg1;
 - (void)logEventForwardALSEnabled;
 - (void)logEventForwardALSUserPreferences;
 - (void)logEventForwardALSUserPreferencesEntryWithLux:(id)arg1;
@@ -122,7 +122,7 @@
 - (void)logEventForwardDisplayWithRawData:(id)arg1 withDate:(id)arg2;
 - (void)logEventPointDisplay;
 - (void)logEventPointDisplayBacklight;
-- (void)logEventPointDisplayForBlock:(id)arg1 isActive:(BOOL)arg2;
+- (void)logEventPointDisplayForBlock:(id)arg1 isActive:(bool)arg2;
 - (void)logEventPointDisplayMIE;
 - (void)logEventPointMultitouchWithPayload:(id)arg1;
 - (void)logEventPointUserBrightnessCommitted:(double)arg1;
@@ -134,18 +134,18 @@
 - (id)pendingBacklightEntryDate;
 - (void)reArmCallback:(id)arg1;
 - (void)reArmUAmpsCallback:(id)arg1;
-- (void)setAlsOn:(BOOL)arg1;
+- (void)setAlsOn:(bool)arg1;
 - (void)setBacklightFilterTimer:(id)arg1;
 - (void)setBluelightFilterTimer:(id)arg1;
 - (void)setBluelightStatusEntry:(id)arg1;
 - (void)setBrightnessSystemClient:(id)arg1;
 - (void)setColorAdaptationClient:(id)arg1;
-- (void)setFirstEntryOnInit:(BOOL)arg1;
-- (void)setIsDisplayHighBrightness:(BOOL)arg1;
-- (void)setIsDisplayOn:(BOOL)arg1;
-- (void)setIsFirstTimeModeling:(BOOL)arg1;
-- (void)setIsMIEActive:(BOOL)arg1;
-- (void)setIsMultitouchLoggingEnabled:(BOOL)arg1;
+- (void)setFirstEntryOnInit:(bool)arg1;
+- (void)setIsDisplayHighBrightness:(bool)arg1;
+- (void)setIsDisplayOn:(bool)arg1;
+- (void)setIsFirstTimeModeling:(bool)arg1;
+- (void)setIsMIEActive:(bool)arg1;
+- (void)setIsMultitouchLoggingEnabled:(bool)arg1;
 - (void)setLastALSPowerSaved:(double)arg1;
 - (void)setLogLastALSPowerSavedTimer:(id)arg1;
 - (void)setMultitouchXPCListener:(id)arg1;
@@ -155,13 +155,13 @@
 - (void)setUAmpsEntry:(id)arg1;
 - (void)setUAmpsFilterTimer:(id)arg1;
 - (struct __IOHIDEventSystemClient { }*)setUpIOHIDTouchSystemClient;
-- (void)setUserTouch:(BOOL)arg1;
+- (void)setUserTouch:(bool)arg1;
 - (void)setUserTouchDownTime:(id)arg1;
 - (struct __IOHIDEventSystemClient { }*)touchHIDClientRef;
 - (id)uAmpsEntry;
 - (id)uAmpsFilterTimer;
 - (double)uAmpsToDisplayPower:(double)arg1;
-- (BOOL)userTouch;
+- (bool)userTouch;
 - (id)userTouchDownTime;
 
 @end

@@ -9,11 +9,11 @@
     unsigned int  _textureType;
 }
 
-- (unsigned int)arrayLength;
+- (unsigned long long)arrayLength;
 - (id)describe;
-- (id)initWithName:(id)arg1 access:(unsigned int)arg2 isActive:(BOOL)arg3 locationIndex:(unsigned int)arg4 arraySize:(unsigned int)arg5 dataType:(unsigned int)arg6 textureType:(unsigned int)arg7 isDepthTexture:(bool)arg8;
-- (BOOL)isDepthTexture;
-- (unsigned int)textureDataType;
-- (unsigned int)textureType;
+- (id)initWithName:(id)arg1 access:(unsigned long long)arg2 isActive:(bool)arg3 locationIndex:(unsigned long long)arg4 arraySize:(unsigned long long)arg5 dataType:(unsigned long long)arg6 textureType:(unsigned long long)arg7 isDepthTexture:(bool)arg8;
+- (bool)isDepthTexture;
+- (unsigned long long)textureDataType;
+- (unsigned long long)textureType;
 
 @end

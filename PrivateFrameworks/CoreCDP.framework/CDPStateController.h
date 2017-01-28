@@ -4,16 +4,16 @@
 
 @interface CDPStateController : CDPController
 
-- (void)finishOfflineLocalSecretChangeWithCompletion:(id /* block */)arg1;
-- (void)getStingrayDisableEligibilityWithCompletion:(id /* block */)arg1;
-- (void)getStringrayStatusWithCompletion:(id /* block */)arg1;
-- (void)handleCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
+- (void)finishOfflineLocalSecretChangeWithCompletion:(id)arg1;
+- (void)getStingrayDisableEligibilityWithCompletion:(id)arg1;
+- (void)getStringrayStatusWithCompletion:(id)arg1;
+- (void)handleCloudDataProtectionStateWithCompletion:(id)arg1;
 - (void)handleURLActionWithInfo:(id)arg1;
-- (void)handleURLActionWithInfo:(id)arg1 completion:(id /* block */)arg2;
-- (void)localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)preflightStingrayDisableWithCompletion:(id /* block */)arg1;
-- (void)repairCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
-- (void)setStingrayState:(BOOL)arg1 completion:(id /* block */)arg2;
-- (BOOL)shouldPerformRepair:(id*)arg1;
+- (void)handleURLActionWithInfo:(id)arg1 completion:(id)arg2;
+- (void)localSecretChangedTo:(id)arg1 secretType:(unsigned long long)arg2 completion:(id)arg3;
+- (void)preflightStingrayDisableWithCompletion:(id)arg1;
+- (void)repairCloudDataProtectionStateWithCompletion:(id)arg1;
+- (void)setStingrayState:(bool)arg1 completion:(id)arg2;
+- (bool)shouldPerformRepair:(id*)arg1;
 
 @end

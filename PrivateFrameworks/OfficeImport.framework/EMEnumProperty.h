@@ -12,9 +12,9 @@
 
 - (id)cssStringForName:(id)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithEnum:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mapHorizontalAlignment;
 - (id)mapUnderline;
 - (id)mapVerticalAlignment;

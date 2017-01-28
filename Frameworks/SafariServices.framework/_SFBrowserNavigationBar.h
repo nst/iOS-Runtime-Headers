@@ -6,9 +6,9 @@
 
 @property (nonatomic, readonly) _SFBrowserToolbar *toolbar;
 
-- (float)URLFieldHorizontalMargin;
+- (double)URLFieldHorizontalMargin;
 - (id)newTextField;
-- (float)placeholderHorizontalInset;
+- (double)placeholderHorizontalInset;
 - (void)tintColorDidChange;
 - (id)toolbar;
 - (id)toolbarPlacedOnTop;

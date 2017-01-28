@@ -3,22 +3,22 @@
  */
 
 @interface TSDBitmapRenderingQualityInfo : NSObject {
-    float  mCanvasScale;
+    double  mCanvasScale;
     NSMutableDictionary * mImageMap;
     int  mQuality;
 }
 
-@property (nonatomic, readonly) float canvasScale;
+@property (nonatomic, readonly) double canvasScale;
 @property (nonatomic, readonly) int quality;
 
-- (void)cacheProvider:(id)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2;
-- (float)canvasScale;
+- (void)cacheProvider:(id)arg1 ofSize:(struct CGSize { double x1; double x2; })arg2;
+- (double)canvasScale;
 - (void)dealloc;
-- (struct CGImage { }*)degradedImageRefForProvider:(id)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGImage { }*)degradedImageRefForProvider:(id)arg1 ofSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)doneCaching:(id)arg1 forProvider:(id)arg2;
 - (Class)imageMapValueClass;
 - (id)initWithQuality:(int)arg1 canvasScale:(float)arg2;
 - (int)quality;
-- (float)qualityScaleForSize:(struct CGSize { float x1; float x2; })arg1;
+- (double)qualityScaleForSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

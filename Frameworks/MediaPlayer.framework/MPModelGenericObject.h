@@ -32,6 +32,6 @@
 - (void)setPlaylist:(id)arg1;
 - (void)setSong:(id)arg1;
 - (id)song;
-- (int)type;
+- (long long)type;
 
 @end

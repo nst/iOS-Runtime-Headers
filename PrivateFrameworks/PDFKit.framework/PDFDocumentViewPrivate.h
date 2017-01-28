@@ -4,11 +4,11 @@
 
 @interface PDFDocumentViewPrivate : NSObject {
     PDFDocumentContentView * contentView;
-    int  displayBox;
+    long long  displayBox;
     PDFDocument * document;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  documentViewSize;
     bool  forceUseMainThread;
     bool  ignoreChangedBoundsForBoxNotification;

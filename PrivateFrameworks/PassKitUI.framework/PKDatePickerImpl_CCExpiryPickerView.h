@@ -4,42 +4,42 @@
 
 @interface PKDatePickerImpl_CCExpiryPickerView : UIPickerView <PKDatePickerInternalImplementationProtocol, UIPickerViewDataSource, UIPickerViewDelegate> {
     NSCalendar * _calendar;
-    unsigned int  _calendarUnit;
+    unsigned long long  _calendarUnit;
     SEL  _changeAction;
     id  _changeTarget;
     NSDateFormatter * _dateFormatter;
     UIFont * _font;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _possibleRange;
     NSNumber * _useDoubleMonthStyle;
-    float  _width;
+    double  _width;
 }
 
 @property (nonatomic, retain) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (float)_calculateWidthForComponent:(int)arg1 usingFont:(id)arg2;
-- (id)_dateForComponent:(int)arg1 index:(unsigned int)arg2;
-- (id)_dateFormatForCalendarUnit:(unsigned int)arg1;
-- (id)_dateWithCalendarUnit:(unsigned int)arg1 value:(int)arg2;
-- (unsigned int)_defaultIndexForComponent:(int)arg1;
-- (int)_numberOfItemsForComponent:(int)arg1;
-- (id)_stringForComponent:(int)arg1 index:(unsigned int)arg2;
-- (BOOL)_useDoubleMonthStyle;
-- (float)_widthForComponent:(int)arg1;
+- (double)_calculateWidthForComponent:(long long)arg1 usingFont:(id)arg2;
+- (id)_dateForComponent:(long long)arg1 index:(unsigned long long)arg2;
+- (id)_dateFormatForCalendarUnit:(unsigned long long)arg1;
+- (id)_dateWithCalendarUnit:(unsigned long long)arg1 value:(long long)arg2;
+- (unsigned long long)_defaultIndexForComponent:(long long)arg1;
+- (long long)_numberOfItemsForComponent:(long long)arg1;
+- (id)_stringForComponent:(long long)arg1 index:(unsigned long long)arg2;
+- (bool)_useDoubleMonthStyle;
+- (double)_widthForComponent:(long long)arg1;
 - (id)date;
-- (id)initShowingDay:(BOOL)arg1 month:(BOOL)arg2 year:(BOOL)arg3 useDarkAppearance:(BOOL)arg4;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 viewForRow:(int)arg2 forComponent:(int)arg3 reusingView:(id)arg4;
-- (float)pickerView:(id)arg1 widthForComponent:(int)arg2;
+- (id)initShowingDay:(bool)arg1 month:(bool)arg2 year:(bool)arg3 useDarkAppearance:(bool)arg4;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 viewForRow:(long long)arg2 forComponent:(long long)arg3 reusingView:(id)arg4;
+- (double)pickerView:(id)arg1 widthForComponent:(long long)arg2;
 - (void)prepareToDie;
 - (void)setDate:(id)arg1;
 - (void)setDateValueChangedTarget:(id)arg1 action:(SEL)arg2;

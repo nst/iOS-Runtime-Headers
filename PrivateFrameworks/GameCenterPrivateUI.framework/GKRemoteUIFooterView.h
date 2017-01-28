@@ -3,44 +3,44 @@
  */
 
 @interface GKRemoteUIFooterView : UIView <RemoteUITableFooter> {
-    float  _bottomMargin;
+    double  _bottomMargin;
     int  _layoutStyle;
-    float  _leftMargin;
-    float  _paragraphMargin;
-    float  _rightMargin;
-    BOOL  _shouldApplyGameCenterTheme;
+    double  _leftMargin;
+    double  _paragraphMargin;
+    double  _rightMargin;
+    bool  _shouldApplyGameCenterTheme;
     GKLabel * _textLabel;
 }
 
-@property (nonatomic) float bottomMargin;
+@property (nonatomic) double bottomMargin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int layoutStyle;
-@property (nonatomic) float leftMargin;
-@property (nonatomic) float paragraphMargin;
-@property (nonatomic) float rightMargin;
-@property (nonatomic) BOOL shouldApplyGameCenterTheme;
+@property (nonatomic) double leftMargin;
+@property (nonatomic) double paragraphMargin;
+@property (nonatomic) double rightMargin;
+@property (nonatomic) bool shouldApplyGameCenterTheme;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) GKLabel *textLabel;
 
 - (id)attributedStringForString:(id)arg1 withStyle:(id)arg2;
-- (float)bottomMargin;
+- (double)bottomMargin;
 - (void)dealloc;
-- (float)footerHeightForWidth:(float)arg1 inTableView:(id)arg2;
+- (double)footerHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (id)initWithAttributes:(id)arg1;
 - (int)layoutStyle;
-- (float)leftMargin;
-- (float)paragraphMargin;
-- (float)rightMargin;
-- (void)setBottomMargin:(float)arg1;
+- (double)leftMargin;
+- (double)paragraphMargin;
+- (double)rightMargin;
+- (void)setBottomMargin:(double)arg1;
 - (void)setLayoutStyle:(int)arg1;
-- (void)setLeftMargin:(float)arg1;
-- (void)setParagraphMargin:(float)arg1;
-- (void)setRightMargin:(float)arg1;
-- (void)setShouldApplyGameCenterTheme:(BOOL)arg1;
+- (void)setLeftMargin:(double)arg1;
+- (void)setParagraphMargin:(double)arg1;
+- (void)setRightMargin:(double)arg1;
+- (void)setShouldApplyGameCenterTheme:(bool)arg1;
 - (void)setTextLabel:(id)arg1;
-- (BOOL)shouldApplyGameCenterTheme;
+- (bool)shouldApplyGameCenterTheme;
 - (id)textLabel;
 
 @end

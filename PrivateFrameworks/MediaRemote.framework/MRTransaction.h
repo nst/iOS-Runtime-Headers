@@ -12,7 +12,7 @@
 @property (nonatomic) <MRTransactionDelegate> *delegate;
 @property (nonatomic, readonly) unsigned long long name;
 
-- (unsigned int)_calculateMemory;
+- (unsigned long long)_calculateMemory;
 - (void)_processMessage:(id)arg1;
 - (void)_query:(id)arg1;
 - (void)_transactionEnded;
@@ -20,7 +20,7 @@
 - (id)delegate;
 - (id)initWithName:(unsigned long long)arg1 fromMessage:(id)arg2;
 - (unsigned long long)name;
-- (void)send:(id)arg1 toConnection:(id)arg2 completion:(id /* block */)arg3;
+- (void)send:(id)arg1 toConnection:(id)arg2 completion:(id)arg3;
 - (void)setDelegate:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initAndGetSetterBlock:(id /* block */*)arg1;
+- (id)initAndGetSetterBlock:(id*)arg1;
 - (id)waitForValue:(unsigned long long)arg1;
 
 @end

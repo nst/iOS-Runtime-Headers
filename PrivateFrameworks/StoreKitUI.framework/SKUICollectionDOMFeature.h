@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *featureName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)featureName;
@@ -25,6 +25,6 @@
 - (id)featureName;
 - (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
 - (void)setCollectionTarget:(id)arg1;
-- (void)setEditing:(BOOL)arg1 options:(id)arg2;
+- (void)setEditing:(bool)arg1 options:(id)arg2;
 
 @end

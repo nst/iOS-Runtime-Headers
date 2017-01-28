@@ -14,21 +14,21 @@
 - (void).cxx_destruct;
 - (id)archiveData;
 - (id)bundle;
-- (void)contentWithCompletion:(id /* block */)arg1;
+- (void)contentWithCompletion:(id)arg1;
 - (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2;
-- (void)dictionaryWithCompletion:(id /* block */)arg1;
-- (id)displayProfileOfType:(int)arg1;
-- (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id /* block */)arg3;
+- (void)dictionaryWithCompletion:(id)arg1;
+- (id)displayProfileOfType:(long long)arg1;
+- (void)downloadRemoteAssetsWithScreenScale:(double)arg1 suffix:(id)arg2 completion:(id)arg3;
 - (id)fileURL;
-- (void)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(id /* block */)arg6;
+- (void)imageSetForType:(long long)arg1 screenScale:(double)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(bool)arg5 withCompletion:(id)arg6;
 - (id)initWithFileURL:(id)arg1 error:(id*)arg2;
 - (id)initWithFileURL:(id)arg1 error:(id*)arg2 processingQueue:(id)arg3;
 - (id)manifestHash;
 - (id)processingQueue;
 - (id)remoteAssetManager;
-- (BOOL)remoteAssetsDownloaded;
+- (bool)remoteAssetsDownloaded;
 - (id)resourceValueForKey:(id)arg1;
-- (void)revocationStatusWithCompletion:(id /* block */)arg1;
+- (void)revocationStatusWithCompletion:(id)arg1;
 - (id)serializedFileWrapper;
 
 @end

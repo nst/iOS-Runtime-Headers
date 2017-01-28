@@ -4,9 +4,9 @@
 
 @interface SBWorkspaceDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL alwaysBreadcrumb;
-@property (getter=isMedusaEnabled, nonatomic, readonly) BOOL medusaEnabled;
-@property (nonatomic, readonly) BOOL neverBreadcrumb;
+@property (nonatomic, readonly) bool alwaysBreadcrumb;
+@property (getter=isMedusaEnabled, nonatomic, readonly) bool medusaEnabled;
+@property (nonatomic, readonly) bool neverBreadcrumb;
 @property (nonatomic, retain) NSDictionary *sideAppState;
 
 - (void)_bindAndRegisterDefaults;

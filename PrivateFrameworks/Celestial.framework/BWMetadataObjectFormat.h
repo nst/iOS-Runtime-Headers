@@ -13,6 +13,6 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
-- (unsigned long)mediaType;
+- (unsigned int)mediaType;
 
 @end

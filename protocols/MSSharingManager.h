@@ -10,7 +10,7 @@
 - (NSString *)personID;
 - (void)refreshCurrentShareState;
 - (void)removeShare:(MSShare *)arg1;
-- (void)respondToInvitation:(MSShare *)arg1 accept:(BOOL)arg2;
+- (void)respondToInvitation:(MSShare *)arg1 accept:(bool)arg2;
 - (void)sendInvitationsForShares:(NSArray *)arg1;
 - (void)setDelegate:(id <MSSharingManagerDelegate>)arg1;
 - (void)setShares:(NSArray *)arg1;

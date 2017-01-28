@@ -6,27 +6,27 @@
     NSString * mKey;
     NSArray * mKeyTimes;
     CALayer * mLayer;
-    BOOL  mNeedPresentationLayerValues;
+    bool  mNeedPresentationLayerValues;
     NSArray * mValues;
 }
 
 @property (nonatomic, readonly) NSString *key;
 @property (nonatomic, readonly) NSArray *keyTimes;
 @property (nonatomic, readonly) CALayer *layer;
-@property (nonatomic, readonly) BOOL needPresentationLayerValues;
+@property (nonatomic, readonly) bool needPresentationLayerValues;
 @property (nonatomic, readonly) NSArray *values;
 
 + (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3;
 + (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
-+ (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;
++ (id)animationValuesWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(bool)arg5;
 
 - (void)dealloc;
 - (id)description;
-- (id)initWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;
+- (id)initWithLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(bool)arg5;
 - (id)key;
 - (id)keyTimes;
 - (id)layer;
-- (BOOL)needPresentationLayerValues;
+- (bool)needPresentationLayerValues;
 - (id)values;
 
 @end

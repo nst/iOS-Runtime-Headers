@@ -5,13 +5,13 @@
 @interface FBMutableProcessExecutionContext : FBProcessExecutionContext
 
 @property (nonatomic, copy) NSArray *arguments;
-@property (nonatomic) BOOL checkForLeaks;
-@property (nonatomic) BOOL disableASLR;
+@property (nonatomic) bool checkForLeaks;
+@property (nonatomic) bool disableASLR;
 @property (nonatomic, copy) NSDictionary *environment;
-@property (nonatomic) int launchIntent;
+@property (nonatomic) long long launchIntent;
 @property (nonatomic, retain) NSURL *standardErrorURL;
 @property (nonatomic, retain) NSURL *standardOutputURL;
-@property (nonatomic) BOOL waitForDebugger;
+@property (nonatomic) bool waitForDebugger;
 @property (nonatomic) double watchdogExtension;
 @property (nonatomic, retain) <FBProcessWatchdogProviding> *watchdogProvider;
 @property (nonatomic) double watchdogScaleFactor;

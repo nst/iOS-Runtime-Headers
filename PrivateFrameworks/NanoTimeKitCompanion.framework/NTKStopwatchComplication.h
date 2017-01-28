@@ -4,6 +4,6 @@
 
 @interface NTKStopwatchComplication : NTKComplication
 
-- (BOOL)appearsInDailySnapshotForFamily:(int)arg1;
+- (bool)appearsInDailySnapshotForFamily:(long long)arg1;
 
 @end

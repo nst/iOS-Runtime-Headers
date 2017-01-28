@@ -10,7 +10,7 @@
 @property (nonatomic) double clipDuration;
 @property (nonatomic, retain) NSDictionary *videoCompressionProperties;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)clipDuration;

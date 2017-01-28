@@ -4,6 +4,6 @@
 
 @interface MCDArtistsDataSource : MCDQueryDataSource
 
-- (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
+- (bool)entityIsNowPlayingAtIndex:(unsigned long long)arg1;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface LPPointUnit : NSObject <LPCSSText> {
-    float  _value;
+    double  _value;
 }
 
-@property (nonatomic, readonly) float value;
+@property (nonatomic, readonly) double value;
 
 - (id)_lp_CSSText;
-- (id)initWithValue:(float)arg1;
-- (float)value;
+- (id)initWithValue:(double)arg1;
+- (double)value;
 
 @end

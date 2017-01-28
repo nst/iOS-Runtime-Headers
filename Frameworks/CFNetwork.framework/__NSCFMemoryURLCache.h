@@ -3,9 +3,9 @@
  */
 
 @interface __NSCFMemoryURLCache : NSObject {
-    unsigned int  _currentLength;
+    unsigned long long  _currentLength;
     id  _internal;
-    unsigned int  _memoryCapacity;
+    unsigned long long  _memoryCapacity;
     NSObject<OS_dispatch_queue> * _memoryQueue;
     NSMutableDictionary * _memoryStorage;
     NSMutableArray * _memoryStorageLRU;
@@ -14,20 +14,20 @@
 + (void)initialize;
 
 - (id)cachedResponseForRequest:(id)arg1;
-- (unsigned int)currentDiskUsage;
-- (unsigned int)currentMemoryUsage;
+- (unsigned long long)currentDiskUsage;
+- (unsigned long long)currentMemoryUsage;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)diskCapacity;
+- (unsigned long long)diskCapacity;
 - (id)initByCallingSuperSuperInit;
 - (id)initEmptyCache;
 - (id)initMemoryCache;
-- (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
-- (unsigned int)memoryCapacity;
+- (id)initWithMemoryCapacity:(unsigned long long)arg1 diskCapacity:(unsigned long long)arg2 diskPath:(id)arg3;
+- (unsigned long long)memoryCapacity;
 - (void)removeAllCachedResponses;
 - (void)removeCachedResponseForRequest:(id)arg1;
-- (void)setDiskCapacity:(unsigned int)arg1;
-- (void)setMemoryCapacity:(unsigned int)arg1;
+- (void)setDiskCapacity:(unsigned long long)arg1;
+- (void)setMemoryCapacity:(unsigned long long)arg1;
 - (void)storeCachedResponse:(id)arg1 forRequest:(id)arg2;
 
 @end

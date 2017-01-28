@@ -3,23 +3,23 @@
  */
 
 @interface HMDAccessoryRetrievalCompletionTuple : NSObject {
-    id /* block */  _completion;
-    int  _linkType;
+    id  _completion;
+    long long  _linkType;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
-@property (nonatomic) int linkType;
+@property (nonatomic, copy) id completion;
+@property (nonatomic) long long linkType;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
-+ (id)tupleWithLinkType:(int)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
++ (id)tupleWithLinkType:(long long)arg1 queue:(id)arg2 completion:(id)arg3;
 
 - (void).cxx_destruct;
-- (id /* block */)completion;
-- (int)linkType;
+- (id)completion;
+- (long long)linkType;
 - (id)queue;
-- (void)setCompletion:(id /* block */)arg1;
-- (void)setLinkType:(int)arg1;
+- (void)setCompletion:(id)arg1;
+- (void)setLinkType:(long long)arg1;
 - (void)setQueue:(id)arg1;
 
 @end

@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSString *userID;
 
 - (void).cxx_destruct;
-- (BOOL)canCoalesceWithCommand:(id)arg1;
+- (bool)canCoalesceWithCommand:(id)arg1;
 - (id)channelIDsToAdd;
 - (id)channelIDsToRemove;
 - (void)coalesceWithCommand:(id)arg1;

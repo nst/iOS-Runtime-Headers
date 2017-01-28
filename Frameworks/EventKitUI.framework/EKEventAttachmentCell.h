@@ -10,6 +10,6 @@
 - (id)_iconForDocumentProxy:(id)arg1;
 - (void)layoutSubviews;
 - (void)setAttachment:(id)arg1;
-- (void)showSpinner:(BOOL)arg1;
+- (void)showSpinner:(bool)arg1;
 
 @end

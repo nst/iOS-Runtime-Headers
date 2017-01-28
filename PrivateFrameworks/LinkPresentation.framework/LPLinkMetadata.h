@@ -27,7 +27,7 @@
 }
 
 @property (nonatomic, copy) NSURL *URL;
-@property (nonatomic, readonly) unsigned long _encodedSize;
+@property (nonatomic, readonly) unsigned long long _encodedSize;
 @property (nonatomic, copy) NSArray *audios;
 @property (nonatomic, copy) NSString *creator;
 @property (nonatomic, copy) NSString *creatorFacebookProfile;
@@ -50,11 +50,11 @@
 @property (nonatomic, copy) NSArray *videos;
 
 + (id)metadataWithDataRepresentation:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (unsigned long)_encodedSize;
+- (unsigned long long)_encodedSize;
 - (id)_initWithDictionary:(id)arg1 originalURL:(id)arg2;
 - (void)_reduceSizeByDroppingResourcesIfNeeded;
 - (id)audios;

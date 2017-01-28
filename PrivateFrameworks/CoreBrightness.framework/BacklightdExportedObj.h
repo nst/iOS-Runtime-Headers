@@ -3,8 +3,8 @@
  */
 
 @interface BacklightdExportedObj : NSObject <BacklightdXPCProtocol> {
-    unsigned int  _clientID;
-    BOOL  _clientIDSet;
+    unsigned long long  _clientID;
+    bool  _clientIDSet;
     NSXPCConnection * _connection;
     BrightnessSystemInternal * _server;
 }
@@ -12,11 +12,11 @@
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) BrightnessSystemInternal *server;
 @property (readonly) Class superclass;
 
-- (void)clientCopyPropertyWithKey:(id)arg1 reply:(id /* block */)arg2;
+- (void)clientCopyPropertyWithKey:(id)arg1 reply:(id)arg2;
 - (void)clientSetPropertyWithKey:(id)arg1 property:(id)arg2;
 - (id)connection;
 - (id)copyClientID;

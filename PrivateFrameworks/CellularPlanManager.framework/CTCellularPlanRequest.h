@@ -4,7 +4,7 @@
 
 @interface CTCellularPlanRequest : NSObject <NSURLConnectionDataDelegate> {
     NSDictionary * _bootstrapSettings;
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     NSURLConnection * _connection;
     NSError * _error;
     NSDictionary * _internetSettings;
@@ -17,12 +17,12 @@
     int  nextConnectionTypeIndex;
 }
 
-@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, copy) id completionBlock;
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct dispatch_queue_s { }*queue;
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSMutableURLRequest *request;
@@ -30,11 +30,11 @@
 @property (nonatomic) NSData *serializedCookies;
 @property (readonly) Class superclass;
 
-+ (id)connectionSettingsForServiceType:(int)arg1;
++ (id)connectionSettingsForServiceType:(long long)arg1;
 + (id)countryListRequestWithSignIdMap:(id)arg1 urls:(id)arg2;
 + (id)createSessionRequest;
 + (void)initialize;
-+ (BOOL)isRetriableErrorCode:(int)arg1;
++ (bool)isRetriableErrorCode:(long long)arg1;
 + (void)load;
 + (id)newInitiatePurchaseWithSessionId:(id)arg1 planId:(id)arg2;
 + (id)newPurchaseWithSessionId:(id)arg1 receipt:(id)arg2 userId:(id)arg3 userName:(id)arg4;
@@ -46,13 +46,13 @@
 + (id)subscriptionDetailsRequestWithIccids:(id)arg1 signIdMap:(id)arg2 urls:(id)arg3;
 
 - (void)_callback;
-- (BOOL)_canTryAnotherConnectionType;
+- (bool)_canTryAnotherConnectionType;
 - (id)_connectionSettingsForNextConnectionType;
 - (id)_initWithUrl:(id)arg1 httpMethod:(id)arg2 httpHeaders:(id)arg3 httpBody:(id)arg4 internetSettings:(id)arg5 bootstrapSettings:(id)arg6;
-- (BOOL)_isRetryableError:(id)arg1;
+- (bool)_isRetryableError:(id)arg1;
 - (void)_startRequestWithNextConnectionTypeOrFail;
 - (void)cancel;
-- (id /* block */)completionBlock;
+- (id)completionBlock;
 - (id)connection;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -70,7 +70,7 @@
 - (id)request;
 - (id)response;
 - (id)serializedCookies;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setQueue:(struct dispatch_queue_s { }*)arg1;
@@ -78,6 +78,6 @@
 - (void)setRequest:(id)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setSerializedCookies:(id)arg1;
-- (void)startRequestWithReplyQueue:(struct dispatch_queue_s { }*)arg1 completion:(id /* block */)arg2;
+- (void)startRequestWithReplyQueue:(struct dispatch_queue_s { }*)arg1 completion:(id)arg2;
 
 @end

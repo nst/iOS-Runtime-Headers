@@ -4,16 +4,16 @@
 
 @interface TSUDownloadManagerDownloadResultInfo : NSObject {
     NSError * _error;
-    BOOL  _success;
+    bool  _success;
 }
 
 @property (readonly) NSError *error;
-@property (readonly) BOOL success;
+@property (readonly) bool success;
 
 - (void).cxx_destruct;
 - (id)error;
 - (id)init;
-- (id)initWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (BOOL)success;
+- (id)initWithSuccess:(bool)arg1 error:(id)arg2;
+- (bool)success;
 
 @end

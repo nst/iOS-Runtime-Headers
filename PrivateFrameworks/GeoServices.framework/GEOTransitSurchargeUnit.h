@@ -6,7 +6,7 @@
     GEOTransitPrice * _price;
 }
 
-@property (nonatomic, readonly) BOOL hasPrice;
+@property (nonatomic, readonly) bool hasPrice;
 @property (nonatomic, retain) GEOTransitPrice *price;
 
 - (void)copyTo:(id)arg1;
@@ -14,12 +14,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPrice;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPrice;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)price;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPrice:(id)arg1;
 - (void)writeTo:(id)arg1;
 

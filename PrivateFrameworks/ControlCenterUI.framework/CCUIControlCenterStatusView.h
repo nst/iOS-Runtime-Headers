@@ -16,22 +16,22 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIControlCenterStatusViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_animateNextStatus;
-- (void)_animateWithDuration:(double)arg1 animations:(id /* block */)arg2;
-- (void)_animateWithDuration:(double)arg1 delay:(double)arg2 animations:(id /* block */)arg3;
+- (void)_animateWithDuration:(double)arg1 animations:(id)arg2;
+- (void)_animateWithDuration:(double)arg1 delay:(double)arg2 animations:(id)arg3;
 - (void)_evaluateStatusStateForNewStatus:(id)arg1;
 - (id)_getNextStatusString;
-- (BOOL)_hasPendingStatus;
-- (int)_layoutStyle;
+- (bool)_hasPendingStatus;
+- (long long)_layoutStyle;
 - (id)_peekNextStatus;
 - (id)_popNextStatus;
 - (void)_rescindStatusUpdate:(id)arg1;
 - (void)_resetLabelState;
-- (void)_restartTimerWithInterval:(double)arg1 handler:(id /* block */)arg2;
+- (void)_restartTimerWithInterval:(double)arg1 handler:(id)arg2;
 - (void)_setStatusState:(int)arg1;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterDidFinishTransition;
@@ -40,10 +40,10 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 - (void)presentStatusUpdate:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)viewForFirstBaselineLayout;
 
 @end

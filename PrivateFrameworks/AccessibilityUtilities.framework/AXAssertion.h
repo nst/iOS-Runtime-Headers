@@ -12,7 +12,7 @@
 
 + (id)assertionWithType:(id)arg1 identifier:(id)arg2;
 
-- (BOOL)_hasValidAssertionType;
+- (bool)_hasValidAssertionType;
 - (void)_notifyServerAssertionWasAcquired;
 - (void)_notifyServerAssertionWasRelinquished;
 - (id)assertionType;

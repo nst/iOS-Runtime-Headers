@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)setSizeSubclass:(int)arg1;
-- (int)sizeSubclass;
+- (void)setSizeSubclass:(long long)arg1;
+- (long long)sizeSubclass;
 
 @end

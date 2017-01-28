@@ -23,12 +23,12 @@
 - (id)description;
 - (int)direction;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperty:(id)arg1;
 - (id)initWithProperty:(id)arg1 direction:(int)arg2;
 - (id)initWithProperty:(id)arg1 direction:(int)arg2 collation:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)property;
 
 @end

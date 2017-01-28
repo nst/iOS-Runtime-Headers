@@ -7,14 +7,14 @@
     int  _backPressureSemaphoreInitialValue;
     struct OpaqueVTCompressionSession { } * _compressionSession;
     NSDictionary * _compressionSettings;
-    BOOL  _didPrepareToEncode;
+    bool  _didPrepareToEncode;
     NSObject<OS_dispatch_queue> * _emitterQueue;
-    BOOL  _flushRequestReceived;
+    bool  _flushRequestReceived;
     float  _maxVideoFrameRate;
-    BOOL  _nextFrameEncodeAsKeyFrame;
-    BOOL  _shouldAttachDebugSEI;
-    BOOL  _sourceIsHDResolution;
-    unsigned long  _sourcePixelFormatType;
+    bool  _nextFrameEncodeAsKeyFrame;
+    bool  _shouldAttachDebugSEI;
+    bool  _sourceIsHDResolution;
+    unsigned int  _sourcePixelFormatType;
 }
 
 + (id)_formatRequirementsForCompressionSettings:(id)arg1 maxVideoFrameRate:(float)arg2 retainedBufferCountHint:(int*)arg3;

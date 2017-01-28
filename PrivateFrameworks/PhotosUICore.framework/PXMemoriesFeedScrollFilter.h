@@ -4,10 +4,10 @@
 
 @interface PXMemoriesFeedScrollFilter : NSObject <PXScrollViewControllerObserver> {
     NSDate * __lastAdditionalContentRequestDate;
-    float  _additionalContentThreshold;
+    double  _additionalContentThreshold;
     <PXMemoriesFeedScrollFilterDelegate> * _delegate;
     struct { 
-        BOOL respondsToShouldRequestAdditionalContent; 
+        bool respondsToShouldRequestAdditionalContent; 
     }  _delegateFlags;
     PXScrollViewController * _scrollViewController;
     PXMemoriesSpec * _spec;
@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXMemoriesFeedScrollFilterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PXScrollViewController *scrollViewController;
 @property (nonatomic, retain) PXMemoriesSpec *spec;
 @property (readonly) Class superclass;

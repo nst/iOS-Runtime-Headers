@@ -8,14 +8,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)GLYQkLbyLXRMxf6D:(id)arg1 error:(id*)arg2;
-- (void)QFYEmRJgRag2HkWc:(id)arg1 completion:(id /* block */)arg2;
+- (void)QFYEmRJgRag2HkWc:(id)arg1 completion:(id)arg2;
 - (id)initWithServiceName:(id)arg1;
 
 @end

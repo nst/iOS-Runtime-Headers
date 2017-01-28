@@ -3,22 +3,22 @@
  */
 
 @interface PHContentEditingInputRequestOptions : NSObject {
-    id /* block */  _canHandleAdjustmentData;
-    BOOL  _networkAccessAllowed;
-    id /* block */  _progressHandler;
+    id  _canHandleAdjustmentData;
+    bool  _networkAccessAllowed;
+    id  _progressHandler;
 }
 
-@property (nonatomic, copy) id /* block */ canHandleAdjustmentData;
-@property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
-@property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic, copy) id canHandleAdjustmentData;
+@property (getter=isNetworkAccessAllowed, nonatomic) bool networkAccessAllowed;
+@property (nonatomic, copy) id progressHandler;
 
 - (void).cxx_destruct;
-- (id /* block */)canHandleAdjustmentData;
+- (id)canHandleAdjustmentData;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isNetworkAccessAllowed;
-- (id /* block */)progressHandler;
-- (void)setCanHandleAdjustmentData:(id /* block */)arg1;
-- (void)setNetworkAccessAllowed:(BOOL)arg1;
-- (void)setProgressHandler:(id /* block */)arg1;
+- (bool)isNetworkAccessAllowed;
+- (id)progressHandler;
+- (void)setCanHandleAdjustmentData:(id)arg1;
+- (void)setNetworkAccessAllowed:(bool)arg1;
+- (void)setProgressHandler:(id)arg1;
 
 @end

@@ -8,8 +8,8 @@
 - (NSDictionary *)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
 - (NSDictionary *)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;
 - (NSString *)webui_lastGeneratedPasswordForCurrentBackForwardItem;
-- (id /* block */)webui_preventNavigationDuringAutoFillPrompt:(void *)arg1; // needs 1 arg types, found 4: id /* block */, void*, id, SEL
-- (BOOL)webui_privateBrowsingEnabled;
+- (id)webui_preventNavigationDuringAutoFillPrompt:(void *)arg1; // needs 1 arg types, found 4: id, void*, id, SEL
+- (bool)webui_privateBrowsingEnabled;
 - (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg1;
 - (void)webui_setFormMetadata:(NSDictionary *)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id <WBUFormAutoFillFrameHandle>)arg2;
 - (void)webui_setLastGeneratedPasswordForCurrentBackForwardItem:(NSString *)arg1;

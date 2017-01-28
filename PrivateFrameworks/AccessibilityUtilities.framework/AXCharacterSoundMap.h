@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSMutableDictionary *phDictionaries;
 
-- (id)_linguisticStringForCharacter:(id)arg1 language:(id)arg2 linguisticType:(int)arg3 andVoiceIdentifier:(id)arg4;
+- (id)_linguisticStringForCharacter:(id)arg1 language:(id)arg2 linguisticType:(long long)arg3 andVoiceIdentifier:(id)arg4;
 - (void)dealloc;
 - (id)init;
 - (id)phDictionaries;

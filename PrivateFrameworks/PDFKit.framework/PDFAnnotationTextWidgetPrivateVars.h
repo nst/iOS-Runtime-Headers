@@ -3,15 +3,15 @@
  */
 
 @interface PDFAnnotationTextWidgetPrivateVars : NSObject {
-    int  alignment;
+    long long  alignment;
     PDFAppearanceCharacteristics * appearanceChars;
     NSString * defaultStringValue;
     struct __CFDictionary { } * dictionary;
-    unsigned long  fieldFlags;
+    unsigned long long  fieldFlags;
     NSString * fieldName;
     UIFont * font;
     UIColor * fontColor;
-    unsigned int  maximumLength;
+    unsigned long long  maximumLength;
     NSString * stringValue;
     NSString * userName;
 }

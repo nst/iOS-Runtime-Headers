@@ -13,13 +13,13 @@
 - (void).cxx_destruct;
 - (void)assertIsValidCallingThread;
 - (id)creationThread;
-- (BOOL)currentIsCreationThread;
+- (bool)currentIsCreationThread;
 - (void)dealloc;
 - (id)dispatchQueue;
 - (id)init;
-- (void)performBlock:(id /* block */)arg1;
-- (void)performBlockAndWaitUntilDone:(BOOL)arg1 block:(id /* block */)arg2;
-- (void)performBlockAndWaitUntilFinishedWithRunLoopProcessingTime:(double)arg1 block:(id /* block */)arg2;
+- (void)performBlock:(id)arg1;
+- (void)performBlockAndWaitUntilDone:(bool)arg1 block:(id)arg2;
+- (void)performBlockAndWaitUntilFinishedWithRunLoopProcessingTime:(double)arg1 block:(id)arg2;
 - (void)setCreationThread:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
 - (void)useDispatchQueueOnly;

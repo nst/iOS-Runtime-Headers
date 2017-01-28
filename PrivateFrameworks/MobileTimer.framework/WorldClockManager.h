@@ -5,7 +5,7 @@
 @interface WorldClockManager : NSObject {
     NSMutableArray * _cities;
     WorldClockPreferences * _defaults;
-    BOOL  _dirty;
+    bool  _dirty;
     NSDate * lastModified;
 }
 
@@ -17,21 +17,21 @@
 
 - (void).cxx_destruct;
 - (void)_notifyNano;
-- (unsigned int)addCity:(id)arg1;
+- (unsigned long long)addCity:(id)arg1;
 - (void)addDefaultCitiesIfNeeded;
-- (BOOL)canAddCity;
-- (BOOL)checkIfCitiesModified;
+- (bool)canAddCity;
+- (bool)checkIfCitiesModified;
 - (id)cities;
 - (id)cityWithIdUrl:(id)arg1;
 - (id)fixUpCityProperties:(id)arg1;
 - (id)initWithPreferences:(id)arg1;
 - (id)lastModified;
 - (void)loadCities;
-- (void)moveCityFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (void)moveCityFromIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (void)pushCityPropertiesToPreferences;
 - (void)removeAllCities;
 - (void)removeCity:(id)arg1;
-- (void)removeCityAtIndex:(unsigned int)arg1;
+- (void)removeCityAtIndex:(unsigned long long)arg1;
 - (void)saveCities;
 - (void)setLastModified:(id)arg1;
 - (id)worldClockCityFromPersistenceArray:(id)arg1;

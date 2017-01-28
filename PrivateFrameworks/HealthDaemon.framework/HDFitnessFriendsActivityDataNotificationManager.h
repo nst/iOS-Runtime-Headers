@@ -10,9 +10,9 @@
     <HDHealthDataManager> * _dataManager;
     HDFitnessFriendsFriendListManager * _friendListManager;
     <HDHealthDaemon> * _healthDaemon;
-    BOOL  _isCloudKitManagerProcessingData;
+    bool  _isCloudKitManagerProcessingData;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _receivedChangesFromCloudKit;
+    bool  _receivedChangesFromCloudKit;
 }
 
 @property (nonatomic, retain) NSNumber *achievementAnchor;
@@ -23,16 +23,16 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) HDFitnessFriendsFriendListManager *friendListManager;
 @property (nonatomic, retain) NSNumber *goalCompletionAnchor;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSNumber *workoutAnchor;
 
 - (void).cxx_destruct;
-- (BOOL)_areAllGoalsMetForSnapshot:(id)arg1;
+- (bool)_areAllGoalsMetForSnapshot:(id)arg1;
 - (id)_fetchNewDataForFriends;
 - (id)_higherPriorityAchievementFromAchievement1:(id)arg1 achievement2:(id)arg2;
-- (BOOL)_isEventDate:(id)arg1 inCurrentDateForFriend:(id)arg2;
-- (BOOL)_isNotificationEventDate:(id)arg1 beforeRelationshipBeganWithFriend:(id)arg2;
+- (bool)_isEventDate:(id)arg1 inCurrentDateForFriend:(id)arg2;
+- (bool)_isNotificationEventDate:(id)arg1 beforeRelationshipBeganWithFriend:(id)arg2;
 - (id)_localUserDefaultsDomainWithHealthDaemon:(id)arg1;
 - (id)_mostRecentAchievementEarnedDateForFriendWithUUID:(id)arg1;
 - (id)_mostRecentGoalCompletedSnapshotIndexForFriendWithUUID:(id)arg1;
@@ -52,9 +52,9 @@
 - (void)_setMostRecentWorkoutCompletionDate:(id)arg1 forFriendWithUUID:(id)arg2;
 - (id)achievementAnchor;
 - (id)activityDataManager;
-- (void)alertSuppressionInvalidatedForSuppressionId:(id)arg1 reason:(int)arg2;
+- (void)alertSuppressionInvalidatedForSuppressionId:(id)arg1 reason:(long long)arg2;
 - (id)cloudKitManager;
-- (void)cloudKitManager:(id)arg1 didRecieveNewNotificationEvents:(id)arg2 moreComing:(BOOL)arg3 changesProcessedHandler:(id /* block */)arg4;
+- (void)cloudKitManager:(id)arg1 didRecieveNewNotificationEvents:(id)arg2 moreComing:(bool)arg3 changesProcessedHandler:(id)arg4;
 - (void)cloudKitManagerDidBeginUpdates:(id)arg1;
 - (void)cloudKitManagerDidEndUpdates:(id)arg1;
 - (id)contactsManager;

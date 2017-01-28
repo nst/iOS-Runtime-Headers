@@ -3,15 +3,15 @@
  */
 
 @interface UIAutoRespondingScrollViewControllerKeyboardSupport : NSObject {
-    float  _adjustmentForKeyboard;
+    double  _adjustmentForKeyboard;
     unsigned int  _registeredForNotifications;
     UIViewController<_UIKeyboardAutoRespondingScrollViewController> * _viewController;
     unsigned int  _viewIsDisappearing;
 }
 
-@property (nonatomic) float adjustmentForKeyboard;
-@property (nonatomic) BOOL registeredForNotifications;
-@property (nonatomic) BOOL viewIsDisappearing;
+@property (nonatomic) double adjustmentForKeyboard;
+@property (nonatomic) bool registeredForNotifications;
+@property (nonatomic) bool viewIsDisappearing;
 
 - (void).cxx_destruct;
 - (void)_adjustScrollViewForKeyboardInfo:(id)arg1;
@@ -20,12 +20,12 @@
 - (void)_keyboardDidShow:(id)arg1;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
-- (float)adjustmentForKeyboard;
+- (double)adjustmentForKeyboard;
 - (id)initWithViewController:(id)arg1;
-- (BOOL)registeredForNotifications;
-- (void)setAdjustmentForKeyboard:(float)arg1;
-- (void)setRegisteredForNotifications:(BOOL)arg1;
-- (void)setViewIsDisappearing:(BOOL)arg1;
-- (BOOL)viewIsDisappearing;
+- (bool)registeredForNotifications;
+- (void)setAdjustmentForKeyboard:(double)arg1;
+- (void)setRegisteredForNotifications:(bool)arg1;
+- (void)setViewIsDisappearing:(bool)arg1;
+- (bool)viewIsDisappearing;
 
 @end

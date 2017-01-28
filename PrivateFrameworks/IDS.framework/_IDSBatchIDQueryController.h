@@ -6,7 +6,7 @@
     CUTWeakReference * _delegate;
     NSArray * _destinations;
     NSMutableArray * _destinationsToQuery;
-    BOOL  _isDead;
+    bool  _isDead;
     NSString * _listenerID;
     NSTimer * _nextQueryTimer;
     int  _numberOfQueriesDone;
@@ -17,7 +17,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_invalidateNextQueryTimer;

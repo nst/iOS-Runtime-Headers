@@ -17,7 +17,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -25,35 +25,35 @@
 - (id)_artworkCollection;
 - (id)_createMetadataForRadioStreamTrack;
 - (double)_expectedDuration;
-- (int)_expectedPlaybackMode;
+- (long long)_expectedPlaybackMode;
 - (void)_getCurrentTimedMetadata:(id*)arg1 pings:(id*)arg2 adamIDBlob:(id*)arg3 jingleTimedMetadata:(id*)arg4;
 - (void)_handleStoreIDDidChange;
-- (BOOL)_hasLyrics;
-- (float)_maximumBitRateForNetworkType:(int)arg1;
+- (bool)_hasLyrics;
+- (float)_maximumBitRateForNetworkType:(long long)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (void)_reloadMetadataAndPostNotificationsIfNeeded:(BOOL)arg1;
-- (void)_updateEffectiveMetadataAndPostNotifications:(BOOL)arg1;
+- (void)_reloadMetadataAndPostNotificationsIfNeeded:(bool)arg1;
+- (void)_updateEffectiveMetadataAndPostNotifications:(bool)arg1;
 - (id)album;
 - (id)albumBuyButtonText;
-- (int)albumBuyButtonType;
+- (long long)albumBuyButtonType;
 - (long long)albumStoreID;
 - (id)artist;
 - (id)buyOffers;
 - (void)dealloc;
 - (id)effectiveArtworkCollection;
 - (id)initWithStreamTrack:(id)arg1;
-- (BOOL)isAlwaysLive;
-- (BOOL)isExplicitTrack;
-- (BOOL)isLikedStateEnabled;
+- (bool)isAlwaysLive;
+- (bool)isExplicitTrack;
+- (bool)isLikedStateEnabled;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
 - (id)mpcReporting_jingleTimedMetadata;
-- (BOOL)mpcReporting_shouldUseRelativeTimePositions;
+- (bool)mpcReporting_shouldUseRelativeTimePositions;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
+- (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)setPlayerItem:(id)arg1;
 - (long long)storeItemInt64ID;
 - (id)streamTrack;
-- (BOOL)supportsRadioTrackActions;
+- (bool)supportsRadioTrackActions;
 
 @end

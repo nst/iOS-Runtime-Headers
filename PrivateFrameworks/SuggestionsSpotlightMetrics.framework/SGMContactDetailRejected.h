@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)trackEventWithScalar:(unsigned int)arg1 type:(struct SGMContactDetailType_ { unsigned int x1; })arg2 extracted:(struct SGMDetailExtractionType_ { unsigned int x1; })arg3;
+- (void)trackEventWithScalar:(unsigned long long)arg1 type:(struct SGMContactDetailType_ { unsigned long long x1; })arg2 extracted:(struct SGMDetailExtractionType_ { unsigned long long x1; })arg3;
 - (id)tracker;
 
 @end

@@ -12,12 +12,12 @@
 + (void)addToScalar:(id)arg1 value:(long long)arg2 domain:(int)arg3;
 + (void)clearDistribution:(id)arg1 domain:(int)arg2;
 + (void)clearScalar:(id)arg1 domain:(int)arg2;
-+ (BOOL)enabled;
++ (bool)enabled;
 + (unsigned long long)getCurrentTime;
-+ (double)pushTimeIntervalForDistribution:(id)arg1 domain:(int)arg2 significantDigits:(unsigned int)arg3 timingBlock:(id /* block */)arg4;
++ (double)pushTimeIntervalForDistribution:(id)arg1 domain:(int)arg2 significantDigits:(unsigned int)arg3 timingBlock:(id)arg4;
 + (double)pushTimeIntervalForDistribution:(id)arg1 domain:(int)arg2 sinceStartTime:(unsigned long long)arg3;
 + (double)pushTimeIntervalForDistribution:(id)arg1 domain:(int)arg2 sinceStartTime:(unsigned long long)arg3 significantDigits:(unsigned int)arg4;
-+ (double)pushTimeIntervalForDistribution:(id)arg1 domain:(int)arg2 timingBlock:(id /* block */)arg3;
++ (double)pushTimeIntervalForDistribution:(id)arg1 domain:(int)arg2 timingBlock:(id)arg3;
 + (void)pushToDistribution:(id)arg1 value:(double)arg2 domain:(int)arg3;
 + (void)pushToDistribution:(id)arg1 value:(double)arg2 domain:(int)arg3 significantDigits:(unsigned int)arg4;
 + (void)setDistribution:(id)arg1 value:(double)arg2 domain:(int)arg3;

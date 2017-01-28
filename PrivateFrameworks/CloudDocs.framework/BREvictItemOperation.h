@@ -3,19 +3,19 @@
  */
 
 @interface BREvictItemOperation : BROperation {
-    id /* block */  _evictionCompletionBlock;
+    id  _evictionCompletionBlock;
     _BRCLogSection * _section;
     NSURL * _url;
 }
 
-@property (copy) id /* block */ evictionCompletionBlock;
+@property (copy) id evictionCompletionBlock;
 
 - (void).cxx_destruct;
 - (id)description;
-- (id /* block */)evictionCompletionBlock;
+- (id)evictionCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (void)main;
-- (void)setEvictionCompletionBlock:(id /* block */)arg1;
+- (void)setEvictionCompletionBlock:(id)arg1;
 
 @end

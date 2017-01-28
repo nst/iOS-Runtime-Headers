@@ -4,24 +4,24 @@
 
 @interface _HDSQLiteDatabaseWrapper : NSObject {
     HDSQLiteDatabase * _database;
-    unsigned int  _generation;
+    unsigned long long  _generation;
     unsigned long long  _threadID;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) HDSQLiteDatabase *database;
-@property (nonatomic, readonly) unsigned int generation;
+@property (nonatomic, readonly) unsigned long long generation;
 @property (nonatomic, readonly) unsigned long long threadID;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (void)captureThreadInfo;
 - (id)database;
-- (unsigned int)generation;
-- (id)initWithDatabase:(id)arg1 generation:(unsigned int)arg2;
-- (void)setType:(int)arg1;
+- (unsigned long long)generation;
+- (id)initWithDatabase:(id)arg1 generation:(unsigned long long)arg2;
+- (void)setType:(long long)arg1;
 - (unsigned long long)threadID;
-- (int)type;
+- (long long)type;
 - (id)typeString;
 
 @end

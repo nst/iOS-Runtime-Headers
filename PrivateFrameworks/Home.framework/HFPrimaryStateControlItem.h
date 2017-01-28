@@ -14,7 +14,7 @@
 + (Class)valueClass;
 
 - (void).cxx_destruct;
-- (BOOL)canCopyWithCharacteristicTypeSubset:(id)arg1;
+- (bool)canCopyWithCharacteristicTypeSubset:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)copyWithCharacteristicTypes:(id)arg1 valueSource:(id)arg2;
 - (id)initWithValueSource:(id)arg1 characteristicType:(id)arg2 valueTransformer:(id)arg3 displayResults:(id)arg4;
@@ -23,7 +23,7 @@
 - (id)togglePrimaryState;
 - (id)valueForCharacteristicValues:(id)arg1;
 - (id)valueTransformer;
-- (id)writePrimaryState:(int)arg1;
+- (id)writePrimaryState:(long long)arg1;
 - (id)writeValue:(id)arg1;
 
 @end

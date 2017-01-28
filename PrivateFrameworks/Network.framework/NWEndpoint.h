@@ -16,14 +16,14 @@
 + (unsigned int)endpointType;
 + (id)endpointWithCEndpoint:(id)arg1;
 + (id)endpointWithInternalEndpoint:(id)arg1;
-+ (BOOL)supportsResolverCallback;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsResolverCallback;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyCEndpoint;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(bool)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodedData;
 - (id)initWithCoder:(id)arg1;
@@ -33,7 +33,7 @@
 - (id)internalEndpoint;
 - (id)parentEndpointDomain;
 - (id)privateDescription;
-- (void)resolveEndpointWithCompletionHandler:(id /* block */)arg1;
+- (void)resolveEndpointWithCompletionHandler:(id)arg1;
 - (void)setInterface:(id)arg1;
 - (void)setInternalEndpoint:(id)arg1;
 - (void)setParentEndpointDomain:(id)arg1;

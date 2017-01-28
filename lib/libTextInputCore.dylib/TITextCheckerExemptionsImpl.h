@@ -5,8 +5,8 @@
 @interface TITextCheckerExemptionsImpl : NSObject {
     NSSet * _addressBookTokens;
     NSUUID * _contactCollectionUUID;
-    id /* block */  _contactObserver;
-    unsigned int  _observerAssertionCount;
+    id  _contactObserver;
+    unsigned long long  _observerAssertionCount;
     id  _userDictionaryObserver;
     NSSet * _userDictionaryTokens;
     NSUUID * _userDictionaryUUID;
@@ -28,7 +28,7 @@
 - (void)setContactCollectionUUID:(id)arg1;
 - (void)setUserDictionaryTokens:(id)arg1;
 - (void)setUserDictionaryUUID:(id)arg1;
-- (BOOL)stringIsExemptFromChecker:(id)arg1;
+- (bool)stringIsExemptFromChecker:(id)arg1;
 - (id)userDictionaryTokens;
 - (id)userDictionaryUUID;
 

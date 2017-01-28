@@ -4,14 +4,14 @@
 
 @interface DummyRemoteDeviceSecretValidator : CDPRemoteDeviceSecretValidator {
     NSString * _expectedString;
-    unsigned int  _failedAttempts;
+    unsigned long long  _failedAttempts;
 }
 
 - (void).cxx_destruct;
-- (void)approveFromAnotherDeviceWithCompletion:(id /* block */)arg1;
+- (void)approveFromAnotherDeviceWithCompletion:(id)arg1;
 - (id)initWithExpectedSecret:(id)arg1;
-- (unsigned int)supportedEscapeOfferMask;
-- (void)supportedEscapeOfferMaskCompletion:(id /* block */)arg1;
-- (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
+- (unsigned long long)supportedEscapeOfferMask;
+- (void)supportedEscapeOfferMaskCompletion:(id)arg1;
+- (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned long long)arg3 withCompletion:(id)arg4;
 
 @end

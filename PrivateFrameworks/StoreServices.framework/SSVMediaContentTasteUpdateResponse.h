@@ -3,22 +3,22 @@
  */
 
 @interface SSVMediaContentTasteUpdateResponse : NSObject <NSSecureCoding, SSXPCCoding> {
-    BOOL  _cachedResponse;
+    bool  _cachedResponse;
     NSArray * _contentTasteItems;
     NSDate * _expirationDate;
     unsigned long long  _responseRevisionID;
 }
 
-@property (getter=isCachedResponse, nonatomic) BOOL cachedResponse;
+@property (getter=isCachedResponse, nonatomic) bool cachedResponse;
 @property (nonatomic, copy) NSArray *contentTasteItems;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDate *expirationDate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned long long responseRevisionID;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)contentTasteItems;
@@ -28,9 +28,9 @@
 - (id)expirationDate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isCachedResponse;
+- (bool)isCachedResponse;
 - (unsigned long long)responseRevisionID;
-- (void)setCachedResponse:(BOOL)arg1;
+- (void)setCachedResponse:(bool)arg1;
 - (void)setContentTasteItems:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setResponseRevisionID:(unsigned long long)arg1;

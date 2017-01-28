@@ -16,6 +16,6 @@
 - (id)init;
 - (void)removeFetchOperation:(id)arg1;
 - (void)resetRetryCountForIdentifier:(id)arg1;
-- (int)retryCountForIdentifier:(id)arg1;
+- (long long)retryCountForIdentifier:(id)arg1;
 
 @end

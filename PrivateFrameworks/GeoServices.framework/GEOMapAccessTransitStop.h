@@ -12,18 +12,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned long long hallID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *internalName;
 @property (nonatomic, readonly) struct { double x1; double x2; }*polygonPoints;
-@property (nonatomic, readonly) int polygonPointsCount;
+@property (nonatomic, readonly) long long polygonPointsCount;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned long long transitID;
 
 - (void)dealloc;
-- (id)findAccessPoints:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
-- (id)findHall:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
-- (id)findLinksIn:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
-- (id)findLinksOut:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (id)findAccessPoints:(id)arg1 completionHandler:(id)arg2;
+- (id)findHall:(id)arg1 completionHandler:(id)arg2;
+- (id)findLinksIn:(id)arg1 completionHandler:(id)arg2;
+- (id)findLinksOut:(id)arg1 completionHandler:(id)arg2;
 - (unsigned long long)hallID;
 
 @end

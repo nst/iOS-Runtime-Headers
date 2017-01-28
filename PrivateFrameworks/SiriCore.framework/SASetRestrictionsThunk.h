@@ -3,11 +3,11 @@
  */
 
 @interface SASetRestrictionsThunk : SASetRestrictions {
-    id /* block */  _thunk;
+    id  _thunk;
 }
 
 - (void).cxx_destruct;
-- (id)initWithThunk:(id /* block */)arg1;
+- (id)initWithThunk:(id)arg1;
 - (void)siriCore_invokeThunk;
 
 @end

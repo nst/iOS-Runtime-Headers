@@ -3,31 +3,31 @@
  */
 
 @interface CacheDeleteServiceListener : CacheDeleteListener <CacheDeleteServiceProtocol, NSXPCListenerDelegate> {
-    BOOL  _anonymous;
-    id /* block */  _callback;
-    id /* block */  _cancel;
+    bool  _anonymous;
+    id  _callback;
+    id  _cancel;
     NSXPCListenerEndpoint * _endpoint;
-    BOOL  _legacyCallbacks;
-    id /* block */  _notify;
-    id /* block */  _periodic;
-    id /* block */  _purge;
-    id /* block */  _purgeable;
+    bool  _legacyCallbacks;
+    id  _notify;
+    id  _periodic;
+    id  _purge;
+    id  _purgeable;
     NSObject<OS_dispatch_queue> * _queue;
     CacheDeleteServiceInfo * _serviceInfo;
 }
 
-@property (readonly) BOOL anonymous;
-@property (nonatomic, copy) id /* block */ callback;
-@property (nonatomic, copy) id /* block */ cancel;
+@property (readonly) bool anonymous;
+@property (nonatomic, copy) id callback;
+@property (nonatomic, copy) id cancel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) NSXPCListenerEndpoint *endpoint;
-@property (readonly) unsigned int hash;
-@property (readonly) BOOL legacyCallbacks;
-@property (nonatomic, copy) id /* block */ notify;
-@property (nonatomic, copy) id /* block */ periodic;
-@property (nonatomic, copy) id /* block */ purge;
-@property (nonatomic, copy) id /* block */ purgeable;
+@property (readonly) unsigned long long hash;
+@property (readonly) bool legacyCallbacks;
+@property (nonatomic, copy) id notify;
+@property (nonatomic, copy) id periodic;
+@property (nonatomic, copy) id purge;
+@property (nonatomic, copy) id purgeable;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly) CacheDeleteServiceInfo *serviceInfo;
 @property (readonly) Class superclass;
@@ -35,32 +35,32 @@
 + (id)cacheDeleteServiceListener:(id)arg1 options:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)anonymous;
-- (id /* block */)callback;
-- (id /* block */)cancel;
+- (bool)anonymous;
+- (id)callback;
+- (id)cancel;
 - (id)endpoint;
 - (id)initWithName:(id)arg1 options:(id)arg2;
-- (BOOL)legacyCallbacks;
-- (id /* block */)notify;
-- (id /* block */)periodic;
-- (id /* block */)purge;
-- (id /* block */)purgeable;
+- (bool)legacyCallbacks;
+- (id)notify;
+- (id)periodic;
+- (id)purge;
+- (id)purgeable;
 - (id)queue;
-- (void)serviceCallback:(id)arg1 replyBlock:(id /* block */)arg2;
-- (void)serviceCancelPurge:(id /* block */)arg1;
+- (void)serviceCallback:(id)arg1 replyBlock:(id)arg2;
+- (void)serviceCancelPurge:(id)arg1;
 - (id)serviceInfo;
-- (void)serviceNotify:(id)arg1 replyBlock:(id /* block */)arg2;
-- (void)servicePeriodic:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
-- (void)servicePing:(id /* block */)arg1;
-- (void)servicePurge:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
-- (void)servicePurgeable:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
-- (void)setCallback:(id /* block */)arg1;
-- (void)setCancel:(id /* block */)arg1;
-- (void)setNotify:(id /* block */)arg1;
-- (void)setNotifyCallback:(id /* block */)arg1;
-- (void)setPeriodic:(id /* block */)arg1;
-- (void)setPurge:(id /* block */)arg1;
-- (void)setPurgeable:(id /* block */)arg1;
+- (void)serviceNotify:(id)arg1 replyBlock:(id)arg2;
+- (void)servicePeriodic:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
+- (void)servicePing:(id)arg1;
+- (void)servicePurge:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
+- (void)servicePurgeable:(int)arg1 info:(id)arg2 replyBlock:(id)arg3;
+- (void)setCallback:(id)arg1;
+- (void)setCancel:(id)arg1;
+- (void)setNotify:(id)arg1;
+- (void)setNotifyCallback:(id)arg1;
+- (void)setPeriodic:(id)arg1;
+- (void)setPurge:(id)arg1;
+- (void)setPurgeable:(id)arg1;
 - (void)setQueue:(id)arg1;
 
 @end

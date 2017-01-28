@@ -6,14 +6,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (int)_characterTypeForCharacter:(unsigned int)arg1;
-+ (float)_numberPadButtonOuterCircleDiameter;
++ (double)_numberPadButtonOuterCircleDiameter;
 + (id)_stringCharacterForCharacter:(unsigned int)arg1;
-+ (struct CGSize { float x1; float x2; })defaultSize;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingOutsideRing;
++ (struct CGSize { double x1; double x2; })defaultSize;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })paddingOutsideRing;
 
 - (int)characterType;
 - (id)initForCharacter:(unsigned int)arg1;

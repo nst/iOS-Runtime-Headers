@@ -8,9 +8,9 @@
 }
 
 - (int)chartSubElementType;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)level;
 - (void)setChartSubElementType:(int)arg1;
 - (void)setLevel:(int)arg1;

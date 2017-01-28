@@ -12,15 +12,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NMRIDSMessageCenterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_sendMessageWithProtobufData:(id)arg1 messageType:(unsigned short)arg2 priority:(unsigned int)arg3 timeout:(double)arg4 bypassDuet:(BOOL)arg5 skipStorage:(BOOL)arg6 isResponse:(BOOL)arg7 additionalOptions:(id)arg8 resultingMessageIdentifier:(id*)arg9 error:(id*)arg10;
+- (bool)_sendMessageWithProtobufData:(id)arg1 messageType:(unsigned short)arg2 priority:(unsigned long long)arg3 timeout:(double)arg4 bypassDuet:(bool)arg5 skipStorage:(bool)arg6 isResponse:(bool)arg7 additionalOptions:(id)arg8 resultingMessageIdentifier:(id*)arg9 error:(id*)arg10;
 - (id)delegate;
-- (BOOL)sendMessageWithProtobufData:(id)arg1 messageType:(unsigned short)arg2 priority:(unsigned int)arg3 timeout:(double)arg4 bypassDuet:(BOOL)arg5 skipStorage:(BOOL)arg6 expectReply:(BOOL)arg7 queueOneIdentifier:(id)arg8 resultingMessageIdentifier:(id*)arg9 error:(id*)arg10;
-- (BOOL)sendMessageWithProtobufData:(id)arg1 messageType:(unsigned short)arg2 priority:(unsigned int)arg3 timeout:(double)arg4 bypassDuet:(BOOL)arg5 skipStorage:(BOOL)arg6 inReplyTo:(id)arg7 resultingMessageIdentifier:(id*)arg8 error:(id*)arg9;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
+- (bool)sendMessageWithProtobufData:(id)arg1 messageType:(unsigned short)arg2 priority:(unsigned long long)arg3 timeout:(double)arg4 bypassDuet:(bool)arg5 skipStorage:(bool)arg6 expectReply:(bool)arg7 queueOneIdentifier:(id)arg8 resultingMessageIdentifier:(id*)arg9 error:(id*)arg10;
+- (bool)sendMessageWithProtobufData:(id)arg1 messageType:(unsigned short)arg2 priority:(unsigned long long)arg3 timeout:(double)arg4 bypassDuet:(bool)arg5 skipStorage:(bool)arg6 inReplyTo:(id)arg7 resultingMessageIdentifier:(id*)arg8 error:(id*)arg9;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)setDelegate:(id)arg1;
 - (void)setMessageHandlerTarget:(id)arg1 action:(SEL)arg2 forIncomingMessagesOfType:(unsigned short)arg3;

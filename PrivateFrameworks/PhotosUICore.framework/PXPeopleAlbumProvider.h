@@ -4,72 +4,73 @@
 
 @interface PXPeopleAlbumProvider : NSObject <PXPeopleDataSourceDelegate, PXPhotoLibraryUIChangeObserver> {
     NSObject<OS_dispatch_queue> * _backgroundQueue;
-    int  _cachedPeopleCount;
-    BOOL  _didInitiatePeopleCountFetchRequest;
-    BOOL  _didInitiateReCacheRequest;
-    BOOL  _didPrepareDataSource;
+    long long  _cachedPeopleCount;
+    bool  _didInitiatePeopleCountFetchRequest;
+    bool  _didInitiateReCacheRequest;
+    bool  _didPrepareDataSource;
     PXPeoplePersonDataSource * _favoriteDS;
     NSMutableDictionary * _fetchedContainers;
+    NSObject<OS_dispatch_queue> * _fetchedContainersIsolationQueue;
     NSMutableArray * _imageCache;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
     NSObject<OS_dispatch_queue> * _isolationQueue;
     PXPeoplePersonDataSource * _otherDS;
     PHPhotoLibrary * _photoLibrary;
     PXPeopleProgressManager * _progressMgr;
-    id /* block */  _requestCompletion;
+    id  _requestCompletion;
 }
 
-@property (nonatomic) int cachedPeopleCount;
-@property (getter=isCountAvailable, nonatomic, readonly) BOOL countAvailable;
+@property (nonatomic) long long cachedPeopleCount;
+@property (getter=isCountAvailable, nonatomic, readonly) bool countAvailable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PXPeoplePersonDataSource *favoriteDS;
 @property (nonatomic, retain) NSMutableDictionary *fetchedContainers;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableArray *imageCache;
-@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 @property (nonatomic, retain) PXPeoplePersonDataSource *otherDS;
-@property (nonatomic, readonly) int peopleCount;
+@property (nonatomic, readonly) long long peopleCount;
 @property (nonatomic, retain) PXPeopleProgressManager *progressMgr;
-@property (nonatomic, copy) id /* block */ requestCompletion;
+@property (nonatomic, copy) id requestCompletion;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_appWillEnterForeground;
-- (void)_asyncAddImagesToCacheWithItems:(id)arg1 completion:(id /* block */)arg2;
+- (void)_asyncAddImagesToCacheWithItems:(id)arg1 completion:(id)arg2;
 - (void)_invalidateCache;
 - (id)_members;
 - (void)_prepareIfNeeded;
-- (void)_reCacheImagesCompletion:(id /* block */)arg1;
-- (BOOL)_shouldShowInterstitialProgress;
+- (void)_reCacheImagesCompletion:(id)arg1;
+- (bool)_shouldShowInterstitialProgress;
 - (void)_updateCachedCountIfNeeded;
-- (int)cachedPeopleCount;
+- (long long)cachedPeopleCount;
 - (void)dealloc;
 - (id)favoriteDS;
 - (id)fetchedContainers;
 - (id)imageCache;
 - (void)imageCacheDidChanged:(id)arg1;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (id)init;
-- (BOOL)isCountAvailable;
+- (bool)isCountAvailable;
 - (id)otherDS;
-- (int)peopleCount;
+- (long long)peopleCount;
 - (void)peopleDataSource:(id)arg1 didApplyIncrementalChanges:(id)arg2;
 - (void)peopleDataSourceMembersChanged:(id)arg1;
 - (id)peopleViewController;
 - (id)progressMgr;
-- (void)requestAlbumImagesWithSize:(struct CGSize { float x1; float x2; })arg1 completion:(id /* block */)arg2;
-- (id /* block */)requestCompletion;
-- (void)setCachedPeopleCount:(int)arg1;
+- (void)requestAlbumImagesWithSize:(struct CGSize { double x1; double x2; })arg1 completion:(id)arg2;
+- (id)requestCompletion;
+- (void)setCachedPeopleCount:(long long)arg1;
 - (void)setFavoriteDS:(id)arg1;
 - (void)setFetchedContainers:(id)arg1;
 - (void)setImageCache:(id)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setOtherDS:(id)arg1;
 - (void)setProgressMgr:(id)arg1;
-- (void)setRequestCompletion:(id /* block */)arg1;
+- (void)setRequestCompletion:(id)arg1;
 
 @end

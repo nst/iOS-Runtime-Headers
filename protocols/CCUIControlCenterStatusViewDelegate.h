@@ -5,6 +5,6 @@
 
 @required
 
-- (int)layoutStyle;
+- (long long)layoutStyle;
 
 @end

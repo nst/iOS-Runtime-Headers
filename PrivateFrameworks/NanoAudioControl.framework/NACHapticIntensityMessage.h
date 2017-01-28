@@ -9,20 +9,20 @@
     float  _intensity;
 }
 
-@property (nonatomic) BOOL hasIntensity;
+@property (nonatomic) bool hasIntensity;
 @property (nonatomic) float intensity;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIntensity;
-- (unsigned int)hash;
+- (bool)hasIntensity;
+- (unsigned long long)hash;
 - (float)intensity;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIntensity:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIntensity:(bool)arg1;
 - (void)setIntensity:(float)arg1;
 - (void)writeTo:(id)arg1;
 

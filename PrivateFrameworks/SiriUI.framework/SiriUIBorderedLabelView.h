@@ -5,26 +5,26 @@
 @interface SiriUIBorderedLabelView : UIView {
     UIImageView * _borderImageView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _edgeInsets;
     UIFont * _font;
     UILabel * _ratingLabel;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
 
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_defaultEdgeInsets;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_defaultEdgeInsets;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_borderSize;
-- (float)baselineOffsetFromTopOfFrame;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (struct CGSize { double x1; double x2; })_borderSize;
+- (double)baselineOffsetFromTopOfFrame;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (id)initWithText:(id)arg1 font:(id)arg2 borderColor:(id)arg3;
 - (void)layoutSubviews;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

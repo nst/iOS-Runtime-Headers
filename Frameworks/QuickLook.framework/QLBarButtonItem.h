@@ -3,13 +3,13 @@
  */
 
 @interface QLBarButtonItem : UIBarButtonItem {
-    unsigned int  _QLType;
+    unsigned long long  _QLType;
 }
 
-@property unsigned int QLType;
+@property unsigned long long QLType;
 
-- (unsigned int)QLType;
-- (BOOL)isEqual:(id)arg1;
-- (void)setQLType:(unsigned int)arg1;
+- (unsigned long long)QLType;
+- (bool)isEqual:(id)arg1;
+- (void)setQLType:(unsigned long long)arg1;
 
 @end

@@ -4,14 +4,13 @@
 
 @interface CXCallDirectoryEntryData : NSObject <NSSecureCoding>
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
+- (long long)phoneNumberAtIndex:(unsigned long long)arg1;
 
 @end

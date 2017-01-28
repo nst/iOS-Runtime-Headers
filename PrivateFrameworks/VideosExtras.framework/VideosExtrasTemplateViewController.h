@@ -13,8 +13,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) IKAppDocument *document;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL showsPlaceholder;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool showsPlaceholder;
 @property (readonly) Class superclass;
 
 + (id)templateViewControllerWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
@@ -30,10 +30,10 @@
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
-- (BOOL)shouldUpdateByReplacingViewControllerWithTemplate:(id)arg1;
-- (BOOL)showsPlaceholder;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (bool)shouldUpdateByReplacingViewControllerWithTemplate:(id)arg1;
+- (bool)showsPlaceholder;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

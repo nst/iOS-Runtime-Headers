@@ -8,7 +8,7 @@
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 
 - (id)initWithAttributedText:(id)arg1;
 - (id)initWithText:(id)arg1;

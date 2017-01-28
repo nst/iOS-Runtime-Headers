@@ -5,14 +5,14 @@
 @interface SiriUISelectionTemplateViewController : SiriUISettingTemplateViewController
 
 @property (nonatomic) <SiriUISelectionTemplateViewControllerDelegate> *delegate;
-@property (nonatomic) BOOL selected;
+@property (nonatomic) bool selected;
 @property (nonatomic, retain) <SiriUISelectionTemplateModel> *templateModel;
 @property (nonatomic, retain) SiriUISelectionTemplateView *view;
 
 - (void)_didSelectChoiceFromSender:(id)arg1;
 - (void)loadView;
-- (BOOL)selected;
-- (void)setSelected:(BOOL)arg1;
+- (bool)selected;
+- (void)setSelected:(bool)arg1;
 - (Class)templateViewClass;
 
 @end

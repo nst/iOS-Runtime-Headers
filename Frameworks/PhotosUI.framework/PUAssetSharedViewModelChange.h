@@ -3,13 +3,13 @@
  */
 
 @interface PUAssetSharedViewModelChange : PUViewModelChange {
-    BOOL  _loadingStatusChanged;
+    bool  _loadingStatusChanged;
 }
 
-@property (setter=_setLoadingStatusChanged:, nonatomic) BOOL loadingStatusChanged;
+@property (setter=_setLoadingStatusChanged:, nonatomic) bool loadingStatusChanged;
 
-- (void)_setLoadingStatusChanged:(BOOL)arg1;
-- (BOOL)hasChanges;
-- (BOOL)loadingStatusChanged;
+- (void)_setLoadingStatusChanged:(bool)arg1;
+- (bool)hasChanges;
+- (bool)loadingStatusChanged;
 
 @end

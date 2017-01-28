@@ -4,6 +4,6 @@
 
 @interface ICNoteMigrationPolicy1_0b17To1_0b18 : NSEntityMigrationPolicy
 
-- (BOOL)createRelationshipsForDestinationInstance:(id)arg1 entityMapping:(id)arg2 manager:(id)arg3 error:(id*)arg4;
+- (bool)createRelationshipsForDestinationInstance:(id)arg1 entityMapping:(id)arg2 manager:(id)arg3 error:(id*)arg4;
 
 @end

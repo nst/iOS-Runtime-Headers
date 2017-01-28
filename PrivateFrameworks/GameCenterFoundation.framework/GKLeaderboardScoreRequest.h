@@ -3,45 +3,45 @@
  */
 
 @interface GKLeaderboardScoreRequest : NSObject <NSSecureCoding> {
-    BOOL  _friendsOnly;
+    bool  _friendsOnly;
     NSString * _gameBundleID;
     NSString * _groupIdentifier;
     NSString * _identifier;
     GKPlayerInternal * _playerInternal;
-    BOOL  _prefetch;
-    int  _timeScope;
+    bool  _prefetch;
+    long long  _timeScope;
 }
 
-@property (nonatomic) BOOL friendsOnly;
+@property (nonatomic) bool friendsOnly;
 @property (nonatomic, copy) NSString *gameBundleID;
 @property (nonatomic, copy) NSString *groupIdentifier;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) GKPlayerInternal *playerInternal;
-@property (getter=isPrefetch, nonatomic) BOOL prefetch;
-@property (nonatomic) int timeScope;
+@property (getter=isPrefetch, nonatomic) bool prefetch;
+@property (nonatomic) long long timeScope;
 
 + (id)requestForPlayerInternals:(id)arg1;
-+ (id)requestForRankRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)requestForRankRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)friendsOnly;
+- (bool)friendsOnly;
 - (id)gameBundleID;
 - (id)groupIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPrefetch;
+- (bool)isEqual:(id)arg1;
+- (bool)isPrefetch;
 - (id)playerInternal;
-- (void)setFriendsOnly:(BOOL)arg1;
+- (void)setFriendsOnly:(bool)arg1;
 - (void)setGameBundleID:(id)arg1;
 - (void)setGroupIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPlayerInternal:(id)arg1;
-- (void)setPrefetch:(BOOL)arg1;
-- (void)setTimeScope:(int)arg1;
-- (int)timeScope;
+- (void)setPrefetch:(bool)arg1;
+- (void)setTimeScope:(long long)arg1;
+- (long long)timeScope;
 
 @end

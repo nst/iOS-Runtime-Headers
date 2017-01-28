@@ -13,7 +13,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setTokens:(id)arg1;
 - (id)tokens;
 

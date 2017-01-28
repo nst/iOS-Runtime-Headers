@@ -14,9 +14,9 @@
 + (id)defaultManager;
 
 - (void).cxx_destruct;
-- (void)getSlotWithName:(id)arg1 reply:(id /* block */)arg2;
+- (void)getSlotWithName:(id)arg1 reply:(id)arg2;
 - (id)init;
-- (void)setSlotWithName:(id)arg1 endpoint:(id)arg2 type:(id)arg3 reply:(id /* block */)arg4;
+- (void)setSlotWithName:(id)arg1 endpoint:(id)arg2 type:(id)arg3 reply:(id)arg4;
 - (id)slotNames;
 
 @end

@@ -5,8 +5,8 @@
 
 @required
 
-- (void)addCompletedHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLCommandBuffer> *, void*
-- (void)addScheduledHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLCommandBuffer> *, void*
+- (void)addCompletedHandler:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, <MTLCommandBuffer> *, void*
+- (void)addScheduledHandler:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, <MTLCommandBuffer> *, void*
 - (<MTLBlitCommandEncoder> *)blitCommandEncoder;
 - (<MTLCommandQueue> *)commandQueue;
 - (void)commit;
@@ -19,9 +19,9 @@
 - (void)presentDrawable:(id <MTLDrawable>)arg1;
 - (void)presentDrawable:(id <MTLDrawable>)arg1 atTime:(double)arg2;
 - (<MTLRenderCommandEncoder> *)renderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1;
-- (BOOL)retainedReferences;
+- (bool)retainedReferences;
 - (void)setLabel:(NSString *)arg1;
-- (unsigned int)status;
+- (unsigned long long)status;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
 

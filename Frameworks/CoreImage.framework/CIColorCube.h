@@ -14,7 +14,7 @@
 
 + (id)customAttributes;
 
-- (BOOL)_checkInputs;
+- (bool)_checkInputs;
 - (id)_kernel;
 - (id)_kernelOpaque;
 - (id)cubeImage;

@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)initWithLimit:(unsigned int)arg1;
-- (void)performAsync:(id /* block */)arg1;
+- (id)initWithLimit:(unsigned long long)arg1;
+- (void)performAsync:(id)arg1;
 
 @end

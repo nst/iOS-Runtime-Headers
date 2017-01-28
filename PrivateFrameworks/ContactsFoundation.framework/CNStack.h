@@ -6,16 +6,16 @@
     NSMutableArray * _objects;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) id peek;
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)init;
 - (id)peek;
 - (id)pop;
-- (void)popAllWithHandler:(id /* block */)arg1;
-- (void)popWithHandler:(id /* block */)arg1;
+- (void)popAllWithHandler:(id)arg1;
+- (void)popWithHandler:(id)arg1;
 - (void)push:(id)arg1;
 
 @end

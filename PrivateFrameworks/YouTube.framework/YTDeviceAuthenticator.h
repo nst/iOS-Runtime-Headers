@@ -16,13 +16,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedAuthenticator;
 
-- (BOOL)_authenticate1;
-- (BOOL)_authenticate2;
+- (bool)_authenticate1;
+- (bool)_authenticate2;
 - (void)_clearNonces;
 - (void)_connectionDidEnd;
 - (void)_copyCertificateData:(id*)arg1 privateKey:(struct __SecKey {}**)arg2;
@@ -30,12 +30,12 @@
 - (void)_loadStatusChanged;
 - (void)_succeeded;
 - (void)authenticate;
-- (BOOL)canAuthenticate;
+- (bool)canAuthenticate;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)invalidateToken;
-- (BOOL)isAuthenticating;
+- (bool)isAuthenticating;
 - (id)token;
 
 @end

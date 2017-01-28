@@ -19,6 +19,7 @@
 @property (nonatomic, copy) NSURL *serviceGroupIdentifier;
 @property (nonatomic, copy) NSURL *serviceIdentifier;
 @property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic, copy) NSString *serviceSubType;
 @property (nonatomic, copy) NSString *serviceType;
 @property (nonatomic, copy) NSURL *zoneIdentifier;
 @property (nonatomic, copy) NSString *zoneName;
@@ -45,6 +46,7 @@
 - (id)serviceGroupIdentifier;
 - (id)serviceIdentifier;
 - (id)serviceName;
+- (id)serviceSubType;
 - (id)serviceType;
 - (void)setAccessoryIdentifier:(id)arg1;
 - (void)setAccessoryName:(id)arg1;
@@ -61,6 +63,7 @@
 - (void)setServiceGroupIdentifier:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setServiceName:(id)arg1;
+- (void)setServiceSubType:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setZoneIdentifier:(id)arg1;
 - (void)setZoneName:(id)arg1;

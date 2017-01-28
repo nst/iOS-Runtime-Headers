@@ -3,16 +3,16 @@
  */
 
 @interface PLCloudInflightTask : NSObject {
-    id /* block */  _completionHandler;
-    id /* block */  _progressBlock;
+    id  _completionHandler;
+    id  _progressBlock;
 }
 
-@property (readonly) id /* block */ completionHandler;
-@property (readonly) id /* block */ progressBlock;
+@property (readonly) id completionHandler;
+@property (readonly) id progressBlock;
 
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)dealloc;
-- (id)initWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
-- (id /* block */)progressBlock;
+- (id)initWithProgressBlock:(id)arg1 completionHandler:(id)arg2;
+- (id)progressBlock;
 
 @end

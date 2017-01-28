@@ -3,22 +3,22 @@
  */
 
 @interface PFUbiquityKnowledgeVector : NSObject <NSCoding, NSCopying> {
-    unsigned int  _hash;
+    unsigned long long  _hash;
     NSDictionary * _kv;
     NSDictionary * _storeKVDict;
 }
 
-@property (nonatomic, readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int length;
+@property (nonatomic, readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long length;
 
 + (id)createKnowledgeVectorDictionaryFromString:(id)arg1;
 + (id)createSetOfAllPeerIDsInKnowledgeVectors:(id)arg1;
 
 - (void)_updateHash;
 - (id)allPeerIDs;
-- (BOOL)canMergeWithKnowledgeVector:(id)arg1;
-- (int)compare:(id)arg1;
-- (BOOL)conflictsWithKnowledgeVector:(id)arg1;
+- (bool)canMergeWithKnowledgeVector:(id)arg1;
+- (long long)compare:(id)arg1;
+- (bool)conflictsWithKnowledgeVector:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createAncestorVectorForConflictingVector:(id)arg1;
 - (id)createKnowledgeVectorString;
@@ -28,20 +28,20 @@
 - (void)decrementToMinimumWithKnowledgeVector:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasPeerIDInCommonWith:(id)arg1;
-- (unsigned int)hash;
+- (bool)hasPeerIDInCommonWith:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initFromCopy:(id)arg1 storeKVDict:(id)arg2 hash:(unsigned int)arg3;
+- (id)initFromCopy:(id)arg1 storeKVDict:(id)arg2 hash:(unsigned long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKnowledgeVectorDictionary:(id)arg1;
 - (id)initWithKnowledgeVectorDictionary:(id)arg1 andStoreKnowledgeVectorDictionary:(id)arg2;
 - (id)initWithKnowledgeVectorString:(id)arg1;
 - (id)initWithStoreKnowledgeVectorDictionary:(id)arg1;
-- (BOOL)isAncestorOfKnowledgeVector:(id)arg1;
-- (BOOL)isDescendantOfKnowledgeVector:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isZeroVector;
-- (unsigned int)length;
+- (bool)isAncestorOfKnowledgeVector:(id)arg1;
+- (bool)isDescendantOfKnowledgeVector:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isZeroVector;
+- (unsigned long long)length;
 - (id)newKnowledgeVectorByAddingKnowledgeVector:(id)arg1;
 - (id)newKnowledgeVectorByDecrementingPeerWithID:(id)arg1;
 - (id)newKnowledgeVectorByIncrementingPeerWithID:(id)arg1;

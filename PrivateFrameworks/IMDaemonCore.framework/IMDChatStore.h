@@ -22,10 +22,10 @@
 - (id)loadAllChats;
 - (id)modificationStamp;
 - (void)removeMessageWithGUID:(id)arg1 fromChat:(id)arg2;
-- (void)setChatIsFiltered:(BOOL)arg1 withChatGuid:(id)arg2;
+- (void)setChatIsFiltered:(bool)arg1 withChatGuid:(id)arg2;
 - (void)setModificationStamp:(id)arg1;
 - (id)storeChat:(id)arg1;
 - (void)unarchiveChat:(id)arg1;
-- (unsigned int)unreadCountForChat:(id)arg1;
+- (unsigned long long)unreadCountForChat:(id)arg1;
 
 @end

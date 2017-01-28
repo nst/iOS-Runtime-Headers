@@ -8,13 +8,13 @@
 
 @property (nonatomic, retain) NSDateComponents *dateComponents;
 
-+ (BOOL)canHandlePredicate:(id)arg1;
++ (bool)canHandlePredicate:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_updatePredicate;
 - (id)dateComponents;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (void)setComparisonType:(unsigned int)arg1;
+- (void)setComparisonType:(unsigned long long)arg1;
 - (void)setDateComponents:(id)arg1;
 
 @end

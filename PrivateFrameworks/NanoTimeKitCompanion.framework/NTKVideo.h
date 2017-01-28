@@ -4,17 +4,17 @@
 
 @interface NTKVideo : NSObject {
     NSBundle * _bundle;
-    BOOL  _loops;
+    bool  _loops;
     NSString * _name;
 }
 
-@property (nonatomic, readonly) BOOL loops;
+@property (nonatomic, readonly) bool loops;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)initWithName:(id)arg1 bundle:(id)arg2 loops:(BOOL)arg3;
-- (BOOL)loops;
+- (id)initWithName:(id)arg1 bundle:(id)arg2 loops:(bool)arg3;
+- (bool)loops;
 - (id)videoURL;
 
 @end

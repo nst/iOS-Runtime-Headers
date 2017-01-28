@@ -8,8 +8,8 @@
     int  _lastCropRectWidth;
     int  _lastCropRectX;
     int  _lastCropRectY;
-    BOOL  _localRecordHasAdditionalProperties;
-    BOOL  _removeExistingProperties;
+    bool  _localRecordHasAdditionalProperties;
+    bool  _removeExistingProperties;
     NSMutableDictionary * _unknownAttributes;
 }
 
@@ -18,9 +18,9 @@
 @property (readonly) int lastCropRectWidth;
 @property (readonly) int lastCropRectX;
 @property (readonly) int lastCropRectY;
-@property (readonly) BOOL localRecordHasAdditionalProperties;
+@property (readonly) bool localRecordHasAdditionalProperties;
 
-- (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
+- (bool)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
 - (void)cleanUpCardState;
 - (void*)createRecordInSource:(void*)arg1 outRecordType:(unsigned int*)arg2;
 - (void)dealloc;
@@ -28,18 +28,18 @@
 - (id)defaultLabel;
 - (id)defaultURLLabel;
 - (id)genericLabel;
-- (BOOL)importToGroup:(void*)arg1 removeExistingProperties:(BOOL)arg2;
-- (BOOL)importToPerson:(void*)arg1 removeExistingProperties:(BOOL)arg2;
+- (bool)importToGroup:(void*)arg1 removeExistingProperties:(bool)arg2;
+- (bool)importToPerson:(void*)arg1 removeExistingProperties:(bool)arg2;
 - (id)initWithData:(id)arg1;
 - (id)lastCropRectChecksum;
 - (int)lastCropRectHeight;
 - (int)lastCropRectWidth;
 - (int)lastCropRectX;
 - (int)lastCropRectY;
-- (BOOL)localRecordHasAdditionalProperties;
+- (bool)localRecordHasAdditionalProperties;
 - (void)noteLackOfValueForImageData;
 - (void)noteLackOfValueForProperty:(unsigned int)arg1;
-- (BOOL)parseUID;
-- (void)setLocalRecordHasAdditionalProperties:(BOOL)arg1;
+- (bool)parseUID;
+- (void)setLocalRecordHasAdditionalProperties:(bool)arg1;
 
 @end

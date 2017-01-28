@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) NSString *lastName;
 @property (nonatomic, readonly, copy) CKRecordID *userRecordID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -21,10 +21,10 @@
 - (id)displayContact;
 - (void)encodeWithCoder:(id)arg1;
 - (id)firstName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUserRecordID:(id)arg1 displayContact:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lastName;
 - (id)userRecordID;
 

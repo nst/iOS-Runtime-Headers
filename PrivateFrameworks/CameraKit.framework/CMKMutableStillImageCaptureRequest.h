@@ -4,23 +4,23 @@
 
 @interface CMKMutableStillImageCaptureRequest : CMKStillImageCaptureRequest
 
-@property (nonatomic) int captureDevice;
+@property (nonatomic) long long captureDevice;
 @property (nonatomic) <CMKStillImageCaptureRequestDelegate> *delegate;
-@property (nonatomic) int deviceOrientation;
-@property (nonatomic) int flashMode;
+@property (nonatomic) long long deviceOrientation;
+@property (nonatomic) long long flashMode;
 @property (nonatomic) int hdrMode;
-@property (getter=isTransient, nonatomic) BOOL transient;
-@property (nonatomic) BOOL usesStillImageStabilization;
-@property (nonatomic) BOOL wantsAudioForCapture;
+@property (getter=isTransient, nonatomic) bool transient;
+@property (nonatomic) bool usesStillImageStabilization;
+@property (nonatomic) bool wantsAudioForCapture;
 
-- (void)setCaptureDevice:(int)arg1;
+- (void)setCaptureDevice:(long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDeviceOrientation:(int)arg1;
-- (void)setFlashMode:(int)arg1;
+- (void)setDeviceOrientation:(long long)arg1;
+- (void)setFlashMode:(long long)arg1;
 - (void)setHdrMode:(int)arg1;
 - (void)setParameter:(id)arg1 forKey:(id)arg2;
-- (void)setTransient:(BOOL)arg1;
-- (void)setUsesStillImageStabilization:(BOOL)arg1;
-- (void)setWantsAudioForCapture:(BOOL)arg1;
+- (void)setTransient:(bool)arg1;
+- (void)setUsesStillImageStabilization:(bool)arg1;
+- (void)setWantsAudioForCapture:(bool)arg1;
 
 @end

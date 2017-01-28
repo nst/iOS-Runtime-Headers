@@ -3,11 +3,11 @@
  */
 
 @interface VSAccountAuthentication : NSObject {
-    NSString * _authenticationToken;
+    <VSAuthenticationToken> * _authenticationToken;
     NSString * _username;
 }
 
-@property (nonatomic, copy) NSString *authenticationToken;
+@property (nonatomic, retain) <VSAuthenticationToken> *authenticationToken;
 @property (nonatomic, copy) NSString *username;
 
 - (void).cxx_destruct;

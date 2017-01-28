@@ -5,31 +5,31 @@
 
 @required
 
-- (float)axisDescriptorPadding;
+- (double)axisDescriptorPadding;
 - (NSArray *)axisLabels;
 - (Class)expectedDataType;
-- (BOOL)hideClippedLabels;
+- (bool)hideClippedLabels;
 - (UIColor *)highlightedLabelColor;
 - (UIColor *)highlightedSubLabelColor;
-- (unsigned int)labelAlignment;
+- (unsigned long long)labelAlignment;
 - (UIFont *)labelFont;
 - (id)maxValue;
 - (id)minValue;
 - (UIColor *)selectedLabelColor;
-- (void)setAxisDescriptorPadding:(float)arg1;
-- (void)setHideClippedLabels:(BOOL)arg1;
+- (void)setAxisDescriptorPadding:(double)arg1;
+- (void)setHideClippedLabels:(bool)arg1;
 - (void)setHighlightedLabelColor:(UIColor *)arg1;
 - (void)setHighlightedSubLabelColor:(UIColor *)arg1;
-- (void)setLabelAlignment:(unsigned int)arg1;
+- (void)setLabelAlignment:(unsigned long long)arg1;
 - (void)setLabelFont:(UIFont *)arg1;
 - (void)setMaxValue:(id)arg1;
 - (void)setMinValue:(id)arg1;
 - (void)setSelectedLabelColor:(UIColor *)arg1;
-- (void)setSubAxisDescriptorPadding:(float)arg1;
+- (void)setSubAxisDescriptorPadding:(double)arg1;
 - (void)setSubLabelFont:(UIFont *)arg1;
 - (void)setUnhighlightedLabelColor:(UIColor *)arg1;
 - (void)setUnhighlightedSubLabelColor:(UIColor *)arg1;
-- (float)subAxisDescriptorPadding;
+- (double)subAxisDescriptorPadding;
 - (UIFont *)subLabelFont;
 - (UIColor *)unhighlightedLabelColor;
 - (UIColor *)unhighlightedSubLabelColor;
@@ -37,13 +37,13 @@
 @optional
 
 - (NSArray *)axisSubLabels;
-- (unsigned int)numLabels;
-- (unsigned int)numSubLabels;
-- (id)positionForLabelAtIndex:(unsigned int)arg1;
-- (id)positionForSubLabelAtIndex:(unsigned int)arg1;
-- (void)selectLabel:(BOOL)arg1 atIndex:(unsigned int)arg2;
-- (NSString *)textForLabelAtIndex:(unsigned int)arg1;
-- (NSString *)textForSubLabelAtIndex:(unsigned int)arg1;
+- (unsigned long long)numLabels;
+- (unsigned long long)numSubLabels;
+- (id)positionForLabelAtIndex:(unsigned long long)arg1;
+- (id)positionForSubLabelAtIndex:(unsigned long long)arg1;
+- (void)selectLabel:(bool)arg1 atIndex:(unsigned long long)arg2;
+- (NSString *)textForLabelAtIndex:(unsigned long long)arg1;
+- (NSString *)textForSubLabelAtIndex:(unsigned long long)arg1;
 - (NSArray *)xAxisLabelStringArray;
 
 @end

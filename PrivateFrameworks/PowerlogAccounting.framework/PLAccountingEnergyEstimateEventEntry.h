@@ -3,14 +3,14 @@
  */
 
 @interface PLAccountingEnergyEstimateEventEntry : PLAccountingEnergyEventEntry {
-    BOOL  _isRootNodeEnergyAggregated;
+    bool  _isRootNodeEnergyAggregated;
 }
 
 @property (nonatomic, retain) NSDate *correctionDate;
 @property (nonatomic) double correctionEnergy;
 @property (nonatomic, retain) NSDate *distributionDate;
 @property (nonatomic, readonly) NSNumber *distributionRuleID;
-@property BOOL isRootNodeEnergyAggregated;
+@property bool isRootNodeEnergyAggregated;
 @property (nonatomic, readonly) int numAncestors;
 @property (nonatomic, readonly) int parentEntryID;
 @property (nonatomic, retain) NSDate *qualificationDate;
@@ -26,7 +26,7 @@
 - (id)distributionDate;
 - (id)distributionRuleID;
 - (id)initWithNodeID:(id)arg1 withRootNodeID:(id)arg2 withParentEntryID:(int)arg3 withNumAncestors:(int)arg4 withEnergy:(double)arg5 withRange:(id)arg6 withEntryDate:(id)arg7;
-- (BOOL)isRootNodeEnergyAggregated;
+- (bool)isRootNodeEnergyAggregated;
 - (int)numAncestors;
 - (int)parentEntryID;
 - (id)qualificationDate;
@@ -35,7 +35,7 @@
 - (void)setCorrectionDate:(id)arg1;
 - (void)setCorrectionEnergy:(double)arg1;
 - (void)setDistributionDate:(id)arg1;
-- (void)setIsRootNodeEnergyAggregated:(BOOL)arg1;
+- (void)setIsRootNodeEnergyAggregated:(bool)arg1;
 - (void)setQualificationDate:(id)arg1;
 - (void)setTerminationRatio:(double)arg1;
 - (double)terminationRatio;

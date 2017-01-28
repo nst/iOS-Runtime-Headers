@@ -3,24 +3,24 @@
  */
 
 @interface CPLInMemoryResourceDownloadTask : CPLResourceTransferTask {
-    id /* block */  _completionHandler;
-    id /* block */  _launchHandler;
+    id  _completionHandler;
+    id  _launchHandler;
     NSObject<OS_dispatch_queue> * _queue;
     <CPLEngineTransportTask> * _transportTask;
 }
 
-@property (nonatomic, readonly) id /* block */ completionHandler;
-@property (nonatomic, readonly) id /* block */ launchHandler;
+@property (nonatomic, readonly) id completionHandler;
+@property (nonatomic, readonly) id launchHandler;
 
-+ (id)failedTaskForResource:(id)arg1 error:(id)arg2 completionHandler:(id /* block */)arg3;
++ (id)failedTaskForResource:(id)arg1 error:(id)arg2 completionHandler:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)cancelTask;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)finishWithData:(id)arg1 error:(id)arg2;
-- (id)initWithLaunchHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (id)initWithLaunchHandler:(id)arg1 completionHandler:(id)arg2;
 - (void)launch;
-- (id /* block */)launchHandler;
+- (id)launchHandler;
 - (void)launchTransportTask:(id)arg1;
 
 @end

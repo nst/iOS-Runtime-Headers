@@ -5,12 +5,12 @@
 @interface CKDFetchZoneChangesRequestOperationResult : NSObject {
     NSData * _resultClientChangeTokenData;
     NSData * _resultServerChangeTokenData;
-    int  _status;
+    long long  _status;
 }
 
 @property (nonatomic, retain) NSData *resultClientChangeTokenData;
 @property (nonatomic, retain) NSData *resultServerChangeTokenData;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 
 - (void).cxx_destruct;
 - (id)init;
@@ -18,7 +18,7 @@
 - (id)resultServerChangeTokenData;
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeTokenData:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 
 @end

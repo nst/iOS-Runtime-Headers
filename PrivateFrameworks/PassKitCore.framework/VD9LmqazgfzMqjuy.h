@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSData *Rcvdb8xkVpLYEAf;
 @property (nonatomic, retain) NSData *XpPjunuFKiJEEGg;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)Ca8bLpVqkhRECzdj;

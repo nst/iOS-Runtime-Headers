@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSData *transactionData;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)certificates;

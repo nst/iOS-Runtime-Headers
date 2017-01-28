@@ -8,17 +8,17 @@
 }
 
 @property (retain) UITextView *detailsTextView;
-@property unsigned int maximumNumberOfLines;
+@property unsigned long long maximumNumberOfLines;
 @property (retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
-- (float)currentTextViewHeight;
+- (double)currentTextViewHeight;
 - (id)detailsTextView;
-- (float)idealTextViewHeightForCurrentWidth;
+- (double)idealTextViewHeightForCurrentWidth;
 - (id)initWithTitle:(id)arg1 details:(id)arg2 controller:(id)arg3;
-- (unsigned int)maximumNumberOfLines;
+- (unsigned long long)maximumNumberOfLines;
 - (void)setDetailsTextView:(id)arg1;
-- (void)setMaximumNumberOfLines:(unsigned int)arg1;
+- (void)setMaximumNumberOfLines:(unsigned long long)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)titleLabel;
 - (id)viewForFirstBaselineLayout;

@@ -7,11 +7,11 @@
 
 - (<MTLDevice> *)device;
 - (NSDictionary *)functionConstantsDictionary;
-- (unsigned int)functionType;
+- (unsigned long long)functionType;
 - (NSString *)label;
 - (NSString *)name;
-- (int)patchControlPointCount;
-- (unsigned int)patchType;
+- (long long)patchControlPointCount;
+- (unsigned long long)patchType;
 - (void)setLabel:(NSString *)arg1;
 - (NSArray *)stageInputAttributes;
 - (NSArray *)vertexAttributes;

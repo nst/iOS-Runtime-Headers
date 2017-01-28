@@ -4,15 +4,15 @@
 
 @interface NTKDigitalTimeAccuracyOption : NTKEnumeratedEditOption
 
-@property (nonatomic, readonly) unsigned int accuracy;
+@property (nonatomic, readonly) unsigned long long accuracy;
 
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (int)indexForAccuracy:(unsigned int)arg1;
-+ (id)optionWithAccuracy:(unsigned int)arg1;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (long long)indexForAccuracy:(unsigned long long)arg1;
++ (id)optionWithAccuracy:(unsigned long long)arg1;
 
 - (id)_valueToFaceBundleStringDict;
-- (unsigned int)accuracy;
+- (unsigned long long)accuracy;
 
 @end

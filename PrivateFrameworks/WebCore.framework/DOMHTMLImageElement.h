@@ -9,10 +9,10 @@
 @property (copy) NSString *alt;
 @property (readonly, copy) NSString *altDisplayString;
 @property (copy) NSString *border;
-@property (readonly) BOOL complete;
+@property (readonly) bool complete;
 @property int height;
 @property int hspace;
-@property BOOL isMap;
+@property bool isMap;
 @property (copy) NSString *longDesc;
 @property (copy) NSString *lowsrc;
 @property (copy) NSString *name;
@@ -32,13 +32,13 @@
 - (id)alt;
 - (id)altDisplayString;
 - (id)border;
-- (BOOL)complete;
+- (bool)complete;
 - (id)crossOrigin;
 - (id)currentSrc;
-- (id)dataRepresentation:(BOOL)arg1;
+- (id)dataRepresentation:(bool)arg1;
 - (int)height;
 - (int)hspace;
-- (BOOL)isMap;
+- (bool)isMap;
 - (id)longDesc;
 - (id)lowsrc;
 - (id)mimeType;
@@ -51,7 +51,7 @@
 - (void)setCrossOrigin:(id)arg1;
 - (void)setHeight:(int)arg1;
 - (void)setHspace:(int)arg1;
-- (void)setIsMap:(BOOL)arg1;
+- (void)setIsMap:(bool)arg1;
 - (void)setLongDesc:(id)arg1;
 - (void)setLowsrc:(id)arg1;
 - (void)setName:(id)arg1;
@@ -74,16 +74,16 @@
 
 + (id)mf_edgeToEdgeImageAttachmentStyle;
 
-- (void)mf_applyEdgeToEdgeStyleWithViewportWidth:(float)arg1;
-- (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)mf_isEdgeToEdgeFormatted;
-- (BOOL)mf_shouldFormatEdgeToEdge;
+- (void)mf_applyEdgeToEdgeStyleWithViewportWidth:(double)arg1;
+- (void)mf_constrainImageToSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)mf_isEdgeToEdgeFormatted;
+- (bool)mf_shouldFormatEdgeToEdge;
 - (void)mf_unconstrainImageSize;
 - (void)recursivelyRemoveMailAttributes;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)alwaysAttemptToShowTapHighlight;
-- (BOOL)showsTapHighlight;
+- (bool)alwaysAttemptToShowTapHighlight;
+- (bool)showsTapHighlight;
 
 @end

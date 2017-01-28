@@ -23,9 +23,9 @@
 
 - (void).cxx_destruct;
 - (id)currentSession;
-- (void)generatedPredictions:(id)arg1 fromMessages:(id)arg2 conversation:(id)arg3 language:(id)arg4 abGroup:(id)arg5 totalPredictionsGenerated:(unsigned int)arg6;
+- (void)generatedPredictions:(id)arg1 fromMessages:(id)arg2 conversation:(id)arg3 language:(id)arg4 abGroup:(id)arg5 totalPredictionsGenerated:(unsigned long long)arg6;
 - (id)init;
-- (id)initWithLanguages:(id)arg1 abGroups:(id)arg2 phraseIdRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 existingSession:(id)arg4;
+- (id)initWithLanguages:(id)arg1 abGroups:(id)arg2 phraseIdRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 existingSession:(id)arg4;
 - (void)predictionEngaged:(id)arg1;
 - (void)resultEngaged;
 - (void)searchPerformedWithQuery:(id)arg1;

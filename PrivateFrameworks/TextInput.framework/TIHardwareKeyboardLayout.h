@@ -3,23 +3,23 @@
  */
 
 @interface TIHardwareKeyboardLayout : TIKeyboardLayout <NSSecureCoding> {
-    int  _keyboardType;
+    long long  _keyboardType;
 }
 
-@property (nonatomic, readonly) int keyboardType;
+@property (nonatomic, readonly) long long keyboardType;
 
 + (void)flushLayoutCaches;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_ANSIFrames;
 - (id)_ISOFrames;
 - (id)_JISFrames;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForKeyCode:(unsigned int)arg1;
-- (void)addString:(id)arg1 forKeyCode:(unsigned int)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameForKeyCode:(unsigned long long)arg1;
+- (void)addString:(id)arg1 forKeyCode:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithKeyboardType:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)keyboardType;
+- (id)initWithKeyboardType:(long long)arg1;
+- (bool)isEqual:(id)arg1;
+- (long long)keyboardType;
 
 @end

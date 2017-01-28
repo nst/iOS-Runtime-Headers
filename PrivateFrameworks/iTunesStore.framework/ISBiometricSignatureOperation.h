@@ -4,30 +4,34 @@
 
 @interface ISBiometricSignatureOperation : ISOperation {
     NSNumber * _accountIdentifier;
+    NSString * _accountName;
     ISBiometricStore * _biometricStore;
     NSString * _challenge;
-    id /* block */  _outputBlock;
-    NSString * _reason;
+    ISTouchIDDialog * _dialog;
+    id  _outputBlock;
 }
 
 @property (nonatomic, copy) NSNumber *accountIdentifier;
+@property (nonatomic, copy) NSString *accountName;
 @property (nonatomic, retain) ISBiometricStore *biometricStore;
 @property (nonatomic, copy) NSString *challenge;
-@property (copy) id /* block */ outputBlock;
-@property (nonatomic, copy) NSString *reason;
+@property (nonatomic, retain) ISTouchIDDialog *dialog;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
 - (id)accountIdentifier;
+- (id)accountName;
 - (id)biometricStore;
 - (id)challenge;
-- (id)initWithChallenge:(id)arg1;
-- (id /* block */)outputBlock;
-- (id)reason;
+- (id)dialog;
+- (id)initWithChallenge:(id)arg1 dialog:(id)arg2;
+- (id)outputBlock;
 - (void)run;
 - (void)setAccountIdentifier:(id)arg1;
+- (void)setAccountName:(id)arg1;
 - (void)setBiometricStore:(id)arg1;
 - (void)setChallenge:(id)arg1;
-- (void)setOutputBlock:(id /* block */)arg1;
-- (void)setReason:(id)arg1;
+- (void)setDialog:(id)arg1;
+- (void)setOutputBlock:(id)arg1;
 
 @end

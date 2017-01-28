@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) CKQueryCursor *cursor;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

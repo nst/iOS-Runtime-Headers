@@ -41,7 +41,7 @@
 - (struct CGColor { }*)groundColor;
 - (void)highDynamicRangeCompression;
 - (float)horizonElevation;
-- (id)initWithName:(void *)arg1 channelEncoding:(void *)arg2 textureDimensions:(void *)arg3 turbidity:(void *)arg4 sunElevation:(void *)arg5 upperAtmosphereScattering:(void *)arg6 groundAlbedo:(void *)arg7; // needs 7 arg types, found 6: id, int, float, float, float, float
+- (id)initWithName:(void *)arg1 channelEncoding:(void *)arg2 textureDimensions:(void *)arg3 turbidity:(void *)arg4 sunElevation:(void *)arg5 upperAtmosphereScattering:(void *)arg6 groundAlbedo:(void *)arg7; // needs 7 arg types, found 6: id, long long, float, float, float, float
 - (float)saturation;
 - (void)setBrightness:(float)arg1;
 - (void)setContrast:(float)arg1;

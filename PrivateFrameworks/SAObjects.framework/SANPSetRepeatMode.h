@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)repeatMode;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setRepeatMode:(id)arg1;
 
 @end

@@ -6,11 +6,11 @@
     PDFDestination * destination;
     struct CGPDFDictionary { } * lazyInitDictionary;
     PDFDocument * lazyInitDocument;
-    unsigned int  lazyInitPageIndex;
-    unsigned int  pageIndex;
+    unsigned long long  lazyInitPageIndex;
+    unsigned long long  pageIndex;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  point;
     NSURL * url;
 }

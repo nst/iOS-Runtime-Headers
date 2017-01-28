@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (void)cancelAll;
 - (void)cancelBlocksWithStringIdentifier:(id)arg1;
-- (void)dispatchAfter:(double)arg1 stringIdentifier:(id)arg2 withBlock:(id /* block */)arg3;
+- (void)dispatchAfter:(double)arg1 stringIdentifier:(id)arg2 withBlock:(id)arg3;
 - (id)identifierBlockMap;
 - (id)identifierForStringIdentifier:(id)arg1;
 - (id)init;

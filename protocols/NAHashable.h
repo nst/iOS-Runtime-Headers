@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)hash;
+- (unsigned long long)hash;
 
 @end

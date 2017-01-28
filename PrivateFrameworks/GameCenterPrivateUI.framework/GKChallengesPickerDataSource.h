@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) GKChallenge *challenge;
 
-- (BOOL)canSelectPlayerInfo:(id)arg1;
+- (bool)canSelectPlayerInfo:(id)arg1;
 - (id)challenge;
 - (void)configureDataSource;
 - (void)dealloc;

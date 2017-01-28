@@ -3,8 +3,8 @@
  */
 
 @interface _FBSystemGestureManager : NSObject <FBExclusiveTouchGestureRecognizerDelegate, UIGestureRecognizerDelegate> {
-    BOOL  _achievedMaximumMovement;
-    BOOL  _didSeeExclusiveTouchBegan;
+    bool  _achievedMaximumMovement;
+    bool  _didSeeExclusiveTouchBegan;
     FBSDisplay * _display;
     UIGestureRecognizer * _exclusiveTouchGesture;
     NSMutableSet * _externalGestures;
@@ -13,14 +13,14 @@
     BKSTouchStream * _touchStream;
 }
 
-@property (nonatomic) BOOL achievedMaximumMovement;
+@property (nonatomic) bool achievedMaximumMovement;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL didSeeExclusiveTouchBegan;
+@property (nonatomic) bool didSeeExclusiveTouchBegan;
 @property (nonatomic, readonly, retain) FBSDisplay *display;
 @property (nonatomic, retain) UIGestureRecognizer *exclusiveTouchGesture;
 @property (nonatomic, readonly, copy) NSSet *gestureRecognizers;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) BKSTouchStream *touchStream;
 
@@ -30,21 +30,21 @@
 - (void)_externalGestureRecognizerChanged:(id)arg1;
 - (void)_handleTooMuchMovementWithLastTouchTimestamp:(double)arg1;
 - (void)_removeInternalGestures;
-- (BOOL)achievedMaximumMovement;
+- (bool)achievedMaximumMovement;
 - (void)addGestureRecognizer:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)didSeeExclusiveTouchBegan;
+- (bool)didSeeExclusiveTouchBegan;
 - (id)display;
 - (id)exclusiveTouchGesture;
-- (void)exclusiveTouchGestureRecognizer:(id)arg1 achievedMaximumAbsoluteAccumulatedMovement:(BOOL)arg2 timestamp:(double)arg3;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
+- (void)exclusiveTouchGestureRecognizer:(id)arg1 achievedMaximumAbsoluteAccumulatedMovement:(bool)arg2 timestamp:(double)arg3;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (id)gestureRecognizers;
 - (id)initWithDisplay:(id)arg1;
 - (void)removeGestureRecognizer:(id)arg1;
-- (void)setAchievedMaximumMovement:(BOOL)arg1;
-- (void)setDidSeeExclusiveTouchBegan:(BOOL)arg1;
+- (void)setAchievedMaximumMovement:(bool)arg1;
+- (void)setDidSeeExclusiveTouchBegan:(bool)arg1;
 - (void)setExclusiveTouchGesture:(id)arg1;
 - (void)setTouchStream:(id)arg1;
 - (id)touchStream;

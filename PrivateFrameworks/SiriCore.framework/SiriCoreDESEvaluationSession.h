@@ -11,18 +11,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_handleRecipeResponse:(id)arg1 records:(id)arg2 completion:(id /* block */)arg3;
-- (void)_runJSONPOSTRequest:(id)arg1 path:(id)arg2 completion:(id /* block */)arg3;
-- (void)_runWithCompletion:(id /* block */)arg1;
-- (void)_runWithRecords:(id)arg1 completion:(id /* block */)arg2;
-- (void)_sendRecipeResponseForRecord:(id)arg1 recipeId:(id)arg2 result:(id)arg3 error:(id)arg4 completion:(id /* block */)arg5;
+- (void)_handleRecipeResponse:(id)arg1 records:(id)arg2 completion:(id)arg3;
+- (void)_runJSONPOSTRequest:(id)arg1 path:(id)arg2 completion:(id)arg3;
+- (void)_runWithCompletion:(id)arg1;
+- (void)_runWithRecords:(id)arg1 completion:(id)arg2;
+- (void)_sendRecipeResponseForRecord:(id)arg1 recipeId:(id)arg2 result:(id)arg3 error:(id)arg4 completion:(id)arg5;
 - (id)init;
 - (id)initWithBaseURL:(id)arg1;
 - (void)invalidate;
-- (void)runWithCompletion:(id /* block */)arg1;
+- (void)runWithCompletion:(id)arg1;
 
 @end

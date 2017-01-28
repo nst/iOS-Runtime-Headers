@@ -7,24 +7,28 @@
     NSDictionary * _nowPlayingInfo;
     MPNowPlayingPlaybackQueueCache * _playbackQueueCache;
     <MPNowPlayingPlaybackQueueDataSource> * _playbackQueueDataSource;
+    unsigned long long  _playbackState;
     NSDate * _pushDate;
     NSObject<OS_dispatch_queue> * _queue;
     NSDictionary * _queuedNowPlayingInfo;
 }
 
 @property (copy) NSDictionary *nowPlayingInfo;
+@property unsigned long long playbackState;
 
 + (id)defaultCenter;
 
 - (void).cxx_destruct;
 - (id)_init;
-- (void)_pushNowPlayingInfoAndRetry:(BOOL)arg1;
+- (void)_pushNowPlayingInfoAndRetry:(bool)arg1;
 - (void)_registerCallbacks;
 - (id)init;
 - (void)invalidatePlaybackQueue;
 - (id)nowPlayingInfo;
 - (id)playbackQueueDataSource;
+- (unsigned long long)playbackState;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackQueueDataSource:(id)arg1;
+- (void)setPlaybackState:(unsigned long long)arg1;
 
 @end

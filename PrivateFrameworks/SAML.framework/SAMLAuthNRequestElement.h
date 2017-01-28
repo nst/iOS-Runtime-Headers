@@ -8,9 +8,9 @@
 @property (nonatomic, readonly) NSString *consent;
 @property (nonatomic, readonly) SAMLRequestedAuthNContext *context;
 @property (nonatomic, retain) NSString *destination;
-@property (nonatomic) BOOL forceAuthN;
+@property (nonatomic) bool forceAuthN;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic) BOOL isPassive;
+@property (nonatomic) bool isPassive;
 @property (nonatomic, readonly) NSDate *issueInstant;
 @property (nonatomic, retain) NSString *issuer;
 @property (nonatomic, retain) SAMLNameIdPolicy *nameIdPolicy;
@@ -25,9 +25,9 @@
 - (id)consent;
 - (id)context;
 - (id)destination;
-- (BOOL)forceAuthN;
+- (bool)forceAuthN;
 - (id)identifier;
-- (BOOL)isPassive;
+- (bool)isPassive;
 - (id)issueInstant;
 - (id)issuer;
 - (id)nameIdPolicy;
@@ -35,8 +35,8 @@
 - (id)scoping;
 - (void)setConditions:(id)arg1;
 - (void)setDestination:(id)arg1;
-- (void)setForceAuthN:(BOOL)arg1;
-- (void)setIsPassive:(BOOL)arg1;
+- (void)setForceAuthN:(bool)arg1;
+- (void)setIsPassive:(bool)arg1;
 - (void)setIssuer:(id)arg1;
 - (void)setNameIdPolicy:(id)arg1;
 - (void)setProviderName:(id)arg1;

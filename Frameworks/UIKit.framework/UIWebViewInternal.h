@@ -5,7 +5,7 @@
 @interface UIWebViewInternal : NSObject {
     UIWebBrowserView * browserView;
     UICheckeredPatternView * checkeredPatternView;
-    int  clickedAlertButtonIndex;
+    long long  clickedAlertButtonIndex;
     <UIWebViewDelegate> * delegate;
     unsigned int  didRotateEnclosingScrollView;
     unsigned int  drawInWebThread;

@@ -4,20 +4,20 @@
 
 @interface PUPXPhotoKitHideAssetActionPerformer : PXPhotoKitAssetActionPerformer {
     PUAssetHidingHelper * _assetHidingHelper;
-    BOOL  _isHiding;
+    bool  _isHiding;
 }
 
 @property (nonatomic, retain) PUAssetHidingHelper *assetHidingHelper;
-@property (nonatomic) BOOL isHiding;
+@property (nonatomic) bool isHiding;
 
-+ (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
++ (bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)assetHidingHelper;
-- (BOOL)isHiding;
+- (bool)isHiding;
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
 - (void)setAssetHidingHelper:(id)arg1;
-- (void)setIsHiding:(BOOL)arg1;
+- (void)setIsHiding:(bool)arg1;
 
 @end

@@ -3,26 +3,26 @@
  */
 
 @interface FigBWNodeRenderObserver : NSObject <BWNodeRenderDelegate> {
-    id /* block */  _formatDidBecomeLiveHandler;
+    id  _formatDidBecomeLiveHandler;
     BWNode * _node;
-    id /* block */  _willRenderSampleBufferHandler;
+    id  _willRenderSampleBufferHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ formatDidBecomeLiveHandler;
-@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id formatDidBecomeLiveHandler;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) id /* block */ willRenderSampleBufferHandler;
+@property (nonatomic, copy) id willRenderSampleBufferHandler;
 
 - (void)dealloc;
-- (id /* block */)formatDidBecomeLiveHandler;
+- (id)formatDidBecomeLiveHandler;
 - (id)initWithBWNode:(id)arg1;
 - (void)node:(id)arg1 format:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)node:(id)arg1 format:(id)arg2 didBecomeLiveForOutput:(id)arg3;
 - (void)node:(id)arg1 willRenderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 forInput:(id)arg3;
-- (void)setFormatDidBecomeLiveHandler:(id /* block */)arg1;
-- (void)setWillRenderSampleBufferHandler:(id /* block */)arg1;
-- (id /* block */)willRenderSampleBufferHandler;
+- (void)setFormatDidBecomeLiveHandler:(id)arg1;
+- (void)setWillRenderSampleBufferHandler:(id)arg1;
+- (id)willRenderSampleBufferHandler;
 
 @end

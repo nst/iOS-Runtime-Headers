@@ -3,8 +3,8 @@
  */
 
 @interface MPSImagePyramid : MPSUnaryImageKernel {
-    unsigned int  _fHeight;
-    unsigned int  _fWidth;
+    unsigned long long  _fHeight;
+    unsigned long long  _fWidth;
     bool  separable;
     float * wtArray;
     unsigned short * wtArrayh;
@@ -12,15 +12,15 @@
     <MTLBuffer> * wtBufferh;
 }
 
-@property (nonatomic, readonly) unsigned int kernelHeight;
-@property (nonatomic, readonly) unsigned int kernelWidth;
+@property (nonatomic, readonly) unsigned long long kernelHeight;
+@property (nonatomic, readonly) unsigned long long kernelWidth;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1;
 - (id)initWithDevice:(id)arg1 centerWeight:(float)arg2;
-- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned int)arg2 kernelHeight:(unsigned int)arg3 weights:(const float*)arg4;
-- (unsigned int)kernelHeight;
-- (unsigned int)kernelWidth;
+- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned long long)arg2 kernelHeight:(unsigned long long)arg3 weights:(const float*)arg4;
+- (unsigned long long)kernelHeight;
+- (unsigned long long)kernelWidth;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface SGABContainer : NSObject {
     void * _ab;
-    BOOL  _isInUse;
+    bool  _isInUse;
     struct atomic_flag { 
         bool _Value; 
     }  _isValid;

@@ -9,21 +9,21 @@
 @property (nonatomic, readonly) NSArray *mathMLAttributes;
 @property (nonatomic, readonly) NSString *mathMLTag;
 
-- (id)childSpeakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 parentTreePosition:(id)arg3 childIndex:(unsigned int*)arg4;
+- (id)childSpeakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned long long)arg2 parentTreePosition:(id)arg3 childIndex:(unsigned long long*)arg4;
 - (id)children;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasSimpleArrayOfChildren;
+- (bool)hasSimpleArrayOfChildren;
 - (id)initWithDictionary:(id)arg1;
-- (id)localizablePrefixForChildAtIndex:(unsigned int)arg1;
-- (id)localizableSuffixForChildAtIndex:(unsigned int)arg1;
+- (id)localizablePrefixForChildAtIndex:(unsigned long long)arg1;
+- (id)localizableSuffixForChildAtIndex:(unsigned long long)arg1;
 - (id)mathMLAttributes;
 - (id)mathMLString;
 - (id)mathMLTag;
-- (id)prefixForChildAtIndex:(unsigned int)arg1;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
-- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 treePosition:(id)arg3;
+- (id)prefixForChildAtIndex:(unsigned long long)arg1;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
+- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned long long)arg2 treePosition:(id)arg3;
 - (id)subExpressions;
-- (id)suffixForChildAtIndex:(unsigned int)arg1;
+- (id)suffixForChildAtIndex:(unsigned long long)arg1;
 
 @end

@@ -6,7 +6,7 @@
     FCCKDatabase * _database;
     NSArray * _desiredKeys;
     NSMutableDictionary * _errorsByRecordID;
-    id /* block */  _fetchRecordsCompletionBlock;
+    id  _fetchRecordsCompletionBlock;
     NSError * _operationError;
     NSArray * _recordIDs;
     NSMutableDictionary * _recordsByRecordID;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) FCCKDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, retain) NSMutableDictionary *errorsByRecordID;
-@property (nonatomic, copy) id /* block */ fetchRecordsCompletionBlock;
+@property (nonatomic, copy) id fetchRecordsCompletionBlock;
 @property (nonatomic, retain) NSError *operationError;
 @property (nonatomic, copy) NSArray *recordIDs;
 @property (nonatomic, retain) NSMutableDictionary *recordsByRecordID;
@@ -27,7 +27,7 @@
 - (id)database;
 - (id)desiredKeys;
 - (id)errorsByRecordID;
-- (id /* block */)fetchRecordsCompletionBlock;
+- (id)fetchRecordsCompletionBlock;
 - (id)init;
 - (id)operationError;
 - (void)operationWillFinishWithError:(id)arg1;
@@ -39,11 +39,11 @@
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setErrorsByRecordID:(id)arg1;
-- (void)setFetchRecordsCompletionBlock:(id /* block */)arg1;
+- (void)setFetchRecordsCompletionBlock:(id)arg1;
 - (void)setOperationError:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordsByRecordID:(id)arg1;
 - (void)setRemainingRecordIDBatches:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

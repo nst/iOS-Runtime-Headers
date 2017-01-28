@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (void)dismissAlertDialogForWebPID:(int)arg1;
-- (void)dismissConfirmDialogForWebPID:(int)arg1 withResponse:(int)arg2;
+- (void)dismissConfirmDialogForWebPID:(int)arg1 withResponse:(long long)arg2;
 - (void)dismissDialogForWebPIDIfNeeded:(int)arg1;
 - (void)dismissPromptDialogForWebPID:(int)arg1 withResponse:(id)arg2;
 - (id)init;

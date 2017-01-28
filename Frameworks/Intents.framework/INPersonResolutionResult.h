@@ -6,13 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)confirmationRequiredWithPersonToConfirm:(id)arg1;
 + (id)disambiguationWithPeopleToDisambiguate:(id)arg1;
 + (id)needsMoreDetailsForPerson:(id)arg1;
 + (id)successWithResolvedPerson:(id)arg1;
-+ (id)unsupportedWithReason:(unsigned int)arg1 alternativePeople:(id)arg2;
++ (id)unsupportedWithReason:(unsigned long long)arg1 alternativePeople:(id)arg2;
 
 @end

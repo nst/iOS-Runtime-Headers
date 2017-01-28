@@ -3,51 +3,51 @@
  */
 
 @interface VSVoiceAsset : VSAssetBase <NSSecureCoding> {
-    long  _footprint;
-    long  _gender;
-    BOOL  _isBuiltInVoice;
-    BOOL  _isInstalled;
+    long long  _footprint;
+    long long  _gender;
+    bool  _isBuiltInVoice;
+    bool  _isInstalled;
     NSArray * _languages;
     NSString * _name;
-    long  _type;
+    long long  _type;
 }
 
-@property (nonatomic) long footprint;
-@property (nonatomic) long gender;
-@property (nonatomic) BOOL isBuiltInVoice;
-@property (nonatomic) BOOL isInstalled;
+@property (nonatomic) long long footprint;
+@property (nonatomic) long long gender;
+@property (nonatomic) bool isBuiltInVoice;
+@property (nonatomic) bool isInstalled;
 @property (nonatomic, copy) NSArray *languages;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) long type;
+@property (nonatomic) long long type;
 
-+ (long)footprintFromString:(id)arg1;
-+ (id)footprintStringFromFootprint:(long)arg1;
-+ (long)genderFromString:(id)arg1;
-+ (id)genderStringFromGender:(long)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (long)typeFromString:(id)arg1;
-+ (id)typeStringFromType:(long)arg1;
++ (long long)footprintFromString:(id)arg1;
++ (id)footprintStringFromFootprint:(long long)arg1;
++ (long long)genderFromString:(id)arg1;
++ (id)genderStringFromGender:(long long)arg1;
++ (bool)supportsSecureCoding;
++ (long long)typeFromString:(id)arg1;
++ (id)typeStringFromType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (long)footprint;
-- (long)gender;
+- (long long)footprint;
+- (long long)gender;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (BOOL)isBuiltInVoice;
-- (BOOL)isInstalled;
+- (bool)isBuiltInVoice;
+- (bool)isInstalled;
 - (id)languages;
 - (id)name;
-- (void)setFootprint:(long)arg1;
-- (void)setGender:(long)arg1;
-- (void)setIsBuiltInVoice:(BOOL)arg1;
-- (void)setIsInstalled:(BOOL)arg1;
+- (void)setFootprint:(long long)arg1;
+- (void)setGender:(long long)arg1;
+- (void)setIsBuiltInVoice:(bool)arg1;
+- (void)setIsInstalled:(bool)arg1;
 - (void)setLanguages:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setType:(long)arg1;
-- (long)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 - (id)voiceKey;
 
 @end

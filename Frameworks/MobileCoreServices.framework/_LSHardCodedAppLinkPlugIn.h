@@ -6,7 +6,7 @@
 
 + (id)hardCodedTable;
 
-- (void)getAppLinkWithCompletionHandler:(id /* block */)arg1;
+- (void)getAppLinkWithCompletionHandler:(id)arg1;
 - (id)init;
 
 @end

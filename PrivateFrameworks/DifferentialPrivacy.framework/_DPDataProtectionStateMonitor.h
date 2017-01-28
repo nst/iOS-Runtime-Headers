@@ -3,12 +3,12 @@
  */
 
 @interface _DPDataProtectionStateMonitor : NSObject {
-    id /* block */  _changeHandler;
+    id  _changeHandler;
     NSUUID * _handlerUUID;
     _DPDataProtectionMaster * _master;
 }
 
-@property (copy) id /* block */ changeHandler;
+@property (copy) id changeHandler;
 @property (readonly) NSUUID *handlerUUID;
 @property (nonatomic, readonly) _DPDataProtectionMaster *master;
 
@@ -17,12 +17,12 @@
 + (id)dataProtectionClassD;
 
 - (void).cxx_destruct;
-- (id /* block */)changeHandler;
+- (id)changeHandler;
 - (void)dealloc;
 - (id)handlerUUID;
 - (id)init;
-- (BOOL)isDataAvailableFor:(id)arg1;
+- (bool)isDataAvailableFor:(id)arg1;
 - (id)master;
-- (void)setChangeHandler:(id /* block */)arg1;
+- (void)setChangeHandler:(id)arg1;
 
 @end

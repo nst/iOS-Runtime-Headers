@@ -10,7 +10,7 @@
 - (unsigned int)fillBlipID;
 - (NSString *)fillBlipName;
 - (int)fillFgAlpha;
-- (long)fillFocus;
+- (int)fillFocus;
 - (int)fillFocusBottom;
 - (int)fillFocusLeft;
 - (int)fillFocusRight;

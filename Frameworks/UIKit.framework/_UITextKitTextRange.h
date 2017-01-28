@@ -7,24 +7,24 @@
     _UITextKitTextPosition * _start;
 }
 
-@property (nonatomic, readonly) int affinity;
+@property (nonatomic, readonly) long long affinity;
 @property (nonatomic, retain) UITextPosition *end;
 @property (nonatomic, retain) UITextPosition *start;
 
 + (id)defaultRange;
-+ (id)rangeWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-+ (id)rangeWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 affinity:(int)arg2;
++ (id)rangeWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
++ (id)rangeWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 affinity:(long long)arg2;
 + (id)rangeWithStart:(id)arg1 end:(id)arg2;
 
 - (void).cxx_destruct;
-- (int)affinity;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })asRange;
+- (long long)affinity;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })asRange;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)end;
 - (id)init;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (void)setEnd:(id)arg1;
 - (void)setStart:(id)arg1;
 - (id)start;

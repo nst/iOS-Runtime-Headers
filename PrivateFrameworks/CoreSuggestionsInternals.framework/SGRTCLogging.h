@@ -4,18 +4,18 @@
 
 @interface SGRTCLogging : NSObject <NSCoding> {
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     NSMutableArray * _loggedEvents;
-    int  _loggedEventsCount;
+    long long  _loggedEventsCount;
     NSString * _path;
     NSTimer * _persistenceTimer;
     NSThread * _persistenceTimerThread;
     double  _storeCreationDate;
 }
 
-+ (BOOL)_createEmptyFileAtPath:(id)arg1;
++ (bool)_createEmptyFileAtPath:(id)arg1;
 + (id)defaultLogger;
 + (id)inMemoryLogger;
 
@@ -34,13 +34,13 @@
 - (void)logExceptionFromTemplate:(id)arg1 templateExceptionMessage:(id)arg2 emailDateReceived:(id)arg3 jsMessageLogs:(id)arg4 jsOutputLogs:(id)arg5;
 - (void)logOutputIssueFromTemplate:(id)arg1 latencyInMs:(unsigned long long)arg2 emailDateReceived:(id)arg3 outputIssueTypes:(id)arg4 outputInfos:(id)arg5 jsMessageLogs:(id)arg6 jsOutputLogs:(id)arg7;
 - (id)loggedEvents;
-- (unsigned int)loggedEventsCount;
+- (unsigned long long)loggedEventsCount;
 - (id)metricNameForShortName:(id)arg1;
-- (BOOL)resetLogs;
-- (void)sendRTCLogsWithCompletion:(id /* block */)arg1;
+- (bool)resetLogs;
+- (void)sendRTCLogsWithCompletion:(id)arg1;
 - (id)shortNameForMetricNamed:(id)arg1;
 - (double)storeAge;
-- (BOOL)storeToDisk;
+- (bool)storeToDisk;
 - (void)updateAndScheduleDiskWrite;
 
 @end

@@ -4,20 +4,20 @@
 
 @interface HFTransformItem : HFItem {
     HFItem * _sourceItem;
-    id /* block */  _transformationBlock;
+    id  _transformationBlock;
 }
 
 @property (nonatomic, retain) HFItem *sourceItem;
-@property (nonatomic, copy) id /* block */ transformationBlock;
+@property (nonatomic, copy) id transformationBlock;
 
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)init;
 - (id)initWithSourceItem:(id)arg1 resultKeyFilter:(id)arg2;
-- (id)initWithSourceItem:(id)arg1 transformationBlock:(id /* block */)arg2;
+- (id)initWithSourceItem:(id)arg1 transformationBlock:(id)arg2;
 - (void)setSourceItem:(id)arg1;
-- (void)setTransformationBlock:(id /* block */)arg1;
+- (void)setTransformationBlock:(id)arg1;
 - (id)sourceItem;
-- (id /* block */)transformationBlock;
+- (id)transformationBlock;
 
 @end

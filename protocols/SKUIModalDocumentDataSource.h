@@ -5,6 +5,6 @@
 
 @required
 
-- (UIAlertController *)modalDocumentController:(void *)arg1 alertControllerForDocument:(void *)arg2 withDismissObserverBlock:(void *)arg3 options:(void *)arg4; // needs 4 arg types, found 9: SKUIModalDocumentController *, IKAppDocument *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIAlertController *, void*, NSDictionary *
+- (UIAlertController *)modalDocumentController:(void *)arg1 alertControllerForDocument:(void *)arg2 withDismissObserverBlock:(void *)arg3 options:(void *)arg4; // needs 4 arg types, found 9: SKUIModalDocumentController *, IKAppDocument *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, UIAlertController *, void*, NSDictionary *
 
 @end

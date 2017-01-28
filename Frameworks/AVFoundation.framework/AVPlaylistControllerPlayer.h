@@ -14,6 +14,6 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)initWithFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
-- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id /* block */)arg2;
+- (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 completionHandler:(id)arg2;
 
 @end

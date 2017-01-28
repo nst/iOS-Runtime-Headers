@@ -4,27 +4,27 @@
 
 @interface WebBookmarkCollectionSyncFlags : NSObject {
     NSMutableSet * _lockSyncHoldRequestorPointers;
-    BOOL  _postDAVSyncNotificationWhenUnlocking;
-    BOOL  _syncAllowed;
+    bool  _postDAVSyncNotificationWhenUnlocking;
+    bool  _syncAllowed;
     int  _syncLockFileDescriptor;
-    BOOL  _unlockSyncRequested;
+    bool  _unlockSyncRequested;
 }
 
 @property (nonatomic, readonly) NSMutableSet *lockSyncHoldRequestorPointers;
-@property (nonatomic) BOOL postDAVSyncNotificationWhenUnlocking;
-@property (nonatomic, readonly) BOOL syncAllowed;
+@property (nonatomic) bool postDAVSyncNotificationWhenUnlocking;
+@property (nonatomic, readonly) bool syncAllowed;
 @property (nonatomic) int syncLockFileDescriptor;
-@property (nonatomic) BOOL unlockSyncRequested;
+@property (nonatomic) bool unlockSyncRequested;
 
 - (void).cxx_destruct;
-- (id)initWithSyncAllowed:(BOOL)arg1;
+- (id)initWithSyncAllowed:(bool)arg1;
 - (id)lockSyncHoldRequestorPointers;
-- (BOOL)postDAVSyncNotificationWhenUnlocking;
-- (void)setPostDAVSyncNotificationWhenUnlocking:(BOOL)arg1;
+- (bool)postDAVSyncNotificationWhenUnlocking;
+- (void)setPostDAVSyncNotificationWhenUnlocking:(bool)arg1;
 - (void)setSyncLockFileDescriptor:(int)arg1;
-- (void)setUnlockSyncRequested:(BOOL)arg1;
-- (BOOL)syncAllowed;
+- (void)setUnlockSyncRequested:(bool)arg1;
+- (bool)syncAllowed;
 - (int)syncLockFileDescriptor;
-- (BOOL)unlockSyncRequested;
+- (bool)unlockSyncRequested;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface TSTCoordinateArray : NSObject {
-    float  mAverage;
-    float * mCoordinates;
+    double  mAverage;
+    double * mCoordinates;
     unsigned int  mCount;
-    BOOL  mLayoutDirectionIsLeftToRight;
+    bool  mLayoutDirectionIsLeftToRight;
     unsigned int  mOffset;
-    float  mTableWidth;
+    double  mTableWidth;
     NSMutableIndexSet * mVisibleIndices;
 }
 
 - (void)dealloc;
 - (id)description;
-- (void)hasRightToLeftOrderingWithWidth:(float)arg1;
+- (void)hasRightToLeftOrderingWithWidth:(double)arg1;
 - (id)initWithCount:(unsigned int)arg1 atOffset:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

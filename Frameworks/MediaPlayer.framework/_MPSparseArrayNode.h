@@ -4,21 +4,21 @@
 
 @interface _MPSparseArrayNode : NSObject <NSSecureCoding> {
     id  _object;
-    unsigned int  _relativeOffset;
+    unsigned long long  _relativeOffset;
 }
 
 @property (nonatomic, retain) id object;
-@property (nonatomic) unsigned int relativeOffset;
+@property (nonatomic) unsigned long long relativeOffset;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRelativeOffset:(unsigned int)arg1 object:(id)arg2;
+- (id)initWithRelativeOffset:(unsigned long long)arg1 object:(id)arg2;
 - (id)object;
-- (unsigned int)relativeOffset;
+- (unsigned long long)relativeOffset;
 - (void)setObject:(id)arg1;
-- (void)setRelativeOffset:(unsigned int)arg1;
+- (void)setRelativeOffset:(unsigned long long)arg1;
 
 @end

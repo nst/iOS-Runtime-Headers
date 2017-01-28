@@ -3,20 +3,20 @@
  */
 
 @interface CKWaiterWrapper : NSObject {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     <CKDZoneGatekeeperWaiter> * _waiter;
     NSArray * _zoneIDs;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic, retain) <CKDZoneGatekeeperWaiter> *waiter;
 @property (nonatomic, retain) NSArray *zoneIDs;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)description;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setWaiter:(id)arg1;
 - (void)setZoneIDs:(id)arg1;
 - (id)waiter;

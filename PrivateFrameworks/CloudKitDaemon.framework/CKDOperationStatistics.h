@@ -6,14 +6,14 @@
     CKDOperationMetrics * _aggregateCKMetrics;
     CKDOperationMetrics * _aggregateMMCSMetrics;
     NSString * _operationClassName;
-    unsigned int  _operationCount;
+    unsigned long long  _operationCount;
     NSMutableDictionary * _recentErrorsByDate;
 }
 
 @property (nonatomic, readonly) CKDOperationMetrics *aggregateCKMetrics;
 @property (nonatomic, readonly) CKDOperationMetrics *aggregateMMCSMetrics;
 @property (nonatomic, readonly) NSString *operationClassName;
-@property (readonly) unsigned int operationCount;
+@property (readonly) unsigned long long operationCount;
 @property (nonatomic, readonly) NSMutableDictionary *recentErrorsByDate;
 
 - (void).cxx_destruct;
@@ -27,7 +27,7 @@
 - (id)initWithOperationClassName:(id)arg1;
 - (void)merge:(id)arg1;
 - (id)operationClassName;
-- (unsigned int)operationCount;
+- (unsigned long long)operationCount;
 - (id)recentErrorsByDate;
 
 @end

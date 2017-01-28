@@ -3,38 +3,38 @@
  */
 
 @interface HMDRemoteMessage : HMFMessage {
-    unsigned int  _restriction;
-    BOOL  _secure;
+    unsigned long long  _restriction;
+    bool  _secure;
     HMDHomeKitVersion * _sourceVersion;
     double  _timeout;
     NSUUID * _transactionIdentifier;
-    int  _type;
+    long long  _type;
 }
 
-@property (nonatomic, readonly) unsigned int restriction;
-@property (getter=isSecure, nonatomic) BOOL secure;
+@property (nonatomic, readonly) unsigned long long restriction;
+@property (getter=isSecure, nonatomic) bool secure;
 @property (nonatomic, retain) HMDHomeKitVersion *sourceVersion;
 @property (nonatomic, readonly) double timeout;
 @property (nonatomic, copy) NSUUID *transactionIdentifier;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 + (id)secureMessageWithName:(id)arg1 destination:(id)arg2 messagePayload:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3;
-- (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3 type:(int)arg4 timeout:(double)arg5 secure:(BOOL)arg6;
-- (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3 type:(int)arg4 timeout:(double)arg5 secure:(BOOL)arg6 restriction:(unsigned int)arg7;
-- (BOOL)isRemoteSource;
-- (BOOL)isSecure;
-- (unsigned int)restriction;
-- (void)setResponseHandler:(id /* block */)arg1;
-- (void)setSecure:(BOOL)arg1;
+- (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3 type:(long long)arg4 timeout:(double)arg5 secure:(bool)arg6;
+- (id)initWithName:(id)arg1 destination:(id)arg2 payload:(id)arg3 type:(long long)arg4 timeout:(double)arg5 secure:(bool)arg6 restriction:(unsigned long long)arg7;
+- (bool)isRemoteSource;
+- (bool)isSecure;
+- (unsigned long long)restriction;
+- (void)setResponseHandler:(id)arg1;
+- (void)setSecure:(bool)arg1;
 - (void)setSourceVersion:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (id)sourceVersion;
 - (double)timeout;
 - (id)transactionIdentifier;
-- (int)type;
+- (long long)type;
 
 @end

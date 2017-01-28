@@ -13,7 +13,7 @@
 @property (setter=_setActivityType:, nonatomic, copy) NSString *activityType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) id item;
 @property (nonatomic, retain) id placeholderItem;
 @property (nonatomic) float progress;
@@ -43,6 +43,6 @@
 
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
-+ (BOOL)activityTypeShouldProvideImage:(id)arg1;
++ (bool)activityTypeShouldProvideImage:(id)arg1;
 
 @end

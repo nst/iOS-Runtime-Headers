@@ -4,17 +4,17 @@
 
 @interface PXSectionedChangeDetailsRepository : NSObject {
     NSMutableArray * _allChangeDetails;
-    int  _historyLimit;
+    long long  _historyLimit;
     NSObject<OS_dispatch_queue> * _internalQueue;
 }
 
-@property (nonatomic, readonly) int historyLimit;
+@property (nonatomic, readonly) long long historyLimit;
 
 - (void).cxx_destruct;
 - (void)addChangeDetails:(id)arg1;
-- (id)changeDetailsFromDataSourceIdentifier:(unsigned int)arg1 toDataSourceIdentifier:(unsigned int)arg2;
-- (int)historyLimit;
+- (id)changeDetailsFromDataSourceIdentifier:(unsigned long long)arg1 toDataSourceIdentifier:(unsigned long long)arg2;
+- (long long)historyLimit;
 - (id)init;
-- (id)initWithChangeHistoryLimit:(int)arg1;
+- (id)initWithChangeHistoryLimit:(long long)arg1;
 
 @end

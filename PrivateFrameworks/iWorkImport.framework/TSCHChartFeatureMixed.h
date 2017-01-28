@@ -9,12 +9,12 @@
 - (Class)presetImagerClass;
 - (id)supportedAxisScales;
 - (id)supportedSeriesTypes;
-- (BOOL)supportsConnectingLines;
-- (BOOL)supportsEditing;
-- (BOOL)supportsGroupedShadows;
-- (BOOL)supportsIndividualShadowRendering;
-- (BOOL)supportsMultipleSeriesTypes;
-- (BOOL)supportsSymbolOverhang;
+- (bool)supportsConnectingLines;
+- (bool)supportsEditing;
+- (bool)supportsGroupedShadows;
+- (bool)supportsIndividualShadowRendering;
+- (bool)supportsMultipleSeriesTypes;
+- (bool)supportsSymbolOverhang;
 - (id)userInterfaceName;
 - (Class)valueAxisClassForID:(id)arg1 scale:(int)arg2;
 

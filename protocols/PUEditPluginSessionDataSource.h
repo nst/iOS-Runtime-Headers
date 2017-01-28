@@ -5,13 +5,13 @@
 
 @required
 
-- (void)editPluginSession:(void *)arg1 commitContentEditingOutput:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: PUEditPluginSession *, PHContentEditingOutput *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)editPluginSession:(void *)arg1 loadAdjustmentDataWithHandler:(void *)arg2; // needs 2 arg types, found 7: PUEditPluginSession *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PHAdjustmentData *, void*
-- (void)editPluginSession:(void *)arg1 loadPlaceholderImageWithHandler:(void *)arg2; // needs 2 arg types, found 7: PUEditPluginSession *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIImage *, void*
+- (void)editPluginSession:(void *)arg1 commitContentEditingOutput:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: PUEditPluginSession *, PHContentEditingOutput *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)editPluginSession:(void *)arg1 loadAdjustmentDataWithHandler:(void *)arg2; // needs 2 arg types, found 7: PUEditPluginSession *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, PHAdjustmentData *, void*
+- (void)editPluginSession:(void *)arg1 loadPlaceholderImageWithHandler:(void *)arg2; // needs 2 arg types, found 7: PUEditPluginSession *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, UIImage *, void*
 
 @optional
 
-- (void)editPluginSession:(void *)arg1 revertToOriginalWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: PUEditPluginSession *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)editPluginSessionCanRevertToOriginal:(PUEditPluginSession *)arg1;
+- (void)editPluginSession:(void *)arg1 revertToOriginalWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: PUEditPluginSession *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (bool)editPluginSessionCanRevertToOriginal:(PUEditPluginSession *)arg1;
 
 @end

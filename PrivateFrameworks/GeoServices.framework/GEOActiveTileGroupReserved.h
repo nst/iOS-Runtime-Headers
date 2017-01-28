@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, retain) NSString *authToken;
-@property (nonatomic, readonly) BOOL hasAuthToken;
+@property (nonatomic, readonly) bool hasAuthToken;
 
 - (id)authToken;
 - (void)copyTo:(id)arg1;
@@ -15,11 +15,11 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAuthToken;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAuthToken;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAuthToken:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface StepByStepUIViewController_Restore_Config : StepByStepUIViewController {
-    BOOL  dontRestore;
+    bool  dontRestore;
     UIView * dontRestoreRecommendationContainerView;
     UILabel * dontRestoreRecommendationLabel;
     UIView * restoreRecommendationContainerView;
@@ -20,6 +20,6 @@
 - (void)setDontRestoreRecommendationContainerView:(id)arg1;
 - (void)setRestoreRecommendationContainerView:(id)arg1;
 - (void)setupInitialTableHeaderConfiguration;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

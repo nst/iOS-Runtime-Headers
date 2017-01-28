@@ -18,14 +18,14 @@
 - (void).cxx_destruct;
 - (id)_blockedIncidentEntitiesAtDate:(id)arg1;
 - (id)_dominantIncidentForSequence:(id)arg1 atDate:(id)arg2;
-- (id)_validIncidentsAtDate:(id)arg1 filterToOnceIncidentPerLine:(BOOL)arg2;
+- (id)_validIncidentsAtDate:(id)arg1 filterToOnceIncidentPerLine:(bool)arg2;
 - (void)_validateCacheForDate:(id)arg1;
 - (id)blockedIncidentEntitiesAtDate:(id)arg1;
 - (id)dominantIncidentForSequence:(id)arg1 atDate:(id)arg2;
 - (id)initWithLineItem:(id)arg1;
 - (id)initWithMapItem:(id)arg1;
 - (void)resetCache;
-- (BOOL)systemHasIncidents:(id)arg1 atDate:(id)arg2;
-- (id)validIncidentsAtDate:(id)arg1 filterToOnceIncidentPerLine:(BOOL)arg2;
+- (bool)systemHasIncidents:(id)arg1 atDate:(id)arg2;
+- (id)validIncidentsAtDate:(id)arg1 filterToOnceIncidentPerLine:(bool)arg2;
 
 @end

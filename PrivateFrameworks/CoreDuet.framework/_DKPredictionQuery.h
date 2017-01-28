@@ -3,26 +3,26 @@
  */
 
 @interface _DKPredictionQuery : _DKEventQuery {
-    BOOL  _isTopNPrediction;
+    bool  _isTopNPrediction;
     double  _minLikelihood;
-    id /* block */  _predictionHandler;
+    id  _predictionHandler;
     int  _slotDuration;
-    int  _topN;
+    long long  _topN;
     int  _totalSlotsInDay;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
-@property (nonatomic) BOOL isTopNPrediction;
+@property (nonatomic) bool isTopNPrediction;
 @property (nonatomic) double minLikelihood;
-@property (copy) id /* block */ predictionHandler;
+@property (copy) id predictionHandler;
 @property (nonatomic) int slotDuration;
-@property (nonatomic) int topN;
+@property (nonatomic) long long topN;
 @property (nonatomic) int totalSlotsInDay;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
-+ (id)predictionQueryForStream:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned int)arg3;
-+ (BOOL)supportsSecureCoding;
-+ (id)topNPredictionQueryForStream:(id)arg1 withPredicate:(id)arg2 withTopN:(int)arg3 withMinLikelihood:(double)arg4;
++ (id)predictionQueryForStream:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3;
++ (bool)supportsSecureCoding;
++ (id)topNPredictionQueryForStream:(id)arg1 withPredicate:(id)arg2 withTopN:(long long)arg3 withMinLikelihood:(double)arg4;
 
 - (void).cxx_destruct;
 - (int)computeSlotForDate:(id)arg1 relativeToDate:(id)arg2;
@@ -33,21 +33,21 @@
 - (void)handleImpulsePredictionWithEventStartDate:(id)arg1 predictionStartDate:(id)arg2 observations:(id)arg3 lastDate:(id*)arg4 lastSlot:(int*)arg5;
 - (id)handleResults:(id)arg1 error:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isTopNPrediction;
-- (id)likelihoodForTopN:(int)arg1 withMinLikelihood:(double)arg2 withData:(id)arg3;
+- (bool)isTopNPrediction;
+- (id)likelihoodForTopN:(long long)arg1 withMinLikelihood:(double)arg2 withData:(id)arg3;
 - (double)minLikelihood;
-- (id /* block */)predictionHandler;
-- (id)predictionOfType:(unsigned int)arg1 withData:(id)arg2;
-- (void)setIsTopNPrediction:(BOOL)arg1;
+- (id)predictionHandler;
+- (id)predictionOfType:(unsigned long long)arg1 withData:(id)arg2;
+- (void)setIsTopNPrediction:(bool)arg1;
 - (void)setMinLikelihood:(double)arg1;
-- (void)setPredictionHandler:(id /* block */)arg1;
+- (void)setPredictionHandler:(id)arg1;
 - (void)setSlotDuration:(int)arg1;
-- (void)setTopN:(int)arg1;
+- (void)setTopN:(long long)arg1;
 - (void)setTotalSlotsInDay:(int)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (int)slotDuration;
-- (int)topN;
+- (long long)topN;
 - (int)totalSlotsInDay;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

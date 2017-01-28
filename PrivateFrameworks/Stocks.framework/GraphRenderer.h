@@ -3,7 +3,7 @@
  */
 
 @interface GraphRenderer : NSObject {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSObject<OS_dispatch_queue> * _queue;
 }
 

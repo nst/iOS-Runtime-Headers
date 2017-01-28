@@ -4,10 +4,10 @@
 
 @interface VKObjectBoundsContext : NSObject {
     struct VKEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _edgePadding;
     struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { 
         struct Matrix<double, 2, 1> {} *__begin_; 
@@ -18,14 +18,14 @@
     }  _points;
 }
 
-@property (nonatomic) struct VKEdgeInsets { float x1; float x2; float x3; float x4; } edgePadding;
+@property (nonatomic) struct VKEdgeInsets { double x1; double x2; double x3; double x4; } edgePadding;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addPoints:(const struct vector<gm::Matrix<double, 2, 1>, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x1; struct Matrix<double, 2, 1> {} *x2; struct __compressed_pair<gm::Matrix<double, 2, 1> *, std::__1::allocator<gm::Matrix<double, 2, 1> > > { struct Matrix<double, 2, 1> {} *x_3_1_1; } x3; }*)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })boundingRect;
-- (struct VKEdgeInsets { float x1; float x2; float x3; float x4; })edgePadding;
-- (BOOL)isEmpty;
-- (void)setEdgePadding:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct VKEdgeInsets { double x1; double x2; double x3; double x4; })edgePadding;
+- (bool)isEmpty;
+- (void)setEdgePadding:(struct VKEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 
 @end

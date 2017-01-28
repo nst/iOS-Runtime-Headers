@@ -6,7 +6,7 @@
     STAlarmAction * _action;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithAction:(id)arg1;

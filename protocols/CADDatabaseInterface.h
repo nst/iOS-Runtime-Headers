@@ -5,25 +5,25 @@
 
 @required
 
-- (void)CADDatabaseCanModifyCalendarDatabase:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, void*
-- (void)CADDatabaseCommitWithReply:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, NSDictionary *, void*
-- (void)CADDatabaseFetchChangedObjectIDsSinceSequenceNumber:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 12: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, int, NSArray *, NSArray *, NSArray *, void*
-- (void)CADDatabaseGetChangedEntityIDsSinceTimestamp:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 10: double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, NSArray *, double, void*
-- (void)CADDatabaseGetChangesSinceSequenceNumber:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSDictionary *, void*
-- (void)CADDatabaseGetNextAssignableColorWithReply:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSString *, void*
-- (void)CADDatabaseGetSequenceNumber:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, int, void*
-- (void)CADDatabaseGetUUID:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSString *, void*
-- (void)CADDatabaseImportICSData:(void *)arg1 intoCalendarWithID:(void *)arg2 optionsMask:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 10: NSData *, int, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSArray *, void*
-- (void)CADDatabaseIsAutomaticLocationGeocodingAllowed:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, BOOL, void*
-- (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseRebuildOccurrenceCacheWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseRegisterForDetailedChangeTracking:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseResetWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseRollbackWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseSaveWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseSetAutomaticLocationGeocodingAllowed:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseSetInitializationOptions:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseSetShowsDeclinedEvents:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)CADDatabaseSetSourceAccountManagement:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)CADDatabaseCanModifyCalendarDatabase:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, bool, void*
+- (void)CADDatabaseCommitWithReply:(void *)arg1; // needs 1 arg types, found 8: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, bool, NSDictionary *, void*
+- (void)CADDatabaseFetchChangedObjectIDsSinceSequenceNumber:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 12: long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, bool, long long, NSArray *, NSArray *, NSArray *, void*
+- (void)CADDatabaseGetChangedEntityIDsSinceTimestamp:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 10: double, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, bool, NSArray *, double, void*
+- (void)CADDatabaseGetChangesSinceSequenceNumber:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: int, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, NSDictionary *, void*
+- (void)CADDatabaseGetNextAssignableColorWithReply:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, NSString *, void*
+- (void)CADDatabaseGetSequenceNumber:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, int, void*
+- (void)CADDatabaseGetUUID:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, NSString *, void*
+- (void)CADDatabaseImportICSData:(void *)arg1 intoCalendarWithID:(void *)arg2 optionsMask:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 10: NSData *, int, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, NSArray *, void*
+- (void)CADDatabaseIsAutomaticLocationGeocodingAllowed:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, bool, void*
+- (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseRebuildOccurrenceCacheWithReply:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseRegisterForDetailedChangeTracking:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseResetWithReply:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseRollbackWithReply:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseSaveWithReply:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseSetAutomaticLocationGeocodingAllowed:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseSetInitializationOptions:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseSetShowsDeclinedEvents:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
+- (void)CADDatabaseSetSourceAccountManagement:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, void*
 
 @end

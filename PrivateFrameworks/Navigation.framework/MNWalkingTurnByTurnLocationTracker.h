@@ -10,7 +10,7 @@
     }  _detectedTransportTypeOrigin;
 }
 
-- (BOOL)_allowSwitchToTransportType:(int)arg1 forLocation:(id)arg2;
+- (bool)_allowSwitchToTransportType:(int)arg1 forLocation:(id)arg2;
 - (int)_detectedMotionForLocation:(id)arg1;
 - (id)_newMapMatcherForRoute:(id)arg1;
 - (id)initWithNavigationSession:(id)arg1;

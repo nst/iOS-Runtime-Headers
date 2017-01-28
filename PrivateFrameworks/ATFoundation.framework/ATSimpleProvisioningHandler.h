@@ -5,7 +5,7 @@
 @interface ATSimpleProvisioningHandler : ATProvisioningHandler
 
 - (id)_paramsForRequest:(id)arg1;
-- (void)_processProvisioningRequest:(id)arg1 withParams:(id)arg2 onMessageLink:(id)arg3 withCompletion:(id /* block */)arg4;
-- (void)_processProvisioningResponse:(id)arg1 withParams:(id)arg2 onMessageLink:(id)arg3 withCompletion:(id /* block */)arg4;
+- (void)_processProvisioningRequest:(id)arg1 withParams:(id)arg2 onMessageLink:(id)arg3 withCompletion:(id)arg4;
+- (void)_processProvisioningResponse:(id)arg1 withParams:(id)arg2 onMessageLink:(id)arg3 withCompletion:(id)arg4;
 
 @end

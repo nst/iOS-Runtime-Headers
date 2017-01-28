@@ -8,7 +8,7 @@
     NSString * _sourceVersion;
 }
 
-@property (nonatomic, readonly) BOOL hasSourceVersion;
+@property (nonatomic, readonly) bool hasSourceVersion;
 @property (nonatomic, retain) NSString *sourceId;
 @property (nonatomic, retain) NSString *sourceName;
 @property (nonatomic, retain) NSString *sourceVersion;
@@ -18,12 +18,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSourceVersion;
-- (unsigned int)hash;
+- (bool)hasSourceVersion;
+- (unsigned long long)hash;
 - (id)initWithAttributionID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setSourceId:(id)arg1;
 - (void)setSourceName:(id)arg1;
 - (void)setSourceVersion:(id)arg1;

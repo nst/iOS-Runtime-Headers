@@ -5,9 +5,9 @@
 @interface WFWeatherChannelValidator : NSObject
 
 + (id)expectedStructure;
-+ (BOOL)isLeafNodeType:(id)arg1;
++ (bool)isLeafNodeType:(id)arg1;
 
-- (BOOL)validateDictionary:(id)arg1 expectedStructure:(id)arg2;
-- (BOOL)validateResponseData:(id)arg1;
+- (bool)validateDictionary:(id)arg1 expectedStructure:(id)arg2;
+- (bool)validateResponseData:(id)arg1;
 
 @end

@@ -4,23 +4,23 @@
 
 @interface BLTDebugMetricsCountOnInterval : BLTDebugMetricsOnInterval {
     NSDate * __nextCountRollDate;
-    unsigned int  _count;
-    id /* block */  _incrementedBlock;
+    unsigned long long  _count;
+    id  _incrementedBlock;
 }
 
 @property (nonatomic, retain) NSDate *_nextCountRollDate;
-@property (nonatomic) unsigned int count;
-@property (nonatomic, copy) id /* block */ incrementedBlock;
+@property (nonatomic) unsigned long long count;
+@property (nonatomic, copy) id incrementedBlock;
 
 - (void).cxx_destruct;
 - (id)_nextCountRollDate;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)increment;
-- (id /* block */)incrementedBlock;
+- (id)incrementedBlock;
 - (id)initWithInterval:(id)arg1;
-- (void)setCount:(unsigned int)arg1;
-- (void)setIncrementedBlock:(id /* block */)arg1;
+- (void)setCount:(unsigned long long)arg1;
+- (void)setIncrementedBlock:(id)arg1;
 - (void)set_nextCountRollDate:(id)arg1;
-- (void)whenIncrementedPerform:(id /* block */)arg1;
+- (void)whenIncrementedPerform:(id)arg1;
 
 @end

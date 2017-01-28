@@ -6,11 +6,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)_beginFadeAnimationFromViewController:(id)arg1 toViewController:(id)arg2 containerView:(id)arg3 completion:(id /* block */)arg4;
-- (BOOL)_shouldCrossFadeNavigationBar;
+- (void)_beginFadeAnimationFromViewController:(id)arg1 toViewController:(id)arg2 containerView:(id)arg3 completion:(id)arg4;
+- (bool)_shouldCrossFadeNavigationBar;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 

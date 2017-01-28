@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)requiresPreferredContentSizeInStackingView;
+- (bool)requiresPreferredContentSizeInStackingView;
 
 @end

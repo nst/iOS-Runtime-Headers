@@ -3,10 +3,10 @@
  */
 
 @interface QLAVPlayerItemViewController : QLItemViewController <AVPlayerViewControllerDelegate> {
-    BOOL  _fullScreen;
+    bool  _fullScreen;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
     QLOverlayPlayButton * _playButton;
     AVPlayer * _player;
@@ -15,18 +15,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)canEnterFullScreen;
-- (void)enterFullScreen:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)canEnterFullScreen;
+- (void)enterFullScreen:(bool)arg1;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id)arg2;
 - (void)pause;
 - (void)play;
-- (BOOL)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(int)arg2;
-- (int)preferredWhitePointAdaptivityStyle;
-- (void)previewDidDisappear:(BOOL)arg1;
+- (bool)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(long long)arg2;
+- (long long)preferredWhitePointAdaptivityStyle;
+- (void)previewDidDisappear:(bool)arg1;
 
 @end

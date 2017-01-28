@@ -10,10 +10,10 @@
 @property (nonatomic, readonly) NSString *extensionPointIdentifier;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic) PKExtensionProvider *provider;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
-- (void)beginRemoteViewControllerExtensionServiceWithInputItems:(id)arg1 completion:(id /* block */)arg2;
+- (void)beginRemoteViewControllerExtensionServiceWithInputItems:(id)arg1 completion:(id)arg2;
 - (id)description;
 - (id)extension;
 - (id)extensionPointIdentifier;
@@ -21,6 +21,6 @@
 - (id)initWithIdentifier:(id)arg1 provider:(id)arg2;
 - (id)provider;
 - (void)setProvider:(id)arg1;
-- (int)type;
+- (long long)type;
 
 @end

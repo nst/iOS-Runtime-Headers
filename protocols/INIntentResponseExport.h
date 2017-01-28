@@ -5,11 +5,11 @@
 
 @required
 
-- (int)_intentHandlingStatus;
+- (long long)_intentHandlingStatus;
 - (NSData *)_payloadResponseMessageData;
 - (void)_setPayloadResponseMessageData:(NSData *)arg1;
 - (_INPBIntentResponse *)backingStore;
-- (int)code;
+- (long long)code;
 - (id)init;
 
 @end

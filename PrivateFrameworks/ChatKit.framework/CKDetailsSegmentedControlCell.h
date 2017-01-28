@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UISegmentedControl *segmentedControl;
 @property (readonly) Class superclass;
 
 + (id)reuseIdentifier;
-+ (BOOL)shouldHighlight;
++ (bool)shouldHighlight;
 
 - (void).cxx_destruct;
 - (void)layoutSubviews;

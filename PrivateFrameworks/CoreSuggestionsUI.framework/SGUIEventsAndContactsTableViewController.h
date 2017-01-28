@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SGUIEventsAndContactsTableViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -22,22 +22,22 @@
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(int)arg2;
+- (void)eventEditViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
 - (void)eventSuggestionCell:(id)arg1 didTapConfirmForEventSuggestion:(id)arg2;
 - (void)eventSuggestionCell:(id)arg1 didTapIgnoreForEventSuggestion:(id)arg2;
-- (void)eventViewController:(id)arg1 didCompleteWithAction:(int)arg2;
+- (void)eventViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
 - (id)initWithRealtimeEvents:(id)arg1 realtimeContacts:(id)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)presentViewControllerInCurrentContext:(id)arg1;
 - (void)removeSuggestion:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

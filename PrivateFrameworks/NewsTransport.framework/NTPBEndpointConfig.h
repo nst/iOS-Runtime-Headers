@@ -14,10 +14,10 @@
 @property (nonatomic) int environment;
 @property (nonatomic, retain) NSString *eventRelayBaseUrl;
 @property (nonatomic, retain) NSString *eventRelayBatchBaseUrl;
-@property (nonatomic, readonly) BOOL hasClientApiBaseUrl;
-@property (nonatomic, readonly) BOOL hasEventRelayBaseUrl;
-@property (nonatomic, readonly) BOOL hasEventRelayBatchBaseUrl;
-@property (nonatomic, readonly) BOOL hasNewsNotificationsBaseUrl;
+@property (nonatomic, readonly) bool hasClientApiBaseUrl;
+@property (nonatomic, readonly) bool hasEventRelayBaseUrl;
+@property (nonatomic, readonly) bool hasEventRelayBatchBaseUrl;
+@property (nonatomic, readonly) bool hasNewsNotificationsBaseUrl;
 @property (nonatomic, retain) NSString *newsNotificationsBaseUrl;
 
 - (void).cxx_destruct;
@@ -28,15 +28,15 @@
 - (int)environment;
 - (id)eventRelayBaseUrl;
 - (id)eventRelayBatchBaseUrl;
-- (BOOL)hasClientApiBaseUrl;
-- (BOOL)hasEventRelayBaseUrl;
-- (BOOL)hasEventRelayBatchBaseUrl;
-- (BOOL)hasNewsNotificationsBaseUrl;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasClientApiBaseUrl;
+- (bool)hasEventRelayBaseUrl;
+- (bool)hasEventRelayBatchBaseUrl;
+- (bool)hasNewsNotificationsBaseUrl;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)newsNotificationsBaseUrl;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setClientApiBaseUrl:(id)arg1;
 - (void)setEnvironment:(int)arg1;
 - (void)setEventRelayBaseUrl:(id)arg1;

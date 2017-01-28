@@ -10,16 +10,16 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *descriptor;
 @property (readonly) FMFuture *future;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id /* block */)completionHandlerAdapter;
+- (id)completionHandlerAdapter;
 - (id)descriptor;
-- (id /* block */)errorOnlyCompletionHandlerAdapter;
-- (BOOL)finishWithError:(id)arg1;
-- (BOOL)finishWithResult:(id)arg1;
-- (BOOL)finishWithResult:(id)arg1 error:(id)arg2;
+- (id)errorOnlyCompletionHandlerAdapter;
+- (bool)finishWithError:(id)arg1;
+- (bool)finishWithResult:(id)arg1;
+- (bool)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)future;
 - (id)init;
 - (id)initWithFuture:(id)arg1;

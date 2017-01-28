@@ -13,10 +13,10 @@
 + (id)tokenizePhoneNumber:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)evaluateResult:(id)arg1;
-- (BOOL)evaluateSingleResult:(id)arg1;
-- (BOOL)evaluateTopLevelGroupResult:(id)arg1;
-- (id /* block */)filterAdapter;
+- (bool)evaluateResult:(id)arg1;
+- (bool)evaluateSingleResult:(id)arg1;
+- (bool)evaluateTopLevelGroupResult:(id)arg1;
+- (id)filterAdapter;
 - (id)init;
 - (id)initWithSearchString:(id)arg1;
 - (id)initWithSearchString:(id)arg1 countryCode:(id)arg2;

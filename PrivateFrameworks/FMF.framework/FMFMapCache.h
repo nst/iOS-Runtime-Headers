@@ -6,7 +6,7 @@
     NSMutableDictionary * _cacheMetaData;
     NSObject<OS_dispatch_queue> * _cacheMetaQueue;
     NSString * _cachePath;
-    BOOL  _fileProtectionDeactivated;
+    bool  _fileProtectionDeactivated;
     NSMutableDictionary * _gridImageMetaData;
     NSObject<OS_dispatch_queue> * _gridImageQueue;
     NSString * _imageCachePath;
@@ -22,7 +22,7 @@
 @property (nonatomic, retain) NSMutableDictionary *cacheMetaData;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *cacheMetaQueue;
 @property (nonatomic, retain) NSString *cachePath;
-@property (nonatomic) BOOL fileProtectionDeactivated;
+@property (nonatomic) bool fileProtectionDeactivated;
 @property (nonatomic, retain) NSMutableDictionary *gridImageMetaData;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *gridImageQueue;
 @property (nonatomic, retain) NSString *imageCachePath;
@@ -46,7 +46,7 @@
 - (id)cachedMapImageForLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 width:(double)arg4 andHeight:(double)arg5;
 - (id)cachedMapImageForRequest:(id)arg1;
 - (id)cachedNoLocationImageForWidth:(double)arg1 andHeight:(double)arg2;
-- (BOOL)fileProtectionDeactivated;
+- (bool)fileProtectionDeactivated;
 - (id)gridImageMetaData;
 - (id)gridImageQueue;
 - (id)gridKeyForWidth:(double)arg1 andHeight:(double)arg2;
@@ -60,15 +60,15 @@
 - (id)noLocationImageQueue;
 - (id)noLocationKeyForWidth:(double)arg1 andHeight:(double)arg2;
 - (id)pendingImageQueue;
-- (BOOL)pendingMapImageForLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 width:(double)arg4 andHeight:(double)arg5;
-- (BOOL)pendingMapImageForRequest:(id)arg1;
+- (bool)pendingMapImageForLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 width:(double)arg4 andHeight:(double)arg5;
+- (bool)pendingMapImageForRequest:(id)arg1;
 - (id)pendingMapImageMetaData;
 - (void)readMetaData;
 - (void)saveMetaData;
 - (void)setCacheMetaData:(id)arg1;
 - (void)setCacheMetaQueue:(id)arg1;
 - (void)setCachePath:(id)arg1;
-- (void)setFileProtectionDeactivated:(BOOL)arg1;
+- (void)setFileProtectionDeactivated:(bool)arg1;
 - (void)setGridImageMetaData:(id)arg1;
 - (void)setGridImageQueue:(id)arg1;
 - (void)setImageCachePath:(id)arg1;

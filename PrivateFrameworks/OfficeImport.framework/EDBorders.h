@@ -3,14 +3,14 @@
  */
 
 @interface EDBorders : NSObject <NSCopying> {
-    unsigned int  mBottomBorderIndex;
-    unsigned int  mDiagonalBorderIndex;
-    unsigned int  mHorizontalBorderIndex;
-    unsigned int  mLeftBorderIndex;
+    unsigned long long  mBottomBorderIndex;
+    unsigned long long  mDiagonalBorderIndex;
+    unsigned long long  mHorizontalBorderIndex;
+    unsigned long long  mLeftBorderIndex;
     EDResources * mResources;
-    unsigned int  mRightBorderIndex;
-    unsigned int  mTopBorderIndex;
-    unsigned int  mVerticalBorderIndex;
+    unsigned long long  mRightBorderIndex;
+    unsigned long long  mTopBorderIndex;
+    unsigned long long  mVerticalBorderIndex;
 }
 
 + (id)bordersWithLeft:(id)arg1 right:(id)arg2 top:(id)arg3 bottom:(id)arg4 diagonal:(id)arg5 resources:(id)arg6;
@@ -21,11 +21,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)diagonalBorder;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)horizontalBorder;
 - (id)initWithResources:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToBorders:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToBorders:(id)arg1;
 - (id)leftBorder;
 - (id)rightBorder;
 - (void)setBottomBorder:(id)arg1;

@@ -27,6 +27,6 @@
 - (void)setDataSources:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setSearchableIndex:(id)arg1;
-- (BOOL)shouldDeleteAllItemsBeforeIndexing;
+- (bool)shouldDeleteAllItemsBeforeIndexing;
 
 @end

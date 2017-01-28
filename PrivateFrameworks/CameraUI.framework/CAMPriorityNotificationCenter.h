@@ -16,15 +16,15 @@
 
 - (void).cxx_destruct;
 - (id)_allSubscriptions;
-- (id)_entriesByName:(id)arg1 forPriority:(unsigned int)arg2 creatingEmptyIfNeeded:(BOOL)arg3;
+- (id)_entriesByName:(id)arg1 forPriority:(unsigned long long)arg2 creatingEmptyIfNeeded:(bool)arg3;
 - (id)_notificationCenter;
 - (void)_notificationReceiver:(id)arg1;
 - (id)_observersByNameHighPriority;
 - (id)_observersByNameNormalPriority;
-- (id)_observersForPriority:(unsigned int)arg1;
+- (id)_observersForPriority:(unsigned long long)arg1;
 - (void)_postNotification:(id)arg1 forEntries:(id)arg2;
 - (void)_removeObserver:(id)arg1 fromObserversByName:(id)arg2;
-- (void)addObserver:(id)arg1 priority:(unsigned int)arg2 selector:(SEL)arg3 name:(id)arg4 object:(id)arg5;
+- (void)addObserver:(id)arg1 priority:(unsigned long long)arg2 selector:(SEL)arg3 name:(id)arg4 object:(id)arg5;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
 - (void)dealloc;
 - (id)init;

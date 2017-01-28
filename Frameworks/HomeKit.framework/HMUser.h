@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMUser : NSObject <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
-    BOOL  _administrator;
+@interface HMUser : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge, NSSecureCoding> {
+    bool  _administrator;
     NSObject<OS_dispatch_queue> * _clientQueue;
-    BOOL  _currentUser;
+    bool  _currentUser;
     HMDelegateCaller * _delegateCaller;
     HMHome * _home;
     HMHomeAccessControl * _homeAccessControl;
@@ -17,13 +17,13 @@
     NSUUID * _uuid;
 }
 
-@property (nonatomic) BOOL administrator;
+@property (nonatomic) bool administrator;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
-@property (getter=isCurrentUser, nonatomic) BOOL currentUser;
+@property (getter=isCurrentUser, nonatomic) bool currentUser;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, retain) HMHomeAccessControl *homeAccessControl;
 @property (nonatomic, copy) NSString *name;
@@ -35,15 +35,15 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
 - (id)_filterAccessoryInvitationsFromOutgoingInvitation:(id)arg1;
-- (BOOL)_mergeWithNewAccessoryInvitations:(id)arg1 operations:(id)arg2;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewAccessoryInvitations:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_unconfigure;
-- (BOOL)administrator;
+- (bool)administrator;
 - (id)clientQueue;
 - (id)delegateCaller;
 - (void)encodeWithCoder:(id)arg1;
@@ -52,15 +52,15 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUserID:(id)arg1 name:(id)arg2 uuid:(id)arg3 home:(id)arg4;
-- (id)initWithUserID:(id)arg1 name:(id)arg2 uuid:(id)arg3 home:(id)arg4 isAdministrator:(BOOL)arg5;
-- (BOOL)isCurrentUser;
-- (BOOL)mergePendingAccessoryInvitationsWithOutgoingInvitation:(id)arg1 operations:(id)arg2;
+- (id)initWithUserID:(id)arg1 name:(id)arg2 uuid:(id)arg3 home:(id)arg4 isAdministrator:(bool)arg5;
+- (bool)isCurrentUser;
+- (bool)mergePendingAccessoryInvitationsWithOutgoingInvitation:(id)arg1 operations:(id)arg2;
 - (id)name;
 - (id)pendingAccessoryInvitations;
 - (id)propertyQueue;
-- (void)setAdministrator:(BOOL)arg1;
+- (void)setAdministrator:(bool)arg1;
 - (void)setClientQueue:(id)arg1;
-- (void)setCurrentUser:(BOOL)arg1;
+- (void)setCurrentUser:(bool)arg1;
 - (void)setDelegateCaller:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setHomeAccessControl:(id)arg1;
@@ -69,12 +69,13 @@
 - (void)setPropertyQueue:(id)arg1;
 - (void)setUserID:(id)arg1;
 - (id)uniqueIdentifier;
-- (void)updateHomeAccessControl:(BOOL)arg1 remoteAccess:(BOOL)arg2;
+- (void)updateHomeAccessControl:(bool)arg1 remoteAccess:(bool)arg2;
 - (id)userID;
 - (id)uuid;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

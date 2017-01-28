@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)fulfillWithChange:(id)arg1;
-- (id)initWithNotification:(id)arg1 object:(id)arg2 center:(id)arg3 removeOnceEnabled:(BOOL)arg4;
+- (id)initWithNotification:(id)arg1 object:(id)arg2 center:(id)arg3 removeOnceEnabled:(bool)arg4;
 - (id)notification;
 - (id)notificationCenter;
 - (id)object;

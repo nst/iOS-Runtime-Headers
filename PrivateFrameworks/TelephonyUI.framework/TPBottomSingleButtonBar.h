@@ -11,7 +11,7 @@
 
 - (void).cxx_destruct;
 - (id)button;
-- (float)buttonWidth;
-- (void)setButton:(id)arg1 andStyle:(BOOL)arg2;
+- (double)buttonWidth;
+- (void)setButton:(id)arg1 andStyle:(bool)arg2;
 
 @end

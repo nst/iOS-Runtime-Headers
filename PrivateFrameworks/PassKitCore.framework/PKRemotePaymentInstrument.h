@@ -12,6 +12,7 @@
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountNumberSuffix;
     PKPaymentApplication * _primaryPaymentApplication;
+    bool  _supportsAutomaticSelection;
 }
 
 @property (nonatomic, retain) NSArray *associatedWebDomains;
@@ -23,10 +24,11 @@
 @property (nonatomic, copy) NSString *primaryAccountIdentifier;
 @property (nonatomic, copy) NSString *primaryAccountNumberSuffix;
 @property (nonatomic, retain) PKPaymentApplication *primaryPaymentApplication;
+@property (nonatomic) bool supportsAutomaticSelection;
 
 + (id)remotePaymentInstrumentWithProtobuf:(id)arg1;
-+ (id)sortDescriptorForDefaultPaymentInstrument:(id)arg1 supportedNetworks:(id)arg2 merchantCapabilities:(unsigned int)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)sortDescriptorForDefaultPaymentInstrument:(id)arg1 supportedNetworks:(id)arg2 merchantCapabilities:(unsigned long long)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)associatedWebDomains;
@@ -34,12 +36,12 @@
 - (id)description;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)ingestedDate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPaymentPass:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRemotePaymentInstrument:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRemotePaymentInstrument:(id)arg1;
 - (id)manifestHash;
 - (id)passIdentifier;
 - (id)paymentApplications;
@@ -56,5 +58,7 @@
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
 - (void)setPrimaryPaymentApplication:(id)arg1;
+- (void)setSupportsAutomaticSelection:(bool)arg1;
+- (bool)supportsAutomaticSelection;
 
 @end

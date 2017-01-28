@@ -28,12 +28,12 @@
 @property (nonatomic, copy) NSData *publicKeyHash;
 @property (nonatomic, copy) NSData *wrappedKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)FPInfo;
-- (BOOL)_hasRequiredFields:(BOOL)arg1;
-- (BOOL)_hasRequiredThirdPartyFields:(BOOL)arg1;
+- (bool)_hasRequiredFields:(bool)arg1;
+- (bool)_hasRequiredThirdPartyFields:(bool)arg1;
 - (id)activationData;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

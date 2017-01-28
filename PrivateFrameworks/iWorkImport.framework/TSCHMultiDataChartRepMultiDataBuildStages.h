@@ -3,36 +3,36 @@
  */
 
 @interface TSCHMultiDataChartRepMultiDataBuildStages : NSObject <TSCHUnretainedParent> {
-    unsigned int  mCurrentStage;
-    float  mDuration;
+    unsigned long long  mCurrentStage;
+    double  mDuration;
     TSCHMultiDataChartRep * mRep;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  mStages;
-    float  mTotalDuration;
+    double  mTotalDuration;
 }
 
-@property (nonatomic, readonly) unsigned int currentStage;
-@property (nonatomic, readonly) float duration;
+@property (nonatomic, readonly) unsigned long long currentStage;
+@property (nonatomic, readonly) double duration;
 
-+ (id)buildStagesWithRep:(id)arg1 stages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 totalDuration:(float)arg3;
-+ (unsigned int)dataSetIndexForRep:(id)arg1 buildStage:(unsigned int)arg2;
-+ (unsigned int)numberOfFadingBuildStages;
++ (id)buildStagesWithRep:(id)arg1 stages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 totalDuration:(double)arg3;
++ (unsigned long long)dataSetIndexForRep:(id)arg1 buildStage:(unsigned long long)arg2;
++ (unsigned long long)numberOfFadingBuildStages;
 
 - (void)advanceStage;
 - (id)chartLayout;
 - (void)clearParent;
-- (unsigned int)currentStage;
-- (unsigned int)dataSetIndexForStage:(unsigned int)arg1;
+- (unsigned long long)currentStage;
+- (unsigned long long)dataSetIndexForStage:(unsigned long long)arg1;
 - (void)dealloc;
-- (float)duration;
-- (BOOL)hasStage;
-- (id)initWithRep:(id)arg1 stages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 totalDuration:(float)arg3;
-- (BOOL)isBackgroundOnly;
-- (BOOL)isBackgroundOnlyStage:(unsigned int)arg1;
-- (BOOL)isFadingInLayers;
-- (BOOL)isLastStageBackgroundOnly;
+- (double)duration;
+- (bool)hasStage;
+- (id)initWithRep:(id)arg1 stages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 totalDuration:(double)arg3;
+- (bool)isBackgroundOnly;
+- (bool)isBackgroundOnlyStage:(unsigned long long)arg1;
+- (bool)isFadingInLayers;
+- (bool)isLastStageBackgroundOnly;
 - (void)setupLayoutDataSetIndexForCurrentStage;
 - (void)setupLayoutDataSetIndexForNextStage;
 

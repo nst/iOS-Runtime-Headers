@@ -3,22 +3,22 @@
  */
 
 @interface EKTravelEngineThrottle : NSObject {
-    id /* block */  _cancelHypothesisRequestRefreshBlock;
-    id /* block */  _emissionBlock;
+    id  _cancelHypothesisRequestRefreshBlock;
+    id  _emissionBlock;
     NSString * _eventExternalURL;
     NSDate * _nextEmissionDate;
-    id /* block */  _requestHypothesisRefreshBlock;
-    BOOL  _running;
+    id  _requestHypothesisRefreshBlock;
+    bool  _running;
     NSString * _throttleIdentifier;
     NSObject<OS_dispatch_queue> * _throttleQueue;
 }
 
-@property (nonatomic, copy) id /* block */ cancelHypothesisRequestRefreshBlock;
-@property (nonatomic, copy) id /* block */ emissionBlock;
+@property (nonatomic, copy) id cancelHypothesisRequestRefreshBlock;
+@property (nonatomic, copy) id emissionBlock;
 @property (retain) NSString *eventExternalURL;
 @property (nonatomic, retain) NSDate *nextEmissionDate;
-@property (nonatomic, copy) id /* block */ requestHypothesisRefreshBlock;
-@property (nonatomic) BOOL running;
+@property (nonatomic, copy) id requestHypothesisRefreshBlock;
+@property (nonatomic) bool running;
 @property (nonatomic, retain) NSString *throttleIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *throttleQueue;
 
@@ -35,22 +35,22 @@
 - (void)_unregisterForNotificationObservation;
 - (void)_updateEmissionDate:(id)arg1;
 - (id)btaJobName;
-- (id /* block */)cancelHypothesisRequestRefreshBlock;
+- (id)cancelHypothesisRequestRefreshBlock;
 - (void)dealloc;
 - (id)description;
-- (id /* block */)emissionBlock;
+- (id)emissionBlock;
 - (id)eventExternalURL;
 - (void)handleBTAJob:(id)arg1 named:(const char *)arg2;
 - (id)init;
 - (id)nextEmissionDate;
-- (id /* block */)requestHypothesisRefreshBlock;
-- (BOOL)running;
-- (void)setCancelHypothesisRequestRefreshBlock:(id /* block */)arg1;
-- (void)setEmissionBlock:(id /* block */)arg1;
+- (id)requestHypothesisRefreshBlock;
+- (bool)running;
+- (void)setCancelHypothesisRequestRefreshBlock:(id)arg1;
+- (void)setEmissionBlock:(id)arg1;
 - (void)setEventExternalURL:(id)arg1;
 - (void)setNextEmissionDate:(id)arg1;
-- (void)setRequestHypothesisRefreshBlock:(id /* block */)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (void)setRequestHypothesisRefreshBlock:(id)arg1;
+- (void)setRunning:(bool)arg1;
 - (void)setThrottleIdentifier:(id)arg1;
 - (void)setThrottleQueue:(id)arg1;
 - (void)tearDown;

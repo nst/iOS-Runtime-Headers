@@ -4,11 +4,11 @@
 
 @interface _IDSDatagramChannel : NSObject {
     IDSDataChannelLinkContext * _cellularLink;
-    BOOL  _connected;
+    bool  _connected;
     NSObject<OS_nw_connection> * _connection;
     BOOL  _defaultLinkID;
-    id /* block */  _eventHandler;
-    BOOL  _hasMetadata;
+    id  _eventHandler;
+    bool  _hasMetadata;
     NSMutableDictionary * _linkContexts;
     unsigned char  _nexus_instance;
     struct __channel { } * _osChannel;
@@ -17,15 +17,15 @@
     struct __channel_ring_desc { } * _osChannelTXRing;
     NSObject<OS_nw_path_evaluator> * _pathEvaluator;
     NSData * _preConnectionData;
-    id /* block */  _readHandler;
-    BOOL  _receivedPreConnectionData;
+    id  _readHandler;
+    bool  _receivedPreConnectionData;
     NSMutableArray * _sendingMetadata;
-    BOOL  _sentFirstReadLinkInfo;
+    bool  _sentFirstReadLinkInfo;
     int  _socketDescriptor;
-    BOOL  _startAutomatically;
-    BOOL  _startCalled;
-    BOOL  _verboseFunctionalLogging;
-    BOOL  _waitForPreConnectionDataForConnected;
+    bool  _startAutomatically;
+    bool  _startCalled;
+    bool  _verboseFunctionalLogging;
+    bool  _waitForPreConnectionDataForConnected;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _writeLock;

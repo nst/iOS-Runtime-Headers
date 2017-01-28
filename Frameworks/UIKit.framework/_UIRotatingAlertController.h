@@ -3,32 +3,32 @@
  */
 
 @interface _UIRotatingAlertController : UIAlertController {
-    unsigned int  _arrowDirections;
-    BOOL  _isRotating;
+    unsigned long long  _arrowDirections;
+    bool  _isRotating;
     <UIPopoverPresentationControllerDelegate> * _popoverPresentationControllerDelegateWhileRotating;
     UIViewController * _presentedViewControllerWhileRotating;
-    BOOL  _readyToPresentAfterRotation;
+    bool  _readyToPresentAfterRotation;
     <_UIRotatingAlertControllerDelegate> * _rotatingSheetDelegate;
 }
 
-@property (nonatomic) unsigned int arrowDirections;
+@property (nonatomic) unsigned long long arrowDirections;
 @property (nonatomic) <_UIRotatingAlertControllerDelegate> *rotatingSheetDelegate;
 
 - (void).cxx_destruct;
 - (void)_didRotateAndLayout;
 - (void)_presentingViewControllerDidChange:(id)arg1;
 - (void)_presentingViewControllerWillChange:(id)arg1;
-- (BOOL)_shouldAbortAdaptationFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
+- (bool)_shouldAbortAdaptationFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_updateSheetPositionAfterRotation;
-- (unsigned int)arrowDirections;
+- (unsigned long long)arrowDirections;
 - (void)dealloc;
 - (void)didRotate:(id)arg1;
 - (void)doneWithSheet;
 - (id)init;
-- (BOOL)presentSheet;
-- (BOOL)presentSheetFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)presentSheet;
+- (bool)presentSheetFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)rotatingSheetDelegate;
-- (void)setArrowDirections:(unsigned int)arg1;
+- (void)setArrowDirections:(unsigned long long)arg1;
 - (void)setRotatingSheetDelegate:(id)arg1;
 - (void)willRotate:(id)arg1;
 

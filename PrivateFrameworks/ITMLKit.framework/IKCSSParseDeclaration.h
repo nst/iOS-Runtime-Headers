@@ -3,19 +3,19 @@
  */
 
 @interface IKCSSParseDeclaration : IKCSSParseObject {
-    BOOL  _important;
+    bool  _important;
     NSString * _name;
 }
 
-@property (nonatomic) BOOL important;
+@property (nonatomic) bool important;
 @property (nonatomic, retain) NSString *name;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)important;
+- (bool)important;
 - (id)init;
 - (id)name;
-- (void)setImportant:(BOOL)arg1;
+- (void)setImportant:(bool)arg1;
 - (void)setName:(id)arg1;
 
 @end

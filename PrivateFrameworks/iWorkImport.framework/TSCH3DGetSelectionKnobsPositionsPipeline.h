@@ -22,6 +22,6 @@
 - (id)makeDelegateWithScene:(id)arg1;
 - (id)makeDelegateWithSceneObject:(id)arg1 scene:(id)arg2;
 - (id)projectedPoints;
-- (BOOL)render;
+- (bool)render;
 
 @end

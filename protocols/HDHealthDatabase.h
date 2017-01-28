@@ -5,18 +5,18 @@
 
 @required
 
-- (BOOL)addJournalEntries:(NSArray *)arg1 error:(id*)arg2;
-- (BOOL)addJournalEntry:(HDJournalEntry *)arg1 error:(id*)arg2;
+- (bool)addJournalEntries:(NSArray *)arg1 error:(id*)arg2;
+- (bool)addJournalEntry:(HDJournalEntry *)arg1 error:(id*)arg2;
 - (void)addProtectedDataObserver:(id <HDDatabaseProtectedDataObserver>)arg1;
-- (HDExtendedDatabaseTransaction *)beginExtendedTransactionWithOptions:(unsigned int)arg1 transactionTimeout:(double)arg2 continuationTimeout:(double)arg3 error:(id*)arg4;
+- (HDExtendedDatabaseTransaction *)beginExtendedTransactionWithOptions:(unsigned long long)arg1 transactionTimeout:(double)arg2 continuationTimeout:(double)arg3 error:(id*)arg4;
 - (HDExtendedDatabaseTransaction *)extendedDatabaseTransactionForIdentifier:(NSUUID *)arg1;
 - (void)finalizeExtendedTransactionForIdentifier:(NSUUID *)arg1;
-- (BOOL)isDataProtectedByFirstUnlockAvailable;
-- (BOOL)isProtectedDataAvailable;
-- (void)performAsynchronously:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (BOOL)performJournalMergeUsingBlock:(void *)arg1 error:(void *)arg2; // needs 2 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, BOOL, id /* block */, HDSQLiteDatabase *, id*, id*
-- (BOOL)performTransactionWithOptions:(void *)arg1 error:(void *)arg2 usingBlock:(void *)arg3 inaccessibilityHandler:(void *)arg4; // needs 4 arg types, found 14: unsigned int, id*, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, BOOL, id /* block */, HDSQLiteDatabase *, id*, id /* block */, void*, BOOL, id /* block */, NSError *, id*
-- (void)performWhenDataProtectedByFirstUnlockIsAvailable:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (bool)isDataProtectedByFirstUnlockAvailable;
+- (bool)isProtectedDataAvailable;
+- (void)performAsynchronously:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (bool)performJournalMergeUsingBlock:(void *)arg1 error:(void *)arg2; // needs 2 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, bool, id, HDSQLiteDatabase *, id*, id*
+- (bool)performTransactionWithOptions:(void *)arg1 error:(void *)arg2 usingBlock:(void *)arg3 inaccessibilityHandler:(void *)arg4; // needs 4 arg types, found 14: unsigned long long, id*, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, bool, id, HDSQLiteDatabase *, id*, id, void*, bool, id, NSError *, id*
+- (void)performWhenDataProtectedByFirstUnlockIsAvailable:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 - (void)removeProtectedDataObserver:(id <HDDatabaseProtectedDataObserver>)arg1;
 
 @end

@@ -4,37 +4,37 @@
 
 @interface MFModernAtomBackgroundView : UIView {
     MFModernAtomView * _hostAtomView;
-    float  _scalingFactor;
-    BOOL  _selected;
+    double  _scalingFactor;
+    bool  _selected;
     UIView * _selectedView;
-    unsigned int  _selectionStyle;
+    unsigned long long  _selectionStyle;
     int  _separatorStyle;
     UIView * _separatorView;
 }
 
 @property (nonatomic) MFModernAtomView *hostAtomView;
-@property (nonatomic) float scalingFactor;
+@property (nonatomic) double scalingFactor;
 @property (nonatomic, readonly) UIView *selectedView;
 @property (nonatomic) int separatorStyle;
 @property (nonatomic, readonly) UIView *separatorView;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_backgroundBleedArea;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_backgroundBleedArea;
 - (id)_chevronImage;
-- (void)_setSelectionStyle:(unsigned int)arg1;
+- (void)_setSelectionStyle:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)hostAtomView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)invalidateIntrinsicContentSize;
-- (BOOL)isSelected;
+- (bool)isSelected;
 - (void)layoutSubviews;
-- (float)scalingFactor;
+- (double)scalingFactor;
 - (id)selectedView;
 - (int)separatorStyle;
 - (id)separatorView;
-- (float)separatorWidth;
+- (double)separatorWidth;
 - (void)setHostAtomView:(id)arg1;
-- (void)setScalingFactor:(float)arg1;
-- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2 style:(unsigned int)arg3;
+- (void)setScalingFactor:(double)arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2 style:(unsigned long long)arg3;
 - (void)setSeparatorStyle:(int)arg1;
 - (void)tintColorDidChange;
 

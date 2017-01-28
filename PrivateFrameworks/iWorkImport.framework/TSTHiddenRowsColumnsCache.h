@@ -5,7 +5,7 @@
 @interface TSTHiddenRowsColumnsCache : NSObject <TSTTableHiddenRowColumnProviding> {
     NSMutableIndexSet * _columnsInvalid;
     TSTHiddenStateIndexSet * _columnsVisible;
-    unsigned int  _rowMarkIndex;
+    unsigned long long  _rowMarkIndex;
     NSMutableIndexSet * _rowsInvalid;
     TSTHiddenStateIndexSet * _rowsUserVisible;
     TSTHiddenStateIndexSet * _rowsVisible;
@@ -15,8 +15,8 @@
 @property (nonatomic, retain) TSTHiddenStateIndexSet *columnsVisible;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int rowMarkIndex;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long rowMarkIndex;
 @property (nonatomic, retain) NSMutableIndexSet *rowsInvalid;
 @property (nonatomic, retain) TSTHiddenStateIndexSet *rowsUserVisible;
 @property (nonatomic, retain) TSTHiddenStateIndexSet *rowsVisible;
@@ -25,16 +25,16 @@
 @property (nonatomic, readonly) NSIndexSet *visibleColumnIndices;
 @property (nonatomic, readonly) NSIndexSet *visibleRowIndices;
 
-- (BOOL)anyColumnsHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (BOOL)anyRowsHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
-- (BOOL)anyRowsUserHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (bool)anyColumnsHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (bool)anyRowsHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (bool)anyRowsUserHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)columnsInvalid;
 - (id)columnsVisible;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isColumnHidden:(unsigned char)arg1;
-- (BOOL)isRowHidden:(unsigned short)arg1;
-- (BOOL)isRowUserHidden:(unsigned short)arg1;
+- (bool)isColumnHidden:(unsigned char)arg1;
+- (bool)isRowHidden:(unsigned short)arg1;
+- (bool)isRowUserHidden:(unsigned short)arg1;
 - (unsigned short)nonUserHiddenRowAfterAndIncludingRow:(unsigned short)arg1;
 - (unsigned short)numberColumnsHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (unsigned short)numberColumnsVisibleInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
@@ -44,13 +44,13 @@
 - (unsigned short)numberRowsVisibleInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (unsigned char)previousNthVisibleColumn:(unsigned short)arg1 fromColumnIndex:(unsigned char)arg2;
 - (unsigned short)previousNthVisibleRow:(unsigned short)arg1 fromRowIndex:(unsigned short)arg2;
-- (unsigned int)rowMarkIndex;
+- (unsigned long long)rowMarkIndex;
 - (id)rowsInvalid;
 - (id)rowsUserVisible;
 - (id)rowsVisible;
 - (void)setColumnsInvalid:(id)arg1;
 - (void)setColumnsVisible:(id)arg1;
-- (void)setRowMarkIndex:(unsigned int)arg1;
+- (void)setRowMarkIndex:(unsigned long long)arg1;
 - (void)setRowsInvalid:(id)arg1;
 - (void)setRowsUserVisible:(id)arg1;
 - (void)setRowsVisible:(id)arg1;

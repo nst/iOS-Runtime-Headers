@@ -6,25 +6,26 @@
     NSMutableOrderedSet * _requests;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, retain) NSMutableOrderedSet *requests;
 
 - (void).cxx_destruct;
-- (id)_clearRequestsWithPersistence:(unsigned int)arg1;
+- (id)_clearRequestsWithPersistence:(unsigned long long)arg1;
 - (id)_identifierForNotificationRequest:(id)arg1;
-- (unsigned int)_indexOfRequestMatchingNotificationRequest:(id)arg1;
-- (unsigned int)_insertionIndexForNotificationRequest:(id)arg1;
+- (unsigned long long)_indexOfRequestMatchingNotificationRequest:(id)arg1;
+- (unsigned long long)_insertionIndexForNotificationRequest:(id)arg1;
+- (id)allNotificationRequests;
 - (id)clearAllRequests;
 - (id)clearNonPersistentRequests;
-- (BOOL)containsNotificationRequestMatchingRequest:(id)arg1;
-- (unsigned int)count;
-- (unsigned int)indexOfNotificationRequestMatchingRequest:(id)arg1;
+- (bool)containsNotificationRequestMatchingRequest:(id)arg1;
+- (unsigned long long)count;
+- (unsigned long long)indexOfNotificationRequestMatchingRequest:(id)arg1;
 - (id)init;
-- (unsigned int)insertNotificationRequest:(id)arg1;
-- (unsigned int)insertionIndexForNotificationRequest:(id)arg1;
-- (unsigned int)modifyNotificationRequest:(id)arg1;
-- (unsigned int)removeNotificationRequest:(id)arg1;
-- (id)requestAtIndex:(unsigned int)arg1;
+- (unsigned long long)insertNotificationRequest:(id)arg1;
+- (unsigned long long)insertionIndexForNotificationRequest:(id)arg1;
+- (unsigned long long)modifyNotificationRequest:(id)arg1;
+- (unsigned long long)removeNotificationRequest:(id)arg1;
+- (id)requestAtIndex:(unsigned long long)arg1;
 - (id)requests;
 - (void)setRequests:(id)arg1;
 

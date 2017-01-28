@@ -5,24 +5,24 @@
 @interface SFEndNetworkSearchFeedback : SFEndSearchFeedback {
     NSDictionary * _networkTimingData;
     long long  _responseSize;
-    int  _statusCode;
+    long long  _statusCode;
 }
 
 @property (nonatomic, copy) NSDictionary *networkTimingData;
 @property (nonatomic) long long responseSize;
-@property (nonatomic) int statusCode;
+@property (nonatomic) long long statusCode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartSearch:(id)arg1 responseSize:(long long)arg2 statusCode:(int)arg3 networkTimingData:(id)arg4;
+- (id)initWithStartSearch:(id)arg1 responseSize:(long long)arg2 statusCode:(long long)arg3 networkTimingData:(id)arg4;
 - (id)networkTimingData;
 - (long long)responseSize;
 - (void)setNetworkTimingData:(id)arg1;
 - (void)setResponseSize:(long long)arg1;
-- (void)setStatusCode:(int)arg1;
-- (int)statusCode;
+- (void)setStatusCode:(long long)arg1;
+- (long long)statusCode;
 
 @end

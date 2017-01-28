@@ -12,15 +12,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned int)_determineFileType:(id)arg1;
+- (unsigned long long)_determineFileType:(id)arg1;
 - (void)_parseData:(id)arg1 bufferAllocator:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)initWithData:(id)arg1 bufferAllocator:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)initWithURL:(id)arg1 bufferAllocator:(id)arg2 options:(id)arg3 error:(id*)arg4;
-- (id)provideImageInfoAtLevel:(unsigned int)arg1 element:(unsigned int)arg2 face:(unsigned int)arg3;
+- (id)provideImageInfoAtLevel:(unsigned long long)arg1 element:(unsigned long long)arg2 face:(unsigned long long)arg3;
 - (id)provideTextureInfo;
 
 @end

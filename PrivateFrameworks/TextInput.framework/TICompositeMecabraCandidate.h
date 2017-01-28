@@ -12,7 +12,7 @@
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)autoconvertedCandidatePointerValues;

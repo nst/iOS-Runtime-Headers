@@ -11,25 +11,25 @@
     unsigned long long  _lastTimestamp;
     NSArray * _modes;
     unsigned int  _port;
-    BOOL  _showFinger;
+    bool  _showFinger;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _startLocation;
     unsigned long long  _startTimestamp;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _stopLocation;
     unsigned long long  _stopTimestamp;
     UIView * _target;
-    BOOL  _waitingForSmoothScrolling;
+    bool  _waitingForSmoothScrolling;
 }
 
 - (void).cxx_destruct;
 - (void)_continueDrag:(id)arg1;
 - (double)_delayUntilNextEvent;
-- (void)_postMouseEvent:(int)arg1 timestamp:(unsigned long long)arg2 location:(struct CGPoint { float x1; float x2; })arg3;
+- (void)_postMouseEvent:(int)arg1 timestamp:(unsigned long long)arg2 location:(struct CGPoint { double x1; double x2; })arg3;
 - (void)_smoothScrollingDidEnd:(id)arg1;
 - (void)_smoothScrollingWillStart:(id)arg1;
 - (void)_stopDrag:(id)arg1;
@@ -41,8 +41,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setInterpolation:(int (*)arg1;
-- (void)setStartLocation:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setStopLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStartLocation:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setStopLocation:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setTarget:(id)arg1;
 - (void)showFinger;
 

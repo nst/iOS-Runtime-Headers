@@ -4,11 +4,11 @@
 
 @interface PUFiltersToolControllerSpec : PUPhotoEditToolControllerSpec
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } thumbnailCellSize;
-@property (nonatomic, readonly) float thumbnailEdgeMaxLength;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } thumbnailCellSize;
+@property (nonatomic, readonly) double thumbnailEdgeMaxLength;
 
 - (void)configureThumbnailsCollectionLayout:(id)arg1;
-- (struct CGSize { float x1; float x2; })thumbnailCellSize;
-- (float)thumbnailEdgeMaxLength;
+- (struct CGSize { double x1; double x2; })thumbnailCellSize;
+- (double)thumbnailEdgeMaxLength;
 
 @end

@@ -6,6 +6,5 @@
 @required
 
 - (void)provision:(FBSProcessExecutionProvision *)arg1 wasViolatedWithError:(NSError *)arg2;
-- (void)provisionMilestoneCompleted:(FBSProcessExecutionProvision *)arg1;
 
 @end

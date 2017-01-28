@@ -20,18 +20,18 @@
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
-+ (BOOL)managedObjectSupportsTrashedState;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (bool)managedObjectSupportsTrashedState;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (Class)changeRequestClass;
-- (BOOL)collectionHasFixedOrder;
-- (int)collectionListType;
+- (bool)collectionHasFixedOrder;
+- (long long)collectionListType;
 - (id)description;
 - (short)generationType;
 - (short)granularityLevel;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
-- (BOOL)isMeaningful;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (bool)isMeaningful;
 - (id)representativeDate;
 - (int)sortIndex;
 

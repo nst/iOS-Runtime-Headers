@@ -21,9 +21,9 @@
 - (id)extensionConnection;
 - (id)initWithPluginBundle:(id)arg1 extension:(id)arg2;
 - (id)initWithPluginBundle:(id)arg1 pluginKitProxy:(id)arg2;
-- (BOOL)isBetaPlugin;
+- (bool)isBetaPlugin;
 - (id)proxy;
-- (id)proxyWithErrorHandle:(id /* block */)arg1;
+- (id)proxyWithErrorHandle:(id)arg1;
 - (id)requestIdentifier;
 - (void)setProxy:(id)arg1;
 - (void)setRequestIdentifier:(id)arg1;

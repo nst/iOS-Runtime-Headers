@@ -4,11 +4,11 @@
 
 @interface PLActivityCriterion : NSObject {
     <PLActivityCriterionDelegate> * _delegate;
-    BOOL  _satisfied;
+    bool  _satisfied;
 }
 
 @property <PLActivityCriterionDelegate> *delegate;
-@property (nonatomic) BOOL satisfied;
+@property (nonatomic) bool satisfied;
 
 - (void).cxx_destruct;
 - (id)delegate;
@@ -17,8 +17,8 @@
 - (void)didEnableActivity:(id)arg1;
 - (void)didInterruptActivity:(id)arg1;
 - (id)init;
-- (BOOL)satisfied;
+- (bool)satisfied;
 - (void)setDelegate:(id)arg1;
-- (void)setSatisfied:(BOOL)arg1;
+- (void)setSatisfied:(bool)arg1;
 
 @end

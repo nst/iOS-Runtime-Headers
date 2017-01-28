@@ -4,6 +4,6 @@
 
 @interface ICAttachmentMigrationPolicy1_0b6To1_0b7 : NSEntityMigrationPolicy
 
-- (BOOL)createDestinationInstancesForSourceInstance:(id)arg1 entityMapping:(id)arg2 manager:(id)arg3 error:(id*)arg4;
+- (bool)createDestinationInstancesForSourceInstance:(id)arg1 entityMapping:(id)arg2 manager:(id)arg3 error:(id*)arg4;
 
 @end

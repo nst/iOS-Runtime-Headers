@@ -14,6 +14,6 @@
 - (void)dealloc;
 - (int)fileId;
 - (id)initWithDirectory:(id)arg1 fileId:(int)arg2;
-- (void)read:(struct { int x1; int x2; unsigned int x3; })arg1 callback:(id /* block */)arg2;
+- (void)read:(struct { int x1; int x2; unsigned int x3; })arg1 callback:(id)arg2;
 
 @end

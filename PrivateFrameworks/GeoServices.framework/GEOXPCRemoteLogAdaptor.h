@@ -7,11 +7,13 @@
     NSString * _debugRequestName;
     NSString * _logMessageCacheFilePath;
     GEOLogMessageCacheManager * _logMessageCacheManager;
-    BOOL  _logMessageCollectionRequestPending;
+    bool  _logMessageCollectionRequestPending;
     GEORequester * _logMessageCollectionRequester;
     NSLock * _logMessageCollectionRequesterLock;
     NSObject<OS_dispatch_queue> * _logMessageSendQueue;
     NSURL * _remoteURL;
+    id  _shouldDeferXPCActivityBlock;
+    NSLock * _shouldDeferXPCActivityBlockLock;
     NSLock * _xpcActivityInfoLock;
     NSString * _xpcActivityName;
 }
@@ -20,7 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSString *debugRequestName;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSURL *remoteURL;
 @property (readonly) Class superclass;
 @property (nonatomic) long long xpcActivityTriggerCount;
@@ -30,7 +32,7 @@
 - (void)_deviceLocking;
 - (void)_deviceUnlocked;
 - (void)_initializeAdaptor;
-- (BOOL)_isLogMessageCollectionRequesterPending;
+- (bool)_isLogMessageCollectionRequesterPending;
 - (void)_purgeAndSendLogMessages;
 - (void)_purgeExpiredLogMessagesFromCache;
 - (void)_purgeMapsSuggestionsCacheFile;
@@ -45,14 +47,15 @@
 - (void)_setupXPCActivity;
 - (long long)_sizeOfLogMessageRequest:(id)arg1;
 - (void)_unregisterXPCActivityTimer;
-- (BOOL)_useInMemoryLogMessageCache;
+- (bool)_useInMemoryLogMessageCache;
 - (id)adaptorIdentifier;
 - (void)dealloc;
 - (id)debugRequestName;
 - (void)flushLogs;
+- (void)forceFlushLogs;
 - (void)incrementXpcActivityTriggerCount;
 - (id)initWithRemoteURL:(id)arg1 debugRequestName:(id)arg2 supportedTypes:(id)arg3 supportedSubTypes:(id)arg4;
-- (BOOL)isLogFrameworkAdaptor;
+- (bool)isLogFrameworkAdaptor;
 - (void)queueLogMessage:(id)arg1;
 - (id)remoteURL;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;

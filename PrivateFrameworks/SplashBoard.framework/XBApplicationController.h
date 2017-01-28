@@ -7,12 +7,12 @@
 + (id)sharedInstance;
 
 - (id)_allApplications;
-- (id)_allApplicationsFilteredBySystem:(BOOL)arg1 bySplashBoard:(BOOL)arg2;
-- (void)_captureLaunchImageForApplication:(id)arg1 withCompatibilityInfo:(id)arg2 firstImageIsReady:(id /* block */)arg3 withCompletion:(id /* block */)arg4;
-- (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(id /* block */)arg2;
+- (id)_allApplicationsFilteredBySystem:(bool)arg1 bySplashBoard:(bool)arg2;
+- (void)_captureLaunchImageForApplication:(id)arg1 withCompatibilityInfo:(id)arg2 firstImageIsReady:(id)arg3 withCompletion:(id)arg4;
+- (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(id)arg2;
 - (void)_migrateDataIfNeeded;
-- (void)_removeCachedLaunchImagesForApplications:(id)arg1 forgettingApps:(BOOL)arg2;
-- (void)_removeLaunchImagesMatchingPredicate:(id)arg1 forApplications:(id)arg2 forgettingApps:(BOOL)arg3;
+- (void)_removeCachedLaunchImagesForApplications:(id)arg1 forgettingApps:(bool)arg2;
+- (void)_removeLaunchImagesMatchingPredicate:(id)arg1 forApplications:(id)arg2 forgettingApps:(bool)arg3;
 - (id)allSplashBoardApplications;
 - (id)allSplashBoardSystemApplications;
 - (id)launchRequestsForApplication:(id)arg1 withCompatibilityInfo:(id)arg2;

@@ -4,7 +4,7 @@
 
 @interface VKPolylinePath : NSObject {
     VKPolylineOverlay * _overlay;
-    BOOL  _ownsPoints;
+    bool  _ownsPoints;
     unsigned int  _pointCount;
     struct Matrix<float, 2, 1> { float x1[2]; } * _points;
     struct PolylineCoordinate { 
@@ -22,8 +22,8 @@
     unsigned char  _trafficSpeed;
 }
 
-@property (readonly) BOOL hasCompletedMapMatching;
-@property (readonly) BOOL isMapMatched;
+@property (readonly) bool hasCompletedMapMatching;
+@property (readonly) bool isMapMatched;
 @property (nonatomic, readonly) unsigned int pointCount;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct *points; /* unknown property attribute:  1>=[2f]} */
 @property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeEnd;
@@ -38,11 +38,11 @@
 - (void)assignTo:(id)arg1 withSegment:(const struct TrafficSegment { unsigned int x1; unsigned char x2; }*)arg2;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasCompletedMapMatching;
+- (bool)hasCompletedMapMatching;
 - (id)initWithOverlay:(id)arg1 section:(id)arg2;
 - (id)initWithOverlay:(id)arg1 section:(id)arg2 routeStartIndex:(unsigned int)arg3 routeEndIndex:(unsigned int)arg4;
 - (id)initWithOverlay:(id)arg1 snappedPath:(id)arg2;
-- (BOOL)isMapMatched;
+- (bool)isMapMatched;
 - (unsigned int)pointCount;
 - (struct Matrix<float, 2, 1> { float x1[2]; }*)points;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeEnd;
@@ -53,7 +53,7 @@
 - (void)setStartDistance:(double)arg1;
 - (void)setTrafficSpeed:(unsigned char)arg1;
 - (id)snappedPath;
-- (void)splitTrafficSegmentationAndAddTo:(id)arg1 with:(struct TrafficSegmentsAlongRoute { struct vector<md::TrafficSegment, std::__1::allocator<md::TrafficSegment> > { struct TrafficSegment {} *x_1_1_1; struct TrafficSegment {} *x_1_1_2; struct __compressed_pair<md::TrafficSegment *, std::__1::allocator<md::TrafficSegment> > { struct TrafficSegment {} *x_3_2_1; } x_1_1_3; } x1; }*)arg2 shouldSnap:(BOOL)arg3;
+- (void)splitTrafficSegmentationAndAddTo:(id)arg1 with:(struct TrafficSegmentsAlongRoute { struct vector<md::TrafficSegment, std::__1::allocator<md::TrafficSegment> > { struct TrafficSegment {} *x_1_1_1; struct TrafficSegment {} *x_1_1_2; struct __compressed_pair<md::TrafficSegment *, std::__1::allocator<md::TrafficSegment> > { struct TrafficSegment {} *x_3_2_1; } x_1_1_3; } x1; }*)arg2 shouldSnap:(bool)arg3;
 - (double)startDistance;
 - (unsigned char)trafficSpeed;
 

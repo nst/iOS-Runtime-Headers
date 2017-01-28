@@ -4,42 +4,42 @@
 
 @interface UAFileChunkInputStream : NSInputStream {
     NSNumber * _chunkOffset;
-    int  _chunkSize;
+    long long  _chunkSize;
     NSNumber * _currentOffset;
     NSFileHandle * _file;
-    int  _readSize;
-    unsigned int  _status;
+    long long  _readSize;
+    unsigned long long  _status;
 }
 
 @property (retain) NSNumber *chunkOffset;
-@property int chunkSize;
+@property long long chunkSize;
 @property (retain) NSNumber *currentOffset;
 @property (retain) NSFileHandle *file;
-@property int readSize;
-@property unsigned int status;
+@property long long readSize;
+@property unsigned long long status;
 
 - (void).cxx_destruct;
 - (id)chunkOffset;
-- (int)chunkSize;
+- (long long)chunkSize;
 - (void)close;
 - (id)currentOffset;
 - (id)file;
-- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
-- (BOOL)hasBytesAvailable;
-- (id)initWithFileHandle:(id)arg1 offsetInFile:(id)arg2 size:(int)arg3;
+- (bool)getBuffer:(char **)arg1 length:(unsigned long long*)arg2;
+- (bool)hasBytesAvailable;
+- (id)initWithFileHandle:(id)arg1 offsetInFile:(id)arg2 size:(long long)arg3;
 - (void)open;
 - (id)propertyForKey:(id)arg1;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
-- (int)readSize;
+- (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
+- (long long)readSize;
 - (void)setChunkOffset:(id)arg1;
-- (void)setChunkSize:(int)arg1;
+- (void)setChunkSize:(long long)arg1;
 - (void)setCurrentOffset:(id)arg1;
 - (void)setFile:(id)arg1;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
-- (void)setReadSize:(int)arg1;
-- (void)setStatus:(unsigned int)arg1;
-- (unsigned int)status;
+- (bool)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)setReadSize:(long long)arg1;
+- (void)setStatus:(unsigned long long)arg1;
+- (unsigned long long)status;
 - (id)streamError;
-- (unsigned int)streamStatus;
+- (unsigned long long)streamStatus;
 
 @end

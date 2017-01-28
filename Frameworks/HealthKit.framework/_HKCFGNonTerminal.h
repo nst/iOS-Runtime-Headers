@@ -17,12 +17,12 @@
 - (void)_checkForCycles:(id)arg1;
 - (void)_invalidate;
 - (id)_label;
-- (unsigned int)_minimumLength;
+- (unsigned long long)_minimumLength;
 - (id)_parseTreeWithContext:(id)arg1;
 - (id)_replacementRules;
-- (BOOL)_tryNodesForExpressions:(id)arg1 nodes:(id)arg2 context:(id)arg3 solutionTest:(id /* block */)arg4;
-- (void)_tryNodesWithContext:(id)arg1 solutionTest:(id /* block */)arg2;
-- (void)addReplacementRuleWithExpressions:(id)arg1 nodeEvaluator:(id /* block */)arg2;
+- (bool)_tryNodesForExpressions:(id)arg1 nodes:(id)arg2 context:(id)arg3 solutionTest:(id)arg4;
+- (void)_tryNodesWithContext:(id)arg1 solutionTest:(id)arg2;
+- (void)addReplacementRuleWithExpressions:(id)arg1 nodeEvaluator:(id)arg2;
 - (id)charactersToBeSkipped;
 - (id)initWithLabel:(id)arg1;
 - (void)setCharactersToBeSkipped:(id)arg1;

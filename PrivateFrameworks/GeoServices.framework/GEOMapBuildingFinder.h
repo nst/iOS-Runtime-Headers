@@ -13,7 +13,7 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (void)findBuildingsWithHandler:(id /* block */)arg1;
+- (void)findBuildingsWithHandler:(id)arg1;
 - (id)initWithMap:(id)arg1 centerCoordinate:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 
 @end

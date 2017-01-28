@@ -3,14 +3,14 @@
  */
 
 @interface ML3DatabaseFunctionBlock : ML3DatabaseFunction {
-    id /* block */  _block;
+    id  _block;
 }
 
-@property (nonatomic, copy) id /* block */ block;
+@property (nonatomic, copy) id block;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
-- (BOOL)registerWithConnection:(id)arg1;
-- (void)setBlock:(id /* block */)arg1;
+- (id)block;
+- (bool)registerWithConnection:(id)arg1;
+- (void)setBlock:(id)arg1;
 
 @end

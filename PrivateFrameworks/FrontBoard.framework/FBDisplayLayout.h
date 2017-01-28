@@ -4,15 +4,15 @@
 
 @interface FBDisplayLayout : NSObject <FBDisplayManagerObserver> {
     NSMutableSet * _assertions;
-    int  _backlightLevel;
+    long long  _backlightLevel;
     FBSDisplayLayout * _currentLayout;
     FBSDisplayLayoutTransitionContext * _currentTransitionContext;
     <FBDisplayLayoutDelegate> * _delegate;
     FBSDisplay * _display;
     int  _displayBacklightToken;
-    unsigned int  _displayType;
-    int  _interfaceOrientation;
-    BOOL  _transitionActive;
+    unsigned long long  _displayType;
+    long long  _interfaceOrientation;
+    bool  _transitionActive;
     NSMutableSet * _transitions;
 }
 
@@ -21,18 +21,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <FBDisplayLayoutDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) unsigned int displayType;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int interfaceOrientation;
+@property (nonatomic, readonly) unsigned long long displayType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long interfaceOrientation;
 @property (readonly) Class superclass;
-@property (getter=isTransitioning, nonatomic, readonly) BOOL transitioning;
+@property (getter=isTransitioning, nonatomic, readonly) bool transitioning;
 
-- (void)_bgQueue_updateBacklightLevelAndNotify:(BOOL)arg1;
-- (void)_buildAndSendLayout:(BOOL)arg1;
-- (BOOL)_isReallyTransitioning;
+- (void)_bgQueue_updateBacklightLevelAndNotify:(bool)arg1;
+- (void)_buildAndSendLayout:(bool)arg1;
+- (bool)_isReallyTransitioning;
 - (void)_registerForBacklightUpdates;
 - (void)_sendLayoutIfNotTransitioning;
-- (void)_updateBacklightLevel:(int)arg1 notify:(BOOL)arg2;
+- (void)_updateBacklightLevel:(long long)arg1 notify:(bool)arg2;
 - (void)_updateStateForTransition:(id)arg1;
 - (void)_updateTransitionContextForTransition:(id)arg1;
 - (void)addElementAssertion:(id)arg1;
@@ -43,12 +43,12 @@
 - (id)delegate;
 - (void)displayManager:(id)arg1 didConnectDisplay:(id)arg2;
 - (void)displayManager:(id)arg1 didDisconnectDisplay:(id)arg2;
-- (unsigned int)displayType;
+- (unsigned long long)displayType;
 - (void)endTransition:(id)arg1;
 - (void)flush;
-- (id)initWithDisplayType:(unsigned int)arg1 delegate:(id)arg2;
-- (int)interfaceOrientation;
-- (BOOL)isTransitioning;
+- (id)initWithDisplayType:(unsigned long long)arg1 delegate:(id)arg2;
+- (long long)interfaceOrientation;
+- (bool)isTransitioning;
 - (void)removeElementAssertion:(id)arg1;
 - (void)updateElementAssertion:(id)arg1;
 

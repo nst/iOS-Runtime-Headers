@@ -7,9 +7,9 @@
 + (id)_storeNotificationSerialQueue;
 + (id)sharedInstance;
 
-- (unsigned int)_newAttemptStateForResponse:(id)arg1 error:(id)arg2 previousState:(unsigned int)arg3;
-- (BOOL)_onStoreNotificationSerialQueue_retryWishlistAttemptForAppIdentifiersIfPossible:(id)arg1 attemptState:(unsigned int)arg2;
-- (void)_sendWishListToStoreWithAppIdentifiers:(id)arg1 attemptState:(unsigned int)arg2;
+- (unsigned long long)_newAttemptStateForResponse:(id)arg1 error:(id)arg2 previousState:(unsigned long long)arg3;
+- (bool)_onStoreNotificationSerialQueue_retryWishlistAttemptForAppIdentifiersIfPossible:(id)arg1 attemptState:(unsigned long long)arg2;
+- (void)_sendWishListToStoreWithAppIdentifiers:(id)arg1 attemptState:(unsigned long long)arg2;
 - (void)addMigratableAppsToWishlist:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
     PLLoadRequestKey * _dummy;
     id * _images;
     NSObject<OS_dispatch_queue> * _isolation;
-    unsigned int * _keyHashes;
+    unsigned long long * _keyHashes;
     id * _keys;
     unsigned int  _lastFailLocation;
     unsigned int  _length;

@@ -3,16 +3,16 @@
  */
 
 @interface SBSUIWallpaperPreviewViewController : UIViewController <SBFLegibilitySettingsProvider, SBFLegibilitySettingsProviderDelegate> {
-    BOOL  _allowScrolling;
-    BOOL  _colorSamplingEnabled;
+    bool  _allowScrolling;
+    bool  _colorSamplingEnabled;
     NSTimer * _dateTimer;
     <SBFLegibilitySettingsProviderDelegate> * _delegate;
-    BOOL  _motionEnabled;
+    bool  _motionEnabled;
     NSString * _name;
     NSDictionary * _proceduralWallpaper;
     NSDictionary * _proceduralWallpaperOptions;
     double  _stillTimeInVideo;
-    int  _variant;
+    long long  _variant;
     AVURLAsset * _video;
     SBFWallpaperConfigurationManager * _wallpaperConfigurationManager;
     UIImage * _wallpaperImage;
@@ -21,25 +21,26 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBFLegibilitySettingsProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
-@property (nonatomic) BOOL motionEnabled;
+@property (nonatomic) bool motionEnabled;
 @property (readonly) Class superclass;
 @property (readonly) UIImage *wallpaperImage;
 
 - (void).cxx_destruct;
 - (id)_dateView;
-- (float)_parallaxFactor;
+- (double)_parallaxFactor;
 - (id)_previewView;
-- (id)_proceduralWallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 variant:(int)arg2;
+- (id)_proceduralWallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 variant:(long long)arg2;
 - (void)_startDateTimer;
 - (void)_stopDateTimer;
 - (void)_updateDateView;
+- (void)_updateDateViewAlignmentFromOrientation:(long long)arg1;
 - (id)_wallpaperView;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 image:(id)arg2 video:(id)arg3 videoURL:(id)arg4 stillTimeInVideo:(double)arg5 supportsCropping:(BOOL)arg6 variant:(int)arg7;
-- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 variant:(int)arg2 options:(id)arg3;
-- (BOOL)colorSamplingEnabled;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 image:(id)arg2 video:(id)arg3 videoURL:(id)arg4 stillTimeInVideo:(double)arg5 supportsCropping:(bool)arg6 variant:(long long)arg7;
+- (id)_wallpaperViewWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 variant:(long long)arg2 options:(id)arg3;
+- (bool)colorSamplingEnabled;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithImage:(id)arg1;
@@ -49,19 +50,20 @@
 - (id)initWithProceduralWallpaper:(id)arg1 options:(id)arg2;
 - (id)initWithScrollableImage:(id)arg1;
 - (id)initWithScrollableImage:(id)arg1 video:(id)arg2 time:(double)arg3;
-- (id)initWithWallpaperVariant:(int)arg1;
+- (id)initWithWallpaperVariant:(long long)arg1;
 - (id)legibilitySettings;
 - (void)loadView;
-- (BOOL)motionEnabled;
+- (bool)motionEnabled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)providerLegibilitySettingsChanged:(id)arg1;
-- (void)setColorSamplingEnabled:(BOOL)arg1;
+- (void)setColorSamplingEnabled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMotionEnabled:(BOOL)arg1;
-- (void)setMotionEnabled:(BOOL)arg1 updateParallaxOnWallpaperView:(BOOL)arg2;
-- (void)setWallpaperForLocations:(int)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setMotionEnabled:(bool)arg1;
+- (void)setMotionEnabled:(bool)arg1 updateParallaxOnWallpaperView:(bool)arg2;
+- (void)setWallpaperForLocations:(long long)arg1;
+- (void)statusBarOrientationWillChange:(id)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)wallpaperConfigurationManager;
 - (id)wallpaperImage;
 

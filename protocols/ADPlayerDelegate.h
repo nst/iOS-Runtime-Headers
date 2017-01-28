@@ -14,7 +14,7 @@
 
 @optional
 
-- (void)adPlayer:(ADPlayer *)arg1 didChangePlaybackState:(unsigned int)arg2;
+- (void)adPlayer:(ADPlayer *)arg1 didChangePlaybackState:(unsigned long long)arg2;
 - (UIViewController *)viewControllerForActionFromAdPlayer:(ADPlayer *)arg1;
 
 @end

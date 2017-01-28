@@ -3,16 +3,16 @@
  */
 
 @interface PXAssetCollectionDataSourceInfo : NSObject {
-    BOOL  _UUIDFilterHidesSomeAssets;
-    BOOL  _explicitlyDisableFilters;
+    bool  _UUIDFilterHidesSomeAssets;
+    bool  _explicitlyDisableFilters;
 }
 
-@property (setter=_setUUIDFilterHidesSomeAssets:, nonatomic) BOOL UUIDFilterHidesSomeAssets;
-@property (setter=_setExplicitlyDisableFilters:, nonatomic) BOOL explicitlyDisableFilters;
+@property (setter=_setUUIDFilterHidesSomeAssets:, nonatomic) bool UUIDFilterHidesSomeAssets;
+@property (setter=_setExplicitlyDisableFilters:, nonatomic) bool explicitlyDisableFilters;
 
-- (BOOL)UUIDFilterHidesSomeAssets;
-- (void)_setExplicitlyDisableFilters:(BOOL)arg1;
-- (void)_setUUIDFilterHidesSomeAssets:(BOOL)arg1;
-- (BOOL)explicitlyDisableFilters;
+- (bool)UUIDFilterHidesSomeAssets;
+- (void)_setExplicitlyDisableFilters:(bool)arg1;
+- (void)_setUUIDFilterHidesSomeAssets:(bool)arg1;
+- (bool)explicitlyDisableFilters;
 
 @end

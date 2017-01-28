@@ -3,7 +3,7 @@
  */
 
 @interface BRCDataOrDocsScopeGatherer : NSObject {
-    id /* block */  _gatherReply;
+    id  _gatherReply;
     BRCItemID * _gatheredChildrenItemID;
     NSMutableArray * _gatheringAppLibraries;
     NSString * _gatheringNamePrefix;
@@ -17,9 +17,9 @@
 
 - (void).cxx_destruct;
 - (void)done;
-- (void)gatherWithBatchSize:(int)arg1 completion:(id /* block */)arg2;
+- (void)gatherWithBatchSize:(long long)arg1 completion:(id)arg2;
 - (id)gatheredChildrenItemID;
-- (id)initWithNotificationPipe:(id)arg1 appLibraries:(id)arg2 reply:(id /* block */)arg3;
+- (id)initWithNotificationPipe:(id)arg1 appLibraries:(id)arg2 reply:(id)arg3;
 - (void)invalidate;
 - (void)setGatheredChildrenItemID:(id)arg1;
 

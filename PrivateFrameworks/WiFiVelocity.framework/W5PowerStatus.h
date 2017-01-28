@@ -4,25 +4,25 @@
 
 @interface W5PowerStatus : NSObject <NSCopying, NSSecureCoding> {
     int  _batteryWarningLevel;
-    int  _powerSourceType;
+    long long  _powerSourceType;
 }
 
 @property (nonatomic) int batteryWarningLevel;
-@property (nonatomic) int powerSourceType;
+@property (nonatomic) long long powerSourceType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (int)batteryWarningLevel;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPowerStatus:(id)arg1;
-- (int)powerSourceType;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPowerStatus:(id)arg1;
+- (long long)powerSourceType;
 - (void)setBatteryWarningLevel:(int)arg1;
-- (void)setPowerSourceType:(int)arg1;
+- (void)setPowerSourceType:(long long)arg1;
 
 @end

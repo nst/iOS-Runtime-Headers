@@ -12,9 +12,9 @@
     GEOPDUser * _tipster;
 }
 
-@property (nonatomic, readonly) BOOL hasTipId;
-@property (nonatomic) BOOL hasTipTime;
-@property (nonatomic, readonly) BOOL hasTipster;
+@property (nonatomic, readonly) bool hasTipId;
+@property (nonatomic) bool hasTipTime;
+@property (nonatomic, readonly) bool hasTipster;
 @property (nonatomic, retain) NSMutableArray *snippets;
 @property (nonatomic, retain) NSString *tipId;
 @property (nonatomic) double tipTime;
@@ -30,21 +30,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTipId;
-- (BOOL)hasTipTime;
-- (BOOL)hasTipster;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTipId;
+- (bool)hasTipTime;
+- (bool)hasTipster;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTipTime:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTipTime:(bool)arg1;
 - (void)setSnippets:(id)arg1;
 - (void)setTipId:(id)arg1;
 - (void)setTipTime:(double)arg1;
 - (void)setTipster:(id)arg1;
-- (id)snippetAtIndex:(unsigned int)arg1;
+- (id)snippetAtIndex:(unsigned long long)arg1;
 - (id)snippets;
-- (unsigned int)snippetsCount;
+- (unsigned long long)snippetsCount;
 - (id)tipId;
 - (double)tipTime;
 - (id)tipster;

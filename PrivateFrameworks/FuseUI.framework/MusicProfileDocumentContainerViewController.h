@@ -4,6 +4,6 @@
 
 @interface MusicProfileDocumentContainerViewController : SKUIDocumentContainerViewController
 
-+ (BOOL)allowsChildViewControllerNavigationBarManagement;
++ (bool)allowsChildViewControllerNavigationBarManagement;
 
 @end

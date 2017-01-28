@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)menuGroupAtIndex:(unsigned int)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)menuGroupAtIndex:(unsigned long long)arg1;
 - (id)menuGroups;
-- (unsigned int)menuGroupsCount;
+- (unsigned long long)menuGroupsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setMenuGroups:(id)arg1;
 - (void)writeTo:(id)arg1;
 

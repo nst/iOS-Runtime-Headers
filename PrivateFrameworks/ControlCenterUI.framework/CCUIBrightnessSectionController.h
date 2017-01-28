@@ -5,10 +5,10 @@
 @interface CCUIBrightnessSectionController : CCUIControlCenterSectionViewController {
     struct BKSDisplayBrightnessTransaction { } * _brightnessTransaction;
     CCUIControlCenterSlider * _slider;
-    BOOL  _usesCompactHeight;
+    bool  _usesCompactHeight;
 }
 
-@property (nonatomic) BOOL usesCompactHeight;
+@property (nonatomic) bool usesCompactHeight;
 
 + (Class)viewClass;
 
@@ -20,15 +20,15 @@
 - (void)_sliderDidBeginTracking:(id)arg1;
 - (void)_sliderDidEndTracking:(id)arg1;
 - (void)_sliderValueDidChange:(id)arg1;
-- (float)_yOffsetFromCenterForSlider;
+- (double)_yOffsetFromCenterForSlider;
 - (void)dealloc;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)sectionIdentifier;
-- (void)setUsesCompactHeight:(BOOL)arg1;
-- (BOOL)usesCompactHeight;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)setUsesCompactHeight:(bool)arg1;
+- (bool)usesCompactHeight;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

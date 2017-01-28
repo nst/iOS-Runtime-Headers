@@ -5,34 +5,34 @@
 @interface VKTimedAnimation : VKAnimation {
     double  _duration;
     double  _lastTimestamp;
-    BOOL  _resuming;
+    bool  _resuming;
     double  _startTimestamp;
-    BOOL  _startTimestampSet;
-    id /* block */  _stepHandler;
-    id /* block */  _timingFunction;
+    bool  _startTimestampSet;
+    id  _stepHandler;
+    id  _timingFunction;
 }
 
-@property (nonatomic, copy) id /* block */ stepHandler;
-@property (nonatomic, copy) id /* block */ timingFunction;
+@property (nonatomic, copy) id stepHandler;
+@property (nonatomic, copy) id timingFunction;
 
-+ (void)setDragCoefficientGetter:(id /* block */)arg1;
++ (void)setDragCoefficientGetter:(id)arg1;
 
 - (void)dealloc;
 - (double)duration;
 - (id)init;
 - (id)initWithDuration:(double)arg1;
 - (id)initWithDuration:(double)arg1 name:(id)arg2;
-- (id)initWithDuration:(double)arg1 priority:(int)arg2 name:(id)arg3;
+- (id)initWithDuration:(double)arg1 priority:(long long)arg2 name:(id)arg3;
 - (id)initWithName:(id)arg1;
 - (void)onTimerFired:(double)arg1;
 - (void)pause;
 - (void)resume;
 - (void)setDuration:(double)arg1;
-- (void)setStepHandler:(id /* block */)arg1;
-- (void)setTimingFunction:(id /* block */)arg1;
-- (id /* block */)stepHandler;
-- (void)stopAnimation:(BOOL)arg1;
-- (BOOL)timed;
-- (id /* block */)timingFunction;
+- (void)setStepHandler:(id)arg1;
+- (void)setTimingFunction:(id)arg1;
+- (id)stepHandler;
+- (void)stopAnimation:(bool)arg1;
+- (bool)timed;
+- (id)timingFunction;
 
 @end

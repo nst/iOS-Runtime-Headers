@@ -9,11 +9,11 @@
 - (NSNumber *)frequency;
 - (id)init;
 - (NSNumber *)presetNumber;
-- (int)radioType;
+- (long long)radioType;
 - (void)setChannel:(NSString *)arg1;
 - (void)setFrequency:(NSNumber *)arg1;
 - (void)setPresetNumber:(NSNumber *)arg1;
-- (void)setRadioType:(int)arg1;
+- (void)setRadioType:(long long)arg1;
 - (void)setStationName:(NSString *)arg1;
 - (NSString *)stationName;
 

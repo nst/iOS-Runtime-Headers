@@ -6,6 +6,6 @@
 @required
 
 - (void)collectionViewLayout:(UICollectionViewLayout *)arg1 willSupplyLayoutAttributes:(NSArray *)arg2;
-- (BOOL)collectionViewLayoutShouldProvideCustomAnimations:(UICollectionViewLayout *)arg1;
+- (bool)collectionViewLayoutShouldProvideCustomAnimations:(UICollectionViewLayout *)arg1;
 
 @end

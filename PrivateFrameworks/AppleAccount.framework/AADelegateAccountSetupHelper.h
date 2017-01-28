@@ -8,7 +8,7 @@
     NSMutableDictionary * _assistantDelegates;
     NSArray * _delegatesToSetup;
     NSObject<OS_dispatch_source> * _delegatetimer;
-    id /* block */  _handler;
+    id  _handler;
     NSMutableArray * _pendingCompletionBundles;
 }
 
@@ -18,6 +18,6 @@
 - (void)_setupDelegateAccountsWithEmailChoice:(id)arg1;
 - (id)init;
 - (id)initWithStore:(id)arg1;
-- (void)setupiCloudDelegateWithUsername:(id)arg1 password:(id)arg2 emailChoice:(id)arg3 withHandler:(id /* block */)arg4;
+- (void)setupiCloudDelegateWithUsername:(id)arg1 password:(id)arg2 emailChoice:(id)arg3 withHandler:(id)arg4;
 
 @end

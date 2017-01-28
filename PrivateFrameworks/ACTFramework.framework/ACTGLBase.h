@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)backupContext;
@@ -24,11 +24,11 @@
 - (void)dealloc;
 - (void)deleteBuffers;
 - (id)init;
-- (BOOL)initializeOffScreenBuffers;
+- (bool)initializeOffScreenBuffers;
 - (int)loadBuffer:(struct __IOSurface { }*)arg1 inTextureUnit:(unsigned int)arg2 uniformName:(const char *)arg3 planeIndex:(unsigned int)arg4 usingProgram:(unsigned int)arg5;
 - (void)releaseTextures;
 - (int)renderBuffer:(struct __IOSurface { }*)arg1 intoBuffer:(struct __IOSurface { }*)arg2 planeIndex:(unsigned int)arg3 usingProgram:(unsigned int)arg4 interpolate:(unsigned int)arg5 viewportOrigX:(int)arg6 viewportOrigY:(int)arg7 viewportWidth:(int)arg8 viewportHeight:(int)arg9 numIters:(unsigned int)arg10;
-- (int)renderInto16bitYBuffer:(unsigned short*)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 usingProgram:(unsigned int)arg4;
+- (int)renderInto16bitYBuffer:(unsigned short*)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 usingProgram:(unsigned int)arg4;
 - (int)renderIntoBuffer:(struct __IOSurface { }*)arg1 planeIndex:(unsigned int)arg2 usingProgram:(unsigned int)arg3 viewportOrigX:(int)arg4 viewportOrigY:(int)arg5 viewportWidth:(int)arg6 viewportHeight:(int)arg7;
 - (void)restoreContext;
 - (void)setCurrentContext;

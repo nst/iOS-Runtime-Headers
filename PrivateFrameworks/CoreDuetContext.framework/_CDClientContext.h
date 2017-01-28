@@ -4,7 +4,7 @@
 
 @interface _CDClientContext : NSObject <_CDUserContext, _CDUserContextServerMonitoring> {
     NSXPCListenerEndpoint * _endpoint;
-    BOOL  _interrupted;
+    bool  _interrupted;
     NSMutableDictionary * _keyPathToValues;
     NSCountedSet * _keyPathsWithRegistrationsForAnyChange;
     NSObject<OS_os_log> * _log;
@@ -19,8 +19,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL interrupted;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool interrupted;
 @property (nonatomic, retain) NSMutableDictionary *keyPathToValues;
 @property (nonatomic, retain) NSCountedSet *keyPathsWithRegistrationsForAnyChange;
 @property (nonatomic, retain) NSObject<OS_os_log> *log;
@@ -40,11 +40,11 @@
 - (void)dealloc;
 - (void)deregisterCallback:(id)arg1;
 - (id)endpoint;
-- (BOOL)evaluatePredicate:(id)arg1;
-- (void)handleContextualChange:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)hasKnowledgeOfContextualKeyPath:(id)arg1;
+- (bool)evaluatePredicate:(id)arg1;
+- (void)handleContextualChange:(id)arg1 handler:(id)arg2;
+- (bool)hasKnowledgeOfContextualKeyPath:(id)arg1;
 - (id)initWithEndpoint:(id)arg1;
-- (BOOL)interrupted;
+- (bool)interrupted;
 - (id)keyPathToValues;
 - (id)keyPathsWithRegistrationsForAnyChange;
 - (id)lastModifiedDateForContextualKeyPath:(id)arg1;
@@ -59,12 +59,12 @@
 - (id)registrations;
 - (void)removeKeyPathsWithRegistrationsForAnyChangeFromRegistration:(id)arg1;
 - (void)setEndpoint:(id)arg1;
-- (void)setInterrupted:(BOOL)arg1;
+- (void)setInterrupted:(bool)arg1;
 - (void)setKeyPathToValues:(id)arg1;
 - (void)setKeyPathsWithRegistrationsForAnyChange:(id)arg1;
 - (void)setLog:(id)arg1;
-- (BOOL)setObject:(id)arg1 forContextualKeyPath:(id)arg2;
-- (BOOL)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (bool)setObject:(id)arg1 forContextualKeyPath:(id)arg2;
+- (bool)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setOpenRegistrationTokens:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRegistrationCallbackQueue:(id)arg1;

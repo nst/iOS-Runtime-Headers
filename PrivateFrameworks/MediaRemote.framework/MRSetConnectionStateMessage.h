@@ -6,9 +6,9 @@
 
 @property (nonatomic, readonly) unsigned int state;
 
-- (unsigned int)encryptionType;
+- (unsigned long long)encryptionType;
 - (id)initWithConnectionState:(unsigned int)arg1;
 - (unsigned int)state;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

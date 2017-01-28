@@ -7,7 +7,7 @@
     _TimelineGapNode * _gapNode;
     _TimelineEntryNode * _leftmostNode;
     _TimelineWindow * _nowWindow;
-    BOOL  _paused;
+    bool  _paused;
     _TimelineEntryNode * _rightmostNode;
     NSDate * _timeTravelDate;
     NSDate * _timeTravelLeftBoundary;
@@ -17,7 +17,7 @@
 }
 
 @property (nonatomic) <NTKComplicationTimelineDelegate> *delegate;
-@property (nonatomic) BOOL paused;
+@property (nonatomic) bool paused;
 @property (nonatomic, retain) NSDate *timeTravelDate;
 @property (nonatomic, retain) NSDate *timeTravelLeftBoundary;
 @property (nonatomic, retain) NSDate *timeTravelRightBoundary;
@@ -48,11 +48,11 @@
 - (id)initWithEntry:(id)arg1;
 - (id)nowEntry;
 - (id)nowWindow;
-- (int)nowWindowNodeCapacity;
-- (BOOL)paused;
+- (long long)nowWindowNodeCapacity;
+- (bool)paused;
 - (void)resetWithEntry:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (void)setPaused:(bool)arg1;
 - (void)setTimeTravelDate:(id)arg1;
 - (void)setTimeTravelLeftBoundary:(id)arg1;
 - (void)setTimeTravelRightBoundary:(id)arg1;
@@ -61,6 +61,6 @@
 - (id)timeTravelLeftBoundary;
 - (id)timeTravelRightBoundary;
 - (id)timeTravelWindow;
-- (int)timeTravelWindowNodeCapacity;
+- (long long)timeTravelWindowNodeCapacity;
 
 @end

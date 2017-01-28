@@ -12,7 +12,7 @@
                     struct __hash_node<std::__1::__hash_value_type<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const std::__1::array<unsigned char, 20>, TSPData *__weak>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -23,7 +23,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const std::__1::array<unsigned char, 20>, std::__1::__hash_value_type<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<const std::__1::array<unsigned char, 20>, std::__1::__hash_value_type<const std::__1::array<unsigned char, 20>, TSPData *__weak>, TSP::DigestEqualTo, true> > { 
                 float __first_; 
@@ -32,7 +32,7 @@
     }  _digestToDataMap;
     NSObject<OS_dispatch_group> * _externalReferenceRemovalGroup;
     NSObject<OS_dispatch_queue> * _externalReferenceRemovalQueue;
-    BOOL  _hasExternalReferences;
+    bool  _hasExternalReferences;
     struct unordered_map<const long long, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak> > > { 
         struct __hash_table<std::__1::__hash_value_type<const long long, TSPData *__weak>, std::__1::__unordered_map_hasher<const long long, std::__1::__hash_value_type<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true>, std::__1::__unordered_map_equal<const long long, std::__1::__hash_value_type<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true>, std::__1::allocator<std::__1::__hash_value_type<const long long, TSPData *__weak> > > { 
             struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *> > > { 
@@ -40,7 +40,7 @@
                     struct __hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> {} **__first_; 
                     struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *> > { 
                         struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<const long long, TSPData *__weak>, void *> *> > { 
-                            unsigned long __first_; 
+                            unsigned long long __first_; 
                         } __data_; 
                     } __second_; 
                 } __ptr_; 
@@ -51,7 +51,7 @@
                 } __first_; 
             } __p1_; 
             struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<const long long, std::__1::__hash_value_type<const long long, TSPData *__weak>, TSP::ObjectIdentifierHash, true> > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __p2_; 
             struct __compressed_pair<float, std::__1::__unordered_map_equal<const long long, std::__1::__hash_value_type<const long long, TSPData *__weak>, std::__1::equal_to<const long long>, true> > { 
                 float __first_; 
@@ -66,58 +66,58 @@
 
 @property (nonatomic, readonly) TSPObjectContext *context;
 
-+ (void)readWithChannel:(id)arg1 handler:(id /* block */)arg2;
-+ (void)readWithChannelImpl:(id)arg1 handler:(id /* block */)arg2;
-+ (void)readWithURL:(id)arg1 handler:(id /* block */)arg2;
-+ (BOOL)requestDocumentResourcesUsingDataProvider:(id)arg1 packageMetadata:(id)arg2;
++ (void)readWithChannel:(id)arg1 handler:(id)arg2;
++ (void)readWithChannelImpl:(id)arg1 handler:(id)arg2;
++ (void)readWithURL:(id)arg1 handler:(id)arg2;
++ (bool)requestDocumentResourcesUsingDataProvider:(id)arg1 packageMetadata:(id)arg2;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addData:(id)arg1;
-- (void)addDataFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 info:(const struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg4 areExternalReferencesAllowed:(BOOL)arg5;
+- (void)addDataFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 info:(const struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg4 areExternalReferencesAllowed:(bool)arg5;
 - (id)addNewDataForStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3;
-- (BOOL)attemptToMaterializeData:(id)arg1 dataURL:(id)arg2 dataURLType:(int)arg3;
+- (bool)attemptToMaterializeData:(id)arg1 dataURL:(id)arg2 dataURLType:(long long)arg3;
 - (id)checkForPersistenceWarningsWithPackageURL:(id)arg1;
 - (id)context;
-- (void)coordinateReadingNewFileURL:(id)arg1 byAccessor:(id /* block */)arg2;
+- (void)coordinateReadingNewFileURL:(id)arg1 byAccessor:(id)arg2;
 - (id)copyData:(id)arg1;
 - (id)dataForDigest:(id)arg1;
-- (void)dataForDigest:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
-- (id)dataForDigestImpl:(id)arg1 accessorBlock:(id /* block */)arg2;
-- (id)dataForDigestImpl:(id)arg1 skipDocumentResourcesLookup:(BOOL)arg2 accessorBlock:(id /* block */)arg3;
+- (void)dataForDigest:(id)arg1 queue:(id)arg2 completion:(id)arg3;
+- (id)dataForDigestImpl:(id)arg1 accessorBlock:(id)arg2;
+- (id)dataForDigestImpl:(id)arg1 skipDocumentResourcesLookup:(bool)arg2 accessorBlock:(id)arg3;
 - (id)dataForExistingData:(id)arg1 digest:(id)arg2 filename:(id)arg3 temporaryDataStorageURL:(id)arg4;
 - (id)dataForIdentifier:(long long)arg1;
 - (id)dataForIdentifierImpl:(long long)arg1;
-- (id)dataFromExternalReferenceURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
-- (void)dataFromFileURL:(id)arg1 filename:(id)arg2 context:(id)arg3 completionQueue:(id)arg4 completion:(id /* block */)arg5;
-- (id)dataFromFileURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
+- (id)dataFromExternalReferenceURL:(id)arg1 filename:(id)arg2 useFileCoordination:(bool)arg3;
+- (void)dataFromFileURL:(id)arg1 filename:(id)arg2 context:(id)arg3 completionQueue:(id)arg4 completion:(id)arg5;
+- (id)dataFromFileURL:(id)arg1 filename:(id)arg2 useFileCoordination:(bool)arg3;
 - (id)dataFromNSData:(id)arg1 filename:(id)arg2;
 - (id)dataFromReadChannel:(id)arg1 filename:(id)arg2;
-- (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 dataURLOrNil:(id)arg3 canLink:(BOOL)arg4;
-- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 dataURLOrNil:(id)arg3 canLink:(BOOL)arg4 completion:(id /* block */)arg5;
-- (id)dataFromURL:(id)arg1 filename:(id)arg2 useFileCoordination:(BOOL)arg3;
+- (id)dataFromReadChannel:(id)arg1 filename:(id)arg2 dataURLOrNil:(id)arg3 canLink:(bool)arg4;
+- (void)dataFromReadChannel:(id)arg1 filename:(id)arg2 dataURLOrNil:(id)arg3 canLink:(bool)arg4 completion:(id)arg5;
+- (id)dataFromURL:(id)arg1 filename:(id)arg2 useFileCoordination:(bool)arg3;
 - (id)dataOrNilForIdentifier:(long long)arg1;
-- (id)dataWithStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(BOOL)arg4 accessorBlock:(id /* block */)arg5;
+- (id)dataWithStorage:(id)arg1 digest:(id)arg2 filename:(id)arg3 skipDocumentResourcesLookup:(bool)arg4 accessorBlock:(id)arg5;
 - (id)dataWithTemporaryDataStorageURL:(id)arg1 digest:(id)arg2 filename:(id)arg3;
 - (void)didCloseDocument;
 - (void)didSaveWithSaveOperationState:(id)arg1;
 - (id)documentResourceDataWithStorage:(id)arg1 digestString:(id)arg2 filename:(id)arg3;
-- (void)enumerateDatasUsingBlock:(id /* block */)arg1;
-- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 dataURLType:(int)arg3 readHandler:(id /* block */)arg4 completion:(id /* block */)arg5;
-- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 dataURLType:(int)arg3 temporaryDataStorageURL:(id)arg4 keepTemporaryFileOnSuccess:(BOOL)arg5 completion:(id /* block */)arg6;
+- (void)enumerateDatasUsingBlock:(id)arg1;
+- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 dataURLType:(long long)arg3 readHandler:(id)arg4 completion:(id)arg5;
+- (void)findExistingDataForReadChannel:(id)arg1 dataURL:(id)arg2 dataURLType:(long long)arg3 temporaryDataStorageURL:(id)arg4 keepTemporaryFileOnSuccess:(bool)arg5 completion:(id)arg6;
 - (id)init;
 - (id)initWithContext:(id)arg1;
-- (BOOL)linkTemporaryURL:(id)arg1 fromURL:(id)arg2;
-- (void)loadFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 packageMetadata:(id)arg4 areExternalReferencesAllowed:(BOOL)arg5;
-- (BOOL)migrateDataToTemporaryStorageFromPackage:(id)arg1;
+- (bool)linkTemporaryURL:(id)arg1 fromURL:(id)arg2;
+- (void)loadFromPackage:(id)arg1 packageURL:(id)arg2 documentResourceDataProvider:(id)arg3 packageMetadata:(id)arg4 areExternalReferencesAllowed:(bool)arg5;
+- (bool)migrateDataToTemporaryStorageFromPackage:(id)arg1;
 - (int)openTemporaryURL:(id)arg1;
-- (BOOL)prepareSaveWithOldPackage:(id)arg1 saveOperationState:(id)arg2;
-- (BOOL)prepareTemporaryDataStorageForData:(id)arg1 temporaryDataStorage:(id*)arg2;
-- (id)remoteDataWithURL:(id)arg1 digest:(id)arg2 filename:(id)arg3 canDownload:(BOOL)arg4 downloadPriority:(int)arg5;
+- (bool)prepareSaveWithOldPackage:(id)arg1 saveOperationState:(id)arg2;
+- (bool)prepareTemporaryDataStorageForData:(id)arg1 temporaryDataStorage:(id*)arg2;
+- (id)remoteDataWithURL:(id)arg1 digest:(id)arg2 filename:(id)arg3 canDownload:(bool)arg4 downloadPriority:(long long)arg5;
 - (void)removeExternalReferenceForData:(id)arg1 storage:(id)arg2;
 - (void)removeExternalReferences;
 - (void)removeFileAtURL:(id)arg1;
-- (BOOL)shouldAttemptToMaterializeData:(id)arg1;
+- (bool)shouldAttemptToMaterializeData:(id)arg1;
 - (id)temporaryDataStorageURLForFilename:(id)arg1;
 - (void)waitForRemoveExternalReferencesToComplete;
 

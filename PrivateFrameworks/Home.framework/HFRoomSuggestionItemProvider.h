@@ -3,12 +3,12 @@
  */
 
 @interface HFRoomSuggestionItemProvider : HFItemProvider {
-    unsigned int  _suggestedRoomLimit;
+    unsigned long long  _suggestedRoomLimit;
     NSSet * _suggestionItems;
     <HFRoomSuggestionVendor> * _suggestionVendor;
 }
 
-@property (nonatomic) unsigned int suggestedRoomLimit;
+@property (nonatomic) unsigned long long suggestedRoomLimit;
 @property (nonatomic, retain) NSSet *suggestionItems;
 @property (nonatomic, retain) <HFRoomSuggestionVendor> *suggestionVendor;
 
@@ -17,10 +17,10 @@
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;
-- (void)setSuggestedRoomLimit:(unsigned int)arg1;
+- (void)setSuggestedRoomLimit:(unsigned long long)arg1;
 - (void)setSuggestionItems:(id)arg1;
 - (void)setSuggestionVendor:(id)arg1;
-- (unsigned int)suggestedRoomLimit;
+- (unsigned long long)suggestedRoomLimit;
 - (id)suggestionItems;
 - (id)suggestionVendor;
 

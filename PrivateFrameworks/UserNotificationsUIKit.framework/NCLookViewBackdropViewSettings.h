@@ -4,14 +4,16 @@
 
 @interface NCLookViewBackdropViewSettings : _UIBackdropViewSettings
 
-@property (getter=_isBlurred, nonatomic, readonly) BOOL blurred;
-@property (getter=_isDarkened, nonatomic, readonly) BOOL darkened;
+@property (getter=_isBlurred, nonatomic, readonly) bool blurred;
+@property (getter=_isDarkened, nonatomic, readonly) bool darkened;
 
-+ (id)lookViewBackdropViewSettingsWithBlur:(BOOL)arg1;
-+ (id)lookViewBackdropViewSettingsWithBlur:(BOOL)arg1 darken:(BOOL)arg2;
++ (id)lookViewBackdropViewSettingsWithBlur:(bool)arg1;
++ (id)lookViewBackdropViewSettingsWithBlur:(bool)arg1 darken:(bool)arg2;
++ (id)lookViewBackdropViewSettingsWithBlur:(bool)arg1 darken:(bool)arg2 materialSettings:(id)arg3;
++ (void)updateSettings:(id)arg1 withMaterialSettings:(id)arg2 blur:(bool)arg3 darken:(bool)arg4 captureOnly:(bool)arg5;
 
-- (BOOL)_isBlurred;
-- (BOOL)_isDarkened;
+- (bool)_isBlurred;
+- (bool)_isDarkened;
 - (void)setDefaultValues;
 
 @end

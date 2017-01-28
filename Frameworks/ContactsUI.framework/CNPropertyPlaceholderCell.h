@@ -11,8 +11,8 @@
 - (void).cxx_destruct;
 - (id)label;
 - (id)labelView;
-- (float)minCellHeight;
+- (double)minCellHeight;
 - (void)setCardGroupItem:(id)arg1;
-- (BOOL)shouldPerformDefaultAction;
+- (bool)shouldPerformDefaultAction;
 
 @end

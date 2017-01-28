@@ -8,6 +8,6 @@
 
 - (void).cxx_destruct;
 - (id)initWithTrace:(id)arg1;
-- (void)recordBookmarkAtTime:(double)arg1 withScreenshotData:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)recordBookmarkAtTime:(double)arg1 withScreenshotData:(id)arg2 completionHandler:(id)arg3;
 
 @end

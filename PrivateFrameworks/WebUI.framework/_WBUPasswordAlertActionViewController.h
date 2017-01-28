@@ -4,13 +4,13 @@
 
 @interface _WBUPasswordAlertActionViewController : UIViewController {
     NSString * _detail;
-    int  _style;
+    long long  _style;
     NSString * _title;
 }
 
 - (void).cxx_destruct;
-- (id)initWithTitle:(id)arg1 detail:(id)arg2 style:(int)arg3;
+- (id)initWithTitle:(id)arg1 detail:(id)arg2 style:(long long)arg3;
 - (void)loadView;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 
 @end

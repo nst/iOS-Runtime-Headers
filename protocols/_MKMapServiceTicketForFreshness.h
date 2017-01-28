@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)allAreFreshFromNetwork;
+- (bool)allAreFreshFromNetwork;
 
 @end

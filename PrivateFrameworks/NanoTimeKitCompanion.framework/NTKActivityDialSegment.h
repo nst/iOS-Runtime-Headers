@@ -3,35 +3,35 @@
  */
 
 @interface NTKActivityDialSegment : NSObject {
-    float  _alpha;
+    double  _alpha;
     CALayer * _arcLayer;
     NTKFaceColorScheme * _colorScheme;
     CALayer * _tickLayer;
-    float  _tickRotation;
-    float  _tickScale;
+    double  _tickRotation;
+    double  _tickScale;
 }
 
-@property (nonatomic) float alpha;
+@property (nonatomic) double alpha;
 @property (nonatomic, retain) CALayer *arcLayer;
 @property (nonatomic, retain) NTKFaceColorScheme *colorScheme;
 @property (nonatomic, retain) CALayer *tickLayer;
-@property (nonatomic) float tickRotation;
-@property (nonatomic) float tickScale;
+@property (nonatomic) double tickRotation;
+@property (nonatomic) double tickScale;
 
 - (void).cxx_destruct;
 - (void)_updateTransform;
-- (float)alpha;
+- (double)alpha;
 - (id)arcLayer;
 - (id)colorScheme;
-- (id)initWithHourIndex:(int)arg1;
-- (void)setAlpha:(float)arg1;
+- (id)initWithHourIndex:(long long)arg1;
+- (void)setAlpha:(double)arg1;
 - (void)setArcLayer:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setTickLayer:(id)arg1;
-- (void)setTickRotation:(float)arg1;
-- (void)setTickScale:(float)arg1;
+- (void)setTickRotation:(double)arg1;
+- (void)setTickScale:(double)arg1;
 - (id)tickLayer;
-- (float)tickRotation;
-- (float)tickScale;
+- (double)tickRotation;
+- (double)tickScale;
 
 @end

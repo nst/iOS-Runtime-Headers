@@ -12,16 +12,16 @@
 
 @property (nonatomic, retain) NSMutableArray *attributes;
 @property (nonatomic) unsigned long long customIconId;
-@property (nonatomic) BOOL hasCustomIconId;
+@property (nonatomic) bool hasCustomIconId;
 
 + (Class)attributeType;
 + (id)attributesForTransitLine:(id)arg1;
 + (id)attributesForTransitSystem:(id)arg1;
 
 - (void)addAttribute:(id)arg1;
-- (id)attributeAtIndex:(unsigned int)arg1;
+- (id)attributeAtIndex:(unsigned long long)arg1;
 - (id)attributes;
-- (unsigned int)attributesCount;
+- (unsigned long long)attributesCount;
 - (void)clearAttributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -29,14 +29,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCustomIconId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCustomIconId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setCustomIconId:(unsigned long long)arg1;
-- (void)setHasCustomIconId:(BOOL)arg1;
+- (void)setHasCustomIconId:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

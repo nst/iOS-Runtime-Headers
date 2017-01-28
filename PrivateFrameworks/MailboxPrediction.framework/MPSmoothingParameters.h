@@ -8,22 +8,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *smoothingParameters;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)addMessage:(id)arg1;
+- (bool)addMessage:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFeatures:(id)arg1;
-- (unsigned int)parameterForFeatureKey:(id)arg1;
-- (BOOL)removeMessage:(id)arg1;
+- (unsigned long long)parameterForFeatureKey:(id)arg1;
+- (bool)removeMessage:(id)arg1;
 - (void)setSmoothingParameters:(id)arg1;
 - (id)smoothingParameters;
-- (BOOL)updateWithFeature:(id)arg1 key:(id)arg2 adding:(BOOL)arg3;
-- (BOOL)updateWithMessage:(id)arg1 byAdding:(BOOL)arg2;
+- (bool)updateWithFeature:(id)arg1 key:(id)arg2 adding:(bool)arg3;
+- (bool)updateWithMessage:(id)arg1 byAdding:(bool)arg2;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setTimeTravelDate:(NSDate *)arg1 animated:(BOOL)arg2;
+- (void)setTimeTravelDate:(NSDate *)arg1 animated:(bool)arg2;
 
 @end

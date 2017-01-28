@@ -3,12 +3,12 @@
  */
 
 @interface PKPaymentCheckMerchantResponse : PKPaymentWebServiceResponse {
-    BOOL  _isRegistered;
+    bool  _isRegistered;
 }
 
-@property (nonatomic, readonly) BOOL isRegistered;
+@property (nonatomic, readonly) bool isRegistered;
 
 - (id)initWithData:(id)arg1;
-- (BOOL)isRegistered;
+- (bool)isRegistered;
 
 @end

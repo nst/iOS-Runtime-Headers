@@ -5,7 +5,7 @@
 @interface LSVPNPluginProxy : LSBundleProxy <NSSecureCoding>
 
 + (id)VPNPluginProxyForIdentifier:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_initWithBundleIdentifier:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

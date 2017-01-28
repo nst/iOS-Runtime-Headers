@@ -7,7 +7,7 @@
 
 - (void)didBeginScrollingInTableView;
 - (void)didPullDownTableView;
-- (void)didSelectResult:(SFSearchResult *)arg1 withFeedback:(SFResultEngagementFeedback *)arg2 wasPop:(BOOL)arg3;
+- (void)didSelectResult:(SFSearchResult *)arg1 withFeedback:(SFResultEngagementFeedback *)arg2 wasPop:(bool)arg3;
 - (void)didSwipeUpOnTableView;
 - (void)didTapInEmptyAreaOfTableView;
 - (void)numberOfRowsDidChange:(SPUITableViewController *)arg1;

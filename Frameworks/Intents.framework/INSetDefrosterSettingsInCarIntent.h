@@ -5,19 +5,21 @@
 @interface INSetDefrosterSettingsInCarIntent : INIntent <INSetDefrosterSettingsInCarIntentExport>
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) int defroster;
+@property (nonatomic, readonly) long long defroster;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSNumber *enable;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1;
 - (id)_typedBackingStore;
-- (int)defroster;
+- (long long)defroster;
+- (id)description;
 - (id)enable;
-- (id)initWithEnable:(id)arg1 defroster:(int)arg2;
-- (void)setDefroster:(int)arg1;
+- (id)initWithEnable:(id)arg1 defroster:(long long)arg2;
+- (void)setDefroster:(long long)arg1;
 - (void)setEnable:(id)arg1;
 
 @end

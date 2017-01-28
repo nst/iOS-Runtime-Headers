@@ -11,7 +11,7 @@
     int  _lastAmount;
     float  _lastStrength;
     CIFilter * _maskFilter;
-    BOOL  _needsReprocess;
+    bool  _needsReprocess;
 }
 
 @property (nonatomic, retain) CIFilter *ciMatrix;

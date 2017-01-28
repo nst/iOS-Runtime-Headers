@@ -5,7 +5,7 @@
 @interface CATStateMachine : NSObject {
     CATState * _currentState;
     CATState * _initialState;
-    unsigned int  _logLevel;
+    unsigned long long  _logLevel;
     NSString * _name;
     id  _target;
     NSString * mCalloutReason;
@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) CATState *currentState;
 @property (nonatomic, retain) CATState *initialState;
-@property (nonatomic) unsigned int logLevel;
+@property (nonatomic) unsigned long long logLevel;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) id target;
 
@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)addState:(id)arg1;
 - (id)addStateWithName:(id)arg1;
-- (BOOL)canTransitionWithTriggeringEvent:(id)arg1;
+- (bool)canTransitionWithTriggeringEvent:(id)arg1;
 - (id)currentState;
 - (void)dealloc;
 - (void)delegateDidEnterState:(id)arg1 event:(id)arg2;
@@ -34,11 +34,11 @@
 - (id)initWithTarget:(id)arg1;
 - (id)initialState;
 - (void)invokeAction:(SEL)arg1 event:(id)arg2;
-- (unsigned int)logLevel;
+- (unsigned long long)logLevel;
 - (id)name;
 - (void)setCurrentState:(id)arg1;
 - (void)setInitialState:(id)arg1;
-- (void)setLogLevel:(unsigned int)arg1;
+- (void)setLogLevel:(unsigned long long)arg1;
 - (void)start;
 - (id)stateWithName:(id)arg1;
 - (id)target;

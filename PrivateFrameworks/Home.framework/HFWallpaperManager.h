@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HFWallpaperFileManager *fileManager;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HFWallpaperImageCache *imageCache;
 @property (nonatomic, retain) HFWallpaperLegacyFileManager *legacyFileManager;
 @property (nonatomic, retain) <HFNamedWallpaperSource> *namedWallpaperSource;
@@ -32,9 +32,9 @@
 - (void)_logUserMetricsAfterSettingWallpaper;
 - (void)_queue_pruneUnusedWallpapers;
 - (void)_queue_setWallpaper:(id)arg1 image:(id)arg2 forHomeKitIdentifier:(id)arg3;
-- (id)_queue_wallpaperForHomeKitObject:(id)arg1 createIfNeeded:(BOOL)arg2;
-- (id)allNamedWallpapersForCollection:(int)arg1;
-- (id)defaultNamedWallpaperForCollection:(int)arg1;
+- (id)_queue_wallpaperForHomeKitObject:(id)arg1 createIfNeeded:(bool)arg2;
+- (id)allNamedWallpapersForCollection:(long long)arg1;
+- (id)defaultNamedWallpaperForCollection:(long long)arg1;
 - (void)dispatchWallpaperChangedForHomeKitObject:(id)arg1;
 - (id)fileManager;
 - (id)generateProcessedImageFromWallpaper:(id)arg1 originalImage:(id)arg2;
@@ -48,7 +48,7 @@
 - (void)initializeCacheWithHome:(id)arg1;
 - (id)legacyFileManager;
 - (void)migrateIfNeeded;
-- (int)namedCollectionTypeForHomeKitObject:(id)arg1;
+- (long long)namedCollectionTypeForHomeKitObject:(id)arg1;
 - (id)namedWallpaperSource;
 - (id)operationQueue;
 - (void)preloadWallpaperSlicesForHomeKitObject:(id)arg1;
@@ -63,7 +63,7 @@
 - (void)setWallpaper:(id)arg1 image:(id)arg2 forHomeKitObject:(id)arg3;
 - (void)setWallpaperSlices:(id)arg1;
 - (void)setWallpapers:(id)arg1;
-- (id)sliceFromWallpaper:(id)arg1 variant:(int)arg2;
+- (id)sliceFromWallpaper:(id)arg1 variant:(long long)arg2;
 - (id)userDefaults;
 - (id)wallpaperForHomeKitObject:(id)arg1;
 - (id)wallpaperSlices;

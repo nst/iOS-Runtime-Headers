@@ -3,10 +3,4 @@
 
 @protocol IKJSTabBarItem <JSExport>
 
-@required
-
-- (NSString *)identifier;
-- (IKJSNavigationDocument *)navigationDocument;
-- (NSString *)rootURL;
-
 @end

@@ -6,18 +6,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)blockUntilFirstUnlock;
 + (id)currentOsBuild;
-+ (BOOL)isClassCLocked;
-+ (BOOL)isConstrainedDevice;
-+ (BOOL)isDeviceFormattedForProtection;
-+ (BOOL)isUnlocked;
++ (bool)isClassCLocked;
++ (bool)isConstrainedDevice;
++ (bool)isDeviceFormattedForProtection;
++ (bool)isUnlocked;
 + (int)lockState;
-+ (id)registerForLockStateChangeNotifications:(id /* block */)arg1;
-+ (void)runBlockWhenDeviceIsClassCUnlocked:(id /* block */)arg1;
++ (id)registerForLockStateChangeNotifications:(id)arg1;
++ (void)runBlockWhenDeviceIsClassCUnlocked:(id)arg1;
 + (void)unregisterForLockStateChangeNotifications:(id)arg1;
 
 @end

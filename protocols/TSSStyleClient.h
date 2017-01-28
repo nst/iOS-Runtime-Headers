@@ -6,6 +6,6 @@
 @required
 
 - (NSSet *)referencedStyles;
-- (void)replaceReferencedStylesUsingBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, TSSStyle *, id /* block */, TSSStyle *, void*
+- (void)replaceReferencedStylesUsingBlock:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, TSSStyle *, id, TSSStyle *, void*
 
 @end

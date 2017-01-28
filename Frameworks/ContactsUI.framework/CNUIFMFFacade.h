@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) FMFSession *fmfSession;
 
 - (void).cxx_destruct;
-- (void)fetchFriendHandlesWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchFriendHandlesWithCompletionHandler:(id)arg1;
 - (id)fmfSession;
 - (id)init;
 - (id)initWithFMFSession:(id)arg1;

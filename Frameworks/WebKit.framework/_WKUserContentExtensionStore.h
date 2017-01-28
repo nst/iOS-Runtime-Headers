@@ -5,7 +5,7 @@
 @interface _WKUserContentExtensionStore : NSObject <WKObject> {
     struct ObjectStorage<API::UserContentExtensionStore> { 
         struct type { 
-            unsigned char __lx[24]; 
+            unsigned char __lx[48]; 
         } data; 
     }  _userContentExtensionStore;
 }
@@ -13,7 +13,7 @@
 @property (readonly) /* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*_apiObject;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)defaultStore;
@@ -22,9 +22,9 @@
 - (/* Warning: unhandled struct encoding: '{Object=^^?@}' */ struct Object { int (**x1)(); id x2; }*)_apiObject;
 - (void)_invalidateContentExtensionVersionForIdentifier:(id)arg1;
 - (void)_removeAllContentExtensions;
-- (void)compileContentExtensionForIdentifier:(id)arg1 encodedContentExtension:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)compileContentExtensionForIdentifier:(id)arg1 encodedContentExtension:(id)arg2 completionHandler:(id)arg3;
 - (void)dealloc;
-- (void)lookupContentExtensionForIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)removeContentExtensionForIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)lookupContentExtensionForIdentifier:(id)arg1 completionHandler:(id)arg2;
+- (void)removeContentExtensionForIdentifier:(id)arg1 completionHandler:(id)arg2;
 
 @end

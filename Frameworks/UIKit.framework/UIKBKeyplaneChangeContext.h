@@ -3,33 +3,33 @@
  */
 
 @interface UIKBKeyplaneChangeContext : NSObject {
-    BOOL  _selfSizingChanged;
+    bool  _selfSizingChanged;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
-    BOOL  _sizeDidChange;
-    BOOL  _splitWidthsChanged;
-    BOOL  _updateAssistantView;
+    bool  _sizeDidChange;
+    bool  _splitWidthsChanged;
+    bool  _updateAssistantView;
 }
 
-@property (nonatomic) BOOL selfSizingChanged;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
-@property (nonatomic, readonly) BOOL sizeDidChange;
-@property (nonatomic) BOOL splitWidthsChanged;
-@property (nonatomic) BOOL updateAssistantView;
+@property (nonatomic) bool selfSizingChanged;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
+@property (nonatomic, readonly) bool sizeDidChange;
+@property (nonatomic) bool splitWidthsChanged;
+@property (nonatomic) bool updateAssistantView;
 
 + (id)keyplaneChangeContext;
-+ (id)keyplaneChangeContextWithSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)keyplaneChangeContextWithSize:(struct CGSize { double x1; double x2; })arg1;
 
-- (BOOL)selfSizingChanged;
-- (void)setSelfSizingChanged:(BOOL)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setSplitWidthsChanged:(BOOL)arg1;
-- (void)setUpdateAssistantView:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })size;
-- (BOOL)sizeDidChange;
-- (BOOL)splitWidthsChanged;
-- (BOOL)updateAssistantView;
+- (bool)selfSizingChanged;
+- (void)setSelfSizingChanged:(bool)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setSplitWidthsChanged:(bool)arg1;
+- (void)setUpdateAssistantView:(bool)arg1;
+- (struct CGSize { double x1; double x2; })size;
+- (bool)sizeDidChange;
+- (bool)splitWidthsChanged;
+- (bool)updateAssistantView;
 
 @end

@@ -9,7 +9,7 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (void)findTransitGeometryWithHandler:(id /* block */)arg1;
+- (void)findTransitGeometryWithHandler:(id)arg1;
 - (id)initWithMap:(id)arg1 transitID:(unsigned long long)arg2 coordinate:(struct { double x1; double x2; })arg3;
 
 @end

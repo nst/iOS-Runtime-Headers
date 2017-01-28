@@ -14,7 +14,7 @@
 - (id)init;
 - (id)initWithSettings:(id)arg1;
 - (id)placeholderImageProvider;
-- (id)renderAvatarsForContacts:(id)arg1 handler:(id /* block */)arg2;
+- (id)renderAvatarsForContacts:(id)arg1 handler:(id)arg2;
 - (id)resolver;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface DECConsumerHelper : NSObject
 
-+ (void)getResultsForConsumerType:(unsigned int)arg1 numberOfResults:(unsigned int)arg2 consumer:(id)arg3 startTime:(unsigned long long)arg4 group:(id)arg5 completion:(id /* block */)arg6;
++ (void)getResultsForConsumerType:(unsigned long long)arg1 numberOfResults:(unsigned long long)arg2 consumer:(id)arg3 startTime:(unsigned long long)arg4 group:(id)arg5 completion:(id)arg6;
 
 @end

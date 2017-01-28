@@ -12,7 +12,7 @@
 - (void)dealloc;
 - (void)ethernetDynamicStoreDidChange;
 - (id)ethernetNetworkInterfaces;
-- (BOOL)hasEthernetNetworkInterfaces;
+- (bool)hasEthernetNetworkInterfaces;
 - (id)init;
 - (void)registerForEthernetAdapterNotifications;
 

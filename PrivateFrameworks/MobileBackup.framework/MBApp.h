@@ -11,8 +11,8 @@
 @property (nonatomic, readonly) NSDictionary *entitlements;
 @property (nonatomic, readonly) NSString *entitlementsRelativePath;
 @property (nonatomic, readonly) NSArray *groups;
-@property (nonatomic, readonly) BOOL isPlaceholder;
-@property (nonatomic, readonly) BOOL isSystemApp;
+@property (nonatomic, readonly) bool isPlaceholder;
+@property (nonatomic, readonly) bool isSystemApp;
 @property (nonatomic, readonly) NSArray *plugins;
 
 + (id)appWithBundleID:(id)arg1;
@@ -29,8 +29,8 @@
 - (id)entitlements;
 - (id)entitlementsRelativePath;
 - (id)groups;
-- (BOOL)isPlaceholder;
-- (BOOL)isSystemApp;
+- (bool)isPlaceholder;
+- (bool)isSystemApp;
 - (id)placeholderDomainWithCache:(id)arg1;
 - (id)plugins;
 - (void)setBundleDir:(id)arg1;

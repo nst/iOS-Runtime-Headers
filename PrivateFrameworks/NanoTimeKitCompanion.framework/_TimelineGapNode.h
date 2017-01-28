@@ -3,13 +3,13 @@
  */
 
 @interface _TimelineGapNode : _TimelineNode {
-    unsigned int  _count;
+    unsigned long long  _count;
 }
 
-@property (nonatomic) unsigned int count;
+@property (nonatomic) unsigned long long count;
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)incrementCount;
-- (void)setCount:(unsigned int)arg1;
+- (void)setCount:(unsigned long long)arg1;
 
 @end

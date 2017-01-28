@@ -7,7 +7,7 @@
     VSPrivacyFacade * _privacyFacade;
 }
 
-@property (getter=isAccessGranted, nonatomic) BOOL accessGranted;
+@property (getter=isAccessGranted, nonatomic) bool accessGranted;
 @property (nonatomic, readonly) struct __CFBundle { }*bundle;
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (nonatomic, readonly) VSPrivacyFacade *privacyFacade;
@@ -17,8 +17,8 @@
 - (id)bundleIdentifier;
 - (void)dealloc;
 - (id)initWithBundle:(struct __CFBundle { }*)arg1 privacyFacade:(id)arg2;
-- (BOOL)isAccessGranted;
+- (bool)isAccessGranted;
 - (id)privacyFacade;
-- (void)setAccessGranted:(BOOL)arg1;
+- (void)setAccessGranted:(bool)arg1;
 
 @end

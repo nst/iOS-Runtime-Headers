@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly, copy) CNInstantMessageAddress *imAddress;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

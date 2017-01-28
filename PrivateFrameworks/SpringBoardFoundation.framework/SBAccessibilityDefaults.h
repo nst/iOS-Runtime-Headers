@@ -4,8 +4,8 @@
 
 @interface SBAccessibilityDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic) BOOL allowReachability;
-@property (nonatomic, readonly) BOOL reallyDisableReachability;
+@property (nonatomic) bool allowReachability;
+@property (nonatomic, readonly) bool reallyDisableReachability;
 
 - (void)_bindAndRegisterDefaults;
 

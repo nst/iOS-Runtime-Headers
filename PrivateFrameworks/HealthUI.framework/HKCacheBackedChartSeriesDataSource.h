@@ -5,25 +5,25 @@
 @interface HKCacheBackedChartSeriesDataSource : HKGraphSeriesDataSource <HKChartDataCacheObserver> {
     HKChartCache * _chartCache;
     struct { 
-        int index; 
-        int zoom; 
+        long long index; 
+        long long zoom; 
     }  _lastEndPath;
     struct { 
-        int index; 
-        int zoom; 
+        long long index; 
+        long long zoom; 
     }  _lastStartPath;
 }
 
 @property (nonatomic, retain) HKChartCache *chartCache;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_resetCachedPaths;
-- (void)blocksRequestedFromPath:(struct { int x1; int x2; })arg1 toPath:(struct { int x1; int x2; })arg2;
-- (id)cachedBlockForPath:(struct { int x1; int x2; })arg1;
+- (void)blocksRequestedFromPath:(struct { long long x1; long long x2; })arg1 toPath:(struct { long long x1; long long x2; })arg2;
+- (id)cachedBlockForPath:(struct { long long x1; long long x2; })arg1;
 - (id)chartCache;
 - (void)chartCacheDidUpdate:(id)arg1;
 - (id)init;

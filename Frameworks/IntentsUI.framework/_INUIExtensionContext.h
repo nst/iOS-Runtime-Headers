@@ -4,27 +4,27 @@
 
 @interface _INUIExtensionContext : NSExtensionContext <_INUIExtensionContextVending> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _cachedHostedViewMaximumAllowedSize;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _cachedHostedViewMinimumAllowedSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (id)_errorHandlingHostProxy;
-- (struct CGSize { float x1; float x2; })hostedViewMaximumAllowedSize;
-- (struct CGSize { float x1; float x2; })hostedViewMinimumAllowedSize;
+- (struct CGSize { double x1; double x2; })hostedViewMaximumAllowedSize;
+- (struct CGSize { double x1; double x2; })hostedViewMinimumAllowedSize;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
-- (void)setHostedViewMinimumAllowedSize:(struct CGSize { float x1; float x2; })arg1 maximumAllowedSize:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
+- (void)setHostedViewMinimumAllowedSize:(struct CGSize { double x1; double x2; })arg1 maximumAllowedSize:(struct CGSize { double x1; double x2; })arg2 completion:(id)arg3;
 
 @end

@@ -8,8 +8,8 @@
     UILayoutGuide * _belowPurchaseLayoutGuide;
     <ICQPageDelegate> * _delegate;
     _ICQTextView * _finePrintView;
-    BOOL  _isResizingFonts;
-    BOOL  _layoutGuideProblem;
+    bool  _isResizingFonts;
+    bool  _layoutGuideProblem;
     UIButton * _learnMoreButton;
     ICQLink * _learnMoreLink;
     UILabel * _messageLabel;
@@ -18,11 +18,11 @@
     ICQLink * _purchaseLink;
     NSArray * _serviceViews;
     UIActivityIndicatorView * _spinner;
-    BOOL  _suppressResizingFonts;
+    bool  _suppressResizingFonts;
     UILabel * _titleLabel;
-    float  _titleTopMargin;
+    double  _titleTopMargin;
     NSLayoutConstraint * _titleTopMarginConstraint;
-    int  _upgradeMode;
+    long long  _upgradeMode;
     _ICQUpgradeOfferPageSpecification * _upgradeOfferPageSpecification;
 }
 
@@ -33,7 +33,7 @@
 @property (nonatomic) <ICQPageDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _ICQTextView *finePrintView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIButton *learnMoreButton;
 @property (nonatomic, readonly) ICQLink *learnMoreLink;
 @property (nonatomic, retain) UILabel *messageLabel;
@@ -44,16 +44,16 @@
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *titleLabel;
-@property (nonatomic) float titleTopMargin;
+@property (nonatomic) double titleTopMargin;
 @property (nonatomic, readonly) NSLayoutConstraint *titleTopMarginConstraint;
-@property (nonatomic) int upgradeMode;
+@property (nonatomic) long long upgradeMode;
 @property (nonatomic, retain) _ICQUpgradeOfferPageSpecification *upgradeOfferPageSpecification;
 
 - (void).cxx_destruct;
 - (void)_resetAdjustableItems;
-- (BOOL)_shrinkFontOfLabel:(id)arg1;
+- (bool)_shrinkFontOfLabel:(id)arg1;
 - (void)_shrinkTopMargin;
-- (float)_superGetTopMargin;
+- (double)_superGetTopMargin;
 - (id)abovePurchaseLayoutGuide;
 - (id)activeConstraints;
 - (id)belowPurchaseLayoutGuide;
@@ -63,7 +63,7 @@
 - (id)finePrintParagraphStyleAttributes;
 - (id)finePrintView;
 - (id)finePrintViewAttributedText;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)learnMoreButton;
 - (void)learnMoreButtonTapped:(id)arg1;
@@ -83,16 +83,16 @@
 - (void)setServiceViews:(id)arg1;
 - (void)setSpinner:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (void)setTitleTopMargin:(float)arg1;
-- (void)setUpgradeMode:(int)arg1;
+- (void)setTitleTopMargin:(double)arg1;
+- (void)setUpgradeMode:(long long)arg1;
 - (void)setUpgradeOfferPageSpecification:(id)arg1;
 - (id)spinner;
-- (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
 - (id)titleLabel;
-- (float)titleTopMargin;
+- (double)titleTopMargin;
 - (id)titleTopMarginConstraint;
 - (void)updateConstraints;
-- (int)upgradeMode;
+- (long long)upgradeMode;
 - (id)upgradeOfferPageSpecification;
 - (id)upgradeOfferSpecification;
 

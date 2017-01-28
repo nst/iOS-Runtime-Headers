@@ -7,9 +7,9 @@
     UIImageView * _actionTypeImageView;
     UIView * _divider;
     NSLayoutConstraint * _dividerHeightConstraint;
-    BOOL  _expanded;
-    BOOL  _highlighted;
-    BOOL  _showsAccessory;
+    bool  _expanded;
+    bool  _highlighted;
+    bool  _showsAccessory;
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
 }
@@ -18,9 +18,9 @@
 @property (nonatomic, retain) UIImageView *actionTypeImageView;
 @property (nonatomic, retain) UIView *divider;
 @property (nonatomic, retain) NSLayoutConstraint *dividerHeightConstraint;
-@property (getter=isExpanded, nonatomic) BOOL expanded;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic) BOOL showsAccessory;
+@property (getter=isExpanded, nonatomic) bool expanded;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic) bool showsAccessory;
 @property (nonatomic, retain) UILabel *subtitleLabel;
 @property (nonatomic, retain) UILabel *titleLabel;
 
@@ -40,24 +40,24 @@
 - (id)divider;
 - (id)dividerHeightConstraint;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isExpanded;
-- (BOOL)isHighlighted;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isExpanded;
+- (bool)isHighlighted;
 - (void)prepareForReuse;
 - (void)setAccessoryImageView:(id)arg1;
 - (void)setActionTypeImageView:(id)arg1;
 - (void)setDivider:(id)arg1;
 - (void)setDividerHeightConstraint:(id)arg1;
-- (void)setExpanded:(BOOL)arg1;
-- (void)setExpanded:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShowsAccessory:(BOOL)arg1;
+- (void)setExpanded:(bool)arg1;
+- (void)setExpanded:(bool)arg1 animated:(bool)arg2;
+- (void)setHighlighted:(bool)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setShowsAccessory:(bool)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (BOOL)showsAccessory;
+- (bool)showsAccessory;
 - (id)subtitleLabel;
 - (id)titleLabel;
-- (void)updateVisualStateAnimated:(BOOL)arg1;
+- (void)updateVisualStateAnimated:(bool)arg1;
 
 @end

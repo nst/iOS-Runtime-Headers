@@ -18,6 +18,6 @@
 - (void)setValueForSpecifier:(id)arg1 defaultValue:(id)arg2;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

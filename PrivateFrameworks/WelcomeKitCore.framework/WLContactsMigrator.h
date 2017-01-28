@@ -12,7 +12,7 @@
 - (id)_vcardDataWithoutCustomFieldsFromVcardData:(id)arg1;
 - (id)contentType;
 - (void)estimateItemSizeForSummary:(id)arg1 account:(id)arg2;
-- (void)importRecordData:(id)arg1 summary:(id)arg2 account:(id)arg3 completion:(id /* block */)arg4;
+- (void)importRecordData:(id)arg1 summary:(id)arg2 account:(id)arg3 completion:(id)arg4;
 - (id)initWithSourceDevice:(id)arg1 urlSessionController:(id)arg2 delegate:(id)arg3;
 
 @end

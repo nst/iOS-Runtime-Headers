@@ -80,7 +80,7 @@
 
 // Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)alias;
@@ -104,8 +104,8 @@
 - (id)imService;
 - (id)imUsername;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToDAContactSearchResultElement:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToDAContactSearchResultElement:(id)arg1;
 - (id)jpegPhoto;
 - (id)lastName;
 - (id)mainPhone;

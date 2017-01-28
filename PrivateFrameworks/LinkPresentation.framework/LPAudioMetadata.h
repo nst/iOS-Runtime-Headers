@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, readonly) unsigned int version;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;

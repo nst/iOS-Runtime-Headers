@@ -12,7 +12,7 @@
     NSString * _displayName;
     NSDictionary * _extendedInfo;
     LSApplicationProxy * _proxy;
-    unsigned int  _sequenceNumber;
+    unsigned long long  _sequenceNumber;
 }
 
 @property (getter=_bundle, nonatomic, readonly, retain) BSCFBundle *bundle;
@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, copy) NSDictionary *extendedInfo;
 @property (getter=_proxy, nonatomic, readonly, retain) LSApplicationProxy *proxy;
-@property (nonatomic) unsigned int sequenceNumber;
+@property (nonatomic) unsigned long long sequenceNumber;
 
 - (id)_bundle;
 - (id)_initWithApplicationProxy:(id)arg1;
@@ -40,7 +40,7 @@
 - (id)displayName;
 - (id)extendedInfo;
 - (id)extendedInfoValueForKey:(id)arg1;
-- (unsigned int)sequenceNumber;
+- (unsigned long long)sequenceNumber;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleType:(id)arg1;
 - (void)setBundleURL:(id)arg1;
@@ -48,6 +48,6 @@
 - (void)setCacheGUID:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setExtendedInfo:(id)arg1;
-- (void)setSequenceNumber:(unsigned int)arg1;
+- (void)setSequenceNumber:(unsigned long long)arg1;
 
 @end

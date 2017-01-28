@@ -5,6 +5,6 @@
 
 @required
 
-- (CLKFont *)utilityDateComplicationFontForDateStyle:(unsigned int)arg1;
+- (CLKFont *)utilityDateComplicationFontForDateStyle:(unsigned long long)arg1;
 
 @end

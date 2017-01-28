@@ -5,7 +5,7 @@
 
 @optional
 
-- (BOOL)dialogController:(_SFDialogController *)arg1 shouldSuppressDialog:(_SFDialog *)arg2;
+- (bool)dialogController:(_SFDialogController *)arg1 shouldSuppressDialog:(_SFDialog *)arg2;
 - (void)dialogController:(_SFDialogController *)arg1 willPresentDialog:(_SFDialog *)arg2;
 
 @end

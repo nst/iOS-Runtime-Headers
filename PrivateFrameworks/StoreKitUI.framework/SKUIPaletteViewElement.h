@@ -4,6 +4,6 @@
 
 @interface SKUIPaletteViewElement : SKUIViewElement
 
-- (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
+- (void)enumerateChildrenUsingBlock:(id)arg1;
 
 @end

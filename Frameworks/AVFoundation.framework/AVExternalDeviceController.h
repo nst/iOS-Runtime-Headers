@@ -8,17 +8,17 @@
 
 @property (nonatomic, readonly, copy) NSArray *availableExternalDevices;
 @property (nonatomic) <AVExternalDeviceControllerDelegate> *delegate;
-@property (nonatomic) int discoveryMode;
+@property (nonatomic) long long discoveryMode;
 
 - (id)availableExternalDevices;
 - (void)dealloc;
 - (id)delegate;
-- (int)discoveryMode;
+- (long long)discoveryMode;
 - (id)init;
-- (BOOL)isExternalDeviceCurrent:(id)arg1;
-- (BOOL)setCurrentExternalDevice:(id)arg1;
-- (BOOL)setCurrentExternalDevice:(id)arg1 withPassword:(id)arg2;
+- (bool)isExternalDeviceCurrent:(id)arg1;
+- (bool)setCurrentExternalDevice:(id)arg1;
+- (bool)setCurrentExternalDevice:(id)arg1 withPassword:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setDiscoveryMode:(int)arg1;
+- (void)setDiscoveryMode:(long long)arg1;
 
 @end

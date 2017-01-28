@@ -4,24 +4,24 @@
 
 @interface CHPhoneNumber : CHLogger {
     NSString * _ISOCountryCode;
-    BOOL  _formatted;
+    bool  _formatted;
     NSString * _formattedPhoneNumber;
     NSString * _originalPhoneNumber;
 }
 
 @property (copy) NSString *ISOCountryCode;
-@property BOOL formatted;
+@property bool formatted;
 @property (copy) NSString *formattedPhoneNumber;
 @property (copy) NSString *originalPhoneNumber;
 
 - (void).cxx_destruct;
 - (id)ISOCountryCode;
-- (BOOL)formatted;
+- (bool)formatted;
 - (id)formattedNumber;
 - (id)formattedPhoneNumber;
 - (id)initWithPhoneNumber:(id)arg1 andISOCountryCode:(id)arg2;
 - (id)originalPhoneNumber;
-- (void)setFormatted:(BOOL)arg1;
+- (void)setFormatted:(bool)arg1;
 - (void)setFormattedPhoneNumber:(id)arg1;
 - (void)setISOCountryCode:(id)arg1;
 - (void)setOriginalPhoneNumber:(id)arg1;

@@ -3,22 +3,22 @@
  */
 
 @interface _HKBooleanFilter : _HKFilter {
-    BOOL  _boolValue;
+    bool  _boolValue;
 }
 
-@property (nonatomic, readonly) BOOL boolValue;
+@property (nonatomic, readonly) bool boolValue;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)filterWithBoolValue:(BOOL)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)filterWithBoolValue:(bool)arg1;
++ (bool)supportsSecureCoding;
 
-- (BOOL)acceptsDataObject:(id)arg1;
-- (BOOL)boolValue;
+- (bool)acceptsDataObject:(id)arg1;
+- (bool)boolValue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

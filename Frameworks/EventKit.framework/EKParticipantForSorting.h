@@ -2,24 +2,37 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKParticipantForSorting : NSObject {
+@interface EKParticipantForSorting : NSObject <NSCopying> {
     NSString * _cachedDisplayName;
     NSString * _firstName;
-    BOOL  _isEmail;
+    bool  _isEmail;
     NSString * _lastName;
     EKParticipant * _participant;
 }
 
+@property (nonatomic, copy) NSString *cachedDisplayName;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic) bool isEmail;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic) EKParticipant *participant;
+
 + (id)contactStore;
++ (id)participantForSortingWithEKParticipant:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)compare:(id)arg1;
+- (id)cachedDisplayName;
+- (long long)compare:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayName;
 - (id)firstName;
-- (id)initWithEKParticipant:(id)arg1;
-- (BOOL)isEmail;
+- (bool)isEmail;
 - (id)lastName;
 - (id)participant;
+- (void)setCachedDisplayName:(id)arg1;
+- (void)setFirstName:(id)arg1;
+- (void)setIsEmail:(bool)arg1;
+- (void)setLastName:(id)arg1;
+- (void)setParticipant:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @interface MPModelLibrarySearchRequestOperation : MPAsyncOperation {
     NSObject<OS_dispatch_queue> * _accessSerialQueue;
     MPModelLibrarySearchRequest * _request;
-    id /* block */  _responseHandler;
+    id  _responseHandler;
     struct shared_ptr<mlcore::LocalizedSearchQuery> { 
         struct LocalizedSearchQuery {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
@@ -13,7 +13,7 @@
 }
 
 @property (nonatomic, copy) MPModelLibrarySearchRequest *request;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, copy) id responseHandler;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -22,8 +22,8 @@
 - (void)finishWithError:(id)arg1;
 - (id)init;
 - (id)request;
-- (id /* block */)responseHandler;
+- (id)responseHandler;
 - (void)setRequest:(id)arg1;
-- (void)setResponseHandler:(id /* block */)arg1;
+- (void)setResponseHandler:(id)arg1;
 
 @end

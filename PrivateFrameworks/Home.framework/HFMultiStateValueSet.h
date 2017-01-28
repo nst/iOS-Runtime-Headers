@@ -5,29 +5,29 @@
 @interface HFMultiStateValueSet : NSObject <NSCopying> {
     HMCharacteristicMetadata * _characteristicMetadata;
     NSMutableDictionary * _displayResultsByValue;
-    id /* block */  _valueComparator;
+    id  _valueComparator;
 }
 
 @property (nonatomic, readonly) NSSet *allValues;
 @property (nonatomic, readonly) HMCharacteristicMetadata *characteristicMetadata;
 @property (nonatomic, readonly) NSMutableDictionary *displayResultsByValue;
 @property (nonatomic, readonly) NSArray *sortedValues;
-@property (nonatomic, copy) id /* block */ valueComparator;
+@property (nonatomic, copy) id valueComparator;
 
 - (void).cxx_destruct;
-- (BOOL)addValue:(id)arg1 displayResults:(id)arg2;
+- (bool)addValue:(id)arg1 displayResults:(id)arg2;
 - (id)allValues;
 - (id)characteristicMetadata;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)displayResultsByValue;
 - (id)displayResultsForValue:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCharacteristicMetadata:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)removeValue:(id)arg1;
-- (void)setValueComparator:(id /* block */)arg1;
+- (void)setValueComparator:(id)arg1;
 - (id)sortedValues;
-- (id /* block */)valueComparator;
+- (id)valueComparator;
 
 @end

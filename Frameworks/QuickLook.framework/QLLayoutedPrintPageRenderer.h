@@ -10,8 +10,8 @@
 - (void).cxx_destruct;
 - (id)_currentNodes;
 - (id)_htmlPageXPath;
-- (int)numberOfPages;
-- (id)pdfDataForPageAtIndex:(int)arg1;
-- (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (long long)numberOfPages;
+- (id)pdfDataForPageAtIndex:(long long)arg1;
+- (void)prepareForDrawingPages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

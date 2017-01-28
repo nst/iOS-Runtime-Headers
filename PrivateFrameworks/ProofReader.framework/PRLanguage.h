@@ -3,52 +3,52 @@
  */
 
 @interface PRLanguage : NSObject {
-    unsigned long  _encoding;
+    unsigned int  _encoding;
     NSString * _fallbackLocalization;
     NSString * _identifier;
     unsigned char  _languageCode;
     unsigned char  _languageDialect;
     unsigned char  _languageMode;
     NSString * _localization;
-    unsigned int  _orthoIndex;
+    unsigned long long  _orthoIndex;
 }
 
 + (id)dataBundle;
-+ (unsigned long)encodingForOrthographyIndex:(unsigned int)arg1;
++ (unsigned int)encodingForOrthographyIndex:(unsigned long long)arg1;
 + (id)fallbackLocalizationForLanguage:(id)arg1;
 + (void)getCodesForLanguage:(id)arg1 languageCode:(char *)arg2 languageDialect:(char *)arg3 languageMode:(char *)arg4;
 + (id)languageWithIdentifier:(id)arg1;
 + (id)localizationForLanguage:(id)arg1;
 + (id)localizationsForLanguage:(id)arg1;
-+ (unsigned int)orthographyIndexForLanguageCode:(unsigned char)arg1;
++ (unsigned long long)orthographyIndexForLanguageCode:(unsigned char)arg1;
 
 - (unsigned char)accents;
 - (void)dealloc;
-- (unsigned long)encoding;
+- (unsigned int)encoding;
 - (id)fallbackLocalization;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isDanish;
-- (BOOL)isDutch;
-- (BOOL)isEnglish;
-- (BOOL)isFinnish;
-- (BOOL)isFrench;
-- (BOOL)isGerman;
-- (BOOL)isItalian;
-- (BOOL)isKorean;
-- (BOOL)isNorwegian;
-- (BOOL)isPolish;
-- (BOOL)isPortuguese;
-- (BOOL)isRussian;
-- (BOOL)isSpanish;
-- (BOOL)isSwedish;
-- (BOOL)isTurkish;
+- (bool)isDanish;
+- (bool)isDutch;
+- (bool)isEnglish;
+- (bool)isFinnish;
+- (bool)isFrench;
+- (bool)isGerman;
+- (bool)isItalian;
+- (bool)isKorean;
+- (bool)isNorwegian;
+- (bool)isPolish;
+- (bool)isPortuguese;
+- (bool)isRussian;
+- (bool)isSpanish;
+- (bool)isSwedish;
+- (bool)isTurkish;
 - (unsigned char)languageCode;
 - (unsigned char)languageDialect;
 - (unsigned char)languageMode;
 - (id)localization;
 - (unsigned char)oneLetterWords;
-- (unsigned int)orthographyIndex;
+- (unsigned long long)orthographyIndex;
 - (unsigned char)twoLetterWords;
 
 @end

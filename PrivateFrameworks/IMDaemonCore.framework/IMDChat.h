@@ -9,9 +9,9 @@
     NSString * _displayName;
     NSString * _groupID;
     NSString * _guid;
-    BOOL  _hasHadSuccessfulQuery;
-    BOOL  _isArchived;
-    BOOL  _isFiltered;
+    bool  _hasHadSuccessfulQuery;
+    bool  _isArchived;
+    bool  _isFiltered;
     NSString * _lastAddressedLocalHandle;
     IMMessageItem * _lastMessage;
     NSRecursiveLock * _lock;
@@ -20,9 +20,9 @@
     NSString * _roomName;
     long long  _rowID;
     NSString * _serviceName;
-    int  _state;
+    long long  _state;
     unsigned char  _style;
-    unsigned int  _unreadCount;
+    unsigned long long  _unreadCount;
 }
 
 @property (readonly, retain) IMDAccount *account;
@@ -33,10 +33,10 @@
 @property (copy) NSString *displayName;
 @property (setter=setGroupID:, copy) NSString *groupID;
 @property (copy) NSString *guid;
-@property BOOL hasHadSuccessfulQuery;
-@property (readonly) BOOL isArchived;
-@property BOOL isFiltered;
-@property (nonatomic, readonly) BOOL isUnnamedChat;
+@property bool hasHadSuccessfulQuery;
+@property (readonly) bool isArchived;
+@property bool isFiltered;
+@property (nonatomic, readonly) bool isUnnamedChat;
 @property (copy) NSString *lastAddressedLocalHandle;
 @property (retain) IMMessageItem *lastMessage;
 @property (copy) NSArray *participants;
@@ -46,12 +46,12 @@
 @property (readonly, retain) IMDService *service;
 @property (copy) NSString *serviceName;
 @property (readonly, retain) IMDServiceSession *serviceSession;
-@property int state;
+@property long long state;
 @property unsigned char style;
-@property (setter=_setUnreadCount:) unsigned int unreadCount;
+@property (setter=_setUnreadCount:) unsigned long long unreadCount;
 
 - (void)_setRowID:(long long)arg1;
-- (void)_setUnreadCount:(unsigned int)arg1;
+- (void)_setUnreadCount:(unsigned long long)arg1;
 - (void)_updateCachedParticipants;
 - (void)_updateLastMessage:(id)arg1;
 - (id)account;
@@ -60,7 +60,7 @@
 - (void)addParticipants:(id)arg1;
 - (id)chatIdentifier;
 - (id)chatProperties;
-- (id)copyDictionaryRepresentation:(BOOL)arg1;
+- (id)copyDictionaryRepresentation:(bool)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
@@ -69,11 +69,11 @@
 - (id)generateNewGroupID;
 - (id)groupID;
 - (id)guid;
-- (BOOL)hasHadSuccessfulQuery;
-- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 groupID:(id)arg4 chatIdentifier:(id)arg5 participants:(id)arg6 roomName:(id)arg7 displayName:(id)arg8 lastAddressedLocalHandle:(id)arg9 properties:(id)arg10 state:(int)arg11 style:(unsigned char)arg12 isFiltered:(BOOL)arg13 hasHadSuccessfulQuery:(BOOL)arg14;
-- (BOOL)isArchived;
-- (BOOL)isFiltered;
-- (BOOL)isUnnamedChat;
+- (bool)hasHadSuccessfulQuery;
+- (id)initWithAccountID:(id)arg1 service:(id)arg2 guid:(id)arg3 groupID:(id)arg4 chatIdentifier:(id)arg5 participants:(id)arg6 roomName:(id)arg7 displayName:(id)arg8 lastAddressedLocalHandle:(id)arg9 properties:(id)arg10 state:(long long)arg11 style:(unsigned char)arg12 isFiltered:(bool)arg13 hasHadSuccessfulQuery:(bool)arg14;
+- (bool)isArchived;
+- (bool)isFiltered;
+- (bool)isUnnamedChat;
 - (id)lastAddressedLocalHandle;
 - (id)lastMessage;
 - (id)participants;
@@ -90,24 +90,24 @@
 - (void)setDisplayName:(id)arg1;
 - (void)setGroupID:(id)arg1;
 - (void)setGuid:(id)arg1;
-- (void)setHasHadSuccessfulQuery:(BOOL)arg1;
-- (void)setIsFiltered:(BOOL)arg1;
+- (void)setHasHadSuccessfulQuery:(bool)arg1;
+- (void)setIsFiltered:(bool)arg1;
 - (void)setLastAddressedLocalHandle:(id)arg1;
 - (void)setLastMessage:(id)arg1;
 - (void)setParticipants:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (void)setRoomName:(id)arg1;
 - (void)setServiceName:(id)arg1;
-- (void)setState:(int)arg1;
+- (void)setState:(long long)arg1;
 - (void)setStyle:(unsigned char)arg1;
-- (int)state;
+- (long long)state;
 - (void)storeAndBroadcastChatChanges;
 - (unsigned char)style;
-- (unsigned int)unreadCount;
+- (unsigned long long)unreadCount;
 - (void)updateDisplayName:(id)arg1;
 - (void)updateGroupID:(id)arg1;
-- (void)updateHasHadSuccessfulQuery:(BOOL)arg1;
-- (void)updateIsFiltered:(BOOL)arg1;
+- (void)updateHasHadSuccessfulQuery:(bool)arg1;
+- (void)updateIsFiltered:(bool)arg1;
 - (void)updateLastAddressedHandle:(id)arg1;
 - (void)updateProperties:(id)arg1;
 

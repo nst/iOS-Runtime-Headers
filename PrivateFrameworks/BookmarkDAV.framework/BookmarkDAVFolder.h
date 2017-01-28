@@ -18,10 +18,10 @@
 @property (nonatomic, readonly) NSData *dataPayload;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isBookmarkBarFolder;
-@property (nonatomic) BOOL isBookmarkFolder;
-@property (nonatomic) BOOL isBookmarkMenuFolder;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isBookmarkBarFolder;
+@property (nonatomic) bool isBookmarkFolder;
+@property (nonatomic) bool isBookmarkMenuFolder;
 @property (nonatomic, retain) NSURL *serverID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *syncKey;
@@ -42,16 +42,16 @@
 - (void)dealloc;
 - (id)initWithServerID:(id)arg1 containerName:(id)arg2 appleAttributes:(id)arg3;
 - (id)initWithURL:(id)arg1 eTag:(id)arg2 dataPayload:(id)arg3 inContainerWithURL:(id)arg4 withAccountInfoProvider:(id)arg5;
-- (BOOL)isBookmarkBarFolder;
-- (BOOL)isBookmarkFolder;
-- (BOOL)isBookmarkMenuFolder;
+- (bool)isBookmarkBarFolder;
+- (bool)isBookmarkFolder;
+- (bool)isBookmarkMenuFolder;
 - (id)serverID;
 - (void)setBulkParsedCTag:(id)arg1;
 - (void)setBulkParsedPTag:(id)arg1;
 - (void)setBulkUploadErrorItem:(id)arg1;
-- (void)setIsBookmarkBarFolder:(BOOL)arg1;
-- (void)setIsBookmarkFolder:(BOOL)arg1;
-- (void)setIsBookmarkMenuFolder:(BOOL)arg1;
+- (void)setIsBookmarkBarFolder:(bool)arg1;
+- (void)setIsBookmarkFolder:(bool)arg1;
+- (void)setIsBookmarkMenuFolder:(bool)arg1;
 - (void)setServerID:(id)arg1;
 - (id)syncKey;
 

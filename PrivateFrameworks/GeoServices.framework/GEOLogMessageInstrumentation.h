@@ -4,10 +4,10 @@
 
 @interface GEOLogMessageInstrumentation : NSObject {
     GEOLogMessageCacheManager * _cacheManager;
-    BOOL  _exitWhenAllInstrumentationLogsFlushed;
+    bool  _exitWhenAllInstrumentationLogsFlushed;
     NSObject<OS_dispatch_queue> * _instrumenationQueue;
     NSObject<OS_dispatch_source> * _logMessageInstrumentationFlushTimer;
-    unsigned int  _logMessageNothingToFlushCounter;
+    unsigned long long  _logMessageNothingToFlushCounter;
     NSMutableDictionary * _msgCountForRegisteredEvents;
     NSString * _msgCountUserDefaultsKey;
     NSMutableArray * _registeredEventNames;
@@ -21,13 +21,13 @@
 
 - (void)_registerEventName:(id)arg1;
 - (id)cacheManager;
-- (void)captureLogMessage:(id)arg1 forEventName:(id)arg2 fromLogFrameworkAdaptor:(BOOL)arg3;
-- (void)captureLogMessageCollectionRequest:(id)arg1 forEventName:(id)arg2 fromLogFrameworkAdaptor:(BOOL)arg3;
-- (void)captureLogMsgCountForEventName:(id)arg1 logMsgCount:(int)arg2 fromLogFrameworkAdaptor:(BOOL)arg3;
+- (void)captureLogMessage:(id)arg1 forEventName:(id)arg2 fromLogFrameworkAdaptor:(bool)arg3;
+- (void)captureLogMessageCollectionRequest:(id)arg1 forEventName:(id)arg2 fromLogFrameworkAdaptor:(bool)arg3;
+- (void)captureLogMsgCountForEventName:(id)arg1 logMsgCount:(long long)arg2 fromLogFrameworkAdaptor:(bool)arg3;
 - (void)dealloc;
 - (void)disableLogMsgInstrumentation;
 - (void)enableLogMsgInstrumentation;
 - (id)init;
-- (void)waitForEmptyInstrumentationQueue:(id /* block */)arg1;
+- (void)waitForEmptyInstrumentationQueue:(id)arg1;
 
 @end

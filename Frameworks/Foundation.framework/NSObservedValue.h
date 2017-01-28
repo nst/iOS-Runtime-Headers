@@ -9,18 +9,18 @@
 }
 
 @property (retain) NSError *error;
-@property BOOL finished;
+@property bool finished;
 @property (retain) id value;
 
-- (BOOL)_isToManyChangeInformation;
+- (bool)_isToManyChangeInformation;
 - (id)copyToHeap;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (id)error;
-- (BOOL)finished;
+- (bool)finished;
 - (void)setError:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
+- (void)setFinished:(bool)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 

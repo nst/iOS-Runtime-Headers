@@ -5,17 +5,17 @@
 
 @required
 
-- (void)_didChangeRevealPercent:(float)arg1;
-- (void)_getActionContextWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
-- (void)_getActionTitlesWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
-- (void)_getInitialStateWithCompletion:(void *)arg1; // needs 1 arg types, found 10: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, float, float, BOOL, NCViewServiceDescriptor *, NCViewServiceDescriptor *, void*
-- (void)_handleActionAtIndex:(unsigned int)arg1;
+- (void)_didChangeRevealPercent:(double)arg1;
+- (void)_getActionContextWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSDictionary *, void*
+- (void)_getActionTitlesWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, void*
+- (void)_getInitialStateWithCompletion:(void *)arg1; // needs 1 arg types, found 10: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, double, double, bool, NCViewServiceDescriptor *, NCViewServiceDescriptor *, void*
+- (void)_handleActionAtIndex:(unsigned long long)arg1;
 - (void)_handleActionIdentifier:(NSString *)arg1;
 - (void)_interactiveNotificationDidAppear;
-- (void)_proximityStateDidChange:(BOOL)arg1;
+- (void)_proximityStateDidChange:(bool)arg1;
 - (void)_setContext:(NSDictionary *)arg1;
-- (void)_setMaximumHeight:(float)arg1;
-- (void)_setModal:(BOOL)arg1;
+- (void)_setMaximumHeight:(double)arg1;
+- (void)_setModal:(bool)arg1;
 - (void)_willPresentFromActionIdentifier:(NSString *)arg1;
 
 @end

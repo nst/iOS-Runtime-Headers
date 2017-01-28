@@ -8,8 +8,8 @@
 
 - (void)addObject:(id)arg1;
 - (id)allObjects;
-- (BOOL)containsObject:(id)arg1;
-- (unsigned int)count;
+- (bool)containsObject:(id)arg1;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (id)immutableSet;

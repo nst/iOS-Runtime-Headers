@@ -3,16 +3,16 @@
  */
 
 @interface CDPDRemoteDeviceSecretValidator : CDPDDeviceSecretValidator {
-    BOOL  _isWaitingForRemoteApproval;
-    id /* block */  _requestToJoinCompletion;
+    bool  _isWaitingForRemoteApproval;
+    id  _requestToJoinCompletion;
 }
 
 - (void).cxx_destruct;
 - (id)_decoratedDelegate;
-- (void)approveFromAnotherDeviceWithCompletion:(id /* block */)arg1;
+- (void)approveFromAnotherDeviceWithCompletion:(id)arg1;
 - (void)cancelApproveFromAnotherDevice;
 - (void)resetAccountCDPState;
-- (void)setValidSecretHandler:(id /* block */)arg1;
-- (void)supportedEscapeOfferMaskCompletion:(id /* block */)arg1;
+- (void)setValidSecretHandler:(id)arg1;
+- (void)supportedEscapeOfferMaskCompletion:(id)arg1;
 
 @end

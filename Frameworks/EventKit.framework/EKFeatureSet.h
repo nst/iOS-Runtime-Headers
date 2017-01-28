@@ -4,16 +4,16 @@
 
 @interface EKFeatureSet : NSObject
 
-+ (BOOL)areApplicationBadgesSupported;
-+ (BOOL)areContextualRemindersSupported;
-+ (BOOL)areQuickActionsSupported;
-+ (BOOL)areVehicleTriggersEnabled;
-+ (BOOL)calendarListViewCellsFeaturesAttendeeInformation;
-+ (BOOL)calendarListViewCellsFeaturesExtraContent;
-+ (BOOL)eventDetailsDayPreviewEnabled;
-+ (BOOL)isConservativeEntryEnabled;
-+ (BOOL)isContinuitySupported;
-+ (BOOL)isSuggestionsEnabled;
-+ (BOOL)isTravelAdvisorySupported;
++ (bool)areApplicationBadgesSupported;
++ (bool)areContextualRemindersSupported;
++ (bool)areQuickActionsSupported;
++ (bool)areVehicleTriggersEnabled;
++ (bool)calendarListViewCellsFeaturesAttendeeInformation;
++ (bool)calendarListViewCellsFeaturesExtraContent;
++ (bool)eventDetailsDayPreviewEnabled;
++ (bool)isConservativeEntryEnabled;
++ (bool)isContinuitySupported;
++ (bool)isSuggestionsEnabled;
++ (bool)isTravelAdvisorySupported;
 
 @end

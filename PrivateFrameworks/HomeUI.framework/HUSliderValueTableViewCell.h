@@ -9,28 +9,28 @@
 }
 
 @property (nonatomic) <HUSliderValueTableViewCellDelegate> *delegate;
-@property (nonatomic) float maximumValue;
-@property (nonatomic) float minimumValue;
+@property (nonatomic) double maximumValue;
+@property (nonatomic) double minimumValue;
 @property (nonatomic, retain) UISlider *slider;
-@property (nonatomic) float value;
+@property (nonatomic) double value;
 @property (nonatomic, retain) UILabel *valueLabel;
 
 - (void).cxx_destruct;
 - (void)_sliderChanged:(id)arg1;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (float)maximumValue;
-- (float)minimumValue;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (double)maximumValue;
+- (double)minimumValue;
 - (void)prepareForReuse;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setMaximumValue:(float)arg1;
-- (void)setMinimumValue:(float)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setMaximumValue:(double)arg1;
+- (void)setMinimumValue:(double)arg1;
 - (void)setSlider:(id)arg1;
-- (void)setValue:(float)arg1;
+- (void)setValue:(double)arg1;
 - (void)setValueLabel:(id)arg1;
 - (id)slider;
-- (float)value;
+- (double)value;
 - (id)valueLabel;
 
 @end

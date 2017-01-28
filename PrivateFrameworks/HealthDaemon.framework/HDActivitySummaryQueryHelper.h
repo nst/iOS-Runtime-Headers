@@ -6,29 +6,29 @@
     HDActivitySummaryBuilder * _activitySummaryBuilder;
     NSObject<OS_dispatch_queue> * _clientQueue;
     _HKFilter * _filter;
-    id /* block */  _initialResultsHandler;
-    BOOL  _initialResultsSent;
+    id  _initialResultsHandler;
+    bool  _initialResultsSent;
     long long  _lastProcessedAnchor;
-    BOOL  _needsUpdateAfterUnlock;
+    bool  _needsUpdateAfterUnlock;
     HDSQLitePredicate * _predicate;
     NSMutableDictionary * _previousActivityCachesByCacheIndex;
     HDProfile * _profile;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _shouldIncludePrivateProperties;
-    id /* block */  _updateHandler;
+    bool  _shouldIncludePrivateProperties;
+    id  _updateHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) id /* block */ initialResultsHandler;
-@property BOOL shouldIncludePrivateProperties;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) id initialResultsHandler;
+@property bool shouldIncludePrivateProperties;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) id /* block */ updateHandler;
+@property (nonatomic, readonly) id updateHandler;
 
 - (void).cxx_destruct;
 - (id)_fetchActivityCacheIndicesWithAnchor:(long long)arg1 predicate:(id)arg2 error:(id*)arg3;
-- (void)_onClientQueue:(id /* block */)arg1;
+- (void)_onClientQueue:(id)arg1;
 - (id)_queue_addActivityCacheToCachedSamples:(id)arg1;
 - (void)_queue_deliverActivitySummariesMatchingPredicate:(id)arg1;
 - (void)_queue_deliverActivitySummariesToClient:(id)arg1;
@@ -41,17 +41,17 @@
 - (void)_queue_stop;
 - (void)_queue_updateActivitySummariesWithNewActivityCaches:(id)arg1 anchor:(id)arg2;
 - (void)_queue_updatePreviousActivityCachesWithNewCaches:(id)arg1;
-- (BOOL)_shouldStopProcessing;
-- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
+- (bool)_shouldStopProcessing;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(bool)arg2;
 - (void)dealloc;
-- (id)initWithProfile:(id)arg1 filter:(id)arg2 initialResultsHandler:(id /* block */)arg3 updateHandler:(id /* block */)arg4;
-- (id /* block */)initialResultsHandler;
+- (id)initWithProfile:(id)arg1 filter:(id)arg2 initialResultsHandler:(id)arg3 updateHandler:(id)arg4;
+- (id)initialResultsHandler;
 - (void)pause;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
-- (void)setShouldIncludePrivateProperties:(BOOL)arg1;
-- (BOOL)shouldIncludePrivateProperties;
+- (void)setShouldIncludePrivateProperties:(bool)arg1;
+- (bool)shouldIncludePrivateProperties;
 - (void)start;
 - (void)stop;
-- (id /* block */)updateHandler;
+- (id)updateHandler;
 
 @end

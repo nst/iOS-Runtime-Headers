@@ -5,9 +5,9 @@
 @interface PKPaymentSetupFieldBuiltInCardOnFilePrimaryAccountNumber : PKPaymentSetupFieldText
 
 - (id)displayFormatPaddingCharacters;
-- (BOOL)hasDisplayFormat;
-- (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2;
-- (BOOL)isBuiltIn;
+- (bool)hasDisplayFormat;
+- (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
+- (bool)isBuiltIn;
 - (id)stringByApplyingDisplayFormat:(id)arg1;
 
 @end

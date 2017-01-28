@@ -7,7 +7,7 @@
     NSXPCConnection * _connection;
     <LSBestAppSuggestionManagerDelegate> * _delegate;
     LSBestAppSuggestion * _lastBestAppSuggestion;
-    BOOL  _listeningForBestAppSuggestions;
+    bool  _listeningForBestAppSuggestions;
 }
 
 @property (retain) NSXPCConnection *connection;

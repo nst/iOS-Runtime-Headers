@@ -14,6 +14,6 @@
 - (void)dealloc;
 - (void)layoutSubviewsForContents;
 - (void)setAvatarView:(id)arg1;
-- (void)setShowAvatarView:(BOOL)arg1 withContact:(id)arg2 preferredHandle:(id)arg3 avatarViewDelegate:(id)arg4;
+- (void)setShowAvatarView:(bool)arg1 withContact:(id)arg2 preferredHandle:(id)arg3 avatarViewDelegate:(id)arg4;
 
 @end

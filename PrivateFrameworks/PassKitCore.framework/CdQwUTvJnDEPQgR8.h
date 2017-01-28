@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)context;
 - (id)initWithContext:(id)arg1;
-- (void)scoreMessageWithCompletionHandler:(id /* block */)arg1;
+- (void)scoreMessageWithCompletionHandler:(id)arg1;
 - (void)setContext:(id)arg1;
 - (id)settingsFromContext:(id)arg1;
 

@@ -3,7 +3,7 @@
  */
 
 @interface _PLClientTransaction : PLClientServerTransaction {
-    int  _addChangeScopesBatch;
+    long long  _addChangeScopesBatch;
     NSSet * _batchScopes;
     NSSet * _changeScopes;
     NSString * _changeScopesDescriptionSnapshot;
@@ -35,7 +35,7 @@
 - (int)fileDescriptor;
 - (id)generateChangeScopesDescription;
 - (id)init;
-- (BOOL)isClientTransaction;
+- (bool)isClientTransaction;
 - (id)path;
 - (void)persistTransactionScopes:(id)arg1;
 - (void)popChangeScopesBatch;

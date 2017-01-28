@@ -3,8 +3,8 @@
  */
 
 @interface PKPaymentRemoteCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentSetupViewControllerCanHideSetupLaterButton> {
-    BOOL  _allowsManualEntry;
-    BOOL  _hideSetupLaterButton;
+    bool  _allowsManualEntry;
+    bool  _hideSetupLaterButton;
     PKPaymentSetupProduct * _product;
     PKPaymentProvisioningController * _provisioningController;
     NSArray * _remoteCredentials;
@@ -15,8 +15,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL hideSetupLaterButton;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool hideSetupLaterButton;
 @property (nonatomic, retain) PKPaymentSetupProduct *product;
 @property (readonly) Class superclass;
 
@@ -25,16 +25,16 @@
 - (void)_presentCardDetailsControllerForCredential:(id)arg1;
 - (void)_presentManualAddController;
 - (void)_presentViewController:(id)arg1;
-- (BOOL)hideSetupLaterButton;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 delegate:(id)arg3 remoteCredentials:(id)arg4 allowsManualEntry:(BOOL)arg5;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (bool)hideSetupLaterButton;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 delegate:(id)arg3 remoteCredentials:(id)arg4 allowsManualEntry:(bool)arg5;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)product;
-- (void)setHideSetupLaterButton:(BOOL)arg1;
+- (void)setHideSetupLaterButton:(bool)arg1;
 - (void)setProduct:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

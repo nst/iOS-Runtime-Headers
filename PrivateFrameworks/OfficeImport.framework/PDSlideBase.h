@@ -11,11 +11,11 @@
     unsigned int  mIsHidden;
     NSString * mName;
     PDTransition * mPpt2011Transition;
-    unsigned long  mSlideId;
+    unsigned int  mSlideId;
     PDTransition * mTransition;
 }
 
-@property (nonatomic) unsigned long slideId;
+@property (nonatomic) unsigned int slideId;
 
 + (int)inheritedPlaceholderType:(int)arg1;
 
@@ -34,20 +34,20 @@
 - (id)drawingTheme;
 - (id)fontScheme;
 - (void)generatePpt9Animations:(id)arg1;
-- (BOOL)hasPpt10Animations;
-- (BOOL)hasPpt9Animations;
+- (bool)hasPpt10Animations;
+- (bool)hasPpt9Animations;
 - (id)inheritedTextStyleForPlaceholderType:(int)arg1;
 - (id)init;
-- (BOOL)isHidden;
-- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (bool)isHidden;
+- (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
 - (id)name;
-- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
 - (id)parentSlideBase;
-- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(BOOL)arg4;
+- (id)parentTextBodyPropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
+- (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(bool)arg4;
 - (id)parentTextStyleForTables;
-- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
-- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 useBaseTypeMatch:(BOOL)arg3 overrideIndex:(BOOL)arg4;
+- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(bool)arg3;
+- (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 useBaseTypeMatch:(bool)arg3 overrideIndex:(bool)arg4;
 - (id)placeholders;
 - (id)ppt2011Transition;
 - (void)removeUnnecessaryOverrides;
@@ -55,17 +55,17 @@
 - (void)setDefaultTableStyle:(id)arg1;
 - (void)setDrawables:(id)arg1;
 - (void)setDrawablesNoHierarchy:(id)arg1;
-- (void)setIsHidden:(BOOL)arg1;
+- (void)setIsHidden:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setPpt2011Transition:(id)arg1;
 - (void)setPpt9AnimationDataForCacheItem:(id)arg1 order:(int)arg2 state:(id)arg3;
-- (void)setSlideId:(unsigned long)arg1;
+- (void)setSlideId:(unsigned int)arg1;
 - (void)setTransition:(id)arg1;
 - (void)setUpDrawablePropertyHierarchy;
 - (void)setUpPropertyHierarchyForDrawable:(id)arg1;
 - (void)setUpPropertyHierarchyForDrawablePreservingEffectiveValues:(id)arg1;
 - (void)setUpPropertyHierarchyPreservingEffectiveValues;
-- (unsigned long)slideId;
+- (unsigned int)slideId;
 - (id)styleMatrix;
 - (id)transition;
 

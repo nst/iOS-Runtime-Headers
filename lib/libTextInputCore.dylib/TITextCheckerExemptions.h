@@ -3,14 +3,14 @@
  */
 
 @interface TITextCheckerExemptions : NSObject {
-    BOOL  _assertsObservers;
+    bool  _assertsObservers;
 }
 
-@property (nonatomic) BOOL assertsObservers;
+@property (nonatomic) bool assertsObservers;
 
-- (BOOL)assertsObservers;
+- (bool)assertsObservers;
 - (void)dealloc;
-- (void)setAssertsObservers:(BOOL)arg1;
-- (BOOL)stringIsExemptFromChecker:(id)arg1;
+- (void)setAssertsObservers:(bool)arg1;
+- (bool)stringIsExemptFromChecker:(id)arg1;
 
 @end

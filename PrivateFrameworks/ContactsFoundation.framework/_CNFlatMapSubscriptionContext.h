@@ -5,16 +5,16 @@
 @interface _CNFlatMapSubscriptionContext : NSObject {
     CNQueue * _decorators;
     <CNScheduler> * _downstream;
-    BOOL  _observerReceiving;
-    BOOL  _operatorReceiving;
+    bool  _observerReceiving;
+    bool  _operatorReceiving;
     <CNScheduler> * _resourceLock;
     NSMutableArray * _tokens;
 }
 
 @property (nonatomic, readonly) CNQueue *decorators;
 @property (nonatomic, readonly) <CNScheduler> *downstream;
-@property (getter=isObserverReceiving, nonatomic) BOOL observerReceiving;
-@property (getter=isOperatorReceiving, nonatomic) BOOL operatorReceiving;
+@property (getter=isObserverReceiving, nonatomic) bool observerReceiving;
+@property (getter=isOperatorReceiving, nonatomic) bool operatorReceiving;
 @property (nonatomic, readonly) <CNScheduler> *resourceLock;
 @property (nonatomic, readonly) NSMutableArray *tokens;
 
@@ -22,11 +22,11 @@
 - (id)decorators;
 - (id)downstream;
 - (id)initWithSchedulerProvider:(id)arg1;
-- (BOOL)isObserverReceiving;
-- (BOOL)isOperatorReceiving;
+- (bool)isObserverReceiving;
+- (bool)isOperatorReceiving;
 - (id)resourceLock;
-- (void)setObserverReceiving:(BOOL)arg1;
-- (void)setOperatorReceiving:(BOOL)arg1;
+- (void)setObserverReceiving:(bool)arg1;
+- (void)setOperatorReceiving:(bool)arg1;
 - (id)tokens;
 
 @end

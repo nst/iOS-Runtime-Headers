@@ -3,55 +3,55 @@
  */
 
 @interface _CDSystemMonitor : NSObject {
-    unsigned int  _chargingState;
-    BOOL  _inBatterySaverMode;
-    unsigned int  _memState;
+    unsigned long long  _chargingState;
+    bool  _inBatterySaverMode;
+    unsigned long long  _memState;
     NSString * _powerSource;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _thermalState;
-    BOOL  _userInactive;
+    unsigned long long  _thermalState;
+    bool  _userInactive;
     NSObject<OS_dispatch_source> * backlightChangeDispatch;
     int  backlightMonitorToken;
-    BOOL  backlightTimerDispatched;
+    bool  backlightTimerDispatched;
     NSObject<OS_dispatch_source> * memPressureMonitor;
     NSObject<OS_dispatch_source> * psChangeDispatch;
-    BOOL  psChangeTimerDispatched;
+    bool  psChangeTimerDispatched;
     NSMutableArray * registrations;
 }
 
-@property (nonatomic) unsigned int chargingState;
-@property (nonatomic) BOOL inBatterySaverMode;
-@property (nonatomic) unsigned int memState;
+@property (nonatomic) unsigned long long chargingState;
+@property (nonatomic) bool inBatterySaverMode;
+@property (nonatomic) unsigned long long memState;
 @property (nonatomic, retain) NSString *powerSource;
-@property (nonatomic) unsigned int thermalState;
-@property (nonatomic) BOOL userInactive;
+@property (nonatomic) unsigned long long thermalState;
+@property (nonatomic) bool userInactive;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (unsigned int)chargingState;
+- (unsigned long long)chargingState;
 - (void)checkMemoryState;
-- (BOOL)deRegisterHandler:(id)arg1;
+- (bool)deRegisterHandler:(id)arg1;
 - (void)handleBacklightStateChange;
 - (void)handleBatterySaverNotification:(unsigned long long)arg1;
 - (void)handlePowerSourceNotification;
 - (void)handleThermalNotification:(unsigned long long)arg1;
 - (void)handleUserActivityNotification:(unsigned long long)arg1;
-- (BOOL)inBatterySaverMode;
+- (bool)inBatterySaverMode;
 - (id)init;
-- (unsigned int)memState;
+- (unsigned long long)memState;
 - (void)notifyPsChange;
 - (id)powerSource;
 - (void)registerForNotifications;
-- (id)registerHandler:(id /* block */)arg1 onQueue:(id)arg2;
-- (void)sendNotification:(unsigned int)arg1;
-- (void)setChargingState:(unsigned int)arg1;
-- (void)setInBatterySaverMode:(BOOL)arg1;
-- (void)setMemState:(unsigned int)arg1;
+- (id)registerHandler:(id)arg1 onQueue:(id)arg2;
+- (void)sendNotification:(unsigned long long)arg1;
+- (void)setChargingState:(unsigned long long)arg1;
+- (void)setInBatterySaverMode:(bool)arg1;
+- (void)setMemState:(unsigned long long)arg1;
 - (void)setPowerSource:(id)arg1;
-- (void)setThermalState:(unsigned int)arg1;
-- (void)setUserInactive:(BOOL)arg1;
-- (unsigned int)thermalState;
-- (BOOL)userInactive;
+- (void)setThermalState:(unsigned long long)arg1;
+- (void)setUserInactive:(bool)arg1;
+- (unsigned long long)thermalState;
+- (bool)userInactive;
 
 @end

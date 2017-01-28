@@ -4,7 +4,7 @@
 
 @interface TSDMutableReflection : TSDReflection
 
-- (void)setFadeAcceleration:(float)arg1;
-- (void)setOpacity:(float)arg1;
+- (void)setFadeAcceleration:(double)arg1;
+- (void)setOpacity:(double)arg1;
 
 @end

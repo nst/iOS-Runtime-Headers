@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) SAUIDecoratedText *formattedDistance;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SASTTemplateStarRating *rating;
 @property (nonatomic, retain) SAUIDecoratedText *subtitle;
 @property (readonly) Class superclass;

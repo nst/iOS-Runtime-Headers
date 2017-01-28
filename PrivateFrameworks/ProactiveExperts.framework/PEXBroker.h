@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)queryWithCriteria:(id)arg1 limit:(unsigned int)arg2 timeout:(long long)arg3;
+- (id)queryWithCriteria:(id)arg1 limit:(unsigned long long)arg2 timeout:(long long)arg3;
 - (id)servants;
 - (void)setServants:(id)arg1;
 

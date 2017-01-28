@@ -7,25 +7,25 @@
 
 - (NSArray *)authorsExcludingCurrentUser;
 - (NSString *)identifier;
-- (BOOL)isHiddenFromSearch;
+- (bool)isHiddenFromSearch;
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSDate *)modificationDate;
 - (NSManagedObjectID *)objectID;
 - (NSString *)objectIdentifier;
 - (NSString *)searchDomainIdentifier;
-- (NSArray *)searchIndexStringsOutHasAdditionalStrings:(BOOL*)arg1;
+- (NSArray *)searchIndexStringsOutHasAdditionalStrings:(bool*)arg1;
 - (NSString *)searchIndexableTitleUsingContentTextIfNecessary:(NSString *)arg1;
-- (BOOL)searchResultCanBeDeletedFromNoteContext;
-- (unsigned int)searchResultsSection;
+- (bool)searchResultCanBeDeletedFromNoteContext;
+- (unsigned long long)searchResultsSection;
 - (CSSearchableItemAttributeSet *)searchableItemAttributeSet;
 - (NSString *)searchableItemIdentifier;
-- (BOOL)shouldUpdateIndexForChangedValues:(NSDictionary *)arg1;
-- (int)visibilityTestingType;
+- (bool)shouldUpdateIndexForChangedValues:(NSDictionary *)arg1;
+- (long long)visibilityTestingType;
 
 @optional
 
 - (ICGenerateSearchIndexStringsOperation *)generateSearchIndexStringsOperation;
-- (BOOL)ignoreInSearchIndexer;
+- (bool)ignoreInSearchIndexer;
 - (void)releaseMemoryForIndexing;
 
 @end

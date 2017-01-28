@@ -3,7 +3,7 @@
  */
 
 @interface HAPMetadataService : NSObject {
-    BOOL  _allowAssociatedService;
+    bool  _allowAssociatedService;
     NSString * _btleuuidStr;
     NSArray * _linkedServices;
     NSArray * _mandatoryCharacteristics;
@@ -14,7 +14,7 @@
     NSString * _uuidStr;
 }
 
-@property (nonatomic) BOOL allowAssociatedService;
+@property (nonatomic) bool allowAssociatedService;
 @property (nonatomic, retain) NSString *btleuuidStr;
 @property (nonatomic, retain) NSArray *linkedServices;
 @property (nonatomic, retain) NSArray *mandatoryCharacteristics;
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) NSString *uuidStr;
 
 - (void).cxx_destruct;
-- (BOOL)allowAssociatedService;
+- (bool)allowAssociatedService;
 - (id)btleuuidStr;
 - (id)description;
 - (void)dump;
@@ -36,7 +36,7 @@
 - (id)name;
 - (id)optionalCharacteristics;
 - (id)properties;
-- (void)setAllowAssociatedService:(BOOL)arg1;
+- (void)setAllowAssociatedService:(bool)arg1;
 - (void)setBtleuuidStr:(id)arg1;
 - (void)setLinkedServices:(id)arg1;
 - (void)setMandatoryCharacteristics:(id)arg1;

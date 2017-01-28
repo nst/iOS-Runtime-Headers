@@ -15,7 +15,7 @@
 - (void)forwardInvocation:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (id)secondDelegate;
 - (void)setFirstDelegate:(id)arg1;
 - (void)setSecondDelegate:(id)arg1;

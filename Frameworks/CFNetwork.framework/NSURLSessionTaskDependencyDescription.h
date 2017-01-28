@@ -13,7 +13,7 @@
 @property (nonatomic, retain) __NSURLSessionTaskDependencyResourceIdentifier *_parent;
 @property (readonly) NSString *dependentMimeType;
 @property (readonly) NSString *dependentURLPath;
-@property (nonatomic) BOOL exclusive;
+@property (nonatomic) bool exclusive;
 @property (readonly) NSString *parentMimeType;
 @property (readonly) NSString *parentURLPath;
 @property (nonatomic) float priority;

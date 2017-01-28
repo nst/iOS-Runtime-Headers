@@ -18,8 +18,8 @@
 - (id)description;
 - (id)foreground;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToShading:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToShading:(id)arg1;
 - (void)setBackground:(id)arg1;
 - (void)setForeground:(id)arg1;
 - (void)setShading:(id)arg1;

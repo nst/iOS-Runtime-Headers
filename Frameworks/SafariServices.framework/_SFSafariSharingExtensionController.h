@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,6 +27,6 @@
 - (void)finalizeJavaScriptForSharingExtension:(id)arg1 arguments:(id)arg2;
 - (id)initWithWebView:(id)arg1;
 - (void)invalidate;
-- (void)runJavaScriptForSharingExtension:(id)arg1 javaScript:(id)arg2 completion:(id /* block */)arg3;
+- (void)runJavaScriptForSharingExtension:(id)arg1 javaScript:(id)arg2 completion:(id)arg3;
 
 @end

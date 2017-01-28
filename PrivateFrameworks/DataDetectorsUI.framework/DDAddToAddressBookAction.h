@@ -6,7 +6,7 @@
 
 @property (nonatomic, retain) DDRemoteActionViewController *viewController;
 
-- (void)adaptForPresentationInPopover:(BOOL)arg1;
+- (void)adaptForPresentationInPopover:(bool)arg1;
 - (int)interactionType;
 - (void)invalidate;
 - (id)localizedName;

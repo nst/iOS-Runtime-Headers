@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setChallenge:(GKChallenge *)arg1 playerInternals:(NSArray *)arg2 defaultMessage:(NSString *)arg3 forcePicker:(BOOL)arg4;
+- (void)setChallenge:(GKChallenge *)arg1 playerInternals:(NSArray *)arg2 defaultMessage:(NSString *)arg3 forcePicker:(bool)arg4;
 
 @end

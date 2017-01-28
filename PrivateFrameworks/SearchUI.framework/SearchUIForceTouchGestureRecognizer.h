@@ -4,14 +4,14 @@
 
 @interface SearchUIForceTouchGestureRecognizer : SBUIForceTouchGestureRecognizer {
     SBFApplication * _application;
-    BOOL  _canHaveSmallSpotlightIcons;
+    bool  _canHaveSmallSpotlightIcons;
     SFSearchResult * _result;
     <SearchUIFeedbackDelegatePrivate> * _selectionAndFeedbackDelegate;
     UIView * _thumbnailView;
 }
 
 @property (retain) SBFApplication *application;
-@property BOOL canHaveSmallSpotlightIcons;
+@property bool canHaveSmallSpotlightIcons;
 @property (retain) SFSearchResult *result;
 @property <SearchUIFeedbackDelegatePrivate> *selectionAndFeedbackDelegate;
 @property (retain) UIView *thumbnailView;
@@ -20,16 +20,16 @@
 - (id)application;
 - (id)bundleID;
 - (id)bundleURL;
-- (BOOL)canHaveSmallSpotlightIcons;
-- (float)cornerRadius;
+- (bool)canHaveSmallSpotlightIcons;
+- (double)cornerRadius;
 - (void)didPeek;
 - (void)didPop;
 - (void)iconButtonPressed;
-- (id)initWithView:(id)arg1 canHaveSmallSpotlightIcons:(BOOL)arg2 selectionAndFeedbackDelegate:(id)arg3;
+- (id)initWithView:(id)arg1 canHaveSmallSpotlightIcons:(bool)arg2 selectionAndFeedbackDelegate:(id)arg3;
 - (id)result;
 - (id)selectionAndFeedbackDelegate;
 - (void)setApplication:(id)arg1;
-- (void)setCanHaveSmallSpotlightIcons:(BOOL)arg1;
+- (void)setCanHaveSmallSpotlightIcons:(bool)arg1;
 - (void)setResult:(id)arg1;
 - (void)setSelectionAndFeedbackDelegate:(id)arg1;
 - (void)setThumbnailView:(id)arg1;

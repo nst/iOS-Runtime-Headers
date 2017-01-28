@@ -11,13 +11,13 @@
 @property (nonatomic, readonly) NSArray *dataIdentifiers;
 
 - (void).cxx_destruct;
-- (void)addObserver:(id)arg1 completion:(id /* block */)arg2;
+- (void)addObserver:(id)arg1 completion:(id)arg2;
 - (id)data;
 - (id)dataIdentifiers;
-- (void)dataSource:(id)arg1 removeDatumWithIdentifier:(id)arg2 observerUpdateBlock:(id /* block */)arg3;
-- (void)dataSource:(id)arg1 replaceWithDatum:(id)arg2 observerUpdateBlock:(id /* block */)arg3;
+- (void)dataSource:(id)arg1 removeDatumWithIdentifier:(id)arg2 observerUpdateBlock:(id)arg3;
+- (void)dataSource:(id)arg1 replaceWithDatum:(id)arg2 observerUpdateBlock:(id)arg3;
 - (id)datumWithIdentifier:(id)arg1;
 - (id)init;
-- (void)removeObserver:(id)arg1 completion:(id /* block */)arg2;
+- (void)removeObserver:(id)arg1 completion:(id)arg2;
 
 @end

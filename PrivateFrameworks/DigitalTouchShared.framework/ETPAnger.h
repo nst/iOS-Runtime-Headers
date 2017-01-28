@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) float duration;
-@property (nonatomic) BOOL hasDuration;
-@property (nonatomic) BOOL hasNormalizedCenterX;
-@property (nonatomic) BOOL hasNormalizedCenterY;
+@property (nonatomic) bool hasDuration;
+@property (nonatomic) bool hasNormalizedCenterX;
+@property (nonatomic) bool hasNormalizedCenterY;
 @property (nonatomic) float normalizedCenterX;
 @property (nonatomic) float normalizedCenterY;
 
@@ -24,19 +24,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (float)duration;
-- (BOOL)hasDuration;
-- (BOOL)hasNormalizedCenterX;
-- (BOOL)hasNormalizedCenterY;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDuration;
+- (bool)hasNormalizedCenterX;
+- (bool)hasNormalizedCenterY;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (float)normalizedCenterX;
 - (float)normalizedCenterY;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDuration:(float)arg1;
-- (void)setHasDuration:(BOOL)arg1;
-- (void)setHasNormalizedCenterX:(BOOL)arg1;
-- (void)setHasNormalizedCenterY:(BOOL)arg1;
+- (void)setHasDuration:(bool)arg1;
+- (void)setHasNormalizedCenterX:(bool)arg1;
+- (void)setHasNormalizedCenterY:(bool)arg1;
 - (void)setNormalizedCenterX:(float)arg1;
 - (void)setNormalizedCenterY:(float)arg1;
 - (void)writeTo:(id)arg1;

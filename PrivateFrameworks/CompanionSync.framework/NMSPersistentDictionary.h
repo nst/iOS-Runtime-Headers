@@ -19,16 +19,16 @@
 }
 
 - (void).cxx_destruct;
-- (unsigned int)_checkSchemaVersion;
+- (unsigned long long)_checkSchemaVersion;
 - (id)_dataFromObject:(id)arg1;
 - (void)_ensureDBSchema;
 - (id)_objectFromData:(id)arg1;
-- (void)_openDBForceRecreate:(BOOL)arg1;
+- (void)_openDBForceRecreate:(bool)arg1;
 - (void)_prepareStatements;
-- (void)_withDB:(id /* block */)arg1;
+- (void)_withDB:(id)arg1;
 - (void)dealloc;
-- (void)enumerateObjectsSortedByEnqueueDate:(id /* block */)arg1;
-- (void)enumerateObjectsSortedByExpirationDate:(id /* block */)arg1;
+- (void)enumerateObjectsSortedByEnqueueDate:(id)arg1;
+- (void)enumerateObjectsSortedByExpirationDate:(id)arg1;
 - (id)init;
 - (id)initWithPath:(id)arg1 objectClass:(Class)arg2 loggingFacility:(struct __CFString { }*)arg3;
 - (id)initWithSharedDBForService:(id)arg1 objectClass:(Class)arg2;

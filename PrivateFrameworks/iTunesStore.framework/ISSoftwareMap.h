@@ -17,13 +17,13 @@
 + (id)containerPathForApp:(id)arg1 homeDirectory:(id)arg2 systemMetadataDirectory:(id)arg3;
 + (id)copySoftwareUpdatesPropertyListWithApplications:(id)arg1 updatesContext:(id)arg2;
 + (id)currentMap;
-+ (BOOL)currentMapIsValid;
-+ (void)enumerateApplicationsForProxies:(id)arg1 usingBlock:(id /* block */)arg2;
-+ (void)enumerateApplicationsOfType:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
-+ (BOOL)haveApplicationsOfType:(id)arg1;
++ (bool)currentMapIsValid;
++ (void)enumerateApplicationsForProxies:(id)arg1 usingBlock:(id)arg2;
++ (void)enumerateApplicationsOfType:(unsigned long long)arg1 usingBlock:(id)arg2;
++ (bool)haveApplicationsOfType:(id)arg1;
 + (void)invalidateCurrentMap;
 + (id)loadedMap;
-+ (void)removableSystemApplicationsWithCompletionBlock:(id /* block */)arg1;
++ (void)removableSystemApplicationsWithCompletionBlock:(id)arg1;
 + (void)setCurrentMap:(id)arg1;
 + (void)startObservingNotifications;
 

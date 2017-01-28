@@ -14,9 +14,9 @@
 
 @property (nonatomic, retain) GEOPDClientMetadata *clientMetadata;
 @property (nonatomic, retain) NSString *guid;
-@property (nonatomic, readonly) BOOL hasClientMetadata;
-@property (nonatomic, readonly) BOOL hasGuid;
-@property (nonatomic) BOOL hasRequestType;
+@property (nonatomic, readonly) bool hasClientMetadata;
+@property (nonatomic, readonly) bool hasGuid;
+@property (nonatomic) bool hasRequestType;
 @property (nonatomic) int requestType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -28,20 +28,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)guid;
-- (BOOL)hasClientMetadata;
-- (BOOL)hasGuid;
-- (BOOL)hasRequestType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasClientMetadata;
+- (bool)hasGuid;
+- (bool)hasRequestType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)requestType;
 - (id)requestTypeAsString:(int)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setClientMetadata:(id)arg1;
 - (void)setGuid:(id)arg1;
-- (void)setHasRequestType:(BOOL)arg1;
+- (void)setHasRequestType:(bool)arg1;
 - (void)setRequestType:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

@@ -4,23 +4,23 @@
 
 @interface NSCoreDataXPCMessage : NSObject <NSSecureCoding> {
     NSData * _messageBody;
-    unsigned int  _messageCode;
+    unsigned long long  _messageCode;
     NSString * _token;
 }
 
 @property (retain) NSData *messageBody;
-@property unsigned int messageCode;
+@property unsigned long long messageCode;
 @property (retain) NSString *token;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)messageBody;
-- (unsigned int)messageCode;
+- (unsigned long long)messageCode;
 - (void)setMessageBody:(id)arg1;
-- (void)setMessageCode:(unsigned int)arg1;
+- (void)setMessageCode:(unsigned long long)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;
 

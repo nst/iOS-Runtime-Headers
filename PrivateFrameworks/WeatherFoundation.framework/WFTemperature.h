@@ -14,22 +14,22 @@
 @property (nonatomic) double fahrenheit;
 @property (nonatomic) double kelvin;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_resetTemperatureValues;
 - (void)_setValue:(double)arg1 forUnit:(int)arg2;
-- (BOOL)_unitIsHydrated:(int)arg1 outputValue:(out double*)arg2;
+- (bool)_unitIsHydrated:(int)arg1 outputValue:(out double*)arg2;
 - (double)celsius;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)fahrenheit;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTemperatureUnit:(int)arg1 value:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToTemperature:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToTemperature:(id)arg1;
 - (double)kelvin;
 - (void)setCelsius:(double)arg1;
 - (void)setFahrenheit:(double)arg1;

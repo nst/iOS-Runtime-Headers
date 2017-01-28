@@ -14,9 +14,9 @@
 - (void).cxx_destruct;
 - (void)_forceBlockToRetainQueue;
 - (id)description;
-- (void)dispatchAsynchronousBlock:(id /* block */)arg1;
-- (void)dispatchSynchronousBlock:(id /* block */)arg1;
-- (void)dispatchWhen:(unsigned long long)arg1 block:(id /* block */)arg2;
+- (void)dispatchAsynchronousBlock:(id)arg1;
+- (void)dispatchSynchronousBlock:(id)arg1;
+- (void)dispatchWhen:(unsigned long long)arg1 block:(id)arg2;
 - (id)initWithLabel:(id)arg1;
 - (id)queue;
 

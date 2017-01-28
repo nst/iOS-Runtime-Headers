@@ -14,8 +14,8 @@
 
 - (void).cxx_destruct;
 - (id)completionQueue;
-- (id)enqueueCompletionHandlerBlock:(id /* block */)arg1;
-- (id)enqueueRequest:(id)arg1 withAccountManagerDelegate:(id)arg2 operationDelegate:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)enqueueCompletionHandlerBlock:(id)arg1;
+- (id)enqueueRequest:(id)arg1 withAccountManagerDelegate:(id)arg2 operationDelegate:(id)arg3 completionHandler:(id)arg4;
 - (id)init;
 - (id)requestQueue;
 - (void)setCompletionQueue:(id)arg1;

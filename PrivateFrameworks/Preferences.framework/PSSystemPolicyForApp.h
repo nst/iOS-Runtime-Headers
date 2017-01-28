@@ -4,25 +4,25 @@
 
 @interface PSSystemPolicyForApp : NSObject <PSUIWirelessDataOptionsDelegate> {
     NSString * _bundleIdentifier;
-    BOOL  _forcePolicyOptions;
-    unsigned int  _policyOptions;
+    bool  _forcePolicyOptions;
+    unsigned long long  _policyOptions;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isServiceRestricted:(id)arg1;
++ (bool)isServiceRestricted:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_isBackgroundAppRefreshAllowed;
-- (BOOL)_isLocationServicesRestricted;
-- (BOOL)_isWirelessDataRestricted;
+- (bool)_isBackgroundAppRefreshAllowed;
+- (bool)_isLocationServicesRestricted;
+- (bool)_isWirelessDataRestricted;
 - (id)_privacyAccessForService:(struct __CFString { }*)arg1;
 - (id)_sectionInfo;
-- (BOOL)_supportsBackgroundAppRefresh;
+- (bool)_supportsBackgroundAppRefresh;
 - (id)appCellularDataEnabledForSpecifier:(id)arg1;
 - (id)authLevelStringForStatus:(int)arg1;
 - (id)backgroundAppRefreshSpecifier;
@@ -31,7 +31,7 @@
 - (id)dataUsageWorkspaceInfo;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)isBackgroundRefreshEnabled:(id)arg1;
-- (BOOL)isCellularBundleID:(id)arg1;
+- (bool)isCellularBundleID:(id)arg1;
 - (id)locationServicesSpecifier;
 - (id)locationStatus:(id)arg1;
 - (id)notificationSpecifier;
@@ -43,7 +43,7 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setPrivacyAccess:(id)arg1 forSpecifier:(id)arg2;
 - (id)specifiers;
-- (id)specifiersForPolicyOptions:(unsigned int)arg1 force:(BOOL)arg2;
+- (id)specifiersForPolicyOptions:(unsigned long long)arg1 force:(bool)arg2;
 - (id)wirelessDataSpecifierWithAppName:(id)arg1;
 
 @end

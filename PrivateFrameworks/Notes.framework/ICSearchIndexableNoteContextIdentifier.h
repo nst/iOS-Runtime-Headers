@@ -4,13 +4,13 @@
 
 @interface ICSearchIndexableNoteContextIdentifier : NSObject <ICPropertyListSerializable, NSCopying> {
     NSString * _contextIdentifierString;
-    BOOL  _forAnyContext;
-    BOOL  _isMainContext;
+    bool  _forAnyContext;
+    bool  _isMainContext;
 }
 
 @property (nonatomic, readonly) NSString *contextIdentifierString;
-@property (nonatomic, readonly) BOOL forAnyContext;
-@property (nonatomic, readonly) BOOL isMainContext;
+@property (nonatomic, readonly) bool forAnyContext;
+@property (nonatomic, readonly) bool isMainContext;
 
 + (id)identifierForAnyContext;
 
@@ -18,14 +18,14 @@
 - (id)contextIdentifierString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (BOOL)forAnyContext;
-- (unsigned int)hash;
+- (bool)forAnyContext;
+- (unsigned long long)hash;
 - (id)initForAnyContext;
-- (id)initWithContextIdentifierString:(id)arg1 isMainContext:(BOOL)arg2;
+- (id)initWithContextIdentifierString:(id)arg1 isMainContext:(bool)arg2;
 - (id)initWithPropertyListObjectRepresentation:(id)arg1 version:(long long)arg2;
-- (BOOL)isCompatibleWithContextIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMainContext;
+- (bool)isCompatibleWithContextIdentifier:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isMainContext;
 - (id)propertyListObjectRepresentation;
 
 @end

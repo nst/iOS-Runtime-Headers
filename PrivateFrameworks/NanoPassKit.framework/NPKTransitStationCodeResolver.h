@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (id)callbackQueue;
 - (id)initWithCallbackQueue:(id)arg1;
-- (void)resolveStationCodesForAppletState:(id)arg1 paymentApplication:(id)arg2 passUniqueIdentifier:(id)arg3 completion:(id /* block */)arg4;
+- (void)resolveStationCodesForAppletState:(id)arg1 paymentApplication:(id)arg2 passUniqueIdentifier:(id)arg3 completion:(id)arg4;
 - (void)setCallbackQueue:(id)arg1;
 
 @end

@@ -4,15 +4,15 @@
 
 @interface MKMapSnapshotter : NSObject {
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     int  _loadingFlag;
-    BOOL  _needsResume;
+    bool  _needsResume;
     MKMapSnapshotOptions * _options;
     VKMapSnapshotCreator * _snapshotCreator;
     NSXPCConnection * _snapshotService;
 }
 
-@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (getter=isLoading, nonatomic, readonly) bool loading;
 
 - (void).cxx_destruct;
 - (void)_cancel;
@@ -26,8 +26,8 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithOptions:(id)arg1;
-- (BOOL)isLoading;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
-- (void)startWithQueue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)isLoading;
+- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithQueue:(id)arg1 completionHandler:(id)arg2;
 
 @end

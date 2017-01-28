@@ -8,40 +8,40 @@
     void * _reserved;
 }
 
-@property unsigned int countLimit;
+@property unsigned long long countLimit;
 @property <NSCacheDelegate> *delegate;
-@property BOOL evictsObjectsWithDiscardedContent;
+@property bool evictsObjectsWithDiscardedContent;
 @property (copy) NSString *name;
-@property unsigned int totalCostLimit;
+@property unsigned long long totalCostLimit;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
 - (id)allObjects;
-- (unsigned int)countLimit;
+- (unsigned long long)countLimit;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)evictsObjectsWhenApplicationEntersBackground;
-- (BOOL)evictsObjectsWithDiscardedContent;
+- (bool)evictsObjectsWhenApplicationEntersBackground;
+- (bool)evictsObjectsWithDiscardedContent;
 - (id)init;
-- (unsigned int)minimumObjectCount;
+- (unsigned long long)minimumObjectCount;
 - (id)name;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;
-- (void)setCountLimit:(unsigned int)arg1;
+- (void)setCountLimit:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEvictsObjectsWhenApplicationEntersBackground:(BOOL)arg1;
-- (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
-- (void)setMinimumObjectCount:(unsigned int)arg1;
+- (void)setEvictsObjectsWhenApplicationEntersBackground:(bool)arg1;
+- (void)setEvictsObjectsWithDiscardedContent:(bool)arg1;
+- (void)setMinimumObjectCount:(unsigned long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;
-- (void)setTotalCostLimit:(unsigned int)arg1;
-- (unsigned int)totalCostLimit;
+- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned long long)arg3;
+- (void)setTotalCostLimit:(unsigned long long)arg1;
+- (unsigned long long)totalCostLimit;
 
 // Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
 
-- (id)CALobjectForKey:(id)arg1 calculatedWithBlock:(id /* block */)arg2;
+- (id)CALobjectForKey:(id)arg1 calculatedWithBlock:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
@@ -54,6 +54,6 @@
 - (id)tsp_currentComponent;
 - (unsigned char)tsp_currentOperation;
 - (void)tsp_flushComponent:(id)arg1;
-- (void)tsp_performOperation:(unsigned char)arg1 forComponent:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)tsp_performOperation:(unsigned char)arg1 forComponent:(id)arg2 usingBlock:(id)arg3;
 
 @end

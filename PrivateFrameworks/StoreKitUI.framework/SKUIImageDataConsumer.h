@@ -4,13 +4,13 @@
 
 @interface SKUIImageDataConsumer : SSVURLDataConsumer
 
-@property (getter=isImagePlaceholderAvailable, nonatomic, readonly) BOOL imagePlaceholderAvailable;
+@property (getter=isImagePlaceholderAvailable, nonatomic, readonly) bool imagePlaceholderAvailable;
 
 - (id)imageForColor:(id)arg1;
-- (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)imageForColor:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (id)imageForImage:(id)arg1;
 - (id)imagePlaceholderForColor:(id)arg1;
-- (BOOL)isImagePlaceholderAvailable;
+- (bool)isImagePlaceholderAvailable;
 - (id)objectForData:(id)arg1 response:(id)arg2 error:(id*)arg3;
 
 @end

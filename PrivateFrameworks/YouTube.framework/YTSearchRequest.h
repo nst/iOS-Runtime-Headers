@@ -10,7 +10,7 @@
 
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
-- (BOOL)receivedValidResponse:(id)arg1;
+- (bool)receivedValidResponse:(id)arg1;
 - (void)searchForFavoriteVideosStartingAtIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 withDelegate:(id)arg3;
 - (void)searchForMyVideosStartingAtIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 withDelegate:(id)arg3;
 - (void)searchForRecentVideosStartingAtIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 withDelegate:(id)arg3;
@@ -20,7 +20,7 @@
 - (void)searchForVideosFromWatchLaterPlaylistStartingAtIndex:(unsigned int)arg1 maxResults:(unsigned int)arg2 withDelegate:(id)arg3;
 - (void)searchForVideosMatchingString:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withDelegate:(id)arg4;
 - (void)searchForVideosRelatedToVideo:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withDelegate:(id)arg4;
-- (void)searchForVideosWithFeedURLBase:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withTimeQualifier:(id)arg4 withFormatFilter:(BOOL)arg5 authenticationRequired:(BOOL)arg6 withDelegate:(id)arg7;
+- (void)searchForVideosWithFeedURLBase:(id)arg1 startingAtIndex:(unsigned int)arg2 maxResults:(unsigned int)arg3 withTimeQualifier:(id)arg4 withFormatFilter:(bool)arg5 authenticationRequired:(bool)arg6 withDelegate:(id)arg7;
 - (void)searchForVideosWithIDs:(id)arg1 withDelegate:(id)arg2;
 
 @end

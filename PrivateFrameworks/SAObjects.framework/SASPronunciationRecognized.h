@@ -16,7 +16,7 @@
 - (id)groupIdentifier;
 - (id)interactionId;
 - (id)pronunciationData;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setErrorCode:(id)arg1;
 - (void)setInteractionId:(id)arg1;
 - (void)setPronunciationData:(id)arg1;

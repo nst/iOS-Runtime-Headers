@@ -4,14 +4,14 @@
 
 @interface TKSmartCardTokenSession : TKTokenSession {
     TKSmartCard * _errorCard;
-    BOOL  _hasSession;
+    bool  _hasSession;
     TKSmartCard * _smartCard;
 }
 
 @property (readonly) TKSmartCard *smartCard;
 
 - (void).cxx_destruct;
-- (BOOL)beginRequest:(int)arg1 error:(id*)arg2;
+- (bool)beginRequest:(long long)arg1 error:(id*)arg2;
 - (void)endRequest;
 - (id)initWithToken:(id)arg1;
 - (id)smartCard;

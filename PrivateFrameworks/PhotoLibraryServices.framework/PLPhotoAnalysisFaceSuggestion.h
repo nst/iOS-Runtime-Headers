@@ -3,20 +3,24 @@
  */
 
 @interface PLPhotoAnalysisFaceSuggestion : NSObject {
-    BOOL  _confirmed;
+    NSNumber * _clusterSequenceNumber;
     NSString * _faceLocalIdentifier;
-    BOOL  _isConfirmed;
+    bool  _isConfirmed;
     NSArray * _matchingFaceLocalIdentifiers;
 }
 
-@property (getter=isConfirmed, nonatomic, readonly) BOOL confirmed;
+@property (nonatomic, readonly, copy) NSNumber *clusterSequenceNumber;
+@property (getter=isConfirmed, nonatomic, readonly) bool confirmed;
 @property (nonatomic, readonly, copy) NSString *faceLocalIdentifier;
 @property (nonatomic, readonly, copy) NSArray *matchingFaceLocalIdentifiers;
 
 - (void).cxx_destruct;
+- (id)clusterSequenceNumber;
+- (id)description;
 - (id)faceLocalIdentifier;
 - (id)initWithSuggestionDictionary:(id)arg1;
-- (BOOL)isConfirmed;
+- (bool)isConfirmed;
 - (id)matchingFaceLocalIdentifiers;
+- (id)suggestionDictionaryRepresentation;
 
 @end

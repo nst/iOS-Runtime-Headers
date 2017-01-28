@@ -4,9 +4,9 @@
 
 @interface DOMHTMLMenuElement : DOMHTMLElement
 
-@property BOOL compact;
+@property bool compact;
 
-- (BOOL)compact;
-- (void)setCompact:(BOOL)arg1;
+- (bool)compact;
+- (void)setCompact:(bool)arg1;
 
 @end

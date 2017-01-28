@@ -31,7 +31,7 @@
 - (id)_initWithDictionary:(id)arg1 cache:(id)arg2;
 - (double)completionScore;
 - (id)completionString;
-- (void)enumeratePatternsUsingBlock:(id /* block */)arg1;
+- (void)enumeratePatternsUsingBlock:(id)arg1;
 - (id)errorCodeString;
 - (id)feedbackQueryIdentifier;
 - (double)maxAge;

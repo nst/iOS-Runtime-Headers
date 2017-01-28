@@ -4,7 +4,7 @@
 
 @interface SASettingBoolSnippet : SASettingSnippet
 
-@property (nonatomic) BOOL toggle;
+@property (nonatomic) bool toggle;
 @property (nonatomic, copy) NSNumber *value;
 
 + (id)boolSnippet;
@@ -12,9 +12,9 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setToggle:(BOOL)arg1;
+- (void)setToggle:(bool)arg1;
 - (void)setValue:(id)arg1;
-- (BOOL)toggle;
+- (bool)toggle;
 - (id)value;
 
 @end

@@ -6,31 +6,31 @@
     NSHashTable * _networkActivityIndicatorRequesters;
     NSHashTable * _statusBarHidingRequesters;
     <HUStatusBarVisibilityHandling> * _visibilityHandler;
-    BOOL  _wasStatusBarVisible;
+    bool  _wasStatusBarVisible;
 }
 
 @property (nonatomic, retain) NSHashTable *networkActivityIndicatorRequesters;
-@property (getter=isStatusBarHidden, nonatomic, readonly) BOOL statusBarHidden;
+@property (getter=isStatusBarHidden, nonatomic, readonly) bool statusBarHidden;
 @property (nonatomic, retain) NSHashTable *statusBarHidingRequesters;
 @property (nonatomic, retain) <HUStatusBarVisibilityHandling> *visibilityHandler;
-@property (nonatomic) BOOL wasStatusBarVisible;
+@property (nonatomic) bool wasStatusBarVisible;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)isNetworkActivityIndicatorVisible;
-- (BOOL)isStatusBarHidden;
+- (bool)isNetworkActivityIndicatorVisible;
+- (bool)isStatusBarHidden;
 - (id)networkActivityIndicatorRequesters;
 - (void)setNetworkActivityIndicatorRequesters:(id)arg1;
-- (void)setNetworkActivityIndicatorVisible:(BOOL)arg1 forRequester:(id)arg2;
-- (void)setStatusBarHidden:(BOOL)arg1 forRequester:(id)arg2;
-- (void)setStatusBarHidden:(BOOL)arg1 forRequester:(id)arg2 withAnimationSettings:(id)arg3;
+- (void)setNetworkActivityIndicatorVisible:(bool)arg1 forRequester:(id)arg2;
+- (void)setStatusBarHidden:(bool)arg1 forRequester:(id)arg2;
+- (void)setStatusBarHidden:(bool)arg1 forRequester:(id)arg2 withAnimationSettings:(id)arg3;
 - (void)setStatusBarHidingRequesters:(id)arg1;
 - (void)setVisibilityHandler:(id)arg1;
-- (void)setWasStatusBarVisible:(BOOL)arg1;
+- (void)setWasStatusBarVisible:(bool)arg1;
 - (id)statusBarHidingRequesters;
 - (id)visibilityHandler;
-- (BOOL)wasStatusBarVisible;
+- (bool)wasStatusBarVisible;
 
 @end

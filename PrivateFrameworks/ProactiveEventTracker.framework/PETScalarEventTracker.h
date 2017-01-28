@@ -14,6 +14,6 @@
 - (id)initWithFeatureId:(id)arg1 event:(id)arg2 registerProperties:(id)arg3;
 - (id)initWithFeatureId:(id)arg1 event:(id)arg2 registerProperties:(id)arg3 propertySubsets:(id)arg4;
 - (void)trackEventWithPropertyValues:(id)arg1;
-- (void)trackEventWithPropertyValues:(id)arg1 value:(unsigned int)arg2;
+- (void)trackEventWithPropertyValues:(id)arg1 value:(unsigned long long)arg2;
 
 @end

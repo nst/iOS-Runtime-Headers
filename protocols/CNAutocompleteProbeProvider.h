@@ -6,6 +6,7 @@
 @required
 
 - (<CNAutocompletePerformanceProbe> *)performanceProbe;
+- (<CNAutocompleteSuggestionsProbe> *)suggestionsProbe;
 - (<CNAutocompleteUsageMonitorProbe> *)usageMonitorProbe;
 
 @end

@@ -19,11 +19,11 @@
 - (id)continuousBannerDisplayString;
 - (id)continuousBannerTitle;
 - (id)displayString;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })emphasizedTextRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })emphasizedTextRange;
 - (id)feedURLString;
 - (id)homepageURL;
 - (id)initWithDictionary:(id)arg1 socialSourceAccountIdentifier:(id)arg2;
-- (BOOL)isAcceptableOriginatorProfileImage:(id)arg1;
+- (bool)isAcceptableOriginatorProfileImage:(id)arg1;
 - (id)originatorProfileImageURL;
 - (id)originatorProfileImageURLString;
 - (id)originatorProfileURL;

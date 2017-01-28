@@ -3,11 +3,11 @@
  */
 
 @interface SCNActionRemove : SCNAction {
-    BOOL  _hasFired;
+    bool  _hasFired;
 }
 
 + (id)removeFromParentNode;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

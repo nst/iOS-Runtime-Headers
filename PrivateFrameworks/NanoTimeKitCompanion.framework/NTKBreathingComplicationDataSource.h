@@ -4,18 +4,18 @@
 
 @interface NTKBreathingComplicationDataSource : NTKComplicationDataSource
 
-+ (id)_templateForFamily:(int)arg1;
-+ (BOOL)acceptsComplicationFamily:(int)arg1;
-+ (BOOL)acceptsComplicationType:(unsigned int)arg1;
++ (id)_templateForFamily:(long long)arg1;
++ (bool)acceptsComplicationFamily:(long long)arg1;
++ (bool)acceptsComplicationType:(unsigned long long)arg1;
 
 - (id)_template;
 - (id)complicationApplicationIdentifier;
 - (id)currentSwitcherTemplate;
 - (void)dealloc;
-- (void)getCurrentTimelineEntryWithHandler:(id /* block */)arg1;
-- (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(id /* block */)arg3;
-- (void)getSupportedTimeTravelDirectionsWithHandler:(id /* block */)arg1;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
+- (void)getCurrentTimelineEntryWithHandler:(id)arg1;
+- (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(id)arg3;
+- (void)getSupportedTimeTravelDirectionsWithHandler:(id)arg1;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2;
 - (id)lockedTemplate;
 
 @end

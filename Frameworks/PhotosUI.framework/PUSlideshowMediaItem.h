@@ -5,28 +5,28 @@
 @interface PUSlideshowMediaItem : NSObject {
     MPMediaItem * _mediaItem;
     OKProducerPreset * _preset;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) NSURL *audioURL;
 @property (nonatomic, readonly) NSString *localizedName;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly) NSString *uniqueIdentifier;
 
-+ (id)mediaItemForType:(int)arg1 uniqueIdentifier:(id)arg2;
++ (id)mediaItemForType:(long long)arg1 uniqueIdentifier:(id)arg2;
 + (id)mediaItemsForOKThemes;
 
 - (void).cxx_destruct;
-- (id)_initWithType:(int)arg1;
+- (id)_initWithType:(long long)arg1;
 - (id)audioURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWitMediaItem:(id)arg1;
 - (id)initWitPreset:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedName;
-- (int)type;
+- (long long)type;
 - (id)uniqueIdentifier;
 
 @end

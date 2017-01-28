@@ -3,12 +3,12 @@
  */
 
 @interface _NSURLBDOnce : NSObject {
-    id /* block */  fBlock;
-    BOOL  fDone;
+    id  fBlock;
+    bool  fDone;
 }
 
 - (void)dealloc;
 - (void)doit;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 
 @end

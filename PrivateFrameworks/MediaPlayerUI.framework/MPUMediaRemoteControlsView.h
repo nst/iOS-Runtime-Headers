@@ -7,7 +7,7 @@
     NSString * _nowPlayingAppDisplayID;
     MPUNowPlayingMetadata * _nowPlayingMetadata;
     MPUChronologicalProgressView * _timeView;
-    BOOL  _timeViewVisible;
+    bool  _timeViewVisible;
     MPUTransportControlsView * _transportControls;
     MPUMediaControlsVolumeView * _volumeView;
 }
@@ -16,22 +16,22 @@
 @property (nonatomic, retain) NSString *nowPlayingAppDisplayID;
 @property (nonatomic, retain) MPUNowPlayingMetadata *nowPlayingMetadata;
 @property (nonatomic, readonly) MPUChronologicalProgressView *timeView;
-@property (nonatomic) BOOL timeViewVisible;
+@property (nonatomic) bool timeViewVisible;
 @property (nonatomic, readonly) MPUTransportControlsView *transportControls;
 @property (nonatomic, readonly) MPUMediaControlsVolumeView *volumeView;
 
 - (void).cxx_destruct;
 - (id)artworkImage;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)nowPlayingAppDisplayID;
 - (id)nowPlayingMetadata;
 - (void)setArtworkImage:(id)arg1;
 - (void)setNowPlayingAppDisplayID:(id)arg1;
 - (void)setNowPlayingMetadata:(id)arg1;
-- (void)setTimeViewVisible:(BOOL)arg1;
+- (void)setTimeViewVisible:(bool)arg1;
 - (id)timeView;
-- (BOOL)timeViewVisible;
+- (bool)timeViewVisible;
 - (id)transportControls;
 - (id)volumeView;
 

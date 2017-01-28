@@ -18,7 +18,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) NSMutableDictionary *dispatchGroupForTaskIdentifier;
 @property (readonly) NSMutableDictionary *executionStartTimeForTaskIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalStateQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) <WeatherServiceProtocol> *serviceProxy;
@@ -34,13 +34,13 @@
 - (void)_handleRemoteObjectProxyError:(id)arg1;
 - (void)_onQueueInvalidateConnection:(id)arg1;
 - (void)_onQueueOpenConnection;
-- (void)accessServiceWithBlock:(id /* block */)arg1;
+- (void)accessServiceWithBlock:(id)arg1;
 - (id)callbackQueue;
 - (void)cancelRequestWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)dispatchGroupForTaskIdentifier;
 - (void)enqueueRequest:(id)arg1;
-- (void)enqueueRequest:(id)arg1 waitUntilDone:(BOOL)arg2;
+- (void)enqueueRequest:(id)arg1 waitUntilDone:(bool)arg2;
 - (id)executionStartTimeForTaskIdentifier;
 - (id)init;
 - (id)internalStateQueue;
@@ -53,7 +53,7 @@
 - (void)setQueue:(id)arg1;
 - (void)setServiceProxy:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
-- (void)taskIdentifier:(id /* block */)arg1;
+- (void)taskIdentifier:(id)arg1;
 - (id)tasksPendingResponseForTaskIdentifier;
 - (id)xpcConnection;
 

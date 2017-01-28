@@ -3,55 +3,55 @@
  */
 
 @interface NTKAstronomyLocationDot : UIView {
-    BOOL  _animating;
+    bool  _animating;
     UIColor * _innerDotColor;
-    float  _innerDotDiameter;
+    double  _innerDotDiameter;
     UIView * _innerDotImageView;
     UIView * _outerDot;
     UIColor * _outerDotColor;
-    float  _outerDotDiameter;
+    double  _outerDotDiameter;
     double  _pulseAlphaDelay;
     double  _pulseDuration;
 }
 
-@property (nonatomic) BOOL animating;
+@property (nonatomic) bool animating;
 @property (nonatomic, retain) UIColor *innerDotColor;
-@property (nonatomic) float innerDotDiameter;
+@property (nonatomic) double innerDotDiameter;
 @property (nonatomic, retain) UIView *innerDotImageView;
 @property (nonatomic, retain) UIView *outerDot;
 @property (nonatomic, retain) UIColor *outerDotColor;
-@property (nonatomic) float outerDotDiameter;
+@property (nonatomic) double outerDotDiameter;
 @property (nonatomic) double pulseAlphaDelay;
 @property (nonatomic) double pulseDuration;
 
-+ (struct CGSize { float x1; float x2; })defaultSize;
++ (struct CGSize { double x1; double x2; })defaultSize;
 
 - (void).cxx_destruct;
-- (BOOL)animating;
+- (bool)animating;
 - (id)defaultColor;
-- (float)defaultInnerDotDiameter;
-- (float)defaultOuterDotDiameter;
+- (double)defaultInnerDotDiameter;
+- (double)defaultOuterDotDiameter;
 - (double)defaultPulseAlphaDelay;
 - (double)defaultPulseDuration;
 - (id)initWithDefaultSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)innerDotColor;
-- (float)innerDotDiameter;
+- (double)innerDotDiameter;
 - (id)innerDotImageView;
 - (void)layoutSubviews;
 - (id)makeDot;
 - (id)outerDot;
 - (id)outerDotColor;
-- (float)outerDotDiameter;
+- (double)outerDotDiameter;
 - (double)pulseAlphaDelay;
 - (double)pulseDuration;
-- (void)setAnimating:(BOOL)arg1;
+- (void)setAnimating:(bool)arg1;
 - (void)setInnerDotColor:(id)arg1;
-- (void)setInnerDotDiameter:(float)arg1;
+- (void)setInnerDotDiameter:(double)arg1;
 - (void)setInnerDotImageView:(id)arg1;
 - (void)setOuterDot:(id)arg1;
 - (void)setOuterDotColor:(id)arg1;
-- (void)setOuterDotDiameter:(float)arg1;
+- (void)setOuterDotDiameter:(double)arg1;
 - (void)setPulseAlphaDelay:(double)arg1;
 - (void)setPulseDuration:(double)arg1;
 - (void)startAnimation;

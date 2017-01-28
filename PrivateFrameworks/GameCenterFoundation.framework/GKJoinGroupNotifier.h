@@ -24,7 +24,7 @@
 - (void)setError:(id)arg1;
 - (void)setGroup:(id)arg1;
 - (void)setLock:(id)arg1;
-- (void)setResult:(id /* block */)arg1 error:(id)arg2;
+- (void)setResult:(id)arg1 error:(id)arg2;
 - (void)setUpdateQueue:(id)arg1;
 - (id)updateQueue;
 

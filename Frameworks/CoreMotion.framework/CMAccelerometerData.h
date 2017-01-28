@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } acceleration;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (struct { double x1; double x2; double x3; })acceleration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

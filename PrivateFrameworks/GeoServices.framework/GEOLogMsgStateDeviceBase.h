@@ -13,8 +13,8 @@
 
 @property (nonatomic) int deviceBatteryState;
 @property (nonatomic) int deviceInterfaceOrientation;
-@property (nonatomic) BOOL hasDeviceBatteryState;
-@property (nonatomic) BOOL hasDeviceInterfaceOrientation;
+@property (nonatomic) bool hasDeviceBatteryState;
+@property (nonatomic) bool hasDeviceInterfaceOrientation;
 
 - (int)StringAsDeviceBatteryState:(id)arg1;
 - (int)StringAsDeviceInterfaceOrientation:(id)arg1;
@@ -26,16 +26,16 @@
 - (int)deviceInterfaceOrientation;
 - (id)deviceInterfaceOrientationAsString:(int)arg1;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeviceBatteryState;
-- (BOOL)hasDeviceInterfaceOrientation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeviceBatteryState;
+- (bool)hasDeviceInterfaceOrientation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeviceBatteryState:(int)arg1;
 - (void)setDeviceInterfaceOrientation:(int)arg1;
-- (void)setHasDeviceBatteryState:(BOOL)arg1;
-- (void)setHasDeviceInterfaceOrientation:(BOOL)arg1;
+- (void)setHasDeviceBatteryState:(bool)arg1;
+- (void)setHasDeviceInterfaceOrientation:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

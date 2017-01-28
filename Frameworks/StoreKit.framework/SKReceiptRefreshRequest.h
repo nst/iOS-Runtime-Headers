@@ -10,9 +10,9 @@
 
 - (void)_handleReply:(id)arg1;
 - (void)_sendXPCMessage;
-- (BOOL)_wantsExpired;
-- (BOOL)_wantsRevoked;
-- (BOOL)_wantsVPP;
+- (bool)_wantsExpired;
+- (bool)_wantsRevoked;
+- (bool)_wantsVPP;
 - (void)dealloc;
 - (id)initWithReceiptProperties:(id)arg1;
 - (id)receiptProperties;

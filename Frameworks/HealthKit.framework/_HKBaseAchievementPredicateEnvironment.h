@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)setGetter:(id /* block */)arg1 forKey:(id)arg2;
+- (void)setGetter:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 

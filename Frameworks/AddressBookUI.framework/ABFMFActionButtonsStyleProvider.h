@@ -4,8 +4,8 @@
 
 @interface ABFMFActionButtonsStyleProvider : ABStyleProvider
 
-- (BOOL)presentModalViewInPopover;
-- (BOOL)refreshTinyActionCell;
-- (BOOL)reloadCallAction;
+- (bool)presentModalViewInPopover;
+- (bool)refreshTinyActionCell;
+- (bool)reloadCallAction;
 
 @end

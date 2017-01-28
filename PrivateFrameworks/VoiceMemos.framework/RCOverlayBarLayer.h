@@ -12,10 +12,10 @@
 @property (nonatomic, retain) UIColor *color;
 
 - (void).cxx_destruct;
-- (void)_loadWithColor:(id)arg1 selectionExtentIncludingKnobs:(float)arg2 topKnob:(BOOL)arg3 bottomKnob:(BOOL)arg4;
+- (void)_loadWithColor:(id)arg1 selectionExtentIncludingKnobs:(double)arg2 topKnob:(bool)arg3 bottomKnob:(bool)arg4;
 - (id)barComponents;
 - (id)color;
-- (id)initWithColor:(id)arg1 selectionExtentIncludingKnobs:(float)arg2 topKnob:(BOOL)arg3 bottomKnob:(BOOL)arg4;
+- (id)initWithColor:(id)arg1 selectionExtentIncludingKnobs:(double)arg2 topKnob:(bool)arg3 bottomKnob:(bool)arg4;
 - (void)setColor:(id)arg1;
 
 @end

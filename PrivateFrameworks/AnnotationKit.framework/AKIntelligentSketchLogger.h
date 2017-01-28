@@ -8,10 +8,10 @@
 + (id)sharedInstance;
 
 - (id)_fileName:(id)arg1;
-- (BOOL)_loggingIsEnabled;
+- (bool)_loggingIsEnabled;
 - (id)_logsPath;
 - (id)_newLogPathWithShapeName:(id)arg1;
-- (void)logCHDrawingToDisk:(id)arg1 withIntendedShape:(int)arg2;
+- (void)logCHDrawingToDisk:(id)arg1 withIntendedShape:(long long)arg2;
 - (void)openFinderWindowToLogs;
 
 @end

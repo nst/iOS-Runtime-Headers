@@ -10,9 +10,9 @@
 
 - (void).cxx_destruct;
 - (id)_expandedSecondaryLabel;
-- (float)_expandedSecondaryTextHeightDeltaForContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)adjustForContentSizeCategoryChange;
-- (id)initWithStyle:(int)arg1;
+- (double)_expandedSecondaryTextHeightDeltaForContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)adjustForContentSizeCategoryChange;
+- (id)initWithStyle:(long long)arg1;
 - (void)layoutSubviews;
 - (void)setSecondaryText:(id)arg1;
 

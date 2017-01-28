@@ -4,9 +4,9 @@
 
 @interface CNAuthorization : NSObject
 
-+ (int)authorizationStatusForEntityType:(int)arg1;
-+ (BOOL)isAccessRestrictedForEntityType:(int)arg1;
-+ (BOOL)requestAccessForEntityType:(int)arg1;
-+ (BOOL)requestAccessWithTimeout:(double)arg1 entityType:(int)arg2;
++ (long long)authorizationStatusForEntityType:(long long)arg1;
++ (bool)isAccessRestrictedForEntityType:(long long)arg1;
++ (bool)requestAccessForEntityType:(long long)arg1;
++ (bool)requestAccessWithTimeout:(double)arg1 entityType:(long long)arg2;
 
 @end

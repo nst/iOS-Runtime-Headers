@@ -3,15 +3,15 @@
  */
 
 @interface _UILabelContentLayer : CALayer {
-    BOOL  _wantsAnimation;
+    bool  _wantsAnimation;
 }
 
-@property (nonatomic) BOOL wantsAnimation;
+@property (nonatomic) bool wantsAnimation;
 
 - (id)actionForKey:(id)arg1;
 - (void)display;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (void)setWantsAnimation:(BOOL)arg1;
-- (BOOL)wantsAnimation;
+- (void)setWantsAnimation:(bool)arg1;
+- (bool)wantsAnimation;
 
 @end

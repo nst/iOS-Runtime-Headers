@@ -12,9 +12,9 @@
                 struct TransitEdgePiece {} **__first_; 
             } __end_cap_; 
         } __map_; 
-        unsigned int __start_; 
+        unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<geo::TransitEdgePiece> > { 
-            unsigned long __first_; 
+            unsigned long long __first_; 
         } __size_; 
     }  _pieces;
 }
@@ -22,16 +22,16 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_buildCompleteEdge;
-- (BOOL)_findEdgeAheadInTile:(id)arg1;
-- (BOOL)_findEdgeBehindInTile:(id)arg1;
+- (bool)_findEdgeAheadInTile:(id)arg1;
+- (bool)_findEdgeBehindInTile:(id)arg1;
 - (struct Matrix<float, 2, 1> { float x1[2]; })_firstPoint;
 - (id)_firstTile;
 - (struct Matrix<float, 2, 1> { float x1[2]; })_lastPoint;
 - (id)_lastTile;
-- (unsigned int)_maxTileCount;
-- (BOOL)_shouldFindEdgeAhead;
-- (BOOL)_shouldFindEdgeBehind;
+- (unsigned long long)_maxTileCount;
+- (bool)_shouldFindEdgeAhead;
+- (bool)_shouldFindEdgeBehind;
 - (id)_tileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
-- (id)initWithMap:(id)arg1 firstPiece:(const struct TransitEdgePiece { struct { /* ? */ } *x1; unsigned int x2; struct { /* ? */ } *x3; struct _retain_ptr<GEOFeature *, geo::_retain_GEOFeature, geo::_release_GEOFeature, geo::_hash_ptr, geo::_equal_ptr> { int (**x_4_1_1)(); struct { /* ? */ } *x_4_1_2; struct _retain_GEOFeature { } x_4_1_3; struct _release_GEOFeature { } x_4_1_4; } x4; unsigned int x5; BOOL x6; }*)arg2;
+- (id)initWithMap:(id)arg1 firstPiece:(const struct TransitEdgePiece { struct { /* ? */ } *x1; unsigned long long x2; struct { /* ? */ } *x3; struct _retain_ptr<GEOFeature *, geo::_retain_GEOFeature, geo::_release_GEOFeature, geo::_hash_ptr, geo::_equal_ptr> { int (**x_4_1_1)(); struct { /* ? */ } *x_4_1_2; struct _retain_GEOFeature { } x_4_1_3; struct _release_GEOFeature { } x_4_1_4; } x4; unsigned int x5; bool x6; }*)arg2;
 
 @end

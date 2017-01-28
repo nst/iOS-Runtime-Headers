@@ -5,9 +5,9 @@
 @interface BRCFSUploader : BRCFSSchedulerBase <BRCModule> {
     NSMutableSet * _boostedDocIDs;
     br_pacer * _globalQuotaStateUpdatePacer;
-    BOOL  _initialKickDone;
-    BOOL  _isDefaultOwnerOutOfQuota;
-    BOOL  _prepareReachedMax;
+    bool  _initialKickDone;
+    bool  _isDefaultOwnerOutOfQuota;
+    bool  _prepareReachedMax;
     br_pacer * _quotaPacer;
     BRCDeadlineSource * _retryQueueSource;
     NSMutableDictionary * _stampForDocID;
@@ -18,9 +18,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCancelled;
-@property (nonatomic) BOOL isDefaultOwnerOutOfQuota;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCancelled;
+@property (nonatomic) bool isDefaultOwnerOutOfQuota;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDictionary *thumbnailsOperationsByID;
 @property (nonatomic, readonly) BRCDeadlineScheduler *uploadsDeadlineScheduler;
@@ -36,11 +36,11 @@
 - (id)_documentItemForThrottleID:(long long)arg1 stageID:(id)arg2;
 - (void)_doneFetchingThumbnailForThrottleID:(id)arg1;
 - (id)_duplicatePackage:(id)arg1 stageID:(id)arg2 stageName:(id)arg3 error:(id*)arg4;
-- (BOOL)_finishPackageUploadWithRecord:(id)arg1 item:(id)arg2 stageID:(id)arg3 error:(id*)arg4;
+- (bool)_finishPackageUploadWithRecord:(id)arg1 item:(id)arg2 stageID:(id)arg3 error:(id*)arg4;
 - (void)_finishedUploadingItem:(id)arg1 record:(id)arg2 throttleID:(long long)arg3 stageID:(id)arg4 error:(id)arg5;
 - (void)_globalQuotaStateUpdateForDefaultOwner;
 - (void)_handleFileModifiedError:(id)arg1 forItem:(id)arg2;
-- (unsigned int)_minBatchSize;
+- (unsigned long long)_minBatchSize;
 - (void)_rescheduleThrottlesOutOfQuotaForDefaultOwnerWithAvailableSize:(long long)arg1;
 - (void)_resumeGlobalProgressForZones:(id)arg1 queue:(id)arg2;
 - (void)_scheduleQuotaFetchForDefaultOwner;
@@ -48,9 +48,9 @@
 - (void)_setQuotaAvailableForDefaultOwner:(unsigned long long)arg1;
 - (void)_startFetchThumbnail:(id)arg1 throttleID:(id)arg2;
 - (id)_thumbnailOperationForThrottleID:(id)arg1;
-- (unsigned int)_thumbnailOperationsMax;
-- (void)_transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 priority:(int)arg4;
-- (BOOL)_updatePackageRecord:(id)arg1 item:(id)arg2 stageID:(id)arg3 error:(id*)arg4;
+- (unsigned long long)_thumbnailOperationsMax;
+- (void)_transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned long long)arg2 sizeHint:(unsigned long long)arg3 priority:(long long)arg4;
+- (bool)_updatePackageRecord:(id)arg1 item:(id)arg2 stageID:(id)arg3 error:(id*)arg4;
 - (void)_updateRecord:(id)arg1 item:(id)arg2 thumbnailOperation:(id)arg3 stageID:(id)arg4;
 - (void)_updateRecord:(id)arg1 throttleID:(long long)arg2 thumbnailOperation:(id)arg3 stageID:(id)arg4;
 - (void)_updateThrottleID:(long long)arg1 setStageID:(id)arg2 operationID:(id)arg3;
@@ -63,11 +63,11 @@
 - (void)deleteThrottlesForZone:(id)arg1;
 - (id)descriptionForThrottleID:(long long)arg1 zone:(id)arg2 now:(long long)arg3 context:(id)arg4;
 - (void)finishedSyncingUpItem:(id)arg1 withOutOfQuotaError:(id)arg2;
-- (BOOL)hasItemsOverQuotaForOwner:(id)arg1;
-- (BOOL)hasItemsOverQuotaInZone:(id)arg1;
+- (bool)hasItemsOverQuotaForOwner:(id)arg1;
+- (bool)hasItemsOverQuotaInZone:(id)arg1;
 - (id)initWithAccountSession:(id)arg1;
-- (BOOL)isDefaultOwnerOutOfQuota;
-- (BOOL)isUploadingItem:(id)arg1;
+- (bool)isDefaultOwnerOutOfQuota;
+- (bool)isUploadingItem:(id)arg1;
 - (void)ownerDidReceiveOutOfQuotaError:(id)arg1;
 - (id)quotaAvailableForOwner:(id)arg1;
 - (void)removeBoostedDocID:(id)arg1;
@@ -76,10 +76,10 @@
 - (void)schedule;
 - (void)scheduleQuotaFetchIfNeededForOwner:(id)arg1;
 - (void)scheduleQuotaStateUpdateForOwner:(id)arg1;
-- (void)setIsDefaultOwnerOutOfQuota:(BOOL)arg1;
+- (void)setIsDefaultOwnerOutOfQuota:(bool)arg1;
 - (void)suspend;
 - (id)thumbnailsOperationsByID;
-- (void)transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned int)arg2 sizeHint:(unsigned long long)arg3 priority:(int)arg4 completionBlock:(id /* block */)arg5;
+- (void)transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned long long)arg2 sizeHint:(unsigned long long)arg3 priority:(long long)arg4 completionBlock:(id)arg5;
 - (void)updateThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
 - (void)uploadItem:(id)arg1;
 - (id)uploadsDeadlineScheduler;

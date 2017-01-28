@@ -4,14 +4,14 @@
 
 @interface _BSTransactionParentRelationship : NSObject {
     BSTransaction * _parentTransaction;
-    unsigned int  _schedulingPolicy;
+    unsigned long long  _schedulingPolicy;
 }
 
 @property (nonatomic, readonly) BSTransaction *parentTransaction;
-@property (nonatomic, readonly) unsigned int schedulingPolicy;
+@property (nonatomic, readonly) unsigned long long schedulingPolicy;
 
-- (id)initWithParentTransaction:(id)arg1 schedulingPolicy:(unsigned int)arg2;
+- (id)initWithParentTransaction:(id)arg1 schedulingPolicy:(unsigned long long)arg2;
 - (id)parentTransaction;
-- (unsigned int)schedulingPolicy;
+- (unsigned long long)schedulingPolicy;
 
 @end

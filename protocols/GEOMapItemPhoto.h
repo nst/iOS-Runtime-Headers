@@ -7,7 +7,7 @@
 
 - (NSString *)author;
 - (NSString *)caption;
-- (BOOL)displayFullPhotoInline;
+- (bool)displayFullPhotoInline;
 - (GEOPhoto *)geoPhoto;
 - (NSString *)licenseDescription;
 - (NSURL *)licenseURL;

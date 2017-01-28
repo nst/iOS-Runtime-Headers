@@ -11,12 +11,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) _WKFrameHandle *frameHandle;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *webui_URL;
 @property (nonatomic, readonly) struct __SecTrust { }*webui_serverTrust;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -24,11 +24,11 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)frameHandle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrameHandle:(id)arg1 URL:(id)arg2 serverTrust:(struct __SecTrust { }*)arg3;
 - (id)initWithWebProcessPlugInFrame:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)webui_URL;
 - (struct __SecTrust { }*)webui_serverTrust;
 

@@ -19,7 +19,7 @@
 + (id)railDefinitions;
 
 - (void).cxx_destruct;
-- (int)autolockTime;
+- (long long)autolockTime;
 - (id)baseband;
 - (id)basebandFirmware;
 - (id)bootArgs;
@@ -27,7 +27,7 @@
 - (id)crashReporterKey;
 - (void)dealloc;
 - (id)deviceName;
-- (BOOL)disableCABlanking;
+- (bool)disableCABlanking;
 - (int)getDeviceType;
 - (id)hardwareModel;
 - (id)hwBoardRevision;
@@ -39,7 +39,7 @@
 - (id)logAutomatedDeviceGroup;
 - (void)logEventNoneConfig;
 - (void)logEventNonePairedDeviceConfig;
-- (BOOL)noWatchdogs;
+- (bool)noWatchdogs;
 - (void)pairStatusDidChange:(id)arg1;
 - (id)seedGroup;
 - (void)setTimedTrigger:(id)arg1;

@@ -3,9 +3,9 @@
  */
 
 @interface SKUIItemCellLayout : SKUICellLayout <SKUIItemOfferButtonDelegate> {
-    BOOL  _hidesItemOfferButton;
-    BOOL  _highlighted;
-    BOOL  _iconImageHidden;
+    bool  _hidesItemOfferButton;
+    bool  _highlighted;
+    bool  _iconImageHidden;
     SKUICellImageView * _iconImageView;
     SKUIItemOffer * _itemOffer;
     SKUIItemOfferButton * _itemOfferButton;
@@ -13,17 +13,17 @@
     UILabel * _itemOfferNoticeLabel;
     SKUIItemState * _itemState;
     UIView * _removeControlView;
-    BOOL  _restricted;
-    BOOL  _selected;
+    bool  _restricted;
+    bool  _selected;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL displaysItemOfferButton;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic) bool displaysItemOfferButton;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic, retain) UIImage *iconImage;
-@property (getter=isIconImageHidden, nonatomic) BOOL iconImageHidden;
+@property (getter=isIconImageHidden, nonatomic) bool iconImageHidden;
 @property (nonatomic, readonly) UIView *iconImageView;
 @property (nonatomic, retain) SKUIItemOffer *itemOffer;
 @property (nonatomic, readonly) SKUIItemOfferButton *itemOfferButton;
@@ -32,28 +32,28 @@
 @property (nonatomic, copy) NSString *itemOfferNoticeString;
 @property (nonatomic, copy) SKUIItemState *itemState;
 @property (nonatomic, readonly) UIView *removeControlView;
-@property (getter=isRestricted, nonatomic) BOOL restricted;
-@property (getter=isSelected, nonatomic) BOOL selected;
+@property (getter=isRestricted, nonatomic) bool restricted;
+@property (getter=isSelected, nonatomic) bool selected;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_canShowItemOfferNotice;
+- (bool)_canShowItemOfferNotice;
 - (void)_cancelItemOfferConfirmationAction:(id)arg1;
 - (void)_getParentTableView:(id*)arg1 collectionView:(id*)arg2;
 - (void)_itemOfferConfirmAction:(id)arg1;
 - (id)_parentCollectionViewCell;
-- (void)_reloadItemOfferButton:(BOOL)arg1;
+- (void)_reloadItemOfferButton:(bool)arg1;
 - (void)_reloadItemOfferVisibility;
 - (void)_showItemOfferConfirmationAction:(id)arg1;
-- (BOOL)_useCloudButtonForItemState:(id)arg1;
+- (bool)_useCloudButtonForItemState:(id)arg1;
 - (void)dealloc;
-- (BOOL)displaysItemOfferButton;
+- (bool)displaysItemOfferButton;
 - (id)iconImage;
 - (id)iconImageView;
-- (BOOL)isHighlighted;
-- (BOOL)isIconImageHidden;
-- (BOOL)isRestricted;
-- (BOOL)isSelected;
+- (bool)isHighlighted;
+- (bool)isIconImageHidden;
+- (bool)isRestricted;
+- (bool)isSelected;
 - (id)itemOffer;
 - (id)itemOfferButton;
 - (id)itemOfferButtonAppearance;
@@ -66,16 +66,16 @@
 - (id)removeControlView;
 - (void)resetLayout;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setDisplaysItemOfferButton:(BOOL)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setDisplaysItemOfferButton:(bool)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setIconImage:(id)arg1;
-- (void)setIconImageHidden:(BOOL)arg1;
+- (void)setIconImageHidden:(bool)arg1;
 - (void)setItemOffer:(id)arg1;
 - (void)setItemOfferButtonAppearance:(id)arg1;
 - (void)setItemOfferNoticeString:(id)arg1;
 - (void)setItemState:(id)arg1;
-- (void)setItemState:(id)arg1 animated:(BOOL)arg2;
-- (void)setRestricted:(BOOL)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setItemState:(id)arg1 animated:(bool)arg2;
+- (void)setRestricted:(bool)arg1;
+- (void)setSelected:(bool)arg1;
 
 @end

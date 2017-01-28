@@ -11,7 +11,7 @@
 @property (readonly) <DOMEventTarget> *source;
 
 - (id)data;
-- (void)initMessageEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 dataArg:(id)arg4 originArg:(id)arg5 lastEventIdArg:(id)arg6 sourceArg:(id)arg7 messagePort:(id)arg8;
+- (void)initMessageEvent:(id)arg1 canBubbleArg:(bool)arg2 cancelableArg:(bool)arg3 dataArg:(id)arg4 originArg:(id)arg5 lastEventIdArg:(id)arg6 sourceArg:(id)arg7 messagePort:(id)arg8;
 - (id)lastEventId;
 - (id)messagePort;
 - (id)origin;

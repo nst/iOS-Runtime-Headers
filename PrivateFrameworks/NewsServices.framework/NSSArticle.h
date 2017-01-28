@@ -18,11 +18,11 @@
 @property (nonatomic, readonly) UIImage *thumbnailImage;
 @property (nonatomic, readonly) NSString *title;
 
-+ (void)_articleFromCoreSpotlightIdentifier:(id)arg1 domain:(id)arg2 completion:(id /* block */)arg3;
-+ (void)articleFromCoreSpotlightIdentifier:(id)arg1 completion:(id /* block */)arg2;
-+ (void)articleFromNotification:(id)arg1 completion:(id /* block */)arg2;
-+ (void)articleFromNotificationUserInfo:(id)arg1 thumbnailFileURL:(id)arg2 publisherLogoFileURL:(id)arg3 completion:(id /* block */)arg4;
-+ (BOOL)coreSpotlightIdentifierRepresentsArticleIdentifier:(id)arg1;
++ (void)_articleFromCoreSpotlightIdentifier:(id)arg1 domain:(id)arg2 completion:(id)arg3;
++ (void)articleFromCoreSpotlightIdentifier:(id)arg1 completion:(id)arg2;
++ (void)articleFromNotification:(id)arg1 completion:(id)arg2;
++ (void)articleFromNotificationUserInfo:(id)arg1 thumbnailFileURL:(id)arg2 publisherLogoFileURL:(id)arg3 completion:(id)arg4;
++ (bool)coreSpotlightIdentifierRepresentsArticleIdentifier:(id)arg1;
 + (id)imageWithURL:(id)arg1;
 
 - (void).cxx_destruct;

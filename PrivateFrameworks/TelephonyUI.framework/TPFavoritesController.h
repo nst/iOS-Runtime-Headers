@@ -18,15 +18,15 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CNFavorites *favorites;
 @property (nonatomic, copy) NSArray *favoritesEntries;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSMutableDictionary *transportNameCache;
 
 - (void).cxx_destruct;
-- (unsigned int)absoluteIndexForIndex:(unsigned int)arg1;
+- (unsigned long long)absoluteIndexForIndex:(unsigned long long)arg1;
 - (id)addEntry:(id)arg1;
 - (id)callProviderManager;
-- (BOOL)canAddEntry;
+- (bool)canAddEntry;
 - (id)contactForFavoritesEntry:(id)arg1 keyDescriptors:(id)arg2;
 - (id)contactStore;
 - (void)dealloc;
@@ -40,7 +40,7 @@
 - (void)handleFavoritesEntryChangedNotification:(id)arg1;
 - (id)init;
 - (id)initWithContactStore:(id)arg1;
-- (void)moveEntryAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (void)moveEntryAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (void)providersChangedForProviderManager:(id)arg1;
 - (void)removeEntriesAtIndexes:(id)arg1;
 - (void)save;

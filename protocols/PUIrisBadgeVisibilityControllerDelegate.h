@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)irisBadgeTileInfo:(PUIrisBadgeVisibilityController *)arg1 didTransitionToAppearanceState:(unsigned int)arg2;
+- (void)irisBadgeTileInfo:(PUIrisBadgeVisibilityController *)arg1 didTransitionToAppearanceState:(unsigned long long)arg2;
 
 @end

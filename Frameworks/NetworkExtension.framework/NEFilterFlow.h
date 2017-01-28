@@ -5,18 +5,18 @@
 @interface NEFilterFlow : NSObject <NSCopying, NSSecureCoding> {
     NSURL * _URL;
     NEFilterAbsoluteVerdict * _currentVerdict;
-    BOOL  _isOpen;
-    BOOL  _isRemediationFlow;
+    bool  _isOpen;
+    bool  _isRemediationFlow;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly) NSURL *URL;
 @property (retain) NEFilterAbsoluteVerdict *currentVerdict;
-@property BOOL isOpen;
-@property BOOL isRemediationFlow;
+@property bool isOpen;
+@property bool isRemediationFlow;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -27,12 +27,12 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (BOOL)isOpen;
-- (BOOL)isRemediationFlow;
+- (bool)isOpen;
+- (bool)isRemediationFlow;
 - (id)queue;
 - (void)setCurrentVerdict:(id)arg1;
-- (void)setIsOpen:(BOOL)arg1;
-- (void)setIsRemediationFlow:(BOOL)arg1;
+- (void)setIsOpen:(bool)arg1;
+- (void)setIsRemediationFlow:(bool)arg1;
 - (void)setQueue:(id)arg1;
 
 @end

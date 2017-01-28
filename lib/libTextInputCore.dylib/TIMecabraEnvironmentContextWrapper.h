@@ -4,9 +4,9 @@
 
 @interface TIMecabraEnvironmentContextWrapper : NSObject {
     NSString * _appContext;
-    unsigned int  _candidateIndex;
-    unsigned int  _candidateInternalIndex;
-    unsigned int  _environmentCandidateCount;
+    unsigned long long  _candidateIndex;
+    unsigned long long  _candidateInternalIndex;
+    unsigned long long  _environmentCandidateCount;
     NSMutableArray * _environmentCandidates;
     struct __MecabraContext { } * _mecabraContext;
     struct __Mecabra { } * _mecabraEngine;
@@ -15,12 +15,12 @@
 }
 
 @property (nonatomic, copy) NSString *appContext;
-@property (nonatomic) unsigned int candidateIndex;
-@property (nonatomic) unsigned int candidateInternalIndex;
-@property (nonatomic, readonly) unsigned int contextCandidateCount;
+@property (nonatomic) unsigned long long candidateIndex;
+@property (nonatomic) unsigned long long candidateInternalIndex;
+@property (nonatomic, readonly) unsigned long long contextCandidateCount;
 @property (nonatomic, readonly) NSArray *contextCandidateStrings;
 @property (nonatomic, readonly) NSArray *contextCandidates;
-@property (nonatomic, readonly) unsigned int environmentCandidateCount;
+@property (nonatomic, readonly) unsigned long long environmentCandidateCount;
 @property (nonatomic, readonly) NSArray *environmentCandidateStrings;
 @property (nonatomic, retain) NSMutableArray *environmentCandidates;
 @property (nonatomic) struct __MecabraContext { }*mecabraContext;
@@ -29,36 +29,36 @@
 @property (nonatomic) int textContentType;
 
 - (void)acceptInlineCandidates;
-- (void)addContextCandidate:(void*)arg1 accept:(BOOL)arg2;
+- (void)addContextCandidate:(void*)arg1 accept:(bool)arg2;
 - (void)addContextStringCandidate:(void*)arg1;
-- (void)addEnvironmentCandidate:(void*)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)analyzeString:(id)arg1 options:(unsigned long)arg2;
+- (void)addEnvironmentCandidate:(void*)arg1 atIndex:(unsigned long long)arg2;
+- (bool)analyzeString:(id)arg1 options:(unsigned long long)arg2;
 - (id)appContext;
-- (unsigned int)candidateIndex;
-- (unsigned int)candidateInternalIndex;
+- (unsigned long long)candidateIndex;
+- (unsigned long long)candidateInternalIndex;
 - (void)clearAll;
 - (void)clearContext;
 - (void)completelyCommitInlineCandidate:(void*)arg1;
-- (unsigned int)contextCandidateCount;
+- (unsigned long long)contextCandidateCount;
 - (id)contextCandidateStrings;
 - (id)contextCandidates;
 - (void*)createMecabraCandidateFromString:(id)arg1;
 - (void)dealloc;
 - (void)declareEndOfSentence;
-- (unsigned int)environmentCandidateCount;
+- (unsigned long long)environmentCandidateCount;
 - (id)environmentCandidateStrings;
 - (id)environmentCandidates;
 - (id)initWithMecabraEngine:(struct __Mecabra { }*)arg1 language:(int)arg2;
 - (struct __MecabraContext { }*)mecabraContext;
 - (struct __Mecabra { }*)mecabraEngine;
 - (void)partiallyCommitInlineCandidate:(void*)arg1;
-- (BOOL)predictionCandidatesWithOptions:(unsigned long)arg1 maxNumberOfCandidates:(unsigned int)arg2;
-- (void)removeCandidatesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)predictionCandidatesWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
+- (void)removeCandidatesInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)revertInlineCandidate;
 - (void)revertLearningForCandidate:(void*)arg1;
 - (void)setAppContext:(id)arg1;
-- (void)setCandidateIndex:(unsigned int)arg1;
-- (void)setCandidateInternalIndex:(unsigned int)arg1;
+- (void)setCandidateIndex:(unsigned long long)arg1;
+- (void)setCandidateInternalIndex:(unsigned long long)arg1;
 - (void)setEnvironmentCandidates:(id)arg1;
 - (void)setGeometryModel:(void*)arg1 modelData:(struct __CFArray { }*)arg2;
 - (void)setMecabraContext:(struct __MecabraContext { }*)arg1;

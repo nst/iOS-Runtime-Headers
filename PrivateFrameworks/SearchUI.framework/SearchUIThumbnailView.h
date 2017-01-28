@@ -15,15 +15,15 @@
 - (void).cxx_destruct;
 - (id)appIconForResult:(id)arg1;
 - (id)imageView;
-- (id)initWithStyle:(unsigned int)arg1;
+- (id)initWithStyle:(unsigned long long)arg1;
 - (void)layoutSubviews;
 - (id)overlayPlayButton;
 - (id)result;
 - (void)setImageView:(id)arg1;
 - (void)setOverlayPlayButton:(id)arg1;
 - (void)setResult:(id)arg1;
-- (BOOL)shouldVerticallyCenter;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (bool)shouldVerticallyCenter;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateOverlayPlayButtonForResult:(id)arg1;
 - (void)updateWithResult:(id)arg1;
 

@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)attributes;
+- (unsigned long long)attributes;
 - (INDateComponentsRange *)dateTimeRange;
 - (NSArray *)groupNames;
 - (NSArray *)identifiers;
@@ -14,7 +14,7 @@
 - (NSArray *)recipients;
 - (NSArray *)searchTerms;
 - (NSArray *)senders;
-- (void)setAttributes:(unsigned int)arg1;
+- (void)setAttributes:(unsigned long long)arg1;
 - (void)setDateTimeRange:(INDateComponentsRange *)arg1;
 - (void)setGroupNames:(NSArray *)arg1;
 - (void)setIdentifiers:(NSArray *)arg1;

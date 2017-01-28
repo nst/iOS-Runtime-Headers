@@ -7,8 +7,8 @@
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int packetNumber;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long packetNumber;
 @property (nonatomic, copy) NSArray *packets;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
@@ -18,9 +18,9 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)packetNumber;
+- (long long)packetNumber;
 - (id)packets;
-- (void)setPacketNumber:(int)arg1;
+- (void)setPacketNumber:(long long)arg1;
 - (void)setPackets:(id)arg1;
 
 @end

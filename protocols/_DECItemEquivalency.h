@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isEqualToItem:(_DECItem *)arg1;
-- (BOOL)isEquivalent:(_DECItem *)arg1;
+- (bool)isEqualToItem:(_DECItem *)arg1;
+- (bool)isEquivalent:(_DECItem *)arg1;
 
 @end

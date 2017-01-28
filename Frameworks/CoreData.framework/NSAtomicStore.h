@@ -4,7 +4,7 @@
 
 @interface NSAtomicStore : NSPersistentStore {
     NSMutableDictionary * _entityCache;
-    int  _nextReference;
+    long long  _nextReference;
     NSMutableDictionary * _nodeCache;
     void * _reserved4;
     void * _reserved5;
@@ -42,7 +42,7 @@
 - (id)executeSaveChangesRequest:(id)arg1 withContext:(id)arg2;
 - (id)init;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
-- (BOOL)load:(id*)arg1;
+- (bool)load:(id*)arg1;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
 - (id)metadata;
@@ -53,7 +53,7 @@
 - (id)objectIDForEntity:(id)arg1 referenceObject:(id)arg2;
 - (id)obtainPermanentIDsForObjects:(id)arg1 error:(id*)arg2;
 - (id)referenceObjectForObjectID:(id)arg1;
-- (BOOL)save:(id*)arg1;
+- (bool)save:(id*)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)updateCacheNode:(id)arg1 fromManagedObject:(id)arg2;
 - (void)willRemoveCacheNodes:(id)arg1;

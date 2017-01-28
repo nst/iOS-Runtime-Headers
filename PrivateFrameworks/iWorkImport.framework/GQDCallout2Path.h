@@ -5,13 +5,13 @@
 @interface GQDCallout2Path : GQDPath {
     double  mCornerRadius;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  mSize;
-    BOOL  mTailAtCenter;
+    bool  mTailAtCenter;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  mTailPosition;
     double  mTailSize;
 }
@@ -19,10 +19,10 @@
 - (double)cornerRadius;
 - (struct CGPath { }*)createBezierPath;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;
-- (struct CGSize { float x1; float x2; })size;
-- (BOOL)tailAtCenter;
-- (struct CGPoint { float x1; float x2; })tailCenter;
-- (struct CGPoint { float x1; float x2; })tailPosition;
+- (struct CGSize { double x1; double x2; })size;
+- (bool)tailAtCenter;
+- (struct CGPoint { double x1; double x2; })tailCenter;
+- (struct CGPoint { double x1; double x2; })tailPosition;
 - (double)tailSize;
 
 @end

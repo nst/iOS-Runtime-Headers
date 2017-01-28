@@ -5,27 +5,27 @@
 @interface _UIDatePickerMode_Time : _UIDatePickerMode {
     NSString * _hourFormat;
     NSString * _minuteFormat;
-    float  _timeAMPMWidth;
-    float  _timeHourWidth;
-    float  _timeMinuteWidth;
+    double  _timeAMPMWidth;
+    double  _timeHourWidth;
+    double  _timeMinuteWidth;
 }
 
-+ (int)datePickerMode;
-+ (unsigned int)extractableCalendarUnits;
++ (long long)datePickerMode;
++ (unsigned long long)extractableCalendarUnits;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldEnableValueForRow:(int)arg1 inComponent:(int)arg2 calendarUnit:(unsigned int)arg3;
+- (bool)_shouldEnableValueForRow:(long long)arg1 inComponent:(long long)arg2 calendarUnit:(unsigned long long)arg3;
 - (void)_shouldReset:(id)arg1;
-- (id)dateFormatForCalendarUnit:(unsigned int)arg1;
-- (int)displayedCalendarUnits;
+- (id)dateFormatForCalendarUnit:(unsigned long long)arg1;
+- (long long)displayedCalendarUnits;
 - (id)font;
 - (id)localizedFormatString;
-- (unsigned int)nextUnitLargerThanUnit:(unsigned int)arg1;
-- (unsigned int)nextUnitSmallerThanUnit:(unsigned int)arg1;
+- (unsigned long long)nextUnitLargerThanUnit:(unsigned long long)arg1;
+- (unsigned long long)nextUnitSmallerThanUnit:(unsigned long long)arg1;
 - (void)noteCalendarChanged;
-- (int)numberOfRowsForCalendarUnit:(unsigned int)arg1;
+- (long long)numberOfRowsForCalendarUnit:(unsigned long long)arg1;
 - (void)resetComponentWidths;
-- (float)rowHeight;
-- (float)widthForCalendarUnit:(unsigned int)arg1 font:(id)arg2 maxWidth:(float)arg3;
+- (double)rowHeight;
+- (double)widthForCalendarUnit:(unsigned long long)arg1 font:(id)arg2 maxWidth:(double)arg3;
 
 @end

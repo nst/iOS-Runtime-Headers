@@ -3,22 +3,22 @@
  */
 
 @interface AVCaptureDeviceControlRequest : NSObject {
-    id /* block */  _completionBlock;
-    long  _errorCode;
+    id  _completionBlock;
+    int  _errorCode;
     int  _requestID;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ completionBlock;
-@property (nonatomic) long errorCode;
+@property (nonatomic, readonly, copy) id completionBlock;
+@property (nonatomic) int errorCode;
 @property (nonatomic, readonly) int requestID;
 
-+ (id)deviceControlRequestWithCompletionBlock:(id /* block */)arg1;
++ (id)deviceControlRequestWithCompletionBlock:(id)arg1;
 
-- (id)_initWithCompletionBlock:(id /* block */)arg1;
-- (id /* block */)completionBlock;
+- (id)_initWithCompletionBlock:(id)arg1;
+- (id)completionBlock;
 - (void)dealloc;
-- (long)errorCode;
+- (int)errorCode;
 - (int)requestID;
-- (void)setErrorCode:(long)arg1;
+- (void)setErrorCode:(int)arg1;
 
 @end

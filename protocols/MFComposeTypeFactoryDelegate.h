@@ -10,22 +10,22 @@
 - (NSArray *)bccRecipients;
 - (MFComposeBodyField *)bodyField;
 - (NSArray *)ccRecipients;
-- (BOOL)hasAnyHiddenTrailingEmptyQuote;
+- (bool)hasAnyHiddenTrailingEmptyQuote;
 - (MFMutableMessageHeaders *)savedHeaders;
 - (MFMailAccountProxy *)sendingAccountProxy;
 - (NSString *)sendingEmailAddress;
 - (void)setBccRecipients:(NSArray *)arg1;
 - (void)setCcRecipients:(NSArray *)arg1;
 - (void)setSavedHeaders:(MFMutableMessageHeaders *)arg1;
-- (void)setSendingEmailAddress:(NSString *)arg1 addIfNotPresent:(BOOL)arg2;
+- (void)setSendingEmailAddress:(NSString *)arg1 addIfNotPresent:(bool)arg2;
 - (void)setSubject:(NSString *)arg1;
 - (void)setToRecipients:(NSArray *)arg1;
-- (BOOL)shouldCreateRichTextRepresentation;
+- (bool)shouldCreateRichTextRepresentation;
 - (NSString *)subject;
 - (NSArray *)toRecipients;
 
 @optional
 
-- (void)addSignature:(BOOL)arg1;
+- (void)addSignature:(bool)arg1;
 
 @end

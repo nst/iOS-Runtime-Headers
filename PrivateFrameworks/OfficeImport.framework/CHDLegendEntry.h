@@ -4,7 +4,7 @@
 
 @interface CHDLegendEntry : NSObject {
     unsigned int  mEntryIndex;
-    unsigned int  mFontIndex;
+    unsigned long long  mFontIndex;
     EDResources * mResources;
 }
 
@@ -12,10 +12,10 @@
 - (id)description;
 - (unsigned int)entryIndex;
 - (id)font;
-- (unsigned int)fontIndex;
+- (unsigned long long)fontIndex;
 - (id)initWithResources:(id)arg1;
 - (void)setEntryIndex:(unsigned int)arg1;
 - (void)setFont:(id)arg1;
-- (void)setFontIndex:(unsigned int)arg1;
+- (void)setFontIndex:(unsigned long long)arg1;
 
 @end

@@ -4,16 +4,16 @@
 
 @interface MKPlaceInfoRow : NSObject {
     MKPlaceSectionRowView * _rowView;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly) MKPlaceSectionRowView *rowView;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) unsigned long long type;
 
-+ (id)infoRow:(id)arg1 ofType:(unsigned int)arg2;
++ (id)infoRow:(id)arg1 ofType:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
 - (id)rowView;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

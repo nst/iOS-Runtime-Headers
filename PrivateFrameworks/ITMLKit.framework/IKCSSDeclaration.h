@@ -4,30 +4,30 @@
 
 @interface IKCSSDeclaration : NSObject {
     NSString * _aliasedName;
-    BOOL  _important;
+    bool  _important;
     NSString * _name;
     NSString * _stringValue;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, retain) NSString *aliasedName;
-@property BOOL important;
+@property bool important;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly) NSString *stringValue;
-@property unsigned int type;
+@property unsigned long long type;
 
-+ (id)typeString:(unsigned int)arg1;
++ (id)typeString:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)aliasedName;
 - (id)description;
-- (BOOL)important;
+- (bool)important;
 - (id)name;
 - (void)setAliasedName:(id)arg1;
-- (void)setImportant:(BOOL)arg1;
+- (void)setImportant:(bool)arg1;
 - (void)setName:(id)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (id)stringValue;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

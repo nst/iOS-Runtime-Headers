@@ -8,7 +8,7 @@
 
 @property (nonatomic) int temperatureUnit;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

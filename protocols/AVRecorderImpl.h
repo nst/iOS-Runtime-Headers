@@ -5,25 +5,25 @@
 
 @required
 
-- (BOOL)activate:(id*)arg1;
+- (bool)activate:(id*)arg1;
 - (id)attributeForKey:(NSString *)arg1;
-- (BOOL)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
-- (BOOL)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
-- (unsigned int)audioNumDeviceChannels;
-- (BOOL)autoFocusAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)audioCurrentAverageDecibelLevels:(float*)arg1 andPeakDecibelLevels:(float*)arg2;
+- (bool)audioCurrentAverageVolumeLevels:(float*)arg1 andPeakVolumeLevels:(float*)arg2;
+- (unsigned long long)audioNumDeviceChannels;
+- (bool)autoFocusAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)deactivate;
 - (NSURL *)filePath;
 - (id)init;
-- (BOOL)isActive;
-- (BOOL)isRecording;
+- (bool)isActive;
+- (bool)isRecording;
 - (float)micVolume;
 - (double)recordedDuration;
 - (long long)recordedFileSizeInBytes;
 - (void)setAttribute:(id)arg1 forKey:(NSString *)arg2;
 - (void)setFilePath:(NSURL *)arg1;
 - (void)setMicVolume:(float)arg1;
-- (BOOL)start;
+- (bool)start;
 - (void)stop;
-- (BOOL)takePhoto;
+- (bool)takePhoto;
 
 @end

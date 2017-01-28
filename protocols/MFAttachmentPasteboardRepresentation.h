@@ -6,7 +6,7 @@
 @required
 
 - (NSData *)data;
-- (BOOL)isValid;
+- (bool)isValid;
 - (NSString *)mimeType;
 - (NSString *)name;
 

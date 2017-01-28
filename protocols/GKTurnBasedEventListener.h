@@ -11,7 +11,7 @@
 - (void)player:(GKPlayer *)arg1 receivedExchangeCancellation:(GKTurnBasedExchange *)arg2 forMatch:(GKTurnBasedMatch *)arg3;
 - (void)player:(GKPlayer *)arg1 receivedExchangeReplies:(NSArray *)arg2 forCompletedExchange:(GKTurnBasedExchange *)arg3 forMatch:(GKTurnBasedMatch *)arg4;
 - (void)player:(GKPlayer *)arg1 receivedExchangeRequest:(GKTurnBasedExchange *)arg2 forMatch:(GKTurnBasedMatch *)arg3;
-- (void)player:(GKPlayer *)arg1 receivedTurnEventForMatch:(GKTurnBasedMatch *)arg2 didBecomeActive:(BOOL)arg3;
+- (void)player:(GKPlayer *)arg1 receivedTurnEventForMatch:(GKTurnBasedMatch *)arg2 didBecomeActive:(bool)arg3;
 - (void)player:(GKPlayer *)arg1 wantsToQuitMatch:(GKTurnBasedMatch *)arg2;
 
 @end

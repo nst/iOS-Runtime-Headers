@@ -4,21 +4,21 @@
 
 @interface MPCRadioStreamPing : NSObject {
     double  _timestamp;
-    int  _type;
+    long long  _type;
     NSData * _value;
 }
 
 @property (nonatomic, readonly) double timestamp;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly, copy) NSData *value;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
-- (id)initWithType:(int)arg1 value:(id)arg2 timestamp:(double)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithType:(long long)arg1 value:(id)arg2 timestamp:(double)arg3;
+- (bool)isEqual:(id)arg1;
 - (double)timestamp;
-- (int)type;
+- (long long)type;
 - (id)value;
 
 @end

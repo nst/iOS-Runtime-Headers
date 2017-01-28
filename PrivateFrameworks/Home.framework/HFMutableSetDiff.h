@@ -3,17 +3,17 @@
  */
 
 @interface HFMutableSetDiff : HFSetDiff {
-    BOOL  _hasChanges;
+    bool  _hasChanges;
 }
 
-@property (nonatomic, readonly) BOOL hasChanges;
+@property (nonatomic, readonly) bool hasChanges;
 
 - (void)_updateHasChanges;
 - (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)deleteAllObjects;
 - (void)deleteObject:(id)arg1;
-- (BOOL)hasChanges;
+- (bool)hasChanges;
 - (id)initWithFromSet:(id)arg1;
 - (void)updateObject:(id)arg1;
 

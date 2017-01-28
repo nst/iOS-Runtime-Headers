@@ -72,7 +72,7 @@
 - (void)setLastDate:(id)arg1;
 - (void)setProcessmonitorCallback:(id)arg1;
 - (void)setReapedCoalitions:(id)arg1;
-- (BOOL)shouldLogCoalitionObject:(id)arg1 withEndObject:(id)arg2;
+- (bool)shouldLogCoalitionObject:(id)arg1 withEndObject:(id)arg2;
 - (void)timedCoalitionInfo;
 
 @end

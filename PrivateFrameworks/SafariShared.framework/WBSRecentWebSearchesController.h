@@ -7,8 +7,8 @@
 }
 
 + (id)_defaultsKey;
-+ (unsigned int)_maximumNumberOfSearchesToTrack;
-+ (BOOL)_shouldTrackSearches;
++ (unsigned long long)_maximumNumberOfSearchesToTrack;
++ (bool)_shouldTrackSearches;
 
 - (void).cxx_destruct;
 - (void)_addLegacySearch:(id)arg1;

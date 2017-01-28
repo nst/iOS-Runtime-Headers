@@ -5,8 +5,8 @@
 @interface UISnapshottingAssertionManager : NSObject {
     NSMutableSet * _heldAssertions;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  lock;
 }
 
@@ -16,9 +16,9 @@
 - (id)_init;
 - (id)acquireNewAssertion;
 - (void)dealloc;
-- (void)executeIfNoActiveAssertions:(id /* block */)arg1;
+- (void)executeIfNoActiveAssertions:(id)arg1;
 - (id)init;
 - (void)relinquishAssertion:(id)arg1;
-- (void)withLock:(id /* block */)arg1;
+- (void)withLock:(id)arg1;
 
 @end

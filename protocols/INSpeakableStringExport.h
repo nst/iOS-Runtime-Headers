@@ -5,6 +5,12 @@
 
 @required
 
+- (NSString *)identifier;
 - (id)init;
+- (NSString *)pronunciationHint;
+- (void)setIdentifier:(NSString *)arg1;
+- (void)setPronunciationHint:(NSString *)arg1;
+- (void)setSpokenPhrase:(NSString *)arg1;
+- (NSString *)spokenPhrase;
 
 @end

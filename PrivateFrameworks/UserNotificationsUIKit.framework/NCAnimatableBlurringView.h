@@ -3,21 +3,21 @@
  */
 
 @interface NCAnimatableBlurringView : UIView <NCBlurring> {
-    BOOL  _didConfigureBlurFilter;
-    float  _inputRadius;
+    bool  _didConfigureBlurFilter;
+    double  _inputRadius;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float inputRadius;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double inputRadius;
 @property (readonly) Class superclass;
 
 + (id)_inputRadiusKeyPath;
 
 - (void)_configureBlurFilterIfNecessary;
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (float)inputRadius;
-- (void)setInputRadius:(float)arg1;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (double)inputRadius;
+- (void)setInputRadius:(double)arg1;
 
 @end

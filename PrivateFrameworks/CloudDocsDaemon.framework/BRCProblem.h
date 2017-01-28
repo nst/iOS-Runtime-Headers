@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSSet *effectedRecordNames;
 @property (nonatomic, readonly) int type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

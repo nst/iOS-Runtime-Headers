@@ -5,14 +5,14 @@
 @interface PKImageSetXPCContainer : NSObject <NSSecureCoding> {
     NSObject<OS_xpc_object> * _data;
     NSData * _imageSetHash;
-    BOOL  _isShmem;
-    unsigned int  _length;
-    unsigned int  _offset;
+    bool  _isShmem;
+    unsigned long long  _length;
+    unsigned long long  _offset;
 }
 
 @property (nonatomic, readonly) NSData *imageSetHash;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)containedImageSet;
@@ -21,7 +21,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithWithXPCObject:(id)arg1 hash:(id)arg2;
-- (id)initWithWithXPCObject:(id)arg1 length:(unsigned int)arg2 isSharedMemory:(BOOL)arg3 offset:(unsigned int)arg4 hash:(id)arg5;
+- (id)initWithWithXPCObject:(id)arg1 length:(unsigned long long)arg2 isSharedMemory:(bool)arg3 offset:(unsigned long long)arg4 hash:(id)arg5;
 - (void)purge;
 
 @end

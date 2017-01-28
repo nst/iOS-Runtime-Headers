@@ -10,9 +10,9 @@
 }
 
 @property (nonatomic, retain) _INPBAppNames *appNames;
-@property (nonatomic, readonly) BOOL hasAppNames;
-@property (nonatomic, readonly) BOOL hasIntentVocabulary;
-@property (nonatomic, readonly) BOOL hasLanguage;
+@property (nonatomic, readonly) bool hasAppNames;
+@property (nonatomic, readonly) bool hasIntentVocabulary;
+@property (nonatomic, readonly) bool hasLanguage;
 @property (nonatomic, retain) _INPBIntentVocabulary *intentVocabulary;
 @property (nonatomic, retain) _INPBLanguageTag *language;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -24,15 +24,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAppNames;
-- (BOOL)hasIntentVocabulary;
-- (BOOL)hasLanguage;
-- (unsigned int)hash;
+- (bool)hasAppNames;
+- (bool)hasIntentVocabulary;
+- (bool)hasLanguage;
+- (unsigned long long)hash;
 - (id)intentVocabulary;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)language;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAppNames:(id)arg1;
 - (void)setIntentVocabulary:(id)arg1;
 - (void)setLanguage:(id)arg1;

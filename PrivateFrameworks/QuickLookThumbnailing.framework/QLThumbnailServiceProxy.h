@@ -11,7 +11,7 @@
 + (id)interface;
 + (id)sharedInstance;
 
-- (void)askThumbnailAdditionIndex:(id /* block */)arg1;
+- (void)askThumbnailAdditionIndex:(id)arg1;
 - (void)dealloc;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)init;

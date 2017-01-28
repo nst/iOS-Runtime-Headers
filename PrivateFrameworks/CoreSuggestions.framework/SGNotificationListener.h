@@ -3,10 +3,10 @@
  */
 
 @interface SGNotificationListener : NSObject {
-    id /* block */  _callback;
+    id  _callback;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     struct __CFString { } * _notification;
 }
@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)_notify;
 - (void)dealloc;
-- (id)initWithNotification:(struct __CFString { }*)arg1 callback:(id /* block */)arg2;
-- (BOOL)unsubscribe;
+- (id)initWithNotification:(struct __CFString { }*)arg1 callback:(id)arg2;
+- (bool)unsubscribe;
 
 @end

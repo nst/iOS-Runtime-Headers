@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *deviceIdentifier;
 @property (nonatomic, copy) NSString *deviceModel;
 @property (nonatomic, copy) NSString *dspStatus;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *headsetAddress;
 @property (nonatomic, copy) NSString *headsetId;
 @property (nonatomic, copy) NSString *headsetName;
@@ -22,8 +22,10 @@
 @property (nonatomic, retain) SASRecordingInfo *recordingInfo;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL triggeredTwoShotBorealis;
+@property (nonatomic) bool triggeredTwoShotBorealis;
 @property (nonatomic, copy) NSString *vendorId;
+
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)updateAudioInfo;
 + (id)updateAudioInfoWithDictionary:(id)arg1 context:(id)arg2;
@@ -54,9 +56,13 @@
 - (void)setOrigin:(id)arg1;
 - (void)setProductId:(id)arg1;
 - (void)setRecordingInfo:(id)arg1;
-- (void)setTriggeredTwoShotBorealis:(BOOL)arg1;
+- (void)setTriggeredTwoShotBorealis:(bool)arg1;
 - (void)setVendorId:(id)arg1;
-- (BOOL)triggeredTwoShotBorealis;
+- (bool)triggeredTwoShotBorealis;
 - (id)vendorId;
+
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (bool)siriCore_isRestartable;
 
 @end

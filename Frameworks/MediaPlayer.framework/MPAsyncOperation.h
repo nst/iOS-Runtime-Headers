@@ -5,8 +5,8 @@
 @interface MPAsyncOperation : NSOperation {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSError * _error;
-    BOOL  _isExecuting;
-    BOOL  _isFinished;
+    bool  _isExecuting;
+    bool  _isFinished;
 }
 
 @property (nonatomic, readonly, copy) NSError *error;
@@ -17,10 +17,10 @@
 - (void)finish;
 - (void)finishWithError:(id)arg1;
 - (id)init;
-- (BOOL)isAsynchronous;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isAsynchronous;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)start;
 
 @end

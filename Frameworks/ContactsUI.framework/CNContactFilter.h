@@ -4,13 +4,13 @@
 
 @interface CNContactFilter : NSObject <NSCopying> {
     NSString * _fullTextString;
-    BOOL  _rankSortedResults;
+    bool  _rankSortedResults;
 }
 
 @property (nonatomic, copy) NSString *fullTextString;
 @property (nonatomic, readonly) NSPredicate *predicate;
-@property (nonatomic) BOOL rankSortedResults;
-@property (nonatomic, readonly) BOOL supportsSections;
+@property (nonatomic) bool rankSortedResults;
+@property (nonatomic, readonly) bool supportsSections;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -18,11 +18,11 @@
 - (id)dictionaryRepresentation;
 - (id)fullTextString;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)predicate;
-- (BOOL)rankSortedResults;
+- (bool)rankSortedResults;
 - (void)setFullTextString:(id)arg1;
-- (void)setRankSortedResults:(BOOL)arg1;
-- (BOOL)supportsSections;
+- (void)setRankSortedResults:(bool)arg1;
+- (bool)supportsSections;
 
 @end

@@ -6,6 +6,6 @@
 @required
 
 - (UIView *)contentView;
-- (BOOL)hasContent;
+- (bool)hasContent;
 
 @end

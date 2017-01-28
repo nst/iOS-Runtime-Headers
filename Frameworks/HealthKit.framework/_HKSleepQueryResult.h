@@ -9,17 +9,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDateInterval *resultInterval;
 @property (readonly) Class superclass;
 
 + (id)_preferredSourceFromSources:(id)arg1 sourceOrder:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_calculatePreferredDuration:(double*)arg1 categoryValue:(int*)arg2;
+- (bool)_calculatePreferredDuration:(double*)arg1 categoryValue:(long long*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dateIntervalsForCategoryValue:(int)arg1;
+- (id)dateIntervalsForCategoryValue:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)initWithCoder:(id)arg1;

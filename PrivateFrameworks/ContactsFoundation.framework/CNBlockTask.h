@@ -3,11 +3,11 @@
  */
 
 @interface CNBlockTask : CNTask {
-    id /* block */  _block;
+    id  _block;
 }
 
 - (void)dealloc;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (id)run:(id*)arg1;
 
 @end

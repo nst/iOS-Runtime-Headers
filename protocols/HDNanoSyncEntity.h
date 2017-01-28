@@ -6,12 +6,12 @@
 @required
 
 + (int)nanoSyncObjectType;
-+ (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (unsigned long long)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 
 @optional
 
 + (HDSQLitePredicate *)nanoSyncPredicateForSession:(HDNanoSyncSession *)arg1;
-+ (BOOL)supportsSpeculativeNanoSyncChanges;
++ (bool)supportsSpeculativeNanoSyncChanges;
 + (NSSet *)syncEntityDependenciesForNanoSyncProtocolVersion:(int)arg1;
 
 @end

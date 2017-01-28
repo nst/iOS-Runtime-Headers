@@ -4,6 +4,6 @@
 
 @interface MFAttachmentIcon : NSObject
 
-+ (id)attachment:(id)arg1 iconForSize:(struct CGSize { float x1; float x2; })arg2 sourceIsManaged:(BOOL)arg3;
++ (id)attachment:(id)arg1 iconForSize:(struct CGSize { double x1; double x2; })arg2 sourceIsManaged:(bool)arg3;
 
 @end

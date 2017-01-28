@@ -8,8 +8,8 @@
 + (id)_titleForProtectionSpace:(id)arg1;
 
 - (void)cancelAuthentication;
-- (int)failureCount;
-- (BOOL)hasPassword;
+- (long long)failureCount;
+- (bool)hasPassword;
 - (id)initWithAuthenticationChallenge:(id)arg1;
 - (id)password;
 - (id)sender;

@@ -20,13 +20,13 @@
 
 // Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_firePropertyObserversForProperty:(id)arg1 fromValue:(id)arg2;
 - (void)_queueFirePropertyObserversForProperty:(id)arg1 fromValue:(id)arg2;
-- (BOOL)_queueSetValue:(id)arg1 forProperty:(id)arg2;
-- (BOOL)_setValue:(id)arg1 forProperty:(id)arg2;
+- (bool)_queueSetValue:(id)arg1 forProperty:(id)arg2;
+- (bool)_setValue:(id)arg1 forProperty:(id)arg2;
 - (void)addPropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (id)changeBlocks;
 - (void)dealloc;
@@ -34,7 +34,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDevice:(id)arg1 queue:(id)arg2 withSecureProperties:(BOOL)arg3;
+- (id)initWithDevice:(id)arg1 queue:(id)arg2 withSecureProperties:(bool)arg3;
 - (id)initWithQueue:(id)arg1;
 - (void)mergeWithDevice:(id)arg1;
 - (id)nrQueue;
@@ -46,11 +46,11 @@
 - (void)queueAddPropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (id)queueDescription;
 - (void)queueMergeWithDevice:(id)arg1;
-- (void)queueRegisterForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)queueRegisterForPropertyChanges:(id)arg1 withBlock:(id)arg2;
 - (void)queueRemovePropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
-- (void)queueUnregisterForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)queueUnregisterForPropertyChanges:(id)arg1 withBlock:(id)arg2;
 - (id)queueValueForProperty:(id)arg1;
-- (void)registerForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)registerForPropertyChanges:(id)arg1 withBlock:(id)arg2;
 - (void)removePropertyObserver:(id)arg1 forPropertyChanges:(id)arg2;
 - (void)setChangeBlocks:(id)arg1;
 - (void)setNrQueue:(id)arg1;
@@ -58,24 +58,24 @@
 - (void)setPromiscuousChangeBlocks:(id)arg1;
 - (void)setPromiscuousObservers:(id)arg1;
 - (void)setProperties:(id)arg1;
-- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
-- (BOOL)supportsCapability:(id)arg1;
-- (void)unregisterForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
+- (bool)setValue:(id)arg1 forProperty:(id)arg2;
+- (bool)supportsCapability:(id)arg1;
+- (void)unregisterForPropertyChanges:(id)arg1 withBlock:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
 
-+ (BOOL)_activePairedDeviceSupportIsGreaterEqualVersion:(unsigned int)arg1;
-+ (BOOL)activePairedDeviceSupportsAttachmentFiles;
-+ (BOOL)activePairedDeviceSupportsFileBulletinAdd;
-+ (BOOL)activePairedDeviceSupportsFileSettingSync;
++ (bool)_activePairedDeviceSupportIsGreaterEqualVersion:(unsigned long long)arg1;
++ (bool)activePairedDeviceSupportsAttachmentFiles;
++ (bool)activePairedDeviceSupportsFileBulletinAdd;
++ (bool)activePairedDeviceSupportsFileSettingSync;
 
-- (unsigned int)bltVersion;
+- (unsigned long long)bltVersion;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (BOOL)hd_isActive;
-- (BOOL)hd_isPaired;
+- (bool)hd_isActive;
+- (bool)hd_isPaired;
 - (id)hd_lastActiveDate;
 - (id)hd_lastInactiveDate;
 - (id)hd_name;

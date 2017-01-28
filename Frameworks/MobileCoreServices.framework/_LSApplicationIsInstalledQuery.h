@@ -9,9 +9,9 @@
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 
 + (id)queryWithBundleIdentifier:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
+- (void)_enumerateWithXPCConnection:(id)arg1 block:(id)arg2;
 - (id)bundleIdentifier;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

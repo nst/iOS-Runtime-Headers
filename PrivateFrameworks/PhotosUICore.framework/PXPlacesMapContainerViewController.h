@@ -5,7 +5,7 @@
 @interface PXPlacesMapContainerViewController : UIViewController <PXGridPresentationNavigationItemDelegate, PXPlacesMapBarButtonsDelegate> {
     UIViewController * _currentViewController;
     PXPlacesMapFetchResultViewController * _fetchResultViewController;
-    BOOL  _gridControllerEditing;
+    bool  _gridControllerEditing;
     UISegmentedControl * _subviewControl;
 }
 
@@ -13,8 +13,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PXPlacesMapFetchResultViewController *fetchResultViewController;
-@property (nonatomic) BOOL gridControllerEditing;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool gridControllerEditing;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UISegmentedControl *subviewControl;
 @property (readonly) Class superclass;
 
@@ -23,16 +23,16 @@
 - (void)_switchChildViewControllerFrom:(id)arg1 to:(id)arg2;
 - (id)currentViewController;
 - (id)fetchResultViewController;
-- (BOOL)gridControllerEditing;
+- (bool)gridControllerEditing;
 - (id)init;
 - (void)loadView;
 - (void)setBarButtonItems:(id)arg1;
 - (void)setCurrentViewController:(id)arg1;
-- (void)setGridControllerEditing:(BOOL)arg1;
+- (void)setGridControllerEditing:(bool)arg1;
 - (void)setSubviewControl:(id)arg1;
 - (id)subviewControl;
 - (void)subviewControlChanged:(id)arg1;
-- (void)viewController:(id)arg1 updatedNavigationItem:(id)arg2 animated:(BOOL)arg3;
+- (void)viewController:(id)arg1 updatedNavigationItem:(id)arg2 animated:(bool)arg3;
 - (void)viewDidLoad;
 
 @end

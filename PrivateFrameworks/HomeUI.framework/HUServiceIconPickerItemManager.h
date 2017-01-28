@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) HFServiceBuilder *serviceBuilder;
 
 - (void).cxx_destruct;
-- (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
+- (id)_comparatorForSectionIdentifier:(id)arg1;
 - (void)_createItemProvidersWithHome:(id)arg1;
 - (id)_itemProviders;
 - (id)_serviceType;

@@ -3,22 +3,22 @@
  */
 
 @interface SKUIRedeemCameraViewController : SKUIRedeemStepViewController <CRCodeRedeemerControllerDelegate, SKUIRedeemCameraViewControllerDelegate, SKUIRedeemCameraViewDelegate> {
-    BOOL  _alreadyPushed;
+    bool  _alreadyPushed;
     CRCodeRedeemerController * _camera;
-    int  _category;
+    long long  _category;
     <SKUIRedeemCameraViewControllerDelegate> * _delegate;
     UIBarButtonItem * _flipButton;
-    BOOL  _fullscreen;
+    bool  _fullscreen;
     NSString * _initialCode;
     UIBarButtonItem * _redeemButton;
     SKUIRedeem * _successfulRedeem;
 }
 
-@property (nonatomic, readonly) int category;
+@property (nonatomic, readonly) long long category;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIRedeemCameraViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *initialCode;
 @property (readonly) Class superclass;
 
@@ -28,22 +28,22 @@
 - (void)SKUIRedeemPreflightImagesDidLoad:(id)arg1;
 - (void)_cameraRedeemDidFinish:(id)arg1 error:(id)arg2;
 - (void)_cancelAction:(id)arg1;
-- (BOOL)_enabled;
+- (bool)_enabled;
 - (void)_flipAction:(id)arg1;
 - (void)_redeemAction:(id)arg1;
 - (void)_redeemDidFinish:(id)arg1 error:(id)arg2;
-- (void)_setEnabled:(BOOL)arg1;
+- (void)_setEnabled:(bool)arg1;
 - (void)cancelRedeemerViewForSKUIRedeemCameraView:(id)arg1;
-- (int)category;
+- (long long)category;
 - (void)codeRedeemerController:(id)arg1 didEndWithInfo:(id)arg2;
 - (void)codeRedeemerControllerDidCancel:(id)arg1;
 - (void)codeRedeemerControllerDidDisplayMessage:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)disablesAutomaticKeyboardDismissal;
-- (id)initWithRedeemCategory:(int)arg1;
-- (id)initWithRedeemCategoryFullscreen:(int)arg1;
+- (bool)disablesAutomaticKeyboardDismissal;
+- (id)initWithRedeemCategory:(long long)arg1;
+- (id)initWithRedeemCategoryFullscreen:(long long)arg1;
 - (id)initialCode;
 - (void)loadView;
 - (void)presentFullScreenCameraViewForSKUIRedeemCameraView:(id)arg1;

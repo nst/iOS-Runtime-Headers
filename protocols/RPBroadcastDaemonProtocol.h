@@ -5,6 +5,7 @@
 
 @required
 
+- (void)finishBroadcastWithError:(NSError *)arg1;
 - (void)ping;
 - (void)updateServiceInfo:(NSDictionary *)arg1;
 

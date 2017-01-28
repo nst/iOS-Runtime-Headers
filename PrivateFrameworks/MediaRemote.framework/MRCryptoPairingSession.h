@@ -5,14 +5,14 @@
 @interface MRCryptoPairingSession : NSObject {
     <MRCryptoPairingSessionDelegate> * _delegate;
     NSString * _peerIdentifier;
-    unsigned int  _role;
-    BOOL  _valid;
+    unsigned long long  _role;
+    bool  _valid;
 }
 
 @property (nonatomic) <MRCryptoPairingSessionDelegate> *delegate;
 @property (nonatomic, readonly) NSString *peerIdentifier;
-@property (nonatomic, readonly) unsigned int role;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (nonatomic, readonly) unsigned long long role;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
@@ -20,16 +20,16 @@
 - (void)dealloc;
 - (id)decryptData:(id)arg1 withError:(id*)arg2;
 - (id)delegate;
-- (BOOL)deleteIdentityWithError:(id*)arg1;
+- (bool)deleteIdentityWithError:(id*)arg1;
 - (id)encryptData:(id)arg1 withError:(id*)arg2;
-- (BOOL)handlePairingExchangeData:(id)arg1 withError:(id*)arg2;
-- (void)handlePairingFailureWithStatus:(long)arg1;
+- (void)handlePairingExchangeData:(id)arg1 completion:(id)arg2;
+- (void)handlePairingFailureWithStatus:(int)arg1;
 - (id)init;
-- (id)initWithRole:(unsigned int)arg1 peerIdentifier:(id)arg2;
-- (BOOL)isValid;
+- (id)initWithRole:(unsigned long long)arg1 peerIdentifier:(id)arg2;
+- (bool)isValid;
 - (void)open;
 - (id)peerIdentifier;
-- (unsigned int)role;
+- (unsigned long long)role;
 - (void)setDelegate:(id)arg1;
 
 @end

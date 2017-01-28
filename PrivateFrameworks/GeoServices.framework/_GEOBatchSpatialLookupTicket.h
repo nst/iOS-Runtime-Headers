@@ -3,7 +3,7 @@
  */
 
 @interface _GEOBatchSpatialLookupTicket : NSObject <GEOMapServiceBatchSpatialLookupTicket> {
-    BOOL  _canceled;
+    bool  _canceled;
     NSArray * _parameters;
     NSMapTable * _parametersToMapItems;
     GEOSpatialLookupBatchRequest * _request;
@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
@@ -21,8 +21,8 @@
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 forParameters:(id)arg2 traits:(id)arg3;
 - (id)mapItemsForParameters:(id)arg1;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2 queue:(id)arg3;
+- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
+- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2 queue:(id)arg3;
 - (id)traits;
 
 @end

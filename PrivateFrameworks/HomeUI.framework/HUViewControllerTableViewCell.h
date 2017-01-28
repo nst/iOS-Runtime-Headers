@@ -3,7 +3,7 @@
  */
 
 @interface HUViewControllerTableViewCell : UITableViewCell <HUViewControllerCell> {
-    BOOL  _hasValidHeight;
+    bool  _hasValidHeight;
     UIViewController * _parentViewController;
     UIViewController * _viewController;
     NSArray * _viewControllerConstraints;
@@ -12,25 +12,25 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasValidHeight;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasValidHeight;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UIViewController *parentViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIViewController *viewController;
 @property (nonatomic, retain) NSArray *viewControllerConstraints;
 @property (nonatomic, retain) NSLayoutConstraint *viewControllerHeightConstraint;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (void)_removeFromParentViewControllerAndClearProperty:(BOOL)arg1;
+- (void)_removeFromParentViewControllerAndClearProperty:(bool)arg1;
 - (void)_updateHeightConstraint;
 - (void)addToParentViewController:(id)arg1;
-- (BOOL)hasValidHeight;
+- (bool)hasValidHeight;
 - (id)parentViewController;
 - (void)prepareForReuse;
 - (void)removeFromParentViewController;
-- (void)setHasValidHeight:(BOOL)arg1;
+- (void)setHasValidHeight:(bool)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (void)setViewControllerConstraints:(id)arg1;

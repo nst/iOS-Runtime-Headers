@@ -3,41 +3,41 @@
  */
 
 @interface NTKChronoSubDial : SKEffectNode {
-    int  _labelsFont;
-    float  _labelsFontSize;
-    float  _labelsRadius;
-    float  _radius;
+    long long  _labelsFont;
+    double  _labelsFontSize;
+    double  _labelsRadius;
+    double  _radius;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _smallInner;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _smallOuter;
 }
 
-@property (nonatomic, readonly) int labelsFont;
-@property (nonatomic, readonly) float labelsFontSize;
-@property (nonatomic, readonly) float labelsRadius;
-@property (nonatomic, readonly) float radius;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } smallInner;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } smallOuter;
+@property (nonatomic, readonly) long long labelsFont;
+@property (nonatomic, readonly) double labelsFontSize;
+@property (nonatomic, readonly) double labelsRadius;
+@property (nonatomic, readonly) double radius;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } smallInner;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } smallOuter;
 
-+ (id)lower:(float)arg1;
-+ (id)upper:(float)arg1;
++ (id)lower:(double)arg1;
++ (id)upper:(double)arg1;
 
 - (id)addNodes:(id)arg1;
 - (id)addNodes:(id)arg1 to:(id)arg2;
-- (void)applyTransitionFraction:(float)arg1 fromTimeScale:(unsigned int)arg2 toTimeScale:(unsigned int)arg3;
+- (void)applyTransitionFraction:(double)arg1 fromTimeScale:(unsigned long long)arg2 toTimeScale:(unsigned long long)arg3;
 - (void)colorize:(id)arg1;
-- (id)initWithRadius:(float)arg1;
-- (int)labelsFont;
-- (float)labelsFontSize;
-- (float)labelsRadius;
-- (float)radius;
-- (struct CGSize { float x1; float x2; })smallInner;
-- (struct CGSize { float x1; float x2; })smallOuter;
-- (void)updateTimeScale:(unsigned int)arg1;
+- (id)initWithRadius:(double)arg1;
+- (long long)labelsFont;
+- (double)labelsFontSize;
+- (double)labelsRadius;
+- (double)radius;
+- (struct CGSize { double x1; double x2; })smallInner;
+- (struct CGSize { double x1; double x2; })smallOuter;
+- (void)updateTimeScale:(unsigned long long)arg1;
 
 @end

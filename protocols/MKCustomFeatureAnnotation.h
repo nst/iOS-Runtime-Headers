@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)showsBalloonCallout;
+- (bool)showsBalloonCallout;
 
 @end

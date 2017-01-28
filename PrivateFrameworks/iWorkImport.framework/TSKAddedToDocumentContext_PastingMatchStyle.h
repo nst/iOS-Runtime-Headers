@@ -5,6 +5,6 @@
 @interface TSKAddedToDocumentContext_PastingMatchStyle : TSKAddedToDocumentContext_Pasting
 
 - (id)description;
-- (BOOL)matchStyle;
+- (bool)matchStyle;
 
 @end

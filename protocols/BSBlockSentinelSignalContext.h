@@ -6,7 +6,7 @@
 @required
 
 - (id)context;
-- (BOOL)isComplete;
-- (BOOL)isFailed;
+- (bool)isComplete;
+- (bool)isFailed;
 
 @end

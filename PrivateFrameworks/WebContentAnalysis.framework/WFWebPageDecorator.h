@@ -21,8 +21,8 @@
 - (id)URLString;
 - (void)_cacheImgProperties;
 - (void)dealloc;
-- (BOOL)hasFrameset;
-- (BOOL)hasShortRefresh;
+- (bool)hasFrameset;
+- (bool)hasShortRefresh;
 - (id)imageAltsText;
 - (id)images;
 - (id)initWithWebPageData:(id)arg1;
@@ -34,9 +34,9 @@
 - (id)metaTagKeywords;
 - (id)metaTagsLabeled;
 - (id)metaTagsUnlabeled;
-- (int)numberOfImages;
-- (int)numberOfKnownImagePixels;
-- (int)numberOfUnknownSizedImages;
+- (long long)numberOfImages;
+- (long long)numberOfKnownImagePixels;
+- (long long)numberOfUnknownSizedImages;
 - (id)pageContent;
 - (id)pageTitle;
 - (id)plainText;
@@ -46,6 +46,6 @@
 - (id)scriptBlocks;
 - (void)setURLString:(id)arg1;
 - (id)tags;
-- (int)wordCount;
+- (long long)wordCount;
 
 @end

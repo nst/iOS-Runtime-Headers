@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly, retain) NSString *textContent;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (id)textContent;
 

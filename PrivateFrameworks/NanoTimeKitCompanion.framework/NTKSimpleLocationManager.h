@@ -3,12 +3,12 @@
  */
 
 @interface NTKSimpleLocationManager : NTKLocationManager {
-    unsigned int  _nextToken;
+    unsigned long long  _nextToken;
 }
 
 - (id)nameOfCurrentLocation;
-- (void)placemarkForCurrentLocationWithHandler:(id /* block */)arg1;
-- (struct NSNumber { Class x1; }*)startLocationUpdatesWithHandler:(id /* block */)arg1;
+- (void)placemarkForCurrentLocationWithHandler:(id)arg1;
+- (struct NSNumber { Class x1; }*)startLocationUpdatesWithHandler:(id)arg1;
 - (void)stopLocationUpdatesForToken:(struct NSNumber { Class x1; }*)arg1;
 
 @end

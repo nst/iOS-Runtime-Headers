@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) NSArray *reviews;
 
-- (int)pageComponentType;
+- (long long)pageComponentType;
 - (id)reviews;
 
 @end

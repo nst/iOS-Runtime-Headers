@@ -5,25 +5,25 @@
 
 @required
 
-- (void)cancelInteractiveTransitionWithVelocity:(float)arg1;
-- (void)completeTransition:(BOOL)arg1;
+- (void)cancelInteractiveTransitionWithVelocity:(double)arg1;
+- (void)completeTransition:(bool)arg1;
 - (OFUIView *)containerView;
-- (BOOL)doEaseIn;
-- (BOOL)doEaseOut;
-- (void)finishInteractiveTransitionWithVelocity:(float)arg1;
+- (bool)doEaseIn;
+- (bool)doEaseOut;
+- (void)finishInteractiveTransitionWithVelocity:(double)arg1;
 - (OFUIViewController *)fromViewController;
-- (BOOL)initiallyInteractive;
-- (BOOL)isCompleting;
-- (BOOL)isInteractive;
-- (BOOL)isRubberBanding;
-- (void)makeTransitionInteractiveWithInteractor:(id <OFViewControllerInteractiveTransitioning>)arg1 andProgress:(float)arg2;
-- (float)progress;
-- (float)progressVelocity;
-- (void)setProgressVelocity:(float)arg1;
+- (bool)initiallyInteractive;
+- (bool)isCompleting;
+- (bool)isInteractive;
+- (bool)isRubberBanding;
+- (void)makeTransitionInteractiveWithInteractor:(id <OFViewControllerInteractiveTransitioning>)arg1 andProgress:(double)arg2;
+- (double)progress;
+- (double)progressVelocity;
+- (void)setProgressVelocity:(double)arg1;
 - (void)startInteractiveTransition;
 - (OFUIViewController *)toViewController;
-- (void)updateInteractiveTransition:(float)arg1;
-- (void)updateNonInteractiveTransitionWithProgress:(float)arg1;
-- (BOOL)wasCancelled;
+- (void)updateInteractiveTransition:(double)arg1;
+- (void)updateNonInteractiveTransitionWithProgress:(double)arg1;
+- (bool)wasCancelled;
 
 @end

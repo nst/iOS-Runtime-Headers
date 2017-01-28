@@ -5,7 +5,10 @@
 
 @required
 
-- (void)doRateControlWithTime:(double)arg1 roundTripTime:(double)arg2 packetLossRate:(double)arg3 operatingTierIndex:(unsigned short)arg4 actualBitrate:(unsigned int)arg5;
+- (void)doRateControlWithTime:(double)arg1 roundTripTime:(double)arg2 packetLossRate:(double)arg3 operatingTierIndex:(unsigned short)arg4 averageBitrate:(unsigned int)arg5;
+- (double)nowrd;
+- (double)nowrdAcc;
+- (double)nowrdShort;
 - (double)owrd;
 - (double)rateControlInterval;
 - (void)setMaxTierIndex:(unsigned short)arg1 minTierIndex:(unsigned short)arg2;
@@ -16,6 +19,6 @@
 
 @optional
 
-- (void)printRateControlFullInfoWithLogDump:(void*)arg1 time:(double)arg2 videoStall:(BOOL)arg3 videoFrozenDuration:(double)arg4 averageTargetBitrate:(unsigned int)arg5;
+- (void)printRateControlFullInfoWithLogDump:(void*)arg1 time:(double)arg2 videoStall:(bool)arg3 videoFrozenDuration:(double)arg4 averageTargetBitrate:(unsigned int)arg5;
 
 @end

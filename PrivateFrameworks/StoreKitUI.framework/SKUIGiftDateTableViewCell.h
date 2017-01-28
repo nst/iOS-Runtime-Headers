@@ -4,7 +4,7 @@
 
 @interface SKUIGiftDateTableViewCell : UITableViewCell {
     UIView * _bottomBorderView;
-    BOOL  _checked;
+    bool  _checked;
     UIImageView * _checkmarkView;
     UILabel * _dateLabel;
     UILabel * _labelLabel;
@@ -12,7 +12,7 @@
     UIView * _topBorderView;
 }
 
-@property (getter=isChecked, nonatomic) BOOL checked;
+@property (getter=isChecked, nonatomic) bool checked;
 @property (nonatomic, copy) NSString *dateString;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSString *placeholder;
@@ -21,12 +21,12 @@
 - (id)_labelColor;
 - (id)_newLabel;
 - (id)dateString;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isChecked;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isChecked;
 - (id)label;
 - (void)layoutSubviews;
 - (id)placeholder;
-- (void)setChecked:(BOOL)arg1;
+- (void)setChecked:(bool)arg1;
 - (void)setDateString:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setPlaceholder:(id)arg1;

@@ -7,10 +7,10 @@
 
 - (void)addDocumentWithIdentifier:(NSString *)arg1 content:(NSString *)arg2 transactionId:(id*)arg3;
 - (void)close;
-- (BOOL)createWithURL:(NSURL *)arg1;
+- (bool)createWithURL:(NSURL *)arg1;
 - (NSString *)name;
-- (BOOL)openWithURL:(NSURL *)arg1 transactionId:(id*)arg2;
-- (BOOL)opened;
+- (bool)openWithURL:(NSURL *)arg1 transactionId:(id*)arg2;
+- (bool)opened;
 - (void)removeDocumentsForIdentifiers:(NSArray *)arg1;
 
 @end

@@ -4,11 +4,11 @@
 
 @interface MPPlaybackUserDefaults : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _allowsHighQualityMusicStreamingOnCellular;
+    bool  _allowsHighQualityMusicStreamingOnCellular;
     NSObject<OS_dispatch_queue> * _calloutQueue;
     int  _musicEQPreset;
-    int  _musicRepeatType;
-    int  _musicShuffleType;
+    long long  _musicRepeatType;
+    long long  _musicShuffleType;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
@@ -16,34 +16,34 @@
             int *__first_; 
         } __end_cap_; 
     }  _notifyTokens;
-    BOOL  _soundCheckEnabled;
+    bool  _soundCheckEnabled;
     NSObject<OS_dispatch_queue> * _userDefaultsMutationQueue;
 }
 
-@property (nonatomic, readonly) BOOL allowsHighQualityMusicStreamingOnCellular;
+@property (nonatomic, readonly) bool allowsHighQualityMusicStreamingOnCellular;
 @property (nonatomic, readonly) int musicEQPreset;
-@property (nonatomic) int musicRepeatType;
-@property (nonatomic) int musicShuffleType;
-@property (nonatomic, readonly) BOOL soundCheckEnabled;
+@property (nonatomic) long long musicRepeatType;
+@property (nonatomic) long long musicShuffleType;
+@property (nonatomic, readonly) bool soundCheckEnabled;
 
 + (id)standardUserDefaults;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_addNotificationObserver:(id /* block */)arg1 forUserDefaultKey:(struct __CFString { }*)arg2;
+- (void)_addNotificationObserver:(id)arg1 forUserDefaultKey:(struct __CFString { }*)arg2;
 - (int)_calculateCurrentMusicEQPreset;
-- (int)_calculateCurrentMusicRepeatType;
-- (int)_calculateCurrentMusicShuffleType;
+- (long long)_calculateCurrentMusicRepeatType;
+- (long long)_calculateCurrentMusicShuffleType;
 - (void)_mobileiPodPrefsDidChange;
 - (void)_postRepeatShuffleTypeGlobalNotification;
-- (BOOL)allowsHighQualityMusicStreamingOnCellular;
+- (bool)allowsHighQualityMusicStreamingOnCellular;
 - (void)dealloc;
 - (id)init;
 - (int)musicEQPreset;
-- (int)musicRepeatType;
-- (int)musicShuffleType;
-- (void)setMusicRepeatType:(int)arg1;
-- (void)setMusicShuffleType:(int)arg1;
-- (BOOL)soundCheckEnabled;
+- (long long)musicRepeatType;
+- (long long)musicShuffleType;
+- (void)setMusicRepeatType:(long long)arg1;
+- (void)setMusicShuffleType:(long long)arg1;
+- (bool)soundCheckEnabled;
 
 @end

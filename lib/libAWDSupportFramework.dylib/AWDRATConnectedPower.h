@@ -13,9 +13,9 @@
     int  _rAT;
 }
 
-@property (nonatomic) BOOL hasPowerConnSetupMicroWatt;
-@property (nonatomic) BOOL hasPowerConnectedMicroWatt;
-@property (nonatomic) BOOL hasRAT;
+@property (nonatomic) bool hasPowerConnSetupMicroWatt;
+@property (nonatomic) bool hasPowerConnectedMicroWatt;
+@property (nonatomic) bool hasRAT;
 @property (nonatomic) unsigned int powerConnSetupMicroWatt;
 @property (nonatomic) unsigned int powerConnectedMicroWatt;
 @property (nonatomic) int rAT;
@@ -25,20 +25,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPowerConnSetupMicroWatt;
-- (BOOL)hasPowerConnectedMicroWatt;
-- (BOOL)hasRAT;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPowerConnSetupMicroWatt;
+- (bool)hasPowerConnectedMicroWatt;
+- (bool)hasRAT;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)powerConnSetupMicroWatt;
 - (unsigned int)powerConnectedMicroWatt;
 - (int)rAT;
 - (id)rATAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPowerConnSetupMicroWatt:(BOOL)arg1;
-- (void)setHasPowerConnectedMicroWatt:(BOOL)arg1;
-- (void)setHasRAT:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPowerConnSetupMicroWatt:(bool)arg1;
+- (void)setHasPowerConnectedMicroWatt:(bool)arg1;
+- (void)setHasRAT:(bool)arg1;
 - (void)setPowerConnSetupMicroWatt:(unsigned int)arg1;
 - (void)setPowerConnectedMicroWatt:(unsigned int)arg1;
 - (void)setRAT:(int)arg1;

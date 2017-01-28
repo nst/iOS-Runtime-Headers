@@ -7,14 +7,14 @@
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, readonly) BOOL isAnimating;
+@property (nonatomic, readonly) bool isAnimating;
 
 - (void).cxx_destruct;
 - (id)activityIndicator;
-- (BOOL)isAnimating;
+- (bool)isAnimating;
 - (void)performSetup;
 - (void)setActivityIndicator:(id)arg1;
-- (void)setCollapsed:(BOOL)arg1;
+- (void)setCollapsed:(bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface SSWatchMetricsConfiguration : NSObject <NSCopying> {
-    BOOL  _enabled;
+    bool  _enabled;
 }
 
-@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) bool enabled;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (BOOL)isEnabled;
-- (void)setEnabled:(BOOL)arg1;
+- (bool)isEnabled;
+- (void)setEnabled:(bool)arg1;
 
 @end

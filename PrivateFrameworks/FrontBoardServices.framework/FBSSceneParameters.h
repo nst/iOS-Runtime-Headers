@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) FBSDisplay *display;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) FBSSceneSettings *settings;
 @property (nonatomic, readonly, copy) FBSSceneSpecification *specification;
 @property (readonly) Class superclass;
@@ -29,11 +29,11 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)display;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithSpecification:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setClientSettings:(id)arg1;
 - (void)setDisplay:(id)arg1;

@@ -3,18 +3,18 @@
  */
 
 @interface HMDAccessoryPairingEvent : HMDLogEvent <HMDAWDLogEvent> {
-    BOOL  _addOperation;
-    BOOL  _addViaWAC;
-    int  _linkType;
+    bool  _addOperation;
+    bool  _addViaWAC;
+    long long  _linkType;
     AWDHomeKitVendorInformation * _vendorInfo;
 }
 
-@property (getter=isAddOperation, nonatomic, readonly) BOOL addOperation;
-@property (getter=isAddViaWAC, nonatomic) BOOL addViaWAC;
+@property (getter=isAddOperation, nonatomic, readonly) bool addOperation;
+@property (getter=isAddViaWAC, nonatomic) bool addViaWAC;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int linkType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long linkType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) AWDHomeKitVendorInformation *vendorInfo;
 
@@ -25,15 +25,15 @@
 
 - (void).cxx_destruct;
 - (unsigned int)AWDMessageType;
-- (id)initWithUnpairedAccessory:(id)arg1 pairedAccessory:(id)arg2 hapAccessory:(id)arg3 isAddOperation:(BOOL)arg4;
-- (BOOL)isAddOperation;
-- (BOOL)isAddViaWAC;
-- (int)linkType;
+- (id)initWithUnpairedAccessory:(id)arg1 pairedAccessory:(id)arg2 hapAccessory:(id)arg3 isAddOperation:(bool)arg4;
+- (bool)isAddOperation;
+- (bool)isAddViaWAC;
+- (long long)linkType;
 - (id)metricForAWD;
 - (void)pairedAccessory:(id)arg1;
 - (void)pairedToServer:(id)arg1;
-- (void)setAddViaWAC:(BOOL)arg1;
-- (void)setLinkType:(int)arg1;
+- (void)setAddViaWAC:(bool)arg1;
+- (void)setLinkType:(long long)arg1;
 - (void)setVendorInfo:(id)arg1;
 - (id)vendorInfo;
 

@@ -13,15 +13,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <BRCIndexingArbiter> *indexingArbiter;
-@property (nonatomic, readonly) BOOL isCancelled;
+@property (nonatomic, readonly) bool isCancelled;
 @property (readonly) Class superclass;
 
 + (int)_bestIconVariantForDeviceMainScreen;
 
 - (void).cxx_destruct;
-- (id)_previewImageDataForDocumentAtURL:(id)arg1 dataType:(int*)arg2;
+- (id)_previewImageDataForDocumentAtURL:(id)arg1 dataType:(long long*)arg2;
 - (id)_recentDocumentDescriptors;
 - (id)_searchShortcutItem;
 - (id)_shortcutItemForRecentItemDescriptor:(id)arg1;
@@ -31,7 +31,7 @@
 - (void)dealloc;
 - (id)indexingArbiter;
 - (id)initWithAccountSession:(id)arg1;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (void)recentDocumentsListUpdated;
 - (void)resume;
 - (void)setIndexingArbiter:(id)arg1;

@@ -15,11 +15,11 @@
 + (id)sharedInstance;
 
 - (void)_broadcastFBSDisplayDidConnect:(id)arg1;
-- (void)_caDisplayDidConnect:(id)arg1 debounce:(BOOL)arg2 broadcast:(BOOL)arg3;
+- (void)_caDisplayDidConnect:(id)arg1 debounce:(bool)arg2 broadcast:(bool)arg3;
 - (void)_caDisplayDidDisconnect:(id)arg1;
-- (BOOL)_caDisplayIsMainDisplay:(id)arg1;
-- (void)_debounceDisplay:(id)arg1 broadcast:(BOOL)arg2;
-- (void)_displayDidDebounce:(id)arg1 broadcast:(BOOL)arg2;
+- (bool)_caDisplayIsMainDisplay:(id)arg1;
+- (void)_debounceDisplay:(id)arg1 broadcast:(bool)arg2;
+- (void)_displayDidDebounce:(id)arg1 broadcast:(bool)arg2;
 - (id)_fbsDisplayForCADisplay:(id)arg1;
 - (void)_initializeDisplays;
 - (void)addObserver:(id)arg1;

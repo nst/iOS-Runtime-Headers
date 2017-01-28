@@ -6,17 +6,17 @@
 
 + (id)phFaceFromPVFace:(id)arg1 withFetchOptions:(id)arg2;
 + (id)phFacesFromPVFaces:(id)arg1 withFetchOptions:(id)arg2;
-+ (id)pvFaceFromPHFace:(id)arg1 copyPropertiesOption:(int)arg2;
++ (id)pvFaceFromPHFace:(id)arg1 copyPropertiesOption:(long long)arg2;
 + (id)pvFaceGroupFromPHFaceGroup:(id)arg1;
 + (id)pvFaceGroupsArrayFromPHFaceGroups:(id)arg1;
 + (id)pvFaceGroupsArrayFromPHFetchResult:(id)arg1;
 + (id)pvFaceGroupsSetFromPHFaceGroups:(id)arg1;
 + (id)pvFaceGroupsSetFromPHFetchResult:(id)arg1;
 + (id)pvFaceprintFromPHFaceprint:(id)arg1;
-+ (id)pvFacesArrayFromPHFaces:(id)arg1 copyPropertiesOption:(int)arg2;
-+ (id)pvFacesArrayFromPHFetchResult:(id)arg1 copyPropertiesOption:(int)arg2;
-+ (id)pvFacesSetFromPHFaces:(id)arg1 copyPropertiesOption:(int)arg2;
-+ (id)pvFacesSetFromPHFetchResult:(id)arg1 copyPropertiesOption:(int)arg2;
++ (id)pvFacesArrayFromPHFaces:(id)arg1 copyPropertiesOption:(long long)arg2;
++ (id)pvFacesArrayFromPHFetchResult:(id)arg1 copyPropertiesOption:(long long)arg2;
++ (id)pvFacesSetFromPHFaces:(id)arg1 copyPropertiesOption:(long long)arg2;
++ (id)pvFacesSetFromPHFetchResult:(id)arg1 copyPropertiesOption:(long long)arg2;
 + (id)pvPersonFromPHPerson:(id)arg1;
 + (id)pvPersonsArrayFromPHFetchResult:(id)arg1;
 + (id)pvPersonsArrayFromPHPersons:(id)arg1;

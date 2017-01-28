@@ -28,9 +28,9 @@
 - (id)stepIdentifier;
 - (void)terminateFlow;
 - (id)verificationController;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (id)visibleFieldIdentifiers;
 
 @end

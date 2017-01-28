@@ -3,7 +3,7 @@
  */
 
 @interface UIWebOverflowScrollView : UIScrollView {
-    BOOL  _beingRemoved;
+    bool  _beingRemoved;
     DOMNode * _node;
     UIWebOverflowContentView * _overflowContentView;
     UIWebOverflowScrollListener * _scrollListener;
@@ -11,7 +11,7 @@
     CALayer * _webLayer;
 }
 
-@property (getter=isBeingRemoved, nonatomic) BOOL beingRemoved;
+@property (getter=isBeingRemoved, nonatomic) bool beingRemoved;
 @property (nonatomic, retain) DOMNode *node;
 @property (nonatomic, retain) UIWebOverflowContentView *overflowContentView;
 @property (nonatomic, retain) UIWebOverflowScrollListener *scrollListener;
@@ -19,15 +19,15 @@
 @property (nonatomic, retain) CALayer *webLayer;
 
 - (void)dealloc;
-- (BOOL)fixUpViewAfterInsertion;
+- (bool)fixUpViewAfterInsertion;
 - (id)initWithLayer:(id)arg1 node:(id)arg2 webBrowserView:(id)arg3;
-- (BOOL)isBeingRemoved;
+- (bool)isBeingRemoved;
 - (id)node;
 - (id)overflowContentView;
 - (void)replaceLayer:(id)arg1;
 - (id)scrollListener;
-- (void)setBeingRemoved:(BOOL)arg1;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setBeingRemoved:(bool)arg1;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setNode:(id)arg1;
 - (void)setOverflowContentView:(id)arg1;
 - (void)setScrollListener:(id)arg1;

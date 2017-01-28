@@ -11,12 +11,18 @@
     NSMutableArray * _deltaLog;
     _ATXDuetHelper * _duetHelper;
     NSMutableDictionary * _launchedBundleIds;
+    NSObject<OS_dispatch_queue> * _logQueue;
     NSMutableSet * _registrations;
     PETScalarEventTracker * _updateLaunchHistoryTracker;
 }
 
++ (long long)_predictionPositionForBundleId:(id)arg1 forPredictions:(id)arg2;
+
 - (void).cxx_destruct;
 - (void)_addLaunchWithBundleIdNoLock:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
+- (void)_logPredictionForBundleId:(id)arg1 launchReason:(id)arg2;
+- (void)_shadowSessionLoggingForBundleId:(id)arg1 launchReason:(id)arg2;
+- (void)_syncForTests;
 - (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
 - (id)appInfoManager;
 - (id)appLaunchHistogramManager;
@@ -28,7 +34,7 @@
 - (id)init;
 - (id)initWithAppInfoManager:(id)arg1 appLaunchHistogramManager:(id)arg2 appLaunchSequenceManager:(id)arg3 duetHelper:(id)arg4;
 - (id)initWithInMemoryStore;
-- (void)mergeAppLaunches:(id)arg1 andBacklightTransitions:(id)arg2 callingAppLaunchBlock:(id /* block */)arg3;
+- (void)mergeAppLaunches:(id)arg1 andBacklightTransitions:(id)arg2 callingAppLaunchBlock:(id)arg3;
 - (void)registerForAppChange;
 - (void)registerForBacklightChange;
 - (void)start;
@@ -36,8 +42,7 @@
 - (void)stop;
 - (id)stopDeltaRecording;
 - (void)swapDuetHelper:(id)arg1;
-- (void)syncForTests;
 - (void)updateLaunchHistoryFromDuet;
-- (void)updateLaunchHistoryFromDuet:(double)arg1 completionBlock:(id /* block */)arg2;
+- (void)updateLaunchHistoryFromDuet:(double)arg1 completionBlock:(id)arg2;
 
 @end

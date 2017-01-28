@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;
-@property (nonatomic, readonly) BOOL shouldIncrementSkipCount;
+@property (nonatomic, readonly) bool shouldIncrementSkipCount;
 @property (nonatomic, readonly) NSDate *skipDate;
 @property (nonatomic, readonly) RadioStation *station;
 @property (nonatomic, readonly, copy) NSArray *tracks;
@@ -19,7 +19,7 @@
 - (id)allPreparedAdSlotRadioTracks;
 - (id)initWithGetTracksResponse:(id)arg1 station:(id)arg2;
 - (id)preparedAdSlotForRadioTrack:(id)arg1;
-- (BOOL)shouldIncrementSkipCount;
+- (bool)shouldIncrementSkipCount;
 - (id)skipDate;
 - (id)station;
 - (id)tracks;

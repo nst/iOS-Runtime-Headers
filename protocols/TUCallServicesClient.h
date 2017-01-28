@@ -5,7 +5,7 @@
 
 @required
 
-- (void)handleCurrentCallsChanged:(void *)arg1 callDisconnected:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 7: NSArray *, TUCall *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)handleCurrentCallsChanged:(NSArray *)arg1 callDisconnected:(TUCall *)arg2;
 - (void)handleFrequencyChangedTo:(NSData *)arg1 inDirection:(int)arg2 forCallsWithUniqueProxyIdentifiers:(NSArray *)arg3;
 - (void)handleNotificationName:(NSString *)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2 userInfo:(NSDictionary *)arg3;
 - (void)resetCallProvisionalStates;

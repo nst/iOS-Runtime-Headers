@@ -7,7 +7,7 @@
 + (id)sharedManager;
 
 - (void)addDefaults:(id)arg1 toManagedDomain:(id)arg2;
-- (BOOL)domainHasManagedDefaults:(id)arg1;
+- (bool)domainHasManagedDefaults:(id)arg1;
 - (id)managedDefaultsForDomain:(id)arg1;
 - (id)managedDefaultsPathForDomain:(id)arg1;
 - (void)removeAllManagedDefaultsFromDomain:(id)arg1;

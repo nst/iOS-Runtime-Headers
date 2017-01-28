@@ -11,7 +11,7 @@
 
 @optional
 
-- (void)URLResolver:(SKUIURLResolver *)arg1 didFinishWithResult:(BOOL)arg2;
-- (BOOL)URLResolver:(SKUIURLResolver *)arg1 shouldPerformDefaultActionForURL:(SKUIURL *)arg2;
+- (void)URLResolver:(SKUIURLResolver *)arg1 didFinishWithResult:(bool)arg2;
+- (bool)URLResolver:(SKUIURLResolver *)arg1 shouldPerformDefaultActionForURL:(SKUIURL *)arg2;
 
 @end

@@ -20,12 +20,12 @@
 - (void)dealloc;
 - (struct __CFString { }*)getIdentifierForApp:(id)arg1;
 - (id)initWithPath:(id)arg1 passphrase:(id)arg2;
-- (BOOL)load;
-- (id)newPDFForPageNumber:(unsigned int)arg1;
+- (bool)load;
+- (id)newPDFForPageNumber:(unsigned long long)arg1;
 - (id)newPDFPreviewAndClose;
-- (unsigned int)pageCount;
-- (id)sheetNameForPageNumber:(unsigned int)arg1 isForm:(BOOL*)arg2;
+- (unsigned long long)pageCount;
+- (id)sheetNameForPageNumber:(unsigned long long)arg1 isForm:(bool*)arg2;
 - (id)thumbnail;
-- (BOOL)writePreviewToOutput:(id)arg1 pageNumber:(unsigned int)arg2;
+- (bool)writePreviewToOutput:(id)arg1 pageNumber:(unsigned long long)arg2;
 
 @end

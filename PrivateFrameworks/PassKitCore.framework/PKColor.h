@@ -3,30 +3,30 @@
  */
 
 @interface PKColor : NSObject <NSCopying, NSSecureCoding> {
-    float  _alpha;
-    float  _blue;
+    double  _alpha;
+    double  _blue;
     struct CGColor { } * _colorRef;
-    float  _green;
-    float  _red;
+    double  _green;
+    double  _red;
 }
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;
-@property (nonatomic, readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *string;
 
 + (id)colorFromString:(id)arg1;
-+ (id)colorWithH:(float)arg1 S:(float)arg2 B:(float)arg3 A:(float)arg4;
-+ (id)colorWithR:(float)arg1 G:(float)arg2 B:(float)arg3 A:(float)arg4;
-+ (BOOL)supportsSecureCoding;
++ (id)colorWithH:(double)arg1 S:(double)arg2 B:(double)arg3 A:(double)arg4;
++ (id)colorWithR:(double)arg1 G:(double)arg2 B:(double)arg3 A:(double)arg4;
++ (bool)supportsSecureCoding;
 
 - (struct CGColor { }*)CGColor;
 - (struct CGColor { }*)_newCGColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (float)luminance;
+- (double)luminance;
 - (id)string;
 
 @end

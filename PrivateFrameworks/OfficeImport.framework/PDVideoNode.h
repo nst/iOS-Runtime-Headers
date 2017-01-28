@@ -3,10 +3,10 @@
  */
 
 @interface PDVideoNode : PDMediaNode {
-    BOOL  mIsFullScreen;
+    bool  mIsFullScreen;
 }
 
-- (BOOL)isFullScreen;
-- (void)setIsFullScreen:(BOOL)arg1;
+- (bool)isFullScreen;
+- (void)setIsFullScreen:(bool)arg1;
 
 @end

@@ -4,15 +4,15 @@
 
 @interface TSCHTracingManager : NSObject {
     TSMTraceBuffer * mBuffer;
-    unsigned int  mBufferSize;
-    BOOL  mBufferSizeSet;
+    unsigned long long  mBufferSize;
+    bool  mBufferSizeSet;
     NSURL * mLastTraceFileURL;
     NSString * mTag;
     unsigned int  mTraceLevel;
-    BOOL  mTraceLevelSet;
+    bool  mTraceLevelSet;
 }
 
-@property unsigned int bufferSize;
+@property unsigned long long bufferSize;
 @property (readonly) NSURL *lastTraceFileURL;
 @property (copy) NSString *tag;
 @property unsigned int traceLevel;
@@ -22,15 +22,15 @@
 + (id)sharedManager;
 
 - (id)autorelease;
-- (unsigned int)bufferSize;
+- (unsigned long long)bufferSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)lastTraceFileURL;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
-- (void)setBufferSize:(unsigned int)arg1;
+- (unsigned long long)retainCount;
+- (void)setBufferSize:(unsigned long long)arg1;
 - (void)setTag:(id)arg1;
 - (void)setTraceLevel:(unsigned int)arg1;
 - (void)setup;

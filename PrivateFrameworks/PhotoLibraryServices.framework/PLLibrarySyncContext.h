@@ -8,17 +8,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) PLPhotoLibrary *photoLibrary;
-@property (nonatomic, readonly) BOOL serverSupportsVision;
+@property (nonatomic, readonly) bool serverSupportsVision;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void)deleteFaces:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
 - (id)makeFace;
-- (id)personForUUID:(id)arg1 createIfMissing:(BOOL)arg2;
+- (id)personForUUID:(id)arg1 createIfMissing:(bool)arg2;
 - (id)photoLibrary;
-- (BOOL)serverSupportsVision;
+- (bool)serverSupportsVision;
 
 @end

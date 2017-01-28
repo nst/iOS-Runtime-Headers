@@ -5,6 +5,6 @@
 
 @required
 
-- (float)senderGetTopMargin:(id)arg1;
+- (double)senderGetTopMargin:(id)arg1;
 
 @end

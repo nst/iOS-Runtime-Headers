@@ -3,22 +3,22 @@
  */
 
 @interface ISBiometricOptInOperation : ISOperation {
-    BOOL  _promptUser;
-    id /* block */  _resultBlock;
+    bool  _promptUser;
+    id  _resultBlock;
 }
 
-@property BOOL promptUser;
-@property (copy) id /* block */ resultBlock;
+@property bool promptUser;
+@property (copy) id resultBlock;
 
 - (void).cxx_destruct;
 - (id)_newSourceByStartingTimeoutTimer;
-- (BOOL)_performOptInDialogOperationWithError:(id*)arg1;
-- (BOOL)_performPasscodeDialogOperationWithError:(id*)arg1;
+- (bool)_performOptInDialogOperationWithError:(id*)arg1;
+- (bool)_performPasscodeDialogOperationWithError:(id*)arg1;
 - (void)_updateTouchIDSettingsForAccount:(id)arg1;
-- (BOOL)promptUser;
-- (id /* block */)resultBlock;
+- (bool)promptUser;
+- (id)resultBlock;
 - (void)run;
-- (void)setPromptUser:(BOOL)arg1;
-- (void)setResultBlock:(id /* block */)arg1;
+- (void)setPromptUser:(bool)arg1;
+- (void)setResultBlock:(id)arg1;
 
 @end

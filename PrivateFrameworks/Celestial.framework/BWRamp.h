@@ -8,21 +8,21 @@
     int  _durationInIterations;
     float  _exponentialConvergenceFraction;
     float  _exponentialSnapFraction;
-    BOOL  _isRamping;
-    BOOL  _isRampingUp;
+    bool  _isRamping;
+    bool  _isRampingUp;
     int  _shape;
     float  _startValue;
     float  _targetValue;
 }
 
 @property (nonatomic, readonly) float currentValue;
-@property (nonatomic, readonly) BOOL isRamping;
+@property (nonatomic, readonly) bool isRamping;
 
 + (void)initialize;
 
 - (float)currentValue;
 - (id)init;
-- (BOOL)isRamping;
+- (bool)isRamping;
 - (void)startRampFrom:(float)arg1 to:(float)arg2 iterations:(int)arg3 shape:(int)arg4;
 - (float)updateRampForNexIteration;
 

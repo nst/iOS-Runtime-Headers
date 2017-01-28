@@ -14,7 +14,7 @@
 - (void)noteClientDidConnect:(id)arg1 withMessage:(id)arg2;
 - (void)noteClientDidDisconnect:(id)arg1;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
-- (void)noteInterfaceOrientationChanged:(int)arg1 animationSettings:(id)arg2 direction:(int)arg3;
+- (void)noteInterfaceOrientationChanged:(long long)arg1 animationSettings:(id)arg2 direction:(long long)arg3;
 - (id)prerequisiteMilestones;
 
 @end

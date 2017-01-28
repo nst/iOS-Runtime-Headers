@@ -3,7 +3,7 @@
  */
 
 @interface PLAirplayService : PLService {
-    BOOL  _airplayMirroringOn;
+    bool  _airplayMirroringOn;
     PLEntryNotificationOperatorComposition * _audioAppCallback;
     NSString * _entryKeyPLScreenStateAgentScreenState;
     NSSet * _excludedAccountingEvents;
@@ -11,7 +11,7 @@
     PLEntryNotificationOperatorComposition * _screenstateCallback;
 }
 
-@property BOOL airplayMirroringOn;
+@property bool airplayMirroringOn;
 @property (retain) PLEntryNotificationOperatorComposition *audioAppCallback;
 @property (readonly) NSString *entryKeyPLScreenStateAgentScreenState;
 @property (retain) NSSet *excludedAccountingEvents;
@@ -23,9 +23,9 @@
 + (void)load;
 
 - (void).cxx_destruct;
-- (BOOL)airplayMirroringOn;
+- (bool)airplayMirroringOn;
 - (id)audioAppCallback;
-- (id)buildCallBack:(id)arg1 withGroup:(BOOL)arg2 withHandler:(id /* block */)arg3;
+- (id)buildCallBack:(id)arg1 withGroup:(bool)arg2 withHandler:(id)arg3;
 - (id)entryKeyPLScreenStateAgentScreenState;
 - (id)excludedAccountingEvents;
 - (void)handleAudioAppCallback:(id)arg1;
@@ -34,7 +34,7 @@
 - (void)initOperatorDependancies;
 - (id)screenLayoutEntries;
 - (id)screenstateCallback;
-- (void)setAirplayMirroringOn:(BOOL)arg1;
+- (void)setAirplayMirroringOn:(bool)arg1;
 - (void)setAudioAppCallback:(id)arg1;
 - (void)setExcludedAccountingEvents:(id)arg1;
 - (void)setScreenLayoutEntries:(id)arg1;

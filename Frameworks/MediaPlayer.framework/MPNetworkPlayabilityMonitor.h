@@ -3,27 +3,27 @@
  */
 
 @interface MPNetworkPlayabilityMonitor : NSObject {
-    int  _effectiveNetworkTypeForCloudPlayback;
+    long long  _effectiveNetworkTypeForCloudPlayback;
     double  _lastAverageBitrate;
-    int  _networkType;
+    long long  _networkType;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, readonly) int effectiveNetworkTypeForPlayback;
+@property (nonatomic, readonly) long long effectiveNetworkTypeForPlayback;
 @property (nonatomic, readonly) double lastAverageBitrate;
-@property (nonatomic, readonly) int networkType;
+@property (nonatomic, readonly) long long networkType;
 
 + (id)sharedNetworkPlayabilityMonitor;
 
 - (void).cxx_destruct;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (int)_onQueueEffectiveNetworkTypeForAverageBitrate:(double)arg1;
+- (long long)_onQueueEffectiveNetworkTypeForAverageBitrate:(double)arg1;
 - (void)_onQueueUpdateEffectiveNetworkTypesForPlayback;
 - (void)adjustEffectiveNetworkTypeUsingPreviouslyPlayedItem:(id)arg1;
 - (void)dealloc;
-- (int)effectiveNetworkTypeForPlayback;
+- (long long)effectiveNetworkTypeForPlayback;
 - (id)init;
 - (double)lastAverageBitrate;
-- (int)networkType;
+- (long long)networkType;
 
 @end

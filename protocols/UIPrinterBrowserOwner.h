@@ -6,16 +6,16 @@
 @required
 
 - (void)cancelPrinting;
-- (void)dismissAnimated:(BOOL)arg1;
-- (BOOL)filtersPrinters;
+- (void)dismissAnimated:(bool)arg1;
+- (bool)filtersPrinters;
 - (PKPrinter *)printer;
 - (void)setPrinter:(PKPrinter *)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @optional
 
-- (void)setUserSelectedPrinter:(BOOL)arg1;
-- (BOOL)shouldShowPrinter:(PKPrinter *)arg1;
+- (void)setUserSelectedPrinter:(bool)arg1;
+- (bool)shouldShowPrinter:(PKPrinter *)arg1;
 
 @end

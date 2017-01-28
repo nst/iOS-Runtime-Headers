@@ -9,28 +9,28 @@
         unsigned int listeningForNotifications : 1; 
     }  _monitorFlags;
     IMServiceImpl * _service;
-    int  _serviceType;
+    long long  _serviceType;
 }
 
 @property (nonatomic, readonly, retain) NSArray *activeAccounts;
 @property (nonatomic, retain) IMServiceImpl *service;
-@property (nonatomic) int serviceType;
+@property (nonatomic) long long serviceType;
 
 - (void).cxx_destruct;
 - (id)_activeAccounts;
 - (void)_handleAccountNotification:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;
-- (BOOL)_shouldHandleAccountNofication:(id)arg1;
+- (bool)_shouldHandleAccountNofication:(id)arg1;
 - (void)_startListeningForNotifications;
 - (void)_stopListeningForNotifications;
-- (void)_updateAccountState:(BOOL)arg1;
+- (void)_updateAccountState:(bool)arg1;
 - (id)activeAccounts;
 - (void)dealloc;
-- (id)initWithServiceType:(int)arg1;
+- (id)initWithServiceType:(long long)arg1;
 - (id)logName;
 - (id)service;
-- (int)serviceType;
+- (long long)serviceType;
 - (void)setService:(id)arg1;
-- (void)setServiceType:(int)arg1;
+- (void)setServiceType:(long long)arg1;
 
 @end

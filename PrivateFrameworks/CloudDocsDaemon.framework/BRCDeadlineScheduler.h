@@ -3,10 +3,10 @@
  */
 
 @interface BRCDeadlineScheduler : NSObject <BRCLifeCycle, BRCSuspendable> {
-    id /* block */  _computeNextAdmissibleDateForScheduling;
+    id  _computeNextAdmissibleDateForScheduling;
     NSObject<OS_dispatch_source> * _delay;
-    BOOL  _isCancelled;
-    BOOL  _isResumed;
+    bool  _isCancelled;
+    bool  _isResumed;
     long long  _lastSchedule;
     long long  _leeway;
     BRCMinHeap * _minHeap;
@@ -16,31 +16,31 @@
 }
 
 @property (nonatomic) long long coalescingLeeway;
-@property (nonatomic, copy) id /* block */ computeNextAdmissibleDateForScheduling;
+@property (nonatomic, copy) id computeNextAdmissibleDateForScheduling;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCancelled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCancelled;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addSource:(id)arg1 deadline:(long long)arg2;
 - (void)_close;
-- (BOOL)_isSleepingRequiredForDeadline:(long long)arg1 now:(long long)arg2;
+- (bool)_isSleepingRequiredForDeadline:(long long)arg1 now:(long long)arg2;
 - (void)_schedule;
 - (void)cancel;
 - (void)close;
 - (long long)coalescingLeeway;
-- (id /* block */)computeNextAdmissibleDateForScheduling;
+- (id)computeNextAdmissibleDateForScheduling;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 targetQueue:(id)arg2;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (id)queue;
 - (void)resume;
 - (void)setCoalescingLeeway:(long long)arg1;
-- (void)setComputeNextAdmissibleDateForScheduling:(id /* block */)arg1;
+- (void)setComputeNextAdmissibleDateForScheduling:(id)arg1;
 - (void)signal;
 - (void)suspend;
 

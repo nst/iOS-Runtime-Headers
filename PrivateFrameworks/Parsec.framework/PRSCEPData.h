@@ -15,11 +15,11 @@
 
 @property (nonatomic, readonly, copy) NSMutableArray *allKeys;
 @property (nonatomic, readonly) NSArray *blacklist;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 
 - (id)allKeys;
 - (id)blacklist;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
 - (double)doubleValueForBundle:(id)arg1;

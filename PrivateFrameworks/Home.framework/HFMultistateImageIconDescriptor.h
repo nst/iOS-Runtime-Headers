@@ -9,11 +9,11 @@
 @property (nonatomic, retain) NSDictionary *imageIdentifiersKeyedByPrimaryState;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (id)imageIdentifierForPrimaryState:(int)arg1;
+- (unsigned long long)hash;
+- (id)imageIdentifierForPrimaryState:(long long)arg1;
 - (id)imageIdentifiersKeyedByPrimaryState;
 - (id)initWithImageIdentifiersKeyedByPrimaryState:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setImageIdentifiersKeyedByPrimaryState:(id)arg1;
 
 @end

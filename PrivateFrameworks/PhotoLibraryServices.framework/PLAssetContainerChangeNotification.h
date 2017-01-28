@@ -3,30 +3,30 @@
  */
 
 @interface PLAssetContainerChangeNotification : PLContainerChangeNotification {
-    BOOL  _keyAssetDidChange;
-    BOOL  _titleDidChange;
+    bool  _keyAssetDidChange;
+    bool  _titleDidChange;
     NSDictionary * _userInfo;
 }
 
 @property (nonatomic, readonly, retain) NSObject<PLAlbumProtocol> *album;
 @property (nonatomic, readonly, retain) <PLAssetContainer> *container;
-@property (nonatomic, readonly) BOOL keyAssetDidChange;
-@property (nonatomic, readonly) BOOL titleDidChange;
+@property (nonatomic, readonly) bool keyAssetDidChange;
+@property (nonatomic, readonly) bool titleDidChange;
 
 + (id)notificationWithContainer:(id)arg1 snapshot:(id)arg2 changedAssets:(id)arg3;
 
 - (void)_calculateDiffs;
 - (id)_contentRelationshipName;
-- (BOOL)_getOldSet:(id*)arg1 newSet:(id*)arg2;
+- (bool)_getOldSet:(id*)arg1 newSet:(id*)arg2;
 - (struct NSObject { Class x1; }*)album;
 - (id)assetContainer;
 - (id)container;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasDeletes;
-- (BOOL)keyAssetDidChange;
+- (bool)hasDeletes;
+- (bool)keyAssetDidChange;
 - (id)name;
-- (BOOL)titleDidChange;
+- (bool)titleDidChange;
 - (id)userInfo;
 
 @end

@@ -3,23 +3,23 @@
  */
 
 @interface CAMPendingRemotePersistenceWrapper : NSObject {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSDate * _creationDate;
     NSMutableDictionary * _job;
     CAMCaptureRequest * _request;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic, readonly) NSDate *creationDate;
 @property (nonatomic, readonly) NSMutableDictionary *job;
 @property (nonatomic, readonly) CAMCaptureRequest *request;
 
 - (void).cxx_destruct;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)creationDate;
-- (id)initWithRequest:(id)arg1 creationDate:(id)arg2 job:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)initWithRequest:(id)arg1 creationDate:(id)arg2 job:(id)arg3 completionHandler:(id)arg4;
 - (id)job;
 - (id)request;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 
 @end

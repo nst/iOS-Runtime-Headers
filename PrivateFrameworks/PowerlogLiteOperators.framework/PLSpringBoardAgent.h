@@ -3,7 +3,7 @@
  */
 
 @interface PLSpringBoardAgent : PLAgent {
-    BOOL  _autoLockIsNil;
+    bool  _autoLockIsNil;
     PLMonotonicTimer * _autolockEnergyPeriodicTimer;
     PLTimer * _dailyWallpaperPoll;
     PLEntryNotificationOperatorComposition * _displayOffNotification;
@@ -22,7 +22,7 @@
     PLXPCListenerOperatorComposition * _userNotificationTriggerEvent;
 }
 
-@property BOOL autoLockIsNil;
+@property bool autoLockIsNil;
 @property (retain) PLMonotonicTimer *autolockEnergyPeriodicTimer;
 @property (retain) PLTimer *dailyWallpaperPoll;
 @property (retain) PLEntryNotificationOperatorComposition *displayOffNotification;
@@ -58,7 +58,7 @@
 
 - (void).cxx_destruct;
 - (void)addAccountingEvent:(id)arg1;
-- (BOOL)autoLockIsNil;
+- (bool)autoLockIsNil;
 - (id)autolockEnergyPeriodicTimer;
 - (void)closeLastOpenEventsWithStopDate:(id)arg1;
 - (void)computeAutolockEnergyWithNow:(id)arg1;
@@ -85,7 +85,7 @@
 - (void)resetAutoLockIsNil;
 - (id)screenLock:(id)arg1;
 - (id)screenNumberToName;
-- (void)setAutoLockIsNil:(BOOL)arg1;
+- (void)setAutoLockIsNil:(bool)arg1;
 - (void)setAutolockEnergyPeriodicTimer:(id)arg1;
 - (void)setDailyWallpaperPoll:(id)arg1;
 - (void)setDisplayOffNotification:(id)arg1;

@@ -10,6 +10,6 @@
 
 + (id)taskDependencyWithMainDocumentTask:(id)arg1;
 + (id)taskDependencyWithMainDocumentTask:(id)arg1 taskDependencyDescription:(id)arg2;
-+ (id)taskDependencyWithParentTask:(id)arg1 priority:(float)arg2 exclusive:(BOOL)arg3;
++ (id)taskDependencyWithParentTask:(id)arg1 priority:(float)arg2 exclusive:(bool)arg3;
 
 @end

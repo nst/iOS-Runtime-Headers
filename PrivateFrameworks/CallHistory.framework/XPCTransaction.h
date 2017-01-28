@@ -4,11 +4,11 @@
 
 @interface XPCTransaction : NSObject {
     NSString * _reason;
-    BOOL  _tranactionCreated;
+    bool  _tranactionCreated;
 }
 
 @property (retain) NSString *reason;
-@property BOOL tranactionCreated;
+@property bool tranactionCreated;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -16,7 +16,7 @@
 - (id)initWithReason:(id)arg1;
 - (id)reason;
 - (void)setReason:(id)arg1;
-- (void)setTranactionCreated:(BOOL)arg1;
-- (BOOL)tranactionCreated;
+- (void)setTranactionCreated:(bool)arg1;
+- (bool)tranactionCreated;
 
 @end

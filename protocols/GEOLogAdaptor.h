@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)acceptsLogMessageOfType:(int)arg1 subType:(int)arg2;
+- (bool)acceptsLogMessageOfType:(int)arg1 subType:(int)arg2;
 - (NSObject<OS_dispatch_queue> *)adaptorQueue;
 - (void)flushLogs;
-- (BOOL)isLogFrameworkAdaptor;
+- (bool)isLogFrameworkAdaptor;
 - (void)queueLogMessage:(GEOLogMessage *)arg1;
 
 @optional
@@ -19,6 +19,7 @@
 - (void)adaptorWillGetRemoved:(id <GEOLogAdaptor>)arg1;
 - (void)disableLogMsgInstrumentation;
 - (void)enableLogMsgInstrumentation;
+- (void)forceFlushLogs;
 - (void)registerLogMsgState:(GEOLogMsgState *)arg1;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
 

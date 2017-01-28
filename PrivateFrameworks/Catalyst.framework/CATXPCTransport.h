@@ -4,14 +4,14 @@
 
 @interface CATXPCTransport : CATTransport <CATXPCInterface> {
     NSXPCConnection * mConnection;
-    BOOL  mConnectionHasInvalidated;
-    BOOL  mConnectionHasResumed;
-    BOOL  mConnectionShouldInvalidate;
+    bool  mConnectionHasInvalidated;
+    bool  mConnectionHasResumed;
+    bool  mConnectionShouldInvalidate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)new;

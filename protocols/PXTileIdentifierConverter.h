@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)transformTileIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; }*)arg1 group:(unsigned int*)arg2;
+- (bool)transformTileIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; }*)arg1 group:(unsigned long long*)arg2;
 
 @optional
 
-- (BOOL)reverseTransformTileIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; }*)arg1;
+- (bool)reverseTransformTileIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; }*)arg1;
 
 @end

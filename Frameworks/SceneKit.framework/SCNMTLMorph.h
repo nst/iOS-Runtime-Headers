@@ -6,21 +6,21 @@
     <MTLBuffer> * _baseBuffer;
     unsigned int  _baseVertexCount;
     NSArray * _originalTargets;
-    unsigned int  _semanticUsageMask;
+    unsigned long long  _semanticUsageMask;
     <MTLBuffer> * _sharedTriangle;
-    BOOL  _sharedTriangleIs16bits;
-    unsigned int  _targetCount;
-    struct Target { id x1; unsigned int x2; } * _targets;
+    bool  _sharedTriangleIs16bits;
+    unsigned long long  _targetCount;
+    struct Target { id x1; unsigned long long x2; } * _targets;
     <MTLBuffer> * _vertexTopology;
 }
 
 - (void)dealloc;
 - (id)initWithMorph:(struct __C3DMorph { }*)arg1 baseMesh:(struct __C3DMesh { }*)arg2 resourceManager:(id)arg3;
-- (BOOL)isCompatibleWithMorph:(struct __C3DMorph { }*)arg1;
-- (void)morphIncrementalMesh:(id)arg1 morpher:(struct __C3DMorpher { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DGeometry {} *x2; struct __C3DMorph {} *x3; struct __C3DMesh {} *x4; unsigned int x5; unsigned int x6; float *x7; unsigned int x8; unsigned int x9; }*)arg2 computeEncoder:(id)arg3 resourceManager:(id)arg4;
+- (bool)isCompatibleWithMorph:(struct __C3DMorph { }*)arg1;
+- (void)morphIncrementalMesh:(id)arg1 morpher:(struct __C3DMorpher { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __C3DGeometry {} *x2; struct __C3DMorph {} *x3; struct __C3DMesh {} *x4; unsigned int x5; unsigned int x6; float *x7; unsigned int x8; unsigned int x9; }*)arg2 computeEncoder:(id)arg3 resourceManager:(id)arg4;
 - (void)morphMesh:(id)arg1 morph:(struct __C3DMorph { }*)arg2 computeEncoder:(id)arg3 resourceManager:(id)arg4;
 - (void)morphOptimizedMesh:(id)arg1 morph:(struct __C3DMorph { }*)arg2 computeEncoder:(id)arg3 resourceManager:(id)arg4;
-- (void)morphSparseMesh:(id)arg1 morpher:(struct __C3DMorpher { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DGeometry {} *x2; struct __C3DMorph {} *x3; struct __C3DMesh {} *x4; unsigned int x5; unsigned int x6; float *x7; unsigned int x8; unsigned int x9; }*)arg2 computeEncoder:(id)arg3 resourceManager:(id)arg4;
+- (void)morphSparseMesh:(id)arg1 morpher:(struct __C3DMorpher { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __C3DGeometry {} *x2; struct __C3DMorph {} *x3; struct __C3DMesh {} *x4; unsigned int x5; unsigned int x6; float *x7; unsigned int x8; unsigned int x9; }*)arg2 computeEncoder:(id)arg3 resourceManager:(id)arg4;
 - (void)unifyMesh:(id)arg1 computeEncoder:(id)arg2 resourceManager:(id)arg3;
 
 @end

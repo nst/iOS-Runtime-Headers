@@ -3,7 +3,7 @@
  */
 
 @interface VTPolicy : NSObject <VTEventMonitorDelegate> {
-    id /* block */  _callback;
+    id  _callback;
     NSMutableArray * _conditions;
     NSMutableArray * _monitors;
     NSObject<OS_dispatch_queue> * _queue;
@@ -11,20 +11,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)defaultVoiceTriggerEnablePolicy;
 
 - (void).cxx_destruct;
 - (void)VTEventMonitorDidReceiveEvent:(id)arg1;
-- (BOOL)_checkAllConditionsEnabled;
-- (void)addConditions:(id /* block */)arg1;
+- (bool)_checkAllConditionsEnabled;
+- (void)addConditions:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEnabled;
-- (void)notifyCallback:(BOOL)arg1;
-- (void)setCallback:(id /* block */)arg1;
+- (bool)isEnabled;
+- (void)notifyCallback:(bool)arg1;
+- (void)setCallback:(id)arg1;
 - (void)subscribeEventMonitor:(id)arg1;
 
 @end

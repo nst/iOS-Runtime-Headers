@@ -12,15 +12,15 @@
 - (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 didReorderItemsWithIdentifiersInGroups:(NSDictionary *)arg2;
 - (NSString *)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 displayNameForItemWithIdentifier:(NSString *)arg2;
 - (UIImage *)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 iconForItemWithIdentifier:(NSString *)arg2;
-- (BOOL)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 isItemWithIdentifierEnabled:(NSString *)arg2;
-- (BOOL)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 isItemWithIdentifierNew:(NSString *)arg2;
+- (bool)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 isItemWithIdentifierEnabled:(NSString *)arg2;
+- (bool)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 isItemWithIdentifierNew:(NSString *)arg2;
 - (NSArray *)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 itemIdentifiersForGroup:(NSString *)arg2;
-- (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 setEnabled:(BOOL)arg2 forItemsWithIdentifiers:(NSArray *)arg3;
-- (BOOL)widgetListEditViewControllerShouldIncludeInternalWidgets:(WGWidgetListEditViewController *)arg1;
+- (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 setEnabled:(bool)arg2 forItemsWithIdentifiers:(NSArray *)arg3;
+- (bool)widgetListEditViewControllerShouldIncludeInternalWidgets:(WGWidgetListEditViewController *)arg1;
 
 @optional
 
-- (int)layoutModeForWidgetListEditViewController:(WGWidgetListEditViewController *)arg1;
+- (long long)layoutModeForWidgetListEditViewController:(WGWidgetListEditViewController *)arg1;
 - (NSString *)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 displayNameForGroup:(NSString *)arg2;
 
 @end

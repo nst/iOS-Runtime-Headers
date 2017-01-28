@@ -3,35 +3,35 @@
  */
 
 @interface MFComposeMultiView : MFComposeHeaderView {
-    BOOL  _accountAutoselected;
+    bool  _accountAutoselected;
     NSString * _accountDescription;
-    BOOL  _accountHasUnsafeDomain;
+    bool  _accountHasUnsafeDomain;
     UILabel * _accountLabel;
     MFHeaderLabelView * _imageSizeHeaderLabelView;
     UILabel * _imageSizeLabel;
-    BOOL  _imageSizeShown;
+    bool  _imageSizeShown;
     UILabel * _placeholderImageSizeLabel;
 }
 
-@property (getter=isAccountAutoselected, nonatomic) BOOL accountAutoselected;
-@property (nonatomic) BOOL accountHasUnsafeDomain;
+@property (getter=isAccountAutoselected, nonatomic) bool accountAutoselected;
+@property (nonatomic) bool accountHasUnsafeDomain;
 
 - (id)_accountDescriptionAttributedString;
-- (BOOL)accountHasUnsafeDomain;
+- (bool)accountHasUnsafeDomain;
 - (id)accountLabel;
 - (void)dealloc;
 - (id)imageSizeHeaderLabelView;
 - (id)imageSizeLabel;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccountAutoselected;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAccountAutoselected;
 - (id)labelColor;
 - (void)layoutSubviews;
 - (id)placeholderImageSizeLabel;
 - (void)refreshPreferredContentSize;
-- (void)setAccountAutoselected:(BOOL)arg1;
+- (void)setAccountAutoselected:(bool)arg1;
 - (void)setAccountDescription:(id)arg1;
-- (void)setAccountHasUnsafeDomain:(BOOL)arg1;
+- (void)setAccountHasUnsafeDomain:(bool)arg1;
 - (void)setImageSizeDescription:(id)arg1;
-- (void)setShowsImageSize:(BOOL)arg1;
+- (void)setShowsImageSize:(bool)arg1;
 
 @end

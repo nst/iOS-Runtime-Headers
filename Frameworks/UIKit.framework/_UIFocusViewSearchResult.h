@@ -4,16 +4,16 @@
 
 @interface _UIFocusViewSearchResult : NSObject {
     UIFocusUpdateContext * _focusCandidate;
-    BOOL  _hasSpeedBump;
+    bool  _hasSpeedBump;
 }
 
 @property (nonatomic, retain) UIFocusUpdateContext *focusCandidate;
-@property (nonatomic) BOOL hasSpeedBump;
+@property (nonatomic) bool hasSpeedBump;
 
 - (void).cxx_destruct;
 - (id)focusCandidate;
-- (BOOL)hasSpeedBump;
+- (bool)hasSpeedBump;
 - (void)setFocusCandidate:(id)arg1;
-- (void)setHasSpeedBump:(BOOL)arg1;
+- (void)setHasSpeedBump:(bool)arg1;
 
 @end

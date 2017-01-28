@@ -21,7 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) GEOETARoute *etaRoute;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) GEOComposedWaypoint *originalDestination;
 @property (nonatomic, readonly) GEOComposedRoute *originalRoute;
 @property (nonatomic, readonly) MNRoutePlanningDetails *routePlanningDetails;
@@ -44,7 +44,7 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)open;
 - (id)originalDestination;
@@ -53,7 +53,7 @@
 - (void)updateForETA:(id)arg1 forRoute:(id)arg2;
 - (void)updateForGuidanceLevel:(int)arg1;
 - (void)updateForLocation:(id)arg1;
-- (void)updateForReroute:(id)arg1 rerouteReason:(unsigned int)arg2 request:(id)arg3 response:(id)arg4;
-- (BOOL)updateForRoutePlanningDetails:(id)arg1 outError:(out id*)arg2;
+- (void)updateForReroute:(id)arg1 rerouteReason:(unsigned long long)arg2 request:(id)arg3 response:(id)arg4;
+- (bool)updateForRoutePlanningDetails:(id)arg1 outError:(out id*)arg2;
 
 @end

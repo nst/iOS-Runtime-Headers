@@ -8,7 +8,7 @@
     AVURLAsset * _baseVideoComplement;
     NSData * _imageData;
     AVURLAsset * _videoComplement;
-    int  _workImageVersion;
+    long long  _workImageVersion;
 }
 
 @property (setter=_setAdjustmentData:, nonatomic, retain) PHAdjustmentData *adjustmentData;
@@ -16,9 +16,9 @@
 @property (setter=_setBaseVideoComplement:, nonatomic, retain) AVURLAsset *baseVideoComplement;
 @property (setter=_setImageData:, nonatomic, retain) NSData *imageData;
 @property (setter=_setVideoComplement:, nonatomic, retain) AVURLAsset *videoComplement;
-@property (setter=_setWorkImageVersion:, nonatomic) int workImageVersion;
+@property (setter=_setWorkImageVersion:, nonatomic) long long workImageVersion;
 
-+ (void)captureSnapshotForAsset:(id)arg1 mediaProvider:(id)arg2 completion:(id /* block */)arg3;
++ (void)captureSnapshotForAsset:(id)arg1 mediaProvider:(id)arg2 completion:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_copyAsset:(id)arg1;
@@ -30,13 +30,13 @@
 - (void)_setBaseVideoComplement:(id)arg1;
 - (void)_setImageData:(id)arg1;
 - (void)_setVideoComplement:(id)arg1;
-- (void)_setWorkImageVersion:(int)arg1;
+- (void)_setWorkImageVersion:(long long)arg1;
 - (id)adjustmentData;
 - (id)baseImageData;
 - (id)baseVideoComplement;
 - (id)imageData;
 - (id)init;
 - (id)videoComplement;
-- (int)workImageVersion;
+- (long long)workImageVersion;
 
 @end

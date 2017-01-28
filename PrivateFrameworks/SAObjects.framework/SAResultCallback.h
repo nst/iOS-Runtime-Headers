@@ -4,23 +4,23 @@
 
 @interface SAResultCallback : AceObject <SAAceSerializable>
 
-@property (nonatomic) int code;
+@property (nonatomic) long long code;
 @property (nonatomic, copy) NSArray *commandReferences;
 @property (nonatomic, copy) NSArray *commands;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)resultCallback;
 + (id)resultCallbackWithDictionary:(id)arg1 context:(id)arg2;
 
-- (int)code;
+- (long long)code;
 - (id)commandReferences;
 - (id)commands;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setCode:(int)arg1;
+- (void)setCode:(long long)arg1;
 - (void)setCommandReferences:(id)arg1;
 - (void)setCommands:(id)arg1;
 

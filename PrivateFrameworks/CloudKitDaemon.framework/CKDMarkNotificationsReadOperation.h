@@ -5,13 +5,13 @@
 @interface CKDMarkNotificationsReadOperation : CKDOperation {
     NSMutableDictionary * _errorByNotificationID;
     NSArray * _notificationIDs;
-    id /* block */  _notificationMarkedRead;
+    id  _notificationMarkedRead;
     NSMutableSet * _successfulNotificationIDs;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *errorByNotificationID;
 @property (nonatomic, retain) NSArray *notificationIDs;
-@property (nonatomic, copy) id /* block */ notificationMarkedRead;
+@property (nonatomic, copy) id notificationMarkedRead;
 @property (nonatomic, retain) NSMutableSet *successfulNotificationIDs;
 
 - (void).cxx_destruct;
@@ -22,10 +22,10 @@
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (id)notificationIDs;
-- (id /* block */)notificationMarkedRead;
+- (id)notificationMarkedRead;
 - (void)setErrorByNotificationID:(id)arg1;
 - (void)setNotificationIDs:(id)arg1;
-- (void)setNotificationMarkedRead:(id /* block */)arg1;
+- (void)setNotificationMarkedRead:(id)arg1;
 - (void)setSuccessfulNotificationIDs:(id)arg1;
 - (id)successfulNotificationIDs;
 

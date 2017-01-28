@@ -3,20 +3,20 @@
  */
 
 @interface SSMetricsEventLocation : NSObject {
-    int  _position;
+    long long  _position;
     NSString * _type;
     NSMutableDictionary * _values;
 }
 
-@property (nonatomic) int locationPosition;
+@property (nonatomic) long long locationPosition;
 @property (nonatomic, copy) NSString *locationType;
 @property (nonatomic, readonly) NSDictionary *reportingDictionary;
 
 - (void).cxx_destruct;
-- (int)locationPosition;
+- (long long)locationPosition;
 - (id)locationType;
 - (id)reportingDictionary;
-- (void)setLocationPosition:(int)arg1;
+- (void)setLocationPosition:(long long)arg1;
 - (void)setLocationType:(id)arg1;
 - (void)setValue:(id)arg1 forLocationKey:(id)arg2;
 - (id)valueForLocationKey:(id)arg1;

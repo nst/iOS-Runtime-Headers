@@ -4,21 +4,21 @@
 
 @interface UIKBRenderingContext : NSObject <NSCopying> {
     UIKBRenderConfig * _renderConfig;
-    unsigned int  _shiftState;
+    unsigned long long  _shiftState;
 }
 
 @property (nonatomic, retain) UIKBRenderConfig *renderConfig;
-@property (nonatomic) unsigned int shiftState;
+@property (nonatomic) unsigned long long shiftState;
 
 + (id)renderingContextForRenderConfig:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithRenderConfig:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)renderConfig;
 - (void)setRenderConfig:(id)arg1;
-- (void)setShiftState:(unsigned int)arg1;
-- (unsigned int)shiftState;
+- (void)setShiftState:(unsigned long long)arg1;
+- (unsigned long long)shiftState;
 
 @end

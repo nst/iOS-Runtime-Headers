@@ -10,15 +10,15 @@
     CNContact * _billingAddress;
     CNContact * _cachedRecentAddress;
     PKPaymentOptionsDefaults * _defaults;
-    unsigned int  _holdPendingUpdatesCount;
+    unsigned long long  _holdPendingUpdatesCount;
     NSString * _hostAppLocalizedName;
     NSString * _hostApplicationIdentifier;
-    BOOL  _ignoreProximity;
+    bool  _ignoreProximity;
     PKRemotePaymentInstrument * _initialRemotePaymentInstrument;
     NSMapTable * _instrumentToDeviceMap;
     NSMutableArray * _items;
     PKPassLibrary * _library;
-    int  _mode;
+    long long  _mode;
     PKPaymentPass * _pass;
     PKPaymentApplication * _paymentApplication;
     PKPaymentRequest * _paymentRequest;
@@ -28,7 +28,7 @@
     NSMutableDictionary * _remoteDeviceToAcceptedInstruments;
     PKRemotePaymentInstrument * _remotePaymentInstrument;
     CNContact * _shippingAddress;
-    BOOL  _shippingEditable;
+    bool  _shippingEditable;
     NSString * _shippingEditableMessage;
     CNContact * _shippingEmail;
     PKShippingMethod * _shippingMethod;
@@ -38,7 +38,7 @@
     NSMutableDictionary * _statusForPass;
     NSMutableDictionary * _typeToItemMap;
     NSArray * _unavailablePasses;
-    id /* block */  _updateHandler;
+    id  _updateHandler;
 }
 
 @property (nonatomic, readonly) NSArray *acceptedPasses;
@@ -53,26 +53,26 @@
 @property (nonatomic, readonly) NSString *defaultPaymentPassUniqueIdentifier;
 @property (nonatomic, retain) PKPaymentOptionsDefaults *defaults;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *hostAppLocalizedName;
 @property (nonatomic, retain) NSString *hostApplicationIdentifier;
 @property (nonatomic, retain) PKRemotePaymentInstrument *initialRemotePaymentInstrument;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, retain) PKPassLibrary *library;
 @property (nonatomic, readonly) NSString *merchantName;
-@property (nonatomic, readonly) int mode;
+@property (nonatomic, readonly) long long mode;
 @property (nonatomic, retain) PKPaymentPass *pass;
 @property (nonatomic, retain) PKPaymentApplication *paymentApplication;
 @property (nonatomic, retain) PKPaymentRequest *paymentRequest;
 @property (nonatomic, retain) NSArray *paymentSummaryItems;
 @property (nonatomic, retain) PKPaymentTransaction *pendingTransaction;
-@property (nonatomic, readonly) BOOL pinRequired;
+@property (nonatomic, readonly) bool pinRequired;
 @property (nonatomic, retain) PKPaymentOptionsRecents *recents;
 @property (nonatomic, retain) PKRemoteDevice *remoteDevice;
 @property (nonatomic, readonly) NSArray *remoteDevices;
 @property (nonatomic, retain) PKRemotePaymentInstrument *remotePaymentInstrument;
 @property (nonatomic, retain) CNContact *shippingAddress;
-@property (getter=isShippingEditable, nonatomic) BOOL shippingEditable;
+@property (getter=isShippingEditable, nonatomic) bool shippingEditable;
 @property (nonatomic, retain) NSString *shippingEditableMessage;
 @property (nonatomic, retain) CNContact *shippingEmail;
 @property (nonatomic, retain) PKShippingMethod *shippingMethod;
@@ -82,7 +82,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDecimalNumber *transactionAmount;
 @property (nonatomic, readonly) NSArray *unavailablePasses;
-@property (nonatomic, copy) id /* block */ updateHandler;
+@property (nonatomic, copy) id updateHandler;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
@@ -91,12 +91,12 @@
 - (void)_ensureItems;
 - (void)_ensurePlaceholderItems;
 - (id)_filterPaymentPassesUsingConfiguration:(id)arg1;
-- (id)_inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2;
+- (id)_inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned long long)arg2;
 - (id)_inAppPrivateLabelPaymentPasses;
 - (void)_notifyModelChanged;
 - (void)_setDataItem:(id)arg1;
-- (void)_setStatus:(int)arg1 forPass:(id)arg2;
-- (int)_statusForPass:(id)arg1;
+- (void)_setStatus:(long long)arg1 forPass:(id)arg2;
+- (long long)_statusForPass:(id)arg1;
 - (id)acceptedPasses;
 - (id)acceptedRemotePaymentInstrumentsForRemoteDevice:(id)arg1;
 - (id)allAcceptedRemotePaymentInstruments;
@@ -115,21 +115,21 @@
 - (id)hostAppLocalizedName;
 - (id)hostApplicationIdentifier;
 - (id)init;
-- (id)initWithMode:(int)arg1;
+- (id)initWithMode:(long long)arg1;
 - (id)initialRemotePaymentInstrument;
-- (BOOL)isShippingEditable;
-- (BOOL)isValidWithError:(id*)arg1;
-- (id)itemForType:(int)arg1;
+- (bool)isShippingEditable;
+- (bool)isValidWithError:(id*)arg1;
+- (id)itemForType:(long long)arg1;
 - (id)items;
 - (id)library;
 - (id)merchantName;
-- (int)mode;
+- (long long)mode;
 - (id)pass;
 - (id)paymentApplication;
 - (id)paymentRequest;
 - (id)paymentSummaryItems;
 - (id)pendingTransaction;
-- (BOOL)pinRequired;
+- (bool)pinRequired;
 - (id)recents;
 - (id)remoteDevice;
 - (id)remoteDevices;
@@ -150,16 +150,16 @@
 - (void)setRemoteDevice:(id)arg1;
 - (void)setRemotePaymentInstrument:(id)arg1;
 - (void)setShippingAddress:(id)arg1;
-- (void)setShippingEditable:(BOOL)arg1;
+- (void)setShippingEditable:(bool)arg1;
 - (void)setShippingEditableMessage:(id)arg1;
 - (void)setShippingEmail:(id)arg1;
 - (void)setShippingMethod:(id)arg1;
 - (void)setShippingName:(id)arg1;
 - (void)setShippingPhone:(id)arg1;
 - (void)setShippingType:(id)arg1;
-- (void)setStatus:(int)arg1 forItemWithType:(int)arg2;
-- (void)setStatus:(int)arg1 forItemWithType:(int)arg2 notify:(BOOL)arg3;
-- (void)setUpdateHandler:(id /* block */)arg1;
+- (void)setStatus:(long long)arg1 forItemWithType:(long long)arg2;
+- (void)setStatus:(long long)arg1 forItemWithType:(long long)arg2 notify:(bool)arg3;
+- (void)setUpdateHandler:(id)arg1;
 - (id)shippingAddress;
 - (id)shippingEditableMessage;
 - (id)shippingEmail;
@@ -169,9 +169,9 @@
 - (id)shippingType;
 - (id)transactionAmount;
 - (id)unavailablePasses;
-- (id /* block */)updateHandler;
+- (id)updateHandler;
 - (void)updateRemoteDevices:(id)arg1;
-- (void)updateRemoteDevices:(id)arg1 ignoreProximity:(BOOL)arg2;
+- (void)updateRemoteDevices:(id)arg1 ignoreProximity:(bool)arg2;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 

@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSArray *clients;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) WFWeatherStoreService *internalService;
 @property (retain) WFQueryDispatcher *queryDispatcher;
 @property (readonly) Class superclass;
@@ -40,7 +40,7 @@
 - (void)locationForCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 taskIdentifier:(id)arg2;
 - (void)locationForSearchCompletion:(id)arg1 taskIdentifier:(id)arg2;
 - (void)locationForString:(id)arg1 taskIdentifier:(id)arg2;
-- (void)performMigrationWithCompletion:(id /* block */)arg1;
+- (void)performMigrationWithCompletion:(id)arg1;
 - (id)queryDispatcher;
 - (void)queryDispatcherDidReceiveResponse:(id)arg1 identifier:(id)arg2;
 - (void)reachabilityConfigurationForIdentifier:(id)arg1;

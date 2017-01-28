@@ -3,7 +3,7 @@
  */
 
 @interface QLServiceViewController : UIViewController {
-    BOOL  _isAccessoryView;
+    bool  _isAccessoryView;
     UIViewController * _mainViewController;
     NSUUID * _uuid;
 }

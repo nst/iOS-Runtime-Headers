@@ -7,7 +7,7 @@
     PUBrowsingSession * _browsingSession;
     <PUOneUpAccessoryViewControllersManagerDelegate> * _delegate;
     struct { 
-        BOOL preventRevealInMomentActionForAssetReference; 
+        bool preventRevealInMomentActionForAssetReference; 
     }  _delegateRepondsTo;
 }
 
@@ -16,24 +16,24 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUOneUpAccessoryViewControllersManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_accessoryViewControllers;
-- (int)_accessoryViewTypeForAssetReference:(id)arg1;
+- (long long)_accessoryViewTypeForAssetReference:(id)arg1;
 - (id)_createAccessoryViewControllerForAssetReference:(id)arg1;
 - (void)_invalidateAccessoryViewControllersForAssetReferences:(id)arg1;
 - (id)accessoryViewControllerForAssetReference:(id)arg1;
-- (id)accessoryViewControllerForAssetReference:(id)arg1 createIfNeeded:(BOOL)arg2;
+- (id)accessoryViewControllerForAssetReference:(id)arg1 createIfNeeded:(bool)arg2;
 - (id)assetReferenceForAccessoryViewController:(id)arg1;
 - (id)browsingSession;
-- (BOOL)canProvideAccessoryViewControllerForAssetReference:(id)arg1 type:(out int*)arg2;
+- (bool)canProvideAccessoryViewControllerForAssetReference:(id)arg1 type:(out long long*)arg2;
 - (id)delegate;
 - (id)init;
 - (id)initWithBrowsingSession:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldHideToolbarWhenShowingAccessoryViewControllerForAssetReference:(id)arg1;
+- (bool)shouldHideToolbarWhenShowingAccessoryViewControllerForAssetReference:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 
 @end

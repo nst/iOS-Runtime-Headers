@@ -9,15 +9,15 @@
 @property (nonatomic, retain) NSMutableDictionary *notificationRegistry;
 
 + (id)_keyForCharacteristic:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)allCharacteristicIdentifiers;
 - (void)auditUsersForNotifications:(id)arg1 forHome:(id)arg2;
 - (void)deregisterUsers:(id)arg1 forHome:(id)arg2;
-- (void)disableNotification:(id)arg1 user:(id)arg2 unconditional:(BOOL)arg3 ignoreLockReq:(BOOL)arg4 home:(id)arg5;
-- (BOOL)disableNotificationForCharacteristics:(id)arg1 forUser:(id)arg2 characteristicsToDisableEvents:(id*)arg3;
-- (BOOL)enableNotificationForCharacteristics:(id)arg1 forUser:(id)arg2;
+- (void)disableNotification:(id)arg1 user:(id)arg2 unconditional:(bool)arg3 ignoreLockReq:(bool)arg4 home:(id)arg5;
+- (bool)disableNotificationForCharacteristics:(id)arg1 forUser:(id)arg2 characteristicsToDisableEvents:(id*)arg3;
+- (bool)enableNotificationForCharacteristics:(id)arg1 forUser:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)filterCharacteristics:(id)arg1 forUser:(id)arg2;
 - (id)init;

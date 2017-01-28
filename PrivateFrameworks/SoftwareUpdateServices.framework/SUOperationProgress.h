@@ -14,14 +14,14 @@
 @property (nonatomic, retain) NSString *phase;
 @property (nonatomic) double timeRemaining;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDone;
+- (bool)isDone;
 - (float)normalizedPercentComplete;
 - (float)percentComplete;
 - (id)phase;

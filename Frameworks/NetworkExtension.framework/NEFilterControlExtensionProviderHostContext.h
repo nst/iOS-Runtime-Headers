@@ -9,7 +9,7 @@
 @property <NEFilterControlExtensionProviderHostDelegate> *control_delegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
@@ -17,7 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)control_delegate;
-- (void)handleNewFlow:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)handleNewFlow:(id)arg1 completionHandler:(id)arg2;
 - (void)notifyRulesChanged;
 - (void)provideRemediationMap:(id)arg1;
 - (void)provideURLAppendStringMap:(id)arg1;

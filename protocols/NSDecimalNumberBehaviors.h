@@ -5,8 +5,8 @@
 
 @required
 
-- (NSDecimalNumber *)exceptionDuringOperation:(SEL)arg1 error:(unsigned int)arg2 leftOperand:(NSDecimalNumber *)arg3 rightOperand:(NSDecimalNumber *)arg4;
-- (unsigned int)roundingMode;
+- (NSDecimalNumber *)exceptionDuringOperation:(SEL)arg1 error:(unsigned long long)arg2 leftOperand:(NSDecimalNumber *)arg3 rightOperand:(NSDecimalNumber *)arg4;
+- (unsigned long long)roundingMode;
 - (short)scale;
 
 @end

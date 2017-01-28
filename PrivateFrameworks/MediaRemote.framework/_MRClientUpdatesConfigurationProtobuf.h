@@ -3,51 +3,51 @@
  */
 
 @interface _MRClientUpdatesConfigurationProtobuf : PBCodable <NSCopying> {
-    BOOL  _artworkUpdates;
+    bool  _artworkUpdates;
     struct { 
         unsigned int artworkUpdates : 1; 
         unsigned int keyboardUpdates : 1; 
         unsigned int nowPlayingUpdates : 1; 
         unsigned int volumeUpdates : 1; 
     }  _has;
-    BOOL  _keyboardUpdates;
-    BOOL  _nowPlayingUpdates;
-    BOOL  _volumeUpdates;
+    bool  _keyboardUpdates;
+    bool  _nowPlayingUpdates;
+    bool  _volumeUpdates;
 }
 
-@property (nonatomic) BOOL artworkUpdates;
-@property (nonatomic) BOOL hasArtworkUpdates;
-@property (nonatomic) BOOL hasKeyboardUpdates;
-@property (nonatomic) BOOL hasNowPlayingUpdates;
-@property (nonatomic) BOOL hasVolumeUpdates;
-@property (nonatomic) BOOL keyboardUpdates;
-@property (nonatomic) BOOL nowPlayingUpdates;
-@property (nonatomic) BOOL volumeUpdates;
+@property (nonatomic) bool artworkUpdates;
+@property (nonatomic) bool hasArtworkUpdates;
+@property (nonatomic) bool hasKeyboardUpdates;
+@property (nonatomic) bool hasNowPlayingUpdates;
+@property (nonatomic) bool hasVolumeUpdates;
+@property (nonatomic) bool keyboardUpdates;
+@property (nonatomic) bool nowPlayingUpdates;
+@property (nonatomic) bool volumeUpdates;
 
-- (BOOL)artworkUpdates;
+- (bool)artworkUpdates;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArtworkUpdates;
-- (BOOL)hasKeyboardUpdates;
-- (BOOL)hasNowPlayingUpdates;
-- (BOOL)hasVolumeUpdates;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)keyboardUpdates;
+- (bool)hasArtworkUpdates;
+- (bool)hasKeyboardUpdates;
+- (bool)hasNowPlayingUpdates;
+- (bool)hasVolumeUpdates;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)keyboardUpdates;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)nowPlayingUpdates;
-- (BOOL)readFrom:(id)arg1;
-- (void)setArtworkUpdates:(BOOL)arg1;
-- (void)setHasArtworkUpdates:(BOOL)arg1;
-- (void)setHasKeyboardUpdates:(BOOL)arg1;
-- (void)setHasNowPlayingUpdates:(BOOL)arg1;
-- (void)setHasVolumeUpdates:(BOOL)arg1;
-- (void)setKeyboardUpdates:(BOOL)arg1;
-- (void)setNowPlayingUpdates:(BOOL)arg1;
-- (void)setVolumeUpdates:(BOOL)arg1;
-- (BOOL)volumeUpdates;
+- (bool)nowPlayingUpdates;
+- (bool)readFrom:(id)arg1;
+- (void)setArtworkUpdates:(bool)arg1;
+- (void)setHasArtworkUpdates:(bool)arg1;
+- (void)setHasKeyboardUpdates:(bool)arg1;
+- (void)setHasNowPlayingUpdates:(bool)arg1;
+- (void)setHasVolumeUpdates:(bool)arg1;
+- (void)setKeyboardUpdates:(bool)arg1;
+- (void)setNowPlayingUpdates:(bool)arg1;
+- (void)setVolumeUpdates:(bool)arg1;
+- (bool)volumeUpdates;
 - (void)writeTo:(id)arg1;
 
 @end

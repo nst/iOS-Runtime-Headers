@@ -4,19 +4,19 @@
 
 @interface CAMPerformanceTestHarness : NSObject {
     NSMutableArray * _modeChangeListeners;
-    id /* block */  _testCleanupBlock;
+    id  _testCleanupBlock;
     NSString * _testName;
 }
 
-@property (nonatomic, copy) id /* block */ testCleanupBlock;
+@property (nonatomic, copy) id testCleanupBlock;
 
 - (void).cxx_destruct;
 - (void)_finishAndCleanupConfiguredTest;
-- (void)_registerChangeBlock:(id /* block */)arg1 forMode:(int)arg2 devicePosition:(int)arg3;
-- (void)didChangeToMode:(int)arg1 device:(int)arg2;
+- (void)_registerChangeBlock:(id)arg1 forMode:(long long)arg2 devicePosition:(long long)arg3;
+- (void)didChangeToMode:(long long)arg1 device:(long long)arg2;
 - (id)initWithTestName:(id)arg1;
 - (void)runConfiguredTest;
-- (void)setTestCleanupBlock:(id /* block */)arg1;
-- (id /* block */)testCleanupBlock;
+- (void)setTestCleanupBlock:(id)arg1;
+- (id)testCleanupBlock;
 
 @end

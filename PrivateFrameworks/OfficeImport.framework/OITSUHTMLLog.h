@@ -4,13 +4,13 @@
 
 @interface OITSUHTMLLog : NSObject {
     NSFileHandle * _handle;
-    BOOL  _logStarted;
+    bool  _logStarted;
     NSString * _path;
     NSString * _script;
     NSString * _stylesheet;
-    unsigned int  _tableRow;
+    unsigned long long  _tableRow;
     NSString * _title;
-    unsigned int  _uniquifier;
+    unsigned long long  _uniquifier;
 }
 
 @property (nonatomic, readonly) NSString *path;

@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSSet *faces;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, readonly) NSString *name;
 @property (readonly) Class superclass;
@@ -33,7 +33,7 @@
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 - (id)name;
-- (unsigned int)numberOfAssets;
-- (void)requestFaceTileImageWithTargetSize:(struct CGSize { float x1; float x2; })arg1 cropFactor:(unsigned int)arg2 round:(BOOL)arg3 cacheResult:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (unsigned long long)numberOfAssets;
+- (void)requestFaceTileImageWithTargetSize:(struct CGSize { double x1; double x2; })arg1 cropFactor:(unsigned long long)arg2 round:(bool)arg3 cacheResult:(bool)arg4 completionBlock:(id)arg5;
 
 @end

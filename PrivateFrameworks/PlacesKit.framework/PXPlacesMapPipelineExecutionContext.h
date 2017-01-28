@@ -5,11 +5,11 @@
 @interface PXPlacesMapPipelineExecutionContext : NSObject {
     NSArray * _callstack;
     NSMapTable * _changesForDataSources;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSMutableSet * _dataSources;
     double  _duration;
     NSDate * _start;
-    BOOL  _stopped;
+    bool  _stopped;
     NSMutableDictionary * _timerStartDataSource;
     NSMutableDictionary * _timerStartPipeline;
     NSDate * _timerStartPlanResultsExecution;
@@ -34,7 +34,7 @@
 - (id)durationForDataSources;
 - (double)durationForExecutionOfPlanResults;
 - (id)durationForPipelines;
-- (id)initWithViewPort:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)initWithViewPort:(id)arg1 completionHandler:(id)arg2;
 - (void)setUpdatePlanResults:(id)arg1;
 - (void)setViewPort:(id)arg1;
 - (void)start;

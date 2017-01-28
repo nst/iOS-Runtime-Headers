@@ -17,14 +17,14 @@
 + (id)defaultStore;
 
 - (void).cxx_destruct;
-- (void)_onBackgroundQueue_determineGroupIDWithCompletionHandler:(id /* block */)arg1;
+- (void)_onBackgroundQueue_determineGroupIDWithCompletionHandler:(id)arg1;
 - (id)appleID;
-- (BOOL)canDetermineGroupID;
+- (bool)canDetermineGroupID;
 - (void)clearAllCredentials;
 - (void)clearCaches;
 - (void)clearGroupID;
 - (void)dealloc;
-- (void)determineGroupIDWithCompletionHandler:(id /* block */)arg1;
+- (void)determineGroupIDWithCompletionHandler:(id)arg1;
 - (id)groupID;
 - (id)groupIDRequest;
 - (id)init;

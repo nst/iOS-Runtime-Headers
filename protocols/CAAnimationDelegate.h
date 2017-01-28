@@ -6,6 +6,6 @@
 @optional
 
 - (void)animationDidStart:(CAAnimation *)arg1;
-- (void)animationDidStop:(CAAnimation *)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(CAAnimation *)arg1 finished:(bool)arg2;
 
 @end

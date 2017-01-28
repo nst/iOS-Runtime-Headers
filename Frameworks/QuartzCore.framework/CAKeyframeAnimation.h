@@ -17,8 +17,8 @@
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (void)CA_prepareRenderValue;
-- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; struct __CFString {} *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; }*)_copyRenderAnimationForLayer:(id)arg1;
-- (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; struct __CFString {} *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; }*)arg1 layer:(id)arg2;
+- (struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; struct __CFString {} *x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; }*)_copyRenderAnimationForLayer:(id)arg1;
+- (bool)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; struct __CFString {} *x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; }*)arg1 layer:(id)arg2;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
 - (id)biasValues;
 - (id)calculationMode;
@@ -41,7 +41,7 @@
 
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
-- (BOOL)SCN_evaluateAtTime:(double)arg1 reverse:(BOOL)arg2 to:(void*)arg3;
+- (bool)SCN_evaluateAtTime:(double)arg1 reverse:(bool)arg2 to:(void*)arg3;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -54,7 +54,7 @@
 - (id)TSD_valueAtTime:(double)arg1 initialValue:(id)arg2;
 - (double)p_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2 contextCache:(id)arg3;
 - (void)p_getValue:(id*)arg1 animationPercent:(double*)arg2 atTime:(double)arg3 initialValue:(id)arg4 contextCache:(id)arg5;
-- (id)p_interpolatedValueFrom:(id)arg1 to:(id)arg2 percent:(float)arg3 contextCache:(id)arg4;
+- (id)p_interpolatedValueFrom:(id)arg1 to:(id)arg2 percent:(double)arg3 contextCache:(id)arg4;
 - (id)p_valueAtTime:(double)arg1 initialValue:(id)arg2 contextCache:(id)arg3;
 
 @end

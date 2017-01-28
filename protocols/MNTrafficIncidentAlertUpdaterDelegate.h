@@ -7,7 +7,7 @@
 
 - (void)trafficIncidentAlertUpdater:(MNTrafficIncidentAlertUpdater *)arg1 didSwitchToNewRoute:(GEOComposedRoute *)arg2;
 - (void)trafficIncidentAlertUpdater:(MNTrafficIncidentAlertUpdater *)arg1 invalidatedAlert:(MNTrafficIncidentAlert *)arg2;
-- (void)trafficIncidentAlertUpdater:(void *)arg1 receivedAlert:(void *)arg2 responseCallback:(void *)arg3; // needs 3 arg types, found 8: MNTrafficIncidentAlertUpdater *, MNTrafficIncidentAlert *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)trafficIncidentAlertUpdater:(void *)arg1 receivedAlert:(void *)arg2 responseCallback:(void *)arg3; // needs 3 arg types, found 8: MNTrafficIncidentAlertUpdater *, MNTrafficIncidentAlert *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, void*
 - (void)trafficIncidentAlertUpdater:(MNTrafficIncidentAlertUpdater *)arg1 updatedAlert:(MNTrafficIncidentAlert *)arg2;
 - (double)trafficIncidentAlertUpdaterRemainingTimeOnRoute:(MNTrafficIncidentAlertUpdater *)arg1;
 - (double)trafficIncidentAlertUpdaterTimeSinceLastAnnouncement:(MNTrafficIncidentAlertUpdater *)arg1;

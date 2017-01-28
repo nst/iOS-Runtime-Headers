@@ -5,7 +5,7 @@
 @interface SSUpdatesDatabaseTransaction : SSUpdatesDatabaseSession
 
 - (id)_newUpdateEntityPropertiesWithUpdate:(id)arg1;
-- (BOOL)deleteUpdatesInstalledBefore:(double)arg1;
-- (BOOL)mergeAvailableUpdates:(id)arg1 availableCount:(int*)arg2;
+- (bool)deleteUpdatesInstalledBefore:(double)arg1;
+- (bool)mergeAvailableUpdates:(id)arg1 availableCount:(long long*)arg2;
 
 @end

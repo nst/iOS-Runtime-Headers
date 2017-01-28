@@ -5,6 +5,6 @@
 
 @required
 
-- (void)updateControlVisibilityAnimated:(BOOL)arg1;
+- (void)updateControlVisibilityAnimated:(bool)arg1;
 
 @end

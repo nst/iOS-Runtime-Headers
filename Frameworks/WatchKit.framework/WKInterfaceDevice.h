@@ -3,78 +3,78 @@
  */
 
 @interface WKInterfaceDevice : NSObject {
-    int  _crownOrientation;
+    long long  _crownOrientation;
     NSString * _deviceLocalizedModel;
     NSString * _deviceModel;
     NSString * _deviceName;
     NSString * _deviceSystemName;
     NSString * _deviceSystemVersion;
-    int  _layoutDirection;
+    long long  _layoutDirection;
     NSString * _preferredContentSizeCategory;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _screenBounds;
-    float  _screenScale;
-    int  _wristLocation;
+    double  _screenScale;
+    long long  _wristLocation;
 }
 
 @property (nonatomic, readonly) NSDictionary *cachedImages;
-@property (nonatomic, readonly) int crownOrientation;
+@property (nonatomic, readonly) long long crownOrientation;
 @property (nonatomic, copy) NSString *deviceLocalizedModel;
 @property (nonatomic, copy) NSString *deviceModel;
 @property (nonatomic, copy) NSString *deviceName;
 @property (nonatomic, copy) NSString *deviceSystemName;
 @property (nonatomic, copy) NSString *deviceSystemVersion;
-@property (nonatomic, readonly) int layoutDirection;
+@property (nonatomic, readonly) long long layoutDirection;
 @property (nonatomic, readonly, copy) NSString *localizedModel;
 @property (nonatomic, readonly, copy) NSString *model;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
-@property (nonatomic) float screenScale;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } screenBounds;
+@property (nonatomic) double screenScale;
 @property (nonatomic, readonly, copy) NSString *systemName;
 @property (nonatomic, readonly, copy) NSString *systemVersion;
-@property (nonatomic, readonly) int wristLocation;
+@property (nonatomic, readonly) long long wristLocation;
 
 + (id)currentDevice;
 
 - (void).cxx_destruct;
-- (BOOL)addCachedImage:(id)arg1 name:(id)arg2;
-- (BOOL)addCachedImageWithData:(id)arg1 name:(id)arg2;
+- (bool)addCachedImage:(id)arg1 name:(id)arg2;
+- (bool)addCachedImageWithData:(id)arg1 name:(id)arg2;
 - (id)cachedImages;
-- (int)crownOrientation;
+- (long long)crownOrientation;
 - (id)deviceLocalizedModel;
 - (id)deviceModel;
 - (id)deviceName;
 - (id)deviceSystemName;
 - (id)deviceSystemVersion;
-- (int)layoutDirection;
+- (long long)layoutDirection;
 - (id)localizedModel;
 - (id)model;
 - (id)name;
-- (void)playHaptic:(int)arg1;
+- (void)playHaptic:(long long)arg1;
 - (id)preferredContentSizeCategory;
 - (void)removeAllCachedImages;
 - (void)removeCachedImageWithName:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
-- (float)screenScale;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })screenBounds;
+- (double)screenScale;
 - (void)setDeviceLocalizedModel:(id)arg1;
 - (void)setDeviceModel:(id)arg1;
 - (void)setDeviceName:(id)arg1;
 - (void)setDeviceSystemName:(id)arg1;
 - (void)setDeviceSystemVersion:(id)arg1;
 - (void)setPreferredContentSizeCategory:(id)arg1;
-- (void)setScreenBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setScreenScale:(float)arg1;
+- (void)setScreenBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setScreenScale:(double)arg1;
 - (id)systemName;
 - (id)systemVersion;
-- (int)wristLocation;
+- (long long)wristLocation;
 
 @end

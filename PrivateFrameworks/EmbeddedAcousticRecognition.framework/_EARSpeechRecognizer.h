@@ -3,13 +3,14 @@
  */
 
 @interface _EARSpeechRecognizer : NSObject {
-    BOOL  _concatenateUtterances;
+    bool  _concatenateUtterances;
     NSString * _configPath;
     _EARSpeechRecognitionAudioBuffer * _currentAudioBuffer;
-    BOOL  _detectUtterances;
+    bool  _detectUtterances;
     _EARFormatter * _formatter;
     NSObject<OS_dispatch_queue> * _formatterQueue;
     double  _maximumRecognitionDuration;
+    NSDictionary * _recognitionConfidenceSubtraction;
     NSObject<OS_dispatch_queue> * _recognitionQueue;
     NSDictionary * _recognitionReplacements;
     struct unique_ptr<quasar::SpeechRecognizer, std::__1::default_delete<quasar::SpeechRecognizer> > { 
@@ -20,10 +21,11 @@
     NSData * _userProfileData;
 }
 
-@property (nonatomic) BOOL concatenateUtterances;
-@property (nonatomic) BOOL detectUtterances;
+@property (nonatomic) bool concatenateUtterances;
+@property (nonatomic) bool detectUtterances;
 @property (nonatomic) double maximumRecognitionDuration;
 @property (nonatomic, readonly) _EARSpeechModelInfo *modelInfo;
+@property (nonatomic, copy) NSDictionary *recognitionConfidenceSubtraction;
 @property (nonatomic, copy) NSDictionary *recognitionReplacements;
 @property (nonatomic, copy) NSData *userProfileData;
 
@@ -35,25 +37,27 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)cancelRecognition;
-- (BOOL)concatenateUtterances;
-- (BOOL)detectUtterances;
+- (bool)concatenateUtterances;
+- (bool)detectUtterances;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 overrides:(id)arg2;
 - (id)initWithConfiguration:(id)arg1 overrides:(id)arg2 generalVoc:(id)arg3 lexiconEnh:(id)arg4 itnEnh:(id)arg5;
-- (id)initWithConfiguration:(id)arg1 useQuasarFormatter:(BOOL)arg2;
+- (id)initWithConfiguration:(id)arg1 useQuasarFormatter:(bool)arg2;
 - (id)initWithConfiguration:(id)arg1 withGeneralVoc:(id)arg2 withLexiconEnh:(id)arg3 withItnEnh:(id)arg4;
 - (id)initWithConfiguration:(id)arg1 withLanguage:(id)arg2 withSdapiConfig:(id)arg3;
 - (double)maximumRecognitionDuration;
 - (id)modelInfo;
+- (id)recognitionConfidenceSubtraction;
 - (id)recognitionReplacements;
-- (id)recognitionResultsWithAudioData:(id)arg1 userProfileData:(id)arg2 language:(id)arg3 task:(id)arg4 samplingRate:(unsigned int)arg5 extraLanguageModel:(id)arg6;
+- (id)recognitionResultsWithAudioData:(id)arg1 userProfileData:(id)arg2 language:(id)arg3 task:(id)arg4 samplingRate:(unsigned long long)arg5 extraLanguageModel:(id)arg6;
 - (id)recognitionStatistics;
-- (struct shared_ptr<quasar::SpeechRequestData> { struct SpeechRequestData {} *x1; struct __shared_weak_count {} *x2; })requestParametersWithUserProfileData:(id)arg1 task:(id)arg2 samplingRate:(unsigned int)arg3 resultStream:(struct shared_ptr<quasar::RecogResultStreamBase> { struct RecogResultStreamBase {} *x1; struct __shared_weak_count {} *x2; })arg4 extraLanguageModel:(id)arg5 symbolTableList:(const struct shared_ptr<quasar::SymbolTableList> { struct SymbolTableList {} *x1; struct __shared_weak_count {} *x2; }*)arg6;
+- (struct shared_ptr<quasar::SpeechRequestData> { struct SpeechRequestData {} *x1; struct __shared_weak_count {} *x2; })requestParametersWithUserProfileData:(id)arg1 task:(id)arg2 samplingRate:(unsigned long long)arg3 resultStream:(struct shared_ptr<quasar::RecogResultStreamBase> { struct RecogResultStreamBase {} *x1; struct __shared_weak_count {} *x2; })arg4 extraLanguageModel:(id)arg5 symbolTableList:(const struct shared_ptr<quasar::SymbolTableList> { struct SymbolTableList {} *x1; struct __shared_weak_count {} *x2; }*)arg6;
 - (id)runRecognitionWithResultStream:(id)arg1;
-- (id)runRecognitionWithResultStream:(id)arg1 language:(id)arg2 task:(id)arg3 samplingRate:(unsigned int)arg4;
-- (void)setConcatenateUtterances:(BOOL)arg1;
-- (void)setDetectUtterances:(BOOL)arg1;
+- (id)runRecognitionWithResultStream:(id)arg1 language:(id)arg2 task:(id)arg3 samplingRate:(unsigned long long)arg4;
+- (void)setConcatenateUtterances:(bool)arg1;
+- (void)setDetectUtterances:(bool)arg1;
 - (void)setMaximumRecognitionDuration:(double)arg1;
+- (void)setRecognitionConfidenceSubtraction:(id)arg1;
 - (void)setRecognitionReplacements:(id)arg1;
 - (void)setUserProfileData:(id)arg1;
 - (void)updateUserProfileData:(id)arg1;

@@ -4,20 +4,20 @@
 
 @interface SCNMTLBufferAllocator : NSObject {
     NSObject<OS_dispatch_semaphore> * _allocatorLock;
-    unsigned int  _bufferSize;
+    unsigned long long  _bufferSize;
     SCNFixedSizePage * _currentAllocatorPage;
     <MTLDevice> * _device;
-    unsigned int  _elementSize;
+    unsigned long long  _elementSize;
     NSMutableArray * _pages;
 }
 
-@property (nonatomic, readonly) unsigned int bufferSize;
-@property (nonatomic, readonly) unsigned int elementSize;
+@property (nonatomic, readonly) unsigned long long bufferSize;
+@property (nonatomic, readonly) unsigned long long elementSize;
 
-- (unsigned int)bufferSize;
+- (unsigned long long)bufferSize;
 - (void)dealloc;
-- (unsigned int)elementSize;
-- (id)initWithDevice:(id)arg1 fixedSizeElement:(unsigned int)arg2 buffersize:(unsigned int)arg3;
+- (unsigned long long)elementSize;
+- (id)initWithDevice:(id)arg1 fixedSizeElement:(unsigned long long)arg2 buffersize:(unsigned long long)arg3;
 - (id)newSubBuffer;
 
 @end

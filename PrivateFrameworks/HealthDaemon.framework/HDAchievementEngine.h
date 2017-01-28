@@ -19,8 +19,8 @@
 @property (nonatomic, retain) NSCalendar *fixedCalendar;
 @property (nonatomic, retain) NSDate *fixedNowDate;
 
-+ (int)_differenceInDaysBetweenActivitySummaryIndex:(long long)arg1 andIndex:(long long)arg2 inCalendar:(id)arg3;
-+ (BOOL)_isCompleteWithNumberOfWeeks:(unsigned int)arg1 dateToday:(id)arg2 consecutiveCompleteDays:(unsigned int)arg3 inCalendar:(id)arg4;
++ (long long)_differenceInDaysBetweenActivitySummaryIndex:(long long)arg1 andIndex:(long long)arg2 inCalendar:(id)arg3;
++ (bool)_isCompleteWithNumberOfWeeks:(unsigned long long)arg1 dateToday:(id)arg2 consecutiveCompleteDays:(unsigned long long)arg3 inCalendar:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)_calendar;
@@ -33,14 +33,14 @@
 - (id)delegate;
 - (id)fixedCalendar;
 - (id)fixedNowDate;
-- (BOOL)runDatabaseIdentifierCheckWithCurrentDatabaseIdentifier:(id)arg1 identifierChanged:(BOOL*)arg2 error:(id*)arg3;
-- (unsigned int)runForNewCombinedActivityData;
-- (unsigned int)runForNewExerciseData;
-- (unsigned int)runForNewMoveData;
-- (unsigned int)runForNewStandData;
-- (unsigned int)runForNewWorkouts;
+- (bool)runDatabaseIdentifierCheckWithCurrentDatabaseIdentifier:(id)arg1 identifierChanged:(bool*)arg2 error:(id*)arg3;
+- (unsigned long long)runForNewCombinedActivityData;
+- (unsigned long long)runForNewExerciseData;
+- (unsigned long long)runForNewMoveData;
+- (unsigned long long)runForNewStandData;
+- (unsigned long long)runForNewWorkouts;
 - (void)runForStepAchievements;
-- (void)runForTriggers:(unsigned int)arg1 withEnvironment:(id)arg2;
+- (void)runForTriggers:(unsigned long long)arg1 withEnvironment:(id)arg2;
 - (void)setDailyGoalDetectionDelegate:(id)arg1;
 - (void)setDataStore:(id)arg1;
 - (void)setDelegate:(id)arg1;

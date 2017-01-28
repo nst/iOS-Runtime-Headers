@@ -4,7 +4,7 @@
 
 @interface AALoginContextTransientStorage : NSObject {
     NSLock * _clearLock;
-    BOOL  _hasBeenCleared;
+    bool  _hasBeenCleared;
 }
 
 + (id)sharedStorage;

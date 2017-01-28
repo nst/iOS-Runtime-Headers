@@ -25,7 +25,7 @@
 - (id)description;
 - (id)initWithInputContex:(id)arg1 attributes:(id)arg2;
 - (id)initWithSource:(unsigned char)arg1 attributes:(id)arg2;
-- (BOOL)isEqualToProactiveTrigger:(id)arg1;
+- (bool)isEqualToProactiveTrigger:(id)arg1;
 - (id)localeIdentifier;
 - (id)recipients;
 - (void)setAttributes:(id)arg1;

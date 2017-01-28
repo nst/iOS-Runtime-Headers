@@ -4,33 +4,33 @@
 
 @interface PUPingTimer : NSObject {
     SEL  _action;
-    BOOL  _everPinged;
-    BOOL  _invalid;
-    unsigned int  _maxPingCount;
-    BOOL  _nextPingFires;
-    unsigned int  _pingCount;
+    bool  _everPinged;
+    bool  _invalid;
+    unsigned long long  _maxPingCount;
+    bool  _nextPingFires;
+    unsigned long long  _pingCount;
     NSObject<OS_dispatch_queue> * _queue;
-    unsigned int  _scheduleId;
+    unsigned long long  _scheduleId;
     id  _target;
     double  _timeout;
 }
 
 @property (nonatomic, readonly) SEL action;
-@property (nonatomic, readonly) unsigned int maxPingCount;
-@property (nonatomic, readonly) unsigned int pingCount;
+@property (nonatomic, readonly) unsigned long long maxPingCount;
+@property (nonatomic, readonly) unsigned long long pingCount;
 @property (nonatomic, readonly) id target;
 @property (nonatomic, readonly) double timeout;
 
 - (void).cxx_destruct;
-- (void)_inqFireWithScheduleId:(unsigned int)arg1;
+- (void)_inqFireWithScheduleId:(unsigned long long)arg1;
 - (void)_inqSchedule;
 - (SEL)action;
 - (void)fireOnNextPing;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2 maxPingCount:(unsigned int)arg3 timeout:(double)arg4;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2 maxPingCount:(unsigned long long)arg3 timeout:(double)arg4;
 - (void)invalidate;
-- (unsigned int)maxPingCount;
+- (unsigned long long)maxPingCount;
 - (void)ping;
-- (unsigned int)pingCount;
+- (unsigned long long)pingCount;
 - (id)target;
 - (double)timeout;
 

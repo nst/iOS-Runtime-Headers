@@ -5,41 +5,41 @@
 @interface NEIKEv2Rekey : NSObject <NSObject> {
     PCSimpleTimer * _childLifetime;
     int  _childLifetimeMinutes;
-    id /* block */  _childRekeyHandler;
+    id  _childRekeyHandler;
     PCSimpleTimer * _ikeLifetime;
     int  _ikeLifetimeMinutes;
-    id /* block */  _ikeRekeyHandler;
+    id  _ikeRekeyHandler;
 }
 
 @property (retain) PCSimpleTimer *childLifetime;
 @property int childLifetimeMinutes;
-@property (copy) id /* block */ childRekeyHandler;
+@property (copy) id childRekeyHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) PCSimpleTimer *ikeLifetime;
 @property int ikeLifetimeMinutes;
-@property (copy) id /* block */ ikeRekeyHandler;
+@property (copy) id ikeRekeyHandler;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)childLifetime;
 - (int)childLifetimeMinutes;
-- (id /* block */)childRekeyHandler;
+- (id)childRekeyHandler;
 - (void)clearTimers;
 - (void)dealloc;
 - (id)ikeLifetime;
 - (int)ikeLifetimeMinutes;
-- (id /* block */)ikeRekeyHandler;
+- (id)ikeRekeyHandler;
 - (void)invokeChildRekeyHandler;
 - (void)invokeIKERekeyHandler;
 - (void)setChildLifetime:(id)arg1;
 - (void)setChildLifetimeMinutes:(int)arg1;
-- (void)setChildRekeyHandler:(id /* block */)arg1;
+- (void)setChildRekeyHandler:(id)arg1;
 - (void)setIkeLifetime:(id)arg1;
 - (void)setIkeLifetimeMinutes:(int)arg1;
-- (void)setIkeRekeyHandler:(id /* block */)arg1;
-- (void)startChildTimer:(int)arg1 timeoutHandler:(id /* block */)arg2;
-- (void)startIKETimer:(int)arg1 timeoutHandler:(id /* block */)arg2;
+- (void)setIkeRekeyHandler:(id)arg1;
+- (void)startChildTimer:(int)arg1 timeoutHandler:(id)arg2;
+- (void)startIKETimer:(int)arg1 timeoutHandler:(id)arg2;
 
 @end

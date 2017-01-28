@@ -7,7 +7,7 @@
 
 - (<GEOServerFormattedString> *)displayMessagFormatString;
 - (NSDate *)endDate;
-- (unsigned int)routeListInsertBeforeIndex;
+- (unsigned long long)routeListInsertBeforeIndex;
 - (NSDate *)startDate;
 
 @end

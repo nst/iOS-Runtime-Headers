@@ -5,7 +5,7 @@
 @interface RUIElement : NSObject {
     NSMutableDictionary * _attributes;
     NSString * _body;
-    BOOL  _enabled;
+    bool  _enabled;
     NSString * _identifier;
     RUIElement * _parent;
     RUIStyle * _style;
@@ -13,37 +13,37 @@
 
 @property (nonatomic, copy) NSDictionary *attributes;
 @property (nonatomic, copy) NSString *body;
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) RUIElement *parent;
 @property (nonatomic, retain) RUIStyle *style;
 
 - (void).cxx_destruct;
-- (id)URLAttributeForImageName:(id)arg1 getScale:(float*)arg2;
+- (id)URLAttributeForImageName:(id)arg1 getScale:(double*)arg2;
 - (int)_horizontalAlignmentForString:(id)arg1;
 - (id)attributes;
 - (id)body;
 - (void)configureView:(id)arg1;
 - (void)dealloc;
-- (BOOL)enabled;
-- (BOOL)hasImage;
+- (bool)enabled;
+- (bool)hasImage;
 - (id)identifier;
 - (void)imageLoaded:(id)arg1;
 - (id)init;
 - (id)initWithAttributes:(id)arg1 parent:(id)arg2;
-- (BOOL)loadImage;
+- (bool)loadImage;
 - (id)mutableAttributes;
 - (id)name;
 - (id)parent;
 - (void)populatePostbackDictionary:(id)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setBody:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setStyle:(id)arg1;
 - (id)sourceURL;
 - (id)style;

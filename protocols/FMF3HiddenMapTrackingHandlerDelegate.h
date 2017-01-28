@@ -5,6 +5,6 @@
 
 @required
 
-- (void)hiddenMapTrackerDidUpdateMapToTrackingType:(int)arg1;
+- (void)hiddenMapTrackerDidUpdateMapToTrackingType:(long long)arg1;
 
 @end

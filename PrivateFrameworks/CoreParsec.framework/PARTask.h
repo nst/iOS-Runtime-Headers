@@ -3,24 +3,24 @@
  */
 
 @interface PARTask : NSObject {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     long long  _queryId;
     PARRequest * _request;
     PARSession * _session;
 }
 
-@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, copy) id completionBlock;
 @property long long queryId;
 @property (nonatomic, retain) PARRequest *request;
 @property (nonatomic) PARSession *session;
 
 - (void).cxx_destruct;
-- (id /* block */)completionBlock;
+- (id)completionBlock;
 - (long long)queryId;
 - (id)request;
 - (void)resume;
 - (id)session;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setQueryId:(long long)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setSession:(id)arg1;

@@ -11,10 +11,10 @@
 @property (nonatomic, readonly) PSYSyncSession *updatedSession;
 
 - (void).cxx_destruct;
-- (BOOL)didUpdateCompleteSyncSession;
-- (void)enumerateChangedActivitiesWithBlock:(id /* block */)arg1;
-- (void)enumerateNewlyCompletedActivitiesWithBlock:(id /* block */)arg1;
-- (void)enumerateNewlyRunningActivitiesWithBlock:(id /* block */)arg1;
+- (bool)didUpdateCompleteSyncSession;
+- (void)enumerateChangedActivitiesWithBlock:(id)arg1;
+- (void)enumerateNewlyCompletedActivitiesWithBlock:(id)arg1;
+- (void)enumerateNewlyRunningActivitiesWithBlock:(id)arg1;
 - (id)initWithOriginalSession:(id)arg1 updatedSession:(id)arg2;
 - (id)originalSession;
 - (id)updatedSession;

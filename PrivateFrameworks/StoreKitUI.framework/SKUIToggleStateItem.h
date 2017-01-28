@@ -3,14 +3,14 @@
  */
 
 @interface SKUIToggleStateItem : NSObject <NSCopying> {
-    int  _count;
+    long long  _count;
     NSString * _itemIdentifier;
     NSString * _nonToggledString;
     BOOL  _toggled;
     NSString * _toggledString;
 }
 
-@property (nonatomic) int count;
+@property (nonatomic) long long count;
 @property (nonatomic, copy) NSString *itemIdentifier;
 @property (nonatomic, copy) NSString *nonToggleString;
 @property (nonatomic) BOOL toggled;
@@ -18,10 +18,10 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)count;
+- (long long)count;
 - (id)itemIdentifier;
 - (id)nonToggleString;
-- (void)setCount:(int)arg1;
+- (void)setCount:(long long)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setNonToggleString:(id)arg1;
 - (void)setToggled:(BOOL)arg1;

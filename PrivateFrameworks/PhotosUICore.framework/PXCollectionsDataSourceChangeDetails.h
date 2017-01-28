@@ -3,12 +3,12 @@
  */
 
 @interface PXCollectionsDataSourceChangeDetails : PXSectionedDataSourceChangeDetails {
-    BOOL  _countUpdateChange;
+    bool  _countUpdateChange;
 }
 
-@property (getter=isCountUpdateChange, nonatomic) BOOL countUpdateChange;
+@property (getter=isCountUpdateChange, nonatomic) bool countUpdateChange;
 
-- (BOOL)isCountUpdateChange;
-- (void)setCountUpdateChange:(BOOL)arg1;
+- (bool)isCountUpdateChange;
+- (void)setCountUpdateChange:(bool)arg1;
 
 @end

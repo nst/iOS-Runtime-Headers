@@ -6,6 +6,6 @@
 @required
 
 - (void)contactsSearchController:(AAUIContactsSearchController *)arg1 didFindSortedResult:(NSArray *)arg2;
-- (void)contactsSearchController:(AAUIContactsSearchController *)arg1 didFinishSearchWithSuccess:(BOOL)arg2;
+- (void)contactsSearchController:(AAUIContactsSearchController *)arg1 didFinishSearchWithSuccess:(bool)arg2;
 
 @end

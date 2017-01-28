@@ -4,16 +4,16 @@
 
 @interface MRGetPlaybackQueueMessage : MRProtocolMessage {
     struct { 
-        int location; 
-        int length; 
+        long long location; 
+        long long length; 
     }  _range;
 }
 
-@property (nonatomic, readonly) struct { struct { int x_1_1_1; int x_1_1_2; } x1; bool x2; double x3; double x4; } request;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; bool x2; double x3; double x4; } request;
 
 - (void)dealloc;
-- (id)initWithRequest:(struct { struct { int x_1_1_1; int x_1_1_2; } x1; bool x2; double x3; double x4; })arg1;
-- (struct { struct { int x_1_1_1; int x_1_1_2; } x1; bool x2; double x3; double x4; })request;
-- (unsigned int)type;
+- (id)initWithRequest:(struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; bool x2; double x3; double x4; })arg1;
+- (struct { struct { long long x_1_1_1; long long x_1_1_2; } x1; bool x2; double x3; double x4; })request;
+- (unsigned long long)type;
 
 @end

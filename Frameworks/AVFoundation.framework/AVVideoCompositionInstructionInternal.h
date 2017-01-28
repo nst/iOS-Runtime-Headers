@@ -4,7 +4,7 @@
 
 @interface AVVideoCompositionInstructionInternal : NSObject {
     struct CGColor { } * backgroundColor;
-    BOOL  enablePostProcessing;
+    bool  enablePostProcessing;
     NSArray * layerInstructions;
     struct { 
         struct { 

@@ -16,14 +16,14 @@
 - (void)_handleMessage:(id)arg1;
 - (id)connection;
 - (id)delegate;
-- (BOOL)hasBoolEntitlement:(id)arg1;
+- (bool)hasBoolEntitlement:(id)arg1;
 - (id)initClientForMachService:(const char *)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)messageWithName:(const char *)arg1;
 - (void)sendMessage:(id)arg1;
-- (void)sendMessage:(id)arg1 withReplyHandler:(id /* block */)arg2;
+- (void)sendMessage:(id)arg1 withReplyHandler:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setHandler:(id /* block */)arg1 forMessageNamed:(const char *)arg2;
+- (void)setHandler:(id)arg1 forMessageNamed:(const char *)arg2;
 - (void)setMessageHandlers:(id)arg1;
 
 @end

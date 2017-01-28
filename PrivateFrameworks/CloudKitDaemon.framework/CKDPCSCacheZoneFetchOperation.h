@@ -7,15 +7,15 @@
 @property (nonatomic, readonly) CKRecordZoneID *zoneID;
 @property (nonatomic, retain) CKDZonePCSData *zonePCSData;
 
-- (BOOL)_decryptPCS;
-- (BOOL)_fetchPCSDataFromDatabase;
-- (BOOL)_fetchPCSDataFromServer;
+- (bool)_decryptPCS;
+- (bool)_fetchPCSDataFromDatabase;
+- (bool)_fetchPCSDataFromServer;
 - (void)_handlePCSDataFetched:(id)arg1 withError:(id)arg2;
-- (void)_saveNewPCSOnDefaultZone:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)_savePCSDataToCache;
-- (void)_saveZoneToServer:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 completion:(id /* block */)arg3;
-- (BOOL)hasAllPCSData;
-- (id)initWithZoneID:(id)arg1 parentOperation:(id)arg2 cache:(id)arg3 options:(unsigned int)arg4;
+- (void)_saveNewPCSOnDefaultZone:(id)arg1 completion:(id)arg2;
+- (bool)_savePCSDataToCache;
+- (void)_saveZoneToServer:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 completion:(id)arg3;
+- (bool)hasAllPCSData;
+- (id)initWithZoneID:(id)arg1 parentOperation:(id)arg2 cache:(id)arg3 options:(unsigned long long)arg4;
 - (id)itemTypeName;
 - (void)setZonePCSData:(id)arg1;
 - (id)zoneID;

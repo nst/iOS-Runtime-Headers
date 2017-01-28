@@ -6,6 +6,6 @@
 
 @property (nonatomic, copy) NSArray *sectionIndexTitles;
 
-- (void)addSectionWithHeaderTitle:(id)arg1 sectionIndexTitleIndex:(unsigned int)arg2 count:(unsigned int)arg3;
+- (void)addSectionWithHeaderTitle:(id)arg1 sectionIndexTitleIndex:(unsigned long long)arg2 count:(unsigned long long)arg3;
 
 @end

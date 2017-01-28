@@ -4,7 +4,7 @@
 
 @interface DEUtils : NSObject
 
-+ (id)copyPath:(id)arg1 toDestinationDir:(id)arg2 zipped:(BOOL)arg3;
++ (id)copyPath:(id)arg1 toDestinationDir:(id)arg2 zipped:(bool)arg3;
 + (id)copyPaths:(id)arg1 toDestinationDir:(id)arg2 withZipName:(id)arg3;
 + (id)findEntriesInDirectory:(id)arg1 createdAfter:(id)arg2 matchingPattern:(id)arg3;
 + (id)processErrorResponse:(id)arg1;

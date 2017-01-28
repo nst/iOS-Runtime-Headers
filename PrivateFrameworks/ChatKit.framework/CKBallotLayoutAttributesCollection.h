@@ -17,8 +17,8 @@
 @property (nonatomic, retain) UICollectionViewLayoutAttributes *voteCountAttributes;
 
 - (void).cxx_destruct;
-- (void)_applyAlphaToAllAttributesAlpha:(float)arg1;
-- (void)_setContainerAttributes:(id)arg1 forLayoutMode:(unsigned int)arg2;
+- (void)_applyAlphaToAllAttributesAlpha:(double)arg1;
+- (void)_setContainerAttributes:(id)arg1 forLayoutMode:(unsigned long long)arg2;
 - (id)ackIconAttributes;
 - (id)avatarAttributesCollection;
 - (id)containerAttributes;

@@ -3,16 +3,16 @@
  */
 
 @interface BirthdayRecord : NSObject {
-    BOOL  _isEmpty;
+    bool  _isEmpty;
     NSMutableDictionary * _record;
 }
 
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 
 - (void).cxx_destruct;
-- (BOOL)doesPerson:(void*)arg1 haveBirthday:(id)arg2;
+- (bool)doesPerson:(void*)arg1 haveBirthday:(id)arg2;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (void)recordBirthday:(id)arg1 forPerson:(void*)arg2;
 
 @end

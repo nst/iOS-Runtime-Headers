@@ -6,13 +6,13 @@
     <SUScriptXMLHTTPRequestDelegate> * _delegate;
     NSMutableDictionary * _functions;
     SUXMLHTTPRequestOperation * _operation;
-    unsigned int  _readyState;
+    unsigned long long  _readyState;
     SSMutableURLRequestProperties * _requestProperties;
     NSDictionary * _responseHeaders;
     NSString * _responseText;
-    unsigned int  _status;
+    unsigned long long  _status;
     NSString * _statusText;
-    unsigned int  _timeout;
+    unsigned long long  _timeout;
 }
 
 @property <SUScriptXMLHTTPRequestDelegate> *delegate;
@@ -22,11 +22,11 @@
 @property (retain) WebScriptObject *onloadend;
 @property (retain) WebScriptObject *onreadystatechange;
 @property (retain) WebScriptObject *ontimeout;
-@property (readonly) unsigned int readyState;
+@property (readonly) unsigned long long readyState;
 @property (readonly, copy) NSString *responseText;
-@property (readonly) unsigned int status;
+@property (readonly) unsigned long long status;
 @property (readonly, copy) NSString *statusText;
-@property unsigned int timeout;
+@property unsigned long long timeout;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -51,7 +51,7 @@
 - (id)onreadystatechange;
 - (id)ontimeout;
 - (void)openWithHTTPMethod:(id)arg1 URL:(id)arg2 isAsync:(id)arg3 username:(id)arg4 password:(id)arg5;
-- (unsigned int)readyState;
+- (unsigned long long)readyState;
 - (id)responseText;
 - (id)scriptAttributeKeys;
 - (void)sendWithBodyData:(id)arg1;
@@ -62,10 +62,10 @@
 - (void)setOnloadend:(id)arg1;
 - (void)setOnreadystatechange:(id)arg1;
 - (void)setOntimeout:(id)arg1;
-- (void)setTimeout:(unsigned int)arg1;
+- (void)setTimeout:(unsigned long long)arg1;
 - (void)setValue:(id)arg1 forHTTPHeaderField:(id)arg2;
-- (unsigned int)status;
+- (unsigned long long)status;
 - (id)statusText;
-- (unsigned int)timeout;
+- (unsigned long long)timeout;
 
 @end

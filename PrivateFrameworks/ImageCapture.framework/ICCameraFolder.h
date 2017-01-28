@@ -25,7 +25,7 @@
 - (id)files;
 - (void)finalize;
 - (id)folders;
-- (BOOL)hasThumbnail;
+- (bool)hasThumbnail;
 - (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 - (void)lockFiles;
 - (void)lockFolders;

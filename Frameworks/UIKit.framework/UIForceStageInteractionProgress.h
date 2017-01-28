@@ -3,24 +3,24 @@
  */
 
 @interface UIForceStageInteractionProgress : UIInteractionProgress <NSObservable, NSObserver> {
-    BOOL  _completed;
-    BOOL  _completesAtTargetState;
+    bool  _completed;
+    bool  _completesAtTargetState;
     NSObservation * _observation;
-    BOOL  _started;
+    bool  _started;
 }
 
-@property (nonatomic) BOOL completesAtTargetState;
+@property (nonatomic) bool completesAtTargetState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_reset;
-- (BOOL)completesAtTargetState;
+- (bool)completesAtTargetState;
 - (void)dealloc;
 - (id)init;
 - (void)receiveObservedValue:(id)arg1;
-- (void)setCompletesAtTargetState:(BOOL)arg1;
+- (void)setCompletesAtTargetState:(bool)arg1;
 
 @end

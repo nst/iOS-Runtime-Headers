@@ -5,32 +5,32 @@
 @interface PXLayoutPageMap : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _contentRect;
     id * _globalItems;
-    unsigned int  _numberOfSources;
+    unsigned long long  _numberOfSources;
     NSMapTable * _pageMap;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentRect;
-@property (nonatomic) unsigned int numberOfSources;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } contentRect;
+@property (nonatomic) unsigned long long numberOfSources;
 
 - (void).cxx_destruct;
-- (id)_screenPageForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)addSource:(id)arg1 atIndex:(unsigned int)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
+- (id)_screenPageForPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)addSource:(id)arg1 atIndex:(unsigned long long)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRect;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (unsigned int)numberOfSources;
-- (void)setContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setNumberOfSources:(unsigned int)arg1;
-- (id)sourcesFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (unsigned long long)numberOfSources;
+- (void)setContentRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setNumberOfSources:(unsigned long long)arg1;
+- (id)sourcesFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

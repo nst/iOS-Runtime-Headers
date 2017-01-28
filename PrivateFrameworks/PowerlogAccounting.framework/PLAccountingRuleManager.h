@@ -25,7 +25,7 @@
 - (id)ruleForRuleID:(id)arg1;
 - (id)ruleIDToRule;
 - (id)ruleWithString:(id)arg1 withEntryDate:(id)arg2;
-- (id)rulesFromFileWithForceLoad:(BOOL)arg1;
+- (id)rulesFromFileWithForceLoad:(bool)arg1;
 - (void)setRegex:(id)arg1;
 - (void)setRuleIDToRule:(id)arg1;
 

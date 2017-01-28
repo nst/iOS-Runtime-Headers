@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSArray *viewportVertices;
 @property (nonatomic) double westLongitude;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;

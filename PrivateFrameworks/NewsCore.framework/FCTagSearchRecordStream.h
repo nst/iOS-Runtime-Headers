@@ -5,33 +5,33 @@
 @interface FCTagSearchRecordStream : NSObject <FCStreaming> {
     CKQueryCursor * _cursor;
     NSMutableSet * _encounteredRecordIDs;
-    BOOL  _fetching;
-    BOOL  _finished;
-    id /* block */  _operationConstructor;
+    bool  _fetching;
+    bool  _finished;
+    id  _operationConstructor;
 }
 
 @property (nonatomic, retain) CKQueryCursor *cursor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *encounteredRecordIDs;
-@property (nonatomic) BOOL fetching;
-@property (getter=isFinished, nonatomic) BOOL finished;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ operationConstructor;
+@property (nonatomic) bool fetching;
+@property (getter=isFinished, nonatomic) bool finished;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id operationConstructor;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)cursor;
 - (id)encounteredRecordIDs;
-- (id)fetchMoreResultsWithLimit:(unsigned int)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
-- (BOOL)fetching;
+- (id)fetchMoreResultsWithLimit:(unsigned long long)arg1 qualityOfService:(long long)arg2 callbackQueue:(id)arg3 completionHandler:(id)arg4;
+- (bool)fetching;
 - (id)init;
-- (BOOL)isFinished;
-- (id /* block */)operationConstructor;
+- (bool)isFinished;
+- (id)operationConstructor;
 - (void)setCursor:(id)arg1;
 - (void)setEncounteredRecordIDs:(id)arg1;
-- (void)setFetching:(BOOL)arg1;
-- (void)setFinished:(BOOL)arg1;
-- (void)setOperationConstructor:(id /* block */)arg1;
+- (void)setFetching:(bool)arg1;
+- (void)setFinished:(bool)arg1;
+- (void)setOperationConstructor:(id)arg1;
 
 @end

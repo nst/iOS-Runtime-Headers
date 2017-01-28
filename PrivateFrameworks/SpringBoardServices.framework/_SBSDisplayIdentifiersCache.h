@@ -3,7 +3,7 @@
  */
 
 @interface _SBSDisplayIdentifiersCache : NSObject {
-    id /* block */  _changedBlock;
+    id  _changedBlock;
     int  _changedToken;
     NSSet * _displayIdentifiers;
     NSObject<OS_dispatch_queue> * _queue;
@@ -16,6 +16,6 @@
 - (void)dealloc;
 - (id)displayIdentifiers;
 - (id)init;
-- (void)registerChangedBlock:(id /* block */)arg1;
+- (void)registerChangedBlock:(id)arg1;
 
 @end

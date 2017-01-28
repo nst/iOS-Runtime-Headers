@@ -11,6 +11,6 @@
 - (void).cxx_destruct;
 - (id)info;
 - (id)initWithInfo:(id)arg1;
-- (void)sendWithCompletion:(id /* block */)arg1;
+- (void)sendWithCompletion:(id)arg1;
 
 @end

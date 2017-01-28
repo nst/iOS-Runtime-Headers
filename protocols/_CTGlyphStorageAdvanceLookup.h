@@ -5,6 +5,6 @@
 
 @required
 
-- (struct CGSize { float x1; float x2; })customAdvanceForIndex:(long)arg1;
+- (struct CGSize { double x1; double x2; })customAdvanceForIndex:(long long)arg1;
 
 @end

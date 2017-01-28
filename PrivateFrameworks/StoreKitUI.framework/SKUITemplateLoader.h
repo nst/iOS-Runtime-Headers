@@ -4,20 +4,20 @@
 
 @interface SKUITemplateLoader : NSObject {
     NSArray * _URLs;
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     NSMutableArray * _errors;
     NSOperationQueue * _operationQueue;
-    int  _pendingOperationCount;
+    long long  _pendingOperationCount;
     SKUITemplateLoader * _retainSelf;
     NSRegularExpression * _templateParsingRegularExpression;
     NSMutableDictionary * _templateStrings;
 }
 
 @property (nonatomic, readonly, copy) NSArray *URLs;
-@property (nonatomic, readonly, copy) id /* block */ completionBlock;
+@property (nonatomic, readonly, copy) id completionBlock;
 @property (nonatomic, readonly) NSMutableArray *errors;
 @property (nonatomic, readonly) NSOperationQueue *operationQueue;
-@property (nonatomic) int pendingOperationCount;
+@property (nonatomic) long long pendingOperationCount;
 @property (nonatomic, readonly) NSRegularExpression *templateParsingRegularExpression;
 @property (nonatomic, readonly) NSMutableDictionary *templateStrings;
 
@@ -27,13 +27,13 @@
 - (void)_operation:(id)arg1 didFailWithError:(id)arg2;
 - (void)_operationDidFinish:(id)arg1;
 - (id)_operationWithURL:(id)arg1;
-- (id /* block */)completionBlock;
+- (id)completionBlock;
 - (id)errors;
-- (id)initWithURLs:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)initWithURLs:(id)arg1 completionBlock:(id)arg2;
 - (void)load;
 - (id)operationQueue;
-- (int)pendingOperationCount;
-- (void)setPendingOperationCount:(int)arg1;
+- (long long)pendingOperationCount;
+- (void)setPendingOperationCount:(long long)arg1;
 - (id)templateParsingRegularExpression;
 - (id)templateStrings;
 

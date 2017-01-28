@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (id)_connection;
 - (void)_resetConnection;
-- (void)_sendMessage:(id)arg1 object:(id)arg2 info:(id)arg3 reply:(id /* block */)arg4;
+- (void)_sendMessage:(id)arg1 object:(id)arg2 info:(id)arg3 reply:(id)arg4;
 - (void)activate;
 - (void)cancelQuery:(id)arg1;
 - (id)daemonName;
@@ -28,15 +28,15 @@
 - (id)init;
 - (id)initWithDaemonName:(id)arg1;
 - (void)preheat;
-- (void)requestParsecParametersWithReply:(id /* block */)arg1;
-- (void)retrieveFirstTimeExperienceTextWithReply:(id /* block */)arg1;
+- (void)requestParsecParametersWithReply:(id)arg1;
+- (void)retrieveFirstTimeExperienceTextWithReply:(id)arg1;
 - (struct __CFDictionary { }*)runningQueries;
-- (void)sendMessageForToken:(id)arg1 withResponse:(id)arg2 isStable:(BOOL)arg3;
+- (void)sendMessageForToken:(id)arg1 withResponse:(id)arg2 isStable:(bool)arg3;
 - (void)sendSFFeedbackMessage:(SEL)arg1 withFeedback:(id)arg2;
 - (void)setDaemonName:(id)arg1;
 - (void)setRunningQueries:(struct __CFDictionary { }*)arg1;
 - (id)startQuery:(id)arg1;
-- (id)startQuery:(id)arg1 withResponse:(id)arg2 isStable:(BOOL)arg3;
-- (id)startQuery:(id)arg1 withResponse:(id)arg2 isStable:(BOOL)arg3 queue:(id)arg4;
+- (id)startQuery:(id)arg1 withResponse:(id)arg2 isStable:(bool)arg3;
+- (id)startQuery:(id)arg1 withResponse:(id)arg2 isStable:(bool)arg3 queue:(id)arg4;
 
 @end

@@ -11,20 +11,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SiriUIAceObjectViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAUISnippet *snippet;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)aceObject;
 - (id)delegate;
-- (float)desiredHeight;
+- (double)desiredHeight;
 - (void)setAceObject:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setSnippet:(id)arg1;
 - (void)siriDidDeactivate;
 - (void)siriDidReceiveAdditionalContent:(id)arg1 error:(id)arg2;
-- (void)siriWillActivateFromSource:(int)arg1;
+- (void)siriWillActivateFromSource:(long long)arg1;
 - (id)snippet;
 - (void)wasAddedToTranscript;
 

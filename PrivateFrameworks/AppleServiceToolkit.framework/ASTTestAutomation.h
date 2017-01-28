@@ -3,17 +3,17 @@
  */
 
 @interface ASTTestAutomation : NSObject {
-    BOOL  _testAutomationEnabled;
+    bool  _testAutomationEnabled;
 }
 
-@property (nonatomic) BOOL testAutomationEnabled;
+@property (nonatomic) bool testAutomationEnabled;
 
 + (void)postServerRequest:(id)arg1;
 + (void)postServerResponse:(id)arg1;
 + (id)sharedInstance;
 
 - (id)init;
-- (void)setTestAutomationEnabled:(BOOL)arg1;
-- (BOOL)testAutomationEnabled;
+- (void)setTestAutomationEnabled:(bool)arg1;
+- (bool)testAutomationEnabled;
 
 @end

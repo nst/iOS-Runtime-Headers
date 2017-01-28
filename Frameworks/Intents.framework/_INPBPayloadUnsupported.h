@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *conflictingParameters;
-@property (nonatomic) BOOL hasReason;
+@property (nonatomic) bool hasReason;
 @property (nonatomic) int reason;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -23,19 +23,19 @@
 - (void)addConflictingParameters:(id)arg1;
 - (void)clearConflictingParameters;
 - (id)conflictingParameters;
-- (id)conflictingParametersAtIndex:(unsigned int)arg1;
-- (unsigned int)conflictingParametersCount;
+- (id)conflictingParametersAtIndex:(unsigned long long)arg1;
+- (unsigned long long)conflictingParametersCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasReason;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasReason;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)reason;
 - (void)setConflictingParameters:(id)arg1;
-- (void)setHasReason:(BOOL)arg1;
+- (void)setHasReason:(bool)arg1;
 - (void)setReason:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

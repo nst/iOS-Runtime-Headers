@@ -8,7 +8,7 @@
 - (Class)dataClass;
 - (Class)facadeClass;
 - (id)init;
-- (BOOL)isPrivate;
+- (bool)isPrivate;
 - (NSString *)name;
 - (NSDictionary *)slotsByName;
 - (NSString *)type;

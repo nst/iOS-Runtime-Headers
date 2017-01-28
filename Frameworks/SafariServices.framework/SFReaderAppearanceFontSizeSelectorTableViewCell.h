@@ -13,7 +13,7 @@
 @property (nonatomic) <SFReaderAppearanceFontSizeSelectorDelegate> *delegate;
 @property (nonatomic, retain) UIButton *increaseFontSizeButton;
 
-+ (float)requiredHeight;
++ (double)requiredHeight;
 
 - (void).cxx_destruct;
 - (void)_createFontSizeSelectorButtons;
@@ -22,7 +22,7 @@
 - (id)decreaseFontSizeButton;
 - (id)delegate;
 - (id)increaseFontSizeButton;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setDecreaseFontSizeButton:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIncreaseFontSizeButton:(id)arg1;

@@ -4,14 +4,14 @@
 
 @interface VideosExtrasImageViewController : UIViewController <VideosExtrasZoomingImageTransitionParticipant> {
     UIActivityIndicatorView * _activityIndicatorView;
-    BOOL  _allowsPinchingImageForInteractiveZoomingImageTransition;
+    bool  _allowsPinchingImageForInteractiveZoomingImageTransition;
     MPUContentSizeLayoutConstraint * _bottomLabelConstraint;
     UILabel * _descriptionLabel;
     MPUContentSizeLayoutConstraint * _descriptionLeadingConstraint;
     NSArray * _gestureRecognizers;
-    unsigned int  _imageIndex;
+    unsigned long long  _imageIndex;
     VideosExtrasZoomingImageInteractiveTransitionSourceContext * _interactiveTransitionSourceContext;
-    BOOL  _overlayHidden;
+    bool  _overlayHidden;
     UILabel * _subtitleLabel;
     MPUContentSizeLayoutConstraint * _subtitleLeadingConstraint;
     UIView * _textContainmentView;
@@ -22,7 +22,7 @@
 }
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
-@property (nonatomic) BOOL allowsPinchingImageForInteractiveZoomingImageTransition;
+@property (nonatomic) bool allowsPinchingImageForInteractiveZoomingImageTransition;
 @property (nonatomic, retain) MPUContentSizeLayoutConstraint *bottomLabelConstraint;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -30,11 +30,11 @@
 @property (nonatomic, retain) MPUContentSizeLayoutConstraint *descriptionLeadingConstraint;
 @property (nonatomic, retain) NSAttributedString *descriptionString;
 @property (nonatomic, copy) NSArray *gestureRecognizers;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) unsigned int imageIndex;
+@property (nonatomic) unsigned long long imageIndex;
 @property (nonatomic, retain) VideosExtrasZoomingImageInteractiveTransitionSourceContext *interactiveTransitionSourceContext;
-@property (nonatomic) BOOL overlayHidden;
+@property (nonatomic) bool overlayHidden;
 @property (nonatomic, retain) UILabel *subtitleLabel;
 @property (nonatomic, retain) MPUContentSizeLayoutConstraint *subtitleLeadingConstraint;
 @property (nonatomic, retain) NSAttributedString *subtitleString;
@@ -51,32 +51,32 @@
 - (void)_handlePinch:(id)arg1;
 - (void)_handleSingleTap:(id)arg1;
 - (id)activityIndicatorView;
-- (BOOL)allowsPinchingImageForInteractiveZoomingImageTransition;
+- (bool)allowsPinchingImageForInteractiveZoomingImageTransition;
 - (id)bottomLabelConstraint;
 - (void)dealloc;
 - (id)descriptionLabel;
 - (id)descriptionLeadingConstraint;
 - (id)descriptionString;
-- (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(BOOL)arg2;
+- (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(bool)arg2;
 - (id)gestureRecognizers;
 - (id)image;
-- (unsigned int)imageIndex;
+- (unsigned long long)imageIndex;
 - (id)interactiveTransitionSourceContext;
-- (BOOL)overlayHidden;
+- (bool)overlayHidden;
 - (void)performZoomingImageTransitionWithContext:(id)arg1;
-- (BOOL)prefersStatusBarHidden;
+- (bool)prefersStatusBarHidden;
 - (void)prepareZoomingImageTransitionWithContext:(id)arg1;
 - (void)setActivityIndicatorView:(id)arg1;
-- (void)setAllowsPinchingImageForInteractiveZoomingImageTransition:(BOOL)arg1;
+- (void)setAllowsPinchingImageForInteractiveZoomingImageTransition:(bool)arg1;
 - (void)setBottomLabelConstraint:(id)arg1;
 - (void)setDescriptionLabel:(id)arg1;
 - (void)setDescriptionLeadingConstraint:(id)arg1;
 - (void)setDescriptionString:(id)arg1;
 - (void)setGestureRecognizers:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageIndex:(unsigned int)arg1;
+- (void)setImageIndex:(unsigned long long)arg1;
 - (void)setInteractiveTransitionSourceContext:(id)arg1;
-- (void)setOverlayHidden:(BOOL)arg1;
+- (void)setOverlayHidden:(bool)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setSubtitleLeadingConstraint:(id)arg1;
 - (void)setSubtitleString:(id)arg1;
@@ -94,9 +94,9 @@
 - (id)titleString;
 - (id)topLabelConstraint;
 - (void)updateViewConstraints;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (id)zoomableImageView;
 - (id)zoomingImageTransitionIdentifier;
 

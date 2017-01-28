@@ -3,25 +3,25 @@
  */
 
 @interface CKModifyBadgeOperation : CKOperation {
-    unsigned int  _badgeValue;
-    id /* block */  _modifyBadgeCompletionBlock;
+    unsigned long long  _badgeValue;
+    id  _modifyBadgeCompletionBlock;
 }
 
-@property (nonatomic) unsigned int badgeValue;
-@property (nonatomic, copy) id /* block */ modifyBadgeCompletionBlock;
+@property (nonatomic) unsigned long long badgeValue;
+@property (nonatomic, copy) id modifyBadgeCompletionBlock;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (id)activityCreate;
-- (unsigned int)badgeValue;
+- (unsigned long long)badgeValue;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)init;
-- (id)initWithBadgeValue:(unsigned int)arg1;
-- (id /* block */)modifyBadgeCompletionBlock;
+- (id)initWithBadgeValue:(unsigned long long)arg1;
+- (id)modifyBadgeCompletionBlock;
 - (void)performCKOperation;
-- (void)setBadgeValue:(unsigned int)arg1;
-- (void)setModifyBadgeCompletionBlock:(id /* block */)arg1;
+- (void)setBadgeValue:(unsigned long long)arg1;
+- (void)setModifyBadgeCompletionBlock:(id)arg1;
 
 @end

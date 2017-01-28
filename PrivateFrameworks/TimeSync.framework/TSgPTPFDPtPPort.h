@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TimeSync.framework/TimeSync
  */
 
-@interface TSgPTPFDPtPPort : TSgPTPPort {
-    void * _fdptpPortImpl;
-}
+@interface TSgPTPFDPtPPort : TSgPTPPort
 
 @property (nonatomic, readonly) NSDictionary *statistics;
 

@@ -16,7 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *format;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *manufacturerDescription;
 @property (nonatomic, readonly) NSNumber *maxLength;
 @property (nonatomic, readonly) NSNumber *maximumValue;
@@ -26,8 +26,8 @@
 @property (nonatomic, readonly, copy) NSString *units;
 @property (nonatomic, copy) NSArray *validValues;
 
-+ (BOOL)isValidMetadata:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)isValidMetadata:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_descriptionDetails;

@@ -9,18 +9,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)displayName;
 + (id)identifier;
-+ (BOOL)isInternalButton;
-+ (BOOL)isSupported:(int)arg1;
++ (bool)isInternalButton;
++ (bool)isSupported:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)_startRecording;
 - (void)_stopRecording;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)activate;
 - (void)artraceSession:(id)arg1 didReceiveOutput:(id)arg2;
 - (void)artraceSessionDidComplete:(id)arg1;

@@ -7,6 +7,6 @@
 
 - (void)wellnessTimeLineModelCurrentEntryModelUpdated:(NTKWellnessEntryModel *)arg1;
 - (void)wellnessTimeLineModelHistoricalDataWasUpdated;
-- (void)wellnessTimelineModelHistorcalDataLoaded:(BOOL)arg1;
+- (void)wellnessTimelineModelHistorcalDataLoaded:(bool)arg1;
 
 @end

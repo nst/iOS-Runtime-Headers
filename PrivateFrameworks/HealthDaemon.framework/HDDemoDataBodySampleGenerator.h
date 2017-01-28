@@ -33,8 +33,8 @@
 @property (nonatomic) double weightAdultStartInKg;
 
 - (void).cxx_destruct;
-- (id)_heightCurveForAge:(double)arg1 sex:(int)arg2;
-- (id)_weightCurveForAge:(double)arg1 sex:(int)arg2;
+- (id)_heightCurveForAge:(double)arg1 sex:(long long)arg2;
+- (id)_weightCurveForAge:(double)arg1 sex:(long long)arg2;
 - (double)bodyFatPercentageForDemoPerson:(id)arg1 atTime:(double)arg2 weight:(double)arg3 leanBodyMass:(double)arg4;
 - (double)bodyMassIndexForDemoPerson:(id)arg1 weight:(double)arg2 height:(double)arg3;
 - (id)boysHeight2To20YearsGrowthCurve;

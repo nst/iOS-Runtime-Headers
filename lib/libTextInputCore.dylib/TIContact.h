@@ -6,7 +6,7 @@
     NSArray * _cities;
     NSString * _familyName;
     NSString * _givenName;
-    BOOL  _hasRelevancyScore;
+    bool  _hasRelevancyScore;
     NSString * _jobTitle;
     NSString * _middleName;
     NSString * _nickname;
@@ -21,7 +21,7 @@
 @property (nonatomic, retain) NSArray *cities;
 @property (nonatomic, retain) NSString *familyName;
 @property (nonatomic, retain) NSString *givenName;
-@property (nonatomic) BOOL hasRelevancyScore;
+@property (nonatomic) bool hasRelevancyScore;
 @property (nonatomic, retain) NSString *jobTitle;
 @property (nonatomic, retain) NSString *middleName;
 @property (nonatomic, retain) NSString *nickname;
@@ -37,7 +37,7 @@
 - (id)familyName;
 - (id)flatten;
 - (id)givenName;
-- (BOOL)hasRelevancyScore;
+- (bool)hasRelevancyScore;
 - (id)jobTitle;
 - (id)middleName;
 - (id)nickname;
@@ -50,7 +50,7 @@
 - (void)setCities:(id)arg1;
 - (void)setFamilyName:(id)arg1;
 - (void)setGivenName:(id)arg1;
-- (void)setHasRelevancyScore:(BOOL)arg1;
+- (void)setHasRelevancyScore:(bool)arg1;
 - (void)setJobTitle:(id)arg1;
 - (void)setMiddleName:(id)arg1;
 - (void)setNickname:(id)arg1;

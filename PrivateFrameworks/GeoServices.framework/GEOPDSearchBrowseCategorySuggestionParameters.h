@@ -5,8 +5,8 @@
 @interface GEOPDSearchBrowseCategorySuggestionParameters : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _engineTypes;
     struct { 
         unsigned int requestLocalTimestamp : 1; 
@@ -14,7 +14,7 @@
         unsigned int suggestionType : 1; 
         unsigned int isCarplayRequest : 1; 
     }  _has;
-    BOOL  _isCarplayRequest;
+    bool  _isCarplayRequest;
     int  _minimumNumberOfCategories;
     double  _requestLocalTimestamp;
     int  _suggestionType;
@@ -23,13 +23,13 @@
 }
 
 @property (nonatomic, readonly) int*engineTypes;
-@property (nonatomic, readonly) unsigned int engineTypesCount;
-@property (nonatomic) BOOL hasIsCarplayRequest;
-@property (nonatomic) BOOL hasMinimumNumberOfCategories;
-@property (nonatomic) BOOL hasRequestLocalTimestamp;
-@property (nonatomic) BOOL hasSuggestionType;
-@property (nonatomic, readonly) BOOL hasViewportInfo;
-@property (nonatomic) BOOL isCarplayRequest;
+@property (nonatomic, readonly) unsigned long long engineTypesCount;
+@property (nonatomic) bool hasIsCarplayRequest;
+@property (nonatomic) bool hasMinimumNumberOfCategories;
+@property (nonatomic) bool hasRequestLocalTimestamp;
+@property (nonatomic) bool hasSuggestionType;
+@property (nonatomic, readonly) bool hasViewportInfo;
+@property (nonatomic) bool isCarplayRequest;
 @property (nonatomic) int minimumNumberOfCategories;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic) int suggestionType;
@@ -45,28 +45,28 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (int)engineTypeAtIndex:(unsigned int)arg1;
+- (int)engineTypeAtIndex:(unsigned long long)arg1;
 - (int*)engineTypes;
 - (id)engineTypesAsString:(int)arg1;
-- (unsigned int)engineTypesCount;
-- (BOOL)hasIsCarplayRequest;
-- (BOOL)hasMinimumNumberOfCategories;
-- (BOOL)hasRequestLocalTimestamp;
-- (BOOL)hasSuggestionType;
-- (BOOL)hasViewportInfo;
-- (unsigned int)hash;
-- (BOOL)isCarplayRequest;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)engineTypesCount;
+- (bool)hasIsCarplayRequest;
+- (bool)hasMinimumNumberOfCategories;
+- (bool)hasRequestLocalTimestamp;
+- (bool)hasSuggestionType;
+- (bool)hasViewportInfo;
+- (unsigned long long)hash;
+- (bool)isCarplayRequest;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)minimumNumberOfCategories;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (double)requestLocalTimestamp;
-- (void)setEngineTypes:(int*)arg1 count:(unsigned int)arg2;
-- (void)setHasIsCarplayRequest:(BOOL)arg1;
-- (void)setHasMinimumNumberOfCategories:(BOOL)arg1;
-- (void)setHasRequestLocalTimestamp:(BOOL)arg1;
-- (void)setHasSuggestionType:(BOOL)arg1;
-- (void)setIsCarplayRequest:(BOOL)arg1;
+- (void)setEngineTypes:(int*)arg1 count:(unsigned long long)arg2;
+- (void)setHasIsCarplayRequest:(bool)arg1;
+- (void)setHasMinimumNumberOfCategories:(bool)arg1;
+- (void)setHasRequestLocalTimestamp:(bool)arg1;
+- (void)setHasSuggestionType:(bool)arg1;
+- (void)setIsCarplayRequest:(bool)arg1;
 - (void)setMinimumNumberOfCategories:(int)arg1;
 - (void)setRequestLocalTimestamp:(double)arg1;
 - (void)setSuggestionType:(int)arg1;

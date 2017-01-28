@@ -3,50 +3,50 @@
  */
 
 @interface MKPlacePhotosViewController : UIViewController <MKPlacePhotosViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
-    BOOL  _canUseInlineViewer;
-    BOOL  _constraintsAdded;
+    bool  _canUseInlineViewer;
+    bool  _constraintsAdded;
     MKMapItem * _mapItem;
-    unsigned int  _mode;
+    unsigned long long  _mode;
     _MKPlaceViewController * _owner;
     NSArray * _photoViews;
     <MKPlaceCardPhotosControllerDelegate> * _photosControllerDelegate;
-    unsigned int  _photosCount;
+    unsigned long long  _photosCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic, readonly) unsigned int mode;
+@property (nonatomic, readonly) unsigned long long mode;
 @property (nonatomic) _MKPlaceViewController *owner;
 @property (nonatomic) <MKPlaceCardPhotosControllerDelegate> *photosControllerDelegate;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_callPhotoDelegateForPhotoAt:(unsigned int)arg1 fromLicense:(BOOL)arg2;
+- (void)_callPhotoDelegateForPhotoAt:(unsigned long long)arg1 fromLicense:(bool)arg2;
 - (void)_createPhotoViews;
 - (void)_photoSelected:(id)arg1;
-- (void)_photoTappedAtIndex:(unsigned int)arg1;
+- (void)_photoTappedAtIndex:(unsigned long long)arg1;
 - (void)_reloadPhotos;
 - (void)_updatePhotoBackgroundColor:(id)arg1;
 - (id)infoCardChildPossibleActions;
 - (void)infoCardThemeChanged:(id)arg1;
-- (id)initWithLayoutMode:(unsigned int)arg1;
+- (id)initWithLayoutMode:(unsigned long long)arg1;
 - (void)loadView;
 - (id)mapItem;
-- (unsigned int)mode;
+- (unsigned long long)mode;
 - (id)owner;
 - (id)photos;
 - (id)photosControllerDelegate;
-- (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned int)arg1 photo:(id)arg2;
+- (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned long long)arg1 photo:(id)arg2;
 - (id)placePhotoViewerGetDelegatesMapItem;
-- (id)placePhotoViewerViewForPhotoAtIndex:(unsigned int)arg1;
-- (void)placePhotoViewerWillClose:(id)arg1 photo:(id)arg2 onIndex:(unsigned int)arg3;
+- (id)placePhotoViewerViewForPhotoAtIndex:(unsigned long long)arg1;
+- (void)placePhotoViewerWillClose:(id)arg1 photo:(id)arg2 onIndex:(unsigned long long)arg3;
 - (void)setMapItem:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setPhotosControllerDelegate:(id)arg1;
 - (void)updateViewConstraints;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

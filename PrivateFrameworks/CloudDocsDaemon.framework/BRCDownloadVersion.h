@@ -5,15 +5,15 @@
 @interface BRCDownloadVersion : BRCDownload {
     BRCClientZone * _clientZone;
     NSError * _gsError;
-    BOOL  _isLoser;
+    bool  _isLoser;
     CKRecord * _secondaryRecord;
     CKRecordID * _secondaryRecordID;
-    BOOL  _sharedZone;
+    bool  _sharedZone;
     GSPermanentStorage * _storage;
 }
 
 @property (nonatomic, readonly) NSError *gsError;
-@property (nonatomic, readonly) BOOL isLoser;
+@property (nonatomic, readonly) bool isLoser;
 @property (nonatomic, retain) BRCProgress *progress;
 @property (nonatomic, readonly) GSPermanentStorage *storage;
 
@@ -22,8 +22,8 @@
 - (id)_stageWithSession:(id)arg1 creationInfo:(id*)arg2 error:(id*)arg3;
 - (id)description;
 - (id)gsError;
-- (id)initWithDocument:(id)arg1 stageID:(id)arg2 etag:(id)arg3 isLoser:(BOOL)arg4;
-- (BOOL)isLoser;
+- (id)initWithDocument:(id)arg1 stageID:(id)arg2 etag:(id)arg3 isLoser:(bool)arg4;
+- (bool)isLoser;
 - (int)kind;
 - (id)progress;
 - (id)secondaryRecord;

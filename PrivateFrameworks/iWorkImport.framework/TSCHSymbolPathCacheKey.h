@@ -3,16 +3,16 @@
  */
 
 @interface TSCHSymbolPathCacheKey : NSObject <NSCopying> {
-    BOOL  mForHitCheck;
-    float  mSize;
+    bool  mForHitCheck;
+    double  mSize;
     TSDStroke * mStroke;
     int  mSymbolType;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
-- (id)initWithSymbolType:(int)arg1 symbolSize:(float)arg2 stroke:(id)arg3 forHitCheck:(BOOL)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithSymbolType:(int)arg1 symbolSize:(double)arg2 stroke:(id)arg3 forHitCheck:(bool)arg4;
+- (bool)isEqual:(id)arg1;
 
 @end

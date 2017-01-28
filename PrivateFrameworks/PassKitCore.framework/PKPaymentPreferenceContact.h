@@ -6,7 +6,7 @@
     NSString * _addExistingTitle;
     NSString * _addNewTitle;
     NSOrderedSet * _contactKeys;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, copy) NSString *addExistingTitle;
@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSString *contactKey;
 @property (nonatomic, copy) NSOrderedSet *contactKeys;
 @property (nonatomic, retain) PKPaymentOptionsRecents *paymentOptionsRecents;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
 - (void).cxx_destruct;
 - (void)_removeDuplicates;
@@ -22,18 +22,18 @@
 - (id)addNewTitle;
 - (id)contactKey;
 - (id)contactKeys;
-- (int)indexOfContact:(id)arg1;
-- (id)initWithTitle:(id)arg1 preferences:(id)arg2 selectedIndex:(unsigned int)arg3 readOnly:(BOOL)arg4;
+- (long long)indexOfContact:(id)arg1;
+- (id)initWithTitle:(id)arg1 preferences:(id)arg2 selectedIndex:(unsigned long long)arg3 readOnly:(bool)arg4;
 - (void)mergeRecentsAndMeCard;
 - (id)paymentOptionsRecents;
-- (BOOL)preferenceObject:(id)arg1 representsContact:(id)arg2;
+- (bool)preferenceObject:(id)arg1 representsContact:(id)arg2;
 - (void)setAddExistingTitle:(id)arg1;
 - (void)setAddNewTitle:(id)arg1;
 - (void)setContactKey:(id)arg1;
 - (void)setContactKeys:(id)arg1;
 - (void)setPaymentOptionsRecents:(id)arg1;
-- (void)setType:(unsigned int)arg1;
-- (BOOL)supportsDeletion;
-- (unsigned int)type;
+- (void)setType:(unsigned long long)arg1;
+- (bool)supportsDeletion;
+- (unsigned long long)type;
 
 @end

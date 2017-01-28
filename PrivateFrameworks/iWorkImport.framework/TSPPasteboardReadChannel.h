@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -18,6 +18,6 @@
 - (void)close;
 - (id)init;
 - (id)initWithPasteboard:(id)arg1 pasteboardType:(id)arg2;
-- (void)readWithHandler:(id /* block */)arg1;
+- (void)readWithHandler:(id)arg1;
 
 @end

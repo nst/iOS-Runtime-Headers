@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSUUID *end;
 @property (nonatomic, retain) NSUUID *start;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -5,13 +5,13 @@
 
 @required
 
-- (void)recordNumberOfCalendarServerResults:(unsigned int)arg1 inTimeInterval:(double)arg2;
-- (void)recordNumberOfContactResults:(unsigned int)arg1 inTimeInterval:(double)arg2;
-- (void)recordNumberOfDirectoryServerResults:(unsigned int)arg1 inTimeInterval:(double)arg2;
-- (void)recordNumberOfPredictionResults:(unsigned int)arg1 inTimeInterval:(double)arg2;
-- (void)recordNumberOfRecentResults:(unsigned int)arg1 inTimeInterval:(double)arg2;
-- (void)recordNumberOfResultsReturned:(unsigned int)arg1 inTimeInterval:(double)arg2 forBatch:(unsigned int)arg3 includesServers:(BOOL)arg4;
-- (void)recordNumberOfSuggestionResults:(unsigned int)arg1 inTimeInterval:(double)arg2;
-- (void)recordNumberOfSupplementalResults:(unsigned int)arg1 inTimeInterval:(double)arg2;
+- (void)recordNumberOfCalendarServerResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
+- (void)recordNumberOfContactResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
+- (void)recordNumberOfDirectoryServerResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
+- (void)recordNumberOfPredictionResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
+- (void)recordNumberOfRecentResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
+- (void)recordNumberOfResultsReturned:(unsigned long long)arg1 inTimeInterval:(double)arg2 forBatch:(unsigned long long)arg3 includesServers:(bool)arg4;
+- (void)recordNumberOfSuggestionResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
+- (void)recordNumberOfSupplementalResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
 
 @end

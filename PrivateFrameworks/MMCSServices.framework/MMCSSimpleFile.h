@@ -5,7 +5,7 @@
 @interface MMCSSimpleFile : NSObject {
     NSData * _authResponseData;
     NSString * _authToken;
-    int  _encryptionBehavior;
+    long long  _encryptionBehavior;
     int  _fd;
     NSData * _fileHash;
     NSString * _guid;
@@ -21,7 +21,7 @@
 
 @property (retain) NSData *authResponseData;
 @property (retain) NSString *authToken;
-@property int encryptionBehavior;
+@property long long encryptionBehavior;
 @property int fd;
 @property (retain) NSData *fileHash;
 @property (retain) NSString *guid;
@@ -38,7 +38,7 @@
 - (id)authToken;
 - (void)dealloc;
 - (id)description;
-- (int)encryptionBehavior;
+- (long long)encryptionBehavior;
 - (int)fd;
 - (id)fileHash;
 - (id)guid;
@@ -52,7 +52,7 @@
 - (id)requestorID;
 - (void)setAuthResponseData:(id)arg1;
 - (void)setAuthToken:(id)arg1;
-- (void)setEncryptionBehavior:(int)arg1;
+- (void)setEncryptionBehavior:(long long)arg1;
 - (void)setFd:(int)arg1;
 - (void)setFileHash:(id)arg1;
 - (void)setGuid:(id)arg1;

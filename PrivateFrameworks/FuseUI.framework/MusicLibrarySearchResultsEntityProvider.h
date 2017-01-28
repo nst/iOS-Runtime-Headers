@@ -5,7 +5,7 @@
 @interface MusicLibrarySearchResultsEntityProvider : NSObject <MusicEntityProviding> {
     NSArray * _invalidationBlocks;
     NSObject<OS_dispatch_queue> * _invalidationQueue;
-    unsigned int  _maximumNumberOfSectionResults;
+    unsigned long long  _maximumNumberOfSectionResults;
     NSArray * _searchDataSources;
     MusicLibrarySearchResultsEntityProviderConfiguration * _searchEntityProviderConfiguration;
     NSOperationQueue * _searchOperationQueue;
@@ -14,37 +14,37 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasResults;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int maximumNumberOfSectionResults;
+@property (nonatomic, readonly) bool hasResults;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long maximumNumberOfSectionResults;
 @property (nonatomic, copy) NSString *searchTerm;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_filterResults;
 - (void)_sendInvalidationNotification;
-- (id)browseTableViewConfigurationForSection:(int)arg1;
+- (id)browseTableViewConfigurationForSection:(long long)arg1;
 - (void)configureEntityValueContextOutput:(id)arg1 forIndexPath:(id)arg2;
 - (void)configureEntityValueContextOutputForAnyIndexPath:(id)arg1;
-- (void)configureSectionEntityValueContextOutput:(id)arg1 forIndex:(unsigned int)arg2;
+- (void)configureSectionEntityValueContextOutput:(id)arg1 forIndex:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)entityValueProviderAtIndexPath:(id)arg1;
-- (BOOL)hasEntities;
-- (BOOL)hasEntitiesNotInLibrary;
-- (BOOL)hasMoreResultsForSection:(int)arg1;
-- (BOOL)hasResults;
-- (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (bool)hasEntities;
+- (bool)hasEntitiesNotInLibrary;
+- (bool)hasMoreResultsForSection:(long long)arg1;
+- (bool)hasResults;
+- (id)indexBarEntryAtIndex:(unsigned long long)arg1;
 - (id)indexPathForEntityValueContext:(id)arg1;
 - (id)init;
 - (id)initWithSearchEntityProviderConfiguration:(id)arg1;
-- (unsigned int)maximumNumberOfSectionResults;
-- (id)moreSearchResultsEntityProviderConfigurationForSectionIndex:(int)arg1;
-- (unsigned int)numberOfEntitiesInSection:(unsigned int)arg1;
-- (unsigned int)numberOfIndexBarEntries;
-- (unsigned int)numberOfSections;
+- (unsigned long long)maximumNumberOfSectionResults;
+- (id)moreSearchResultsEntityProviderConfigurationForSectionIndex:(long long)arg1;
+- (unsigned long long)numberOfEntitiesInSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfIndexBarEntries;
+- (unsigned long long)numberOfSections;
 - (id)searchTerm;
-- (unsigned int)sectionForSectionIndexBarEntryAtIndex:(unsigned int)arg1;
-- (void)setMaximumNumberOfSectionResults:(unsigned int)arg1;
+- (unsigned long long)sectionForSectionIndexBarEntryAtIndex:(unsigned long long)arg1;
+- (void)setMaximumNumberOfSectionResults:(unsigned long long)arg1;
 - (void)setSearchTerm:(id)arg1;
 
 @end

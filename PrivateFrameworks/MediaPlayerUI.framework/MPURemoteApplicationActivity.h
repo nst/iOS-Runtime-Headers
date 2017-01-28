@@ -8,16 +8,16 @@
 
 @property (nonatomic, readonly) NSString *primaryAppDisplayID;
 @property (nonatomic, readonly) NSString *secondaryAppDisplayID;
-@property (nonatomic, readonly) unsigned int status;
+@property (nonatomic, readonly) unsigned long long status;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 
 - (void)dealloc;
 - (id)init;
 - (id)initWithMediaRemoteActivity:(void*)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)primaryAppDisplayID;
 - (id)secondaryAppDisplayID;
-- (unsigned int)status;
+- (unsigned long long)status;
 - (id)uniqueIdentifier;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface AFClientLite : NSObject <AFClientLiteClientCommandHandling> {
-    id /* block */  _commandHandler;
+    id  _commandHandler;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
 - (void).cxx_destruct;
-- (void)_handleCommand:(id)arg1 isOneWay:(BOOL)arg2 commandHandler:(id /* block */)arg3 completion:(id /* block */)arg4;
-- (void)handleCommand:(id)arg1 commandHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
-- (oneway void)handleCommand:(id)arg1 completion:(id /* block */)arg2;
-- (void)handleOneWayCommand:(id)arg1 commandHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (void)_handleCommand:(id)arg1 isOneWay:(bool)arg2 commandHandler:(id)arg3 completion:(id)arg4;
+- (void)handleCommand:(id)arg1 commandHandler:(id)arg2 completion:(id)arg3;
+- (oneway void)handleCommand:(id)arg1 completion:(id)arg2;
+- (void)handleOneWayCommand:(id)arg1 commandHandler:(id)arg2 completion:(id)arg3;
 - (id)init;
 
 @end

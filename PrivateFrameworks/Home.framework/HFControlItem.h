@@ -19,7 +19,7 @@
 - (id)_standardResultsForResultValue:(id)arg1 characteristicValuesByType:(id)arg2;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)allCharacteristicTypes;
-- (BOOL)canCopyWithCharacteristicTypeSubset:(id)arg1;
+- (bool)canCopyWithCharacteristicTypeSubset:(id)arg1;
 - (id)characteristicTypes;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)copyWithCharacteristicTypes:(id)arg1 valueSource:(id)arg2;
@@ -34,7 +34,7 @@
 - (id)normalizedValueForValue:(id)arg1;
 - (id)readOnlyCharacteristicTypes;
 - (id)readValueAndPopulateStandardResults;
-- (int)sortPriority;
+- (long long)sortPriority;
 - (id)valueForCharacteristicValues:(id)arg1;
 - (id)valueSource;
 - (id)writeValue:(id)arg1;

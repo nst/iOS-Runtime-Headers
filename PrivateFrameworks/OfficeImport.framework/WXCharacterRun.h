@@ -5,7 +5,7 @@
 @interface WXCharacterRun : NSObject
 
 + (id)fontForRun:(id)arg1 fontType:(int)arg2;
-+ (BOOL)isSpecialCharacter:(unsigned short)arg1;
++ (bool)isSpecialCharacter:(unsigned short)arg1;
 + (void)readFrom:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 to:(id)arg2;
 + (void)readFromString:(id)arg1 source:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg2 to:(id)arg3;
 

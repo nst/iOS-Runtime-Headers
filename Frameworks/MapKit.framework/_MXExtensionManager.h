@@ -22,9 +22,9 @@
 + (id)_lookupPolicyForIntentsExtensions;
 + (id)_lookupPolicyForNonUIExtension;
 + (id)_lookupPolicyForUIExtension;
-+ (id)_lookupPolicyWithBlock:(id /* block */)arg1;
++ (id)_lookupPolicyWithBlock:(id)arg1;
 + (id)_lookupPolicyWithExtensionPointNames:(id)arg1;
-+ (void)imageForKey:(id)arg1 extension:(id)arg2 completion:(id /* block */)arg3;
++ (void)imageForKey:(id)arg1 extension:(id)arg2 completion:(id)arg3;
 + (id)lookupPolicyForExtensionWithCapabilities:(id)arg1;
 + (id)lookupPolicyForExtensionWithCapability:(id)arg1;
 + (id)lookupPolicyForRestaurantQueueingExtensionWithContainingAppIdentifier:(id)arg1;
@@ -32,7 +32,7 @@
 + (id)lookupPolicyForRestaurantReservationExtensionWithContainingAppIdentifier:(id)arg1;
 + (id)lookupPolicyForRestaurantReservationExtensions;
 + (id)lookupPolicyForRideSharingExtensions;
-+ (id)managerWithExtensionLookupPolicy:(id)arg1 updateHandler:(id /* block */)arg2;
++ (id)managerWithExtensionLookupPolicy:(id)arg1 updateHandler:(id)arg2;
 + (id)managerWithLookupPolicy:(id)arg1 delegate:(id)arg2;
 + (id)restaurantQueueingIntentClassNames;
 + (id)restaurantReservationIntentClassNames;

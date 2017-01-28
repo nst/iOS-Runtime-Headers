@@ -10,13 +10,13 @@
 
 // Image: /System/Library/PrivateFrameworks/SearchUIFoundation.framework/SearchUIFoundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)date;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDate:(id)arg1 variant:(unsigned int)arg2;
+- (id)initWithDate:(id)arg1 variant:(unsigned long long)arg2;
 - (void)setDate:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI

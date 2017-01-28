@@ -6,25 +6,25 @@
     UIButton * _addCommentButton;
     UILabel * _contentLabel;
     UIView * _styledSeparatorView;
-    BOOL  _wantsEntryInCell;
+    bool  _wantsEntryInCell;
 }
 
 @property (nonatomic, readonly, retain) UIButton *addCommentButton;
 @property (nonatomic, readonly, retain) UILabel *contentLabel;
 @property (nonatomic, readonly, retain) UIView *styledSeparatorView;
-@property (nonatomic) BOOL wantsEntryInCell;
+@property (nonatomic) bool wantsEntryInCell;
 
-+ (float)heightForWidth:(float)arg1;
++ (double)heightForWidth:(double)arg1;
 
 - (void).cxx_destruct;
 - (id)_commentPostPlaceholder;
 - (id)addCommentButton;
 - (id)contentLabel;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
-- (void)setWantsEntryInCell:(BOOL)arg1;
+- (void)setWantsEntryInCell:(bool)arg1;
 - (void)setupContent;
 - (id)styledSeparatorView;
-- (BOOL)wantsEntryInCell;
+- (bool)wantsEntryInCell;
 
 @end

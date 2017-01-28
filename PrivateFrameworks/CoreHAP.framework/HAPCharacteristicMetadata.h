@@ -21,7 +21,7 @@
 - (id)description;
 - (id)format;
 - (id)initWithConstraints:(id)arg1 description:(id)arg2 format:(id)arg3 units:(id)arg4;
-- (BOOL)isEqualToCharacteristicMetadata:(id)arg1;
+- (bool)isEqualToCharacteristicMetadata:(id)arg1;
 - (id)manufacturerDescription;
 - (void)setConstraints:(id)arg1;
 - (void)setFormat:(id)arg1;

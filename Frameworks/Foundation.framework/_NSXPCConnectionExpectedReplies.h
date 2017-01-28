@@ -9,7 +9,7 @@
     unsigned long long  _sequence;
 }
 
-- (void)addReplyCompletionBlockOnQueue:(id)arg1 block:(id /* block */)arg2;
+- (void)addReplyCompletionBlockOnQueue:(id)arg1 block:(id)arg2;
 - (void)dealloc;
 - (void)decrementOutstandingReplyCount;
 - (void)incrementOutstandingReplyCount;

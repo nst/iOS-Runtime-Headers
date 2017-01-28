@@ -6,31 +6,34 @@
     CNContact * _contact;
     CNContactFormatter * _contactFormatter;
     CNContactMatchInfo * _contactMatchInfo;
-    BOOL  _isMeCard;
+    bool  _isMeCard;
+    id  _selectedBackgroundViewConfiguration;
     <ABStyleProvider> * _styleProvider;
 }
 
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, retain) CNContactMatchInfo *contactMatchInfo;
-@property (nonatomic) BOOL isMeCard;
+@property (nonatomic) bool isMeCard;
+@property (nonatomic, copy) id selectedBackgroundViewConfiguration;
 @property (nonatomic, readonly) <ABStyleProvider> *styleProvider;
 
-+ (void)contentSizeCategoryDidChange:(id)arg1;
-+ (void)initialize;
-
 - (void).cxx_destruct;
+- (void)_cnui_applyContactStyle;
 - (id)contact;
 - (id)contactFormatter;
 - (id)contactMatchInfo;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isMeCard;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isMeCard;
+- (id)selectedBackgroundViewConfiguration;
 - (void)setContact:(id)arg1;
 - (void)setContactFormatter:(id)arg1;
 - (void)setContactMatchInfo:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setIsMeCard:(BOOL)arg1;
-- (void)setUserInteractionEnabled:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setIsMeCard:(bool)arg1;
+- (void)setSelected:(bool)arg1 animated:(bool)arg2;
+- (void)setSelectedBackgroundViewConfiguration:(id)arg1;
+- (void)setUserInteractionEnabled:(bool)arg1;
 - (id)styleProvider;
 
 @end

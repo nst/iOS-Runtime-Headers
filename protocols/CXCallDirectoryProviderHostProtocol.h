@@ -5,8 +5,8 @@
 
 @required
 
-- (oneway void)addBlockingEntriesWithData:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: CXCallDirectoryBlockingEntryData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (oneway void)addIdentificationEntriesWithData:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: CXCallDirectoryIdentificationEntryData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (oneway void)completeRequestWithReply:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (oneway void)addBlockingEntriesWithData:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: CXCallDirectoryBlockingEntryData *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (oneway void)addIdentificationEntriesWithData:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 6: CXCallDirectoryIdentificationEntryData *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (oneway void)completeRequestWithReply:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 
 @end

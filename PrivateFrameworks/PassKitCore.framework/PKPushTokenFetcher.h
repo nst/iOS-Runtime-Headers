@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -19,7 +19,7 @@
 - (void)_invokeCompletionWithPushToken:(id)arg1;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)dealloc;
-- (void)fetchPushTokenWithTimeout:(double)arg1 completion:(id /* block */)arg2;
+- (void)fetchPushTokenWithTimeout:(double)arg1 completion:(id)arg2;
 - (id)init;
 
 @end

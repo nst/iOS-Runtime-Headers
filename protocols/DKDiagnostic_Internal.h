@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isCancelled;
-- (void)setCancelled:(BOOL)arg1;
+- (bool)isCancelled;
+- (void)setCancelled:(bool)arg1;
 
 @end

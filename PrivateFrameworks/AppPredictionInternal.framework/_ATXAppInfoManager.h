@@ -9,21 +9,21 @@
     _ATXInternalInstallNotification * _installNotificationListener;
     NSString * _lastLaunch;
     NSDate * _lastLaunchDate;
-    int  _launchCount;
+    long long  _launchCount;
     struct _opaque_pthread_rwlock_t { 
-        long __sig; 
-        BOOL __opaque[124]; 
+        long long __sig; 
+        BOOL __opaque[192]; 
     }  _rwlock;
-    int  _spotlightLaunchCount;
+    long long  _spotlightLaunchCount;
     _ATXInternalUninstallNotification * _uninstallNotificationListener;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_addLaunchInfoForBundle:(id)arg1 withDate:(id)arg2 updateLaunchBlock:(id /* block */)arg3;
+- (void)_addLaunchInfoForBundle:(id)arg1 withDate:(id)arg2 updateLaunchBlock:(id)arg3;
 - (id)_getInfoOrCreateForBundleId:(id)arg1;
-- (BOOL)_hasBeenLaunchedForBundleId:(id)arg1;
+- (bool)_hasBeenLaunchedForBundleId:(id)arg1;
 - (void)addInstallForBundleId:(id)arg1 withDate:(id)arg2;
 - (void)addInstallForBundleToDateMap:(id)arg1;
 - (void)addLaunchForBundleId:(id)arg1 withDate:(id)arg2;
@@ -39,7 +39,7 @@
 - (id)lastAppLaunch;
 - (id)lastAppLaunchDate;
 - (id)lastAppLaunchWithHistory:(id)arg1;
-- (int)launchedAppCount;
+- (long long)launchedAppCount;
 - (void)receivedDataStoreCompletedNotification:(id)arg1;
 - (void)receivedDataStoreStartedNotification:(id)arg1;
 - (void)registerForRestoreCompletionNotificationsFrom:(id)arg1;

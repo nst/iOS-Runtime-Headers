@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) int audioSource;
-@property (nonatomic) BOOL hasAudioSource;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic) BOOL hasRelativeAudioSourceReference;
+@property (nonatomic) bool hasAudioSource;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic) bool hasRelativeAudioSourceReference;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic) int relativeAudioSourceReference;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -28,18 +28,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAudioSource;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasRelativeAudioSourceReference;
-- (unsigned int)hash;
+- (bool)hasAudioSource;
+- (bool)hasIntentMetadata;
+- (bool)hasRelativeAudioSourceReference;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)relativeAudioSourceReference;
 - (void)setAudioSource:(int)arg1;
-- (void)setHasAudioSource:(BOOL)arg1;
-- (void)setHasRelativeAudioSourceReference:(BOOL)arg1;
+- (void)setHasAudioSource:(bool)arg1;
+- (void)setHasRelativeAudioSourceReference:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setRelativeAudioSourceReference:(int)arg1;
 - (id)unknownFields;

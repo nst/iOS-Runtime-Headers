@@ -6,13 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_queue_start;
 - (void)_queue_stop;
-- (BOOL)_shouldExecuteWhenProtectedDataIsUnavailable;
-- (BOOL)_shouldListenForUpdates;
+- (bool)_shouldExecuteWhenProtectedDataIsUnavailable;
+- (bool)_shouldListenForUpdates;
 - (void)friendsUpdated:(id)arg1;
 
 @end

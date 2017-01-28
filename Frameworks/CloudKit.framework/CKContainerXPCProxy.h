@@ -9,7 +9,7 @@
 @property (nonatomic) CKContainer *container;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -17,9 +17,9 @@
 - (void)handleOperationCheckpoint:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
-- (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(id /* block */)arg3;
+- (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(id)arg3;
 - (id)initWithContainer:(id)arg1;
-- (void)openFileWithOpenInfo:(id)arg1 reply:(id /* block */)arg2;
+- (void)openFileWithOpenInfo:(id)arg1 reply:(id)arg2;
 - (void)setContainer:(id)arg1;
 
 @end

@@ -4,34 +4,34 @@
 
 @interface CCUIButtonModule : NSObject {
     <CCUIButtonModuleDelegate> * _delegate;
-    BOOL  _enabled;
-    BOOL  _inoperative;
+    bool  _enabled;
+    bool  _inoperative;
     UIViewController * _parentViewController;
 }
 
 @property (nonatomic, readonly) NSArray *buttonActions;
 @property (nonatomic) <CCUIButtonModuleDelegate> *delegate;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (getter=isInoperative, nonatomic) BOOL inoperative;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (getter=isInoperative, nonatomic) bool inoperative;
 @property (nonatomic) UIViewController *parentViewController;
 
 + (id)displayName;
-+ (BOOL)enabledByDefault;
++ (bool)enabledByDefault;
 + (id)identifier;
-+ (BOOL)isInternalButton;
-+ (BOOL)isSupported:(int)arg1;
++ (bool)isInternalButton;
++ (bool)isSupported:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)_noteButtonStateDidChange;
 - (void)_noteDisplayPropertiesDidChange;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)_updateState;
 - (void)activate;
 - (id)aggdKey;
 - (id)buttonActions;
 - (id)confirmationAlertMessage;
 - (id)confirmationAlertTitle;
-- (void)confirmed:(BOOL)arg1;
+- (void)confirmed:(bool)arg1;
 - (id)controlCenterSystemAgent;
 - (void)cooldown;
 - (void)deactivate;
@@ -41,15 +41,15 @@
 - (id)glyphImageForState:(int)arg1;
 - (id)glyphImageForState:(int)arg1 section:(int)arg2;
 - (id)identifier;
-- (BOOL)isEnabled;
-- (BOOL)isInoperative;
-- (BOOL)isRestricted;
-- (BOOL)needsConfirmation;
+- (bool)isEnabled;
+- (bool)isInoperative;
+- (bool)isRestricted;
+- (bool)needsConfirmation;
 - (int)orbBehavior;
 - (id)parentViewController;
 - (void)setDelegate:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setInoperative:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setInoperative:(bool)arg1;
 - (void)setParentViewController:(id)arg1;
 - (int)state;
 - (id)statusUpdate;

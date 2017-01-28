@@ -3,19 +3,19 @@
  */
 
 @interface _DECOperationForWithDbLock : NSOperation {
-    BOOL  _completed;
+    bool  _completed;
     NSObject<OS_dispatch_group> * _group;
-    BOOL  _started;
+    bool  _started;
 }
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)complete;
 - (id)init;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)start;
 - (void)waitForStart;
 

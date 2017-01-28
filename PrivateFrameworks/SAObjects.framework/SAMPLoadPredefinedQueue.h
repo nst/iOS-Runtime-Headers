@@ -6,7 +6,7 @@
 
 @property (nonatomic, copy) NSString *airplayRouteUID;
 @property (nonatomic) int mediaItemType;
-@property (nonatomic) BOOL shouldShuffle;
+@property (nonatomic) bool shouldShuffle;
 @property (nonatomic, copy) NSNumber *startPlaying;
 
 + (id)loadPredefinedQueue;
@@ -16,12 +16,12 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (int)mediaItemType;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAirplayRouteUID:(id)arg1;
 - (void)setMediaItemType:(int)arg1;
-- (void)setShouldShuffle:(BOOL)arg1;
+- (void)setShouldShuffle:(bool)arg1;
 - (void)setStartPlaying:(id)arg1;
-- (BOOL)shouldShuffle;
+- (bool)shouldShuffle;
 - (id)startPlaying;
 
 @end

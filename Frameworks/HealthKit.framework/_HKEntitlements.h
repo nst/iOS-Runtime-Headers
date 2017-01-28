@@ -22,7 +22,7 @@
 - (id)_typesFromIdentifierArray:(id)arg1;
 - (id)applicationIdentifier;
 - (id)entitlementValues;
-- (BOOL)hasEntitlement:(id)arg1;
+- (bool)hasEntitlement:(id)arg1;
 - (id)init;
 - (id)stringForEntitlement:(id)arg1;
 - (id)typesForReadAuthorizationOverride;

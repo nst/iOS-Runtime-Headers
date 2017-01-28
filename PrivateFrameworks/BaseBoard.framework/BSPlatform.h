@@ -4,18 +4,18 @@
 
 @interface BSPlatform : NSObject
 
-@property (getter=isCarrierInstall, nonatomic, readonly) BOOL carrierInstall;
-@property (getter=isDeveloperInstall, nonatomic, readonly) BOOL developerInstall;
+@property (getter=isCarrierInstall, nonatomic, readonly) bool carrierInstall;
+@property (getter=isDeveloperInstall, nonatomic, readonly) bool developerInstall;
 @property (nonatomic, readonly) int deviceClass;
-@property (nonatomic, readonly) BOOL hasGasGauge;
-@property (nonatomic, readonly) BOOL hasOrbCapability;
-@property (nonatomic, readonly) int homeButtonType;
-@property (getter=isInternalInstall, nonatomic, readonly) BOOL internalInstall;
+@property (nonatomic, readonly) bool hasGasGauge;
+@property (nonatomic, readonly) bool hasOrbCapability;
+@property (nonatomic, readonly) long long homeButtonType;
+@property (getter=isInternalInstall, nonatomic, readonly) bool internalInstall;
 @property (nonatomic, readonly, copy) NSString *localizedProductName;
-@property (nonatomic, readonly) float mainScreenOrientation;
+@property (nonatomic, readonly) double mainScreenOrientation;
 @property (nonatomic, readonly) int mainScreenPitch;
-@property (nonatomic, readonly) float mainScreenScale;
-@property (getter=isMultiCore, nonatomic, readonly) BOOL multiCore;
+@property (nonatomic, readonly) double mainScreenScale;
+@property (getter=isMultiCore, nonatomic, readonly) bool multiCore;
 @property (nonatomic, readonly, copy) NSString *operatingSystemName;
 @property (nonatomic, readonly, copy) NSString *productBuildVersion;
 @property (nonatomic, readonly, copy) NSString *productClass;
@@ -28,18 +28,18 @@
 + (id)sharedInstance;
 
 - (int)deviceClass;
-- (BOOL)hasGasGauge;
-- (BOOL)hasOrbCapability;
-- (int)homeButtonType;
+- (bool)hasGasGauge;
+- (bool)hasOrbCapability;
+- (long long)homeButtonType;
 - (id)init;
-- (BOOL)isCarrierInstall;
-- (BOOL)isDeveloperInstall;
-- (BOOL)isInternalInstall;
-- (BOOL)isMultiCore;
+- (bool)isCarrierInstall;
+- (bool)isDeveloperInstall;
+- (bool)isInternalInstall;
+- (bool)isMultiCore;
 - (id)localizedProductName;
-- (float)mainScreenOrientation;
+- (double)mainScreenOrientation;
 - (int)mainScreenPitch;
-- (float)mainScreenScale;
+- (double)mainScreenScale;
 - (id)operatingSystemName;
 - (id)productBuildVersion;
 - (id)productClass;

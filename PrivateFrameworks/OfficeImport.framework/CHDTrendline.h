@@ -10,7 +10,7 @@
     OADGraphicProperties * mGraphicProperties;
     double  mInterceptYAxis;
     CHDTrendlineLabel * mLabel;
-    long  mMovingAveragePeriod;
+    long long  mMovingAveragePeriod;
     EDString * mName;
     int  mPolynomialOrder;
     int  mType;
@@ -29,7 +29,7 @@
 - (bool)isDisplayEquation;
 - (bool)isDisplayRSquaredValue;
 - (id)label;
-- (long)movingAveragePeriod;
+- (long long)movingAveragePeriod;
 - (id)name;
 - (int)polynomialOrder;
 - (void)setBackward:(double)arg1;
@@ -39,7 +39,7 @@
 - (void)setGraphicProperties:(id)arg1;
 - (void)setInterceptYAxis:(double)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMovingAveragePeriod:(long)arg1;
+- (void)setMovingAveragePeriod:(long long)arg1;
 - (void)setName:(id)arg1;
 - (void)setPolynomialOrder:(int)arg1;
 - (void)setType:(int)arg1;

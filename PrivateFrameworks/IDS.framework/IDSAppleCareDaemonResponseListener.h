@@ -3,19 +3,19 @@
  */
 
 @interface IDSAppleCareDaemonResponseListener : NSObject <IDSDaemonListenerProtocol> {
-    id /* block */  _disconnectedBlock;
+    id  _disconnectedBlock;
     IDSDaemonRequestTimer * _requestTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)applecareResponseForRequestID:(id)arg1 withError:(id)arg2;
 - (void)daemonDisconnected;
 - (void)dealloc;
-- (id)initWithDisconnectedBlockAndNoTimeout:(id /* block */)arg1;
+- (id)initWithDisconnectedBlockAndNoTimeout:(id)arg1;
 - (id)initWithRequestTimer:(id)arg1;
 
 @end

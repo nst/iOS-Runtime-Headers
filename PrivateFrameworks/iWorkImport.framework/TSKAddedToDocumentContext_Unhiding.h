@@ -6,6 +6,6 @@
 
 - (id)description;
 - (id)undoContext;
-- (BOOL)wasUnhidden;
+- (bool)wasUnhidden;
 
 @end

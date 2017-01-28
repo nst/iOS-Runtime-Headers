@@ -6,22 +6,22 @@
     struct _MROrigin { } * _origin;
 }
 
-@property (getter=isLocalOrigin, nonatomic, readonly) BOOL localOrigin;
+@property (getter=isLocalOrigin, nonatomic, readonly) bool localOrigin;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) struct _MROrigin { }*origin;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 + (void)beginListeningForOriginNotifications;
 + (void)endListeningForOriginNotifications;
-+ (void)getActiveOriginWithCompletion:(id /* block */)arg1;
-+ (void)getRemoteControlOriginsWithCompletion:(id /* block */)arg1;
++ (void)getActiveOriginWithCompletion:(id)arg1;
++ (void)getRemoteControlOriginsWithCompletion:(id)arg1;
 + (id)localOrigin;
 
 - (void)dealloc;
 - (id)initWithMROrigin:(struct _MROrigin { }*)arg1;
-- (BOOL)isLocalOrigin;
+- (bool)isLocalOrigin;
 - (id)name;
 - (struct _MROrigin { }*)origin;
-- (int)type;
+- (long long)type;
 
 @end

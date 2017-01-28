@@ -5,6 +5,6 @@
 
 @required
 
-- (void)bulletinProvider:(HDFitnessFriendsInvitationBBDataProvider *)arg1 didReceiveActionResponse:(int)arg2 fromContactWithUUID:(NSUUID *)arg3;
+- (void)bulletinProvider:(HDFitnessFriendsInvitationBBDataProvider *)arg1 didReceiveActionResponse:(long long)arg2 fromContactWithUUID:(NSUUID *)arg3;
 
 @end

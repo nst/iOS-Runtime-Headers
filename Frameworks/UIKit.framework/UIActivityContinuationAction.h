@@ -12,12 +12,12 @@
 @property (nonatomic, readonly) NSString *originatingDeviceType;
 @property (nonatomic, readonly) NSData *userActivityData;
 
-- (int)UIActionType;
+- (long long)UIActionType;
 - (id)activityType;
 - (id)activityTypeIdentifier;
 - (id)identifier;
 - (id)initWithSettings:(id)arg1;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)lastUpdateTime;
 - (id)originatingDeviceName;
 - (id)originatingDeviceType;

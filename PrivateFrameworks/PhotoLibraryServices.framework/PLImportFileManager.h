@@ -4,13 +4,13 @@
 
 @interface PLImportFileManager : NSObject
 
-+ (BOOL)isCameraDirectoryFolderName:(id)arg1;
-+ (BOOL)isImportDirectoryFolderName:(id)arg1;
++ (bool)isCameraDirectoryFolderName:(id)arg1;
++ (bool)isImportDirectoryFolderName:(id)arg1;
 
-- (id)_DCIMFolderNameWithNumber:(int)arg1;
+- (id)_DCIMFolderNameWithNumber:(long long)arg1;
 - (id)_dcimDirectory;
 - (id)nextAvailableFilePathInDirectory:(id)arg1 withExtension:(id)arg2;
-- (BOOL)removeUnusedDCIMDirectoryAtPath:(id)arg1;
-- (id)urlForNewDCIMFolderWithFolderNumber:(int*)arg1;
+- (bool)removeUnusedDCIMDirectoryAtPath:(id)arg1;
+- (id)urlForNewDCIMFolderWithFolderNumber:(long long*)arg1;
 
 @end

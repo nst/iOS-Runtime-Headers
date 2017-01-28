@@ -3,21 +3,21 @@
  */
 
 @interface _SYOutputDataItem : NSObject {
-    unsigned int  _bytesSent;
-    id /* block */  _callback;
+    unsigned long long  _bytesSent;
+    id  _callback;
     NSData * _data;
 }
 
-@property (nonatomic) unsigned int bytesSent;
-@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic) unsigned long long bytesSent;
+@property (nonatomic, copy) id callback;
 @property (nonatomic, copy) NSData *data;
 
 - (void).cxx_destruct;
-- (unsigned int)bytesSent;
-- (id /* block */)callback;
+- (unsigned long long)bytesSent;
+- (id)callback;
 - (id)data;
-- (void)setBytesSent:(unsigned int)arg1;
-- (void)setCallback:(id /* block */)arg1;
+- (void)setBytesSent:(unsigned long long)arg1;
+- (void)setCallback:(id)arg1;
 - (void)setData:(id)arg1;
 
 @end

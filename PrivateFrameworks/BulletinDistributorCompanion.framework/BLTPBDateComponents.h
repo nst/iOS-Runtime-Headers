@@ -15,10 +15,10 @@
     int  _weekday;
 }
 
-@property (nonatomic) BOOL hasHour;
-@property (nonatomic) BOOL hasMinute;
-@property (nonatomic) BOOL hasSecond;
-@property (nonatomic) BOOL hasWeekday;
+@property (nonatomic) bool hasHour;
+@property (nonatomic) bool hasMinute;
+@property (nonatomic) bool hasSecond;
+@property (nonatomic) bool hasWeekday;
 @property (nonatomic) int hour;
 @property (nonatomic) int minute;
 @property (nonatomic) int second;
@@ -28,21 +28,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHour;
-- (BOOL)hasMinute;
-- (BOOL)hasSecond;
-- (BOOL)hasWeekday;
-- (unsigned int)hash;
+- (bool)hasHour;
+- (bool)hasMinute;
+- (bool)hasSecond;
+- (bool)hasWeekday;
+- (unsigned long long)hash;
 - (int)hour;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)minute;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)second;
-- (void)setHasHour:(BOOL)arg1;
-- (void)setHasMinute:(BOOL)arg1;
-- (void)setHasSecond:(BOOL)arg1;
-- (void)setHasWeekday:(BOOL)arg1;
+- (void)setHasHour:(bool)arg1;
+- (void)setHasMinute:(bool)arg1;
+- (void)setHasSecond:(bool)arg1;
+- (void)setHasWeekday:(bool)arg1;
 - (void)setHour:(int)arg1;
 - (void)setMinute:(int)arg1;
 - (void)setSecond:(int)arg1;

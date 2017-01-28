@@ -6,7 +6,7 @@
     CKDPShare * _share;
 }
 
-@property (nonatomic, readonly) BOOL hasShare;
+@property (nonatomic, readonly) bool hasShare;
 @property (nonatomic, retain) CKDPShare *share;
 
 - (void).cxx_destruct;
@@ -14,11 +14,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasShare;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasShare;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setShare:(id)arg1;
 - (id)share;
 - (void)writeTo:(id)arg1;

@@ -18,10 +18,10 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)endOffset;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)languageLocale;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEndOffset:(unsigned int)arg1;
 - (void)setLanguageLocale:(id)arg1;
 - (void)setStartOffset:(unsigned int)arg1;

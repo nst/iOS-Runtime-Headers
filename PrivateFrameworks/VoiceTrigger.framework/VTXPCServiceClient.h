@@ -11,7 +11,7 @@
 - (id)_service;
 - (void)clearVoiceTriggerCount;
 - (void)dealloc;
-- (void)enableVoiceTrigger:(BOOL)arg1 withAssertion:(id)arg2;
+- (void)enableVoiceTrigger:(bool)arg1 withAssertion:(id)arg2;
 - (id)getFirstChanceAudioBuffer;
 - (id)getFirstChanceTriggeredDate;
 - (id)getFirstChanceVTEventInfo;
@@ -22,6 +22,6 @@
 - (void)notifyTriggerEventRequest;
 - (void)notifyVoiceTriggeredSiriSessionCancelled;
 - (void)resetAssertions;
-- (void)setPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
+- (void)setPhraseSpotterBypassing:(bool)arg1 timeout:(double)arg2;
 
 @end

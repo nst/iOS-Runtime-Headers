@@ -8,30 +8,30 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_connectionDelegate;
 - (oneway void)aceConnectionWillRetryOnError:(id)arg1;
-- (oneway void)acousticIDRequestDidFinishWithSuccess:(BOOL)arg1;
+- (oneway void)acousticIDRequestDidFinishWithSuccess:(bool)arg1;
 - (oneway void)acousticIDRequestWillStart;
 - (oneway void)audioSessionDidBeginInterruption;
-- (oneway void)audioSessionDidEndInterruption:(BOOL)arg1;
+- (oneway void)audioSessionDidEndInterruption:(bool)arg1;
 - (oneway void)audioSessionIDChanged:(unsigned int)arg1;
 - (oneway void)cacheImage:(id)arg1;
-- (oneway void)getBulletinContext:(id /* block */)arg1;
+- (oneway void)getBulletinContext:(id)arg1;
 - (id)initWithConnection:(id)arg1;
 - (oneway void)invalidateCurrentUserActivity;
 - (oneway void)musicWasDetected;
 - (oneway void)requestDidFailWithError:(id)arg1 requestClass:(id)arg2;
 - (oneway void)requestDidFinish;
-- (oneway void)requestDidReceiveCommand:(id)arg1 reply:(id /* block */)arg2;
+- (oneway void)requestDidReceiveCommand:(id)arg1 reply:(id)arg2;
 - (oneway void)requestRequestedDismissAssistant;
-- (oneway void)requestRequestedOpenApplicationWithBundleID:(id)arg1 URL:(id)arg2 reply:(id /* block */)arg3;
-- (oneway void)requestRequestedOpenURL:(id)arg1 reply:(id /* block */)arg2;
+- (oneway void)requestRequestedOpenApplicationWithBundleID:(id)arg1 URL:(id)arg2 reply:(id)arg3;
+- (oneway void)requestRequestedOpenURL:(id)arg1 reply:(id)arg2;
 - (oneway void)setUserActivityInfo:(id)arg1 webpageURL:(id)arg2;
-- (oneway void)shouldSpeakChanged:(BOOL)arg1;
+- (oneway void)shouldSpeakChanged:(bool)arg1;
 - (oneway void)speechRecognitionDidFail:(id)arg1;
 - (oneway void)speechRecognized:(id)arg1;
 - (oneway void)speechRecognizedAdditionalInterpretation:(id)arg1 refId:(id)arg2;
@@ -44,7 +44,7 @@
 - (oneway void)speechRecordingDidFinishRecognitionUpdateWithError:(id)arg1;
 - (oneway void)speechRecordingDidRecognizePhrases:(id)arg1 utterances:(id)arg2;
 - (oneway void)speechRecordingDidUpdateRecognitionPhrases:(id)arg1 utterances:(id)arg2 refId:(id)arg3;
-- (oneway void)speechRecordingPerformTwoShotPromptWithType:(int)arg1 reply:(id /* block */)arg2;
+- (oneway void)speechRecordingPerformTwoShotPromptWithType:(long long)arg1 reply:(id)arg2;
 - (oneway void)speechRecordingStartpointDetected;
 - (oneway void)speechRecordingWillBeginRecognitionUpdateForTask:(id)arg1;
 - (oneway void)speechRecordingWillBeginWithLevelsSharedMem:(id)arg1;

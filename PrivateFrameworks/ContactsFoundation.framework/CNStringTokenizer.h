@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) struct __CFStringTokenizer { }*tokenizer;
 
 + (id)adjustRanges:(id)arg1 toIncludeNonBreakingCharactersInString:(id)arg2;
-+ (BOOL)isCharacterNonBreaking:(unsigned short)arg1;
++ (bool)isCharacterNonBreaking:(unsigned short)arg1;
 + (id)tokenizeString:(id)arg1;
 
 - (void)dealloc;

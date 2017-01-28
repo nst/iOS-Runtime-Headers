@@ -9,9 +9,9 @@
     NSMutableArray * _cloudPushOperations;
     HMDHomeManager * _homeManager;
     NSMutableArray * _idsMergeOperations;
-    int  _pauseCloudPushLevel;
+    long long  _pauseCloudPushLevel;
     NSObject<OS_dispatch_queue> * _propertyQueue;
-    BOOL  _syncLoopDialogDisplayed;
+    bool  _syncLoopDialogDisplayed;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
@@ -21,13 +21,13 @@
 @property (nonatomic, retain) NSMutableArray *cloudPushOperations;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HMDHomeManager *homeManager;
 @property (nonatomic, retain) NSMutableArray *idsMergeOperations;
-@property (nonatomic) int pauseCloudPushLevel;
+@property (nonatomic) long long pauseCloudPushLevel;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
-@property (getter=wasSyncLoopDialogDisplayed, nonatomic) BOOL syncLoopDialogDisplayed;
+@property (getter=wasSyncLoopDialogDisplayed, nonatomic) bool syncLoopDialogDisplayed;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
@@ -48,7 +48,7 @@
 - (id)initWithClientQueue:(id)arg1 homeManager:(id)arg2;
 - (void)killCloudPushAndResume;
 - (void)pauseCloudPush;
-- (int)pauseCloudPushLevel;
+- (long long)pauseCloudPushLevel;
 - (id)propertyQueue;
 - (void)resetCloudPushTimer;
 - (void)resumeCloudPush;
@@ -57,10 +57,10 @@
 - (void)setCloudPushOperations:(id)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setIdsMergeOperations:(id)arg1;
-- (void)setPauseCloudPushLevel:(int)arg1;
-- (void)setSyncLoopDialogDisplayed:(BOOL)arg1;
+- (void)setPauseCloudPushLevel:(long long)arg1;
+- (void)setSyncLoopDialogDisplayed:(bool)arg1;
 - (void)timerDidFire:(id)arg1;
-- (BOOL)wasSyncLoopDialogDisplayed;
+- (bool)wasSyncLoopDialogDisplayed;
 - (id)workQueue;
 
 @end

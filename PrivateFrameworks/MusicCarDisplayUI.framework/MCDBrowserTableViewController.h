@@ -9,16 +9,15 @@
 @property (nonatomic, retain) NSArray *viewControllers;
 
 - (void).cxx_destruct;
-- (void)_configureCell:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_configureCell:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_limitedUIDidChange;
 - (void)_loadCellIdentifiers;
 - (void)_updateCellOrdering:(id)arg1;
 - (void)dealloc;
-- (id)init;
 - (void)setViewControllers:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)viewControllers;
 - (void)viewDidLoad;
 

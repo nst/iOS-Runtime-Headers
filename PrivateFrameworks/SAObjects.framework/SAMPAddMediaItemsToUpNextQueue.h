@@ -14,7 +14,7 @@
 - (id)groupIdentifier;
 - (id)insertLocation;
 - (id)mediaCollection;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setInsertLocation:(id)arg1;
 - (void)setMediaCollection:(id)arg1;
 

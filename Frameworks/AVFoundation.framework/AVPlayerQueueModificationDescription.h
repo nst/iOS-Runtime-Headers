@@ -5,12 +5,12 @@
 @interface AVPlayerQueueModificationDescription : NSObject {
     AVPlayerItem * _afterItem;
     AVPlayerItem * _item;
-    int  _modificationType;
+    long long  _modificationType;
 }
 
 @property (nonatomic, readonly) AVPlayerItem *afterItem;
 @property (nonatomic, readonly) AVPlayerItem *item;
-@property (nonatomic, readonly) int modificationType;
+@property (nonatomic, readonly) long long modificationType;
 
 + (id)modificationForInsertingItem:(id)arg1 afterItem:(id)arg2;
 + (id)modificationForRemovingItem:(id)arg1;
@@ -18,8 +18,8 @@
 - (id)afterItem;
 - (void)dealloc;
 - (id)init;
-- (id)initWithModificationType:(int)arg1 item:(id)arg2 afterItem:(id)arg3;
+- (id)initWithModificationType:(long long)arg1 item:(id)arg2 afterItem:(id)arg3;
 - (id)item;
-- (int)modificationType;
+- (long long)modificationType;
 
 @end

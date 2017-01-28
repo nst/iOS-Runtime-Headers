@@ -4,7 +4,7 @@
 
 @interface PUWelcomeViewController : UIViewController
 
-+ (void)presentIfNecessaryFromViewController:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)presentIfNecessaryFromViewController:(id)arg1 completionHandler:(id)arg2;
 + (void)resetLastPresentationInfo;
 
 @end

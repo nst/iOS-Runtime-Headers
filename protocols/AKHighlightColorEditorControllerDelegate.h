@@ -12,8 +12,8 @@
 
 @optional
 
-- (BOOL)editorController:(AKHighlightColorEditorController *)arg1 isRightArrowEnabledForAnnotation:(AKAnnotation *)arg2;
-- (BOOL)editorController:(AKHighlightColorEditorController *)arg1 isSharingEnabledForAnnotation:(AKAnnotation *)arg2;
+- (bool)editorController:(AKHighlightColorEditorController *)arg1 isRightArrowEnabledForAnnotation:(AKAnnotation *)arg2;
+- (bool)editorController:(AKHighlightColorEditorController *)arg1 isSharingEnabledForAnnotation:(AKAnnotation *)arg2;
 - (void)editorController:(AKHighlightColorEditorController *)arg1 shareAnnotation:(AKAnnotation *)arg2;
 
 @end

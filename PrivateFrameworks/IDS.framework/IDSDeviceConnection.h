@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly, retain) _IDSDeviceConnection *_internal;
 @property (nonatomic, readonly, retain) NSInputStream *inputStream;
-@property (nonatomic, readonly) unsigned int mtu;
+@property (nonatomic, readonly) unsigned long long mtu;
 @property (nonatomic, readonly, retain) NSOutputStream *outputStream;
 @property (nonatomic, readonly) int socket;
 
@@ -16,13 +16,13 @@
 - (void)close;
 - (void)dealloc;
 - (id)description;
-- (id)initSocketWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3 queue:(id)arg4;
-- (id)initStreamWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3 queue:(id)arg4;
+- (id)initSocketWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id)arg3 queue:(id)arg4;
+- (id)initStreamWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id)arg3 queue:(id)arg4;
 - (id)inputStream;
-- (unsigned int)mtu;
+- (unsigned long long)mtu;
 - (id)outputStream;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (int)socket;
-- (BOOL)updateConnectionWithOptions:(id)arg1 error:(id*)arg2;
+- (bool)updateConnectionWithOptions:(id)arg1 error:(id*)arg2;
 
 @end

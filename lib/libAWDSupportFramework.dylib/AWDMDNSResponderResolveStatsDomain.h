@@ -7,7 +7,7 @@
     NSString * _name;
 }
 
-@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) bool hasName;
 @property (nonatomic, retain) NSMutableArray *hostnames;
 @property (nonatomic, retain) NSString *name;
 
@@ -20,15 +20,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (unsigned int)hash;
-- (id)hostnameAtIndex:(unsigned int)arg1;
+- (bool)hasName;
+- (unsigned long long)hash;
+- (id)hostnameAtIndex:(unsigned long long)arg1;
 - (id)hostnames;
-- (unsigned int)hostnamesCount;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hostnamesCount;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setHostnames:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)writeTo:(id)arg1;

@@ -9,50 +9,50 @@
     NSDictionary * _model;
     NSString * _modelPath;
     MPSmoothingParameters * _smoothingParameters;
-    BOOL  _trained;
+    bool  _trained;
 }
 
 @property (getter=actionLogger, nonatomic, retain) <MPActionLogging> *actionLogger;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSArray *features;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSCountedSet *labelCounts;
 @property (retain) NSDictionary *model;
 @property (retain) NSString *modelPath;
 @property (retain) MPSmoothingParameters *smoothingParameters;
 @property (readonly) Class superclass;
-@property BOOL trained;
+@property bool trained;
 
 + (id)recommenderFromModelPath:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actionLogger;
-- (BOOL)addMessages:(id)arg1;
-- (BOOL)clear;
+- (bool)addMessages:(id)arg1;
+- (bool)clear;
 - (id)computeLikelihoods:(id)arg1;
 - (id)computePriors;
 - (void)encodeWithCoder:(id)arg1;
 - (id)features;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithModelPath:(id)arg1 usingSubject:(BOOL)arg2;
-- (BOOL)isValidTrainingMessage:(id)arg1;
+- (id)initWithModelPath:(id)arg1 usingSubject:(bool)arg2;
+- (bool)isValidTrainingMessage:(id)arg1;
 - (id)labelCounts;
 - (id)model;
 - (id)modelPath;
 - (id)recommendationsForMessage:(id)arg1 error:(id*)arg2;
-- (BOOL)removeMessage:(id)arg1;
+- (bool)removeMessage:(id)arg1;
 - (void)setActionLogger:(id)arg1;
 - (void)setFeatures:(id)arg1;
 - (void)setLabelCounts:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setModelPath:(id)arg1;
 - (void)setSmoothingParameters:(id)arg1;
-- (void)setTrained:(BOOL)arg1;
+- (void)setTrained:(bool)arg1;
 - (id)smoothingParameters;
-- (BOOL)synchronize;
-- (BOOL)train;
-- (BOOL)trained;
+- (bool)synchronize;
+- (bool)train;
+- (bool)trained;
 
 @end

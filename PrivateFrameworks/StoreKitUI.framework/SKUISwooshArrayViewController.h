@@ -4,7 +4,7 @@
 
 @interface SKUISwooshArrayViewController : UIViewController <SKUIMetricsViewController, SKUIProductPageChildViewController, SKUISwooshViewControllerDelegate, UIScrollViewDelegate> {
     SKUIResourceLoader * _artworkLoader;
-    BOOL  _askPermission;
+    bool  _askPermission;
     SKUIClientContext * _clientContext;
     SKUIColorScheme * _colorScheme;
     <SKUIProductPageChildViewControllerDelegate> * _delegate;
@@ -18,13 +18,13 @@
     NSMutableArray * _viewControllers;
 }
 
-@property (nonatomic) BOOL askPermission;
+@property (nonatomic) bool askPermission;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic, retain) SKUIColorScheme *colorScheme;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIProductPageChildViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SKUIProductPageHeaderViewController *headerViewController;
 @property (nonatomic, retain) SKUIMetricsController *metricsController;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
@@ -43,21 +43,21 @@
 - (void)_reloadChildViewControllers;
 - (id)_scrollView;
 - (id)activeMetricsController;
-- (BOOL)askPermission;
+- (bool)askPermission;
 - (id)clientContext;
 - (id)colorScheme;
 - (void)dealloc;
 - (id)delegate;
 - (id)headerViewController;
 - (id)initWithSwooshComponents:(id)arg1;
-- (BOOL)isSkLoaded;
+- (bool)isSkLoaded;
 - (void)loadMissingItemData;
 - (void)loadView;
 - (id)metricsController;
 - (id)operationQueue;
 - (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)setAskPermission:(BOOL)arg1;
+- (void)setAskPermission:(bool)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -65,10 +65,10 @@
 - (void)setMetricsController:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (void)setSwooshComponents:(id)arg1;
-- (void)swoosh:(id)arg1 didSelectCellAtIndex:(int)arg2;
-- (id)swoosh:(id)arg1 imageForCellAtIndex:(int)arg2;
+- (void)swoosh:(id)arg1 didSelectCellAtIndex:(long long)arg2;
+- (id)swoosh:(id)arg1 imageForCellAtIndex:(long long)arg2;
 - (id)swooshComponents;
 - (void)swooshDidSelectSeeAll:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

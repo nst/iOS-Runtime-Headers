@@ -6,18 +6,18 @@
     struct netagent { unsigned char x1[16]; BOOL x2[32]; BOOL x3[32]; BOOL x4[128]; unsigned int x5; unsigned int x6; unsigned char x7[0]; } * _internalNetagent;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (nonatomic, readonly) NSString *agentDescription;
 @property (nonatomic, readonly) NSString *agentDomain;
 @property (nonatomic, readonly) NSString *agentType;
 @property (nonatomic, readonly) NSUUID *agentUUID;
 @property struct netagent { unsigned char x1[16]; BOOL x2[32]; BOOL x3[32]; BOOL x4[128]; unsigned int x5; unsigned int x6; unsigned char x7[0]; }*internalNetagent;
-@property (getter=isKernelActivated, nonatomic, readonly) BOOL kernelActivated;
-@property (getter=isNetworkProvider, nonatomic, readonly) BOOL networkProvider;
+@property (getter=isKernelActivated, nonatomic, readonly) bool kernelActivated;
+@property (getter=isNetworkProvider, nonatomic, readonly) bool networkProvider;
 @property (nonatomic, readonly, copy) NSString *privateDescription;
-@property (getter=isSpecificUseOnly, nonatomic, readonly) BOOL specificUseOnly;
-@property (getter=isUserActivated, nonatomic, readonly) BOOL userActivated;
-@property (getter=isVoluntary, nonatomic, readonly) BOOL voluntary;
+@property (getter=isSpecificUseOnly, nonatomic, readonly) bool specificUseOnly;
+@property (getter=isUserActivated, nonatomic, readonly) bool userActivated;
+@property (getter=isVoluntary, nonatomic, readonly) bool voluntary;
 
 - (id)agentDescription;
 - (id)agentDomain;
@@ -25,16 +25,16 @@
 - (id)agentUUID;
 - (void)dealloc;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (id)descriptionWithIndent:(int)arg1 showFullContent:(bool)arg2;
 - (id)initWithKernelAgent:(const struct netagent { unsigned char x1[16]; BOOL x2[32]; BOOL x3[32]; BOOL x4[128]; unsigned int x5; unsigned int x6; unsigned char x7[0]; }*)arg1;
 - (struct netagent { unsigned char x1[16]; BOOL x2[32]; BOOL x3[32]; BOOL x4[128]; unsigned int x5; unsigned int x6; unsigned char x7[0]; }*)internalNetagent;
-- (BOOL)isActive;
-- (BOOL)isKernelActivated;
-- (BOOL)isNetworkProvider;
-- (BOOL)isNexusProvider;
-- (BOOL)isSpecificUseOnly;
-- (BOOL)isUserActivated;
-- (BOOL)isVoluntary;
+- (bool)isActive;
+- (bool)isKernelActivated;
+- (bool)isNetworkProvider;
+- (bool)isNexusProvider;
+- (bool)isSpecificUseOnly;
+- (bool)isUserActivated;
+- (bool)isVoluntary;
 - (id)privateDescription;
 - (void)setInternalNetagent:(struct netagent { unsigned char x1[16]; BOOL x2[32]; BOOL x3[32]; BOOL x4[128]; unsigned int x5; unsigned int x6; unsigned char x7[0]; }*)arg1;
 

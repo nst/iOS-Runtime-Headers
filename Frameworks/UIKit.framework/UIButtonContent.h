@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSNumber *drawingStroke;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIColor *imageColor;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) bool isEmpty;
 @property (nonatomic, retain) _UIGraphicsLetterpressStyle *letterpressStyle;
 @property (nonatomic, retain) UIColor *shadowColor;
 @property (nonatomic, retain) NSString *title;
@@ -34,7 +34,7 @@
 - (id)image;
 - (id)imageColor;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)letterpressStyle;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setBackground:(id)arg1;

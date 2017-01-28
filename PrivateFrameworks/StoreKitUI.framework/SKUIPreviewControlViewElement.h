@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (long long)itemIdentifier;
 - (id)mediaURLString;
 

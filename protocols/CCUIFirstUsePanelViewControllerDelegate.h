@@ -6,6 +6,6 @@
 @required
 
 - (void)firstUsePanelWasAcknowledged:(CCUIFirstUsePanelViewController *)arg1;
-- (int)layoutStyle;
+- (long long)layoutStyle;
 
 @end

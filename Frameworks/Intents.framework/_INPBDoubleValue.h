@@ -11,8 +11,8 @@
     _INPBValueMetadata * _valueMetadata;
 }
 
-@property (nonatomic) BOOL hasValue;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic) bool hasValue;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic) double value;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
@@ -23,13 +23,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasValue;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasValue;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasValue:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasValue:(bool)arg1;
 - (void)setValue:(double)arg1;
 - (void)setValueMetadata:(id)arg1;
 - (id)unknownFields;

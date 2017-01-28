@@ -4,28 +4,28 @@
 
 @interface HMDSyncOperation : NSObject {
     NSUUID * _identifier;
-    id /* block */  _operationBlock;
-    unsigned int  _operationType;
-    unsigned int  _versionFlags;
+    id  _operationBlock;
+    unsigned long long  _operationType;
+    unsigned long long  _versionFlags;
 }
 
 @property (nonatomic, readonly) NSUUID *identifier;
-@property (nonatomic, copy) id /* block */ operationBlock;
-@property (nonatomic, readonly) unsigned int operationType;
-@property (nonatomic, readonly) unsigned int versionFlags;
+@property (nonatomic, copy) id operationBlock;
+@property (nonatomic, readonly) unsigned long long operationType;
+@property (nonatomic, readonly) unsigned long long versionFlags;
 
-+ (id)cloudForcePushSyncOperationWithVersionFlags:(unsigned int)arg1 block:(id /* block */)arg2;
-+ (id)cloudMergeSyncOperationWithVersionFlags:(unsigned int)arg1 block:(id /* block */)arg2;
-+ (id)cloudPushSyncOperationWithVersionFlags:(unsigned int)arg1 block:(id /* block */)arg2;
-+ (id)idsMergeSyncOperationWithVersionFlags:(unsigned int)arg1 block:(id /* block */)arg2;
++ (id)cloudForcePushSyncOperationWithVersionFlags:(unsigned long long)arg1 block:(id)arg2;
++ (id)cloudMergeSyncOperationWithVersionFlags:(unsigned long long)arg1 block:(id)arg2;
++ (id)cloudPushSyncOperationWithVersionFlags:(unsigned long long)arg1 block:(id)arg2;
++ (id)idsMergeSyncOperationWithVersionFlags:(unsigned long long)arg1 block:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
-- (id)initWithOperationType:(unsigned int)arg1 versionFlags:(unsigned int)arg2 syncBlock:(id /* block */)arg3;
-- (id /* block */)operationBlock;
-- (unsigned int)operationType;
-- (void)setOperationBlock:(id /* block */)arg1;
-- (unsigned int)versionFlags;
+- (id)initWithOperationType:(unsigned long long)arg1 versionFlags:(unsigned long long)arg2 syncBlock:(id)arg3;
+- (id)operationBlock;
+- (unsigned long long)operationType;
+- (void)setOperationBlock:(id)arg1;
+- (unsigned long long)versionFlags;
 
 @end

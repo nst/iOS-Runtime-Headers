@@ -8,12 +8,12 @@
     UIView * _view;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property (readonly) unsigned int hash;
-@property (nonatomic) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } frame;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) struct CGPoint { double x1; double x2; } position;
 @property (nonatomic, retain) NSArray *subviews;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) _UIViewPresentationProxy *superview;
@@ -25,7 +25,7 @@
 - (id)initWithView:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)removeFromSuperview;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)setSubviews:(id)arg1;
 - (void)setSuperview:(id)arg1;
 - (void)setView:(id)arg1;

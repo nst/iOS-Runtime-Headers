@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)endpointConfirmationTimestamp;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setEndpointConfirmationTimestamp:(id)arg1;
 
 @end

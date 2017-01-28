@@ -5,7 +5,7 @@
 @interface W5PingResult : NSObject <NSCopying, NSSecureCoding> {
     NSString * _address;
     double  _avg;
-    int  _count;
+    long long  _count;
     NSString * _interfaceName;
     double  _max;
     double  _min;
@@ -16,7 +16,7 @@
 
 @property (nonatomic, copy) NSString *address;
 @property (nonatomic) double avg;
-@property (nonatomic) int count;
+@property (nonatomic) long long count;
 @property (nonatomic, copy) NSString *interfaceName;
 @property (nonatomic) double max;
 @property (nonatomic) double min;
@@ -24,13 +24,13 @@
 @property (nonatomic) double stddev;
 @property (nonatomic) double timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)address;
 - (double)avg;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)count;
+- (long long)count;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -41,7 +41,7 @@
 - (double)packetLoss;
 - (void)setAddress:(id)arg1;
 - (void)setAvg:(double)arg1;
-- (void)setCount:(int)arg1;
+- (void)setCount:(long long)arg1;
 - (void)setInterfaceName:(id)arg1;
 - (void)setMax:(double)arg1;
 - (void)setMin:(double)arg1;

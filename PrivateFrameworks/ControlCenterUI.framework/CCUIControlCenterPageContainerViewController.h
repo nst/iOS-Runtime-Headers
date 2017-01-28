@@ -6,17 +6,17 @@
     UIViewController<CCUIControlCenterPageContentProviding> * _contentViewController;
     <CCUIControlCenterPageContainerViewControllerDelegate> * _delegate;
     NSMutableSet * _punchOutMaskCachingSuppressionReasons;
-    float  _revealPercentage;
+    double  _revealPercentage;
 }
 
 @property (nonatomic, readonly) UIViewController<CCUIControlCenterPageContentProviding> *contentViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) <CCUIControlCenterPageContainerViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
-@property (nonatomic) float revealPercentage;
-@property (nonatomic, readonly) BOOL shouldSuppressPunchOutMaskCaching;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
+@property (nonatomic) double revealPercentage;
+@property (nonatomic, readonly) bool shouldSuppressPunchOutMaskCaching;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,20 +29,20 @@
 - (void)controlCenterDidFinishTransition;
 - (id)controlCenterSystemAgent;
 - (void)controlCenterWillBeginTransition;
-- (void)controlCenterWillFinishTransitionOpen:(BOOL)arg1 withDuration:(double)arg2;
+- (void)controlCenterWillFinishTransitionOpen:(bool)arg1 withDuration:(double)arg2;
 - (void)controlCenterWillPresent;
 - (id)delegate;
-- (BOOL)dismissModalFullScreenIfNeeded;
+- (bool)dismissModalFullScreenIfNeeded;
 - (void)endSuppressingPunchOutMaskCachingForReason:(id)arg1;
 - (id)initWithContentViewController:(id)arg1 delegate:(id)arg2;
-- (int)layoutStyle;
+- (long long)layoutStyle;
 - (void)loadView;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
-- (float)revealPercentage;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
+- (double)revealPercentage;
 - (void)setDelegate:(id)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setRevealPercentage:(float)arg1;
-- (BOOL)shouldSuppressPunchOutMaskCaching;
+- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setRevealPercentage:(double)arg1;
+- (bool)shouldSuppressPunchOutMaskCaching;
 - (void)viewDidLoad;
 - (void)visibilityPreferenceChangedForContentViewController:(id)arg1;
 

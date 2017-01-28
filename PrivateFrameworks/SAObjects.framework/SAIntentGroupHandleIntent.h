@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)intent;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setIntent:(id)arg1;
 
 @end

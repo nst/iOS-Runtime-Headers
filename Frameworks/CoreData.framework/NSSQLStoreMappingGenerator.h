@@ -13,7 +13,7 @@
 - (id)generateTableName:(id)arg1;
 - (id)init;
 - (id)newGeneratedPropertyName:(id)arg1;
-- (id)newUniqueNameWithBase:(unsigned short*)arg1 withLength:(unsigned int)arg2;
+- (id)newUniqueNameWithBase:(unsigned short*)arg1 withLength:(unsigned long long)arg2;
 - (id)uniqueNameWithBase:(id)arg1;
 
 @end

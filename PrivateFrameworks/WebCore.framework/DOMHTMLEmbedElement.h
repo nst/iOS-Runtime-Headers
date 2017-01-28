@@ -28,6 +28,6 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)showsTapHighlight;
+- (bool)showsTapHighlight;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface TIRevisionHistoryToken : NSObject {
-    BOOL  _accepted;
-    unsigned int  _offset;
+    bool  _accepted;
+    unsigned long long  _offset;
     NSString * _tokenDictionaryString;
     struct TITokenID { 
         unsigned int lexicon_id; 
@@ -16,8 +16,8 @@
     NSString * _userTyping;
 }
 
-@property (getter=isAccepted, nonatomic) BOOL accepted;
-@property (nonatomic) unsigned int offset;
+@property (getter=isAccepted, nonatomic) bool accepted;
+@property (nonatomic) unsigned long long offset;
 @property (nonatomic, copy) NSString *tokenDictionaryString;
 @property (nonatomic) struct TITokenID { unsigned int x1; unsigned int x2; } tokenID;
 @property (nonatomic, copy) NSString *tokenInputString;
@@ -27,10 +27,10 @@
 
 - (void)dealloc;
 - (id)description;
-- (BOOL)isAccepted;
-- (unsigned int)offset;
-- (void)setAccepted:(BOOL)arg1;
-- (void)setOffset:(unsigned int)arg1;
+- (bool)isAccepted;
+- (unsigned long long)offset;
+- (void)setAccepted:(bool)arg1;
+- (void)setOffset:(unsigned long long)arg1;
 - (void)setTokenDictionaryString:(id)arg1;
 - (void)setTokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg1;
 - (void)setTokenInputString:(id)arg1;

@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *sceneIdentifier;
 @property (readonly) Class superclass;
 
@@ -32,6 +32,6 @@
 - (void)sendActions:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (void)updateSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)updateSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id)arg3;
 
 @end

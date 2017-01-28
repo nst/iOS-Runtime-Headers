@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) HMDUser *user;
 
 + (id)removedUserWithUser:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -19,9 +19,9 @@
 - (id)expirationDate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithUser:(id)arg1 expiration:(id)arg2;
-- (BOOL)isEqualToUser:(id)arg1;
-- (BOOL)isEqualToUserID:(id)arg1;
-- (BOOL)isExpired;
+- (bool)isEqualToUser:(id)arg1;
+- (bool)isEqualToUserID:(id)arg1;
+- (bool)isExpired;
 - (id)user;
 
 @end

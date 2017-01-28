@@ -4,9 +4,9 @@
 
 @interface CAMEffectFilterManager : NSObject
 
-+ (id)aggdNameForType:(int)arg1;
-+ (id)ciFilterNameForType:(int)arg1;
-+ (id)displayNameForType:(int)arg1;
-+ (id)newFilterForType:(int)arg1;
++ (id)aggdNameForType:(long long)arg1;
++ (id)ciFilterNameForType:(long long)arg1;
++ (id)displayNameForType:(long long)arg1;
++ (id)newFilterForType:(long long)arg1;
 
 @end

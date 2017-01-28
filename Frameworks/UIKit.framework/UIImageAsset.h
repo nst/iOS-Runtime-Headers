@@ -11,24 +11,24 @@
     }  _assetFlags;
     _UIAssetManager * _assetManager;
     NSString * _assetName;
-    BOOL  _cacheContents;
+    bool  _cacheContents;
     NSBundle * _containingBundle;
-    id /* block */  _creationBlock;
+    id  _creationBlock;
     UITraitCollection * _defaultTraitCollection;
 }
 
 @property (nonatomic, readonly) _UIAssetManager *_assetManager;
 @property (nonatomic, retain) CUINamedLayerStack *_layerStack;
 @property (nonatomic, copy) NSString *assetName;
-@property (nonatomic, copy) id /* block */ creationBlock;
+@property (nonatomic, copy) id creationBlock;
 
-+ (id)_assetGeneratingImagesWithDrawingBlock:(id /* block */)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)_assetGeneratingImagesWithDrawingBlock:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_assetManager;
 - (void)_clearResolvedImageResources;
-- (BOOL)_containsImagesInPath:(id)arg1;
+- (bool)_containsImagesInPath:(id)arg1;
 - (id)_defaultTraitCollection;
 - (void)_disconnectFromAssetManager;
 - (id)_initWithAssetName:(id)arg1 forFilesInBundle:(id)arg2;
@@ -36,19 +36,19 @@
 - (id)_layerStack;
 - (id)_mutableCatalog;
 - (id)_nameForStoringRuntimeRegisteredImagesInMutableCatalog;
-- (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2 cache:(BOOL)arg3;
+- (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2 cache:(bool)arg3;
 - (id)_updateAssetFromBlockGenerationWithTraitCollection:(id)arg1 resolvedCatalogImage:(id)arg2;
 - (id)assetName;
-- (id /* block */)creationBlock;
+- (id)creationBlock;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)imageWithTraitCollection:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)registerImage:(id)arg1 withTraitCollection:(id)arg2;
 - (void)setAssetName:(id)arg1;
-- (void)setCreationBlock:(id /* block */)arg1;
+- (void)setCreationBlock:(id)arg1;
 - (void)set_layerStack:(id)arg1;
 - (void)unregisterImageWithTraitCollection:(id)arg1;
 

@@ -10,8 +10,8 @@
 
 - (void)dealloc;
 - (id)deviceInfo;
-- (unsigned int)encryptionType;
+- (unsigned long long)encryptionType;
 - (id)initWithDeviceInfo:(id)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

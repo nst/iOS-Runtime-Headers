@@ -3,18 +3,18 @@
  */
 
 @interface PXDiagnosticsService : NSObject {
-    BOOL  _canProvideConsoleDescription;
-    BOOL  _canProvideContextualViewController;
-    BOOL  _canProvideSettingsViewController;
+    bool  _canProvideConsoleDescription;
+    bool  _canProvideContextualViewController;
+    bool  _canProvideSettingsViewController;
     NSString * _consoleDescription;
     NSArray * _itemProviders;
     UIViewController * _settingsViewController;
     NSString * _title;
 }
 
-@property (nonatomic, readonly) BOOL canProvideConsoleDescription;
-@property (nonatomic, readonly) BOOL canProvideContextualViewController;
-@property (nonatomic, readonly) BOOL canProvideSettingsViewController;
+@property (nonatomic, readonly) bool canProvideConsoleDescription;
+@property (nonatomic, readonly) bool canProvideContextualViewController;
+@property (nonatomic, readonly) bool canProvideSettingsViewController;
 @property (nonatomic, readonly) NSString *consoleDescription;
 @property (nonatomic, readonly) UIViewController *contextualViewController;
 @property (nonatomic, readonly, copy) NSArray *itemProviders;
@@ -22,9 +22,9 @@
 @property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
-- (BOOL)canProvideConsoleDescription;
-- (BOOL)canProvideContextualViewController;
-- (BOOL)canProvideSettingsViewController;
+- (bool)canProvideConsoleDescription;
+- (bool)canProvideContextualViewController;
+- (bool)canProvideSettingsViewController;
 - (id)consoleDescription;
 - (id)contextualViewController;
 - (id)init;

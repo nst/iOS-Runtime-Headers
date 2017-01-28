@@ -5,7 +5,7 @@
 @interface MRTelevisionNowPlayingState : NSObject {
     NSString * _displayID;
     NSString * _displayName;
-    BOOL  _isPlaying;
+    bool  _isPlaying;
     NSDictionary * _nowPlayingInfo;
     void * _playbackQueue;
     unsigned int  _playbackState;
@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) NSString *displayID;
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic) BOOL isPlaying;
+@property (nonatomic) bool isPlaying;
 @property (nonatomic, retain) NSDictionary *nowPlayingInfo;
 @property (nonatomic) void*playbackQueue;
 @property (nonatomic) unsigned int playbackState;
@@ -24,13 +24,13 @@
 - (void)dealloc;
 - (id)displayID;
 - (id)displayName;
-- (BOOL)isPlaying;
+- (bool)isPlaying;
 - (id)nowPlayingInfo;
 - (void*)playbackQueue;
 - (unsigned int)playbackState;
 - (void)setDisplayID:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setIsPlaying:(BOOL)arg1;
+- (void)setIsPlaying:(bool)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
 - (void)setPlaybackQueue:(void*)arg1;
 - (void)setPlaybackState:(unsigned int)arg1;

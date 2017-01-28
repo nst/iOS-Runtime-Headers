@@ -6,11 +6,11 @@
     UIView * _contentView;
     PSRegion * _currentRegion;
     NSArray * _filteredListContent;
-    BOOL  _hideKeyboardInSearchMode;
+    bool  _hideKeyboardInSearchMode;
     PSLocaleSelector * _localeSelector;
     NSArray * _regionsList;
     UISearchBar * _searchBar;
-    BOOL  _searchMode;
+    bool  _searchMode;
     NSArray * _sections;
     UITableView * _tableView;
 }
@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *filteredListContent;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PSLocaleSelector *localeSelector;
 @property (nonatomic, retain) NSArray *regionsList;
 @property (nonatomic, retain) NSArray *sections;
@@ -34,9 +34,9 @@
 - (void)loadRegions;
 - (void)loadView;
 - (id)localeSelector;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)regionsList;
-- (void)reloadDataAndScrollToCheckedRegionAnimated:(BOOL)arg1;
+- (void)reloadDataAndScrollToCheckedRegionAnimated:(bool)arg1;
 - (void)reloadSections;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
@@ -51,11 +51,11 @@
 - (void)setSections:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)updateChecked:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

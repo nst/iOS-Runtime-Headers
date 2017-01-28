@@ -8,11 +8,11 @@
 
 @property (nonatomic, readonly, copy) PKDSPContext *context;
 
-+ (BOOL)deviceScoringSupported;
++ (bool)deviceScoringSupported;
 
 - (void).cxx_destruct;
 - (id)context;
-- (void)deviceScoreWithNonce:(id)arg1 completion:(id /* block */)arg2;
+- (void)deviceScoreWithNonce:(id)arg1 completion:(id)arg2;
 - (id)init;
 - (id)initWithContext:(id)arg1;
 - (id)scorerWithNonce:(id)arg1;

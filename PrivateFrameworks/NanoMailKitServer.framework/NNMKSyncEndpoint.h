@@ -18,11 +18,11 @@
 - (id)datesForIDSIdentifiersScheduledToBeResent;
 - (void)dequeueIDSIdentifierForResend:(id)arg1;
 - (id)endpointQueue;
-- (void)enqueueIDSIdentifierForResend:(id)arg1 atDate:(id)arg2 silent:(BOOL)arg3;
+- (void)enqueueIDSIdentifierForResend:(id)arg1 atDate:(id)arg2 silent:(bool)arg3;
 - (void)enqueueIDSIdentifiersForResend:(id)arg1;
 - (id)initWithQueue:(id)arg1;
 - (id)lastResendIntervalKeyedByIDSIdentifier;
-- (unsigned int)newResendIntervalForPreviousResendInterval:(unsigned int)arg1 errorCode:(int)arg2;
+- (unsigned long long)newResendIntervalForPreviousResendInterval:(unsigned long long)arg1 errorCode:(long long)arg2;
 - (void)resendIDSIdentifier:(id)arg1;
 - (void)resendReadyIDSIdentifiers;
 - (id)resendingQueue;

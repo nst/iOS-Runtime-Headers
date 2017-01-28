@@ -3,50 +3,50 @@
  */
 
 @interface AMSBTLEPeripheral : NSObject {
-    BOOL  available;
+    bool  available;
     CBCentralManager * centralManager;
-    BOOL  changingState;
-    BOOL  inputAvailable;
+    bool  changingState;
+    bool  inputAvailable;
     double  lastSeen;
     NSString * name;
-    BOOL  online;
-    BOOL  outputAvailable;
+    bool  online;
+    bool  outputAvailable;
     CBPeripheral * peripheral;
     NSString * uuid;
 }
 
-@property (getter=isAvailable) BOOL available;
-@property (getter=isChangingState) BOOL changingState;
-@property BOOL inputAvailable;
+@property (getter=isAvailable) bool available;
+@property (getter=isChangingState) bool changingState;
+@property bool inputAvailable;
 @property double lastSeen;
 @property (retain) NSString *name;
-@property (getter=isOnline) BOOL online;
-@property BOOL outputAvailable;
+@property (getter=isOnline) bool online;
+@property bool outputAvailable;
 @property (readonly) CBPeripheral *peripheral;
 @property (readonly, retain) NSString *uuid;
 
-- (BOOL)canConnect;
-- (BOOL)connect;
+- (bool)canConnect;
+- (bool)connect;
 - (void)dealloc;
-- (BOOL)disconnect;
-- (BOOL)hidden;
+- (bool)disconnect;
+- (bool)hidden;
 - (id)initWithID:(id)arg1 name:(id)arg2 manager:(id)arg3;
-- (BOOL)inputAvailable;
-- (BOOL)isAvailable;
-- (BOOL)isChangingState;
-- (BOOL)isOnline;
+- (bool)inputAvailable;
+- (bool)isAvailable;
+- (bool)isChangingState;
+- (bool)isOnline;
 - (double)lastSeen;
 - (id)name;
-- (BOOL)outputAvailable;
+- (bool)outputAvailable;
 - (id)peripheral;
-- (void)setAvailable:(BOOL)arg1;
-- (void)setChangingState:(BOOL)arg1;
-- (void)setInputAvailable:(BOOL)arg1;
+- (void)setAvailable:(bool)arg1;
+- (void)setChangingState:(bool)arg1;
+- (void)setInputAvailable:(bool)arg1;
 - (void)setLastSeen:(double)arg1;
 - (void)setName:(id)arg1;
-- (void)setOnline:(BOOL)arg1;
-- (void)setOutputAvailable:(BOOL)arg1;
-- (BOOL)updateAvailableStateChanged;
+- (void)setOnline:(bool)arg1;
+- (void)setOutputAvailable:(bool)arg1;
+- (bool)updateAvailableStateChanged;
 - (id)uuid;
 
 @end

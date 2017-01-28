@@ -15,7 +15,7 @@
 + (id)imageWithImage:(id)arg1;
 + (id)imageWithImageData:(id)arg1;
 + (id)imageWithImageName:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_init;

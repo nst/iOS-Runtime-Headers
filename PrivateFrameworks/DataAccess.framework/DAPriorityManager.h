@@ -5,12 +5,12 @@
 @interface DAPriorityManager : NSObject {
     NSMapTable * _clientsToPriorityRequests;
     int  _currentPriority;
-    int  _foregroundDataclasses;
+    long long  _foregroundDataclasses;
 }
 
 @property (nonatomic, retain) NSMapTable *clientsToPriorityRequests;
 @property (nonatomic, readonly) int currentPriority;
-@property (nonatomic) int foregroundDataclasses;
+@property (nonatomic) long long foregroundDataclasses;
 
 + (id)sharedManager;
 + (void)vendPriorityManagers;
@@ -18,18 +18,18 @@
 - (void).cxx_destruct;
 - (void)_SBApplicationStateChanged:(id)arg1;
 - (int)_recalculatePriority;
-- (void)_setForegroundDataclasses:(int)arg1;
+- (void)_setForegroundDataclasses:(long long)arg1;
 - (void)_setNewPriority;
 - (id)appIDsToDataclasses;
-- (void)bumpDataclassesToUIPriority:(int)arg1;
+- (void)bumpDataclassesToUIPriority:(long long)arg1;
 - (id)clientsToPriorityRequests;
 - (int)currentPriority;
 - (void)dealloc;
-- (int)foregroundDataclasses;
+- (long long)foregroundDataclasses;
 - (id)init;
-- (void)requestPriority:(int)arg1 forClient:(id)arg2 dataclasses:(int)arg3;
+- (void)requestPriority:(int)arg1 forClient:(id)arg2 dataclasses:(long long)arg3;
 - (void)setClientsToPriorityRequests:(id)arg1;
-- (void)setForegroundDataclasses:(int)arg1;
+- (void)setForegroundDataclasses:(long long)arg1;
 - (id)stateString;
 
 @end

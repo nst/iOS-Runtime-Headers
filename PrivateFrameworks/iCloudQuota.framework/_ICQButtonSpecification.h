@@ -10,7 +10,7 @@
 
 @property (nonatomic, retain) NSDictionary *linkForBundleIdentifier;
 
-+ (id)buttonSpecificationSampleForLevel:(int)arg1;
++ (id)buttonSpecificationSampleForLevel:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)buttonLink;

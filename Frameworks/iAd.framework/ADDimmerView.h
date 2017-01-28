@@ -4,25 +4,25 @@
 
 @interface ADDimmerView : UIView {
     <ADDimmerViewDelegate> * _delegate;
-    BOOL  _dimmed;
+    bool  _dimmed;
     ADTapGestureRecognizer * _gestureRecognizer;
 }
 
 @property (nonatomic) <ADDimmerViewDelegate> *delegate;
-@property (nonatomic) BOOL dimmed;
-@property (nonatomic, readonly) BOOL enabled;
+@property (nonatomic) bool dimmed;
+@property (nonatomic, readonly) bool enabled;
 @property (nonatomic, retain) ADTapGestureRecognizer *gestureRecognizer;
 
 - (void)_tapRecognized:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)dimmed;
-- (BOOL)enabled;
+- (bool)dimmed;
+- (bool)enabled;
 - (id)gestureRecognizer;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)removeADTapGestureRecognizer;
 - (void)setDelegate:(id)arg1;
-- (void)setDimmed:(BOOL)arg1;
+- (void)setDimmed:(bool)arg1;
 - (void)setGestureRecognizer:(id)arg1;
 
 @end

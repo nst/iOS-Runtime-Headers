@@ -7,7 +7,7 @@
     NSURL * _audioURL;
     int  _contentAdServer;
     NSString * _descriptionForLCD;
-    BOOL  _hasAction;
+    bool  _hasAction;
     NSString * _headlineForLCD;
     NSURL * _logoImageURL;
     double  _minimumIntervalBetweenPresentations;
@@ -16,7 +16,7 @@
     double  _skipThreshold;
     NSURL * _staticImageURL;
     NSDictionary * _transparencyDetails;
-    BOOL  _unbranded;
+    bool  _unbranded;
     NSString * _uniqueIdentifier;
     NSArray * _videoAssets;
 }
@@ -25,7 +25,7 @@
 @property (nonatomic, retain) NSURL *audioURL;
 @property (nonatomic) int contentAdServer;
 @property (nonatomic, copy) NSString *descriptionForLCD;
-@property (nonatomic) BOOL hasAction;
+@property (nonatomic) bool hasAction;
 @property (nonatomic, copy) NSString *headlineForLCD;
 @property (nonatomic, retain) NSURL *logoImageURL;
 @property (nonatomic) double minimumIntervalBetweenPresentations;
@@ -34,11 +34,11 @@
 @property (nonatomic) double skipThreshold;
 @property (nonatomic, retain) NSURL *staticImageURL;
 @property (nonatomic, retain) NSDictionary *transparencyDetails;
-@property (nonatomic) BOOL unbranded;
+@property (nonatomic) bool unbranded;
 @property (nonatomic, copy) NSString *uniqueIdentifier;
 @property (nonatomic, retain) NSArray *videoAssets;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)accessibilityLabel;
 - (id)audioURL;
@@ -47,7 +47,7 @@
 - (id)description;
 - (id)descriptionForLCD;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasAction;
+- (bool)hasAction;
 - (id)headlineForLCD;
 - (id)initWithCoder:(id)arg1;
 - (id)logoImageURL;
@@ -58,7 +58,7 @@
 - (void)setAudioURL:(id)arg1;
 - (void)setContentAdServer:(int)arg1;
 - (void)setDescriptionForLCD:(id)arg1;
-- (void)setHasAction:(BOOL)arg1;
+- (void)setHasAction:(bool)arg1;
 - (void)setHeadlineForLCD:(id)arg1;
 - (void)setLogoImageURL:(id)arg1;
 - (void)setMinimumIntervalBetweenPresentations:(double)arg1;
@@ -67,13 +67,13 @@
 - (void)setSkipThreshold:(double)arg1;
 - (void)setStaticImageURL:(id)arg1;
 - (void)setTransparencyDetails:(id)arg1;
-- (void)setUnbranded:(BOOL)arg1;
+- (void)setUnbranded:(bool)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setVideoAssets:(id)arg1;
 - (double)skipThreshold;
 - (id)staticImageURL;
 - (id)transparencyDetails;
-- (BOOL)unbranded;
+- (bool)unbranded;
 - (id)uniqueIdentifier;
 - (id)videoAssets;
 

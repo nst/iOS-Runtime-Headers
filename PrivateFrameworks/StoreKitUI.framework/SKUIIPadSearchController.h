@@ -11,7 +11,7 @@
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIViewController *parentViewController;
 @property (nonatomic, readonly) SKUISearchFieldController *searchFieldController;
 @property (readonly) Class superclass;
@@ -31,7 +31,7 @@
 - (id)searchFieldController;
 - (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
 - (void)setClientContext:(id)arg1;
-- (void)setNumberOfSearchResults:(int)arg1;
+- (void)setNumberOfSearchResults:(long long)arg1;
 - (void)setSearchFieldPlaceholderText:(id)arg1;
 - (void)setSearchFieldText:(id)arg1;
 

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, retain) NSString *sceneID;
 
 - (void)dealloc;
-- (id)initWithScene:(id)arg1 requests:(id)arg2 expirationInterval:(double)arg3 responseHandler:(id /* block */)arg4;
+- (id)initWithScene:(id)arg1 requests:(id)arg2 expirationInterval:(double)arg3 responseHandler:(id)arg4;
 - (id)sceneID;
 
 @end

@@ -4,32 +4,32 @@
 
 @interface CKBrowserSwitcherScrollBar : UIView {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _contentSize;
-    unsigned int  _numberOfPages;
+    unsigned long long  _numberOfPages;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _scrollOffset;
     UIView * _scrubber;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } contentSize;
-@property (nonatomic) unsigned int numberOfPages;
-@property (nonatomic) struct CGPoint { float x1; float x2; } scrollOffset;
+@property (nonatomic) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic) unsigned long long numberOfPages;
+@property (nonatomic) struct CGPoint { double x1; double x2; } scrollOffset;
 @property (nonatomic, retain) UIView *scrubber;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })contentSize;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })contentSize;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (unsigned int)numberOfPages;
-- (struct CGPoint { float x1; float x2; })scrollOffset;
+- (unsigned long long)numberOfPages;
+- (struct CGPoint { double x1; double x2; })scrollOffset;
 - (id)scrubber;
-- (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNumberOfPages:(unsigned int)arg1;
-- (void)setScrollOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setContentSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNumberOfPages:(unsigned long long)arg1;
+- (void)setScrollOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setScrubber:(id)arg1;
 
 @end

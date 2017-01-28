@@ -4,7 +4,7 @@
 
 @interface BRCUserDefaultsManager : NSObject <NSURLSessionDownloadDelegate> {
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    id /* block */  _configurationPlistDidUpdateBlock;
+    id  _configurationPlistDidUpdateBlock;
     NSOperationQueue * _downloadQueue;
     NSObject<OS_dispatch_queue> * _queue;
     NSDictionary * _serverConfigurationDict;
@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -28,11 +28,11 @@
 - (void)_prepopulateGlobalUserDefaults;
 - (void)_reset;
 - (void)_saveServerConfigurationDictionaryToDB:(id)arg1;
-- (void)_setServerConfigurationURL:(id)arg1 whenLoaded:(id /* block */)arg2;
+- (void)_setServerConfigurationURL:(id)arg1 whenLoaded:(id)arg2;
 - (id)defaultsForAppLibraryIdentifier:(id)arg1;
 - (id)defaultsForAppLibraryName:(id)arg1;
 - (id)init;
 - (void)reset;
-- (void)setServerConfigurationURL:(id)arg1 whenLoaded:(id /* block */)arg2;
+- (void)setServerConfigurationURL:(id)arg1 whenLoaded:(id)arg2;
 
 @end

@@ -14,11 +14,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)typeIdentifier;
 

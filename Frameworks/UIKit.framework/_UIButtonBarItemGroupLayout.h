@@ -9,7 +9,7 @@
     UILayoutGuide * _groupSizeGuide;
     NSMapTable * _itemLayoutMap;
     NSMutableArray * _itemLayouts;
-    id /* block */  _itemViewGenerator;
+    id  _itemViewGenerator;
     _UIButtonBarLayout * _representativeLayout;
     bool  _useGroupSizing;
 }
@@ -17,7 +17,7 @@
 @property (nonatomic) bool compact;
 @property (nonatomic, readonly) UIBarButtonItemGroup *group;
 @property (nonatomic, readonly) UILayoutGuide *groupSizeGuide;
-@property (nonatomic, copy) id /* block */ itemViewGenerator;
+@property (nonatomic, copy) id itemViewGenerator;
 @property (nonatomic) bool useGroupSizing;
 
 - (void).cxx_destruct;
@@ -29,7 +29,7 @@
 - (bool)_isGroup;
 - (bool)_isSpace;
 - (id)_itemLayouts;
-- (void)_iterateConfiguredLayouts:(id /* block */)arg1;
+- (void)_iterateConfiguredLayouts:(id)arg1;
 - (id)_newLayoutForBarButtonItem:(id)arg1 useGroupSizing:(bool)arg2;
 - (id)_representativeLayout;
 - (void)_updateGroupSizing;
@@ -39,12 +39,12 @@
 - (id)groupSizeGuide;
 - (id)initWithLayoutMetrics:(id)arg1;
 - (id)initWithLayoutMetrics:(id)arg1 barButtonItemGroup:(id)arg2;
-- (id /* block */)itemViewGenerator;
+- (id)itemViewGenerator;
 - (id)layoutForBarButtonItem:(id)arg1;
 - (id)layoutsForSpacerItem:(id)arg1;
-- (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
+- (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (void)setCompact:(bool)arg1;
-- (void)setItemViewGenerator:(id /* block */)arg1;
+- (void)setItemViewGenerator:(id)arg1;
 - (void)setUseGroupSizing:(bool)arg1;
 - (bool)useGroupSizing;
 

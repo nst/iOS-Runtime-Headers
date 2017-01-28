@@ -4,23 +4,23 @@
 
 @interface HUContactManager : NSObject {
     NSArray * _allPeople;
-    float  _monogramDiameter;
+    double  _monogramDiameter;
     ABMonogrammer * _monogrammer;
 }
 
 @property (nonatomic, retain) NSArray *allPeople;
-@property (nonatomic) float monogramDiameter;
+@property (nonatomic) double monogramDiameter;
 @property (nonatomic, retain) ABMonogrammer *monogrammer;
 
 + (id)sharedManager;
 
 - (void).cxx_destruct;
 - (id)allPeople;
-- (float)monogramDiameter;
+- (double)monogramDiameter;
 - (id)monogrammer;
 - (void)setAllPeople:(id)arg1;
-- (void)setMonogramDiameter:(float)arg1;
+- (void)setMonogramDiameter:(double)arg1;
 - (void)setMonogrammer:(id)arg1;
-- (id)userDataFromEmail:(id)arg1 monogramDiameter:(float)arg2;
+- (id)userDataFromEmail:(id)arg1 monogramDiameter:(double)arg2;
 
 @end

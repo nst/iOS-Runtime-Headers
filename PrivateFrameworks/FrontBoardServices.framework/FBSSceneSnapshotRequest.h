@@ -4,7 +4,7 @@
 
 @interface FBSSceneSnapshotRequest : NSObject <BSXPCCoding> {
     <FBSSceneSnapshotRequestDelegate> * _delegate;
-    BOOL  _handled;
+    bool  _handled;
     NSString * _sceneID;
     FBSSceneSettings * _settings;
 }
@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSSceneSnapshotRequestDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *sceneID;
 @property (nonatomic, readonly, copy) FBSSceneSettings *settings;
 @property (readonly) Class superclass;
@@ -25,7 +25,7 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithSettings:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)performSnapshotWithContext:(id)arg1;
+- (bool)performSnapshotWithContext:(id)arg1;
 - (id)sceneID;
 - (void)setDelegate:(id)arg1;
 - (void)setSceneID:(id)arg1;

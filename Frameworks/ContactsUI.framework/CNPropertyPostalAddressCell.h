@@ -4,25 +4,26 @@
 
 @interface CNPropertyPostalAddressCell : CNPropertySimpleTransportCell {
     UIImageView * _mapImageView;
-    BOOL  _shouldUseMapTiles;
+    bool  _shouldUseMapTiles;
 }
 
 @property (nonatomic, retain) UIImageView *mapImageView;
-@property (nonatomic) BOOL shouldUseMapTiles;
+@property (nonatomic) bool shouldUseMapTiles;
 
 + (id)defaultMapImage;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)mapImageView;
 - (void)mapSnapshotWithPlacemark:(id)arg1;
 - (void)prepareForReuse;
 - (void)setMapImage:(id)arg1;
 - (void)setMapImageView:(id)arg1;
 - (void)setProperty:(id)arg1;
-- (void)setShouldUseMapTiles:(BOOL)arg1;
-- (BOOL)shouldUseMapTiles;
+- (void)setShouldUseMapTiles:(bool)arg1;
+- (bool)shouldUseMapTiles;
+- (bool)supportsTintColorValue;
 - (void)tapGesture:(id)arg1;
 - (id)variableConstraints;
 

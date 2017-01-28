@@ -12,17 +12,17 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
-- (void)_executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(id)arg4;
 - (void)addMessageFilter:(id)arg1;
-- (void)executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(id)arg4;
 - (id)filters;
 - (id)init;
 - (id)messageFilters;
 - (void)removeMessageFilter:(id)arg1;
-- (void)resetConfiguration:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)resetConfiguration:(id)arg1 completionHandler:(id)arg2;
 - (void)setMessageFilters:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (BOOL)shouldCloudSyncData;
+- (bool)shouldCloudSyncData;
 - (id)workQueue;
 
 @end

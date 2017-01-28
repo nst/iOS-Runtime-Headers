@@ -5,13 +5,13 @@
 @interface _KSTextReplacementManager : NSObject <_KSTextReplacementStoreProtocol> {
     _KSTextReplacementCKStore * _ckStore;
     <_KSMigrationDelegate> * _delegate;
-    BOOL  _deviceDidMigrateOnCloud;
-    BOOL  _didCheckMigrationOnCloud;
-    BOOL  _didMigrateForCurrentAccount;
+    bool  _deviceDidMigrateOnCloud;
+    bool  _didCheckMigrationOnCloud;
+    bool  _didMigrateForCurrentAccount;
     NSString * _directoryPath;
     _KSTextReplacementLegacyStore * _legacyStore;
     NSObject<OS_dispatch_queue> * _migrationQueue;
-    BOOL  _pendingMigration;
+    bool  _pendingMigration;
     NSObject<_KSTextReplacementStoreProtocol> * _textReplacementStore;
 }
 
@@ -19,54 +19,55 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_KSMigrationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL deviceDidMigrateOnCloud;
-@property (nonatomic) BOOL didCheckMigrationOnCloud;
-@property (nonatomic) BOOL didMigrateForCurrentAccount;
+@property (nonatomic) bool deviceDidMigrateOnCloud;
+@property (nonatomic) bool didCheckMigrationOnCloud;
+@property (nonatomic) bool didMigrateForCurrentAccount;
 @property (nonatomic, copy) NSString *directoryPath;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _KSTextReplacementLegacyStore *legacyStore;
-@property (nonatomic) BOOL pendingMigration;
+@property (nonatomic) bool pendingMigration;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<_KSTextReplacementStoreProtocol> *textReplacementStore;
 
-+ (id)textReplacementStoreWithTestDirectory:(id)arg1 withDelegate:(id)arg2 forceMigration:(BOOL)arg3 forceCloudKitSync:(BOOL)arg4;
++ (id)textReplacementStoreWithTestDirectory:(id)arg1 withDelegate:(id)arg2 forceMigration:(bool)arg3 forceCloudKitSync:(bool)arg4;
 
 - (void).cxx_destruct;
-- (void)_migrateEntriesSinceDate:(id)arg1 repeatCount:(unsigned int)arg2;
+- (void)_migrateEntriesSinceDate:(id)arg1 repeatCount:(unsigned long long)arg2;
 - (void)accountDidChange:(id)arg1;
 - (void)checkForMigration;
 - (id)ckStore;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)deviceDidMigrate;
-- (BOOL)deviceDidMigrateOnCloud;
-- (BOOL)didCheckMigrationOnCloud;
-- (BOOL)didMigrateForCurrentAccount;
+- (bool)deviceDidMigrate;
+- (bool)deviceDidMigrateOnCloud;
+- (bool)didCheckMigrationOnCloud;
+- (bool)didMigrateForCurrentAccount;
 - (id)directoryPath;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)initWithDirectoryPath:(id)arg1;
-- (id)initWithDirectoryPath:(id)arg1 forceMigration:(BOOL)arg2 forceCloudKitSync:(BOOL)arg3;
+- (id)initWithDirectoryPath:(id)arg1 forceMigration:(bool)arg2 forceCloudKitSync:(bool)arg3;
 - (id)legacyStore;
 - (void)migrateLegacyStore;
-- (void)migrateLocallyCheckCompatibility:(BOOL)arg1;
+- (void)migrateLocallyCheckCompatibility:(bool)arg1;
 - (double)minimumUptimeRemaining;
 - (void)notifyTextReplacementDidChange;
-- (BOOL)pendingMigration;
+- (bool)pendingMigration;
 - (void)pullMigrationSettings;
 - (void)pushAllLocalRecordsOnceIfNeeded;
-- (void)requestSyncWithCompletionBlock:(id /* block */)arg1;
+- (void)recordSyncStatus;
+- (void)requestSyncWithCompletionBlock:(id)arg1;
 - (void)resetMigrationState;
 - (void)respondToMigrationCompletion;
 - (void)setCkStore:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDeviceDidMigrateOnCloud:(BOOL)arg1;
-- (void)setDidCheckMigrationOnCloud:(BOOL)arg1;
-- (void)setDidMigrateForCurrentAccount:(BOOL)arg1;
+- (void)setDeviceDidMigrateOnCloud:(bool)arg1;
+- (void)setDidCheckMigrationOnCloud:(bool)arg1;
+- (void)setDidMigrateForCurrentAccount:(bool)arg1;
 - (void)setDirectoryPath:(id)arg1;
 - (void)setLegacyStore:(id)arg1;
-- (void)setPendingMigration:(BOOL)arg1;
+- (void)setPendingMigration:(bool)arg1;
 - (void)setTextReplacementStore:(id)arg1;
-- (BOOL)shouldMigrateToCloudKit;
+- (bool)shouldMigrateToCloudKit;
 - (id)textReplacementStore;
 
 @end

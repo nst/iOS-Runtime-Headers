@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <_UIIVCInterface> *forwardingInterface;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <_UIIVCResponseDelegate> *responseDelegate;
 @property (readonly) Class superclass;
 
@@ -26,6 +26,6 @@
 - (id)responseDelegate;
 - (void)setForwardingInterface:(id)arg1;
 - (void)setResponseDelegate:(id)arg1;
-- (void)syncToKeyboardState:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)syncToKeyboardState:(id)arg1 completionHandler:(id)arg2;
 
 @end

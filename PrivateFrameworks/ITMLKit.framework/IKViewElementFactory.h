@@ -3,29 +3,33 @@
  */
 
 @interface IKViewElementFactory : NSObject {
+    IKViewElementRegistry * _elementRegistry;
     struct { 
         unsigned int sparse : 1; 
         unsigned int parsingUpdatedTree : 1; 
         unsigned int parsingReorderedSiblings : 1; 
+        unsigned int parsingUpdatedData : 1; 
     }  _parsingFlags;
     IKViewElementStyleFactory * _styleFactory;
 }
 
-@property (getter=isSparse, nonatomic) BOOL sparse;
+@property (getter=isSparse, nonatomic) bool sparse;
 @property (nonatomic, retain) IKViewElementStyleFactory *styleFactory;
 
 + (Class)elementClassByTagName:(id)arg1;
-+ (unsigned int)elementTypeByTagName:(id)arg1;
-+ (id)elementsForDocumentElement:(id)arg1 sparse:(BOOL)arg2 styleFactory:(id*)arg3;
++ (id)elementsForDocumentElement:(id)arg1 sparse:(bool)arg2 styleFactory:(id*)arg3;
 + (void)initialize;
-+ (BOOL)isDependentByTagName:(id)arg1;
-+ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned int)arg3;
-+ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned int)arg3 dependent:(BOOL)arg4;
++ (bool)isDependentByTagName:(id)arg1;
++ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3;
++ (void)registerClass:(Class)arg1 forElementName:(id)arg2 elementType:(unsigned long long)arg3 dependent:(bool)arg4;
 
 - (void).cxx_destruct;
+- (Class)elementClassByTagName:(id)arg1;
 - (id)elementForDOMElement:(id)arg1 parent:(id)arg2;
-- (BOOL)isSparse;
-- (void)setSparse:(BOOL)arg1;
+- (unsigned long long)elementTypeByTagName:(id)arg1;
+- (id)initWithElementRegistry:(id)arg1;
+- (bool)isSparse;
+- (void)setSparse:(bool)arg1;
 - (void)setStyleFactory:(id)arg1;
 - (id)styleFactory;
 

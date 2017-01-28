@@ -10,9 +10,9 @@
 
 @property (nonatomic, copy) NSDate *lastCheckInAttemptDate;
 @property (nonatomic, copy) NSDate *lastCheckInSuccessDate;
-@property (nonatomic) int shouldDisablePETs;
-@property (nonatomic) int shouldDisablePiggybacking;
-@property (nonatomic) int shouldFakeAuthSuccess;
+@property (nonatomic) long long shouldDisablePETs;
+@property (nonatomic) long long shouldDisablePiggybacking;
+@property (nonatomic) long long shouldFakeAuthSuccess;
 
 + (id)sharedConfiguration;
 
@@ -25,11 +25,11 @@
 - (void)setConfigurationValue:(id)arg1 forKey:(id)arg2;
 - (void)setLastCheckInAttemptDate:(id)arg1;
 - (void)setLastCheckInSuccessDate:(id)arg1;
-- (void)setShouldDisablePETs:(int)arg1;
-- (void)setShouldDisablePiggybacking:(int)arg1;
-- (void)setShouldFakeAuthSuccess:(int)arg1;
-- (int)shouldDisablePETs;
-- (int)shouldDisablePiggybacking;
-- (int)shouldFakeAuthSuccess;
+- (void)setShouldDisablePETs:(long long)arg1;
+- (void)setShouldDisablePiggybacking:(long long)arg1;
+- (void)setShouldFakeAuthSuccess:(long long)arg1;
+- (long long)shouldDisablePETs;
+- (long long)shouldDisablePiggybacking;
+- (long long)shouldFakeAuthSuccess;
 
 @end

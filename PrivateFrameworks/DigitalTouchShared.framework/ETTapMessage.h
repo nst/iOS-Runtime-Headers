@@ -14,7 +14,7 @@
         } __end_cap_; 
     }  _points;
     SKScene * _preVisualizeScene;
-    unsigned int  _soundIndex;
+    unsigned long long  _soundIndex;
     NSTimer * _soundTimer;
     struct vector<double, std::__1::allocator<double> > { 
         double *__begin_; 
@@ -25,25 +25,25 @@
     }  _times;
 }
 
-@property (nonatomic, readonly) unsigned int tapCount;
+@property (nonatomic, readonly) unsigned long long tapCount;
 
 + (unsigned short)messageType;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_animateCircleInner0:(float)arg1 inner1:(float)arg2 outer0:(float)arg3 outer1:(float)arg4 duration:(float)arg5;
-- (void)_displayInScene:(id)arg1 point:(struct CGPoint { float x1; float x2; })arg2 color:(id)arg3 filled:(BOOL)arg4 withWisp:(BOOL)arg5;
-- (void)addTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2 color:(id)arg3;
+- (id)_animateCircleInner0:(double)arg1 inner1:(double)arg2 outer0:(double)arg3 outer1:(double)arg4 duration:(double)arg5;
+- (void)_displayInScene:(id)arg1 point:(struct CGPoint { double x1; double x2; })arg2 color:(id)arg3 filled:(bool)arg4 withWisp:(bool)arg5;
+- (void)addTapAtPoint:(struct CGPoint { double x1; double x2; })arg1 time:(double)arg2 color:(id)arg3;
 - (id)archiveData;
 - (void)displayInScene:(id)arg1;
 - (id)init;
 - (id)initWithArchiveData:(id)arg1;
 - (double)messageDuration;
 - (id)messageTypeAsString;
-- (struct CGPoint { float x1; float x2; })pointAtIndex:(unsigned int)arg1;
+- (struct CGPoint { double x1; double x2; })pointAtIndex:(unsigned long long)arg1;
 - (void)preVisualizeInScene:(id)arg1;
-- (BOOL)reachedSizeLimit;
-- (unsigned int)tapCount;
-- (double)timeDeltaAtIndex:(unsigned int)arg1;
+- (bool)reachedSizeLimit;
+- (unsigned long long)tapCount;
+- (double)timeDeltaAtIndex:(unsigned long long)arg1;
 
 @end

@@ -3,30 +3,30 @@
  */
 
 @interface PSUITouchIDPasscodeController : PSUIPasscodeLockController <BiometricKitDelegate, BiometricKitUIEnrollResultDelegate, UIPopoverControllerDelegate> {
-    BOOL  _currentlyEnablingTouchIDForPurchases;
+    bool  _currentlyEnablingTouchIDForPurchases;
     PSEnrollContainerViewController * _enrollController;
     UIPopoverController * _enrollmentPopoverController;
     BiometricKit * _highlightMatcher;
     NSObject<OS_dispatch_queue> * _highlightQueue;
-    id /* block */  _modalFlowCancelCompletion;
-    id /* block */  _modalFlowSuccessCompletion;
-    int  _storeState;
+    id  _modalFlowCancelCompletion;
+    id  _modalFlowSuccessCompletion;
+    long long  _storeState;
 }
 
-@property (nonatomic) BOOL currentlyEnablingTouchIDForPurchases;
+@property (nonatomic) bool currentlyEnablingTouchIDForPurchases;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) PSEnrollContainerViewController *enrollController;
 @property (nonatomic, retain) UIPopoverController *enrollmentPopoverController;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BiometricKit *highlightMatcher;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *highlightQueue;
-@property (nonatomic, copy) id /* block */ modalFlowCancelCompletion;
-@property (nonatomic, copy) id /* block */ modalFlowSuccessCompletion;
-@property (nonatomic) int storeState;
+@property (nonatomic, copy) id modalFlowCancelCompletion;
+@property (nonatomic, copy) id modalFlowSuccessCompletion;
+@property (nonatomic) long long storeState;
 @property (readonly) Class superclass;
 
-+ (BOOL)_shouldPresentEnrollmentInPopover;
++ (bool)_shouldPresentEnrollmentInPopover;
 
 - (void).cxx_destruct;
 - (id)_authorizationToken;
@@ -38,11 +38,11 @@
 - (void)_presentPopoverForContentViewController:(id)arg1;
 - (void)_setupMatching;
 - (void)addEnrollment:(id)arg1;
-- (void)addEnrollmentOrCreatePasscodeIfNecessaryWithCompletion:(id /* block */)arg1;
+- (void)addEnrollmentOrCreatePasscodeIfNecessaryWithCompletion:(id)arg1;
 - (void)backgrounded:(id)arg1;
 - (void)cancelModalFlow;
 - (void)completeModalFlow;
-- (BOOL)currentlyEnablingTouchIDForPurchases;
+- (bool)currentlyEnablingTouchIDForPurchases;
 - (void)dealloc;
 - (void)devicePINController:(id)arg1 didAcceptSetPIN:(id)arg2;
 - (void)didCancelEnteringPIN;
@@ -52,45 +52,45 @@
 - (void)enrollmentCompletedForIdentity:(id)arg1;
 - (id)enrollmentPopoverController;
 - (id)fingerprintSpecifiers;
-- (BOOL)hasPasscodeAndFingerprints;
+- (bool)hasPasscodeAndFingerprints;
 - (void)hideCancelButton;
 - (void)highlightFingerprintSpecifier:(id)arg1;
 - (id)highlightMatcher;
 - (id)highlightQueue;
 - (id)init;
-- (BOOL)isEnrollmentAvailable;
-- (BOOL)isFingerprintEditingAllowed;
+- (bool)isEnrollmentAvailable;
+- (bool)isFingerprintEditingAllowed;
 - (id)isTouchIDForPurchasesEnabled:(id)arg1;
-- (BOOL)isTouchIDForPurchasesRestricted;
+- (bool)isTouchIDForPurchasesRestricted;
 - (id)isTouchIDForStockholmEnabled:(id)arg1;
-- (BOOL)isTouchIDForStockholmRestricted;
+- (bool)isTouchIDForStockholmRestricted;
 - (id)isTouchIDUnlockEnabled:(id)arg1;
-- (BOOL)isTouchIDUnlockRestricted;
+- (bool)isTouchIDUnlockRestricted;
 - (void)matchResult:(id)arg1;
-- (id /* block */)modalFlowCancelCompletion;
-- (id /* block */)modalFlowSuccessCompletion;
-- (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
+- (id)modalFlowCancelCompletion;
+- (id)modalFlowSuccessCompletion;
+- (bool)popoverControllerShouldDismissPopover:(id)arg1;
 - (void)presentPasscodePaneFromSpecifier:(id)arg1;
 - (void)pushPasscodePane;
-- (void)setCurrentlyEnablingTouchIDForPurchases:(BOOL)arg1;
+- (void)setCurrentlyEnablingTouchIDForPurchases:(bool)arg1;
 - (void)setEnrollController:(id)arg1;
 - (void)setEnrollmentPopoverController:(id)arg1;
 - (void)setHighlightMatcher:(id)arg1;
 - (void)setHighlightQueue:(id)arg1;
-- (void)setModalFlowCancelCompletion:(id /* block */)arg1;
-- (void)setModalFlowSuccessCompletion:(id /* block */)arg1;
-- (void)setStoreState:(int)arg1;
+- (void)setModalFlowCancelCompletion:(id)arg1;
+- (void)setModalFlowSuccessCompletion:(id)arg1;
+- (void)setStoreState:(long long)arg1;
 - (void)setTouchIDForPurchasesEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setTouchIDForStockholmEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setTouchIDUnlockEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setupTouchIDLogoHeader;
-- (BOOL)shouldRestrictFeaturesRequiringEnrollment;
+- (bool)shouldRestrictFeaturesRequiringEnrollment;
 - (id)specifiers;
 - (void)statusMessage:(unsigned int)arg1;
-- (int)storeState;
-- (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
-- (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (long long)storeState;
+- (bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
+- (bool)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (id)touchIDSwitchSpecifiers;
 - (void)unhighlightFingerprintSpecifiersAfterDelay:(double)arg1;
 - (void)updateAddFingerprintSpecifier;
@@ -99,8 +99,8 @@
 - (void)updateTouchIDForPurchasesSpecifier;
 - (void)updateTouchIDForStockholmSpecifier;
 - (void)updateTouchIDUnlockSpecifier;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

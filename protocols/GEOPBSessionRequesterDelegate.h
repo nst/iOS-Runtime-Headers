@@ -9,6 +9,6 @@
 - (void)requester:(GEOPBSessionRequester *)arg1 didReceiveResponse:(PBCodable *)arg2 forRequest:(PBRequest *)arg3;
 - (void)requesterDidCancel:(GEOPBSessionRequester *)arg1;
 - (void)requesterDidFinish:(GEOPBSessionRequester *)arg1;
-- (void)requesterWillSendRequestForEstablishedConnection:(void *)arg1 callback:(void *)arg2; // needs 2 arg types, found 6: GEOPBSessionRequester *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)requesterWillSendRequestForEstablishedConnection:(void *)arg1 callback:(void *)arg2; // needs 2 arg types, found 6: GEOPBSessionRequester *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 
 @end

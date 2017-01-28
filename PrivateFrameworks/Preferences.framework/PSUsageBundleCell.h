@@ -4,7 +4,7 @@
 
 @interface PSUsageBundleCell : PSTableCell
 
-- (BOOL)canReload;
+- (bool)canReload;
 - (void)layoutSubviews;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 

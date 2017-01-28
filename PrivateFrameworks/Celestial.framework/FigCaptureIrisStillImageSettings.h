@@ -14,7 +14,7 @@
 @property (nonatomic, copy) FigCaptureMovieFileRecordingSettings *movieRecordingSettings;
 @property (nonatomic, copy) NSURL *movieURLForOriginalImage;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

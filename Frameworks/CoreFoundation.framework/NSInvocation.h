@@ -11,7 +11,7 @@
     id  _signature;
 }
 
-@property (readonly) BOOL argumentsRetained;
+@property (readonly) bool argumentsRetained;
 @property (readonly, retain) NSMethodSignature *methodSignature;
 @property SEL selector;
 @property id target;
@@ -22,10 +22,10 @@
 + (id)invocationWithMethodSignature:(id)arg1;
 
 - (void)_addAttachedObject:(id)arg1;
-- (BOOL)argumentsRetained;
+- (bool)argumentsRetained;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (void)getArgument:(void*)arg1 atIndex:(int)arg2;
+- (void)getArgument:(void*)arg1 atIndex:(long long)arg2;
 - (void)getReturnValue:(void*)arg1;
 - (id)init;
 - (void)invoke;
@@ -35,7 +35,7 @@
 - (id)methodSignature;
 - (void)retainArguments;
 - (SEL)selector;
-- (void)setArgument:(void*)arg1 atIndex:(int)arg2;
+- (void)setArgument:(void*)arg1 atIndex:(long long)arg2;
 - (void)setReturnValue:(void*)arg1;
 - (void)setSelector:(SEL)arg1;
 - (void)setTarget:(id)arg1;
@@ -43,7 +43,7 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-- (BOOL)_hasBlockArgument;
+- (bool)_hasBlockArgument;
 - (id)debugDescription;
 - (void)setUserInfo:(id)arg1;
 - (id)userInfo;
@@ -51,19 +51,19 @@
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 + (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2;
-+ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(void*)arg3;
++ (id)_mapkit_invocationWithSelector:(SEL)arg1 target:(id)arg2 arguments:(char *)arg3;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)_gkInvocationWithBlock:(id)arg1;
 
-- (void)__gkPrepareForFakeCallbackWithNoData:(BOOL)arg1 orError:(id)arg2;
+- (void)__gkPrepareForFakeCallbackWithNoData:(bool)arg1 orError:(id)arg2;
 - (void)_gkCallbackWithError:(id)arg1 queue:(id)arg2;
-- (void)_gkClearArgumentAtIndex:(unsigned int)arg1;
+- (void)_gkClearArgumentAtIndex:(unsigned long long)arg1;
 - (void)_gkClearCopiedArguments;
 - (void)_gkClearTarget;
 - (void)_gkCopyArguments;
-- (BOOL)_gkHasReplyBlock;
+- (bool)_gkHasReplyBlock;
 - (void)_gkInvokeOnce;
 - (void)_gkInvokeOnceWithTarget:(id)arg1;
 - (void)_gkPrepareForCallWithError:(id)arg1;
@@ -72,7 +72,7 @@
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
-- (BOOL)wantsReturnValue;
+- (bool)wantsReturnValue;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
@@ -80,12 +80,17 @@
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 
-- (BOOL)mf_shouldLogInvocation;
+- (bool)mf_shouldLogInvocation;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (void)tsu_executeBlock:(id /* block */)arg1;
-+ (id)tsu_invocationWithBlock:(id /* block */)arg1;
++ (void)tsu_executeBlock:(id)arg1;
++ (id)tsu_invocationWithBlock:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TSUtility.framework/TSUtility
+
++ (void)executeBlock:(id)arg1;
++ (id)invocationWithBlock:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
@@ -93,7 +98,7 @@
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
-+ (void)tsu_executeBlock:(id /* block */)arg1;
-+ (id)tsu_invocationWithBlock:(id /* block */)arg1;
++ (void)tsu_executeBlock:(id)arg1;
++ (id)tsu_invocationWithBlock:(id)arg1;
 
 @end

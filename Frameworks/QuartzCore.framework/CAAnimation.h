@@ -8,47 +8,47 @@
 }
 
 @property CAStateControllerTransition *CAStateControllerTransition;
-@property int _mapkit_ID;
+@property long long _mapkit_ID;
 @property (nonatomic, copy) NSArray *animationEvents;
-@property BOOL autoreverses;
+@property bool autoreverses;
 @property double beginTime;
 @property (copy) NSString *beginTimeMode;
 @property (retain) <CAAnimationDelegate> *delegate;
 @property double duration;
-@property (getter=isEnabled) BOOL enabled;
-@property float fadeInDuration;
-@property float fadeOutDuration;
+@property (getter=isEnabled) bool enabled;
+@property double fadeInDuration;
+@property double fadeOutDuration;
 @property (copy) NSString *fillMode;
 @property double frameInterval;
-@property int preferredFramesPerSecond;
-@property (getter=isRemovedOnCompletion) BOOL removedOnCompletion;
+@property long long preferredFramesPerSecond;
+@property (getter=isRemovedOnCompletion) bool removedOnCompletion;
 @property float repeatCount;
 @property double repeatDuration;
 @property float speed;
 @property double timeOffset;
 @property (retain) CAMediaTimingFunction *timingFunction;
-@property BOOL usesSceneTimeBase;
+@property bool usesSceneTimeBase;
 
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 + (void)CAMLParserStartElement:(id)arg1;
-+ (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
-+ (BOOL)CA_encodesPropertyConditionally:(unsigned int)arg1 type:(int)arg2;
++ (bool)CA_automaticallyNotifiesObservers:(Class)arg1;
++ (bool)CA_encodesPropertyConditionally:(unsigned int)arg1 type:(int)arg2;
 + (int (*)CA_getterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
 + (int (*)CA_setterForProperty:(const struct _CAPropertyInfo { unsigned int x1; SEL x2[2]; unsigned int x3 : 16; unsigned int x4 : 16; char *x5; struct __CFString {} *x6; }*)arg1;
 + (id)animation;
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;
 + (id)properties;
-+ (BOOL)resolveInstanceMethod:(SEL)arg1;
++ (bool)resolveInstanceMethod:(SEL)arg1;
 
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
 - (unsigned int)_propertyFlagsForLayer:(id)arg1;
-- (BOOL)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; struct __CFString {} *x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; }*)arg1 layer:(id)arg2;
+- (bool)_setCARenderAnimation:(struct Animation { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; float x3; struct Ref<CA::Render::Timing> { struct Timing {} *x_4_1_1; } x4; struct Ref<CA::Render::Vector> { struct Vector {} *x_5_1_1; } x5; struct __CFString {} *x6; unsigned long long x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; }*)arg1 layer:(id)arg2;
 - (void)applyForTime:(double)arg1 presentationObject:(id)arg2 modelObject:(id)arg3;
-- (BOOL)autoreverses;
+- (bool)autoreverses;
 - (double)beginTime;
 - (id)beginTimeMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -61,25 +61,25 @@
 - (id)fillMode;
 - (double)frameInterval;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
-- (BOOL)isRemovedOnCompletion;
+- (bool)isEnabled;
+- (bool)isRemovedOnCompletion;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (int)preferredFramesPerSecond;
-- (BOOL)removedOnCompletion;
+- (long long)preferredFramesPerSecond;
+- (bool)removedOnCompletion;
 - (float)repeatCount;
 - (double)repeatDuration;
 - (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
-- (void)setAutoreverses:(BOOL)arg1;
+- (void)setAutoreverses:(bool)arg1;
 - (void)setBeginTime:(double)arg1;
 - (void)setBeginTimeMode:(id)arg1;
 - (void)setDefaultDuration:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setFillMode:(id)arg1;
 - (void)setFrameInterval:(double)arg1;
-- (void)setPreferredFramesPerSecond:(int)arg1;
-- (void)setRemovedOnCompletion:(BOOL)arg1;
+- (void)setPreferredFramesPerSecond:(long long)arg1;
+- (void)setRemovedOnCompletion:(bool)arg1;
 - (void)setRepeatCount:(float)arg1;
 - (void)setRepeatDuration:(double)arg1;
 - (void)setSpeed:(float)arg1;
@@ -88,7 +88,7 @@
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (BOOL)shouldArchiveValueForKey:(id)arg1;
+- (bool)shouldArchiveValueForKey:(id)arg1;
 - (float)speed;
 - (double)timeOffset;
 - (id)timingFunction;
@@ -98,23 +98,23 @@
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
-- (int)_mapkit_ID;
-- (void)set_mapkit_ID:(int)arg1;
+- (long long)_mapkit_ID;
+- (void)set_mapkit_ID:(long long)arg1;
 
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
 + (id)scnAnimationNamed:(id)arg1;
 
 - (id)animationEvents;
-- (BOOL)commitsOnCompletion;
-- (float)fadeInDuration;
-- (float)fadeOutDuration;
+- (bool)commitsOnCompletion;
+- (double)fadeInDuration;
+- (double)fadeOutDuration;
 - (void)setAnimationEvents:(id)arg1;
-- (void)setCommitsOnCompletion:(BOOL)arg1;
-- (void)setFadeInDuration:(float)arg1;
-- (void)setFadeOutDuration:(float)arg1;
-- (void)setUsesSceneTimeBase:(BOOL)arg1;
-- (BOOL)usesSceneTimeBase;
+- (void)setCommitsOnCompletion:(bool)arg1;
+- (void)setFadeInDuration:(double)arg1;
+- (void)setFadeOutDuration:(double)arg1;
+- (void)setUsesSceneTimeBase:(bool)arg1;
+- (bool)usesSceneTimeBase;
 
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
@@ -124,10 +124,10 @@
 
 + (id)pkui_shakeAnimation;
 
-- (id /* block */)pkui_completionHandler;
-- (id /* block */)pkui_didStartHandler;
-- (void)pkui_setCompletionHandler:(id /* block */)arg1;
-- (void)pkui_setDidStartHandler:(id /* block */)arg1;
+- (id)pkui_completionHandler;
+- (id)pkui_didStartHandler;
+- (void)pkui_setCompletionHandler:(id)arg1;
+- (void)pkui_setDidStartHandler:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
@@ -136,7 +136,7 @@
 - (id)TSDCAAnimationContextCache;
 - (id)TSD_animationForKeyPath:(id)arg1 atTime:(double)arg2;
 - (double)TSD_animationPercentByApplyingTimingFunctionForKeyPath:(id)arg1 atTime:(double)arg2;
-- (BOOL)TSD_containsAnimationForKeyPath:(id)arg1;
+- (bool)TSD_containsAnimationForKeyPath:(id)arg1;
 - (id)TSD_valueAtTime:(double)arg1 initialValue:(id)arg2;
 - (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2;
 - (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2 animationCache:(id)arg3;

@@ -4,15 +4,15 @@
 
 @interface SBLockScreenDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic) BOOL limitFeaturesForRemoteLock;
-@property (nonatomic, readonly) BOOL lostModeDisableDashBoard;
-@property (nonatomic) BOOL showAuthenticationEngineeringUI;
-@property (nonatomic, readonly) BOOL showLegalText;
-@property (nonatomic) BOOL showSupervisionText;
-@property (nonatomic) BOOL useDashBoard;
+@property (nonatomic) bool limitFeaturesForRemoteLock;
+@property (nonatomic, readonly) bool lostModeDisableDashBoard;
+@property (nonatomic) bool showAuthenticationEngineeringUI;
+@property (nonatomic, readonly) bool showLegalText;
+@property (nonatomic) bool showSupervisionText;
+@property (nonatomic) bool useDashBoard;
 
 - (void)_bindAndRegisterDefaults;
-- (BOOL)lostModeDisableDashBoard;
-- (BOOL)useDashBoard;
+- (bool)lostModeDisableDashBoard;
+- (bool)useDashBoard;
 
 @end

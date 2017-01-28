@@ -13,17 +13,17 @@
 - (void)_setInverseManyToMany:(id)arg1;
 - (void)_setOrderColumnName:(id)arg1;
 - (id)columnName;
-- (unsigned int)columnSQLType;
+- (unsigned char)columnSQLType;
 - (id)correlationTableName;
 - (void)dealloc;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
 - (id)inverseColumnName;
 - (id)inverseManyToMany;
 - (id)inverseOrderColumnName;
-- (BOOL)isMaster;
-- (BOOL)isReflexive;
-- (BOOL)isTableSchemaEqual:(id)arg1;
+- (bool)isMaster;
+- (bool)isReflexive;
+- (bool)isTableSchemaEqual:(id)arg1;
 - (id)orderColumnName;
-- (unsigned int)orderColumnSQLType;
+- (unsigned char)orderColumnSQLType;
 
 @end

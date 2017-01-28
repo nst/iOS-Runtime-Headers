@@ -4,6 +4,7 @@
 
 @interface SKUIMetricsPageRenderEvent : SSMetricsBaseEvent <SKUIInspectableObject> {
     NSMutableArray * _domChanges;
+    NSDictionary * _metricsBase;
     NSMutableArray * _requests;
 }
 
@@ -11,8 +12,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSArray *domChanges;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *launchCorrelationKey;
+@property (nonatomic, copy) NSDictionary *metricsBase;
 @property (nonatomic) double pageAppearTime;
 @property (nonatomic) double pageDisappearTime;
 @property (nonatomic) double pageRequestedTime;
@@ -22,19 +24,22 @@
 @property (nonatomic) double platformRequestStartTime;
 @property (nonatomic) double platformResponseEndTime;
 @property (nonatomic) double platformResponseStartTime;
-@property (nonatomic) BOOL platformResponseWasCached;
-@property (getter=isReadyForSubmission, nonatomic, readonly) BOOL readyForSubmission;
+@property (nonatomic) bool platformResponseWasCached;
+@property (getter=isReadyForSubmission, nonatomic, readonly) bool readyForSubmission;
 @property (nonatomic, readonly, copy) NSArray *requests;
 @property (nonatomic) double resourceRequestEndTime;
 @property (nonatomic) double resourceRequestOnScreenEndTime;
 @property (nonatomic) double resourceRequestStartTime;
 @property (readonly) Class superclass;
-@property (setter=setXPSamplingForced:, nonatomic) BOOL xpSamplingForced;
+@property (setter=setXPSamplingForced:, nonatomic) bool xpSamplingForced;
 @property (setter=setXPSamplingPercentageUsers:, nonatomic) double xpSamplingPercentageUsers;
 @property (setter=setXPSessionDuration:, nonatomic) double xpSessionDuration;
 
-+ (BOOL)shouldCollectPageRenderData;
-+ (BOOL)shouldCollectPageRenderDataForDocument:(id)arg1;
++ (double)_randomDouble;
++ (id)_sampleWindowStartTime;
++ (void)_setSampleWindowStartTime:(id)arg1;
++ (bool)shouldCollectPageRenderData;
++ (bool)shouldCollectPageRenderDataForDocument:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)addDOMChange:(id)arg1;
@@ -43,10 +48,12 @@
 - (void)appendPropertiesToBody:(id)arg1;
 - (void)appendSamplingPropertiesFromClientContext:(id)arg1;
 - (id)clientCorrelationKey;
+- (id)description;
 - (id)domChanges;
 - (id)init;
-- (BOOL)isReadyForSubmission;
+- (bool)isReadyForSubmission;
 - (id)launchCorrelationKey;
+- (id)metricsBase;
 - (double)pageAppearTime;
 - (double)pageDisappearTime;
 - (double)pageRequestedTime;
@@ -56,7 +63,7 @@
 - (double)platformRequestStartTime;
 - (double)platformResponseEndTime;
 - (double)platformResponseStartTime;
-- (BOOL)platformResponseWasCached;
+- (bool)platformResponseWasCached;
 - (void)populateObjectInspector:(id)arg1;
 - (id)requests;
 - (double)resourceRequestEndTime;
@@ -64,6 +71,7 @@
 - (double)resourceRequestStartTime;
 - (void)setClientCorrelationKey:(id)arg1;
 - (void)setLaunchCorrelationKey:(id)arg1;
+- (void)setMetricsBase:(id)arg1;
 - (void)setPageAppearTime:(double)arg1;
 - (void)setPageDisappearTime:(double)arg1;
 - (void)setPageRequestedTime:(double)arg1;
@@ -73,14 +81,14 @@
 - (void)setPlatformRequestStartTime:(double)arg1;
 - (void)setPlatformResponseEndTime:(double)arg1;
 - (void)setPlatformResponseStartTime:(double)arg1;
-- (void)setPlatformResponseWasCached:(BOOL)arg1;
+- (void)setPlatformResponseWasCached:(bool)arg1;
 - (void)setResourceRequestEndTime:(double)arg1;
 - (void)setResourceRequestOnScreenEndTime:(double)arg1;
 - (void)setResourceRequestStartTime:(double)arg1;
-- (void)setXPSamplingForced:(BOOL)arg1;
+- (void)setXPSamplingForced:(bool)arg1;
 - (void)setXPSamplingPercentageUsers:(double)arg1;
 - (void)setXPSessionDuration:(double)arg1;
-- (BOOL)xpSamplingForced;
+- (bool)xpSamplingForced;
 - (double)xpSamplingPercentageUsers;
 - (double)xpSessionDuration;
 

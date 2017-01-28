@@ -5,6 +5,6 @@
 
 @required
 
-- (void)logForExpert:(NSString *)arg1 feedback:(_DECFeedback *)arg2 category:(unsigned int)arg3 consumer:(unsigned int)arg4;
+- (void)logForExpert:(NSString *)arg1 feedback:(_DECFeedback *)arg2 category:(unsigned long long)arg3 consumer:(unsigned long long)arg4;
 
 @end

@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)formAutoFillControllerCanPrefillForm:(WBUFormAutoFillController *)arg1;
-- (BOOL)formAutoFillControllerShouldDisableAutoFill:(WBUFormAutoFillController *)arg1;
+- (bool)formAutoFillControllerCanPrefillForm:(WBUFormAutoFillController *)arg1;
+- (bool)formAutoFillControllerShouldDisableAutoFill:(WBUFormAutoFillController *)arg1;
 - (NSURL *)formAutoFillControllerURLForFormAutoFill:(WBUFormAutoFillController *)arg1;
 
 @end

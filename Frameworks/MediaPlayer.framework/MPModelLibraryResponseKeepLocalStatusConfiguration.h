@@ -7,17 +7,17 @@
         struct EntityQuery {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _downloadableItemsQuery;
-    id /* block */  _downloadablePlaylistItemEntityQueryBlock;
+    id  _downloadablePlaylistItemEntityQueryBlock;
 }
 
 @property (nonatomic) struct shared_ptr<mlcore::EntityQuery> { struct EntityQuery {} *x1; struct __shared_weak_count {} *x2; } downloadableItemsQuery;
-@property (nonatomic, copy) id /* block */ downloadablePlaylistItemEntityQueryBlock;
+@property (nonatomic, copy) id downloadablePlaylistItemEntityQueryBlock;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct shared_ptr<mlcore::EntityQuery> { struct EntityQuery {} *x1; struct __shared_weak_count {} *x2; })downloadableItemsQuery;
-- (id /* block */)downloadablePlaylistItemEntityQueryBlock;
+- (id)downloadablePlaylistItemEntityQueryBlock;
 - (void)setDownloadableItemsQuery:(struct shared_ptr<mlcore::EntityQuery> { struct EntityQuery {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (void)setDownloadablePlaylistItemEntityQueryBlock:(id /* block */)arg1;
+- (void)setDownloadablePlaylistItemEntityQueryBlock:(id)arg1;
 
 @end

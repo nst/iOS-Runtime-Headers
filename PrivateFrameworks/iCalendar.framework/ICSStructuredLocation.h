@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSString *routing;
 @property (nonatomic, retain) NSString *title;
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)abURLString;
 - (id)address;
 - (id)displayName;
@@ -34,7 +34,7 @@
 - (void)setRadius:(double)arg1;
 - (void)setRouting:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (BOOL)shouldObscureValue;
+- (bool)shouldObscureValue;
 - (id)title;
 
 @end

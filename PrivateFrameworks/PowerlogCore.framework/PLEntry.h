@@ -8,10 +8,10 @@
     NSDictionary * _entryDefinition;
     long long  _entryID;
     NSString * _entryKey;
-    BOOL  _existsInDB;
-    BOOL  _isErrorEntry;
+    bool  _existsInDB;
+    bool  _isErrorEntry;
     NSObject<OS_dispatch_semaphore> * _sem;
-    BOOL  _writeToDB;
+    bool  _writeToDB;
 }
 
 @property (readonly) NSArray *arrayKeys;
@@ -22,15 +22,15 @@
 @property (nonatomic, retain) NSDictionary *entryDefinition;
 @property (nonatomic) long long entryID;
 @property (nonatomic, retain) NSString *entryKey;
-@property BOOL existsInDB;
-@property (readonly) BOOL hasArrayKeys;
-@property (readonly) BOOL hasDynamicKeys;
-@property BOOL isErrorEntry;
+@property bool existsInDB;
+@property (readonly) bool hasArrayKeys;
+@property (readonly) bool hasDynamicKeys;
+@property bool isErrorEntry;
 @property (readonly) NSMutableArray *keys;
 @property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *sem;
 @property (readonly) id subEntryKey;
 @property (getter=allValues, readonly) NSMutableArray *values;
-@property BOOL writeToDB;
+@property bool writeToDB;
 
 + (Class)classForEntryKey:(id)arg1;
 + (id)entryKey;
@@ -45,8 +45,8 @@
 - (id)allValues;
 - (id)arrayKeys;
 - (void)checkOverridesEntryDateWithNowDate:(id)arg1;
-- (int)compare:(id)arg1;
-- (int)compare:(id)arg1 options:(short)arg2;
+- (long long)compare:(id)arg1;
+- (long long)compare:(id)arg1 options:(short)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)definedKeys;
 - (id)definitionForKey:(id)arg1;
@@ -57,11 +57,11 @@
 - (id)entryDefinition;
 - (long long)entryID;
 - (id)entryKey;
-- (BOOL)existsInDB;
-- (BOOL)filterEntryLogging;
+- (bool)existsInDB;
+- (bool)filterEntryLogging;
 - (short)formaterForKey:(id)arg1;
-- (BOOL)hasArrayKeys;
-- (BOOL)hasDynamicKeys;
+- (bool)hasArrayKeys;
+- (bool)hasDynamicKeys;
 - (id)init;
 - (id)initEntryWithData:(id)arg1;
 - (id)initEntryWithRawData:(id)arg1;
@@ -70,9 +70,9 @@
 - (id)initWithEntryKey:(id)arg1 withData:(id)arg2;
 - (id)initWithEntryKey:(id)arg1 withDate:(id)arg2;
 - (id)initWithEntryKey:(id)arg1 withRawData:(id)arg2;
-- (BOOL)isErrorEntry;
-- (BOOL)isKeyAggregateValue:(id)arg1;
-- (BOOL)isKeyDynamic:(id)arg1;
+- (bool)isErrorEntry;
+- (bool)isKeyAggregateValue:(id)arg1;
+- (bool)isKeyDynamic:(id)arg1;
 - (id)keyValuePathForKey:(id)arg1;
 - (id)keys;
 - (void)loadDynamicKeys;
@@ -88,17 +88,17 @@
 - (void)setEntryDefinition:(id)arg1;
 - (void)setEntryID:(long long)arg1;
 - (void)setEntryKey:(id)arg1;
-- (void)setExistsInDB:(BOOL)arg1;
-- (void)setIsErrorEntry:(BOOL)arg1;
+- (void)setExistsInDB:(bool)arg1;
+- (void)setIsErrorEntry:(bool)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObjectsFromData:(id)arg1;
 - (void)setObjectsFromRawData:(id)arg1;
 - (void)setSem:(id)arg1;
-- (void)setWriteToDB:(BOOL)arg1;
+- (void)setWriteToDB:(bool)arg1;
 - (int)staticArraySizeForKey:(id)arg1;
 - (id)subEntryKey;
 - (id)unitForKey:(id)arg1;
-- (BOOL)writeToDB;
+- (bool)writeToDB;
 
 @end

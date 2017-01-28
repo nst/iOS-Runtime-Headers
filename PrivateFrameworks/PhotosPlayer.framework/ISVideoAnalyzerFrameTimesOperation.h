@@ -6,17 +6,17 @@
     AVAsset * _asset;
     AVAssetReader * _assetReader;
     AVAssetReaderSampleReferenceOutput * _assetReaderOutput;
-    id /* block */  _resultHandler;
+    id  _resultHandler;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;
-@property (nonatomic, readonly, copy) id /* block */ resultHandler;
+@property (nonatomic, readonly, copy) id resultHandler;
 
 - (void).cxx_destruct;
 - (void)_handleAssetDidLoadValues;
 - (id)asset;
-- (id)initWithAsset:(id)arg1 resultHandler:(id /* block */)arg2;
+- (id)initWithAsset:(id)arg1 resultHandler:(id)arg2;
 - (void)main;
-- (id /* block */)resultHandler;
+- (id)resultHandler;
 
 @end

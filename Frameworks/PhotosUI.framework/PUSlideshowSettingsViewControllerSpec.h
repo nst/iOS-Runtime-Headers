@@ -5,18 +5,18 @@
 @interface PUSlideshowSettingsViewControllerSpec : PUViewControllerSpec
 
 @property (nonatomic, readonly) UIColor *cellBackgroundColor;
-@property (nonatomic, readonly) unsigned int rectEdgeForExtendedLayout;
-@property (nonatomic, readonly) BOOL shouldShowNavigationBar;
-@property (nonatomic, readonly) BOOL shouldUseBlurredBackground;
+@property (nonatomic, readonly) unsigned long long rectEdgeForExtendedLayout;
+@property (nonatomic, readonly) bool shouldShowNavigationBar;
+@property (nonatomic, readonly) bool shouldUseBlurredBackground;
 @property (nonatomic, readonly) UIColor *tableViewBackgroundColor;
 @property (nonatomic, readonly) UIView *tableViewHeaderView;
 
 - (id)cellBackgroundColor;
 - (id)currentChange;
 - (id)newSpecChange;
-- (unsigned int)rectEdgeForExtendedLayout;
-- (BOOL)shouldShowNavigationBar;
-- (BOOL)shouldUseBlurredBackground;
+- (unsigned long long)rectEdgeForExtendedLayout;
+- (bool)shouldShowNavigationBar;
+- (bool)shouldUseBlurredBackground;
 - (id)tableViewBackgroundColor;
 - (id)tableViewHeaderView;
 

@@ -7,23 +7,23 @@
     struct SGUnixTimestamp_ { 
         double secondsFromUnixEpoch; 
     }  _creationTimestamp;
-    BOOL  _engaged;
+    bool  _engaged;
     NSString * _query;
 }
 
 @property (nonatomic, readonly) NSString *conversationId;
 @property (nonatomic, readonly) struct SGUnixTimestamp_ { double x1; } creationTimestamp;
-@property (nonatomic, readonly) BOOL engaged;
+@property (nonatomic, readonly) bool engaged;
 @property (nonatomic, readonly) NSString *query;
 
-+ (id)query:(id)arg1 withConversationId:(id)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3 engaged:(BOOL)arg4;
++ (id)query:(id)arg1 withConversationId:(id)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3 engaged:(bool)arg4;
 
 - (void).cxx_destruct;
 - (id)conversationId;
 - (struct SGUnixTimestamp_ { double x1; })creationTimestamp;
-- (BOOL)engaged;
+- (bool)engaged;
 - (id)init;
-- (id)initWithQuery:(id)arg1 conversationId:(id)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3 engaged:(BOOL)arg4;
+- (id)initWithQuery:(id)arg1 conversationId:(id)arg2 creationTimestamp:(struct SGUnixTimestamp_ { double x1; })arg3 engaged:(bool)arg4;
 - (id)query;
 
 @end

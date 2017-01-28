@@ -3,7 +3,7 @@
  */
 
 @interface ALAssetPrivate : NSObject <ALAssetsLibraryAsset> {
-    BOOL  _isValid;
+    bool  _isValid;
     ALAssetsLibrary * _library;
     PLManagedAsset * _photo;
     PLPhotoLibrary * _photoLibrary;
@@ -11,25 +11,25 @@
 
 @property (nonatomic, retain) PLPhotoLibrary *_photoLibrary;
 @property (readonly, copy) NSString *debugDescription;
-@property (getter=isDeletable, nonatomic, readonly) BOOL deletable;
+@property (getter=isDeletable, nonatomic, readonly) bool deletable;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isValid;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isValid;
 @property (nonatomic) ALAssetsLibrary *library;
 @property (nonatomic, retain) PLManagedAsset *photo;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_performBlockAndWait:(id /* block */)arg1;
+- (void)_performBlockAndWait:(id)arg1;
 - (id)_photoLibrary;
 - (void)dealloc;
 - (id)initWithManagedAsset:(id)arg1 library:(id)arg2;
-- (BOOL)isDeletable;
-- (BOOL)isValid;
+- (bool)isDeletable;
+- (bool)isValid;
 - (id)library;
 - (void)libraryDidChange;
 - (id)photo;
-- (void)setIsValid:(BOOL)arg1;
+- (void)setIsValid:(bool)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)set_photoLibrary:(id)arg1;

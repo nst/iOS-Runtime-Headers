@@ -10,9 +10,9 @@
 
 @property (nonatomic, retain) NTPBDate *feedDateRangeEnd;
 @property (nonatomic, retain) NTPBDate *feedDateRangeStart;
-@property (nonatomic, readonly) BOOL hasFeedDateRangeEnd;
-@property (nonatomic, readonly) BOOL hasFeedDateRangeStart;
-@property (nonatomic, readonly) BOOL hasKeyDate;
+@property (nonatomic, readonly) bool hasFeedDateRangeEnd;
+@property (nonatomic, readonly) bool hasFeedDateRangeStart;
+@property (nonatomic, readonly) bool hasKeyDate;
 @property (nonatomic, retain) NTPBDate *keyDate;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -21,14 +21,14 @@
 - (id)dictionaryRepresentation;
 - (id)feedDateRangeEnd;
 - (id)feedDateRangeStart;
-- (BOOL)hasFeedDateRangeEnd;
-- (BOOL)hasFeedDateRangeStart;
-- (BOOL)hasKeyDate;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFeedDateRangeEnd;
+- (bool)hasFeedDateRangeStart;
+- (bool)hasKeyDate;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)keyDate;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFeedDateRangeEnd:(id)arg1;
 - (void)setFeedDateRangeStart:(id)arg1;
 - (void)setKeyDate:(id)arg1;

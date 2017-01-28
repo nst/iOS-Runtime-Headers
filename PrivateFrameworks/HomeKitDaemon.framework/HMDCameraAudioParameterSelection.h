@@ -38,7 +38,7 @@
 
 - (void).cxx_destruct;
 - (void)_generateAllCombinations:(id)arg1;
-- (BOOL)_selectParametersFromCodec:(id)arg1 bitRateSettings:(id)arg2 sampleRates:(id)arg3 audioChannelCount:(id)arg4;
+- (bool)_selectParametersFromCodec:(id)arg1 bitRateSettings:(id)arg2 sampleRates:(id)arg3 audioChannelCount:(id)arg4;
 - (id)audioCodecsPreference;
 - (id)bitrateSettingsPreference;
 - (id)comfortNoiseSupported;
@@ -48,7 +48,7 @@
 - (id)logIdentifier;
 - (id)rtpConfiguration;
 - (id)sampleRatesPreference;
-- (BOOL)selectAudioParameters;
+- (bool)selectAudioParameters;
 - (id)selectedAudioChannelCount;
 - (id)selectedAudioParameterCombination;
 - (id)selectedAudioParameters;

@@ -9,13 +9,13 @@
 @property (nonatomic, retain) AWDServerConnection *awdServerConnection;
 
 + (id)sharedManager;
-+ (void)submitMailCannotGetMailError:(id)arg1 forAccount:(id)arg2 submitNetworkDiags:(BOOL)arg3;
-+ (void)submitMailCannotGetMailErrorDueToErrorDomainCode:(int)arg1 submitNetworkDiags:(BOOL)arg2;
-+ (void)submitMailCannotGetMailErrorDueToMailErrorCode:(int)arg1 submitNetworkDiags:(BOOL)arg2;
++ (void)submitMailCannotGetMailError:(id)arg1 forAccount:(id)arg2 submitNetworkDiags:(bool)arg3;
++ (void)submitMailCannotGetMailErrorDueToErrorDomainCode:(int)arg1 submitNetworkDiags:(bool)arg2;
++ (void)submitMailCannotGetMailErrorDueToMailErrorCode:(int)arg1 submitNetworkDiags:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)_statisticsKindFromAccount:(id)arg1;
-- (BOOL)_submitWithIdentifier:(unsigned long)arg1 metricGenerator:(id /* block */)arg2;
+- (bool)_submitWithIdentifier:(unsigned int)arg1 metricGenerator:(id)arg2;
 - (id)awdServerConnection;
 - (id)init;
 - (int)mailErrorCodeFromErrorDomainCode:(int)arg1;
@@ -26,12 +26,12 @@
 - (int)mailErrorReportProviderFromAccountStatisticsKind:(id)arg1;
 - (void)registerMetrics;
 - (void)setAwdServerConnection:(id)arg1;
-- (void)submitMailCannotGetMailError:(id)arg1 forAccount:(id)arg2 submitNetworkDiags:(BOOL)arg3;
-- (void)submitMailCannotGetMailErrorDueToErrorDomainCode:(int)arg1 submitNetworkDiags:(BOOL)arg2;
-- (void)submitMailCannotGetMailErrorDueToMailErrorCode:(int)arg1 submitNetworkDiags:(BOOL)arg2;
-- (void)submitMailCannotGetMailErrorForHostname:(id)arg1 protocol:(int)arg2 provider:(int)arg3 mailError:(id)arg4 submitNetworkDiags:(BOOL)arg5;
-- (void)submitMailCannotGetMailErrorForHostname:(id)arg1 protocol:(int)arg2 provider:(int)arg3 mfErrorDomainCode:(int)arg4 submitNetworkDiags:(BOOL)arg5;
-- (BOOL)submitMailMessageDisplayErrorReport:(id)arg1;
+- (void)submitMailCannotGetMailError:(id)arg1 forAccount:(id)arg2 submitNetworkDiags:(bool)arg3;
+- (void)submitMailCannotGetMailErrorDueToErrorDomainCode:(int)arg1 submitNetworkDiags:(bool)arg2;
+- (void)submitMailCannotGetMailErrorDueToMailErrorCode:(int)arg1 submitNetworkDiags:(bool)arg2;
+- (void)submitMailCannotGetMailErrorForHostname:(id)arg1 protocol:(int)arg2 provider:(int)arg3 mailError:(id)arg4 submitNetworkDiags:(bool)arg5;
+- (void)submitMailCannotGetMailErrorForHostname:(id)arg1 protocol:(int)arg2 provider:(int)arg3 mfErrorDomainCode:(int)arg4 submitNetworkDiags:(bool)arg5;
+- (bool)submitMailMessageDisplayErrorReport:(id)arg1;
 - (void)submitMailNetworkDiagnosticsReport;
 
 @end

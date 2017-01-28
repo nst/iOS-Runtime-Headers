@@ -18,7 +18,7 @@
 @property (retain) NSMutableDictionary *dependencyIDToObservingOwners;
 @property (readonly, copy) NSString *description;
 @property (retain) PLMonotonicTimer *freeTimer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property int numDependencies;
 @property (retain) NSMutableDictionary *ownerIDToLastOwner;
 @property (retain) NSMutableDictionary *ownerIDToObservingDependencies;

@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (INRideStatus *)rideStatus;
 - (void)setRideStatus:(INRideStatus *)arg1;
 

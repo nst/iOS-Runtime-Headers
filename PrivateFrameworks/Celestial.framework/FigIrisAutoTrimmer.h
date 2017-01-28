@@ -11,7 +11,7 @@
         double z; 
     }  _captureMotionDelta;
     double  _captureMotionDeltaPeriod;
-    BOOL  _haveCaptureMotionDelta;
+    bool  _haveCaptureMotionDelta;
     struct { 
         double w; 
         double x; 
@@ -32,20 +32,20 @@
         unsigned int flags; 
         long long epoch; 
     }  _maxHoldDuration;
-    BOOL  _motionAvailable;
+    bool  _motionAvailable;
     double  _motionSampleRate;
     NSMutableArray * _motionSamples;
     struct OpaqueFigSimpleMutex { } * _motionSamplesLock;
 }
 
-@property (nonatomic, readonly) BOOL trimmingActive;
+@property (nonatomic, readonly) bool trimmingActive;
 
 + (void)initialize;
 
 - (double)_getHostTime;
-- (BOOL)_isUnstable:(id)arg1;
+- (bool)_isUnstable:(id)arg1;
 - (void)_processMotionSample:(const struct { double x1; double x2; double x3; double x4; }*)arg1 gravity:(const struct { float x1; float x2; float x3; }*)arg2 timestamp:(double)arg3;
-- (BOOL)_shouldCutUnstable:(id)arg1 withLookahead:(id)arg2;
+- (bool)_shouldCutUnstable:(id)arg1 withLookahead:(id)arg2;
 - (double)_timeoutThreshold;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })beginTrimmingForStillImageHostPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 minimumPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (double)bufferHistorySeconds;
@@ -60,7 +60,7 @@
 - (void)setVideoFrameRate:(double)arg1;
 - (void)startMotionProcessing;
 - (void)stopMotionProcessing;
-- (BOOL)trimmingActive;
+- (bool)trimmingActive;
 - (double)videoFrameRate;
 
 @end

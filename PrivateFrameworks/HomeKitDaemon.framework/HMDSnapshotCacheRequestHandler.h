@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logString;
 @property (nonatomic, readonly) NSMutableDictionary *snapshotCacheMap;
 @property (readonly) Class superclass;
@@ -24,7 +24,7 @@
 - (id)logIdentifier;
 - (id)logString;
 - (void)removeSnapshotFileToCache:(id)arg1 error:(id)arg2;
-- (void)requestSnapshot:(id)arg1 streamingTierType:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
+- (void)requestSnapshot:(id)arg1 streamingTierType:(unsigned long long)arg2 completionHandler:(id)arg3;
 - (void)setSnapshotFileToCache:(id)arg1 proactiveSessionID:(id)arg2;
 - (id)snapshotCacheMap;
 - (void)timerDidFire:(id)arg1;

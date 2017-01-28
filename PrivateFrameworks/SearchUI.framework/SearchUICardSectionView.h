@@ -4,15 +4,15 @@
 
 @interface SearchUICardSectionView : UIView {
     SearchUICardViewController * _controller;
-    BOOL  _fullWidthSeparator;
-    BOOL  _hideSeparatorBelow;
+    bool  _fullWidthSeparator;
+    bool  _hideSeparatorBelow;
     SFCardSection * _section;
     NSURL * _url;
 }
 
 @property SearchUICardViewController *controller;
-@property (nonatomic) BOOL fullWidthSeparator;
-@property (nonatomic) BOOL hideSeparatorBelow;
+@property (nonatomic) bool fullWidthSeparator;
+@property (nonatomic) bool hideSeparatorBelow;
 @property (nonatomic, retain) SFCardSection *section;
 @property (retain) NSURL *url;
 
@@ -20,14 +20,14 @@
 
 - (void).cxx_destruct;
 - (id)controller;
-- (BOOL)fullWidthSeparator;
-- (BOOL)hideSeparatorBelow;
+- (bool)fullWidthSeparator;
+- (bool)hideSeparatorBelow;
 - (id)initWithCardSection:(id)arg1 controller:(id)arg2;
 - (id)section;
-- (float)separatorLeftInset;
+- (double)separatorLeftInset;
 - (void)setController:(id)arg1;
-- (void)setFullWidthSeparator:(BOOL)arg1;
-- (void)setHideSeparatorBelow:(BOOL)arg1;
+- (void)setFullWidthSeparator:(bool)arg1;
+- (void)setHideSeparatorBelow:(bool)arg1;
 - (void)setSection:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;

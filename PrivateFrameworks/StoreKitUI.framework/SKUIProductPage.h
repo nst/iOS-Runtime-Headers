@@ -3,7 +3,7 @@
  */
 
 @interface SKUIProductPage : NSObject <NSCopying> {
-    int  _defaultPageFragment;
+    long long  _defaultPageFragment;
     SKUIProductPageItem * _item;
     NSData * _itmlData;
     NSHTTPURLResponse * _itmlResponse;
@@ -18,7 +18,7 @@
 
 @property (nonatomic, retain) NSData *ITMLData;
 @property (nonatomic, retain) NSHTTPURLResponse *ITMLResponse;
-@property (nonatomic) int defaultPageFragment;
+@property (nonatomic) long long defaultPageFragment;
 @property (nonatomic, retain) SKUIProductPageItem *item;
 @property (nonatomic, retain) SSMetricsConfiguration *metricsConfiguration;
 @property (nonatomic, copy) NSString *metricsPageDescription;
@@ -32,7 +32,7 @@
 - (id)ITMLData;
 - (id)ITMLResponse;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)defaultPageFragment;
+- (long long)defaultPageFragment;
 - (id)item;
 - (id)metricsConfiguration;
 - (id)metricsPageDescription;
@@ -40,7 +40,7 @@
 - (id)productInformation;
 - (id)relatedContentSwooshes;
 - (id)reviewConfiguration;
-- (void)setDefaultPageFragment:(int)arg1;
+- (void)setDefaultPageFragment:(long long)arg1;
 - (void)setITMLData:(id)arg1;
 - (void)setITMLResponse:(id)arg1;
 - (void)setItem:(id)arg1;

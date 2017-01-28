@@ -29,9 +29,9 @@
 - (id)opQueue;
 - (id)queue;
 - (id)queuedFetches;
-- (void)requestFetchOfRecordWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)requestFetchOfShareWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)requestFetchOfZoneWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)requestFetchOfRecordWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)requestFetchOfShareWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)requestFetchOfZoneWithID:(id)arg1 forOperation:(id)arg2 withCompletionHandler:(id)arg3;
 - (id)runningFetches;
 - (void)setContext:(id)arg1;
 - (void)setOpQueue:(id)arg1;

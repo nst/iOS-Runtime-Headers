@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)attachmentAlertController:(MSCLAttachmentAlertController *)arg1 didFinishWithResult:(int)arg2;
+- (void)attachmentAlertController:(MSCLAttachmentAlertController *)arg1 didFinishWithResult:(long long)arg2;
 
 @end

@@ -13,13 +13,13 @@
     }  _bounds;
     double  _boundsInWorldUnit;
     double  _boundsUnitsPerMeter;
-    BOOL  _hasNewRoadMatches;
+    bool  _hasNewRoadMatches;
     struct Matrix<double, 4, 4> { 
         double _e[16]; 
     }  _inverseMatrix;
     double  _lastTrafficTimeStamp;
     double  _lastUserLocationMatchTimestamp;
-    BOOL  _matchToRoads;
+    bool  _matchToRoads;
     double  _metersPerPoint;
     <VKRouteLineObserverProtocol> * _observer;
     VKPolylineOverlay * _overlay;
@@ -47,8 +47,8 @@
 }
 
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Box<double' */ struct  bounds; /* unknown property attribute:  1>=[2d]}} */
-@property BOOL hasNewRoadMatches;
-@property (nonatomic, readonly) BOOL needsUpdate;
+@property bool hasNewRoadMatches;
+@property (nonatomic, readonly) bool needsUpdate;
 @property (nonatomic) <VKRouteLineObserverProtocol> *observer;
 @property (nonatomic) VKPolylineOverlay *overlay;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<geo::fast_shared_ptr<md::RouteLineSection>' */ struct  sections; /* unknown property attribute:  std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > >=^{fast_shared_ptr<md::RouteLineSection>}}} */
@@ -59,19 +59,19 @@
 - (void)_updateBounds:(id)arg1;
 - (void)_updateTilesCovered:(id)arg1;
 - (struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; })bounds;
-- (BOOL)buildRouteLineForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 containerModel:(id)arg4 viewUnitsPerPoint:(double)arg5 force:(BOOL)arg6 selected:(BOOL)arg7;
-- (void)createMeshIfNecessary:(int)arg1;
+- (bool)buildRouteLineForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 containerModel:(id)arg4 viewUnitsPerPoint:(double)arg5 force:(bool)arg6 selected:(bool)arg7;
+- (void)createMeshIfNecessary:(long long)arg1;
 - (void)dealloc;
-- (void)forEachSection:(id /* block */)arg1;
-- (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(float)arg2;
-- (BOOL)hasNewRoadMatches;
-- (BOOL)isTrafficUpToDate;
-- (BOOL)isTrafficUptoDate:(double)arg1;
-- (BOOL)needsUpdate;
+- (void)forEachSection:(id)arg1;
+- (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(double)arg2;
+- (bool)hasNewRoadMatches;
+- (bool)isTrafficUpToDate;
+- (bool)isTrafficUptoDate:(double)arg1;
+- (bool)needsUpdate;
 - (id)observer;
 - (id)overlay;
 - (struct vector<geo::fast_shared_ptr<md::RouteLineSection>, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { struct fast_shared_ptr<md::RouteLineSection> {} *x1; struct fast_shared_ptr<md::RouteLineSection> {} *x2; struct __compressed_pair<geo::fast_shared_ptr<md::RouteLineSection> *, std::__1::allocator<geo::fast_shared_ptr<md::RouteLineSection> > > { struct fast_shared_ptr<md::RouteLineSection> {} *x_3_1_1; } x3; })sections;
-- (void)setHasNewRoadMatches:(BOOL)arg1;
+- (void)setHasNewRoadMatches:(bool)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setOverlay:(id)arg1;
 - (void)setSimplificationEpsilonPoints:(double)arg1;

@@ -3,21 +3,21 @@
  */
 
 @interface HFValueTransformer : NSObject {
-    id /* block */  _reverseTransformBlock;
-    id /* block */  _transformBlock;
+    id  _reverseTransformBlock;
+    id  _transformBlock;
 }
 
-@property (nonatomic, copy) id /* block */ reverseTransformBlock;
-@property (nonatomic, copy) id /* block */ transformBlock;
+@property (nonatomic, copy) id reverseTransformBlock;
+@property (nonatomic, copy) id transformBlock;
 
 + (id)identityTransformer;
-+ (id)transformerWithTransformBlock:(id /* block */)arg1 reverseTransformBlock:(id /* block */)arg2;
++ (id)transformerWithTransformBlock:(id)arg1 reverseTransformBlock:(id)arg2;
 
 - (void).cxx_destruct;
-- (id /* block */)reverseTransformBlock;
-- (void)setReverseTransformBlock:(id /* block */)arg1;
-- (void)setTransformBlock:(id /* block */)arg1;
-- (id /* block */)transformBlock;
+- (id)reverseTransformBlock;
+- (void)setReverseTransformBlock:(id)arg1;
+- (void)setTransformBlock:(id)arg1;
+- (id)transformBlock;
 - (id)transformedValueForValue:(id)arg1;
 - (id)valueForTransformedValue:(id)arg1;
 

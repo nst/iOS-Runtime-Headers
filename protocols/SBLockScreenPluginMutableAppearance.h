@@ -5,19 +5,19 @@
 
 @required
 
-- (int)backgroundStyle;
+- (long long)backgroundStyle;
 - (NSArray *)elementOverrides;
-- (BOOL)isHidden;
+- (bool)isHidden;
 - (SBLockScreenLegibilitySettings *)legibilitySettings;
-- (int)notificationBehavior;
-- (int)presentationStyle;
-- (unsigned int)restrictedCapabilities;
-- (void)setBackgroundStyle:(int)arg1;
+- (long long)notificationBehavior;
+- (long long)presentationStyle;
+- (unsigned long long)restrictedCapabilities;
+- (void)setBackgroundStyle:(long long)arg1;
 - (void)setElementOverrides:(NSArray *)arg1;
-- (void)setHidden:(BOOL)arg1;
+- (void)setHidden:(bool)arg1;
 - (void)setLegibilitySettings:(SBLockScreenLegibilitySettings *)arg1;
-- (void)setNotificationBehavior:(int)arg1;
-- (void)setPresentationStyle:(int)arg1;
-- (void)setRestrictedCapabilities:(unsigned int)arg1;
+- (void)setNotificationBehavior:(long long)arg1;
+- (void)setPresentationStyle:(long long)arg1;
+- (void)setRestrictedCapabilities:(unsigned long long)arg1;
 
 @end

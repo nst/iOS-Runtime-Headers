@@ -4,21 +4,21 @@
 
 @interface AFSearchAlarmsRequest : AFSiriRequest {
     STAlarm * _criteria;
-    int  _options;
+    long long  _options;
 }
 
 @property (nonatomic, retain) STAlarm *criteria;
-@property (nonatomic) int options;
+@property (nonatomic) long long options;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)createResponse;
 - (id)criteria;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)options;
+- (long long)options;
 - (void)setCriteria:(id)arg1;
-- (void)setOptions:(int)arg1;
+- (void)setOptions:(long long)arg1;
 
 @end

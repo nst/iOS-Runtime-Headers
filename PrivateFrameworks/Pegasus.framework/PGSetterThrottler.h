@@ -3,9 +3,9 @@
  */
 
 @interface PGSetterThrottler : NSObject {
-    id /* block */  _block;
-    BOOL  _busy;
-    BOOL  _pending;
+    id  _block;
+    bool  _busy;
+    bool  _pending;
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<OS_dispatch_queue> * _throttleQueue;
     id  _throttledValue;
@@ -18,7 +18,7 @@
 - (void)_setValue;
 - (void)dealloc;
 - (id)init;
-- (id)initWithBlock:(id /* block */)arg1 usingQueue:(id)arg2;
+- (id)initWithBlock:(id)arg1 usingQueue:(id)arg2;
 - (void)setValue:(id)arg1;
 - (id)value;
 

@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <SFAirDropTransferDataProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedAlertDataProvider;
@@ -29,7 +29,7 @@
 - (void)showCancelledAlertForRecordID:(id)arg1;
 - (void)showFailedAlertForRecordID:(id)arg1;
 - (void)showProgressAlertForRecordID:(id)arg1;
-- (void)transferDataWithRecordID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)transferDataWithRecordID:(id)arg1 completionHandler:(id)arg2;
 - (void)userDidAcceptTransferWithRecordID:(id)arg1;
 - (void)userDidCancelTransferWithRecordID:(id)arg1;
 - (void)userDidSelectAppWithIndex:(id)arg1 forRecordID:(id)arg2;

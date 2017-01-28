@@ -4,11 +4,11 @@
 
 @interface CPLEngineComponentEnumerator : NSObject {
     NSEnumerator * _enumerator;
-    id /* block */  _handler;
+    id  _handler;
 }
 
 - (void).cxx_destruct;
-- (id)initWithComponents:(id)arg1 handler:(id /* block */)arg2;
+- (id)initWithComponents:(id)arg1 handler:(id)arg2;
 - (void)nextComponent;
 
 @end

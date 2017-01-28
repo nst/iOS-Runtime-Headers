@@ -5,6 +5,6 @@
 
 @required
 
-- (void)reachabilityManagerConnectionStatusChanged:(HLPReachabilityManager *)arg1 connected:(BOOL)arg2;
+- (void)reachabilityManagerConnectionStatusChanged:(HLPReachabilityManager *)arg1 connected:(bool)arg2;
 
 @end

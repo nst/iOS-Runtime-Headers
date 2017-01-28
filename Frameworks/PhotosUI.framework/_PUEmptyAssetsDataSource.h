@@ -6,6 +6,6 @@
 
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)indexPathForAssetReference:(id)arg1;
-- (int)numberOfSubItemsAtIndexPath:(id)arg1;
+- (long long)numberOfSubItemsAtIndexPath:(id)arg1;
 
 @end

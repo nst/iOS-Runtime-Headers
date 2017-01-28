@@ -10,7 +10,7 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasSearchResultsCount;
+@property (nonatomic) bool hasSearchResultsCount;
 @property (nonatomic) int searchResultsCount;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSearchResultsCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSearchResultsCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)searchResultsCount;
-- (void)setHasSearchResultsCount:(BOOL)arg1;
+- (void)setHasSearchResultsCount:(bool)arg1;
 - (void)setSearchResultsCount:(int)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

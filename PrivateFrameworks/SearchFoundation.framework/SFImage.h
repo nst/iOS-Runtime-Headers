@@ -4,50 +4,50 @@
 
 @interface SFImage : NSObject <NSSecureCoding> {
     NSString * _contentType;
-    float  _cornerRadius;
+    double  _cornerRadius;
     NSData * _imageData;
-    BOOL  _isTemplate;
+    bool  _isTemplate;
     NSString * _keyColor;
-    float  _scale;
-    BOOL  _shouldCropToCircle;
+    double  _scale;
+    bool  _shouldCropToCircle;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 
 @property (nonatomic, retain) NSString *contentType;
-@property (nonatomic) float cornerRadius;
+@property (nonatomic) double cornerRadius;
 @property (retain) NSData *imageData;
-@property (nonatomic) BOOL isTemplate;
+@property (nonatomic) bool isTemplate;
 @property (nonatomic, retain) NSString *keyColor;
-@property (nonatomic) float scale;
-@property (nonatomic) BOOL shouldCropToCircle;
-@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) double scale;
+@property (nonatomic) bool shouldCropToCircle;
+@property (nonatomic) struct CGSize { double x1; double x2; } size;
 
 + (id)imageWithData:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)contentType;
-- (float)cornerRadius;
+- (double)cornerRadius;
 - (void)encodeWithCoder:(id)arg1;
 - (id)imageData;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isTemplate;
+- (bool)isTemplate;
 - (id)keyColor;
-- (void)loadImageDataWithCompletionAndErrorHandler:(id /* block */)arg1;
-- (void)loadImageDataWithCompletionHandler:(id /* block */)arg1;
-- (float)scale;
+- (void)loadImageDataWithCompletionAndErrorHandler:(id)arg1;
+- (void)loadImageDataWithCompletionHandler:(id)arg1;
+- (double)scale;
 - (void)setContentType:(id)arg1;
-- (void)setCornerRadius:(float)arg1;
+- (void)setCornerRadius:(double)arg1;
 - (void)setImageData:(id)arg1;
-- (void)setIsTemplate:(BOOL)arg1;
+- (void)setIsTemplate:(bool)arg1;
 - (void)setKeyColor:(id)arg1;
-- (void)setScale:(float)arg1;
-- (void)setShouldCropToCircle:(BOOL)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)shouldCropToCircle;
-- (struct CGSize { float x1; float x2; })size;
+- (void)setScale:(double)arg1;
+- (void)setShouldCropToCircle:(bool)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)shouldCropToCircle;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

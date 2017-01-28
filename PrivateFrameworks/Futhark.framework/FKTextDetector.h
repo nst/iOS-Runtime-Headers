@@ -4,19 +4,19 @@
 
 @interface FKTextDetector : NSObject {
     int  _binarizerLimit;
-    BOOL  _createFeaturesForAllConcomps;
-    BOOL  _detectDiacritics;
-    BOOL  _enableBinarizerFiltering;
+    bool  _createFeaturesForAllConcomps;
+    bool  _detectDiacritics;
+    bool  _enableBinarizerFiltering;
     struct { 
         int minScale; 
         int maxScale; 
     }  _mergeSettings;
-    BOOL  _minimizeFalseDetections;
+    bool  _minimizeFalseDetections;
     int  _minimumCharacterHeight;
     NSString * _recognitionLanguage;
-    BOOL  _returnSubFeatures;
+    bool  _returnSubFeatures;
     struct { /* ? */ } * _sessions;
-    int  _thresholdingAlgorithm;
+    long long  _thresholdingAlgorithm;
     unsigned int  _timeBinarizer;
     unsigned int  _timeConcomps;
     unsigned int  _timeDownscale;
@@ -25,47 +25,47 @@
 }
 
 @property (nonatomic) int binarizerLimit;
-@property (nonatomic) BOOL createFeaturesForAllConcomps;
-@property (nonatomic) BOOL detectDiacritics;
-@property (nonatomic) BOOL enableBinarizerFiltering;
+@property (nonatomic) bool createFeaturesForAllConcomps;
+@property (nonatomic) bool detectDiacritics;
+@property (nonatomic) bool enableBinarizerFiltering;
 @property (nonatomic) struct { int x1; int x2; } mergeSettings;
-@property (nonatomic) BOOL minimizeFalseDetections;
+@property (nonatomic) bool minimizeFalseDetections;
 @property (nonatomic) int minimumCharacterHeight;
 @property (nonatomic, copy) NSString *recognitionLanguage;
-@property (nonatomic) BOOL returnSubFeatures;
-@property (nonatomic) int thresholdingAlgorithm;
+@property (nonatomic) bool returnSubFeatures;
+@property (nonatomic) long long thresholdingAlgorithm;
 
 - (int)binarizerLimit;
-- (BOOL)createFeaturesForAllConcomps;
-- (id)createFeaturesForROI:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 originalSize:(struct CGSize { float x1; float x2; })arg2 lastID:(int*)arg3;
-- (id)createFeaturesForSessionScale:(int)arg1 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 originalSize:(struct CGSize { float x1; float x2; })arg3 startID:(int*)arg4;
+- (bool)createFeaturesForAllConcomps;
+- (id)createFeaturesForROI:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 originalSize:(struct CGSize { double x1; double x2; })arg2 lastID:(long long*)arg3;
+- (id)createFeaturesForSessionScale:(int)arg1 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 originalSize:(struct CGSize { double x1; double x2; })arg3 startID:(long long*)arg4;
 - (void)dealloc;
-- (BOOL)detectDiacritics;
+- (bool)detectDiacritics;
 - (id)detectFeaturesInBuffer:(struct __CVBuffer { }*)arg1 error:(id*)arg2;
-- (id)detectFeaturesInBuffer:(struct __CVBuffer { }*)arg1 withRegionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 error:(id*)arg3;
-- (BOOL)enableBinarizerFiltering;
-- (id)initWithDimensions:(struct CGSize { float x1; float x2; })arg1;
-- (unsigned char)isValidPixelBuffer:(struct __CVBuffer { }*)arg1 regionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 error:(id*)arg3;
+- (id)detectFeaturesInBuffer:(struct __CVBuffer { }*)arg1 withRegionOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 error:(id*)arg3;
+- (bool)enableBinarizerFiltering;
+- (id)initWithDimensions:(struct CGSize { double x1; double x2; })arg1;
+- (unsigned char)isValidPixelBuffer:(struct __CVBuffer { }*)arg1 regionOfInterest:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 error:(id*)arg3;
 - (void)mergeFeature:(id)arg1 withArray:(id)arg2;
 - (struct { int x1; int x2; })mergeSettings;
-- (BOOL)minimizeFalseDetections;
+- (bool)minimizeFalseDetections;
 - (int)minimumCharacterHeight;
 - (id)recognitionLanguage;
 - (void)resetOptions;
 - (void)resetTimers;
-- (BOOL)returnSubFeatures;
-- (void)runRecognizerOnFeatures:(id)arg1 roi:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 lastID:(int*)arg4;
+- (bool)returnSubFeatures;
+- (void)runRecognizerOnFeatures:(id)arg1 roi:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 size:(struct CGSize { double x1; double x2; })arg3 lastID:(long long*)arg4;
 - (void)setBinarizerLimit:(int)arg1;
-- (void)setCreateFeaturesForAllConcomps:(BOOL)arg1;
-- (void)setDetectDiacritics:(BOOL)arg1;
-- (void)setEnableBinarizerFiltering:(BOOL)arg1;
+- (void)setCreateFeaturesForAllConcomps:(bool)arg1;
+- (void)setDetectDiacritics:(bool)arg1;
+- (void)setEnableBinarizerFiltering:(bool)arg1;
 - (void)setMergeSettings:(struct { int x1; int x2; })arg1;
-- (void)setMinimizeFalseDetections:(BOOL)arg1;
+- (void)setMinimizeFalseDetections:(bool)arg1;
 - (void)setMinimumCharacterHeight:(int)arg1;
 - (void)setRecognitionLanguage:(id)arg1;
-- (void)setReturnSubFeatures:(BOOL)arg1;
-- (void)setThresholdingAlgorithm:(int)arg1;
-- (int)thresholdingAlgorithm;
+- (void)setReturnSubFeatures:(bool)arg1;
+- (void)setThresholdingAlgorithm:(long long)arg1;
+- (long long)thresholdingAlgorithm;
 - (void)translatePropertiesToOptionsWithNumSessions:(int)arg1;
 
 @end

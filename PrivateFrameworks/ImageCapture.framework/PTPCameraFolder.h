@@ -8,28 +8,28 @@
 }
 
 @property (copy) id info;
-@property (readonly) unsigned long objHandle;
+@property (readonly) unsigned int objHandle;
 @property (retain) NSString *path;
-@property (readonly) unsigned long storageID;
-@property (readonly) unsigned int type;
+@property (readonly) unsigned int storageID;
+@property (readonly) unsigned long long type;
 
 - (void)dealloc;
-- (BOOL)deleteItemFromCamera:(id)arg1;
+- (bool)deleteItemFromCamera:(id)arg1;
 - (id)description;
 - (void)enumerateContent;
 - (void)finalize;
-- (id)folderForObjectHandle:(unsigned long)arg1;
-- (id)folderForObjectHandleCreatingIfNeeded:(unsigned long)arg1 addUsedObjectIDs:(id)arg2 numFoldersCreated:(int*)arg3;
-- (BOOL)hasDCIMParent;
+- (id)folderForObjectHandle:(unsigned int)arg1;
+- (id)folderForObjectHandleCreatingIfNeeded:(unsigned int)arg1 addUsedObjectIDs:(id)arg2 numFoldersCreated:(int*)arg3;
+- (bool)hasDCIMParent;
 - (id)info;
-- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 type:(unsigned int)arg4 storageID:(unsigned long)arg5 objectHandle:(unsigned long)arg6;
-- (id)itemForObjectHandle:(unsigned long)arg1;
-- (unsigned long)objHandle;
+- (id)initWithName:(id)arg1 parentFolder:(id)arg2 device:(id)arg3 type:(unsigned long long)arg4 storageID:(unsigned int)arg5 objectHandle:(unsigned int)arg6;
+- (id)itemForObjectHandle:(unsigned int)arg1;
+- (unsigned int)objHandle;
 - (id)path;
 - (void)refreshInfo;
 - (void)setInfo:(id)arg1;
 - (void)setPath:(id)arg1;
-- (unsigned long)storageID;
-- (unsigned int)type;
+- (unsigned int)storageID;
+- (unsigned long long)type;
 
 @end

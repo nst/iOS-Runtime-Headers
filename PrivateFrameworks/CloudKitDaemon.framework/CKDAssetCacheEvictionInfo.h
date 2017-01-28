@@ -4,29 +4,29 @@
 
 @interface CKDAssetCacheEvictionInfo : NSObject {
     NSMutableOrderedSet * _assetHandleItemIDsToDelete;
-    BOOL  _clearRegisteredItems;
-    BOOL  _evictNow;
-    BOOL  _forced;
+    bool  _clearRegisteredItems;
+    bool  _evictNow;
+    bool  _forced;
     NSMutableOrderedSet * _itemIDsToUnregister;
 }
 
 @property (nonatomic, retain) NSMutableOrderedSet *assetHandleItemIDsToDelete;
-@property BOOL clearRegisteredItems;
-@property BOOL evictNow;
-@property BOOL forced;
+@property bool clearRegisteredItems;
+@property bool evictNow;
+@property bool forced;
 @property (nonatomic, retain) NSMutableOrderedSet *itemIDsToUnregister;
 
 - (void).cxx_destruct;
 - (id)assetHandleItemIDsToDelete;
-- (BOOL)clearRegisteredItems;
-- (BOOL)evictNow;
-- (BOOL)forced;
-- (id)initForced:(BOOL)arg1 evictNow:(BOOL)arg2;
+- (bool)clearRegisteredItems;
+- (bool)evictNow;
+- (bool)forced;
+- (id)initForced:(bool)arg1 evictNow:(bool)arg2;
 - (id)itemIDsToUnregister;
 - (void)setAssetHandleItemIDsToDelete:(id)arg1;
-- (void)setClearRegisteredItems:(BOOL)arg1;
-- (void)setEvictNow:(BOOL)arg1;
-- (void)setForced:(BOOL)arg1;
+- (void)setClearRegisteredItems:(bool)arg1;
+- (void)setEvictNow:(bool)arg1;
+- (void)setForced:(bool)arg1;
 - (void)setItemIDsToUnregister:(id)arg1;
 
 @end

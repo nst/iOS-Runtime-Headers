@@ -13,9 +13,9 @@
     _INPBValueMetadata * _valueMetadata;
 }
 
-@property (nonatomic) BOOL hasLength;
-@property (nonatomic) BOOL hasLocation;
-@property (nonatomic, readonly) BOOL hasValueMetadata;
+@property (nonatomic) bool hasLength;
+@property (nonatomic) bool hasLocation;
+@property (nonatomic, readonly) bool hasValueMetadata;
 @property (nonatomic) unsigned long long length;
 @property (nonatomic) unsigned long long location;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -27,17 +27,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLength;
-- (BOOL)hasLocation;
-- (BOOL)hasValueMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLength;
+- (bool)hasLocation;
+- (bool)hasValueMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned long long)length;
 - (unsigned long long)location;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasLength:(BOOL)arg1;
-- (void)setHasLocation:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasLength:(bool)arg1;
+- (void)setHasLocation:(bool)arg1;
 - (void)setLength:(unsigned long long)arg1;
 - (void)setLocation:(unsigned long long)arg1;
 - (void)setValueMetadata:(id)arg1;

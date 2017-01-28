@@ -14,8 +14,8 @@
 
 - (id)_certificatePayload;
 - (id)earliestCertificateExpiryDate;
-- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(BOOL)arg2 outError:(id*)arg3;
-- (BOOL)isSigned;
+- (id)initWithDictionary:(id)arg1 allowEmptyPayload:(bool)arg2 outError:(id*)arg3;
+- (bool)isSigned;
 - (id)stubDictionary;
 - (int)trustLevel;
 

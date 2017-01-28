@@ -28,8 +28,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;
-- (void)enumerateHumanReadableTraceEntriesWithBlock:(id /* block */)arg1;
-- (void)enumerateRecordsWithBlock:(id /* block */)arg1;
+- (void)enumerateHumanReadableTraceEntriesWithBlock:(id)arg1;
+- (void)enumerateRecordsWithBlock:(id)arg1;
 - (id)filename;
 - (id)init;
 - (id)initWithPropertyList:(id)arg1;

@@ -9,7 +9,7 @@
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 + (id)dataWithZoneID:(id)arg1 pcsData:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

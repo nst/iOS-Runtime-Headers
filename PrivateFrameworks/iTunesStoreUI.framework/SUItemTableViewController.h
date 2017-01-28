@@ -6,10 +6,10 @@
     SUDocumentInteractionSession * _documentInteractionSession;
 }
 
-- (void)_chooseApplicationToOpenDocumentAtIndexPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_chooseApplicationToOpenDocumentAtIndexPath:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)_hidePurchaseConfirmationForButton:(id)arg1;
 - (id)_preferredApplicationFromCandidates:(id)arg1;
-- (void)_promptToOpenUTI:(id)arg1 fromIndexPath:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)_promptToOpenUTI:(id)arg1 fromIndexPath:(id)arg2 withCompletionHandler:(id)arg3;
 - (void)_purchasedItemSetChangedNotification:(id)arg1;
 - (void)_removeTouchCaptureView;
 - (void)_restrictionsChangedNotification:(id)arg1;
@@ -20,9 +20,9 @@
 - (id)init;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)itemOfferButtonAction:(id)arg1;
-- (BOOL)openDocumentForItemAtIndexPath:(id)arg1 withApplication:(id)arg2;
-- (BOOL)purchaseItemAtIndexPath:(id)arg1;
+- (bool)openDocumentForItemAtIndexPath:(id)arg1 withApplication:(id)arg2;
+- (bool)purchaseItemAtIndexPath:(id)arg1;
 - (void)reloadData;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

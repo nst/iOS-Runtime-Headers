@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)captureSession:(PKCaptureSession *)arg1 isRunning:(BOOL)arg2;
+- (void)captureSession:(PKCaptureSession *)arg1 isRunning:(bool)arg2;
 
 @end

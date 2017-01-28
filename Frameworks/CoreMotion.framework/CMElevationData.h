@@ -3,34 +3,34 @@
  */
 
 @interface CMElevationData : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int  fElevationAscended;
-    unsigned int  fElevationDescended;
+    unsigned long long  fElevationAscended;
+    unsigned long long  fElevationDescended;
     NSDate * fEndDate;
-    unsigned int  fRecordId;
+    unsigned long long  fRecordId;
     NSUUID * fSourceId;
     NSDate * fStartDate;
 }
 
-@property (nonatomic, readonly) unsigned int elevationAscended;
-@property (nonatomic, readonly) unsigned int elevationDescended;
+@property (nonatomic, readonly) unsigned long long elevationAscended;
+@property (nonatomic, readonly) unsigned long long elevationDescended;
 @property (nonatomic, readonly) NSDate *endDate;
-@property (nonatomic, readonly) unsigned int recordId;
+@property (nonatomic, readonly) unsigned long long recordId;
 @property (nonatomic, readonly) NSUUID *sourceId;
 @property (nonatomic, readonly) NSDate *startDate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)elevationAscended;
-- (unsigned int)elevationDescended;
+- (unsigned long long)elevationAscended;
+- (unsigned long long)elevationDescended;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRecordId:(unsigned int)arg1 sourceId:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 elevationAscended:(unsigned int)arg5 elevationDescended:(unsigned int)arg6;
+- (id)initWithRecordId:(unsigned long long)arg1 sourceId:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 elevationAscended:(unsigned long long)arg5 elevationDescended:(unsigned long long)arg6;
 - (id)initWithSignificantElevationSample:(id)arg1;
-- (unsigned int)recordId;
+- (unsigned long long)recordId;
 - (id)sourceId;
 - (id)startDate;
 

@@ -4,15 +4,15 @@
 
 @interface SAUIChangePrimaryUtterance : SABaseClientBoundCommand
 
-@property (nonatomic) int utteranceIndex;
+@property (nonatomic) long long utteranceIndex;
 
 + (id)changePrimaryUtterance;
 + (id)changePrimaryUtteranceWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
-- (void)setUtteranceIndex:(int)arg1;
-- (int)utteranceIndex;
+- (bool)requiresResponse;
+- (void)setUtteranceIndex:(long long)arg1;
+- (long long)utteranceIndex;
 
 @end

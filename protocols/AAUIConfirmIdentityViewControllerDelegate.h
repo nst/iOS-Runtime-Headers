@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)confirmIdentityViewController:(AAUIConfirmIdentityViewController *)arg1 didCompleteWithSuccess:(BOOL)arg2;
+- (void)confirmIdentityViewController:(AAUIConfirmIdentityViewController *)arg1 didCompleteWithSuccess:(bool)arg2;
 
 @end

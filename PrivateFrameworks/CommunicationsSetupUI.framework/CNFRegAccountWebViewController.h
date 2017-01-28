@@ -4,16 +4,16 @@
 
 @interface CNFRegAccountWebViewController : CNFRegServerWebViewController {
     NSTimer * _bagLoadTimer;
-    BOOL  _failedBagLoad;
-    BOOL  _listeningForBagLoad;
+    bool  _failedBagLoad;
+    bool  _listeningForBagLoad;
 }
 
-@property (nonatomic) BOOL failedBagLoad;
+@property (nonatomic) bool failedBagLoad;
 
 - (void).cxx_destruct;
 - (void)_bagLoadTimeout:(id)arg1;
 - (void)_handleFTServerBagFinishedLoading;
-- (BOOL)_loadURLFromBag;
+- (bool)_loadURLFromBag;
 - (id)_nonModalParentController;
 - (void)_reload;
 - (void)_reloadDelayed;
@@ -26,17 +26,17 @@
 - (void)_stopListeningForBagLoad;
 - (id)_viewPortForFormSheetPresentation;
 - (id)_viewPortForNormalPresentation;
-- (id)_viewPortStringForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_viewPortStringForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)authIdHeaderValue;
 - (id)authTokenHeaderValue;
 - (id)bagKey;
-- (BOOL)canSendURLRequest:(id)arg1;
+- (bool)canSendURLRequest:(id)arg1;
 - (void)cancelTapped;
 - (id)clientInfoHeaderValue;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)dealloc;
 - (void)doHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
-- (BOOL)failedBagLoad;
+- (bool)failedBagLoad;
 - (id)initWithRegController:(id)arg1;
 - (id)interfaceLayoutHeaderValue;
 - (void)loadView;
@@ -45,13 +45,13 @@
 - (void)receivedStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (id)securityHeaderValue;
 - (id)serviceHeaderValue;
-- (void)setFailedBagLoad:(BOOL)arg1;
+- (void)setFailedBagLoad:(bool)arg1;
 - (void)setHeadersForRequest:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)shouldSetHeadersForRequest:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (bool)shouldSetHeadersForRequest:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 - (id)viewPortHeaderValue;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

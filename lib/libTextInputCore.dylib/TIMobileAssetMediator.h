@@ -4,14 +4,14 @@
 
 @interface TIMobileAssetMediator : NSObject {
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _isWaitingForReachability;
+    bool  _isWaitingForReachability;
     NSMutableSet * _queuedInputModeLevels;
     struct __SCNetworkReachability { } * _reachabilityRef;
     TIMobileAssetSyncState * _syncState;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic) BOOL isWaitingForReachability;
+@property (nonatomic) bool isWaitingForReachability;
 @property (nonatomic, readonly) NSMutableSet *queuedInputModeLevels;
 @property (nonatomic, readonly) struct __SCNetworkReachability { }*reachabilityRef;
 @property (nonatomic, readonly) TIMobileAssetSyncState *syncState;
@@ -19,17 +19,17 @@
 + (id)assetDownloadsInProgress;
 + (id)assetsByRemovingOldVersionsFromAssets:(id)arg1;
 + (id)compatibilityPredicate;
-+ (oneway void)downloadAsset:(id)arg1 continuation:(id /* block */)arg2;
++ (oneway void)downloadAsset:(id)arg1 continuation:(id)arg2;
 + (id)downloadOptionsForAsset:(id)arg1;
-+ (id /* block */)downloadProgressHandlerForAsset:(id)arg1;
++ (id)downloadProgressHandlerForAsset:(id)arg1;
 + (id)fetchAssetInformationForDownloadsInProgress;
-+ (id)fetchAssetInformationForType:(id)arg1 levels:(id)arg2 localOnly:(BOOL)arg3 compatibleOnly:(BOOL)arg4;
-+ (id)fetchAssetInformationForTypes:(id)arg1 levels:(id)arg2 localOnly:(BOOL)arg3 compatibleOnly:(BOOL)arg4;
-+ (BOOL)isDownloadOverdueForAsset:(id)arg1;
++ (id)fetchAssetInformationForType:(id)arg1 levels:(id)arg2 localOnly:(bool)arg3 compatibleOnly:(bool)arg4;
++ (id)fetchAssetInformationForTypes:(id)arg1 levels:(id)arg2 localOnly:(bool)arg3 compatibleOnly:(bool)arg4;
++ (bool)isDownloadOverdueForAsset:(id)arg1;
 + (id)knownAssetIdentifiers;
-+ (id)predicateForAssetType:(id)arg1 levels:(id)arg2 compatibileVersionOnly:(BOOL)arg3;
++ (id)predicateForAssetType:(id)arg1 levels:(id)arg2 compatibileVersionOnly:(bool)arg3;
 + (id)predicateForTIAsset:(id)arg1;
-+ (id)queryAssetsWithPredicate:(id)arg1 localOnly:(BOOL)arg2 error:(id*)arg3;
++ (id)queryAssetsWithPredicate:(id)arg1 localOnly:(bool)arg2 error:(id*)arg3;
 + (void)recordDownloadEndedForAsset:(id)arg1;
 + (void)recordDownloadStartedForAssets:(id)arg1;
 + (void)saveAssetDownloadsInProgress;
@@ -38,23 +38,23 @@
 
 - (void)dealloc;
 - (id)dispatchQueue;
-- (oneway void)downloadAssets:(id)arg1 continuation:(id /* block */)arg2;
-- (void)downloadUninstalledAssetsForInputModeLevels:(id)arg1 continuation:(id /* block */)arg2;
+- (oneway void)downloadAssets:(id)arg1 continuation:(id)arg2;
+- (void)downloadUninstalledAssetsForInputModeLevels:(id)arg1 continuation:(id)arg2;
 - (void)downloadUninstalledAssetsForQueuedLevels;
 - (id)fetchInstalledAssetInformation;
-- (oneway void)fetchUninstalledAssetInformationForLevels:(id)arg1 continuation:(id /* block */)arg2;
+- (oneway void)fetchUninstalledAssetInformationForLevels:(id)arg1 continuation:(id)arg2;
 - (id)initWithDispatchQueue:(id)arg1;
-- (BOOL)isWaitingForReachability;
+- (bool)isWaitingForReachability;
 - (id)queuedInputModeLevels;
 - (void)reachabilityChanged;
 - (struct __SCNetworkReachability { }*)reachabilityRef;
 - (void)registerReachabilityCallback;
 - (void)retryDownloadsWhenReachable;
-- (void)setIsWaitingForReachability:(BOOL)arg1;
-- (BOOL)shouldDownloadUninstalledAssets;
+- (void)setIsWaitingForReachability:(bool)arg1;
+- (bool)shouldDownloadUninstalledAssets;
 - (id)syncState;
 - (void)syncToRemoteMetadataIfNecessary;
 - (void)tryDownloadUninstalledAssetsForQueuedLevels;
-- (BOOL)tryToPurgeAsset:(id)arg1;
+- (bool)tryToPurgeAsset:(id)arg1;
 
 @end

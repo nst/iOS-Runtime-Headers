@@ -14,12 +14,12 @@
 - (void)_applyPersonFromFaceReference:(id)arg1 toDetectedFace:(id)arg2;
 - (void)_applyRejectedPeopleFromFaceReference:(id)arg1 toDetectedFace:(id)arg2;
 - (void)_deletePushedFacesNotIn:(id)arg1;
-- (id)_detectedFaceFromFaceRef:(id)arg1 algorithmVersion:(int)arg2;
+- (id)_detectedFaceFromFaceRef:(id)arg1 algorithmVersion:(long long)arg2;
 - (id)_detectedFacesFromAssetChange:(id)arg1;
 - (id)_findOrMakeFaceMatchingRef:(id)arg1;
 - (void)_processPendingFaceChanges;
 - (void)_setupExistingFacesWithAssetChange:(id)arg1;
-- (BOOL)_shouldSkipAssetChange:(id)arg1;
+- (bool)_shouldSkipAssetChange:(id)arg1;
 - (void)applyFaceReference:(id)arg1 toDetectedFace:(id)arg2;
 - (void)applyFacesChangesFromAssetChange:(id)arg1;
 - (void)dealloc;

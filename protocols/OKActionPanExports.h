@@ -5,8 +5,8 @@
 
 @required
 
-- (unsigned int)direction;
-- (struct CGPoint { float x1; float x2; })translation;
-- (struct CGPoint { float x1; float x2; })velocity;
+- (unsigned long long)direction;
+- (struct CGPoint { double x1; double x2; })translation;
+- (struct CGPoint { double x1; double x2; })velocity;
 
 @end

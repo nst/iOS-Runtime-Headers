@@ -23,9 +23,9 @@
 - (id)delegate;
 - (id)initWithDelegate:(id)arg1;
 - (void)installUpdate:(id)arg1;
-- (void)managerState:(id /* block */)arg1;
+- (void)managerState:(id)arg1;
 - (void)performMigration;
-- (void)purgeUpdate:(id)arg1 completion:(id /* block */)arg2;
+- (void)purgeUpdate:(id)arg1 completion:(id)arg2;
 - (id)queue;
 - (void)scanForUpdates;
 - (id)serverConnection;

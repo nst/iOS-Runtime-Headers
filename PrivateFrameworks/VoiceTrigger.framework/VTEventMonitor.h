@@ -12,8 +12,8 @@
 - (void)_stopMonitoring;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
-- (void)enumerateObservers:(id /* block */)arg1;
-- (void)enumerateObserversInQueue:(id /* block */)arg1;
+- (void)enumerateObservers:(id)arg1;
+- (void)enumerateObserversInQueue:(id)arg1;
 - (id)init;
 - (void)notifyObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;

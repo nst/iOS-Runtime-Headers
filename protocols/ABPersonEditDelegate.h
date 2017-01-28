@@ -5,7 +5,7 @@
 
 @optional
 
-- (struct CGSize { float x1; float x2; })adjustedPopoverContentSizeForPersonView:(ABPersonViewController *)arg1 suggestedSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })adjustedPopoverContentSizeForPersonView:(ABPersonViewController *)arg1 suggestedSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)didRemoveDeleteButtonAtIndexPath:(NSIndexPath *)arg1;
 - (void)imageUpdatedForPerson:(void*)arg1;
 - (void)insertProperty:(int*)arg1 insertValue:(id*)arg2 insertLabel:(id*)arg3;
@@ -17,10 +17,10 @@
 - (void)person:(void*)arg1 tableViewTouchesBegan:(NSSet *)arg2 withEvent:(UIEvent *)arg3;
 - (void)personHeaderViewHeightDidChange:(void*)arg1;
 - (void)personScrollViewWillBeginDragging:(void*)arg1;
-- (BOOL)personViewController:(ABPersonViewController *)arg1 shouldContinueAfterEditingConfirmed:(BOOL)arg2 forPerson:(void*)arg3;
+- (bool)personViewController:(ABPersonViewController *)arg1 shouldContinueAfterEditingConfirmed:(bool)arg2 forPerson:(void*)arg3;
 - (void)personWasDeleted;
 - (void)preferredPersonDidChangeToPerson:(void*)arg1;
-- (BOOL)shouldBeRemovedFromNavigationStack;
+- (bool)shouldBeRemovedFromNavigationStack;
 - (void)willShowDeleteButtonAtIndexPath:(NSIndexPath *)arg1;
 
 @end

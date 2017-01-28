@@ -30,9 +30,9 @@
 - (void)reloadModelFromSource;
 - (id)remoteDelegate;
 - (id)resolvePendingTransactions;
-- (int)rowCountForSection:(int)arg1;
-- (int)sectionCount;
-- (int)sectionForProperty:(id)arg1;
+- (long long)rowCountForSection:(long long)arg1;
+- (long long)sectionCount;
+- (long long)sectionForProperty:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setProperties:(id)arg1;

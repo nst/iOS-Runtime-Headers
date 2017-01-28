@@ -6,6 +6,8 @@
     NSXPCConnection * _connection;
 }
 
++ (void)load;
+
 - (void).cxx_destruct;
 - (void)_clearConnection;
 - (id)_connection;

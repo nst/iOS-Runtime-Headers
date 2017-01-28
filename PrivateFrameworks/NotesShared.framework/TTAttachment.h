@@ -11,15 +11,15 @@
 @property (nonatomic, retain) NSString *attachmentUTI;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isAttachment:(id)arg1 equalToModelComparable:(id)arg2;
++ (bool)isAttachment:(id)arg1 equalToModelComparable:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)attachmentIdentifier;
 - (id)attachmentUTI;
-- (BOOL)isEqualToModelComparable:(id)arg1;
+- (bool)isEqualToModelComparable:(id)arg1;
 - (void)setAttachmentIdentifier:(id)arg1;
 - (void)setAttachmentUTI:(id)arg1;
 

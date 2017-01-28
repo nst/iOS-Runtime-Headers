@@ -15,16 +15,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (int)_sizeClassForSize:(struct CGSize { float x1; float x2; })arg1;
++ (long long)_sizeClassForSize:(struct CGSize { double x1; double x2; })arg1;
 
 - (void).cxx_destruct;
 - (void)_reloadBadge;
 - (void)_reloadManagerFromServer;
 - (void)_reloadView;
-- (void)_reloadViewControllerWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_reloadViewControllerWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setArtwork:(id)arg1 forURLString:(id)arg2;
 - (id)childViewController:(id)arg1 artworkForDownload:(id)arg2;
 - (void)childViewController:(id)arg1 performActionForDownload:(id)arg2;

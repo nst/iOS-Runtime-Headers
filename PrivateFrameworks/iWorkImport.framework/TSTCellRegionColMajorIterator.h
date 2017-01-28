@@ -28,7 +28,7 @@
                 } __first_; 
             } __pair1_; 
             struct __compressed_pair<unsigned long, TSTCellRangeColumnMajorLess> { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  mCellRangeSet;
@@ -36,7 +36,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;

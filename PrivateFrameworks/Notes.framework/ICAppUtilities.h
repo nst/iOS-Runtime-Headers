@@ -7,8 +7,8 @@
 + (id)applicationDataContainerURL;
 + (id)applicationDocumentsURL;
 + (id)attributesForGroupContainerDirectory;
-+ (BOOL)isReadOnlyPersistentStore;
-+ (void)setIsReadOnlyPersistentStore:(BOOL)arg1;
++ (bool)isReadOnlyPersistentStore;
++ (void)setIsReadOnlyPersistentStore:(bool)arg1;
 + (id)sharedUserDefaults;
 
 @end

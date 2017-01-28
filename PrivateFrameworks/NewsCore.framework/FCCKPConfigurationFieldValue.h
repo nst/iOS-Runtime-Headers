@@ -3,7 +3,7 @@
  */
 
 @interface FCCKPConfigurationFieldValue : PBCodable <NSCopying> {
-    BOOL  _boolValue;
+    bool  _boolValue;
     NSData * _bytesValue;
     double  _doubleValue;
     NSMutableArray * _fieldValues;
@@ -19,16 +19,16 @@
     int  _type;
 }
 
-@property (nonatomic) BOOL boolValue;
+@property (nonatomic) bool boolValue;
 @property (nonatomic, retain) NSData *bytesValue;
 @property (nonatomic) double doubleValue;
 @property (nonatomic, retain) NSMutableArray *fieldValues;
-@property (nonatomic) BOOL hasBoolValue;
-@property (nonatomic, readonly) BOOL hasBytesValue;
-@property (nonatomic) BOOL hasDoubleValue;
-@property (nonatomic) BOOL hasLongValue;
-@property (nonatomic, readonly) BOOL hasStringValue;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic) bool hasBoolValue;
+@property (nonatomic, readonly) bool hasBytesValue;
+@property (nonatomic) bool hasDoubleValue;
+@property (nonatomic) bool hasLongValue;
+@property (nonatomic, readonly) bool hasStringValue;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) NSMutableArray *listValues;
 @property (nonatomic) long long longValue;
 @property (nonatomic, retain) NSString *stringValue;
@@ -36,7 +36,7 @@
 
 - (void)addFieldValues:(id)arg1;
 - (void)addListValues:(id)arg1;
-- (BOOL)boolValue;
+- (bool)boolValue;
 - (id)bytesValue;
 - (void)clearFieldValues;
 - (void)clearListValues;
@@ -47,30 +47,30 @@
 - (id)dictionaryRepresentation;
 - (double)doubleValue;
 - (id)fieldValues;
-- (id)fieldValuesAtIndex:(unsigned int)arg1;
-- (unsigned int)fieldValuesCount;
-- (BOOL)hasBoolValue;
-- (BOOL)hasBytesValue;
-- (BOOL)hasDoubleValue;
-- (BOOL)hasLongValue;
-- (BOOL)hasStringValue;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)fieldValuesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)fieldValuesCount;
+- (bool)hasBoolValue;
+- (bool)hasBytesValue;
+- (bool)hasDoubleValue;
+- (bool)hasLongValue;
+- (bool)hasStringValue;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)listValues;
-- (id)listValuesAtIndex:(unsigned int)arg1;
-- (unsigned int)listValuesCount;
+- (id)listValuesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)listValuesCount;
 - (long long)longValue;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setBoolValue:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setBoolValue:(bool)arg1;
 - (void)setBytesValue:(id)arg1;
 - (void)setDoubleValue:(double)arg1;
 - (void)setFieldValues:(id)arg1;
-- (void)setHasBoolValue:(BOOL)arg1;
-- (void)setHasDoubleValue:(BOOL)arg1;
-- (void)setHasLongValue:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasBoolValue:(bool)arg1;
+- (void)setHasDoubleValue:(bool)arg1;
+- (void)setHasLongValue:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setListValues:(id)arg1;
 - (void)setLongValue:(long long)arg1;
 - (void)setStringValue:(id)arg1;

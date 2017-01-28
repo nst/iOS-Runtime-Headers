@@ -20,11 +20,11 @@
 + (NSArray *)tableAliases;
 
 - (NSUUID *)UUIDForProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;
-- (BOOL)booleanForProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;
+- (bool)booleanForProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;
 - (NSDate *)dateForProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;
-- (BOOL)deleteFromDatabase:(HDSQLiteDatabase *)arg1 error:(id*)arg2;
-- (BOOL)getValuesForProperties:(void *)arg1 database:(void *)arg2 handler:(void *)arg3; // needs 3 arg types, found 9: NSArray *, HDSQLiteDatabase *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, struct HDSQLiteRow { }*, void*
-- (BOOL)getValuesForProperties:(void *)arg1 withDatabase:(void *)arg2 applier:(void *)arg3; // needs 3 arg types, found 9: NSArray *, HDSQLiteDatabase *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, struct HDSQLiteRow { }*, void*
+- (bool)deleteFromDatabase:(HDSQLiteDatabase *)arg1 error:(id*)arg2;
+- (bool)getValuesForProperties:(void *)arg1 database:(void *)arg2 handler:(void *)arg3; // needs 3 arg types, found 9: NSArray *, HDSQLiteDatabase *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, struct HDSQLiteRow { }*, void*
+- (bool)getValuesForProperties:(void *)arg1 withDatabase:(void *)arg2 applier:(void *)arg3; // needs 3 arg types, found 9: NSArray *, HDSQLiteDatabase *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, struct HDSQLiteRow { }*, void*
 - (id)valueForProperty:(NSString *)arg1 database:(HDSQLiteDatabase *)arg2;
 
 @optional

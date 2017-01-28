@@ -6,7 +6,7 @@
     HFMutableSetDiff * _actionSetBuilders;
     HFTriggerAnonymousActionSetBuilder * _anonymousActionSetBuilder;
     NSArray * _conditions;
-    BOOL  _enabled;
+    bool  _enabled;
     NSString * _name;
 }
 
@@ -14,13 +14,14 @@
 @property (nonatomic, readonly) NSArray *actionSets;
 @property (nonatomic, retain) HFTriggerAnonymousActionSetBuilder *anonymousActionSetBuilder;
 @property (nonatomic, retain) NSArray *conditions;
-@property (nonatomic) BOOL enabled;
-@property (nonatomic, readonly) BOOL hasActions;
+@property (nonatomic) bool enabled;
+@property (nonatomic, readonly) bool hasActions;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) bool requiresConfirmationToRun;
 @property (nonatomic, readonly) HMTrigger *trigger;
 
 + (Class)homeKitRepresentationClass;
-+ (BOOL)supportsConditions;
++ (bool)supportsConditions;
 + (id)triggerBuilderForTrigger:(id)arg1 inHome:(id)arg2;
 
 - (void).cxx_destruct;
@@ -40,19 +41,20 @@
 - (id)commitEditTrigger;
 - (id)commitItem;
 - (id)conditions;
-- (BOOL)enabled;
-- (BOOL)hasActions;
+- (bool)enabled;
+- (bool)hasActions;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
 - (id)name;
-- (id)naturalLanguageNameOfType:(unsigned int)arg1;
+- (id)naturalLanguageNameOfType:(unsigned long long)arg1;
 - (void)removeAction:(id)arg1;
 - (void)removeActionSet:(id)arg1;
 - (void)removeAllActionsAndActionSets;
 - (void)removeCondition:(id)arg1;
+- (bool)requiresConfirmationToRun;
 - (void)setActionSetBuilders:(id)arg1;
 - (void)setAnonymousActionSetBuilder:(id)arg1;
 - (void)setConditions:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setTrigger:(id)arg1;
 - (id)trigger;

@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSString *referenceName;
 
-- (BOOL)_isAReference;
+- (bool)_isAReference;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

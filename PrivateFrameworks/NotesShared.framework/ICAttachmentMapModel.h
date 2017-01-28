@@ -4,14 +4,14 @@
 
 @interface ICAttachmentMapModel : ICAttachmentModel
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 
-- (BOOL)generateAsynchronousPreviews;
+- (bool)generateAsynchronousPreviews;
 - (void)generatePreviewsInOperation:(id)arg1;
-- (id /* block */)genericBrickThumbnailCreator;
-- (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
-- (BOOL)needToGeneratePreviews;
-- (BOOL)requiresNetworkToGeneratePreview;
+- (id)genericBrickThumbnailCreator;
+- (id)genericListThumbnailCreator;
+- (bool)hasPreviews;
+- (bool)needToGeneratePreviews;
+- (bool)requiresNetworkToGeneratePreview;
 
 @end

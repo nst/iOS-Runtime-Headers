@@ -3,21 +3,21 @@
  */
 
 @interface MCDSectionedTableViewController : MCD_OLD_TableViewController {
-    unsigned int * _offsetOfSection;
+    unsigned long long * _offsetOfSection;
 }
 
-@property (nonatomic, readonly) unsigned int countOfActions;
-@property (nonatomic, readonly) BOOL isSectioning;
+@property (nonatomic, readonly) unsigned long long countOfActions;
+@property (nonatomic, readonly) bool isSectioning;
 
-- (unsigned int)countOfActions;
+- (unsigned long long)countOfActions;
 - (void)dealloc;
 - (id)initWithQuery:(id)arg1 player:(id)arg2 serviceProvider:(id)arg3;
-- (BOOL)isSectioning;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (unsigned int)rowAtIndexPath:(id)arg1;
+- (bool)isSectioning;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (unsigned long long)rowAtIndexPath:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (int)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(int)arg3;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)tableView:(id)arg1 sectionForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 
 @end

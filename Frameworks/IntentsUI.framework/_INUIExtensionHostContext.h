@@ -6,13 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (id)_errorHandlingExtensionContextProxy;
-- (void)setHostedViewMinimumAllowedSize:(struct CGSize { float x1; float x2; })arg1 maximumAllowedSize:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
+- (void)setHostedViewMinimumAllowedSize:(struct CGSize { double x1; double x2; })arg1 maximumAllowedSize:(struct CGSize { double x1; double x2; })arg2 completion:(id)arg3;
 
 @end

@@ -5,16 +5,16 @@
 @interface SKCloudServiceSetupConfiguration : NSObject <NSCopying, NSSecureCoding> {
     NSString * _applicationIdentifier;
     NSString * _applicationVersion;
-    BOOL  _forPublicSDK;
-    BOOL  _targetsFinanceApplication;
+    bool  _forPublicSDK;
+    bool  _targetsFinanceApplication;
 }
 
 @property (nonatomic, copy) NSString *applicationIdentifier;
 @property (nonatomic, copy) NSString *applicationVersion;
-@property (nonatomic) BOOL forPublicSDK;
-@property (nonatomic) BOOL targetsFinanceApplication;
+@property (nonatomic) bool forPublicSDK;
+@property (nonatomic) bool targetsFinanceApplication;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)applicationIdentifier;
@@ -22,15 +22,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)forPublicSDK;
-- (unsigned int)hash;
+- (bool)forPublicSDK;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
-- (void)setForPublicSDK:(BOOL)arg1;
-- (void)setTargetsFinanceApplication:(BOOL)arg1;
-- (BOOL)targetsFinanceApplication;
+- (void)setForPublicSDK:(bool)arg1;
+- (void)setTargetsFinanceApplication:(bool)arg1;
+- (bool)targetsFinanceApplication;
 
 @end

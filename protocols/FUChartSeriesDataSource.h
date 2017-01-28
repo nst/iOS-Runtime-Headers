@@ -12,6 +12,6 @@
 
 @optional
 
-- (NSArray *)labelsAtIndex:(unsigned int)arg1 forSeriesAtIndex:(unsigned int)arg2;
+- (NSArray *)labelsAtIndex:(unsigned long long)arg1 forSeriesAtIndex:(unsigned long long)arg2;
 
 @end

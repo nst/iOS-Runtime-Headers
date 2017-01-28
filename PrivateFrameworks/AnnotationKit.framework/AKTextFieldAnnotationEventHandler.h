@@ -4,10 +4,10 @@
 
 @interface AKTextFieldAnnotationEventHandler : AKAnnotationEventHandler
 
-+ (BOOL)allowsDragging;
++ (bool)allowsDragging;
 
-- (BOOL)continueDraggableAreaEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
-- (BOOL)enterDraggableAreaEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
-- (BOOL)handleDownEvent:(id)arg1 orRecognizer:(id)arg2;
+- (bool)continueDraggableAreaEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
+- (bool)enterDraggableAreaEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
+- (bool)handleDownEvent:(id)arg1 orRecognizer:(id)arg2;
 
 @end

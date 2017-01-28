@@ -6,7 +6,7 @@
     double  _confidenceThreshold;
     FDOverfeatNetwork * _enet;
     double  _minBoundingBoxThreshold;
-    struct FaceList { struct list<vision::DCN::boundingbox, std::__1::allocator<vision::DCN::boundingbox> > { struct __list_node_base<vision::DCN::boundingbox, void *> { struct __list_node_base<vision::DCN::boundingbox, void *> {} *x_1_2_1; struct __list_node_base<vision::DCN::boundingbox, void *> {} *x_1_2_2; } x_1_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<vision::DCN::boundingbox, void *> > > { unsigned long x_2_2_1; } x_1_1_2; } x1; } * face_list;
+    struct FaceList { struct list<vision::DCN::boundingbox, std::__1::allocator<vision::DCN::boundingbox> > { struct __list_node_base<vision::DCN::boundingbox, void *> { struct __list_node_base<vision::DCN::boundingbox, void *> {} *x_1_2_1; struct __list_node_base<vision::DCN::boundingbox, void *> {} *x_1_2_2; } x_1_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<vision::DCN::boundingbox, void *> > > { unsigned long long x_2_2_1; } x_1_1_2; } x1; } * face_list;
     int  localFaceMerging;
     int  tileDimension;
     int  tileSizeScaleFactor;
@@ -23,7 +23,7 @@
 - (double)confidenceThreshold;
 - (void)dealloc;
 - (id)detectObjectsOnImage:(struct CGImage { }*)arg1 detectionOptions:(id)arg2 error:(id*)arg3;
-- (id)detectObjectsOnImagesBatch:(id /* block */)arg1 detectionOptions:(id)arg2 error:(id*)arg3;
+- (id)detectObjectsOnImagesBatch:(id)arg1 detectionOptions:(id)arg2 error:(id*)arg3;
 - (id)enet;
 - (void)fillFaceList;
 - (id)getDescription;

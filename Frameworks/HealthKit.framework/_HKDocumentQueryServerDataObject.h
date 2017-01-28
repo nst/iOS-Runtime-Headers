@@ -3,24 +3,24 @@
  */
 
 @interface _HKDocumentQueryServerDataObject : _HKQueryServerDataObject {
-    BOOL  _includeDocumentData;
-    unsigned int  _limit;
+    bool  _includeDocumentData;
+    unsigned long long  _limit;
     NSArray * _sortDescriptors;
 }
 
-@property (nonatomic) BOOL includeDocumentData;
-@property (nonatomic) unsigned int limit;
+@property (nonatomic) bool includeDocumentData;
+@property (nonatomic) unsigned long long limit;
 @property (nonatomic, copy) NSArray *sortDescriptors;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)includeDocumentData;
+- (bool)includeDocumentData;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)limit;
-- (void)setIncludeDocumentData:(BOOL)arg1;
-- (void)setLimit:(unsigned int)arg1;
+- (unsigned long long)limit;
+- (void)setIncludeDocumentData:(bool)arg1;
+- (void)setLimit:(unsigned long long)arg1;
 - (void)setSortDescriptors:(id)arg1;
 - (id)sortDescriptors;
 

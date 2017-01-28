@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *events;
-@property (nonatomic, readonly) unsigned int extendedLogDataStringEncoding;
+@property (nonatomic, readonly) unsigned long long extendedLogDataStringEncoding;
 
 - (id)_common_init;
 - (id)_errorLogArray;
@@ -16,7 +16,7 @@
 - (id)description;
 - (id)events;
 - (id)extendedLogData;
-- (unsigned int)extendedLogDataStringEncoding;
+- (unsigned long long)extendedLogDataStringEncoding;
 - (void)finalize;
 - (id)init;
 - (id)initWithLogArray:(id)arg1;

@@ -32,7 +32,7 @@
 - (id)cancelTokens;
 - (id)error;
 - (id)group;
-- (id)initWithPackage:(id)arg1 trackProgress:(BOOL)arg2;
+- (id)initWithPackage:(id)arg1 trackProgress:(bool)arg2;
 - (id)itemIndices;
 - (id)manifestAsset;
 - (id)package;

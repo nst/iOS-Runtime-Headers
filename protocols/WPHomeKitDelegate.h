@@ -11,7 +11,7 @@
 
 @optional
 
-- (void)homeKit:(WPHomeKit *)arg1 allowDuplicate:(BOOL)arg2;
+- (void)homeKit:(WPHomeKit *)arg1 allowDuplicate:(bool)arg2;
 - (void)homeKit:(WPHomeKit *)arg1 failedToStartScanningWithError:(NSError *)arg2;
 - (void)homeKitStartedScanning:(WPHomeKit *)arg1;
 - (void)homeKitStoppedScanning:(WPHomeKit *)arg1;

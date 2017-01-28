@@ -17,6 +17,6 @@
 - (PXActionManager *)oneUpPresentationActionManager:(PXOneUpPresentation *)arg1;
 - (PXAssetReference *)oneUpPresentationInitialAssetReference:(PXOneUpPresentation *)arg1;
 - (PXPhotosDetailsContext *)oneUpPresentationPhotosDetailsContext:(PXOneUpPresentation *)arg1;
-- (BOOL)oneUpPresentationShouldAutoPlay:(PXOneUpPresentation *)arg1;
+- (bool)oneUpPresentationShouldAutoPlay:(PXOneUpPresentation *)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface OADSolidFill : OADFill {
     OADColor * mColor;
-    BOOL  mIsColorOverridden;
+    bool  mIsColorOverridden;
 }
 
 + (id)blackFill;
@@ -15,14 +15,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isColorOverridden;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isAnythingOverridden;
+- (bool)isColorOverridden;
+- (bool)isEqual:(id)arg1;
 - (void)removeUnnecessaryOverrides;
 - (void)setColor:(id)arg1;
 - (void)setStyleColor:(id)arg1;
-- (BOOL)usesPlaceholderColor;
+- (bool)usesPlaceholderColor;
 
 @end

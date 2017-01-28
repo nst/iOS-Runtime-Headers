@@ -4,32 +4,32 @@
 
 @interface PDFThumbnailRenderingContext : NSObject {
     id  _contextObject;
-    BOOL  _needToRescheduleOnCompletionOfOperation;
+    bool  _needToRescheduleOnCompletionOfOperation;
     PDFPage * _page;
-    unsigned int  _preferredImageSize;
-    BOOL  _shouldRescheduleIfChangingPreferredSize;
-    id /* block */  _updateThumbnailBlock;
+    unsigned long long  _preferredImageSize;
+    bool  _shouldRescheduleIfChangingPreferredSize;
+    id  _updateThumbnailBlock;
 }
 
 @property (retain) id contextObject;
-@property BOOL needToRescheduleOnCompletionOfOperation;
+@property bool needToRescheduleOnCompletionOfOperation;
 @property PDFPage *page;
-@property unsigned int preferredImageSize;
-@property BOOL shouldRescheduleIfChangingPreferredSize;
-@property (copy) id /* block */ updateThumbnailBlock;
+@property unsigned long long preferredImageSize;
+@property bool shouldRescheduleIfChangingPreferredSize;
+@property (copy) id updateThumbnailBlock;
 
 - (void).cxx_destruct;
 - (id)contextObject;
-- (BOOL)needToRescheduleOnCompletionOfOperation;
+- (bool)needToRescheduleOnCompletionOfOperation;
 - (id)page;
-- (unsigned int)preferredImageSize;
+- (unsigned long long)preferredImageSize;
 - (void)setContextObject:(id)arg1;
-- (void)setNeedToRescheduleOnCompletionOfOperation:(BOOL)arg1;
+- (void)setNeedToRescheduleOnCompletionOfOperation:(bool)arg1;
 - (void)setPage:(id)arg1;
-- (void)setPreferredImageSize:(unsigned int)arg1;
-- (void)setShouldRescheduleIfChangingPreferredSize:(BOOL)arg1;
-- (void)setUpdateThumbnailBlock:(id /* block */)arg1;
-- (BOOL)shouldRescheduleIfChangingPreferredSize;
-- (id /* block */)updateThumbnailBlock;
+- (void)setPreferredImageSize:(unsigned long long)arg1;
+- (void)setShouldRescheduleIfChangingPreferredSize:(bool)arg1;
+- (void)setUpdateThumbnailBlock:(id)arg1;
+- (bool)shouldRescheduleIfChangingPreferredSize;
+- (id)updateThumbnailBlock;
 
 @end

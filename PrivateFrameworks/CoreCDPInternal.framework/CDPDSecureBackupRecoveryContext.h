@@ -5,23 +5,23 @@
 @interface CDPDSecureBackupRecoveryContext : NSObject {
     CDPDevice * _device;
     NSString * _recoverySecret;
-    BOOL  _silentRecovery;
-    BOOL  _usePreviouslyCachedSecret;
+    bool  _silentRecovery;
+    bool  _usePreviouslyCachedSecret;
 }
 
 @property (nonatomic, copy) CDPDevice *device;
 @property (nonatomic, copy) NSString *recoverySecret;
-@property (nonatomic) BOOL silentRecovery;
-@property (nonatomic) BOOL usePreviouslyCachedSecret;
+@property (nonatomic) bool silentRecovery;
+@property (nonatomic) bool usePreviouslyCachedSecret;
 
 - (void).cxx_destruct;
 - (id)device;
 - (id)recoverySecret;
 - (void)setDevice:(id)arg1;
 - (void)setRecoverySecret:(id)arg1;
-- (void)setSilentRecovery:(BOOL)arg1;
-- (void)setUsePreviouslyCachedSecret:(BOOL)arg1;
-- (BOOL)silentRecovery;
-- (BOOL)usePreviouslyCachedSecret;
+- (void)setSilentRecovery:(bool)arg1;
+- (void)setUsePreviouslyCachedSecret:(bool)arg1;
+- (bool)silentRecovery;
+- (bool)usePreviouslyCachedSecret;
 
 @end

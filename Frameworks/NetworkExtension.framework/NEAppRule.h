@@ -9,8 +9,8 @@
     NSArray * _matchDomains;
     NSString * _matchPath;
     NSString * _matchSigningIdentifier;
-    BOOL  _noDivertDNS;
-    BOOL  _noRestriction;
+    bool  _noDivertDNS;
+    bool  _noRestriction;
 }
 
 @property (copy) NSArray *additionalExecutables;
@@ -19,17 +19,17 @@
 @property (copy) NSArray *matchDomains;
 @property (copy) NSString *matchPath;
 @property (readonly) NSString *matchSigningIdentifier;
-@property BOOL noDivertDNS;
-@property BOOL noRestriction;
+@property bool noDivertDNS;
+@property bool noRestriction;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)additionalExecutables;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -39,15 +39,15 @@
 - (id)matchDomains;
 - (id)matchPath;
 - (id)matchSigningIdentifier;
-- (BOOL)noDivertDNS;
-- (BOOL)noRestriction;
-- (BOOL)overlapsWithRule:(id)arg1;
+- (bool)noDivertDNS;
+- (bool)noRestriction;
+- (bool)overlapsWithRule:(id)arg1;
 - (void)setAdditionalExecutables:(id)arg1;
 - (void)setMatchAccountIdentifiers:(id)arg1;
 - (void)setMatchDomains:(id)arg1;
 - (void)setMatchPath:(id)arg1;
-- (void)setNoDivertDNS:(BOOL)arg1;
-- (void)setNoRestriction:(BOOL)arg1;
-- (BOOL)signingIdentifierAllowed:(id)arg1 domainsRequired:(out BOOL*)arg2;
+- (void)setNoDivertDNS:(bool)arg1;
+- (void)setNoRestriction:(bool)arg1;
+- (bool)signingIdentifierAllowed:(id)arg1 domainsRequired:(out bool*)arg2;
 
 @end

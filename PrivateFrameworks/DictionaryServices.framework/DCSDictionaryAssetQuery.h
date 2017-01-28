@@ -7,6 +7,6 @@
 }
 
 - (id)initWithAssetLocale:(id)arg1;
-- (void)startQuery:(id /* block */)arg1;
+- (void)startQuery:(id)arg1;
 
 @end

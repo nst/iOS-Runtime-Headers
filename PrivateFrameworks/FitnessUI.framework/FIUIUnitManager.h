@@ -24,19 +24,19 @@
 - (void)setPreferredUnitsForTesting:(id)arg1;
 - (void)setUserActiveEnergyBurnedUnit:(id)arg1;
 - (void)setUserBasalEnergyBurnedUnit:(id)arg1;
-- (void)setUserDistanceCyclingUnit:(int)arg1;
-- (void)setUserDistanceUnit:(int)arg1 forDistanceType:(int)arg2;
-- (void)setUserDistanceWalkingRunningUnit:(int)arg1;
+- (void)setUserDistanceCyclingUnit:(long long)arg1;
+- (void)setUserDistanceUnit:(long long)arg1 forDistanceType:(long long)arg2;
+- (void)setUserDistanceWalkingRunningUnit:(long long)arg1;
 - (id)userActiveEnergyBurnedUnit;
 - (id)userBasalEnergyBurnedUnit;
 - (id)userDistanceCyclingHKUnit;
-- (int)userDistanceCyclingUnit;
+- (long long)userDistanceCyclingUnit;
 - (id)userDistanceElevationHKUnit;
-- (int)userDistanceElevationUnit;
-- (id)userDistanceHKUnitForDistanceType:(int)arg1;
-- (int)userDistanceUnitForDistanceType:(int)arg1;
+- (long long)userDistanceElevationUnit;
+- (id)userDistanceHKUnitForDistanceType:(long long)arg1;
+- (long long)userDistanceUnitForDistanceType:(long long)arg1;
 - (id)userDistanceWalkingRunningHKUnit;
-- (int)userDistanceWalkingRunningUnit;
+- (long long)userDistanceWalkingRunningUnit;
 - (id)userLapLengthHKUnit;
 
 @end

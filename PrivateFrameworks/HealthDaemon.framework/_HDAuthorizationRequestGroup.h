@@ -5,8 +5,8 @@
 @interface _HDAuthorizationRequestGroup : NSObject {
     NSString * _bundleIdentifier;
     NSMutableArray * _completions;
-    BOOL  _inTransaction;
-    id /* block */  _promptHandler;
+    bool  _inTransaction;
+    id  _promptHandler;
     NSUUID * _promptSessionIdentifier;
     NSMutableArray * _requests;
     NSObject<OS_dispatch_source> * _sessionTimeoutSource;
@@ -16,10 +16,10 @@
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
 @property (nonatomic, retain) NSMutableArray *completions;
-@property (getter=isInTransaction, nonatomic) BOOL inTransaction;
-@property (nonatomic, copy) id /* block */ promptHandler;
+@property (getter=isInTransaction, nonatomic) bool inTransaction;
+@property (nonatomic, copy) id promptHandler;
 @property (nonatomic, readonly) NSUUID *promptSessionIdentifier;
-@property (nonatomic, readonly) unsigned int requestCount;
+@property (nonatomic, readonly) unsigned long long requestCount;
 @property (nonatomic, retain) NSMutableArray *requests;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *sessionTimeoutSource;
 @property (nonatomic, readonly, copy) NSSet *typesToRead;
@@ -27,7 +27,7 @@
 
 - (void).cxx_destruct;
 - (void)_cancelTimeoutSource;
-- (void)addCompletion:(id /* block */)arg1;
+- (void)addCompletion:(id)arg1;
 - (void)addRequest:(id)arg1;
 - (void)beginTransaction;
 - (id)bundleIdentifier;
@@ -36,16 +36,16 @@
 - (id)description;
 - (void)finishRequestsWithError:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
-- (BOOL)isInTransaction;
-- (id /* block */)promptHandler;
-- (BOOL)promptIfNecessaryWithTimeout:(double)arg1 completion:(id /* block */)arg2;
+- (bool)isInTransaction;
+- (id)promptHandler;
+- (bool)promptIfNecessaryWithTimeout:(double)arg1 completion:(id)arg2;
 - (id)promptSessionIdentifier;
-- (unsigned int)requestCount;
+- (unsigned long long)requestCount;
 - (id)requests;
 - (id)sessionTimeoutSource;
 - (void)setCompletions:(id)arg1;
-- (void)setInTransaction:(BOOL)arg1;
-- (void)setPromptHandler:(id /* block */)arg1;
+- (void)setInTransaction:(bool)arg1;
+- (void)setPromptHandler:(id)arg1;
 - (void)setRequests:(id)arg1;
 - (void)setSessionTimeoutSource:(id)arg1;
 - (id)typesToRead;

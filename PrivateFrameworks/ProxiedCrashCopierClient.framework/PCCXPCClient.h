@@ -5,7 +5,7 @@
 @interface PCCXPCClient : NSObject
 
 - (id)connection;
-- (void)requestLogTransferFor:(int)arg1 onCompletion:(id /* block */)arg2;
+- (void)requestLogTransferFor:(long long)arg1 onCompletion:(id)arg2;
 - (void)requestMetadataUpdateDebug;
 - (void)sendTaskingUpdateDebugFor:(id)arg1;
 

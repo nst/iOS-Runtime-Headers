@@ -13,6 +13,6 @@
 - (void)setTextView:(id)arg1;
 - (id)textView;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

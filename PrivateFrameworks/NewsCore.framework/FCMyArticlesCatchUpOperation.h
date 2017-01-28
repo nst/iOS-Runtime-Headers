@@ -3,48 +3,61 @@
  */
 
 @interface FCMyArticlesCatchUpOperation : FCOperation {
+    long long  _binOverride;
     FCCloudContext * _context;
     FCDateRange * _dateRange;
     NSError * _error;
     NSDictionary * _feedContextByFeedID;
+    id  _feedItemCompletionBlock;
     NSArray * _feedItems;
-    id /* block */  _feedItemsChangedHandler;
-    BOOL  _streamFeedItems;
+    id  _feedItemsChangedHandler;
+    unsigned long long  _maxNumberOfFeedsToQuery;
+    unsigned long long  _perFeedLimit;
+    bool  _streamFeedItems;
 }
 
+@property (nonatomic) long long binOverride;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, copy) FCDateRange *dateRange;
-@property (readonly, copy) NSArray *editorialFeedItems;
 @property (copy) NSError *error;
 @property (copy) NSDictionary *feedContextByFeedID;
+@property (nonatomic, copy) id feedItemCompletionBlock;
 @property (copy) NSArray *feedItems;
-@property (nonatomic, copy) id /* block */ feedItemsChangedHandler;
+@property (nonatomic, copy) id feedItemsChangedHandler;
+@property (nonatomic) unsigned long long maxNumberOfFeedsToQuery;
 @property (readonly, copy) NSArray *nonEditorialFeedItems;
-@property (nonatomic) BOOL streamFeedItems;
-@property (readonly, copy) NSArray *topStoriesFeedItems;
+@property (nonatomic) unsigned long long perFeedLimit;
+@property (nonatomic) bool streamFeedItems;
 
 - (void).cxx_destruct;
 - (void)_appendFeedItems:(id)arg1;
-- (void)_fetchTagsForQueryingWithCompletionHandler:(id /* block */)arg1;
+- (void)_fetchTagsForQueryingWithCompletionHandler:(id)arg1;
+- (long long)binOverride;
 - (id)context;
 - (id)dateRange;
-- (id)editorialFeedItems;
 - (id)error;
 - (id)feedContextByFeedID;
+- (id)feedItemCompletionBlock;
 - (id)feedItems;
-- (id /* block */)feedItemsChangedHandler;
+- (id)feedItemsChangedHandler;
 - (id)init;
+- (unsigned long long)maxNumberOfFeedsToQuery;
 - (id)nonEditorialFeedItems;
+- (void)operationWillFinishWithError:(id)arg1;
+- (unsigned long long)perFeedLimit;
 - (void)performOperation;
+- (void)setBinOverride:(long long)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDateRange:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setFeedContextByFeedID:(id)arg1;
+- (void)setFeedItemCompletionBlock:(id)arg1;
 - (void)setFeedItems:(id)arg1;
-- (void)setFeedItemsChangedHandler:(id /* block */)arg1;
-- (void)setStreamFeedItems:(BOOL)arg1;
-- (BOOL)streamFeedItems;
-- (id)topStoriesFeedItems;
-- (BOOL)validateOperation;
+- (void)setFeedItemsChangedHandler:(id)arg1;
+- (void)setMaxNumberOfFeedsToQuery:(unsigned long long)arg1;
+- (void)setPerFeedLimit:(unsigned long long)arg1;
+- (void)setStreamFeedItems:(bool)arg1;
+- (bool)streamFeedItems;
+- (bool)validateOperation;
 
 @end

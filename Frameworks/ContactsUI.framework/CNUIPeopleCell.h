@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)avatarView;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setAvatarView:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setupConstraints;

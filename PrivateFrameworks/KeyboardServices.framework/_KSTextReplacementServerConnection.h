@@ -8,20 +8,20 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)serviceConnection;
 
 - (void).cxx_destruct;
-- (void)addEntries:(id)arg1 removeEntries:(id)arg2 withReply:(id /* block */)arg3;
-- (void)cancelPendingUpdatesWithReply:(id /* block */)arg1;
+- (void)addEntries:(id)arg1 removeEntries:(id)arg2 withReply:(id)arg3;
+- (void)cancelPendingUpdatesWithReply:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)queryTextReplacementEntriesWithReply:(id /* block */)arg1;
-- (void)queryTextReplacementsWithPredicate:(id)arg1 reply:(id /* block */)arg2;
+- (void)queryTextReplacementEntriesWithReply:(id)arg1;
+- (void)queryTextReplacementsWithPredicate:(id)arg1 reply:(id)arg2;
 - (void)removeAllEntries;
-- (void)requestSyncWithReply:(id /* block */)arg1;
+- (void)requestSyncWithReply:(id)arg1;
 - (id)textReplacementEntries;
 
 @end

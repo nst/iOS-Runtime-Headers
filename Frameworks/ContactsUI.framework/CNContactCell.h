@@ -5,42 +5,42 @@
 @interface CNContactCell : UITableViewCell {
     CNCardGroupItem * _cardGroupItem;
     NSArray * _constantConstraints;
-    BOOL  _hasBeenDisplayed;
-    float  _leftContentMargin;
-    float  _rightContentMargin;
-    BOOL  _shouldUseExpandedContentStyle;
+    bool  _hasBeenDisplayed;
+    double  _leftContentMargin;
+    double  _rightContentMargin;
+    bool  _shouldUseExpandedContentStyle;
     NSArray * _variableConstraints;
 }
 
 @property (nonatomic, retain) CNCardGroupItem *cardGroupItem;
-@property (nonatomic) BOOL hasBeenDisplayed;
-@property (nonatomic) float leftContentMargin;
-@property (nonatomic) float rightContentMargin;
-@property (nonatomic) BOOL shouldUseExpandedContentStyle;
-@property (nonatomic) BOOL showSeparator;
+@property (nonatomic) bool hasBeenDisplayed;
+@property (nonatomic) double leftContentMargin;
+@property (nonatomic) double rightContentMargin;
+@property (nonatomic) bool shouldUseExpandedContentStyle;
+@property (nonatomic) bool showSeparator;
 
 - (void).cxx_destruct;
 - (id)cardGroupItem;
 - (id)constantConstraints;
 - (void)dealloc;
-- (BOOL)hasBeenDisplayed;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (float)leftContentMargin;
-- (float)minCellHeight;
+- (bool)hasBeenDisplayed;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (double)leftContentMargin;
+- (double)minCellHeight;
 - (void)performAccessoryAction;
 - (void)performDefaultAction;
 - (void)prepareForReuse;
-- (float)rightContentMargin;
+- (double)rightContentMargin;
 - (void)setCardGroupItem:(id)arg1;
-- (void)setHasBeenDisplayed:(BOOL)arg1;
-- (void)setLeftContentMargin:(float)arg1;
-- (void)setRightContentMargin:(float)arg1;
-- (void)setShouldUseExpandedContentStyle:(BOOL)arg1;
-- (void)setShowSeparator:(BOOL)arg1;
-- (BOOL)shouldPerformAccessoryAction;
-- (BOOL)shouldPerformDefaultAction;
-- (BOOL)shouldUseExpandedContentStyle;
-- (BOOL)showSeparator;
+- (void)setHasBeenDisplayed:(bool)arg1;
+- (void)setLeftContentMargin:(double)arg1;
+- (void)setRightContentMargin:(double)arg1;
+- (void)setShouldUseExpandedContentStyle:(bool)arg1;
+- (void)setShowSeparator:(bool)arg1;
+- (bool)shouldPerformAccessoryAction;
+- (bool)shouldPerformDefaultAction;
+- (bool)shouldUseExpandedContentStyle;
+- (bool)showSeparator;
 - (void)updateConstraints;
 - (id)variableConstraints;
 

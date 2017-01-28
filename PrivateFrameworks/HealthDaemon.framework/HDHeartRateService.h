@@ -3,25 +3,25 @@
  */
 
 @interface HDHeartRateService : HDHealthService {
-    BOOL  _deliverData;
-    int  _preferredSensorLocation;
+    bool  _deliverData;
+    long long  _preferredSensorLocation;
 }
 
-@property (nonatomic) int preferredSensorLocation;
+@property (nonatomic) long long preferredSensorLocation;
 
-+ (int)serviceType;
++ (long long)serviceType;
 + (id)serviceUUID;
 
-- (BOOL)deliverData;
+- (bool)deliverData;
 - (void)handleBodyLocation:(id)arg1;
 - (void)handleHeartRate:(id)arg1;
 - (id)initWithServiceManager:(id)arg1 propertyManager:(id)arg2 healthDaemon:(id)arg3 peripheral:(id)arg4;
-- (void)performOperation:(id)arg1 onPeripheral:(id)arg2 withParameters:(id)arg3 completion:(id /* block */)arg4;
+- (void)performOperation:(id)arg1 onPeripheral:(id)arg2 withParameters:(id)arg3 completion:(id)arg4;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristic:(id)arg2;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
-- (int)preferredSensorLocation;
-- (void)resetEnergyExpendedOnPeripheral:(id)arg1 completion:(id /* block */)arg2;
-- (void)setDeliverData:(BOOL)arg1;
-- (void)setPreferredSensorLocation:(int)arg1;
+- (long long)preferredSensorLocation;
+- (void)resetEnergyExpendedOnPeripheral:(id)arg1 completion:(id)arg2;
+- (void)setDeliverData:(bool)arg1;
+- (void)setPreferredSensorLocation:(long long)arg1;
 
 @end

@@ -7,22 +7,22 @@
     ISURLCacheConfiguration * _configuration;
 }
 
-@property (nonatomic, readonly) unsigned int currentDiskUsage;
-@property (nonatomic, readonly) unsigned int currentMemoryUsage;
-@property (nonatomic, readonly) unsigned int diskCapacity;
-@property (nonatomic, readonly) unsigned int memoryCapacity;
+@property (nonatomic, readonly) unsigned long long currentDiskUsage;
+@property (nonatomic, readonly) unsigned long long currentMemoryUsage;
+@property (nonatomic, readonly) unsigned long long diskCapacity;
+@property (nonatomic, readonly) unsigned long long memoryCapacity;
 @property (readonly) NSString *persistentIdentifier;
 
 + (id)cacheDirectoryPath;
 
 - (id)cachedResponseForRequest:(id)arg1;
-- (unsigned int)currentDiskUsage;
-- (unsigned int)currentMemoryUsage;
+- (unsigned long long)currentDiskUsage;
+- (unsigned long long)currentMemoryUsage;
 - (void)dealloc;
-- (unsigned int)diskCapacity;
+- (unsigned long long)diskCapacity;
 - (id)init;
 - (id)initWithCacheConfiguration:(id)arg1;
-- (unsigned int)memoryCapacity;
+- (unsigned long long)memoryCapacity;
 - (id)persistentIdentifier;
 - (void)purgeMemoryCache;
 - (void)reloadWithCacheConfiguration:(id)arg1;

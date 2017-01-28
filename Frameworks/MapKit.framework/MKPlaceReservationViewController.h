@@ -10,7 +10,7 @@
 @property (nonatomic, retain) _MKPlaceReservationInfo *reservationInfo;
 
 - (void).cxx_destruct;
-- (void)_updateReservationInfoAnimated:(BOOL)arg1;
+- (void)_updateReservationInfoAnimated:(bool)arg1;
 - (id)reservationInfo;
 - (void)setReservationInfo:(id)arg1;
 - (void)viewDidLoad;

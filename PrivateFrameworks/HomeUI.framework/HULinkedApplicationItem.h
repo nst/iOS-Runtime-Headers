@@ -4,6 +4,4 @@
 
 @interface HULinkedApplicationItem : HFStaticItem
 
-+ (id)requiredKeys;
-
 @end

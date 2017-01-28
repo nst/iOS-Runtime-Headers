@@ -12,14 +12,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
 - (id)_defaultBackgroundColor;
-- (BOOL)_isFullyPopulated;
+- (bool)_isFullyPopulated;
 - (void)_reloadSplitViewControllers;
 - (void)_skui_endDelayingPresentation;
 - (void)dealloc;
@@ -29,6 +29,6 @@
 - (id)leftBarButtonItemsForDocument:(id)arg1;
 - (void)loadView;
 - (void)navigationDocumentStackDidChange:(id)arg1;
-- (void)skui_viewWillAppear:(BOOL)arg1;
+- (void)skui_viewWillAppear:(bool)arg1;
 
 @end

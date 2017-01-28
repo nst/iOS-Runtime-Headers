@@ -9,14 +9,14 @@
 @property (nonatomic, retain) NSData *data;
 
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_configureImage:(id)arg1;
 - (void)_preheatBitmapData;
 - (id)data;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)setData:(id)arg1;
 
 @end

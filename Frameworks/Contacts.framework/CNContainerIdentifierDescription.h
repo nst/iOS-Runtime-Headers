@@ -8,7 +8,7 @@
 - (id)CNValueForContainer:(id)arg1;
 - (id)CNValueFromABValue:(void*)arg1;
 - (int)abPropertyID;
-- (BOOL)isNonnull;
+- (bool)isNonnull;
 - (id)key;
 - (void)setCNValue:(id)arg1 onContainer:(id)arg2;
 - (Class)valueClass;

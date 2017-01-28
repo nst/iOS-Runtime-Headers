@@ -14,11 +14,11 @@
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL hasResult;
-@property (nonatomic, readonly) BOOL hasResultString;
-@property (nonatomic, readonly) BOOL hasServiceUUID;
-@property (nonatomic, readonly) BOOL hasSessionId;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasResult;
+@property (nonatomic, readonly) bool hasResultString;
+@property (nonatomic, readonly) bool hasServiceUUID;
+@property (nonatomic, readonly) bool hasSessionId;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int result;
 @property (nonatomic, retain) NSString *resultString;
 @property (nonatomic, retain) NSString *serviceUUID;
@@ -30,21 +30,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasResult;
-- (BOOL)hasResultString;
-- (BOOL)hasServiceUUID;
-- (BOOL)hasSessionId;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasResult;
+- (bool)hasResultString;
+- (bool)hasServiceUUID;
+- (bool)hasSessionId;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)result;
 - (id)resultString;
 - (id)serviceUUID;
 - (id)sessionId;
-- (void)setHasResult:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasResult:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setResult:(unsigned int)arg1;
 - (void)setResultString:(id)arg1;
 - (void)setServiceUUID:(id)arg1;

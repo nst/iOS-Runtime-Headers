@@ -5,20 +5,20 @@
 @interface HDSQLiteQueryDescriptor : NSObject <NSCopying> {
     Class  _entityClass;
     NSString * _groupBy;
-    int  _limitCount;
+    long long  _limitCount;
     NSArray * _orderingDirections;
     NSArray * _orderingProperties;
     HDSQLitePredicate * _predicate;
-    BOOL  _returnsDistinctEntities;
+    bool  _returnsDistinctEntities;
 }
 
 @property (nonatomic) Class entityClass;
 @property (nonatomic, copy) NSString *groupBy;
-@property (nonatomic) int limitCount;
+@property (nonatomic) long long limitCount;
 @property (nonatomic, copy) NSArray *orderingDirections;
 @property (nonatomic, copy) NSArray *orderingProperties;
 @property (nonatomic, copy) HDSQLitePredicate *predicate;
-@property (nonatomic) BOOL returnsDistinctEntities;
+@property (nonatomic) bool returnsDistinctEntities;
 
 - (void).cxx_destruct;
 - (id)_joinClauseForProperties:(id)arg1;
@@ -28,17 +28,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (Class)entityClass;
 - (id)groupBy;
-- (int)limitCount;
+- (long long)limitCount;
 - (id)orderingDirections;
 - (id)orderingProperties;
 - (id)predicate;
-- (BOOL)returnsDistinctEntities;
+- (bool)returnsDistinctEntities;
 - (void)setEntityClass:(Class)arg1;
 - (void)setGroupBy:(id)arg1;
-- (void)setLimitCount:(int)arg1;
+- (void)setLimitCount:(long long)arg1;
 - (void)setOrderingDirections:(id)arg1;
 - (void)setOrderingProperties:(id)arg1;
 - (void)setPredicate:(id)arg1;
-- (void)setReturnsDistinctEntities:(BOOL)arg1;
+- (void)setReturnsDistinctEntities:(bool)arg1;
 
 @end

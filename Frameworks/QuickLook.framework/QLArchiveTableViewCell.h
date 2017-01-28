@@ -3,7 +3,7 @@
  */
 
 @interface QLArchiveTableViewCell : UITableViewCell {
-    int  _loadingID;
+    long long  _loadingID;
     QLItem * _previewItem;
 }
 
@@ -12,8 +12,8 @@
 - (void).cxx_destruct;
 - (id)_cachedDescriptionForUTI:(id)arg1;
 - (id)_folderImage;
-- (float)indentationMargin;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (double)indentationMargin;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)previewItem;

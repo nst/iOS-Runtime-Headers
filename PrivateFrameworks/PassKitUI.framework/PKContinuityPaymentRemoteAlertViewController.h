@@ -5,17 +5,17 @@
 @interface PKContinuityPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKContinuityPaymentServiceDelegate, PKPaymentAuthorizationHostProtocol> {
     PKContinuityPaymentService * _continuityService;
     PKContinuityPaymentViewController * _continuityViewController;
-    BOOL  _hasAuthorizedPayment;
+    bool  _hasAuthorizedPayment;
     UINavigationController * _navigationController;
     PKRemotePaymentRequest * _remoteRequest;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)_isSecureForRemoteViewService;
++ (bool)_isSecureForRemoteViewService;
 
 - (void).cxx_destruct;
 - (void)_dismiss;
@@ -31,15 +31,16 @@
 - (void)dealloc;
 - (void)didReceiveCancellationForRemotePaymentRequest:(id)arg1;
 - (void)didReceivePaymentClientUpdate:(id)arg1 forRemotePaymentRequest:(id)arg2;
-- (void)didReceivePaymentStatus:(int)arg1 forRemotePaymentRequest:(id)arg2;
+- (void)didReceivePaymentStatus:(long long)arg1 forRemotePaymentRequest:(id)arg2;
 - (void)handleHomeButtonPressed;
 - (void)handleLockButtonPressed;
 - (id)init;
 - (void)setUserInfo:(id)arg1;
-- (BOOL)shouldAutorotate;
-- (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotate;
+- (struct CGSize { double x1; double x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { double x1; double x2; })arg2;
+- (unsigned long long)supportedInterfaceOrientations;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

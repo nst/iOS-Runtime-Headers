@@ -3,21 +3,21 @@
  */
 
 @interface PXMutableResultRecord : PXResultRecord {
-    BOOL  _curate;
+    bool  _curate;
     PHFetchResult * _curatedFetchResult;
     NSSet * _curatedOids;
     NSSet * _excludedOids;
     PHFetchResult * _fetchResult;
     PHFetchResult * _filteredFetchResult;
-    BOOL  _filteredFetchResultIsValid;
+    bool  _filteredFetchResultIsValid;
     NSSet * _includedOids;
     NSPredicate * _inclusionPredicate;
-    BOOL  _inclusionPredicateIsValid;
+    bool  _inclusionPredicateIsValid;
     PHFetchResult * _keyAssetsFetchResult;
-    BOOL  _reverseSortOrder;
+    bool  _reverseSortOrder;
 }
 
-@property (nonatomic) BOOL curate;
+@property (nonatomic) bool curate;
 @property (nonatomic, retain) PHFetchResult *curatedFetchResult;
 @property (nonatomic, readonly) NSSet *curatedOids;
 @property (nonatomic, readonly) NSSet *excludedOids;
@@ -27,7 +27,7 @@
 @property (nonatomic, readonly) NSSet *includedOids;
 @property (nonatomic, readonly) NSPredicate *inclusionPredicate;
 @property (nonatomic, retain) PHFetchResult *keyAssetsFetchResult;
-@property (nonatomic, readonly) BOOL reverseSortOrder;
+@property (nonatomic, readonly) bool reverseSortOrder;
 
 - (void).cxx_destruct;
 - (void)_invalidateFilteredFetchResult;
@@ -35,7 +35,7 @@
 - (void)_setIncludeOids:(id)arg1;
 - (void)_updateFilteredFetchResultIfNeeded;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)curate;
+- (bool)curate;
 - (id)curatedFetchResult;
 - (id)curatedOids;
 - (void)excludeOids:(id)arg1;
@@ -48,13 +48,13 @@
 - (id)inclusionPredicate;
 - (void)invalidateFetchResultAssetCache;
 - (id)keyAssetsFetchResult;
-- (BOOL)reverseSortOrder;
-- (void)setCurate:(BOOL)arg1;
+- (bool)reverseSortOrder;
+- (void)setCurate:(bool)arg1;
 - (void)setCuratedFetchResult:(id)arg1;
 - (void)setFetchResult:(id)arg1;
-- (void)setFetchResult:(id)arg1 reverseSortOrder:(BOOL)arg2;
+- (void)setFetchResult:(id)arg1 reverseSortOrder:(bool)arg2;
 - (void)setKeyAssetsFetchResult:(id)arg1;
-- (void)setReverseSortOrder:(BOOL)arg1;
+- (void)setReverseSortOrder:(bool)arg1;
 - (void)stopExcludingOids:(id)arg1;
 - (void)stopIncludingAllOids;
 

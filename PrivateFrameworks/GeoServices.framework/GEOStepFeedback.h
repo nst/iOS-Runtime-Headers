@@ -3,7 +3,7 @@
  */
 
 @interface GEOStepFeedback : PBCodable <NSCopying> {
-    BOOL  _completedStep;
+    bool  _completedStep;
     double  _completionTimeStamp;
     struct { 
         unsigned int completionTimeStamp : 1; 
@@ -17,13 +17,13 @@
     unsigned int  _stepID;
 }
 
-@property (nonatomic) BOOL completedStep;
+@property (nonatomic) bool completedStep;
 @property (nonatomic) double completionTimeStamp;
-@property (nonatomic) BOOL hasCompletedStep;
-@property (nonatomic) BOOL hasCompletionTimeStamp;
-@property (nonatomic, readonly) BOOL hasRouteID;
-@property (nonatomic) BOOL hasRouteIndex;
-@property (nonatomic) BOOL hasStepID;
+@property (nonatomic) bool hasCompletedStep;
+@property (nonatomic) bool hasCompletionTimeStamp;
+@property (nonatomic, readonly) bool hasRouteID;
+@property (nonatomic) bool hasRouteIndex;
+@property (nonatomic) bool hasStepID;
 @property (nonatomic, retain) NSMutableArray *instructionErrors;
 @property (nonatomic, retain) NSData *routeID;
 @property (nonatomic) unsigned int routeIndex;
@@ -33,33 +33,33 @@
 
 - (void)addInstructionError:(id)arg1;
 - (void)clearInstructionErrors;
-- (BOOL)completedStep;
+- (bool)completedStep;
 - (double)completionTimeStamp;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCompletedStep;
-- (BOOL)hasCompletionTimeStamp;
-- (BOOL)hasRouteID;
-- (BOOL)hasRouteIndex;
-- (BOOL)hasStepID;
-- (unsigned int)hash;
-- (id)instructionErrorAtIndex:(unsigned int)arg1;
+- (bool)hasCompletedStep;
+- (bool)hasCompletionTimeStamp;
+- (bool)hasRouteID;
+- (bool)hasRouteIndex;
+- (bool)hasStepID;
+- (unsigned long long)hash;
+- (id)instructionErrorAtIndex:(unsigned long long)arg1;
 - (id)instructionErrors;
-- (unsigned int)instructionErrorsCount;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)instructionErrorsCount;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)routeID;
 - (unsigned int)routeIndex;
-- (void)setCompletedStep:(BOOL)arg1;
+- (void)setCompletedStep:(bool)arg1;
 - (void)setCompletionTimeStamp:(double)arg1;
-- (void)setHasCompletedStep:(BOOL)arg1;
-- (void)setHasCompletionTimeStamp:(BOOL)arg1;
-- (void)setHasRouteIndex:(BOOL)arg1;
-- (void)setHasStepID:(BOOL)arg1;
+- (void)setHasCompletedStep:(bool)arg1;
+- (void)setHasCompletionTimeStamp:(bool)arg1;
+- (void)setHasRouteIndex:(bool)arg1;
+- (void)setHasStepID:(bool)arg1;
 - (void)setInstructionErrors:(id)arg1;
 - (void)setRouteID:(id)arg1;
 - (void)setRouteIndex:(unsigned int)arg1;

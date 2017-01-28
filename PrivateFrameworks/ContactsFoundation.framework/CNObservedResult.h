@@ -3,28 +3,28 @@
  */
 
 @interface CNObservedResult : NSObject {
-    unsigned int  _time;
+    unsigned long long  _time;
     id  _value;
 }
 
-@property (readonly) BOOL isResultEvent;
+@property (readonly) bool isResultEvent;
 @property (readonly) int logTime;
 @property (readonly) id logValue;
-@property (readonly) unsigned int time;
+@property (readonly) unsigned long long time;
 @property (readonly) id value;
 
-+ (id)completionResultWithTime:(unsigned int)arg1;
-+ (id)failureWithError:(id)arg1 time:(unsigned int)arg2;
-+ (id)resultWithTime:(unsigned int)arg1 value:(id)arg2;
++ (id)completionResultWithTime:(unsigned long long)arg1;
++ (id)failureWithError:(id)arg1 time:(unsigned long long)arg2;
++ (id)resultWithTime:(unsigned long long)arg1 value:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithValue:(id)arg1 time:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isResultEvent;
+- (id)initWithValue:(id)arg1 time:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isResultEvent;
 - (int)logTime;
 - (id)logValue;
-- (unsigned int)time;
+- (unsigned long long)time;
 - (id)value;
 
 @end

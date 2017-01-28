@@ -4,10 +4,10 @@
 
 @interface SGCuratedChangeNotifications : NSObject
 
-+ (void)_addObserver:(id /* block */)arg1 forObjectLifetime:(id)arg2 listenerClass:(Class)arg3;
++ (void)_addObserver:(id)arg1 forObjectLifetime:(id)arg2 listenerClass:(Class)arg3;
 + (id)_getListener:(Class)arg1;
 + (id)_getListenerByClassMap;
-+ (void)addAddressBookObserver:(id /* block */)arg1 forObjectLifetime:(id)arg2;
-+ (void)addCalendarObserver:(id /* block */)arg1 forObjectLifetime:(id)arg2;
++ (void)addAddressBookObserver:(id)arg1 forObjectLifetime:(id)arg2;
++ (void)addCalendarObserver:(id)arg1 forObjectLifetime:(id)arg2;
 
 @end

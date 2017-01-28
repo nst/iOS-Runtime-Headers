@@ -7,39 +7,39 @@
     double  _aggressiveTravelTime;
     NSDate * _conservativeDepartureDate;
     double  _conservativeTravelTime;
-    unsigned int  _currentTrafficDensity;
+    unsigned long long  _currentTrafficDensity;
     double  _estimatedTravelTime;
     NSString * _routeName;
     NSDate * _suggestedDepartureDate;
-    BOOL  _supportsLiveTraffic;
+    bool  _supportsLiveTraffic;
     NSString * _trafficDensityDescription;
     int  _transportType;
-    int  _travelState;
+    long long  _travelState;
 }
 
 @property (nonatomic, retain) NSDate *aggressiveDepartureDate;
 @property (nonatomic) double aggressiveTravelTime;
 @property (nonatomic, retain) NSDate *conservativeDepartureDate;
 @property (nonatomic) double conservativeTravelTime;
-@property (nonatomic) unsigned int currentTrafficDensity;
+@property (nonatomic) unsigned long long currentTrafficDensity;
 @property (nonatomic, readonly) NSDate *effectiveDepartureDate;
 @property (nonatomic, readonly) double effectiveTravelTime;
 @property (nonatomic) double estimatedTravelTime;
 @property (nonatomic, retain) NSString *routeName;
 @property (nonatomic, retain) NSDate *suggestedDepartureDate;
-@property (nonatomic) BOOL supportsLiveTraffic;
+@property (nonatomic) bool supportsLiveTraffic;
 @property (nonatomic, retain) NSString *trafficDensityDescription;
 @property (nonatomic) int transportType;
-@property (nonatomic) int travelState;
+@property (nonatomic) long long travelState;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)aggressiveDepartureDate;
 - (double)aggressiveTravelTime;
 - (id)conservativeDepartureDate;
 - (double)conservativeTravelTime;
-- (unsigned int)currentTrafficDensity;
+- (unsigned long long)currentTrafficDensity;
 - (id)description;
 - (id)effectiveDepartureDate;
 - (double)effectiveTravelTime;
@@ -55,18 +55,18 @@
 - (void)setAggressiveTravelTime:(double)arg1;
 - (void)setConservativeDepartureDate:(id)arg1;
 - (void)setConservativeTravelTime:(double)arg1;
-- (void)setCurrentTrafficDensity:(unsigned int)arg1;
+- (void)setCurrentTrafficDensity:(unsigned long long)arg1;
 - (void)setEstimatedTravelTime:(double)arg1;
 - (void)setRouteName:(id)arg1;
 - (void)setSuggestedDepartureDate:(id)arg1;
-- (void)setSupportsLiveTraffic:(BOOL)arg1;
+- (void)setSupportsLiveTraffic:(bool)arg1;
 - (void)setTrafficDensityDescription:(id)arg1;
 - (void)setTransportType:(int)arg1;
-- (void)setTravelState:(int)arg1;
+- (void)setTravelState:(long long)arg1;
 - (id)suggestedDepartureDate;
-- (BOOL)supportsLiveTraffic;
+- (bool)supportsLiveTraffic;
 - (id)trafficDensityDescription;
 - (int)transportType;
-- (int)travelState;
+- (long long)travelState;
 
 @end

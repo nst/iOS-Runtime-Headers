@@ -3,21 +3,21 @@
  */
 
 @interface VSShowViewControllerRequest : NSObject {
-    BOOL  _animated;
-    unsigned int  _operation;
+    bool  _animated;
+    unsigned long long  _operation;
     UIViewController * _viewController;
 }
 
-@property (nonatomic) BOOL animated;
-@property (nonatomic) unsigned int operation;
+@property (nonatomic) bool animated;
+@property (nonatomic) unsigned long long operation;
 @property (nonatomic, retain) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (BOOL)animated;
+- (bool)animated;
 - (id)description;
-- (unsigned int)operation;
-- (void)setAnimated:(BOOL)arg1;
-- (void)setOperation:(unsigned int)arg1;
+- (unsigned long long)operation;
+- (void)setAnimated:(bool)arg1;
+- (void)setOperation:(unsigned long long)arg1;
 - (void)setViewController:(id)arg1;
 - (id)viewController;
 

@@ -3,7 +3,7 @@
  */
 
 @interface WebGeolocationCoreLocationProvider : NSObject <CLLocationManagerDelegate> {
-    BOOL  _isWaitingForAuthorization;
+    bool  _isWaitingForAuthorization;
     int  _lastAuthorizationStatus;
     struct RetainPtr<CLLocationManager> { 
         void *m_ptr; 
@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -26,7 +26,7 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)requestGeolocationAuthorization;
 - (void)sendLocation:(id)arg1;
-- (void)setEnableHighAccuracy:(BOOL)arg1;
+- (void)setEnableHighAccuracy:(bool)arg1;
 - (void)start;
 - (void)stop;
 

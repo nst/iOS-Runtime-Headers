@@ -3,8 +3,8 @@
  */
 
 @interface WBSCloudHistoryVisit : NSObject {
-    BOOL  _httpNonGet;
-    BOOL  _loadSuccessful;
+    bool  _httpNonGet;
+    bool  _loadSuccessful;
     WBSCloudHistoryVisit * _redirectDestinationVisit;
     WBSCloudHistoryVisitIdentifier * _redirectDestinationVisitIdentifier;
     WBSCloudHistoryVisit * _redirectSourceVisit;
@@ -14,8 +14,8 @@
 }
 
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
-@property (getter=wasHTTPNonGet, nonatomic) BOOL httpNonGet;
-@property (getter=loadWasSuccessful, nonatomic) BOOL loadSuccessful;
+@property (getter=wasHTTPNonGet, nonatomic) bool httpNonGet;
+@property (getter=loadWasSuccessful, nonatomic) bool loadSuccessful;
 @property (nonatomic) WBSCloudHistoryVisit *redirectDestinationVisit;
 @property (nonatomic, copy) WBSCloudHistoryVisitIdentifier *redirectDestinationVisitIdentifier;
 @property (nonatomic) WBSCloudHistoryVisit *redirectSourceVisit;
@@ -28,13 +28,13 @@
 - (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithHistoryVisit:(id)arg1;
-- (BOOL)loadWasSuccessful;
+- (bool)loadWasSuccessful;
 - (id)redirectDestinationVisit;
 - (id)redirectDestinationVisitIdentifier;
 - (id)redirectSourceVisit;
 - (id)redirectSourceVisitIdentifier;
-- (void)setHttpNonGet:(BOOL)arg1;
-- (void)setLoadSuccessful:(BOOL)arg1;
+- (void)setHttpNonGet:(bool)arg1;
+- (void)setLoadSuccessful:(bool)arg1;
 - (void)setRedirectDestinationVisit:(id)arg1;
 - (void)setRedirectDestinationVisitIdentifier:(id)arg1;
 - (void)setRedirectSourceVisit:(id)arg1;
@@ -43,6 +43,6 @@
 - (void)setVisitIdentifier:(id)arg1;
 - (id)title;
 - (id)visitIdentifier;
-- (BOOL)wasHTTPNonGet;
+- (bool)wasHTTPNonGet;
 
 @end

@@ -9,7 +9,7 @@
 @property (nonatomic, retain) NSString *language;
 @property (nonatomic, retain) NSString *region;
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (id)feature;
 - (id)info;
 - (id)language;

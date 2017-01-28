@@ -34,20 +34,20 @@
 
 - (void).cxx_destruct;
 - (void)_asyncDeallocInstance;
-- (BOOL)_initHemi;
-- (BOOL)_initPrograms;
-- (BOOL)_initTextures;
-- (void)_loadTexture:(unsigned int)arg1;
+- (bool)_initHemi;
+- (bool)_initPrograms;
+- (bool)_initTextures;
+- (void)_loadTexture:(unsigned long long)arg1;
 - (void)_prime;
 - (void)_purge;
-- (void)_renderWithScene:(id)arg1 viewport:(struct NUViewport { int x1; int x2; unsigned int x3; unsigned int x4; })arg2 prime:(BOOL)arg3;
-- (void)_requireTexture:(unsigned int)arg1 sync:(BOOL)arg2;
+- (void)_renderWithScene:(id)arg1 viewport:(struct NUViewport { int x1; int x2; unsigned int x3; unsigned int x4; })arg2 prime:(bool)arg3;
+- (void)_requireTexture:(unsigned long long)arg1 sync:(bool)arg2;
 - (unsigned int)createVertexArray;
 - (void)dealloc;
 - (id)init;
 - (void)purge;
 - (void)renderWithScene:(id)arg1 viewport:(struct NUViewport { int x1; int x2; unsigned int x3; unsigned int x4; })arg2;
 - (id)shareGroup;
-- (id)snapshot:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)snapshot:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 
 @end

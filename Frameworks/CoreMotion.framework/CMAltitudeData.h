@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSNumber *pressure;
 @property (nonatomic, readonly) NSNumber *relativeAltitude;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

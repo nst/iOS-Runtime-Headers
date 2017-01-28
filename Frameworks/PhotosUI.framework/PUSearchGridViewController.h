@@ -10,16 +10,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *emptyPlaceholderText;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PUSearchGridDataSource *searchGridDataSource;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_containsScene;
+- (bool)_containsScene;
 - (id)_subtitle;
-- (int)_titleViewVerticalSizeClassForExtendedTraitCollection:(id)arg1;
+- (long long)_titleViewVerticalSizeClassForExtendedTraitCollection:(id)arg1;
 - (void)_updateNavigationTitleView;
-- (BOOL)allowSlideshowButton;
+- (bool)allowSlideshowButton;
 - (id)emptyPlaceholderText;
 - (id)newEmptyPlaceholderView;
 - (id)newGridLayout;
@@ -28,6 +28,6 @@
 - (void)setEmptyPlaceholderText:(id)arg1;
 - (void)setSearchGridDataSource:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

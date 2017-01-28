@@ -6,19 +6,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int height;
-@property (nonatomic) BOOL scaleToFit;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long height;
+@property (nonatomic) bool scaleToFit;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int width;
+@property (nonatomic) unsigned long long width;
 
-- (unsigned int)height;
+- (unsigned long long)height;
 - (id)p_renderingExporterDelegate;
-- (BOOL)scaleToFit;
-- (void)setHeight:(unsigned int)arg1;
-- (void)setScaleToFit:(BOOL)arg1;
-- (void)setWidth:(unsigned int)arg1;
+- (bool)scaleToFit;
+- (void)setHeight:(unsigned long long)arg1;
+- (void)setScaleToFit:(bool)arg1;
+- (void)setWidth:(unsigned long long)arg1;
 - (void)setup;
-- (unsigned int)width;
+- (unsigned long long)width;
 
 @end

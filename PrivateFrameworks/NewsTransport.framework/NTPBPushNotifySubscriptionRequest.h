@@ -10,9 +10,9 @@
 }
 
 @property (nonatomic, retain) NTPBDeviceInfo *deviceInfo;
-@property (nonatomic, readonly) BOOL hasDeviceInfo;
-@property (nonatomic, readonly) BOOL hasNotificationUserId;
-@property (nonatomic, readonly) BOOL hasUserStorefrontId;
+@property (nonatomic, readonly) bool hasDeviceInfo;
+@property (nonatomic, readonly) bool hasNotificationUserId;
+@property (nonatomic, readonly) bool hasUserStorefrontId;
 @property (nonatomic, retain) NSMutableArray *notificationEntitys;
 @property (nonatomic, retain) NSString *notificationUserId;
 @property (nonatomic, retain) NSString *userStorefrontId;
@@ -26,17 +26,17 @@
 - (id)description;
 - (id)deviceInfo;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeviceInfo;
-- (BOOL)hasNotificationUserId;
-- (BOOL)hasUserStorefrontId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeviceInfo;
+- (bool)hasNotificationUserId;
+- (bool)hasUserStorefrontId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)notificationEntityAtIndex:(unsigned int)arg1;
+- (id)notificationEntityAtIndex:(unsigned long long)arg1;
 - (id)notificationEntitys;
-- (unsigned int)notificationEntitysCount;
+- (unsigned long long)notificationEntitysCount;
 - (id)notificationUserId;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeviceInfo:(id)arg1;
 - (void)setNotificationEntitys:(id)arg1;
 - (void)setNotificationUserId:(id)arg1;

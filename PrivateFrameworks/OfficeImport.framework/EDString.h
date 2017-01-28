@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)edStringWithString:(id)arg1;
@@ -25,17 +25,17 @@
 - (id)description;
 - (id)firstRunEffects;
 - (id)firstRunFont;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithString:(id)arg1;
 - (id)initWithString:(id)arg1 runs:(id)arg2;
 - (bool)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToEDString:(id)arg1;
-- (BOOL)isEqualToString:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToEDString:(id)arg1;
+- (bool)isEqualToString:(id)arg1;
 - (id)phoneticInfo;
 - (void)prependString:(id)arg1;
-- (void)removeCharacterAtIndex:(unsigned int)arg1;
+- (void)removeCharacterAtIndex:(unsigned long long)arg1;
 - (void)removeCharactersInSet:(id)arg1;
 - (id)runs;
 - (void)setDoNotModify:(bool)arg1;

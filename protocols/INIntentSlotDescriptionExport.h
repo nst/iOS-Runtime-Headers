@@ -9,12 +9,12 @@
 - (SEL)deprecatedResolveSelector;
 - (NSString *)facadePropertyName;
 - (id)init;
-- (BOOL)isExtended;
-- (BOOL)isPrivate;
+- (bool)isExtended;
+- (bool)isPrivate;
 - (NSString *)name;
 - (SEL)resolveSelector;
-- (unsigned int)tag;
-- (int)valueStyle;
-- (int)valueType;
+- (unsigned long long)tag;
+- (long long)valueStyle;
+- (long long)valueType;
 
 @end

@@ -4,15 +4,15 @@
 
 @interface _INVocabularyValidator : NSObject
 
-+ (void)initialize;
++ (void)load;
 
-- (BOOL)_bundleID:(id)arg1 isWhitelistedForVocabularyType:(int)arg2;
-- (void)_confirmExistenceOfWatchAppForCompanionBundleID:(id)arg1 handlingIntents:(id)arg2 completion:(id /* block */)arg3;
-- (void)_determineIfBundle:(id)arg1 canProvideVocabularyOfType:(int)arg2 completion:(id /* block */)arg3;
-- (id)_intentsUsingVocabularyType:(int)arg1;
+- (bool)_bundleID:(id)arg1 isWhitelistedForVocabularyType:(long long)arg2;
+- (void)_confirmExistenceOfWatchAppForCompanionBundleID:(id)arg1 handlingIntents:(id)arg2 completion:(id)arg3;
+- (void)_determineIfBundle:(id)arg1 canProvideVocabularyOfType:(long long)arg2 completion:(id)arg3;
+- (id)_intentsUsingVocabularyType:(long long)arg1;
 - (id)_pluginKitCompatiblePathFromPath:(id)arg1;
-- (void)determineIfBundle:(id)arg1 canProvideVocabularyOfType:(int)arg2 completion:(id /* block */)arg3;
-- (unsigned int)maximumNumberOfVocabularyStringsForType:(int)arg1;
-- (id)validatedItemsFromVocabularyStrings:(id)arg1 ofType:(int)arg2 loggingWarnings:(BOOL)arg3;
+- (void)determineIfBundle:(id)arg1 canProvideVocabularyOfType:(long long)arg2 completion:(id)arg3;
+- (unsigned long long)maximumNumberOfVocabularyStringsForType:(long long)arg1;
+- (id)validatedItemsFromVocabularyStrings:(id)arg1 ofType:(long long)arg2 loggingWarnings:(bool)arg3;
 
 @end

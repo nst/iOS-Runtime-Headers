@@ -7,8 +7,8 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
-- (id)accessibilityElementAtIndex:(int)arg1;
-- (int)accessibilityElementCount;
+- (id)accessibilityElementAtIndex:(long long)arg1;
+- (long long)accessibilityElementCount;
 - (id)accessibilityUserDefinedActivationPoint;
 - (id)accessibilityUserDefinedContainer;
 - (id)accessibilityUserDefinedFrame;
@@ -19,7 +19,7 @@
 - (id)accessibilityUserDefinedShouldGroupChildren;
 - (id)accessibilityUserDefinedTraits;
 - (id)accessibilityUserDefinedValue;
-- (int)indexOfAccessibilityElement:(id)arg1;
+- (long long)indexOfAccessibilityElement:(id)arg1;
 - (id)isAccessibilityUserDefinedElement;
 - (void)setAccessibilityElements:(id)arg1;
 

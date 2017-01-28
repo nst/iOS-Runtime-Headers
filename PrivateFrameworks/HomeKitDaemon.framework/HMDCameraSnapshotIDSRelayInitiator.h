@@ -8,7 +8,7 @@
     NSString * _destinationID;
     NSMutableData * _fileLengthAndData;
     IDSSession * _idsSession;
-    BOOL  _idsSessionStarted;
+    bool  _idsSessionStarted;
     HMDSnapshotFile * _snapshotFile;
     NSObject<OS_dispatch_source> * _socketSource;
 }
@@ -19,9 +19,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *destinationID;
 @property (nonatomic, retain) NSMutableData *fileLengthAndData;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IDSSession *idsSession;
-@property (nonatomic) BOOL idsSessionStarted;
+@property (nonatomic) bool idsSessionStarted;
 @property (nonatomic, retain) HMDSnapshotFile *snapshotFile;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *socketSource;
 @property (readonly) Class superclass;
@@ -40,7 +40,7 @@
 - (id)destinationID;
 - (id)fileLengthAndData;
 - (id)idsSession;
-- (BOOL)idsSessionStarted;
+- (bool)idsSessionStarted;
 - (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 destinationID:(id)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
 - (id)logIdentifier;
 - (void)sendFile:(id)arg1;
@@ -52,7 +52,7 @@
 - (void)sessionStarted:(id)arg1;
 - (void)setFileLengthAndData:(id)arg1;
 - (void)setIdsSession:(id)arg1;
-- (void)setIdsSessionStarted:(BOOL)arg1;
+- (void)setIdsSessionStarted:(bool)arg1;
 - (void)setSnapshotFile:(id)arg1;
 - (void)setSocketSource:(id)arg1;
 - (id)snapshotFile;

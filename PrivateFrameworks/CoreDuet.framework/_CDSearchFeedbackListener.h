@@ -5,7 +5,7 @@
 @interface _CDSearchFeedbackListener : NSObject <SFFeedbackListener> {
     NSString * _clientIdentifier;
     _QPSearchFeedbackListener * _feedbackListener;
-    BOOL  _isSpotlight;
+    bool  _isSpotlight;
     <_DKKnowledgeSaving> * _store;
 }
 
@@ -13,8 +13,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) _QPSearchFeedbackListener *feedbackListener;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isSpotlight;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isSpotlight;
 @property (nonatomic, retain) <_DKKnowledgeSaving> *store;
 @property (readonly) Class superclass;
 
@@ -28,11 +28,11 @@
 - (void)didRankSections:(id)arg1;
 - (void)didStartSearch:(id)arg1;
 - (id)feedbackListener;
-- (BOOL)isSpotlight;
+- (bool)isSpotlight;
 - (void)resultsDidBecomeVisible:(id)arg1;
 - (void)searchViewDidDisappear:(id)arg1;
 - (void)setFeedbackListener:(id)arg1;
-- (void)setIsSpotlight:(BOOL)arg1;
+- (void)setIsSpotlight:(bool)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
 

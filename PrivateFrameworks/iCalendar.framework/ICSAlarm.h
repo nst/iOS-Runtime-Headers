@@ -14,11 +14,11 @@
 @property (retain) NSString *summary;
 @property (retain) ICSTrigger *trigger;
 @property (retain) NSString *uid;
-@property (nonatomic) BOOL x_apple_default_alarm;
-@property (nonatomic) BOOL x_apple_local_default_alarm;
+@property (nonatomic) bool x_apple_default_alarm;
+@property (nonatomic) bool x_apple_local_default_alarm;
 @property (nonatomic, retain) NSString *x_apple_proximity;
 @property (retain) ICSStructuredLocation *x_apple_structured_location;
-@property (nonatomic) BOOL x_apple_travel_default_alarm;
+@property (nonatomic) bool x_apple_travel_default_alarm;
 @property (nonatomic, retain) NSString *x_wr_alarmuid;
 
 + (id)ICSStringFromAction:(int)arg1;
@@ -31,21 +31,21 @@
 - (int)action;
 - (id)bookmark;
 - (void)fixAlarm;
-- (BOOL)isNoneAlarm;
+- (bool)isNoneAlarm;
 - (id)relatedTo;
 - (void)setAcknowledged:(id)arg1;
 - (void)setAction:(int)arg1;
 - (void)setBookmark:(id)arg1;
 - (void)setRelatedTo:(id)arg1;
-- (void)setX_apple_default_alarm:(BOOL)arg1;
-- (void)setX_apple_local_default_alarm:(BOOL)arg1;
+- (void)setX_apple_default_alarm:(bool)arg1;
+- (void)setX_apple_local_default_alarm:(bool)arg1;
 - (void)setX_apple_proximity:(id)arg1;
-- (void)setX_apple_travel_default_alarm:(BOOL)arg1;
+- (void)setX_apple_travel_default_alarm:(bool)arg1;
 - (void)setX_wr_alarmuid:(id)arg1;
-- (BOOL)x_apple_default_alarm;
-- (BOOL)x_apple_local_default_alarm;
+- (bool)x_apple_default_alarm;
+- (bool)x_apple_local_default_alarm;
 - (id)x_apple_proximity;
-- (BOOL)x_apple_travel_default_alarm;
+- (bool)x_apple_travel_default_alarm;
 - (id)x_wr_alarmuid;
 
 @end

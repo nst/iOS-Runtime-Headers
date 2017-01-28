@@ -25,6 +25,7 @@
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 - (id)af_dialogIdentifier;
-- (BOOL)af_isUtterance;
+- (bool)af_isUtterance;
+- (id)af_text;
 
 @end

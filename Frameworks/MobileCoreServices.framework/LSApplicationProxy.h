@@ -6,7 +6,7 @@
     NSArray * _activityTypes;
     _LSApplicationState * _appState;
     NSString * _applicationVariant;
-    long  _bundleModTime;
+    int  _bundleModTime;
     NSString * _companionApplicationIdentifier;
     NSString * _complicationPrincipalClass;
     NSArray * _deviceFamily;
@@ -14,11 +14,11 @@
     _LSDiskUsage * _diskUsage;
     NSNumber * _downloaderDSID;
     NSNumber * _familyID;
-    unsigned int  _installType;
+    unsigned long long  _installType;
     NSNumber * _itemID;
     NSString * _itemName;
     NSString * _minimumSystemVersion;
-    unsigned int  _originalInstallType;
+    unsigned long long  _originalInstallType;
     NSArray * _plugInKitPlugins;
     NSArray * _pluginUUIDs;
     NSString * _preferredArchitecture;
@@ -34,7 +34,7 @@
     NSNumber * _storeFront;
     NSArray * _supportedComplicationFamilies;
     NSString * _teamID;
-    BOOL  _userInitiatedUninstall;
+    bool  _userInitiatedUninstall;
     NSString * _vendorName;
     NSNumber * _versionID;
     NSString * _watchKitVersion;
@@ -52,7 +52,7 @@
 @property (nonatomic, readonly) NSString *applicationVariant;
 @property (nonatomic, readonly) NSArray *audioComponents;
 @property (nonatomic, readonly) NSNumber *betaExternalVersionIdentifier;
-@property (nonatomic, readonly) long bundleModTime;
+@property (nonatomic, readonly) int bundleModTime;
 @property (nonatomic, readonly) NSString *companionApplicationIdentifier;
 @property (readonly) NSString *complicationPrincipalClass;
 @property (nonatomic, readonly) NSArray *deviceFamily;
@@ -65,31 +65,31 @@
 @property (nonatomic, readonly) NSArray *externalAccessoryProtocols;
 @property (nonatomic, readonly) NSNumber *externalVersionIdentifier;
 @property (nonatomic, readonly) NSNumber *familyID;
-@property (nonatomic, readonly) BOOL fileSharingEnabled;
-@property (readonly) BOOL hasComplication;
-@property (nonatomic, readonly) BOOL hasCustomNotification;
-@property (nonatomic, readonly) BOOL hasGlance;
-@property (nonatomic, readonly) BOOL hasMIDBasedSINF;
-@property (nonatomic, readonly) BOOL hasSettingsBundle;
-@property (nonatomic, readonly) BOOL iconIsPrerendered;
+@property (nonatomic, readonly) bool fileSharingEnabled;
+@property (readonly) bool hasComplication;
+@property (nonatomic, readonly) bool hasCustomNotification;
+@property (nonatomic, readonly) bool hasGlance;
+@property (nonatomic, readonly) bool hasMIDBasedSINF;
+@property (nonatomic, readonly) bool hasSettingsBundle;
+@property (nonatomic, readonly) bool iconIsPrerendered;
 @property (nonatomic, readonly) NSProgress *installProgress;
-@property (nonatomic, readonly) unsigned int installType;
-@property (nonatomic, readonly) BOOL isAdHocCodeSigned;
-@property (nonatomic, readonly) BOOL isAppUpdate;
-@property (nonatomic, readonly) BOOL isBetaApp;
-@property (nonatomic, readonly) BOOL isInstalled;
-@property (nonatomic, readonly) BOOL isLaunchProhibited;
-@property (nonatomic, readonly) BOOL isNewsstandApp;
-@property (nonatomic, readonly) BOOL isPlaceholder;
-@property (nonatomic, readonly) BOOL isPurchasedReDownload;
-@property (nonatomic, readonly) BOOL isRestricted;
-@property (nonatomic, readonly) BOOL isStickerProvider;
-@property (nonatomic, readonly) BOOL isWatchKitApp;
+@property (nonatomic, readonly) unsigned long long installType;
+@property (nonatomic, readonly) bool isAdHocCodeSigned;
+@property (nonatomic, readonly) bool isAppUpdate;
+@property (nonatomic, readonly) bool isBetaApp;
+@property (nonatomic, readonly) bool isInstalled;
+@property (nonatomic, readonly) bool isLaunchProhibited;
+@property (nonatomic, readonly) bool isNewsstandApp;
+@property (nonatomic, readonly) bool isPlaceholder;
+@property (nonatomic, readonly) bool isPurchasedReDownload;
+@property (nonatomic, readonly) bool isRestricted;
+@property (nonatomic, readonly) bool isStickerProvider;
+@property (nonatomic, readonly) bool isWatchKitApp;
 @property (nonatomic, readonly) NSNumber *itemID;
 @property (nonatomic, readonly) NSString *itemName;
 @property (nonatomic, readonly) NSString *minimumSystemVersion;
-@property (nonatomic, readonly) BOOL missingRequiredSINF;
-@property (nonatomic, readonly) unsigned int originalInstallType;
+@property (nonatomic, readonly) bool missingRequiredSINF;
+@property (nonatomic, readonly) unsigned long long originalInstallType;
 @property (nonatomic, readonly) NSArray *plugInKitPlugins;
 @property (nonatomic, readonly) NSString *preferredArchitecture;
 @property (nonatomic, copy) NSArray *privateDocumentIconNames;
@@ -98,41 +98,41 @@
 @property (nonatomic, readonly) NSString *ratingLabel;
 @property (nonatomic, readonly) NSNumber *ratingRank;
 @property (nonatomic, readonly) NSDate *registeredDate;
-@property (getter=isRemoveableSystemApp, nonatomic, readonly) BOOL removeableSystemApp;
-@property (getter=isRemovedSystemApp, nonatomic, readonly) BOOL removedSystemApp;
+@property (getter=isRemoveableSystemApp, nonatomic, readonly) bool removeableSystemApp;
+@property (getter=isRemovedSystemApp, nonatomic, readonly) bool removedSystemApp;
 @property (nonatomic, readonly) NSArray *requiredDeviceCapabilities;
 @property (nonatomic, readonly) NSString *sdkVersion;
 @property (nonatomic, readonly) NSString *shortVersionString;
-@property (nonatomic, readonly) BOOL shouldSkipWatchAppInstall;
+@property (nonatomic, readonly) bool shouldSkipWatchAppInstall;
 @property (nonatomic, readonly) NSString *sourceAppIdentifier;
 @property (nonatomic, readonly) NSNumber *staticDiskUsage;
 @property (nonatomic, readonly) NSString *storeCohortMetadata;
 @property (nonatomic, readonly) NSNumber *storeFront;
 @property (readonly) NSArray *supportedComplicationFamilies;
-@property (nonatomic, readonly) BOOL supportsAudiobooks;
-@property (nonatomic, readonly) BOOL supportsExternallyPlayableContent;
-@property (nonatomic, readonly) BOOL supportsODR;
-@property (nonatomic, readonly) BOOL supportsOpenInPlace;
-@property (nonatomic, readonly) BOOL supportsPurgeableLocalStorage;
+@property (nonatomic, readonly) bool supportsAudiobooks;
+@property (nonatomic, readonly) bool supportsExternallyPlayableContent;
+@property (nonatomic, readonly) bool supportsODR;
+@property (nonatomic, readonly) bool supportsOpenInPlace;
+@property (nonatomic, readonly) bool supportsPurgeableLocalStorage;
 @property (nonatomic, readonly) NSString *teamID;
-@property (nonatomic) BOOL userInitiatedUninstall;
+@property (nonatomic) bool userInitiatedUninstall;
 @property (nonatomic, readonly) NSString *vendorName;
 @property (nonatomic, readonly) NSString *watchKitVersion;
-@property (getter=isWhitelisted, nonatomic, readonly) BOOL whitelisted;
+@property (getter=isWhitelisted, nonatomic, readonly) bool whitelisted;
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
 + (id)applicationProxyForBundleURL:(id)arg1;
 + (id)applicationProxyForCompanionIdentifier:(id)arg1;
 + (id)applicationProxyForIdentifier:(id)arg1;
-+ (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2;
++ (id)applicationProxyForIdentifier:(id)arg1 placeholder:(bool)arg2;
 + (id)applicationProxyForItemID:(id)arg1;
 + (id)applicationProxyWithBundleUnitID:(unsigned int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)ODRDiskUsage;
 - (id)UIBackgroundModes;
-- (BOOL)UPPValidated;
+- (bool)UPPValidated;
 - (id)VPNPlugins;
 - (id)_initWithBundleUnit:(unsigned int)arg1 applicationIdentifier:(id)arg2;
 - (id)activityTypes;
@@ -144,7 +144,7 @@
 - (id)applicationVariant;
 - (id)audioComponents;
 - (id)betaExternalVersionIdentifier;
-- (long)bundleModTime;
+- (int)bundleModTime;
 - (void)clearAdvertisingIdentifier;
 - (id)companionApplicationIdentifier;
 - (id)complicationPrincipalClass;
@@ -161,47 +161,47 @@
 - (id)externalAccessoryProtocols;
 - (id)externalVersionIdentifier;
 - (id)familyID;
-- (BOOL)fileSharingEnabled;
-- (BOOL)hasComplication;
-- (BOOL)hasCustomNotification;
-- (BOOL)hasGlance;
-- (BOOL)hasMIDBasedSINF;
-- (BOOL)hasSettingsBundle;
+- (bool)fileSharingEnabled;
+- (bool)hasComplication;
+- (bool)hasCustomNotification;
+- (bool)hasGlance;
+- (bool)hasMIDBasedSINF;
+- (bool)hasSettingsBundle;
 - (id)iconDataForVariant:(int)arg1;
-- (BOOL)iconIsPrerendered;
+- (bool)iconIsPrerendered;
 - (id)iconStyleDomain;
 - (id)initWithCoder:(id)arg1;
 - (id)installProgress;
 - (id)installProgressSync;
-- (unsigned int)installType;
-- (BOOL)isAdHocCodeSigned;
-- (BOOL)isAppUpdate;
-- (BOOL)isBetaApp;
-- (BOOL)isInstalled;
-- (BOOL)isLaunchProhibited;
-- (BOOL)isNewsstandApp;
-- (BOOL)isPlaceholder;
-- (BOOL)isPurchasedReDownload;
-- (BOOL)isRemoveableSystemApp;
-- (BOOL)isRemovedSystemApp;
-- (BOOL)isRestricted;
-- (BOOL)isStickerProvider;
-- (BOOL)isSystemOrInternalApp;
-- (BOOL)isWatchKitApp;
-- (BOOL)isWhitelisted;
+- (unsigned long long)installType;
+- (bool)isAdHocCodeSigned;
+- (bool)isAppUpdate;
+- (bool)isBetaApp;
+- (bool)isInstalled;
+- (bool)isLaunchProhibited;
+- (bool)isNewsstandApp;
+- (bool)isPlaceholder;
+- (bool)isPurchasedReDownload;
+- (bool)isRemoveableSystemApp;
+- (bool)isRemovedSystemApp;
+- (bool)isRestricted;
+- (bool)isStickerProvider;
+- (bool)isSystemOrInternalApp;
+- (bool)isWatchKitApp;
+- (bool)isWhitelisted;
 - (id)itemID;
 - (id)itemName;
 - (id)localizedName;
 - (id)localizedNameForContext:(id)arg1;
 - (id)localizedShortName;
 - (id)minimumSystemVersion;
-- (BOOL)missingRequiredSINF;
-- (unsigned int)originalInstallType;
+- (bool)missingRequiredSINF;
+- (unsigned long long)originalInstallType;
 - (id)plugInKitPlugins;
 - (id)preferredArchitecture;
 - (id)privateDocumentIconNames;
 - (id)privateDocumentTypeOwner;
-- (BOOL)profileValidated;
+- (bool)profileValidated;
 - (id)purchaserDSID;
 - (id)ratingLabel;
 - (id)ratingRank;
@@ -211,51 +211,57 @@
 - (id)sdkVersion;
 - (void)setPrivateDocumentIconNames:(id)arg1;
 - (void)setPrivateDocumentTypeOwner:(id)arg1;
-- (void)setUserInitiatedUninstall:(BOOL)arg1;
+- (void)setUserInitiatedUninstall:(bool)arg1;
 - (id)shortVersionString;
-- (BOOL)shouldSkipWatchAppInstall;
+- (bool)shouldSkipWatchAppInstall;
 - (id)sourceAppIdentifier;
 - (id)staticDiskUsage;
 - (id)storeCohortMetadata;
 - (id)storeFront;
 - (id)supportedComplicationFamilies;
-- (BOOL)supportsAudiobooks;
-- (BOOL)supportsExternallyPlayableContent;
-- (BOOL)supportsODR;
-- (BOOL)supportsOpenInPlace;
-- (BOOL)supportsPurgeableLocalStorage;
+- (bool)supportsAudiobooks;
+- (bool)supportsExternallyPlayableContent;
+- (bool)supportsODR;
+- (bool)supportsOpenInPlace;
+- (bool)supportsPurgeableLocalStorage;
 - (id)teamID;
 - (id)uniqueIdentifier;
-- (BOOL)userInitiatedUninstall;
+- (bool)userInitiatedUninstall;
 - (id)vendorName;
 - (id)watchKitVersion;
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
-- (BOOL)_inapptrust_isFirstParty;
+- (bool)_inapptrust_isFirstParty;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
-- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
+- (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;
+- (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (id)__ck_messagesPluginKitProxy;
 
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
++ (id)tvmlKitBundle;
+
+- (id)tv_applicationLaunchImageName;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
 + (id)uns_bundleForBundleIdentifier:(id)arg1;
 
-- (BOOL)_uns_isReallyInstalled;
+- (bool)_uns_isReallyInstalled;
 - (id)uns_bundle;
 - (id)uns_infoDictionary;
-- (BOOL)uns_isSystemApplication;
+- (bool)uns_isSystemApplication;
 - (id)uns_path;
-- (BOOL)uns_requiresLocalNotifications;
-- (BOOL)uns_sdkVersionOnOrLaterThan:(id)arg1;
-- (BOOL)uns_shouldUseDefaultDataProvider;
-- (BOOL)uns_usesCloudKit;
-- (BOOL)uns_usesLocalNotifications;
+- (bool)uns_requiresLocalNotifications;
+- (bool)uns_sdkVersionOnOrLaterThan:(id)arg1;
+- (bool)uns_shouldUseDefaultDataProvider;
+- (bool)uns_usesCloudKit;
+- (bool)uns_usesLocalNotifications;
 
 @end

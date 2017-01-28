@@ -4,52 +4,63 @@
 
 @interface EMFEmojiPreferences : NSObject <EMFEmojiPreferenceActions> {
     NSMutableDictionary * _categoryIndexes;
-    int  _currentSequence;
+    long long  _currentSequence;
     NSMutableDictionary * _defaults;
     NSObject<OS_dispatch_queue> * _differentialPrivacyQueue;
-    BOOL  _isDefaultDirty;
-    unsigned int  _maximumRecentsCount;
-    NSString * _previouslyUsedCategory;
-    NSArray * _recentEmojis;
+    bool  _isDefaultDirty;
+    unsigned long long  _maximumRecentsCount;
     NSMutableArray * _recents;
     NSMutableDictionary * _skinToneBaseKeyPreferences;
+    NSMutableDictionary * _typingNames;
     NSMutableDictionary * _usageHistory;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int maximumRecentsCount;
-@property (nonatomic, retain) NSString *previouslyUsedCategory;
-@property (nonatomic, retain) NSArray *recentEmojis;
+@property (nonatomic, readonly) bool hasDisplayedSkinToneHelp;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long maximumRecentsCount;
+@property (nonatomic, readonly) NSString *previouslyUsedCategory;
+@property (nonatomic, readonly) NSArray *recentEmojis;
 @property (readonly) Class superclass;
 
++ (id)_cacheDomain;
++ (id)_cachedFlagCategoryEmoji:(id)arg1;
++ (id)_recentEmojiStrings;
 + (id)defaultsDomain;
 + (id)differentialPrivacyDomain;
 + (id)differentialPrivacyRecorderForEmoji:(id)arg1 usageMode:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_cleanUpOldFlagsCaches;
 - (void)_readPreferencesFromDefaults;
+- (void)didDisplaySkinToneHelp;
 - (void)didUseEmoji:(id)arg1;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2;
-- (void)didViewEmojiIndex:(int)arg1 forCategory:(id)arg2;
+- (void)didUseEmoji:(id)arg1 usageMode:(id)arg2 typingName:(id)arg3;
+- (void)didViewEmojiIndex:(long long)arg1 forCategory:(id)arg2;
+- (bool)hasDisplayedSkinToneHelp;
+- (bool)hasLastUsedVariantForEmoji:(id)arg1;
 - (id)init;
+- (id)lastUsedVariantEmojiForEmoji:(id)arg1;
 - (void)loadDefaultsIfNecessary;
-- (unsigned int)maximumRecentsCount;
+- (unsigned long long)maximumRecentsCount;
+- (void)migrateFromMajorOSVersion:(long long)arg1;
+- (void)migrateInDidDisplaySkinToneHelp:(bool)arg1;
 - (void)migrateInPreviouslyUsedCategory:(id)arg1;
 - (void)migrateInPreviouslyUsedCategoryIndexes:(id)arg1;
-- (void)migrateInRecentEmoji:(id)arg1 usages:(id)arg2;
+- (void)migrateInRecentEmoji:(id)arg1 usages:(id)arg2 typingNames:(id)arg3;
+- (void)migrateInSkinTonePreferences:(id)arg1;
 - (id)previouslyUsedCategory;
-- (unsigned int)previouslyUsedIndexInCategory:(id)arg1;
+- (unsigned long long)previouslyUsedIndexInCategory:(id)arg1;
 - (void)readEmojiDefaults;
 - (id)recentEmojis;
 - (id)recentVariantEmojiForEmoji:(id)arg1;
 - (void)resetEmojiDefaults;
 - (double)scoreForEmojiString:(id)arg1;
-- (double)scoreForSequence:(int)arg1;
-- (void)setMaximumRecentsCount:(unsigned int)arg1;
-- (void)setPreviouslyUsedCategory:(id)arg1;
-- (void)setRecentEmojis:(id)arg1;
+- (double)scoreForSequence:(long long)arg1;
+- (void)setMaximumRecentsCount:(unsigned long long)arg1;
+- (id)typingNameForEmoji:(id)arg1;
 - (void)writeEmojiDefaults;
 
 @end

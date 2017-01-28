@@ -5,6 +5,6 @@
 @interface NCWidgetMetrics : NSObject
 
 + (void)_updateWidgetRowHeightForContentSizeCategory;
-+ (float)widgetRowHeight;
++ (double)widgetRowHeight;
 
 @end

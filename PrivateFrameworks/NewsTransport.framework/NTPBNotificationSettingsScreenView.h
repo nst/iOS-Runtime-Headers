@@ -9,19 +9,19 @@
     int  _notificationSettingsScreenViewPresentationReason;
 }
 
-@property (nonatomic) BOOL hasNotificationSettingsScreenViewPresentationReason;
+@property (nonatomic) bool hasNotificationSettingsScreenViewPresentationReason;
 @property (nonatomic) int notificationSettingsScreenViewPresentationReason;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasNotificationSettingsScreenViewPresentationReason;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasNotificationSettingsScreenViewPresentationReason;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)notificationSettingsScreenViewPresentationReason;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasNotificationSettingsScreenViewPresentationReason:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasNotificationSettingsScreenViewPresentationReason:(bool)arg1;
 - (void)setNotificationSettingsScreenViewPresentationReason:(int)arg1;
 - (void)writeTo:(id)arg1;
 

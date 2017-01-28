@@ -6,7 +6,7 @@
     int  _absoluteOrder;
     NSURL * _priorOrderedURL;
     NSSet * _propertiesToSet;
-    BOOL  _sendOrder;
+    bool  _sendOrder;
 }
 
 @property (nonatomic) int absoluteOrder;

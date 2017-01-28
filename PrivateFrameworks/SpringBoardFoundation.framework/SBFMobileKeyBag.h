@@ -6,15 +6,15 @@
     NSObject<OS_dispatch_queue> * _calloutQueue;
     int  _firstUnlockNotification;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _queue_hasPasscodeSet;
+    bool  _queue_hasPasscodeSet;
     NSMutableArray * _queue_observerStateChangedCallbackBlocks;
     NSHashTable * _queue_observers;
     int  _stateChangedNotifyToken;
 }
 
 @property (nonatomic, readonly, copy) SBFMobileKeyBagState *extendedState;
-@property (nonatomic, readonly) BOOL hasBeenUnlockedSinceBoot;
-@property (nonatomic, readonly) BOOL hasPasscodeSet;
+@property (nonatomic, readonly) bool hasBeenUnlockedSinceBoot;
+@property (nonatomic, readonly) bool hasPasscodeSet;
 @property (nonatomic, readonly, copy) SBFMobileKeyBagState *state;
 
 + (id)sharedInstance;
@@ -23,17 +23,17 @@
 - (void)_queue_createStashBag:(id)arg1;
 - (void)_queue_firstUnlockOccurred;
 - (void)_queue_handleKeybagStatusChanged;
-- (id)_queue_lockStateExtended:(BOOL)arg1;
+- (id)_queue_lockStateExtended:(bool)arg1;
 - (void)_queue_setHasPasscodeIfNecessary:(id)arg1;
-- (BOOL)_queue_verifyExpectedStashState:(long long)arg1;
+- (bool)_queue_verifyExpectedStashState:(long long)arg1;
 - (void)addObserver:(id)arg1;
-- (BOOL)beginRecovery:(id)arg1 error:(id*)arg2;
-- (void)createStashBag:(id)arg1 completion:(id /* block */)arg2;
-- (void)createStashBag:(id)arg1 completion:(id /* block */)arg2 completionQueue:(id)arg3;
+- (bool)beginRecovery:(id)arg1 error:(id*)arg2;
+- (void)createStashBag:(id)arg1 completion:(id)arg2;
+- (void)createStashBag:(id)arg1 completion:(id)arg2 completionQueue:(id)arg3;
 - (void)dealloc;
 - (id)extendedState;
-- (BOOL)hasBeenUnlockedSinceBoot;
-- (BOOL)hasPasscodeSet;
+- (bool)hasBeenUnlockedSinceBoot;
+- (bool)hasPasscodeSet;
 - (id)init;
 - (void)lock;
 - (void)removeObserver:(id)arg1;

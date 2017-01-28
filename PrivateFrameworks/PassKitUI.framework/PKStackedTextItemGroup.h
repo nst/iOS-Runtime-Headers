@@ -9,10 +9,10 @@
 @property (nonatomic, readonly, copy) NSArray *items;
 
 - (void).cxx_destruct;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithItems:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)items;
 
 @end

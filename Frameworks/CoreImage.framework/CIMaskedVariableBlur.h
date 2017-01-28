@@ -14,7 +14,7 @@
 
 + (id)customAttributes;
 
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)_kernelCombine;
 - (id)_kernelD2;
 - (id)downTwo:(id)arg1;

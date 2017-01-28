@@ -3,7 +3,7 @@
  */
 
 @interface TSgPTPEthernetPort : TSgPTPFDPtPPort {
-    void * _ethernetPortImpl;
+    NSString * _interfaceName;
 }
 
 @property (nonatomic, readonly, copy) NSString *interfaceName;

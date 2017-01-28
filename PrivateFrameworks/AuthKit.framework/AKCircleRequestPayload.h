@@ -4,8 +4,8 @@
 
 @interface AKCircleRequestPayload : NSObject <NSSecureCoding> {
     NSString * _altDSID;
-    unsigned int  _circleStep;
-    int  _clientErrorCode;
+    unsigned long long  _circleStep;
+    long long  _clientErrorCode;
     NSData * _clientInfo;
     NSDictionary * _responseInfo;
     NSString * _serverInfo;
@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic, retain) NSString *altDSID;
-@property (nonatomic) unsigned int circleStep;
-@property (nonatomic) int clientErrorCode;
+@property (nonatomic) unsigned long long circleStep;
+@property (nonatomic) long long clientErrorCode;
 @property (nonatomic, retain) NSData *clientInfo;
 @property (nonatomic, retain) NSDictionary *responseInfo;
 @property (nonatomic, retain) NSString *serverInfo;
@@ -22,25 +22,25 @@
 @property (nonatomic, retain) NSString *transactionId;
 
 + (id)payloadWithInfo:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)altDSID;
-- (unsigned int)circleStep;
-- (int)clientErrorCode;
+- (unsigned long long)circleStep;
+- (long long)clientErrorCode;
 - (id)clientInfo;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isAcceptingPayload;
-- (BOOL)isRequestingPayload;
+- (bool)isAcceptingPayload;
+- (bool)isRequestingPayload;
 - (id)replyPayload;
 - (id)responseInfo;
 - (id)serverInfo;
 - (id)serverMachineId;
 - (void)setAltDSID:(id)arg1;
-- (void)setCircleStep:(unsigned int)arg1;
-- (void)setClientErrorCode:(int)arg1;
+- (void)setCircleStep:(unsigned long long)arg1;
+- (void)setClientErrorCode:(long long)arg1;
 - (void)setClientInfo:(id)arg1;
 - (void)setResponseInfo:(id)arg1;
 - (void)setServerInfo:(id)arg1;

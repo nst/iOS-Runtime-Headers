@@ -3,7 +3,7 @@
  */
 
 @interface ASTRequest : NSObject {
-    int  _clientStatus;
+    long long  _clientStatus;
     NSDictionary * _clientStatusToString;
     NSNumber * _currentTest;
     NSDictionary * _data;
@@ -11,7 +11,7 @@
     NSNumber * _progress;
 }
 
-@property (nonatomic) int clientStatus;
+@property (nonatomic) long long clientStatus;
 @property (nonatomic, retain) NSDictionary *clientStatusToString;
 @property (nonatomic, retain) NSNumber *currentTest;
 @property (nonatomic, retain) NSDictionary *data;
@@ -22,7 +22,7 @@
 + (id)request;
 
 - (void).cxx_destruct;
-- (int)clientStatus;
+- (long long)clientStatus;
 - (id)clientStatusToString;
 - (id)currentTest;
 - (id)data;
@@ -31,7 +31,7 @@
 - (id)error;
 - (id)init;
 - (id)progress;
-- (void)setClientStatus:(int)arg1;
+- (void)setClientStatus:(long long)arg1;
 - (void)setClientStatusToString:(id)arg1;
 - (void)setCurrentTest:(id)arg1;
 - (void)setData:(id)arg1;

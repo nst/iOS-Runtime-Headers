@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSSet *characteristics;
 @property (nonatomic, copy) <NSCopying> *triggerValue;
 
-+ (BOOL)supportsConditions;
++ (bool)supportsConditions;
 
 - (void).cxx_destruct;
 - (id)_allTriggerValuesForCharacteristic:(id)arg1 similarToValue:(id)arg2;
@@ -20,7 +20,7 @@
 - (id)commitCreateTrigger;
 - (id)commitEditTrigger;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (id)naturalLanguageNameOfType:(unsigned int)arg1;
+- (id)naturalLanguageNameOfType:(unsigned long long)arg1;
 - (void)setCharacteristics:(id)arg1;
 - (void)setTriggerValue:(id)arg1;
 - (id)triggerValue;

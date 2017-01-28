@@ -11,13 +11,13 @@
     id  _representedObject;
     MSCLAudioPlayerStatus * _status;
     id  _timeObserver;
-    BOOL  _usesCADisplayLink;
+    bool  _usesCADisplayLink;
 }
 
 @property (nonatomic) <MSCLAudioPlayerDelegate> *delegate;
 @property (nonatomic, retain) id representedObject;
 @property (nonatomic, readonly, copy) MSCLAudioPlayerStatus *status;
-@property (nonatomic) BOOL usesCADisplayLink;
+@property (nonatomic) bool usesCADisplayLink;
 
 - (void).cxx_destruct;
 - (void)_destroyPlayer;
@@ -26,7 +26,7 @@
 - (void)_itemFailedToPlayToEndNotification:(id)arg1;
 - (void)_itemPlayedToEndNotification:(id)arg1;
 - (void)_sendStatusDidChange;
-- (void)_setPlayerState:(int)arg1;
+- (void)_setPlayerState:(long long)arg1;
 - (void)_updateStatusWithCurrentTime:(double)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -37,10 +37,10 @@
 - (id)representedObject;
 - (void)setDelegate:(id)arg1;
 - (void)setRepresentedObject:(id)arg1;
-- (void)setUsesCADisplayLink:(BOOL)arg1;
+- (void)setUsesCADisplayLink:(bool)arg1;
 - (id)status;
 - (void)stop;
 - (void)togglePlayback;
-- (BOOL)usesCADisplayLink;
+- (bool)usesCADisplayLink;
 
 @end

@@ -9,13 +9,13 @@
 @property (nonatomic, readonly) UIImage *image;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_calculatedContentSize;
-- (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })_calculatedContentSize;
+- (void)_drawContentInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)description;
 - (id)entryImage;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)image;
 - (id)initWithImage:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

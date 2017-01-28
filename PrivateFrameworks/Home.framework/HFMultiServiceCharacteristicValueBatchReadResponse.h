@@ -32,15 +32,15 @@
 - (id)firstErrorForCharacteristicType:(id)arg1 inService:(id)arg2;
 - (id)firstValueForCharacteristicType:(id)arg1;
 - (id)firstValueForCharacteristicType:(id)arg1 inService:(id)arg2;
-- (BOOL)hasAnyErrors;
-- (BOOL)hasErrorForEveryCharacteristic;
+- (bool)hasAnyErrors;
+- (bool)hasErrorForEveryCharacteristic;
 - (id)init;
 - (id)mutableAllCharacteristics;
 - (id)serviceUUIDToResponseMap;
 - (id)servicesByUUID;
 - (id)servicesWithErrorForCharacteristicType:(id)arg1;
 - (id)servicesWithValue:(id)arg1 forCharacteristicType:(id)arg2;
-- (id)servicesWithValuesPassingTest:(id /* block */)arg1 forCharacteristicType:(id)arg2;
+- (id)servicesWithValuesPassingTest:(id)arg1 forCharacteristicType:(id)arg2;
 - (void)setContextProvider:(id)arg1;
 - (void)setMutableAllCharacteristics:(id)arg1;
 - (void)setServiceUUIDToResponseMap:(id)arg1;

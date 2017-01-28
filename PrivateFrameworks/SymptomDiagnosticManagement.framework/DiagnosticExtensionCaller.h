@@ -7,11 +7,11 @@
     DEExtensionManager * _manager;
 }
 
-+ (BOOL)getAttachmentsFrom:(id)arg1 forBundleID:(id)arg2 withParameters:(id)arg3 queue:(id)arg4 reply:(id /* block */)arg5;
++ (bool)getAttachmentsFrom:(id)arg1 forBundleID:(id)arg2 withParameters:(id)arg3 queue:(id)arg4 reply:(id)arg5;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (BOOL)_getAttachmentsFrom:(id)arg1 forBundleID:(id)arg2 withParameters:(id)arg3 queue:(id)arg4 reply:(id /* block */)arg5;
+- (bool)_getAttachmentsFrom:(id)arg1 forBundleID:(id)arg2 withParameters:(id)arg3 queue:(id)arg4 reply:(id)arg5;
 - (id)_getDEExtensionWithIdentifier:(id)arg1;
 - (void)dealloc;
 - (id)init;

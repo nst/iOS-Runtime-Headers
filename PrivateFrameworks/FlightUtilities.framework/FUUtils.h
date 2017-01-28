@@ -4,6 +4,6 @@
 
 @interface FUUtils : NSObject
 
-+ (void)enumerateFlightCodesInString:(id)arg1 usingBlock:(id /* block */)arg2;
++ (void)enumerateFlightCodesInString:(id)arg1 usingBlock:(id)arg2;
 
 @end

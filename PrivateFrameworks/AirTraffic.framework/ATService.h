@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableSet *messageLinks;
 @property (nonatomic, retain) NSHashTable *observers;
 @property (readonly) Class superclass;
@@ -26,9 +26,9 @@
 - (id)observers;
 - (void)removeMessageLink:(id)arg1;
 - (void)removeObserver:(id)arg1;
-- (BOOL)run;
+- (bool)run;
 - (void)setMessageLinks:(id)arg1;
 - (void)setObservers:(id)arg1;
-- (BOOL)stop;
+- (bool)stop;
 
 @end

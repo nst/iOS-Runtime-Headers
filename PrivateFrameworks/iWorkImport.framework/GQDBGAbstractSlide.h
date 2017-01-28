@@ -4,8 +4,8 @@
 
 @interface GQDBGAbstractSlide : NSObject {
     GQDBGBodyPlaceholder * mBodyPlaceholder;
-    BOOL  mCallGenerator;
-    BOOL  mHidden;
+    bool  mCallGenerator;
+    bool  mHidden;
     char * mID;
     GQDBGObjectPlaceholder * mObjectPlaceholder;
     GQDBGSlideNumberPlaceholder * mSlideNumberPlaceholder;
@@ -16,7 +16,7 @@
 
 - (char *)ID;
 - (void)dealloc;
-- (BOOL)isHidden;
+- (bool)isHidden;
 - (int)readAttributesForSlide:(struct _xmlTextReader { }*)arg1;
 - (id)slideStyle;
 - (id)stylesheet;

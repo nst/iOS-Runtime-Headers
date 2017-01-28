@@ -6,10 +6,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)confirmationRequiredWithValueToConfirm:(id)arg1;
-+ (id)successWithResolvedValue:(BOOL)arg1;
++ (id)successWithResolvedValue:(bool)arg1;
 
 @end

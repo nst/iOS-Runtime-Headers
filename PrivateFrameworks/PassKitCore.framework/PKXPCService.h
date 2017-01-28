@@ -16,46 +16,46 @@
     NSXPCInterface * _remoteObjectInterface;
     NSString * _serviceResumedNotificationName;
     int  _serviceResumedToken;
-    BOOL  _suspendCallbacks;
+    bool  _suspendCallbacks;
 }
 
-@property (nonatomic, readonly) BOOL connectionEstablished;
+@property (nonatomic, readonly) bool connectionEstablished;
 @property (nonatomic) <PKXPCServiceDelegate> *delegate;
 @property (nonatomic, readonly) NSString *machServiceName;
-@property (getter=isSuspended, nonatomic, readonly) BOOL suspended;
+@property (getter=isSuspended, nonatomic, readonly) bool suspended;
 
-+ (BOOL)areCallbacksSuspended;
-+ (void)setCallbacksSuspendedEvaluator:(id /* block */)arg1;
++ (bool)areCallbacksSuspended;
++ (void)setCallbacksSuspendedEvaluator:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_connection;
-- (void)_createConnectionIfPossible:(BOOL)arg1;
+- (void)_createConnectionIfPossible:(bool)arg1;
 - (void)_establishServiceConnection;
 - (void)_invalidateConnectionIfPossible;
-- (id /* block */)_newErrorHandlerWithSemaphore:(id)arg1;
-- (id /* block */)_newWrappedErrorHandlerForHandler:(id /* block */)arg1;
+- (id)_newErrorHandlerWithSemaphore:(id)arg1;
+- (id)_newWrappedErrorHandlerForHandler:(id)arg1;
 - (void)_registerForApplicationLifeCycleNotifications;
 - (void)_registerForServiceListenerResumedNotifications;
 - (void)_sendResumed;
 - (void)_sendSuspended;
 - (void)_unregisterForApplicationLifeCycleNotifications;
 - (void)_unregisterForServiceListenerResumedNotifications;
-- (BOOL)connectionEstablished;
+- (bool)connectionEstablished;
 - (void)dealloc;
 - (id)delegate;
 - (id)existingRemoteObjectProxy;
-- (id)existingRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (id)existingSynchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)existingRemoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)existingSynchronousRemoteObjectProxyWithErrorHandler:(id)arg1;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedObjectInterface:(id)arg3 exportedObject:(id)arg4 serviceResumedNotificationName:(id)arg5;
-- (BOOL)isSuspended;
+- (bool)isSuspended;
 - (id)machServiceName;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (id)remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)remoteObjectProxyWithFailureHandler:(id)arg1;
 - (id)remoteObjectProxyWithSemaphore:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(id)arg1;
 
 @end

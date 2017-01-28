@@ -10,7 +10,7 @@
 @property (nonatomic) double blendingDuration;
 @property (nonatomic, copy) NSArray *sections;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)blendingDuration;

@@ -5,28 +5,28 @@
 @interface NNMKAttachment : NSTextAttachment <NSSecureCoding> {
     NSString * _contentId;
     NSString * _fileName;
-    unsigned int  _fileSize;
-    unsigned int  _type;
+    unsigned long long  _fileSize;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, retain) NSString *contentId;
 @property (nonatomic, retain) NSString *fileName;
-@property (nonatomic) unsigned int fileSize;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long fileSize;
+@property (nonatomic) unsigned long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)contentId;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileName;
-- (unsigned int)fileSize;
+- (unsigned long long)fileSize;
 - (id)initWithCoder:(id)arg1;
 - (void)setContentId:(id)arg1;
 - (void)setFileName:(id)arg1;
-- (void)setFileSize:(unsigned int)arg1;
-- (void)setType:(unsigned int)arg1;
-- (unsigned int)type;
+- (void)setFileSize:(unsigned long long)arg1;
+- (void)setType:(unsigned long long)arg1;
+- (unsigned long long)type;
 
 @end

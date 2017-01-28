@@ -6,36 +6,36 @@
     NSString * _dateString;
     SKUIItem * _giftItem;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _headerInsets;
     SKUIGiftTableSectionHeaderView * _headerView;
     NSDate * _sendDate;
-    int  _sendDateStyle;
+    long long  _sendDateStyle;
 }
 
 @property (nonatomic, retain) SKUIItem *giftItem;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } headerInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } headerInsets;
 @property (nonatomic, copy) NSDate *sendDate;
-@property (nonatomic) int sendDateStyle;
+@property (nonatomic) long long sendDateStyle;
 
 - (void).cxx_destruct;
-- (void)_createFormattedDateString:(BOOL)arg1;
+- (void)_createFormattedDateString:(bool)arg1;
 - (id)_headerView;
 - (id)giftItem;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })headerInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })headerInsets;
 - (id)headerViewForTableView:(id)arg1;
-- (float)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
-- (int)numberOfRowsInSection;
+- (double)heightForCellInTableView:(id)arg1 indexPath:(id)arg2;
+- (long long)numberOfRowsInSection;
 - (id)sendDate;
-- (int)sendDateStyle;
+- (long long)sendDateStyle;
 - (void)setGiftItem:(id)arg1;
-- (void)setHeaderInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setHeaderInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setSendDate:(id)arg1;
-- (void)setSendDateStyle:(int)arg1;
+- (void)setSendDateStyle:(long long)arg1;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
-- (void)updateCell:(id)arg1 forTransitionToSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)updateCell:(id)arg1 forTransitionToSize:(struct CGSize { double x1; double x2; })arg2;
 
 @end

@@ -5,6 +5,6 @@
 @interface TSPFeatureLocalization : NSObject
 
 + (id)localizationForFeatureIdentifiers;
-+ (BOOL)validateFeatureIdentifier:(id)arg1;
++ (bool)validateFeatureIdentifier:(id)arg1;
 
 @end

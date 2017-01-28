@@ -8,7 +8,7 @@
     void values.storage;
 }
 
-@property (nonatomic, readonly) BOOL closed;
+@property (nonatomic, readonly) bool closed;
 @property (nonatomic, copy) NSArray *keys;
 @property (nonatomic, retain) _TtC13CoreKnowledge15CKSQLConnection *kv;
 @property (nonatomic, readonly) _TtC13CoreKnowledge15CKSQLConnection *sql;
@@ -16,22 +16,23 @@
 
 + (id)mainInstance;
 
-- (id /* block */).cxx_destruct;
-- (BOOL)closed;
+- (id).cxx_destruct;
+- (bool)closed;
+- (void)dealloc;
 - (id)init;
 - (id)initWithPath:(id)arg1 name:(id)arg2;
 - (id)keys;
 - (id)kv;
 /* MISSING HEADER DESCRIPTION FOR METHOD objectForKeyedSubscript: */
-- (BOOL)removeObjectForKey:(id)arg1 error:(id*)arg2;
-- (BOOL)removeObjectsMatching:(id)arg1 error:(id*)arg2;
+- (bool)removeObjectForKey:(id)arg1 error:(id*)arg2;
+- (bool)removeObjectsMatching:(id)arg1 error:(id*)arg2;
 - (void)setKeys:(id)arg1;
 - (void)setKv:(id)arg1;
 - (void)setValues:(id)arg1;
-- (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)sql;
+- (/* Warning: Unrecognized filer type: 'P' using 'void*' */ void*)sql:(void *)arg1; // needs 1 arg types, found 46: /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'y' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'a' using 'void*' */ void*, unsigned char, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, unsigned int, /* Warning: Unrecognized filer type: 'H' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'z' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'j' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'z' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, unsigned char, /* Warning: Unrecognized filer type: 'H' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'W' using 'void*' */ void*
 - (id)tripleComponentsMatching:(id)arg1 error:(id*)arg2;
 - (id)values;
-- (BOOL)wipeAndReturnError:(id*)arg1;
+- (bool)wipeAndReturnError:(id*)arg1;
 - (id)writeBatch;
 
 @end

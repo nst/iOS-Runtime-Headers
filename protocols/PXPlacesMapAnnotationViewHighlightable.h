@@ -5,7 +5,7 @@
 
 @required
 
-- (int)highlightLevel;
-- (void)setHighlightLevel:(int)arg1;
+- (long long)highlightLevel;
+- (void)setHighlightLevel:(long long)arg1;
 
 @end

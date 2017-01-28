@@ -16,6 +16,7 @@
     }  _flags;
     id * _oidFactories;
     NSDictionary * _options;
+    int  _reserved32;
     void * _temporaryIDClass;
     NSURL * _url;
 }
@@ -26,37 +27,37 @@
 @property (nonatomic, retain) NSDictionary *metadata;
 @property (readonly) NSDictionary *options;
 @property (nonatomic, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (getter=isReadOnly) BOOL readOnly;
+@property (getter=isReadOnly) bool readOnly;
 @property (readonly, copy) NSString *type;
 
-+ (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (bool)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
-+ (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
-+ (BOOL)accessInstanceVariablesDirectly;
++ (bool)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id*)arg5;
++ (bool)accessInstanceVariablesDirectly;
 + (id)cachedModelForPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
-+ (BOOL)doURLStuff:(id)arg1 createdStubFile:(BOOL*)arg2 readOnly:(BOOL*)arg3 error:(id*)arg4 options:(id)arg5;
++ (bool)doURLStuff:(id)arg1 createdStubFile:(bool*)arg2 readOnly:(bool*)arg3 error:(id*)arg4 options:(id)arg5;
 + (void)initialize;
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id*)arg2;
 + (Class)migrationManagerClass;
 + (Class)rowCacheClass;
-+ (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
++ (bool)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 error:(id*)arg3;
 
 - (id)URL;
 - (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id*)arg3;
 - (id)_defaultMetadata;
 - (void)_didLoadMetadata;
-- (BOOL)_isMetadataDirty;
+- (bool)_isMetadataDirty;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (Class)_objectIDClass;
 - (void)_preflightCrossCheck;
-- (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
+- (bool)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)_rawMetadata__;
 - (void)_resetObjectIDFactoriesForStoreUUIDChange;
-- (void)_setMetadataDirty:(BOOL)arg1;
+- (void)_setMetadataDirty:(bool)arg1;
 - (id)_storeInfoForEntityDescription:(id)arg1;
-- (BOOL)_unload:(id*)arg1;
+- (bool)_unload:(id*)arg1;
 - (void)_updateMetadata;
-- (id)_updatedMetadataWithSeed:(id)arg1 includeVersioning:(BOOL)arg2;
+- (id)_updatedMetadataWithSeed:(id)arg1 includeVersioning:(bool)arg2;
 - (id)configurationName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentQueryGeneration;
@@ -64,7 +65,7 @@
 - (void)decrementInUseCounter;
 - (id)description;
 - (void)didAddToPersistentStoreCoordinator:(id)arg1;
-- (void)doFilesystemCleanupOnRemove:(BOOL)arg1;
+- (void)doFilesystemCleanupOnRemove:(bool)arg1;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (id)faultHandler;
 - (Class)faultHandlerClass;
@@ -73,9 +74,9 @@
 - (void)incrementInUseCounter;
 - (id)init;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
-- (BOOL)isReadOnly;
-- (BOOL)load:(id*)arg1;
-- (BOOL)loadMetadata:(id*)arg1;
+- (bool)isReadOnly;
+- (bool)load:(id*)arg1;
+- (bool)loadMetadata:(id*)arg1;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1;
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
@@ -91,10 +92,10 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setPersistentStoreCoordinator:(id)arg1;
-- (void)setReadOnly:(BOOL)arg1;
+- (void)setReadOnly:(bool)arg1;
 - (void)setURL:(id)arg1;
-- (BOOL)supportsConcurrentRequestHandling;
-- (BOOL)supportsGenerationalQuerying;
+- (bool)supportsConcurrentRequestHandling;
+- (bool)supportsGenerationalQuerying;
 - (id)type;
 - (void)willRemoveFromPersistentStoreCoordinator:(id)arg1;
 

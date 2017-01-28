@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIBannerViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSOperationQueue *resourceOperationQueue;
 @property (nonatomic, copy) NSDictionary *scriptContextDictionary;
 @property (readonly) Class superclass;
@@ -36,9 +36,9 @@
 - (void)_launchURL:(id)arg1 withBundleIdentifier:(id)arg2;
 - (void)_loadImages;
 - (void)_reloadBannerView;
-- (id)_screenshotConsumerWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_screenshotConsumerWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_setIcon:(id)arg1 error:(id)arg2;
-- (void)_setScreenshot:(id)arg1 forIndex:(int)arg2 error:(id)arg3;
+- (void)_setScreenshot:(id)arg1 forIndex:(long long)arg2 error:(id)arg3;
 - (void)_warmItemStateCenter;
 - (id)clientContext;
 - (void)dealloc;

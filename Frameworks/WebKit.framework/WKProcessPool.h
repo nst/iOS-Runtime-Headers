@@ -17,7 +17,7 @@
     }  _geolocationProvider;
     struct ObjectStorage<WebKit::WebProcessPool> { 
         struct type { 
-            unsigned char __lx[712]; 
+            unsigned char __lx[1008]; 
         } data; 
     }  _processPool;
 }
@@ -29,7 +29,7 @@
 @property (readonly) WKGeolocationProviderIOS *_geolocationProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_sharedProcessPool;
@@ -49,8 +49,8 @@
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;
 - (void)_setAutomationDelegate:(id)arg1;
 - (void)_setAutomationSession:(id)arg1;
-- (void)_setCanHandleHTTPSServerTrustEvaluation:(BOOL)arg1;
-- (void)_setCookieAcceptPolicy:(unsigned int)arg1;
+- (void)_setCanHandleHTTPSServerTrustEvaluation:(bool)arg1;
+- (void)_setCookieAcceptPolicy:(unsigned long long)arg1;
 - (void)_setDownloadDelegate:(id)arg1;
 - (void)_setObject:(id)arg1 forBundleParameter:(id)arg2;
 - (void)_setObjectsForBundleParametersWithDictionary:(id)arg1;

@@ -8,13 +8,13 @@
 
 @property (nonatomic) <CMWakeGestureDelegate> *delegate;
 
-+ (BOOL)isWakeGestureAvailable;
++ (bool)isWakeGestureAvailable;
 + (id)sharedManager;
 
 - (id)delegate;
 - (void)logAssert;
 - (void)setDelegate:(id)arg1;
-- (BOOL)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
+- (bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)startWakeGestureUpdates;
 - (void)stopWakeGestureUpdates;
 

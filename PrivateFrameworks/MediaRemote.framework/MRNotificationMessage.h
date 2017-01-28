@@ -9,6 +9,6 @@
 - (id)initWithNotification:(id)arg1;
 - (id)initWithNotifications:(id)arg1;
 - (id)notifications;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

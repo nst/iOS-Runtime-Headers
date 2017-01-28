@@ -3,40 +3,40 @@
  */
 
 @interface EKCalendarItemTitleInlineEditItem : EKCalendarItemEditItem <EKCalendarItemInlineEditItem, EKEditItemViewControllerDelegate, UITextFieldDelegate> {
-    BOOL  _drawsOwnRowSeparators;
+    bool  _drawsOwnRowSeparators;
     UITableViewCell * _titleCell;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL drawsOwnRowSeparators;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool drawsOwnRowSeparators;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITextField *titleTextField;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryChanged:(id)arg1;
-- (id)_makeCell:(unsigned int)arg1;
+- (id)_makeCell:(unsigned long long)arg1;
 - (void)_setDrawsOwnRowSeparatorsForCell:(id)arg1;
-- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (void)addStylingToCell:(id)arg1 forSubitemAtIndex:(unsigned long long)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
-- (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
-- (BOOL)drawsOwnRowSeparators;
+- (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
+- (bool)drawsOwnRowSeparators;
 - (id)init;
-- (BOOL)isInline;
-- (BOOL)isSaveable;
-- (unsigned int)numberOfSubitems;
+- (bool)isInline;
+- (bool)isSaveable;
+- (unsigned long long)numberOfSubitems;
 - (void)reset;
-- (BOOL)saveAndDismissWithForce:(BOOL)arg1;
+- (bool)saveAndDismissWithForce:(bool)arg1;
 - (id)searchStringForEventAutocomplete;
-- (void)setDrawsOwnRowSeparators:(BOOL)arg1;
+- (void)setDrawsOwnRowSeparators:(bool)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldClear:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (id)titleTextField;
-- (BOOL)usesDetailViewControllerForSubitem:(unsigned int)arg1;
+- (bool)usesDetailViewControllerForSubitem:(unsigned long long)arg1;
 
 @end

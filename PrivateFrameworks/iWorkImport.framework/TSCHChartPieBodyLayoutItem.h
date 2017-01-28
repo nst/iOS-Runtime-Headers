@@ -8,20 +8,20 @@
 
 @property (retain) TSCHPieBodyLayoutItemPathCache *p_pathCache;
 
-- (struct CGSize { float x1; float x2; })bodySizeForOverhangSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcDrawingRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcOverhangRect;
+- (struct CGSize { double x1; double x2; })bodySizeForOverhangSize:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcDrawingRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calcOverhangRect;
 - (void)dealloc;
-- (id)knobsOfElementForSeries:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })overhangSizeForBodySize:(struct CGSize { float x1; float x2; })arg1;
-- (void)p_collectMaxRatio:(float*)arg1 maxLabelOverhang:(float*)arg2 maxWedgeExplosion:(float*)arg3 maxComboExplosion:(float*)arg4;
+- (id)knobsOfElementForSeries:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })overhangSizeForBodySize:(struct CGSize { double x1; double x2; })arg1;
+- (void)p_collectMaxRatio:(double*)arg1 maxLabelOverhang:(double*)arg2 maxWedgeExplosion:(float*)arg3 maxComboExplosion:(float*)arg4;
 - (id)p_pathCache;
-- (id)pathCacheForSeries:(unsigned int)arg1;
-- (struct CGPath { }*)pathOfElementForSeries:(unsigned int)arg1 outWedgeCenterPoint:(struct CGPoint { float x1; float x2; }*)arg2;
+- (id)pathCacheForSeries:(unsigned long long)arg1;
+- (struct CGPath { }*)pathOfElementForSeries:(unsigned long long)arg1 outWedgeCenterPoint:(struct CGPoint { double x1; double x2; }*)arg2;
 - (id)renderersWithRep:(id)arg1;
-- (void)setLayoutSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLayoutSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setP_pathCache:(id)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingElementForSeries:(unsigned int)arg1 outElementSize:(struct CGSize { float x1; float x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformForRenderingLabelForSeries:(unsigned int)arg1 outElementSize:(struct CGSize { float x1; float x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingElementForSeries:(unsigned long long)arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transformForRenderingLabelForSeries:(unsigned long long)arg1 outElementSize:(struct CGSize { double x1; double x2; }*)arg2 outClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg3;
 
 @end

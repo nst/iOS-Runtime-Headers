@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NSFileHandle *fileHandleForReading;
 @property (nonatomic, readonly) NSInputStream *inputStream;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)dealloc;

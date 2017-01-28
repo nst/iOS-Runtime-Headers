@@ -4,11 +4,11 @@
 
 @interface BRCTreeEnumerator : NSObject {
     BRCAppLibrary * _appLibrary;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSObject<OS_dispatch_group> * _group;
-    id /* block */  _handler;
+    id  _handler;
     BRCItemID * _parentID;
-    unsigned int  _rowID;
+    unsigned long long  _rowID;
     NSMutableIndexSet * _seen;
     BRCAccountSession * _session;
     id  _strongSelf;
@@ -16,20 +16,20 @@
     brc_task_tracker * _tracker;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 
 - (void).cxx_destruct;
-- (BOOL)__iterate:(unsigned int)arg1;
+- (bool)__iterate:(unsigned long long)arg1;
 - (void)_done;
-- (void)_iterate:(unsigned int)arg1;
-- (void)_iterateWithoutParent:(unsigned int)arg1;
+- (void)_iterate:(unsigned long long)arg1;
+- (void)_iterateWithoutParent:(unsigned long long)arg1;
 - (void)_scheduleAsync;
-- (BOOL)_visitNewParent:(unsigned int)arg1;
-- (id /* block */)completionHandler;
-- (void)enumerateBelow:(id)arg1 appLibrary:(id)arg2 handler:(id /* block */)arg3;
+- (bool)_visitNewParent:(unsigned long long)arg1;
+- (id)completionHandler;
+- (void)enumerateBelow:(id)arg1 appLibrary:(id)arg2 handler:(id)arg3;
 - (id)initWithSession:(id)arg1;
 - (id)initWithSession:(id)arg1 group:(id)arg2;
 - (id)initWithSession:(id)arg1 tracker:(id)arg2;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 
 @end

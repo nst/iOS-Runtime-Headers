@@ -11,7 +11,7 @@
 
 - (void)dealloc;
 - (id)delegate;
-- (void)fetchPredictedApplicationsAtLocation:(id)arg1 handler:(id /* block */)arg2;
+- (void)fetchPredictedApplicationsAtLocation:(id)arg1 handler:(id)arg2;
 - (id)init;
 - (id)locationManagerRoutineProxy;
 - (void)setDelegate:(id)arg1;

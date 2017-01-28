@@ -8,7 +8,7 @@
     NSString * _appletIdentifier;
     unsigned short  _command;
     NSString * _currency;
-    BOOL  _didError;
+    bool  _didError;
     NSDictionary * _felicaInfo;
     unsigned short  _informative;
     unsigned short  _result;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) NFApplet *applet;
 @property (nonatomic, readonly) unsigned short command;
 @property (nonatomic, readonly) NSString *currency;
-@property (nonatomic, readonly) BOOL didError;
+@property (nonatomic, readonly) bool didError;
 @property (nonatomic, readonly) NSDictionary *felicaInfo;
 @property (nonatomic, readonly) unsigned short informative;
 @property (nonatomic, readonly) unsigned short result;
@@ -31,8 +31,8 @@
 @property (nonatomic, readonly) NSString *transactionIdentifier;
 @property (nonatomic, readonly) unsigned short type;
 
-+ (BOOL)logsTransactionDetails;
-+ (BOOL)supportsSecureCoding;
++ (bool)logsTransactionDetails;
++ (bool)supportsSecureCoding;
 
 - (void)_setApplet:(id)arg1;
 - (id)amount;
@@ -43,7 +43,7 @@
 - (id)currency;
 - (void)dealloc;
 - (id)description;
-- (BOOL)didError;
+- (bool)didError;
 - (void)encodeWithCoder:(id)arg1;
 - (id)felicaInfo;
 - (unsigned short)informative;

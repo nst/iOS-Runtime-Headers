@@ -8,15 +8,15 @@
     NSOperationQueue * _effectQueue;
 }
 
-@property unsigned int countLimit;
+@property unsigned long long countLimit;
 
 - (void).cxx_destruct;
 - (id)_blurredImageWithImage:(id)arg1 settings:(id)arg2;
 - (id)_effectImageWithImage:(id)arg1 settings:(id)arg2;
 - (id)_imageKeyForImage:(id)arg1;
-- (unsigned int)countLimit;
-- (void)effectImageWithImage:(id)arg1 settings:(id)arg2 completionHandler:(id /* block */)arg3;
+- (unsigned long long)countLimit;
+- (void)effectImageWithImage:(id)arg1 settings:(id)arg2 completionHandler:(id)arg3;
 - (id)init;
-- (void)setCountLimit:(unsigned int)arg1;
+- (void)setCountLimit:(unsigned long long)arg1;
 
 @end

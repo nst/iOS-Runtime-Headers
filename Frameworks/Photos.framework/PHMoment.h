@@ -8,7 +8,7 @@
     NSDate * _modificationDate;
     NSDate * _representativeDate;
     NSData * _reverseLocationData;
-    BOOL  _reverseLocationDataIsValid;
+    bool  _reverseLocationDataIsValid;
 }
 
 @property (nonatomic, readonly) short generationType;
@@ -21,20 +21,20 @@
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
-+ (BOOL)managedObjectSupportsTrashedState;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (bool)managedObjectSupportsTrashedState;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_decodeTitlesIfNeeded;
 - (id)approximateLocation;
-- (BOOL)canPerformEditOperation:(int)arg1;
-- (BOOL)canShowAvalancheStacks;
+- (bool)canPerformEditOperation:(long long)arg1;
+- (bool)canShowAvalancheStacks;
 - (Class)changeRequestClass;
-- (BOOL)collectionHasFixedOrder;
+- (bool)collectionHasFixedOrder;
 - (id)description;
 - (short)generationType;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
-- (BOOL)isMeaningful;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (bool)isMeaningful;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
 - (id)modificationDate;

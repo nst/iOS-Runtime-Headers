@@ -15,10 +15,10 @@
 
 @property (nonatomic, retain) NSString *contentId;
 @property (nonatomic) int contentType;
-@property (nonatomic, readonly) BOOL hasContentId;
-@property (nonatomic) BOOL hasContentType;
-@property (nonatomic, readonly) BOOL hasReferencedArticleId;
-@property (nonatomic) BOOL hasShareSheetExposureLocation;
+@property (nonatomic, readonly) bool hasContentId;
+@property (nonatomic) bool hasContentType;
+@property (nonatomic, readonly) bool hasReferencedArticleId;
+@property (nonatomic) bool hasShareSheetExposureLocation;
 @property (nonatomic, retain) NSString *referencedArticleId;
 @property (nonatomic) int shareSheetExposureLocation;
 
@@ -30,19 +30,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContentId;
-- (BOOL)hasContentType;
-- (BOOL)hasReferencedArticleId;
-- (BOOL)hasShareSheetExposureLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContentId;
+- (bool)hasContentType;
+- (bool)hasReferencedArticleId;
+- (bool)hasShareSheetExposureLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)referencedArticleId;
 - (void)setContentId:(id)arg1;
 - (void)setContentType:(int)arg1;
-- (void)setHasContentType:(BOOL)arg1;
-- (void)setHasShareSheetExposureLocation:(BOOL)arg1;
+- (void)setHasContentType:(bool)arg1;
+- (void)setHasShareSheetExposureLocation:(bool)arg1;
 - (void)setReferencedArticleId:(id)arg1;
 - (void)setShareSheetExposureLocation:(int)arg1;
 - (int)shareSheetExposureLocation;

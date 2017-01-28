@@ -13,6 +13,6 @@
 - (void)deleteReplayDBIfNotUnderFirstUnlock;
 - (id)init;
 - (void)replayMessages;
-- (BOOL)storeMessage:(id)arg1 type:(unsigned char)arg2 error:(id*)arg3;
+- (bool)storeMessage:(id)arg1 type:(unsigned char)arg2 error:(id*)arg3;
 
 @end

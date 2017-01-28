@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UNRemoteNotificationRegistrarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)currentRegistrar;
@@ -21,11 +21,11 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
-- (void)getAllowsRemoteNotificationsWithCompletionHandler:(id /* block */)arg1;
+- (void)getAllowsRemoteNotificationsWithCompletionHandler:(id)arg1;
 - (id)init;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (void)invalidateTokenForRemoteNotifications;
-- (void)requestTokenForRemoteNotificationsWithCompletionHandler:(id /* block */)arg1;
+- (void)requestTokenForRemoteNotificationsWithCompletionHandler:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

@@ -4,22 +4,22 @@
 
 @interface EKDataProtectionObserver : NSObject {
     CDBDataProtectionObserver * _dataProtectionObserver;
-    id /* block */  _stateChangedCallback;
+    id  _stateChangedCallback;
 }
 
-@property (nonatomic, readonly) BOOL dataIsAccessible;
+@property (nonatomic, readonly) bool dataIsAccessible;
 @property (nonatomic, retain) CDBDataProtectionObserver *dataProtectionObserver;
-@property (nonatomic, copy) id /* block */ stateChangedCallback;
+@property (nonatomic, copy) id stateChangedCallback;
 
 + (id)stateChangedNotificationName;
 
 - (void).cxx_destruct;
 - (void)_dataProtectionStateChanged;
-- (BOOL)dataIsAccessible;
+- (bool)dataIsAccessible;
 - (id)dataProtectionObserver;
 - (id)init;
 - (void)setDataProtectionObserver:(id)arg1;
-- (void)setStateChangedCallback:(id /* block */)arg1;
-- (id /* block */)stateChangedCallback;
+- (void)setStateChangedCallback:(id)arg1;
+- (id)stateChangedCallback;
 
 @end

@@ -13,7 +13,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_notifyObservers:(id /* block */)arg1;
+- (void)_notifyObservers:(id)arg1;
 - (id)_proxyForTargetImplementation:(id)arg1;
 - (void)_registerTargetImplementation:(id)arg1;
 - (void)_unregisterTargetImplementation:(id)arg1;

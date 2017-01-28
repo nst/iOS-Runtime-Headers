@@ -13,10 +13,10 @@
     MusicEntityViewDescriptor * _showCompleteOfferEntityViewDescriptor;
     MusicEntityViewDescriptor * _shuffleEntityViewDescriptor;
     MusicMediaProductTracklistTableViewDescriptor * _tracklistTableViewDescriptor;
-    BOOL  _wantsArtistName;
-    BOOL  _wantsArtwork;
-    BOOL  _wantsCompleteOffer;
-    BOOL  _wantsCopyrightText;
+    bool  _wantsArtistName;
+    bool  _wantsArtwork;
+    bool  _wantsCompleteOffer;
+    bool  _wantsCopyrightText;
 }
 
 @property (nonatomic, readonly) MusicCompositeEntityViewDescriptor *_compositeEntityViewDescriptor;
@@ -30,10 +30,10 @@
 @property (nonatomic, copy) MusicMediaDetailTintInformation *mediaDetailTintInformation;
 @property (nonatomic) long long prominentTrackStoreID;
 @property (nonatomic, readonly) MusicMediaProductTracklistTableViewDescriptor *tracklistTableViewDescriptor;
-@property (nonatomic) BOOL wantsArtistName;
-@property (nonatomic) BOOL wantsArtwork;
-@property (nonatomic) BOOL wantsCompleteOffer;
-@property (nonatomic) BOOL wantsCopyrightText;
+@property (nonatomic) bool wantsArtistName;
+@property (nonatomic) bool wantsArtwork;
+@property (nonatomic) bool wantsCompleteOffer;
+@property (nonatomic) bool wantsCopyrightText;
 
 + (Class)tracklistItemContentDescriptorClass;
 
@@ -54,7 +54,7 @@
 - (id)completeOfferLocalizedTitle;
 - (id)copyrightSourceEntityProvider;
 - (id)entityProvider;
-- (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (long long)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)init;
 - (id)initWithEntityProvider:(id)arg1;
 - (id)loadEntityViewDescriptor;
@@ -66,14 +66,14 @@
 - (void)setCopyrightSourceEntityProvider:(id)arg1;
 - (void)setMediaDetailTintInformation:(id)arg1;
 - (void)setProminentTrackStoreID:(long long)arg1;
-- (void)setWantsArtistName:(BOOL)arg1;
-- (void)setWantsArtwork:(BOOL)arg1;
-- (void)setWantsCompleteOffer:(BOOL)arg1;
-- (void)setWantsCopyrightText:(BOOL)arg1;
+- (void)setWantsArtistName:(bool)arg1;
+- (void)setWantsArtwork:(bool)arg1;
+- (void)setWantsCompleteOffer:(bool)arg1;
+- (void)setWantsCopyrightText:(bool)arg1;
 - (id)tracklistTableViewDescriptor;
-- (BOOL)wantsArtistName;
-- (BOOL)wantsArtwork;
-- (BOOL)wantsCompleteOffer;
-- (BOOL)wantsCopyrightText;
+- (bool)wantsArtistName;
+- (bool)wantsArtwork;
+- (bool)wantsCompleteOffer;
+- (bool)wantsCopyrightText;
 
 @end

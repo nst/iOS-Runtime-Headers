@@ -15,7 +15,7 @@
 
 + (id)sharedInstance;
 
-- (BOOL)addFence:(id)arg1;
+- (bool)addFence:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)init;

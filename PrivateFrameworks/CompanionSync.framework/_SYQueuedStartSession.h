@@ -3,16 +3,16 @@
  */
 
 @interface _SYQueuedStartSession : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     SYStartSyncSession * _request;
 }
 
-@property (nonatomic, readonly) id /* block */ completion;
+@property (nonatomic, readonly) id completion;
 @property (nonatomic, readonly) SYStartSyncSession *request;
 
 - (void).cxx_destruct;
-- (id /* block */)completion;
-- (id)initWithRequest:(id)arg1 completion:(id /* block */)arg2;
+- (id)completion;
+- (id)initWithRequest:(id)arg1 completion:(id)arg2;
 - (id)request;
 
 @end

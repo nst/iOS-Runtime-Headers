@@ -7,8 +7,8 @@
 + (void)_determineStatusImageAppearance;
 + (void)_statusImageAppearanceChanged:(id)arg1;
 + (void)forgetStatusImageAppearance;
-+ (id)imageNameForStatus:(unsigned int)arg1;
-+ (id)imageURLForStatus:(unsigned int)arg1;
++ (id)imageNameForStatus:(unsigned long long)arg1;
++ (id)imageURLForStatus:(unsigned long long)arg1;
 + (void)initialize;
 + (id)notificationCenter;
 + (id)sharedAgent;
@@ -26,7 +26,7 @@
 - (id)serviceWithName:(id)arg1;
 - (void)setMyAvailableMessages:(id)arg1;
 - (void)setMyAwayMessages:(id)arg1;
-- (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
+- (void)setMyStatus:(unsigned long long)arg1 message:(id)arg2;
 - (void)setupComplete;
 - (unsigned long long)vcCapabilities;
 - (void)vcCapabilitiesChanged:(unsigned long long)arg1;

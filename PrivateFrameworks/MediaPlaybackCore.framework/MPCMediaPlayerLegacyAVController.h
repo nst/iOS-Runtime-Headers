@@ -23,9 +23,9 @@
 - (void)dealloc;
 - (id)fallbackPlaybackContext;
 - (id)init;
-- (BOOL)jumpToItemWithContentID:(id)arg1;
+- (bool)jumpToItemWithContentID:(id)arg1;
 - (id)mpcPlayer;
-- (void)playWithOptions:(unsigned int)arg1;
+- (void)playWithOptions:(unsigned long long)arg1;
 - (id)playlistManagerUUID;
 - (void)setFallbackPlaybackContext:(id)arg1;
 - (void)setMpcPlayer:(id)arg1;

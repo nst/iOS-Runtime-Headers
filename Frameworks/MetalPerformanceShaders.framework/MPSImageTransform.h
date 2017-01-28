@@ -3,22 +3,22 @@
  */
 
 @interface MPSImageTransform : NSObject {
-    BOOL  _channelsAreIndependent;
-    unsigned int  _inputChannels;
-    unsigned int  _outputChannels;
-    unsigned int  maxTempChannels;
-    unsigned int  nodeCount;
-    struct ConversionNode { int (**x1)(); long x2; struct ConversionNode {} *x3; unsigned char x4; unsigned char x5; unsigned char x6; } * nodeList;
+    bool  _channelsAreIndependent;
+    unsigned long long  _inputChannels;
+    unsigned long long  _outputChannels;
+    unsigned long long  maxTempChannels;
+    unsigned long long  nodeCount;
+    struct ConversionNode { int (**x1)(); long long x2; struct ConversionNode {} *x3; unsigned char x4; unsigned char x5; unsigned char x6; } * nodeList;
 }
 
-@property (nonatomic, readonly) BOOL channelsAreIndependent;
-@property (nonatomic, readonly) unsigned int inputChannels;
-@property (nonatomic, readonly) unsigned int outputChannels;
+@property (nonatomic, readonly) bool channelsAreIndependent;
+@property (nonatomic, readonly) unsigned long long inputChannels;
+@property (nonatomic, readonly) unsigned long long outputChannels;
 
-- (BOOL)channelsAreIndependent;
+- (bool)channelsAreIndependent;
 - (void)dealloc;
-- (id)initWithNodeList:(struct ConversionNode { int (**x1)(); long x2; struct ConversionNode {} *x3; unsigned char x4; unsigned char x5; unsigned char x6; }*)arg1;
-- (unsigned int)inputChannels;
-- (unsigned int)outputChannels;
+- (id)initWithNodeList:(struct ConversionNode { int (**x1)(); long long x2; struct ConversionNode {} *x3; unsigned char x4; unsigned char x5; unsigned char x6; }*)arg1;
+- (unsigned long long)inputChannels;
+- (unsigned long long)outputChannels;
 
 @end

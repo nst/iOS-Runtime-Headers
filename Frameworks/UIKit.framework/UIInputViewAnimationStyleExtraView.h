@@ -4,24 +4,24 @@
 
 @interface UIInputViewAnimationStyleExtraView : NSObject {
     int  _alignment;
-    id /* block */  _animation;
+    id  _animation;
     int  _clipContainerType;
     UIView * _view;
 }
 
 @property (nonatomic) int alignment;
-@property (nonatomic, copy) id /* block */ animation;
+@property (nonatomic, copy) id animation;
 @property (nonatomic) int clipContainerType;
 @property (nonatomic, retain) UIView *view;
 
-+ (id)extraView:(id)arg1 withAlignment:(int)arg2 animation:(id /* block */)arg3 onSnapshot:(BOOL)arg4;
++ (id)extraView:(id)arg1 withAlignment:(int)arg2 animation:(id)arg3 onSnapshot:(bool)arg4;
 
 - (int)alignment;
-- (id /* block */)animation;
+- (id)animation;
 - (int)clipContainerType;
 - (void)dealloc;
 - (void)setAlignment:(int)arg1;
-- (void)setAnimation:(id /* block */)arg1;
+- (void)setAnimation:(id)arg1;
 - (void)setClipContainerType:(int)arg1;
 - (void)setView:(id)arg1;
 - (id)view;

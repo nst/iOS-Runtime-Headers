@@ -3,23 +3,23 @@
  */
 
 @interface IMMultiDict : NSObject {
-    unsigned int  _count;
+    unsigned long long  _count;
     NSMutableDictionary * _dictionary;
 }
 
 @property (nonatomic, readonly) NSArray *allKeys;
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, retain) NSMutableDictionary *dictionary;
 
 - (id)allKeys;
-- (unsigned int)count;
-- (unsigned int)countForKey:(id)arg1;
+- (unsigned long long)count;
+- (unsigned long long)countForKey:(id)arg1;
 - (void)dealloc;
 - (id)dequeueObjectForKey:(id)arg1;
 - (id)description;
 - (id)dictionary;
 - (void)enqueueObject:(id)arg1 forKey:(id)arg2;
-- (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
 - (id)headObjectForKey:(id)arg1;
 - (id)init;
 - (id)objectsForKey:(id)arg1;

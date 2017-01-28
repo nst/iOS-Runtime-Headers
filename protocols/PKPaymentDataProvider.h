@@ -8,28 +8,30 @@
 - (PKPaymentApplication *)defaultPaymentApplicationForPassUniqueIdentifier:(NSString *)arg1;
 - (NSString *)defaultPaymentPassIdentifier;
 - (<PKPaymentDataProviderDelegate> *)delegate;
-- (BOOL)isDeviceInRestrictedMode;
-- (BOOL)isPaymentHandoffDisabled;
+- (bool)isDeviceInRestrictedMode;
+- (bool)isPaymentHandoffDisabled;
 - (NSString *)secureElementIdentifier;
-- (BOOL)secureElementIsProductionSigned;
-- (void)setDefaultPaymentApplication:(void *)arg1 forPassUniqueIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentApplication *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPass *, void*
+- (bool)secureElementIsProductionSigned;
+- (void)setDefaultPaymentApplication:(void *)arg1 forPassUniqueIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentApplication *, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, PKPass *, void*
 - (void)setDefaultPaymentPassIdentifier:(NSString *)arg1;
 - (void)setDelegate:(id <PKPaymentDataProviderDelegate>)arg1;
-- (void)setPaymentHandoffDisabled:(BOOL)arg1;
+- (void)setPaymentHandoffDisabled:(bool)arg1;
 
 @optional
 
+- (void)addDelegate:(id <PKPaymentDataProviderDelegate>)arg1;
 - (NSString *)defaultExpressFelicaTransitPassIdentifier;
 - (void)deletePaymentTransactionWithIdentifier:(NSString *)arg1 forPassWithUniqueIdentifier:(NSString *)arg2;
-- (void)felicaStateWithPassUniqueIdentifier:(void *)arg1 paymentApplication:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSString *, PKPaymentApplication *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKFelicaTransitAppletState *, void*
-- (void)setDefaultExpressFelicaTransitPassIdentifier:(void *)arg1 withCredential:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSString *, void*
+- (void)felicaStateWithPassUniqueIdentifier:(void *)arg1 paymentApplication:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSString *, PKPaymentApplication *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, PKFelicaTransitAppletState *, void*
+- (void)removeDelegate:(id <PKPaymentDataProviderDelegate>)arg1;
+- (void)setDefaultExpressFelicaTransitPassIdentifier:(void *)arg1 withCredential:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSData *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, NSString *, void*
 - (void)startServiceModeForPassWithUniqueIdentifier:(NSString *)arg1 visibleViewController:(id)arg2;
-- (BOOL)supportsInAppPaymentsForPass:(PKPass *)arg1;
-- (BOOL)supportsMessagesForPass:(PKPass *)arg1;
-- (BOOL)supportsNotificationsForPass:(PKPass *)arg1;
-- (BOOL)supportsTransactionsForPass:(PKPass *)arg1;
+- (bool)supportsInAppPaymentsForPass:(PKPass *)arg1;
+- (bool)supportsMessagesForPass:(PKPass *)arg1;
+- (bool)supportsNotificationsForPass:(PKPass *)arg1;
+- (bool)supportsTransactionsForPass:(PKPass *)arg1;
 - (NSString *)transactionsAppLaunchTokenForPassWithUniqueIdentifier:(NSString *)arg1;
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(void *)arg1 withTransactionSource:(void *)arg2 withBackingData:(void *)arg3 limit:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: NSString *, unsigned int, unsigned int, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, void*
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(void *)arg1 withTransactionSource:(void *)arg2 withNotificationServiceData:(void *)arg3 limit:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: NSString *, unsigned int, unsigned int, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, void*
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(void *)arg1 withTransactionSource:(void *)arg2 withBackingData:(void *)arg3 limit:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: NSString *, unsigned long long, unsigned long long, long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSSet *, void*
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(void *)arg1 withTransactionSource:(void *)arg2 withNotificationServiceData:(void *)arg3 limit:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: NSString *, unsigned long long, unsigned long long, long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSSet *, void*
 
 @end

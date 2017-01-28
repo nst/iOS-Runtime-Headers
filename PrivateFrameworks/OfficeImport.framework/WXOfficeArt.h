@@ -17,7 +17,7 @@
 + (void)writeWrapPolygonChildren:(id)arg1 to:(id)arg2;
 + (void)writeWrapRightDistance:(id)arg1 to:(id)arg2;
 + (void)writeWrapText:(id)arg1 to:(id)arg2;
-+ (BOOL)writeWrapTightlyWith:(id)arg1 toWriter:(id)arg2;
++ (bool)writeWrapTightlyWith:(id)arg1 toWriter:(id)arg2;
 + (void)writeWrapTopDistance:(id)arg1 to:(id)arg2;
 
 @end

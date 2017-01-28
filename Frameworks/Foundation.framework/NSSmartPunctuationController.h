@@ -9,20 +9,20 @@
 }
 
 @property <NSSmartPunctuationClient> *client;
-@property BOOL smartDashesEnabled;
+@property bool smartDashesEnabled;
 @property (copy) NSSmartQuoteOptions *smartQuoteOptions;
-@property BOOL smartQuotesEnabled;
+@property bool smartQuotesEnabled;
 
 - (id)client;
-- (void)clientDidReplaceRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 changeInLength:(int)arg2;
+- (void)clientDidReplaceRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 changeInLength:(long long)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)setClient:(id)arg1;
-- (void)setSmartDashesEnabled:(BOOL)arg1;
+- (void)setSmartDashesEnabled:(bool)arg1;
 - (void)setSmartQuoteOptions:(id)arg1;
-- (void)setSmartQuotesEnabled:(BOOL)arg1;
-- (BOOL)smartDashesEnabled;
+- (void)setSmartQuotesEnabled:(bool)arg1;
+- (bool)smartDashesEnabled;
 - (id)smartQuoteOptions;
-- (BOOL)smartQuotesEnabled;
+- (bool)smartQuotesEnabled;
 
 @end

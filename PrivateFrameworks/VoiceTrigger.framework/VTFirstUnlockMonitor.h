@@ -3,19 +3,19 @@
  */
 
 @interface VTFirstUnlockMonitor : VTEventMonitor {
-    BOOL  _firstUnlocked;
+    bool  _firstUnlocked;
     int  _notifyToken;
 }
 
 + (id)sharedInstance;
 
-- (BOOL)_checkFirstUnlocked;
-- (void)_didReceiveFirstUnlock:(BOOL)arg1;
-- (void)_didReceiveFirstUnlockInQueue:(BOOL)arg1;
-- (void)_notifyObserver:(id)arg1 withUnlocked:(BOOL)arg2;
+- (bool)_checkFirstUnlocked;
+- (void)_didReceiveFirstUnlock:(bool)arg1;
+- (void)_didReceiveFirstUnlockInQueue:(bool)arg1;
+- (void)_notifyObserver:(id)arg1 withUnlocked:(bool)arg2;
 - (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
 - (id)init;
-- (BOOL)isFirstUnlocked;
+- (bool)isFirstUnlocked;
 
 @end

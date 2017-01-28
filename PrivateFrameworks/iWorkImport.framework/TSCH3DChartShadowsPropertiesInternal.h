@@ -4,7 +4,7 @@
 
 @interface TSCH3DChartShadowsPropertiesInternal : NSObject {
     TSCH3DCamera * mCamera;
-    BOOL  mEnabled;
+    bool  mEnabled;
     TSCH3DDataBufferResource * mFadecoords;
     TSCH3DDataBufferResource * mQuad;
     NSObject<TSCH3DShadowsRenderer> * mRenderer;
@@ -48,29 +48,29 @@
 }
 
 @property (nonatomic, retain) TSCH3DCamera *camera;
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property (nonatomic, retain) TSCH3DDataBufferResource *fadecoords;
 @property (nonatomic, retain) TSCH3DDataBufferResource *quad;
 @property (nonatomic, readonly) NSObject<TSCH3DShadowsRenderer> *renderer;
-@property (nonatomic, readonly) BOOL shadowPlaneValid;
+@property (nonatomic, readonly) bool shadowPlaneValid;
 @property (nonatomic, retain) TSCH3DDataBufferResource *texcoords;
 
 - (id).cxx_construct;
 - (id)camera;
 - (void)dealloc;
-- (BOOL)enabled;
+- (bool)enabled;
 - (id)fadecoords;
 - (id)initWithCamera:(id)arg1 renderer:(id)arg2;
 - (void)invalidate;
 - (id)quad;
 - (id)renderer;
 - (void)setCamera:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setFadecoords:(id)arg1;
 - (void)setQuad:(id)arg1;
 - (void)setTexcoords:(id)arg1;
 - (void)setupResources;
-- (BOOL)shadowPlaneValid;
+- (bool)shadowPlaneValid;
 - (id)texcoords;
 
 @end

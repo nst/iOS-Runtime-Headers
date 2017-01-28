@@ -5,44 +5,44 @@
 @interface PUFilmstripWrapperView : UIView {
     NSNumber * _anchoredLeft;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _expandedSize;
     PUFilmstripView * _filmstripView;
-    BOOL  _isAnimating;
-    BOOL  _isExpanded;
+    bool  _isAnimating;
+    bool  _isExpanded;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _visibleRect;
 }
 
 @property (nonatomic, copy) NSNumber *anchoredLeft;
-@property (setter=setExpandedSize:, nonatomic) struct CGSize { float x1; float x2; } expandedSize;
+@property (setter=setExpandedSize:, nonatomic) struct CGSize { double x1; double x2; } expandedSize;
 @property (nonatomic, retain) PUFilmstripView *filmstripView;
-@property (setter=setAnimating:, nonatomic) BOOL isAnimating;
-@property (setter=setExpanded:, nonatomic) BOOL isExpanded;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
+@property (setter=setAnimating:, nonatomic) bool isAnimating;
+@property (setter=setExpanded:, nonatomic) bool isExpanded;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } visibleRect;
 
 - (void).cxx_destruct;
 - (id)anchoredLeft;
-- (struct CGSize { float x1; float x2; })expandedSize;
+- (struct CGSize { double x1; double x2; })expandedSize;
 - (id)filmstripView;
-- (BOOL)isAnimating;
-- (BOOL)isExpanded;
+- (bool)isAnimating;
+- (bool)isExpanded;
 - (void)layoutSubviews;
 - (void)setAnchoredLeft:(id)arg1;
-- (void)setAnimating:(BOOL)arg1;
-- (void)setExpanded:(BOOL)arg1;
-- (void)setExpandedSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setAnimating:(bool)arg1;
+- (void)setExpanded:(bool)arg1;
+- (void)setExpandedSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setFilmstripView:(id)arg1;
-- (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
+- (void)setVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })visibleRect;
 
 @end

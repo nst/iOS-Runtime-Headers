@@ -3,10 +3,10 @@
  */
 
 @interface HKLargePlainTextViewController : HKViewController <HKIncrementalSearchBarDelegate> {
-    float  _currentKeyboardHeight;
+    double  _currentKeyboardHeight;
     NSMutableArray * _currentRanges;
     _IncrementalSearchOperation * _currentSearch;
-    int  _currentSearchItem;
+    long long  _currentSearchItem;
     UIColor * _currentSelectionBackground;
     NSData * _data;
     NSString * _dataAsString;
@@ -18,10 +18,10 @@
     UITextView * _textView;
 }
 
-@property (nonatomic) float currentKeyboardHeight;
+@property (nonatomic) double currentKeyboardHeight;
 @property (nonatomic, retain) NSMutableArray *currentRanges;
 @property (retain) _IncrementalSearchOperation *currentSearch;
-@property int currentSearchItem;
+@property long long currentSearchItem;
 @property (nonatomic, readonly) UIColor *currentSelectionBackground;
 @property (readonly) NSData *data;
 @property (nonatomic, readonly) NSString *dataAsString;
@@ -33,16 +33,16 @@
 @property (nonatomic, readonly) UITextView *textView;
 
 - (void).cxx_destruct;
-- (id)_selectionAttributes:(BOOL)arg1;
+- (id)_selectionAttributes:(bool)arg1;
 - (id)_standardPlainTextFont;
-- (void)_updateCurrentSearchItem:(unsigned int)arg1 hitsChanged:(BOOL)arg2 resetSearch:(BOOL)arg3;
-- (BOOL)_updateMatchDisplayString:(unsigned int)arg1 numMatches:(unsigned int)arg2;
-- (void)addSearchResults:(struct IncrementalSearchResultsDefn { unsigned int x1; struct _NSRange { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2[64]; })arg1;
+- (void)_updateCurrentSearchItem:(unsigned long long)arg1 hitsChanged:(bool)arg2 resetSearch:(bool)arg3;
+- (bool)_updateMatchDisplayString:(unsigned long long)arg1 numMatches:(unsigned long long)arg2;
+- (void)addSearchResults:(struct IncrementalSearchResultsDefn { unsigned long long x1; struct _NSRange { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2[64]; })arg1;
 - (void)cancelCurrentSearch;
-- (float)currentKeyboardHeight;
+- (double)currentKeyboardHeight;
 - (id)currentRanges;
 - (id)currentSearch;
-- (int)currentSearchItem;
+- (long long)currentSearchItem;
 - (id)currentSelectionBackground;
 - (id)data;
 - (id)dataAsString;
@@ -63,13 +63,13 @@
 - (id)searchBodyWithAttributes;
 - (id)searchQueue;
 - (id)selectedTextViewBackground;
-- (void)setCurrentKeyboardHeight:(float)arg1;
+- (void)setCurrentKeyboardHeight:(double)arg1;
 - (void)setCurrentRanges:(id)arg1;
 - (void)setCurrentSearch:(id)arg1;
-- (void)setCurrentSearchItem:(int)arg1;
+- (void)setCurrentSearchItem:(long long)arg1;
 - (void)startIncrementalSearch;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)textView;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

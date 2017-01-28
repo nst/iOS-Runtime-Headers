@@ -4,26 +4,26 @@
 
 @interface HUCCPageItemManager : HFItemManager {
     HFTransformItemProvider * _actionSetPageItemProvider;
-    BOOL  _homeAppRemoved;
+    bool  _homeAppRemoved;
     HFTransformItemProvider * _servicePageItemProvider;
 }
 
 @property (nonatomic, retain) HFTransformItemProvider *actionSetPageItemProvider;
-@property (getter=isHomeAppRemoved, nonatomic) BOOL homeAppRemoved;
+@property (getter=isHomeAppRemoved, nonatomic) bool homeAppRemoved;
 @property (nonatomic, retain) HFTransformItemProvider *servicePageItemProvider;
-@property (nonatomic, readonly) BOOL shouldShowScenesPage;
-@property (nonatomic, readonly) BOOL shouldShowServicesPage;
+@property (nonatomic, readonly) bool shouldShowScenesPage;
+@property (nonatomic, readonly) bool shouldShowServicesPage;
 
 - (void).cxx_destruct;
 - (void)_createItemProvidersWithHome:(id)arg1;
 - (id)_itemProviders;
 - (id)actionSetPageItemProvider;
-- (BOOL)isHomeAppRemoved;
+- (bool)isHomeAppRemoved;
 - (id)servicePageItemProvider;
 - (void)setActionSetPageItemProvider:(id)arg1;
-- (void)setHomeAppRemoved:(BOOL)arg1;
+- (void)setHomeAppRemoved:(bool)arg1;
 - (void)setServicePageItemProvider:(id)arg1;
-- (BOOL)shouldShowScenesPage;
-- (BOOL)shouldShowServicesPage;
+- (bool)shouldShowScenesPage;
+- (bool)shouldShowServicesPage;
 
 @end

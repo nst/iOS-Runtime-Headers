@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)cashOnly;
+- (bool)cashOnly;
 - (NSString *)currencyCode;
 - (NSArray *)supportedICCardProviders;
-- (int)type;
+- (long long)type;
 - (NSDecimalNumber *)value;
 
 @end

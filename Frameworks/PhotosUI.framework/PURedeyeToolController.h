@@ -3,48 +3,48 @@
  */
 
 @interface PURedeyeToolController : PUPhotoEditToolController <UIGestureRecognizerDelegate> {
-    BOOL  _failureAnimationIsInProgress;
+    bool  _failureAnimationIsInProgress;
     PUPhotoEditOverlayBadge * _failureLabel;
     NSArray * _failureLabelConstraints;
     PUPhotoEditOverlayBadge * _instructionLabel;
     NSArray * _instructionLabelConstraints;
-    BOOL  _isModelChangeLocal;
+    bool  _isModelChangeLocal;
     NSMutableArray * _knownCorrections;
     UITapGestureRecognizer * _tapGestureRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PURedeyeToolControllerSpec *spec;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_animateFailureAppearance;
 - (void)_animateInstructionAppearance;
-- (void)_correctRedEyeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_correctRedEyeAtPoint:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_handleRedeyeButton:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
-- (void)_loadCorrectionsFromModelAnimated:(BOOL)arg1;
-- (struct CGPoint { float x1; float x2; })_locationInCroppedImage:(struct CGPoint { float x1; float x2; })arg1 YCoordinateIsFlipped:(BOOL)arg2;
-- (struct CGPoint { float x1; float x2; })_locationInOriginalImage:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)_removeCorrectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_showChangeIndicatorAtPoint:(struct CGPoint { float x1; float x2; })arg1 YCoordinateIsFlipped:(BOOL)arg2 isFailure:(BOOL)arg3;
+- (void)_loadCorrectionsFromModelAnimated:(bool)arg1;
+- (struct CGPoint { double x1; double x2; })_locationInCroppedImage:(struct CGPoint { double x1; double x2; })arg1 YCoordinateIsFlipped:(bool)arg2;
+- (struct CGPoint { double x1; double x2; })_locationInOriginalImage:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)_removeCorrectionAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)_showChangeIndicatorAtPoint:(struct CGPoint { double x1; double x2; })arg1 YCoordinateIsFlipped:(bool)arg2 isFailure:(bool)arg3;
 - (void)dealloc;
 - (void)didBecomeActiveTool;
 - (void)didResignActiveTool;
 - (void)flashAutoRedEyeCorrections;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)localizedName;
 - (void)photoEditModelDidChange;
-- (unsigned int)preferredRenderMode;
+- (unsigned long long)preferredRenderMode;
 - (id)selectedToolbarIcon;
-- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
+- (void)setLayoutOrientation:(long long)arg1 withTransitionCoordinator:(id)arg2;
 - (id)toolbarIcon;
 - (void)updateViewConstraints;
 - (void)viewDidLoad;
-- (BOOL)wantsSecondaryToolbarVisible;
-- (BOOL)wantsZoomAndPanEnabled;
+- (bool)wantsSecondaryToolbarVisible;
+- (bool)wantsZoomAndPanEnabled;
 
 @end

@@ -14,8 +14,8 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)setStoreFlavorIdentifier:(id)arg1;
 - (void)setStoreIdentifier:(id)arg1;
 - (id)storeFlavorIdentifier;

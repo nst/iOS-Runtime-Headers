@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSDictionary *audioSettings;
 @property (nonatomic, copy) NSArray *metadata;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)audioSettings;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

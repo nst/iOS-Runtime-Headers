@@ -4,24 +4,24 @@
 
 @interface MCAlertController : UIAlertController {
     UIWindow * _alertWindow;
-    id /* block */  _viewDidDisappearHandler;
-    id /* block */  _viewWillAppearHandler;
+    id  _viewDidDisappearHandler;
+    id  _viewWillAppearHandler;
 }
 
 @property (nonatomic, retain) UIWindow *alertWindow;
-@property (nonatomic, copy) id /* block */ viewDidDisappearHandler;
-@property (nonatomic, copy) id /* block */ viewWillAppearHandler;
+@property (nonatomic, copy) id viewDidDisappearHandler;
+@property (nonatomic, copy) id viewWillAppearHandler;
 
 - (id)alertWindow;
 - (void)dealloc;
 - (void)dismiss;
 - (void)setAlertWindow:(id)arg1;
-- (void)setViewDidDisappearHandler:(id /* block */)arg1;
-- (void)setViewWillAppearHandler:(id /* block */)arg1;
+- (void)setViewDidDisappearHandler:(id)arg1;
+- (void)setViewWillAppearHandler:(id)arg1;
 - (void)show;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (id /* block */)viewDidDisappearHandler;
-- (void)viewWillAppear:(BOOL)arg1;
-- (id /* block */)viewWillAppearHandler;
+- (void)viewDidDisappear:(bool)arg1;
+- (id)viewDidDisappearHandler;
+- (void)viewWillAppear:(bool)arg1;
+- (id)viewWillAppearHandler;
 
 @end

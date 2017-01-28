@@ -3,69 +3,69 @@
  */
 
 @interface UIPrintPageRenderer : NSObject {
-    int  _cachedPageCount;
-    float  _footerHeight;
-    float  _headerHeight;
+    long long  _cachedPageCount;
+    double  _footerHeight;
+    double  _headerHeight;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _paperRect;
     struct CGContext { } * _printContext;
     NSMutableArray * _printFormatters;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _printableRect;
 }
 
-@property (nonatomic) float footerHeight;
-@property (nonatomic) float headerHeight;
-@property (nonatomic, readonly) int numberOfPages;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } paperRect;
+@property (nonatomic) double footerHeight;
+@property (nonatomic) double headerHeight;
+@property (nonatomic, readonly) long long numberOfPages;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } paperRect;
 @property (nonatomic, copy) NSArray *printFormatters;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } printableRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } printableRect;
 
 - (void).cxx_destruct;
-- (void)_drawPage:(int)arg1;
-- (void)_endPrintContext:(id)arg1 success:(BOOL)arg2;
+- (void)_drawPage:(long long)arg1;
+- (void)_endPrintContext:(id)arg1 success:(bool)arg2;
 - (void)_endSaveContext;
-- (int)_maxFormatterPage;
-- (int)_numberOfPages;
-- (BOOL)_numberOfPagesIsCached;
+- (long long)_maxFormatterPage;
+- (long long)_numberOfPages;
+- (bool)_numberOfPagesIsCached;
 - (void)_removePrintFormatter:(id)arg1;
-- (BOOL)_startPrintContext:(id)arg1 printSettings:(id)arg2;
+- (bool)_startPrintContext:(id)arg1 printSettings:(id)arg2;
 - (void)_startSaveContext:(struct CGContext { }*)arg1;
-- (void)addPrintFormatter:(id)arg1 startingAtPageAtIndex:(int)arg2;
+- (void)addPrintFormatter:(id)arg1 startingAtPageAtIndex:(long long)arg2;
 - (void)dealloc;
-- (void)drawContentForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawFooterForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawHeaderForPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawPageAtIndex:(int)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)drawPrintFormatter:(id)arg1 forPageAtIndex:(int)arg2;
-- (float)footerHeight;
-- (float)headerHeight;
-- (int)numberOfPages;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paperRect;
-- (void)prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)drawContentForPageAtIndex:(long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)drawFooterForPageAtIndex:(long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)drawHeaderForPageAtIndex:(long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)drawPageAtIndex:(long long)arg1 inRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
+- (void)drawPrintFormatter:(id)arg1 forPageAtIndex:(long long)arg2;
+- (double)footerHeight;
+- (double)headerHeight;
+- (long long)numberOfPages;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })paperRect;
+- (void)prepareForDrawingPages:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)printFormatters;
-- (id)printFormattersForPageAtIndex:(int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })printableRect;
-- (void)setFooterHeight:(float)arg1;
-- (void)setHeaderHeight:(float)arg1;
-- (void)setPaperRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)printFormattersForPageAtIndex:(long long)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })printableRect;
+- (void)setFooterHeight:(double)arg1;
+- (void)setHeaderHeight:(double)arg1;
+- (void)setPaperRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setPrintFormatters:(id)arg1;
-- (void)setPrintableRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPrintableRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

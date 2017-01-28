@@ -3,7 +3,7 @@
  */
 
 @interface PDFActionNamedPrivateVars : NSObject {
-    int  name;
+    long long  name;
 }
 
 @end

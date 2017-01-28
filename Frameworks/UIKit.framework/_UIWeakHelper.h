@@ -3,15 +3,15 @@
  */
 
 @interface _UIWeakHelper : NSObject {
-    id /* block */  _deallocationBlock;
+    id  _deallocationBlock;
 }
 
-@property (nonatomic, copy) id /* block */ deallocationBlock;
+@property (nonatomic, copy) id deallocationBlock;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id /* block */)deallocationBlock;
-- (id)initWithDeallocationBlock:(id /* block */)arg1;
-- (void)setDeallocationBlock:(id /* block */)arg1;
+- (id)deallocationBlock;
+- (id)initWithDeallocationBlock:(id)arg1;
+- (void)setDeallocationBlock:(id)arg1;
 
 @end

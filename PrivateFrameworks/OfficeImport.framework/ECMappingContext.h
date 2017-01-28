@@ -3,16 +3,16 @@
  */
 
 @interface ECMappingContext : NSObject {
-    struct map<unsigned int, unsigned int, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, unsigned int> > > { 
-        struct __tree<std::__1::__value_type<unsigned int, unsigned int>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned int>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, unsigned int> > > { 
-            struct __tree_node<std::__1::__value_type<unsigned int, unsigned int>, void *> {} *__begin_node_; 
-            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, unsigned int>, void *> > > { 
+    struct map<unsigned long, unsigned long, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, unsigned long> > > { 
+        struct __tree<std::__1::__value_type<unsigned long, unsigned long>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned long>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, unsigned long> > > { 
+            struct __tree_node<std::__1::__value_type<unsigned long, unsigned long>, void *> {} *__begin_node_; 
+            struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, unsigned long>, void *> > > { 
                 struct __tree_end_node<std::__1::__tree_node_base<void *> *> { 
                     struct __tree_node_base<void *> {} *__left_; 
                 } __first_; 
             } __pair1_; 
-            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, unsigned int>, std::__1::less<unsigned int>, true> > { 
-                unsigned long __first_; 
+            struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, unsigned long>, std::__1::less<unsigned long>, true> > { 
+                unsigned long long __first_; 
             } __pair3_; 
         } __tree_; 
     }  mIndexToMappedIndex;
@@ -25,14 +25,14 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)associateMappingInfo:(id)arg1 withSheetName:(id)arg2 andSheetIndex:(unsigned int)arg3 andObject:(id)arg4;
+- (void)associateMappingInfo:(id)arg1 withSheetName:(id)arg2 andSheetIndex:(unsigned long long)arg3 andObject:(id)arg4;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)mappedSheetIndexForSheetIndex:(unsigned int)arg1;
-- (unsigned int)mappedSheetIndexForSheetName:(id)arg1;
+- (unsigned long long)mappedSheetIndexForSheetIndex:(unsigned long long)arg1;
+- (unsigned long long)mappedSheetIndexForSheetName:(id)arg1;
 - (struct ChVector<OcText> { struct OcText {} *x1; struct OcText {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; }*)mappedSheetNames;
-- (id)mappingInfoAtIndex:(unsigned int)arg1;
-- (unsigned int)mappingInfoCount;
+- (id)mappingInfoAtIndex:(unsigned long long)arg1;
+- (unsigned long long)mappingInfoCount;
 - (id)mappingInfoForObject:(id)arg1;
 
 @end

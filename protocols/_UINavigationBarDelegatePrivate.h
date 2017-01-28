@@ -8,9 +8,9 @@
 - (void)_navigationBarDidChangeStyle:(UINavigationBar *)arg1;
 - (void)_navigationBarDidEndAnimation:(UINavigationBar *)arg1;
 - (void)_updatePaletteConstraints;
-- (void)_updatePalettesWithBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UINavigationControllerPalette *, void*
-- (BOOL)enableBackButtonDuringTransition;
-- (BOOL)isNavigationBarHidden;
+- (void)_updatePalettesWithBlock:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, _UINavigationControllerPalette *, void*
+- (bool)enableBackButtonDuringTransition;
+- (bool)isNavigationBarHidden;
 - (void)navigationBarDidChangeOpacity:(UINavigationBar *)arg1;
 - (void)navigationBarDidResizeForPrompt:(UINavigationBar *)arg1;
 

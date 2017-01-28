@@ -10,21 +10,21 @@
 @property (nonatomic) <ABPersonCellLayoutManagerDelegate> *delegate;
 @property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
-- (float)accessoryViewInsetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundEndingRectForCell:(id)arg1 forNewEditingState:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundStartingRectForCell:(id)arg1 forNewEditingState:(BOOL)arg2;
-- (void)cell:(id)arg1 didTransitionToState:(unsigned int)arg2;
-- (void)cell:(id)arg1 willTransitionToState:(unsigned int)arg2;
+- (double)accessoryViewInsetForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundEndingRectForCell:(id)arg1 forNewEditingState:(bool)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })backgroundStartingRectForCell:(id)arg1 forNewEditingState:(bool)arg2;
+- (void)cell:(id)arg1 didTransitionToState:(unsigned long long)arg2;
+- (void)cell:(id)arg1 willTransitionToState:(unsigned long long)arg2;
 - (id)cellAsMultiCell:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentEndingRectForCell:(id)arg1 forNewEditingState:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentStartingRectForCell:(id)arg1 forNewEditingState:(BOOL)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentEndingRectForCell:(id)arg1 forNewEditingState:(bool)arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentStartingRectForCell:(id)arg1 forNewEditingState:(bool)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })deleteConfirmationRectForCell:(id)arg1;
-- (float)deleteConfirmationWidth;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })deleteConfirmationRectForCell:(id)arg1;
+- (double)deleteConfirmationWidth;
 - (void)setDelegate:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (id)styleProvider;
-- (float)widthForCellContentViewInTableView:(id)arg1 whenEditing:(BOOL)arg2 isShowingDeleteConfirmation:(BOOL)arg3 accessoryViewBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (double)widthForCellContentViewInTableView:(id)arg1 whenEditing:(bool)arg2 isShowingDeleteConfirmation:(bool)arg3 accessoryViewBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
 
 @end

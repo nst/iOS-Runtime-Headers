@@ -7,16 +7,16 @@
     NSMutableArray * _itemIDs;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addCloudItemID:(unsigned long long)arg1 idType:(int)arg2;
-- (unsigned int)count;
+- (void)addCloudItemID:(unsigned long long)arg1 idType:(long long)arg2;
+- (unsigned long long)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateCloudItemIDsUsingBlock:(id /* block */)arg1;
+- (void)enumerateCloudItemIDsUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 

@@ -7,7 +7,7 @@
 @property (getter=_buttonConfiguration, nonatomic, readonly) _UIFeedbackButtonBehaviorConfiguration *buttonConfiguration;
 
 + (Class)_configurationClass;
-+ (id)buttonBehaviorWithStyle:(int)arg1 coordinateSpace:(id)arg2;
++ (id)buttonBehaviorWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
 
 - (id)_buttonConfiguration;
 - (id)_stats_key;

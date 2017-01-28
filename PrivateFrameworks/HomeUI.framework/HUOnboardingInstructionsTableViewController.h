@@ -13,12 +13,12 @@
 @property (nonatomic) <HOOnboardingChildViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIBarButtonItem *doneButtonBarItem;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <HOOnboardingChildViewControllerNavigationBarDelegate> *navigationBarDelegate;
 @property (nonatomic, retain) UICollectionViewController<HOOnboardingChildViewController> *onboardingViewController;
 @property (readonly) Class superclass;
 
-+ (BOOL)adoptsDefaultGridLayoutMargins;
++ (bool)adoptsDefaultGridLayoutMargins;
 
 - (void).cxx_destruct;
 - (void)_next:(id)arg1;
@@ -35,9 +35,9 @@
 - (void)setDoneButtonBarItem:(id)arg1;
 - (void)setNavigationBarDelegate:(id)arg1;
 - (void)setOnboardingViewController:(id)arg1;
-- (void)setShouldShowRightNavigationBarActivitySpinner:(BOOL)arg1;
+- (void)setShouldShowRightNavigationBarActivitySpinner:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

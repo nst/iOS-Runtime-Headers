@@ -32,9 +32,9 @@
 - (struct sqlite3_stmt { }*)_temporalSelectStatement;
 - (void)addNodeByUserTag:(id)arg1;
 - (void)closeMomentsDatabase;
-- (unsigned int)countOfTemporalNeighborsOfNode:(id)arg1 forTheta:(double)arg2;
+- (unsigned long long)countOfTemporalNeighborsOfNode:(id)arg1 forTheta:(double)arg2;
 - (void)dealloc;
-- (void)executePreparedStatement:(struct sqlite3_stmt { }*)arg1 withStatementBlock:(id /* block */)arg2;
+- (void)executePreparedStatement:(struct sqlite3_stmt { }*)arg1 withStatementBlock:(id)arg2;
 - (id)init;
 - (void)insertNode:(id)arg1;
 - (id)nodeForAsset:(id)arg1;
@@ -42,7 +42,7 @@
 - (id)nodesWithTag:(id)arg1;
 - (id)nodesWithinMinDate:(double)arg1 maxDate:(double)arg2;
 - (void)openMomentsDatabase;
-- (void)performBatch:(id /* block */)arg1;
+- (void)performBatch:(id)arg1;
 - (void)prepareAndExecuteStatement:(const char *)arg1;
 - (struct sqlite3_stmt { }*)prepareStatement:(const char *)arg1;
 - (void)setupMomentsDatabase;

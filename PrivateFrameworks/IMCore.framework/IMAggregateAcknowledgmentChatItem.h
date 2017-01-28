@@ -5,17 +5,17 @@
 @interface IMAggregateAcknowledgmentChatItem : IMAssociatedMessageChatItem {
     NSArray * _acknowledgments;
     IMMessageAcknowledgmentChatItem * _fromMeAcknowledgement;
-    BOOL  _includesMultiple;
+    bool  _includesMultiple;
     long long  _latestAcknowledgmentType;
-    BOOL  _latestIsFromMe;
+    bool  _latestIsFromMe;
 }
 
 @property (nonatomic, readonly, copy) NSArray *acknowledgments;
 @property (nonatomic, readonly) IMMessageAcknowledgmentChatItem *fromMeAcknowledgement;
-@property (nonatomic, readonly) BOOL includesFromMe;
-@property (nonatomic, readonly) BOOL includesMultiple;
+@property (nonatomic, readonly) bool includesFromMe;
+@property (nonatomic, readonly) bool includesMultiple;
 @property (nonatomic, readonly) long long latestAcknowledgmentType;
-@property (nonatomic, readonly) BOOL latestIsFromMe;
+@property (nonatomic, readonly) bool latestIsFromMe;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
@@ -24,12 +24,12 @@
 - (id)acknowledgments;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)fromMeAcknowledgement;
-- (unsigned int)hash;
-- (BOOL)includesFromMe;
-- (BOOL)includesMultiple;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)includesFromMe;
+- (bool)includesMultiple;
+- (bool)isEqual:(id)arg1;
 - (long long)latestAcknowledgmentType;
-- (BOOL)latestIsFromMe;
+- (bool)latestIsFromMe;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

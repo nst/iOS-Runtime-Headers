@@ -4,25 +4,25 @@
 
 @interface MDLVertexAttributeData : NSObject {
     void * _dataStart;
-    unsigned int  _format;
+    unsigned long long  _format;
     MDLMeshBufferMap * _map;
-    unsigned int  _stride;
+    unsigned long long  _stride;
 }
 
 @property (nonatomic) void*dataStart;
-@property (nonatomic) unsigned int format;
+@property (nonatomic) unsigned long long format;
 @property (nonatomic, retain) MDLMeshBufferMap *map;
-@property (nonatomic) unsigned int stride;
+@property (nonatomic) unsigned long long stride;
 
 - (void).cxx_destruct;
 - (void*)dataStart;
-- (unsigned int)format;
+- (unsigned long long)format;
 - (id)init;
 - (id)map;
 - (void)setDataStart:(void*)arg1;
-- (void)setFormat:(unsigned int)arg1;
+- (void)setFormat:(unsigned long long)arg1;
 - (void)setMap:(id)arg1;
-- (void)setStride:(unsigned int)arg1;
-- (unsigned int)stride;
+- (void)setStride:(unsigned long long)arg1;
+- (unsigned long long)stride;
 
 @end

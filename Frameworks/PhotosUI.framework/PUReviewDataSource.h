@@ -7,9 +7,9 @@
     NSMutableDictionary * __assetsByIdentifier;
     NSMutableDictionary * __enqueuedBurstAssetIdentifiersByBurstIdentifier;
     NSMutableDictionary * __enqueuedBurstAssetsByAssetIdentifier;
-    int  __nestedPerformChanges;
+    long long  __nestedPerformChanges;
     NSHashTable * __observers;
-    int  __pendingChangeNotifications;
+    long long  __pendingChangeNotifications;
     NSMutableDictionary * __representativeAssetsByBurstIdentifier;
 }
 
@@ -17,9 +17,9 @@
 @property (nonatomic, readonly) NSMutableDictionary *_assetsByIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *_enqueuedBurstAssetIdentifiersByBurstIdentifier;
 @property (nonatomic, readonly) NSMutableDictionary *_enqueuedBurstAssetsByAssetIdentifier;
-@property (setter=_setNestedPerformChanges:, nonatomic) int _nestedPerformChanges;
+@property (setter=_setNestedPerformChanges:, nonatomic) long long _nestedPerformChanges;
 @property (nonatomic, readonly) NSHashTable *_observers;
-@property (setter=_setPendingChangeNotifications:, nonatomic) int _pendingChangeNotifications;
+@property (setter=_setPendingChangeNotifications:, nonatomic) long long _pendingChangeNotifications;
 @property (nonatomic, readonly) NSMutableDictionary *_representativeAssetsByBurstIdentifier;
 
 - (void).cxx_destruct;
@@ -29,14 +29,14 @@
 - (id)_enqueuedBurstAssetsByAssetIdentifier;
 - (id)_initWithAssetIdentifiers:(id)arg1 assetsByIdentifier:(id)arg2 representativeAssetsByBurstIdentifier:(id)arg3;
 - (void)_insertAssetWithoutNotifying:(id)arg1;
-- (int)_nestedPerformChanges;
+- (long long)_nestedPerformChanges;
 - (void)_notifyObserversOfDataSourceChange;
 - (id)_observers;
-- (int)_pendingChangeNotifications;
-- (BOOL)_removeAssetWithIdentifier:(id)arg1;
+- (long long)_pendingChangeNotifications;
+- (bool)_removeAssetWithIdentifier:(id)arg1;
 - (id)_representativeAssetsByBurstIdentifier;
-- (void)_setNestedPerformChanges:(int)arg1;
-- (void)_setPendingChangeNotifications:(int)arg1;
+- (void)_setNestedPerformChanges:(long long)arg1;
+- (void)_setPendingChangeNotifications:(long long)arg1;
 - (id)assetsByIdentifier;
 - (id)description;
 - (void)enqueuePendingBurstAsset:(id)arg1;
@@ -46,7 +46,7 @@
 - (void)insertAsset:(id)arg1;
 - (void)insertAssets:(id)arg1;
 - (id)orderedIdentifiers;
-- (void)performChanges:(id /* block */)arg1;
+- (void)performChanges:(id)arg1;
 - (void)processPendingBurstAssets;
 - (void)registerChangeObserver:(id)arg1;
 - (void)removeAllAssets;

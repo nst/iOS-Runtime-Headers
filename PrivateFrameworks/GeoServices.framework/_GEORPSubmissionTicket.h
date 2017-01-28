@@ -3,7 +3,7 @@
  */
 
 @interface _GEORPSubmissionTicket : NSObject <GEOMapServiceProblemReportTicket> {
-    BOOL  _canceled;
+    bool  _canceled;
     NSString * _emailAddress;
     <GEOMapItem> * _endPlace;
     <GEOMapItem> * _place;
@@ -12,13 +12,13 @@
     NSData * _pushToken;
     NSData * _resubmissionData;
     <GEOMapItem> * _startPlace;
-    BOOL  _started;
+    bool  _started;
     GEOMapServiceTraits * _traits;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
@@ -26,7 +26,7 @@
 - (void)dealloc;
 - (id)initWithProblem:(id)arg1 placeForProblemContext:(id)arg2 placeForStartDirectionsSearchInput:(id)arg3 placeForEndDirectionsSearchInput:(id)arg4 pushToken:(id)arg5 allowContactBackAtEmailAddress:(id)arg6 traits:(id)arg7;
 - (id)initWithResubmissionData:(id)arg1 traits:(id)arg2;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
 - (id)traits;
 
 @end

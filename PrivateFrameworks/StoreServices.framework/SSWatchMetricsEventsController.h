@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)discardUnreportableEvents;
-- (BOOL)insertWatchMetricEvent:(id)arg1 error:(id*)arg2;
+- (bool)insertWatchMetricEvent:(id)arg1 error:(id*)arg2;
 - (void)markAsCompleted:(id)arg1;
 - (void)markAsFailed:(id)arg1;
 - (id)serialQueue;

@@ -8,23 +8,23 @@
     MPArtworkCatalog * _currentArtworkCatalog;
     NSData * _currentArtworkData;
     UIImage * _currentArtworkImage;
-    BOOL  _enabled;
-    BOOL  _hasSeenAnyItem;
+    bool  _enabled;
+    bool  _hasSeenAnyItem;
     NSMutableDictionary * _mediaItemCoalescedUpdateDateAccessedTimers;
     MPAVController * _player;
-    BOOL  _scheduledNowPlayingInfoUpdate;
+    bool  _scheduledNowPlayingInfoUpdate;
     NSObject<OS_dispatch_queue> * _statusBarQueue;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MPAVController *player;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (int)_MPNowPlayingDownloadStateForDownload:(id)arg1;
+- (long long)_MPNowPlayingDownloadStateForDownload:(id)arg1;
 - (id)_activeDownloadForItemWithStoreID:(long long)arg1;
 - (id)_additionalKeysForNowPlayingItem:(id)arg1;
 - (void)_avItemArtworkDidChangeNotification:(id)arg1;
@@ -35,12 +35,12 @@
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
 - (void)_coalescedUpdateLastUsedDateForCurrentItem;
 - (void)_contentsDidChangeNotification:(id)arg1;
-- (void)_createNowPlayingInfoForItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_createNowPlayingInfoForItem:(id)arg1 completionHandler:(id)arg2;
 - (void)_crossedTimeMarkerNotification:(id)arg1;
-- (BOOL)_hasProperConditionsToLoadArtwork;
+- (bool)_hasProperConditionsToLoadArtwork;
 - (void)_itemDidChangeNotification:(id)arg1;
 - (void)_itemDidFinishLoadingNotification:(id)arg1;
-- (BOOL)_itemNotificationIsRelevantToObservedPlayer:(id)arg1;
+- (bool)_itemNotificationIsRelevantToObservedPlayer:(id)arg1;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
 - (void)_playbackErrorNotification:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
@@ -49,7 +49,7 @@
 - (void)_prefetchArtworkForNextItem;
 - (void)_rateDidChangeNotification:(id)arg1;
 - (void)_registerForNotificationsForPlayer:(id)arg1;
-- (BOOL)_reloadArtworkIfPossible;
+- (bool)_reloadArtworkIfPossible;
 - (void)_repeatTypeDidChangeNotification:(id)arg1;
 - (void)_setNeedsNowPlayingInfoUpdate;
 - (void)_setNowPlayingInfo:(id)arg1 forItem:(id)arg2;
@@ -65,9 +65,9 @@
 - (void)downloadManager:(id)arg1 downloadPurchaseDidFinish:(id)arg2;
 - (id)init;
 - (id)initWithPlayer:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)player;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setPlayer:(id)arg1;
 
 @end

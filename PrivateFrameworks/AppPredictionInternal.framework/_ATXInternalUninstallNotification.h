@@ -10,6 +10,6 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)registerForNotificationsWithUninstallBlock:(id /* block */)arg1;
+- (void)registerForNotificationsWithUninstallBlock:(id)arg1;
 
 @end

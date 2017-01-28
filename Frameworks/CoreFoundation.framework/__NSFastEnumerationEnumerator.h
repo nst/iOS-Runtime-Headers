@@ -3,8 +3,8 @@
  */
 
 @interface __NSFastEnumerationEnumerator : NSEnumerator {
-    unsigned int  _count;
-    unsigned int  _mut;
+    unsigned long long  _count;
+    unsigned long long  _mut;
     <NSFastEnumeration> * _obj;
     id  _origObj;
 }

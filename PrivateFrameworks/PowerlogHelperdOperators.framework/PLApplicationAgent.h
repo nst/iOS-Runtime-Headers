@@ -21,6 +21,7 @@
 @property (retain) NSMutableSet *widgetPlugins;
 
 + (id)appNameForBundleID:(id)arg1;
++ (int)appTypeFromProxy:(id)arg1;
 + (id)defaults;
 + (id)entryAggregateDefinitionApplicationReason;
 + (id)entryAggregateDefinitions;

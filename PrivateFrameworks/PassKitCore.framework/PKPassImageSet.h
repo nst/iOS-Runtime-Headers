@@ -4,6 +4,6 @@
 
 @interface PKPassImageSet : PKImageSet
 
-+ (Class)classForImageSetType:(int)arg1;
++ (Class)classForImageSetType:(long long)arg1;
 
 @end

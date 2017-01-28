@@ -4,12 +4,12 @@
 
 @interface MusicForYouRecommendationItem : MPModelObject {
     MPModelAlbum * _album;
-    unsigned int  _itemType;
+    unsigned long long  _itemType;
     MPModelPlaylist * _playlist;
 }
 
 @property (nonatomic, retain) MPModelAlbum *album;
-@property (nonatomic) unsigned int itemType;
+@property (nonatomic) unsigned long long itemType;
 @property (nonatomic, retain) MPModelPlaylist *playlist;
 
 + (id)__MusicForYouRecommendationItemPropertyItemType__PROPERTY;
@@ -21,11 +21,11 @@
 
 - (void).cxx_destruct;
 - (id)album;
-- (id)descriptionWithType:(int)arg1;
-- (unsigned int)itemType;
+- (id)descriptionWithType:(long long)arg1;
+- (unsigned long long)itemType;
 - (id)playlist;
 - (void)setAlbum:(id)arg1;
-- (void)setItemType:(unsigned int)arg1;
+- (void)setItemType:(unsigned long long)arg1;
 - (void)setPlaylist:(id)arg1;
 
 @end

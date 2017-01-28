@@ -4,36 +4,36 @@
 
 @interface CalDeviceLockObserver : NSObject {
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    BOOL  _internalHasBeenUnlockedSinceBoot;
+    bool  _internalHasBeenUnlockedSinceBoot;
     CalDarwinNotificationListener * _notificationListener;
-    id /* block */  _stateChangedCallback;
+    id  _stateChangedCallback;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
-@property (nonatomic, readonly) BOOL hasBeenUnlockedSinceBoot;
-@property (nonatomic) BOOL internalHasBeenUnlockedSinceBoot;
+@property (nonatomic, readonly) bool hasBeenUnlockedSinceBoot;
+@property (nonatomic) bool internalHasBeenUnlockedSinceBoot;
 @property (nonatomic, retain) CalDarwinNotificationListener *notificationListener;
-@property (nonatomic, copy) id /* block */ stateChangedCallback;
+@property (nonatomic, copy) id stateChangedCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (BOOL)_latestKeyBagValueForHasBeenUnlockedSinceBoot;
++ (bool)_latestKeyBagValueForHasBeenUnlockedSinceBoot;
 + (id)stateChangedNotificationName;
 
 - (void).cxx_destruct;
 - (void)_notificationReceived;
 - (id)callbackQueue;
-- (BOOL)hasBeenUnlockedSinceBoot;
+- (bool)hasBeenUnlockedSinceBoot;
 - (id)init;
-- (id)initWithStateChangedCallback:(id /* block */)arg1;
-- (BOOL)internalHasBeenUnlockedSinceBoot;
+- (id)initWithStateChangedCallback:(id)arg1;
+- (bool)internalHasBeenUnlockedSinceBoot;
 - (id)notificationListener;
 - (void)setCallbackQueue:(id)arg1;
-- (void)setInternalHasBeenUnlockedSinceBoot:(BOOL)arg1;
+- (void)setInternalHasBeenUnlockedSinceBoot:(bool)arg1;
 - (void)setNotificationListener:(id)arg1;
-- (void)setStateChangedCallback:(id /* block */)arg1;
+- (void)setStateChangedCallback:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (id /* block */)stateChangedCallback;
+- (id)stateChangedCallback;
 - (id)workQueue;
 
 @end

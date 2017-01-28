@@ -3,13 +3,13 @@
  */
 
 @interface NCLookViewFontProvider : NSObject {
-    BOOL  _isDefault;
+    bool  _isDefault;
 }
 
 + (id)lookViewDefaultFontProvider;
 + (id)lookViewPreferredFontProvider;
 
-- (id)initForProvidingDefaultFonts:(BOOL)arg1;
-- (id)nc_preferredFontForTextStyle:(id)arg1 hiFontStyle:(int)arg2;
+- (id)initForProvidingDefaultFonts:(bool)arg1;
+- (id)nc_preferredFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2;
 
 @end

@@ -5,7 +5,7 @@
 @interface PLChangeNode : NSObject {
     Class  _changeHubClass;
     NSObject<OS_xpc_object> * _hubConnection;
-    BOOL  _isObservingOrderKeys;
+    bool  _isObservingOrderKeys;
     NSObject<OS_dispatch_queue> * _isolationQueue;
     unsigned long long  _lastKnownChangeHubEventIndex;
     unsigned char  _nodeUUID;
@@ -18,7 +18,7 @@
 + (id)localChangeEventFromChangeHubEvent:(id)arg1;
 + (id)sharedNode;
 
-- (BOOL)_inq_registerForStoreOrderKeyUpdateNotificationFromManagedObjectContext:(id)arg1;
+- (bool)_inq_registerForStoreOrderKeyUpdateNotificationFromManagedObjectContext:(id)arg1;
 - (void)_processCloudFeedUpdateDataFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedAlbumCountUpdates:(id)arg1 transaction:(id)arg2;
 - (void)_processDelayedAlbumCountUpdatesFromChangeHubEvent:(id)arg1 transaction:(id)arg2;
@@ -39,7 +39,7 @@
 - (id)getAndClearUpdatedOrderKeys;
 - (void)handleRemoteChangeHubRequest:(id)arg1;
 - (id)init;
-- (BOOL)isEventOriginatingFromHere:(id)arg1;
+- (bool)isEventOriginatingFromHere:(id)arg1;
 - (void)persistentStoreDidUpdateOrderKeys:(id)arg1;
 - (void)printChangeStore;
 - (void)processDelayedAssetsForFileSystemPersistency:(id)arg1 transaction:(id)arg2;

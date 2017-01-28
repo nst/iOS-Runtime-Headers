@@ -13,7 +13,7 @@
 @property (nonatomic, readonly) NSString *foreignColumnName;
 @property (nonatomic, readonly) NSString *foreignTableName;
 @property (nonatomic, readonly) NSString *joinColumnName;
-@property (nonatomic, readonly) BOOL shouldImportFromForeignTable;
+@property (nonatomic, readonly) bool shouldImportFromForeignTable;
 
 - (void).cxx_destruct;
 - (id)columnName;
@@ -21,6 +21,6 @@
 - (id)foreignTableName;
 - (id)initWithName:(id)arg1 foreignTable:(id)arg2 foreignColumn:(id)arg3 joinColumn:(id)arg4;
 - (id)joinColumnName;
-- (BOOL)shouldImportFromForeignTable;
+- (bool)shouldImportFromForeignTable;
 
 @end

@@ -14,15 +14,15 @@
 @property (nonatomic, retain) NSString *unformattedID;
 
 - (id)ID;
-- (int)compareIDs:(id)arg1;
+- (long long)compareIDs:(id)arg1;
 - (id)countryCode;
 - (void)dealloc;
 - (id)description;
 - (id)handleInfo;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithID:(id)arg1 unformattedID:(id)arg2 countryCode:(id)arg3;
-- (BOOL)isBetterDefinedThan:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isBetterDefinedThan:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setID:(id)arg1;
 - (void)setUnformattedID:(id)arg1;

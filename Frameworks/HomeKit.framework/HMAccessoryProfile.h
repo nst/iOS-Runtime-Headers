@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAccessoryProfile : NSObject <HFPrettyDescription, HMObjectMerge> {
+@interface HMAccessoryProfile : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge> {
     _HMAccessoryProfile * _accessoryProfile;
 }
 
@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) _HMAccessoryProfile *accessoryProfile;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *services;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
@@ -18,18 +18,19 @@
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 - (void).cxx_destruct;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)accessory;
 - (id)accessoryProfile;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAccessoryProfile:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)services;
 - (id)uniqueIdentifier;
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned long long)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

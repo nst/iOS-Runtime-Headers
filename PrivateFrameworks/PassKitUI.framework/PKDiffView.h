@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)performStrokeWithCompletion:(id /* block */)arg1;
+- (void)performStrokeWithCompletion:(id)arg1;
 - (void)updateShapeLayer;
 
 @end

@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *messageHandlers;
 @property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *messageQueue;
 @property (nonatomic, retain) NSMutableDictionary *pendingMessageCompletions;
@@ -36,16 +36,16 @@
 - (id)queue;
 - (void)resume;
 - (void)sendErrorReply:(id)arg1 toMessage:(id)arg2;
-- (void)sendMessage:(id)arg1 completion:(id /* block */)arg2;
-- (void)sendMessage:(id)arg1 isCritical:(BOOL)arg2 completion:(id /* block */)arg3;
-- (id)sendMessage:(id)arg1 replyingTo:(id)arg2 expectingResponse:(BOOL)arg3 isCritical:(BOOL)arg4 error:(id*)arg5;
-- (void)sendMessage:(id)arg1 withReply:(id /* block */)arg2;
+- (void)sendMessage:(id)arg1 completion:(id)arg2;
+- (void)sendMessage:(id)arg1 isCritical:(bool)arg2 completion:(id)arg3;
+- (id)sendMessage:(id)arg1 replyingTo:(id)arg2 expectingResponse:(bool)arg3 isCritical:(bool)arg4 error:(id*)arg5;
+- (void)sendMessage:(id)arg1 withReply:(id)arg2;
 - (void)sendReply:(id)arg1 toMessage:(id)arg2;
 - (id)service;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
-- (void)setHandler:(id /* block */)arg1 forMessagesOfType:(id)arg2;
-- (void)setHandler:(id /* block */)arg1 forMessagesOfTypes:(id)arg2;
+- (void)setHandler:(id)arg1 forMessagesOfType:(id)arg2;
+- (void)setHandler:(id)arg1 forMessagesOfTypes:(id)arg2;
 - (void)setMessageHandlers:(id)arg1;
 - (void)setPendingMessageCompletions:(id)arg1;
 - (void)setPendingMessageReplies:(id)arg1;

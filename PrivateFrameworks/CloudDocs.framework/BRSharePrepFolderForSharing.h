@@ -3,17 +3,17 @@
  */
 
 @interface BRSharePrepFolderForSharing : BROperation {
-    id /* block */  _prepFolderSharingCompletionBlock;
+    id  _prepFolderSharingCompletionBlock;
     NSURL * _url;
 }
 
-@property (copy) id /* block */ prepFolderSharingCompletionBlock;
+@property (copy) id prepFolderSharingCompletionBlock;
 
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (void)main;
-- (id /* block */)prepFolderSharingCompletionBlock;
-- (void)setPrepFolderSharingCompletionBlock:(id /* block */)arg1;
+- (id)prepFolderSharingCompletionBlock;
+- (void)setPrepFolderSharingCompletionBlock:(id)arg1;
 
 @end

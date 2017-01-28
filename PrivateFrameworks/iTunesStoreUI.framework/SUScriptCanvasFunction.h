@@ -6,7 +6,7 @@
     SUScriptCanvasResult * _lastResult;
 }
 
-- (id)copyResultForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)copyResultForSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)dealloc;
 
 @end

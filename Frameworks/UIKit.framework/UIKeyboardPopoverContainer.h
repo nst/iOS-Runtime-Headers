@@ -4,36 +4,36 @@
 
 @interface UIKeyboardPopoverContainer : NSObject {
     _UIKeyboardPopoverAffordance * _affordance;
-    float  _arrowOffset;
+    double  _arrowOffset;
     _UIMirrorNinePatchView * _background;
-    unsigned int  _direction;
+    unsigned long long  _direction;
     _UIPopoverView * _popover;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _targetFull;
 }
 
 @property (readonly, retain) UIView *affordance;
-@property (readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property (readonly) float cornerRadius;
+@property (readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } contentInsets;
+@property (readonly) double cornerRadius;
 
-+ (id)propertiesForSpecificKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 onScreenSize:(struct CGSize { float x1; float x2; })arg2;
-+ (id)propertiesForTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withHeight:(float)arg2 onScreenSize:(struct CGSize { float x1; float x2; })arg3;
++ (id)propertiesForSpecificKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 onScreenSize:(struct CGSize { double x1; double x2; })arg2;
++ (id)propertiesForTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withHeight:(double)arg2 onScreenSize:(struct CGSize { double x1; double x2; })arg3;
 
 - (void).cxx_destruct;
 - (id)affordance;
 - (void)applyProperties:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (float)cornerRadius;
-- (id)initWithView:(id)arg1 usingBackdropStyle:(int)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (double)cornerRadius;
+- (id)initWithView:(id)arg1 usingBackdropStyle:(long long)arg2;
 - (void)invalidate;
-- (BOOL)isValidDragPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)isValidDragPoint:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

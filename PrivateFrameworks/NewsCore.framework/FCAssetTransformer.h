@@ -4,6 +4,6 @@
 
 @interface FCAssetTransformer : NSObject
 
-- (BOOL)transformAssetDataFromFilePath:(id)arg1 toFilePath:(id)arg2 error:(id*)arg3;
+- (bool)transformAssetDataFromFilePath:(id)arg1 toFilePath:(id)arg2 error:(id*)arg3;
 
 @end

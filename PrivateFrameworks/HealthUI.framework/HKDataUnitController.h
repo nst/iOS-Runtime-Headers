@@ -17,9 +17,9 @@
 - (id)dataUnitForType:(id)arg1;
 - (id)dataUnitForTypeUnifyingBloodPressureTypes:(id)arg1;
 - (id)dataUnitWithIdentifier:(id)arg1;
-- (id)dataUnitsForCategoryIdentifier:(int)arg1;
+- (id)dataUnitsForCategoryIdentifier:(long long)arg1;
 - (id)init;
 - (void)setWheelchairUseCharacteristicCache:(id)arg1;
-- (void)wheelchairUseCharacteristicCache:(id)arg1 wheelchairUsageDidChange:(BOOL)arg2;
+- (void)wheelchairUseCharacteristicCache:(id)arg1 wheelchairUsageDidChange:(bool)arg2;
 
 @end

@@ -9,13 +9,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *identifiers;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)cn_supportsNativeSorting;
+- (bool)cn_supportsNativeSorting;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -23,6 +23,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifiers:(id)arg1;
 - (id)internalIdentifiersForStoreWithIdentifier:(id)arg1;
-- (id)suggestionsWithSortOrder:(int)arg1 mutableObjects:(BOOL)arg2 service:(id)arg3 error:(id*)arg4;
+- (id)suggestionsWithSortOrder:(long long)arg1 mutableObjects:(bool)arg2 service:(id)arg3 error:(id*)arg4;
 
 @end

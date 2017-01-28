@@ -8,7 +8,7 @@
 
 - (void)dealloc;
 - (id)init;
-- (id)newTokensFromString:(id)arg1 withOptions:(int)arg2 outCopyRanges:(id*)arg3;
-- (void)tokenizeString:(id)arg1 withOptions:(int)arg2 tokenOutput:(struct tokenOutput_t { id x1; id x2; struct { /* ? */ } x3; int x4; int x5; struct { /* ? */ } *x6; int x7; int x8; }*)arg3;
+- (id)newTokensFromString:(id)arg1 withOptions:(long long)arg2 outCopyRanges:(id*)arg3;
+- (void)tokenizeString:(id)arg1 withOptions:(long long)arg2 tokenOutput:(struct tokenOutput_t { id x1; id x2; struct { /* ? */ } x3; long long x4; long long x5; struct { /* ? */ } *x6; long long x7; long long x8; }*)arg3;
 
 @end

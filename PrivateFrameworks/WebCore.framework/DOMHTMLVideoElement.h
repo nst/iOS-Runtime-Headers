@@ -5,29 +5,29 @@
 @interface DOMHTMLVideoElement : DOMHTMLMediaElement
 
 @property unsigned int height;
-@property BOOL playsInline;
+@property bool playsInline;
 @property (copy) NSString *poster;
 @property (readonly) unsigned int videoHeight;
 @property (readonly) unsigned int videoWidth;
-@property (readonly) BOOL webkitDisplayingFullscreen;
-@property (readonly) BOOL webkitSupportsFullscreen;
+@property (readonly) bool webkitDisplayingFullscreen;
+@property (readonly) bool webkitSupportsFullscreen;
 @property unsigned int width;
 
 - (unsigned int)height;
-- (BOOL)playsInline;
+- (bool)playsInline;
 - (id)poster;
 - (void)setHeight:(unsigned int)arg1;
-- (void)setPlaysInline:(BOOL)arg1;
+- (void)setPlaysInline:(bool)arg1;
 - (void)setPoster:(id)arg1;
 - (void)setWidth:(unsigned int)arg1;
 - (unsigned int)videoHeight;
 - (unsigned int)videoWidth;
-- (BOOL)webkitDisplayingFullscreen;
+- (bool)webkitDisplayingFullscreen;
 - (void)webkitEnterFullScreen;
 - (void)webkitEnterFullscreen;
 - (void)webkitExitFullScreen;
 - (void)webkitExitFullscreen;
-- (BOOL)webkitSupportsFullscreen;
+- (bool)webkitSupportsFullscreen;
 - (unsigned int)width;
 
 @end

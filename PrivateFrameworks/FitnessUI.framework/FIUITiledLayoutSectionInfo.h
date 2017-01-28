@@ -5,62 +5,62 @@
 @interface FIUITiledLayoutSectionInfo : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _bounds;
-    BOOL  _configured;
+    bool  _configured;
     NSMutableIndexSet * _indexesToReload;
-    unsigned int  _numberOfTiles;
+    unsigned long long  _numberOfTiles;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _outerTileSize;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _sectionInsets;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _tileInsets;
-    unsigned int  _tilesPerRow;
+    unsigned long long  _tilesPerRow;
     NSString * _title;
 }
 
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property (nonatomic, readonly) BOOL configured;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } bounds;
+@property (nonatomic, readonly) bool configured;
 @property (nonatomic, readonly) NSMutableIndexSet *indexesToReload;
-@property (nonatomic, readonly) unsigned int numberOfTiles;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } outerTileSize;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInsets;
-@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tileInsets;
-@property (nonatomic) unsigned int tilesPerRow;
+@property (nonatomic, readonly) unsigned long long numberOfTiles;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } outerTileSize;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } sectionInsets;
+@property (nonatomic, readonly) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } tileInsets;
+@property (nonatomic) unsigned long long tilesPerRow;
 @property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (void)configureIfNeededWithLayoutView:(id)arg1 sectionNumber:(unsigned int)arg2;
-- (BOOL)configured;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForTileAtIndex:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })bounds;
+- (void)configureIfNeededWithLayoutView:(id)arg1 sectionNumber:(unsigned long long)arg2;
+- (bool)configured;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForTileAtIndex:(unsigned long long)arg1;
 - (id)indexesToReload;
 - (id)init;
-- (unsigned int)numberOfTiles;
-- (struct CGSize { float x1; float x2; })outerTileSize;
+- (unsigned long long)numberOfTiles;
+- (struct CGSize { double x1; double x2; })outerTileSize;
 - (void)resetConfiguration;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInsets;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTilesPerRow:(unsigned int)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tileInsets;
-- (unsigned int)tilesPerRow;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })sectionInsets;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setTilesPerRow:(unsigned long long)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tileInsets;
+- (unsigned long long)tilesPerRow;
 - (id)title;
 
 @end

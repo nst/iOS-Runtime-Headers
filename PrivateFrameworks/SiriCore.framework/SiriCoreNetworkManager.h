@@ -11,9 +11,9 @@
 
 @property (nonatomic) <SiriCoreNetworkManagerDelegate> *delegate;
 
-+ (void)_ifnameTypeForName:(char *)arg1 isWiFi:(BOOL*)arg2 isCellular:(BOOL*)arg3;
-+ (int)connectionSubTypeForCellularInterface;
-+ (int)connectionTypeForInterface:(id)arg1;
++ (void)_ifnameTypeForName:(char *)arg1 isWiFi:(bool*)arg2 isCellular:(bool*)arg3;
++ (long long)connectionSubTypeForCellularInterface;
++ (long long)connectionTypeForInterface:(id)arg1;
 + (id)connectionTypeForStream:(id)arg1 interfaceName:(id)arg2;
 
 - (void).cxx_destruct;

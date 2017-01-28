@@ -3,22 +3,22 @@
  */
 
 @interface SFCustomFeedback : SFFeedback {
-    unsigned int  _feedbackType;
+    unsigned long long  _feedbackType;
     NSDictionary * _jsonFeedback;
 }
 
-@property (nonatomic) unsigned int feedbackType;
+@property (nonatomic) unsigned long long feedbackType;
 @property (nonatomic, copy) NSDictionary *jsonFeedback;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)feedbackType;
+- (unsigned long long)feedbackType;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 jsonFeedback:(id)arg2;
+- (id)initWithType:(unsigned long long)arg1 jsonFeedback:(id)arg2;
 - (id)jsonFeedback;
-- (void)setFeedbackType:(unsigned int)arg1;
+- (void)setFeedbackType:(unsigned long long)arg1;
 - (void)setJsonFeedback:(id)arg1;
 
 @end

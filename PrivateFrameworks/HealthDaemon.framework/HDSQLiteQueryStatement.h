@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)anyEntityWithPredicate:(id)arg1;
-- (void)enumerateEntitiesWithPredicate:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateEntitiesWithPredicate:(id)arg1 usingBlock:(id)arg2;
 - (id)initWithDescriptor:(id)arg1 properties:(id)arg2 database:(id)arg3;
 
 @end

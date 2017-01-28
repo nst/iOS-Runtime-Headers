@@ -9,7 +9,7 @@
 
 @optional
 
-- (float)preferredHeightForWidth:(float)arg1;
-- (float)preferredHeightForWidth:(float)arg1 inTableView:(UITableView *)arg2;
+- (double)preferredHeightForWidth:(double)arg1;
+- (double)preferredHeightForWidth:(double)arg1 inTableView:(UITableView *)arg2;
 
 @end

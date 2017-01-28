@@ -5,19 +5,19 @@
 @interface PUIndeterminateProgressTileViewController : PUTileViewController {
     UIView * __contentView;
     UIActivityIndicatorView * __spinnerView;
-    BOOL  _progressIndicatorVisible;
+    bool  _progressIndicatorVisible;
 }
 
 @property (nonatomic, retain) UIView *_contentView;
 @property (nonatomic, retain) UIActivityIndicatorView *_spinnerView;
-@property (getter=isProgressIndicatorVisible, nonatomic) BOOL progressIndicatorVisible;
+@property (getter=isProgressIndicatorVisible, nonatomic) bool progressIndicatorVisible;
 
 - (void).cxx_destruct;
 - (void)_addSpinnerToContentView;
 - (id)_contentView;
 - (id)_spinnerView;
-- (BOOL)isProgressIndicatorVisible;
-- (void)setProgressIndicatorVisible:(BOOL)arg1;
+- (bool)isProgressIndicatorVisible;
+- (void)setProgressIndicatorVisible:(bool)arg1;
 - (void)set_contentView:(id)arg1;
 - (void)set_spinnerView:(id)arg1;
 - (void)viewDidLoad;

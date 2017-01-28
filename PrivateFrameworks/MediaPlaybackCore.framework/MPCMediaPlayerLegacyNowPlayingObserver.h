@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)_additionalKeysForNowPlayingItem:(id)arg1;
-- (void)_createNowPlayingInfoForItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_createNowPlayingInfoForItem:(id)arg1 completionHandler:(id)arg2;
 - (id)mpcPlayer;
 - (void)setMpcPlayer:(id)arg1;
 

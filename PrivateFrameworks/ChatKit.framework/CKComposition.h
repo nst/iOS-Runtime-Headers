@@ -4,30 +4,30 @@
 
 @interface CKComposition : NSObject {
     NSString * _expressiveSendStyleID;
-    BOOL  _isFromExternalSource;
+    bool  _isFromExternalSource;
     IMPluginPayload * _shelfPluginPayload;
     NSAttributedString * _subject;
     NSAttributedString * _text;
 }
 
-@property (getter=isExpirableComposition, nonatomic, readonly) BOOL expirableComposition;
+@property (getter=isExpirableComposition, nonatomic, readonly) bool expirableComposition;
 @property (nonatomic, copy) NSString *expressiveSendStyleID;
-@property (nonatomic, readonly) BOOL hasContent;
-@property (nonatomic, readonly) BOOL hasNonwhiteSpaceContent;
-@property (nonatomic) BOOL isFromExternalSource;
+@property (nonatomic, readonly) bool hasContent;
+@property (nonatomic, readonly) bool hasNonwhiteSpaceContent;
+@property (nonatomic) bool isFromExternalSource;
 @property (nonatomic, readonly) NSArray *mediaObjects;
 @property (nonatomic, readonly) NSArray *pasteboardItems;
 @property (nonatomic, readonly, copy) NSString *previewText;
-@property (getter=isSaveable, nonatomic, readonly) BOOL saveable;
-@property (getter=isSendAnimated, nonatomic, readonly) BOOL sendAnimated;
+@property (getter=isSaveable, nonatomic, readonly) bool saveable;
+@property (getter=isSendAnimated, nonatomic, readonly) bool sendAnimated;
 @property (nonatomic, copy) IMPluginPayload *shelfPluginPayload;
 @property (nonatomic, copy) NSAttributedString *subject;
 @property (nonatomic, copy) NSAttributedString *text;
-@property (getter=isTextOnly, nonatomic, readonly) BOOL textOnly;
+@property (getter=isTextOnly, nonatomic, readonly) bool textOnly;
 
 + (id)audioCompositionWithMediaObject:(id)arg1;
 + (id)composition;
-+ (id)compositionForMessageParts:(id)arg1 preserveSubject:(BOOL)arg2;
++ (id)compositionForMessageParts:(id)arg1 preserveSubject:(bool)arg2;
 + (id)compositionWithMediaObject:(id)arg1 subject:(id)arg2;
 + (id)compositionWithMediaObjects:(id)arg1 subject:(id)arg2;
 + (id)compositionWithPluginDisplayContainer:(id)arg1 subject:(id)arg2;
@@ -42,7 +42,7 @@
 + (id)stickerCompositionWithMediaObjects:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_compositionByAppendingText:(id)arg1 isExpirable:(BOOL)arg2 shelfPluginPayload:(id)arg3;
+- (id)_compositionByAppendingText:(id)arg1 isExpirable:(bool)arg2 shelfPluginPayload:(id)arg3;
 - (id)_compositionParts;
 - (id)_messageFromPayload:(id)arg1 firstGUID:(id)arg2;
 - (Class)balloonViewClass;
@@ -56,17 +56,17 @@
 - (id)description;
 - (id)expressiveSendStyleID;
 - (id)externalSourceComposition;
-- (BOOL)hasContent;
-- (BOOL)hasNonwhiteSpaceContent;
-- (unsigned int)hash;
+- (bool)hasContent;
+- (bool)hasNonwhiteSpaceContent;
+- (unsigned long long)hash;
 - (id)initWithText:(id)arg1 subject:(id)arg2;
 - (id)initWithText:(id)arg1 subject:(id)arg2 shelfPluginPayload:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExpirableComposition;
-- (BOOL)isFromExternalSource;
-- (BOOL)isSaveable;
-- (BOOL)isSendAnimated;
-- (BOOL)isTextOnly;
+- (bool)isEqual:(id)arg1;
+- (bool)isExpirableComposition;
+- (bool)isFromExternalSource;
+- (bool)isSaveable;
+- (bool)isSendAnimated;
+- (bool)isTextOnly;
 - (id)mediaObjects;
 - (id)messageWithGUID:(id)arg1;
 - (id)messageWithGUID:(id)arg1 superFormatText:(id)arg2 superFormatSubject:(id)arg3 fileTransferGUIDs:(id)arg4 mediaObjects:(id)arg5 balloonBundleID:(id)arg6 payloadData:(id)arg7;
@@ -75,7 +75,7 @@
 - (id)previewText;
 - (void)saveCompositionWithGUID:(id)arg1;
 - (void)setExpressiveSendStyleID:(id)arg1;
-- (void)setIsFromExternalSource:(BOOL)arg1;
+- (void)setIsFromExternalSource:(bool)arg1;
 - (void)setShelfPluginPayload:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setText:(id)arg1;

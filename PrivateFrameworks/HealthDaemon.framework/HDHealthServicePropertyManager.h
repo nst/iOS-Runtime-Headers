@@ -3,7 +3,7 @@
  */
 
 @interface HDHealthServicePropertyManager : NSObject <CBPeripheralDelegate> {
-    BOOL  _discoveredServices;
+    bool  _discoveredServices;
     <HDHealthDaemon> * _healthDaemon;
     NSMutableArray * _pendingDeviceInformationLoadedBlocks;
     HDHealthPeripheral * _peripheral;
@@ -15,8 +15,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL discoveredServices;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool discoveredServices;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <HDHealthDaemon> *healthDaemon;
 @property (nonatomic, retain) NSMutableArray *pendingDeviceInformationLoadedBlocks;
 @property (nonatomic, retain) HDHealthPeripheral *peripheral;
@@ -32,29 +32,29 @@
 
 - (void).cxx_destruct;
 - (id)_queue_deviceInformationService;
-- (void)_queue_performWhenDeviceInformationHasBeenLoaded:(id /* block */)arg1;
+- (void)_queue_performWhenDeviceInformationHasBeenLoaded:(id)arg1;
 - (void)_queue_servicesHaveBeenDiscovered;
-- (BOOL)addHandler:(id /* block */)arg1 forProperty:(id)arg2;
-- (BOOL)discoveredServices;
-- (void)getProperty:(id)arg1 withHandler:(id /* block */)arg2;
+- (bool)addHandler:(id)arg1 forProperty:(id)arg2;
+- (bool)discoveredServices;
+- (void)getProperty:(id)arg1 withHandler:(id)arg2;
 - (id)healthDaemon;
 - (id)initWithPeripheral:(id)arg1 healthDaemon:(id)arg2;
-- (BOOL)isValidProperty:(id)arg1;
+- (bool)isValidProperty:(id)arg1;
 - (id)pendingDeviceInformationLoadedBlocks;
-- (void)performWhenDeviceInformationHasBeenLoaded:(id /* block */)arg1;
+- (void)performWhenDeviceInformationHasBeenLoaded:(id)arg1;
 - (id)peripheral;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristicsForService:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didDiscoverServices:(id)arg2;
 - (void)peripheral:(id)arg1 didReadRSSI:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
-- (void)peripheralDisconnectedWithCompletion:(id /* block */)arg1;
+- (void)peripheralDisconnectedWithCompletion:(id)arg1;
 - (id)peripheralIndentifier;
 - (id)propertiesAwaiting;
 - (id)queue;
 - (void)respond:(id)arg1 forProperty:(id)arg2 withError:(id)arg3;
 - (void)service:(id)arg1 didReadProperty:(id)arg2 value:(id)arg3 error:(id)arg4;
 - (id)services;
-- (void)setDiscoveredServices:(BOOL)arg1;
+- (void)setDiscoveredServices:(bool)arg1;
 - (void)setHealthDaemon:(id)arg1;
 - (void)setPendingDeviceInformationLoadedBlocks:(id)arg1;
 - (void)setPeripheral:(id)arg1;

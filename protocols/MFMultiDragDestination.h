@@ -6,11 +6,11 @@
 @required
 
 - (UIView *)destinationViewForDrop;
-- (void)dragEnteredAtPoint:(struct CGPoint { float x1; float x2; })arg1 withItems:(NSArray *)arg2;
+- (void)dragEnteredAtPoint:(struct CGPoint { double x1; double x2; })arg1 withItems:(NSArray *)arg2;
 - (void)dragExitedWithItems:(NSArray *)arg1;
-- (void)dragMovedToPoint:(struct CGPoint { float x1; float x2; })arg1 withItems:(NSArray *)arg2;
+- (void)dragMovedToPoint:(struct CGPoint { double x1; double x2; })arg1 withItems:(NSArray *)arg2;
 - (void)dropItems:(NSArray *)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDroppedItem:(id <MFDraggableItem>)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameForDroppedItem:(id <MFDraggableItem>)arg1;
 - (NSArray *)supportedDropTypes:(NSArray *)arg1;
 - (void)willDropItems:(NSArray *)arg1;
 

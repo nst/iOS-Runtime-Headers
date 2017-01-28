@@ -4,20 +4,20 @@
 
 @interface GCControllerButtonInput : GCControllerElement
 
-@property (getter=isPressed, nonatomic, readonly) BOOL pressed;
-@property (nonatomic, copy) id /* block */ pressedChangedHandler;
+@property (getter=isPressed, nonatomic, readonly) bool pressed;
+@property (nonatomic, copy) id pressedChangedHandler;
 @property (nonatomic, readonly) float value;
-@property (nonatomic, copy) id /* block */ valueChangedHandler;
+@property (nonatomic, copy) id valueChangedHandler;
 
-- (BOOL)_setValue:(float)arg1;
-- (BOOL)_setValue:(float)arg1 queue:(id)arg2;
-- (BOOL)isPressed;
-- (id /* block */)pressedChangedHandler;
-- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
-- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1 queue:(id)arg2;
-- (void)setPressedChangedHandler:(id /* block */)arg1;
-- (void)setValueChangedHandler:(id /* block */)arg1;
+- (bool)_setValue:(float)arg1;
+- (bool)_setValue:(float)arg1 queue:(id)arg2;
+- (bool)isPressed;
+- (id)pressedChangedHandler;
+- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (bool)setHIDValue:(struct __IOHIDValue { }*)arg1 queue:(id)arg2;
+- (void)setPressedChangedHandler:(id)arg1;
+- (void)setValueChangedHandler:(id)arg1;
 - (float)value;
-- (id /* block */)valueChangedHandler;
+- (id)valueChangedHandler;
 
 @end

@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PHFetchResult *keyFaceAssetFetchResult;
 @property (nonatomic, readonly) PHManualFetchResult *peopleFetchResult;
 @property (readonly) Class superclass;
@@ -24,10 +24,10 @@
 - (id)initWithPhotosDataSource:(id)arg1 parentContext:(id)arg2 people:(id)arg3;
 - (id)keyFaceAssetFetchResult;
 - (id)peopleFetchResult;
-- (void)performChanges:(id /* block */)arg1;
+- (void)performChanges:(id)arg1;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)setKeyFaceAssetFetchResult:(id)arg1;
-- (BOOL)shouldUseKeyFace;
+- (bool)shouldUseKeyFace;
 
 @end

@@ -20,13 +20,13 @@
 - (id)completionCallbacks;
 - (void)handleOperationCheckpoint:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
-- (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(id /* block */)arg3;
+- (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(id)arg3;
 - (id)init;
 - (id)progressCallbacks;
-- (void)registerCheckpointCallback:(id /* block */)arg1 forOperation:(id)arg2;
-- (void)registerCommandCallback:(id /* block */)arg1 forOperation:(id)arg2;
-- (void)registerCompletionCallback:(id /* block */)arg1 forOperation:(id)arg2;
-- (void)registerProgressCallback:(id /* block */)arg1 forOperation:(id)arg2;
+- (void)registerCheckpointCallback:(id)arg1 forOperation:(id)arg2;
+- (void)registerCommandCallback:(id)arg1 forOperation:(id)arg2;
+- (void)registerCompletionCallback:(id)arg1 forOperation:(id)arg2;
+- (void)registerProgressCallback:(id)arg1 forOperation:(id)arg2;
 - (void)removeAllCallbacks;
 - (void)setCheckpointCallbacks:(id)arg1;
 - (void)setCommandCallbacks:(id)arg1;

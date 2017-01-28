@@ -6,7 +6,7 @@
     NSArray * _actions;
     CNQuickActionsManager * _actionsManager;
     UIAlertController * _alertController;
-    BOOL  _expanded;
+    bool  _expanded;
     UIView * _sourceView;
 }
 
@@ -15,15 +15,15 @@
 @property (nonatomic, retain) UIAlertController *alertController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL expanded;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool expanded;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_performAction:(id)arg1;
 - (id)_presentingViewControllerForSystemProvidedPresentationOfAlertController:(id)arg1;
 - (void)_refreshAlertController;
-- (BOOL)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (bool)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_updateActions;
 - (void)_updateWithActions:(id)arg1;
 - (void)_willBeginSystemProvidedPresentationOfAlertController:(id)arg1;
@@ -31,17 +31,17 @@
 - (id)actionsManager;
 - (id)actionsManager:(id)arg1 presentingViewControllerForAction:(id)arg2;
 - (id)alertController;
-- (void)dismissAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)expanded;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)dismissAnimated:(bool)arg1 completionHandler:(id)arg2;
+- (bool)expanded;
+- (bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)init;
-- (BOOL)isVisible;
-- (void)presentAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (bool)isVisible;
+- (void)presentAnimated:(bool)arg1 completionHandler:(id)arg2;
 - (void)setActions:(id)arg1;
 - (void)setActionsManager:(id)arg1;
 - (void)setAlertController:(id)arg1;
 - (void)setContact:(id)arg1;
-- (void)setExpanded:(BOOL)arg1;
+- (void)setExpanded:(bool)arg1;
 - (void)setSourceView:(id)arg1;
 - (id)sourceView;
 

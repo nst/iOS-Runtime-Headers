@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)canCreateInputStream;
-- (BOOL)canSeek;
+- (bool)canCreateInputStream;
+- (bool)canSeek;
 - (void)close;
 - (<SFUOutputStream> *)closeLocalStream;
 - (<SFUInputStream> *)inputStream;

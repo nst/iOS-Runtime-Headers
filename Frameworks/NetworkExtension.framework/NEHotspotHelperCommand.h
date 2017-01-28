@@ -7,14 +7,14 @@
 }
 
 @property struct __CNPluginCommand { }*command;
-@property (readonly) int commandType;
+@property (readonly) long long commandType;
 @property (readonly) NSString *interfaceName;
 @property (readonly) NEHotspotNetwork *network;
 @property (readonly) NSArray *networkList;
 
 - (struct __CNPluginCommand { }*)command;
-- (int)commandType;
-- (id)createResponse:(int)arg1;
+- (long long)commandType;
+- (id)createResponse:(long long)arg1;
 - (id)createTCPConnection:(id)arg1;
 - (id)createUDPSession:(id)arg1;
 - (void)dealloc;

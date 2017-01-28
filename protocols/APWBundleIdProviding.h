@@ -6,7 +6,7 @@
 @required
 
 - (NSString *)bundleIdentifier;
-- (int)reason;
-- (int)sources;
+- (long long)reason;
+- (long long)sources;
 
 @end

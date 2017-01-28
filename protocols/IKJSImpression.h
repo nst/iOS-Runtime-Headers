@@ -3,13 +3,4 @@
 
 @protocol IKJSImpression <JSExport>
 
-@required
-
-- (NSArray *)children;
-- (NSString *)data;
-- (NSString *)impressionQueueTag;
-- (long)index;
-- (id)parent;
-- (NSArray *)timestamps;
-
 @end

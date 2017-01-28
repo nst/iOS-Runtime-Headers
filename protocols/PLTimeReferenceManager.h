@@ -5,7 +5,7 @@
 
 @required
 
-- (NSDate *)currentTimeFromTimeReference:(int)arg1 toTimeReference:(int)arg2;
+- (NSDate *)currentTimeFromTimeReference:(long long)arg1 toTimeReference:(long long)arg2;
 - (NSDate *)initialMonotonicTime;
 
 @end

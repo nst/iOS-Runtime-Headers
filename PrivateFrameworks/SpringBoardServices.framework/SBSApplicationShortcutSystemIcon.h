@@ -3,21 +3,21 @@
  */
 
 @interface SBSApplicationShortcutSystemIcon : SBSApplicationShortcutIcon {
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) UIImage *sbui_image;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
 
 - (id)_initForSubclass;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
-- (id)initWithType:(int)arg1;
+- (unsigned long long)hash;
+- (id)initWithType:(long long)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)type;
+- (bool)isEqual:(id)arg1;
+- (long long)type;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
 

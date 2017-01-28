@@ -3,25 +3,25 @@
  */
 
 @interface HUTitleValueCell : HUIconCell {
-    BOOL  _hideTitle;
-    BOOL  _hideValue;
+    bool  _hideTitle;
+    bool  _hideValue;
     NSArray * _horizontalConstraints;
     UIFont * _titleFont;
     UILabel * _titleLabel;
     NSString * _titleText;
-    BOOL  _valueColorFollowsTintColor;
+    bool  _valueColorFollowsTintColor;
     UIFont * _valueFont;
     UILabel * _valueLabel;
     NSString * _valueText;
 }
 
-@property (nonatomic) BOOL hideTitle;
-@property (nonatomic) BOOL hideValue;
+@property (nonatomic) bool hideTitle;
+@property (nonatomic) bool hideValue;
 @property (nonatomic, retain) NSArray *horizontalConstraints;
 @property (nonatomic, retain) UIFont *titleFont;
 @property (nonatomic, readonly) UILabel *titleLabel;
 @property (nonatomic, retain) NSString *titleText;
-@property (nonatomic) BOOL valueColorFollowsTintColor;
+@property (nonatomic) bool valueColorFollowsTintColor;
 @property (nonatomic, retain) UIFont *valueFont;
 @property (nonatomic, readonly) UILabel *valueLabel;
 @property (nonatomic, retain) NSString *valueText;
@@ -29,18 +29,18 @@
 - (void).cxx_destruct;
 - (void)addTitleLabel;
 - (void)addValueLabel;
-- (BOOL)hideTitle;
-- (BOOL)hideValue;
+- (bool)hideTitle;
+- (bool)hideValue;
 - (id)horizontalConstraints;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (void)setDisabled:(BOOL)arg1;
-- (void)setHideTitle:(BOOL)arg1;
-- (void)setHideValue:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
+- (void)setHideTitle:(bool)arg1;
+- (void)setHideValue:(bool)arg1;
 - (void)setHorizontalConstraints:(id)arg1;
 - (void)setTitleFont:(id)arg1;
 - (void)setTitleText:(id)arg1;
-- (void)setValueColorFollowsTintColor:(BOOL)arg1;
+- (void)setValueColorFollowsTintColor:(bool)arg1;
 - (void)setValueFont:(id)arg1;
 - (void)setValueText:(id)arg1;
 - (void)tintColorDidChange;
@@ -49,9 +49,9 @@
 - (id)titleText;
 - (void)updateConstraints;
 - (void)updateTitle;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 - (void)updateValue;
-- (BOOL)valueColorFollowsTintColor;
+- (bool)valueColorFollowsTintColor;
 - (id)valueFont;
 - (id)valueLabel;
 - (id)valueText;

@@ -8,20 +8,20 @@
     NSObject<NSSecureCoding> * _object;
 }
 
-@property (nonatomic, readonly) unsigned int fails;
+@property (nonatomic, readonly) unsigned long long fails;
 @property (nonatomic, readonly) NSObject<NSSecureCoding> *object;
 @property (nonatomic, readonly) NSString *queueId;
-@property (nonatomic, readonly) unsigned int state;
+@property (nonatomic, readonly) unsigned long long state;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)fails;
+- (unsigned long long)fails;
 - (void)finish;
 - (id)initWithObject:(id)arg1 name:(id)arg2 dir:(id)arg3;
 - (void)markAsFailed;
 - (id)object;
 - (id)queueId;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

@@ -14,7 +14,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)internalVerifications;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)serverChecksums;
 - (void)setInternalVerifications:(id)arg1;
 - (void)setServerChecksums:(id)arg1;

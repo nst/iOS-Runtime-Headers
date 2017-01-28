@@ -3,27 +3,27 @@
  */
 
 @interface HUServiceIconCell : UICollectionViewCell {
-    BOOL  _hasConfiguredConstraints;
+    bool  _hasConfiguredConstraints;
     <HFIconDescriptor> * _iconDescriptor;
     HUIconView * _iconView;
 }
 
-@property (nonatomic) BOOL hasConfiguredConstraints;
+@property (nonatomic) bool hasConfiguredConstraints;
 @property (nonatomic, retain) <HFIconDescriptor> *iconDescriptor;
 @property (nonatomic, readonly) HUIconView *iconView;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_updateBackgroundColor;
-- (BOOL)hasConfiguredConstraints;
+- (bool)hasConfiguredConstraints;
 - (id)iconDescriptor;
 - (id)iconView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)prepareForReuse;
-- (void)setHasConfiguredConstraints:(BOOL)arg1;
+- (void)setHasConfiguredConstraints:(bool)arg1;
 - (void)setIconDescriptor:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)tintColorDidChange;
 - (void)updateConstraints;
 

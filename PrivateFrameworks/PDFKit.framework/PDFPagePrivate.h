@@ -6,33 +6,33 @@
     NSMutableArray * annotations;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  artBox;
     NSMutableAttributedString * attributedString;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  bleedBox;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  cropBox;
     bool  displaysAnnotations;
@@ -47,8 +47,8 @@
     struct CGPDFLayout { } * layout;
     NSThread * layoutThread;
     struct _opaque_pthread_cond_t { 
-        long __sig; 
-        BOOL __opaque[24]; 
+        long long __sig; 
+        BOOL __opaque[40]; 
     }  layoutThreadCondition;
     NSLock * lock_accessAnnotations;
     NSLock * lock_accessLayout;
@@ -57,30 +57,30 @@
     NSLock * lock_text;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mediaBox;
-    int  numChars;
+    long long  numChars;
     struct CGPDFPage { } * page;
     bool  ranDataDetectors;
-    int  rotation;
+    long long  rotation;
     NSMutableArray * scannedAnnotations;
     struct __CFString { } * text;
-    BOOL  textCharsLoaded;
-    struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } * threadFetchingLayout;
+    bool  textCharsLoaded;
+    struct _opaque_pthread_t { long long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[8176]; } * threadFetchingLayout;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  trimBox;
     NSMutableArray * unsupportedElements;

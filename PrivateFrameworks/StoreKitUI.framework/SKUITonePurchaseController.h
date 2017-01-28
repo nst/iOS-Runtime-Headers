@@ -4,7 +4,7 @@
 
 @interface SKUITonePurchaseController : NSObject <CNContactPickerDelegate> {
     SKUIClientContext * _clientContext;
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     CNContactPickerViewController * _contactPickerController;
     SKUIItem * _item;
     UIViewController * _parentViewController;
@@ -13,7 +13,7 @@
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UIViewController *parentViewController;
 @property (readonly) Class superclass;
 
@@ -31,6 +31,6 @@
 - (id)parentViewController;
 - (void)setClientContext:(id)arg1;
 - (void)setParentViewController:(id)arg1;
-- (void)showPurchaseFlowWithCompletionBlock:(id /* block */)arg1;
+- (void)showPurchaseFlowWithCompletionBlock:(id)arg1;
 
 @end

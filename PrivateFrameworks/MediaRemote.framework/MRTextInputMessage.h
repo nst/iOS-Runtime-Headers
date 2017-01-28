@@ -4,12 +4,12 @@
 
 @interface MRTextInputMessage : MRProtocolMessage
 
-@property (nonatomic, readonly) unsigned int actionType;
+@property (nonatomic, readonly) unsigned long long actionType;
 @property (nonatomic, readonly) NSString *text;
 
-- (unsigned int)actionType;
-- (id)initWithActionType:(unsigned int)arg1 text:(id)arg2;
+- (unsigned long long)actionType;
+- (id)initWithActionType:(unsigned long long)arg1 text:(id)arg2;
 - (id)text;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

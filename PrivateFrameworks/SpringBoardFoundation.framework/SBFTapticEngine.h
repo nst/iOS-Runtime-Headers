@@ -9,19 +9,19 @@
     NSObject<OS_dispatch_queue> * _commitReasonsQueue;
     NSMutableSet * _previewReasons;
     NSObject<OS_dispatch_queue> * _previewReasonsQueue;
-    BOOL  _supportsFeedbackActuation;
+    bool  _supportsFeedbackActuation;
     _UITapticEngine * _tapticEngine;
 }
 
-@property (nonatomic, readonly) BOOL supportsFeedbackActuation;
+@property (nonatomic, readonly) bool supportsFeedbackActuation;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)actuateFeedback:(int)arg1;
-- (void)coolDownForFeedback:(unsigned int)arg1 withReason:(id)arg2;
+- (void)actuateFeedback:(long long)arg1;
+- (void)coolDownForFeedback:(unsigned long long)arg1 withReason:(id)arg2;
 - (id)init;
-- (BOOL)supportsFeedbackActuation;
-- (void)warmUpForFeedback:(unsigned int)arg1 withReason:(id)arg2;
+- (bool)supportsFeedbackActuation;
+- (void)warmUpForFeedback:(unsigned long long)arg1 withReason:(id)arg2;
 
 @end

@@ -7,8 +7,8 @@
     IMDoubleLinkedList * _linkedList;
 }
 
-- (BOOL)containsKey:(id)arg1;
-- (BOOL)containsOrderedObject:(id)arg1;
+- (bool)containsKey:(id)arg1;
+- (bool)containsOrderedObject:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)orderedObjectForKey:(id)arg1;

@@ -3,13 +3,13 @@
  */
 
 @interface WebUIAlert : NSObject {
-    id /* block */  _actionHandler;
+    id  _actionHandler;
     NSString * _bodyText;
     id  _context;
     int  _defaultAction;
     int  _hideAction;
     NSArray * _identities;
-    int  _indexOfSelectedIdentity;
+    long long  _indexOfSelectedIdentity;
     int  _otherAction;
     int  _tableAction;
     NSString * _title;
@@ -17,7 +17,7 @@
     int  _type;
 }
 
-@property (nonatomic, copy) id /* block */ actionHandler;
+@property (nonatomic, copy) id actionHandler;
 @property (nonatomic, readonly, copy) NSString *bodyText;
 @property (nonatomic, readonly, copy) NSArray *buttonTitles;
 @property (nonatomic, retain) id context;
@@ -32,8 +32,8 @@
 
 - (void).cxx_destruct;
 - (id)_buttonTitleForAction:(int)arg1;
-- (int)actionForButtonTag:(int)arg1;
-- (id /* block */)actionHandler;
+- (int)actionForButtonTag:(long long)arg1;
+- (id)actionHandler;
 - (id)bodyText;
 - (id)buttonTitles;
 - (id)context;
@@ -45,11 +45,11 @@
 - (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4;
 - (id)initWithType:(int)arg1 title:(id)arg2 defaultAction:(int)arg3 otherAction:(int)arg4 tableAction:(int)arg5;
 - (id)selectedIdentity;
-- (void)setActionHandler:(id /* block */)arg1;
+- (void)setActionHandler:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setHideAction:(int)arg1;
 - (void)setIdentities:(id)arg1;
-- (void)setSelectedTableItemIndex:(int)arg1;
+- (void)setSelectedTableItemIndex:(long long)arg1;
 - (int)tableAction;
 - (id)title;
 - (id)titles;

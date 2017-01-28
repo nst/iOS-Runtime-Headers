@@ -10,12 +10,12 @@
 }
 
 - (id)arrayType;
-- (unsigned int)dataType;
+- (unsigned long long)dataType;
 - (void)dealloc;
 - (id)describe;
-- (id)initWithName:(id)arg1 offset:(unsigned int)arg2 dataType:(unsigned int)arg3 details:(id)arg4;
+- (id)initWithName:(id)arg1 offset:(unsigned long long)arg2 dataType:(unsigned long long)arg3 details:(id)arg4;
 - (id)name;
-- (unsigned int)offset;
+- (unsigned long long)offset;
 - (id)structType;
 
 @end

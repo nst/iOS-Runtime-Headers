@@ -9,7 +9,7 @@
 @property UIDocumentInteractionController *documentInteractionController;
 
 - (void).cxx_destruct;
-- (BOOL)_activitySupportsPromiseURLs;
+- (bool)_activitySupportsPromiseURLs;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)documentInteractionController;

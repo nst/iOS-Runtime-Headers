@@ -9,12 +9,13 @@
 - (NSString *)contentStoreFrontID;
 - (NSString *)currentStoreFrontID;
 - (NSString *)endpointConnectionClientID;
-- (BOOL)iCloudAccountChanged;
+- (bool)iCloudAccountChanged;
 - (NSString *)iTunesAccountName;
-- (BOOL)isPrivateDataSyncingEnabled;
-- (BOOL)isUserSignedInToiCloud;
-- (BOOL)isUserSignedIntoiTunes;
-- (void)loadStoreFrontIfNeededWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (bool)isContentStoreFrontSupported;
+- (bool)isPrivateDataSyncingEnabled;
+- (bool)isUserSignedInToiCloud;
+- (bool)isUserSignedIntoiTunes;
+- (void)loadStoreFrontIfNeededWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 - (NSString *)supportedContentStoreFrontID;
 - (NSString *)userStoreFrontID;
 

@@ -9,7 +9,7 @@
 @property (nonatomic, retain) SGMBadInteractionIgnored *badInteractionIgnored;
 
 + (id)instance;
-+ (void)recordInteractionIgnoredWithReason:(struct SGMInteractionIgnoredReason_ { unsigned int x1; })arg1;
++ (void)recordInteractionIgnoredWithReason:(struct SGMInteractionIgnoredReason_ { unsigned long long x1; })arg1;
 
 - (void).cxx_destruct;
 - (id)badInteractionIgnored;

@@ -6,7 +6,7 @@
 @required
 
 - (void)activate;
-- (BOOL)active;
+- (bool)active;
 - (void)deactivate;
 
 @end

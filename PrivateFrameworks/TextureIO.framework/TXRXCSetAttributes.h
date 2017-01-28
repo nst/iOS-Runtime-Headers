@@ -3,16 +3,16 @@
  */
 
 @interface TXRXCSetAttributes : NSObject {
-    unsigned int  _interpretation;
-    unsigned int  _origin;
+    unsigned long long  _interpretation;
+    unsigned long long  _origin;
 }
 
-@property (nonatomic) unsigned int interpretation;
-@property (nonatomic) unsigned int origin;
+@property (nonatomic) unsigned long long interpretation;
+@property (nonatomic) unsigned long long origin;
 
-- (unsigned int)interpretation;
-- (unsigned int)origin;
-- (void)setInterpretation:(unsigned int)arg1;
-- (void)setOrigin:(unsigned int)arg1;
+- (unsigned long long)interpretation;
+- (unsigned long long)origin;
+- (void)setInterpretation:(unsigned long long)arg1;
+- (void)setOrigin:(unsigned long long)arg1;
 
 @end

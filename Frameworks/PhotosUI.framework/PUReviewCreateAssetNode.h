@@ -16,13 +16,13 @@
 }
 
 @property (nonatomic, readonly) <PUAdjustmentURLNode> *adjustmentURLNode;
-@property (getter=isCanceled, readonly) BOOL canceled;
-@property (getter=isComplete, readonly) BOOL complete;
+@property (getter=isCanceled, readonly) bool canceled;
+@property (getter=isComplete, readonly) bool complete;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXRunNodeDelegate> *delegate;
 @property (nonatomic, readonly, copy) NSArray *dependencies;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <PUReviewImageURLNode> *imageInfoNode;
 @property (nonatomic, readonly) PUReviewAsset *inputAsset;
 @property (nonatomic, readonly) <PUImageDataRenderNode> *renderImageDataNode;
@@ -30,12 +30,12 @@
 @property (nonatomic, readonly) <PUVideoAssetNode> *renderVideoAssetNode;
 @property (nonatomic, readonly) <PUVideoURLNode> *renderVideoURLNode;
 @property (nonatomic, readonly) PUReviewAsset *reviewAsset;
-@property (getter=isRunning, readonly) BOOL running;
-@property (readonly) unsigned int state;
+@property (getter=isRunning, readonly) bool running;
+@property (readonly) unsigned long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <PUVideoAssetNode> *videoAssetNode;
 @property (nonatomic, readonly) <PUReviewVideoURLNode> *videoURLNode;
-@property (getter=isWaiting, readonly) BOOL waiting;
+@property (getter=isWaiting, readonly) bool waiting;
 
 - (void).cxx_destruct;
 - (id)adjustmentURLNode;

@@ -4,6 +4,6 @@
 
 @interface LPLinkRendererShared : NSObject
 
-+ (BOOL)shouldUseSkinnyWidthForStyle:(int)arg1 quotedText:(id)arg2 image:(id)arg3 video:(id)arg4;
++ (bool)shouldUseSkinnyWidthForStyle:(long long)arg1 quotedText:(id)arg2 image:(id)arg3 video:(id)arg4;
 
 @end

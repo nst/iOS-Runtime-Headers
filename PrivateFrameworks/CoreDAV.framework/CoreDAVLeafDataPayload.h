@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSData *dataPayload;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSURL *serverID;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *syncKey;

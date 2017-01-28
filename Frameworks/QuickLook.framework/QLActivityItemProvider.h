@@ -10,7 +10,7 @@
 @property (retain) QLItem *activityPreviewItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) QLPreviewPrinter *printer;
 @property (readonly) Class superclass;
 

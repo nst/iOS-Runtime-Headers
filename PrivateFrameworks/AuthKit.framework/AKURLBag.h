@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, readonly) NSString *APSEnvironment;
-@property (nonatomic, readonly) unsigned int IDMSEnvironment;
+@property (nonatomic, readonly) unsigned long long IDMSEnvironment;
 @property (nonatomic, readonly) NSURL *absintheCertURL;
 @property (nonatomic, readonly) NSURL *absintheSessionURL;
 @property (nonatomic, readonly) NSURL *basicAuthURL;
@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) NSURL *endProvisioningURL;
 @property (nonatomic, readonly) NSURL *escapeHatchURL;
 @property (nonatomic, readonly) NSURL *fetchEmailsURL;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSURL *iForgotContinuationURL;
 @property (nonatomic, readonly) NSURL *iForgotURL;
 @property (nonatomic, readonly) NSURL *notificationAckURL;
@@ -44,12 +44,12 @@
 
 + (id)_newBagURLRequest;
 + (id)keyForEscapeHatchURL;
-+ (BOOL)looksLikeiForgotURLKey:(id)arg1;
++ (bool)looksLikeiForgotURLKey:(id)arg1;
 + (id)sharedBag;
 
 - (void).cxx_destruct;
 - (id)APSEnvironment;
-- (unsigned int)IDMSEnvironment;
+- (unsigned long long)IDMSEnvironment;
 - (void)_handleURLBagResponseWithData:(id)arg1 error:(id)arg2;
 - (void)_requestNewURLBagIfNecessary;
 - (id)_urlAtKey:(id)arg1;
@@ -71,7 +71,7 @@
 - (id)notificationAckURL;
 - (void)refresh;
 - (id)renewRecoveryTokenURL;
-- (BOOL)requestNewURLBagIfNecessaryWithError:(id*)arg1;
+- (bool)requestNewURLBagIfNecessaryWithError:(id*)arg1;
 - (id)startProvisioningURL;
 - (id)stingrayDisableURL;
 - (id)syncAnisetteURL;

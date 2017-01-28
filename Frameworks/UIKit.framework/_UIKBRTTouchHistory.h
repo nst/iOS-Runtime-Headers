@@ -5,36 +5,36 @@
 @interface _UIKBRTTouchHistory : NSObject <NSCopying> {
     NSMutableArray * _history;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _historyOffset;
-    BOOL  _isLeftHand;
+    bool  _isLeftHand;
     double  _lastDecayTime;
 }
 
-@property (nonatomic, readonly) BOOL hasHistory;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } historyOffset;
-@property (nonatomic) BOOL isLeftHand;
+@property (nonatomic, readonly) bool hasHistory;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } historyOffset;
+@property (nonatomic) bool isLeftHand;
 @property (nonatomic, readonly) double lastTime;
 
 - (void).cxx_destruct;
-- (void)_decayHistoryToSize:(unsigned int)arg1;
+- (void)_decayHistoryToSize:(unsigned long long)arg1;
 - (void)_sortHistory;
 - (void)_updateOffset;
 - (void)addInfo:(id)arg1;
-- (void)adjustHistoryOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)adjustHistoryOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)clearHistory;
-- (BOOL)containsInfo:(id)arg1;
+- (bool)containsInfo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)decayHistory;
-- (BOOL)hasHistory;
-- (struct CGPoint { float x1; float x2; })historyOffset;
-- (id)initWithIsLeftHand:(BOOL)arg1;
-- (BOOL)isLeftHand;
+- (bool)hasHistory;
+- (struct CGPoint { double x1; double x2; })historyOffset;
+- (id)initWithIsLeftHand:(bool)arg1;
+- (bool)isLeftHand;
 - (double)lastTime;
 - (void)removeInfo:(id)arg1;
 - (void)reset;
-- (void)setIsLeftHand:(BOOL)arg1;
+- (void)setIsLeftHand:(bool)arg1;
 
 @end

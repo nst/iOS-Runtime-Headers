@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)inviteCode;
-- (BOOL)isUserInitiated;
+- (bool)isUserInitiated;
 - (void)setInviteCode:(id)arg1;
 - (id)urlRequest;
 - (id)urlString;

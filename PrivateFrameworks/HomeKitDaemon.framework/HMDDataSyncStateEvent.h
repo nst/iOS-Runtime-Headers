@@ -3,16 +3,16 @@
  */
 
 @interface HMDDataSyncStateEvent : HMDLogEvent {
-    unsigned int  _dataSyncState;
+    unsigned long long  _dataSyncState;
 }
 
-@property (nonatomic) unsigned int dataSyncState;
+@property (nonatomic) unsigned long long dataSyncState;
 
-+ (id)dataSyncStateEstablished:(unsigned int)arg1;
++ (id)dataSyncStateEstablished:(unsigned long long)arg1;
 + (id)uuid;
 
-- (unsigned int)dataSyncState;
-- (id)initWithDataSyncState:(unsigned int)arg1;
-- (void)setDataSyncState:(unsigned int)arg1;
+- (unsigned long long)dataSyncState;
+- (id)initWithDataSyncState:(unsigned long long)arg1;
+- (void)setDataSyncState:(unsigned long long)arg1;
 
 @end

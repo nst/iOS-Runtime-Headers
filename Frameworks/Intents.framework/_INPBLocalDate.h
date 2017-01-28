@@ -15,9 +15,9 @@
 }
 
 @property (nonatomic) long long dayOfMonth;
-@property (nonatomic) BOOL hasDayOfMonth;
-@property (nonatomic) BOOL hasMonth;
-@property (nonatomic) BOOL hasYear;
+@property (nonatomic) bool hasDayOfMonth;
+@property (nonatomic) bool hasMonth;
+@property (nonatomic) bool hasYear;
 @property (nonatomic) long long month;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic) long long year;
@@ -29,18 +29,18 @@
 - (long long)dayOfMonth;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDayOfMonth;
-- (BOOL)hasMonth;
-- (BOOL)hasYear;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDayOfMonth;
+- (bool)hasMonth;
+- (bool)hasYear;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (long long)month;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDayOfMonth:(long long)arg1;
-- (void)setHasDayOfMonth:(BOOL)arg1;
-- (void)setHasMonth:(BOOL)arg1;
-- (void)setHasYear:(BOOL)arg1;
+- (void)setHasDayOfMonth:(bool)arg1;
+- (void)setHasMonth:(bool)arg1;
+- (void)setHasYear:(bool)arg1;
 - (void)setMonth:(long long)arg1;
 - (void)setYear:(long long)arg1;
 - (id)unknownFields;

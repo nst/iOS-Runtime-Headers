@@ -11,8 +11,8 @@
 
 - (<_UIFocusRegionContainer> *)_focusedItemRegionContainer;
 - (NSArray *)_linearFocusMovementSequences;
-- (int)_preferredFocusMovementStyle;
-- (BOOL)_reversesLinearFocusWrapping;
+- (long long)_preferredFocusMovementStyle;
+- (bool)_reversesLinearFocusWrapping;
 - (void)_setNeedsNonDeferredFocusUpdate;
 
 @end

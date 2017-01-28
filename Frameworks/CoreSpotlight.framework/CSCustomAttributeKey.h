@@ -4,40 +4,40 @@
 
 @interface CSCustomAttributeKey : NSObject <NSCopying, NSSecureCoding> {
     NSString * _keyName;
-    BOOL  _multiValued;
-    BOOL  _searchable;
-    BOOL  _searchableByDefault;
-    BOOL  _unique;
+    bool  _multiValued;
+    bool  _searchable;
+    bool  _searchableByDefault;
+    bool  _unique;
 }
 
 @property (retain) NSString *keyName;
-@property (getter=isMultiValued) BOOL multiValued;
-@property (getter=isSearchable) BOOL searchable;
-@property (getter=isSearchableByDefault) BOOL searchableByDefault;
-@property (getter=isUnique) BOOL unique;
+@property (getter=isMultiValued) bool multiValued;
+@property (getter=isSearchable) bool searchable;
+@property (getter=isSearchableByDefault) bool searchableByDefault;
+@property (getter=isUnique) bool unique;
 
-+ (BOOL)_keyNameIsValid:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)_keyNameIsValid:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeyName:(id)arg1;
-- (id)initWithKeyName:(id)arg1 searchable:(BOOL)arg2 searchableByDefault:(BOOL)arg3 unique:(BOOL)arg4 multiValued:(BOOL)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMultiValued;
-- (BOOL)isSearchable;
-- (BOOL)isSearchableByDefault;
-- (BOOL)isUnique;
+- (id)initWithKeyName:(id)arg1 searchable:(bool)arg2 searchableByDefault:(bool)arg3 unique:(bool)arg4 multiValued:(bool)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isMultiValued;
+- (bool)isSearchable;
+- (bool)isSearchableByDefault;
+- (bool)isUnique;
 - (id)keyName;
 - (void)setKeyName:(id)arg1;
-- (void)setMultiValued:(BOOL)arg1;
-- (void)setSearchable:(BOOL)arg1;
-- (void)setSearchableByDefault:(BOOL)arg1;
-- (void)setUnique:(BOOL)arg1;
+- (void)setMultiValued:(bool)arg1;
+- (void)setSearchable:(bool)arg1;
+- (void)setSearchableByDefault:(bool)arg1;
+- (void)setUnique:(bool)arg1;
 
 @end

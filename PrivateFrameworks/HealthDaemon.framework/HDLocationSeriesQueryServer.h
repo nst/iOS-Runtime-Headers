@@ -3,7 +3,7 @@
  */
 
 @interface HDLocationSeriesQueryServer : HDQueryServer {
-    unsigned int  _batchCount;
+    unsigned long long  _batchCount;
     NSObject<OS_dispatch_queue> * _batchQueue;
     HKLocationSeriesSample * _locationSeries;
 }

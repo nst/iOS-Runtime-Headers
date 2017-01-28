@@ -4,68 +4,68 @@
 
 @interface SFRowCardSection : SFCardSection {
     SFImage * _attributionImage;
-    BOOL  _cardPaddingBottom;
+    bool  _cardPaddingBottom;
     SFImage * _image;
-    BOOL  _imageIsRightAligned;
+    bool  _imageIsRightAligned;
     NSString * _key;
-    BOOL  _keyNoWrap;
+    bool  _keyNoWrap;
     NSNumber * _keyWeight;
     SFText * _leadingText;
     NSString * _leftText;
     NSString * _rightText;
     SFText * _trailingText;
     NSString * _value;
-    BOOL  _valueNoWrap;
+    bool  _valueNoWrap;
     NSNumber * _valueWeight;
 }
 
 @property (nonatomic, retain) SFImage *attributionImage;
-@property (nonatomic) BOOL cardPaddingBottom;
+@property (nonatomic) bool cardPaddingBottom;
 @property (nonatomic, retain) SFImage *image;
-@property (nonatomic) BOOL imageIsRightAligned;
+@property (nonatomic) bool imageIsRightAligned;
 @property (nonatomic, copy) NSString *key;
-@property (nonatomic) BOOL keyNoWrap;
+@property (nonatomic) bool keyNoWrap;
 @property (nonatomic, copy) NSNumber *keyWeight;
 @property (nonatomic, retain) SFText *leadingText;
 @property (nonatomic, copy) NSString *leftText;
 @property (nonatomic, copy) NSString *rightText;
 @property (nonatomic, retain) SFText *trailingText;
 @property (nonatomic, copy) NSString *value;
-@property (nonatomic) BOOL valueNoWrap;
+@property (nonatomic) bool valueNoWrap;
 @property (nonatomic, copy) NSNumber *valueWeight;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)attributionImage;
-- (BOOL)cardPaddingBottom;
+- (bool)cardPaddingBottom;
 - (void)encodeWithCoder:(id)arg1;
 - (id)image;
-- (BOOL)imageIsRightAligned;
+- (bool)imageIsRightAligned;
 - (id)initWithCoder:(id)arg1;
 - (id)key;
-- (BOOL)keyNoWrap;
+- (bool)keyNoWrap;
 - (id)keyWeight;
 - (id)leadingText;
 - (id)leftText;
 - (id)rightText;
 - (void)setAttributionImage:(id)arg1;
-- (void)setCardPaddingBottom:(BOOL)arg1;
+- (void)setCardPaddingBottom:(bool)arg1;
 - (void)setImage:(id)arg1;
-- (void)setImageIsRightAligned:(BOOL)arg1;
+- (void)setImageIsRightAligned:(bool)arg1;
 - (void)setKey:(id)arg1;
-- (void)setKeyNoWrap:(BOOL)arg1;
+- (void)setKeyNoWrap:(bool)arg1;
 - (void)setKeyWeight:(id)arg1;
 - (void)setLeadingText:(id)arg1;
 - (void)setLeftText:(id)arg1;
 - (void)setRightText:(id)arg1;
 - (void)setTrailingText:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValueNoWrap:(BOOL)arg1;
+- (void)setValueNoWrap:(bool)arg1;
 - (void)setValueWeight:(id)arg1;
 - (id)trailingText;
 - (id)value;
-- (BOOL)valueNoWrap;
+- (bool)valueNoWrap;
 - (id)valueWeight;
 
 @end

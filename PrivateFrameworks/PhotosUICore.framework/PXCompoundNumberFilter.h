@@ -11,6 +11,6 @@
 - (void).cxx_destruct;
 - (id)filters;
 - (void)setFilters:(id)arg1;
-- (float)updatedOutput;
+- (double)updatedOutput;
 
 @end

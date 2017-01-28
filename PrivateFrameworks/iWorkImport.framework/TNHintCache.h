@@ -5,8 +5,8 @@
 @interface TNHintCache : NSObject {
     TNPageCoordinateDictionary * mHintCacheEntryDictionary;
     TSDDrawableInfo * mInfo;
-    BOOL  mIsMaxColumnValid;
-    BOOL  mIsMaxRowValid;
+    bool  mIsMaxColumnValid;
+    bool  mIsMaxRowValid;
     TNPageController * mPageController;
     struct { 
         struct TSUCellCoord { 

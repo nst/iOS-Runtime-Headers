@@ -6,9 +6,9 @@
 @optional
 
 - (void)volumeController:(MPVolumeController *)arg1 EUVolumeLimitDidChange:(float)arg2;
-- (void)volumeController:(MPVolumeController *)arg1 EUVolumeLimitEnforcedDidChange:(BOOL)arg2;
-- (void)volumeController:(MPVolumeController *)arg1 mutedStateDidChange:(BOOL)arg2;
+- (void)volumeController:(MPVolumeController *)arg1 EUVolumeLimitEnforcedDidChange:(bool)arg2;
+- (void)volumeController:(MPVolumeController *)arg1 mutedStateDidChange:(bool)arg2;
 - (void)volumeController:(MPVolumeController *)arg1 volumeValueDidChange:(float)arg2;
-- (void)volumeController:(MPVolumeController *)arg1 volumeWarningStateDidChange:(int)arg2;
+- (void)volumeController:(MPVolumeController *)arg1 volumeWarningStateDidChange:(long long)arg2;
 
 @end

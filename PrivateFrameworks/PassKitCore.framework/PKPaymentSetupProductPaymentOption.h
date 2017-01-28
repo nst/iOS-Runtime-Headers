@@ -3,22 +3,22 @@
  */
 
 @interface PKPaymentSetupProductPaymentOption : NSObject <NSSecureCoding> {
-    int  _cardType;
-    unsigned int  _priority;
-    int  _supportedProtocols;
+    long long  _cardType;
+    unsigned long long  _priority;
+    long long  _supportedProtocols;
 }
 
-@property (nonatomic, readonly) int cardType;
-@property (nonatomic, readonly) unsigned int priority;
-@property (nonatomic, readonly) int supportedProtocols;
+@property (nonatomic, readonly) long long cardType;
+@property (nonatomic, readonly) unsigned long long priority;
+@property (nonatomic, readonly) long long supportedProtocols;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)cardType;
+- (long long)cardType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPaymentOptionDictionary:(id)arg1;
-- (unsigned int)priority;
-- (int)supportedProtocols;
+- (unsigned long long)priority;
+- (long long)supportedProtocols;
 
 @end

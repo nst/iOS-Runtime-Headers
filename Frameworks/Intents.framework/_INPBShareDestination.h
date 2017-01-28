@@ -13,8 +13,8 @@
 
 @property (nonatomic, retain) _INPBContact *contact;
 @property (nonatomic) int deviceType;
-@property (nonatomic, readonly) BOOL hasContact;
-@property (nonatomic) BOOL hasDeviceType;
+@property (nonatomic, readonly) bool hasContact;
+@property (nonatomic) bool hasDeviceType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)options;
@@ -25,15 +25,15 @@
 - (id)description;
 - (int)deviceType;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContact;
-- (BOOL)hasDeviceType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContact;
+- (bool)hasDeviceType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setContact:(id)arg1;
 - (void)setDeviceType:(int)arg1;
-- (void)setHasDeviceType:(BOOL)arg1;
+- (void)setHasDeviceType:(bool)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

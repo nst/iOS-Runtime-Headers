@@ -8,19 +8,19 @@
     NSUUID * _identifier;
     HMFNetService * _netService;
     HMDHTTPDevice * _remoteDevice;
-    BOOL  _running;
+    bool  _running;
 }
 
 @property (nonatomic, readonly) HMFHTTPClient *client;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMDHTTPClientMessageTransportDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, readonly) HMFNetService *netService;
-@property (getter=isReachable, nonatomic, readonly) BOOL reachable;
+@property (getter=isReachable, nonatomic, readonly) bool reachable;
 @property (nonatomic, readonly) HMDHTTPDevice *remoteDevice;
-@property (getter=isRunning, nonatomic) BOOL running;
+@property (getter=isRunning, nonatomic) bool running;
 @property (readonly) Class superclass;
 
 + (id)logCategory;
@@ -31,26 +31,26 @@
 - (void)_sendResponseMessage:(id)arg1 forTransactionIdentifier:(id)arg2;
 - (void)_stopWithError:(id)arg1;
 - (id)client;
-- (void)client:(id)arg1 didRequestPingWithCompletionHandler:(id /* block */)arg2;
+- (void)client:(id)arg1 didRequestPingWithCompletionHandler:(id)arg2;
 - (void)clientDidBecomeUnreachable:(id)arg1;
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 netService:(id)arg2;
-- (BOOL)isReachable;
-- (BOOL)isRunning;
+- (bool)isReachable;
+- (bool)isRunning;
 - (id)logIdentifier;
 - (id)netService;
 - (id)remoteDevice;
-- (void)sendMessage:(id)arg1 timeout:(double)arg2 completionHandler:(id /* block */)arg3;
-- (void)sendPingWithCompletionHandler:(id /* block */)arg1;
+- (void)sendMessage:(id)arg1 timeout:(double)arg2 completionHandler:(id)arg3;
+- (void)sendPingWithCompletionHandler:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (void)setRunning:(bool)arg1;
 - (id)shortDescription;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 - (void)stop;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface CKInvisibleInkEmojiEffectView : CKInvisibleInkEffectView <CAAnimationDelegate> {
-    BOOL  _blendingEnabled;
+    bool  _blendingEnabled;
     CALayer * _blurredEmojiLayer;
     CAEmitterLayer * _drawEmitterLayer;
     CALayer * _dustContainerLayer;
@@ -14,7 +14,7 @@
     UITextView * _textView;
 }
 
-@property (nonatomic) BOOL blendingEnabled;
+@property (nonatomic) bool blendingEnabled;
 @property (nonatomic, retain) CALayer *blurredEmojiLayer;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -23,15 +23,15 @@
 @property (nonatomic, retain) CAEmitterLayer *dustEmitterLayer;
 @property (nonatomic, retain) CALayer *emojiContainerLayer;
 @property (nonatomic, retain) CALayer *emojiLayer;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CALayer *maskLayer;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITextView *textView;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (void)attachToBalloonView:(id)arg1;
-- (BOOL)blendingEnabled;
+- (bool)blendingEnabled;
 - (id)blurredEmojiLayer;
 - (void)createDrawEmitter;
 - (void)createDustEmitter;
@@ -47,12 +47,12 @@
 - (void)endDrawEmitterEffects;
 - (void)endDustEmitterLayerFingerEffects;
 - (void)endTouches;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)maskLayer;
 - (void)moveEmittersWithTouches:(id)arg1;
 - (void)reset;
-- (void)setBlendingEnabled:(BOOL)arg1;
+- (void)setBlendingEnabled:(bool)arg1;
 - (void)setBlurredEmojiLayer:(id)arg1;
 - (void)setDrawEmitterLayer:(id)arg1;
 - (void)setDustContainerLayer:(id)arg1;
@@ -60,8 +60,8 @@
 - (void)setEmojiContainerLayer:(id)arg1;
 - (void)setEmojiLayer:(id)arg1;
 - (void)setMaskLayer:(id)arg1;
-- (void)setPaused:(BOOL)arg1;
-- (void)setSuspended:(BOOL)arg1;
+- (void)setPaused:(bool)arg1;
+- (void)setSuspended:(bool)arg1;
 - (void)setTextView:(id)arg1;
 - (id)textView;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

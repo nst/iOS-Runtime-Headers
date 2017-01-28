@@ -5,15 +5,15 @@
 @interface TSDMediaRep : TSDStyledRep {
     CALayer * mFrameMaskLayer;
     TSDFrameRep * mFrameRep;
-    BOOL  mIsZooming;
+    bool  mIsZooming;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mLastPictureFrameLayerRect;
     CAShapeLayer * mMaskLayer;
@@ -25,9 +25,9 @@
 @property (nonatomic, readonly) TSDMediaLayout *mediaLayout;
 
 - (void)dealloc;
-- (BOOL)i_shouldRenderStroke:(id)arg1;
+- (bool)i_shouldRenderStroke:(id)arg1;
 - (void)i_updateFrameRep;
-- (BOOL)isPlaceholder;
+- (bool)isPlaceholder;
 - (id)mediaInfo;
 - (id)mediaLayout;
 

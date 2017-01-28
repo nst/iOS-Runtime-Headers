@@ -5,16 +5,16 @@
 @interface PFVideoSharingOperation : NSOperation {
     PFAssetAdjustments * __adjustments;
     AVAudioMix * _audioMix;
-    BOOL  _beganExport;
+    bool  _beganExport;
     NSString * _customAccessibilityLabel;
     AVAssetExportSession * _exportSession;
     NSObject<OS_dispatch_queue> * _externalIsolation;
     NSString * _generatedFileName;
     NSError * _operationError;
-    BOOL  _operationSuccess;
+    bool  _operationSuccess;
     NSURL * _outputDirectoryURL;
-    BOOL  _shouldStripLocation;
-    BOOL  _shouldStripMetadata;
+    bool  _shouldStripLocation;
+    bool  _shouldStripMetadata;
     AVAsset * _videoAsset;
     AVVideoComposition * _videoComposition;
     NSArray * _videoMetadata;
@@ -27,18 +27,18 @@
 @property (setter=_setOperationError:, nonatomic, retain) NSError *operationError;
 @property (nonatomic, copy) NSURL *outputDirectoryURL;
 @property (nonatomic, readonly) float progress;
-@property (nonatomic) BOOL shouldStripLocation;
-@property (nonatomic) BOOL shouldStripMetadata;
-@property (setter=_setSuccess:, nonatomic) BOOL success;
+@property (nonatomic) bool shouldStripLocation;
+@property (nonatomic) bool shouldStripMetadata;
+@property (setter=_setSuccess:, nonatomic) bool success;
 @property (setter=_setVideoURL:, nonatomic, copy) NSURL *videoURL;
 
 - (void).cxx_destruct;
 - (id)_adjustments;
-- (BOOL)_ensureVideoProperties;
-- (BOOL)_runExport;
+- (bool)_ensureVideoProperties;
+- (bool)_runExport;
 - (void)_setAdjustments:(id)arg1;
 - (void)_setOperationError:(id)arg1;
-- (void)_setSuccess:(BOOL)arg1;
+- (void)_setSuccess:(bool)arg1;
 - (void)_setVideoURL:(id)arg1;
 - (void)_validateMetadata;
 - (void)cancel;
@@ -52,11 +52,11 @@
 - (void)setCustomAccessibilityLabel:(id)arg1;
 - (void)setGeneratedFileName:(id)arg1;
 - (void)setOutputDirectoryURL:(id)arg1;
-- (void)setShouldStripLocation:(BOOL)arg1;
-- (void)setShouldStripMetadata:(BOOL)arg1;
-- (BOOL)shouldStripLocation;
-- (BOOL)shouldStripMetadata;
-- (BOOL)success;
+- (void)setShouldStripLocation:(bool)arg1;
+- (void)setShouldStripMetadata:(bool)arg1;
+- (bool)shouldStripLocation;
+- (bool)shouldStripMetadata;
+- (bool)success;
 - (id)videoURL;
 
 @end

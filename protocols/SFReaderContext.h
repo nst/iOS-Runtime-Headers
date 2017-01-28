@@ -11,12 +11,12 @@
 - (void)clearUnusedReaderResourcesSoon;
 - (NSDictionary *)configuration;
 - (void)createArticleFinder;
-- (void)deactivateReaderNow:(unsigned int)arg1;
+- (void)deactivateReaderNow:(unsigned long long)arg1;
 - (void)decreaseReaderTextSize;
 - (WBSReaderFontManager *)fontManager;
 - (void)increaseReaderTextSize;
-- (BOOL)isLoadingNextPage;
-- (BOOL)isReaderAvailable;
+- (bool)isLoadingNextPage;
+- (bool)isReaderAvailable;
 - (void)loadNewArticle;
 - (NSURL *)readerURL;
 - (NSDictionary *)scrollPositionInformation;
@@ -24,7 +24,7 @@
 - (void)setReaderLanguageTag:(NSString *)arg1;
 - (void)setReaderTheme:(NSString *)arg1;
 - (void)setReaderUserVisibleWidth:(double)arg1;
-- (BOOL)shouldCreateArticleFinder;
+- (bool)shouldCreateArticleFinder;
 - (void)stopLoadingNextPage;
 
 @end

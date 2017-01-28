@@ -3,12 +3,12 @@
  */
 
 @interface UIStatusBarElectronicTollCollectionItemView : UIStatusBarItemView {
-    BOOL  _available;
+    bool  _available;
 }
 
-- (float)alphaForAvailable:(BOOL)arg1;
+- (double)alphaForAvailable:(bool)arg1;
 - (id)contentsImage;
-- (void)setVisible:(BOOL)arg1;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (void)setVisible:(bool)arg1;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

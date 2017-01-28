@@ -5,7 +5,7 @@
 @interface CLKComplicationTimelineEntry : NSObject <CLKTimelineEntry, NSCopying, NSSecureCoding> {
     CLKComplicationTemplate * _complicationTemplate;
     NSDate * _date;
-    BOOL  _finalized;
+    bool  _finalized;
     NSString * _timelineAnimationGroup;
 }
 
@@ -13,13 +13,13 @@
 @property (nonatomic, retain) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *timelineAnimationGroup;
 
 + (id)entryWithDate:(id)arg1 complicationTemplate:(id)arg2;
 + (id)entryWithDate:(id)arg1 complicationTemplate:(id)arg2 timelineAnimationGroup:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)complicationTemplate;
@@ -35,6 +35,6 @@
 - (void)setTimelineAnimationGroup:(id)arg1;
 - (id)timelineAnimationGroup;
 - (void)validate;
-- (void)validateComplicationFamily:(int)arg1;
+- (void)validateComplicationFamily:(long long)arg1;
 
 @end

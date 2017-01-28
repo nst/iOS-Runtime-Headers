@@ -11,9 +11,9 @@
     NSString * _transitSystemName;
 }
 
-@property (nonatomic) BOOL hasTransitLineMuid;
-@property (nonatomic, readonly) BOOL hasTransitLineName;
-@property (nonatomic, readonly) BOOL hasTransitSystemName;
+@property (nonatomic) bool hasTransitLineMuid;
+@property (nonatomic, readonly) bool hasTransitLineName;
+@property (nonatomic, readonly) bool hasTransitSystemName;
 @property (nonatomic) unsigned long long transitLineMuid;
 @property (nonatomic, retain) NSString *transitLineName;
 @property (nonatomic, retain) NSString *transitSystemName;
@@ -23,14 +23,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTransitLineMuid;
-- (BOOL)hasTransitLineName;
-- (BOOL)hasTransitSystemName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTransitLineMuid;
+- (bool)hasTransitLineName;
+- (bool)hasTransitSystemName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTransitLineMuid:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTransitLineMuid:(bool)arg1;
 - (void)setTransitLineMuid:(unsigned long long)arg1;
 - (void)setTransitLineName:(id)arg1;
 - (void)setTransitSystemName:(id)arg1;

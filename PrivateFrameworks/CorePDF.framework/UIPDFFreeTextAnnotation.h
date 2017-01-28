@@ -5,6 +5,6 @@
 @interface UIPDFFreeTextAnnotation : UIPDFAnnotation
 
 - (int)annotationType;
-- (BOOL)hasPopUp;
+- (bool)hasPopUp;
 
 @end

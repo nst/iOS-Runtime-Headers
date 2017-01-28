@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)outputSourceId;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setOutputSourceId:(id)arg1;
 
 @end

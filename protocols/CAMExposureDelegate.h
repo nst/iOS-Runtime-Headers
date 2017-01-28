@@ -9,6 +9,6 @@
 
 @optional
 
-- (BOOL)captureControllerUserHasAdjustedExposureTargetBias:(CUCaptureController *)arg1;
+- (bool)captureControllerUserHasAdjustedExposureTargetBias:(CUCaptureController *)arg1;
 
 @end

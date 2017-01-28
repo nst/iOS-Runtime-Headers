@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) FBSDisplay *display;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSString *sceneIdentifier;
 @property (readonly) Class superclass;
@@ -23,12 +23,12 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)display;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 display:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToIdentity:(id)arg1;
-- (BOOL)isValid;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToIdentity:(id)arg1;
+- (bool)isValid;
 - (id)sceneIdentifier;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

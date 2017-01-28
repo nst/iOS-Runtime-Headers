@@ -3,11 +3,12 @@
  */
 
 @interface AFMyriadCoordinator : NSObject <WPHeySiriProtocol> {
-    unsigned int  _advertisingState;
-    BOOL  _clientIsDirectActivating;
-    BOOL  _clientLostDueToTrumping;
-    BOOL  _clientRecentlyLostElection;
-    BOOL  _coordinationEnabled;
+    unsigned long long  _advertisingState;
+    bool  _clientIsDirectActivating;
+    bool  _clientIsListeningAfterRecentWin;
+    bool  _clientLostDueToTrumping;
+    bool  _clientRecentlyLostElection;
+    bool  _coordinationEnabled;
     _DKKnowledgeStore * _coreDuetStore;
     NSObject<OS_dispatch_source> * _delayedEndTimer;
     id  _delegate;
@@ -15,8 +16,9 @@
     int  _deviceAdjust;
     NSString * _deviceClass;
     WPHeySiri * _heySiriBTLE;
+    unsigned short  _lastPHash;
     NSDate * _lastSiriActivationTime;
-    BOOL  _listenTimerIsRunning;
+    bool  _listenTimerIsRunning;
     NSObject<OS_dispatch_queue> * _myriadListenQueue;
     NSObject<OS_dispatch_queue> * _myriadTimerQueue;
     NSObject<OS_dispatch_source> * _recentLossTimer;
@@ -27,7 +29,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)clearCurrentCoordinator;
@@ -37,8 +39,7 @@
 - (void)_cancelTimer;
 - (void)_handleRecentClientElectionLoss;
 - (void)_initDeviceClassAndAdjustments;
-- (id)_responseObject:(unsigned short)arg1;
-- (BOOL)_shouldContinueFor:(id)arg1;
+- (bool)_shouldContinueFor:(id)arg1;
 - (id)_sortedReplies;
 - (void)_startListenTimer;
 - (void)_startListenTimerFor:(float)arg1;
@@ -64,6 +65,7 @@
 - (void)logCoreDuetResults:(id)arg1;
 - (unsigned short)recentEventBump;
 - (void)resetReplies;
+- (id)responseObject:(unsigned short)arg1;
 - (void)startAdvertising:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3;
 - (void)startAdvertisingFromDirectTrigger;
 - (void)startAdvertisingFromVoiceTrigger;

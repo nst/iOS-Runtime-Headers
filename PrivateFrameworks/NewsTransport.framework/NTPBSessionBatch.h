@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *events;
-@property (nonatomic, readonly) BOOL hasSession;
+@property (nonatomic, readonly) bool hasSession;
 @property (nonatomic, retain) NTPBSession *session;
 
 + (Class)eventsType;
@@ -20,13 +20,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)events;
-- (id)eventsAtIndex:(unsigned int)arg1;
-- (unsigned int)eventsCount;
-- (BOOL)hasSession;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)eventsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)eventsCount;
+- (bool)hasSession;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)session;
 - (void)setEvents:(id)arg1;
 - (void)setSession:(id)arg1;

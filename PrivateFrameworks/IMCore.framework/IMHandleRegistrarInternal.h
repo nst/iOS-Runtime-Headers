@@ -5,7 +5,7 @@
 @interface IMHandleRegistrarInternal : NSObject {
     NSMutableDictionary * _accountSiblingsMap;
     NSMutableArray * _allIMHandles;
-    BOOL  _buildingChatSiblings;
+    bool  _buildingChatSiblings;
     NSMutableDictionary * _chatSiblingsMap;
     NSMutableDictionary * _existingAccountSiblingsMap;
     NSMutableDictionary * _existingChatSiblingsMap;

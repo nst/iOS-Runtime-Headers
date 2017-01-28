@@ -5,11 +5,11 @@
 
 @required
 
-- (unsigned int)bodyLengthForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
-- (unsigned int)documentPageIndexForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
-- (unsigned int)lastPageCountForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
+- (unsigned long long)bodyLengthForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
+- (unsigned long long)documentPageIndexForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
+- (unsigned long long)lastPageCountForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
 - (NSArray *)sectionHintsForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
-- (unsigned int)sectionIndexForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
-- (unsigned int)sectionPageIndexForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
+- (unsigned long long)sectionIndexForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
+- (unsigned long long)sectionPageIndexForArchivedLayoutState:(id <TPArchivedLayoutStateProtocol>)arg1;
 
 @end

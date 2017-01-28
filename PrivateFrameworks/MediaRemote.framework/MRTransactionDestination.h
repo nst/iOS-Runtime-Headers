@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)initWithName:(unsigned long long)arg1;
 - (unsigned long long)name;
-- (void)packetsFromMessage:(id)arg1 completion:(id /* block */)arg2;
-- (void)unpacketize:(id)arg1 completion:(id /* block */)arg2;
+- (void)packetsFromMessage:(id)arg1 completion:(id)arg2;
+- (void)unpacketize:(id)arg1 completion:(id)arg2;
 
 @end

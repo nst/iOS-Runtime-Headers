@@ -11,8 +11,8 @@
     NSURL * _mediumImageURL;
     NSMutableDictionary * _namingSimilarityInfoByClassID;
     NSString * _passwordType;
-    int  _retryCount;
-    BOOL  mAttemptedPhoneticTranscription;
+    long long  _retryCount;
+    bool  mAttemptedPhoneticTranscription;
     NSString * mPhoneticName;
 }
 
@@ -25,21 +25,21 @@
 @property (retain) NSMutableDictionary *namingSimilarityInfoByClassID;
 @property (retain) NSString *passwordType;
 @property (nonatomic, retain) NSString *phoneticName;
-@property (nonatomic) int retryCount;
+@property (nonatomic) long long retryCount;
 
 + (void)setAutogeneratesPhoneticNameWithLocale:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)userFromDictionary:(id)arg1;
 + (id)userFromUMUser:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLKUser:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLKUser:(id)arg1;
 - (id)largeImageURL;
 - (id)lastOnlineAuth;
 - (id)localLargeImageURL;
@@ -48,7 +48,7 @@
 - (id)namingSimilarityInfoByClassID;
 - (id)passwordType;
 - (id)phoneticName;
-- (int)retryCount;
+- (long long)retryCount;
 - (void)setDiffUMUserPropertiesFromUMUser:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLargeImageURL:(id)arg1;
@@ -59,6 +59,6 @@
 - (void)setNamingSimilarityInfoByClassID:(id)arg1;
 - (void)setPasswordType:(id)arg1;
 - (void)setPhoneticName:(id)arg1;
-- (void)setRetryCount:(int)arg1;
+- (void)setRetryCount:(long long)arg1;
 
 @end

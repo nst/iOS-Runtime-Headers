@@ -3,14 +3,14 @@
  */
 
 @interface MKPlaceInlineMapViewController : UIViewController {
-    BOOL  _bottomHairlineHidden;
+    bool  _bottomHairlineHidden;
     _MKPlaceInlineMapContentView * _contentView;
     MKMapItem * _mapItem;
     _MKPlaceViewController * _owner;
     MKMapItem * _updatingInlineMapItem;
 }
 
-@property (getter=isBottomHairlineHidden, nonatomic) BOOL bottomHairlineHidden;
+@property (getter=isBottomHairlineHidden, nonatomic) bool bottomHairlineHidden;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic) _MKPlaceViewController *owner;
 @property (nonatomic, readonly) UIImage *snapshot;
@@ -22,11 +22,11 @@
 - (void)_updateInlineMapWithRefinedMapItem:(id)arg1;
 - (void)_updateMap;
 - (void)_updateSnapshotImage:(id)arg1 mapItem:(id)arg2;
-- (BOOL)isBottomHairlineHidden;
+- (bool)isBottomHairlineHidden;
 - (void)loadView;
 - (id)mapItem;
 - (id)owner;
-- (void)setBottomHairlineHidden:(BOOL)arg1;
+- (void)setBottomHairlineHidden:(bool)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (id)snapshot;

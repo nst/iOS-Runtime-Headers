@@ -4,7 +4,7 @@
 
 @interface UIKBRenderFactory10Key_LandscapeTruffle : UIKBRenderFactory10Key_Landscape
 
-- (float)controlColumnWidthFactor;
-- (void)setupColumnLayoutSegmentsWithControlWidth:(float)arg1;
+- (double)controlColumnWidthFactor;
+- (void)setupColumnLayoutSegmentsWithControlWidth:(double)arg1;
 
 @end

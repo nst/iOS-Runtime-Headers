@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (void)_synchronizePreferences;
 - (void)dealloc;
-- (void)enumerateQueuedMessagesUsingBlock:(id /* block */)arg1;
+- (void)enumerateQueuedMessagesUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithQueueName:(id)arg1;
 - (id)messageWithIdentifier:(id)arg1;

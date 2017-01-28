@@ -11,7 +11,7 @@
 - (void)_drawPageImage:(int)arg1 forQuality:(int)arg2;
 - (int)_expectedQualityAtPageIndex:(int)arg1;
 - (bool)_findPageIndexNeedingUpdate:(int*)arg1 forQuality:(int*)arg2;
-- (bool)_hasAnyImageAtPageIndex:(unsigned int)arg1;
+- (bool)_hasAnyImageAtPageIndex:(unsigned long long)arg1;
 - (bool)_hasWork;
 - (int)_imageCount;
 - (int)_inclusivePageRangeForQuality:(int)arg1;
@@ -19,14 +19,14 @@
 - (bool)_pageAtIndex:(int)arg1 isOfQuality:(int)arg2;
 - (id)_pageImagesForQuality:(int)arg1;
 - (bool)_pagesInActiveRange:(int)arg1 areOfQuality:(int)arg2;
-- (void)_shiftImagesAtIndex:(unsigned int)arg1 downwards:(bool)arg2;
+- (void)_shiftImagesAtIndex:(unsigned long long)arg1 downwards:(bool)arg2;
 - (void)_update;
 - (id)backgroundImageForPageIndex:(int)arg1;
 - (void)cancelPageImagePool;
 - (void)dealloc;
-- (void)didInsertPageAtIndex:(unsigned int)arg1;
-- (void)didRemovePageAtIndex:(unsigned int)arg1;
-- (void)didSwapPageAtIndex:(unsigned int)arg1 withIndex:(unsigned int)arg2;
+- (void)didInsertPageAtIndex:(unsigned long long)arg1;
+- (void)didRemovePageAtIndex:(unsigned long long)arg1;
+- (void)didSwapPageAtIndex:(unsigned long long)arg1 withIndex:(unsigned long long)arg2;
 - (bool)drawProgressCallback;
 - (void)forceUpdateWithDuration:(double)arg1;
 - (void)forceUpdateWithDuration:(double)arg1 forActivePageIndex:(int)arg2;

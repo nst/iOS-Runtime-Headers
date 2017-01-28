@@ -14,7 +14,7 @@
 - (id)domain;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAppIdHints:(id)arg1;
 - (void)setDomain:(id)arg1;
 

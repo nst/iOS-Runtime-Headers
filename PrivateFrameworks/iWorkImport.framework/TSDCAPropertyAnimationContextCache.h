@@ -3,21 +3,21 @@
  */
 
 @interface TSDCAPropertyAnimationContextCache : TSDCAAnimationContextCache {
-    BOOL  _isAnimationKeyDoubleSided;
-    BOOL  _isAnimationKeyHidden;
-    BOOL  _isAnimationKeyTypeOfRotation;
+    bool  _isAnimationKeyDoubleSided;
+    bool  _isAnimationKeyHidden;
+    bool  _isAnimationKeyTypeOfRotation;
     NSString * _keyPath;
 }
 
-@property (nonatomic, readonly) BOOL isAnimationKeyDoubleSided;
-@property (nonatomic, readonly) BOOL isAnimationKeyHidden;
-@property (nonatomic, readonly) BOOL isAnimationKeyTypeOfRotation;
+@property (nonatomic, readonly) bool isAnimationKeyDoubleSided;
+@property (nonatomic, readonly) bool isAnimationKeyHidden;
+@property (nonatomic, readonly) bool isAnimationKeyTypeOfRotation;
 @property (nonatomic, readonly) NSString *keyPath;
 
 - (id)initWithAnimation:(id)arg1;
-- (BOOL)isAnimationKeyDoubleSided;
-- (BOOL)isAnimationKeyHidden;
-- (BOOL)isAnimationKeyTypeOfRotation;
+- (bool)isAnimationKeyDoubleSided;
+- (bool)isAnimationKeyHidden;
+- (bool)isAnimationKeyTypeOfRotation;
 - (id)keyPath;
 - (void)verifyCacheWithAnimation:(id)arg1;
 

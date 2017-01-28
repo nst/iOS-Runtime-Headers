@@ -6,31 +6,31 @@
     NSArray * _bubbleLocations;
     NSArray * _bubbleViews;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _center;
-    float  _radius;
+    double  _radius;
     NSSet * _visibleBubbleSet;
 }
 
 @property (nonatomic, retain) NSArray *bubbleLocations;
 @property (nonatomic, retain) NSArray *bubbleViews;
-@property (nonatomic) struct CGPoint { float x1; float x2; } center;
-@property (nonatomic) float radius;
+@property (nonatomic) struct CGPoint { double x1; double x2; } center;
+@property (nonatomic) double radius;
 @property (nonatomic, retain) NSSet *visibleBubbleSet;
 
 - (id)bubbleLocations;
 - (id)bubbleViews;
-- (struct CGPoint { float x1; float x2; })center;
+- (struct CGPoint { double x1; double x2; })center;
 - (void)dealloc;
 - (void)performLayout;
-- (float)radius;
+- (double)radius;
 - (void)setBubbleLocations:(id)arg1;
 - (void)setBubbleViews:(id)arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRadius:(float)arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRadius:(double)arg1;
 - (void)setVisibleBubbleSet:(id)arg1;
-- (void)showBubble:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 atAngle:(float)arg3;
+- (void)showBubble:(id)arg1 withSize:(struct CGSize { double x1; double x2; })arg2 atAngle:(double)arg3;
 - (id)visibleBubbleSet;
 
 @end

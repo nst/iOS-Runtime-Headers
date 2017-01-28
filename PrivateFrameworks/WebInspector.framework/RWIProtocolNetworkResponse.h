@@ -4,7 +4,7 @@
 
 @interface RWIProtocolNetworkResponse : RWIProtocolJSONObject
 
-@property (nonatomic) BOOL fromDiskCache;
+@property (nonatomic) bool fromDiskCache;
 @property (nonatomic, retain) RWIProtocolNetworkHeaders *headers;
 @property (nonatomic, copy) NSString *headersText;
 @property (nonatomic, copy) NSString *mimeType;
@@ -15,14 +15,14 @@
 @property (nonatomic, retain) RWIProtocolNetworkResourceTiming *timing;
 @property (nonatomic, copy) NSString *url;
 
-- (BOOL)fromDiskCache;
+- (bool)fromDiskCache;
 - (id)headers;
 - (id)headersText;
 - (id)initWithUrl:(id)arg1 status:(double)arg2 statusText:(id)arg3 headers:(id)arg4 mimeType:(id)arg5;
 - (id)mimeType;
 - (id)requestHeaders;
 - (id)requestHeadersText;
-- (void)setFromDiskCache:(BOOL)arg1;
+- (void)setFromDiskCache:(bool)arg1;
 - (void)setHeaders:(id)arg1;
 - (void)setHeadersText:(id)arg1;
 - (void)setMimeType:(id)arg1;

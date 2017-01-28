@@ -3,28 +3,28 @@
  */
 
 @interface FCSolHeuristic : NSObject {
-    BOOL  _alternate;
+    bool  _alternate;
     NSArray * _groupSizes;
-    int  _heuristicSampleSize;
-    int  _iterations;
-    id /* block */  _utilityBlock;
+    long long  _heuristicSampleSize;
+    long long  _iterations;
+    id  _utilityBlock;
 }
 
-@property (nonatomic, readonly) BOOL alternate;
+@property (nonatomic, readonly) bool alternate;
 @property (nonatomic, retain) NSArray *groupSizes;
-@property (nonatomic, readonly) int heuristicSampleSize;
-@property (nonatomic, readonly) int iterations;
-@property (nonatomic, readonly, copy) id /* block */ utilityBlock;
+@property (nonatomic, readonly) long long heuristicSampleSize;
+@property (nonatomic, readonly) long long iterations;
+@property (nonatomic, readonly, copy) id utilityBlock;
 
 - (void).cxx_destruct;
-- (BOOL)alternate;
+- (bool)alternate;
 - (double)computeScoreWithArticles:(id)arg1 tags:(id)arg2 articlesByTag:(id)arg3;
 - (id)fillGroupsWithArticles:(id)arg1 tags:(id)arg2 articlesByTag:(id)arg3 groupSizes:(id)arg4;
 - (id)groupSizes;
-- (int)heuristicSampleSize;
-- (id)initWithOption:(int)arg1 minClusterSize:(int)arg2 maxClusterSize:(int)arg3 heuristicSampleSize:(int)arg4 utilityBlock:(id /* block */)arg5;
-- (int)iterations;
+- (long long)heuristicSampleSize;
+- (id)initWithOption:(long long)arg1 minClusterSize:(long long)arg2 maxClusterSize:(long long)arg3 heuristicSampleSize:(long long)arg4 utilityBlock:(id)arg5;
+- (long long)iterations;
 - (void)setGroupSizes:(id)arg1;
-- (id /* block */)utilityBlock;
+- (id)utilityBlock;
 
 @end

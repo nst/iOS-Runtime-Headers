@@ -10,7 +10,7 @@
 @property (nonatomic, retain) GKPlayer *problemPlayer;
 @property (nonatomic, retain) NSURL *url;
 
-+ (id)controllerForProblemPlayer:(id)arg1 completionHandler:(id /* block */)arg2;
++ (id)controllerForProblemPlayer:(id)arg1 completionHandler:(id)arg2;
 
 - (id)bagKey;
 - (void)dealloc;

@@ -3,14 +3,14 @@
  */
 
 @interface PDFFormFieldPrivateVars : NSObject {
-    int  buttonType;
+    long long  buttonType;
     NSString * defaultStringValue;
     struct __CFDictionary { } * dictionary;
     PDFDocument * document;
     NSString * fieldName;
     int  fieldType;
     NSString * stringValue;
-    BOOL  writeDefaultValue;
+    bool  writeDefaultValue;
 }
 
 - (void).cxx_destruct;

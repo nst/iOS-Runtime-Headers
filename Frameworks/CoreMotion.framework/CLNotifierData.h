@@ -4,18 +4,18 @@
 
 @interface CLNotifierData : NSObject {
     void * _data;
-    id /* block */  _destructor;
+    id  _destructor;
 }
 
 @property (nonatomic) void*data;
-@property (nonatomic, copy) id /* block */ destructor;
+@property (nonatomic, copy) id destructor;
 
 - (void).cxx_destruct;
 - (void*)data;
 - (void)dealloc;
-- (id /* block */)destructor;
-- (id)initWithData:(void*)arg1 destructor:(id /* block */)arg2;
+- (id)destructor;
+- (id)initWithData:(void*)arg1 destructor:(id)arg2;
 - (void)setData:(void*)arg1;
-- (void)setDestructor:(id /* block */)arg1;
+- (void)setDestructor:(id)arg1;
 
 @end

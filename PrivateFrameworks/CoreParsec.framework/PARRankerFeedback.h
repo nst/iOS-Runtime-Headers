@@ -3,26 +3,26 @@
  */
 
 @interface PARRankerFeedback : SFRankingFeedback <NSCopying, NSSecureCoding> {
-    BOOL  _didTimeOut;
+    bool  _didTimeOut;
     unsigned long long  _rankingDurationMilliseconds;
-    unsigned int  _resultsRanked;
+    unsigned long long  _resultsRanked;
 }
 
-@property (nonatomic) BOOL didTimeOut;
+@property (nonatomic) bool didTimeOut;
 @property (nonatomic) unsigned long long rankingDurationMilliseconds;
-@property (nonatomic) unsigned int resultsRanked;
+@property (nonatomic) unsigned long long resultsRanked;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)didTimeOut;
+- (bool)didTimeOut;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)rankingDurationMilliseconds;
-- (unsigned int)resultsRanked;
-- (void)setDidTimeOut:(BOOL)arg1;
+- (unsigned long long)resultsRanked;
+- (void)setDidTimeOut:(bool)arg1;
 - (void)setRankingDurationMilliseconds:(unsigned long long)arg1;
-- (void)setResultsRanked:(unsigned int)arg1;
+- (void)setResultsRanked:(unsigned long long)arg1;
 
 @end

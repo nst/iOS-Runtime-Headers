@@ -10,7 +10,7 @@
 - (Class)facadeClass;
 - (SEL)handleSelector;
 - (id)init;
-- (BOOL)isPrivate;
+- (bool)isPrivate;
 - (NSString *)name;
 - (NSString *)responseName;
 - (NSDictionary *)slotsByName;

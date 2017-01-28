@@ -10,7 +10,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (id)init;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
-- (void)startWithOptInCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
+- (void)startWithOptInCompletionHandler:(id)arg1;
 
 @end

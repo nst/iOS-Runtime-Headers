@@ -10,19 +10,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_connection;
 - (void)_connectionInterrupted;
 - (void)_connectionInvalidated;
-- (void)_dispatchCallbackForProcessedData:(id)arg1 error:(id)arg2 completion:(id /* block */)arg3;
+- (void)_dispatchCallbackForProcessedData:(id)arg1 error:(id)arg2 completion:(id)arg3;
 - (void)_invalidateConnection;
-- (void)_processData:(id)arg1 usingProcedure:(int)arg2 completion:(id /* block */)arg3;
+- (void)_processData:(id)arg1 usingProcedure:(long long)arg2 completion:(id)arg3;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
-- (oneway void)processData:(id)arg1 usingProcedure:(int)arg2 completion:(id /* block */)arg3;
+- (oneway void)processData:(id)arg1 usingProcedure:(long long)arg2 completion:(id)arg3;
 
 @end

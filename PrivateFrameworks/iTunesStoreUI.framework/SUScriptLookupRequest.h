@@ -8,9 +8,9 @@
 
 @property (retain) id authenticatesIfNeeded;
 @property (copy) NSString *keyProfile;
-@property int localizationStyle;
-@property (readonly) int localizationStyleDevice;
-@property (readonly) int localizationStyleServer;
+@property long long localizationStyle;
+@property (readonly) long long localizationStyleDevice;
+@property (readonly) long long localizationStyleServer;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -22,13 +22,13 @@
 - (void)dealloc;
 - (id)init;
 - (id)keyProfile;
-- (int)localizationStyle;
-- (int)localizationStyleDevice;
-- (int)localizationStyleServer;
+- (long long)localizationStyle;
+- (long long)localizationStyleDevice;
+- (long long)localizationStyleServer;
 - (id)scriptAttributeKeys;
 - (void)setAuthenticatesIfNeeded:(id)arg1;
 - (void)setKeyProfile:(id)arg1;
-- (void)setLocalizationStyle:(int)arg1;
+- (void)setLocalizationStyle:(long long)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
 - (void)startWithLookupFunction:(id)arg1;
 - (id)valueForRequestParameter:(id)arg1;

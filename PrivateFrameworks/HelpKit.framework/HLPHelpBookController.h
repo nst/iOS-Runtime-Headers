@@ -3,11 +3,11 @@
  */
 
 @interface HLPHelpBookController : HLPRemoteDataController {
-    int  _contentFormatVersion;
+    long long  _contentFormatVersion;
     NSString * _contentVersion;
     NSString * _copyrightText;
     NSString * _copyrightTopicIdentifier;
-    BOOL  _hasSectionIcon;
+    bool  _hasSectionIcon;
     NSURL * _helpBookURL;
     NSMutableDictionary * _helpItemMap;
     HLPURLImageCacheController * _imageCacheController;
@@ -15,42 +15,42 @@
     NSString * _welcomeTopicIdentifier;
 }
 
-@property (nonatomic) int contentFormatVersion;
+@property (nonatomic) long long contentFormatVersion;
 @property (nonatomic, retain) NSString *contentVersion;
 @property (nonatomic, retain) NSString *copyrightText;
 @property (nonatomic, retain) NSString *copyrightTopicIdentifier;
-@property (nonatomic) BOOL hasSectionIcon;
+@property (nonatomic) bool hasSectionIcon;
 @property (nonatomic, retain) NSURL *helpBookURL;
 @property (nonatomic, retain) NSMutableDictionary *helpItemMap;
 @property (nonatomic, retain) HLPURLImageCacheController *imageCacheController;
 @property (nonatomic, retain) HLPHelpSectionItem *rootSectionItem;
-@property (getter=isSemanticHTML, nonatomic, readonly) BOOL semanticHTML;
+@property (getter=isSemanticHTML, nonatomic, readonly) bool semanticHTML;
 @property (nonatomic, retain) NSString *welcomeTopicIdentifier;
 
 - (void).cxx_destruct;
-- (int)contentFormatVersion;
+- (long long)contentFormatVersion;
 - (id)contentVersion;
 - (id)copyrightText;
 - (id)copyrightTopicIdentifier;
 - (id)copyrightTopicItem;
 - (void)dealloc;
-- (BOOL)hasSectionIcon;
+- (bool)hasSectionIcon;
 - (id)helpBookURL;
 - (id)helpItemForID:(id)arg1;
 - (id)helpItemMap;
 - (id)helpTopicItemForID:(id)arg1;
 - (id)helpTopicItemForName:(id)arg1;
 - (id)imageCacheController;
-- (BOOL)isSemanticHTML;
+- (bool)isSemanticHTML;
 - (void)processData:(id)arg1 formattedData:(id)arg2;
-- (void)processFileURLWithCompletionHandler:(id /* block */)arg1;
+- (void)processFileURLWithCompletionHandler:(id)arg1;
 - (id)rootSectionItem;
-- (id)sectionsForChildrenIdentifiers:(id)arg1 level:(int)arg2 parent:(id)arg3 sectionsMap:(id)arg4 topicsMap:(id)arg5;
-- (void)setContentFormatVersion:(int)arg1;
+- (id)sectionsForChildrenIdentifiers:(id)arg1 level:(long long)arg2 parent:(id)arg3 sectionsMap:(id)arg4 topicsMap:(id)arg5;
+- (void)setContentFormatVersion:(long long)arg1;
 - (void)setContentVersion:(id)arg1;
 - (void)setCopyrightText:(id)arg1;
 - (void)setCopyrightTopicIdentifier:(id)arg1;
-- (void)setHasSectionIcon:(BOOL)arg1;
+- (void)setHasSectionIcon:(bool)arg1;
 - (void)setHelpBookURL:(id)arg1;
 - (void)setHelpItemMap:(id)arg1;
 - (void)setImageCacheController:(id)arg1;

@@ -11,13 +11,13 @@
 @property (nonatomic, retain) UIImage *vCardImage;
 
 + (id)UTITypes;
-+ (id)attachmentSummary:(unsigned int)arg1;
++ (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })bbSize;
+- (struct CGSize { double x1; double x2; })bbSize;
 - (Class)coloredBalloonViewClass;
-- (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (id)generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 - (id)icon;
 - (int)mediaType;
 - (void)setVCard:(id)arg1;
@@ -26,6 +26,6 @@
 - (id)title;
 - (id)vCard;
 - (id)vCardImage;
-- (id)vCardImageOfSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)vCardImageOfSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, retain) NSString *command;
-@property (nonatomic, readonly) BOOL hasInfoDictionary;
+@property (nonatomic, readonly) bool hasInfoDictionary;
 @property (nonatomic, retain) NSData *infoDictionary;
 @property (nonatomic, retain) NSString *seid;
 @property (nonatomic, retain) NSData *url;
@@ -21,12 +21,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInfoDictionary;
-- (unsigned int)hash;
+- (bool)hasInfoDictionary;
+- (unsigned long long)hash;
 - (id)infoDictionary;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)seid;
 - (void)setCommand:(id)arg1;
 - (void)setInfoDictionary:(id)arg1;

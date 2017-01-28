@@ -10,7 +10,7 @@
     int  _sessionIdentifier;
 }
 
-@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) bool hasSessionIdentifier;
 @property (nonatomic, retain) NSMutableArray *services;
 @property (nonatomic) int sessionIdentifier;
 
@@ -21,16 +21,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSessionIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSessionIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)services;
-- (id)servicesAtIndex:(unsigned int)arg1;
-- (unsigned int)servicesCount;
+- (id)servicesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)servicesCount;
 - (int)sessionIdentifier;
-- (void)setHasSessionIdentifier:(BOOL)arg1;
+- (void)setHasSessionIdentifier:(bool)arg1;
 - (void)setServices:(id)arg1;
 - (void)setSessionIdentifier:(int)arg1;
 - (void)writeTo:(id)arg1;

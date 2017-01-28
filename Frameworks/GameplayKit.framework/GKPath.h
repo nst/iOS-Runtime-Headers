@@ -32,29 +32,29 @@
     }  _pathway;
 }
 
-@property (getter=isCyclical, nonatomic) BOOL cyclical;
-@property (readonly) unsigned int numPoints;
+@property (getter=isCyclical, nonatomic) bool cyclical;
+@property (readonly) unsigned long long numPoints;
 @property (nonatomic) float radius;
 
-+ (id)pathWithFloat3Points:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2 radius:(float)arg3 cyclical:(BOOL)arg4;
++ (id)pathWithFloat3Points:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 count:(unsigned long long)arg2 radius:(float)arg3 cyclical:(bool)arg4;
 + (id)pathWithGraphNodes:(id)arg1 radius:(float)arg2;
-+ (id)pathWithPoints:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2 radius:(float)arg3 cyclical:(BOOL)arg4;
++ (id)pathWithPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 count:(unsigned long long)arg2 radius:(float)arg3 cyclical:(bool)arg4;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)_cyclical;
-- (void)float2AtIndex:(unsigned int)arg1;
-- (void)float3AtIndex:(unsigned int)arg1;
-- (id)initWithFloat3Points:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2 radius:(float)arg3 cyclical:(BOOL)arg4;
+- (bool)_cyclical;
+- (void)float2AtIndex:(unsigned long long)arg1;
+- (void)float3AtIndex:(unsigned long long)arg1;
+- (id)initWithFloat3Points:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 count:(unsigned long long)arg2 radius:(float)arg3 cyclical:(bool)arg4;
 - (id)initWithGraphNodes:(id)arg1 radius:(float)arg2;
-- (id)initWithPoints:(/* Warning: Unrecognized filer type: '8' using 'void*' */ void**)arg1 count:(unsigned long)arg2 radius:(float)arg3 cyclical:(BOOL)arg4;
-- (BOOL)isCyclical;
-- (unsigned int)numPoints;
+- (id)initWithPoints:(/* Warning: Unrecognized filer type: '1' using 'void*' */ void**)arg1 count:(unsigned long long)arg2 radius:(float)arg3 cyclical:(bool)arg4;
+- (bool)isCyclical;
+- (unsigned long long)numPoints;
 - (struct PolylinePathway { int (**x1)(); int x2; struct Vec3 {} *x3; float x4; bool x5; float x6; float x7; struct Vec3 { float x_8_1_1; float x_8_1_2; float x_8_1_3; } x8; struct Vec3 { float x_9_1_1; float x_9_1_2; float x_9_1_3; } x9; struct Vec3 { float x_10_1_1; float x_10_1_2; float x_10_1_3; } x10; float *x11; struct Vec3 {} *x12; float x13; }*)pathway;
-- (void)pointAtIndex:(unsigned int)arg1;
+- (void)pointAtIndex:(unsigned long long)arg1;
 - (float)radius;
-- (void)setCyclical:(BOOL)arg1;
+- (void)setCyclical:(bool)arg1;
 - (void)setRadius:(float)arg1;
-- (void)set_cyclical:(BOOL)arg1;
+- (void)set_cyclical:(bool)arg1;
 
 @end

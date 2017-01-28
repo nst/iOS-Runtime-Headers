@@ -4,15 +4,14 @@
 
 @interface _HKLatestSummariesQuery : HKQuery {
     NSCalendar * _calendar;
-    NSDate * _endDate;
-    id /* block */  _resultsHandler;
-    NSDate * _startDate;
+    id  _resultsHandler;
+    NSDate * _summaryDate;
     NSSet * _typeFilters;
-    id /* block */  _updateHandler;
+    id  _updateHandler;
 }
 
-@property (nonatomic, readonly) id /* block */ resultsHandler;
-@property (nonatomic, copy) id /* block */ updateHandler;
+@property (nonatomic, readonly) id resultsHandler;
+@property (nonatomic, copy) id updateHandler;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
@@ -21,22 +20,21 @@
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (id)_queue_errorHandler;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
-- (BOOL)_requiresValidSampleType;
+- (bool)_requiresValidSampleType;
 - (void)deliverResetSummaries:(id)arg1 forQuery:(id)arg2;
 - (void)deliverSummaries:(id)arg1 forQuery:(id)arg2;
 - (void)deliverUpdatedSummaries:(id)arg1 forQuery:(id)arg2;
-- (id)initWithDate:(id)arg1 calendar:(id)arg2 resultsHandler:(id /* block */)arg3;
-- (id)initWithSearchStartDate:(id)arg1 searchEndDate:(id)arg2 calendar:(id)arg3 typeFilters:(id)arg4 resultsHandler:(id /* block */)arg5;
-- (id /* block */)resultsHandler;
-- (void)setUpdateHandler:(id /* block */)arg1;
-- (id /* block */)updateHandler;
+- (id)initWithDate:(id)arg1 calendar:(id)arg2 resultsHandler:(id)arg3;
+- (id)resultsHandler;
+- (void)setUpdateHandler:(id)arg1;
+- (id)updateHandler;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (Class)hd_queryServerClass;
-+ (BOOL)hd_requiresPrivateEntitlements;
++ (bool)hd_requiresPrivateEntitlements;
 
 @end

@@ -18,7 +18,7 @@
 @property (copy) NSString *deviceID;
 @property (copy) NSString *deviceIP;
 @property (copy) NSString *deviceName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) NSString *identifier;
 @property (retain) <SFCompanionServiceManagerProtocol> *managerProxy;
 @property (retain) NSObject<OS_dispatch_semaphore> *managerSemaphore;
@@ -34,7 +34,7 @@
 - (id)deviceIP;
 - (id)deviceName;
 - (void)disableStreamSupportForIdentifier:(id)arg1;
-- (void)getStreamsForData:(id)arg1 withStreamHandler:(id /* block */)arg2;
+- (void)getStreamsForData:(id)arg1 withStreamHandler:(id)arg2;
 - (id)identifier;
 - (id)init;
 - (id)managerProxy;
@@ -53,9 +53,9 @@
 - (void)signalSemaphore;
 - (id)streamDataForIdentifier:(id)arg1;
 - (id)streamHandlers;
-- (void)streamToService:(id)arg1 withFileHandle:(id)arg2 acceptReply:(id /* block */)arg3;
-- (void)streamsFromFileHandle:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)supportStreamsWithIdentifier:(id)arg1 withStreamHandler:(id /* block */)arg2;
+- (void)streamToService:(id)arg1 withFileHandle:(id)arg2 acceptReply:(id)arg3;
+- (void)streamsFromFileHandle:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)supportStreamsWithIdentifier:(id)arg1 withStreamHandler:(id)arg2;
 - (void)xpcManagerConnectionInterrupted;
 - (void)xpcManagerDidInvalidate:(id)arg1;
 

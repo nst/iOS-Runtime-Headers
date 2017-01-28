@@ -12,7 +12,7 @@
 
 @property (nonatomic) int componentType;
 @property (nonatomic, retain) NSMutableArray *externalActionDetails;
-@property (nonatomic) BOOL hasComponentType;
+@property (nonatomic) bool hasComponentType;
 
 + (Class)externalActionDetailType;
 
@@ -26,17 +26,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)externalActionDetailAtIndex:(unsigned int)arg1;
+- (id)externalActionDetailAtIndex:(unsigned long long)arg1;
 - (id)externalActionDetails;
-- (unsigned int)externalActionDetailsCount;
-- (BOOL)hasComponentType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)externalActionDetailsCount;
+- (bool)hasComponentType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setComponentType:(int)arg1;
 - (void)setExternalActionDetails:(id)arg1;
-- (void)setHasComponentType:(BOOL)arg1;
+- (void)setHasComponentType:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

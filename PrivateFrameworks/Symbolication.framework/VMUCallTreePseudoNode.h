@@ -4,7 +4,7 @@
 
 @interface VMUCallTreePseudoNode : VMUCallTreeNode
 
-- (BOOL)isPseudo;
+- (bool)isPseudo;
 - (id)largestTopOfStackPath;
 - (id)pseudoNodeTopOfStackChild;
 - (id)sortedChildrenWithPseudoNode;

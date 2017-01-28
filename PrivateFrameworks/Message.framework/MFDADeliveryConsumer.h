@@ -3,24 +3,24 @@
  */
 
 @interface MFDADeliveryConsumer : MFDAMailAccountConsumer <DAMessageSendConsumer> {
-    unsigned int  _bytesRead;
-    unsigned int  _bytesWritten;
+    unsigned long long  _bytesRead;
+    unsigned long long  _bytesWritten;
     MFError * _error;
-    int  _status;
+    long long  _status;
 }
 
-@property (nonatomic, readonly) unsigned int bytesRead;
-@property (nonatomic, readonly) unsigned int bytesWritten;
+@property (nonatomic, readonly) unsigned long long bytesRead;
+@property (nonatomic, readonly) unsigned long long bytesWritten;
 @property (nonatomic, retain) MFError *error;
-@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) long long status;
 
-- (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
-- (unsigned int)bytesRead;
-- (unsigned int)bytesWritten;
+- (void)actionFailed:(long long)arg1 forTask:(id)arg2 error:(id)arg3;
+- (unsigned long long)bytesRead;
+- (unsigned long long)bytesWritten;
 - (void)dealloc;
 - (id)error;
-- (void)messageDidSendWithContext:(id)arg1 sentBytesCount:(unsigned int)arg2 receivedBytesCount:(unsigned int)arg3;
+- (void)messageDidSendWithContext:(id)arg1 sentBytesCount:(unsigned long long)arg2 receivedBytesCount:(unsigned long long)arg3;
 - (void)setError:(id)arg1;
-- (int)status;
+- (long long)status;
 
 @end

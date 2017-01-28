@@ -6,6 +6,6 @@
 @required
 
 - (<CCUIControlCenterSystemAgent> *)controlCenterSystemAgent;
-- (BOOL)shouldSuppressPunchOutMaskCaching;
+- (bool)shouldSuppressPunchOutMaskCaching;
 
 @end

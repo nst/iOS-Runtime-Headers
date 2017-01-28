@@ -3,12 +3,12 @@
  */
 
 @interface CKDAcceptSharesURLRequest : CKDURLRequest {
-    id /* block */  _shareAcceptedBlock;
+    id  _shareAcceptedBlock;
     NSMutableDictionary * _shareMetadataByRequestID;
     NSArray * _shareMetadatasToAccept;
 }
 
-@property (nonatomic, copy) id /* block */ shareAcceptedBlock;
+@property (nonatomic, copy) id shareAcceptedBlock;
 @property (nonatomic, retain) NSMutableDictionary *shareMetadataByRequestID;
 @property (nonatomic, retain) NSArray *shareMetadatasToAccept;
 
@@ -19,10 +19,10 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setShareAcceptedBlock:(id /* block */)arg1;
+- (void)setShareAcceptedBlock:(id)arg1;
 - (void)setShareMetadataByRequestID:(id)arg1;
 - (void)setShareMetadatasToAccept:(id)arg1;
-- (id /* block */)shareAcceptedBlock;
+- (id)shareAcceptedBlock;
 - (id)shareMetadataByRequestID;
 - (id)shareMetadatasToAccept;
 

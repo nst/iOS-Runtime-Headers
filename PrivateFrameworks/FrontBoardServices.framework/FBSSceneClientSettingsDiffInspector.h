@@ -4,10 +4,10 @@
 
 @interface FBSSceneClientSettingsDiffInspector : FBSSettingsDiffInspector
 
-- (void)observeClassWithBlock:(id /* block */)arg1;
-- (void)observeOcclusionsWithBlock:(id /* block */)arg1;
-- (void)observePreferredInterfaceOrientationWithBlock:(id /* block */)arg1;
-- (void)observePreferredLevelWithBlock:(id /* block */)arg1;
-- (void)observePreferredSceneHostIdentifierWithBlock:(id /* block */)arg1;
+- (void)observeClassWithBlock:(id)arg1;
+- (void)observeOcclusionsWithBlock:(id)arg1;
+- (void)observePreferredInterfaceOrientationWithBlock:(id)arg1;
+- (void)observePreferredLevelWithBlock:(id)arg1;
+- (void)observePreferredSceneHostIdentifierWithBlock:(id)arg1;
 
 @end

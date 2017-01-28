@@ -10,6 +10,6 @@
 - (void)_updateCorners;
 - (id)init;
 - (void)layoutSubviews;
-- (void)setStyle:(unsigned int)arg1;
+- (void)setStyle:(unsigned long long)arg1;
 
 @end

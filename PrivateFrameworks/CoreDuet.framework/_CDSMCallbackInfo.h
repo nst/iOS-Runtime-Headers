@@ -3,18 +3,18 @@
  */
 
 @interface _CDSMCallbackInfo : NSObject {
-    id /* block */  _handler;
+    id  _handler;
     NSObject<OS_dispatch_queue> * _handlerQueue;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *handlerQueue;
 
 - (void).cxx_destruct;
-- (id /* block */)handler;
+- (id)handler;
 - (id)handlerQueue;
-- (id)initWithCallbackHandler:(id /* block */)arg1 queue:(id)arg2;
-- (void)setHandler:(id /* block */)arg1;
+- (id)initWithCallbackHandler:(id)arg1 queue:(id)arg2;
+- (void)setHandler:(id)arg1;
 - (void)setHandlerQueue:(id)arg1;
 
 @end

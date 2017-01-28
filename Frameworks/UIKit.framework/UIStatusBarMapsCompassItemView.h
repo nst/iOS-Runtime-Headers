@@ -7,6 +7,6 @@
 }
 
 - (void).cxx_destruct;
-- (float)updateContentsAndWidth;
+- (double)updateContentsAndWidth;
 
 @end

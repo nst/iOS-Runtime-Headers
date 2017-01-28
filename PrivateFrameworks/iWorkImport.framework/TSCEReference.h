@@ -57,28 +57,28 @@
         } referenceUnion; 
     }  mRef;
     unsigned char  mStickyBits;
-    BOOL  mWasConstructedViaNames;
+    bool  mWasConstructedViaNames;
 }
 
 - (struct TSCECReference { unsigned short x1; union { struct { struct TSUCellCoord { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct TSUCellCoord { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct TSUCellCoord { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; unsigned char x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })cReference;
 - (void)dealloc;
 - (id)initWithCellReference:(struct { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
 - (id)initWithRangeReference:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)overrideText;
 - (id)overrideTextAsTyped;
-- (id)p_stringByUnescapingQuotedStringWithPossibleDollarPrefix:(id)arg1 partial:(BOOL)arg2;
+- (id)p_stringByUnescapingQuotedStringWithPossibleDollarPrefix:(id)arg1 partial:(bool)arg2;
 - (struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })rangeReference;
-- (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 contextSheetName:(id)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(BOOL)arg5;
-- (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 hostTableID:(struct __CFUUID { }*)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(BOOL)arg5;
+- (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 contextSheetName:(id)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(bool)arg5;
+- (id)referenceTextForAutocompleteWithCalculationEngine:(id)arg1 hostTableID:(struct __CFUUID { }*)arg2 stickyBits:(unsigned char)arg3 inputString:(id)arg4 inputStringIsComplete:(bool)arg5;
 - (id)referenceTextWithCalculationEngine:(id)arg1 contextSheetName:(id)arg2;
 - (id)referenceTextWithCalculationEngine:(id)arg1 hostTableID:(struct __CFUUID { }*)arg2;
 - (void)setOverrideText:(id)arg1;
 - (void)setOverrideTextAsTyped:(id)arg1;
 - (void)setStickyBits:(unsigned char)arg1;
-- (void)setWasConstructedViaNames:(BOOL)arg1;
+- (void)setWasConstructedViaNames:(bool)arg1;
 - (unsigned char)stickyBits;
 - (struct __CFUUID { }*)tableID;
-- (BOOL)wasConstructedViaNames;
+- (bool)wasConstructedViaNames;
 
 @end

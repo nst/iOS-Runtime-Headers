@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSArray *groups;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sourceKind;
@@ -19,7 +19,7 @@
 
 - (void).cxx_destruct;
 - (id)contactStore;
-- (id /* block */)groupToPeopleGroupTransform;
+- (id)groupToPeopleGroupTransform;
 - (id)groups;
 - (id)peopleInGroup:(id)arg1 keysToFetch:(id)arg2;
 - (void)setContactStore:(id)arg1;

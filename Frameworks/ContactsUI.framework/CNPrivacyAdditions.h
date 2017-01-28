@@ -4,6 +4,6 @@
 
 @interface CNPrivacyAdditions : NSObject
 
-+ (void)updateAccessDeniedView:(id)arg1 forAuthorizationStatus:(int)arg2;
++ (void)updateAccessDeniedView:(id)arg1 forAuthorizationStatus:(long long)arg2;
 
 @end

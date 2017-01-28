@@ -17,7 +17,7 @@
 - (id)attachmentWithToken:(id)arg1 extension:(id)arg2 category:(id)arg3;
 - (id)attachments;
 - (id)initWithPropertyList:(id)arg1 attachments:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)propertyList;
 

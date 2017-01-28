@@ -5,13 +5,13 @@
 
 @required
 
-- (BOOL)client:(SUClient *)arg1 presentModalViewController:(UIViewController *)arg2 animated:(BOOL)arg3;
+- (bool)client:(SUClient *)arg1 presentModalViewController:(UIViewController *)arg2 animated:(bool)arg3;
 
 @optional
 
-- (BOOL)client:(SUClient *)arg1 openInternalURL:(NSURL *)arg2;
-- (BOOL)client:(SUClient *)arg1 presentAccountViewController:(UIViewController *)arg2 animated:(BOOL)arg3;
-- (BOOL)client:(SUClient *)arg1 presentComposeReviewViewController:(UIViewController *)arg2 animated:(BOOL)arg3;
+- (bool)client:(SUClient *)arg1 openInternalURL:(NSURL *)arg2;
+- (bool)client:(SUClient *)arg1 presentAccountViewController:(UIViewController *)arg2 animated:(bool)arg3;
+- (bool)client:(SUClient *)arg1 presentComposeReviewViewController:(UIViewController *)arg2 animated:(bool)arg3;
 - (SSDownloadManager *)downloadManagerForClient:(SUClient *)arg1 downloadKinds:(NSArray *)arg2;
 - (SSDownloadQueue *)downloadQueueForClient:(SUClient *)arg1 downloadKinds:(NSSet *)arg2;
 - (UIViewController *)topViewControllerForClient:(SUClient *)arg1;

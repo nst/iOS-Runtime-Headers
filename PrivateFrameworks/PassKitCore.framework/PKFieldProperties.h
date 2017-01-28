@@ -5,26 +5,26 @@
 @interface PKFieldProperties : NSObject <NSSecureCoding> {
     NSError * _error;
     NSArray * _merchantIdentifiers;
-    unsigned int  _mode;
-    unsigned int  _technology;
+    unsigned long long  _mode;
+    unsigned long long  _technology;
 }
 
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSArray *merchantIdentifiers;
-@property (nonatomic, readonly) unsigned int mode;
-@property (nonatomic, readonly) unsigned int technology;
+@property (nonatomic, readonly) unsigned long long mode;
+@property (nonatomic, readonly) unsigned long long technology;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTechnology:(unsigned int)arg1 mode:(unsigned int)arg2 error:(id)arg3;
-- (id)initWithTechnology:(unsigned int)arg1 mode:(unsigned int)arg2 merchantIdentifiers:(id)arg3;
+- (id)initWithTechnology:(unsigned long long)arg1 mode:(unsigned long long)arg2 error:(id)arg3;
+- (id)initWithTechnology:(unsigned long long)arg1 mode:(unsigned long long)arg2 merchantIdentifiers:(id)arg3;
 - (id)merchantIdentifiers;
-- (unsigned int)mode;
-- (unsigned int)technology;
+- (unsigned long long)mode;
+- (unsigned long long)technology;
 
 @end

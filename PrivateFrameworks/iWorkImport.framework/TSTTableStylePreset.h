@@ -4,32 +4,32 @@
 
 @interface TSTTableStylePreset : TSPObject <TSKModel, TSSPreset, TSSStyleClient> {
     TSTTableStyleNetwork * _styleNetwork;
-    unsigned int  _tempUpgradePresetID;
+    unsigned long long  _tempUpgradePresetID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int presetID;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long presetID;
 @property (nonatomic, readonly) NSString *presetKind;
 @property (nonatomic, copy) TSTTableStyleNetwork *styleNetwork;
 @property (readonly) Class superclass;
 
-+ (BOOL)needsObjectUUID;
++ (bool)needsObjectUUID;
 
-- (BOOL)allowsImplicitComponentOwnership;
+- (bool)allowsImplicitComponentOwnership;
 - (void)dealloc;
-- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
-- (unsigned int)hash;
+- (void)drawSwatchInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (unsigned long long)hash;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)initWithStyleNetwork:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)p_documentRoot;
-- (unsigned int)presetID;
+- (unsigned long long)presetID;
 - (id)presetKind;
 - (id)referencedStyles;
-- (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
+- (void)replaceReferencedStylesUsingBlock:(id)arg1;
 - (void)saveToArchive:(struct TableStylePresetArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct Reference {} *x6; int x7; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setStyleNetwork:(id)arg1;

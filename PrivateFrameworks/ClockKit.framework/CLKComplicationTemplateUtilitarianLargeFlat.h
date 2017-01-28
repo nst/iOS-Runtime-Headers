@@ -11,10 +11,10 @@
 @property (nonatomic, copy) CLKTextProvider *textProvider;
 
 - (void).cxx_destruct;
-- (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
-- (void)_enumerateTextProviderKeysWithBlock:(id /* block */)arg1;
+- (void)_enumerateImageProviderKeysWithBlock:(id)arg1;
+- (void)_enumerateTextProviderKeysWithBlock:(id)arg1;
 - (id)imageProvider;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (void)setImageProvider:(id)arg1;
 - (void)setTextProvider:(id)arg1;
 - (id)textProvider;

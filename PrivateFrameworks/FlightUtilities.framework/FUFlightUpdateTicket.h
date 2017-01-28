@@ -3,13 +3,13 @@
  */
 
 @interface FUFlightUpdateTicket : NSUUID {
-    id /* block */  _block;
+    id  _block;
 }
 
-@property (copy) id /* block */ block;
+@property (copy) id block;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
-- (void)setBlock:(id /* block */)arg1;
+- (id)block;
+- (void)setBlock:(id)arg1;
 
 @end

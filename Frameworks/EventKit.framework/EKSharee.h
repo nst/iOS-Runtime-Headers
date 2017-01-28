@@ -12,20 +12,20 @@
 @property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, copy) NSString *externalID;
 @property (nonatomic, copy) NSString *firstName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) EKCalendar *owner;
-@property (nonatomic) unsigned int shareeAccessLevel;
-@property (nonatomic) unsigned int shareeStatus;
+@property (nonatomic) unsigned long long shareeAccessLevel;
+@property (nonatomic) unsigned long long shareeStatus;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 + (id)shareeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
-+ (unsigned int)statusEnumFromString:(id)arg1;
-+ (id)statusStringFromEnum:(unsigned int)arg1;
++ (unsigned long long)statusEnumFromString:(id)arg1;
++ (id)statusStringFromEnum:(unsigned long long)arg1;
 
 - (void*)ABRecordWithAddressBook:(void*)arg1;
 - (id)UUID;
@@ -37,11 +37,11 @@
 - (id)emailAddress;
 - (id)externalID;
 - (id)firstName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithEmailAddress:(id)arg1 name:(id)arg2;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)lastName;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)name;
@@ -52,14 +52,14 @@
 - (void)setFirstName:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setShareeAccessLevel:(unsigned int)arg1;
-- (void)setShareeStatus:(unsigned int)arg1;
-- (unsigned int)shareeAccessLevel;
-- (unsigned int)shareeStatus;
+- (void)setShareeAccessLevel:(unsigned long long)arg1;
+- (void)setShareeStatus:(unsigned long long)arg1;
+- (unsigned long long)shareeAccessLevel;
+- (unsigned long long)shareeStatus;
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
-- (BOOL)isCurrentUserForScheduling;
-- (BOOL)isCurrentUserForSharing;
+- (bool)isCurrentUserForScheduling;
+- (bool)isCurrentUserForSharing;
 
 @end

@@ -6,36 +6,36 @@
     NSMutableDictionary * _activeWorkoutServersByUUID;
 }
 
-@property (nonatomic, readonly) int activeWorkoutServerCount;
+@property (nonatomic, readonly) long long activeWorkoutServerCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id /* block */)_completionHandlerForReplaceWithOriginalWorkout:(id)arg1 newWorkout:(id)arg2 completion:(id /* block */)arg3;
+- (id)_completionHandlerForReplaceWithOriginalWorkout:(id)arg1 newWorkout:(id)arg2 completion:(id)arg3;
 - (void)_queue_releaseWorkoutServerWithUUID:(id)arg1;
-- (int)activeWorkoutServerCount;
+- (long long)activeWorkoutServerCount;
 - (id)allActiveWorkoutServers;
 - (id)firstPartyWorkoutSnapshot;
 - (id)initWithParentServer:(id)arg1;
 - (void)invalidate;
-- (void)pauseActiveWorkoutsWithCompletion:(id /* block */)arg1;
-- (void)remote_activeWorkoutApplicationIdentifier:(id /* block */)arg1;
-- (void)remote_addSamples:(id)arg1 toWorkout:(id)arg2 completion:(id /* block */)arg3;
-- (void)remote_associateSamplesWithUUIDs:(id)arg1 withWorkout:(id)arg2 completion:(id /* block */)arg3;
-- (void)remote_attachWorkoutServerWithClient:(id)arg1 serverConfiguration:(id)arg2 handler:(id /* block */)arg3;
-- (void)remote_freezeLocationSeriesWithUUIDs:(id)arg1 completion:(id /* block */)arg2;
-- (void)remote_generateWorkoutMarkerWithDate:(id)arg1 completion:(id /* block */)arg2;
-- (void)remote_getFirstPartyWorkoutSnapshotWithCompletion:(id /* block */)arg1;
-- (void)remote_hasAnyActiveWorkouts:(id /* block */)arg1;
-- (void)remote_pauseAllActiveWorkoutsWithCompletion:(id /* block */)arg1;
-- (void)remote_pauseWorkoutSessionWithUUID:(id)arg1 completion:(id /* block */)arg2;
-- (void)remote_replaceWorkout:(id)arg1 withWorkout:(id)arg2 completion:(id /* block */)arg3;
-- (void)remote_resumeWorkoutSessionWithUUID:(id)arg1 completion:(id /* block */)arg2;
-- (void)remote_startWatchAppWithWorkoutConfiguration:(id)arg1 completion:(id /* block */)arg2;
-- (void)remote_startWorkoutSession:(id)arg1 completion:(id /* block */)arg2;
-- (void)remote_stopWorkoutSessionWithUUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)pauseActiveWorkoutsWithCompletion:(id)arg1;
+- (void)remote_activeWorkoutApplicationIdentifier:(id)arg1;
+- (void)remote_addSamples:(id)arg1 toWorkout:(id)arg2 completion:(id)arg3;
+- (void)remote_associateSamplesWithUUIDs:(id)arg1 withWorkout:(id)arg2 completion:(id)arg3;
+- (void)remote_attachWorkoutServerWithClient:(id)arg1 serverConfiguration:(id)arg2 handler:(id)arg3;
+- (void)remote_freezeLocationSeriesWithUUIDs:(id)arg1 completion:(id)arg2;
+- (void)remote_generateWorkoutMarkerWithDate:(id)arg1 completion:(id)arg2;
+- (void)remote_getFirstPartyWorkoutSnapshotWithCompletion:(id)arg1;
+- (void)remote_hasAnyActiveWorkouts:(id)arg1;
+- (void)remote_pauseAllActiveWorkoutsWithCompletion:(id)arg1;
+- (void)remote_pauseWorkoutSessionWithUUID:(id)arg1 completion:(id)arg2;
+- (void)remote_replaceWorkout:(id)arg1 withWorkout:(id)arg2 completion:(id)arg3;
+- (void)remote_resumeWorkoutSessionWithUUID:(id)arg1 completion:(id)arg2;
+- (void)remote_startWatchAppWithWorkoutConfiguration:(id)arg1 completion:(id)arg2;
+- (void)remote_startWorkoutSession:(id)arg1 completion:(id)arg2;
+- (void)remote_stopWorkoutSessionWithUUID:(id)arg1 completion:(id)arg2;
 - (void)workoutServerDidDeactivate:(id)arg1;
 
 @end

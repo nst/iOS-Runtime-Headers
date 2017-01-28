@@ -6,11 +6,11 @@
 
 + (id)UTITypes;
 
-- (struct CGSize { float x1; float x2; })_defaultSize;
-- (id)_generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)generatePreviewWithCompletion:(id /* block */)arg1;
-- (BOOL)isIrisAsset;
+- (struct CGSize { double x1; double x2; })_defaultSize;
+- (id)_generateThumbnailFillToSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)generatePreviewWithCompletion:(id)arg1;
+- (bool)isIrisAsset;
 - (id)previewItemTitle;
-- (struct CGSize { float x1; float x2; })size;
+- (struct CGSize { double x1; double x2; })size;
 
 @end

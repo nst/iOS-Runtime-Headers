@@ -5,7 +5,7 @@
 @interface TIAssetsForInputModeLevel : NSObject {
     NSMutableDictionary * _assetsByType;
     NSString * _inputModeLevel;
-    int  _numberOfAssertions;
+    long long  _numberOfAssertions;
 }
 
 @property (nonatomic, readonly) NSString *inputModeLevel;
@@ -17,11 +17,11 @@
 - (id)assetVersionsForType:(id)arg1;
 - (void)dealloc;
 - (void)gatherStatistics:(id)arg1;
-- (BOOL)hasAssertions;
+- (bool)hasAssertions;
 - (id)initWithInputModeLevel:(id)arg1;
 - (id)inputModeLevel;
-- (BOOL)isEmpty;
-- (BOOL)purgeAsset:(id)arg1;
+- (bool)isEmpty;
+- (bool)purgeAsset:(id)arg1;
 - (id)purgeableAssets;
 - (id)recursiveDescription;
 - (void)removeAssertion;

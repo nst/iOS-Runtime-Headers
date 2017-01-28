@@ -14,14 +14,14 @@
     unsigned int  _unused;
 }
 
-+ (id)decimalNumberHandlerWithRoundingMode:(unsigned int)arg1 scale:(short)arg2 raiseOnExactness:(BOOL)arg3 raiseOnOverflow:(BOOL)arg4 raiseOnUnderflow:(BOOL)arg5 raiseOnDivideByZero:(BOOL)arg6;
++ (id)decimalNumberHandlerWithRoundingMode:(unsigned long long)arg1 scale:(short)arg2 raiseOnExactness:(bool)arg3 raiseOnOverflow:(bool)arg4 raiseOnUnderflow:(bool)arg5 raiseOnDivideByZero:(bool)arg6;
 + (id)defaultDecimalNumberHandler;
 
 - (void)encodeWithCoder:(id)arg1;
-- (id)exceptionDuringOperation:(SEL)arg1 error:(unsigned int)arg2 leftOperand:(id)arg3 rightOperand:(id)arg4;
+- (id)exceptionDuringOperation:(SEL)arg1 error:(unsigned long long)arg2 leftOperand:(id)arg3 rightOperand:(id)arg4;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithRoundingMode:(unsigned int)arg1 scale:(short)arg2 raiseOnExactness:(BOOL)arg3 raiseOnOverflow:(BOOL)arg4 raiseOnUnderflow:(BOOL)arg5 raiseOnDivideByZero:(BOOL)arg6;
-- (unsigned int)roundingMode;
+- (id)initWithRoundingMode:(unsigned long long)arg1 scale:(short)arg2 raiseOnExactness:(bool)arg3 raiseOnOverflow:(bool)arg4 raiseOnUnderflow:(bool)arg5 raiseOnDivideByZero:(bool)arg6;
+- (unsigned long long)roundingMode;
 - (short)scale;
 
 @end

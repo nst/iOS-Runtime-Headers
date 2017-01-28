@@ -13,10 +13,10 @@
 - (id)allTableEntityPropertiesPermittedByConfiguration:(id)arg1 externalValues:(id)arg2;
 - (void)appendPropertiesToBody:(id)arg1;
 - (id)decorateReportingURL:(id)arg1;
-- (BOOL)isBlacklistedByConfiguration:(id)arg1;
-- (BOOL)isFieldBlacklistEnabled;
+- (bool)isBlacklistedByConfiguration:(id)arg1;
+- (bool)isFieldBlacklistEnabled;
 - (id)millisecondsFromTimeInterval:(double)arg1;
-- (BOOL)requiresDiagnosticSendingPermission;
+- (bool)requiresDiagnosticSendingPermission;
 - (double)timeIntervalFromMilliseconds:(id)arg1;
 
 @end

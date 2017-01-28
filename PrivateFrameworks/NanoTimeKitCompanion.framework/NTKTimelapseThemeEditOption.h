@@ -6,19 +6,20 @@
 
 @property (nonatomic, readonly) NSString *resourceBaseName;
 @property (nonatomic, readonly) NSString *resourceName;
-@property (nonatomic, readonly) unsigned int timelapseTheme;
+@property (nonatomic, readonly) unsigned long long timelapseTheme;
 
-+ (id)_nameLocalizationKeyForValue:(unsigned int)arg1;
++ (id)_nameLocalizationKeyForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
-+ (id)_resourceBaseNameForTheme:(unsigned int)arg1;
-+ (id)_resourceNameForTheme:(unsigned int)arg1 videoIndex:(int)arg2;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)optionWithTimelapseTheme:(unsigned int)arg1;
++ (id)_resourceBaseNameForTheme:(unsigned long long)arg1;
++ (id)_resourceNameForTheme:(unsigned long long)arg1 videoIndex:(long long)arg2;
++ (id)_resourceNameForThemeWithoutDeviceSize:(unsigned long long)arg1 videoIndex:(long long)arg2;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (id)optionWithTimelapseTheme:(unsigned long long)arg1;
 
 - (id)_valueToFaceBundleStringDict;
 - (id)resourceBaseName;
 - (id)resourceName;
-- (id)resourceNameWithVideoIndex:(int)arg1;
-- (unsigned int)timelapseTheme;
+- (id)resourceNameWithVideoIndex:(long long)arg1;
+- (unsigned long long)timelapseTheme;
 
 @end

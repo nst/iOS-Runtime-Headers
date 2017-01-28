@@ -5,8 +5,8 @@
 
 @required
 
-- (void)applyEntryModel:(NTKWellnessEntryModel *)arg1 animated:(BOOL)arg2;
+- (void)applyEntryModel:(NTKWellnessEntryModel *)arg1 animated:(bool)arg2;
 - (void)applyEntryModelWithUnfilledRings:(NTKWellnessEntryModel *)arg1;
-- (void)timeTravelDateEnteredOrExitedTimelineBounds:(BOOL)arg1;
+- (void)timeTravelDateEnteredOrExitedTimelineBounds:(bool)arg1;
 
 @end

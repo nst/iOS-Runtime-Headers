@@ -5,23 +5,23 @@
 @interface CKFetchRecordZoneChangesOptions : NSObject <NSSecureCoding> {
     NSArray * _desiredKeys;
     CKServerChangeToken * _previousServerChangeToken;
-    unsigned int  _resultsLimit;
+    unsigned long long  _resultsLimit;
 }
 
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) CKServerChangeToken *previousServerChangeToken;
-@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic) unsigned long long resultsLimit;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)desiredKeys;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)previousServerChangeToken;
-- (unsigned int)resultsLimit;
+- (unsigned long long)resultsLimit;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
-- (void)setResultsLimit:(unsigned int)arg1;
+- (void)setResultsLimit:(unsigned long long)arg1;
 
 @end

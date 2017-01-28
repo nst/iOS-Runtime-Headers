@@ -13,20 +13,20 @@
     NSMutableArray * _messageAdditions;
     NSMutableArray * _messageDeletions;
     NSMutableArray * _messageUpdates;
-    BOOL  _shouldTrimDatabase;
+    bool  _shouldTrimDatabase;
 }
 
 @property (nonatomic, retain) NSData *dateForRequestingMoreMessages;
 @property (nonatomic, retain) NSData *dateSynced;
 @property (nonatomic) unsigned int fullSyncVersion;
-@property (nonatomic, readonly) BOOL hasDateForRequestingMoreMessages;
-@property (nonatomic, readonly) BOOL hasDateSynced;
-@property (nonatomic) BOOL hasFullSyncVersion;
-@property (nonatomic) BOOL hasShouldTrimDatabase;
+@property (nonatomic, readonly) bool hasDateForRequestingMoreMessages;
+@property (nonatomic, readonly) bool hasDateSynced;
+@property (nonatomic) bool hasFullSyncVersion;
+@property (nonatomic) bool hasShouldTrimDatabase;
 @property (nonatomic, retain) NSMutableArray *messageAdditions;
 @property (nonatomic, retain) NSMutableArray *messageDeletions;
 @property (nonatomic, retain) NSMutableArray *messageUpdates;
-@property (nonatomic) BOOL shouldTrimDatabase;
+@property (nonatomic) bool shouldTrimDatabase;
 
 - (void).cxx_destruct;
 - (void)addMessageAddition:(id)arg1;
@@ -42,33 +42,33 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)fullSyncVersion;
-- (BOOL)hasDateForRequestingMoreMessages;
-- (BOOL)hasDateSynced;
-- (BOOL)hasFullSyncVersion;
-- (BOOL)hasShouldTrimDatabase;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDateForRequestingMoreMessages;
+- (bool)hasDateSynced;
+- (bool)hasFullSyncVersion;
+- (bool)hasShouldTrimDatabase;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)messageAdditionAtIndex:(unsigned int)arg1;
+- (id)messageAdditionAtIndex:(unsigned long long)arg1;
 - (id)messageAdditions;
-- (unsigned int)messageAdditionsCount;
-- (id)messageDeletionAtIndex:(unsigned int)arg1;
+- (unsigned long long)messageAdditionsCount;
+- (id)messageDeletionAtIndex:(unsigned long long)arg1;
 - (id)messageDeletions;
-- (unsigned int)messageDeletionsCount;
-- (id)messageUpdateAtIndex:(unsigned int)arg1;
+- (unsigned long long)messageDeletionsCount;
+- (id)messageUpdateAtIndex:(unsigned long long)arg1;
 - (id)messageUpdates;
-- (unsigned int)messageUpdatesCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)messageUpdatesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setDateForRequestingMoreMessages:(id)arg1;
 - (void)setDateSynced:(id)arg1;
 - (void)setFullSyncVersion:(unsigned int)arg1;
-- (void)setHasFullSyncVersion:(BOOL)arg1;
-- (void)setHasShouldTrimDatabase:(BOOL)arg1;
+- (void)setHasFullSyncVersion:(bool)arg1;
+- (void)setHasShouldTrimDatabase:(bool)arg1;
 - (void)setMessageAdditions:(id)arg1;
 - (void)setMessageDeletions:(id)arg1;
 - (void)setMessageUpdates:(id)arg1;
-- (void)setShouldTrimDatabase:(BOOL)arg1;
-- (BOOL)shouldTrimDatabase;
+- (void)setShouldTrimDatabase:(bool)arg1;
+- (bool)shouldTrimDatabase;
 - (void)writeTo:(id)arg1;
 
 @end

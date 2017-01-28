@@ -8,7 +8,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithSourceView:(id)arg1 andShadow:(BOOL)arg2;
+- (id)initWithSourceView:(id)arg1 andShadow:(bool)arg2;
 - (void)layoutSubviews;
 
 @end

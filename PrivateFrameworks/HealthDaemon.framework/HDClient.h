@@ -9,7 +9,7 @@
     NSMutableSet * _droppedEntitlements;
     _HKEntitlements * _entitlements;
     NSString * _entitlementsApplicationIdentifier;
-    BOOL  _isExtension;
+    bool  _isExtension;
     NSString * _name;
     NSString * _processBundleIdentifier;
     NSString * _sourceBundleIdentifier;
@@ -21,7 +21,7 @@
 @property (readonly) NSString *containerAppBundleIdentifier;
 @property (nonatomic, retain) NSMutableSet *droppedEntitlements;
 @property (readonly) _HKEntitlements *entitlements;
-@property (readonly) BOOL isExtension;
+@property (readonly) bool isExtension;
 @property (readonly) NSString *name;
 @property (readonly) NSString *processBundleIdentifier;
 @property (readonly) int processIdentifier;
@@ -41,12 +41,12 @@
 - (id)droppedEntitlements;
 - (id)entitlements;
 - (id)filterWithQueryFilter:(id)arg1 profile:(id)arg2;
-- (BOOL)hasEntitlement:(id)arg1;
-- (BOOL)hasRequiredEntitlement:(id)arg1 error:(id*)arg2;
+- (bool)hasEntitlement:(id)arg1;
+- (bool)hasRequiredEntitlement:(id)arg1 error:(id*)arg2;
 - (id)initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)initWithEntitlements:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExtension;
+- (bool)isEqual:(id)arg1;
+- (bool)isExtension;
 - (id)name;
 - (id)processBundleIdentifier;
 - (int)processIdentifier;

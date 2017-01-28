@@ -3,14 +3,14 @@
  */
 
 @interface _UIAsyncInvocation : NSObject {
-    id /* block */  _invocationBlock;
+    id  _invocationBlock;
     bool  _invocationBlockHasBeenCalled;
-    int  _invokeCallCount;
+    long long  _invokeCallCount;
     /* Warning: Unrecognized filer type: '^' using 'void*' */ void* _observer;
 }
 
 + (id)emptyInvocation;
-+ (id)invocationWithBlock:(id /* block */)arg1;
++ (id)invocationWithBlock:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;

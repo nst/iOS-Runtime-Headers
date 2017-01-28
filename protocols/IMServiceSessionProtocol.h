@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)acceptSubscriptionRequest:(BOOL)arg1 from:(NSString *)arg2;
+- (void)acceptSubscriptionRequest:(bool)arg1 from:(NSString *)arg2;
 - (void)addAliases:(NSArray *)arg1 account:(NSString *)arg2;
 - (void)authenticateAccount:(NSString *)arg1;
 - (void)autoLogin;
@@ -18,7 +18,7 @@
 - (void)enrollDeviceInSMSRelay:(NSString *)arg1;
 - (void)enrollSelfDeviceInSMSRelay;
 - (void)holdBuddyUpdates;
-- (void)importMessage:(NSDictionary *)arg1 isRead:(BOOL)arg2;
+- (void)importMessage:(NSDictionary *)arg1 isRead:(bool)arg2;
 - (void)invitePersonInfo:(NSDictionary *)arg1 withMessage:(IMMessageItem *)arg2 toChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;
 - (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 groupID:(NSString *)arg5 joinProperties:(NSDictionary *)arg6;
 - (void)joinChatID:(NSString *)arg1 handleInfo:(NSDictionary *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4 joinProperties:(NSDictionary *)arg5;
@@ -54,7 +54,7 @@
 - (void)sendSavedReceiptForMessage:(IMMessageItem *)arg1 toChatID:(NSString *)arg2 identifier:(NSString *)arg3 style:(unsigned char)arg4;
 - (void)sendVCUpdate:(NSData *)arg1 toPerson:(NSString *)arg2 conference:(NSString *)arg3;
 - (void)setAllowList:(NSArray *)arg1;
-- (void)setBlockIdleStatus:(BOOL)arg1;
+- (void)setBlockIdleStatus:(bool)arg1;
 - (void)setBlockList:(NSArray *)arg1;
 - (void)setBlockingMode:(unsigned int)arg1;
 - (void)setProperties:(NSDictionary *)arg1 ofParticipant:(NSString *)arg2 inChatID:(NSString *)arg3 identifier:(NSString *)arg4 style:(unsigned char)arg5;

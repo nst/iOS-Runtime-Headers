@@ -5,14 +5,14 @@
 @interface MCDAlbumsDetailTableHeaderView : UITableViewHeaderFooterView {
     UIImageView * _artworkImageView;
     UIView * _separatorView;
-    id /* block */  _shuffleActionBlock;
+    id  _shuffleActionBlock;
     MCDButton * _shuffleButton;
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
 }
 
 @property (nonatomic, retain) UIImage *artworkImage;
-@property (nonatomic, copy) id /* block */ shuffleActionBlock;
+@property (nonatomic, copy) id shuffleActionBlock;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
@@ -21,11 +21,11 @@
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)layoutSubviews;
 - (void)setArtworkImage:(id)arg1;
-- (void)setDuration:(double)arg1 count:(unsigned int)arg2;
-- (void)setShuffleActionBlock:(id /* block */)arg1;
+- (void)setDuration:(double)arg1 count:(unsigned long long)arg2;
+- (void)setShuffleActionBlock:(id)arg1;
 - (void)setTemplateArtworkImage:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (id /* block */)shuffleActionBlock;
+- (id)shuffleActionBlock;
 - (id)title;
 
 @end

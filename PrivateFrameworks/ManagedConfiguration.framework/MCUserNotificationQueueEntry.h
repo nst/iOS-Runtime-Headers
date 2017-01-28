@@ -4,11 +4,11 @@
 
 @interface MCUserNotificationQueueEntry : NSObject {
     NSString * _alternateButtonText;
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     NSString * _defaultButtonText;
     double  _dismissAfterTimeInterval;
-    BOOL  _displayInAppWhitelistModes;
-    BOOL  _displayOnLockScreen;
+    bool  _displayInAppWhitelistModes;
+    bool  _displayOnLockScreen;
     NSString * _message;
     id  _notification;
     NSString * _otherButtonText;
@@ -16,11 +16,11 @@
 }
 
 @property (nonatomic, retain) NSString *alternateButtonText;
-@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, copy) id completionBlock;
 @property (nonatomic, retain) NSString *defaultButtonText;
 @property (nonatomic) double dismissAfterTimeInterval;
-@property (nonatomic) BOOL displayInAppWhitelistModes;
-@property (nonatomic) BOOL displayOnLockScreen;
+@property (nonatomic) bool displayInAppWhitelistModes;
+@property (nonatomic) bool displayOnLockScreen;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) id notification;
 @property (nonatomic, retain) NSString *otherButtonText;
@@ -28,20 +28,20 @@
 
 - (void).cxx_destruct;
 - (id)alternateButtonText;
-- (id /* block */)completionBlock;
+- (id)completionBlock;
 - (id)defaultButtonText;
 - (double)dismissAfterTimeInterval;
-- (BOOL)displayInAppWhitelistModes;
-- (BOOL)displayOnLockScreen;
+- (bool)displayInAppWhitelistModes;
+- (bool)displayOnLockScreen;
 - (id)message;
 - (id)notification;
 - (id)otherButtonText;
 - (void)setAlternateButtonText:(id)arg1;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setDefaultButtonText:(id)arg1;
 - (void)setDismissAfterTimeInterval:(double)arg1;
-- (void)setDisplayInAppWhitelistModes:(BOOL)arg1;
-- (void)setDisplayOnLockScreen:(BOOL)arg1;
+- (void)setDisplayInAppWhitelistModes:(bool)arg1;
+- (void)setDisplayOnLockScreen:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setNotification:(id)arg1;
 - (void)setOtherButtonText:(id)arg1;

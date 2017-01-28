@@ -6,13 +6,13 @@
 
 + (id)databasePath;
 
-- (BOOL)_migrateToVersion1;
-- (BOOL)_migrateToVersion2;
-- (BOOL)_migrateToVersion3;
-- (BOOL)_migrateToVersion4;
-- (BOOL)_migrateToVersion5;
-- (BOOL)_migrateToVersion6;
-- (BOOL)_migrateToVersion7;
-- (BOOL)_setupDatabase;
+- (bool)_migrateToVersion1;
+- (bool)_migrateToVersion2;
+- (bool)_migrateToVersion3;
+- (bool)_migrateToVersion4;
+- (bool)_migrateToVersion5;
+- (bool)_migrateToVersion6;
+- (bool)_migrateToVersion7;
+- (bool)_setupDatabase;
 
 @end

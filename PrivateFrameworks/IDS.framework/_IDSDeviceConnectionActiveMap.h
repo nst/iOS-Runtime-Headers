@@ -12,7 +12,7 @@
 + (id)sharedInstance;
 
 - (void)dealloc;
-- (BOOL)hasActiveConnection:(id)arg1 forKey:(id)arg2;
+- (bool)hasActiveConnection:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)removeActiveConnection:(id)arg1 forKey:(id)arg2;
 - (void)setActiveConnection:(id)arg1 forKey:(id)arg2;

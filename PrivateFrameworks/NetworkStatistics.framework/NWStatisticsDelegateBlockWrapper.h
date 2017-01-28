@@ -3,34 +3,34 @@
  */
 
 @interface NWStatisticsDelegateBlockWrapper : NSObject <NWStatisticsManagerDelegate, NWStatisticsSourceDelegate> {
-    id /* block */  _addedBlock;
-    id /* block */  _countsBlock;
-    id /* block */  _descriptionBlock;
-    id /* block */  _eventsBlock;
-    id /* block */  _removedBlock;
+    id  _addedBlock;
+    id  _countsBlock;
+    id  _descriptionBlock;
+    id  _eventsBlock;
+    id  _removedBlock;
 }
 
-@property (copy) id /* block */ addedBlock;
-@property (copy) id /* block */ countsBlock;
+@property (copy) id addedBlock;
+@property (copy) id countsBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (copy) id /* block */ descriptionBlock;
-@property (copy) id /* block */ eventsBlock;
-@property (readonly) unsigned int hash;
-@property (copy) id /* block */ removedBlock;
+@property (copy) id descriptionBlock;
+@property (copy) id eventsBlock;
+@property (readonly) unsigned long long hash;
+@property (copy) id removedBlock;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id /* block */)addedBlock;
-- (id /* block */)countsBlock;
-- (id /* block */)descriptionBlock;
-- (id /* block */)eventsBlock;
-- (id /* block */)removedBlock;
-- (void)setAddedBlock:(id /* block */)arg1;
-- (void)setCountsBlock:(id /* block */)arg1;
-- (void)setDescriptionBlock:(id /* block */)arg1;
-- (void)setEventsBlock:(id /* block */)arg1;
-- (void)setRemovedBlock:(id /* block */)arg1;
+- (id)addedBlock;
+- (id)countsBlock;
+- (id)descriptionBlock;
+- (id)eventsBlock;
+- (id)removedBlock;
+- (void)setAddedBlock:(id)arg1;
+- (void)setCountsBlock:(id)arg1;
+- (void)setDescriptionBlock:(id)arg1;
+- (void)setEventsBlock:(id)arg1;
+- (void)setRemovedBlock:(id)arg1;
 - (void)sourceDidReceiveCounts:(id)arg1;
 - (void)sourceDidReceiveDescription:(id)arg1;
 - (void)statisticsManager:(id)arg1 didAddSource:(id)arg2;

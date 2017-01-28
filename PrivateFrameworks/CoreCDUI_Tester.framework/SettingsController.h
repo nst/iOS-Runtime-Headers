@@ -3,7 +3,7 @@
  */
 
 @interface SettingsController : PSListController {
-    BOOL  _didUseSMS;
+    bool  _didUseSMS;
     CDPRecoveryController * _recoveryController;
     CDPRecoveryTestController * _recoveryTestController;
     CDPUIController * _uiController;
@@ -11,14 +11,14 @@
 
 - (void).cxx_destruct;
 - (id)_contextForPrimaryAccount;
-- (BOOL)_didUseSMSVerification;
-- (id)_fakeDevicesWithExpectedSecret:(id)arg1 isNumber:(BOOL)arg2 numericLength:(id)arg3;
-- (BOOL)_forceInlineUI;
+- (bool)_didUseSMSVerification;
+- (id)_fakeDevicesWithExpectedSecret:(id)arg1 isNumber:(bool)arg2 numericLength:(id)arg3;
+- (bool)_forceInlineUI;
 - (void)_loadSpecifiers;
-- (BOOL)_offerRemoteApproval;
-- (void)_setStingrayStateToEnabled:(BOOL)arg1 sender:(id)arg2;
+- (bool)_offerRemoteApproval;
+- (void)_setStingrayStateToEnabled:(bool)arg1 sender:(id)arg2;
 - (id)_stingraySpecifier;
-- (id)_stingraySpecifierForState:(unsigned int)arg1;
+- (id)_stingraySpecifierForState:(unsigned long long)arg1;
 - (void)beginIDMSRecovery:(id)arg1;
 - (void)beginIDMSRecoveryPrimary:(id)arg1;
 - (void)beginIDMSRecoveryWithFailure:(id)arg1;
@@ -37,7 +37,7 @@
 - (void)promptForLocalSecret:(id)arg1;
 - (void)promptForRandomICSC:(id)arg1;
 - (void)setUserDefaultEnabled:(id)arg1 specifier:(id)arg2;
-- (BOOL)shouldAllowCDPEnrollment;
+- (bool)shouldAllowCDPEnrollment;
 - (id)specifiers;
 - (void)viewDidLoad;
 

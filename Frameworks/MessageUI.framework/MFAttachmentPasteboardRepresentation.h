@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) NSString *mimeType;
 @property (nonatomic, retain) NSString *name;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 - (id)data;
 - (void)dealloc;
@@ -19,7 +19,7 @@
 - (id)initWithAttachment:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMFAttachment:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)mimeType;
 - (id)name;
 - (void)setData:(id)arg1;

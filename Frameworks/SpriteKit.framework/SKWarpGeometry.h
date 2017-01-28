@@ -4,11 +4,11 @@
 
 @interface SKWarpGeometry : NSObject <NSCoding, NSCopying>
 
-@property (nonatomic, readonly) BOOL isIdentityWarp;
+@property (nonatomic, readonly) bool isIdentityWarp;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isIdentityWarp;
+- (bool)isIdentityWarp;
 
 @end

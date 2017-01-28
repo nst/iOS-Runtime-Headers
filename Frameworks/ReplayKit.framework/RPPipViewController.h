@@ -3,25 +3,28 @@
  */
 
 @interface RPPipViewController : UIViewController {
+    long long  _initialOrientation;
     AVCaptureSession * _pipSession;
-    AVCaptureVideoPreviewLayer * _previewLayer;
     AVCaptureDevice * _videoDevice;
     AVCaptureDeviceInput * _videoInput;
 }
 
+@property (nonatomic) long long initialOrientation;
 @property (nonatomic, retain) AVCaptureSession *pipSession;
-@property (nonatomic, retain) AVCaptureVideoPreviewLayer *previewLayer;
 @property (nonatomic, retain) AVCaptureDevice *videoDevice;
 @property (nonatomic, retain) AVCaptureDeviceInput *videoInput;
 
 - (void).cxx_destruct;
-- (void)didReceiveMemoryWarning;
-- (id)init;
+- (long long)_captureVideoOrientationForUIDeviceOrientation:(long long)arg1;
+- (void)_deviceOrientationDidChange;
+- (id)_pipView;
+- (void)_updateViewGeometry;
+- (id)initWithOrientation:(long long)arg1;
+- (long long)initialOrientation;
+- (void)loadView;
 - (id)pipSession;
-- (id)previewLayer;
+- (void)setInitialOrientation:(long long)arg1;
 - (void)setPipSession:(id)arg1;
-- (void)setPreviewLayer:(id)arg1;
-- (void)setPreviewOrientation;
 - (void)setUpPipSession;
 - (void)setVideoDevice:(id)arg1;
 - (void)setVideoInput:(id)arg1;
@@ -29,7 +32,8 @@
 - (void)stopPipSession;
 - (id)videoDevice;
 - (id)videoInput;
-- (void)viewDidLoad;
-- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

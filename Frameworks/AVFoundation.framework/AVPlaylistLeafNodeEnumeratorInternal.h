@@ -3,14 +3,14 @@
  */
 
 @interface AVPlaylistLeafNodeEnumeratorInternal : NSObject {
-    id /* block */  completionHandler;
-    int  direction;
+    id  completionHandler;
+    long long  direction;
     struct OpaqueFigPlaylistEnumerator { } * figEnumerator;
     struct OpaqueFigPlaylist { } * figPlaylist;
     <AVPlaylistNode> * firstNode;
-    int  maximumNodeCount;
+    long long  maximumNodeCount;
     AVCMNotificationDispatcher * notificationDispatcher;
-    id /* block */  perItemBlock;
+    id  perItemBlock;
     AVWeakReference * weakSelf;
 }
 

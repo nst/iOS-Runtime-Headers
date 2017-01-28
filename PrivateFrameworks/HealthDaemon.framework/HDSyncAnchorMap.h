@@ -9,15 +9,15 @@
 @property (nonatomic, retain) NSMutableDictionary *anchorsByObjectType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned int)anchorCount;
+- (unsigned long long)anchorCount;
 - (long long)anchorForSyncEntityClass:(Class)arg1;
 - (id)anchorsByObjectType;
 - (id)description;
-- (void)enumerateAnchorsAndSyncEntitiesWithBlock:(id /* block */)arg1;
+- (void)enumerateAnchorsAndSyncEntitiesWithBlock:(id)arg1;
 - (void)setAnchor:(long long)arg1 forSyncEntity:(Class)arg2;
 - (void)setAnchorsByObjectType:(id)arg1;
 

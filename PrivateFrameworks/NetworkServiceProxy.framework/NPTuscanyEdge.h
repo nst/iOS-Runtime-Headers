@@ -3,70 +3,70 @@
  */
 
 @interface NPTuscanyEdge : NSObject <NSSecureCoding> {
-    int  _currentOnRampIndex;
-    BOOL  _dayPassPending;
+    long long  _currentOnRampIndex;
+    bool  _dayPassPending;
     double  _distance;
-    unsigned int  _index;
+    unsigned long long  _index;
     NSString * _label;
     NPLocation * _location;
     NSString * _name;
     NSArray * _onRamps;
-    id /* block */  _probeCompletionHandler;
+    id  _probeCompletionHandler;
     NWTCPConnection * _probeConnection;
     NPTunnelTuscanyEndpoint * _probeEndpoint;
     NSObject<OS_dispatch_source> * _probeTimer;
 }
 
 @property (readonly) NPTuscanyOnRamp *currentOnRamp;
-@property int currentOnRampIndex;
-@property BOOL dayPassPending;
+@property long long currentOnRampIndex;
+@property bool dayPassPending;
 @property double distance;
-@property unsigned int index;
+@property unsigned long long index;
 @property (readonly) NSString *label;
 @property (readonly) NPLocation *location;
 @property (readonly) NSString *name;
-@property (readonly) int nextOnRampIndex;
+@property (readonly) long long nextOnRampIndex;
 @property (readonly) NSArray *onRamps;
-@property (copy) id /* block */ probeCompletionHandler;
+@property (copy) id probeCompletionHandler;
 @property (retain) NWTCPConnection *probeConnection;
 @property (readonly) NPTunnelTuscanyEndpoint *probeEndpoint;
 @property (retain) NSObject<OS_dispatch_source> *probeTimer;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)cancelLatencyMeasurement;
-- (int)compareByDistance:(id)arg1;
+- (long long)compareByDistance:(id)arg1;
 - (id)currentOnRamp;
-- (int)currentOnRampIndex;
-- (BOOL)dayPassPending;
+- (long long)currentOnRampIndex;
+- (bool)dayPassPending;
 - (id)description;
 - (double)distance;
 - (void)encodeWithCoder:(id)arg1;
-- (id)getOnRamp:(int)arg1;
-- (unsigned int)index;
+- (id)getOnRamp:(long long)arg1;
+- (unsigned long long)index;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLabel:(id)arg1 name:(id)arg2 index:(unsigned int)arg3 onRamps:(id)arg4 probeEndpoint:(id)arg5 location:(id)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithLabel:(id)arg1 name:(id)arg2 index:(unsigned long long)arg3 onRamps:(id)arg4 probeEndpoint:(id)arg5 location:(id)arg6;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (id)location;
-- (void)measureLatency:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)measureLatency:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)name;
-- (int)nextIndexWithCurrentIndex:(int)arg1 bound:(int)arg2;
-- (int)nextOnRampIndex;
+- (long long)nextIndexWithCurrentIndex:(long long)arg1 bound:(long long)arg2;
+- (long long)nextOnRampIndex;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)onRamps;
 - (void)pingPong:(id)arg1;
-- (id /* block */)probeCompletionHandler;
+- (id)probeCompletionHandler;
 - (id)probeConnection;
 - (id)probeEndpoint;
 - (id)probeTimer;
-- (void)replaceOnRampAtIndex:(unsigned int)arg1 withOnRamp:(id)arg2;
-- (void)setCurrentOnRampIndex:(int)arg1;
-- (void)setDayPassPending:(BOOL)arg1;
+- (void)replaceOnRampAtIndex:(unsigned long long)arg1 withOnRamp:(id)arg2;
+- (void)setCurrentOnRampIndex:(long long)arg1;
+- (void)setDayPassPending:(bool)arg1;
 - (void)setDistance:(double)arg1;
-- (void)setIndex:(unsigned int)arg1;
-- (void)setProbeCompletionHandler:(id /* block */)arg1;
+- (void)setIndex:(unsigned long long)arg1;
+- (void)setProbeCompletionHandler:(id)arg1;
 - (void)setProbeConnection:(id)arg1;
 - (void)setProbeTimer:(id)arg1;
 

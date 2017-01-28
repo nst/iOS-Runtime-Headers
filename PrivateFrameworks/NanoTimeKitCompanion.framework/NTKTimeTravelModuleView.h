@@ -7,10 +7,10 @@
     CALayer * _borderLayer;
     NSCalendar * _cal;
     NSDate * _date;
-    BOOL  _is24HourMode;
-    float  _nowLabelCenterY;
+    bool  _is24HourMode;
+    double  _nowLabelCenterY;
     NSDateComponentsFormatter * _offsetDateFormatter;
-    BOOL  _shouldUseNowText;
+    bool  _shouldUseNowText;
     <NTKTimeTravelModuleViewTapClient> * _tapDelegate;
     UILabel * _timeScrubDifferenceLabel;
     UILabel * _timeScrubNowLabel;
@@ -18,21 +18,21 @@
 
 @property (nonatomic) <NTKTimeTravelModuleViewTapClient> *tapDelegate;
 
-+ (float)_actualCornerRadius;
-+ (float)cornerRadius;
++ (double)_actualCornerRadius;
++ (double)cornerRadius;
 + (id)timeTravelColor;
 
 - (void).cxx_destruct;
 - (id)_formatDateStringForIntervalBetweenReferenceDate:(id)arg1 andOverrideDate:(id)arg2;
 - (void)_layoutContentView;
 - (void)_setupBorder;
-- (id)initWithMaximumWidth:(float)arg1;
+- (id)initWithMaximumWidth:(double)arg1;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)prepareToAppear;
 - (void)scrubToDate:(id)arg1;
 - (void)setTapDelegate:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)tapDelegate;
 
 @end

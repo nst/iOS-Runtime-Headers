@@ -13,10 +13,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasShieldColor;
-@property (nonatomic) BOOL hasShieldEnumValue;
-@property (nonatomic, readonly) BOOL hasShieldText;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasShieldColor;
+@property (nonatomic) bool hasShieldEnumValue;
+@property (nonatomic, readonly) bool hasShieldText;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *shieldColor;
 @property (nonatomic, readonly) NSString *shieldColorString;
 @property (nonatomic) unsigned int shieldEnumValue;
@@ -30,14 +30,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasShieldColor;
-- (BOOL)hasShieldEnumValue;
-- (BOOL)hasShieldText;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasShieldColor;
+- (bool)hasShieldEnumValue;
+- (bool)hasShieldText;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasShieldEnumValue:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasShieldEnumValue:(bool)arg1;
 - (void)setShieldColor:(id)arg1;
 - (void)setShieldEnumValue:(unsigned int)arg1;
 - (void)setShieldText:(id)arg1;

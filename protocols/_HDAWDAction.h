@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)doForced;
+- (bool)doForced;
 - (void)doIfWaiting;
 - (void)reset;
 - (void)start;

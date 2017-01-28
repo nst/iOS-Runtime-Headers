@@ -8,9 +8,9 @@
     GEOShortSessionUsageLogMessage * _shortSessionUsageLogMessage;
 }
 
-@property (nonatomic, readonly) BOOL hasLongSessionUsageLogMessage;
-@property (nonatomic, readonly) BOOL hasSessionlessUsageLogMessage;
-@property (nonatomic, readonly) BOOL hasShortSessionUsageLogMessage;
+@property (nonatomic, readonly) bool hasLongSessionUsageLogMessage;
+@property (nonatomic, readonly) bool hasSessionlessUsageLogMessage;
+@property (nonatomic, readonly) bool hasShortSessionUsageLogMessage;
 @property (nonatomic, retain) GEOLongSessionUsageLogMessage *longSessionUsageLogMessage;
 @property (nonatomic, retain) GEOSessionlessUsageLogMessage *sessionlessUsageLogMessage;
 @property (nonatomic, retain) GEOShortSessionUsageLogMessage *shortSessionUsageLogMessage;
@@ -20,14 +20,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLongSessionUsageLogMessage;
-- (BOOL)hasSessionlessUsageLogMessage;
-- (BOOL)hasShortSessionUsageLogMessage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLongSessionUsageLogMessage;
+- (bool)hasSessionlessUsageLogMessage;
+- (bool)hasShortSessionUsageLogMessage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)longSessionUsageLogMessage;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionlessUsageLogMessage;
 - (void)setLongSessionUsageLogMessage:(id)arg1;
 - (void)setSessionlessUsageLogMessage:(id)arg1;

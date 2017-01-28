@@ -4,59 +4,59 @@
 
 @interface WATodayPadViewStyle : NSObject <NSCopying> {
     UIFont * _conditionsFont;
-    float  _conditionsImageLeadingMargin;
-    float  _conditionsLabelBaselineToBottom;
-    float  _conditionsLabelBaselineToLocationLabelBaseline;
-    unsigned int  _format;
-    float  _labelLeadingMargin;
+    double  _conditionsImageLeadingMargin;
+    double  _conditionsLabelBaselineToBottom;
+    double  _conditionsLabelBaselineToLocationLabelBaseline;
+    unsigned long long  _format;
+    double  _labelLeadingMargin;
     UIFont * _locationFont;
-    float  _locationLabelBaselineToTemperatureLabelBaseline;
-    int  _orientation;
+    double  _locationLabelBaselineToTemperatureLabelBaseline;
+    long long  _orientation;
     UIFont * _temperatureFont;
-    float  _temperatureLabelBaselineToConditionsImageViewBottom;
+    double  _temperatureLabelBaselineToConditionsImageViewBottom;
 }
 
 @property (nonatomic, copy) UIFont *conditionsFont;
-@property (nonatomic) float conditionsImageLeadingMargin;
-@property (nonatomic) float conditionsLabelBaselineToBottom;
-@property (nonatomic) float conditionsLabelBaselineToLocationLabelBaseline;
-@property (nonatomic) unsigned int format;
-@property (nonatomic) float labelLeadingMargin;
+@property (nonatomic) double conditionsImageLeadingMargin;
+@property (nonatomic) double conditionsLabelBaselineToBottom;
+@property (nonatomic) double conditionsLabelBaselineToLocationLabelBaseline;
+@property (nonatomic) unsigned long long format;
+@property (nonatomic) double labelLeadingMargin;
 @property (nonatomic, copy) UIFont *locationFont;
-@property (nonatomic) float locationLabelBaselineToTemperatureLabelBaseline;
-@property (nonatomic) int orientation;
+@property (nonatomic) double locationLabelBaselineToTemperatureLabelBaseline;
+@property (nonatomic) long long orientation;
 @property (nonatomic, copy) UIFont *temperatureFont;
-@property (nonatomic) float temperatureLabelBaselineToConditionsImageViewBottom;
+@property (nonatomic) double temperatureLabelBaselineToConditionsImageViewBottom;
 
-+ (id)styleForScreenWithSize:(struct CGSize { float x1; float x2; })arg1 orientation:(int)arg2;
++ (id)styleForScreenWithSize:(struct CGSize { double x1; double x2; })arg1 orientation:(long long)arg2;
 
 - (void).cxx_destruct;
-- (void)_setupForDefaultWithOrientation:(int)arg1;
-- (void)_setupForGigantorWithOrientation:(int)arg1;
+- (void)_setupForDefaultWithOrientation:(long long)arg1;
+- (void)_setupForGigantorWithOrientation:(long long)arg1;
 - (id)conditionsFont;
-- (float)conditionsImageLeadingMargin;
-- (float)conditionsLabelBaselineToBottom;
-- (float)conditionsLabelBaselineToLocationLabelBaseline;
+- (double)conditionsImageLeadingMargin;
+- (double)conditionsLabelBaselineToBottom;
+- (double)conditionsLabelBaselineToLocationLabelBaseline;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)format;
+- (unsigned long long)format;
 - (id)init;
-- (id)initWithFormat:(unsigned int)arg1 orientation:(int)arg2;
-- (float)labelLeadingMargin;
+- (id)initWithFormat:(unsigned long long)arg1 orientation:(long long)arg2;
+- (double)labelLeadingMargin;
 - (id)locationFont;
-- (float)locationLabelBaselineToTemperatureLabelBaseline;
-- (int)orientation;
+- (double)locationLabelBaselineToTemperatureLabelBaseline;
+- (long long)orientation;
 - (void)setConditionsFont:(id)arg1;
-- (void)setConditionsImageLeadingMargin:(float)arg1;
-- (void)setConditionsLabelBaselineToBottom:(float)arg1;
-- (void)setConditionsLabelBaselineToLocationLabelBaseline:(float)arg1;
-- (void)setFormat:(unsigned int)arg1;
-- (void)setLabelLeadingMargin:(float)arg1;
+- (void)setConditionsImageLeadingMargin:(double)arg1;
+- (void)setConditionsLabelBaselineToBottom:(double)arg1;
+- (void)setConditionsLabelBaselineToLocationLabelBaseline:(double)arg1;
+- (void)setFormat:(unsigned long long)arg1;
+- (void)setLabelLeadingMargin:(double)arg1;
 - (void)setLocationFont:(id)arg1;
-- (void)setLocationLabelBaselineToTemperatureLabelBaseline:(float)arg1;
-- (void)setOrientation:(int)arg1;
+- (void)setLocationLabelBaselineToTemperatureLabelBaseline:(double)arg1;
+- (void)setOrientation:(long long)arg1;
 - (void)setTemperatureFont:(id)arg1;
-- (void)setTemperatureLabelBaselineToConditionsImageViewBottom:(float)arg1;
+- (void)setTemperatureLabelBaselineToConditionsImageViewBottom:(double)arg1;
 - (id)temperatureFont;
-- (float)temperatureLabelBaselineToConditionsImageViewBottom;
+- (double)temperatureLabelBaselineToConditionsImageViewBottom;
 
 @end

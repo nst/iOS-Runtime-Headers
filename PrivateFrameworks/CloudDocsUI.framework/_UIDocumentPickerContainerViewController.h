@@ -4,7 +4,7 @@
 
 @interface _UIDocumentPickerContainerViewController : UIViewController <UISearchControllerDelegate> {
     UIViewController<_UIDocumentPickerContainedViewController> * _childViewController;
-    int  _explicitDisplayMode;
+    long long  _explicitDisplayMode;
     _UIDocumentPickerContainerModel * _model;
     _UIDocumentSearchListController * _resultsController;
     _UIDocumentPickerSearchPaletteView * _searchView;
@@ -13,11 +13,11 @@
 }
 
 @property (nonatomic, retain) UIViewController<_UIDocumentPickerContainedViewController> *childViewController;
-@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
+@property (nonatomic) struct CGPoint { double x1; double x2; } contentOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int explicitDisplayMode;
-@property (readonly) unsigned int hash;
+@property (nonatomic) long long explicitDisplayMode;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *indexPathsForSelectedItems;
 @property (nonatomic, retain) _UIDocumentPickerContainerModel *model;
 @property (nonatomic, retain) _UIDocumentSearchListController *resultsController;
@@ -30,31 +30,31 @@
 
 - (void).cxx_destruct;
 - (void)_sortOrderViewChanged:(id)arg1;
-- (void)_startSearchWithQueryString:(id)arg1 becomeFirstResponder:(BOOL)arg2;
+- (void)_startSearchWithQueryString:(id)arg1 becomeFirstResponder:(bool)arg2;
 - (void)_updateTraitCollection;
 - (id)childViewController;
-- (struct CGPoint { float x1; float x2; })contentOffset;
+- (struct CGPoint { double x1; double x2; })contentOffset;
 - (void)dealloc;
-- (int)defaultDisplayMode;
-- (int)displayMode;
+- (long long)defaultDisplayMode;
+- (long long)displayMode;
 - (void)displayModeChanged;
 - (void)ensureChildViewController;
-- (int)explicitDisplayMode;
+- (long long)explicitDisplayMode;
 - (id)indexPathsForSelectedItems;
 - (id)initWithModel:(id)arg1;
 - (void)invalidate;
-- (BOOL)isEditing;
+- (bool)isEditing;
 - (id)model;
 - (id)resultsController;
 - (id)searchView;
 - (id)serviceViewController;
 - (void)setChildViewController:(id)arg1;
-- (void)setChildViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setDefaultDisplayMode:(int)arg1;
-- (void)setEditing:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setExplicitDisplayMode:(int)arg1;
+- (void)setChildViewController:(id)arg1 animated:(bool)arg2;
+- (void)setContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setDefaultDisplayMode:(long long)arg1;
+- (void)setEditing:(bool)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
+- (void)setExplicitDisplayMode:(long long)arg1;
 - (void)setIndexPathsForSelectedItems:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setResultsController:(id)arg1;
@@ -66,7 +66,7 @@
 - (int)sortOrder;
 - (id)sortView;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

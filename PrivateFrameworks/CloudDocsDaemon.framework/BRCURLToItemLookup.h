@@ -4,7 +4,7 @@
 
 @interface BRCURLToItemLookup : NSObject <NSSecureCoding> {
     BRCRelativePath * __relpath;
-    BOOL  _allowAppLibraryRoot;
+    bool  _allowAppLibraryRoot;
     unsigned long long  _byIDDiffs;
     BRCLocalItem * _byIDLocalItem;
     BRCServerItem * _byIDServerItem;
@@ -64,11 +64,11 @@
 @property (nonatomic, readonly) BRCServerItem *reservedServerItem;
 @property (nonatomic, readonly) NSURL *url;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_bounceBouncesHiddenByFault:(id)arg1;
-- (BOOL)_canUpdatePathMatch:(const struct { id x1; id x2; unsigned long long x3; }*)arg1 hasAdditionsToApply:(BOOL)arg2;
+- (bool)_bounceBouncesHiddenByFault:(id)arg1;
+- (bool)_canUpdatePathMatch:(const struct { id x1; id x2; unsigned long long x3; }*)arg1 hasAdditionsToApply:(bool)arg2;
 - (void)_clearNamespace:(unsigned char)arg1;
 - (void)_fetchFaultedPathMatch;
 - (void)_fetchIDMatch;
@@ -77,7 +77,7 @@
 - (void)_fetchReservedPathMatch;
 - (void)_moveMissingItemAsideInNamespace:(unsigned char)arg1;
 - (struct { id x1; id x2; unsigned long long x3; })_pathMatchInNamespace:(unsigned char)arg1;
-- (BOOL)_removeDirectory:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
+- (bool)_removeDirectory:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
 - (unsigned long long)byIDDiffs;
 - (id)byIDLocalItem;
 - (struct { id x1; id x2; unsigned long long x3; })byIDMatch;
@@ -105,8 +105,8 @@
 - (id)filename;
 - (void)handleReservedPathMatchesIfNeeded;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 allowAppLibraryRoot:(BOOL)arg2 session:(id)arg3;
-- (id)initWithURL:(id)arg1 allowAppLibraryRoot:(BOOL)arg2 session:(id)arg3 db:(id)arg4;
+- (id)initWithURL:(id)arg1 allowAppLibraryRoot:(bool)arg2 session:(id)arg3;
+- (id)initWithURL:(id)arg1 allowAppLibraryRoot:(bool)arg2 session:(id)arg3 db:(id)arg4;
 - (id)initWithURL:(id)arg1 session:(id)arg2;
 - (void)markPathMatchLostIfLocationDoesntMatch:(struct { id x1; id x2; unsigned long long x3; }*)arg1;
 - (void)matchLookupItemsWithDisk;
@@ -121,9 +121,9 @@
 - (id)reservedLocalItem;
 - (struct { id x1; id x2; unsigned long long x3; })reservedMatch;
 - (id)reservedServerItem;
-- (BOOL)resolveAndKeepOpenWithError:(id*)arg1;
-- (BOOL)resolveParentAndKeepOpenMustExist:(BOOL)arg1 errcode:(int*)arg2;
-- (BOOL)tryToDeleteItemInNamespace:(unsigned char)arg1;
+- (bool)resolveAndKeepOpenWithError:(id*)arg1;
+- (bool)resolveParentAndKeepOpenMustExist:(bool)arg1 errcode:(int*)arg2;
+- (bool)tryToDeleteItemInNamespace:(unsigned char)arg1;
 - (void)tryToUpdateItemInNamespace:(unsigned char)arg1 withDstLookup:(id)arg2;
 - (id)url;
 

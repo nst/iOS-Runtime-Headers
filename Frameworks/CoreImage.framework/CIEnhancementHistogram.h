@@ -3,13 +3,13 @@
  */
 
 @interface CIEnhancementHistogram : NSObject {
-    float  hist;
+    double  hist;
 }
 
-+ (id)histogramFromData:(const float*)arg1;
++ (id)histogramFromData:(const double*)arg1;
 + (id)histogramFromDoubleData:(const double*)arg1;
 + (id)histogramFromFloatData:(const float*)arg1;
 
-- (const float*)values;
+- (const double*)values;
 
 @end

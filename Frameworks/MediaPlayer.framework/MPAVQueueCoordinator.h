@@ -3,41 +3,41 @@
  */
 
 @interface MPAVQueueCoordinator : NSObject {
-    unsigned int  _activeQueueDepth;
+    unsigned long long  _activeQueueDepth;
     NSOperationQueue * _assetQueue;
-    unsigned int  _backgroundTaskIdentifier;
-    unsigned int  _backgroundTasks;
+    unsigned long long  _backgroundTaskIdentifier;
+    unsigned long long  _backgroundTasks;
     MPAVItem * _currentItem;
     <MPAVQueueCoordinatorDataSource> * _dataSource;
-    id /* block */  _equilibriumAchievedHandler;
-    BOOL  _holdingPlaybackTransactionForFirstItem;
-    BOOL  _isPendingPlayerItemSync;
-    BOOL  _isSyncingPlayerItems;
+    id  _equilibriumAchievedHandler;
+    bool  _holdingPlaybackTransactionForFirstItem;
+    bool  _isPendingPlayerItemSync;
+    bool  _isSyncingPlayerItems;
     NSArray * _items;
     NSHashTable * _itemsPendingAssetLoading;
     MPAVItem * _lastItemAnchor;
     NSDate * _lastPausedDate;
-    unsigned int  _maximumQueueDepth;
-    BOOL  _needsCurrentItemUpdateAfterPlayerItemSync;
+    unsigned long long  _maximumQueueDepth;
+    bool  _needsCurrentItemUpdateAfterPlayerItemSync;
     MPQueuePlayer * _player;
-    BOOL  _preventLoadingItems;
+    bool  _preventLoadingItems;
     double  _rateQueueDepthAdjustmentDelay;
     NSMutableSet * _reusableItems;
 }
 
-@property (nonatomic, readonly) unsigned int activeQueueDepth;
+@property (nonatomic, readonly) unsigned long long activeQueueDepth;
 @property (nonatomic, readonly) MPAVItem *currentItem;
 @property (nonatomic, readonly) <MPAVQueueCoordinatorDataSource> *dataSource;
-@property (nonatomic, copy) id /* block */ equilibriumAchievedHandler;
+@property (nonatomic, copy) id equilibriumAchievedHandler;
 @property (nonatomic, readonly) NSArray *items;
-@property (nonatomic) unsigned int maximumQueueDepth;
+@property (nonatomic) unsigned long long maximumQueueDepth;
 @property (nonatomic, readonly) MPQueuePlayer *player;
 
 - (void).cxx_destruct;
 - (void)_beginBackgroundTaskAssertion;
 - (void)_dequeueFailedItem:(id)arg1;
 - (void)_endBackgroundTaskAssertion;
-- (BOOL)_hasAchievedEquilibrium;
+- (bool)_hasAchievedEquilibrium;
 - (void)_loadAssetForItem:(id)arg1;
 - (id)_playerItems;
 - (void)_removeAllItemsFromPlayer;
@@ -48,18 +48,18 @@
 - (void)_updateCurrentItem;
 - (void)_updateQueueDepth;
 - (void)_updateQueueDepthWithPausedDuration:(double)arg1;
-- (unsigned int)activeQueueDepth;
+- (unsigned long long)activeQueueDepth;
 - (id)currentItem;
 - (id)dataSource;
 - (void)dealloc;
-- (id /* block */)equilibriumAchievedHandler;
+- (id)equilibriumAchievedHandler;
 - (id)initWithPlayer:(id)arg1 dataSource:(id)arg2;
 - (id)items;
-- (unsigned int)maximumQueueDepth;
+- (unsigned long long)maximumQueueDepth;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
-- (void)reloadItemsKeepingCurrentItem:(BOOL)arg1;
-- (void)setEquilibriumAchievedHandler:(id /* block */)arg1;
-- (void)setMaximumQueueDepth:(unsigned int)arg1;
+- (void)reloadItemsKeepingCurrentItem:(bool)arg1;
+- (void)setEquilibriumAchievedHandler:(id)arg1;
+- (void)setMaximumQueueDepth:(unsigned long long)arg1;
 
 @end

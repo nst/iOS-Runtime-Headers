@@ -16,14 +16,14 @@
 @property (nonatomic, retain) BBDataProviderProxy *dataProviderProxy;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addBulletinRequest:(id)arg1;
 - (id)_bulletinRequestWithMessage:(id)arg1 actionURL:(id)arg2;
-- (void)_prepareDataProviderProxyWithCompletionHandler:(id /* block */)arg1;
+- (void)_prepareDataProviderProxyWithCompletionHandler:(id)arg1;
 - (void)_removeBulletin:(id)arg1;
 - (void)_removeBulletinWithRecordID:(id)arg1;
 - (id)authenticationBulletinRecordID;
@@ -35,7 +35,7 @@
 - (void)dealloc;
 - (id)defaultSectionInfo;
 - (id)init;
-- (void)postAuthenticationBulletinWithAppStoreRoomURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)postAuthenticationBulletinWithAppStoreRoomURL:(id)arg1 completionHandler:(id)arg2;
 - (id)queue;
 - (id)sectionDisplayName;
 - (id)sectionIcon;

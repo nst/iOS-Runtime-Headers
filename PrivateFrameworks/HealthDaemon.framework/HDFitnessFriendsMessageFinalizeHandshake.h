@@ -3,28 +3,34 @@
  */
 
 @interface HDFitnessFriendsMessageFinalizeHandshake : PBCodable <NSCopying> {
+    HDFitnessFriendsMessageActivityDataPreview * _activityDataPreview;
     NSString * _handshakeToken;
     HDFitnessFriendsMessageShareLocations * _inviterShareLocations;
 }
 
+@property (nonatomic, retain) HDFitnessFriendsMessageActivityDataPreview *activityDataPreview;
 @property (nonatomic, retain) NSString *handshakeToken;
-@property (nonatomic, readonly) BOOL hasHandshakeToken;
-@property (nonatomic, readonly) BOOL hasInviterShareLocations;
+@property (nonatomic, readonly) bool hasActivityDataPreview;
+@property (nonatomic, readonly) bool hasHandshakeToken;
+@property (nonatomic, readonly) bool hasInviterShareLocations;
 @property (nonatomic, retain) HDFitnessFriendsMessageShareLocations *inviterShareLocations;
 
 - (void).cxx_destruct;
+- (id)activityDataPreview;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)handshakeToken;
-- (BOOL)hasHandshakeToken;
-- (BOOL)hasInviterShareLocations;
-- (unsigned int)hash;
+- (bool)hasActivityDataPreview;
+- (bool)hasHandshakeToken;
+- (bool)hasInviterShareLocations;
+- (unsigned long long)hash;
 - (id)inviterShareLocations;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setActivityDataPreview:(id)arg1;
 - (void)setHandshakeToken:(id)arg1;
 - (void)setInviterShareLocations:(id)arg1;
 - (void)writeTo:(id)arg1;

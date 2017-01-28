@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isValidWithError:(id*)arg1;
 
 @optional
 

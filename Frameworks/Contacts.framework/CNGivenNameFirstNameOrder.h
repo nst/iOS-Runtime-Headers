@@ -4,7 +4,7 @@
 
 @interface CNGivenNameFirstNameOrder : CNContactNameOrderImpl
 
-- (int)nameOrder;
+- (long long)nameOrder;
 - (id)nameProperties;
 - (id)phoneticNameProperties;
 - (id)sortingNameProperties;

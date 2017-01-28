@@ -7,7 +7,7 @@
     NSUUID * _identifier;
     double  _latitude;
     double  _longitude;
-    int  _type;
+    long long  _type;
     double  _uncertainty;
     NSArray * _visits;
 }
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSUUID *identifier;
 @property (nonatomic) double latitude;
 @property (nonatomic) double longitude;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 @property (nonatomic) double uncertainty;
 @property (nonatomic, retain) NSArray *visits;
 
@@ -31,10 +31,10 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setLatitude:(double)arg1;
 - (void)setLongitude:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setUncertainty:(double)arg1;
 - (void)setVisits:(id)arg1;
-- (int)type;
+- (long long)type;
 - (double)uncertainty;
 - (id)visits;
 

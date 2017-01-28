@@ -3,7 +3,7 @@
  */
 
 @interface ATPMessage : PBCodable <NSCopying> {
-    BOOL  _additionalPayload;
+    bool  _additionalPayload;
     struct { 
         unsigned int messageID : 1; 
         unsigned int messageType : 1; 
@@ -22,18 +22,18 @@
     ATPError * _streamError;
 }
 
-@property (nonatomic) BOOL additionalPayload;
-@property (nonatomic) BOOL hasAdditionalPayload;
-@property (nonatomic) BOOL hasMessageID;
-@property (nonatomic) BOOL hasMessageType;
-@property (nonatomic, readonly) BOOL hasParameters;
-@property (nonatomic, readonly) BOOL hasParamsSignature;
-@property (nonatomic, readonly) BOOL hasPayload;
-@property (nonatomic, readonly) BOOL hasPayloadSignature;
-@property (nonatomic, readonly) BOOL hasRequest;
-@property (nonatomic, readonly) BOOL hasResponse;
-@property (nonatomic) BOOL hasSessionID;
-@property (nonatomic, readonly) BOOL hasStreamError;
+@property (nonatomic) bool additionalPayload;
+@property (nonatomic) bool hasAdditionalPayload;
+@property (nonatomic) bool hasMessageID;
+@property (nonatomic) bool hasMessageType;
+@property (nonatomic, readonly) bool hasParameters;
+@property (nonatomic, readonly) bool hasParamsSignature;
+@property (nonatomic, readonly) bool hasPayload;
+@property (nonatomic, readonly) bool hasPayloadSignature;
+@property (nonatomic, readonly) bool hasRequest;
+@property (nonatomic, readonly) bool hasResponse;
+@property (nonatomic) bool hasSessionID;
+@property (nonatomic, readonly) bool hasStreamError;
 @property (nonatomic) unsigned int messageID;
 @property (nonatomic) int messageType;
 @property (nonatomic, retain) NSData *parameters;
@@ -46,25 +46,25 @@
 @property (nonatomic, retain) ATPError *streamError;
 
 - (void).cxx_destruct;
-- (BOOL)additionalPayload;
+- (bool)additionalPayload;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)formattedDescription;
-- (BOOL)hasAdditionalPayload;
-- (BOOL)hasMessageID;
-- (BOOL)hasMessageType;
-- (BOOL)hasParameters;
-- (BOOL)hasParamsSignature;
-- (BOOL)hasPayload;
-- (BOOL)hasPayloadSignature;
-- (BOOL)hasRequest;
-- (BOOL)hasResponse;
-- (BOOL)hasSessionID;
-- (BOOL)hasStreamError;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAdditionalPayload;
+- (bool)hasMessageID;
+- (bool)hasMessageType;
+- (bool)hasParameters;
+- (bool)hasParamsSignature;
+- (bool)hasPayload;
+- (bool)hasPayloadSignature;
+- (bool)hasRequest;
+- (bool)hasResponse;
+- (bool)hasSessionID;
+- (bool)hasStreamError;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)messageID;
 - (int)messageType;
@@ -72,15 +72,15 @@
 - (id)paramsSignature;
 - (id)payload;
 - (id)payloadSignature;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)request;
 - (id)response;
 - (unsigned int)sessionID;
-- (void)setAdditionalPayload:(BOOL)arg1;
-- (void)setHasAdditionalPayload:(BOOL)arg1;
-- (void)setHasMessageID:(BOOL)arg1;
-- (void)setHasMessageType:(BOOL)arg1;
-- (void)setHasSessionID:(BOOL)arg1;
+- (void)setAdditionalPayload:(bool)arg1;
+- (void)setHasAdditionalPayload:(bool)arg1;
+- (void)setHasMessageID:(bool)arg1;
+- (void)setHasMessageType:(bool)arg1;
+- (void)setHasSessionID:(bool)arg1;
 - (void)setMessageID:(unsigned int)arg1;
 - (void)setMessageType:(int)arg1;
 - (void)setParameters:(id)arg1;

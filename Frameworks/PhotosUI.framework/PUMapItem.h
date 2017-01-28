@@ -12,17 +12,17 @@
 @property (nonatomic, copy) NSObject<NSCopying> *itemId;
 @property (nonatomic, retain) CLLocation *location;
 
-+ (id /* block */)mapItemSortingComparatorNewestToOldest;
-+ (id /* block */)mapItemSortingComparatorOldestToNewest;
++ (id)mapItemSortingComparatorNewestToOldest;
++ (id)mapItemSortingComparatorOldestToNewest;
 + (id)stringForItemId:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)_mapItemSortingCompareWithMapItem:(id)arg1;
-- (int)compare:(id)arg1;
+- (long long)_mapItemSortingCompareWithMapItem:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)dateCreated;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)itemId;
 - (id)location;
 - (void)setDateCreated:(id)arg1;

@@ -7,8 +7,8 @@
     NSString * _recordID;
 }
 
-@property (nonatomic, readonly) BOOL hasPublisherBulletinID;
-@property (nonatomic, readonly) BOOL hasRecordID;
+@property (nonatomic, readonly) bool hasPublisherBulletinID;
+@property (nonatomic, readonly) bool hasRecordID;
 @property (nonatomic, retain) NSString *publisherBulletinID;
 @property (nonatomic, retain) NSString *recordID;
 
@@ -17,13 +17,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPublisherBulletinID;
-- (BOOL)hasRecordID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPublisherBulletinID;
+- (bool)hasRecordID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)publisherBulletinID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordID;
 - (void)setPublisherBulletinID:(id)arg1;
 - (void)setRecordID:(id)arg1;

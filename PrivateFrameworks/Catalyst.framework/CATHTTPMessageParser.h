@@ -13,7 +13,7 @@
 + (id)encodeData:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)appendBytes:(const char *)arg1 length:(unsigned int)arg2;
+- (bool)appendBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)delegateDidReceiveData:(id)arg1;

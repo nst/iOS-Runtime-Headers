@@ -4,6 +4,6 @@
 
 @interface TSPObjectSerializationArchiver : TSPCopyArchiver
 
-- (int)targetType;
+- (long long)targetType;
 
 @end

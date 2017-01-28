@@ -9,7 +9,7 @@
 + (double)defaultAnimationDuration;
 + (id)springAnimationWithKeyPath:(id)arg1 toLayer:(id)arg2 fromValue:(id)arg3 toValue:(id)arg4;
 
-- (void)addCompletionBlock:(id /* block */)arg1;
+- (void)addCompletionBlock:(id)arg1;
 - (id)init;
 
 @end

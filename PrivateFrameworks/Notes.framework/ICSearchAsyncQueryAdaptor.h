@@ -3,14 +3,14 @@
  */
 
 @interface ICSearchAsyncQueryAdaptor : NSObject {
-    BOOL  _cancelled;
+    bool  _cancelled;
     <ICSearchAsyncQueryDelegate> * _delegate;
     <ICSearchAsyncQueryable> * _owner;
     id  _query;
     <ICSearchQueryable> * _searchQueryable;
 }
 
-@property BOOL cancelled;
+@property bool cancelled;
 @property (nonatomic) <ICSearchAsyncQueryDelegate> *delegate;
 @property (nonatomic) <ICSearchAsyncQueryable> *owner;
 @property (nonatomic, retain) id query;
@@ -18,14 +18,14 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (BOOL)cancelled;
+- (bool)cancelled;
 - (id)delegate;
 - (void)execute;
 - (id)initWithTerms:(id)arg1 searchQueryable:(id)arg2 delegate:(id)arg3 owner:(id)arg4;
 - (id)owner;
 - (id)query;
 - (id)searchQueryable;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setQuery:(id)arg1;

@@ -6,13 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)canShowResultsForRedeem:(id)arg1;
++ (bool)canShowResultsForRedeem:(id)arg1;
 
 - (void)dealloc;
-- (void)storePage:(id)arg1 finishedWithSuccess:(BOOL)arg2;
+- (void)storePage:(id)arg1 finishedWithSuccess:(bool)arg2;
 - (void)viewDidLoad;
 
 @end

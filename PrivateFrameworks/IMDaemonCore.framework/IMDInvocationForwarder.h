@@ -18,7 +18,7 @@
 - (id)initWithTargets:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)removeTarget:(id)arg1;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)set_lock:(id)arg1;
 - (void)set_targets:(id)arg1;
 

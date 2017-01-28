@@ -3,21 +3,21 @@
  */
 
 @interface AXSpringBoardActionHandlerHolder : NSObject {
-    id /* block */  _handler;
+    id  _handler;
     NSString * _identifier;
-    int  _type;
+    long long  _type;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void)dealloc;
-- (id /* block */)handler;
+- (id)handler;
 - (id)identifier;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

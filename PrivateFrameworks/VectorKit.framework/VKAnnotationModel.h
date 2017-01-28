@@ -18,14 +18,14 @@
             unsigned char overlayType; 
             unsigned char applicationState; 
             unsigned char searchResultsType; 
-            BOOL mapHasLabels; 
+            bool mapHasLabels; 
         } fromDisplayStyle; 
         struct { 
             unsigned char timePeriod; 
             unsigned char overlayType; 
             unsigned char applicationState; 
             unsigned char searchResultsType; 
-            BOOL mapHasLabels; 
+            bool mapHasLabels; 
         } toDisplayStyle; 
         float fraction; 
     }  _styleTransitionState;
@@ -34,15 +34,15 @@
 @property (nonatomic, readonly) NSArray *annotationMarkers;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) VKMapModel *mapModel;
-@property (nonatomic, readonly) BOOL needsLayout;
+@property (nonatomic, readonly) bool needsLayout;
 @property (nonatomic, readonly) const struct AnnotationPipelineStates { struct shared_ptr<ggl::TextureWithBrightness::MeshPipelineState> { struct MeshPipelineState {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct shared_ptr<ggl::TextureAlphaMask::MeshPipelineState> { struct MeshPipelineState {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*pipelineStates;
 @property (nonatomic, readonly) struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; } styleManager;
-@property (nonatomic) struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; BOOL x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; BOOL x_4_1_5; } x4; float x5; } styleTransitionState;
+@property (nonatomic) struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; bool x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; bool x_4_1_5; } x4; float x5; } styleTransitionState;
 @property (readonly) Class superclass;
 
-+ (BOOL)reloadOnStylesheetChange;
++ (bool)reloadOnStylesheetChange;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -54,14 +54,14 @@
 - (id)initWithTarget:(id)arg1 sharedResources:(id)arg2;
 - (unsigned long long)mapLayerPosition;
 - (id)mapModel;
-- (BOOL)needsLayout;
+- (bool)needsLayout;
 - (const struct AnnotationPipelineStates { struct shared_ptr<ggl::TextureWithBrightness::MeshPipelineState> { struct MeshPipelineState {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; struct shared_ptr<ggl::TextureAlphaMask::MeshPipelineState> { struct MeshPipelineState {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)pipelineStates;
 - (void)removeAnnotationMarker:(id)arg1;
 - (void)setMapModel:(id)arg1;
-- (void)setStyleTransitionState:(struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; BOOL x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; BOOL x_4_1_5; } x4; float x5; })arg1;
-- (BOOL)shouldLayoutWithoutStyleManager;
+- (void)setStyleTransitionState:(struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; bool x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; bool x_4_1_5; } x4; float x5; })arg1;
+- (bool)shouldLayoutWithoutStyleManager;
 - (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
-- (struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; BOOL x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; BOOL x_4_1_5; } x4; float x5; })styleTransitionState;
+- (struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; bool x_3_1_5; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; unsigned char x_4_1_4; bool x_4_1_5; } x4; float x5; })styleTransitionState;
 - (void)stylesheetDidChange;
 
 @end

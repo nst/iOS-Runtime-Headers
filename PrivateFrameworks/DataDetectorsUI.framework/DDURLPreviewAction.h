@@ -6,16 +6,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)handlesUrl:(id)arg1 result:(struct __DDResult { }*)arg2;
++ (bool)handlesUrl:(id)arg1 result:(struct __DDResult { }*)arg2;
 + (id)validatedURLWithURL:(id)arg1 result:(struct __DDResult { }*)arg2;
 
 - (id)commitURL;
 - (id)createViewController;
-- (BOOL)requiresEmbeddingNavigationController;
+- (bool)requiresEmbeddingNavigationController;
 - (void)safariViewControllerDidFinish:(id)arg1;
-- (void)setPreviewMode:(BOOL)arg1;
+- (void)setPreviewMode:(bool)arg1;
 
 @end

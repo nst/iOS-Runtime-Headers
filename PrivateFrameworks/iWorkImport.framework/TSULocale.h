@@ -16,13 +16,13 @@
     NSString * _documentLanguageIdentifier;
     NSString * _falseString;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _formattersMutex;
     struct __CFLocale { } * _gregorianCalendarLocale;
     NSString * _groupingSeparator;
-    unsigned int  _groupingSize;
-    BOOL  _isAutoUpdating;
+    unsigned long long  _groupingSize;
+    bool  _isAutoUpdating;
     NSString * _languageCode;
     NSString * _listSeparator;
     NSLocale * _locale;
@@ -60,8 +60,8 @@
 @property (readonly) NSString *falseString;
 @property (readonly) NSLocale *gregorianCalendarLocale;
 @property (readonly) NSString *groupingSeparator;
-@property (readonly) unsigned int groupingSize;
-@property (readonly) BOOL isAutoUpdating;
+@property (readonly) unsigned long long groupingSize;
+@property (readonly) bool isAutoUpdating;
 @property (readonly) NSString *languageCode;
 @property (readonly) NSString *listSeparator;
 @property (readonly) NSLocale *locale;
@@ -79,7 +79,7 @@
 @property (readonly) NSArray *weekdaySymbols;
 
 + (id)applicationLocale;
-+ (unsigned int)autoupdatingCurrentLocaleChangeCount;
++ (unsigned long long)autoupdatingCurrentLocaleChangeCount;
 + (id)cacheKeyForCFLocale:(struct __CFLocale { }*)arg1;
 + (id)canonicalizeLocaleIdentifier:(id)arg1;
 + (id)canonicalizeLocaleIdentifierWithLanguageAndRegionOnly:(id)arg1;
@@ -90,7 +90,7 @@
 + (id)deducedScriptForLocale:(id)arg1;
 + (void)initialize;
 + (id)localeForLocaleIdentifier:(id)arg1 documentLanguageIdentifier:(id)arg2;
-+ (BOOL)localeIsAutoUpdating:(struct __CFLocale { }*)arg1;
++ (bool)localeIsAutoUpdating:(struct __CFLocale { }*)arg1;
 + (id)preferredLanguages;
 + (void)saveLocaleForReuse:(id)arg1;
 + (void)setLocalizedStringBundle:(struct __CFBundle { }*)arg1;
@@ -122,11 +122,11 @@
 - (id)functionNameForLocalizedString:(id)arg1;
 - (id)gregorianCalendarLocale;
 - (id)groupingSeparator;
-- (unsigned int)groupingSize;
+- (unsigned long long)groupingSize;
 - (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2;
-- (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2 useAutoupdating:(BOOL)arg3;
-- (BOOL)isAutoUpdating;
-- (BOOL)isEqualToLocale:(id)arg1;
+- (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2 useAutoupdating:(bool)arg3;
+- (bool)isAutoUpdating;
+- (bool)isEqualToLocale:(id)arg1;
 - (id)languageCode;
 - (id)listSeparator;
 - (void)loadLocalizedStrings;
@@ -135,11 +135,11 @@
 - (id)localeIdentifierWithLanguageAndRegionOnly;
 - (id)localeIdentifierWithLanguageScriptAndRegionOnly;
 - (id)localeSpecificStorageForKey:(id)arg1;
-- (int)localizedCaseInsensitiveCompare:(id)arg1 toString:(id)arg2;
-- (BOOL)localizedCaseInsensitiveIsEqual:(id)arg1 toString:(id)arg2;
+- (long long)localizedCaseInsensitiveCompare:(id)arg1 toString:(id)arg2;
+- (bool)localizedCaseInsensitiveIsEqual:(id)arg1 toString:(id)arg2;
 - (id)localizedCategoryArray;
 - (id)localizedCategoryForFunction:(id)arg1;
-- (int)localizedCompare:(id)arg1 toString:(id)arg2;
+- (long long)localizedCompare:(id)arg1 toString:(id)arg2;
 - (id)localizedFalseString;
 - (id)localizedFalseStrings;
 - (id)localizedFunctionCategoryDictionary;
@@ -150,15 +150,15 @@
 - (id)localizedNameForFunction:(id)arg1;
 - (id)localizedNamesForFunctions:(id)arg1;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
-- (BOOL)localizedStringIsFalse:(id)arg1;
-- (BOOL)localizedStringIsTrue:(id)arg1;
+- (bool)localizedStringIsFalse:(id)arg1;
+- (bool)localizedStringIsTrue:(id)arg1;
 - (id)localizedToolTipForArgument:(short)arg1 ofFunction:(id)arg2;
 - (id)localizedToolTipForFunction:(id)arg1;
 - (id)localizedTrueString;
 - (id)localizedTrueStrings;
 - (id)localizedTypeStringForArgumentType:(int)arg1;
 - (id)monthSymbols;
-- (id)numberFormatterStringFromDouble:(double)arg1 withFormat:(id)arg2 useDecimalPlaces:(BOOL)arg3 minDecimalPlaces:(unsigned short)arg4 decimalPlaces:(unsigned short)arg5 showThousandsSeparator:(BOOL)arg6 currencyCode:(id)arg7 suppressMinusSign:(BOOL)arg8;
+- (id)numberFormatterStringFromDouble:(double)arg1 withFormat:(id)arg2 useDecimalPlaces:(bool)arg3 minDecimalPlaces:(unsigned short)arg4 decimalPlaces:(unsigned short)arg5 showThousandsSeparator:(bool)arg6 currencyCode:(id)arg7 suppressMinusSign:(bool)arg8;
 - (id)percentSymbol;
 - (void)returnNumberFormatter:(struct __CFNumberFormatter { }*)arg1;
 - (void)returnScientificNumberFormatter:(struct __CFNumberFormatter { }*)arg1;

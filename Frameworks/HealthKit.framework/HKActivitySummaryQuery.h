@@ -3,25 +3,25 @@
  */
 
 @interface HKActivitySummaryQuery : HKQuery {
-    id /* block */  _completionHandler;
-    BOOL  _initialHandlerCalled;
-    id /* block */  _updateHandler;
+    id  _completionHandler;
+    bool  _initialHandlerCalled;
+    id  _updateHandler;
 }
 
-@property (nonatomic, copy) id /* block */ updateHandler;
+@property (nonatomic, copy) id updateHandler;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (id)_queue_errorHandler;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
-- (BOOL)_requiresValidSampleType;
+- (bool)_requiresValidSampleType;
 - (void)deliverActivitySummaries:(id)arg1 queryUUID:(id)arg2;
-- (id)initWithPredicate:(id)arg1 resultsHandler:(id /* block */)arg2;
-- (void)setUpdateHandler:(id /* block */)arg1;
-- (id /* block */)updateHandler;
+- (id)initWithPredicate:(id)arg1 resultsHandler:(id)arg2;
+- (void)setUpdateHandler:(id)arg1;
+- (id)updateHandler;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

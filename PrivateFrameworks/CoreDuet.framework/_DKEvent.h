@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) NSDate *endDate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSDate *startDate;
 @property (retain) _DKEventStream *stream;
 @property (readonly) Class superclass;
@@ -26,28 +26,28 @@
 
 + (id)entityName;
 + (id)eventStreamFromManagedObject:(id)arg1 forValue:(id)arg2 cache:(id)arg3;
-+ (id)eventValueFromManagedObject:(id)arg1 streamName:(id)arg2 readMetadata:(BOOL)arg3 cache:(id)arg4;
-+ (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 categoryIntegerValue:(int)arg4 metadata:(id)arg5;
++ (id)eventValueFromManagedObject:(id)arg1 streamName:(id)arg2 readMetadata:(bool)arg3 cache:(id)arg4;
++ (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 categoryIntegerValue:(long long)arg4 metadata:(id)arg5;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 identifierStringValue:(id)arg4 metadata:(id)arg5;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 quantityDoubleValue:(double)arg4 metadata:(id)arg5;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4 confidence:(double)arg5 metadata:(id)arg6;
 + (id)eventWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4 metadata:(id)arg5;
-+ (id)objectFromManagedObject:(id)arg1 readMetadata:(BOOL)arg2 cache:(id)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)objectFromManagedObject:(id)arg1 readMetadata:(bool)arg2 cache:(id)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)boolValue;
-- (int)compareValue:(id)arg1;
+- (bool)boolValue;
+- (long long)compareValue:(id)arg1;
 - (double)confidence;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
 - (double)doubleValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStream:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 value:(id)arg4 confidence:(double)arg5 metadata:(id)arg6;
-- (int)integerValue;
+- (long long)integerValue;
 - (id)primaryValue;
 - (void)setConfidence:(double)arg1;
 - (void)setEndDate:(id)arg1;

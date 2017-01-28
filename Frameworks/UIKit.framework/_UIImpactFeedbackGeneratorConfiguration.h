@@ -4,12 +4,12 @@
 
 @interface _UIImpactFeedbackGeneratorConfiguration : _UIFeedbackGeneratorConfiguration {
     _UIFeedback<_UIFeedbackDiscretePlayable> * _feedback;
-    id /* block */  _feedbackUpdateBlock;
+    id  _feedbackUpdateBlock;
     double  _minimumInterval;
 }
 
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *feedback;
-@property (nonatomic, copy) id /* block */ feedbackUpdateBlock;
+@property (nonatomic, copy) id feedbackUpdateBlock;
 @property (nonatomic) double minimumInterval;
 
 + (id)defaultConfiguration;
@@ -20,12 +20,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)feedback;
 - (id)feedbackKeyPaths;
-- (id /* block */)feedbackUpdateBlock;
-- (BOOL)isEqual:(id)arg1;
+- (id)feedbackUpdateBlock;
+- (bool)isEqual:(id)arg1;
 - (double)minimumInterval;
-- (int)requiredSupportLevel;
+- (long long)requiredSupportLevel;
 - (void)setFeedback:(id)arg1;
-- (void)setFeedbackUpdateBlock:(id /* block */)arg1;
+- (void)setFeedbackUpdateBlock:(id)arg1;
 - (void)setMinimumInterval:(double)arg1;
 
 @end

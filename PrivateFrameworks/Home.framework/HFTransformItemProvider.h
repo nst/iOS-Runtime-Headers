@@ -4,25 +4,25 @@
 
 @interface HFTransformItemProvider : HFItemProvider {
     HFItemProvider * _sourceProvider;
-    id /* block */  _transformationBlock;
+    id  _transformationBlock;
     NSMutableDictionary * _transformedItems;
 }
 
 @property (nonatomic, retain) HFItemProvider *sourceProvider;
-@property (nonatomic, copy) id /* block */ transformationBlock;
+@property (nonatomic, copy) id transformationBlock;
 @property (nonatomic, retain) NSMutableDictionary *transformedItems;
 
 - (void).cxx_destruct;
 - (id)initWithHome:(id)arg1;
-- (id)initWithHome:(id)arg1 sourceProvider:(id)arg2 transformationBlock:(id /* block */)arg3;
+- (id)initWithHome:(id)arg1 sourceProvider:(id)arg2 transformationBlock:(id)arg3;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;
 - (void)setSourceProvider:(id)arg1;
-- (void)setTransformationBlock:(id /* block */)arg1;
+- (void)setTransformationBlock:(id)arg1;
 - (void)setTransformedItems:(id)arg1;
 - (id)sourceProvider;
-- (id /* block */)transformationBlock;
+- (id)transformationBlock;
 - (id)transformedItems;
 
 @end

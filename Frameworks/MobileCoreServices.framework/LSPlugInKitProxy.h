@@ -4,7 +4,7 @@
 
 @interface LSPlugInKitProxy : LSBundleProxy <NSSecureCoding> {
     LSBundleProxy * _containingBundle;
-    BOOL  _isOnSystemPartition;
+    bool  _isOnSystemPartition;
     NSString * _originalIdentifier;
     NSString * _pluginIdentifier;
     NSUUID * _pluginUUID;
@@ -14,7 +14,7 @@
 
 @property (nonatomic, readonly) LSBundleProxy *containingBundle;
 @property (nonatomic, readonly) NSDictionary *infoPlist;
-@property (nonatomic, readonly) BOOL isOnSystemPartition;
+@property (nonatomic, readonly) bool isOnSystemPartition;
 @property (nonatomic, readonly) NSString *originalIdentifier;
 @property (nonatomic, readonly) NSString *pluginIdentifier;
 @property (nonatomic, readonly) NSDictionary *pluginKitDictionary;
@@ -32,9 +32,9 @@
 + (id)pluginKitProxyForIdentifier:(id)arg1;
 + (id)pluginKitProxyForURL:(id)arg1;
 + (id)pluginKitProxyForUUID:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)UPPValidated;
+- (bool)UPPValidated;
 - (id)_initWithPlugin:(unsigned int)arg1;
 - (id)_initWithPlugin:(unsigned int)arg1 andContext:(const struct LSContext { struct LSDatabase {} *x1; }*)arg2;
 - (id)_initWithUUID:(id)arg1 bundleIdentifier:(id)arg2 pluginIdentifier:(id)arg3 effectiveIdentifier:(id)arg4 version:(id)arg5 bundleURL:(id)arg6;
@@ -47,16 +47,16 @@
 - (id)iconDataForVariant:(int)arg1;
 - (id)infoPlist;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isOnSystemPartition;
+- (bool)isOnSystemPartition;
 - (id)localizedName;
 - (id)localizedShortName;
-- (id)objectForInfoDictionaryKey:(id)arg1 ofClass:(Class)arg2 inScope:(unsigned int)arg3;
+- (id)objectForInfoDictionaryKey:(id)arg1 ofClass:(Class)arg2 inScope:(unsigned long long)arg3;
 - (id)originalIdentifier;
-- (BOOL)pluginCanProvideIcon;
+- (bool)pluginCanProvideIcon;
 - (id)pluginIdentifier;
 - (id)pluginKitDictionary;
 - (id)pluginUUID;
-- (BOOL)profileValidated;
+- (bool)profileValidated;
 - (id)protocol;
 - (id)registrationDate;
 - (id)teamID;

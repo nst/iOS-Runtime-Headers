@@ -5,7 +5,7 @@
 @interface MNTrafficIncidentAlert : NSObject {
     NSDate * _alertDate;
     NSData * _alertID;
-    unsigned int  _alertType;
+    unsigned long long  _alertType;
     GEOComposedRoute * _alternateRoute;
     double  _distanceToIncident;
     struct { 
@@ -17,7 +17,7 @@
         unsigned int index; 
         float offset; 
     }  _incidentCoordinate;
-    BOOL  _isAutomaticReroute;
+    bool  _isAutomaticReroute;
     GEOETARoute * _oldETARoute;
     GEOComposedRoute * _originalRoute;
     struct { 
@@ -31,13 +31,13 @@
 @property (nonatomic, readonly) double alertDisplayDuration;
 @property (nonatomic, readonly) NSData *alertID;
 @property (nonatomic, readonly) NSArray *alertTitles;
-@property (nonatomic, readonly) unsigned int alertType;
+@property (nonatomic, readonly) unsigned long long alertType;
 @property (nonatomic, readonly) GEOComposedRoute *alternateRoute;
 @property (nonatomic, readonly) double distanceToIncident;
 @property (nonatomic, readonly) struct { unsigned int x1; float x2; } endValidCoordinateRange;
 @property (nonatomic, retain) NSDate *eta;
 @property (nonatomic, readonly) struct { unsigned int x1; float x2; } incidentCoordinate;
-@property (nonatomic, readonly) BOOL isAutomaticReroute;
+@property (nonatomic, readonly) bool isAutomaticReroute;
 @property (nonatomic, readonly) double newEstimatedTime;
 @property (nonatomic, readonly) GEOETARoute *oldETARoute;
 @property (nonatomic, readonly) double oldEstimatedTime;
@@ -57,7 +57,7 @@
 - (double)alertDisplayDuration;
 - (id)alertID;
 - (id)alertTitles;
-- (unsigned int)alertType;
+- (unsigned long long)alertType;
 - (id)alternateRoute;
 - (double)distanceToIncident;
 - (struct { unsigned int x1; float x2; })endValidCoordinateRange;
@@ -65,9 +65,9 @@
 - (struct { unsigned int x1; float x2; })incidentCoordinate;
 - (id)initWithRoute:(id)arg1 etaRoute:(id)arg2;
 - (id)initWithTrafficIncidentAlertDetails:(id)arg1;
-- (BOOL)isAutomaticReroute;
-- (BOOL)isCoordinateInValidRange:(struct { unsigned int x1; float x2; })arg1;
-- (BOOL)isSimilarTo:(id)arg1;
+- (bool)isAutomaticReroute;
+- (bool)isCoordinateInValidRange:(struct { unsigned int x1; float x2; })arg1;
+- (bool)isSimilarTo:(id)arg1;
 - (double)newEstimatedTime;
 - (id)oldETARoute;
 - (double)oldEstimatedTime;

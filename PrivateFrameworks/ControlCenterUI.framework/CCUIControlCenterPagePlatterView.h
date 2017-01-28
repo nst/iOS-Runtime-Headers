@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIControlCenterPagePlatterView : UIView {
+@interface CCUIControlCenterPagePlatterView : UIView <_UISettingsKeyObserver> {
     NCMaterialView * _baseMaterialView;
     NSLayoutConstraint * _bottomMargin;
     UIView * _contentView;
     <CCUIControlCenterPagePlatterViewDelegate> * _delegate;
     NSLayoutConstraint * _leadingMargin;
+    NCMaterialSettings * _materialSettings;
     NSSet * _renderedPunchOutMasks;
     NSLayoutConstraint * _topMargin;
     NSLayoutConstraint * _trailingMargin;
@@ -15,23 +16,28 @@
 }
 
 @property (nonatomic, retain) UIView *contentView;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_recursivelyVisitSubviewsOfView:(id)arg1 forPunchedThroughView:(id)arg2 collectingMasksIn:(id)arg3;
 - (void)_reduceTransparencyStatusDidChange;
-- (id)_renderAlphaOnlyPunchThroughMaskForPlatterSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_renderAlphaOnlyPunchThroughMaskForPlatterSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)_rerenderPunchThroughMaskIfNecessary;
-- (BOOL)_searchForUpdatedMask;
-- (BOOL)_shouldSuppressCachingPunchOutMaskImage;
+- (bool)_searchForUpdatedMask;
+- (bool)_shouldSuppressCachingPunchOutMaskImage;
 - (id)_systemAgent;
 - (id)ccuiPunchOutMaskedContainer;
 - (id)contentView;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
 - (void)setContentView:(id)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 
 @end

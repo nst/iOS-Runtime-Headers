@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *routingMessage;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *transitIncidents;
@@ -17,11 +17,11 @@
 - (id)_fakeTransitLineIncidentInLine:(id)arg1;
 - (void)_populateTransitIncidentsWithDecoderData:(id)arg1;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initFakeLineIncidentMessageInLine:(id)arg1;
 - (id)initWithIncidentMessage:(id)arg1 decoderData:(id)arg2;
-- (id)initWithIncidentMessageIndex:(unsigned int)arg1 decoderData:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithIncidentMessageIndex:(unsigned long long)arg1 decoderData:(id)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)routingMessage;
 - (id)transitIncidents;
 

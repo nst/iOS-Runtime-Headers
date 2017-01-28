@@ -4,6 +4,6 @@
 
 @interface PEXServant : NSObject
 
-- (id)predictionForCriteria:(id)arg1 limit:(unsigned int)arg2;
+- (id)predictionForCriteria:(id)arg1 limit:(unsigned long long)arg2;
 
 @end

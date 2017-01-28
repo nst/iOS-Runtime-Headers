@@ -4,7 +4,7 @@
 
 @interface HFColorPaletteColor : NSObject <NAEquatable, NSCopying> {
     float  _blue;
-    unsigned int  _colorType;
+    unsigned long long  _colorType;
     float  _green;
     float  _red;
     NSNumber * _temperature;
@@ -12,11 +12,11 @@
 
 @property (nonatomic, readonly) UIColor *UIColor;
 @property (nonatomic, readonly) float blue;
-@property (nonatomic) unsigned int colorType;
+@property (nonatomic) unsigned long long colorType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) float green;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) float red;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSNumber *temperature;
@@ -24,20 +24,20 @@
 - (void).cxx_destruct;
 - (id)UIColor;
 - (float)blue;
-- (unsigned int)colorType;
+- (unsigned long long)colorType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (float)green;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 temperature:(id)arg4;
 - (id)initWithUIColor:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSimilarToColor:(id)arg1 ignoreTemperature:(BOOL)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isSimilarToColor:(id)arg1 ignoreTemperature:(bool)arg2;
 - (float)red;
-- (void)setColorType:(unsigned int)arg1;
+- (void)setColorType:(unsigned long long)arg1;
 - (id)temperature;
 
 @end

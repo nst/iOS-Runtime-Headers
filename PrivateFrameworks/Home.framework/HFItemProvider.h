@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSArray *invalidationReasons;
 @property (nonatomic, readonly) NSSet *items;
 
-+ (BOOL)prefersNonBlockingReloads;
++ (bool)prefersNonBlockingReloads;
 
 - (void).cxx_destruct;
 - (id)home;
@@ -19,6 +19,6 @@
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;
-- (id)reloadItemsWithHomeKitObjects:(id)arg1 filter:(id /* block */)arg2 itemMap:(id /* block */)arg3;
+- (id)reloadItemsWithHomeKitObjects:(id)arg1 filter:(id)arg2 itemMap:(id)arg3;
 
 @end

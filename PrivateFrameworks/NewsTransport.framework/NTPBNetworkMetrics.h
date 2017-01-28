@@ -22,17 +22,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)failures;
-- (id)failuresAtIndex:(unsigned int)arg1;
-- (unsigned int)failuresCount;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)failuresAtIndex:(unsigned long long)arg1;
+- (unsigned long long)failuresCount;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFailures:(id)arg1;
 - (void)setSuccesses:(id)arg1;
 - (id)successes;
-- (id)successesAtIndex:(unsigned int)arg1;
-- (unsigned int)successesCount;
+- (id)successesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)successesCount;
 - (void)writeTo:(id)arg1;
 
 @end

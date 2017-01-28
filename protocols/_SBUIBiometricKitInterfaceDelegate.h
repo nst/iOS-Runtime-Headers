@@ -5,7 +5,7 @@
 
 @required
 
-- (void)biometricKitInterface:(_SBUIBiometricKitInterface *)arg1 enrolledIdentitiesDidChange:(BOOL)arg2;
-- (void)biometricKitInterface:(_SBUIBiometricKitInterface *)arg1 handleEvent:(unsigned int)arg2;
+- (void)biometricKitInterface:(_SBUIBiometricKitInterface *)arg1 enrolledIdentitiesDidChange:(bool)arg2;
+- (void)biometricKitInterface:(_SBUIBiometricKitInterface *)arg1 handleEvent:(unsigned long long)arg2;
 
 @end

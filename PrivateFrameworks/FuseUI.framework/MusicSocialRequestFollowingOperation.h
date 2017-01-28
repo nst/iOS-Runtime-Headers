@@ -5,7 +5,7 @@
 @interface MusicSocialRequestFollowingOperation : MusicSocialAbstractOperation {
     NSNumber * _dsid;
     NSString * _entityType;
-    BOOL  _requestEntity;
+    bool  _requestEntity;
     NSNumber * _storeEntityID;
 }
 

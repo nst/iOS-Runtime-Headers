@@ -10,10 +10,10 @@
 @property (nonatomic, readonly) NSDate *entryTime;
 @property (nonatomic, readonly) NSDate *exitTime;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_enteredAndExitedOnSameDay;
+- (bool)_enteredAndExitedOnSameDay;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

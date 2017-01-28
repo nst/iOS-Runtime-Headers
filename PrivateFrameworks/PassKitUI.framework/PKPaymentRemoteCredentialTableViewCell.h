@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) PKPaymentRemoteCredential *remoteCredential;
 
-+ (float)cellHeight;
++ (double)cellHeight;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;

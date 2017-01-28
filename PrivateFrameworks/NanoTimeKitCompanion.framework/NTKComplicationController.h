@@ -3,37 +3,37 @@
  */
 
 @interface NTKComplicationController : NSObject {
-    BOOL  _active;
-    int  _cachingMode;
+    bool  _active;
+    long long  _cachingMode;
     NTKComplication * _complication;
-    int  _complicationFamily;
+    long long  _complicationFamily;
     NSMutableArray * _displayWrappers;
     NSMapTable * _displayWrappersToDataMode;
-    int  _effectiveFaceDataMode;
-    BOOL  _hasGoneLive;
-    id /* block */  _invalidationHandler;
+    long long  _effectiveFaceDataMode;
+    bool  _hasGoneLive;
+    id  _invalidationHandler;
     <NTKComplicationDisplay> * _legacyDisplayDEPRECATED;
     NSDate * _pauseDate;
-    BOOL  _showsLockedUI;
-    int  _updatingMode;
+    bool  _showsLockedUI;
+    long long  _updatingMode;
 }
 
-@property (nonatomic, readonly) int cachingMode;
+@property (nonatomic, readonly) long long cachingMode;
 @property (nonatomic, readonly) NTKComplication *complication;
-@property (nonatomic, readonly) int complicationFamily;
-@property (nonatomic, readonly) int effectiveFaceDataMode;
-@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, readonly) long long complicationFamily;
+@property (nonatomic, readonly) long long effectiveFaceDataMode;
+@property (nonatomic, copy) id invalidationHandler;
 @property (nonatomic, readonly) <NTKComplicationDisplay> *legacyDisplay;
 @property (nonatomic, retain) NSDate *pauseDate;
-@property (nonatomic) BOOL showsLockedUI;
-@property (nonatomic, readonly) int updatingMode;
+@property (nonatomic) bool showsLockedUI;
+@property (nonatomic, readonly) long long updatingMode;
 
 + (id)DEPRECATEDControllerForComplication:(id)arg1 withLegacyDisplay:(id)arg2;
-+ (BOOL)_acceptsComplicationType:(unsigned int)arg1;
-+ (BOOL)_acceptsComplicationType:(unsigned int)arg1 family:(int)arg2;
-+ (BOOL)_isLegacy;
-+ (Class)controllerClassForComplicationType:(unsigned int)arg1 family:(int)arg2;
-+ (id)controllerForComplication:(id)arg1 withRequestedFamily:(int)arg2 face:(id)arg3 slot:(id)arg4;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1;
++ (bool)_acceptsComplicationType:(unsigned long long)arg1 family:(long long)arg2;
++ (bool)_isLegacy;
++ (Class)controllerClassForComplicationType:(unsigned long long)arg1 family:(long long)arg2;
++ (id)controllerForComplication:(id)arg1 withRequestedFamily:(long long)arg2 face:(id)arg3 slot:(id)arg4;
 
 - (void).cxx_destruct;
 - (void)DEPRECATEDInvalidate;
@@ -43,7 +43,7 @@
 - (void)_configureForLegacyDisplay:(id)arg1;
 - (void)_deactivate;
 - (id)_initWithComplication:(id)arg1 legacyDisplay:(id)arg2;
-- (void)_openApp:(id)arg1 withURL:(id)arg2 result:(id /* block */)arg3;
+- (void)_openApp:(id)arg1 withURL:(id)arg2 result:(id)arg3;
 - (void)_openAppWithURL:(id)arg1;
 - (void)_updateEffectiveCachingMode;
 - (void)_updateEffectiveFaceDataMode;
@@ -51,29 +51,29 @@
 - (void)_updateInternalModes;
 - (void)activate;
 - (void)addDisplayWrapper:(id)arg1;
-- (int)cachingMode;
+- (long long)cachingMode;
 - (id)complication;
 - (id)complicationApplicationIdentifier;
-- (int)complicationFamily;
+- (long long)complicationFamily;
 - (void)deactivate;
 - (void)dealloc;
-- (int)effectiveFaceDataMode;
-- (void)enumerateDisplayWrappersWithBlock:(id /* block */)arg1;
+- (long long)effectiveFaceDataMode;
+- (void)enumerateDisplayWrappersWithBlock:(id)arg1;
 - (void)handleFaceDefaultsChanged;
-- (BOOL)hasTapAction;
-- (id)initWithComplication:(id)arg1 family:(int)arg2;
-- (id /* block */)invalidationHandler;
+- (bool)hasTapAction;
+- (id)initWithComplication:(id)arg1 family:(long long)arg2;
+- (id)invalidationHandler;
 - (id)legacyDisplay;
 - (id)pauseDate;
 - (void)performBackgroundDataRefresh;
 - (void)performTapAction;
 - (void)removeDisplayWrapper:(id)arg1;
-- (void)setDataMode:(int)arg1 forDisplayWrapper:(id)arg2;
-- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setDataMode:(long long)arg1 forDisplayWrapper:(id)arg2;
+- (void)setInvalidationHandler:(id)arg1;
 - (void)setPauseDate:(id)arg1;
-- (void)setShowsLockedUI:(BOOL)arg1;
-- (BOOL)showsLockedUI;
-- (int)updatingMode;
-- (BOOL)wantsLegacyDisplay;
+- (void)setShowsLockedUI:(bool)arg1;
+- (bool)showsLockedUI;
+- (long long)updatingMode;
+- (bool)wantsLegacyDisplay;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)vcAudioPowerLevelMonitor:(VCAudioPowerLevelMonitor *)arg1 isAudioBelowThreshold:(BOOL)arg2;
+- (void)vcAudioPowerLevelMonitor:(VCAudioPowerLevelMonitor *)arg1 isAudioBelowThreshold:(bool)arg2;
 
 @end

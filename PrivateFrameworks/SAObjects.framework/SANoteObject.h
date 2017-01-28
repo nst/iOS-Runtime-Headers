@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSString *contents;
 @property (nonatomic, copy) NSDate *createdDate;
 @property (nonatomic, copy) NSDate *lastModifiedDate;
-@property (nonatomic) BOOL restricted;
+@property (nonatomic) bool restricted;
 @property (nonatomic, copy) NSString *title;
 
 + (id)object;
@@ -18,11 +18,11 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)lastModifiedDate;
-- (BOOL)restricted;
+- (bool)restricted;
 - (void)setContents:(id)arg1;
 - (void)setCreatedDate:(id)arg1;
 - (void)setLastModifiedDate:(id)arg1;
-- (void)setRestricted:(BOOL)arg1;
+- (void)setRestricted:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

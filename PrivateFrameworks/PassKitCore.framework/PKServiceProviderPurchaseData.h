@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSDictionary *dictionaryRepresentation;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -16,8 +16,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToPKServiceProviderPurchaseData:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToPKServiceProviderPurchaseData:(id)arg1;
 - (void)setDictionaryRepresentation:(id)arg1;
 
 @end

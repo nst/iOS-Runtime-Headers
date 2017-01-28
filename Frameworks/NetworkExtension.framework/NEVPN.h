@@ -3,40 +3,40 @@
  */
 
 @interface NEVPN : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    BOOL  _enabled;
+    bool  _enabled;
     NSArray * _exceptionApps;
-    BOOL  _onDemandEnabled;
+    bool  _onDemandEnabled;
     NSArray * _onDemandRules;
     NEVPNProtocol * _protocol;
 }
 
-@property (getter=isEnabled) BOOL enabled;
+@property (getter=isEnabled) bool enabled;
 @property (copy) NSArray *exceptionApps;
-@property (getter=isOnDemandEnabled) BOOL onDemandEnabled;
+@property (getter=isOnDemandEnabled) bool onDemandEnabled;
 @property (copy) NSArray *onDemandRules;
 @property (copy) NEVPNProtocol *protocol;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyProfileDictionaryWithCertificateUUID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)exceptionApps;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
-- (BOOL)isOnDemandEnabled;
+- (bool)isEnabled;
+- (bool)isOnDemandEnabled;
 - (id)onDemandRules;
 - (id)protocol;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setExceptionApps:(id)arg1;
-- (void)setOnDemandEnabled:(BOOL)arg1;
+- (void)setOnDemandEnabled:(bool)arg1;
 - (void)setOnDemandRules:(id)arg1;
 - (void)setProtocol:(id)arg1;
 

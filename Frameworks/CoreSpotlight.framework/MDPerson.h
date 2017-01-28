@@ -6,7 +6,7 @@
 
 @property (readonly) NSString *handle;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)handle;
 - (id)initWithDisplayName:(id)arg1 handle:(id)arg2 handleIdentifier:(id)arg3;

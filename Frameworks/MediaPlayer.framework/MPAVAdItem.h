@@ -4,8 +4,8 @@
 
 @interface MPAVAdItem : MPAVItem
 
-- (BOOL)isAd;
-- (BOOL)isCloudItem;
-- (BOOL)supportsSettingCurrentTime;
+- (bool)isAd;
+- (bool)isCloudItem;
+- (bool)supportsSettingCurrentTime;
 
 @end

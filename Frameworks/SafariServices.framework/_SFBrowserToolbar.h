@@ -16,7 +16,7 @@
 @property (nonatomic) <_SFBrowserToolbarDataSource> *dataSource;
 
 - (void).cxx_destruct;
-- (float)URLFieldHorizontalMargin;
+- (double)URLFieldHorizontalMargin;
 - (id)_toolbarItems;
 - (void)actionButtonPressed;
 - (id)actionItem;
@@ -24,10 +24,10 @@
 - (id)browserDelegate;
 - (id)dataSource;
 - (void)forwardButtonPressed;
-- (BOOL)isMinibar;
+- (bool)isMinibar;
 - (void)layoutSubviews;
 - (void)openInSafariButtonPressed;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popoverPresentationRectForButtonItem:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })popoverPresentationRectForButtonItem:(id)arg1;
 - (void)setBrowserDelegate:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)updateButtonStates;

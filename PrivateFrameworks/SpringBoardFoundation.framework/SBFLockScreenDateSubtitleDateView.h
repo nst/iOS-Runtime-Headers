@@ -3,36 +3,33 @@
  */
 
 @interface SBFLockScreenDateSubtitleDateView : SBFLockScreenDateSubtitleView {
-    float  _alignmentPercent;
-    SBUILegibilityLabel * _alternateDateLabel;
+    double  _alignmentPercent;
+    SBFLockScreenAlternateDateLabel * _alternateDateLabel;
     NSDate * _date;
 }
 
-@property (nonatomic) float alignmentPercent;
-@property (nonatomic, retain) SBUILegibilityLabel *alternateDateLabel;
+@property (nonatomic) double alignmentPercent;
+@property (nonatomic, retain) SBFLockScreenAlternateDateLabel *alternateDateLabel;
 @property (nonatomic, retain) NSDate *date;
 
 - (void).cxx_destruct;
-- (id)_alternateDateString;
 - (id)_createReplicateView;
-- (id)_lunarCalendarIdentifier;
-- (float)_lunarDateLabelYOffsetFromDateLabel;
+- (double)_lunarDateLabelYOffsetFromDateLabel;
 - (void)_setupAlternateDateLabel;
-- (BOOL)_showAlternateDate;
-- (float)alignmentPercent;
+- (double)alignmentPercent;
 - (id)alternateDateLabel;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alternateDateLabelFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alternateDateLabelFrame;
 - (id)date;
 - (void)dealloc;
 - (id)initWithDate:(id)arg1;
 - (void)layoutSubviews;
 - (id)replicate;
-- (void)setAlignmentPercent:(float)arg1;
+- (void)setAlignmentPercent:(double)arg1;
 - (void)setAlternateDateLabel:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setLegibilitySettings:(id)arg1;
-- (void)setStrength:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })subtitleLabelFrame;
+- (void)setStrength:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })subtitleLabelFrame;
 
 @end

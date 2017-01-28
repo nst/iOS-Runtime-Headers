@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)quickActionButton:(CNQuickActionButton *)arg1 performAction:(CNQuickAction *)arg2;
+- (bool)quickActionButton:(CNQuickActionButton *)arg1 performAction:(CNQuickAction *)arg2;
 
 @end

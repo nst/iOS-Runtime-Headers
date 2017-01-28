@@ -5,18 +5,18 @@
 @interface OISFUJsonScanner : NSObject {
     unsigned short * mCharacters;
     NSCharacterSet * mDecimalDigitCharacterSet;
-    unsigned int  mLength;
-    unsigned int  mOffset;
+    unsigned long long  mLength;
+    unsigned long long  mOffset;
     NSString * mString;
     NSCharacterSet * mWhitespaceCharacterSet;
 }
 
-- (void)appendCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toString:(id)arg2;
+- (void)appendCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 toString:(id)arg2;
 - (void)dealloc;
 - (id)initWithString:(id)arg1;
 - (unsigned short)nextCharacter;
 - (id)parseArrayWithMaxDepth:(int)arg1;
-- (BOOL)parseConstantString:(const char *)arg1;
+- (bool)parseConstantString:(const char *)arg1;
 - (id)parseDictionaryWithMaxDepth:(int)arg1;
 - (id)parseFalse;
 - (id)parseHexCharacter;

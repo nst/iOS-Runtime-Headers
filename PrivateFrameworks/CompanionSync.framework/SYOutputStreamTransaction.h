@@ -12,12 +12,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSURL *fileURL;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDictionary *metadata;
 @property (nonatomic, readonly) NSOutputStream *outputStream;
 @property (nonatomic, readonly) NSProgress *progress;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -26,8 +26,8 @@
 - (id)initWithMetadata:(id)arg1;
 - (id)metadata;
 - (id)outputStream;
-- (BOOL)prepare:(id*)arg1;
+- (bool)prepare:(id*)arg1;
 - (id)progress;
-- (int)type;
+- (long long)type;
 
 @end

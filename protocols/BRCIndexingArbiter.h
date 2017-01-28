@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)shouldIndexDocument:(BRCDocumentItem *)arg1;
+- (bool)shouldIndexDocument:(BRCDocumentItem *)arg1;
 
 @end

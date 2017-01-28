@@ -4,6 +4,6 @@
 
 @interface PKPaymentSetupFieldFooter : PKPaymentSetupFieldLabel
 
-- (unsigned int)fieldType;
+- (unsigned long long)fieldType;
 
 @end

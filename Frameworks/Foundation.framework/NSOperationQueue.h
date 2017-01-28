@@ -7,41 +7,41 @@
     void * _reserved;
 }
 
-@property int maxConcurrentOperationCount;
+@property long long maxConcurrentOperationCount;
 @property (copy) NSString *name;
-@property (readonly) unsigned int operationCount;
+@property (readonly) unsigned long long operationCount;
 @property (readonly, copy) NSArray *operations;
-@property int qualityOfService;
-@property (getter=isSuspended) BOOL suspended;
-@property (nonatomic, readonly) BOOL tsu_isCurrentQueue;
+@property long long qualityOfService;
+@property (getter=isSuspended) bool suspended;
+@property (nonatomic, readonly) bool tsu_isCurrentQueue;
 @property NSObject<OS_dispatch_queue> *underlyingQueue;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentQueue;
 + (id)mainQueue;
 
 - (id)__;
 - (void)addOperation:(id)arg1;
-- (void)addOperationWithBlock:(id /* block */)arg1;
-- (void)addOperations:(id)arg1 waitUntilFinished:(BOOL)arg2;
+- (void)addOperationWithBlock:(id)arg1;
+- (void)addOperations:(id)arg1 waitUntilFinished:(bool)arg2;
 - (void)cancelAllOperations;
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (BOOL)isSuspended;
-- (int)maxConcurrentOperationCount;
+- (bool)isSuspended;
+- (long long)maxConcurrentOperationCount;
 - (id)name;
-- (unsigned int)operationCount;
+- (unsigned long long)operationCount;
 - (id)operations;
-- (BOOL)overcommitsOperations;
-- (int)qualityOfService;
-- (void)setMaxConcurrentOperationCount:(int)arg1;
+- (bool)overcommitsOperations;
+- (long long)qualityOfService;
+- (void)setMaxConcurrentOperationCount:(long long)arg1;
 - (void)setName:(id)arg1;
-- (void)setOvercommitsOperations:(BOOL)arg1;
-- (void)setQualityOfService:(int)arg1;
-- (void)setSuspended:(BOOL)arg1;
+- (void)setOvercommitsOperations:(bool)arg1;
+- (void)setQualityOfService:(long long)arg1;
+- (void)setSuspended:(bool)arg1;
 - (void)setUnderlyingQueue:(id)arg1;
 - (id)underlyingQueue;
 - (void)waitUntilAllOperationsAreFinished;
@@ -56,26 +56,31 @@
 + (id)fc_sharedConcurrentQueue;
 + (id)fc_sharedSerialQueue;
 
-- (void)addAsyncOperationWithBlock:(id /* block */)arg1;
+- (void)addAsyncOperationWithBlock:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (BOOL)containsOperationToDeleteRecordID:(id)arg1;
-- (BOOL)containsOperationToFetchRecordID:(id)arg1;
-- (BOOL)containsOperationToSaveRecordID:(id)arg1;
+- (bool)containsOperationToDeleteRecordID:(id)arg1;
+- (bool)containsOperationToFetchRecordID:(id)arg1;
+- (bool)containsOperationToSaveRecordID:(id)arg1;
 - (id)existingOperationToDeleteRecordID:(id)arg1;
 - (id)existingOperationToFetchRecordID:(id)arg1;
 - (id)existingOperationToSaveRecordID:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
 
-- (void)logStateOperationCountGreaterThan:(int)arg1;
+- (void)logStateOperationCountGreaterThan:(long long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
+
++ (id)wlkDefaultConcurrentQueue;
++ (id)wlkDefaultQueue;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)tsu_newSerialOperationQueueWithName:(id)arg1;
 
-- (BOOL)tsu_isCurrentQueue;
-- (void)tsu_performBlock:(id /* block */)arg1;
+- (bool)tsu_isCurrentQueue;
+- (void)tsu_performBlock:(id)arg1;
 
 @end

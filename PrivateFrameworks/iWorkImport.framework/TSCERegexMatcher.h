@@ -10,6 +10,6 @@
 
 - (void)dealloc;
 - (id)initWithStringToMatch:(id)arg1;
-- (BOOL)matches:(id)arg1;
+- (bool)matches:(id)arg1;
 
 @end

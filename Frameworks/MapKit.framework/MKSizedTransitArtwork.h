@@ -5,15 +5,15 @@
 @interface MKSizedTransitArtwork : NSObject <MKArtworkImageSource> {
     <GEOTransitArtworkDataSource> * _artwork;
     MKArtworkDataSourceCache * _artworkCache;
-    int  _shieldSize;
+    long long  _shieldSize;
 }
 
 @property (nonatomic, readonly) <GEOTransitArtworkDataSource> *artwork;
-@property (nonatomic, readonly) MKArtworkDataSourceCache *artworkCache;
+@property (nonatomic, retain) MKArtworkDataSourceCache *artworkCache;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int shieldSize;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long shieldSize;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -21,10 +21,11 @@
 - (id)artworkCache;
 - (id)badgeImageToDisplayInView:(id)arg1;
 - (id)imageToDisplayInView:(id)arg1;
-- (id)initWithArtwork:(id)arg1 shieldSize:(int)arg2;
-- (id)initWithArtwork:(id)arg1 shieldSize:(int)arg2 artworkCache:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToTransitArtworkViewMode:(id)arg1;
-- (int)shieldSize;
+- (id)initWithArtwork:(id)arg1 shieldSize:(long long)arg2;
+- (id)initWithArtwork:(id)arg1 shieldSize:(long long)arg2 artworkCache:(id)arg3;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToTransitArtworkViewMode:(id)arg1;
+- (void)setArtworkCache:(id)arg1;
+- (long long)shieldSize;
 
 @end

@@ -5,9 +5,9 @@
 
 @required
 
-- (void)photoTileViewController:(PLPhotoTileViewController *)arg1 didAppear:(BOOL)arg2;
-- (void)photoTileViewController:(PLPhotoTileViewController *)arg1 didDisappear:(BOOL)arg2;
-- (void)photoTileViewController:(PLPhotoTileViewController *)arg1 willAppear:(BOOL)arg2;
+- (void)photoTileViewController:(PLPhotoTileViewController *)arg1 didAppear:(bool)arg2;
+- (void)photoTileViewController:(PLPhotoTileViewController *)arg1 didDisappear:(bool)arg2;
+- (void)photoTileViewController:(PLPhotoTileViewController *)arg1 willAppear:(bool)arg2;
 - (void)photoTileViewControllerCancelImageRequests:(PLPhotoTileViewController *)arg1;
 - (void)photoTileViewControllerDidEndGesture:(PLPhotoTileViewController *)arg1;
 - (void)photoTileViewControllerDoubleTap:(PLPhotoTileViewController *)arg1;
@@ -18,9 +18,9 @@
 
 @optional
 
-- (BOOL)isPhotoTileParentPageControllerAnimating:(PLPhotoTileViewController *)arg1;
-- (BOOL)photoTileViewControllerAllowsEditing:(PLPhotoTileViewController *)arg1;
-- (BOOL)photoTileViewControllerCanShowCenterOverlay:(PLPhotoTileViewController *)arg1;
+- (bool)isPhotoTileParentPageControllerAnimating:(PLPhotoTileViewController *)arg1;
+- (bool)photoTileViewControllerAllowsEditing:(PLPhotoTileViewController *)arg1;
+- (bool)photoTileViewControllerCanShowCenterOverlay:(PLPhotoTileViewController *)arg1;
 - (UIView *)photoTileViewControllerCustomCenterOverlay:(PLPhotoTileViewController *)arg1;
 - (<UILayoutSupport> *)photoTileViewControllerTopLayoutGuide:(PLPhotoTileViewController *)arg1;
 

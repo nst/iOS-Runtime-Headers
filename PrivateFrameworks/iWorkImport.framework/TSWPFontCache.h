@@ -25,23 +25,23 @@
 - (id)autorelease;
 - (id)availableMembersOfFontFamily:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (struct __CTFont { }*)createFontWithName:(id)arg1 size:(float)arg2;
+- (struct __CTFont { }*)createFontWithName:(id)arg1 size:(double)arg2;
 - (void)dealloc;
 - (id)displayNameForFontFamily:(id)arg1;
 - (id)fontFamilyToTSWPFontLookup;
 - (id)fontNameForFailyName:(id)arg1;
 - (id)init;
-- (BOOL)isFontMissing:(id)arg1;
+- (bool)isFontMissing:(id)arg1;
 - (id)missingFonts;
 - (void)p_FontWasDownloaded:(id)arg1;
 - (id)p_excludedFamilyNames;
 - (id)recentFontNames;
 - (id)recentFonts;
-- (BOOL)registerRecentFont:(id)arg1;
+- (bool)registerRecentFont:(id)arg1;
 - (oneway void)release;
 - (void)removeMissingFonts:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (id)sortedFontFamilies;
 - (id)sortedFontFamilyEntriesForStylesheet:(id)arg1;
 

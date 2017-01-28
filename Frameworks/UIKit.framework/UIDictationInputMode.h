@@ -11,7 +11,7 @@
 @property (nonatomic, retain) UITouch *triggeringTouch;
 @property (nonatomic, readonly) Class viewControllerClass;
 
-+ (BOOL)currentInputModeSupportsDictation;
++ (bool)currentInputModeSupportsDictation;
 
 - (void)dealloc;
 - (id)inputModeThatInvokedDictation;

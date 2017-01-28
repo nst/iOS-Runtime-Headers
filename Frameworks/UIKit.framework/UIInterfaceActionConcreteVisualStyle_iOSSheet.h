@@ -6,9 +6,9 @@
 
 - (id)_preferredActionFont;
 - (id)_regularActionFont;
-- (float)_systemFontSize;
-- (float)actionSectionSpacing;
-- (struct CGSize { float x1; float x2; })minimumActionContentSize;
+- (double)_systemFontSize;
+- (double)actionSectionSpacing;
+- (struct CGSize { double x1; double x2; })minimumActionContentSize;
 - (id)newActionBackgroundViewForViewState:(id)arg1;
 
 @end

@@ -5,11 +5,11 @@
 @interface SCNNodeManipulableItem : SCNManipulableItem
 
 + (void)addItems:(id)arg1 toScene:(id)arg2;
-+ (id)nodeManipulatorItemWithNode:(id)arg1 screenSize:(float)arg2;
++ (id)nodeManipulatorItemWithNode:(id)arg1 screenSize:(double)arg2;
 + (void)removeItemsFromScene:(id)arg1;
 
 - (id)cloneForManipulators;
-- (BOOL)isNodeManipulator;
+- (bool)isNodeManipulator;
 - (id)parentItem;
 - (struct SCNVector3 { float x1; float x2; float x3; })scale;
 - (void)setPosition:(struct SCNVector3 { float x1; float x2; float x3; })arg1;

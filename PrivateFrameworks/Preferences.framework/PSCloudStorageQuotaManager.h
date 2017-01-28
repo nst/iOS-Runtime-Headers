@@ -6,6 +6,6 @@
 
 + (id)sharedManager;
 
-- (void)getQuotaInfoForPrimaryAccountCompletion:(id /* block */)arg1;
+- (void)getQuotaInfoForPrimaryAccountCompletion:(id)arg1;
 
 @end

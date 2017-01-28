@@ -7,7 +7,7 @@
 + (id)sharedTrainer;
 
 - (id)_init;
-- (BOOL)moveLanguageModelBundlesFromTemporaryDirectory:(id)arg1 toDestination:(id)arg2 error:(id*)arg3;
-- (void)performTrainingForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (bool)moveLanguageModelBundlesFromTemporaryDirectory:(id)arg1 toDestination:(id)arg2 error:(id*)arg3;
+- (void)performTrainingForClient:(id)arg1 withCompletionHandler:(id)arg2;
 
 @end

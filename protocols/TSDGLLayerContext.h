@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)createFramebufferFromLayer:(TSDGLLayer *)arg1;
-- (BOOL)isValid;
-- (BOOL)makeCurrentContext;
+- (bool)createFramebufferFromLayer:(TSDGLLayer *)arg1;
+- (bool)isValid;
+- (bool)makeCurrentContext;
 - (void)presentRenderbuffer;
 - (void)teardown;
 

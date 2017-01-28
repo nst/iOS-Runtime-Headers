@@ -27,7 +27,7 @@
 - (id)initWithConnection:(id)arg1 requestRef:(struct _CFHTTPServerRequest { }*)arg2;
 - (id)method;
 - (struct _CFHTTPServerRequest { }*)requestRef;
-- (id)responseWithStatusCode:(int)arg1;
+- (id)responseWithStatusCode:(long long)arg1;
 - (void)setBody:(id)arg1;
 - (void)setHeaders:(id)arg1;
 - (void)setMethod:(id)arg1;

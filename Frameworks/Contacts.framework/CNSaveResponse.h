@@ -8,7 +8,7 @@
     NSMutableDictionary * _groupSnapshotsByIndexPath;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)applySnapshotsToSaveRequest:(id)arg1;
 - (void)dealloc;

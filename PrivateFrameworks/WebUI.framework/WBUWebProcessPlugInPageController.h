@@ -6,6 +6,6 @@
 
 + (id)pageControllerForBrowserContextController:(id)arg1;
 
-- (BOOL)isNetworkReachable;
+- (bool)isNetworkReachable;
 
 @end

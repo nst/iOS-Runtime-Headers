@@ -16,7 +16,7 @@
 
 + (id)createElement:(id*)arg1;
 
-- (BOOL)assertionMeetsConditions:(id*)arg1;
+- (bool)assertionMeetsConditions:(id*)arg1;
 - (id)assertions;
 - (id)authnStatement;
 - (id)consent;

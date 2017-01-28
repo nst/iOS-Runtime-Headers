@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) NSURL *donationValidationURL;
 
 - (void).cxx_destruct;
-- (void)_finishLoadWithResponse:(id)arg1 error:(id)arg2 block:(id /* block */)arg3;
+- (void)_finishLoadWithResponse:(id)arg1 error:(id)arg2 block:(id)arg3;
 - (void)_setLogoImage:(id)arg1 forCharity:(id)arg2;
 - (void)addObserver:(id)arg1;
 - (id)allCharities;
@@ -27,7 +27,7 @@
 - (id)donationPurchaseURL;
 - (id)donationValidationURL;
 - (id)initWithOperationQueue:(id)arg1 clientContext:(id)arg2;
-- (void)loadConfigurationWithCompletionBlock:(id /* block */)arg1;
+- (void)loadConfigurationWithCompletionBlock:(id)arg1;
 - (void)loadLogoForCharity:(id)arg1;
 - (id)logoImageForCharity:(id)arg1;
 - (void)removeObserver:(id)arg1;

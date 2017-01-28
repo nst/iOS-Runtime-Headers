@@ -9,9 +9,9 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasPerson;
-@property (nonatomic, readonly) BOOL hasPhoneNumber;
-@property (nonatomic, readonly) BOOL hasRating;
+@property (nonatomic, readonly) bool hasPerson;
+@property (nonatomic, readonly) bool hasPhoneNumber;
+@property (nonatomic, readonly) bool hasRating;
 @property (nonatomic, retain) _INPBContactValue *person;
 @property (nonatomic, retain) NSString *phoneNumber;
 @property (nonatomic, retain) NSString *rating;
@@ -23,16 +23,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPerson;
-- (BOOL)hasPhoneNumber;
-- (BOOL)hasRating;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPerson;
+- (bool)hasPhoneNumber;
+- (bool)hasRating;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)person;
 - (id)phoneNumber;
 - (id)rating;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPerson:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setRating:(id)arg1;

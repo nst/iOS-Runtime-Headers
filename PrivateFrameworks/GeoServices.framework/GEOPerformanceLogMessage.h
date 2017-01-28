@@ -7,8 +7,8 @@
     NSString * _perfEventValue;
 }
 
-@property (nonatomic, readonly) BOOL hasPerfEventKey;
-@property (nonatomic, readonly) BOOL hasPerfEventValue;
+@property (nonatomic, readonly) bool hasPerfEventKey;
+@property (nonatomic, readonly) bool hasPerfEventValue;
 @property (nonatomic, retain) NSString *perfEventKey;
 @property (nonatomic, retain) NSString *perfEventValue;
 
@@ -17,14 +17,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPerfEventKey;
-- (BOOL)hasPerfEventValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPerfEventKey;
+- (bool)hasPerfEventValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)perfEventKey;
 - (id)perfEventValue;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPerfEventKey:(id)arg1;
 - (void)setPerfEventValue:(id)arg1;
 - (void)writeTo:(id)arg1;

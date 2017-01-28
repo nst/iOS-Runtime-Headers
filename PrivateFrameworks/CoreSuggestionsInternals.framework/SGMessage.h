@@ -22,13 +22,13 @@
 
 + (id)fromDictionary:(id)arg1;
 + (id)messageWithSearchableItem:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountHandles;
 - (id)asDictionary;
 - (id)attachments;
-- (unsigned int)contentLength;
+- (unsigned long long)contentLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)domainIdentifier;
@@ -37,7 +37,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithSearchableItem:(id)arg1;
-- (BOOL)isEqualToMessage:(id)arg1;
+- (bool)isEqualToMessage:(id)arg1;
 - (void)setAccountHandles:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDomainIdentifier:(id)arg1;

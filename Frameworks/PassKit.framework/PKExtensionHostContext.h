@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *delayCallbacksGroup;
 @property (nonatomic) <PKPaymentAuthorizationHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -32,6 +32,6 @@
 - (void)setDelayCallbacksGroup:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)vendorContext;
-- (id)vendorContextWithErrorHandler:(id /* block */)arg1;
+- (id)vendorContextWithErrorHandler:(id)arg1;
 
 @end

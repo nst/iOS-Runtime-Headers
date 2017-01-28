@@ -5,7 +5,7 @@
 
 @required
 
-- (void)updateEventProviderStatus:(int)arg1;
+- (void)updateEventProviderStatus:(long long)arg1;
 - (void)updateWithEvent:(_UIMotionEffectEvent *)arg1;
 
 @end

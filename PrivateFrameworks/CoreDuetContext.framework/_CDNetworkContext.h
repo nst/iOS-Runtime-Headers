@@ -5,8 +5,8 @@
 @interface _CDNetworkContext : NSObject
 
 + (double)cellQuality:(id)arg1;
-+ (BOOL)inexpensiveNetworkingAvailable:(id)arg1;
-+ (BOOL)networkingAvailable:(id)arg1;
++ (bool)inexpensiveNetworkingAvailable:(id)arg1;
++ (bool)networkingAvailable:(id)arg1;
 + (double)qualityForPath:(id)arg1 inContext:(id)arg2;
 + (double)wifiQuality:(id)arg1;
 

@@ -4,16 +4,16 @@
 
 @interface WBSTabDialogManager : NSObject {
     NSMutableDictionary * _completionHandlers;
-    unsigned int  _maximumNumberOfBackgroundDialogs;
+    unsigned long long  _maximumNumberOfBackgroundDialogs;
     NSMutableDictionary * _webPIDToDialogQueueMap;
 }
 
 - (void).cxx_destruct;
 - (void)dismissAllDialogsForWebPIDIfNeeded:(int)arg1;
-- (void)dismissCurrentDialogForWebPID:(int)arg1 withResponse:(int)arg2 message:(id)arg3;
-- (void)dismissDialogForWebPID:(int)arg1 withResponse:(int)arg2 message:(id)arg3;
+- (void)dismissCurrentDialogForWebPID:(int)arg1 withResponse:(long long)arg2 message:(id)arg3;
+- (void)dismissDialogForWebPID:(int)arg1 withResponse:(long long)arg2 message:(id)arg3;
 - (void)dismissDialogForWebPIDIfNeeded:(int)arg1;
-- (void)enqueueOrPresentDialogForWebPID:(int)arg1 presentationBlock:(id /* block */)arg2 dismissalBlock:(id /* block */)arg3 andIgnoreQueueCapacity:(BOOL)arg4;
+- (void)enqueueOrPresentDialogForWebPID:(int)arg1 presentationBlock:(id)arg2 dismissalBlock:(id)arg3 andIgnoreQueueCapacity:(bool)arg4;
 - (id)init;
 - (void)presentNextDialogForWebPID:(int)arg1;
 - (void)registerDialogForWebPID:(int)arg1 withCompletionHandler:(id)arg2;

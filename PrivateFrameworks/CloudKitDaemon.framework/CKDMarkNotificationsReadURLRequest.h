@@ -5,18 +5,18 @@
 @interface CKDMarkNotificationsReadURLRequest : CKDURLRequest {
     NSArray * _notificationIDs;
     NSMutableDictionary * _notificationIDsByRequestID;
-    id /* block */  _notificationMarkedReadProgressBlock;
+    id  _notificationMarkedReadProgressBlock;
 }
 
 @property (nonatomic, retain) NSArray *notificationIDs;
 @property (nonatomic, retain) NSMutableDictionary *notificationIDsByRequestID;
-@property (nonatomic, copy) id /* block */ notificationMarkedReadProgressBlock;
+@property (nonatomic, copy) id notificationMarkedReadProgressBlock;
 
 - (void).cxx_destruct;
 - (id)initWithNotificationIDsToMarkRead:(id)arg1;
 - (id)notificationIDs;
 - (id)notificationIDsByRequestID;
-- (id /* block */)notificationMarkedReadProgressBlock;
+- (id)notificationMarkedReadProgressBlock;
 - (int)operationType;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
@@ -24,7 +24,7 @@
 - (id)requestOperations;
 - (void)setNotificationIDs:(id)arg1;
 - (void)setNotificationIDsByRequestID:(id)arg1;
-- (void)setNotificationMarkedReadProgressBlock:(id /* block */)arg1;
+- (void)setNotificationMarkedReadProgressBlock:(id)arg1;
 - (id)zoneIDsToLock;
 
 @end

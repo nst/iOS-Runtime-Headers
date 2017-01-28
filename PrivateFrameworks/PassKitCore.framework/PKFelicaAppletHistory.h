@@ -14,8 +14,8 @@
     bool  _inStation;
     PKFelicaShinkansenTicket * _shinkansenTicket;
     bool  _shinkansenTicketActive;
-    int  _source;
-    int  _type;
+    long long  _source;
+    long long  _type;
 }
 
 @property (nonatomic, readonly, copy) NSNumber *SPID;
@@ -28,11 +28,11 @@
 @property (getter=isInStation, nonatomic, readonly) bool inStation;
 @property (nonatomic, readonly, copy) PKFelicaShinkansenTicket *shinkansenTicket;
 @property (getter=isShinkansenTicketActive, nonatomic, readonly) bool shinkansenTicketActive;
-@property (nonatomic, readonly) int source;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long source;
+@property (nonatomic, readonly) long long type;
 
-+ (int)appletTypeForDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (long long)appletTypeForDictionary:(id)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)SPID;
@@ -43,7 +43,7 @@
 - (id)historyRecords;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 source:(int)arg2;
+- (id)initWithDictionary:(id)arg1 source:(long long)arg2;
 - (bool)isBlacklisted;
 - (bool)isGreenCarTicketUsed;
 - (bool)isInShinkansenStation;
@@ -51,7 +51,7 @@
 - (bool)isShinkansenTicketActive;
 - (void)sanitizeValuesWithState:(id)arg1;
 - (id)shinkansenTicket;
-- (int)source;
-- (int)type;
+- (long long)source;
+- (long long)type;
 
 @end

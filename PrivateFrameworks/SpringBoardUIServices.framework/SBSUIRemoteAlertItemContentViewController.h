@@ -7,7 +7,7 @@
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
-- (void)getPreferredContentSizeWithReplyBlock:(id /* block */)arg1;
+- (void)getPreferredContentSizeWithReplyBlock:(id)arg1;
 - (void)invalidatePreferredContentSize;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

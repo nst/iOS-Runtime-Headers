@@ -7,29 +7,29 @@
     NSLayoutConstraint * _leftConstraint;
     NSHashTable * _observers;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _preferredContentSize;
     NSLayoutConstraint * _rightConstraint;
     NSLayoutConstraint * _topConstraint;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } maximumContentSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } contentSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } maximumContentSize;
 
 - (void).cxx_destruct;
-- (void)_notifyObserversAboutDidAdjustToSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_notifyObserversAboutWillAdjustToSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_notifyObserversAboutDidAdjustToSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)_notifyObserversAboutWillAdjustToSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)addPresentationObserver:(id)arg1;
 - (void)containerViewWillLayoutSubviews;
-- (struct CGSize { float x1; float x2; })contentSize;
+- (struct CGSize { double x1; double x2; })contentSize;
 - (void)dealloc;
 - (void)dismissalTransitionWillBegin;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
-- (struct CGSize { float x1; float x2; })maximumContentSize;
+- (struct CGSize { double x1; double x2; })maximumContentSize;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)presentationTransitionWillBegin;
 - (void)removePresentationObserver:(id)arg1;
-- (BOOL)shouldRemovePresentersView;
+- (bool)shouldRemovePresentersView;
 
 @end

@@ -4,17 +4,17 @@
 
 @interface _LSDOpenClient : _LSDClient <_LSDOpenProtocol>
 
-- (void)canOpenURL:(id)arg1 publicSchemes:(BOOL)arg2 privateSchemes:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (void)canOpenURL:(id)arg1 publicSchemes:(bool)arg2 privateSchemes:(bool)arg3 completionHandler:(id)arg4;
 - (void)failedToOpenApplication:(id)arg1 withURL:(id)arg2;
-- (void)finishOpenOperationWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)getAppLinkOpenStrategyForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)openAppLinkOpenState:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)openApplicationWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)openURL:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)openUserActivityWithUniqueIdentifier:(id)arg1 activityData:(id)arg2 activityType:(id)arg3 bundleIdentifier:(id)arg4 options:(id)arg5 completionHandler:(id /* block */)arg6;
-- (void)resolveAppLinkForURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setAppLinkOpenStrategy:(int)arg1 forBundleIdentifier:(id)arg2;
-- (void)startOpenOperationWithURL:(id)arg1 applicationIdentifier:(id)arg2 userSpecifiedApplication:(BOOL)arg3 documentIdentifier:(id)arg4 userInfo:(id)arg5 options:(id)arg6 completionHandler:(id /* block */)arg7;
-- (void)willHandleInvocation:(id)arg1 isReply:(BOOL)arg2;
+- (void)finishOpenOperationWithURL:(id)arg1 completionHandler:(id)arg2;
+- (void)getAppLinkOpenStrategyForBundleIdentifier:(id)arg1 completionHandler:(id)arg2;
+- (void)openAppLinkOpenState:(id)arg1 completionHandler:(id)arg2;
+- (void)openApplicationWithIdentifier:(id)arg1 completionHandler:(id)arg2;
+- (void)openURL:(id)arg1 options:(id)arg2 completionHandler:(id)arg3;
+- (void)openUserActivityWithUniqueIdentifier:(id)arg1 activityData:(id)arg2 activityType:(id)arg3 bundleIdentifier:(id)arg4 options:(id)arg5 completionHandler:(id)arg6;
+- (void)resolveAppLinkForURL:(id)arg1 completionHandler:(id)arg2;
+- (void)setAppLinkOpenStrategy:(long long)arg1 forBundleIdentifier:(id)arg2;
+- (void)startOpenOperationWithURL:(id)arg1 applicationIdentifier:(id)arg2 userSpecifiedApplication:(bool)arg3 documentIdentifier:(id)arg4 userInfo:(id)arg5 options:(id)arg6 completionHandler:(id)arg7;
+- (void)willHandleInvocation:(id)arg1 isReply:(bool)arg2;
 
 @end

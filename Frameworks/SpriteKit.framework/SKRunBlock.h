@@ -3,11 +3,11 @@
  */
 
 @interface SKRunBlock : SKAction {
-    id /* block */  _block;
+    id  _block;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-+ (id)runBlock:(id /* block */)arg1 queue:(id)arg2;
++ (id)runBlock:(id)arg1 queue:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

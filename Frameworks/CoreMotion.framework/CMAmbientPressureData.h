@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) struct { double x1; double x2; } ambientPressure;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (struct { double x1; double x2; })ambientPressure;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

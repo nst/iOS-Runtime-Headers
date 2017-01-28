@@ -4,15 +4,15 @@
 
 @interface BLRepairBrushStroke : BLBrushStroke {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _repairTextureOffset;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } repairTextureOffset;
+@property (nonatomic) struct CGPoint { double x1; double x2; } repairTextureOffset;
 
 - (id)keysToEncode;
-- (struct CGPoint { float x1; float x2; })repairTextureOffset;
-- (void)setRepairTextureOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { double x1; double x2; })repairTextureOffset;
+- (void)setRepairTextureOffset:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

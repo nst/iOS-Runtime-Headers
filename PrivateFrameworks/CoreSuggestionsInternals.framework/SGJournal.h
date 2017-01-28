@@ -5,7 +5,7 @@
 @interface SGJournal : NSObject {
     NSMutableArray * _calendarObservers;
     NSMutableArray * _contactsObservers;
-    BOOL  _observersFrozen;
+    bool  _observersFrozen;
     NSMutableArray * _queuedOperations;
 }
 
@@ -15,7 +15,7 @@
 - (void)addContactsObserver:(id)arg1;
 - (void)addEntry:(id)arg1;
 - (void)freezeObservers;
-- (BOOL)hasObserver:(id)arg1;
+- (bool)hasObserver:(id)arg1;
 - (id)init;
 - (void)thawObserversForTesting;
 

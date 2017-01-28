@@ -3,39 +3,39 @@
  */
 
 @interface NEUserNotification : NSObject {
-    id /* block */  _callback;
+    id  _callback;
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    BOOL  _isBanner;
+    bool  _isBanner;
     id  _notification;
     id  _notificationSource;
 }
 
-@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, copy) id callback;
 @property (retain) NSObject<OS_dispatch_queue> *callbackQueue;
-@property BOOL isBanner;
+@property bool isBanner;
 @property (retain) id notification;
 @property (retain) id notificationSource;
 
 + (id)createLAContext;
 + (Class)getUIDeviceClass;
-+ (void)promptForLocalAuthenticationWithReason:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (BOOL)shouldPromptForLocalAuthentication;
++ (void)promptForLocalAuthenticationWithReason:(id)arg1 completionQueue:(id)arg2 completionHandler:(id)arg3;
++ (bool)shouldPromptForLocalAuthentication;
 
 - (void).cxx_destruct;
-- (id /* block */)callback;
+- (id)callback;
 - (id)callbackQueue;
 - (void)cancel;
 - (void)dealloc;
 - (id)initAddConfigurationsForApp:(id)arg1 warningHeader:(id)arg2 warning:(id)arg3;
-- (id)initAuthenticationWithHeader:(id)arg1 options:(id)arg2 flags:(unsigned int)arg3;
+- (id)initAuthenticationWithHeader:(id)arg1 options:(id)arg2 flags:(unsigned long long)arg3;
 - (id)initBannerWithHeader:(id)arg1 message:(id)arg2 alternateMessage:(id)arg3 defaultMessage:(id)arg4;
-- (BOOL)isBanner;
+- (bool)isBanner;
 - (id)notification;
 - (id)notificationSource;
-- (BOOL)postNotificationWithCallbackQueue:(id)arg1 callbackHandler:(id /* block */)arg2;
-- (void)setCallback:(id /* block */)arg1;
+- (bool)postNotificationWithCallbackQueue:(id)arg1 callbackHandler:(id)arg2;
+- (void)setCallback:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
-- (void)setIsBanner:(BOOL)arg1;
+- (void)setIsBanner:(bool)arg1;
 - (void)setNotification:(id)arg1;
 - (void)setNotificationSource:(id)arg1;
 

@@ -5,28 +5,28 @@
 @interface PRCandidateList : NSObject {
     NSMutableArray * _candidates;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _defaultReplacementRange;
-    unsigned int  _maxCount;
+    unsigned long long  _maxCount;
 }
 
 - (void)addCandidate:(id)arg1;
-- (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 errorType:(unsigned int)arg3;
-- (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 errorType:(unsigned int)arg4;
-- (void)addCandidateWithString:(id)arg1 errorType:(unsigned int)arg2;
-- (void)addCandidateWithString:(id)arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 errorType:(unsigned int)arg3;
-- (void)addCandidateWithWords:(id)arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 errorType:(unsigned int)arg3;
-- (void)addReplacementCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 intendedCharacter:(unsigned short)arg4 actualCharacter:(unsigned short)arg5;
-- (void)addTranspositionCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 intendedFirstCharacter:(unsigned short)arg4 intendedSecondCharacter:(unsigned short)arg5;
+- (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 errorType:(unsigned long long)arg3;
+- (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 errorType:(unsigned long long)arg4;
+- (void)addCandidateWithString:(id)arg1 errorType:(unsigned long long)arg2;
+- (void)addCandidateWithString:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 errorType:(unsigned long long)arg3;
+- (void)addCandidateWithWords:(id)arg1 replacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 errorType:(unsigned long long)arg3;
+- (void)addReplacementCandidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 intendedCharacter:(unsigned short)arg4 actualCharacter:(unsigned short)arg5;
+- (void)addTranspositionCandidateWithBuffer:(char *)arg1 encoding:(unsigned int)arg2 transform:(unsigned long long)arg3 intendedFirstCharacter:(unsigned short)arg4 intendedSecondCharacter:(unsigned short)arg5;
 - (id)candidateStrings;
 - (id)candidates;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })defaultReplacementRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })defaultReplacementRange;
 - (id)description;
-- (id)initWithMaxCount:(unsigned int)arg1 defaultReplacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)isFull;
-- (unsigned int)maxCount;
+- (id)initWithMaxCount:(unsigned long long)arg1 defaultReplacementRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (bool)isFull;
+- (unsigned long long)maxCount;
 
 @end

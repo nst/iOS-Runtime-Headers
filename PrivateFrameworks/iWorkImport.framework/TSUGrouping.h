@@ -6,6 +6,6 @@
 
 + (void)beginGrouping;
 + (void)endGrouping;
-+ (BOOL)isGrouping;
++ (bool)isGrouping;
 
 @end

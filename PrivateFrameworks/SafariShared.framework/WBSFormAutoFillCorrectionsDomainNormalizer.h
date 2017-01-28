@@ -6,7 +6,7 @@
     NSCharacterSet * _dotCharacterSet;
 }
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
 - (void).cxx_destruct;

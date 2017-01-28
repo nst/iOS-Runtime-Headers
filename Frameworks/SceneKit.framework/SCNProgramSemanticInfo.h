@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *semantic;
 
 + (id)infoWithSemantic:(id)arg1 options:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

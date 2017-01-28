@@ -5,19 +5,19 @@
 @interface SSVSecureKeyDeliveryRequestOperation : NSOperation {
     NSObject<OS_dispatch_queue> * _accessQueue;
     NSURL * _certificateURL;
-    BOOL  _iTunesStoreRequest;
+    bool  _iTunesStoreRequest;
     NSURL * _keyServerURL;
     NSNumber * _rentalId;
     AVAssetResourceLoadingRequest * _resourceLoadingRequest;
-    id /* block */  _responseBlock;
+    id  _responseBlock;
 }
 
-@property (getter=isITunesStoreRequest) BOOL ITunesStoreRequest;
+@property (getter=isITunesStoreRequest) bool ITunesStoreRequest;
 @property (retain) NSURL *certificateURL;
 @property (retain) NSURL *keyServerURL;
 @property (copy) NSNumber *rentalId;
 @property (retain) AVAssetResourceLoadingRequest *resourceLoadingRequest;
-@property (copy) id /* block */ responseBlock;
+@property (copy) id responseBlock;
 
 - (void).cxx_destruct;
 - (id)_contentKeyContextForStreamingKeyID:(long long)arg1 streamingKeyDictionaries:(id)arg2 error:(id*)arg3;
@@ -26,18 +26,18 @@
 - (id)_streamingRequestDictionaryWithStreamingKeyDictionaries:(id)arg1;
 - (id)certificateURL;
 - (id)init;
-- (BOOL)isITunesStoreRequest;
+- (bool)isITunesStoreRequest;
 - (id)keyServerURL;
 - (void)main;
 - (id)rentalId;
 - (id)resourceLoadingRequest;
-- (id /* block */)responseBlock;
+- (id)responseBlock;
 - (void)setCertificateURL:(id)arg1;
-- (void)setITunesStoreRequest:(BOOL)arg1;
+- (void)setITunesStoreRequest:(bool)arg1;
 - (void)setKeyServerURL:(id)arg1;
 - (void)setRentalId:(id)arg1;
 - (void)setResourceLoadingRequest:(id)arg1;
-- (void)setResponseBlock:(id /* block */)arg1;
+- (void)setResponseBlock:(id)arg1;
 - (void)start;
 
 @end

@@ -3,10 +3,10 @@
  */
 
 @interface CUCoalescer : NSObject {
-    id /* block */  _actionHandler;
+    id  _actionHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _invalidateCalled;
-    id /* block */  _invalidationHandler;
+    bool  _invalidateCalled;
+    id  _invalidationHandler;
     double  _leeway;
     double  _maxDelay;
     double  _minDelay;
@@ -15,9 +15,9 @@
     int  _triggered;
 }
 
-@property (nonatomic, copy) id /* block */ actionHandler;
+@property (nonatomic, copy) id actionHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, copy) id invalidationHandler;
 @property (nonatomic) double leeway;
 @property (nonatomic) double maxDelay;
 @property (nonatomic) double minDelay;
@@ -27,19 +27,19 @@
 - (void)_invalidate;
 - (void)_timerFired;
 - (void)_trigger;
-- (id /* block */)actionHandler;
+- (id)actionHandler;
 - (void)cancel;
 - (void)dealloc;
 - (id)dispatchQueue;
 - (id)init;
 - (void)invalidate;
-- (id /* block */)invalidationHandler;
+- (id)invalidationHandler;
 - (double)leeway;
 - (double)maxDelay;
 - (double)minDelay;
-- (void)setActionHandler:(id /* block */)arg1;
+- (void)setActionHandler:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setInvalidationHandler:(id)arg1;
 - (void)setLeeway:(double)arg1;
 - (void)setMaxDelay:(double)arg1;
 - (void)setMinDelay:(double)arg1;

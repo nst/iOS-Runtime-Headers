@@ -8,32 +8,32 @@
 }
 
 + (void)_purgeCache;
-+ (id)labelForFaceStyle:(int)arg1 number:(unsigned int)arg2 fontSize:(float)arg3 paddedWithZeros:(BOOL)arg4;
-+ (id)labelForText:(id)arg1 font:(int)arg2 fontSize:(float)arg3 padWithZeroes:(BOOL)arg4 filter:(BOOL)arg5;
-+ (BOOL)localeChanged;
++ (id)labelForFaceStyle:(long long)arg1 number:(unsigned long long)arg2 fontSize:(double)arg3 paddedWithZeros:(bool)arg4;
++ (id)labelForText:(id)arg1 font:(long long)arg2 fontSize:(double)arg3 padWithZeroes:(bool)arg4 filter:(bool)arg5;
++ (bool)localeChanged;
 + (id)numeralsSetFromCurrentLocale;
 + (void)prime;
-+ (BOOL)setNumeralsSet:(id)arg1;
++ (bool)setNumeralsSet:(id)arg1;
 + (id)versionFilePath;
 + (void)wipe;
 
 - (void).cxx_destruct;
-- (BOOL)_localeChanged;
+- (bool)_localeChanged;
 - (void)checkVersion;
 - (void)dealloc;
-- (void)exportTextureAtlas:(int)arg1;
-- (void)exportTextureAtlas:(float)arg1 font:(int)arg2 values:(id)arg3 padWithZeroes:(BOOL)arg4 preload:(BOOL)arg5;
+- (void)exportTextureAtlas:(long long)arg1;
+- (void)exportTextureAtlas:(double)arg1 font:(long long)arg2 values:(id)arg3 padWithZeroes:(bool)arg4 preload:(bool)arg5;
 - (id)init;
-- (id)keyForLabelWithFont:(int)arg1 fontSize:(float)arg2 padWithZeroes:(BOOL)arg3;
-- (id)labelForFaceStyle:(int)arg1 number:(unsigned int)arg2 fontSize:(float)arg3 paddedWithZeros:(BOOL)arg4;
-- (id)labelForText:(id)arg1 font:(int)arg2 fontSize:(float)arg3 padWithZeroes:(BOOL)arg4 filter:(BOOL)arg5;
+- (id)keyForLabelWithFont:(long long)arg1 fontSize:(double)arg2 padWithZeroes:(bool)arg3;
+- (id)labelForFaceStyle:(long long)arg1 number:(unsigned long long)arg2 fontSize:(double)arg3 paddedWithZeros:(bool)arg4;
+- (id)labelForText:(id)arg1 font:(long long)arg2 fontSize:(double)arg3 padWithZeroes:(bool)arg4 filter:(bool)arg5;
 - (void)loadAtlases;
-- (id)nameForFaceStyle:(int)arg1;
-- (void)primeFontSize:(float)arg1 font:(int)arg2 from:(unsigned int)arg3 to:(unsigned int)arg4 step:(unsigned int)arg5;
-- (void)primeFontSize:(float)arg1 font:(int)arg2 values:(id)arg3;
-- (void)primeFontSize:(float)arg1 font:(int)arg2 values:(id)arg3 padWithZeroes:(BOOL)arg4;
-- (void)primeFontSize:(float)arg1 font:(int)arg2 values:(id)arg3 padWithZeroes:(BOOL)arg4 preload:(BOOL)arg5;
-- (void)primeFontSize:(float)arg1 font:(int)arg2 values:(id)arg3 preload:(BOOL)arg4;
-- (id)textureFor:(id)arg1 font:(int)arg2 fontSize:(float)arg3 padWithZeroes:(BOOL)arg4;
+- (id)nameForFaceStyle:(long long)arg1;
+- (void)primeFontSize:(double)arg1 font:(long long)arg2 from:(unsigned long long)arg3 to:(unsigned long long)arg4 step:(unsigned long long)arg5;
+- (void)primeFontSize:(double)arg1 font:(long long)arg2 values:(id)arg3;
+- (void)primeFontSize:(double)arg1 font:(long long)arg2 values:(id)arg3 padWithZeroes:(bool)arg4;
+- (void)primeFontSize:(double)arg1 font:(long long)arg2 values:(id)arg3 padWithZeroes:(bool)arg4 preload:(bool)arg5;
+- (void)primeFontSize:(double)arg1 font:(long long)arg2 values:(id)arg3 preload:(bool)arg4;
+- (id)textureFor:(id)arg1 font:(long long)arg2 fontSize:(double)arg3 padWithZeroes:(bool)arg4;
 
 @end

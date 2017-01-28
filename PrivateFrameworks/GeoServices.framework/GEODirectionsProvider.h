@@ -3,31 +3,31 @@
  */
 
 @interface GEODirectionsProvider : NSObject {
-    id /* block */  _errorHandler;
-    id /* block */  _finishedHandler;
-    BOOL  _isLoading;
+    id  _errorHandler;
+    id  _finishedHandler;
+    bool  _isLoading;
     int  _requestType;
 }
 
-@property (nonatomic, copy) id /* block */ errorHandler;
-@property (nonatomic, copy) id /* block */ finishedHandler;
-@property (nonatomic) BOOL isLoading;
+@property (nonatomic, copy) id errorHandler;
+@property (nonatomic, copy) id finishedHandler;
+@property (nonatomic) bool isLoading;
 
 - (void)cancelProviderRequest;
 - (void)cancelRequest;
 - (void)dealloc;
-- (id /* block */)errorHandler;
-- (id /* block */)finishedHandler;
-- (BOOL)isLoading;
+- (id)errorHandler;
+- (id)finishedHandler;
+- (bool)isLoading;
 - (void)providerDidCancel;
 - (void)providerReceivedError:(id)arg1 directionsError:(id)arg2;
-- (void)providerReceivedErrorCode:(int)arg1 userInfo:(id)arg2 directionsError:(id)arg3;
+- (void)providerReceivedErrorCode:(long long)arg1 userInfo:(id)arg2 directionsError:(id)arg3;
 - (void)providerReceivedResponse:(id)arg1;
 - (void)requestCompleted;
-- (void)setErrorHandler:(id /* block */)arg1;
-- (void)setFinishedHandler:(id /* block */)arg1;
-- (void)setIsLoading:(BOOL)arg1;
+- (void)setErrorHandler:(id)arg1;
+- (void)setFinishedHandler:(id)arg1;
+- (void)setIsLoading:(bool)arg1;
 - (void)startProviderWithRequest:(id)arg1;
-- (void)startRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
+- (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 
 @end

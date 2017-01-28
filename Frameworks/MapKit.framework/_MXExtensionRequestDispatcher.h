@@ -8,13 +8,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) <_MXExtensionServiceVendor> *vendor;
 
 - (void).cxx_destruct;
-- (void)_handleRequestObject:(id)arg1 completion:(id /* block */)arg2;
-- (void)_handleRequestWithExtensionItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)_handleRequestObject:(id)arg1 completion:(id)arg2;
+- (void)_handleRequestWithExtensionItem:(id)arg1 completion:(id)arg2;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (id)init;
 - (id)initWithServiceVendor:(id)arg1;

@@ -10,6 +10,6 @@
 - (void)_takeIOSurfaceSnapshotOfView:(id)arg1;
 - (void)dealloc;
 - (void)layoutSubviews;
-- (void)snapshotView:(id)arg1 usingIOSurface:(BOOL)arg2;
+- (void)snapshotView:(id)arg1 usingIOSurface:(bool)arg2;
 
 @end

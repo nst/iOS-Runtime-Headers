@@ -5,6 +5,6 @@
 
 @required
 
-- (struct CGPoint { float x1; float x2; })getControlKnobPosition:(unsigned int)arg1;
+- (struct CGPoint { double x1; double x2; })getControlKnobPosition:(unsigned long long)arg1;
 
 @end

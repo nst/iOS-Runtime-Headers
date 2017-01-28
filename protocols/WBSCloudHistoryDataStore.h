@@ -5,11 +5,11 @@
 
 @required
 
-- (void)fetchNumberOfDevicesInSyncCircleWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned int, NSError *, void*
-- (void)fetchRecordsWithServerChangeTokenData:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 9: NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, WBSCloudHistoryFetchResult *, unsigned int, NSError *, void*
+- (void)fetchNumberOfDevicesInSyncCircleWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, unsigned long long, NSError *, void*
+- (void)fetchRecordsWithServerChangeTokenData:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 9: NSData *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, WBSCloudHistoryFetchResult *, unsigned long long, NSError *, void*
 - (id)initWithConfiguration:(WBSCloudHistoryConfiguration *)arg1;
-- (void)initializePushNotifications:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)replayPersistedLongLivedSaveOperationWithID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
-- (void)saveCloudHistoryVisits:(void *)arg1 tombstones:(void *)arg2 longLivedOperationPersistenceCompletion:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 14: NSArray *, NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*, id /* block */, void*, void, id /* block */, NSError *, void*
+- (void)initializePushNotifications:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)replayPersistedLongLivedSaveOperationWithID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, NSError *, void*
+- (void)saveCloudHistoryVisits:(void *)arg1 tombstones:(void *)arg2 longLivedOperationPersistenceCompletion:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 14: NSArray *, NSArray *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSString *, void*, id, void*, void, id, NSError *, void*
 
 @end

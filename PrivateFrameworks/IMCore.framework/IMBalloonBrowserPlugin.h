@@ -6,7 +6,7 @@
 
 - (id)initWithIdentifier:(id)arg1 browserDisplayName:(id)arg2 browserImageName:(id)arg3;
 - (id)initWithIdentifier:(id)arg1 browserDisplayName:(id)arg2 browserImageName:(id)arg3 browserClass:(Class)arg4;
-- (BOOL)isBetaPlugin;
+- (bool)isBetaPlugin;
 - (id)version;
 
 @end

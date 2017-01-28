@@ -3,19 +3,19 @@
  */
 
 @interface SPExtensionDaemonManager : NSObject {
-    BOOL  _active;
+    bool  _active;
     NSMutableDictionary * _coreLocationAsserts;
     NSObject<OS_dispatch_queue> * _coreLocationAssertsQueue;
-    int  _refCount;
+    long long  _refCount;
     NSMutableSet * _transactionObservers;
     NSObject<OS_dispatch_queue> * _transactionQueue;
     NSObject<OS_dispatch_source> * _transactionTimer;
 }
 
-@property (nonatomic) BOOL active;
+@property (nonatomic) bool active;
 @property (nonatomic, retain) NSMutableDictionary *coreLocationAsserts;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *coreLocationAssertsQueue;
-@property (nonatomic) int refCount;
+@property (nonatomic) long long refCount;
 @property (nonatomic, retain) NSMutableSet *transactionObservers;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *transactionQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *transactionTimer;
@@ -23,7 +23,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (BOOL)active;
+- (bool)active;
 - (void)addTransactionObserver:(id)arg1;
 - (void)beginTransaction;
 - (id)coreLocationAsserts;
@@ -31,12 +31,12 @@
 - (void)endTransaction;
 - (id)init;
 - (void)keepAlive;
-- (int)refCount;
+- (long long)refCount;
 - (void)removeTransactionObserver:(id)arg1;
-- (void)setActive:(BOOL)arg1;
+- (void)setActive:(bool)arg1;
 - (void)setCoreLocationAsserts:(id)arg1;
 - (void)setCoreLocationAssertsQueue:(id)arg1;
-- (void)setRefCount:(int)arg1;
+- (void)setRefCount:(long long)arg1;
 - (void)setTransactionObservers:(id)arg1;
 - (void)setTransactionQueue:(id)arg1;
 - (void)setTransactionTimer:(id)arg1;

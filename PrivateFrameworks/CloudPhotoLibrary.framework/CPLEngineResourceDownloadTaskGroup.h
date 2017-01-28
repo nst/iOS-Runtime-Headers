@@ -7,13 +7,13 @@
 }
 
 @property (nonatomic, readonly) NSSet *activeTasks;
-@property (getter=isComplete, nonatomic, readonly) BOOL complete;
+@property (getter=isComplete, nonatomic, readonly) bool complete;
 
 - (void).cxx_destruct;
 - (id)activeTasks;
 - (id)initWithTasks:(id)arg1;
-- (BOOL)isComplete;
-- (BOOL)isTrackingTask:(id)arg1;
+- (bool)isComplete;
+- (bool)isTrackingTask:(id)arg1;
 - (void)taskDidComplete:(id)arg1;
 
 @end

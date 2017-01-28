@@ -4,27 +4,27 @@
 
 @interface SKUICardLayout : NSObject {
     SKUICardViewElement * _cardViewElement;
-    BOOL  _hasBackground;
+    bool  _hasBackground;
     SKUIViewElementLayoutContext * _layoutContext;
 }
 
 @property (nonatomic, readonly) SKUICardViewElement *cardViewElement;
-@property (nonatomic, readonly) float horizontalContentInset;
+@property (nonatomic, readonly) double horizontalContentInset;
 @property (nonatomic, readonly) SKUIViewElementLayoutContext *layoutContext;
-@property (nonatomic, readonly) int layoutStyle;
+@property (nonatomic, readonly) long long layoutStyle;
 
-+ (BOOL)allowsViewElement:(id)arg1;
++ (bool)allowsViewElement:(id)arg1;
 + (id)layoutWithCardViewElement:(id)arg1 context:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)attributedStringForButton:(id)arg1;
 - (id)attributedStringForLabel:(id)arg1;
-- (float)bottomInsetForLastViewElement:(id)arg1 width:(float)arg2;
+- (double)bottomInsetForLastViewElement:(id)arg1 width:(double)arg2;
 - (id)cardViewElement;
-- (float)horizontalContentInset;
+- (double)horizontalContentInset;
 - (id)layoutContext;
-- (int)layoutStyle;
-- (struct CGSize { float x1; float x2; })sizeForViewElement:(id)arg1 width:(float)arg2;
-- (float)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(float)arg3;
+- (long long)layoutStyle;
+- (struct CGSize { double x1; double x2; })sizeForViewElement:(id)arg1 width:(double)arg2;
+- (double)topInsetForViewElement:(id)arg1 previousViewElement:(id)arg2 width:(double)arg3;
 
 @end

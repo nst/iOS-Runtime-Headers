@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isTrackingChanges;
+- (bool)isTrackingChanges;
 
 @end

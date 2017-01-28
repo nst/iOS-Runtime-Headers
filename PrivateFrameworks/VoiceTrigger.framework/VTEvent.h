@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSDictionary *voiceTriggerEventInfo;
 
 + (id)eventFromURL:(id)arg1;
-+ (int)eventTypeFromURL:(id)arg1;
++ (long long)eventTypeFromURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_buildContent;

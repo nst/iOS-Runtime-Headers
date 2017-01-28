@@ -11,12 +11,12 @@
         } __end_cap_; 
     }  mAttributes;
     NSIndexSet * mEnabledArrays;
-    BOOL  mFailed;
+    bool  mFailed;
     TSCH3DResource * mIndices;
 }
 
 @property (nonatomic, retain) NSIndexSet *enabledArrays;
-@property (nonatomic) BOOL failed;
+@property (nonatomic) bool failed;
 
 + (id)resourceWithObjectState:(const struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_1_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_3_2; } x_3_2_1[8]; } x_1_1_3; } x1; }*)arg1 indices:(id)arg2;
 
@@ -24,12 +24,12 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)enabledArrays;
-- (BOOL)failed;
+- (bool)failed;
 - (id)get;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithObjectState:(const struct ObjectState { struct ObjcSharedPtr<NSSet> { id x_1_1_1; struct vector<TSCH3D::ObjectState::Lookup, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_2_2_1; struct Lookup {} *x_2_2_2; struct __compressed_pair<TSCH3D::ObjectState::Lookup *, std::__1::allocator<TSCH3D::ObjectState::Lookup> > { struct Lookup {} *x_3_3_1; } x_2_2_3; } x_1_1_2; struct array<SFUtility::ObjcSharedPtr<NSObject>, 8> { struct ObjcSharedPtr<NSObject> { id x_1_3_1; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_1_3_2; } x_3_2_1[8]; } x_1_1_3; } x1; }*)arg1 indices:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setEnabledArrays:(id)arg1;
-- (void)setFailed:(BOOL)arg1;
+- (void)setFailed:(bool)arg1;
 
 @end

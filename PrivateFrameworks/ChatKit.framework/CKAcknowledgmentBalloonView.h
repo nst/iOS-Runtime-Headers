@@ -3,23 +3,23 @@
  */
 
 @interface CKAcknowledgmentBalloonView : CKBalloonView {
-    int  _coloredPart;
+    long long  _coloredPart;
     CKAcknowledgmentGlyphView * _glyphView;
-    BOOL  _stacked;
+    unsigned long long  _stackCount;
 }
 
-@property (nonatomic) int coloredPart;
+@property (nonatomic) long long coloredPart;
 @property (nonatomic, retain) CKAcknowledgmentGlyphView *glyphView;
-@property (getter=isStacked, nonatomic) BOOL stacked;
+@property (nonatomic) unsigned long long stackCount;
 
 - (void).cxx_destruct;
-- (int)coloredPart;
+- (long long)coloredPart;
 - (void)configureForAggregateAcknowledgmentChatItem:(id)arg1;
 - (id)glyphView;
-- (BOOL)isStacked;
 - (void)prepareForReuse;
-- (void)setColoredPart:(int)arg1;
+- (void)setColoredPart:(long long)arg1;
 - (void)setGlyphView:(id)arg1;
-- (void)setStacked:(BOOL)arg1;
+- (void)setStackCount:(unsigned long long)arg1;
+- (unsigned long long)stackCount;
 
 @end

@@ -14,7 +14,7 @@
 - (void)_fetchBlacklist;
 - (id)blacklistAccessQueue;
 - (id)blacklistedBundleIDs;
-- (BOOL)containsBundleIdentifier:(id)arg1;
+- (bool)containsBundleIdentifier:(id)arg1;
 - (id)init;
 - (void)setBlacklistAccessQueue:(id)arg1;
 - (void)setBlacklistedBundleIDs:(id)arg1;

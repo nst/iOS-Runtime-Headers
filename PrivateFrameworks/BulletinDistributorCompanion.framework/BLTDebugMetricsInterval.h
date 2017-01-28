@@ -16,7 +16,7 @@
 - (void)_cleanupTimer;
 - (void)dealloc;
 - (id)init;
-- (id)initWithStart:(double)arg1 interval:(double)arg2 block:(id /* block */)arg3;
+- (id)initWithStart:(double)arg1 interval:(double)arg2 block:(id)arg3;
 - (double)interval;
 - (id)nextUpcomingIntervalDate;
 - (void)setInterval:(double)arg1;

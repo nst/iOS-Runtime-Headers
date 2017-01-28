@@ -9,14 +9,14 @@
 + (id)buddyPreferences;
 
 - (void).cxx_destruct;
-- (BOOL)boolForKey:(id)arg1;
+- (bool)boolForKey:(id)arg1;
 - (id)dictionaryForKey:(id)arg1;
 - (id)init;
 - (id)objectForKey:(id)arg1;
 - (void)persist;
 - (void)removeObjectForKey:(id)arg1;
 - (void)reset;
-- (void)setBool:(BOOL)arg1 forKey:(id)arg2;
+- (void)setBool:(bool)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

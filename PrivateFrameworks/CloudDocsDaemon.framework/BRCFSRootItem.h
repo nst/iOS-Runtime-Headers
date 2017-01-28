@@ -9,8 +9,8 @@
 - (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned long long)arg2 appLibrary:(id)arg3;
 - (id)appLibrary;
 - (id)asFSRoot;
-- (BOOL)isDirectory;
-- (BOOL)isFSRoot;
+- (bool)isDirectory;
+- (bool)isFSRoot;
 - (id)parentItemOnFS;
 
 @end

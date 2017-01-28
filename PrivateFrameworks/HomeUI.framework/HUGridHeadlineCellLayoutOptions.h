@@ -3,48 +3,48 @@
  */
 
 @interface HUGridHeadlineCellLayoutOptions : HUGridCellLayoutOptions {
-    float  _containerLeadingMargin;
-    float  _containerTrailingMargin;
-    BOOL  _editing;
-    float  _editingBackgroundHeight;
-    float  _minimumFontSize;
-    float  _topOfScreenToHeadlineBaselinePercentage;
+    double  _containerLeadingMargin;
+    double  _containerTrailingMargin;
+    bool  _editing;
+    double  _editingBackgroundHeight;
+    double  _minimumFontSize;
+    double  _topOfScreenToHeadlineBaselinePercentage;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _viewSize;
-    int  _viewSizeSubclass;
+    long long  _viewSizeSubclass;
 }
 
-@property (nonatomic, readonly) float containerLeadingMargin;
-@property (nonatomic, readonly) float containerTrailingMargin;
-@property (getter=isEditing, nonatomic) BOOL editing;
-@property (nonatomic) float editingBackgroundHeight;
-@property (nonatomic, readonly) float editingBackgroundMinimumWidth;
-@property (nonatomic) float minimumFontSize;
-@property (nonatomic, readonly) float topOfScreenToHeadlineBaselineDistance;
-@property (nonatomic) float topOfScreenToHeadlineBaselinePercentage;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } viewSize;
-@property (nonatomic, readonly) int viewSizeSubclass;
+@property (nonatomic, readonly) double containerLeadingMargin;
+@property (nonatomic, readonly) double containerTrailingMargin;
+@property (getter=isEditing, nonatomic) bool editing;
+@property (nonatomic) double editingBackgroundHeight;
+@property (nonatomic, readonly) double editingBackgroundMinimumWidth;
+@property (nonatomic) double minimumFontSize;
+@property (nonatomic, readonly) double topOfScreenToHeadlineBaselineDistance;
+@property (nonatomic) double topOfScreenToHeadlineBaselinePercentage;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } viewSize;
+@property (nonatomic, readonly) long long viewSizeSubclass;
 
-+ (id)defaultOptionsForCellSizeSubclass:(int)arg1;
-+ (id)defaultOptionsForCellSizeSubclass:(int)arg1 viewSizeSubclass:(int)arg2 viewSize:(struct CGSize { float x1; float x2; })arg3 containerLeadingMargin:(float)arg4 containerTrailingMargin:(float)arg5;
++ (id)defaultOptionsForCellSizeSubclass:(long long)arg1;
++ (id)defaultOptionsForCellSizeSubclass:(long long)arg1 viewSizeSubclass:(long long)arg2 viewSize:(struct CGSize { double x1; double x2; })arg3 containerLeadingMargin:(double)arg4 containerTrailingMargin:(double)arg5;
 
-- (float)cellInnerMargin;
-- (float)containerLeadingMargin;
-- (float)containerTrailingMargin;
+- (double)cellInnerMargin;
+- (double)containerLeadingMargin;
+- (double)containerTrailingMargin;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)editingBackgroundHeight;
-- (float)editingBackgroundMinimumWidth;
-- (BOOL)isEditing;
-- (float)minimumFontSize;
-- (void)setEditing:(BOOL)arg1;
-- (void)setEditingBackgroundHeight:(float)arg1;
-- (void)setMinimumFontSize:(float)arg1;
-- (void)setTopOfScreenToHeadlineBaselinePercentage:(float)arg1;
-- (float)topOfScreenToHeadlineBaselineDistance;
-- (float)topOfScreenToHeadlineBaselinePercentage;
-- (struct CGSize { float x1; float x2; })viewSize;
-- (int)viewSizeSubclass;
+- (double)editingBackgroundHeight;
+- (double)editingBackgroundMinimumWidth;
+- (bool)isEditing;
+- (double)minimumFontSize;
+- (void)setEditing:(bool)arg1;
+- (void)setEditingBackgroundHeight:(double)arg1;
+- (void)setMinimumFontSize:(double)arg1;
+- (void)setTopOfScreenToHeadlineBaselinePercentage:(double)arg1;
+- (double)topOfScreenToHeadlineBaselineDistance;
+- (double)topOfScreenToHeadlineBaselinePercentage;
+- (struct CGSize { double x1; double x2; })viewSize;
+- (long long)viewSizeSubclass;
 
 @end

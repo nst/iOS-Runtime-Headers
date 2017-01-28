@@ -11,10 +11,10 @@
 
 @property (nonatomic, retain) NSString *baseToken;
 @property (nonatomic, retain) NSData *encryptedKey;
-@property (nonatomic, readonly) BOOL hasBaseToken;
-@property (nonatomic, readonly) BOOL hasEncryptedKey;
-@property (nonatomic, readonly) BOOL hasParticipantId;
-@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, readonly) bool hasBaseToken;
+@property (nonatomic, readonly) bool hasEncryptedKey;
+@property (nonatomic, readonly) bool hasParticipantId;
+@property (nonatomic, readonly) bool hasShareId;
 @property (nonatomic, retain) NSString *participantId;
 @property (nonatomic, retain) CKDPShareIdentifier *shareId;
 
@@ -27,15 +27,15 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)encryptedKey;
-- (BOOL)hasBaseToken;
-- (BOOL)hasEncryptedKey;
-- (BOOL)hasParticipantId;
-- (BOOL)hasShareId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBaseToken;
+- (bool)hasEncryptedKey;
+- (bool)hasParticipantId;
+- (bool)hasShareId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)participantId;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setBaseToken:(id)arg1;

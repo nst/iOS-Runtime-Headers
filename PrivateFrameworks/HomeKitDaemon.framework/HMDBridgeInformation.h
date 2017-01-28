@@ -13,7 +13,7 @@
     HMFTimer * _discoveryAccessoryTimer;
     NSMutableSet * _identifiersForDiscoveredBridgeableAccessories;
     NSUUID * _messageIdentifier;
-    BOOL  _startDiscovery;
+    bool  _startDiscovery;
 }
 
 @property (nonatomic, retain) NSMapTable *addAssociatingAccessoryCompletionBlock;
@@ -26,7 +26,7 @@
 @property (nonatomic, retain) HMFTimer *discoveryAccessoryTimer;
 @property (nonatomic, retain) NSMutableSet *identifiersForDiscoveredBridgeableAccessories;
 @property (nonatomic, retain) NSUUID *messageIdentifier;
-@property (nonatomic) BOOL startDiscovery;
+@property (nonatomic) bool startDiscovery;
 
 - (void).cxx_destruct;
 - (id)addAssociatingAccessoryCompletionBlock;
@@ -50,7 +50,7 @@
 - (void)setDiscoveryAccessoryTimer:(id)arg1;
 - (void)setIdentifiersForDiscoveredBridgeableAccessories:(id)arg1;
 - (void)setMessageIdentifier:(id)arg1;
-- (void)setStartDiscovery:(BOOL)arg1;
-- (BOOL)startDiscovery;
+- (void)setStartDiscovery:(bool)arg1;
+- (bool)startDiscovery;
 
 @end

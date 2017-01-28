@@ -9,21 +9,21 @@
     int  _searchLocation;
 }
 
-@property (nonatomic) BOOL hasSearchLocation;
+@property (nonatomic) bool hasSearchLocation;
 @property (nonatomic) int searchLocation;
 
 - (int)StringAsSearchLocation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSearchLocation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSearchLocation;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)searchLocation;
 - (id)searchLocationAsString:(int)arg1;
-- (void)setHasSearchLocation:(BOOL)arg1;
+- (void)setHasSearchLocation:(bool)arg1;
 - (void)setSearchLocation:(int)arg1;
 - (void)writeTo:(id)arg1;
 

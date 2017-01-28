@@ -6,10 +6,10 @@
 @required
 
 - (NSString *)defaultSectionID;
-- (NSString *)freeFeedIDForSection:(NSString *)arg1 bin:(int)arg2;
-- (BOOL)isWhitelisted;
-- (NSString *)paidFeedIDForSection:(NSString *)arg1 bin:(int)arg2;
+- (NSString *)freeFeedIDForSection:(NSString *)arg1 bin:(long long)arg2;
+- (bool)isWhitelisted;
+- (NSString *)paidFeedIDForSection:(NSString *)arg1 bin:(long long)arg2;
 - (NSArray *)sectionIDs;
-- (BOOL)supportsNotifications;
+- (bool)supportsNotifications;
 
 @end

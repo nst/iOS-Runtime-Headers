@@ -6,7 +6,7 @@
 @required
 
 - (void)cancelQuery:(id)arg1;
-- (NSArray *)findNextMatchingIdentifiersForQuery:(id)arg1 isDone:(BOOL*)arg2;
+- (NSArray *)findNextMatchingIdentifiersForQuery:(id)arg1 isDone:(bool*)arg2;
 - (id)newQueryWithSearchTerms:(NSString *)arg1;
 
 @end

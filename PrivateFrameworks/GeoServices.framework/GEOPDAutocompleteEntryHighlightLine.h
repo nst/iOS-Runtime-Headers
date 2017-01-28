@@ -8,7 +8,7 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasLine;
+@property (nonatomic, readonly) bool hasLine;
 @property (nonatomic, retain) NSString *line;
 @property (nonatomic, retain) NSMutableArray *spans;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -22,17 +22,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLine;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLine;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)line;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLine:(id)arg1;
 - (void)setSpans:(id)arg1;
-- (id)spanAtIndex:(unsigned int)arg1;
+- (id)spanAtIndex:(unsigned long long)arg1;
 - (id)spans;
-- (unsigned int)spansCount;
+- (unsigned long long)spansCount;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

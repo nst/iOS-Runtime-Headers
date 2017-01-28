@@ -5,10 +5,10 @@
 @interface PGPictureInPictureControlsViewController : UIViewController {
     UIButton * _actionButton;
     UIButton * _cancelButton;
-    int  _controlsSize;
-    int  _controlsStyle;
-    int  _controlsVisibilityCounter;
-    BOOL  _controlsVisibilityNeedsUpdate;
+    long long  _controlsSize;
+    long long  _controlsStyle;
+    long long  _controlsVisibilityCounter;
+    bool  _controlsVisibilityNeedsUpdate;
     PGTimer * _controlsVisibilityTimer;
     <PGPictureInPictureControlsViewControllerDelegate> * _delegate;
     struct { 
@@ -21,21 +21,21 @@
     NSArray * _loadedTimeRanges;
     PGPlaybackProgress * _playbackProgress;
     PGPlaybackProgressIndicator * _playbackProgressIndicator;
-    BOOL  _preventControlsVisibilityChangeAnimation;
-    BOOL  _shouldHideControlsTemporarely;
-    BOOL  _shouldShowControlsAfterUserInteraction;
-    BOOL  _shouldShowControlsForUserInteraction;
-    BOOL  _shouldShowControlsIfNeeded;
-    BOOL  _showsAlternateActionButtonImage;
-    BOOL  _showsControls;
+    bool  _preventControlsVisibilityChangeAnimation;
+    bool  _shouldHideControlsTemporarely;
+    bool  _shouldShowControlsAfterUserInteraction;
+    bool  _shouldShowControlsForUserInteraction;
+    bool  _shouldShowControlsIfNeeded;
+    bool  _showsAlternateActionButtonImage;
+    bool  _showsControls;
     UIButton * _stopButton;
 }
 
-@property (nonatomic, readonly) int controlsStyle;
+@property (nonatomic, readonly) long long controlsStyle;
 @property (nonatomic) <PGPictureInPictureControlsViewControllerDelegate> *delegate;
 @property (nonatomic, retain) NSArray *loadedTimeRanges;
 @property (nonatomic, retain) PGPlaybackProgress *playbackProgress;
-@property (nonatomic) BOOL showsAlternateActionButtonImage;
+@property (nonatomic) bool showsAlternateActionButtonImage;
 
 - (void).cxx_destruct;
 - (id)_actionButtonBackgroundImage;
@@ -67,23 +67,23 @@
 - (void)_updateControlsVisibilityIfNeeded;
 - (void)_userInteractionObservationControlTouchDown:(id)arg1;
 - (void)_userInteractionObservationControlTouchUp:(id)arg1;
-- (int)controlsStyle;
+- (long long)controlsStyle;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithControlsStyle:(int)arg1;
+- (id)initWithControlsStyle:(long long)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)loadedTimeRanges;
 - (id)playbackProgress;
 - (void)setDelegate:(id)arg1;
-- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHidden:(bool)arg1 animated:(bool)arg2;
 - (void)setLoadedTimeRanges:(id)arg1;
 - (void)setPlaybackProgress:(id)arg1;
-- (void)setShowsAlternateActionButtonImage:(BOOL)arg1;
-- (BOOL)showsAlternateActionButtonImage;
-- (void)startShowingControlsAnimated:(BOOL)arg1;
-- (void)stopShowingControlsAnimated:(BOOL)arg1;
+- (void)setShowsAlternateActionButtonImage:(bool)arg1;
+- (bool)showsAlternateActionButtonImage;
+- (void)startShowingControlsAnimated:(bool)arg1;
+- (void)stopShowingControlsAnimated:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

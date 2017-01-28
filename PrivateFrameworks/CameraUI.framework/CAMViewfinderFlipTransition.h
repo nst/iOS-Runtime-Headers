@@ -23,8 +23,8 @@
 - (void)_setTargetSnapshotView:(id)arg1;
 - (id)_targetSnapshotView;
 - (id)_viewfinderView;
-- (void)completeTransitionToLivePreviewWithCompletionHandler:(id /* block */)arg1;
+- (void)completeTransitionToLivePreviewWithCompletionHandler:(id)arg1;
 - (id)initWithViewfinderView:(id)arg1;
-- (void)performFlipTransitionWithCompletionHandler:(id /* block */)arg1;
+- (void)performFlipTransitionWithCompletionHandler:(id)arg1;
 
 @end

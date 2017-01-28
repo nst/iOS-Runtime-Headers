@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setCornerRadius:(float)arg1;
+- (void)setCornerRadius:(double)arg1;
 
 @end

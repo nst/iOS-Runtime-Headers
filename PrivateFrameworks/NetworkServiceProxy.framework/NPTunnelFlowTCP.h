@@ -5,8 +5,8 @@
 @interface NPTunnelFlowTCP : NPTunnelFlow <NWTCPConnectionAuthenticationDelegate> {
     NWTCPConnection * _directConnection;
     NSDate * _directConnectionConnected;
-    BOOL  _enableDirectTLS;
-    BOOL  _isDirectConnectionCancelled;
+    bool  _enableDirectTLS;
+    bool  _isDirectConnectionCancelled;
     NSObject<OS_dispatch_data> * _savedDirectData;
 }
 
@@ -14,35 +14,35 @@
 @property (readonly, copy) NSString *description;
 @property (retain) NWTCPConnection *directConnection;
 @property (retain) NSDate *directConnectionConnected;
-@property (readonly) BOOL enableDirectTLS;
-@property (readonly) unsigned int hash;
-@property BOOL isDirectConnectionCancelled;
+@property (readonly) bool enableDirectTLS;
+@property (readonly) unsigned long long hash;
+@property bool isDirectConnectionCancelled;
 @property (retain) NSObject<OS_dispatch_data> *savedDirectData;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)cancelConnection;
-- (unsigned int)currentMaxSendDataSize;
+- (unsigned long long)currentMaxSendDataSize;
 - (id)directConnection;
 - (id)directConnectionConnected;
-- (BOOL)enableDirectTLS;
-- (void)evaluateTrustForConnection:(id)arg1 peerCertificateChain:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)getLatestConnectionInfoWithCompletionHandler:(id /* block */)arg1;
+- (bool)enableDirectTLS;
+- (void)evaluateTrustForConnection:(id)arg1 peerCertificateChain:(id)arg2 completionHandler:(id)arg3;
+- (void)getLatestConnectionInfoWithCompletionHandler:(id)arg1;
 - (void)handleAppData:(id)arg1 andError:(id)arg2;
 - (void)handleIncomingData:(id)arg1 andError:(id)arg2;
-- (BOOL)isConnectionAlive;
-- (BOOL)isDirectConnectionCancelled;
+- (bool)isConnectionAlive;
+- (bool)isDirectConnectionCancelled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)readDataFromClient;
 - (id)savedDirectData;
 - (void)sendDataOnDirectConnection:(id)arg1;
-- (void)sendDataToClient:(id)arg1 fromTunnel:(BOOL)arg2;
+- (void)sendDataToClient:(id)arg1 fromTunnel:(bool)arg2;
 - (void)setDirectConnection:(id)arg1;
 - (void)setDirectConnectionConnected:(id)arg1;
-- (void)setIsDirectConnectionCancelled:(BOOL)arg1;
+- (void)setIsDirectConnectionCancelled:(bool)arg1;
 - (void)setRemoteEndpoint:(id)arg1;
 - (void)setSavedDirectData:(id)arg1;
-- (BOOL)shouldEvaluateTrustForConnection:(id)arg1;
+- (bool)shouldEvaluateTrustForConnection:(id)arg1;
 - (void)startDirectConnection;
 - (void)startHandlingIncomingData;
 - (void)stopDirectConnection;

@@ -11,9 +11,9 @@
     NSString * _uniqueKey;
 }
 
-@property (nonatomic, readonly) BOOL hasTestName;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic, readonly) BOOL hasUniqueKey;
+@property (nonatomic, readonly) bool hasTestName;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic, readonly) bool hasUniqueKey;
 @property (nonatomic, retain) NSString *testName;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSString *uniqueKey;
@@ -23,14 +23,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTestName;
-- (BOOL)hasTimestamp;
-- (BOOL)hasUniqueKey;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTestName;
+- (bool)hasTimestamp;
+- (bool)hasUniqueKey;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTestName:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setUniqueKey:(id)arg1;

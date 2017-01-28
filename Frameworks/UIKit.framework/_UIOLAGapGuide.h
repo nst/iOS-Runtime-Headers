@@ -4,15 +4,15 @@
 
 @interface _UIOLAGapGuide : _UILayoutSpacer {
     id  _followingItem;
-    unsigned int  _followingItemIndex;
+    unsigned long long  _followingItemIndex;
 }
 
 @property (nonatomic) id followingItem;
-@property (nonatomic) unsigned int followingItemIndex;
+@property (nonatomic) unsigned long long followingItemIndex;
 
 - (id)followingItem;
-- (unsigned int)followingItemIndex;
+- (unsigned long long)followingItemIndex;
 - (void)setFollowingItem:(id)arg1;
-- (void)setFollowingItemIndex:(unsigned int)arg1;
+- (void)setFollowingItemIndex:(unsigned long long)arg1;
 
 @end

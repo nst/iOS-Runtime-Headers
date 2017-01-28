@@ -4,48 +4,41 @@
 
 @interface FBSProcessResourceProvision : FBSProcessExecutionProvision {
     struct { 
-        int type; 
-        unsigned long long unitValue; 
-        unsigned long long unitCount; 
-        unsigned long long residualValue; 
+        long long type; 
+        unsigned long long value; 
+        unsigned long long reserved; 
     }  _allowance;
-    struct { 
-        int type; 
-        unsigned long long unitValue; 
-        unsigned long long unitCount; 
-        unsigned long long residualValue; 
-    }  _allowanceConsumed;
     unsigned long long  _baselineValue;
-    unsigned long long  _milestoneValue;
+    unsigned long long  _consumedValue;
     NSObject<OS_dispatch_queue> * _queue;
     BSMachPortSendRight * _taskRight;
     BSTimer * _timer;
 }
 
-@property (nonatomic) struct { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; } allowance;
-@property (nonatomic) int type;
+@property (nonatomic) struct { long long x1; unsigned long long x2; unsigned long long x3; } allowance;
+@property (nonatomic) long long type;
 
-+ (id)provisionWithAllowance:(struct { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1;
-+ (id)provisionWithResourceType:(int)arg1 timeInterval:(double)arg2;
++ (id)provisionWithAllowance:(struct { long long x1; unsigned long long x2; unsigned long long x3; })arg1;
++ (id)provisionWithResourceType:(long long)arg1 timeInterval:(double)arg2;
 
 - (void)_beginMonitoring;
 - (double)_getElapsedCPUTimeForTaskPort:(unsigned int)arg1;
 - (void)_prepareForReuse;
-- (unsigned long long)_queue_calculateValueConsumed;
+- (bool)_queue_calculateValueConsumed:(out unsigned long long*)arg1;
 - (void)_queue_evaluateConsumption;
 - (void)_queue_noteAllowanceExhausted;
 - (void)_queue_stopMonitoring;
-- (BOOL)_queue_updateConsumption;
+- (bool)_queue_updateConsumption;
 - (void)_stopMonitoring;
 - (void)_updateProgress;
-- (struct { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })allowance;
-- (BOOL)allowanceRemaining:(out struct { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; }*)arg1;
+- (struct { long long x1; unsigned long long x2; unsigned long long x3; })allowance;
+- (bool)allowanceRemaining:(out struct { long long x1; unsigned long long x2; unsigned long long x3; }*)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)initWithAllowance:(struct { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1;
-- (BOOL)isResourceProvision;
-- (void)setAllowance:(struct { int x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; })arg1;
+- (id)initWithAllowance:(struct { long long x1; unsigned long long x2; unsigned long long x3; })arg1;
+- (bool)isResourceProvision;
+- (void)setAllowance:(struct { long long x1; unsigned long long x2; unsigned long long x3; })arg1;
 - (id)succinctDescriptionBuilder;
-- (int)type;
+- (long long)type;
 
 @end

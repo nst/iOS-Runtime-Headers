@@ -5,14 +5,14 @@
 
 @required
 
-- (void)changeVisibility:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)forceMigrationOnNextRebootWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)isMigrationNeeded:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)migrateCheckingNecessity:(void *)arg1 lastRelevantPlugin:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: BOOL, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
-- (void)orderedPluginIdentifiersWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
-- (void)previousBuildVersion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, void*
+- (void)changeVisibility:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, void*
+- (void)forceMigrationOnNextRebootWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (void)isMigrationNeeded:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, void*
+- (void)migrateCheckingNecessity:(void *)arg1 lastRelevantPlugin:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: bool, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, void*
+- (void)orderedPluginIdentifiersWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, void*
+- (void)previousBuildVersion:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSString *, void*
 - (void)reportMigrationFailure;
-- (void)testMigrationUIWithProgress:(void *)arg1 forceInvert:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 7: BOOL, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)userDataDisposition:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned int, void*
+- (void)testMigrationUIWithProgress:(void *)arg1 forceInvert:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 7: bool, bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (void)userDataDisposition:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, unsigned int, void*
 
 @end

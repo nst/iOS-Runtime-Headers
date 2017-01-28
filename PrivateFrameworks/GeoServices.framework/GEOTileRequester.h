@@ -16,7 +16,7 @@
     NSLocale * _locale;
     GEOResourceManifestConfiguration * _manifestConfiguration;
     GEOTileKeyMap * _priorities;
-    BOOL  _requireWiFi;
+    bool  _requireWiFi;
     NSThread * _thread;
 }
 
@@ -31,12 +31,12 @@
 @property (nonatomic, retain) NSString *deviceRegion;
 @property (nonatomic, readonly) GEOTileKeyList *keyList;
 @property (nonatomic, readonly) GEOTileKeyMap *priorities;
-@property (nonatomic) BOOL requireWiFi;
+@property (nonatomic) bool requireWiFi;
 @property (nonatomic, retain) NSThread *thread;
 
-+ (unsigned int)expiringTilesetsCount;
++ (unsigned long long)expiringTilesetsCount;
 + (struct { unsigned int x1; double x2; }*)newExpiringTilesets;
-+ (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
++ (bool)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (unsigned char)tileProviderIdentifier;
 
 - (id)auditToken;
@@ -55,7 +55,7 @@
 - (id)keyList;
 - (id)priorities;
 - (void)reprioritizeKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 newPriority:(unsigned int)arg2;
-- (BOOL)requireWiFi;
+- (bool)requireWiFi;
 - (void)setAuditToken:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleVersion:(id)arg1;
@@ -63,7 +63,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceCountry:(id)arg1;
 - (void)setDeviceRegion:(id)arg1;
-- (void)setRequireWiFi:(BOOL)arg1;
+- (void)setRequireWiFi:(bool)arg1;
 - (void)setThread:(id)arg1;
 - (void)start;
 - (id)thread;

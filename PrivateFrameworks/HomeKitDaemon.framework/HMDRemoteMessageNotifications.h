@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSMapTable *sessionNotificationPayloads;
 
 + (void)initialize;
-+ (BOOL)messageExpectsNotificationResponse:(id)arg1;
++ (bool)messageExpectsNotificationResponse:(id)arg1;
 + (id)messagesWithNotificationResponses;
 
 - (void).cxx_destruct;

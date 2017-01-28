@@ -5,6 +5,6 @@
 @interface CDPRecoveryController : CDPController
 
 - (id)_sanitizedRecoveryErrorWithError:(id)arg1;
-- (void)recoverIDMSRecoveryDictionary:(id /* block */)arg1;
+- (void)recoverIDMSRecoveryDictionary:(id)arg1;
 
 @end

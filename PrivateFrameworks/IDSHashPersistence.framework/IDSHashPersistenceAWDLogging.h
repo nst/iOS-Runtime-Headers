@@ -15,6 +15,6 @@
 - (void)dealloc;
 - (void)duplicateMessageEncounted;
 - (id)init;
-- (BOOL)shouldSubmit;
+- (bool)shouldSubmit;
 
 @end

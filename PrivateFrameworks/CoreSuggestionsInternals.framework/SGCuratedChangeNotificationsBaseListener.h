@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)addObserver:(id /* block */)arg1 forObjectLifetime:(id)arg2;
+- (void)addObserver:(id)arg1 forObjectLifetime:(id)arg2;
 - (void)dealloc;
 - (void)fire;
 - (id)init;

@@ -4,8 +4,8 @@
 
 @interface MusicStoreBrowseContentItemBuilder : MPStoreModelObjectBuilder {
     MPStoreModelAlbumBuilder * _albumBuilder;
-    BOOL  _allowsRadioStations;
-    BOOL  _allowsVideoContent;
+    bool  _allowsRadioStations;
+    bool  _allowsVideoContent;
     MPStoreModelArtistBuilder * _artistBuilder;
     MPStoreModelCuratorBuilder * _curatorBuilder;
     MPStoreModelPlaylistBuilder * _playlistBuilder;
@@ -25,20 +25,20 @@
     MPStoreModelSongBuilder * _songBuilder;
 }
 
-@property (nonatomic) BOOL allowsRadioStations;
-@property (nonatomic) BOOL allowsVideoContent;
+@property (nonatomic) bool allowsRadioStations;
+@property (nonatomic) bool allowsVideoContent;
 
 + (id)allSupportedProperties;
 
 - (void).cxx_destruct;
-- (BOOL)allowsRadioStations;
-- (BOOL)allowsVideoContent;
-- (int)contentItemTypeForRawResponseKindIdentifierValue:(int)arg1;
-- (int)contentItemTypeForRawResponseKindIdentifiers:(id)arg1;
-- (int)contentItemTypeForStoreItemMetadata:(id)arg1;
+- (bool)allowsRadioStations;
+- (bool)allowsVideoContent;
+- (long long)contentItemTypeForRawResponseKindIdentifierValue:(long long)arg1;
+- (long long)contentItemTypeForRawResponseKindIdentifiers:(id)arg1;
+- (long long)contentItemTypeForStoreItemMetadata:(id)arg1;
 - (id)initWithRequestedPropertySet:(id)arg1;
 - (id)modelObjectWithStoreItemMetadata:(id)arg1;
-- (void)setAllowsRadioStations:(BOOL)arg1;
-- (void)setAllowsVideoContent:(BOOL)arg1;
+- (void)setAllowsRadioStations:(bool)arg1;
+- (void)setAllowsVideoContent:(bool)arg1;
 
 @end

@@ -8,7 +8,7 @@
     NSArray * _mainRunLoopModes;
     NSObject<OS_dispatch_queue> * _queue;
     struct __CFRunLoopSource { } * _runLoopSource;
-    BOOL  _runLoopSourceHandlingBlock;
+    bool  _runLoopSourceHandlingBlock;
     NSObject<OS_dispatch_queue> * _targetQueue;
 }
 
@@ -16,19 +16,19 @@
 + (id)queueWithMainRunLoopModes:(id)arg1;
 
 - (void)_deregisterEnqueueSemaphore:(id)arg1;
-- (BOOL)_hasNext;
+- (bool)_hasNext;
 - (id)_initWithDispatchQueue:(id)arg1 mainRunLoopModes:(id)arg2;
-- (BOOL)_performNext;
+- (bool)_performNext;
 - (void)_performNextFromRunLoopSource;
-- (void)_queue_performAsync:(id /* block */)arg1;
+- (void)_queue_performAsync:(id)arg1;
 - (void)_registerEnqueueSemaphore:(id)arg1;
 - (void)assertOnQueue;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (void)performAfter:(double)arg1 withBlock:(id /* block */)arg2;
-- (void)performAsync:(id /* block */)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)performAfter:(double)arg1 withBlock:(id)arg2;
+- (void)performAsync:(id)arg1;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface _UIAutologgingDeallocSentinel : NSObject {
-    BOOL  _called;
+    bool  _called;
     NSString * _message;
 }
 
-@property (nonatomic) BOOL called;
+@property (nonatomic) bool called;
 @property (nonatomic, copy) NSString *message;
 
 - (void).cxx_destruct;
-- (BOOL)called;
+- (bool)called;
 - (void)dealloc;
 - (id)message;
-- (void)setCalled:(BOOL)arg1;
+- (void)setCalled:(bool)arg1;
 - (void)setMessage:(id)arg1;
 
 @end

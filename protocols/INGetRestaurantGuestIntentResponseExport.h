@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (INRestaurantGuest *)guest;
 - (INRestaurantGuestDisplayPreferences *)guestDisplayPreferences;
 - (id)init;

@@ -6,20 +6,20 @@
 @required
 
 - (NCViewServiceDescriptor *)accessoryViewService;
-- (float)bottomOverhangHeight;
+- (double)bottomOverhangHeight;
 - (<NCInteractiveNotificationHostDelegate> *)delegate;
-- (void)didChangeRevealPercent:(float)arg1;
-- (void)getActionContextWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
-- (void)handleActionAtIndex:(int)arg1;
+- (void)didChangeRevealPercent:(double)arg1;
+- (void)getActionContextWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSDictionary *, void*
+- (void)handleActionAtIndex:(long long)arg1;
 - (void)handleActionIdentifier:(NSString *)arg1;
 - (NCViewServiceDescriptor *)inlayViewService;
 - (void)interactiveNotificationDidAppear;
-- (BOOL)isModal;
-- (float)maximumHeight;
+- (bool)isModal;
+- (double)maximumHeight;
 - (void)setDelegate:(id <NCInteractiveNotificationHostDelegate>)arg1;
-- (void)setMaximumHeight:(float)arg1;
-- (void)setModal:(BOOL)arg1;
-- (BOOL)showsKeyboard;
+- (void)setMaximumHeight:(double)arg1;
+- (void)setModal:(bool)arg1;
+- (bool)showsKeyboard;
 - (void)willPresentFromActionIdentifier:(NSString *)arg1;
 
 @optional

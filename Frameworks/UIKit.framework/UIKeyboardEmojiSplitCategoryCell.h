@@ -13,11 +13,11 @@
 @property (nonatomic, retain) UILabel *title;
 
 - (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)selectedCircle;
-- (void)setPressIndicatorHidden:(BOOL)arg1;
+- (void)setPressIndicatorHidden:(bool)arg1;
 - (void)setSelectedCircle:(id)arg1;
-- (void)setSelectedCircleBlendMode:(BOOL)arg1;
+- (void)setSelectedCircleBlendMode:(bool)arg1;
 - (void)setSymbol:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleText:(id)arg1;

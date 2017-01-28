@@ -3,16 +3,16 @@
  */
 
 @interface BLTBulletinDistributorSubscriptionInfo : NSObject {
-    BOOL  _ack;
-    BOOL  _fullBulletins;
+    bool  _ack;
+    bool  _fullBulletins;
 }
 
-@property (nonatomic) BOOL ack;
-@property (nonatomic) BOOL fullBulletins;
+@property (nonatomic) bool ack;
+@property (nonatomic) bool fullBulletins;
 
-- (BOOL)ack;
-- (BOOL)fullBulletins;
-- (void)setAck:(BOOL)arg1;
-- (void)setFullBulletins:(BOOL)arg1;
+- (bool)ack;
+- (bool)fullBulletins;
+- (void)setAck:(bool)arg1;
+- (void)setFullBulletins:(bool)arg1;
 
 @end

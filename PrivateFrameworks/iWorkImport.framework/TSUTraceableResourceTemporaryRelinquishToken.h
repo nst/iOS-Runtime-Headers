@@ -3,7 +3,7 @@
  */
 
 @interface TSUTraceableResourceTemporaryRelinquishToken : NSObject {
-    BOOL  _didCallCompletionHandler;
+    bool  _didCallCompletionHandler;
 }
 
 - (void)dealloc;

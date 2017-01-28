@@ -3,8 +3,8 @@
  */
 
 @interface SCNRenderContextMetal : SCNRenderContextImp <SCNBufferStream> {
-    struct __C3DFXMetalProgram { struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 1; unsigned int x_1_1_4 : 1; struct __C3DFXProgramDelegate {} *x_1_1_5; } x1; struct __CFString {} *x2[2]; struct __CFString {} *x3; struct __CFDictionary {} *x4; void *x5; struct __CFDictionary {} *x6; void *x7; struct __CFString {} *x8; } * _background2DProgram;
-    struct __C3DFXMetalProgram { struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_3_1; unsigned char x_1_3_2[4]; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; int x_1_2_6; int x_1_2_7; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 1; unsigned int x_1_1_4 : 1; struct __C3DFXProgramDelegate {} *x_1_1_5; } x1; struct __CFString {} *x2[2]; struct __CFString {} *x3; struct __CFDictionary {} *x4; void *x5; struct __CFDictionary {} *x6; void *x7; struct __CFString {} *x8; } * _backgroundCubeProgram;
+    struct __C3DFXMetalProgram { struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_3_1; unsigned char x_1_3_2[4]; unsigned int x_1_3_3; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; long long x_1_2_6; long long x_1_2_7; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 1; unsigned int x_1_1_4 : 1; struct __C3DFXProgramDelegate {} *x_1_1_5; } x1; struct __CFString {} *x2[2]; struct __CFString {} *x3; struct __CFDictionary {} *x4; void *x5; struct __CFDictionary {} *x6; void *x7; struct __CFString {} *x8; } * _background2DProgram;
+    struct __C3DFXMetalProgram { struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_3_1; unsigned char x_1_3_2[4]; unsigned int x_1_3_3; } x_1_2_1; void *x_1_2_2; struct __CFString {} *x_1_2_3; struct __CFString {} *x_1_2_4; struct __CFDictionary {} *x_1_2_5; long long x_1_2_6; long long x_1_2_7; } x_1_1_1; int x_1_1_2; unsigned int x_1_1_3 : 1; unsigned int x_1_1_4 : 1; struct __C3DFXProgramDelegate {} *x_1_1_5; } x1; struct __CFString {} *x2[2]; struct __CFString {} *x3; struct __CFDictionary {} *x4; void *x5; struct __CFDictionary {} *x6; void *x7; struct __CFString {} *x8; } * _backgroundCubeProgram;
     struct __C3DRasterizerStates { } * _backgroundRasterizerStates;
     NSMutableArray * _bufferPool;
     struct { 
@@ -26,18 +26,18 @@
     MTLRenderPassDescriptor * _clientRenderPassDescriptor;
     <MTLCommandQueue> * _commandQueue;
     struct { 
-        unsigned int pixelFormat; 
-        unsigned int depthFormat; 
-        unsigned int stencilFormat; 
-        unsigned int sampleCount; 
+        unsigned long long pixelFormat; 
+        unsigned long long depthFormat; 
+        unsigned long long stencilFormat; 
+        unsigned long long sampleCount; 
         <MTLRenderPipelineState> *replaceRPS; 
         <MTLRenderPipelineState> *overRPS; 
     }  _compositeRendering;
     <MTLCommandBuffer> * _currentCommandBuffer;
     <MTLCommandBuffer> * _currentComputeCommandBuffer;
     <MTLComputeCommandEncoder> * _currentComputeEncoder;
-    struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; } * _currentPass;
-    BOOL  _currentPassIsMirrored;
+    struct __C3DFXPass { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; } * _currentPass;
+    bool  _currentPassIsMirrored;
     <MTLRenderCommandEncoder> * _currentRenderEncoder;
     MTLRenderPassDescriptor * _currentRenderPassDescriptor;
     SCNMetalShaderManager * _currentShaderManager;
@@ -46,8 +46,8 @@
         BOOL fragmentIndex; 
     }  _currentStreamBufferIndices;
     struct { 
-        unsigned int pixelFormat; 
-        unsigned int sampleCount; 
+        unsigned long long pixelFormat; 
+        unsigned long long sampleCount; 
         <MTLRenderPipelineState> *displayCubemapPS; 
         <MTLRenderPipelineState> *displayTexture2DPS; 
     }  _debug;
@@ -57,15 +57,15 @@
         struct __C3DFXPass {} *debugLightMeshPass[7]; 
         struct __C3DFXPass {} *lightPasses[7]; 
         struct __C3DMesh {} *lightMeshes[7]; 
-        BOOL resourcesAreReady; 
+        bool resourcesAreReady; 
     }  _deferredRendering;
     <MTLDevice> * _device;
     <CAMetalDrawable> * _drawable;
     struct __C3DEngineContext { } * _engineContext;
-    unsigned long  _features;
+    unsigned int  _features;
     <MTLBuffer> * _frameConstantBuffer;
-    unsigned int  _frameConstantBufferIndex;
-    unsigned int  _frameConstantBufferOffset;
+    unsigned long long  _frameConstantBufferIndex;
+    unsigned long long  _frameConstantBufferOffset;
     NSMutableArray * _frameConstantBuffers;
     struct SCNSceneBuffer { 
         struct float4x4 { 
@@ -94,7 +94,7 @@
                         struct __hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> > { 
-                                unsigned long __first_; 
+                                unsigned long long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -105,7 +105,7 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::hash<unsigned long long>, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::equal_to<unsigned long long>, true> > { 
                     float __first_; 
@@ -114,12 +114,12 @@
         } frameLightingSetDatas; 
         unsigned long long currentLightingHashKey; 
         struct { 
-            int count; 
+            long long count; 
             struct __C3DLight {} *lights[8]; 
             struct __C3DLightRuntimeData {} *lightsData[8]; 
         } currentLightingDesc; 
     }  _lighting;
-    unsigned int  _maxFrameConstantBufferIndex;
+    unsigned long long  _maxFrameConstantBufferIndex;
     struct { 
         struct float4x4 { 
             /* Warning: Unrecognized filer type: ']' using 'void*' */ void*columns[4]; 
@@ -140,9 +140,9 @@
         struct __C3DLightingSystem {} *lightingSystem; 
         struct __C3DDynamicBatchingSystem {} *dynamicBatchingSystem; 
         struct __C3DFXPass {} *pass; 
-        BOOL passRequiresLighting; 
+        bool passRequiresLighting; 
     }  _processingContext;
-    long  _profile;
+    int  _profile;
     void _renderSize;
     struct { 
         <MTLTexture> *currentColors[4]; 
@@ -156,12 +156,12 @@
     SCNMetalResourceManager * _resourceManager;
     struct { 
         <MTLBuffer> *buffer; 
-        unsigned int offset; 
-        unsigned int size; 
+        unsigned long long offset; 
+        unsigned long long size; 
     }  _sceneUniforms;
     unsigned int  _seed;
     <MTLBuffer> * _shadowKernelBuffer;
-    BOOL  _showsAuthoringEnvironment;
+    bool  _showsAuthoringEnvironment;
     struct { 
         <MTLTexture> *backgroundTexture; 
         <MTLTexture> *overlayTexture; 
@@ -171,8 +171,8 @@
     <MTLTexture> * _textureTarget;
     NSMutableArray * _usedVolatileMeshElements;
     <MTLBuffer> * _vertexVolatileBuffer;
-    unsigned int  _vertexVolatileBufferIndex;
-    unsigned int  _vertexVolatileBufferOffset;
+    unsigned long long  _vertexVolatileBufferIndex;
+    unsigned long long  _vertexVolatileBufferOffset;
     NSMutableArray * _vertexVolatileBuffers;
     NSMutableArray * _volatileMeshes;
     unsigned int  _wantsWideGamut;
@@ -185,7 +185,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <MTLDevice> *device;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) SCNMetalResourceManager *resourceManager;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <MTLTexture> *textureTarget;
@@ -194,75 +194,75 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)__C3DFXContextDidApplyPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; }*)arg1;
-- (id)__reserveVolatileBufferForSize:(unsigned long)arg1 offset:(unsigned int*)arg2;
-- (char *)_allocateConstantBufferSize:(int)arg1 buffer:(id*)arg2 offset:(unsigned int*)arg3;
+- (void)__C3DFXContextDidApplyPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; }*)arg1;
+- (id)__reserveVolatileBufferForSize:(unsigned long long)arg1 offset:(unsigned long long*)arg2;
+- (char *)_allocateConstantBufferSize:(long long)arg1 buffer:(id*)arg2 offset:(unsigned long long*)arg3;
 - (void)_clearRenderCommanderEncoderCache;
 - (void)_clearUnusedBindingPoints;
-- (struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; }*)_createPassWithVertex:(id)arg1 fragment:(id)arg2;
-- (void)_drawFullScreenTexture:(id)arg1 over:(BOOL)arg2;
-- (void)_drawMeshElement:(id)arg1 instanceCount:(unsigned int)arg2;
+- (struct __C3DFXPass { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; }*)_createPassWithVertex:(id)arg1 fragment:(id)arg2;
+- (void)_drawFullScreenTexture:(id)arg1 over:(bool)arg2;
+- (void)_drawMeshElement:(id)arg1 instanceCount:(unsigned long long)arg2;
 - (void)_drawPBRTextures;
 - (void)_execute:(struct { struct __C3DFXProgram {} *x1; struct __C3DMaterial {} *x2; struct __C3DGeometry {} *x3; struct __C3DNode {} *x4; struct __C3DMesh {} *x5; struct __C3DMeshElement {} *x6; struct { unsigned char x_7_1_1[8]; } x7; struct __C3DFXPass {} *x8; unsigned int *x9; bool x10; bool x11; bool x12; bool x13; })arg1;
 - (id)_finalRenderTexture;
 - (void)_logLightingInformation;
-- (id)_newMTLBufferFromPoolWithLength:(unsigned int)arg1;
+- (id)_newMTLBufferFromPoolWithLength:(unsigned long long)arg1;
 - (void)_purgeUnusedContantBuffers;
 - (void)_recycleMTLBufferToPool:(id)arg1;
 - (void)_reduceStatsOfConstantBuffer:(id)arg1;
-- (id)_renderTargetWithDescription:(void *)arg1 size:(void *)arg2 name:(void *)arg3 useCount:(void *)arg4; // needs 4 arg types, found 3: struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; }, id, int
-- (void)_setBuffer:(id)arg1 offset:(unsigned int)arg2 atIndices:(struct { BOOL x1; BOOL x2; })arg3;
-- (void)_setConstantBufferBytes:(void*)arg1 size:(int)arg2 atIndices:(struct { BOOL x1; BOOL x2; })arg3;
+- (id)_renderTargetWithDescription:(void *)arg1 size:(void *)arg2 name:(void *)arg3 useCount:(void *)arg4; // needs 4 arg types, found 3: struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned char x9[4]; }, id, long long
+- (void)_setBuffer:(id)arg1 offset:(unsigned long long)arg2 atIndices:(struct { BOOL x1; BOOL x2; })arg3;
+- (void)_setConstantBufferBytes:(void*)arg1 size:(long long)arg2 atIndices:(struct { BOOL x1; BOOL x2; })arg3;
 - (void)_setCurrentRenderCommandEncoder:(id)arg1;
-- (void)_setFragmentBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
-- (void)_setFragmentTexture:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_setFragmentBuffer:(id)arg1 offset:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
+- (void)_setFragmentTexture:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)_setMeshBuffers:(id)arg1;
 - (void)_setSamplerState:(id)arg1 atIndices:(struct { BOOL x1; BOOL x2; })arg2;
 - (void)_setTexture:(id)arg1 atIndices:(struct { BOOL x1; BOOL x2; })arg2;
-- (void)_setVertexBuffer:(id)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
-- (void)_setVertexBuffers:(const id*)arg1 offsets:(const unsigned int*)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)_setVertexTexture:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)_setZeroConstantBufferOfSize:(unsigned int)arg1 atIndices:(struct { BOOL x1; BOOL x2; })arg2;
-- (BOOL)_setupDescriptor:(id)arg1 forPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; }*)arg2 cubemapFaceIndex:(unsigned int)arg3 isFinalTechnique:(BOOL)arg4;
+- (void)_setVertexBuffer:(id)arg1 offset:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
+- (void)_setVertexBuffers:(const id*)arg1 offsets:(const unsigned long long*)arg2 withRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (void)_setVertexTexture:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)_setZeroConstantBufferOfSize:(unsigned long long)arg1 atIndices:(struct { BOOL x1; BOOL x2; })arg2;
+- (bool)_setupDescriptor:(id)arg1 forPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; }*)arg2 cubemapFaceIndex:(unsigned long long)arg3 isFinalTechnique:(bool)arg4;
 - (void)beginDeferredLighting;
 - (void)beginFrame:(id)arg1;
-- (BOOL)beginRenderPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; }*)arg1 cubemapFaceIndex:(unsigned int)arg2 isFinalTechnique:(BOOL)arg3;
+- (bool)beginRenderPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; }*)arg1 cubemapFaceIndex:(unsigned long long)arg2 isFinalTechnique:(bool)arg3;
 - (id)clientCommandBuffer;
 - (id)clientRenderCommandEncoder;
 - (id)clientRenderPassDescriptor;
 - (id)commandQueue;
-- (struct __C3DMeshElement { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; unsigned int x2; unsigned int x3; struct __C3DMeshElement {} *x4; unsigned char x5; unsigned char x6; unsigned char x7; struct { BOOL x_8_1_1; struct __CFData {} *x_8_1_2; unsigned int x_8_1_3; } x8; struct { BOOL x_9_1_1; struct __CFData {} *x_9_1_2; unsigned int x_9_1_3; } x9; void *x10; struct __C3DMeshSource {} *x11; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x12[2]; }*)createVolatileMeshElementOfType:(BOOL)arg1 primitiveCount:(int)arg2 bytesPerIndex:(int)arg3;
+- (struct __C3DMeshElement { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; unsigned int x2; unsigned int x3; struct __C3DMeshElement {} *x4; unsigned char x5; unsigned char x6; unsigned char x7; struct { BOOL x_8_1_1; struct __CFData {} *x_8_1_2; unsigned int x_8_1_3; } x8; struct { BOOL x_9_1_1; struct __CFData {} *x_9_1_2; unsigned int x_9_1_3; } x9; void *x10; struct __C3DMeshSource {} *x11; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x12[2]; }*)createVolatileMeshElementOfType:(BOOL)arg1 primitiveCount:(long long)arg2 bytesPerIndex:(long long)arg3;
 - (id)currentCommandBuffer;
 - (id)currentComputeCommandEncoder;
 - (id)currentRenderCommandEncoder;
 - (id)currentRenderPassDescriptor;
 - (void)dealloc;
 - (id)device;
-- (void)drawFullScreenQuadForPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; }*)arg1;
-- (void)drawRenderElement:(struct __C3DRendererElement { struct __C3DNode {} *x1; struct __C3DGeometry {} *x2; struct __C3DMesh {} *x3; void *x4; struct __C3DMaterial {} *x5; struct __C3DFXTechnique {} *x6; struct __C3DRendererElementProgramHashCode {} *x7; struct { unsigned char x_8_1_1[8]; } x8; int x9; unsigned int x10; unsigned int x11 : 8; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 3; }*)arg1 withPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; }*)arg2;
+- (void)drawFullScreenQuadForPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; }*)arg1;
+- (void)drawRenderElement:(struct __C3DRendererElement { struct __C3DNode {} *x1; struct __C3DGeometry {} *x2; struct __C3DMesh {} *x3; void *x4; struct __C3DMaterial {} *x5; struct __C3DFXTechnique {} *x6; struct __C3DRendererElementProgramHashCode {} *x7; struct { unsigned char x_8_1_1[8]; } x8; int x9; unsigned int x10; unsigned int x11 : 8; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 3; }*)arg1 withPass:(struct __C3DFXPass { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct __CFString {} *x2; int x3; int x4; bool x5; struct __C3DFXTechnique {} *x6; struct __CFString {} *x7; struct __CFString {} *x8; struct __CFString {} *x9; struct __CFString {} *x10; bool x11; struct __C3DFXProgram {} *x12; struct __C3DMaterial {} *x13; struct __C3DBlendStates {} *x14; struct __C3DRasterizerStates {} *x15; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_16_1_1; } x16; unsigned char x17; unsigned int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; }*)arg2;
 - (void)endDeferredLighting;
-- (void)endFrameWaitingUntilCompleted:(BOOL)arg1;
+- (void)endFrameWaitingUntilCompleted:(bool)arg1;
 - (void)endRenderPass;
-- (unsigned long)features;
+- (unsigned int)features;
 - (id)initWithDevice:(id)arg1 engineContext:(struct __C3DEngineContext { }*)arg2;
-- (id)irradianceTextureForEffectSlot:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; float x11; int x12; void *x13; }*)arg1;
-- (BOOL)isOpaque;
-- (id)mainColorTextureForChannel:(unsigned int)arg1;
-- (BOOL)mapVolatileMesh:(struct __C3DMesh { }*)arg1 verticesCount:(int)arg2;
+- (id)irradianceTextureForEffectSlot:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; float x11; int x12; void *x13; }*)arg1;
+- (bool)isOpaque;
+- (id)mainColorTextureForChannel:(unsigned long long)arg1;
+- (bool)mapVolatileMesh:(struct __C3DMesh { }*)arg1 verticesCount:(long long)arg2;
 - (id)newComputePipelineStateWithFunctionName:(id)arg1;
 - (id)newComputePipelineStateWithFunctionName:(id)arg1 library:(id)arg2;
-- (id)newRenderPipelineStateWithRenderPassDescriptor:(id)arg1 over:(BOOL)arg2 vertexFunctionName:(id)arg3 fragmentFunctionName:(id)arg4 library:(id)arg5;
-- (id)newRenderTargetWithDescription:(void *)arg1 size:(void *)arg2; // needs 2 arg types, found 1: struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; }*
+- (id)newRenderPipelineStateWithRenderPassDescriptor:(id)arg1 over:(bool)arg2 vertexFunctionName:(id)arg3 fragmentFunctionName:(id)arg4 library:(id)arg5;
+- (id)newRenderTargetWithDescription:(void *)arg1 size:(void *)arg2; // needs 2 arg types, found 1: struct { unsigned char x1; unsigned char x2; unsigned char x3; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 1; unsigned int x8 : 1; unsigned char x9[4]; }*
 - (void)popDebugGroup;
 - (void)processRendererElement:(struct __C3DRendererElement { struct __C3DNode {} *x1; struct __C3DGeometry {} *x2; struct __C3DMesh {} *x3; void *x4; struct __C3DMaterial {} *x5; struct __C3DFXTechnique {} *x6; struct __C3DRendererElementProgramHashCode {} *x7; struct { unsigned char x_8_1_1[8]; } x8; int x9; unsigned int x10; unsigned int x11 : 8; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 3; }*)arg1;
-- (long)profile;
+- (int)profile;
 - (void)pushDebugGroup:(id)arg1;
-- (id)radianceTextureForEffectSlot:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; float x11; int x12; void *x13; }*)arg1;
-- (void)renderBackground:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; float x11; int x12; void *x13; }*)arg1 engineContext:(struct __C3DEngineContext { }*)arg2;
-- (void)renderLight:(struct __C3DNode { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DNode {} *x2; struct __C3DNode {} *x3; struct __C3DNode {} *x4; struct { struct { unsigned short x_1_2_1; unsigned short x_1_2_2; } x_5_1_1; unsigned int x_5_1_2; } x5; struct { /* ? */ } *x6; struct __C3DGeometry {} *x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; }*)arg1 lightType:(long)arg2 lightData:(struct __C3DLightRuntimeData { unsigned int x1; float x2; union C3DMatrix4x4 { float x_3_1_1[16]; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_3_1_2[4]; } x3; }*)arg3;
-- (void)renderMesh:(struct __C3DMesh { }*)arg1 meshElement:(struct __C3DMeshElement { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; unsigned int x2; unsigned int x3; struct __C3DMeshElement {} *x4; unsigned char x5; unsigned char x6; unsigned char x7; struct { BOOL x_8_1_1; struct __CFData {} *x_8_1_2; unsigned int x_8_1_3; } x8; struct { BOOL x_9_1_1; struct __CFData {} *x_9_1_2; unsigned int x_9_1_3; } x9; void *x10; struct __C3DMeshSource {} *x11; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x12[2]; }*)arg2 withProgram:(struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; int x2; unsigned int x3 : 1; unsigned int x4 : 1; struct __C3DFXProgramDelegate {} *x5; }*)arg3 engineContext:(struct __C3DEngineContext { }*)arg4 transform:(union C3DMatrix4x4 { float x1[16]; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x2[4]; })arg5 color:(const struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg6 rasterizerStates:(struct __C3DRasterizerStates { }*)arg7 blendState:(struct __C3DBlendStates { }*)arg8 texture:(struct __C3DImage { }*)arg9 depthBias:(BOOL)arg10;
-- (void)renderSKSceneWithRenderer:(id)arg1 overlay:(BOOL)arg2 atTime:(double)arg3;
-- (id)renderTargetForSemantic:(long)arg1;
+- (id)radianceTextureForEffectSlot:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; float x11; int x12; void *x13; }*)arg1;
+- (void)renderBackground:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; float x11; int x12; void *x13; }*)arg1 engineContext:(struct __C3DEngineContext { }*)arg2;
+- (void)renderLight:(struct __C3DNode { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; struct __C3DNode {} *x2; struct __C3DNode {} *x3; struct __C3DNode {} *x4; struct { struct { unsigned short x_1_2_1; unsigned short x_1_2_2; } x_5_1_1; unsigned int x_5_1_2; } x5; struct { /* ? */ } *x6; struct __C3DGeometry {} *x7; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; unsigned int x15 : 1; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; }*)arg1 lightType:(int)arg2 lightData:(struct __C3DLightRuntimeData { unsigned int x1; float x2; union C3DMatrix4x4 { float x_3_1_1[16]; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_3_1_2[4]; } x3; }*)arg3;
+- (void)renderMesh:(struct __C3DMesh { }*)arg1 meshElement:(struct __C3DMeshElement { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; unsigned int x2; unsigned int x3; struct __C3DMeshElement {} *x4; unsigned char x5; unsigned char x6; unsigned char x7; struct { BOOL x_8_1_1; struct __CFData {} *x_8_1_2; unsigned int x_8_1_3; } x8; struct { BOOL x_9_1_1; struct __CFData {} *x_9_1_2; unsigned int x_9_1_3; } x9; void *x10; struct __C3DMeshSource {} *x11; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x12[2]; }*)arg2 withProgram:(struct __C3DFXProgram { struct __C3DEntity { struct __CFRuntimeBase { unsigned long long x_1_2_1; unsigned char x_1_2_2[4]; unsigned int x_1_2_3; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; long long x_1_1_6; long long x_1_1_7; } x1; int x2; unsigned int x3 : 1; unsigned int x4 : 1; struct __C3DFXProgramDelegate {} *x5; }*)arg3 engineContext:(struct __C3DEngineContext { }*)arg4 transform:(union C3DMatrix4x4 { float x1[16]; /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x2[4]; })arg5 color:(const struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg6 rasterizerStates:(struct __C3DRasterizerStates { }*)arg7 blendState:(struct __C3DBlendStates { }*)arg8 texture:(struct __C3DImage { }*)arg9 depthBias:(bool)arg10;
+- (void)renderSKSceneWithRenderer:(id)arg1 overlay:(bool)arg2 atTime:(double)arg3;
+- (id)renderTargetForSemantic:(int)arg1;
 - (void)resetVolatileMeshElements;
 - (void)resetVolatileMeshes;
 - (id)resourceManager;
@@ -270,18 +270,18 @@
 - (void)setClientRenderCommandEncoder:(id)arg1;
 - (void)setClientRenderPassDescriptor:(id)arg1;
 - (void)setCommandQueue:(id)arg1;
-- (void)setIsOpaque:(BOOL)arg1;
+- (void)setIsOpaque:(bool)arg1;
 - (void)setRasterizerStates:(struct __C3DRasterizerStates { }*)arg1;
-- (void)setShowsAuthoringEnvironment:(BOOL)arg1;
-- (void)setWantsWideGamut:(BOOL)arg1;
-- (BOOL)showsAuthoringEnvironment;
+- (void)setShowsAuthoringEnvironment:(bool)arg1;
+- (void)setWantsWideGamut:(bool)arg1;
+- (bool)showsAuthoringEnvironment;
 - (void)startProcessingRendererElementsWithEngineIterationContext:(struct { struct __C3DEnginePipeline {} *x1; struct __C3DEngineContext {} *x2; struct __C3DFXPassInstance {} *x3; int *x4; struct __C3DNode {} *x5; bool x6; bool x7; }*)arg1;
 - (struct __C3DEngineStats { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; unsigned int x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; double x25; double x26; double x27; double x28; double x29; double x30; double x31; double x32; double x33; double x34; double x35; double x36; double x37; double x38; unsigned int x39; unsigned int x40; unsigned int x41; unsigned int x42; unsigned int x43; unsigned int x44; unsigned int x45; unsigned int x46; unsigned int x47; unsigned int x48; unsigned int x49; unsigned int x50; unsigned int x51; unsigned int x52; unsigned int x53; unsigned int x54; double x55; double x56; double x57; double x58[60]; unsigned int x59; double x60; double x61; }*)stats;
 - (void)stopProcessingRendererElements;
-- (id)textureForEffectSlot:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; float x11; int x12; void *x13; }*)arg1;
+- (id)textureForEffectSlot:(struct __C3DEffectSlot { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; void *x3; union { struct __C3DImage {} *x_4_1_1; void *x_4_1_2; struct __C3DImageProxy {} *x_4_1_3; struct __C3DTexture {} *x_4_1_4; } x4; unsigned int x5 : 8; unsigned int x6 : 1; unsigned int x7 : 1; int x8; struct __C3DTextureSampler {} *x9; struct __C3DTransforms {} *x10; float x11; int x12; void *x13; }*)arg1;
 - (id)textureTarget;
 - (void)unmapVolatileMesh:(struct __C3DMesh { }*)arg1;
-- (BOOL)wantsWideGamut;
-- (void)writeBytes:(void*)arg1 length:(unsigned int)arg2;
+- (bool)wantsWideGamut;
+- (void)writeBytes:(void*)arg1 length:(unsigned long long)arg2;
 
 @end

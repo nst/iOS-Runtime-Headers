@@ -4,7 +4,7 @@
 
 @interface TILaunchServicesLookup : NSObject
 
-+ (void)enumerateInstalledApplicationNames:(id /* block */)arg1;
++ (void)enumerateInstalledApplicationNames:(id)arg1;
 + (id)genreIDsForApplicationIdentifier:(id)arg1;
 
 @end

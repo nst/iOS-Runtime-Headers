@@ -4,30 +4,30 @@
 
 @interface CADDatabaseOperationGroup : CADOperationGroup <CADDatabaseInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
-- (void)CADDatabaseCanModifyCalendarDatabase:(id /* block */)arg1;
-- (void)CADDatabaseCommitWithReply:(id /* block */)arg1;
-- (void)CADDatabaseFetchChangedObjectIDsSinceSequenceNumber:(int)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseGetChangedEntityIDsSinceTimestamp:(double)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseGetChangesSinceSequenceNumber:(int)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseGetNextAssignableColorWithReply:(id /* block */)arg1;
-- (void)CADDatabaseGetSequenceNumber:(id /* block */)arg1;
-- (void)CADDatabaseGetUUID:(id /* block */)arg1;
-- (void)CADDatabaseImportICSData:(id)arg1 intoCalendarWithID:(int)arg2 optionsMask:(unsigned int)arg3 reply:(id /* block */)arg4;
-- (void)CADDatabaseIsAutomaticLocationGeocodingAllowed:(id /* block */)arg1;
-- (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(int)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseRebuildOccurrenceCacheWithReply:(id /* block */)arg1;
-- (void)CADDatabaseRegisterForDetailedChangeTracking:(id /* block */)arg1;
-- (void)CADDatabaseResetWithReply:(id /* block */)arg1;
-- (void)CADDatabaseRollbackWithReply:(id /* block */)arg1;
-- (void)CADDatabaseSaveWithReply:(id /* block */)arg1;
-- (void)CADDatabaseSetAutomaticLocationGeocodingAllowed:(BOOL)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseSetInitializationOptions:(int)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseSetShowsDeclinedEvents:(BOOL)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseSetSourceAccountManagement:(int)arg1 reply:(id /* block */)arg2;
-- (BOOL)_CADDatabaseCanModifyCalendarDatabase;
+- (void)CADDatabaseCanModifyCalendarDatabase:(id)arg1;
+- (void)CADDatabaseCommitWithReply:(id)arg1;
+- (void)CADDatabaseFetchChangedObjectIDsSinceSequenceNumber:(long long)arg1 reply:(id)arg2;
+- (void)CADDatabaseGetChangedEntityIDsSinceTimestamp:(double)arg1 reply:(id)arg2;
+- (void)CADDatabaseGetChangesSinceSequenceNumber:(int)arg1 reply:(id)arg2;
+- (void)CADDatabaseGetNextAssignableColorWithReply:(id)arg1;
+- (void)CADDatabaseGetSequenceNumber:(id)arg1;
+- (void)CADDatabaseGetUUID:(id)arg1;
+- (void)CADDatabaseImportICSData:(id)arg1 intoCalendarWithID:(int)arg2 optionsMask:(unsigned long long)arg3 reply:(id)arg4;
+- (void)CADDatabaseIsAutomaticLocationGeocodingAllowed:(id)arg1;
+- (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(long long)arg1 reply:(id)arg2;
+- (void)CADDatabaseRebuildOccurrenceCacheWithReply:(id)arg1;
+- (void)CADDatabaseRegisterForDetailedChangeTracking:(id)arg1;
+- (void)CADDatabaseResetWithReply:(id)arg1;
+- (void)CADDatabaseRollbackWithReply:(id)arg1;
+- (void)CADDatabaseSaveWithReply:(id)arg1;
+- (void)CADDatabaseSetAutomaticLocationGeocodingAllowed:(bool)arg1 reply:(id)arg2;
+- (void)CADDatabaseSetInitializationOptions:(int)arg1 reply:(id)arg2;
+- (void)CADDatabaseSetShowsDeclinedEvents:(bool)arg1 reply:(id)arg2;
+- (void)CADDatabaseSetSourceAccountManagement:(int)arg1 reply:(id)arg2;
+- (bool)_CADDatabaseCanModifyCalendarDatabase;
 
 @end

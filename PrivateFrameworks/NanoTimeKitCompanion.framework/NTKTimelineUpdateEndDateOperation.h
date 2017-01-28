@@ -4,17 +4,17 @@
 
 @interface NTKTimelineUpdateEndDateOperation : NTKTimelineDataOperation {
     NSDate * _endDate;
-    id /* block */  _handler;
+    id  _handler;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 
 - (void).cxx_destruct;
 - (void)_cancel;
 - (void)_getEndDate;
 - (void)_invokeHandler;
 - (void)_start;
-- (id /* block */)handler;
-- (void)setHandler:(id /* block */)arg1;
+- (id)handler;
+- (void)setHandler:(id)arg1;
 
 @end

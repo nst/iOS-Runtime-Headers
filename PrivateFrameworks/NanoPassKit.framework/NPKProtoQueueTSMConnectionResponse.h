@@ -6,24 +6,24 @@
     struct { 
         unsigned int pending : 1; 
     }  _has;
-    BOOL  _pending;
+    bool  _pending;
 }
 
-@property (nonatomic) BOOL hasPending;
-@property (nonatomic) BOOL pending;
+@property (nonatomic) bool hasPending;
+@property (nonatomic) bool pending;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPending;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPending;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)pending;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPending:(BOOL)arg1;
-- (void)setPending:(BOOL)arg1;
+- (bool)pending;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPending:(bool)arg1;
+- (void)setPending:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

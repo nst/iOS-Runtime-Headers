@@ -3,7 +3,7 @@
  */
 
 @interface CalDAVOperation : CoreDAVTaskGroup {
-    BOOL  _isCancellingTaskGroups;
+    bool  _isCancellingTaskGroups;
     NSMutableSet * _outstandingTaskGroups;
     <CalDAVPrincipal> * _principal;
 }
@@ -12,7 +12,7 @@
 @property (nonatomic, retain) <CalDAVPrincipal> *principal;
 
 - (void).cxx_destruct;
-- (void)_tearDownAllTaskGroupsWithBlock:(id /* block */)arg1;
+- (void)_tearDownAllTaskGroupsWithBlock:(id)arg1;
 - (void)bailWithError:(id)arg1;
 - (void)cancelTaskGroup;
 - (void)dealloc;

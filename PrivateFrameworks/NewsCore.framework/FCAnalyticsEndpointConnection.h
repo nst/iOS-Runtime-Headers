@@ -6,6 +6,6 @@
 
 - (void)appConfigurationDidChange:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (void)uploadAnalyticsPayload:(id)arg1 priority:(float)arg2 callbackQueue:(id)arg3 completion:(id /* block */)arg4;
+- (void)uploadAnalyticsPayload:(id)arg1 priority:(float)arg2 callbackQueue:(id)arg3 completion:(id)arg4;
 
 @end

@@ -14,20 +14,20 @@
 @property (nonatomic, retain) GKPlayer *player;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
-+ (BOOL)instancesRespondToSelector:(SEL)arg1;
++ (bool)instancesRespondToSelector:(SEL)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)game;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1 game:(id)arg2;
 - (id)internal;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)player;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)setGame:(id)arg1;
 - (void)setInternal:(id)arg1;
 - (void)setPlayer:(id)arg1;

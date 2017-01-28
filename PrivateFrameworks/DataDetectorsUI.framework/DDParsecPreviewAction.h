@@ -5,7 +5,7 @@
 @interface DDParsecPreviewAction : DDParsecAction
 
 - (id)initWithURL:(id)arg1 result:(struct __DDResult { }*)arg2 context:(id)arg3;
-- (void)setPreviewMode:(BOOL)arg1;
-- (BOOL)wantsSeamlessCommit;
+- (void)setPreviewMode:(bool)arg1;
+- (bool)wantsSeamlessCommit;
 
 @end

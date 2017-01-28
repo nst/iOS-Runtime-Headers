@@ -3,60 +3,60 @@
  */
 
 @interface VideosExtrasGridCellStyle : NSObject <NSCopying> {
-    int  _defaultTextAlignment;
+    long long  _defaultTextAlignment;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _imageSize;
     NSDictionary * _subtitleDefaultFontAttributes;
-    float  _subtitleFirstBaselineHeight;
+    double  _subtitleFirstBaselineHeight;
     UIColor * _subtitleTextColor;
     NSString * _subtitleTextStyle;
-    float  _textFirstBaselineToBottom;
-    float  _textLastBaselineToBottom;
+    double  _textFirstBaselineToBottom;
+    double  _textLastBaselineToBottom;
     NSDictionary * _titleDefaultFontAttributes;
-    float  _titleFirstBaselineHeight;
+    double  _titleFirstBaselineHeight;
     UIColor * _titleTextColor;
     NSString * _titleTextStyle;
 }
 
-@property (nonatomic) int defaultTextAlignment;
-@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) long long defaultTextAlignment;
+@property (nonatomic) struct CGSize { double x1; double x2; } imageSize;
 @property (nonatomic, copy) NSDictionary *subtitleDefaultFontAttributes;
-@property (nonatomic) float subtitleFirstBaselineHeight;
+@property (nonatomic) double subtitleFirstBaselineHeight;
 @property (nonatomic, copy) UIColor *subtitleTextColor;
 @property (nonatomic, copy) NSString *subtitleTextStyle;
-@property (nonatomic) float textFirstBaselineToBottom;
-@property (nonatomic) float textLastBaselineToBottom;
+@property (nonatomic) double textFirstBaselineToBottom;
+@property (nonatomic) double textLastBaselineToBottom;
 @property (nonatomic, copy) NSDictionary *titleDefaultFontAttributes;
-@property (nonatomic) float titleFirstBaselineHeight;
+@property (nonatomic) double titleFirstBaselineHeight;
 @property (nonatomic, copy) UIColor *titleTextColor;
 @property (nonatomic, copy) NSString *titleTextStyle;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)defaultTextAlignment;
-- (struct CGSize { float x1; float x2; })imageSize;
-- (void)setDefaultTextAlignment:(int)arg1;
-- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (long long)defaultTextAlignment;
+- (struct CGSize { double x1; double x2; })imageSize;
+- (void)setDefaultTextAlignment:(long long)arg1;
+- (void)setImageSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)setSubtitleDefaultFontAttributes:(id)arg1;
-- (void)setSubtitleFirstBaselineHeight:(float)arg1;
+- (void)setSubtitleFirstBaselineHeight:(double)arg1;
 - (void)setSubtitleTextColor:(id)arg1;
 - (void)setSubtitleTextStyle:(id)arg1;
-- (void)setTextFirstBaselineToBottom:(float)arg1;
-- (void)setTextLastBaselineToBottom:(float)arg1;
+- (void)setTextFirstBaselineToBottom:(double)arg1;
+- (void)setTextLastBaselineToBottom:(double)arg1;
 - (void)setTitleDefaultFontAttributes:(id)arg1;
-- (void)setTitleFirstBaselineHeight:(float)arg1;
+- (void)setTitleFirstBaselineHeight:(double)arg1;
 - (void)setTitleTextColor:(id)arg1;
 - (void)setTitleTextStyle:(id)arg1;
 - (id)subtitleDefaultFontAttributes;
-- (float)subtitleFirstBaselineHeight;
+- (double)subtitleFirstBaselineHeight;
 - (id)subtitleTextColor;
 - (id)subtitleTextStyle;
-- (float)textFirstBaselineToBottom;
-- (float)textLastBaselineToBottom;
+- (double)textFirstBaselineToBottom;
+- (double)textLastBaselineToBottom;
 - (id)titleDefaultFontAttributes;
-- (float)titleFirstBaselineHeight;
+- (double)titleFirstBaselineHeight;
 - (id)titleTextColor;
 - (id)titleTextStyle;
 

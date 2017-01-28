@@ -5,9 +5,9 @@
 
 @required
 
-- (int)decimalPrecisionForValue:(double)arg1;
-- (int)maximumDecimalPrecision;
-- (int)minimumDecimalPrecision;
+- (long long)decimalPrecisionForValue:(double)arg1;
+- (long long)maximumDecimalPrecision;
+- (long long)minimumDecimalPrecision;
 - (<HKNumberFormatter> *)numberFormatter;
 
 @end

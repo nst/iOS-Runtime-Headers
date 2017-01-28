@@ -6,7 +6,7 @@
     NSMutableData * _data;
     NSError * _error;
     NSDictionary * options;
-    BOOL  requestComplete;
+    bool  requestComplete;
     NSURLResponse * response;
 }
 
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

@@ -3,14 +3,14 @@
  */
 
 @interface AVAlphaUpdatingView : UIView {
-    id /* block */  _alphaUpdatingBlock;
+    id  _alphaUpdatingBlock;
 }
 
-@property (nonatomic, copy) id /* block */ alphaUpdatingBlock;
+@property (nonatomic, copy) id alphaUpdatingBlock;
 
 - (void).cxx_destruct;
-- (id /* block */)alphaUpdatingBlock;
-- (void)setAlpha:(float)arg1;
-- (void)setAlphaUpdatingBlock:(id /* block */)arg1;
+- (id)alphaUpdatingBlock;
+- (void)setAlpha:(double)arg1;
+- (void)setAlphaUpdatingBlock:(id)arg1;
 
 @end

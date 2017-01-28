@@ -12,7 +12,7 @@
 @property (nonatomic) double maximumIntervalBetweenPresses;
 
 - (void).cxx_destruct;
-- (BOOL)_allRequiredButtonsDown;
+- (bool)_allRequiredButtonsDown;
 - (void)_fail;
 - (void)_processPresses:(id)arg1;
 - (void)_resetGestureRecognizer;

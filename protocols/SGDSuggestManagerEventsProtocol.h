@@ -5,8 +5,8 @@
 
 @required
 
-- (void)allEventsLimitedTo:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
-- (void)eventFromUniqueId:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, SGEvent *, NSError *, void*
-- (void)schemaOrgToEvents:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)allEventsLimitedTo:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
+- (void)eventFromUniqueId:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, SGEvent *, NSError *, void*
+- (void)schemaOrgToEvents:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
 
 @end

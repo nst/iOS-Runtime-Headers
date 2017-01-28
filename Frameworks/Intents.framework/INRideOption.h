@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString *disclaimerMessage;
 @property (nonatomic, copy) NSDate *estimatedPickupDate;
 @property (nonatomic, copy) NSArray *fareLineItems;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) INPriceRange *priceRange;
@@ -34,13 +34,15 @@
 @property (nonatomic, retain) NSUserActivity *userActivityForBookingInApplication;
 @property (nonatomic, copy) NSNumber *usesMeteredFare;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)availablePartySizeOptions;
 - (id)availablePartySizeOptionsSelectionPrompt;
 - (id)cacheableObjects;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (id)disclaimerMessage;
 - (void)encodeWithCoder:(id)arg1;
 - (id)estimatedPickupDate;

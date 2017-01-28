@@ -11,13 +11,13 @@
 
 @property (nonatomic, readonly, copy) LSPlugInKitProxy *proxy;
 
-+ (void)extensionWrapperForBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
++ (void)extensionWrapperForBundleIdentifier:(id)arg1 completion:(id)arg2;
 
 - (void).cxx_destruct;
-- (id /* block */)_finishedHandlerForRequestIdentifier:(id)arg1;
-- (void)_setFinishedHandler:(id /* block */)arg1 forRequestIdentifier:(id)arg2;
+- (id)_finishedHandlerForRequestIdentifier:(id)arg1;
+- (void)_setFinishedHandler:(id)arg1 forRequestIdentifier:(id)arg2;
 - (void)_setupExtension;
-- (void)didReceiveNotificationRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2 watchdogHandler:(id /* block */)arg3;
+- (void)didReceiveNotificationRequest:(id)arg1 withCompletionHandler:(id)arg2 watchdogHandler:(id)arg3;
 - (id)initWithExtension:(id)arg1 serviceTime:(double)arg2 graceTime:(double)arg3;
 - (id)proxy;
 

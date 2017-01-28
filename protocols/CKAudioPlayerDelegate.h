@@ -9,6 +9,6 @@
 
 @optional
 
-- (void)audioPlayerDidPrepareAudioToPlay:(CKAudioPlayer *)arg1 successfully:(BOOL)arg2;
+- (void)audioPlayerDidPrepareAudioToPlay:(CKAudioPlayer *)arg1 successfully:(bool)arg2;
 
 @end

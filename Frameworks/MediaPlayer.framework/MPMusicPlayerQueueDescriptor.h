@@ -7,7 +7,7 @@
     NSMutableDictionary * _startTimes;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_setEndTime:(double)arg1 forIdentifier:(id)arg2;

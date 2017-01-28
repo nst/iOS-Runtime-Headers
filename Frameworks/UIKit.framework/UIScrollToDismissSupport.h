@@ -3,27 +3,27 @@
  */
 
 @interface UIScrollToDismissSupport : UIKeyboardMotionSupport <UIScrollViewIntersectionDelegate> {
-    BOOL  _disableInterfaceAutorotation;
+    bool  _disableInterfaceAutorotation;
     UIScrollView * _scrollViewForTransition;
     UIInputViewSetNotificationInfo * _scrollViewNotificationInfo;
-    BOOL  _scrollViewShowsHorizontalScrollIndicator;
-    BOOL  _scrollViewTransitionFinishing;
+    bool  _scrollViewShowsHorizontalScrollIndicator;
+    bool  _scrollViewTransitionFinishing;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _scrollViewTransitionPreviousPoint;
 }
 
-- (id)cancelNotificationsForMode:(unsigned int)arg1;
-- (void)completeKeyboardDismiss:(unsigned int)arg1 withDuration:(float)arg2;
+- (id)cancelNotificationsForMode:(unsigned long long)arg1;
+- (void)completeKeyboardDismiss:(unsigned long long)arg1 withDuration:(double)arg2;
 - (void)completedPlacementFrom:(id)arg1 to:(id)arg2 forController:(id)arg3;
 - (void)dealloc;
 - (void)finishScrollViewTransition;
 - (void)finishScrollViewTransitionForController:(id)arg1;
-- (void)hideScrollViewHorizontalScrollIndicator:(BOOL)arg1;
+- (void)hideScrollViewHorizontalScrollIndicator:(bool)arg1;
 - (void)scrollView:(id)arg1 didFinishPanGesture:(id)arg2;
 - (void)scrollView:(id)arg1 didPanWithGesture:(id)arg2;
-- (void)setInterfaceAutorotationDisabled:(BOOL)arg1 forController:(id)arg2;
-- (void)updateScrollViewContentInsetBottom:(float)arg1;
+- (void)setInterfaceAutorotationDisabled:(bool)arg1 forController:(id)arg2;
+- (void)updateScrollViewContentInsetBottom:(double)arg1;
 
 @end

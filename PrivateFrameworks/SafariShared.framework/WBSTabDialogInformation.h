@@ -3,16 +3,16 @@
  */
 
 @interface WBSTabDialogInformation : NSObject {
-    id /* block */  _dismissalBlock;
-    id /* block */  _presentationBlock;
-    BOOL  _presented;
+    id  _dismissalBlock;
+    id  _presentationBlock;
+    bool  _presented;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ dismissalBlock;
+@property (nonatomic, readonly, copy) id dismissalBlock;
 
 - (void).cxx_destruct;
-- (id /* block */)dismissalBlock;
-- (id)initWithPresentationBlock:(id /* block */)arg1 dismissalBlock:(id /* block */)arg2;
+- (id)dismissalBlock;
+- (id)initWithPresentationBlock:(id)arg1 dismissalBlock:(id)arg2;
 - (void)presentIfNeeded;
 
 @end

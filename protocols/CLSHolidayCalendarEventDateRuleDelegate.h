@@ -5,6 +5,6 @@
 
 @required
 
-- (NSDate *)dateForRuleWithUUID:(NSString *)arg1 byEvaluatingForYear:(int)arg2;
+- (NSDate *)dateForRuleWithUUID:(NSString *)arg1 byEvaluatingForYear:(long long)arg2;
 
 @end

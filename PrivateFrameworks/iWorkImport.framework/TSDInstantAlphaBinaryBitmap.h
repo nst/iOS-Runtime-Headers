@@ -4,24 +4,24 @@
 
 @interface TSDInstantAlphaBinaryBitmap : NSObject {
     char * mData;
-    int  mHeight;
-    int  mRowBytes;
-    int  mWidth;
+    long long  mHeight;
+    long long  mRowBytes;
+    long long  mWidth;
 }
 
 @property (nonatomic, readonly) char *data;
-@property (nonatomic, readonly) int height;
-@property (nonatomic, readonly) int rowBytes;
-@property (nonatomic, readonly) int width;
+@property (nonatomic, readonly) long long height;
+@property (nonatomic, readonly) long long rowBytes;
+@property (nonatomic, readonly) long long width;
 
 - (char *)data;
 - (void)dealloc;
-- (int)height;
-- (id)initWithWidth:(int)arg1 height:(int)arg2;
-- (id)initWithWidth:(int)arg1 height:(int)arg2 rowBytes:(int)arg3;
+- (long long)height;
+- (id)initWithWidth:(long long)arg1 height:(long long)arg2;
+- (id)initWithWidth:(long long)arg1 height:(long long)arg2 rowBytes:(long long)arg3;
 - (id)medianBitmap;
-- (int)rowBytes;
+- (long long)rowBytes;
 - (void)unionWithBitmap:(id)arg1;
-- (int)width;
+- (long long)width;
 
 @end

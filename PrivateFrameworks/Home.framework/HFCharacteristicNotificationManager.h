@@ -10,9 +10,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDate *lastNotificationsEnableRequestDate;
-@property (nonatomic, readonly) BOOL notificationsEnabled;
+@property (nonatomic, readonly) bool notificationsEnabled;
 @property (nonatomic, retain) HMHome *notificationsEnabledHome;
 @property (nonatomic, readonly) NSMutableSet *notificationsEnabledReasons;
 @property (readonly) Class superclass;
@@ -27,11 +27,11 @@
 - (void)homeManagerDidFinishInitialDatabaseLoad:(id)arg1;
 - (id)init;
 - (id)lastNotificationsEnableRequestDate;
-- (BOOL)notificationsEnabled;
+- (bool)notificationsEnabled;
 - (id)notificationsEnabledHome;
 - (id)notificationsEnabledReasons;
 - (void)setLastNotificationsEnableRequestDate:(id)arg1;
 - (void)setNotificationsEnabledHome:(id)arg1;
-- (BOOL)valueIsUpToDateForCharacteristic:(id)arg1;
+- (bool)valueIsUpToDateForCharacteristic:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (void)longLookAnimator:(id <NCLongLookAnimator>)arg1 animationEnded:(BOOL)arg2;
+- (void)longLookAnimator:(id <NCLongLookAnimator>)arg1 animationEnded:(bool)arg2;
 - (void)longLookAnimatorAnimationBegan:(id <NCLongLookAnimator>)arg1;
 
 @end

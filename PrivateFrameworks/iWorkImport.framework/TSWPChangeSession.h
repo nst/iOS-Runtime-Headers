@@ -5,25 +5,25 @@
 @interface TSWPChangeSession : TSPObject {
     TSKAnnotationAuthor * _author;
     NSDate * _date;
-    unsigned long  _sessionUID;
+    unsigned int  _sessionUID;
 }
 
 @property (nonatomic, retain) TSKAnnotationAuthor *author;
 @property (nonatomic, retain) NSDate *date;
-@property (nonatomic) unsigned long sessionUID;
+@property (nonatomic) unsigned int sessionUID;
 
-+ (BOOL)needsObjectUUID;
++ (bool)needsObjectUUID;
 
 - (id)author;
 - (id)date;
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToSession:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToSession:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (unsigned long)sessionUID;
+- (unsigned int)sessionUID;
 - (void)setAuthor:(id)arg1;
 - (void)setDate:(id)arg1;
-- (void)setSessionUID:(unsigned long)arg1;
+- (void)setSessionUID:(unsigned int)arg1;
 
 @end

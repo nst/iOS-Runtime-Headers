@@ -6,18 +6,18 @@
     NSObject<OS_dispatch_source> * _dispatchSource;
     NSObject<OS_dispatch_group> * _handlerSynchronizationGroup;
     NSObject<OS_dispatch_queue> * _serialQueue;
-    BOOL  _suspended;
+    bool  _suspended;
 }
 
-@property BOOL suspended;
+@property bool suspended;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
-- (void)setSuspended:(BOOL)arg1;
-- (BOOL)suspended;
+- (void)setSuspended:(bool)arg1;
+- (bool)suspended;
 - (void)tickle;
-- (void)tickleWithCompletion:(id /* block */)arg1;
+- (void)tickleWithCompletion:(id)arg1;
 
 @end

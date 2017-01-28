@@ -7,10 +7,10 @@
     NSNumber * _defaultValue;
     <HKSimpleDataEntryItemDelegate> * _delegate;
     NSNumber * _kilogramValue;
-    int  _localWeightUnit;
-    int  _numberOfRowsForPicker;
+    long long  _localWeightUnit;
+    long long  _numberOfRowsForPicker;
     UIPickerView * _picker;
-    unsigned int  _placeholderType;
+    unsigned long long  _placeholderType;
     NSString * _registrantModelKey;
     NSString * _title;
 }
@@ -18,15 +18,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HKSimpleDataEntryItemDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int placeholderType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long placeholderType;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (double)_defaultKilogramValue;
 - (id)_formattedValueForDisplay;
 - (void)_setTextForInputTextField:(id)arg1;
-- (void)_setWeightValueForSelectedRow:(int)arg1;
+- (void)_setWeightValueForSelectedRow:(long long)arg1;
 - (void)_setupPlaceholder;
 - (void)_updateLocaleDependentValues;
 - (void)_valueDidChange;
@@ -37,13 +37,13 @@
 - (id)formattedKeyAndValue;
 - (id)initWithTitle:(id)arg1 registrantModelKey:(id)arg2 weightInKg:(id)arg3 defaultWeightInKg:(id)arg4;
 - (void)localeDidChange:(id)arg1;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (unsigned int)placeholderType;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (unsigned long long)placeholderType;
 - (void)setDelegate:(id)arg1;
-- (void)setPlaceholderType:(unsigned int)arg1;
+- (void)setPlaceholderType:(unsigned long long)arg1;
 - (void)updateCellDisplay;
 
 @end

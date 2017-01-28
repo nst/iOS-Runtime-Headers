@@ -3,8 +3,8 @@
  */
 
 @interface HKHorizontalSingleLineChartPoint : NSObject <HKChartPoint> {
-    BOOL  _groupToPrevious;
-    int  _markStyle;
+    bool  _groupToPrevious;
+    long long  _markStyle;
     id  _userInfo;
     NSDate * _xValue;
     NSNumber * _yValue;
@@ -12,9 +12,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL groupToPrevious;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int markStyle;
+@property (nonatomic) bool groupToPrevious;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long markStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) id userInfo;
 @property (nonatomic, retain) NSDate *xValue;
@@ -23,14 +23,14 @@
 - (void).cxx_destruct;
 - (id)allYValues;
 - (id)description;
-- (BOOL)groupToPrevious;
-- (int)markStyle;
+- (bool)groupToPrevious;
+- (long long)markStyle;
 - (id)maxXValue;
 - (id)maxYValue;
 - (id)minXValue;
 - (id)minYValue;
-- (void)setGroupToPrevious:(BOOL)arg1;
-- (void)setMarkStyle:(int)arg1;
+- (void)setGroupToPrevious:(bool)arg1;
+- (void)setMarkStyle:(long long)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setXValue:(id)arg1;
 - (void)setYValue:(id)arg1;

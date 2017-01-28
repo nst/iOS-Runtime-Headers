@@ -4,8 +4,8 @@
 
 @interface _DPOBHSequenceMO : _DPOBHRecordMO
 
-@property (nonatomic, retain) NSString *sequence;
+@property (nonatomic, copy) NSString *plainSequence;
 @property (nonatomic) long long sequenceBitPosition;
-@property (nonatomic) BOOL sequenceBitValue;
+@property (nonatomic) bool sequenceBitValue;
 
 @end

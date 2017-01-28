@@ -6,7 +6,7 @@
 
 + (id)propertiesForScene:(id)arg1;
 + (void)setHighlightColor:(id)arg1 scene:(id)arg2;
-+ (void)setSelectedSeriesIndex:(unsigned int)arg1 scene:(id)arg2;
++ (void)setSelectedSeriesIndex:(unsigned long long)arg1 scene:(id)arg2;
 
 - (void)getBounds:(id)arg1;
 - (id)makeDelegateWithScene:(id)arg1;

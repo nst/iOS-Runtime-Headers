@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)containsCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+- (bool)containsCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (id)initWithContentsOfURL:(id)arg1 error:(id*)arg2;
 
 @end

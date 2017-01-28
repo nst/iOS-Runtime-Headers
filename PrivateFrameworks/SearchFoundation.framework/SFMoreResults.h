@@ -8,14 +8,14 @@
 
 @property (nonatomic, copy) NSString *label;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)label;
-- (void)loadSearchResultsWithCompletionAndErrorHandler:(id /* block */)arg1;
-- (void)loadSearchResultsWithCompletionHandler:(id /* block */)arg1;
+- (void)loadSearchResultsWithCompletionAndErrorHandler:(id)arg1;
+- (void)loadSearchResultsWithCompletionHandler:(id)arg1;
 - (void)setLabel:(id)arg1;
 
 @end

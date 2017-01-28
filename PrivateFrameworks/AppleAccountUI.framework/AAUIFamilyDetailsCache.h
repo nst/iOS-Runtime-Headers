@@ -3,18 +3,18 @@
  */
 
 @interface AAUIFamilyDetailsCache : NSObject {
-    BOOL  _isValid;
-    BOOL  _isValidating;
-    unsigned int  _pendingInviteCount;
+    bool  _isValid;
+    bool  _isValidating;
+    unsigned long long  _pendingInviteCount;
 }
 
-@property (nonatomic, readonly) unsigned int pendingInviteCount;
+@property (nonatomic, readonly) unsigned long long pendingInviteCount;
 
 + (id)sharedCache;
 
 - (void)_fetchPendingInviteCount;
-- (void)_setPendingInviteCount:(unsigned int)arg1;
+- (void)_setPendingInviteCount:(unsigned long long)arg1;
 - (void)invalidate;
-- (unsigned int)pendingInviteCount;
+- (unsigned long long)pendingInviteCount;
 
 @end

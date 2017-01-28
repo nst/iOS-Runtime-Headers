@@ -4,23 +4,23 @@
 
 @interface FCNonDestructivePrivateDataMigrationHandler : NSObject {
     <FCNonDestructivePrivateDataActionProvider> * _privateDataActionProvider;
-    BOOL  _privateDataSyncingEnabled;
+    bool  _privateDataSyncingEnabled;
     NSArray * _privateZoneControllers;
 }
 
 @property (nonatomic, retain) <FCNonDestructivePrivateDataActionProvider> *privateDataActionProvider;
-@property (getter=isPrivateDataSyncingEnabled, nonatomic) BOOL privateDataSyncingEnabled;
+@property (getter=isPrivateDataSyncingEnabled, nonatomic) bool privateDataSyncingEnabled;
 @property (nonatomic, copy) NSArray *privateZoneControllers;
 
 - (void).cxx_destruct;
 - (void)handleMigration;
 - (id)init;
-- (id)initWithPrivateDataActionProvider:(id)arg1 privateZoneControllers:(id)arg2 privateDataSyncingEnabled:(BOOL)arg3;
-- (BOOL)isPrivateDataSyncingEnabled;
+- (id)initWithPrivateDataActionProvider:(id)arg1 privateZoneControllers:(id)arg2 privateDataSyncingEnabled:(bool)arg3;
+- (bool)isPrivateDataSyncingEnabled;
 - (id)privateDataActionProvider;
 - (id)privateZoneControllers;
 - (void)setPrivateDataActionProvider:(id)arg1;
-- (void)setPrivateDataSyncingEnabled:(BOOL)arg1;
+- (void)setPrivateDataSyncingEnabled:(bool)arg1;
 - (void)setPrivateZoneControllers:(id)arg1;
 
 @end

@@ -3,16 +3,16 @@
  */
 
 @interface _CATRemoteConnectionStreamEventContext : NSObject {
-    unsigned int  _event;
+    unsigned long long  _event;
     NSStream * _stream;
 }
 
-@property (nonatomic) unsigned int event;
+@property (nonatomic) unsigned long long event;
 @property (nonatomic, retain) NSStream *stream;
 
 - (void).cxx_destruct;
-- (unsigned int)event;
-- (void)setEvent:(unsigned int)arg1;
+- (unsigned long long)event;
+- (void)setEvent:(unsigned long long)arg1;
 - (void)setStream:(id)arg1;
 - (id)stream;
 

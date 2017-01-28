@@ -3,62 +3,62 @@
  */
 
 @interface TSDShapeRep : TSDStyledRep <TSDMagicMoveMatching> {
-    BOOL  mDirectlyManagesLayerContent;
-    BOOL  mFrameInUnscaledCanvasIsValid;
+    bool  mDirectlyManagesLayerContent;
+    bool  mFrameInUnscaledCanvasIsValid;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mFrameInUnscaledCanvasRelativeToSuper;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mOriginalAliasedAlignmentFrameInLayerFrame;
-    BOOL  mShadowOnChildrenDisabled;
+    bool  mShadowOnChildrenDisabled;
 }
 
-+ (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
++ (double)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
 
 - (void)beginEditing;
 - (void)beginEditingWithString:(id)arg1;
-- (BOOL)canBeUsedForImageMask;
-- (BOOL)canBeginEditing;
-- (BOOL)canDrawShadowInOneStepWithChildren:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })clipRect;
+- (bool)canBeUsedForImageMask;
+- (bool)canBeginEditing;
+- (bool)canDrawShadowInOneStepWithChildren:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })clipRect;
 - (id)colorBehindLayer:(id)arg1;
-- (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(BOOL)arg2 strokeDrawOptions:(unsigned int)arg3 withOpacity:(BOOL)arg4 forAlphaOnly:(BOOL)arg5 drawChildren:(BOOL)arg6;
+- (bool)containsPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)drawInContextWithoutEffects:(struct CGContext { }*)arg1 withContent:(bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(bool)arg4 forAlphaOnly:(bool)arg5 drawChildren:(bool)arg6;
 - (void)drawInLayerContext:(struct CGContext { }*)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInUnscaledCanvas;
-- (id)imageOfStroke:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameInUnscaledCanvas;
+- (id)imageOfStroke:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)arg1;
 - (id)initWithLayout:(id)arg1 canvas:(id)arg2;
-- (BOOL)intersectsUnscaledRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isEditingChildRep;
-- (BOOL)p_beginApplyOpacity:(struct CGContext { }*)arg1 forDrawingInOneStep:(BOOL)arg2;
+- (bool)intersectsUnscaledRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isEditingChildRep;
+- (bool)p_beginApplyOpacity:(struct CGContext { }*)arg1 forDrawingInOneStep:(bool)arg2;
 - (void)p_drawChildrenWithoutOpacityInContext:(struct CGContext { }*)arg1;
-- (void)p_drawInContext:(struct CGContext { }*)arg1 withContent:(BOOL)arg2 strokeDrawOptions:(unsigned int)arg3 withOpacity:(BOOL)arg4;
-- (void)p_drawLineEndForHead:(BOOL)arg1 withDelta:(struct CGPoint { float x1; float x2; })arg2 andStroke:(id)arg3 inContext:(struct CGContext { }*)arg4 useFastDrawing:(BOOL)arg5;
-- (BOOL)p_drawsSelfInOneStep;
-- (void)p_endApplyOpacity:(struct CGContext { }*)arg1 apply:(BOOL)arg2;
+- (void)p_drawInContext:(struct CGContext { }*)arg1 withContent:(bool)arg2 strokeDrawOptions:(unsigned long long)arg3 withOpacity:(bool)arg4;
+- (void)p_drawLineEndForHead:(bool)arg1 withDelta:(struct CGPoint { double x1; double x2; })arg2 andStroke:(id)arg3 inContext:(struct CGContext { }*)arg4 useFastDrawing:(bool)arg5;
+- (bool)p_drawsSelfInOneStep;
+- (void)p_endApplyOpacity:(struct CGContext { }*)arg1 apply:(bool)arg2;
 - (id)pathSourceForSelectionHighlightBehavior;
 - (void)recursivelyDrawChildrenInContext:(struct CGContext { }*)arg1;
-- (void)setTextureAttributes:(id)arg1 textureBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)setTextureAttributes:(id)arg1 textureBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)shapeInfo;
 - (id)shapeLayout;
-- (float)shortestDistanceToPoint:(struct CGPoint { float x1; float x2; })arg1 countAsHit:(BOOL*)arg2;
-- (BOOL)shouldExpandHitRegionWhenSmall;
-- (BOOL)shouldHitTestWithFill;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })strokeBoundsWithOptions:(unsigned int)arg1 fallbackBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (double)shortestDistanceToPoint:(struct CGPoint { double x1; double x2; })arg1 countAsHit:(bool*)arg2;
+- (bool)shouldExpandHitRegionWhenSmall;
+- (bool)shouldHitTestWithFill;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })strokeBoundsWithOptions:(unsigned long long)arg1 fallbackBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 
 @end

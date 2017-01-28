@@ -11,23 +11,23 @@
     WBSOpenSearchURLTemplate * _searchURLTemplate;
     WBSURLSuffixChecker * _suffixChecker;
     WBSOpenSearchURLTemplate * _suggestionsURLTemplate;
-    BOOL  _usesSearchTermsFromFragment;
+    bool  _usesSearchTermsFromFragment;
 }
 
 @property (nonatomic, readonly) WBSOpenSearchURLTemplate *suggestionsURLTemplate;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSearchURLTemplate:(id)arg1 safeSearchURLTemplate:(id)arg2 safeSearchURLQueryParameters:(id)arg3 usesSearchTermsFromFragment:(BOOL)arg4 suggestionsURLTemplate:(id)arg5 hostSuffixes:(id)arg6 pathPrefixes:(id)arg7;
+- (id)initWithSearchURLTemplate:(id)arg1 safeSearchURLTemplate:(id)arg2 safeSearchURLQueryParameters:(id)arg3 usesSearchTermsFromFragment:(bool)arg4 suggestionsURLTemplate:(id)arg5 hostSuffixes:(id)arg6 pathPrefixes:(id)arg7;
 - (id)safeSearchURLForSearchURL:(id)arg1;
-- (BOOL)searchShouldUseSafeSearchTemplate;
+- (bool)searchShouldUseSafeSearchTemplate;
 - (id)searchURLForUserTypedString:(id)arg1;
 - (id)suggestionsURLForUserTypedString:(id)arg1;
 - (id)suggestionsURLTemplate;
-- (BOOL)urlIsValidSearch:(id)arg1;
+- (bool)urlIsValidSearch:(id)arg1;
 - (id)userVisibleQueryFromSearchURL:(id)arg1;
 
 @end

@@ -3,34 +3,34 @@
  */
 
 @interface FCInflateFeedGroupOperation : FCOperation {
-    BOOL  _cachedOnly;
+    bool  _cachedOnly;
     FCCloudContext * _context;
     FCDeflatedFeedGroup * _deflatedGroup;
     FCFeedGroup * _inflatedGroup;
-    id /* block */  _inflationCompletionHandler;
+    id  _inflationCompletionHandler;
 }
 
-@property (nonatomic) BOOL cachedOnly;
+@property (nonatomic) bool cachedOnly;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, retain) FCDeflatedFeedGroup *deflatedGroup;
 @property (nonatomic, retain) FCFeedGroup *inflatedGroup;
-@property (nonatomic, copy) id /* block */ inflationCompletionHandler;
+@property (nonatomic, copy) id inflationCompletionHandler;
 
 - (void).cxx_destruct;
-- (void)_fetchHeadlinesWithCompletionHandler:(id /* block */)arg1;
-- (void)_fetchTagsForPBGroup:(id)arg1 sharedStrings:(id)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)cachedOnly;
+- (void)_fetchHeadlinesWithCompletionHandler:(id)arg1;
+- (void)_fetchTagsForPBGroup:(id)arg1 sharedStrings:(id)arg2 completionHandler:(id)arg3;
+- (bool)cachedOnly;
 - (id)context;
 - (id)deflatedGroup;
 - (id)inflatedGroup;
-- (id /* block */)inflationCompletionHandler;
+- (id)inflationCompletionHandler;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (void)setCachedOnly:(BOOL)arg1;
+- (void)setCachedOnly:(bool)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDeflatedGroup:(id)arg1;
 - (void)setInflatedGroup:(id)arg1;
-- (void)setInflationCompletionHandler:(id /* block */)arg1;
-- (BOOL)validateOperation;
+- (void)setInflationCompletionHandler:(id)arg1;
+- (bool)validateOperation;
 
 @end

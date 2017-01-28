@@ -19,7 +19,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (id)tableManager;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

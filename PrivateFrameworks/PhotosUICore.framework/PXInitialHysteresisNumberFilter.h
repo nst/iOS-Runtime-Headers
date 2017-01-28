@@ -3,15 +3,15 @@
  */
 
 @interface PXInitialHysteresisNumberFilter : PXNumberFilter {
-    BOOL  _didReachThreshold;
-    float  _hysteresis;
-    float  _offset;
+    bool  _didReachThreshold;
+    double  _hysteresis;
+    double  _offset;
 }
 
-@property (nonatomic) float hysteresis;
+@property (nonatomic) double hysteresis;
 
-- (float)hysteresis;
-- (void)setHysteresis:(float)arg1;
-- (float)updatedOutput;
+- (double)hysteresis;
+- (void)setHysteresis:(double)arg1;
+- (double)updatedOutput;
 
 @end

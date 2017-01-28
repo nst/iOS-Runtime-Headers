@@ -7,6 +7,6 @@
 + (Class)_shelfMenuBarViewElementClass;
 + (Class)_titlesMenuBarViewElementClass;
 
-- (BOOL)isDynamicContainer;
+- (bool)isDynamicContainer;
 
 @end

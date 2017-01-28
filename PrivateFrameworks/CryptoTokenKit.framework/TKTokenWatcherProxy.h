@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (id)initWithWatcher:(id)arg1;
-- (void)insertedToken:(id)arg1 reply:(id /* block */)arg2;
-- (void)removedToken:(id)arg1 reply:(id /* block */)arg2;
+- (void)insertedToken:(id)arg1 reply:(id)arg2;
+- (void)removedToken:(id)arg1 reply:(id)arg2;
 
 @end

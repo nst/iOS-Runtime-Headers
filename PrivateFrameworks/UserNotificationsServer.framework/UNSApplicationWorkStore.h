@@ -5,7 +5,7 @@
 @interface UNSApplicationWorkStore : NSObject {
     NSObject<OS_dispatch_queue> * _calloutQueue;
     double  _expiryTime;
-    unsigned int  _maximumWorkBlocks;
+    unsigned long long  _maximumWorkBlocks;
     NSMutableArray * _observers;
     NSMutableDictionary * _perKeyWorkItems;
     NSMutableArray * _prioritizedKeys;
@@ -19,9 +19,9 @@
 - (void)_queue_notifyObserversOfChangesSince:(id)arg1;
 - (void)_queue_purgeExpiredWorkItems;
 - (void)addObserver:(id)arg1;
-- (void)addWorkForKey:(id)arg1 workBlock:(id /* block */)arg2;
+- (void)addWorkForKey:(id)arg1 workBlock:(id)arg2;
 - (void)executeWorkForKey:(id)arg1 userInfo:(id)arg2 onQueue:(id)arg3;
-- (id)initWithMaximumWorkBlocks:(unsigned int)arg1 expiryTime:(double)arg2;
+- (id)initWithMaximumWorkBlocks:(unsigned long long)arg1 expiryTime:(double)arg2;
 - (id)prioritizedKeys;
 - (void)purgeWorkForKey:(id)arg1;
 - (void)removeObserver:(id)arg1;

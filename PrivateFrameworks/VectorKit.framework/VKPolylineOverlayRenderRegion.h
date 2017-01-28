@@ -34,8 +34,8 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initForKeysInView:(id)arg1 tiles:(id)arg2 allowsSnapping:(BOOL)arg3;
-- (BOOL)isEquivalentToNewRegion:(id)arg1;
+- (id)initForKeysInView:(id)arg1 tiles:(id)arg2 allowsSnapping:(bool)arg3;
+- (bool)isEquivalentToNewRegion:(id)arg1;
 - (const struct vector<gm::Box<double, 2>, std::__1::allocator<gm::Box<double, 2> > > { struct Box<double, 2> {} *x1; struct Box<double, 2> {} *x2; struct __compressed_pair<gm::Box<double, 2> *, std::__1::allocator<gm::Box<double, 2> > > { struct Box<double, 2> {} *x_3_1_1; } x3; }*)rectsForSnapping;
 - (id)tiles;
 - (struct Box<double, 2> { struct Matrix<double, 2, 1> { double x_1_1_1[2]; } x1; struct Matrix<double, 2, 1> { double x_2_1_1[2]; } x2; })visibleRect;

@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) CMWorkoutManagerInternal *_internal;
 @property (nonatomic) <CMWorkoutManagerDelegate> *delegate;
 
-+ (BOOL)isAvailable;
++ (bool)isAvailable;
 
 - (id)_internal;
 - (void)dealloc;
@@ -18,6 +18,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)startWorkout:(id)arg1;
 - (void)stopWorkout:(id)arg1;
-- (unsigned int)supportedMetricsForWorkoutType:(int)arg1;
+- (unsigned long long)supportedMetricsForWorkoutType:(long long)arg1;
 
 @end

@@ -13,9 +13,9 @@
     UILabel * _locationLabel;
     NSString * _locationName;
     NSArray * _masterConstraints;
-    float  _pageBaselineOffset;
-    float  _pageDegreeFontSize;
-    float  _pageFontSize;
+    double  _pageBaselineOffset;
+    double  _pageDegreeFontSize;
+    double  _pageFontSize;
     NSString * _temperature;
     NSString * _temperatureHigh;
     UILabel * _temperatureHighLowLabel;
@@ -33,16 +33,16 @@
 @property (nonatomic, retain) UILabel *locationLabel;
 @property (nonatomic, copy) NSString *locationName;
 @property (nonatomic, retain) NSArray *masterConstraints;
-@property (nonatomic) float pageBaselineOffset;
-@property (nonatomic) float pageDegreeFontSize;
-@property (nonatomic) float pageFontSize;
+@property (nonatomic) double pageBaselineOffset;
+@property (nonatomic) double pageDegreeFontSize;
+@property (nonatomic) double pageFontSize;
 @property (nonatomic, copy) NSString *temperature;
 @property (nonatomic, copy) NSString *temperatureHigh;
 @property (nonatomic, retain) UILabel *temperatureHighLowLabel;
 @property (nonatomic, retain) UILabel *temperatureLabel;
 @property (nonatomic, copy) NSString *temperatureLow;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_setupConstraints;
@@ -59,9 +59,9 @@
 - (id)locationLabel;
 - (id)locationName;
 - (id)masterConstraints;
-- (float)pageBaselineOffset;
-- (float)pageDegreeFontSize;
-- (float)pageFontSize;
+- (double)pageBaselineOffset;
+- (double)pageDegreeFontSize;
+- (double)pageFontSize;
 - (void)setConditionsImage:(id)arg1;
 - (void)setConditionsImageView:(id)arg1;
 - (void)setConditionsLabel1:(id)arg1;
@@ -72,9 +72,9 @@
 - (void)setLocationLabel:(id)arg1;
 - (void)setLocationName:(id)arg1;
 - (void)setMasterConstraints:(id)arg1;
-- (void)setPageBaselineOffset:(float)arg1;
-- (void)setPageDegreeFontSize:(float)arg1;
-- (void)setPageFontSize:(float)arg1;
+- (void)setPageBaselineOffset:(double)arg1;
+- (void)setPageDegreeFontSize:(double)arg1;
+- (void)setPageFontSize:(double)arg1;
 - (void)setTemperature:(id)arg1;
 - (void)setTemperatureHigh:(id)arg1;
 - (void)setTemperatureHighLowLabel:(id)arg1;

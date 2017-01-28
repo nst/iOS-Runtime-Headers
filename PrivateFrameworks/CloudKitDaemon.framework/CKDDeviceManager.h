@@ -21,7 +21,7 @@
 - (id)_serviceForContext:(id)arg1;
 - (id)deviceIDs;
 - (id)deviceIdentifier;
-- (void)fetchDeviceIdentifierForContext:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)fetchDeviceIdentifierForContext:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)init;
 - (id)queue;
 - (void)setDeviceIDs:(id)arg1;

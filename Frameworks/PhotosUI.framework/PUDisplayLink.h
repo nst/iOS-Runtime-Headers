@@ -3,25 +3,25 @@
  */
 
 @interface PUDisplayLink : NSObject {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     CADisplayLink * _displayLink;
-    id /* block */  _updateHandler;
+    id  _updateHandler;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic, retain) CADisplayLink *displayLink;
-@property (nonatomic, copy) id /* block */ updateHandler;
+@property (nonatomic, copy) id updateHandler;
 
 - (void).cxx_destruct;
 - (void)_update:(id)arg1;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)displayLink;
-- (id)initWithUpdateHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (id)initWithUpdateHandler:(id)arg1 completionHandler:(id)arg2;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setDisplayLink:(id)arg1;
-- (void)setUpdateHandler:(id /* block */)arg1;
+- (void)setUpdateHandler:(id)arg1;
 - (void)start;
 - (void)stop;
-- (id /* block */)updateHandler;
+- (id)updateHandler;
 
 @end

@@ -6,8 +6,8 @@
 @required
 
 - (NSArray *)_activityItemValues;
-- (BOOL)_shouldExcludeActivityType:(UIActivity *)arg1;
-- (BOOL)_shouldShowSystemActivity:(NSString *)arg1;
-- (void)updateActivities:(NSArray *)arg1 animated:(BOOL)arg2;
+- (bool)_shouldExcludeActivityType:(UIActivity *)arg1;
+- (bool)_shouldShowSystemActivity:(NSString *)arg1;
+- (void)updateActivities:(NSArray *)arg1 animated:(bool)arg2;
 
 @end

@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic, retain) NSString *guid;
-@property (nonatomic, readonly) BOOL hasGuid;
-@property (nonatomic) BOOL hasSmsRoundTripDuration;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasGuid;
+@property (nonatomic) bool hasSmsRoundTripDuration;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int smsRoundTripDuration;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -25,16 +25,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)guid;
-- (BOOL)hasGuid;
-- (BOOL)hasSmsRoundTripDuration;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasGuid;
+- (bool)hasSmsRoundTripDuration;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setGuid:(id)arg1;
-- (void)setHasSmsRoundTripDuration:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasSmsRoundTripDuration:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSmsRoundTripDuration:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned int)smsRoundTripDuration;

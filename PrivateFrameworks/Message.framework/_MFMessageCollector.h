@@ -5,18 +5,18 @@
 @interface _MFMessageCollector : NSObject <MessageConsumer, QueryProgressMonitor> {
     NSMutableArray * _messages;
     MFActivityMonitor * _monitor;
-    id /* block */  _transmogrifier;
+    id  _transmogrifier;
 }
 
-@property (nonatomic, copy) id /* block */ transmogrifier;
+@property (nonatomic, copy) id transmogrifier;
 
 - (id)copyMessages;
 - (void)dealloc;
 - (id)init;
 - (id)messages;
 - (void)newMessagesAvailable:(id)arg1;
-- (void)setTransmogrifier:(id /* block */)arg1;
-- (BOOL)shouldCancel;
-- (id /* block */)transmogrifier;
+- (void)setTransmogrifier:(id)arg1;
+- (bool)shouldCancel;
+- (id)transmogrifier;
 
 @end

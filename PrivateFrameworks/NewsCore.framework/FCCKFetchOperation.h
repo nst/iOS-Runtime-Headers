@@ -5,8 +5,8 @@
 @interface FCCKFetchOperation : FCNetworkOperation {
     FCCKDatabase * _database;
     NSArray * _desiredKeys;
-    id /* block */  _fetchRecordsCompletionBlock;
-    id /* block */  _perRecordCompletionBlock;
+    id  _fetchRecordsCompletionBlock;
+    id  _perRecordCompletionBlock;
     NSArray * _recordIDs;
     NSDictionary * _recordIDsToETags;
     NSArray * _requestUUIDs;
@@ -15,8 +15,8 @@
 
 @property (nonatomic, retain) FCCKDatabase *database;
 @property (nonatomic, copy) NSArray *desiredKeys;
-@property (nonatomic, copy) id /* block */ fetchRecordsCompletionBlock;
-@property (nonatomic, copy) id /* block */ perRecordCompletionBlock;
+@property (nonatomic, copy) id fetchRecordsCompletionBlock;
+@property (nonatomic, copy) id perRecordCompletionBlock;
 @property (nonatomic, copy) NSArray *recordIDs;
 @property (nonatomic, retain) NSDictionary *recordIDsToETags;
 @property (nonatomic, copy) NSArray *requestUUIDs;
@@ -26,10 +26,10 @@
 - (id)_operationForRecordID:(id)arg1;
 - (id)database;
 - (id)desiredKeys;
-- (id /* block */)fetchRecordsCompletionBlock;
+- (id)fetchRecordsCompletionBlock;
 - (id)init;
 - (void)operationWillFinishWithError:(id)arg1;
-- (id /* block */)perRecordCompletionBlock;
+- (id)perRecordCompletionBlock;
 - (void)performOperation;
 - (id)recordIDs;
 - (id)recordIDsToETags;
@@ -37,13 +37,13 @@
 - (id)resultRecordsByRecordID;
 - (void)setDatabase:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setFetchRecordsCompletionBlock:(id /* block */)arg1;
-- (void)setPerRecordCompletionBlock:(id /* block */)arg1;
+- (void)setFetchRecordsCompletionBlock:(id)arg1;
+- (void)setPerRecordCompletionBlock:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordIDsToETags:(id)arg1;
 - (void)setRequestUUIDs:(id)arg1;
 - (void)setResultRecordsByRecordID:(id)arg1;
 - (id)throttleGroup;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

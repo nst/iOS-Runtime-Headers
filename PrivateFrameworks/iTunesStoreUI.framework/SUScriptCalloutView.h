@@ -3,7 +3,7 @@
  */
 
 @interface SUScriptCalloutView : SUScriptObject {
-    BOOL  _isVisible;
+    bool  _isVisible;
     NSString * _subtitle;
     NSString * _title;
 }
@@ -25,10 +25,10 @@
 - (id)init;
 - (id)scriptAttributeKeys;
 - (void)setSubtitle:(id)arg1;
-- (void)setTargetX:(float)arg1 y:(float)arg2 width:(float)arg3 height:(float)arg4;
+- (void)setTargetX:(double)arg1 y:(double)arg2 width:(double)arg3 height:(double)arg4;
 - (void)setTitle:(id)arg1;
 - (void)setTitle:(id)arg1 subtitle:(id)arg2;
-- (void)setVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setVisible:(bool)arg1 animated:(bool)arg2;
 - (id)subtitle;
 - (id)title;
 

@@ -5,17 +5,17 @@
 
 @required
 
-- (int)count;
-- (void)enumerateHeadersWithBlock:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, TSTTableHeaderInfo *, unsigned long, BOOL*, void*
-- (TSTTableHeaderInfo *)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2;
-- (TSTTableHeaderInfo *)headerForKey:(unsigned long)arg1 willModify:(BOOL)arg2 createIfNotThere:(BOOL)arg3;
-- (unsigned long)lowerBound:(unsigned long)arg1;
-- (unsigned long)maxKey;
-- (unsigned long)minKey;
+- (long long)count;
+- (void)enumerateHeadersWithBlock:(void *)arg1; // needs 1 arg types, found 8: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, TSTTableHeaderInfo *, unsigned int, bool*, void*
+- (TSTTableHeaderInfo *)headerForKey:(unsigned int)arg1 willModify:(bool)arg2;
+- (TSTTableHeaderInfo *)headerForKey:(unsigned int)arg1 willModify:(bool)arg2 createIfNotThere:(bool)arg3;
+- (unsigned int)lowerBound:(unsigned int)arg1;
+- (unsigned int)maxKey;
+- (unsigned int)minKey;
 - (void)removeAllHeaders;
-- (void)removeHeaderForKey:(unsigned long)arg1;
-- (void)setHeader:(TSTTableHeaderInfo *)arg1 forKey:(unsigned long)arg2;
-- (void)shiftKeysAtIndex:(unsigned long)arg1 amount:(long)arg2;
-- (unsigned long)upperBound:(unsigned long)arg1;
+- (void)removeHeaderForKey:(unsigned int)arg1;
+- (void)setHeader:(TSTTableHeaderInfo *)arg1 forKey:(unsigned int)arg2;
+- (void)shiftKeysAtIndex:(unsigned int)arg1 amount:(int)arg2;
+- (unsigned int)upperBound:(unsigned int)arg1;
 
 @end

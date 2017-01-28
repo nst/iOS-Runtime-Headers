@@ -4,14 +4,14 @@
 
 @interface SACalendarSource : SASource
 
-@property (nonatomic) BOOL strict;
+@property (nonatomic) bool strict;
 
 + (id)source;
 + (id)sourceWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (void)setStrict:(BOOL)arg1;
-- (BOOL)strict;
+- (void)setStrict:(bool)arg1;
+- (bool)strict;
 
 @end

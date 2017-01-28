@@ -24,8 +24,8 @@
 - (void)setIMessageRequests:(id)arg1;
 - (void)setRequestFutures:(id)arg1;
 - (void)setResourceLock:(id)arg1;
-- (void)startRequestForCacheMisses:(id)arg1 service:(int)arg2 scheduler:(id)arg3;
-- (id)validateHandles:(id)arg1 forService:(int)arg2 schedulerProvider:(id)arg3;
+- (void)startRequestForCacheMisses:(id)arg1 service:(long long)arg2 scheduler:(id)arg3;
+- (id)validateHandles:(id)arg1 forService:(long long)arg2 schedulerProvider:(id)arg3;
 - (id)validateHandlesForFaceTime:(id)arg1 schedulerProvider:(id)arg2;
 - (id)validateHandlesForIMessage:(id)arg1 schedulerProvider:(id)arg2;
 

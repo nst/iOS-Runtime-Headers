@@ -4,21 +4,21 @@
 
 @interface WBSSiteMetadataFetchOperation : NSOperation {
     WBSSiteMetadataRequest * _request;
-    int  _status;
+    long long  _status;
 }
 
 @property (nonatomic, readonly) WBSSiteMetadataRequest *request;
-@property (getter=_status, setter=_setStatus:, nonatomic) int status;
+@property (getter=_status, setter=_setStatus:, nonatomic) long long status;
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_setStatus:(int)arg1;
-- (int)_status;
+- (void)_setStatus:(long long)arg1;
+- (long long)_status;
 - (id)init;
 - (id)initWithRequest:(id)arg1;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (id)request;
 - (void)start;
 

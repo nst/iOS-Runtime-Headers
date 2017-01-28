@@ -3,13 +3,13 @@
  */
 
 @interface StockChartData : NSObject {
-    int  _chartInterval;
+    long long  _chartInterval;
     NSDictionary * _dataSeriesDict;
     double  _expirationTime;
-    BOOL  _hasVolume;
+    bool  _hasVolume;
     NSMutableDictionary * _imageSetCache;
     NSArray * _interestingIndexes;
-    BOOL  _isUnavailable;
+    bool  _isUnavailable;
     NSMutableDictionary * _labelPlacementCache;
     NSDate * _marketCloseDate;
     NSDate * _marketOpenDate;
@@ -25,12 +25,12 @@
     NSMutableDictionary * _yAxisLabelInfoCache;
 }
 
-@property (nonatomic) int chartInterval;
+@property (nonatomic) long long chartInterval;
 @property (nonatomic, retain) NSDictionary *dataSeriesDict;
 @property (nonatomic) double expirationTime;
-@property (nonatomic) BOOL hasVolume;
+@property (nonatomic) bool hasVolume;
 @property (nonatomic, retain) NSArray *interestingIndexes;
-@property (nonatomic) BOOL isUnavailable;
+@property (nonatomic) bool isUnavailable;
 @property (nonatomic, retain) NSDate *marketCloseDate;
 @property (nonatomic, retain) NSDate *marketOpenDate;
 @property (nonatomic, retain) NSTimeZone *marketTimeZone;
@@ -44,32 +44,32 @@
 
 - (void).cxx_destruct;
 - (struct { double x1; double x2; unsigned long long x3; }*)allocateStockValuesWithCount:(unsigned int)arg1;
-- (int)chartInterval;
+- (long long)chartInterval;
 - (void)clearAllImageSets;
 - (id)dataSeriesDict;
 - (void)dealloc;
 - (id)description;
 - (double)expirationTime;
-- (BOOL)hasVolume;
+- (bool)hasVolume;
 - (id)imageSetForDisplayMode:(id)arg1;
-- (id)initWithStock:(id)arg1 interval:(int)arg2;
+- (id)initWithStock:(id)arg1 interval:(long long)arg2;
 - (id)interestingIndexes;
-- (BOOL)isUnavailable;
-- (int)labelPlacementForDisplayMode:(id)arg1;
+- (bool)isUnavailable;
+- (long long)labelPlacementForDisplayMode:(id)arg1;
 - (id)marketCloseDate;
 - (id)marketOpenDate;
 - (id)marketTimeZone;
 - (struct { double x1; double x2; unsigned long long x3; }*)maxValue;
 - (struct { double x1; double x2; unsigned long long x3; }*)minValue;
 - (float)previousClosePrice;
-- (void)setChartInterval:(int)arg1;
+- (void)setChartInterval:(long long)arg1;
 - (void)setDataSeriesDict:(id)arg1;
 - (void)setExpirationTime:(double)arg1;
-- (void)setHasVolume:(BOOL)arg1;
+- (void)setHasVolume:(bool)arg1;
 - (void)setImageSet:(id)arg1 forDisplayMode:(id)arg2;
 - (void)setInterestingIndexes:(id)arg1;
-- (void)setIsUnavailable:(BOOL)arg1;
-- (void)setLabelPlacement:(int)arg1 forDisplayMode:(id)arg2;
+- (void)setIsUnavailable:(bool)arg1;
+- (void)setLabelPlacement:(long long)arg1 forDisplayMode:(id)arg2;
 - (void)setMarketCloseDate:(id)arg1;
 - (void)setMarketOpenDate:(id)arg1;
 - (void)setMarketTimeZone:(id)arg1;

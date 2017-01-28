@@ -16,7 +16,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)origin;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setDestination:(id)arg1;
 - (void)setDirectionsType:(id)arg1;
 - (void)setOrigin:(id)arg1;

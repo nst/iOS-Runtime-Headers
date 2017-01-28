@@ -9,14 +9,14 @@
     NSObject<OS_os_transaction> * _keepAliveUntilTrainingComplete;
     <_ATXLocationManagerWrapperProtocol> * _locationManager;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     id  _lockStateNotificationRegistrationToken;
     NSObject<OS_dispatch_queue> * _queue;
     id  _resetPrivacyWarningsNotificationToken;
     NSDictionary * _totalLaunchCountMap;
-    BOOL  _waitingLoad;
+    bool  _waitingLoad;
 }
 
 + (id)defaultPath;
@@ -32,17 +32,17 @@
 - (void)_registerForResetPrivacyWarningsNotification;
 - (int)_totalLaunchCountAtCurrentLOI;
 - (void)dealloc;
-- (void)finishTrainWithCallback:(id /* block */)arg1;
+- (void)finishTrainWithCallback:(id)arg1;
 - (id)init;
 - (id)initWithDuetHelper:(id)arg1 locationManager:(id)arg2 andLockState:(Class)arg3;
 - (int)launchCountAtCurrentLOIOfBundle:(id)arg1;
 - (double)launchProbabilityAtCurrentLOIForBundle:(id)arg1;
-- (unsigned int)loadModel;
+- (unsigned long long)loadModel;
 - (void)loadOrTrain;
 - (int)totalLaunchCountAtCurrentLOI;
 - (void)train;
-- (void)trainModelWithLocationsOfInterest:(id)arg1 withStartDate:(id)arg2 callback:(id /* block */)arg3;
-- (void)trainWithCallback:(id /* block */)arg1;
+- (void)trainModelWithLocationsOfInterest:(id)arg1 withStartDate:(id)arg2 callback:(id)arg3;
+- (void)trainWithCallback:(id)arg1;
 - (void)writeModel;
 
 @end

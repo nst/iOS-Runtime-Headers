@@ -24,7 +24,7 @@
 - (void)_beginMatchingExtensionsIfNecessary;
 - (id)_extensionsFromNSExtensions:(id)arg1;
 - (void)_extensionsUpdated;
-- (void)_nsExtensionForIdentifier:(id)arg1 containingAppBundleURL:(id)arg2 completion:(id /* block */)arg3;
+- (void)_nsExtensionForIdentifier:(id)arg1 containingAppBundleURL:(id)arg2 completion:(id)arg3;
 - (id)_prioritizedExtensionsFromUnprioritizedExtensions:(id)arg1 usingProrities:(id)arg2;
 - (void)beginMatchingExtensions;
 - (void)dealloc;
@@ -32,22 +32,22 @@
 - (id)delegateQueue;
 - (id)extensionMatchingContext;
 - (id)extensionWithIdentifier:(id)arg1;
-- (void)extensionWithIdentifier:(id)arg1 inContainingAppWithProcessIdentifier:(int)arg2 completion:(id /* block */)arg3;
+- (void)extensionWithIdentifier:(id)arg1 inContainingAppWithProcessIdentifier:(int)arg2 completion:(id)arg3;
 - (id)extensions;
-- (void)extensionsWithCompletionHandler:(id /* block */)arg1;
+- (void)extensionsWithCompletionHandler:(id)arg1;
 - (id)init;
-- (BOOL)isOnlyExtensionInContainingApp:(id)arg1;
+- (bool)isOnlyExtensionInContainingApp:(id)arg1;
 - (id)manager;
 - (id)nsExtensions;
-- (void)prioritizedExtensionsWithCompletionHandler:(id /* block */)arg1;
+- (void)prioritizedExtensionsWithCompletionHandler:(id)arg1;
 - (id)queue;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
-- (void)setEnabled:(BOOL)arg1 forExtension:(id)arg2 completion:(id /* block */)arg3;
+- (void)setEnabled:(bool)arg1 forExtension:(id)arg2 completion:(id)arg3;
 - (void)setExtensionMatchingContext:(id)arg1;
 - (void)setNSExtensions:(id)arg1;
-- (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)setPrioritizedExtensionIdentifiers:(id)arg1 completionHandler:(id)arg2;
 - (void)setQueue:(id)arg1;
 
 @end

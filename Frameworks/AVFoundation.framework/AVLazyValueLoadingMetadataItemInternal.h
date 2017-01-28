@@ -7,9 +7,9 @@
     NSObject<OS_dispatch_queue> * readWriteQueue;
     <NSObject><NSCopying> * value;
     NSError * valueLoadingError;
-    id /* block */  valueLoadingHandler;
+    id  valueLoadingHandler;
     AVMetadataItemValueRequest * valueRequest;
-    int  valueStatus;
+    long long  valueStatus;
 }
 
 @end

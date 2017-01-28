@@ -5,13 +5,13 @@
 
 @required
 
-- (unsigned int)dataGroup:(FUChartDataGroup *)arg1 numberOfPointsInSetAtIndex:(unsigned int)arg2;
-- (<FUChartPoint> *)dataGroup:(FUChartDataGroup *)arg1 pointForSetAtIndex:(unsigned int)arg2 pointIndex:(unsigned int)arg3;
-- (unsigned int)numberOfDataSetsInGroup:(FUChartDataGroup *)arg1;
+- (unsigned long long)dataGroup:(FUChartDataGroup *)arg1 numberOfPointsInSetAtIndex:(unsigned long long)arg2;
+- (<FUChartPoint> *)dataGroup:(FUChartDataGroup *)arg1 pointForSetAtIndex:(unsigned long long)arg2 pointIndex:(unsigned long long)arg3;
+- (unsigned long long)numberOfDataSetsInGroup:(FUChartDataGroup *)arg1;
 
 @optional
 
-- (NSArray *)dataGroup:(FUChartDataGroup *)arg1 dataPointsForSetAtIndex:(unsigned int)arg2;
-- (NSArray *)dataGroup:(FUChartDataGroup *)arg1 labelsForSetAtIndex:(unsigned int)arg2;
+- (NSArray *)dataGroup:(FUChartDataGroup *)arg1 dataPointsForSetAtIndex:(unsigned long long)arg2;
+- (NSArray *)dataGroup:(FUChartDataGroup *)arg1 labelsForSetAtIndex:(unsigned long long)arg2;
 
 @end

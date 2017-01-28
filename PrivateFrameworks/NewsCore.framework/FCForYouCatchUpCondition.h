@@ -3,21 +3,21 @@
  */
 
 @interface FCForYouCatchUpCondition : NSObject {
-    int  _contentTypes;
-    id /* block */  _testBlock;
+    long long  _contentTypes;
+    id  _testBlock;
 }
 
-@property (nonatomic) int contentTypes;
-@property (nonatomic, copy) id /* block */ testBlock;
+@property (nonatomic) long long contentTypes;
+@property (nonatomic, copy) id testBlock;
 
-+ (id)caughtUpWithContentTypes:(int)arg1;
-+ (id)caughtUpWithContentTypes:(int)arg1 orPassingTestBlock:(id /* block */)arg2;
++ (id)caughtUpWithContentTypes:(long long)arg1;
++ (id)caughtUpWithContentTypes:(long long)arg1 orPassingTestBlock:(id)arg2;
 
 - (void).cxx_destruct;
-- (int)contentTypes;
-- (BOOL)isSatisfiedWithCatchUpOperation:(id)arg1;
-- (void)setContentTypes:(int)arg1;
-- (void)setTestBlock:(id /* block */)arg1;
-- (id /* block */)testBlock;
+- (long long)contentTypes;
+- (bool)isSatisfiedWithCatchUpOperation:(id)arg1;
+- (void)setContentTypes:(long long)arg1;
+- (void)setTestBlock:(id)arg1;
+- (id)testBlock;
 
 @end

@@ -4,10 +4,10 @@
 
 @interface BRCUploadBatchOperation : BRCTransferBatchOperation {
     BRCClientZone * _clientZone;
-    id /* block */  _perUploadCompletionBlock;
+    id  _perUploadCompletionBlock;
 }
 
-@property (copy) id /* block */ perUploadCompletionBlock;
+@property (copy) id perUploadCompletionBlock;
 
 - (void).cxx_destruct;
 - (void)_uploadRecordsByID:(id)arg1;
@@ -17,8 +17,8 @@
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithSyncContext:(id)arg1 clientZone:(id)arg2;
 - (void)mainWithTransfers:(id)arg1;
-- (id /* block */)perUploadCompletionBlock;
+- (id)perUploadCompletionBlock;
 - (void)sendTransferCompletionCallBack:(id)arg1 error:(id)arg2;
-- (void)setPerUploadCompletionBlock:(id /* block */)arg1;
+- (void)setPerUploadCompletionBlock:(id)arg1;
 
 @end

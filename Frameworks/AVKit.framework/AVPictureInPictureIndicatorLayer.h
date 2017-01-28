@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithTraitCollection:(id)arg1 opaque:(BOOL)arg2;
+- (id)initWithTraitCollection:(id)arg1 opaque:(bool)arg2;
 - (void)layoutSublayers;
 
 @end

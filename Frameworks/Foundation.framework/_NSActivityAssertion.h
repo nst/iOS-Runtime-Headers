@@ -5,7 +5,7 @@
 @interface _NSActivityAssertion : NSObject {
     unsigned char  _adoptPreviousVoucher;
     long long  _ended;
-    id /* block */  _expirationHandler;
+    id  _expirationHandler;
     unsigned long long  _options;
     NSObject<OS_voucher> * _previousVoucher;
     BKSProcessAssertion * _processAssertion;
@@ -21,12 +21,12 @@
 + (id)_expiringActivities;
 + (id)_expiringAssertionManagementQueue;
 + (id)_expiringTaskExecutionQueue;
-+ (void)_performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id /* block */)arg3;
-+ (void)_performExpiringActivityWithReason:(id)arg1 usingBlock:(id /* block */)arg2;
++ (void)_performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(id)arg3;
++ (void)_performExpiringActivityWithReason:(id)arg1 usingBlock:(id)arg2;
 
 - (void)_end;
 - (void)_fireExpirationHandler;
-- (id)_initWithActivityOptions:(unsigned long long)arg1 reason:(id)arg2 expirationHandler:(id /* block */)arg3;
+- (id)_initWithActivityOptions:(unsigned long long)arg1 reason:(id)arg2 expirationHandler:(id)arg3;
 - (void)_reactivate;
 - (void)dealloc;
 - (id)debugDescription;

@@ -3,23 +3,23 @@
  */
 
 @interface SearchUIVibrantLabel : UILabel {
-    unsigned int  _style;
+    unsigned long long  _style;
 }
 
-@property unsigned int style;
+@property unsigned long long style;
 
-+ (id)condenseWhitespaceForText:(id)arg1 keepNewlinesAndTabs:(BOOL)arg2;
-+ (BOOL)richTextOverridesAsyncLoader:(id)arg1;
++ (id)condenseWhitespaceForText:(id)arg1 keepNewlinesAndTabs:(bool)arg2;
++ (bool)richTextOverridesAsyncLoader:(id)arg1;
 + (id)stripUnnecessaryCharactersInString:(id)arg1;
-+ (id)textColorForStyle:(unsigned int)arg1;
-+ (id)vibrantTextColorForStyle:(unsigned int)arg1;
++ (id)textColorForStyle:(unsigned long long)arg1;
++ (id)vibrantTextColorForStyle:(unsigned long long)arg1;
 
-- (id)attributedStringForRichText:(id)arg1 keepWhitespace:(BOOL)arg2;
-- (id)initWithStyle:(unsigned int)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (void)setVibrancyEnabled:(BOOL)arg1;
-- (unsigned int)style;
-- (void)updateWithRichText:(id)arg1 keepWhitespace:(BOOL)arg2;
+- (id)attributedStringForRichText:(id)arg1 keepWhitespace:(bool)arg2;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (void)setStyle:(unsigned long long)arg1;
+- (void)setVibrancyEnabled:(bool)arg1;
+- (unsigned long long)style;
+- (void)updateWithRichText:(id)arg1 keepWhitespace:(bool)arg2;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

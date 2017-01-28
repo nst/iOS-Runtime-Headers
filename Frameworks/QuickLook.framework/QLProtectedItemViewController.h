@@ -9,6 +9,6 @@
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id)arg2;
 
 @end

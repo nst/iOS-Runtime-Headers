@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSDictionary *metadata;
 @property (nonatomic, copy) NSArray *tableColumnAlignment;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -19,6 +19,6 @@
 - (void)setMetadata:(id)arg1;
 - (void)setTableColumnAlignment:(id)arg1;
 - (id)tableColumnAlignment;
-- (id)tableColumnAlignment:(unsigned int)arg1;
+- (id)tableColumnAlignment:(unsigned long long)arg1;
 
 @end

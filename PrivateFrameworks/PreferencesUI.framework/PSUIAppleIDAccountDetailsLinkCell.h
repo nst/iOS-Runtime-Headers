@@ -4,8 +4,8 @@
 
 @interface PSUIAppleIDAccountDetailsLinkCell : PSBadgedTableCell
 
-+ (int)cellStyle;
-+ (id)reuseIdentifierForClassAndType:(int)arg1;
++ (long long)cellStyle;
++ (id)reuseIdentifierForClassAndType:(long long)arg1;
 
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 

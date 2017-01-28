@@ -6,7 +6,7 @@
 
 + (id)sharedResource;
 
-- (void)addToken:(id)arg1 isForTemporaryRelinquish:(BOOL)arg2;
-- (void)removeToken:(id)arg1 isForTemporaryRelinquish:(BOOL)arg2;
+- (void)addToken:(id)arg1 isForTemporaryRelinquish:(bool)arg2;
+- (void)removeToken:(id)arg1 isForTemporaryRelinquish:(bool)arg2;
 
 @end

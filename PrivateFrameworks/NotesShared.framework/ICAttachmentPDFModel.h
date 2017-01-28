@@ -4,15 +4,15 @@
 
 @interface ICAttachmentPDFModel : ICAttachmentModel
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
-+ (int)populateSearchStrings:(id)arg1 url:(id)arg2 maxStringLength:(unsigned int)arg3 isCancelledBlock:(id /* block */)arg4;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
++ (int)populateSearchStrings:(id)arg1 url:(id)arg2 maxStringLength:(unsigned long long)arg3 isCancelledBlock:(id)arg4;
 
-- (BOOL)canMarkup;
+- (bool)canMarkup;
 - (void)generatePreviewsInOperation:(id)arg1;
 - (id)generateSearchIndexStringsOperation;
-- (id /* block */)genericBrickThumbnailCreator;
-- (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
+- (id)genericBrickThumbnailCreator;
+- (id)genericListThumbnailCreator;
+- (bool)hasPreviews;
 - (int)populateSearchStrings:(id)arg1;
 
 @end

@@ -3,11 +3,11 @@
  */
 
 @interface MPModelGenre : MPModelObject {
-    id /* block */  _artworkCatalogBlock;
+    id  _artworkCatalogBlock;
     NSString * _name;
 }
 
-@property (nonatomic, copy) id /* block */ artworkCatalogBlock;
+@property (nonatomic, copy) id artworkCatalogBlock;
 @property (nonatomic, copy) NSString *name;
 
 + (id)__MPModelPropertyGenreArtwork__PROPERTY;
@@ -17,10 +17,10 @@
 
 - (void).cxx_destruct;
 - (id)artworkCatalog;
-- (id /* block */)artworkCatalogBlock;
-- (id)descriptionWithType:(int)arg1;
+- (id)artworkCatalogBlock;
+- (id)descriptionWithType:(long long)arg1;
 - (id)name;
-- (void)setArtworkCatalogBlock:(id /* block */)arg1;
+- (void)setArtworkCatalogBlock:(id)arg1;
 - (void)setName:(id)arg1;
 
 @end

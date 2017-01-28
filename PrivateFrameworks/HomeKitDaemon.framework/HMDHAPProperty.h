@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) HAPMetadataProperty *hapPropertyMetadata;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

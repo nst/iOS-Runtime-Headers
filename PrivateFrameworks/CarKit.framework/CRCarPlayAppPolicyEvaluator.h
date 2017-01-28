@@ -5,23 +5,23 @@
 @interface CRCarPlayAppPolicyEvaluator : NSObject {
     NSSet * __simulatedAccessoryProtocols;
     CRCarPlayAppBlacklist * _blacklist;
-    BOOL  _geoSupported;
+    bool  _geoSupported;
 }
 
 @property (nonatomic, retain) NSSet *_simulatedAccessoryProtocols;
 @property (nonatomic, retain) CRCarPlayAppBlacklist *blacklist;
-@property (getter=isGeoSupported, nonatomic) BOOL geoSupported;
+@property (getter=isGeoSupported, nonatomic) bool geoSupported;
 
 - (void).cxx_destruct;
-- (BOOL)_connectedProtocolsIntersectsAppProtocols:(id)arg1;
-- (BOOL)_isValidMessagingApp:(id)arg1;
+- (bool)_connectedProtocolsIntersectsAppProtocols:(id)arg1;
+- (bool)_isValidMessagingApp:(id)arg1;
 - (id)_simulatedAccessoryProtocols;
 - (id)blacklist;
 - (id)effectivePolicyForAppDeclaration:(id)arg1;
 - (id)init;
-- (BOOL)isGeoSupported;
+- (bool)isGeoSupported;
 - (void)setBlacklist:(id)arg1;
-- (void)setGeoSupported:(BOOL)arg1;
+- (void)setGeoSupported:(bool)arg1;
 - (void)set_simulatedAccessoryProtocols:(id)arg1;
 
 @end

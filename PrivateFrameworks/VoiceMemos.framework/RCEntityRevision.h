@@ -6,13 +6,13 @@
 
 @property (nonatomic, readonly) long long recordingID;
 @property (nonatomic, readonly) long long revisionID;
-@property (nonatomic, readonly) int revisionType;
+@property (nonatomic, readonly) long long revisionType;
 
 - (long long)recordingID;
 - (long long)revisionID;
-- (int)revisionType;
+- (long long)revisionType;
 - (void)setRecordingID:(long long)arg1;
 - (void)setRevisionID:(long long)arg1;
-- (void)setRevisionType:(int)arg1;
+- (void)setRevisionType:(long long)arg1;
 
 @end

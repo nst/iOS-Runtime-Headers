@@ -26,7 +26,7 @@
 @property (nonatomic, readonly) NSString *pairingIdentifier;
 @property (nonatomic, readonly) NSNumber *pairingStatusFlag;
 @property (nonatomic, readonly) NSUUID *peripheralUUID;
-@property (nonatomic, readonly) NSNumber *stateNumber;
+@property (nonatomic, retain) NSNumber *stateNumber;
 
 - (void).cxx_destruct;
 - (id)accessoryName;
@@ -35,15 +35,17 @@
 - (id)compatibleVersion;
 - (id)configNumber;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)hkType;
 - (id)initWithName:(id)arg1 peripheralUUID:(id)arg2 hkType:(id)arg3 advInterval:(id)arg4 pairingStatusFlag:(id)arg5 pairingIdentifier:(id)arg6 category:(id)arg7 stateNumber:(id)arg8 configNumber:(id)arg9 hapBLECompatibleVersion:(id)arg10;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)lastSeen;
 - (id)pairingIdentifier;
 - (id)pairingStatusFlag;
 - (id)peripheralUUID;
 - (void)setLastSeen:(double)arg1;
+- (void)setStateNumber:(id)arg1;
 - (id)stateNumber;
+- (void)updateStateNumber:(id)arg1;
 
 @end

@@ -13,15 +13,15 @@
 
 - (void).cxx_destruct;
 - (int)_dayMask;
-- (void)_setCell:(id)arg1 selected:(BOOL)arg2;
-- (id)cellForRow:(int)arg1;
+- (void)_setCell:(id)arg1 selected:(bool)arg2;
+- (id)cellForRow:(long long)arg1;
 - (id)cells;
 - (id)daysOfTheWeek;
-- (int)frequency;
-- (float)heightForRow:(int)arg1;
+- (long long)frequency;
+- (double)heightForRow:(long long)arg1;
 - (id)initWithDate:(id)arg1;
-- (int)numberOfRows;
-- (void)rowTapped:(int)arg1;
+- (long long)numberOfRows;
+- (void)rowTapped:(long long)arg1;
 - (void)setCells:(id)arg1;
 - (void)setDaysOfTheWeek:(id)arg1;
 - (void)updateFromRecurrenceRule:(id)arg1;

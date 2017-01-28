@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSString *localizedName;
 @property (nonatomic, readonly) long long uniqueIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_station;
@@ -19,7 +19,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)localizedDescription;
 - (id)localizedName;
 - (long long)uniqueIdentifier;

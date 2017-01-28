@@ -3,16 +3,16 @@
  */
 
 @interface TTVectorTimestampElement : NSObject {
-    unsigned int  _clock;
-    unsigned int  _subclock;
+    unsigned long long  _clock;
+    unsigned long long  _subclock;
 }
 
-@property (nonatomic) unsigned int clock;
-@property (nonatomic) unsigned int subclock;
+@property (nonatomic) unsigned long long clock;
+@property (nonatomic) unsigned long long subclock;
 
-- (unsigned int)clock;
-- (void)setClock:(unsigned int)arg1;
-- (void)setSubclock:(unsigned int)arg1;
-- (unsigned int)subclock;
+- (unsigned long long)clock;
+- (void)setClock:(unsigned long long)arg1;
+- (void)setSubclock:(unsigned long long)arg1;
+- (unsigned long long)subclock;
 
 @end

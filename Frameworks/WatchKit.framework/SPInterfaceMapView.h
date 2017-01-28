@@ -5,7 +5,7 @@
 @interface SPInterfaceMapView : SPInterfaceObject
 
 - (void)setCurrentLocation;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setPlacemark:(id)arg1;
 
 @end

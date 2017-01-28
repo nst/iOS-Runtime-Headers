@@ -5,14 +5,14 @@
 @interface FUChartPointView : UIView {
     UIColor * _color;
     int  _pointStyle;
-    float  _radius;
+    double  _radius;
 }
 
 @property (nonatomic) UIColor *color;
 @property (nonatomic) int pointStyle;
-@property (nonatomic) float radius;
+@property (nonatomic) double radius;
 
-+ (id)pointWithColor:(id)arg1 radius:(float)arg2 style:(int)arg3;
++ (id)pointWithColor:(id)arg1 radius:(double)arg2 style:(int)arg3;
 
 - (void)_drawBullseyeCircleInContext:(struct CGContext { }*)arg1;
 - (void)_drawBullseyeSquareInContext:(struct CGContext { }*)arg1;
@@ -22,14 +22,14 @@
 - (void)_drawSolidCircleInContext:(struct CGContext { }*)arg1;
 - (void)_drawSolidSquareInContext:(struct CGContext { }*)arg1;
 - (id)color;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)init;
-- (id)initWithColor:(id)arg1 radius:(float)arg2 style:(int)arg3;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithColor:(id)arg1 radius:(double)arg2 style:(int)arg3;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)pointStyle;
-- (float)radius;
+- (double)radius;
 - (void)setColor:(id)arg1;
 - (void)setPointStyle:(int)arg1;
-- (void)setRadius:(float)arg1;
+- (void)setRadius:(double)arg1;
 
 @end

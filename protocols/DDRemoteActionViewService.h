@@ -5,7 +5,7 @@
 
 @required
 
-- (void)adaptForPresentationInPopover:(BOOL)arg1;
+- (void)adaptForPresentationInPopover:(bool)arg1;
 - (void)prepareForAction:(DDAction *)arg1;
 
 @end

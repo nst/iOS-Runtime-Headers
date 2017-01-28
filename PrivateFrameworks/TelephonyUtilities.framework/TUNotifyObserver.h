@@ -3,18 +3,18 @@
  */
 
 @interface TUNotifyObserver : NSObject <TUNotifyObserver> {
-    id /* block */  _callback;
+    id  _callback;
     NSString * _notificationName;
     NSObject<OS_dispatch_queue> * _queue;
     int  _token;
 }
 
-@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, copy) id callback;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *notificationName;
-@property (getter=isObserving, nonatomic, readonly) BOOL observing;
+@property (getter=isObserving, nonatomic, readonly) bool observing;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic) int token;
@@ -22,14 +22,14 @@
 - (void).cxx_destruct;
 - (void)_endObserving;
 - (void)beginObserving;
-- (id /* block */)callback;
+- (id)callback;
 - (void)dealloc;
 - (void)endObserving;
 - (id)initWithNotificationName:(id)arg1 queue:(id)arg2;
-- (BOOL)isObserving;
+- (bool)isObserving;
 - (id)notificationName;
 - (id)queue;
-- (void)setCallback:(id /* block */)arg1;
+- (void)setCallback:(id)arg1;
 - (void)setNotificationName:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setToken:(int)arg1;

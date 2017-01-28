@@ -4,32 +4,32 @@
 
 @interface _SFWebViewUsageMonitor : NSObject {
     NSString * _hostAppIdentifier;
-    BOOL  _urlHasIDFA;
-    BOOL  _urlHasQueryString;
-    BOOL  _userInteracted;
-    BOOL  _viewControllerViewIsHidden;
+    bool  _urlHasIDFA;
+    bool  _urlHasQueryString;
+    bool  _userInteracted;
+    bool  _viewControllerViewIsHidden;
 }
 
-@property (nonatomic, readonly) BOOL shouldAudit;
+@property (nonatomic, readonly) bool shouldAudit;
 @property (nonatomic, readonly) NSString *stringAsAuditKey;
-@property (nonatomic) BOOL urlHasIDFA;
-@property (nonatomic) BOOL urlHasQueryString;
-@property (nonatomic) BOOL userInteracted;
-@property (nonatomic) BOOL viewControllerViewIsHidden;
+@property (nonatomic) bool urlHasIDFA;
+@property (nonatomic) bool urlHasQueryString;
+@property (nonatomic) bool userInteracted;
+@property (nonatomic) bool viewControllerViewIsHidden;
 
 - (void).cxx_destruct;
 - (void)auditUsageIfNeeded;
 - (void)checkURL:(id)arg1;
 - (id)initWithHostAppIdentifier:(id)arg1;
-- (void)setUrlHasIDFA:(BOOL)arg1;
-- (void)setUrlHasQueryString:(BOOL)arg1;
-- (void)setUserInteracted:(BOOL)arg1;
-- (void)setViewControllerViewIsHidden:(BOOL)arg1;
-- (BOOL)shouldAudit;
+- (void)setUrlHasIDFA:(bool)arg1;
+- (void)setUrlHasQueryString:(bool)arg1;
+- (void)setUserInteracted:(bool)arg1;
+- (void)setViewControllerViewIsHidden:(bool)arg1;
+- (bool)shouldAudit;
 - (id)stringAsAuditKey;
-- (BOOL)urlHasIDFA;
-- (BOOL)urlHasQueryString;
-- (BOOL)userInteracted;
-- (BOOL)viewControllerViewIsHidden;
+- (bool)urlHasIDFA;
+- (bool)urlHasQueryString;
+- (bool)userInteracted;
+- (bool)viewControllerViewIsHidden;
 
 @end

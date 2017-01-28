@@ -10,8 +10,8 @@
 
 - (void).cxx_destruct;
 - (id)entryDate;
-- (id)entryForComplicationFamily:(int)arg1;
+- (id)entryForComplicationFamily:(long long)arg1;
 - (void)setEntryDate:(id)arg1;
-- (id)templateForComplicationFamily:(int)arg1;
+- (id)templateForComplicationFamily:(long long)arg1;
 
 @end

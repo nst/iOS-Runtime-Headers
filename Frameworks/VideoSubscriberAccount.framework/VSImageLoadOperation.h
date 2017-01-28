@@ -5,23 +5,23 @@
 @interface VSImageLoadOperation : VSAsyncOperation {
     NSItemProvider * _itemProvider;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _preferredImageSize;
     VSFailable * _result;
 }
 
 @property (nonatomic, readonly) NSItemProvider *itemProvider;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredImageSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } preferredImageSize;
 @property (nonatomic, retain) VSFailable *result;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)init;
-- (id)initWithItemProvider:(id)arg1 preferredImageSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithItemProvider:(id)arg1 preferredImageSize:(struct CGSize { double x1; double x2; })arg2;
 - (id)itemProvider;
-- (struct CGSize { float x1; float x2; })preferredImageSize;
+- (struct CGSize { double x1; double x2; })preferredImageSize;
 - (id)result;
 - (void)setResult:(id)arg1;
 

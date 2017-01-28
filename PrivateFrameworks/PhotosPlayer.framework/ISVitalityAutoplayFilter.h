@@ -3,14 +3,14 @@
  */
 
 @interface ISVitalityAutoplayFilter : ISVitalityFilter {
-    int  __state;
+    long long  __state;
 }
 
-@property (setter=_setState:, nonatomic) int _state;
+@property (setter=_setState:, nonatomic) long long _state;
 
-- (void)_setState:(int)arg1;
+- (void)_setState:(long long)arg1;
 - (void)_startAutoplay;
-- (int)_state;
+- (long long)_state;
 - (void)inputDidChange;
 
 @end

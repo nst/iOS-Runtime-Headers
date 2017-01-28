@@ -11,13 +11,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <_GEONetworkDefaultsServerProxyDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)updateNetworkDefaults:(id /* block */)arg1;
+- (void)updateNetworkDefaults:(id)arg1;
 
 @end

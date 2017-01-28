@@ -6,25 +6,25 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int fail;
+@property (nonatomic) long long fail;
 @property (nonatomic, copy) NSArray *failedObjectIds;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *name;
 @property (readonly) Class superclass;
-@property (nonatomic) int total;
+@property (nonatomic) long long total;
 
 + (id)verificationResult;
 + (id)verificationResultWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
-- (int)fail;
+- (long long)fail;
 - (id)failedObjectIds;
 - (id)groupIdentifier;
 - (id)name;
-- (void)setFail:(int)arg1;
+- (void)setFail:(long long)arg1;
 - (void)setFailedObjectIds:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setTotal:(int)arg1;
-- (int)total;
+- (void)setTotal:(long long)arg1;
+- (long long)total;
 
 @end

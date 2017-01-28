@@ -9,7 +9,7 @@
 @property (nonatomic) <HMUserManagementRemoteHost> *delegate;
 
 + (id)exportedInterface;
-+ (id)requestViewControllerWithConnectionHandler:(id /* block */)arg1;
++ (id)requestViewControllerWithConnectionHandler:(id)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;

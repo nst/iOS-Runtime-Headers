@@ -13,9 +13,9 @@
 - (id)init;
 - (id)scene;
 - (void)setScene:(id)arg1;
-- (BOOL)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (BOOL)touchesCancelled:(id)arg1 withEvent:(id)arg2;
-- (BOOL)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (BOOL)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (bool)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (bool)touchesCancelled:(id)arg1 withEvent:(id)arg2;
+- (bool)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (bool)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

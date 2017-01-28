@@ -15,7 +15,7 @@
 - (id)initWithRequest:(struct __CFHTTPMessage { }*)arg1;
 - (id)requestMethod;
 - (id)requestURL;
-- (BOOL)responseCanUseGZip;
+- (bool)responseCanUseGZip;
 - (id)responseWithStatus:(int)arg1;
 - (void)setRequestMethod:(id)arg1;
 - (void)setRequestURL:(id)arg1;

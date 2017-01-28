@@ -10,12 +10,12 @@
 
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)haveConsistentStateForBaselineRoll;
+- (bool)haveConsistentStateForBaselineRoll;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)main;
 - (id)retainedDelegate;
-- (BOOL)rollBaselineWithError:(id*)arg1;
+- (bool)rollBaselineWithError:(id*)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

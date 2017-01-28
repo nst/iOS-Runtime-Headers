@@ -14,12 +14,12 @@
 - (void).cxx_destruct;
 - (void)_loadFromDisk;
 - (void)_saveToDisk;
-- (void)cachePredictions:(id)arg1 consumer:(unsigned int)arg2;
-- (void)clearCacheForCategory:(unsigned int)arg1 consumer:(unsigned int)arg2;
+- (void)cachePredictions:(id)arg1 consumer:(unsigned long long)arg2;
+- (void)clearCacheForCategory:(unsigned long long)arg1 consumer:(unsigned long long)arg2;
 - (id)description;
 - (id)init;
 - (id)initWithRestorationPath:(id)arg1;
-- (BOOL)isDiskBacked;
-- (id)predictionsForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2;
+- (bool)isDiskBacked;
+- (id)predictionsForCategories:(unsigned long long)arg1 consumer:(unsigned long long)arg2;
 
 @end

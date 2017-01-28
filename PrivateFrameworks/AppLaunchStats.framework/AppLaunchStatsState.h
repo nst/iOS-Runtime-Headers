@@ -9,11 +9,11 @@
     APLSBinnedGlanceHistory * _binnedLaunches;
     float  _dataCellMultiplier;
     float  _dataWifiMultiplier;
-    BOOL  _enableBlackListCheck;
-    BOOL  _enableBudgetCheck;
-    BOOL  _enableForeGroundAppCheck;
-    BOOL  _enableLiveListCheck;
-    BOOL  _enableOpportunisticFetchCheck;
+    bool  _enableBlackListCheck;
+    bool  _enableBudgetCheck;
+    bool  _enableForeGroundAppCheck;
+    bool  _enableLiveListCheck;
+    bool  _enableOpportunisticFetchCheck;
     float  _globalFetchPWPC;
     long long  _globalMinSlotData;
     float  _globalNonactivePWPC;
@@ -23,9 +23,9 @@
     unsigned long long  appForecastQuality;
     NSMutableDictionary * appsAliveInLSTDict;
     NSMutableArray * cacheAppsforFullDebug;
-    BOOL  cellHot;
-    int  cellQuality;
-    id /* block */  clientCallBack;
+    bool  cellHot;
+    long long  cellQuality;
+    id  clientCallBack;
     NSMutableArray * dailyAppForecastSlots;
     NSMutableArray * dailyLaunchArrays;
     NSMutableArray * dataForecastArray;
@@ -57,8 +57,8 @@
     NSObject<OS_dispatch_queue> * stateQueue;
     int  thermalStatusToken;
     NSMutableArray * weeklyLaunchArrays;
-    BOOL  wifiHot;
-    int  wifiQuality;
+    bool  wifiHot;
+    long long  wifiQuality;
 }
 
 @property (nonatomic, readonly) long long BGDataBudgetCap;
@@ -69,8 +69,8 @@
 @property (retain) NSMutableDictionary *appsAliveInLSTDict;
 @property (nonatomic, retain) APLSBinnedGlanceHistory *binnedLaunches;
 @property (nonatomic, readonly) NSMutableArray *cacheAppsforFullDebug;
-@property BOOL cellHot;
-@property int cellQuality;
+@property bool cellHot;
+@property long long cellQuality;
 @property (nonatomic, retain) NSMutableArray *dailyAppForecastSlots;
 @property (nonatomic, retain) NSMutableArray *dailyLaunchArrays;
 @property (nonatomic, readonly) float dataCellMultiplier;
@@ -80,11 +80,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property bool doUniformBudget;
-@property (nonatomic) BOOL enableBlackListCheck;
-@property (nonatomic, readonly) BOOL enableBudgetCheck;
-@property (nonatomic, readonly) BOOL enableForeGroundAppCheck;
-@property (nonatomic) BOOL enableLiveListCheck;
-@property (nonatomic, readonly) BOOL enableOpportunisticFetchCheck;
+@property (nonatomic) bool enableBlackListCheck;
+@property (nonatomic, readonly) bool enableBudgetCheck;
+@property (nonatomic, readonly) bool enableForeGroundAppCheck;
+@property (nonatomic) bool enableLiveListCheck;
+@property (nonatomic, readonly) bool enableOpportunisticFetchCheck;
 @property long long endofdayBGDataBudget;
 @property long long endofdayDataBudget;
 @property long long endofdayNDISCDataBudget;
@@ -97,7 +97,7 @@
 @property (nonatomic, readonly) float globalNonactivePWPC;
 @property (nonatomic, readonly) float globalPushPWPC;
 @property (nonatomic, readonly) long long globalTimeThreshold;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property bool isBatteryChargerConnected;
 @property bool isDataResourceAvailable;
 @property bool isDeviceInCall;
@@ -109,8 +109,8 @@
 @property (nonatomic, retain) NSMutableArray *recentLaunchArrays;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *weeklyLaunchArrays;
-@property BOOL wifiHot;
-@property int wifiQuality;
+@property bool wifiHot;
+@property long long wifiQuality;
 
 - (void).cxx_destruct;
 - (long long)BGDataBudgetCap;
@@ -118,7 +118,7 @@
 - (long long)BGMinSlotData;
 - (void)addPredictedSlotsToDailyAppForecastQueue:(id)arg1;
 - (void)addPredictedSlotsToDailyOutOfBandQueue:(id)arg1;
-- (int)addToOutOfBandAppList:(int)arg1 withCacheDict:(id)arg2 withAppList:(id)arg3;
+- (int)addToOutOfBandAppList:(long long)arg1 withCacheDict:(id)arg2 withAppList:(id)arg3;
 - (void)aggregateAllLaunchTypes;
 - (id)appForecastArray;
 - (unsigned long long)appForecastQuality;
@@ -127,8 +127,8 @@
 - (id)cacheAppsforFullDebug;
 - (long long)calculateDailyDataBudgetFor:(const char *)arg1;
 - (long long)calculateSlotMinDataBudget:(const char *)arg1;
-- (BOOL)cellHot;
-- (int)cellQuality;
+- (bool)cellHot;
+- (long long)cellQuality;
 - (void)combineGlanceLaunchProbabilities:(id)arg1 withAppLaunches:(id)arg2;
 - (void)convertPCdistributionToInt:(id)arg1 fetchOver:(float)arg2 array:(id)arg3 dailyInt:(int)arg4;
 - (id)dailyAppForecastSlots;
@@ -140,18 +140,18 @@
 - (void)dealloc;
 - (id)deniedReasonForPush;
 - (bool)doUniformBudget;
-- (BOOL)enableBlackListCheck;
-- (BOOL)enableBudgetCheck;
-- (BOOL)enableForeGroundAppCheck;
-- (BOOL)enableLiveListCheck;
-- (BOOL)enableOpportunisticFetchCheck;
+- (bool)enableBlackListCheck;
+- (bool)enableBudgetCheck;
+- (bool)enableForeGroundAppCheck;
+- (bool)enableLiveListCheck;
+- (bool)enableOpportunisticFetchCheck;
 - (long long)endofdayBGDataBudget;
 - (long long)endofdayDataBudget;
 - (long long)endofdayNDISCDataBudget;
 - (id)fireDates;
 - (id)firstWakeupDate;
 - (bool)getAppsAliveInLSTList:(id)arg1;
-- (BOOL)getInCallStatus;
+- (bool)getInCallStatus;
 - (id)getOutOfBandAppList;
 - (id)glancesLaunchedBetween:(id)arg1 and:(id)arg2;
 - (long long)globalDataBudgetCap;
@@ -161,7 +161,7 @@
 - (float)globalNonactivePWPC;
 - (float)globalPushPWPC;
 - (long long)globalTimeThreshold;
-- (BOOL)hasResourcesAvailable:(BOOL)arg1 forTriggerType:(int)arg2;
+- (bool)hasResourcesAvailable:(bool)arg1 forTriggerType:(int)arg2;
 - (bool)inMemoryPressure;
 - (id)init;
 - (bool)isBatteryChargerConnected;
@@ -186,16 +186,16 @@
 - (void)setAppForecastQuality:(unsigned long long)arg1;
 - (void)setAppsAliveInLSTDict:(id)arg1;
 - (void)setBinnedLaunches:(id)arg1;
-- (void)setCellHot:(BOOL)arg1;
-- (void)setCellQuality:(int)arg1;
-- (void)setClientblock:(id /* block */)arg1;
+- (void)setCellHot:(bool)arg1;
+- (void)setCellQuality:(long long)arg1;
+- (void)setClientblock:(id)arg1;
 - (void)setDailyAppForecastSlots:(id)arg1;
 - (void)setDailyLaunchArrays:(id)arg1;
 - (void)setDataForecastArray:(id)arg1;
 - (void)setDataForecastQuality:(unsigned long long)arg1;
 - (void)setDoUniformBudget:(bool)arg1;
-- (void)setEnableBlackListCheck:(BOOL)arg1;
-- (void)setEnableLiveListCheck:(BOOL)arg1;
+- (void)setEnableBlackListCheck:(bool)arg1;
+- (void)setEnableLiveListCheck:(bool)arg1;
 - (void)setEndofdayBGDataBudget:(long long)arg1;
 - (void)setEndofdayDataBudget:(long long)arg1;
 - (void)setEndofdayNDISCDataBudget:(long long)arg1;
@@ -211,12 +211,12 @@
 - (void)setPowerPushForecastArray:(id)arg1;
 - (void)setRecentLaunchArrays:(id)arg1;
 - (void)setWeeklyLaunchArrays:(id)arg1;
-- (void)setWifiHot:(BOOL)arg1;
-- (void)setWifiQuality:(int)arg1;
+- (void)setWifiHot:(bool)arg1;
+- (void)setWifiQuality:(long long)arg1;
 - (void)updateAppsAliveInLSTList:(id)arg1;
 - (void)updateHistoricalGlanceData;
 - (id)weeklyLaunchArrays;
-- (BOOL)wifiHot;
-- (int)wifiQuality;
+- (bool)wifiHot;
+- (long long)wifiQuality;
 
 @end

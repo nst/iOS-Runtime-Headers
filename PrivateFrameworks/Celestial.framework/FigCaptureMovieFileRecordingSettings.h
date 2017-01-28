@@ -5,7 +5,7 @@
 @interface FigCaptureMovieFileRecordingSettings : FigCaptureRecordingSettings {
     NSDictionary * _audioSettings;
     int  _bravoCameraSelectionBehavior;
-    BOOL  _irisRecording;
+    bool  _irisRecording;
     struct { 
         long long value; 
         int timescale; 
@@ -13,25 +13,25 @@
         long long epoch; 
     }  _movieFragmentInterval;
     NSArray * _movieLevelMetadata;
-    BOOL  _recordVideoOrientationAndMirroringChanges;
-    BOOL  _sendPreviewIOSurface;
-    BOOL  _videoMirrored;
+    bool  _recordVideoOrientationAndMirroringChanges;
+    bool  _sendPreviewIOSurface;
+    bool  _videoMirrored;
     int  _videoOrientation;
     NSDictionary * _videoSettings;
 }
 
 @property (nonatomic, copy) NSDictionary *audioSettings;
 @property (nonatomic) int bravoCameraSelectionBehavior;
-@property (getter=isIrisRecording, nonatomic) BOOL irisRecording;
+@property (getter=isIrisRecording, nonatomic) bool irisRecording;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property (nonatomic, copy) NSArray *movieLevelMetadata;
-@property (nonatomic) BOOL recordVideoOrientationAndMirroringChanges;
-@property (nonatomic) BOOL sendPreviewIOSurface;
-@property (nonatomic) BOOL videoMirrored;
+@property (nonatomic) bool recordVideoOrientationAndMirroringChanges;
+@property (nonatomic) bool sendPreviewIOSurface;
+@property (nonatomic) bool videoMirrored;
 @property (nonatomic) int videoOrientation;
 @property (nonatomic, copy) NSDictionary *videoSettings;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)audioSettings;
 - (int)bravoCameraSelectionBehavior;
@@ -41,22 +41,22 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isIrisRecording;
+- (bool)isIrisRecording;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (id)movieLevelMetadata;
-- (BOOL)recordVideoOrientationAndMirroringChanges;
-- (BOOL)sendPreviewIOSurface;
+- (bool)recordVideoOrientationAndMirroringChanges;
+- (bool)sendPreviewIOSurface;
 - (void)setAudioSettings:(id)arg1;
 - (void)setBravoCameraSelectionBehavior:(int)arg1;
-- (void)setIrisRecording:(BOOL)arg1;
+- (void)setIrisRecording:(bool)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieLevelMetadata:(id)arg1;
-- (void)setRecordVideoOrientationAndMirroringChanges:(BOOL)arg1;
-- (void)setSendPreviewIOSurface:(BOOL)arg1;
-- (void)setVideoMirrored:(BOOL)arg1;
+- (void)setRecordVideoOrientationAndMirroringChanges:(bool)arg1;
+- (void)setSendPreviewIOSurface:(bool)arg1;
+- (void)setVideoMirrored:(bool)arg1;
 - (void)setVideoOrientation:(int)arg1;
 - (void)setVideoSettings:(id)arg1;
-- (BOOL)videoMirrored;
+- (bool)videoMirrored;
 - (int)videoOrientation;
 - (id)videoSettings;
 

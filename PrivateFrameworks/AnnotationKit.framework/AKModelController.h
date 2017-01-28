@@ -14,15 +14,15 @@
 - (void)deleteAllSelectedAnnotations;
 - (void)deselectAllAnnotations;
 - (id)init;
-- (void)insertObject:(id)arg1 inPageModelControllersAtIndex:(unsigned int)arg2;
+- (void)insertObject:(id)arg1 inPageModelControllersAtIndex:(unsigned long long)arg2;
 - (void)insertPageModelControllers:(id)arg1 atIndexes:(id)arg2;
 - (id)pageModelControllerForAnnotation:(id)arg1;
-- (id)pageModelControllerForPage:(unsigned int)arg1;
+- (id)pageModelControllerForPage:(unsigned long long)arg1;
 - (id)pageModelControllers;
 - (void)populateFromArchivedPageModelControllers:(id)arg1;
-- (void)removeObjectFromPageModelControllersAtIndex:(unsigned int)arg1;
+- (void)removeObjectFromPageModelControllersAtIndex:(unsigned long long)arg1;
 - (void)removePageModelControllersAtIndexes:(id)arg1;
-- (void)replaceObjectInPageModelControllersAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)replaceObjectInPageModelControllersAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)replacePageModelControllersAtIndexes:(id)arg1 withPageModelControllers:(id)arg2;
 
 @end

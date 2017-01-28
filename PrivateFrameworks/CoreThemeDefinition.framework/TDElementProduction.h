@@ -9,7 +9,7 @@
 @property (nonatomic, retain) NSString *comment;
 @property (nonatomic, retain) NSDate *dateOfLastChange;
 @property (nonatomic, retain) NSNumber *isExcludedFromFilter;
-@property (nonatomic) BOOL makeOpaqueIfPossible;
+@property (nonatomic) bool makeOpaqueIfPossible;
 @property (nonatomic, retain) TDNamedElement *name;
 @property (nonatomic, retain) TDSchemaPartDefinition *partDefinition;
 @property (nonatomic, retain) TDThemeConstant *renditionSubtype;
@@ -21,7 +21,7 @@
 
 - (id)associatedFileModificationDateWithDocument:(id)arg1;
 - (id)associatedFileURLWithDocument:(id)arg1;
-- (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;
+- (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(bool)arg2;
 - (id)relativePath;
 
 @end

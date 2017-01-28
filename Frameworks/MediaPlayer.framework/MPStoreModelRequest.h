@@ -3,7 +3,7 @@
  */
 
 @interface MPStoreModelRequest : MPModelRequest {
-    BOOL  _didSetTimeoutInterval;
+    bool  _didSetTimeoutInterval;
     double  _timeoutInterval;
     MPStoreUserEnvironment * _userEnvironment;
 }

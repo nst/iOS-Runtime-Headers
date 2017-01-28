@@ -5,7 +5,7 @@
 @interface VMVoicemailSanitizeTranscriptionDatabaseOperation : NSOperation
 
 - (void)cancel;
-- (BOOL)isAsynchronous;
+- (bool)isAsynchronous;
 - (void)main;
 
 @end

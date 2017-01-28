@@ -3,20 +3,20 @@
  */
 
 @interface HFTriggerItemProvider : HFItemProvider {
-    id /* block */  _filter;
+    id  _filter;
     NSMutableSet * _triggerItems;
 }
 
-@property (nonatomic, copy) id /* block */ filter;
+@property (nonatomic, copy) id filter;
 @property (nonatomic, retain) NSMutableSet *triggerItems;
 
 - (void).cxx_destruct;
-- (id /* block */)filter;
+- (id)filter;
 - (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;
-- (void)setFilter:(id /* block */)arg1;
+- (void)setFilter:(id)arg1;
 - (void)setTriggerItems:(id)arg1;
 - (id)triggerItems;
 

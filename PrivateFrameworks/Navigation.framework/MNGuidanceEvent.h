@@ -7,21 +7,21 @@
     NSString * _cachedSecondaryDescription;
     double  _distanceToStartOfManeuver;
     NSDictionary * _eventData;
-    unsigned int  _eventType;
+    unsigned long long  _eventType;
     MNLocation * _location;
-    unsigned int  _stage;
-    unsigned int  _stepIndex;
+    unsigned long long  _stage;
+    unsigned long long  _stepIndex;
     double  _timeSinceStartOfRoute;
 }
 
 @property (nonatomic, readonly) double distanceToStartOfManeuver;
 @property (nonatomic, retain) NSDictionary *eventData;
-@property (nonatomic) unsigned int eventType;
+@property (nonatomic) unsigned long long eventType;
 @property (nonatomic, readonly) MNLocation *location;
 @property (nonatomic, readonly) NSString *primaryDescription;
 @property (nonatomic, readonly) NSString *secondaryDescription;
-@property (nonatomic, readonly) unsigned int stage;
-@property (nonatomic, readonly) unsigned int stepIndex;
+@property (nonatomic, readonly) unsigned long long stage;
+@property (nonatomic, readonly) unsigned long long stepIndex;
 @property (nonatomic, readonly) double timeSinceStartOfRoute;
 
 - (void).cxx_destruct;
@@ -29,15 +29,15 @@
 - (id)description;
 - (double)distanceToStartOfManeuver;
 - (id)eventData;
-- (unsigned int)eventType;
-- (id)initWithTime:(double)arg1 stepIndex:(unsigned int)arg2 stage:(unsigned int)arg3 distance:(double)arg4 location:(id)arg5 eventType:(unsigned int)arg6 eventData:(id)arg7;
+- (unsigned long long)eventType;
+- (id)initWithTime:(double)arg1 stepIndex:(unsigned long long)arg2 stage:(unsigned long long)arg3 distance:(double)arg4 location:(id)arg5 eventType:(unsigned long long)arg6 eventData:(id)arg7;
 - (id)location;
 - (id)primaryDescription;
 - (id)secondaryDescription;
 - (void)setEventData:(id)arg1;
-- (void)setEventType:(unsigned int)arg1;
-- (unsigned int)stage;
-- (unsigned int)stepIndex;
+- (void)setEventType:(unsigned long long)arg1;
+- (unsigned long long)stage;
+- (unsigned long long)stepIndex;
 - (id)stringByInstructions:(id)arg1;
 - (double)timeSinceStartOfRoute;
 

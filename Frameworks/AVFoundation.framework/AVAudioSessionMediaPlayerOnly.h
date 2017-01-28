@@ -6,13 +6,13 @@
     AVAudioSessionMediaPlayerOnlyInternal * _audioSession;
 }
 
-@property (readonly) BOOL canEnterPIPMode;
+@property (readonly) bool canEnterPIPMode;
 @property (readonly) NSString *category;
-@property (readonly) int currentHardwareInputNumberOfChannels;
-@property (readonly) int currentHardwareOutputNumberOfChannels;
+@property (readonly) long long currentHardwareInputNumberOfChannels;
+@property (readonly) long long currentHardwareOutputNumberOfChannels;
 @property (readonly) double currentHardwareSampleRate;
 @property <AVAudioSessionDelegateMediaPlayerOnly> *delegate;
-@property (readonly) BOOL inputIsAvailable;
+@property (readonly) bool inputIsAvailable;
 @property (readonly) NSString *mode;
 @property (readonly) double preferredHardwareSampleRate;
 @property (readonly) double preferredIOBufferDuration;
@@ -23,28 +23,28 @@
 - (void)_attachToPlayer:(id)arg1;
 - (void)_removeFPListeners;
 - (id)_weakReference;
-- (BOOL)canEnterPIPMode;
+- (bool)canEnterPIPMode;
 - (id)category;
-- (int)currentHardwareInputNumberOfChannels;
-- (int)currentHardwareOutputNumberOfChannels;
+- (long long)currentHardwareInputNumberOfChannels;
+- (long long)currentHardwareOutputNumberOfChannels;
 - (double)currentHardwareSampleRate;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (BOOL)inputIsAvailable;
-- (BOOL)isApplicationAudioSession;
+- (bool)inputIsAvailable;
+- (bool)isApplicationAudioSession;
 - (id)mode;
 - (double)preferredHardwareSampleRate;
 - (double)preferredIOBufferDuration;
-- (BOOL)setActivationContext:(id)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
-- (void)setApplicationAudioSession:(BOOL)arg1;
-- (BOOL)setCategory:(id)arg1 error:(id*)arg2;
+- (bool)setActivationContext:(id)arg1 error:(id*)arg2;
+- (bool)setActive:(bool)arg1 error:(id*)arg2;
+- (bool)setActive:(bool)arg1 withFlags:(long long)arg2 error:(id*)arg3;
+- (void)setApplicationAudioSession:(bool)arg1;
+- (bool)setCategory:(id)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
-- (BOOL)setMode:(id)arg1 error:(id*)arg2;
-- (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
-- (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
-- (BOOL)setUsingLongFormAudio:(BOOL)arg1 error:(id*)arg2;
+- (bool)setMode:(id)arg1 error:(id*)arg2;
+- (bool)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
+- (bool)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
+- (bool)setUsingLongFormAudio:(bool)arg1 error:(id*)arg2;
 
 @end

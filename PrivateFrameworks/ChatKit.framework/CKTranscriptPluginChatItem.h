@@ -5,8 +5,8 @@
 @interface CKTranscriptPluginChatItem : CKMessagePartChatItem {
     <CKTranscriptBalloonPluginController> * _balloonController;
     IMTranscriptPluginChatItem * _imTranscriptPluginChatItem;
-    BOOL  _isAppearing;
-    BOOL  _isHandwriting;
+    bool  _isAppearing;
+    bool  _isHandwriting;
 }
 
 @property (nonatomic, readonly) IMTranscriptPluginChatItem *IMChatItem;
@@ -14,37 +14,37 @@
 @property (nonatomic, readonly) UIViewController *contentViewController;
 @property (nonatomic, readonly) UIView<CKTranscriptPluginView> *extensableView;
 @property (nonatomic, retain) IMTranscriptPluginChatItem *imTranscriptPluginChatItem;
-@property (nonatomic) BOOL isAppearing;
-@property (nonatomic, readonly) BOOL isHandwriting;
-@property (nonatomic, readonly) BOOL isInteractive;
-@property (nonatomic, readonly) BOOL isPlayed;
-@property (nonatomic, readonly) BOOL isSaved;
-@property (nonatomic, readonly) BOOL wantsBalloonGradient;
-@property (nonatomic, readonly) BOOL wantsOutline;
-@property (nonatomic, readonly) BOOL wantsTranscriptGroupMonograms;
+@property (nonatomic) bool isAppearing;
+@property (nonatomic, readonly) bool isHandwriting;
+@property (nonatomic, readonly) bool isInteractive;
+@property (nonatomic, readonly) bool isPlayed;
+@property (nonatomic, readonly) bool isSaved;
+@property (nonatomic, readonly) bool wantsBalloonGradient;
+@property (nonatomic, readonly) bool wantsOutline;
+@property (nonatomic, readonly) bool wantsTranscriptGroupMonograms;
 
 - (void).cxx_destruct;
 - (id)balloonController;
 - (Class)balloonViewClass;
-- (BOOL)canCopy;
-- (BOOL)canForward;
+- (bool)canCopy;
+- (bool)canForward;
 - (Class)cellClass;
 - (id)cellIdentifier;
 - (id)composition;
 - (id)contact;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
 - (id)contentViewController;
 - (id)extensableView;
-- (BOOL)handlePresentationAction;
-- (BOOL)hasTail;
+- (bool)handlePresentationAction;
+- (bool)hasTail;
 - (id)imTranscriptPluginChatItem;
-- (id)initWithIMChatItem:(id)arg1 maxWidth:(float)arg2;
-- (BOOL)isAppearing;
-- (BOOL)isHandwriting;
-- (BOOL)isInteractive;
-- (BOOL)isPlayed;
-- (BOOL)isSaved;
-- (struct CGSize { float x1; float x2; })loadSizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
+- (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
+- (bool)isAppearing;
+- (bool)isHandwriting;
+- (bool)isInteractive;
+- (bool)isPlayed;
+- (bool)isSaved;
+- (struct CGSize { double x1; double x2; })loadSizeThatFits:(struct CGSize { double x1; double x2; })arg1 textAlignmentInsets:(out struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
 - (id)loadTranscriptDrawerText;
 - (id)menuTitle;
 - (id)message;
@@ -55,13 +55,13 @@
 - (id)sender;
 - (void)setBalloonController:(id)arg1;
 - (void)setImTranscriptPluginChatItem:(id)arg1;
-- (void)setIsAppearing:(BOOL)arg1;
-- (BOOL)shouldSnapshot;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textAlignmentInsets;
+- (void)setIsAppearing:(bool)arg1;
+- (bool)shouldSnapshot;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textAlignmentInsets;
 - (BOOL)transcriptOrientation;
-- (BOOL)wantsBalloonGradient;
-- (BOOL)wantsDrawerLayout;
-- (BOOL)wantsOutline;
-- (BOOL)wantsTranscriptGroupMonograms;
+- (bool)wantsBalloonGradient;
+- (bool)wantsDrawerLayout;
+- (bool)wantsOutline;
+- (bool)wantsTranscriptGroupMonograms;
 
 @end

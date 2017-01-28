@@ -3,28 +3,29 @@
  */
 
 @interface MPSMatrix : NSObject {
-    unsigned int  _columns;
+    unsigned long long  _columns;
     <MTLBuffer> * _data;
     unsigned int  _dataType;
     struct MPSDevice { int (**x1)(); struct MPSDevice {} *x2; id x3; struct MPSDeviceFreeList {} x4; struct MTLLibraryNode {} *x5; /* Warning: unhandled array encoding: '[2[2[2@]]][556{MPSPixelCapabilities=b1b1b1b1b1b2b1}]{MPSGPUInfo=b8b8b8b16b24}[26^{MPSLibrary}]}' */ id x6[2][2][2]; struct MPSGPUInfo { unsigned int x_7_1_1 : 8; unsigned int x_7_1_2 : 8; unsigned int x_7_1_3 : 8; unsigned int x_7_1_4 : 16; unsigned int x_7_1_5 : 24; } x7; struct MPSLibrary {} *x8[26]; } * _device;
-    unsigned int  _rowBytes;
-    unsigned int  _rows;
+    unsigned long long  _rowBytes;
+    unsigned long long  _rows;
 }
 
-@property (nonatomic, readonly) unsigned int columns;
+@property (nonatomic, readonly) unsigned long long columns;
 @property (nonatomic, readonly) <MTLBuffer> *data;
 @property (nonatomic, readonly) unsigned int dataType;
 @property (nonatomic, readonly, retain) <MTLDevice> *device;
-@property (nonatomic, readonly) unsigned int rowBytes;
-@property (nonatomic, readonly) unsigned int rows;
+@property (nonatomic, readonly) unsigned long long rowBytes;
+@property (nonatomic, readonly) unsigned long long rows;
 
-- (unsigned int)columns;
+- (unsigned long long)columns;
 - (id)data;
 - (unsigned int)dataType;
+- (void)dealloc;
 - (id)device;
 - (id)init;
 - (id)initWithBuffer:(id)arg1 descriptor:(id)arg2;
-- (unsigned int)rowBytes;
-- (unsigned int)rows;
+- (unsigned long long)rowBytes;
+- (unsigned long long)rows;
 
 @end

@@ -10,7 +10,7 @@
 @property (nonatomic, retain) CKMetric *MMCSMetrics;
 @property (nonatomic, retain) CKMetric *cloudKitMetrics;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

@@ -5,12 +5,12 @@
 
 @required
 
-- (BOOL)enforceSyncEntityOrdering;
-- (int)expectedSequenceNumberForSyncEntityClass:(Class)arg1;
+- (bool)enforceSyncEntityOrdering;
+- (long long)expectedSequenceNumberForSyncEntityClass:(Class)arg1;
 - (NSArray *)orderedSyncEntities;
 - (HDProfile *)profile;
-- (void)setExpectedSequenceNumber:(int)arg1 forSyncEntityClass:(Class)arg2;
-- (BOOL)supportsSpeculativeChangesForSyncEntityClass:(Class)arg1;
+- (void)setExpectedSequenceNumber:(long long)arg1 forSyncEntityClass:(Class)arg2;
+- (bool)supportsSpeculativeChangesForSyncEntityClass:(Class)arg1;
 - (NSSet *)syncEntityDependenciesForSyncEntity:(Class)arg1;
 - (long long)syncProvenance;
 - (NSString *)syncStoreDefaultSourceBundleIdentifier;

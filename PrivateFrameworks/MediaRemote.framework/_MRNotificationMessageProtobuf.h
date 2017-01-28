@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)notificationAtIndex:(unsigned int)arg1;
+- (id)notificationAtIndex:(unsigned long long)arg1;
 - (id)notifications;
-- (unsigned int)notificationsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)notificationsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setNotifications:(id)arg1;
 - (void)writeTo:(id)arg1;
 

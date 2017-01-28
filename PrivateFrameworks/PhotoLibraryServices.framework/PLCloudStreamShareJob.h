@@ -37,6 +37,6 @@
 - (void)setCommentText:(id)arg1;
 - (void)setMediaSources:(id)arg1;
 - (void)setRecipientsInfo:(id)arg1;
-- (BOOL)shouldArchiveXPCToDisk;
+- (bool)shouldArchiveXPCToDisk;
 
 @end

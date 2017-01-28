@@ -7,11 +7,11 @@
 + (id)defaultContext;
 
 - (id)_init;
-- (void)_resolveQueries:(id)arg1 cachingStrategy:(int)arg2 synchronously:(BOOL)arg3 XPCConnection:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)_resolveQueries:(id)arg1 cachingStrategy:(long long)arg2 synchronously:(bool)arg3 XPCConnection:(id)arg4 completionHandler:(id)arg5;
 - (void)clearCaches;
-- (void)enumerateResolvedResultsOfQuery:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)enumerateResolvedResultsOfQuery:(id)arg1 withBlock:(id)arg2;
 - (id)init;
-- (void)resolveQueries:(id)arg1 cachingStrategy:(int)arg2 completionHandler:(id /* block */)arg3;
-- (id)resolveQueries:(id)arg1 cachingStrategy:(int)arg2 error:(id*)arg3;
+- (void)resolveQueries:(id)arg1 cachingStrategy:(long long)arg2 completionHandler:(id)arg3;
+- (id)resolveQueries:(id)arg1 cachingStrategy:(long long)arg2 error:(id*)arg3;
 
 @end

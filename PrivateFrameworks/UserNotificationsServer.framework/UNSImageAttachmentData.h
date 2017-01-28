@@ -2,13 +2,18 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
  */
 
-@interface UNSImageAttachmentData : UNSAttachmentData
+@interface UNSImageAttachmentData : UNSAttachmentData <UNSAttachmentThumbnailProvider>
 
-+ (BOOL)isFileValid:(id)arg1;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (bool)isFileValid:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize { float x1; float x2; })naturalSizeForAttachment:(id)arg1;
-- (id)thumbnailPNGOfSize:(struct CGSize { float x1; float x2; })arg1 forAttachment:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (struct CGSize { double x1; double x2; })sizeForThumbnailOptions:(id)arg1;
+- (id)thumbnailPNGOfSize:(struct CGSize { double x1; double x2; })arg1 forThumbnailOptions:(id)arg2;
 
 @end

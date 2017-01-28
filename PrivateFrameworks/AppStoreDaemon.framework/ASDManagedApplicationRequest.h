@@ -11,13 +11,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_sendRequestCompletionWithOptions:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)_sendRequestCompletionWithOptions:(id)arg1 completionBlock:(id)arg2;
 - (void)_setupConnection;
 - (id)initWithOptions:(id)arg1;
-- (void)sendRequestWithCompletionBlock:(id /* block */)arg1;
+- (void)sendRequestWithCompletionBlock:(id)arg1;
 
 @end

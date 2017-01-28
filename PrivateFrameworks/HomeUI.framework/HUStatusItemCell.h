@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) HUGridLayoutOptions *gridLayoutOptions;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HFItem *item;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *titleLabel;
@@ -24,17 +24,17 @@
 - (void)_updateTitleLabel;
 - (id)bottomConstraint;
 - (id)gridLayoutOptions;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)item;
 - (void)prepareForReuse;
 - (void)setBottomConstraint:(id)arg1;
 - (void)setGridLayoutOptions:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setItem:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (void)setTitleLabelSnapshot:(id)arg1;
 - (id)titleLabel;
 - (id)titleLabelSnapshot;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 
 @end

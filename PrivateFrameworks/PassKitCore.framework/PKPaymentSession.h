@@ -7,18 +7,18 @@
     NSObject<OS_dispatch_queue> * _internalSessionSerialQueue;
 }
 
-@property (nonatomic, readonly) unsigned int lifecycleState;
+@property (nonatomic, readonly) unsigned long long lifecycleState;
 
-+ (id)startContactlessInterfaceSessionWithCompletion:(id /* block */)arg1;
-+ (id)startInAppSessionWithCompletion:(id /* block */)arg1;
-+ (id)startReaderSessionWithCompletion:(id /* block */)arg1;
++ (id)startContactlessInterfaceSessionWithCompletion:(id)arg1;
++ (id)startInAppSessionWithCompletion:(id)arg1;
++ (id)startReaderSessionWithCompletion:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)initWithInternalSession:(id)arg1;
 - (void)invalidateSession;
-- (void)invalidateSessionWithCompletion:(id /* block */)arg1;
-- (unsigned int)lifecycleState;
-- (void)performBlockAsyncOnInternalSession:(id /* block */)arg1;
-- (void)performBlockSyncOnInternalSession:(id /* block */)arg1;
+- (void)invalidateSessionWithCompletion:(id)arg1;
+- (unsigned long long)lifecycleState;
+- (void)performBlockAsyncOnInternalSession:(id)arg1;
+- (void)performBlockSyncOnInternalSession:(id)arg1;
 
 @end

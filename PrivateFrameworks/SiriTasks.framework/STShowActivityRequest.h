@@ -3,17 +3,17 @@
  */
 
 @interface STShowActivityRequest : AFSiriRequest {
-    int  _dataType;
-    int  _view;
+    long long  _dataType;
+    long long  _view;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id)_initWithDataType:(int)arg1 view:(int)arg2;
+- (id)_initWithDataType:(long long)arg1 view:(long long)arg2;
 - (id)createResponse;
-- (int)dataType;
+- (long long)dataType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)view;
+- (long long)view;
 
 @end

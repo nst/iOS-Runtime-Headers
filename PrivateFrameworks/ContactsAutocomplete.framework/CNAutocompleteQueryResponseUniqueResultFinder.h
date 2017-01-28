@@ -3,7 +3,7 @@
  */
 
 @interface CNAutocompleteQueryResponseUniqueResultFinder : NSObject {
-    id /* block */  _duplicateResultHandler;
+    id  _duplicateResultHandler;
     NSIndexSet * _firstIndexes;
     NSDictionary * _hashIndex;
     NSMutableArray * _hashes;
@@ -11,13 +11,13 @@
     NSMutableArray * _uniqueResults;
 }
 
-+ (id)findUniqueResults:(id)arg1 duplicateResultHandler:(id /* block */)arg2;
++ (id)findUniqueResults:(id)arg1 duplicateResultHandler:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)findUniqueResults;
 - (void)generateHashes;
 - (void)indexHashes;
-- (id)initWithResults:(id)arg1 duplicateResultHandler:(id /* block */)arg2;
+- (id)initWithResults:(id)arg1 duplicateResultHandler:(id)arg2;
 - (void)removeDuplicateResults;
 - (void)resolveDuplicatesWithinIndexes:(id)arg1;
 

@@ -11,7 +11,7 @@
 @property (retain) _QPQueryRankerParameters *parameters;
 @property (retain) <_DKKnowledgeQuerying><_DKKnowledgeDeleting> *store;
 
-+ (id /* block */)functionFromExpressionString:(id)arg1;
++ (id)functionFromExpressionString:(id)arg1;
 + (id)rankerWithParameters:(id)arg1;
 + (id)rankerWithParameters:(id)arg1 store:(id)arg2;
 

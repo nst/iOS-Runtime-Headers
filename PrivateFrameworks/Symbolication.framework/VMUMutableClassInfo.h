@@ -9,8 +9,8 @@
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, retain) VMUClassInfo *superclassInfo;
 
-- (void)addVariant:(id)arg1 forField:(id)arg2 withEvaluator:(id /* block */)arg3;
-- (void)mutateTypeFieldsWithBlock:(id /* block */)arg1;
+- (void)addVariant:(id)arg1 forField:(id)arg2 withEvaluator:(id)arg3;
+- (void)mutateTypeFieldsWithBlock:(id)arg1;
 - (void)replaceField:(id)arg1 withFields:(id)arg2;
 - (void)setBinaryPath:(id)arg1;
 - (void)setDefaultScanType:(unsigned int)arg1;

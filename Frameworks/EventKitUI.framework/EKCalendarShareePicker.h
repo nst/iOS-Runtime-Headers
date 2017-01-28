@@ -5,6 +5,6 @@
 @interface EKCalendarShareePicker : EKEventAttendeePicker
 
 - (id)peoplePickerPrompt;
-- (BOOL)showAvailability;
+- (bool)showAvailability;
 
 @end

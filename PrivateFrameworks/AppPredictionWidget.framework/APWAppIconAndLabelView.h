@@ -11,13 +11,13 @@
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, readonly) UIView *iconView;
 
-+ (void)_applyKerning:(float)arg1 whitespaceKerning:(float)arg2 toAttributedString:(id)arg3;
-+ (id)_attributedStringForAppName:(id)arg1 font:(id)arg2 textColor:(id)arg3 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
-+ (float)caption2BodyLeading;
-+ (float)fontSize;
-+ (float)heightToLabelBaseline;
++ (void)_applyKerning:(double)arg1 whitespaceKerning:(double)arg2 toAttributedString:(id)arg3;
++ (id)_attributedStringForAppName:(id)arg1 font:(id)arg2 textColor:(id)arg3 bounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg4;
++ (double)caption2BodyLeading;
++ (double)fontSize;
++ (double)heightToLabelBaseline;
 + (id)labelFont;
-+ (struct CGSize { float x1; float x2; })size;
++ (struct CGSize { double x1; double x2; })size;
 
 - (void).cxx_destruct;
 - (void)_iconButtonTapped:(id)arg1;
@@ -26,8 +26,8 @@
 - (unsigned long long)accessibilityTraits;
 - (id)bundleIdentifier;
 - (id)iconView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isAccessibilityElement;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isAccessibilityElement;
 - (void)setBundleIdentifier:(id)arg1;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;

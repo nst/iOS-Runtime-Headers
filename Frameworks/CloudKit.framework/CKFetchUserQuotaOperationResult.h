@@ -8,7 +8,7 @@
 
 @property (nonatomic) unsigned long long quotaAvailable;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)CKPropertiesDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

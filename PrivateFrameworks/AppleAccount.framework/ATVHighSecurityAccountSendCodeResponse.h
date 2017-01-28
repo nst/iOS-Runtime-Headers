@@ -4,16 +4,16 @@
 
 @interface ATVHighSecurityAccountSendCodeResponse : AAResponse
 
-@property (nonatomic, readonly) int errorCode;
+@property (nonatomic, readonly) long long errorCode;
 @property (nonatomic, readonly) NSString *errorMessage;
 @property (nonatomic, readonly) NSString *errorTitle;
-@property (nonatomic, readonly) BOOL success;
+@property (nonatomic, readonly) bool success;
 @property (nonatomic, readonly) NSDictionary *userDisplayStrings;
 
-- (int)errorCode;
+- (long long)errorCode;
 - (id)errorMessage;
 - (id)errorTitle;
-- (BOOL)success;
+- (bool)success;
 - (id)userDisplayStrings;
 
 @end

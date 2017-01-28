@@ -3,13 +3,13 @@
  */
 
 @interface TSWPTOCEntryStylePropertyChangeSet : TSWPParagraphStylePropertyChangeSet {
-    BOOL  _definedTocPageNumberStyle;
-    BOOL  _definedTocShowPageNumber;
+    bool  _definedTocPageNumberStyle;
+    bool  _definedTocShowPageNumber;
     TSWPSpecCharacterStyle * _tocPageNumberStyle;
     TSSSpecBool * _tocShowPageNumber;
 }
 
-- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setSpec:(id)arg1 forProperty:(int)arg2;
 - (void)setUnsetSpecForProperty:(int)arg1;

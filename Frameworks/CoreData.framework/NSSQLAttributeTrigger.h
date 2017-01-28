@@ -48,20 +48,20 @@
 - (id)entity;
 - (id)initWithPredicateString:(id)arg1 onAttribute:(id)arg2 onEntity:(id)arg3;
 - (id)inverseOperatorSymbolForOperator:(id)arg1;
-- (BOOL)isSupportedOperatorType:(unsigned int)arg1;
+- (bool)isSupportedOperatorType:(unsigned long long)arg1;
 - (id)newMatchingClause;
 - (id)ofClause;
 - (id)oldMatchingClause;
-- (BOOL)parseTriggerPredicateError:(id*)arg1;
+- (bool)parseTriggerPredicateError:(id*)arg1;
 - (id)predicate;
 - (id)predicateString;
-- (BOOL)prepareForSQLGeneration:(id*)arg1;
+- (bool)prepareForSQLGeneration:(id*)arg1;
 - (id)relationship;
 - (id)sqlDropStrings;
 - (id)toManyDecrementWhenClause;
 - (id)toManyIncrementWhenClause;
 - (id)toManyInnerFetchWhereClause;
-- (BOOL)validateComparisonPredicate:(id)arg1 error:(id*)arg2;
-- (BOOL)validatePredicate:(id)arg1 error:(id*)arg2;
+- (bool)validateComparisonPredicate:(id)arg1 error:(id*)arg2;
+- (bool)validatePredicate:(id)arg1 error:(id*)arg2;
 
 @end

@@ -3,21 +3,21 @@
  */
 
 @interface CNTask : NSObject {
-    BOOL  _cancelled;
+    bool  _cancelled;
     NSString * _name;
 }
 
-@property (getter=isCancelled, readonly) BOOL cancelled;
+@property (getter=isCancelled, readonly) bool cancelled;
 @property (copy) NSString *name;
 
-+ (BOOL)isValidResult:(id)arg1;
++ (bool)isValidResult:(id)arg1;
 
-- (BOOL)cancel;
+- (bool)cancel;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithName:(id)arg1;
-- (BOOL)isCancelled;
+- (bool)isCancelled;
 - (id)name;
 - (id)run:(id*)arg1;
 - (void)setName:(id)arg1;

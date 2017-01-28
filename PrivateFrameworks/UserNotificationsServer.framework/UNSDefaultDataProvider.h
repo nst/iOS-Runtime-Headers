@@ -19,34 +19,32 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BBDataProviderProxy *proxy;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })_sizeFromSizeConstraint:(id)arg1 originalSize:(struct CGSize { float x1; float x2; })arg2;
-
 - (void).cxx_destruct;
-- (int)_BBActionBehaviorForUNAction:(id)arg1;
+- (long long)_BBActionBehaviorForUNAction:(id)arg1;
 - (id)_BBActionBehaviorParametersForUNAction:(id)arg1;
 - (id)_BBActionFromUIUserNotificationAction:(id)arg1;
 - (id)_BBActionsFromUIUserNotificationActions:(id)arg1;
-- (unsigned int)_BBActivationModeForUNAction:(id)arg1;
+- (unsigned long long)_BBActivationModeForUNAction:(id)arg1;
 - (id)_UNActionsForCompactLayoutForCategory:(id)arg1;
 - (id)_UNActionsForNormalLayoutForCategory:(id)arg1;
 - (id)_actionsForCompactLayoutForCategory:(id)arg1;
 - (id)_actionsForNormalLayoutForCategory:(id)arg1;
 - (void)_addAttachments:(id)arg1 toBulletinRequest:(id)arg2;
-- (id)_allBulletinsWithMaxCount:(unsigned int)arg1 sinceDate:(id)arg2;
-- (BOOL)_allowInCarPlayForCategoryIdentifier:(id)arg1;
+- (id)_allBulletinsWithMaxCount:(unsigned long long)arg1 sinceDate:(id)arg2;
+- (bool)_allowInCarPlayForCategoryIdentifier:(id)arg1;
 - (id)_categoryForIdentifier:(id)arg1;
 - (id)_defaultActionWithTitle:(id)arg1;
-- (unsigned int)_destinationsForNotification:(id)arg1;
+- (unsigned long long)_destinationsForNotification:(id)arg1;
 - (id)_dismissActionForCategory:(id)arg1;
-- (void)_handleBulletinActionResponse:(id)arg1 withCompletion:(id /* block */)arg2;
-- (BOOL)_isAuthenticationRequiredForUNAction:(id)arg1;
-- (BOOL)_isDestructiveForUNAction:(id)arg1;
-- (BOOL)_isPushDataProvider;
-- (BOOL)_isResourceValidForPath:(id)arg1 withContainerPath:(id)arg2;
+- (void)_handleBulletinActionResponse:(id)arg1 withCompletion:(id)arg2;
+- (bool)_isAuthenticationRequiredForUNAction:(id)arg1;
+- (bool)_isDestructiveForUNAction:(id)arg1;
+- (bool)_isPushDataProvider;
+- (bool)_isResourceValidForPath:(id)arg1 withContainerPath:(id)arg2;
 - (void)_logNotification:(id)arg1;
 - (id)_pathForSoundName:(id)arg1;
 - (void)_queue_addBulletinForNotification:(id)arg1;
@@ -60,12 +58,12 @@
 - (float)attachmentAspectRatioForRecordID:(id)arg1;
 - (id)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2;
 - (id)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2;
-- (id)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(unsigned int)arg1 lastClearedInfo:(id)arg2;
+- (id)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(unsigned long long)arg1 lastClearedInfo:(id)arg2;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (id)defaultSectionInfo;
-- (void)handleBulletinActionResponse:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)handleBulletinActionResponse:(id)arg1 withCompletion:(id)arg2;
 - (id)initWithApplicationDescription:(id)arg1 applicationLauncher:(id)arg2 categoryRepository:(id)arg3 notificationRepository:(id)arg4 attachmentsService:(id)arg5 queue:(id)arg6;
 - (void)invalidate;
 - (void)noteSectionInfoDidChange:(id)arg1;
@@ -79,7 +77,7 @@
 - (void)setApplicationDescription:(id)arg1;
 - (void)setProxy:(id)arg1;
 - (id)sortDescriptors;
-- (BOOL)syncsBulletinDismissal;
+- (bool)syncsBulletinDismissal;
 - (void)uninstall;
 
 @end

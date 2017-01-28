@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) NSString *title;
 
-- (int)compare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (void)dealloc;
 - (void)setTitle:(id)arg1;
 - (id)title;

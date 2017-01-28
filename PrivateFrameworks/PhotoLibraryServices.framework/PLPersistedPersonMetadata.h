@@ -26,19 +26,19 @@
 @property (nonatomic, retain) NSArray *rejectedFaces;
 @property (nonatomic) int type;
 
-+ (BOOL)_isFaceMetadataExtension:(id)arg1;
++ (bool)_isFaceMetadataExtension:(id)arg1;
 + (id)_persistedFaceMetadataWithFaces:(id)arg1 keyFace:(id)arg2;
 + (id)detectedFacesToArchiveWithPerson:(id)arg1;
-+ (BOOL)isFacePersistable:(id)arg1;
-+ (BOOL)isPersonMetadataPath:(id)arg1;
-+ (BOOL)isValidPath:(id)arg1;
++ (bool)isFacePersistable:(id)arg1;
++ (bool)isPersonMetadataPath:(id)arg1;
++ (bool)isValidPath:(id)arg1;
 + (id)rejectedFacesToArchiveWithPerson:(id)arg1;
-+ (unsigned int)writeMetadataForVerifiedPeopleOnAssetObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
++ (unsigned long long)writeMetadataForVerifiedPeopleOnAssetObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_addAssetUUIDsFromFaces:(id)arg1 toMutableSet:(id)arg2;
-- (BOOL)_insertDetectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(BOOL)arg3;
-- (BOOL)_insertRejectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(BOOL)arg3;
+- (bool)_insertDetectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(bool)arg3;
+- (bool)_insertRejectedFacesOnPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(bool)arg3;
 - (id)_metadataData;
 - (void)_readMetadata;
 - (void)_saveMetadata;
@@ -46,7 +46,7 @@
 - (id)detectedFaces;
 - (id)displayName;
 - (id)fullName;
-- (BOOL)hasAllAssetsAvailableInManagedObjectContext:(id)arg1 includePendingAssetChanges:(BOOL)arg2;
+- (bool)hasAllAssetsAvailableInManagedObjectContext:(id)arg1 includePendingAssetChanges:(bool)arg2;
 - (id)init;
 - (id)initWithPLPerson:(id)arg1;
 - (id)initWithPLPerson:(id)arg1 metadataURL:(id)arg2;
@@ -70,7 +70,7 @@
 - (void)setRejectedFaces:(id)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
-- (BOOL)updateFacesInPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(BOOL)arg3;
+- (bool)updateFacesInPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(bool)arg3;
 - (void)writePersistedData;
 
 @end

@@ -9,17 +9,17 @@
     NSDictionary * _supplement;
 }
 
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffset;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } contentOffset;
 @property (nonatomic, readonly) double irisDuration;
 @property (nonatomic, readonly) double irisStillDisplayTime;
 @property (nonatomic, readonly) NSURL *irisURL;
-@property (nonatomic, readonly) BOOL isPhotoIris;
+@property (nonatomic, readonly) bool isPhotoIris;
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) NSDictionary *supplement;
-@property (nonatomic, readonly) float zoomScale;
+@property (nonatomic, readonly) double zoomScale;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })contentOffset;
+- (struct CGPoint { double x1; double x2; })contentOffset;
 - (id)eagerlyDecodedFullImage;
 - (id)faceRegions;
 - (id)fullImage;
@@ -28,14 +28,14 @@
 - (double)irisDuration;
 - (double)irisStillDisplayTime;
 - (id)irisURL;
-- (BOOL)isIrisVideoHidden;
-- (BOOL)isPhotoIris;
+- (bool)isIrisVideoHidden;
+- (bool)isPhotoIris;
 - (id)lazilyDecodedFullImage;
 - (id)modificationDate;
 - (id)path;
 - (id)supplement;
-- (id)thumbnail:(int)arg1;
+- (id)thumbnail:(long long)arg1;
 - (id)thumbnailFacesRegions;
-- (float)zoomScale;
+- (double)zoomScale;
 
 @end

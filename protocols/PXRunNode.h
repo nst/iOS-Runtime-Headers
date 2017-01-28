@@ -8,11 +8,11 @@
 - (void)cancel;
 - (<PXRunNodeDelegate> *)delegate;
 - (NSArray *)dependencies;
-- (BOOL)isCanceled;
-- (BOOL)isComplete;
-- (BOOL)isRunning;
-- (BOOL)isWaiting;
+- (bool)isCanceled;
+- (bool)isComplete;
+- (bool)isRunning;
+- (bool)isWaiting;
 - (void)setDelegate:(id <PXRunNodeDelegate>)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

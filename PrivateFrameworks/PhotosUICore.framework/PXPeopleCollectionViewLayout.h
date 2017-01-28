@@ -3,14 +3,14 @@
  */
 
 @interface PXPeopleCollectionViewLayout : UICollectionViewFlowLayout {
-    unsigned int  _firstVisibleCellIndex;
+    unsigned long long  _firstVisibleCellIndex;
 }
 
-@property (nonatomic) unsigned int firstVisibleCellIndex;
+@property (nonatomic) unsigned long long firstVisibleCellIndex;
 
-- (unsigned int)firstVisibleCellIndex;
-- (void)setFirstVisibleCellIndex:(unsigned int)arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
+- (unsigned long long)firstVisibleCellIndex;
+- (void)setFirstVisibleCellIndex:(unsigned long long)arg1;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { double x1; double x2; })arg1 withScrollingVelocity:(struct CGPoint { double x1; double x2; })arg2;
 
 @end

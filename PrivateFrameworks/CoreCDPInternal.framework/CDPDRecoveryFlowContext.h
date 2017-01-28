@@ -4,20 +4,20 @@
 
 @interface CDPDRecoveryFlowContext : NSObject {
     CDPContext * _context;
-    BOOL  _hasPeersForRemoteApproval;
-    BOOL  _stringrayDisabled;
+    bool  _hasPeersForRemoteApproval;
+    bool  _stringrayDisabled;
 }
 
 @property (nonatomic, retain) CDPContext *context;
-@property (nonatomic) BOOL hasPeersForRemoteApproval;
-@property (nonatomic) BOOL stringrayDisabled;
+@property (nonatomic) bool hasPeersForRemoteApproval;
+@property (nonatomic) bool stringrayDisabled;
 
 - (void).cxx_destruct;
 - (id)context;
-- (BOOL)hasPeersForRemoteApproval;
+- (bool)hasPeersForRemoteApproval;
 - (void)setContext:(id)arg1;
-- (void)setHasPeersForRemoteApproval:(BOOL)arg1;
-- (void)setStringrayDisabled:(BOOL)arg1;
-- (BOOL)stringrayDisabled;
+- (void)setHasPeersForRemoteApproval:(bool)arg1;
+- (void)setStringrayDisabled:(bool)arg1;
+- (bool)stringrayDisabled;
 
 @end

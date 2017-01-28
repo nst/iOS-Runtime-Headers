@@ -16,7 +16,7 @@
 - (id)executionEnvironment;
 - (id)groupIdentifier;
 - (id)launchId;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setApplicationClientIdentifier:(id)arg1;
 - (void)setExecutionEnvironment:(id)arg1;
 - (void)setLaunchId:(id)arg1;

@@ -9,9 +9,9 @@
 }
 
 - (void).cxx_destruct;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
-- (void)editor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
+- (void)editor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
 - (void)setDeleteButtonTarget:(id)arg1 action:(SEL)arg2;
-- (BOOL)shouldAppearWithVisibility:(int)arg1;
+- (bool)shouldAppearWithVisibility:(int)arg1;
 
 @end

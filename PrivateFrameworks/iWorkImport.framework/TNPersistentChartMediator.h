@@ -6,13 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (struct __CFUUID { }*)formulaOwnerID;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)objectToArchiveInDependencyTracker;
-- (BOOL)registerLast;
+- (bool)registerLast;
 - (void)registerWithCalculationEngineForDocumentLoad:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)unregisterFromCalculationEngine:(id)arg1;

@@ -4,6 +4,6 @@
 
 @interface UIDidTakeScreenshotAction : BSAction
 
-- (int)UIActionType;
+- (long long)UIActionType;
 
 @end

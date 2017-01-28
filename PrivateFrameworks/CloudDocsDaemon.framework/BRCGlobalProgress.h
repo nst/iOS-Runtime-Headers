@@ -6,20 +6,20 @@
     NSMutableSet * _appLibrariesNotLive;
     _BRCDownloadInfo * _downloads;
     BRCProgress * _globalProgress;
-    BOOL  _lazyInitDone;
-    BOOL  _networkReachable;
+    bool  _lazyInitDone;
+    bool  _networkReachable;
     NSObject<OS_dispatch_source> * _operationTimer;
     unsigned int  _operationTimerSuspendCount;
     NSObject<OS_dispatch_queue> * _queue;
     BRCAccountSession * _session;
-    BOOL  _showExtendedInfo;
+    bool  _showExtendedInfo;
     br_pacer * _updatePacer;
     _BRCUploadInfo * _uploads;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) BRCAccountSession *session;
 @property (readonly) Class superclass;
 
@@ -27,10 +27,10 @@
 
 - (void).cxx_destruct;
 - (void)_cancelDownloadForDocumentID:(id)arg1;
-- (void)_cancelDownloadForDocumentID:(id)arg1 destroyIfLast:(BOOL)arg2 willRetryTransfer:(BOOL)arg3;
+- (void)_cancelDownloadForDocumentID:(id)arg1 destroyIfLast:(bool)arg2 willRetryTransfer:(bool)arg3;
 - (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2;
-- (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(BOOL)arg3;
-- (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(BOOL)arg3 pendingQuota:(BOOL)arg4;
+- (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(bool)arg3;
+- (void)_cancelUploadForDocumentID:(id)arg1 inState:(unsigned int)arg2 willRetryTransfer:(bool)arg3 pendingQuota:(bool)arg4;
 - (void)_createDownloadMetadataWithCompletedUnitCount:(long long)arg1 totalUnitCount:(long long)arg2;
 - (void)_createNewGlobalProgressInGroup:(id)arg1 completedUnitCount:(long long)arg2 totalUnitCount:(long long)arg3;
 - (void)_createNewIndeterminateGlobalProgress;
@@ -53,7 +53,7 @@
 - (void)didUpdateDocument:(id)arg1;
 - (void)dumpToContext:(id)arg1;
 - (id)initWithSession:(id)arg1;
-- (void)networkReachabilityChanged:(BOOL)arg1;
+- (void)networkReachabilityChanged:(bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)session;
 - (void)stopPublishingProgress;

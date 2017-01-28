@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) SKUIGiftConfiguration *giftConfiguration;
 
-+ (id)aloneRowBackgroundImageWithSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)aloneRowBackgroundImageWithSize:(struct CGSize { double x1; double x2; })arg1;
 
 - (void).cxx_destruct;
 - (id)giftConfiguration;

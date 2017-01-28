@@ -5,9 +5,9 @@
 @interface MDLCamera : MDLObject {
     CAAnimation * _apertureAnimation;
     CAAnimation * _apertureAspectAnimation;
-    unsigned int  _apertureBladeCount;
+    unsigned long long  _apertureBladeCount;
     float  _barrelDistortion;
-    struct RTCamera { int (**x1)(); unsigned int x2; unsigned int x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; } * _camera;
+    struct RTCamera { int (**x1)(); unsigned long long x2; unsigned long long x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; } * _camera;
     float  _chromaticAberration;
     float  _fStop;
     CAAnimation * _fStopAnimation;
@@ -17,14 +17,14 @@
     CAAnimation * _focalLengthAnimation;
     float  _maximumCircleOfConfusion;
     float  _opticalVignetting;
-    unsigned int  _projection;
+    unsigned long long  _projection;
     double  _shutterOpenInterval;
     float  _worldToMetersConversionScale;
 }
 
 @property (nonatomic, copy) CAAnimation *apertureAnimation;
 @property (nonatomic, copy) CAAnimation *apertureAspectAnimation;
-@property (nonatomic) unsigned int apertureBladeCount;
+@property (nonatomic) unsigned long long apertureBladeCount;
 @property (nonatomic) float barrelDistortion;
 @property (nonatomic) float chromaticAberration;
 @property (nonatomic) void exposure;
@@ -42,9 +42,9 @@
 @property (nonatomic) float maximumCircleOfConfusion;
 @property (nonatomic) float nearVisibilityDistance;
 @property (nonatomic) float opticalVignetting;
-@property (nonatomic) unsigned int projection;
+@property (nonatomic) unsigned long long projection;
 @property (nonatomic, readonly) struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; } projectionMatrix;
-@property (nonatomic, readonly) struct RTCamera { int (**x1)(); unsigned int x2; unsigned int x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*rtCamera;
+@property (nonatomic, readonly) struct RTCamera { int (**x1)(); unsigned long long x2; unsigned long long x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*rtCamera;
 @property (nonatomic) float sensorAspect;
 @property (nonatomic) void sensorEnlargement;
 @property (nonatomic) void sensorShift;
@@ -58,7 +58,7 @@
 - (float)aperture;
 - (id)apertureAnimation;
 - (id)apertureAspectAnimation;
-- (unsigned int)apertureBladeCount;
+- (unsigned long long)apertureBladeCount;
 - (float)aspect;
 - (float)barrelDistortion;
 - (id)bokehKernelWithSize;
@@ -78,7 +78,7 @@
 - (id)focalLengthAnimation;
 - (float)focusDistance;
 - (float)fov;
-- (void)frameBoundingBox:(struct { })arg1 setNearAndFar:(BOOL)arg2;
+- (void)frameBoundingBox:(struct { })arg1 setNearAndFar:(bool)arg2;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })getProjectionMatrixAtTime:(double)arg1;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })getViewMatrixAtTime:(double)arg1;
 - (id)init;
@@ -87,10 +87,10 @@
 - (float)maximumCircleOfConfusion;
 - (float)nearVisibilityDistance;
 - (float)opticalVignetting;
-- (unsigned int)projection;
+- (unsigned long long)projection;
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })projectionMatrix;
 - (void)rayToforViewPort;
-- (struct RTCamera { int (**x1)(); unsigned int x2; unsigned int x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*)rtCamera;
+- (struct RTCamera { int (**x1)(); unsigned long long x2; unsigned long long x3; float x4; float x5; int x6; float *x7; id **x8; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x9; void*x10; void*x11[4]; }*)rtCamera;
 - (float)sensorAspect;
 - (void)sensorEnlargement;
 - (void)sensorShift;
@@ -98,7 +98,7 @@
 - (void)setAperture:(float)arg1;
 - (void)setApertureAnimation:(id)arg1;
 - (void)setApertureAspectAnimation:(id)arg1;
-- (void)setApertureBladeCount:(unsigned int)arg1;
+- (void)setApertureBladeCount:(unsigned long long)arg1;
 - (void)setAspect:(float)arg1;
 - (void)setBarrelDistortion:(float)arg1;
 - (void)setChromaticAberration:(float)arg1;
@@ -118,7 +118,7 @@
 - (void)setMaximumCircleOfConfusion:(float)arg1;
 - (void)setNearVisibilityDistance:(float)arg1;
 - (void)setOpticalVignetting:(float)arg1;
-- (void)setProjection:(unsigned int)arg1;
+- (void)setProjection:(unsigned long long)arg1;
 - (void)setSensorAspect:(float)arg1;
 - (void)setSensorEnlargement;
 - (void)setSensorShift;
@@ -128,7 +128,7 @@
 - (void)setZFar:(float)arg1;
 - (void)setZNear:(float)arg1;
 - (double)shutterOpenInterval;
-- (int)version;
+- (long long)version;
 - (float)worldToMetersConversionScale;
 - (float)zFar;
 - (float)zNear;

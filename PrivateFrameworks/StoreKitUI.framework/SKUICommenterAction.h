@@ -3,12 +3,12 @@
  */
 
 @interface SKUICommenterAction : UIAlertAction {
-    int  _index;
+    long long  _index;
 }
 
-@property (nonatomic) int index;
+@property (nonatomic) long long index;
 
-- (int)index;
-- (void)setIndex:(int)arg1;
+- (long long)index;
+- (void)setIndex:(long long)arg1;
 
 @end

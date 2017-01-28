@@ -6,13 +6,13 @@
 @optional
 
 - (<EKEditItemViewControllerDelegate> *)editDelegate;
-- (BOOL)editItemShouldBeAskedForInjectableViewController;
-- (BOOL)presentModally;
+- (bool)editItemShouldBeAskedForInjectableViewController;
+- (bool)presentModally;
 - (void)saveAndDismissWithExtremePrejudice;
 - (void)setEditDelegate:(id <EKEditItemViewControllerDelegate>)arg1;
-- (void)setEditItemShouldBeAskedForInjectableViewController:(BOOL)arg1;
-- (void)setPresentModally:(BOOL)arg1;
-- (void)setUseCustomBackButton:(BOOL)arg1;
-- (BOOL)useCustomBackButton;
+- (void)setEditItemShouldBeAskedForInjectableViewController:(bool)arg1;
+- (void)setPresentModally:(bool)arg1;
+- (void)setUseCustomBackButton:(bool)arg1;
+- (bool)useCustomBackButton;
 
 @end

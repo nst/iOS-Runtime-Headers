@@ -3,42 +3,42 @@
  */
 
 @interface _UICollectionViewControllerLayoutToLayoutTransition : NSObject <UIViewControllerAnimatedTransitioning> {
-    BOOL  _crossFadeBottomBars;
-    BOOL  _crossFadeNavigationBar;
-    BOOL  _interactionAborted;
+    bool  _crossFadeBottomBars;
+    bool  _crossFadeNavigationBar;
+    bool  _interactionAborted;
     UIPercentDrivenInteractiveTransition * _interactionController;
-    int  _operation;
+    long long  _operation;
     UICollectionViewLayout * _toLayout;
 }
 
-@property (nonatomic) BOOL crossFadeBottomBars;
-@property (nonatomic) BOOL crossFadeNavigationBar;
+@property (nonatomic) bool crossFadeBottomBars;
+@property (nonatomic) bool crossFadeNavigationBar;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL interactionAborted;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool interactionAborted;
 @property (nonatomic) UIPercentDrivenInteractiveTransition *interactionController;
-@property (nonatomic) int operation;
+@property (nonatomic) long long operation;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UICollectionViewLayout *toLayout;
 
-+ (id)transitionForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
++ (id)transitionForOperation:(long long)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldCrossFadeBottomBars;
-- (BOOL)_shouldCrossFadeNavigationBar;
+- (bool)_shouldCrossFadeBottomBars;
+- (bool)_shouldCrossFadeNavigationBar;
 - (void)animateTransition:(id)arg1;
-- (void)animationEnded:(BOOL)arg1;
-- (BOOL)crossFadeBottomBars;
-- (BOOL)crossFadeNavigationBar;
-- (BOOL)interactionAborted;
+- (void)animationEnded:(bool)arg1;
+- (bool)crossFadeBottomBars;
+- (bool)crossFadeNavigationBar;
+- (bool)interactionAborted;
 - (id)interactionController;
-- (int)operation;
-- (void)setCrossFadeBottomBars:(BOOL)arg1;
-- (void)setCrossFadeNavigationBar:(BOOL)arg1;
-- (void)setInteractionAborted:(BOOL)arg1;
+- (long long)operation;
+- (void)setCrossFadeBottomBars:(bool)arg1;
+- (void)setCrossFadeNavigationBar:(bool)arg1;
+- (void)setInteractionAborted:(bool)arg1;
 - (void)setInteractionController:(id)arg1;
-- (void)setOperation:(int)arg1;
+- (void)setOperation:(long long)arg1;
 - (void)setToLayout:(id)arg1;
 - (id)toLayout;
 - (double)transitionDuration:(id)arg1;

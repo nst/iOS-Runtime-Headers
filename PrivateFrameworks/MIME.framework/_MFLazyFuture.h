@@ -3,21 +3,21 @@
  */
 
 @interface _MFLazyFuture : MFFuture {
-    id /* block */  _block;
+    id  _block;
     MFPromise * _promise;
     NSConditionLock * _stateLock;
 }
 
-- (void)addFailureBlock:(id /* block */)arg1;
-- (void)addSuccessBlock:(id /* block */)arg1;
-- (BOOL)cancel;
+- (void)addFailureBlock:(id)arg1;
+- (void)addSuccessBlock:(id)arg1;
+- (bool)cancel;
 - (void)dealloc;
-- (id)initWithBlock:(id /* block */)arg1;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
-- (void)onScheduler:(id)arg1 addFailureBlock:(id /* block */)arg2;
-- (void)onScheduler:(id)arg1 addSuccessBlock:(id /* block */)arg2;
+- (id)initWithBlock:(id)arg1;
+- (bool)isCancelled;
+- (bool)isFinished;
+- (void)onScheduler:(id)arg1 addFailureBlock:(id)arg2;
+- (void)onScheduler:(id)arg1 addSuccessBlock:(id)arg2;
 - (id)resultBeforeDate:(id)arg1 error:(id*)arg2;
-- (BOOL)run;
+- (bool)run;
 
 @end

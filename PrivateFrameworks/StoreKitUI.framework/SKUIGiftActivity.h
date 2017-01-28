@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -18,8 +18,8 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
-- (void)giftViewController:(id)arg1 didFinishWithResult:(BOOL)arg2;
+- (bool)canPerformWithActivityItems:(id)arg1;
+- (void)giftViewController:(id)arg1 didFinishWithResult:(bool)arg2;
 - (id)initWithItem:(id)arg1 clientContext:(id)arg2;
 
 @end

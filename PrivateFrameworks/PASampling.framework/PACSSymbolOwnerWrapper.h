@@ -4,18 +4,18 @@
 
 @interface PACSSymbolOwnerWrapper : PACSRefWrapper {
     NSString * _path;
-    BOOL  _usedDsymForUUID;
+    bool  _usedDsymForUUID;
 }
 
 @property (readonly) NSString *path;
-@property BOOL usedDsymForUUID;
+@property bool usedDsymForUUID;
 
 - (void).cxx_destruct;
 - (id)debugDescription;
-- (id)initWithSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
-- (id)initWithSymbolOwner:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1 andPath:(id)arg2;
+- (id)initWithSymbolOwner:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
+- (id)initWithSymbolOwner:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1 andPath:(id)arg2;
 - (id)path;
-- (void)setUsedDsymForUUID:(BOOL)arg1;
-- (BOOL)usedDsymForUUID;
+- (void)setUsedDsymForUUID:(bool)arg1;
+- (bool)usedDsymForUUID;
 
 @end

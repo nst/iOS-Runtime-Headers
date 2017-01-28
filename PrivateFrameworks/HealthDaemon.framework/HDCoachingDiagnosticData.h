@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)coachingEventSample;
 - (id)init;
-- (id)itemForInterval:(unsigned int)arg1 future:(BOOL)arg2;
+- (id)itemForInterval:(unsigned long long)arg1 future:(bool)arg2;
 - (id)items;
 - (void)setCoachingEventSample:(id)arg1;
 

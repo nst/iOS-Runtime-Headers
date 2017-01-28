@@ -3,16 +3,17 @@
  */
 
 @interface PRSBagHandler : NSObject {
-    BOOL  _active;
+    bool  _active;
     NSSet * _appBlacklist;
     PARBag * _bag;
     NSObject<OS_dispatch_queue> * _bagQueue;
-    int  _cat_score_enum;
-    int  _cep_probability_factor;
+    long long  _cat_score_enum;
+    long long  _cep_probability_factor;
     NSDictionary * _cep_server_values;
-    BOOL  _cep_sort_of_tophits;
+    bool  _cep_sort_of_tophits;
     double  _cep_top_hit_threshold;
     <PRSSessionController> * _client;
+    bool  _collectAnonymousData;
     NSDictionary * _correctionDict;
     NSURL * _correctionDictURL;
     NSArray * _enabledDomains;
@@ -28,19 +29,20 @@
     NSDictionary * _model_parameter_values;
     PRSRankingKnobs * _ranking_server_knobs;
     double  _searchRenderTimeout;
-    int  _status;
+    long long  _status;
     NSMutableArray * _tasks;
-    BOOL  _waitingForLocation;
+    bool  _waitingForLocation;
 }
 
-@property (nonatomic) BOOL active;
+@property (nonatomic) bool active;
 @property (nonatomic, retain) NSSet *appBlacklist;
-@property (nonatomic) int cat_score_enum;
-@property (nonatomic) int cep_probability_factor;
+@property (nonatomic) long long cat_score_enum;
+@property (nonatomic) long long cep_probability_factor;
 @property (nonatomic, retain) NSDictionary *cep_server_values;
-@property (nonatomic) BOOL cep_sort_of_tophits;
+@property (nonatomic) bool cep_sort_of_tophits;
 @property (nonatomic) double cep_top_hit_threshold;
 @property <PRSSessionController> *client;
+@property (nonatomic) bool collectAnonymousData;
 @property (retain) NSDictionary *correctionDict;
 @property (retain) NSURL *correctionDictURL;
 @property (nonatomic, retain) NSArray *enabledDomains;
@@ -54,7 +56,7 @@
 @property (nonatomic, retain) NSDictionary *model_parameter_values;
 @property (retain) PRSRankingKnobs *ranking_server_knobs;
 @property (readonly) double searchRenderTimeout;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 
 + (void)initialize;
 + (id)sharedHandler;
@@ -63,15 +65,16 @@
 - (id)_base64CEPDataNoCopyFromFeatureData:(id)arg1;
 - (void)_processQIFeatures:(id)arg1 forClient:(id)arg2;
 - (void)activate;
-- (BOOL)active;
+- (bool)active;
 - (id)appBlacklist;
 - (id)applicationNameForUserAgent;
-- (int)cat_score_enum;
-- (int)cep_probability_factor;
+- (long long)cat_score_enum;
+- (long long)cep_probability_factor;
 - (id)cep_server_values;
-- (BOOL)cep_sort_of_tophits;
+- (bool)cep_sort_of_tophits;
 - (double)cep_top_hit_threshold;
 - (id)client;
+- (bool)collectAnonymousData;
 - (id)correctionDict;
 - (id)correctionDictURL;
 - (void)deactivate;
@@ -81,10 +84,10 @@
 - (id)fteLearnMoreString;
 - (id)fteLocString;
 - (id)geoUserSessionEntity;
-- (void)getFTEStringsWithReply:(id /* block */)arg1;
+- (void)getFTEStringsWithReply:(id)arg1;
 - (id)init;
-- (BOOL)isEnabled;
-- (BOOL)isLocaleSupported:(id)arg1;
+- (bool)isEnabled;
+- (bool)isLocaleSupported:(id)arg1;
 - (id)lookupFirstUseDescription1;
 - (id)lookupFirstUseDescription2;
 - (id)lookupFirstUseLearnMore;
@@ -94,16 +97,17 @@
 - (void)refreshGUID;
 - (void)removeTask:(id)arg1;
 - (double)searchRenderTimeout;
-- (BOOL)searchSupported:(BOOL)arg1;
-- (BOOL)sessionReady;
-- (void)setActive:(BOOL)arg1;
+- (bool)searchSupported:(bool)arg1;
+- (bool)sessionReady;
+- (void)setActive:(bool)arg1;
 - (void)setAppBlacklist:(id)arg1;
-- (void)setCat_score_enum:(int)arg1;
-- (void)setCep_probability_factor:(int)arg1;
+- (void)setCat_score_enum:(long long)arg1;
+- (void)setCep_probability_factor:(long long)arg1;
 - (void)setCep_server_values:(id)arg1;
-- (void)setCep_sort_of_tophits:(BOOL)arg1;
+- (void)setCep_sort_of_tophits:(bool)arg1;
 - (void)setCep_top_hit_threshold:(double)arg1;
 - (void)setClient:(id)arg1;
+- (void)setCollectAnonymousData:(bool)arg1;
 - (void)setCorrectionDict:(id)arg1;
 - (void)setCorrectionDictURL:(id)arg1;
 - (void)setEnabledDomains:(id)arg1;
@@ -112,8 +116,8 @@
 - (void)setFteLocString:(id)arg1;
 - (void)setModel_parameter_values:(id)arg1;
 - (void)setRanking_server_knobs:(id)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setStatus:(long long)arg1;
+- (long long)status;
 - (id)supportedServices;
 - (void)triggerTaskWhenReady:(id)arg1;
 - (void)updateFromSession:(id)arg1 bag:(id)arg2 forClient:(id)arg3 error:(id)arg4;

@@ -21,6 +21,6 @@
 - (void)setClassIdentifiers:(id)arg1;
 - (void)setFactoryClass:(Class)arg1;
 - (void)setFactoryInstance:(id)arg1;
-- (BOOL)supportsClassIdentifier:(id)arg1 forDomainKey:(id)arg2 groupIdentifier:(id)arg3;
+- (bool)supportsClassIdentifier:(id)arg1 forDomainKey:(id)arg2 groupIdentifier:(id)arg3;
 
 @end

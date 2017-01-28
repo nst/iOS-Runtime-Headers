@@ -4,6 +4,6 @@
 
 @interface CNAvatarCardHeaderView : CNContactOrbHeaderView
 
-- (float)photoLabelSpacing;
+- (double)photoLabelSpacing;
 
 @end

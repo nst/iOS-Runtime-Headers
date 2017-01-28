@@ -7,7 +7,7 @@
     PKFelicaAppletHistory * _felicaHistory;
     PKPaymentApplication * _paymentApplication;
     PKPaymentPass * _paymentPass;
-    BOOL  _success;
+    bool  _success;
     PKPaymentTransaction * _transaction;
     NSArray * _valueAddedServicePasses;
     NSArray * _valueAddedServiceTransactions;
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) PKFelicaAppletHistory *felicaHistory;
 @property (nonatomic, retain) PKPaymentApplication *paymentApplication;
 @property (nonatomic, retain) PKPaymentPass *paymentPass;
-@property (nonatomic) BOOL success;
+@property (nonatomic) bool success;
 @property (nonatomic, retain) PKPaymentTransaction *transaction;
 @property (nonatomic, retain) NSArray *valueAddedServicePasses;
 @property (nonatomic, retain) NSArray *valueAddedServiceTransactions;
@@ -31,11 +31,11 @@
 - (void)setFelicaHistory:(id)arg1;
 - (void)setPaymentApplication:(id)arg1;
 - (void)setPaymentPass:(id)arg1;
-- (void)setSuccess:(BOOL)arg1;
+- (void)setSuccess:(bool)arg1;
 - (void)setTransaction:(id)arg1;
 - (void)setValueAddedServicePasses:(id)arg1;
 - (void)setValueAddedServiceTransactions:(id)arg1;
-- (BOOL)success;
+- (bool)success;
 - (id)transaction;
 - (id)valueAddedServicePasses;
 - (id)valueAddedServiceTransactions;

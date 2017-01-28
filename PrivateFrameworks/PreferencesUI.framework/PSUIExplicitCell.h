@@ -4,7 +4,7 @@
 
 @interface PSUIExplicitCell : PSSwitchTableCell
 
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (void)setCellEnabled:(BOOL)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (void)setCellEnabled:(bool)arg1;
 
 @end

@@ -9,9 +9,9 @@
 @property (nonatomic, copy) CLKImageProvider *imageProvider;
 
 - (void).cxx_destruct;
-- (void)_enumerateImageProviderKeysWithBlock:(id /* block */)arg1;
+- (void)_enumerateImageProviderKeysWithBlock:(id)arg1;
 - (id)imageProvider;
-- (BOOL)isCompatibleWithFamily:(int)arg1;
+- (bool)isCompatibleWithFamily:(long long)arg1;
 - (void)setImageProvider:(id)arg1;
 
 @end

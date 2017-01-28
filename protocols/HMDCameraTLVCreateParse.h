@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (NSString *)descriptionWithIndent:(HMUIndent *)arg1;
 - (NSData *)tlvData;
 

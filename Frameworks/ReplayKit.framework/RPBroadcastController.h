@@ -11,9 +11,9 @@
 
 @property (nonatomic, readonly) NSString *broadcastExtensionBundleID;
 @property (nonatomic, readonly) NSURL *broadcastURL;
-@property (getter=isBroadcasting, nonatomic, readonly) BOOL broadcasting;
+@property (getter=isBroadcasting, nonatomic, readonly) bool broadcasting;
 @property (nonatomic) <RPBroadcastControllerDelegate> *delegate;
-@property (getter=isPaused, nonatomic, readonly) BOOL paused;
+@property (getter=isPaused, nonatomic, readonly) bool paused;
 @property (nonatomic, retain) NSDictionary *serviceInfo;
 
 - (void).cxx_destruct;
@@ -21,16 +21,16 @@
 - (id)broadcastURL;
 - (void)dealloc;
 - (id)delegate;
-- (void)finishBroadcastWithHandler:(id /* block */)arg1;
+- (void)finishBroadcastWithHandler:(id)arg1;
 - (id)init;
 - (id)initWithExtensionBundleID:(id)arg1 broadcastURL:(id)arg2;
-- (BOOL)isBroadcasting;
-- (BOOL)isPaused;
+- (bool)isBroadcasting;
+- (bool)isPaused;
 - (void)pauseBroadcast;
 - (void)resumeBroadcast;
 - (id)serviceInfo;
 - (void)setDelegate:(id)arg1;
 - (void)setServiceInfo:(id)arg1;
-- (void)startBroadcastWithHandler:(id /* block */)arg1;
+- (void)startBroadcastWithHandler:(id)arg1;
 
 @end

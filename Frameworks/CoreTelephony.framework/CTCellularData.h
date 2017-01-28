@@ -3,26 +3,26 @@
  */
 
 @interface CTCellularData : NSObject {
-    id /* block */  _cellularDataRestrictionDidUpdateNotifier;
+    id  _cellularDataRestrictionDidUpdateNotifier;
     struct cellular_usage_policy_client_s { } * _cuPolicyClient;
     struct queue { 
         struct object { 
             struct dispatch_object_s {} *fObj; 
         } fObj; 
     }  _cuPolicyClientQueue;
-    unsigned int  _restrictedState;
+    unsigned long long  _restrictedState;
 }
 
-@property (copy) id /* block */ cellularDataRestrictionDidUpdateNotifier;
-@property (nonatomic, readonly) unsigned int restrictedState;
+@property (copy) id cellularDataRestrictionDidUpdateNotifier;
+@property (nonatomic, readonly) unsigned long long restrictedState;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id /* block */)cellularDataRestrictionDidUpdateNotifier;
+- (id)cellularDataRestrictionDidUpdateNotifier;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)restrictedState;
-- (void)setCellularDataRestrictionDidUpdateNotifier:(id /* block */)arg1;
+- (unsigned long long)restrictedState;
+- (void)setCellularDataRestrictionDidUpdateNotifier:(id)arg1;
 - (void)setCellularDataRestrictionStateFromPolicies:(void*)arg1;
 
 @end

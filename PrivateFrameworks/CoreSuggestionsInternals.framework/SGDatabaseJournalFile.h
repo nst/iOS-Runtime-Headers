@@ -3,11 +3,11 @@
  */
 
 @interface SGDatabaseJournalFile : NSObject {
-    BOOL  _dead;
+    bool  _dead;
     int  _fd;
-    unsigned long  _len;
+    unsigned long long  _len;
     NSString * _path;
-    BOOL  _written;
+    bool  _written;
 }
 
 - (void).cxx_destruct;

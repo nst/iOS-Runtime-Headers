@@ -3,12 +3,12 @@
  */
 
 @interface HMDNumberParser : HMDCameraTLVDescription {
-    unsigned int  _decodedNumber;
+    unsigned long long  _decodedNumber;
 }
 
-@property (nonatomic, readonly) unsigned int decodedNumber;
+@property (nonatomic, readonly) unsigned long long decodedNumber;
 
-- (unsigned int)decodedNumber;
+- (unsigned long long)decodedNumber;
 - (id)initWithTLVData:(id)arg1;
 
 @end

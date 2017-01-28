@@ -4,16 +4,16 @@
 
 @interface SBKTaskAssertion : NSObject {
     NSString * _debugInfo;
-    id /* block */  _expireHandler;
+    id  _expireHandler;
     SBKProcessAssertion * _processAssertion;
 }
 
-+ (id)newBackgroundTaskWithExpirationHandler:(id /* block */)arg1 debugInfo:(id)arg2;
++ (id)newBackgroundTaskWithExpirationHandler:(id)arg1 debugInfo:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (id)initWithExpirationHandler:(id /* block */)arg1 debugInfo:(id)arg2;
+- (id)initWithExpirationHandler:(id)arg1 debugInfo:(id)arg2;
 - (void)invalidate;
 - (void)performExpirationHandler;
 

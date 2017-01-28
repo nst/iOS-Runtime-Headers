@@ -13,12 +13,12 @@
 - (id)_newTonePurchaseWithPurchase:(id)arg1;
 - (id)_thumbnailImageForItem:(id)arg1;
 - (long long)estimatedDiskSpaceNeededForItem:(id)arg1 storeOffer:(id)arg2;
-- (int)itemTypeForItem:(id)arg1;
-- (int)itemTypeForTypeString:(id)arg1;
+- (long long)itemTypeForItem:(id)arg1;
+- (long long)itemTypeForTypeString:(id)arg1;
 - (id)newDisplayItemValidationTestsForItem:(id)arg1;
 - (id)newExternalDownloadWithItem:(id)arg1 storeOffer:(id)arg2;
 - (id)newItemWithItemDictionary:(id)arg1;
 - (id)newPurchaseWithItem:(id)arg1 storeOffer:(id)arg2;
-- (id)typeStringForItemType:(int)arg1;
+- (id)typeStringForItemType:(long long)arg1;
 
 @end

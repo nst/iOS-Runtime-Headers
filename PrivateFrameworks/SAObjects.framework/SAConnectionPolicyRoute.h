@@ -8,10 +8,10 @@
 @property (nonatomic, copy) NSString *connectionId;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *host;
 @property (nonatomic, copy) NSNumber *mptcp;
-@property (nonatomic) int priority;
+@property (nonatomic) long long priority;
 @property (nonatomic, copy) NSString *resolver;
 @property (nonatomic, copy) NSString *resolverProtocol;
 @property (nonatomic, copy) NSString *routeId;
@@ -28,7 +28,7 @@
 - (id)groupIdentifier;
 - (id)host;
 - (id)mptcp;
-- (int)priority;
+- (long long)priority;
 - (id)resolver;
 - (id)resolverProtocol;
 - (id)routeId;
@@ -36,7 +36,7 @@
 - (void)setConnectionId:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setMptcp:(id)arg1;
-- (void)setPriority:(int)arg1;
+- (void)setPriority:(long long)arg1;
 - (void)setResolver:(id)arg1;
 - (void)setResolverProtocol:(id)arg1;
 - (void)setRouteId:(id)arg1;

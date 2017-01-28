@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly) NSString *fillMode;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeOffset;
 @property (nonatomic, readonly) CAMediaTimingFunction *timingFunction;

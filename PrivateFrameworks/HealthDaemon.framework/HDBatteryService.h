@@ -11,7 +11,7 @@
 @property (nonatomic) HDHealthServicePropertyManager *propertyManager;
 
 + (id)implementedProperties;
-+ (int)serviceType;
++ (long long)serviceType;
 + (id)serviceUUID;
 
 - (void).cxx_destruct;

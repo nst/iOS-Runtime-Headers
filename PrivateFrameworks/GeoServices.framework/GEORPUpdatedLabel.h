@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) GEOLatLng *center;
-@property (nonatomic, readonly) BOOL hasCenter;
-@property (nonatomic, readonly) BOOL hasLocalizedText;
+@property (nonatomic, readonly) bool hasCenter;
+@property (nonatomic, readonly) bool hasLocalizedText;
 @property (nonatomic, retain) NSString *localizedText;
 
 - (id)center;
@@ -18,13 +18,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCenter;
-- (BOOL)hasLocalizedText;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCenter;
+- (bool)hasLocalizedText;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)localizedText;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCenter:(id)arg1;
 - (void)setLocalizedText:(id)arg1;
 - (void)writeTo:(id)arg1;

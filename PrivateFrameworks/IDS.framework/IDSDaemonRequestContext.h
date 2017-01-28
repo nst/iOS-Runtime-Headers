@@ -5,14 +5,14 @@
 @interface IDSDaemonRequestContext : NSObject {
     IDSDaemonResponseHandler * _responseHandler;
     IMTimer * _systemTimer;
-    id /* block */  _timeoutBlock;
+    id  _timeoutBlock;
 }
 
 - (void)dealloc;
-- (id)initWithResponseHandler:(id)arg1 timeoutBlock:(id /* block */)arg2 systemTimer:(id)arg3;
+- (id)initWithResponseHandler:(id)arg1 timeoutBlock:(id)arg2 systemTimer:(id)arg3;
 - (void)killSystemTimer;
 - (id)responseHandler;
 - (id)systemTimer;
-- (id /* block */)timeoutBlock;
+- (id)timeoutBlock;
 
 @end

@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) NSString *rsaCert;
 @property (nonatomic, readonly) NSString *seid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

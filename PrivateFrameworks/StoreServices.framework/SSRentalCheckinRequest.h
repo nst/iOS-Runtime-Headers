@@ -21,7 +21,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)rentalKeyIdentifier;
 - (id)sinfs;
-- (void)startWithCompletionBlock:(id /* block */)arg1;
-- (void)startWithConnectionResponseBlock:(id /* block */)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithConnectionResponseBlock:(id)arg1;
 
 @end

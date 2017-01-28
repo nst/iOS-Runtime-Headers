@@ -3,24 +3,24 @@
  */
 
 @interface PUAlbumListSettings : PUSettings {
-    BOOL  _allowPeopleAlbum;
-    BOOL  _allowPlacesAlbum;
-    BOOL  _allowScenesAlbum;
+    bool  _allowPeopleAlbum;
+    bool  _allowPlacesAlbum;
+    bool  _allowScenesAlbum;
 }
 
-@property (nonatomic) BOOL allowPeopleAlbum;
-@property (nonatomic) BOOL allowPlacesAlbum;
-@property (nonatomic) BOOL allowScenesAlbum;
+@property (nonatomic) bool allowPeopleAlbum;
+@property (nonatomic) bool allowPlacesAlbum;
+@property (nonatomic) bool allowScenesAlbum;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)allowPeopleAlbum;
-- (BOOL)allowPlacesAlbum;
-- (BOOL)allowScenesAlbum;
-- (void)setAllowPeopleAlbum:(BOOL)arg1;
-- (void)setAllowPlacesAlbum:(BOOL)arg1;
-- (void)setAllowScenesAlbum:(BOOL)arg1;
+- (bool)allowPeopleAlbum;
+- (bool)allowPlacesAlbum;
+- (bool)allowScenesAlbum;
+- (void)setAllowPeopleAlbum:(bool)arg1;
+- (void)setAllowPlacesAlbum:(bool)arg1;
+- (void)setAllowScenesAlbum:(bool)arg1;
 - (void)setDefaultValues;
 
 @end

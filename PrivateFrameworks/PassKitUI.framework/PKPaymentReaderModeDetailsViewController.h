@@ -4,23 +4,23 @@
 
 @interface PKPaymentReaderModeDetailsViewController : PKPaymentSetupProvisioningFieldsViewController {
     PKPaymentSetupProduct * _product;
-    BOOL  _termsAccepted;
+    bool  _termsAccepted;
 }
 
 @property (nonatomic, readonly) PKPaymentSetupProduct *product;
 
 - (void).cxx_destruct;
 - (void)_pushReaderModeProvisioning;
-- (void)_registerLocalDeviceWithCompletion:(id /* block */)arg1;
+- (void)_registerLocalDeviceWithCompletion:(id)arg1;
 - (void)_showTerms;
 - (id)defaultFields;
 - (id)defaultHeaderViewSubTitle;
 - (id)defaultHeaderViewTitle;
 - (id)footerView;
 - (void)handleNextButtonTapped:(id)arg1;
-- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3 product:(id)arg4;
+- (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3 product:(id)arg4;
 - (id)product;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 - (id)visibleFieldIdentifiers;
 
 @end

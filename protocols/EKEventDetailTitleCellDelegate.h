@@ -8,6 +8,6 @@
 - (void)editButtonPressed;
 - (void)predictionWasActedOn;
 - (NSDate *)proposedTime;
-- (BOOL)shouldShowEditButtonInline;
+- (bool)shouldShowEditButtonInline;
 
 @end

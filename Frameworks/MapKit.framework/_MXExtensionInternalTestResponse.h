@@ -9,7 +9,7 @@
 @property (nonatomic, retain) NSString *responseString;
 
 + (void)load;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

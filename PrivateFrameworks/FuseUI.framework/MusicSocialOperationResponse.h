@@ -5,19 +5,19 @@
 @interface MusicSocialOperationResponse : NSObject {
     NSError * _error;
     id  _responseData;
-    BOOL  _serverSuccess;
+    bool  _serverSuccess;
 }
 
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, copy) id responseData;
-@property (nonatomic) BOOL serverSuccess;
+@property (nonatomic) bool serverSuccess;
 
 - (void).cxx_destruct;
 - (id)error;
 - (id)responseData;
-- (BOOL)serverSuccess;
+- (bool)serverSuccess;
 - (void)setError:(id)arg1;
 - (void)setResponseData:(id)arg1;
-- (void)setServerSuccess:(BOOL)arg1;
+- (void)setServerSuccess:(bool)arg1;
 
 @end

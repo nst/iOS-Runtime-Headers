@@ -9,7 +9,7 @@
 
 - (void).cxx_destruct;
 - (id)getGroupSelectionFromSpecifiers:(id)arg1;
-- (id)identifierForType:(unsigned int)arg1;
+- (id)identifierForType:(unsigned long long)arg1;
 - (void)setDisruptionGroup:(id)arg1 specifier:(id)arg2;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

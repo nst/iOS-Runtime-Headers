@@ -4,13 +4,13 @@
 
 @interface TIMecabraCandidate : TIKeyboardCandidate {
     NSString * _candidate;
-    int  _cursorMovement;
-    unsigned int  _deleteCount;
-    BOOL  _emojiCandidate;
-    BOOL  _extensionCandidate;
+    long long  _cursorMovement;
+    unsigned long long  _deleteCount;
+    bool  _emojiCandidate;
+    bool  _extensionCandidate;
     NSString * _input;
-    BOOL  _isAutocorrection;
-    BOOL  _isForShortcutConversion;
+    bool  _isAutocorrection;
+    bool  _isForShortcutConversion;
     NSNumber * _mecabraCandidatePointerValue;
 }
 
@@ -18,29 +18,29 @@
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (int)type;
 
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)cursorMovement;
+- (long long)cursorMovement;
 - (void)dealloc;
-- (unsigned int)deleteCount;
+- (unsigned long long)deleteCount;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(BOOL)arg4 isEmoji:(BOOL)arg5 isShortcut:(BOOL)arg6 isAutocorrection:(BOOL)arg7;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(BOOL)arg4 isEmoji:(BOOL)arg5 isShortcut:(BOOL)arg6 isAutocorrection:(BOOL)arg7 deleteCount:(unsigned int)arg8;
-- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(BOOL)arg4 isEmoji:(BOOL)arg5 isShortcut:(BOOL)arg6 isAutocorrection:(BOOL)arg7 deleteCount:(unsigned int)arg8 cursorMovement:(int)arg9;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(bool)arg4 isEmoji:(bool)arg5 isShortcut:(bool)arg6 isAutocorrection:(bool)arg7;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(bool)arg4 isEmoji:(bool)arg5 isShortcut:(bool)arg6 isAutocorrection:(bool)arg7 deleteCount:(unsigned long long)arg8;
+- (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(bool)arg4 isEmoji:(bool)arg5 isShortcut:(bool)arg6 isAutocorrection:(bool)arg7 deleteCount:(unsigned long long)arg8 cursorMovement:(long long)arg9;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSurface:(id)arg1 input:(id)arg2 mecabraCandidatePointerValue:(id)arg3;
-- (id)initWithSurface:(id)arg1 input:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(BOOL)arg4;
+- (id)initWithSurface:(id)arg1 input:(id)arg2 mecabraCandidatePointerValue:(id)arg3 isExtension:(bool)arg4;
 - (id)input;
-- (BOOL)isAutocorrection;
-- (BOOL)isEmojiCandidate;
-- (BOOL)isExtensionCandidate;
-- (BOOL)isForShortcutConversion;
-- (BOOL)isFullwidthCandidate;
+- (bool)isAutocorrection;
+- (bool)isEmojiCandidate;
+- (bool)isExtensionCandidate;
+- (bool)isForShortcutConversion;
+- (bool)isFullwidthCandidate;
 - (id)label;
 - (id)mecabraCandidatePointerValue;
 - (void)setMecabraCandidatePointerValue:(id)arg1;

@@ -19,7 +19,7 @@
 @property (nonatomic, retain) NSString *volume;
 
 + (id)cacheDeleteRecentVolumeInfo:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)collection_queue;
@@ -48,9 +48,9 @@
 - (id)timestamp;
 - (void)updateDiagnostics:(id)arg1 atUrgency:(int)arg2;
 - (void)updateDiagnostics:(id)arg1 forService:(id)arg2 atUrgency:(int)arg3;
-- (BOOL)updateServiceInfoAmount:(id)arg1 forService:(id)arg2 atUrgency:(int)arg3 pushed:(BOOL)arg4;
-- (BOOL)validate:(double)arg1;
-- (BOOL)validateServiceInfo:(id)arg1 atUrgency:(int)arg2;
+- (bool)updateServiceInfoAmount:(id)arg1 forService:(id)arg2 atUrgency:(int)arg3 pushed:(bool)arg4;
+- (bool)validate:(double)arg1;
+- (bool)validateServiceInfo:(id)arg1 atUrgency:(int)arg2;
 - (id)volume;
 
 @end

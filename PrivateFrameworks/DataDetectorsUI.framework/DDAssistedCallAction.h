@@ -4,6 +4,6 @@
 
 @interface DDAssistedCallAction : DDCallAction
 
-+ (BOOL)isAvailable;
++ (bool)isAvailable;
 
 @end

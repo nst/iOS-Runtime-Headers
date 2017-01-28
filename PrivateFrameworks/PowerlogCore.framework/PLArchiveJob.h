@@ -10,19 +10,19 @@
 
 @property (retain) PLArchiveEntry *archiveEntry;
 @property (retain) <PLArchiveJobManager> *manager;
-@property (nonatomic) unsigned int numAttempts;
-@property (nonatomic) int stage;
+@property (nonatomic) unsigned long long numAttempts;
+@property (nonatomic) long long stage;
 @property (retain) PLTimer *watchdog;
 
-+ (SEL)recoverSelectorForStage:(int)arg1;
-+ (SEL)runSelectorForStage:(int)arg1;
++ (SEL)recoverSelectorForStage:(long long)arg1;
++ (SEL)runSelectorForStage:(long long)arg1;
 + (id)storageQueue;
 
 - (void).cxx_destruct;
 - (id)archiveEntry;
 - (id)initWithManager:(id)arg1 andArchiveEntry:(id)arg2;
 - (id)manager;
-- (unsigned int)numAttempts;
+- (unsigned long long)numAttempts;
 - (void)recover;
 - (void)recoverCompress;
 - (void)recoverCopy;
@@ -30,10 +30,10 @@
 - (void)run;
 - (void)setArchiveEntry:(id)arg1;
 - (void)setManager:(id)arg1;
-- (void)setNumAttempts:(unsigned int)arg1;
-- (void)setStage:(int)arg1;
+- (void)setNumAttempts:(unsigned long long)arg1;
+- (void)setStage:(long long)arg1;
 - (void)setWatchdog:(id)arg1;
-- (int)stage;
+- (long long)stage;
 - (void)stageCompress;
 - (void)stageCopy;
 - (void)stageRemove;

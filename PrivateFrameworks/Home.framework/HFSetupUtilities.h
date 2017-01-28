@@ -4,6 +4,6 @@
 
 @interface HFSetupUtilities : NSObject
 
-+ (unsigned int)errorTypeForSetupError:(id)arg1;
++ (unsigned long long)errorTypeForSetupError:(id)arg1;
 
 @end

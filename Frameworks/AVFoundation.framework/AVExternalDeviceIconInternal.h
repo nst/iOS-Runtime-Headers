@@ -4,10 +4,10 @@
 
 @interface AVExternalDeviceIconInternal : NSObject {
     NSData * _data;
-    BOOL  _prerendered;
+    bool  _prerendered;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _size;
 }
 

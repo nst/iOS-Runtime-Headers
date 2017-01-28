@@ -15,9 +15,9 @@
 }
 
 @property (nonatomic) int duration;
-@property (nonatomic) BOOL hasDuration;
-@property (nonatomic) BOOL hasInteractedItemIndex;
-@property (nonatomic) BOOL hasListType;
+@property (nonatomic) bool hasDuration;
+@property (nonatomic) bool hasInteractedItemIndex;
+@property (nonatomic) bool hasListType;
 @property (nonatomic) int interactedItemIndex;
 @property (nonatomic) int listType;
 @property (nonatomic, retain) NSMutableArray *proactiveItems;
@@ -33,23 +33,23 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)duration;
-- (BOOL)hasDuration;
-- (BOOL)hasInteractedItemIndex;
-- (BOOL)hasListType;
-- (unsigned int)hash;
+- (bool)hasDuration;
+- (bool)hasInteractedItemIndex;
+- (bool)hasListType;
+- (unsigned long long)hash;
 - (int)interactedItemIndex;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)listType;
 - (id)listTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)proactiveItemAtIndex:(unsigned int)arg1;
+- (id)proactiveItemAtIndex:(unsigned long long)arg1;
 - (id)proactiveItems;
-- (unsigned int)proactiveItemsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)proactiveItemsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setDuration:(int)arg1;
-- (void)setHasDuration:(BOOL)arg1;
-- (void)setHasInteractedItemIndex:(BOOL)arg1;
-- (void)setHasListType:(BOOL)arg1;
+- (void)setHasDuration:(bool)arg1;
+- (void)setHasInteractedItemIndex:(bool)arg1;
+- (void)setHasListType:(bool)arg1;
 - (void)setInteractedItemIndex:(int)arg1;
 - (void)setListType:(int)arg1;
 - (void)setProactiveItems:(id)arg1;

@@ -15,7 +15,7 @@
 - (id)idsAvailabilityProvider;
 - (id)initWithIDSAvailabilityProvider:(id)arg1;
 - (id)resolveBestFaceTimeIDSPropertyForContact:(id)arg1 schedulerProvider:(id)arg2;
-- (id)resolveBestIDSPropertyForContact:(id)arg1 schedulerProvider:(id)arg2 usingAvailabilityProviderCall:(id /* block */)arg3;
+- (id)resolveBestIDSPropertyForContact:(id)arg1 schedulerProvider:(id)arg2 usingAvailabilityProviderCall:(id)arg3;
 - (id)resolveBestIMessageIDSPropertyForContact:(id)arg1 schedulerProvider:(id)arg2;
 
 @end

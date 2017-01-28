@@ -3,7 +3,7 @@
  */
 
 @interface WBSFormAutoFillParsecFeedbackProcessor : NSObject <WBSFormAutoFillFeedbackProcessor> {
-    unsigned int  _autoFillVersion;
+    unsigned long long  _autoFillVersion;
     <WBSFormAutoFillFeedbackDomainPolicyProvider> * _domainPolicyProvider;
     <WBSParsecGlobalFeedbackDispatcher> * _globalFeedbackDispatcher;
 }
@@ -11,15 +11,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) <WBSFormAutoFillFeedbackDomainPolicyProvider> *domainPolicyProvider;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_feedbackWithCorrections:(id)arg1 forFingerprint:(id)arg2 onDomain:(id)arg3 includeOrigin:(BOOL)arg4;
-- (void)_getFeedbackWithCorrections:(id)arg1 forFingerprint:(id)arg2 onDomain:(id)arg3 completionHandler:(id /* block */)arg4;
+- (id)_feedbackWithCorrections:(id)arg1 forFingerprint:(id)arg2 onDomain:(id)arg3 includeOrigin:(bool)arg4;
+- (void)_getFeedbackWithCorrections:(id)arg1 forFingerprint:(id)arg2 onDomain:(id)arg3 completionHandler:(id)arg4;
 - (id)domainPolicyProvider;
 - (id)init;
-- (id)initWithGlobalFeedbackDispatcher:(id)arg1 domainPolicyProvider:(id)arg2 autoFillVersion:(unsigned int)arg3;
+- (id)initWithGlobalFeedbackDispatcher:(id)arg1 domainPolicyProvider:(id)arg2 autoFillVersion:(unsigned long long)arg3;
 - (void)sendFeedbackWithCorrections:(id)arg1 forFingerprint:(id)arg2 onDomain:(id)arg3;
 - (void)setDomainPolicyProvider:(id)arg1;
 

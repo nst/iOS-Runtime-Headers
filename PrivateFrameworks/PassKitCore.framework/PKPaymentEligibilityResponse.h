@@ -4,8 +4,8 @@
 
 @interface PKPaymentEligibilityResponse : PKPaymentWebServiceResponse {
     NSString * _applicationIdentifier;
-    int  _cardType;
-    int  _eligibilityStatus;
+    long long  _cardType;
+    long long  _eligibilityStatus;
     NSString * _identifier;
     NSURL * _learnMoreURL;
     NSString * _nonce;
@@ -15,8 +15,8 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *applicationIdentifier;
-@property (nonatomic, readonly) int cardType;
-@property (nonatomic, readonly) int eligibilityStatus;
+@property (nonatomic, readonly) long long cardType;
+@property (nonatomic, readonly) long long eligibilityStatus;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, copy) NSURL *learnMoreURL;
 @property (nonatomic, readonly, copy) NSString *nonce;
@@ -26,8 +26,8 @@
 
 - (void).cxx_destruct;
 - (id)applicationIdentifier;
-- (int)cardType;
-- (int)eligibilityStatus;
+- (long long)cardType;
+- (long long)eligibilityStatus;
 - (id)identifier;
 - (id)initWithData:(id)arg1;
 - (id)learnMoreURL;

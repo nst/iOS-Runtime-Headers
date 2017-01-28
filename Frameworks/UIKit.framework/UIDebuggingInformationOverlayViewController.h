@@ -8,10 +8,10 @@
     NSArray * _bigConstraints;
     UIView * _containerView;
     NSLayoutConstraint * _heightConstraint;
-    BOOL  _isFullscreen;
+    bool  _isFullscreen;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _offset;
     UIDebuggingInformationRootTableViewController * _rootTableViewController;
     UIView * _shadowView;
@@ -26,8 +26,8 @@
 @property (nonatomic, retain) NSArray *bigConstraints;
 @property (nonatomic, retain) UIView *containerView;
 @property (nonatomic, retain) NSLayoutConstraint *heightConstraint;
-@property (nonatomic) BOOL isFullscreen;
-@property struct CGPoint { float x1; float x2; } offset;
+@property (nonatomic) bool isFullscreen;
+@property struct CGPoint { double x1; double x2; } offset;
 @property (nonatomic, retain) UIDebuggingInformationRootTableViewController *rootTableViewController;
 @property (nonatomic, retain) UIView *shadowView;
 @property (nonatomic, retain) NSArray *smallConstraints;
@@ -43,16 +43,16 @@
 - (void)didReceiveGesture:(id)arg1;
 - (id)heightConstraint;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isFullscreen;
-- (struct CGPoint { float x1; float x2; })offset;
+- (bool)isFullscreen;
+- (struct CGPoint { double x1; double x2; })offset;
 - (id)rootTableViewController;
 - (void)setAnimator:(id)arg1;
 - (void)setBehavior:(id)arg1;
 - (void)setBigConstraints:(id)arg1;
 - (void)setContainerView:(id)arg1;
 - (void)setHeightConstraint:(id)arg1;
-- (void)setIsFullscreen:(BOOL)arg1;
-- (void)setOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setIsFullscreen:(bool)arg1;
+- (void)setOffset:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setRootTableViewController:(id)arg1;
 - (void)setShadowView:(id)arg1;
 - (void)setSmallConstraints:(id)arg1;
@@ -62,7 +62,7 @@
 - (id)shadowView;
 - (id)smallConstraints;
 - (id)splitViewController;
-- (BOOL)splitViewController:(id)arg1 collapseSecondaryViewController:(id)arg2 ontoPrimaryViewController:(id)arg3;
+- (bool)splitViewController:(id)arg1 collapseSecondaryViewController:(id)arg2 ontoPrimaryViewController:(id)arg3;
 - (id)splitViewController:(id)arg1 separateSecondaryViewControllerFromPrimaryViewController:(id)arg2;
 - (id)stickyBehavior;
 - (void)toggleFullscreen;

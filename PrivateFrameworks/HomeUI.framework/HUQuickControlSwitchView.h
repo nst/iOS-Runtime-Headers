@@ -5,19 +5,19 @@
 @interface HUQuickControlSwitchView : UIView <HUQuickControlControllableView> {
     UIView * _knobView;
     HUQuickControlSwitchViewProfile * _profile;
-    float  _switchValue;
+    double  _switchValue;
     UIView * _wellView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *knobView;
 @property (nonatomic, copy) HUQuickControlSwitchViewProfile *profile;
 @property (nonatomic, retain) id secondaryValue;
-@property (nonatomic) int sizeSubclass;
+@property (nonatomic) long long sizeSubclass;
 @property (readonly) Class superclass;
-@property (nonatomic) float switchValue;
+@property (nonatomic) double switchValue;
 @property (nonatomic, retain) id value;
 @property (nonatomic, retain) UIView *wellView;
 
@@ -28,10 +28,10 @@
 - (id)profile;
 - (void)setKnobView:(id)arg1;
 - (void)setProfile:(id)arg1;
-- (void)setSwitchValue:(float)arg1;
+- (void)setSwitchValue:(double)arg1;
 - (void)setValue:(id)arg1;
 - (void)setWellView:(id)arg1;
-- (float)switchValue;
+- (double)switchValue;
 - (id)value;
 - (id)wellView;
 

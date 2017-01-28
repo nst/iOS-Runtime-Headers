@@ -3,15 +3,15 @@
  */
 
 @interface WBSTabDialogCompletionHandler : NSObject {
-    id /* block */  _completionHandlerBlock;
+    id  _completionHandlerBlock;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandlerBlock;
+@property (nonatomic, copy) id completionHandlerBlock;
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id /* block */)completionHandlerBlock;
-- (id)initWithCompletionHandlerBlock:(id /* block */)arg1;
-- (void)setCompletionHandlerBlock:(id /* block */)arg1;
+- (id)completionHandlerBlock;
+- (id)initWithCompletionHandlerBlock:(id)arg1;
+- (void)setCompletionHandlerBlock:(id)arg1;
 
 @end

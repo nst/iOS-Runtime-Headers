@@ -8,8 +8,8 @@
 @property (nonatomic, copy) NSString *applicationBundleVersion;
 @property (nonatomic, copy) NSString *localizedModelName;
 @property (nonatomic, copy) NSString *name;
-@property (getter=isPairingAllowed, nonatomic) BOOL pairingAllowed;
-@property (nonatomic) unsigned int protocolVersion;
+@property (getter=isPairingAllowed, nonatomic) bool pairingAllowed;
+@property (nonatomic) unsigned long long protocolVersion;
 @property (nonatomic, copy) NSString *systemBuildVersion;
 @property (nonatomic, copy) NSString *uniqueIdentifier;
 
@@ -17,8 +17,8 @@
 - (void)setApplicationBundleVersion:(id)arg1;
 - (void)setLocalizedModelName:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPairingAllowed:(BOOL)arg1;
-- (void)setProtocolVersion:(unsigned int)arg1;
+- (void)setPairingAllowed:(bool)arg1;
+- (void)setProtocolVersion:(unsigned long long)arg1;
 - (void)setSystemBuildVersion:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 

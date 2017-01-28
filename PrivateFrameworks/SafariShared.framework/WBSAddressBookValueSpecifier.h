@@ -20,10 +20,10 @@
 - (id)category;
 - (id)component;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithProperty:(id)arg1 component:(id)arg2 label:(id)arg3;
 - (id)initWithProperty:(id)arg1 component:(id)arg2 label:(id)arg3 category:(id)arg4 parentProperty:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)label;
 - (id)parentProperty;
 - (id)property;

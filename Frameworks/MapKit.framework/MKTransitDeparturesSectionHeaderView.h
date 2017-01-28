@@ -5,26 +5,26 @@
 @interface MKTransitDeparturesSectionHeaderView : MKCustomSeparatorTableViewCell {
     NSLayoutConstraint * _bottomConstraint;
     MKButtonWithTargetArgument * _button;
-    BOOL  _extraSpacing;
+    bool  _extraSpacing;
     _MKUILabel * _label;
     NSLayoutConstraint * _topConstraint;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, readonly) MKButtonWithTargetArgument *button;
 @property (nonatomic, copy) NSString *text;
 
-+ (id)_buttonFont:(unsigned int)arg1;
-+ (id)_font:(unsigned int)arg1;
-+ (float)defaultHeight;
++ (id)_buttonFont:(unsigned long long)arg1;
++ (id)_font:(unsigned long long)arg1;
++ (double)defaultHeight;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
 - (void)_updateConstraintValues;
 - (id)button;
 - (void)dealloc;
-- (id)initWithType:(unsigned int)arg1 extraSpacing:(BOOL)arg2;
-- (id)initWithType:(unsigned int)arg1 extraSpacing:(BOOL)arg2 reuseIdentifier:(id)arg3;
+- (id)initWithType:(unsigned long long)arg1 extraSpacing:(bool)arg2;
+- (id)initWithType:(unsigned long long)arg1 extraSpacing:(bool)arg2 reuseIdentifier:(id)arg3;
 - (void)setText:(id)arg1;
 - (id)text;
 - (void)tintColorDidChange;

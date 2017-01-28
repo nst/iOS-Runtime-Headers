@@ -6,25 +6,25 @@
     NSUUID * _UUID;
     NSString * _playlistGlobalID;
     long long  _storeAdamID;
-    unsigned int  _tasteType;
-    int  _type;
+    unsigned long long  _tasteType;
+    long long  _type;
 }
 
 @property (nonatomic, readonly) NSUUID *UUID;
 @property (nonatomic, readonly) NSString *playlistGlobalID;
 @property (nonatomic, readonly) long long storeAdamID;
-@property (nonatomic, readonly) unsigned int tasteType;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) unsigned long long tasteType;
+@property (nonatomic, readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)UUID;
-- (void)_initializeWithType:(int)arg1 tasteType:(unsigned int)arg2;
+- (void)_initializeWithType:(long long)arg1 tasteType:(unsigned long long)arg2;
 - (id)init;
-- (id)initWithPlaylistGlobalID:(id)arg1 tasteType:(unsigned int)arg2;
-- (id)initWithStoreAdamID:(long long)arg1 tasteType:(unsigned int)arg2;
+- (id)initWithPlaylistGlobalID:(id)arg1 tasteType:(unsigned long long)arg2;
+- (id)initWithStoreAdamID:(long long)arg1 tasteType:(unsigned long long)arg2;
 - (id)playlistGlobalID;
 - (long long)storeAdamID;
-- (unsigned int)tasteType;
-- (int)type;
+- (unsigned long long)tasteType;
+- (long long)type;
 
 @end

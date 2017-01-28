@@ -5,6 +5,6 @@
 
 @required
 
-- (NSArray *)activityGroupViewController:(UIActivityGroupViewController *)arg1 availableActivitiesInCategory:(int)arg2;
+- (NSArray *)activityGroupViewController:(UIActivityGroupViewController *)arg1 availableActivitiesInCategory:(long long)arg2;
 
 @end

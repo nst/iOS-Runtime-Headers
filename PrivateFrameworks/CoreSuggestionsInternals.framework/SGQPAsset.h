@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, readonly) NSString *abGroup;
-@property (nonatomic, readonly) unsigned int assetVersion;
+@property (nonatomic, readonly) unsigned long long assetVersion;
 @property (nonatomic, readonly) NSString *language;
 
 - (void).cxx_destruct;
@@ -18,7 +18,7 @@
 - (id)_readPlist:(id)arg1 property:(id)arg2;
 - (id)_readPlistFromPath:(id)arg1 property:(id)arg2;
 - (id)abGroup;
-- (unsigned int)assetVersion;
+- (unsigned long long)assetVersion;
 - (id)emotivePhrases;
 - (id)initWithAsset:(id)arg1 language:(id)arg2 abGroup:(id)arg3;
 - (id)language;

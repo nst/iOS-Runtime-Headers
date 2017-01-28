@@ -4,10 +4,10 @@
 
 @interface _GEOExperimentServiceRequester : GEOServiceRequester
 
-+ (unsigned int)_urlType;
++ (unsigned long long)_urlType;
 + (id)sharedInstance;
 
 - (void)cancelRequest:(id)arg1;
-- (void)startWithRequest:(id)arg1 traits:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)startWithRequest:(id)arg1 traits:(id)arg2 completionHandler:(id)arg3;
 
 @end

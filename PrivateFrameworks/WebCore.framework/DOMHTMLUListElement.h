@@ -4,11 +4,11 @@
 
 @interface DOMHTMLUListElement : DOMHTMLElement
 
-@property BOOL compact;
+@property bool compact;
 @property (copy) NSString *type;
 
-- (BOOL)compact;
-- (void)setCompact:(BOOL)arg1;
+- (bool)compact;
+- (void)setCompact:(bool)arg1;
 - (void)setType:(id)arg1;
 - (id)type;
 

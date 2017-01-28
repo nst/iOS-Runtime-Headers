@@ -15,8 +15,8 @@
 - (void)dealloc;
 - (id)fontForId:(int)arg1;
 - (id)init;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (id)majorFont;
 - (id)minorFont;
 - (id)name;

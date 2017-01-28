@@ -11,25 +11,25 @@
     NSMutableArray * _provisioningCompletions;
     PKPaymentDeviceProvisioningData * _provisioningData;
     PKSecureElement * _secureElement;
-    BOOL  _skipLocationCheck;
+    bool  _skipLocationCheck;
     NSTimer * _timer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL skipLocationCheck;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool skipLocationCheck;
 @property (readonly) Class superclass;
 
 + (id)clientHardwarePlatformInfoHTTPHeader;
 + (id)clientInfoHTTPHeader;
 
 - (void).cxx_destruct;
-- (void)SEPParingInformationWithCompletion:(id /* block */)arg1;
+- (void)SEPParingInformationWithCompletion:(id)arg1;
 - (void)_executeProvisioningCompletionHandlers;
 - (void)_finishLocationFixWithLocation:(id)arg1;
 - (id)configurationData;
-- (void)configurationDataWithCompletionHandler:(id /* block */)arg1;
+- (void)configurationDataWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (void)deleteApplicationWithAID:(id)arg1;
 - (id)init;
@@ -37,14 +37,14 @@
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)primarySecureElementIdentifier;
-- (void)provisioningDataWithCompletionHandler:(id /* block */)arg1;
-- (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)queueConnectionToTrustedServiceManagerWithCompletion:(id /* block */)arg1;
-- (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)provisioningDataWithCompletionHandler:(id)arg1;
+- (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(id)arg2;
+- (void)queueConnectionToTrustedServiceManagerWithCompletion:(id)arg1;
+- (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(id)arg2;
 - (id)rewrapDataWithDeviceIdentifier:(id)arg1 certificates:(id)arg2;
 - (void)setRegistrationRegionMap:(id)arg1 primaryRegionTopic:(id)arg2;
-- (void)setSkipLocationCheck:(BOOL)arg1;
-- (void)signData:(id)arg1 signatureEntanglementMode:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
-- (BOOL)skipLocationCheck;
+- (void)setSkipLocationCheck:(bool)arg1;
+- (void)signData:(id)arg1 signatureEntanglementMode:(unsigned long long)arg2 withCompletionHandler:(id)arg3;
+- (bool)skipLocationCheck;
 
 @end

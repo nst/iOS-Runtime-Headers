@@ -5,102 +5,102 @@
 @interface MPUStackView : UIView {
     struct { 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } baseSize; 
         struct CGRect { 
             struct CGPoint { 
-                float x; 
-                float y; 
+                double x; 
+                double y; 
             } origin; 
             struct CGSize { 
-                float width; 
-                float height; 
+                double width; 
+                double height; 
             } size; 
         } bounds; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } centerInLocalCoordinates; 
-        BOOL forcesIntegralX; 
-        BOOL forcesIntegralY; 
+        bool forcesIntegralX; 
+        bool forcesIntegralY; 
         struct UIOffset { 
-            float horizontal; 
-            float vertical; 
+            double horizontal; 
+            double vertical; 
         } maximumRelativeOffsetStep; 
-        float scale; 
+        double scale; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } sizeInsetStep; 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } vanishingPoint; 
     }  _configuration;
     <MPUStackViewDataSource> * _dataSource;
-    int  _distanceIgnoreCount;
+    long long  _distanceIgnoreCount;
     Class  _itemClass;
     NSString * _itemReuseIdentifier;
     NSMutableArray * _items;
-    int  _numberOfItems;
+    long long  _numberOfItems;
     UIView * _perspectiveTargetView;
     UIWindow * _window;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } baseSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } baseSize;
 @property (nonatomic) <MPUStackViewDataSource> *dataSource;
-@property (nonatomic) BOOL forcesIntegralX;
-@property (nonatomic) BOOL forcesIntegralY;
+@property (nonatomic) bool forcesIntegralX;
+@property (nonatomic) bool forcesIntegralY;
 @property (nonatomic, readonly) Class itemClass;
 @property (nonatomic, readonly) NSString *itemReuseIdentifier;
 @property (nonatomic, readonly) NSArray *items;
-@property (nonatomic) struct UIOffset { float x1; float x2; } maximumRelativeOffsetStep;
-@property (nonatomic, readonly) int numberOfItems;
+@property (nonatomic) struct UIOffset { double x1; double x2; } maximumRelativeOffsetStep;
+@property (nonatomic, readonly) long long numberOfItems;
 @property (nonatomic) UIView *perspectiveTargetView;
-@property (nonatomic) struct CGSize { float x1; float x2; } sizeInsetStep;
-@property (nonatomic) struct CGPoint { float x1; float x2; } vanishingPoint;
+@property (nonatomic) struct CGSize { double x1; double x2; } sizeInsetStep;
+@property (nonatomic) struct CGPoint { double x1; double x2; } vanishingPoint;
 
 - (void).cxx_destruct;
 - (id)_dequeueReusableItem;
 - (void)_updateGeometryFieldsInConfiguration;
-- (struct CGSize { float x1; float x2; })baseSize;
+- (struct CGSize { double x1; double x2; })baseSize;
 - (void)beginIgnoringDistanceUpdates;
 - (id)dataSource;
 - (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
 - (void)endIgnoringDistanceUpdates;
-- (BOOL)forcesIntegralX;
-- (BOOL)forcesIntegralY;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 itemClass:(Class)arg2 itemReuseIdentifier:(id)arg3;
-- (id)itemAtIndex:(int)arg1;
+- (bool)forcesIntegralX;
+- (bool)forcesIntegralY;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 itemClass:(Class)arg2 itemReuseIdentifier:(id)arg3;
+- (id)itemAtIndex:(long long)arg1;
 - (Class)itemClass;
 - (id)itemReuseIdentifier;
 - (id)items;
 - (void)layoutSubviews;
-- (struct UIOffset { float x1; float x2; })maximumRelativeOffsetStep;
-- (int)numberOfItems;
+- (struct UIOffset { double x1; double x2; })maximumRelativeOffsetStep;
+- (long long)numberOfItems;
 - (id)perspectiveTargetView;
-- (struct UIOffset { float x1; float x2; })relativeOffsetOfItemAtIndex:(float)arg1 withCenter:(struct CGPoint { float x1; float x2; })arg2;
+- (struct UIOffset { double x1; double x2; })relativeOffsetOfItemAtIndex:(double)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2;
 - (void)reloadData;
-- (void)reloadDataWithTransition:(int)arg1;
-- (void)setBaseSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)reloadDataWithTransition:(long long)arg1;
+- (void)setBaseSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setCenter:(struct CGPoint { double x1; double x2; })arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setForcesIntegralX:(BOOL)arg1;
-- (void)setForcesIntegralY:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setMaximumRelativeOffsetStep:(struct UIOffset { float x1; float x2; })arg1;
+- (void)setForcesIntegralX:(bool)arg1;
+- (void)setForcesIntegralY:(bool)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setMaximumRelativeOffsetStep:(struct UIOffset { double x1; double x2; })arg1;
 - (void)setPerspectiveTargetView:(id)arg1;
-- (void)setSizeInsetStep:(struct CGSize { float x1; float x2; })arg1;
-- (void)setVanishingPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })sizeInsetStep;
-- (struct CGSize { float x1; float x2; })sizeOfItemAtIndex:(float)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setSizeInsetStep:(struct CGSize { double x1; double x2; })arg1;
+- (void)setVanishingPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeInsetStep;
+- (struct CGSize { double x1; double x2; })sizeOfItemAtIndex:(double)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)updateForChangedDistanceFromVanishingPoint;
-- (struct CGPoint { float x1; float x2; })vanishingPoint;
+- (struct CGPoint { double x1; double x2; })vanishingPoint;
 
 @end

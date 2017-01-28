@@ -3,16 +3,16 @@
  */
 
 @interface SiriCoreConnectionType : NSObject {
-    int  _technology;
+    long long  _technology;
 }
 
-- (unsigned int)aggregatorConnectionType;
-- (BOOL)canUseWiFiDirectly;
+- (unsigned long long)aggregatorConnectionType;
+- (bool)canUseWiFiDirectly;
 - (id)description;
-- (int)diagnosticConnectionType;
-- (id)initWithTechnology:(int)arg1;
-- (BOOL)isEdge;
-- (BOOL)isWWAN;
-- (int)technology;
+- (long long)diagnosticConnectionType;
+- (id)initWithTechnology:(long long)arg1;
+- (bool)isEdge;
+- (bool)isWWAN;
+- (long long)technology;
 
 @end

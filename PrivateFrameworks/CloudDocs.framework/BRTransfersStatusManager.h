@@ -8,7 +8,7 @@
     id  _globalProgressSubscriber;
     NSProgress * _globalUploadProgress;
     NSOperationQueue * _queue;
-    unsigned int  _shouldHideGlobalDownloadProgressCount;
+    unsigned long long  _shouldHideGlobalDownloadProgressCount;
     NSMutableArray * _transfers;
 }
 
@@ -19,9 +19,9 @@
 - (void).cxx_destruct;
 - (void)_setGlobalProgress:(id)arg1 forIvar:(id*)arg2;
 - (void)addTransfer:(id)arg1;
-- (void)downloadAndObserveItemAtURL:(id)arg1 handler:(id /* block */)arg2;
+- (void)downloadAndObserveItemAtURL:(id)arg1 handler:(id)arg2;
 - (id)init;
-- (void)insertTransfer:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertTransfer:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)removeTransfer:(id)arg1;
 - (void)resume;
 - (id)startObservingItemDownloadProgressAtURL:(id)arg1;

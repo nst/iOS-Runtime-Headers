@@ -5,6 +5,6 @@
 
 @required
 
-- (void)tableViewCell:(MSCLSettingsTableViewCell *)arg1 valueChanged:(BOOL)arg2;
+- (void)tableViewCell:(MSCLSettingsTableViewCell *)arg1 valueChanged:(bool)arg2;
 
 @end

@@ -14,7 +14,7 @@
 @property (nonatomic, copy) MPCRadioStationPlaybackMetadata *radioStationPlaybackMetadata;
 @property (nonatomic, retain) RadioStationMatchContext *stationMatchContext;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

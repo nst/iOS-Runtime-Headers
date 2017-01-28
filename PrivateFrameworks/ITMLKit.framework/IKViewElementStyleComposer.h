@@ -5,21 +5,21 @@
 @interface IKViewElementStyleComposer : NSObject {
     IKViewElementStyle * _composedSansDefaultStyle;
     IKViewElementStyle * _composedStyle;
-    BOOL  _compositionDone;
+    bool  _compositionDone;
     IKViewElementStyleComposer * _defaultStyleComposer;
     IKViewElementStyle * _elementStyleOverrides;
     IKViewElementStyleComposer * _parentStyleComposer;
-    BOOL  _requiresMediaQueryEvaluation;
+    bool  _requiresMediaQueryEvaluation;
     IKStyleList * _styleList;
 }
 
 @property (nonatomic, retain) IKViewElementStyle *composedSansDefaultStyle;
 @property (nonatomic, retain) IKViewElementStyle *composedStyle;
-@property (getter=isCompositionDone, nonatomic) BOOL compositionDone;
+@property (getter=isCompositionDone, nonatomic) bool compositionDone;
 @property (nonatomic, readonly, retain) IKViewElementStyleComposer *defaultStyleComposer;
 @property (nonatomic, readonly, retain) IKViewElementStyle *elementStyleOverrides;
 @property (nonatomic, readonly, retain) IKViewElementStyleComposer *parentStyleComposer;
-@property (nonatomic, readonly) BOOL requiresMediaQueryEvaluation;
+@property (nonatomic, readonly) bool requiresMediaQueryEvaluation;
 @property (nonatomic, readonly, retain) IKStyleList *styleList;
 
 + (id)styleComposerWithDefaultStyleComposer:(id)arg1 parentStyleComposer:(id)arg2 styleList:(id)arg3 elementStyleOverrides:(id)arg4;
@@ -33,12 +33,12 @@
 - (id)defaultStyleComposer;
 - (id)elementStyleOverrides;
 - (id)initWithDefaultStyleComposer:(id)arg1 parentStyleComposer:(id)arg2 styleList:(id)arg3 elementStyleOverrides:(id)arg4;
-- (BOOL)isCompositionDone;
+- (bool)isCompositionDone;
 - (id)parentStyleComposer;
-- (BOOL)requiresMediaQueryEvaluation;
+- (bool)requiresMediaQueryEvaluation;
 - (void)setComposedSansDefaultStyle:(id)arg1;
 - (void)setComposedStyle:(id)arg1;
-- (void)setCompositionDone:(BOOL)arg1;
+- (void)setCompositionDone:(bool)arg1;
 - (void)setNeedsRecomposition;
 - (id)styleList;
 

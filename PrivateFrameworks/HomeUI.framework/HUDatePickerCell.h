@@ -10,16 +10,16 @@
 @property (nonatomic, retain) UIDatePicker *datePicker;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HFItem *item;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)datePicker;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)item;
 - (void)setDatePicker:(id)arg1;
 - (void)setItem:(id)arg1;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface _NSXPCDistantObjectSynchronousWithError : _NSXPCDistantObjectWithError
 
-- (BOOL)_sync;
+- (bool)_sync;
 
 @end

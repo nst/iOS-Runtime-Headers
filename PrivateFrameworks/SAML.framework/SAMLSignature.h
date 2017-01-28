@@ -13,7 +13,7 @@
 + (id)createElement:(id*)arg1;
 
 - (id)identifier;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)keyInfo;
 - (id)signatureValue;
 - (id)signatureValueId;

@@ -5,12 +5,12 @@
 
 @required
 
-- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
-- (void)activeBehaviorOverrideTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2 activeQuietModeAssertionCount:(unsigned int)arg3;
-- (void)behaviorOverrideStatusChanged:(int)arg1 source:(unsigned int)arg2;
-- (void)behaviorOverridesChanged:(NSArray *)arg1 source:(unsigned int)arg2;
-- (void)behaviorOverridesEffectiveWhileUnlockedChanged:(BOOL)arg1 source:(unsigned int)arg2;
-- (void)privilegedSenderAddressBookGroupRecordIDChanged:(int)arg1 name:(NSString *)arg2 source:(unsigned int)arg3;
-- (void)privilegedSenderTypesChanged:(unsigned int)arg1 source:(unsigned int)arg2;
+- (void)activeBehaviorOverrideTypesChanged:(unsigned long long)arg1 source:(unsigned long long)arg2;
+- (void)activeBehaviorOverrideTypesChanged:(unsigned long long)arg1 source:(unsigned long long)arg2 activeQuietModeAssertionCount:(unsigned long long)arg3;
+- (void)behaviorOverrideStatusChanged:(long long)arg1 source:(unsigned long long)arg2;
+- (void)behaviorOverridesChanged:(NSArray *)arg1 source:(unsigned long long)arg2;
+- (void)behaviorOverridesEffectiveWhileUnlockedChanged:(bool)arg1 source:(unsigned long long)arg2;
+- (void)privilegedSenderAddressBookGroupRecordIDChanged:(int)arg1 name:(NSString *)arg2 source:(unsigned long long)arg3;
+- (void)privilegedSenderTypesChanged:(unsigned long long)arg1 source:(unsigned long long)arg2;
 
 @end

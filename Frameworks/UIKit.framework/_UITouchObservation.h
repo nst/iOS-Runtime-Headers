@@ -3,16 +3,16 @@
  */
 
 @interface _UITouchObservation : NSObject {
-    unsigned int  _observedTouchCount;
-    unsigned int  _observedTouchOffset;
+    unsigned long long  _observedTouchCount;
+    unsigned long long  _observedTouchOffset;
     UITouch * _observedTouches;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)enumerateTouchesWithBlock:(id /* block */)arg1;
+- (void)enumerateTouchesWithBlock:(id)arg1;
 - (void)observeTouch:(id)arg1;
 - (void)reset;
-- (unsigned int)touchCount;
+- (unsigned long long)touchCount;
 
 @end

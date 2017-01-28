@@ -32,9 +32,9 @@
 - (id)_itemAtRelativePath:(id)arg1 itemClass:(Class)arg2 itemType:(id)arg3;
 - (id)_parentFromChildRelativePath:(id)arg1;
 - (id)_thumbnailForUnderlyingItem:(id)arg1;
-- (void)coordinateReadingForUploadingItem:(id)arg1 error:(id*)arg2 byAccessor:(id /* block */)arg3;
-- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
-- (void)coordinateWritingItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3 byAccessor:(id /* block */)arg4;
+- (void)coordinateReadingForUploadingItem:(id)arg1 error:(id*)arg2 byAccessor:(id)arg3;
+- (void)coordinateReadingItemAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3 byAccessor:(id)arg4;
+- (void)coordinateWritingItemAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id*)arg3 byAccessor:(id)arg4;
 - (void)evictItem:(id)arg1;
 - (id)fileForUploadTaskIdentifier:(id)arg1 sessionIdentifier:(id)arg2;
 - (void)moveItem:(id)arg1 withDocumentIdentifier:(id)arg2 versionIdentifier:(id)arg3 toRelativePath:(id)arg4;

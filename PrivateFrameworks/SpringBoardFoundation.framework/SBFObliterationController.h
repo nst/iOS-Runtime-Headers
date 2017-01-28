@@ -6,9 +6,9 @@
 
 + (id)sharedInstance;
 
-- (void)_doObliterateWithType:(struct __CFString { }*)arg1 eraseDataPlan:(BOOL)arg2 showingProgress:(BOOL)arg3 options:(id)arg4;
+- (void)_doObliterateWithType:(struct __CFString { }*)arg1 eraseDataPlan:(bool)arg2 showingProgress:(bool)arg3 options:(id)arg4;
 - (void)markObliterationStart;
-- (void)obliterateDataPartitionShowingProgress:(BOOL)arg1 skipDataObliteration:(BOOL)arg2 eraseDataPlan:(BOOL)arg3 reason:(id)arg4;
-- (void)wipeAndBrickShowingProgress:(BOOL)arg1 reason:(id)arg2;
+- (void)obliterateDataPartitionShowingProgress:(bool)arg1 skipDataObliteration:(bool)arg2 eraseDataPlan:(bool)arg3 reason:(id)arg4;
+- (void)wipeAndBrickShowingProgress:(bool)arg1 reason:(id)arg2;
 
 @end

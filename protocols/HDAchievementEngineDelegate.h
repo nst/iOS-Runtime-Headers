@@ -14,10 +14,10 @@
 - (HKQuantity *)energyBurnedGoalToday;
 - (HKQuantity *)energyBurnedGoalYesterday;
 - (long long)mostRecentWorkoutAnchor;
-- (unsigned int)standingHoursToday;
-- (unsigned int)standingHoursYesterday;
-- (unsigned int)stepsTakenToday;
-- (unsigned int)stepsTakenYesterday;
+- (unsigned long long)standingHoursToday;
+- (unsigned long long)standingHoursYesterday;
+- (unsigned long long)stepsTakenToday;
+- (unsigned long long)stepsTakenYesterday;
 - (NSArray *)workoutsEndingAfterAnchor:(long long)arg1 newAnchor:(long long*)arg2;
 
 @end

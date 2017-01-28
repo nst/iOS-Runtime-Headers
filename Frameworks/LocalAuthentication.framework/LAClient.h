@@ -9,7 +9,7 @@
     NSError * _permanentError;
     <LAContextXPC> * _remoteContext;
     NSXPCConnection * _serverConnection;
-    BOOL  _shouldRecoverConnection;
+    bool  _shouldRecoverConnection;
     <LAUIDelegate> * _uiDelegate;
 }
 
@@ -21,32 +21,32 @@
 + (id)_recoveryQueue;
 
 - (void).cxx_destruct;
-- (void)_performCallBool:(id /* block */)arg1 finally:(id /* block */)arg2;
-- (void)_performCallId:(id /* block */)arg1 finally:(id /* block */)arg2;
+- (void)_performCallBool:(id)arg1 finally:(id)arg2;
+- (void)_performCallId:(id)arg1 finally:(id)arg2;
 - (void)_recoverConnection;
 - (void)_scheduleRecovery;
-- (BOOL)_setPermanentError:(id)arg1;
+- (bool)_setPermanentError:(id)arg1;
 - (id)_updateOptions:(id)arg1;
 - (void)dealloc;
-- (void)evaluateACL:(id)arg1 operation:(int)arg2 options:(id)arg3 reply:(id /* block */)arg4;
-- (void)evaluateACL:(id)arg1 operation:(int)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(id /* block */)arg5;
-- (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id /* block */)arg3;
-- (void)evaluatePolicy:(int)arg1 options:(id)arg2 uiDelegate:(id)arg3 reply:(id /* block */)arg4;
+- (void)evaluateACL:(id)arg1 operation:(long long)arg2 options:(id)arg3 reply:(id)arg4;
+- (void)evaluateACL:(id)arg1 operation:(long long)arg2 options:(id)arg3 uiDelegate:(id)arg4 reply:(id)arg5;
+- (void)evaluatePolicy:(long long)arg1 options:(id)arg2 reply:(id)arg3;
+- (void)evaluatePolicy:(long long)arg1 options:(id)arg2 uiDelegate:(id)arg3 reply:(id)arg4;
 - (id)externalizedContext;
-- (void)externalizedContextWithReply:(id /* block */)arg1;
-- (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id /* block */)arg3;
+- (void)externalizedContextWithReply:(id)arg1;
+- (void)failProcessedEvent:(long long)arg1 failureError:(id)arg2 reply:(id)arg3;
 - (id)initWithExistingContext:(id)arg1;
 - (void)invalidateWithMessage:(id)arg1;
 - (void)invalidatedWithError:(id)arg1;
-- (void)isCredentialSet:(int)arg1 reply:(id /* block */)arg2;
-- (void)prearmTouchIdWithReply:(id /* block */)arg1;
-- (void)resetWithReply:(id /* block */)arg1;
-- (id)serverPropertyForOption:(int)arg1 error:(id*)arg2;
-- (void)serverPropertyForOption:(int)arg1 reply:(id /* block */)arg2;
-- (void)setCredential:(id)arg1 forProcessedEvent:(int)arg2 credentialType:(int)arg3 reply:(id /* block */)arg4;
-- (void)setCredential:(id)arg1 type:(int)arg2 reply:(id /* block */)arg3;
-- (BOOL)setServerPropertyForOption:(int)arg1 value:(id)arg2 error:(id*)arg3;
-- (void)setServerPropertyForOption:(int)arg1 value:(id)arg2 reply:(id /* block */)arg3;
+- (void)isCredentialSet:(long long)arg1 reply:(id)arg2;
+- (void)prearmTouchIdWithReply:(id)arg1;
+- (void)resetWithReply:(id)arg1;
+- (id)serverPropertyForOption:(long long)arg1 error:(id*)arg2;
+- (void)serverPropertyForOption:(long long)arg1 reply:(id)arg2;
+- (void)setCredential:(id)arg1 forProcessedEvent:(long long)arg2 credentialType:(long long)arg3 reply:(id)arg4;
+- (void)setCredential:(id)arg1 type:(long long)arg2 reply:(id)arg3;
+- (bool)setServerPropertyForOption:(long long)arg1 value:(id)arg2 error:(id*)arg3;
+- (void)setServerPropertyForOption:(long long)arg1 value:(id)arg2 reply:(id)arg3;
 - (void)setUiDelegate:(id)arg1;
 - (id)uiDelegate;
 

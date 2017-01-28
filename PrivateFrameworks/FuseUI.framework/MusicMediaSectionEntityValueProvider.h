@@ -9,14 +9,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <MusicEntityValueProviding> *mediaEntityValueProvider;
 @property (nonatomic, copy) NSString *sectionTitle;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)entityUniqueIdentifier;
-- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { double x1; double x2; })arg2 destinationScale:(double)arg3;
 - (id)mediaEntityValueProvider;
 - (id)sectionTitle;
 - (void)setMediaEntityValueProvider:(id)arg1;

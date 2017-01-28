@@ -7,7 +7,7 @@
 + (id)_correctionsSchema;
 
 - (id)_correctionsStore;
-- (void)getLastCorrectionsRetrievalURLStringWithResultHandler:(id /* block */)arg1;
+- (void)getLastCorrectionsRetrievalURLStringWithResultHandler:(id)arg1;
 - (void)setCorrectionsWithJSONData:(id)arg1 retrievalURLString:(id)arg2;
 
 @end

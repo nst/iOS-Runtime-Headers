@@ -4,24 +4,24 @@
 
 @interface SFTextColumnSection : NSObject <NSSecureCoding> {
     NSArray * _textLines;
-    BOOL  _textNoWrap;
-    int  _textWeight;
+    bool  _textNoWrap;
+    long long  _textWeight;
 }
 
 @property (nonatomic, copy) NSArray *textLines;
-@property (nonatomic) BOOL textNoWrap;
-@property (nonatomic) int textWeight;
+@property (nonatomic) bool textNoWrap;
+@property (nonatomic) long long textWeight;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setTextLines:(id)arg1;
-- (void)setTextNoWrap:(BOOL)arg1;
-- (void)setTextWeight:(int)arg1;
+- (void)setTextNoWrap:(bool)arg1;
+- (void)setTextWeight:(long long)arg1;
 - (id)textLines;
-- (BOOL)textNoWrap;
-- (int)textWeight;
+- (bool)textNoWrap;
+- (long long)textWeight;
 
 @end

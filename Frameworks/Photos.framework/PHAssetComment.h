@@ -3,21 +3,21 @@
  */
 
 @interface PHAssetComment : PHObject {
-    BOOL  _canBeDeletedByUser;
+    bool  _canBeDeletedByUser;
     NSString * _cloudGUID;
     NSDate * _commentClientDate;
     NSDate * _commentDate;
     NSString * _commentText;
     NSString * _commenterHashedPersonID;
-    BOOL  _isBatchComment;
-    BOOL  _isCaption;
-    BOOL  _isDeletable;
-    BOOL  _isInterestingToUser;
-    BOOL  _isLike;
-    BOOL  _isMyComment;
+    bool  _isBatchComment;
+    bool  _isCaption;
+    bool  _isDeletable;
+    bool  _isInterestingToUser;
+    bool  _isLike;
+    bool  _isMyComment;
 }
 
-@property (nonatomic, readonly) BOOL canBeDeletedByUser;
+@property (nonatomic, readonly) bool canBeDeletedByUser;
 @property (nonatomic, readonly) NSString *cloudGUID;
 @property (nonatomic, readonly) NSDate *commentClientDate;
 @property (nonatomic, readonly) NSDate *commentDate;
@@ -28,21 +28,21 @@
 @property (nonatomic, readonly) NSString *commenterFullName;
 @property (nonatomic, readonly) NSString *commenterHashedPersonID;
 @property (nonatomic, readonly) NSString *commenterLastName;
-@property (nonatomic, readonly) BOOL isBatchComment;
-@property (nonatomic, readonly) BOOL isCaption;
-@property (nonatomic, readonly) BOOL isDeletable;
-@property (nonatomic, readonly) BOOL isInterestingForAlbumsSorting;
-@property (nonatomic, readonly) BOOL isInterestingToUser;
-@property (nonatomic, readonly) BOOL isLike;
-@property (nonatomic, readonly) BOOL isMyComment;
+@property (nonatomic, readonly) bool isBatchComment;
+@property (nonatomic, readonly) bool isCaption;
+@property (nonatomic, readonly) bool isDeletable;
+@property (nonatomic, readonly) bool isInterestingForAlbumsSorting;
+@property (nonatomic, readonly) bool isInterestingToUser;
+@property (nonatomic, readonly) bool isLike;
+@property (nonatomic, readonly) bool isMyComment;
 
 + (id)fetchType;
 + (id)managedEntityName;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_isInterestingToUser:(id)arg1;
-- (BOOL)canBeDeletedByUser;
+- (bool)_isInterestingToUser:(id)arg1;
+- (bool)canBeDeletedByUser;
 - (Class)changeRequestClass;
 - (id)cloudGUID;
 - (id)commentClientDate;
@@ -54,14 +54,14 @@
 - (id)commenterFullName;
 - (id)commenterHashedPersonID;
 - (id)commenterLastName;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
-- (BOOL)isBatchComment;
-- (BOOL)isCaption;
-- (BOOL)isDeletable;
-- (BOOL)isInterestingForAlbumsSorting;
-- (BOOL)isInterestingToUser;
-- (BOOL)isLike;
-- (BOOL)isMyComment;
-- (BOOL)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(BOOL*)arg2;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (bool)isBatchComment;
+- (bool)isCaption;
+- (bool)isDeletable;
+- (bool)isInterestingForAlbumsSorting;
+- (bool)isInterestingToUser;
+- (bool)isLike;
+- (bool)isMyComment;
+- (bool)shouldNotifyAsBulletinWithMediaStreamInfo:(id)arg1 asCaptionOnly:(bool*)arg2;
 
 @end

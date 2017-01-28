@@ -9,12 +9,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WFFavoriteLocationProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addLocation:(id)arg1;
-- (BOOL)canProvideDefaultFavorites;
+- (bool)canProvideDefaultFavorites;
 - (id)delegate;
 - (id)init;
 - (id)initWithDelegate:(id)arg1 persistence:(id)arg2;

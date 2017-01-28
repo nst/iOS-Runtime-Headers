@@ -15,6 +15,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMessages:(id)arg1 temporaryIDs:(id)arg2 sourceMailbox:(id)arg3 destinationMailbox:(id)arg4;
-- (BOOL)performWithAccount:(id)arg1 offlineCache:(id)arg2;
+- (bool)performWithAccount:(id)arg1 offlineCache:(id)arg2;
 
 @end

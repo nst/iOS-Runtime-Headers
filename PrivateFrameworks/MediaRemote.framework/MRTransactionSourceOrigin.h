@@ -3,7 +3,7 @@
  */
 
 @interface MRTransactionSourceOrigin : NSObject {
-    BOOL  _active;
+    bool  _active;
     unsigned long long  _name;
     struct _MROrigin { } * _origin;
     MRTransactionPacketizer * _packetizer;
@@ -11,14 +11,14 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 
 - (void)_begin;
 - (void)_cleanUp;
 - (void)_processMessage:(id)arg1;
 - (void)dealloc;
 - (id)initWithName:(unsigned long long)arg1 forOrigin:(struct _MROrigin { }*)arg2 withQueue:(id)arg3;
-- (BOOL)isActive;
+- (bool)isActive;
 - (void)sendPackets:(id)arg1;
 
 @end

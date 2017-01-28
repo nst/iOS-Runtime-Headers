@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFItemProviderReloadResults : NSObject {
+@interface HFItemProviderReloadResults : NSObject <NSCopying> {
     NSSet * _addedItems;
     NSSet * _existingItems;
     NSSet * _removedItems;
@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (id)addedItems;
 - (id)allItems;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)existingItems;
 - (id)init;

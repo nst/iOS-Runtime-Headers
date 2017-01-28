@@ -4,10 +4,10 @@
 
 @interface BLTReachabilityManager : NSObject {
     Reachability * _reachability;
-    int  _reachabilityStatus;
+    long long  _reachabilityStatus;
 }
 
-@property int reachabilityStatus;
+@property long long reachabilityStatus;
 
 + (id)sharedInstance;
 
@@ -15,7 +15,7 @@
 - (void)_reachabilityUpdated:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (int)reachabilityStatus;
-- (void)setReachabilityStatus:(int)arg1;
+- (long long)reachabilityStatus;
+- (void)setReachabilityStatus:(long long)arg1;
 
 @end

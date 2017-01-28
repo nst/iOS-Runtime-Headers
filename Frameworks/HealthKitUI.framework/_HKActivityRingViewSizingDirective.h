@@ -4,32 +4,32 @@
 
 @interface _HKActivityRingViewSizingDirective : NSObject {
     NSString * _identifier;
-    float  _outerRingOffset;
-    float  _ringInterspacing;
-    float  _ringThickness;
-    float  _width;
+    double  _outerRingOffset;
+    double  _ringInterspacing;
+    double  _ringThickness;
+    double  _width;
 }
 
 @property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) float outerRingOffset;
-@property (nonatomic) float ringInterspacing;
-@property (nonatomic) float ringThickness;
-@property (nonatomic) float width;
+@property (nonatomic) double outerRingOffset;
+@property (nonatomic) double ringInterspacing;
+@property (nonatomic) double ringThickness;
+@property (nonatomic) double width;
 
-+ (id)activityRingSizingDirectiveWithIdentifier:(id)arg1 width:(float)arg2 outerRingOffset:(float)arg3 ringThickness:(float)arg4 ringInterspacing:(float)arg5;
++ (id)activityRingSizingDirectiveWithIdentifier:(id)arg1 width:(double)arg2 outerRingOffset:(double)arg3 ringThickness:(double)arg4 ringInterspacing:(double)arg5;
 + (id)sortedRingRatioDirectives;
 
 - (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
-- (float)outerRingOffset;
-- (float)ringInterspacing;
-- (float)ringThickness;
+- (double)outerRingOffset;
+- (double)ringInterspacing;
+- (double)ringThickness;
 - (void)setIdentifier:(id)arg1;
-- (void)setOuterRingOffset:(float)arg1;
-- (void)setRingInterspacing:(float)arg1;
-- (void)setRingThickness:(float)arg1;
-- (void)setWidth:(float)arg1;
-- (float)width;
+- (void)setOuterRingOffset:(double)arg1;
+- (void)setRingInterspacing:(double)arg1;
+- (void)setRingThickness:(double)arg1;
+- (void)setWidth:(double)arg1;
+- (double)width;
 
 @end

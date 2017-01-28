@@ -12,8 +12,8 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasIntentType;
-@property (nonatomic) BOOL hasStructureType;
+@property (nonatomic) bool hasIntentType;
+@property (nonatomic) bool hasStructureType;
 @property (nonatomic) int intentType;
 @property (nonatomic) int structureType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -25,16 +25,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIntentType;
-- (BOOL)hasStructureType;
-- (unsigned int)hash;
+- (bool)hasIntentType;
+- (bool)hasStructureType;
+- (unsigned long long)hash;
 - (int)intentType;
 - (id)intentTypeAsString:(int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIntentType:(BOOL)arg1;
-- (void)setHasStructureType:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIntentType:(bool)arg1;
+- (void)setHasStructureType:(bool)arg1;
 - (void)setIntentType:(int)arg1;
 - (void)setStructureType:(int)arg1;
 - (int)structureType;

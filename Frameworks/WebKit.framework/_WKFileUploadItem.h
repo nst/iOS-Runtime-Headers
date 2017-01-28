@@ -10,13 +10,13 @@
 
 @property (nonatomic, readonly) UIImage *displayImage;
 @property (nonatomic, readonly) NSURL *fileURL;
-@property (getter=isVideo, nonatomic, readonly) BOOL video;
+@property (getter=isVideo, nonatomic, readonly) bool video;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)displayImage;
 - (id)fileURL;
 - (id)initWithFileURL:(id)arg1;
-- (BOOL)isVideo;
+- (bool)isVideo;
 
 @end

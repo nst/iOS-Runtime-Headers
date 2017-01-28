@@ -16,7 +16,7 @@
             struct JSValue { 
                 union EncodedValueDescriptor { 
                     long long asInt64; 
-                    double asDouble; 
+                    struct JSCell {} *ptr; 
                     struct { 
                         int payload; 
                         int tag; 

@@ -11,8 +11,8 @@
 @property (nonatomic, copy) NSString *identifier;
 
 + (id)shippingMethodWithProtobuf:(id)arg1;
-+ (BOOL)supportsSecureCoding;
-+ (int)version;
++ (bool)supportsSecureCoding;
++ (long long)version;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -20,12 +20,12 @@
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)formattedString;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 error:(id*)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToShippingMethod:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToShippingMethod:(id)arg1;
 - (id)protobuf;
 - (void)setDetail:(id)arg1;
 - (void)setIdentifier:(id)arg1;

@@ -12,14 +12,14 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)cardSections;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)loadCardSectionsWithCompletionAndErrorHandler:(id /* block */)arg1;
-- (void)loadCardSectionsWithCompletionHandler:(id /* block */)arg1;
+- (void)loadCardSectionsWithCompletionAndErrorHandler:(id)arg1;
+- (void)loadCardSectionsWithCompletionHandler:(id)arg1;
 - (void)setCardSections:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setType:(id)arg1;

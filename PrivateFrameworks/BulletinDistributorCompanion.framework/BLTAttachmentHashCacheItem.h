@@ -14,10 +14,10 @@
 + (id)attachmentHashCacheItemWithURL:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)MD5:(unsigned char)arg1;
+- (bool)MD5:(unsigned char)arg1;
 - (id)data;
 - (id)initWithURL:(id)arg1 data:(id)arg2;
-- (BOOL)isEqualToItem:(id)arg1;
+- (bool)isEqualToItem:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;

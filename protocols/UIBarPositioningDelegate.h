@@ -5,6 +5,6 @@
 
 @optional
 
-- (int)positionForBar:(id <UIBarPositioning>)arg1;
+- (long long)positionForBar:(id <UIBarPositioning>)arg1;
 
 @end

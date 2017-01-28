@@ -3,13 +3,13 @@
  */
 
 @interface MSPMutableHistoryEntrySearch : MSPMutableHistoryEntry <MSPHistoryEntrySearch> {
-    BOOL  _failed;
+    bool  _failed;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isFailed, nonatomic) BOOL failed;
-@property (readonly) unsigned int hash;
+@property (getter=isFailed, nonatomic) bool failed;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *languageCode;
 @property (nonatomic, copy) NSString *locationDisplayString;
 @property (nonatomic, copy) GEOMapRegion *mapRegion;
@@ -21,14 +21,14 @@
 + (Class)mutableObjectClass;
 + (id)mutableObjectProtocol;
 
-- (BOOL)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
+- (bool)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)initWithStorage:(id)arg1;
-- (BOOL)isFailed;
+- (bool)isFailed;
 - (id)languageCode;
 - (id)locationDisplayString;
 - (id)mapRegion;
 - (id)query;
-- (void)setFailed:(BOOL)arg1;
+- (void)setFailed:(bool)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setLocationDisplayString:(id)arg1;
 - (void)setMapRegion:(id)arg1;

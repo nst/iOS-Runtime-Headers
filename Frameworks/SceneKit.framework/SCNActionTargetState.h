@@ -25,7 +25,7 @@
         float y; 
         float z; 
     }  scale;
-    BOOL  usesEuler;
+    bool  usesEuler;
 }
 
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } euler;
@@ -33,7 +33,7 @@
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } position;
 @property (nonatomic) struct SCNVector4 { float x1; float x2; float x3; float x4; } rotation;
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } scale;
-@property (nonatomic) BOOL usesEuler;
+@property (nonatomic) bool usesEuler;
 
 - (struct SCNVector3 { float x1; float x2; float x3; })euler;
 - (float)opacity;
@@ -45,7 +45,7 @@
 - (void)setPosition:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setRotation:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1;
 - (void)setScale:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
-- (void)setUsesEuler:(BOOL)arg1;
-- (BOOL)usesEuler;
+- (void)setUsesEuler:(bool)arg1;
+- (bool)usesEuler;
 
 @end

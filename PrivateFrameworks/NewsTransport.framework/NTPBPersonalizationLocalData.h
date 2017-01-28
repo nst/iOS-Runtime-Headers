@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *closedChangeGroups;
-@property (nonatomic, readonly) BOOL hasRemoteRecordData;
+@property (nonatomic, readonly) bool hasRemoteRecordData;
 @property (nonatomic, retain) NSMutableArray *openChangeGroupDeltas;
 @property (nonatomic, readonly) NSDictionary *openChangeGroupDeltasByFeatureKey;
 @property (nonatomic, retain) CKRecord *remoteRecord;
@@ -25,20 +25,20 @@
 - (void)clearClosedChangeGroups;
 - (void)clearOpenChangeGroupDeltas;
 - (id)closedChangeGroups;
-- (id)closedChangeGroupsAtIndex:(unsigned int)arg1;
-- (unsigned int)closedChangeGroupsCount;
+- (id)closedChangeGroupsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)closedChangeGroupsCount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRemoteRecordData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRemoteRecordData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)openChangeGroupDeltas;
-- (id)openChangeGroupDeltasAtIndex:(unsigned int)arg1;
-- (unsigned int)openChangeGroupDeltasCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)openChangeGroupDeltasAtIndex:(unsigned long long)arg1;
+- (unsigned long long)openChangeGroupDeltasCount;
+- (bool)readFrom:(id)arg1;
 - (id)remoteRecordData;
 - (void)setClosedChangeGroups:(id)arg1;
 - (void)setOpenChangeGroupDeltas:(id)arg1;

@@ -3,21 +3,21 @@
  */
 
 @interface TUCallSoundPlayerSoundDescriptor : NSObject {
-    unsigned int  _iterations;
+    unsigned long long  _iterations;
     double  _pauseDuration;
     id  _sound;
 }
 
-@property (nonatomic) unsigned int iterations;
+@property (nonatomic) unsigned long long iterations;
 @property (nonatomic) double pauseDuration;
 @property (nonatomic, retain) id sound;
 
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithSound:(id)arg1 iterations:(unsigned int)arg2 pauseDuration:(double)arg3;
-- (unsigned int)iterations;
+- (id)initWithSound:(id)arg1 iterations:(unsigned long long)arg2 pauseDuration:(double)arg3;
+- (unsigned long long)iterations;
 - (double)pauseDuration;
-- (void)setIterations:(unsigned int)arg1;
+- (void)setIterations:(unsigned long long)arg1;
 - (void)setPauseDuration:(double)arg1;
 - (void)setSound:(id)arg1;
 - (id)sound;

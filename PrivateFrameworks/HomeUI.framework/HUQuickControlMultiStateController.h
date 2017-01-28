@@ -8,7 +8,7 @@
 
 + (Class)controlItemClass;
 
-- (BOOL)_useOverrideStatusText;
+- (bool)_useOverrideStatusText;
 - (id)controlToViewValueTransformer;
 - (id)createInteractionCoordinator;
 - (void)modelValueDidChange;

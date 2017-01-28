@@ -13,9 +13,9 @@
 - (UIImage *)image;
 - (void)setIdentifier:(NSString *)arg1;
 - (void)setImage:(UIImage *)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setTitle:(NSString *)arg1;
-- (int)style;
+- (long long)style;
 - (NSString *)title;
 
 @end

@@ -5,29 +5,29 @@
 @interface AWDCoreRoutineLocationAwarenessBasicHistogram : PBCodable <NSCopying> {
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _counts;
 }
 
 @property (nonatomic, readonly) int*counts;
-@property (nonatomic, readonly) unsigned int countsCount;
+@property (nonatomic, readonly) unsigned long long countsCount;
 
 - (void)addCount:(int)arg1;
 - (void)clearCounts;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)countAtIndex:(unsigned int)arg1;
+- (int)countAtIndex:(unsigned long long)arg1;
 - (int*)counts;
-- (unsigned int)countsCount;
+- (unsigned long long)countsCount;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setCounts:(int*)arg1 count:(unsigned int)arg2;
+- (bool)readFrom:(id)arg1;
+- (void)setCounts:(int*)arg1 count:(unsigned long long)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 @interface VKRasterMapTileRequest : NSObject <NSCopying> {
     NSLocale * _locale;
     GEOResourceManifestConfiguration * _manifestConfiguration;
-    int  _mapType;
+    long long  _mapType;
     unsigned int  _scale;
     struct VKRasterTileKey { 
         unsigned int x; 
@@ -15,10 +15,10 @@
     }  _tileKey;
 }
 
-@property (nonatomic, readonly) BOOL isInvalid;
+@property (nonatomic, readonly) bool isInvalid;
 @property (nonatomic, retain) NSLocale *locale;
 @property (nonatomic, retain) GEOResourceManifestConfiguration *manifestConfiguration;
-@property (nonatomic) int mapType;
+@property (nonatomic) long long mapType;
 @property (nonatomic) unsigned int scale;
 @property (nonatomic) struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; } tileKey;
 @property (nonatomic, readonly) const struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*tileKeyPtr;
@@ -27,18 +27,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isInvalid;
-- (void)isReallyInvalid:(id /* block */)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isInvalid;
+- (void)isReallyInvalid:(id)arg1;
 - (id)locale;
 - (id)manifestConfiguration;
-- (int)mapType;
+- (long long)mapType;
 - (unsigned int)scale;
 - (void)setLocale:(id)arg1;
 - (void)setManifestConfiguration:(id)arg1;
-- (void)setMapType:(int)arg1;
+- (void)setMapType:(long long)arg1;
 - (void)setScale:(unsigned int)arg1;
 - (void)setTileKey:(struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
 - (struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })tileKey;

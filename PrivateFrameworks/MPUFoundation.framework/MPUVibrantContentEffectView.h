@@ -9,7 +9,7 @@
     MPUPinningView * _maskedView;
     UIView * _plusDView;
     UIView * _tintingView;
-    BOOL  _vibrancyEnabled;
+    bool  _vibrancyEnabled;
     UIView * _vibrantContainer;
 }
 
@@ -19,7 +19,7 @@
 @property (nonatomic, retain) MPUPinningView *maskedView;
 @property (nonatomic, retain) UIView *plusDView;
 @property (nonatomic, retain) UIView *tintingView;
-@property (nonatomic) BOOL vibrancyEnabled;
+@property (nonatomic) bool vibrancyEnabled;
 @property (nonatomic, retain) UIView *vibrantContainer;
 
 - (void).cxx_destruct;
@@ -27,8 +27,8 @@
 - (id)blurImageView;
 - (id)contentView;
 - (void)disableVibrancyForLayer:(id)arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)layerPinningViewMap;
 - (void)layoutSubviews;
 - (id)maskedView;
@@ -40,13 +40,13 @@
 - (void)setPlusDView:(id)arg1;
 - (void)setReferenceView:(id)arg1;
 - (void)setTintingView:(id)arg1;
-- (void)setVibrancyEnabled:(BOOL)arg1;
+- (void)setVibrancyEnabled:(bool)arg1;
 - (void)setVibrantContainer:(id)arg1;
 - (void)tintColorDidChange;
 - (id)tintingView;
 - (void)updateEffect;
 - (void)updateVibrancyForContentView;
-- (BOOL)vibrancyEnabled;
+- (bool)vibrancyEnabled;
 - (id)vibrantContainer;
 
 @end

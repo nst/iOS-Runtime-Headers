@@ -12,7 +12,7 @@
 - (Class)classForCoder;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;
-- (void)loadImageWithCompletionHandler:(id /* block */)arg1;
+- (void)loadImageWithCompletionHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 
 @end

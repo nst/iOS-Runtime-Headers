@@ -4,7 +4,7 @@
 
 @interface CADisplayMode : NSObject {
     CADisplay * _dpy;
-    unsigned long  _height;
+    unsigned long long  _height;
     struct Mode { 
         union { 
             struct { 
@@ -18,15 +18,15 @@
             unsigned long long uint64; 
         } u; 
     }  _mode;
-    unsigned long  _width;
+    unsigned long long  _width;
 }
 
 @property (nonatomic, readonly, copy) NSString *colorMode;
-@property (nonatomic, readonly) unsigned long height;
-@property (nonatomic, readonly) BOOL isVirtual;
-@property (nonatomic, readonly) float pixelAspectRatio;
+@property (nonatomic, readonly) unsigned long long height;
+@property (nonatomic, readonly) bool isVirtual;
+@property (nonatomic, readonly) double pixelAspectRatio;
 @property (nonatomic, readonly) double refreshRate;
-@property (nonatomic, readonly) unsigned long width;
+@property (nonatomic, readonly) unsigned long long width;
 
 + (id)_displayModeWithMode:(struct Mode { union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 16; unsigned int x_1_2_3 : 24; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 2; unsigned int x_1_2_6 : 2; } x_1_1_1; unsigned long long x_1_1_2; } x1; })arg1 display:(id)arg2;
 
@@ -34,16 +34,16 @@
 - (id)_display;
 - (id)_initWithMode:(struct Mode { union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 16; unsigned int x_1_2_3 : 24; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 2; unsigned int x_1_2_6 : 2; } x_1_1_1; unsigned long long x_1_1_2; } x1; })arg1 display:(id)arg2;
 - (struct Mode { union { struct { unsigned int x_1_2_1 : 16; unsigned int x_1_2_2 : 16; unsigned int x_1_2_3 : 24; unsigned int x_1_2_4 : 1; unsigned int x_1_2_5 : 2; unsigned int x_1_2_6 : 2; } x_1_1_1; unsigned long long x_1_1_2; } x1; })_mode;
-- (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
+- (void)_setWidth:(unsigned long long)arg1 height:(unsigned long long)arg2;
 - (id)colorMode;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (unsigned long)height;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isVirtual;
-- (float)pixelAspectRatio;
+- (unsigned long long)hash;
+- (unsigned long long)height;
+- (bool)isEqual:(id)arg1;
+- (bool)isVirtual;
+- (double)pixelAspectRatio;
 - (double)refreshRate;
-- (unsigned long)width;
+- (unsigned long long)width;
 
 @end

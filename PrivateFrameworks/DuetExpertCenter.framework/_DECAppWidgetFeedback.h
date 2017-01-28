@@ -4,7 +4,7 @@
 
 @interface _DECAppWidgetFeedback : _DECAppPredictionFeedback
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

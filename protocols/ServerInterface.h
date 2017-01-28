@@ -5,17 +5,17 @@
 
 @required
 
-- (void)allocateClientResources:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CAXPCObject *, unsigned int, NSError *, void*
-- (void)getClientID:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned int, void*
-- (void)loadHapticPreset:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)loadHapticSequence:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned int, NSError *, void*
-- (void)prepareHapticSequence:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)prewarm:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)allocateClientResources:(void *)arg1; // needs 1 arg types, found 8: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, CAXPCObject *, unsigned int, NSError *, void*
+- (void)getClientID:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, unsigned long long, void*
+- (void)loadHapticPreset:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSDictionary *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)loadHapticSequence:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: NSData *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, unsigned long long, NSError *, void*
+- (void)prepareHapticSequence:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)prewarm:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
 - (void)releaseClientResources;
-- (void)requestChannels:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
-- (void)setChannelEventBehavior:(void *)arg1 behavior:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: unsigned int, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)setDoneReply:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)startRunning:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)requestChannels:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, NSError *, void*
+- (void)setChannelEventBehavior:(void *)arg1 behavior:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: unsigned long long, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)setDoneReply:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (void)startRunning:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
 - (void)stopPrewarm;
 - (void)stopRunning;
 

@@ -4,14 +4,14 @@
 
 @interface OADExportedEmbeddedMediaFile : OADEmbeddedMediaFile {
     TSPData * _tspData;
-    BOOL  isAudioOnly;
+    bool  isAudioOnly;
 }
 
 @property (nonatomic, retain) TSPData *tspData;
 
 - (void)dealloc;
-- (BOOL)isAudioOnly;
-- (void)setIsAudioOnly:(BOOL)arg1;
+- (bool)isAudioOnly;
+- (void)setIsAudioOnly:(bool)arg1;
 - (void)setTspData:(id)arg1;
 - (id)tspData;
 

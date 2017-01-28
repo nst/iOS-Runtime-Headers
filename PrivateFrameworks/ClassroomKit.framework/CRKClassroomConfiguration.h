@@ -4,13 +4,13 @@
 
 @interface CRKClassroomConfiguration : NSObject
 
-+ (BOOL)createPlaceholderFileWithError:(id*)arg1;
-+ (void)fetchConfiguration:(id /* block */)arg1;
-+ (BOOL)isStudentdInstalled;
-+ (BOOL)placeholderFileExists;
++ (bool)createPlaceholderFileWithError:(id*)arg1;
++ (void)fetchConfiguration:(id)arg1;
++ (bool)isStudentdInstalled;
++ (bool)placeholderFileExists;
 + (id)placeholderFileURL;
-+ (BOOL)removePlaceholderFileWithError:(id*)arg1;
-+ (void)setConfiguration:(id)arg1 completion:(id /* block */)arg2;
++ (bool)removePlaceholderFileWithError:(id*)arg1;
++ (void)setConfiguration:(id)arg1 completion:(id)arg2;
 + (id)studentDaemonConnection;
 
 @end

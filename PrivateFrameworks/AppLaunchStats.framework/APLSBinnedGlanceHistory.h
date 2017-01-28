@@ -18,7 +18,7 @@
 - (id)init;
 - (void)populateWithHistory:(id)arg1;
 - (id)recentLaunches;
-- (void)relativeLaunchLikelihoodsForNumWindows:(unsigned int)arg1 ofSize:(double)arg2 repeatingEvery:(double)arg3 startingAt:(id)arg4 withData:(id)arg5 updating:(id)arg6;
+- (void)relativeLaunchLikelihoodsForNumWindows:(unsigned long long)arg1 ofSize:(double)arg2 repeatingEvery:(double)arg3 startingAt:(id)arg4 withData:(id)arg5 updating:(id)arg6;
 - (void)setDailyLaunches:(id)arg1;
 - (void)setRecentLaunches:(id)arg1;
 - (void)setWeeklyLaunches:(id)arg1;

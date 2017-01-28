@@ -4,6 +4,6 @@
 
 @interface MCDActionTableViewCell : MCDTableViewCell
 
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
+- (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
 
 @end

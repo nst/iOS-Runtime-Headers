@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
@@ -16,9 +16,9 @@
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)_defaultDownloadSessionForAttachment:(id)arg1;
-- (void)contentDirectoryOfAttachment:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)contentDirectoryOfAttachment:(id)arg1 withCompletion:(id)arg2;
 - (void)dealloc;
-- (void)downloadMainEntryOfAttachment:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id /* block */)arg3;
+- (void)downloadMainEntryOfAttachment:(id)arg1 withCompletion:(id)arg2;
+- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id)arg3;
 
 @end

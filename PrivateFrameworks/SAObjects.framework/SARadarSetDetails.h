@@ -15,7 +15,7 @@
 - (id)description;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setClassification:(id)arg1;
 - (void)setDescription:(id)arg1;
 - (void)setTitle:(id)arg1;

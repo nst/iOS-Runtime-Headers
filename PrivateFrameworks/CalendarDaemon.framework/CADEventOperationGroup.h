@@ -4,34 +4,34 @@
 
 @interface CADEventOperationGroup : CADOperationGroup <CADEventInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 
-- (void)CADDatabaseActOnSuggestedEvent:(struct { int x1; int x2; })arg1 action:(int)arg2 reply:(id /* block */)arg3;
-- (void)CADDatabaseActOnSuggestedEvent:(struct { int x1; int x2; })arg1 action:(int)arg2 validator:(id)arg3 reply:(id /* block */)arg4;
-- (void)CADDatabaseCanModifySuggestedEventCalendar:(id /* block */)arg1;
-- (void)CADDatabaseGetBirthdayContactIdentifierForEvent:(struct { int x1; int x2; })arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseGetCountOfNotifiableEvents:(id /* block */)arg1;
-- (void)CADDatabaseGetCountOfUnacknowledgedEvents:(id /* block */)arg1;
-- (void)CADDatabaseGetDefaultCalendarForNewEventsWithReply:(id /* block */)arg1;
-- (void)CADDatabaseGetEndDateOfEarliestExpiringNotifiableEventAfterDate:(id)arg1 timeZone:(id)arg2 reply:(id /* block */)arg3;
-- (void)CADDatabaseGetEventWithEventIdentifier:(id)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseGetEventWithUniqueID:(id)arg1 reply:(id /* block */)arg2;
-- (void)CADDatabaseGetSuggestedEventCalendarWithReply:(id /* block */)arg1;
-- (void)CADDatabaseInsertSuggestedEventCalendarWithReply:(id /* block */)arg1;
-- (void)CADDatabaseRemoveSuggestedEventCalendarWithReply:(id /* block */)arg1;
+- (void)CADDatabaseActOnSuggestedEvent:(struct { int x1; int x2; })arg1 action:(int)arg2 reply:(id)arg3;
+- (void)CADDatabaseActOnSuggestedEvent:(struct { int x1; int x2; })arg1 action:(int)arg2 validator:(id)arg3 reply:(id)arg4;
+- (void)CADDatabaseCanModifySuggestedEventCalendar:(id)arg1;
+- (void)CADDatabaseGetBirthdayContactIdentifierForEvent:(struct { int x1; int x2; })arg1 reply:(id)arg2;
+- (void)CADDatabaseGetCountOfNotifiableEvents:(id)arg1;
+- (void)CADDatabaseGetCountOfUnacknowledgedEvents:(id)arg1;
+- (void)CADDatabaseGetDefaultCalendarForNewEventsWithReply:(id)arg1;
+- (void)CADDatabaseGetEndDateOfEarliestExpiringNotifiableEventAfterDate:(id)arg1 timeZone:(id)arg2 reply:(id)arg3;
+- (void)CADDatabaseGetEventWithEventIdentifier:(id)arg1 reply:(id)arg2;
+- (void)CADDatabaseGetEventWithUniqueID:(id)arg1 reply:(id)arg2;
+- (void)CADDatabaseGetSuggestedEventCalendarWithReply:(id)arg1;
+- (void)CADDatabaseInsertSuggestedEventCalendarWithReply:(id)arg1;
+- (void)CADDatabaseRemoveSuggestedEventCalendarWithReply:(id)arg1;
 - (void)CADDatabaseSetDefaultCalendarForNewEvents:(struct { int x1; int x2; })arg1;
-- (void)CADDatabaseSetShowsDeclinedEvents:(BOOL)arg1;
-- (void)CADOccurrenceCacheAreOccurrencesBeingGenerated:(id /* block */)arg1;
+- (void)CADDatabaseSetShowsDeclinedEvents:(bool)arg1;
+- (void)CADOccurrenceCacheAreOccurrencesBeingGenerated:(id)arg1;
 - (void)CADOccurrenceCacheCancelSearchWithReplyID:(int)arg1;
-- (void)CADOccurrenceCacheDoEvents:(id)arg1 haveOccurrencesAfterDate:(id)arg2 reply:(id /* block */)arg3;
-- (void)CADOccurrenceCacheGetOccurrenceCountsForCalendars:(id)arg1 reply:(id /* block */)arg2;
-- (void)CADOccurrenceCacheGetOccurrenceDateOfEventWithRowID:(int)arg1 nearestDate:(id)arg2 reply:(id /* block */)arg3;
-- (void)CADOccurrenceCacheGetOccurrenceForCalendars:(id)arg1 onDay:(id)arg2 reply:(id /* block */)arg3;
-- (void)CADOccurrenceCacheSearchLocationsWithTerm:(id)arg1 inCalendars:(id)arg2 responseToken:(int)arg3 reply:(id /* block */)arg4;
-- (void)CADOccurrenceCacheSearchWithTerm:(id)arg1 inCalendars:(id)arg2 responseToken:(int)arg3 reply:(id /* block */)arg4;
-- (BOOL)_CADDatabaseCanModifySuggestedEventCalendar;
+- (void)CADOccurrenceCacheDoEvents:(id)arg1 haveOccurrencesAfterDate:(id)arg2 reply:(id)arg3;
+- (void)CADOccurrenceCacheGetOccurrenceCountsForCalendars:(id)arg1 reply:(id)arg2;
+- (void)CADOccurrenceCacheGetOccurrenceDateOfEventWithRowID:(int)arg1 nearestDate:(id)arg2 reply:(id)arg3;
+- (void)CADOccurrenceCacheGetOccurrenceForCalendars:(id)arg1 onDay:(id)arg2 reply:(id)arg3;
+- (void)CADOccurrenceCacheSearchLocationsWithTerm:(id)arg1 inCalendars:(id)arg2 responseToken:(int)arg3 reply:(id)arg4;
+- (void)CADOccurrenceCacheSearchWithTerm:(id)arg1 inCalendars:(id)arg2 responseToken:(int)arg3 reply:(id)arg4;
+- (bool)_CADDatabaseCanModifySuggestedEventCalendar;
 - (struct { int x1; int x2; })_getDefaultCalendarIDForNewEvents;
 
 @end

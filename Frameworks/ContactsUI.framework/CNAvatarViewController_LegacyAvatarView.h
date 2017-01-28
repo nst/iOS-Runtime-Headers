@@ -8,18 +8,18 @@
     NSArray * _contacts;
     <CNUIPRLikenessResolver> * _likenessResolver;
     PRPersonaStore * _personaStore;
-    BOOL  _threeDTouchEnabled;
+    bool  _threeDTouchEnabled;
 }
 
 @property (nonatomic) CNAvatarView *avatarView;
 @property (nonatomic, readonly) CNContactStore *contactStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <CNUIPRLikenessResolver> *likenessResolver;
 @property (nonatomic, readonly) PRPersonaStore *personaStore;
 @property (readonly) Class superclass;
-@property (getter=isThreeDTouchEnabled, nonatomic) BOOL threeDTouchEnabled;
+@property (getter=isThreeDTouchEnabled, nonatomic) bool threeDTouchEnabled;
 
 - (void).cxx_destruct;
 - (id)avatarView;
@@ -27,13 +27,13 @@
 - (id)contacts;
 - (id)descriptorForRequiredKeys;
 - (id)initWithSettings:(id)arg1;
-- (BOOL)isThreeDTouchEnabled;
+- (bool)isThreeDTouchEnabled;
 - (id)likenessResolver;
 - (void)loadView;
 - (id)personaStore;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)setAvatarView:(id)arg1;
 - (void)setContacts:(id)arg1;
-- (void)setThreeDTouchEnabled:(BOOL)arg1;
+- (void)setThreeDTouchEnabled:(bool)arg1;
 
 @end

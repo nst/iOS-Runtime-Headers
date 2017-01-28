@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)displayTimeZone;
+- (bool)displayTimeZone;
 - (double)timeStamp;
 - (NSTimeZone *)timeZone;
 

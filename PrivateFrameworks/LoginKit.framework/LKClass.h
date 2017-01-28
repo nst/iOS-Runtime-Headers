@@ -20,13 +20,13 @@
 @property (retain) NSString *className;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSArray *instructors;
 @property (retain) NSString *sortDescriptor;
 @property (nonatomic, copy) NSArray *students;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_updateNamingSimilarityInfoForUser:(id)arg1;
@@ -35,13 +35,13 @@
 - (id)classImageURL;
 - (id)className;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithClassDictionary:(id)arg1 usersByUserIdentifier:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStudents:(id)arg1 instructors:(id)arg2 className:(id)arg3 classID:(id)arg4;
 - (id)instructors;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToLKClass:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToLKClass:(id)arg1;
 - (void)setClassDescription:(id)arg1;
 - (void)setClassID:(id)arg1;
 - (void)setClassImageURL:(id)arg1;

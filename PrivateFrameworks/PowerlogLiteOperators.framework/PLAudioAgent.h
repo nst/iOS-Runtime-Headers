@@ -9,13 +9,13 @@
     NSString * _audioHardware;
     NSDictionary * _audioPowerModel;
     PLEntry * _entryRoutingOld;
-    BOOL  _headsetIsPlayingAudio;
+    bool  _headsetIsPlayingAudio;
     NSDate * _lastAudioStateChangeDate;
     NSMutableArray * _nsOutputNotifications;
     NSMutableArray * _nsRoutingNotifications;
     PLXPCListenerOperatorComposition * _screenMirroringXPCListener;
     PLXPCListenerOperatorComposition * _speakerAmpXPCListener;
-    BOOL  _speakerIsPlayingAudio;
+    bool  _speakerIsPlayingAudio;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *accessoryPowerCallback;
@@ -24,13 +24,13 @@
 @property (readonly) NSString *audioHardware;
 @property (readonly) NSDictionary *audioPowerModel;
 @property (retain) PLEntry *entryRoutingOld;
-@property BOOL headsetIsPlayingAudio;
+@property bool headsetIsPlayingAudio;
 @property (retain) NSDate *lastAudioStateChangeDate;
 @property (readonly) NSMutableArray *nsOutputNotifications;
 @property (readonly) NSMutableArray *nsRoutingNotifications;
 @property (retain) PLXPCListenerOperatorComposition *screenMirroringXPCListener;
 @property (retain) PLXPCListenerOperatorComposition *speakerAmpXPCListener;
-@property BOOL speakerIsPlayingAudio;
+@property bool speakerIsPlayingAudio;
 
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionNowPlaying;
@@ -46,13 +46,13 @@
 - (void).cxx_destruct;
 - (id)accessoryPowerCallback;
 - (int)accessoryPowerState;
-- (BOOL)active;
+- (bool)active;
 - (id)activeRoute;
 - (id)audioAppXPCListener;
 - (id)audioHardware;
 - (double)audioPowerForRoute:(id)arg1 forVolume:(double)arg2;
 - (id)audioPowerModel;
-- (id)buildCallBack:(id)arg1 withGroup:(BOOL)arg2 withHandler:(id /* block */)arg3;
+- (id)buildCallBack:(id)arg1 withGroup:(bool)arg2 withHandler:(id)arg3;
 - (double)convertSpeakerProtectionModeledPowerToTotalSpeakerPower:(double)arg1;
 - (void)createAirPlayAccountingEvents:(id)arg1;
 - (void)createAudioAccountingEvents:(id)arg1;
@@ -61,9 +61,9 @@
 - (id)entryRoutingOld;
 - (void)handleLightningStatusCallback:(id)arg1;
 - (void)handleNowPlayingApplicationIsPlayingDidChange;
-- (BOOL)headphonesConnected;
-- (BOOL)headsetHasInput;
-- (BOOL)headsetIsPlayingAudio;
+- (bool)headphonesConnected;
+- (bool)headsetHasInput;
+- (bool)headsetIsPlayingAudio;
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)lastAudioStateChangeDate;
@@ -76,7 +76,7 @@
 - (void)modelAudioPowerCodec:(id)arg1;
 - (void)modelAudioPowerSpeaker:(id)arg1;
 - (double)modelAudioPowerWithVolume:(double)arg1;
-- (BOOL)muted;
+- (bool)muted;
 - (id)nowPlayingAppBundleID;
 - (int)nowPlayingAppPID;
 - (id)nsOutputNotifications;
@@ -88,14 +88,14 @@
 - (void)setAccessoryPowerState:(int)arg1;
 - (void)setAudioAppXPCListener:(id)arg1;
 - (void)setEntryRoutingOld:(id)arg1;
-- (void)setHeadsetIsPlayingAudio:(BOOL)arg1;
+- (void)setHeadsetIsPlayingAudio:(bool)arg1;
 - (void)setLastAudioStateChangeDate:(id)arg1;
 - (void)setScreenMirroringXPCListener:(id)arg1;
 - (void)setSpeakerAmpXPCListener:(id)arg1;
-- (void)setSpeakerIsPlayingAudio:(BOOL)arg1;
+- (void)setSpeakerIsPlayingAudio:(bool)arg1;
 - (void)setupAVSystemController;
 - (id)speakerAmpXPCListener;
-- (BOOL)speakerIsPlayingAudio;
+- (bool)speakerIsPlayingAudio;
 - (id)volume;
 
 @end

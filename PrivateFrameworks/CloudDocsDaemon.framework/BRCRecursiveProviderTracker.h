@@ -5,7 +5,7 @@
 @interface BRCRecursiveProviderTracker : NSObject {
     NSMutableSet * _documentIDs;
     NSObject<OS_dispatch_group> * _group;
-    id /* block */  _handler;
+    id  _handler;
     NSString * _key;
 }
 
@@ -15,12 +15,12 @@
 
 - (void).cxx_destruct;
 - (void)completeWithError:(id)arg1;
-- (id /* block */)completionHandlerFor:(id)arg1;
+- (id)completionHandlerFor:(id)arg1;
 - (id)description;
 - (id)documentIDsEnumerator;
 - (id)group;
 - (id)init;
-- (id)initWithKey:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)initWithKey:(id)arg1 completionHandler:(id)arg2;
 - (id)key;
 - (void)run;
 

@@ -5,7 +5,7 @@
 
 @required
 
-+ (float)maximumHeightForContentDescriptor:(MusicEntityViewContentDescriptor *)arg1 width:(float)arg2 traitCollection:(UITraitCollection *)arg3;
++ (double)maximumHeightForContentDescriptor:(MusicEntityViewContentDescriptor *)arg1 width:(double)arg2 traitCollection:(UITraitCollection *)arg3;
 
 - (MusicEntityViewContentDescriptor *)contentDescriptor;
 - (<MusicEntityValueProviding> *)entityValueProvider;
@@ -14,8 +14,8 @@
 
 @optional
 
-- (void)setEntityDisabled:(BOOL)arg1;
-- (void)setTextLateralEdgePadding:(float)arg1;
+- (void)setEntityDisabled:(bool)arg1;
+- (void)setTextLateralEdgePadding:(double)arg1;
 - (void)updateForAsynchronousPropertyLoadCompleted;
 
 @end

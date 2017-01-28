@@ -14,6 +14,6 @@
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)future;
 - (id)init;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 
 @end

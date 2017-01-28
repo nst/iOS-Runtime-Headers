@@ -3,29 +3,29 @@
  */
 
 @interface UIKBKeyViewAnimator : NSObject <CAAnimationDelegate> {
-    BOOL  _disabled;
+    bool  _disabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL disabled;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL shouldPurgeKeyViews;
+@property (nonatomic) bool disabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool shouldPurgeKeyViews;
 @property (readonly) Class superclass;
 
 + (id)normalizedAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
-+ (id)normalizedUnwindAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3 offset:(float)arg4;
++ (id)normalizedUnwindAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3 offset:(double)arg4;
 + (id)normalizedUnwindAnimationWithKeyPath:(id)arg1 originallyFromValue:(id)arg2 toValue:(id)arg3 offset:(double)arg4;
 + (id)normalizedUnwindOpacityAnimationWithKeyPath:(id)arg1 originallyFromValue:(id)arg2 toValue:(id)arg3 offset:(double)arg4;
 
-- (void)_fadeInKeyView:(id)arg1 duration:(float)arg2 completion:(id /* block */)arg3;
-- (void)_fadeOutKeyView:(id)arg1 duration:(float)arg2 completion:(id /* block */)arg3;
+- (void)_fadeInKeyView:(id)arg1 duration:(double)arg2 completion:(id)arg3;
+- (void)_fadeOutKeyView:(id)arg1 duration:(double)arg2 completion:(id)arg3;
 - (Class)_keyViewClassForSpecialtyKey:(id)arg1;
-- (float)delayedDeactivationTimeForKeyView:(id)arg1;
-- (BOOL)disabled;
+- (double)delayedDeactivationTimeForKeyView:(id)arg1;
+- (bool)disabled;
 - (void)endTransitionForKeyView:(id)arg1;
-- (void)gestureTransitionEndedForKeyView:(id)arg1 alternateCount:(unsigned int)arg2;
-- (void)gestureTransitionStartedForKeyView:(id)arg1 alternateCount:(unsigned int)arg2 direction:(int)arg3;
+- (void)gestureTransitionEndedForKeyView:(id)arg1 alternateCount:(unsigned long long)arg2;
+- (void)gestureTransitionStartedForKeyView:(id)arg1 alternateCount:(unsigned long long)arg2 direction:(int)arg3;
 - (Class)keyViewClassForKey:(id)arg1 traits:(id)arg2;
 - (id)keycapAlternateBackspaceInvertedTransform;
 - (id)keycapAlternateBackspaceTransform;
@@ -40,7 +40,7 @@
 - (id)keycapLeftSelectRightInvertedTransform;
 - (id)keycapLeftSelectRightTransform;
 - (id)keycapLeftStandardTransform;
-- (id)keycapMeshTransformFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)keycapMeshTransformFromRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 toRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)keycapNullTransform;
 - (id)keycapPrimaryBackspaceInvertedTransform;
 - (id)keycapPrimaryBackspaceTransform;
@@ -58,14 +58,14 @@
 - (id)keycapRightSelectRightTransform;
 - (id)keycapRightStandardTransform;
 - (void)reset;
-- (void)setDisabled:(BOOL)arg1;
-- (BOOL)shouldAssertCurrentKeyState:(id)arg1;
-- (BOOL)shouldPurgeKeyViews;
-- (BOOL)shouldTransitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3;
-- (void)transitionEndedForKeyView:(id)arg1 alternateCount:(unsigned int)arg2;
-- (void)transitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id /* block */)arg4;
-- (void)transitionOutKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id /* block */)arg4;
-- (void)transitionStartedForKeyView:(id)arg1 alternateCount:(unsigned int)arg2 toLeft:(BOOL)arg3;
-- (void)updateTransitionForKeyView:(id)arg1 normalizedDragSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)setDisabled:(bool)arg1;
+- (bool)shouldAssertCurrentKeyState:(id)arg1;
+- (bool)shouldPurgeKeyViews;
+- (bool)shouldTransitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3;
+- (void)transitionEndedForKeyView:(id)arg1 alternateCount:(unsigned long long)arg2;
+- (void)transitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id)arg4;
+- (void)transitionOutKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id)arg4;
+- (void)transitionStartedForKeyView:(id)arg1 alternateCount:(unsigned long long)arg2 toLeft:(bool)arg3;
+- (void)updateTransitionForKeyView:(id)arg1 normalizedDragSize:(struct CGSize { double x1; double x2; })arg2;
 
 @end

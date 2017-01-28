@@ -7,8 +7,8 @@
 
 - (NSString *)contentInfoText;
 - (NSDate *)dateForCurrentSortType;
-- (BOOL)isPasswordProtected;
-- (BOOL)isSharedViaICloud;
+- (bool)isPasswordProtected;
+- (bool)isSharedViaICloud;
 - (NSString *)noteAsPlainTextWithoutTitle;
 - (NSArray *)searchableContentKeyPaths;
 - (NSString *)title;

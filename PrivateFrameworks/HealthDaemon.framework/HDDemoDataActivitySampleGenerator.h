@@ -15,6 +15,8 @@
     double  _nextRestingCaloriesSampleTime;
     double  _nextStepsSampleTime;
     double  _nextUVIndexSampleTime;
+    HDProfile * _profile;
+    HDDataOriginProvenance * _provenance;
     _HDDemoDataActivityWorkoutState * _workoutState;
 }
 
@@ -30,11 +32,13 @@
 @property (nonatomic) double nextRestingCaloriesSampleTime;
 @property (nonatomic) double nextStepsSampleTime;
 @property (nonatomic) double nextUVIndexSampleTime;
+@property (nonatomic) HDProfile *profile;
+@property (nonatomic, retain) HDDataOriginProvenance *provenance;
 @property (nonatomic, retain) _HDDemoDataActivityWorkoutState *workoutState;
 
 - (void).cxx_destruct;
 - (id)_computeCyclingDistanceWithStepCount:(id)arg1 demoPerson:(id)arg2;
-- (double)_computeExerciseCaloriesForDemoPerson:(id)arg1 duration:(double)arg2 activity:(int)arg3 weight:(double)arg4;
+- (double)_computeExerciseCaloriesForDemoPerson:(id)arg1 duration:(double)arg2 activity:(long long)arg3 weight:(double)arg4;
 - (double)_computeExerciseTimeFromCurrentTime:(double)arg1 mean:(double)arg2 stdDev:(double)arg3;
 - (id)_computeFlightsClimbedForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (double)_computePercentCooledForDemoPerson:(id)arg1 atTime:(double)arg2;
@@ -43,10 +47,10 @@
 - (double)_computeUVIndexForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (id)_computeWalkingRunningDistanceWithStepCount:(id)arg1 demoPerson:(id)arg2;
 - (id)_exerciseMinuteSampleForDemoPerson:(id)arg1 atTime:(double)arg2 date:(id)arg3;
-- (BOOL)_isDemoPersonCoolingDown:(id)arg1 atTime:(double)arg2;
-- (BOOL)_isDemoPersonSedentary:(id)arg1 atTime:(double)arg2;
-- (BOOL)_isDemoPersonWalking:(id)arg1 atTime:(double)arg2 samplePeriod:(double)arg3;
-- (int)_pickActivityForTime:(double)arg1;
+- (bool)_isDemoPersonCoolingDown:(id)arg1 atTime:(double)arg2;
+- (bool)_isDemoPersonSedentary:(id)arg1 atTime:(double)arg2;
+- (bool)_isDemoPersonWalking:(id)arg1 atTime:(double)arg2 samplePeriod:(double)arg3;
+- (long long)_pickActivityForTime:(double)arg1;
 - (id)_sumQuantity:(id)arg1 withQuantity:(id)arg2;
 - (void)_updateWorkoutStateWithActiveEnergyBurned:(id)arg1 distanceWalking:(id)arg2 distanceCycling:(id)arg3 distanceSwimming:(id)arg4 swimmingStrokes:(id)arg5 currentTime:(double)arg6 date:(id)arg7 objectCollection:(id)arg8;
 - (id)activeCaloriesForDemoPerson:(id)arg1 atTime:(double)arg2;
@@ -69,6 +73,8 @@
 - (double)nextRestingCaloriesSampleTime;
 - (double)nextStepsSampleTime;
 - (double)nextUVIndexSampleTime;
+- (id)profile;
+- (id)provenance;
 - (id)restingCaloriesForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (void)setLastActivityCache:(id)arg1;
 - (void)setLastUVExposure:(double)arg1;
@@ -82,6 +88,9 @@
 - (void)setNextRestingCaloriesSampleTime:(double)arg1;
 - (void)setNextStepsSampleTime:(double)arg1;
 - (void)setNextUVIndexSampleTime:(double)arg1;
+- (void)setProfile:(id)arg1;
+- (void)setProfile:(id)arg1 provenance:(id)arg2;
+- (void)setProvenance:(id)arg1;
 - (void)setWorkoutState:(id)arg1;
 - (void)setupWithDemoDataGenerator:(id)arg1;
 - (id)stepsForDemoPerson:(id)arg1 atTime:(double)arg2;

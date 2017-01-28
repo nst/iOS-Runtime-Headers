@@ -4,6 +4,6 @@
 
 @interface PUPhotosGridViewControllerPadCameraSpec : PUPhotosGridViewControllerPadSpec
 
-- (BOOL)canDisplaySlideshowButton;
+- (bool)canDisplaySlideshowButton;
 
 @end

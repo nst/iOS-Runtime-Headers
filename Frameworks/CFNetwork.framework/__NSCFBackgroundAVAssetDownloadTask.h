@@ -38,9 +38,9 @@
 - (id)currentRequest;
 - (void)dealloc;
 - (id)destinationURL;
-- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 URLAsset:(id)arg3 URL:(id)arg4 destinationURL:(id)arg5 temporaryDestinationURL:(id)arg6 assetTitle:(id)arg7 assetArtworkData:(id)arg8 ident:(unsigned int)arg9;
-- (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned int)arg4;
-- (BOOL)isKindOfClass:(Class)arg1;
+- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 URLAsset:(id)arg3 URL:(id)arg4 destinationURL:(id)arg5 temporaryDestinationURL:(id)arg6 assetTitle:(id)arg7 assetArtworkData:(id)arg8 ident:(unsigned long long)arg9;
+- (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned long long)arg4;
+- (bool)isKindOfClass:(Class)arg1;
 - (id)loadedTimeRanges;
 - (id)options;
 - (id)originalRequest;

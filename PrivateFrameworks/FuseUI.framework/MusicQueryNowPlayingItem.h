@@ -7,7 +7,7 @@
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 
 - (float)defaultPlaybackRate;
-- (BOOL)hasDisplayableText;
+- (bool)hasDisplayableText;
 - (void)setupPlaybackInfo;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface LPStatisticsTimingToken : NSObject {
-    BOOL  _isTiming;
+    bool  _isTiming;
     NSString * _metricKey;
     unsigned long long  _startTime;
 }

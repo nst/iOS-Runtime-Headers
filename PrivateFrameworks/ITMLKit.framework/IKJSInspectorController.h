@@ -8,7 +8,7 @@
     IKJSInspectorCSSAgent * _cssAgent;
     IKJSInspectorDOMAgent * _domAgent;
     RWIProtocolInspector * _inspector;
-    BOOL  _inspectorConnected;
+    bool  _inspectorConnected;
     id  _inspectorConnectedToken;
     id  _inspectorDisconntectedToken;
     IKJSInspectorPageAgent * _pageAgent;
@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) RWIProtocolInspector *inspector;
 
 - (void).cxx_destruct;
-- (id)_nodeById:(int)arg1 fromNode:(id)arg2;
+- (id)_nodeById:(long long)arg1 fromNode:(id)arg2;
 - (id)activeDocument;
 - (void)activeDocumentDidChange;
 - (id)appContext;
@@ -27,7 +27,7 @@
 - (void)dealloc;
 - (id)initWithAppContext:(id)arg1;
 - (id)inspector;
-- (id)nodeById:(int)arg1;
+- (id)nodeById:(long long)arg1;
 - (void)resetStylesFromNode:(id)arg1;
 - (id)styleFromComposer:(id)arg1;
 - (void)updateStylesheets;

@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic) int conditionalOperator;
-@property (nonatomic) BOOL hasConditionalOperator;
+@property (nonatomic) bool hasConditionalOperator;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (id)options;
@@ -21,13 +21,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConditionalOperator;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConditionalOperator;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setConditionalOperator:(int)arg1;
-- (void)setHasConditionalOperator:(BOOL)arg1;
+- (void)setHasConditionalOperator:(bool)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

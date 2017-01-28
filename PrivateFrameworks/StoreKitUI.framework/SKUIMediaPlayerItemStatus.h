@@ -5,20 +5,20 @@
 @interface SKUIMediaPlayerItemStatus : NSObject <NSCopying> {
     double  _currentTime;
     double  _duration;
-    BOOL  _hideDuration;
+    bool  _hideDuration;
     NSString * _itemIdentifier;
-    int  _itemType;
-    int  _playState;
+    long long  _itemType;
+    long long  _playState;
     NSString * _storeAlbumID;
     NSString * _storeID;
 }
 
 @property (nonatomic) double currentTime;
 @property (nonatomic) double duration;
-@property (nonatomic) BOOL hideDuration;
+@property (nonatomic) bool hideDuration;
 @property (nonatomic, copy) NSString *itemIdentifier;
-@property (nonatomic) int itemType;
-@property (nonatomic) int playState;
+@property (nonatomic) long long itemType;
+@property (nonatomic) long long playState;
 @property (nonatomic, copy) NSString *storeAlbumID;
 @property (nonatomic, copy) NSString *storeID;
 
@@ -27,17 +27,17 @@
 - (double)currentTime;
 - (id)description;
 - (double)duration;
-- (BOOL)hideDuration;
+- (bool)hideDuration;
 - (id)init;
 - (id)itemIdentifier;
-- (int)itemType;
-- (int)playState;
+- (long long)itemType;
+- (long long)playState;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setHideDuration:(BOOL)arg1;
+- (void)setHideDuration:(bool)arg1;
 - (void)setItemIdentifier:(id)arg1;
-- (void)setItemType:(int)arg1;
-- (void)setPlayState:(int)arg1;
+- (void)setItemType:(long long)arg1;
+- (void)setPlayState:(long long)arg1;
 - (void)setStoreAlbumID:(id)arg1;
 - (void)setStoreID:(id)arg1;
 - (id)storeAlbumID;

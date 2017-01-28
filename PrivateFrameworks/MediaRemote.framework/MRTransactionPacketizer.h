@@ -7,13 +7,13 @@
     NSMutableArray * _outgoingPackets;
 }
 
-@property (nonatomic, readonly) BOOL hasMorePacketsToPacketize;
-@property (nonatomic, readonly) BOOL hasMorePacketsToUnpacketize;
+@property (nonatomic, readonly) bool hasMorePacketsToPacketize;
+@property (nonatomic, readonly) bool hasMorePacketsToUnpacketize;
 
 - (void)dealloc;
-- (BOOL)hasMorePacketsToPacketize;
-- (BOOL)hasMorePacketsToUnpacketize;
-- (void)packetize:(id)arg1 packageSize:(unsigned int)arg2 completion:(id /* block */)arg3;
-- (void)unpacketize:(id)arg1 completion:(id /* block */)arg2;
+- (bool)hasMorePacketsToPacketize;
+- (bool)hasMorePacketsToUnpacketize;
+- (void)packetize:(id)arg1 packageSize:(unsigned long long)arg2 completion:(id)arg3;
+- (void)unpacketize:(id)arg1 completion:(id)arg2;
 
 @end

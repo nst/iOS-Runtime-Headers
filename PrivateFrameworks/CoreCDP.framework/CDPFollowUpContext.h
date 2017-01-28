@@ -4,28 +4,28 @@
 
 @interface CDPFollowUpContext : NSObject <NSSecureCoding> {
     NSString * _followUpType;
-    BOOL  _force;
-    BOOL  _shouldNotify;
+    bool  _force;
+    bool  _shouldNotify;
 }
 
 @property (nonatomic, copy) NSString *followUpType;
-@property (nonatomic) BOOL force;
-@property (nonatomic) BOOL shouldNotify;
+@property (nonatomic) bool force;
+@property (nonatomic) bool shouldNotify;
 
 + (id)contextForOfflinePasscodeChange;
 + (id)contextForStateRepair;
 + (id)contextWithType:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)followUpType;
-- (BOOL)force;
+- (bool)force;
 - (id)initWithCoder:(id)arg1;
 - (void)setFollowUpType:(id)arg1;
-- (void)setForce:(BOOL)arg1;
-- (void)setShouldNotify:(BOOL)arg1;
-- (BOOL)shouldNotify;
+- (void)setForce:(bool)arg1;
+- (void)setShouldNotify:(bool)arg1;
+- (bool)shouldNotify;
 
 @end

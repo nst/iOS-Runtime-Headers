@@ -3,11 +3,11 @@
  */
 
 @interface FUFlightInfoView : UIView {
-    int  _currentFocus;
+    long long  _currentFocus;
     <FUFlightInfoViewProtocol> * _delegate;
     FUFlight * _flight;
     UIButton * _flightButton;
-    unsigned int  _flightTimeDisplay;
+    unsigned long long  _flightTimeDisplay;
     FULabel * _labelAirlineName;
     FULabel * _labelArrivalCity;
     FULabel * _labelArrivalCode;
@@ -28,11 +28,11 @@
     FULabel * _labelStatusTitle;
 }
 
-@property int currentFocus;
+@property long long currentFocus;
 @property <FUFlightInfoViewProtocol> *delegate;
 @property (nonatomic, retain) FUFlight *flight;
 @property UIButton *flightButton;
-@property (nonatomic) unsigned int flightTimeDisplay;
+@property (nonatomic) unsigned long long flightTimeDisplay;
 @property FULabel *labelAirlineName;
 @property FULabel *labelArrivalCity;
 @property FULabel *labelArrivalCode;
@@ -56,15 +56,15 @@
 
 - (void).cxx_destruct;
 - (void)awakeFromNib;
-- (int)currentFocus;
+- (long long)currentFocus;
 - (void)dealloc;
 - (id)delegate;
-- (id)displayStringForDate:(id)arg1 locale:(id)arg2 late:(BOOL)arg3 timeZone:(id)arg4;
+- (id)displayStringForDate:(id)arg1 locale:(id)arg2 late:(bool)arg3 timeZone:(id)arg4;
 - (id)flight;
 - (id)flightButton;
 - (void)flightButtonTapped:(id)arg1;
-- (unsigned int)flightTimeDisplay;
-- (BOOL)knownStatus;
+- (unsigned long long)flightTimeDisplay;
+- (bool)knownStatus;
 - (id)labelAirlineName;
 - (id)labelArrivalCity;
 - (id)labelArrivalCode;
@@ -83,11 +83,11 @@
 - (id)labelFlightCode;
 - (id)labelStatus;
 - (id)labelStatusTitle;
-- (void)setCurrentFocus:(int)arg1;
+- (void)setCurrentFocus:(long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFlight:(id)arg1;
 - (void)setFlightButton:(id)arg1;
-- (void)setFlightTimeDisplay:(unsigned int)arg1;
+- (void)setFlightTimeDisplay:(unsigned long long)arg1;
 - (void)setLabelAirlineName:(id)arg1;
 - (void)setLabelArrivalCity:(id)arg1;
 - (void)setLabelArrivalCode:(id)arg1;

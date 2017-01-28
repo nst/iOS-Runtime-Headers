@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)updateInstallStateForApplication:(NSString *)arg1 installState:(int)arg2;
+- (void)updateInstallStateForApplication:(NSString *)arg1 installState:(long long)arg2;
 
 @end

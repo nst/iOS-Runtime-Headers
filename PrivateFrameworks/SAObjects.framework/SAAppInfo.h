@@ -10,17 +10,17 @@
 @property (nonatomic, copy) NSString *appName;
 @property (nonatomic, copy) NSDictionary *appNameMap;
 @property (nonatomic, copy) NSString *appVersion;
-@property (nonatomic) BOOL betaApp;
+@property (nonatomic) bool betaApp;
 @property (nonatomic, copy) NSString *carPlayAlternativeDisplayName;
 @property (nonatomic, copy) NSDictionary *carPlayAlternativeDisplayNameMap;
 @property (nonatomic, copy) NSString *containerName;
 @property (nonatomic, copy) NSString *displayAppName;
 @property (nonatomic, copy) NSDictionary *displayAppNameMap;
 @property (nonatomic, retain) SAGlance *glance;
-@property (nonatomic) BOOL hasSiriIntegration;
-@property (nonatomic) BOOL hidden;
-@property (nonatomic) BOOL isMacApp;
-@property (nonatomic) BOOL isNanoApp;
+@property (nonatomic) bool hasSiriIntegration;
+@property (nonatomic) bool hidden;
+@property (nonatomic) bool isMacApp;
+@property (nonatomic) bool isNanoApp;
 @property (nonatomic, copy) NSNumber *nowPlayingAppWithBrowsableContent;
 @property (nonatomic, copy) NSString *providerName;
 @property (nonatomic, retain) SASiriSupport *siriSupport;
@@ -29,7 +29,7 @@
 @property (nonatomic, retain) SAStarkSupport *starkSupport;
 @property (nonatomic, copy) NSArray *supportedCommands;
 @property (nonatomic, copy) NSArray *supportedSchemes;
-@property (nonatomic) BOOL supportsUniversalSearchSubscription;
+@property (nonatomic) bool supportsUniversalSearchSubscription;
 
 + (id)appInfo;
 + (id)appInfoWithDictionary:(id)arg1 context:(id)arg2;
@@ -40,7 +40,7 @@
 - (id)appName;
 - (id)appNameMap;
 - (id)appVersion;
-- (BOOL)betaApp;
+- (bool)betaApp;
 - (id)carPlayAlternativeDisplayName;
 - (id)carPlayAlternativeDisplayNameMap;
 - (id)containerName;
@@ -49,10 +49,10 @@
 - (id)encodedClassName;
 - (id)glance;
 - (id)groupIdentifier;
-- (BOOL)hasSiriIntegration;
-- (BOOL)hidden;
-- (BOOL)isMacApp;
-- (BOOL)isNanoApp;
+- (bool)hasSiriIntegration;
+- (bool)hidden;
+- (bool)isMacApp;
+- (bool)isNanoApp;
 - (id)nowPlayingAppWithBrowsableContent;
 - (id)providerName;
 - (void)setAdamId:(id)arg1;
@@ -61,17 +61,17 @@
 - (void)setAppName:(id)arg1;
 - (void)setAppNameMap:(id)arg1;
 - (void)setAppVersion:(id)arg1;
-- (void)setBetaApp:(BOOL)arg1;
+- (void)setBetaApp:(bool)arg1;
 - (void)setCarPlayAlternativeDisplayName:(id)arg1;
 - (void)setCarPlayAlternativeDisplayNameMap:(id)arg1;
 - (void)setContainerName:(id)arg1;
 - (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayAppNameMap:(id)arg1;
 - (void)setGlance:(id)arg1;
-- (void)setHasSiriIntegration:(BOOL)arg1;
-- (void)setHidden:(BOOL)arg1;
-- (void)setIsMacApp:(BOOL)arg1;
-- (void)setIsNanoApp:(BOOL)arg1;
+- (void)setHasSiriIntegration:(bool)arg1;
+- (void)setHidden:(bool)arg1;
+- (void)setIsMacApp:(bool)arg1;
+- (void)setIsNanoApp:(bool)arg1;
 - (void)setNowPlayingAppWithBrowsableContent:(id)arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setSiriSupport:(id)arg1;
@@ -80,13 +80,13 @@
 - (void)setStarkSupport:(id)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (void)setSupportedSchemes:(id)arg1;
-- (void)setSupportsUniversalSearchSubscription:(BOOL)arg1;
+- (void)setSupportsUniversalSearchSubscription:(bool)arg1;
 - (id)siriSupport;
 - (id)spotlightName;
 - (id)spotlightNameMap;
 - (id)starkSupport;
 - (id)supportedCommands;
 - (id)supportedSchemes;
-- (BOOL)supportsUniversalSearchSubscription;
+- (bool)supportsUniversalSearchSubscription;
 
 @end

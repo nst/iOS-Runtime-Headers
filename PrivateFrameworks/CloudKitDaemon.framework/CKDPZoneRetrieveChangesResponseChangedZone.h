@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic) int changeType;
-@property (nonatomic) BOOL hasChangeType;
-@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic) bool hasChangeType;
+@property (nonatomic, readonly) bool hasZoneIdentifier;
 @property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 - (void).cxx_destruct;
@@ -23,14 +23,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasChangeType;
-- (BOOL)hasZoneIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasChangeType;
+- (bool)hasZoneIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setChangeType:(int)arg1;
-- (void)setHasChangeType:(BOOL)arg1;
+- (void)setHasChangeType:(bool)arg1;
 - (void)setZoneIdentifier:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (id)zoneIdentifier;

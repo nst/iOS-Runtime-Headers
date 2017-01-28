@@ -11,6 +11,6 @@
 - (void).cxx_destruct;
 - (id)initWithFamilyMemberDSID:(id)arg1;
 - (id)memberDSID;
-- (void)startRequestWithCompletionHandler:(id /* block */)arg1;
+- (void)startRequestWithCompletionHandler:(id)arg1;
 
 @end

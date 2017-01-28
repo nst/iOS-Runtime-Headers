@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) double movePercent;
 @property (nonatomic, readonly) double previousMovePercent;
 @property (nonatomic, readonly) double standHours;
-@property (nonatomic, readonly) int stepCount;
+@property (nonatomic, readonly) long long stepCount;
 @property (nonatomic, readonly) double walkingRunningDistanceInKilometers;
 
 - (void).cxx_destruct;
@@ -27,7 +27,7 @@
 - (double)previousMovePercent;
 - (void)setActivitySummary:(id)arg1;
 - (double)standHours;
-- (int)stepCount;
+- (long long)stepCount;
 - (double)walkingRunningDistanceInKilometers;
 
 @end

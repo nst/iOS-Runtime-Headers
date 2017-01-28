@@ -12,32 +12,32 @@
 @property (nonatomic, retain) <HKIncrementalSearchBarDelegate> *searchBarDelegate;
 @property (nonatomic, retain) NSString *searchText;
 
-+ (BOOL)_hasUppercaseCharacters:(id)arg1;
-+ (id)_patternFromSearchString:(id)arg1 quoteForJavascript:(BOOL)arg2;
-+ (id)regularExpressionFromString:(id)arg1 quoteForJavascript:(BOOL)arg2 caseless:(BOOL*)arg3;
++ (bool)_hasUppercaseCharacters:(id)arg1;
++ (id)_patternFromSearchString:(id)arg1 quoteForJavascript:(bool)arg2;
++ (id)regularExpressionFromString:(id)arg1 quoteForJavascript:(bool)arg2 caseless:(bool*)arg3;
 
 - (void).cxx_destruct;
 - (void)_lowerKeyboard;
-- (void)activateSearch:(BOOL)arg1;
-- (BOOL)canBecomeFirstResponder;
+- (void)activateSearch:(bool)arg1;
+- (bool)canBecomeFirstResponder;
 - (void)dealloc;
 - (void)doneAction:(id)arg1;
 - (id)init;
 - (id)inputAccessoryView;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)keyboardIsDown;
-- (BOOL)keyboardIsUp;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)keyboardIsDown;
+- (bool)keyboardIsUp;
 - (id)matchDisplayText;
 - (id)searchBarContent;
 - (id)searchBarDelegate;
-- (BOOL)searchIsActive;
+- (bool)searchIsActive;
 - (void)searchKeyboardDidHide:(id)arg1;
 - (id)searchText;
-- (void)setDownEnabled:(BOOL)arg1;
+- (void)setDownEnabled:(bool)arg1;
 - (void)setMatchDisplayText:(id)arg1;
-- (void)setMatchDisplayVisible:(BOOL)arg1;
+- (void)setMatchDisplayVisible:(bool)arg1;
 - (void)setSearchBarDelegate:(id)arg1;
 - (void)setSearchText:(id)arg1;
-- (void)setUpEnabled:(BOOL)arg1;
+- (void)setUpEnabled:(bool)arg1;
 
 @end

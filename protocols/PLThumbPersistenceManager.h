@@ -7,28 +7,28 @@
 
 - (NSString *)_debugDescription;
 - (id)beginThumbnailSafePropertyUpdatesOnAsset:(PLManagedAsset *)arg1;
-- (BOOL)copyEntryFromOriginalAsset:(PLManagedAsset *)arg1 toAsset:(PLManagedAsset *)arg2;
+- (bool)copyEntryFromOriginalAsset:(PLManagedAsset *)arg1 toAsset:(PLManagedAsset *)arg2;
 - (void)endThumbnailSafePropertyUpdatesOnAsset:(PLManagedAsset *)arg1 withToken:(id)arg2;
-- (PLMappedImageData *)imageDataWithIdentifier:(NSString *)arg1 orIndex:(unsigned int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 dataOffset:(int*)arg8;
+- (PLMappedImageData *)imageDataWithIdentifier:(NSString *)arg1 orIndex:(unsigned long long)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 dataOffset:(int*)arg8;
 - (int)imageFormat;
 - (int)imageHeight;
 - (int)imageLength;
 - (int)imageRowBytes;
-- (struct CGSize { float x1; float x2; })imageSize;
+- (struct CGSize { double x1; double x2; })imageSize;
 - (int)imageWidth;
-- (BOOL)isReadOnly;
+- (bool)isReadOnly;
 - (NSString *)path;
-- (void)setImageDataForEntry:(const void*)arg1 withIdentifier:(NSString *)arg2 orIndex:(unsigned int)arg3 asset:(PLManagedAsset *)arg4;
-- (void)setImageForEntry:(UIImage *)arg1 withIdentifier:(NSString *)arg2 orIndex:(unsigned int)arg3 videoDuration:(NSNumber *)arg4 photoUUID:(NSString *)arg5;
-- (BOOL)usesThumbIdentifiers;
+- (void)setImageDataForEntry:(const void*)arg1 withIdentifier:(NSString *)arg2 orIndex:(unsigned long long)arg3 asset:(PLManagedAsset *)arg4;
+- (void)setImageForEntry:(UIImage *)arg1 withIdentifier:(NSString *)arg2 orIndex:(unsigned long long)arg3 videoDuration:(NSNumber *)arg4 photoUUID:(NSString *)arg5;
+- (bool)usesThumbIdentifiers;
 
 @optional
 
-- (void)deleteEntryWithIdentifier:(NSString *)arg1 orIndex:(unsigned int)arg2 uuid:(NSString *)arg3;
-- (int)entryCount;
+- (void)deleteEntryWithIdentifier:(NSString *)arg1 orIndex:(unsigned long long)arg2 uuid:(NSString *)arg3;
+- (long long)entryCount;
 - (UIImage *)imageWithIdentifier:(NSString *)arg1;
-- (void)preheatImageDataAtIndex:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIImage *, BOOL, void*
-- (void)preheatImageDataAtIndexes:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSIndexSet *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UIImage *, BOOL, void*
+- (void)preheatImageDataAtIndex:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, UIImage *, bool, void*
+- (void)preheatImageDataAtIndexes:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSIndexSet *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, UIImage *, bool, void*
 - (NSString *)thumbnailPathForThumbIdentifier:(NSString *)arg1;
 
 @end

@@ -5,18 +5,18 @@
 @interface SUBLogger : NSObject {
     NSObject<OS_os_log> * _logError;
     NSObject<OS_os_log> * _logInfo;
-    int  _logLevel;
+    long long  _logLevel;
 }
 
-@property (nonatomic) int logLevel;
+@property (nonatomic) long long logLevel;
 
 + (id)sharedLogger;
 
 - (void)dealloc;
 - (id)init;
-- (void)logAtLevel:(int)arg1 label:(const char *)arg2 format:(id)arg3;
-- (int)logLevel;
-- (void)setLogLevel:(int)arg1;
-- (void)setLoglevel:(int)arg1;
+- (void)logAtLevel:(long long)arg1 label:(const char *)arg2 format:(id)arg3;
+- (long long)logLevel;
+- (void)setLogLevel:(long long)arg1;
+- (void)setLoglevel:(long long)arg1;
 
 @end

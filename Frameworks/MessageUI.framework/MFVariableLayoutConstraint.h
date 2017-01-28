@@ -3,25 +3,25 @@
  */
 
 @interface MFVariableLayoutConstraint : NSObject {
-    float  _cachedInterpolatedValue;
-    BOOL  _cachedInterpolatedValueIsValid;
-    id /* block */  _interpolationFormula;
-    float  _medianValue;
+    double  _cachedInterpolatedValue;
+    bool  _cachedInterpolatedValueIsValid;
+    id  _interpolationFormula;
+    double  _medianValue;
 }
 
-@property (nonatomic) id /* block */ interpolationFormula;
-@property (nonatomic) float medianValue;
+@property (nonatomic) id interpolationFormula;
+@property (nonatomic) double medianValue;
 
-+ (int)_medianContentSizeIndex;
++ (long long)_medianContentSizeIndex;
 + (id)medianContentSizeCategory;
 
 - (void)_didReceiveContentSizeCategoryNameDidChageNotification:(id)arg1;
 - (void)dealloc;
-- (id)initWithMedianConstraintValue:(float)arg1 interpolationFormula:(id /* block */)arg2;
-- (float)interpolatedValue;
-- (id /* block */)interpolationFormula;
-- (float)medianValue;
-- (void)setInterpolationFormula:(id /* block */)arg1;
-- (void)setMedianValue:(float)arg1;
+- (id)initWithMedianConstraintValue:(double)arg1 interpolationFormula:(id)arg2;
+- (double)interpolatedValue;
+- (id)interpolationFormula;
+- (double)medianValue;
+- (void)setInterpolationFormula:(id)arg1;
+- (void)setMedianValue:(double)arg1;
 
 @end

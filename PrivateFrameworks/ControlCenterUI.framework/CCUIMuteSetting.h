@@ -6,19 +6,19 @@
 
 + (id)displayName;
 + (id)identifier;
-+ (BOOL)isSupported:(int)arg1;
++ (bool)isSupported:(int)arg1;
 + (id)statusOffString;
 + (id)statusOnString;
 
 - (void)_tearDown;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)_updateState;
 - (void)activate;
 - (id)aggdKey;
 - (void)deactivate;
 - (void)dealloc;
 - (id)glyphImageForState:(int)arg1;
-- (BOOL)isRestricted;
+- (bool)isRestricted;
 - (id)selectedStateColor;
 
 @end

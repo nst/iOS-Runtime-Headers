@@ -5,6 +5,6 @@
 
 @required
 
-+ (UIInterfaceActionConcreteVisualStyle<UIInterfaceActionConcreteVisualStyleImpl> *)styleForTraitCollection:(UITraitCollection *)arg1 presentationStyle:(int)arg2;
++ (UIInterfaceActionConcreteVisualStyle<UIInterfaceActionConcreteVisualStyleImpl> *)styleForTraitCollection:(UITraitCollection *)arg1 presentationStyle:(long long)arg2;
 
 @end

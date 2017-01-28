@@ -3,52 +3,52 @@
  */
 
 @interface MKAmbientLightMonitor : NSObject {
-    int  _ambientLightLevel;
+    long long  _ambientLightLevel;
     struct __IOHIDEventSystemClient { } * _client;
-    BOOL  _debugLogLux;
-    float  _lightLevelLowThreshold;
-    float  _lightLevelMediumThreshold;
-    float  _lightLevelNoneThreshold;
-    BOOL  _monitoring;
+    bool  _debugLogLux;
+    double  _lightLevelLowThreshold;
+    double  _lightLevelMediumThreshold;
+    double  _lightLevelNoneThreshold;
+    bool  _monitoring;
     NSHashTable * _observers;
-    struct deque<float, std::__1::allocator<float> > { 
-        struct __split_buffer<float *, std::__1::allocator<float *> > { 
-            float **__first_; 
-            float **__begin_; 
-            float **__end_; 
-            struct __compressed_pair<float **, std::__1::allocator<float *> > { 
-                float **__first_; 
+    struct deque<double, std::__1::allocator<double> > { 
+        struct __split_buffer<double *, std::__1::allocator<double *> > { 
+            double **__first_; 
+            double **__begin_; 
+            double **__end_; 
+            struct __compressed_pair<double **, std::__1::allocator<double *> > { 
+                double **__first_; 
             } __end_cap_; 
         } __map_; 
-        unsigned int __start_; 
-        struct __compressed_pair<unsigned long, std::__1::allocator<float> > { 
-            unsigned long __first_; 
+        unsigned long long __start_; 
+        struct __compressed_pair<unsigned long, std::__1::allocator<double> > { 
+            unsigned long long __first_; 
         } __size_; 
     }  _runningStatBuffer;
     unsigned int  _runningStatSize;
-    float  _runningStatSum;
+    double  _runningStatSum;
 }
 
-@property (nonatomic, readonly) int ambientLightLevel;
-@property (nonatomic) BOOL debugLogLux;
-@property (getter=isMonitoring, nonatomic, readonly) BOOL monitoring;
+@property (nonatomic, readonly) long long ambientLightLevel;
+@property (nonatomic) bool debugLogLux;
+@property (getter=isMonitoring, nonatomic, readonly) bool monitoring;
 
 + (id)sharedAmbientLightMonitor;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (float)_addSampleAndComputeMean:(const float*)arg1;
+- (double)_addSampleAndComputeMean:(const double*)arg1;
 - (void)_startMonitoring;
 - (void)_stopMonitoring;
 - (void)_updateThresholds;
-- (int)ambientLightLevel;
+- (long long)ambientLightLevel;
 - (void)dealloc;
-- (BOOL)debugLogLux;
+- (bool)debugLogLux;
 - (void)handleIOHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (id)init;
-- (BOOL)isMonitoring;
+- (bool)isMonitoring;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)setDebugLogLux:(BOOL)arg1;
+- (void)setDebugLogLux:(bool)arg1;
 - (void)startMonitoringWithObserver:(id)arg1;
 - (void)stopMonitoringWithObserver:(id)arg1;
 

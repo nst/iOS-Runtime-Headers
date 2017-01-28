@@ -3,43 +3,43 @@
  */
 
 @interface EKUICellContentView : UIView {
-    BOOL  _drawsOwnRowSeparators;
+    bool  _drawsOwnRowSeparators;
     UIColor * _rowSeparatorColor;
     UIVisualEffectView * _rowSeparatorParentView;
     UIVisualEffect * _rowSeparatorVisualEffect;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _separatorInset;
     EKUICellRowSeparatorView * _separatorViewForNonOpaqueContainers;
-    BOOL  _usesInsetMargin;
+    bool  _usesInsetMargin;
 }
 
-@property (nonatomic) BOOL drawsOwnRowSeparators;
+@property (nonatomic) bool drawsOwnRowSeparators;
 @property (nonatomic, retain) UIColor *rowSeparatorColor;
 @property (nonatomic, retain) UIVisualEffect *rowSeparatorVisualEffect;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
-@property (nonatomic) BOOL usesInsetMargin;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } separatorInset;
+@property (nonatomic) bool usesInsetMargin;
 
-+ (float)rowSeparatorThickness;
-+ (BOOL)vibrant;
++ (double)rowSeparatorThickness;
++ (bool)vibrant;
 
 - (void).cxx_destruct;
 - (void)_layoutSeparator;
-- (void)_setMarginExtendsToFullWidth:(BOOL)arg1;
-- (void)_setMarginWidth:(float)arg1;
-- (BOOL)drawsOwnRowSeparators;
+- (void)_setMarginExtendsToFullWidth:(bool)arg1;
+- (void)_setMarginWidth:(double)arg1;
+- (bool)drawsOwnRowSeparators;
 - (void)layoutSubviews;
 - (id)rowSeparatorColor;
 - (id)rowSeparatorVisualEffect;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
-- (void)setDrawsOwnRowSeparators:(BOOL)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })separatorInset;
+- (void)setDrawsOwnRowSeparators:(bool)arg1;
 - (void)setRowSeparatorColor:(id)arg1;
 - (void)setRowSeparatorVisualEffect:(id)arg1;
-- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setUsesInsetMargin:(BOOL)arg1;
-- (BOOL)usesInsetMargin;
+- (void)setSeparatorInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setUsesInsetMargin:(bool)arg1;
+- (bool)usesInsetMargin;
 
 @end

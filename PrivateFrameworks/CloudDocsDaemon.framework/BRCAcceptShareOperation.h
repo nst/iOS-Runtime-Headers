@@ -3,22 +3,22 @@
  */
 
 @interface BRCAcceptShareOperation : _BRCOperation <BRCOperationSubclass> {
-    id /* block */  _acceptShareCompletionBlock;
+    id  _acceptShareCompletionBlock;
     CKShareMetadata * _shareMetadata;
 }
 
-@property (nonatomic, copy) id /* block */ acceptShareCompletionBlock;
+@property (nonatomic, copy) id acceptShareCompletionBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id /* block */)acceptShareCompletionBlock;
+- (id)acceptShareCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithShareMetadata:(id)arg1 syncContext:(id)arg2;
 - (void)main;
-- (void)setAcceptShareCompletionBlock:(id /* block */)arg1;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (void)setAcceptShareCompletionBlock:(id)arg1;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

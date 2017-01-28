@@ -9,10 +9,10 @@
     PSUICellularAccountListGroupController * _cellularAccountListGroupController;
     PSUICellularAccountGroupController * _cellularGroupController;
     PSSpecifier * _currentSpecifier;
-    BOOL  _disabled;
+    bool  _disabled;
     PSSpecifier * _facetimeSetupButton;
     PSSpecifier * _facetimeSetupGroup;
-    BOOL  _ignoreNextEntitlementStatusChange;
+    bool  _ignoreNextEntitlementStatusChange;
     PSSpecifier * _lastResetSpecifier;
     PSSpecifier * _lifetimeSpecifier;
     PSSpecifier * _viewAccount;
@@ -26,11 +26,11 @@
 @property (nonatomic, retain) PSUICellularAccountGroupController *cellularGroupController;
 @property (nonatomic, retain) WirelessDataUsageWorkspace *workspace;
 
-+ (BOOL)isConnectedOverWiFi;
++ (bool)isConnectedOverWiFi;
 
 - (void).cxx_destruct;
 - (id)_lastUpdateDate;
-- (void)_setMobileDataSwitch:(BOOL)arg1;
+- (void)_setMobileDataSwitch:(bool)arg1;
 - (void)_updateLastResetText;
 - (void)acceptedDataSwitch:(id)arg1;
 - (void)airplaneModeChanged;
@@ -38,7 +38,7 @@
 - (id)appUsageGroupController;
 - (id)callHistoryManager;
 - (id)callTime:(id)arg1;
-- (id)callTimeDurationRestrictedToCurrentPeriod:(BOOL)arg1;
+- (id)callTimeDurationRestrictedToCurrentPeriod:(bool)arg1;
 - (void)canceledDataSwitch:(id)arg1;
 - (id)cellularAccountListGroupController;
 - (id)cellularDataOptionsDetailText:(id)arg1;
@@ -51,7 +51,7 @@
 - (void)handleCallTimersChanged;
 - (void)handleURL:(id)arg1;
 - (id)init;
-- (BOOL)isCellularDisabled;
+- (bool)isCellularDisabled;
 - (id)isMobileDataEnabled:(id)arg1;
 - (id)lifetimeCallTime:(id)arg1;
 - (void)newCarrierNotification;
@@ -62,16 +62,16 @@
 - (void)setMobileDataIsEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setWorkspace:(id)arg1;
 - (void)setupCellularFaceTime:(id)arg1;
-- (BOOL)shouldShowFaceTimeSetup;
-- (BOOL)shouldShowViewAccount;
-- (BOOL)showDataPlanOnly;
+- (bool)shouldShowFaceTimeSetup;
+- (bool)shouldShowViewAccount;
+- (bool)showDataPlanOnly;
 - (id)specifiers;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)totalBytesUsedChangedNotification;
 - (id)totalDataUsageForSpecifier:(id)arg1;
 - (id)totalRoamingDataUsageForSpecifier:(id)arg1;
 - (void)updateAppUsageGroupEnabledState;
-- (void)updatePaneWithCellularDataState:(BOOL)arg1;
+- (void)updatePaneWithCellularDataState:(bool)arg1;
 - (void)viewAccountPressed:(id)arg1;
 - (void)wirelessDataUsageChangedNotification;
 - (id)workspace;

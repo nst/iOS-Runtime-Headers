@@ -3,37 +3,37 @@
  */
 
 @interface FCHeadlineClusteringRules : NSObject {
-    BOOL  _enableOptimizedLayout;
-    unsigned int  _maxClusterSize;
-    unsigned int  _maxIdealClusterSize;
-    unsigned int  _minClusterSize;
-    unsigned int  _minIdealClusterSize;
-    unsigned int  _optimizedLayoutIncrementUnit;
-    unsigned int  _optimizedLayoutSizeThreshold;
+    bool  _enableOptimizedLayout;
+    unsigned long long  _maxClusterSize;
+    unsigned long long  _maxIdealClusterSize;
+    unsigned long long  _minClusterSize;
+    unsigned long long  _minIdealClusterSize;
+    unsigned long long  _optimizedLayoutIncrementUnit;
+    unsigned long long  _optimizedLayoutSizeThreshold;
     FCSolConfiguration * _solConfiguration;
 }
 
-@property (nonatomic, readonly) BOOL enableOptimizedLayout;
-@property (nonatomic, readonly) unsigned int maxClusterSize;
-@property (nonatomic, readonly) unsigned int maxIdealClusterSize;
-@property (nonatomic, readonly) unsigned int minClusterSize;
-@property (nonatomic, readonly) unsigned int minIdealClusterSize;
-@property (nonatomic, readonly) unsigned int optimizedLayoutIncrementUnit;
-@property (nonatomic, readonly) unsigned int optimizedLayoutSizeThreshold;
+@property (nonatomic, readonly) bool enableOptimizedLayout;
+@property (nonatomic, readonly) unsigned long long maxClusterSize;
+@property (nonatomic, readonly) unsigned long long maxIdealClusterSize;
+@property (nonatomic, readonly) unsigned long long minClusterSize;
+@property (nonatomic, readonly) unsigned long long minIdealClusterSize;
+@property (nonatomic, readonly) unsigned long long optimizedLayoutIncrementUnit;
+@property (nonatomic, readonly) unsigned long long optimizedLayoutSizeThreshold;
 @property (nonatomic, retain) FCSolConfiguration *solConfiguration;
 
 + (id)rulesWithTreatment:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)enableOptimizedLayout;
+- (bool)enableOptimizedLayout;
 - (id)init;
-- (id)initWithMinClusterSize:(unsigned int)arg1 maxClusterSize:(unsigned int)arg2 minIdealClusterSize:(unsigned int)arg3 maxIdealClusterSize:(unsigned int)arg4 enableOptimizedLayout:(BOOL)arg5 optimizedLayoutSizeThreshold:(unsigned int)arg6 optimizedLayoutIncrementUnit:(unsigned int)arg7 solConfiguration:(id)arg8;
-- (unsigned int)maxClusterSize;
-- (unsigned int)maxIdealClusterSize;
-- (unsigned int)minClusterSize;
-- (unsigned int)minIdealClusterSize;
-- (unsigned int)optimizedLayoutIncrementUnit;
-- (unsigned int)optimizedLayoutSizeThreshold;
+- (id)initWithMinClusterSize:(unsigned long long)arg1 maxClusterSize:(unsigned long long)arg2 minIdealClusterSize:(unsigned long long)arg3 maxIdealClusterSize:(unsigned long long)arg4 enableOptimizedLayout:(bool)arg5 optimizedLayoutSizeThreshold:(unsigned long long)arg6 optimizedLayoutIncrementUnit:(unsigned long long)arg7 solConfiguration:(id)arg8;
+- (unsigned long long)maxClusterSize;
+- (unsigned long long)maxIdealClusterSize;
+- (unsigned long long)minClusterSize;
+- (unsigned long long)minIdealClusterSize;
+- (unsigned long long)optimizedLayoutIncrementUnit;
+- (unsigned long long)optimizedLayoutSizeThreshold;
 - (void)setSolConfiguration:(id)arg1;
 - (id)solConfiguration;
 

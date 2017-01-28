@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (void)_setObject:(id)arg1 forKey:(id)arg2 withDate:(id)arg3;
-- (BOOL)_shouldEvictObjectWithDate:(id)arg1;
+- (bool)_shouldEvictObjectWithDate:(id)arg1;
 - (double)expirationInterval;
 - (id)init;
 - (id)objectForKey:(id)arg1;

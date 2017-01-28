@@ -4,6 +4,6 @@
 
 @interface CNUIIMCoreWrapper : NSObject
 
-+ (void)IMSPIBestHandleForPerson:(void*)arg1 resultBlock:(id /* block */)arg2 resultQueue:(id)arg3;
++ (void)IMSPIBestHandleForPerson:(void*)arg1 resultBlock:(id)arg2 resultQueue:(id)arg3;
 
 @end

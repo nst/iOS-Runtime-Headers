@@ -4,8 +4,8 @@
 
 @interface MFObserver : NSObject
 
-+ (id)observerWithCompletionHandler:(id /* block */)arg1;
-+ (id)observerWithResultBlock:(id /* block */)arg1;
-+ (id)observerWithResultBlock:(id /* block */)arg1 completionBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
++ (id)observerWithCompletionHandler:(id)arg1;
++ (id)observerWithResultBlock:(id)arg1;
++ (id)observerWithResultBlock:(id)arg1 completionBlock:(id)arg2 failureBlock:(id)arg3;
 
 @end

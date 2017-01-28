@@ -3,16 +3,16 @@
  */
 
 @interface QLWebLocationItemViewController : QLItemViewController {
-    id /* block */  _loadingHandler;
+    id  _loadingHandler;
     WKWebView * _webView;
 }
 
 - (void).cxx_destruct;
-- (BOOL)automaticallyUpdateScrollViewContentInset;
-- (BOOL)automaticallyUpdateScrollViewContentOffset;
-- (BOOL)canEnterFullScreen;
+- (bool)automaticallyUpdateScrollViewContentInset;
+- (bool)automaticallyUpdateScrollViewContentOffset;
+- (bool)canEnterFullScreen;
 - (void)dealloc;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id)arg2;
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)scrollView;

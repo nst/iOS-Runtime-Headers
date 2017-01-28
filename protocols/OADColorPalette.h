@@ -5,6 +5,6 @@
 
 @required
 
-- (OITSUColor *)colorWithIndex:(unsigned int)arg1;
+- (OITSUColor *)colorWithIndex:(unsigned long long)arg1;
 
 @end

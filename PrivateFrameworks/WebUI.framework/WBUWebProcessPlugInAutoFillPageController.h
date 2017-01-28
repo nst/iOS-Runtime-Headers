@@ -8,23 +8,23 @@
     _WKRemoteObjectInterface * _autoFillerInterface;
     WBUFormMetadataControllerWK2 * _formMetadataController;
     WKWebProcessPlugInScriptWorld * _isolatedWorld;
-    unsigned int  _loadDeferringReasons;
+    unsigned long long  _loadDeferringReasons;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) WBUFormMetadataControllerWK2 *formMetadataController;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int loadDeferringReasons;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long loadDeferringReasons;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)activieJSObserverProxy;
-- (void)addLoadDeferringReasons:(unsigned int)arg1;
+- (void)addLoadDeferringReasons:(unsigned long long)arg1;
 - (void)annotateForm:(id)arg1 inFrame:(id)arg2 withValues:(id)arg3;
 - (void)autoFillForm:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
-- (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(BOOL)arg3 focusFieldAfterFilling:(BOOL)arg4 fieldToFocus:(id)arg5;
-- (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(BOOL)arg3 selectFieldAfterFilling:(id)arg4;
+- (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(bool)arg3 focusFieldAfterFilling:(bool)arg4 fieldToFocus:(id)arg5;
+- (void)autoFillFormAsynchronouslyInFrame:(id)arg1 withValues:(id)arg2 setAutoFilled:(bool)arg3 selectFieldAfterFilling:(id)arg4;
 - (void)autoFillFormSynchronouslyInFrame:(id)arg1 withValues:(id)arg2;
 - (void)clearAutoFillMetadata;
 - (void)collectFormMetadataForPrefillingAtURL:(id)arg1;
@@ -33,15 +33,15 @@
 - (void)fillTextField:(id)arg1 inFrame:(id)arg2 withGeneratedPassword:(id)arg3;
 - (id)formMetadataController;
 - (id)initWithPlugIn:(id)arg1 contextController:(id)arg2;
-- (unsigned int)loadDeferringReasons;
-- (void)removeLoadDeferringReasons:(unsigned int)arg1;
+- (unsigned long long)loadDeferringReasons;
+- (void)removeLoadDeferringReasons:(unsigned long long)arg1;
 - (void)resumeLoadingAfterSavingFormData;
 - (void)runJavaScriptForActivity:(id)arg1 withScript:(id)arg2 object:(id)arg3 invokeMethod:(id)arg4 replyIdentifier:(id)arg5;
-- (void)setFormControls:(id)arg1 areAutoFilled:(BOOL)arg2 andClearField:(id)arg3 inFrame:(id)arg4;
+- (void)setFormControls:(id)arg1 areAutoFilled:(bool)arg2 andClearField:(id)arg3 inFrame:(id)arg4;
 - (void)setFormMetadataController:(id)arg1;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didCommitLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didRemoveFrameFromHierarchy:(id)arg2;
-- (void)webProcessPlugInBrowserContextController:(id)arg1 didSameDocumentNavigation:(int)arg2 forFrame:(id)arg3;
+- (void)webProcessPlugInBrowserContextController:(id)arg1 didSameDocumentNavigation:(long long)arg2 forFrame:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
 - (void)willDestroyBrowserContextController:(id)arg1;
 

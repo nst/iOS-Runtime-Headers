@@ -9,21 +9,21 @@
     void settings;
 }
 
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 @property (nonatomic, readonly) NSString *name;
 
 + (id)getLogger:(id)arg1;
-+ (BOOL)logToFileWithPath:(id)arg1;
++ (bool)logToFileWithPath:(id)arg1;
 
-- (id /* block */).cxx_destruct;
+- (id).cxx_destruct;
 - (void)debugMessage:(id)arg1;
-- (BOOL)enabled;
+- (bool)enabled;
 - (void)errorMessage:(id)arg1;
 - (void)infoMessage:(id)arg1;
 - (id)init;
 - (id)name;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setFormatWithName:(BOOL)arg1 file:(BOOL)arg2 method:(BOOL)arg3;
+- (void)setEnabled:(bool)arg1;
+- (void)setFormatWithName:(bool)arg1 file:(bool)arg2 method:(bool)arg3;
 - (void)severeMessage:(id)arg1;
 - (void)traceMessage:(id)arg1;
 - (void)warnMessage:(id)arg1;

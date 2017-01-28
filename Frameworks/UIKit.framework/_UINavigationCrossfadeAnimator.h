@@ -6,10 +6,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (BOOL)_shouldCrossFadeNavigationBar;
+- (bool)_shouldCrossFadeNavigationBar;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 

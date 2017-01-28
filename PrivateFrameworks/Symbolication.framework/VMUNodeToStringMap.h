@@ -10,7 +10,7 @@
 
 + (void)_claimUnarchivingOfClass:(id)arg1;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (unsigned int)_indexForString:(id)arg1;
 - (unsigned int)count;

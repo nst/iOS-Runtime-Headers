@@ -3,22 +3,22 @@
  */
 
 @interface DAEASOAuthFlowController : NSObject <SL_OOPAuthFlowDelegate, UIWebViewDelegate> {
-    id /* block */  _completion;
+    id  _completion;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_exchangeAuthCode:(id)arg1 forTokensAndUsernameWithCompletion:(id /* block */)arg2;
-- (void)_exchangeAuthCode:(id)arg1 forTokensWithCompletion:(id /* block */)arg2;
+- (void)_exchangeAuthCode:(id)arg1 forTokensAndUsernameWithCompletion:(id)arg2;
+- (void)_exchangeAuthCode:(id)arg1 forTokensWithCompletion:(id)arg2;
 - (id)authURLForUsername:(id)arg1;
 - (id)initialRedirectURL;
 - (id)requestForAuthURL:(id)arg1;
-- (void)setAuthFlowCompletion:(id /* block */)arg1;
-- (BOOL)shouldHideWebViewForLoadWithRequest:(id)arg1;
-- (void)webViewDidFinishLoadWithPageTitleSupplier:(id /* block */)arg1;
+- (void)setAuthFlowCompletion:(id)arg1;
+- (bool)shouldHideWebViewForLoadWithRequest:(id)arg1;
+- (void)webViewDidFinishLoadWithPageTitleSupplier:(id)arg1;
 
 @end

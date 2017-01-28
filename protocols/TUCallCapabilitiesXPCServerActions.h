@@ -10,13 +10,13 @@
 - (void)invalidateAndRefreshThumperCallingProvisioningURL;
 - (void)invalidateAndRefreshWiFiCallingProvisioningURL;
 - (void)requestPinFromPrimaryDevice;
-- (void)setRelayCallingEnabled:(BOOL)arg1;
-- (void)setRelayCallingEnabled:(BOOL)arg1 forDeviceWithID:(NSString *)arg2;
-- (void)setThumperCallingAllowed:(BOOL)arg1 onSecondaryDeviceWithID:(NSString *)arg2;
-- (void)setThumperCallingAllowedOnDefaultPairedDevice:(BOOL)arg1;
-- (void)setThumperCallingEnabled:(BOOL)arg1;
-- (void)setVoLTECallingEnabled:(BOOL)arg1;
-- (void)setWiFiCallingEnabled:(BOOL)arg1;
-- (void)setWiFiCallingRoamingEnabled:(BOOL)arg1;
+- (void)setRelayCallingEnabled:(bool)arg1;
+- (void)setRelayCallingEnabled:(bool)arg1 forDeviceWithID:(NSString *)arg2;
+- (void)setThumperCallingAllowed:(bool)arg1 onSecondaryDeviceWithID:(NSString *)arg2;
+- (void)setThumperCallingAllowedOnDefaultPairedDevice:(bool)arg1;
+- (void)setThumperCallingEnabled:(bool)arg1;
+- (void)setVoLTECallingEnabled:(bool)arg1;
+- (void)setWiFiCallingEnabled:(bool)arg1;
+- (void)setWiFiCallingRoamingEnabled:(bool)arg1;
 
 @end

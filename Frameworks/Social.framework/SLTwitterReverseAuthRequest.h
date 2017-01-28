@@ -4,6 +4,6 @@
 
 @interface SLTwitterReverseAuthRequest : NSObject
 
-+ (void)performReverseAuthForLastTwitterAccountWithConsumerKey:(id)arg1 secret:(id)arg2 completion:(id /* block */)arg3;
++ (void)performReverseAuthForLastTwitterAccountWithConsumerKey:(id)arg1 secret:(id)arg2 completion:(id)arg3;
 
 @end

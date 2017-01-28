@@ -14,8 +14,8 @@
 - (void).cxx_destruct;
 - (id)_connection;
 - (id)init;
-- (void)insertEvent:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (BOOL)isEnabled;
+- (void)insertEvent:(id)arg1 withCompletionHandler:(id)arg2;
+- (bool)isEnabled;
 - (id)metricsConfiguration;
 - (id)serialQueue;
 - (void)setMetricsConfiguration:(id)arg1;

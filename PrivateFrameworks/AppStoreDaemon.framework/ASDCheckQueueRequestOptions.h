@@ -3,18 +3,18 @@
  */
 
 @interface ASDCheckQueueRequestOptions : ASDRequestOptions {
-    unsigned int  _reason;
+    unsigned long long  _reason;
 }
 
-@property (nonatomic) unsigned int reason;
+@property (nonatomic) unsigned long long reason;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithReason:(unsigned int)arg1;
-- (unsigned int)reason;
-- (void)setReason:(unsigned int)arg1;
+- (id)initWithReason:(unsigned long long)arg1;
+- (unsigned long long)reason;
+- (void)setReason:(unsigned long long)arg1;
 
 @end

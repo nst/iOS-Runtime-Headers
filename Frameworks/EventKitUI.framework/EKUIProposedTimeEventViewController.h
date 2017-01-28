@@ -8,16 +8,16 @@
 }
 
 @property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
-@property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
-@property (nonatomic) BOOL presentModally;
+@property (nonatomic) bool editItemShouldBeAskedForInjectableViewController;
+@property (nonatomic) bool presentModally;
 @property (retain) EKCalendarEventInvitationNotificationAttendee *proposedTimeAttendee;
 @property (retain) EKUIRecurrenceAlertController *recurrenceAlertController;
-@property (nonatomic) BOOL useCustomBackButton;
+@property (nonatomic) bool useCustomBackButton;
 
 - (void).cxx_destruct;
 - (id)_statusButtons;
 - (id)initWithProposedTimeAttendee:(id)arg1;
-- (void)invokeAction:(int)arg1;
+- (void)invokeAction:(long long)arg1;
 - (id)items;
 - (id)proposedTime;
 - (id)proposedTimeAttendee;

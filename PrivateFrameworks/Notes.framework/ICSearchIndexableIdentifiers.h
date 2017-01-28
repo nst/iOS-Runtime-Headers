@@ -6,13 +6,13 @@
     NSOrderedSet * _identifiers;
 }
 
-@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned long long count;
 @property (nonatomic, readonly) NSOrderedSet *identifiers;
 
 - (void).cxx_destruct;
 - (id)array;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (id)identifiers;
 - (id)init;
@@ -25,7 +25,7 @@
 - (id)objectIdentifiers;
 - (id)orderedSet;
 - (id)propertyListObjectRepresentation;
-- (id)searchIndexableIdentifierAtIndex:(unsigned int)arg1;
+- (id)searchIndexableIdentifierAtIndex:(unsigned long long)arg1;
 - (id)set;
 
 @end

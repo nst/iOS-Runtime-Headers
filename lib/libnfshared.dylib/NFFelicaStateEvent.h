@@ -8,7 +8,7 @@
 
 + (id)_decodeShinkansenTrainDataWithBlock:(id)arg1 andBlock:(id)arg2;
 + (id)decodeEvent:(id)arg1;
-+ (id)decodeEvent:(id)arg1 reverse:(BOOL)arg2;
++ (id)decodeEvent:(id)arg1 reverse:(bool)arg2;
 + (id)decodeLogEvent:(id)arg1;
 + (id)decodeProvider:(id)arg1 service:(id)arg2 blocks:(id)arg3;
 
@@ -16,6 +16,6 @@
 - (id)asDictionary;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 
 @end

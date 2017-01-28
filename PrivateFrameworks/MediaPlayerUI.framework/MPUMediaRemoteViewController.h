@@ -8,11 +8,11 @@
     double  _lastDurationFromUpdate;
     MPUMediaRemoteControlsView * _mediaControlsView;
     MPUNowPlayingController * _nowPlayingController;
-    BOOL  _nowPlayingIsRadioStation;
+    bool  _nowPlayingIsRadioStation;
     MPAVRoutingController * _routingController;
     double  _scrubbedTimeDestination;
     NSTimer * _scrubberCommitTimer;
-    BOOL  _showingAsPlaying;
+    bool  _showingAsPlaying;
     id  _supportedCommandsNotificationToken;
     MPUSupportedRemoteControls * _supportedRemoteControls;
     MPUTransportControlMediaRemoteController * _transportControlMediaRemoteController;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) NSArray *allowedTransportControlTypes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MPUNowPlayingController *nowPlayingController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MPUSupportedRemoteControls *supportedRemoteControls;
@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (void)_beginScrubberCommitTimer;
 - (void)_commitCurrentScrubberValue;
-- (id)_imageForTransportButtonWithControlType:(int)arg1;
+- (id)_imageForTransportButtonWithControlType:(long long)arg1;
 - (void)_initMediaRemoteViewController;
 - (void)_reloadAllowedTransportControls;
 - (void)_setupNotifications;
@@ -50,7 +50,7 @@
 - (void)nowPlayingController:(id)arg1 elapsedTimeDidChange:(double)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingApplicationDidChange:(id)arg2;
 - (void)nowPlayingController:(id)arg1 nowPlayingInfoDidChange:(id)arg2;
-- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(BOOL)arg2;
+- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(bool)arg2;
 - (id)presentingViewControllerForLikeBanActionSheetForTransportControlMediaRemoteController:(id)arg1;
 - (void)progressViewDidBeginScrubbing:(id)arg1;
 - (void)progressViewDidEndScrubbing:(id)arg1;
@@ -58,15 +58,15 @@
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (id)supportedRemoteControls;
 - (void)supportedRemoteControlsDidChange;
-- (void)transportControlMediaRemoteController:(id)arg1 requestsPushingMediaRemoteCommand:(unsigned int)arg2 withOptions:(id)arg3 shouldLaunchApplication:(BOOL)arg4;
-- (id)transportControlsView:(id)arg1 buttonForControlType:(int)arg2;
-- (struct CGSize { float x1; float x2; })transportControlsView:(id)arg1 defaultTransportButtonSizeWithProposedSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(int)arg2;
-- (void)transportControlsView:(id)arg1 longPressEndOnControlType:(int)arg2;
-- (void)transportControlsView:(id)arg1 tapOnControlType:(int)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (void)transportControlMediaRemoteController:(id)arg1 requestsPushingMediaRemoteCommand:(unsigned int)arg2 withOptions:(id)arg3 shouldLaunchApplication:(bool)arg4;
+- (id)transportControlsView:(id)arg1 buttonForControlType:(long long)arg2;
+- (struct CGSize { double x1; double x2; })transportControlsView:(id)arg1 defaultTransportButtonSizeWithProposedSize:(struct CGSize { double x1; double x2; })arg2;
+- (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(long long)arg2;
+- (void)transportControlsView:(id)arg1 longPressEndOnControlType:(long long)arg2;
+- (void)transportControlsView:(id)arg1 tapOnControlType:(long long)arg2;
+- (void)viewDidDisappear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

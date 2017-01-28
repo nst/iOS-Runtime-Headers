@@ -4,17 +4,17 @@
 
 @interface MPAudioVideoRoutingTableViewCellLayoutManager : UITableViewCellLayoutManager {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  imageViewEdgeInsets;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageViewEdgeInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } imageViewEdgeInsets;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imageViewEdgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })imageViewEdgeInsets;
 - (void)layoutSubviewsOfCell:(id)arg1;
-- (void)setImageViewEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setImageViewEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 
 @end

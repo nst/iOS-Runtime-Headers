@@ -5,13 +5,13 @@
 @interface CKDCodeFunctionInvokeURLRequest : CKDURLRequest {
     NSString * _functionName;
     NSData * _serializedParameters;
-    id /* block */  _serializedResultsCallback;
+    id  _serializedResultsCallback;
     NSString * _serviceName;
 }
 
 @property (nonatomic, copy) NSString *functionName;
 @property (nonatomic, retain) NSData *serializedParameters;
-@property (nonatomic, copy) id /* block */ serializedResultsCallback;
+@property (nonatomic, copy) id serializedResultsCallback;
 @property (nonatomic, copy) NSString *serviceName;
 
 - (void).cxx_destruct;
@@ -23,11 +23,11 @@
 - (id)requestOperationClasses;
 - (id)requestOperations;
 - (id)serializedParameters;
-- (id /* block */)serializedResultsCallback;
+- (id)serializedResultsCallback;
 - (id)serviceName;
 - (void)setFunctionName:(id)arg1;
 - (void)setSerializedParameters:(id)arg1;
-- (void)setSerializedResultsCallback:(id /* block */)arg1;
+- (void)setSerializedResultsCallback:(id)arg1;
 - (void)setServiceName:(id)arg1;
 
 @end

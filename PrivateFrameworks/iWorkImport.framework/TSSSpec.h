@@ -7,13 +7,13 @@
 @property (readonly) NSString *operationPropertyName;
 
 - (id)apply:(id)arg1;
-- (BOOL)canApplyOnObject:(id)arg1;
+- (bool)canApplyOnObject:(id)arg1;
 - (id)getUnsetSpec;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initUnsetSpec;
 - (id)initWithCurrentProperty:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUnsetSpec;
+- (bool)isEqual:(id)arg1;
+- (bool)isUnsetSpec;
 - (id)operationPropertyName;
 - (id)specWithCurrentProperty:(id)arg1;
 

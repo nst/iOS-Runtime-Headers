@@ -6,21 +6,21 @@
     NSArray * _modelPrecedence;
     double  _personalizationWt;
     PARReRankingRules * _reRankingRules;
-    unsigned int  _sectionEndPos;
-    unsigned int  _sectionStartPos;
-    int  _similarityFunction;
-    BOOL  _useBordaCount;
-    BOOL  _useOverallModel;
+    unsigned long long  _sectionEndPos;
+    unsigned long long  _sectionStartPos;
+    long long  _similarityFunction;
+    bool  _useBordaCount;
+    bool  _useOverallModel;
 }
 
 @property (nonatomic, retain) NSArray *modelPrecedence;
 @property (nonatomic) double personalizationWt;
 @property (nonatomic, retain) PARReRankingRules *reRankingRules;
-@property (nonatomic) unsigned int sectionEndPos;
-@property (nonatomic) unsigned int sectionStartPos;
-@property (nonatomic) int similarityFunction;
-@property (nonatomic) BOOL useBordaCount;
-@property (nonatomic) BOOL useOverallModel;
+@property (nonatomic) unsigned long long sectionEndPos;
+@property (nonatomic) unsigned long long sectionStartPos;
+@property (nonatomic) long long similarityFunction;
+@property (nonatomic) bool useBordaCount;
+@property (nonatomic) bool useOverallModel;
 
 + (id)defaultValue;
 + (id)responseFromJSON:(id)arg1;
@@ -29,18 +29,18 @@
 - (id)modelPrecedence;
 - (double)personalizationWt;
 - (id)reRankingRules;
-- (unsigned int)sectionEndPos;
-- (unsigned int)sectionStartPos;
+- (unsigned long long)sectionEndPos;
+- (unsigned long long)sectionStartPos;
 - (void)setModelPrecedence:(id)arg1;
 - (void)setPersonalizationWt:(double)arg1;
 - (void)setReRankingRules:(id)arg1;
-- (void)setSectionEndPos:(unsigned int)arg1;
-- (void)setSectionStartPos:(unsigned int)arg1;
-- (void)setSimilarityFunction:(int)arg1;
-- (void)setUseBordaCount:(BOOL)arg1;
-- (void)setUseOverallModel:(BOOL)arg1;
-- (int)similarityFunction;
-- (BOOL)useBordaCount;
-- (BOOL)useOverallModel;
+- (void)setSectionEndPos:(unsigned long long)arg1;
+- (void)setSectionStartPos:(unsigned long long)arg1;
+- (void)setSimilarityFunction:(long long)arg1;
+- (void)setUseBordaCount:(bool)arg1;
+- (void)setUseOverallModel:(bool)arg1;
+- (long long)similarityFunction;
+- (bool)useBordaCount;
+- (bool)useOverallModel;
 
 @end

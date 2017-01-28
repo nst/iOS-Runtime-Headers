@@ -3,21 +3,21 @@
  */
 
 @interface MCDArtistsViewController : MCDTableViewController {
-    BOOL  _allowsActions;
+    bool  _allowsActions;
 }
 
-@property (nonatomic) BOOL allowsActions;
+@property (nonatomic) bool allowsActions;
 
-+ (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
-+ (int)groupingType;
++ (id)actionCellConfigurationClassesForLocation:(unsigned long long)arg1;
++ (long long)groupingType;
 + (id)itemPersistentIDProperty;
 + (id)persistentIDProperty;
 
 - (void)_limitedUIDidChange;
-- (BOOL)allowsActions;
-- (void)setAllowsActions:(BOOL)arg1;
-- (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (bool)allowsActions;
+- (void)setAllowsActions:(bool)arg1;
+- (bool)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 
 @end

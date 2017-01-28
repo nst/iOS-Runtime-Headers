@@ -5,6 +5,6 @@
 @interface _UIWebVideoUploadItem : _UIWebFileUploadItem
 
 - (id)displayImage;
-- (BOOL)isVideo;
+- (bool)isVideo;
 
 @end

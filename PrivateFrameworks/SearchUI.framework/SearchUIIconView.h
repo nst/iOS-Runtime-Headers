@@ -29,7 +29,7 @@
 - (id)iconButton;
 - (id)iconButtonContainer;
 - (void)iconButtonPressed;
-- (id)initWithStyle:(unsigned int)arg1 cell:(id)arg2;
+- (id)initWithStyle:(unsigned long long)arg1 cell:(id)arg2;
 - (id)label;
 - (id)result;
 - (void)setBottomConstraint:(id)arg1;

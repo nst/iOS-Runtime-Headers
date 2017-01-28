@@ -6,7 +6,7 @@
 
 + (id)sharedInstance;
 
-- (void)setLockScreenDimTimerEnabled:(BOOL)arg1;
+- (void)setLockScreenDimTimerEnabled:(bool)arg1;
 - (void)userEventOccurred;
 
 @end

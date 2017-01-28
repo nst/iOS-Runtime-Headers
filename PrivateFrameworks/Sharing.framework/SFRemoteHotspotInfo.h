@@ -12,7 +12,7 @@
 @property (copy) NSString *name;
 @property (copy) NSString *password;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)channel;

@@ -7,9 +7,9 @@
 
 - (void)calloutButtonTapped:(UIView *)arg1;
 - (void)mapDoubleTapped:(FMMapGestureRecognizer *)arg1;
-- (void)mapSwiped:(FMMapGestureRecognizer *)arg1 withPercent:(float)arg2;
+- (void)mapSwiped:(FMMapGestureRecognizer *)arg1 withPercent:(double)arg2;
 - (void)mapSwipedBegin:(FMMapGestureRecognizer *)arg1;
-- (void)mapSwipedEnd:(FMMapGestureRecognizer *)arg1 withPercent:(float)arg2;
+- (void)mapSwipedEnd:(FMMapGestureRecognizer *)arg1 withPercent:(double)arg2;
 - (void)mapTapped:(FMMapGestureRecognizer *)arg1;
 - (void)mapTouchBegan:(FMMapGestureRecognizer *)arg1;
 - (void)mapTouchCancelled:(FMMapGestureRecognizer *)arg1;

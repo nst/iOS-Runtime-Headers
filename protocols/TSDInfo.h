@@ -7,12 +7,12 @@
 
 - (void)clearBackPointerToParentInfoIfNeeded:(NSObject<TSDContainerInfo> *)arg1;
 - (TSDInfoGeometry *)geometry;
-- (BOOL)isAnchoredToText;
-- (BOOL)isAttachedToBodyText;
-- (BOOL)isFloatingAboveText;
-- (BOOL)isInlineWithText;
-- (BOOL)isSelectable;
-- (BOOL)isThemeContent;
+- (bool)isAnchoredToText;
+- (bool)isAttachedToBodyText;
+- (bool)isFloatingAboveText;
+- (bool)isInlineWithText;
+- (bool)isSelectable;
+- (bool)isThemeContent;
 - (Class)layoutClass;
 - (TSPObject<TSDOwningAttachment> *)owningAttachment;
 - (TSPObject<TSDOwningAttachment> *)owningAttachmentNoRecurse;
@@ -26,7 +26,7 @@
 @optional
 
 - (TSKCollaboratorCursor *)collaboratorCursorForSelectionPath:(TSKSelectionPath *)arg1;
-- (BOOL)needsDownload;
+- (bool)needsDownload;
 - (<TSDInfoUUIDPathPrefixComponentsProvider> *)uuidPathPrefixComponentsProvider;
 
 @end

@@ -16,7 +16,7 @@
 - (id)assetCounts;
 - (id)featureVersionHistory;
 - (id)lastKnownSyncAnchor;
-- (id)prettyDescriptionWithAnchorDesciptionBlock:(id /* block */)arg1;
+- (id)prettyDescriptionWithAnchorDesciptionBlock:(id)arg1;
 - (void)setAssetCounts:(id)arg1;
 - (void)setFeatureVersionHistory:(id)arg1;
 - (void)setLastKnownSyncAnchor:(id)arg1;

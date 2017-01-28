@@ -11,7 +11,7 @@
 - (double)doubleModelToAxisValue:(double)arg1 forSeries:(id)arg2;
 - (double)interceptForAxis:(id)arg1;
 - (id)p_orthogonalAxis;
-- (BOOL)shouldAnalyzeAxisValue:(double)arg1;
+- (bool)shouldAnalyzeAxisValue:(double)arg1;
 - (double)unitSpaceValueForDataSpaceValue:(double)arg1 min:(double)arg2 max:(double)arg3;
 - (void)updateGridValueTypeInterceptInAnalysis:(id)arg1;
 - (id)userMax;

@@ -7,14 +7,14 @@
     NSString * _emailAddress;
     NSError * _error;
     NSString * _errorMessage;
-    int  _statusCode;
+    long long  _statusCode;
 }
 
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) NSString *emailAddress;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSString *errorMessage;
-@property (nonatomic, readonly) int statusCode;
+@property (nonatomic, readonly) long long statusCode;
 
 - (void).cxx_destruct;
 - (id)displayName;
@@ -22,6 +22,6 @@
 - (id)error;
 - (id)errorMessage;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
-- (int)statusCode;
+- (long long)statusCode;
 
 @end

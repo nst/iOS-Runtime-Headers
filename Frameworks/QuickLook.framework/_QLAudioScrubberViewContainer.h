@@ -5,6 +5,6 @@
 @interface _QLAudioScrubberViewContainer : UIView
 
 - (id)init;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 
 @end

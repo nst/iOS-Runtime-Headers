@@ -3,20 +3,20 @@
  */
 
 @interface _FBSystemServiceServerPendingConnection : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     FBSystemServiceFacility * _facility;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (nonatomic, retain) FBSystemServiceFacility *facility;
 
-+ (id)pendingConnectionToFacility:(id)arg1 completion:(id /* block */)arg2;
++ (id)pendingConnectionToFacility:(id)arg1 completion:(id)arg2;
 
-- (id /* block */)completion;
+- (id)completion;
 - (void)dealloc;
 - (id)facility;
-- (id)initWithFacility:(id)arg1 completion:(id /* block */)arg2;
-- (void)setCompletion:(id /* block */)arg1;
+- (id)initWithFacility:(id)arg1 completion:(id)arg2;
+- (void)setCompletion:(id)arg1;
 - (void)setFacility:(id)arg1;
 
 @end

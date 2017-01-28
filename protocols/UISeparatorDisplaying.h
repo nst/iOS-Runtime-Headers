@@ -5,8 +5,8 @@
 
 @required
 
-- (float)constantAxisDimension;
-- (void)setConstantAxisDimension:(float)arg1;
-- (void)setConstantSizedAxis:(int)arg1;
+- (double)constantAxisDimension;
+- (void)setConstantAxisDimension:(double)arg1;
+- (void)setConstantSizedAxis:(long long)arg1;
 
 @end

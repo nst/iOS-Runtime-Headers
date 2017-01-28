@@ -4,43 +4,43 @@
 
 @interface FBSSceneSnapshotAction : FBSSceneAction <FBSSceneSnapshotRequestDelegate> {
     BSSettings * _clientExtendedData;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     int  _expired;
     FBSSceneSnapshotRequestHandle * _outgoingRequestHandle;
-    id /* block */  _requestHandler;
+    id  _requestHandler;
     NSMutableArray * _requests;
 }
 
 @property (nonatomic, copy) BSSettings *clientExtendedData;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double expirationInterval;
-@property (getter=isExpired, readonly) BOOL expired;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ requestHandler;
+@property (getter=isExpired, readonly) bool expired;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id requestHandler;
 @property (readonly) Class superclass;
 
 - (void)_executeNextRequest;
 - (void)_finishAllRequests;
-- (BOOL)_remainsActionable;
+- (bool)_remainsActionable;
 - (id)clientExtendedData;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (void)executeRequestsWithHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2 expirationHandler:(id /* block */)arg3;
+- (void)executeRequestsWithHandler:(id)arg1 completionHandler:(id)arg2 expirationHandler:(id)arg3;
 - (double)expirationInterval;
 - (Class)fallbackXPCEncodableClass;
-- (id)initWithRequests:(id)arg1 expirationInterval:(double)arg2 responseHandler:(id /* block */)arg3;
+- (id)initWithRequests:(id)arg1 expirationInterval:(double)arg2 responseHandler:(id)arg3;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isExpired;
-- (id /* block */)requestHandler;
+- (bool)isExpired;
+- (id)requestHandler;
 - (void)setClientExtendedData:(id)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setExpired:(BOOL)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
-- (void)setRequestHandler:(id /* block */)arg1;
-- (BOOL)snapshotRequest:(id)arg1 performWithContext:(id)arg2;
-- (BOOL)snapshotRequestAllowSnapshot:(id)arg1;
+- (void)setCompletionHandler:(id)arg1;
+- (void)setExpired:(bool)arg1;
+- (void)setInvalidationHandler:(id)arg1;
+- (void)setRequestHandler:(id)arg1;
+- (bool)snapshotRequest:(id)arg1 performWithContext:(id)arg2;
+- (bool)snapshotRequestAllowSnapshot:(id)arg1;
 
 @end

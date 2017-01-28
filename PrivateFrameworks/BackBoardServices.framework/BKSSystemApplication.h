@@ -11,11 +11,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BKSSystemApplicationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)bootstrap;
-- (BOOL)clientIsAliveForWatchdog:(id)arg1;
+- (bool)clientIsAliveForWatchdog:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)finishBooting;

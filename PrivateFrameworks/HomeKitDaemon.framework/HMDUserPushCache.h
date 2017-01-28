@@ -9,14 +9,14 @@
 
 @property (nonatomic, readonly) HMDDevice *device;
 @property (nonatomic, copy) NSDate *expirationDate;
-@property (getter=isExpired, nonatomic, readonly) BOOL expired;
+@property (getter=isExpired, nonatomic, readonly) bool expired;
 
 - (void).cxx_destruct;
 - (id)device;
 - (id)expirationDate;
 - (id)init;
 - (id)initWithDevice:(id)arg1;
-- (BOOL)isExpired;
+- (bool)isExpired;
 - (void)setExpirationDate:(id)arg1;
 
 @end

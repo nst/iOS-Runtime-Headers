@@ -4,16 +4,16 @@
 
 @interface UIAccessibilityCustomRotorSearchPredicate : NSObject {
     UIAccessibilityCustomRotorItemResult * _currentItem;
-    int  _searchDirection;
+    long long  _searchDirection;
 }
 
 @property (nonatomic, retain) UIAccessibilityCustomRotorItemResult *currentItem;
-@property (nonatomic) int searchDirection;
+@property (nonatomic) long long searchDirection;
 
 - (void).cxx_destruct;
 - (id)currentItem;
-- (int)searchDirection;
+- (long long)searchDirection;
 - (void)setCurrentItem:(id)arg1;
-- (void)setSearchDirection:(int)arg1;
+- (void)setSearchDirection:(long long)arg1;
 
 @end

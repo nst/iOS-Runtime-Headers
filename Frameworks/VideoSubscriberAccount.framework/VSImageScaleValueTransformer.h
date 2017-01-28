@@ -4,18 +4,18 @@
 
 @interface VSImageScaleValueTransformer : NSValueTransformer {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _preferredSize;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } preferredSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } preferredSize;
 
-+ (BOOL)allowsReverseTransformation;
++ (bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
 
-- (struct CGSize { float x1; float x2; })preferredSize;
-- (void)setPreferredSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })preferredSize;
+- (void)setPreferredSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)transformedValue:(id)arg1;
 
 @end

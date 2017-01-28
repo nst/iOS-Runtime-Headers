@@ -13,9 +13,9 @@
 
 @property (nonatomic, retain) _MRAudioBufferProtobuf *buffer;
 @property (nonatomic) double gain;
-@property (nonatomic, readonly) BOOL hasBuffer;
-@property (nonatomic) BOOL hasGain;
-@property (nonatomic, readonly) BOOL hasTime;
+@property (nonatomic, readonly) bool hasBuffer;
+@property (nonatomic) bool hasGain;
+@property (nonatomic, readonly) bool hasTime;
 @property (nonatomic, retain) _MRAudioTimeProtobuf *time;
 
 - (id)buffer;
@@ -25,16 +25,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)gain;
-- (BOOL)hasBuffer;
-- (BOOL)hasGain;
-- (BOOL)hasTime;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBuffer;
+- (bool)hasGain;
+- (bool)hasTime;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBuffer:(id)arg1;
 - (void)setGain:(double)arg1;
-- (void)setHasGain:(BOOL)arg1;
+- (void)setHasGain:(bool)arg1;
 - (void)setTime:(id)arg1;
 - (id)time;
 - (void)writeTo:(id)arg1;

@@ -18,11 +18,11 @@
 - (void)_afPrefsChanged:(id)arg1;
 - (void)_setupRecognizer;
 - (void)cancelQueuedTranscriptions;
-- (void)enqueueTranscriptionOperationWithURL:(id)arg1 andHandler:(id /* block */)arg2 priority:(int)arg3 timeout:(double)arg4;
+- (void)enqueueTranscriptionOperationWithURL:(id)arg1 andHandler:(id)arg2 priority:(long long)arg3 timeout:(double)arg4;
 - (id)init;
 - (id)recognizer;
 - (void)reportDictationProblemForFileAtURL:(id)arg1;
-- (void)retrieveDictationResultForFileAtURL:(id)arg1 withCompletionHandler:(id /* block */)arg2 priority:(int)arg3 timeout:(double)arg4;
+- (void)retrieveDictationResultForFileAtURL:(id)arg1 withCompletionHandler:(id)arg2 priority:(long long)arg3 timeout:(double)arg4;
 - (id)sanitizeOperation;
 - (void)setRecognizer:(id)arg1;
 - (void)setSanitizeOperation:(id)arg1;

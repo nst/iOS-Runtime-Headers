@@ -11,7 +11,7 @@
         /* Warning: Unrecognized filer type: '"' using 'void*' */ void*maxBounds; 
     }  _framingBounds;
     void _lookAt;
-    unsigned int  _mode;
+    unsigned long long  _mode;
     float  _pitch;
     float  _targetDistance;
     float  _targetElevation;
@@ -28,7 +28,7 @@
 @property (nonatomic) void clickPoint;
 @property (nonatomic) void dragPoint;
 @property (nonatomic) struct MDLAABB { } framingBounds;
-@property (nonatomic) unsigned int mode;
+@property (nonatomic) unsigned long long mode;
 @property (nonatomic) void position;
 @property (nonatomic) float targetDistance;
 @property (nonatomic) void targetPosition;
@@ -48,14 +48,14 @@
 - (void)frameObject;
 - (struct MDLAABB { })framingBounds;
 - (id)init;
-- (unsigned int)mode;
+- (unsigned long long)mode;
 - (void)mouseMotionX:(float)arg1 Y:(float)arg2;
 - (void)position;
 - (void)setCamera:(id)arg1;
 - (void)setClickPoint;
 - (void)setDragPoint;
 - (void)setFramingBounds:(struct MDLAABB { })arg1;
-- (void)setMode:(unsigned int)arg1;
+- (void)setMode:(unsigned long long)arg1;
 - (void)setPosition;
 - (void)setTargetDistance:(float)arg1;
 - (void)setTargetPosition;

@@ -6,6 +6,6 @@
 @required
 
 - (void)slideshowItemViewControllerDidBeginPinchGesture:(SKUISlideshowItemViewController *)arg1;
-- (void)slideshowItemViewControllerDidDismissWithPinchGesture:(SKUISlideshowItemViewController *)arg1 ratio:(float)arg2;
+- (void)slideshowItemViewControllerDidDismissWithPinchGesture:(SKUISlideshowItemViewController *)arg1 ratio:(double)arg2;
 
 @end

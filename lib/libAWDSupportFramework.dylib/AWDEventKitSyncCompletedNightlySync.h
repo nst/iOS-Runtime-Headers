@@ -9,15 +9,15 @@
         unsigned int eventsSynced : 1; 
         unsigned int success : 1; 
     }  _has;
-    BOOL  _success;
+    bool  _success;
     unsigned long long  _timestamp;
 }
 
 @property (nonatomic) unsigned int eventsSynced;
-@property (nonatomic) BOOL hasEventsSynced;
-@property (nonatomic) BOOL hasSuccess;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL success;
+@property (nonatomic) bool hasEventsSynced;
+@property (nonatomic) bool hasSuccess;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool success;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -25,20 +25,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)eventsSynced;
-- (BOOL)hasEventsSynced;
-- (BOOL)hasSuccess;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEventsSynced;
+- (bool)hasSuccess;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEventsSynced:(unsigned int)arg1;
-- (void)setHasEventsSynced:(BOOL)arg1;
-- (void)setHasSuccess:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setSuccess:(BOOL)arg1;
+- (void)setHasEventsSynced:(bool)arg1;
+- (void)setHasSuccess:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setSuccess:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
-- (BOOL)success;
+- (bool)success;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

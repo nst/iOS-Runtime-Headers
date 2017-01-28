@@ -6,8 +6,8 @@
     NCInteractiveNotificationHostViewController * _audioPlaybackViewController;
     BBBulletin * _bulletin;
     CKIMDBMessage * _message;
-    BOOL  _playedSound;
-    BOOL  _showingImage;
+    bool  _playedSound;
+    bool  _showingImage;
     <SBBannerPresentingAlertItemDelegate> * bannerPresenterDelegate;
 }
 
@@ -16,8 +16,8 @@
 @property (nonatomic, retain) BBBulletin *bulletin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL showingImage;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool showingImage;
 @property (readonly) Class superclass;
 
 + (int)lastMessageSenderID;
@@ -30,15 +30,15 @@
 - (id)accessoryView;
 - (id)address;
 - (id)alertImage;
-- (BOOL)allowMenuButtonDismissal;
+- (bool)allowMenuButtonDismissal;
 - (id)audioPlaybackViewController;
 - (id)bannerPresenterDelegate;
 - (id)bulletin;
-- (void)configure:(BOOL)arg1 requirePasscodeForActions:(BOOL)arg2;
+- (void)configure:(bool)arg1 requirePasscodeForActions:(bool)arg2;
 - (void)dealloc;
 - (void)didDeactivateForReason:(int)arg1;
-- (BOOL)dismissOnLock;
-- (BOOL)isAudioPlaybackAlert;
+- (bool)dismissOnLock;
+- (bool)isAudioPlaybackAlert;
 - (id)messageText;
 - (id)name;
 - (void)performUnlockAction;
@@ -47,9 +47,9 @@
 - (void)setBannerPresenterDelegate:(id)arg1;
 - (void)setBulletin:(id)arg1;
 - (void)setMessage:(id)arg1;
-- (void)setShowingImage:(BOOL)arg1;
-- (BOOL)showingImage;
+- (void)setShowingImage:(bool)arg1;
+- (bool)showingImage;
 - (void)willActivate;
-- (void)willRelockForButtonPress:(BOOL)arg1;
+- (void)willRelockForButtonPress:(bool)arg1;
 
 @end

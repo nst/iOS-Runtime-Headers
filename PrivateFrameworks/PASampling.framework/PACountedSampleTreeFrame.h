@@ -4,20 +4,20 @@
 
 @interface PACountedSampleTreeFrame : PACountedSampleFrame {
     NSMutableSet * _children;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (readonly) NSMutableSet *children;
-@property (readonly) BOOL isLeafFrame;
-@property unsigned int state;
+@property (readonly) bool isLeafFrame;
+@property unsigned long long state;
 
 - (void).cxx_destruct;
 - (id)children;
-- (unsigned int)hash;
-- (id)initWithSampleFrame:(id)arg1 andState:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLeafFrame;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+- (unsigned long long)hash;
+- (id)initWithSampleFrame:(id)arg1 andState:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isLeafFrame;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
 
 @end

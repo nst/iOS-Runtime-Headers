@@ -20,14 +20,14 @@
 - (void).cxx_destruct;
 - (void)_createSubviews;
 - (id)_createValueView;
-- (id)addValue:(id)arg1 isPlaceholder:(BOOL)arg2;
+- (id)addValue:(id)arg1 isPlaceholder:(bool)arg2;
 - (void)dealloc;
 - (id)initWithLayout:(id)arg1 reuseIdentifier:(id)arg2;
 - (id)label;
 - (void)prepareForReuse;
 - (void)setLabel:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValue:(id)arg1 isPlaceholder:(BOOL)arg2;
+- (void)setValue:(id)arg1 isPlaceholder:(bool)arg2;
 - (void)updateConstraints;
 - (id)value;
 

@@ -9,17 +9,17 @@
 @property (nonatomic, retain) <CDPStateUIProvider> *uiProvider;
 
 - (void).cxx_destruct;
-- (void)cdpContext:(id)arg1 promptForAccountPasswordWithCompletion:(id /* block */)arg2;
-- (void)cdpContext:(id)arg1 promptForAdoptionOfMultipleICSC:(id /* block */)arg2;
-- (void)cdpContext:(id)arg1 promptForICSCWithIsNumeric:(BOOL)arg2 numericLength:(id)arg3 isRandom:(BOOL)arg4 validator:(id)arg5;
-- (void)cdpContext:(id)arg1 promptForInteractiveAuthenticationWithCompletion:(id /* block */)arg2;
+- (void)cdpContext:(id)arg1 promptForAccountPasswordWithCompletion:(id)arg2;
+- (void)cdpContext:(id)arg1 promptForAdoptionOfMultipleICSC:(id)arg2;
+- (void)cdpContext:(id)arg1 promptForICSCWithIsNumeric:(bool)arg2 numericLength:(id)arg3 isRandom:(bool)arg4 validator:(id)arg5;
+- (void)cdpContext:(id)arg1 promptForInteractiveAuthenticationWithCompletion:(id)arg2;
 - (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
-- (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(BOOL)arg3 validator:(id)arg4;
-- (void)cdpContext:(id)arg1 promptToEnableStingrayCompletion:(id /* block */)arg2;
-- (void)cdpContext:(id)arg1 promptToInformUserOfAccountLockOutWithCompletion:(id /* block */)arg2;
-- (void)cdpContext:(id)arg1 promptToInformUserOfAccountUnlockWithCompletion:(id /* block */)arg2;
-- (void)cdpContext:(id)arg1 showError:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)cdpContext:(id)arg1 showError:(id)arg2 withDefaultIndex:(int)arg3 withCompletion:(id /* block */)arg4;
+- (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(bool)arg3 validator:(id)arg4;
+- (void)cdpContext:(id)arg1 promptToEnableStingrayCompletion:(id)arg2;
+- (void)cdpContext:(id)arg1 promptToInformUserOfAccountLockOutWithCompletion:(id)arg2;
+- (void)cdpContext:(id)arg1 promptToInformUserOfAccountUnlockWithCompletion:(id)arg2;
+- (void)cdpContext:(id)arg1 showError:(id)arg2 withCompletion:(id)arg3;
+- (void)cdpContext:(id)arg1 showError:(id)arg2 withDefaultIndex:(long long)arg3 withCompletion:(id)arg4;
 - (id)initWithUIProvider:(id)arg1;
 - (void)setUiProvider:(id)arg1;
 - (id)uiProvider;

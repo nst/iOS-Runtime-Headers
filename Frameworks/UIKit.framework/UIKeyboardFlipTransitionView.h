@@ -17,32 +17,32 @@
         unsigned int returnKeys : 1; 
         unsigned int moreIntlKeys : 1; 
     }  _rebuildFlags;
-    BOOL  _showingFrontFace;
+    bool  _showingFrontFace;
     UIKBCacheToken * _startKeyplaneToken;
 }
 
-@property (getter=isShowingFrontFace, nonatomic) BOOL showingFrontFace;
+@property (getter=isShowingFrontFace, nonatomic) bool showingFrontFace;
 
 - (void)_delayedUpdateTransition;
-- (void)_flipToFront:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_flipToFront:(bool)arg1 animated:(bool)arg2;
 - (void)dealloc;
 - (struct CGImage { }*)defaultKeyboardImage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isShowingFrontFace;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isShowingFrontFace;
 - (void)rebuildBackgroundTransition;
 - (void)rebuildControlKeys:(unsigned long long)arg1;
 - (void)rebuildControlSlicesForKeyName:(id)arg1;
-- (void)rebuildFromKeyplane:(id)arg1 toKeyplane:(id)arg2 keyboardType:(int)arg3 orientation:(int)arg4;
+- (void)rebuildFromKeyplane:(id)arg1 toKeyplane:(id)arg2 keyboardType:(long long)arg3 orientation:(long long)arg4;
 - (void)rebuildMoreIntlKeys;
 - (void)rebuildReturnSlices;
 - (void)rebuildShiftSlices;
 - (void)rebuildTransition;
 - (void)rebuildTransitionForSplitStyleChange:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setShowingFrontFace:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setShowingFrontFace:(bool)arg1;
 - (struct CGImage { }*)splitKeyboardImage;
-- (BOOL)transitionIsVisible;
-- (void)updateMoreIntlKey:(id)arg1 asStart:(BOOL)arg2 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 showIntl:(BOOL)arg4 showDictKey:(BOOL)arg5;
+- (bool)transitionIsVisible;
+- (void)updateMoreIntlKey:(id)arg1 asStart:(bool)arg2 withRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 showIntl:(bool)arg4 showDictKey:(bool)arg5;
 - (void)updateTransition;
 
 @end

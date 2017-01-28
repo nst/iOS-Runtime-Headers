@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) NSArray *preferredLanguages;
 @property (nonatomic, readonly) NSArray *preferredMediaCharacteristics;
 
-- (id)_initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 preferredMediaSubTypes:(id)arg3 precludedMediaSubTypes:(id)arg4 preferMultichannelAudio:(BOOL)arg5 precludeMultichannelAudio:(BOOL)arg6;
+- (id)_initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 preferredMediaSubTypes:(id)arg3 precludedMediaSubTypes:(id)arg4 preferMultichannelAudio:(bool)arg5 precludeMultichannelAudio:(bool)arg6;
 - (void)dealloc;
 - (id)description;
 - (id)figDictionary;
@@ -17,10 +17,10 @@
 - (id)initWithFigDictionary:(id)arg1;
 - (id)initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2;
 - (id)initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 preferredMediaSubTypes:(id)arg3 precludedMediaSubTypes:(id)arg4;
-- (id)initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 preferredMediaSubTypes:(id)arg3 precludedMediaSubTypes:(id)arg4 preferMultichannelAudio:(BOOL)arg5 precludeMultichannelAudio:(BOOL)arg6;
-- (BOOL)precludeMultichannelAudio;
+- (id)initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 preferredMediaSubTypes:(id)arg3 precludedMediaSubTypes:(id)arg4 preferMultichannelAudio:(bool)arg5 precludeMultichannelAudio:(bool)arg6;
+- (bool)precludeMultichannelAudio;
 - (id)precludedMediaSubTypes;
-- (BOOL)preferMultichannelAudio;
+- (bool)preferMultichannelAudio;
 - (id)preferredLanguages;
 - (id)preferredMediaCharacteristics;
 - (id)preferredMediaSubTypes;

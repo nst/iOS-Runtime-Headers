@@ -12,16 +12,16 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_connect;
-- (BOOL)_disconnect;
+- (bool)_connect;
+- (bool)_disconnect;
 - (void)_disconnected;
 - (id)_sendSynchronousXPCRequest:(id)arg1;
-- (void)_sendXPCRequest:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)_sendXPCRequest:(id)arg1 completionBlock:(id)arg2;
 - (void)addItemForAllServices:(id)arg1;
 - (id)copyAllItems;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isItemInList:(id)arg1;
+- (bool)isItemInList:(id)arg1;
 - (void)removeItemForAllServices:(id)arg1;
 
 @end

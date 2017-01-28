@@ -14,14 +14,14 @@
 + (void)didFinishLearningWithAgent:(id)arg1 task:(id)arg2;
 + (id)sharedLearningAgent;
 
-- (BOOL)continueLearningTaskWithStrategy:(id)arg1;
+- (bool)continueLearningTaskWithStrategy:(id)arg1;
 - (id)currentLearningTask;
 - (void)dealloc;
 - (id)dispatchQueue;
 - (void)handleRemovalOfLearnedModels;
 - (id)init;
 - (void)performLearningIfNecessaryWithStrategy:(id)arg1 lastAdaptationTime:(double)arg2;
-- (void)performTaskInBackground:(id /* block */)arg1;
+- (void)performTaskInBackground:(id)arg1;
 - (void)setCurrentLearningTask:(id)arg1;
 
 @end

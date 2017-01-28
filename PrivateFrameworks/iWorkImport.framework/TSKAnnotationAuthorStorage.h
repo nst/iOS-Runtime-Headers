@@ -20,16 +20,16 @@
 - (void)didAddAuthorRelationshipToDocument;
 - (void)didLoadChildObjectFromDocumentSupport:(id)arg1;
 - (void)didRemoveAuthorRelationshipFromDocument;
-- (int)indexForColorKey:(id)arg1 usedColors:(id)arg2;
+- (long long)indexForColorKey:(id)arg1 usedColors:(id)arg2;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)nextAuthorColor;
-- (void)p_addAuthor:(id)arg1 isFromDocumentSupport:(BOOL)arg2;
-- (int)p_hashCodeForColorKey:(id)arg1;
-- (BOOL)p_withToleranceDoesColorSet:(id)arg1 containColor:(id)arg2;
+- (void)p_addAuthor:(id)arg1 isFromDocumentSupport:(bool)arg2;
+- (long long)p_hashCodeForColorKey:(id)arg1;
+- (bool)p_withToleranceDoesColorSet:(id)arg1 containColor:(id)arg2;
 - (id)packageLocator;
 - (id)preferredAuthorMatchingPrivateID:(id)arg1 name:(id)arg2;
 - (void)removeAuthor:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (BOOL)shouldDelayArchiving;
+- (bool)shouldDelayArchiving;
 
 @end

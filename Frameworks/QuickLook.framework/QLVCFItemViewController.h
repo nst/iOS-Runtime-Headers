@@ -8,10 +8,10 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canSwipeToDismiss;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)setAppearance:(id)arg1 animated:(BOOL)arg2;
-- (BOOL)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (bool)canEnterFullScreen;
+- (bool)canSwipeToDismiss;
+- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id)arg2;
+- (void)setAppearance:(id)arg1 animated:(bool)arg2;
+- (bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
 
 @end

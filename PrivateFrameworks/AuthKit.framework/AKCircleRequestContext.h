@@ -3,27 +3,27 @@
  */
 
 @interface AKCircleRequestContext : NSObject <NSSecureCoding> {
-    BOOL  __notifyOfTimeout;
+    bool  __notifyOfTimeout;
     NSString * _heartbeatTokenValue;
     NSString * _identityTokenValue;
     AKCircleRequestPayload * _payload;
     NSString * _pushToken;
-    BOOL  _waitForReply;
+    bool  _waitForReply;
     double  _waitForReplyTimeout;
 }
 
-@property (nonatomic) BOOL _notifyOfTimeout;
+@property (nonatomic) bool _notifyOfTimeout;
 @property (nonatomic, retain) NSString *heartbeatTokenValue;
 @property (nonatomic, retain) NSString *identityTokenValue;
 @property (nonatomic, retain) AKCircleRequestPayload *payload;
 @property (nonatomic, retain) NSString *pushToken;
-@property (nonatomic) BOOL waitForReply;
+@property (nonatomic) bool waitForReply;
 @property (nonatomic) double waitForReplyTimeout;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_notifyOfTimeout;
+- (bool)_notifyOfTimeout;
 - (void)encodeWithCoder:(id)arg1;
 - (id)heartbeatTokenValue;
 - (id)identityTokenValue;
@@ -35,10 +35,10 @@
 - (void)setIdentityTokenValue:(id)arg1;
 - (void)setPayload:(id)arg1;
 - (void)setPushToken:(id)arg1;
-- (void)setWaitForReply:(BOOL)arg1;
+- (void)setWaitForReply:(bool)arg1;
 - (void)setWaitForReplyTimeout:(double)arg1;
-- (void)set_notifyOfTimeout:(BOOL)arg1;
-- (BOOL)waitForReply;
+- (void)set_notifyOfTimeout:(bool)arg1;
+- (bool)waitForReply;
 - (double)waitForReplyTimeout;
 
 @end

@@ -6,12 +6,12 @@
 @required
 
 - (void)infoChanged;
-- (BOOL)isAnchored;
-- (BOOL)isAttachedToBodyText;
-- (BOOL)isDrawable;
-- (BOOL)isPartitioned;
-- (BOOL)isSearchable;
+- (bool)isAnchored;
+- (bool)isAttachedToBodyText;
+- (bool)isDrawable;
+- (bool)isPartitioned;
+- (bool)isSearchable;
 - (Class)positionerClass;
-- (BOOL)specifiesEnabledKnobMask;
+- (bool)specifiesEnabledKnobMask;
 
 @end

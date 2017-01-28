@@ -10,12 +10,12 @@
     NSNumber * _coverGlassColor;
     NSString * _deviceColor;
     NSString * _deviceEnclosureColor;
-    BOOL  _diagnosticsOptInEnabled;
+    bool  _diagnosticsOptInEnabled;
     NSNumber * _fcmMaterial;
-    BOOL  _hasResolvedActiveWatchFaceFilePath;
+    bool  _hasResolvedActiveWatchFaceFilePath;
     NSNumber * _housingColor;
     NSDate * _lastModificationDate;
-    BOOL  _locationOptInEnabled;
+    bool  _locationOptInEnabled;
     NSString * _marketingVersion;
     NSString * _name;
     NSString * _productName;
@@ -36,12 +36,12 @@
 @property (nonatomic, retain) NSNumber *coverGlassColor;
 @property (nonatomic, retain) NSString *deviceColor;
 @property (nonatomic, retain) NSString *deviceEnclosureColor;
-@property (getter=isDiagnosticsOptInEnabled, nonatomic) BOOL diagnosticsOptInEnabled;
+@property (getter=isDiagnosticsOptInEnabled, nonatomic) bool diagnosticsOptInEnabled;
 @property (nonatomic, retain) NSNumber *fcmMaterial;
-@property (nonatomic) BOOL hasResolvedActiveWatchFaceFilePath;
+@property (nonatomic) bool hasResolvedActiveWatchFaceFilePath;
 @property (nonatomic, retain) NSNumber *housingColor;
 @property (nonatomic, retain) NSDate *lastModificationDate;
-@property (getter=isLocationOptInEnabled, nonatomic) BOOL locationOptInEnabled;
+@property (getter=isLocationOptInEnabled, nonatomic) bool locationOptInEnabled;
 @property (nonatomic, retain) NSString *marketingVersion;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *productName;
@@ -54,7 +54,7 @@
 @property (nonatomic, retain) NSString *watchFace;
 @property (nonatomic, retain) NSString *watchFaceColor;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)activeWatchFaceFileURL;
@@ -67,11 +67,11 @@
 - (id)deviceEnclosureColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fcmMaterial;
-- (BOOL)hasResolvedActiveWatchFaceFilePath;
+- (bool)hasResolvedActiveWatchFaceFilePath;
 - (id)housingColor;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isDiagnosticsOptInEnabled;
-- (BOOL)isLocationOptInEnabled;
+- (bool)isDiagnosticsOptInEnabled;
+- (bool)isLocationOptInEnabled;
 - (id)lastModificationDate;
 - (id)marketingVersion;
 - (id)name;
@@ -84,12 +84,12 @@
 - (void)setCoverGlassColor:(id)arg1;
 - (void)setDeviceColor:(id)arg1;
 - (void)setDeviceEnclosureColor:(id)arg1;
-- (void)setDiagnosticsOptInEnabled:(BOOL)arg1;
+- (void)setDiagnosticsOptInEnabled:(bool)arg1;
 - (void)setFcmMaterial:(id)arg1;
-- (void)setHasResolvedActiveWatchFaceFilePath:(BOOL)arg1;
+- (void)setHasResolvedActiveWatchFaceFilePath:(bool)arg1;
 - (void)setHousingColor:(id)arg1;
 - (void)setLastModificationDate:(id)arg1;
-- (void)setLocationOptInEnabled:(BOOL)arg1;
+- (void)setLocationOptInEnabled:(bool)arg1;
 - (void)setMarketingVersion:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProductName:(id)arg1;

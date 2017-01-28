@@ -3,24 +3,24 @@
  */
 
 @interface FUFlightLocation : NSObject {
-    float  psi;
-    float  theta;
-    float  x;
-    float  y;
+    double  psi;
+    double  theta;
+    double  x;
+    double  y;
 }
 
-@property float psi;
-@property float theta;
-@property float x;
-@property float y;
+@property double psi;
+@property double theta;
+@property double x;
+@property double y;
 
-- (float)psi;
-- (void)setPsi:(float)arg1;
-- (void)setTheta:(float)arg1;
-- (void)setX:(float)arg1;
-- (void)setY:(float)arg1;
-- (float)theta;
-- (float)x;
-- (float)y;
+- (double)psi;
+- (void)setPsi:(double)arg1;
+- (void)setTheta:(double)arg1;
+- (void)setX:(double)arg1;
+- (void)setY:(double)arg1;
+- (double)theta;
+- (double)x;
+- (double)y;
 
 @end

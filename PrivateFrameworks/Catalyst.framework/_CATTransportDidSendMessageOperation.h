@@ -5,7 +5,7 @@
 @interface _CATTransportDidSendMessageOperation : NSBlockOperation
 
 - (void)cancel;
-- (BOOL)isCanceled;
-- (BOOL)isCancelled;
+- (bool)isCanceled;
+- (bool)isCancelled;
 
 @end

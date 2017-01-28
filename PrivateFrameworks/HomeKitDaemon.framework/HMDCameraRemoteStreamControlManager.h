@@ -12,16 +12,17 @@
 @property (nonatomic, retain) HMDCameraMediaConfigGenerator *configGenerator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSUUID *profileUniqueIdentifier;
 @property (nonatomic, readonly, copy) HMDCameraResidentMessageHandler *residentMessageHandler;
+@property (nonatomic, readonly) HMDCameraStreamMetrics *streamMetrics;
 @property (nonatomic, retain) HMDRemoteStreamSession *streamSession;
 @property (readonly) Class superclass;
 
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_cleanUpStreamSession;
+- (void)_cleanUpStreamSession:(id)arg1;
 - (void)_dispatchReconfigureToResident:(id)arg1;
 - (void)_dispatchStartRequestToResidentWithVideoSSRC:(id)arg1 audioSSRC:(id)arg2;
 - (void)_idsSessionCreatedAndConfigNegotiated;
@@ -34,7 +35,7 @@
 - (void)_sendUpdatedConfiguration;
 - (void)_setParametersSelected:(id)arg1;
 - (void)_startStream:(id)arg1;
-- (void)_stopCurrentStreamSession;
+- (void)_stopCurrentStreamSession:(id)arg1;
 - (void)_streamStarted;
 - (id)configGenerator;
 - (void)dealloc;
@@ -42,7 +43,7 @@
 - (void)deviceConnectionReceiver:(id)arg1 didSetup:(id)arg2;
 - (void)deviceConnectionSender:(id)arg1 didEndSession:(id)arg2;
 - (void)deviceConnectionSender:(id)arg1 didSetup:(id)arg2;
-- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 reachabilityPath:(unsigned int)arg4 destinationID:(id)arg5 delegate:(id)arg6 delegateQueue:(id)arg7 accessory:(id)arg8 streamManagementService:(id)arg9 remoteCapabilities:(id)arg10 profileUniqueIdentifier:(id)arg11 residentMessageHandler:(id)arg12;
+- (id)initWithSessionID:(id)arg1 workQueue:(id)arg2 streamSnapshotHandler:(id)arg3 reachabilityPath:(unsigned long long)arg4 destinationID:(id)arg5 delegate:(id)arg6 delegateQueue:(id)arg7 accessory:(id)arg8 streamManagementService:(id)arg9 remoteCapabilities:(id)arg10 profileUniqueIdentifier:(id)arg11 residentMessageHandler:(id)arg12;
 - (void)negotiateStream;
 - (id)profileUniqueIdentifier;
 - (void)reconfigureStream:(id)arg1;
@@ -53,15 +54,15 @@
 - (void)setConfigGenerator:(id)arg1;
 - (void)setStreamSession:(id)arg1;
 - (void)startStream:(id)arg1;
-- (void)stopStream;
-- (void)stopStreamAsIDSHasStopped;
+- (void)stopStream:(id)arg1;
+- (void)stopStreamAsIDSHasStopped:(id)arg1;
 - (id)streamSession;
 - (void)streamingManager:(id)arg1 didStartStream:(id)arg2 slotIdentifier:(id)arg3;
 - (void)streamingManagerDidNetworkDeteriorate:(id)arg1;
 - (void)streamingManagerDidNetworkImprove:(id)arg1;
-- (void)streamingManagerDidReceiveFirstFrame:(id)arg1 audioStreamSetting:(unsigned int)arg2 aspectRatio:(id)arg3;
+- (void)streamingManagerDidReceiveFirstFrame:(id)arg1 audioStreamSetting:(unsigned long long)arg2 aspectRatio:(id)arg3 slotIdentifier:(id)arg4;
 - (void)streamingManagerDidStopStream:(id)arg1 error:(id)arg2;
 - (void)streamingManagerDidUpdateConfiguration:(id)arg1;
-- (void)updateAudioSetting:(unsigned int)arg1;
+- (void)updateAudioSetting:(unsigned long long)arg1;
 
 @end

@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) HFConditionBuilder *conditionBuilder;
 
 - (void).cxx_destruct;
-- (id)_formattedStringForOffset:(id)arg1 isPositive:(BOOL*)arg2;
+- (id)_formattedStringForOffset:(id)arg1 isPositive:(bool*)arg2;
 - (id)_nameForCharacteristicCondition:(id)arg1;
 - (id)_nameForDateComponentsCondition:(id)arg1;
 - (id)_nameForSunriseSunsetCondition:(id)arg1;

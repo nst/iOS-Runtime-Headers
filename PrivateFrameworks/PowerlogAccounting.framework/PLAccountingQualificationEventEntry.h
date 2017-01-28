@@ -18,8 +18,8 @@
 - (id)initWithQualificationID:(id)arg1 withChildNodeIDs:(id)arg2 withRange:(id)arg3;
 - (id)initWithQualificationID:(id)arg1 withChildNodeNames:(id)arg2 withRange:(id)arg3;
 - (int)instanceDirectionality;
-- (BOOL)isEmptyEvent;
-- (BOOL)isEqualContentsWithEvent:(id)arg1;
+- (bool)isEmptyEvent;
+- (bool)isEqualContentsWithEvent:(id)arg1;
 - (id)qualificationID;
 - (id)subEntryKey;
 

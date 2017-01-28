@@ -15,7 +15,7 @@
 
 + (double)currentTimestamp;
 + (id)playbackProgressWithAnchorProgress:(double)arg1 anchorTimestamp:(double)arg2 rate:(double)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (double)anchorProgress;
 - (double)anchorTimestamp;
@@ -26,7 +26,7 @@
 - (id)init;
 - (id)initWithAnchorProgress:(double)arg1 anchorTimestamp:(double)arg2 rate:(double)arg3;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)progressForTimestamp:(double)arg1;
 - (double)rate;
 

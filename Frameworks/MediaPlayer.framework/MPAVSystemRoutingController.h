@@ -3,7 +3,7 @@
  */
 
 @interface MPAVSystemRoutingController : NSObject {
-    int  _clientDiscoveryMode;
+    long long  _clientDiscoveryMode;
     NSPointerArray * _clientRoutingControllers;
     int  _debugNotifyToken;
     NSObject<OS_dispatch_queue> * _serialQueue;

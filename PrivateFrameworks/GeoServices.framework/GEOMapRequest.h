@@ -3,25 +3,25 @@
  */
 
 @interface GEOMapRequest : NSObject {
-    id /* block */  _cancellationHandler;
-    id /* block */  _completionHandler;
-    BOOL  _isFinished;
+    id  _cancellationHandler;
+    id  _completionHandler;
+    bool  _isFinished;
     GEOMapRequestManager * _requestManager;
 }
 
-@property (nonatomic, copy) id /* block */ cancellationHandler;
-@property (nonatomic, copy) id /* block */ completionHandler;
-@property (nonatomic, readonly) BOOL isFinished;
+@property (nonatomic, copy) id cancellationHandler;
+@property (nonatomic, copy) id completionHandler;
+@property (nonatomic, readonly) bool isFinished;
 
-- (void)_finishAndCallHandler:(id /* block */)arg1;
+- (void)_finishAndCallHandler:(id)arg1;
 - (void)cancel;
-- (id /* block */)cancellationHandler;
+- (id)cancellationHandler;
 - (void)complete;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)dealloc;
 - (id)initWithManager:(id)arg1;
-- (BOOL)isFinished;
-- (void)setCancellationHandler:(id /* block */)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (bool)isFinished;
+- (void)setCancellationHandler:(id)arg1;
+- (void)setCompletionHandler:(id)arg1;
 
 @end

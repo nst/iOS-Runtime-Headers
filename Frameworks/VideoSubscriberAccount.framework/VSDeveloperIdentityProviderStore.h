@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSPersistentContainer *persistentContainer;
 @property (nonatomic, retain) VSRemoteNotifier *remoteNotifier;
 @property (readonly) Class superclass;
@@ -18,15 +18,15 @@
 - (id)_developerIdentityProviderInContext:(id)arg1;
 - (id)_fetchRequest;
 - (void)_noteDidChange;
-- (void)_performBlock:(id /* block */)arg1;
-- (void)addDeveloperIdentityProvider:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)fetchDeveloperIdentityProvidersWithCompletionHandler:(id /* block */)arg1;
+- (void)_performBlock:(id)arg1;
+- (void)addDeveloperIdentityProvider:(id)arg1 completionHandler:(id)arg2;
+- (void)fetchDeveloperIdentityProvidersWithCompletionHandler:(id)arg1;
 - (id)init;
 - (id)persistentContainer;
 - (id)remoteNotifier;
-- (void)removeDeveloperIdentityProviderWithUniqueID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)removeDeveloperIdentityProviderWithUniqueID:(id)arg1 completionHandler:(id)arg2;
 - (void)setPersistentContainer:(id)arg1;
 - (void)setRemoteNotifier:(id)arg1;
-- (void)updateExistingDeveloperIdentityProvider:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateExistingDeveloperIdentityProvider:(id)arg1 completionHandler:(id)arg2;
 
 @end

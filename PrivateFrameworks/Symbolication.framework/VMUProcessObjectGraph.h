@@ -4,7 +4,7 @@
 
 @interface VMUProcessObjectGraph : VMUObjectGraph <VMUCommonGraphInterface> {
     VMURangeToStringMap * _binarySectionNameRanges;
-    BOOL  _hasDerivedObjcClassStructureRanges;
+    bool  _hasDerivedObjcClassStructureRanges;
     unsigned int  _kernPageSize;
     unsigned long long  _machAbsolute;
     VMUNodeToStringMap * _nodeLabels;
@@ -22,8 +22,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL is64bit;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool is64bit;
 @property (nonatomic, readonly) unsigned int nodeCount;
 @property (nonatomic, readonly) unsigned int nodeNamespaceSize;
 @property (nonatomic, readonly) int pid;
@@ -37,20 +37,20 @@
 @property (nonatomic, readonly) unsigned int zoneCount;
 
 - (void)_deriveObjcClassStructureRanges;
-- (id)_descriptionForRegionAddress:(unsigned long long)arg1 withOffset:(unsigned long long)arg2 showSegment:(BOOL)arg3;
+- (id)_descriptionForRegionAddress:(unsigned long long)arg1 withOffset:(unsigned long long)arg2 showSegment:(bool)arg3;
 - (id)_detailedNodeOffsetDescription:(struct { unsigned long long x1; unsigned int x2; unsigned long long x3; })arg1 withSourceNode:(unsigned int)arg2 destinationNode:(unsigned int)arg3 alignmentSpacing:(unsigned int)arg4;
 - (void)_renameWithNodeMap:(unsigned int*)arg1 nodeNamespace:(unsigned int)arg2 edgeMap:(unsigned int*)arg3 edgeNamespace:(unsigned int)arg4;
-- (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned int)arg2;
+- (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned long long)arg2;
 - (id)binarySectionNameForAddress:(unsigned long long)arg1;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })binarySectionRangeContainingAddress:(unsigned long long)arg1;
 - (void*)contentForNode:(unsigned int)arg1;
 - (void*)copyUserMarked;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)enumerateRegionsWithBlock:(id /* block */)arg1;
-- (id)initWithArchived:(id)arg1 version:(int)arg2 options:(unsigned int)arg3;
+- (unsigned int)enumerateRegionsWithBlock:(id)arg1;
+- (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3;
 - (id)initWithPid:(int)arg1 nodes:(struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 2; unsigned int x4 : 36; unsigned int x5 : 23; }*)arg2 nodeCount:(unsigned int)arg3 zoneNames:(id)arg4 classInfoMap:(id)arg5 regions:(id)arg6 pthreadOffsets:(id)arg7 userMarked:(void*)arg8;
-- (BOOL)is64bit;
+- (bool)is64bit;
 - (id)labelForNode:(unsigned int)arg1;
 - (void)markReachableNodesFromRoots:(void*)arg1 inMap:(void*)arg2;
 - (id)nodeDescription:(unsigned int)arg1;

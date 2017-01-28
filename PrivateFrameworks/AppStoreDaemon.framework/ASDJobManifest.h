@@ -5,17 +5,17 @@
 @interface ASDJobManifest : NSObject <NSCopying, NSSecureCoding> {
     NSMutableArray * _activities;
     NSString * _clientID;
-    int  _manifestType;
+    long long  _manifestType;
     NSNumber * _purchaseID;
     NSString * _storeCorrelationID;
 }
 
 @property (nonatomic, copy) NSString *clientID;
-@property (nonatomic, readonly) int manifestType;
+@property (nonatomic, readonly) long long manifestType;
 @property (nonatomic, copy) NSNumber *purchaseID;
 @property (nonatomic, copy) NSString *storeCorrelationID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_addActivity:(id)arg1 withIdentifier:(id)arg2 persistentID:(id)arg3;
@@ -24,14 +24,14 @@
 - (void)addActivity:(id)arg1 withIdentifier:(id)arg2;
 - (id)clientID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateActivitiesUsingBlock:(id /* block */)arg1;
+- (void)enumerateActivitiesUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithManifestType:(int)arg1;
-- (int)manifestType;
+- (id)initWithManifestType:(long long)arg1;
+- (long long)manifestType;
 - (id)purchaseID;
 - (void)setClientID:(id)arg1;
 - (void)setPurchaseID:(id)arg1;

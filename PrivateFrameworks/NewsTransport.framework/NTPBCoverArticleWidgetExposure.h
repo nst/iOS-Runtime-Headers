@@ -14,9 +14,9 @@
 @property (nonatomic) int coverArticleWidgetArticleCount;
 @property (nonatomic, retain) NSData *coverArticleWidgetExposureSessionId;
 @property (nonatomic, retain) NSData *feedViewExposureId;
-@property (nonatomic) BOOL hasCoverArticleWidgetArticleCount;
-@property (nonatomic, readonly) BOOL hasCoverArticleWidgetExposureSessionId;
-@property (nonatomic, readonly) BOOL hasFeedViewExposureId;
+@property (nonatomic) bool hasCoverArticleWidgetArticleCount;
+@property (nonatomic, readonly) bool hasCoverArticleWidgetExposureSessionId;
+@property (nonatomic, readonly) bool hasFeedViewExposureId;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -25,17 +25,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)feedViewExposureId;
-- (BOOL)hasCoverArticleWidgetArticleCount;
-- (BOOL)hasCoverArticleWidgetExposureSessionId;
-- (BOOL)hasFeedViewExposureId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCoverArticleWidgetArticleCount;
+- (bool)hasCoverArticleWidgetExposureSessionId;
+- (bool)hasFeedViewExposureId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCoverArticleWidgetArticleCount:(int)arg1;
 - (void)setCoverArticleWidgetExposureSessionId:(id)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
-- (void)setHasCoverArticleWidgetArticleCount:(BOOL)arg1;
+- (void)setHasCoverArticleWidgetArticleCount:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

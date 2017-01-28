@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)isOffscreenPlayback;
-- (void)setShouldDrawTexturesAsynchronously:(BOOL)arg1;
-- (void)setShouldUseSourceImage:(BOOL)arg1;
-- (BOOL)shouldDrawTexturesAsynchronously;
-- (BOOL)shouldUseSourceImage;
-- (float)showScale;
+- (bool)isOffscreenPlayback;
+- (void)setShouldDrawTexturesAsynchronously:(bool)arg1;
+- (void)setShouldUseSourceImage:(bool)arg1;
+- (bool)shouldDrawTexturesAsynchronously;
+- (bool)shouldUseSourceImage;
+- (double)showScale;
 
 @end

@@ -3,31 +3,31 @@
  */
 
 @interface _UIDiscreteFeedback : _UIFeedback <_UIFeedbackDiscretePlayable> {
-    BOOL  _highPriority;
-    int  _type;
+    bool  _highPriority;
+    long long  _type;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isHighPriority, nonatomic, readonly) BOOL highPriority;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighPriority, nonatomic, readonly) bool highPriority;
 @property (readonly) Class superclass;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-+ (id)discreteFeedbackForType:(int)arg1;
++ (id)discreteFeedbackForType:(long long)arg1;
 + (id)type;
 
 - (id)_debugDictionary;
-- (unsigned int)_effectiveEventType;
-- (unsigned long)_effectiveSystemSoundID;
+- (unsigned long long)_effectiveEventType;
+- (unsigned int)_effectiveSystemSoundID;
 - (id)_playableProtocol;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isHighPriority;
-- (BOOL)isPlaying;
-- (void)setType:(int)arg1;
-- (int)type;
+- (bool)isEqual:(id)arg1;
+- (bool)isHighPriority;
+- (bool)isPlaying;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

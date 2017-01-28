@@ -3,22 +3,27 @@
  */
 
 @interface NCNotificationRequestHiddenPreviewContentProvider : NCNotificationRequestContentProvider {
-    unsigned int  _coalesceCount;
+    NSMutableArray * _coalescedNotificationRequests;
+    bool  _deviceAuthenticated;
     NSString * _topic;
 }
 
-@property (nonatomic) unsigned int coalesceCount;
+@property (nonatomic, readonly, retain) NSMutableArray *coalescedNotificationRequests;
+@property (getter=isDeviceAuthenticated, nonatomic) bool deviceAuthenticated;
 @property (nonatomic, copy) NSString *topic;
 
 - (void).cxx_destruct;
-- (unsigned int)coalesceCount;
-- (void)incrementCoalesceCount;
+- (unsigned long long)coalesceCount;
+- (void)coalesceHiddenNotificationRequest:(id)arg1;
+- (id)coalescedNotificationRequests;
+- (id)hintText;
 - (id)init;
 - (id)initWithNotificationRequest:(id)arg1;
 - (id)interfaceActions;
+- (bool)isDeviceAuthenticated;
 - (id)primarySubtitleText;
 - (id)secondaryText;
-- (void)setCoalesceCount:(unsigned int)arg1;
+- (void)setDeviceAuthenticated:(bool)arg1;
 - (void)setTopic:(id)arg1;
 - (id)thumbnail;
 - (id)topic;

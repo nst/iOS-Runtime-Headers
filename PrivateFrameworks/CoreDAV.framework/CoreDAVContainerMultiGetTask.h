@@ -12,21 +12,21 @@
     NSSet * _deletedURLs;
     NSSet * _missingURLs;
     NSSet * _parsedContents;
-    BOOL  _shouldIgnoreResponseErrors;
+    bool  _shouldIgnoreResponseErrors;
     NSSet * _urls;
 }
 
 @property (nonatomic) <CoreDAVAccountInfoProvider> *accountInfoProvider;
 @property (nonatomic, retain) NSSet *additionalPropElements;
-@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, copy) id completionBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) NSSet *deletedURLs;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSSet *missingURLs;
 @property (nonatomic, readonly) NSSet *parsedContents;
-@property (nonatomic) BOOL shouldIgnoreResponseErrors;
+@property (nonatomic) bool shouldIgnoreResponseErrors;
 @property (readonly) Class superclass;
 @property (nonatomic) <CoreDAVTaskManager> *taskManager;
 @property (nonatomic) double timeoutInterval;
@@ -44,7 +44,7 @@
 - (id)requestBody;
 - (void)setAdditionalPropElements:(id)arg1;
 - (void)setAdditionalProperties:(id)arg1 onDataItem:(id)arg2;
-- (void)setShouldIgnoreResponseErrors:(BOOL)arg1;
-- (BOOL)shouldIgnoreResponseErrors;
+- (void)setShouldIgnoreResponseErrors:(bool)arg1;
+- (bool)shouldIgnoreResponseErrors;
 
 @end

@@ -9,8 +9,8 @@
     NSLayoutConstraint * _artworkContainerWidthConstraint;
     NSLayoutConstraint * _artworkContainerXConstraint;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _artworkSize;
     MPUContentSizeLayoutConstraint * _descriptionBaselineConstraint;
     UILabel * _descriptionLabel;
@@ -40,6 +40,6 @@
 - (id)descriptionTextStyle;
 - (id)initWithViewElement:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

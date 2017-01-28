@@ -3,9 +3,9 @@
  */
 
 @interface SLTencentWeiboSession : NSObject <SLMicroBlogSheetDelegate, SLTencentWeiboClientSessionProtocol> {
-    id /* block */  _connectionResetBlock;
+    id  _connectionResetBlock;
     CLInUseAssertion * _locationInUseAssertion;
-    id /* block */  _locationInformationChangedBlock;
+    id  _locationInformationChangedBlock;
     NSCache * _profileImageCache;
     SLRemoteSessionProxy<SLTencentWeiboRemoteSessionProtocol> * _remoteSession;
     NSObject<OS_dispatch_queue> * _remoteSessionQueue;
@@ -13,11 +13,11 @@
     NSBundle * _serviceBundle;
 }
 
-@property (nonatomic, copy) id /* block */ connectionResetBlock;
+@property (nonatomic, copy) id connectionResetBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ locationInformationChangedBlock;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id locationInformationChangedBlock;
 @property (readonly) Class superclass;
 
 + (id)_remoteInterface;
@@ -26,30 +26,30 @@
 - (id)_createOrGetRemoteSession;
 - (void)acceptLocationUpdate:(id)arg1;
 - (void)beginPotentialLocationUse;
-- (int)characterCountForText:(id)arg1 shortenedURLCost:(int)arg2;
-- (id /* block */)connectionResetBlock;
+- (long long)characterCountForText:(id)arg1 shortenedURLCost:(long long)arg2;
+- (id)connectionResetBlock;
 - (void)deferExpensiveOperations;
 - (void)endPotentialLocationUse;
 - (void)ensureUserRecordStore;
-- (void)fetchCurrentImageLimits:(id /* block */)arg1;
-- (void)fetchCurrentUrlLimits:(id /* block */)arg1;
-- (void)fetchGeotagStatus:(id /* block */)arg1;
-- (void)fetchProfileImageDataForScreenName:(id)arg1 completion:(id /* block */)arg2;
-- (void)fetchSessionInfo:(id /* block */)arg1;
-- (void)getPermaLinkFromLastStatusUpdate:(id /* block */)arg1;
+- (void)fetchCurrentImageLimits:(id)arg1;
+- (void)fetchCurrentUrlLimits:(id)arg1;
+- (void)fetchGeotagStatus:(id)arg1;
+- (void)fetchProfileImageDataForScreenName:(id)arg1 completion:(id)arg2;
+- (void)fetchSessionInfo:(id)arg1;
+- (void)getPermaLinkFromLastStatusUpdate:(id)arg1;
 - (id)init;
-- (id /* block */)locationInformationChangedBlock;
-- (void)recordsMatchingPrefixString:(id)arg1 completion:(id /* block */)arg2;
-- (void)revokeAccessTokenForAppWithOauthToken:(id)arg1 completion:(id /* block */)arg2;
+- (id)locationInformationChangedBlock;
+- (void)recordsMatchingPrefixString:(id)arg1 completion:(id)arg2;
+- (void)revokeAccessTokenForAppWithOauthToken:(id)arg1 completion:(id)arg2;
 - (void)revokeAllAccessTokensForDevice;
-- (void)sendStatus:(id)arg1 completion:(id /* block */)arg2;
+- (void)sendStatus:(id)arg1 completion:(id)arg2;
 - (id)serviceAccountTypeIdentifier;
 - (void)setActiveAccountIdentifier:(id)arg1;
 - (void)setClientInfo:(id)arg1;
-- (void)setConnectionResetBlock:(id /* block */)arg1;
-- (void)setGeotagAccountSetting:(BOOL)arg1;
+- (void)setConnectionResetBlock:(id)arg1;
+- (void)setGeotagAccountSetting:(bool)arg1;
 - (void)setGeotagStatus:(int)arg1;
-- (void)setLocationInformationChangedBlock:(id /* block */)arg1;
+- (void)setLocationInformationChangedBlock:(id)arg1;
 - (void)showSettingsIfNeeded;
 - (void)stopDeferringExpensiveOperations;
 - (void)tearDownConnectionToRemoteSession;

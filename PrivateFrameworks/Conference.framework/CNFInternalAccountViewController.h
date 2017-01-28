@@ -23,14 +23,14 @@
 - (id)accountType:(id)arg1;
 - (id)bundle;
 - (id)initWithAccount:(id)arg1;
-- (BOOL)isConnectedToDaemon;
+- (bool)isConnectedToDaemon;
 - (id)registrationFailureReason:(id)arg1;
 - (id)registrationStatus:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (id)specifierForAlias:(id)arg1;
 - (id)specifiers;
 - (id)statusForAlias:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

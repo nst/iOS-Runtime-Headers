@@ -4,12 +4,12 @@
 
 @interface SBNotificationCenterDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (getter=isBatteryWidgetAlwaysAvailable, nonatomic, readonly) BOOL batteryWidgetAlwaysAvailable;
-@property (nonatomic, readonly) BOOL showInternalWidgets;
-@property (nonatomic, readonly) BOOL showWidgetSnapshotDebugLabels;
-@property (nonatomic, readonly) BOOL useDuetRecommendations;
-@property (getter=isWidgetLoggingEnabled, nonatomic, readonly) BOOL widgetLoggingEnabled;
-@property (getter=isWidgetSnapshottingEnabled, nonatomic, readonly) BOOL widgetSnapshottingEnabled;
+@property (getter=isBatteryWidgetAlwaysAvailable, nonatomic, readonly) bool batteryWidgetAlwaysAvailable;
+@property (nonatomic, readonly) bool showInternalWidgets;
+@property (nonatomic, readonly) bool showWidgetSnapshotDebugLabels;
+@property (nonatomic, readonly) bool useDuetRecommendations;
+@property (getter=isWidgetLoggingEnabled, nonatomic, readonly) bool widgetLoggingEnabled;
+@property (getter=isWidgetSnapshottingEnabled, nonatomic, readonly) bool widgetSnapshottingEnabled;
 
 - (void)_bindAndRegisterDefaults;
 

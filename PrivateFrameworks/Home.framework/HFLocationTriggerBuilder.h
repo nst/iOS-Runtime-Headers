@@ -8,16 +8,18 @@
 
 @property (nonatomic, copy) CLCircularRegion *region;
 
-+ (BOOL)supportsConditions;
++ (bool)supportsConditions;
 
 - (void).cxx_destruct;
+- (id)_allActionSets;
 - (id)_performValidation;
 - (id)_updateRegion;
 - (id)commitCreateTrigger;
 - (id)commitEditTrigger;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (id)naturalLanguageNameOfType:(unsigned int)arg1;
+- (id)naturalLanguageNameOfType:(unsigned long long)arg1;
 - (id)region;
+- (bool)requiresConfirmationToRun;
 - (void)setRegion:(id)arg1;
 
 @end

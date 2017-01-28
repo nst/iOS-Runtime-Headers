@@ -6,12 +6,12 @@
 @required
 
 - (<FCPrivateDataContextInternal> *)internalPrivateDataContext;
-- (BOOL)isPrivateDataSyncingEnabled;
+- (bool)isPrivateDataSyncingEnabled;
 - (FCPersonalizationData *)personalizationData;
 - (FCPrivateChannelMembershipController *)privateChannelMembershipController;
 - (NSString *)privateDataDirectory;
 - (<FCPushNotificationHandling> *)privatePushNotificationHandler;
-- (FCKeyValueStore *)privateStoreWithName:(NSString *)arg1 version:(unsigned int)arg2 options:(unsigned int)arg3;
+- (FCKeyValueStore *)privateStoreWithName:(NSString *)arg1 version:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (FCReadingHistory *)readingHistory;
 - (FCReadingList *)readingList;
 - (FCSubscriptionList *)subscriptionList;

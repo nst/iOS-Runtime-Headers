@@ -31,10 +31,10 @@
 - (id)groups;
 - (id)init;
 - (id)initWithEnvironment:(id)arg1 contactStore:(id)arg2;
-- (BOOL)isSyntheticGroup:(id)arg1;
+- (bool)isSyntheticGroup:(id)arg1;
 - (id)multipleGroupsPeopleSources;
-- (unsigned int)numberOfGroupsInSection:(unsigned int)arg1;
-- (unsigned int)numberOfSections;
+- (unsigned long long)numberOfGroupsInSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
 - (id)peopleInGroup:(id)arg1 withKeysToFetch:(id)arg2;
 - (void)reloadData;
 - (void)setDelegate:(id)arg1;

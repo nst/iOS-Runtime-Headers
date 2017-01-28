@@ -7,15 +7,15 @@
 
 + (id)emptySelection;
 
-- (BOOL)containsKindOfClass:(Class)arg1;
-- (BOOL)containsUnlockedKindOfClass:(Class)arg1;
+- (bool)containsKindOfClass:(Class)arg1;
+- (bool)containsUnlockedKindOfClass:(Class)arg1;
 - (id)copyExcludingInfo:(NSObject<TSDInfo> *)arg1;
 - (id)copyIncludingInfo:(NSObject<TSDInfo> *)arg1;
-- (unsigned int)infoCount;
+- (unsigned long long)infoCount;
 - (NSSet *)infos;
 - (NSSet *)infosOfClass:(Class)arg1;
-- (BOOL)isEmpty;
-- (unsigned int)unlockedInfoCount;
+- (bool)isEmpty;
+- (unsigned long long)unlockedInfoCount;
 - (NSSet *)unlockedInfos;
 
 @end

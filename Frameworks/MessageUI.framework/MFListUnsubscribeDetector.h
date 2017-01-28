@@ -10,7 +10,7 @@
 - (id)_normalizedAddress:(id)arg1;
 - (id)_persistentKeyForHeaders:(id)arg1;
 - (id)_senderString:(id)arg1;
-- (BOOL)_shouldIgnoreMessageWithHeaders:(id)arg1;
+- (bool)_shouldIgnoreMessageWithHeaders:(id)arg1;
 - (void)acceptSuggestion:(id)arg1;
 - (void)dealloc;
 - (void)ignoreSuggestion:(id)arg1;

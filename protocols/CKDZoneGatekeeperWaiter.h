@@ -6,6 +6,6 @@
 @required
 
 - (NSString *)ckShortDescription;
-- (int)qualityOfService;
+- (long long)qualityOfService;
 
 @end

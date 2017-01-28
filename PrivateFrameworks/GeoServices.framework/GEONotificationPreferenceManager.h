@@ -10,8 +10,8 @@
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isEnabledForSubTestWithName:(id)arg1;
+- (bool)isEnabledForSubTestWithName:(id)arg1;
 - (void)reset;
-- (void)setEnabled:(BOOL)arg1 forSubTestWithName:(id)arg2;
+- (void)setEnabled:(bool)arg1 forSubTestWithName:(id)arg2;
 
 @end

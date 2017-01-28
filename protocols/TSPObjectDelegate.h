@@ -6,14 +6,14 @@
 @required
 
 - (void)beginIgnoringModificationsForObject:(TSPObject *)arg1;
-- (BOOL)canSetObjectUUIDForObject:(TSPObject *)arg1;
+- (bool)canSetObjectUUIDForObject:(TSPObject *)arg1;
 - (TSPObjectContext *)context;
 - (void)endIgnoringModificationsForObject:(TSPObject *)arg1;
-- (BOOL)isObjectInDocument:(TSPObject *)arg1;
+- (bool)isObjectInDocument:(TSPObject *)arg1;
 - (long long)modifyObjectTokenForNewObject;
 - (long long)newObjectIdentifier;
 - (NSUUID *)newObjectUUIDForObject:(TSPObject *)arg1;
 - (TSPObjectUUIDMap *)objectUUIDMap;
-- (void)willModifyObject:(TSPObject *)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(TSPObject *)arg1 duringReadOperation:(bool)arg2;
 
 @end

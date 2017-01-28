@@ -6,7 +6,7 @@
     <SFReaderControllerDelegate> * _delegate;
     _WKRemoteObjectInterface * _eventsListenerInterface;
     WBSReaderFontManager * _fontManager;
-    BOOL  _readerAvailable;
+    bool  _readerAvailable;
     <SFReaderWebProcessControllerProtocol> * _readerControllerProxy;
     WKWebView * _webView;
 }
@@ -14,8 +14,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <SFReaderControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isReaderAvailable) BOOL readerAvailable;
+@property (readonly) unsigned long long hash;
+@property (getter=isReaderAvailable) bool readerAvailable;
 @property (readonly) Class superclass;
 @property (readonly) WKWebView *webView;
 
@@ -27,13 +27,13 @@
 - (void)clearUnusedReaderResourcesSoon;
 - (id)configuration;
 - (void)createArticleFinder;
-- (void)deactivateReaderNow:(unsigned int)arg1;
+- (void)deactivateReaderNow:(unsigned long long)arg1;
 - (void)decreaseReaderTextSize;
 - (id)delegate;
 - (void)didCollectReaderContentForMail:(id)arg1;
 - (void)didCollectReadingListItemInfo:(id)arg1 bookmarkID:(id)arg2;
 - (void)didCreateReaderWebView:(id)arg1;
-- (void)didDetermineReaderAvailability:(BOOL)arg1;
+- (void)didDetermineReaderAvailability:(bool)arg1;
 - (void)didPrepareReaderContentForDisplay:(id)arg1;
 - (void)didPrepareReaderContentForPrinting:(id)arg1;
 - (void)didSetReaderConfiguration:(id)arg1;
@@ -41,22 +41,22 @@
 - (void)increaseReaderTextSize;
 - (id)initWithWebView:(id)arg1;
 - (void)invalidate;
-- (BOOL)isLoadingNextPage;
-- (BOOL)isReaderAvailable;
+- (bool)isLoadingNextPage;
+- (bool)isReaderAvailable;
 - (void)loadNewArticle;
 - (id)readerControllerProxy;
 - (id)readerURL;
 - (id)scrollPositionInformation;
 - (void)setDelegate:(id)arg1;
-- (void)setReaderAvailable:(BOOL)arg1;
+- (void)setReaderAvailable:(bool)arg1;
 - (void)setReaderFont:(id)arg1;
-- (void)setReaderInitialTopScrollOffset:(int)arg1 configuration:(id)arg2 userVisibleWidth:(double)arg3 isViewingArchive:(BOOL)arg4;
+- (void)setReaderInitialTopScrollOffset:(long long)arg1 configuration:(id)arg2 userVisibleWidth:(double)arg3 isViewingArchive:(bool)arg4;
 - (void)setReaderLanguageTag:(id)arg1;
 - (void)setReaderTheme:(id)arg1;
 - (void)setReaderUserVisibleWidth:(double)arg1;
-- (BOOL)shouldCreateArticleFinder;
+- (bool)shouldCreateArticleFinder;
 - (void)stopLoadingNextPage;
 - (id)webView;
-- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id /* block */)arg3;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(id)arg3;
 
 @end

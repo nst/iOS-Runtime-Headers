@@ -13,7 +13,7 @@
 @optional
 
 - (void)prepareParams;
-- (void)primaryActionSelected:(BOOL)arg1;
+- (void)primaryActionSelected:(bool)arg1;
 - (void)selectedDeviceUpdated;
 - (void)updateNavigationButtons;
 

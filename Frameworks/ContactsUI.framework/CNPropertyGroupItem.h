@@ -3,10 +3,10 @@
  */
 
 @interface CNPropertyGroupItem : CNCardGroupItem {
-    BOOL  _allowsEmail;
-    BOOL  _allowsIMessage;
-    BOOL  _allowsPhone;
-    BOOL  _allowsTTY;
+    bool  _allowsEmail;
+    bool  _allowsIMessage;
+    bool  _allowsPhone;
+    bool  _allowsTTY;
     CNContact * _contact;
     <CNPropertyGroupItemDelegate> * _delegate;
     CNCardPropertyGroup * _group;
@@ -15,11 +15,11 @@
     NSString * _property;
 }
 
-@property (nonatomic) BOOL allowsEmail;
-@property (nonatomic) BOOL allowsIMessage;
-@property (nonatomic) BOOL allowsPhone;
-@property (nonatomic) BOOL allowsTTY;
-@property (nonatomic, readonly) BOOL canRemove;
+@property (nonatomic) bool allowsEmail;
+@property (nonatomic) bool allowsIMessage;
+@property (nonatomic) bool allowsPhone;
+@property (nonatomic) bool allowsTTY;
+@property (nonatomic, readonly) bool canRemove;
 @property (nonatomic, retain) CNContact *contact;
 @property (nonatomic, readonly) CNContactProperty *contactProperty;
 @property (nonatomic, readonly) CNContactStore *contactStore;
@@ -28,18 +28,18 @@
 @property (nonatomic, readonly) NSString *displayLabel;
 @property (nonatomic, readonly) NSString *displayValue;
 @property (nonatomic, readonly) NSString *editingStringValue;
-@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
-@property (getter=isFavorite, nonatomic, readonly) BOOL favorite;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
+@property (getter=isFavorite, nonatomic, readonly) bool favorite;
 @property (nonatomic, readonly) CNCardPropertyGroup *group;
 @property (nonatomic, retain) CNLabeledValue *labeledValue;
-@property (nonatomic, readonly) BOOL modified;
+@property (nonatomic, readonly) bool modified;
 @property (nonatomic, readonly) CNMutableContact *mutableContact;
 @property (nonatomic, readonly) id normalizedValue;
 @property (nonatomic, retain) CNLabeledValue *originalLabeledValue;
 @property (nonatomic, readonly) NSString *placeholderString;
 @property (nonatomic, retain) NSString *property;
-@property (getter=isReadonly, nonatomic, readonly) BOOL readonly;
-@property (getter=isSuggested, nonatomic, readonly) BOOL suggested;
+@property (getter=isReadonly, nonatomic, readonly) bool readonly;
+@property (getter=isSuggested, nonatomic, readonly) bool suggested;
 @property (nonatomic, readonly) NSArray *supportedLabels;
 
 + (Class)classForProperty:(id)arg1;
@@ -50,14 +50,14 @@
 
 - (void).cxx_destruct;
 - (void)_removeSuggestion;
-- (BOOL)allowsEmail;
-- (BOOL)allowsIMessage;
-- (BOOL)allowsPhone;
-- (BOOL)allowsTTY;
+- (bool)allowsEmail;
+- (bool)allowsIMessage;
+- (bool)allowsPhone;
+- (bool)allowsTTY;
 - (int)anyContactLegacyIdentifier;
 - (id)bestLabel:(id)arg1;
 - (id)bestValue:(id)arg1;
-- (BOOL)canRemove;
+- (bool)canRemove;
 - (void)confirmSuggestion;
 - (id)contact;
 - (id)contactProperty;
@@ -74,20 +74,20 @@
 - (id)initWithGroup:(id)arg1;
 - (id)initWithLabel:(id)arg1 group:(id)arg2 contact:(id)arg3;
 - (id)initWithLabeledValue:(id)arg1 group:(id)arg2 contact:(id)arg3;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalentToItem:(id)arg1;
-- (BOOL)isEquivalentToItem:(id)arg1 whenEditing:(BOOL)arg2;
-- (BOOL)isFavorite;
-- (BOOL)isFavoriteOfActionType:(id)arg1 bundleIdentifier:(id)arg2;
-- (BOOL)isReadonly;
-- (BOOL)isSuggested;
-- (BOOL)isValidIdentifier:(id)arg1;
-- (BOOL)isValidValue:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalentToItem:(id)arg1;
+- (bool)isEquivalentToItem:(id)arg1 whenEditing:(bool)arg2;
+- (bool)isFavorite;
+- (bool)isFavoriteOfActionType:(id)arg1 bundleIdentifier:(id)arg2;
+- (bool)isReadonly;
+- (bool)isSuggested;
+- (bool)isValidIdentifier:(id)arg1;
+- (bool)isValidValue:(id)arg1;
 - (id)labeledValue;
 - (int)labeledValueMultiValueIdentifierForChosenSourceContact;
 - (void)mergeItem:(id)arg1;
-- (BOOL)modified;
+- (bool)modified;
 - (id)mutableContact;
 - (id)normalizedValue;
 - (id)originalLabeledValue;
@@ -95,11 +95,11 @@
 - (id)property;
 - (void)rejectSuggestion;
 - (id)replacementForInvalidValue:(id)arg1;
-- (void)saveChangesImmediately:(BOOL)arg1;
-- (void)setAllowsEmail:(BOOL)arg1;
-- (void)setAllowsIMessage:(BOOL)arg1;
-- (void)setAllowsPhone:(BOOL)arg1;
-- (void)setAllowsTTY:(BOOL)arg1;
+- (void)saveChangesImmediately:(bool)arg1;
+- (void)setAllowsEmail:(bool)arg1;
+- (void)setAllowsIMessage:(bool)arg1;
+- (void)setAllowsPhone:(bool)arg1;
+- (void)setAllowsTTY:(bool)arg1;
 - (void)setContact:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLabeledValue:(id)arg1;

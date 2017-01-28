@@ -9,11 +9,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKDetailsAddGroupNameView *groupNameView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)reuseIdentifier;
-+ (BOOL)shouldHighlight;
++ (bool)shouldHighlight;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -5,14 +5,14 @@
 
 @required
 
-- (BOOL)isSynthesizedTopHit;
-- (BOOL)isTopHit;
-- (BOOL)isTopHitDueToTriggerMatch;
+- (bool)isSynthesizedTopHit;
+- (bool)isTopHit;
+- (bool)isTopHitDueToTriggerMatch;
 - (NSDate *)lastVisitTime;
-- (int)matchLocation;
+- (long long)matchLocation;
 - (NSString *)title;
 - (NSURL *)url;
 - (NSString *)userVisibleURLString;
-- (int)visitCount;
+- (long long)visitCount;
 
 @end

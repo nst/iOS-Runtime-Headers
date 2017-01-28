@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSArray *childInfos;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) KNMasterSlide *master;
 @property (nonatomic, readonly) NSArray *placeholders;
 @property (nonatomic, readonly) NSDictionary *placeholdersForTags;
@@ -24,10 +24,10 @@
 
 + (id)blobWithSlide:(id)arg1;
 
-- (float)CGFloatValueForProperty:(int)arg1;
+- (double)CGFloatValueForProperty:(int)arg1;
 - (id)boxedObjectForProperty:(int)arg1;
 - (id)childInfos;
-- (BOOL)containsProperty:(int)arg1;
+- (bool)containsProperty:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)didInitFromSOS;

@@ -5,7 +5,7 @@
 @interface MKOverlayContainerView : UIView {
     <MKOverlayContainerViewDelegate> * _delegate;
     NSMutableArray * _drawables;
-    float  _mapZoomScale;
+    double  _mapZoomScale;
     NSMapTable * _overlayToDrawable;
     NSMutableOrderedSet * _overlays;
     UIView * _viewContainers;
@@ -13,42 +13,42 @@
 }
 
 @property (nonatomic) <MKOverlayContainerViewDelegate> *delegate;
-@property (nonatomic) float mapZoomScale;
+@property (nonatomic) double mapZoomScale;
 @property (nonatomic, readonly) NSArray *overlays;
 
 - (void).cxx_destruct;
-- (void)_configureAndAddDrawable:(id)arg1 forOverlay:(id)arg2 level:(int)arg3;
-- (id)_considerAddingDrawable:(id)arg1 inAddRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 level:(int)arg3;
-- (int)_drawableIndexForDrawable:(id)arg1 level:(int)arg2;
-- (void)_exchangeOverlayAtIndex:(unsigned int)arg1 withOverlayAtIndex:(unsigned int)arg2 level:(int)arg3;
-- (void)_insertDrawable:(id)arg1 forOverlay:(id)arg2 atIndex:(int)arg3 level:(int)arg4;
-- (int)_levelForOverlay:(id)arg1 exists:(BOOL*)arg2;
+- (void)_configureAndAddDrawable:(id)arg1 forOverlay:(id)arg2 level:(long long)arg3;
+- (id)_considerAddingDrawable:(id)arg1 inAddRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2 level:(long long)arg3;
+- (long long)_drawableIndexForDrawable:(id)arg1 level:(long long)arg2;
+- (void)_exchangeOverlayAtIndex:(unsigned long long)arg1 withOverlayAtIndex:(unsigned long long)arg2 level:(long long)arg3;
+- (void)_insertDrawable:(id)arg1 forOverlay:(id)arg2 atIndex:(long long)arg3 level:(long long)arg4;
+- (long long)_levelForOverlay:(id)arg1 exists:(bool*)arg2;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectWithFractionOfVisible:(double)arg1;
-- (void)_removeDrawable:(id)arg1 forOverlay:(id)arg2 level:(int)arg3;
+- (void)_removeDrawable:(id)arg1 forOverlay:(id)arg2 level:(long long)arg3;
 - (void)_updateContentScale:(id)arg1;
-- (id)_viewContainerForLevel:(int)arg1;
+- (id)_viewContainerForLevel:(long long)arg1;
 - (void)addAndRemoveOverlayViews;
 - (void)addOverlay:(id)arg1;
-- (void)addOverlay:(id)arg1 level:(int)arg2;
+- (void)addOverlay:(id)arg1 level:(long long)arg2;
 - (void)addOverlays:(id)arg1;
-- (void)addOverlays:(id)arg1 level:(int)arg2;
+- (void)addOverlays:(id)arg1 level:(long long)arg2;
 - (id)delegate;
 - (void)didMoveToWindow;
 - (id)drawableForOverlay:(id)arg1;
 - (void)exchangeOverlay:(id)arg1 withOverlay:(id)arg2;
-- (void)exchangeOverlayAtIndex:(unsigned int)arg1 withOverlayAtIndex:(unsigned int)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)exchangeOverlayAtIndex:(unsigned long long)arg1 withOverlayAtIndex:(unsigned long long)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)insertOverlay:(id)arg1 aboveOverlay:(id)arg2;
-- (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)insertOverlay:(id)arg1 atIndex:(unsigned int)arg2 level:(int)arg3;
+- (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)insertOverlay:(id)arg1 atIndex:(unsigned long long)arg2 level:(long long)arg3;
 - (void)insertOverlay:(id)arg1 belowOverlay:(id)arg2;
-- (float)mapZoomScale;
+- (double)mapZoomScale;
 - (id)overlays;
-- (id)overlaysInLevel:(int)arg1;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)overlaysInLevel:(long long)arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)removeOverlay:(id)arg1;
 - (void)removeOverlays:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setMapZoomScale:(float)arg1;
+- (void)setMapZoomScale:(double)arg1;
 
 @end

@@ -15,7 +15,7 @@
 - (void)controlBeginEditing;
 - (void)controlEndEditing;
 - (id)controlView;
-- (id)initWithView:(id)arg1 datePickerMode:(int)arg2;
+- (id)initWithView:(id)arg1 datePickerMode:(long long)arg2;
 - (id)viewController;
 
 @end

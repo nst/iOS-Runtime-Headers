@@ -4,6 +4,6 @@
 
 @interface AKTriangleAnnotationEventHandler : AKRectangularAnnotationEventHandler
 
-- (float)naturalAspectRatioForAnnotation;
+- (double)naturalAspectRatioForAnnotation;
 
 @end

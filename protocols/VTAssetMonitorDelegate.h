@@ -5,6 +5,6 @@
 
 @required
 
-- (void)VTAssetMonitor:(id)arg1 didReceiveNewAssetAvailable:(BOOL)arg2;
+- (void)VTAssetMonitor:(id)arg1 didReceiveNewAssetAvailable:(bool)arg2;
 
 @end

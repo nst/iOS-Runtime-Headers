@@ -22,23 +22,23 @@
 @property (nonatomic, retain) UILabel *titleLabel;
 
 + (Class)layoutOptionsClass;
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (void)_animateTransitionWithView:(id)arg1 animations:(id /* block */)arg2;
+- (void)_animateTransitionWithView:(id)arg1 animations:(id)arg2;
 - (id)_descriptionLabelText:(id)arg1;
 - (void)_invalidateConstraints;
 - (void)_updateCameraViewAppearance;
 - (void)_updateLabelsAppearance;
 - (id)allConstraints;
 - (id)cameraView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cameraViewFrame;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })cameraViewFrame;
 - (void)dealloc;
 - (id)descriptionLabel;
 - (id)descriptionLabelConstraints;
 - (id)descriptionLabelUpdateTimer;
 - (void)displayStyleDidChange;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)item;
 - (id)layoutOptions;
 - (void)layoutOptionsDidChange;
@@ -54,6 +54,6 @@
 - (void)tintColorDidChange;
 - (id)titleLabel;
 - (void)updateConstraints;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 
 @end

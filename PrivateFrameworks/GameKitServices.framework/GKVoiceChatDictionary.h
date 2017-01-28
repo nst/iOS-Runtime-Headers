@@ -4,53 +4,53 @@
 
 @interface GKVoiceChatDictionary : NSObject {
     NSMutableDictionary * actualDictionary;
-    unsigned long  orignalCallID;
-    unsigned int  type;
+    unsigned int  orignalCallID;
+    unsigned long long  type;
 }
 
-@property unsigned long callID;
-@property int nonce;
-@property (readonly) unsigned long originalCallID;
+@property unsigned int callID;
+@property long long nonce;
+@property (readonly) unsigned int originalCallID;
 
 + (id)dictionaryFromData:(id)arg1;
-+ (id)inviteDictionaryToParticipantID:(id)arg1 fromParticipantID:(id)arg2 connectionData:(id)arg3 callID:(unsigned long)arg4 focus:(BOOL)arg5;
-+ (BOOL)validateCancel:(id)arg1;
-+ (BOOL)validateDictionary:(id)arg1;
-+ (BOOL)validateFocus:(id)arg1;
-+ (BOOL)validateInvite:(id)arg1;
-+ (BOOL)validateReply:(id)arg1;
++ (id)inviteDictionaryToParticipantID:(id)arg1 fromParticipantID:(id)arg2 connectionData:(id)arg3 callID:(unsigned int)arg4 focus:(bool)arg5;
++ (bool)validateCancel:(id)arg1;
++ (bool)validateDictionary:(id)arg1;
++ (bool)validateFocus:(id)arg1;
++ (bool)validateInvite:(id)arg1;
++ (bool)validateReply:(id)arg1;
 
-- (unsigned long)callID;
+- (unsigned int)callID;
 - (id)cancelDictionary;
 - (id)connectionData;
 - (id)createBlob;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)focusDictionary:(BOOL)arg1;
+- (id)focusDictionary:(bool)arg1;
 - (id)fromParticipantID;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isCancelDictionary;
-- (BOOL)isFocus;
-- (BOOL)isFocusDictionary;
-- (BOOL)isInviteDictionary;
-- (BOOL)isReplyDictionary;
+- (bool)isCancelDictionary;
+- (bool)isFocus;
+- (bool)isFocusDictionary;
+- (bool)isInviteDictionary;
+- (bool)isReplyDictionary;
 - (id)localVCPartyID;
-- (BOOL)matchesNonce:(int)arg1;
-- (BOOL)matchesResponse:(id)arg1;
-- (int)nonce;
-- (unsigned long)originalCallID;
+- (bool)matchesNonce:(long long)arg1;
+- (bool)matchesResponse:(id)arg1;
+- (long long)nonce;
+- (unsigned int)originalCallID;
 - (id)participantID;
 - (id)remoteVCPartyID;
-- (id)replyDictionary:(unsigned int)arg1 connectionData:(id)arg2 callID:(unsigned long)arg3 focus:(BOOL)arg4;
-- (unsigned int)response;
-- (void)setCallID:(unsigned long)arg1;
-- (void)setFocus:(BOOL)arg1;
+- (id)replyDictionary:(unsigned long long)arg1 connectionData:(id)arg2 callID:(unsigned int)arg3 focus:(bool)arg4;
+- (unsigned long long)response;
+- (void)setCallID:(unsigned int)arg1;
+- (void)setFocus:(bool)arg1;
 - (void)setFromParticipantID:(id)arg1;
 - (id)setLocalVCPartyID:(id)arg1;
-- (void)setNonce:(int)arg1;
+- (void)setNonce:(long long)arg1;
 - (id)setRemoteVCPartyID:(id)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)version;
 
 @end

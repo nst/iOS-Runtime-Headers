@@ -21,12 +21,12 @@
 
 + (id)_inviteeStringForResult:(id)arg1;
 + (id)_locationStringForResult:(id)arg1;
-+ (BOOL)_shouldShowOtherTimeZoneForResult:(id)arg1;
++ (bool)_shouldShowOtherTimeZoneForResult:(id)arg1;
 + (id)_timeStringForResult:(id)arg1 usingTimeZone:(id)arg2;
-+ (float)_verticalSpacingBottomToBaselineForBottomLabelWithPrimaryFont:(id)arg1;
-+ (float)_verticalSpacingTopToBaselineForBottomLabelWithSecondaryFont:(id)arg1;
-+ (float)_verticalSpacingTopToBaselineForTopLabelWithPrimaryFont:(id)arg1;
-+ (float)cellHeightForResult:(id)arg1 forWidth:(float)arg2;
++ (double)_verticalSpacingBottomToBaselineForBottomLabelWithPrimaryFont:(id)arg1;
++ (double)_verticalSpacingTopToBaselineForBottomLabelWithSecondaryFont:(id)arg1;
++ (double)_verticalSpacingTopToBaselineForTopLabelWithPrimaryFont:(id)arg1;
++ (double)cellHeightForResult:(id)arg1 forWidth:(double)arg2;
 + (id)primaryTextColor;
 + (id)reuseIdentifier;
 + (id)secondaryTextColor;
@@ -40,11 +40,11 @@
 - (void)_setLabelFonts;
 - (void)_setupConstraints;
 - (void)_updateContentForSizeCategoryChange:(id)arg1;
-- (float)_verticalSpacingBottomToBaselineForBottomLabel;
-- (float)_verticalSpacingTopToBaselineForBottomLabel;
-- (float)_verticalSpacingTopToBaselineForTopLabel;
-- (float)_verticalSpacingTopToColorDot;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (double)_verticalSpacingBottomToBaselineForBottomLabel;
+- (double)_verticalSpacingTopToBaselineForBottomLabel;
+- (double)_verticalSpacingTopToBaselineForTopLabel;
+- (double)_verticalSpacingTopToColorDot;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)updateWithResult:(id)arg1;
 
 @end

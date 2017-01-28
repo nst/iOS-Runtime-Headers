@@ -12,6 +12,6 @@
 - (id)destinationWaveformURL;
 - (id)generatedWaveformOutputURL;
 - (id)initWithSourceComposition:(id)arg1 destinationWaveformURL:(id)arg2;
-- (BOOL)preferLoadingFragmentWaveforms;
+- (bool)preferLoadingFragmentWaveforms;
 
 @end

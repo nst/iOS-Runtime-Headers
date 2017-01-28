@@ -20,9 +20,9 @@
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct { double x1; double x2; })arg4 address:(id)arg5;
 + (id)URLForSearch:(id)arg1;
 + (id)URLForSearch:(id)arg1 at:(struct { double x1; double x2; })arg2 span:(struct { double x1; double x2; })arg3;
-+ (id)URLForSearch:(id)arg1 at:(struct { double x1; double x2; })arg2 zoomLevel:(float)arg3;
++ (id)URLForSearch:(id)arg1 at:(struct { double x1; double x2; })arg2 zoomLevel:(double)arg3;
 + (id)URLForSearch:(id)arg1 near:(struct { double x1; double x2; })arg2;
-+ (id)URLForShowFavoritesType:(int)arg1;
++ (id)URLForShowFavoritesType:(long long)arg1;
 + (id)URLForTransitLine:(unsigned long long)arg1 withName:(id)arg2 mapRegion:(id)arg3;
 
 - (void)_removeParametersAllBut:(id)arg1;
@@ -38,7 +38,7 @@
 - (id)initForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
 - (id)initForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
 - (id)initForSearch:(id)arg1;
-- (id)initForShowFavoritesType:(int)arg1;
+- (id)initForShowFavoritesType:(long long)arg1;
 - (id)initForTransitLine:(unsigned long long)arg1 withName:(id)arg2 mapRegion:(id)arg3;
 - (void)setBusinessAddress:(id)arg1;
 - (void)setBusinessCoordinate:(struct { double x1; double x2; })arg1;
@@ -48,7 +48,7 @@
 - (void)setMapType:(int)arg1;
 - (void)setNear:(struct { double x1; double x2; })arg1;
 - (void)setSearchLocation:(struct { double x1; double x2; })arg1 span:(struct { double x1; double x2; })arg2;
-- (void)setSearchLocation:(struct { double x1; double x2; })arg1 zoomLevel:(float)arg2;
+- (void)setSearchLocation:(struct { double x1; double x2; })arg1 zoomLevel:(double)arg2;
 - (void)setStartAddress:(id)arg1;
 - (void)setTransportType:(int)arg1;
 

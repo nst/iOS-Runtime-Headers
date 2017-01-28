@@ -3,15 +3,15 @@
  */
 
 @interface CalCancellableSearch : NSObject {
-    id /* block */  _cancellationBlock;
+    id  _cancellationBlock;
 }
 
-@property (nonatomic, copy) id /* block */ cancellationBlock;
+@property (nonatomic, copy) id cancellationBlock;
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id /* block */)cancellationBlock;
-- (id)initWithCancellationBlock:(id /* block */)arg1;
-- (void)setCancellationBlock:(id /* block */)arg1;
+- (id)cancellationBlock;
+- (id)initWithCancellationBlock:(id)arg1;
+- (void)setCancellationBlock:(id)arg1;
 
 @end

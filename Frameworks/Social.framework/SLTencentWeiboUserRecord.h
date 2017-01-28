@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSURL *objectID;
 @property (nonatomic, copy) NSString *openid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)userRecordWithDictionaryRepresentation:(id)arg1;
 
 - (void).cxx_destruct;

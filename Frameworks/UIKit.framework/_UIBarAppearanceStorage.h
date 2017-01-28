@@ -6,11 +6,11 @@
     NSMutableDictionary * _backgroundImages;
 }
 
-+ (int)typicalBarPosition;
++ (long long)typicalBarPosition;
 
 - (void).cxx_destruct;
-- (id)backgroundImageForBarPosition:(int)arg1 barMetrics:(int)arg2;
-- (BOOL)hasAnyCustomBackgroundImage;
-- (void)setBackgroundImage:(id)arg1 forBarPosition:(int)arg2 barMetrics:(int)arg3;
+- (id)backgroundImageForBarPosition:(long long)arg1 barMetrics:(long long)arg2;
+- (bool)hasAnyCustomBackgroundImage;
+- (void)setBackgroundImage:(id)arg1 forBarPosition:(long long)arg2 barMetrics:(long long)arg3;
 
 @end

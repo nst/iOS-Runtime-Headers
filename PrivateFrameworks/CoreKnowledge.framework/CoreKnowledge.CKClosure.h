@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) _TtC13CoreKnowledge16CKKnowledgeStore *store;
 
-- (id /* block */).cxx_destruct;
+- (id).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entity;
 - (void)execute;

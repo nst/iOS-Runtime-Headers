@@ -8,7 +8,7 @@
 + (id)databaseTable;
 + (id)insertOrLookupDataProvenanceForSyncProvenance:(long long)arg1 originProductType:(id)arg2 originSystemBuild:(id)arg3 localProductType:(id)arg4 localSystemBuild:(id)arg5 sourceVersion:(id)arg6 timeZoneName:(id)arg7 sourceID:(id)arg8 deviceID:(id)arg9 database:(id)arg10 error:(id*)arg11;
 + (id)originProvenanceForPersistentID:(long long)arg1 database:(id)arg2 error:(id*)arg3;
-+ (int)protectionClass;
++ (long long)protectionClass;
 + (id)uniquedColumns;
 
 @end

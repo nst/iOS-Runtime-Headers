@@ -15,14 +15,14 @@
 + (id)rangeWithStartDate:(id)arg1 withEndDate:(id)arg2;
 
 - (void).cxx_destruct;
-- (BOOL)containsDate:(id)arg1;
+- (bool)containsDate:(id)arg1;
 - (id)description;
 - (id)endDate;
 - (id)initWithStartDate:(id)arg1 withEndDate:(id)arg2;
 - (id)intersect:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)length;
-- (BOOL)overlaps:(id)arg1;
+- (bool)overlaps:(id)arg1;
 - (id)startDate;
 
 @end

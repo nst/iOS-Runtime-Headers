@@ -7,8 +7,8 @@
 
 - (void)annotateForm:(NSNumber *)arg1 inFrame:(WBUFormAutoFillFrameHandle *)arg2 withValues:(NSDictionary *)arg3;
 - (void)autoFillForm:(NSNumber *)arg1 inFrame:(WBUFormAutoFillFrameHandle *)arg2 withGeneratedPassword:(NSString *)arg3;
-- (void)autoFillFormAsynchronouslyInFrame:(WBUFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(BOOL)arg3 focusFieldAfterFilling:(BOOL)arg4 fieldToFocus:(NSString *)arg5;
-- (void)autoFillFormAsynchronouslyInFrame:(WBUFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(BOOL)arg3 selectFieldAfterFilling:(NSString *)arg4;
+- (void)autoFillFormAsynchronouslyInFrame:(WBUFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(bool)arg3 focusFieldAfterFilling:(bool)arg4 fieldToFocus:(NSString *)arg5;
+- (void)autoFillFormAsynchronouslyInFrame:(WBUFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2 setAutoFilled:(bool)arg3 selectFieldAfterFilling:(NSString *)arg4;
 - (void)autoFillFormSynchronouslyInFrame:(WBUFormAutoFillFrameHandle *)arg1 withValues:(NSDictionary *)arg2;
 - (void)clearAutoFillMetadata;
 - (void)collectFormMetadataForPrefillingAtURL:(NSURL *)arg1;
@@ -16,6 +16,6 @@
 - (void)collectURLsForPrefillingAtURL:(NSURL *)arg1;
 - (void)fillTextField:(NSString *)arg1 inFrame:(WBUFormAutoFillFrameHandle *)arg2 withGeneratedPassword:(NSString *)arg3;
 - (void)resumeLoadingAfterSavingFormData;
-- (void)setFormControls:(NSArray *)arg1 areAutoFilled:(BOOL)arg2 andClearField:(NSString *)arg3 inFrame:(WBUFormAutoFillFrameHandle *)arg4;
+- (void)setFormControls:(NSArray *)arg1 areAutoFilled:(bool)arg2 andClearField:(NSString *)arg3 inFrame:(WBUFormAutoFillFrameHandle *)arg4;
 
 @end

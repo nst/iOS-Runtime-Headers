@@ -9,7 +9,7 @@
 @property (retain) SFPunchout *punchout;
 
 - (void).cxx_destruct;
-- (id)initWithMovie:(id)arg1 style:(unsigned int)arg2;
+- (id)initWithMovie:(id)arg1 style:(unsigned long long)arg2;
 - (id)punchout;
 - (void)setPunchout:(id)arg1;
 - (void)tapOnMovie:(id)arg1;

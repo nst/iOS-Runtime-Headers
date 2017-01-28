@@ -13,8 +13,8 @@
 
 @property (nonatomic, retain) NSString *feedId;
 @property (nonatomic) int feedType;
-@property (nonatomic, readonly) BOOL hasFeedId;
-@property (nonatomic) BOOL hasFeedType;
+@property (nonatomic, readonly) bool hasFeedId;
+@property (nonatomic) bool hasFeedType;
 @property (nonatomic, retain) NSMutableArray *recommendedFeedIds;
 
 + (Class)recommendedFeedIdsType;
@@ -29,18 +29,18 @@
 - (id)feedId;
 - (int)feedType;
 - (id)feedTypeAsString:(int)arg1;
-- (BOOL)hasFeedId;
-- (BOOL)hasFeedType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFeedId;
+- (bool)hasFeedType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recommendedFeedIds;
-- (id)recommendedFeedIdsAtIndex:(unsigned int)arg1;
-- (unsigned int)recommendedFeedIdsCount;
+- (id)recommendedFeedIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)recommendedFeedIdsCount;
 - (void)setFeedId:(id)arg1;
 - (void)setFeedType:(int)arg1;
-- (void)setHasFeedType:(BOOL)arg1;
+- (void)setHasFeedType:(bool)arg1;
 - (void)setRecommendedFeedIds:(id)arg1;
 - (void)writeTo:(id)arg1;
 

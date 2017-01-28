@@ -6,11 +6,11 @@
     unsigned int  _baseInternalFormat;
     unsigned int  _bytesOfKeyValueData;
     TXRDeferredTextureInfo * _deferredTextureInfo;
-    BOOL  _fileIsLittleEndian;
+    bool  _fileIsLittleEndian;
     unsigned int  _format;
     unsigned int  _internalFormat;
     NSDictionary * _internalSizedFormatLookup;
-    BOOL  _isCompressed;
+    bool  _isCompressed;
     NSObject<OS_dispatch_queue> * _parserQueue;
     bool  _shouldFlipVertically;
     TXRTextureInfo * _textureInfo;
@@ -20,19 +20,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) TXRTextureInfo *textureInfo;
 
-+ (BOOL)isKTXFile:(id)arg1;
++ (bool)isKTXFile:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)determineFormatFromType:(unsigned int)arg1 format:(unsigned int)arg2 internalFormat:(unsigned int)arg3 baseInternalFormat:(unsigned int)arg4 options:(id)arg5;
+- (bool)determineFormatFromType:(unsigned int)arg1 format:(unsigned int)arg2 internalFormat:(unsigned int)arg3 baseInternalFormat:(unsigned int)arg4 options:(id)arg5;
 - (id)init;
 - (void)initializeSizedFormatTable;
-- (BOOL)parseData:(id)arg1 bufferAllocator:(id)arg2 options:(id)arg3 error:(id*)arg4;
+- (bool)parseData:(id)arg1 bufferAllocator:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (void)parseImageDataWithOptions:(id)arg1 bufferAllocator:(id)arg2;
-- (id)parsedImageAtLevel:(unsigned int)arg1 element:(unsigned int)arg2 face:(unsigned int)arg3;
+- (id)parsedImageAtLevel:(unsigned long long)arg1 element:(unsigned long long)arg2 face:(unsigned long long)arg3;
 - (id)textureInfo;
 
 @end

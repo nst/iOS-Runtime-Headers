@@ -4,37 +4,37 @@
 
 @interface TSTConcurrentCellIterator : NSObject {
     NSMutableArray * _arrayOfArraysOfRowRocks;
-    BOOL  _collectedRowRocks;
+    bool  _collectedRowRocks;
     TSTCellRegion * _forcingRegion;
     TSUWidthLimitedQueue * _queue;
     TSTCellRegion * _region;
-    BOOL  _returnCellBorder;
-    BOOL  _returnEmptyCells;
-    BOOL  _returnHiddenCells;
+    bool  _returnCellBorder;
+    bool  _returnEmptyCells;
+    bool  _returnHiddenCells;
     TSTTableDataStore * _tableDataStore;
     TSTTableModel * _tableModel;
-    BOOL  _waitedForCompletion;
+    bool  _waitedForCompletion;
 }
 
 @property (nonatomic, retain) NSMutableArray *arrayOfArraysOfRowRocks;
-@property (nonatomic) BOOL collectedRowRocks;
+@property (nonatomic) bool collectedRowRocks;
 @property (nonatomic, retain) TSTCellRegion *forcingRegion;
 @property (nonatomic) TSUWidthLimitedQueue *queue;
 @property (nonatomic, retain) TSTCellRegion *region;
-@property (nonatomic) BOOL returnCellBorder;
-@property (nonatomic) BOOL returnEmptyCells;
-@property (nonatomic) BOOL returnHiddenCells;
+@property (nonatomic) bool returnCellBorder;
+@property (nonatomic) bool returnEmptyCells;
+@property (nonatomic) bool returnHiddenCells;
 @property (nonatomic) TSTTableDataStore *tableDataStore;
 @property (nonatomic, retain) TSTTableModel *tableModel;
-@property (nonatomic) BOOL waitedForCompletion;
+@property (nonatomic) bool waitedForCompletion;
 
 + (id)p_sharedQueue;
 
 - (id)arrayOfArraysOfRowRocks;
 - (id)collectRowRocks;
-- (BOOL)collectedRowRocks;
+- (bool)collectedRowRocks;
 - (void)dealloc;
-- (void)enumerateConcurrentlyUsingRowBeginBlock:(id /* block */)arg1 concurrentBlock:(id /* block */)arg2;
+- (void)enumerateConcurrentlyUsingRowBeginBlock:(id)arg1 concurrentBlock:(id)arg2;
 - (id)forcingRegion;
 - (id)initWithTableModel:(id)arg1;
 - (id)initWithTableModel:(id)arg1 region:(id)arg2;
@@ -42,23 +42,23 @@
 - (id)initWithTableModel:(id)arg1 region:(id)arg2 forcingRegion:(id)arg3 clampingRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg4;
 - (id)queue;
 - (id)region;
-- (BOOL)returnCellBorder;
-- (BOOL)returnEmptyCells;
-- (BOOL)returnHiddenCells;
+- (bool)returnCellBorder;
+- (bool)returnEmptyCells;
+- (bool)returnHiddenCells;
 - (void)setArrayOfArraysOfRowRocks:(id)arg1;
-- (void)setCollectedRowRocks:(BOOL)arg1;
+- (void)setCollectedRowRocks:(bool)arg1;
 - (void)setForcingRegion:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setRegion:(id)arg1;
-- (void)setReturnCellBorder:(BOOL)arg1;
-- (void)setReturnEmptyCells:(BOOL)arg1;
-- (void)setReturnHiddenCells:(BOOL)arg1;
+- (void)setReturnCellBorder:(bool)arg1;
+- (void)setReturnEmptyCells:(bool)arg1;
+- (void)setReturnHiddenCells:(bool)arg1;
 - (void)setTableDataStore:(id)arg1;
 - (void)setTableModel:(id)arg1;
-- (void)setWaitedForCompletion:(BOOL)arg1;
+- (void)setWaitedForCompletion:(bool)arg1;
 - (id)tableDataStore;
 - (id)tableModel;
 - (void)waitForConcurrentEnumerationToComplete;
-- (BOOL)waitedForCompletion;
+- (bool)waitedForCompletion;
 
 @end

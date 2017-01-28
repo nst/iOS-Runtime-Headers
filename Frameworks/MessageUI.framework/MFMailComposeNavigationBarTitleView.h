@@ -3,7 +3,7 @@
  */
 
 @interface MFMailComposeNavigationBarTitleView : UIView {
-    unsigned int  _style;
+    unsigned long long  _style;
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
 }
@@ -11,11 +11,11 @@
 @property (nonatomic, copy) NSString *title;
 
 - (id)_subtitleTextColor;
-- (float)_verticalOffsetForSubtitleWhenMini:(BOOL)arg1;
+- (double)_verticalOffsetForSubtitleWhenMini:(bool)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)setSubtitleText:(id)arg1 withStyle:(unsigned int)arg2;
+- (void)setSubtitleText:(id)arg1 withStyle:(unsigned long long)arg2;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

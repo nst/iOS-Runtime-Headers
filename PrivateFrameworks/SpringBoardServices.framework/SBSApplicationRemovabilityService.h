@@ -4,8 +4,8 @@
 
 @interface SBSApplicationRemovabilityService : SBSAbstractApplicationService
 
-- (void)fetchRemovabilityForBundleIdentifier:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)setRemovalAllowed:(BOOL)arg1 forBundleIdentifier:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)setRemovalAllowed:(BOOL)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)fetchRemovabilityForBundleIdentifier:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setRemovalAllowed:(bool)arg1 forBundleIdentifier:(id)arg2 withCompletion:(id)arg3;
+- (void)setRemovalAllowed:(bool)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(id)arg3;
 
 @end

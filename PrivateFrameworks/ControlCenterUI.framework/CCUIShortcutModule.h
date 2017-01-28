@@ -13,14 +13,14 @@
 + (id)identifier;
 
 - (void).cxx_destruct;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)activateApp;
-- (void)activateAppWithDisplayID:(id)arg1 url:(id)arg2 unlockIfNecessary:(BOOL)arg3;
+- (void)activateAppWithDisplayID:(id)arg1 url:(id)arg2 unlockIfNecessary:(bool)arg3;
 - (id)aggdKey;
 - (id)displayID;
 - (id)displayName;
 - (id)identifier;
-- (BOOL)isRestricted;
+- (bool)isRestricted;
 - (void)setDisplayID:(id)arg1;
 - (void)setURL:(id)arg1;
 - (id)url;

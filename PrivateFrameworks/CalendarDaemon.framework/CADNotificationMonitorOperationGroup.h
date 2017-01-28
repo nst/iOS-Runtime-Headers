@@ -4,22 +4,22 @@
 
 @interface CADNotificationMonitorOperationGroup : CADOperationGroup <CADNotificationMonitorInterface>
 
-+ (BOOL)requiresEventAccess;
-+ (BOOL)requiresEventOrReminderAccess;
-+ (BOOL)requiresReminderAccess;
++ (bool)requiresEventAccess;
++ (bool)requiresEventOrReminderAccess;
++ (bool)requiresReminderAccess;
 + (id)whitelistedBundles;
 
-- (void)CADCalendar:(struct { int x1; int x2; })arg1 setAlertedWithError:(id /* block */)arg2;
-- (void)CADCalendarSetClearedFromNotificationCenter:(struct { int x1; int x2; })arg1 error:(id /* block */)arg2;
-- (void)CADDatabaseGetEventNotificationItems:(id /* block */)arg1;
-- (void)CADDatabaseGetInboxRepliedSectionItems:(id /* block */)arg1;
-- (void)CADDatabaseGetInviteReplyNotifications:(id /* block */)arg1;
-- (void)CADDatabaseGetReminderNotificationItems:(id /* block */)arg1;
-- (void)CADDatabaseGetResourceChanges:(id /* block */)arg1;
-- (void)CADDatabaseGetSharedCalendarInvitationsWithReply:(id /* block */)arg1;
-- (void)CADEvent:(struct { int x1; int x2; })arg1 setAlertedWithError:(id /* block */)arg2;
-- (void)CADEventSetInvitationStatus:(int)arg1 forEvent:(struct { int x1; int x2; })arg2 error:(id /* block */)arg3;
-- (void)CADInviteReplyNotification:(struct { int x1; int x2; })arg1 setAlertedWithError:(id /* block */)arg2;
-- (void)CADResourceChange:(struct { int x1; int x2; })arg1 setAlertedWithError:(id /* block */)arg2;
+- (void)CADCalendar:(struct { int x1; int x2; })arg1 setAlertedWithError:(id)arg2;
+- (void)CADCalendarSetClearedFromNotificationCenter:(struct { int x1; int x2; })arg1 error:(id)arg2;
+- (void)CADDatabaseGetEventNotificationItems:(id)arg1;
+- (void)CADDatabaseGetInboxRepliedSectionItems:(id)arg1;
+- (void)CADDatabaseGetInviteReplyNotifications:(id)arg1;
+- (void)CADDatabaseGetReminderNotificationItems:(id)arg1;
+- (void)CADDatabaseGetResourceChanges:(id)arg1;
+- (void)CADDatabaseGetSharedCalendarInvitationsWithReply:(id)arg1;
+- (void)CADEvent:(struct { int x1; int x2; })arg1 setAlertedWithError:(id)arg2;
+- (void)CADEventSetInvitationStatus:(int)arg1 forEvent:(struct { int x1; int x2; })arg2 error:(id)arg3;
+- (void)CADInviteReplyNotification:(struct { int x1; int x2; })arg1 setAlertedWithError:(id)arg2;
+- (void)CADResourceChange:(struct { int x1; int x2; })arg1 setAlertedWithError:(id)arg2;
 
 @end

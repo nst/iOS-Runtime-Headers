@@ -8,24 +8,24 @@
 }
 
 @property (copy) NSDictionary *_DuetActivityProperties;
-@property unsigned long _allowedProtocolTypes;
-@property BOOL _allowsCellular;
+@property unsigned long long _allowedProtocolTypes;
+@property bool _allowsCellular;
 @property (nonatomic, copy) NSDictionary *_backgroundTaskTimingData;
 @property (copy) NSString *_boundInterfaceIdentifier;
 @property long long _bytesPerSecondLimit;
-@property BOOL _cacheOnly;
+@property bool _cacheOnly;
 @property int _cachePolicy;
 @property (retain) struct _CFURLCache { }*_cfCache;
 @property (retain) struct OpaqueCFHTTPCookieStorage { }*_cfCookies;
 @property (retain) struct _CFURLCredentialStorage { }*_cfCreds;
 @property (retain) struct _CFHSTSPolicy { }*_cfHSTS;
-@property (setter=_setConnectionIsCellular:) BOOL _connectionIsCellular;
+@property (setter=_setConnectionIsCellular:) bool _connectionIsCellular;
 @property (copy) NSArray *_contentDispositionFallbackArray;
 @property int _cookieAcceptPolicy;
 @property (retain) struct _CFURLRequest { }*_currentCFURLRequest;
 @property unsigned int _darkWakePowerAssertion;
 @property (nonatomic, retain) NSDictionary *_dependencyInfo;
-@property BOOL _disallowCellular;
+@property bool _disallowCellular;
 @property long long _expectedWorkload;
 @property (copy) NSURL *_ledBellyFallbackURL;
 @property (copy) NSString *_ledBellyServiceIdentifier;
@@ -36,22 +36,22 @@
 @property (copy) NSString *_pathToDownloadTaskFile;
 @property (nonatomic, retain) struct __PerformanceTiming { }*_performanceTiming;
 @property unsigned int _powerAssertion;
-@property BOOL _preventsIdleSystemSleep;
+@property bool _preventsIdleSystemSleep;
 @property long long _priority;
 @property long long _priorityValue;
-@property BOOL _prohibitAuthUI;
+@property bool _prohibitAuthUI;
 @property (nonatomic) id _protocolForTask;
 @property (copy) NSDictionary *_proxySettings;
-@property long _requestPriority;
-@property BOOL _shouldHandleCookies;
-@property BOOL _shouldPipelineHTTP;
-@property (nonatomic) BOOL _shouldReportTimingDataToAWD;
-@property BOOL _shouldSkipPipelineProbe;
-@property BOOL _shouldSkipPreferredClientCertificateLookup;
-@property BOOL _shouldUsePipelineHeuristics;
+@property long long _requestPriority;
+@property bool _shouldHandleCookies;
+@property bool _shouldPipelineHTTP;
+@property (nonatomic) bool _shouldReportTimingDataToAWD;
+@property bool _shouldSkipPipelineProbe;
+@property bool _shouldSkipPreferredClientCertificateLookup;
+@property bool _shouldUsePipelineHeuristics;
 @property (copy) NSDictionary *_sslSettings;
 @property (copy) NSString *_storagePartitionIdentifier;
-@property BOOL _strictContentLength;
+@property bool _strictContentLength;
 @property long long _suspensionThreshhold;
 @property double _timeWindowDelay;
 @property double _timeWindowDuration;
@@ -70,18 +70,18 @@
 @property (nonatomic, retain) NSURLSessionTaskDependencyTree *dependencyTree;
 @property (readonly, copy) NSString *description;
 @property (copy) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (copy) NSURLRequest *originalRequest;
 @property float priority;
-@property (nonatomic) int relativePriority;
+@property (nonatomic) long long relativePriority;
 @property (copy) NSURLResponse *response;
 @property (retain) NSURLSession *session;
 @property double startTime;
-@property int state;
+@property long long state;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSURLSessionTaskDependency *taskDependency;
 @property (copy) NSString *taskDescription;
-@property unsigned int taskIdentifier;
+@property unsigned long long taskIdentifier;
 @property (readonly, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
@@ -110,7 +110,7 @@
 - (void)cancel;
 - (long long)computeAdjustedPoolPriority;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)initWithOriginalRequest:(id)arg1 updatedRequest:(id)arg2 ident:(unsigned int)arg3 session:(id)arg4;
+- (id)initWithOriginalRequest:(id)arg1 updatedRequest:(id)arg2 ident:(unsigned long long)arg3 session:(id)arg4;
 - (id)initWithTask:(id)arg1;
 - (void)initializeHTTPAuthenticatorWithSessionConfiguration:(id)arg1;
 - (float)priority;
@@ -123,7 +123,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-- (int)relativePriority;
-- (void)setRelativePriority:(int)arg1;
+- (long long)relativePriority;
+- (void)setRelativePriority:(long long)arg1;
 
 @end

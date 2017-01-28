@@ -15,11 +15,11 @@
 - (id)destinationPath;
 - (id)incrementalPathInDirectory:(id)arg1 withFilename:(id)arg2 andExtension:(id)arg3;
 - (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2;
-- (BOOL)moveContentsOfDirectory:(id)arg1 toDirectory:(id)arg2 resultURLs:(id*)arg3 error:(id*)arg4;
+- (bool)moveContentsOfDirectory:(id)arg1 toDirectory:(id)arg2 resultURLs:(id*)arg3 error:(id*)arg4;
 - (void)setDestinationPath:(id)arg1;
 - (void)setSourcePath:(id)arg1;
 - (id)sourcePath;
-- (BOOL)unarchiveResultURLs:(id*)arg1 error:(id*)arg2;
-- (BOOL)unarchiveSourcePath:(id)arg1 toDestinationPath:(id)arg2 error:(id*)arg3;
+- (bool)unarchiveResultURLs:(id*)arg1 error:(id*)arg2;
+- (bool)unarchiveSourcePath:(id)arg1 toDestinationPath:(id)arg2 error:(id*)arg3;
 
 @end

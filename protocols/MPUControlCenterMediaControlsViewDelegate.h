@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)mediaControlsView:(MPUControlCenterMediaControlsView *)arg1 willTransitionToCompactView:(BOOL)arg2;
+- (void)mediaControlsView:(MPUControlCenterMediaControlsView *)arg1 willTransitionToCompactView:(bool)arg2;
 - (void)mediaControlsViewPrimaryActionTriggered:(MPUMediaRemoteControlsView *)arg1;
 
 @end

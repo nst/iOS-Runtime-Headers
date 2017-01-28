@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDictionary *dictionary;
 @property (nonatomic, readonly, copy) NSString *feldsparID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSSet *highestRankedSubscribedTagIDs;
 @property (nonatomic, readonly, copy) NSSet *mutedTagIDs;
 @property (nonatomic, readonly, copy) NSSet *purchasedTagIDs;

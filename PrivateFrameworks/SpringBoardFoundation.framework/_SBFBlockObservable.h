@@ -3,11 +3,11 @@
  */
 
 @interface _SBFBlockObservable : SBFObservable {
-    id /* block */  _block;
+    id  _block;
 }
 
 - (void).cxx_destruct;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (id)subscribe:(id)arg1;
 
 @end

@@ -3,14 +3,14 @@
  */
 
 @interface HKCorrelationQuery : HKQuery {
-    int  _behaviorVersion;
-    id /* block */  _completionHandler;
+    long long  _behaviorVersion;
+    id  _completionHandler;
     NSDictionary * _filterDictionary;
     NSDictionary * _samplePredicates;
 }
 
-@property (getter=_behaviorVersion, setter=_setBehaviorVersion:, nonatomic) int behaviorVersion;
-@property (nonatomic, readonly) id /* block */ completionHandler;
+@property (getter=_behaviorVersion, setter=_setBehaviorVersion:, nonatomic) long long behaviorVersion;
+@property (nonatomic, readonly) id completionHandler;
 @property (readonly, copy) HKCorrelationType *correlationType;
 @property (nonatomic, readonly) NSDictionary *filterDictionary;
 @property (readonly, copy) NSDictionary *samplePredicates;
@@ -18,21 +18,21 @@
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (Class)_queryServerDataObjectClass;
-+ (BOOL)shouldApplyPredicateForObjectType:(id)arg1;
++ (bool)shouldApplyPredicateForObjectType:(id)arg1;
 
 - (void).cxx_destruct;
-- (int)_behaviorVersion;
+- (long long)_behaviorVersion;
 - (id)_predicateFilterClasses;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id /* block */)_queue_errorHandler;
+- (id)_queue_errorHandler;
 - (void)_queue_validate;
-- (void)_setBehaviorVersion:(int)arg1;
-- (id /* block */)completionHandler;
+- (void)_setBehaviorVersion:(long long)arg1;
+- (id)completionHandler;
 - (id)correlationType;
 - (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;
 - (id)filterDictionary;
-- (id)initWithType:(id)arg1 predicate:(id)arg2 samplePredicates:(id)arg3 completion:(id /* block */)arg4;
+- (id)initWithType:(id)arg1 predicate:(id)arg2 samplePredicates:(id)arg3 completion:(id)arg4;
 - (id)samplePredicates;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon

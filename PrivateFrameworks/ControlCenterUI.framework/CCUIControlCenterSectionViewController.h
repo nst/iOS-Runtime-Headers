@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIControlCenterSectionViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *sectionIdentifier;
 @property (readonly) Class superclass;
 
@@ -22,13 +22,13 @@
 - (void)controlCenterWillBeginTransition;
 - (void)controlCenterWillPresent;
 - (id)delegate;
-- (BOOL)dismissModalFullScreenIfNeeded;
-- (BOOL)enabled;
+- (bool)dismissModalFullScreenIfNeeded;
+- (bool)enabled;
 - (void)loadView;
 - (id)sectionIdentifier;
 - (void)setDelegate:(id)arg1;
 - (id)view;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

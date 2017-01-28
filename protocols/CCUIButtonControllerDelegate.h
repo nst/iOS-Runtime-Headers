@@ -6,7 +6,7 @@
 @required
 
 - (void)buttonController:(CCUIButtonController *)arg1 publishStatusUpdate:(CCUIControlCenterStatusUpdate *)arg2;
-- (BOOL)buttonControllerShouldUseSmallButtons:(CCUIButtonController *)arg1;
+- (bool)buttonControllerShouldUseSmallButtons:(CCUIButtonController *)arg1;
 - (<CCUIControlCenterSystemAgent> *)controlCenterSystemAgent;
 
 @end

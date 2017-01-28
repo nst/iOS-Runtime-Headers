@@ -15,34 +15,36 @@
         int exitState; 
         double estExitTime; 
         double startTime; 
+        int rawType; 
+        int rawConfidence; 
     }  fState;
 }
 
-@property (nonatomic, readonly) BOOL automotive;
-@property (nonatomic, readonly) int confidence;
-@property (nonatomic, readonly) BOOL cycling;
-@property (nonatomic, readonly) BOOL running;
+@property (nonatomic, readonly) bool automotive;
+@property (nonatomic, readonly) long long confidence;
+@property (nonatomic, readonly) bool cycling;
+@property (nonatomic, readonly) bool running;
 @property (nonatomic, readonly) NSDate *startDate;
-@property (nonatomic, readonly) BOOL stationary;
-@property (nonatomic, readonly) BOOL unknown;
-@property (getter=isVehicleConnected, nonatomic, readonly) BOOL vehicleConnected;
-@property (nonatomic, readonly) BOOL walking;
+@property (nonatomic, readonly) bool stationary;
+@property (nonatomic, readonly) bool unknown;
+@property (getter=isVehicleConnected, nonatomic, readonly) bool vehicleConnected;
+@property (nonatomic, readonly) bool walking;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)automotive;
-- (int)confidence;
+- (bool)automotive;
+- (long long)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)cycling;
+- (bool)cycling;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; })arg1;
-- (BOOL)isVehicleConnected;
-- (BOOL)running;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; int x12; int x13; })arg1;
+- (bool)isVehicleConnected;
+- (bool)running;
 - (id)startDate;
-- (BOOL)stationary;
-- (BOOL)unknown;
-- (BOOL)walking;
+- (bool)stationary;
+- (bool)unknown;
+- (bool)walking;
 
 @end

@@ -3,13 +3,13 @@
  */
 
 @interface AVBlockOperation : AVOperation {
-    id /* block */  _block;
+    id  _block;
 }
 
 - (void)cancel;
 - (void)dealloc;
 - (id)init;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (void)start;
 
 @end

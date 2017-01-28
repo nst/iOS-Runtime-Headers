@@ -7,12 +7,12 @@
     NSString * _identifier;
 }
 
-@property (readonly) int _cdInteractionMechanism;
+@property (readonly) long long _cdInteractionMechanism;
 @property (readonly) NSArray *_cdRecipients;
 @property (nonatomic, copy) PBCodable *backingStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) NSString *intentId;
 @property (nonatomic, readonly) NSString *launchId;
@@ -23,23 +23,26 @@
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)intentDescription;
-+ (BOOL)supportsSecureCoding;
++ (void)load;
++ (bool)supportsSecureCoding;
 + (id)typeName;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)_impl;
 - (id)_metadata;
-- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
+- (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1;
 - (id)backingStore;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 backingStore:(id)arg2;
 - (id)intentId;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)launchId;
 - (id)protoData;
 - (void)setBackingStore:(id)arg1;
@@ -50,7 +53,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 
-- (int)_cdInteractionMechanism;
+- (long long)_cdInteractionMechanism;
 - (id)_cdRecipients;
 
 @end

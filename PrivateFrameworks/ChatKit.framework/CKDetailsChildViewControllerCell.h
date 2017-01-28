@@ -4,26 +4,26 @@
 
 @interface CKDetailsChildViewControllerCell : CKDetailsCell <CKDetailsCell> {
     UIView * _childViewControllerView;
-    BOOL  _shouldUseLayoutMargins;
+    bool  _shouldUseLayoutMargins;
 }
 
 @property (nonatomic, retain) UIView *childViewControllerView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL shouldUseLayoutMargins;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool shouldUseLayoutMargins;
 @property (readonly) Class superclass;
 
 + (id)reuseIdentifier;
-+ (BOOL)shouldHighlight;
++ (bool)shouldHighlight;
 
 - (void).cxx_destruct;
 - (id)childViewControllerView;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setChildViewControllerView:(id)arg1;
-- (void)setShouldUseLayoutMargins:(BOOL)arg1;
-- (BOOL)shouldUseLayoutMargins;
+- (void)setShouldUseLayoutMargins:(bool)arg1;
+- (bool)shouldUseLayoutMargins;
 
 @end

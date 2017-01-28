@@ -4,21 +4,21 @@
 
 @interface _LSDModifyClient : _LSDClient <_LSDModifyProtocol>
 
-- (BOOL)clientHasMIEntitlement:(id)arg1;
-- (void)didHandleInvocation:(id)arg1 isReply:(BOOL)arg2;
-- (void)rebuildApplicationDatabasesForSystem:(BOOL)arg1 internal:(BOOL)arg2 user:(BOOL)arg3 completionHandler:(id /* block */)arg4;
-- (void)registerExtensionPoint:(id)arg1 withInfo:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)registerItemInfo:(id)arg1 alias:(id)arg2 diskImageAlias:(id)arg3 bundleURL:(id)arg4 installationPlist:(id)arg5 completionHandler:(id /* block */)arg6;
-- (void)removeHandlerForContentType:(id)arg1 roles:(unsigned long)arg2 completionHandler:(id /* block */)arg3;
-- (void)removeHandlerForURLScheme:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)resetServerStoreWithCompletionHandler:(id /* block */)arg1;
-- (void)setDatabaseIsSeeded:(BOOL)arg1 completionHandler:(id /* block */)arg2;
-- (void)setHandler:(id)arg1 version:(unsigned long long)arg2 forURLScheme:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)setHandler:(id)arg1 version:(unsigned long long)arg2 roles:(unsigned long)arg3 forContentType:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)setHandlerOptions:(unsigned long)arg1 forContentType:(id)arg2 completionHandler:(id /* block */)arg3;
+- (bool)clientHasMIEntitlement:(id)arg1;
+- (void)didHandleInvocation:(id)arg1 isReply:(bool)arg2;
+- (void)rebuildApplicationDatabasesForSystem:(bool)arg1 internal:(bool)arg2 user:(bool)arg3 completionHandler:(id)arg4;
+- (void)registerExtensionPoint:(id)arg1 withInfo:(id)arg2 completionHandler:(id)arg3;
+- (void)registerItemInfo:(id)arg1 alias:(id)arg2 diskImageAlias:(id)arg3 bundleURL:(id)arg4 installationPlist:(id)arg5 completionHandler:(id)arg6;
+- (void)removeHandlerForContentType:(id)arg1 roles:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)removeHandlerForURLScheme:(id)arg1 completionHandler:(id)arg2;
+- (void)resetServerStoreWithCompletionHandler:(id)arg1;
+- (void)setDatabaseIsSeeded:(bool)arg1 completionHandler:(id)arg2;
+- (void)setHandler:(id)arg1 version:(unsigned long long)arg2 forURLScheme:(id)arg3 completionHandler:(id)arg4;
+- (void)setHandler:(id)arg1 version:(unsigned long long)arg2 roles:(unsigned int)arg3 forContentType:(id)arg4 completionHandler:(id)arg5;
+- (void)setHandlerOptions:(unsigned int)arg1 forContentType:(id)arg2 completionHandler:(id)arg3;
 - (void)synchronizeWithMobileInstallation;
-- (void)updateContainerUnit:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
-- (void)updateRecordForApp:(id)arg1 withSINF:(id)arg2 iTunesMetadata:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)willHandleInvocation:(id)arg1 isReply:(BOOL)arg2;
+- (void)updateContainerUnit:(unsigned int)arg1 completionHandler:(id)arg2;
+- (void)updateRecordForApp:(id)arg1 withSINF:(id)arg2 iTunesMetadata:(id)arg3 completionHandler:(id)arg4;
+- (void)willHandleInvocation:(id)arg1 isReply:(bool)arg2;
 
 @end

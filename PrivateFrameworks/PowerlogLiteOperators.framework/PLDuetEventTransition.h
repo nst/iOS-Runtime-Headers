@@ -5,20 +5,20 @@
 @interface PLDuetEventTransition : NSObject {
     NSString * _bundleID;
     NSDate * _date;
-    BOOL  _isStart;
+    bool  _isStart;
 }
 
 @property (retain) NSString *bundleID;
 @property (retain) NSDate *date;
-@property BOOL isStart;
+@property bool isStart;
 
 - (void).cxx_destruct;
 - (id)bundleID;
 - (id)date;
 - (id)description;
-- (BOOL)isStart;
+- (bool)isStart;
 - (void)setBundleID:(id)arg1;
 - (void)setDate:(id)arg1;
-- (void)setIsStart:(BOOL)arg1;
+- (void)setIsStart:(bool)arg1;
 
 @end

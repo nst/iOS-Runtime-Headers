@@ -6,8 +6,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL firstEntity;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool firstEntity;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAUIDecoratedText *playDetail;
 @property (readonly) Class superclass;
 
@@ -15,10 +15,10 @@
 + (id)competingTeamPlayDetailItemWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
-- (BOOL)firstEntity;
+- (bool)firstEntity;
 - (id)groupIdentifier;
 - (id)playDetail;
-- (void)setFirstEntity:(BOOL)arg1;
+- (void)setFirstEntity:(bool)arg1;
 - (void)setPlayDetail:(id)arg1;
 
 @end

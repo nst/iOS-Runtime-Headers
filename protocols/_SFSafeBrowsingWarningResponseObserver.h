@@ -5,6 +5,6 @@
 
 @required
 
-- (void)didRespondToSafeBrowsingWarningWithResult:(int)arg1;
+- (void)didRespondToSafeBrowsingWarningWithResult:(long long)arg1;
 
 @end

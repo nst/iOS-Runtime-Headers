@@ -5,9 +5,9 @@
 @interface PUPasscodeState : NSObject
 
 + (id)didGetPasscodeStateProtobuf;
-+ (BOOL)hasPasscode;
-+ (BOOL)isLocked;
-+ (BOOL)isUnlockOnly;
++ (bool)hasPasscode;
++ (bool)isLocked;
++ (bool)isUnlockOnly;
 
 - (id)init;
 

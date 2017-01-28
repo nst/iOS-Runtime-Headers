@@ -4,12 +4,12 @@
 
 @interface MTLStencilDescriptor : NSObject <NSCopying>
 
-@property (nonatomic) unsigned int depthFailureOperation;
-@property (nonatomic) unsigned int depthStencilPassOperation;
+@property (nonatomic) unsigned long long depthFailureOperation;
+@property (nonatomic) unsigned long long depthStencilPassOperation;
 @property (nonatomic) unsigned int readMask;
-@property (nonatomic) unsigned int stencilCompareFunction;
-@property (nonatomic) unsigned int stencilFailureOperation;
-@property (readonly) const struct MTLStencilDescriptorPrivate { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*stencilPrivate;
+@property (nonatomic) unsigned long long stencilCompareFunction;
+@property (nonatomic) unsigned long long stencilFailureOperation;
+@property (readonly) const struct MTLStencilDescriptorPrivate { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; }*stencilPrivate;
 @property (nonatomic) unsigned int writeMask;
 
 + (id)alloc;

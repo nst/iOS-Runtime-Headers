@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly, retain) NSString *playerID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;

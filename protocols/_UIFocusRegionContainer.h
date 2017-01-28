@@ -6,7 +6,7 @@
 @required
 
 - (void)_searchForFocusRegionsInContext:(id <_UIFocusRegionSearchContext>)arg1;
-- (BOOL)_shouldSearchForFocusRegionsInContext:(id <_UIFocusRegionSearchContext>)arg1;
+- (bool)_shouldSearchForFocusRegionsInContext:(id <_UIFocusRegionSearchContext>)arg1;
 
 @optional
 

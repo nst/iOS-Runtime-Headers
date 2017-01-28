@@ -5,8 +5,8 @@
 
 @required
 
-- (<FUChartPoint> *)dataSet:(FUChartDataSet *)arg1 chartPointForIndex:(unsigned int)arg2;
-- (unsigned int)numberOfDataPointsForDataSet:(FUChartDataSet *)arg1;
+- (<FUChartPoint> *)dataSet:(FUChartDataSet *)arg1 chartPointForIndex:(unsigned long long)arg2;
+- (unsigned long long)numberOfDataPointsForDataSet:(FUChartDataSet *)arg1;
 
 @optional
 

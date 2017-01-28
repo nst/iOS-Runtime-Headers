@@ -7,12 +7,12 @@
     NSMapTable * _cacheKeyToSAPSession;
 }
 
-+ (id)_newCacheKeyForVersion:(int)arg1 URLBagDictionary:(id)arg2;
-+ (BOOL)requiresSAPSessionReloadFromEnvironment:(id)arg1 toEnvironment:(id)arg2 forSAPVersion:(int)arg3;
++ (id)_newCacheKeyForVersion:(long long)arg1 URLBagDictionary:(id)arg2;
++ (bool)requiresSAPSessionReloadFromEnvironment:(id)arg1 toEnvironment:(id)arg2 forSAPVersion:(long long)arg3;
 + (id)sharedCoordinator;
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)loadSAPSessionWithVersion:(int)arg1 environment:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)loadSAPSessionWithVersion:(long long)arg1 environment:(id)arg2 completionHandler:(id)arg3;
 
 @end

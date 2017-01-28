@@ -7,19 +7,19 @@
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;
     NSMutableArray * _queuedInvocations;
-    id /* block */  _shouldSuspendInvocationBlock;
-    unsigned int  _suspensionCount;
+    id  _shouldSuspendInvocationBlock;
+    unsigned long long  _suspensionCount;
 }
 
 + (id)proxyWithTarget:(id)arg1;
-+ (id)proxyWithTarget:(id)arg1 shouldSuspendInvocationBlock:(id /* block */)arg2;
++ (id)proxyWithTarget:(id)arg1 shouldSuspendInvocationBlock:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_dispatchSuspendedMessages;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
 - (void)removeAllEnqueuedInvocations;
-- (BOOL)respondsToSelector:(SEL)arg1;
+- (bool)respondsToSelector:(SEL)arg1;
 - (void)resume;
 - (void)suspend;
 

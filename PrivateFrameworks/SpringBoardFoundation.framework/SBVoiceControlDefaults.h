@@ -4,9 +4,9 @@
 
 @interface SBVoiceControlDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (nonatomic, readonly) BOOL disableHandlerActions;
-@property (nonatomic, readonly) BOOL disableVoiceControlForBluetoothRequests;
-@property (getter=isVoiceControlLoggingEnabled, nonatomic, readonly) BOOL voiceControlLoggingEnabled;
+@property (nonatomic, readonly) bool disableHandlerActions;
+@property (nonatomic, readonly) bool disableVoiceControlForBluetoothRequests;
+@property (getter=isVoiceControlLoggingEnabled, nonatomic, readonly) bool voiceControlLoggingEnabled;
 
 - (void)_bindAndRegisterDefaults;
 

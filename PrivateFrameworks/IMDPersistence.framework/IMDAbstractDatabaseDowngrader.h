@@ -4,7 +4,7 @@
 
 @interface IMDAbstractDatabaseDowngrader : IMAbstractDatabaseArchiver
 
-- (BOOL)copyDatabase:(id /* block */)arg1;
+- (bool)copyDatabase:(id)arg1;
 - (id)createDowngradeHelper;
 
 @end

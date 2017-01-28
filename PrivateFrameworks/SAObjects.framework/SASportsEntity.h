@@ -42,9 +42,9 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
-- (BOOL)siriui_containsAthletes;
-- (BOOL)siriui_containsTeams;
+- (bool)siriui_containsAthletes;
+- (bool)siriui_containsTeams;
 - (id)siriui_displayName;
-- (void)siriui_enumerateEntitiesWithGroupHandler:(id /* block */)arg1 teamHandler:(id /* block */)arg2 athleteHandler:(id /* block */)arg3;
+- (void)siriui_enumerateEntitiesWithGroupHandler:(id)arg1 teamHandler:(id)arg2 athleteHandler:(id)arg3;
 
 @end

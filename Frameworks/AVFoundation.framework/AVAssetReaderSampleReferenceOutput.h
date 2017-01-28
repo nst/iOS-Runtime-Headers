@@ -11,8 +11,8 @@
 + (id)assetReaderSampleReferenceOutputWithTrack:(id)arg1;
 
 - (id)_asset;
-- (BOOL)_enableTrackExtractionReturningError:(id*)arg1;
-- (BOOL)_trimsSampleDurations;
+- (bool)_enableTrackExtractionReturningError:(id*)arg1;
+- (bool)_trimsSampleDurations;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;

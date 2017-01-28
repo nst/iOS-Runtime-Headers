@@ -5,11 +5,11 @@
 
 @required
 
-- (void)editView:(NTKFaceEditView *)arg1 didScrollToFraction:(float)arg2 fromEditMode:(int)arg3 toEditMode:(int)arg4;
-- (void)editView:(NTKFaceEditView *)arg1 didStopAtEditMode:(int)arg2;
-- (void)editView:(NTKFaceEditView *)arg1 didTapKeylineForKey:(NSString *)arg2 editMode:(int)arg3;
-- (void)editView:(NTKFaceEditView *)arg1 keylineDidBreathe:(float)arg2 forKey:(NSString *)arg3 editMode:(int)arg4;
-- (void)editView:(NTKFaceEditView *)arg1 keylineDidRubberBand:(float)arg2 forKey:(NSString *)arg3 editMode:(int)arg4;
+- (void)editView:(NTKFaceEditView *)arg1 didScrollToFraction:(double)arg2 fromEditMode:(long long)arg3 toEditMode:(long long)arg4;
+- (void)editView:(NTKFaceEditView *)arg1 didStopAtEditMode:(long long)arg2;
+- (void)editView:(NTKFaceEditView *)arg1 didTapKeylineForKey:(NSString *)arg2 editMode:(long long)arg3;
+- (void)editView:(NTKFaceEditView *)arg1 keylineDidBreathe:(double)arg2 forKey:(NSString *)arg3 editMode:(long long)arg4;
+- (void)editView:(NTKFaceEditView *)arg1 keylineDidRubberBand:(double)arg2 forKey:(NSString *)arg3 editMode:(long long)arg4;
 - (void)editViewWillBeginScrolling:(NTKFaceEditView *)arg1;
 
 @end

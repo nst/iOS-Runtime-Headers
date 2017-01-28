@@ -21,8 +21,8 @@
 @property (nonatomic, retain) TSDDrawableInfo *connectedToInfo;
 
 - (void)acceptVisitor:(id)arg1;
-- (BOOL)canAnchor;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })computeLayoutFullTransform;
+- (bool)canAnchor;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })computeLayoutFullTransform;
 - (id)computeLayoutInfoGeometry;
 - (void)computeLayoutInfoGeometry:(id*)arg1 andPathSource:(id*)arg2;
 - (id)connectedFrom;
@@ -35,12 +35,12 @@
 - (void)dealloc;
 - (void)didCopy;
 - (id)initFromUnarchiver:(id)arg1;
-- (BOOL)isLine;
+- (bool)isLine;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct ConnectionLineArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeArchive {} *x5; struct Reference {} *x6; struct Reference {} *x7; struct UUID {} *x8; struct UUID {} *x9; }*)arg1 unarchiver:(id)arg2;
-- (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
-- (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-- (void)performBlockWithTemporaryLayout:(id /* block */)arg1;
+- (id)localizedChunkNameForTextureDeliveryStyle:(unsigned long long)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned long long)arg3;
+- (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (void)performBlockWithTemporaryLayout:(id)arg1;
 - (id)presetKind;
 - (Class)repClass;
 - (void)saveGeometryToArchive:(struct GeometryArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Point {} *x5; struct Size {} *x6; unsigned int x7; float x8; }*)arg1 archiver:(id)arg2;

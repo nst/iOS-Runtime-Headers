@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UILabel *detailTextLabel;
 @property (nonatomic, retain) UIButton *disclosureButton;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) <SiriUITemplatedView> *templatedSuperview;
 

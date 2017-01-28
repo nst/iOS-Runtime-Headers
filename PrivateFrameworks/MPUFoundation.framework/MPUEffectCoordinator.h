@@ -4,17 +4,17 @@
 
 @interface MPUEffectCoordinator : NSObject {
     NSMutableArray * _applyBlocks;
-    id /* block */  _completionHandler;
-    unsigned int  _pendingEffectsCount;
+    id  _completionHandler;
+    unsigned long long  _pendingEffectsCount;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 
 - (void).cxx_destruct;
-- (void)addApplyChangesBlock:(id /* block */)arg1;
+- (void)addApplyChangesBlock:(id)arg1;
 - (void)beginChangeForEffectView:(id)arg1;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)finishChangeForEffectView:(id)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 
 @end

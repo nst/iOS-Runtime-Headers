@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2;
-- (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2 relatedVisitKey:(id)arg3 relatedVisitsQueryFactory:(id /* block */)arg4;
+- (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2 relatedVisitKey:(id)arg3 relatedVisitsQueryFactory:(id)arg4;
 - (void)_prepareWithTriggeringItems:(id)arg1 triggeringVisits:(id)arg2;
 - (id)_visitsForItems:(id)arg1;
 - (id)allItemsToDelete;
@@ -33,7 +33,7 @@
 - (id)discoveredItemsToDelete;
 - (id)discoveredVisitsToDelete;
 - (void)execute;
-- (id)initWithSQLiteStore:(id)arg1 triggeringItems:(id)arg2 excludingItems:(id)arg3 visits:(id)arg4 reason:(int)arg5;
+- (id)initWithSQLiteStore:(id)arg1 triggeringItems:(id)arg2 excludingItems:(id)arg3 visits:(id)arg4 reason:(long long)arg5;
 - (id)initWithSQLiteStore:(id)arg1 triggeringVisits:(id)arg2 excludingItems:(id)arg3 visits:(id)arg4;
 - (void)prepare;
 - (id)triggeringItems;

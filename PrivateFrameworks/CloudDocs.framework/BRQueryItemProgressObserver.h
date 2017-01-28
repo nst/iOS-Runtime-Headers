@@ -3,17 +3,17 @@
  */
 
 @interface BRQueryItemProgressObserver : NSObject {
-    BOOL  _isUpload;
+    bool  _isUpload;
     BRQueryItem * _item;
     NSProgress * _progress;
-    id /* block */  _progressHandler;
+    id  _progressHandler;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _started;
+    bool  _started;
     id  _subscriber;
 }
 
 @property (nonatomic, readonly) BRQueryItem *item;
-@property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic, copy) id progressHandler;
 
 - (void).cxx_destruct;
 - (void)_stopObserving;
@@ -23,8 +23,8 @@
 - (id)initWithItem:(id)arg1;
 - (id)item;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id /* block */)progressHandler;
-- (void)setProgressHandler:(id /* block */)arg1;
+- (id)progressHandler;
+- (void)setProgressHandler:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)start;
 - (void)stop;

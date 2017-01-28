@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) unsigned int refCount;
 
 - (void)addReferencesFromObject:(id)arg1;
-- (BOOL)dropReference;
+- (bool)dropReference;
 - (id)initWithRefCount:(unsigned int)arg1;
 - (unsigned int)refCount;
 - (void)takeReference;

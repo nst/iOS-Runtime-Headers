@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, retain) BLTPBFullBulletinList *bulletinList;
-@property (nonatomic, readonly) BOOL hasBulletinList;
+@property (nonatomic, readonly) bool hasBulletinList;
 
 - (void).cxx_destruct;
 - (id)bulletinList;
@@ -15,11 +15,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBulletinList;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBulletinList;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBulletinList:(id)arg1;
 - (void)writeTo:(id)arg1;
 

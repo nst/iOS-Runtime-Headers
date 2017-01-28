@@ -4,10 +4,10 @@
 
 @interface LPTextView : LPComponentView <LPContentInsettable, LPTextStyleable> {
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _contentInset;
     LPImageView * _glyphView;
     LPTextViewStyle * _style;
@@ -15,21 +15,21 @@
 }
 
 @property (nonatomic, readonly, retain) LPTextViewStyle *style;
-@property (nonatomic) int textAlignment;
+@property (nonatomic) long long textAlignment;
 
 - (void).cxx_destruct;
 - (id)_createTextViewWithText:(id)arg1 style:(id)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_effectiveContentInset;
-- (float)ascender;
-- (float)descender;
-- (float)firstLineLeading;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })_effectiveContentInset;
+- (double)ascender;
+- (double)descender;
+- (double)firstLineLeading;
 - (id)init;
 - (id)initWithText:(id)arg1 style:(id)arg2;
 - (void)layoutComponentView;
-- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setTextAlignment:(int)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setContentInset:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
+- (void)setTextAlignment:(long long)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)style;
-- (int)textAlignment;
+- (long long)textAlignment;
 
 @end

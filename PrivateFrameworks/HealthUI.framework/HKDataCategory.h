@@ -6,7 +6,7 @@
     UIColor * _bottomColor;
     NSMutableDictionary * _cachedGradients;
     NSMutableDictionary * _cachedRoundedCornerGradients;
-    int  _categoryID;
+    long long  _categoryID;
     NSString * _categoryName;
     NSString * _displayName;
     UIImage * _healthDataIcon;
@@ -16,12 +16,12 @@
     UIColor * _topColor;
 }
 
-@property (nonatomic, readonly) int categoryID;
+@property (nonatomic, readonly) long long categoryID;
 @property (nonatomic, readonly) NSString *categoryName;
 @property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly) UIImage *healthDataIcon;
-@property (nonatomic, readonly) BOOL isMeCategory;
-@property (nonatomic, readonly) BOOL isTopLevelCategory;
+@property (nonatomic, readonly) bool isMeCategory;
+@property (nonatomic, readonly) bool isTopLevelCategory;
 @property (nonatomic, readonly) UIImage *listIcon;
 @property (nonatomic, readonly) NSString *listIconName;
 @property (nonatomic, readonly) UIColor *seriesColor;
@@ -30,20 +30,20 @@
 + (id)topLevelCategoryIdentifiers;
 
 - (void).cxx_destruct;
-- (id)_generateGradientOfHeight:(float)arg1;
-- (id)_generateRoundedCornerGradientWithHeight:(float)arg1;
-- (int)categoryID;
+- (id)_generateGradientOfHeight:(double)arg1;
+- (id)_generateRoundedCornerGradientWithHeight:(double)arg1;
+- (long long)categoryID;
 - (id)categoryName;
 - (id)displayName;
-- (id)gradientWithHeight:(float)arg1;
+- (id)gradientWithHeight:(double)arg1;
 - (id)healthDataIcon;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isMeCategory;
-- (BOOL)isTopLevelCategory;
+- (bool)isMeCategory;
+- (bool)isTopLevelCategory;
 - (id)listIcon;
 - (id)listIconName;
-- (id)roundedCornerGradientWithHeight:(float)arg1;
+- (id)roundedCornerGradientWithHeight:(double)arg1;
 - (id)seriesColor;
 - (id)shareIcon;
 

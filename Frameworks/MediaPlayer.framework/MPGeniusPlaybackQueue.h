@@ -17,9 +17,9 @@
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
-- (void)_createPlaybackContextFromCloudControllerWithSeedItem:(id)arg1 completion:(id /* block */)arg2;
-- (void)_createPlaybackContextFromMediaLibraryWithSeedItem:(id)arg1 completion:(id /* block */)arg2;
-- (void)_createPlaybackContextWithRecommendedContentWithSeedAdamID:(long long)arg1 completion:(id /* block */)arg2;
-- (void)createPlaybackContextWithCompletion:(id /* block */)arg1;
+- (void)_createPlaybackContextFromCloudControllerWithSeedItem:(id)arg1 completion:(id)arg2;
+- (void)_createPlaybackContextFromMediaLibraryWithSeedItem:(id)arg1 completion:(id)arg2;
+- (void)_createPlaybackContextWithRecommendedContentWithSeedAdamID:(long long)arg1 completion:(id)arg2;
+- (void)createPlaybackContextWithCompletion:(id)arg1;
 
 @end

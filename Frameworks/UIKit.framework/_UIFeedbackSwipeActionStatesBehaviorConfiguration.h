@@ -9,6 +9,6 @@
 + (id)openState;
 + (id)restingState;
 
-- (int)requiredSupportLevel;
+- (long long)requiredSupportLevel;
 
 @end

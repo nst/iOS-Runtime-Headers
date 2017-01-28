@@ -3,28 +3,28 @@
  */
 
 @interface NSTextList : NSObject <NSCoding, NSCopying, NSSecureCoding> {
-    unsigned int  _listFlags;
+    unsigned long long  _listFlags;
     void * _listSecondary;
     NSString * _markerFormat;
-    int  _startIndex;
+    long long  _startIndex;
 }
 
-@property (readonly) unsigned int listOptions;
+@property (readonly) unsigned long long listOptions;
 @property (readonly, copy) NSString *markerFormat;
-@property int startingItemNumber;
+@property long long startingItemNumber;
 
 + (id)_standardMarkerAttributesForAttributes:(id)arg1;
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_isOrdered;
-- (id)_markerAtIndex:(unsigned int)arg1 inText:(id)arg2;
-- (id)_markerForMarkerFormat:(id)arg1 itemNumber:(int)arg2 isNumbered:(BOOL*)arg3 substitutionStart:(unsigned int*)arg4 end:(unsigned int*)arg5 specifierStart:(unsigned int*)arg6 end:(unsigned int*)arg7;
+- (bool)_isOrdered;
+- (id)_markerAtIndex:(unsigned long long)arg1 inText:(id)arg2;
+- (id)_markerForMarkerFormat:(id)arg1 itemNumber:(long long)arg2 isNumbered:(bool*)arg3 substitutionStart:(unsigned long long*)arg4 end:(unsigned long long*)arg5 specifierStart:(unsigned long long*)arg6 end:(unsigned long long*)arg7;
 - (id)_markerPrefix;
 - (id)_markerSpecifier;
 - (id)_markerSuffix;
 - (id)_markerTitle;
-- (id)_unaffixedMarkerForItemNumber:(int)arg1;
+- (id)_unaffixedMarkerForItemNumber:(long long)arg1;
 - (id)_unaffixedMarkerFormat;
 - (id)_unaffixedMarkerTitle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -32,12 +32,12 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMarkerFormat:(id)arg1 options:(unsigned int)arg2;
-- (unsigned int)listOptions;
-- (id)markerForItemNumber:(int)arg1;
+- (id)initWithMarkerFormat:(id)arg1 options:(unsigned long long)arg2;
+- (unsigned long long)listOptions;
+- (id)markerForItemNumber:(long long)arg1;
 - (id)markerFormat;
-- (unsigned int)options;
-- (void)setStartingItemNumber:(int)arg1;
-- (int)startingItemNumber;
+- (unsigned long long)options;
+- (void)setStartingItemNumber:(long long)arg1;
+- (long long)startingItemNumber;
 
 @end

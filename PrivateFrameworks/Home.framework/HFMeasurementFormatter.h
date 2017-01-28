@@ -3,16 +3,16 @@
  */
 
 @interface HFMeasurementFormatter : NSMeasurementFormatter {
-    id /* block */  _measurementBlock;
+    id  _measurementBlock;
 }
 
-@property (nonatomic, copy) id /* block */ measurementBlock;
+@property (nonatomic, copy) id measurementBlock;
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithMeasurementBlock:(id /* block */)arg1;
-- (id /* block */)measurementBlock;
-- (void)setMeasurementBlock:(id /* block */)arg1;
+- (id)initWithMeasurementBlock:(id)arg1;
+- (id)measurementBlock;
+- (void)setMeasurementBlock:(id)arg1;
 - (id)stringForObjectValue:(id)arg1;
 
 @end

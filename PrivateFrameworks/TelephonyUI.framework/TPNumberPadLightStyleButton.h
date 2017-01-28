@@ -4,19 +4,19 @@
 
 @interface TPNumberPadLightStyleButton : TPNumberPadButton
 
-+ (float)highlightCrossfadeHighlightBeginTime;
-+ (float)highlightCrossfadeHighlightFadeDuration;
-+ (float)highlightCrossfadeNormalBeginTime;
-+ (float)highlightCrossfadeNormalFadeDuration;
-+ (float)horizontalPadding;
++ (double)highlightCrossfadeHighlightBeginTime;
++ (double)highlightCrossfadeHighlightFadeDuration;
++ (double)highlightCrossfadeNormalBeginTime;
++ (double)highlightCrossfadeNormalFadeDuration;
++ (double)horizontalPadding;
 + (id)imageForCharacter:(unsigned int)arg1;
-+ (id)imageForCharacter:(unsigned int)arg1 highlighted:(BOOL)arg2;
-+ (float)unhighlightCrossfadeHighlightBeginTime;
-+ (float)unhighlightCrossfadeHighlightFadeDuration;
-+ (float)unhighlightCrossfadeNormalBeginTime;
-+ (float)unhighlightCrossfadeNormalFadeDuration;
-+ (BOOL)usesTelephonyGlyphsWhereAvailable;
-+ (float)verticalPadding;
++ (id)imageForCharacter:(unsigned int)arg1 highlighted:(bool)arg2;
++ (double)unhighlightCrossfadeHighlightBeginTime;
++ (double)unhighlightCrossfadeHighlightFadeDuration;
++ (double)unhighlightCrossfadeNormalBeginTime;
++ (double)unhighlightCrossfadeNormalFadeDuration;
++ (bool)usesTelephonyGlyphsWhereAvailable;
++ (double)verticalPadding;
 
 - (id)defaultColor;
 - (id)initForCharacter:(unsigned int)arg1;

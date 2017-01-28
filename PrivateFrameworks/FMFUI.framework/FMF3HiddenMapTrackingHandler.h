@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FMF3HiddenMapTrackingHandlerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapView *hiddenMapView;
 @property (readonly) Class superclass;
 
@@ -19,7 +19,7 @@
 - (id)delegate;
 - (id)hiddenMapView;
 - (id)initWithView:(id)arg1;
-- (void)mapView:(id)arg1 didChangeUserTrackingMode:(int)arg2 animated:(BOOL)arg3;
+- (void)mapView:(id)arg1 didChangeUserTrackingMode:(long long)arg2 animated:(bool)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setHiddenMapView:(id)arg1;
 

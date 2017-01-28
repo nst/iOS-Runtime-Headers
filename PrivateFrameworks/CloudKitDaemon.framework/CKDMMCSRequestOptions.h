@@ -4,48 +4,48 @@
 
 @interface CKDMMCSRequestOptions : NSObject {
     NSDictionary * _MMCSRequestOptions;
-    BOOL  _allowsCellularAccess;
-    BOOL  _allowsPowerNapScheduling;
+    bool  _allowsCellularAccess;
+    bool  _allowsPowerNapScheduling;
     NSString * _applicationBundleID;
     NSString * _applicationSecondaryID;
     NSString * _containerID;
-    int  _qualityOfService;
-    BOOL  _usesBackgroundSession;
+    long long  _qualityOfService;
+    bool  _usesBackgroundSession;
     NSArray * _zoneNames;
 }
 
 @property (nonatomic, retain) NSDictionary *MMCSRequestOptions;
-@property (nonatomic) BOOL allowsCellularAccess;
-@property (nonatomic) BOOL allowsPowerNapScheduling;
+@property (nonatomic) bool allowsCellularAccess;
+@property (nonatomic) bool allowsPowerNapScheduling;
 @property (nonatomic, retain) NSString *applicationBundleID;
 @property (nonatomic, retain) NSString *applicationSecondaryID;
 @property (nonatomic, retain) NSString *containerID;
-@property (nonatomic) int qualityOfService;
-@property (nonatomic) BOOL usesBackgroundSession;
+@property (nonatomic) long long qualityOfService;
+@property (nonatomic) bool usesBackgroundSession;
 @property (nonatomic, retain) NSArray *zoneNames;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)MMCSOptions;
 - (id)MMCSRequestOptions;
-- (BOOL)allowsCellularAccess;
-- (BOOL)allowsPowerNapScheduling;
+- (bool)allowsCellularAccess;
+- (bool)allowsPowerNapScheduling;
 - (id)applicationBundleID;
 - (id)applicationSecondaryID;
 - (id)containerID;
 - (id)description;
 - (id)initWithOperation:(id)arg1;
-- (int)qualityOfService;
-- (void)setAllowsCellularAccess:(BOOL)arg1;
-- (void)setAllowsPowerNapScheduling:(BOOL)arg1;
+- (long long)qualityOfService;
+- (void)setAllowsCellularAccess:(bool)arg1;
+- (void)setAllowsPowerNapScheduling:(bool)arg1;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setApplicationSecondaryID:(id)arg1;
 - (void)setContainerID:(id)arg1;
 - (void)setMMCSRequestOptions:(id)arg1;
-- (void)setQualityOfService:(int)arg1;
-- (void)setUsesBackgroundSession:(BOOL)arg1;
+- (void)setQualityOfService:(long long)arg1;
+- (void)setUsesBackgroundSession:(bool)arg1;
 - (void)setZoneNames:(id)arg1;
-- (BOOL)usesBackgroundSession;
+- (bool)usesBackgroundSession;
 - (id)zoneNames;
 
 @end

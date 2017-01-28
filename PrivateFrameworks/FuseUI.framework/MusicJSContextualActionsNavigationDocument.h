@@ -4,7 +4,7 @@
 
 @interface MusicJSContextualActionsNavigationDocument : IKJSNavigationDocument {
     NSMutableArray * _pendingNavigationDocumentItemsToPush;
-    int  _state;
+    long long  _state;
 }
 
 - (void).cxx_destruct;

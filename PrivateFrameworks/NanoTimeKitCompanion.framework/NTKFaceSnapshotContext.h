@@ -26,26 +26,26 @@
 @property (nonatomic, retain) NSString *tzVersion;
 @property (nonatomic, retain) NSNumber *uses24hTime;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_yearMonthDay;
 - (id)buildVersion;
-- (BOOL)buildVersionMatchesContext:(id)arg1;
+- (bool)buildVersionMatchesContext:(id)arg1;
 - (id)calendar;
-- (BOOL)calendarDateMatchesContext:(id)arg1;
+- (bool)calendarDateMatchesContext:(id)arg1;
 - (id)date;
 - (double)distanceInKilometersFromContext:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)enhanceTextLegibilityEnabled;
-- (BOOL)enhanceTextLegibilityEnabledMatchesContext:(id)arg1;
+- (bool)enhanceTextLegibilityEnabledMatchesContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)locale;
-- (BOOL)localeMatchesContext:(id)arg1;
+- (bool)localeMatchesContext:(id)arg1;
 - (id)location;
-- (BOOL)locationSignificantlyDiffersFromContext:(id)arg1;
+- (bool)locationSignificantlyDiffersFromContext:(id)arg1;
 - (id)lunarCalendarLocaleID;
-- (BOOL)lunarCalendarLocaleIDMatchesContext:(id)arg1;
+- (bool)lunarCalendarLocaleIDMatchesContext:(id)arg1;
 - (id)monogram;
 - (void)setBuildVersion:(id)arg1;
 - (void)setCalendar:(id)arg1;
@@ -57,7 +57,7 @@
 - (void)setMonogram:(id)arg1;
 - (void)setTzVersion:(id)arg1;
 - (void)setUses24hTime:(id)arg1;
-- (BOOL)timeZoneMatchesContext:(id)arg1;
+- (bool)timeZoneMatchesContext:(id)arg1;
 - (id)tzVersion;
 - (id)uses24hTime;
 

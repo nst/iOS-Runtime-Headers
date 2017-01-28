@@ -4,20 +4,20 @@
 
 @interface IKDOMLSParser : IKJSObject <IKJSDOMLSParser>
 
-@property (getter=appendAsChildrenAction, readonly) int ACTION_APPEND_AS_CHILDREN;
-@property (getter=insertAfterAction, readonly) int ACTION_INSERT_AFTER;
-@property (getter=insertBeforeAction, readonly) int ACTION_INSERT_BEFORE;
-@property (getter=replaceAction, readonly) int ACTION_REPLACE;
-@property (getter=replaceChildrenAction, readonly) int ACTION_REPLACE_CHILDREN;
+@property (getter=appendAsChildrenAction, readonly) long long ACTION_APPEND_AS_CHILDREN;
+@property (getter=insertAfterAction, readonly) long long ACTION_INSERT_AFTER;
+@property (getter=insertBeforeAction, readonly) long long ACTION_INSERT_BEFORE;
+@property (getter=replaceAction, readonly) long long ACTION_REPLACE;
+@property (getter=replaceChildrenAction, readonly) long long ACTION_REPLACE_CHILDREN;
 
 + (id)_dataFromInput:(id)arg1;
 
-- (int)appendAsChildrenAction;
-- (int)insertAfterAction;
-- (int)insertBeforeAction;
+- (long long)appendAsChildrenAction;
+- (long long)insertAfterAction;
+- (long long)insertBeforeAction;
 - (id)parse:(id)arg1;
-- (id)parseWithContext:(id)arg1 :(id)arg2 :(int)arg3;
-- (int)replaceAction;
-- (int)replaceChildrenAction;
+- (id)parseWithContext:(id)arg1 :(id)arg2 :(long long)arg3;
+- (long long)replaceAction;
+- (long long)replaceChildrenAction;
 
 @end

@@ -4,40 +4,40 @@
 
 @interface TLITunesTone : NSObject {
     NSString * _artworkFile;
-    unsigned int  _duration;
+    unsigned long long  _duration;
     NSString * _filePath;
     NSString * _identifier;
     NSString * _name;
     NSNumber * _pid;
     NSDictionary * _playbackProperties;
-    BOOL  _private;
-    BOOL  _protected;
-    BOOL  _purchased;
-    BOOL  _ringtone;
+    bool  _private;
+    bool  _protected;
+    bool  _purchased;
+    bool  _ringtone;
 }
 
 @property (nonatomic, readonly) NSString *artworkFile;
-@property (nonatomic, readonly) unsigned int duration;
+@property (nonatomic, readonly) unsigned long long duration;
 @property (nonatomic, readonly) NSString *filePath;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSNumber *pid;
 @property (nonatomic, readonly) NSDictionary *playbackProperties;
-@property (getter=isPrivate, nonatomic, readonly) BOOL private;
-@property (getter=isProtected, nonatomic, readonly) BOOL protected;
-@property (getter=isPurchased, nonatomic, readonly) BOOL purchased;
-@property (getter=isRingtone, nonatomic, readonly) BOOL ringtone;
+@property (getter=isPrivate, nonatomic, readonly) bool private;
+@property (getter=isProtected, nonatomic, readonly) bool protected;
+@property (getter=isPurchased, nonatomic, readonly) bool purchased;
+@property (getter=isRingtone, nonatomic, readonly) bool ringtone;
 
 - (void).cxx_destruct;
 - (id)artworkFile;
-- (unsigned int)duration;
+- (unsigned long long)duration;
 - (id)filePath;
 - (id)identifier;
 - (id)initWithPropertyListRepresentation:(id)arg1 filePath:(id)arg2;
-- (BOOL)isPrivate;
-- (BOOL)isProtected;
-- (BOOL)isPurchased;
-- (BOOL)isRingtone;
+- (bool)isPrivate;
+- (bool)isProtected;
+- (bool)isPurchased;
+- (bool)isRingtone;
 - (id)name;
 - (id)pid;
 - (id)playbackProperties;

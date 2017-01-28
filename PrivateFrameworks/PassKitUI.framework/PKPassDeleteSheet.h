@@ -13,22 +13,22 @@
 @property (nonatomic) <PKPassDeleteDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) PKPassGroupView *groupView;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) PKPassView *passView;
 @property (readonly) Class superclass;
 
-+ (void)performPassbookDeleteWithView:(id)arg1 completion:(id /* block */)arg2;
++ (void)performPassbookDeleteWithView:(id)arg1 completion:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_registerForEnterBackgroundNotification;
 - (void)_startAnimation;
 - (void)_unregisterForEnterBackgroundNotification;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (void)finished:(BOOL)arg1;
+- (void)finished:(bool)arg1;
 - (void)forceDeleteAnimation;
 - (id)groupView;
 - (id)initWithPassView:(id)arg1 groupView:(id)arg2;

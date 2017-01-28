@@ -5,7 +5,7 @@
 
 @required
 
-- (int)relativePriority;
-- (void)setRelativePriority:(int)arg1;
+- (long long)relativePriority;
+- (void)setRelativePriority:(long long)arg1;
 
 @end

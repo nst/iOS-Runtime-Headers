@@ -3,18 +3,18 @@
  */
 
 @interface _UIFocusEngineScrollAnimationDelegate : NSObject <CAAnimationDelegate> {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id /* block */)completionHandler;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (id)completionHandler;
+- (void)setCompletionHandler:(id)arg1;
 
 @end

@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)swoosh:(SKUIGallerySwooshViewController *)arg1 didChangePlaybackState:(int)arg2 forItemAtIndex:(int)arg3;
+- (void)swoosh:(SKUIGallerySwooshViewController *)arg1 didChangePlaybackState:(long long)arg2 forItemAtIndex:(long long)arg3;
 
 @end

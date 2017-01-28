@@ -4,34 +4,34 @@
 
 @interface KNAnimParameterGroupSavedPathElement : NSObject <NSCoding> {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _cp1;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _cp2;
-    unsigned int  _elementType;
+    unsigned long long  _elementType;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _toPoint;
 }
 
-@property (nonatomic) struct CGPoint { float x1; float x2; } cp1;
-@property (nonatomic) struct CGPoint { float x1; float x2; } cp2;
-@property (nonatomic) unsigned int elementType;
-@property (nonatomic) struct CGPoint { float x1; float x2; } toPoint;
+@property (nonatomic) struct CGPoint { double x1; double x2; } cp1;
+@property (nonatomic) struct CGPoint { double x1; double x2; } cp2;
+@property (nonatomic) unsigned long long elementType;
+@property (nonatomic) struct CGPoint { double x1; double x2; } toPoint;
 
-- (struct CGPoint { float x1; float x2; })cp1;
-- (struct CGPoint { float x1; float x2; })cp2;
-- (unsigned int)elementType;
+- (struct CGPoint { double x1; double x2; })cp1;
+- (struct CGPoint { double x1; double x2; })cp2;
+- (unsigned long long)elementType;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setCp1:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setCp2:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setElementType:(unsigned int)arg1;
-- (void)setToPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })toPoint;
+- (void)setCp1:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setCp2:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setElementType:(unsigned long long)arg1;
+- (void)setToPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })toPoint;
 
 @end

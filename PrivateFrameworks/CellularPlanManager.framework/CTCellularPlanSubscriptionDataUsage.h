@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSString *dataCategory;
 @property (nonatomic, readonly) double dataUsed;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)dataCapacity;

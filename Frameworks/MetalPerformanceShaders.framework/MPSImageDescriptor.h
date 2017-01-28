@@ -3,53 +3,53 @@
  */
 
 @interface MPSImageDescriptor : NSObject {
-    unsigned int  _cacheMode;
-    unsigned int  _channelFormat;
-    unsigned int  _cpuCacheMode;
-    unsigned int  _featureChannels;
-    unsigned int  _featureChannelsLayout;
-    unsigned int  _height;
-    unsigned int  _numberOfImages;
-    unsigned int  _storageMode;
-    unsigned int  _usage;
-    unsigned int  _width;
+    unsigned long long  _cacheMode;
+    unsigned long long  _channelFormat;
+    unsigned long long  _cpuCacheMode;
+    unsigned long long  _featureChannels;
+    unsigned long long  _featureChannelsLayout;
+    unsigned long long  _height;
+    unsigned long long  _numberOfImages;
+    unsigned long long  _storageMode;
+    unsigned long long  _usage;
+    unsigned long long  _width;
 }
 
-@property (nonatomic) unsigned int channelFormat;
-@property (nonatomic) unsigned int cpuCacheMode;
-@property (nonatomic) unsigned int featureChannels;
-@property (nonatomic) unsigned int featureChannelsLayout;
-@property (nonatomic) unsigned int height;
-@property (nonatomic) unsigned int numberOfImages;
-@property (nonatomic, readonly) unsigned int pixelFormat;
-@property (nonatomic) unsigned int storageMode;
-@property (nonatomic) unsigned int usage;
-@property (nonatomic) unsigned int width;
+@property (nonatomic) unsigned long long channelFormat;
+@property (nonatomic) unsigned long long cpuCacheMode;
+@property (nonatomic) unsigned long long featureChannels;
+@property (nonatomic) unsigned long long featureChannelsLayout;
+@property (nonatomic) unsigned long long height;
+@property (nonatomic) unsigned long long numberOfImages;
+@property (nonatomic, readonly) unsigned long long pixelFormat;
+@property (nonatomic) unsigned long long storageMode;
+@property (nonatomic) unsigned long long usage;
+@property (nonatomic) unsigned long long width;
 
-+ (id)imageDescriptorWithChannelFormat:(unsigned int)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3 featureChannels:(unsigned int)arg4;
-+ (id)imageDescriptorWithChannelFormat:(unsigned int)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3 featureChannels:(unsigned int)arg4 numberOfImages:(unsigned int)arg5 usage:(unsigned int)arg6;
++ (id)imageDescriptorWithChannelFormat:(unsigned long long)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 featureChannels:(unsigned long long)arg4;
++ (id)imageDescriptorWithChannelFormat:(unsigned long long)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 featureChannels:(unsigned long long)arg4 numberOfImages:(unsigned long long)arg5 usage:(unsigned long long)arg6;
 
-- (unsigned int)channelFormat;
-- (unsigned int)cpuCacheMode;
+- (unsigned long long)channelFormat;
+- (unsigned long long)cpuCacheMode;
 - (id)debugDescription;
-- (unsigned int)featureChannels;
-- (unsigned int)featureChannelsLayout;
-- (unsigned int)height;
+- (unsigned long long)featureChannels;
+- (unsigned long long)featureChannelsLayout;
+- (unsigned long long)height;
 - (id)init;
 - (id)newTextureDescriptor;
-- (unsigned int)numberOfImages;
-- (unsigned int)pixelFormat;
-- (void)setChannelFormat:(unsigned int)arg1;
-- (void)setCpuCacheMode:(unsigned int)arg1;
-- (void)setFeatureChannels:(unsigned int)arg1;
-- (void)setFeatureChannelsLayout:(unsigned int)arg1;
-- (void)setHeight:(unsigned int)arg1;
-- (void)setNumberOfImages:(unsigned int)arg1;
-- (void)setStorageMode:(unsigned int)arg1;
-- (void)setUsage:(unsigned int)arg1;
-- (void)setWidth:(unsigned int)arg1;
-- (unsigned int)storageMode;
-- (unsigned int)usage;
-- (unsigned int)width;
+- (unsigned long long)numberOfImages;
+- (unsigned long long)pixelFormat;
+- (void)setChannelFormat:(unsigned long long)arg1;
+- (void)setCpuCacheMode:(unsigned long long)arg1;
+- (void)setFeatureChannels:(unsigned long long)arg1;
+- (void)setFeatureChannelsLayout:(unsigned long long)arg1;
+- (void)setHeight:(unsigned long long)arg1;
+- (void)setNumberOfImages:(unsigned long long)arg1;
+- (void)setStorageMode:(unsigned long long)arg1;
+- (void)setUsage:(unsigned long long)arg1;
+- (void)setWidth:(unsigned long long)arg1;
+- (unsigned long long)storageMode;
+- (unsigned long long)usage;
+- (unsigned long long)width;
 
 @end

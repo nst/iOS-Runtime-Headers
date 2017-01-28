@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (void)sendRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)sendRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)serverConnection;
 - (id)serviceThrottlingOperationQueue;
 - (void)setServerConnection:(id)arg1;

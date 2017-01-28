@@ -8,7 +8,7 @@
 }
 
 - (id)addAnnotation:(int)arg1;
-- (id)addAnnotation:(int)arg1 atIndex:(unsigned int)arg2;
+- (id)addAnnotation:(int)arg1 atIndex:(unsigned long long)arg2;
 - (id)addBookmark;
 - (id)addBookmark:(id)arg1 type:(int)arg2;
 - (id)addCharacterRun;
@@ -29,17 +29,17 @@
 - (id)description;
 - (id)initWithText:(id)arg1;
 - (id)initWithText:(id)arg1 string:(id)arg2;
-- (void)insertRun:(id)arg1 atIndex:(unsigned int)arg2;
-- (BOOL)isContinuationOf:(id)arg1;
-- (BOOL)isEmpty;
-- (BOOL)isTextFrame;
+- (void)insertRun:(id)arg1 atIndex:(unsigned long long)arg2;
+- (bool)isContinuationOf:(id)arg1;
+- (bool)isEmpty;
+- (bool)isTextFrame;
 - (float)maxReflectionDistance;
 - (id)newRunIterator;
 - (id)properties;
 - (void)removeLastCharacter:(unsigned short)arg1;
 - (void)removeRun:(id)arg1;
-- (id)runAt:(unsigned int)arg1;
-- (unsigned int)runCount;
+- (id)runAt:(unsigned long long)arg1;
+- (unsigned long long)runCount;
 - (id)runIterator;
 - (id)runs;
 

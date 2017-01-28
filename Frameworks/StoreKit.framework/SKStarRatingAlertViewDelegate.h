@@ -4,18 +4,18 @@
 
 @interface SKStarRatingAlertViewDelegate : NSObject <UIAlertViewDelegate> {
     SKStarRatingAlertView * _alertView;
-    id /* block */  _completionBlock;
+    id  _completionBlock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 willDismissWithButtonIndex:(long long)arg2;
 - (void)alertViewCancel:(id)arg1;
-- (BOOL)alertViewShouldEnableFirstOtherButton:(id)arg1;
+- (bool)alertViewShouldEnableFirstOtherButton:(id)arg1;
 - (void)dealloc;
-- (void)showAlertView:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)showAlertView:(id)arg1 withCompletionBlock:(id)arg2;
 
 @end

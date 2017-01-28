@@ -5,7 +5,7 @@
 
 @optional
 
-- (void)interactionProgress:(UIInteractionProgress *)arg1 didEnd:(BOOL)arg2;
+- (void)interactionProgress:(UIInteractionProgress *)arg1 didEnd:(bool)arg2;
 - (void)interactionProgressDidUpdate:(UIInteractionProgress *)arg1;
 
 @end

@@ -7,22 +7,22 @@
     _DECCachedConsumer * _cachedConsumer;
     CPLRUDictionary * _cachedResultImages;
     NSArray * _deferredResults;
-    BOOL  _isDeferredQUeryComplete;
+    bool  _isDeferredQUeryComplete;
     NSOperationQueue * _loadOperationQueue;
     NSOperationQueue * _prefetchOperationQueue;
-    BOOL  _springBoardIsActive;
+    bool  _springBoardIsActive;
     NSOperation * _waitOperation;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL springBoardIsActive;
+@property (readonly) unsigned long long hash;
+@property bool springBoardIsActive;
 @property (readonly) Class superclass;
 
 + (void)activate;
 + (void)deactivate;
-+ (void)retrieveFirstTimeExperienceTextWithReply:(id /* block */)arg1;
++ (void)retrieveFirstTimeExperienceTextWithReply:(id)arg1;
 + (id)sharedFullZWKInstance;
 + (id)sharedGeneralInstance;
 + (id)sharedInstance;
@@ -31,8 +31,8 @@
 - (void).cxx_destruct;
 - (id)_customImageForPath:(id)arg1;
 - (void)activate;
-- (void)cachedZKWAvailable:(BOOL)arg1;
-- (int)contentFilters;
+- (void)cachedZKWAvailable:(bool)arg1;
+- (long long)contentFilters;
 - (id)createZKWSearchQuery;
 - (void)deactivate;
 - (void)dealloc;
@@ -40,10 +40,10 @@
 - (void)handleOptionsForNewSections:(id)arg1;
 - (id)initForZKWLevel:(int)arg1;
 - (void)invalidateCurrentQuery;
-- (BOOL)isWideScreen;
-- (BOOL)itemInLibrary:(id)arg1;
-- (void)setSpringBoardIsActive:(BOOL)arg1;
-- (BOOL)springBoardIsActive;
-- (void)transferZKWResults:(id)arg1 wasSimilar:(BOOL)arg2;
+- (bool)isWideScreen;
+- (bool)itemInLibrary:(id)arg1;
+- (void)setSpringBoardIsActive:(bool)arg1;
+- (bool)springBoardIsActive;
+- (void)transferZKWResults:(id)arg1 wasSimilar:(bool)arg2;
 
 @end

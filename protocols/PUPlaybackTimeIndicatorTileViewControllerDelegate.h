@@ -5,6 +5,6 @@
 
 @optional
 
-- (BOOL)playbackTimeIndicatorTileViewControllerCanFlashIndicator:(PUPlaybackTimeIndicatorTileViewController *)arg1;
+- (bool)playbackTimeIndicatorTileViewControllerCanFlashIndicator:(PUPlaybackTimeIndicatorTileViewController *)arg1;
 
 @end

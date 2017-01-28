@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)actionsReversed;
-- (void)setActionsReversed:(BOOL)arg1;
+- (bool)actionsReversed;
+- (void)setActionsReversed:(bool)arg1;
 - (void)startTrackingRolloverWithGestureRecognizer:(UIGestureRecognizer *)arg1;
 - (void)stopTrackingRollover;
 

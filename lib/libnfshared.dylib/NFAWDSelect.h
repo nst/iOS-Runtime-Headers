@@ -9,19 +9,19 @@
 @property (nonatomic, retain) NSData *aid;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AWDNFCSEAIDSelectEvent *metric;
 @property (readonly) Class superclass;
 
 - (id)aid;
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (id)metric;
 - (void)setAid:(id)arg1;
 - (void)setMetric:(id)arg1;
-- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (unsigned long long)updateTransactionStateInfoWithPreviousState:(unsigned long long)arg1;
 - (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 
 @end

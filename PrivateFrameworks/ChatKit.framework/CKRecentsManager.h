@@ -4,8 +4,8 @@
 
 @interface CKRecentsManager : NSObject
 
-+ (void)loadRecentHandwritings:(id /* block */)arg1;
-+ (void)loadRecentHandwritingsAndStickers:(id /* block */)arg1;
-+ (void)loadRecentStickers:(id /* block */)arg1;
++ (void)loadRecentHandwritings:(id)arg1;
++ (void)loadRecentHandwritingsAndStickers:(id)arg1;
++ (void)loadRecentStickers:(id)arg1;
 
 @end

@@ -9,11 +9,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKSMSComposeRemoteViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)exportedInterface;
-+ (id)requestViewControllerWithConnectionHandler:(id /* block */)arg1;
++ (id)requestViewControllerWithConnectionHandler:(id)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
@@ -24,7 +24,7 @@
 - (void)smsComposeControllerCancelled;
 - (void)smsComposeControllerDataInserted;
 - (void)smsComposeControllerSendStartedWithText:(id)arg1;
-- (void)smsComposeControllerShouldSendMessageWithText:(id)arg1 toRecipients:(id)arg2 completion:(id /* block */)arg3;
+- (void)smsComposeControllerShouldSendMessageWithText:(id)arg1 toRecipients:(id)arg2 completion:(id)arg3;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

@@ -4,11 +4,11 @@
 
 @interface CKScheduledUpdater : CKManualUpdater {
     NSCountedSet * _holdingUpdatesKeys;
-    BOOL  _updateSynchronouslyIfPossible;
+    bool  _updateSynchronouslyIfPossible;
 }
 
 @property (nonatomic, retain) NSCountedSet *holdingUpdatesKeys;
-@property (nonatomic) BOOL updateSynchronouslyIfPossible;
+@property (nonatomic) bool updateSynchronouslyIfPossible;
 
 - (void).cxx_destruct;
 - (void)beginHoldingUpdatesForKey:(id)arg1;
@@ -18,11 +18,11 @@
 - (id)holdingUpdatesKeys;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)invalidate;
-- (BOOL)isHoldingUpdates;
+- (bool)isHoldingUpdates;
 - (void)setHoldingUpdatesKeys:(id)arg1;
 - (void)setNeedsUpdate;
-- (void)setUpdateSynchronouslyIfPossible:(BOOL)arg1;
+- (void)setUpdateSynchronouslyIfPossible:(bool)arg1;
 - (void)updateIfNeeded;
-- (BOOL)updateSynchronouslyIfPossible;
+- (bool)updateSynchronouslyIfPossible;
 
 @end

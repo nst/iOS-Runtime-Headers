@@ -26,11 +26,11 @@
 - (id)initWithClientContext:(id)arg1;
 - (id)operationQueue;
 - (id)pendingCompletionBlocks;
-- (id)requestOperationWithPageURL:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)requestOperationWithPageURL:(id)arg1 completionBlock:(id)arg2;
 - (void)requestTrendingSearchPageWithURL:(id)arg1;
 - (id)runningRequestOperation;
 - (void)setCachedSearchPage:(id)arg1;
 - (void)setRunningRequestOperation:(id)arg1;
-- (void)trendingSearchPageWithURL:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)trendingSearchPageWithURL:(id)arg1 completionBlock:(id)arg2;
 
 @end

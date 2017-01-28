@@ -4,35 +4,35 @@
 
 @interface TSDMutableImageAdjustments : TSDImageAdjustments
 
-@property (nonatomic) float bottomLevel;
-@property (nonatomic) float contrast;
-@property (nonatomic) float denoise;
-@property (nonatomic) BOOL enhance;
-@property (nonatomic) float exposure;
-@property (nonatomic) float gamma;
-@property (nonatomic) float highlights;
-@property (nonatomic) BOOL representsSageAdjustments;
-@property (nonatomic) float saturation;
-@property (nonatomic) float shadows;
-@property (nonatomic) float sharpness;
-@property (nonatomic) float temperature;
-@property (nonatomic) float tint;
-@property (nonatomic) float topLevel;
+@property (nonatomic) double bottomLevel;
+@property (nonatomic) double contrast;
+@property (nonatomic) double denoise;
+@property (nonatomic) bool enhance;
+@property (nonatomic) double exposure;
+@property (nonatomic) double gamma;
+@property (nonatomic) double highlights;
+@property (nonatomic) bool representsSageAdjustments;
+@property (nonatomic) double saturation;
+@property (nonatomic) double shadows;
+@property (nonatomic) double sharpness;
+@property (nonatomic) double temperature;
+@property (nonatomic) double tint;
+@property (nonatomic) double topLevel;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setBottomLevel:(float)arg1;
-- (void)setContrast:(float)arg1;
-- (void)setDenoise:(float)arg1;
-- (void)setEnhance:(BOOL)arg1;
-- (void)setExposure:(float)arg1;
-- (void)setGamma:(float)arg1;
-- (void)setHighlights:(float)arg1;
-- (void)setRepresentsSageAdjustments:(BOOL)arg1;
-- (void)setSaturation:(float)arg1;
-- (void)setShadows:(float)arg1;
-- (void)setSharpness:(float)arg1;
-- (void)setTemperature:(float)arg1;
-- (void)setTint:(float)arg1;
-- (void)setTopLevel:(float)arg1;
+- (void)setBottomLevel:(double)arg1;
+- (void)setContrast:(double)arg1;
+- (void)setDenoise:(double)arg1;
+- (void)setEnhance:(bool)arg1;
+- (void)setExposure:(double)arg1;
+- (void)setGamma:(double)arg1;
+- (void)setHighlights:(double)arg1;
+- (void)setRepresentsSageAdjustments:(bool)arg1;
+- (void)setSaturation:(double)arg1;
+- (void)setShadows:(double)arg1;
+- (void)setSharpness:(double)arg1;
+- (void)setTemperature:(double)arg1;
+- (void)setTint:(double)arg1;
+- (void)setTopLevel:(double)arg1;
 
 @end

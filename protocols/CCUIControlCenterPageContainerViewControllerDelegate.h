@@ -8,7 +8,7 @@
 - (void)containerViewController:(CCUIControlCenterPageContainerViewController *)arg1 backdropViewDidUpdate:(_UIBackdropView *)arg2;
 - (void)containerViewControllerWantsDismissal:(CCUIControlCenterPageContainerViewController *)arg1;
 - (<CCUIControlCenterSystemAgent> *)controlCenterSystemAgent;
-- (int)layoutStyle;
+- (long long)layoutStyle;
 - (void)visibilityPreferenceChangedForContainerViewController:(CCUIControlCenterPageContainerViewController *)arg1;
 
 @end

@@ -11,21 +11,21 @@
 @property (nonatomic, retain) NSDictionary *voiceClassesMap;
 @property (nonatomic, retain) NSMutableDictionary *voiceNameMap;
 
-+ (BOOL)inUnitTestMode;
-+ (void)setInUnitTestMode:(BOOL)arg1;
++ (bool)inUnitTestMode;
++ (void)setInUnitTestMode:(bool)arg1;
 + (id)sharedInstance;
-+ (BOOL)supportsAlex;
-+ (BOOL)supportsSiri;
++ (bool)supportsAlex;
++ (bool)supportsSiri;
 
 - (id)_siriBaseIdentifierFromIdentifier:(id)arg1;
-- (id)_siriIdentifierFromBaseIdentifier:(id)arg1 language:(id)arg2 quality:(int)arg3;
-- (BOOL)_siriSupportsLanguage:(id)arg1;
+- (id)_siriIdentifierFromBaseIdentifier:(id)arg1 language:(id)arg2 quality:(long long)arg3;
+- (bool)_siriSupportsLanguage:(id)arg1;
 - (id)alternativeVoiceIdentifiersForLangauge:(id)arg1;
 - (void)dealloc;
-- (BOOL)isAlexAvailableForLanguage:(id)arg1;
-- (BOOL)isAlternativeVoice:(id)arg1;
-- (BOOL)isAlternativeVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
-- (BOOL)isSiriVoiceIdentifier:(id)arg1;
+- (bool)isAlexAvailableForLanguage:(id)arg1;
+- (bool)isAlternativeVoice:(id)arg1;
+- (bool)isAlternativeVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
+- (bool)isSiriVoiceIdentifier:(id)arg1;
 - (id)nameForVoiceIdentifier:(id)arg1;
 - (void)setVoiceClassesMap:(id)arg1;
 - (void)setVoiceNameMap:(id)arg1;

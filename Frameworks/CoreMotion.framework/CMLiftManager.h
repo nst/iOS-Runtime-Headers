@@ -9,7 +9,7 @@
 @property (nonatomic, readonly) CMLiftManagerInternal *_internal;
 @property (nonatomic) <CMLiftManagerDelegate> *delegate;
 
-+ (BOOL)isAvailable;
++ (bool)isAvailable;
 
 - (id)_internal;
 - (void)dealloc;

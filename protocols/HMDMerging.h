@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)mergeObject:(id)arg1;
+- (bool)mergeObject:(id)arg1;
 
 @end

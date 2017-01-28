@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *etag;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <NSSecureCoding> *itemID;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*pcs;
 @property (nonatomic, copy) NSData *pcsData;
@@ -20,7 +20,7 @@
 @property (readonly) Class superclass;
 
 + (id)newFromSqliteValue:(struct Mem { }*)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

@@ -4,9 +4,9 @@
 
 @interface UIDictationATVLinearView : UIDictationView
 
-- (BOOL)drawsOwnBackground;
+- (bool)drawsOwnBackground;
 - (void)finishReturnToKeyboard;
-- (BOOL)isShowing;
+- (bool)isShowing;
 - (void)layoutSubviews;
 - (void)removeFromSuperview;
 - (void)returnToKeyboard;

@@ -4,54 +4,54 @@
 
 @interface FUFlightLeg : NSObject <NSCopying, NSSecureCoding> {
     NSString * _aircraftcode;
-    float  _altitude;
+    double  _altitude;
     FUFlightStep * _arrival;
     FUFlightStep * _departure;
     double  _duration;
-    float  _heading;
+    double  _heading;
     struct CLLocationCoordinate2D { 
         double latitude; 
         double longitude; 
     }  _location;
-    float  _speed;
-    int  _status;
+    double  _speed;
+    long long  _status;
 }
 
 @property (retain) NSString *aircraftcode;
-@property float altitude;
+@property double altitude;
 @property (retain) FUFlightStep *arrival;
 @property (retain) FUFlightStep *departure;
 @property double duration;
-@property float heading;
+@property double heading;
 @property struct CLLocationCoordinate2D { double x1; double x2; } location;
-@property float speed;
-@property int status;
+@property double speed;
+@property long long status;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)aircraftcode;
-- (float)altitude;
+- (double)altitude;
 - (id)arrival;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)departure;
 - (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
-- (float)heading;
+- (double)heading;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (struct CLLocationCoordinate2D { double x1; double x2; })location;
 - (void)setAircraftcode:(id)arg1;
-- (void)setAltitude:(float)arg1;
+- (void)setAltitude:(double)arg1;
 - (void)setArrival:(id)arg1;
 - (void)setDeparture:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setHeading:(float)arg1;
+- (void)setHeading:(double)arg1;
 - (void)setLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
-- (void)setSpeed:(float)arg1;
-- (void)setStatus:(int)arg1;
-- (float)speed;
-- (int)status;
+- (void)setSpeed:(double)arg1;
+- (void)setStatus:(long long)arg1;
+- (double)speed;
+- (long long)status;
 
 @end

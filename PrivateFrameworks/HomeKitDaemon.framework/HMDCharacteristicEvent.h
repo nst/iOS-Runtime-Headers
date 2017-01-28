@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) NSNumber *serviceID;
 
 + (id)characteristicEventWithDictionary:(id)arg1 home:(id)arg2 error:(id*)arg3;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessoryUUID;

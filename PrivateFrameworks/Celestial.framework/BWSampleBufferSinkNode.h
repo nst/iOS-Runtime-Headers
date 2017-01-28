@@ -3,20 +3,20 @@
  */
 
 @interface BWSampleBufferSinkNode : BWSinkNode {
-    id /* block */  _sampleBufferAvailableHandler;
+    id  _sampleBufferAvailableHandler;
 }
 
-@property (nonatomic, copy) id /* block */ sampleBufferAvailableHandler;
+@property (nonatomic, copy) id sampleBufferAvailableHandler;
 
 + (void)initialize;
 
 - (void)dealloc;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
 - (id)init;
-- (id)initWithInputMediaType:(unsigned long)arg1;
+- (id)initWithInputMediaType:(unsigned int)arg1;
 - (id)nodeSubType;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (id /* block */)sampleBufferAvailableHandler;
-- (void)setSampleBufferAvailableHandler:(id /* block */)arg1;
+- (id)sampleBufferAvailableHandler;
+- (void)setSampleBufferAvailableHandler:(id)arg1;
 
 @end

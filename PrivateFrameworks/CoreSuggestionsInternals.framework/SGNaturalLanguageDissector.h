@@ -6,7 +6,7 @@
     NSMutableDictionary * _conversations;
 }
 
-+ (BOOL)allowNaturalLanguageDissector;
++ (bool)allowNaturalLanguageDissector;
 + (id)ipsosMessageWithEntity:(id)arg1;
 
 - (void).cxx_destruct;

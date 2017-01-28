@@ -4,17 +4,17 @@
 
 @interface SGQPWordBoundaries : NSObject {
     struct vector<bool, std::__1::allocator<bool> > { 
-        unsigned long *__begin_; 
-        unsigned int __size_; 
+        unsigned long long *__begin_; 
+        unsigned long long __size_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { 
-            unsigned long __first_; 
+            unsigned long long __first_; 
         } __cap_alloc_; 
     }  _left;
     struct vector<bool, std::__1::allocator<bool> > { 
-        unsigned long *__begin_; 
-        unsigned int __size_; 
+        unsigned long long *__begin_; 
+        unsigned long long __size_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { 
-            unsigned long __first_; 
+            unsigned long long __first_; 
         } __cap_alloc_; 
     }  _right;
 }
@@ -22,6 +22,6 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)initWithString:(id)arg1;
-- (BOOL)isWordAnchored:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (bool)isWordAnchored:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

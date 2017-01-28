@@ -5,20 +5,20 @@
 @interface MPModelLibraryDeleteEntityChangeRequestOperation : MPAsyncOperation {
     NSOperationQueue * _operationQueue;
     MPModelLibraryDeleteEntityChangeRequest * _request;
-    id /* block */  _responseHandler;
+    id  _responseHandler;
 }
 
 @property (nonatomic, copy) MPModelLibraryDeleteEntityChangeRequest *request;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, copy) id responseHandler;
 
 - (void).cxx_destruct;
 - (void)_deleteItems:(id)arg1 withLibrary:(id)arg2;
 - (void)_handlePersistentID:(long long)arg1 modelClass:(Class)arg2 mediaLibrary:(id)arg3;
-- (BOOL)_isCloudLibraryEnabled;
+- (bool)_isCloudLibraryEnabled;
 - (void)execute;
 - (id)request;
-- (id /* block */)responseHandler;
+- (id)responseHandler;
 - (void)setRequest:(id)arg1;
-- (void)setResponseHandler:(id /* block */)arg1;
+- (void)setResponseHandler:(id)arg1;
 
 @end

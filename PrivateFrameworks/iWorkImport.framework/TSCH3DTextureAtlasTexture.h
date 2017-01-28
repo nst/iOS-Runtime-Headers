@@ -3,9 +3,9 @@
  */
 
 @interface TSCH3DTextureAtlasTexture : NSObject {
-    int  mCurrentheight;
-    int  mCurrentxpos;
-    int  mCurrentypos;
+    long long  mCurrentheight;
+    long long  mCurrentxpos;
+    long long  mCurrentypos;
     NSMutableArray * mLabels;
     struct vector<glm::detail::tvec2<int>, std::__1::allocator<glm::detail::tvec2<int> > > { 
         struct tvec2<int> {} *__begin_; 

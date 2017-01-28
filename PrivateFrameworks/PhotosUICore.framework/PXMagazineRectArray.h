@@ -3,24 +3,24 @@
  */
 
 @interface PXMagazineRectArray : NSObject <NSCopying> {
-    unsigned int  _currentIndex;
-    struct PXMagazineRect { struct PXMagazineOrigin { int x_1_1_1; int x_1_1_2; } x1; struct PXMagazineSize { int x_2_1_1; int x_2_1_2; } x2; } * _rects;
-    float  _score;
-    unsigned int  _size;
+    unsigned long long  _currentIndex;
+    struct PXMagazineRect { struct PXMagazineOrigin { long long x_1_1_1; long long x_1_1_2; } x1; struct PXMagazineSize { long long x_2_1_1; long long x_2_1_2; } x2; } * _rects;
+    double  _score;
+    unsigned long long  _size;
 }
 
-@property (nonatomic, readonly) unsigned int count;
-@property (nonatomic) float score;
+@property (nonatomic, readonly) unsigned long long count;
+@property (nonatomic) double score;
 
-- (void)addRect:(struct PXMagazineRect { struct PXMagazineOrigin { int x_1_1_1; int x_1_1_2; } x1; struct PXMagazineSize { int x_2_1_1; int x_2_1_2; } x2; })arg1;
+- (void)addRect:(struct PXMagazineRect { struct PXMagazineOrigin { long long x_1_1_1; long long x_1_1_2; } x1; struct PXMagazineSize { long long x_2_1_1; long long x_2_1_2; } x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (id)initWithSize:(unsigned int)arg1;
-- (struct PXMagazineRect { struct PXMagazineOrigin { int x_1_1_1; int x_1_1_2; } x1; struct PXMagazineSize { int x_2_1_1; int x_2_1_2; } x2; })rectAtIndex:(unsigned int)arg1;
+- (id)initWithSize:(unsigned long long)arg1;
+- (struct PXMagazineRect { struct PXMagazineOrigin { long long x_1_1_1; long long x_1_1_2; } x1; struct PXMagazineSize { long long x_2_1_1; long long x_2_1_2; } x2; })rectAtIndex:(unsigned long long)arg1;
 - (void)removeLastRect;
-- (unsigned int)rowsUsed;
-- (float)score;
-- (void)setScore:(float)arg1;
+- (unsigned long long)rowsUsed;
+- (double)score;
+- (void)setScore:(double)arg1;
 
 @end

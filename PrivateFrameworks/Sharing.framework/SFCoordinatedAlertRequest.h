@@ -3,25 +3,25 @@
  */
 
 @interface SFCoordinatedAlertRequest : NSObject <NSSecureCoding, SFXPCInterface> {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
-    BOOL  _invalidateCalled;
-    BOOL  _invalidateDone;
-    id /* block */  _invalidationHandler;
-    BOOL  _started;
+    bool  _invalidateCalled;
+    bool  _invalidateDone;
+    id  _invalidationHandler;
+    bool  _started;
     double  _timeout;
     NSObject<OS_dispatch_source> * _timeoutTimer;
-    int  _type;
+    long long  _type;
     NSXPCConnection * _xpcCnx;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *dispatchQueue;
-@property (nonatomic, copy) id /* block */ invalidationHandler;
+@property (nonatomic, copy) id invalidationHandler;
 @property (nonatomic) double timeout;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_ensureXPCStarted;
@@ -30,21 +30,21 @@
 - (void)_invalidated;
 - (void)_start;
 - (void)_timeoutFired;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)dealloc;
 - (id)dispatchQueue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)invalidate;
-- (id /* block */)invalidationHandler;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (id)invalidationHandler;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
-- (void)setInvalidationHandler:(id /* block */)arg1;
+- (void)setInvalidationHandler:(id)arg1;
 - (void)setTimeout:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)start;
 - (double)timeout;
-- (int)type;
+- (long long)type;
 
 @end

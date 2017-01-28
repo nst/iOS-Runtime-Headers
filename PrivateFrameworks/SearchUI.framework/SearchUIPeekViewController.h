@@ -8,7 +8,7 @@
 
 @property (retain) SFSearchResult *result;
 
-+ (id)peekViewControllerForResult:(id)arg1 style:(unsigned int)arg2;
++ (id)peekViewControllerForResult:(id)arg1 style:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
 - (id)initWithResult:(id)arg1;

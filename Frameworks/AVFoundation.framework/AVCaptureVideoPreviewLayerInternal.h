@@ -3,40 +3,40 @@
  */
 
 @interface AVCaptureVideoPreviewLayerInternal : NSObject {
-    BOOL  automaticallyAdjustsMirroring;
+    bool  automaticallyAdjustsMirroring;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  captureDeviceTransform;
     int  changeSeed;
-    BOOL  chromaNoiseReductionEnabled;
+    bool  chromaNoiseReductionEnabled;
     AVCaptureConnection * connection;
-    BOOL  disableActions;
+    bool  disableActions;
     struct OpaqueFigCaptureSession { } * figCaptureSession;
     NSString * gravity;
-    BOOL  isPaused;
-    BOOL  isPresentationLayer;
-    BOOL  mirrored;
-    int  orientation;
-    float  previewRotationDegrees;
+    bool  isPaused;
+    bool  isPresentationLayer;
+    bool  mirrored;
+    long long  orientation;
+    double  previewRotationDegrees;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  previewSize;
-    float  rollAdjustment;
+    double  rollAdjustment;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  sensorSize;
     NSString * sensorToPreviewVTScalingMode;
     AVCaptureSession * session;
     NSString * sinkID;
     CALayer * sublayer;
-    BOOL  visible;
+    bool  visible;
     AVWeakReference * weakReference;
 }
 

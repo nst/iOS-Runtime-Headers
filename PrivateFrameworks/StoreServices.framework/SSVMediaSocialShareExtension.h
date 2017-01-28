@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)extensionIdentifier;
-- (void)getVisibilityWithCompletionBlock:(id /* block */)arg1;
+- (void)getVisibilityWithCompletionBlock:(id)arg1;
 - (id)init;
 
 @end

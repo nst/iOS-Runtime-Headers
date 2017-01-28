@@ -10,6 +10,6 @@
 
 @optional
 
-+ (BOOL)supportsConcurrentLoadingOfEntityProperties;
++ (bool)supportsConcurrentLoadingOfEntityProperties;
 
 @end

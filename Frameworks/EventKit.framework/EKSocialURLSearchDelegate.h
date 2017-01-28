@@ -3,17 +3,17 @@
  */
 
 @interface EKSocialURLSearchDelegate : NSObject <ABSearchOperationDelegate> {
-    id /* block */  _searchCompleteHandler;
+    id  _searchCompleteHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_completeWithRecord:(void*)arg1;
-- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(bool)arg3;
+- (void)setCompletionHandler:(id)arg1;
 
 @end

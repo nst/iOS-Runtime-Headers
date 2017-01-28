@@ -3,18 +3,18 @@
  */
 
 @interface CATTaskRequest : NSObject <NSSecureCoding> {
-    BOOL  _handlesNotifications;
+    bool  _handlesNotifications;
 }
 
-@property (nonatomic) BOOL handlesNotifications;
+@property (nonatomic) bool handlesNotifications;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 + (id)whitelistedNotificationNames;
 
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)handlesNotifications;
+- (bool)handlesNotifications;
 - (id)initWithCoder:(id)arg1;
-- (void)setHandlesNotifications:(BOOL)arg1;
+- (void)setHandlesNotifications:(bool)arg1;
 
 @end

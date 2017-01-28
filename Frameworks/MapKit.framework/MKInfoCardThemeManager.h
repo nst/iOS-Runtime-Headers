@@ -6,10 +6,10 @@
     NSDictionary * _colors;
     UIColor * _currentTintColor;
     NSPointerArray * _otherListeners;
-    unsigned int  _themeType;
-    BOOL  _themeWasExplicitySet;
-    id /* block */  _tintColorProvider;
-    id /* block */  _titleFontProvider;
+    unsigned long long  _themeType;
+    bool  _themeWasExplicitySet;
+    id  _tintColorProvider;
+    id  _titleFontProvider;
     NSPointerArray * _viewControllerListeners;
     NSPointerArray * _viewListeners;
 }
@@ -20,10 +20,10 @@
 @property (nonatomic, readonly) UIFont *boldBodyFont;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) UIColor *highlightedRowColor;
-@property (nonatomic, readonly) BOOL isDarkTheme;
-@property (nonatomic, readonly) BOOL isVibrantTheme;
+@property (nonatomic, readonly) bool isDarkTheme;
+@property (nonatomic, readonly) bool isVibrantTheme;
 @property (nonatomic, readonly) UIFont *largeTitleFont;
 @property (nonatomic, readonly) UIColor *lightTextColor;
 @property (nonatomic, readonly) UIFont *mediumBodyFont;
@@ -34,28 +34,28 @@
 @property (nonatomic, readonly) UIFont *smallAttributionFont;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIColor *textColor;
-@property (nonatomic, readonly) unsigned int themeType;
+@property (nonatomic, readonly) unsigned long long themeType;
 @property (nonatomic, readonly) UIColor *tintColor;
 @property (nonatomic, readonly) UIFont *titleFont;
 
-+ (id)_currentTheme:(unsigned int)arg1;
-+ (BOOL)_shouldAutoSwitchTheme;
++ (id)_currentTheme:(unsigned long long)arg1;
++ (bool)_shouldAutoSwitchTheme;
 + (void)addThemeChangedListener:(id)arg1;
 + (id)currentTheme;
-+ (void)setTheme:(unsigned int)arg1;
-+ (void)setTintColorProvider:(id /* block */)arg1;
-+ (void)setTitleFontProvider:(id /* block */)arg1;
-+ (id)themeWithThemeType:(unsigned int)arg1;
++ (void)setTheme:(unsigned long long)arg1;
++ (void)setTintColorProvider:(id)arg1;
++ (void)setTitleFontProvider:(id)arg1;
++ (id)themeWithThemeType:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_addThemeChangedListener:(id)arg1;
-- (unsigned int)_currentSystemTheme;
-- (id)_initWithThemeType:(unsigned int)arg1;
+- (unsigned long long)_currentSystemTheme;
+- (id)_initWithThemeType:(unsigned long long)arg1;
 - (void)_notifyAllListenersOfThemeChange:(id)arg1 visitedSet:(id)arg2 subListenerMethod:(int (*)arg3 subListenerSelector:(SEL)arg4;
 - (void)_notifyAllListenersOfTintChange:(id)arg1 visitedSet:(id)arg2;
-- (void)_setTheme:(unsigned int)arg1;
-- (void)_setTintColorProvider:(id /* block */)arg1;
-- (void)_setTitleFontProvider:(id /* block */)arg1;
+- (void)_setTheme:(unsigned long long)arg1;
+- (void)_setTintColorProvider:(id)arg1;
+- (void)_setTitleFontProvider:(id)arg1;
 - (void)_tintColorDidChange;
 - (id)attributionFont;
 - (id)backgroundColor;
@@ -64,8 +64,8 @@
 - (id)highlightedRowColor;
 - (id)iconFontToMatch:(id)arg1;
 - (id)init;
-- (BOOL)isDarkTheme;
-- (BOOL)isVibrantTheme;
+- (bool)isDarkTheme;
+- (bool)isVibrantTheme;
 - (id)largeTitleFont;
 - (id)lightTextColor;
 - (id)mediumBodyFont;
@@ -75,7 +75,7 @@
 - (id)separatorLineColor;
 - (id)smallAttributionFont;
 - (id)textColor;
-- (unsigned int)themeType;
+- (unsigned long long)themeType;
 - (id)tintColor;
 - (id)titleFont;
 

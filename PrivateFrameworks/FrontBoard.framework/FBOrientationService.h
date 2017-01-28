@@ -9,7 +9,7 @@
 + (id)sharedInstance;
 
 - (id)init;
-- (void)noteInterfaceOrientationChanged:(int)arg1;
-- (void)noteInterfaceOrientationChanged:(int)arg1 animationSettings:(id)arg2 direction:(int)arg3;
+- (void)noteInterfaceOrientationChanged:(long long)arg1;
+- (void)noteInterfaceOrientationChanged:(long long)arg1 animationSettings:(id)arg2 direction:(long long)arg3;
 
 @end

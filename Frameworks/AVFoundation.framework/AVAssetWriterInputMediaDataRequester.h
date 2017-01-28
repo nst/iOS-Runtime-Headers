@@ -4,7 +4,7 @@
 
 @interface AVAssetWriterInputMediaDataRequester : NSObject {
     NSObject<OS_dispatch_queue> * _ivarAccessQueue;
-    id /* block */  _requestBlock;
+    id  _requestBlock;
     NSObject<OS_dispatch_queue> * _requestQueue;
     AVWeakReference * _weakReferenceToDelegate;
 }
@@ -17,7 +17,7 @@
 - (id)delegate;
 - (void)finalize;
 - (id)init;
-- (id)initWithRequestQueue:(id)arg1 requestBlock:(id /* block */)arg2;
+- (id)initWithRequestQueue:(id)arg1 requestBlock:(id)arg2;
 - (void)requestMediaDataIfNecessary;
 - (id)requestQueue;
 - (void)setDelegate:(id)arg1;

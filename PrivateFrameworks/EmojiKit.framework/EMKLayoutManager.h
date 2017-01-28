@@ -6,40 +6,40 @@
     NSMutableAttributedString * _attributes;
     UIColor * _currentColor;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _currentOffset;
-    float  _currentScale;
+    double  _currentScale;
     UIColor * _currentShadowColor;
-    BOOL  _emojiConversionActive;
-    BOOL  _emojiConversionEnabled;
+    bool  _emojiConversionActive;
+    bool  _emojiConversionEnabled;
     NSArray * _emojiConversionLanguages;
     EMKTextEnumerator * _enumerator;
     NSMutableData * _glyphIndexTable;
     EMKGlyphRippler * _rippler;
 }
 
-@property (getter=isEmojiConversionEnabled) BOOL emojiConversionEnabled;
+@property (getter=isEmojiConversionEnabled) bool emojiConversionEnabled;
 
 - (void).cxx_destruct;
 - (id)attributes;
-- (BOOL)convertGlyphIndex:(unsigned int)arg1 toAttributeRelativeGlyphIndex:(unsigned int*)arg2 numberOfAttributedGlyphs:(unsigned int*)arg3;
-- (void)drawAttributedGlyphsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (void)drawGlyphsForGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (bool)convertGlyphIndex:(unsigned long long)arg1 toAttributeRelativeGlyphIndex:(unsigned long long*)arg2 numberOfAttributedGlyphs:(unsigned long long*)arg3;
+- (void)drawAttributedGlyphsForGlyphRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (void)drawGlyphsForGlyphRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
 - (id)emojiConversionLanguages;
 - (void)flushGlyphIndexTable;
 - (id)init;
-- (BOOL)isEmojiAnimationActive;
-- (BOOL)isEmojiConversionActive;
-- (BOOL)isEmojiConversionEnabled;
-- (void)processEditingForTextStorage:(id)arg1 edited:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 changeInLength:(int)arg4 invalidatedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
-- (void)setDelayFrames:(unsigned int)arg1;
-- (void)setEmojiConversionActive:(BOOL)arg1;
-- (void)setEmojiConversionEnabled:(BOOL)arg1;
+- (bool)isEmojiAnimationActive;
+- (bool)isEmojiConversionActive;
+- (bool)isEmojiConversionEnabled;
+- (void)processEditingForTextStorage:(id)arg1 edited:(unsigned long long)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3 changeInLength:(long long)arg4 invalidatedRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg5;
+- (void)setDelayFrames:(unsigned long long)arg1;
+- (void)setEmojiConversionActive:(bool)arg1;
+- (void)setEmojiConversionEnabled:(bool)arg1;
 - (void)setEmojiConversionLanguages:(id)arg1;
-- (void)setPostFrames:(unsigned int)arg1;
-- (void)setPreFrames:(unsigned int)arg1;
-- (void)showCGGlyphs:(const unsigned short*)arg1 positions:(const struct CGPoint { float x1; float x2; }*)arg2 count:(unsigned int)arg3 font:(id)arg4 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 attributes:(id)arg6 inContext:(struct CGContext { }*)arg7;
+- (void)setPostFrames:(unsigned long long)arg1;
+- (void)setPreFrames:(unsigned long long)arg1;
+- (void)showCGGlyphs:(const unsigned short*)arg1 positions:(const struct CGPoint { double x1; double x2; }*)arg2 count:(unsigned long long)arg3 font:(id)arg4 matrix:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg5 attributes:(id)arg6 inContext:(struct CGContext { }*)arg7;
 - (void)startOrStopTimer;
 
 @end

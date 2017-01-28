@@ -6,14 +6,14 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (readonly) Class superclass;
 
-- (BOOL)addQuarantinedRecordsWithIdentifier:(id)arg1 error:(id*)arg2;
-- (unsigned int)countOfQuarantinedRecords;
-- (BOOL)isRecordWithIdentifierQuarantined:(id)arg1;
-- (BOOL)removeQuarantinedRecordsWithIdentifier:(id)arg1 error:(id*)arg2;
-- (BOOL)resetWithError:(id*)arg1;
+- (bool)addQuarantinedRecordsWithIdentifier:(id)arg1 error:(id*)arg2;
+- (unsigned long long)countOfQuarantinedRecords;
+- (bool)isRecordWithIdentifierQuarantined:(id)arg1;
+- (bool)removeQuarantinedRecordsWithIdentifier:(id)arg1 error:(id*)arg2;
+- (bool)resetWithError:(id*)arg1;
 
 @end

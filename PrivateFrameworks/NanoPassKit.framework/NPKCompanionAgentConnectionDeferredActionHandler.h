@@ -28,7 +28,7 @@
 - (id)deferredSharedPaymentWebServiceContexts;
 - (id)init;
 - (id)internalQueue;
-- (void)performActionWhenCompanionAgentIsAvailable:(id /* block */)arg1 forDevice:(id)arg2;
+- (void)performActionWhenCompanionAgentIsAvailable:(id)arg1 forDevice:(id)arg2;
 - (void)setDeferredActions:(id)arg1;
 - (void)setDeferredSharedPaymentWebServiceContext:(id)arg1 forDevice:(id)arg2;
 - (void)setDeferredSharedPaymentWebServiceContexts:(id)arg1;

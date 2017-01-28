@@ -4,15 +4,15 @@
 
 @interface SCRCMathTableExpression : SCRCMathArrayExpression
 
-- (unsigned int)_numberOfColumns;
-- (BOOL)canBeWrappedInLatexMathIndicators;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2 openOperator:(id)arg3 openOperatorTreePosition:(id)arg4 closeOperator:(id)arg5 closeOperatorTreePosition:(id)arg6;
-- (BOOL)isMultiRowTable;
-- (id)latexDescriptionInMathMode:(BOOL)arg1;
+- (unsigned long long)_numberOfColumns;
+- (bool)canBeWrappedInLatexMathIndicators;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2 openOperator:(id)arg3 openOperatorTreePosition:(id)arg4 closeOperator:(id)arg5 closeOperatorTreePosition:(id)arg6;
+- (bool)isMultiRowTable;
+- (id)latexDescriptionInMathMode:(bool)arg1;
 - (id)mathMLTag;
-- (unsigned int)numberOfTables;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
-- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 treePosition:(id)arg3;
+- (unsigned long long)numberOfTables;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
+- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned long long)arg2 treePosition:(id)arg3;
 
 @end

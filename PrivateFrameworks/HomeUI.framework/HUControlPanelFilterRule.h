@@ -3,25 +3,25 @@
  */
 
 @interface HUControlPanelFilterRule : NSObject <HUControlPanelRule> {
-    id /* block */  _filter;
+    id  _filter;
     double  _priority;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ filter;
-@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id filter;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double priority;
 @property (readonly) Class superclass;
 
-+ (id)ruleWithFilter:(id /* block */)arg1;
++ (id)ruleWithFilter:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)filter;
-- (id)initWithFilter:(id /* block */)arg1;
+- (id)filter;
+- (id)initWithFilter:(id)arg1;
 - (double)priority;
-- (BOOL)ruleMatchesItem:(id)arg1;
-- (void)setFilter:(id /* block */)arg1;
+- (bool)ruleMatchesItem:(id)arg1;
+- (void)setFilter:(id)arg1;
 - (void)setPriority:(double)arg1;
 
 @end

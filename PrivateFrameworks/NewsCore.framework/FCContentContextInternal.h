@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) FCFeedDatabase *feedDatabase;
 @property (nonatomic, retain) FCForYouConfigRecordSource *forYouConfigRecordSource;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCPurchaseLookupRecordSource *purchaseLookupRecordSource;
 @property (nonatomic, retain) FCResourceRecordSource *resourceRecordSource;
 @property (readonly) Class superclass;
@@ -38,7 +38,7 @@
 - (id)channelMembershipController;
 - (id)contentContainer;
 - (id)contentDatabase;
-- (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)feedDatabase;
 - (id)forYouConfigRecordSource;
 - (id)init;

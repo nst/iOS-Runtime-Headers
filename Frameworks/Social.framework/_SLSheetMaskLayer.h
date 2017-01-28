@@ -4,17 +4,17 @@
 
 @interface _SLSheetMaskLayer : CALayer {
     UIColor * _clipBackgroundColor;
-    float  _clipCornerRadius;
+    double  _clipCornerRadius;
 }
 
 @property (nonatomic, retain) UIColor *clipBackgroundColor;
-@property (nonatomic) float clipCornerRadius;
+@property (nonatomic) double clipCornerRadius;
 
 - (void).cxx_destruct;
 - (id)clipBackgroundColor;
-- (float)clipCornerRadius;
+- (double)clipCornerRadius;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (void)setClipBackgroundColor:(id)arg1;
-- (void)setClipCornerRadius:(float)arg1;
+- (void)setClipCornerRadius:(double)arg1;
 
 @end

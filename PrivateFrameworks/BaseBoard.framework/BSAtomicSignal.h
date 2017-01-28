@@ -7,8 +7,8 @@
 }
 
 - (id)description;
-- (BOOL)hasBeenSignalled;
+- (bool)hasBeenSignalled;
 - (id)init;
-- (BOOL)signal;
+- (bool)signal;
 
 @end

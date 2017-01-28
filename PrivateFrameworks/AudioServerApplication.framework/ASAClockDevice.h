@@ -4,18 +4,18 @@
 
 @interface ASAClockDevice : ASAObject
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
 @property (nonatomic, readonly) unsigned int clockDomain;
 @property (nonatomic, readonly, copy) NSArray *controlObjectIDs;
 @property (nonatomic, readonly, copy) NSString *deviceUID;
-@property (getter=isHidden, nonatomic, readonly) BOOL hidden;
+@property (getter=isHidden, nonatomic, readonly) bool hidden;
 @property (nonatomic, readonly) unsigned int inputLatency;
 @property (nonatomic, readonly, copy) NSString *manufacturer;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) double nominalSampleRate;
 @property (nonatomic, readonly, copy) NSArray *nominalSampleRates;
 @property (nonatomic, readonly) unsigned int outputLatency;
-@property (getter=isRunning, nonatomic, readonly) BOOL running;
+@property (getter=isRunning, nonatomic, readonly) bool running;
 @property (nonatomic, readonly) unsigned int transportType;
 @property (nonatomic, readonly) unsigned int zeroTimestampPeriod;
 
@@ -23,11 +23,11 @@
 - (id)controlObjectIDs;
 - (id)coreAudioClassName;
 - (id)deviceUID;
-- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
+- (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(bool)arg2;
 - (unsigned int)inputLatency;
-- (BOOL)isActive;
-- (BOOL)isHidden;
-- (BOOL)isRunning;
+- (bool)isActive;
+- (bool)isHidden;
+- (bool)isRunning;
 - (id)manufacturer;
 - (id)name;
 - (double)nominalSampleRate;

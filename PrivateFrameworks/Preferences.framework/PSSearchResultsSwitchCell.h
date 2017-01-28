@@ -14,9 +14,9 @@
 - (void).cxx_destruct;
 - (void)_switchValueChanged:(id)arg1;
 - (id)action;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (void)reloadValue:(BOOL)arg1;
+- (void)reloadValue:(bool)arg1;
 - (void)setAction:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (id)specifier;

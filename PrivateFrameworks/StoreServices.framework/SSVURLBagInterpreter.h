@@ -37,7 +37,7 @@
 - (id)mescalSignedResponses;
 - (id)pastisCertificateURL;
 - (id)pastisKeyServerURL;
-- (BOOL)shouldSendAnonymousMachineIdentifierForURL:(id)arg1;
+- (bool)shouldSendAnonymousMachineIdentifierForURL:(id)arg1;
 - (id)storeFrontSuffix;
 - (id)valueForURLBagKey:(id)arg1;
 

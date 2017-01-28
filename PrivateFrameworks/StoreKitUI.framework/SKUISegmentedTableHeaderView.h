@@ -9,18 +9,18 @@
 }
 
 @property (nonatomic, readonly) _UIBackdropView *backdropView;
-@property (nonatomic) BOOL hidesBorderView;
+@property (nonatomic) bool hidesBorderView;
 @property (nonatomic, retain) UIView *segmentedControl;
 
 - (void).cxx_destruct;
 - (id)_borderView;
 - (id)backdropView;
-- (BOOL)hidesBorderView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)hidesBorderView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)segmentedControl;
-- (void)setHidesBorderView:(BOOL)arg1;
+- (void)setHidesBorderView:(bool)arg1;
 - (void)setSegmentedControl:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

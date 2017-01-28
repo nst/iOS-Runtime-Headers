@@ -4,7 +4,7 @@
 
 @interface HUGridEmptyHomeCell : UICollectionViewCell <HUGridCellProtocol> {
     HUColoredButton * _addAccessoryButton;
-    BOOL  _cellContentsHidden;
+    bool  _cellContentsHidden;
     NSArray * _constraints;
     <HUGridEmptyHomeCellDelegate> * _delegate;
     UILabel * _instructionsLabel;
@@ -13,39 +13,39 @@
 }
 
 @property (nonatomic, retain) HUColoredButton *addAccessoryButton;
-@property (getter=areCellContentsHidden, nonatomic) BOOL cellContentsHidden;
+@property (getter=areCellContentsHidden, nonatomic) bool cellContentsHidden;
 @property (nonatomic, retain) NSArray *constraints;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUGridEmptyHomeCellDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UILabel *instructionsLabel;
 @property (nonatomic, retain) HFItem *item;
 @property (nonatomic, retain) HUGridCellLayoutOptions *layoutOptions;
-@property (getter=isRearranging, nonatomic) BOOL rearranging;
+@property (getter=isRearranging, nonatomic) bool rearranging;
 @property (readonly) Class superclass;
 
-+ (float)instructionsLabelBaselineToButtonConstant;
++ (double)instructionsLabelBaselineToButtonConstant;
 + (Class)layoutOptionsClass;
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_addNewAccessory:(id)arg1;
 - (void)_setupCommonCellAppearance;
 - (id)addAccessoryButton;
-- (BOOL)areCellContentsHidden;
+- (bool)areCellContentsHidden;
 - (id)constraints;
 - (id)delegate;
 - (void)didMoveToSuperview;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)instructionsLabel;
 - (id)item;
 - (id)layoutOptions;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)prepareForReuse;
 - (void)setAddAccessoryButton:(id)arg1;
-- (void)setCellContentsHidden:(BOOL)arg1;
+- (void)setCellContentsHidden:(bool)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInstructionsLabel:(id)arg1;
@@ -53,6 +53,6 @@
 - (void)setLayoutOptions:(id)arg1;
 - (void)tintColorDidChange;
 - (void)updateConstraints;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 
 @end

@@ -16,7 +16,7 @@
 @property (readonly, copy) NSURL *_providedItemsURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) BRCAccountSession *session;
 @property (readonly) Class superclass;
 
@@ -26,7 +26,7 @@
 - (id)_keyForURL:(id)arg1;
 - (id)_keyForURL:(id)arg1 andID:(id)arg2;
 - (id)_pathForKey:(id)arg1;
-- (void)_provideItemAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_provideItemAtURL:(id)arg1 completionHandler:(id)arg2;
 - (void)_providedItemAtURL:(id)arg1 didGainPresenterWithID:(id)arg2;
 - (void)_providedItemAtURL:(id)arg1 didLosePresenterWithID:(id)arg2;
 - (void)_providedItemAtURL:(id)arg1 withPresenterWithID:(id)arg2 didMoveToURL:(id)arg3;

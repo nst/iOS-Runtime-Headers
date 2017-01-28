@@ -5,7 +5,7 @@
 
 @required
 
-- (MPNowPlayingContentItem *)contentItemForOffset:(int)arg1;
-- (NSString *)contentItemIdentifierForOffset:(int)arg1;
+- (MPNowPlayingContentItem *)contentItemForOffset:(long long)arg1;
+- (NSString *)contentItemIdentifierForOffset:(long long)arg1;
 
 @end

@@ -10,7 +10,7 @@
 - (void)_removeAllEntries;
 - (void)dealloc;
 - (id)descriptionOfAllEntries;
-- (void)enumerateAllForCacheEntriesWithHandler:(id /* block */)arg1;
+- (void)enumerateAllForCacheEntriesWithHandler:(id)arg1;
 - (id)init;
 - (id)initWithPath:(id)arg1;
 - (id)loadEntryForRowId:(long long)arg1;

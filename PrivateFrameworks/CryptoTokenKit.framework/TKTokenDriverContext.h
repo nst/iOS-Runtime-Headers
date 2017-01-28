@@ -14,7 +14,7 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (void)acquireTokenEndpointWithAttributes:(id)arg1 reply:(id /* block */)arg2;
+- (void)acquireTokenEndpointWithAttributes:(id)arg1 reply:(id)arg2;
 - (void)dealloc;
 - (id)driver;
 - (void)setDriver:(id)arg1;

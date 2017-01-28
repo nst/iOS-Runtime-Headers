@@ -5,12 +5,12 @@
 @interface HFTemperatureUnitCoordinator : NSObject {
     NSHashTable * _clients;
     NSObject<OS_dispatch_queue> * _coordinatorQueue;
-    BOOL  _isCelsius;
+    bool  _isCelsius;
 }
 
 @property (nonatomic, retain) NSHashTable *clients;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *coordinatorQueue;
-@property (nonatomic) BOOL isCelsius;
+@property (nonatomic) bool isCelsius;
 
 + (id)sharedCoordinator;
 
@@ -18,11 +18,11 @@
 - (id)clients;
 - (id)coordinatorQueue;
 - (id)init;
-- (BOOL)isCelsius;
+- (bool)isCelsius;
 - (void)registerObserver:(id)arg1;
 - (void)setClients:(id)arg1;
 - (void)setCoordinatorQueue:(id)arg1;
-- (void)setIsCelsius:(BOOL)arg1;
+- (void)setIsCelsius:(bool)arg1;
 - (void)unregisterObserver:(id)arg1;
 
 @end

@@ -19,7 +19,7 @@
 @property (nonatomic, readonly) <HMDCameraSnapshotIDSRelayReceiverDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) IDSSession *idsSession;
 @property (nonatomic, retain) NSMutableData *relayData;
 @property (nonatomic, readonly) HMDSnapshotFile *snapshotFile;

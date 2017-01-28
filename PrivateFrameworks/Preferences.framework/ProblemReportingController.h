@@ -18,7 +18,7 @@
 @property (readonly) PSSpecifier *spinnerSpecifier;
 @property (readonly) NSArray *wheelchairDataSpecifiers;
 
-+ (BOOL)isProblemReportingEnabled;
++ (bool)isProblemReportingEnabled;
 
 - (void).cxx_destruct;
 - (id)appActivitySpecifiers;
@@ -27,11 +27,11 @@
 - (id)filesystemMetadataSnapshotSpecifier;
 - (id)healthDataSpecifiers;
 - (void)launchDiagnosticsSession:(id)arg1;
-- (void)setProblemReportingEnabled:(BOOL)arg1;
+- (void)setProblemReportingEnabled:(bool)arg1;
 - (void)setShouldShareAppActivityWithAppDevelopers:(id)arg1 specifier:(id)arg2;
 - (void)setShouldShareHealthData:(id)arg1 specifier:(id)arg2;
 - (void)setShouldShareWheelchairData:(id)arg1 specifier:(id)arg2;
-- (BOOL)shouldEnableProblemReportingForCheckedSpecifier;
+- (bool)shouldEnableProblemReportingForCheckedSpecifier;
 - (id)shouldShareAppActivityWithAppDevelopers;
 - (id)shouldShareHealthDataForSpecifier:(id)arg1;
 - (id)shouldShareWheelchairDataForSpecifier:(id)arg1;

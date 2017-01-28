@@ -11,20 +11,20 @@
 @property (nonatomic) UINavigationItem *item;
 
 - (void).cxx_destruct;
-- (id)_currentTextColorForBarStyle:(int)arg1;
-- (id)_currentTextShadowColorForBarStyle:(int)arg1;
-- (struct CGSize { float x1; float x2; })_currentTextShadowOffsetForBarStyle:(int)arg1;
+- (id)_currentTextColorForBarStyle:(long long)arg1;
+- (id)_currentTextShadowColorForBarStyle:(long long)arg1;
+- (struct CGSize { double x1; double x2; })_currentTextShadowOffsetForBarStyle:(long long)arg1;
 - (id)_defaultFont;
-- (id)_titleTextColorForBarStyle:(int)arg1;
+- (id)_titleTextColorForBarStyle:(long long)arg1;
 - (void)_updateTitleLabel;
-- (BOOL)_useSilverLookForBarStyle:(int)arg1;
+- (bool)_useSilverLookForBarStyle:(long long)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)initWithNavigationItem:(id)arg1;
 - (id)item;
 - (void)layoutSubviews;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setItem:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

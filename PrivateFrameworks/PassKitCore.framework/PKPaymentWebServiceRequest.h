@@ -15,7 +15,7 @@
 - (id)_murlRequestWithServiceURL:(id)arg1 endpointComponents:(id)arg2 queryParameters:(id)arg3 account:(id)arg4;
 - (id)_murlRequestWithURL:(id)arg1;
 - (id)_murlRequestWithURL:(id)arg1 account:(id)arg2;
-- (void)_signRequest:(id)arg1 webService:(id)arg2 completion:(id /* block */)arg3;
+- (void)_signRequest:(id)arg1 webService:(id)arg2 completion:(id)arg3;
 - (void)setTargetDevice:(id)arg1;
 - (id)targetDevice;
 

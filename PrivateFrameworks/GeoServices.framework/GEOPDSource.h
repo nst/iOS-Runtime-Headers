@@ -11,9 +11,9 @@
     NSString * _version;
 }
 
-@property (nonatomic) BOOL hasResultProviderId;
-@property (nonatomic, readonly) BOOL hasSourceId;
-@property (nonatomic, readonly) BOOL hasVersion;
+@property (nonatomic) bool hasResultProviderId;
+@property (nonatomic, readonly) bool hasSourceId;
+@property (nonatomic, readonly) bool hasVersion;
 @property (nonatomic) int resultProviderId;
 @property (nonatomic, retain) NSString *sourceId;
 @property (nonatomic, retain) NSString *version;
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasResultProviderId;
-- (BOOL)hasSourceId;
-- (BOOL)hasVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasResultProviderId;
+- (bool)hasSourceId;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)resultProviderId;
-- (void)setHasResultProviderId:(BOOL)arg1;
+- (void)setHasResultProviderId:(bool)arg1;
 - (void)setResultProviderId:(int)arg1;
 - (void)setSourceId:(id)arg1;
 - (void)setVersion:(id)arg1;

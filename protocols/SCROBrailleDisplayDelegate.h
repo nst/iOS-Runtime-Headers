@@ -8,8 +8,8 @@
 - (void)brailleDisplay:(SCROBrailleDisplay *)arg1 didDisplay:(NSAttributedString *)arg2;
 - (void)brailleDisplay:(SCROBrailleDisplay *)arg1 didPanLeft:(NSNumber *)arg2 elementToken:(NSNumber *)arg3 appToken:(id)arg4;
 - (void)brailleDisplay:(SCROBrailleDisplay *)arg1 didPanRight:(NSNumber *)arg2 elementToken:(NSNumber *)arg3 appToken:(id)arg4;
-- (void)brailleDisplay:(SCROBrailleDisplay *)arg1 driverDidLoad:(BOOL)arg2;
-- (void)brailleDisplay:(SCROBrailleDisplay *)arg1 isSleeping:(BOOL)arg2;
+- (void)brailleDisplay:(SCROBrailleDisplay *)arg1 driverDidLoad:(bool)arg2;
+- (void)brailleDisplay:(SCROBrailleDisplay *)arg1 isSleeping:(bool)arg2;
 - (void)brailleDisplay:(SCROBrailleDisplay *)arg1 memorizedKey:(SCROBrailleKey *)arg2;
 - (void)brailleDisplay:(SCROBrailleDisplay *)arg1 pressedKeys:(NSArray *)arg2;
 - (void)brailleDisplay:(SCROBrailleDisplay *)arg1 willMemorizeKey:(SCROBrailleKey *)arg2;

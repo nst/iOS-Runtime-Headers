@@ -7,21 +7,21 @@
 
 - (TSCHChartLayout *)chartLayout;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (BOOL)forceRenderBlankBackground;
+- (bool)forceRenderBlankBackground;
 - (TSDLayoutGeometry *)geometry;
-- (BOOL)is2DRepFor3DChartRep;
-- (BOOL)isDrawingIntoPDF;
-- (BOOL)renderElements;
-- (BOOL)renderElementsShadowOnly;
-- (BOOL)renderElementsWithoutShadows;
-- (BOOL)renderGrid;
-- (BOOL)renderLabels;
-- (BOOL)renderReferenceLines;
+- (bool)is2DRepFor3DChartRep;
+- (bool)isDrawingIntoPDF;
+- (bool)renderElements;
+- (bool)renderElementsShadowOnly;
+- (bool)renderElementsWithoutShadows;
+- (bool)renderGrid;
+- (bool)renderLabels;
+- (bool)renderReferenceLines;
 - (NSIndexSet *)renderSeriesIndexSet;
-- (BOOL)renderTrendLinesForSeriesIndex:(unsigned int)arg1;
-- (NSIndexSet *)renderValueIndexSetForSeries:(unsigned int)arg1;
-- (BOOL)requireSeparateLabelLayer;
-- (BOOL)shadowsEnabled;
-- (float)viewScale;
+- (bool)renderTrendLinesForSeriesIndex:(unsigned long long)arg1;
+- (NSIndexSet *)renderValueIndexSetForSeries:(unsigned long long)arg1;
+- (bool)requireSeparateLabelLayer;
+- (bool)shadowsEnabled;
+- (double)viewScale;
 
 @end

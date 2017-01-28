@@ -3,27 +3,27 @@
  */
 
 @interface UIBlurEffect : UIVisualEffect {
-    BOOL  _invertAutomaticStyle;
-    int  _style;
+    bool  _invertAutomaticStyle;
+    long long  _style;
     UIColor * _tintColor;
 }
 
-@property (nonatomic, readonly) BOOL _invertAutomaticStyle;
-@property (nonatomic, readonly) int _style;
+@property (nonatomic, readonly) bool _invertAutomaticStyle;
+@property (nonatomic, readonly) long long _style;
 
-+ (id)_effectWithStyle:(int)arg1 invertAutomaticStyle:(BOOL)arg2;
-+ (id)_effectWithStyle:(int)arg1 tintColor:(id)arg2 invertAutomaticStyle:(BOOL)arg3;
++ (id)_effectWithStyle:(long long)arg1 invertAutomaticStyle:(bool)arg2;
++ (id)_effectWithStyle:(long long)arg1 tintColor:(id)arg2 invertAutomaticStyle:(bool)arg3;
 + (id)_effectWithTintColor:(id)arg1;
-+ (id)effectWithStyle:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)effectWithStyle:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_invertAutomaticStyle;
-- (BOOL)_isATVStyle;
-- (BOOL)_isAutomaticStyle;
-- (int)_style;
+- (bool)_invertAutomaticStyle;
+- (bool)_isATVStyle;
+- (bool)_isAutomaticStyle;
+- (long long)_style;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)effectForUserInterfaceStyle:(int)arg1;
+- (id)effectForUserInterfaceStyle:(long long)arg1;
 - (id)effectSettings;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

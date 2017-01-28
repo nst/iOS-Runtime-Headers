@@ -4,27 +4,27 @@
 
 @interface CNDictionaryPrimitiveUserDefaults : NSObject <CNPrimitiveUserDefaults> {
     NSMutableDictionary * _preferences;
-    unsigned int  _setupAutosyncCount;
-    unsigned int  _synchronizeCount;
+    unsigned long long  _setupAutosyncCount;
+    unsigned long long  _synchronizeCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) unsigned int setupAutosyncCount;
+@property (readonly) unsigned long long hash;
+@property (readonly) unsigned long long setupAutosyncCount;
 @property (readonly) Class superclass;
-@property (readonly) unsigned int synchronizeCount;
+@property (readonly) unsigned long long synchronizeCount;
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)primitiveBoolValueForKey:(id)arg1 keyExists:(BOOL*)arg2;
-- (int)primitiveIntegerValueForKey:(id)arg1 keyExists:(BOOL*)arg2;
+- (bool)primitiveBoolValueForKey:(id)arg1 keyExists:(bool*)arg2;
+- (long long)primitiveIntegerValueForKey:(id)arg1 keyExists:(bool*)arg2;
 - (id)primitiveObjectForKey:(id)arg1;
 - (void)primitiveRemoveObjectForKey:(id)arg1;
 - (void)setPrimitiveObject:(id)arg1 forKey:(id)arg2;
 - (void)setupAutosync;
-- (unsigned int)setupAutosyncCount;
-- (BOOL)synchronize;
-- (unsigned int)synchronizeCount;
+- (unsigned long long)setupAutosyncCount;
+- (bool)synchronize;
+- (unsigned long long)synchronizeCount;
 
 @end

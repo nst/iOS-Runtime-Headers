@@ -5,19 +5,19 @@
 @interface DKDiagnosticAttributes : NSObject {
     NSExtension * _extension;
     NSNumber * _freeSpaceRequired;
-    BOOL  _headless;
+    bool  _headless;
     NSNumber * _identifier;
     NSString * _name;
-    BOOL  _restricted;
+    bool  _restricted;
     NSString * _version;
 }
 
 @property (nonatomic, readonly) NSExtension *extension;
 @property (nonatomic, readonly) NSNumber *freeSpaceRequired;
-@property (getter=isHeadless, nonatomic, readonly) BOOL headless;
+@property (getter=isHeadless, nonatomic, readonly) bool headless;
 @property (nonatomic, readonly) NSNumber *identifier;
 @property (nonatomic, readonly) NSString *name;
-@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
+@property (getter=isRestricted, nonatomic, readonly) bool restricted;
 @property (nonatomic, readonly) NSString *version;
 
 - (void).cxx_destruct;
@@ -25,9 +25,9 @@
 - (id)freeSpaceRequired;
 - (id)identifier;
 - (id)initWithExtension:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 version:(id)arg2 freeSpaceRequired:(id)arg3 name:(id)arg4 headless:(BOOL)arg5;
-- (BOOL)isHeadless;
-- (BOOL)isRestricted;
+- (id)initWithIdentifier:(id)arg1 version:(id)arg2 freeSpaceRequired:(id)arg3 name:(id)arg4 headless:(bool)arg5;
+- (bool)isHeadless;
+- (bool)isRestricted;
 - (id)name;
 - (id)version;
 

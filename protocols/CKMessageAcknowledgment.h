@@ -7,7 +7,7 @@
 
 - (UIColor *)acknowledgmentImageColor;
 - (NSString *)acknowledgmentImageName;
-- (int)messageAcknowledgmentType;
+- (long long)messageAcknowledgmentType;
 - (UIColor *)selectedAcknowledgmentImageColor;
 - (UIColor *)selectedBalloonColor;
 

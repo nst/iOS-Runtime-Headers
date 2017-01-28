@@ -13,18 +13,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)cacheURLWithName:(id)arg1 forBundleWithIdentifier:(id)arg2 options:(unsigned int)arg3;
++ (id)cacheURLWithName:(id)arg1 forBundleWithIdentifier:(id)arg2 options:(unsigned long long)arg3;
 + (id)cacheURLWithUniqueIdentifier:(id)arg1 options:(id)arg2;
 
-- (id)_imageForKey:(id)arg1 withCPBitmapReadFlags:(int)arg2 generatingIfNecessaryWithBlock:(id /* block */)arg3;
-- (id)_imageForKey:(id)arg1 withCPBitmapReadFlags:(int)arg2 generatingIfNecessaryWithBlock:(id /* block */)arg3 completion:(id /* block */)arg4;
+- (id)_imageForKey:(id)arg1 withCPBitmapReadFlags:(int)arg2 generatingIfNecessaryWithBlock:(id)arg3;
+- (id)_imageForKey:(id)arg1 withCPBitmapReadFlags:(int)arg2 generatingIfNecessaryWithBlock:(id)arg3 completion:(id)arg4;
 - (void)_noteExternalChangeForKey:(id)arg1;
-- (void)_setImage:(id)arg1 forKey:(id)arg2 completion:(id /* block */)arg3;
-- (void)_setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned int)arg3 andCPBitmapReadFlags:(int)arg4;
-- (void)_setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned int)arg3 andCPBitmapReadFlags:(int)arg4 completion:(id /* block */)arg5;
+- (void)_setImage:(id)arg1 forKey:(id)arg2 completion:(id)arg3;
+- (void)_setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned long long)arg3 andCPBitmapReadFlags:(int)arg4;
+- (void)_setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned long long)arg3 andCPBitmapReadFlags:(int)arg4 completion:(id)arg5;
 - (void)_warmupImageForKey:(id)arg1;
 - (id)allKeys;
 - (void)dealloc;
@@ -34,21 +34,21 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)imageForKey:(id)arg1;
-- (id)imageForKey:(id)arg1 generatingIfNecessaryWithBlock:(id /* block */)arg2;
-- (id)imageForKey:(id)arg1 generatingIfNecessaryWithBlock:(id /* block */)arg2 completion:(id /* block */)arg3;
+- (id)imageForKey:(id)arg1 generatingIfNecessaryWithBlock:(id)arg2;
+- (id)imageForKey:(id)arg1 generatingIfNecessaryWithBlock:(id)arg2 completion:(id)arg3;
 - (id)init;
 - (id)initWithName:(id)arg1;
-- (id)initWithName:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithName:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithUniqueIdentifier:(id)arg1;
 - (id)initWithUniqueIdentifier:(id)arg1 options:(id)arg2;
-- (void)removeAllImagesWithCompletion:(id /* block */)arg1;
+- (void)removeAllImagesWithCompletion:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeImageForKey:(id)arg1;
-- (void)removeImageForKey:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)removeImageForKey:(id)arg1 withCompletion:(id)arg2;
 - (void)setImage:(id)arg1 forKey:(id)arg2;
-- (void)setImage:(id)arg1 forKey:(id)arg2 withCompletion:(id /* block */)arg3;
-- (void)setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned int)arg3;
-- (void)setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned int)arg3 completion:(id /* block */)arg4;
+- (void)setImage:(id)arg1 forKey:(id)arg2 withCompletion:(id)arg3;
+- (void)setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned long long)arg3;
+- (void)setImage:(id)arg1 forKey:(id)arg2 withPersistenceOptions:(unsigned long long)arg3 completion:(id)arg4;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

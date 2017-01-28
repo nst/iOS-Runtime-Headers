@@ -7,8 +7,8 @@
     SKTexture * _atlas;
     SKUniform * _atlasUniform;
     NSMutableArray * _delays;
-    BOOL  _didDelegateDidStopPlaying;
-    BOOL  _didDelegateWillStopPlaying;
+    bool  _didDelegateDidStopPlaying;
+    bool  _didDelegateWillStopPlaying;
     NSMutableSet * _kissMarkNodes;
     KissNode * _lastKiss;
     double  _lastKissTime;
@@ -19,21 +19,21 @@
 + (unsigned short)messageType;
 
 - (void).cxx_destruct;
-- (void)_displayKissAtPoint:(struct CGPoint { float x1; float x2; })arg1 angle:(float)arg2 leavesMark:(BOOL)arg3 inScene:(id)arg4;
-- (BOOL)_hasKissesThatLeaveMark;
+- (void)_displayKissAtPoint:(struct CGPoint { double x1; double x2; })arg1 angle:(double)arg2 leavesMark:(bool)arg3 inScene:(id)arg4;
+- (bool)_hasKissesThatLeaveMark;
 - (void)_initAtlas;
-- (BOOL)_leaveMarkAtDelay:(double)arg1;
+- (bool)_leaveMarkAtDelay:(double)arg1;
 - (void)_notifyDelegateDidStopPlaying;
 - (void)_notifyDelegateWillStopPlaying;
 - (void)_setKissLeavesMark:(id)arg1;
-- (void)addKissAtNormalizedPoint:(struct CGPoint { float x1; float x2; })arg1 angle:(float)arg2 time:(double)arg3 toScene:(id)arg4;
+- (void)addKissAtNormalizedPoint:(struct CGPoint { double x1; double x2; })arg1 angle:(double)arg2 time:(double)arg3 toScene:(id)arg4;
 - (id)archiveData;
 - (void)displayInScene:(id)arg1;
 - (id)init;
 - (id)initWithArchiveData:(id)arg1;
 - (double)messageDuration;
 - (id)messageTypeAsString;
-- (BOOL)reachedSizeLimit;
+- (bool)reachedSizeLimit;
 - (void)setParentMessage:(id)arg1;
 - (void)stopPlaying;
 

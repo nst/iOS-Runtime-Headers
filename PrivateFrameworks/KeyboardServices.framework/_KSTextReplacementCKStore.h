@@ -3,56 +3,57 @@
  */
 
 @interface _KSTextReplacementCKStore : NSObject <_KSTextReplacementStoreProtocol> {
-    BOOL  _ckMigrationStatusOnCloud;
+    bool  _ckMigrationStatusOnCloud;
     _KSCloudKitManager * _cloudKitManager;
     _KSTextReplacementCoreDataStore * _coreDataStore;
     NSObject<OS_dispatch_queue> * _dataQueue;
-    BOOL  _didRequestFirstPullForAccount;
+    bool  _didRequestFirstPullForAccount;
     NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
-@property (nonatomic) BOOL ckMigrationStatusOnCloud;
+@property (nonatomic) bool ckMigrationStatusOnCloud;
 @property (nonatomic, retain) _KSCloudKitManager *cloudKitManager;
 @property (nonatomic, retain) _KSTextReplacementCoreDataStore *coreDataStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL didRequestFirstPullForAccount;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool didRequestFirstPullForAccount;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)isMigrationCompleted;
++ (bool)isMigrationCompleted;
 
 - (void).cxx_destruct;
 - (void)accountDidChange:(id)arg1;
-- (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (BOOL)ckMigrationStatusOnCloud;
+- (void)addEntries:(id)arg1 removeEntries:(id)arg2 withCompletionHandler:(id)arg3;
+- (bool)ckMigrationStatusOnCloud;
 - (id)cloudEntriesFromLocalEntries:(id)arg1;
 - (id)cloudKitManager;
 - (id)cloudRecordIDsForLocalEntries:(id)arg1;
 - (id)coreDataStore;
 - (void)dealloc;
-- (BOOL)didRequestFirstPullForAccount;
+- (bool)didRequestFirstPullForAccount;
 - (void)importSampleShortcutsIfNecessary;
 - (id)initWithDirectoryPath:(id)arg1;
-- (BOOL)isAccountAvailable;
+- (bool)isAccountAvailable;
 - (id)localEntriesFromCloudEntries:(id)arg1;
-- (void)pullRemoteDataWithCompletionHandler:(id /* block */)arg1;
+- (void)pullRemoteDataWithCompletionHandler:(id)arg1;
 - (void)pushAllLocalData;
-- (void)pushLocalChangesWithCompletionHandler:(id /* block */)arg1;
-- (void)pushMigrationStatusToCloud:(BOOL)arg1;
+- (void)pushLocalChangesWithCompletionHandler:(id)arg1;
+- (void)pushMigrationStatusToCloud:(bool)arg1;
 - (void)queryCloudIfFirstPullOrAccountChanged;
 - (id)queryDeletedEntries;
-- (void)queryMigrationStatusOnCloudWithCallback:(id /* block */)arg1;
-- (void)queryTextReplacementsWithCallback:(id /* block */)arg1;
-- (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(id /* block */)arg2;
+- (void)queryMigrationStatusOnCloudWithCallback:(id)arg1;
+- (void)queryTextReplacementsWithCallback:(id)arg1;
+- (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(id)arg2;
 - (id)queryUpdatedLocalEntries;
+- (void)recordSyncStatus;
 - (void)removeAllEntries;
-- (void)removeAllEntriesWithCompletionHandler:(id /* block */)arg1;
-- (void)requestSyncWithCompletionBlock:(id /* block */)arg1;
-- (void)setCkMigrationStatusOnCloud:(BOOL)arg1;
+- (void)removeAllEntriesWithCompletionHandler:(id)arg1;
+- (void)requestSyncWithCompletionBlock:(id)arg1;
+- (void)setCkMigrationStatusOnCloud:(bool)arg1;
 - (void)setCloudKitManager:(id)arg1;
 - (void)setCoreDataStore:(id)arg1;
-- (void)setDidRequestFirstPullForAccount:(BOOL)arg1;
+- (void)setDidRequestFirstPullForAccount:(bool)arg1;
 - (id)textReplacementEntries;
 - (id)userIdentity;
 

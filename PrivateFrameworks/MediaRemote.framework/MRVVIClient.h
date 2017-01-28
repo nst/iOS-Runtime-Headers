@@ -12,6 +12,6 @@
 - (void)_recordingStateChangedNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)setRecordingStateCallback:(id /* block */)arg1 forDeviceID:(unsigned int)arg2;
+- (void)setRecordingStateCallback:(id)arg1 forDeviceID:(unsigned int)arg2;
 
 @end

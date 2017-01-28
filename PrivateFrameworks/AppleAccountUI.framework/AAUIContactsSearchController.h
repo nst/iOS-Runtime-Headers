@@ -3,9 +3,9 @@
  */
 
 @interface AAUIContactsSearchController : NSObject <MFContactsSearchConsumer> {
-    int  _countOfPendingResultBatches;
+    long long  _countOfPendingResultBatches;
     <AAUIContactsSearchDelegate> * _delegate;
-    BOOL  _didFindResults;
+    bool  _didFindResults;
     MFContactsSearchManager * _searchManager;
     MFContactsSearchResultsModel * _searchResultsModel;
     NSNumber * _searchTaskID;
@@ -13,18 +13,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_cancelSearchAndNotify:(BOOL)arg1;
+- (void)_cancelSearchAndNotify:(bool)arg1;
 - (void)_endSearch;
 - (void)beganNetworkActivity;
 - (void)beginSearchWithString:(id)arg1;
 - (void)cancelSearch;
-- (void)consumeSearchResults:(id)arg1 type:(unsigned int)arg2 taskID:(id)arg3;
+- (void)consumeSearchResults:(id)arg1 type:(unsigned long long)arg2 taskID:(id)arg3;
 - (void)endedNetworkActivity;
-- (void)finishedSearchingForType:(unsigned int)arg1;
+- (void)finishedSearchingForType:(unsigned long long)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 

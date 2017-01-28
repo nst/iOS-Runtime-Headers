@@ -6,37 +6,37 @@
     NSString * _domain;
     NSNumber * _fallbackNumberValue;
     NSString * _key;
-    BOOL  _shouldInvertBoolValue;
+    bool  _shouldInvertBoolValue;
 }
 
-@property (nonatomic, readonly) BOOL currentBoolValue;
+@property (nonatomic, readonly) bool currentBoolValue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *domain;
 @property (nonatomic, copy) NSNumber *fallbackNumberValue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *key;
-@property (nonatomic) BOOL shouldInvertBoolValue;
+@property (nonatomic) bool shouldInvertBoolValue;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
-- (BOOL)currentBoolValue;
+- (bool)currentBoolValue;
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fallbackNumberValue;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (void)setDomain:(id)arg1;
 - (void)setFallbackNumberValue:(id)arg1;
 - (void)setKey:(id)arg1;
-- (void)setShouldInvertBoolValue:(BOOL)arg1;
-- (BOOL)shouldInvertBoolValue;
+- (void)setShouldInvertBoolValue:(bool)arg1;
+- (bool)shouldInvertBoolValue;
 
 @end

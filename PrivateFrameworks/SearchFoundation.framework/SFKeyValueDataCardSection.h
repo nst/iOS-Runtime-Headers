@@ -10,7 +10,7 @@
 @property (nonatomic, retain) SFImage *accessoryImage;
 @property (nonatomic, copy) NSArray *data;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessoryImage;

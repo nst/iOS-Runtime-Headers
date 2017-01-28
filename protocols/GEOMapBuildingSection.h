@@ -6,7 +6,7 @@
 @required
 
 - (double)baseHeight;
-- (unsigned int)coordinateCount;
+- (unsigned long long)coordinateCount;
 - (struct { double x1; double x2; }*)coordinates;
 - (double)height;
 

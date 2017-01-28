@@ -4,7 +4,7 @@
 
 @interface _HKSeriesType : HKSampleType
 
-+ (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
++ (void)_insertCode:(long long)arg1 forIdentifier:(id)arg2;
 + (id)locationSeriesType;
 
 - (Class)dataObjectClass;

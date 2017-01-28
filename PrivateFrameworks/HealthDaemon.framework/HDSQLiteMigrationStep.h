@@ -3,25 +3,25 @@
  */
 
 @interface HDSQLiteMigrationStep : NSObject {
-    int  _finalSchemaVersion;
-    id /* block */  _migrationHandler;
-    BOOL  _shouldDisableForeignKeys;
-    int  _startingSchemaVersion;
+    long long  _finalSchemaVersion;
+    id  _migrationHandler;
+    bool  _shouldDisableForeignKeys;
+    long long  _startingSchemaVersion;
 }
 
-@property (nonatomic, readonly) int finalSchemaVersion;
-@property (nonatomic, readonly, copy) id /* block */ migrationHandler;
-@property (nonatomic) BOOL shouldDisableForeignKeys;
-@property (nonatomic, readonly) int startingSchemaVersion;
+@property (nonatomic, readonly) long long finalSchemaVersion;
+@property (nonatomic, readonly, copy) id migrationHandler;
+@property (nonatomic) bool shouldDisableForeignKeys;
+@property (nonatomic, readonly) long long startingSchemaVersion;
 
-+ (id)migrationStepFrom:(int)arg1 to:(int)arg2 handler:(id /* block */)arg3;
-+ (id)migrationStepWithForeignKeysDisabledFrom:(int)arg1 to:(int)arg2 handler:(id /* block */)arg3;
++ (id)migrationStepFrom:(long long)arg1 to:(long long)arg2 handler:(id)arg3;
++ (id)migrationStepWithForeignKeysDisabledFrom:(long long)arg1 to:(long long)arg2 handler:(id)arg3;
 
 - (void).cxx_destruct;
-- (int)finalSchemaVersion;
-- (id /* block */)migrationHandler;
-- (void)setShouldDisableForeignKeys:(BOOL)arg1;
-- (BOOL)shouldDisableForeignKeys;
-- (int)startingSchemaVersion;
+- (long long)finalSchemaVersion;
+- (id)migrationHandler;
+- (void)setShouldDisableForeignKeys:(bool)arg1;
+- (bool)shouldDisableForeignKeys;
+- (long long)startingSchemaVersion;
 
 @end

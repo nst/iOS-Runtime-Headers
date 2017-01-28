@@ -17,7 +17,7 @@
 - (id)cacheQueue;
 - (id)containerInfoForContainerID:(id)arg1;
 - (id)dateOfLastTokenUpdate;
-- (void)expungeWithCurrentAccountIdentifier:(id)arg1 forceRemove:(BOOL)arg2;
+- (void)expungeWithCurrentAccountIdentifier:(id)arg1 forceRemove:(bool)arg2;
 - (id)globalConfiguration;
 - (id)init;
 - (id)inlock_applicationMetadataForApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2;

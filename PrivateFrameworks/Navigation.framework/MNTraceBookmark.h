@@ -10,8 +10,8 @@
     double  _timestamp;
 }
 
-@property (nonatomic, readonly) BOOL hasImageData;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) bool hasImageData;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSData *imageData;
 @property (nonatomic) double timestamp;
 
@@ -20,14 +20,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasImageData;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)hasImageData;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (id)imageData;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setImageData:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;

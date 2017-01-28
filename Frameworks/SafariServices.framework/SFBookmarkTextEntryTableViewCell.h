@@ -4,6 +4,6 @@
 
 @interface SFBookmarkTextEntryTableViewCell : UITableViewCell
 
-- (id)initWithText:(id)arg1 autocapitalizationType:(int)arg2 autocorrectionType:(int)arg3;
+- (id)initWithText:(id)arg1 autocapitalizationType:(long long)arg2 autocorrectionType:(long long)arg3;
 
 @end

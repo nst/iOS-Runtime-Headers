@@ -17,11 +17,11 @@
 @property (readonly) PLCoreService *services;
 @property (readonly) PLCoreStorage *storage;
 
-+ (BOOL)allowRun;
-+ (BOOL)isDebugEnabled;
++ (bool)allowRun;
++ (bool)isDebugEnabled;
 + (void)setupCore;
 + (id)sharedCore;
-+ (BOOL)sharedCoreStarted;
++ (bool)sharedCoreStarted;
 
 - (void).cxx_destruct;
 - (id)accounting;

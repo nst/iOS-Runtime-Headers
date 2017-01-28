@@ -6,6 +6,6 @@
 
 + (id)databasePath;
 
-- (BOOL)_setupDatabase;
+- (bool)_setupDatabase;
 
 @end

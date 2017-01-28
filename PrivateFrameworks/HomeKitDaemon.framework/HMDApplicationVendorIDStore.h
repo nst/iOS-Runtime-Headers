@@ -13,17 +13,17 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 
 + (id)sharedStore;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_addVendorID:(id)arg1 forApplication:(id)arg2 companionAppBundleId:(id)arg3 spiClient:(BOOL)arg4;
+- (bool)_addVendorID:(id)arg1 forApplication:(id)arg2 companionAppBundleId:(id)arg3 spiClient:(bool)arg4;
 - (void)_extractVendorIDForApplication:(id)arg1;
 - (id)_machUUIDsForApplication:(id)arg1;
 - (void)_save;
-- (void)_setAndSaveVendorID:(id)arg1 applicationBundleId:(id)arg2 companionAppBundleId:(id)arg3 spiClient:(BOOL)arg4;
+- (void)_setAndSaveVendorID:(id)arg1 applicationBundleId:(id)arg2 companionAppBundleId:(id)arg3 spiClient:(bool)arg4;
 - (id)_vendorIDForApplication:(id)arg1;
 - (void)addVendorID:(id)arg1 applicationBundleId:(id)arg2 companionAppBundleId:(id)arg3;
-- (void)addVendorID:(id)arg1 applicationBundleId:(id)arg2 spiClient:(BOOL)arg3;
+- (void)addVendorID:(id)arg1 applicationBundleId:(id)arg2 spiClient:(bool)arg3;
 - (void)addVendorIDData:(id)arg1 applicationBundleId:(id)arg2;
 - (id)applicationMachUUIDMapping;
 - (id)applicationVendorIdMapping;

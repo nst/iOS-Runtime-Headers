@@ -3,30 +3,30 @@
  */
 
 @interface NSURLQueue : NSObject {
-    BOOL  _pad1;
-    BOOL  _pad2;
-    BOOL  _pad3;
-    unsigned int  count;
+    bool  _pad1;
+    bool  _pad2;
+    bool  _pad3;
+    unsigned long long  count;
     NSURLQueueNode * head;
     id  monitor;
     NSURLQueueNode * tail;
-    BOOL  waitOnTake;
+    bool  waitOnTake;
 }
 
 + (id)newNode;
 
 - (void)clear;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (int)indexOf:(id)arg1;
+- (long long)indexOf:(id)arg1;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)peek;
-- (id)peekAt:(unsigned int)arg1;
+- (id)peekAt:(unsigned long long)arg1;
 - (void)put:(id)arg1;
-- (BOOL)remove:(id)arg1;
-- (void)setWaitOnTake:(BOOL)arg1;
+- (bool)remove:(id)arg1;
+- (void)setWaitOnTake:(bool)arg1;
 - (id)take;
-- (BOOL)waitOnTake;
+- (bool)waitOnTake;
 
 @end

@@ -5,14 +5,16 @@
 
 @optional
 
+- (void)handleButtonActions:(NSSet *)arg1;
 - (void)handleDoubleHeightStatusBarTap;
-- (void)handleHeadsetButtonPressed:(BOOL)arg1;
+- (void)handleHeadsetButtonPressed:(bool)arg1;
 - (void)handleHomeButtonPressed;
 - (void)handleLockButtonPressed;
 - (void)handleVolumeDownButtonPressed;
 - (void)handleVolumeUpButtonPressed;
 - (void)noteActivatedForActivityContinuationWithIdentifier:(NSUUID *)arg1;
 - (void)noteActivatedForCustomReason:(NSString *)arg1;
+- (void)prepareForActivationWithContext:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 6: SBSRemoteAlertActivationContext *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 - (void)setUserInfo:(NSDictionary *)arg1;
 
 @end

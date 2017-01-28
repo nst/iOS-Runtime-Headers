@@ -18,18 +18,18 @@
 - (void).cxx_destruct;
 - (void)_ensureCurrentImageValuesAreComputed;
 - (void)_ensureInitialImageValuesAreComputed;
-- (BOOL)_imageCurrentValuesCacheIsValid;
+- (bool)_imageCurrentValuesCacheIsValid;
 - (id)baseImage;
-- (void)computeAutoEnhanceWithCompletionHandler:(id /* block */)arg1;
+- (void)computeAutoEnhanceWithCompletionHandler:(id)arg1;
 - (id)init;
 - (id)photoEditModel;
 - (void)precomputeImageValues;
 - (void)setBaseImage:(id)arg1;
 - (void)setPhotoEditModel:(id)arg1;
-- (id)smartBlackAndWhiteStatisticsWithAccuracy:(int)arg1;
-- (float)smartColorAutoSuggestion;
-- (id)smartColorStatisticsWithAccuracy:(int)arg1;
-- (float)smartToneAutoSuggestion;
-- (id)smartToneStatisticsWithAccuracy:(int)arg1;
+- (id)smartBlackAndWhiteStatisticsWithAccuracy:(long long)arg1;
+- (double)smartColorAutoSuggestion;
+- (id)smartColorStatisticsWithAccuracy:(long long)arg1;
+- (double)smartToneAutoSuggestion;
+- (id)smartToneStatisticsWithAccuracy:(long long)arg1;
 
 @end

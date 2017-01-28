@@ -5,7 +5,7 @@
 @interface PARSearchResult : SFSearchResult
 
 + (id)resultForParsec:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

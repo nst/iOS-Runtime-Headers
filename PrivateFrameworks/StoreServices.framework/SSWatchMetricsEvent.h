@@ -9,8 +9,8 @@
     NSString * _bundleIdentifier;
     NSString * _cohortID;
     NSString * _downloadVarietyID;
-    unsigned int  _eventType;
-    unsigned int  _installType;
+    unsigned long long  _eventType;
+    unsigned long long  _installType;
     NSString * _model;
     NSString * _osVersion;
     NSNumber * _pid;
@@ -29,8 +29,8 @@
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSString *cohortID;
 @property (nonatomic, copy) NSString *downloadVarietyID;
-@property (nonatomic) unsigned int eventType;
-@property (nonatomic) unsigned int installType;
+@property (nonatomic) unsigned long long eventType;
+@property (nonatomic) unsigned long long installType;
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, copy) NSString *osVersion;
 @property (nonatomic, copy) NSNumber *pid;
@@ -52,11 +52,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dictionaryRepresentation;
 - (id)downloadVarietyID;
-- (unsigned int)eventType;
+- (unsigned long long)eventType;
 - (id)financeDictionaryRepresentation;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
-- (unsigned int)installType;
+- (unsigned long long)installType;
 - (id)model;
 - (id)osVersion;
 - (id)pid;
@@ -67,8 +67,8 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCohortID:(id)arg1;
 - (void)setDownloadVarietyID:(id)arg1;
-- (void)setEventType:(unsigned int)arg1;
-- (void)setInstallType:(unsigned int)arg1;
+- (void)setEventType:(unsigned long long)arg1;
+- (void)setInstallType:(unsigned long long)arg1;
 - (void)setModel:(id)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setPid:(id)arg1;

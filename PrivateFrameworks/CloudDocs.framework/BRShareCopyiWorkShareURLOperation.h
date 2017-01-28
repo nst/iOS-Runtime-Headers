@@ -5,12 +5,12 @@
 @interface BRShareCopyiWorkShareURLOperation : BROperation {
     NSString * _appName;
     CKShare * _share;
-    id /* block */  _shareCopyURLCompletionBlock;
+    id  _shareCopyURLCompletionBlock;
 }
 
 @property (nonatomic, retain) NSString *appName;
 @property (nonatomic, retain) CKShare *share;
-@property (copy) id /* block */ shareCopyURLCompletionBlock;
+@property (copy) id shareCopyURLCompletionBlock;
 
 + (id)iWorkShareableExtensions;
 
@@ -22,8 +22,8 @@
 - (void)main;
 - (void)setAppName:(id)arg1;
 - (void)setShare:(id)arg1;
-- (void)setShareCopyURLCompletionBlock:(id /* block */)arg1;
+- (void)setShareCopyURLCompletionBlock:(id)arg1;
 - (id)share;
-- (id /* block */)shareCopyURLCompletionBlock;
+- (id)shareCopyURLCompletionBlock;
 
 @end

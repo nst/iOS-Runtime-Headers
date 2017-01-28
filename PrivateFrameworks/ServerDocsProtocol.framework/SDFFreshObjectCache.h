@@ -5,31 +5,31 @@
 @interface SDFFreshObjectCache : NSObject {
     NSMutableDictionary * _cache;
     NSMutableDictionary * _cacheByMetadata;
-    BOOL  _enableRefresh;
-    unsigned int  _expired;
+    bool  _enableRefresh;
+    unsigned long long  _expired;
     NSObject<OS_dispatch_source> * _flusher;
     double  _lifetime;
 }
 
 - (void).cxx_destruct;
 - (void)_flushOldObjects;
-- (BOOL)_isExpiredEntry:(id)arg1;
-- (BOOL)_isExpiredEntry:(id)arg1 now:(double)arg2;
+- (bool)_isExpiredEntry:(id)arg1;
+- (bool)_isExpiredEntry:(id)arg1 now:(double)arg2;
 - (id)_objectForKey:(id)arg1 metadata:(id*)arg2 refreshDate:(id*)arg3;
 - (id)_objectForMetadata:(id)arg1 key:(id*)arg2 refreshDate:(id*)arg3;
 - (void)_renewFlusher;
 - (void)_setEntry:(id)arg1 andMetadata:(id)arg2 forKey:(id)arg3;
 - (id)allKeys;
 - (id)allValues;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)debugDescription;
 - (id)description;
-- (unsigned int)expiredObjectsCount;
+- (unsigned long long)expiredObjectsCount;
 - (void)flushOldObjects;
 - (id)initWithObjectLifetime:(double)arg1;
-- (id)initWithObjectLifetime:(double)arg1 enableObjectForMetadata:(BOOL)arg2;
-- (id)initWithObjectLifetime:(double)arg1 enableObjectForMetadata:(BOOL)arg2 enableRefresh:(BOOL)arg3;
-- (id)initWithObjectLifetime:(double)arg1 enableRefresh:(BOOL)arg2;
+- (id)initWithObjectLifetime:(double)arg1 enableObjectForMetadata:(bool)arg2;
+- (id)initWithObjectLifetime:(double)arg1 enableObjectForMetadata:(bool)arg2 enableRefresh:(bool)arg3;
+- (id)initWithObjectLifetime:(double)arg1 enableRefresh:(bool)arg2;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKey:(id)arg1 metadata:(id*)arg2;
 - (id)objectForKey:(id)arg1 metadata:(id*)arg2 refreshDate:(id*)arg3;

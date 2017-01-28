@@ -4,15 +4,15 @@
 
 @interface FCMultiStepFetchOperationStep : NSObject {
     SEL  _fetchSelector;
-    BOOL  _isCritical;
+    bool  _isCritical;
 }
 
 @property (nonatomic) SEL fetchSelector;
-@property (nonatomic) BOOL isCritical;
+@property (nonatomic) bool isCritical;
 
 - (SEL)fetchSelector;
-- (BOOL)isCritical;
+- (bool)isCritical;
 - (void)setFetchSelector:(SEL)arg1;
-- (void)setIsCritical:(BOOL)arg1;
+- (void)setIsCritical:(bool)arg1;
 
 @end

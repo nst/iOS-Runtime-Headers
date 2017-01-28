@@ -3,55 +3,55 @@
  */
 
 @interface NTKLabelCollectionNode : NTKCollectionNode {
-    float  _color;
-    int  _faceStyle;
-    int  _font;
-    float  _fontSize;
+    double  _color;
+    long long  _faceStyle;
+    long long  _font;
+    double  _fontSize;
     unsigned int  _labels;
     unsigned int  _multiple;
-    BOOL  _paddedWithZeros;
-    struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; } * _positions;
+    bool  _paddedWithZeros;
+    struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; } * _positions;
     unsigned int  _repeat;
     unsigned int  _start;
 }
 
-@property (nonatomic) float color;
-@property (nonatomic) int faceStyle;
-@property (nonatomic) int font;
-@property (nonatomic) float fontSize;
+@property (nonatomic) double color;
+@property (nonatomic) long long faceStyle;
+@property (nonatomic) long long font;
+@property (nonatomic) double fontSize;
 @property (nonatomic) unsigned int labels;
 @property (nonatomic) unsigned int multiple;
-@property (nonatomic) BOOL paddedWithZeros;
-@property (nonatomic) struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*positions;
+@property (nonatomic) bool paddedWithZeros;
+@property (nonatomic) struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*positions;
 @property (nonatomic) unsigned int repeat;
 @property (nonatomic) unsigned int start;
 
-+ (void)applyLabelPosition:(struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*)arg1 toNode:(id)arg2;
-+ (void)applyLabelPosition:(struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*)arg1 withCenter:(struct CGPoint { float x1; float x2; })arg2 toNode:(id)arg3;
-+ (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*)arg1 toNodes:(id)arg2;
-+ (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*)arg1 withCenter:(struct CGPoint { float x1; float x2; })arg2 toNodes:(id)arg3;
++ (void)applyLabelPosition:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 toNode:(id)arg2;
++ (void)applyLabelPosition:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNode:(id)arg3;
++ (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 toNodes:(id)arg2;
++ (void)applyLabelPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1 withCenter:(struct CGPoint { double x1; double x2; })arg2 toNodes:(id)arg3;
 
-- (void)applyAppearanceFraction:(float)arg1 inverted:(BOOL)arg2;
-- (float)color;
+- (void)applyAppearanceFraction:(double)arg1 inverted:(bool)arg2;
+- (double)color;
 - (void)colorize:(id)arg1;
 - (void)createSubNodes;
-- (int)faceStyle;
-- (int)font;
-- (float)fontSize;
+- (long long)faceStyle;
+- (long long)font;
+- (double)fontSize;
 - (id)init;
 - (unsigned int)labels;
 - (unsigned int)multiple;
-- (BOOL)paddedWithZeros;
-- (struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*)positions;
+- (bool)paddedWithZeros;
+- (struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)positions;
 - (unsigned int)repeat;
-- (void)setColor:(float)arg1;
-- (void)setFaceStyle:(int)arg1;
-- (void)setFont:(int)arg1;
-- (void)setFontSize:(float)arg1;
+- (void)setColor:(double)arg1;
+- (void)setFaceStyle:(long long)arg1;
+- (void)setFont:(long long)arg1;
+- (void)setFontSize:(double)arg1;
 - (void)setLabels:(unsigned int)arg1;
 - (void)setMultiple:(unsigned int)arg1;
-- (void)setPaddedWithZeros:(BOOL)arg1;
-- (void)setPositions:(struct LabelPosition { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; int x2; int x3; }*)arg1;
+- (void)setPaddedWithZeros:(bool)arg1;
+- (void)setPositions:(struct LabelPosition { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; long long x2; long long x3; }*)arg1;
 - (void)setRepeat:(unsigned int)arg1;
 - (void)setStart:(unsigned int)arg1;
 - (unsigned int)start;

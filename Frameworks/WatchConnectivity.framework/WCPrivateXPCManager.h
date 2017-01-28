@@ -15,7 +15,7 @@
 @property (nonatomic) NSObject<WCPrivateXPCManagerDelegate> *delegate;
 @property (readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property int listenerResumedToken;
 @property int privateServiceShouldConnectToken;
 @property (readonly) Class superclass;
@@ -27,15 +27,15 @@
 
 - (void).cxx_destruct;
 - (id)connection;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
-- (void)fakeIncomingPayloadOnSubService:(id)arg1 ofType:(id)arg2 clientData:(id)arg3 resource:(id)arg4 resourceSandboxToken:(id)arg5 completionHandler:(id /* block */)arg6;
-- (void)handlePairedSyncComplicationsStartedWithCompletionHandler:(id /* block */)arg1;
+- (void)fakeIncomingPayloadOnSubService:(id)arg1 ofType:(id)arg2 clientData:(id)arg3 resource:(id)arg4 resourceSandboxToken:(id)arg5 completionHandler:(id)arg6;
+- (void)handlePairedSyncComplicationsStartedWithCompletionHandler:(id)arg1;
 - (void)handlePingForExtensionBundleID:(id)arg1;
 - (id)init;
-- (void)isExtensionPrivileged:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)isExtensionPrivileged:(id)arg1 completionHandler:(id)arg2;
 - (int)listenerResumedToken;
 - (int)privateServiceShouldConnectToken;
 - (void)setDelegate:(id)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface HMFNetAddressInternal : NSObject {
-    unsigned int  _addressFamily;
+    unsigned long long  _addressFamily;
     NSString * _addressString;
 }
 
-@property (nonatomic, readonly) unsigned int addressFamily;
+@property (nonatomic, readonly) unsigned long long addressFamily;
 @property (nonatomic, readonly, copy) NSString *addressString;
 
 - (void).cxx_destruct;
-- (unsigned int)addressFamily;
+- (unsigned long long)addressFamily;
 - (id)addressString;
 
 @end

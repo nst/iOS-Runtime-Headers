@@ -11,29 +11,30 @@
     void queueContext.storage;
 }
 
-@property (nonatomic, readonly) long changes;
+@property (nonatomic, readonly) long long changes;
 @property (nonatomic, readonly) NSString *description;
 @property (nonatomic, readonly) void*handle;
 @property (nonatomic, readonly) _TtC13CoreKnowledge8CKLogger *log;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *path;
-@property (nonatomic, readonly) BOOL readonly;
-@property (nonatomic, readonly) long totalChanges;
+@property (nonatomic, readonly) bool readonly;
+@property (nonatomic, readonly) long long totalChanges;
 
-- (id /* block */).cxx_destruct;
-- (long)changes;
+- (id).cxx_destruct;
+- (long long)changes;
+- (void)closeConnection;
 - (void)dealloc;
 - (id)description;
-- (BOOL)execute:(id)arg1 error:(id*)arg2;
+- (bool)execute:(id)arg1 error:(id*)arg2;
 - (void*)handle;
 - (id)init;
-- (id)init:(id)arg1 readonly:(BOOL)arg2 error:(id*)arg3;
-- (id)initWithReadonlyFlag:(BOOL)arg1 error:(id*)arg2;
+- (id)init:(id)arg1 readonly:(bool)arg2 error:(id*)arg3;
+- (id)initWithReadonlyFlag:(bool)arg1 error:(id*)arg2;
 - (void)interrupt;
 - (id)log;
 - (id)name;
 - (id)path;
-- (BOOL)readonly;
-- (long)totalChanges;
+- (bool)readonly;
+- (long long)totalChanges;
 
 @end

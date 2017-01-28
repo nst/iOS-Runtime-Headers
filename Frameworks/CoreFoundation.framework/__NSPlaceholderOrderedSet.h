@@ -9,18 +9,18 @@
 + (void)initialize;
 + (id)mutablePlaceholder;
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (unsigned int)indexOfObject:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)initWithObjects:(const id*)arg1 count:(unsigned int)arg2;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithObjects:(const id*)arg1 count:(unsigned long long)arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (oneway void)release;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

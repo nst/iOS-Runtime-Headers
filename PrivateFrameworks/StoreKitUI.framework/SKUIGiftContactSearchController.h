@@ -15,8 +15,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIGiftContactSearchDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int numberOfResults;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long numberOfResults;
 @property (nonatomic, readonly) UIView *searchResultsView;
 @property (readonly) Class superclass;
 
@@ -24,18 +24,18 @@
 - (void)_finishSearchWithResults:(id)arg1;
 - (void)_setResults:(id)arg1;
 - (id)_tableView;
-- (BOOL)cancelSearch;
+- (bool)cancelSearch;
 - (void)consumeAutocompleteSearchResults:(id)arg1 taskID:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)finishedSearchingForAutocompleteResults;
-- (int)numberOfResults;
+- (long long)numberOfResults;
 - (void)resetSearch;
 - (void)searchForText:(id)arg1;
 - (id)searchResultsView;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 
 @end

@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) GEOAddress *address;
-@property (nonatomic, readonly) BOOL hasAddress;
-@property (nonatomic, readonly) BOOL hasLanguage;
+@property (nonatomic, readonly) bool hasAddress;
+@property (nonatomic, readonly) bool hasLanguage;
 @property (nonatomic, retain) NSString *language;
 
 - (id)address;
@@ -18,13 +18,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddress;
-- (BOOL)hasLanguage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddress;
+- (bool)hasLanguage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)language;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAddress:(id)arg1;
 - (void)setLanguage:(id)arg1;
 - (void)writeTo:(id)arg1;

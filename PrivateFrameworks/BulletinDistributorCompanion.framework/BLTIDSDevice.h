@@ -8,19 +8,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCloudReachable;
-@property (nonatomic, readonly) BOOL isConnected;
-@property (nonatomic, readonly) BOOL isDefaultPairedDevice;
-@property (nonatomic, readonly) BOOL isNearby;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isCloudReachable;
+@property (nonatomic, readonly) bool isConnected;
+@property (nonatomic, readonly) bool isDefaultPairedDevice;
+@property (nonatomic, readonly) bool isNearby;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithIDSDevice:(id)arg1;
-- (BOOL)isCloudReachable;
-- (BOOL)isConnected;
-- (BOOL)isDefaultPairedDevice;
-- (BOOL)isNearby;
+- (bool)isCloudReachable;
+- (bool)isConnected;
+- (bool)isDefaultPairedDevice;
+- (bool)isNearby;
 
 @end

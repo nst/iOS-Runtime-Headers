@@ -5,13 +5,13 @@
 @interface HFTemperatureThresholdValue : NSObject {
     NSNumber * _maximumValue;
     NSNumber * _minimumValue;
-    unsigned int  _mode;
+    unsigned long long  _mode;
     NSNumber * _targetValue;
 }
 
 @property (nonatomic, copy) NSNumber *maximumValue;
 @property (nonatomic, copy) NSNumber *minimumValue;
-@property (nonatomic) unsigned int mode;
+@property (nonatomic) unsigned long long mode;
 @property (nonatomic, copy) NSNumber *targetValue;
 
 + (id)targetValueWithValue:(id)arg1;
@@ -19,14 +19,14 @@
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)maximumValue;
 - (id)minimumValue;
-- (unsigned int)mode;
+- (unsigned long long)mode;
 - (void)setMaximumValue:(id)arg1;
 - (void)setMinimumValue:(id)arg1;
-- (void)setMode:(unsigned int)arg1;
+- (void)setMode:(unsigned long long)arg1;
 - (void)setTargetValue:(id)arg1;
 - (id)targetValue;
 

@@ -12,8 +12,8 @@
     NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
-+ (BOOL)identifierMatches:(id)arg1 item:(id)arg2;
-+ (BOOL)isRadioItemIdentifier:(id)arg1;
++ (bool)identifierMatches:(id)arg1 item:(id)arg2;
++ (bool)isRadioItemIdentifier:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
@@ -38,15 +38,15 @@
 - (void)_setCurrentTimeIfPossible:(double)arg1 player:(id)arg2;
 - (void)_startOnDeckTimer;
 - (void)_unregisterForNotificationsForCurrentItem:(id)arg1;
-- (void)_updateBufferingState:(unsigned int)arg1 player:(id)arg2;
+- (void)_updateBufferingState:(unsigned long long)arg1 player:(id)arg2;
 - (void)_updateDurationForPlayerItem:(id)arg1 withMPAVItem:(id)arg2;
 - (void)_updateItemForPlayer:(id)arg1 currentTime:(double)arg2;
-- (void)_updateTimeValuesUsingItemTime:(BOOL)arg1 player:(id)arg2 item:(id)arg3;
+- (void)_updateTimeValuesUsingItemTime:(bool)arg1 player:(id)arg2 item:(id)arg3;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
-- (BOOL)identifierIsOnDeck:(id)arg1;
+- (bool)identifierIsOnDeck:(id)arg1;
 - (id)init;
-- (BOOL)isItemWithIdentifierActive:(id)arg1;
+- (bool)isItemWithIdentifierActive:(id)arg1;
 - (void)notifyWillChangeToItemWithItemIdentifer:(id)arg1;
 - (id)playerForItemWithIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;

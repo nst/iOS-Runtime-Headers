@@ -8,38 +8,38 @@
 
 + (id)_implicitAnimationForLayer:(id)arg1 keyPath:(id)arg2;
 + (void)activate;
-+ (void)activateBackground:(BOOL)arg1;
-+ (void)addCommitHandler:(id /* block */)arg1 forPhase:(int)arg2;
-+ (BOOL)animatesFromModelValues;
++ (void)activateBackground:(bool)arg1;
++ (void)addCommitHandler:(id)arg1 forPhase:(int)arg2;
++ (bool)animatesFromModelValues;
 + (double)animationDuration;
 + (id)animationTimingFunction;
-+ (id /* block */)animator;
++ (id)animator;
 + (void)assertInactive;
 + (void)begin;
 + (void)commit;
 + (double)commitTime;
-+ (id /* block */)completionBlock;
++ (id)completionBlock;
 + (unsigned int)currentState;
-+ (BOOL)disableActions;
-+ (BOOL)disableRunLoopObserverCommits;
++ (bool)disableActions;
++ (bool)disableRunLoopObserverCommits;
 + (void)flush;
 + (unsigned int)generateSeed;
 + (double)inputTime;
 + (void)lock;
-+ (BOOL)lowLatency;
++ (bool)lowLatency;
 + (void)popAnimator;
-+ (void)pushAnimator:(id /* block */)arg1;
-+ (void)setAnimatesFromModelValues:(BOOL)arg1;
++ (void)pushAnimator:(id)arg1;
++ (void)setAnimatesFromModelValues:(bool)arg1;
 + (void)setAnimationDuration:(double)arg1;
 + (void)setAnimationTimingFunction:(id)arg1;
-+ (void)setCommitHandler:(id /* block */)arg1;
++ (void)setCommitHandler:(id)arg1;
 + (void)setCommitTime:(double)arg1;
-+ (void)setCompletionBlock:(id /* block */)arg1;
-+ (void)setDisableActions:(BOOL)arg1;
-+ (void)setDisableRunLoopObserverCommits:(BOOL)arg1;
++ (void)setCompletionBlock:(id)arg1;
++ (void)setDisableActions:(bool)arg1;
++ (void)setDisableRunLoopObserverCommits:(bool)arg1;
 + (void)setInputTime:(double)arg1;
-+ (void)setLowLatency:(BOOL)arg1;
-+ (void)setPresentationHandler:(id /* block */)arg1 queue:(id)arg2;
++ (void)setLowLatency:(bool)arg1;
++ (void)setPresentationHandler:(id)arg1 queue:(id)arg2;
 + (void)setValue:(id)arg1 forKey:(id)arg2;
 + (void)synchronize;
 + (void)unlock;
@@ -47,6 +47,6 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
-+ (void)hk_performWithoutAnimations:(id /* block */)arg1;
++ (void)hk_performWithoutAnimations:(id)arg1;
 
 @end

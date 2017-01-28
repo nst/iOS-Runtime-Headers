@@ -6,9 +6,9 @@
 
 @property (nonatomic) float backlightLevel;
 @property (nonatomic, retain) NSString *carrierDebuggingAlertVersion;
-@property (nonatomic) int dataPlanActivationPromptCount;
+@property (nonatomic) long long dataPlanActivationPromptCount;
 @property (nonatomic, readonly) NSArray *fakeDuetTriggers;
-@property (nonatomic, readonly) BOOL showStackshotUIFeedback;
+@property (nonatomic, readonly) bool showStackshotUIFeedback;
 
 - (void)_bindAndRegisterDefaults;
 

@@ -7,7 +7,7 @@
     GEOResources * _resources;
 }
 
-@property (nonatomic, readonly) BOOL hasResources;
+@property (nonatomic, readonly) bool hasResources;
 @property (nonatomic, retain) GEODownloadMetadata *metadata;
 @property (nonatomic, retain) GEOResources *resources;
 
@@ -16,13 +16,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasResources;
-- (unsigned int)hash;
+- (bool)hasResources;
+- (unsigned long long)hash;
 - (id)initWithResourceManifestData:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)metadata;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)resources;
 - (void)setMetadata:(id)arg1;
 - (void)setResources:(id)arg1;

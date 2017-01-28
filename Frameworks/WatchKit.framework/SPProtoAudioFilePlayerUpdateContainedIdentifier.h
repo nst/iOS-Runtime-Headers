@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, retain) NSString *containedIdentifier;
-@property (nonatomic, readonly) BOOL hasContainedIdentifier;
+@property (nonatomic, readonly) bool hasContainedIdentifier;
 @property (nonatomic, retain) NSString *identifier;
 
 - (void).cxx_destruct;
@@ -17,12 +17,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContainedIdentifier;
-- (unsigned int)hash;
+- (bool)hasContainedIdentifier;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setContainedIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (id)sockPuppetMessageForPlayerItemUpsertWithAsset;

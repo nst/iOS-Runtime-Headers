@@ -3,22 +3,22 @@
  */
 
 @interface BRSharingModifyRecordAccessOperation : BROperation {
-    id /* block */  _accessAllowedCompletionBlock;
-    BOOL  _allowAccess;
-    id /* block */  _allowAccessCompletionBlock;
+    id  _accessAllowedCompletionBlock;
+    bool  _allowAccess;
+    id  _allowAccessCompletionBlock;
     NSURL * _fileURL;
 }
 
-@property (copy) id /* block */ accessAllowedCompletionBlock;
-@property (copy) id /* block */ allowAccessCompletionBlock;
+@property (copy) id accessAllowedCompletionBlock;
+@property (copy) id allowAccessCompletionBlock;
 
 - (void).cxx_destruct;
-- (id /* block */)accessAllowedCompletionBlock;
-- (id /* block */)allowAccessCompletionBlock;
+- (id)accessAllowedCompletionBlock;
+- (id)allowAccessCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (id)initWithURL:(id)arg1 allowAccess:(BOOL)arg2;
+- (id)initWithURL:(id)arg1 allowAccess:(bool)arg2;
 - (void)main;
-- (void)setAccessAllowedCompletionBlock:(id /* block */)arg1;
-- (void)setAllowAccessCompletionBlock:(id /* block */)arg1;
+- (void)setAccessAllowedCompletionBlock:(id)arg1;
+- (void)setAllowAccessCompletionBlock:(id)arg1;
 
 @end

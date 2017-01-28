@@ -8,9 +8,9 @@
     NetworkServiceProxyRespTimeBuckets * _direct_first_byte_buckets;
     NetworkServiceProxyRespTimeBuckets * _direct_last_byte_buckets;
     NetworkServiceProxyRespTimeBuckets * _first_byte_buckets;
-    int  _interface_type;
+    long long  _interface_type;
     NetworkServiceProxyRespTimeBuckets * _last_byte_buckets;
-    int  _protocol_type;
+    long long  _protocol_type;
     unsigned int  _request_count;
     unsigned int  _request_failed_count;
     int  _service_type;
@@ -22,16 +22,16 @@
 @property (retain) NetworkServiceProxyRespTimeBuckets *direct_first_byte_buckets;
 @property (retain) NetworkServiceProxyRespTimeBuckets *direct_last_byte_buckets;
 @property (retain) NetworkServiceProxyRespTimeBuckets *first_byte_buckets;
-@property int interface_type;
+@property long long interface_type;
 @property (retain) NetworkServiceProxyRespTimeBuckets *last_byte_buckets;
-@property int protocol_type;
+@property long long protocol_type;
 @property unsigned int request_count;
 @property unsigned int request_failed_count;
 @property int service_type;
 @property (retain) NetworkServiceProxyRespTimeBuckets *udp_rtt_buckets;
 
 + (int)serviceTypeForSigningIdentifier:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addStats:(id)arg1;
@@ -45,9 +45,9 @@
 - (id)getAWDMetric;
 - (id)getServiceName;
 - (id)initWithCoder:(id)arg1;
-- (int)interface_type;
+- (long long)interface_type;
 - (id)last_byte_buckets;
-- (int)protocol_type;
+- (long long)protocol_type;
 - (unsigned int)request_count;
 - (unsigned int)request_failed_count;
 - (int)service_type;
@@ -56,9 +56,9 @@
 - (void)setDirect_first_byte_buckets:(id)arg1;
 - (void)setDirect_last_byte_buckets:(id)arg1;
 - (void)setFirst_byte_buckets:(id)arg1;
-- (void)setInterface_type:(int)arg1;
+- (void)setInterface_type:(long long)arg1;
 - (void)setLast_byte_buckets:(id)arg1;
-- (void)setProtocol_type:(int)arg1;
+- (void)setProtocol_type:(long long)arg1;
 - (void)setRequest_count:(unsigned int)arg1;
 - (void)setRequest_failed_count:(unsigned int)arg1;
 - (void)setService_type:(int)arg1;

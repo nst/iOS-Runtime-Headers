@@ -6,24 +6,24 @@
     unsigned short  _buffer;
     const unsigned short * _characters;
     struct __CFString { } * _originalString;
-    long  _originalStringLength;
+    long long  _originalStringLength;
     struct { 
-        int location; 
-        int length; 
+        long long location; 
+        long long length; 
     }  _range;
 }
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (const unsigned short*)_fastCharacterContents;
-- (BOOL)_isDeallocating;
-- (void)_setOriginalString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (BOOL)_tryRetain;
-- (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (bool)_isDeallocating;
+- (void)_setOriginalString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (bool)_tryRetain;
+- (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (void)dealloc;
-- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithOriginalString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)length;
+- (void)getCharacters:(unsigned short*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (id)initWithOriginalString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)length;
 - (oneway void)release;
 
 @end

@@ -8,7 +8,7 @@
 
 @property (nonatomic) int notificationToken;
 
-+ (id)notificationObserverWithNotificationName:(id)arg1 queue:(id)arg2 block:(id /* block */)arg3;
++ (id)notificationObserverWithNotificationName:(id)arg1 queue:(id)arg2 block:(id)arg3;
 
 - (void)dealloc;
 - (id)initWithNotificationToken:(int)arg1;

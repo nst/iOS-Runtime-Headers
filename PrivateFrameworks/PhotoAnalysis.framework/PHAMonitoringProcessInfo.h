@@ -12,7 +12,7 @@
 @property unsigned long long memoryResidentBytes;
 @property double powerScore;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (double)cpuUsagePercentage;
 - (void)encodeWithCoder:(id)arg1;

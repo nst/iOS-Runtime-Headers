@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)_manuallyManagesSwipeUI;
-- (void)_setManuallyManagesSwipeUI:(BOOL)arg1;
+- (bool)_manuallyManagesSwipeUI;
+- (void)_setManuallyManagesSwipeUI:(bool)arg1;
 - (UIScrollView *)_wrapperView;
 
 @end

@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic) NSArray *fields;
-@property (nonatomic) BOOL fieldsIncludedAreCleared;
+@property (nonatomic) bool fieldsIncludedAreCleared;
 
 - (void).cxx_destruct;
 - (void)addFieldsToDictionaryRef:(struct __CFDictionary { }*)arg1;
@@ -17,11 +17,11 @@
 - (const struct __CFDictionary { }*)createDictionaryRef;
 - (id)description;
 - (id)fields;
-- (BOOL)fieldsIncludedAreCleared;
+- (bool)fieldsIncludedAreCleared;
 - (id)init;
 - (id)initWithActionDictionary:(struct CGPDFDictionary { }*)arg1 forDocument:(id)arg2 forPage:(id)arg3;
 - (void)setFields:(id)arg1;
-- (void)setFieldsIncludedAreCleared:(BOOL)arg1;
+- (void)setFieldsIncludedAreCleared:(bool)arg1;
 - (id)toolTip;
 
 @end

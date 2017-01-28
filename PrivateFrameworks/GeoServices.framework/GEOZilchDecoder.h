@@ -6,8 +6,8 @@
     NSObject<OS_dispatch_queue> * _decoderQueue;
     struct mutex { 
         struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
+            long long __sig; 
+            BOOL __opaque[56]; 
         } __m_; 
     }  _lock;
     <GEOMapAccessRestrictions> * _mapAccessRestrictions;
@@ -17,12 +17,12 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *decoderQueue;
 @property (nonatomic) <GEOMapAccessRestrictions> *mapAccessRestrictions;
 
-+ (BOOL)decodingSupported;
++ (bool)decodingSupported;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)decodeZilchMessage:(struct shared_ptr<zilch::Message> { struct Message {} *x1; struct __shared_weak_count {} *x2; })arg1 pathHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
+- (id)decodeZilchMessage:(struct shared_ptr<zilch::Message> { struct Message {} *x1; struct __shared_weak_count {} *x2; })arg1 pathHandler:(id)arg2 errorHandler:(id)arg3;
 - (id)decoderQueue;
 - (id)init;
 - (id)mapAccessRestrictions;

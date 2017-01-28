@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSAccountManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSPrivacyInfoCenter *privacyInfoCenter;
 @property (nonatomic, retain) VSViewServiceRequestCenter *requestCenter;
 @property (nonatomic, retain) VSSecurityTask *securityTask;
@@ -20,10 +20,10 @@
 
 - (void).cxx_destruct;
 - (void)_checkEntitlement;
-- (id)_enqueueViewServiceRequest:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)checkAccessStatusWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)_enqueueViewServiceRequest:(id)arg1 completionHandler:(id)arg2;
+- (void)checkAccessStatusWithOptions:(id)arg1 completionHandler:(id)arg2;
 - (id)delegate;
-- (id)enqueueAccountMetadataRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)enqueueAccountMetadataRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (id)privacyInfoCenter;
 - (id)requestCenter;

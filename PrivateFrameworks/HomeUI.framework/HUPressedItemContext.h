@@ -3,33 +3,33 @@
  */
 
 @interface HUPressedItemContext : NSObject {
-    BOOL  _active;
+    bool  _active;
     HUElasticApplier * _applier;
     double  _beginTime;
-    float  _currentViewScale;
+    double  _currentViewScale;
     HFItem * _item;
-    float  _rawInputProgress;
+    double  _rawInputProgress;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, retain) HUElasticApplier *applier;
 @property (nonatomic) double beginTime;
-@property (nonatomic) float currentViewScale;
+@property (nonatomic) double currentViewScale;
 @property (nonatomic, retain) HFItem *item;
-@property (nonatomic) float rawInputProgress;
+@property (nonatomic) double rawInputProgress;
 
 - (void).cxx_destruct;
 - (id)applier;
 - (double)beginTime;
-- (float)currentViewScale;
-- (BOOL)isActive;
+- (double)currentViewScale;
+- (bool)isActive;
 - (id)item;
-- (float)rawInputProgress;
-- (void)setActive:(BOOL)arg1;
+- (double)rawInputProgress;
+- (void)setActive:(bool)arg1;
 - (void)setApplier:(id)arg1;
 - (void)setBeginTime:(double)arg1;
-- (void)setCurrentViewScale:(float)arg1;
+- (void)setCurrentViewScale:(double)arg1;
 - (void)setItem:(id)arg1;
-- (void)setRawInputProgress:(float)arg1;
+- (void)setRawInputProgress:(double)arg1;
 
 @end

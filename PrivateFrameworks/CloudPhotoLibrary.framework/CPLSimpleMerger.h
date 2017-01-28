@@ -3,11 +3,11 @@
  */
 
 @interface CPLSimpleMerger : NSObject {
-    id /* block */  _block;
+    id  _block;
 }
 
 - (void).cxx_destruct;
-- (id)initWithMergeBlock:(id /* block */)arg1;
-- (BOOL)mergeConflictsWithError:(id*)arg1;
+- (id)initWithMergeBlock:(id)arg1;
+- (bool)mergeConflictsWithError:(id*)arg1;
 
 @end

@@ -3,64 +3,64 @@
  */
 
 @interface PUPhotoEditProtoSettings : PUSettings {
-    BOOL  _allowAnyPlugin;
-    BOOL  _autoCropEnabled;
-    BOOL  _cropMaskBlurred;
+    bool  _allowAnyPlugin;
+    bool  _autoCropEnabled;
+    bool  _cropMaskBlurred;
     double  _cropRecomposeDelay;
-    float  _cropSideMargins;
-    float  _cropWheelSize;
-    BOOL  _previewOriginalAllowsLongPress;
+    double  _cropSideMargins;
+    double  _cropWheelSize;
+    bool  _previewOriginalAllowsLongPress;
     double  _previewOriginalDuration;
-    BOOL  _previewOriginalTimesOut;
-    BOOL  _showLevelIndicator;
-    BOOL  _showResetToolButton;
-    BOOL  _simulateDownload;
-    BOOL  _simulateDownloadFailure;
+    bool  _previewOriginalTimesOut;
+    bool  _showLevelIndicator;
+    bool  _showResetToolButton;
+    bool  _simulateDownload;
+    bool  _simulateDownloadFailure;
 }
 
-@property (nonatomic) BOOL allowAnyPlugin;
-@property (nonatomic) BOOL autoCropEnabled;
-@property (nonatomic) BOOL cropMaskBlurred;
+@property (nonatomic) bool allowAnyPlugin;
+@property (nonatomic) bool autoCropEnabled;
+@property (nonatomic) bool cropMaskBlurred;
 @property (nonatomic) double cropRecomposeDelay;
-@property (nonatomic) float cropSideMargins;
-@property (nonatomic) float cropWheelSize;
-@property (nonatomic) BOOL previewOriginalAllowsLongPress;
+@property (nonatomic) double cropSideMargins;
+@property (nonatomic) double cropWheelSize;
+@property (nonatomic) bool previewOriginalAllowsLongPress;
 @property (nonatomic) double previewOriginalDuration;
-@property (nonatomic) BOOL previewOriginalTimesOut;
-@property (nonatomic) BOOL showLevelIndicator;
-@property (nonatomic) BOOL showResetToolButton;
-@property (nonatomic) BOOL simulateDownload;
-@property (nonatomic) BOOL simulateDownloadFailure;
+@property (nonatomic) bool previewOriginalTimesOut;
+@property (nonatomic) bool showLevelIndicator;
+@property (nonatomic) bool showResetToolButton;
+@property (nonatomic) bool simulateDownload;
+@property (nonatomic) bool simulateDownloadFailure;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (BOOL)allowAnyPlugin;
-- (BOOL)autoCropEnabled;
-- (BOOL)cropMaskBlurred;
+- (bool)allowAnyPlugin;
+- (bool)autoCropEnabled;
+- (bool)cropMaskBlurred;
 - (double)cropRecomposeDelay;
-- (float)cropSideMargins;
-- (float)cropWheelSize;
-- (BOOL)previewOriginalAllowsLongPress;
+- (double)cropSideMargins;
+- (double)cropWheelSize;
+- (bool)previewOriginalAllowsLongPress;
 - (double)previewOriginalDuration;
-- (BOOL)previewOriginalTimesOut;
-- (void)setAllowAnyPlugin:(BOOL)arg1;
-- (void)setAutoCropEnabled:(BOOL)arg1;
-- (void)setCropMaskBlurred:(BOOL)arg1;
+- (bool)previewOriginalTimesOut;
+- (void)setAllowAnyPlugin:(bool)arg1;
+- (void)setAutoCropEnabled:(bool)arg1;
+- (void)setCropMaskBlurred:(bool)arg1;
 - (void)setCropRecomposeDelay:(double)arg1;
-- (void)setCropSideMargins:(float)arg1;
-- (void)setCropWheelSize:(float)arg1;
+- (void)setCropSideMargins:(double)arg1;
+- (void)setCropWheelSize:(double)arg1;
 - (void)setDefaultValues;
-- (void)setPreviewOriginalAllowsLongPress:(BOOL)arg1;
+- (void)setPreviewOriginalAllowsLongPress:(bool)arg1;
 - (void)setPreviewOriginalDuration:(double)arg1;
-- (void)setPreviewOriginalTimesOut:(BOOL)arg1;
-- (void)setShowLevelIndicator:(BOOL)arg1;
-- (void)setShowResetToolButton:(BOOL)arg1;
-- (void)setSimulateDownload:(BOOL)arg1;
-- (void)setSimulateDownloadFailure:(BOOL)arg1;
-- (BOOL)showLevelIndicator;
-- (BOOL)showResetToolButton;
-- (BOOL)simulateDownload;
-- (BOOL)simulateDownloadFailure;
+- (void)setPreviewOriginalTimesOut:(bool)arg1;
+- (void)setShowLevelIndicator:(bool)arg1;
+- (void)setShowResetToolButton:(bool)arg1;
+- (void)setSimulateDownload:(bool)arg1;
+- (void)setSimulateDownloadFailure:(bool)arg1;
+- (bool)showLevelIndicator;
+- (bool)showResetToolButton;
+- (bool)simulateDownload;
+- (bool)simulateDownloadFailure;
 
 @end

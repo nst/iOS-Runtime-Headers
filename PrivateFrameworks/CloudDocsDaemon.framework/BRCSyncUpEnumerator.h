@@ -24,18 +24,18 @@
 
 - (void).cxx_destruct;
 - (void)_blackListDescendantStack:(id)arg1 parentItem:(id)arg2 andAddToSet:(id)arg3;
-- (void)_blackListDescendantStack:(id)arg1 parentItem:(id)arg2 andAddToSet:(id)arg3 descendantBlock:(id /* block */)arg4;
-- (BOOL)_blackListDescendantStackAndItemIfThrottledOrNeedsOSUpgrade:(id)arg1 now:(unsigned long long)arg2;
+- (void)_blackListDescendantStack:(id)arg1 parentItem:(id)arg2 andAddToSet:(id)arg3 descendantBlock:(id)arg4;
+- (bool)_blackListDescendantStackAndItemIfThrottledOrNeedsOSUpgrade:(id)arg1 now:(unsigned long long)arg2;
 - (struct PQLResultSet { Class x1; }*)_documentsOrAliasesNeedingSyncUpEnumerator;
 - (struct PQLResultSet { Class x1; }*)_liveOrNewDirectoriesNeedingSyncUpEnumerator;
 - (id)_nextLiveItem;
 - (id)_nextTombstone;
 - (struct PQLResultSet { Class x1; }*)_tombstoneLeavesNeedingSyncUpEnumerator;
 - (unsigned int)batchSize;
-- (BOOL)handleItemForOSUpgrade:(id)arg1 parentItemID:(id)arg2;
+- (bool)handleItemForOSUpgrade:(id)arg1 parentItemID:(id)arg2;
 - (id)initWithClientZone:(id)arg1;
 - (void)invalidate;
-- (BOOL)isBlackListed:(id)arg1;
+- (bool)isBlackListed:(id)arg1;
 - (id)itemNeedingPCSChaining;
 - (id)nextObject;
 - (unsigned long long)retryAfter;

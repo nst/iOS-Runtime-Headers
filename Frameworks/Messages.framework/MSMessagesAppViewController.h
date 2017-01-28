@@ -4,21 +4,21 @@
 
 @interface MSMessagesAppViewController : UIViewController <MSConversationDelegate, MSMessagePayloadProvider> {
     MSConversation * _activeConversation;
-    BOOL  _isReadyForDisplay;
+    bool  _isReadyForDisplay;
 }
 
 @property (nonatomic, retain) MSConversation *activeConversation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isReadyForDisplay;
-@property (nonatomic, readonly) unsigned int presentationStyle;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isReadyForDisplay;
+@property (nonatomic, readonly) unsigned long long presentationStyle;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_conversation:(id)arg1 didSelectMessage:(id)arg2;
 - (void)_conversation:(id)arg1 willSelectMessage:(id)arg2;
-- (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setContentOverlayInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (id)activeConversation;
 - (void)dealloc;
 - (void)didBecomeActiveWithConversation:(id)arg1;
@@ -27,20 +27,20 @@
 - (void)didResignActiveWithConversation:(id)arg1;
 - (void)didSelectMessage:(id)arg1 conversation:(id)arg2;
 - (void)didStartSendingMessage:(id)arg1 conversation:(id)arg2;
-- (void)didTransitionToPresentationStyle:(unsigned int)arg1;
+- (void)didTransitionToPresentationStyle:(unsigned long long)arg1;
 - (void)dismiss;
-- (BOOL)displaysAfterAppearance;
-- (BOOL)isReadyForDisplay;
-- (unsigned int)presentationStyle;
-- (void)requestPresentationStyle:(unsigned int)arg1;
+- (bool)displaysAfterAppearance;
+- (bool)isReadyForDisplay;
+- (unsigned long long)presentationStyle;
+- (void)requestPresentationStyle:(unsigned long long)arg1;
 - (void)setActiveConversation:(id)arg1;
-- (void)setIsReadyForDisplay:(BOOL)arg1;
+- (void)setIsReadyForDisplay:(bool)arg1;
 - (void)setReadyForDisplay;
-- (void)updateSnapshotWithCompletionBlock:(id /* block */)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)updateSnapshotWithCompletionBlock:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)willBecomeActiveWithConversation:(id)arg1;
 - (void)willResignActiveWithConversation:(id)arg1;
 - (void)willSelectMessage:(id)arg1 conversation:(id)arg2;
-- (void)willTransitionToPresentationStyle:(unsigned int)arg1;
+- (void)willTransitionToPresentationStyle:(unsigned long long)arg1;
 
 @end

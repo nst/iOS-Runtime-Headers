@@ -3,8 +3,8 @@
  */
 
 @interface _UIStoryboardUnwindChain : NSObject {
-    unsigned int  _commonAncestorIdx;
-    unsigned int  _modalAncestorContainingSourceIdx;
+    unsigned long long  _commonAncestorIdx;
+    unsigned long long  _modalAncestorContainingSourceIdx;
     NSMutableArray * _viewControllers;
 }
 
@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (id)commonAncestorViewController;
 - (id)debugDescription;
-- (void)enumerateViewControllersFromModalAncestorUpToButNotIncludingDestination:(id /* block */)arg1;
+- (void)enumerateViewControllersFromModalAncestorUpToButNotIncludingDestination:(id)arg1;
 - (id)initFromSourceViewController:(id)arg1 toDestinationViewController:(id)arg2;
 - (id)modalAncestorContainingSourceViewController;
 

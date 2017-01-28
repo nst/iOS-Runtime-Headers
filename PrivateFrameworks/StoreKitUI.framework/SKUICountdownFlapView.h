@@ -7,38 +7,38 @@
     UIView * _backgroundViewTop;
     UIImageView * _backgroundViewTransitionBot;
     UIImageView * _backgroundViewTransitionTop;
-    float  _factor;
+    double  _factor;
     UIColor * _flapBottomColor;
     UIColor * _flapTopColor;
     UILabel * _labelBot;
     UILabel * _labelTop;
     UILabel * _labelTransitionBot;
     UILabel * _labelTransitionTop;
-    int  _position;
+    long long  _position;
     NSString * _string;
     UIColor * _textColor;
 }
 
 @property (nonatomic, readonly) UIColor *flapBottomColor;
 @property (nonatomic, readonly) UIColor *flapTopColor;
-@property (nonatomic, readonly) int position;
+@property (nonatomic, readonly) long long position;
 @property (nonatomic, retain) NSString *string;
 @property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (id)_newBackgroundImageForTop:(int)arg1;
 - (id)_newLabel;
-- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_transformForAngle:(float)arg1 isTop:(BOOL)arg2;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (struct CATransform3D { double x1; double x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; double x11; double x12; double x13; double x14; double x15; double x16; })_transformForAngle:(double)arg1 isTop:(bool)arg2;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
 - (id)flapBottomColor;
 - (id)flapTopColor;
-- (id)initWithPosition:(int)arg1 flapTopColor:(id)arg2 flapBottomColor:(id)arg3;
+- (id)initWithPosition:(long long)arg1 flapTopColor:(id)arg2 flapBottomColor:(id)arg3;
 - (void)layoutSubviews;
-- (int)position;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (long long)position;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setString:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)string;
 - (id)textColor;
 

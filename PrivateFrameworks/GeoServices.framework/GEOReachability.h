@@ -3,24 +3,24 @@
  */
 
 @interface GEOReachability : NSObject <GEOResourceManifestTileGroupObserver> {
-    unsigned int  _errorCount;
-    BOOL  _networkReachable;
+    unsigned long long  _errorCount;
+    bool  _networkReachable;
     int  _symptomsAlternateAdviceToken;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedReachability;
 
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_resetErrors;
-- (BOOL)anyFailures;
+- (bool)anyFailures;
 - (void)dealloc;
 - (id)init;
-- (BOOL)networkAvailable;
+- (bool)networkAvailable;
 - (void)reportLoadFailure:(id)arg1;
 - (void)reportTileLoadSuccess:(id)arg1;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;

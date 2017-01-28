@@ -9,22 +9,22 @@
 }
 
 @property (setter=_setCount:) long long count;
-@property (setter=_setState:) unsigned int state;
+@property (setter=_setState:) unsigned long long state;
 @property (readonly) HKHealthStore *store;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_discardWithHandler:(id /* block */)arg1;
+- (void)_discardWithHandler:(id)arg1;
 - (id)_initWithHealthStore:(id)arg1;
 - (void)_setCount:(long long)arg1;
-- (void)_setState:(unsigned int)arg1;
+- (void)_setState:(unsigned long long)arg1;
 - (long long)count;
 - (void)discard;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)state;
+- (unsigned long long)state;
 - (id)store;
 
 @end

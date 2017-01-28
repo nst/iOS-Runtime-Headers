@@ -3,30 +3,30 @@
  */
 
 @interface MSVArtworkServiceConversionRequest : MSVArtworkServiceRequest {
-    float  _destinationCompressionQuality;
-    int  _destinationFormat;
+    double  _destinationCompressionQuality;
+    long long  _destinationFormat;
     NSURL * _destinationURL;
     NSURL * _sourceURL;
 }
 
-@property (nonatomic, readonly) float destinationCompressionQuality;
-@property (nonatomic) int destinationFormat;
+@property (nonatomic, readonly) double destinationCompressionQuality;
+@property (nonatomic) long long destinationFormat;
 @property (nonatomic, copy) NSURL *destinationURL;
 @property (nonatomic, copy) NSURL *sourceURL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)debugDescription;
-- (float)destinationCompressionQuality;
-- (int)destinationFormat;
+- (double)destinationCompressionQuality;
+- (long long)destinationFormat;
 - (id)destinationURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 destinationFormat:(int)arg3;
+- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 destinationFormat:(long long)arg3;
 - (Class)operationClass;
-- (int)operationPriority;
-- (void)setDestinationFormat:(int)arg1;
+- (long long)operationPriority;
+- (void)setDestinationFormat:(long long)arg1;
 - (void)setDestinationURL:(id)arg1;
 - (void)setSourceURL:(id)arg1;
 - (id)sourceURL;

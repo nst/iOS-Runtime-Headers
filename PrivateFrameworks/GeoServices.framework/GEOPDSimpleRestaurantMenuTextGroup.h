@@ -7,7 +7,7 @@
     NSString * _title;
 }
 
-@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, retain) NSMutableArray *menuItems;
 @property (nonatomic, retain) NSString *title;
 
@@ -20,14 +20,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTitle;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)menuItemAtIndex:(unsigned int)arg1;
+- (bool)hasTitle;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)menuItemAtIndex:(unsigned long long)arg1;
 - (id)menuItems;
-- (unsigned int)menuItemsCount;
+- (unsigned long long)menuItemsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setMenuItems:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

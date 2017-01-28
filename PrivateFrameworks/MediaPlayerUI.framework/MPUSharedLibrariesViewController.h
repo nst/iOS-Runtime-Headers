@@ -5,19 +5,19 @@
 @interface MPUSharedLibrariesViewController : UIViewController {
     UINavigationController * _navigationController;
     _MPUSharedLibrariesViewController * _sharedLibariesViewController;
-    BOOL  _showsCancelButton;
+    bool  _showsCancelButton;
 }
 
-@property (nonatomic) BOOL showsCancelButton;
-@property (nonatomic) BOOL showsLocalLibrary;
+@property (nonatomic) bool showsCancelButton;
+@property (nonatomic) bool showsLocalLibrary;
 
 - (void).cxx_destruct;
-- (void)dismissSharedLibrariesViewController:(BOOL)arg1;
+- (void)dismissSharedLibrariesViewController:(bool)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)presentSharedLibrariesViewController:(BOOL)arg1;
-- (void)setShowsCancelButton:(BOOL)arg1;
-- (void)setShowsLocalLibrary:(BOOL)arg1;
-- (BOOL)showsCancelButton;
-- (BOOL)showsLocalLibrary;
+- (void)presentSharedLibrariesViewController:(bool)arg1;
+- (void)setShowsCancelButton:(bool)arg1;
+- (void)setShowsLocalLibrary:(bool)arg1;
+- (bool)showsCancelButton;
+- (bool)showsLocalLibrary;
 
 @end

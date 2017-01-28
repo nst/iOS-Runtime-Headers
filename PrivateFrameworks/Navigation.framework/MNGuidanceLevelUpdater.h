@@ -15,13 +15,13 @@
 @property (nonatomic) <MNGuidanceLevelUpdaterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (setter=_setGuidanceLevel:, nonatomic) int guidanceLevel;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_setGuidanceLevel:(int)arg1;
-- (BOOL)_shouldTrackForLocation;
-- (BOOL)_shouldTrackForTime;
+- (bool)_shouldTrackForLocation;
+- (bool)_shouldTrackForTime;
 - (void)_update;
 - (void)dealloc;
 - (id)delegate;
@@ -33,7 +33,7 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
-- (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
+- (bool)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)navigationSession:(id)arg1 didReroute:(id)arg2 withLocation:(id)arg3;
 - (void)setDelegate:(id)arg1;

@@ -8,22 +8,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *mailboxModel;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)addMessage:(id)arg1;
+- (bool)addMessage:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFeatures:(id)arg1;
-- (double)likelihoodForFeature:(id)arg1 featureKey:(id)arg2 smoothing:(unsigned int)arg3;
+- (double)likelihoodForFeature:(id)arg1 featureKey:(id)arg2 smoothing:(unsigned long long)arg3;
 - (id)mailboxModel;
-- (BOOL)removeMessage:(id)arg1;
+- (bool)removeMessage:(id)arg1;
 - (void)setMailboxModel:(id)arg1;
-- (BOOL)updateWithFeature:(id)arg1 key:(id)arg2 adding:(BOOL)arg3;
-- (BOOL)updateWithMessage:(id)arg1 byAdding:(BOOL)arg2;
+- (bool)updateWithFeature:(id)arg1 key:(id)arg2 adding:(bool)arg3;
+- (bool)updateWithMessage:(id)arg1 byAdding:(bool)arg2;
 
 @end

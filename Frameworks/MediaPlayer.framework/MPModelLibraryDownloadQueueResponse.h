@@ -6,12 +6,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
-- (void)getChangeDetailsFromPreviousResponse:(id)arg1 completion:(id /* block */)arg2;
+- (void)getChangeDetailsFromPreviousResponse:(id)arg1 completion:(id)arg2;
 - (id)initWithRequest:(id)arg1;
 
 @end

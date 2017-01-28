@@ -5,6 +5,6 @@
 
 @optional
 
-- (PXMemoryInfo *)memoriesTileSource:(PXMemoriesUITileSource *)arg1 memoryToPreheatForIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
+- (PXMemoryInfo *)memoriesTileSource:(PXMemoriesUITileSource *)arg1 memoryToPreheatForIndexPath:(struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })arg2;
 
 @end

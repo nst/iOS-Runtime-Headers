@@ -9,12 +9,12 @@
     UISegmentedControl * _segmentedControl;
 }
 
-@property (nonatomic) BOOL canBeHighlighted;
+@property (nonatomic) bool canBeHighlighted;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUControlViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isDisabled, nonatomic) BOOL disabled;
-@property (readonly) unsigned int hash;
+@property (getter=isDisabled, nonatomic) bool disabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) NSArray *possibleValues;
 @property (nonatomic, readonly) UISegmentedControl *segmentedControl;
@@ -29,13 +29,13 @@
 - (void)addPossibleValue:(id)arg1 withTitle:(id)arg2;
 - (id)delegate;
 - (id)identifier;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isDisabled;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (bool)isDisabled;
 - (id)possibleValues;
 - (id)segmentedControl;
 - (void)setDelegate:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

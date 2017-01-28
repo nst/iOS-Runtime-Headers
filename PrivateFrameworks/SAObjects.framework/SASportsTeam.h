@@ -5,7 +5,7 @@
 @interface SASportsTeam : SASportsEntity
 
 @property (nonatomic, copy) NSString *abbreviatedName;
-@property (nonatomic) BOOL alwaysUseAthleteFullName;
+@property (nonatomic) bool alwaysUseAthleteFullName;
 @property (nonatomic, copy) NSArray *athletes;
 @property (nonatomic, copy) NSString *awayLosses;
 @property (nonatomic, copy) NSString *awayOvertimeLosses;
@@ -27,6 +27,7 @@
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *losses;
 @property (nonatomic, copy) NSString *monogram;
+@property (nonatomic, copy) NSString *netRunRate;
 @property (nonatomic, copy) NSArray *news;
 @property (nonatomic, copy) NSString *overtimeLosses;
 @property (nonatomic, copy) NSString *points;
@@ -52,7 +53,7 @@
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)abbreviatedName;
-- (BOOL)alwaysUseAthleteFullName;
+- (bool)alwaysUseAthleteFullName;
 - (id)athletes;
 - (id)awayLosses;
 - (id)awayOvertimeLosses;
@@ -76,6 +77,7 @@
 - (id)location;
 - (id)losses;
 - (id)monogram;
+- (id)netRunRate;
 - (id)news;
 - (id)overtimeLosses;
 - (id)points;
@@ -87,7 +89,7 @@
 - (id)rankings;
 - (id)secondaryColor;
 - (void)setAbbreviatedName:(id)arg1;
-- (void)setAlwaysUseAthleteFullName:(BOOL)arg1;
+- (void)setAlwaysUseAthleteFullName:(bool)arg1;
 - (void)setAthletes:(id)arg1;
 - (void)setAwayLosses:(id)arg1;
 - (void)setAwayOvertimeLosses:(id)arg1;
@@ -109,6 +111,7 @@
 - (void)setLocation:(id)arg1;
 - (void)setLosses:(id)arg1;
 - (void)setMonogram:(id)arg1;
+- (void)setNetRunRate:(id)arg1;
 - (void)setNews:(id)arg1;
 - (void)setOvertimeLosses:(id)arg1;
 - (void)setPoints:(id)arg1;
@@ -141,7 +144,7 @@
 - (id)_siriui_sportsValueForStandingsSnippetColumn:(id)arg1;
 - (id)siriui_displayName;
 - (id)siriui_displayNameAndLocation;
-- (void)siriui_enumerateEntitiesWithGroupHandler:(id /* block */)arg1 teamHandler:(id /* block */)arg2 athleteHandler:(id /* block */)arg3;
+- (void)siriui_enumerateEntitiesWithGroupHandler:(id)arg1 teamHandler:(id)arg2 athleteHandler:(id)arg3;
 - (id)siriui_localizedQualificationPositionFormatString;
 - (id)siriui_localizedSnippetColumnHeader:(id)arg1;
 - (id)siriui_textForSnippetColumn:(id)arg1;

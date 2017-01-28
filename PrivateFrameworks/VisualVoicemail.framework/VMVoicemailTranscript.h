@@ -4,21 +4,21 @@
 
 @interface VMVoicemailTranscript : NSObject <NSSecureCoding> {
     float  _confidence;
-    unsigned int  _confidenceRating;
+    unsigned long long  _confidenceRating;
     NSArray * _segments;
     NSString * _transcriptionString;
 }
 
 @property (nonatomic, readonly) float confidence;
-@property (nonatomic, readonly) unsigned int confidenceRating;
+@property (nonatomic, readonly) unsigned long long confidenceRating;
 @property (nonatomic, readonly) NSArray *segments;
 @property (nonatomic, readonly) NSString *transcriptionString;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (float)confidence;
-- (unsigned int)confidenceRating;
+- (unsigned long long)confidenceRating;
 - (id)debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

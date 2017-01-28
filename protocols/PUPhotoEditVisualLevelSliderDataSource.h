@@ -5,7 +5,7 @@
 
 @required
 
-- (UIImage *)visualLevelSlider:(PUPhotoEditVisualLevelSlider *)arg1 imageForIntensityIndex:(int)arg2;
-- (int)visualLevelSliderNumberOfThumbnails:(PUPhotoEditVisualLevelSlider *)arg1;
+- (UIImage *)visualLevelSlider:(PUPhotoEditVisualLevelSlider *)arg1 imageForIntensityIndex:(long long)arg2;
+- (long long)visualLevelSliderNumberOfThumbnails:(PUPhotoEditVisualLevelSlider *)arg1;
 
 @end

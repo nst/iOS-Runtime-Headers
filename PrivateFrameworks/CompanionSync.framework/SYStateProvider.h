@@ -3,7 +3,7 @@
  */
 
 @interface SYStateProvider : NSObject {
-    id /* block */  _encoder;
+    id  _encoder;
     unsigned long long  _handle;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
@@ -12,17 +12,17 @@
     unsigned int  _type;
 }
 
-@property (nonatomic, copy) id /* block */ encoder;
+@property (nonatomic, copy) id encoder;
 
 + (id)stateProviderWithName:(id)arg1 type:(unsigned int)arg2 typeName:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_encodedState;
 - (void)dealloc;
-- (id /* block */)encoder;
+- (id)encoder;
 - (id)init;
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2 typeName:(id)arg3;
-- (void)setEncoder:(id /* block */)arg1;
+- (void)setEncoder:(id)arg1;
 - (void)updateState:(id)arg1;
 
 @end

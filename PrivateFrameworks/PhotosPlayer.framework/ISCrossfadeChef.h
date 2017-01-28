@@ -4,24 +4,24 @@
 
 @interface ISCrossfadeChef : NSObject {
     NSOperationQueue * __operationQueue;
-    int  __requestCounter;
+    long long  __requestCounter;
     NSObject<OS_dispatch_queue> * _isolationQueue;
     NSMutableDictionary * _operationsByRequestID;
 }
 
 @property (nonatomic, readonly) NSOperationQueue *_operationQueue;
-@property (setter=_setRequestCounter:, nonatomic) int _requestCounter;
+@property (setter=_setRequestCounter:, nonatomic) long long _requestCounter;
 
 + (id)defaultChef;
 
 - (void).cxx_destruct;
 - (id)_operationQueue;
-- (void)_removeOperationForRequestID:(int)arg1;
-- (int)_requestCounter;
-- (void)_setRequestCounter:(int)arg1;
-- (void)cancelRequestWithID:(int)arg1;
+- (void)_removeOperationForRequestID:(long long)arg1;
+- (long long)_requestCounter;
+- (void)_setRequestCounter:(long long)arg1;
+- (void)cancelRequestWithID:(long long)arg1;
 - (id)init;
-- (int)requestCrossfadeItemForVideoAsset:(id)arg1 sourceStartTime:(double)arg2 stillPhoto:(struct CGImage { }*)arg3 photoEXIFOrientation:(int)arg4 crossfadeDuration:(double)arg5 numberOfFrames:(unsigned int)arg6 targetSize:(struct CGSize { float x1; float x2; })arg7 videoComposition:(id)arg8 resultHandler:(id /* block */)arg9;
-- (int)requestCrossfadeItemForVideoAsset:(id)arg1 stillPhoto:(struct CGImage { }*)arg2 stillPhotoEXIFOrientation:(int)arg3 sourceStartTime:(double)arg4 targetSize:(struct CGSize { float x1; float x2; })arg5 videoComposition:(id)arg6 resultHandler:(id /* block */)arg7;
+- (long long)requestCrossfadeItemForVideoAsset:(id)arg1 sourceStartTime:(double)arg2 stillPhoto:(struct CGImage { }*)arg3 photoEXIFOrientation:(int)arg4 crossfadeDuration:(double)arg5 minimumFrameInterval:(float)arg6 targetSize:(struct CGSize { double x1; double x2; })arg7 videoComposition:(id)arg8 resultHandler:(id)arg9;
+- (long long)requestCrossfadeItemForVideoAsset:(id)arg1 stillPhoto:(struct CGImage { }*)arg2 stillPhotoEXIFOrientation:(int)arg3 sourceStartTime:(double)arg4 targetSize:(struct CGSize { double x1; double x2; })arg5 videoComposition:(id)arg6 resultHandler:(id)arg7;
 
 @end

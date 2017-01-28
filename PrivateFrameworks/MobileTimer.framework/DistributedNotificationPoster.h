@@ -6,6 +6,6 @@
 
 + (void)postNotificationForAlarmActiveChanged;
 + (void)postNotificationForAlarmsEdited;
-+ (void)postNotificationForUserPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;
++ (void)postNotificationForUserPreferences:(bool)arg1 localNotifications:(bool)arg2;
 
 @end

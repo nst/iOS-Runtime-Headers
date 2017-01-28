@@ -3,23 +3,23 @@
  */
 
 @interface HMUIndent : NSObject {
-    unsigned int  _factor;
+    unsigned long long  _factor;
     NSString * _level;
     NSString * _step;
 }
 
-@property (nonatomic, readonly) unsigned int factor;
+@property (nonatomic, readonly) unsigned long long factor;
 @property (nonatomic, readonly) NSString *level;
 @property (nonatomic, readonly) NSString *step;
 
 + (id)indentWithLevel:(id)arg1;
-+ (id)indentWithLevel:(id)arg1 step:(id)arg2 factor:(unsigned int)arg3;
++ (id)indentWithLevel:(id)arg1 step:(id)arg2 factor:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)factor;
-- (id)indentByFactor:(unsigned int)arg1;
-- (id)initWithLevel:(id)arg1 step:(id)arg2 factor:(unsigned int)arg3;
+- (unsigned long long)factor;
+- (id)indentByFactor:(unsigned long long)arg1;
+- (id)initWithLevel:(id)arg1 step:(id)arg2 factor:(unsigned long long)arg3;
 - (id)level;
 - (id)step;
 

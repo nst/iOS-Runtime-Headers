@@ -12,8 +12,8 @@
 - (id)copyDataFromAttributes;
 - (id)dataFromAttributes;
 - (void)dealloc;
-- (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2;
-- (BOOL)generateRenditionsWithEntityName:(id)arg1 document:(id)arg2 errorDescription:(id*)arg3;
+- (void)deleteRenditionsInDocument:(id)arg1 shouldDeleteAssetFiles:(bool)arg2;
+- (bool)generateRenditionsWithEntityName:(id)arg1 document:(id)arg2 errorDescription:(id*)arg3;
 - (id)relativePath;
 - (void)setAttributesFromCopyData:(id)arg1;
 - (void)setAttributesFromData:(id)arg1;

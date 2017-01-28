@@ -4,9 +4,9 @@
 
 @interface ABMonogrammer : CNMonogrammer
 
-- (BOOL)hasImageOrInitialsForPerson:(void*)arg1;
-- (id)initWithStyle:(int)arg1 diameter:(float)arg2;
+- (bool)hasImageOrInitialsForPerson:(void*)arg1;
+- (id)initWithStyle:(long long)arg1 diameter:(double)arg2;
 - (id)monogramForPerson:(void*)arg1;
-- (id)monogramForPerson:(void*)arg1 isPersonImage:(BOOL*)arg2;
+- (id)monogramForPerson:(void*)arg1 isPersonImage:(bool*)arg2;
 
 @end

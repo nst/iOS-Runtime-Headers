@@ -4,15 +4,15 @@
 
 @interface NEPathEvent : NSObject {
     NSString * _bundleID;
-    int  _type;
+    long long  _type;
 }
 
 @property (readonly) NSString *bundleID;
-@property (readonly) int type;
+@property (readonly) long long type;
 
 - (void).cxx_destruct;
 - (id)bundleID;
-- (id)initWithType:(int)arg1 bundleID:(id)arg2;
-- (int)type;
+- (id)initWithType:(long long)arg1 bundleID:(id)arg2;
+- (long long)type;
 
 @end

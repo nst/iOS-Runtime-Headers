@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) HFTemperatureThresholdControlItem *controlItem;
 
 + (Class)controlItemClass;
-+ (BOOL)matchesControlItem:(id)arg1;
++ (bool)matchesControlItem:(id)arg1;
 
 - (id)controlToViewValueTransformer;
 - (id)createInteractionCoordinator;

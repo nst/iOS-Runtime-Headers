@@ -15,9 +15,9 @@
 - (id)activityTitle;
 - (id)activityType;
 - (id)activityViewController;
-- (void)addBookmarkNavController:(id)arg1 didFinishWithResult:(BOOL)arg2;
-- (BOOL)addBookmarkNavControllerCanSaveBookmarkChanges:(id)arg1;
+- (void)addBookmarkNavController:(id)arg1 didFinishWithResult:(bool)arg2;
+- (bool)addBookmarkNavControllerCanSaveBookmarkChanges:(id)arg1;
 - (id)bookmarkNavigationController;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 
 @end

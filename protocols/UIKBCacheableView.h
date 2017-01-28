@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)cacheDeferable;
+- (bool)cacheDeferable;
 - (NSString *)cacheKey;
 - (NSDictionary *)cacheKeysForRenderFlags:(NSArray *)arg1;
-- (float)cachedWidth;
-- (BOOL)keepNonPersistent;
+- (double)cachedWidth;
+- (bool)keepNonPersistent;
 
 @optional
 

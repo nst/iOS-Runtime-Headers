@@ -4,7 +4,7 @@
 
 @interface CCUIButtonStack : CCUIControlCenterSectionView {
     NSLayoutConstraint * _bottomMargin;
-    unsigned int  _buttonStretchThreshold;
+    unsigned long long  _buttonStretchThreshold;
     NSMutableArray * _buttons;
     <CCUIButtonStackLayoutDelegate> * _layoutDelegate;
     NSLayoutConstraint * _leadingMargin;
@@ -13,31 +13,31 @@
     NSLayoutConstraint * _trailingMargin;
 }
 
-@property (nonatomic) int axis;
-@property (nonatomic) unsigned int buttonStretchThreshold;
+@property (nonatomic) long long axis;
+@property (nonatomic) unsigned long long buttonStretchThreshold;
 @property (nonatomic, copy) NSArray *buttons;
-@property (nonatomic) float interButtonPadding;
+@property (nonatomic) double interButtonPadding;
 @property (nonatomic) <CCUIButtonStackLayoutDelegate> *layoutDelegate;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } marginInsets;
 
 - (void).cxx_destruct;
 - (void)_updateStretching;
 - (void)addButton:(id)arg1;
-- (int)axis;
-- (unsigned int)buttonStretchThreshold;
+- (long long)axis;
+- (unsigned long long)buttonStretchThreshold;
 - (id)buttons;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)interButtonPadding;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)interButtonPadding;
 - (id)layoutDelegate;
 - (void)layoutSubviews;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })marginInsets;
 - (void)removeButton:(id)arg1;
 - (void)resortButtons;
-- (void)setAxis:(int)arg1;
-- (void)setButtonStretchThreshold:(unsigned int)arg1;
+- (void)setAxis:(long long)arg1;
+- (void)setButtonStretchThreshold:(unsigned long long)arg1;
 - (void)setButtons:(id)arg1;
-- (void)setInterButtonPadding:(float)arg1;
+- (void)setInterButtonPadding:(double)arg1;
 - (void)setLayoutDelegate:(id)arg1;
-- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 
 @end

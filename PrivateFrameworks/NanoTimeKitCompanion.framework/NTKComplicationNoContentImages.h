@@ -12,7 +12,7 @@
 @property (nonatomic, retain) UIImage *modularSmallImage;
 @property (nonatomic, retain) UIImage *utilitarianSmallImage;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)circularSmallImage;

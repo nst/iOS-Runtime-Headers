@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic) <IKAppDataStoring> *appStorage;
-@property (nonatomic, readonly) unsigned int length;
+@property (nonatomic, readonly) unsigned long long length;
 @property (nonatomic, retain) NSMutableDictionary *storageDict;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *storageQueue;
 
@@ -20,8 +20,8 @@
 - (void)clear;
 - (id)getItem:(id)arg1;
 - (id)initWithAppContext:(id)arg1 appStorage:(id)arg2;
-- (id)key:(unsigned int)arg1;
-- (unsigned int)length;
+- (id)key:(unsigned long long)arg1;
+- (unsigned long long)length;
 - (void)removeItem:(id)arg1;
 - (void)setAppStorage:(id)arg1;
 - (void)setItem:(id)arg1 :(id)arg2;

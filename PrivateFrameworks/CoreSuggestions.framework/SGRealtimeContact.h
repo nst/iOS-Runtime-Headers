@@ -6,21 +6,21 @@
     int  _abPersonId;
     NSString * _cnContactIdentifier;
     SGContact * _contact;
-    unsigned int  _extractionType;
-    BOOL  _isHarvested;
+    unsigned long long  _extractionType;
+    bool  _isHarvested;
     int  _state;
 }
 
 @property (nonatomic, readonly) int abPersonId;
 @property (nonatomic, readonly) NSString *cnContactIdentifier;
 @property (nonatomic, readonly) SGContact *contact;
-@property (nonatomic, readonly) unsigned int extractionType;
-@property (nonatomic, readonly) BOOL isHarvested;
+@property (nonatomic, readonly) unsigned long long extractionType;
+@property (nonatomic, readonly) bool isHarvested;
 @property (nonatomic, readonly) int state;
 
 + (id)realtimeContactForFields:(id)arg1 addedToCuratedContact:(int)arg2;
 + (id)realtimeContactForNewContact:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (int)abPersonId;
@@ -29,13 +29,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)extractionType;
-- (unsigned int)hash;
+- (unsigned long long)extractionType;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithState:(int)arg1 contact:(id)arg2 abPersonId:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToRealtimeContact:(id)arg1;
-- (BOOL)isHarvested;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToRealtimeContact:(id)arg1;
+- (bool)isHarvested;
 - (id)markedAsHarvested;
 - (void)setCnContactIdentifier:(id)arg1;
 - (void)setExtractionType;

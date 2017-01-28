@@ -6,7 +6,7 @@
 @required
 
 - (void)publishPost:(VUPublishPost *)arg1 didFailWithError:(NSError *)arg2;
-- (void)publishPost:(VUPublishPost *)arg1 hasWrittenBytes:(int)arg2 expectsToWrite:(int)arg3;
+- (void)publishPost:(VUPublishPost *)arg1 hasWrittenBytes:(long long)arg2 expectsToWrite:(long long)arg3;
 - (void)publishPostSucceeded:(VUPublishPost *)arg1;
 
 @end

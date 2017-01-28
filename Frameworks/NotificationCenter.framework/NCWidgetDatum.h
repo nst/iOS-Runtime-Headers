@@ -9,16 +9,16 @@
 @property (nonatomic, readonly, copy) NSString *datumIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSExtension *representedExtension;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)datumIdentifier;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithExtension:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)representedExtension;
 
 @end

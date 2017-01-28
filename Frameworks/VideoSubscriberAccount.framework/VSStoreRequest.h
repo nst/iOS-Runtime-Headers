@@ -12,17 +12,17 @@
 @property (nonatomic, copy) NSString *methodName;
 @property (nonatomic, copy) NSDictionary *parameters;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bagKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)methodName;
 - (id)parameters;
 - (void)setBagKey:(id)arg1;

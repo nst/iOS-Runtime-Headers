@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSDictionary *collectionIntervals;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)collectionIntervals;

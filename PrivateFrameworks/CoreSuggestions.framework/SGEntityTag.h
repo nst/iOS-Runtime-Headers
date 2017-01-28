@@ -3,16 +3,16 @@
  */
 
 @interface SGEntityTag : NSObject <NSCopying> {
-    BOOL  _indexed;
+    bool  _indexed;
     NSString * _name;
-    BOOL  _stored;
-    BOOL  _tracked;
+    bool  _stored;
+    bool  _tracked;
 }
 
-@property (nonatomic, readonly) BOOL indexed;
+@property (nonatomic, readonly) bool indexed;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) BOOL stored;
-@property (nonatomic, readonly) BOOL tracked;
+@property (nonatomic, readonly) bool stored;
+@property (nonatomic, readonly) bool tracked;
 
 + (id)allDay;
 + (id)allTags;
@@ -57,7 +57,7 @@
 + (id)naturalLanguageEvent;
 + (id)naturalLanguageEventTypeIdentifier:(id)arg1;
 + (id)remember:(id)arg1;
-+ (void)rememberPrefix:(id)arg1 stored:(BOOL)arg2 indexed:(BOOL)arg3 tracked:(BOOL)arg4;
++ (void)rememberPrefix:(id)arg1 stored:(bool)arg2 indexed:(bool)arg3 tracked:(bool)arg4;
 + (id)resolveName:(id)arg1;
 + (id)tagForPrefix:(id)arg1 value:(id)arg2;
 + (id)testTag:(int)arg1;
@@ -67,23 +67,23 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)indexed;
-- (id)initWithName:(id)arg1 stored:(BOOL)arg2 indexed:(BOOL)arg3 tracked:(BOOL)arg4;
-- (BOOL)isContactDetail;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToEntityTag:(id)arg1;
-- (BOOL)isEventHash;
-- (BOOL)isExtraKey;
-- (BOOL)isExtractedEventCategory;
-- (BOOL)isInteractionContactIdentifier;
-- (BOOL)isMailingListId;
-- (BOOL)isNaturalLanguageEventTypeIdentifier;
-- (BOOL)isTemplateShortName;
-- (BOOL)isUrl;
+- (unsigned long long)hash;
+- (bool)indexed;
+- (id)initWithName:(id)arg1 stored:(bool)arg2 indexed:(bool)arg3 tracked:(bool)arg4;
+- (bool)isContactDetail;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToEntityTag:(id)arg1;
+- (bool)isEventHash;
+- (bool)isExtraKey;
+- (bool)isExtractedEventCategory;
+- (bool)isInteractionContactIdentifier;
+- (bool)isMailingListId;
+- (bool)isNaturalLanguageEventTypeIdentifier;
+- (bool)isTemplateShortName;
+- (bool)isUrl;
 - (id)name;
-- (BOOL)stored;
-- (BOOL)tracked;
+- (bool)stored;
+- (bool)tracked;
 - (id)value;
 
 @end

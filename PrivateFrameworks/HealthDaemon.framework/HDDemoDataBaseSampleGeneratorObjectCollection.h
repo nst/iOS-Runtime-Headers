@@ -13,7 +13,7 @@
 - (void)addObjectFromWatch:(id)arg1;
 - (void)addObjectsFromPhone:(id)arg1;
 - (void)addObjectsFromWatch:(id)arg1;
-- (void)enumerateWorkoutAssociations:(id /* block */)arg1;
+- (void)enumerateWorkoutAssociations:(id)arg1;
 - (id)init;
 - (id)objectsFromPhone;
 - (id)objectsFromWatch;

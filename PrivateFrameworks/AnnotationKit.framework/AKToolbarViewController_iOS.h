@@ -25,14 +25,14 @@
     AKUndoViewController * _undoPopoverViewController;
 }
 
-@property (nonatomic, readonly) float additionalOffset;
+@property (nonatomic, readonly) double additionalOffset;
 @property (nonatomic, retain) UIView *attributeToolbarContainer;
 @property (nonatomic, retain) AKFloatingAttributePickerViewController *attributeToolbarViewController;
 @property (nonatomic, retain) NSLayoutConstraint *attributeToolbarViewControllerConstraint;
 @property (nonatomic, retain) AKColorPickerViewController *colorPickerPopoverViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIBarButtonItem *lineStyleButton;
 @property (nonatomic, retain) AKLineStylesViewController *lineStylesViewController;
 @property (nonatomic, retain) UIGestureRecognizer *longPressGestureRecognizer;
@@ -52,15 +52,15 @@
 @property (nonatomic, retain) AKUndoViewController *undoPopoverViewController;
 
 - (void).cxx_destruct;
-- (int)_attributeTagForCurrentSelectionState;
-- (id)_barButtonForToolbarType:(unsigned int)arg1;
+- (long long)_attributeTagForCurrentSelectionState;
+- (id)_barButtonForToolbarType:(unsigned long long)arg1;
 - (void)_buildBasicItems;
 - (id)_buildUndoAlertController;
 - (id)_createNewColorPickerToolbarButtonWithTarget:(id)arg1 selector:(SEL)arg2;
 - (id)_createNewCustomViewToolbarButtonWithImage:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
-- (id)_createNewToggleToolbarButtonWithImage:(id)arg1 tag:(int)arg2 target:(id)arg3 selector:(SEL)arg4;
+- (id)_createNewToggleToolbarButtonWithImage:(id)arg1 tag:(long long)arg2 target:(id)arg3 selector:(SEL)arg4;
 - (void)_deleteSelectedItems:(id)arg1;
-- (void)_dismissCurrentlyPresentedPopoverAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
+- (void)_dismissCurrentlyPresentedPopoverAnimated:(bool)arg1 withCompletion:(id)arg2;
 - (id)_doodleModeToolbarImage;
 - (void)_layoutAttributeContainer;
 - (void)_layoutToolbarForTraitCollection:(id)arg1;
@@ -72,15 +72,15 @@
 - (void)_showTextStylePopover:(id)arg1;
 - (void)_showUndoAlert:(id)arg1;
 - (void)_sketchButtonAction:(id)arg1;
-- (id)_toolbarButtonItemOfType:(unsigned int)arg1;
+- (id)_toolbarButtonItemOfType:(unsigned long long)arg1;
 - (void)_undoAllButtonAction:(id)arg1;
 - (void)_undoButtonAction:(id)arg1;
 - (void)_undoLongPressAction:(id)arg1;
 - (void)_undoManagerNotification:(id)arg1;
 - (void)_updateToggleButton:(id)arg1 withTraitCollection:(id)arg2;
-- (BOOL)_validateUndoButton;
-- (unsigned int)_workaroundToolbarPopoverPositioningBug26744300;
-- (float)additionalOffset;
+- (bool)_validateUndoButton;
+- (unsigned long long)_workaroundToolbarPopoverPositioningBug26744300;
+- (double)additionalOffset;
 - (id)attributeToolbarContainer;
 - (id)attributeToolbarViewController;
 - (id)attributeToolbarViewControllerConstraint;
@@ -89,14 +89,14 @@
 - (void)dismissAttributeToolbarForSelectedAnnotations;
 - (void)dismissPresentedPopovers;
 - (id)initWithController:(id)arg1;
-- (BOOL)isPresentingPopovers;
+- (bool)isPresentingPopovers;
 - (id)lineStyleButton;
 - (id)lineStylesViewController;
 - (void)loadView;
 - (id)longPressGestureRecognizer;
 - (id)loupeButton;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (BOOL)popoverPresentationControllerShouldDismissPopover:(id)arg1;
+- (bool)popoverPresentationControllerShouldDismissPopover:(id)arg1;
 - (void)revalidateItems;
 - (id)richSketchButton;
 - (void)setAttributeToolbarContainer:(id)arg1;
@@ -121,7 +121,7 @@
 - (void)setTextStyleButton:(id)arg1;
 - (void)setUndoButton:(id)arg1;
 - (void)setUndoPopoverViewController:(id)arg1;
-- (void)showAttributeToolbarForSelectedAnnotations:(id)arg1 andToolMode:(unsigned int)arg2;
+- (void)showAttributeToolbarForSelectedAnnotations:(id)arg1 andToolMode:(unsigned long long)arg2;
 - (id)signatureButton;
 - (void)signatureCreationControllerDidCreateSignature:(id)arg1;
 - (id)signaturesAlertController;

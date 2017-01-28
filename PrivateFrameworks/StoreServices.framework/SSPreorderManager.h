@@ -23,7 +23,7 @@
 - (void)_registerAsObserver;
 - (void)_sendMessageToObservers:(SEL)arg1;
 - (void)addObserver:(id)arg1;
-- (void)cancelPreorders:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)cancelPreorders:(id)arg1 withCompletionBlock:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithItemKinds:(id)arg1;

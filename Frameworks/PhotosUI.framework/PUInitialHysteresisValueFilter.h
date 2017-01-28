@@ -3,7 +3,7 @@
  */
 
 @interface PUInitialHysteresisValueFilter : PUValueFilter {
-    BOOL  _didReachThreshold;
+    bool  _didReachThreshold;
     double  _initialHysteresis;
     double  _thresholdValue;
 }

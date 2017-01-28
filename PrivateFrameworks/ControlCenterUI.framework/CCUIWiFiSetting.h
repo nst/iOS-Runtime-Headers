@@ -3,27 +3,27 @@
  */
 
 @interface CCUIWiFiSetting : CCUISettingModule {
-    BOOL  _wifiEnabled;
-    BOOL  _wifiInoperative;
+    bool  _wifiEnabled;
+    bool  _wifiInoperative;
 }
 
-@property (getter=_isWifiEnabled, setter=_setWifiEnabled:, nonatomic) BOOL wifiEnabled;
-@property (getter=_isWifiInoperative, setter=_setWifiInoperative:, nonatomic) BOOL wifiInoperative;
+@property (getter=_isWifiEnabled, setter=_setWifiEnabled:, nonatomic) bool wifiEnabled;
+@property (getter=_isWifiInoperative, setter=_setWifiInoperative:, nonatomic) bool wifiInoperative;
 
 + (id)displayName;
 + (id)identifier;
 + (id)statusOffString;
 + (id)statusOnString;
 
-- (BOOL)_inoperativeWithEffectiveOverrides;
-- (BOOL)_isStateOverridden;
-- (BOOL)_isWifiEnabled;
-- (BOOL)_isWifiInoperative;
-- (void)_setWifiEnabled:(BOOL)arg1;
-- (void)_setWifiInoperative:(BOOL)arg1;
-- (BOOL)_stateWithEffectiveOverrides;
+- (bool)_inoperativeWithEffectiveOverrides;
+- (bool)_isStateOverridden;
+- (bool)_isWifiEnabled;
+- (bool)_isWifiInoperative;
+- (void)_setWifiEnabled:(bool)arg1;
+- (void)_setWifiInoperative:(bool)arg1;
+- (bool)_stateWithEffectiveOverrides;
 - (void)_tearDown;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)_updateState;
 - (void)_updateWifiNotification:(id)arg1;
 - (void)activate;

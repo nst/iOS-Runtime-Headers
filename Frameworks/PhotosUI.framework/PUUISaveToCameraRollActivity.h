@@ -4,9 +4,9 @@
 
 @interface PUUISaveToCameraRollActivity : UISaveToCameraRollActivity
 
-- (BOOL)_containsVideoComplementsInActivityItems:(id)arg1 outVideoComplements:(id*)arg2;
+- (bool)_containsVideoComplementsInActivityItems:(id)arg1 outVideoComplements:(id*)arg2;
 - (id)activityType;
-- (BOOL)canPerformWithActivityItems:(id)arg1;
+- (bool)canPerformWithActivityItems:(id)arg1;
 - (void)prepareWithActivityItems:(id)arg1;
 
 @end

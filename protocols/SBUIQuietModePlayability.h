@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)inertWhenLocked;
-- (BOOL)isCritical;
-- (BOOL)overridesPocketMode;
-- (BOOL)overridesQuietMode;
+- (bool)inertWhenLocked;
+- (bool)isCritical;
+- (bool)overridesPocketMode;
+- (bool)overridesQuietMode;
 
 @end

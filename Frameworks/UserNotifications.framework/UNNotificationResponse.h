@@ -4,29 +4,29 @@
 
 @interface UNNotificationResponse : NSObject <NSCopying, NSSecureCoding> {
     NSString * _actionIdentifier;
-    unsigned int  _actionOptions;
+    unsigned long long  _actionOptions;
     UNNotification * _notification;
 }
 
 @property (nonatomic, readonly, copy) NSString *actionIdentifier;
-@property (nonatomic, readonly) unsigned int actionOptions;
+@property (nonatomic, readonly) unsigned long long actionOptions;
 @property (nonatomic, readonly, copy) UNNotification *notification;
 
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2;
-+ (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 actionOptions:(unsigned int)arg3;
-+ (BOOL)supportsSecureCoding;
++ (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 actionOptions:(unsigned long long)arg3;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithNotification:(id)arg1 actionIdentifier:(id)arg2 actionOptions:(unsigned int)arg3;
+- (id)_initWithNotification:(id)arg1 actionIdentifier:(id)arg2 actionOptions:(unsigned long long)arg3;
 - (id)actionIdentifier;
-- (unsigned int)actionOptions;
+- (unsigned long long)actionOptions;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNotification:(id)arg1 actionIdentifier:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)notification;
 
 @end

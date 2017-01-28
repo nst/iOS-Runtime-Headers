@@ -6,9 +6,9 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)removeAllPlaybackTimeouts;
-- (void)setDockedPlaybackTimeout:(double)arg1 forPlaybackType:(int)arg2;
-- (void)setLockedPlaybackTimeout:(double)arg1 forPlaybackType:(int)arg2;
-- (void)setPausedPlaybackTimeout:(double)arg1 forPlaybackType:(int)arg2;
-- (void)setUnlockedPlaybackTimeout:(double)arg1 forPlaybackType:(int)arg2;
+- (void)setDockedPlaybackTimeout:(double)arg1 forPlaybackType:(long long)arg2;
+- (void)setLockedPlaybackTimeout:(double)arg1 forPlaybackType:(long long)arg2;
+- (void)setPausedPlaybackTimeout:(double)arg1 forPlaybackType:(long long)arg2;
+- (void)setUnlockedPlaybackTimeout:(double)arg1 forPlaybackType:(long long)arg2;
 
 @end

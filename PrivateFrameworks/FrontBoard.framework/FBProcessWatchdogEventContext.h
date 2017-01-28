@@ -3,18 +3,18 @@
  */
 
 @interface FBProcessWatchdogEventContext : NSObject {
-    int  _event;
+    long long  _event;
     FBSSceneSettings * _sceneSettings;
     FBSSceneTransitionContext * _sceneTransitionContext;
 }
 
-@property (nonatomic, readonly) int event;
+@property (nonatomic, readonly) long long event;
 @property (nonatomic, readonly) FBSSceneSettings *sceneSettings;
 @property (nonatomic, readonly) FBSSceneTransitionContext *sceneTransitionContext;
 
-+ (id)contextForEvent:(int)arg1 settings:(id)arg2 transitionContext:(id)arg3;
++ (id)contextForEvent:(long long)arg1 settings:(id)arg2 transitionContext:(id)arg3;
 
-- (int)event;
+- (long long)event;
 - (id)sceneSettings;
 - (id)sceneTransitionContext;
 

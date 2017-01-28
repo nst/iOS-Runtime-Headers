@@ -12,6 +12,6 @@
 - (id)_tokenSecret;
 - (id)_urlEncodedString:(id)arg1;
 - (id)initWithRegistrationInfo:(id)arg1;
-- (void)performRequestWithHandler:(id /* block */)arg1;
+- (void)performRequestWithHandler:(id)arg1;
 
 @end

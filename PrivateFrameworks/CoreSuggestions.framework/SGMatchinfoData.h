@@ -19,11 +19,11 @@
 - (id)detailEntityId;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entityId;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMatchinfoDataWithEntityId:(id)arg1 detailEntityId:(id)arg2 matchinfoData:(id)arg3;
-- (BOOL)isEqualToMatchinfoData:(id)arg1;
+- (bool)isEqualToMatchinfoData:(id)arg1;
 - (id)matchinfoData;
 
 @end

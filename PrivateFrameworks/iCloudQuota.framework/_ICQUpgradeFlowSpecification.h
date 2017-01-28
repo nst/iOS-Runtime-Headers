@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) NSDictionary *serverDict;
 
-+ (id)upgradeFlowSpecificationSampleForLevel:(int)arg1;
++ (id)upgradeFlowSpecificationSampleForLevel:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)initWithServerDictionary:(id)arg1;

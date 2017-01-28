@@ -12,36 +12,36 @@
     NSMutableArray * _updatedObjectsArray;
 }
 
-- (BOOL)_isDeallocating;
+- (bool)_isDeallocating;
 - (void)_rehash;
-- (BOOL)_tryRetain;
+- (bool)_tryRetain;
 - (void)addObject:(id)arg1;
 - (id)arrayFromObjectIDs;
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (void)finalize;
-- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)indexOfManagedObjectForObjectID:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1;
-- (unsigned int)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
-- (unsigned int)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)indexOfManagedObjectForObjectID:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (unsigned long long)indexOfObjectIdenticalTo:(id)arg1;
+- (unsigned long long)indexOfObjectIdenticalTo:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (id)initWithPFArray:(id)arg1;
-- (id)initWithPFArray:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
-- (id)managedObjectIDAtIndex:(unsigned int)arg1;
+- (id)initWithPFArray:(id)arg1 inRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
+- (id)managedObjectIDAtIndex:(unsigned long long)arg1;
 - (id)mutableCopy;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (oneway void)release;
 - (void)removeLastObject;
-- (void)removeObjectAtIndex:(unsigned int)arg1;
-- (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
+- (void)removeObjectAtIndex:(unsigned long long)arg1;
+- (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (id)retain;
-- (unsigned int)retainCount;
-- (id)subarrayWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned long long)retainCount;
+- (id)subarrayWithRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

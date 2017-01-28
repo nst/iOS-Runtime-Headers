@@ -4,33 +4,33 @@
 
 @interface HDIDSOutgoingResponse : NSObject <HDNanoSyncDescription> {
     NSData * _data;
-    BOOL  _doNotCompress;
-    BOOL  _forceLocalDelivery;
+    bool  _doNotCompress;
+    bool  _forceLocalDelivery;
     NSString * _idsIdentifier;
     unsigned short  _messageID;
     id  _pbResponse;
     NSDictionary * _persistentUserInfo;
-    unsigned int  _priority;
+    unsigned long long  _priority;
     HDIDSIncomingRequest * _request;
     double  _sendTimeout;
-    BOOL  _sent;
+    bool  _sent;
     IDSDevice * _toDevice;
 }
 
 @property (nonatomic, retain) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL doNotCompress;
-@property (nonatomic) BOOL forceLocalDelivery;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool doNotCompress;
+@property (nonatomic) bool forceLocalDelivery;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *idsIdentifier;
 @property (nonatomic) unsigned short messageID;
 @property (nonatomic, retain) id pbResponse;
 @property (nonatomic, retain) NSDictionary *persistentUserInfo;
-@property (nonatomic) unsigned int priority;
+@property (nonatomic) unsigned long long priority;
 @property (nonatomic) HDIDSIncomingRequest *request;
 @property (nonatomic) double sendTimeout;
-@property (getter=isSent) BOOL sent;
+@property (getter=isSent) bool sent;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) IDSDevice *toDevice;
 
@@ -40,30 +40,30 @@
 - (id)data;
 - (void)dealloc;
 - (id)description;
-- (BOOL)doNotCompress;
-- (BOOL)forceLocalDelivery;
+- (bool)doNotCompress;
+- (bool)forceLocalDelivery;
 - (id)idsIdentifier;
 - (id)init;
-- (BOOL)isSent;
+- (bool)isSent;
 - (unsigned short)messageID;
 - (id)nanoSyncDescription;
 - (id)pbResponse;
 - (id)persistentUserInfo;
-- (unsigned int)priority;
+- (unsigned long long)priority;
 - (id)request;
 - (void)send;
 - (double)sendTimeout;
 - (void)setData:(id)arg1;
-- (void)setDoNotCompress:(BOOL)arg1;
-- (void)setForceLocalDelivery:(BOOL)arg1;
+- (void)setDoNotCompress:(bool)arg1;
+- (void)setForceLocalDelivery:(bool)arg1;
 - (void)setIdsIdentifier:(id)arg1;
 - (void)setMessageID:(unsigned short)arg1;
 - (void)setPbResponse:(id)arg1;
 - (void)setPersistentUserInfo:(id)arg1;
-- (void)setPriority:(unsigned int)arg1;
+- (void)setPriority:(unsigned long long)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setSendTimeout:(double)arg1;
-- (void)setSent:(BOOL)arg1;
+- (void)setSent:(bool)arg1;
 - (void)setToDevice:(id)arg1;
 - (id)toDevice;
 

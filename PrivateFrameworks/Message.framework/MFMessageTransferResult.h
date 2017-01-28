@@ -4,19 +4,19 @@
 
 @interface MFMessageTransferResult : NSObject {
     NSArray * _failedMessages;
-    unsigned int  _resultCode;
+    unsigned long long  _resultCode;
     NSArray * _transferedMessages;
 }
 
 @property (nonatomic, readonly) NSArray *failedMessages;
-@property (nonatomic, readonly) unsigned int resultCode;
+@property (nonatomic, readonly) unsigned long long resultCode;
 @property (nonatomic, readonly) NSArray *transferedMessages;
 
 - (void)dealloc;
 - (id)debugDescription;
 - (id)failedMessages;
-- (id)initWithResultCode:(unsigned int)arg1 failedMessages:(id)arg2 transferedMessage:(id)arg3;
-- (unsigned int)resultCode;
+- (id)initWithResultCode:(unsigned long long)arg1 failedMessages:(id)arg2 transferedMessage:(id)arg3;
+- (unsigned long long)resultCode;
 - (id)transferedMessages;
 
 @end

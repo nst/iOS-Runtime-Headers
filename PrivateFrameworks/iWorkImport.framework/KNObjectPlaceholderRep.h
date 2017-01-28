@@ -4,8 +4,8 @@
 
 @interface KNObjectPlaceholderRep : KNPlaceholderRep
 
-- (BOOL)canBeginEditingChildRepOnDoubleTap:(id)arg1;
-- (BOOL)handleDoubleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (BOOL)shouldBeginEditingOnSingleClick;
+- (bool)canBeginEditingChildRepOnDoubleTap:(id)arg1;
+- (bool)handleDoubleTapAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (bool)shouldBeginEditingOnSingleClick;
 
 @end

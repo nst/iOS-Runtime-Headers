@@ -6,8 +6,8 @@
 @required
 
 - (unsigned int)bytesPerPixel;
-- (unsigned long)height;
+- (unsigned long long)height;
 - (const char *)rowAtIndex:(unsigned int)arg1;
-- (unsigned long)width;
+- (unsigned long long)width;
 
 @end

@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSSpeechConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSSpeechRequest *request;
 @property (readonly) Class superclass;
 
@@ -26,8 +26,8 @@
 - (oneway void)speechRequestDidContinue;
 - (oneway void)speechRequestDidPause;
 - (oneway void)speechRequestDidStart;
-- (oneway void)speechRequestDidStopWithSuccess:(BOOL)arg1 phonemesSpoken:(id)arg2 error:(id)arg3;
-- (oneway void)speechRequestMark:(long)arg1 didStartForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (oneway void)speechRequestDidStopWithSuccess:(bool)arg1 phonemesSpoken:(id)arg2 error:(id)arg3;
+- (oneway void)speechRequestMark:(long long)arg1 didStartForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 - (oneway void)speechRequestSuccessWithInstrumentMetrics:(id)arg1;
 
 @end

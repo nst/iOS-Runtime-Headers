@@ -7,13 +7,13 @@
 + (id)renderCacheKey;
 + (id)sceneObject;
 + (void)setSelectionPath:(id)arg1 selectionMode:(int)arg2 forScene:(id)arg3;
-+ (float)textRotationForChartInfo:(id)arg1;
++ (double)textRotationForChartInfo:(id)arg1;
 
-- (BOOL)canEditTextForSelectionPath:(id)arg1 forInfo:(id)arg2;
-- (BOOL)canRenderSelectionPath:(id)arg1 forInfo:(id)arg2;
+- (bool)canEditTextForSelectionPath:(id)arg1 forInfo:(id)arg2;
+- (bool)canRenderSelectionPath:(id)arg1 forInfo:(id)arg2;
 - (Class)chartBoundsLayoutSceneDelegateClass;
 - (id)convertSelectionPathTo3D:(id)arg1 path:(id)arg2;
-- (struct EdgeDetectionParameters { BOOL x1; BOOL x2; float x3; })edgeDetectionParameters;
+- (struct EdgeDetectionParameters { bool x1; bool x2; float x3; })edgeDetectionParameters;
 - (void)getBounds:(id)arg1;
 - (void)getSceneObjectElementsBounds:(id)arg1;
 - (void)getSelectionKnobsPositions:(id)arg1;

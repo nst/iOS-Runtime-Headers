@@ -3,15 +3,15 @@
  */
 
 @interface MusicLibraryTopBarController : NSObject {
-    BOOL  _displayingLocalLibrary;
-    BOOL  _showCloudMediaEnabled;
+    bool  _displayingLocalLibrary;
+    bool  _showCloudMediaEnabled;
     UIViewController * _targetViewController;
     UIView * _topBarContainerView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _topBarContentInsetAdditions;
     UIViewController * _topBarViewController;
 }

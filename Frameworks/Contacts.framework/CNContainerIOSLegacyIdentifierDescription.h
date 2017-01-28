@@ -6,9 +6,9 @@
 
 - (void*)ABValueForABSource:(void*)arg1;
 - (id)CNValueForContainer:(id)arg1;
-- (BOOL)isWritable;
+- (bool)isWritable;
 - (id)key;
-- (BOOL)setABValue:(void*)arg1 onABSource:(void*)arg2 error:(struct __CFError {}**)arg3;
+- (bool)setABValue:(void*)arg1 onABSource:(void*)arg2 error:(struct __CFError {}**)arg3;
 - (void)setCNValue:(id)arg1 onContainer:(id)arg2;
 - (Class)valueClass;
 

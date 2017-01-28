@@ -3,7 +3,7 @@
  */
 
 @interface PULayerAnimationGroup : PUTimedAnimationGroup {
-    BOOL  _areTrackedAnimationsPaused;
+    bool  _areTrackedAnimationsPaused;
     CALayer * _referenceLayer;
 }
 

@@ -3,18 +3,18 @@
  */
 
 @interface ICAlertController : UIAlertController {
-    BOOL  _didPerformAction;
-    id /* block */  _dissmissWithoutActionBlock;
+    bool  _didPerformAction;
+    id  _dissmissWithoutActionBlock;
 }
 
-@property (nonatomic) BOOL didPerformAction;
-@property (nonatomic, copy) id /* block */ dissmissWithoutActionBlock;
+@property (nonatomic) bool didPerformAction;
+@property (nonatomic, copy) id dissmissWithoutActionBlock;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (BOOL)didPerformAction;
-- (id /* block */)dissmissWithoutActionBlock;
-- (void)setDidPerformAction:(BOOL)arg1;
-- (void)setDissmissWithoutActionBlock:(id /* block */)arg1;
+- (bool)didPerformAction;
+- (id)dissmissWithoutActionBlock;
+- (void)setDidPerformAction:(bool)arg1;
+- (void)setDissmissWithoutActionBlock:(id)arg1;
 
 @end

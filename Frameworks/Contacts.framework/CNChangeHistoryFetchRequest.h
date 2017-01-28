@@ -4,26 +4,26 @@
 
 @interface CNChangeHistoryFetchRequest : NSObject <NSSecureCoding> {
     NSString * _clientIdentifier;
-    BOOL  _contactChanges;
-    BOOL  _groupChanges;
+    bool  _contactChanges;
+    bool  _groupChanges;
 }
 
 @property (nonatomic, retain) NSString *clientIdentifier;
-@property (nonatomic) BOOL contactChanges;
-@property (nonatomic) BOOL groupChanges;
+@property (nonatomic) bool contactChanges;
+@property (nonatomic) bool groupChanges;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)clientIdentifier;
-- (BOOL)contactChanges;
+- (bool)contactChanges;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)groupChanges;
+- (bool)groupChanges;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
-- (void)setContactChanges:(BOOL)arg1;
-- (void)setGroupChanges:(BOOL)arg1;
+- (void)setContactChanges:(bool)arg1;
+- (void)setGroupChanges:(bool)arg1;
 
 @end

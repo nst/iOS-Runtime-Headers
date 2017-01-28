@@ -13,10 +13,11 @@
 - (void).cxx_destruct;
 - (void)_connectionInvalidated;
 - (void)_loadConnectionIfNeeded;
-- (id)_workspaceServiceWithErrorHandler:(id /* block */)arg1;
+- (id)_workspaceServiceWithErrorHandler:(id)arg1;
 - (id)connection;
-- (void)getWorkspaceInfoIncludingHiddenApps:(BOOL)arg1 completion:(id /* block */)arg2;
-- (void)getWorkspaceInfoWithCompletion:(id /* block */)arg1;
+- (void)dealloc;
+- (void)getWorkspaceInfoIncludingHiddenApps:(bool)arg1 completion:(id)arg2;
+- (void)getWorkspaceInfoWithCompletion:(id)arg1;
 - (id)init;
 - (id)queue;
 - (void)setConnection:(id)arg1;

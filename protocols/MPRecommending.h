@@ -5,15 +5,15 @@
 
 @required
 
-- (BOOL)addMessages:(NSArray *)arg1;
-- (BOOL)clear;
+- (bool)addMessages:(NSArray *)arg1;
+- (bool)clear;
 - (NSArray *)recommendationsForMessage:(id <MPMessage>)arg1 error:(id*)arg2;
-- (BOOL)removeMessage:(id <MPMessage>)arg1;
-- (BOOL)train;
+- (bool)removeMessage:(id <MPMessage>)arg1;
+- (bool)train;
 
 @optional
 
 - (<MPActionLogging> *)actionLogger;
-- (BOOL)synchronize;
+- (bool)synchronize;
 
 @end

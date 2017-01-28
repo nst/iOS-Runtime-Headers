@@ -8,7 +8,7 @@
 }
 
 @property (nonatomic, retain) NSString *addressID;
-@property (nonatomic, readonly) BOOL hasAddressID;
+@property (nonatomic, readonly) bool hasAddressID;
 @property (nonatomic, retain) NSMutableArray *significantLocations;
 
 + (Class)significantLocationType;
@@ -21,16 +21,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddressID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddressID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAddressID:(id)arg1;
 - (void)setSignificantLocations:(id)arg1;
-- (id)significantLocationAtIndex:(unsigned int)arg1;
+- (id)significantLocationAtIndex:(unsigned long long)arg1;
 - (id)significantLocations;
-- (unsigned int)significantLocationsCount;
+- (unsigned long long)significantLocationsCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface _MCDBrowsableTableView : UITableView
 
-- (BOOL)canBecomeFirstResponder;
+- (bool)canBecomeFirstResponder;
 
 @end

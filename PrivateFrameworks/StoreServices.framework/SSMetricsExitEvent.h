@@ -12,7 +12,7 @@
 - (id)exitURL;
 - (id)init;
 - (void)setExitType:(id)arg1;
-- (void)setExitTypeWithSuspendReason:(int)arg1;
+- (void)setExitTypeWithSuspendReason:(long long)arg1;
 - (void)setExitURL:(id)arg1;
 
 @end

@@ -4,17 +4,17 @@
 
 @interface PKPaymentSetupVerificationCompletionViewController : PKPaymentSetupTableViewController <UITextFieldDelegate> {
     UIColor * _editableTextFieldColor;
-    int  _mode;
-    BOOL  _resignedResponder;
+    long long  _mode;
+    bool  _resignedResponder;
     PKTableHeaderView * _tableHeader;
-    BOOL  _verificationCodeAccepted;
+    bool  _verificationCodeAccepted;
     PKActivityTableCell * _verificationCodeCell;
     PKPaymentVerificationController * _verificationController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PKPaymentVerificationController *verificationController;
 
@@ -29,18 +29,18 @@
 - (void)_terminateFlow;
 - (void)cancel:(id)arg1;
 - (void)dealloc;
-- (id)initWithVerificationController:(id)arg1 mode:(int)arg2;
+- (id)initWithVerificationController:(id)arg1 mode:(long long)arg2;
 - (void)loadView;
 - (void)next:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (id)verificationController;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 - (void)viewWillLayoutSubviews;
 
 @end

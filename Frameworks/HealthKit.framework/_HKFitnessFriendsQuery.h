@@ -3,23 +3,23 @@
  */
 
 @interface _HKFitnessFriendsQuery : HKQuery {
-    id /* block */  _updateHandler;
+    id  _updateHandler;
 }
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_queue_shouldStayAliveAfterInitialResults;
+- (id)_queue_errorHandler;
+- (bool)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
-- (BOOL)_requiresValidSampleType;
+- (bool)_requiresValidSampleType;
 - (void)deliverFitnessFriends:(id)arg1 queryUUID:(id)arg2;
-- (id)initWithUpdateHandler:(id /* block */)arg1;
+- (id)initWithUpdateHandler:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (Class)hd_queryServerClass;
-+ (BOOL)hd_requiresPrivateEntitlements;
++ (bool)hd_requiresPrivateEntitlements;
 
 @end

@@ -9,6 +9,6 @@
 - (void)dealloc;
 - (id)image;
 - (id)initWithBlipRef:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

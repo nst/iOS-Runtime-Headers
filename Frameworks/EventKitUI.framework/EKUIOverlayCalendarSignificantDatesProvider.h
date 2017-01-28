@@ -7,14 +7,14 @@
     CalDateRange * _cachedDateRange;
     NSDictionary * _cachedFirstsOfMonths;
     NSDictionary * _cachedFirstsOfYears;
-    unsigned int  _currentGeneration;
+    unsigned long long  _currentGeneration;
     NSDate * _currentRequest;
-    BOOL  _loadPending;
+    bool  _loadPending;
     NSObject<OS_dispatch_queue> * _queue;
-    id /* block */  _significantDatesChangedHandler;
+    id  _significantDatesChangedHandler;
 }
 
-@property (nonatomic, copy) id /* block */ significantDatesChangedHandler;
+@property (nonatomic, copy) id significantDatesChangedHandler;
 
 - (void).cxx_destruct;
 - (void)_invalidateCaches;
@@ -24,7 +24,7 @@
 - (id)firstOfOverlayMonthsForCalendarMonth:(id)arg1;
 - (id)firstOfOverlayYearsForCalendarMonth:(id)arg1;
 - (id)init;
-- (void)setSignificantDatesChangedHandler:(id /* block */)arg1;
-- (id /* block */)significantDatesChangedHandler;
+- (void)setSignificantDatesChangedHandler:(id)arg1;
+- (id)significantDatesChangedHandler;
 
 @end

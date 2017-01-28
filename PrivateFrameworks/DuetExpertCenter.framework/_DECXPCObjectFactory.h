@@ -3,28 +3,28 @@
  */
 
 @interface _DECXPCObjectFactory : NSObject {
-    unsigned int  _allowBattery;
+    unsigned long long  _allowBattery;
     long long  _intervalHours;
     long long  _intervalMinutes;
     long long  _intervalSeconds;
-    unsigned int  _priorityLevel;
-    BOOL  _repeating;
-    BOOL  _requireClassA;
-    BOOL  _requireClassC;
-    BOOL  _requireScreenSleep;
+    unsigned long long  _priorityLevel;
+    bool  _repeating;
+    bool  _requireClassA;
+    bool  _requireClassC;
+    bool  _requireScreenSleep;
 }
 
 @property (nonatomic) long long intervalHours;
 @property (nonatomic) long long intervalMinutes;
 @property (nonatomic) long long intervalSeconds;
-@property (nonatomic) BOOL repeating;
-@property (nonatomic) BOOL requireClassA;
-@property (nonatomic) BOOL requireClassC;
-@property (nonatomic) BOOL requireScreenSleep;
+@property (nonatomic) bool repeating;
+@property (nonatomic) bool requireClassA;
+@property (nonatomic) bool requireClassC;
+@property (nonatomic) bool requireScreenSleep;
 
 - (const char *)_activityPriority;
 - (long long)_getInterval;
-- (BOOL)_shouldAllowBattery;
+- (bool)_shouldAllowBattery;
 - (void)allowBattery;
 - (void)disallowBattery;
 - (id)getXPCObject;
@@ -32,18 +32,18 @@
 - (long long)intervalHours;
 - (long long)intervalMinutes;
 - (long long)intervalSeconds;
-- (BOOL)repeating;
-- (BOOL)requireClassA;
-- (BOOL)requireClassC;
-- (BOOL)requireScreenSleep;
+- (bool)repeating;
+- (bool)requireClassA;
+- (bool)requireClassC;
+- (bool)requireScreenSleep;
 - (void)setIntervalHours:(long long)arg1;
 - (void)setIntervalMinutes:(long long)arg1;
 - (void)setIntervalSeconds:(long long)arg1;
 - (void)setPriorityLevelMaintenance;
 - (void)setPriorityLevelUtility;
-- (void)setRepeating:(BOOL)arg1;
-- (void)setRequireClassA:(BOOL)arg1;
-- (void)setRequireClassC:(BOOL)arg1;
-- (void)setRequireScreenSleep:(BOOL)arg1;
+- (void)setRepeating:(bool)arg1;
+- (void)setRequireClassA:(bool)arg1;
+- (void)setRequireClassC:(bool)arg1;
+- (void)setRequireScreenSleep:(bool)arg1;
 
 @end

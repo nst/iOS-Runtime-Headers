@@ -12,11 +12,11 @@
 - (void).cxx_destruct;
 - (void)cancelStateRequestTimer;
 - (void)disableUnlockWithDevice:(id)arg1;
-- (void)enableUnlockWithDevice:(id)arg1 fromKey:(BOOL)arg2 withPasscode:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)establishStashBagWithCompletionHandler:(id /* block */)arg1;
+- (void)enableUnlockWithDevice:(id)arg1 fromKey:(bool)arg2 withPasscode:(id)arg3 completionHandler:(id)arg4;
+- (void)establishStashBagWithCompletionHandler:(id)arg1;
 - (id)init;
-- (id)timerWithBlock:(id /* block */)arg1;
-- (void)unlockEnabledWithDevice:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)unlockStateForDevice:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)timerWithBlock:(id)arg1;
+- (void)unlockEnabledWithDevice:(id)arg1 completionHandler:(id)arg2;
+- (void)unlockStateForDevice:(id)arg1 completionHandler:(id)arg2;
 
 @end

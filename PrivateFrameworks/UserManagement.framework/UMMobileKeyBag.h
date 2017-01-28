@@ -13,19 +13,19 @@
 + (void)currentUserSwitchContextHasBeenUsed;
 + (id)deleteUser:(id)arg1;
 + (id)dictionaryRepresentationOfTask:(id)arg1;
-+ (BOOL)fetchAttributesForUser:(id)arg1 outError:(id*)arg2;
++ (bool)fetchAttributesForUser:(id)arg1 outError:(id*)arg2;
 + (int)foregroundUID;
-+ (BOOL)inSyncBubble;
++ (bool)inSyncBubble;
 + (void)initialize;
-+ (BOOL)isMultiUser;
++ (bool)isMultiUser;
 + (id)loadUser:(id)arg1 withPasscodeData:(id)arg2;
-+ (unsigned int)maxNumberOfUsers;
++ (unsigned long long)maxNumberOfUsers;
 + (double)passcodeBackOffIntervalForUser:(id)arg1;
 + (id)personaSpecForUser:(id)arg1;
 + (id)taskFromDictionaryRepresentation:(id)arg1;
 + (id)userFromAttributes:(id)arg1;
-+ (unsigned int)userType;
++ (unsigned long long)userType;
 + (id)userUIDs;
-+ (BOOL)writeAttributesToDiskForUser:(id)arg1 outError:(id*)arg2;
++ (bool)writeAttributesToDiskForUser:(id)arg1 outError:(id*)arg2;
 
 @end

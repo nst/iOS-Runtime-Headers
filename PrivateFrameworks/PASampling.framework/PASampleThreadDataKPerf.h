@@ -3,30 +3,30 @@
  */
 
 @interface PASampleThreadDataKPerf : PASampleThreadData {
-    BOOL  filledDispatchQueue;
-    BOOL  filledThreadSnapshotInfo;
-    BOOL  hasEmptyKernelStack;
-    BOOL  isSentinel;
+    bool  filledDispatchQueue;
+    bool  filledThreadSnapshotInfo;
+    bool  hasEmptyKernelStack;
+    bool  isSentinel;
     PASampleThreadDataKPerf * previousSampleThread;
 }
 
-@property BOOL filledDispatchQueue;
-@property BOOL filledThreadSnapshotInfo;
-@property BOOL hasEmptyKernelStack;
-@property BOOL isSentinel;
+@property bool filledDispatchQueue;
+@property bool filledThreadSnapshotInfo;
+@property bool hasEmptyKernelStack;
+@property bool isSentinel;
 @property PASampleThreadDataKPerf *previousSampleThread;
 
 - (void).cxx_destruct;
-- (BOOL)filledDispatchQueue;
-- (BOOL)filledThreadSnapshotInfo;
-- (BOOL)hasAnyInfo;
-- (BOOL)hasEmptyKernelStack;
-- (BOOL)isSentinel;
+- (bool)filledDispatchQueue;
+- (bool)filledThreadSnapshotInfo;
+- (bool)hasAnyInfo;
+- (bool)hasEmptyKernelStack;
+- (bool)isSentinel;
 - (id)previousSampleThread;
-- (void)setFilledDispatchQueue:(BOOL)arg1;
-- (void)setFilledThreadSnapshotInfo:(BOOL)arg1;
-- (void)setHasEmptyKernelStack:(BOOL)arg1;
-- (void)setIsSentinel:(BOOL)arg1;
+- (void)setFilledDispatchQueue:(bool)arg1;
+- (void)setFilledThreadSnapshotInfo:(bool)arg1;
+- (void)setHasEmptyKernelStack:(bool)arg1;
+- (void)setIsSentinel:(bool)arg1;
 - (void)setPreviousSampleThread:(id)arg1;
 
 @end

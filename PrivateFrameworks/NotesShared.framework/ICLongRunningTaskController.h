@@ -3,7 +3,7 @@
  */
 
 @interface ICLongRunningTaskController : NSObject <ICProgressViewControllerDelegate> {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     double  _intervalBeforeOpeningProgressDialog;
     id  _keepAlive;
     NSDate * _lastAccessibilityAnnouncementDate;
@@ -11,13 +11,13 @@
     NSProgress * _progress;
     NSString * _progressFormatString;
     ICProgressViewController * _progressViewController;
-    BOOL  _progressViewControllerDidFinishPresenting;
-    BOOL  _shouldDismissProgressViewController;
-    id /* block */  _updateProgressUIBlock;
+    bool  _progressViewControllerDidFinishPresenting;
+    bool  _shouldDismissProgressViewController;
+    id  _updateProgressUIBlock;
     struct UIWindow { Class x1; } * _window;
 }
 
-@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, copy) id completionBlock;
 @property (nonatomic) double intervalBeforeOpeningProgressDialog;
 @property (nonatomic, retain) id keepAlive;
 @property (nonatomic, retain) NSDate *lastAccessibilityAnnouncementDate;
@@ -25,9 +25,9 @@
 @property (nonatomic, retain) NSProgress *progress;
 @property (nonatomic, copy) NSString *progressFormatString;
 @property (nonatomic, retain) ICProgressViewController *progressViewController;
-@property (nonatomic) BOOL progressViewControllerDidFinishPresenting;
-@property (nonatomic) BOOL shouldDismissProgressViewController;
-@property (nonatomic, copy) id /* block */ updateProgressUIBlock;
+@property (nonatomic) bool progressViewControllerDidFinishPresenting;
+@property (nonatomic) bool shouldDismissProgressViewController;
+@property (nonatomic, copy) id updateProgressUIBlock;
 @property (nonatomic, retain) UIWindow *window;
 
 + (void)setMainWindow:(struct UIWindow { Class x1; }*)arg1;
@@ -35,7 +35,7 @@
 - (void).cxx_destruct;
 - (void)closeProgressDialog;
 - (void)completeTaskIfNecessary;
-- (id /* block */)completionBlock;
+- (id)completionBlock;
 - (id)init;
 - (id)initWithWindow:(struct UIWindow { Class x1; }*)arg1 intervalBeforeOpeningProgressDialog:(double)arg2;
 - (double)intervalBeforeOpeningProgressDialog;
@@ -47,8 +47,8 @@
 - (id)progress;
 - (id)progressFormatString;
 - (id)progressViewController;
-- (BOOL)progressViewControllerDidFinishPresenting;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (bool)progressViewControllerDidFinishPresenting;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setIntervalBeforeOpeningProgressDialog:(double)arg1;
 - (void)setKeepAlive:(id)arg1;
 - (void)setLastAccessibilityAnnouncementDate:(id)arg1;
@@ -56,14 +56,14 @@
 - (void)setProgress:(id)arg1;
 - (void)setProgressFormatString:(id)arg1;
 - (void)setProgressViewController:(id)arg1;
-- (void)setProgressViewControllerDidFinishPresenting:(BOOL)arg1;
-- (void)setShouldDismissProgressViewController:(BOOL)arg1;
-- (void)setUpdateProgressUIBlock:(id /* block */)arg1;
+- (void)setProgressViewControllerDidFinishPresenting:(bool)arg1;
+- (void)setShouldDismissProgressViewController:(bool)arg1;
+- (void)setUpdateProgressUIBlock:(id)arg1;
 - (void)setWindow:(struct UIWindow { Class x1; }*)arg1;
-- (BOOL)shouldDismissProgressViewController;
-- (void)startTask:(id /* block */)arg1 completionBlock:(id /* block */)arg2;
+- (bool)shouldDismissProgressViewController;
+- (void)startTask:(id)arg1 completionBlock:(id)arg2;
 - (void)updateProgress;
-- (id /* block */)updateProgressUIBlock;
+- (id)updateProgressUIBlock;
 - (void)willDismissProgressViewController:(id)arg1;
 - (struct UIWindow { Class x1; }*)window;
 

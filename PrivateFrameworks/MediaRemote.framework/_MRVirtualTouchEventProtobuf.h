@@ -16,10 +16,10 @@
 }
 
 @property (nonatomic) int finger;
-@property (nonatomic) BOOL hasFinger;
-@property (nonatomic) BOOL hasPhase;
-@property (nonatomic) BOOL hasX;
-@property (nonatomic) BOOL hasY;
+@property (nonatomic) bool hasFinger;
+@property (nonatomic) bool hasPhase;
+@property (nonatomic) bool hasX;
+@property (nonatomic) bool hasY;
 @property (nonatomic) int phase;
 @property (nonatomic) double x;
 @property (nonatomic) double y;
@@ -30,21 +30,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)finger;
-- (BOOL)hasFinger;
-- (BOOL)hasPhase;
-- (BOOL)hasX;
-- (BOOL)hasY;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFinger;
+- (bool)hasPhase;
+- (bool)hasX;
+- (bool)hasY;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)phase;
 - (id)phaseAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFinger:(int)arg1;
-- (void)setHasFinger:(BOOL)arg1;
-- (void)setHasPhase:(BOOL)arg1;
-- (void)setHasX:(BOOL)arg1;
-- (void)setHasY:(BOOL)arg1;
+- (void)setHasFinger:(bool)arg1;
+- (void)setHasPhase:(bool)arg1;
+- (void)setHasX:(bool)arg1;
+- (void)setHasY:(bool)arg1;
 - (void)setPhase:(int)arg1;
 - (void)setX:(double)arg1;
 - (void)setY:(double)arg1;

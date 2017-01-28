@@ -4,7 +4,7 @@
 
 @interface CDPAccount : NSObject
 
-+ (BOOL)isICDPEnabledForDSID:(id)arg1;
-+ (BOOL)isICDPEnabledForDSID:(id)arg1 checkWithServer:(BOOL)arg2;
++ (bool)isICDPEnabledForDSID:(id)arg1;
++ (bool)isICDPEnabledForDSID:(id)arg1 checkWithServer:(bool)arg2;
 
 @end

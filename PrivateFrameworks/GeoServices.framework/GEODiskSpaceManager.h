@@ -12,7 +12,7 @@
 
 - (id)_getPurgeableSpace:(struct __CFDictionary { }*)arg1;
 - (id)_getVolume:(struct __CFDictionary { }*)arg1;
-- (BOOL)_isValidVolume:(struct __CFDictionary { }*)arg1;
+- (bool)_isValidVolume:(struct __CFDictionary { }*)arg1;
 - (void)_registerCacheDeleteCallbacks;
 - (void)dealloc;
 - (unsigned long long)freeDiskSpaceBy:(unsigned long long)arg1;

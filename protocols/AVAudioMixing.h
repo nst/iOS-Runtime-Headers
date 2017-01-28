@@ -5,7 +5,7 @@
 
 @required
 
-- (AVAudioMixingDestination *)destinationForMixer:(AVAudioNode *)arg1 bus:(unsigned int)arg2;
+- (AVAudioMixingDestination *)destinationForMixer:(AVAudioNode *)arg1 bus:(unsigned long long)arg2;
 - (void)setVolume:(float)arg1;
 - (float)volume;
 

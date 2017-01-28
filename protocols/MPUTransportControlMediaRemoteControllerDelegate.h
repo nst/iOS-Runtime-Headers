@@ -6,7 +6,7 @@
 @required
 
 - (UIViewController *)presentingViewControllerForLikeBanActionSheetForTransportControlMediaRemoteController:(MPUTransportControlMediaRemoteController *)arg1;
-- (void)transportControlMediaRemoteController:(MPUTransportControlMediaRemoteController *)arg1 requestsPushingMediaRemoteCommand:(unsigned int)arg2 withOptions:(NSDictionary *)arg3 shouldLaunchApplication:(BOOL)arg4;
+- (void)transportControlMediaRemoteController:(MPUTransportControlMediaRemoteController *)arg1 requestsPushingMediaRemoteCommand:(unsigned int)arg2 withOptions:(NSDictionary *)arg3 shouldLaunchApplication:(bool)arg4;
 
 @optional
 

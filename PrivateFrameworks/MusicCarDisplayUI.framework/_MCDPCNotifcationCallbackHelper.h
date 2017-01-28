@@ -4,10 +4,10 @@
 
 @interface _MCDPCNotifcationCallbackHelper : NSObject {
     NSIndexPath * _indexPath;
-    id /* block */  _loadCompletion;
+    id  _loadCompletion;
     MCDPCModel * _model;
-    id /* block */  _playCompletion;
-    BOOL  _playback;
+    id  _playCompletion;
+    bool  _playback;
     id  _selfRef;
 }
 
@@ -17,11 +17,11 @@
 - (void)_finishLoadingNotification:(id)arg1;
 - (void)_finishPlaybackNotification:(id)arg1;
 - (void)_load;
-- (BOOL)_noteHasCorrectIndexPath:(id)arg1;
+- (bool)_noteHasCorrectIndexPath:(id)arg1;
 - (void)begin;
 - (void)dealloc;
-- (id)initForLoadingIndexPath:(id)arg1 withModel:(id)arg2 completion:(id /* block */)arg3;
-- (id)initForPlaybackAtIndexPath:(id)arg1 withModel:(id)arg2 completion:(id /* block */)arg3;
+- (id)initForLoadingIndexPath:(id)arg1 withModel:(id)arg2 completion:(id)arg3;
+- (id)initForPlaybackAtIndexPath:(id)arg1 withModel:(id)arg2 completion:(id)arg3;
 - (void)invalidate;
 
 @end

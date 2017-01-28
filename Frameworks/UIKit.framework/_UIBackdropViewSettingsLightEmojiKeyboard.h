@@ -4,7 +4,7 @@
 
 @interface _UIBackdropViewSettingsLightEmojiKeyboard : _UIBackdropViewSettingsLightKeyboard
 
-- (id)_defaultColorTintColorWithOpacity:(float)arg1;
-- (BOOL)_shouldUseDarkeningTintLayer;
+- (id)_defaultColorTintColorWithOpacity:(double)arg1;
+- (bool)_shouldUseDarkeningTintLayer;
 
 @end

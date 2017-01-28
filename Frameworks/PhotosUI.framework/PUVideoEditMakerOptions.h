@@ -3,21 +3,21 @@
  */
 
 @interface PUVideoEditMakerOptions : NSObject <NSCopying> {
-    BOOL  _shouldApplySlomo;
-    BOOL  _shouldApplyTrim;
-    BOOL  _shouldApplyTrimInPlace;
+    bool  _shouldApplySlomo;
+    bool  _shouldApplyTrim;
+    bool  _shouldApplyTrimInPlace;
 }
 
-@property (nonatomic) BOOL shouldApplySlomo;
-@property (nonatomic) BOOL shouldApplyTrim;
-@property (nonatomic) BOOL shouldApplyTrimInPlace;
+@property (nonatomic) bool shouldApplySlomo;
+@property (nonatomic) bool shouldApplyTrim;
+@property (nonatomic) bool shouldApplyTrimInPlace;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)setShouldApplySlomo:(BOOL)arg1;
-- (void)setShouldApplyTrim:(BOOL)arg1;
-- (void)setShouldApplyTrimInPlace:(BOOL)arg1;
-- (BOOL)shouldApplySlomo;
-- (BOOL)shouldApplyTrim;
-- (BOOL)shouldApplyTrimInPlace;
+- (void)setShouldApplySlomo:(bool)arg1;
+- (void)setShouldApplyTrim:(bool)arg1;
+- (void)setShouldApplyTrimInPlace:(bool)arg1;
+- (bool)shouldApplySlomo;
+- (bool)shouldApplyTrim;
+- (bool)shouldApplyTrimInPlace;
 
 @end

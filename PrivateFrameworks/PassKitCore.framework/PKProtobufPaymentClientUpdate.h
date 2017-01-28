@@ -13,9 +13,9 @@
     unsigned int  _status;
 }
 
-@property (nonatomic, readonly) BOOL hasRemotePaymentRequestIdentifier;
-@property (nonatomic, readonly) BOOL hasSelectedAID;
-@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) bool hasRemotePaymentRequestIdentifier;
+@property (nonatomic, readonly) bool hasSelectedAID;
+@property (nonatomic) bool hasStatus;
 @property (nonatomic, retain) NSMutableArray *paymentSummaryItems;
 @property (nonatomic, retain) NSString *remotePaymentRequestIdentifier;
 @property (nonatomic, retain) NSString *selectedAID;
@@ -34,27 +34,27 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRemotePaymentRequestIdentifier;
-- (BOOL)hasSelectedAID;
-- (BOOL)hasStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRemotePaymentRequestIdentifier;
+- (bool)hasSelectedAID;
+- (bool)hasStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)paymentSummaryItems;
-- (id)paymentSummaryItemsAtIndex:(unsigned int)arg1;
-- (unsigned int)paymentSummaryItemsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)paymentSummaryItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)paymentSummaryItemsCount;
+- (bool)readFrom:(id)arg1;
 - (id)remotePaymentRequestIdentifier;
 - (id)selectedAID;
-- (void)setHasStatus:(BOOL)arg1;
+- (void)setHasStatus:(bool)arg1;
 - (void)setPaymentSummaryItems:(id)arg1;
 - (void)setRemotePaymentRequestIdentifier:(id)arg1;
 - (void)setSelectedAID:(id)arg1;
 - (void)setShippingMethods:(id)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (id)shippingMethods;
-- (id)shippingMethodsAtIndex:(unsigned int)arg1;
-- (unsigned int)shippingMethodsCount;
+- (id)shippingMethodsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)shippingMethodsCount;
 - (unsigned int)status;
 - (void)writeTo:(id)arg1;
 

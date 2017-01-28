@@ -3,9 +3,9 @@
  */
 
 @interface _INPBSetSeatSettingsInCarIntent : PBCodable <NSCopying> {
-    BOOL  _enableCooling;
-    BOOL  _enableHeating;
-    BOOL  _enableMassage;
+    bool  _enableCooling;
+    bool  _enableHeating;
+    bool  _enableMassage;
     struct { 
         unsigned int relativeLevelSetting : 1; 
         unsigned int seat : 1; 
@@ -20,16 +20,16 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL enableCooling;
-@property (nonatomic) BOOL enableHeating;
-@property (nonatomic) BOOL enableMassage;
-@property (nonatomic) BOOL hasEnableCooling;
-@property (nonatomic) BOOL hasEnableHeating;
-@property (nonatomic) BOOL hasEnableMassage;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasLevel;
-@property (nonatomic) BOOL hasRelativeLevelSetting;
-@property (nonatomic) BOOL hasSeat;
+@property (nonatomic) bool enableCooling;
+@property (nonatomic) bool enableHeating;
+@property (nonatomic) bool enableMassage;
+@property (nonatomic) bool hasEnableCooling;
+@property (nonatomic) bool hasEnableHeating;
+@property (nonatomic) bool hasEnableMassage;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasLevel;
+@property (nonatomic) bool hasRelativeLevelSetting;
+@property (nonatomic) bool hasSeat;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, retain) _INPBInteger *level;
 @property (nonatomic) int relativeLevelSetting;
@@ -42,32 +42,32 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)enableCooling;
-- (BOOL)enableHeating;
-- (BOOL)enableMassage;
-- (BOOL)hasEnableCooling;
-- (BOOL)hasEnableHeating;
-- (BOOL)hasEnableMassage;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasLevel;
-- (BOOL)hasRelativeLevelSetting;
-- (BOOL)hasSeat;
-- (unsigned int)hash;
+- (bool)enableCooling;
+- (bool)enableHeating;
+- (bool)enableMassage;
+- (bool)hasEnableCooling;
+- (bool)hasEnableHeating;
+- (bool)hasEnableMassage;
+- (bool)hasIntentMetadata;
+- (bool)hasLevel;
+- (bool)hasRelativeLevelSetting;
+- (bool)hasSeat;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)level;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)relativeLevelSetting;
 - (int)seat;
-- (void)setEnableCooling:(BOOL)arg1;
-- (void)setEnableHeating:(BOOL)arg1;
-- (void)setEnableMassage:(BOOL)arg1;
-- (void)setHasEnableCooling:(BOOL)arg1;
-- (void)setHasEnableHeating:(BOOL)arg1;
-- (void)setHasEnableMassage:(BOOL)arg1;
-- (void)setHasRelativeLevelSetting:(BOOL)arg1;
-- (void)setHasSeat:(BOOL)arg1;
+- (void)setEnableCooling:(bool)arg1;
+- (void)setEnableHeating:(bool)arg1;
+- (void)setEnableMassage:(bool)arg1;
+- (void)setHasEnableCooling:(bool)arg1;
+- (void)setHasEnableHeating:(bool)arg1;
+- (void)setHasEnableMassage:(bool)arg1;
+- (void)setHasRelativeLevelSetting:(bool)arg1;
+- (void)setHasSeat:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setLevel:(id)arg1;
 - (void)setRelativeLevelSetting:(int)arg1;

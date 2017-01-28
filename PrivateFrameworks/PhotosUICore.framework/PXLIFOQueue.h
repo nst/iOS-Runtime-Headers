@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)_executeNextPendingBlock;
-- (void)dispatchAsync:(id /* block */)arg1;
+- (void)dispatchAsync:(id)arg1;
 - (id)initWithTargetQueue:(id)arg1;
 - (id)targetQueue;
 

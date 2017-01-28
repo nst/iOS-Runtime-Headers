@@ -6,13 +6,13 @@
     struct { 
         unsigned int userPurge : 1; 
     }  _has;
-    BOOL  _userPurge;
+    bool  _userPurge;
     CKDPRecordZoneIdentifier * _zoneIdentifier;
 }
 
-@property (nonatomic) BOOL hasUserPurge;
-@property (nonatomic, readonly) BOOL hasZoneIdentifier;
-@property (nonatomic) BOOL userPurge;
+@property (nonatomic) bool hasUserPurge;
+@property (nonatomic, readonly) bool hasZoneIdentifier;
+@property (nonatomic) bool userPurge;
 @property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 + (id)options;
@@ -22,18 +22,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasUserPurge;
-- (BOOL)hasZoneIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasUserPurge;
+- (bool)hasZoneIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setHasUserPurge:(BOOL)arg1;
-- (void)setUserPurge:(BOOL)arg1;
+- (void)setHasUserPurge:(bool)arg1;
+- (void)setUserPurge:(bool)arg1;
 - (void)setZoneIdentifier:(id)arg1;
-- (BOOL)userPurge;
+- (bool)userPurge;
 - (void)writeTo:(id)arg1;
 - (id)zoneIdentifier;
 

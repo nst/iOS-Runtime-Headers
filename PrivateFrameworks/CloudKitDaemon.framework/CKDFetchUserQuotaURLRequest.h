@@ -3,18 +3,18 @@
  */
 
 @interface CKDFetchUserQuotaURLRequest : CKDURLRequest {
-    id /* block */  _quotaFetchedBlock;
+    id  _quotaFetchedBlock;
 }
 
-@property (nonatomic, copy) id /* block */ quotaFetchedBlock;
+@property (nonatomic, copy) id quotaFetchedBlock;
 
 - (void).cxx_destruct;
 - (int)operationType;
-- (id /* block */)quotaFetchedBlock;
+- (id)quotaFetchedBlock;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setQuotaFetchedBlock:(id /* block */)arg1;
+- (void)setQuotaFetchedBlock:(id)arg1;
 
 @end

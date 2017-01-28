@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CATTaskServerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSDictionary *userInfo;
 
@@ -33,7 +33,7 @@
 - (id)delegate;
 - (void)delegateClientSession:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)delegateClientSession:(id)arg1 didReceiveNotificationWithName:(id)arg2 userInfo:(id)arg3;
-- (BOOL)delegateClientSession:(id)arg1 shouldConnectWithTransport:(id)arg2;
+- (bool)delegateClientSession:(id)arg1 shouldConnectWithTransport:(id)arg2;
 - (void)delegateClientSessionDidConnect:(id)arg1;
 - (void)delegateClientSessionDidDisconnect:(id)arg1;
 - (void)delegateDidInvalidate;
@@ -50,7 +50,7 @@
 - (void)session:(id)arg1 didReceiveNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (void)session:(id)arg1 enqueueOperation:(id)arg2;
 - (id)session:(id)arg1 prepareOperationForRequest:(id)arg2 error:(id*)arg3;
-- (BOOL)session:(id)arg1 shouldAcceptConnectionFromTransport:(id)arg2;
+- (bool)session:(id)arg1 shouldAcceptConnectionFromTransport:(id)arg2;
 - (void)sessionDidConnect:(id)arg1;
 - (void)sessionDidDisconnect:(id)arg1;
 - (void)sessionDidInvalidate:(id)arg1;

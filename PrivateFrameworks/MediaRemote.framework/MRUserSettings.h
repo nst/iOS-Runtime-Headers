@@ -8,29 +8,39 @@
 
 @property (nonatomic, readonly) double bluetoothDeviceResumeDuration;
 @property (nonatomic, readonly) double broadcastCommandWaitDuration;
-@property (nonatomic, readonly) BOOL hasTelevisionSocketQOSLevelSet;
+@property (nonatomic, readonly) bool hasTelevisionSocketQOSLevelSet;
+@property (nonatomic, readonly) double televisionDisconnectSleepDuration;
+@property (nonatomic, readonly) double televisionDisconnectWaitDuration;
 @property (nonatomic, readonly) double televisionNowPlayingInfoArtworkCoalesceDuration;
 @property (nonatomic, readonly) double televisionNowPlayingInfoCoalesceDuration;
-@property (getter=isTelevisionPairingAllowed, nonatomic) BOOL televisionPairingAllowed;
-@property (nonatomic, readonly) int televisionSocketQOSLevel;
+@property (getter=isTelevisionPairingAllowed, nonatomic) bool televisionPairingAllowed;
+@property (nonatomic, readonly) double televisionSleepAssertionOnClientConnectDuration;
+@property (nonatomic, readonly) long long televisionSocketQOSLevel;
 @property (nonatomic, readonly) double televisionTimeoutDuration;
-@property (nonatomic, readonly) BOOL useNoDelayOptionForTelevisionSockets;
-@property (nonatomic, readonly) BOOL usePeerToPeerTelevisionConnections;
+@property (nonatomic, readonly) bool useDebugAVRouteWithoutVolumeControl;
+@property (nonatomic, readonly) bool useNoDelayOptionForTelevisionSockets;
+@property (nonatomic, readonly) bool usePeerToPeerTelevisionConnections;
 
 + (id)currentSettings;
 
+- (bool)_boolValueForKey:(id)arg1 usingDefaultValue:(bool)arg2;
+- (double)_doubleValueForKey:(id)arg1 usingDefaultValue:(bool)arg2;
 - (double)bluetoothDeviceResumeDuration;
 - (double)broadcastCommandWaitDuration;
 - (void)dealloc;
-- (BOOL)hasTelevisionSocketQOSLevelSet;
+- (bool)hasTelevisionSocketQOSLevelSet;
 - (id)init;
-- (BOOL)isTelevisionPairingAllowed;
-- (void)setTelevisionPairingAllowed:(BOOL)arg1;
+- (bool)isTelevisionPairingAllowed;
+- (void)setTelevisionPairingAllowed:(bool)arg1;
+- (double)televisionDisconnectSleepDuration;
+- (double)televisionDisconnectWaitDuration;
 - (double)televisionNowPlayingInfoArtworkCoalesceDuration;
 - (double)televisionNowPlayingInfoCoalesceDuration;
-- (int)televisionSocketQOSLevel;
+- (double)televisionSleepAssertionOnClientConnectDuration;
+- (long long)televisionSocketQOSLevel;
 - (double)televisionTimeoutDuration;
-- (BOOL)useNoDelayOptionForTelevisionSockets;
-- (BOOL)usePeerToPeerTelevisionConnections;
+- (bool)useDebugAVRouteWithoutVolumeControl;
+- (bool)useNoDelayOptionForTelevisionSockets;
+- (bool)usePeerToPeerTelevisionConnections;
 
 @end

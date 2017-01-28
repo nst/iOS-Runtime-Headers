@@ -11,17 +11,17 @@
 + (void)_postGroupedSizeInBytes:(long long)arg1 key:(id)arg2;
 + (void)_postGroupedValue:(float)arg1 key:(id)arg2;
 + (void)_postRawValue:(long long)arg1 key:(id)arg2;
-+ (BOOL)_reportingEnabled;
-+ (void)reportContentDisplayedForMessageWithId:(id)arg1 hasMainAlternative:(BOOL)arg2 hasTextAlternative:(BOOL)arg3;
-+ (void)reportContentReceivedForMessageWithId:(id)arg1 sizeInBytes:(unsigned int)arg2 fullSyncVersion:(unsigned int)arg3 dateSynced:(id)arg4;
-+ (void)reportFullSyncReceivedFullSyncVersion:(unsigned int)arg1 syncedMailboxType:(unsigned int)arg2 dateSynced:(id)arg3;
-+ (void)reportFullSyncRequestedFromWatch:(BOOL)arg1 corruptionDetected:(BOOL)arg2 migrationRelated:(BOOL)arg3 idsFailureRelated:(BOOL)arg4 fullSyncVersionMatchRelated:(BOOL)arg5;
-+ (void)reportHaltSyncRequestedFromWatch:(BOOL)arg1;
-+ (void)reportImageAttachmentReceivedForMessageWithId:(id)arg1 contentId:(id)arg2 sizeInBytes:(unsigned int)arg3 fullSyncVersion:(unsigned int)arg4 dateSynced:(id)arg5;
-+ (void)reportMessageDeletionReceivedForMessageWithId:(id)arg1 fullSyncVersion:(unsigned int)arg2 dateSynced:(id)arg3;
-+ (void)reportMessageReceivedWithId:(id)arg1 willGenerateNotification:(BOOL)arg2 fullSyncVersion:(unsigned int)arg3 dateSynced:(id)arg4;
-+ (void)reportMessageUpdateReceivedForMessageWithId:(id)arg1 fullSyncVersion:(unsigned int)arg2 dateSynced:(id)arg3;
-+ (void)reportMoreMessagesReceivedConversationSpecific:(BOOL)arg1 fullSyncVersion:(unsigned int)arg2 dateSynced:(id)arg3;
-+ (void)reportRenderedNotificationUsingLocalContent:(BOOL)arg1 mailboxSynced:(BOOL)arg2 messageSynced:(BOOL)arg3 contentDownloaded:(BOOL)arg4;
++ (bool)_reportingEnabled;
++ (void)reportContentDisplayedForMessageWithId:(id)arg1 hasMainAlternative:(bool)arg2 hasTextAlternative:(bool)arg3;
++ (void)reportContentReceivedForMessageWithId:(id)arg1 sizeInBytes:(unsigned long long)arg2 fullSyncVersion:(unsigned long long)arg3 dateSynced:(id)arg4;
++ (void)reportFullSyncReceivedFullSyncVersion:(unsigned long long)arg1 syncedMailboxType:(unsigned long long)arg2 dateSynced:(id)arg3;
++ (void)reportFullSyncRequestedFromWatch:(bool)arg1 corruptionDetected:(bool)arg2 migrationRelated:(bool)arg3 idsFailureRelated:(bool)arg4 fullSyncVersionMatchRelated:(bool)arg5;
++ (void)reportHaltSyncRequestedFromWatch:(bool)arg1;
++ (void)reportImageAttachmentReceivedForMessageWithId:(id)arg1 contentId:(id)arg2 sizeInBytes:(unsigned long long)arg3 fullSyncVersion:(unsigned long long)arg4 dateSynced:(id)arg5;
++ (void)reportMessageDeletionReceivedForMessageWithId:(id)arg1 fullSyncVersion:(unsigned long long)arg2 dateSynced:(id)arg3;
++ (void)reportMessageReceivedWithId:(id)arg1 willGenerateNotification:(bool)arg2 fullSyncVersion:(unsigned long long)arg3 dateSynced:(id)arg4;
++ (void)reportMessageUpdateReceivedForMessageWithId:(id)arg1 fullSyncVersion:(unsigned long long)arg2 dateSynced:(id)arg3;
++ (void)reportMoreMessagesReceivedConversationSpecific:(bool)arg1 fullSyncVersion:(unsigned long long)arg2 dateSynced:(id)arg3;
++ (void)reportRenderedNotificationUsingLocalContent:(bool)arg1 mailboxSynced:(bool)arg2 messageSynced:(bool)arg3 contentDownloaded:(bool)arg4;
 
 @end

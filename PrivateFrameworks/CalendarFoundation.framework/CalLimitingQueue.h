@@ -9,7 +9,7 @@
 
 - (void).cxx_destruct;
 - (void)executeBlock;
-- (id)initWithQueue:(id)arg1 andBlock:(id /* block */)arg2;
+- (id)initWithQueue:(id)arg1 andBlock:(id)arg2;
 - (id)queue;
 
 @end

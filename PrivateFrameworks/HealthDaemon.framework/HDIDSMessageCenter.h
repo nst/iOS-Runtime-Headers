@@ -7,7 +7,7 @@
     <HDIDSMessageCenterDelegate> * _delegate;
     NSMutableDictionary * _errorHandlers;
     NSObject<OS_dispatch_source> * _expireTimer;
-    BOOL  _invalidated;
+    bool  _invalidated;
     double  _nextExpireTimerFireDate;
     NSUUID * _pairingUUID;
     NSMutableDictionary * _pbMapping;
@@ -23,7 +23,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HDIDSMessageCenterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) IDSService *idsService;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly, copy) NSString *serviceIdentifier;
@@ -54,9 +54,9 @@
 - (id)queue;
 - (void)resume;
 - (void)sendRequest:(id)arg1;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
-- (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(id /* block */)arg3;
+- (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(id)arg3;
 - (id)serviceIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;

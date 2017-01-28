@@ -3,19 +3,19 @@
  */
 
 @interface AVWaitForNotificationOrDeallocationOperation : NSOperation <AVObjectMonitoring> {
-    BOOL  _finished;
+    bool  _finished;
     NSObject<OS_dispatch_semaphore> * _monitoringIsFinishedSemaphore;
     NSArray * _notificationNames;
     NSObject<OS_dispatch_queue> * _operationStateSerializationQueue;
-    BOOL  _registeredForObjectNotifications;
-    BOOL  _started;
+    bool  _registeredForObjectNotifications;
+    bool  _started;
     AVWeakReference * _weakReferenceToMonitoredObject;
     AVWeakReference * _weakReferenceToSelf;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)_balanceMonitoringIsFinishedSemaphore;

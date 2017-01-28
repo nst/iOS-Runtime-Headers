@@ -3,8 +3,8 @@
  */
 
 @interface CKDModifyRecordAccessOperation : CKDDatabaseOperation {
-    id /* block */  _accessWasGrantedBlock;
-    id /* block */  _accessWasRevokedBlock;
+    id  _accessWasGrantedBlock;
+    id  _accessWasRevokedBlock;
     NSMutableSet * _fetchedRecordIDs;
     int  _numSaveAttempts;
     NSArray * _recordIDsToGrant;
@@ -12,8 +12,8 @@
     NSMutableDictionary * _recordsToSaveByID;
 }
 
-@property (nonatomic, copy) id /* block */ accessWasGrantedBlock;
-@property (nonatomic, copy) id /* block */ accessWasRevokedBlock;
+@property (nonatomic, copy) id accessWasGrantedBlock;
+@property (nonatomic, copy) id accessWasRevokedBlock;
 @property (nonatomic, retain) NSMutableSet *fetchedRecordIDs;
 @property (nonatomic) int numSaveAttempts;
 @property (nonatomic, retain) NSArray *recordIDsToGrant;
@@ -27,20 +27,20 @@
 - (void)_handleRecordFetched:(id)arg1 recordID:(id)arg2 error:(id)arg3;
 - (void)_handleRecordSaved:(id)arg1 error:(id)arg2;
 - (void)_saveRecords;
-- (id /* block */)accessWasGrantedBlock;
-- (id /* block */)accessWasRevokedBlock;
+- (id)accessWasGrantedBlock;
+- (id)accessWasRevokedBlock;
 - (id)activityCreate;
 - (id)fetchedRecordIDs;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (int)numSaveAttempts;
 - (id)recordIDsToGrant;
 - (id)recordIDsToRevoke;
 - (id)recordsToSaveByID;
-- (void)setAccessWasGrantedBlock:(id /* block */)arg1;
-- (void)setAccessWasRevokedBlock:(id /* block */)arg1;
+- (void)setAccessWasGrantedBlock:(id)arg1;
+- (void)setAccessWasRevokedBlock:(id)arg1;
 - (void)setFetchedRecordIDs:(id)arg1;
 - (void)setNumSaveAttempts:(int)arg1;
 - (void)setRecordIDsToGrant:(id)arg1;

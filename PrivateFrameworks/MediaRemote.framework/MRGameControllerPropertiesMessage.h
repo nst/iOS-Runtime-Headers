@@ -13,6 +13,6 @@
 - (void)dealloc;
 - (id)initWithGameControllerProperties:(void*)arg1 controllerID:(unsigned long long)arg2;
 - (void*)properties;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

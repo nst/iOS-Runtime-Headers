@@ -8,20 +8,20 @@
     TSDGLDataBuffer * _colorFBODataBuffer;
     TSDGLFrameBuffer * _colorFramebuffer;
     TSDGLFrameBuffer * _combinedFramebuffer;
-    int  _debugDrawMode;
+    long long  _debugDrawMode;
     TSDGLShader * _defaultTextureShader;
-    float  _framebufferScale;
+    double  _framebufferScale;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _framebufferSize;
-    BOOL  _isSingleObject;
-    float  _motionBlurStrength;
+    bool  _isSingleObject;
+    double  _motionBlurStrength;
     int  _originalViewport;
     <TSDAnimationRandomGenerator> * _randomGenerator;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _slideSize;
     TSDGLShader * _velocityCollectionShader;
     TSDGLDataBuffer * _velocityFBODataBuffer;
@@ -35,41 +35,41 @@
 }
 
 @property (nonatomic, retain) TSDGLState *GLState;
-@property (nonatomic) int debugDrawMode;
-@property (nonatomic) float framebufferScale;
-@property (nonatomic) BOOL isSingleObject;
-@property (nonatomic) float motionBlurStrength;
+@property (nonatomic) long long debugDrawMode;
+@property (nonatomic) double framebufferScale;
+@property (nonatomic) bool isSingleObject;
+@property (nonatomic) double motionBlurStrength;
 
 - (id)GLState;
 - (void)bindColorAndVelocityFramebuffer;
 - (void)bindColorFramebuffer;
 - (void)bindVelocityFramebuffer;
 - (void)dealloc;
-- (int)debugDrawMode;
+- (long long)debugDrawMode;
 - (id)description;
 - (void)drawResultWithCurrentGLFramebuffer:(int)arg1;
-- (float)framebufferScale;
-- (id)initWithFramebufferSize:(struct CGSize { float x1; float x2; })arg1 slideSize:(struct CGSize { float x1; float x2; })arg2 randomGenerator:(id)arg3;
-- (BOOL)isSingleObject;
-- (float)motionBlurStrength;
+- (double)framebufferScale;
+- (id)initWithFramebufferSize:(struct CGSize { double x1; double x2; })arg1 slideSize:(struct CGSize { double x1; double x2; })arg2 randomGenerator:(id)arg3;
+- (bool)isSingleObject;
+- (double)motionBlurStrength;
 - (void)p_blitIntoColorFramebufferWithCurrentGLFramebuffer:(int)arg1;
 - (void)p_blitIntoVelocityFramebufferWithCurrentGLFramebuffer:(int)arg1;
 - (void)p_dilateVelocityBufferWithCurrentGLFramebuffer:(int)arg1;
 - (void)p_setupShaders;
 - (void)p_setupVelocityFramebufferIfNecessary;
-- (struct CGSize { float x1; float x2; })p_squashedVelocityFramebufferSize;
-- (void)p_updateMaxVelocityInShadersWithScale:(float)arg1 isColorFBO:(BOOL)arg2;
-- (struct CGSize { float x1; float x2; })p_velocityFramebufferSize;
-- (struct CGSize { float x1; float x2; })p_velocityFramebufferTextureScale;
-- (void)setDebugDrawMode:(int)arg1;
-- (void)setFramebufferScale:(float)arg1;
+- (struct CGSize { double x1; double x2; })p_squashedVelocityFramebufferSize;
+- (void)p_updateMaxVelocityInShadersWithScale:(double)arg1 isColorFBO:(bool)arg2;
+- (struct CGSize { double x1; double x2; })p_velocityFramebufferSize;
+- (struct CGSize { double x1; double x2; })p_velocityFramebufferTextureScale;
+- (void)setDebugDrawMode:(long long)arg1;
+- (void)setFramebufferScale:(double)arg1;
 - (void)setGLState:(id)arg1;
-- (void)setIsSingleObject:(BOOL)arg1;
-- (void)setMotionBlurStrength:(float)arg1;
+- (void)setIsSingleObject:(bool)arg1;
+- (void)setMotionBlurStrength:(double)arg1;
 - (void)setupMotionBlurEffectIfNecessary;
 - (void)teardown;
 - (void)unbindFramebufferAndBindGLFramebuffer:(int)arg1;
 - (void)updateVelocityScaleInShader:(id)arg1;
-- (struct CGSize { float x1; float x2; })velocityScaleForColorFBO:(BOOL)arg1;
+- (struct CGSize { double x1; double x2; })velocityScaleForColorFBO:(bool)arg1;
 
 @end

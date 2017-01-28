@@ -4,6 +4,6 @@
 
 @interface MFContactUtilities : NSObject
 
-+ (id)displayNameForEmailAddress:(id)arg1 usingStore:(id)arg2 abbreviated:(BOOL)arg3;
++ (id)displayNameForEmailAddress:(id)arg1 usingStore:(id)arg2 abbreviated:(bool)arg3;
 
 @end

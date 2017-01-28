@@ -3,27 +3,27 @@
  */
 
 @interface CNiOSPersonFetchRequest : NSObject {
-    unsigned int  _options;
+    unsigned long long  _options;
     <CNiOSContactPredicate> * _predicate;
-    BOOL  _shouldSort;
+    bool  _shouldSort;
     unsigned int  _sortOrder;
 }
 
-@property (readonly) unsigned int options;
+@property (readonly) unsigned long long options;
 @property (readonly) <CNiOSContactPredicate> *predicate;
-@property (readonly) BOOL shouldSort;
+@property (readonly) bool shouldSort;
 @property (readonly) unsigned int sortOrder;
 
 + (id)effectivePredicate:(id)arg1;
 + (id)fetchRequestFromCNFetchRequest:(id)arg1 error:(id*)arg2;
-+ (int)resolvedSortOrderFromContactSortOrder:(int)arg1;
++ (long long)resolvedSortOrderFromContactSortOrder:(long long)arg1;
 + (id)validatePredicate:(id)arg1 error:(id*)arg2;
 
 - (void)dealloc;
-- (id)initWithPredicate:(id)arg1 shouldSort:(BOOL)arg2 sortOrder:(unsigned int)arg3 options:(unsigned int)arg4;
-- (unsigned int)options;
+- (id)initWithPredicate:(id)arg1 shouldSort:(bool)arg2 sortOrder:(unsigned int)arg3 options:(unsigned long long)arg4;
+- (unsigned long long)options;
 - (id)predicate;
-- (BOOL)shouldSort;
+- (bool)shouldSort;
 - (unsigned int)sortOrder;
 
 @end

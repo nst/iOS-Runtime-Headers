@@ -3,13 +3,13 @@
  */
 
 @interface ASDMigrationRequest : ASDRequest {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     ASDMigrationRequestOptions * _options;
 }
 
 - (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1 error:(id)arg2;
 - (id)initWithOptions:(id)arg1;
-- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
 
 @end

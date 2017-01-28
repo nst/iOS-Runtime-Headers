@@ -3,11 +3,11 @@
  */
 
 @interface KNPdfNoteExporter : KNPdfExporter {
-    BOOL  mIsPrintingNote;
+    bool  mIsPrintingNote;
 }
 
 - (id)currentInfos;
-- (BOOL)drawCurrentPageInContext:(struct CGContext { }*)arg1 viewScale:(float)arg2 unscaledClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 createPage:(BOOL)arg4;
-- (BOOL)incrementPage;
+- (bool)drawCurrentPageInContext:(struct CGContext { }*)arg1 viewScale:(double)arg2 unscaledClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 createPage:(bool)arg4;
+- (bool)incrementPage;
 
 @end

@@ -3,37 +3,37 @@
  */
 
 @interface CKAccountInfo : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _accountWantsPushRegistration;
+    bool  _accountWantsPushRegistration;
     NSString * _email;
-    BOOL  _isUnitTestingAccount;
+    bool  _isUnitTestingAccount;
     NSString * _password;
     NSString * _secondEmail;
 }
 
-@property (nonatomic) BOOL accountWantsPushRegistration;
+@property (nonatomic) bool accountWantsPushRegistration;
 @property (nonatomic, readonly) NSString *email;
-@property (nonatomic) BOOL isUnitTestingAccount;
+@property (nonatomic) bool isUnitTestingAccount;
 @property (nonatomic, readonly) NSString *password;
 @property (nonatomic, copy) NSString *secondEmail;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
-- (BOOL)accountWantsPushRegistration;
+- (bool)accountWantsPushRegistration;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)email;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEmail:(id)arg1 password:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUnitTestingAccount;
+- (bool)isEqual:(id)arg1;
+- (bool)isUnitTestingAccount;
 - (id)password;
 - (id)secondEmail;
-- (void)setAccountWantsPushRegistration:(BOOL)arg1;
-- (void)setIsUnitTestingAccount:(BOOL)arg1;
+- (void)setAccountWantsPushRegistration:(bool)arg1;
+- (void)setIsUnitTestingAccount:(bool)arg1;
 - (void)setSecondEmail:(id)arg1;
 
 @end

@@ -3,12 +3,12 @@
  */
 
 @interface GKEditAction : NSObject {
-    BOOL  _destructive;
+    bool  _destructive;
     NSString * _name;
     SEL  _selector;
 }
 
-@property (nonatomic) BOOL destructive;
+@property (nonatomic) bool destructive;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) SEL selector;
 
@@ -16,10 +16,10 @@
 + (id)deleteActionWithName:(id)arg1;
 
 - (void)dealloc;
-- (BOOL)destructive;
+- (bool)destructive;
 - (id)name;
 - (SEL)selector;
-- (void)setDestructive:(BOOL)arg1;
+- (void)setDestructive:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setSelector:(SEL)arg1;
 

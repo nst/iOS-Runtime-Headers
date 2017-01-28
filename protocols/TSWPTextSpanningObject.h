@@ -5,12 +5,12 @@
 
 @required
 
-- (BOOL)isEquivalentToObject:(NSObject<TSWPTextSpanningObject> *)arg1;
+- (bool)isEquivalentToObject:(NSObject<TSWPTextSpanningObject> *)arg1;
 - (void)resetTextAttributeUUIDString;
 - (NSString *)textAttributeUUIDString;
 
 @optional
 
-- (BOOL)supportsDeepCopyForUndo;
+- (bool)supportsDeepCopyForUndo;
 
 @end

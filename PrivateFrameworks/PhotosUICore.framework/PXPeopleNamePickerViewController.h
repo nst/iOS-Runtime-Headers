@@ -3,32 +3,31 @@
  */
 
 @interface PXPeopleNamePickerViewController : UIViewController <UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITextFieldDelegate> {
-    id  _appBackgroundedNotificationObserver;
     <PXPeopleNamePickerViewControllerDelegate> * _delegate;
     PXPeopleNamePickerResultsTableViewController * _resultsController;
     NSArray * _savedRightBarItems;
     PXPeopleNamePickerTitleView * _titleView;
 }
 
-@property (nonatomic, retain) id appBackgroundedNotificationObserver;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXPeopleNamePickerViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXPeopleNamePickerResultsTableViewController *resultsController;
 @property (nonatomic, retain) NSArray *savedRightBarItems;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PXPeopleNamePickerTitleView *titleView;
 
 - (void).cxx_destruct;
+- (void)_applicationDidEnterBackground;
 - (void)_hideResultsView;
-- (void)_setupNavigationBarForEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)_shouldPresentResultsInPopover;
+- (void)_keyboardWillChangeFrame:(id)arg1;
+- (void)_refreshResultsViewSizeWithNewKeyboardHeight:(double)arg1;
+- (void)_setupNavigationBarForEditing:(bool)arg1 animated:(bool)arg2;
+- (bool)_shouldPresentResultsInPopover;
 - (void)_showResultsView;
-- (float)_titleViewMaxWidthForEditing:(BOOL)arg1;
-- (int)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
-- (id)appBackgroundedNotificationObserver;
-- (void)dealloc;
+- (double)_titleViewMaxWidthForEditing:(bool)arg1;
+- (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (id)delegate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -37,15 +36,14 @@
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (id)resultsController;
 - (id)savedRightBarItems;
-- (void)setAppBackgroundedNotificationObserver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setResultsController:(id)arg1;
 - (void)setSavedRightBarItems:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldEndEditing:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementString:(id)arg3;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
+- (bool)textFieldShouldEndEditing:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (id)titleView;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

@@ -3,20 +3,20 @@
  */
 
 @interface HSWiFiManager : NSObject {
-    BOOL  _wiFiEnabled;
+    bool  _wiFiEnabled;
     struct __SCPreferences { } * _wifiPreferences;
 }
 
-@property (getter=isWiFiEnabled, nonatomic) BOOL wiFiEnabled;
+@property (getter=isWiFiEnabled, nonatomic) bool wiFiEnabled;
 
 + (id)sharedWiFiManager;
 
-- (BOOL)_getWiFiEnabledFromPrefs;
+- (bool)_getWiFiEnabledFromPrefs;
 - (id)_processIdentifier;
 - (void)_wifiCallBack:(unsigned int)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isWiFiEnabled;
-- (void)setWiFiEnabled:(BOOL)arg1;
+- (bool)isWiFiEnabled;
+- (void)setWiFiEnabled:(bool)arg1;
 
 @end

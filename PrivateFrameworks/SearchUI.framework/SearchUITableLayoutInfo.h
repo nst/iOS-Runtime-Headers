@@ -6,22 +6,22 @@
     NSArray * _columnAlignments;
     NSArray * _columnSpacing;
     NSArray * _columnWidths;
-    int  _firstTrailingIndex;
+    long long  _firstTrailingIndex;
 }
 
 @property (retain) NSArray *columnAlignments;
 @property (retain) NSArray *columnSpacing;
 @property (retain) NSArray *columnWidths;
-@property int firstTrailingIndex;
+@property long long firstTrailingIndex;
 
 - (void).cxx_destruct;
 - (id)columnAlignments;
 - (id)columnSpacing;
 - (id)columnWidths;
-- (int)firstTrailingIndex;
+- (long long)firstTrailingIndex;
 - (void)setColumnAlignments:(id)arg1;
 - (void)setColumnSpacing:(id)arg1;
 - (void)setColumnWidths:(id)arg1;
-- (void)setFirstTrailingIndex:(int)arg1;
+- (void)setFirstTrailingIndex:(long long)arg1;
 
 @end

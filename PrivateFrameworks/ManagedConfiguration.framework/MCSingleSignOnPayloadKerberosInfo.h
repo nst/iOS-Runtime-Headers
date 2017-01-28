@@ -38,7 +38,7 @@
 - (void)setRealm:(id)arg1;
 - (void)setURLPrefixMatches:(id)arg1;
 - (id)stubDictionary;
-- (BOOL)validateAppIdentifierMatch:(id)arg1 outError:(id*)arg2;
-- (BOOL)validateURLPrefixMatch:(id)arg1 outNormalizedString:(id*)arg2 outError:(id*)arg3;
+- (bool)validateAppIdentifierMatch:(id)arg1 outError:(id*)arg2;
+- (bool)validateURLPrefixMatch:(id)arg1 outNormalizedString:(id*)arg2 outError:(id*)arg3;
 
 @end

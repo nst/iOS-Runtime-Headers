@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) NSString *platformIdentifier;
 @property (nonatomic, readonly, copy) NSString *sequenceCounter;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)certificates;

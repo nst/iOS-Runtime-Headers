@@ -4,12 +4,12 @@
 
 @interface _MKPaddedTextAttachmentImageView : UIView {
     UIImageView * _imageView;
-    float  _leadingPadding;
-    float  _trailingPadding;
+    double  _leadingPadding;
+    double  _trailingPadding;
 }
 
 - (void).cxx_destruct;
-- (id)initWithImage:(id)arg1 leadingPadding:(float)arg2 trailingPadding:(float)arg3;
+- (id)initWithImage:(id)arg1 leadingPadding:(double)arg2 trailingPadding:(double)arg3;
 - (void)layoutSubviews;
 
 @end

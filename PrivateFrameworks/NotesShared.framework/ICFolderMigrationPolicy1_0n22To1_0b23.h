@@ -4,6 +4,6 @@
 
 @interface ICFolderMigrationPolicy1_0n22To1_0b23 : NSEntityMigrationPolicy
 
-- (BOOL)createDestinationInstancesForSourceInstance:(id)arg1 entityMapping:(id)arg2 manager:(id)arg3 error:(id*)arg4;
+- (bool)createDestinationInstancesForSourceInstance:(id)arg1 entityMapping:(id)arg2 manager:(id)arg3 error:(id*)arg4;
 
 @end

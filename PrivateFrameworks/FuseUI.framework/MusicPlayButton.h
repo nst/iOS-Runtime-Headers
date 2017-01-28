@@ -3,14 +3,14 @@
  */
 
 @interface MusicPlayButton : SKUIPlayButtonControl {
-    BOOL  _useLargeImage;
+    bool  _useLargeImage;
 }
 
-@property (nonatomic) BOOL useLargeImage;
+@property (nonatomic) bool useLargeImage;
 
 - (id)cancelImage;
 - (id)playImage;
-- (void)setUseLargeImage:(BOOL)arg1;
-- (BOOL)useLargeImage;
+- (void)setUseLargeImage:(bool)arg1;
+- (bool)useLargeImage;
 
 @end

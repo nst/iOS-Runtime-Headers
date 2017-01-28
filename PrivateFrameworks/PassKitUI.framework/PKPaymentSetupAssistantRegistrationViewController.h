@@ -4,31 +4,33 @@
 
 @interface PKPaymentSetupAssistantRegistrationViewController : PKPaymentSetupViewController <PKPaymentSetupViewControllerDelegate> {
     <PKPaymentSetupViewControllerDelegate> * _externalDelegate;
+    NSObject<OS_dispatch_group> * _preflightGroup;
+    bool  _preflightResult;
     UIButton * _skipButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)bridgeSetupAssistantNeedsToRunReturningRequirements:(unsigned int*)arg1;
-+ (id)defaultWebServiceForContext:(int)arg1;
-+ (BOOL)setupAssistantNeedsToRun;
-+ (BOOL)setupAssistantNeedsToRunReturningRequirements:(unsigned int*)arg1;
++ (bool)bridgeSetupAssistantNeedsToRunReturningRequirements:(unsigned long long*)arg1;
++ (id)defaultWebServiceForContext:(long long)arg1;
++ (bool)setupAssistantNeedsToRun;
++ (bool)setupAssistantNeedsToRunReturningRequirements:(unsigned long long*)arg1;
 
 - (void).cxx_destruct;
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)_setExternalDelegate:(id)arg1;
 - (id)delegate;
-- (id)initWithPaymentWebService:(id)arg1 context:(int)arg2 delegate:(id)arg3;
-- (void)preflightWithCompletion:(id /* block */)arg1;
+- (id)initWithPaymentWebService:(id)arg1 context:(long long)arg2 delegate:(id)arg3;
+- (void)preflightWithCompletion:(id)arg1;
 - (void)privacyButtonTouched:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

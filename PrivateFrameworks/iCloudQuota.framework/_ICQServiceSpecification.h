@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSString *serviceDescription;
 @property (nonatomic, retain) NSString *serviceImageID;
 
-+ (id)serviceSpecificationsSampleForLevel:(int)arg1;
++ (id)serviceSpecificationsSampleForLevel:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)serviceDescription;

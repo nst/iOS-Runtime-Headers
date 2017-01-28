@@ -3,14 +3,14 @@
  */
 
 @interface MKNewAnnotationContainerView : MKAnnotationContainerView {
-    BOOL  _suppress;
+    bool  _suppress;
 }
 
 - (void)_updateAddedAnnotationRotation:(id)arg1;
 - (void)_updateAnnotationView:(id)arg1;
 - (void)_updateAnnotationViewPerspective;
 - (void)_updateAnnotationViewPositions;
-- (void)setAnnotationViewsRotationRadians:(float)arg1 animation:(id)arg2;
+- (void)setAnnotationViewsRotationRadians:(double)arg1 animation:(id)arg2;
 - (void)stopSuppressingUpdates;
 - (void)suppressUpdates;
 

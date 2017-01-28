@@ -5,16 +5,16 @@
 @interface PLSQLStatement : NSObject {
     struct sqlite3 { } * _dbConnection;
     NSObject<OS_dispatch_semaphore> * _dbSem;
-    BOOL  _isDelete;
-    BOOL  _isInsert;
+    bool  _isDelete;
+    bool  _isInsert;
     NSString * _sqlQuery;
     struct sqlite3_stmt { } * _statement;
 }
 
 @property struct sqlite3 { }*dbConnection;
 @property (retain) NSObject<OS_dispatch_semaphore> *dbSem;
-@property (readonly) BOOL isDelete;
-@property (readonly) BOOL isInsert;
+@property (readonly) bool isDelete;
+@property (readonly) bool isInsert;
 @property (retain) NSString *sqlQuery;
 @property struct sqlite3_stmt { }*statement;
 
@@ -26,8 +26,8 @@
 - (id)description;
 - (void)finalize;
 - (id)initWithSQLQuery:(id)arg1 forDatabase:(struct sqlite3 { }*)arg2 withDBSem:(id)arg3 result:(int*)arg4;
-- (BOOL)isDelete;
-- (BOOL)isInsert;
+- (bool)isDelete;
+- (bool)isInsert;
 - (id)perform;
 - (void)reset;
 - (void)setDbConnection:(struct sqlite3 { }*)arg1;

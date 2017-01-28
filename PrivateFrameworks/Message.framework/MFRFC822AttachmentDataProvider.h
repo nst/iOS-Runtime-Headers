@@ -10,11 +10,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id /* block */)arg3;
+- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id)arg3;
 - (id)fetchLocalDataForAttachment:(id)arg1;
 - (id)initWithMessageData:(id)arg1 parentPart:(id)arg2;
 - (id)messageForAttachment:(id)arg1;

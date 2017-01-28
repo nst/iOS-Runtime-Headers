@@ -5,6 +5,6 @@
 
 @required
 
-- (void)searchOperation:(ABSearchOperation *)arg1 didFindMatches:(NSArray *)arg2 moreComing:(BOOL)arg3;
+- (void)searchOperation:(ABSearchOperation *)arg1 didFindMatches:(NSArray *)arg2 moreComing:(bool)arg3;
 
 @end

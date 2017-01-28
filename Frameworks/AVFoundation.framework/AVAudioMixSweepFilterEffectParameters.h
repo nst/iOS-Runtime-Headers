@@ -16,10 +16,10 @@
 - (float)bypassThreshold;
 - (void)dealloc;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithMinimumCutOffFrequency:(unsigned int)arg1 maximumCutOffFrequency:(unsigned int)arg2 bypassThreshold:(float)arg3 sweepValue:(float)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)maximumCutOffFrequency;
 - (int)minimumCutOffFrequency;
 - (id)sweepFilterEffectWithSweepValue:(float)arg1;

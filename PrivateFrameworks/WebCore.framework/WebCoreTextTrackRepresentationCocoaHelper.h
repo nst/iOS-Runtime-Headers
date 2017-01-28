@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property struct TextTrackRepresentationCocoa { int (**x1)(); struct TextTrackRepresentationClient {} *x2; struct RetainPtr<CALayer> { void *x_3_1_1; } x3; struct RetainPtr<WebCoreTextTrackRepresentationCocoaHelper> { void *x_4_1_1; } x4; }*parent;
 @property (readonly) Class superclass;
 

@@ -6,7 +6,7 @@
 @required
 
 - (NSData *)iconImageData;
-- (float)iconImageScale;
+- (double)iconImageScale;
 - (NSString *)localizedDisplayName;
 
 @end

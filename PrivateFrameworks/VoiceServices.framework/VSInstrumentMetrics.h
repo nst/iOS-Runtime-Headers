@@ -3,7 +3,7 @@
  */
 
 @interface VSInstrumentMetrics : NSObject <NSSecureCoding> {
-    BOOL  _isWarmStart;
+    bool  _isWarmStart;
     unsigned long long  _requestCreatedTimestamp;
     unsigned long long  _speechBeginTimestamp;
     unsigned long long  _speechEndTimestamp;
@@ -11,21 +11,21 @@
     NSString * _voiceAssetKey;
 }
 
-@property BOOL isWarmStart;
+@property bool isWarmStart;
 @property unsigned long long requestCreatedTimestamp;
 @property unsigned long long speechBeginTimestamp;
 @property unsigned long long speechEndTimestamp;
 @property (copy) NSString *utterance;
 @property (copy) NSString *voiceAssetKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isWarmStart;
+- (bool)isWarmStart;
 - (unsigned long long)requestCreatedTimestamp;
-- (void)setIsWarmStart:(BOOL)arg1;
+- (void)setIsWarmStart:(bool)arg1;
 - (void)setRequestCreatedTimestamp:(unsigned long long)arg1;
 - (void)setSpeechBeginTimestamp:(unsigned long long)arg1;
 - (void)setSpeechEndTimestamp:(unsigned long long)arg1;

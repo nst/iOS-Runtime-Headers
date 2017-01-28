@@ -5,21 +5,21 @@
 @interface QLDetailItemViewControllerState : NSObject {
     NSString * _actionButtonTitle;
     UIView * _actionButtonView;
-    BOOL  _informationVisible;
+    bool  _informationVisible;
 }
 
 @property (retain) NSString *actionButtonTitle;
 @property (retain) UIView *actionButtonView;
-@property (getter=isInformationVisible) BOOL informationVisible;
+@property (getter=isInformationVisible) bool informationVisible;
 
-+ (id)detailItemViewControllerStateWithActionButtonTitle:(id)arg1 actionButtonView:(id)arg2 informationVisible:(BOOL)arg3;
++ (id)detailItemViewControllerStateWithActionButtonTitle:(id)arg1 actionButtonView:(id)arg2 informationVisible:(bool)arg3;
 
 - (void).cxx_destruct;
 - (id)actionButtonTitle;
 - (id)actionButtonView;
-- (BOOL)isInformationVisible;
+- (bool)isInformationVisible;
 - (void)setActionButtonTitle:(id)arg1;
 - (void)setActionButtonView:(id)arg1;
-- (void)setInformationVisible:(BOOL)arg1;
+- (void)setInformationVisible:(bool)arg1;
 
 @end

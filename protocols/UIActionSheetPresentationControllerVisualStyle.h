@@ -5,8 +5,8 @@
 
 @required
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (float)cornerRadius;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })contentInsets;
+- (double)cornerRadius;
 - (UIColor *)dimmingViewColor;
 - (UIView<UIActionSheetPresentationControllerDismissActionView> *)dismissActionView;
 

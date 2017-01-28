@@ -3,29 +3,29 @@
  */
 
 @interface CKPublishAssetsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
-    unsigned int  _URLOptions;
+    unsigned long long  _URLOptions;
     NSDictionary * _fileNamesByAssetFieldNames;
     NSArray * _recordIDs;
-    unsigned int  _requestedTTL;
+    unsigned long long  _requestedTTL;
 }
 
-@property (nonatomic) unsigned int URLOptions;
+@property (nonatomic) unsigned long long URLOptions;
 @property (nonatomic, retain) NSDictionary *fileNamesByAssetFieldNames;
 @property (nonatomic, retain) NSArray *recordIDs;
-@property (nonatomic) unsigned int requestedTTL;
+@property (nonatomic) unsigned long long requestedTTL;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)URLOptions;
+- (unsigned long long)URLOptions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileNamesByAssetFieldNames;
 - (id)initWithCoder:(id)arg1;
 - (id)recordIDs;
-- (unsigned int)requestedTTL;
+- (unsigned long long)requestedTTL;
 - (void)setFileNamesByAssetFieldNames:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
-- (void)setRequestedTTL:(unsigned int)arg1;
-- (void)setURLOptions:(unsigned int)arg1;
+- (void)setRequestedTTL:(unsigned long long)arg1;
+- (void)setURLOptions:(unsigned long long)arg1;
 
 @end

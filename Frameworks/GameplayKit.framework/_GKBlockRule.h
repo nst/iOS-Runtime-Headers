@@ -3,13 +3,13 @@
  */
 
 @interface _GKBlockRule : GKRule {
-    id /* block */  _action;
-    id /* block */  _predicate;
+    id  _action;
+    id  _predicate;
 }
 
 - (void).cxx_destruct;
-- (BOOL)evaluatePredicateWithSystem:(id)arg1;
-- (id)initWithPredicate:(id /* block */)arg1 action:(id /* block */)arg2;
+- (bool)evaluatePredicateWithSystem:(id)arg1;
+- (id)initWithPredicate:(id)arg1 action:(id)arg2;
 - (void)performActionWithSystem:(id)arg1;
 
 @end

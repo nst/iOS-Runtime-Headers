@@ -5,38 +5,38 @@
 @interface SKUIOnboardingCircleView : UIView {
     UIImageView * _backgroundImageView;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _edgeInsets;
     UIColor * _fillColor;
-    float  _minimumDiameter;
+    double  _minimumDiameter;
     UILabel * _titleLabel;
-    int  _titlePosition;
+    long long  _titlePosition;
 }
 
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } edgeInsets;
 @property (nonatomic, copy) UIColor *fillColor;
-@property (nonatomic) float minimumDiameter;
+@property (nonatomic) double minimumDiameter;
 @property (nonatomic, readonly) UILabel *titleLabel;
-@property (nonatomic) int titlePosition;
+@property (nonatomic) long long titlePosition;
 
 - (void).cxx_destruct;
 - (id)description;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (id)fillColor;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)minimumDiameter;
+- (double)minimumDiameter;
 - (void)setBackgroundImage:(id)arg1;
-- (void)setBackgroundImageAlpha:(float)arg1;
-- (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setBackgroundImageAlpha:(double)arg1;
+- (void)setEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setFillColor:(id)arg1;
-- (void)setMinimumDiameter:(float)arg1;
-- (void)setTitlePosition:(int)arg1;
+- (void)setMinimumDiameter:(double)arg1;
+- (void)setTitlePosition:(long long)arg1;
 - (id)titleLabel;
-- (int)titlePosition;
+- (long long)titlePosition;
 
 @end

@@ -4,28 +4,28 @@
 
 @interface ICBaseSearchIndexerDataSource : NSObject <ICSearchIndexerDataSource> {
     NSMutableDictionary * _identifiersByObjectID;
-    BOOL  _needsReindexing;
+    bool  _needsReindexing;
     NSMutableSet * _objectIDsBeingProcessed;
     NSMutableDictionary * _objectIDsByIdentifier;
     NSMutableSet * _objectIDsToIgnore;
     NSMutableSet * _objectIDsToProcess;
-    BOOL  _observingChanges;
+    bool  _observingChanges;
     NSObject<OS_dispatch_queue> * _processingQueue;
-    BOOL  _reindexing;
+    bool  _reindexing;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *identifiersByObjectID;
-@property BOOL needsReindexing;
+@property bool needsReindexing;
 @property (nonatomic, retain) NSMutableSet *objectIDsBeingProcessed;
 @property (nonatomic, retain) NSMutableDictionary *objectIDsByIdentifier;
 @property (nonatomic, retain) NSMutableSet *objectIDsToIgnore;
 @property (nonatomic, retain) NSMutableSet *objectIDsToProcess;
-@property (getter=isObservingChanges, nonatomic) BOOL observingChanges;
+@property (getter=isObservingChanges, nonatomic) bool observingChanges;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *processingQueue;
-@property (getter=isReindexing) BOOL reindexing;
+@property (getter=isReindexing) bool reindexing;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -34,11 +34,11 @@
 - (id)dataSourceIdentifier;
 - (id)identifiersByObjectID;
 - (id)init;
-- (BOOL)isObservingChanges;
-- (BOOL)isReindexing;
+- (bool)isObservingChanges;
+- (bool)isReindexing;
 - (void)loadObjectIDsToIgnore;
 - (void)loadState;
-- (BOOL)needsReindexing;
+- (bool)needsReindexing;
 - (id)objectForSearchableItem:(id)arg1 context:(id)arg2;
 - (id)objectForSearchableItemIdentifier:(id)arg1 context:(id)arg2;
 - (id)objectIDsBeingProcessed;
@@ -64,14 +64,14 @@
 - (id)searchableItemsNeedingIndexing;
 - (id)searchableItemsWithIdentifiers:(id)arg1;
 - (void)setIdentifiersByObjectID:(id)arg1;
-- (void)setNeedsReindexing:(BOOL)arg1;
+- (void)setNeedsReindexing:(bool)arg1;
 - (void)setObjectIDsBeingProcessed:(id)arg1;
 - (void)setObjectIDsByIdentifier:(id)arg1;
 - (void)setObjectIDsToIgnore:(id)arg1;
 - (void)setObjectIDsToProcess:(id)arg1;
-- (void)setObservingChanges:(BOOL)arg1;
+- (void)setObservingChanges:(bool)arg1;
 - (void)setProcessingQueue:(id)arg1;
-- (void)setReindexing:(BOOL)arg1;
+- (void)setReindexing:(bool)arg1;
 - (void)startObservingChanges;
 - (id)stateDefaultsKey;
 - (void)stopObservingChanges;

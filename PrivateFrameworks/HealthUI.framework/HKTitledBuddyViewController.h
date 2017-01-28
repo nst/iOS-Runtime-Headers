@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSArray *buttons;
 @property (nonatomic, readonly) UIActivityIndicatorView *loadingIndicator;
 
-+ (id)embedView:(id)arg1 inContainerViewWithMinimumEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
++ (id)embedView:(id)arg1 inContainerViewWithMinimumEdgeInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg2;
 
 - (void).cxx_destruct;
 - (void)_anchoredButtonTapped:(id)arg1;
@@ -23,7 +23,7 @@
 - (id)_createHeaderView;
 - (id)bodyString;
 - (id)bottomAnchoredButtons;
-- (void)buttonAtIndexTapped:(int)arg1;
+- (void)buttonAtIndexTapped:(long long)arg1;
 - (id)buttons;
 - (id)headerView;
 - (id)init;
@@ -31,14 +31,14 @@
 - (id)linkButtonTitle;
 - (id)loadingIndicator;
 - (void)reloadViews;
-- (BOOL)shouldHideNavigationBar;
+- (bool)shouldHideNavigationBar;
 - (id)subsequentViews;
-- (unsigned int)supportedInterfaceOrientations;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)titleImage;
 - (id)titleString;
 - (void)titledBuddyHeaderViewDidTapLinkButton:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -15,9 +15,9 @@
     NSMutableArray * _senders;
     NSMutableArray * _subjectMatrix;
     NSMutableArray * _subjectWords;
-    BOOL  _trained;
+    bool  _trained;
     NSMutableArray * _trainingSet;
-    BOOL  _useSubject;
+    bool  _useSubject;
 }
 
 @property (getter=actionLogger, nonatomic, retain) <MPActionLogging> *actionLogger;
@@ -25,7 +25,7 @@
 @property (retain) NSMutableArray *ccRecipients;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSMutableDictionary *labelCounts;
 @property (retain) NSMutableArray *labels;
 @property (retain) NSString *modelPath;
@@ -36,35 +36,35 @@
 @property (retain) NSMutableArray *subjectMatrix;
 @property (retain) NSMutableArray *subjectWords;
 @property (readonly) Class superclass;
-@property BOOL trained;
+@property bool trained;
 @property (retain) NSMutableArray *trainingSet;
-@property BOOL useSubject;
+@property bool useSubject;
 
 + (id)recommenderFromModelPath:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)actionLogger;
-- (BOOL)addMessages:(id)arg1;
+- (bool)addMessages:(id)arg1;
 - (id)ccRecipientMatrix;
 - (id)ccRecipients;
-- (BOOL)clear;
+- (bool)clear;
 - (id)computeLikelihoods:(id)arg1;
 - (id)computePriors;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithModelPath:(id)arg1 usingSubject:(BOOL)arg2;
-- (id)initializeMatrix:(id)arg1 columns:(unsigned int)arg2;
-- (BOOL)isValidTrainingMessage:(id)arg1;
+- (id)initWithModelPath:(id)arg1 usingSubject:(bool)arg2;
+- (id)initializeMatrix:(id)arg1 columns:(unsigned long long)arg2;
+- (bool)isValidTrainingMessage:(id)arg1;
 - (id)labelCounts;
 - (id)labels;
 - (double)likelihoodForMatrix:(id)arg1 featureSet:(id)arg2 feature:(id)arg3 label:(id)arg4;
-- (void)logUserAction:(unsigned int)arg1 inContext:(unsigned int)arg2 forMessage:(id)arg3 available:(id)arg4 displayed:(id)arg5 selected:(id)arg6;
+- (void)logUserAction:(unsigned long long)arg1 inContext:(unsigned long long)arg2 forMessage:(id)arg3 available:(id)arg4 displayed:(id)arg5 selected:(id)arg6;
 - (id)modelPath;
 - (id)recipientMatrix;
 - (id)recipients;
 - (id)recommendationsForMessage:(id)arg1 error:(id*)arg2;
-- (BOOL)removeMessage:(id)arg1;
+- (bool)removeMessage:(id)arg1;
 - (id)senderMatrix;
 - (id)senders;
 - (void)setActionLogger:(id)arg1;
@@ -79,21 +79,21 @@
 - (void)setSenders:(id)arg1;
 - (void)setSubjectMatrix:(id)arg1;
 - (void)setSubjectWords:(id)arg1;
-- (void)setTrained:(BOOL)arg1;
+- (void)setTrained:(bool)arg1;
 - (void)setTrainingSet:(id)arg1;
-- (void)setUseSubject:(BOOL)arg1;
+- (void)setUseSubject:(bool)arg1;
 - (id)sortLabelsForScores:(id)arg1;
 - (id)subjectMatrix;
 - (id)subjectWords;
-- (BOOL)synchronize;
-- (BOOL)train;
-- (BOOL)trained;
+- (bool)synchronize;
+- (bool)train;
+- (bool)trained;
 - (id)trainingSet;
-- (void)updateCountsForMatrix:(id)arg1 label:(unsigned int)arg2 feature:(unsigned int)arg3;
+- (void)updateCountsForMatrix:(id)arg1 label:(unsigned long long)arg2 feature:(unsigned long long)arg3;
 - (void)updateFeatureSet:(id)arg1 feature:(id)arg2;
 - (void)updateFeatureSet:(id)arg1 peopleArray:(id)arg2;
 - (void)updateLabelCount:(id)arg1;
-- (BOOL)useSubject;
-- (BOOL)verifyBoundsForMatrix:(id)arg1 row:(unsigned int)arg2 column:(unsigned int)arg3;
+- (bool)useSubject;
+- (bool)verifyBoundsForMatrix:(id)arg1 row:(unsigned long long)arg2 column:(unsigned long long)arg3;
 
 @end

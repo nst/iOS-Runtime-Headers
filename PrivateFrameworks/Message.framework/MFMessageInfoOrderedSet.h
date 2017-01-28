@@ -3,18 +3,18 @@
  */
 
 @interface MFMessageInfoOrderedSet : NSObject {
-    id /* block */  _comparator;
+    id  _comparator;
     NSMutableDictionary * _duplicateMessageInfos;
-    id /* block */  _duplicatePreferenceComparator;
+    id  _duplicatePreferenceComparator;
     MFSparseMutable64IndexSet * _knownMessageIDs;
     NSMutableArray * _mutableMessageInfos;
 }
 
 @property (nonatomic, readonly) NSArray *allMessageInfos;
-@property (nonatomic, copy) id /* block */ comparator;
-@property (nonatomic, readonly) unsigned int count;
-@property (nonatomic, readonly) unsigned int countWithDuplicates;
-@property (nonatomic, copy) id /* block */ duplicatePreferenceComparator;
+@property (nonatomic, copy) id comparator;
+@property (nonatomic, readonly) unsigned long long count;
+@property (nonatomic, readonly) unsigned long long countWithDuplicates;
+@property (nonatomic, copy) id duplicatePreferenceComparator;
 @property (nonatomic, readonly) MFMessageInfo *firstMessage;
 @property (nonatomic, readonly) MFMessageInfo *lastMessage;
 @property (nonatomic, readonly) NSArray *uniqueMessageInfos;
@@ -23,29 +23,29 @@
 - (id)_duplicateMessageInfosForMessageInfo:(id)arg1;
 - (void)_invalidate;
 - (void)_removeDuplicatesForMessageInfo:(id)arg1;
-- (unsigned int)addMessageInfo:(id)arg1;
+- (unsigned long long)addMessageInfo:(id)arg1;
 - (id)allMessageInfos;
-- (id /* block */)comparator;
-- (unsigned int)count;
-- (unsigned int)countWithDuplicates;
+- (id)comparator;
+- (unsigned long long)count;
+- (unsigned long long)countWithDuplicates;
 - (void)dealloc;
 - (id)debugDescription;
-- (id /* block */)duplicatePreferenceComparator;
+- (id)duplicatePreferenceComparator;
 - (id)duplicatesOfMessageInfo:(id)arg1;
-- (void)enumerateUniqueMessageInfosWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateUniqueMessageInfosWithOptions:(unsigned long long)arg1 usingBlock:(id)arg2;
 - (id)firstMessage;
-- (unsigned int)indexOfMessageInfo:(id)arg1;
-- (unsigned int)indexWhereMessageInfoWouldBeInserted:(id)arg1;
-- (id)initWithComparator:(id /* block */)arg1;
+- (unsigned long long)indexOfMessageInfo:(id)arg1;
+- (unsigned long long)indexWhereMessageInfoWouldBeInserted:(id)arg1;
+- (id)initWithComparator:(id)arg1;
 - (id)lastMessage;
-- (id)messageInfoAtIndex:(unsigned int)arg1;
+- (id)messageInfoAtIndex:(unsigned long long)arg1;
 - (id)messageInfoEquivalentToMessageInfo:(id)arg1;
 - (void)removeAllMessageInfos;
-- (unsigned int)removeMessageInfo:(id)arg1;
-- (unsigned int)removeMessageInfoAtIndex:(unsigned int)arg1;
+- (unsigned long long)removeMessageInfo:(id)arg1;
+- (unsigned long long)removeMessageInfoAtIndex:(unsigned long long)arg1;
 - (void)removeMessageInfosAtIndexes:(id)arg1;
-- (void)setComparator:(id /* block */)arg1;
-- (void)setDuplicatePreferenceComparator:(id /* block */)arg1;
+- (void)setComparator:(id)arg1;
+- (void)setDuplicatePreferenceComparator:(id)arg1;
 - (id)uniqueMessageInfos;
 
 @end

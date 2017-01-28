@@ -5,21 +5,21 @@
 
 @required
 
-- (void)addToWishlist:(void *)arg1 databaseID:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)addToWishlist:(void *)arg1 databaseID:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: unsigned long long, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, void*
 - (void)beginObservingNowPlaying;
-- (void)connectToService:(void *)arg1 pairingGUID:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: RMSService *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, RMSControlInterface *, void*
+- (void)connectToService:(void *)arg1 pairingGUID:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: RMSService *, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, RMSControlInterface *, void*
 - (<RMSDAAPControlSessionDelegate> *)delegate;
 - (void)endObservingNowPlaying;
 - (void)logout;
-- (void)pickAudioRoute:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: RMSAudioRoute *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)seekToPlaybackTime:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)sendNavigationCommand:(int)arg1;
-- (void)sendPlaybackCommand:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)sendTouchEndWithDirection:(int)arg1 repeatCount:(unsigned long)arg2;
-- (void)sendTouchMoveWithDirection:(int)arg1 repeatCount:(unsigned long)arg2;
+- (void)pickAudioRoute:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: RMSAudioRoute *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, void*
+- (void)seekToPlaybackTime:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: int, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, void*
+- (void)sendNavigationCommand:(long long)arg1;
+- (void)sendPlaybackCommand:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, void*
+- (void)sendTouchEndWithDirection:(long long)arg1 repeatCount:(unsigned int)arg2;
+- (void)sendTouchMoveWithDirection:(long long)arg1 repeatCount:(unsigned int)arg2;
 - (RMSService *)service;
 - (void)setDelegate:(id <RMSDAAPControlSessionDelegate>)arg1;
-- (void)setLikedState:(void *)arg1 itemID:(void *)arg2 databaseID:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: int, unsigned long long, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)setVolume:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: float, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
+- (void)setLikedState:(void *)arg1 itemID:(void *)arg2 databaseID:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: long long, unsigned long long, unsigned long long, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, void*
+- (void)setVolume:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: float, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, void*
 
 @end

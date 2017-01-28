@@ -5,8 +5,8 @@
 
 @required
 
-+ (BOOL)collectionViewCanClipToBounds;
-+ (float)snapToBoundariesDecelerationRate;
++ (bool)collectionViewCanClipToBounds;
++ (double)snapToBoundariesDecelerationRate;
 
 - (SKUIShelfLayoutData *)layoutData;
 - (void)setLayoutData:(SKUIShelfLayoutData *)arg1;

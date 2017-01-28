@@ -9,7 +9,7 @@
     NSURL * _inAppBookingURL;
     NSString * _name;
     NSString * _price;
-    BOOL  _requiresPartySize;
+    bool  _requiresPartySize;
     NSString * _specialPricing;
     NSString * _vehicleType;
 }
@@ -20,12 +20,12 @@
 @property (nonatomic, retain) NSURL *inAppBookingURL;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *price;
-@property (nonatomic) BOOL requiresPartySize;
+@property (nonatomic) bool requiresPartySize;
 @property (nonatomic, retain) NSString *specialPricing;
 @property (nonatomic, retain) NSString *vehicleType;
 
 + (id)rideFromIntentRide:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,14 +36,14 @@
 - (id)initWithCoder:(id)arg1;
 - (id)name;
 - (id)price;
-- (BOOL)requiresPartySize;
+- (bool)requiresPartySize;
 - (void)setEstimatedPickupDate:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setInAppBookingURL:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPrice:(id)arg1;
-- (void)setRequiresPartySize:(BOOL)arg1;
+- (void)setRequiresPartySize:(bool)arg1;
 - (void)setSpecialPricing:(id)arg1;
 - (void)setVehicleType:(id)arg1;
 - (id)specialPricing;

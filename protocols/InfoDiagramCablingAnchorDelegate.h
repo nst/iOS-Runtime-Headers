@@ -5,17 +5,17 @@
 
 @required
 
-- (struct CGPoint { float x1; float x2; })broadbandInPoint;
-- (struct CGPoint { float x1; float x2; })broadbandOutPoint;
-- (struct CGPoint { float x1; float x2; })internetPoint;
-- (struct CGPoint { float x1; float x2; })wanConnectedBaseWANPoint;
+- (struct CGPoint { double x1; double x2; })broadbandInPoint;
+- (struct CGPoint { double x1; double x2; })broadbandOutPoint;
+- (struct CGPoint { double x1; double x2; })internetPoint;
+- (struct CGPoint { double x1; double x2; })wanConnectedBaseWANPoint;
 
 @optional
 
-- (struct CGPoint { float x1; float x2; })swapArcControlPoint;
-- (struct CGPoint { float x1; float x2; })swapArcControlPoint1;
-- (struct CGPoint { float x1; float x2; })swapArcControlPoint2;
-- (struct CGPoint { float x1; float x2; })swapArcLineEndPoint;
-- (struct CGPoint { float x1; float x2; })swapArcLineStartPoint;
+- (struct CGPoint { double x1; double x2; })swapArcControlPoint;
+- (struct CGPoint { double x1; double x2; })swapArcControlPoint1;
+- (struct CGPoint { double x1; double x2; })swapArcControlPoint2;
+- (struct CGPoint { double x1; double x2; })swapArcLineEndPoint;
+- (struct CGPoint { double x1; double x2; })swapArcLineStartPoint;
 
 @end

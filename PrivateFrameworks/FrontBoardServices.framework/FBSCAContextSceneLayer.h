@@ -12,15 +12,15 @@
 + (id)layerWithCAContext:(id)arg1;
 
 - (id)CAContext;
-- (id)_initWithCAContext:(id)arg1 contextID:(unsigned int)arg2 level:(float)arg3;
+- (id)_initWithCAContext:(id)arg1 contextID:(unsigned int)arg2 level:(double)arg3;
 - (unsigned int)contextID;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCAContext:(id)arg1;
-- (id)initWithCAContextID:(unsigned int)arg1 level:(float)arg2;
+- (id)initWithCAContextID:(unsigned int)arg1 level:(double)arg2;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

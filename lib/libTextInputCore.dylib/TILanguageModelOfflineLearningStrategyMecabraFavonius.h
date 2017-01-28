@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) TILanguageModelOfflineLearningTask *learningTask;
 @property (readonly) Class superclass;
 
@@ -16,9 +16,9 @@
 - (void)didFinishLearning;
 - (id)filterMessages:(id)arg1;
 - (id)identifyLanguagesForMessages:(id)arg1;
-- (BOOL)incrementUsageCountsForMessages:(id)arg1 withAdaptationContext:(id)arg2;
+- (bool)incrementUsageCountsForMessages:(id)arg1 withAdaptationContext:(id)arg2;
 - (id)initWithClientIdentifier:(id)arg1;
-- (BOOL)learnMessages:(id)arg1 withRecipientRecords:(id)arg2;
+- (bool)learnMessages:(id)arg1 withRecipientRecords:(id)arg2;
 - (id)learningTask;
 
 @end

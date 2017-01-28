@@ -6,8 +6,8 @@
     LSApplicationWorkspace * __applicationWorkspace;
     NSString * _bundleIdentifier;
     UIImage * _icon;
-    unsigned int  _installState;
-    float  _percentComplete;
+    unsigned long long  _installState;
+    double  _percentComplete;
     LSApplicationProxy * _proxy;
     double  _startTime;
 }
@@ -15,10 +15,10 @@
 @property (nonatomic, readonly) LSApplicationWorkspace *_applicationWorkspace;
 @property (nonatomic, readonly) NSString *bundleIdentifier;
 @property (nonatomic, readonly) UIImage *icon;
-@property (nonatomic) unsigned int installState;
-@property (nonatomic, readonly) BOOL installed;
+@property (nonatomic) unsigned long long installState;
+@property (nonatomic, readonly) bool installed;
 @property (nonatomic, readonly) NSString *localizedDisplayName;
-@property (nonatomic) float percentComplete;
+@property (nonatomic) double percentComplete;
 @property (nonatomic, readonly) NSString *pluginBundleIdentifier;
 @property (nonatomic, retain) LSApplicationProxy *proxy;
 @property (nonatomic) double startTime;
@@ -32,14 +32,14 @@
 - (id)init;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1 startTime:(double)arg2;
-- (unsigned int)installState;
-- (BOOL)installed;
+- (unsigned long long)installState;
+- (bool)installed;
 - (id)localizedDisplayName;
-- (float)percentComplete;
+- (double)percentComplete;
 - (id)pluginBundleIdentifier;
 - (id)proxy;
-- (void)setInstallState:(unsigned int)arg1;
-- (void)setPercentComplete:(float)arg1;
+- (void)setInstallState:(unsigned long long)arg1;
+- (void)setPercentComplete:(double)arg1;
 - (void)setProxy:(id)arg1;
 - (void)setStartTime:(double)arg1;
 - (double)startTime;

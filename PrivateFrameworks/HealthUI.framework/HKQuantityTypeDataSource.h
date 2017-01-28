@@ -3,27 +3,27 @@
  */
 
 @interface HKQuantityTypeDataSource : HKHealthQueryChartCacheDataSource {
-    id /* block */  _mappingFunction;
-    unsigned int  _statisticsOptions;
+    id  _mappingFunction;
+    unsigned long long  _statisticsOptions;
     HKUnitController * _unitController;
-    id /* block */  _userInfoCreationBlock;
+    id  _userInfoCreationBlock;
 }
 
 @property (nonatomic, readonly) HKQuantityType *quantityType;
-@property (nonatomic, readonly) unsigned int statisticsOptions;
-@property (nonatomic, copy) id /* block */ userInfoCreationBlock;
+@property (nonatomic, readonly) unsigned long long statisticsOptions;
+@property (nonatomic, copy) id userInfoCreationBlock;
 
 - (void).cxx_destruct;
 - (id)_averageByInterval:(id)arg1 startDate:(id)arg2 statistics:(id)arg3;
-- (id /* block */)_createMappingFunction;
-- (id)_dailyAverageQueriesWithStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completion:(id /* block */)arg4;
-- (id)_defaultQueriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(id /* block */)arg4;
-- (id)initWithUnitController:(id)arg1 options:(unsigned int)arg2 dataUnit:(id)arg3 healthStore:(id)arg4;
-- (id /* block */)mappingFunction;
+- (id)_createMappingFunction;
+- (id)_dailyAverageQueriesWithStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completion:(id)arg4;
+- (id)_defaultQueriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(id)arg4;
+- (id)initWithUnitController:(id)arg1 options:(unsigned long long)arg2 dataUnit:(id)arg3 healthStore:(id)arg4;
+- (id)mappingFunction;
 - (id)quantityType;
-- (id)queriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)setUserInfoCreationBlock:(id /* block */)arg1;
-- (unsigned int)statisticsOptions;
-- (id /* block */)userInfoCreationBlock;
+- (id)queriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(id)arg4;
+- (void)setUserInfoCreationBlock:(id)arg1;
+- (unsigned long long)statisticsOptions;
+- (id)userInfoCreationBlock;
 
 @end

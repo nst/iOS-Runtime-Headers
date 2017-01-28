@@ -5,13 +5,13 @@
 @interface ATVHighSecurityAccountDeviceListResponse : AAResponse
 
 @property (nonatomic, readonly) NSArray *devices;
-@property (nonatomic, readonly) int errorCode;
+@property (nonatomic, readonly) long long errorCode;
 @property (nonatomic, readonly) NSString *errorMessage;
 @property (nonatomic, readonly) NSString *errorTitle;
 @property (nonatomic, readonly) NSDictionary *userDisplayStrings;
 
 - (id)devices;
-- (int)errorCode;
+- (long long)errorCode;
 - (id)errorMessage;
 - (id)errorTitle;
 - (id)userDisplayStrings;

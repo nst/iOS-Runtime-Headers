@@ -15,14 +15,14 @@
 @property (nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, copy) NSArray *titleLabelConstraints;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (id)allControlViews;
 - (id)controlTitle;
 - (id)controlView;
 - (id)controlViewConstraints;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)setControlTitle:(id)arg1;
 - (void)setControlView:(id)arg1;

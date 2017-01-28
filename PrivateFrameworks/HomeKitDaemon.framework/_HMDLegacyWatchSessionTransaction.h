@@ -3,41 +3,41 @@
  */
 
 @interface _HMDLegacyWatchSessionTransaction : NSObject <HMFTimerDelegate> {
-    BOOL  _complete;
-    id /* block */  _completionHandler;
+    bool  _complete;
+    id  _completionHandler;
     NSUUID * _identifier;
     HMDRemoteMessage * _message;
-    id /* block */  _responseHandler;
+    id  _responseHandler;
     _HMDLegacyWatchSession * _session;
     HMFTimer * _timer;
 }
 
-@property (getter=isComplete, nonatomic) BOOL complete;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (getter=isComplete, nonatomic) bool complete;
+@property (nonatomic, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, readonly) HMDRemoteMessage *message;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, copy) id responseHandler;
 @property (nonatomic, readonly) _HMDLegacyWatchSession *session;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) HMFTimer *timer;
 
 - (void).cxx_destruct;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)identifier;
 - (id)init;
 - (id)initWithMessage:(id)arg1 session:(id)arg2;
-- (BOOL)isComplete;
+- (bool)isComplete;
 - (id)message;
 - (void)receiveResponse:(id)arg1;
 - (id)requestMessageWithError:(id*)arg1;
-- (id /* block */)responseHandler;
+- (id)responseHandler;
 - (id)session;
-- (void)setComplete:(BOOL)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
-- (void)setResponseHandler:(id /* block */)arg1;
+- (void)setComplete:(bool)arg1;
+- (void)setCompletionHandler:(id)arg1;
+- (void)setResponseHandler:(id)arg1;
 - (void)start;
 - (void)stopWithError:(id)arg1;
 - (id)timer;

@@ -23,18 +23,18 @@
         unsigned int didWriteDescriptorValue : 1; 
         unsigned int didReceiveTimeSync : 1; 
     }  _delegateFlags;
-    BOOL  _isConnectedToSystem;
+    bool  _isConnectedToSystem;
     NSString * _name;
     NSArray * _services;
-    int  _state;
+    long long  _state;
 }
 
 @property (retain) NSNumber *RSSI;
 @property (nonatomic) <CBPeripheralDelegate> *delegate;
-@property (nonatomic, readonly) BOOL isConnectedToSystem;
+@property (nonatomic, readonly) bool isConnectedToSystem;
 @property (retain) NSString *name;
 @property (retain) NSArray *services;
-@property int state;
+@property long long state;
 
 - (void).cxx_destruct;
 - (id)RSSI;
@@ -47,14 +47,14 @@
 - (void)discoverIncludedServices:(id)arg1 forService:(id)arg2;
 - (void)discoverServices:(id)arg1;
 - (void)getTimeSyncData;
-- (void)handleAttributeEvent:(id)arg1 args:(id)arg2 attributeSelector:(SEL)arg3 delegateSelector:(SEL)arg4 delegateFlag:(BOOL)arg5;
+- (void)handleAttributeEvent:(id)arg1 args:(id)arg2 attributeSelector:(SEL)arg3 delegateSelector:(SEL)arg4 delegateFlag:(bool)arg5;
 - (void)handleCharacteristicDescriptorsDiscovered:(id)arg1;
-- (void)handleCharacteristicEvent:(id)arg1 characteristicSelector:(SEL)arg2 delegateSelector:(SEL)arg3 delegateFlag:(BOOL)arg4;
+- (void)handleCharacteristicEvent:(id)arg1 characteristicSelector:(SEL)arg2 delegateSelector:(SEL)arg3 delegateFlag:(bool)arg4;
 - (void)handleCharacteristicValueNotifying:(id)arg1;
 - (void)handleCharacteristicValueUpdated:(id)arg1;
 - (void)handleCharacteristicValueWritten:(id)arg1;
-- (void)handleConnectionStateUpdated:(BOOL)arg1;
-- (void)handleDescriptorEvent:(id)arg1 descriptorSelector:(SEL)arg2 delegateSelector:(SEL)arg3 delegateFlag:(BOOL)arg4;
+- (void)handleConnectionStateUpdated:(bool)arg1;
+- (void)handleDescriptorEvent:(id)arg1 descriptorSelector:(SEL)arg2 delegateSelector:(SEL)arg3 delegateFlag:(bool)arg4;
 - (void)handleDescriptorValueUpdated:(id)arg1;
 - (void)handleDescriptorValueWritten:(id)arg1;
 - (void)handleDisconnection;
@@ -63,17 +63,17 @@
 - (void)handleNameUpdated:(id)arg1;
 - (void)handleRSSIUpdated:(id)arg1;
 - (void)handleServiceCharacteristicsDiscovered:(id)arg1;
-- (void)handleServiceEvent:(id)arg1 serviceSelector:(SEL)arg2 delegateSelector:(SEL)arg3 delegateFlag:(BOOL)arg4;
+- (void)handleServiceEvent:(id)arg1 serviceSelector:(SEL)arg2 delegateSelector:(SEL)arg3 delegateFlag:(bool)arg4;
 - (void)handleServiceIncludedServicesDiscovered:(id)arg1;
 - (void)handleServicesChanged:(id)arg1;
 - (void)handleServicesDiscovered:(id)arg1;
 - (void)handleSuccessfulConnection:(id)arg1;
 - (void)handleTimeSyncResponse:(id)arg1;
-- (BOOL)hasTag:(id)arg1;
+- (bool)hasTag:(id)arg1;
 - (id)initWithCentralManager:(id)arg1 info:(id)arg2;
 - (void)invalidateAllAttributes;
-- (BOOL)isConnectedToSystem;
-- (unsigned int)maximumWriteValueLengthForType:(int)arg1;
+- (bool)isConnectedToSystem;
+- (unsigned long long)maximumWriteValueLengthForType:(long long)arg1;
 - (id)name;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)readRSSI;
@@ -81,22 +81,22 @@
 - (void)readValueForDescriptor:(id)arg1;
 - (void)removeAttributeForHandle:(id)arg1;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
-- (void)sendMsg:(int)arg1 requiresConnected:(BOOL)arg2 args:(id)arg3;
+- (void)sendMsg:(int)arg1 requiresConnected:(bool)arg2 args:(id)arg3;
 - (id)sendSyncMsg:(int)arg1 args:(id)arg2;
 - (id)services;
 - (void)setAttribute:(id)arg1 forHandle:(id)arg2;
-- (void)setBroadcastValue:(BOOL)arg1 forCharacteristic:(id)arg2;
+- (void)setBroadcastValue:(bool)arg1 forCharacteristic:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setNotifyValue:(BOOL)arg1 forCharacteristic:(id)arg2;
+- (void)setNotifyValue:(bool)arg1 forCharacteristic:(id)arg2;
 - (void)setOrphan;
 - (void)setRSSI:(id)arg1;
 - (void)setServices:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 - (void)tag:(id)arg1;
 - (void)untag:(id)arg1;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(int)arg3;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 type:(long long)arg3;
 - (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
 
 @end

@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSString *preferredAddress;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

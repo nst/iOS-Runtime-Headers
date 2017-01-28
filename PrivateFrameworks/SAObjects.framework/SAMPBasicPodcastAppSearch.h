@@ -4,24 +4,24 @@
 
 @interface SAMPBasicPodcastAppSearch : SADomainCommand
 
-@property (nonatomic) BOOL acceptPodcastCollections;
-@property (nonatomic) BOOL acceptPodcastStations;
-@property (nonatomic) int maxResults;
+@property (nonatomic) bool acceptPodcastCollections;
+@property (nonatomic) bool acceptPodcastStations;
+@property (nonatomic) long long maxResults;
 @property (nonatomic, copy) NSString *query;
 
 + (id)basicPodcastAppSearch;
 + (id)basicPodcastAppSearchWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)acceptPodcastCollections;
-- (BOOL)acceptPodcastStations;
+- (bool)acceptPodcastCollections;
+- (bool)acceptPodcastStations;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (int)maxResults;
+- (long long)maxResults;
 - (id)query;
-- (BOOL)requiresResponse;
-- (void)setAcceptPodcastCollections:(BOOL)arg1;
-- (void)setAcceptPodcastStations:(BOOL)arg1;
-- (void)setMaxResults:(int)arg1;
+- (bool)requiresResponse;
+- (void)setAcceptPodcastCollections:(bool)arg1;
+- (void)setAcceptPodcastStations:(bool)arg1;
+- (void)setMaxResults:(long long)arg1;
 - (void)setQuery:(id)arg1;
 
 @end

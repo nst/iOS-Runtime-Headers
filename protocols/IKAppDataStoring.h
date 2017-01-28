@@ -6,10 +6,10 @@
 @required
 
 - (void)clear;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (NSString *)getDataForKey:(NSString *)arg1;
-- (NSString *)keyAtIndex:(unsigned int)arg1;
+- (NSString *)keyAtIndex:(unsigned long long)arg1;
 - (void)removeDataForKey:(NSString *)arg1;
-- (unsigned int)setData:(NSString *)arg1 forKey:(NSString *)arg2;
+- (unsigned long long)setData:(NSString *)arg1 forKey:(NSString *)arg2;
 
 @end

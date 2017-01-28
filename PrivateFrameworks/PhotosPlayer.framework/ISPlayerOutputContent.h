@@ -9,8 +9,8 @@
     int  _photoEXIFOrientation;
     ISWrappedAVPlayer * _videoPlayer;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _videoSize;
 }
 
@@ -19,17 +19,17 @@
 @property (nonatomic, readonly) struct CGImage { }*photo;
 @property (nonatomic, readonly) int photoEXIFOrientation;
 @property (nonatomic, readonly) ISWrappedAVPlayer *videoPlayer;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } videoSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } videoSize;
 
 - (void).cxx_destruct;
 - (id)crossfadeItem;
 - (id)crossfadePlayer;
 - (void)dealloc;
 - (id)description;
-- (id)initWithPhoto:(struct CGImage { }*)arg1 photoEXIFOrientation:(int)arg2 videoPlayer:(id)arg3 videoSize:(struct CGSize { float x1; float x2; })arg4 crossfadePlayer:(id)arg5 crossfadeItem:(id)arg6;
+- (id)initWithPhoto:(struct CGImage { }*)arg1 photoEXIFOrientation:(int)arg2 videoPlayer:(id)arg3 videoSize:(struct CGSize { double x1; double x2; })arg4 crossfadePlayer:(id)arg5 crossfadeItem:(id)arg6;
 - (struct CGImage { }*)photo;
 - (int)photoEXIFOrientation;
 - (id)videoPlayer;
-- (struct CGSize { float x1; float x2; })videoSize;
+- (struct CGSize { double x1; double x2; })videoSize;
 
 @end

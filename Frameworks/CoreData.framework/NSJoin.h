@@ -13,10 +13,10 @@
 - (void)dealloc;
 - (id)destinationAttributeName;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSourceAttributeName:(id)arg1 destinationAttributeName:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)sourceAttributeName;
 
 @end

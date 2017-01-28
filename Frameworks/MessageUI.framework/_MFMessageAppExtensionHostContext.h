@@ -9,15 +9,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) <_MFMessageComposeHostProtocol> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (void)_stageAppItem:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_stageMediaItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_stageAppItem:(id)arg1 completionHandler:(id)arg2;
+- (void)_stageMediaItem:(id)arg1 completionHandler:(id)arg2;
 - (id)delegate;
 - (void)setDelegate:(id)arg1;
 

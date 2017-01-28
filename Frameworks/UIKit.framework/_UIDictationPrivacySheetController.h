@@ -3,17 +3,17 @@
  */
 
 @interface _UIDictationPrivacySheetController : UINavigationController {
-    id /* block */  _dismissHandler;
+    id  _dismissHandler;
 }
 
-@property (copy) id /* block */ dismissHandler;
+@property (copy) id dismissHandler;
 
-+ (id)controllerWithDismissHandler:(id /* block */)arg1;
++ (id)controllerWithDismissHandler:(id)arg1;
 
 - (void)dealloc;
 - (void)dismiss;
-- (id /* block */)dismissHandler;
-- (id)initWithHandler:(id /* block */)arg1;
-- (void)setDismissHandler:(id /* block */)arg1;
+- (id)dismissHandler;
+- (id)initWithHandler:(id)arg1;
+- (void)setDismissHandler:(id)arg1;
 
 @end

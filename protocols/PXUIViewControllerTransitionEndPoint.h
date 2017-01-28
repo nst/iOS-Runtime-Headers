@@ -5,7 +5,7 @@
 
 @optional
 
-- (BOOL)keepsSourceRegionOfInterestContent;
+- (bool)keepsSourceRegionOfInterestContent;
 - (void)preloadWithSourceRegionOfInterest:(PXRegionOfInterest *)arg1 forTransition:(PXUIViewControllerTransition *)arg2;
 - (PXRegionOfInterest *)regionOfInterestForTransition:(PXUIViewControllerTransition *)arg1;
 - (UIColor *)removeBackgroundColorForTransition:(PXUIViewControllerTransition *)arg1;

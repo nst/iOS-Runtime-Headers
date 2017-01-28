@@ -18,10 +18,10 @@
 @property (nonatomic, copy) NSString *wantsGroupingProperty;
 
 - (void).cxx_destruct;
-- (BOOL)allowsSectionHeaderForSectionIndex:(unsigned int)arg1;
+- (bool)allowsSectionHeaderForSectionIndex:(unsigned long long)arg1;
 - (id)contentDescriptorForIndexPath:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)enumerateContentDescriptorsUsingBlock:(id /* block */)arg1;
+- (void)enumerateContentDescriptorsUsingBlock:(id)arg1;
 - (id)groupingProperty;
 - (long long)prominentTrackStoreID;
 - (id)prominentTracklistItemContentDescriptor;

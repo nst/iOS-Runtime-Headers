@@ -4,10 +4,10 @@
 
 @interface LSBundleRecordUpdater : NSObject {
     struct LSBundleData { 
-        unsigned long _clas; 
+        unsigned int _clas; 
         unsigned long long _bundleFlags; 
-        unsigned long _plistContentFlags; 
-        unsigned long _itemFlags; 
+        unsigned int _plistContentFlags; 
+        unsigned int _itemFlags; 
         unsigned char _highResFlags; 
         unsigned char _appNapFlags; 
         unsigned short _archFlags; 
@@ -81,7 +81,7 @@
     struct LSContext { 
         struct LSDatabase {} *db; 
     }  _context;
-    BOOL  _hasContext;
+    bool  _hasContext;
 }
 
 @property (nonatomic, readonly) NSString *bundleIdentifier;
@@ -91,6 +91,6 @@
 - (id)initWithBundleIdentifier:(id)arg1;
 - (void)parseSINFDictionary:(id)arg1;
 - (void)parseiTunesMetadata:(id)arg1;
-- (long)updateBundleRecord;
+- (int)updateBundleRecord;
 
 @end

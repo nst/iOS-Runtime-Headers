@@ -17,7 +17,7 @@
     NSString * _persistentUUID;
     NSString * _protocolVersion;
     NSNumber * _successfulRequests;
-    BOOL  _syncingAllowed;
+    bool  _syncingAllowed;
     NSNumber * _timeInNetworking;
     NSNumber * _timeSpan;
     NSNumber * _uploadedElements;
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) NSString *persistentUUID;
 @property (nonatomic, retain) NSString *protocolVersion;
 @property (nonatomic, retain) NSNumber *successfulRequests;
-@property (nonatomic) BOOL syncingAllowed;
+@property (nonatomic) bool syncingAllowed;
 @property (nonatomic, retain) NSNumber *timeInNetworking;
 @property (nonatomic, retain) NSNumber *timeSpan;
 @property (nonatomic, retain) NSNumber *uploadedElements;
@@ -82,12 +82,12 @@
 - (void)setPersistentUUID:(id)arg1;
 - (void)setProtocolVersion:(id)arg1;
 - (void)setSuccessfulRequests:(id)arg1;
-- (void)setSyncingAllowed:(BOOL)arg1;
+- (void)setSyncingAllowed:(bool)arg1;
 - (void)setTimeInNetworking:(id)arg1;
 - (void)setTimeSpan:(id)arg1;
 - (void)setUploadedElements:(id)arg1;
 - (id)successfulRequests;
-- (BOOL)syncingAllowed;
+- (bool)syncingAllowed;
 - (id)timeInNetworking;
 - (id)timeSpan;
 - (id)uploadedElements;

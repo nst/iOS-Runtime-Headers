@@ -23,8 +23,8 @@
 - (void)setSyncHelperReadyNotificationRef:(id)arg1;
 - (id)syncHelperReadyNotificationRef;
 - (id)tempDBLocation:(unsigned char*)arg1;
-- (BOOL)validatePermDatabase;
-- (BOOL)validateTempDatabase;
-- (BOOL)willMoveCallsFromTempDatabase;
+- (bool)validatePermDatabase;
+- (bool)validateTempDatabase;
+- (bool)willMoveCallsFromTempDatabase;
 
 @end

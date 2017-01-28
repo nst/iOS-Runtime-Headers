@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic) unsigned int destinations;
-@property (nonatomic, readonly) BOOL hasPublisherBulletinID;
-@property (nonatomic, readonly) BOOL hasRecordID;
+@property (nonatomic, readonly) bool hasPublisherBulletinID;
+@property (nonatomic, readonly) bool hasRecordID;
 @property (nonatomic, retain) NSMutableArray *keys;
 @property (nonatomic, retain) NSString *publisherBulletinID;
 @property (nonatomic, retain) NSString *recordID;
@@ -26,16 +26,16 @@
 - (id)description;
 - (unsigned int)destinations;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPublisherBulletinID;
-- (BOOL)hasRecordID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)keyAtIndex:(unsigned int)arg1;
+- (bool)hasPublisherBulletinID;
+- (bool)hasRecordID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)keyAtIndex:(unsigned long long)arg1;
 - (id)keys;
-- (unsigned int)keysCount;
+- (unsigned long long)keysCount;
 - (void)mergeFrom:(id)arg1;
 - (id)publisherBulletinID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordID;
 - (id)sectionID;
 - (void)setDestinations:(unsigned int)arg1;

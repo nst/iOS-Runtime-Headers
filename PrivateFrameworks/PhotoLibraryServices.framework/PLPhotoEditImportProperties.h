@@ -4,16 +4,16 @@
 
 @interface PLPhotoEditImportProperties : NSObject {
     double  _baseDuration;
-    int  _baseEXIFOrientation;
+    long long  _baseEXIFOrientation;
 }
 
 @property (nonatomic, readonly) double baseDuration;
-@property (nonatomic, readonly) int baseEXIFOrientation;
+@property (nonatomic, readonly) long long baseEXIFOrientation;
 
-+ (id)importPropertiesWithEXIFOrientation:(int)arg1;
-+ (id)importPropertiesWithEXIFOrientation:(int)arg1 duration:(double)arg2;
++ (id)importPropertiesWithEXIFOrientation:(long long)arg1;
++ (id)importPropertiesWithEXIFOrientation:(long long)arg1 duration:(double)arg2;
 
 - (double)baseDuration;
-- (int)baseEXIFOrientation;
+- (long long)baseEXIFOrientation;
 
 @end

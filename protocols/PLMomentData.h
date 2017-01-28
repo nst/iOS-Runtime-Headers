@@ -11,13 +11,13 @@
 - (void)delete;
 - (NSDate *)endDate;
 - (short)generationType;
-- (BOOL)isDeleted;
+- (bool)isDeleted;
 - (<PLMomentListData> *)megaMomentList;
 - (void)removeAssetData:(id <PLMomentAssetData>)arg1;
-- (void)replaceAssetDataAtIndex:(unsigned int)arg1 withAssetData:(id <PLMomentAssetData>)arg2;
+- (void)replaceAssetDataAtIndex:(unsigned long long)arg1 withAssetData:(id <PLMomentAssetData>)arg2;
 - (NSDate *)representativeDate;
 - (NSData *)reverseLocationData;
-- (BOOL)reverseLocationDataIsValid;
+- (bool)reverseLocationDataIsValid;
 - (void)setApproximateLocation:(CLLocation *)arg1;
 - (void)setAssets:(NSOrderedSet *)arg1;
 - (void)setCachedCount:(int)arg1;
@@ -26,7 +26,7 @@
 - (void)setMegaMomentList:(id <PLMomentListData>)arg1;
 - (void)setRepresentativeDate:(NSDate *)arg1;
 - (void)setReverseLocationData:(NSData *)arg1;
-- (void)setReverseLocationDataIsValid:(BOOL)arg1;
+- (void)setReverseLocationDataIsValid:(bool)arg1;
 - (void)setStartDate:(NSDate *)arg1;
 - (void)setUserTitles:(NSArray *)arg1;
 - (void)setUuid:(NSString *)arg1;

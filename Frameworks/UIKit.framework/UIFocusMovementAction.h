@@ -6,7 +6,7 @@
 
 @property (nonatomic, readonly) _UIFocusMovementInfo *focusMovementInfo;
 
-- (int)UIActionType;
+- (long long)UIActionType;
 - (id)focusMovementInfo;
 - (id)initWithFocusMovementInfo:(id)arg1;
 

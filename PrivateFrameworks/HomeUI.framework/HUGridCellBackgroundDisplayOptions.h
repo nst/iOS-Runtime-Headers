@@ -4,27 +4,27 @@
 
 @interface HUGridCellBackgroundDisplayOptions : NSObject <HUGridDisplayOptions, NSCopying> {
     UIVisualEffect * _backgroundVisualEffect;
-    unsigned int  _contentColorStyle;
-    unsigned int  _displayStyle;
+    unsigned long long  _contentColorStyle;
+    unsigned long long  _displayStyle;
 }
 
 @property (nonatomic, retain) UIVisualEffect *backgroundVisualEffect;
-@property (nonatomic) unsigned int contentColorStyle;
+@property (nonatomic) unsigned long long contentColorStyle;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) unsigned int displayStyle;
-@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long long displayStyle;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)defaultOptions;
 
 - (void).cxx_destruct;
 - (id)backgroundVisualEffect;
-- (unsigned int)contentColorStyle;
+- (unsigned long long)contentColorStyle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)displayStyle;
+- (unsigned long long)displayStyle;
 - (void)setBackgroundVisualEffect:(id)arg1;
-- (void)setContentColorStyle:(unsigned int)arg1;
-- (void)setDisplayStyle:(unsigned int)arg1;
+- (void)setContentColorStyle:(unsigned long long)arg1;
+- (void)setDisplayStyle:(unsigned long long)arg1;
 
 @end

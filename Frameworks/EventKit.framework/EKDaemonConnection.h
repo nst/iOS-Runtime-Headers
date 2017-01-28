@@ -7,7 +7,7 @@
     NSObject<OS_dispatch_queue> * _connectionLock;
     id  _delegate;
     unsigned int  _nextCancellationToken;
-    BOOL  _registeredForStartNote;
+    bool  _registeredForStartNote;
     <CADInterface> * _remoteOperationProxy;
     NSObject<OS_dispatch_queue> * _replyHandlerLock;
     NSXPCConnection * _xpcConnection;
@@ -17,12 +17,12 @@
 @property id delegate;
 @property (nonatomic, readonly, retain) NSXPCConnection *xpcConnection;
 
-+ (void)waitOnSemaphoreWithBlock:(id /* block */)arg1;
++ (void)waitOnSemaphoreWithBlock:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)CADClientReceiveOccurrenceCacheSearchResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(BOOL)arg3;
+- (void)CADClientReceiveOccurrenceCacheSearchResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(bool)arg3;
 - (id)CADOperationProxy;
-- (BOOL)_connectToServer;
+- (bool)_connectToServer;
 - (void)_daemonRestarted;
 - (void)_finishAllRepliesOnServerDeath;
 - (unsigned int)addCancellableRemoteOperation:(id)arg1;

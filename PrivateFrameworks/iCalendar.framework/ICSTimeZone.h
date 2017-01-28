@@ -8,11 +8,11 @@
 
 @property (nonatomic, retain) NSString *tzid;
 
-+ (BOOL)_isTimeZone:(id)arg1 pseudoDSTForDate:(id)arg2;
++ (bool)_isTimeZone:(id)arg1 pseudoDSTForDate:(id)arg2;
 + (id)blocksAfterDate:(id)arg1 untilDate:(id)arg2 forTimeZone:(id)arg3;
-+ (int)matchTypeForSubarray:(id)arg1 inTZChangeArray:(id)arg2;
++ (long long)matchTypeForSubarray:(id)arg1 inTZChangeArray:(id)arg2;
 + (id)name;
-+ (BOOL)perfectMatchForSubarray:(id)arg1 inTZChangeArray:(id)arg2;
++ (bool)perfectMatchForSubarray:(id)arg1 inTZChangeArray:(id)arg2;
 + (id)quickTimeZoneNames;
 + (id)slowTimeZoneNames;
 + (id)timeZoneWithSystemTimeZoneName:(id)arg1;
@@ -25,7 +25,7 @@
 - (id)initWithSystemTimeZone:(id)arg1;
 - (id)initWithSystemTimeZone:(id)arg1 fromDate:(id)arg2 options:(int)arg3;
 - (id)initWithTimeZone:(id)arg1 fromDate:(id)arg2 options:(int)arg3;
-- (BOOL)isEqualToNSTimeZone:(id)arg1 forDate:(id)arg2;
+- (bool)isEqualToNSTimeZone:(id)arg1 forDate:(id)arg2;
 - (void)setTzid:(id)arg1;
 - (id)systemTimeZoneForDate:(id)arg1;
 - (id)tzid;

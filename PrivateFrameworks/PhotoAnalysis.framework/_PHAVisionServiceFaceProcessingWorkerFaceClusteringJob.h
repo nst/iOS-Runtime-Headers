@@ -3,7 +3,7 @@
  */
 
 @interface _PHAVisionServiceFaceProcessingWorkerFaceClusteringJob : PHAWorkerJob {
-    BOOL  _completed;
+    bool  _completed;
     PHAVisionServiceFaceProcessingWorker * _faceProcessingWorker;
     _PHAVisionServiceFaceProcessingWorkerJobKeepAlive * _keepAlive;
 }
@@ -14,9 +14,9 @@
 - (void)_stopJobKeepAlive;
 - (float)completionScore;
 - (id)faceProcessingWorker;
-- (BOOL)finished;
-- (id)initWithFaceProcessingWorker:(id)arg1 scenario:(unsigned int)arg2;
-- (BOOL)startProcessingOnWorker:(id)arg1 withError:(id*)arg2;
-- (BOOL)stopProcessingOnWorker:(id)arg1 withError:(id*)arg2;
+- (bool)finished;
+- (id)initWithFaceProcessingWorker:(id)arg1 scenario:(unsigned long long)arg2;
+- (bool)startProcessingOnWorker:(id)arg1 withError:(id*)arg2;
+- (bool)stopProcessingOnWorker:(id)arg1 withError:(id*)arg2;
 
 @end

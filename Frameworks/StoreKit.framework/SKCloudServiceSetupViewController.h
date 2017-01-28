@@ -6,9 +6,9 @@
     SKCloudServiceSetupReloadContext * _activeCloudServiceSetupReloadContext;
     SKCloudServiceSetupConfiguration * _configuration;
     <SKCloudServiceSetupViewControllerDelegate> * _delegate;
-    BOOL  _hasInitializedServiceViewController;
-    BOOL  _isRemoteViewControllerReady;
-    id /* block */  _loadCompletionHandler;
+    bool  _hasInitializedServiceViewController;
+    bool  _isRemoteViewControllerReady;
+    id  _loadCompletionHandler;
     _UIResilientRemoteViewContainerViewController * _remoteViewContainerViewController;
 }
 
@@ -16,22 +16,22 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKCloudServiceSetupViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_didReceiveRemoteViewController:(id)arg1;
 - (void)_reloadWithActiveCloudServiceSetupReloadContext;
 - (void)_requestRemoteViewController;
-- (void)cloudServiceSetupRemoteViewController:(id)arg1 didFinishLoadingWithSuccess:(BOOL)arg2 error:(id)arg3;
-- (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsDismissalWithAnimation:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)cloudServiceSetupRemoteViewController:(id)arg1 didFinishLoadingWithSuccess:(bool)arg2 error:(id)arg3;
+- (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsDismissalWithAnimation:(bool)arg2 completion:(id)arg3;
 - (id)configuration;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)loadWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadWithOptions:(id)arg1 completionHandler:(id)arg2;
 - (void)reloadWithContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;

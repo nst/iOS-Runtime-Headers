@@ -5,12 +5,12 @@
 @interface AKInlineSignInViewController : UIViewController <UITextFieldDelegate> {
     AKTextField * _appleIDField;
     AKAppleIDAuthenticationController * _authenticationController;
-    int  _blurEffectStyle;
+    long long  _blurEffectStyle;
     AKAppleIDAuthenticationInAppContext * _context;
     UIButton * _createAppleIDButton;
     <AKInlineSignInViewControllerDelegate> * _delegate;
     UIButton * _iforgotButton;
-    BOOL  _isAuthInProgress;
+    bool  _isAuthInProgress;
     UIView * _loginFieldsContainer;
     AKTextField * _passwordField;
     NSString * _primaryButtonTitle;
@@ -18,20 +18,20 @@
     UIButton * _signInButton;
     UIActivityIndicatorView * _spinner;
     NSString * _tertiaryButtonTitle;
-    BOOL  _usesDarkMode;
-    BOOL  _usesVibrancy;
-    BOOL  _wantsAuthenticationProgress;
+    bool  _usesDarkMode;
+    bool  _usesVibrancy;
+    bool  _wantsAuthenticationProgress;
 }
 
 @property (retain) AKTextField *appleIDField;
 @property (readonly) AKAppleIDAuthenticationController *authenticationController;
-@property (nonatomic) int blurEffectStyle;
+@property (nonatomic) long long blurEffectStyle;
 @property (retain) AKAppleIDAuthenticationInAppContext *context;
 @property (retain) UIButton *createAppleIDButton;
 @property (readonly, copy) NSString *debugDescription;
 @property <AKInlineSignInViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) UIButton *iforgotButton;
 @property (retain) UIView *loginFieldsContainer;
 @property (retain) AKTextField *passwordField;
@@ -41,17 +41,17 @@
 @property (retain) UIActivityIndicatorView *spinner;
 @property (readonly) Class superclass;
 @property (copy) NSString *tertiaryButtonTitle;
-@property (nonatomic) BOOL usesDarkMode;
-@property (nonatomic) BOOL usesVibrancy;
-@property BOOL wantsAuthenticationProgress;
+@property (nonatomic) bool usesDarkMode;
+@property (nonatomic) bool usesVibrancy;
+@property bool wantsAuthenticationProgress;
 
 - (void).cxx_destruct;
 - (void)_appleIDTextFieldDidChange:(id)arg1;
-- (void)_beginAuthenticationIfPossibleWithOption:(unsigned int)arg1;
-- (BOOL)_canBeginAuthenticationWithOption:(unsigned int)arg1;
+- (void)_beginAuthenticationIfPossibleWithOption:(unsigned long long)arg1;
+- (bool)_canBeginAuthenticationWithOption:(unsigned long long)arg1;
 - (void)_hidebusyWorkUI;
-- (BOOL)_isAccountModificationRestricted;
-- (BOOL)_isSignInAllowed;
+- (bool)_isAccountModificationRestricted;
+- (bool)_isSignInAllowed;
 - (void)_passwordTextFieldDidChange:(id)arg1;
 - (void)_prefillAuthFields;
 - (void)_startBusyWorkUI;
@@ -61,7 +61,7 @@
 - (void)_updateVibrancyAndBlurInTextFields;
 - (id)appleIDField;
 - (id)authenticationController;
-- (int)blurEffectStyle;
+- (long long)blurEffectStyle;
 - (id)context;
 - (id)createAppleIDButton;
 - (void)createAppleIDButtonWasTapped:(id)arg1;
@@ -77,7 +77,7 @@
 - (void)provideDelegateWithAuthResults:(id)arg1 error:(id)arg2;
 - (id)secondaryButtonTitle;
 - (void)setAppleIDField:(id)arg1;
-- (void)setBlurEffectStyle:(int)arg1;
+- (void)setBlurEffectStyle:(long long)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCreateAppleIDButton:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -90,17 +90,17 @@
 - (void)setSpinner:(id)arg1;
 - (void)setTertiaryButtonTarget:(id)arg1 action:(SEL)arg2;
 - (void)setTertiaryButtonTitle:(id)arg1;
-- (void)setUsesDarkMode:(BOOL)arg1;
-- (void)setUsesVibrancy:(BOOL)arg1;
-- (void)setWantsAuthenticationProgress:(BOOL)arg1;
+- (void)setUsesDarkMode:(bool)arg1;
+- (void)setUsesVibrancy:(bool)arg1;
+- (void)setWantsAuthenticationProgress:(bool)arg1;
 - (id)signInButton;
 - (void)signInButtonWasTapped:(id)arg1;
 - (id)spinner;
 - (id)tertiaryButtonTitle;
-- (BOOL)textFieldShouldReturn:(id)arg1;
-- (BOOL)usesDarkMode;
-- (BOOL)usesVibrancy;
+- (bool)textFieldShouldReturn:(id)arg1;
+- (bool)usesDarkMode;
+- (bool)usesVibrancy;
 - (void)viewDidLoad;
-- (BOOL)wantsAuthenticationProgress;
+- (bool)wantsAuthenticationProgress;
 
 @end

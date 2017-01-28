@@ -8,7 +8,7 @@
 
 - (void).cxx_destruct;
 - (id)initFromPromise:(id)arg1;
-- (id)then:(id /* block */)arg1 queue:(id)arg2;
+- (id)then:(id)arg1 queue:(id)arg2;
 - (id)wait:(unsigned long long)arg1;
 - (id)waitForever;
 

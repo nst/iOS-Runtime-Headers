@@ -3,53 +3,53 @@
  */
 
 @interface PUSlideshowViewControllerSpec : PUViewControllerSpec {
-    BOOL  _isAirplayRouteAvailable;
-    BOOL  _isAirplayScreenAvailable;
-    BOOL  _isChromeVisible;
-    unsigned int  _mode;
-    BOOL  _shouldObserveAirplayRoute;
-    BOOL  _shouldShowAirplayButton;
-    BOOL  _shouldShowChromeBars;
-    BOOL  _shouldShowPlaceholder;
+    bool  _isAirplayRouteAvailable;
+    bool  _isAirplayScreenAvailable;
+    bool  _isChromeVisible;
+    unsigned long long  _mode;
+    bool  _shouldObserveAirplayRoute;
+    bool  _shouldShowAirplayButton;
+    bool  _shouldShowChromeBars;
+    bool  _shouldShowPlaceholder;
 }
 
 @property (nonatomic, readonly) PUSlideshowViewControllerSpecChange *currentChange;
-@property (setter=setAirplayRouteAvailable:, nonatomic) BOOL isAirplayRouteAvailable;
-@property (setter=setAirplayScreenAvailable:, nonatomic) BOOL isAirplayScreenAvailable;
-@property (setter=setChromeVisible:, nonatomic) BOOL isChromeVisible;
-@property (nonatomic, readonly) unsigned int mode;
-@property (setter=_setShouldObserveAirplayRoute:, nonatomic) BOOL shouldObserveAirplayRoute;
-@property (nonatomic, readonly) BOOL shouldPauseWhenAppResignsActive;
-@property (nonatomic, readonly) BOOL shouldRegisterToAirplay;
-@property (setter=_setShouldShowAirplayButton:, nonatomic) BOOL shouldShowAirplayButton;
-@property (setter=_setShouldShowChromeBars:, nonatomic) BOOL shouldShowChromeBars;
-@property (setter=_setShouldShowPlaceholder:, nonatomic) BOOL shouldShowPlaceholder;
-@property (nonatomic, readonly) BOOL shouldUseChromeBars;
-@property (nonatomic, readonly) BOOL shouldUseTapGesture;
+@property (setter=setAirplayRouteAvailable:, nonatomic) bool isAirplayRouteAvailable;
+@property (setter=setAirplayScreenAvailable:, nonatomic) bool isAirplayScreenAvailable;
+@property (setter=setChromeVisible:, nonatomic) bool isChromeVisible;
+@property (nonatomic, readonly) unsigned long long mode;
+@property (setter=_setShouldObserveAirplayRoute:, nonatomic) bool shouldObserveAirplayRoute;
+@property (nonatomic, readonly) bool shouldPauseWhenAppResignsActive;
+@property (nonatomic, readonly) bool shouldRegisterToAirplay;
+@property (setter=_setShouldShowAirplayButton:, nonatomic) bool shouldShowAirplayButton;
+@property (setter=_setShouldShowChromeBars:, nonatomic) bool shouldShowChromeBars;
+@property (setter=_setShouldShowPlaceholder:, nonatomic) bool shouldShowPlaceholder;
+@property (nonatomic, readonly) bool shouldUseChromeBars;
+@property (nonatomic, readonly) bool shouldUseTapGesture;
 
-- (void)_setShouldObserveAirplayRoute:(BOOL)arg1;
-- (void)_setShouldShowAirplayButton:(BOOL)arg1;
-- (void)_setShouldShowChromeBars:(BOOL)arg1;
-- (void)_setShouldShowPlaceholder:(BOOL)arg1;
+- (void)_setShouldObserveAirplayRoute:(bool)arg1;
+- (void)_setShouldShowAirplayButton:(bool)arg1;
+- (void)_setShouldShowChromeBars:(bool)arg1;
+- (void)_setShouldShowPlaceholder:(bool)arg1;
 - (id)currentChange;
 - (id)init;
-- (id)initWithMode:(unsigned int)arg1;
-- (BOOL)isAirplayRouteAvailable;
-- (BOOL)isAirplayScreenAvailable;
-- (BOOL)isChromeVisible;
-- (unsigned int)mode;
+- (id)initWithMode:(unsigned long long)arg1;
+- (bool)isAirplayRouteAvailable;
+- (bool)isAirplayScreenAvailable;
+- (bool)isChromeVisible;
+- (unsigned long long)mode;
 - (id)newSpecChange;
-- (void)setAirplayRouteAvailable:(BOOL)arg1;
-- (void)setAirplayScreenAvailable:(BOOL)arg1;
-- (void)setChromeVisible:(BOOL)arg1;
-- (BOOL)shouldObserveAirplayRoute;
-- (BOOL)shouldPauseWhenAppResignsActive;
-- (BOOL)shouldRegisterToAirplay;
-- (BOOL)shouldShowAirplayButton;
-- (BOOL)shouldShowChromeBars;
-- (BOOL)shouldShowPlaceholder;
-- (BOOL)shouldUseChromeBars;
-- (BOOL)shouldUseTapGesture;
+- (void)setAirplayRouteAvailable:(bool)arg1;
+- (void)setAirplayScreenAvailable:(bool)arg1;
+- (void)setChromeVisible:(bool)arg1;
+- (bool)shouldObserveAirplayRoute;
+- (bool)shouldPauseWhenAppResignsActive;
+- (bool)shouldRegisterToAirplay;
+- (bool)shouldShowAirplayButton;
+- (bool)shouldShowChromeBars;
+- (bool)shouldShowPlaceholder;
+- (bool)shouldUseChromeBars;
+- (bool)shouldUseTapGesture;
 - (void)updateIfNeeded;
 
 @end

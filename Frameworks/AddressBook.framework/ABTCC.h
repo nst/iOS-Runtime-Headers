@@ -3,23 +3,23 @@
  */
 
 @interface ABTCC : NSObject {
-    BOOL  _calledExternalChangeCallbacks;
-    BOOL  _simulateAccessPrompt;
+    bool  _calledExternalChangeCallbacks;
+    bool  _simulateAccessPrompt;
     unsigned int  _simulateAccessPromptDelay;
-    BOOL  _simulateAccessPromptGranted;
-    int  _simulateType;
+    bool  _simulateAccessPromptGranted;
+    long long  _simulateType;
 }
 
 + (id)sharedInstance;
 
 - (id)_simulateQueue;
 - (int)accessPreflight;
-- (void)accessRequestWithCompletion:(id /* block */)arg1;
-- (void)callExternalChangeCallbacks:(BOOL)arg1;
+- (void)accessRequestWithCompletion:(id)arg1;
+- (void)callExternalChangeCallbacks:(bool)arg1;
 - (void)dealloc;
 - (id)init;
 - (unsigned char)isAccessRestricted;
-- (void)simulate:(int)arg1;
-- (void)simulateIfAccessPromptDisplayedThenUserGrantedAccess:(BOOL)arg1 withDelay:(unsigned int)arg2;
+- (void)simulate:(long long)arg1;
+- (void)simulateIfAccessPromptDisplayedThenUserGrantedAccess:(bool)arg1 withDelay:(unsigned int)arg2;
 
 @end

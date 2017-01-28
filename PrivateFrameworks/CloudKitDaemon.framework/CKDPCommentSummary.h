@@ -7,8 +7,8 @@
     CKDPLikeInfo * _likeInfo;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasLikeInfo;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasLikeInfo;
 @property (nonatomic, retain) CKDPCommentedOnId *identifier;
 @property (nonatomic, retain) CKDPLikeInfo *likeInfo;
 
@@ -17,14 +17,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasLikeInfo;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasLikeInfo;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)likeInfo;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setLikeInfo:(id)arg1;
 - (void)writeTo:(id)arg1;

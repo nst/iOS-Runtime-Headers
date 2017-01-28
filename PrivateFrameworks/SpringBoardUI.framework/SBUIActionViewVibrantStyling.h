@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (float)alpha;
+- (double)alpha;
 - (id)blendMode;
 - (id)color;
 - (id)composedFilter;

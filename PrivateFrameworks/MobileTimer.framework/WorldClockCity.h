@@ -26,9 +26,9 @@
 
 // Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
 
-+ (BOOL)isCachedLanguageStaleForProperties:(id)arg1;
-+ (BOOL)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
-+ (BOOL)isWorldClockCityProperties:(id)arg1;
++ (bool)isCachedLanguageStaleForProperties:(id)arg1;
++ (bool)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
++ (bool)isWorldClockCityProperties:(id)arg1;
 + (id)unlocalizedExampleCity;
 
 - (void).cxx_destruct;
@@ -37,13 +37,13 @@
 - (id)countryCode;
 - (id)countryName;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)idUrl;
 - (id)initWithALCity:(id)arg1;
 - (id)initWithALCityIdentifier:(int)arg1;
 - (id)initWithProperties:(id)arg1;
 - (id)initWithTimeZone:(id)arg1 countryCode:(id)arg2 name:(id)arg3 countryName:(id)arg4 unlocalizedName:(id)arg5 unlocalizedCountryName:(id)arg6;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)properties;
 - (id)timeZone;

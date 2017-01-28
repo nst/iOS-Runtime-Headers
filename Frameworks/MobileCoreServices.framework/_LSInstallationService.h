@@ -10,7 +10,7 @@
 @property (readonly) NSObject<OS_dispatch_queue> *databaseQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSObject<OS_dispatch_queue> *serialQueue;
 @property (readonly) Class superclass;
 
@@ -19,9 +19,9 @@
 - (id)databaseQueue;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)removeSystemApplicationWithBundleIdentifier:(id)arg1 reply:(id /* block */)arg2;
-- (void)restoreSystemApplicationWithBundleIdentifier:(id)arg1 reply:(id /* block */)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)removeSystemApplicationWithBundleIdentifier:(id)arg1 reply:(id)arg2;
+- (void)restoreSystemApplicationWithBundleIdentifier:(id)arg1 reply:(id)arg2;
 - (id)serialQueue;
 
 @end

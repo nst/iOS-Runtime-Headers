@@ -6,8 +6,8 @@
     NSFileCoordinator * _fileCoordinator;
     NSURL * _secureReadURL;
     NSURL * _secureWriteURL;
-    BOOL  _securedRead;
-    BOOL  _securedWrite;
+    bool  _securedRead;
+    bool  _securedWrite;
     NSData * _securityScopeToken;
     NSURL * _securityScopedURL;
 }
@@ -21,8 +21,8 @@
 - (id)data;
 - (void)dealloc;
 - (id)initWithSecurityScopedURL:(id)arg1 withToken:(id)arg2;
-- (BOOL)isBundle;
-- (BOOL)isReadable;
+- (bool)isBundle;
+- (bool)isReadable;
 - (id)securityScopeToken;
 - (id)startReadAccess;
 - (id)startWriteAccess;

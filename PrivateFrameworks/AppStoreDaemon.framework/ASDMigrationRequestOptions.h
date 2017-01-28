@@ -3,17 +3,17 @@
  */
 
 @interface ASDMigrationRequestOptions : ASDRequestOptions {
-    unsigned int  _migrationType;
+    unsigned long long  _migrationType;
 }
 
-@property (nonatomic, readonly) unsigned int migrationType;
+@property (nonatomic, readonly) unsigned long long migrationType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMigrationType:(unsigned int)arg1;
-- (unsigned int)migrationType;
+- (id)initWithMigrationType:(unsigned long long)arg1;
+- (unsigned long long)migrationType;
 
 @end

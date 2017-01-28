@@ -10,6 +10,7 @@
     PXMemoriesRelatedSettings * _memoriesRelated;
     PXMemoriesFeedSettings * _memoryFeed;
     PXModelSettings * _model;
+    PXPeopleDetailSettings * _peopleDetail;
     PXPhotosDataSourceSettings * _photosDataSource;
     PXPhotosDetailsSettings * _photosDetails;
     PXPhotosDetailsHeaderTileSettings * _photosDetailsHeaderTile;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) PXMemoriesRelatedSettings *memoriesRelated;
 @property (nonatomic, retain) PXMemoriesFeedSettings *memoryFeed;
 @property (nonatomic, retain) PXModelSettings *model;
+@property (nonatomic, retain) PXPeopleDetailSettings *peopleDetail;
 @property (nonatomic, retain) PXPhotosDataSourceSettings *photosDataSource;
 @property (nonatomic, retain) PXPhotosDetailsSettings *photosDetails;
 @property (nonatomic, retain) PXPhotosDetailsHeaderTileSettings *photosDetailsHeaderTile;
@@ -45,6 +47,7 @@
 - (id)memoriesRelated;
 - (id)memoryFeed;
 - (id)model;
+- (id)peopleDetail;
 - (id)photosDataSource;
 - (id)photosDetails;
 - (id)photosDetailsHeaderTile;
@@ -56,6 +59,7 @@
 - (void)setMemoriesRelated:(id)arg1;
 - (void)setMemoryFeed:(id)arg1;
 - (void)setModel:(id)arg1;
+- (void)setPeopleDetail:(id)arg1;
 - (void)setPhotosDataSource:(id)arg1;
 - (void)setPhotosDetails:(id)arg1;
 - (void)setPhotosDetailsHeaderTile:(id)arg1;

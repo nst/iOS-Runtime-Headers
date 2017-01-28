@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)count;
-- (int)faceCountAtIndex:(unsigned int)arg1;
+- (unsigned long long)count;
+- (long long)faceCountAtIndex:(unsigned long long)arg1;
 
 @end

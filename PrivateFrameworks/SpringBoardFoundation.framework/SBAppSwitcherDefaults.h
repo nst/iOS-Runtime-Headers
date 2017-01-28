@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) NSArray *legacyRecentApplications;
 @property (nonatomic, retain) NSArray *recentDisplayItemRoles;
 @property (nonatomic, retain) NSArray *recentDisplayItems;
-@property (getter=isSpringBoardKillable, nonatomic, readonly) BOOL springBoardKillable;
+@property (getter=isSpringBoardKillable, nonatomic, readonly) bool springBoardKillable;
 
 - (void)_bindAndRegisterDefaults;
 - (void)clearLegacyDefaults;

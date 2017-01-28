@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSDictionary *applicationsByIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)applicationsByIdentifier;

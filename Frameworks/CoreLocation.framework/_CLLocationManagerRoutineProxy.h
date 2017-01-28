@@ -7,19 +7,19 @@
     <CLLocationManagerRoutineDelegate> * _delegate;
     CLLocationManagerRoutine * _locationManagerRoutine;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _updating;
-    BOOL  _updatingPredictedApplications;
+    bool  _updating;
+    bool  _updatingPredictedApplications;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CLLocationManagerRoutineDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) CLLocationManagerRoutine *locationManagerRoutine;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL updating;
-@property (nonatomic) BOOL updatingPredictedApplications;
+@property (nonatomic) bool updating;
+@property (nonatomic) bool updatingPredictedApplications;
 
 - (id)connection;
 - (void)createConnection;
@@ -32,9 +32,9 @@
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLocationManagerRoutine:(id)arg1;
-- (void)setUpdating:(BOOL)arg1;
-- (void)setUpdatingPredictedApplications:(BOOL)arg1;
-- (BOOL)updating;
-- (BOOL)updatingPredictedApplications;
+- (void)setUpdating:(bool)arg1;
+- (void)setUpdatingPredictedApplications:(bool)arg1;
+- (bool)updating;
+- (bool)updatingPredictedApplications;
 
 @end

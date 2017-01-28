@@ -5,7 +5,7 @@
 
 @required
 
-- (void)waveformRenderer:(RCGLWaveformRenderer *)arg1 contentWidthDidChange:(float)arg2;
+- (void)waveformRenderer:(RCGLWaveformRenderer *)arg1 contentWidthDidChange:(double)arg2;
 - (void)waveformRendererContentDidFinishLoading:(RCGLWaveformRenderer *)arg1;
 - (void)waveformRendererDidSynchronizeToDisplayLink:(RCGLWaveformRenderer *)arg1;
 

@@ -3,16 +3,16 @@
  */
 
 @interface NPKOneShotLocationFetcher : NSObject <CLLocationManagerDelegate> {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     CLInUseAssertion * _inUseAssertion;
     NSObject<OS_dispatch_source> * _locationFixTimeout;
     CLLocationManager * _locationManager;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) CLInUseAssertion *inUseAssertion;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *locationFixTimeout;
 @property (nonatomic, retain) CLLocationManager *locationManager;
@@ -20,15 +20,15 @@
 
 - (void).cxx_destruct;
 - (void)_finishLocationFixWithLocation:(id)arg1;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)dealloc;
-- (void)fetchLocationWithCompletion:(id /* block */)arg1;
+- (void)fetchLocationWithCompletion:(id)arg1;
 - (id)inUseAssertion;
 - (id)locationFixTimeout;
 - (id)locationManager;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setInUseAssertion:(id)arg1;
 - (void)setLocationFixTimeout:(id)arg1;
 - (void)setLocationManager:(id)arg1;

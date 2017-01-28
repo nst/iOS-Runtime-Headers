@@ -9,11 +9,11 @@
 @property (nonatomic, retain) NSString *returnToAppBundleIdentifier;
 
 - (void).cxx_destruct;
-- (int)buttonType;
+- (long long)buttonType;
 - (id)contentsImage;
 - (id)highlightImage;
 - (id)returnToAppBundleIdentifier;
 - (void)setReturnToAppBundleIdentifier:(id)arg1;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

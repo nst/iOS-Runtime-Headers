@@ -4,17 +4,17 @@
 
 @interface IFCentroidCommon : NSObject
 
-+ (int)IDFWeightSchemeFromString:(id)arg1;
-+ (int)divergenceFromString:(id)arg1;
-+ (int)interactionTypeFromString:(id)arg1;
-+ (int)normalizationFromString:(id)arg1;
-+ (id)operationForDivergence:(int)arg1;
-+ (id)operationForNormalization:(int)arg1;
-+ (id)stringForDivergence:(int)arg1;
-+ (id)stringForIDFWeightScheme:(int)arg1;
-+ (id)stringForInteractionType:(int)arg1;
-+ (id)stringForNormalization:(int)arg1;
-+ (id)stringForTermWeightScheme:(int)arg1;
-+ (int)termWeightSchemeFromString:(id)arg1;
++ (long long)IDFWeightSchemeFromString:(id)arg1;
++ (long long)divergenceFromString:(id)arg1;
++ (long long)interactionTypeFromString:(id)arg1;
++ (long long)normalizationFromString:(id)arg1;
++ (id)operationForDivergence:(long long)arg1;
++ (id)operationForNormalization:(long long)arg1;
++ (id)stringForDivergence:(long long)arg1;
++ (id)stringForIDFWeightScheme:(long long)arg1;
++ (id)stringForInteractionType:(long long)arg1;
++ (id)stringForNormalization:(long long)arg1;
++ (id)stringForTermWeightScheme:(long long)arg1;
++ (long long)termWeightSchemeFromString:(id)arg1;
 
 @end

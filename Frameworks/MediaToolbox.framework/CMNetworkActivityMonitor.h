@@ -4,16 +4,16 @@
 
 @interface CMNetworkActivityMonitor : NSObject {
     CMNetworkActivityObserver * _cmObserver;
-    int  _monitoringActiveCount;
-    BOOL  _networkIsActive;
+    long long  _monitoringActiveCount;
+    bool  _networkIsActive;
     NSObject<OS_dispatch_queue> * _queue;
-    int  _showingNetworkActivityCount;
+    long long  _showingNetworkActivityCount;
 }
 
 @property (setter=setCMObserver:, nonatomic, retain) CMNetworkActivityObserver *cmObserver;
-@property (nonatomic) int monitoringActiveCount;
-@property (nonatomic) BOOL networkIsActive;
-@property (nonatomic) int showingNetworkActivityCount;
+@property (nonatomic) long long monitoringActiveCount;
+@property (nonatomic) bool networkIsActive;
+@property (nonatomic) long long showingNetworkActivityCount;
 
 + (id)sharedActivityMonitor;
 
@@ -22,12 +22,12 @@
 - (void)dealloc;
 - (void)endMonitoring;
 - (id)init;
-- (int)monitoringActiveCount;
-- (BOOL)networkIsActive;
+- (long long)monitoringActiveCount;
+- (bool)networkIsActive;
 - (void)setCMObserver:(id)arg1;
-- (void)setMonitoringActiveCount:(int)arg1;
-- (void)setNetworkIsActive:(BOOL)arg1;
-- (void)setShowingNetworkActivityCount:(int)arg1;
-- (int)showingNetworkActivityCount;
+- (void)setMonitoringActiveCount:(long long)arg1;
+- (void)setNetworkIsActive:(bool)arg1;
+- (void)setShowingNetworkActivityCount:(long long)arg1;
+- (long long)showingNetworkActivityCount;
 
 @end

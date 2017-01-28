@@ -6,6 +6,6 @@
 @required
 
 - (NSIndexSet *)filteredIndexes;
-- (BOOL)shouldIncludeObjectAtIndex:(unsigned int)arg1;
+- (bool)shouldIncludeObjectAtIndex:(unsigned long long)arg1;
 
 @end

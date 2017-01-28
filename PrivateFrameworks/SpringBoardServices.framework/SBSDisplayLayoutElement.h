@@ -6,15 +6,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int layoutRole;
-@property (getter=isSpringBoardElement, nonatomic, readonly) BOOL springBoardElement;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long layoutRole;
+@property (getter=isSpringBoardElement, nonatomic, readonly) bool springBoardElement;
 @property (readonly) Class superclass;
 
-- (id)initWithIdentifier:(id)arg1 layoutRole:(int)arg2;
-- (BOOL)isSpringBoardElement;
-- (int)layoutRole;
-- (void)setLayoutRole:(int)arg1;
+- (id)initWithIdentifier:(id)arg1 layoutRole:(long long)arg2;
+- (bool)isSpringBoardElement;
+- (long long)layoutRole;
+- (void)setLayoutRole:(long long)arg1;
 - (id)succinctDescriptionBuilder;
 
 @end

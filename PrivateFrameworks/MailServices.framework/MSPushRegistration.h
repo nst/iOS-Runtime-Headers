@@ -20,7 +20,7 @@
 - (id)init;
 - (id)mailboxNames;
 - (id)notificationNamePrefix;
-- (void)registerForPush:(id /* block */)arg1;
+- (void)registerForPush:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setMailboxNames:(id)arg1;

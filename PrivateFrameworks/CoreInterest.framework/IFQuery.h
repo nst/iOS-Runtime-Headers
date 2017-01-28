@@ -4,8 +4,8 @@
 
 @interface IFQuery : NSObject {
     NSArray * _clients;
-    id /* block */  _handler;
-    unsigned int  _maxDepth;
+    id  _handler;
+    unsigned long long  _maxDepth;
     <IFPropagatedScoreEngine> * _propagatedScoreEngine;
     NSDate * _referenceDate;
     IFTopic * _root;
@@ -15,8 +15,8 @@
 }
 
 @property (nonatomic, retain) NSArray *clients;
-@property (nonatomic, copy) id /* block */ handler;
-@property (nonatomic) unsigned int maxDepth;
+@property (nonatomic, copy) id handler;
+@property (nonatomic) unsigned long long maxDepth;
 @property (nonatomic, retain) <IFPropagatedScoreEngine> *propagatedScoreEngine;
 @property (nonatomic, retain) NSDate *referenceDate;
 @property (nonatomic, retain) IFTopic *root;
@@ -26,15 +26,15 @@
 
 - (void).cxx_destruct;
 - (id)clients;
-- (id /* block */)handler;
-- (unsigned int)maxDepth;
+- (id)handler;
+- (unsigned long long)maxDepth;
 - (id)propagatedScoreEngine;
 - (id)referenceDate;
 - (id)root;
 - (id)sensedScoreEngine;
 - (void)setClients:(id)arg1;
-- (void)setHandler:(id /* block */)arg1;
-- (void)setMaxDepth:(unsigned int)arg1;
+- (void)setHandler:(id)arg1;
+- (void)setMaxDepth:(unsigned long long)arg1;
 - (void)setPropagatedScoreEngine:(id)arg1;
 - (void)setReferenceDate:(id)arg1;
 - (void)setRoot:(id)arg1;

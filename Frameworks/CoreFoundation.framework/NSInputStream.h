@@ -4,7 +4,7 @@
 
 @interface NSInputStream : NSStream
 
-@property (readonly) BOOL hasBytesAvailable;
+@property (readonly) bool hasBytesAvailable;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -13,12 +13,12 @@
 + (id)inputStreamWithFileAtPath:(id)arg1;
 + (id)inputStreamWithURL:(id)arg1;
 
-- (struct { int x1; int x2; })_cfStreamError;
-- (unsigned long)_cfTypeID;
-- (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
-- (BOOL)hasBytesAvailable;
+- (struct { long long x1; int x2; })_cfStreamError;
+- (unsigned long long)_cfTypeID;
+- (bool)getBuffer:(char **)arg1 length:(unsigned long long*)arg2;
+- (bool)hasBytesAvailable;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
+- (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
 
 @end

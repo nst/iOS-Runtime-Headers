@@ -7,7 +7,7 @@
 }
 
 @property (nonatomic, retain) NSString *apiToken;
-@property (nonatomic, readonly) BOOL hasApiToken;
+@property (nonatomic, readonly) bool hasApiToken;
 
 + (id)options;
 
@@ -17,11 +17,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasApiToken;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasApiToken;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
 - (void)setApiToken:(id)arg1;

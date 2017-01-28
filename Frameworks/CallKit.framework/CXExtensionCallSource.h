@@ -13,7 +13,7 @@
 @property (nonatomic, copy) <NSCopying> *requestIdentifier;
 
 - (void).cxx_destruct;
-- (void)beginWithCompletionHandler:(id /* block */)arg1;
+- (void)beginWithCompletionHandler:(id)arg1;
 - (id)bundle;
 - (id)displayName;
 - (id)extension;

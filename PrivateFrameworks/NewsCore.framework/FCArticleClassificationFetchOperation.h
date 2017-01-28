@@ -18,8 +18,8 @@
 - (id)articleID;
 - (id)completeFetchOperation;
 - (id)context;
-- (id)fetchArticleWithCompletion:(id /* block */)arg1;
-- (id)fetchTopicsWithCompletion:(id /* block */)arg1;
+- (id)fetchArticleWithCompletion:(id)arg1;
+- (id)fetchTopicsWithCompletion:(id)arg1;
 - (id)heldArticleRecords;
 - (id)heldTopicRecords;
 - (id)initWithContext:(id)arg1 articleID:(id)arg2;

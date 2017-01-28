@@ -6,7 +6,7 @@
     NSData * _serializedResult;
 }
 
-@property (nonatomic, readonly) BOOL hasSerializedResult;
+@property (nonatomic, readonly) bool hasSerializedResult;
 @property (nonatomic, retain) NSData *serializedResult;
 
 - (void).cxx_destruct;
@@ -14,11 +14,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSerializedResult;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSerializedResult;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)serializedResult;
 - (void)setSerializedResult:(id)arg1;
 - (void)writeTo:(id)arg1;

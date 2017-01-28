@@ -4,7 +4,7 @@
 
 @interface SCROBrailleEventDispatcher : NSObject {
     NSMutableArray * _brailleEventQueue;
-    BOOL  _isValid;
+    bool  _isValid;
     struct __CFArray { } * _queue;
     NSLock * _queueLock;
     struct __CFRunLoopSource { } * _queueSource;
@@ -17,7 +17,7 @@
 - (void)enqueueEvent:(id)arg1;
 - (id)initWithTarget:(id)arg1;
 - (void)invalidate;
-- (BOOL)isValid;
+- (bool)isValid;
 - (void)start;
 
 @end

@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (int)defaultFamiliarity;
-- (BOOL)isFriend;
+- (bool)isFriend;
 - (id)lastPlayedDate;
 - (id)lastPlayedGame;
 - (void)setLastPlayedDate:(id)arg1;

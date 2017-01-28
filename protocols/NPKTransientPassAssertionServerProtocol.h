@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setServiceModeRequested:(BOOL)arg1;
+- (void)setServiceModeRequested:(bool)arg1;
 - (void)setTransientPassUniqueID:(NSString *)arg1;
 
 @end

@@ -9,11 +9,11 @@
 @property (nonatomic, copy) NSArray *recordIDs;
 
 - (void).cxx_destruct;
-- (BOOL)canCoalesceWithCommand:(id)arg1;
+- (bool)canCoalesceWithCommand:(id)arg1;
 - (void)coalesceWithCommand:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1 delegate:(id)arg2;
-- (void)handleBatchOfRecordIDs:(id)arg1 internalPrivateDataContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)handleBatchOfRecordIDs:(id)arg1 internalPrivateDataContext:(id)arg2 completion:(id)arg3;
 - (void)handleRecordIDsFromStream:(id)arg1 internalPrivateDataContext:(id)arg2 delegate:(id)arg3;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

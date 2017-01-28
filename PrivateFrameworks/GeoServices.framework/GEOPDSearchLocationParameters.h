@@ -11,8 +11,8 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic) BOOL hasSearchLocationParametersType;
-@property (nonatomic, readonly) BOOL hasSearchTransportHint;
+@property (nonatomic) bool hasSearchLocationParametersType;
+@property (nonatomic, readonly) bool hasSearchTransportHint;
 @property (nonatomic) int searchLocationParametersType;
 @property (nonatomic, retain) GEOPDTransportHint *searchTransportHint;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -23,16 +23,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSearchLocationParametersType;
-- (BOOL)hasSearchTransportHint;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasSearchLocationParametersType;
+- (bool)hasSearchTransportHint;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)searchLocationParametersType;
 - (id)searchLocationParametersTypeAsString:(int)arg1;
 - (id)searchTransportHint;
-- (void)setHasSearchLocationParametersType:(BOOL)arg1;
+- (void)setHasSearchLocationParametersType:(bool)arg1;
 - (void)setSearchLocationParametersType:(int)arg1;
 - (void)setSearchTransportHint:(id)arg1;
 - (id)unknownFields;

@@ -3,7 +3,7 @@
  */
 
 @interface TIKeyboardSecureCandidateLayoutTraits : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _forceSingleLineLayout;
+    bool  _forceSingleLineLayout;
     unsigned int  _headerInliningBehavior;
     TIKeyboardSecureCandidateTextTraits * _headerTraitsInFirstLine;
     TIKeyboardSecureCandidateTextTraits * _headerTraitsInOnlyLine;
@@ -12,7 +12,7 @@
     TIKeyboardSecureCandidateTextTraits * _inputTraitsInSecondLine;
 }
 
-@property (nonatomic) BOOL forceSingleLineLayout;
+@property (nonatomic) bool forceSingleLineLayout;
 @property (nonatomic) unsigned int headerInliningBehavior;
 @property (nonatomic, retain) TIKeyboardSecureCandidateTextTraits *headerTraitsInFirstLine;
 @property (nonatomic, retain) TIKeyboardSecureCandidateTextTraits *headerTraitsInOnlyLine;
@@ -20,13 +20,13 @@
 @property (nonatomic, retain) TIKeyboardSecureCandidateTextTraits *inputTraitsInOnlyLine;
 @property (nonatomic, retain) TIKeyboardSecureCandidateTextTraits *inputTraitsInSecondLine;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)forceSingleLineLayout;
+- (bool)forceSingleLineLayout;
 - (unsigned int)headerInliningBehavior;
 - (id)headerTraitsInFirstLine;
 - (id)headerTraitsInOnlyLine;
@@ -34,8 +34,8 @@
 - (id)inputTraitsInFirstAndSecondLines;
 - (id)inputTraitsInOnlyLine;
 - (id)inputTraitsInSecondLine;
-- (BOOL)isEqual:(id)arg1;
-- (void)setForceSingleLineLayout:(BOOL)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setForceSingleLineLayout:(bool)arg1;
 - (void)setHeaderInliningBehavior:(unsigned int)arg1;
 - (void)setHeaderTraitsInFirstLine:(id)arg1;
 - (void)setHeaderTraitsInOnlyLine:(id)arg1;

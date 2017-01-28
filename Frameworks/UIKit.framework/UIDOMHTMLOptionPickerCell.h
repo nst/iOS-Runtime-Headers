@@ -3,15 +3,15 @@
  */
 
 @interface UIDOMHTMLOptionPickerCell : UIPickerContentView {
-    BOOL  _disabled;
+    bool  _disabled;
 }
 
-@property (nonatomic) BOOL disabled;
+@property (nonatomic) bool disabled;
 
-- (BOOL)_isSelectable;
-- (BOOL)disabled;
+- (bool)_isSelectable;
+- (bool)disabled;
 - (id)initCommon;
 - (id)initWithHTMLOptionNode:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 
 @end

@@ -12,7 +12,7 @@
 - (id)connection;
 - (void)dealloc;
 - (id)init;
-- (id)serviceWithErrorHandler:(id /* block */)arg1;
+- (id)serviceWithErrorHandler:(id)arg1;
 - (void)setConnection:(id)arg1;
 
 @end

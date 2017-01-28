@@ -11,7 +11,7 @@
     id  _value;
 }
 
-@property (nonatomic, readonly) BOOL isObject;
+@property (nonatomic, readonly) bool isObject;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) struct objc_ivar { }*objcIvar;
 @property (nonatomic) NSObject *object;
@@ -23,7 +23,7 @@
 + (id)ivarWithObjcIvar:(struct objc_ivar { }*)arg1 forObject:(id)arg2;
 
 - (void)dealloc;
-- (BOOL)isObject;
+- (bool)isObject;
 - (id)name;
 - (struct objc_ivar { }*)objcIvar;
 - (id)object;

@@ -5,7 +5,7 @@
 
 @required
 
-- (float)inputRadius;
-- (void)setInputRadius:(float)arg1;
+- (double)inputRadius;
+- (void)setInputRadius:(double)arg1;
 
 @end

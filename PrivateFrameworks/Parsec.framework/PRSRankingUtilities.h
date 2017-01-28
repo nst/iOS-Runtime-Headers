@@ -5,8 +5,12 @@
 @interface PRSRankingUtilities : NSObject
 
 + (id)bundleIDForCategory:(id)arg1;
-+ (BOOL)caseAndDiacriticInsensitiveLocalizedString:(id)arg1 hasPrefix:(id)arg2;
++ (bool)caseAndDiacriticInsensitiveLocalizedString:(id)arg1 hasPrefix:(id)arg2;
++ (bool)caseAndDiacriticInsensitiveLocalizedString:(id)arg1 isEqualToString:(id)arg2;
 + (id)categoryForBundleID:(id)arg1;
-+ (BOOL)multiWordString:(id)arg1 hasPrefix:(id)arg2;
++ (void)computeDateCountsForDates:(id)arg1 countLastYear:(unsigned long long*)arg2 countLastMonth:(unsigned long long*)arg3 countLastWeek:(unsigned long long*)arg4 countLastDay:(unsigned long long*)arg5;
++ (bool)multiWordString:(id)arg1 hasPrefix:(id)arg2;
++ (double)occurrencesOfWord:(id)arg1 inString:(id)arg2;
++ (id)roundedValue:(id)arg1 withSigFigs:(id)arg2;
 
 @end

@@ -5,12 +5,12 @@
 @interface IMBalloonPluginAttributionController : NSObject {
     NSMutableDictionary * _bundleIDsDisplayingAttribution;
     NSMutableDictionary * _expiredBundleIDToTimestampMap;
-    BOOL  _hasPerformedFirstAppExtensionLoad;
+    bool  _hasPerformedFirstAppExtensionLoad;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *bundleIDsDisplayingAttribution;
 @property (nonatomic, retain) NSMutableDictionary *expiredBundleIDToTimestampMap;
-@property (nonatomic) BOOL hasPerformedFirstAppExtensionLoad;
+@property (nonatomic) bool hasPerformedFirstAppExtensionLoad;
 
 + (id)sharedInstance;
 
@@ -24,12 +24,12 @@
 - (void)dealloc;
 - (void)didShowAttributionForBundleIDs:(id)arg1;
 - (id)expiredBundleIDToTimestampMap;
-- (BOOL)hasPerformedFirstAppExtensionLoad;
+- (bool)hasPerformedFirstAppExtensionLoad;
 - (id)init;
 - (void)setBundleIDsDisplayingAttribution:(id)arg1;
 - (void)setExpiredBundleIDToTimestampMap:(id)arg1;
-- (void)setHasPerformedFirstAppExtensionLoad:(BOOL)arg1;
-- (BOOL)shouldShowAttributionForBundleID:(id)arg1;
+- (void)setHasPerformedFirstAppExtensionLoad:(bool)arg1;
+- (bool)shouldShowAttributionForBundleID:(id)arg1;
 - (void)startExpiryTimer;
 
 @end

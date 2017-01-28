@@ -6,7 +6,7 @@
 @required
 
 - (void)contactActionsTableView:(CNContactActionsTableView *)arg1 didSelectActionAtIndexPath:(NSIndexPath *)arg2;
-- (void)contactActionsTableView:(CNContactActionsTableView *)arg1 didSelectActionTypeAtIndex:(int)arg2;
-- (void)contactActionsTableView:(CNContactActionsTableView *)arg1 didSelectActionTypeExpandControlAtIndex:(int)arg2;
+- (void)contactActionsTableView:(CNContactActionsTableView *)arg1 didSelectActionTypeAtIndex:(long long)arg2;
+- (void)contactActionsTableView:(CNContactActionsTableView *)arg1 didSelectActionTypeExpandControlAtIndex:(long long)arg2;
 
 @end

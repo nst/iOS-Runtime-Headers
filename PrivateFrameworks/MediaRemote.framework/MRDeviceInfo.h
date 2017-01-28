@@ -7,8 +7,8 @@
     NSString * _applicationBundleVersion;
     NSString * _localizedModelName;
     NSString * _name;
-    BOOL  _pairingAllowed;
-    unsigned int  _protocolVersion;
+    bool  _pairingAllowed;
+    unsigned long long  _protocolVersion;
     NSString * _systemBuildVersion;
     NSString * _uniqueIdentifier;
 }
@@ -17,13 +17,13 @@
 @property (nonatomic, readonly) NSString *applicationBundleVersion;
 @property (nonatomic, readonly) NSString *localizedModelName;
 @property (nonatomic, readonly) NSString *name;
-@property (getter=isPairingAllowed, nonatomic, readonly) BOOL pairingAllowed;
-@property (nonatomic, readonly) unsigned int protocolVersion;
+@property (getter=isPairingAllowed, nonatomic, readonly) bool pairingAllowed;
+@property (nonatomic, readonly) unsigned long long protocolVersion;
 @property (nonatomic, readonly) NSString *systemBuildVersion;
 @property (nonatomic, readonly) NSString *uniqueIdentifier;
 
 + (id)_persistentDeviceID;
-+ (id)_persistentDeviceIDFromFile:(id)arg1;
++ (bool)_persistentDeviceIDFromFile:(id)arg1 deviceID:(id*)arg2;
 + (id)currentDeviceInfo;
 + (double)processorTimeScale;
 
@@ -33,11 +33,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isPairingAllowed;
+- (bool)isPairingAllowed;
 - (id)localizedModelName;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
-- (unsigned int)protocolVersion;
+- (unsigned long long)protocolVersion;
 - (id)systemBuildVersion;
 - (id)uniqueIdentifier;
 

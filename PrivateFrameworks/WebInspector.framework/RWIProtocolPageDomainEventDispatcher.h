@@ -17,6 +17,6 @@
 - (void)javascriptDialogClosed;
 - (void)javascriptDialogOpeningWithMessage:(id)arg1;
 - (void)loadEventFiredWithTimestamp:(double)arg1;
-- (void)scriptsEnabledWithIsEnabled:(BOOL)arg1;
+- (void)scriptsEnabledWithIsEnabled:(bool)arg1;
 
 @end

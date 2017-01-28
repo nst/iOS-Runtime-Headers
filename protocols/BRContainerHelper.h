@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)canFetchAllContainersByID;
+- (bool)canFetchAllContainersByID;
 - (NSDictionary *)fetchAllContainersByIDWithError:(id*)arg1;
 - (BRContainer *)fetchContainerForURL:(NSURL *)arg1;
 

@@ -10,6 +10,6 @@
 - (void)endDucking;
 - (void)endFading;
 - (double)requiredDuckLevel;
-- (void)setPlaybackAudioVolume:(float)arg1;
+- (void)setPlaybackAudioVolume:(double)arg1;
 
 @end

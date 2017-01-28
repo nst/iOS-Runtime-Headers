@@ -22,7 +22,7 @@
     struct __IOAccelDevice { } * _deviceRef;
     NSObject<OS_dispatch_queue> * _device_dispatch_queue;
     unsigned int  _fenceAllocatedCount;
-    unsigned long * _fenceAllocationBitmap;
+    unsigned long long * _fenceAllocationBitmap;
     unsigned int  _fenceBitmapCount;
     unsigned int  _fenceBitmapSearchStart;
     unsigned int  _fenceMaximumCount;
@@ -44,6 +44,7 @@
 @property (readonly) unsigned int hwResourcePoolCount;
 @property (readonly) id*hwResourcePools;
 @property (readonly) int numCommandBuffers;
+@property (readonly) unsigned long long recommendedMaxWorkingSetSize;
 @property (readonly) unsigned long long sharedMemorySize;
 
 + (void)registerDevices;
@@ -52,19 +53,19 @@
 - (unsigned int)acceleratorPort;
 - (id)akPrivateResourceListPool;
 - (id)akResourceListPool;
-- (id)allocBufferSubDataWithLength:(unsigned int)arg1 options:(unsigned int)arg2 alignment:(int)arg3 heapIndex:(short*)arg4 bufferIndex:(short*)arg5 bufferOffset:(int*)arg6;
+- (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(int)arg3 heapIndex:(short*)arg4 bufferIndex:(short*)arg5 bufferOffset:(int*)arg6;
 - (void)dealloc;
 - (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(int)arg4 length:(int)arg5;
 - (unsigned long long)dedicatedMemorySize;
 - (struct __IOAccelDevice { }*)deviceRef;
-- (short)heapIndexWithOptions:(unsigned int)arg1;
+- (short)heapIndexWithOptions:(unsigned long long)arg1;
 - (unsigned int)hwResourcePoolCount;
 - (id*)hwResourcePools;
 - (id)initWithAcceleratorPort:(unsigned int)arg1;
 - (unsigned int)initialKernelCommandShmemSize;
 - (unsigned int)initialSegmentListShmemSize;
 - (id)newCommandQueueWithDescriptor:(id)arg1;
-- (id)newCommandQueueWithMaxCommandBufferCount:(unsigned int)arg1;
+- (id)newCommandQueueWithMaxCommandBufferCount:(unsigned long long)arg1;
 - (id)newFence;
 - (int)numCommandBuffers;
 - (unsigned long long)recommendedMaxWorkingSetSize;

@@ -6,7 +6,7 @@
     CMArchiveManager * mArchiver;
     OIXMLElement * mBodyElement;
     unsigned int  mCurrentSlide;
-    BOOL  mHasPushedFirstSlides;
+    bool  mHasPushedFirstSlides;
     unsigned int  mNextCommit;
     PDPresentation * mPresentation;
     NSString * mResourceUrlPrefix;
@@ -26,10 +26,10 @@
 - (void)finishMappingWithState:(id)arg1;
 - (id)initWithPDPresentation:(id)arg1 archiver:(id)arg2;
 - (void)mapDefaultCssStylesAt:(id)arg1;
-- (void)mapElement:(id)arg1 atIndex:(unsigned int)arg2 withState:(id)arg3 isLastElement:(BOOL)arg4;
-- (struct CGSize { float x1; float x2; })pageSizeForDevice;
+- (void)mapElement:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 isLastElement:(bool)arg4;
+- (struct CGSize { double x1; double x2; })pageSizeForDevice;
 - (void)setHtmlDocumentSizeInArchiver;
-- (struct CGSize { float x1; float x2; })slideSize;
+- (struct CGSize { double x1; double x2; })slideSize;
 - (void)startMappingWithState:(id)arg1;
 
 @end

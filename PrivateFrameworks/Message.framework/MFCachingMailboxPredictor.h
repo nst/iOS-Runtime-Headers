@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSMutableDictionary *cacheKeysByProperty;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <MFMailboxPredictor> *predictor;
 @property (readonly) Class superclass;
 
@@ -24,7 +24,7 @@
 - (void)dealloc;
 - (id)initWithPredictor:(id)arg1;
 - (void)invalidatePredictionsAffectedByMessages:(id)arg1;
-- (id)predictMailboxIDsForMessages:(id)arg1 limit:(unsigned int)arg2 diagnostics:(id*)arg3;
+- (id)predictMailboxIDsForMessages:(id)arg1 limit:(unsigned long long)arg2 diagnostics:(id*)arg3;
 - (id)predictor;
 - (void)removeAllPredictions;
 - (void)setCache:(id)arg1;

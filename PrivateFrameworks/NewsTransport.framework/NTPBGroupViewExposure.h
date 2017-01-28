@@ -15,7 +15,7 @@
         unsigned int groupType : 1; 
         unsigned int isSubscribedToGroupFeed : 1; 
     }  _has;
-    BOOL  _isSubscribedToGroupFeed;
+    bool  _isSubscribedToGroupFeed;
 }
 
 @property (nonatomic, retain) NSData *feedViewExposureId;
@@ -24,13 +24,13 @@
 @property (nonatomic, retain) NSString *groupFeedId;
 @property (nonatomic) int groupType;
 @property (nonatomic, retain) NSMutableArray *groupedArticleIds;
-@property (nonatomic, readonly) BOOL hasFeedViewExposureId;
-@property (nonatomic) BOOL hasGroupArticleCountInForYou;
-@property (nonatomic) BOOL hasGroupDisplayRankInForYou;
-@property (nonatomic, readonly) BOOL hasGroupFeedId;
-@property (nonatomic) BOOL hasGroupType;
-@property (nonatomic) BOOL hasIsSubscribedToGroupFeed;
-@property (nonatomic) BOOL isSubscribedToGroupFeed;
+@property (nonatomic, readonly) bool hasFeedViewExposureId;
+@property (nonatomic) bool hasGroupArticleCountInForYou;
+@property (nonatomic) bool hasGroupDisplayRankInForYou;
+@property (nonatomic, readonly) bool hasGroupFeedId;
+@property (nonatomic) bool hasGroupType;
+@property (nonatomic) bool hasIsSubscribedToGroupFeed;
+@property (nonatomic) bool isSubscribedToGroupFeed;
 
 + (Class)groupedArticleIdsType;
 
@@ -48,30 +48,30 @@
 - (int)groupType;
 - (id)groupTypeAsString:(int)arg1;
 - (id)groupedArticleIds;
-- (id)groupedArticleIdsAtIndex:(unsigned int)arg1;
-- (unsigned int)groupedArticleIdsCount;
-- (BOOL)hasFeedViewExposureId;
-- (BOOL)hasGroupArticleCountInForYou;
-- (BOOL)hasGroupDisplayRankInForYou;
-- (BOOL)hasGroupFeedId;
-- (BOOL)hasGroupType;
-- (BOOL)hasIsSubscribedToGroupFeed;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSubscribedToGroupFeed;
+- (id)groupedArticleIdsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)groupedArticleIdsCount;
+- (bool)hasFeedViewExposureId;
+- (bool)hasGroupArticleCountInForYou;
+- (bool)hasGroupDisplayRankInForYou;
+- (bool)hasGroupFeedId;
+- (bool)hasGroupType;
+- (bool)hasIsSubscribedToGroupFeed;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isSubscribedToGroupFeed;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setFeedViewExposureId:(id)arg1;
 - (void)setGroupArticleCountInForYou:(int)arg1;
 - (void)setGroupDisplayRankInForYou:(int)arg1;
 - (void)setGroupFeedId:(id)arg1;
 - (void)setGroupType:(int)arg1;
 - (void)setGroupedArticleIds:(id)arg1;
-- (void)setHasGroupArticleCountInForYou:(BOOL)arg1;
-- (void)setHasGroupDisplayRankInForYou:(BOOL)arg1;
-- (void)setHasGroupType:(BOOL)arg1;
-- (void)setHasIsSubscribedToGroupFeed:(BOOL)arg1;
-- (void)setIsSubscribedToGroupFeed:(BOOL)arg1;
+- (void)setHasGroupArticleCountInForYou:(bool)arg1;
+- (void)setHasGroupDisplayRankInForYou:(bool)arg1;
+- (void)setHasGroupType:(bool)arg1;
+- (void)setHasIsSubscribedToGroupFeed:(bool)arg1;
+- (void)setIsSubscribedToGroupFeed:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

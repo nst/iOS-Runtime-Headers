@@ -28,10 +28,10 @@
 - (void)_addEntityMapping:(id)arg1;
 - (void)_createCachesAndOptimizeState;
 - (id)_destinationEntityVersionHashesByName;
-- (BOOL)_hasInferredMappingNeedingValidation;
+- (bool)_hasInferredMappingNeedingValidation;
 - (id)_initWithEntityMappings:(id)arg1;
-- (BOOL)_isInferredMappingModel;
-- (void)_setIsEditable:(BOOL)arg1;
+- (bool)_isInferredMappingModel;
+- (void)_setIsEditable:(bool)arg1;
 - (id)_sourceEntityVersionHashesByName;
 - (void)_throwIfNotEditable;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -43,8 +43,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
-- (BOOL)isEditable;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEditable;
+- (bool)isEqual:(id)arg1;
 - (void)setEntityMappings:(id)arg1;
 
 @end

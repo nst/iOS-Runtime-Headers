@@ -4,15 +4,15 @@
 
 @interface _ATXAppLaunchHistogramWithPersistentBackup : _ATXAppLaunchHistogram {
     _ATXDataStore * _datastore;
-    int  _histogramType;
-    BOOL  _saveInBackground;
+    long long  _histogramType;
+    bool  _saveInBackground;
     NSObject<OS_dispatch_queue> * _saveQueue;
     NSObject<OS_dispatch_source> * _saveTimer;
 }
 
 @property (nonatomic, readonly) _ATXDataStore *datastore;
-@property (nonatomic, readonly) int histogramType;
-@property (nonatomic) BOOL saveInBackground;
+@property (nonatomic, readonly) long long histogramType;
+@property (nonatomic) bool saveInBackground;
 
 - (void).cxx_destruct;
 - (void)_cancelSaveTimer;
@@ -21,20 +21,20 @@
 - (id)datastore;
 - (void)dealloc;
 - (void)flush;
-- (int)histogramType;
-- (id)initWithDataStore:(id)arg1 histogramType:(int)arg2;
-- (id)initWithDataStore:(id)arg1 histogramType:(int)arg2 andSaveInBackground:(BOOL)arg3;
-- (id)initWithDataStore:(id)arg1 histogramType:(int)arg2 loadFromDataStore:(BOOL)arg3 andSaveInBackground:(BOOL)arg4;
+- (long long)histogramType;
+- (id)initWithDataStore:(id)arg1 histogramType:(long long)arg2;
+- (id)initWithDataStore:(id)arg1 histogramType:(long long)arg2 andSaveInBackground:(bool)arg3;
+- (id)initWithDataStore:(id)arg1 histogramType:(long long)arg2 loadFromDataStore:(bool)arg3 andSaveInBackground:(bool)arg4;
 - (void)receivedDataStoreRestoreCompletedNotification:(id)arg1;
 - (void)receivedDataStoreRestoreStartedNotification:(id)arg1;
 - (void)registerForRestoreCompletedNotificationsFrom:(id)arg1;
 - (void)registerForRestoreStartedNotificationFrom:(id)arg1;
 - (int)removeAllHistoryForAllBundleIds:(id)arg1;
-- (BOOL)removeAllHistoryForBundleId:(id)arg1;
+- (bool)removeAllHistoryForBundleId:(id)arg1;
 - (void)removeLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3;
 - (void)resetData;
-- (BOOL)saveInBackground;
-- (void)setSaveInBackground:(BOOL)arg1;
+- (bool)saveInBackground;
+- (void)setSaveInBackground:(bool)arg1;
 - (void)unregisterFromRestoreCompletedNotificationsFrom:(id)arg1;
 - (void)unregisterFromRestoreStartedNotificationsFrom:(id)arg1;
 

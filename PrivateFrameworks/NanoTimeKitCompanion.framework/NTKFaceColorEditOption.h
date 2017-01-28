@@ -4,16 +4,16 @@
 
 @interface NTKFaceColorEditOption : NTKEnumeratedEditOption
 
-@property (nonatomic, readonly) unsigned int faceColor;
+@property (nonatomic, readonly) unsigned long long faceColor;
 
 + (id)__orderedValues;
-+ (id)_localizedNameForValue:(unsigned int)arg1;
++ (id)_localizedNameForValue:(unsigned long long)arg1;
 + (id)_orderedValues;
 + (id)_orderedValuesRestrictedByCurrentDeviceCollection;
-+ (id)_snapshotKeyForValue:(unsigned int)arg1;
-+ (id)optionWithFaceColor:(unsigned int)arg1;
++ (id)_snapshotKeyForValue:(unsigned long long)arg1;
++ (id)optionWithFaceColor:(unsigned long long)arg1;
 
 - (id)_valueToFaceBundleStringDict;
-- (unsigned int)faceColor;
+- (unsigned long long)faceColor;
 
 @end

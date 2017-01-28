@@ -16,7 +16,7 @@
 
 + (id)eventStreamWithName:(id)arg1;
 + (id)eventStreamWithName:(id)arg1 valueType:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

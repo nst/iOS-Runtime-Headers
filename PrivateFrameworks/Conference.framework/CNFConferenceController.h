@@ -4,7 +4,7 @@
 
 @interface CNFConferenceController : NSObject
 
-+ (struct __CFPhoneNumber { }*)newPhoneNumberRefForDestinationId:(id)arg1 useNetworkCountryCode:(BOOL)arg2;
++ (struct __CFPhoneNumber { }*)newPhoneNumberRefForDestinationId:(id)arg1 useNetworkCountryCode:(bool)arg2;
 + (id)sharedInstance;
 
 @end

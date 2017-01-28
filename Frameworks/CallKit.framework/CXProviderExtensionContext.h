@@ -10,6 +10,6 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface MMCSOperationStateTimeRange : NSObject <MMCSOperationStateTimeRange> {
     double  _duration;
-    unsigned int  _operationState;
+    unsigned long long  _operationState;
     NSDate * _startDate;
 }
 
@@ -14,27 +14,27 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) double duration;
 @property (readonly) double executing;
-@property (readonly) unsigned int hash;
-@property (readonly) unsigned int operationState;
+@property (readonly) unsigned long long hash;
+@property (readonly) unsigned long long operationState;
 @property (readonly) double queueing;
 @property (readonly) double relativeStart;
 @property (nonatomic, retain) NSDate *startDate;
 @property (readonly) Class superclass;
 
 + (id)describedSortedRanges:(id)arg1;
-+ (id)descriptionWithOperationState:(unsigned int)arg1 absoluteStart:(double)arg2 duration:(double)arg3;
-+ (id)stringForOperationState:(unsigned int)arg1;
++ (id)descriptionWithOperationState:(unsigned long long)arg1 absoluteStart:(double)arg2 duration:(double)arg3;
++ (id)stringForOperationState:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (double)absoluteStart;
 - (double)absoluteStop;
-- (int)compareStartTime:(id)arg1;
-- (int)compareStopTime:(id)arg1;
+- (long long)compareStartTime:(id)arg1;
+- (long long)compareStopTime:(id)arg1;
 - (id)description;
 - (double)duration;
 - (double)executing;
-- (id)initWithOperationState:(unsigned int)arg1 startDate:(id)arg2 duration:(double)arg3;
-- (unsigned int)operationState;
+- (id)initWithOperationState:(unsigned long long)arg1 startDate:(id)arg2 duration:(double)arg3;
+- (unsigned long long)operationState;
 - (double)queueing;
 - (double)relativeStart;
 - (void)setStartDate:(id)arg1;

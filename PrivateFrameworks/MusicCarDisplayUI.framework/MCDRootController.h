@@ -30,6 +30,6 @@
 - (void)setPlayer:(id)arg1;
 - (void)setRecentStationsController:(id)arg1;
 - (void)setServiceProvider:(id)arg1;
-- (void)showNowPlaying:(BOOL)arg1;
+- (void)showNowPlaying:(bool)arg1;
 
 @end

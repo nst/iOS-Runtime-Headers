@@ -3,26 +3,26 @@
  */
 
 @interface W5WiFiChannel : NSObject <NSCopying, NSSecureCoding> {
-    int  _channel;
+    long long  _channel;
     int  _flags;
 }
 
-@property (nonatomic, readonly) int channel;
+@property (nonatomic, readonly) long long channel;
 @property (nonatomic, readonly) int flags;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)channel;
-- (BOOL)conformsToProtocol:(id)arg1;
+- (long long)channel;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (int)flags;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithChannel:(int)arg1 flags:(int)arg2;
+- (id)initWithChannel:(long long)arg1 flags:(int)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChannel:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChannel:(id)arg1;
 
 @end

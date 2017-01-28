@@ -3,7 +3,7 @@
  */
 
 @interface MTLToolsPointerArray : NSObject {
-    unsigned int  _pointerAdditions;
+    unsigned long long  _pointerAdditions;
     NSPointerArray * _pointerArray;
     NSObject<OS_dispatch_semaphore> * _semaphore;
 }
@@ -11,9 +11,9 @@
 - (void).cxx_destruct;
 - (void)_addPointer:(void*)arg1;
 - (void)addPointer:(void*)arg1;
-- (void)enumeratePointersUsingBlock:(id /* block */)arg1;
+- (void)enumeratePointersUsingBlock:(id)arg1;
 - (id)initWithOptions:(unsigned int)arg1;
-- (id)objectAssociatedWithBaseObject:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)objectAssociatedWithBaseObject:(id)arg1 usingBlock:(id)arg2;
 - (void)removeObjectAssociatedWithBaseObject:(id)arg1;
 
 @end

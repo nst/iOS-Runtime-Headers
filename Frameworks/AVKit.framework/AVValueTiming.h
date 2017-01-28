@@ -20,12 +20,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)currentValue;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithAnchorValue:(double)arg1 anchorTimeStamp:(double)arg2 rate:(double)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithValueTiming:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToValueTiming:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToValueTiming:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (double)rate;
 - (double)timeStampForValue:(double)arg1;

@@ -10,6 +10,6 @@
 - (id)_requestWithURL:(id)arg1 bodyDictionary:(id)arg2;
 - (id)initWithDonation:(id)arg1 configuration:(id)arg2;
 - (id)initWithGift:(id)arg1 configuration:(id)arg2;
-- (void)purchaseWithCompletionBlock:(id /* block */)arg1;
+- (void)purchaseWithCompletionBlock:(id)arg1;
 
 @end

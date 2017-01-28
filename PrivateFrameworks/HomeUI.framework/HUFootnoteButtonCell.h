@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HFItem *item;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIButton *titleButton;
@@ -17,14 +17,14 @@
 - (void).cxx_destruct;
 - (void)_updateTextColor;
 - (void)didMoveToSuperview;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)item;
 - (void)prepareForReuse;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
 - (void)setItem:(id)arg1;
 - (void)setTitleButton:(id)arg1;
 - (void)tintColorDidChange;
 - (id)titleButton;
-- (void)updateUIWithAnimation:(BOOL)arg1;
+- (void)updateUIWithAnimation:(bool)arg1;
 
 @end

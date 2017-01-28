@@ -3,57 +3,57 @@
  */
 
 @interface HDDemoDataGeneratorWorkoutConfiguration : NSObject <NSSecureCoding> {
-    unsigned int  _activityType;
-    BOOL  _createdFromNSKeyedUnarchiver;
+    unsigned long long  _activityType;
+    bool  _createdFromNSKeyedUnarchiver;
     double  _distanceCyclingRateInMiles;
     double  _distanceSwimmingRateInYards;
     double  _distanceWalkingRateInMiles;
     double  _endTime;
     HKQuantity * _goal;
-    unsigned int  _goalType;
-    BOOL  _indoor;
+    unsigned long long  _goalType;
+    bool  _indoor;
     double  _kcalRate;
     double  _lapSwimmingTime;
     double  _startTime;
 }
 
-@property (nonatomic) unsigned int activityType;
+@property (nonatomic) unsigned long long activityType;
 @property (nonatomic) double distanceCyclingRateInMiles;
 @property (nonatomic) double distanceSwimmingRateInYards;
 @property (nonatomic) double distanceWalkingRateInMiles;
 @property (nonatomic) double endTime;
 @property (nonatomic, retain) HKQuantity *goal;
-@property (nonatomic) unsigned int goalType;
-@property (nonatomic) BOOL indoor;
+@property (nonatomic) unsigned long long goalType;
+@property (nonatomic) bool indoor;
 @property (nonatomic) double kcalRate;
 @property (nonatomic) double lapSwimmingTime;
 @property (nonatomic) double startTime;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)activityType;
-- (BOOL)createdFromNSKeyedUnarchiver;
+- (unsigned long long)activityType;
+- (bool)createdFromNSKeyedUnarchiver;
 - (double)distanceCyclingRateInMiles;
 - (double)distanceSwimmingRateInYards;
 - (double)distanceWalkingRateInMiles;
 - (void)encodeWithCoder:(id)arg1;
 - (double)endTime;
 - (id)goal;
-- (unsigned int)goalType;
-- (BOOL)indoor;
+- (unsigned long long)goalType;
+- (bool)indoor;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPrototype:(id)arg1 currentDemoDataTime:(double)arg2;
 - (double)kcalRate;
 - (double)lapSwimmingTime;
-- (void)setActivityType:(unsigned int)arg1;
+- (void)setActivityType:(unsigned long long)arg1;
 - (void)setDistanceCyclingRateInMiles:(double)arg1;
 - (void)setDistanceSwimmingRateInYards:(double)arg1;
 - (void)setDistanceWalkingRateInMiles:(double)arg1;
 - (void)setEndTime:(double)arg1;
 - (void)setGoal:(id)arg1;
-- (void)setGoalType:(unsigned int)arg1;
-- (void)setIndoor:(BOOL)arg1;
+- (void)setGoalType:(unsigned long long)arg1;
+- (void)setIndoor:(bool)arg1;
 - (void)setKcalRate:(double)arg1;
 - (void)setLapSwimmingTime:(double)arg1;
 - (void)setStartTime:(double)arg1;

@@ -74,9 +74,9 @@
 - (void)setConnectionFallbackReason:(id)arg1;
 - (void)setConnectionMethod:(id)arg1;
 - (void)setConnectionMethodHistory:(id)arg1;
-- (void)setConnectionMetricsFromStream:(id)arg1 isPop:(BOOL)arg2 withCompletion:(id /* block */)arg3;
-- (void)setConnectionMetricsFromStreamForDirect:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)setConnectionMetricsFromStreamForPOP:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setConnectionMetricsFromStream:(id)arg1 isPop:(bool)arg2 withCompletion:(id)arg3;
+- (void)setConnectionMetricsFromStreamForDirect:(id)arg1 withCompletion:(id)arg2;
+- (void)setConnectionMetricsFromStreamForPOP:(id)arg1 withCompletion:(id)arg2;
 - (void)setFirstTxByteDelay:(id)arg1;
 - (void)setFlowNetworkInterfaceType:(id)arg1;
 - (void)setMeanPing:(id)arg1;

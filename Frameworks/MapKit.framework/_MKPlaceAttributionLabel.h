@@ -4,25 +4,25 @@
 
 @interface _MKPlaceAttributionLabel : NSObject {
     UIImage * image;
-    float  imageBaselineOffset;
+    double  imageBaselineOffset;
     NSString * imagePlaceholder;
-    float  textBaselineOffset;
+    double  textBaselineOffset;
 }
 
 @property (retain) UIImage *image;
-@property float imageBaselineOffset;
+@property double imageBaselineOffset;
 @property (retain) NSString *imagePlaceholder;
-@property float textBaselineOffset;
+@property double textBaselineOffset;
 
 - (void).cxx_destruct;
 - (id)attributionWithString:(id)arg1;
 - (id)image;
-- (float)imageBaselineOffset;
+- (double)imageBaselineOffset;
 - (id)imagePlaceholder;
 - (void)setImage:(id)arg1;
-- (void)setImageBaselineOffset:(float)arg1;
+- (void)setImageBaselineOffset:(double)arg1;
 - (void)setImagePlaceholder:(id)arg1;
-- (void)setTextBaselineOffset:(float)arg1;
-- (float)textBaselineOffset;
+- (void)setTextBaselineOffset:(double)arg1;
+- (double)textBaselineOffset;
 
 @end

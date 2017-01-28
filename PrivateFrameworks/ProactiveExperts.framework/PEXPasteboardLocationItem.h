@@ -7,14 +7,14 @@
     NSString * _bundleIdentifier;
     NSDate * _createdAt;
     NSString * _text;
-    BOOL  _wasConsumedForAppPrediction;
+    bool  _wasConsumedForAppPrediction;
 }
 
 @property (nonatomic, copy) NSDictionary *addressComponents;
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSDate *createdAt;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) BOOL wasConsumedForAppPrediction;
+@property (nonatomic) bool wasConsumedForAppPrediction;
 
 - (void).cxx_destruct;
 - (id)addressComponents;
@@ -24,8 +24,8 @@
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCreatedAt:(id)arg1;
 - (void)setText:(id)arg1;
-- (void)setWasConsumedForAppPrediction:(BOOL)arg1;
+- (void)setWasConsumedForAppPrediction:(bool)arg1;
 - (id)text;
-- (BOOL)wasConsumedForAppPrediction;
+- (bool)wasConsumedForAppPrediction;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface HFBlindsServiceItem : HFDoorServiceItem
 
-- (int)_doorServicePriority;
+- (long long)_doorServicePriority;
 - (id)controlPanelItems;
 - (id)createControlItemsWithValueSource:(id)arg1;
 

@@ -4,7 +4,7 @@
 
 @interface PEXEventsExpertServant : PEXServant {
     NSObject<OS_dispatch_semaphore> * _accessComplete;
-    BOOL  _accessGranted;
+    bool  _accessGranted;
     EKCalendarVisibilityManager * _calendarVisibilityManager;
     NSArray * _calendars;
     PEXContactScorer * _contactScorer;
@@ -18,30 +18,30 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_areAllPeopleOfInterest:(id)arg1 inAttendeeList:(id)arg2;
+- (bool)_areAllPeopleOfInterest:(id)arg1 inAttendeeList:(id)arg2;
 - (id)_busyEventsFromEvents:(id)arg1 people:(id)arg2;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_dateRangeForCriteria:(id)arg1;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_dateRangeForCriteria:(id)arg1;
 - (id)_decItemsForEvent:(id)arg1 fields:(id)arg2 formatter:(id)arg3;
-- (id)_decPredictionForEvents:(id)arg1 fields:(id)arg2 limit:(unsigned int)arg3 formatter:(id)arg4;
-- (BOOL)_eventIsHappening:(id)arg1;
-- (id)_filterEvents:(id)arg1 forTime:(id)arg2 people:(id)arg3 busy:(BOOL)arg4 fields:(id)arg5;
+- (id)_decPredictionForEvents:(id)arg1 fields:(id)arg2 limit:(unsigned long long)arg3 formatter:(id)arg4;
+- (bool)_eventIsHappening:(id)arg1;
+- (id)_filterEvents:(id)arg1 forTime:(id)arg2 people:(id)arg3 busy:(bool)arg4 fields:(id)arg5;
 - (id)_filterOutAllDayAndMultiDayEvents:(id)arg1;
 - (id)_freeEventsAndGapsFromEvents:(id)arg1;
-- (id)_fuzzyNextEvents:(id)arg1 minimumCount:(unsigned int)arg2;
-- (BOOL)_isFreeTime:(id)arg1;
+- (id)_fuzzyNextEvents:(id)arg1 minimumCount:(unsigned long long)arg2;
+- (bool)_isFreeTime:(id)arg1;
 - (id)_lastBusyEventsFromEvents:(id)arg1 people:(id)arg2;
 - (id)_lastFreeEventsFromEvents:(id)arg1;
 - (id)_loadCalendars;
 - (id)_nextBusyEventsFromEvents:(id)arg1 people:(id)arg2;
 - (id)_nextFreeEventsFromEvents:(id)arg1;
-- (id)_predicateForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)_predicateForRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)_preloadEvents;
 - (void)_registerForNotifications;
-- (BOOL)_shouldTreatAsUnscheduledFreeTime:(id)arg1;
+- (bool)_shouldTreatAsUnscheduledFreeTime:(id)arg1;
 - (id)_unscheduledFreeTimeEventFrom:(id)arg1 to:(id)arg2;
-- (BOOL)_userDidOrganizeEvent:(id)arg1;
-- (BOOL)_userIsInvitedToEvent:(id)arg1;
-- (int)_userStatusForEvent:(id)arg1;
+- (bool)_userDidOrganizeEvent:(id)arg1;
+- (bool)_userIsInvitedToEvent:(id)arg1;
+- (long long)_userStatusForEvent:(id)arg1;
 - (id)_valuesForPrediction:(id)arg1 fields:(id)arg2 formatter:(id)arg3;
 - (void)askForEKAccess;
 - (void)clearCaches;
@@ -49,8 +49,8 @@
 - (void)discoveredEvents:(id)arg1;
 - (id)getWeakStore;
 - (id)init;
-- (id)predictionForCriteria:(id)arg1 limit:(unsigned int)arg2;
-- (void)setAccessGranted:(BOOL)arg1;
+- (id)predictionForCriteria:(id)arg1 limit:(unsigned long long)arg2;
+- (void)setAccessGranted:(bool)arg1;
 - (void)setContactScorer:(id)arg1;
 - (void)setStore:(id)arg1;
 - (void)setupCalendarVisibilityManager;

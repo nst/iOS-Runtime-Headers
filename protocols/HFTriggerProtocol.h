@@ -5,7 +5,7 @@
 
 @required
 
-- (NSString *)hf_naturalLanguageNameWithHome:(HMHome *)arg1 type:(unsigned int)arg2;
-- (unsigned int)hf_triggerType;
+- (NSString *)hf_naturalLanguageNameWithHome:(HMHome *)arg1 type:(unsigned long long)arg2;
+- (unsigned long long)hf_triggerType;
 
 @end

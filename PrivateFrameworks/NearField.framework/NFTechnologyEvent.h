@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) unsigned int technology;
 @property (nonatomic, readonly) unsigned char valueAddedServiceMode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

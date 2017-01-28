@@ -12,7 +12,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)delegate;
 - (id)init;
-- (id)initWithRequest:(id)arg1 distinctPersistence:(BOOL)arg2;
+- (id)initWithRequest:(id)arg1 distinctPersistence:(bool)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 
 @end

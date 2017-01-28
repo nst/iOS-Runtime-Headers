@@ -6,11 +6,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)currentAccountCopyTokenWithBundleID:(id)arg1 version:(id)arg2 reply:(id /* block */)arg3;
+- (void)currentAccountCopyTokenWithBundleID:(id)arg1 version:(id)arg2 reply:(id)arg3;
 - (id)description;
-- (void)prepareFileProvidersWithReply:(id /* block */)arg1;
+- (void)prepareFileProvidersWithReply:(id)arg1;
 
 @end

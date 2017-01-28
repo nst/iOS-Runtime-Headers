@@ -4,7 +4,7 @@
 
 @interface _UIDocumentPickerCell : UICollectionViewTableCell {
     UILongPressGestureRecognizer * _actionGestureRecognizer;
-    int  _cellStyle;
+    long long  _cellStyle;
     _UIDocumentPickerDocumentCollectionViewController * _collectionView;
     NSArray * _gridConstraints;
     NSLayoutConstraint * _indentationConstraint;
@@ -26,7 +26,7 @@
 }
 
 @property (nonatomic, retain) UILongPressGestureRecognizer *actionGestureRecognizer;
-@property (nonatomic) int cellStyle;
+@property (nonatomic) long long cellStyle;
 @property (nonatomic) _UIDocumentPickerDocumentCollectionViewController *collectionView;
 @property (nonatomic, retain) NSArray *gridConstraints;
 @property (nonatomic, retain) NSLayoutConstraint *indentationConstraint;
@@ -46,10 +46,10 @@
 @property (nonatomic, retain) UIImageView *thumbnailView;
 @property (nonatomic, retain) UILabel *titleLabel;
 
-+ (id)_subtitleFontForTable:(BOOL)arg1;
-+ (id)_titleFontForTable:(BOOL)arg1;
-+ (struct CGSize { float x1; float x2; })defaultSizeForCellStyle:(int)arg1 traitCollection:(id)arg2;
-+ (struct CGSize { float x1; float x2; })thumbnailSizeForTraits:(id)arg1 cellStyle:(int)arg2;
++ (id)_subtitleFontForTable:(bool)arg1;
++ (id)_titleFontForTable:(bool)arg1;
++ (struct CGSize { double x1; double x2; })defaultSizeForCellStyle:(long long)arg1 traitCollection:(id)arg2;
++ (struct CGSize { double x1; double x2; })thumbnailSizeForTraits:(id)arg1 cellStyle:(long long)arg2;
 
 - (void).cxx_destruct;
 - (void)_activityAction:(id)arg1;
@@ -66,40 +66,40 @@
 - (void)_updateConstraintsForCellStyle;
 - (void)_updateFonts;
 - (void)_updateIconSize;
-- (void)_updateSelectionState:(BOOL)arg1;
+- (void)_updateSelectionState:(bool)arg1;
 - (void)_updateSeparatorInset;
 - (id)actionGestureRecognizer;
 - (void)applyLayoutAttributes:(id)arg1;
 - (id)availableActions;
-- (BOOL)canBecomeFirstResponder;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (int)cellStyle;
+- (bool)canBecomeFirstResponder;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (long long)cellStyle;
 - (id)collectionView;
 - (void)dealloc;
 - (id)gridConstraints;
 - (id)indentationConstraint;
 - (id)indentationHelperView;
 - (id)indentedConstraints;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)item;
 - (id)pickableDiagnosticGestureRecognizer;
 - (void)prepareForReuse;
 - (id)progressView;
-- (void)reloadItem:(BOOL)arg1;
+- (void)reloadItem:(bool)arg1;
 - (id)selectionView;
 - (void)setActionGestureRecognizer:(id)arg1;
-- (void)setCellStyle:(int)arg1;
+- (void)setCellStyle:(long long)arg1;
 - (void)setCollectionView:(id)arg1;
-- (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(bool)arg1;
 - (void)setGridConstraints:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setIndentationConstraint:(id)arg1;
 - (void)setIndentationHelperView:(id)arg1;
 - (void)setIndentedConstraints:(id)arg1;
 - (void)setItem:(id)arg1;
 - (void)setPickableDiagnosticGestureRecognizer:(id)arg1;
 - (void)setProgressView:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)setSelectionView:(id)arg1;
 - (void)setSubtitle2Label:(id)arg1;
 - (void)setSubtitleJoiner:(id)arg1;

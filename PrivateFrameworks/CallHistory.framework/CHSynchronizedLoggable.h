@@ -8,10 +8,10 @@
 }
 
 - (void).cxx_destruct;
-- (void)execute:(id /* block */)arg1;
-- (void)executeSync:(id /* block */)arg1;
-- (BOOL)executeSyncWithBOOL:(id /* block */)arg1;
-- (id)executeSyncWithResult:(id /* block */)arg1;
+- (void)execute:(id)arg1;
+- (void)executeSync:(id)arg1;
+- (bool)executeSyncWithBOOL:(id)arg1;
+- (id)executeSyncWithResult:(id)arg1;
 - (id)initWithName:(const char *)arg1;
 - (id)initWithName:(const char *)arg1 queue:(id)arg2;
 - (id)logHandle;

@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSString *lastInputContext;
 @property (nonatomic, readonly) NSSet *recipientIdentifiers;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addTextEntry:(id)arg1 timestamp:(id)arg2;
 - (id)aggregateText;
@@ -20,8 +20,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateAllEntries:(id /* block */)arg1;
-- (void)enumeratePendingEntries:(id /* block */)arg1;
+- (void)enumerateAllEntries:(id)arg1;
+- (void)enumeratePendingEntries:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecipientIdentifiers:(id)arg1;
 - (id)lastInputContext;

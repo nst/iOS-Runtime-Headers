@@ -5,34 +5,34 @@
 @interface UIKBPanGestureVelocitySample : NSObject {
     double  dt;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  end;
-    float  force;
-    float  majorRadius;
+    double  force;
+    double  majorRadius;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  start;
 }
 
 @property double dt;
-@property struct CGPoint { float x1; float x2; } end;
-@property float force;
-@property float majorRadius;
-@property struct CGPoint { float x1; float x2; } start;
+@property struct CGPoint { double x1; double x2; } end;
+@property double force;
+@property double majorRadius;
+@property struct CGPoint { double x1; double x2; } start;
 
 - (double)dt;
-- (struct CGPoint { float x1; float x2; })end;
-- (float)force;
-- (float)majorRadius;
+- (struct CGPoint { double x1; double x2; })end;
+- (double)force;
+- (double)majorRadius;
 - (void)pullValuesFrom:(id)arg1;
 - (void)resetValues;
 - (void)setDt:(double)arg1;
-- (void)setEnd:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setForce:(float)arg1;
-- (void)setMajorRadius:(float)arg1;
-- (void)setStart:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })start;
+- (void)setEnd:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setForce:(double)arg1;
+- (void)setMajorRadius:(double)arg1;
+- (void)setStart:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })start;
 
 @end

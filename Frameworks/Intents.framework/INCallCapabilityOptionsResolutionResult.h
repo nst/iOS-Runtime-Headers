@@ -4,7 +4,7 @@
 
 @interface INCallCapabilityOptionsResolutionResult : INIntentResolutionResult
 
-+ (id)confirmationRequiredWithValueToConfirm:(unsigned int)arg1;
-+ (id)successWithResolvedValue:(unsigned int)arg1;
++ (id)confirmationRequiredWithValueToConfirm:(unsigned long long)arg1;
++ (id)successWithResolvedValue:(unsigned long long)arg1;
 
 @end

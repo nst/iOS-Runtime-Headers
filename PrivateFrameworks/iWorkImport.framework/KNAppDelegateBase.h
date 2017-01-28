@@ -3,12 +3,12 @@
  */
 
 @interface KNAppDelegateBase : TSABaseApplicationDelegate {
-    BOOL  _cachedBidiIsSupported;
+    bool  _cachedBidiIsSupported;
 }
 
 @property (nonatomic, readonly) NSArray *powerPointDocumentTypes;
 
-- (BOOL)URLIsValidForImportedHyperlink:(id)arg1;
+- (bool)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)appChartPropertyOverrides;
 - (void)applicationDidFinishLaunching;
 - (id)applicationName;
@@ -23,8 +23,8 @@
 - (id)importableDocumentTypes;
 - (id)init;
 - (id)invalidURLSchemes;
-- (float)maximumAspectRatioForPreviewImage;
-- (float)mimimumAspectRatioForPreviewImage;
+- (double)maximumAspectRatioForPreviewImage;
+- (double)mimimumAspectRatioForPreviewImage;
 - (id)nativeDocumentType;
 - (id)nativeSFFDocumentType;
 - (void)p_inputMethodsChanged:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)registerClassTypeMappings;
 - (id)sharedAlertMessageWithUserName:(id)arg1;
 - (id)sharedReadOnlyAlertMessageWithUserName:(id)arg1;
-- (BOOL)sidebarPositionRespectsUserInterfaceLayoutDirection;
+- (bool)sidebarPositionRespectsUserInterfaceLayoutDirection;
 - (id)stringForCloseDocument;
 - (id)stringForCollaborator1_6ConflictDetails;
 - (id)stringForCollaborator1_6ConflictWithKeepDetails;
@@ -58,8 +58,8 @@
 - (id)stringForStopSharingAlertConfirmationMessage;
 - (id)stringForStopSharingAlertConfirmationTitle;
 - (id)stringForUpdatingDocument;
-- (BOOL)supportsRTL;
-- (BOOL)supportsShrinkTextToFit;
+- (bool)supportsRTL;
+- (bool)supportsShrinkTextToFit;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentType;
 - (id)templateSFFDocumentType;

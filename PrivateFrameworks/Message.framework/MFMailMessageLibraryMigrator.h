@@ -6,8 +6,8 @@
     int  _needsSpotlightReindex;
 }
 
-- (BOOL)migrateWithSQLiteConnection:(id)arg1;
-- (BOOL)needsSpotlightReindex;
+- (bool)migrateWithSQLiteConnection:(id)arg1;
+- (bool)needsSpotlightReindex;
 - (void)noteNeedsSpotlightReindex;
 
 @end

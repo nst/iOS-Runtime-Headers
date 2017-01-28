@@ -10,7 +10,7 @@
 + (id)previewState;
 + (id)revealState;
 
-- (BOOL)defaultEnabled;
-- (int)requiredSupportLevel;
+- (bool)defaultEnabled;
+- (long long)requiredSupportLevel;
 
 @end

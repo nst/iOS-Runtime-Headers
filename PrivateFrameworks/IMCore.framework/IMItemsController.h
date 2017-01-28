@@ -3,17 +3,17 @@
  */
 
 @interface IMItemsController : NSObject {
-    unsigned int  _capacity;
+    unsigned long long  _capacity;
     struct __CFArray { } * _items;
 }
 
-@property (nonatomic) unsigned int capacity;
-@property (nonatomic, readonly) BOOL isMoreToLoad;
+@property (nonatomic) unsigned long long capacity;
+@property (nonatomic, readonly) bool isMoreToLoad;
 
 + (id)_charactersToIgnoreWhenParsingTextContent;
 
 - (void)_handleItem:(id)arg1;
-- (unsigned int)_indexOfItem:(id)arg1;
+- (unsigned long long)_indexOfItem:(id)arg1;
 - (id)_initWithItems:(id)arg1;
 - (id)_itemForGUID:(id)arg1;
 - (id)_items;
@@ -23,18 +23,19 @@
 - (id)_lastIncomingFinishedMessageWithTextContent;
 - (id)_lastIncomingMessage;
 - (id)_lastMessage;
-- (id)_lastRelatedIncomingFinishedMessageTextContentWithLimit:(int)arg1;
+- (id)_lastRelatedIncomingFinishedMessageTextContentWithLimit:(long long)arg1;
 - (id)_lastSentMessage;
 - (id)_member:(id)arg1;
 - (void)_removeAllItems;
 - (void)_removeItem:(id)arg1;
 - (void)_replaceItems:(id)arg1;
 - (void)_replaceStaleTypingMessage;
-- (BOOL)_trimIfNeeded;
+- (bool)_trimIfNeeded;
 - (id)_typingMessage;
-- (unsigned int)capacity;
+- (unsigned long long)capacity;
+- (void)dealloc;
 - (id)init;
-- (BOOL)isMoreToLoad;
-- (void)setCapacity:(unsigned int)arg1;
+- (bool)isMoreToLoad;
+- (void)setCapacity:(unsigned long long)arg1;
 
 @end

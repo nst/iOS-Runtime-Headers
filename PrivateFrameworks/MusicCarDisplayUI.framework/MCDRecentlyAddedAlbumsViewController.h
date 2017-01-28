@@ -4,8 +4,8 @@
 
 @interface MCDRecentlyAddedAlbumsViewController : MCDAlbumsViewController
 
-- (BOOL)alwaysShowRecents;
+- (bool)alwaysShowRecents;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
-- (void)shouldShowHeadersAndFooters:(BOOL)arg1;
+- (void)shouldShowHeadersAndFooters:(bool)arg1;
 
 @end

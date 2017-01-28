@@ -3,58 +3,58 @@
  */
 
 @interface _UIMotionEffectEngine : NSObject <_UIMotionEffectEventConsumer> {
-    BOOL  _allAnalyzersAreCentered;
+    bool  _allAnalyzersAreCentered;
     _UILazyMapTable * _analyzerSettingsToAnalyzers;
     NSMapTable * _analyzersToEffects;
     CADisplayLink * _displayLink;
     _UIAssociationTable * _effectViewAssociationTable;
     _UIMotionEffectEventProvider * _eventProvider;
-    int  _eventProviderStatus;
-    BOOL  _generatingUpdates;
-    BOOL  _hasAppliedAtLeastOneUpdateSinceStarting;
-    BOOL  _hasReceivedAtLeastOneEventSinceStarting;
-    BOOL  _isPendingReset;
+    long long  _eventProviderStatus;
+    bool  _generatingUpdates;
+    bool  _hasAppliedAtLeastOneUpdateSinceStarting;
+    bool  _hasReceivedAtLeastOneEventSinceStarting;
+    bool  _isPendingReset;
     _UIMotionEffectEvent * _lastEvent;
     _UIMotionEffectEngineLogger * _motionLogger;
     _UIMotionEffectEvent * _pendingEvent;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _pendingEventLock;
-    BOOL  _pendingSlowDown;
+    bool  _pendingSlowDown;
     int  _screenDimmingNotificationToken;
-    BOOL  _slowUpdatesEnabled;
+    bool  _slowUpdatesEnabled;
     NSMutableSet * _suspendReasons;
     NSMapTable * _suspendedViewsToEffectSets;
-    int  _targetInterfaceOrientation;
+    long long  _targetInterfaceOrientation;
     int  _thermalNotificationToken;
 }
 
-@property (setter=_setTargetInterfaceOrientation:, nonatomic) int _targetInterfaceOrientation;
+@property (setter=_setTargetInterfaceOrientation:, nonatomic) long long _targetInterfaceOrientation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *suspensionReasons;
 
 + (Class)_analyzerClass;
 + (Class)_eventProviderClass;
-+ (BOOL)_motionEffectsEnabled;
-+ (BOOL)_motionEffectsSupported;
++ (bool)_motionEffectsEnabled;
++ (bool)_motionEffectsSupported;
 
 - (void).cxx_destruct;
 - (void)_applyEffectsFromAnalyzer:(id)arg1;
 - (void)_handleLatestDeviceMotion;
-- (BOOL)_hasMotionEffectsForView:(id)arg1;
-- (BOOL)_isSuspended;
-- (BOOL)_motionEffect:(id)arg1 belongsToView:(id)arg2;
-- (BOOL)_motionEffectsAreSuspendedForView:(id)arg1;
+- (bool)_hasMotionEffectsForView:(id)arg1;
+- (bool)_isSuspended;
+- (bool)_motionEffect:(id)arg1 belongsToView:(id)arg2;
+- (bool)_motionEffectsAreSuspendedForView:(id)arg1;
 - (id)_motionEffectsForView:(id)arg1;
-- (void)_setTargetInterfaceOrientation:(int)arg1;
-- (BOOL)_shouldGenerateUpdates;
+- (void)_setTargetInterfaceOrientation:(long long)arg1;
+- (bool)_shouldGenerateUpdates;
 - (void)_startGeneratingUpdates;
 - (void)_startOrStopGeneratingUpdates;
 - (void)_stopGeneratingUpdates;
-- (int)_targetInterfaceOrientation;
+- (long long)_targetInterfaceOrientation;
 - (void)_toggleSlowUpdates;
 - (void)_unapplyAllEffects;
 - (void)_unregisterAllMotionEffectsForView:(id)arg1;
@@ -71,7 +71,7 @@
 - (id)init;
 - (void)resetMotionAnalysis;
 - (id)suspensionReasons;
-- (void)updateEventProviderStatus:(int)arg1;
+- (void)updateEventProviderStatus:(long long)arg1;
 - (void)updateWithEvent:(id)arg1;
 
 @end

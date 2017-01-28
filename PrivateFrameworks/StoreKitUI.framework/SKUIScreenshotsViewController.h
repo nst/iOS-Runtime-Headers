@@ -10,8 +10,8 @@
     NSOperationQueue * _operationQueue;
     NSMutableArray * _screenshotImages;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _screenshotMaxSize;
     NSMutableArray * _screenshotRawImages;
     NSArray * _screenshots;
@@ -24,33 +24,33 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIScreenshotsDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_setImage:(id)arg1 forIndex:(int)arg2;
-- (void)_setTrailerImage:(id)arg1 forIndex:(int)arg2;
+- (void)_setImage:(id)arg1 forIndex:(long long)arg2;
+- (void)_setTrailerImage:(id)arg1 forIndex:(long long)arg2;
 - (id)clientContext;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (struct CGSize { double x1; double x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)delegate;
 - (id)initWithTrailers:(id)arg1 screenshots:(id)arg2 clientContext:(id)arg3;
 - (void)loadView;
-- (int)numberOfItemsInSlideshowViewController:(id)arg1;
-- (int)numberOfSectionsInCollectionView:(id)arg1;
+- (long long)numberOfItemsInSlideshowViewController:(id)arg1;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (id)operationQueue;
 - (void)reloadData;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (id)slideshowViewController:(id)arg1 dataConsumerAtIndex:(int)arg2;
-- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(int)arg2;
-- (id)slideshowViewController:(id)arg1 placeholderImageAtIndex:(int)arg2;
-- (id)slideshowViewController:(id)arg1 poppedImageViewAtIndex:(int)arg2;
-- (void)slideshowViewController:(id)arg1 scrollToImageAtIndex:(int)arg2;
+- (id)slideshowViewController:(id)arg1 dataConsumerAtIndex:(long long)arg2;
+- (id)slideshowViewController:(id)arg1 imageURLAtIndex:(long long)arg2;
+- (id)slideshowViewController:(id)arg1 placeholderImageAtIndex:(long long)arg2;
+- (id)slideshowViewController:(id)arg1 poppedImageViewAtIndex:(long long)arg2;
+- (void)slideshowViewController:(id)arg1 scrollToImageAtIndex:(long long)arg2;
 - (id)viewForZoomingInScrollView:(id)arg1;
 
 @end

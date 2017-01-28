@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDate *fireDate;
 @property (nonatomic, copy) NSDateComponents *fireTimeComponents;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) HFTimerTriggerBuilder *timerTriggerBuilder;
 
@@ -23,7 +23,7 @@
 - (id)commitUpdateExecutionTime;
 - (id)fireDate;
 - (id)fireTimeComponents;
-- (id)naturalLanguageNameOfType:(unsigned int)arg1;
+- (id)naturalLanguageNameOfType:(unsigned long long)arg1;
 - (id)performValidation;
 - (void)setFireDate:(id)arg1;
 - (void)setFireTimeComponents:(id)arg1;

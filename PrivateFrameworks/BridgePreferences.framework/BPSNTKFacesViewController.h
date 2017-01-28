@@ -4,7 +4,7 @@
 
 @interface BPSNTKFacesViewController : UIViewController
 
-+ (float)height;
++ (double)height;
 + (void)setDisplayDevice:(id)arg1;
 
 @end

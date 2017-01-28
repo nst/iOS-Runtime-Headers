@@ -3,16 +3,16 @@
  */
 
 @interface CAMShutterSoundCommand : CAMCaptureCommand {
-    BOOL  _shutterSoundEnabled;
+    bool  _shutterSoundEnabled;
 }
 
-@property (getter=_isShutterSoundEnabled, nonatomic, readonly) BOOL shutterSoundEnabled;
+@property (getter=_isShutterSoundEnabled, nonatomic, readonly) bool shutterSoundEnabled;
 
-- (BOOL)_isShutterSoundEnabled;
+- (bool)_isShutterSoundEnabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithShutterSoundEnabled:(BOOL)arg1;
+- (id)initWithShutterSoundEnabled:(bool)arg1;
 
 @end

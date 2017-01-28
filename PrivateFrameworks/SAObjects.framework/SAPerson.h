@@ -14,7 +14,7 @@
 @property (nonatomic, copy) NSDictionary *firstNameAPGs;
 @property (nonatomic, copy) NSString *firstNamePhonetic;
 @property (nonatomic, copy) NSString *fullName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *internalGUID;
 @property (nonatomic, copy) NSNumber *isBlocked;
 @property (nonatomic, copy) NSString *lastName;

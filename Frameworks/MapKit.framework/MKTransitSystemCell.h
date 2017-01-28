@@ -14,7 +14,7 @@
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
 - (void)_updateConstraintValues;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setSystemArtwork:(id)arg1;
 - (void)setSystemName:(id)arg1;
 - (id)systemArtwork;

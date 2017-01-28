@@ -3,12 +3,12 @@
  */
 
 @interface AppLaunchStatsSBMonitor : NSObject <DuetLoggerProtocol, DuetSaveAndRestore> {
-    BOOL  _enableAppSwitcherCheck;
-    BOOL  _enableWasRecentlyLaunched;
+    bool  _enableAppSwitcherCheck;
+    bool  _enableWasRecentlyLaunched;
     AppLaunchStatsState * aplsState;
     BKSApplicationStateMonitor * appStateMonitor;
     NSMutableDictionary * blackListed;
-    id /* block */  callback;
+    id  callback;
     NSMutableSet * foreGroundApps;
     NSMutableDictionary * recentList;
     AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
@@ -16,8 +16,8 @@
     NSMutableDictionary * trendList;
 }
 
-@property (nonatomic, readonly) BOOL enableAppSwitcherCheck;
-@property (nonatomic, readonly) BOOL enableWasRecentlyLaunched;
+@property (nonatomic, readonly) bool enableAppSwitcherCheck;
+@property (nonatomic, readonly) bool enableWasRecentlyLaunched;
 @property (nonatomic, readonly) NSMutableSet *foreGroundApps;
 
 - (void).cxx_destruct;
@@ -26,11 +26,11 @@
 - (void)appSuspendedTriggerExternalEvent:(id)arg1;
 - (void)appSwitchedObserver:(id)arg1;
 - (void)clearTrendingCache;
-- (BOOL)enableAppSwitcherCheck;
-- (BOOL)enableWasRecentlyLaunched;
+- (bool)enableAppSwitcherCheck;
+- (bool)enableWasRecentlyLaunched;
 - (id)foreGroundApps;
 - (id)foregroundAppsSnapshot;
-- (id)init:(id)arg1 withCallback:(id /* block */)arg2;
+- (id)init:(id)arg1 withCallback:(id)arg2;
 - (void)initListenerForAppStateChange;
 - (bool)isForeGroundApp:(id)arg1;
 - (bool)isRemovedFromAppSwitcher:(id)arg1;

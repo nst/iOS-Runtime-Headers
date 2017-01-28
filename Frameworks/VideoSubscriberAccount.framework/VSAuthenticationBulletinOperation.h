@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSXPCConnection *connection;
 
 - (void).cxx_destruct;
-- (id)_serviceWithErrorHandler:(id /* block */)arg1;
+- (id)_serviceWithErrorHandler:(id)arg1;
 - (id)appStoreRoomURL;
 - (id)connection;
 - (void)executionDidBegin;

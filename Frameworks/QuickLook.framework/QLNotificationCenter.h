@@ -10,16 +10,16 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_bufferNotificationName:(id)arg1 userInfo:(id)arg2;
-- (int)_indexOfObserver:(id)arg1;
+- (long long)_indexOfObserver:(id)arg1;
 - (void)_sendEnqueuedNotifications;
-- (BOOL)_tryPostingNotificationName:(id)arg1 userInfo:(id)arg2;
+- (bool)_tryPostingNotificationName:(id)arg1 userInfo:(id)arg2;
 - (id)init;
 - (void)postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)registerObserver:(id)arg1;

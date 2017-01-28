@@ -7,13 +7,13 @@
         unsigned int locationBucket : 1; 
         unsigned int isCurrentLocationInViewport : 1; 
     }  _has;
-    BOOL  _isCurrentLocationInViewport;
+    bool  _isCurrentLocationInViewport;
     int  _locationBucket;
 }
 
-@property (nonatomic) BOOL hasIsCurrentLocationInViewport;
-@property (nonatomic) BOOL hasLocationBucket;
-@property (nonatomic) BOOL isCurrentLocationInViewport;
+@property (nonatomic) bool hasIsCurrentLocationInViewport;
+@property (nonatomic) bool hasLocationBucket;
+@property (nonatomic) bool isCurrentLocationInViewport;
 @property (nonatomic) int locationBucket;
 
 - (int)StringAsLocationBucket:(id)arg1;
@@ -21,18 +21,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIsCurrentLocationInViewport;
-- (BOOL)hasLocationBucket;
-- (unsigned int)hash;
-- (BOOL)isCurrentLocationInViewport;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasIsCurrentLocationInViewport;
+- (bool)hasLocationBucket;
+- (unsigned long long)hash;
+- (bool)isCurrentLocationInViewport;
+- (bool)isEqual:(id)arg1;
 - (int)locationBucket;
 - (id)locationBucketAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIsCurrentLocationInViewport:(BOOL)arg1;
-- (void)setHasLocationBucket:(BOOL)arg1;
-- (void)setIsCurrentLocationInViewport:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIsCurrentLocationInViewport:(bool)arg1;
+- (void)setHasLocationBucket:(bool)arg1;
+- (void)setIsCurrentLocationInViewport:(bool)arg1;
 - (void)setLocationBucket:(int)arg1;
 - (void)writeTo:(id)arg1;
 

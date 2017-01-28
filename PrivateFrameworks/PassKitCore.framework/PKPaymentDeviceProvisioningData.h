@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *signedPhoneNumber;
 @property (nonatomic, copy) NSString *signedPhoneNumberVersion;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

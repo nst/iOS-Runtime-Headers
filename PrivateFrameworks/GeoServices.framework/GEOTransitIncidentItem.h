@@ -7,8 +7,8 @@
     NSString * _transitLineMuid;
 }
 
-@property (nonatomic, readonly) BOOL hasTransitIncidentTitle;
-@property (nonatomic, readonly) BOOL hasTransitLineMuid;
+@property (nonatomic, readonly) bool hasTransitIncidentTitle;
+@property (nonatomic, readonly) bool hasTransitLineMuid;
 @property (nonatomic, retain) NSString *transitIncidentTitle;
 @property (nonatomic, retain) NSString *transitLineMuid;
 
@@ -17,12 +17,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasTransitIncidentTitle;
-- (BOOL)hasTransitLineMuid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasTransitIncidentTitle;
+- (bool)hasTransitLineMuid;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setTransitIncidentTitle:(id)arg1;
 - (void)setTransitLineMuid:(id)arg1;
 - (id)transitIncidentTitle;

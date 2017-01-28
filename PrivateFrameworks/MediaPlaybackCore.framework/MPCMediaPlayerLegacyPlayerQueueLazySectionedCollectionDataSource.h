@@ -4,28 +4,28 @@
 
 @interface MPCMediaPlayerLegacyPlayerQueueLazySectionedCollectionDataSource : NSObject <MPLazySectionedCollectionDataSource> {
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _hardQueueRange;
     MPCMediaPlayerLegacyPlaylistManager * _playlistManager;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _softQueueRange;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MPCMediaPlayerLegacyPlaylistManager *playlistManager;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithPlaylistManager:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
-- (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
-- (unsigned int)numberOfSections;
+- (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
+- (unsigned long long)numberOfSections;
 - (id)playlistManager;
-- (id)sectionAtIndex:(unsigned int)arg1;
+- (id)sectionAtIndex:(unsigned long long)arg1;
 
 @end

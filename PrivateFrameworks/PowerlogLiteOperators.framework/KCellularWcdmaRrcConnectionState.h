@@ -16,10 +16,10 @@
 }
 
 @property (nonatomic) int establishmentCause;
-@property (nonatomic) BOOL hasEstablishmentCause;
-@property (nonatomic) BOOL hasReleaseCause;
-@property (nonatomic) BOOL hasState;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasEstablishmentCause;
+@property (nonatomic) bool hasReleaseCause;
+@property (nonatomic) bool hasState;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) int releaseCause;
 @property (nonatomic) int state;
 @property (nonatomic) unsigned long long timestamp;
@@ -29,20 +29,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)establishmentCause;
-- (BOOL)hasEstablishmentCause;
-- (BOOL)hasReleaseCause;
-- (BOOL)hasState;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEstablishmentCause;
+- (bool)hasReleaseCause;
+- (bool)hasState;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)releaseCause;
 - (void)setEstablishmentCause:(int)arg1;
-- (void)setHasEstablishmentCause:(BOOL)arg1;
-- (void)setHasReleaseCause:(BOOL)arg1;
-- (void)setHasState:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasEstablishmentCause:(bool)arg1;
+- (void)setHasReleaseCause:(bool)arg1;
+- (void)setHasState:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setReleaseCause:(int)arg1;
 - (void)setState:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

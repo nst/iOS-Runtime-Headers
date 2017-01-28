@@ -6,13 +6,13 @@
     CNContact * _contactSnapshot;
     NSArray * _keysToFetch;
     <CNContactChangesObserver> * _observer;
-    BOOL  _unify;
+    bool  _unify;
 }
 
 @property (nonatomic, retain) CNContact *contactSnapshot;
 @property (nonatomic, retain) NSArray *keysToFetch;
 @property (nonatomic) <CNContactChangesObserver> *observer;
-@property (nonatomic) BOOL unify;
+@property (nonatomic) bool unify;
 
 - (void).cxx_destruct;
 - (id)contactSnapshot;
@@ -21,7 +21,7 @@
 - (void)setContactSnapshot:(id)arg1;
 - (void)setKeysToFetch:(id)arg1;
 - (void)setObserver:(id)arg1;
-- (void)setUnify:(BOOL)arg1;
-- (BOOL)unify;
+- (void)setUnify:(bool)arg1;
+- (bool)unify;
 
 @end

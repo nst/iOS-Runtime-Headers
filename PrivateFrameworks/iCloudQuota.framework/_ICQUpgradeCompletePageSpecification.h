@@ -12,11 +12,11 @@
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) NSString *title;
 
-+ (id)upgradeCompletePageSpecificationSampleForLevel:(int)arg1;
++ (id)upgradeCompletePageSpecificationSampleForLevel:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)doneLink;
-- (BOOL)hasCancelButtonForBack;
+- (bool)hasCancelButtonForBack;
 - (id)message;
 - (id)pageIdentifier;
 - (void)setDoneLink:(id)arg1;

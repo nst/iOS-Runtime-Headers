@@ -15,45 +15,45 @@
 
 @property (nonatomic) unsigned int databaseID;
 @property (nonatomic, readonly) HSHomeSharingLibrary *homeSharingLibrary;
-@property (nonatomic, readonly) BOOL isSupportedSharingVersion;
+@property (nonatomic, readonly) bool isSupportedSharingVersion;
 
-+ (void)_determineHomeSharingGroupIDWithCompletionHandler:(id /* block */)arg1;
++ (void)_determineHomeSharingGroupIDWithCompletionHandler:(id)arg1;
 + (void)beginScanningForLibraries;
 + (void)endScanningForLibraries;
 + (id)homeSharingGroupID;
-+ (BOOL)isScanningForLibraries;
++ (bool)isScanningForLibraries;
 
 - (void).cxx_destruct;
 - (id)URLForItemDataRequest:(id)arg1;
 - (void)_fetchTokensForAuthorizedDSIDs;
-- (void)_fillContainerForQueryCriteria:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)_fillContainerForQueryCriteria:(id)arg1 completionBlock:(id)arg2;
 - (void)_homeSharingGroupIDDidChangeNotification:(id)arg1;
 - (void)_homeSharingLibraryDidBecomeUnavailable:(id)arg1;
 - (void)_homeSharingLibraryDidUpdateRevisionNumber:(id)arg1;
 - (id)_tokenDataForAccountID:(unsigned long long)arg1;
 - (id)adjustedValueForMPProperty:(id)arg1 ofEntity:(id)arg2 withDefaultValue:(id)arg3;
 - (id)artworkDataSource;
-- (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id /* block */)arg2 progressHandler:(id /* block */)arg3;
+- (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id)arg2 progressHandler:(id)arg3;
 - (unsigned int)databaseID;
 - (void)dealloc;
 - (void)disconnect;
 - (id)errorResolverForItem:(id)arg1;
-- (BOOL)hasGeniusMixes;
+- (bool)hasGeniusMixes;
 - (id)homeSharingLibrary;
 - (id)initWithHomeSharingLibrary:(id)arg1;
-- (BOOL)isSupportedSharingVersion;
+- (bool)isSupportedSharingVersion;
 - (id)itemResultSetForQueryCriteria:(id)arg1;
-- (void)loadQueryCriteria:(id)arg1 countOfCollectionsWithCompletionBlock:(id /* block */)arg2;
-- (void)loadQueryCriteria:(id)arg1 countOfItemsWithCompletionBlock:(id /* block */)arg2;
-- (void)loadQueryCriteria:(id)arg1 hasCollectionsWithCompletionBlock:(id /* block */)arg2;
-- (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id /* block */)arg2;
+- (void)loadQueryCriteria:(id)arg1 countOfCollectionsWithCompletionBlock:(id)arg2;
+- (void)loadQueryCriteria:(id)arg1 countOfItemsWithCompletionBlock:(id)arg2;
+- (void)loadQueryCriteria:(id)arg1 hasCollectionsWithCompletionBlock:(id)arg2;
+- (void)loadQueryCriteria:(id)arg1 hasItemsWithCompletionBlock:(id)arg2;
 - (id)name;
 - (id)protectedContentSupportStorageURL;
-- (BOOL)requiresAuthentication;
+- (bool)requiresAuthentication;
 - (void)setDatabaseID:(unsigned int)arg1;
 - (void)setRentalPlaybackStartDateForItemID:(unsigned long long)arg1;
 - (void)setTokenData:(id)arg1 forAuthorizedDSID:(unsigned long long)arg2;
-- (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3 completionBlock:(id /* block */)arg4;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 ofItemWithIdentifier:(long long)arg3 completionBlock:(id)arg4;
 - (id)uniqueIdentifier;
 
 @end

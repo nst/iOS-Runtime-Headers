@@ -9,24 +9,24 @@
     UIMenuController * menuController;
     PDFPage * touchLeftPage;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  touchLeftPoint;
     PDFPage * touchRightPage;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  touchRightPoint;
     PDFSelection * touchSelection;
     PDFView * view;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  viewMarquee;
 }

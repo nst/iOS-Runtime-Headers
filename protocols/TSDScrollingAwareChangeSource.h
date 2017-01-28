@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)shouldCancelScrollingToSelectionPath:(TSKSelectionPath *)arg1 forChanges:(NSArray *)arg2;
+- (bool)shouldCancelScrollingToSelectionPath:(TSKSelectionPath *)arg1 forChanges:(NSArray *)arg2;
 
 @end

@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CoreDAVPropFindTask *fetchTask;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSURL *url;

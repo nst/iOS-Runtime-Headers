@@ -11,10 +11,10 @@
     NSHashTable * _focusChangeObservers;
     NSObject<OS_dispatch_queue> * _focusClientQueue;
     <BKSEventFocusIPCInterface> * _ipcInterface;
-    BOOL  _needsFlush;
+    bool  _needsFlush;
     NSMutableDictionary * _pendingStatesByPriority;
     int  _pid;
-    BOOL  _systemAppControlsFocusOnMainDisplay;
+    bool  _systemAppControlsFocusOnMainDisplay;
 }
 
 @property (nonatomic, retain) NSSet *cachedFocusedDeferralProperties;
@@ -24,17 +24,17 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSHashTable *focusChangeObservers;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL needsFlush;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool needsFlush;
 @property (nonatomic, readonly, retain) NSMutableDictionary *pendingStatesByPriority;
 @property (nonatomic) int pid;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL systemAppControlsFocusOnMainDisplay;
+@property (nonatomic) bool systemAppControlsFocusOnMainDisplay;
 
 + (id)sharedInstance;
 
 - (void)_connectToEventFocusService;
-- (void)_pruneSet:(id)arg1 ofDeferralsPassingTest:(id /* block */)arg2;
+- (void)_pruneSet:(id)arg1 ofDeferralsPassingTest:(id)arg2;
 - (void)_rebuildPendingStatesByPriority;
 - (void)addObserver:(id)arg1;
 - (id)cachedFocusedDeferralProperties;
@@ -50,7 +50,7 @@
 - (void)focusedDeferralPropertiesUpdatedWithProperties:(id)arg1;
 - (id)init;
 - (id)initWithIPCInterface:(id)arg1;
-- (BOOL)needsFlush;
+- (bool)needsFlush;
 - (id)pendingStatesByPriority;
 - (int)pid;
 - (void)reallyFlushWithSet:(id)arg1;
@@ -60,9 +60,9 @@
 - (void)setConnection:(id)arg1;
 - (void)setFocusChangeObservers:(id)arg1;
 - (void)setForegroundApplicationOnMainDisplay:(id)arg1 pid:(int)arg2;
-- (void)setNeedsFlush:(BOOL)arg1;
+- (void)setNeedsFlush:(bool)arg1;
 - (void)setPid:(int)arg1;
-- (void)setSystemAppControlsFocusOnMainDisplay:(BOOL)arg1;
-- (BOOL)systemAppControlsFocusOnMainDisplay;
+- (void)setSystemAppControlsFocusOnMainDisplay:(bool)arg1;
+- (bool)systemAppControlsFocusOnMainDisplay;
 
 @end

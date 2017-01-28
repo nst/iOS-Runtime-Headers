@@ -5,6 +5,6 @@
 
 @required
 
-+ (BOOL)_preventsAppearanceProxyCustomization;
++ (bool)_preventsAppearanceProxyCustomization;
 
 @end

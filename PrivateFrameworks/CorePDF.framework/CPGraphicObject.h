@@ -6,15 +6,15 @@
     CPParagraph * anchoringParagraph;
     CPTextLine * anchoringTextLine;
     unsigned int  clipIndex;
-    BOOL  isInZoneBorder;
+    bool  isInZoneBorder;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  renderedBounds;
     CPChunk<CPGraphicUser> * user;
@@ -26,19 +26,19 @@
 
 - (id)anchoringParagraph;
 - (id)anchoringTextLine;
-- (BOOL)canBeContainer;
+- (bool)canBeContainer;
 - (unsigned int)clipIndex;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isInZoneBorder;
-- (BOOL)isIndivisible;
-- (BOOL)isNarrow;
-- (BOOL)isVisible;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })renderedBounds;
+- (bool)isInZoneBorder;
+- (bool)isIndivisible;
+- (bool)isNarrow;
+- (bool)isVisible;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })renderedBounds;
 - (void)setAnchoringParagraph:(id)arg1;
 - (void)setAnchoringTextLine:(id)arg1;
 - (void)setClipIndex:(unsigned int)arg1;
-- (void)setIsInZoneBorder:(BOOL)arg1;
+- (void)setIsInZoneBorder:(bool)arg1;
 - (void)setUser:(id)arg1;
 - (void)setZoneGraphicType:(int)arg1;
 - (unsigned short)unicode;

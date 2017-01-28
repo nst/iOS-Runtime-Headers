@@ -7,18 +7,18 @@
 }
 
 @property (nonatomic, retain) NSOperationQueue *serialOperationQueue;
-@property (nonatomic) BOOL suspended;
+@property (nonatomic) bool suspended;
 
 - (void).cxx_destruct;
 - (void)cancelAllBlocks;
-- (void)enqueueBlock:(id /* block */)arg1;
-- (void)enqueueBlockForMainThread:(id /* block */)arg1;
+- (void)enqueueBlock:(id)arg1;
+- (void)enqueueBlockForMainThread:(id)arg1;
 - (void)enqueueOperation:(id)arg1;
-- (void)enqueueWithQualityOfService:(int)arg1 block:(id /* block */)arg2;
+- (void)enqueueWithQualityOfService:(long long)arg1 block:(id)arg2;
 - (id)init;
 - (id)serialOperationQueue;
 - (void)setSerialOperationQueue:(id)arg1;
-- (void)setSuspended:(BOOL)arg1;
-- (BOOL)suspended;
+- (void)setSuspended:(bool)arg1;
+- (bool)suspended;
 
 @end

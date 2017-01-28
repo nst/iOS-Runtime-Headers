@@ -4,8 +4,8 @@
 
 @interface UIKBEmojiSnapshotSizingView : UIView {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _snapshotSize;
     UIView * _snapshotView;
 }

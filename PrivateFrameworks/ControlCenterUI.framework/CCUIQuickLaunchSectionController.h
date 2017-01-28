@@ -6,10 +6,10 @@
 
 + (Class)buttonControllerClass;
 
-- (void)_dismissButtonActionPlatterWithCompletion:(id /* block */)arg1;
-- (void)_presentButtonActionPlatterWithCompletion:(id /* block */)arg1;
+- (void)_dismissButtonActionPlatterWithCompletion:(id)arg1;
+- (void)_presentButtonActionPlatterWithCompletion:(id)arg1;
 - (id)sectionIdentifier;
 - (id)settings;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

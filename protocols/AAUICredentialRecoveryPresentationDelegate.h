@@ -6,7 +6,7 @@
 @required
 
 - (void)credentialRecoveryController:(AAUICredentialRecoveryController *)arg1 didFailWithError:(NSError *)arg2;
-- (void)credentialRecoveryController:(AAUICredentialRecoveryController *)arg1 finishedWithSuccess:(BOOL)arg2;
+- (void)credentialRecoveryController:(AAUICredentialRecoveryController *)arg1 finishedWithSuccess:(bool)arg2;
 - (void)credentialRecoveryController:(AAUICredentialRecoveryController *)arg1 needsPresentationOfViewController:(UIViewController *)arg2;
 
 @optional

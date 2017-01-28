@@ -4,19 +4,19 @@
 
 @interface HMUserListViewController : UIViewController <HMUserManagementRemoteHost> {
     _UIAsyncInvocation * _cancelServiceInvocation;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     HMHome * _home;
-    id /* block */  _loadHandler;
+    id  _loadHandler;
     HMUserListRemoteViewController * _remoteViewController;
-    BOOL  _shouldPresentWhenLoaded;
+    bool  _shouldPresentWhenLoaded;
 }
 
 @property (nonatomic, retain) _UIAsyncInvocation *cancelServiceInvocation;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic, retain) HMHome *home;
-@property (nonatomic, copy) id /* block */ loadHandler;
+@property (nonatomic, copy) id loadHandler;
 @property (nonatomic, retain) HMUserListRemoteViewController *remoteViewController;
-@property (nonatomic) BOOL shouldPresentWhenLoaded;
+@property (nonatomic) bool shouldPresentWhenLoaded;
 
 - (void).cxx_destruct;
 - (void)_configureAndAddRemoteViewController;
@@ -24,21 +24,21 @@
 - (void)_presentAsTopmostViewController;
 - (void)_requestRemoteViewController;
 - (id)cancelServiceInvocation;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)home;
-- (id)initWithHome:(id)arg1 loadHandler:(id /* block */)arg2;
-- (id /* block */)loadHandler;
+- (id)initWithHome:(id)arg1 loadHandler:(id)arg2;
+- (id)loadHandler;
 - (void)presentWhenLoaded;
 - (id)remoteViewController;
 - (void)setCancelServiceInvocation:(id)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setHome:(id)arg1;
-- (void)setLoadHandler:(id /* block */)arg1;
+- (void)setLoadHandler:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
-- (void)setShouldPresentWhenLoaded:(BOOL)arg1;
-- (BOOL)shouldAutorotate;
-- (BOOL)shouldPresentWhenLoaded;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)setShouldPresentWhenLoaded:(bool)arg1;
+- (bool)shouldAutorotate;
+- (bool)shouldPresentWhenLoaded;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)userManagementDidFinishWithError:(id)arg1;
 - (void)userManagementDidLoad;
 - (void)viewDidLoad;

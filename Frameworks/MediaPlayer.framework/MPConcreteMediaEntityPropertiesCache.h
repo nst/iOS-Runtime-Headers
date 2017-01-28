@@ -16,9 +16,9 @@
 @property (nonatomic, readonly) long long identifier;
 
 - (void).cxx_destruct;
-- (void)_onBarrierCacheValues:(id)arg1 persistValueInBackgroundBlock:(id /* block */)arg2;
-- (void)cachePropertyValues:(id)arg1 forProperties:(id)arg2 persistValueInBackgroundBlock:(id /* block */)arg3;
-- (void)cacheValue:(id)arg1 forProperty:(id)arg2 persistValueInBackgroundBlock:(id /* block */)arg3;
+- (void)_onBarrierCacheValues:(id)arg1 persistValueInBackgroundBlock:(id)arg2;
+- (void)cachePropertyValues:(id)arg1 forProperties:(id)arg2 persistValueInBackgroundBlock:(id)arg3;
+- (void)cacheValue:(id)arg1 forProperty:(id)arg2 persistValueInBackgroundBlock:(id)arg3;
 - (id)dataProvider;
 - (Class)dataProviderEntityClass;
 - (void)dealloc;
@@ -26,6 +26,6 @@
 - (long long)identifier;
 - (id)initWithLibraryDataProvider:(id)arg1 dataProviderEntityClass:(Class)arg2 identifier:(long long)arg3;
 - (void)invalidate;
-- (id)valueForProperty:(id)arg1 isCached:(BOOL*)arg2;
+- (id)valueForProperty:(id)arg1 isCached:(bool*)arg2;
 
 @end

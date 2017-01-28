@@ -8,7 +8,7 @@
     NSString * _storeIdentifier;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;
@@ -17,8 +17,8 @@
 - (id)initForStore:(id)arg1 origin:(long long)arg2 generation:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStoreIdentifier:(id)arg1 origin:(long long)arg2 generation:(long long)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isReferencingStore:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isReferencingStore:(id)arg1;
 - (long long)origin;
 - (id)storeIdentifier;
 

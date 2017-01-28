@@ -8,10 +8,10 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)graph:(id)arg1 didFinishStartingWithError:(long)arg2;
+- (void)graph:(id)arg1 didFinishStartingWithError:(int)arg2;
 - (void)graphDidPrepareNodes:(id)arg1;
 - (id)initWithFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 

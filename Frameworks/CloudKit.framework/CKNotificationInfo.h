@@ -10,8 +10,8 @@
     NSString * _alertLocalizationKey;
     NSString * _category;
     NSArray * _desiredKeys;
-    BOOL  _shouldBadge;
-    BOOL  _shouldSendContentAvailable;
+    bool  _shouldBadge;
+    bool  _shouldSendContentAvailable;
     NSString * _soundName;
 }
 
@@ -22,12 +22,12 @@
 @property (nonatomic, copy) NSString *alertLocalizationKey;
 @property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSArray *desiredKeys;
-@property (nonatomic) BOOL shouldBadge;
-@property (nonatomic) BOOL shouldSendContentAvailable;
+@property (nonatomic) bool shouldBadge;
+@property (nonatomic) bool shouldSendContentAvailable;
 @property (nonatomic, copy) NSString *soundName;
 
 + (id)notificationInfo;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)alertActionLocalizationKey;
@@ -48,11 +48,11 @@
 - (void)setAlertLocalizationKey:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
-- (void)setShouldBadge:(BOOL)arg1;
-- (void)setShouldSendContentAvailable:(BOOL)arg1;
+- (void)setShouldBadge:(bool)arg1;
+- (void)setShouldSendContentAvailable:(bool)arg1;
 - (void)setSoundName:(id)arg1;
-- (BOOL)shouldBadge;
-- (BOOL)shouldSendContentAvailable;
+- (bool)shouldBadge;
+- (bool)shouldSendContentAvailable;
 - (id)soundName;
 
 @end

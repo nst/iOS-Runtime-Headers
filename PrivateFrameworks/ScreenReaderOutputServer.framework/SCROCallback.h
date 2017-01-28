@@ -3,7 +3,7 @@
  */
 
 @interface SCROCallback : NSObject <NSCoding> {
-    BOOL  _isAtomic;
+    bool  _isAtomic;
     int  _key;
     id  _object;
 }
@@ -12,10 +12,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKey:(int)arg1 object:(id)arg2;
-- (BOOL)isAtomic;
+- (bool)isAtomic;
 - (int)key;
 - (id)object;
 - (void)postToHandler:(id)arg1;
-- (void)setIsAtomic:(BOOL)arg1;
+- (void)setIsAtomic:(bool)arg1;
 
 @end

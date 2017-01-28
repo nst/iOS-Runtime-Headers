@@ -3,18 +3,18 @@
  */
 
 @interface _CNBoundedQueueingStrategy : NSObject <CNQueueingStrategy> {
-    unsigned int  _capacity;
-    id /* block */  _overflowHandler;
+    unsigned long long  _capacity;
+    id  _overflowHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void)enqueueObject:(id)arg1 buffer:(id)arg2;
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)initWithCapacity:(unsigned int)arg1 overflowHandler:(id /* block */)arg2;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1 overflowHandler:(id)arg2;
 
 @end

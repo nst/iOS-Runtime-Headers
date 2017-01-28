@@ -4,37 +4,37 @@
 
 @interface TIWordSearchOperationGetCandidates : TIWordSearchOperation {
     SEL  _action;
-    unsigned int  _autocapitalizationType;
+    unsigned long long  _autocapitalizationType;
     NSArray * _geometryModelData;
     NSString * _inputString;
-    BOOL  _predictionEnabled;
-    BOOL  _reanalysisMode;
+    bool  _predictionEnabled;
+    bool  _reanalysisMode;
     TIWordSearchCandidateResultSet * _results;
     id  _target;
     TIWordSearch * _wordSearch;
 }
 
 @property (nonatomic, readonly) SEL action;
-@property (nonatomic, readonly) unsigned int autocapitalizationType;
+@property (nonatomic, readonly) unsigned long long autocapitalizationType;
 @property (nonatomic, readonly) NSArray *geometryModelData;
 @property (nonatomic, readonly) NSString *inputString;
-@property (nonatomic, readonly) BOOL predictionEnabled;
-@property (nonatomic, readonly) BOOL reanalysisMode;
+@property (nonatomic, readonly) bool predictionEnabled;
+@property (nonatomic, readonly) bool reanalysisMode;
 @property (nonatomic, retain) TIWordSearchCandidateResultSet *results;
 @property (nonatomic, readonly) id target;
 @property (retain) TIWordSearch *wordSearch;
 
 - (SEL)action;
-- (unsigned int)autocapitalizationType;
+- (unsigned long long)autocapitalizationType;
 - (void)checkForCachedResults;
 - (void)completeSearchOnMainThreadWithResults:(id)arg1;
 - (void)dealloc;
 - (id)geometryModelData;
-- (id)initWithWordSearch:(id)arg1 inputString:(id)arg2 predictionEnabled:(BOOL)arg3 reanalysisMode:(BOOL)arg4 autocapitalizationType:(unsigned int)arg5 target:(id)arg6 action:(SEL)arg7 geometryModelData:(id)arg8;
+- (id)initWithWordSearch:(id)arg1 inputString:(id)arg2 predictionEnabled:(bool)arg3 reanalysisMode:(bool)arg4 autocapitalizationType:(unsigned long long)arg5 target:(id)arg6 action:(SEL)arg7 geometryModelData:(id)arg8;
 - (id)inputString;
 - (void)perform;
-- (BOOL)predictionEnabled;
-- (BOOL)reanalysisMode;
+- (bool)predictionEnabled;
+- (bool)reanalysisMode;
 - (id)results;
 - (void)setResults:(id)arg1;
 - (void)setWordSearch:(id)arg1;

@@ -6,56 +6,56 @@
     <EKEditItemViewControllerDelegate> * _editDelegate;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _initialFrame;
-    BOOL  _modal;
+    bool  _modal;
     EKUIRecurrenceAlertController * _recurrenceAlertController;
-    BOOL  _showsDoneButton;
+    bool  _showsDoneButton;
     <EKStyleProvider> * _styleProvider;
-    unsigned int  _subitem;
+    unsigned long long  _subitem;
 }
 
 @property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
-@property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
-@property (nonatomic) BOOL modal;
-@property (nonatomic) BOOL presentModally;
-@property (nonatomic) BOOL showsDoneButton;
-@property (nonatomic) unsigned int subitem;
-@property (nonatomic) BOOL useCustomBackButton;
+@property (nonatomic) bool editItemShouldBeAskedForInjectableViewController;
+@property (nonatomic) bool modal;
+@property (nonatomic) bool presentModally;
+@property (nonatomic) bool showsDoneButton;
+@property (nonatomic) unsigned long long subitem;
+@property (nonatomic) bool useCustomBackButton;
 
 - (void).cxx_destruct;
-- (void)_saveAndDismissWithForce:(BOOL)arg1;
+- (void)_saveAndDismissWithForce:(bool)arg1;
 - (void)cancel;
 - (void)didReceiveMemoryWarning;
 - (id)editDelegate;
-- (BOOL)fitsPopoverWhenKeyboardActive;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
-- (float)marginForTableView:(id)arg1;
-- (BOOL)modal;
+- (bool)fitsPopoverWhenKeyboardActive;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 styleProvider:(id)arg2;
+- (double)marginForTableView:(id)arg1;
+- (bool)modal;
 - (void)popIfNonModal;
-- (struct CGSize { float x1; float x2; })preferredContentSize;
+- (struct CGSize { double x1; double x2; })preferredContentSize;
 - (void)saveAndDismiss;
 - (void)saveAndDismissWithExtremePrejudice;
-- (void)setCell:(id)arg1 checked:(BOOL)arg2;
+- (void)setCell:(id)arg1 checked:(bool)arg2;
 - (void)setEditDelegate:(id)arg1;
-- (void)setModal:(BOOL)arg1;
-- (void)setShowsDoneButton:(BOOL)arg1;
-- (void)setSubitem:(unsigned int)arg1;
-- (BOOL)showsDoneButton;
-- (unsigned int)subitem;
-- (unsigned int)supportedInterfaceOrientations;
-- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (BOOL)validateAllowingAlert:(BOOL)arg1;
+- (void)setModal:(bool)arg1;
+- (void)setShowsDoneButton:(bool)arg1;
+- (void)setSubitem:(unsigned long long)arg1;
+- (bool)showsDoneButton;
+- (unsigned long long)subitem;
+- (unsigned long long)supportedInterfaceOrientations;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
+- (bool)validateAllowingAlert:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

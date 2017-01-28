@@ -4,30 +4,30 @@
 
 @interface UIPreviewAction : NSObject <NSCopying, UIPreviewActionItem, UIPreviewActionItem_Internal> {
     UIColor * _color;
-    id /* block */  _handler;
+    id  _handler;
     NSString * _identifier;
     UIImage * _image;
-    int  _style;
+    long long  _style;
     NSString * _title;
 }
 
 @property (getter=_color, setter=_setColor:, nonatomic, retain) UIColor *color;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ handler;
-@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id handler;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) UIImage *image;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 
 + (id)_actionWithPreviewMenuItem:(id)arg1;
-+ (id)_actionWithTitle:(id)arg1 color:(id)arg2 image:(id)arg3 handler:(id /* block */)arg4;
-+ (id)_actionWithTitle:(id)arg1 style:(int)arg2 color:(id)arg3 image:(id)arg4 handler:(id /* block */)arg5;
-+ (id)_actionWithTitle:(id)arg1 style:(int)arg2 image:(id)arg3 handler:(id /* block */)arg4;
++ (id)_actionWithTitle:(id)arg1 color:(id)arg2 image:(id)arg3 handler:(id)arg4;
++ (id)_actionWithTitle:(id)arg1 style:(long long)arg2 color:(id)arg3 image:(id)arg4 handler:(id)arg5;
++ (id)_actionWithTitle:(id)arg1 style:(long long)arg2 image:(id)arg3 handler:(id)arg4;
 + (id)_checkmarkImage;
-+ (id)actionWithTitle:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
++ (id)actionWithTitle:(id)arg1 style:(long long)arg2 handler:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_color;
@@ -35,15 +35,15 @@
 - (id)_effectiveImage;
 - (void)_setColor:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id /* block */)handler;
+- (id)handler;
 - (id)identifier;
 - (id)image;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setTitle:(id)arg1;
-- (int)style;
+- (long long)style;
 - (id)title;
 
 @end

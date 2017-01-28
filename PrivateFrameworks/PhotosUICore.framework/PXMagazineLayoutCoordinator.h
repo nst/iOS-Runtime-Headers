@@ -3,42 +3,42 @@
  */
 
 @interface PXMagazineLayoutCoordinator : NSObject {
-    float  _currentBestScore;
-    unsigned int  _currentIndex;
+    double  _currentBestScore;
+    unsigned long long  _currentIndex;
     PXMagazineRectArray * _currentLayout;
     PXMagazineRectArray * _fallbackLayout;
     NSArray * _paddingInputs;
     NSMutableArray * _qualifiedLayouts;
-    BOOL  _stop;
-    BOOL  _stopIfAnyGoodLayout;
-    float  _tileAspectRatio;
+    bool  _stop;
+    bool  _stopIfAnyGoodLayout;
+    double  _tileAspectRatio;
 }
 
-@property (nonatomic) unsigned int currentIndex;
+@property (nonatomic) unsigned long long currentIndex;
 @property (nonatomic, retain) PXMagazineRectArray *currentLayout;
 @property (nonatomic, readonly) NSArray *paddingInputs;
 @property (nonatomic, retain) NSMutableArray *qualifiedLayouts;
-@property (nonatomic) BOOL stop;
-@property (nonatomic, readonly) BOOL stopIfAnyGoodLayout;
-@property (nonatomic, readonly) float tileAspectRatio;
+@property (nonatomic) bool stop;
+@property (nonatomic, readonly) bool stopIfAnyGoodLayout;
+@property (nonatomic, readonly) double tileAspectRatio;
 
 - (void).cxx_destruct;
 - (id)currentBestLayout;
-- (unsigned int)currentIndex;
+- (unsigned long long)currentIndex;
 - (id)currentLayout;
-- (unsigned int)currentLayoutsCount;
-- (id)initWithPaddingInputs:(id)arg1 tileAspectRatio:(float)arg2 stopIfAnyGoodLayout:(BOOL)arg3;
+- (unsigned long long)currentLayoutsCount;
+- (id)initWithPaddingInputs:(id)arg1 tileAspectRatio:(double)arg2 stopIfAnyGoodLayout:(bool)arg3;
 - (id)paddingInputs;
 - (id)qualifiedLayouts;
-- (float)scoreOfLayout:(id)arg1;
-- (void)setCurrentIndex:(unsigned int)arg1;
+- (double)scoreOfLayout:(id)arg1;
+- (void)setCurrentIndex:(unsigned long long)arg1;
 - (void)setCurrentLayout:(id)arg1;
 - (void)setQualifiedLayouts:(id)arg1;
-- (void)setStop:(BOOL)arg1;
-- (BOOL)stop;
-- (BOOL)stopIfAnyGoodLayout;
-- (float)tileAspectRatio;
-- (BOOL)validateCurrentLayout;
+- (void)setStop:(bool)arg1;
+- (bool)stop;
+- (bool)stopIfAnyGoodLayout;
+- (double)tileAspectRatio;
+- (bool)validateCurrentLayout;
 - (void)validateCurrentLayoutAsFallback;
 
 @end

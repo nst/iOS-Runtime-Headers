@@ -6,35 +6,35 @@
     <_MKInfoCardAnaylticsDelegate> * _analyticsDelegate;
     NSArray * _completeHours;
     MKPlaceSectionHeaderView * _headerView;
-    BOOL  _isExpanded;
+    bool  _isExpanded;
     MKMapItem * _mapItem;
-    BOOL  _resizableViewsDisabled;
+    bool  _resizableViewsDisabled;
 }
 
 @property (nonatomic) <_MKInfoCardAnaylticsDelegate> *analyticsDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) BOOL resizableViewsDisabled;
+@property (nonatomic) bool resizableViewsDisabled;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_contentSizeDidChange;
-- (void)_setExpanded:(BOOL)arg1;
-- (BOOL)_shouldOnlyShowExpanded;
+- (void)_setExpanded:(bool)arg1;
+- (bool)_shouldOnlyShowExpanded;
 - (void)_toggleShowAllHours;
-- (void)_updateHoursAnimated:(BOOL)arg1;
+- (void)_updateHoursAnimated:(bool)arg1;
 - (id)analyticsDelegate;
 - (void)dealloc;
-- (float)extraHeightToReserveInLayout;
+- (double)extraHeightToReserveInLayout;
 - (id)infoCardChildPossibleActions;
 - (id)mapItem;
-- (BOOL)resizableViewsDisabled;
+- (bool)resizableViewsDisabled;
 - (void)setAnalyticsDelegate:(id)arg1;
 - (void)setMapItem:(id)arg1;
-- (void)setResizableViewsDisabled:(BOOL)arg1;
+- (void)setResizableViewsDisabled:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

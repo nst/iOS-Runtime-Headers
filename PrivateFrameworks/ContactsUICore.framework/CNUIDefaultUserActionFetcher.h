@@ -8,12 +8,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) CRRecentContactsLibrary *library;
 @property (readonly) Class superclass;
 
 + (id)defaultActionItemForActionItem:(id)arg1 recentContacts:(id)arg2;
-+ (BOOL)doesRecentContact:(id)arg1 matchUserActionItem:(id)arg2;
++ (bool)doesRecentContact:(id)arg1 matchUserActionItem:(id)arg2;
 + (id)queryForUserActionItem:(id)arg1;
 + (id)recentContactsForUserActionItem:(id)arg1 recentsLibrary:(id)arg2 scheduler:(id)arg3;
 

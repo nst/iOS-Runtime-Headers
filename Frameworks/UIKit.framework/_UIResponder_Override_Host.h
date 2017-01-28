@@ -12,12 +12,12 @@
 + (id)hostForResponder:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)attachOverrider:(id)arg1 forTypes:(int)arg2;
+- (void)attachOverrider:(id)arg1 forTypes:(long long)arg2;
 - (void)dealloc;
 - (id)description;
-- (void)detachOverrider:(id)arg1 forTypes:(int)arg2;
+- (void)detachOverrider:(id)arg1 forTypes:(long long)arg2;
 - (id)init;
 - (id)owner;
-- (int)typesForResponder:(id)arg1;
+- (long long)typesForResponder:(id)arg1;
 
 @end

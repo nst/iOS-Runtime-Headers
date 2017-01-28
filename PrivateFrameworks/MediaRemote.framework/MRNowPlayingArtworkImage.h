@@ -13,10 +13,10 @@
 - (void)bindToXPCDictionary:(id)arg1;
 - (id)copyImageData;
 - (void)dealloc;
-- (BOOL)hasArtworkData;
+- (bool)hasArtworkData;
 - (id)imageData;
 - (id)initWithImageData:(id)arg1 mimeType:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mimeType;
 - (unsigned int)type;
 

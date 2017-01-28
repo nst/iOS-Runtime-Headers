@@ -27,14 +27,14 @@
             struct RenderTree {} *__first_; 
         } __ptr_; 
     }  _mapScene;
-    int  _mapType;
-    BOOL  _needsLayout;
+    long long  _mapType;
+    bool  _needsLayout;
     struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
         struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
             struct RenderQueue {} *__first_; 
         } __ptr_; 
     }  _renderQueue;
-    BOOL  _shouldDrawWhileLoading;
+    bool  _shouldDrawWhileLoading;
     VKWorld * _world;
     struct unique_ptr<(anonymous namespace)::YFlipPass, std::__1::default_delete<(anonymous namespace)::YFlipPass> >="__ptr_"{__compressed_pair<(anonymous namespace)::YFlipPass *, std::__1::default_delete<(anonymous namespace)::YFlipPass> >="__first_"^{YFlipPass {}  _yFlipPass;
 }
@@ -44,10 +44,10 @@
 @property (nonatomic) <VKImageCanvasDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) VKDispatch *dispatch;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; } mapDisplayStyle;
 @property (nonatomic, readonly) GEOMapRegion *mapRegion;
-@property (nonatomic) int mapType;
+@property (nonatomic) long long mapType;
 @property (nonatomic, readonly) double pitch;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) VKWorld *world;
@@ -56,7 +56,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_spinScene:(id)arg1;
-- (void)_spinSceneWillRender:(BOOL)arg1;
+- (void)_spinSceneWillRender:(bool)arg1;
 - (void)animationDidResume:(id)arg1;
 - (void)animationDidStop:(id)arg1;
 - (id)camera;
@@ -66,22 +66,22 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didLayout;
-- (void)didReceiveMemoryWarning:(BOOL)arg1;
+- (void)didReceiveMemoryWarning:(bool)arg1;
 - (id)dispatch;
 - (id)initWithTarget:(id)arg1 device:(struct Device { int x1; struct shared_ptr<ggl::Device> { struct Device {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; struct unique_ptr<md::SharedDeviceResources, std::__1::default_delete<md::SharedDeviceResources> > { struct __compressed_pair<md::SharedDeviceResources *, std::__1::default_delete<md::SharedDeviceResources> > { struct SharedDeviceResources {} *x_1_2_1; } x_3_1_1; } x3; }*)arg2 homeQueue:(id)arg3;
 - (void)loadScene;
 - (struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })mapDisplayStyle;
 - (id)mapRegion;
-- (int)mapType;
+- (long long)mapType;
 - (double)pitch;
-- (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; bool x6; float x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; }*)arg1 completion:(id /* block */)arg2;
+- (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; bool x6; float x7; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_8_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_8_1_3; } x8; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_9_1_1; } x9; struct shared_ptr<ggl::CommonLibrary> { struct CommonLibrary {} *x_10_1_1; struct __shared_weak_count {} *x_10_1_2; } x10; struct unique_ptr<ggl::RenderResourceFences, std::__1::default_delete<ggl::RenderResourceFences> > { struct __compressed_pair<ggl::RenderResourceFences *, std::__1::default_delete<ggl::RenderResourceFences> > { struct RenderResourceFences {} *x_1_2_1; } x_11_1_1; } x11; }*)arg1 completion:(id)arg2;
 - (void)runAnimation:(id)arg1;
 - (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)setMapDisplayStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; unsigned char x4; unsigned char x5; })arg1;
 - (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3;
-- (void)setMapType:(int)arg1;
-- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setMapType:(long long)arg1;
+- (void)setSize:(struct CGSize { double x1; double x2; })arg1;
 - (void)update;
 - (id)world;
 - (void)worldDisplayDidChange:(id)arg1;

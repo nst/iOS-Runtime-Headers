@@ -4,6 +4,6 @@
 
 @interface CKBrowserNavigationViewControllerPresentationController : UIPresentationController
 
-- (BOOL)_shouldDisableInteractionDuringTransitions;
+- (bool)_shouldDisableInteractionDuringTransitions;
 
 @end

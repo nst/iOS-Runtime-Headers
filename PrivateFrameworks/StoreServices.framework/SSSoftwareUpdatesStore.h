@@ -6,28 +6,28 @@
     NSObject<OS_dispatch_queue> * _calloutQueue;
     SSXPCConnection * _connection;
     SSUpdatesDatabase * _database;
-    BOOL  _didMigration;
+    bool  _didMigration;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     void * _mobileCoreServices;
-    BOOL  _useLocalRead;
-    BOOL  _useLocalWrite;
+    bool  _useLocalRead;
+    bool  _useLocalWrite;
 }
 
 + (id)databasePath;
 
 - (id)_copyUpdates;
 - (id)_copyUpdatesWithSession:(id)arg1 predicate:(id)arg2;
-- (BOOL)_migrateReadOnlyDatabase;
-- (void)_readUsingSessionBlock:(id /* block */)arg1;
-- (void)clearExpiredUpdateHistoryWithCompletionBlock:(id /* block */)arg1;
+- (bool)_migrateReadOnlyDatabase;
+- (void)_readUsingSessionBlock:(id)arg1;
+- (void)clearExpiredUpdateHistoryWithCompletionBlock:(id)arg1;
 - (void)dealloc;
-- (void)getUpdatesWithCompletionBlock:(id /* block */)arg1;
+- (void)getUpdatesWithCompletionBlock:(id)arg1;
 - (void)hideApplicationBadgeForPendingUpdates;
 - (id)init;
-- (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;
+- (void)reloadFromServerWithCompletionBlock:(id)arg1;
 - (void)removeUpdateBulletins;
 - (void)showApplicationBadgeForPendingUpdates;
-- (void)updateItemWithIdentifer:(long long)arg1 downloadPhase:(id)arg2 properties:(id)arg3 callback:(id /* block */)arg4;
+- (void)updateItemWithIdentifer:(long long)arg1 downloadPhase:(id)arg2 properties:(id)arg3 callback:(id)arg4;
 - (id)updateWithItemIdentifier:(long long)arg1;
 
 @end

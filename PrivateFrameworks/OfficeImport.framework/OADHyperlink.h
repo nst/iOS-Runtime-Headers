@@ -4,35 +4,35 @@
 
 @interface OADHyperlink : NSObject {
     NSString * mAction;
-    BOOL  mDoAddToHistory;
-    BOOL  mDoEndSound;
+    bool  mDoAddToHistory;
+    bool  mDoEndSound;
     NSString * mInvalidUrl;
-    BOOL  mIsVisited;
+    bool  mIsVisited;
     NSString * mTargetFrame;
     NSURL * mTargetLocation;
     int  mTargetMode;
     NSString * mTooltip;
 }
 
-@property (nonatomic) BOOL doAddToHistory;
-@property (nonatomic) BOOL doEndSound;
-@property (nonatomic) BOOL isVisited;
+@property (nonatomic) bool doAddToHistory;
+@property (nonatomic) bool doEndSound;
+@property (nonatomic) bool isVisited;
 
 - (id)action;
 - (void)dealloc;
 - (id)description;
-- (BOOL)doAddToHistory;
-- (BOOL)doEndSound;
-- (unsigned int)hash;
+- (bool)doAddToHistory;
+- (bool)doEndSound;
+- (unsigned long long)hash;
 - (id)init;
 - (id)invalidUrl;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isVisited;
+- (bool)isEqual:(id)arg1;
+- (bool)isVisited;
 - (void)setAction:(id)arg1;
-- (void)setDoAddToHistory:(BOOL)arg1;
-- (void)setDoEndSound:(BOOL)arg1;
+- (void)setDoAddToHistory:(bool)arg1;
+- (void)setDoEndSound:(bool)arg1;
 - (void)setInvalidUrl:(id)arg1;
-- (void)setIsVisited:(BOOL)arg1;
+- (void)setIsVisited:(bool)arg1;
 - (void)setTargetFrame:(id)arg1;
 - (void)setTargetLocation:(id)arg1;
 - (void)setTargetMode:(int)arg1;

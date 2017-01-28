@@ -27,11 +27,11 @@
 - (id)discoveryTimestamp;
 - (id)endDate;
 - (void)finalize;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithItems:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (id)initWithPropertyList:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)items;
 - (id)modificationTimestamp;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

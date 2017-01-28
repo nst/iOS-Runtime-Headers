@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)containsDate:(NSDate *)arg1;
+- (bool)containsDate:(NSDate *)arg1;
 - (NSUUID *)identifier;
 - (NSDate *)nextTransitionDateAfterDate:(NSDate *)arg1;
 

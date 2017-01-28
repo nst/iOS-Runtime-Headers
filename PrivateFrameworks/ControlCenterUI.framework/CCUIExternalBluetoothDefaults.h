@@ -4,7 +4,7 @@
 
 @interface CCUIExternalBluetoothDefaults : BSAbstractDefaultDomain
 
-@property (nonatomic) BOOL hideGizmoPowerWarning;
+@property (nonatomic) bool hideGizmoPowerWarning;
 
 + (id)standardDefaults;
 

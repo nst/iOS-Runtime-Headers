@@ -5,8 +5,8 @@
 @interface WAKResponder : NSObject
 
 - (void)_forwardEvent:(id)arg1;
-- (BOOL)acceptsFirstResponder;
-- (BOOL)becomeFirstResponder;
+- (bool)acceptsFirstResponder;
+- (bool)becomeFirstResponder;
 - (void)deleteBackward:(id)arg1;
 - (void)deleteForward:(id)arg1;
 - (void)handleEvent:(id)arg1;
@@ -28,9 +28,9 @@
 - (void)moveUp:(id)arg1;
 - (void)moveUpAndModifySelection:(id)arg1;
 - (id)nextResponder;
-- (BOOL)resignFirstResponder;
+- (bool)resignFirstResponder;
 - (void)scrollWheel:(id)arg1;
 - (void)touch:(id)arg1;
-- (BOOL)tryToPerform:(SEL)arg1 with:(id)arg2;
+- (bool)tryToPerform:(SEL)arg1 with:(id)arg2;
 
 @end

@@ -3,30 +3,30 @@
  */
 
 @interface MPUAnimationStep : NSObject {
-    id /* block */  _animationBlock;
+    id  _animationBlock;
     double  _delay;
     double  _duration;
-    unsigned int  _options;
+    unsigned long long  _options;
 }
 
-@property (nonatomic, readonly) id /* block */ animationBlock;
+@property (nonatomic, readonly) id animationBlock;
 @property (nonatomic, readonly) double delay;
 @property (nonatomic, readonly) double duration;
-@property (nonatomic, readonly) unsigned int options;
+@property (nonatomic, readonly) unsigned long long options;
 
-+ (void)_performAnimations:(id)arg1 withCompletion:(id /* block */)arg2 lastOneFinished:(BOOL)arg3;
-+ (id)actionWithBlock:(id /* block */)arg1;
-+ (id)animationStepWithDelay:(double)arg1 duration:(double)arg2 options:(unsigned int)arg3 block:(id /* block */)arg4;
-+ (id)animationWithBlock:(id /* block */)arg1;
-+ (id)animationWithDuration:(double)arg1 block:(id /* block */)arg2;
-+ (void)performAnimations:(id)arg1 withCompletion:(id /* block */)arg2;
++ (void)_performAnimations:(id)arg1 withCompletion:(id)arg2 lastOneFinished:(bool)arg3;
++ (id)actionWithBlock:(id)arg1;
++ (id)animationStepWithDelay:(double)arg1 duration:(double)arg2 options:(unsigned long long)arg3 block:(id)arg4;
++ (id)animationWithBlock:(id)arg1;
++ (id)animationWithDuration:(double)arg1 block:(id)arg2;
++ (void)performAnimations:(id)arg1 withCompletion:(id)arg2;
 
 - (void).cxx_destruct;
-- (id /* block */)animationBlock;
+- (id)animationBlock;
 - (double)delay;
 - (double)duration;
 - (id)init;
-- (id)initWithDelay:(double)arg1 duration:(double)arg2 options:(unsigned int)arg3 block:(id /* block */)arg4;
-- (unsigned int)options;
+- (id)initWithDelay:(double)arg1 duration:(double)arg2 options:(unsigned long long)arg3 block:(id)arg4;
+- (unsigned long long)options;
 
 @end

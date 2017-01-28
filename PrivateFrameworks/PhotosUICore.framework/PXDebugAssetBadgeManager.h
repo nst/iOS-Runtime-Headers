@@ -14,19 +14,19 @@
 @property (setter=_setPhotosGraphCurationAssets:, nonatomic, retain) PHFetchResult *_photosGraphCurationAssets;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXPhotosDataSource *photosDataSource;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_isAssetContainedInMiroCuration:(id)arg1;
-- (BOOL)_isAssetContainedInPhotosGraphCuration:(id)arg1;
+- (bool)_isAssetContainedInMiroCuration:(id)arg1;
+- (bool)_isAssetContainedInPhotosGraphCuration:(id)arg1;
 - (id)_miroCurationAssets;
 - (id)_photosGraphCurationAssets;
 - (void)_setMiroCurationAssets:(id)arg1;
 - (void)_setPhotosGraphCurationAssets:(id)arg1;
 - (void)_updateAssets;
-- (unsigned int)badgeTypeForAsset:(id)arg1;
+- (unsigned long long)badgeTypeForAsset:(id)arg1;
 - (void)dealloc;
 - (id)photosDataSource;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;

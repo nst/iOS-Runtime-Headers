@@ -7,9 +7,9 @@
 }
 
 + (id)query;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
+- (void)_enumerateWithXPCConnection:(id)arg1 block:(id)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

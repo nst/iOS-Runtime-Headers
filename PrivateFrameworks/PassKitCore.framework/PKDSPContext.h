@@ -25,8 +25,8 @@
 - (id)challengeResponse;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cryptogram;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)phoneNumber;
 - (id)primaryAppleAccountFirstName;
 - (id)primaryAppleAccountLastName;

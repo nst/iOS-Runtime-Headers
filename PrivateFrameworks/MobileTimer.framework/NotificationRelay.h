@@ -3,17 +3,17 @@
  */
 
 @interface NotificationRelay : NSObject {
-    BOOL  _refreshManagers;
+    bool  _refreshManagers;
 }
 
-@property (nonatomic) BOOL refreshManagers;
+@property (nonatomic) bool refreshManagers;
 
 + (id)sharedRelay;
 
 - (id)init;
-- (BOOL)refreshManagers;
-- (void)refreshManagersForPreferences:(BOOL)arg1 localNotifications:(BOOL)arg2;
+- (bool)refreshManagers;
+- (void)refreshManagersForPreferences:(bool)arg1 localNotifications:(bool)arg2;
 - (void)relayFrameworkNotification:(id)arg1;
-- (void)setRefreshManagers:(BOOL)arg1;
+- (void)setRefreshManagers:(bool)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)canAddPaymentPass;
+- (bool)canAddPaymentPass;
 - (PKPass *)passWithPassTypeIdentifier:(NSString *)arg1 serialNumber:(NSString *)arg2;
 - (PKPass *)passWithUniqueID:(NSString *)arg1;
 - (NSArray *)paymentPasses;

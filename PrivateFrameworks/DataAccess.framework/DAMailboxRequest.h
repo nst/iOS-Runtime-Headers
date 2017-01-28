@@ -25,6 +25,6 @@
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
-- (BOOL)mf_alwaysReportFailures;
+- (bool)mf_alwaysReportFailures;
 
 @end

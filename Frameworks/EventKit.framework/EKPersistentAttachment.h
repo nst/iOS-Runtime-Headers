@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *fileFormat;
 @property (nonatomic, copy) NSString *fileName;
 @property (nonatomic, copy) NSNumber *fileSize;
-@property (nonatomic, readonly) BOOL isBinary;
+@property (nonatomic, readonly) bool isBinary;
 @property (nonatomic, copy) NSURL *localURL;
 
 + (id)relations;
@@ -26,13 +26,13 @@
 - (id)fileFormat;
 - (id)fileName;
 - (id)fileSize;
-- (BOOL)isBinary;
+- (bool)isBinary;
 - (id)localURL;
 - (void)setExternalId:(id)arg1;
 - (void)setFileFormat:(id)arg1;
 - (void)setFileName:(id)arg1;
 - (void)setFileSize:(id)arg1;
-- (void)setIsBinary:(BOOL)arg1;
+- (void)setIsBinary:(bool)arg1;
 - (void)setLocalURL:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setXProperties:(id)arg1;

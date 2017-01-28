@@ -3,7 +3,7 @@
  */
 
 @interface TSDHobbyPathGenerator : NSObject {
-    BOOL  mClosed;
+    bool  mClosed;
     struct vector<CGPoint, std::__1::allocator<CGPoint> > { struct CGPoint {} *x1; struct CGPoint {} *x2; struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint> > { struct CGPoint {} *x_3_1_1; } x3; } * mMorphedPoints;
     struct vector<CGPoint, std::__1::allocator<CGPoint> > { struct CGPoint {} *x1; struct CGPoint {} *x2; struct __compressed_pair<CGPoint *, std::__1::allocator<CGPoint> > { struct CGPoint {} *x_3_1_1; } x3; } * mPoints;
 }
@@ -17,10 +17,10 @@
 - (void)calculateClosings;
 - (id)calculateHobbyPath;
 - (void)dealloc;
-- (float)distanceForSegment:(unsigned int)arg1 overRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 furthestNode:(unsigned int*)arg3 inSubpath:(id)arg4;
+- (double)distanceForSegment:(unsigned long long)arg1 overRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 furthestNode:(unsigned long long*)arg3 inSubpath:(id)arg4;
 - (id)hobbyPathFrom:(id)arg1 morphedPath:(id*)arg2;
 - (id)init;
 - (void)morphPointsTo:(id)arg1;
-- (BOOL)pathWillClose:(id)arg1;
+- (bool)pathWillClose:(id)arg1;
 
 @end

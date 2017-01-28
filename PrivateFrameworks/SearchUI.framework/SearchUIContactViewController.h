@@ -8,6 +8,6 @@
 + (id)viewControllerForUnknownContact:(id)arg1;
 
 - (void)dealloc;
-- (unsigned int)edgesForExtendedLayout;
+- (unsigned long long)edgesForExtendedLayout;
 
 @end

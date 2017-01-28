@@ -4,6 +4,6 @@
 
 @interface PKPaymentRegistrationUtilities : NSObject
 
-+ (void)registrationIsSupportedInCurrentRegionWithWebService:(id)arg1 completion:(id /* block */)arg2;
++ (void)registrationIsSupportedInCurrentRegionWithWebService:(id)arg1 completion:(id)arg2;
 
 @end

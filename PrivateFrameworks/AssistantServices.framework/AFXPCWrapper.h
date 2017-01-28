@@ -6,7 +6,7 @@
     NSObject<OS_xpc_object> * _xpcObject;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

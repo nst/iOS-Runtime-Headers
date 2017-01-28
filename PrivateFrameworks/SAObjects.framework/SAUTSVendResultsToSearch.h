@@ -12,7 +12,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setShelves:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)shelves;

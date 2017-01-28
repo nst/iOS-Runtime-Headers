@@ -20,13 +20,13 @@
 @property (nonatomic, retain) SGRealtimeEvent *realtimeEvent;
 
 + (id)actionButtonTitleForEvent:(id)arg1;
-+ (float)bottomMarginConstant;
++ (double)bottomMarginConstant;
 + (id)buttonTitleFont;
 + (id)descriptionFont;
-+ (float)interLabelAndButtonBaselineDeltaConstant;
-+ (float)interLabelBaselineDeltaConstant;
++ (double)interLabelAndButtonBaselineDeltaConstant;
++ (double)interLabelBaselineDeltaConstant;
 + (id)titleFont;
-+ (float)topMarginConstant;
++ (double)topMarginConstant;
 
 - (void).cxx_destruct;
 - (void)_addUpdateButtonTapped:(id)arg1;
@@ -35,7 +35,7 @@
 - (void)_setLabelAndButtonFonts;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)realtimeEvent;
 - (void)setDelegate:(id)arg1;
 - (void)setRealtimeEvent:(id)arg1;

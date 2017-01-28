@@ -15,12 +15,12 @@
 + (id)plainDescriptionBuilder;
 + (id)plainMultiLineDescriptionBuilder;
 
-- (void)appendName:(id)arg1 boolValue:(BOOL)arg2;
-- (void)appendName:(id)arg1 integerValue:(int)arg2;
+- (void)appendName:(id)arg1 boolValue:(bool)arg2;
+- (void)appendName:(id)arg1 integerValue:(long long)arg2;
 - (void)appendName:(id)arg1 object:(id)arg2;
 - (id)build;
 - (void)dealloc;
-- (id)initWithObject:(id)arg1 style:(int)arg2;
+- (id)initWithObject:(id)arg1 style:(long long)arg2;
 - (id)separator;
 - (void)setSeparator:(id)arg1;
 

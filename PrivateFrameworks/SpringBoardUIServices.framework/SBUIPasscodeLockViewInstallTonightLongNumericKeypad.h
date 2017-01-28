@@ -11,7 +11,7 @@
 - (void)_layoutStatusView;
 - (void)_remindMeLaterButtonHit;
 - (void)_sizeLabel:(id)arg1;
-- (id)initWithLightStyle:(BOOL)arg1;
+- (id)initWithLightStyle:(bool)arg1;
 - (void)passcodeEntryFieldTextDidChange:(id)arg1;
 
 @end

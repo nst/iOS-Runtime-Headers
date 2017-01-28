@@ -6,19 +6,19 @@
     NSArray * _INIntentClassNames;
     NSArray * _bundleIDs;
     NSArray * _contentTypes;
-    BOOL  _wantsIndexUpdates;
-    BOOL  _wantsInteractions;
-    BOOL  _wantsUAs;
+    bool  _wantsIndexUpdates;
+    bool  _wantsInteractions;
+    bool  _wantsUAs;
 }
 
 @property (nonatomic, retain) NSArray *INIntentClassNames;
 @property (nonatomic, retain) NSArray *bundleIDs;
 @property (nonatomic, retain) NSArray *contentTypes;
-@property (nonatomic) BOOL wantsIndexUpdates;
-@property (nonatomic) BOOL wantsInteractions;
-@property (nonatomic) BOOL wantsUAs;
+@property (nonatomic) bool wantsIndexUpdates;
+@property (nonatomic) bool wantsInteractions;
+@property (nonatomic) bool wantsUAs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)INIntentClassNames;
@@ -29,11 +29,11 @@
 - (void)setBundleIDs:(id)arg1;
 - (void)setContentTypes:(id)arg1;
 - (void)setINIntentClassNames:(id)arg1;
-- (void)setWantsIndexUpdates:(BOOL)arg1;
-- (void)setWantsInteractions:(BOOL)arg1;
-- (void)setWantsUAs:(BOOL)arg1;
-- (BOOL)wantsIndexUpdates;
-- (BOOL)wantsInteractions;
-- (BOOL)wantsUAs;
+- (void)setWantsIndexUpdates:(bool)arg1;
+- (void)setWantsInteractions:(bool)arg1;
+- (void)setWantsUAs:(bool)arg1;
+- (bool)wantsIndexUpdates;
+- (bool)wantsInteractions;
+- (bool)wantsUAs;
 
 @end

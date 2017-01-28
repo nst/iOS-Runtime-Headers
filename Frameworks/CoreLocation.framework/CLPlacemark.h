@@ -29,7 +29,7 @@
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
 + (id)placemarkWithGEOMapItem:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)ISOcountryCode;
 - (id)_geoMapItem;
@@ -68,15 +68,15 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
-+ (id)commonPresentationStringWithPlacemarks:(id)arg1 options:(unsigned int*)arg2;
++ (id)commonPresentationStringWithPlacemarks:(id)arg1 options:(unsigned long long*)arg2;
 + (id)placemarkFromLitePlacemark:(id)arg1;
-+ (unsigned int)presentationOptionsForPlacemarks:(id)arg1;
-+ (id)presentationStringForPlacemarks:(id)arg1 options:(unsigned int)arg2;
++ (unsigned long long)presentationOptionsForPlacemarks:(id)arg1;
++ (id)presentationStringForPlacemarks:(id)arg1 options:(unsigned long long)arg2;
 
 - (id)administrativeAreaCode;
 - (id)fullAdministrativeArea;
-- (BOOL)isEqualToPlacemark:(id)arg1;
-- (id)presentationString:(unsigned int*)arg1;
+- (bool)isEqualToPlacemark:(id)arg1;
+- (id)presentationString:(unsigned long long*)arg1;
 - (id)timeZone;
 
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore

@@ -19,8 +19,8 @@
 @property (nonatomic) int contentTypeMinorVersion;
 @property (nonatomic) int contentTypePatchVersion;
 @property (nonatomic) int contentTypeVersion;
-@property (nonatomic) BOOL hasContentTypeMinorVersion;
-@property (nonatomic) BOOL hasContentTypePatchVersion;
+@property (nonatomic) bool hasContentTypeMinorVersion;
+@property (nonatomic) bool hasContentTypePatchVersion;
 
 - (void).cxx_destruct;
 - (id)content;
@@ -31,19 +31,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContentTypeMinorVersion;
-- (BOOL)hasContentTypePatchVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContentTypeMinorVersion;
+- (bool)hasContentTypePatchVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setContent:(id)arg1;
 - (void)setContentType:(int)arg1;
 - (void)setContentTypeMinorVersion:(int)arg1;
 - (void)setContentTypePatchVersion:(int)arg1;
 - (void)setContentTypeVersion:(int)arg1;
-- (void)setHasContentTypeMinorVersion:(BOOL)arg1;
-- (void)setHasContentTypePatchVersion:(BOOL)arg1;
+- (void)setHasContentTypeMinorVersion:(bool)arg1;
+- (void)setHasContentTypePatchVersion:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

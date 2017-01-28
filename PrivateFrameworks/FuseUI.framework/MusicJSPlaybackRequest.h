@@ -7,18 +7,18 @@
     NSString * _featureName;
     NSArray * _items;
     NSData * _recommendationData;
-    unsigned int  _shuffleMode;
-    unsigned int  _startIndex;
-    unsigned int  _upNextAction;
+    unsigned long long  _shuffleMode;
+    unsigned long long  _startIndex;
+    unsigned long long  _upNextAction;
 }
 
 @property (nonatomic, readonly) MusicStoreItemMetadataContext *containerItem;
 @property (nonatomic, readonly, copy) NSString *featureName;
 @property (nonatomic, readonly, copy) NSArray *items;
 @property (nonatomic, readonly, copy) NSData *recommendationData;
-@property (nonatomic, readonly) unsigned int shuffleMode;
-@property (nonatomic, readonly) unsigned int startIndex;
-@property (nonatomic, readonly) unsigned int upNextAction;
+@property (nonatomic, readonly) unsigned long long shuffleMode;
+@property (nonatomic, readonly) unsigned long long startIndex;
+@property (nonatomic, readonly) unsigned long long upNextAction;
 
 - (void).cxx_destruct;
 - (id)containerItem;
@@ -27,8 +27,8 @@
 - (id)initWithJSDictionary:(id)arg1;
 - (id)items;
 - (id)recommendationData;
-- (unsigned int)shuffleMode;
-- (unsigned int)startIndex;
-- (unsigned int)upNextAction;
+- (unsigned long long)shuffleMode;
+- (unsigned long long)startIndex;
+- (unsigned long long)upNextAction;
 
 @end

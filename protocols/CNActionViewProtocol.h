@@ -5,6 +5,6 @@
 
 @required
 
-- (void)didPressActionView:(CNActionView *)arg1 longPress:(BOOL)arg2;
+- (void)didPressActionView:(CNActionView *)arg1 longPress:(bool)arg2;
 
 @end

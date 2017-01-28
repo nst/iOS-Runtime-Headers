@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSDictionary *controlItemsByIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HFHomeKitObject> *homeKitObject;
 @property (nonatomic, retain) HFIncrementalStateControlItem *incrementalStateControlItem;
 @property (nonatomic, retain) HFPrimaryStateControlItem *primaryStateControlItem;
@@ -28,14 +28,14 @@
 
 - (void).cxx_destruct;
 - (id)_aggregatedValueSource;
-- (unsigned int)_effectiveLoadingStateForSuggestedLoadingState:(unsigned int)arg1;
+- (unsigned long long)_effectiveLoadingStateForSuggestedLoadingState:(unsigned long long)arg1;
 - (id)_initForCopyWithValueSource:(id)arg1 service:(id)arg2 controlItemsByIdentifier:(id)arg3;
 - (void)_setupControlItems;
 - (void)_setupControlItemsWithControlItemsByIdentifier:(id)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)accessories;
 - (id)allControlItems;
-- (BOOL)containsActionableCharacteristics;
+- (bool)containsActionableCharacteristics;
 - (id)controlDescriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)controlItemsByIdentifier;
 - (id)controlPanelItemWithControlIdentifiers:(id)arg1 displayResults:(id)arg2;
@@ -48,7 +48,7 @@
 - (id)descriptionForCharacteristic:(id)arg1 withValue:(id)arg2;
 - (id)homeKitObject;
 - (id)incrementalStateControlItem;
-- (id)incrementalStateIconDescriptorForPrimaryState:(int)arg1 incrementalValue:(id)arg2;
+- (id)incrementalStateIconDescriptorForPrimaryState:(long long)arg1 incrementalValue:(id)arg2;
 - (id)init;
 - (id)initWithValueSource:(id)arg1 service:(id)arg2;
 - (id)primaryStateControlItem;
@@ -61,7 +61,7 @@
 - (void)setIncrementalStateControlItem:(id)arg1;
 - (void)setPrimaryStateControlItem:(id)arg1;
 - (id)standardResultsWithDisplayMetadata:(id)arg1 readCharacteristics:(id)arg2 updateOptions:(id)arg3;
-- (BOOL)supportsControlWithCharacteristicTypes:(id)arg1;
+- (bool)supportsControlWithCharacteristicTypes:(id)arg1;
 - (id)updateWithOptions:(id)arg1;
 - (id)valueSource;
 

@@ -3,32 +3,32 @@
  */
 
 @interface CCUIBluetoothSetting : CCUISettingModule {
-    BOOL  _bluetoothEnabled;
+    bool  _bluetoothEnabled;
 }
 
-@property (getter=_isBluetoothEnabled, setter=_setBluetoothEnabled:, nonatomic) BOOL bluetoothEnabled;
+@property (getter=_isBluetoothEnabled, setter=_setBluetoothEnabled:, nonatomic) bool bluetoothEnabled;
 
 + (id)displayName;
 + (id)identifier;
 + (id)statusOffString;
 + (id)statusOnString;
 
-- (BOOL)_isBluetoothEnabled;
-- (BOOL)_isStateOverridden;
-- (void)_setBluetoothEnabled:(BOOL)arg1;
-- (BOOL)_stateWithEffectiveOverrides;
-- (BOOL)_toggleState;
+- (bool)_isBluetoothEnabled;
+- (bool)_isStateOverridden;
+- (void)_setBluetoothEnabled:(bool)arg1;
+- (bool)_stateWithEffectiveOverrides;
+- (bool)_toggleState;
 - (void)_updateState;
 - (void)activate;
 - (id)aggdKey;
 - (id)confirmationAlertMessage;
 - (id)confirmationAlertTitle;
-- (void)confirmed:(BOOL)arg1;
+- (void)confirmed:(bool)arg1;
 - (void)deactivate;
 - (void)dealloc;
 - (id)glyphImageForState:(int)arg1;
-- (BOOL)isRestricted;
-- (BOOL)needsConfirmation;
+- (bool)isRestricted;
+- (bool)needsConfirmation;
 - (id)selectedStateColor;
 
 @end

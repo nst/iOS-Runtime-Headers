@@ -21,12 +21,12 @@
 }
 
 - (id).cxx_construct;
-- (void)blurParametersFromQuality:(float)arg1 shadowSize:(int*)arg2 numPasses:(int*)arg3 kernelScale:(float*)arg4;
+- (void)blurParametersFromQuality:(float)arg1 shadowSize:(long long*)arg2 numPasses:(long long*)arg3 kernelScale:(float*)arg4;
 - (float)blurSlackForQuality:(float)arg1;
 - (void)dealloc;
 - (id)initWithBlurParametersArray:(id)arg1;
 - (void)invalidate;
-- (void)protectShadowForQuality:(float)arg1 pipeline:(id)arg2 renderBlock:(id /* block */)arg3;
+- (void)protectShadowForQuality:(float)arg1 pipeline:(id)arg2 renderBlock:(id)arg3;
 - (id)shadowsFBOForContext:(id)arg1;
 - (void)unprotectShadowInSession:(id)arg1;
 

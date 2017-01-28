@@ -4,22 +4,22 @@
 
 @interface IDSSocketPairOTRMessage : IDSSocketPairMessage {
     NSData * _data;
-    BOOL  _encrypted;
-    unsigned int  _offset;
+    bool  _encrypted;
+    unsigned long long  _offset;
     unsigned short  _priority;
     unsigned char  _protectionClass;
     unsigned int  _sequenceNumber;
-    BOOL  _shouldEncrypt;
+    bool  _shouldEncrypt;
     unsigned short  _streamID;
     unsigned char  _versionNumber;
 }
 
 @property (nonatomic, readonly, retain) NSData *data;
-@property (nonatomic, readonly) BOOL encrypted;
+@property (nonatomic, readonly) bool encrypted;
 @property (nonatomic, readonly) unsigned short priority;
 @property (nonatomic, readonly) unsigned char protectionClass;
 @property (nonatomic, readonly) unsigned int sequenceNumber;
-@property (nonatomic, readonly) BOOL shouldEncrypt;
+@property (nonatomic, readonly) bool shouldEncrypt;
 @property (nonatomic) unsigned short streamID;
 @property (nonatomic, readonly) unsigned char versionNumber;
 
@@ -28,14 +28,14 @@
 - (id)data;
 - (void)dealloc;
 - (id)description;
-- (BOOL)encrypted;
+- (bool)encrypted;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
-- (id)initWithVersion:(unsigned char)arg1 encrypted:(BOOL)arg2 shouldEncrypt:(BOOL)arg3 protectionClass:(unsigned char)arg4 streamID:(unsigned short)arg5 priority:(unsigned short)arg6 sequenceNumber:(unsigned int)arg7 data:(id)arg8;
+- (id)initWithVersion:(unsigned char)arg1 encrypted:(bool)arg2 shouldEncrypt:(bool)arg3 protectionClass:(unsigned char)arg4 streamID:(unsigned short)arg5 priority:(unsigned short)arg6 sequenceNumber:(unsigned int)arg7 data:(id)arg8;
 - (unsigned short)priority;
 - (unsigned char)protectionClass;
 - (unsigned int)sequenceNumber;
 - (void)setStreamID:(unsigned short)arg1;
-- (BOOL)shouldEncrypt;
+- (bool)shouldEncrypt;
 - (unsigned short)streamID;
 - (unsigned char)versionNumber;
 

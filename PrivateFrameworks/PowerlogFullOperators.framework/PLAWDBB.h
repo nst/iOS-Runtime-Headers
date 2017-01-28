@@ -155,8 +155,8 @@
 - (void)submitAppBB:(id)arg1 withAwdConn:(id)arg2;
 - (void)submitAppRrc:(id)arg1 withAwdConn:(id)arg2;
 - (void)submitBBLqm:(id)arg1 withAwdConn:(id)arg2;
-- (BOOL)submitConnectedPower:(id)arg1 withAwdConn:(id)arg2;
-- (BOOL)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
+- (bool)submitConnectedPower:(id)arg1 withAwdConn:(id)arg2;
+- (bool)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
 - (short)telActivityState;
 - (id)unhandledRFLTEEntries;
 - (unsigned int)upBytes;

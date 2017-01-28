@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *exposedServices;
 @property (nonatomic, readonly) NSArray *filteredServices;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
@@ -29,7 +29,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)logCategory;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_encodeWithCoder:(id)arg1;

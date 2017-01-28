@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) CNContactPickerHostViewController *viewController;
 
@@ -17,12 +17,12 @@
 
 - (void).cxx_destruct;
 - (id)_derivedExtensionAuxiliaryHostProtocol;
-- (void)invalidateSelectionAnimated:(BOOL)arg1;
+- (void)invalidateSelectionAnimated:(bool)arg1;
 - (void)pickerDidCancel;
 - (void)pickerDidSelectContact:(id)arg1 property:(id)arg2;
 - (void)pickerDidSelectContacts:(id)arg1 properties:(id)arg2;
 - (void)setViewController:(id)arg1;
-- (void)setupWithOptions:(id)arg1 readyBlock:(id /* block */)arg2;
+- (void)setupWithOptions:(id)arg1 readyBlock:(id)arg2;
 - (id)viewController;
 
 @end

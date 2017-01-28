@@ -3,25 +3,25 @@
  */
 
 @interface FMFWildcardGestureRecognizer : UIGestureRecognizer {
-    id /* block */  _touchesBeganCallback;
-    id /* block */  _touchesEndedCallback;
+    id  _touchesBeganCallback;
+    id  _touchesEndedCallback;
 }
 
-@property (nonatomic, copy) id /* block */ touchesBeganCallback;
-@property (nonatomic, copy) id /* block */ touchesEndedCallback;
+@property (nonatomic, copy) id touchesBeganCallback;
+@property (nonatomic, copy) id touchesEndedCallback;
 
 - (void).cxx_destruct;
-- (BOOL)canPreventGestureRecognizer:(id)arg1;
+- (bool)canPreventGestureRecognizer:(id)arg1;
 - (void)ignoreTouch:(id)arg1 forEvent:(id)arg2;
 - (id)init;
 - (void)reset;
-- (void)setTouchesBeganCallback:(id /* block */)arg1;
-- (void)setTouchesEndedCallback:(id /* block */)arg1;
+- (void)setTouchesBeganCallback:(id)arg1;
+- (void)setTouchesEndedCallback:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (id /* block */)touchesBeganCallback;
+- (id)touchesBeganCallback;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
-- (id /* block */)touchesEndedCallback;
+- (id)touchesEndedCallback;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 
 @end

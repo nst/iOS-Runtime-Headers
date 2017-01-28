@@ -12,10 +12,10 @@
     unsigned long long * _rleTagPtr;
 }
 
-+ (struct __MDPlistBytes { }*)createArrayPlistBytesUsingBlock:(id /* block */)arg1;
-+ (struct __MDPlistBytes { }*)createDictionaryPlistBytesUsingBlock:(id /* block */)arg1;
++ (struct __MDPlistBytes { }*)createArrayPlistBytesUsingBlock:(id)arg1;
++ (struct __MDPlistBytes { }*)createDictionaryPlistBytesUsingBlock:(id)arg1;
 
-- (id)initWithCapacity:(unsigned int)arg1;
-- (id)initWithCapacity:(unsigned int)arg1 useMalloc:(bool)arg2;
+- (id)initWithCapacity:(unsigned long long)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1 useMalloc:(bool)arg2;
 
 @end

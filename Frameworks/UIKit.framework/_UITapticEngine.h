@@ -3,22 +3,22 @@
  */
 
 @interface _UITapticEngine : NSObject {
-    BOOL  _feedbackActivated;
+    bool  _feedbackActivated;
     _UIFeedbackStatesBehavior * _feedbackBehavior;
 }
 
-@property (nonatomic) BOOL feedbackActivated;
+@property (nonatomic) bool feedbackActivated;
 @property (nonatomic, retain) _UIFeedbackStatesBehavior *feedbackBehavior;
 
 - (void).cxx_destruct;
-- (id)_stateForFeedback:(int)arg1;
-- (void)actuateFeedback:(int)arg1;
-- (void)endUsingFeedback:(int)arg1;
-- (BOOL)feedbackActivated;
+- (id)_stateForFeedback:(long long)arg1;
+- (void)actuateFeedback:(long long)arg1;
+- (void)endUsingFeedback:(long long)arg1;
+- (bool)feedbackActivated;
 - (id)feedbackBehavior;
 - (id)init;
-- (void)prepareUsingFeedback:(int)arg1;
-- (void)setFeedbackActivated:(BOOL)arg1;
+- (void)prepareUsingFeedback:(long long)arg1;
+- (void)setFeedbackActivated:(bool)arg1;
 - (void)setFeedbackBehavior:(id)arg1;
 
 @end

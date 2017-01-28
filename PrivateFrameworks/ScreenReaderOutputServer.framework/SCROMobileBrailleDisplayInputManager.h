@@ -12,7 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedManager;
@@ -21,16 +21,16 @@
 - (id)_commandsFromBrailleInputMode:(int)arg1;
 - (id)_eightDotCommands;
 - (id)_sixDotCommands;
-- (id)buttonNamesAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
-- (id)buttonNamesForInputIdentifier:(id)arg1 forDisplayWithToken:(long)arg2;
-- (id)commandAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
+- (id)buttonNamesAtIndex:(unsigned long long)arg1 forDisplayWithToken:(int)arg2;
+- (id)buttonNamesForInputIdentifier:(id)arg1 forDisplayWithToken:(int)arg2;
+- (id)commandAtIndex:(unsigned long long)arg1 forDisplayWithToken:(int)arg2;
 - (id)commandForBrailleKey:(id)arg1;
 - (void)configureWithDriverConfiguration:(id)arg1;
-- (unsigned int)countForDisplayWithToken:(long)arg1;
+- (unsigned long long)countForDisplayWithToken:(int)arg1;
 - (void)dealloc;
-- (id)driverIdentifierForDisplayWithToken:(long)arg1;
+- (id)driverIdentifierForDisplayWithToken:(int)arg1;
 - (id)init;
-- (id)inputIdentifierAtIndex:(unsigned int)arg1 forDisplayWithToken:(long)arg2;
-- (id)modelIdentifierForDisplayWithToken:(long)arg1;
+- (id)inputIdentifierAtIndex:(unsigned long long)arg1 forDisplayWithToken:(int)arg2;
+- (id)modelIdentifierForDisplayWithToken:(int)arg1;
 
 @end

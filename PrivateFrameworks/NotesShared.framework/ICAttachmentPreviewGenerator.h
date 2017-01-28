@@ -9,11 +9,11 @@
     NSMutableDictionary * _attachmentIDsProgress;
     NSOperationQueue * _costlyGeneratorQueue;
     NSOperationQueue * _generatorQueue;
-    unsigned int  _previewGenerationState;
+    unsigned long long  _previewGenerationState;
     NSObject<OS_dispatch_queue> * _previewQueue;
     ICProgressIndicatorTracker * _progressTracker;
-    BOOL  _shouldGenerateAttachmentsWhenReachable;
-    int  _suspendCount;
+    bool  _shouldGenerateAttachmentsWhenReachable;
+    long long  _suspendCount;
 }
 
 @property (nonatomic, retain) NSOperationQueue *asyncGeneratorQueue;
@@ -24,13 +24,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSOperationQueue *generatorQueue;
-@property (readonly) unsigned int hash;
-@property unsigned int previewGenerationState;
+@property (readonly) unsigned long long hash;
+@property unsigned long long previewGenerationState;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *previewQueue;
 @property (nonatomic, retain) ICProgressIndicatorTracker *progressTracker;
-@property (nonatomic) BOOL shouldGenerateAttachmentsWhenReachable;
+@property (nonatomic) bool shouldGenerateAttachmentsWhenReachable;
 @property (readonly) Class superclass;
-@property (nonatomic) int suspendCount;
+@property (nonatomic) long long suspendCount;
 
 + (id)sharedGenerator;
 
@@ -51,11 +51,11 @@
 - (void)generatePreviewsIfNeeded;
 - (id)generatorQueue;
 - (id)init;
-- (BOOL)isPreviewGenerationSupported;
+- (bool)isPreviewGenerationSupported;
 - (void)managedObjectContextDidSave:(id)arg1;
 - (void)mediaDidLoad:(id)arg1;
 - (void)operationComplete:(id)arg1;
-- (unsigned int)previewGenerationState;
+- (unsigned long long)previewGenerationState;
 - (id)previewQueue;
 - (id)progressForObjectID:(id)arg1;
 - (void)progressIndicatorTrackerStartAnimation;
@@ -69,15 +69,15 @@
 - (void)setAttachmentIDsProgress:(id)arg1;
 - (void)setCostlyGeneratorQueue:(id)arg1;
 - (void)setGeneratorQueue:(id)arg1;
-- (void)setPreviewGenerationState:(unsigned int)arg1;
+- (void)setPreviewGenerationState:(unsigned long long)arg1;
 - (void)setPreviewQueue:(id)arg1;
 - (void)setProgress:(id)arg1 forObjectID:(id)arg2;
 - (void)setProgressTracker:(id)arg1;
-- (void)setShouldGenerateAttachmentsWhenReachable:(BOOL)arg1;
-- (void)setSuspendCount:(int)arg1;
+- (void)setShouldGenerateAttachmentsWhenReachable:(bool)arg1;
+- (void)setSuspendCount:(long long)arg1;
 - (void)setupAttachmentPreviewGeneratorObservers;
-- (BOOL)shouldGenerateAttachmentsWhenReachable;
+- (bool)shouldGenerateAttachmentsWhenReachable;
 - (void)suspend;
-- (int)suspendCount;
+- (long long)suspendCount;
 
 @end

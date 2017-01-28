@@ -3,22 +3,22 @@
  */
 
 @interface _HKSampleTypeQuery : HKQuery {
-    id /* block */  _resultsHandler;
+    id  _resultsHandler;
 }
 
-@property (copy) id /* block */ resultsHandler;
+@property (copy) id resultsHandler;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
-- (id /* block */)_queue_errorHandler;
-- (BOOL)_requiresValidSampleType;
+- (id)_queue_errorHandler;
+- (bool)_requiresValidSampleType;
 - (void)deliverSampleTypes:(id)arg1 forQuery:(id)arg2;
-- (id)initWithPredicate:(id)arg1 resultsHandler:(id /* block */)arg2;
-- (id /* block */)resultsHandler;
-- (void)setResultsHandler:(id /* block */)arg1;
+- (id)initWithPredicate:(id)arg1 resultsHandler:(id)arg2;
+- (id)resultsHandler;
+- (void)setResultsHandler:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

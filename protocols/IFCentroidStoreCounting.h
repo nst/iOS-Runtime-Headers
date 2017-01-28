@@ -5,12 +5,12 @@
 
 @required
 
-- (unsigned int)documentCount;
-- (unsigned int)documentCountContainsFeatureLike:(IFFeatureMatch *)arg1;
-- (unsigned int)featureCount;
+- (unsigned long long)documentCount;
+- (unsigned long long)documentCountContainsFeatureLike:(IFFeatureMatch *)arg1;
+- (unsigned long long)featureCount;
 - (IFFeature *)leastFrequentFeature;
-- (unsigned int)leastFrequentFeatureCount;
+- (unsigned long long)leastFrequentFeatureCount;
 - (IFFeature *)mostFrequentFeature;
-- (unsigned int)mostFrequentFeatureCount;
+- (unsigned long long)mostFrequentFeatureCount;
 
 @end

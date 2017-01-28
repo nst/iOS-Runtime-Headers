@@ -6,11 +6,11 @@
     double  _consecutiveValidCourseCount;
     int  _detectedTransportType;
     MNETAManager * _etaManager;
-    BOOL  _exitedVehicle;
+    bool  _exitedVehicle;
     double  _lastKnownCourse;
     MNTrafficIncidentAlertUpdater * _trafficIncidentAlertUpdater;
     MNTunnelLocationProjector * _tunnelLocationProjector;
-    unsigned int  _vehicleExitConfidence;
+    unsigned long long  _vehicleExitConfidence;
     struct { 
         double latitude; 
         double longitude; 
@@ -19,12 +19,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_allowSwitchToTransportType:(int)arg1 forLocation:(id)arg2;
-- (BOOL)_checkArrivalForLocation:(id)arg1;
+- (bool)_allowSwitchToTransportType:(int)arg1 forLocation:(id)arg2;
+- (bool)_checkArrivalForLocation:(id)arg1;
 - (id)_contingentRouteForRouteSet:(id)arg1 forLocation:(id)arg2;
 - (int)_detectedMotionForLocation:(id)arg1;
 - (id)_lazyContingentRouteForRouteSet:(id)arg1 forLocation:(id)arg2;
@@ -44,12 +44,12 @@
 - (void)etaManagerUpdatedETATime:(id)arg1;
 - (void)etaManagerUpdatedTrafficIncidents:(id)arg1;
 - (id)initWithNavigationSession:(id)arg1;
-- (BOOL)shouldProjectAlongRoute;
+- (bool)shouldProjectAlongRoute;
 - (void)startTracking;
 - (void)stopTracking;
 - (void)trafficIncidentAlertUpdater:(id)arg1 didSwitchToNewRoute:(id)arg2;
 - (void)trafficIncidentAlertUpdater:(id)arg1 invalidatedAlert:(id)arg2;
-- (void)trafficIncidentAlertUpdater:(id)arg1 receivedAlert:(id)arg2 responseCallback:(id /* block */)arg3;
+- (void)trafficIncidentAlertUpdater:(id)arg1 receivedAlert:(id)arg2 responseCallback:(id)arg3;
 - (void)trafficIncidentAlertUpdater:(id)arg1 updatedAlert:(id)arg2;
 - (double)trafficIncidentAlertUpdaterRemainingTimeOnRoute:(id)arg1;
 - (double)trafficIncidentAlertUpdaterTimeSinceLastAnnouncement:(id)arg1;

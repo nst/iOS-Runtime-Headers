@@ -24,11 +24,11 @@
 - (id)allCharacteristics;
 - (id)contextProvider;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)didReadValueForCharacteristicType:(id)arg1;
+- (bool)didReadValueForCharacteristicType:(id)arg1;
 - (id)errorForCharacteristicType:(id)arg1;
 - (id)errorsByCharacteristicType;
-- (BOOL)hasAnyErrors;
-- (BOOL)hasErrorForEveryCharacteristic;
+- (bool)hasAnyErrors;
+- (bool)hasErrorForEveryCharacteristic;
 - (id)init;
 - (void)setContextProvider:(id)arg1;
 - (id)valueForCharacteristicType:(id)arg1;

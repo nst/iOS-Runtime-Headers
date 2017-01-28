@@ -4,13 +4,13 @@
 
 @interface TSCH3DChartStagedAxisScene : TSCH3DChartScene
 
-+ (BOOL)supportsValueAxisLabelAlignmentCaching;
++ (bool)supportsValueAxisLabelAlignmentCaching;
 
 - (void)addChartTitlesToScene;
 - (void)addGridlinesToScene;
 - (void)addLabelsToScene;
 - (void)addObjectsToScene;
-- (void)addPartsForEnumerator:(id)arg1 styleIndex:(unsigned int)arg2;
+- (void)addPartsForEnumerator:(id)arg1 styleIndex:(unsigned long long)arg2;
 - (void)addSageBoundsToScene;
 
 @end

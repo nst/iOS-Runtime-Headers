@@ -3,19 +3,19 @@
  */
 
 @interface VTStateManager : NSObject <VTGestureMonitorDelegate> {
-    id /* block */  _callbackWithMessageAndTimestamp;
+    id  _callbackWithMessageAndTimestamp;
     VTPolicy * _enablePolicy;
     VTGestureMonitor * _gestureMonitor;
     VTPhraseSpotter * _phraseSpotter;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _voiceTriggerIsEnabled;
+    bool  _voiceTriggerIsEnabled;
     unsigned long long  _wakeGestureHostTime;
     VTXPCServiceServer * _xpcServer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_serviceClient;
@@ -24,25 +24,25 @@
 + (id)firstChanceTriggeredDate;
 + (id)firstChanceVTEventInfo;
 + (long long)getVoiceTriggerCount;
-+ (BOOL)isLastTriggerForced;
-+ (BOOL)isLastTriggerSecondChanceTriggered;
++ (bool)isLastTriggerForced;
++ (bool)isLastTriggerSecondChanceTriggered;
 + (void)notifyVoiceTriggeredSiriSessionCancelled;
 + (void)requestForcedSecondChance;
 + (void)requestForcedTriggerEvent;
-+ (void)requestPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
-+ (void)requestVoiceTriggerEnabled:(BOOL)arg1 forReason:(id)arg2;
++ (void)requestPhraseSpotterBypassing:(bool)arg1 timeout:(double)arg2;
++ (void)requestVoiceTriggerEnabled:(bool)arg1 forReason:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_initializeXPCService;
-- (void)_notifyStateTransitionToState:(int)arg1 withStartTimestamp:(unsigned long long)arg2;
+- (void)_notifyStateTransitionToState:(long long)arg1 withStartTimestamp:(unsigned long long)arg2;
 - (void)_powerlog:(id)arg1;
-- (void)_stateTransitionDidOccur:(BOOL)arg1;
+- (void)_stateTransitionDidOccur:(bool)arg1;
 - (void)gestureMonitorDidReceiveSleepGesture:(id)arg1;
 - (void)gestureMonitorDidReceiveWakeGesture:(id)arg1;
 - (id)getModel;
 - (id)getPhraseSpotter;
-- (id)initWithProperty:(id)arg1 callbackWithMessage:(id /* block */)arg2;
-- (id)initWithProperty:(id)arg1 callbackWithMessageAndTimestamp:(id /* block */)arg2;
-- (id)initWithProperty:(id)arg1 phraseSpotter:(id)arg2 enablePolicy:(id)arg3 callbackWithMessageAndTimestamp:(id /* block */)arg4;
+- (id)initWithProperty:(id)arg1 callbackWithMessage:(id)arg2;
+- (id)initWithProperty:(id)arg1 callbackWithMessageAndTimestamp:(id)arg2;
+- (id)initWithProperty:(id)arg1 phraseSpotter:(id)arg2 enablePolicy:(id)arg3 callbackWithMessageAndTimestamp:(id)arg4;
 
 @end

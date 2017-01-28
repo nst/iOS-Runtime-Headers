@@ -3,37 +3,37 @@
  */
 
 @interface PHFaceGroup : PHObject {
-    int  _faceGroupType;
-    int  _personModelId;
-    int  _unnamedFaceCount;
+    long long  _faceGroupType;
+    long long  _personModelId;
+    long long  _unnamedFaceCount;
 }
 
-@property (nonatomic, readonly) int faceGroupType;
-@property (nonatomic) int personModelId;
-@property (nonatomic, readonly) int unnamedFaceCount;
+@property (nonatomic, readonly) long long faceGroupType;
+@property (nonatomic) long long personModelId;
+@property (nonatomic, readonly) long long unnamedFaceCount;
 
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchAlgorithmicFaceGroupsForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchAlgorithmicFaceGroupsWithOptions:(id)arg1;
-+ (id)fetchFaceGroupsWithFace:(id)arg1 type:(int)arg2 options:(id)arg3;
++ (id)fetchFaceGroupsWithFace:(id)arg1 type:(long long)arg2 options:(id)arg3;
 + (id)fetchFaceGroupsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchFaceGroupsWithOptions:(id)arg1;
-+ (id)fetchFaceGroupsWithType:(int)arg1 options:(id)arg2;
++ (id)fetchFaceGroupsWithType:(long long)arg1 options:(id)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchRejectedFaceGroupsForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchRejectedFaceGroupsWithOptions:(id)arg1;
 + (id)fetchType;
 + (id)identifierCode;
 + (id)managedEntityName;
-+ (id)propertiesToFetchWithHint:(unsigned int)arg1;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
 
 - (Class)changeRequestClass;
-- (int)faceGroupType;
-- (int)getPersonModelId;
-- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
-- (int)personModelId;
-- (void)setPersonModelId:(int)arg1;
-- (int)unnamedFaceCount;
+- (long long)faceGroupType;
+- (long long)getPersonModelId;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (long long)personModelId;
+- (void)setPersonModelId:(long long)arg1;
+- (long long)unnamedFaceCount;
 
 @end

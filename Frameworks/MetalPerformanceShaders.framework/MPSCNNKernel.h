@@ -6,46 +6,46 @@
     int  _checkFlags;
     struct { 
         struct { 
-            unsigned int x; 
-            unsigned int y; 
-            unsigned int z; 
+            unsigned long long x; 
+            unsigned long long y; 
+            unsigned long long z; 
         } origin; 
         struct { 
-            unsigned int width; 
-            unsigned int height; 
-            unsigned int depth; 
+            unsigned long long width; 
+            unsigned long long height; 
+            unsigned long long depth; 
         } size; 
     }  _clipRect;
-    unsigned int  _destinationFeatureChannelOffset;
-    unsigned int  _edgeMode;
+    unsigned long long  _destinationFeatureChannelOffset;
+    unsigned long long  _edgeMode;
     int (* _encode;
     void * _encodeData;
     struct { 
-        int x; 
-        int y; 
-        int z; 
+        long long x; 
+        long long y; 
+        long long z; 
     }  _offset;
-    unsigned int  destinationFeatureChannelOffset;
+    unsigned long long  destinationFeatureChannelOffset;
 }
 
-@property (nonatomic) struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; } clipRect;
-@property (nonatomic) unsigned int destinationFeatureChannelOffset;
-@property (nonatomic) unsigned int edgeMode;
-@property (nonatomic) struct { int x1; int x2; int x3; } offset;
+@property (nonatomic) struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; } clipRect;
+@property (nonatomic) unsigned long long destinationFeatureChannelOffset;
+@property (nonatomic) unsigned long long edgeMode;
+@property (nonatomic) struct { long long x1; long long x2; long long x3; } offset;
 
-- (struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })clipRect;
+- (struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; })clipRect;
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (id)debugDescription;
-- (unsigned int)destinationFeatureChannelOffset;
-- (unsigned int)edgeMode;
+- (unsigned long long)destinationFeatureChannelOffset;
+- (unsigned long long)edgeMode;
 - (void)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 destinationImage:(id)arg3;
 - (id)init;
 - (id)initWithDevice:(id)arg1;
-- (struct { int x1; int x2; int x3; })offset;
-- (void)setClipRect:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1;
-- (void)setDestinationFeatureChannelOffset:(unsigned int)arg1;
-- (void)setEdgeMode:(unsigned int)arg1;
-- (void)setOffset:(struct { int x1; int x2; int x3; })arg1;
-- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
+- (struct { long long x1; long long x2; long long x3; })offset;
+- (void)setClipRect:(struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; unsigned long long x_1_1_3; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; unsigned long long x_2_1_3; } x2; })arg1;
+- (void)setDestinationFeatureChannelOffset:(unsigned long long)arg1;
+- (void)setEdgeMode:(unsigned long long)arg1;
+- (void)setOffset:(struct { long long x1; long long x2; long long x3; })arg1;
+- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sourceRegionForDestinationSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
 
 @end

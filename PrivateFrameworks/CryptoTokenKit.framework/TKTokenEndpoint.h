@@ -3,7 +3,7 @@
  */
 
 @interface TKTokenEndpoint : NSObject {
-    int  _clientCount;
+    long long  _clientCount;
     NSObject<OS_xpc_object> * _listener;
     NSObject<OS_dispatch_queue> * _queue;
     NSMapTable * _sessionMap;
@@ -18,13 +18,13 @@
 
 - (void).cxx_destruct;
 - (void)acceptNewConnection:(id)arg1;
-- (void)addClientWithReplyNotification:(id /* block */)arg1;
+- (void)addClientWithReplyNotification:(id)arg1;
 - (void)dealloc;
 - (id)endpoint;
 - (id)initWithTokenID:(id)arg1;
 - (void)resumeWithToken:(id)arg1 tokenError:(id)arg2;
 - (id)sessionForEvent:(id)arg1 error:(id*)arg2;
-- (void)terminateAfterRemovingClientWithNotification:(id /* block */)arg1;
+- (void)terminateAfterRemovingClientWithNotification:(id)arg1;
 - (id)token;
 - (id)tokenID;
 

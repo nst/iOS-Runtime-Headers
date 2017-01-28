@@ -6,12 +6,12 @@
     id  _delegate;
     double  _interval;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _lock;
     double  _startTime;
     NSObject<OS_dispatch_source> * _timerSource;
-    BOOL  _timerSourceSet;
+    bool  _timerSourceSet;
 }
 
 @property (nonatomic) <GKSimpleTimerDelegate> *delegate;

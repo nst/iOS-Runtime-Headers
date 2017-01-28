@@ -3,19 +3,19 @@
  */
 
 @interface QLPasswordItemViewController : QLItemViewController <UIDocumentPasswordViewDelegate> {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
 }
 
 - (void).cxx_destruct;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canPinchToDismiss;
-- (BOOL)canSwipeToDismiss;
+- (bool)canEnterFullScreen;
+- (bool)canPinchToDismiss;
+- (bool)canSwipeToDismiss;
 - (void)invalidate;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id)arg2;
 - (void)loadView;
 - (id)passwordView;
-- (void)previewDidAppear:(BOOL)arg1;
-- (void)previewWillDisappear:(BOOL)arg1;
+- (void)previewDidAppear:(bool)arg1;
+- (void)previewWillDisappear:(bool)arg1;
 - (void)userDidEnterPassword:(id)arg1 forPasswordView:(id)arg2;
 
 @end

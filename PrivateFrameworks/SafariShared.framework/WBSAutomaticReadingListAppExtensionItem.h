@@ -11,12 +11,12 @@
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (id)bestOriginatorProfileImageForSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)bestOriginatorProfileImageForSize:(struct CGSize { double x1; double x2; })arg1;
 - (id)biggerOriginatorProfileImageURL;
 - (id)continuousBannerDisplayString;
 - (id)continuousBannerTitle;
 - (id)displayString;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })emphasizedTextRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })emphasizedTextRange;
 - (id)initWithDictionary:(id)arg1 socialSourceAccountIdentifier:(id)arg2;
 - (id)originatorProfileImageURL;
 - (id)originatorProfileURL;

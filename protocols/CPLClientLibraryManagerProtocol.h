@@ -11,7 +11,7 @@
 - (void)downloadDidProgress:(float)arg1 forResourceTransferTask:(NSString *)arg2;
 - (void)downloadDidStartForResourceTransferTask:(NSString *)arg1;
 - (void)inMemoryDownloadDidFinishForResourceTransferTask:(NSString *)arg1 data:(NSData *)arg2 withError:(NSError *)arg3;
-- (void)libraryManagerDidUpdateSizeOfResourcesToUploadToSize:(unsigned long long)arg1 sizeOfOriginalResourcesToUpload:(unsigned long long)arg2 numberOfImages:(unsigned int)arg3 numberOfVideos:(unsigned int)arg4 numberOfOtherItems:(unsigned int)arg5;
+- (void)libraryManagerDidUpdateSizeOfResourcesToUploadToSize:(unsigned long long)arg1 sizeOfOriginalResourcesToUpload:(unsigned long long)arg2 numberOfImages:(unsigned long long)arg3 numberOfVideos:(unsigned long long)arg4 numberOfOtherItems:(unsigned long long)arg5;
 - (void)libraryManagerDidUpdateStatusWithProperties:(NSDictionary *)arg1;
 - (void)libraryManagerHasChangesToPull;
 - (void)uploadDidStartForResource:(CPLResource *)arg1 withResourceTransferTask:(NSString *)arg2;

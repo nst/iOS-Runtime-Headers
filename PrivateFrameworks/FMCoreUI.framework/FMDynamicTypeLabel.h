@@ -3,20 +3,20 @@
  */
 
 @interface FMDynamicTypeLabel : UILabel {
-    BOOL  _isAccessibilitySizesPrevented;
+    bool  _isAccessibilitySizesPrevented;
     id  _token;
 }
 
-@property (nonatomic) BOOL isAccessibilitySizesPrevented;
+@property (nonatomic) bool isAccessibilitySizesPrevented;
 @property (nonatomic, retain) id token;
 
 - (void).cxx_destruct;
 - (id)adjustedFont:(id)arg1;
 - (void)awakeFromNib;
 - (void)didMoveToSuperview;
-- (BOOL)isAccessibilitySizesPrevented;
+- (bool)isAccessibilitySizesPrevented;
 - (void)setFont:(id)arg1;
-- (void)setIsAccessibilitySizesPrevented:(BOOL)arg1;
+- (void)setIsAccessibilitySizesPrevented:(bool)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;
 

@@ -5,17 +5,19 @@
 
 @required
 
+- (bool)canEmitGroupsWithType:(long long)arg1;
 - (NSString *)groupEmitterIdentifier;
-- (FCFeedGroupEmittingOperation *)operationToEmitGroupInContext:(FCFeedGroupEmittingContext *)arg1 withCursor:(id <NSCoding>)arg2 toCursor:(id <NSCoding>)arg3;
-- (BOOL)wantsToEmitGroupInContext:(FCFeedGroupEmittingContext *)arg1 withCursor:(id <NSCoding>)arg2 toCursor:(id <NSCoding>)arg3;
+- (FCFeedGroupEmittingOperation *)operationToEmitGroupWithContext:(FCFeedGroupEmittingContext *)arg1 fromCursor:(id <NSCoding>)arg2 toCursor:(id <NSCoding>)arg3;
+- (bool)wantsToEmitGroupInContext:(FCFeedGroupEmittingContext *)arg1 withCursor:(id <NSCoding>)arg2 toCursor:(id <NSCoding>)arg3;
+- (bool)wantsToInsertGroup:(id <FCFeedGroupOutlining>)arg1 withContext:(FCFeedGroupEmittingContext *)arg2;
 
 @optional
 
-- (BOOL)canMergeGroupsUnconditionally;
-- (BOOL)canMergeHeadlinesFromGroup:(id <FCFeedGroupOutlining>)arg1 intoGroup:(id <FCFeedGroupOutlining>)arg2;
-- (BOOL)emitsSingletonGroups;
-- (BOOL)isRequiredByFollowingEmitters;
-- (BOOL)requiresForYouCatchUpOperation;
-- (BOOL)supportsPagination;
+- (bool)canMergeGroupsUnconditionally;
+- (bool)canMergeHeadlinesFromGroup:(id <FCFeedGroupOutlining>)arg1 intoGroup:(id <FCFeedGroupOutlining>)arg2;
+- (bool)emitsSingletonGroups;
+- (bool)isRequiredByFollowingEmitters;
+- (bool)requiresForYouCatchUpOperation;
+- (bool)supportsPagination;
 
 @end

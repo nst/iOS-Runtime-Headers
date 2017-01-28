@@ -5,7 +5,7 @@
 @interface CalendarServerVersion : CalDAVConcreteServerVersion
 
 - (id)init;
-- (BOOL)supportsTimeRangeFilterWithoutEndDate;
+- (bool)supportsTimeRangeFilterWithoutEndDate;
 - (id)type;
 
 @end

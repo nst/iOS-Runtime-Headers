@@ -3,10 +3,10 @@
  */
 
 @interface SFCardSection : NSObject <NSSecureCoding> {
-    BOOL  _canBeHidden;
-    BOOL  _hasBottomPadding;
-    BOOL  _hasTopPadding;
-    BOOL  _hideDivider;
+    bool  _canBeHidden;
+    bool  _hasBottomPadding;
+    bool  _hasTopPadding;
+    bool  _hideDivider;
     SFCard * _nextCard;
     NSArray * _punchoutOptions;
     NSString * _punchoutPickerDismissText;
@@ -14,33 +14,33 @@
     NSString * _type;
 }
 
-@property (nonatomic) BOOL canBeHidden;
-@property (nonatomic) BOOL hasBottomPadding;
-@property (nonatomic) BOOL hasTopPadding;
-@property (nonatomic) BOOL hideDivider;
+@property (nonatomic) bool canBeHidden;
+@property (nonatomic) bool hasBottomPadding;
+@property (nonatomic) bool hasTopPadding;
+@property (nonatomic) bool hideDivider;
 @property (nonatomic, retain) SFCard *nextCard;
 @property (nonatomic, copy) NSArray *punchoutOptions;
 @property (nonatomic, copy) NSString *punchoutPickerDismissText;
 @property (nonatomic, copy) NSString *punchoutPickerTitle;
 @property (nonatomic, copy) NSString *type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)canBeHidden;
+- (bool)canBeHidden;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasBottomPadding;
-- (BOOL)hasTopPadding;
-- (BOOL)hideDivider;
+- (bool)hasBottomPadding;
+- (bool)hasTopPadding;
+- (bool)hideDivider;
 - (id)initWithCoder:(id)arg1;
 - (id)nextCard;
 - (id)punchoutOptions;
 - (id)punchoutPickerDismissText;
 - (id)punchoutPickerTitle;
-- (void)setCanBeHidden:(BOOL)arg1;
-- (void)setHasBottomPadding:(BOOL)arg1;
-- (void)setHasTopPadding:(BOOL)arg1;
-- (void)setHideDivider:(BOOL)arg1;
+- (void)setCanBeHidden:(bool)arg1;
+- (void)setHasBottomPadding:(bool)arg1;
+- (void)setHasTopPadding:(bool)arg1;
+- (void)setHideDivider:(bool)arg1;
 - (void)setNextCard:(id)arg1;
 - (void)setPunchoutOptions:(id)arg1;
 - (void)setPunchoutPickerDismissText:(id)arg1;

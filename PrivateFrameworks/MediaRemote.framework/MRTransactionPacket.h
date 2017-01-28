@@ -6,26 +6,26 @@
     NSMutableData * _data;
     NSString * _identifier;
     NSString * _key;
-    unsigned int  _totalLength;
-    unsigned int  _writeLength;
-    unsigned int  _writePosition;
+    unsigned long long  _totalLength;
+    unsigned long long  _writeLength;
+    unsigned long long  _writePosition;
 }
 
-@property (nonatomic, readonly) unsigned int actualLength;
-@property (getter=isComplete, nonatomic, readonly) BOOL complete;
+@property (nonatomic, readonly) unsigned long long actualLength;
+@property (getter=isComplete, nonatomic, readonly) bool complete;
 @property (nonatomic, readonly, retain) NSData *data;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly, retain) NSString *key;
 @property (nonatomic, readonly) _MRTransactionPacketProtobuf *protobuf;
-@property (getter=isReadComplete, nonatomic, readonly) BOOL readComplete;
-@property (nonatomic, readonly) unsigned int totalLength;
-@property (getter=isWriteComplete, nonatomic, readonly) BOOL writeComplete;
-@property (nonatomic) unsigned int writeLength;
-@property (nonatomic, readonly) unsigned int writePosition;
+@property (getter=isReadComplete, nonatomic, readonly) bool readComplete;
+@property (nonatomic, readonly) unsigned long long totalLength;
+@property (getter=isWriteComplete, nonatomic, readonly) bool writeComplete;
+@property (nonatomic) unsigned long long writeLength;
+@property (nonatomic, readonly) unsigned long long writePosition;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)actualLength;
+- (unsigned long long)actualLength;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)data;
 - (void)dealloc;
@@ -34,15 +34,15 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 forKey:(id)arg2;
 - (id)initWithProtobuf:(id)arg1;
-- (BOOL)isComplete;
-- (BOOL)isReadComplete;
-- (BOOL)isWriteComplete;
+- (bool)isComplete;
+- (bool)isReadComplete;
+- (bool)isWriteComplete;
 - (id)key;
 - (void)merge:(id)arg1;
 - (id)protobuf;
-- (void)setWriteLength:(unsigned int)arg1;
-- (unsigned int)totalLength;
-- (unsigned int)writeLength;
-- (unsigned int)writePosition;
+- (void)setWriteLength:(unsigned long long)arg1;
+- (unsigned long long)totalLength;
+- (unsigned long long)writeLength;
+- (unsigned long long)writePosition;
 
 @end

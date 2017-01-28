@@ -6,7 +6,7 @@
 @required
 
 - (void)didEndDisplayingItem:(NSObject<PDFKitPlatformThumbnailItem> *)arg1;
-- (PDFPage *)scrubbingAtFraction:(float)arg1 betweenIndexPath:(NSIndexPath *)arg2 andIndexPath:(NSIndexPath *)arg3 outDiscreteFraction:(float*)arg4;
+- (PDFPage *)scrubbingAtFraction:(double)arg1 betweenIndexPath:(NSIndexPath *)arg2 andIndexPath:(NSIndexPath *)arg3 outDiscreteFraction:(double*)arg4;
 - (void)selectionChanged;
 
 @end

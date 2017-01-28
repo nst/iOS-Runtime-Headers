@@ -29,14 +29,14 @@
 - (void)_updateContentAnimated:(bool)arg1;
 - (id)felicaProperties;
 - (bool)hasContent;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutIfNeededAnimated:(bool)arg1;
 - (void)layoutSubviews;
 - (id)pass;
 - (void)setFelicaProperties:(id)arg1 animated:(bool)arg2;
 - (void)setPass:(id)arg1 animated:(bool)arg2;
 - (void)setTransaction:(id)arg1 animated:(bool)arg2;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (id)transaction;
 
 @end

@@ -5,26 +5,28 @@
 @interface VSAccountMetadataRequest : NSObject <NSCopying, NSSecureCoding> {
     NSArray * _attributeNames;
     NSString * _channelIdentifier;
-    BOOL  _forceAuthentication;
-    BOOL  _includeAccountProviderIdentifier;
-    BOOL  _includeAuthenticationExpirationDate;
-    BOOL  _interruptionAllowed;
+    bool  _forceAuthentication;
+    bool  _includeAccountProviderIdentifier;
+    bool  _includeAuthenticationExpirationDate;
+    bool  _interruptionAllowed;
     NSString * _localizedVideoTitle;
     NSArray * _supportedAccountProviderIdentifiers;
+    NSArray * _supportedAuthenticationSchemes;
     NSString * _verificationToken;
 }
 
 @property (nonatomic, copy) NSArray *attributeNames;
 @property (nonatomic, copy) NSString *channelIdentifier;
-@property (nonatomic) BOOL forceAuthentication;
-@property (nonatomic) BOOL includeAccountProviderIdentifier;
-@property (nonatomic) BOOL includeAuthenticationExpirationDate;
-@property (getter=isInterruptionAllowed, nonatomic) BOOL interruptionAllowed;
+@property (nonatomic) bool forceAuthentication;
+@property (nonatomic) bool includeAccountProviderIdentifier;
+@property (nonatomic) bool includeAuthenticationExpirationDate;
+@property (getter=isInterruptionAllowed, nonatomic) bool interruptionAllowed;
 @property (nonatomic, copy) NSString *localizedVideoTitle;
 @property (nonatomic, copy) NSArray *supportedAccountProviderIdentifiers;
+@property (nonatomic, copy) NSArray *supportedAuthenticationSchemes;
 @property (nonatomic, copy) NSString *verificationToken;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)attributeNames;
@@ -32,25 +34,27 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)forceAuthentication;
-- (unsigned int)hash;
-- (BOOL)includeAccountProviderIdentifier;
-- (BOOL)includeAuthenticationExpirationDate;
+- (bool)forceAuthentication;
+- (unsigned long long)hash;
+- (bool)includeAccountProviderIdentifier;
+- (bool)includeAuthenticationExpirationDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isInterruptionAllowed;
+- (bool)isEqual:(id)arg1;
+- (bool)isInterruptionAllowed;
 - (id)localizedVideoTitle;
 - (void)setAttributeNames:(id)arg1;
 - (void)setChannelIdentifier:(id)arg1;
-- (void)setForceAuthentication:(BOOL)arg1;
-- (void)setIncludeAccountProviderIdentifier:(BOOL)arg1;
-- (void)setIncludeAuthenticationExpirationDate:(BOOL)arg1;
-- (void)setInterruptionAllowed:(BOOL)arg1;
+- (void)setForceAuthentication:(bool)arg1;
+- (void)setIncludeAccountProviderIdentifier:(bool)arg1;
+- (void)setIncludeAuthenticationExpirationDate:(bool)arg1;
+- (void)setInterruptionAllowed:(bool)arg1;
 - (void)setLocalizedVideoTitle:(id)arg1;
 - (void)setSupportedAccountProviderIdentifiers:(id)arg1;
+- (void)setSupportedAuthenticationSchemes:(id)arg1;
 - (void)setVerificationToken:(id)arg1;
 - (id)supportedAccountProviderIdentifiers;
+- (id)supportedAuthenticationSchemes;
 - (id)verificationToken;
 
 @end

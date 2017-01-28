@@ -11,8 +11,8 @@
 
 - (void)close;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isDirectory;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isDirectory;
+- (bool)isEqual:(id)arg1;
 
 @end

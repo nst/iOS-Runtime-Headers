@@ -3,16 +3,16 @@
  */
 
 @interface HDDemoDataBaseSampleGenerator : NSObject <NSSecureCoding> {
-    BOOL  _createdFromNSKeyedUnarchiver;
+    bool  _createdFromNSKeyedUnarchiver;
     HDDemoDataGenerator * _demoDataGenerator;
 }
 
 @property (nonatomic) HDDemoDataGenerator *demoDataGenerator;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)createdFromNSKeyedUnarchiver;
+- (bool)createdFromNSKeyedUnarchiver;
 - (id)demoDataGenerator;
 - (void)encodeWithCoder:(id)arg1;
 - (void)generateFirstRunSampleForDemoPerson:(id)arg1 firstDate:(id)arg2 objectCollection:(id)arg3;

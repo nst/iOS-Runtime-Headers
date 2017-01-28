@@ -4,10 +4,10 @@
 
 @interface PLValueUtilties : NSObject
 
-+ (int)compare:(id)arg1 with:(id)arg2;
++ (long long)compare:(id)arg1 with:(id)arg2;
 + (id)formattedStringForDate:(id)arg1;
-+ (BOOL)isFormater:(short)arg1 validForObject:(id)arg2;
-+ (BOOL)isNil:(id)arg1;
++ (bool)isFormater:(short)arg1 validForObject:(id)arg2;
++ (bool)isNil:(id)arg1;
 + (void)resetTimestampFormaterTimezone;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface UIStatusBarAdornmentWindow : UIWindow
 
-- (BOOL)_shouldZoom;
+- (bool)_shouldZoom;
 
 @end

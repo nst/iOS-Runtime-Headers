@@ -11,8 +11,8 @@
     PBUnknownFields * _unknownFields;
 }
 
-@property (nonatomic, readonly) BOOL hasMinimumOsVersion;
-@property (nonatomic) BOOL hasSupportedPlatform;
+@property (nonatomic, readonly) bool hasMinimumOsVersion;
+@property (nonatomic) bool hasSupportedPlatform;
 @property (nonatomic, retain) NSString *minimumOsVersion;
 @property (nonatomic) int supportedPlatform;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -21,14 +21,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMinimumOsVersion;
-- (BOOL)hasSupportedPlatform;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMinimumOsVersion;
+- (bool)hasSupportedPlatform;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)minimumOsVersion;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasSupportedPlatform:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasSupportedPlatform:(bool)arg1;
 - (void)setMinimumOsVersion:(id)arg1;
 - (void)setSupportedPlatform:(int)arg1;
 - (int)supportedPlatform;

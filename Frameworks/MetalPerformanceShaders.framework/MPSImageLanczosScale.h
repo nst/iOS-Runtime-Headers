@@ -32,6 +32,6 @@
 - (id)initWithDevice:(id)arg1;
 - (const struct MPSScaleTransform { double x1; double x2; double x3; double x4; }*)scaleTransform;
 - (void)setScaleTransform:(const struct MPSScaleTransform { double x1; double x2; double x3; double x4; }*)arg1;
-- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
+- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sourceRegionForDestinationSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
 
 @end

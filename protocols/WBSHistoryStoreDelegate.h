@@ -9,10 +9,10 @@
 - (void)historyStore:(WBSHistorySQLiteStore *)arg1 didRemoveItems:(NSArray *)arg2;
 - (void)historyStore:(WBSHistorySQLiteStore *)arg1 didRemoveVisits:(NSArray *)arg2;
 - (void)historyStoreDidFailDatabaseIntegrityCheck:(WBSHistorySQLiteStore *)arg1;
-- (BOOL)historyStoreShouldCheckDatabaseIntegrity:(WBSHistorySQLiteStore *)arg1;
+- (bool)historyStoreShouldCheckDatabaseIntegrity:(WBSHistorySQLiteStore *)arg1;
 
 @optional
 
-- (BOOL)historyStoreShouldScheduleMaintenance:(WBSHistorySQLiteStore *)arg1;
+- (bool)historyStoreShouldScheduleMaintenance:(WBSHistorySQLiteStore *)arg1;
 
 @end

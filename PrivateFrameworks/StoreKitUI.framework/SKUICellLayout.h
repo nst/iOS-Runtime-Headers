@@ -6,7 +6,7 @@
     UIView * _cell;
     SKUIClientContext * _clientContext;
     UIView * _contentView;
-    BOOL  _parentWantsCellNeedsLayout;
+    bool  _parentWantsCellNeedsLayout;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -26,8 +26,8 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setColoringWithColorScheme:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setNeedsLayout;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 
 @end

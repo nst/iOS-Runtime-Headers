@@ -13,10 +13,10 @@
     struct __CVPixelBufferPool { } * _yuvFrames;
 }
 
-- (long)convertImage:(struct CGImage { }*)arg1 yuvFrame:(struct __CVBuffer {}**)arg2;
+- (int)convertImage:(struct CGImage { }*)arg1 yuvFrame:(struct __CVBuffer {}**)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)initWithPixelFormat:(int)arg1;
-- (long)resize:(int)arg1 height:(int)arg2;
+- (int)resize:(int)arg1 height:(int)arg2;
 
 @end

@@ -9,10 +9,10 @@
 }
 
 - (void)addDelayedNotification:(id)arg1;
-- (void)addDelayedNotification:(id)arg1 withInfo:(struct __CFDictionary { }*)arg2 allowDuplicateNotification:(BOOL)arg3;
+- (void)addDelayedNotification:(id)arg1 withInfo:(struct __CFDictionary { }*)arg2 allowDuplicateNotification:(bool)arg3;
 - (void)addDelegate:(id)arg1;
-- (BOOL)containsDelegate:(id)arg1;
+- (bool)containsDelegate:(id)arg1;
 - (void)dealloc;
-- (void)removeDelegate:(id)arg1 andDeliverDelayedNotifications:(BOOL)arg2;
+- (void)removeDelegate:(id)arg1 andDeliverDelayedNotifications:(bool)arg2;
 
 @end

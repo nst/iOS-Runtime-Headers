@@ -4,7 +4,7 @@
 
 @interface PXPhotosDetailsLoadCoordinationToken : NSObject {
     PXPhotosDetailsLoadCoordinator * __loadCoordinator;
-    BOOL  _didComplete;
+    bool  _didComplete;
 }
 
 @property (nonatomic, readonly) PXPhotosDetailsLoadCoordinator *_loadCoordinator;

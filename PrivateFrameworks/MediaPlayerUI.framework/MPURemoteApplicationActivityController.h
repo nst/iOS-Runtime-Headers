@@ -6,7 +6,7 @@
     MPURemoteApplicationActivity * _currentActivity;
     NSLock * _currentActivityFetchLock;
     <MPURemoteApplicationActivityDelegate> * _delegate;
-    BOOL  _isObservingActivityStatusChanges;
+    bool  _isObservingActivityStatusChanges;
 }
 
 @property (nonatomic, readonly) MPURemoteApplicationActivity *currentActivity;

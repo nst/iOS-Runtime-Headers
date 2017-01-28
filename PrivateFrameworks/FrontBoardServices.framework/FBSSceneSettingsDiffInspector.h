@@ -4,11 +4,11 @@
 
 @interface FBSSceneSettingsDiffInspector : FBSSettingsDiffInspector
 
-- (void)observeClassWithBlock:(id /* block */)arg1;
-- (void)observeFrameWithBlock:(id /* block */)arg1;
-- (void)observeInterfaceOrientationWithBlock:(id /* block */)arg1;
-- (void)observeIsBackgroundedWithBlock:(id /* block */)arg1;
-- (void)observeLevelWithBlock:(id /* block */)arg1;
-- (void)observeOcclusionsWithBlock:(id /* block */)arg1;
+- (void)observeClassWithBlock:(id)arg1;
+- (void)observeFrameWithBlock:(id)arg1;
+- (void)observeInterfaceOrientationWithBlock:(id)arg1;
+- (void)observeIsBackgroundedWithBlock:(id)arg1;
+- (void)observeLevelWithBlock:(id)arg1;
+- (void)observeOcclusionsWithBlock:(id)arg1;
 
 @end

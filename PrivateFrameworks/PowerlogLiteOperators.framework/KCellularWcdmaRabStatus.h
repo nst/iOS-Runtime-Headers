@@ -15,10 +15,10 @@
     unsigned int  _totalRabCount;
 }
 
-@property (nonatomic) BOOL hasHsRabCount;
-@property (nonatomic) BOOL hasR99RabCount;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasTotalRabCount;
+@property (nonatomic) bool hasHsRabCount;
+@property (nonatomic) bool hasR99RabCount;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasTotalRabCount;
 @property (nonatomic) unsigned int hsRabCount;
 @property (nonatomic) unsigned int r99RabCount;
 @property (nonatomic) unsigned long long timestamp;
@@ -28,20 +28,20 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHsRabCount;
-- (BOOL)hasR99RabCount;
-- (BOOL)hasTimestamp;
-- (BOOL)hasTotalRabCount;
-- (unsigned int)hash;
+- (bool)hasHsRabCount;
+- (bool)hasR99RabCount;
+- (bool)hasTimestamp;
+- (bool)hasTotalRabCount;
+- (unsigned long long)hash;
 - (unsigned int)hsRabCount;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)r99RabCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasHsRabCount:(BOOL)arg1;
-- (void)setHasR99RabCount:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasTotalRabCount:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasHsRabCount:(bool)arg1;
+- (void)setHasR99RabCount:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasTotalRabCount:(bool)arg1;
 - (void)setHsRabCount:(unsigned int)arg1;
 - (void)setR99RabCount:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

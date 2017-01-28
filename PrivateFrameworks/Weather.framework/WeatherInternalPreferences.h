@@ -6,13 +6,13 @@
     <WeatherPreferencesPersistence> * _persistence;
 }
 
-@property (readonly) BOOL isInternalInstall;
+@property (readonly) bool isInternalInstall;
 @property (retain) <WeatherPreferencesPersistence> *persistence;
 
 + (id)sharedInternalPreferences;
 
 - (void).cxx_destruct;
-- (BOOL)isInternalInstall;
+- (bool)isInternalInstall;
 - (id)objectForKey:(id)arg1;
 - (id)persistence;
 - (void)setPersistence:(id)arg1;

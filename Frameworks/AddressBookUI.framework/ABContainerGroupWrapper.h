@@ -4,8 +4,8 @@
 
 @interface ABContainerGroupWrapper : ABGroupWrapper
 
-- (BOOL)isContainerWrapper;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isContainerWrapper;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 
 @end

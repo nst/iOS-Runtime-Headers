@@ -3,8 +3,8 @@
  */
 
 @interface IDSServerBag : NSObject {
-    BOOL  _allowSelfSignedCertificates;
-    BOOL  _allowUnsignedBags;
+    bool  _allowSelfSignedCertificates;
+    bool  _allowUnsignedBags;
     NSString * _apsEnvironmentName;
     NSDictionary * _bag;
     NSObject<OS_dispatch_queue> * _bagQueue;
@@ -35,15 +35,15 @@
 @property (retain) IDSRemoteURLConnection *_remoteURLConnection;
 @property (setter=_setTrustStatus:) int _trustStatus;
 @property (retain) NSMutableURLRequest *_urlRequest;
-@property BOOL allowSelfSignedCertificates;
-@property BOOL allowUnsignedBags;
+@property bool allowSelfSignedCertificates;
+@property bool allowUnsignedBags;
 @property (retain) NSString *apsEnvironmentName;
 @property (retain) NSURL *bagURL;
 @property unsigned long long hasPairedDeviceState;
-@property (readonly) BOOL isInDebilitatedMode;
-@property (readonly) BOOL isLoaded;
-@property (readonly) BOOL isLoading;
-@property (readonly) BOOL isServerAvailable;
+@property (readonly) bool isInDebilitatedMode;
+@property (readonly) bool isLoaded;
+@property (readonly) bool isLoading;
+@property (readonly) bool isServerAvailable;
 @property int token;
 
 + (id)_bagCreationLock;
@@ -51,10 +51,10 @@
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)defaultBag;
 + (id)sharedInstance;
-+ (id)sharedInstanceForBagType:(int)arg1;
++ (id)sharedInstanceForBagType:(long long)arg1;
 
 - (void)__saveCacheToPrefs;
-- (BOOL)_allowInvalid;
+- (bool)_allowInvalid;
 - (id)_bag;
 - (id)_bagDefaultsDomain;
 - (void)_bagExternallyReloaded;
@@ -68,13 +68,13 @@
 - (void)_clearCache;
 - (id)_connectionMonitor;
 - (void)_generateURLRequest;
-- (id)_initWithURL:(id)arg1 apsEnvironmentName:(id)arg2 allowSelfSignedCertificates:(BOOL)arg3 allowUnsignedBags:(BOOL)arg4;
+- (id)_initWithURL:(id)arg1 apsEnvironmentName:(id)arg2 allowSelfSignedCertificates:(bool)arg3 allowUnsignedBags:(bool)arg4;
 - (void)_invalidate;
 - (id)_loadDate;
 - (void)_loadFromCache;
-- (BOOL)_loadFromDictionary:(id)arg1 returningError:(id*)arg2;
-- (BOOL)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
-- (void)_processBagResultData:(id)arg1 response:(id)arg2 inBackground:(BOOL)arg3;
+- (bool)_loadFromDictionary:(id)arg1 returningError:(id*)arg2;
+- (bool)_loadFromSignedDictionary:(id)arg1 returningError:(id*)arg2;
+- (void)_processBagResultData:(id)arg1 response:(id)arg2 inBackground:(bool)arg3;
 - (id)_remoteURLConnection;
 - (void)_saveCacheToPrefs;
 - (void)_saveToCache;
@@ -83,24 +83,24 @@
 - (void)_setCachedHash:(id)arg1;
 - (void)_setCachedURLString:(id)arg1;
 - (void)_setTrustStatus:(int)arg1;
-- (void)_startBagLoad:(BOOL)arg1;
+- (void)_startBagLoad:(bool)arg1;
 - (int)_trustStatus;
 - (id)_urlRequest;
-- (BOOL)allowSelfSignedCertificates;
-- (BOOL)allowUnsignedBags;
+- (bool)allowSelfSignedCertificates;
+- (bool)allowUnsignedBags;
 - (id)apsEnvironmentName;
 - (id)bagURL;
 - (void)connectionMonitorDidUpdate:(id)arg1;
 - (void)dealloc;
 - (void)forceBagLoad;
 - (unsigned long long)hasPairedDeviceState;
-- (BOOL)isInDebilitatedMode;
-- (BOOL)isLoaded;
-- (BOOL)isLoading;
-- (BOOL)isServerAvailable;
+- (bool)isInDebilitatedMode;
+- (bool)isLoaded;
+- (bool)isLoading;
+- (bool)isServerAvailable;
 - (id)objectForKey:(id)arg1;
-- (void)setAllowSelfSignedCertificates:(BOOL)arg1;
-- (void)setAllowUnsignedBags:(BOOL)arg1;
+- (void)setAllowSelfSignedCertificates:(bool)arg1;
+- (void)setAllowUnsignedBags:(bool)arg1;
 - (void)setApsEnvironmentName:(id)arg1;
 - (void)setBagURL:(id)arg1;
 - (void)setHasPairedDeviceState:(unsigned long long)arg1;

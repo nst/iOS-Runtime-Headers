@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isHighPriority;
+- (bool)isHighPriority;
 
 @end

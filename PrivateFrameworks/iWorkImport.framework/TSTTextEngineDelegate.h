@@ -4,21 +4,21 @@
 
 @interface TSTTextEngineDelegate : NSObject <TSWPTextDelegate> {
     TSULocale * mLocale;
-    float  mMaxWidthForChildren;
+    double  mMaxWidthForChildren;
     TSWPPadding * mPadding;
     int  mVerticalAlignment;
 }
 
 @property (nonatomic, readonly) TSULocale *locale;
-@property (nonatomic) float maxWidthForChildren;
+@property (nonatomic) double maxWidthForChildren;
 
 - (void)dealloc;
-- (BOOL)forceWesternLineBreaking;
-- (id)initWithPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 verticalAlignment:(int)arg2 locale:(id)arg3;
+- (bool)forceWesternLineBreaking;
+- (id)initWithPadding:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1 verticalAlignment:(int)arg2 locale:(id)arg3;
 - (id)locale;
-- (float)maxWidthForChildren;
+- (double)maxWidthForChildren;
 - (id)padding;
-- (void)setMaxWidthForChildren:(float)arg1;
+- (void)setMaxWidthForChildren:(double)arg1;
 - (int)verticalAlignment;
 
 @end

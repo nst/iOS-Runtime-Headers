@@ -11,6 +11,6 @@
 - (void)dealloc;
 - (id)descriptor;
 - (id)initWithDescriptor:(id)arg1;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

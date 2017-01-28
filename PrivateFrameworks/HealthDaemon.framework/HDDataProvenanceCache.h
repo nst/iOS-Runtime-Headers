@@ -42,7 +42,7 @@
 - (id)deviceForPersistentID:(id)arg1 profile:(id)arg2 error:(id*)arg3;
 - (id)deviceUUIDBytesByID;
 - (id)deviceUUIDBytesWithProvenance:(id)arg1;
-- (id)initWithProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3;
+- (id)initWithProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3;
 - (id)profile;
 - (id)provenanceByID;
 - (id)provenanceManager;

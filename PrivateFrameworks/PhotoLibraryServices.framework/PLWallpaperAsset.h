@@ -15,7 +15,7 @@
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withImageURL:(id)arg2 thumbnailURL:(id)arg3;
 
-- (BOOL)allowsWallpaperEditing;
+- (bool)allowsWallpaperEditing;
 - (void)awakeFromInsert;
 - (id)image;
 - (id)imageName;
@@ -23,7 +23,7 @@
 - (id)imageWithFormat:(int)arg1;
 - (id)imageWithFormat:(int)arg1 outImageProperties:(const struct __CFDictionary {}**)arg2;
 - (id)indexSheetImage;
-- (BOOL)isIncludedInMoments;
+- (bool)isIncludedInMoments;
 - (id)newFullScreenImage:(const struct __CFDictionary {}**)arg1;
 - (void)prepareForDeletion;
 - (void)setImageURL:(id)arg1;

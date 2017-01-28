@@ -6,16 +6,16 @@
     <_CDInteractionAdvising> * _cdAdvisor;
     <_CDInteractionQuerying> * _cdQuerier;
     _CDPeopleSuggester * _cdSuggester;
-    id /* block */  _mockBlock;
+    id  _mockBlock;
     NSObject<OS_dispatch_source> * _timer;
 }
 
 - (void).cxx_destruct;
-- (void)_processPeopleSuggestions:(id)arg1 doRetry:(BOOL)arg2;
-- (void)_refreshPeopleSuggestionsAndRetryIfNoResults:(BOOL)arg1;
+- (void)_processPeopleSuggestions:(id)arg1 doRetry:(bool)arg2;
+- (void)_refreshPeopleSuggestionsAndRetryIfNoResults:(bool)arg1;
 - (void)clearCaches;
 - (id)init;
-- (id)initWithMock:(id /* block */)arg1;
+- (id)initWithMock:(id)arg1;
 - (void)refreshMockPeopleSuggestions;
 - (void)waitForData;
 

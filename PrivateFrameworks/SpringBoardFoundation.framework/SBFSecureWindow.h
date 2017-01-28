@@ -4,6 +4,6 @@
 
 @interface SBFSecureWindow : SBFWindow
 
-+ (BOOL)_isSecure;
++ (bool)_isSecure;
 
 @end

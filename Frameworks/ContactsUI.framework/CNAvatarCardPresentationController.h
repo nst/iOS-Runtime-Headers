@@ -4,7 +4,7 @@
 
 @interface CNAvatarCardPresentationController : UIPresentationController {
     unsigned int  _alignmentEdge;
-    float  _alignmentY;
+    double  _alignmentY;
     UIVisualEffectView * _backgroundView;
     UIView * _cardView;
     UIView * _contentView;
@@ -12,22 +12,22 @@
     <CNCardTransitioning> * _originalTransitioning;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _sourceRect;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _sourceTargetRect;
     UIView * _sourceView;
@@ -38,14 +38,14 @@
 }
 
 @property (nonatomic) unsigned int alignmentEdge;
-@property (nonatomic) float alignmentY;
+@property (nonatomic) double alignmentY;
 @property (nonatomic, retain) UIVisualEffectView *backgroundView;
 @property (nonatomic, retain) UIView *cardView;
 @property (nonatomic, retain) UIView *contentView;
 @property (nonatomic, retain) UIView *dimmingView;
 @property (nonatomic, retain) <CNCardTransitioning> *originalTransitioning;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceRect;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceTargetRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } sourceTargetRect;
 @property (nonatomic, retain) UIView *sourceView;
 @property (nonatomic, retain) UIViewController *sourceViewController;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
@@ -53,39 +53,39 @@
 @property (nonatomic, retain) UIVisualEffectView *vibrancyView;
 
 - (void).cxx_destruct;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_frameOfPresentedViewControllerViewInSuperview;
 - (void)_layoutViews;
 - (unsigned int)alignmentEdge;
-- (float)alignmentY;
+- (double)alignmentY;
 - (id)backgroundView;
 - (id)cardView;
 - (void)containerViewWillLayoutSubviews;
 - (id)contentView;
 - (id)dimmingView;
-- (void)dismissalTransitionDidEnd:(BOOL)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (void)dismissalTransitionDidEnd:(bool)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (id)originalTransitioning;
-- (void)presentationTransitionDidEnd:(BOOL)arg1;
+- (void)presentationTransitionDidEnd:(bool)arg1;
 - (void)presentationTransitionWillBegin;
 - (id)presentedView;
 - (void)setAlignmentEdge:(unsigned int)arg1;
-- (void)setAlignmentY:(float)arg1;
+- (void)setAlignmentY:(double)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setCardView:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setDimmingView:(id)arg1;
 - (void)setOriginalTransitioning:(id)arg1;
-- (void)setSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSourceTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSourceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setSourceTargetRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setSourceView:(id)arg1;
 - (void)setSourceViewController:(id)arg1;
 - (void)setTapGestureRecognizer:(id)arg1;
 - (void)setTransition:(id)arg1;
 - (void)setVibrancyView:(id)arg1;
-- (BOOL)shouldPresentInFullscreen;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceTargetRect;
+- (bool)shouldPresentInFullscreen;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })sourceTargetRect;
 - (id)sourceView;
 - (id)sourceViewController;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;

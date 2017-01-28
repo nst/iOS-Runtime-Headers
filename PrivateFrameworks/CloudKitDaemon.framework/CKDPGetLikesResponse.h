@@ -7,7 +7,7 @@
     NSMutableArray * _likes;
 }
 
-@property (nonatomic, readonly) BOOL hasLikeInfo;
+@property (nonatomic, readonly) bool hasLikeInfo;
 @property (nonatomic, retain) CKDPLikeInfo *likeInfo;
 @property (nonatomic, retain) NSMutableArray *likes;
 
@@ -20,15 +20,15 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLikeInfo;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)likeAtIndex:(unsigned int)arg1;
+- (bool)hasLikeInfo;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (id)likeAtIndex:(unsigned long long)arg1;
 - (id)likeInfo;
 - (id)likes;
-- (unsigned int)likesCount;
+- (unsigned long long)likesCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLikeInfo:(id)arg1;
 - (void)setLikes:(id)arg1;
 - (void)writeTo:(id)arg1;

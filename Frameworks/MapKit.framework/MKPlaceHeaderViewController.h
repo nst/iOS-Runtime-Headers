@@ -3,15 +3,15 @@
  */
 
 @interface MKPlaceHeaderViewController : UIViewController {
-    BOOL  _compressedMode;
-    BOOL  _isTransitLine;
+    bool  _compressedMode;
+    bool  _isTransitLine;
 }
 
 @property (nonatomic, readonly) MKPlaceHeaderView *headerView;
 
 - (id)headerView;
-- (id)initWithCompressedMode:(BOOL)arg1 isTransitLine:(BOOL)arg2;
+- (id)initWithCompressedMode:(bool)arg1 isTransitLine:(bool)arg2;
 - (void)loadView;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

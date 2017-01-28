@@ -17,7 +17,7 @@
 - (id)init;
 - (id)queue;
 - (void)reportVoicemailDownloadedWithDuration:(int)arg1;
-- (void)reportVoicemailTranscriptionRatedAccurate:(BOOL)arg1;
+- (void)reportVoicemailTranscriptionRatedAccurate:(bool)arg1;
 - (id)serverConnection;
 - (void)setQueue:(id)arg1;
 - (void)setServerConnection:(id)arg1;

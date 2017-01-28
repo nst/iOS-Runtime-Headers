@@ -17,7 +17,7 @@
             unsigned char reserved; 
         } mBottomRight; 
     }  mUnionRange;
-    BOOL  mUnionRangeValid;
+    bool  mUnionRangeValid;
 }
 
 @property (nonatomic, readonly) struct __CFUUID { }*tableID;
@@ -27,15 +27,15 @@
 + (id)rangeListWithTableID:(struct __CFUUID { }*)arg1 range:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg2;
 
 - (void)addRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1 coalesceFlags:(int)arg2;
-- (BOOL)containsCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
-- (BOOL)containsRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1;
+- (bool)containsCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (bool)containsRange:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateRangesUsingBlock:(id /* block */)arg1;
+- (void)enumerateRangesUsingBlock:(id)arg1;
 - (id)initWithTableID:(struct __CFUUID { }*)arg1;
 - (id)initWithTableID:(struct __CFUUID { }*)arg1 range:(struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg2;
-- (unsigned int)numberOfRanges;
-- (struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })rangeAtIndex:(unsigned int)arg1;
+- (unsigned long long)numberOfRanges;
+- (struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })rangeAtIndex:(unsigned long long)arg1;
 - (struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })rangeStartingAfterCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 direction:(int)arg2;
 - (struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct TSUCellCoord { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })rangeStartingAtCell:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 direction:(int)arg2;
 - (void)removeAllRanges;

@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDictionary *fcRecordZonesByName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *recordZoneIDs;
 @property (nonatomic, retain) FCAsyncSerialQueue *serialQueue;
 @property (readonly) Class superclass;
@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)ckRecordZonesByID;
 - (id)database;
-- (void)ensureRecordZoneExistsWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)ensureRecordZoneExistsWithID:(id)arg1 completionHandler:(id)arg2;
 - (id)fcRecordZonesByName;
 - (id)initWithDatabase:(id)arg1 recordZoneNames:(id)arg2;
 - (id)recordZoneIDs;

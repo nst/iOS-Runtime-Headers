@@ -5,25 +5,25 @@
 @interface NCLaunchStats : NSObject {
     NSMutableDictionary * appUpdateTimes;
     NSMutableDictionary * appsRequestingRefresh;
-    id /* block */  asyncRecommendHandler;
-    BOOL  backgroundAppRefreshSwitchedOn;
+    id  asyncRecommendHandler;
+    bool  backgroundAppRefreshSwitchedOn;
     CDAttribute * bundleAttr;
     int  classCLockedToken;
     NSDate * earliestRequestedRefresh;
     NSDate * forecastStartDate;
     int  generatePredictionToken;
-    BOOL  isClassCLocked;
+    bool  isClassCLocked;
     double  kTimeGuardBand;
     NSDate * lastTriggerTime;
     NSMutableDictionary * launchTracker;
     NSObject<OS_dispatch_queue> * ncLaunchStatsQueue;
     NSObject<OS_os_log> * ncLog;
-    int  numPrewarmedLaunches;
-    int  numRepeatedPrewarms;
+    long long  numPrewarmedLaunches;
+    long long  numRepeatedPrewarms;
     int  predictedWidgetsToken;
     NSMutableDictionary * prewarmDurationTracker;
     NSMutableDictionary * prewarmTimeTracker;
-    id /* block */  recommendHandler;
+    id  recommendHandler;
     PCPersistentTimer * refreshTimer;
     NSMutableDictionary * seqTracker;
     CDSession * sessionDuet;
@@ -37,26 +37,26 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)addWidget:(id)arg1 forSlot:(unsigned int)arg2;
-- (BOOL)canUpdateWidgetsUnsafe;
+- (void)addWidget:(id)arg1 forSlot:(unsigned long long)arg2;
+- (bool)canUpdateWidgetsUnsafe;
 - (void)cancelRequestedRefreshForWidget:(id)arg1;
 - (void)dealloc;
 - (void)endEvent:(id)arg1;
 - (void)getPredictedSlots;
-- (BOOL)immediateUpdatesAllowedForWidgetUnsafe:(id)arg1;
+- (bool)immediateUpdatesAllowedForWidgetUnsafe:(id)arg1;
 - (id)init;
 - (void)initAfterClassCUnlocked;
 - (void)ncTriggerObserver:(id)arg1;
-- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
-- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned int)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasEnded:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
+- (void)preWarmHasStarted:(id)arg1 withResult:(unsigned long long)arg2 withTriggerType:(int)arg3 withSequence:(unsigned long long)arg4;
 - (id)predictedWidgetsForDate:(id)arg1;
-- (id)predictedWidgetsForSlot:(unsigned int)arg1;
+- (id)predictedWidgetsForSlot:(unsigned long long)arg1;
 - (void)recordPrewarmStatisticsRaw:(id)arg1;
 - (void)refreshTimerFired:(id)arg1;
 - (void)requestRefreshForWidget:(id)arg1 afterDate:(id)arg2;
 - (void)scheduleTimerAtDate:(id)arg1;
-- (void)setNCLaunchRecommendationHandler:(id /* block */)arg1;
-- (void)setNCLaunchRecommendationHandlerWithCompletion:(id /* block */)arg1;
+- (void)setNCLaunchRecommendationHandler:(id)arg1;
+- (void)setNCLaunchRecommendationHandlerWithCompletion:(id)arg1;
 - (void)startEvent:(id)arg1;
 - (id)unprotectedFindNextDateForTimer;
 - (void)unprotectedRemoveRequestsForWidget:(id)arg1 beforeDate:(id)arg2;
@@ -65,7 +65,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
 
-+ (void)wg_configureSharedInstanceWithRecommendationHandler:(id /* block */)arg1;
++ (void)wg_configureSharedInstanceWithRecommendationHandler:(id)arg1;
 + (id)wg_sharedInstance;
 
 @end

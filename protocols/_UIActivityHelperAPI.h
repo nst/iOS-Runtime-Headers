@@ -5,7 +5,7 @@
 
 @required
 
-- (NSArray *)availableActivitiesForItemValues:(NSArray *)arg1 applicationExtensionActivities:(NSArray *)arg2 withActivity:(UIActivity *)arg3 sourceIsManaged:(BOOL)arg4 shouldMatchOnlyUserElectedExtensions:(BOOL)arg5 activityItems:(NSArray *)arg6 applicationActivities:(NSArray *)arg7 activityTypeOrder:(NSArray *)arg8 includedActivityTypes:(NSArray *)arg9 excludedActivityCategories:(int)arg10;
+- (NSArray *)availableActivitiesForItemValues:(NSArray *)arg1 applicationExtensionActivities:(NSArray *)arg2 withActivity:(UIActivity *)arg3 sourceIsManaged:(bool)arg4 shouldMatchOnlyUserElectedExtensions:(bool)arg5 activityItems:(NSArray *)arg6 applicationActivities:(NSArray *)arg7 activityTypeOrder:(NSArray *)arg8 includedActivityTypes:(NSArray *)arg9 excludedActivityCategories:(long long)arg10;
 - (void)cancelUpdatesIfNeeded;
 
 @end

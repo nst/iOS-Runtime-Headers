@@ -3,9 +3,9 @@
  */
 
 @interface MKPlaceInfoContactRowView : MKPlaceSectionRowView <UIGestureRecognizerDelegate> {
-    BOOL  _bottomHairlineFullWidth;
+    bool  _bottomHairlineFullWidth;
     NSArray * _iconConstraints;
-    id /* block */  _iconSelectedBlock;
+    id  _iconSelectedBlock;
     MKPlatterView * _iconView;
     CNLabeledValue * _labeledValue;
     UITapGestureRecognizer * _tapRecognizer;
@@ -19,47 +19,47 @@
     NSLayoutConstraint * _valueToTrailingViewConstraint;
 }
 
-@property (getter=isBottomHairlineFullWidth, nonatomic) BOOL bottomHairlineFullWidth;
+@property (getter=isBottomHairlineFullWidth, nonatomic) bool bottomHairlineFullWidth;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ iconSelectedBlock;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id iconSelectedBlock;
 @property (nonatomic, readonly) MKPlatterView *iconView;
-@property (getter=isIconVisible, nonatomic) BOOL iconVisible;
+@property (getter=isIconVisible, nonatomic) bool iconVisible;
 @property (nonatomic, retain) CNLabeledValue *labeledValue;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) _MKUILabel *titleLabel;
-@property (getter=isTitleVisible, nonatomic) BOOL titleVisible;
+@property (getter=isTitleVisible, nonatomic) bool titleVisible;
 @property (nonatomic, readonly) _MKUILabel *valueLabel;
 @property (nonatomic, retain) NSLayoutConstraint *valueToBottomConstraint;
 
 + (id)icon;
 
 - (void).cxx_destruct;
-- (float)_baselineToBottomConstant;
+- (double)_baselineToBottomConstant;
 - (void)_contentSizeDidChange;
 - (id)_icon;
 - (id)_iconAccessibilityLabel;
-- (BOOL)_iconTapped:(id)arg1;
+- (bool)_iconTapped:(id)arg1;
 - (Class)_labeledValueExpectedValueType;
-- (BOOL)_pointIsInIcon:(struct CGPoint { float x1; float x2; })arg1;
+- (bool)_pointIsInIcon:(struct CGPoint { double x1; double x2; })arg1;
 - (void)_updateGestureRecognizer;
 - (id)_valueString;
 - (void)copy:(id)arg1;
 - (void)dealloc;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (id /* block */)iconSelectedBlock;
+- (bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (id)iconSelectedBlock;
 - (id)iconView;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isBottomHairlineFullWidth;
-- (BOOL)isIconVisible;
-- (BOOL)isTitleVisible;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isBottomHairlineFullWidth;
+- (bool)isIconVisible;
+- (bool)isTitleVisible;
 - (id)labeledValue;
-- (void)setBottomHairlineFullWidth:(BOOL)arg1;
-- (void)setIconSelectedBlock:(id /* block */)arg1;
-- (void)setIconVisible:(BOOL)arg1;
+- (void)setBottomHairlineFullWidth:(bool)arg1;
+- (void)setIconSelectedBlock:(id)arg1;
+- (void)setIconVisible:(bool)arg1;
 - (void)setLabeledValue:(id)arg1;
-- (void)setTitleVisible:(BOOL)arg1;
+- (void)setTitleVisible:(bool)arg1;
 - (void)setValueToBottomConstraint:(id)arg1;
 - (id)titleLabel;
 - (id)valueLabel;

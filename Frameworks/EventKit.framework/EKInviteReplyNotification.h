@@ -4,7 +4,7 @@
 
 @interface EKInviteReplyNotification : EKObject
 
-@property (nonatomic, readonly) BOOL alerted;
+@property (nonatomic, readonly) bool alerted;
 @property (nonatomic, readonly) EKCalendar *calendar;
 @property (nonatomic, readonly) NSString *calendarName;
 @property (nonatomic, readonly) NSDate *creationDate;
@@ -12,10 +12,10 @@
 @property (nonatomic, readonly) NSString *shareeDisplayName;
 @property (nonatomic, readonly) NSString *shareeFirstName;
 @property (nonatomic, readonly) NSString *shareeLastName;
-@property (nonatomic, readonly) unsigned int status;
+@property (nonatomic, readonly) unsigned long long status;
 
 - (id)_persistentInviteReplyNotification;
-- (BOOL)alerted;
+- (bool)alerted;
 - (id)calendar;
 - (id)calendarName;
 - (void)clearAlertedStatus;
@@ -25,6 +25,6 @@
 - (id)shareeDisplayName;
 - (id)shareeFirstName;
 - (id)shareeLastName;
-- (unsigned int)status;
+- (unsigned long long)status;
 
 @end

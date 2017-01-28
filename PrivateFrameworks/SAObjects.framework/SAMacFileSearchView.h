@@ -5,7 +5,7 @@
 @interface SAMacFileSearchView : SAAceView
 
 @property (nonatomic, copy) NSArray *entities;
-@property (nonatomic) int numResults;
+@property (nonatomic) long long numResults;
 @property (nonatomic, copy) NSString *query;
 @property (nonatomic, copy) NSString *searchTitle;
 
@@ -15,11 +15,11 @@
 - (id)encodedClassName;
 - (id)entities;
 - (id)groupIdentifier;
-- (int)numResults;
+- (long long)numResults;
 - (id)query;
 - (id)searchTitle;
 - (void)setEntities:(id)arg1;
-- (void)setNumResults:(int)arg1;
+- (void)setNumResults:(long long)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setSearchTitle:(id)arg1;
 

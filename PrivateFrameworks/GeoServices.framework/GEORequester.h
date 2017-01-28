@@ -3,26 +3,26 @@
  */
 
 @interface GEORequester : GEOPBSessionRequester {
-    BOOL  _canceled;
+    bool  _canceled;
     struct { 
-        unsigned int workLoad; 
+        unsigned long long workLoad; 
         double timeWindowStartTime; 
-        unsigned int timeWindowDuration; 
+        unsigned long long timeWindowDuration; 
     }  _conditionalConnectionProperties;
     NSString * _debugRequestName;
-    BOOL  _disableReplay;
-    BOOL  _finished;
-    BOOL  _hasConditionalConnectionProperties;
+    bool  _disableReplay;
+    bool  _finished;
+    bool  _hasConditionalConnectionProperties;
     int  _symptomsAlternateAdviceToken;
     NSThread * _thread;
     NSString * _throttleKey;
-    BOOL  _useBackgroundConnection;
-    BOOL  _usePersistentConnection;
+    bool  _useBackgroundConnection;
+    bool  _usePersistentConnection;
 }
 
-@property (nonatomic) struct { unsigned int x1; double x2; unsigned int x3; } conditionalConnectionProperties;
+@property (nonatomic) struct { unsigned long long x1; double x2; unsigned long long x3; } conditionalConnectionProperties;
 @property (nonatomic, retain) NSString *debugRequestName;
-@property BOOL disableReplay;
+@property bool disableReplay;
 @property (nonatomic, copy) NSString *throttleKey;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
@@ -46,12 +46,12 @@
 - (void)_logResponsesIfNecessary:(id)arg1;
 - (void)_tryRerequest;
 - (void)cancel;
-- (struct { unsigned int x1; double x2; unsigned int x3; })conditionalConnectionProperties;
+- (struct { unsigned long long x1; double x2; unsigned long long x3; })conditionalConnectionProperties;
 - (void)dealloc;
 - (id)debugRequestName;
-- (BOOL)disableReplay;
+- (bool)disableReplay;
 - (id)initWithURL:(id)arg1 andDelegate:(id)arg2;
-- (id)initWithURL:(id)arg1 andDelegate:(id)arg2 useBackgroundConnection:(BOOL)arg3;
+- (id)initWithURL:(id)arg1 andDelegate:(id)arg2 useBackgroundConnection:(bool)arg3;
 - (id)logRequestToFile;
 - (id)logResponseToFile;
 - (id)newMutableURLRequestWithURL:(id)arg1;
@@ -59,9 +59,9 @@
 - (id)newSessionWithDelegate:(id)arg1 delegateQueue:(id)arg2 connectionProperties:(id)arg3;
 - (id)persistentSessionConfig;
 - (id)requestPreamble;
-- (void)setConditionalConnectionProperties:(struct { unsigned int x1; double x2; unsigned int x3; })arg1;
+- (void)setConditionalConnectionProperties:(struct { unsigned long long x1; double x2; unsigned long long x3; })arg1;
 - (void)setDebugRequestName:(id)arg1;
-- (void)setDisableReplay:(BOOL)arg1;
+- (void)setDisableReplay:(bool)arg1;
 - (void)setNeedsCancel;
 - (void)setThrottleKey:(id)arg1;
 - (void)start;

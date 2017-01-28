@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)isSatisfied;
+- (bool)isSatisfied;
 - (<FCNetworkReachabilityRequirementObserving> *)observer;
-- (int)offlineReason;
+- (long long)offlineReason;
 - (void)setObserver:(id <FCNetworkReachabilityRequirementObserving>)arg1;
 
 @end

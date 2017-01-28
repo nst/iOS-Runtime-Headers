@@ -5,12 +5,13 @@
 @interface SBBootDefaults : SBAbstractSpringBoardDefaultDomain
 
 @property (nonatomic) NSDictionary *bootTransitionContext;
-@property (nonatomic) BOOL comingFromUserPowerDown;
-@property (nonatomic, readonly) BOOL dontLockAfterCrash;
-@property (nonatomic) BOOL hasCompletedSynchronizingCloudCriticalData;
+@property (nonatomic) bool comingFromUserPowerDown;
+@property (nonatomic, readonly) bool dontLockAfterCrash;
+@property (nonatomic) bool fromOTASoftwareUpdate;
+@property (nonatomic) bool hasCompletedSynchronizingCloudCriticalData;
 @property (nonatomic, retain) NSString *lastRestoreIdentifier;
 @property (nonatomic, retain) NSString *lastSystemBuildVersion;
-@property (nonatomic, readonly) BOOL recordBootTimeTillDidFinishLaunching;
+@property (nonatomic, readonly) bool recordBootTimeTillDidFinishLaunching;
 
 - (void)_bindAndRegisterDefaults;
 

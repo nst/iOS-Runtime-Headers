@@ -13,7 +13,7 @@
 - (void)addPropStat:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasPropertyError;
+- (bool)hasPropertyError;
 - (id)init;
 - (id)propStats;
 - (void)setPropStats:(id)arg1;

@@ -13,7 +13,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)messageDelivery;
-- (void)sendFTMessage:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)sendFTMessage:(id)arg1 completionBlock:(id)arg2;
 - (void)setMessageDelivery:(id)arg1;
 
 @end

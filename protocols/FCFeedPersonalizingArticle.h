@@ -9,8 +9,8 @@
 - (NSString *)articleID;
 - (double)globalUserFeedback;
 - (unsigned long long)halfLife;
-- (BOOL)hasGlobalUserFeedback;
-- (BOOL)isPaid;
+- (bool)hasGlobalUserFeedback;
+- (bool)isPaid;
 - (NSDate *)publishDate;
 - (NSString *)publisherID;
 - (NSString *)sourceFeedID;

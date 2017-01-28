@@ -8,7 +8,7 @@
     NSLayoutConstraint * _moreButtonHiddenConstraint;
     NSLayoutConstraint * _moreButtonVisibleConstraint;
     SFResultSection * _section;
-    unsigned int  _sectionHeaderType;
+    unsigned long long  _sectionHeaderType;
     UILabel * _titleLabel;
 }
 
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *moreButtonHiddenConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *moreButtonVisibleConstraint;
 @property (nonatomic, retain) SFResultSection *section;
-@property (readonly) unsigned int sectionHeaderType;
+@property (readonly) unsigned long long sectionHeaderType;
 @property (nonatomic, retain) UILabel *titleLabel;
 
 - (void).cxx_destruct;
@@ -29,18 +29,18 @@
 - (id)moreButtonVisibleConstraint;
 - (id)moreResultsPunchout;
 - (id)section;
-- (unsigned int)sectionHeaderType;
+- (unsigned long long)sectionHeaderType;
 - (void)setDelegate:(id)arg1;
-- (void)setFloating:(BOOL)arg1;
+- (void)setFloating:(bool)arg1;
 - (void)setMoreButton:(id)arg1;
 - (void)setMoreButtonHiddenConstraint:(id)arg1;
 - (void)setMoreButtonVisibleConstraint:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
-- (BOOL)supportsShowMoreInApp;
+- (bool)supportsShowMoreInApp;
 - (id)titleLabel;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateShowMoreButtonVisibility;
-- (void)updateWithSection:(id)arg1 isExpanded:(BOOL)arg2;
+- (void)updateWithSection:(id)arg1 isExpanded:(bool)arg2;
 
 @end

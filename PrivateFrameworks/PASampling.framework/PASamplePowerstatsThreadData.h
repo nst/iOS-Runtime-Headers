@@ -6,7 +6,7 @@
     unsigned int  _powerstatsFlags;
 }
 
-- (BOOL)hasValidPowerstatsFlags;
+- (bool)hasValidPowerstatsFlags;
 - (id)initWithStackshotThread:(id)arg1 andLeafUserFrame:(id)arg2;
 - (unsigned int)powerstatsFlags;
 

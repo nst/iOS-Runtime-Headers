@@ -4,6 +4,6 @@
 
 @interface IPTenseDetector : NSObject
 
-+ (int)tenseOfString:(id)arg1 languageID:(id)arg2;
++ (long long)tenseOfString:(id)arg1 languageID:(id)arg2;
 
 @end

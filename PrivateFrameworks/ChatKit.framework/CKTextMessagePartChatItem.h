@@ -4,7 +4,7 @@
 
 @interface CKTextMessagePartChatItem : CKMessagePartChatItem
 
-@property (nonatomic, readonly) BOOL containsHyperlink;
+@property (nonatomic, readonly) bool containsHyperlink;
 @property (nonatomic, readonly, copy) NSAttributedString *subject;
 @property (nonatomic, readonly, copy) NSAttributedString *text;
 
@@ -12,12 +12,12 @@
 - (id)_time;
 - (Class)balloonViewClass;
 - (id)composition;
-- (BOOL)containsHyperlink;
+- (bool)containsHyperlink;
 - (Class)impactBalloonViewClass;
 - (id)loadTranscriptText;
 - (id)pasteboardItems;
 - (id)sendAnimationText;
-- (BOOL)shouldUseBigEmoji;
+- (bool)shouldUseBigEmoji;
 - (id)subject;
 - (id)text;
 

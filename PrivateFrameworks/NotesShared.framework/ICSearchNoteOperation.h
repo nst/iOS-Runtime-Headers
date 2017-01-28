@@ -8,6 +8,6 @@
 
 - (id)initWithNote:(id)arg1 searchString:(id)arg2;
 - (id)note;
-- (unsigned int)relevanceByPerformingSearch;
+- (unsigned long long)relevanceByPerformingSearch;
 
 @end

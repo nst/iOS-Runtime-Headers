@@ -4,32 +4,32 @@
 
 @interface EKTravelAdvisoryTimelinessAuthority : NSObject <CalActivatable> {
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    BOOL  _internalActive;
-    unsigned int  _internalPeriod;
-    id /* block */  _internalPeriodChangedCallback;
+    bool  _internalActive;
+    unsigned long long  _internalPeriod;
+    id  _internalPeriodChangedCallback;
     NSDate * _startOfLeaveNowPeriod;
     NSDate * _startOfRunningLatePeriod;
     NSObject<OS_dispatch_source> * _timer;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) bool active;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL internalActive;
-@property (nonatomic) unsigned int internalPeriod;
-@property (nonatomic, copy) id /* block */ internalPeriodChangedCallback;
-@property (nonatomic, readonly) unsigned int period;
-@property (nonatomic, copy) id /* block */ periodChangedCallback;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool internalActive;
+@property (nonatomic) unsigned long long internalPeriod;
+@property (nonatomic, copy) id internalPeriodChangedCallback;
+@property (nonatomic, readonly) unsigned long long period;
+@property (nonatomic, copy) id periodChangedCallback;
 @property (nonatomic, retain) NSDate *startOfLeaveNowPeriod;
 @property (nonatomic, retain) NSDate *startOfRunningLatePeriod;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *timer;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (id)stringForPeriod:(unsigned int)arg1;
++ (id)stringForPeriod:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_refresh;
@@ -38,21 +38,21 @@
 - (void)_refreshTimer;
 - (void)_uninstallTimer;
 - (void)activate;
-- (BOOL)active;
+- (bool)active;
 - (id)callbackQueue;
 - (void)deactivate;
 - (void)dealloc;
 - (id)init;
-- (BOOL)internalActive;
-- (unsigned int)internalPeriod;
-- (id /* block */)internalPeriodChangedCallback;
-- (unsigned int)period;
-- (id /* block */)periodChangedCallback;
+- (bool)internalActive;
+- (unsigned long long)internalPeriod;
+- (id)internalPeriodChangedCallback;
+- (unsigned long long)period;
+- (id)periodChangedCallback;
 - (void)setCallbackQueue:(id)arg1;
-- (void)setInternalActive:(BOOL)arg1;
-- (void)setInternalPeriod:(unsigned int)arg1;
-- (void)setInternalPeriodChangedCallback:(id /* block */)arg1;
-- (void)setPeriodChangedCallback:(id /* block */)arg1;
+- (void)setInternalActive:(bool)arg1;
+- (void)setInternalPeriod:(unsigned long long)arg1;
+- (void)setInternalPeriodChangedCallback:(id)arg1;
+- (void)setPeriodChangedCallback:(id)arg1;
 - (void)setStartOfLeaveNowPeriod:(id)arg1;
 - (void)setStartOfRunningLatePeriod:(id)arg1;
 - (void)setTimer:(id)arg1;

@@ -3,22 +3,22 @@
  */
 
 @interface ASDControl : ASDObject {
-    unsigned long  _controlElement;
-    unsigned long  _controlScope;
+    unsigned int  _controlElement;
+    unsigned int  _controlScope;
 }
 
-@property (nonatomic) unsigned long controlElement;
-@property (nonatomic) unsigned long controlScope;
+@property (nonatomic) unsigned int controlElement;
+@property (nonatomic) unsigned int controlScope;
 
-- (unsigned long)controlElement;
-- (unsigned long)controlScope;
-- (unsigned long)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 andQualifierData:(const void*)arg3;
-- (BOOL)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned long)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(const void*)arg5 forClient:(int)arg6;
-- (BOOL)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
-- (id)initWithElement:(unsigned long)arg1 inScope:(unsigned long)arg2 withPlugin:(id)arg3;
+- (unsigned int)controlElement;
+- (unsigned int)controlScope;
+- (unsigned int)dataSizeForProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 andQualifierData:(const void*)arg3;
+- (bool)getProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 withQualifierSize:(unsigned int)arg2 qualifierData:(const void*)arg3 dataSize:(unsigned int*)arg4 andData:(const void*)arg5 forClient:(int)arg6;
+- (bool)hasProperty:(const struct AudioObjectPropertyAddress { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
+- (id)initWithElement:(unsigned int)arg1 inScope:(unsigned int)arg2 withPlugin:(id)arg3;
 - (id)initWithPlugin:(id)arg1;
-- (BOOL)isKindOfAudioClass:(unsigned long)arg1;
-- (void)setControlElement:(unsigned long)arg1;
-- (void)setControlScope:(unsigned long)arg1;
+- (bool)isKindOfAudioClass:(unsigned int)arg1;
+- (void)setControlElement:(unsigned int)arg1;
+- (void)setControlScope:(unsigned int)arg1;
 
 @end

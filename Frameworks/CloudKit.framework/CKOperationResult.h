@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSDictionary *responseHTTPHeadersByRequestUUID;
 @property (nonatomic, retain) NSDictionary *w3cNavigationTimingByRequestUUID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

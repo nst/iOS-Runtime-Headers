@@ -4,9 +4,9 @@
 
 @interface CRKStudentDaemonProxy : NSObject
 
-+ (void)fetchResourceFromURL:(id)arg1 completion:(id /* block */)arg2;
-+ (void)setActiveStudentIdentifier:(id)arg1 completion:(id /* block */)arg2;
++ (void)fetchResourceFromURL:(id)arg1 completion:(id)arg2;
++ (void)setActiveStudentIdentifier:(id)arg1 completion:(id)arg2;
 + (id)studentDaemonConnection;
-+ (void)studentDidAuthenticate:(id)arg1 completion:(id /* block */)arg2;
++ (void)studentDidAuthenticate:(id)arg1 completion:(id)arg2;
 
 @end

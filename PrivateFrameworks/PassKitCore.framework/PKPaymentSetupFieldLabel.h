@@ -7,10 +7,10 @@
 @property (nonatomic, readonly, copy) NSString *title;
 
 - (id)displayString;
-- (unsigned int)fieldType;
+- (unsigned long long)fieldType;
 - (void)setCurrentValue:(id)arg1;
 - (id)submissionString;
-- (BOOL)submissionStringMeetsAllRequirements;
+- (bool)submissionStringMeetsAllRequirements;
 - (id)title;
 - (void)updateWithConfiguration:(id)arg1;
 

@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSString *href;
 
-- (BOOL)allowsPasteAsSmartField;
+- (bool)allowsPasteAsSmartField;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
 - (id)href;

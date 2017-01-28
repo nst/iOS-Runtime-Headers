@@ -8,26 +8,26 @@
 - (void)beginPotentialLocationUse;
 - (void)deferExpensiveOperations;
 - (void)endPotentialLocationUse;
-- (void)fetchCurrentImageLimits:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSNumber *, NSError *, void*
-- (void)fetchCurrentUrlLimits:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, int, NSError *, void*
-- (void)fetchGeotagStatus:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSError *, void*
-- (void)fetchProfileImageDataForScreenName:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
-- (void)fetchSessionInfo:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
-- (id /* block */)locationInformationChangedBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, NSDictionary *, void*, id, SEL
-- (void)recordsMatchingPrefixString:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, BOOL, id /* block */, NSArray *, NSError *, void*
-- (void)sendStatus:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: SLMicroBlogStatus *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)fetchCurrentImageLimits:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSNumber *, NSError *, void*
+- (void)fetchCurrentUrlLimits:(void *)arg1; // needs 1 arg types, found 8: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, long long, long long, NSError *, void*
+- (void)fetchGeotagStatus:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, int, NSError *, void*
+- (void)fetchProfileImageDataForScreenName:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSData *, NSError *, void*
+- (void)fetchSessionInfo:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSDictionary *, NSError *, void*
+- (id)locationInformationChangedBlock:(void *)arg1; // needs 1 arg types, found 5: id, NSDictionary *, void*, id, SEL
+- (void)recordsMatchingPrefixString:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, bool, id, NSArray *, NSError *, void*
+- (void)sendStatus:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: SLMicroBlogStatus *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, NSError *, void*
 - (NSString *)serviceAccountTypeIdentifier;
 - (void)setActiveAccountIdentifier:(NSString *)arg1;
 - (void)setGeotagStatus:(int)arg1;
-- (void)setLocationInformationChangedBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
+- (void)setLocationInformationChangedBlock:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSDictionary *, void*
 - (void)showSettingsIfNeeded;
 - (void)stopDeferringExpensiveOperations;
 
 @optional
 
 - (NSData *)cachedProfileImageDataForScreenName:(NSString *)arg1;
-- (int)characterCountForText:(NSString *)arg1 shortenedURLCost:(int)arg2;
-- (BOOL)countMediaAttachmentsTowardCharacterCount;
+- (long long)characterCountForText:(NSString *)arg1 shortenedURLCost:(long long)arg2;
+- (bool)countMediaAttachmentsTowardCharacterCount;
 - (void)ensureUserRecordStore;
 
 @end

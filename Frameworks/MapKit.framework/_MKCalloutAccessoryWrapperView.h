@@ -8,17 +8,17 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_mapkit_accessoryControlToExtendWithCallout;
-- (float)_mapkit_calloutCustomLeftMargin;
-- (float)_mapkit_calloutCustomRightMargin;
-- (float)_mapkit_minimumCalloutWidthMultiplier;
+- (double)_mapkit_calloutCustomLeftMargin;
+- (double)_mapkit_calloutCustomRightMargin;
+- (double)_mapkit_minimumCalloutWidthMultiplier;
 - (void)_mapkit_setCalloutBackgroundColor:(id)arg1;
 - (void)_mapkit_setCalloutTextColor:(id)arg1;
 - (id)initWithView:(id)arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
 
 @end

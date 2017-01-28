@@ -4,40 +4,40 @@
 
 @interface SearchUITableViewCell : UITableViewCell {
     <SearchUIFeedbackDelegatePrivate> * _delegate;
-    BOOL  _expanded;
-    unsigned int  _style;
+    bool  _expanded;
+    unsigned long long  _style;
 }
 
 @property <SearchUIFeedbackDelegatePrivate> *delegate;
-@property (getter=isExpanded) BOOL expanded;
-@property unsigned int style;
+@property (getter=isExpanded) bool expanded;
+@property unsigned long long style;
 
-+ (BOOL)canCellExpandWithResults:(id)arg1;
++ (bool)canCellExpandWithResults:(id)arg1;
 + (Class)classForResult:(id)arg1;
 + (id)convertResultIfNecessary:(id)arg1;
-+ (float)distanceToTopOfAppIconsForMultiResultCell;
-+ (BOOL)resultIsSuggestedQuery:(id)arg1;
++ (double)distanceToTopOfAppIconsForMultiResultCell;
++ (bool)resultIsSuggestedQuery:(id)arg1;
 + (id)reuseIdentifierForClass:(Class)arg1;
 + (id)reuseIdentifierForResult:(id)arg1;
 + (id)reuseIdentifierForResults:(id)arg1;
-+ (id)rowViewForResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
++ (id)rowViewForResult:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (id)initWithResults:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (id)initWithStyle:(unsigned int)arg1;
-- (BOOL)isExpandable;
-- (BOOL)isExpanded;
-- (unsigned int)numberOfVisibleResults;
+- (id)initWithResult:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithResults:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithStyle:(unsigned long long)arg1;
+- (bool)isExpandable;
+- (bool)isExpanded;
+- (unsigned long long)numberOfVisibleResults;
 - (void)setDelegate:(id)arg1;
-- (void)setExpanded:(BOOL)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(BOOL)arg2;
-- (void)setStyle:(unsigned int)arg1;
-- (BOOL)shouldHideBottomSeparator;
-- (unsigned int)style;
-- (BOOL)supportsRecycling;
-- (void)updateExpanded:(BOOL)arg1;
+- (void)setExpanded:(bool)arg1;
+- (void)setSectionLocation:(int)arg1 animated:(bool)arg2;
+- (void)setStyle:(unsigned long long)arg1;
+- (bool)shouldHideBottomSeparator;
+- (unsigned long long)style;
+- (bool)supportsRecycling;
+- (void)updateExpanded:(bool)arg1;
 - (void)updateWithResult:(id)arg1;
 - (void)updateWithResults:(id)arg1;
 

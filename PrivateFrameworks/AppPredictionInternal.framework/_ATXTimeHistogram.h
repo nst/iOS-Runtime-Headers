@@ -12,7 +12,7 @@
 
 @property (nonatomic, readonly) unsigned int count;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addEventWithId:(unsigned int)arg1 atLocalTime:(unsigned short)arg2;
 - (void)addEventWithId:(unsigned int)arg1 atLocalTime:(unsigned short)arg2 count:(double)arg3;
@@ -28,7 +28,7 @@
 - (void)decayByFactor:(double)arg1;
 - (void)decayWithHalfLife:(double)arg1;
 - (id)description;
-- (id)descriptionWithEventNames:(id /* block */)arg1;
+- (id)descriptionWithEventNames:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithBucketCount:(unsigned short)arg1 filter:(bool)arg2;

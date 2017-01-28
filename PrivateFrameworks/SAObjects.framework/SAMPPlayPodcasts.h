@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)episodePlaybackOrder;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setEpisodePlaybackOrder:(id)arg1;
 
 @end

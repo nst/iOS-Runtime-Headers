@@ -4,41 +4,41 @@
 
 @interface PKPaymentOptionsRecents : NSObject {
     CNContact * _cachedMeContact;
-    BOOL  _meCardCachingEnabled;
+    bool  _meCardCachingEnabled;
     <NSObject> * _meContactDidChangeNotificationObserver;
     CRRecentContactsLibrary * _recentContactsLibrary;
 }
 
 @property (nonatomic, readonly) CNContact *meCard;
-@property (getter=isMeCardCachingEnabled, nonatomic) BOOL meCardCachingEnabled;
+@property (getter=isMeCardCachingEnabled, nonatomic) bool meCardCachingEnabled;
 @property (nonatomic, retain) CRRecentContactsLibrary *recentContactsLibrary;
 
 + (id)_coreRecentsKindForPreference:(id)arg1;
 + (id)defaultInstance;
 
 - (void).cxx_destruct;
-- (BOOL)_addressIsInChina:(id)arg1;
+- (bool)_addressIsInChina:(id)arg1;
 - (id)_contactFromRecent:(id)arg1 preference:(id)arg2;
-- (void)_coreRecentsContactsForPreference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (void)_coreRecentsContactsForPreference:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)_defaultCRSearchQuery;
 - (id)_labelsToPropertiesDictionaryForContact:(id)arg1;
 - (id)_postalAddressLabeledValueFromRecent:(id)arg1;
 - (id)contactMetadataForContact:(id)arg1 preference:(id)arg2;
 - (void)dealloc;
-- (void)deleteAllRecentsWithCallbackQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)deleteAllRecentsWithCallbackQueue:(id)arg1 completion:(id)arg2;
 - (void)deleteRecent:(id)arg1;
-- (void)deleteRecentsForPreference:(id)arg1 callbackQueue:(id)arg2 completion:(id /* block */)arg3;
+- (void)deleteRecentsForPreference:(id)arg1 callbackQueue:(id)arg2 completion:(id)arg3;
 - (id)init;
-- (BOOL)isMeCardCachingEnabled;
+- (bool)isMeCardCachingEnabled;
 - (id)meCard;
 - (id)meCardEntriesForPreference:(id)arg1;
-- (void)meCardEntriesForPreference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (void)meCardEntriesForPreference:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)postalAddressMetadataForContact:(id)arg1;
 - (id)recentContactsLibrary;
 - (id)recentsForPreference:(id)arg1;
-- (void)recentsForPreference:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
+- (void)recentsForPreference:(id)arg1 queue:(id)arg2 completion:(id)arg3;
 - (id)saveContactToCoreRecents:(id)arg1 preference:(id)arg2;
-- (void)setMeCardCachingEnabled:(BOOL)arg1;
+- (void)setMeCardCachingEnabled:(bool)arg1;
 - (void)setRecentContactsLibrary:(id)arg1;
 
 @end

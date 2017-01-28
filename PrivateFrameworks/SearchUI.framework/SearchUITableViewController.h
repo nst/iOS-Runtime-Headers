@@ -3,22 +3,22 @@
  */
 
 @interface SearchUITableViewController : SearchUIKeyboardableTableViewController {
-    BOOL  _hasCheckedInsetSectionsOverride;
-    BOOL  _insetSectionsOverride;
-    unsigned int  _style;
+    bool  _hasCheckedInsetSectionsOverride;
+    bool  _insetSectionsOverride;
+    unsigned long long  _style;
 }
 
-@property BOOL hasCheckedInsetSectionsOverride;
-@property BOOL insetSectionsOverride;
-@property unsigned int style;
+@property bool hasCheckedInsetSectionsOverride;
+@property bool insetSectionsOverride;
+@property unsigned long long style;
 
-- (BOOL)hasCheckedInsetSectionsOverride;
-- (id)initWithUIStyle:(unsigned int)arg1;
-- (BOOL)insetSectionsOverride;
-- (void)setAllowsHeaderViewsToFloat:(BOOL)arg1;
-- (void)setHasCheckedInsetSectionsOverride:(BOOL)arg1;
-- (void)setInsetSectionsOverride:(BOOL)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (unsigned int)style;
+- (bool)hasCheckedInsetSectionsOverride;
+- (id)initWithUIStyle:(unsigned long long)arg1;
+- (bool)insetSectionsOverride;
+- (void)setAllowsHeaderViewsToFloat:(bool)arg1;
+- (void)setHasCheckedInsetSectionsOverride:(bool)arg1;
+- (void)setInsetSectionsOverride:(bool)arg1;
+- (void)setStyle:(unsigned long long)arg1;
+- (unsigned long long)style;
 
 @end

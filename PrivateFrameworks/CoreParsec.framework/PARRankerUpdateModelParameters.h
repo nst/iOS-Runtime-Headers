@@ -3,17 +3,17 @@
  */
 
 @interface PARRankerUpdateModelParameters : NSObject {
-    unsigned int  _gracePeriod;
-    unsigned int  _updateInterval;
+    unsigned long long  _gracePeriod;
+    unsigned long long  _updateInterval;
 }
 
-@property (nonatomic, readonly) unsigned int gracePeriod;
-@property (nonatomic, readonly) unsigned int updateInterval;
+@property (nonatomic, readonly) unsigned long long gracePeriod;
+@property (nonatomic, readonly) unsigned long long updateInterval;
 
 + (id)defaultValue;
 + (id)responseFromJSON:(id)arg1;
 
-- (unsigned int)gracePeriod;
-- (unsigned int)updateInterval;
+- (unsigned long long)gracePeriod;
+- (unsigned long long)updateInterval;
 
 @end

@@ -9,17 +9,17 @@
 @property (nonatomic, retain) id effectiveSettingsChangedNotificationObserver;
 
 - (void).cxx_destruct;
-- (BOOL)canBeShownFromSuspendedState;
+- (bool)canBeShownFromSuspendedState;
 - (void)deleteFingerprint:(id)arg1;
 - (id)effectiveSettingsChangedNotificationObserver;
 - (id)fingerprintName;
 - (id)representedBiometricIdentity;
 - (void)setEffectiveSettingsChangedNotificationObserver:(id)arg1;
 - (void)setFingerprintName:(id)arg1;
-- (BOOL)shouldSelectResponderOnAppearance;
+- (bool)shouldSelectResponderOnAppearance;
 - (id)specifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)viewDidDisappear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

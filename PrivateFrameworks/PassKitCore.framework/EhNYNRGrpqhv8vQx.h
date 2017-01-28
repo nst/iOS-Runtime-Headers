@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSString *GG4azdRDKRwqDieN;
 @property (nonatomic, retain) NSString *vxt7atWrTXXxLujF;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CNdniP2kzWPuGFrM;

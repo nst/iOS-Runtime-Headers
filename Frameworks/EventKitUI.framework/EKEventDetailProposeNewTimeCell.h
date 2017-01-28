@@ -4,9 +4,9 @@
 
 @interface EKEventDetailProposeNewTimeCell : EKEventDetailCell
 
-- (BOOL)hasCustomLayout;
-- (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;
-- (BOOL)shouldDisplayForEvent;
-- (BOOL)update;
+- (bool)hasCustomLayout;
+- (id)initWithEvent:(id)arg1 editable:(bool)arg2;
+- (bool)shouldDisplayForEvent;
+- (bool)update;
 
 @end

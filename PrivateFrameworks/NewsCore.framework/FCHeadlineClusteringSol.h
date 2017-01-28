@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSSet *groupableTags;
 @property (nonatomic, retain) NSSet *hardOrphans;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *headlinesById;
 @property (nonatomic, retain) FCSolHeuristic *heuristic;
 @property (nonatomic, retain) FCHeadlineClusteringRules *rules;
@@ -34,7 +34,7 @@
 - (id)articleIds;
 - (id)articleScoresByTag;
 - (id)articlesByTag;
-- (id)assignArticles:(id)arg1 groups:(id)arg2 maxClusterSize:(int)arg3;
+- (id)assignArticles:(id)arg1 groups:(id)arg2 maxClusterSize:(long long)arg3;
 - (id)clusterHeadlinesByTopic:(id)arg1 subscribedTopicIDs:(id)arg2 rules:(id)arg3;
 - (id)computeBestGrouping:(id)arg1 subscribedTagIDs:(id)arg2 articleScoresByTag:(id)arg3 headlinesById:(id)arg4;
 - (id)computeBestMoveWithTag:(id)arg1 groupableArticles:(id)arg2 solos:(id)arg3 ungroupedArticles:(id)arg4 remainingTags:(id)arg5 groups:(id)arg6 topK:(double)arg7;
@@ -43,7 +43,7 @@
 - (id)computeNewOrphansWithUngroupedArticles:(id)arg1 remainingTags:(id)arg2;
 - (void)createMoveWithTag:(id)arg1 articles:(id)arg2 remainingTags:(id)arg3 ungroupedArticles:(id)arg4 moves:(id)arg5 groups:(id)arg6;
 - (void)filterOverflowedOrphans:(id)arg1;
-- (id)generateCombosWithSet:(id)arg1 tag:(id)arg2 chooseSize:(int)arg3;
+- (id)generateCombosWithSet:(id)arg1 tag:(id)arg2 chooseSize:(long long)arg3;
 - (id)groupableTags;
 - (id)hardOrphans;
 - (id)headlinesById;
@@ -52,7 +52,7 @@
 - (double)normalizedAboutnessForArticle:(id)arg1 tag:(id)arg2;
 - (void)optimizeForLayout:(id)arg1;
 - (double)personalizationScoreForArticle:(id)arg1;
-- (BOOL)reassignedArticleInGroups:(id)arg1 withTag:(id)arg2;
+- (bool)reassignedArticleInGroups:(id)arg1 withTag:(id)arg2;
 - (void)regroupOrphans:(id)arg1;
 - (id)rules;
 - (id)scoredArticleWithID:(id)arg1 tag:(id)arg2;
@@ -66,7 +66,7 @@
 - (void)setRules:(id)arg1;
 - (void)setSubscribedTagIDs:(id)arg1;
 - (void)setTagsByArticle:(id)arg1;
-- (id)sortedScoredArticles:(id)arg1 tag:(id)arg2 length:(int)arg3 asc:(BOOL)arg4;
+- (id)sortedScoredArticles:(id)arg1 tag:(id)arg2 length:(long long)arg3 asc:(bool)arg4;
 - (id)subscribedTagIDs;
 - (id)tagsByArticle;
 - (double)weightedScoreForArticle:(id)arg1 tag:(id)arg2;

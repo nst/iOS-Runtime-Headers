@@ -16,9 +16,9 @@
 @property (nonatomic) unsigned int cacheHitCount;
 @property (nonatomic) unsigned int cacheMissCount;
 @property (nonatomic) int cacheType;
-@property (nonatomic) BOOL hasCacheHitCount;
-@property (nonatomic) BOOL hasCacheMissCount;
-@property (nonatomic) BOOL hasCacheType;
+@property (nonatomic) bool hasCacheHitCount;
+@property (nonatomic) bool hasCacheMissCount;
+@property (nonatomic) bool hasCacheType;
 
 - (int)StringAsCacheType:(id)arg1;
 - (unsigned int)cacheHitCount;
@@ -29,19 +29,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCacheHitCount;
-- (BOOL)hasCacheMissCount;
-- (BOOL)hasCacheType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCacheHitCount;
+- (bool)hasCacheMissCount;
+- (bool)hasCacheType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCacheHitCount:(unsigned int)arg1;
 - (void)setCacheMissCount:(unsigned int)arg1;
 - (void)setCacheType:(int)arg1;
-- (void)setHasCacheHitCount:(BOOL)arg1;
-- (void)setHasCacheMissCount:(BOOL)arg1;
-- (void)setHasCacheType:(BOOL)arg1;
+- (void)setHasCacheHitCount:(bool)arg1;
+- (void)setHasCacheMissCount:(bool)arg1;
+- (void)setHasCacheType:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

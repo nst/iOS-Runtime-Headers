@@ -8,7 +8,7 @@
 
 - (void)dealloc;
 - (id)description;
-- (void)enumerateResolutionsUsingBlock:(id /* block */)arg1;
+- (void)enumerateResolutionsUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithXPCDictionaryRepresentation:(id)arg1;
 - (void)setError:(id)arg1 forPhoneNumber:(id)arg2;

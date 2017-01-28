@@ -7,31 +7,31 @@
         unsigned int pending : 1; 
         unsigned int unlockRequired : 1; 
     }  _has;
-    BOOL  _pending;
-    BOOL  _unlockRequired;
+    bool  _pending;
+    bool  _unlockRequired;
 }
 
-@property (nonatomic) BOOL hasPending;
-@property (nonatomic) BOOL hasUnlockRequired;
-@property (nonatomic) BOOL pending;
-@property (nonatomic) BOOL unlockRequired;
+@property (nonatomic) bool hasPending;
+@property (nonatomic) bool hasUnlockRequired;
+@property (nonatomic) bool pending;
+@property (nonatomic) bool unlockRequired;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPending;
-- (BOOL)hasUnlockRequired;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPending;
+- (bool)hasUnlockRequired;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)pending;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPending:(BOOL)arg1;
-- (void)setHasUnlockRequired:(BOOL)arg1;
-- (void)setPending:(BOOL)arg1;
-- (void)setUnlockRequired:(BOOL)arg1;
-- (BOOL)unlockRequired;
+- (bool)pending;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPending:(bool)arg1;
+- (void)setHasUnlockRequired:(bool)arg1;
+- (void)setPending:(bool)arg1;
+- (void)setUnlockRequired:(bool)arg1;
+- (bool)unlockRequired;
 - (void)writeTo:(id)arg1;
 
 @end

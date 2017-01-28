@@ -22,8 +22,8 @@
 - (id)init;
 - (id)parameters;
 - (id)pasteboardSource;
-- (id)predictionForCriteria:(id)arg1 limit:(unsigned int)arg2;
-- (id)predictionForCriteria:(id)arg1 limit:(unsigned int)arg2 consumer:(unsigned int)arg3 category:(unsigned int)arg4;
-- (id)recentLocationItemWithCriteria:(id)arg1 consumer:(unsigned int)arg2 category:(unsigned int)arg3 limit:(unsigned int)arg4 customCutoffTime:(id)arg5;
+- (id)predictionForCriteria:(id)arg1 limit:(unsigned long long)arg2;
+- (id)predictionForCriteria:(id)arg1 limit:(unsigned long long)arg2 consumer:(unsigned long long)arg3 category:(unsigned long long)arg4;
+- (id)recentLocationItemWithCriteria:(id)arg1 consumer:(unsigned long long)arg2 category:(unsigned long long)arg3 limit:(unsigned long long)arg4 customCutoffTime:(id)arg5;
 
 @end

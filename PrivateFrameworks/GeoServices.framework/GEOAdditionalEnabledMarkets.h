@@ -19,17 +19,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)queryParameters;
 - (id)queryString;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)reload;
 - (void)setTransitMarkets:(id)arg1;
-- (id)transitMarketAtIndex:(unsigned int)arg1;
+- (id)transitMarketAtIndex:(unsigned long long)arg1;
 - (id)transitMarkets;
-- (unsigned int)transitMarketsCount;
+- (unsigned long long)transitMarketsCount;
 - (void)writeTo:(id)arg1;
 
 @end

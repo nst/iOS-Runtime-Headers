@@ -27,7 +27,7 @@
 @property (nonatomic, retain) ACDDataclassOwnersManager *dataclassOwnersManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ACRemoteDeviceProxy *remoteDeviceProxy;
 @property (readonly) Class superclass;
 
@@ -54,7 +54,7 @@
 - (void)dealloc;
 - (id)entitlementsForConnection:(id)arg1;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)remoteDeviceProxy;
 - (void)setAccessPluginManager:(id)arg1;
 - (void)setAuthenticationDialogManager:(id)arg1;

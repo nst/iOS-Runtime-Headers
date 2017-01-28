@@ -12,7 +12,7 @@
 
 - (void)dealloc;
 - (id)depthsOfSlideNodes;
-- (void)enumerateSlideNodesAndDepthsUsingBlock:(id /* block */)arg1;
+- (void)enumerateSlideNodesAndDepthsUsingBlock:(id)arg1;
 - (id)initWithSlideNodes:(id)arg1 depths:(id)arg2;
 - (id)slideNodes;
 

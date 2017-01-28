@@ -15,9 +15,9 @@
 + (id)builderWithKey:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)addBatchIndex:(unsigned int)arg1;
+- (id)addBatchIndex:(unsigned long long)arg1;
 - (id)addDuetModelID;
-- (id)addDuetReturnedResults:(BOOL)arg1;
+- (id)addDuetReturnedResults:(bool)arg1;
 - (id)build;
 - (id)init;
 - (id)initWithKey:(id)arg1;
@@ -29,6 +29,6 @@
 - (void)setPrefixes:(id)arg1;
 - (void)setSuffixes:(id)arg1;
 - (id)suffixes;
-- (void)useString:(id)arg1 forSuffixAtIndex:(unsigned int)arg2;
+- (void)useString:(id)arg1 forSuffixAtIndex:(unsigned long long)arg2;
 
 @end

@@ -37,7 +37,7 @@
 - (struct _PLMav7BasebandHWStatsClockStateMask { unsigned int x1[4]; }*)apps_clock_duration_mask;
 - (struct _PLMav7BasebandGPSDPOBin { unsigned int x1[6]; }*)gps_dpo_bins;
 - (struct _PLMav7BasebandHWStatsHSICState { unsigned int x1[8]; }*)hsic;
-- (id)indexToRAT:(unsigned int)arg1;
+- (id)indexToRAT:(unsigned long long)arg1;
 - (id)initWithData:(id)arg1;
 - (void)logAPPSWithLogger:(id)arg1;
 - (void)logClockWithLogger:(id)arg1;

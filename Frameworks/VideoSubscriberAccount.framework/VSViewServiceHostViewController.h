@@ -5,8 +5,8 @@
 @interface VSViewServiceHostViewController : UIViewController <VSViewServiceRemoteViewControllerDelegate> {
     NSUUID * _currentRequest;
     <VSViewServiceHostViewControllerDelegate> * _delegate;
-    BOOL  _hasRequestedPresentation;
-    BOOL  _hasRetriedOnce;
+    bool  _hasRequestedPresentation;
+    bool  _hasRetriedOnce;
     VSViewServiceRemoteViewController * _remoteViewController;
     NSMutableDictionary * _requestsByID;
     VSViewControllerFactory * _viewControllerFactory;
@@ -16,9 +16,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSViewServiceHostViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasRequestedPresentation;
-@property (nonatomic) BOOL hasRetriedOnce;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasRequestedPresentation;
+@property (nonatomic) bool hasRetriedOnce;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) VSViewServiceRemoteViewController *remoteViewController;
 @property (nonatomic, retain) NSMutableDictionary *requestsByID;
 @property (readonly) Class superclass;
@@ -41,17 +41,17 @@
 - (id)delegate;
 - (void)dismissViewServiceRemoteViewController:(id)arg1;
 - (void)enqueueViewServiceRequest:(id)arg1 withIdentifier:(id)arg2;
-- (BOOL)hasRequestedPresentation;
-- (BOOL)hasRetriedOnce;
+- (bool)hasRequestedPresentation;
+- (bool)hasRetriedOnce;
 - (id)init;
-- (int)modalPresentationStyle;
+- (long long)modalPresentationStyle;
 - (void)presentViewServiceRemoteViewController:(id)arg1;
 - (id)remoteViewController;
 - (id)requestsByID;
 - (void)setCurrentRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHasRequestedPresentation:(BOOL)arg1;
-- (void)setHasRetriedOnce:(BOOL)arg1;
+- (void)setHasRequestedPresentation:(bool)arg1;
+- (void)setHasRetriedOnce:(bool)arg1;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setRequestsByID:(id)arg1;
 - (void)setViewControllerFactory:(id)arg1;

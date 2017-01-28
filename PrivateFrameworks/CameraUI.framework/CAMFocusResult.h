@@ -3,31 +3,31 @@
  */
 
 @interface CAMFocusResult : NSObject {
-    BOOL  _contrastBasedFocusDidEnd;
-    BOOL  _contrastBasedFocusDidStart;
-    BOOL  _deviceSupportsFocus;
-    int  _focusMode;
-    BOOL  _performingContrastDetection;
+    bool  _contrastBasedFocusDidEnd;
+    bool  _contrastBasedFocusDidStart;
+    bool  _deviceSupportsFocus;
+    long long  _focusMode;
+    bool  _performingContrastDetection;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _pointOfInterest;
 }
 
-@property (nonatomic, readonly) BOOL contrastBasedFocusDidEnd;
-@property (nonatomic, readonly) BOOL contrastBasedFocusDidStart;
-@property (nonatomic, readonly) BOOL deviceSupportsFocus;
-@property (nonatomic, readonly) int focusMode;
-@property (getter=isPerformingContrastDetection, nonatomic, readonly) BOOL performingContrastDetection;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } pointOfInterest;
+@property (nonatomic, readonly) bool contrastBasedFocusDidEnd;
+@property (nonatomic, readonly) bool contrastBasedFocusDidStart;
+@property (nonatomic, readonly) bool deviceSupportsFocus;
+@property (nonatomic, readonly) long long focusMode;
+@property (getter=isPerformingContrastDetection, nonatomic, readonly) bool performingContrastDetection;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } pointOfInterest;
 
-- (BOOL)contrastBasedFocusDidEnd;
-- (BOOL)contrastBasedFocusDidStart;
+- (bool)contrastBasedFocusDidEnd;
+- (bool)contrastBasedFocusDidStart;
 - (id)description;
-- (BOOL)deviceSupportsFocus;
-- (int)focusMode;
-- (id)initWithMode:(int)arg1 pointOfInterest:(struct CGPoint { float x1; float x2; })arg2 performingContrastDetection:(BOOL)arg3 contrastBasedFocusDidStart:(BOOL)arg4 contrastBasedFocusDidEnd:(BOOL)arg5 deviceSupportsFocus:(BOOL)arg6;
-- (BOOL)isPerformingContrastDetection;
-- (struct CGPoint { float x1; float x2; })pointOfInterest;
+- (bool)deviceSupportsFocus;
+- (long long)focusMode;
+- (id)initWithMode:(long long)arg1 pointOfInterest:(struct CGPoint { double x1; double x2; })arg2 performingContrastDetection:(bool)arg3 contrastBasedFocusDidStart:(bool)arg4 contrastBasedFocusDidEnd:(bool)arg5 deviceSupportsFocus:(bool)arg6;
+- (bool)isPerformingContrastDetection;
+- (struct CGPoint { double x1; double x2; })pointOfInterest;
 
 @end

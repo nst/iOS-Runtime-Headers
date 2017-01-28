@@ -6,9 +6,9 @@
 
 @property (nonatomic, readonly) PKShippingMethod *shippingMethod;
 
-+ (int)dataType;
++ (long long)dataType;
 
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isValidWithError:(id*)arg1;
 - (id)shippingMethod;
 
 @end

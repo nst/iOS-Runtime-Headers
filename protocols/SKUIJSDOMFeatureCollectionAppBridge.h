@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setEditing:(BOOL)arg1 options:(NSDictionary *)arg2;
+- (void)setEditing:(bool)arg1 options:(NSDictionary *)arg2;
 
 @end

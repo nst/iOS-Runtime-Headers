@@ -10,6 +10,6 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (BOOL)uploadPost:(id)arg1 error:(id*)arg2;
+- (bool)uploadPost:(id)arg1 error:(id*)arg2;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (int)appendData:(NSData *)arg1;
+- (long long)appendData:(NSData *)arg1;
 - (void)done;
 
 @end

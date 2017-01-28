@@ -7,8 +7,8 @@
     NSString * _string;
 }
 
-@property (nonatomic, readonly) BOOL hasLocale;
-@property (nonatomic, readonly) BOOL hasString;
+@property (nonatomic, readonly) bool hasLocale;
+@property (nonatomic, readonly) bool hasString;
 @property (nonatomic, retain) NSString *locale;
 @property (nonatomic, retain) NSString *string;
 
@@ -17,13 +17,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocale;
-- (BOOL)hasString;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocale;
+- (bool)hasString;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)locale;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLocale:(id)arg1;
 - (void)setString:(id)arg1;
 - (id)string;

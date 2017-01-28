@@ -3,12 +3,12 @@
  */
 
 @interface KissNode : SKSpriteNode {
-    BOOL  _leavesMark;
+    bool  _leavesMark;
 }
 
-@property (nonatomic) BOOL leavesMark;
+@property (nonatomic) bool leavesMark;
 
-- (BOOL)leavesMark;
-- (void)setLeavesMark:(BOOL)arg1;
+- (bool)leavesMark;
+- (void)setLeavesMark:(bool)arg1;
 
 @end

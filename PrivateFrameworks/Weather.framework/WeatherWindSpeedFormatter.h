@@ -18,12 +18,12 @@
 - (id)fallbackStringForWindSpeed:(float)arg1;
 - (id)fallbackUnitString;
 - (id)formattedStringForSpeed:(float)arg1 direction:(float)arg2;
-- (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
+- (bool)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (id)init;
 - (id)locale;
 - (void)setDirectionSubstringAttributes:(id)arg1;
 - (void)setLocale:(id)arg1;
-- (float)speedByConvertingToUserUnit:(float)arg1;
+- (double)speedByConvertingToUserUnit:(double)arg1;
 - (id)speedStringByConvertingToUserUnits:(float)arg1;
 - (id)stringForObjectValue:(id)arg1;
 - (id)stringForWindDirection:(float)arg1;

@@ -4,14 +4,14 @@
 
 @interface WDStory : NSObject {
     OADDrawable * mHead;
-    BOOL  mOle;
+    bool  mOle;
 }
 
 - (void)dealloc;
 - (id)head;
 - (id)initWithHead:(id)arg1;
-- (BOOL)isOle;
-- (void)setOle:(BOOL)arg1;
+- (bool)isOle;
+- (void)setOle:(bool)arg1;
 - (id)text;
 
 @end

@@ -14,42 +14,42 @@
     NSMutableDictionary * _persistentStoreCoordinators;
     NSObject<OS_dispatch_queue> * _queueMOC;
     NSObject<OS_dispatch_queue> * _queuePSC;
-    BOOL  _readOnly;
+    bool  _readOnly;
 }
 
 @property (readonly) NSString *databaseName;
 @property (readonly) NSString *directory;
 @property (readonly) NSURL *modelURL;
-@property (readonly) BOOL readOnly;
+@property (readonly) bool readOnly;
 
-+ (unsigned int)anonymizeObjectStringsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 batchFetchLimit:(unsigned int)arg5 totalFetchLimit:(unsigned int)arg6 includeSubentities:(BOOL)arg7 salt:(id)arg8;
++ (unsigned long long)anonymizeObjectStringsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 batchFetchLimit:(unsigned long long)arg5 totalFetchLimit:(unsigned long long)arg6 includeSubentities:(bool)arg7 salt:(id)arg8;
 + (id)anonymizeString:(id)arg1 withSalt:(id)arg2;
-+ (unsigned int)anonymizeStringAttributesOfManagedObject:(id)arg1 withSalt:(id)arg2;
-+ (unsigned int)countObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 includeSubentities:(BOOL)arg4 includePendingChanges:(BOOL)arg5;
-+ (unsigned int)deleteObjectsIfNeededToLimitTotal:(unsigned int)arg1 context:(id)arg2 entityName:(id)arg3 predicate:(id)arg4 sortDescriptors:(id)arg5 fetchLimit:(unsigned int)arg6 includeSubentities:(BOOL)arg7 includePendingChanges:(BOOL)arg8;
-+ (unsigned int)deleteObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 fetchLimit:(unsigned int)arg5 includeSubentities:(BOOL)arg6 includePendingChanges:(BOOL)arg7;
-+ (unsigned int)deleteObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 fetchOffset:(unsigned int)arg5 fetchLimit:(unsigned int)arg6 includeSubentities:(BOOL)arg7 includePendingChanges:(BOOL)arg8;
-+ (BOOL)forceCopyItemAtPath:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
-+ (unsigned int)updateObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 batchFetchLimit:(unsigned int)arg5 totalFetchLimit:(unsigned int)arg6 includeSubentities:(BOOL)arg7 updateBlock:(id /* block */)arg8;
++ (unsigned long long)anonymizeStringAttributesOfManagedObject:(id)arg1 withSalt:(id)arg2;
++ (unsigned long long)countObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 includeSubentities:(bool)arg4 includePendingChanges:(bool)arg5;
++ (unsigned long long)deleteObjectsIfNeededToLimitTotal:(unsigned long long)arg1 context:(id)arg2 entityName:(id)arg3 predicate:(id)arg4 sortDescriptors:(id)arg5 fetchLimit:(unsigned long long)arg6 includeSubentities:(bool)arg7 includePendingChanges:(bool)arg8;
++ (unsigned long long)deleteObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 fetchLimit:(unsigned long long)arg5 includeSubentities:(bool)arg6 includePendingChanges:(bool)arg7;
++ (unsigned long long)deleteObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 fetchOffset:(unsigned long long)arg5 fetchLimit:(unsigned long long)arg6 includeSubentities:(bool)arg7 includePendingChanges:(bool)arg8;
++ (bool)forceCopyItemAtPath:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
++ (unsigned long long)updateObjectsInContext:(id)arg1 entityName:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 batchFetchLimit:(unsigned long long)arg5 totalFetchLimit:(unsigned long long)arg6 includeSubentities:(bool)arg7 updateBlock:(id)arg8;
 
 - (void).cxx_destruct;
-- (BOOL)_deleteDatabaseFiles:(id)arg1;
+- (bool)_deleteDatabaseFiles:(id)arg1;
 - (void)closeStorageForProtectionClass:(id)arg1;
 - (id)copyStorageFor:(id)arg1 toDirectory:(id)arg2;
 - (id)databaseName;
 - (id)databasePathFor:(id)arg1;
-- (BOOL)deleteStorageFor:(id)arg1;
+- (bool)deleteStorageFor:(id)arg1;
 - (id)directory;
-- (void)handleDataProtectionChangeFor:(id)arg1 willBeAvailable:(BOOL)arg2;
+- (void)handleDataProtectionChangeFor:(id)arg1 willBeAvailable:(bool)arg2;
 - (void)handleDatabaseErrors:(id)arg1 forProtectionClass:(id)arg2;
 - (id)init;
-- (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 readOnly:(BOOL)arg4;
+- (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 readOnly:(bool)arg4;
 - (void)invalidateManagedObjectContextFor:(id)arg1;
 - (void)invalidatePersistentStoreCoordinatorFor:(id)arg1;
 - (id)managedObjectContextFor:(id)arg1;
 - (id)managedObjectModel;
 - (id)modelURL;
 - (id)persistentStoreCoordinatorFor:(id)arg1;
-- (BOOL)readOnly;
+- (bool)readOnly;
 
 @end

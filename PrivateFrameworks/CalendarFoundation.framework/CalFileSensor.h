@@ -3,26 +3,26 @@
  */
 
 @interface CalFileSensor : NSObject {
-    id /* block */  _eventBlock;
+    id  _eventBlock;
     NSString * _path;
     NSObject<OS_dispatch_queue> * _queue;
     NSObject<OS_dispatch_source> * _source;
-    BOOL  _started;
+    bool  _started;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ eventBlock;
+@property (nonatomic, readonly, copy) id eventBlock;
 @property (nonatomic, readonly, retain) NSString *path;
-@property (nonatomic, readonly) BOOL started;
+@property (nonatomic, readonly) bool started;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
-- (id /* block */)eventBlock;
+- (id)eventBlock;
 - (id)init;
-- (id)initWithPath:(id)arg1 eventBlock:(id /* block */)arg2;
+- (id)initWithPath:(id)arg1 eventBlock:(id)arg2;
 - (id)path;
 - (void)start;
-- (BOOL)started;
+- (bool)started;
 - (void)stop;
 
 @end

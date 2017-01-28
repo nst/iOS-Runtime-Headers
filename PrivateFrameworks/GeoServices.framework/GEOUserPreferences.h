@@ -3,35 +3,35 @@
  */
 
 @interface GEOUserPreferences : PBCodable <NSCopying> {
-    BOOL  _avoidHighways;
-    BOOL  _avoidTolls;
+    bool  _avoidHighways;
+    bool  _avoidTolls;
     struct { 
         unsigned int avoidHighways : 1; 
         unsigned int avoidTolls : 1; 
     }  _has;
 }
 
-@property (nonatomic) BOOL avoidHighways;
-@property (nonatomic) BOOL avoidTolls;
-@property (nonatomic) BOOL hasAvoidHighways;
-@property (nonatomic) BOOL hasAvoidTolls;
+@property (nonatomic) bool avoidHighways;
+@property (nonatomic) bool avoidTolls;
+@property (nonatomic) bool hasAvoidHighways;
+@property (nonatomic) bool hasAvoidTolls;
 
-- (BOOL)avoidHighways;
-- (BOOL)avoidTolls;
+- (bool)avoidHighways;
+- (bool)avoidTolls;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAvoidHighways;
-- (BOOL)hasAvoidTolls;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAvoidHighways;
+- (bool)hasAvoidTolls;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAvoidHighways:(BOOL)arg1;
-- (void)setAvoidTolls:(BOOL)arg1;
-- (void)setHasAvoidHighways:(BOOL)arg1;
-- (void)setHasAvoidTolls:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setAvoidHighways:(bool)arg1;
+- (void)setAvoidTolls:(bool)arg1;
+- (void)setHasAvoidHighways:(bool)arg1;
+- (void)setHasAvoidTolls:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,25 +3,25 @@
  */
 
 @interface _RMSBonjourService : NSObject {
-    BOOL  _available;
+    bool  _available;
     NSNetService * _netService;
     RMSService * _service;
-    int  _state;
+    long long  _state;
 }
 
-@property (getter=isAvailable, nonatomic) BOOL available;
+@property (getter=isAvailable, nonatomic) bool available;
 @property (nonatomic, retain) NSNetService *netService;
 @property (nonatomic, retain) RMSService *service;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 
 - (void).cxx_destruct;
-- (BOOL)isAvailable;
+- (bool)isAvailable;
 - (id)netService;
 - (id)service;
-- (void)setAvailable:(BOOL)arg1;
+- (void)setAvailable:(bool)arg1;
 - (void)setNetService:(id)arg1;
 - (void)setService:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSPredicate *predicate;
 @property (nonatomic, copy) NSString *queryString;
 @property (nonatomic, retain) NSArray *results;
@@ -39,7 +39,7 @@
 - (id)searchQuery;
 - (void)searchQuery:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 didReturnItems:(id)arg2;
-- (void)searchQuery:(id)arg1 statusChanged:(unsigned int)arg2;
+- (void)searchQuery:(id)arg1 statusChanged:(unsigned long long)arg2;
 - (id)semaphore;
 - (void)setError:(id)arg1;
 - (void)setPredicate:(id)arg1;

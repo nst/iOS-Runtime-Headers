@@ -15,10 +15,10 @@
 }
 
 @property (nonatomic) int buttonAUpDelay;
-@property (nonatomic) BOOL hasButtonAUpDelay;
-@property (nonatomic) BOOL hasPlayerIndex;
-@property (nonatomic) BOOL hasProfile;
-@property (nonatomic, readonly) BOOL hasVendorName;
+@property (nonatomic) bool hasButtonAUpDelay;
+@property (nonatomic) bool hasPlayerIndex;
+@property (nonatomic) bool hasProfile;
+@property (nonatomic, readonly) bool hasVendorName;
 @property (nonatomic) unsigned int playerIndex;
 @property (nonatomic) int profile;
 @property (nonatomic, retain) NSString *vendorName;
@@ -30,21 +30,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasButtonAUpDelay;
-- (BOOL)hasPlayerIndex;
-- (BOOL)hasProfile;
-- (BOOL)hasVendorName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasButtonAUpDelay;
+- (bool)hasPlayerIndex;
+- (bool)hasProfile;
+- (bool)hasVendorName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)playerIndex;
 - (int)profile;
 - (id)profileAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setButtonAUpDelay:(int)arg1;
-- (void)setHasButtonAUpDelay:(BOOL)arg1;
-- (void)setHasPlayerIndex:(BOOL)arg1;
-- (void)setHasProfile:(BOOL)arg1;
+- (void)setHasButtonAUpDelay:(bool)arg1;
+- (void)setHasPlayerIndex:(bool)arg1;
+- (void)setHasProfile:(bool)arg1;
 - (void)setPlayerIndex:(unsigned int)arg1;
 - (void)setProfile:(int)arg1;
 - (void)setVendorName:(id)arg1;

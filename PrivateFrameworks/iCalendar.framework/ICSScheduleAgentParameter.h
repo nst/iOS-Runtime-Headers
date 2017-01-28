@@ -7,6 +7,6 @@
 + (id)scheduleAgentParameterFromCode:(int)arg1;
 + (id)scheduleAgentParameterFromICSString:(id)arg1;
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 
 @end

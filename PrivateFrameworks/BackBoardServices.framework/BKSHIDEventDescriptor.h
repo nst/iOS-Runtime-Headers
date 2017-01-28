@@ -12,15 +12,15 @@
 + (id)reusableDescriptorWithEventType:(unsigned int)arg1;
 + (id)reusableKeyboardDescriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
 + (id)reusableVendorDefinedDescriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)describes:(id)arg1;
+- (bool)describes:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (unsigned int)hidEventType;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEventType:(unsigned int)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

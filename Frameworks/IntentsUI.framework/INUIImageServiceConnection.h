@@ -12,6 +12,6 @@
 - (id)_init;
 - (void)dealloc;
 - (id)init;
-- (void)loadUIImageForINImage:(id)arg1 traitCollection:(id)arg2 reply:(id /* block */)arg3;
+- (void)loadUIImageForINImage:(id)arg1 traitCollection:(id)arg2 reply:(id)arg3;
 
 @end

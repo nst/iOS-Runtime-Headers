@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)allowsUserVisibleUpcomingItems;
-- (BOOL)canSeek;
-- (BOOL)canSkipItem:(MPAVItem *)arg1;
-- (BOOL)canSkipToPreviousItem;
-- (int)playbackMode;
-- (BOOL)userCanChangeShuffleAndRepeatType;
+- (bool)allowsUserVisibleUpcomingItems;
+- (bool)canSeek;
+- (bool)canSkipItem:(MPAVItem *)arg1;
+- (bool)canSkipToPreviousItem;
+- (long long)playbackMode;
+- (bool)userCanChangeShuffleAndRepeatType;
 
 @end

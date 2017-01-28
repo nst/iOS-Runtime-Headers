@@ -5,21 +5,21 @@
 @interface AVPlayerLayerInternal : NSObject {
     NSSet * KVOInvokers;
     AVPlayerLayer * associatedPIPLayer;
-    BOOL  canEnterPIPMode;
+    bool  canEnterPIPMode;
     NSDictionary * clientLayers;
     FigBaseCALayer * closedCaptionLayer;
     NSObject<OS_dispatch_queue> * configurationQueue;
     AVKeyPathDependencyManager * dependencyManager;
     AVNetworkPlaybackPerfHUDLayer * hudLayer;
-    BOOL  isPIPModeEnabled;
-    BOOL  isPresentationLayer;
-    BOOL  isReadyForDisplay;
+    bool  isPIPModeEnabled;
+    bool  isPresentationLayer;
+    bool  isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } * isReadyForDisplayMutex;
-    BOOL  lanczosDownscalingEnabled;
-    int  lanczosDownscalingFactor;
+    bool  lanczosDownscalingEnabled;
+    long long  lanczosDownscalingFactor;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  latestAppliedPresentationSize;
     FigBaseCALayer * maskLayer;
     NSDictionary * pixelBufferAttributes;
@@ -27,14 +27,14 @@
     AVPlayer * player;
     AVPlayer * playerBeingObserved;
     <AVCallbackCancellation> * playerCurrentItemHasVideoFrameEnqueuedKVOInvoker;
-    BOOL  preventsChangesToSublayerHierarchy;
+    bool  preventsChangesToSublayerHierarchy;
     NSObject<OS_dispatch_queue> * serialQueue;
-    BOOL  shouldObservePlayer;
+    bool  shouldObservePlayer;
     NSString * subtitleGravity;
     FigSubtitleCALayer * subtitleLayer;
     NSString * videoGravity;
     FigVideoContainerLayer * videoLayer;
-    BOOL  willManageSublayersAsSwappedLayers;
+    bool  willManageSublayersAsSwappedLayers;
 }
 
 @end

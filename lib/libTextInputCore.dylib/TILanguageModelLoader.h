@@ -30,14 +30,14 @@
 + (void)clearDynamicLearningCaches;
 + (void)clearDynamicResourcesAtPath:(id)arg1;
 + (void)contactStoreDidChange:(id)arg1;
-+ (void)dropResourcesExcludingInputModes:(id)arg1 flushCache:(BOOL)arg2;
++ (void)dropResourcesExcludingInputModes:(id)arg1 flushCache:(bool)arg2;
 + (void)flushDynamicLearningCaches;
 + (id)knownClients;
 + (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })modelForLocale:(id)arg1 adaptationContext:(id)arg2 staticResourcePaths:(id)arg3 dynamicResourcePath:(id)arg4;
 + (void)performMaintenance;
 + (id)recipientRecords;
 + (void)resetClientAndRecipientCache;
-+ (void)setAsynchronousLoad:(BOOL)arg1;
++ (void)setAsynchronousLoad:(bool)arg1;
 + (id)sharedLanguageModelLoaderForInputMode:(id)arg1 dynamicResourcePath:(id)arg2 mobileAssets:(id)arg3;
 + (void)startObservingContactStore;
 
@@ -49,13 +49,13 @@
 - (id)contactFetchingDelegate;
 - (void)dealloc;
 - (id)dynamicResourcePath;
-- (void)findRecordsMatchingRecipient:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)findRecordsMatchingRecipient:(id)arg1 completionHandler:(id)arg2;
 - (void)flushDynamicLearningCaches;
 - (id)initWithInputMode:(id)arg1 dynamicResourcePath:(id)arg2 mobileAssets:(id)arg3;
 - (id)inputMode;
 - (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })languageModelForAdaptationContext:(id)arg1;
 - (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })lightweightLanguageModel;
-- (void)lookupRecordForRecipientIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)lookupRecordForRecipientIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (id)mobileAssets;
 - (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })model;
 - (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })newLanguageModel;
@@ -65,11 +65,11 @@
 - (void)setClientIdentifier:(id)arg1;
 - (void)setContactFetchingDelegate:(id)arg1;
 - (void)setLanguageModelClientIdentifier:(id)arg1;
-- (void)setLanguageModelRecipientIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)setLanguageModelRecipientIdentifier:(id)arg1 completion:(id)arg2;
 - (void)setModel:(struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setRecipientIdentifier:(id)arg1;
 - (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })sharedLanguageModelForClient:(id)arg1 withRecipient:(id)arg2;
-- (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })sharedLanguageModelForClient:(id)arg1 withRecipient:(id)arg2 completion:(id /* block */)arg3;
+- (struct shared_ptr<KB::LanguageModel> { struct LanguageModel {} *x1; struct __shared_weak_count {} *x2; })sharedLanguageModelForClient:(id)arg1 withRecipient:(id)arg2 completion:(id)arg3;
 - (id)staticResourcePaths;
 
 @end

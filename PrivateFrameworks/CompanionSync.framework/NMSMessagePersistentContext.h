@@ -4,27 +4,27 @@
 
 @interface NMSMessagePersistentContext : NSObject <NSSecureCoding> {
     NSDate * _date;
-    BOOL  _fromRequest;
+    bool  _fromRequest;
     NSString * _idsIdentifier;
     NSDictionary * _idsOptions;
     unsigned short  _messageID;
-    BOOL  _processAcked;
-    BOOL  _sendAcked;
+    bool  _processAcked;
+    bool  _sendAcked;
     NSSet * _targetDeviceIDs;
     NSDictionary * _userInfo;
 }
 
 @property (nonatomic, retain) NSDate *date;
-@property (getter=isFromRequest, nonatomic) BOOL fromRequest;
+@property (getter=isFromRequest, nonatomic) bool fromRequest;
 @property (nonatomic, copy) NSString *idsIdentifier;
 @property (nonatomic, retain) NSDictionary *idsOptions;
 @property (nonatomic) unsigned short messageID;
-@property (nonatomic) BOOL processAcked;
-@property (nonatomic) BOOL sendAcked;
+@property (nonatomic) bool processAcked;
+@property (nonatomic) bool sendAcked;
 @property (nonatomic, copy) NSSet *targetDeviceIDs;
 @property (nonatomic, retain) NSDictionary *userInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)date;
@@ -33,17 +33,17 @@
 - (id)idsIdentifier;
 - (id)idsOptions;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isFromRequest;
+- (bool)isFromRequest;
 - (unsigned short)messageID;
-- (BOOL)processAcked;
-- (BOOL)sendAcked;
+- (bool)processAcked;
+- (bool)sendAcked;
 - (void)setDate:(id)arg1;
-- (void)setFromRequest:(BOOL)arg1;
+- (void)setFromRequest:(bool)arg1;
 - (void)setIdsIdentifier:(id)arg1;
 - (void)setIdsOptions:(id)arg1;
 - (void)setMessageID:(unsigned short)arg1;
-- (void)setProcessAcked:(BOOL)arg1;
-- (void)setSendAcked:(BOOL)arg1;
+- (void)setProcessAcked:(bool)arg1;
+- (void)setSendAcked:(bool)arg1;
 - (void)setTargetDeviceIDs:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (id)targetDeviceIDs;

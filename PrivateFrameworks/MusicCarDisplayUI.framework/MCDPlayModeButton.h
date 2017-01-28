@@ -9,6 +9,6 @@
 - (id)colorForTouchContentSelected;
 - (id)colorForTouchFocusLayer;
 - (id)colorForTouchFocusLayerSelected;
-- (BOOL)showBezelInTouch;
+- (bool)showBezelInTouch;
 
 @end

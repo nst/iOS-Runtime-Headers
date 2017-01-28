@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -27,6 +27,6 @@
 - (id)init;
 - (id)loadManifestDataForBundleIdentifier:(id)arg1;
 - (void)persistManifestData:(id)arg1 forBundleIdentifier:(id)arg2;
-- (void)synchronizeForBundleIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)synchronizeForBundleIdentifier:(id)arg1 withCompletion:(id)arg2;
 
 @end

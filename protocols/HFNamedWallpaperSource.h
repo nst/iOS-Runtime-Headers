@@ -5,8 +5,8 @@
 
 @required
 
-- (NSArray *)allWallpapersForCollection:(int)arg1;
-- (HFWallpaper *)defaultWallpaperForCollection:(int)arg1;
+- (NSArray *)allWallpapersForCollection:(long long)arg1;
+- (HFWallpaper *)defaultWallpaperForCollection:(long long)arg1;
 - (UIImage *)imageForWallpaper:(HFWallpaper *)arg1;
 
 @end

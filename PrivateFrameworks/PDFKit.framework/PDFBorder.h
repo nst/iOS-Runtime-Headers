@@ -7,36 +7,36 @@
 }
 
 @property (nonatomic, retain) NSArray *dashPattern;
-@property (nonatomic) float lineWidth;
-@property (nonatomic) int style;
+@property (nonatomic) double lineWidth;
+@property (nonatomic) long long style;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)createDictionaryRef;
 - (unsigned int)dashCountRaw;
 - (id)dashPattern;
-- (const float*)dashPatternRaw;
+- (const double*)dashPatternRaw;
 - (void)dealloc;
 - (id)description;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
+- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (float)horizontalCornerRadius;
+- (double)horizontalCornerRadius;
 - (id)init;
 - (id)initWithAnnotationDictionary:(struct CGPDFDictionary { }*)arg1 forPage:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isRectangular;
-- (float)lineWidth;
+- (bool)isRectangular;
+- (double)lineWidth;
 - (void)setDashFromArray:(struct CGPDFArray { }*)arg1;
 - (void)setDashPattern:(id)arg1;
 - (void)setDashPatternRaw;
-- (void)setHorizontalCornerRadius:(float)arg1;
-- (void)setLineWidth:(float)arg1;
-- (void)setStyle:(int)arg1;
+- (void)setHorizontalCornerRadius:(double)arg1;
+- (void)setLineWidth:(double)arg1;
+- (void)setStyle:(long long)arg1;
 - (void)setStyleFromDictionary:(struct CGPDFDictionary { }*)arg1;
-- (void)setVerticalCornerRadius:(float)arg1;
-- (int)style;
+- (void)setVerticalCornerRadius:(double)arg1;
+- (long long)style;
 - (void)updateCornerBorderStyle;
-- (float)verticalCornerRadius;
+- (double)verticalCornerRadius;
 
 @end

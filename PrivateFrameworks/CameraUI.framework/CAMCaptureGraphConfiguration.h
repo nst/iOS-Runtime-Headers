@@ -3,29 +3,29 @@
  */
 
 @interface CAMCaptureGraphConfiguration : NSObject <NSCoding> {
-    int  _audioConfiguration;
-    int  _device;
-    int  _mode;
-    int  _previewConfiguration;
-    int  _videoConfiguration;
+    long long  _audioConfiguration;
+    long long  _device;
+    long long  _mode;
+    long long  _previewConfiguration;
+    long long  _videoConfiguration;
 }
 
-@property (nonatomic, readonly) int audioConfiguration;
-@property (nonatomic, readonly) int device;
-@property (nonatomic, readonly) int mode;
-@property (nonatomic, readonly) int previewConfiguration;
-@property (nonatomic, readonly) int videoConfiguration;
+@property (nonatomic, readonly) long long audioConfiguration;
+@property (nonatomic, readonly) long long device;
+@property (nonatomic, readonly) long long mode;
+@property (nonatomic, readonly) long long previewConfiguration;
+@property (nonatomic, readonly) long long videoConfiguration;
 
-- (int)audioConfiguration;
+- (long long)audioConfiguration;
 - (id)completeDescription;
 - (id)description;
-- (int)device;
+- (long long)device;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCaptureMode:(int)arg1 captureDevice:(int)arg2 videoConfiguration:(int)arg3 audioConfiguration:(int)arg4 previewConfiguration:(int)arg5;
+- (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 previewConfiguration:(long long)arg5;
 - (id)initWithCoder:(id)arg1;
-- (int)mode;
-- (int)previewConfiguration;
+- (long long)mode;
+- (long long)previewConfiguration;
 - (id)shortDescription;
-- (int)videoConfiguration;
+- (long long)videoConfiguration;
 
 @end

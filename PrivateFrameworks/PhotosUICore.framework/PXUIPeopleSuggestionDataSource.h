@@ -9,15 +9,15 @@
 @property (nonatomic, retain) NSMutableSet *cancelledTokens;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)cancelSuggestionForPerson:(id)arg1 withToken:(int)arg2 error:(id*)arg3;
+- (bool)cancelSuggestionForPerson:(id)arg1 withToken:(long long)arg2 error:(id*)arg3;
 - (id)cancelledTokens;
 - (void)commitSuggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3;
 - (id)init;
 - (void)setCancelledTokens:(id)arg1;
-- (int)suggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3 completion:(id /* block */)arg4;
+- (long long)suggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3 completion:(id)arg4;
 
 @end

@@ -13,27 +13,27 @@
     }  _has;
     NSString * _respondingPop;
     NSMutableArray * _successes;
-    BOOL  _wifiReachabilityStatus;
+    bool  _wifiReachabilityStatus;
 }
 
-@property (nonatomic, readonly) unsigned int cacheHitCount;
-@property (nonatomic, readonly) unsigned int cacheMissCount;
+@property (nonatomic, readonly) unsigned long long cacheHitCount;
+@property (nonatomic, readonly) unsigned long long cacheMissCount;
 @property (nonatomic) int cellularRadioAccessTechnology;
 @property (nonatomic, readonly) FCNetworkEventStats *connectDurationStats;
 @property (nonatomic, readonly) FCNetworkEventStats *dnsDurationStats;
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic) int eventType;
 @property (nonatomic, retain) NSMutableArray *failures;
-@property (nonatomic) BOOL hasCellularRadioAccessTechnology;
-@property (nonatomic) BOOL hasEventType;
-@property (nonatomic, readonly) BOOL hasRespondingPop;
-@property (nonatomic) BOOL hasWifiReachabilityStatus;
+@property (nonatomic) bool hasCellularRadioAccessTechnology;
+@property (nonatomic) bool hasEventType;
+@property (nonatomic, readonly) bool hasRespondingPop;
+@property (nonatomic) bool hasWifiReachabilityStatus;
 @property (nonatomic, retain) NSString *respondingPop;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (nonatomic, retain) NSMutableArray *successes;
 @property (nonatomic, readonly) FCNetworkEventStats *timeToFirstByteStats;
 @property (nonatomic, readonly) FCNetworkEventStats *totalDurationStats;
-@property (nonatomic) BOOL wifiReachabilityStatus;
+@property (nonatomic) bool wifiReachabilityStatus;
 
 // Image: /System/Library/PrivateFrameworks/NewsTransport.framework/NewsTransport
 
@@ -53,36 +53,36 @@
 - (id)dictionaryRepresentation;
 - (int)eventType;
 - (id)failures;
-- (id)failuresAtIndex:(unsigned int)arg1;
-- (unsigned int)failuresCount;
-- (BOOL)hasCellularRadioAccessTechnology;
-- (BOOL)hasEventType;
-- (BOOL)hasRespondingPop;
-- (BOOL)hasWifiReachabilityStatus;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)failuresAtIndex:(unsigned long long)arg1;
+- (unsigned long long)failuresCount;
+- (bool)hasCellularRadioAccessTechnology;
+- (bool)hasEventType;
+- (bool)hasRespondingPop;
+- (bool)hasWifiReachabilityStatus;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)respondingPop;
 - (void)setCellularRadioAccessTechnology:(int)arg1;
 - (void)setEventType:(int)arg1;
 - (void)setFailures:(id)arg1;
-- (void)setHasCellularRadioAccessTechnology:(BOOL)arg1;
-- (void)setHasEventType:(BOOL)arg1;
-- (void)setHasWifiReachabilityStatus:(BOOL)arg1;
+- (void)setHasCellularRadioAccessTechnology:(bool)arg1;
+- (void)setHasEventType:(bool)arg1;
+- (void)setHasWifiReachabilityStatus:(bool)arg1;
 - (void)setRespondingPop:(id)arg1;
 - (void)setSuccesses:(id)arg1;
-- (void)setWifiReachabilityStatus:(BOOL)arg1;
+- (void)setWifiReachabilityStatus:(bool)arg1;
 - (id)successes;
-- (id)successesAtIndex:(unsigned int)arg1;
-- (unsigned int)successesCount;
-- (BOOL)wifiReachabilityStatus;
+- (id)successesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)successesCount;
+- (bool)wifiReachabilityStatus;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
-- (unsigned int)cacheHitCount;
-- (unsigned int)cacheMissCount;
+- (unsigned long long)cacheHitCount;
+- (unsigned long long)cacheMissCount;
 - (id)connectDurationStats;
 - (id)dnsDurationStats;
 - (id)endDate;

@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
@@ -22,7 +22,7 @@
 
 - (void).cxx_destruct;
 - (void)_registerToDaemon;
-- (void)_reportResultsTohandler:(id /* block */)arg1;
+- (void)_reportResultsTohandler:(id)arg1;
 - (void)_start;
 - (id)clientQueue;
 - (void)dealloc;
@@ -31,8 +31,8 @@
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
-- (void)requestSiriSyncDataWithValidity:(id)arg1 completion:(id /* block */)arg2;
-- (void)sendSiriCommand:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)requestSiriSyncDataWithValidity:(id)arg1 completion:(id)arg2;
+- (void)sendSiriCommand:(id)arg1 completionHandler:(id)arg2;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setXpcClient:(id)arg1;

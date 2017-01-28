@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic) int attribute;
-@property (nonatomic) BOOL hasAttribute;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
+@property (nonatomic) bool hasAttribute;
+@property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic, retain) NSMutableArray *identifiers;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
@@ -29,18 +29,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAttribute;
-- (BOOL)hasIntentMetadata;
-- (unsigned int)hash;
-- (id)identifierAtIndex:(unsigned int)arg1;
+- (bool)hasAttribute;
+- (bool)hasIntentMetadata;
+- (unsigned long long)hash;
+- (id)identifierAtIndex:(unsigned long long)arg1;
 - (id)identifiers;
-- (unsigned int)identifiersCount;
+- (unsigned long long)identifiersCount;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAttribute:(int)arg1;
-- (void)setHasAttribute:(BOOL)arg1;
+- (void)setHasAttribute:(bool)arg1;
 - (void)setIdentifiers:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (id)unknownFields;

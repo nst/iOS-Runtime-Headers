@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSDictionary *options;
 @property (nonatomic) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, retain) NSURLSession *session;
@@ -19,7 +19,7 @@
 @property (nonatomic) double timeout;
 
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
-- (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id)arg3;
 - (id)_defaultSessionConfigurationWithIdentifier:(id)arg1;
 - (id)_newSession;
 - (id)_urlRequestForHTTPMessage:(struct __CFHTTPMessage { }*)arg1;
@@ -27,7 +27,7 @@
 - (id)initWithOptions:(id)arg1;
 - (id)options;
 - (id)queue;
-- (void)sendRequest:(struct __CFHTTPMessage { }*)arg1 completion:(id /* block */)arg2;
+- (void)sendRequest:(struct __CFHTTPMessage { }*)arg1 completion:(id)arg2;
 - (id)session;
 - (void)setOptions:(id)arg1;
 - (void)setQueue:(id)arg1;

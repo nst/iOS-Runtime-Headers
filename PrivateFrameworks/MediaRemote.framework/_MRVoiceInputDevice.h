@@ -14,9 +14,9 @@
 
 @property (nonatomic, retain) _MRVoiceInputDeviceDescriptorProtobuf *descriptor;
 @property (nonatomic) unsigned int deviceID;
-@property (nonatomic, readonly) BOOL hasDescriptor;
-@property (nonatomic) BOOL hasDeviceID;
-@property (nonatomic) BOOL hasRecordingState;
+@property (nonatomic, readonly) bool hasDescriptor;
+@property (nonatomic) bool hasDeviceID;
+@property (nonatomic) bool hasRecordingState;
 @property (nonatomic) int recordingState;
 
 - (int)StringAsRecordingState:(id)arg1;
@@ -27,19 +27,19 @@
 - (id)descriptor;
 - (unsigned int)deviceID;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDescriptor;
-- (BOOL)hasDeviceID;
-- (BOOL)hasRecordingState;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDescriptor;
+- (bool)hasDeviceID;
+- (bool)hasRecordingState;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)recordingState;
 - (id)recordingStateAsString:(int)arg1;
 - (void)setDescriptor:(id)arg1;
 - (void)setDeviceID:(unsigned int)arg1;
-- (void)setHasDeviceID:(BOOL)arg1;
-- (void)setHasRecordingState:(BOOL)arg1;
+- (void)setHasDeviceID:(bool)arg1;
+- (void)setHasRecordingState:(bool)arg1;
 - (void)setRecordingState:(int)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -7,33 +7,33 @@
     NSUserDefaults * _userDefaults;
 }
 
-@property (nonatomic) int cachedAvailabilityStatus;
-@property (nonatomic) int cachedDeveloperProviderStatus;
-@property (nonatomic) int cachedStoreProviderStatus;
+@property (nonatomic) long long cachedAvailabilityStatus;
+@property (nonatomic) long long cachedDeveloperProviderStatus;
+@property (nonatomic) long long cachedStoreProviderStatus;
 @property (nonatomic, retain) VSDevice *device;
-@property (nonatomic, readonly) BOOL hasSentWelcomeMessage;
+@property (nonatomic, readonly) bool hasSentWelcomeMessage;
 @property (nonatomic, readonly, copy) NSURL *overridingAppBootURL;
-@property (nonatomic, readonly) BOOL shouldAlwaysAllowRemoteInspection;
-@property (nonatomic, readonly) BOOL shouldDisableRequestTimeouts;
+@property (nonatomic, readonly) bool shouldAlwaysAllowRemoteInspection;
+@property (nonatomic, readonly) bool shouldDisableRequestTimeouts;
 @property (nonatomic, retain) NSUserDefaults *userDefaults;
 
 - (void).cxx_destruct;
-- (int)cachedAvailabilityStatus;
-- (int)cachedDeveloperProviderStatus;
-- (int)cachedStoreProviderStatus;
+- (long long)cachedAvailabilityStatus;
+- (long long)cachedDeveloperProviderStatus;
+- (long long)cachedStoreProviderStatus;
 - (id)device;
-- (BOOL)hasAcknowledgedUnsupportedIdentityProvider:(id)arg1;
-- (BOOL)hasSentWelcomeMessage;
+- (bool)hasAcknowledgedUnsupportedIdentityProvider:(id)arg1;
+- (bool)hasSentWelcomeMessage;
 - (void)noteDidAcknowledgeUnsupportedIdentityProvider:(id)arg1;
 - (void)noteDidSendWelcomeMessage;
 - (id)overridingAppBootURL;
-- (void)setCachedAvailabilityStatus:(int)arg1;
-- (void)setCachedDeveloperProviderStatus:(int)arg1;
-- (void)setCachedStoreProviderStatus:(int)arg1;
+- (void)setCachedAvailabilityStatus:(long long)arg1;
+- (void)setCachedDeveloperProviderStatus:(long long)arg1;
+- (void)setCachedStoreProviderStatus:(long long)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setUserDefaults:(id)arg1;
-- (BOOL)shouldAlwaysAllowRemoteInspection;
-- (BOOL)shouldDisableRequestTimeouts;
+- (bool)shouldAlwaysAllowRemoteInspection;
+- (bool)shouldDisableRequestTimeouts;
 - (id)userDefaults;
 
 @end

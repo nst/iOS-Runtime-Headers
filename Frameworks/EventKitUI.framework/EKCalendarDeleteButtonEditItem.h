@@ -9,8 +9,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (void)setDeleteButtonTarget:(id)arg1 action:(SEL)arg2;
 
 @end

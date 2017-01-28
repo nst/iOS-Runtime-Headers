@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
-- (int)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
+- (long long)_notificationTypeForResourceChange:(id)arg1 notificationType:(int)arg2;
 - (id)description;
 - (id)initWithType:(int)arg1 objectID:(struct { int x1; int x2; })arg2 date:(id)arg3 eventStore:(id)arg4;
 - (id)initWithType:(int)arg1 objectID:(struct { int x1; int x2; })arg2 eventStore:(id)arg3;

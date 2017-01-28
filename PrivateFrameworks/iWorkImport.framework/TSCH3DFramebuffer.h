@@ -5,19 +5,19 @@
 @interface TSCH3DFramebuffer : NSObject {
     struct FramebufferAttributes { 
         int type; 
-        int samples; 
+        long long samples; 
         int colorDataType; 
         int colorFormat; 
         int depthDataType; 
-        BOOL linearFilter; 
-        BOOL discardHint; 
+        bool linearFilter; 
+        bool discardHint; 
     }  mFramebufferAttributes;
 }
 
-+ (id)framebufferWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1;
++ (id)framebufferWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; }*)arg1;
 
 - (id).cxx_construct;
-- (const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)framebufferAttributes;
-- (id)initWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg1;
+- (const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; }*)framebufferAttributes;
+- (id)initWithFramebufferAttributes:(const struct FramebufferAttributes { int x1; long long x2; int x3; int x4; int x5; bool x6; bool x7; }*)arg1;
 
 @end

@@ -3,19 +3,19 @@
  */
 
 @interface PLAWDCpuAP : PLAWDAuxMetrics {
-    long  _apSubmitCnt;
-    long  _cpuLoadSubmitCnt;
+    long long  _apSubmitCnt;
+    long long  _cpuLoadSubmitCnt;
     PLEntryNotificationOperatorComposition * _ioreportEnergyEventCallback;
-    BOOL  _isIoreportEnergy;
+    bool  _isIoreportEnergy;
     PLEntryNotificationOperatorComposition * _monitorEventCallback;
     NSDate * _sleepStartTime;
     PLEntryNotificationOperatorComposition * _wakeEventCallback;
 }
 
-@property long apSubmitCnt;
-@property long cpuLoadSubmitCnt;
+@property long long apSubmitCnt;
+@property long long cpuLoadSubmitCnt;
 @property (retain) PLEntryNotificationOperatorComposition *ioreportEnergyEventCallback;
-@property BOOL isIoreportEnergy;
+@property bool isIoreportEnergy;
 @property (retain) PLEntryNotificationOperatorComposition *monitorEventCallback;
 @property (retain) NSDate *sleepStartTime;
 @property (retain) PLEntryNotificationOperatorComposition *wakeEventCallback;
@@ -27,19 +27,19 @@
 
 - (void).cxx_destruct;
 - (void)addEntryToApMetricsTable:(id)arg1 withValue:(double)arg2;
-- (long)apSubmitCnt;
-- (long)cpuLoadSubmitCnt;
+- (long long)apSubmitCnt;
+- (long long)cpuLoadSubmitCnt;
 - (void)handleIOReportEnergyCallback:(id)arg1;
 - (void)handleMonitorCallback:(id)arg1;
 - (void)handleWakeCallback:(id)arg1;
 - (id)ioreportEnergyEventCallback;
-- (BOOL)isIoreportEnergy;
+- (bool)isIoreportEnergy;
 - (id)monitorEventCallback;
 - (void)resetApTable;
-- (void)setApSubmitCnt:(long)arg1;
-- (void)setCpuLoadSubmitCnt:(long)arg1;
+- (void)setApSubmitCnt:(long long)arg1;
+- (void)setCpuLoadSubmitCnt:(long long)arg1;
 - (void)setIoreportEnergyEventCallback:(id)arg1;
-- (void)setIsIoreportEnergy:(BOOL)arg1;
+- (void)setIsIoreportEnergy:(bool)arg1;
 - (void)setMonitorEventCallback:(id)arg1;
 - (void)setSleepStartTime:(id)arg1;
 - (void)setWakeEventCallback:(id)arg1;
@@ -48,9 +48,9 @@
 - (void)startCpuMetricCollection:(id)arg1;
 - (void)startMetricCollection:(id)arg1;
 - (void)stopMetricCollection:(id)arg1;
-- (BOOL)submitApDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
-- (BOOL)submitCpuDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
-- (BOOL)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
+- (bool)submitApDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
+- (bool)submitCpuDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
+- (bool)submitDataToAWDServer:(id)arg1 withAwdConn:(id)arg2;
 - (id)wakeEventCallback;
 
 @end

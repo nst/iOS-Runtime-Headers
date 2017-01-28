@@ -3,11 +3,11 @@
  */
 
 @interface HDLocationDataCollector : NSObject <CLLocationManagerDelegate> {
-    unsigned int  _activityType;
+    unsigned long long  _activityType;
     <HDHealthDaemon> * _daemon;
     <HDLocationEventDelegate> * _delegate;
     CMElevation * _elevation;
-    unsigned int  _elevationGain;
+    unsigned long long  _elevationGain;
     CLInUseAssertion * _inUseAssertion;
     double  _lastPausedTime;
     int  _lastStatus;
@@ -21,7 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HDLocationEventDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) HDServer *server;
 @property (readonly) Class superclass;
 
@@ -36,7 +36,7 @@
 - (void)_stopGPSUpdates;
 - (id)delegate;
 - (void)endWorkout;
-- (id)initWithDaemon:(id)arg1 server:(id)arg2 activityType:(unsigned int)arg3 workoutUUID:(id)arg4;
+- (id)initWithDaemon:(id)arg1 server:(id)arg2 activityType:(unsigned long long)arg3 workoutUUID:(id)arg4;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;

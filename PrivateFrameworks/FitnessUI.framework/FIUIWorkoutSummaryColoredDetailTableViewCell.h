@@ -10,7 +10,7 @@
     UIView * _lineView;
     UILabel * _noDataLabel;
     UIView * _optionalButtonView;
-    BOOL  _shouldForceLTRForDetailString;
+    bool  _shouldForceLTRForDetailString;
     UIFont * _suffixFont;
     NSString * _suffixString;
     UIColor * _textColor;
@@ -20,20 +20,20 @@
 @property (nonatomic, retain) UIView *customAccessoryView;
 @property (nonatomic, readonly) UIView *optionalButtonView;
 
-+ (float)rowHeightWithNoDataString:(id)arg1;
++ (double)rowHeightWithNoDataString:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_formatDetailLabel;
-- (void)_resizeFontsIfNeededToFitWidth:(float)arg1;
+- (void)_resizeFontsIfNeededToFitWidth:(double)arg1;
 - (void)_setupUI;
 - (id)customAccessoryView;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (id)optionalButtonView;
 - (void)prepareForReuse;
 - (void)setCustomAccessoryView:(id)arg1;
-- (void)setDetailString:(id)arg1 suffixString:(id)arg2 textColor:(id)arg3 shouldForceLTRForDetailString:(BOOL)arg4;
-- (void)setLineHidden:(BOOL)arg1;
+- (void)setDetailString:(id)arg1 suffixString:(id)arg2 textColor:(id)arg3 shouldForceLTRForDetailString:(bool)arg4;
+- (void)setLineHidden:(bool)arg1;
 - (void)setNoDataString:(id)arg1 textColor:(id)arg2;
 - (void)setTitleString:(id)arg1;
 

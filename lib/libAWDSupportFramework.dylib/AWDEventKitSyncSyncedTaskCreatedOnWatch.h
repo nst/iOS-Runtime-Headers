@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) unsigned long long deltaTransitTime;
-@property (nonatomic) BOOL hasDeltaTransitTime;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDeltaTransitTime;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -21,15 +21,15 @@
 - (unsigned long long)deltaTransitTime;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeltaTransitTime;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeltaTransitTime;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeltaTransitTime:(unsigned long long)arg1;
-- (void)setHasDeltaTransitTime:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDeltaTransitTime:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

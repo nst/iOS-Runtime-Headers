@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_geoMapItemTIp, nonatomic, readonly) GEOMapItemTip *geoMapItemTip;
 @property (getter=_geoReview, nonatomic, readonly) <GEOMapItemReview> *geoReview;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (getter=_localizedSnippet, nonatomic, readonly) NSString *localizedSnippet;
 @property (getter=_maxScore, nonatomic, readonly) double maxScore;
 @property (getter=_normalizedScore, nonatomic, readonly) double normalizedScore;
@@ -32,6 +32,6 @@
 - (id)_reviewerName;
 - (double)_score;
 - (id)initWithMapItem:(id)arg1 review:(id)arg2;
-- (void)showWithCompletionHandler:(id /* block */)arg1;
+- (void)showWithCompletionHandler:(id)arg1;
 
 @end

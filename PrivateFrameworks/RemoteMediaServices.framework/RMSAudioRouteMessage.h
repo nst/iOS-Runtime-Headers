@@ -10,18 +10,18 @@
         unsigned int supportsVideo : 1; 
     }  _has;
     long long  _macAddress;
-    BOOL  _selected;
-    BOOL  _supportsVideo;
+    bool  _selected;
+    bool  _supportsVideo;
 }
 
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic, readonly) BOOL hasDisplayName;
-@property (nonatomic) BOOL hasMacAddress;
-@property (nonatomic) BOOL hasSelected;
-@property (nonatomic) BOOL hasSupportsVideo;
+@property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic) bool hasMacAddress;
+@property (nonatomic) bool hasSelected;
+@property (nonatomic) bool hasSupportsVideo;
 @property (nonatomic) long long macAddress;
-@property (nonatomic) BOOL selected;
-@property (nonatomic) BOOL supportsVideo;
+@property (nonatomic) bool selected;
+@property (nonatomic) bool supportsVideo;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
@@ -29,24 +29,24 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (BOOL)hasDisplayName;
-- (BOOL)hasMacAddress;
-- (BOOL)hasSelected;
-- (BOOL)hasSupportsVideo;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDisplayName;
+- (bool)hasMacAddress;
+- (bool)hasSelected;
+- (bool)hasSupportsVideo;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (long long)macAddress;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)selected;
+- (bool)readFrom:(id)arg1;
+- (bool)selected;
 - (void)setDisplayName:(id)arg1;
-- (void)setHasMacAddress:(BOOL)arg1;
-- (void)setHasSelected:(BOOL)arg1;
-- (void)setHasSupportsVideo:(BOOL)arg1;
+- (void)setHasMacAddress:(bool)arg1;
+- (void)setHasSelected:(bool)arg1;
+- (void)setHasSupportsVideo:(bool)arg1;
 - (void)setMacAddress:(long long)arg1;
-- (void)setSelected:(BOOL)arg1;
-- (void)setSupportsVideo:(BOOL)arg1;
-- (BOOL)supportsVideo;
+- (void)setSelected:(bool)arg1;
+- (void)setSupportsVideo:(bool)arg1;
+- (bool)supportsVideo;
 - (void)writeTo:(id)arg1;
 
 @end

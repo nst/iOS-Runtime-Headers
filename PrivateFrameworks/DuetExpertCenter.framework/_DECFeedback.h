@@ -15,7 +15,7 @@
 @property (nonatomic, retain) _DECPrediction *prediction;
 
 + (id)feedbackWithItemSelected:(id)arg1 launchInfo:(id)arg2 itemsShown:(id)arg3 prediction:(id)arg4;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -25,12 +25,12 @@
 - (id)itemSelected;
 - (id)itemsShown;
 - (id)launchInfo;
-- (unsigned int)outcomeForCategory:(unsigned int)arg1;
-- (unsigned int)outcomeForCategory:(unsigned int)arg1 predictionItem:(id)arg2;
-- (unsigned int)outcomeForCategory:(unsigned int)arg1 predictions:(id)arg2;
+- (unsigned long long)outcomeForCategory:(unsigned long long)arg1;
+- (unsigned long long)outcomeForCategory:(unsigned long long)arg1 predictionItem:(id)arg2;
+- (unsigned long long)outcomeForCategory:(unsigned long long)arg1 predictions:(id)arg2;
 - (id)predictedItemsShown;
 - (id)prediction;
-- (BOOL)relevantLaunch;
+- (bool)relevantLaunch;
 - (void)setItemSelected:(id)arg1;
 - (void)setItemsShown:(id)arg1;
 - (void)setLaunchInfo:(id)arg1;

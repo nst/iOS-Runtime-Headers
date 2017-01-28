@@ -3,7 +3,7 @@
  */
 
 @interface _CATObserverManager : NSObject <CATOperationObserver> {
-    BOOL  mIsObserving;
+    bool  mIsObserving;
     NSObject<OS_dispatch_queue> * mObserverQueue;
     NSMutableSet * mObservers;
     CATOperation * mOperation;
@@ -13,7 +13,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSURL *bundledDocumentContainerURL;
 @property (nonatomic, readonly) NSURL *documentContainerURL;
 @property (nonatomic, readonly) NSString *documentVariant;
-@property (nonatomic, readonly) int downloadState;
+@property (nonatomic, readonly) long long downloadState;
 @property (nonatomic, readonly) NSURL *downloadedDocumentContainerURL;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSBundle *previewBundle;
@@ -34,14 +34,14 @@
 - (id)documentURL;
 - (id)documentURLWithDocumentContainerURL:(id)arg1;
 - (id)documentVariant;
-- (int)downloadState;
+- (long long)downloadState;
 - (id)downloadedDocumentContainerURL;
 - (id)initHeadlessWithName:(id)arg1;
-- (id)initHeadlessWithName:(id)arg1 variant:(unsigned int)arg2;
-- (id)initHeadlessWithName:(id)arg1 variant:(unsigned int)arg2 locale:(struct __CFLocale { }*)arg3;
+- (id)initHeadlessWithName:(id)arg1 variant:(unsigned long long)arg2;
+- (id)initHeadlessWithName:(id)arg1 variant:(unsigned long long)arg2 locale:(struct __CFLocale { }*)arg3;
 - (id)initWithDisplayName:(id)arg1 name:(id)arg2 documentVariant:(id)arg3 previewVariant:(id)arg4;
 - (id)initWithPropertyList:(id)arg1 documentVariant:(id)arg2 previewVariant:(id)arg3;
-- (BOOL)isAvailable;
+- (bool)isAvailable;
 - (id)localizationBundle;
 - (id)makeIdentifier;
 - (id)name;

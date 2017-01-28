@@ -7,7 +7,7 @@
     <PXBarsControllerDelegate> * _delegate;
     struct { }  _delegateFlags;
     struct { 
-        BOOL needsUpdateBars; 
+        bool needsUpdateBars; 
     }  _needsUpdateFlags;
     UIViewController * _viewController;
 }
@@ -17,7 +17,7 @@
 @property (nonatomic) UIViewController *viewController;
 
 - (void).cxx_destruct;
-- (BOOL)_needsUpdate;
+- (bool)_needsUpdate;
 - (void)_updateBarsIfNeeded;
 - (id)barSpec;
 - (id)delegate;

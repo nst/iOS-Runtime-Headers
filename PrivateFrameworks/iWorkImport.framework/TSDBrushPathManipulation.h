@@ -5,11 +5,11 @@
 @interface TSDBrushPathManipulation : TSDPathManipulation {
     struct CGPath { } * mBrushStroke;
     NSMutableArray * mMiddleSections;
-    float  mRepeatLength;
+    double  mRepeatLength;
     NSMutableDictionary * mSections;
-    float  mSmallLimitWidth;
+    double  mSmallLimitWidth;
     NSMutableArray * mSmallSections;
-    BOOL  mSplitAtSharpAngles;
+    bool  mSplitAtSharpAngles;
 }
 
 @end

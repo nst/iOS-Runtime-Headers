@@ -26,7 +26,7 @@
 @property unsigned int connection_duration_6_mins;
 @property unsigned int connection_duration_above_12_hours;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addBuckets:(id)arg1;
 - (void)clear;

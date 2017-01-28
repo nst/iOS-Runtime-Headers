@@ -4,21 +4,21 @@
 
 @interface UIKeyboardEmoji : NSObject {
     NSString * _emojiString;
-    unsigned int  _variantMask;
+    unsigned long long  _variantMask;
 }
 
 @property (nonatomic, retain) NSString *emojiString;
-@property unsigned int variantMask;
+@property unsigned long long variantMask;
 
-+ (id)emojiWithString:(id)arg1 withVariantMask:(unsigned int)arg2;
++ (id)emojiWithString:(id)arg1 withVariantMask:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
 - (id)emojiString;
-- (id)initWithString:(id)arg1 withVariantMask:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithString:(id)arg1 withVariantMask:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 - (void)setEmojiString:(id)arg1;
-- (void)setVariantMask:(unsigned int)arg1;
-- (unsigned int)variantMask;
+- (void)setVariantMask:(unsigned long long)arg1;
+- (unsigned long long)variantMask;
 
 @end

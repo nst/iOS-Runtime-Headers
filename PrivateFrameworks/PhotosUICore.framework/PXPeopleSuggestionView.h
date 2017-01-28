@@ -6,62 +6,62 @@
     UIView * _dimView;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _faceRect;
     NSTimer * _imageLoadInvalidationTimer;
     UIImageView * _imageView;
-    BOOL  _needsSpotlightUpdate;
+    bool  _needsSpotlightUpdate;
     CAShapeLayer * _spotlightLayer;
     <PXPerson> * _suggestion;
     UIView * _suggestionView;
-    BOOL  _validSpotlight;
+    bool  _validSpotlight;
 }
 
 @property (nonatomic, retain) UIView *dimView;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } faceRect;
+@property (nonatomic) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } faceRect;
 @property (retain) NSTimer *imageLoadInvalidationTimer;
 @property (nonatomic, retain) UIImageView *imageView;
-@property BOOL needsSpotlightUpdate;
+@property bool needsSpotlightUpdate;
 @property (nonatomic, retain) CAShapeLayer *spotlightLayer;
 @property (nonatomic, readonly) <PXPerson> *suggestion;
 @property (nonatomic, retain) UIView *suggestionView;
-@property BOOL validSpotlight;
+@property bool validSpotlight;
 
 - (void).cxx_destruct;
-- (float)_faceScale;
-- (void)_fetchImageForSuggestion:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletion:(id /* block */)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scaledFaceRect;
-- (void)_updateSpotlightAnimated:(BOOL)arg1;
+- (double)_faceScale;
+- (void)_fetchImageForSuggestion:(id)arg1 targetSize:(struct CGSize { double x1; double x2; })arg2 withCompletion:(id)arg3;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_scaledFaceRect;
+- (void)_updateSpotlightAnimated:(bool)arg1;
+- (void)_updateSuggestionImageWithAnimatedSpotlight:(bool)arg1 withCompletion:(id)arg2;
 - (void)commonInit;
 - (void)dealloc;
 - (id)dimView;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })faceRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })faceRect;
 - (id)imageLoadInvalidationTimer;
 - (id)imageView;
 - (id)init;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (BOOL)needsSpotlightUpdate;
+- (bool)needsSpotlightUpdate;
 - (void)setDimView:(id)arg1;
-- (void)setFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setFaceRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setImageLoadInvalidationTimer:(id)arg1;
 - (void)setImageView:(id)arg1;
-- (void)setNeedsSpotlightUpdate:(BOOL)arg1;
+- (void)setNeedsSpotlightUpdate:(bool)arg1;
 - (void)setSpotlightLayer:(id)arg1;
-- (void)setSuggestion:(id)arg1 animated:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)setSuggestion:(id)arg1 animated:(bool)arg2 withCompletion:(id)arg3;
 - (void)setSuggestionView:(id)arg1;
-- (void)setValidSpotlight:(BOOL)arg1;
+- (void)setValidSpotlight:(bool)arg1;
 - (id)spotlightLayer;
 - (id)suggestion;
 - (id)suggestionView;
-- (void)updateSuggestionImageWithAnimatedSpotlight:(BOOL)arg1 withCompletion:(id /* block */)arg2;
-- (BOOL)validSpotlight;
+- (bool)validSpotlight;
 - (void)viewScaleDidChange;
 
 @end

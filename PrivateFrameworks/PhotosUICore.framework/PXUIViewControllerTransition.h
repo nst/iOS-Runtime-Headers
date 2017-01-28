@@ -4,26 +4,26 @@
 
 @interface PXUIViewControllerTransition : NSObject <UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning> {
     id  __pauseToken;
-    BOOL  _interactive;
+    bool  _interactive;
     UIViewController * _internalDetailViewController;
     UIViewController * _internalMasterViewController;
-    BOOL  _supportsEdgeSwipeBackGesture;
+    bool  _supportsEdgeSwipeBackGesture;
 }
 
 @property (setter=_setPauseToken:, nonatomic, retain) id _pauseToken;
-@property (nonatomic, readonly) int completionCurve;
-@property (nonatomic, readonly) float completionSpeed;
+@property (nonatomic, readonly) long long completionCurve;
+@property (nonatomic, readonly) double completionSpeed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) UIViewController *detailViewController;
-@property (readonly) unsigned int hash;
-@property (getter=isInteractive, nonatomic, readonly) BOOL interactive;
+@property (readonly) unsigned long long hash;
+@property (getter=isInteractive, nonatomic, readonly) bool interactive;
 @property (nonatomic, readonly) UIViewController *masterViewController;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsEdgeSwipeBackGesture;
-@property (nonatomic, readonly) BOOL wantsInteractiveStart;
+@property (nonatomic, readonly) bool supportsEdgeSwipeBackGesture;
+@property (nonatomic, readonly) bool wantsInteractiveStart;
 
-+ (BOOL)isTransitionSupportedWithMasterViewController:(id)arg1 detailViewController:(id)arg2;
++ (bool)isTransitionSupportedWithMasterViewController:(id)arg1 detailViewController:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)_pauseToken;
@@ -33,10 +33,10 @@
 - (void)didEndTransition;
 - (id)init;
 - (id)initWithMasterViewController:(id)arg1 detailViewController:(id)arg2;
-- (BOOL)isInteractive;
+- (bool)isInteractive;
 - (id)masterViewController;
 - (void)startInteractiveTransition:(id)arg1;
-- (BOOL)supportsEdgeSwipeBackGesture;
+- (bool)supportsEdgeSwipeBackGesture;
 - (double)transitionDuration:(id)arg1;
 - (void)willStartTransition;
 

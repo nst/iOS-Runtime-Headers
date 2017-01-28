@@ -3,28 +3,28 @@
  */
 
 @interface EKUIEventNotificationRepresentation : NSObject {
-    BOOL  _allDay;
+    bool  _allDay;
     NSDate * _date;
     NSDictionary * _organizerContactDictionary;
     EKUITextAndHeaderItem * _subtitleItem;
     NSArray * _supplementaryItems;
     EKUITextAndHeaderItem * _titleItem;
-    unsigned int  _type;
+    unsigned long long  _type;
     NSDictionary * _userActivityUserInfo;
 }
 
-@property (getter=isAllDay, nonatomic) BOOL allDay;
+@property (getter=isAllDay, nonatomic) bool allDay;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) NSDictionary *organizerContactDictionary;
 @property (nonatomic, retain) EKUITextAndHeaderItem *subtitleItem;
 @property (nonatomic, retain) NSArray *supplementaryItems;
 @property (nonatomic, retain) EKUITextAndHeaderItem *titleItem;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 @property (nonatomic, retain) NSDictionary *userActivityUserInfo;
 
 + (id)_fromLocalizedString;
-+ (BOOL)_invitationNotificationHasResourceChanges:(id)arg1 changesString:(id*)arg2;
++ (bool)_invitationNotificationHasResourceChanges:(id)arg1 changesString:(id*)arg2;
 + (id)_invitationUpdatedTitleLocalizedString;
 + (id)_whenLocalizedString;
 + (id)_whereLocalizedString;
@@ -41,20 +41,20 @@
 - (id)dictionaryRepresentation;
 - (id)dictionaryRepresentationsOfSupplementaryItems;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isAllDay;
+- (bool)isAllDay;
 - (id)organizerContactDictionary;
-- (void)setAllDay:(BOOL)arg1;
+- (void)setAllDay:(bool)arg1;
 - (void)setDate:(id)arg1;
 - (void)setOrganizerForContactDictionary:(id)arg1;
 - (void)setSubtitleItem:(id)arg1;
 - (void)setSupplementaryItems:(id)arg1;
 - (void)setTitleItem:(id)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (void)setUserActivityUserInfo:(id)arg1;
 - (id)subtitleItem;
 - (id)supplementaryItems;
 - (id)titleItem;
-- (unsigned int)type;
+- (unsigned long long)type;
 - (id)userActivityUserInfo;
 
 @end

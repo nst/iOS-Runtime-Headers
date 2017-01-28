@@ -3,19 +3,19 @@
  */
 
 @interface HDDataCollectionObserverState : NSObject <NSCopying> {
-    BOOL  _hasActiveWorkout;
-    BOOL  _isInBackground;
+    bool  _hasActiveWorkout;
+    bool  _isInBackground;
 }
 
-@property (nonatomic) BOOL hasActiveWorkout;
-@property (nonatomic) BOOL isInBackground;
+@property (nonatomic) bool hasActiveWorkout;
+@property (nonatomic) bool isInBackground;
 
-+ (id)dataCollectionObserverStateInBackground:(BOOL)arg1 hasActiveWorkout:(BOOL)arg2;
++ (id)dataCollectionObserverStateInBackground:(bool)arg1 hasActiveWorkout:(bool)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)hasActiveWorkout;
-- (BOOL)isInBackground;
-- (void)setHasActiveWorkout:(BOOL)arg1;
-- (void)setIsInBackground:(BOOL)arg1;
+- (bool)hasActiveWorkout;
+- (bool)isInBackground;
+- (void)setHasActiveWorkout:(bool)arg1;
+- (void)setIsInBackground:(bool)arg1;
 
 @end

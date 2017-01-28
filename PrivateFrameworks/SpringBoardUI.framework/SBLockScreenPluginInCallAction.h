@@ -4,6 +4,6 @@
 
 @interface SBLockScreenPluginInCallAction : SBLockScreenPluginAction
 
-- (BOOL)isInCallAction;
+- (bool)isInCallAction;
 
 @end

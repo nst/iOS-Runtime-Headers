@@ -3,7 +3,7 @@
  */
 
 @interface AOSTransaction : NSObject <NSCoding> {
-    id /* block */  callbackBlock;
+    id  callbackBlock;
     int (* callbackFunction;
     NSObject<OS_dispatch_queue> * callbackQueue;
     void * context;
@@ -22,7 +22,7 @@
 - (void)finalize;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isSuccessful;
+- (bool)isSuccessful;
 - (id)result;
 
 @end

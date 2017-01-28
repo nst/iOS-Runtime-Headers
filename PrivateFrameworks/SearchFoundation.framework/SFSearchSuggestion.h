@@ -5,33 +5,33 @@
 @interface SFSearchSuggestion : NSObject <NSSecureCoding> {
     NSString * _identifier;
     NSString * _query;
-    float  _score;
+    double  _score;
     NSString * _suggestion;
-    unsigned int  _type;
+    unsigned long long  _type;
 }
 
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSString *query;
-@property (nonatomic) float score;
+@property (nonatomic) double score;
 @property (nonatomic, copy) NSString *suggestion;
-@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 suggestion:(id)arg2 query:(id)arg3 score:(float)arg4 type:(unsigned int)arg5;
-- (id)initWithSuggestion:(id)arg1 query:(id)arg2 score:(float)arg3 type:(unsigned int)arg4;
+- (id)initWithIdentifier:(id)arg1 suggestion:(id)arg2 query:(id)arg3 score:(double)arg4 type:(unsigned long long)arg5;
+- (id)initWithSuggestion:(id)arg1 query:(id)arg2 score:(double)arg3 type:(unsigned long long)arg4;
 - (id)query;
-- (float)score;
+- (double)score;
 - (void)setIdentifier:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setScore:(float)arg1;
+- (void)setScore:(double)arg1;
 - (void)setSuggestion:(id)arg1;
-- (void)setType:(unsigned int)arg1;
+- (void)setType:(unsigned long long)arg1;
 - (id)suggestion;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

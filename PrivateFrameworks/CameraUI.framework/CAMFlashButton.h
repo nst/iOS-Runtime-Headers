@@ -5,18 +5,18 @@
 @interface CAMFlashButton : CAMExpandableMenuButton {
     UIImageView * __glyphView;
     UIImageView * __warningIndicatorView;
-    BOOL  _allowsAutomaticFlash;
-    BOOL  _unavailable;
+    bool  _allowsAutomaticFlash;
+    bool  _unavailable;
 }
 
 @property (nonatomic, readonly) UIImageView *_glyphView;
 @property (nonatomic, readonly) UIImageView *_warningIndicatorView;
-@property (nonatomic) BOOL allowsAutomaticFlash;
-@property (nonatomic) int flashMode;
-@property (getter=isUnavailable, nonatomic) BOOL unavailable;
+@property (nonatomic) bool allowsAutomaticFlash;
+@property (nonatomic) long long flashMode;
+@property (getter=isUnavailable, nonatomic) bool unavailable;
 
-+ (int)flashModeForTorchMode:(int)arg1;
-+ (int)torchModeForFlashMode:(int)arg1;
++ (long long)flashModeForTorchMode:(long long)arg1;
++ (long long)torchModeForFlashMode:(long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_commonCAMFlashButtonInitialization;
@@ -24,24 +24,24 @@
 - (id)_glyphView;
 - (void)_updateCurrentGlyphImage;
 - (id)_warningIndicatorView;
-- (BOOL)allowsAutomaticFlash;
-- (float)collapsedSelectedLabelHorizontalMargin;
-- (int)flashMode;
+- (bool)allowsAutomaticFlash;
+- (double)collapsedSelectedLabelHorizontalMargin;
+- (long long)flashMode;
 - (id)headerView;
-- (int)indexForMode:(int)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithLayoutStyle:(int)arg1;
-- (BOOL)isUnavailable;
-- (int)modeForIndex:(int)arg1;
-- (int)numberOfMenuItems;
-- (float)padHeaderViewContentInsetLeft;
-- (void)prepareHeaderViewForExpanding:(BOOL)arg1;
+- (long long)indexForMode:(long long)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithLayoutStyle:(long long)arg1;
+- (bool)isUnavailable;
+- (long long)modeForIndex:(long long)arg1;
+- (long long)numberOfMenuItems;
+- (double)padHeaderViewContentInsetLeft;
+- (void)prepareHeaderViewForExpanding:(bool)arg1;
 - (void)reloadData;
-- (void)setAllowsAutomaticFlash:(BOOL)arg1;
-- (void)setFlashMode:(int)arg1;
-- (void)setUnavailable:(BOOL)arg1;
-- (BOOL)shouldIgnoreMenuInteraction;
-- (id)titleForMenuItemAtIndex:(int)arg1;
-- (BOOL)wantsSelectedItemToBeVisible;
+- (void)setAllowsAutomaticFlash:(bool)arg1;
+- (void)setFlashMode:(long long)arg1;
+- (void)setUnavailable:(bool)arg1;
+- (bool)shouldIgnoreMenuInteraction;
+- (id)titleForMenuItemAtIndex:(long long)arg1;
+- (bool)wantsSelectedItemToBeVisible;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface TSgPTPUDPv6PtPPort : TSgPTPFDPtPPort {
-    void * _udpv6PortImpl;
+    NSString * _interfaceName;
 }
 
 @property (nonatomic, readonly, copy) NSString *interfaceName;

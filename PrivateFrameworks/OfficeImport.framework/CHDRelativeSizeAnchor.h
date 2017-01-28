@@ -4,18 +4,18 @@
 
 @interface CHDRelativeSizeAnchor : CHDAnchor {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  mFrom;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  mTo;
 }
 
-- (struct CGPoint { float x1; float x2; })from;
-- (void)setFrom:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setTo:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })to;
+- (struct CGPoint { double x1; double x2; })from;
+- (void)setFrom:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setTo:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })to;
 
 @end

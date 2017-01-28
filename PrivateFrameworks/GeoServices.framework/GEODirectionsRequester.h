@@ -13,6 +13,6 @@
 - (void)dealloc;
 - (void)finalizeRequest:(id)arg1;
 - (id)init;
-- (void)startRequest:(id)arg1 finished:(id /* block */)arg2 networkActivity:(id /* block */)arg3 error:(id /* block */)arg4;
+- (void)startRequest:(id)arg1 finished:(id)arg2 networkActivity:(id)arg3 error:(id)arg4;
 
 @end

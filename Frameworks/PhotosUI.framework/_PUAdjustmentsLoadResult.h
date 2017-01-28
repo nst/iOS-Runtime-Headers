@@ -4,18 +4,18 @@
 
 @interface _PUAdjustmentsLoadResult : NSObject {
     PLPhotoEditMutableModel * _editModel;
-    int  _penultimateState;
-    int  _resolvedVersion;
+    long long  _penultimateState;
+    long long  _resolvedVersion;
 }
 
 @property (nonatomic, readonly) PLPhotoEditMutableModel *editModel;
-@property (nonatomic, readonly) int penultimateState;
-@property (nonatomic, readonly) int resolvedVersion;
+@property (nonatomic, readonly) long long penultimateState;
+@property (nonatomic, readonly) long long resolvedVersion;
 
 - (void).cxx_destruct;
 - (id)editModel;
-- (id)initWithEditModel:(id)arg1 penultimateState:(int)arg2 resolvedVersion:(int)arg3;
-- (int)penultimateState;
-- (int)resolvedVersion;
+- (id)initWithEditModel:(id)arg1 penultimateState:(long long)arg2 resolvedVersion:(long long)arg3;
+- (long long)penultimateState;
+- (long long)resolvedVersion;
 
 @end

@@ -8,12 +8,12 @@
     NSDate * _timestamp;
 }
 
-@property (readonly) BOOL isValid;
+@property (readonly) bool isValid;
 @property double latitude;
 @property double longtitude;
 @property (retain) NSDate *timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -21,7 +21,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLatitude:(double)arg1 longtitude:(double)arg2 timestamp:(id)arg3;
-- (BOOL)isValid;
+- (bool)isValid;
 - (double)latitude;
 - (double)longtitude;
 - (void)setLatitude:(double)arg1;

@@ -23,7 +23,7 @@
 @property (nonatomic, copy) NSURL *outputURL;
 @property (nonatomic) long long settingsID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

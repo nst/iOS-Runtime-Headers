@@ -12,7 +12,7 @@
 @property (nonatomic, retain) NSArray *recordIDsToShareReadWrite;
 @property (nonatomic, retain) NSArray *recordIDsToUnshare;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

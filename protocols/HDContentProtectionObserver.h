@@ -5,6 +5,6 @@
 
 @required
 
-- (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
+- (void)contentProtectionStateChanged:(long long)arg1 previousState:(long long)arg2;
 
 @end

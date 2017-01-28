@@ -3,14 +3,14 @@
  */
 
 @interface _IDSCompletionHandler : IDSDelegateInfo {
-    id /* block */  _handler;
+    id  _handler;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 
 - (void)dealloc;
-- (id /* block */)handler;
-- (id)initWithHandler:(id /* block */)arg1 queue:(id)arg2;
-- (void)setHandler:(id /* block */)arg1;
+- (id)handler;
+- (id)initWithHandler:(id)arg1 queue:(id)arg2;
+- (void)setHandler:(id)arg1;
 
 @end

@@ -9,16 +9,16 @@
 }
 
 - (void).cxx_destruct;
-- (void)_queue_getAuthorizedBundleIdentifiersForBundleIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_queue_getNotificationSettingsForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)_queue_isAuthorizationModificationRestrictedForApplication:(id)arg1;
-- (BOOL)_queue_isCarPlayAvailableForApplication:(id)arg1;
-- (void)_queue_requestAuthorizationWithOptions:(unsigned int)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_queue_getAuthorizedBundleIdentifiersForBundleIdentifiers:(id)arg1 completionHandler:(id)arg2;
+- (void)_queue_getNotificationSettingsForBundleIdentifier:(id)arg1 completionHandler:(id)arg2;
+- (bool)_queue_isAuthorizationModificationRestrictedForApplication:(id)arg1;
+- (bool)_queue_isCarPlayAvailableForApplication:(id)arg1;
+- (void)_queue_requestAuthorizationWithOptions:(unsigned long long)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id)arg3;
 - (id)authorizedBundleIdentifiersForBundleIdentifiers:(id)arg1;
-- (void)getAuthorizedBundleIdentifiersForBundleIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)getNotificationSettingsForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getAuthorizedBundleIdentifiersForBundleIdentifiers:(id)arg1 completionHandler:(id)arg2;
+- (void)getNotificationSettingsForBundleIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (id)initWithDataProviderFactory:(id)arg1;
 - (id)notificationSettingsForBundleIdentifier:(id)arg1;
-- (void)requestAuthorizationWithOptions:(unsigned int)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)requestAuthorizationWithOptions:(unsigned long long)arg1 forBundleIdentifier:(id)arg2 completionHandler:(id)arg3;
 
 @end

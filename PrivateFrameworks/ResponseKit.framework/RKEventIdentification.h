@@ -11,12 +11,12 @@
 
 - (void)dealloc;
 - (id)description;
-- (void)enumerateClassifiedTokens:(id /* block */)arg1;
-- (void)enumerateTopKClassificationsForEachString:(unsigned int)arg1 block:(id /* block */)arg2;
-- (void)getTopKClassifications:(unsigned int)arg1 block:(id /* block */)arg2;
+- (void)enumerateClassifiedTokens:(id)arg1;
+- (void)enumerateTopKClassificationsForEachString:(unsigned long long)arg1 block:(id)arg2;
+- (void)getTopKClassifications:(unsigned long long)arg1 block:(id)arg2;
 - (id)init;
 - (id)initWithOwnedTokenSequences:(struct vector<RKNaturalLanguageEvents::TokenSequence, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x1; struct TokenSequence {} *x2; struct __compressed_pair<RKNaturalLanguageEvents::TokenSequence *, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x_3_1_1; } x3; }*)arg1 probabilities:(float*)arg2;
 - (struct vector<RKNaturalLanguageEvents::TokenSequence, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x1; struct TokenSequence {} *x2; struct __compressed_pair<RKNaturalLanguageEvents::TokenSequence *, std::__1::allocator<RKNaturalLanguageEvents::TokenSequence> > { struct TokenSequence {} *x_3_1_1; } x3; }*)tokenSequences;
-- (struct { unsigned int x1; float x2; })topClassification;
+- (struct { unsigned long long x1; float x2; })topClassification;
 
 @end

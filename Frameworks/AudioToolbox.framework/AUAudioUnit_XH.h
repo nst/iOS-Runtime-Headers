@@ -4,8 +4,8 @@
 
 @interface AUAudioUnit_XH : AUAudioUnit {
     AUParameterTree * _cachedParameterTree;
-    BOOL  _canProcess;
-    BOOL  _canRender;
+    bool  _canProcess;
+    bool  _canRender;
     struct OpaqueAudioComponentInstance { } * _componentInstance;
     struct unique_ptr<AUProcAndUserData, std::__1::default_delete<AUProcAndUserData> > { 
         struct __compressed_pair<AUProcAndUserData *, std::__1::default_delete<AUProcAndUserData> > { 
@@ -17,8 +17,8 @@
     AUAudioUnitBusArray_XH * _outputBusses;
     struct recursive_mutex { 
         struct _opaque_pthread_mutex_t { 
-            long __sig; 
-            BOOL __opaque[40]; 
+            long long __sig; 
+            BOOL __opaque[56]; 
         } __m_; 
     }  _propListenerMutex;
     struct vector<AUAudioUnit_XH_PropListener, std::__1::allocator<AUAudioUnit_XH_PropListener> > { 
@@ -40,7 +40,7 @@
             int (**_vptr$SharableMemoryBase)(); 
             bool mIsOwner; 
             bool mWasMapped; 
-            unsigned int mSize; 
+            unsigned long long mSize; 
             void *mBuffer; 
             unsigned int mPort; 
             int mFileDesc; 
@@ -68,8 +68,8 @@
             char *mName; 
             struct _opaque_pthread_t {} *mOwner; 
             struct _opaque_pthread_mutex_t { 
-                long __sig; 
-                BOOL __opaque[40]; 
+                long long __sig; 
+                BOOL __opaque[56]; 
             } mMutex; 
         } mMessageBufferLock; 
         struct CAMutex { 
@@ -77,8 +77,8 @@
             char *mName; 
             struct _opaque_pthread_t {} *mOwner; 
             struct _opaque_pthread_mutex_t { 
-                long __sig; 
-                BOOL __opaque[40]; 
+                long long __sig; 
+                BOOL __opaque[56]; 
             } mMutex; 
         } mConnectionLock; 
         struct HostCallbackInfo { 
@@ -88,9 +88,9 @@
             int (*transportStateProc)(); 
             int (*transportStateProc2)(); 
         } mHostCallbackInfo; 
-        id /* block */ mMusicalContextBlock; 
-        id /* block */ mTransportStateBlock; 
-        id /* block */ mPullInputBlock; 
+        id mMusicalContextBlock; 
+        id mTransportStateBlock; 
+        id mPullInputBlock; 
         int mNumInputs; 
         int mNumOutputs; 
         unsigned int mMaximumFramesToProcess; 
@@ -107,36 +107,36 @@
 
 @property (nonatomic, readonly) <AUAudioUnitXPCProtocol> *remote;
 
-+ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)instantiateWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg2 instance:(struct OpaqueAudioComponentInstance { }*)arg3 options:(unsigned long)arg4 completionHandler:(id /* block */)arg5;
++ (bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)instantiateWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg2 instance:(struct OpaqueAudioComponentInstance { }*)arg3 options:(unsigned int)arg4 completionHandler:(id)arg5;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_getBus:(unsigned long)arg1 scope:(unsigned long)arg2 error:(id*)arg3;
+- (id)_getBus:(unsigned int)arg1 scope:(unsigned int)arg2 error:(id*)arg3;
 - (id)_getValueForKey:(id)arg1;
 - (id)_getValueForProperty:(id)arg1;
-- (void)_refreshBusses:(unsigned long)arg1;
-- (BOOL)_setBusCount:(unsigned int)arg1 scope:(unsigned long)arg2 error:(id*)arg3;
+- (void)_refreshBusses:(unsigned int)arg1;
+- (bool)_setBusCount:(unsigned long long)arg1 scope:(unsigned int)arg2 error:(id*)arg3;
 - (void)_setValue:(id)arg1 forKey:(id)arg2;
 - (void)_setValue:(id)arg1 forProperty:(id)arg2;
-- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
-- (BOOL)allocateRenderResourcesAndReturnError:(id*)arg1;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void*)arg4;
+- (bool)allocateRenderResourcesAndReturnError:(id*)arg1;
 - (void)dealloc;
 - (void)deallocateRenderResources;
 - (void)didCrash;
-- (void)doOpen:(id)arg1 completion:(id /* block */)arg2;
+- (void)doOpen:(id)arg1 completion:(id)arg2;
 - (id)inputBusses;
-- (void)internalInitWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg2 instance:(struct OpaqueAudioComponentInstance { }*)arg3 completion:(id /* block */)arg4;
-- (id /* block */)internalRenderBlock;
+- (void)internalInitWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg2 instance:(struct OpaqueAudioComponentInstance { }*)arg3 completion:(id)arg4;
+- (id)internalRenderBlock;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputBusses;
 - (id)parameterTree;
-- (id)parametersForOverviewWithCount:(int)arg1;
+- (id)parametersForOverviewWithCount:(long long)arg1;
 - (void)propertiesChanged:(id)arg1;
 - (id)remote;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void*)arg3;
-- (void)requestViewControllerWithCompletionHandler:(id /* block */)arg1;
+- (void)requestViewControllerWithCompletionHandler:(id)arg1;
 - (void)reset;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;

@@ -3,25 +3,25 @@
  */
 
 @interface UIVibrancyEffect : UIVisualEffect {
-    int  _blurStyle;
-    BOOL  _invertAutomaticStyle;
+    long long  _blurStyle;
+    bool  _invertAutomaticStyle;
 }
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)effectForBlurEffect:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (int)_blurStyle;
+- (long long)_blurStyle;
 - (id)_highQualityEffectConfig;
-- (BOOL)_isATVStyle;
-- (BOOL)_isAutomaticStyle;
+- (bool)_isATVStyle;
+- (bool)_isAutomaticStyle;
 - (id)_lowQualityEffectConfig;
 - (id)_reduceTransparencyEffectConfig;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
-- (id)effectConfigForQuality:(int)arg1;
-- (id)effectForUserInterfaceStyle:(int)arg1;
+- (id)effectConfigForQuality:(long long)arg1;
+- (id)effectForUserInterfaceStyle:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

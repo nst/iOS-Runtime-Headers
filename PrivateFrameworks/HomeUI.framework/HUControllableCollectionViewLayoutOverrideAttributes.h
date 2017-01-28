@@ -3,28 +3,28 @@
  */
 
 @interface HUControllableCollectionViewLayoutOverrideAttributes : NSObject {
-    float  _alpha;
+    double  _alpha;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  _transform;
-    int  _zIndex;
+    long long  _zIndex;
 }
 
-@property (nonatomic) float alpha;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
-@property (nonatomic) int zIndex;
+@property (nonatomic) double alpha;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } transform;
+@property (nonatomic) long long zIndex;
 
-- (float)alpha;
+- (double)alpha;
 - (id)init;
-- (void)setAlpha:(float)arg1;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setZIndex:(int)arg1;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
-- (int)zIndex;
+- (void)setAlpha:(double)arg1;
+- (void)setTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (void)setZIndex:(long long)arg1;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })transform;
+- (long long)zIndex;
 
 @end

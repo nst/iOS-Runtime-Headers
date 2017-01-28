@@ -6,7 +6,7 @@
 @optional
 
 - (void)locationManager:(CLLocationManager *)arg1 didChangeAuthorizationStatus:(int)arg2;
-- (void)locationManager:(CLLocationManager *)arg1 didDetermineState:(int)arg2 forRegion:(CLRegion *)arg3;
+- (void)locationManager:(CLLocationManager *)arg1 didDetermineState:(long long)arg2 forRegion:(CLRegion *)arg3;
 - (void)locationManager:(CLLocationManager *)arg1 didEnterRegion:(CLRegion *)arg2;
 - (void)locationManager:(CLLocationManager *)arg1 didExitRegion:(CLRegion *)arg2;
 - (void)locationManager:(CLLocationManager *)arg1 didFailWithError:(NSError *)arg2;
@@ -21,6 +21,6 @@
 - (void)locationManager:(CLLocationManager *)arg1 rangingBeaconsDidFailForRegion:(CLBeaconRegion *)arg2 withError:(NSError *)arg3;
 - (void)locationManagerDidPauseLocationUpdates:(CLLocationManager *)arg1;
 - (void)locationManagerDidResumeLocationUpdates:(CLLocationManager *)arg1;
-- (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)arg1;
+- (bool)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)arg1;
 
 @end

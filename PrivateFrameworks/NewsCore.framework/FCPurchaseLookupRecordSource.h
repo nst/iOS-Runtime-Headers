@@ -4,13 +4,12 @@
 
 @interface FCPurchaseLookupRecordSource : FCRecordSource
 
-+ (unsigned int)defaultFetchOperationCachePolicy;
-+ (double)defaultFetchOperationMaximumCachedAge;
++ (id)defaultCachePolicy;
 + (unsigned long long)highThresholdDataSizeLimit;
 + (unsigned long long)lowThresholdDataSizeLimit;
 + (id)recordType;
 + (id)storeFilename;
-+ (unsigned int)storeVersion;
++ (unsigned long long)storeVersion;
 
 - (id)desiredKeys;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;

@@ -4,14 +4,14 @@
 
 @interface ICAttachmentMovieModel : ICAttachmentModel
 
-+ (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
++ (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 
 - (void)generatePreviewsInOperation:(id)arg1;
-- (id /* block */)genericBrickThumbnailCreator;
-- (id /* block */)genericListThumbnailCreator;
-- (BOOL)hasPreviews;
-- (BOOL)hasThumbnailImage;
-- (BOOL)showThumbnailInNoteList;
+- (id)genericBrickThumbnailCreator;
+- (id)genericListThumbnailCreator;
+- (bool)hasPreviews;
+- (bool)hasThumbnailImage;
+- (bool)showThumbnailInNoteList;
 - (void)updateAttachmentSize;
 - (void)updateFileBasedAttributes;
 

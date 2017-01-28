@@ -6,15 +6,15 @@
     NSNumber * _accountIdentifier;
     NSString * _attestationString;
     ISBiometricStore * _biometricStore;
-    id /* block */  _resultBlock;
-    int  _status;
+    id  _resultBlock;
+    long long  _status;
 }
 
 @property (nonatomic, copy) NSNumber *accountIdentifier;
 @property (nonatomic, copy) NSString *attestationString;
 @property (nonatomic, retain) ISBiometricStore *biometricStore;
-@property (copy) id /* block */ resultBlock;
-@property (readonly) int status;
+@property (copy) id resultBlock;
+@property (readonly) long long status;
 
 - (void).cxx_destruct;
 - (id)_newUpdateTouchIDSettingsOperation;
@@ -22,12 +22,12 @@
 - (id)attestationString;
 - (id)biometricStore;
 - (id)initWithAccountIdentifier:(id)arg1;
-- (id /* block */)resultBlock;
+- (id)resultBlock;
 - (void)run;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAttestationString:(id)arg1;
 - (void)setBiometricStore:(id)arg1;
-- (void)setResultBlock:(id /* block */)arg1;
-- (int)status;
+- (void)setResultBlock:(id)arg1;
+- (long long)status;
 
 @end

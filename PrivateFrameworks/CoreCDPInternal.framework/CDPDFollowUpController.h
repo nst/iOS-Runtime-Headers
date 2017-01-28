@@ -17,17 +17,17 @@
 - (id)_followUpItemWithContext:(id)arg1;
 - (id)_launchActionArgsForPrefPaneWithCommandKey:(id)arg1;
 - (id)_localizedStringForKey:(id)arg1;
-- (void)_networkReachabilityDidChangeWithIsReachable:(BOOL)arg1;
+- (void)_networkReachabilityDidChangeWithIsReachable:(bool)arg1;
 - (id)_offlineSecretChangeFollowUpAction;
 - (void)_postPendingFollowUpsForIdentifiers:(id)arg1;
 - (void)_postReminderNotifications;
 - (void)_processPendingItem:(id)arg1;
 - (void)clearFollowUpWithContext:(id)arg1;
-- (void)clearFollowUpWithContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)clearFollowUpWithContext:(id)arg1 completion:(id)arg2;
 - (void)deleteFollowUpItemForOfflineLocalSecretChange;
 - (id)init;
 - (void)postFollowUpItemForContext:(id)arg1;
-- (void)postFollowUpItemForContext:(id)arg1 completion:(id /* block */)arg2;
+- (void)postFollowUpItemForContext:(id)arg1 completion:(id)arg2;
 - (void)start;
 
 @end

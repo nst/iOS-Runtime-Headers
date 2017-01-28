@@ -4,22 +4,22 @@
 
 @interface MFAttachmentCapabilities : NSObject
 
-+ (BOOL)_isMailDropDevice;
-+ (BOOL)_limitMailDropOverCellular;
-+ (unsigned int)_mailDropLimit;
++ (bool)_isMailDropDevice;
++ (bool)_limitMailDropOverCellular;
++ (unsigned long long)_mailDropLimit;
 + (id)capabilitiesDictionary;
-+ (unsigned int)currentDownloadLimit;
-+ (unsigned int)currentMessageLimit;
-+ (unsigned int)currentPlaceholderThreshold;
-+ (unsigned int)currentUploadLimit;
-+ (unsigned int)currentUploadLimitForAccount:(id)arg1;
-+ (BOOL)mailDropAvailable;
-+ (BOOL)mailDropAvailableForAccount:(id)arg1;
-+ (BOOL)mailDropConfigured;
++ (unsigned long long)currentDownloadLimit;
++ (unsigned long long)currentMessageLimit;
++ (unsigned long long)currentPlaceholderThreshold;
++ (unsigned long long)currentUploadLimit;
++ (unsigned long long)currentUploadLimitForAccount:(id)arg1;
++ (bool)mailDropAvailable;
++ (bool)mailDropAvailableForAccount:(id)arg1;
++ (bool)mailDropConfigured;
 + (double)mailDropExpiration;
 + (id)mailDropPreferences;
-+ (unsigned int)mailDropThreshold;
++ (unsigned long long)mailDropThreshold;
 + (id)mailDropWhitelistedDownloadDomains;
-+ (BOOL)placeholdersAvailable;
++ (bool)placeholdersAvailable;
 
 @end

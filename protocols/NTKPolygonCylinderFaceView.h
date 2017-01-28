@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)setRotationFromFront:(float)arg1;
+- (void)setRotationFromFront:(double)arg1;
 
 @end

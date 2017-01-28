@@ -3,69 +3,69 @@
  */
 
 @interface _UILegibilitySettingsProvider : NSObject {
-    float  _accumulatedBrightness;
-    float  _accumulatedContrast;
-    float  _accumulatedLuminance;
-    float  _accumulatedSaturation;
-    BOOL  _accumulatorIsPrimed;
+    double  _accumulatedBrightness;
+    double  _accumulatedContrast;
+    double  _accumulatedLuminance;
+    double  _accumulatedSaturation;
+    bool  _accumulatorIsPrimed;
     UIColor * _contentColor;
-    int  _currentStyle;
-    BOOL  _hasContrast;
-    float  _mostRecentBrightness;
-    float  _mostRecentContrast;
-    float  _mostRecentLuminance;
-    float  _mostRecentSaturation;
+    long long  _currentStyle;
+    bool  _hasContrast;
+    double  _mostRecentBrightness;
+    double  _mostRecentContrast;
+    double  _mostRecentLuminance;
+    double  _mostRecentSaturation;
     double  _nextChangeBarrier;
 }
 
-@property (nonatomic) float accumulatedBrightness;
-@property (nonatomic) float accumulatedContrast;
-@property (nonatomic) float accumulatedLuminance;
-@property (nonatomic) float accumulatedSaturation;
-@property (nonatomic) BOOL accumulatorIsPrimed;
+@property (nonatomic) double accumulatedBrightness;
+@property (nonatomic) double accumulatedContrast;
+@property (nonatomic) double accumulatedLuminance;
+@property (nonatomic) double accumulatedSaturation;
+@property (nonatomic) bool accumulatorIsPrimed;
 @property (nonatomic, retain) UIColor *contentColor;
-@property (nonatomic) int currentStyle;
-@property (nonatomic) BOOL hasContrast;
-@property (nonatomic) float mostRecentBrightness;
-@property (nonatomic) float mostRecentContrast;
-@property (nonatomic) float mostRecentLuminance;
-@property (nonatomic) float mostRecentSaturation;
+@property (nonatomic) long long currentStyle;
+@property (nonatomic) bool hasContrast;
+@property (nonatomic) double mostRecentBrightness;
+@property (nonatomic) double mostRecentContrast;
+@property (nonatomic) double mostRecentLuminance;
+@property (nonatomic) double mostRecentSaturation;
 @property (nonatomic) double nextChangeBarrier;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (int)styleForContentColor:(id)arg1;
-+ (int)styleForContentColor:(id)arg1 contrast:(float)arg2;
++ (long long)styleForContentColor:(id)arg1;
++ (long long)styleForContentColor:(id)arg1 contrast:(double)arg2;
 
-- (BOOL)accumulateChangesToContentColor:(id)arg1;
-- (BOOL)accumulateChangesToContentColor:(id)arg1 contrast:(float)arg2;
-- (float)accumulatedBrightness;
-- (float)accumulatedContrast;
-- (float)accumulatedLuminance;
-- (float)accumulatedSaturation;
-- (BOOL)accumulatorIsPrimed;
+- (bool)accumulateChangesToContentColor:(id)arg1;
+- (bool)accumulateChangesToContentColor:(id)arg1 contrast:(double)arg2;
+- (double)accumulatedBrightness;
+- (double)accumulatedContrast;
+- (double)accumulatedLuminance;
+- (double)accumulatedSaturation;
+- (bool)accumulatorIsPrimed;
 - (void)clearContentColorAccumulator;
 - (id)contentColor;
-- (int)currentStyle;
+- (long long)currentStyle;
 - (void)dealloc;
-- (BOOL)hasContrast;
-- (float)mostRecentBrightness;
-- (float)mostRecentContrast;
-- (float)mostRecentLuminance;
-- (float)mostRecentSaturation;
+- (bool)hasContrast;
+- (double)mostRecentBrightness;
+- (double)mostRecentContrast;
+- (double)mostRecentLuminance;
+- (double)mostRecentSaturation;
 - (double)nextChangeBarrier;
-- (void)setAccumulatedBrightness:(float)arg1;
-- (void)setAccumulatedContrast:(float)arg1;
-- (void)setAccumulatedLuminance:(float)arg1;
-- (void)setAccumulatedSaturation:(float)arg1;
-- (void)setAccumulatorIsPrimed:(BOOL)arg1;
+- (void)setAccumulatedBrightness:(double)arg1;
+- (void)setAccumulatedContrast:(double)arg1;
+- (void)setAccumulatedLuminance:(double)arg1;
+- (void)setAccumulatedSaturation:(double)arg1;
+- (void)setAccumulatorIsPrimed:(bool)arg1;
 - (void)setContentColor:(id)arg1;
-- (void)setCurrentStyle:(int)arg1;
-- (void)setHasContrast:(BOOL)arg1;
-- (void)setMostRecentBrightness:(float)arg1;
-- (void)setMostRecentContrast:(float)arg1;
-- (void)setMostRecentLuminance:(float)arg1;
-- (void)setMostRecentSaturation:(float)arg1;
+- (void)setCurrentStyle:(long long)arg1;
+- (void)setHasContrast:(bool)arg1;
+- (void)setMostRecentBrightness:(double)arg1;
+- (void)setMostRecentContrast:(double)arg1;
+- (void)setMostRecentLuminance:(double)arg1;
+- (void)setMostRecentSaturation:(double)arg1;
 - (void)setNextChangeBarrier:(double)arg1;
 - (id)settings;
 

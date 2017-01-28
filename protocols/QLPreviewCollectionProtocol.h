@@ -5,17 +5,17 @@
 
 @required
 
-- (void)configureWithNumberOfItems:(int)arg1 currentPreviewItemIndex:(unsigned int)arg2 itemProvider:(id <QLPreviewItemProvider>)arg3 stateManager:(id <QLPreviewControllerStateProtocol>)arg4;
-- (void)hostViewControlerTransitionToState:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)configureWithNumberOfItems:(long long)arg1 currentPreviewItemIndex:(unsigned long long)arg2 itemProvider:(id <QLPreviewItemProvider>)arg3 stateManager:(id <QLPreviewControllerStateProtocol>)arg4;
+- (void)hostViewControlerTransitionToState:(unsigned long long)arg1 animated:(bool)arg2;
 - (void)invalidatePreviewCollection;
 - (void)keyCommandWasPerformed:(UIKeyCommand *)arg1;
-- (void)keyCommandsWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
-- (void)setAppearance:(QLAppearance *)arg1 animated:(BOOL)arg2;
-- (void)setCurrentPreviewItemIndex:(int)arg1 animated:(BOOL)arg2;
+- (void)keyCommandsWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, void*
+- (void)setAppearance:(QLAppearance *)arg1 animated:(bool)arg2;
+- (void)setCurrentPreviewItemIndex:(long long)arg1 animated:(bool)arg2;
 - (void)setLoadingString:(NSString *)arg1;
-- (void)startTransitionWithSourceViewProvider:(void *)arg1 transitionController:(void *)arg2 presenting:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: QLTransitionContext *, <QLTransitionControllerProtocol> *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)tearDownTransition:(BOOL)arg1;
+- (void)startTransitionWithSourceViewProvider:(void *)arg1 transitionController:(void *)arg2 presenting:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: QLTransitionContext *, <QLTransitionControllerProtocol> *, bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
+- (void)tearDownTransition:(bool)arg1;
 - (void)toolbarButtonPressedWithIdentifier:(NSString *)arg1;
-- (void)toolbarButtonsWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, void*
+- (void)toolbarButtonsWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSArray *, void*
 
 @end

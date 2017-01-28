@@ -5,18 +5,18 @@
 @interface MSTrackListDataSource : MSStructuredPageTableDataSource
 
 - (id)_stylesheetString;
-- (BOOL)canDoubleTapIndexPath:(id)arg1;
-- (BOOL)canShowItemOfferButtonForItem:(id)arg1;
-- (BOOL)canShowPreviewForItem:(id)arg1;
+- (bool)canDoubleTapIndexPath:(id)arg1;
+- (bool)canShowItemOfferButtonForItem:(id)arg1;
+- (bool)canShowPreviewForItem:(id)arg1;
 - (Class)cellConfigurationClassForItem:(id)arg1;
-- (id)cellConfigurationForIndex:(int)arg1 item:(id)arg2;
+- (id)cellConfigurationForIndex:(long long)arg1 item:(id)arg2;
 - (id)cellForIndexPath:(id)arg1;
 - (void)configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)configurePlaceholderCell:(id)arg1 forIndexPath:(id)arg2;
-- (id)headerViewForSection:(int)arg1;
-- (float)heightForPlaceholderCells;
+- (id)headerViewForSection:(long long)arg1;
+- (double)heightForPlaceholderCells;
 - (id)placeholderCellForIndexPath:(id)arg1;
 - (void)reloadCellContexts;
-- (int)tableViewStyle;
+- (long long)tableViewStyle;
 
 @end

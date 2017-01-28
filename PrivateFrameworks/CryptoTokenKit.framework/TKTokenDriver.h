@@ -18,8 +18,8 @@
 - (id)classID;
 - (id)delegate;
 - (id)extensionAttributes;
-- (void)getTokenEndpointWithAttributes:(id)arg1 reply:(id /* block */)arg2;
-- (void)getTokenWithAttributes:(id)arg1 reply:(id /* block */)arg2;
+- (void)getTokenEndpointWithAttributes:(id)arg1 reply:(id)arg2;
+- (void)getTokenWithAttributes:(id)arg1 reply:(id)arg2;
 - (id)init;
 - (void)invalidateToken:(id)arg1;
 - (id)queue;

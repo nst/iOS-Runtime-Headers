@@ -6,9 +6,9 @@
 @required
 
 - (void)_dismissWithContext:(NSDictionary *)arg1;
-- (void)_requestDismissalEnabled:(BOOL)arg1;
-- (void)_requestPreferredContentHeight:(float)arg1;
-- (void)_requestProximityMonitoringEnabled:(BOOL)arg1;
-- (void)_setActionEnabled:(BOOL)arg1 atIndex:(unsigned int)arg2;
+- (void)_requestDismissalEnabled:(bool)arg1;
+- (void)_requestPreferredContentHeight:(double)arg1;
+- (void)_requestProximityMonitoringEnabled:(bool)arg1;
+- (void)_setActionEnabled:(bool)arg1 atIndex:(unsigned long long)arg2;
 
 @end

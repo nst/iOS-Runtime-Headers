@@ -7,7 +7,7 @@
 
 - (NSString *)appId;
 - (NSArray *)callbacks;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setAppId:(NSString *)arg1;
 - (void)setCallbacks:(NSArray *)arg1;
 

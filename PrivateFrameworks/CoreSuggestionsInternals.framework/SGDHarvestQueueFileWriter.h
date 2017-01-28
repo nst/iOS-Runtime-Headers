@@ -9,14 +9,14 @@
     NSObject<OS_dispatch_queue> * _queue;
 }
 
-@property (nonatomic, readonly) unsigned int bytesWritten;
+@property (nonatomic, readonly) unsigned long long bytesWritten;
 @property (nonatomic, readonly) int fileId;
 
 - (void).cxx_destruct;
-- (unsigned int)bytesWritten;
+- (unsigned long long)bytesWritten;
 - (void)dealloc;
 - (int)fileId;
 - (id)initWithDirectory:(id)arg1 fileId:(int)arg2;
-- (void)write:(id)arg1 callback:(id /* block */)arg2;
+- (void)write:(id)arg1 callback:(id)arg2;
 
 @end

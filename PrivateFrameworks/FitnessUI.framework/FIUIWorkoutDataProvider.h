@@ -19,10 +19,10 @@
 - (void)_handleRemovedObjects:(id)arg1;
 - (void)_runUpdateHandlers;
 - (void)_timeZoneDidChange:(id)arg1;
-- (void)addUpdateHandler:(id /* block */)arg1;
+- (void)addUpdateHandler:(id)arg1;
 - (id)allWorkouts;
 - (void)dealloc;
-- (BOOL)hasWorkouts;
+- (bool)hasWorkouts;
 - (id)init;
 - (id)initWithHealthStore:(id)arg1;
 - (void)startFetchingFromDate:(id)arg1;

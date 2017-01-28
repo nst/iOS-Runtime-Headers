@@ -3,29 +3,29 @@
  */
 
 @interface UIAlertControllerDescriptor : NSObject {
-    BOOL  _applicationIsFullscreen;
-    BOOL  _hasContentViewController;
-    BOOL  _hasMessage;
-    BOOL  _hasTitle;
-    int  _numberOfActions;
+    bool  _applicationIsFullscreen;
+    bool  _hasContentViewController;
+    bool  _hasMessage;
+    bool  _hasTitle;
+    long long  _numberOfActions;
 }
 
-@property BOOL applicationIsFullscreen;
-@property BOOL hasContentViewController;
-@property BOOL hasMessage;
-@property BOOL hasTitle;
-@property int numberOfActions;
+@property bool applicationIsFullscreen;
+@property bool hasContentViewController;
+@property bool hasMessage;
+@property bool hasTitle;
+@property long long numberOfActions;
 
-- (BOOL)applicationIsFullscreen;
-- (BOOL)hasContentViewController;
-- (BOOL)hasMessage;
-- (BOOL)hasTitle;
-- (BOOL)isEqual:(id)arg1;
-- (int)numberOfActions;
-- (void)setApplicationIsFullscreen:(BOOL)arg1;
-- (void)setHasContentViewController:(BOOL)arg1;
-- (void)setHasMessage:(BOOL)arg1;
-- (void)setHasTitle:(BOOL)arg1;
-- (void)setNumberOfActions:(int)arg1;
+- (bool)applicationIsFullscreen;
+- (bool)hasContentViewController;
+- (bool)hasMessage;
+- (bool)hasTitle;
+- (bool)isEqual:(id)arg1;
+- (long long)numberOfActions;
+- (void)setApplicationIsFullscreen:(bool)arg1;
+- (void)setHasContentViewController:(bool)arg1;
+- (void)setHasMessage:(bool)arg1;
+- (void)setHasTitle:(bool)arg1;
+- (void)setNumberOfActions:(long long)arg1;
 
 @end

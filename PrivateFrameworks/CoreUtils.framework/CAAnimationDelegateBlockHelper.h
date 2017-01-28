@@ -3,24 +3,24 @@
  */
 
 @interface CAAnimationDelegateBlockHelper : NSObject <CAAnimationDelegate> {
-    id /* block */  _animationDidStartBlock;
-    id /* block */  _animationDidStopBlock;
+    id  _animationDidStartBlock;
+    id  _animationDidStopBlock;
 }
 
-@property (nonatomic, copy) id /* block */ animationDidStartBlock;
-@property (nonatomic, copy) id /* block */ animationDidStopBlock;
+@property (nonatomic, copy) id animationDidStartBlock;
+@property (nonatomic, copy) id animationDidStopBlock;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)animationDidStart:(id)arg1;
-- (id /* block */)animationDidStartBlock;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id /* block */)animationDidStopBlock;
+- (id)animationDidStartBlock;
+- (void)animationDidStop:(id)arg1 finished:(bool)arg2;
+- (id)animationDidStopBlock;
 - (void)dealloc;
-- (void)setAnimationDidStartBlock:(id /* block */)arg1;
-- (void)setAnimationDidStopBlock:(id /* block */)arg1;
+- (void)setAnimationDidStartBlock:(id)arg1;
+- (void)setAnimationDidStopBlock:(id)arg1;
 
 @end

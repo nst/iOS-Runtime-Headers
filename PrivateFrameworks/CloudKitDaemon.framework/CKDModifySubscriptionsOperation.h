@@ -3,15 +3,15 @@
  */
 
 @interface CKDModifySubscriptionsOperation : CKDDatabaseOperation {
-    id /* block */  _deleteCompletionBlock;
-    id /* block */  _saveCompletionBlock;
+    id  _deleteCompletionBlock;
+    id  _saveCompletionBlock;
     NSArray * _subscriptionIDsToDelete;
     NSMutableDictionary * _subscriptionsByServerID;
     NSArray * _subscriptionsToSave;
 }
 
-@property (nonatomic, copy) id /* block */ deleteCompletionBlock;
-@property (nonatomic, copy) id /* block */ saveCompletionBlock;
+@property (nonatomic, copy) id deleteCompletionBlock;
+@property (nonatomic, copy) id saveCompletionBlock;
 @property (nonatomic, retain) NSArray *subscriptionIDsToDelete;
 @property (nonatomic, retain) NSMutableDictionary *subscriptionsByServerID;
 @property (nonatomic, retain) NSArray *subscriptionsToSave;
@@ -22,12 +22,12 @@
 - (void)_handleSubscriptionSaved:(id)arg1 error:(id)arg2;
 - (void)_handleSubscriptionSaved:(id)arg1 responseCode:(id)arg2;
 - (id)activityCreate;
-- (id /* block */)deleteCompletionBlock;
+- (id)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (id /* block */)saveCompletionBlock;
-- (void)setDeleteCompletionBlock:(id /* block */)arg1;
-- (void)setSaveCompletionBlock:(id /* block */)arg1;
+- (id)saveCompletionBlock;
+- (void)setDeleteCompletionBlock:(id)arg1;
+- (void)setSaveCompletionBlock:(id)arg1;
 - (void)setSubscriptionIDsToDelete:(id)arg1;
 - (void)setSubscriptionsByServerID:(id)arg1;
 - (void)setSubscriptionsToSave:(id)arg1;

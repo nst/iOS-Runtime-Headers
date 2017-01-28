@@ -5,7 +5,7 @@
 @interface MFCoalescer : NSObject {
     id  _coalescedValue;
     NSObject<OS_dispatch_source> * _coalescer;
-    id /* block */  _coalescerAction;
+    id  _coalescerAction;
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _lock;
@@ -16,6 +16,6 @@
 - (void)coalesceValue:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCoalescingAction:(id /* block */)arg1;
+- (id)initWithCoalescingAction:(id)arg1;
 
 @end

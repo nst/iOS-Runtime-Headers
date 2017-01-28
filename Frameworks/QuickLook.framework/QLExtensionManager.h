@@ -6,8 +6,8 @@
 
 + (id)sharedManager;
 
-- (BOOL)existExtensionForPreviewItem:(id)arg1;
+- (bool)existExtensionForPreviewItem:(id)arg1;
 - (id)extensionForPreviewItem:(id)arg1;
-- (void)remoteViewControllerForPreviewItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)remoteViewControllerForPreviewItem:(id)arg1 withCompletionHandler:(id)arg2;
 
 @end

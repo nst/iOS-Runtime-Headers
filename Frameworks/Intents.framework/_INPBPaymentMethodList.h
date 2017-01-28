@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, retain) _INPBCondition *condition;
-@property (nonatomic, readonly) BOOL hasCondition;
+@property (nonatomic, readonly) bool hasCondition;
 @property (nonatomic, retain) NSMutableArray *paymentMethods;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -23,14 +23,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCondition;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCondition;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)paymentMethods;
-- (id)paymentMethodsAtIndex:(unsigned int)arg1;
-- (unsigned int)paymentMethodsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)paymentMethodsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)paymentMethodsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setCondition:(id)arg1;
 - (void)setPaymentMethods:(id)arg1;
 - (id)unknownFields;

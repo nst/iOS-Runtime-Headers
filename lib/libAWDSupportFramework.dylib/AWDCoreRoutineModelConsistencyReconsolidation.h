@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic) int countOfReconsolidatedLOIs;
-@property (nonatomic) BOOL hasCountOfReconsolidatedLOIs;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasCountOfReconsolidatedLOIs;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -21,15 +21,15 @@
 - (int)countOfReconsolidatedLOIs;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCountOfReconsolidatedLOIs;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCountOfReconsolidatedLOIs;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCountOfReconsolidatedLOIs:(int)arg1;
-- (void)setHasCountOfReconsolidatedLOIs:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasCountOfReconsolidatedLOIs:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

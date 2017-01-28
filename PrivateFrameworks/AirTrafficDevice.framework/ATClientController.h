@@ -11,7 +11,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (BOOL)_loadClientsForDataclasses:(id)arg1;
+- (bool)_loadClientsForDataclasses:(id)arg1;
 - (id)allClients;
 - (id)clientForDataclass:(id)arg1;
 - (void)dealloc;

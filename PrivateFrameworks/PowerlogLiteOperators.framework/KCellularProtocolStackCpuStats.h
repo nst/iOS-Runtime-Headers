@@ -16,9 +16,9 @@
 
 @property (nonatomic, retain) NSMutableArray *cores;
 @property (nonatomic) unsigned int durationMs;
-@property (nonatomic) BOOL hasDurationMs;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasVoltageVm;
+@property (nonatomic) bool hasDurationMs;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasVoltageVm;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int voltageVm;
 
@@ -28,23 +28,23 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cores;
-- (id)coresAtIndex:(unsigned int)arg1;
-- (unsigned int)coresCount;
+- (id)coresAtIndex:(unsigned long long)arg1;
+- (unsigned long long)coresCount;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)durationMs;
-- (BOOL)hasDurationMs;
-- (BOOL)hasTimestamp;
-- (BOOL)hasVoltageVm;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDurationMs;
+- (bool)hasTimestamp;
+- (bool)hasVoltageVm;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCores:(id)arg1;
 - (void)setDurationMs:(unsigned int)arg1;
-- (void)setHasDurationMs:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasVoltageVm:(BOOL)arg1;
+- (void)setHasDurationMs:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasVoltageVm:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setVoltageVm:(unsigned int)arg1;
 - (unsigned long long)timestamp;

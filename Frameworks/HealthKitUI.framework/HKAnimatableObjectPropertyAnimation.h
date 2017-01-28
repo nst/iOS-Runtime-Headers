@@ -3,18 +3,18 @@
  */
 
 @interface HKAnimatableObjectPropertyAnimation : NSObject {
-    id /* block */  _animationTimingFunction;
-    id /* block */  _completionHandler;
+    id  _animationTimingFunction;
+    id  _completionHandler;
     double  _currentAnimationTime;
     double  _duration;
 }
 
-@property (nonatomic, readonly) id /* block */ completionHandler;
+@property (nonatomic, readonly) id completionHandler;
 @property (nonatomic, readonly) double duration;
 
-+ (id)animationWithDuration:(double)arg1 timingFunction:(id /* block */)arg2 completion:(id /* block */)arg3;
-+ (id /* block */)linearTimingFunction;
-+ (id /* block */)timingFunctionForMediaTimingFunction:(id)arg1;
++ (id)animationWithDuration:(double)arg1 timingFunction:(id)arg2 completion:(id)arg3;
++ (id)linearTimingFunction;
++ (id)timingFunctionForMediaTimingFunction:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_currentValue;
@@ -25,9 +25,9 @@
 - (id)_startValue;
 - (void)_updateWithProgress:(float)arg1;
 - (void)callAndReleaseCompletionHandler;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (double)duration;
-- (BOOL)isFinishedAnimating;
+- (bool)isFinishedAnimating;
 - (void)update:(double)arg1;
 - (id)valueByAddingCurrentValueToValue:(id)arg1;
 

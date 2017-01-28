@@ -5,36 +5,36 @@
 @interface ABLabelPickerViewController : ABPickerViewController {
     NSArray * _additionalLabels;
     void * _addressBook;
-    BOOL  _didCreateNewLabel;
-    int  _itemIndex;
+    bool  _didCreateNewLabel;
+    long long  _itemIndex;
     ABItemLabelPicker * _labelPicker;
     ABPropertyGroup * _propertyGroup;
     NSString * _selectedLabel;
 }
 
-@property (nonatomic) BOOL didCreateNewLabel;
+@property (nonatomic) bool didCreateNewLabel;
 @property (nonatomic, retain) NSString *selectedLabel;
 
-- (BOOL)_allowsAutorotation;
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
+- (bool)_allowsAutorotation;
+- (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
+- (double)ab_heightToFitForViewInPopoverView;
 - (void)dealloc;
-- (BOOL)didCreateNewLabel;
-- (struct CGSize { float x1; float x2; })fullScreenContentSize;
-- (id)initWithAddressBook:(void*)arg1 propertyGroup:(id)arg2 itemIndex:(int)arg3 additionalLabels:(id)arg4;
+- (bool)didCreateNewLabel;
+- (struct CGSize { double x1; double x2; })fullScreenContentSize;
+- (id)initWithAddressBook:(void*)arg1 propertyGroup:(id)arg2 itemIndex:(long long)arg3 additionalLabels:(id)arg4;
 - (void)itemLabelPicker:(id)arg1 deletedCustomLabel:(id)arg2;
-- (void)itemLabelPicker:(id)arg1 endedWithSelectionConfirmed:(BOOL)arg2 animate:(BOOL)arg3;
+- (void)itemLabelPicker:(id)arg1 endedWithSelectionConfirmed:(bool)arg2 animate:(bool)arg3;
 - (void)itemLabelPickerDeletedLastCustomLabel:(id)arg1;
 - (void)itemLabelPickerDidChangeSelection:(id)arg1;
-- (BOOL)itemLabelPickerShouldDismissKeyboard:(id)arg1;
+- (bool)itemLabelPickerShouldDismissKeyboard:(id)arg1;
 - (id)labelPicker;
 - (void)loadView;
 - (id)selectedLabel;
 - (void)setDelegate:(id)arg1;
-- (void)setDidCreateNewLabel:(BOOL)arg1;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setDidCreateNewLabel:(bool)arg1;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setSelectedLabel:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

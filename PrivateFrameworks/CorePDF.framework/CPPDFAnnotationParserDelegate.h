@@ -10,19 +10,19 @@
     struct __CFString { } * _id;
     struct __CFString { } * _otherId;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _p;
-    BOOL  _parseError;
+    bool  _parseError;
     struct __CFArray { } * _quadPoints;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _rect;
 }
@@ -33,10 +33,10 @@
 @property (nonatomic, readonly) struct __CFString { }*content;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) struct __CFString { }*otherId;
-@property (nonatomic, readonly) BOOL parseError;
-@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property (nonatomic, readonly) bool parseError;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; } rect;
 @property (readonly) Class superclass;
 
 - (void)addQuadpoints;
@@ -47,13 +47,13 @@
 - (void)dealloc;
 - (id)init;
 - (struct __CFString { }*)otherId;
-- (BOOL)parseError;
+- (bool)parseError;
 - (void)parser:(id)arg1 didEndElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4;
 - (void)parser:(id)arg1 didStartElement:(id)arg2 namespaceURI:(id)arg3 qualifiedName:(id)arg4 attributes:(id)arg5;
 - (void)parser:(id)arg1 foundCharacters:(id)arg2;
 - (void)parser:(id)arg1 parseErrorOccurred:(id)arg2;
 - (void)parserDidStartDocument:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })rect;
 - (void)setAnnotationDictionary:(struct __CFDictionary { }*)arg1;
 
 @end

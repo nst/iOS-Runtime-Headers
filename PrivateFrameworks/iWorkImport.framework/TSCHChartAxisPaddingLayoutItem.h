@@ -4,6 +4,6 @@
 
 @interface TSCHChartAxisPaddingLayoutItem : TSCHChartLayoutItem
 
-- (struct CGSize { float x1; float x2; })calcMinSize;
+- (struct CGSize { double x1; double x2; })calcMinSize;
 
 @end

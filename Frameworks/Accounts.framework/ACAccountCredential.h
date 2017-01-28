@@ -5,17 +5,17 @@
 @interface ACAccountCredential : NSObject <NSSecureCoding> {
     NSMutableDictionary * _credentialItems;
     NSString * _credentialType;
-    BOOL  _dirty;
+    bool  _dirty;
     NSMutableSet * _dirtyProperties;
-    BOOL  _empty;
+    bool  _empty;
     ACAccount * _owningAccount;
-    BOOL  _requiresTouchID;
+    bool  _requiresTouchID;
 }
 
 @property (nonatomic, copy) NSString *credentialType;
-@property (getter=isDirty, nonatomic) BOOL dirty;
+@property (getter=isDirty, nonatomic) bool dirty;
 @property (nonatomic, readonly) NSSet *dirtyProperties;
-@property (getter=isEmpty, nonatomic) BOOL empty;
+@property (getter=isEmpty, nonatomic) bool empty;
 @property (nonatomic, retain) NSDate *expiryDate;
 @property (nonatomic, copy) NSString *findMyiPhoneToken;
 @property (nonatomic, copy) NSString *hsaToken;
@@ -25,17 +25,18 @@
 @property (nonatomic, copy) NSString *oauthTokenNoSync;
 @property (nonatomic, copy) NSString *oauthTokenSecret;
 @property (nonatomic, copy) NSString *password;
-@property (nonatomic) BOOL requiresTouchID;
+@property (nonatomic) bool requiresTouchID;
 @property (nonatomic, copy) NSString *token;
 @property (nonatomic, copy) NSDate *tokenExpiryDate;
 
++ (id)additionalServiceSegmentForAccountTypeIdentifier:(id)arg1;
 + (id)allSupportedKeys;
 + (id)credentialPolicyForAccountType:(id)arg1 key:(id)arg2 clientID:(id)arg3;
 + (id)credentialWithOAuthToken:(id)arg1 tokenSecret:(id)arg2;
 + (id)credentialWithPassword:(id)arg1;
 + (id)nonPersistentKeysForAccountTypeIdentifier:(id)arg1 credentialType:(id)arg2;
 + (id)supportedKeysForAccountTypeIdentifier:(id)arg1 credentialType:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_clearDirtyProperties;
@@ -48,16 +49,16 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiryDate;
 - (id)findMyiPhoneToken;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)hsaToken;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOAuth2Token:(id)arg1 refreshToken:(id)arg2 expiryDate:(id)arg3;
 - (id)initWithOAuthToken:(id)arg1 tokenSecret:(id)arg2;
 - (id)initWithPassword:(id)arg1;
-- (BOOL)isDirty;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDirty;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (id)keysForCredentialItems;
 - (id)mapsToken;
 - (id)oauthRefreshToken;
@@ -65,11 +66,11 @@
 - (id)oauthTokenNoSync;
 - (id)oauthTokenSecret;
 - (id)password;
-- (BOOL)requiresTouchID;
+- (bool)requiresTouchID;
 - (void)setCredentialItem:(id)arg1 forKey:(id)arg2;
 - (void)setCredentialType:(id)arg1;
-- (void)setDirty:(BOOL)arg1;
-- (void)setEmpty:(BOOL)arg1;
+- (void)setDirty:(bool)arg1;
+- (void)setEmpty:(bool)arg1;
 - (void)setExpiryDate:(id)arg1;
 - (void)setFindMyiPhoneToken:(id)arg1;
 - (void)setHsaToken:(id)arg1;
@@ -79,7 +80,7 @@
 - (void)setOauthTokenNoSync:(id)arg1;
 - (void)setOauthTokenSecret:(id)arg1;
 - (void)setPassword:(id)arg1;
-- (void)setRequiresTouchID:(BOOL)arg1;
+- (void)setRequiresTouchID:(bool)arg1;
 - (void)setToken:(id)arg1;
 - (void)setTokenExpiryDate:(id)arg1;
 - (id)token;

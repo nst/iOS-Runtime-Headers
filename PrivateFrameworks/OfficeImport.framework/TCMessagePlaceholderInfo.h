@@ -3,14 +3,14 @@
  */
 
 @interface TCMessagePlaceholderInfo : NSObject {
-    BOOL  mInUse;
+    bool  mInUse;
     id  mKey;
 }
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)isInUse;
+- (bool)isInUse;
 - (id)key;
-- (void)setInUse:(BOOL)arg1;
+- (void)setInUse:(bool)arg1;
 
 @end

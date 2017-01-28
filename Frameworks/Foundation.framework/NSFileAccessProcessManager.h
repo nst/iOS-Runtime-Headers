@@ -8,14 +8,14 @@
     BKSApplicationStateMonitor * _monitor;
     int  _pendingMessageCount;
     NSObject<OS_dispatch_queue> * _queue;
-    id /* block */  _suspensionHandler;
+    id  _suspensionHandler;
     NSArray * _urls;
 }
 
 @property (copy) NSArray *URLs;
-@property (copy) id /* block */ suspensionHandler;
+@property (copy) id suspensionHandler;
 
-+ (BOOL)needToManageConnection:(id)arg1 forURLs:(id)arg2;
++ (bool)needToManageConnection:(id)arg1 forURLs:(id)arg2;
 
 - (id)URLs;
 - (void)_ensureMonitor;
@@ -25,9 +25,9 @@
 - (void)invalidate;
 - (void)killProcessWithMessage:(id)arg1;
 - (void)preventSuspensionWithActivityName:(id)arg1;
-- (void)safelySendMessageWithReplyUsingBlock:(id /* block */)arg1;
-- (void)setSuspensionHandler:(id /* block */)arg1;
+- (void)safelySendMessageWithReplyUsingBlock:(id)arg1;
+- (void)setSuspensionHandler:(id)arg1;
 - (void)setURLs:(id)arg1;
-- (id /* block */)suspensionHandler;
+- (id)suspensionHandler;
 
 @end

@@ -13,9 +13,9 @@
     int  _zilchIndex;
 }
 
-@property (nonatomic) BOOL hasManeuverType;
-@property (nonatomic, readonly) BOOL hasName;
-@property (nonatomic) BOOL hasZilchIndex;
+@property (nonatomic) bool hasManeuverType;
+@property (nonatomic, readonly) bool hasName;
+@property (nonatomic) bool hasZilchIndex;
 @property (nonatomic) int maneuverType;
 @property (nonatomic, retain) GEONameInfo *name;
 @property (nonatomic, retain) NSMutableArray *signposts;
@@ -31,25 +31,25 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasManeuverType;
-- (BOOL)hasName;
-- (BOOL)hasZilchIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasManeuverType;
+- (bool)hasName;
+- (bool)hasZilchIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)maneuverType;
 - (id)maneuverTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasManeuverType:(BOOL)arg1;
-- (void)setHasZilchIndex:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasManeuverType:(bool)arg1;
+- (void)setHasZilchIndex:(bool)arg1;
 - (void)setManeuverType:(int)arg1;
 - (void)setName:(id)arg1;
 - (void)setSignposts:(id)arg1;
 - (void)setZilchIndex:(int)arg1;
-- (id)signpostAtIndex:(unsigned int)arg1;
+- (id)signpostAtIndex:(unsigned long long)arg1;
 - (id)signposts;
-- (unsigned int)signpostsCount;
+- (unsigned long long)signpostsCount;
 - (void)writeTo:(id)arg1;
 - (int)zilchIndex;
 

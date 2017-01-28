@@ -3,39 +3,39 @@
  */
 
 @interface FUMultiDashedBackgroundView : FUChartBackgroundView {
-    BOOL  _backgroundIsTransparent;
+    bool  _backgroundIsTransparent;
     UIImageView * _imageView;
     UIColor * _lineColor;
-    float  _lineWidth;
-    unsigned int  _numLines;
-    float  _previousWidth;
+    double  _lineWidth;
+    unsigned long long  _numLines;
+    double  _previousWidth;
     UIColor * _subLineColor;
-    float  _sublineInset;
-    unsigned int  _sublineInterval;
+    double  _sublineInset;
+    unsigned long long  _sublineInterval;
 }
 
-@property (nonatomic) BOOL backgroundIsTransparent;
-@property (nonatomic) float lineWidth;
-@property (nonatomic) unsigned int numLines;
-@property (nonatomic) float sublineInset;
-@property (nonatomic) unsigned int sublineInterval;
+@property (nonatomic) bool backgroundIsTransparent;
+@property (nonatomic) double lineWidth;
+@property (nonatomic) unsigned long long numLines;
+@property (nonatomic) double sublineInset;
+@property (nonatomic) unsigned long long sublineInterval;
 
-+ (id)calculateRoundedLinePositionsForTotalWidth:(float)arg1 lineWidth:(float)arg2 numberOfLines:(unsigned int)arg3 roundedInView:(id)arg4;
++ (id)calculateRoundedLinePositionsForTotalWidth:(double)arg1 lineWidth:(double)arg2 numberOfLines:(unsigned long long)arg3 roundedInView:(id)arg4;
 
 - (void).cxx_destruct;
 - (void)_setNeedsRegenerateBackgroundImage;
 - (id)_stretchableLinesPatternImage;
-- (BOOL)backgroundIsTransparent;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (bool)backgroundIsTransparent;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)lineWidth;
-- (unsigned int)numLines;
-- (void)setBackgroundIsTransparent:(BOOL)arg1;
-- (void)setLineWidth:(float)arg1;
-- (void)setNumLines:(unsigned int)arg1;
-- (void)setSublineInset:(float)arg1;
-- (void)setSublineInterval:(unsigned int)arg1;
-- (float)sublineInset;
-- (unsigned int)sublineInterval;
+- (double)lineWidth;
+- (unsigned long long)numLines;
+- (void)setBackgroundIsTransparent:(bool)arg1;
+- (void)setLineWidth:(double)arg1;
+- (void)setNumLines:(unsigned long long)arg1;
+- (void)setSublineInset:(double)arg1;
+- (void)setSublineInterval:(unsigned long long)arg1;
+- (double)sublineInset;
+- (unsigned long long)sublineInterval;
 
 @end

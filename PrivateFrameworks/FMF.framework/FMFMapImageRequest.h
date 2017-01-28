@@ -4,42 +4,42 @@
 
 @interface FMFMapImageRequest : NSObject <NSSecureCoding> {
     double  _altitude;
-    BOOL  _cachingEnabled;
+    bool  _cachingEnabled;
     double  _height;
     CLLocation * _location;
     double  _pitch;
-    int  _priority;
+    long long  _priority;
     double  _width;
 }
 
 @property (nonatomic) double altitude;
-@property (nonatomic) BOOL cachingEnabled;
+@property (nonatomic) bool cachingEnabled;
 @property (nonatomic) double height;
 @property (nonatomic, readonly) NSString *key;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic) double pitch;
-@property (nonatomic) int priority;
+@property (nonatomic) long long priority;
 @property (nonatomic) double width;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)altitude;
-- (BOOL)cachingEnabled;
+- (bool)cachingEnabled;
 - (void)encodeWithCoder:(id)arg1;
 - (double)height;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 width:(double)arg4 height:(double)arg5 andCachingEnabled:(BOOL)arg6;
+- (id)initWithLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 width:(double)arg4 height:(double)arg5 andCachingEnabled:(bool)arg6;
 - (id)key;
 - (id)location;
 - (double)pitch;
-- (int)priority;
+- (long long)priority;
 - (void)setAltitude:(double)arg1;
-- (void)setCachingEnabled:(BOOL)arg1;
+- (void)setCachingEnabled:(bool)arg1;
 - (void)setHeight:(double)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPitch:(double)arg1;
-- (void)setPriority:(int)arg1;
+- (void)setPriority:(long long)arg1;
 - (void)setWidth:(double)arg1;
 - (double)width;
 

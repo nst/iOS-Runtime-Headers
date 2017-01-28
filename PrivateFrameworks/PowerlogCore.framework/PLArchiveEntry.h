@@ -4,25 +4,25 @@
 
 @interface PLArchiveEntry : PLEntry {
     NSString * _crPath;
-    BOOL  _systemTimeOffsetModified;
+    bool  _systemTimeOffsetModified;
 }
 
 @property (nonatomic, readonly) NSString *compressedPath;
 @property (nonatomic, readonly) NSString *crPath;
 @property (readonly) NSDate *endDate;
-@property (readonly) BOOL fullMode;
+@property (readonly) bool fullMode;
 @property (nonatomic) long long mainDBSizeAtStart;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic) unsigned int numAttempts;
+@property (nonatomic) unsigned long long numAttempts;
 @property (nonatomic, readonly) NSString *path;
-@property (nonatomic, readonly) BOOL removed;
+@property (nonatomic, readonly) bool removed;
 @property (nonatomic, retain) NSDate *removedDate;
-@property (nonatomic) int stage;
+@property (nonatomic) long long stage;
 @property (readonly) NSDate *startDate;
-@property (nonatomic, readonly) BOOL syncedOff;
+@property (nonatomic, readonly) bool syncedOff;
 @property (nonatomic, retain) NSDate *syncedOffDate;
 @property (nonatomic) double systemTimeOffset;
-@property (readonly) BOOL systemTimeOffsetModified;
+@property (readonly) bool systemTimeOffsetModified;
 @property (readonly) NSString *uuid;
 
 + (id)entryKey;
@@ -33,29 +33,29 @@
 - (id)compressedPath;
 - (id)crPath;
 - (id)endDate;
-- (BOOL)fullMode;
+- (bool)fullMode;
 - (id)initEntryWithRawData:(id)arg1;
 - (id)initWithMetadata:(id)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 andUUID:(id)arg3;
 - (void)log;
 - (long long)mainDBSizeAtStart;
 - (id)name;
-- (unsigned int)numAttempts;
+- (unsigned long long)numAttempts;
 - (id)path;
-- (BOOL)removed;
+- (bool)removed;
 - (id)removedDate;
 - (void)setMainDBSizeAtStart:(long long)arg1;
-- (void)setNumAttempts:(unsigned int)arg1;
+- (void)setNumAttempts:(unsigned long long)arg1;
 - (void)setRemovedDate:(id)arg1;
-- (void)setStage:(int)arg1;
+- (void)setStage:(long long)arg1;
 - (void)setSyncedOffDate:(id)arg1;
 - (void)setSystemTimeOffset:(double)arg1;
-- (int)stage;
+- (long long)stage;
 - (id)startDate;
-- (BOOL)syncedOff;
+- (bool)syncedOff;
 - (id)syncedOffDate;
 - (double)systemTimeOffset;
-- (BOOL)systemTimeOffsetModified;
+- (bool)systemTimeOffsetModified;
 - (id)uuid;
 
 @end

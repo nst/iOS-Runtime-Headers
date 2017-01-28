@@ -6,10 +6,10 @@
 
 + (id)dataWithContentsOfURL:(id)arg1;
 + (id)observableWithContentsOfURL:(id)arg1;
-+ (id)writeData:(id)arg1 toURL:(id)arg2 options:(unsigned int)arg3;
++ (id)writeData:(id)arg1 toURL:(id)arg2 options:(unsigned long long)arg3;
 
 - (id)dataWithContentsOfURL:(id)arg1;
 - (id)observableWithContentsOfURL:(id)arg1;
-- (id)writeData:(id)arg1 toURL:(id)arg2 options:(unsigned int)arg3;
+- (id)writeData:(id)arg1 toURL:(id)arg2 options:(unsigned long long)arg3;
 
 @end

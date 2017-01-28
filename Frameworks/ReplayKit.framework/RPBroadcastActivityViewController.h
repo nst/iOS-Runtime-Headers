@@ -4,30 +4,31 @@
 
 @interface RPBroadcastActivityViewController : UIViewController {
     <RPBroadcastActivityViewControllerDelegate> * _delegate;
-    id /* block */  _didFinishHandler;
+    id  _didFinishHandler;
     RPBroadcastActivityHostViewController * _hostViewController;
     UIPopoverPresentationController * _popoverPresentationControllerProxy;
 }
 
 @property (nonatomic) <RPBroadcastActivityViewControllerDelegate> *delegate;
-@property (nonatomic, copy) id /* block */ didFinishHandler;
+@property (nonatomic, copy) id didFinishHandler;
 @property (nonatomic, retain) RPBroadcastActivityHostViewController *hostViewController;
 @property (nonatomic, retain) UIPopoverPresentationController *popoverPresentationControllerProxy;
 
-+ (void)loadBroadcastActivityViewControllerWithHandler:(id /* block */)arg1;
-+ (void)viewControllerForExtension:(id)arg1 inputItems:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)loadBroadcastActivityViewControllerWithHandler:(id)arg1;
++ (void)loadBroadcastActivityViewControllerWithHandler:(id)arg1 broadcastActivitiesNotInstalledAlertTitle:(id)arg2 broadcastActivitiesNotInstalledAlertMessage:(id)arg3;
++ (void)viewControllerForExtension:(id)arg1 inputItems:(id)arg2 completionHandler:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (id /* block */)didFinishHandler;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (id)didFinishHandler;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (id)hostViewController;
 - (id)popoverPresentationController;
 - (id)popoverPresentationControllerProxy;
 - (void)setDelegate:(id)arg1;
-- (void)setDidFinishHandler:(id /* block */)arg1;
+- (void)setDidFinishHandler:(id)arg1;
 - (void)setHostViewController:(id)arg1;
-- (void)setModalPresentationStyle:(int)arg1;
+- (void)setModalPresentationStyle:(long long)arg1;
 - (void)setPopoverPresentationControllerProxy:(id)arg1;
 
 @end

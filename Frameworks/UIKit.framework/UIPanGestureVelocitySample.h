@@ -5,24 +5,24 @@
 @interface UIPanGestureVelocitySample : NSObject {
     double  dt;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  end;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  start;
 }
 
 @property double dt;
-@property struct CGPoint { float x1; float x2; } end;
-@property struct CGPoint { float x1; float x2; } start;
+@property struct CGPoint { double x1; double x2; } end;
+@property struct CGPoint { double x1; double x2; } start;
 
 - (double)dt;
-- (struct CGPoint { float x1; float x2; })end;
+- (struct CGPoint { double x1; double x2; })end;
 - (void)setDt:(double)arg1;
-- (void)setEnd:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setStart:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGPoint { float x1; float x2; })start;
+- (void)setEnd:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setStart:(struct CGPoint { double x1; double x2; })arg1;
+- (struct CGPoint { double x1; double x2; })start;
 
 @end

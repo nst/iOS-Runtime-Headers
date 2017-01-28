@@ -5,8 +5,8 @@
 
 @required
 
-- (BOOL)addMessage:(id <MPMessage>)arg1;
+- (bool)addMessage:(id <MPMessage>)arg1;
 - (id)initWithFeatures:(NSArray *)arg1;
-- (BOOL)removeMessage:(id <MPMessage>)arg1;
+- (bool)removeMessage:(id <MPMessage>)arg1;
 
 @end

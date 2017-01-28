@@ -4,8 +4,8 @@
 
 @interface PLDisconnectedDatabaseCreatorManagedObjectContext : PLManagedObjectContext
 
-+ (BOOL)_shouldRequestModelMigratorCreateDatabaseOnRebuildAndRetry;
-+ (BOOL)canMergeRemoteChanges;
++ (bool)_shouldRequestModelMigratorCreateDatabaseOnRebuildAndRetry;
++ (bool)canMergeRemoteChanges;
 
 - (void)connectToChangeHub;
 - (void)disconnectFromChangeHub;

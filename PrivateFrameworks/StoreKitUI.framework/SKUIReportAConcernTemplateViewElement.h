@@ -3,12 +3,12 @@
  */
 
 @interface SKUIReportAConcernTemplateViewElement : SKUIViewElement {
-    int  _concernType;
+    long long  _concernType;
 }
 
-@property (nonatomic, readonly) int concernType;
+@property (nonatomic, readonly) long long concernType;
 
-- (int)concernType;
+- (long long)concernType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

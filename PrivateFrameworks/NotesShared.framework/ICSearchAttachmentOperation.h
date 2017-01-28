@@ -8,6 +8,6 @@
 
 - (id)attachment;
 - (id)initWithAttachment:(id)arg1 searchString:(id)arg2;
-- (unsigned int)relevanceByPerformingSearch;
+- (unsigned long long)relevanceByPerformingSearch;
 
 @end

@@ -13,10 +13,10 @@
 @property (nonatomic, retain) NSString *appName;
 @property (nonatomic, retain) NSString *axSpokenName;
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic, readonly) BOOL hasAppName;
-@property (nonatomic, readonly) BOOL hasAxSpokenName;
-@property (nonatomic, readonly) BOOL hasDisplayName;
-@property (nonatomic, readonly) BOOL hasSpotlightName;
+@property (nonatomic, readonly) bool hasAppName;
+@property (nonatomic, readonly) bool hasAxSpokenName;
+@property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic, readonly) bool hasSpotlightName;
 @property (nonatomic, retain) NSString *spotlightName;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -29,14 +29,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (BOOL)hasAppName;
-- (BOOL)hasAxSpokenName;
-- (BOOL)hasDisplayName;
-- (BOOL)hasSpotlightName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAppName;
+- (bool)hasAxSpokenName;
+- (bool)hasDisplayName;
+- (bool)hasSpotlightName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAppName:(id)arg1;
 - (void)setAxSpokenName:(id)arg1;
 - (void)setDisplayName:(id)arg1;

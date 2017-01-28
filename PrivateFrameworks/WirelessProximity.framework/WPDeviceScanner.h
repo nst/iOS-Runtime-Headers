@@ -25,7 +25,7 @@
 - (id)liveDevices;
 - (void)parseAirPrint:(char *)arg1 forSize:(int)arg2 intoDictionary:(id)arg3;
 - (void)parseCompanyData:(char *)arg1 forSize:(int)arg2 intoDictionary:(id)arg3;
-- (BOOL)parseType:(unsigned char)arg1 atOffset:(char *)arg2 withSize:(int)arg3 intoDictionary:(id)arg4;
+- (bool)parseType:(unsigned char)arg1 atOffset:(char *)arg2 withSize:(int)arg3 intoDictionary:(id)arg4;
 - (void)postDevice:(id)arg1;
 - (void)postDevices:(id)arg1;
 - (void)registerForDevicesMatching:(id)arg1 options:(id)arg2;
@@ -35,7 +35,7 @@
 - (void)setActiveScans:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLiveDevices:(id)arg1;
-- (void)stateDidChange:(int)arg1;
+- (void)stateDidChange:(long long)arg1;
 - (void)timerFinished:(id)arg1;
 - (void)unregisterAllDeviceChanges;
 - (void)unregisterForDevices:(id)arg1;

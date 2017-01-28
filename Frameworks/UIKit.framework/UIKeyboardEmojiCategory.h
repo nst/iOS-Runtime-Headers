@@ -3,59 +3,49 @@
  */
 
 @interface UIKeyboardEmojiCategory : NSObject {
-    int  _categoryType;
+    long long  _categoryType;
     NSString * _displaySymbol;
     NSArray * _emoji;
-    int  _lastVisibleFirstEmojiIndex;
+    long long  _lastVisibleFirstEmojiIndex;
 }
 
-@property int categoryType;
+@property long long categoryType;
 @property (getter=displaySymbol, readonly) NSString *displaySymbol;
 @property (retain) NSArray *emoji;
-@property (nonatomic) int lastVisibleFirstEmojiIndex;
+@property (nonatomic) long long lastVisibleFirstEmojiIndex;
 @property (getter=name, nonatomic, readonly) NSString *name;
 
-+ (id)ActivityEmoji;
-+ (id)CelebrationEmoji;
 + (id)DingbatVariantsEmoji;
-+ (id)FoodAndDrinkEmoji;
 + (id)GenderEmoji;
-+ (id)NatureEmoji;
 + (id)NoneVariantEmoji;
-+ (id)ObjectsAndSymbolsEmoji;
-+ (id)ObjectsEmoji;
-+ (id)PeopleEmoji;
-+ (id)PrepopulatedEmoji;
++ (id)ProfessionEmoji;
 + (id)SkinToneEmoji;
-+ (id)SymbolsEmoji;
-+ (id)TravelAndPlacesEmoji;
 + (id)categories;
-+ (id)categoryForType:(int)arg1;
-+ (unsigned int)categoryIndexForCategoryType:(int)arg1;
-+ (int)categoryTypeForCategoryIndex:(unsigned int)arg1;
-+ (id)computeEmojiFlagsSortedByLanguage;
-+ (id)displayName:(int)arg1;
++ (id)categoryForType:(long long)arg1;
++ (unsigned long long)categoryIndexForCategoryType:(long long)arg1;
++ (long long)categoryTypeForCategoryIndex:(unsigned long long)arg1;
++ (id)displayName:(long long)arg1;
++ (id)emojiCategoryStringForCategoryType:(long long)arg1;
++ (long long)emojiCategoryTypeForCategoryString:(id)arg1;
 + (id)emojiRecentsFromPreferences;
-+ (BOOL)emojiString:(id)arg1 inGroup:(id)arg2;
++ (bool)emojiString:(id)arg1 inGroup:(id)arg2;
 + (id)enabledCategoryIndexes;
-+ (id)fallbackDisplayName:(int)arg1;
-+ (id)flagEmojiCountryCodesCommon;
-+ (id)flagEmojiCountryCodesReadyToUse;
-+ (unsigned int)hasVariantsForEmoji:(id)arg1;
++ (id)fallbackDisplayName:(long long)arg1;
++ (unsigned long long)hasVariantsForEmoji:(id)arg1;
 + (id)loadPrecomputedEmojiFlagCategory;
 + (id)localizedStringForKey:(id)arg1;
-+ (int)numberOfCategories;
-+ (id)stringToRegionalIndicatorString:(id)arg1;
++ (long long)numberOfCategories;
++ (id)professionSkinToneEmojiBaseKey:(id)arg1;
 
-- (int)categoryType;
+- (long long)categoryType;
 - (void)dealloc;
 - (id)displaySymbol;
 - (id)emoji;
-- (int)lastVisibleFirstEmojiIndex;
+- (long long)lastVisibleFirstEmojiIndex;
 - (id)name;
 - (void)releaseCategories;
-- (void)setCategoryType:(int)arg1;
+- (void)setCategoryType:(long long)arg1;
 - (void)setEmoji:(id)arg1;
-- (void)setLastVisibleFirstEmojiIndex:(int)arg1;
+- (void)setLastVisibleFirstEmojiIndex:(long long)arg1;
 
 @end

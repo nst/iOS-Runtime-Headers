@@ -4,35 +4,35 @@
 
 @interface _UIPopoverViewArtworkLoader : NSObject {
     NSString * _backgroundSelector;
-    int  _backgroundStyle;
+    long long  _backgroundStyle;
 }
 
-+ (id)backgroundSelectorForBackgroundStyle:(int)arg1;
++ (id)backgroundSelectorForBackgroundStyle:(long long)arg1;
 
 - (void).cxx_destruct;
-- (float)arrowBase;
-- (float)arrowHeight;
-- (float)arrowTopGradientEnd;
+- (double)arrowBase;
+- (double)arrowHeight;
+- (double)arrowTopGradientEnd;
 - (id)bottomArrowLeftEndCapView;
 - (id)bottomArrowPinnedView;
 - (id)bottomArrowRightEndCapView;
 - (id)bottomArrowView;
-- (float)bottomEndCapHeight;
-- (float)capCornerRadius;
-- (float)clampArrowBase;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inImageOfSize:(struct CGSize { float x1; float x2; })arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentsCenterForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inImageOfSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)initWithBackgroundStyle:(int)arg1;
-- (BOOL)modern;
-- (float)noArrowTopGradientEnd;
+- (double)bottomEndCapHeight;
+- (double)capCornerRadius;
+- (double)clampArrowBase;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentRectForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inImageOfSize:(struct CGSize { double x1; double x2; })arg2;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })contentsCenterForRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 inImageOfSize:(struct CGSize { double x1; double x2; })arg2;
+- (id)initWithBackgroundStyle:(long long)arg1;
+- (bool)modern;
+- (double)noArrowTopGradientEnd;
 - (id)rightArrowBottomEndCapView;
 - (id)rightArrowPinnedBottomView;
 - (id)rightArrowPinnedTopView;
 - (id)rightArrowTopEndCapView;
 - (id)rightArrowView;
-- (float)shortArtArrowTopGradientEnd;
-- (float)shortArtNoArrowTopGradientEnd;
-- (float)shortArtRightArrowBase;
+- (double)shortArtArrowTopGradientEnd;
+- (double)shortArtNoArrowTopGradientEnd;
+- (double)shortArtRightArrowBase;
 - (id)shortBottomArrowLeftEndCapView;
 - (id)shortBottomArrowPinnedView;
 - (id)shortBottomArrowRightEndCapView;
@@ -42,13 +42,13 @@
 - (id)shortTopArrowPinnedView;
 - (id)shortTopArrowRightEndCapView;
 - (id)shortTopArrowView;
-- (float)sideArrowStart;
-- (id)templateImageForDirection:(id)arg1 shortArtwork:(BOOL)arg2;
+- (double)sideArrowStart;
+- (id)templateImageForDirection:(id)arg1 shortArtwork:(bool)arg2;
 - (id)topArrowLeftEndCapView;
 - (id)topArrowPinnedView;
 - (id)topArrowRightEndCapView;
-- (float)topArrowStart;
+- (double)topArrowStart;
 - (id)topArrowView;
-- (id)viewWithContentsImage:(id)arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 center:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 antialiasingMask:(unsigned int)arg4 directionSelector:(id)arg5;
+- (id)viewWithContentsImage:(id)arg1 rect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2 center:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 antialiasingMask:(unsigned int)arg4 directionSelector:(id)arg5;
 
 @end

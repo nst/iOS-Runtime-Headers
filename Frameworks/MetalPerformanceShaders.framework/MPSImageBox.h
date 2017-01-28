@@ -3,16 +3,16 @@
  */
 
 @interface MPSImageBox : MPSUnaryImageKernel {
-    unsigned int  _kernelHeight;
-    unsigned int  _kernelWidth;
+    unsigned long long  _kernelHeight;
+    unsigned long long  _kernelWidth;
     unsigned int  filterInfoH;
     unsigned int  filterInfoV;
     MPSImageConvolution * hPass;
     MPSImageConvolution * vPass;
 }
 
-@property (nonatomic, readonly) unsigned int kernelHeight;
-@property (nonatomic, readonly) unsigned int kernelWidth;
+@property (nonatomic, readonly) unsigned long long kernelHeight;
+@property (nonatomic, readonly) unsigned long long kernelWidth;
 
 + (const struct MPSLibraryInfo { int x1; unsigned int x2; char *x3; struct MPSKernelInfo {} *x4; struct MPSKernelInfo {} *x5; struct MPSKernelInfo {} *x6; struct MPSKernelInfo {} *x7; struct MPSKernelInfo {} *x8; struct MPSKernelInfo {} *x9; struct MPSKernelInfo {} *x10; struct MPSKernelInfo {} *x11; struct MPSKernelInfo {} *x12; struct MPSKernelInfo {} *x13; struct MPSKernelInfo {} *x14; }*)libraryInfo;
 
@@ -21,9 +21,9 @@
 - (id)debugDescription;
 - (void)initFilterInfo;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned int)arg2 kernelHeight:(unsigned int)arg3;
-- (unsigned int)kernelHeight;
-- (unsigned int)kernelWidth;
-- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sourceRegionForDestinationSize:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
+- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned long long)arg2 kernelHeight:(unsigned long long)arg3;
+- (unsigned long long)kernelHeight;
+- (unsigned long long)kernelWidth;
+- (struct MPSRegion { struct MPSOrigin { double x_1_1_1; double x_1_1_2; double x_1_1_3; } x1; struct MPSSize { double x_2_1_1; double x_2_1_2; double x_2_1_3; } x2; })sourceRegionForDestinationSize:(struct { unsigned long long x1; unsigned long long x2; unsigned long long x3; })arg1;
 
 @end

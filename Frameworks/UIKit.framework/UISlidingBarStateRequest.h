@@ -3,28 +3,28 @@
  */
 
 @interface UISlidingBarStateRequest : NSObject <NSCopying> {
-    float  _bounce;
-    float  _leadingWidth;
-    float  _trailingWidth;
-    BOOL  _userInitiated;
+    double  _bounce;
+    double  _leadingWidth;
+    double  _trailingWidth;
+    bool  _userInitiated;
 }
 
-@property (nonatomic) float bounce;
-@property (nonatomic) float leadingWidth;
-@property (nonatomic) float trailingWidth;
-@property (nonatomic) BOOL userInitiated;
+@property (nonatomic) double bounce;
+@property (nonatomic) double leadingWidth;
+@property (nonatomic) double trailingWidth;
+@property (nonatomic) bool userInitiated;
 
-- (float)bounce;
+- (double)bounce;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (float)leadingWidth;
-- (void)setBounce:(float)arg1;
-- (void)setLeadingWidth:(float)arg1;
-- (void)setTrailingWidth:(float)arg1;
-- (void)setUserInitiated:(BOOL)arg1;
-- (float)trailingWidth;
-- (BOOL)userInitiated;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (double)leadingWidth;
+- (void)setBounce:(double)arg1;
+- (void)setLeadingWidth:(double)arg1;
+- (void)setTrailingWidth:(double)arg1;
+- (void)setUserInitiated:(bool)arg1;
+- (double)trailingWidth;
+- (bool)userInitiated;
 
 @end

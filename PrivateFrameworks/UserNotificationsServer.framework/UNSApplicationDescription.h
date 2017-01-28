@@ -7,20 +7,20 @@
     NSURL * _bundleURL;
     NSURL * _dataContainerURL;
     NSString * _localizedName;
-    BOOL  _requiresLocalNotifications;
-    BOOL  _shouldUseDefaultDataProvider;
-    BOOL  _systemApplication;
-    BOOL  _usesCloudKit;
+    bool  _requiresLocalNotifications;
+    bool  _shouldUseDefaultDataProvider;
+    bool  _systemApplication;
+    bool  _usesCloudKit;
 }
 
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSURL *bundleURL;
 @property (nonatomic, copy) NSURL *dataContainerURL;
 @property (nonatomic, copy) NSString *localizedName;
-@property (nonatomic) BOOL requiresLocalNotifications;
-@property (nonatomic) BOOL shouldUseDefaultDataProvider;
-@property (getter=isSystemApplication, nonatomic) BOOL systemApplication;
-@property (nonatomic) BOOL usesCloudKit;
+@property (nonatomic) bool requiresLocalNotifications;
+@property (nonatomic) bool shouldUseDefaultDataProvider;
+@property (getter=isSystemApplication, nonatomic) bool systemApplication;
+@property (nonatomic) bool usesCloudKit;
 
 + (id)descriptionWithApplication:(id)arg1;
 
@@ -29,18 +29,18 @@
 - (id)bundleURL;
 - (id)dataContainerURL;
 - (id)description;
-- (BOOL)isSystemApplication;
+- (bool)isSystemApplication;
 - (id)localizedName;
-- (BOOL)requiresLocalNotifications;
+- (bool)requiresLocalNotifications;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleURL:(id)arg1;
 - (void)setDataContainerURL:(id)arg1;
 - (void)setLocalizedName:(id)arg1;
-- (void)setRequiresLocalNotifications:(BOOL)arg1;
-- (void)setShouldUseDefaultDataProvider:(BOOL)arg1;
-- (void)setSystemApplication:(BOOL)arg1;
-- (void)setUsesCloudKit:(BOOL)arg1;
-- (BOOL)shouldUseDefaultDataProvider;
-- (BOOL)usesCloudKit;
+- (void)setRequiresLocalNotifications:(bool)arg1;
+- (void)setShouldUseDefaultDataProvider:(bool)arg1;
+- (void)setSystemApplication:(bool)arg1;
+- (void)setUsesCloudKit:(bool)arg1;
+- (bool)shouldUseDefaultDataProvider;
+- (bool)usesCloudKit;
 
 @end

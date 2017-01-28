@@ -4,19 +4,19 @@
 
 @interface LMAssetQuery : NSObject {
     NSConditionLock * _conditionLock;
-    BOOL  _hasCompleted;
+    bool  _hasCompleted;
     NSString * _language;
-    BOOL  _waitTimedOut;
+    bool  _waitTimedOut;
 }
 
-@property (readonly) BOOL hasCompleted;
+@property (readonly) bool hasCompleted;
 
-- (void)_runInForeground:(BOOL)arg1;
+- (void)_runInForeground:(bool)arg1;
 - (void)dealloc;
-- (BOOL)hasCompleted;
+- (bool)hasCompleted;
 - (id)initWithLanguage:(id)arg1;
 - (void)runInBackground;
 - (void)runInForeground;
-- (BOOL)waitForCompletion;
+- (bool)waitForCompletion;
 
 @end

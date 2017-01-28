@@ -9,8 +9,8 @@
 
 @property (retain) FTMessageDelivery *_delivery;
 @property (retain) NSArray *_regions;
-@property (readonly) BOOL isLoaded;
-@property (readonly) BOOL isLoading;
+@property (readonly) bool isLoaded;
+@property (readonly) bool isLoading;
 @property (readonly) NSArray *regions;
 
 + (id)sharedInstance;
@@ -20,8 +20,8 @@
 - (id)_regions;
 - (void)dealloc;
 - (void)flushRegions;
-- (BOOL)isLoaded;
-- (BOOL)isLoading;
+- (bool)isLoaded;
+- (bool)isLoading;
 - (id)regionForID:(id)arg1;
 - (id)regions;
 - (void)set_delivery:(id)arg1;

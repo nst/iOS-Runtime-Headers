@@ -4,24 +4,24 @@
 
 @interface _UIFeedbackAVHapticPlayer : NSObject <_UIFeedbackPlayer> {
     AVHapticPlayerChannel * _channel;
-    unsigned int  _continuousPlayingCount;
-    id /* block */  _invalidationBlock;
+    unsigned long long  _continuousPlayingCount;
+    id  _invalidationBlock;
 }
 
 @property (nonatomic, retain) AVHapticPlayerChannel *channel;
-@property (nonatomic) unsigned int continuousPlayingCount;
-@property (nonatomic, copy) id /* block */ invalidationBlock;
+@property (nonatomic) unsigned long long continuousPlayingCount;
+@property (nonatomic, copy) id invalidationBlock;
 
 - (void).cxx_destruct;
 - (void)_playFeedback:(id)arg1 atTime:(double)arg2;
 - (void)_stopFeedback:(id)arg1;
 - (void)_updateValueForParameters:(id)arg1 withKey:(id)arg2;
 - (id)channel;
-- (unsigned int)continuousPlayingCount;
-- (id /* block */)invalidationBlock;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)continuousPlayingCount;
+- (id)invalidationBlock;
+- (bool)isEqual:(id)arg1;
 - (void)setChannel:(id)arg1;
-- (void)setContinuousPlayingCount:(unsigned int)arg1;
-- (void)setInvalidationBlock:(id /* block */)arg1;
+- (void)setContinuousPlayingCount:(unsigned long long)arg1;
+- (void)setInvalidationBlock:(id)arg1;
 
 @end

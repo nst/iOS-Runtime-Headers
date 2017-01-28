@@ -52,7 +52,7 @@
 
 + (id)secureCodedPropertyKeys;
 
-- (int)activeExchangeCount;
+- (long long)activeExchangeCount;
 - (id)bundleID;
 - (id)bundleVersion;
 - (id)creationDate;
@@ -63,11 +63,11 @@
 - (id)descriptionSubstitutionMap;
 - (id)exchanges;
 - (id)game;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)lastTurnDate;
 - (id)lastTurnPlayerID;
-- (int)localPlayerParticipantIndex;
+- (long long)localPlayerParticipantIndex;
 - (id)localizableMessage;
 - (id)matchData;
 - (id)matchDataVersion;
@@ -76,7 +76,7 @@
 - (id)message;
 - (unsigned char)minPlayers;
 - (id)participants;
-- (int)previousParticipantIndex;
+- (long long)previousParticipantIndex;
 - (id)reason;
 - (void)setBundleID:(id)arg1;
 - (void)setBundleVersion:(id)arg1;

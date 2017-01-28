@@ -3,16 +3,16 @@
  */
 
 @interface MKSearchFoundationRichText : SFRichText {
-    id /* block */  _requestUIUpdateBlock;
+    id  _requestUIUpdateBlock;
 }
 
-@property (nonatomic, copy) id /* block */ requestUIUpdateBlock;
+@property (nonatomic, copy) id requestUIUpdateBlock;
 
 - (void).cxx_destruct;
-- (id)initRichTextTitleWithMapItem:(id)arg1 resultsType:(unsigned int)arg2;
+- (id)initRichTextTitleWithMapItem:(id)arg1 resultsType:(unsigned long long)arg2;
 - (id)initWithString:(id)arg1;
-- (void)loadRichTextWithCompletionHandler:(id /* block */)arg1;
-- (id /* block */)requestUIUpdateBlock;
-- (void)setRequestUIUpdateBlock:(id /* block */)arg1;
+- (void)loadRichTextWithCompletionHandler:(id)arg1;
+- (id)requestUIUpdateBlock;
+- (void)setRequestUIUpdateBlock:(id)arg1;
 
 @end

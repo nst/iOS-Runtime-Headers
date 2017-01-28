@@ -3,38 +3,40 @@
  */
 
 @interface TIKeyboardInputManagerBase : NSObject {
-    BOOL  _hasHandledInput;
+    bool  _hasHandledInput;
     TIInputMode * _inputMode;
     TIKeyboardSecureCandidateRenderer * _secureCandidateRenderer;
 }
 
-@property (nonatomic, readonly) BOOL hasHandledInput;
+@property (nonatomic, readonly) NSString *currentInputModeIdentifier;
+@property (nonatomic, readonly) bool hasHandledInput;
 @property (nonatomic, readonly) TIInputMode *inputMode;
 @property (nonatomic, retain) TIKeyboardSecureCandidateRenderer *secureCandidateRenderer;
 
 - (void)addSynthesizedTouchToInput:(id)arg1;
-- (void)adjustPhraseBoundaryInForwardDirection:(BOOL)arg1;
-- (void)adjustPhraseBoundaryInForwardDirection:(BOOL)arg1 granularity:(int)arg2;
+- (void)adjustPhraseBoundaryInForwardDirection:(bool)arg1;
+- (void)adjustPhraseBoundaryInForwardDirection:(bool)arg1 granularity:(int)arg2;
 - (void)candidateRejected:(id)arg1;
 - (void)clearHumanReadableTrace;
 - (id)configurationPropertyList;
+- (id)currentInputModeIdentifier;
 - (void)dealloc;
-- (int)deletionCountForString:(id)arg1;
+- (long long)deletionCountForString:(id)arg1;
 - (id)generateAutocorrectionsWithKeyboardState:(id)arg1;
-- (void)generateCandidatesWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)generateCandidatesWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 completionHandler:(id)arg3;
 - (id)generateRefinementsForCandidate:(id)arg1;
 - (id)generateReplacementsForString:(id)arg1 keyLayout:(id)arg2;
 - (id)handleAcceptedCandidate:(id)arg1 keyboardState:(id)arg2;
 - (id)handleKeyboardInput:(id)arg1;
-- (BOOL)hasHandledInput;
+- (bool)hasHandledInput;
 - (id)humanReadableTrace;
 - (id)init;
 - (id)initWithInputMode:(id)arg1;
 - (id)inputMode;
-- (BOOL)isHardwareKeyboardAutocorrectionEnabled;
+- (bool)isHardwareKeyboardAutocorrectionEnabled;
 - (id)keyboardConfiguration;
 - (void)lastAcceptedCandidateCorrected;
-- (int)performHitTestForTouchEvent:(id)arg1 keyboardState:(id)arg2;
+- (long long)performHitTestForTouchEvent:(id)arg1 keyboardState:(id)arg2;
 - (id)resourceInputModes;
 - (void)resume;
 - (id)secureCandidateRenderer;
@@ -44,6 +46,6 @@
 - (void)storeLanguageModelDynamicDataIncludingCache;
 - (void)suspend;
 - (void)syncToKeyboardState:(id)arg1;
-- (void)textAccepted:(id)arg1 fromPredictiveInputBar:(BOOL)arg2;
+- (void)textAccepted:(id)arg1 fromPredictiveInputBar:(bool)arg2;
 
 @end

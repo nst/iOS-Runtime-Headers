@@ -16,7 +16,7 @@
 - (void)setGuest:(INRestaurantGuest *)arg1;
 - (void)setGuestProvidedSpecialRequestText:(NSString *)arg1;
 - (void)setSelectedOffer:(INRestaurantOffer *)arg1;
-- (void)setStatus:(unsigned int)arg1;
-- (unsigned int)status;
+- (void)setStatus:(unsigned long long)arg1;
+- (unsigned long long)status;
 
 @end

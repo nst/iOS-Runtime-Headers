@@ -6,17 +6,17 @@
     MPMediaItemArtwork * _artwork;
     double  _artworkHeightHint;
     double  _artworkWidthHint;
-    BOOL  _artworkingLoading;
+    bool  _artworkingLoading;
     struct _MRContentItem { } * _mrContentItem;
 }
 
 @property (nonatomic, retain) MPMediaItemArtwork *artwork;
-@property (getter=isContainer, nonatomic) BOOL container;
-@property (getter=isExplicitContent, nonatomic) BOOL explicitContent;
+@property (getter=isContainer, nonatomic) bool container;
+@property (getter=isExplicitContent, nonatomic) bool explicitContent;
 @property (nonatomic, readonly, copy) NSString *identifier;
-@property (getter=isPlayable, nonatomic) BOOL playable;
+@property (getter=isPlayable, nonatomic) bool playable;
 @property (nonatomic) float playbackProgress;
-@property (getter=isStreamingContent, nonatomic) BOOL streamingContent;
+@property (getter=isStreamingContent, nonatomic) bool streamingContent;
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSString *title;
 
@@ -32,18 +32,18 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isArtworkReady;
-- (BOOL)isContainer;
-- (BOOL)isExplicitContent;
-- (BOOL)isPlayable;
-- (BOOL)isStreamingContent;
+- (bool)isArtworkReady;
+- (bool)isContainer;
+- (bool)isExplicitContent;
+- (bool)isPlayable;
+- (bool)isStreamingContent;
 - (float)playbackProgress;
 - (void)setArtwork:(id)arg1;
-- (void)setContainer:(BOOL)arg1;
-- (void)setExplicitContent:(BOOL)arg1;
-- (void)setPlayable:(BOOL)arg1;
+- (void)setContainer:(bool)arg1;
+- (void)setExplicitContent:(bool)arg1;
+- (void)setPlayable:(bool)arg1;
 - (void)setPlaybackProgress:(float)arg1;
-- (void)setStreamingContent:(BOOL)arg1;
+- (void)setStreamingContent:(bool)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)subtitle;

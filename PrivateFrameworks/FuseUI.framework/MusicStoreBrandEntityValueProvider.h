@@ -4,7 +4,7 @@
 
 @interface MusicStoreBrandEntityValueProvider : MusicStoreEntityValueProvider
 
-+ (int)entityType;
++ (long long)entityType;
 + (void)initialize;
 
 - (Class)_requiredClassForEquality;

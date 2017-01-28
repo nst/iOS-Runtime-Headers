@@ -5,6 +5,6 @@
 @interface SGDatabaseMigratorEntities : NSObject
 
 + (id)migrations;
-+ (id)skipFromZeroSchema:(unsigned int*)arg1;
++ (id)skipFromZeroSchema:(unsigned long long*)arg1;
 
 @end

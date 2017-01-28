@@ -4,8 +4,8 @@
 
 @interface SBMesaDefaults : SBAbstractSpringBoardDefaultDomain
 
-@property (getter=isLogTimestampsEnabled, nonatomic, readonly) BOOL logTimestampsEnabled;
-@property (getter=isSignpostsEnabled, nonatomic, readonly) BOOL signpostsEnabled;
+@property (getter=isLogTimestampsEnabled, nonatomic, readonly) bool logTimestampsEnabled;
+@property (getter=isSignpostsEnabled, nonatomic, readonly) bool signpostsEnabled;
 
 - (void)_bindAndRegisterDefaults;
 

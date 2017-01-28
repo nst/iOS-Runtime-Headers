@@ -4,7 +4,7 @@
 
 @interface BLTPBHandleDidPlayLightsAndSirensReplyRequest : PBRequest <NSCopying> {
     double  _date;
-    BOOL  _didPlayLightsAndSirens;
+    bool  _didPlayLightsAndSirens;
     struct { 
         unsigned int date : 1; 
         unsigned int didPlayLightsAndSirens : 1; 
@@ -14,11 +14,11 @@
 }
 
 @property (nonatomic) double date;
-@property (nonatomic) BOOL didPlayLightsAndSirens;
-@property (nonatomic) BOOL hasDate;
-@property (nonatomic) BOOL hasDidPlayLightsAndSirens;
-@property (nonatomic, readonly) BOOL hasPhoneSectionID;
-@property (nonatomic, readonly) BOOL hasPublisherMatchID;
+@property (nonatomic) bool didPlayLightsAndSirens;
+@property (nonatomic) bool hasDate;
+@property (nonatomic) bool hasDidPlayLightsAndSirens;
+@property (nonatomic, readonly) bool hasPhoneSectionID;
+@property (nonatomic, readonly) bool hasPublisherMatchID;
 @property (nonatomic, retain) NSString *phoneSectionID;
 @property (nonatomic, retain) NSString *publisherMatchID;
 
@@ -28,21 +28,21 @@
 - (double)date;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)didPlayLightsAndSirens;
-- (BOOL)hasDate;
-- (BOOL)hasDidPlayLightsAndSirens;
-- (BOOL)hasPhoneSectionID;
-- (BOOL)hasPublisherMatchID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)didPlayLightsAndSirens;
+- (bool)hasDate;
+- (bool)hasDidPlayLightsAndSirens;
+- (bool)hasPhoneSectionID;
+- (bool)hasPublisherMatchID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)phoneSectionID;
 - (id)publisherMatchID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDate:(double)arg1;
-- (void)setDidPlayLightsAndSirens:(BOOL)arg1;
-- (void)setHasDate:(BOOL)arg1;
-- (void)setHasDidPlayLightsAndSirens:(BOOL)arg1;
+- (void)setDidPlayLightsAndSirens:(bool)arg1;
+- (void)setHasDate:(bool)arg1;
+- (void)setHasDidPlayLightsAndSirens:(bool)arg1;
 - (void)setPhoneSectionID:(id)arg1;
 - (void)setPublisherMatchID:(id)arg1;
 - (void)writeTo:(id)arg1;

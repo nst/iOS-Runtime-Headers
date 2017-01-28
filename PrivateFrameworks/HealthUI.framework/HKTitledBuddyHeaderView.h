@@ -23,7 +23,7 @@
 - (id)bodyText;
 - (id)bodyTextView;
 - (id)delegate;
-- (id)initWithTopInset:(float)arg1 linkButtonTitle:(id)arg2;
+- (id)initWithTopInset:(double)arg1 linkButtonTitle:(id)arg2;
 - (void)setBodyText:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTitleText:(id)arg1;

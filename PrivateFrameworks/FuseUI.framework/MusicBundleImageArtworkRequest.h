@@ -5,24 +5,24 @@
 @interface MusicBundleImageArtworkRequest : NSObject <NSCopying> {
     NSBundle * _bundle;
     NSString * _imageName;
-    int  _renderingMode;
+    long long  _renderingMode;
     UIColor * _tintColor;
 }
 
 @property (nonatomic, readonly) NSBundle *bundle;
 @property (nonatomic, readonly, copy) NSString *imageName;
-@property (nonatomic) int renderingMode;
+@property (nonatomic) long long renderingMode;
 @property (nonatomic, copy) UIColor *tintColor;
 
 - (void).cxx_destruct;
 - (id)bundle;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)imageName;
 - (id)initWithImageName:(id)arg1 inBundle:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (int)renderingMode;
-- (void)setRenderingMode:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (long long)renderingMode;
+- (void)setRenderingMode:(long long)arg1;
 - (void)setTintColor:(id)arg1;
 - (id)tintColor;
 

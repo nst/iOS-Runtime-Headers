@@ -5,6 +5,6 @@
 
 @required
 
-- (void)dismissHostedTextServiceSession:(_UIHostedTextServiceSession *)arg1 animated:(BOOL)arg2;
+- (void)dismissHostedTextServiceSession:(_UIHostedTextServiceSession *)arg1 animated:(bool)arg2;
 
 @end

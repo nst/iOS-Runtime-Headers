@@ -6,7 +6,7 @@
     struct IONotificationPort { } * _ioNotifyPort;
     unsigned int  _notificationRef;
     PLOperator * _operator;
-    id /* block */  _operatorBlock;
+    id  _operatorBlock;
     unsigned int  _service;
     NSString * _serviceClassName;
     NSString * _serviceName;
@@ -15,7 +15,7 @@
 @property struct IONotificationPort { }*ioNotifyPort;
 @property unsigned int notificationRef;
 @property (retain) PLOperator *operator;
-@property (nonatomic, copy) id /* block */ operatorBlock;
+@property (nonatomic, copy) id operatorBlock;
 @property unsigned int service;
 @property (retain) NSString *serviceClassName;
 @property (retain) NSString *serviceName;
@@ -26,13 +26,13 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithOperator:(id)arg1 forService:(id)arg2;
-- (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id /* block */)arg3;
+- (id)initWithOperator:(id)arg1 forService:(id)arg2 withBlock:(id)arg3;
 - (id)initWithOperator:(id)arg1 forServiceClass:(id)arg2;
-- (id)initWithOperator:(id)arg1 forServiceClass:(id)arg2 withBlock:(id /* block */)arg3;
+- (id)initWithOperator:(id)arg1 forServiceClass:(id)arg2 withBlock:(id)arg3;
 - (struct IONotificationPort { }*)ioNotifyPort;
 - (unsigned int)notificationRef;
 - (id)operator;
-- (id /* block */)operatorBlock;
+- (id)operatorBlock;
 - (id)properties;
 - (id)propertiesForKey:(id)arg1;
 - (id)propertiesFromIOEntry:(unsigned int)arg1;
@@ -43,7 +43,7 @@
 - (void)setIoNotifyPort:(struct IONotificationPort { }*)arg1;
 - (void)setNotificationRef:(unsigned int)arg1;
 - (void)setOperator:(id)arg1;
-- (void)setOperatorBlock:(id /* block */)arg1;
+- (void)setOperatorBlock:(id)arg1;
 - (void)setService:(unsigned int)arg1;
 - (void)setServiceClassName:(id)arg1;
 - (void)setServiceName:(id)arg1;

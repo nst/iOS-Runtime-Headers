@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)bubbles;
-- (BOOL)cancelable;
+- (bool)bubbles;
+- (bool)cancelable;
 - (IKDOMNode *)currentTarget;
-- (BOOL)defaultPrevented;
-- (int)eventPhase;
+- (bool)defaultPrevented;
+- (long long)eventPhase;
 - (id)initWithType:(NSString *)arg1 eventInit:(NSDictionary *)arg2;
 - (void)preventDefault;
 - (void)stopImmediatePropagation;

@@ -3,17 +3,17 @@
  */
 
 @interface _DPRandomBitPositionGenerator : NSObject {
-    unsigned int  _m;
+    unsigned long long  _m;
 }
 
-@property (nonatomic, readonly) unsigned int m;
+@property (nonatomic, readonly) unsigned long long m;
 
-+ (id)generatorWithDimensionality:(unsigned int)arg1;
++ (id)generatorWithDimensionality:(unsigned long long)arg1;
 
 - (id)description;
 - (id)init;
-- (id)initWithDimensionality:(unsigned int)arg1;
-- (unsigned int)m;
-- (unsigned int)sample;
+- (id)initWithDimensionality:(unsigned long long)arg1;
+- (unsigned long long)m;
+- (unsigned long long)sample;
 
 @end

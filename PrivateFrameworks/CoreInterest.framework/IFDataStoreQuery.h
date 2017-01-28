@@ -3,27 +3,27 @@
  */
 
 @interface IFDataStoreQuery : NSObject {
-    id /* block */  _error;
-    id /* block */  _preparation;
+    id  _error;
+    id  _preparation;
     NSString * _query;
-    id /* block */  _step;
+    id  _step;
 }
 
-@property (nonatomic, copy) id /* block */ error;
-@property (nonatomic, copy) id /* block */ preparation;
+@property (nonatomic, copy) id error;
+@property (nonatomic, copy) id preparation;
 @property (nonatomic, copy) NSString *query;
-@property (nonatomic, copy) id /* block */ step;
+@property (nonatomic, copy) id step;
 
 + (id)query;
 
 - (void).cxx_destruct;
-- (id /* block */)error;
-- (id /* block */)preparation;
+- (id)error;
+- (id)preparation;
 - (id)query;
-- (void)setError:(id /* block */)arg1;
-- (void)setPreparation:(id /* block */)arg1;
+- (void)setError:(id)arg1;
+- (void)setPreparation:(id)arg1;
 - (void)setQuery:(id)arg1;
-- (void)setStep:(id /* block */)arg1;
-- (id /* block */)step;
+- (void)setStep:(id)arg1;
+- (id)step;
 
 @end

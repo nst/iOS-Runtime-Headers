@@ -3,33 +3,33 @@
  */
 
 @interface WLSourceDeviceMigrationMetadata : NSObject {
-    unsigned int  _attemptCount;
+    unsigned long long  _attemptCount;
     NSDate * _communicationDate;
-    unsigned int  _crashCount;
+    unsigned long long  _crashCount;
     NSString * _deviceOSVersion;
     NSString * _deviceType;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
-@property (nonatomic) unsigned int attemptCount;
+@property (nonatomic) unsigned long long attemptCount;
 @property (nonatomic, retain) NSDate *communicationDate;
-@property (nonatomic) unsigned int crashCount;
+@property (nonatomic) unsigned long long crashCount;
 @property (nonatomic, retain) NSString *deviceOSVersion;
 @property (nonatomic, retain) NSString *deviceType;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 
 - (void).cxx_destruct;
-- (unsigned int)attemptCount;
+- (unsigned long long)attemptCount;
 - (id)communicationDate;
-- (unsigned int)crashCount;
+- (unsigned long long)crashCount;
 - (id)deviceOSVersion;
 - (id)deviceType;
-- (void)setAttemptCount:(unsigned int)arg1;
+- (void)setAttemptCount:(unsigned long long)arg1;
 - (void)setCommunicationDate:(id)arg1;
-- (void)setCrashCount:(unsigned int)arg1;
+- (void)setCrashCount:(unsigned long long)arg1;
 - (void)setDeviceOSVersion:(id)arg1;
 - (void)setDeviceType:(id)arg1;
-- (void)setState:(unsigned int)arg1;
-- (unsigned int)state;
+- (void)setState:(unsigned long long)arg1;
+- (unsigned long long)state;
 
 @end

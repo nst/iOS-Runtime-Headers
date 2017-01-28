@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) NSArray *stableSections;
 
 + (void)initialize;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

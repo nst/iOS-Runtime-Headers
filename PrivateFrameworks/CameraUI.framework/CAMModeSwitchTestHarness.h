@@ -3,15 +3,15 @@
  */
 
 @interface CAMModeSwitchTestHarness : CAMPerformanceTestHarness {
-    int  _desiredMode;
+    long long  _desiredMode;
     CAMViewfinderViewController * _viewfinder;
 }
 
-+ (id)harnessWithTestName:(id)arg1 viewfinder:(id)arg2 mode:(int)arg3;
++ (id)harnessWithTestName:(id)arg1 viewfinder:(id)arg2 mode:(long long)arg3;
 
 - (void).cxx_destruct;
-- (void)ensureCaptureMode:(int)arg1 thenPerform:(id /* block */)arg2;
-- (id)initWithTestName:(id)arg1 viewfinder:(id)arg2 mode:(int)arg3;
+- (void)ensureCaptureMode:(long long)arg1 thenPerform:(id)arg2;
+- (id)initWithTestName:(id)arg1 viewfinder:(id)arg2 mode:(long long)arg3;
 - (void)runConfiguredTest;
 
 @end

@@ -18,7 +18,7 @@
 - (Class)_miroMovieClass;
 - (void)_navigateToMemory:(id)arg1;
 - (void)_setMiroMovie:(id)arg1;
-- (BOOL)canPlayMovie;
+- (bool)canPlayMovie;
 - (id)defaultAssets;
 - (id)diagnosticsItemProvider;
 - (id)miroMovie:(id)arg1 createAndNavigateToMemoryFromCollection:(id)arg2;

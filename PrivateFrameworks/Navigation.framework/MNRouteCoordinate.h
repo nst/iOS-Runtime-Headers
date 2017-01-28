@@ -11,8 +11,8 @@
     float  _offset;
 }
 
-@property (nonatomic) BOOL hasIndex;
-@property (nonatomic) BOOL hasOffset;
+@property (nonatomic) bool hasIndex;
+@property (nonatomic) bool hasOffset;
 @property (nonatomic) unsigned int index;
 @property (nonatomic) float offset;
 
@@ -20,16 +20,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIndex;
-- (BOOL)hasOffset;
-- (unsigned int)hash;
+- (bool)hasIndex;
+- (bool)hasOffset;
+- (unsigned long long)hash;
 - (unsigned int)index;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (float)offset;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasIndex:(BOOL)arg1;
-- (void)setHasOffset:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasIndex:(bool)arg1;
+- (void)setHasOffset:(bool)arg1;
 - (void)setIndex:(unsigned int)arg1;
 - (void)setOffset:(float)arg1;
 - (void)writeTo:(id)arg1;

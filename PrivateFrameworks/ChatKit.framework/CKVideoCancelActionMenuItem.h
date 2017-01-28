@@ -3,13 +3,13 @@
  */
 
 @interface CKVideoCancelActionMenuItem : CKActionMenuItem {
-    unsigned int  _touchDownCount;
+    unsigned long long  _touchDownCount;
 }
 
-@property (nonatomic) unsigned int touchDownCount;
+@property (nonatomic) unsigned long long touchDownCount;
 
-- (void)setTouchDownCount:(unsigned int)arg1;
-- (unsigned int)touchDownCount;
-- (void)updateForState:(int)arg1 touchInside:(BOOL)arg2;
+- (void)setTouchDownCount:(unsigned long long)arg1;
+- (unsigned long long)touchDownCount;
+- (void)updateForState:(long long)arg1 touchInside:(bool)arg2;
 
 @end

@@ -13,12 +13,12 @@
 - (id)_idmsDictionaryWithValidationResults:(id)arg1 error:(id*)arg2;
 - (id)_outOfattemptsErrorForRecord:(id)arg1;
 - (id)_recoveryListFromDevices:(id)arg1;
-- (void)_showCooldownErrorWithUnderlyingError:(id)arg1 completion:(id /* block */)arg2;
-- (void)_showHardLimitError:(id)arg1 completion:(id /* block */)arg2;
+- (void)_showCooldownErrorWithUnderlyingError:(id)arg1 completion:(id)arg2;
+- (void)_showHardLimitError:(id)arg1 completion:(id)arg2;
 - (id)_verificationFailedErrorWithUnderlyingError:(id)arg1;
-- (void)beginIDMSRecoveryWithCompletion:(id /* block */)arg1;
-- (void)retrieveInflatedDevices:(id /* block */)arg1;
-- (void)secretValidator:(id)arg1 didFailRecoveryWithErrors:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)secretValidator:(id)arg1 shouldContinueValidationAfterError:(id)arg2;
+- (void)beginIDMSRecoveryWithCompletion:(id)arg1;
+- (void)retrieveInflatedDevices:(id)arg1;
+- (void)secretValidator:(id)arg1 didFailRecoveryWithErrors:(id)arg2 completion:(id)arg3;
+- (bool)secretValidator:(id)arg1 shouldContinueValidationAfterError:(id)arg2;
 
 @end

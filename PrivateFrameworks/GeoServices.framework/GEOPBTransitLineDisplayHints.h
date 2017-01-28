@@ -6,24 +6,24 @@
     struct { 
         unsigned int showVehicleNumber : 1; 
     }  _has;
-    BOOL  _showVehicleNumber;
+    bool  _showVehicleNumber;
 }
 
-@property (nonatomic) BOOL hasShowVehicleNumber;
-@property (nonatomic) BOOL showVehicleNumber;
+@property (nonatomic) bool hasShowVehicleNumber;
+@property (nonatomic) bool showVehicleNumber;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasShowVehicleNumber;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasShowVehicleNumber;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasShowVehicleNumber:(BOOL)arg1;
-- (void)setShowVehicleNumber:(BOOL)arg1;
-- (BOOL)showVehicleNumber;
+- (bool)readFrom:(id)arg1;
+- (void)setHasShowVehicleNumber:(bool)arg1;
+- (void)setShowVehicleNumber:(bool)arg1;
+- (bool)showVehicleNumber;
 - (void)writeTo:(id)arg1;
 
 @end

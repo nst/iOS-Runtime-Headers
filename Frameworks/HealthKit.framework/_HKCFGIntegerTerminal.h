@@ -3,17 +3,17 @@
  */
 
 @interface _HKCFGIntegerTerminal : _HKCFGTerminal {
-    id /* block */  _condition;
+    id  _condition;
 }
 
-@property (nonatomic, copy) id /* block */ condition;
+@property (nonatomic, copy) id condition;
 
 - (void).cxx_destruct;
 - (id)_label;
-- (unsigned int)_minimumLength;
-- (BOOL)_scanValue:(id*)arg1 withScanner:(id)arg2;
+- (unsigned long long)_minimumLength;
+- (bool)_scanValue:(id*)arg1 withScanner:(id)arg2;
 - (id)characterSet;
-- (id /* block */)condition;
-- (void)setCondition:(id /* block */)arg1;
+- (id)condition;
+- (void)setCondition:(id)arg1;
 
 @end

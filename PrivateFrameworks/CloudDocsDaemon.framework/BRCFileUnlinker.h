@@ -12,10 +12,10 @@
 
 - (void).cxx_destruct;
 - (void)_purge;
-- (void)forcePurgeWithCompletionBlock:(id /* block */)arg1;
+- (void)forcePurgeWithCompletionBlock:(id)arg1;
 - (id)init;
-- (BOOL)renameAndUnlinkInBackgroundItemAt:(int)arg1 path:(id)arg2;
-- (BOOL)renameAndUnlinkInBackgroundItemAtPath:(id)arg1;
+- (bool)renameAndUnlinkInBackgroundItemAt:(int)arg1 path:(id)arg2;
+- (bool)renameAndUnlinkInBackgroundItemAtPath:(id)arg1;
 - (void)resume;
 
 @end

@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSString *type;
 
 - (void).cxx_destruct;
-- (void)appendStatusReportToString:(id)arg1 withIndent:(unsigned int)arg2 showingPointers:(BOOL)arg3;
+- (void)appendStatusReportToString:(id)arg1 withIndent:(unsigned long long)arg2 showingPointers:(bool)arg3;
 - (double)beginTime;
 - (id)beginningMessage;
 - (void)dealloc;

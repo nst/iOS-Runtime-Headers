@@ -17,27 +17,27 @@
 @property (nonatomic, readonly) NSObject *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *intent;
-@property (nonatomic, readonly) BOOL isTimeoutPaused;
+@property (nonatomic, readonly) bool isTimeoutPaused;
 @property (nonatomic, readonly) NSArray *relinquishCallStack;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeout;
 
-+ (id)callStackDescriptionWithAction:(id)arg1 intent:(id)arg2 callStackSymbols:(id)arg3 index:(id)arg4 indentLevel:(unsigned int)arg5;
++ (id)callStackDescriptionWithAction:(id)arg1 intent:(id)arg2 callStackSymbols:(id)arg3 index:(id)arg4 indentLevel:(unsigned long long)arg5;
 
 - (void).cxx_destruct;
 - (id)acquireCallStack;
-- (id)acquireCallStackDescriptionWithIndex:(id)arg1 indentLevel:(unsigned int)arg2;
+- (id)acquireCallStackDescriptionWithIndex:(id)arg1 indentLevel:(unsigned long long)arg2;
 - (id)context;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithIntent:(id)arg1 timeout:(double)arg2 context:(id)arg3 acquireCallStack:(id)arg4;
 - (id)intent;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isTimeoutPaused;
+- (bool)isEqual:(id)arg1;
+- (bool)isTimeoutPaused;
 - (void)pauseTimeout;
 - (id)relinquishCallStack;
 - (void)resumeTimeout;

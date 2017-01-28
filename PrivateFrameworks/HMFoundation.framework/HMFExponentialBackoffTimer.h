@@ -3,15 +3,15 @@
  */
 
 @interface HMFExponentialBackoffTimer : HMFTimer {
-    int  _exponentialFactor;
-    BOOL  _increasing;
+    long long  _exponentialFactor;
+    bool  _increasing;
     double  _maximumTimeInterval;
     double  _minimumTimeInterval;
     NSObject<OS_dispatch_queue> * _propertyQueue;
 }
 
-@property (nonatomic, readonly) int exponentialFactor;
-@property (getter=isIncreasing, nonatomic, readonly) BOOL increasing;
+@property (nonatomic, readonly) long long exponentialFactor;
+@property (getter=isIncreasing, nonatomic, readonly) bool increasing;
 @property (nonatomic, readonly) double maximumTimeInterval;
 @property (nonatomic, readonly) double minimumTimeInterval;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -19,10 +19,10 @@
 
 - (void).cxx_destruct;
 - (void)_fire;
-- (int)exponentialFactor;
-- (id)initWithMinimumTimeInterval:(double)arg1 maximumTimeInterval:(double)arg2 exponentialFactor:(int)arg3 options:(unsigned int)arg4;
-- (id)initWithTimeInterval:(double)arg1 options:(unsigned int)arg2;
-- (BOOL)isIncreasing;
+- (long long)exponentialFactor;
+- (id)initWithMinimumTimeInterval:(double)arg1 maximumTimeInterval:(double)arg2 exponentialFactor:(long long)arg3 options:(unsigned long long)arg4;
+- (id)initWithTimeInterval:(double)arg1 options:(unsigned long long)arg2;
+- (bool)isIncreasing;
 - (double)maximumTimeInterval;
 - (double)minimumTimeInterval;
 - (id)propertyQueue;

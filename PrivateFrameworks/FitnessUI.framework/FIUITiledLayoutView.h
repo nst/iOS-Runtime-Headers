@@ -8,15 +8,15 @@
     NSMutableDictionary * __tilesByPath;
     struct { 
         struct { 
-            unsigned int section; 
-            unsigned int item; 
+            unsigned long long section; 
+            unsigned long long item; 
         } first; 
         struct { 
-            unsigned int section; 
-            unsigned int item; 
+            unsigned long long section; 
+            unsigned long long item; 
         } last; 
     }  __visibleRange;
-    unsigned int  _beginUpdatesCount;
+    unsigned long long  _beginUpdatesCount;
     <FIUITiledLayoutViewDataSource> * _dataSource;
     NSIndexPath * _pinnedIndexPath;
 }
@@ -24,47 +24,47 @@
 @property (nonatomic, retain) NSMutableArray *_sectionInfo;
 @property (nonatomic, retain) NSMutableDictionary *_tileByClassQueue;
 @property (nonatomic, retain) NSMutableDictionary *_tilesByPath;
-@property (nonatomic) struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; } _visibleRange;
-@property (nonatomic) unsigned int beginUpdatesCount;
+@property (nonatomic) struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; } _visibleRange;
+@property (nonatomic) unsigned long long beginUpdatesCount;
 @property (nonatomic) <FIUITiledLayoutViewDataSource> *dataSource;
 @property (nonatomic) <FIUITiledLayoutViewDelegate> *delegate;
 @property (nonatomic, retain) NSIndexPath *pinnedIndexPath;
 
 - (void).cxx_destruct;
-- (struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })_layoutSectionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)_layoutVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; })_layoutSectionsInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)_layoutVisibleRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_sectionInfo;
 - (id)_tileByClassQueue;
 - (id)_tilesByPath;
-- (struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })_visibleRange;
-- (void)adjustTargetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg1 verticalGravity:(float)arg2;
-- (BOOL)becomeFirstResponder;
+- (struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; })_visibleRange;
+- (void)adjustTargetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg1 verticalGravity:(double)arg2;
+- (bool)becomeFirstResponder;
 - (void)beginUpdates;
-- (unsigned int)beginUpdatesCount;
-- (struct CGPoint { float x1; float x2; })contentOffsetForIndexPath:(id)arg1 verticalGravity:(float)arg2;
+- (unsigned long long)beginUpdatesCount;
+- (struct CGPoint { double x1; double x2; })contentOffsetForIndexPath:(id)arg1 verticalGravity:(double)arg2;
 - (id)dataSource;
 - (id)dequeueTileOfClass:(Class)arg1 forIndexPath:(id)arg2;
-- (void)endUpdatesAnimated:(BOOL)arg1 bounceForPinnedRow:(BOOL)arg2;
+- (void)endUpdatesAnimated:(bool)arg1 bounceForPinnedRow:(bool)arg2;
 - (void)enqueueTile:(id)arg1;
-- (id)indexPathAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)indexPathAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)pinnedIndexPath;
 - (void)reloadData;
-- (void)reloadDataInSection:(unsigned int)arg1;
-- (void)reloadDataInSection:(unsigned int)arg1 itemIndexes:(id)arg2;
-- (unsigned int)sectionIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBeginUpdatesCount:(unsigned int)arg1;
+- (void)reloadDataInSection:(unsigned long long)arg1;
+- (void)reloadDataInSection:(unsigned long long)arg1 itemIndexes:(id)arg2;
+- (unsigned long long)sectionIndexAtPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBeginUpdatesCount:(unsigned long long)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setPinnedIndexPath:(id)arg1;
 - (void)set_sectionInfo:(id)arg1;
 - (void)set_tileByClassQueue:(id)arg1;
 - (void)set_tilesByPath:(id)arg1;
-- (void)set_visibleRange:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; })arg1;
+- (void)set_visibleRange:(struct { struct { unsigned long long x_1_1_1; unsigned long long x_1_1_2; } x1; struct { unsigned long long x_2_1_1; unsigned long long x_2_1_2; } x2; })arg1;
 - (id)tileAtIndexPath:(id)arg1;
 - (void)tileTapped:(id)arg1;
-- (id)titleAfterTransitionIndex:(float)arg1 includeEmptySections:(BOOL)arg2;
-- (id)titleBeforeTransitionIndex:(float)arg1 includeEmptySections:(BOOL)arg2;
-- (float)titleTransitionIndexInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)titleAfterTransitionIndex:(double)arg1 includeEmptySections:(bool)arg2;
+- (id)titleBeforeTransitionIndex:(double)arg1 includeEmptySections:(bool)arg2;
+- (double)titleTransitionIndexInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 
 @end

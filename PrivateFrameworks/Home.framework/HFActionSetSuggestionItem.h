@@ -11,12 +11,12 @@
 @property (nonatomic, readonly) HMHome *home;
 
 - (void).cxx_destruct;
-- (id)_actionBuildersToSetLightbulbBrightness:(float)arg1;
+- (id)_actionBuildersToSetLightbulbBrightness:(double)arg1;
 - (id)_actionBuildersToSetLightbulbColorWithPaletteColor:(id)arg1;
-- (id)_actionBuildersToSetPowerState:(BOOL)arg1 forServicesOfTypes:(id)arg2;
-- (id)_actionBuildersToSetTargetBlindsPositionOpen:(BOOL)arg1;
-- (id)_actionBuildersToSetTargetLockState:(int)arg1 forServicesOfTypes:(id)arg2;
-- (id)_actionBuildersToSetTargetSecuritySystemState:(int)arg1;
+- (id)_actionBuildersToSetPowerState:(bool)arg1 forServicesOfTypes:(id)arg2;
+- (id)_actionBuildersToSetTargetBlindsPositionOpen:(bool)arg1;
+- (id)_actionBuildersToSetTargetLockState:(long long)arg1 forServicesOfTypes:(id)arg2;
+- (id)_actionBuildersToSetTargetSecuritySystemState:(long long)arg1;
 - (id)_actionSetBuilderForBuiltInActionSetType:(id)arg1 outDependentServiceTypes:(out id*)arg2;
 - (id)_builtInActionSetOfType:(id)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;

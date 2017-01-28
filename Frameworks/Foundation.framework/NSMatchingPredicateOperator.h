@@ -8,10 +8,10 @@
 }
 
 - (void)_clearContext;
-- (BOOL)_shouldEscapeForLike;
+- (bool)_shouldEscapeForLike;
 - (void)dealloc;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 variant:(unsigned int)arg3;
-- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (id)initWithOperatorType:(unsigned long long)arg1 modifier:(unsigned long long)arg2 variant:(unsigned long long)arg3;
+- (bool)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (SEL)selector;
 - (id)symbol;
 

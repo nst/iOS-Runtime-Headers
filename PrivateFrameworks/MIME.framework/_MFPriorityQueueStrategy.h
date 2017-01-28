@@ -3,23 +3,23 @@
  */
 
 @interface _MFPriorityQueueStrategy : NSObject <MFQueueingStrategy> {
-    id /* block */  _comparator;
+    id  _comparator;
 }
 
-@property (nonatomic, readonly) id /* block */ comparator;
+@property (nonatomic, readonly) id comparator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *descriptionType;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (unsigned int)_indexForObject:(id)arg1 buffer:(id)arg2;
-- (unsigned int)_insertionIndexForObject:(id)arg1 buffer:(id)arg2;
-- (id /* block */)comparator;
+- (unsigned long long)_indexForObject:(id)arg1 buffer:(id)arg2;
+- (unsigned long long)_insertionIndexForObject:(id)arg1 buffer:(id)arg2;
+- (id)comparator;
 - (void)dealloc;
 - (void)dequeueObject:(id)arg1 buffer:(id)arg2;
 - (id)descriptionType;
 - (void)enqueueObject:(id)arg1 buffer:(id)arg2;
-- (id)initWithComparator:(id /* block */)arg1;
+- (id)initWithComparator:(id)arg1;
 
 @end

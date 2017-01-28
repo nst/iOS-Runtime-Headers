@@ -13,7 +13,7 @@
 - (id)_correctionsStore;
 - (id)_feedbackProcessor;
 - (id)delegate;
-- (void)getCorrectionsForFormFieldFingerprint:(id)arg1 onDomain:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)getCorrectionsForFormFieldFingerprint:(id)arg1 onDomain:(id)arg2 completionHandler:(id)arg3;
 - (void)setCorrections:(id)arg1 forFingerprint:(id)arg2 onDomain:(id)arg3;
 - (void)setDelegate:(id)arg1;
 

@@ -3,13 +3,13 @@
  */
 
 @interface CCUIDoNotDisturbSetting : CCUISettingModule {
-    BOOL  _DNDEnabled;
+    bool  _DNDEnabled;
     BBBehaviorOverride * _activeOverride;
-    int  _activeStatus;
+    long long  _activeStatus;
     BBSettingsGateway * _settingsGateway;
 }
 
-@property (getter=_isDNDEnabled, setter=_setDNDEnabled:, nonatomic) BOOL DNDEnabled;
+@property (getter=_isDNDEnabled, setter=_setDNDEnabled:, nonatomic) bool DNDEnabled;
 
 + (id)displayName;
 + (id)identifier;
@@ -17,14 +17,14 @@
 + (id)statusOnString;
 
 - (void).cxx_destruct;
-- (BOOL)_isDNDEnabled;
-- (BOOL)_isStateOverridden;
-- (void)_setDNDEnabled:(BOOL)arg1;
-- (void)_setDNDEnabled:(BOOL)arg1 updateServer:(BOOL)arg2 source:(unsigned int)arg3;
-- (void)_setDNDStatus:(int)arg1;
-- (BOOL)_stateWithEffectiveOverrides;
+- (bool)_isDNDEnabled;
+- (bool)_isStateOverridden;
+- (void)_setDNDEnabled:(bool)arg1;
+- (void)_setDNDEnabled:(bool)arg1 updateServer:(bool)arg2 source:(unsigned long long)arg3;
+- (void)_setDNDStatus:(long long)arg1;
+- (bool)_stateWithEffectiveOverrides;
 - (void)_tearDown;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (void)_updateActiveOverrides:(id)arg1;
 - (void)_updateState;
 - (void)activate;

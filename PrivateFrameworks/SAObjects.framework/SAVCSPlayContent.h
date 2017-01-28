@@ -13,7 +13,7 @@
 - (id)contentType;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setContentType:(id)arg1;
 - (void)setUtsId:(id)arg1;
 - (id)utsId;

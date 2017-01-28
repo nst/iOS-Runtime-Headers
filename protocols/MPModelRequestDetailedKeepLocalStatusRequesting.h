@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setWantsDetailedKeepLocalRequestableResponse:(BOOL)arg1;
-- (BOOL)wantsDetailedKeepLocalRequestableResponse;
+- (void)setWantsDetailedKeepLocalRequestableResponse:(bool)arg1;
+- (bool)wantsDetailedKeepLocalRequestableResponse;
 
 @end

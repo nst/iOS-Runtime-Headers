@@ -11,7 +11,7 @@
 - (void)webView:(WebView *)arg1 resource:(id)arg2 didFailLoadingWithError:(NSError *)arg3 fromDataSource:(WebDataSource *)arg4;
 - (void)webView:(WebView *)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(WebDataSource *)arg3;
 - (void)webView:(WebView *)arg1 resource:(id)arg2 didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)arg3 fromDataSource:(WebDataSource *)arg4;
-- (void)webView:(WebView *)arg1 resource:(id)arg2 didReceiveContentLength:(int)arg3 fromDataSource:(WebDataSource *)arg4;
+- (void)webView:(WebView *)arg1 resource:(id)arg2 didReceiveContentLength:(long long)arg3 fromDataSource:(WebDataSource *)arg4;
 - (void)webView:(WebView *)arg1 resource:(id)arg2 didReceiveResponse:(NSURLResponse *)arg3 fromDataSource:(WebDataSource *)arg4;
 - (NSURLRequest *)webView:(WebView *)arg1 resource:(id)arg2 willSendRequest:(NSURLRequest *)arg3 redirectResponse:(NSURLResponse *)arg4 fromDataSource:(WebDataSource *)arg5;
 

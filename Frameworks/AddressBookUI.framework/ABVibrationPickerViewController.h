@@ -3,7 +3,7 @@
  */
 
 @interface ABVibrationPickerViewController : ABPickerViewController {
-    BOOL  _canEnterEditingMode;
+    bool  _canEnterEditingMode;
     UIBarButtonItem * _saveButton;
     TKVibrationPickerViewController * _vibrationPickerViewController;
 }
@@ -11,15 +11,15 @@
 @property (setter=_setSaveButton:, nonatomic, retain) UIBarButtonItem *_saveButton;
 @property (nonatomic, readonly, retain) TKVibrationPickerViewController *vibrationPickerViewController;
 
-- (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
+- (void)_getRotationContentSettings:(struct { bool x1; bool x2; bool x3; bool x4; bool x5; double x6; int x7; }*)arg1;
 - (id)_saveButton;
 - (void)_setSaveButton:(id)arg1;
 - (void)_vibrationSaveButtonClicked:(id)arg1;
-- (float)ab_heightToFitForViewInPopoverView;
+- (double)ab_heightToFitForViewInPopoverView;
 - (void)dealloc;
-- (id)initWithAlertType:(int)arg1;
+- (id)initWithAlertType:(long long)arg1;
 - (void)loadView;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setStyleProvider:(id)arg1;
 - (id)vibrationPickerViewController;
 

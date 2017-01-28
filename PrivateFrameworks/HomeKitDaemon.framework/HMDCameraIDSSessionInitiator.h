@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *destinationID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HMDCameraNetworkConfig *localNetworkConfig;
 @property (nonatomic, readonly) NSNumber *mtu;
 @property (nonatomic, retain) AVCPacketRelay *packetRelay;

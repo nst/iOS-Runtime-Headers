@@ -4,7 +4,7 @@
 
 @interface CNContactDeleteContactAction : CNContactAction
 
-- (BOOL)deleteContact;
+- (bool)deleteContact;
 - (id)initWithContact:(id)arg1;
 - (void)performActionWithSender:(id)arg1;
 - (void)showDeleteFailureAlert;

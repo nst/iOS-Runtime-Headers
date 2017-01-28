@@ -5,37 +5,37 @@
 @interface PUMiniXMLParser : NSObject {
     NSScanner * __scanner;
     NSCharacterSet * __syntaxMarkerCharactersSet;
-    id /* block */  _parsedCharactersBlock;
-    id /* block */  _parsedEntityBlock;
-    id /* block */  _parsedErrorBlock;
-    id /* block */  _parsedTagBlock;
+    id  _parsedCharactersBlock;
+    id  _parsedEntityBlock;
+    id  _parsedErrorBlock;
+    id  _parsedTagBlock;
 }
 
 @property (nonatomic, readonly) NSScanner *_scanner;
 @property (nonatomic, readonly) NSCharacterSet *_syntaxMarkerCharactersSet;
-@property (nonatomic, copy) id /* block */ parsedCharactersBlock;
-@property (nonatomic, copy) id /* block */ parsedEntityBlock;
-@property (nonatomic, copy) id /* block */ parsedErrorBlock;
-@property (nonatomic, copy) id /* block */ parsedTagBlock;
+@property (nonatomic, copy) id parsedCharactersBlock;
+@property (nonatomic, copy) id parsedEntityBlock;
+@property (nonatomic, copy) id parsedErrorBlock;
+@property (nonatomic, copy) id parsedTagBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_isAtEnd;
-- (BOOL)_parseCharacters;
-- (BOOL)_parseEntity;
-- (BOOL)_parseTag;
+- (bool)_isAtEnd;
+- (bool)_parseCharacters;
+- (bool)_parseEntity;
+- (bool)_parseTag;
 - (id)_scanner;
 - (id)_syntaxMarkerCharactersSet;
-- (BOOL)_tryScanningUsingBlock:(id /* block */)arg1;
+- (bool)_tryScanningUsingBlock:(id)arg1;
 - (id)init;
 - (id)initWithString:(id)arg1;
 - (void)parse;
-- (id /* block */)parsedCharactersBlock;
-- (id /* block */)parsedEntityBlock;
-- (id /* block */)parsedErrorBlock;
-- (id /* block */)parsedTagBlock;
-- (void)setParsedCharactersBlock:(id /* block */)arg1;
-- (void)setParsedEntityBlock:(id /* block */)arg1;
-- (void)setParsedErrorBlock:(id /* block */)arg1;
-- (void)setParsedTagBlock:(id /* block */)arg1;
+- (id)parsedCharactersBlock;
+- (id)parsedEntityBlock;
+- (id)parsedErrorBlock;
+- (id)parsedTagBlock;
+- (void)setParsedCharactersBlock:(id)arg1;
+- (void)setParsedEntityBlock:(id)arg1;
+- (void)setParsedErrorBlock:(id)arg1;
+- (void)setParsedTagBlock:(id)arg1;
 
 @end

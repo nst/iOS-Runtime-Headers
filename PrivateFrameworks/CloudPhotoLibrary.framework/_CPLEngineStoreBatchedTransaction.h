@@ -3,17 +3,17 @@
  */
 
 @interface _CPLEngineStoreBatchedTransaction : NSObject {
-    id /* block */  _block;
-    id /* block */  _completionHandler;
+    id  _block;
+    id  _completionHandler;
 }
 
-@property (nonatomic, copy) id /* block */ block;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id block;
+@property (nonatomic, copy) id completionHandler;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
-- (id /* block */)completionHandler;
-- (void)setBlock:(id /* block */)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (id)block;
+- (id)completionHandler;
+- (void)setBlock:(id)arg1;
+- (void)setCompletionHandler:(id)arg1;
 
 @end

@@ -11,14 +11,14 @@
 
 - (double)_computeMedianTime:(id)arg1;
 - (double)_computeStandardDeviation:(id)arg1 numPings:(int)arg2 averageRTT:(double)arg3;
-- (void)addEchoPacket:(int)arg1 packetTimestamp:(struct timeval { int x1; int x2; })arg2 error:(int)arg3;
+- (void)addEchoPacket:(int)arg1 packetTimestamp:(struct timeval { long long x1; int x2; })arg2 error:(int)arg3;
 - (void)addEchoReplyPacket:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)logStatsToFile:(id)arg1 error:(id*)arg2;
+- (bool)logStatsToFile:(id)arg1 error:(id*)arg2;
 - (id)pingStats;
 - (id)pingStatsForLastNSeconds:(double)arg1;
-- (struct timeval { int x1; int x2; })timeSentForPacket:(int)arg1;
+- (struct timeval { long long x1; int x2; })timeSentForPacket:(int)arg1;
 - (void)timeoutOldSequenceNumbers:(double)arg1;
 
 @end

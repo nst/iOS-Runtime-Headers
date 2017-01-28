@@ -10,11 +10,11 @@
 + (id)peopleForFetchRequest:(id)arg1 matchInfos:(id*)arg2 inAddressBook:(void*)arg3 error:(id*)arg4;
 
 - (void)dealloc;
-- (id)executeFetchRequestWithProgressiveResults:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (id)executeFetchRequestWithProgressiveResults:(id)arg1 completion:(id)arg2;
 - (id)fetchPeopleReturningMatchInfos:(id*)arg1 error:(id*)arg2;
 - (id)fetchPeopleUsingNativeSortReturningMatchInfos:(id*)arg1 error:(id*)arg2;
 - (id)initWithAddressBook:(void*)arg1 fetchRequest:(id)arg2;
-- (BOOL)shouldSortInMemory;
+- (bool)shouldSortInMemory;
 - (id)sortPeople:(id)arg1;
 
 @end

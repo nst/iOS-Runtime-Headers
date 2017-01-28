@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSDictionary *errorsByPropertyKey;
 @property (nonatomic, copy) NSDictionary *valuesByPropertyKey;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

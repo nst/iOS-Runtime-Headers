@@ -9,18 +9,18 @@
 @property (nonatomic, copy) NSString *content;
 
 - (id)_functionNames;
-- (BOOL)canBeUsedWithBase;
+- (bool)canBeUsedWithBase;
 - (id)content;
 - (void)dealloc;
 - (id)description;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
-- (int)integerValue;
-- (BOOL)isFunctionName;
-- (BOOL)isInteger;
-- (BOOL)isWordOrAbbreviation;
+- (long long)integerValue;
+- (bool)isFunctionName;
+- (bool)isInteger;
+- (bool)isWordOrAbbreviation;
 - (id)latexMathModeDescription;
 - (void)setContent:(id)arg1;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
 
 @end

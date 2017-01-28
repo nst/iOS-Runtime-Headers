@@ -4,7 +4,7 @@
 
 @interface SearchUIFormatter : NSObject
 
-+ (unsigned int)rowTypeForResult:(id)arg1 scrollable:(BOOL)arg2;
-+ (unsigned int)typeForRowCardSection:(id)arg1;
++ (unsigned long long)rowTypeForResult:(id)arg1 scrollable:(bool)arg2;
++ (unsigned long long)typeForRowCardSection:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @optional
 
-- (BOOL)itemList:(SKUIItemListTableViewController *)arg1 canRemoveItemAtIndexPath:(NSIndexPath *)arg2;
+- (bool)itemList:(SKUIItemListTableViewController *)arg1 canRemoveItemAtIndexPath:(NSIndexPath *)arg2;
 - (SKUIItemState *)itemList:(SKUIItemListTableViewController *)arg1 didConfirmItemOfferForItem:(SKUIItem *)arg2 atIndexPath:(NSIndexPath *)arg3;
 - (void)itemList:(SKUIItemListTableViewController *)arg1 didDeselectItem:(SKUIItem *)arg2 atIndexPath:(NSIndexPath *)arg3;
 - (void)itemList:(SKUIItemListTableViewController *)arg1 didRemoveItemAtIndexPath:(NSIndexPath *)arg2;

@@ -3,17 +3,17 @@
  */
 
 @interface TPAlertAction : UIAlertAction {
-    id /* block */  _handler;
+    id  _handler;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 
-+ (id)actionWithTitle:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
-+ (id)actionWithType:(unsigned int)arg1;
++ (id)actionWithTitle:(id)arg1 style:(long long)arg2 handler:(id)arg3;
++ (id)actionWithType:(unsigned long long)arg1;
 + (id)preferencesURLForClassName:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)handler;
-- (void)setHandler:(id /* block */)arg1;
+- (id)handler;
+- (void)setHandler:(id)arg1;
 
 @end

@@ -15,24 +15,24 @@
     UIImageView * _leftHighlightIndicator;
     UIColor * _lineColor;
     FUShapeView * _lineView;
-    float  _lineWidth;
+    double  _lineWidth;
     NSArray * _plotPoints;
     UIColor * _pointColor;
     int  _pointOccurrence;
     float  _pointRadius;
     int  _pointStyle;
     NSArray * _pointViews;
-    float  _previousLeftPointX;
+    double  _previousLeftPointX;
     UIImageView * _rightHighlightIndicator;
     FUGradientObject * _selectedFillGradient;
     UIColor * _selectedLineColor;
     UIColor * _selectedPointColor;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _selectedPointRange;
     float  _sineWaveSmoothingFactor;
-    BOOL  _snapToPoint;
+    bool  _snapToPoint;
     int  _waveForm;
 }
 
@@ -42,7 +42,7 @@
 @property (nonatomic) struct CGGradient { }*highlightIndicatorGradient;
 @property (nonatomic, retain) UIView *highlightView;
 @property (nonatomic, retain) UIColor *lineColor;
-@property (nonatomic) float lineWidth;
+@property (nonatomic) double lineWidth;
 @property (nonatomic, retain) NSArray *plotPoints;
 @property (nonatomic, retain) UIColor *pointColor;
 @property (nonatomic) int pointOccurrence;
@@ -52,17 +52,17 @@
 @property (nonatomic, retain) UIColor *selectedLineColor;
 @property (nonatomic, retain) UIColor *selectedPointColor;
 @property (nonatomic) float sineWaveSmoothingFactor;
-@property (nonatomic) BOOL snapToPoint;
+@property (nonatomic) bool snapToPoint;
 @property (nonatomic) int waveForm;
 
 - (void).cxx_destruct;
 - (void)_clipHighlightLayerWithPoints:(id)arg1;
 - (id)_fillPathForData:(id)arg1;
 - (id)_fillPathForData:(id)arg1 waveForm:(int)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_getClipRectFromPoints:(id)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_getClipRectFromPoints:(id)arg1;
 - (id)_getPointValuesAtIndexes:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_getRangeFromSelectedPoints:(id)arg1;
-- (id)_imageForGradient:(struct CGGradient { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })_getRangeFromSelectedPoints:(id)arg1;
+- (id)_imageForGradient:(struct CGGradient { }*)arg1 size:(struct CGSize { double x1; double x2; })arg2;
 - (void)_layoutFillView:(id)arg1 withGradient:(id)arg2 path:(id)arg3;
 - (void)_layoutFillViews;
 - (void)_layoutLine;
@@ -84,7 +84,7 @@
 - (id)init;
 - (void)layoutSubviews;
 - (id)lineColor;
-- (float)lineWidth;
+- (double)lineWidth;
 - (id)plotPoints;
 - (id)pointColor;
 - (int)pointOccurrence;
@@ -100,7 +100,7 @@
 - (void)setHighlightIndicatorGradient:(struct CGGradient { }*)arg1;
 - (void)setHighlightView:(id)arg1;
 - (void)setLineColor:(id)arg1;
-- (void)setLineWidth:(float)arg1;
+- (void)setLineWidth:(double)arg1;
 - (void)setPlotPoints:(id)arg1;
 - (void)setPointColor:(id)arg1;
 - (void)setPointOccurrence:(int)arg1;
@@ -110,10 +110,10 @@
 - (void)setSelectedLineColor:(id)arg1;
 - (void)setSelectedPointColor:(id)arg1;
 - (void)setSineWaveSmoothingFactor:(float)arg1;
-- (void)setSnapToPoint:(BOOL)arg1;
+- (void)setSnapToPoint:(bool)arg1;
 - (void)setWaveForm:(int)arg1;
 - (float)sineWaveSmoothingFactor;
-- (BOOL)snapToPoint;
+- (bool)snapToPoint;
 - (int)waveForm;
 
 @end

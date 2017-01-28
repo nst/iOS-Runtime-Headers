@@ -6,7 +6,7 @@
     SEL  action;
     NSString * argument;
     NSString * argumentDescription;
-    BOOL  isRequired;
+    bool  isRequired;
     NSNumber * option;
     id  target;
 }

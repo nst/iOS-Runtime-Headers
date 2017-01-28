@@ -5,14 +5,14 @@
 @interface VUAuthenticator : NSObject <JSONHTTPRequestDelegate> {
     NSString * _accountName;
     JSONHTTPRequest * _authenticationRequest;
-    int  _authenticatorState;
+    long long  _authenticatorState;
 }
 
 @property (nonatomic, readonly) NSString *accountName;
-@property (nonatomic, readonly) int authenticatorState;
+@property (nonatomic, readonly) long long authenticatorState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedAuthenticator;
@@ -23,7 +23,7 @@
 - (id)accountName;
 - (void)authenticateWithUsername:(id)arg1 password:(id)arg2;
 - (id)authenticationDialogWithTarget:(id)arg1 action:(SEL)arg2;
-- (int)authenticatorState;
+- (long long)authenticatorState;
 - (void)invalidateAuthentication;
 - (void)loadCredentials;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;

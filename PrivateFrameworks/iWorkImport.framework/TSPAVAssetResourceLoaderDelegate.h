@@ -12,18 +12,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_provideContentInformationToLoadingRequest:(id)arg1;
 - (void)_provideDataToLoadingRequest:(id)arg1;
-- (void)_provideNextDataBlockToLoadingRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)_provideNextDataBlockToLoadingRequest:(id)arg1 completion:(id)arg2;
 - (void)dealloc;
 - (id)delegateQueue;
 - (id)init;
 - (id)initWithData:(id)arg1;
 - (void)resourceLoader:(id)arg1 didCancelLoadingRequest:(id)arg2;
-- (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
+- (bool)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 
 @end

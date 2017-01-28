@@ -8,7 +8,7 @@
 
 @property (nonatomic) int feedbackType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (int)feedbackType;

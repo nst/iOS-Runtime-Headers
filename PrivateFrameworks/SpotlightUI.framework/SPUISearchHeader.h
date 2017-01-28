@@ -6,12 +6,13 @@
     UIButton * _cancelButton;
     NSLayoutConstraint * _cancelButtonTrailingConstraint;
     <SPUISearchHeaderDelegate> * _delegate;
+    bool  _isShowingCornerRadius;
     _UILegibilitySettings * _legibilitySettings;
     SPUITextField * _searchField;
     NSLayoutConstraint * _searchFieldTrailingConstraint;
-    unsigned int  _suggestionID;
+    unsigned long long  _suggestionID;
     NSLayoutConstraint * _widthConstraint;
-    BOOL  _willClear;
+    bool  _willClear;
 }
 
 @property (retain) UIButton *cancelButton;
@@ -21,32 +22,34 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <SPUISearchHeaderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isShowingCornerRadius;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (retain) SPUITextField *searchField;
 @property (retain) NSLayoutConstraint *searchFieldTrailingConstraint;
-@property unsigned int suggestionID;
+@property unsigned long long suggestionID;
 @property (readonly) Class superclass;
 @property (retain) NSLayoutConstraint *widthConstraint;
-@property BOOL willClear;
+@property bool willClear;
 
-+ (BOOL)isJ99;
++ (bool)isJ99;
 
 - (void).cxx_destruct;
 - (void)addInputMethodInformationToQueryContext:(id)arg1;
 - (id)backdropVisualEffectView;
 - (id)cancelButton;
 - (void)cancelButtonClicked:(id)arg1;
-- (BOOL)cancelButtonIsVisible;
+- (bool)cancelButtonIsVisible;
 - (id)cancelButtonTrailingConstraint;
-- (void)clearSearchFieldWhyQuery:(unsigned int)arg1 allowZKW:(BOOL)arg2;
+- (void)clearSearchFieldWhyQuery:(unsigned long long)arg1 allowZKW:(bool)arg2;
 - (id)currentQuery;
 - (id)currentQueryContext;
 - (id)delegate;
 - (void)enableDictationIfRequired;
 - (void)focusSearchField;
 - (id)init;
-- (BOOL)isOnDarkBackground;
+- (bool)isOnDarkBackground;
+- (bool)isShowingCornerRadius;
 - (id)legibilitySettings;
 - (void)linkWithKeyboardController:(id)arg1;
 - (id)nextResponder;
@@ -56,27 +59,29 @@
 - (void)setCancelButton:(id)arg1;
 - (void)setCancelButtonTrailingConstraint:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsShowingCornerRadius:(bool)arg1;
 - (void)setLegibilitySettings:(id)arg1;
+- (void)setRoundedCornerVisible:(bool)arg1;
 - (void)setSearchField:(id)arg1;
 - (void)setSearchFieldTrailingConstraint:(id)arg1;
-- (void)setSuggestionID:(unsigned int)arg1;
+- (void)setSuggestionID:(unsigned long long)arg1;
 - (void)setWidthConstraint:(id)arg1;
-- (void)setWillClear:(BOOL)arg1;
-- (void)showCancelButton:(BOOL)arg1 animated:(BOOL)arg2;
-- (unsigned int)suggestionID;
+- (void)setWillClear:(bool)arg1;
+- (void)showCancelButton:(bool)arg1 animated:(bool)arg2;
+- (unsigned long long)suggestionID;
 - (void)textDidChange:(id)arg1;
-- (void)textDidChange:(id)arg1 whyQuery:(unsigned int)arg2 allowZKW:(BOOL)arg3;
+- (void)textDidChange:(id)arg1 whyQuery:(unsigned long long)arg2 allowZKW:(bool)arg3;
 - (void)textFieldDidBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
+- (bool)textFieldShouldClear:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (void)textInputModeChanged:(id)arg1;
-- (float)topPadding;
+- (double)topPadding;
 - (void)unfocusSearchField;
-- (void)updateBlurProgress:(float)arg1;
+- (void)updateBlurProgress:(double)arg1;
 - (void)updateColors;
 - (void)updateKeyboardSuggestions:(id)arg1;
 - (id)widthConstraint;
-- (BOOL)willClear;
+- (bool)willClear;
 
 @end

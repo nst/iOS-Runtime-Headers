@@ -6,13 +6,13 @@
     PBCodable * _message;
     NSString * _queueOne;
     double  _timeout;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) PBCodable *message;
 @property (nonatomic, copy) NSString *queueOne;
 @property (nonatomic) double timeout;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)message;
@@ -20,8 +20,8 @@
 - (void)setMessage:(id)arg1;
 - (void)setQueueOne:(id)arg1;
 - (void)setTimeout:(double)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (double)timeout;
-- (int)type;
+- (long long)type;
 
 @end

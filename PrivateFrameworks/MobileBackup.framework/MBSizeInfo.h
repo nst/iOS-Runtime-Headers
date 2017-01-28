@@ -4,18 +4,18 @@
 
 @interface MBSizeInfo : NSObject <NSCoding, NSCopying> {
     unsigned long long  _size;
-    unsigned int  _state;
+    unsigned long long  _state;
 }
 
 @property (nonatomic) unsigned long long size;
-@property (nonatomic) unsigned int state;
+@property (nonatomic) unsigned long long state;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setSize:(unsigned long long)arg1;
-- (void)setState:(unsigned int)arg1;
+- (void)setState:(unsigned long long)arg1;
 - (unsigned long long)size;
-- (unsigned int)state;
+- (unsigned long long)state;
 
 @end

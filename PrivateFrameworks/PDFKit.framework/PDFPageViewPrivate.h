@@ -9,7 +9,7 @@
     NSMutableSet * coachMarks;
     id  control;
     PDFAnnotation * controlAnnotation;
-    int  displayBox;
+    long long  displayBox;
     bool  hasBackgroundImage;
     PDFPage * page;
     PDFPageLayer * pageLayer;
@@ -17,7 +17,7 @@
     PDFPageSearchLayer * searchLayer;
     PDFPageSelectionLayer * selectionLayer;
     bool  shouldAntiAlias;
-    unsigned int  visibilityDelegateIndex;
+    unsigned long long  visibilityDelegateIndex;
 }
 
 - (void).cxx_destruct;

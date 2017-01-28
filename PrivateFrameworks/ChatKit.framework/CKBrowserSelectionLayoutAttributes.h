@@ -3,38 +3,38 @@
  */
 
 @interface CKBrowserSelectionLayoutAttributes : UICollectionViewLayoutAttributes {
-    BOOL  _jittering;
-    float  _offsetFactorX;
-    float  _offsetFactorY;
-    float  _offsetX;
-    float  _offsetY;
-    BOOL  _showingDeleteButton;
+    bool  _jittering;
+    double  _offsetFactorX;
+    double  _offsetFactorY;
+    double  _offsetX;
+    double  _offsetY;
+    bool  _showingDeleteButton;
     double  _startTime;
 }
 
-@property (getter=isJittering, nonatomic) BOOL jittering;
-@property (nonatomic) float offsetFactorX;
-@property (nonatomic) float offsetFactorY;
-@property (nonatomic) float offsetX;
-@property (nonatomic) float offsetY;
-@property (getter=isShowingDeleteButton, nonatomic) BOOL showingDeleteButton;
+@property (getter=isJittering, nonatomic) bool jittering;
+@property (nonatomic) double offsetFactorX;
+@property (nonatomic) double offsetFactorY;
+@property (nonatomic) double offsetX;
+@property (nonatomic) double offsetY;
+@property (getter=isShowingDeleteButton, nonatomic) bool showingDeleteButton;
 @property (nonatomic) double startTime;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isJittering;
-- (BOOL)isShowingDeleteButton;
-- (float)offsetFactorX;
-- (float)offsetFactorY;
-- (float)offsetX;
-- (float)offsetY;
-- (void)setJittering:(BOOL)arg1;
-- (void)setOffsetFactorX:(float)arg1;
-- (void)setOffsetFactorY:(float)arg1;
-- (void)setOffsetX:(float)arg1;
-- (void)setOffsetY:(float)arg1;
-- (void)setShowingDeleteButton:(BOOL)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isJittering;
+- (bool)isShowingDeleteButton;
+- (double)offsetFactorX;
+- (double)offsetFactorY;
+- (double)offsetX;
+- (double)offsetY;
+- (void)setJittering:(bool)arg1;
+- (void)setOffsetFactorX:(double)arg1;
+- (void)setOffsetFactorY:(double)arg1;
+- (void)setOffsetX:(double)arg1;
+- (void)setOffsetY:(double)arg1;
+- (void)setShowingDeleteButton:(bool)arg1;
 - (void)setStartTime:(double)arg1;
 - (double)startTime;
 

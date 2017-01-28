@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) long long clientVersion;
-@property (nonatomic) BOOL hasClientVersion;
-@property (nonatomic, readonly) BOOL hasPlistSidecar;
-@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) bool hasClientVersion;
+@property (nonatomic, readonly) bool hasPlistSidecar;
+@property (nonatomic) bool hasVersion;
 @property (nonatomic, retain) NSMutableArray *keyValuePairs;
 @property (nonatomic, retain) NSData *plistSidecar;
 @property (nonatomic) long long version;
@@ -30,20 +30,20 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasClientVersion;
-- (BOOL)hasPlistSidecar;
-- (BOOL)hasVersion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasClientVersion;
+- (bool)hasPlistSidecar;
+- (bool)hasVersion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)keyValuePairs;
-- (id)keyValuePairsAtIndex:(unsigned int)arg1;
-- (unsigned int)keyValuePairsCount;
+- (id)keyValuePairsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)keyValuePairsCount;
 - (void)mergeFrom:(id)arg1;
 - (id)plistSidecar;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setClientVersion:(long long)arg1;
-- (void)setHasClientVersion:(BOOL)arg1;
-- (void)setHasVersion:(BOOL)arg1;
+- (void)setHasClientVersion:(bool)arg1;
+- (void)setHasVersion:(bool)arg1;
 - (void)setKeyValuePairs:(id)arg1;
 - (void)setPlistSidecar:(id)arg1;
 - (void)setVersion:(long long)arg1;

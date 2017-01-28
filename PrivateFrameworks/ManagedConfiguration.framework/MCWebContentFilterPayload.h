@@ -3,10 +3,10 @@
  */
 
 @interface MCWebContentFilterPayload : MCPayload {
-    BOOL  _autoFilterEnabled;
+    bool  _autoFilterEnabled;
     NSArray * _blacklistedURLStrings;
-    BOOL  _filterBrowsers;
-    BOOL  _filterSockets;
+    bool  _filterBrowsers;
+    bool  _filterSockets;
     NSString * _filterType;
     NSString * _name;
     NSArray * _permittedURLStrings;
@@ -15,10 +15,10 @@
     NSArray * _whitelistedBookmarks;
 }
 
-@property (nonatomic) BOOL autoFilterEnabled;
+@property (nonatomic) bool autoFilterEnabled;
 @property (nonatomic, retain) NSArray *blacklistedURLStrings;
-@property (nonatomic) BOOL filterBrowsers;
-@property (nonatomic) BOOL filterSockets;
+@property (nonatomic) bool filterBrowsers;
+@property (nonatomic) bool filterSockets;
 @property (nonatomic, copy) NSString *filterType;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSArray *permittedURLStrings;
@@ -32,11 +32,11 @@
 + (id)typeStrings;
 
 - (void).cxx_destruct;
-- (BOOL)autoFilterEnabled;
+- (bool)autoFilterEnabled;
 - (id)blacklistedURLStrings;
 - (id)description;
-- (BOOL)filterBrowsers;
-- (BOOL)filterSockets;
+- (bool)filterBrowsers;
+- (bool)filterSockets;
 - (id)filterType;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (id)installationWarnings;
@@ -46,10 +46,10 @@
 - (id)pluginBundleID;
 - (id)pluginConfiguration;
 - (id)restrictions;
-- (void)setAutoFilterEnabled:(BOOL)arg1;
+- (void)setAutoFilterEnabled:(bool)arg1;
 - (void)setBlacklistedURLStrings:(id)arg1;
-- (void)setFilterBrowsers:(BOOL)arg1;
-- (void)setFilterSockets:(BOOL)arg1;
+- (void)setFilterBrowsers:(bool)arg1;
+- (void)setFilterSockets:(bool)arg1;
 - (void)setFilterType:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPermittedURLStrings:(id)arg1;

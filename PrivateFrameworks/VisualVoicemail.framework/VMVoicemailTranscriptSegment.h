@@ -4,37 +4,37 @@
 
 @interface VMVoicemailTranscriptSegment : NSObject <NSSecureCoding> {
     float  _confidence;
-    unsigned int  _confidenceRating;
+    unsigned long long  _confidenceRating;
     double  _duration;
     NSString * _substring;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _substringRange;
     double  _timestamp;
 }
 
 @property (nonatomic, readonly) float confidence;
-@property (nonatomic) unsigned int confidenceRating;
+@property (nonatomic) unsigned long long confidenceRating;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, readonly, copy) NSString *substring;
-@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } substringRange;
+@property (nonatomic, readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } substringRange;
 @property (nonatomic, readonly) double timestamp;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (float)confidence;
-- (unsigned int)confidenceRating;
+- (unsigned long long)confidenceRating;
 - (id)debugDescription;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTranscriptionSegment:(id)arg1;
-- (void)setConfidenceRating:(unsigned int)arg1;
+- (void)setConfidenceRating:(unsigned long long)arg1;
 - (id)substring;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })substringRange;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })substringRange;
 - (double)timestamp;
 
 @end

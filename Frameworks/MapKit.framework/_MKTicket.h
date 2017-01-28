@@ -9,27 +9,27 @@
     <GEOMapServiceTicket> * _ticket;
 }
 
-@property (nonatomic, readonly) BOOL allAreFreshFromNetwork;
+@property (nonatomic, readonly) bool allAreFreshFromNetwork;
 @property (nonatomic, readonly) GEOMapRegion *boundingRegion;
-@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
+@property (getter=isChainResultSet, nonatomic, readonly) bool chainResultSet;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSArray *exactMapItems;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *refinedMapItems;
 @property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
 @property (nonatomic, readonly) double requestResponseTime;
 @property (nonatomic, readonly) NSString *resultDisplayHeader;
 @property (nonatomic, readonly) int searchResultType;
 @property (nonatomic, readonly) NSString *sectionHeader;
-@property (nonatomic, readonly) BOOL shouldEnableRedoSearch;
+@property (nonatomic, readonly) bool shouldEnableRedoSearch;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
 - (void).cxx_destruct;
-- (BOOL)allAreFreshFromNetwork;
+- (bool)allAreFreshFromNetwork;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)applyToPlaceInfo:(id)arg1;
 - (id)boundingRegion;
@@ -39,20 +39,20 @@
 - (id)error;
 - (id)exactMapItems;
 - (id)initWithTicket:(id)arg1;
-- (BOOL)isChainResultSet;
+- (bool)isChainResultSet;
 - (id)refinedMapItems;
 - (id)relatedSearchSuggestions;
 - (double)requestResponseTime;
 - (id)resultDisplayHeader;
 - (int)searchResultType;
 - (id)sectionHeader;
-- (BOOL)shouldEnableRedoSearch;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithHandler:(id /* block */)arg1 queue:(id)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
-- (void)submitWithHandler:(id /* block */)arg1 timeout:(int)arg2 queue:(id)arg3 networkActivity:(id /* block */)arg4;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
-- (void)submitWithRefinedHandler:(id /* block */)arg1 timeout:(int)arg2 networkActivity:(id /* block */)arg3;
+- (bool)shouldEnableRedoSearch;
+- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
+- (void)submitWithHandler:(id)arg1 queue:(id)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
+- (void)submitWithHandler:(id)arg1 timeout:(long long)arg2 queue:(id)arg3 networkActivity:(id)arg4;
+- (void)submitWithRefinedHandler:(id)arg1 networkActivity:(id)arg2;
+- (void)submitWithRefinedHandler:(id)arg1 timeout:(long long)arg2 networkActivity:(id)arg3;
 - (id)traits;
 
 @end

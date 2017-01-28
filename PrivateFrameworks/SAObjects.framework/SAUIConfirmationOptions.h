@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSArray *denyCommands;
 @property (nonatomic, copy) NSString *denyText;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)confirmationOptions;

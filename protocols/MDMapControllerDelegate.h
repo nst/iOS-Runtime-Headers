@@ -5,7 +5,7 @@
 
 @required
 
-- (void)mapController:(VKScreenCanvas *)arg1 requestsDisplayRate:(int)arg2;
+- (void)mapController:(VKScreenCanvas *)arg1 requestsDisplayRate:(long long)arg2;
 - (void)mapControllerNeedsDisplay:(VKScreenCanvas *)arg1;
 - (void)mapControllerNeedsInitialization:(VKScreenCanvas *)arg1;
 

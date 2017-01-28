@@ -11,7 +11,7 @@
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
-- (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateObjectsUsingBlock:(id)arg1;
 - (id)init;
 - (id)readOnlyArray;
 

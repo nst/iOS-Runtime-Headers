@@ -3,16 +3,16 @@
  */
 
 @interface MusicForYouRecommendation : MPModelObject {
-    BOOL  _hasAdditionalRecommendations;
+    bool  _hasAdditionalRecommendations;
 }
 
-@property (nonatomic) BOOL hasAdditionalRecommendations;
+@property (nonatomic) bool hasAdditionalRecommendations;
 
 + (id)__MusicForYouRecommendationPropertyHasAdditionalRecommendations__PROPERTY;
 + (id)__hasAdditionalRecommendations__KEY;
 
-- (id)descriptionWithType:(int)arg1;
-- (BOOL)hasAdditionalRecommendations;
-- (void)setHasAdditionalRecommendations:(BOOL)arg1;
+- (id)descriptionWithType:(long long)arg1;
+- (bool)hasAdditionalRecommendations;
+- (void)setHasAdditionalRecommendations:(bool)arg1;
 
 @end

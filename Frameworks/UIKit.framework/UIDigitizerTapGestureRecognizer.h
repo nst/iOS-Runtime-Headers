@@ -8,15 +8,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } digitizerLocation;
-@property (readonly) unsigned int hash;
-@property (nonatomic) float maximumPressDuration;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } digitizerLocation;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) double maximumPressDuration;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (struct CGPoint { float x1; float x2; })digitizerLocation;
+- (struct CGPoint { double x1; double x2; })digitizerLocation;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-- (float)maximumPressDuration;
+- (double)maximumPressDuration;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
@@ -27,7 +27,7 @@
 - (void)reset;
 - (void)setAllowedPressTypes:(id)arg1;
 - (void)setAllowedTouchTypes:(id)arg1;
-- (void)setMaximumPressDuration:(float)arg1;
+- (void)setMaximumPressDuration:(double)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBeganSuccessfully:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

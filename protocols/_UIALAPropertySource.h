@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned int)alignment;
-- (void)setAlignment:(unsigned int)arg1;
+- (unsigned long long)alignment;
+- (void)setAlignment:(unsigned long long)arg1;
 
 @end

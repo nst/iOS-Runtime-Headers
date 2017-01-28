@@ -14,10 +14,10 @@
 - (id)deviceActivityLikelihood;
 - (id)initWithKnowledgeStore:(id)arg1;
 - (id)knowledgeStore;
-- (id)launchLikelihoodForTopNApplications:(int)arg1 withLikelihoodGreaterThan:(double)arg2 withTemporalResolution:(int)arg3;
+- (id)launchLikelihoodForTopNApplications:(long long)arg1 withLikelihoodGreaterThan:(double)arg2 withTemporalResolution:(int)arg3;
 - (id)launchLikelihoodPredictionForApp:(id)arg1;
 - (id)pluginLikelihood;
-- (id)predictionForStreamWithName:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned int)arg3;
+- (id)predictionForStreamWithName:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3;
 - (void)setKnowledgeStore:(id)arg1;
 
 @end

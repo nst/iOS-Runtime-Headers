@@ -4,9 +4,9 @@
 
 @interface CNPropertyAlertEditingCell : CNPropertyAlertCell
 
-+ (BOOL)wantsHorizontalLayout;
++ (bool)wantsHorizontalLayout;
 
 - (id)constantConstraints;
-- (float)minCellHeight;
+- (double)minCellHeight;
 
 @end

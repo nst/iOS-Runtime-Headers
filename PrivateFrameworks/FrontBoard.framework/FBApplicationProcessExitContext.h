@@ -3,34 +3,34 @@
  */
 
 @interface FBApplicationProcessExitContext : NSObject {
-    unsigned int  _exitReason;
+    unsigned long long  _exitReason;
     unsigned long long  _launchdExitReason;
     FBProcessState * _stateBeforeExiting;
-    int  _terminationReason;
+    long long  _terminationReason;
 }
 
 @property (nonatomic, readonly) int exitCode;
-@property (nonatomic, readonly) unsigned int exitReason;
+@property (nonatomic, readonly) unsigned long long exitReason;
 @property (nonatomic, readonly) long long exitStatus;
-@property (nonatomic, readonly) BOOL exitedNormally;
+@property (nonatomic, readonly) bool exitedNormally;
 @property (nonatomic, readonly, copy) FBProcessState *stateBeforeExiting;
-@property (nonatomic, readonly) int terminationReason;
+@property (nonatomic, readonly) long long terminationReason;
 @property (nonatomic, readonly) int terminationSignal;
 
-+ (id)descriptionForExitReason:(unsigned int)arg1;
-+ (unsigned int)exitReasonForLaunchdExitReason:(unsigned long long)arg1;
++ (id)descriptionForExitReason:(unsigned long long)arg1;
++ (unsigned long long)exitReasonForLaunchdExitReason:(unsigned long long)arg1;
 
-- (BOOL)consideredJetsam;
+- (bool)consideredJetsam;
 - (void)dealloc;
 - (id)description;
 - (int)exitCode;
-- (unsigned int)exitReason;
+- (unsigned long long)exitReason;
 - (long long)exitStatus;
-- (BOOL)exitedNormally;
-- (BOOL)fairPlayFailure;
-- (id)initWithExitReason:(unsigned long long)arg1 terminationReason:(int)arg2 state:(id)arg3;
+- (bool)exitedNormally;
+- (bool)fairPlayFailure;
+- (id)initWithExitReason:(unsigned long long)arg1 terminationReason:(long long)arg2 state:(id)arg3;
 - (id)stateBeforeExiting;
-- (int)terminationReason;
+- (long long)terminationReason;
 - (int)terminationSignal;
 
 @end

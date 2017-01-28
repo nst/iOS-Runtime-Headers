@@ -20,14 +20,16 @@
 @property (nonatomic, copy) NSDictionary *storePlatformData;
 @property (nonatomic, copy) NSURL *thumbnailImageURL;
 
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
 - (void).cxx_destruct;
 - (id)authorType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dsid;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)initWithAuthorDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (id)permissions;
 - (void)setAuthorType:(id)arg1;
@@ -39,5 +41,9 @@
 - (void)setThumbnailImageURL:(id)arg1;
 - (id)storePlatformData;
 - (id)thumbnailImageURL;
+
+// Image: /System/Library/PrivateFrameworks/MediaSocial.framework/MediaSocial
+
++ (id)mzse2QueryKeyForAuthorType:(id)arg1;
 
 @end

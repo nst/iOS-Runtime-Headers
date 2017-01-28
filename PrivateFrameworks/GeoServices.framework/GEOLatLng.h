@@ -16,14 +16,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)lat;
 - (double)lng;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLat:(double)arg1;
 - (void)setLng:(double)arg1;
 - (void)writeTo:(id)arg1;

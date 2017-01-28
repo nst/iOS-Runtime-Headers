@@ -5,22 +5,22 @@
 @interface LPYouTubePlayerView : UIView {
     <LPYouTubePlayerDelegate> * _delegate;
     double  _endTime;
-    BOOL  _muted;
+    bool  _muted;
     LPYouTubePlayerScriptMessageHandler * _scriptMessageHandler;
-    BOOL  _showsControls;
+    bool  _showsControls;
     double  _startTime;
-    BOOL  _startsPlayingAutomatically;
-    int  _state;
+    bool  _startsPlayingAutomatically;
+    long long  _state;
     NSString * _videoID;
     WKWebView * _webView;
 }
 
 @property (nonatomic) <LPYouTubePlayerDelegate> *delegate;
 @property (nonatomic) double endTime;
-@property (getter=isMuted, nonatomic) BOOL muted;
-@property (nonatomic) BOOL showsControls;
+@property (getter=isMuted, nonatomic) bool muted;
+@property (nonatomic) bool showsControls;
 @property (nonatomic) double startTime;
-@property (nonatomic) BOOL startsPlayingAutomatically;
+@property (nonatomic) bool startsPlayingAutomatically;
 
 - (void).cxx_destruct;
 - (id)_parameterScript;
@@ -30,8 +30,8 @@
 - (void)didReceiveScriptMessage:(id)arg1;
 - (void)dispatchErrorForInvalidURL;
 - (double)endTime;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isMuted;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isMuted;
 - (void)loadVideoWithEmbedURL:(id)arg1;
 - (void)loadVideoWithID:(id)arg1;
 - (void)loadVideoWithURL:(id)arg1;
@@ -40,12 +40,12 @@
 - (void)seekTo:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEndTime:(double)arg1;
-- (void)setMuted:(BOOL)arg1;
-- (void)setShowsControls:(BOOL)arg1;
+- (void)setMuted:(bool)arg1;
+- (void)setShowsControls:(bool)arg1;
 - (void)setStartTime:(double)arg1;
-- (void)setStartsPlayingAutomatically:(BOOL)arg1;
-- (BOOL)showsControls;
+- (void)setStartsPlayingAutomatically:(bool)arg1;
+- (bool)showsControls;
 - (double)startTime;
-- (BOOL)startsPlayingAutomatically;
+- (bool)startsPlayingAutomatically;
 
 @end

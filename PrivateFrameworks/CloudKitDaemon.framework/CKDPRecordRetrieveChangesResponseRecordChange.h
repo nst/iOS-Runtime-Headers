@@ -14,11 +14,11 @@
 }
 
 @property (nonatomic, retain) NSString *etag;
-@property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasRecord;
-@property (nonatomic, readonly) BOOL hasRecordIdentifier;
-@property (nonatomic, readonly) BOOL hasRecordType;
-@property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) bool hasEtag;
+@property (nonatomic, readonly) bool hasRecord;
+@property (nonatomic, readonly) bool hasRecordIdentifier;
+@property (nonatomic, readonly) bool hasRecordType;
+@property (nonatomic) bool hasType;
 @property (nonatomic, retain) CKDPRecord *record;
 @property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
 @property (nonatomic, retain) CKDPRecordType *recordType;
@@ -31,20 +31,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (BOOL)hasRecord;
-- (BOOL)hasRecordIdentifier;
-- (BOOL)hasRecordType;
-- (BOOL)hasType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEtag;
+- (bool)hasRecord;
+- (bool)hasRecordIdentifier;
+- (bool)hasRecordType;
+- (bool)hasType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)record;
 - (id)recordIdentifier;
 - (id)recordType;
 - (void)setEtag:(id)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setRecordIdentifier:(id)arg1;
 - (void)setRecordType:(id)arg1;

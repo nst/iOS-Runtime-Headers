@@ -3,30 +3,30 @@
  */
 
 @interface HKVerticalMarginView : UIView {
-    float  _currentKeyboardHeight;
+    double  _currentKeyboardHeight;
     <HKVerticalMarginDelegate> * _marginDelegate;
-    unsigned int  _offsetOptions;
+    unsigned long long  _offsetOptions;
 }
 
-@property (nonatomic) float currentKeyboardHeight;
+@property (nonatomic) double currentKeyboardHeight;
 @property (nonatomic, retain) <HKVerticalMarginDelegate> *marginDelegate;
-@property (nonatomic) unsigned int offsetOptions;
+@property (nonatomic) unsigned long long offsetOptions;
 
 - (void).cxx_destruct;
-- (float)_bottomOffsetWithController:(id)arg1;
-- (float)_findTabBarHeightWithController:(id)arg1;
+- (double)_bottomOffsetWithController:(id)arg1;
+- (double)_findTabBarHeightWithController:(id)arg1;
 - (id)_findViewController;
-- (float)_topOffsetWithController:(id)arg1;
-- (float)currentKeyboardHeight;
+- (double)_topOffsetWithController:(id)arg1;
+- (double)currentKeyboardHeight;
 - (void)dealloc;
-- (id)initWithSubview:(id)arg1 offsetOptions:(unsigned int)arg2;
+- (id)initWithSubview:(id)arg1 offsetOptions:(unsigned long long)arg2;
 - (void)keyboardWasShown:(id)arg1;
 - (void)keyboardWillBeHidden:(id)arg1;
 - (void)layoutSubviews;
 - (id)marginDelegate;
-- (unsigned int)offsetOptions;
-- (void)setCurrentKeyboardHeight:(float)arg1;
+- (unsigned long long)offsetOptions;
+- (void)setCurrentKeyboardHeight:(double)arg1;
 - (void)setMarginDelegate:(id)arg1;
-- (void)setOffsetOptions:(unsigned int)arg1;
+- (void)setOffsetOptions:(unsigned long long)arg1;
 
 @end

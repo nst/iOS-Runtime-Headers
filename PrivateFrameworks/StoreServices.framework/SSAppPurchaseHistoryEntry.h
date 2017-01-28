@@ -10,6 +10,6 @@
 + (id)predicateForHasMessagesExtension;
 + (id)predicateForNotFirstParty;
 + (id)predicateForNotHidden;
-+ (id)supportsPlatformPredicate:(BOOL)arg1;
++ (id)supportsPlatformPredicate:(bool)arg1;
 
 @end

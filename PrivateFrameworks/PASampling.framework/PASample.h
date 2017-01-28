@@ -11,7 +11,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) double machTimestamp;
 @property (readonly) NSArray *sampleTasks;
 @property (readonly) Class superclass;
@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (id)_initWithSerializedData:(const struct { unsigned long long x1; double x2; double x3; unsigned long long x4; }*)arg1;
 - (void)addSampleTask:(id)arg1;
-- (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
+- (bool)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
 - (id)init;
 - (id)initWithMachTime:(double)arg1 andWallTime:(double)arg2;
@@ -34,7 +34,7 @@
 - (id)sampleTasks;
 - (void)setMachTime:(double)arg1;
 - (void)setWallTime:(double)arg1;
-- (unsigned long)sizeInBytesForSerializedVersion;
+- (unsigned long long)sizeInBytesForSerializedVersion;
 - (double)wallTimestamp;
 
 @end

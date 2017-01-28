@@ -5,6 +5,6 @@
 
 @required
 
-- (void)contentChanged:(BOOL)arg1;
+- (void)contentChanged:(bool)arg1;
 
 @end

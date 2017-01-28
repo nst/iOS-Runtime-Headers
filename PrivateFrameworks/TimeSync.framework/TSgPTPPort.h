@@ -3,10 +3,13 @@
  */
 
 @interface TSgPTPPort : NSObject {
-    void * _portImpl;
+    unsigned int  _interestNotification;
+    struct IONotificationPort { } * _notificationPort;
+    NSObject<OS_dispatch_queue> * _notificationsQueue;
+    unsigned int  _service;
 }
 
-@property (getter=isASCapable, nonatomic, readonly) BOOL asCapable;
+@property (getter=isASCapable, nonatomic, readonly) bool asCapable;
 @property (nonatomic, readonly) unsigned short portNumber;
 @property (nonatomic, readonly) unsigned int propagationDelay;
 @property (nonatomic, readonly) unsigned long long remoteClockIdentity;
@@ -19,7 +22,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithMatchingDictionary:(id)arg1;
-- (BOOL)isASCapable;
+- (bool)isASCapable;
 - (unsigned short)portNumber;
 - (unsigned int)propagationDelay;
 - (unsigned long long)remoteClockIdentity;

@@ -3,25 +3,25 @@
  */
 
 @interface AVCapturePhotoSettingsInternal : NSObject {
-    int  HDRMode;
-    BOOL  autoBravoImageFusionEnabled;
-    BOOL  autoShallowDepthOfFieldEffectEnabled;
-    BOOL  autoStillImageStabilizationEnabled;
-    int  flashMode;
+    long long  HDRMode;
+    bool  autoDualCameraFusionEnabled;
+    bool  autoShallowDepthOfFieldEffectEnabled;
+    bool  autoStillImageStabilizationEnabled;
+    long long  flashMode;
     NSDictionary * format;
-    BOOL  highResolutionPhotoEnabled;
+    bool  highResolutionPhotoEnabled;
     NSString * livePhotoContentIdentifier;
     NSString * livePhotoContentIdentifierForOriginalPhoto;
     NSURL * livePhotoMovieFileURL;
     NSURL * livePhotoMovieFileURLForOriginalPhoto;
     NSArray * livePhotoMovieMetadata;
     NSArray * livePhotoMovieMetadataForOriginalPhoto;
-    BOOL  originalPhotoDeliveryEnabled;
+    bool  originalPhotoDeliveryEnabled;
     NSDictionary * previewFormat;
-    unsigned long  rawPhotoPixelFormatType;
-    unsigned long  shutterSound;
-    BOOL  squareCropEnabled;
-    BOOL  turboModeEnabled;
+    unsigned int  rawPhotoPixelFormatType;
+    unsigned int  shutterSound;
+    bool  squareCropEnabled;
+    bool  turboModeEnabled;
     long long  uniqueID;
 }
 

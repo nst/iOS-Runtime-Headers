@@ -6,19 +6,19 @@
     SSSQLiteDatabase * _db;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     NSURL * _storageLocation;
-    BOOL  _usesSharedCookieDatabase;
+    bool  _usesSharedCookieDatabase;
 }
 
 @property (readonly) NSURL *storageLocation;
 
-+ (BOOL)_setupCookieDatabase:(id)arg1 forCookieStorage:(id)arg2;
++ (bool)_setupCookieDatabase:(id)arg1 forCookieStorage:(id)arg2;
 + (id)_sharedStorageLocationPath;
 + (id)sharedInstance;
 + (id)sharedStorage;
 
 - (id)_allUserIdentifiers;
 - (void)_bindInsertStatement:(struct sqlite3_stmt { }*)arg1 forCookie:(id)arg2 userIdentifier:(id)arg3;
-- (BOOL)_bindStatement:(struct sqlite3_stmt { }*)arg1 withValues:(id)arg2;
+- (bool)_bindStatement:(struct sqlite3_stmt { }*)arg1 withValues:(id)arg2;
 - (id)_columnNameForCookieProperty:(id)arg1;
 - (void)_cookieDatabaseDidChange;
 - (id)_copyCookieDictionaryForURL:(id)arg1 userIdentifier:(id)arg2;

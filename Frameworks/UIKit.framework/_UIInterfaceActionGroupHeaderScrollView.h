@@ -10,8 +10,8 @@
 @property (nonatomic, readonly) UIView *contentView;
 
 - (void).cxx_destruct;
-- (float)_contentFitCanScrollThreshold;
-- (void)_setUsesStaticScrollBar:(BOOL)arg1;
+- (double)_contentFitCanScrollThreshold;
+- (void)_setUsesStaticScrollBar:(bool)arg1;
 - (id)contentView;
 - (id)initWithContentView:(id)arg1;
 - (void)updateConstraints;

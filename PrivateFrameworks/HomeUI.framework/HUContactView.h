@@ -3,47 +3,47 @@
  */
 
 @interface HUContactView : UIView {
-    float  _avatarDiameter;
+    double  _avatarDiameter;
     CNAvatarView * _avatarView;
     NSMutableArray * _constraints;
     CNContact * _contact;
-    int  _contactNameFormatStyle;
+    long long  _contactNameFormatStyle;
     UILabel * _messageLabel;
     UILabel * _nameLabel;
-    unsigned int  _numberOfLinesForMessage;
+    unsigned long long  _numberOfLinesForMessage;
 }
 
-@property (nonatomic) float avatarDiameter;
+@property (nonatomic) double avatarDiameter;
 @property (nonatomic, retain) CNAvatarView *avatarView;
 @property (nonatomic, retain) NSMutableArray *constraints;
 @property (nonatomic, retain) CNContact *contact;
-@property (nonatomic) int contactNameFormatStyle;
+@property (nonatomic) long long contactNameFormatStyle;
 @property (nonatomic, retain) NSAttributedString *message;
 @property (nonatomic, retain) UILabel *messageLabel;
 @property (nonatomic, retain) UILabel *nameLabel;
-@property (nonatomic) unsigned int numberOfLinesForMessage;
+@property (nonatomic) unsigned long long numberOfLinesForMessage;
 
 - (void).cxx_destruct;
 - (void)_setupViews;
 - (void)_updateConstraints;
-- (float)avatarDiameter;
+- (double)avatarDiameter;
 - (id)avatarView;
 - (id)constraints;
 - (id)contact;
-- (int)contactNameFormatStyle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (long long)contactNameFormatStyle;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)message;
 - (id)messageLabel;
 - (id)nameLabel;
-- (unsigned int)numberOfLinesForMessage;
-- (void)setAvatarDiameter:(float)arg1;
+- (unsigned long long)numberOfLinesForMessage;
+- (void)setAvatarDiameter:(double)arg1;
 - (void)setAvatarView:(id)arg1;
 - (void)setConstraints:(id)arg1;
 - (void)setContact:(id)arg1;
-- (void)setContactNameFormatStyle:(int)arg1;
+- (void)setContactNameFormatStyle:(long long)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
 - (void)setNameLabel:(id)arg1;
-- (void)setNumberOfLinesForMessage:(unsigned int)arg1;
+- (void)setNumberOfLinesForMessage:(unsigned long long)arg1;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface KNObjectPlaceholderLayout : KNPlaceholderLayout
 
-- (BOOL)canFlip;
+- (bool)canFlip;
 - (id)instructionalStorageForContainedStorage:(id)arg1 storageKind:(int)arg2;
-- (BOOL)supportsRotation;
+- (bool)supportsRotation;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface ISLivePhotoVitalityBehavior : ISBehavior {
-    BOOL  __shouldPlayAfterPreparation;
+    bool  __shouldPlayAfterPreparation;
     double  _photoTime;
     double  _photoTransitionDuration;
     struct { 
@@ -13,34 +13,34 @@
         long long epoch; 
     }  _playDuration;
     float  _playRate;
-    BOOL  _playing;
-    BOOL  _prepared;
-    BOOL  _preparing;
+    bool  _playing;
+    bool  _prepared;
+    bool  _preparing;
 }
 
-@property (setter=_setShouldPlayAfterPreparation:, nonatomic) BOOL _shouldPlayAfterPreparation;
+@property (setter=_setShouldPlayAfterPreparation:, nonatomic) bool _shouldPlayAfterPreparation;
 @property (nonatomic) <ISLivePhotoVitalityBehaviorDelegate> *delegate;
 @property (nonatomic, readonly) double photoTime;
 @property (nonatomic, readonly) double photoTransitionDuration;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } playDuration;
 @property (nonatomic, readonly) float playRate;
-@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
-@property (getter=isPrepared, setter=_setPrepared:, nonatomic) BOOL prepared;
-@property (getter=_isPreparing, setter=_setPreparing:, nonatomic) BOOL preparing;
+@property (getter=isPlaying, nonatomic, readonly) bool playing;
+@property (getter=isPrepared, setter=_setPrepared:, nonatomic) bool prepared;
+@property (getter=_isPreparing, setter=_setPreparing:, nonatomic) bool preparing;
 
 - (void)_handleDidFinishPreroll;
 - (void)_handleDidSeekToStartTime;
-- (BOOL)_isPreparing;
-- (void)_setPrepared:(BOOL)arg1;
-- (void)_setPreparing:(BOOL)arg1;
-- (void)_setShouldPlayAfterPreparation:(BOOL)arg1;
-- (BOOL)_shouldPlayAfterPreparation;
+- (bool)_isPreparing;
+- (void)_setPrepared:(bool)arg1;
+- (void)_setPreparing:(bool)arg1;
+- (void)_setShouldPlayAfterPreparation:(bool)arg1;
+- (bool)_shouldPlayAfterPreparation;
 - (void)_startVideoPlayback;
 - (void)activeDidChange;
-- (int)behaviorType;
+- (long long)behaviorType;
 - (id)initWithInitialLayoutInfo:(id)arg1 photoTime:(double)arg2 playDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 playRate:(float)arg4 photoTransitionDuration:(double)arg5;
-- (BOOL)isPlaying;
-- (BOOL)isPrepared;
+- (bool)isPlaying;
+- (bool)isPrepared;
 - (double)photoTime;
 - (double)photoTransitionDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })playDuration;

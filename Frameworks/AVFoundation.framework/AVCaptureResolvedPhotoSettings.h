@@ -6,32 +6,34 @@
     AVCaptureResolvedPhotoSettingsInternal * _internal;
 }
 
-@property (getter=isFlashEnabled, readonly) BOOL flashEnabled;
-@property (getter=cam_isRecordingMovieForLivePhoto, nonatomic, readonly) BOOL isRecordingMovieForLivePhoto;
+@property (getter=isDualCameraFusionEnabled, readonly) bool dualCameraFusionEnabled;
+@property (getter=isFlashEnabled, readonly) bool flashEnabled;
+@property (getter=cam_isRecordingMovieForLivePhoto, nonatomic, readonly) bool isRecordingMovieForLivePhoto;
 @property (readonly) struct { int x1; int x2; } livePhotoMovieDimensions;
 @property (readonly) struct { int x1; int x2; } photoDimensions;
 @property (readonly) struct { int x1; int x2; } previewDimensions;
 @property (readonly) struct { int x1; int x2; } rawPhotoDimensions;
-@property (getter=isStillImageStabilizationEnabled, readonly) BOOL stillImageStabilizationEnabled;
+@property (getter=isStillImageStabilizationEnabled, readonly) bool stillImageStabilizationEnabled;
 @property (readonly) long long uniqueID;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
-+ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(BOOL)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(BOOL)arg7 flashEnabled:(BOOL)arg8 HDREnabled:(BOOL)arg9 shallowDepthOfFieldEffectEnabled:(BOOL)arg10 originalPhotoDeliveryEnabled:(BOOL)arg11 stillImageStabilizationEnabled:(BOOL)arg12 bravoImageFusionEnabled:(BOOL)arg13 squareCropEnabled:(BOOL)arg14;
++ (id)resolvedSettingsWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(bool)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(bool)arg7 flashEnabled:(bool)arg8 HDREnabled:(bool)arg9 shallowDepthOfFieldEffectEnabled:(bool)arg10 originalPhotoDeliveryEnabled:(bool)arg11 stillImageStabilizationEnabled:(bool)arg12 dualCameraFusionEnabled:(bool)arg13 squareCropEnabled:(bool)arg14;
 
-- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(BOOL)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(BOOL)arg7 flashEnabled:(BOOL)arg8 HDREnabled:(BOOL)arg9 shallowDepthOfFieldEffectEnabled:(BOOL)arg10 originalPhotoDeliveryEnabled:(BOOL)arg11 stillImageStabilizationEnabled:(BOOL)arg12 bravoImageFusionEnabled:(BOOL)arg13 squareCropEnabled:(BOOL)arg14;
+- (id)_initWithUniqueID:(long long)arg1 photoDimensions:(struct { int x1; int x2; })arg2 rawPhotoDimensions:(struct { int x1; int x2; })arg3 previewDimensions:(struct { int x1; int x2; })arg4 livePhotoMovieEnabled:(bool)arg5 livePhotoMovieDimensions:(struct { int x1; int x2; })arg6 turboModeEnabled:(bool)arg7 flashEnabled:(bool)arg8 HDREnabled:(bool)arg9 shallowDepthOfFieldEffectEnabled:(bool)arg10 originalPhotoDeliveryEnabled:(bool)arg11 stillImageStabilizationEnabled:(bool)arg12 dualCameraFusionEnabled:(bool)arg13 squareCropEnabled:(bool)arg14;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isBravoImageFusionEnabled;
-- (BOOL)isFlashEnabled;
-- (BOOL)isHDREnabled;
-- (BOOL)isOriginalPhotoDeliveryEnabled;
-- (BOOL)isShallowDepthOfFieldEffectEnabled;
-- (BOOL)isSquareCropEnabled;
-- (BOOL)isStillImageStabilizationEnabled;
-- (BOOL)isTurboModeEnabled;
+- (bool)isBravoImageFusionEnabled;
+- (bool)isDualCameraFusionEnabled;
+- (bool)isFlashEnabled;
+- (bool)isHDREnabled;
+- (bool)isOriginalPhotoDeliveryEnabled;
+- (bool)isShallowDepthOfFieldEffectEnabled;
+- (bool)isSquareCropEnabled;
+- (bool)isStillImageStabilizationEnabled;
+- (bool)isTurboModeEnabled;
 - (struct { int x1; int x2; })livePhotoMovieDimensions;
-- (BOOL)livePhotoMovieEnabled;
+- (bool)livePhotoMovieEnabled;
 - (struct { int x1; int x2; })photoDimensions;
 - (struct { int x1; int x2; })previewDimensions;
 - (struct { int x1; int x2; })rawPhotoDimensions;
@@ -39,6 +41,6 @@
 
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 
-- (BOOL)cam_isRecordingMovieForLivePhoto;
+- (bool)cam_isRecordingMovieForLivePhoto;
 
 @end

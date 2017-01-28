@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic) unsigned long long size;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -7,14 +7,14 @@
     NSString * _messageIDHeader;
 }
 
-@property (nonatomic, readonly) BOOL isUserRequested;
-@property (nonatomic, readonly) BOOL shouldSend;
+@property (nonatomic, readonly) bool isUserRequested;
+@property (nonatomic, readonly) bool shouldSend;
 
 - (void)dealloc;
 - (id)deferredOperation;
 - (unsigned long long)generationNumber;
 - (id)initWithMessage:(id)arg1 mailbox:(id)arg2;
-- (BOOL)isUserRequested;
-- (BOOL)shouldSend;
+- (bool)isUserRequested;
+- (bool)shouldSend;
 
 @end

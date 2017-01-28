@@ -14,13 +14,13 @@
 
 + (id)defaultRoute;
 + (void)initGlobals;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)destinationAddress;
 - (id)destinationSubnetMask;
 - (void)encodeWithCoder:(id)arg1;
@@ -28,7 +28,7 @@
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDestinationAddress:(id)arg1 subnetMask:(id)arg2;
-- (BOOL)isDefaultRoute;
+- (bool)isDefaultRoute;
 - (void)setGatewayAddress:(id)arg1;
 
 @end

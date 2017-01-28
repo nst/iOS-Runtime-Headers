@@ -19,18 +19,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PARSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) PARRanker *ranker;
 @property (readonly) Class superclass;
 
 + (id)sessionWithConfiguration:(id)arg1;
-+ (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
++ (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 startImmediately:(bool)arg3;
 + (id)sharedPARSessionWithConfiguration:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addTopicsToSearchRequest:(id)arg1;
 - (void)_setupRanker;
-- (unsigned int)_userAgentToMKSearchFoundationFeedbackClientType:(id)arg1;
+- (unsigned long long)_userAgentToMKSearchFoundationFeedbackClientType:(id)arg1;
 - (id)awaitBag;
 - (id)bag;
 - (void)bagDidLoad:(id)arg1 error:(id)arg2;
@@ -52,11 +52,11 @@
 - (void)didRankSections:(id)arg1;
 - (void)didReceiveResultsAfterTimeout:(id)arg1;
 - (void)didStartSearch:(id)arg1;
-- (unsigned int)enabledStatus;
-- (void)fileHandleAndAttributesForResource:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned long long)enabledStatus;
+- (void)fileHandleAndAttributesForResource:(id)arg1 completion:(id)arg2;
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 connection:(id)arg2;
-- (id)initWithConfiguration:(id)arg1 connection:(id)arg2 delegate:(id)arg3 startImmediately:(BOOL)arg4;
+- (id)initWithConfiguration:(id)arg1 connection:(id)arg2 delegate:(id)arg3 startImmediately:(bool)arg4;
 - (void)loadTask:(id)arg1;
 - (id)ranker;
 - (void)reportEvent:(id)arg1;
@@ -71,6 +71,6 @@
 - (void)setRanker:(id)arg1;
 - (void)start;
 - (void)suggestionsDidBecomeVisible:(id)arg1;
-- (id)taskWithRequest:(id)arg1 completion:(id /* block */)arg2;
+- (id)taskWithRequest:(id)arg1 completion:(id)arg2;
 
 @end

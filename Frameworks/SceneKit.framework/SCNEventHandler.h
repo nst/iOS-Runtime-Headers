@@ -3,33 +3,33 @@
  */
 
 @interface SCNEventHandler : NSObject {
-    BOOL  _autoSwitchToFreeCamera;
-    BOOL  _enableFreeCamera;
+    bool  _autoSwitchToFreeCamera;
+    bool  _enableFreeCamera;
     SCNView * _view;
 }
 
-@property BOOL autoSwitchToFreeCamera;
-@property BOOL enableFreeCamera;
+@property bool autoSwitchToFreeCamera;
+@property bool enableFreeCamera;
 @property (readonly) SCNNode *freeCamera;
 @property (readonly) SCNView *view;
 
 - (void)activateFreeCamera;
-- (BOOL)autoSwitchToFreeCamera;
+- (bool)autoSwitchToFreeCamera;
 - (void)cameraDidChange;
 - (void)cameraWillChange;
 - (void)dealloc;
-- (BOOL)enableFreeCamera;
+- (bool)enableFreeCamera;
 - (id)freeCamera;
 - (id)gestureRecognizers;
 - (id)init;
 - (void)sceneDidChange;
 - (void)sceneWillChange;
-- (void)setAutoSwitchToFreeCamera:(BOOL)arg1;
-- (void)setEnableFreeCamera:(BOOL)arg1;
+- (void)setAutoSwitchToFreeCamera:(bool)arg1;
+- (void)setEnableFreeCamera:(bool)arg1;
 - (void)setView:(id)arg1;
 - (id)view;
 - (void)viewDidDraw;
 - (void)viewWillDraw;
-- (BOOL)wantsRedraw;
+- (bool)wantsRedraw;
 
 @end

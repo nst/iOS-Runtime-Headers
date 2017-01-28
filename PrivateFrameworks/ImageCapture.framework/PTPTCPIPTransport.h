@@ -5,9 +5,9 @@
 @interface PTPTCPIPTransport : PTPTransport {
     PTPTCPIPConnection * _cdConnection;
     NSMutableData * _cdData;
-    unsigned long  _connectionNumber;
+    unsigned int  _connectionNumber;
     id  _connectionRequestResponse;
-    BOOL  _delegateNeedsData;
+    bool  _delegateNeedsData;
     PTPTCPIPConnection * _eventConnection;
     NSMutableData * _eventData;
     NSString * _hostGUID;
@@ -17,39 +17,39 @@
     NSString * _targetAddress;
     NSString * _targetGUID;
     NSString * _targetName;
-    unsigned long  _targetPort;
+    unsigned int  _targetPort;
     PTPTCPIPConnection * _tempConnection;
     NSMutableData * _tempData;
 }
 
 - (void)acceptConnectionFromSocket:(int)arg1;
 - (void)cancelTransaction:(id)arg1;
-- (BOOL)connected;
+- (bool)connected;
 - (void)dealloc;
 - (id)description;
-- (void)didCloseConnection:(id)arg1 withError:(struct { int x1; int x2; })arg2;
+- (void)didCloseConnection:(id)arg1 withError:(struct { long long x1; int x2; })arg2;
 - (void)handleData:(id)arg1 from:(id)arg2;
 - (id)initForAcceptedSocketWithDelegate:(id)arg1 andHostGUID:(id)arg2 andHostName:(id)arg3;
-- (id)initWithHostPort:(unsigned long)arg1 hostName:(id)arg2 hostGUID:(id)arg3 bonjourServiceType:(id)arg4 bonjourTXTRecords:(id)arg5 delegate:(id)arg6;
-- (id)initWithTargetAddress:(id)arg1 targetPort:(unsigned long)arg2 targetGUID:(id)arg3 targetName:(id)arg4 hostGUID:(id)arg5 hostName:(id)arg6 delegate:(id)arg7;
+- (id)initWithHostPort:(unsigned int)arg1 hostName:(id)arg2 hostGUID:(id)arg3 bonjourServiceType:(id)arg4 bonjourTXTRecords:(id)arg5 delegate:(id)arg6;
+- (id)initWithTargetAddress:(id)arg1 targetPort:(unsigned int)arg2 targetGUID:(id)arg3 targetName:(id)arg4 hostGUID:(id)arg5 hostName:(id)arg6 delegate:(id)arg7;
 - (void)releaseConnections;
-- (BOOL)sendCancel:(id)arg1;
+- (bool)sendCancel:(id)arg1;
 - (void)sendData:(id)arg1;
 - (void)sendDataPackets:(id)arg1;
-- (BOOL)sendEvent:(id)arg1;
-- (id)sendRequest:(id)arg1 receiveData:(id)arg2 timeout:(unsigned long)arg3;
-- (id)sendRequest:(id)arg1 sendData:(id)arg2 timeout:(unsigned long)arg3;
-- (BOOL)sendResponse:(id)arg1;
-- (BOOL)sendStartData:(id)arg1;
-- (BOOL)startInitiator;
-- (BOOL)startResponder;
+- (bool)sendEvent:(id)arg1;
+- (id)sendRequest:(id)arg1 receiveData:(id)arg2 timeout:(unsigned int)arg3;
+- (id)sendRequest:(id)arg1 sendData:(id)arg2 timeout:(unsigned int)arg3;
+- (bool)sendResponse:(id)arg1;
+- (bool)sendStartData:(id)arg1;
+- (bool)startInitiator;
+- (bool)startResponder;
 - (void)stop;
 - (id)targetAddress;
 - (id)targetGUID;
 - (id)targetName;
-- (unsigned long)targetPort;
-- (int)waitForCallbackThreadConditionSignalWithTimeout:(long)arg1;
-- (int)waitForCallbackThreadConditionSignalWithTimeoutForConnection:(long)arg1;
-- (BOOL)waitForConnectionWithTimeout:(double)arg1;
+- (unsigned int)targetPort;
+- (int)waitForCallbackThreadConditionSignalWithTimeout:(long long)arg1;
+- (int)waitForCallbackThreadConditionSignalWithTimeoutForConnection:(long long)arg1;
+- (bool)waitForConnectionWithTimeout:(double)arg1;
 
 @end

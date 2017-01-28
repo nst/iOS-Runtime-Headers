@@ -6,6 +6,6 @@
 @required
 
 - (void)setObject:(id)arg1 forKey:(NSString *)arg2;
-- (BOOL)writeAndReturnError:(id*)arg1;
+- (bool)writeAndReturnError:(id*)arg1;
 
 @end

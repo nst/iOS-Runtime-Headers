@@ -9,9 +9,9 @@
 
 @optional
 
-- (BOOL)accessoryVisibilityInteractionController:(PUAccessoryVisibilityInteractionController *)arg1 canBeginAtLocationFromProvider:(id <PUDisplayLocationProvider>)arg2;
-- (BOOL)accessoryVisibilityInteractionController:(PUAccessoryVisibilityInteractionController *)arg1 isLocationFromProviderInAccessoryContent:(id <PUDisplayLocationProvider>)arg2;
-- (void)accessoryVisibilityInteractionController:(PUAccessoryVisibilityInteractionController *)arg1 setAccessoryVisible:(BOOL)arg2 changeReason:(int)arg3;
+- (bool)accessoryVisibilityInteractionController:(PUAccessoryVisibilityInteractionController *)arg1 canBeginAtLocationFromProvider:(id <PUDisplayLocationProvider>)arg2;
+- (bool)accessoryVisibilityInteractionController:(PUAccessoryVisibilityInteractionController *)arg1 isLocationFromProviderInAccessoryContent:(id <PUDisplayLocationProvider>)arg2;
+- (void)accessoryVisibilityInteractionController:(PUAccessoryVisibilityInteractionController *)arg1 setAccessoryVisible:(bool)arg2 changeReason:(long long)arg3;
 - (void)accessoryVisibilityInteractionControllerDidEnd:(PUAccessoryVisibilityInteractionController *)arg1;
 
 @end

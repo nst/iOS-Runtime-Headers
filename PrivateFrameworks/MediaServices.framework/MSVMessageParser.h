@@ -12,7 +12,7 @@
 @property (nonatomic) long long unhandledObjectDataExpectedLength;
 @property (nonatomic, retain) NSMutableData *unhandledPartialObjectData;
 
-+ (id)createHeader:(unsigned int)arg1;
++ (id)createHeader:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (void)_notifyDelegate:(id)arg1;

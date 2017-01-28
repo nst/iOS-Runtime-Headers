@@ -3,14 +3,14 @@
  */
 
 @interface _GEOReverseGeocodeRequestTicket : _GEOPlaceRequestTicket <GEOMapServiceSearchTicket> {
-    BOOL  _shiftLocationsIfNeeded;
+    bool  _shiftLocationsIfNeeded;
 }
 
-@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
+@property (getter=isChainResultSet, nonatomic, readonly) bool chainResultSet;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *relatedSearchSuggestions;
 @property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (nonatomic, readonly) GEOMapRegion *resultBoundingRegion;
@@ -18,12 +18,12 @@
 @property (nonatomic, readonly) NSString *resultSectionHeader;
 @property (nonatomic, readonly) NSString *searchQuery;
 @property (nonatomic, readonly) int searchResultType;
-@property (nonatomic, readonly) BOOL shouldEnableRedoSearch;
+@property (nonatomic, readonly) bool shouldEnableRedoSearch;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
-- (id)initWithRequest:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
+- (id)initWithRequest:(id)arg1 shiftLocationsIfNeeded:(bool)arg2 traits:(id)arg3;
 - (id)searchQuery;
-- (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
+- (void)submitWithHandler:(id)arg1 networkActivity:(id)arg2;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (int)code;
+- (long long)code;
 - (INPaymentRecord *)paymentRecord;
 - (void)setPaymentRecord:(INPaymentRecord *)arg1;
 

@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) NSData *associationUuid;
-@property (nonatomic, readonly) BOOL hasAssociationUuid;
-@property (nonatomic, readonly) BOOL hasObjectUuids;
+@property (nonatomic, readonly) bool hasAssociationUuid;
+@property (nonatomic, readonly) bool hasObjectUuids;
 @property (nonatomic, retain) NSData *objectUuids;
 
 - (void).cxx_destruct;
@@ -19,14 +19,14 @@
 - (id)decodedAssociationUUID;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAssociationUuid;
-- (BOOL)hasObjectUuids;
-- (unsigned int)hash;
+- (bool)hasAssociationUuid;
+- (bool)hasObjectUuids;
+- (unsigned long long)hash;
 - (id)initWithAssociationUUID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)objectUuids;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAssociationUuid:(id)arg1;
 - (void)setObjectUuids:(id)arg1;
 - (void)writeTo:(id)arg1;

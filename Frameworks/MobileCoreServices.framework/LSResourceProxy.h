@@ -9,12 +9,12 @@
     NSURL * _boundDataContainerURL;
     NSString * _boundIconCacheKey;
     NSArray * _boundIconFileNames;
-    BOOL  _boundIconIsBadge;
-    BOOL  _boundIconIsPrerendered;
+    bool  _boundIconIsBadge;
+    bool  _boundIconIsPrerendered;
     NSURL * _boundResourcesDirectoryURL;
     NSString * _localizedName;
-    BOOL  _privateDocumentIconAllowOverride;
-    unsigned int  _propertyListCachingStrategy;
+    bool  _privateDocumentIconAllowOverride;
+    unsigned long long  _propertyListCachingStrategy;
     LSApplicationProxy * _typeOwner;
 }
 
@@ -24,69 +24,69 @@
 @property (nonatomic, copy) NSURL *boundDataContainerURL;
 @property (nonatomic, copy) NSString *boundIconCacheKey;
 @property (nonatomic, copy) NSArray *boundIconFileNames;
-@property (nonatomic) BOOL boundIconIsBadge;
-@property (nonatomic) BOOL boundIconIsPrerendered;
+@property (nonatomic) bool boundIconIsBadge;
+@property (nonatomic) bool boundIconIsPrerendered;
 @property (nonatomic, readonly) NSDictionary *boundIconsDictionary;
 @property (nonatomic, copy) NSURL *boundResourcesDirectoryURL;
 @property (nonatomic, readonly) NSDictionary *iconsDictionary;
 @property (nonatomic, copy) NSString *localizedName;
-@property (nonatomic) BOOL privateDocumentIconAllowOverride;
-@property (nonatomic) unsigned int propertyListCachingStrategy;
+@property (nonatomic) bool privateDocumentIconAllowOverride;
+@property (nonatomic) unsigned long long propertyListCachingStrategy;
 @property (nonatomic, copy) LSApplicationProxy *typeOwner;
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_boundIconsDictionary;
 - (id)_initWithLocalizedName:(id)arg1;
-- (id)_initWithLocalizedName:(id)arg1 boundApplicationIdentifier:(id)arg2 boundContainerURL:(id)arg3 dataContainerURL:(id)arg4 boundResourcesDirectoryURL:(id)arg5 boundIconsDictionary:(id)arg6 boundIconCacheKey:(id)arg7 boundIconFileNames:(id)arg8 typeOwner:(id)arg9 boundIconIsPrerendered:(BOOL)arg10 boundIconIsBadge:(BOOL)arg11;
+- (id)_initWithLocalizedName:(id)arg1 boundApplicationIdentifier:(id)arg2 boundContainerURL:(id)arg3 dataContainerURL:(id)arg4 boundResourcesDirectoryURL:(id)arg5 boundIconsDictionary:(id)arg6 boundIconCacheKey:(id)arg7 boundIconFileNames:(id)arg8 typeOwner:(id)arg9 boundIconIsPrerendered:(bool)arg10 boundIconIsBadge:(bool)arg11;
 - (void)_setBoundIconsDictionary:(id)arg1;
 - (id)boundApplicationIdentifier;
 - (id)boundContainerURL;
 - (id)boundDataContainerURL;
 - (id)boundIconCacheKey;
 - (id)boundIconFileNames;
-- (BOOL)boundIconIsBadge;
-- (BOOL)boundIconIsPrerendered;
+- (bool)boundIconIsBadge;
+- (bool)boundIconIsPrerendered;
 - (id)boundIconsDictionary;
 - (id)boundResourcesDirectoryURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)iconDataForStyle:(id)arg1 width:(int)arg2 height:(int)arg3 options:(unsigned int)arg4;
+- (id)iconDataForStyle:(id)arg1 width:(long long)arg2 height:(long long)arg3 options:(unsigned long long)arg4;
 - (id)iconDataForVariant:(int)arg1;
 - (id)iconStyleDomain;
 - (id)iconsDictionary;
 - (id)initWithCoder:(id)arg1;
 - (id)localizedName;
-- (BOOL)privateDocumentIconAllowOverride;
-- (unsigned int)propertyListCachingStrategy;
+- (bool)privateDocumentIconAllowOverride;
+- (unsigned long long)propertyListCachingStrategy;
 - (void)setBoundApplicationIdentifier:(id)arg1;
 - (void)setBoundContainerURL:(id)arg1;
 - (void)setBoundDataContainerURL:(id)arg1;
 - (void)setBoundIconCacheKey:(id)arg1;
 - (void)setBoundIconFileNames:(id)arg1;
-- (void)setBoundIconIsBadge:(BOOL)arg1;
-- (void)setBoundIconIsPrerendered:(BOOL)arg1;
+- (void)setBoundIconIsBadge:(bool)arg1;
+- (void)setBoundIconIsPrerendered:(bool)arg1;
 - (void)setBoundResourcesDirectoryURL:(id)arg1;
 - (void)setLocalizedName:(id)arg1;
-- (void)setPrivateDocumentIconAllowOverride:(BOOL)arg1;
-- (void)setPropertyListCachingStrategy:(unsigned int)arg1;
+- (void)setPrivateDocumentIconAllowOverride:(bool)arg1;
+- (void)setPropertyListCachingStrategy:(unsigned long long)arg1;
 - (void)setTypeOwner:(id)arg1;
 - (id)typeOwner;
 - (id)uniqueIdentifier;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (struct CGSize { float x1; float x2; })_applicationIconCanvasSize;
-+ (int)_compareApplicationIconCanvasSize:(struct CGSize { float x1; float x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
++ (struct CGSize { double x1; double x2; })_applicationIconCanvasSize;
++ (long long)_compareApplicationIconCanvasSize:(struct CGSize { double x1; double x2; })arg1 withSize:(struct CGSize { double x1; double x2; })arg2;
 
-- (struct CGSize { float x1; float x2; })_defaultStyleSize:(id)arg1;
-- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { float x1; float x2; })arg1 style:(id)arg2;
+- (struct CGSize { double x1; double x2; })_defaultStyleSize:(id)arg1;
+- (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconDefinitionForSize:(struct CGSize { double x1; double x2; })arg1 style:(id)arg2;
 - (id)_iconForStyle:(id)arg1;
-- (id)_iconForStyle:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
-- (struct CGSize { float x1; float x2; })_largestImageSize:(id)arg1;
+- (id)_iconForStyle:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2;
+- (struct { int x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; }*)_iconVariantDefinitions:(id)arg1;
+- (struct CGSize { double x1; double x2; })_largestImageSize:(id)arg1;
 
 @end

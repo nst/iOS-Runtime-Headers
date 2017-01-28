@@ -10,8 +10,8 @@
     GEOUserSessionEntity * _geoUserSessionEntity;
     PARSession * _parsecdSession;
     NSObject<OS_dispatch_queue> * _requestProcessingQueue;
-    float  _uiScale;
-    BOOL  _valid;
+    double  _uiScale;
+    bool  _valid;
 }
 
 @property (nonatomic, retain) WBSCompletionQuery *currentQuery;
@@ -19,16 +19,16 @@
 @property (nonatomic) <WBSParsecSearchSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) <WBSParsecFeedbackDispatcher> *feedbackDispatcher;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PARSession *parsecdSession;
 @property (readonly) Class superclass;
-@property (setter=setUIScale:, nonatomic) float uiScale;
-@property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (setter=setUIScale:, nonatomic) double uiScale;
+@property (getter=isValid, nonatomic, readonly) bool valid;
 
 + (id)sharedCorrectionsProcessor;
 + (id)sharedDomainPolicyProvider;
 + (id)sharedPARSession;
-+ (BOOL)shouldUseSearchFoundation;
++ (bool)shouldUseSearchFoundation;
 
 - (void).cxx_destruct;
 - (void)_didReceiveResponse:(id)arg1 error:(id)arg2 forTask:(id)arg3 query:(id)arg4;
@@ -39,16 +39,16 @@
 - (id)currentQuery;
 - (id)delegate;
 - (id)feedbackDispatcher;
-- (void)fetchCardDetailsForResult:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)fetchCardDetailsForResult:(id)arg1 completionBlock:(id)arg2;
 - (id)init;
 - (id)initWithParsecdSession:(id)arg1;
-- (BOOL)isValid;
+- (bool)isValid;
 - (id)parsecdSession;
 - (void)session:(id)arg1 bag:(id)arg2 didLoadWithError:(id)arg3;
 - (void)setCurrentQuery:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setParsecdSession:(id)arg1;
-- (void)setUIScale:(float)arg1;
-- (float)uiScale;
+- (void)setUIScale:(double)arg1;
+- (double)uiScale;
 
 @end

@@ -6,7 +6,7 @@
 
 - (id)_entireHomeFormatString;
 - (id)_isOpenCharacteristicType;
-- (id /* block */)_isOpenTest;
+- (id)_isOpenTest;
 - (id)_multipleOpenRoomsFormatString;
 - (id)_serviceType;
 - (id)_singleOpenRoomFormatString;

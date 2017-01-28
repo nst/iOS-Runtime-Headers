@@ -18,16 +18,16 @@
 - (void)loadView;
 - (id)personalizedBaseName;
 - (void)prepareParams;
-- (void)primaryActionSelected:(BOOL)arg1;
+- (void)primaryActionSelected:(bool)arg1;
 - (void)selectedDeviceUpdated;
 - (void)setJustTextContainerView2:(id)arg1;
 - (void)setPersonalizedBaseName:(id)arg1;
 - (void)setupDevices;
 - (void)setupEditableBaseStationName;
 - (void)setupHeaderAndFooter;
-- (BOOL)shouldChangeTextField:(id)arg1 atIndexPath:(id)arg2 forTextIndex:(unsigned int)arg3 toString:(id)arg4;
+- (bool)shouldChangeTextField:(id)arg1 atIndexPath:(id)arg2 forTextIndex:(unsigned long long)arg3 toString:(id)arg4;
 - (void)updateNavigationButtons;
 - (void)validateAndUpdateNextButton;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

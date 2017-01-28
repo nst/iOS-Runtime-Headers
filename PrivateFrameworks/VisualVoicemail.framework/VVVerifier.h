@@ -19,7 +19,7 @@
 - (id)humanReadableConfigurationDictionary:(id*)arg1;
 - (id)keyDescriptions;
 - (id)readableError;
-- (void)storeValue:(BOOL)arg1 forCheckpointKey:(id)arg2;
-- (BOOL)valueForCheckpointKey:(id)arg1 exists:(BOOL*)arg2;
+- (void)storeValue:(bool)arg1 forCheckpointKey:(id)arg2;
+- (bool)valueForCheckpointKey:(id)arg1 exists:(bool*)arg2;
 
 @end

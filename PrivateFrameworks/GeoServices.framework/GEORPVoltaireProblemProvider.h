@@ -3,17 +3,17 @@
  */
 
 @interface GEORPVoltaireProblemProvider : GEORPProblemProvider <GEOPBSessionRequesterDelegate> {
-    id /* block */  _statusErrorHandler;
-    id /* block */  _statusFinishedHandler;
+    id  _statusErrorHandler;
+    id  _statusFinishedHandler;
     GEORequester * _statusRequester;
-    id /* block */  _submissionErrorHandler;
-    id /* block */  _submissionFinishedHandler;
+    id  _submissionErrorHandler;
+    id  _submissionFinishedHandler;
     GEORequester * _submissionRequester;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)cancelRequest;
@@ -21,7 +21,7 @@
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)startStatusRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
-- (void)startSubmissionRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
+- (void)startStatusRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startSubmissionRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 
 @end

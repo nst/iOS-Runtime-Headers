@@ -7,7 +7,7 @@
     WebView * _inspectedWebView;
 }
 
-@property (getter=isOpen, nonatomic, readonly) BOOL open;
+@property (getter=isOpen, nonatomic, readonly) bool open;
 
 - (void)attach:(id)arg1;
 - (void)close:(id)arg1;
@@ -16,15 +16,15 @@
 - (void)evaluateInFrontend:(id)arg1 script:(id)arg2;
 - (id)initWithInspectedWebView:(id)arg1;
 - (void)inspectedWebViewClosed;
-- (BOOL)isDebuggingJavaScript;
-- (BOOL)isJavaScriptProfilingEnabled;
-- (BOOL)isOpen;
-- (BOOL)isProfilingJavaScript;
-- (BOOL)isTimelineProfilingEnabled;
+- (bool)isDebuggingJavaScript;
+- (bool)isJavaScriptProfilingEnabled;
+- (bool)isOpen;
+- (bool)isProfilingJavaScript;
+- (bool)isTimelineProfilingEnabled;
 - (void)releaseFrontend;
 - (void)setFrontend:(id)arg1;
-- (void)setJavaScriptProfilingEnabled:(BOOL)arg1;
-- (void)setTimelineProfilingEnabled:(BOOL)arg1;
+- (void)setJavaScriptProfilingEnabled:(bool)arg1;
+- (void)setTimelineProfilingEnabled:(bool)arg1;
 - (void)show:(id)arg1;
 - (void)showConsole:(id)arg1;
 - (void)showWindow;

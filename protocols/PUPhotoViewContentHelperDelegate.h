@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)photoViewContentHelper:(PUPhotoViewContentHelper *)arg1 livePhotoWillBeginPlaybackWithStyle:(int)arg2;
+- (void)photoViewContentHelper:(PUPhotoViewContentHelper *)arg1 livePhotoWillBeginPlaybackWithStyle:(long long)arg2;
 
 @end

@@ -4,28 +4,30 @@
 
 @interface CNUIContactsEnvironment : NSObject {
     CNUIAccountsFacade * _accountsFacade;
-    long  _accountsFacade_once;
+    long long  _accountsFacade_once;
     <CNUIUserActionDiscoveringEnvironment> * _actionDiscoveringEnvironment;
-    long  _actionDiscoveringEnvironment_once;
+    long long  _actionDiscoveringEnvironment_once;
     <CNUIPRLikenessResolver> * _cachingLikenessResolver;
-    long  _cachingLikenessResolver_once;
+    long long  _cachingLikenessResolver_once;
     CNContactsEnvironment * _cnEnvironment;
+    CNContactChangesNotifier * _contactChangesNotifier;
+    long long  _contactChangesNotifier_once;
     CNContactStore * _contactStore;
-    long  _contactStore_once;
+    long long  _contactStore_once;
     <CNSchedulerProvider> * _defaultSchedulerProvider;
-    long  _defaultSchedulerProvider_once;
+    long long  _defaultSchedulerProvider_once;
     _DECConsumer * _duetConsumer;
-    long  _duetConsumer_once;
+    long long  _duetConsumer_once;
     CNUIFMFFacade * _fmfFacade;
-    long  _fmfFacade_once;
+    long long  _fmfFacade_once;
     CNUIIDSAvailabilityProvider * _idsAvailabilityProvider;
-    long  _idsAvailabilityProvider_once;
+    long long  _idsAvailabilityProvider_once;
     CNUIMeContactMonitor * _meMonitor;
-    long  _meMonitor_once;
+    long long  _meMonitor_once;
     PRPersonaStore * _personaStore;
-    long  _personaStore_once;
+    long long  _personaStore_once;
     <CNUIPlaceholderProviderFactory> * _placeholderProviderFactory;
-    long  _placeholderProviderFactory_once;
+    long long  _placeholderProviderFactory_once;
     CNUIContactsEnvironmentServicesProvider * _servicesProvider;
 }
 
@@ -33,6 +35,7 @@
 @property (nonatomic, retain) <CNUIUserActionDiscoveringEnvironment> *actionDiscoveringEnvironment;
 @property (nonatomic, retain) <CNUIPRLikenessResolver> *cachingLikenessResolver;
 @property (nonatomic, readonly) CNContactsEnvironment *cnEnvironment;
+@property (nonatomic, retain) CNContactChangesNotifier *contactChangesNotifier;
 @property (nonatomic, retain) CNContactStore *contactStore;
 @property (nonatomic, retain) <CNSchedulerProvider> *defaultSchedulerProvider;
 @property (nonatomic, retain) _DECConsumer *duetConsumer;
@@ -50,6 +53,7 @@
 - (id)actionDiscoveringEnvironment;
 - (id)cachingLikenessResolver;
 - (id)cnEnvironment;
+- (id)contactChangesNotifier;
 - (id)contactStore;
 - (id)defaultSchedulerProvider;
 - (id)duetConsumer;
@@ -64,6 +68,7 @@
 - (void)setAccountsFacade:(id)arg1;
 - (void)setActionDiscoveringEnvironment:(id)arg1;
 - (void)setCachingLikenessResolver:(id)arg1;
+- (void)setContactChangesNotifier:(id)arg1;
 - (void)setContactStore:(id)arg1;
 - (void)setDefaultSchedulerProvider:(id)arg1;
 - (void)setDuetConsumer:(id)arg1;

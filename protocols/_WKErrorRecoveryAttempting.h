@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)attemptRecovery;
+- (bool)attemptRecovery;
 
 @end

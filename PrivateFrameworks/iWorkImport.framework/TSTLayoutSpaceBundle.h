@@ -23,9 +23,9 @@
 @property (nonatomic, retain) TSTLayoutSpace *space;
 
 - (void)dealloc;
-- (BOOL)enumerateFrozenLayoutSpacesUsingBlock:(id /* block */)arg1;
-- (void)enumerateLayoutSpacesUsingBlock:(id /* block */)arg1;
-- (BOOL)enumerateRepeatLayoutSpacesUsingBlock:(id /* block */)arg1;
+- (bool)enumerateFrozenLayoutSpacesUsingBlock:(id)arg1;
+- (void)enumerateLayoutSpacesUsingBlock:(id)arg1;
+- (bool)enumerateRepeatLayoutSpacesUsingBlock:(id)arg1;
 - (id)frozenHeaderColumnsSpace;
 - (id)frozenHeaderCornerSpace;
 - (id)frozenHeaderRowsSpace;

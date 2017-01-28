@@ -3,21 +3,21 @@
  */
 
 @interface PRSParsecResultSetPattern : NSObject {
-    int  _patternLength;
+    long long  _patternLength;
     NSRegularExpression * _regularExpression;
 }
 
-@property (readonly) int patternLength;
+@property (readonly) long long patternLength;
 
-+ (id)_nextTokenInResultSetPattern:(id)arg1 optional:(BOOL*)arg2;
-+ (id)_regularExpressionPatternForResultSetPatternSuffix:(id)arg1 tokenCount:(int*)arg2;
++ (id)_nextTokenInResultSetPattern:(id)arg1 optional:(bool*)arg2;
++ (id)_regularExpressionPatternForResultSetPatternSuffix:(id)arg1 tokenCount:(long long*)arg2;
 + (id)_regularExpressionPatternForToken:(id)arg1;
-+ (id)_regularExpressionPatternFromResultSetPattern:(id)arg1 tokenCount:(int*)arg2;
++ (id)_regularExpressionPatternFromResultSetPattern:(id)arg1 tokenCount:(long long*)arg2;
 + (id)patternWithString:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_initWithRegularExpression:(id)arg1 tokenCount:(int)arg2;
-- (BOOL)isMatchedByString:(id)arg1;
-- (int)patternLength;
+- (id)_initWithRegularExpression:(id)arg1 tokenCount:(long long)arg2;
+- (bool)isMatchedByString:(id)arg1;
+- (long long)patternLength;
 
 @end

@@ -7,6 +7,7 @@
     NSMutableSet * _hiddenSectionStrings;
 }
 
+@property (nonatomic, readonly) NSSet *allNotificationRequests;
 @property (nonatomic, retain) NSMutableDictionary *hiddenRequests;
 @property (nonatomic, retain) NSMutableSet *hiddenSectionStrings;
 
@@ -15,12 +16,14 @@
 - (id)_storageStringForSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
 - (void)addHiddenNotificationRequest:(id)arg1;
 - (void)addHiddenSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
+- (id)allNotificationRequests;
+- (void)clearAllNotificationRequests;
 - (id)hiddenNotificationRequestsForSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
 - (id)hiddenRequests;
 - (id)hiddenSectionStrings;
 - (id)init;
-- (BOOL)isHiddenNotificationRequest:(id)arg1;
-- (BOOL)isHiddenSectionIdentifer:(id)arg1 subSectionIdentifier:(id)arg2;
+- (bool)isHiddenNotificationRequest:(id)arg1;
+- (bool)isHiddenSectionIdentifer:(id)arg1 subSectionIdentifier:(id)arg2;
 - (void)removeHiddenNotificationRequest:(id)arg1;
 - (void)removeHiddenSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
 - (void)replaceHiddenNotificationRequest:(id)arg1;

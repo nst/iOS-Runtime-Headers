@@ -3,42 +3,42 @@
  */
 
 @interface NSLayoutAnchorRelationship : NSObject <NSLayoutRelationship> {
-    float  _constant;
+    double  _constant;
     NSLayoutAnchor * _firstAnchor;
     NSString * _identifier;
-    float  _multiplier;
+    double  _multiplier;
     float  _priority;
-    int  _relation;
+    long long  _relation;
     NSLayoutAnchor * _secondAnchor;
 }
 
-@property (readonly) float constant;
+@property (readonly) double constant;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly, copy) NSLayoutAnchor *firstAnchor;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly, copy) NSString *identifier;
-@property (readonly) float multiplier;
+@property (readonly) double multiplier;
 @property (readonly) float priority;
-@property (readonly) int relation;
+@property (readonly) long long relation;
 @property (readonly, copy) NSString *relationshipDescription;
 @property (readonly, copy) NSLayoutAnchor *secondAnchor;
 @property (readonly) Class superclass;
 
-- (float)constant;
+- (double)constant;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)firstAnchor;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
-- (id)initWithFirstAnchor:(id)arg1 secondAnchor:(id)arg2 relation:(int)arg3 multiplier:(float)arg4 constant:(float)arg5 priority:(float)arg6 identifier:(id)arg7;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithFirstAnchor:(id)arg1 secondAnchor:(id)arg2 relation:(long long)arg3 multiplier:(double)arg4 constant:(double)arg5 priority:(float)arg6 identifier:(id)arg7;
+- (bool)isEqual:(id)arg1;
 - (id)makeChildrenRelationships;
 - (id)makeLayoutConstraint;
-- (float)multiplier;
+- (double)multiplier;
 - (float)priority;
-- (int)relation;
+- (long long)relation;
 - (id)relationshipDescription;
 - (id)secondAnchor;
 

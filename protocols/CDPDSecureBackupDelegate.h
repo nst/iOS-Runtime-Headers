@@ -6,8 +6,8 @@
 @required
 
 - (NSString *)circlePeerIDForSecureBackupController:(CDPDSecureBackupController *)arg1;
-- (void)promotForLocalSecretWithCompletion:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, unsigned int, NSError *, void*
-- (void)promptForAdoptionOfMultipleICSCWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
-- (BOOL)synchronizeCircleViewsForSecureBackupController:(CDPDSecureBackupController *)arg1;
+- (void)promotForLocalSecretWithCompletion:(void *)arg1; // needs 1 arg types, found 8: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSString *, unsigned long long, NSError *, void*
+- (void)promptForAdoptionOfMultipleICSCWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, NSError *, void*
+- (bool)synchronizeCircleViewsForSecureBackupController:(CDPDSecureBackupController *)arg1;
 
 @end

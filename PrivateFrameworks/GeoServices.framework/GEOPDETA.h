@@ -16,10 +16,10 @@
 }
 
 @property (nonatomic) unsigned int distance;
-@property (nonatomic) BOOL hasDistance;
-@property (nonatomic) BOOL hasHistoricTravelTime;
-@property (nonatomic) BOOL hasTime;
-@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) bool hasDistance;
+@property (nonatomic) bool hasHistoricTravelTime;
+@property (nonatomic) bool hasTime;
+@property (nonatomic) bool hasTransportType;
 @property (nonatomic) unsigned int historicTravelTime;
 @property (nonatomic) unsigned int time;
 @property (nonatomic) int transportType;
@@ -33,20 +33,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)distance;
-- (BOOL)hasDistance;
-- (BOOL)hasHistoricTravelTime;
-- (BOOL)hasTime;
-- (BOOL)hasTransportType;
-- (unsigned int)hash;
+- (bool)hasDistance;
+- (bool)hasHistoricTravelTime;
+- (bool)hasTime;
+- (bool)hasTransportType;
+- (unsigned long long)hash;
 - (unsigned int)historicTravelTime;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDistance:(unsigned int)arg1;
-- (void)setHasDistance:(BOOL)arg1;
-- (void)setHasHistoricTravelTime:(BOOL)arg1;
-- (void)setHasTime:(BOOL)arg1;
-- (void)setHasTransportType:(BOOL)arg1;
+- (void)setHasDistance:(bool)arg1;
+- (void)setHasHistoricTravelTime:(bool)arg1;
+- (void)setHasTime:(bool)arg1;
+- (void)setHasTransportType:(bool)arg1;
 - (void)setHistoricTravelTime:(unsigned int)arg1;
 - (void)setTime:(unsigned int)arg1;
 - (void)setTransportType:(int)arg1;

@@ -9,8 +9,8 @@
 
 @property (nonatomic, retain) CKDPLocationBound *bounds;
 @property (nonatomic, retain) CKDPLocationCoordinate *coordinate;
-@property (nonatomic, readonly) BOOL hasBounds;
-@property (nonatomic, readonly) BOOL hasCoordinate;
+@property (nonatomic, readonly) bool hasBounds;
+@property (nonatomic, readonly) bool hasCoordinate;
 
 - (void).cxx_destruct;
 - (id)bounds;
@@ -19,12 +19,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasBounds;
-- (BOOL)hasCoordinate;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBounds;
+- (bool)hasCoordinate;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBounds:(id)arg1;
 - (void)setCoordinate:(id)arg1;
 - (void)writeTo:(id)arg1;

@@ -4,13 +4,13 @@
 
 @interface CKContainerID : NSObject <NSCopying, NSSecureCoding> {
     NSString * _containerIdentifier;
-    int  _environment;
+    long long  _environment;
 }
 
 @property (nonatomic, readonly) NSString *containerIdentifier;
-@property (nonatomic, readonly) int environment;
+@property (nonatomic, readonly) long long environment;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -19,11 +19,11 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (int)environment;
-- (unsigned int)hash;
+- (long long)environment;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContainerIdentifier:(id)arg1 environment:(int)arg2;
+- (id)initWithContainerIdentifier:(id)arg1 environment:(long long)arg2;
 - (id)initWithDictionaryRepresentation:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

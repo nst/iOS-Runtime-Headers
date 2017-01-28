@@ -4,14 +4,14 @@
 
 @interface _UIDatePickerMode_DateWithOptionalYear : _UIDatePickerMode_Date
 
-+ (int)datePickerMode;
++ (long long)datePickerMode;
 
-- (BOOL)_shouldEnableValueForRow:(int)arg1 inComponent:(int)arg2 calendarUnit:(unsigned int)arg3;
-- (id)dateComponentsByRestrictingSelectedComponents:(id)arg1 withLastManipulatedColumn:(int)arg2;
-- (int)numberOfRowsForCalendarUnit:(unsigned int)arg1;
-- (int)rowForDate:(id)arg1 dateComponents:(id)arg2 component:(int)arg3 currentRow:(int)arg4;
+- (bool)_shouldEnableValueForRow:(long long)arg1 inComponent:(long long)arg2 calendarUnit:(unsigned long long)arg3;
+- (id)dateComponentsByRestrictingSelectedComponents:(id)arg1 withLastManipulatedColumn:(long long)arg2;
+- (long long)numberOfRowsForCalendarUnit:(unsigned long long)arg1;
+- (long long)rowForDate:(id)arg1 dateComponents:(id)arg2 component:(long long)arg3 currentRow:(long long)arg4;
 - (id)selectedDateComponents;
-- (id)titleForRow:(int)arg1 inComponent:(int)arg2;
-- (int)yearForRow:(int)arg1;
+- (id)titleForRow:(long long)arg1 inComponent:(long long)arg2;
+- (long long)yearForRow:(long long)arg1;
 
 @end

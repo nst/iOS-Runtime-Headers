@@ -3,18 +3,18 @@
  */
 
 @interface _LSAllURLSchemesQuery : _LSQuery {
-    int  _type;
+    long long  _type;
 }
 
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
-- (BOOL)_shouldCacheResolvedResults;
+- (void)_enumerateWithXPCConnection:(id)arg1 block:(id)arg2;
+- (bool)_shouldCacheResolvedResults;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(int)arg1;
-- (int)type;
+- (id)initWithType:(long long)arg1;
+- (long long)type;
 
 @end

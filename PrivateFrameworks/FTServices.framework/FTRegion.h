@@ -37,7 +37,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
 
-- (BOOL)isLeafNode;
-- (BOOL)search:(id)arg1 withResults:(id)arg2;
+- (bool)isLeafNode;
+- (bool)search:(id)arg1 withResults:(id)arg2;
 
 @end

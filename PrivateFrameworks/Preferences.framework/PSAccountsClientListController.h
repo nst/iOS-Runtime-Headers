@@ -5,12 +5,12 @@
 @interface PSAccountsClientListController : PSListController {
     id  _acObserver;
     PSSpecifier * _accountSpecifier;
-    BOOL  _noAccountsSetUp;
-    BOOL  _showExtraVC;
+    bool  _noAccountsSetUp;
+    bool  _showExtraVC;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_isAccountModificationDisabledByRestrictions;
+- (bool)_isAccountModificationDisabledByRestrictions;
 - (id)_visibleAccountTypeIDs;
 - (void)dealloc;
 - (id)init;
@@ -18,6 +18,6 @@
 - (void)setSpecifiers:(id)arg1;
 - (id)specifierForID:(id)arg1;
 - (void)updateAccountSpecifier;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

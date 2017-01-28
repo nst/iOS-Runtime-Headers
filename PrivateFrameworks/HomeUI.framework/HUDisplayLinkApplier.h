@@ -3,27 +3,27 @@
  */
 
 @interface HUDisplayLinkApplier : HUApplier {
-    BOOL  _applyOnlyOnProgressChanges;
+    bool  _applyOnlyOnProgressChanges;
     CADisplayLink * _displayLink;
-    id /* block */  _progressInputBlock;
+    id  _progressInputBlock;
 }
 
-@property (nonatomic) BOOL applyOnlyOnProgressChanges;
+@property (nonatomic) bool applyOnlyOnProgressChanges;
 @property (nonatomic, retain) CADisplayLink *displayLink;
-@property (nonatomic, copy) id /* block */ progressInputBlock;
+@property (nonatomic, copy) id progressInputBlock;
 
 - (void).cxx_destruct;
 - (void)_displayLinkTick;
 - (void)_invalidateDisplayLinkIfNecessary;
-- (BOOL)applyOnlyOnProgressChanges;
-- (BOOL)complete:(BOOL)arg1;
+- (bool)applyOnlyOnProgressChanges;
+- (bool)complete:(bool)arg1;
 - (id)displayLink;
 - (id)init;
-- (id)initWithProgressInputBlock:(id /* block */)arg1;
-- (id /* block */)progressInputBlock;
-- (void)setApplyOnlyOnProgressChanges:(BOOL)arg1;
+- (id)initWithProgressInputBlock:(id)arg1;
+- (id)progressInputBlock;
+- (void)setApplyOnlyOnProgressChanges:(bool)arg1;
 - (void)setDisplayLink:(id)arg1;
-- (void)setProgressInputBlock:(id /* block */)arg1;
-- (BOOL)start;
+- (void)setProgressInputBlock:(id)arg1;
+- (bool)start;
 
 @end

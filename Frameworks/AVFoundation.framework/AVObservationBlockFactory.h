@@ -4,6 +4,6 @@
 
 @interface AVObservationBlockFactory : NSObject
 
-+ (id /* block */)observationBlockForWeakObserver:(id)arg1 passedToBlock:(id /* block */)arg2;
++ (id)observationBlockForWeakObserver:(id)arg1 passedToBlock:(id)arg2;
 
 @end

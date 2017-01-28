@@ -4,21 +4,21 @@
 
 @interface LPPresentationSpecializations : NSObject
 
-+ (BOOL)_isImgurDirectImageURLComponents:(id)arg1;
-+ (BOOL)_isTweetURLComponents:(id)arg1;
-+ (BOOL)_isYouTubeURLComponents:(id)arg1;
++ (bool)_isImgurDirectImageURLComponents:(id)arg1;
++ (bool)_isTweetURLComponents:(id)arg1;
++ (bool)_isYouTubeURLComponents:(id)arg1;
 + (id)_nonDirectURLForImgurURLComponents:(id)arg1;
 + (id)_nonMobileTweetURLForTweetURLComponents:(id)arg1;
 + (id)_nonMobileYouTubeURLForURLComponents:(id)arg1;
 + (id)canonicalMetadataURLForURL:(id)arg1;
-+ (BOOL)isMicroblogPost:(id)arg1;
-+ (BOOL)isSinaWeiboURL:(id)arg1;
-+ (BOOL)isTweetURL:(id)arg1;
-+ (BOOL)isTwitterProfileImageURL:(id)arg1;
-+ (BOOL)isYouTubeEmbedURL:(id)arg1;
-+ (BOOL)isYouTubeVideoURL:(id)arg1;
++ (bool)isMicroblogPost:(id)arg1;
++ (bool)isSinaWeiboURL:(id)arg1;
++ (bool)isTweetURL:(id)arg1;
++ (bool)isTwitterProfileImageURL:(id)arg1;
++ (bool)isYouTubeEmbedURL:(id)arg1;
++ (bool)isYouTubeVideoURL:(id)arg1;
 + (id)searchQueryForURL:(id)arg1;
-+ (BOOL)shouldLoadInsteadOfUsingExistingWebViewForURL:(id)arg1;
++ (bool)shouldLoadInsteadOfUsingExistingWebViewForURL:(id)arg1;
 + (id)youTubeVideoComponentsForEmbedURL:(id)arg1;
 + (id)youTubeVideoComponentsForVideoURL:(id)arg1;
 

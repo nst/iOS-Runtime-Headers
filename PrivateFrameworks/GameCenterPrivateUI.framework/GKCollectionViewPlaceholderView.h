@@ -3,7 +3,7 @@
  */
 
 @interface GKCollectionViewPlaceholderView : UICollectionReusableView <_GKStateMachineDelegate> {
-    int  _alignment;
+    long long  _alignment;
     NSArray * _cachedConstraints;
     NSString * _errorMessage;
     NSString * _errorTitle;
@@ -17,13 +17,13 @@
     GKPlaceholderView * _placeholderView;
 }
 
-@property (nonatomic) int alignment;
+@property (nonatomic) long long alignment;
 @property (nonatomic, retain) NSArray *cachedConstraints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *errorMessage;
 @property (nonatomic, retain) NSString *errorTitle;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIActivityIndicatorView *loadingIndicatorView;
 @property (nonatomic, retain) GKPlaceholderContentStateMachine *loadingMachine;
 @property (nonatomic, retain) NSString *loadingState;
@@ -35,7 +35,7 @@
 @property (nonatomic, retain) GKPlaceholderView *placeholderView;
 @property (readonly) Class superclass;
 
-- (int)alignment;
+- (long long)alignment;
 - (void)buttonPressed;
 - (id)cachedConstraints;
 - (void)dealloc;
@@ -48,7 +48,7 @@
 - (void)didExitNoContentState;
 - (id)errorMessage;
 - (id)errorTitle;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)loadingIndicatorView;
 - (id)loadingMachine;
 - (id)loadingState;
@@ -58,7 +58,7 @@
 - (id)noContentMessage;
 - (id)noContentTitle;
 - (id)placeholderView;
-- (void)setAlignment:(int)arg1;
+- (void)setAlignment:(long long)arg1;
 - (void)setCachedConstraints:(id)arg1;
 - (void)setErrorMessage:(id)arg1;
 - (void)setErrorTitle:(id)arg1;

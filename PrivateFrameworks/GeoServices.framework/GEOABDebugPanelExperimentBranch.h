@@ -14,10 +14,10 @@
 @property (nonatomic, retain) NSString *branchName;
 @property (nonatomic, retain) NSString *experimentId;
 @property (nonatomic, retain) NSString *experimentName;
-@property (nonatomic, readonly) BOOL hasBranchLabel;
-@property (nonatomic, readonly) BOOL hasBranchName;
-@property (nonatomic, readonly) BOOL hasExperimentId;
-@property (nonatomic, readonly) BOOL hasExperimentName;
+@property (nonatomic, readonly) bool hasBranchLabel;
+@property (nonatomic, readonly) bool hasBranchName;
+@property (nonatomic, readonly) bool hasExperimentId;
+@property (nonatomic, readonly) bool hasExperimentName;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (id)branchLabel;
@@ -29,14 +29,14 @@
 - (id)dictionaryRepresentation;
 - (id)experimentId;
 - (id)experimentName;
-- (BOOL)hasBranchLabel;
-- (BOOL)hasBranchName;
-- (BOOL)hasExperimentId;
-- (BOOL)hasExperimentName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasBranchLabel;
+- (bool)hasBranchName;
+- (bool)hasExperimentId;
+- (bool)hasExperimentName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setBranchLabel:(id)arg1;
 - (void)setBranchName:(id)arg1;
 - (void)setExperimentId:(id)arg1;

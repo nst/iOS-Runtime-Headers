@@ -4,6 +4,6 @@
 
 @interface HKTitledContactBuddyHeaderView : HKTitledBuddyHeaderView
 
-- (id)initWithTopInset:(float)arg1 parentViewController:(id)arg2;
+- (id)initWithTopInset:(double)arg1 parentViewController:(id)arg2;
 
 @end

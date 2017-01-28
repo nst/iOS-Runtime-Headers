@@ -3,10 +3,10 @@
  */
 
 @interface MPSTemporaryImage : MPSImage {
-    unsigned int  _readCount;
+    unsigned long long  _readCount;
 }
 
-@property (nonatomic) unsigned int readCount;
+@property (nonatomic) unsigned long long readCount;
 
 + (void)prefetchStorageWithCommandBuffer:(id)arg1 imageDescriptorList:(id)arg2;
 + (id)temporaryImageWithCommandBuffer:(id)arg1 imageDescriptor:(id)arg2;
@@ -14,8 +14,8 @@
 
 - (void)dealloc;
 - (id)debugDescription;
-- (unsigned int)readCount;
-- (unsigned int)setPurgeableState:(unsigned int)arg1;
-- (void)setReadCount:(unsigned int)arg1;
+- (unsigned long long)readCount;
+- (unsigned long long)setPurgeableState:(unsigned long long)arg1;
+- (void)setReadCount:(unsigned long long)arg1;
 
 @end

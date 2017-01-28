@@ -6,8 +6,8 @@
     NSString * _componentsNamePlural;
     NSString * _componentsNameSingular;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _drawingSize;
     NSDictionary * _textAttributes;
     NSString * _truncationTokenFormat;
@@ -15,17 +15,17 @@
 
 @property (nonatomic, copy) NSString *componentsNamePlural;
 @property (nonatomic, copy) NSString *componentsNameSingular;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } drawingSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } drawingSize;
 @property (nonatomic, readonly) NSDictionary *textAttributes;
 @property (nonatomic, copy) NSString *truncationTokenFormat;
 
-+ (id)truncationStrategyWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)truncationStrategyWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { double x1; double x2; })arg2;
 
 - (void).cxx_destruct;
 - (id)componentsNamePlural;
 - (id)componentsNameSingular;
-- (struct CGSize { float x1; float x2; })drawingSize;
-- (id)initWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { float x1; float x2; })arg2;
+- (struct CGSize { double x1; double x2; })drawingSize;
+- (id)initWithTextAttributes:(id)arg1 drawingSize:(struct CGSize { double x1; double x2; })arg2;
 - (void)setComponentsNamePlural:(id)arg1;
 - (void)setComponentsNameSingular:(id)arg1;
 - (void)setTruncationTokenFormat:(id)arg1;

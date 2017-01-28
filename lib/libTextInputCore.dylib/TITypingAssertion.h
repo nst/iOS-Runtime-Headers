@@ -3,25 +3,25 @@
  */
 
 @interface TITypingAssertion : NSObject {
-    BOOL  _active;
+    bool  _active;
     NSMutableSet * _restingPathIndices;
     NSTimer * _timer;
 }
 
-@property (getter=isActive, nonatomic) BOOL active;
+@property (getter=isActive, nonatomic) bool active;
 @property (nonatomic, retain) NSTimer *timer;
 
 + (id)sharedTypingAssertion;
 
 - (id)__restingPathIndices;
-- (void)_sbsSetTypingActive:(BOOL)arg1;
+- (void)_sbsSetTypingActive:(bool)arg1;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isActive;
+- (bool)isActive;
 - (void)restResetTouches;
-- (void)restTouchEndWithPathIndex:(int)arg1;
-- (void)restTouchStartWithPathIndex:(int)arg1;
-- (void)setActive:(BOOL)arg1;
+- (void)restTouchEndWithPathIndex:(long long)arg1;
+- (void)restTouchStartWithPathIndex:(long long)arg1;
+- (void)setActive:(bool)arg1;
 - (void)setTimer:(id)arg1;
 - (id)timer;
 - (void)timerFired:(id)arg1;

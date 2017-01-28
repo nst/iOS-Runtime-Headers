@@ -4,42 +4,42 @@
 
 @interface FUUniformBarSeries : FUChartSeries {
     struct CGGradient { } * _barGradient;
-    float  _barSpacing;
-    float  _barWidth;
-    float  _fadeInPercentage;
+    double  _barSpacing;
+    double  _barWidth;
+    double  _fadeInPercentage;
     NSDate * _minDate;
     NSArray * _plotPoints;
-    float  _roundedCornerRadius;
+    double  _roundedCornerRadius;
 }
 
 @property (nonatomic) struct CGGradient { }*barGradient;
-@property (nonatomic) float barSpacing;
-@property (nonatomic) float barWidth;
-@property (nonatomic) float fadeInPercentage;
+@property (nonatomic) double barSpacing;
+@property (nonatomic) double barWidth;
+@property (nonatomic) double fadeInPercentage;
 @property (nonatomic) NSDate *minDate;
 @property (nonatomic, retain) NSArray *plotPoints;
-@property (nonatomic) float roundedCornerRadius;
+@property (nonatomic) double roundedCornerRadius;
 
 - (void).cxx_destruct;
-- (float)_getXValueForPointFromChartPoint:(id)arg1;
-- (float)_getYValueForPointFromChartPoint:(id)arg1;
+- (double)_getXValueForPointFromChartPoint:(id)arg1;
+- (double)_getYValueForPointFromChartPoint:(id)arg1;
 - (struct CGGradient { }*)barGradient;
-- (float)barSpacing;
-- (float)barWidth;
+- (double)barSpacing;
+- (double)barWidth;
 - (void)dealloc;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
-- (float)fadeInPercentage;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)fadeInPercentage;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)minDate;
 - (id)plotPoints;
-- (float)roundedCornerRadius;
+- (double)roundedCornerRadius;
 - (void)setBarGradient:(struct CGGradient { }*)arg1;
-- (void)setBarSpacing:(float)arg1;
-- (void)setBarWidth:(float)arg1;
-- (void)setFadeInPercentage:(float)arg1;
+- (void)setBarSpacing:(double)arg1;
+- (void)setBarWidth:(double)arg1;
+- (void)setFadeInPercentage:(double)arg1;
 - (void)setMinDate:(id)arg1;
 - (void)setPlotPoints:(id)arg1;
-- (void)setRoundedCornerRadius:(float)arg1;
+- (void)setRoundedCornerRadius:(double)arg1;
 
 @end

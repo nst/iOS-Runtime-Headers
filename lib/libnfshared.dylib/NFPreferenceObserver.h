@@ -3,16 +3,16 @@
  */
 
 @interface NFPreferenceObserver : NSObject {
-    id /* block */  _callback;
+    id  _callback;
 }
 
-@property (copy) id /* block */ callback;
+@property (copy) id callback;
 
-- (id /* block */)callback;
+- (id)callback;
 - (void)dealloc;
 - (void)handlePreferencesChanged;
 - (void)handleProfilesChanged;
-- (void)setCallback:(id /* block */)arg1;
+- (void)setCallback:(id)arg1;
 - (void)start;
 - (void)stop;
 - (void)updateDiagnosticLogging;

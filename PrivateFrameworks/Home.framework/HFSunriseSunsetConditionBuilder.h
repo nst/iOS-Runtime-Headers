@@ -10,13 +10,13 @@
 @property (nonatomic, retain) NSDateComponents *offset;
 @property (nonatomic, retain) NSString *significantEvent;
 
-+ (BOOL)canHandlePredicate:(id)arg1;
++ (bool)canHandlePredicate:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_updatePredicate;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
 - (id)offset;
-- (void)setComparisonType:(unsigned int)arg1;
+- (void)setComparisonType:(unsigned long long)arg1;
 - (void)setOffset:(id)arg1;
 - (void)setSignificantEvent:(id)arg1;
 - (id)significantEvent;

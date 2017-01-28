@@ -19,7 +19,7 @@
     NSURL * _originatingWebsiteURL;
     NSString * _postalCode;
     NSString * _shortValue;
-    BOOL  _shouldAggregate;
+    bool  _shouldAggregate;
     NSString * _source;
     NSString * _subThoroughfare;
     NSString * _thoroughfare;
@@ -43,14 +43,14 @@
 @property (nonatomic, copy) NSURL *originatingWebsiteURL;
 @property (nonatomic, copy) NSString *postalCode;
 @property (nonatomic, copy) NSString *shortValue;
-@property (nonatomic) BOOL shouldAggregate;
+@property (nonatomic) bool shouldAggregate;
 @property (nonatomic, copy) NSString *source;
 @property (nonatomic, copy) NSString *subThoroughfare;
 @property (nonatomic, copy) NSString *thoroughfare;
 @property (nonatomic, copy) NSString *trigger;
 @property (nonatomic, copy) NSString *value;
 
-+ (unsigned int)round:(double)arg1 toNearest:(double)arg2;
++ (unsigned long long)round:(double)arg1 toNearest:(double)arg2;
 
 - (void).cxx_destruct;
 - (id)addressComponents;
@@ -86,14 +86,14 @@
 - (void)setOriginatingWebsiteURL:(id)arg1;
 - (void)setPostalCode:(id)arg1;
 - (void)setShortValue:(id)arg1;
-- (void)setShouldAggregate:(BOOL)arg1;
+- (void)setShouldAggregate:(bool)arg1;
 - (void)setSource:(id)arg1;
 - (void)setSubThoroughfare:(id)arg1;
 - (void)setThoroughfare:(id)arg1;
 - (void)setTrigger:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)shortValue;
-- (BOOL)shouldAggregate;
+- (bool)shouldAggregate;
 - (id)source;
 - (id)subThoroughfare;
 - (id)thoroughfare;

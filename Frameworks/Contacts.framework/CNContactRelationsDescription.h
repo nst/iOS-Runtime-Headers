@@ -6,7 +6,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void*)ABMultiValueValueFromCNLabeledValueValue:(id)arg1;
@@ -15,13 +15,13 @@
 - (int)abPropertyID:(int*)arg1;
 - (void)decodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (void)encodeUsingCoder:(id)arg1 contact:(id)arg2;
-- (id /* block */)fromPlistTransform;
+- (id)fromPlistTransform;
 - (id)init;
-- (BOOL)isEqualForContact:(id)arg1 other:(id)arg2;
-- (BOOL)isNonnull;
-- (BOOL)isValue:(id)arg1 equivalentToValue:(id)arg2;
+- (bool)isEqualForContact:(id)arg1 other:(id)arg2;
+- (bool)isNonnull;
+- (bool)isValue:(id)arg1 equivalentToValue:(id)arg2;
 - (Class)labeledValueClass;
-- (id /* block */)plistTransform;
+- (id)plistTransform;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;
 - (id)standardLabels;
 

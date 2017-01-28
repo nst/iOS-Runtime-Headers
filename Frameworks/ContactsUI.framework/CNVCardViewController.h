@@ -12,12 +12,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNVCardViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)contactNavigationController;
-- (id)contactNavigationController:(id)arg1 contactViewControllerForContact:(id)arg2 preferredMode:(int)arg3;
+- (id)contactNavigationController:(id)arg1 contactViewControllerForContact:(id)arg2 preferredMode:(long long)arg3;
 - (void)contactNavigationControllerDidCancel:(id)arg1;
 - (void)contactNavigationControllerDidComplete:(id)arg1;
 - (id)contacts;

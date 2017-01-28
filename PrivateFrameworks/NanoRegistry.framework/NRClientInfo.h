@@ -12,14 +12,14 @@
 @property (nonatomic) unsigned long long lastIndexCheckin;
 @property (nonatomic, retain) NSString *processName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)entitlements;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)lastIndexCheckin;
 - (id)processName;

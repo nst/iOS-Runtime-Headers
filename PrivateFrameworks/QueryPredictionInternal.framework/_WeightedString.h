@@ -4,18 +4,18 @@
 
 @interface _WeightedString : NSObject {
     NSString * _string;
-    unsigned int  _weight;
+    unsigned long long  _weight;
 }
 
 @property (nonatomic, retain) NSString *string;
-@property (nonatomic) unsigned int weight;
+@property (nonatomic) unsigned long long weight;
 
-+ (id)weightedStringFrom:(id)arg1 withWeight:(unsigned int)arg2;
++ (id)weightedStringFrom:(id)arg1 withWeight:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
 - (void)setString:(id)arg1;
-- (void)setWeight:(unsigned int)arg1;
+- (void)setWeight:(unsigned long long)arg1;
 - (id)string;
-- (unsigned int)weight;
+- (unsigned long long)weight;
 
 @end

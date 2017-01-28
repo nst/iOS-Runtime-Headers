@@ -4,19 +4,19 @@
 
 @interface MusicControlTargetAction : NSObject {
     SEL  _action;
-    unsigned int  _controlEvents;
+    unsigned long long  _controlEvents;
     id  _target;
 }
 
 @property (nonatomic) SEL action;
-@property (nonatomic) unsigned int controlEvents;
+@property (nonatomic) unsigned long long controlEvents;
 @property (nonatomic) id target;
 
 - (void).cxx_destruct;
 - (SEL)action;
-- (unsigned int)controlEvents;
+- (unsigned long long)controlEvents;
 - (void)setAction:(SEL)arg1;
-- (void)setControlEvents:(unsigned int)arg1;
+- (void)setControlEvents:(unsigned long long)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
 

@@ -4,27 +4,27 @@
 
 @interface FBSceneDeactivationBand : NSObject <BSDescriptionProviding> {
     NSHashTable * _assertions;
-    float  _level;
+    double  _level;
 }
 
-@property (nonatomic, readonly) unsigned int assertionCount;
+@property (nonatomic, readonly) unsigned long long assertionCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) float level;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) double level;
 @property (readonly) Class superclass;
 
-+ (id)bandWithSceneLevel:(float)arg1;
++ (id)bandWithSceneLevel:(double)arg1;
 
 - (void)addAssertion:(id)arg1;
-- (unsigned int)assertionCount;
-- (unsigned int)deactivationReasonsForScene:(id)arg1 withSettings:(id)arg2;
+- (unsigned long long)assertionCount;
+- (unsigned long long)deactivationReasonsForScene:(id)arg1 withSettings:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (id)initWithSceneLevel:(float)arg1;
-- (float)level;
+- (id)initWithSceneLevel:(double)arg1;
+- (double)level;
 - (void)removeAssertion:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

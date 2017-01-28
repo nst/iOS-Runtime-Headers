@@ -6,39 +6,39 @@
     AVHapticPlayer * _feedbackPlayer;
     NSMutableIndexSet * _freeChannelIndexes;
     NSMutableSet * _playersInUse;
-    BOOL  _serverDown;
+    bool  _serverDown;
 }
 
 @property (nonatomic, retain) AVHapticPlayer *feedbackPlayer;
-@property (nonatomic) BOOL serverDown;
+@property (nonatomic) bool serverDown;
 
-+ (void)_setHapticPlayerCreationBlock:(id /* block */)arg1;
-+ (BOOL)_supportsPlayingFeedback:(id)arg1;
++ (void)_setHapticPlayerCreationBlock:(id)arg1;
++ (bool)_supportsPlayingFeedback:(id)arg1;
 + (id)sharedEngine;
 
 - (void).cxx_destruct;
-- (void)_activateUnderlyingPlayerWithCompletion:(id /* block */)arg1;
-- (BOOL)_cooldownUnderlyingPlayerIfPossible;
-- (void)_dequeueReusableFeedbackPlayerWithCompletionBlock:(id /* block */)arg1;
+- (void)_activateUnderlyingPlayerWithCompletion:(id)arg1;
+- (bool)_cooldownUnderlyingPlayerIfPossible;
+- (void)_dequeueReusableFeedbackPlayerWithCompletionBlock:(id)arg1;
 - (void)_feedbackPlayerDidFail:(id)arg1;
 - (void)_finishAndRecyclePlayers;
-- (void)_initializeFeedbackPlayerWithCompletion:(id /* block */)arg1;
-- (BOOL)_isSuspended;
-- (void)_prewarmUnderlyingPlayerWithCompletion:(id /* block */)arg1;
+- (void)_initializeFeedbackPlayerWithCompletion:(id)arg1;
+- (bool)_isSuspended;
+- (void)_prewarmUnderlyingPlayerWithCompletion:(id)arg1;
 - (void)_recycleFeedbackPlayers:(id)arg1;
 - (void)_releaseRenderResourcesIfPossible;
 - (void)_resetChannelIndexes;
 - (void)_resetHapticPlayer;
 - (void)_restartFeedbackPlayerAfterFailure:(id)arg1;
-- (void)_startRunningFeedbackPlayerWithCompletion:(id /* block */)arg1;
+- (void)_startRunningFeedbackPlayerWithCompletion:(id)arg1;
 - (id)_stats_key;
 - (void)_subscribeToFeedbackServerFailureNotifications;
-- (BOOL)_teardownUnderlyingPlayerIfPossible;
+- (bool)_teardownUnderlyingPlayerIfPossible;
 - (double)currentTime;
 - (id)feedbackPlayer;
 - (id)init;
-- (BOOL)serverDown;
+- (bool)serverDown;
 - (void)setFeedbackPlayer:(id)arg1;
-- (void)setServerDown:(BOOL)arg1;
+- (void)setServerDown:(bool)arg1;
 
 @end

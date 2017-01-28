@@ -6,7 +6,7 @@
 
 + (id)directionsImageWithColor:(id)arg1;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
-- (id)initWithStyle:(unsigned int)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })alignmentRectInsets;
+- (id)initWithStyle:(unsigned long long)arg1;
 
 @end

@@ -3,25 +3,25 @@
  */
 
 @interface TSCETrackedReference : NSObject <NSCopying> {
-    /* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*II@}' */ struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; } * mAST;
+    /* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*QQ@}' */ struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; } * mAST;
     struct { 
         unsigned int formulaID : 24; 
         unsigned int reserved : 8; 
     }  mFormulaID;
 }
 
-- (/* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*II@}' */ struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)ast;
+- (/* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*QQ@}' */ struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; }*)ast;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayStringWithCalculationEngine:(id)arg1;
 - (void)encodeToArchive:(struct TrackedReferenceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ASTNodeArrayArchive {} *x5; unsigned int x6; }*)arg1 archiver:(id)arg2;
 - (struct { unsigned int x1 : 24; unsigned int x2 : 8; })formulaID;
-- (id)initByCopyingASTNodeArray:(/* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*II@}' */ struct TSCEASTNodeArray { char *x1; unsigned int x2; unsigned int x3; id x4; }*)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2;
+- (id)initByCopyingASTNodeArray:(/* Warning: unhandled struct encoding: '{TSCEASTNodeArray=*QQ@}' */ struct TSCEASTNodeArray { char *x1; unsigned long long x2; unsigned long long x3; id x4; }*)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2;
 - (id)initFromArchive:(const struct TrackedReferenceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ASTNodeArrayArchive {} *x5; unsigned int x6; }*)arg1;
 - (id)initWithCReference:(struct TSCECReference { unsigned short x1; union { struct { struct TSUCellCoord { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct TSUCellCoord { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct TSUCellCoord { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; unsigned char x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2;
 - (id)initWithTrackedReferenceTSPObjectDeprecated:(id)arg1;
-- (BOOL)isValidWithReferenceTracker:(id)arg1;
+- (bool)isValidWithReferenceTracker:(id)arg1;
 - (id)referenceEnumeratorWithCalculationEngine:(id)arg1 referenceTrackerID:(struct __CFUUID { }*)arg2;
 - (void)registerWithCalculationEngine:(id)arg1 inOwner:(struct __CFUUID { }*)arg2;
 - (void)replaceContentsWithContentsOfTrackedReference:(id)arg1;

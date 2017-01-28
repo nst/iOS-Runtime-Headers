@@ -3,7 +3,7 @@
  */
 
 @interface VTTranscriber : NSObject <_EARSpeechRecognitionResultStream> {
-    id /* block */  _callback;
+    id  _callback;
     NSMutableArray * _previousUtteranceTokens;
     NSObject<OS_dispatch_queue> * _queue;
     _EARSpeechRecognizer * _recognizer;
@@ -14,7 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (readonly) double triggerConfidence;
 
@@ -25,7 +25,7 @@
 - (void)recognizeWavData:(const short*)arg1 length:(int)arg2;
 - (id)recognizedTokens;
 - (void)reset;
-- (void)runRecognitionWithCallback:(id /* block */)arg1;
+- (void)runRecognitionWithCallback:(id)arg1;
 - (void)speechRecognizer:(id)arg1 didFinishRecognitionWithError:(id)arg2;
 - (void)speechRecognizer:(id)arg1 didRecognizeFinalResults:(id)arg2;
 - (void)speechRecognizer:(id)arg1 didRecognizePartialResult:(id)arg2;

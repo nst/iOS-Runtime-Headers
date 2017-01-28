@@ -6,7 +6,7 @@
     ISCrossfadeItem * _crossfadeItem;
     struct CGImage { } * _photo;
     int  _photoEXIFOrientation;
-    BOOL  _photoHasColorAdjustments;
+    bool  _photoHasColorAdjustments;
     double  _photoTime;
     float  _videoCropFactor;
     AVPlayerItem * _videoPlayerItem;
@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) ISCrossfadeItem *crossfadeItem;
 @property (nonatomic, readonly) struct CGImage { }*photo;
 @property (nonatomic, readonly) int photoEXIFOrientation;
-@property (nonatomic, readonly) BOOL photoHasColorAdjustments;
+@property (nonatomic, readonly) bool photoHasColorAdjustments;
 @property (nonatomic, readonly) double photoTime;
 @property (nonatomic, readonly) float videoCropFactor;
 @property (nonatomic, readonly) AVPlayerItem *videoPlayerItem;
@@ -23,12 +23,12 @@
 - (void).cxx_destruct;
 - (id)crossfadeItem;
 - (void)dealloc;
-- (unsigned int)hash;
-- (id)initWithPhoto:(struct CGImage { }*)arg1 photoEXIFOrientation:(int)arg2 photoTime:(double)arg3 photoHasColorAdjustments:(BOOL)arg4 videoPlayerItem:(id)arg5 videoCropFactor:(float)arg6 crossfadeItem:(id)arg7;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)initWithPhoto:(struct CGImage { }*)arg1 photoEXIFOrientation:(int)arg2 photoTime:(double)arg3 photoHasColorAdjustments:(bool)arg4 videoPlayerItem:(id)arg5 videoCropFactor:(float)arg6 crossfadeItem:(id)arg7;
+- (bool)isEqual:(id)arg1;
 - (struct CGImage { }*)photo;
 - (int)photoEXIFOrientation;
-- (BOOL)photoHasColorAdjustments;
+- (bool)photoHasColorAdjustments;
 - (double)photoTime;
 - (float)videoCropFactor;
 - (id)videoPlayerItem;

@@ -3,17 +3,17 @@
  */
 
 @interface SUXMLHTTPRequestOperation : ISOperation {
-    id /* block */  _outputBlock;
+    id  _outputBlock;
     SSURLRequestProperties * _requestProperties;
 }
 
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_isAllowedURL:(id)arg1 withURLBag:(id)arg2;
+- (bool)_isAllowedURL:(id)arg1 withURLBag:(id)arg2;
 - (id)initWithRequestProperties:(id)arg1;
-- (id /* block */)outputBlock;
+- (id)outputBlock;
 - (void)run;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (void)setOutputBlock:(id)arg1;
 
 @end

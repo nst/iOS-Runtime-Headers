@@ -9,7 +9,7 @@
 
 - (void)addClass:(Class)arg1;
 - (void)clear;
-- (BOOL)containsClass:(Class)arg1;
+- (bool)containsClass:(Class)arg1;
 - (void)dealloc;
 - (id)init;
 

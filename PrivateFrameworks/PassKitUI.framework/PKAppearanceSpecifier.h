@@ -16,7 +16,7 @@
     UIColor * _editableTextColor;
     UIColor * _footerHyperlinkColor;
     UIColor * _foregroundColor;
-    BOOL  _hasDarkAppearance;
+    bool  _hasDarkAppearance;
     UIImage * _navBarPointImage;
     UIImage * _navBarShadowPointImage;
     UIColor * _progressBarTintColor;
@@ -42,7 +42,7 @@
 @property (nonatomic, copy) UIColor *editableTextColor;
 @property (nonatomic, copy) UIColor *footerHyperlinkColor;
 @property (nonatomic, copy) UIColor *foregroundColor;
-@property (nonatomic) BOOL hasDarkAppearance;
+@property (nonatomic) bool hasDarkAppearance;
 @property (nonatomic, copy) UIImage *navBarPointImage;
 @property (nonatomic, copy) UIImage *navBarShadowPointImage;
 @property (nonatomic, copy) UIColor *progressBarTintColor;
@@ -69,7 +69,7 @@
 - (id)editableTextColor;
 - (id)footerHyperlinkColor;
 - (id)foregroundColor;
-- (BOOL)hasDarkAppearance;
+- (bool)hasDarkAppearance;
 - (id)navBarPointImage;
 - (id)navBarShadowPointImage;
 - (id)progressBarTintColor;
@@ -87,7 +87,7 @@
 - (void)setEditableTextColor:(id)arg1;
 - (void)setFooterHyperlinkColor:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
-- (void)setHasDarkAppearance:(BOOL)arg1;
+- (void)setHasDarkAppearance:(bool)arg1;
 - (void)setNavBarPointImage:(id)arg1;
 - (void)setNavBarShadowPointImage:(id)arg1;
 - (void)setProgressBarTintColor:(id)arg1;

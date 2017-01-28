@@ -4,15 +4,15 @@
 
 @interface PXFeatureSpecManager : PXObservable <PXChangeObserver> {
     PXExtendedTraitCollection * _extendedTraitCollection;
-    unsigned int  _options;
+    unsigned long long  _options;
     PXFeatureSpec * _spec;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PXExtendedTraitCollection *extendedTraitCollection;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int options;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) unsigned long long options;
 @property (nonatomic, readonly) PXFeatureSpec *spec;
 @property (readonly) Class superclass;
 
@@ -23,11 +23,11 @@
 - (id)extendedTraitCollection;
 - (id)init;
 - (id)initWithExtendedTraitCollection:(id)arg1;
-- (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 - (id)mutableChangeObject;
-- (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
-- (unsigned int)options;
-- (BOOL)shouldUpdateSpecForExtendedTraitCollectionChange:(unsigned int)arg1;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void*)arg3;
+- (unsigned long long)options;
+- (bool)shouldUpdateSpecForExtendedTraitCollectionChange:(unsigned long long)arg1;
 - (id)spec;
 - (Class)specClass;
 

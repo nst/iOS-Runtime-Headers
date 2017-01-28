@@ -9,7 +9,7 @@
     NSNumber * _inputWaterBlend;
     float  _lastDepthStrength;
     float  _lastWaterBlend;
-    BOOL  _needsReprocess;
+    bool  _needsReprocess;
     CIFilter * _underwaterAdditionFilter;
     CIFilter * _underwaterBalanceFilter;
     CIFilter * _underwaterColorMatrixIQFilter;

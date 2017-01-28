@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic, retain) CADisplay *display;
-@property (nonatomic) int frameRate;
-@property (getter=isPaused, nonatomic) BOOL paused;
+@property (nonatomic) long long frameRate;
+@property (getter=isPaused, nonatomic) bool paused;
 @property (nonatomic, readonly) double targetTimestamp;
 
 - (id).cxx_construct;
@@ -22,13 +22,13 @@
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)dealloc;
 - (id)display;
-- (int)frameRate;
+- (long long)frameRate;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 - (void)invalidate;
-- (BOOL)isPaused;
+- (bool)isPaused;
 - (void)setDisplay:(id)arg1;
-- (void)setFrameRate:(int)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (void)setFrameRate:(long long)arg1;
+- (void)setPaused:(bool)arg1;
 - (id)target;
 - (double)targetTimestamp;
 

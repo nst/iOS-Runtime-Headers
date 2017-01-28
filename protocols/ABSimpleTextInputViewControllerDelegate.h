@@ -9,6 +9,6 @@
 
 @optional
 
-- (BOOL)simpleTextInputViewControllerShouldDismissKeyboard:(ABSimpleTextInputViewController *)arg1;
+- (bool)simpleTextInputViewControllerShouldDismissKeyboard:(ABSimpleTextInputViewController *)arg1;
 
 @end

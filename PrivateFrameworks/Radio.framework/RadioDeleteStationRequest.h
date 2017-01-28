@@ -11,6 +11,6 @@
 - (id)changeList;
 - (id)init;
 - (id)initWithStation:(id)arg1;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 
 @end

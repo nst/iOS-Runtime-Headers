@@ -3,37 +3,37 @@
  */
 
 @interface CPLEngineResourceUploadTask : CPLResourceTransferTask {
-    BOOL  _backgroundTask;
-    id /* block */  _cancelHandler;
+    bool  _backgroundTask;
+    id  _cancelHandler;
     CPLResource * _cloudResource;
-    id /* block */  _completionHandler;
-    id /* block */  _didStartHandler;
-    id /* block */  _launchHandler;
-    id /* block */  _progressHandler;
+    id  _completionHandler;
+    id  _didStartHandler;
+    id  _launchHandler;
+    id  _progressHandler;
     <CPLEngineTransportTask> * _transportTask;
 }
 
-@property (getter=isBackgroundTask, nonatomic) BOOL backgroundTask;
-@property (nonatomic, readonly) id /* block */ cancelHandler;
+@property (getter=isBackgroundTask, nonatomic) bool backgroundTask;
+@property (nonatomic, readonly) id cancelHandler;
 @property (nonatomic, retain) CPLResource *cloudResource;
-@property (nonatomic, readonly) id /* block */ completionHandler;
-@property (nonatomic, readonly) id /* block */ didStartHandler;
-@property (nonatomic, readonly) id /* block */ launchHandler;
-@property (nonatomic, readonly) id /* block */ progressHandler;
+@property (nonatomic, readonly) id completionHandler;
+@property (nonatomic, readonly) id didStartHandler;
+@property (nonatomic, readonly) id launchHandler;
+@property (nonatomic, readonly) id progressHandler;
 @property (nonatomic, retain) <CPLEngineTransportTask> *transportTask;
 
 - (void).cxx_destruct;
-- (id /* block */)cancelHandler;
+- (id)cancelHandler;
 - (void)cancelTask;
 - (id)cloudResource;
-- (id /* block */)completionHandler;
-- (id /* block */)didStartHandler;
-- (id)initWithLaunchHandler:(id /* block */)arg1 cancelHandler:(id /* block */)arg2 didStartHandler:(id /* block */)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
-- (BOOL)isBackgroundTask;
+- (id)completionHandler;
+- (id)didStartHandler;
+- (id)initWithLaunchHandler:(id)arg1 cancelHandler:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
+- (bool)isBackgroundTask;
 - (void)launch;
-- (id /* block */)launchHandler;
-- (id /* block */)progressHandler;
-- (void)setBackgroundTask:(BOOL)arg1;
+- (id)launchHandler;
+- (id)progressHandler;
+- (void)setBackgroundTask:(bool)arg1;
 - (void)setCloudResource:(id)arg1;
 - (void)setTransportTask:(id)arg1;
 - (id)transportTask;

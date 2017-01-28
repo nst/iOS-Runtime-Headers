@@ -4,31 +4,31 @@
 
 @interface CKCollapsableToolbar : UIView {
     NSArray * _additionalButtons;
-    float  _buttonSpacing;
-    BOOL  _collapsed;
+    double  _buttonSpacing;
+    bool  _collapsed;
     UIButton * _mainButton;
-    BOOL  _vertical;
+    bool  _vertical;
 }
 
 @property (nonatomic, retain) NSArray *additionalButtons;
-@property (nonatomic) float buttonSpacing;
-@property (getter=isCollapsed, nonatomic) BOOL collapsed;
+@property (nonatomic) double buttonSpacing;
+@property (getter=isCollapsed, nonatomic) bool collapsed;
 @property (nonatomic, retain) UIButton *mainButton;
-@property (getter=isVertical, nonatomic) BOOL vertical;
+@property (getter=isVertical, nonatomic) bool vertical;
 
 - (void).cxx_destruct;
 - (id)additionalButtons;
-- (float)buttonSpacing;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)isCollapsed;
-- (BOOL)isVertical;
+- (double)buttonSpacing;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)isCollapsed;
+- (bool)isVertical;
 - (void)layoutSubviews;
 - (id)mainButton;
 - (void)setAdditionalButtons:(id)arg1;
-- (void)setButtonSpacing:(float)arg1;
-- (void)setCollapsed:(BOOL)arg1;
+- (void)setButtonSpacing:(double)arg1;
+- (void)setCollapsed:(bool)arg1;
 - (void)setMainButton:(id)arg1;
-- (void)setVertical:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)setVertical:(bool)arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -9,20 +9,20 @@
     int  _hintSource;
 }
 
-@property (nonatomic) BOOL hasHintSource;
+@property (nonatomic) bool hasHintSource;
 @property (nonatomic) int hintSource;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHintSource;
-- (unsigned int)hash;
+- (bool)hasHintSource;
+- (unsigned long long)hash;
 - (int)hintSource;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasHintSource:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasHintSource:(bool)arg1;
 - (void)setHintSource:(int)arg1;
 - (void)writeTo:(id)arg1;
 

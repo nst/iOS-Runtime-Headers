@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSMutableDictionary *volumes;
 
 + (id)cacheDeleteRecentInfo:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)collection_queue;
@@ -35,8 +35,8 @@
 - (void)setVolumes:(id)arg1;
 - (void)updateDiagnostics:(id)arg1 forService:(id)arg2 onVolume:(id)arg3 atUrgency:(int)arg4;
 - (void)updateDiagnostics:(id)arg1 forVolume:(id)arg2 atUrgency:(int)arg3;
-- (BOOL)updateServiceInfoAmount:(id)arg1 forService:(id)arg2 onVolume:(id)arg3 atUrgency:(int)arg4 pushed:(BOOL)arg5;
-- (BOOL)validateForVolume:(id)arg1 andService:(id)arg2 atUrgency:(int)arg3;
+- (bool)updateServiceInfoAmount:(id)arg1 forService:(id)arg2 onVolume:(id)arg3 atUrgency:(int)arg4 pushed:(bool)arg5;
+- (bool)validateForVolume:(id)arg1 andService:(id)arg2 atUrgency:(int)arg3;
 - (id)version;
 - (id)volumes;
 

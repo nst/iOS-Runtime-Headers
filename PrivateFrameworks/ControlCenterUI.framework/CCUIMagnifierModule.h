@@ -6,10 +6,10 @@
 
 + (id)displayName;
 + (id)identifier;
-+ (BOOL)isInternalButton;
-+ (BOOL)isSupported:(int)arg1;
++ (bool)isInternalButton;
++ (bool)isSupported:(int)arg1;
 
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (id)aggdKey;
 - (id)glyphImageForState:(int)arg1;
 

@@ -14,9 +14,9 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithName:(char *)arg1 contextKey:(void*)arg2;
-- (BOOL)isQueueCurrent;
-- (void)performBlock:(id /* block */)arg1;
-- (void)performBlock:(id /* block */)arg1 waitUntilDone:(BOOL)arg2;
+- (bool)isQueueCurrent;
+- (void)performBlock:(id)arg1;
+- (void)performBlock:(id)arg1 waitUntilDone:(bool)arg2;
 - (id)queue;
 
 @end

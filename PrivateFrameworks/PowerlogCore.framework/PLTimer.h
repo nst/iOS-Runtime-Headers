@@ -3,12 +3,12 @@
  */
 
 @interface PLTimer : NSObject {
-    id /* block */  _block;
+    id  _block;
     NSDate * _fireDate;
     double  _interval;
     NSDate * _lastSleepTime;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _repeats;
+    bool  _repeats;
     PLEntryNotificationOperatorComposition * _sleepEntryNotification;
     NSTimer * _timer;
     double  _tolerance;
@@ -16,45 +16,45 @@
     PLEntryNotificationOperatorComposition * _wakeEntryNotification;
 }
 
-@property (copy) id /* block */ block;
+@property (copy) id block;
 @property (nonatomic, retain) NSDate *fireDate;
 @property double interval;
 @property (retain) NSDate *lastSleepTime;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
-@property BOOL repeats;
+@property bool repeats;
 @property (retain) PLEntryNotificationOperatorComposition *sleepEntryNotification;
 @property (retain) NSTimer *timer;
-@property (nonatomic) BOOL timerActive;
+@property (nonatomic) bool timerActive;
 @property double tolerance;
 @property (retain) id userInfo;
 @property (retain) PLEntryNotificationOperatorComposition *wakeEntryNotification;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
+- (id)block;
 - (void)dealloc;
 - (void)fire;
 - (id)fireDate;
 - (void)handleTimerFire;
-- (id)initWithFireDate:(id)arg1 withInterval:(double)arg2 withTolerance:(double)arg3 repeats:(BOOL)arg4 withUserInfo:(id)arg5 withQueue:(id)arg6 withBlock:(id /* block */)arg7;
+- (id)initWithFireDate:(id)arg1 withInterval:(double)arg2 withTolerance:(double)arg3 repeats:(bool)arg4 withUserInfo:(id)arg5 withQueue:(id)arg6 withBlock:(id)arg7;
 - (double)interval;
 - (id)lastSleepTime;
 - (id)queue;
-- (BOOL)repeats;
-- (void)setBlock:(id /* block */)arg1;
+- (bool)repeats;
+- (void)setBlock:(id)arg1;
 - (void)setFireDate:(id)arg1;
 - (void)setInterval:(double)arg1;
 - (void)setLastSleepTime:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRepeats:(BOOL)arg1;
+- (void)setRepeats:(bool)arg1;
 - (void)setSleepEntryNotification:(id)arg1;
 - (void)setTimer:(id)arg1;
-- (void)setTimerActive:(BOOL)arg1;
+- (void)setTimerActive:(bool)arg1;
 - (void)setTolerance:(double)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setWakeEntryNotification:(id)arg1;
 - (id)sleepEntryNotification;
 - (id)timer;
-- (BOOL)timerActive;
+- (bool)timerActive;
 - (double)tolerance;
 - (id)userInfo;
 - (id)wakeEntryNotification;

@@ -10,7 +10,7 @@
     NSObject<OS_dispatch_source> * _reportTimer;
     NSDictionary * _requestStatsDicts;
     NSObject<OS_dispatch_queue> * _submitQueue;
-    int  _version;
+    long long  _version;
 }
 
 @property (retain) NSDictionary *connectionStatsDict;
@@ -20,14 +20,14 @@
 @property (retain) NSObject<OS_dispatch_source> *reportTimer;
 @property (retain) NSDictionary *requestStatsDicts;
 @property (retain) NSObject<OS_dispatch_queue> *submitQueue;
-@property int version;
+@property long long version;
 
 + (id)createStatistics;
-+ (id)getInterfaceName:(int)arg1;
-+ (id)getProtocolName:(int)arg1;
++ (id)getInterfaceName:(long long)arg1;
++ (id)getProtocolName:(long long)arg1;
 + (id)getRequestName:(int)arg1;
 + (id)readFromKeyChain;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)addConnectionStats:(id)arg1;
@@ -36,7 +36,7 @@
 - (void)clear;
 - (id)connectionStatsDict;
 - (id)controlStatsDicts;
-- (id)copyDictionary:(int)arg1 protocolType:(int)arg2 summaryOnly:(BOOL)arg3;
+- (id)copyDictionary:(long long)arg1 protocolType:(long long)arg2 summaryOnly:(bool)arg3;
 - (id)copyDurationBucketsDictionary:(id)arg1;
 - (id)copyResponseTimeBucketsDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -45,7 +45,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)lastReportDate;
 - (double)reportInterval;
-- (void)reportNow:(BOOL)arg1;
+- (void)reportNow:(bool)arg1;
 - (void)reportStats;
 - (id)reportTimer;
 - (id)requestStatsDicts;
@@ -58,8 +58,8 @@
 - (void)setReportTimer:(id)arg1;
 - (void)setRequestStatsDicts:(id)arg1;
 - (void)setSubmitQueue:(id)arg1;
-- (void)setVersion:(int)arg1;
+- (void)setVersion:(long long)arg1;
 - (id)submitQueue;
-- (int)version;
+- (long long)version;
 
 @end

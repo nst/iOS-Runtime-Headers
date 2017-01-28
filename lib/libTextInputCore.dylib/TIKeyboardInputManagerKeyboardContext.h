@@ -16,8 +16,8 @@
 - (void)clearInputForMarkedText;
 - (id)currentState;
 - (void)dealloc;
-- (void)deleteBackward:(unsigned int)arg1;
-- (void)deleteForward:(unsigned int)arg1;
+- (void)deleteBackward:(unsigned long long)arg1;
+- (void)deleteForward:(unsigned long long)arg1;
 - (void)deleteHandwritingStrokes:(id)arg1;
 - (id)initWithKeyboardState:(id)arg1;
 - (void)insertText:(id)arg1;

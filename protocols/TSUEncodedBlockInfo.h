@@ -5,7 +5,7 @@
 
 @required
 
-- (unsigned long)decodedLength;
-- (unsigned long)encodedLength;
+- (unsigned long long)decodedLength;
+- (unsigned long long)encodedLength;
 
 @end

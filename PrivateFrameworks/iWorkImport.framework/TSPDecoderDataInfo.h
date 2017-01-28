@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) TSPDigest *digest;
 @property (nonatomic, readonly) NSString *documentResourceLocator;
 @property (nonatomic, readonly) NSString *externalFilePath;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) long long identifier;
 @property (nonatomic, readonly) NSString *preferredFilename;
 @property (readonly) Class superclass;

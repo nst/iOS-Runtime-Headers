@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isKeyUp;
+- (bool)isKeyUp;
 - (NSString *)keyPressed;
 - (void)setKeyPressed:(NSString *)arg1;
 - (double)timestamp;

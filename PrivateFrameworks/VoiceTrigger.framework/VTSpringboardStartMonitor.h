@@ -3,19 +3,19 @@
  */
 
 @interface VTSpringboardStartMonitor : VTEventMonitor {
-    BOOL  _isSpringBoardStarted;
+    bool  _isSpringBoardStarted;
     int  _notifyToken;
 }
 
 + (id)sharedInstance;
 
-- (BOOL)_checkSpringBoardStarted;
-- (void)_didReceiveSpringboardStarted:(BOOL)arg1;
-- (void)_didReceiveSpringboardStartedInQueue:(BOOL)arg1;
-- (void)_notifyObserver:(id)arg1 withStarted:(BOOL)arg2;
+- (bool)_checkSpringBoardStarted;
+- (void)_didReceiveSpringboardStarted:(bool)arg1;
+- (void)_didReceiveSpringboardStartedInQueue:(bool)arg1;
+- (void)_notifyObserver:(id)arg1 withStarted:(bool)arg2;
 - (void)_startMonitoringWithQueue:(id)arg1;
 - (void)_stopMonitoring;
 - (id)init;
-- (BOOL)isSpringboardStarted;
+- (bool)isSpringboardStarted;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface FCCloudContext : NSObject <FCCacheFlushing, FCContentContext, FCPrivateDataContext, FCTestingContext> {
     <FCContentContext> * _contentContext;
-    BOOL  _deviceIsiPad;
+    bool  _deviceIsiPad;
     FCCommandQueue * _endpointCommandQueue;
     FCClientEndpointConnection * _endpointConnection;
     FCFeedManager * _feedManager;
@@ -15,7 +15,7 @@
     FCNotificationsEndpointConnection * _notificationsEndpointConnection;
     <FCPrivateDataContext> * _privateDataContext;
     FCPurchaseController * _purchaseController;
-    BOOL  _runningPPT;
+    bool  _runningPPT;
     FCSubscriptionController * _subscriptionController;
 }
 
@@ -27,14 +27,14 @@
 @property (nonatomic, readonly, copy) NSString *contentStoreFrontID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL deviceIsiPad;
+@property (nonatomic, readonly) bool deviceIsiPad;
 @property (nonatomic, readonly) FCCommandQueue *endpointCommandQueue;
 @property (nonatomic, readonly) FCClientEndpointConnection *endpointConnection;
 @property (nonatomic, readonly) FCFeedManager *feedManager;
 @property (nonatomic) <FCFlintHelper> *flintHelper;
 @property (nonatomic, readonly) FCFlintResourceManager *flintResourceManager;
-@property (nonatomic, readonly) BOOL hasBeenRateLimited;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasBeenRateLimited;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <FCContentContextInternal> *internalContentContext;
 @property (nonatomic, readonly) <FCPrivateDataContextInternal> *internalPrivateDataContext;
 @property (nonatomic, readonly) FCNetworkBehaviorMonitor *networkBehaviorMonitor;
@@ -45,12 +45,12 @@
 @property (nonatomic, readonly) FCPrivateChannelMembershipController *privateChannelMembershipController;
 @property (nonatomic, retain) <FCPrivateDataContext> *privateDataContext;
 @property (nonatomic, readonly, copy) NSString *privateDataDirectory;
-@property (getter=isPrivateDataSyncingEnabled, nonatomic, readonly) BOOL privateDataSyncingEnabled;
+@property (getter=isPrivateDataSyncingEnabled, nonatomic, readonly) bool privateDataSyncingEnabled;
 @property (nonatomic, readonly) <FCPushNotificationHandling> *privatePushNotificationHandler;
 @property (nonatomic, readonly) FCPurchaseController *purchaseController;
 @property (nonatomic, readonly) FCReadingHistory *readingHistory;
 @property (nonatomic, readonly) FCReadingList *readingList;
-@property (getter=isRunningPPT, nonatomic) BOOL runningPPT;
+@property (getter=isRunningPPT, nonatomic) bool runningPPT;
 @property (nonatomic, readonly) FCSubscriptionController *subscriptionController;
 @property (nonatomic, readonly) FCSubscriptionList *subscriptionList;
 @property (readonly) Class superclass;
@@ -69,26 +69,26 @@
 - (id)contentContext;
 - (id)contentDirectory;
 - (id)contentStoreFrontID;
-- (BOOL)deviceIsiPad;
-- (void)enableFlushingWithFlushingThreshold:(unsigned int)arg1;
+- (bool)deviceIsiPad;
+- (void)enableFlushingWithFlushingThreshold:(unsigned long long)arg1;
 - (id)endpointCommandQueue;
 - (id)endpointConnection;
 - (id)feedManager;
-- (id)fetchEndOfArticleDataForHeadline:(id)arg1 initialRelatedHeadlineCount:(unsigned int)arg2 initialPublisherHeadlineCount:(unsigned int)arg3 totalRelatedHeadlineCount:(unsigned int)arg4 totalPublisherHeadlineCount:(unsigned int)arg5 completion:(id /* block */)arg6;
+- (id)fetchEndOfArticleDataForHeadline:(id)arg1 initialRelatedHeadlineCount:(unsigned long long)arg2 initialPublisherHeadlineCount:(unsigned long long)arg3 totalRelatedHeadlineCount:(unsigned long long)arg4 totalPublisherHeadlineCount:(unsigned long long)arg5 fetchRelatedHeadline:(bool)arg6 fetchAllTopics:(bool)arg7 completion:(id)arg8;
 - (id)flintHelper;
 - (id)flintResourceManager;
-- (void)getCoverImageForFeed:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)hasBeenRateLimited;
+- (void)getCoverImageForFeed:(id)arg1 completion:(id)arg2;
+- (bool)hasBeenRateLimited;
 - (id)init;
 - (id)initForTesting;
 - (id)initWithContentContext:(id)arg1 privateDataContext:(id)arg2 networkBehaviorMonitor:(id)arg3;
-- (id)initWithContentHostDirectory:(id)arg1 privateDataHostDirectory:(id)arg2 privateDataActionProvider:(id)arg3 networkBehaviorMonitor:(id)arg4 desiredHeadlineFieldOptions:(unsigned int)arg5 feedUsage:(int)arg6 lockStoreFrontIfNeeded:(BOOL)arg7 deviceIsiPad:(BOOL)arg8;
+- (id)initWithContentHostDirectory:(id)arg1 privateDataHostDirectory:(id)arg2 privateDataActionProvider:(id)arg3 networkBehaviorMonitor:(id)arg4 desiredHeadlineFieldOptions:(unsigned long long)arg5 feedUsage:(long long)arg6 lockStoreFrontIfNeeded:(bool)arg7 deviceIsiPad:(bool)arg8;
 - (id)insertTestArticle;
-- (id)insertTestArticlesWithCount:(unsigned int)arg1;
+- (id)insertTestArticlesWithCount:(unsigned long long)arg1;
 - (id)internalContentContext;
 - (id)internalPrivateDataContext;
-- (BOOL)isPrivateDataSyncingEnabled;
-- (BOOL)isRunningPPT;
+- (bool)isPrivateDataSyncingEnabled;
+- (bool)isRunningPPT;
 - (id)networkBehaviorMonitor;
 - (id)notificationController;
 - (id)notificationsController;
@@ -99,14 +99,14 @@
 - (id)privateDataContext;
 - (id)privateDataDirectory;
 - (id)privatePushNotificationHandler;
-- (id)privateStoreWithName:(id)arg1 version:(unsigned int)arg2 options:(unsigned int)arg3;
+- (id)privateStoreWithName:(id)arg1 version:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)purchaseController;
 - (id)readingHistory;
 - (id)readingList;
 - (void)setContentContext:(id)arg1;
 - (void)setFlintHelper:(id)arg1;
 - (void)setPrivateDataContext:(id)arg1;
-- (void)setRunningPPT:(BOOL)arg1;
+- (void)setRunningPPT:(bool)arg1;
 - (id)subscriptionController;
 - (id)subscriptionList;
 - (id)tagController;

@@ -10,7 +10,7 @@
 @property (nonatomic) HDFitnessFriendsActivityDataManager *activityDataManager;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) HDDaemon *healthDaemon;
 @property (readonly) Class superclass;
 
@@ -21,7 +21,7 @@
 - (id)activityDataManager;
 - (void)fitnessFriendsManagerReady:(id)arg1;
 - (id)healthDaemon;
-- (void)pushFakeActivityDataToAllFriendsWithCompletion:(id /* block */)arg1;
+- (void)pushFakeActivityDataToAllFriendsWithCompletion:(id)arg1;
 - (void)setActivityDataManager:(id)arg1;
 - (void)setHealthDaemon:(id)arg1;
 

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)hasStarted;
-- (void)pauseTransitionWithOptions:(unsigned int)arg1;
+- (bool)hasStarted;
+- (void)pauseTransitionWithOptions:(unsigned long long)arg1;
 
 @end

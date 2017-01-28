@@ -23,9 +23,9 @@
 - (id)_userInfoBySettingsID;
 - (id)_userInfoQueue;
 - (void)_userInfoQueueAtomicIncrementSettingsID;
-- (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)captureStillImageBracketAsynchronouslyFromConnection:(id)arg1 withSettingsArray:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)captureStillImageAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
+- (void)captureStillImageBracketAsynchronouslyFromConnection:(id)arg1 withSettingsArray:(id)arg2 completionHandler:(id)arg3;
+- (void)captureStillImageSurfaceAsynchronouslyFromConnection:(id)arg1 completionHandler:(id)arg2;
 - (id)currentUserInfo;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
 - (id)initWithEngine:(id)arg1;

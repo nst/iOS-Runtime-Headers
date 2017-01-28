@@ -16,11 +16,11 @@
 - (void)_reloadForChangeNotification;
 - (void)dealloc;
 - (id)delegate;
-- (void)getMonitorItemsWithCompletionBlock:(id /* block */)arg1;
+- (void)getMonitorItemsWithCompletionBlock:(id)arg1;
 - (id)init;
-- (void)pauseMonitorItem:(id)arg1 completionBlock:(id /* block */)arg2;
-- (void)prioritizeMonitorItem:(id)arg1 completionBlock:(id /* block */)arg2;
-- (void)resumeMonitorItem:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)pauseMonitorItem:(id)arg1 completionBlock:(id)arg2;
+- (void)prioritizeMonitorItem:(id)arg1 completionBlock:(id)arg2;
+- (void)resumeMonitorItem:(id)arg1 completionBlock:(id)arg2;
 - (void)setDelegate:(id)arg1;
 
 @end

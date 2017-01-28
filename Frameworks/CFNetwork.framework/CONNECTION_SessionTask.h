@@ -5,7 +5,7 @@
 @interface CONNECTION_SessionTask : NSObject {
     struct __CFDictionary { } * __atsContext;
     struct __PerformanceTiming { } * __performanceTiming;
-    BOOL  __shouldSkipPreferredClientCertificateLookup;
+    bool  __shouldSkipPreferredClientCertificateLookup;
     struct __CFDictionary { } * _connectionProperties;
     struct _CFURLRequest { } * _currentRequest;
     bool  _is_cellular;
@@ -19,12 +19,12 @@
 }
 
 - (const struct __CFDictionary {}**)_DuetActivityProperties;
-- (unsigned long)_allowedProtocolTypes;
+- (unsigned long long)_allowedProtocolTypes;
 - (id)_allowsCellular;
 - (id)_backgroundTaskTimingData;
 - (id)_boundInterfaceIdentifier;
 - (long long)_bytesPerSecondLimit;
-- (BOOL)_cacheOnly;
+- (bool)_cacheOnly;
 - (int)_cachePolicy;
 - (id)_cfCache;
 - (id)_cfCookies;
@@ -45,7 +45,7 @@
 - (struct __CFDictionary { }*)_dependencyInfo;
 - (id)_disallowCellular;
 - (id)_expectedWorkload;
-- (void)_getAuthenticationHeadersForResponse:(struct _CFURLResponse { }*)arg1 completionHandler:(id /* block */)arg2;
+- (void)_getAuthenticationHeadersForResponse:(struct _CFURLResponse { }*)arg1 completionHandler:(id)arg2;
 - (struct __CFSet { }*)_getAuthenticatorStatusCodes;
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;
 - (id)_networkServiceType;
@@ -58,13 +58,13 @@
 - (id)_protocolForTask;
 - (struct __CFDictionary { }*)_proxySettings;
 - (void)_releasePreventIdleSleepAssertionIfAppropriate;
-- (long)_requestPriority;
+- (long long)_requestPriority;
 - (void)_setConnectionIsCellular:(bool)arg1;
 - (void)_setSocketProperties:(struct __CFDictionary { }*)arg1 connectionProperties:(struct __CFDictionary { }*)arg2;
 - (id)_shouldHandleCookies;
 - (unsigned char)_shouldPipelineHTTP;
 - (unsigned char)_shouldSkipPipelineProbe;
-- (BOOL)_shouldSkipPreferredClientCertificateLookup;
+- (bool)_shouldSkipPreferredClientCertificateLookup;
 - (unsigned char)_shouldUsePipelineHeuristics;
 - (struct __CFDictionary { }*)_sslSettings;
 - (id)_storagePartitionIdentifier;

@@ -4,23 +4,23 @@
 
 @interface CNCFPreferencesPrimitiveUserDefaults : NSObject <CNPrimitiveUserDefaults> {
     NSString * _applicationID;
-    long  _autosyncTimerIsActive;
+    long long  _autosyncTimerIsActive;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (struct __CFString { }*)CFApplicationID;
 - (void)dealloc;
 - (id)initWithApplicationID:(id)arg1;
-- (BOOL)primitiveBoolValueForKey:(id)arg1 keyExists:(BOOL*)arg2;
-- (int)primitiveIntegerValueForKey:(id)arg1 keyExists:(BOOL*)arg2;
+- (bool)primitiveBoolValueForKey:(id)arg1 keyExists:(bool*)arg2;
+- (long long)primitiveIntegerValueForKey:(id)arg1 keyExists:(bool*)arg2;
 - (id)primitiveObjectForKey:(id)arg1;
 - (void)primitiveRemoveObjectForKey:(id)arg1;
 - (void)setPrimitiveObject:(id)arg1 forKey:(id)arg2;
 - (void)setupAutosync;
-- (BOOL)synchronize;
+- (bool)synchronize;
 
 @end

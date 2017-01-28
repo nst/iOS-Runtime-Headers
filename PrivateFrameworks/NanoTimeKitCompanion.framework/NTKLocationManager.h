@@ -4,7 +4,7 @@
 
 @interface NTKLocationManager : NSObject {
     CLLocation * _currentLocation;
-    BOOL  _enableLogging;
+    bool  _enableLogging;
     CLLocation * _forcedLocation;
     CLLocation * _lastLocation;
     NSDate * _lastLocationUpdateTime;
@@ -30,12 +30,12 @@
 - (id)lastLocation;
 - (id)lastLocationUpdateTime;
 - (id)nameOfCurrentLocation;
-- (void)placemarkForCurrentLocationWithHandler:(id /* block */)arg1;
+- (void)placemarkForCurrentLocationWithHandler:(id)arg1;
 - (void)setCurrentLocation:(id)arg1;
 - (void)setForcedLocation:(id)arg1;
 - (void)setLastLocation:(id)arg1;
 - (void)setLastLocationUpdateTime:(id)arg1;
-- (struct NSNumber { Class x1; }*)startLocationUpdatesWithHandler:(id /* block */)arg1;
+- (struct NSNumber { Class x1; }*)startLocationUpdatesWithHandler:(id)arg1;
 - (void)stopLocationUpdatesForToken:(struct NSNumber { Class x1; }*)arg1;
 
 @end

@@ -12,11 +12,11 @@
 @property (nonatomic) GKGameCenterViewController *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)dashboardExtension;
-+ (BOOL)dismissAutomaticallyAfterExtensionCompletion;
++ (bool)dismissAutomaticallyAfterExtensionCompletion;
 
 - (id)contextForRequestIdentifier;
 - (id)dashboardAssetController;
@@ -25,14 +25,14 @@
 - (void)hostDidChangeLeaderboardIdentifier:(id)arg1;
 - (void)hostDidChangeLeaderboardTimeScope:(id)arg1;
 - (void)hostDidChangeViewState:(id)arg1;
-- (void)hostSupportsShowingPlayForChallenge:(BOOL)arg1;
-- (void)hostSupportsShowingPlayForTurnBasedMatch:(BOOL)arg1;
-- (void)hostSupportsShowingQuitForTurnBasedMatch:(BOOL)arg1;
+- (void)hostSupportsShowingPlayForChallenge:(bool)arg1;
+- (void)hostSupportsShowingPlayForTurnBasedMatch:(bool)arg1;
+- (void)hostSupportsShowingQuitForTurnBasedMatch:(bool)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)remoteViewControllerIsCanceling;
 - (void)remoteViewControllerIsFinishing;
 - (void)setDashboardAssetController:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

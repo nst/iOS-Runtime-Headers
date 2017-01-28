@@ -16,15 +16,15 @@
 - (void)_applyDefaultStaticStylingToCell:(id)arg1;
 - (id)dataSource;
 - (id)initWithTransitTicketDetailDataSource:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)primaryTextColor;
 - (id)secondaryTextColor;
 - (void)setDataSource:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;
 - (void)setSecondaryTextColor:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

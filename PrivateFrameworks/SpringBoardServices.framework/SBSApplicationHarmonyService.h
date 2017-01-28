@@ -4,6 +4,6 @@
 
 @interface SBSApplicationHarmonyService : SBSAbstractApplicationService
 
-- (void)fetchWhitePointAdaptivityStyleForDisplayId:(unsigned int)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)fetchWhitePointAdaptivityStyleForDisplayId:(unsigned int)arg1 withCompletionHandler:(id)arg2;
 
 @end

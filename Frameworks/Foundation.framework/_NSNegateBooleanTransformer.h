@@ -6,7 +6,7 @@
 
 + (Class)transformedValueClass;
 
-- (BOOL)_isBooleanTransformer;
+- (bool)_isBooleanTransformer;
 - (id)description;
 - (id)transformedValue:(id)arg1;
 

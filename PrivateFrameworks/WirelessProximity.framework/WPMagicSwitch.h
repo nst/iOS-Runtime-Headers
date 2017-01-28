@@ -16,7 +16,7 @@
 - (id)clientAsString;
 - (id)delegate;
 - (void)deviceDiscovered:(id)arg1;
-- (struct { int x1; int x2; int x3; })dutyCycleToScanningRates:(int)arg1;
+- (struct { long long x1; long long x2; long long x3; })dutyCycleToScanningRates:(long long)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)invalidate;
 - (void)scanningFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
@@ -25,7 +25,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)startAdvertisingWithData:(id)arg1;
 - (void)startScanningWithData:(id)arg1;
-- (void)stateDidChange:(int)arg1;
+- (void)stateDidChange:(long long)arg1;
 - (void)stopAdvertising;
 - (void)stopScanning;
 

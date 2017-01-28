@@ -12,7 +12,7 @@
 @property (nonatomic, retain) _CDPSimpleModelParameterManagerTuningValue *previousBestTuningValue;
 @property (nonatomic, retain) NSMutableArray *tuningValues;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

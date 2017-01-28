@@ -6,23 +6,25 @@
 @required
 
 - (NSData *)clsDistanceIdentity;
-- (unsigned int)clsPeopleCount;
-- (int)clsPlayCount;
+- (unsigned long long)clsPeopleCount;
+- (long long)clsPlayCount;
 - (NSSet *)clsSceneClassifications;
-- (int)clsShareCount;
+- (long long)clsShareCount;
+- (float)clsSharpnessScore;
 - (float)clsVideoScore;
-- (int)clsViewCount;
+- (long long)clsViewCount;
 - (double)duration;
-- (unsigned int)facesCount;
-- (BOOL)hasAdjustments;
-- (BOOL)isAudio;
-- (BOOL)isFavorite;
-- (BOOL)isHidden;
-- (BOOL)isIncludedInCloudFeeds;
-- (BOOL)isSubtype:(unsigned int)arg1;
-- (BOOL)isTrashed;
-- (BOOL)isUtility;
-- (BOOL)isVideo;
-- (BOOL)representsBurst;
+- (unsigned long long)facesCount;
+- (bool)hasAdjustments;
+- (bool)isAudio;
+- (bool)isBlurry;
+- (bool)isFavorite;
+- (bool)isHidden;
+- (bool)isIncludedInCloudFeeds;
+- (bool)isSubtype:(unsigned long long)arg1;
+- (bool)isTrashed;
+- (bool)isUtility;
+- (bool)isVideo;
+- (bool)representsBurst;
 
 @end

@@ -3,25 +3,25 @@
  */
 
 @interface AVCapturePreparedPhotoSettingsArrayRequest : NSObject {
-    BOOL  _completed;
-    id /* block */  _completionHandler;
+    bool  _completed;
+    id  _completionHandler;
     NSArray * _photoSettingsArray;
     unsigned long long  _requestID;
 }
 
-@property (getter=isCompleted, nonatomic) BOOL completed;
-@property (readonly) id /* block */ completionHandler;
+@property (getter=isCompleted, nonatomic) bool completed;
+@property (readonly) id completionHandler;
 @property (readonly) NSArray *photoSettingsArray;
 @property (readonly) unsigned long long requestID;
 
-+ (id)preparedPhotoSettingsArrayRequestWithArray:(id)arg1 completionHandler:(id /* block */)arg2;
++ (id)preparedPhotoSettingsArrayRequestWithArray:(id)arg1 completionHandler:(id)arg2;
 
-- (id)_initWithArray:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id /* block */)completionHandler;
+- (id)_initWithArray:(id)arg1 completionHandler:(id)arg2;
+- (id)completionHandler;
 - (void)dealloc;
-- (BOOL)isCompleted;
+- (bool)isCompleted;
 - (id)photoSettingsArray;
 - (unsigned long long)requestID;
-- (void)setCompleted:(BOOL)arg1;
+- (void)setCompleted:(bool)arg1;
 
 @end

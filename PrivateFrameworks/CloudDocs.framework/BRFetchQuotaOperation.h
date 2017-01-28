@@ -3,15 +3,15 @@
  */
 
 @interface BRFetchQuotaOperation : BROperation {
-    id /* block */  _fetchQuotaCompletionBlock;
+    id  _fetchQuotaCompletionBlock;
 }
 
-@property (copy) id /* block */ fetchQuotaCompletionBlock;
+@property (copy) id fetchQuotaCompletionBlock;
 
 - (void).cxx_destruct;
-- (id /* block */)fetchQuotaCompletionBlock;
+- (id)fetchQuotaCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
-- (void)setFetchQuotaCompletionBlock:(id /* block */)arg1;
+- (void)setFetchQuotaCompletionBlock:(id)arg1;
 
 @end

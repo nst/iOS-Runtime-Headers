@@ -3,11 +3,11 @@
  */
 
 @interface _NSTimerBlockTarget : NSObject {
-    id /* block */  _block;
+    id  _block;
 }
 
 - (void)dealloc;
 - (void)fire:(id)arg1;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 
 @end

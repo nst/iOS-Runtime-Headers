@@ -3,7 +3,7 @@
  */
 
 @interface AWDSharingCloudDatabasePushReceived : PBCodable <NSCopying> {
-    BOOL  _anyZone;
+    bool  _anyZone;
     int  _errorCode;
     NSString * _errorDomain;
     struct { 
@@ -12,47 +12,47 @@
         unsigned int anyZone : 1; 
         unsigned int ourZone : 1; 
     }  _has;
-    BOOL  _ourZone;
+    bool  _ourZone;
     unsigned long long  _timestamp;
 }
 
-@property (nonatomic) BOOL anyZone;
+@property (nonatomic) bool anyZone;
 @property (nonatomic) int errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
-@property (nonatomic) BOOL hasAnyZone;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic, readonly) BOOL hasErrorDomain;
-@property (nonatomic) BOOL hasOurZone;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL ourZone;
+@property (nonatomic) bool hasAnyZone;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDomain;
+@property (nonatomic) bool hasOurZone;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool ourZone;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void).cxx_destruct;
-- (BOOL)anyZone;
+- (bool)anyZone;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)errorCode;
 - (id)errorDomain;
-- (BOOL)hasAnyZone;
-- (BOOL)hasErrorCode;
-- (BOOL)hasErrorDomain;
-- (BOOL)hasOurZone;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAnyZone;
+- (bool)hasErrorCode;
+- (bool)hasErrorDomain;
+- (bool)hasOurZone;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)ourZone;
-- (BOOL)readFrom:(id)arg1;
-- (void)setAnyZone:(BOOL)arg1;
+- (bool)ourZone;
+- (bool)readFrom:(id)arg1;
+- (void)setAnyZone:(bool)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setErrorDomain:(id)arg1;
-- (void)setHasAnyZone:(BOOL)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasOurZone:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setOurZone:(BOOL)arg1;
+- (void)setHasAnyZone:(bool)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasOurZone:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setOurZone:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

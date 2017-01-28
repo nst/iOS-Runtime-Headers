@@ -3,37 +3,37 @@
  */
 
 @interface NTKEditOptionCollection : NSObject {
-    BOOL  _isColor;
-    BOOL  _isPosition;
-    BOOL  _isShowSeconds;
+    bool  _isColor;
+    bool  _isPosition;
+    bool  _isShowSeconds;
     NSString * _localizedName;
-    int  _mode;
+    long long  _mode;
     NSArray * _options;
 }
 
-@property (nonatomic) BOOL isColor;
-@property (nonatomic) BOOL isPosition;
-@property (nonatomic) BOOL isShowSeconds;
+@property (nonatomic) bool isColor;
+@property (nonatomic) bool isPosition;
+@property (nonatomic) bool isShowSeconds;
 @property (nonatomic, copy) NSString *localizedName;
-@property (nonatomic) int mode;
+@property (nonatomic) long long mode;
 @property (nonatomic, copy) NSArray *options;
 
-+ (id)editOptionCollectionWithEditMode:(int)arg1 localizedName:(id)arg2 options:(id)arg3;
++ (id)editOptionCollectionWithEditMode:(long long)arg1 localizedName:(id)arg2 options:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)initWithEditMode:(int)arg1 localizedName:(id)arg2 options:(id)arg3;
-- (BOOL)isColor;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPosition;
-- (BOOL)isShowSeconds;
+- (id)initWithEditMode:(long long)arg1 localizedName:(id)arg2 options:(id)arg3;
+- (bool)isColor;
+- (bool)isEqual:(id)arg1;
+- (bool)isPosition;
+- (bool)isShowSeconds;
 - (id)localizedName;
-- (int)mode;
+- (long long)mode;
 - (id)options;
-- (void)setIsColor:(BOOL)arg1;
-- (void)setIsPosition:(BOOL)arg1;
-- (void)setIsShowSeconds:(BOOL)arg1;
+- (void)setIsColor:(bool)arg1;
+- (void)setIsPosition:(bool)arg1;
+- (void)setIsShowSeconds:(bool)arg1;
 - (void)setLocalizedName:(id)arg1;
-- (void)setMode:(int)arg1;
+- (void)setMode:(long long)arg1;
 - (void)setOptions:(id)arg1;
 
 @end

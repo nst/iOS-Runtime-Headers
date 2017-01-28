@@ -13,8 +13,8 @@
 @property (nonatomic, copy) UIColor *highlightColor;
 
 - (void).cxx_destruct;
-- (id)_checkmarkImage:(BOOL)arg1;
-- (id)_disclosureChevronImage:(BOOL)arg1;
+- (id)_checkmarkImage:(bool)arg1;
+- (id)_disclosureChevronImage:(bool)arg1;
 - (id)checkmarkAccessoryColor;
 - (id)customAccessoryColor;
 - (id)highlightColor;

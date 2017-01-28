@@ -7,11 +7,11 @@
     UIViewController * _presentingController;
 }
 
-+ (id)presenterWithViewController:(id)arg1 message:(id)arg2 defaultActionText:(id)arg3 withCompletion:(id /* block */)arg4;
++ (id)presenterWithViewController:(id)arg1 message:(id)arg2 defaultActionText:(id)arg3 withCompletion:(id)arg4;
 
 - (void).cxx_destruct;
-- (void)_addActionWithtitle:(id)arg1 style:(int)arg2 actionBlock:(id /* block */)arg3;
+- (void)_addActionWithtitle:(id)arg1 style:(long long)arg2 actionBlock:(id)arg3;
 - (void)present;
-- (void)setCancelActionBlock:(id /* block */)arg1;
+- (void)setCancelActionBlock:(id)arg1;
 
 @end

@@ -9,7 +9,7 @@
 - (void)vibrationComponentDidStartForVibrationRecorderView:(TKVibrationRecorderView *)arg1;
 - (void)vibrationRecorderView:(TKVibrationRecorderView *)arg1 buttonTappedWithIdentifier:(int)arg2;
 - (void)vibrationRecorderView:(TKVibrationRecorderView *)arg1 didExitRecordingModeWithContextObject:(id)arg2;
-- (BOOL)vibrationRecorderViewDidEnterRecordingMode:(TKVibrationRecorderView *)arg1;
+- (bool)vibrationRecorderViewDidEnterRecordingMode:(TKVibrationRecorderView *)arg1;
 - (void)vibrationRecorderViewDidFinishReplayingVibration:(TKVibrationRecorderView *)arg1;
 - (void)vibrationRecorderViewDidReachVibrationRecordingMaximumDuration:(TKVibrationRecorderView *)arg1;
 

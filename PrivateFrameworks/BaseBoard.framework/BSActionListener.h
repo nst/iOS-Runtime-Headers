@@ -7,12 +7,12 @@
     NSMapTable * _queue_portToContextMap;
 }
 
-- (void)_queue_cleanupContext:(struct { unsigned int x1; id x2; id /* block */ x3; }*)arg1 withResponse:(id)arg2;
+- (void)_queue_cleanupContext:(struct { unsigned int x1; id x2; id x3; }*)arg1 withResponse:(id)arg2;
 - (void)clearListenerForTokens:(/* Warning: unhandled struct encoding: '{?=I@}' */ struct { unsigned int x1; id x2; }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;
-- (/* Warning: unhandled struct encoding: '{?=I@}' */ struct { unsigned int x1; id x2; })listenForResponseWithHandler:(id /* block */)arg1 timeout:(unsigned long long)arg2;
+- (/* Warning: unhandled struct encoding: '{?=I@}' */ struct { unsigned int x1; id x2; })listenForResponseWithHandler:(id)arg1 timeout:(unsigned long long)arg2;
 - (void)queue_handleMessage:(id)arg1 client:(id)arg2;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)timerFiredWithValue:(unsigned int)arg1 forResolution:(int)arg2 comparedToNow:(int)arg3;
+- (void)timerFiredWithValue:(unsigned long long)arg1 forResolution:(int)arg2 comparedToNow:(long long)arg3;
 
 @end

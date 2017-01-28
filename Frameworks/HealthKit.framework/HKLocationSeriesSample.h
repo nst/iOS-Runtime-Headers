@@ -9,7 +9,7 @@
 @property (setter=_setCodableLocationSeries:, nonatomic, retain) HDCodableLocationSeries *_codableLocationSeries;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
@@ -28,7 +28,7 @@
 + (id)createWithCodable:(id)arg1;
 + (Class)hd_dataEntityClass;
 
-- (BOOL)addCodableRepresentationToCollection:(id)arg1;
+- (bool)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
 
 @end

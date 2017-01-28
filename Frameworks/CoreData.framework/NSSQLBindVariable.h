@@ -8,30 +8,30 @@
     unsigned int  _flags;
     unsigned int  _index;
     long long  _int64;
-    unsigned int  _sqlType;
+    unsigned char  _sqlType;
     id  _value;
 }
 
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (BOOL)allowsCoercion;
+- (bool)_isDeallocating;
+- (bool)_tryRetain;
+- (bool)allowsCoercion;
 - (id)attributeDescription;
 - (void)dealloc;
-- (BOOL)hasObjectValue;
+- (bool)hasObjectValue;
 - (unsigned int)index;
-- (id)initWithInt64:(long long)arg1 sqlType:(unsigned int)arg2;
-- (id)initWithUnsignedInt:(unsigned int)arg1 sqlType:(unsigned int)arg2;
-- (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3;
-- (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3 allowCoercion:(BOOL)arg4;
+- (id)initWithInt64:(long long)arg1 sqlType:(unsigned char)arg2;
+- (id)initWithUnsignedInt:(unsigned int)arg1 sqlType:(unsigned char)arg2;
+- (id)initWithValue:(id)arg1 sqlType:(unsigned char)arg2 attributeDescription:(id)arg3;
+- (id)initWithValue:(id)arg1 sqlType:(unsigned char)arg2 attributeDescription:(id)arg3 allowCoercion:(bool)arg4;
 - (long long)int64;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 - (void)setIndex:(unsigned int)arg1;
 - (void)setInt64:(long long)arg1;
 - (void)setUnsignedInt:(unsigned int)arg1;
 - (void)setValue:(id)arg1;
-- (unsigned int)sqlType;
+- (unsigned char)sqlType;
 - (unsigned int)unsignedInt;
 - (id)value;
 

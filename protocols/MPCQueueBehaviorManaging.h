@@ -5,7 +5,7 @@
 
 @optional
 
-- (BOOL)preventsHardQueueModificationsForItem:(MPAVItem *)arg1;
-- (BOOL)supportsAddToQueue;
+- (bool)preventsHardQueueModificationsForItem:(MPAVItem *)arg1;
+- (bool)supportsAddToQueue;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)acceptPredictionItem:(_DECPredictionItem *)arg1 forConsumer:(unsigned int)arg2;
+- (bool)acceptPredictionItem:(_DECPredictionItem *)arg1 forConsumer:(unsigned long long)arg2;
 
 @end

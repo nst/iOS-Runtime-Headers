@@ -11,9 +11,9 @@
 @property (nonatomic, retain) NSString *deviceInputLocale;
 @property (nonatomic, retain) NSString *deviceOutputLocale;
 @property (nonatomic, retain) NSString *deviceSettingsLocale;
-@property (nonatomic, readonly) BOOL hasDeviceInputLocale;
-@property (nonatomic, readonly) BOOL hasDeviceOutputLocale;
-@property (nonatomic, readonly) BOOL hasDeviceSettingsLocale;
+@property (nonatomic, readonly) bool hasDeviceInputLocale;
+@property (nonatomic, readonly) bool hasDeviceOutputLocale;
+@property (nonatomic, readonly) bool hasDeviceSettingsLocale;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -23,13 +23,13 @@
 - (id)deviceOutputLocale;
 - (id)deviceSettingsLocale;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeviceInputLocale;
-- (BOOL)hasDeviceOutputLocale;
-- (BOOL)hasDeviceSettingsLocale;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDeviceInputLocale;
+- (bool)hasDeviceOutputLocale;
+- (bool)hasDeviceSettingsLocale;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDeviceInputLocale:(id)arg1;
 - (void)setDeviceOutputLocale:(id)arg1;
 - (void)setDeviceSettingsLocale:(id)arg1;

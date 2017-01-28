@@ -3,23 +3,23 @@
  */
 
 @interface OCFont : NSObject {
-    BOOL  _bold;
-    BOOL  _italic;
+    bool  _bold;
+    bool  _italic;
     OCFontSubfamily * _subfamily;
 }
 
-@property (nonatomic) BOOL bold;
-@property (nonatomic) BOOL italic;
+@property (nonatomic) bool bold;
+@property (nonatomic) bool italic;
 @property (nonatomic, readonly) OCFontSubfamily *subfamily;
 
-+ (id)fontWithSubfamily:(id)arg1 bold:(BOOL)arg2 italic:(BOOL)arg3;
++ (id)fontWithSubfamily:(id)arg1 bold:(bool)arg2 italic:(bool)arg3;
 
-- (BOOL)bold;
+- (bool)bold;
 - (void)dealloc;
-- (id)initWithSubfamily:(id)arg1 bold:(BOOL)arg2 italic:(BOOL)arg3;
-- (BOOL)italic;
-- (void)setBold:(BOOL)arg1;
-- (void)setItalic:(BOOL)arg1;
+- (id)initWithSubfamily:(id)arg1 bold:(bool)arg2 italic:(bool)arg3;
+- (bool)italic;
+- (void)setBold:(bool)arg1;
+- (void)setItalic:(bool)arg1;
 - (id)subfamily;
 
 @end

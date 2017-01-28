@@ -20,21 +20,21 @@
 @property (nonatomic, readonly) NSURL *outputURL;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } overallDurationHint;
 @property (nonatomic) float preferredRate;
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
+@property (nonatomic) struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; } preferredTransform;
 @property (nonatomic) float preferredVolume;
-@property (nonatomic) BOOL shouldOptimizeForNetworkUse;
-@property (nonatomic, readonly) int status;
+@property (nonatomic) bool shouldOptimizeForNetworkUse;
+@property (nonatomic, readonly) long long status;
 @property (retain) AVWeakReference *weakReferenceToAssetWriter;
 
-- (BOOL)_canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2 sourceFormat:(struct opaqueCMFormatDescription { }*)arg3 exceptionReason:(id*)arg4;
-- (BOOL)_canApplyTrackReferences:(id)arg1 exceptionReason:(id*)arg2;
-- (BOOL)_transitionToClientInitiatedTerminalStatus:(int)arg1;
+- (bool)_canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2 sourceFormat:(struct opaqueCMFormatDescription { }*)arg3 exceptionReason:(id*)arg4;
+- (bool)_canApplyTrackReferences:(id)arg1 exceptionReason:(id*)arg2;
+- (bool)_transitionToClientInitiatedTerminalStatus:(long long)arg1;
 - (void)addInput:(id)arg1;
 - (void)addInputGroup:(id)arg1;
 - (id)availableMediaTypes;
-- (BOOL)canAddInput:(id)arg1;
-- (BOOL)canAddInputGroup:(id)arg1;
-- (BOOL)canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2;
+- (bool)canAddInput:(id)arg1;
+- (bool)canAddInputGroup:(id)arg1;
+- (bool)canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2;
 - (void)cancelWriting;
 - (id)configurationState;
 - (void)dealloc;
@@ -42,7 +42,7 @@
 - (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)error;
 - (void)finishWriting;
-- (void)finishWritingWithCompletionHandler:(id /* block */)arg1;
+- (void)finishWritingWithCompletionHandler:(id)arg1;
 - (id)init;
 - (id)initWithConfigurationState:(id)arg1;
 - (id)inputGroups;
@@ -54,7 +54,7 @@
 - (id)outputURL;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
 - (float)preferredRate;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
+- (struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })preferredTransform;
 - (float)preferredVolume;
 - (void)setDirectoryForTemporaryFiles:(id)arg1;
 - (void)setMetadata:(id)arg1;
@@ -62,14 +62,14 @@
 - (void)setMovieTimeScale:(int)arg1;
 - (void)setOverallDurationHint:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setPreferredRate:(float)arg1;
-- (void)setPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setPreferredTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
 - (void)setPreferredVolume:(float)arg1;
-- (void)setShouldOptimizeForNetworkUse:(BOOL)arg1;
+- (void)setShouldOptimizeForNetworkUse:(bool)arg1;
 - (void)setWeakReferenceToAssetWriter:(id)arg1;
-- (BOOL)shouldOptimizeForNetworkUse;
+- (bool)shouldOptimizeForNetworkUse;
 - (void)startSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)startWriting;
-- (int)status;
+- (long long)status;
 - (void)transitionToFailedStatusWithError:(id)arg1;
 - (id)weakReferenceToAssetWriter;
 

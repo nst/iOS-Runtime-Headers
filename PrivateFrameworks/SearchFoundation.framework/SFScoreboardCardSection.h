@@ -16,7 +16,7 @@
 @property (nonatomic, retain) SFSportsTeam *team2;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessibilityDescription;

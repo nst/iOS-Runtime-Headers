@@ -4,6 +4,6 @@
 
 @interface CNStarkUtilities : NSObject
 
-+ (BOOL)activeInterfaceMechanismIsHardware;
++ (bool)activeInterfaceMechanismIsHardware;
 
 @end

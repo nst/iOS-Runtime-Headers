@@ -6,11 +6,11 @@
     NSURL * URL;
     AVAssetClientURLRequestHelper * URLRequestHelper;
     AVAssetCache * assetCache;
-    BOOL  hasInstanceIdentifierMapping;
+    bool  hasInstanceIdentifierMapping;
     NSDictionary * initializationOptions;
     AVAssetInspectorLoader * loader;
-    long  makeOneAssetDownloadCacheOnly;
-    long  makeOneResourceLoaderOnly;
+    long long  makeOneAssetDownloadCacheOnly;
+    long long  makeOneResourceLoaderOnly;
     AVAssetResourceLoader * resourceLoader;
     NSArray * tracks;
     NSObject<OS_dispatch_queue> * tracksAccessQueue;

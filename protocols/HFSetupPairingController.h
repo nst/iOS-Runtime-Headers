@@ -8,10 +8,10 @@
 - (HFAccessoryBrowsingManager *)accessoryBrowser;
 - (void)addPairingObserver:(id <HFSetupPairingObserver>)arg1;
 - (NAFuture *)cancel;
-- (BOOL)hasFailedAccessories;
+- (bool)hasFailedAccessories;
 - (HMHome *)home;
 - (HFDiscoveredAccessory *)pairedDiscoveredAccessory;
-- (unsigned int)phase;
+- (unsigned long long)phase;
 - (void)removePairingObserver:(id <HFSetupPairingObserver>)arg1;
 - (void)setSetupCode:(NSString *)arg1;
 - (NSString *)setupCode;

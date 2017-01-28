@@ -5,20 +5,20 @@
 
 @required
 
-- (void)addFailureBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)addSuccessBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id
-- (BOOL)cancel;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
-- (<MFFuture> *)map:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, id, void*, id
-- (void)onScheduler:(void *)arg1 addFailureBlock:(void *)arg2; // needs 2 arg types, found 7: <MFScheduler> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)onScheduler:(void *)arg1 addSuccessBlock:(void *)arg2; // needs 2 arg types, found 6: <MFScheduler> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id
-- (<MFFuture> *)onScheduler:(void *)arg1 recover:(void *)arg2; // needs 2 arg types, found 7: <MFScheduler> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, <MFFuture> *, id /* block */, NSError *, void*
-- (<MFFuture> *)onScheduler:(void *)arg1 then:(void *)arg2; // needs 2 arg types, found 6: <MFScheduler> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, <MFFuture> *, id /* block */, id
-- (<MFFuture> *)recover:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, <MFFuture> *, id /* block */, NSError *, void*
+- (void)addFailureBlock:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)addSuccessBlock:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, id
+- (bool)cancel;
+- (bool)isCancelled;
+- (bool)isFinished;
+- (<MFFuture> *)map:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, id, void*, id
+- (void)onScheduler:(void *)arg1 addFailureBlock:(void *)arg2; // needs 2 arg types, found 7: <MFScheduler> *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)onScheduler:(void *)arg1 addSuccessBlock:(void *)arg2; // needs 2 arg types, found 6: <MFScheduler> *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, id
+- (<MFFuture> *)onScheduler:(void *)arg1 recover:(void *)arg2; // needs 2 arg types, found 7: <MFScheduler> *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, <MFFuture> *, id, NSError *, void*
+- (<MFFuture> *)onScheduler:(void *)arg1 then:(void *)arg2; // needs 2 arg types, found 6: <MFScheduler> *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, <MFFuture> *, id, id
+- (<MFFuture> *)recover:(void *)arg1; // needs 1 arg types, found 6: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, <MFFuture> *, id, NSError *, void*
 - (id)result:(id*)arg1;
 - (id)resultBeforeDate:(NSDate *)arg1 error:(id*)arg2;
 - (id)resultWithTimeout:(double)arg1 error:(id*)arg2;
-- (<MFFuture> *)then:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, <MFFuture> *, id /* block */, id
+- (<MFFuture> *)then:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, <MFFuture> *, id, id
 
 @end

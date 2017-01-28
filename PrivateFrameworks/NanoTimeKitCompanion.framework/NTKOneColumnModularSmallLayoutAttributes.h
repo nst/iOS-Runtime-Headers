@@ -3,43 +3,43 @@
  */
 
 @interface NTKOneColumnModularSmallLayoutAttributes : NSObject {
-    float  _imageHeight;
-    float  _imageOriginY;
-    float  _marginWidth;
-    float  _minimumFontSize;
-    float  _subtitleBaselineOffset;
+    double  _imageHeight;
+    double  _imageOriginY;
+    double  _marginWidth;
+    double  _minimumFontSize;
+    double  _subtitleBaselineOffset;
     CLKFont * _subtitleFont;
-    float  _titleBaselineOffset;
+    double  _titleBaselineOffset;
     CLKFont * _titleFont;
 }
 
-@property (nonatomic) float imageHeight;
-@property (nonatomic) float imageOriginY;
-@property (nonatomic) float marginWidth;
-@property (nonatomic) float minimumFontSize;
-@property (nonatomic) float subtitleBaselineOffset;
+@property (nonatomic) double imageHeight;
+@property (nonatomic) double imageOriginY;
+@property (nonatomic) double marginWidth;
+@property (nonatomic) double minimumFontSize;
+@property (nonatomic) double subtitleBaselineOffset;
 @property (nonatomic, retain) CLKFont *subtitleFont;
-@property (nonatomic) float titleBaselineOffset;
+@property (nonatomic) double titleBaselineOffset;
 @property (nonatomic, retain) CLKFont *titleFont;
 
 + (id)attributesForTemplate:(id)arg1;
 
 - (void).cxx_destruct;
-- (float)imageHeight;
-- (float)imageOriginY;
-- (float)marginWidth;
-- (float)minimumFontSize;
-- (void)setImageHeight:(float)arg1;
-- (void)setImageOriginY:(float)arg1;
-- (void)setMarginWidth:(float)arg1;
-- (void)setMinimumFontSize:(float)arg1;
-- (void)setSubtitleBaselineOffset:(float)arg1;
+- (double)imageHeight;
+- (double)imageOriginY;
+- (double)marginWidth;
+- (double)minimumFontSize;
+- (void)setImageHeight:(double)arg1;
+- (void)setImageOriginY:(double)arg1;
+- (void)setMarginWidth:(double)arg1;
+- (void)setMinimumFontSize:(double)arg1;
+- (void)setSubtitleBaselineOffset:(double)arg1;
 - (void)setSubtitleFont:(id)arg1;
-- (void)setTitleBaselineOffset:(float)arg1;
+- (void)setTitleBaselineOffset:(double)arg1;
 - (void)setTitleFont:(id)arg1;
-- (float)subtitleBaselineOffset;
+- (double)subtitleBaselineOffset;
 - (id)subtitleFont;
-- (float)titleBaselineOffset;
+- (double)titleBaselineOffset;
 - (id)titleFont;
 
 @end

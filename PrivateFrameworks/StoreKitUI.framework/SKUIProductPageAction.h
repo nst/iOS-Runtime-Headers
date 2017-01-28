@@ -3,30 +3,30 @@
  */
 
 @interface SKUIProductPageAction : NSObject {
-    int  _actionType;
+    long long  _actionType;
     SKUIItem * _item;
     NSURL * _url;
     NSString * _urlTitle;
-    id /* block */  _viewControllerBlock;
+    id  _viewControllerBlock;
 }
 
 @property (nonatomic, copy) NSURL *URL;
-@property (nonatomic) int actionType;
+@property (nonatomic) long long actionType;
 @property (nonatomic, retain) SKUIItem *item;
 @property (nonatomic, readonly) UIViewController *viewController;
-@property (nonatomic, copy) id /* block */ viewControllerBlock;
+@property (nonatomic, copy) id viewControllerBlock;
 
-+ (id)actionWithType:(int)arg1;
++ (id)actionWithType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)URL;
-- (int)actionType;
+- (long long)actionType;
 - (id)item;
-- (void)setActionType:(int)arg1;
+- (void)setActionType:(long long)arg1;
 - (void)setItem:(id)arg1;
 - (void)setURL:(id)arg1;
-- (void)setViewControllerBlock:(id /* block */)arg1;
+- (void)setViewControllerBlock:(id)arg1;
 - (id)viewController;
-- (id /* block */)viewControllerBlock;
+- (id)viewControllerBlock;
 
 @end

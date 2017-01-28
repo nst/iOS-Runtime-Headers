@@ -6,13 +6,13 @@
     NSString * _account;
     NSString * _bundleId;
     NSURL * _contentURL;
-    int  _direction;
+    long long  _direction;
     NSString * _domainIdentifier;
     NSDate * _endDate;
-    BOOL  _isResponse;
+    bool  _isResponse;
     NSArray * _keywords;
     NSString * _locationUUID;
-    int  _mechanism;
+    long long  _mechanism;
     NSArray * _recipients;
     _CDContact * _sender;
     NSDate * _startDate;
@@ -24,14 +24,14 @@
 @property (retain) NSURL *contentURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property int direction;
+@property long long direction;
 @property (retain) NSString *domainIdentifier;
 @property (retain) NSDate *endDate;
-@property (readonly) unsigned int hash;
-@property BOOL isResponse;
+@property (readonly) unsigned long long hash;
+@property bool isResponse;
 @property (retain) NSArray *keywords;
 @property (retain) NSString *locationUUID;
-@property int mechanism;
+@property long long mechanism;
 @property (nonatomic, readonly) NSArray *peopleIdentifiers;
 @property (retain) NSArray *recipients;
 @property (retain) _CDContact *sender;
@@ -39,11 +39,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSDate *timestamp;
 @property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) BOOL userIsSender;
-@property (nonatomic, readonly) BOOL userIsThreadInitiator;
+@property (nonatomic, readonly) bool userIsSender;
+@property (nonatomic, readonly) bool userIsThreadInitiator;
 @property (retain) NSString *uuid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)account;
@@ -51,30 +51,30 @@
 - (id)contentURL;
 - (id)description;
 - (id)descriptionOfArray:(id)arg1;
-- (int)direction;
+- (long long)direction;
 - (id)domainIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initwithINInteraction:(id)arg1 bundleID:(id)arg2;
-- (BOOL)isResponse;
+- (bool)isResponse;
 - (id)keywords;
 - (id)locationUUID;
-- (int)mechanism;
+- (long long)mechanism;
 - (id)peopleIdentifiers;
 - (id)recipients;
 - (id)sender;
 - (void)setAccount:(id)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setContentURL:(id)arg1;
-- (void)setDirection:(int)arg1;
+- (void)setDirection:(long long)arg1;
 - (void)setDomainIdentifier:(id)arg1;
 - (void)setEndDate:(id)arg1;
-- (void)setIsResponse:(BOOL)arg1;
+- (void)setIsResponse:(bool)arg1;
 - (void)setKeywords:(id)arg1;
 - (void)setLocationUUID:(id)arg1;
-- (void)setMechanism:(int)arg1;
+- (void)setMechanism:(long long)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setStartDate:(id)arg1;
@@ -82,8 +82,8 @@
 - (id)startDate;
 - (id)timestamp;
 - (id)title;
-- (BOOL)userIsSender;
-- (BOOL)userIsThreadInitiator;
+- (bool)userIsSender;
+- (bool)userIsThreadInitiator;
 - (id)uuid;
 
 @end

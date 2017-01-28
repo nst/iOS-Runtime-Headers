@@ -4,10 +4,10 @@
 
 @interface CIRectangleDetector : CIDetector {
     struct { int (*x1)(); int (*x2)(); int (*x3)(); int (*x4)(); } * CVMLFuncs;
-    float  _height;
+    double  _height;
     void * _internalBuffer;
     float * _perMeshPtr;
-    float  _width;
+    double  _width;
     CIContext * context;
     NSMutableDictionary * featureOptions;
     struct __CVBuffer { } * interimScaleBuffer;

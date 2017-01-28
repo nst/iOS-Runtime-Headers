@@ -3,10 +3,10 @@
  */
 
 @interface NSFileWrapperMoreIVars : NSObject {
-    BOOL  attributesMustBeWrittenSoNoHardLinking;
+    bool  attributesMustBeWrittenSoNoHardLinking;
     NSDictionary * cachedDirectoryChildrenAsDictionary;
     NSError * contentsLazyReadingError;
-    BOOL  contentsMustBeReadWithoutMapping;
+    bool  contentsMustBeReadWithoutMapping;
     NSURL * contentsURL;
     NSHashTable * parents;
 }

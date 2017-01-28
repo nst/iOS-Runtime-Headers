@@ -3,13 +3,13 @@
  */
 
 @interface PDFBorderPrivateVars : NSObject {
-    int  dashCount;
+    long long  dashCount;
     NSArray * dashPattern;
-    float * dashPatternRaw;
-    float  hCornerRadius;
-    float  lineWidth;
-    int  style;
-    float  vCornerRadius;
+    double * dashPatternRaw;
+    double  hCornerRadius;
+    double  lineWidth;
+    long long  style;
+    double  vCornerRadius;
 }
 
 - (void).cxx_destruct;

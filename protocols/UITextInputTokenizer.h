@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)isPosition:(UITextPosition *)arg1 atBoundary:(int)arg2 inDirection:(int)arg3;
-- (BOOL)isPosition:(UITextPosition *)arg1 withinTextUnit:(int)arg2 inDirection:(int)arg3;
-- (UITextPosition *)positionFromPosition:(UITextPosition *)arg1 toBoundary:(int)arg2 inDirection:(int)arg3;
-- (UITextRange *)rangeEnclosingPosition:(UITextPosition *)arg1 withGranularity:(int)arg2 inDirection:(int)arg3;
+- (bool)isPosition:(UITextPosition *)arg1 atBoundary:(long long)arg2 inDirection:(long long)arg3;
+- (bool)isPosition:(UITextPosition *)arg1 withinTextUnit:(long long)arg2 inDirection:(long long)arg3;
+- (UITextPosition *)positionFromPosition:(UITextPosition *)arg1 toBoundary:(long long)arg2 inDirection:(long long)arg3;
+- (UITextRange *)rangeEnclosingPosition:(UITextPosition *)arg1 withGranularity:(long long)arg2 inDirection:(long long)arg3;
 
 @end

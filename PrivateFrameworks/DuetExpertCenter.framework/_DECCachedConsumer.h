@@ -7,8 +7,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)cachedPredictionsWithLimit:(unsigned int)arg1 error:(id*)arg2;
-- (id)initWithCategory:(unsigned int)arg1 consumerType:(unsigned int)arg2;
-- (id)initWithCategory:(unsigned int)arg1 consumerType:(unsigned int)arg2 storeReader:(id)arg3;
+- (id)cachedPredictionsWithLimit:(unsigned long long)arg1 error:(id*)arg2;
+- (id)initWithCategory:(unsigned long long)arg1 consumerType:(unsigned long long)arg2;
+- (id)initWithCategory:(unsigned long long)arg1 consumerType:(unsigned long long)arg2 storeReader:(id)arg3;
 
 @end

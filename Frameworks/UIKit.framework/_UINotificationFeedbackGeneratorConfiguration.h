@@ -4,22 +4,22 @@
 
 @interface _UINotificationFeedbackGeneratorConfiguration : _UIFeedbackGeneratorConfiguration {
     NSDictionary * _feedbacks;
-    BOOL  _includePrivateEvents;
+    bool  _includePrivateEvents;
 }
 
 @property (nonatomic, retain) NSDictionary *feedbacks;
-@property (nonatomic) BOOL includePrivateEvents;
+@property (nonatomic) bool includePrivateEvents;
 
 + (id)defaultConfiguration;
 + (id)privateConfiguration;
 
 - (void).cxx_destruct;
-- (BOOL)defaultEnabled;
+- (bool)defaultEnabled;
 - (id)feedbackKeyPaths;
 - (id)feedbacks;
-- (BOOL)includePrivateEvents;
-- (int)requiredSupportLevel;
+- (bool)includePrivateEvents;
+- (long long)requiredSupportLevel;
 - (void)setFeedbacks:(id)arg1;
-- (void)setIncludePrivateEvents:(BOOL)arg1;
+- (void)setIncludePrivateEvents:(bool)arg1;
 
 @end

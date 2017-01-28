@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) MPMediaQuery *query;
 @property (nonatomic, retain) MPMediaItem *startItem;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

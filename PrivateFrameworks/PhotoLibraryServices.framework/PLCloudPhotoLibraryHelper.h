@@ -4,6 +4,6 @@
 
 @interface PLCloudPhotoLibraryHelper : NSObject
 
-+ (void)enableCPL:(id /* block */)arg1;
++ (void)enableCPL:(id)arg1;
 
 @end

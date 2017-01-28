@@ -10,25 +10,25 @@
 @property (nonatomic, readonly) NSArray *refList;
 @property (nonatomic, retain) NSMutableDictionary *refs;
 @property (nonatomic, retain) NSMutableDictionary *symbols;
-@property (nonatomic) BOOL variable;
+@property (nonatomic) bool variable;
 
 + (id)stringEnumForType:(int)arg1;
 + (id)treeOfType:(int)arg1;
 + (int)typeForString:(id)arg1;
 + (id)uniqueNameWithType:(int)arg1;
 
-- (BOOL)_needsScaling;
-- (id)attributeSet:(BOOL)arg1;
+- (bool)_needsScaling;
+- (id)attributeSet:(bool)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)geometrySet:(BOOL)arg1;
+- (id)geometrySet:(bool)arg1;
 - (int)indexOfSubtreeWithName:(id)arg1 rows:(id)arg2;
 - (int)indexOfSubtreeWithType:(int)arg1;
 - (id)initWithType:(int)arg1;
-- (BOOL)isSameAsTree:(id)arg1;
+- (bool)isSameAsTree:(id)arg1;
 - (id)listAtIndex:(int)arg1;
 - (void)mergePropertiesWithOthers:(id)arg1;
-- (void)mergePropertiesWithSubtreeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 properties:(id)arg2;
+- (void)mergePropertiesWithSubtreeRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1 properties:(id)arg2;
 - (void)mergeSubtreesWithOthers:(id)arg1;
 - (void)mergeSymbolsWithOthers:(id)arg1;
 - (id)refList;
@@ -38,7 +38,7 @@
 - (void)setRefs:(id)arg1;
 - (void)setSymbols:(id)arg1;
 - (void)setTarget:(id)arg1 forReference:(id)arg2;
-- (void)setVariable:(BOOL)arg1;
+- (void)setVariable:(bool)arg1;
 - (int)shapeHash;
 - (id)simpleName;
 - (int)subtreeHash;
@@ -46,7 +46,7 @@
 - (id)symbolValues:(id)arg1 withSymbols:(id)arg2;
 - (id)symbols;
 - (void)uniquifyName;
-- (BOOL)usesSymbols;
-- (BOOL)variable;
+- (bool)usesSymbols;
+- (bool)variable;
 
 @end

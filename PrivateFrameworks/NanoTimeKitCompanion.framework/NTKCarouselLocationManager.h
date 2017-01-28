@@ -11,38 +11,38 @@
     NSString * _localityText;
     CLInUseAssertion * _locationInUseAssertion;
     CLLocationManager * _locationManager;
-    unsigned int  _nextToken;
-    BOOL  _paused;
+    unsigned long long  _nextToken;
+    bool  _paused;
     NSMutableArray * _placemarkHandlers;
     RadiosPreferences * _radioPreferences;
     double  _regularUpdateInterval;
     NSTimer * _regularUpdateTimer;
-    BOOL  _runningHighPriorityUpdate;
+    bool  _runningHighPriorityUpdate;
     double  _staleLocationDataTimeoutInterval;
-    BOOL  _startHighPriorityUpdateWhenAvailable;
+    bool  _startHighPriorityUpdateWhenAvailable;
     NSMutableDictionary * _updateHandlers;
-    BOOL  _wantedUpdateWhileAccessUnavailable;
+    bool  _wantedUpdateWhileAccessUnavailable;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_authorizationStatusWithCallback:(id /* block */)arg1;
-- (BOOL)_cachedLocationDataIsStale;
+- (void)_authorizationStatusWithCallback:(id)arg1;
+- (bool)_cachedLocationDataIsStale;
 - (void)_callLocationUpdateHandlersWithError:(id)arg1;
 - (void)_cancelHighPriorityUpdateTimer;
 - (void)_cancelRegularUpdateTimer;
 - (void)_carouselDidLaunch;
 - (void)_deviceLockStateChanged;
-- (void)_discardLocationAndResetDefaults:(BOOL)arg1;
+- (void)_discardLocationAndResetDefaults:(bool)arg1;
 - (void)_pauseUpdates:(id)arg1;
 - (void)_postSignificantLocationChangeNotification;
 - (void)_requestLocation;
 - (void)_resumeUpdates:(id)arg1;
-- (void)_setInUse:(BOOL)arg1;
+- (void)_setInUse:(bool)arg1;
 - (void)_startHighPriorityUpdateTimer;
 - (void)_startRegularUpdateTimer;
 - (void)_startReverseGeocodeIfNecessary;
@@ -58,8 +58,8 @@
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (id)nameOfCurrentLocation;
-- (void)placemarkForCurrentLocationWithHandler:(id /* block */)arg1;
-- (struct NSNumber { Class x1; }*)startLocationUpdatesWithHandler:(id /* block */)arg1;
+- (void)placemarkForCurrentLocationWithHandler:(id)arg1;
+- (struct NSNumber { Class x1; }*)startLocationUpdatesWithHandler:(id)arg1;
 - (void)stopLocationUpdatesForToken:(struct NSNumber { Class x1; }*)arg1;
 
 @end

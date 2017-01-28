@@ -8,8 +8,8 @@
 
 - (id)_productionWithRenditionsInProductions:(id)arg1;
 - (id)copyDataFromAttributes;
-- (BOOL)hasCursorProduction;
-- (BOOL)hasProduction;
+- (bool)hasCursorProduction;
+- (bool)hasProduction;
 - (id)production;
 - (void)setAttributesFromCopyData:(id)arg1;
 

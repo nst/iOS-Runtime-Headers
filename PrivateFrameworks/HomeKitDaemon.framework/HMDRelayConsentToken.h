@@ -20,7 +20,7 @@
 @property (nonatomic) HMDUser *user;
 @property (nonatomic, retain) NSUUID *userIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accessory;
@@ -29,12 +29,12 @@
 - (id)consentToken;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConsentToken:(id)arg1 expiration:(id)arg2 accessory:(id)arg3 user:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAccessory:(id)arg1;
 - (void)setUser:(id)arg1;
 - (void)setUserIdentifier:(id)arg1;

@@ -8,28 +8,28 @@
     NSData * _certificateData;
     NSString * _certificateURLBagKey;
     SSVPlaybackLeaseConfiguration * _configuration;
-    id /* block */  _outputBlock;
+    id  _outputBlock;
     SSVPlaybackLeaseRequest * _request;
-    unsigned int  _retryCount;
+    unsigned long long  _retryCount;
     SSURLBag * _urlBag;
 }
 
 @property (copy) NSString *certificateURLBagKey;
 @property (readonly, copy) SSVPlaybackLeaseRequest *leaseRequest;
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_loadCertificateDataIfNecessary:(id*)arg1;
-- (BOOL)_resolveConfigurationAndURLReturningError:(id*)arg1;
-- (BOOL)_shouldRetryForError:(id)arg1;
+- (bool)_loadCertificateDataIfNecessary:(id*)arg1;
+- (bool)_resolveConfigurationAndURLReturningError:(id*)arg1;
+- (bool)_shouldRetryForError:(id)arg1;
 - (void)cancel;
 - (id)certificateURLBagKey;
 - (id)initWithLeaseRequest:(id)arg1 URLBag:(id)arg2;
 - (id)initWithLeaseRequest:(id)arg1 configuration:(id)arg2;
 - (id)leaseRequest;
 - (void)main;
-- (id /* block */)outputBlock;
+- (id)outputBlock;
 - (void)setCertificateURLBagKey:(id)arg1;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (void)setOutputBlock:(id)arg1;
 
 @end

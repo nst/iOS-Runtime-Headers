@@ -4,7 +4,7 @@
 
 @interface AWDMMCSChunkingInfo : PBCodable <NSCopying> {
     long long  _byteCount;
-    BOOL  _cancelled;
+    bool  _cancelled;
     long long  _chunkCount;
     NSMutableArray * _chunkingErrors;
     long long  _duration;
@@ -22,30 +22,30 @@
 }
 
 @property (nonatomic) long long byteCount;
-@property (nonatomic) BOOL cancelled;
+@property (nonatomic) bool cancelled;
 @property (nonatomic) long long chunkCount;
 @property (nonatomic, retain) NSMutableArray *chunkingErrors;
 @property (nonatomic) long long duration;
 @property (nonatomic) int errorCode;
 @property (nonatomic, retain) NSString *errorDomain;
-@property (nonatomic) BOOL hasByteCount;
-@property (nonatomic) BOOL hasCancelled;
-@property (nonatomic) BOOL hasChunkCount;
-@property (nonatomic) BOOL hasDuration;
-@property (nonatomic) BOOL hasErrorCode;
-@property (nonatomic, readonly) BOOL hasErrorDomain;
-@property (nonatomic) BOOL hasStartTime;
+@property (nonatomic) bool hasByteCount;
+@property (nonatomic) bool hasCancelled;
+@property (nonatomic) bool hasChunkCount;
+@property (nonatomic) bool hasDuration;
+@property (nonatomic) bool hasErrorCode;
+@property (nonatomic, readonly) bool hasErrorDomain;
+@property (nonatomic) bool hasStartTime;
 @property (nonatomic) long long startTime;
 
 + (Class)chunkingErrorType;
 
 - (void)addChunkingError:(id)arg1;
 - (long long)byteCount;
-- (BOOL)cancelled;
+- (bool)cancelled;
 - (long long)chunkCount;
-- (id)chunkingErrorAtIndex:(unsigned int)arg1;
+- (id)chunkingErrorAtIndex:(unsigned long long)arg1;
 - (id)chunkingErrors;
-- (unsigned int)chunkingErrorsCount;
+- (unsigned long long)chunkingErrorsCount;
 - (void)clearChunkingErrors;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -55,30 +55,30 @@
 - (long long)duration;
 - (int)errorCode;
 - (id)errorDomain;
-- (BOOL)hasByteCount;
-- (BOOL)hasCancelled;
-- (BOOL)hasChunkCount;
-- (BOOL)hasDuration;
-- (BOOL)hasErrorCode;
-- (BOOL)hasErrorDomain;
-- (BOOL)hasStartTime;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasByteCount;
+- (bool)hasCancelled;
+- (bool)hasChunkCount;
+- (bool)hasDuration;
+- (bool)hasErrorCode;
+- (bool)hasErrorDomain;
+- (bool)hasStartTime;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setByteCount:(long long)arg1;
-- (void)setCancelled:(BOOL)arg1;
+- (void)setCancelled:(bool)arg1;
 - (void)setChunkCount:(long long)arg1;
 - (void)setChunkingErrors:(id)arg1;
 - (void)setDuration:(long long)arg1;
 - (void)setErrorCode:(int)arg1;
 - (void)setErrorDomain:(id)arg1;
-- (void)setHasByteCount:(BOOL)arg1;
-- (void)setHasCancelled:(BOOL)arg1;
-- (void)setHasChunkCount:(BOOL)arg1;
-- (void)setHasDuration:(BOOL)arg1;
-- (void)setHasErrorCode:(BOOL)arg1;
-- (void)setHasStartTime:(BOOL)arg1;
+- (void)setHasByteCount:(bool)arg1;
+- (void)setHasCancelled:(bool)arg1;
+- (void)setHasChunkCount:(bool)arg1;
+- (void)setHasDuration:(bool)arg1;
+- (void)setHasErrorCode:(bool)arg1;
+- (void)setHasStartTime:(bool)arg1;
 - (void)setStartTime:(long long)arg1;
 - (long long)startTime;
 - (void)writeTo:(id)arg1;

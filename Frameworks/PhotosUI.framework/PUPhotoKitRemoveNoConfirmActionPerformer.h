@@ -4,6 +4,6 @@
 
 @interface PUPhotoKitRemoveNoConfirmActionPerformer : PUPhotoKitRemoveActionPerformer
 
-- (BOOL)shouldShowConfirmation;
+- (bool)shouldShowConfirmation;
 
 @end

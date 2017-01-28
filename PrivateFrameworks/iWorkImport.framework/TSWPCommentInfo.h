@@ -16,18 +16,18 @@
 @property (nonatomic, readonly) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) TSPObject *hostingModel;
 @property (nonatomic, copy) TSDCommentStorage *storage;
 @property (readonly) Class superclass;
 
 + (id)bezierPathForExportCommentOutline;
-+ (id)commentInfoWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 storage:(id)arg3;
++ (id)commentInfoWithContext:(id)arg1 size:(struct CGSize { double x1; double x2; })arg2 storage:(id)arg3;
 + (id)commentParagraphStyleForStylesheet:(id)arg1;
-+ (id)commentParagraphStyleIdentifierForFontSize:(unsigned int)arg1;
++ (id)commentParagraphStyleIdentifierForFontSize:(unsigned long long)arg1;
 + (id)commentStyleIdentifier;
 + (void)createCommentInfoStyleInStylesheetIfNeeded:(id)arg1;
-+ (id)p_commentParagraphStyleForStylesheet:(id)arg1 fontSize:(unsigned int)arg2;
++ (id)p_commentParagraphStyleForStylesheet:(id)arg1 fontSize:(unsigned long long)arg2;
 + (id)p_defaultCommentInfoStyleInStylesheet:(id)arg1;
 + (id)p_defaultFill;
 + (id)p_defaultPadding;
@@ -50,7 +50,7 @@
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 commentStorage:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 wpStorage:(id)arg5;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2 style:(id)arg3 pathSource:(id)arg4 wpStorage:(id)arg5 commentStorage:(id)arg6;
-- (BOOL)isLockable;
+- (bool)isLockable;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct CommentInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeInfoArchive {} *x5; struct Reference {} *x6; }*)arg1 unarchiver:(id)arg2;
 - (id)pathSourceForExportCommentOutline;
@@ -60,9 +60,9 @@
 - (void)setAuthor:(id)arg1;
 - (void)setCommentStorage:(id)arg1;
 - (id)storage;
-- (BOOL)supportsAttachedComments;
-- (BOOL)supportsHyperlinks;
-- (BOOL)wantsAnnotationPopover;
+- (bool)supportsAttachedComments;
+- (bool)supportsHyperlinks;
+- (bool)wantsAnnotationPopover;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;
 - (void)willBeAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;

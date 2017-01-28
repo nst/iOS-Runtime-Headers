@@ -4,29 +4,29 @@
 
 @interface _CDDailyProgressForecastQuery : NSObject {
     CDAttribute * _attribute;
-    BOOL  _attributeEncodesProgress;
-    BOOL  _considerAlternateDayPattern;
-    BOOL  _considerDailyPattern;
-    BOOL  _considerWeeklyPattern;
+    bool  _attributeEncodesProgress;
+    bool  _considerAlternateDayPattern;
+    bool  _considerDailyPattern;
+    bool  _considerWeeklyPattern;
     double  _lookBackDuration;
     double  _temporalResolution;
 }
 
 @property (retain) CDAttribute *attribute;
-@property BOOL attributeEncodesProgress;
-@property BOOL considerAlternateDayPattern;
-@property BOOL considerDailyPattern;
-@property BOOL considerWeeklyPattern;
+@property bool attributeEncodesProgress;
+@property bool considerAlternateDayPattern;
+@property bool considerDailyPattern;
+@property bool considerWeeklyPattern;
 @property double lookBackDuration;
 @property double temporalResolution;
 
 - (void).cxx_destruct;
 - (id)aggregateForecastsToHaveMinAvgVar:(id)arg1;
 - (id)attribute;
-- (BOOL)attributeEncodesProgress;
-- (BOOL)considerAlternateDayPattern;
-- (BOOL)considerDailyPattern;
-- (BOOL)considerWeeklyPattern;
+- (bool)attributeEncodesProgress;
+- (bool)considerAlternateDayPattern;
+- (bool)considerDailyPattern;
+- (bool)considerWeeklyPattern;
 - (id)forecast;
 - (id)forecastDay:(id)arg1;
 - (id)forecastUsingDailyProgressDict:(id)arg1 andKeys:(id)arg2;
@@ -34,13 +34,13 @@
 - (id)initWithNumericAttribute:(id)arg1;
 - (double)lookBackDuration;
 - (void)setAttribute:(id)arg1;
-- (void)setAttributeEncodesProgress:(BOOL)arg1;
-- (void)setConsiderAlternateDayPattern:(BOOL)arg1;
-- (void)setConsiderDailyPattern:(BOOL)arg1;
-- (void)setConsiderWeeklyPattern:(BOOL)arg1;
+- (void)setAttributeEncodesProgress:(bool)arg1;
+- (void)setConsiderAlternateDayPattern:(bool)arg1;
+- (void)setConsiderDailyPattern:(bool)arg1;
+- (void)setConsiderWeeklyPattern:(bool)arg1;
 - (void)setLookBackDuration:(double)arg1;
 - (void)setTemporalResolution:(double)arg1;
-- (unsigned int)slotsPerDay;
+- (unsigned long long)slotsPerDay;
 - (double)temporalResolution;
 
 @end

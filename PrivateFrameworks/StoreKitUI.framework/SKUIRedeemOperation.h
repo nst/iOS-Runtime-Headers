@@ -3,15 +3,15 @@
  */
 
 @interface SKUIRedeemOperation : NSOperation {
-    BOOL  _cameraRecognized;
+    bool  _cameraRecognized;
     SKUIClientContext * _clientContext;
     NSString * _code;
-    id /* block */  _resultBlock;
+    id  _resultBlock;
 }
 
-@property (nonatomic) BOOL cameraRecognized;
+@property (nonatomic) bool cameraRecognized;
 @property (nonatomic, retain) SKUIClientContext *clientContext;
-@property (copy) id /* block */ resultBlock;
+@property (copy) id resultBlock;
 
 - (void).cxx_destruct;
 - (void)_applyThankYouDictionary:(id)arg1 toRedeem:(id)arg2;
@@ -20,13 +20,13 @@
 - (id)_performRequestWithProperties:(id)arg1 error:(id*)arg2;
 - (id)_redeemForSuccessDictionary:(id)arg1;
 - (id)_requestPropertiesForThankYouWithURL:(id)arg1;
-- (BOOL)cameraRecognized;
+- (bool)cameraRecognized;
 - (id)clientContext;
 - (id)initWithCode:(id)arg1;
 - (void)main;
-- (id /* block */)resultBlock;
-- (void)setCameraRecognized:(BOOL)arg1;
+- (id)resultBlock;
+- (void)setCameraRecognized:(bool)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setResultBlock:(id /* block */)arg1;
+- (void)setResultBlock:(id)arg1;
 
 @end

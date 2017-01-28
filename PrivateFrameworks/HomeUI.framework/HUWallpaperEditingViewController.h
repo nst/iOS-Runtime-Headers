@@ -11,7 +11,7 @@
     UIScrollView * _scrollView;
     UIButton * _setButton;
     UIVisualEffectView * _setButtonBackgroundView;
-    BOOL  _statusBarHidden;
+    bool  _statusBarHidden;
     HFWallpaper * _wallpaper;
 }
 
@@ -20,13 +20,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HUWallpaperEditingViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) UIButton *setButton;
 @property (nonatomic, retain) UIVisualEffectView *setButtonBackgroundView;
-@property (nonatomic) BOOL statusBarHidden;
+@property (nonatomic) bool statusBarHidden;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) HFWallpaper *wallpaper;
 
@@ -41,8 +41,8 @@
 - (id)image;
 - (id)imageView;
 - (id)initWithWallpaper:(id)arg1 image:(id)arg2 delegate:(id)arg3;
-- (int)preferredStatusBarUpdateAnimation;
-- (BOOL)prefersStatusBarHidden;
+- (long long)preferredStatusBarUpdateAnimation;
+- (bool)prefersStatusBarHidden;
 - (id)scrollView;
 - (id)setButton;
 - (id)setButtonBackgroundView;
@@ -54,16 +54,16 @@
 - (void)setScrollView:(id)arg1;
 - (void)setSetButton:(id)arg1;
 - (void)setSetButtonBackgroundView:(id)arg1;
-- (void)setStatusBarHidden:(BOOL)arg1;
+- (void)setStatusBarHidden:(bool)arg1;
 - (void)setWallpaper:(id)arg1;
-- (BOOL)statusBarHidden;
+- (bool)statusBarHidden;
 - (id)transparentButtonWithTitle:(id)arg1;
 - (void)updateScrollViewScale;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)viewForZoomingInScrollView:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 - (id)wallpaper;
 
 @end

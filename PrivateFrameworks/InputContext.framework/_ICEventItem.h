@@ -7,24 +7,24 @@
     NSString * _eventIdentifier;
     NSString * _eventTitle;
     NSData * _imageData;
-    BOOL  _isAllDay;
-    BOOL  _isFreeTime;
+    bool  _isAllDay;
+    bool  _isFreeTime;
 }
 
 @property (nonatomic, readonly) NSString *calendarTitle;
 @property (nonatomic, readonly) NSString *eventIdentifier;
 @property (nonatomic, readonly) NSString *eventTitle;
 @property (nonatomic, readonly) NSData *imageData;
-@property (nonatomic, readonly) BOOL isAllDay;
-@property (nonatomic, readonly) BOOL isFreeTime;
+@property (nonatomic, readonly) bool isAllDay;
+@property (nonatomic, readonly) bool isFreeTime;
 
 - (void).cxx_destruct;
 - (id)calendarTitle;
 - (id)eventIdentifier;
 - (id)eventTitle;
 - (id)imageData;
-- (id)initWithIdentifier:(id)arg1 score:(double)arg2 proactiveTrigger:(id)arg3 eventTitle:(id)arg4 calendarTitle:(id)arg5 value:(id)arg6 imageData:(id)arg7 isAllDay:(BOOL)arg8 isFreeTime:(BOOL)arg9;
-- (BOOL)isAllDay;
-- (BOOL)isFreeTime;
+- (id)initWithIdentifier:(id)arg1 score:(double)arg2 proactiveTrigger:(id)arg3 eventTitle:(id)arg4 calendarTitle:(id)arg5 value:(id)arg6 imageData:(id)arg7 isAllDay:(bool)arg8 isFreeTime:(bool)arg9;
+- (bool)isAllDay;
+- (bool)isFreeTime;
 
 @end

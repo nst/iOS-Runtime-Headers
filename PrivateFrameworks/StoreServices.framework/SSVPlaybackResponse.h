@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)URLResponse;
-- (void)_enumerateItemsUsingBlock:(id /* block */)arg1;
+- (void)_enumerateItemsUsingBlock:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithDictionary:(id)arg1 URLResponse:(id)arg2;
 - (id)itemForItemIdentifier:(id)arg1;

@@ -28,12 +28,12 @@
 - (id)initWithModelPath:(id)arg1 withConfiguration:(id)arg2;
 - (id)initWithModelPath:(id)arg1 withPropertyListPath:(id)arg2;
 - (void)initializeModel:(id)arg1 withConfiguration:(id)arg2;
-- (BOOL)reset;
+- (bool)reset;
 - (void)setCPMLAlgorithm:(id)arg1;
 - (void)setCPMLAlgorithmEngine:(id)arg1;
 - (void)setCpModelEvaluate:(id)arg1;
 - (void)setDispatchQueue:(id)arg1;
-- (BOOL)updateModelWithCPDB:(id)arg1;
-- (BOOL)updateModelWithDB:(id)arg1;
+- (bool)updateModelWithCPDB:(id)arg1;
+- (bool)updateModelWithDB:(id)arg1;
 
 @end

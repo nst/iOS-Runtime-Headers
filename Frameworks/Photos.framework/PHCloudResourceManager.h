@@ -12,12 +12,12 @@
 + (id)defaultManager;
 
 - (void).cxx_destruct;
-- (void)_synchronized:(id /* block */)arg1;
+- (void)_synchronized:(id)arg1;
 - (void)_updateCloudResourceDownloadStatesOnConnectionLostNotification:(id)arg1;
 - (void)_updateCloudResourceDownloadStatesOnStatusDidChangeNotification:(id)arg1;
 - (void)cancelRequest:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (int)requestCloudResourceType:(unsigned int)arg1 forAssetWithObjectID:(id)arg2 downloadIsTransient:(BOOL)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (int)requestCloudResourceType:(unsigned long long)arg1 forAssetWithObjectID:(id)arg2 downloadIsTransient:(bool)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
 
 @end

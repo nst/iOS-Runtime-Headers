@@ -3,21 +3,21 @@
  */
 
 @interface HKStaticDecimalPrecisionRule : NSObject <HKDecimalPrecisionRule> {
-    int  _decimalPrecision;
+    long long  _decimalPrecision;
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) int decimalPrecision;
+@property (nonatomic) long long decimalPrecision;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (int)decimalPrecision;
-- (int)decimalPrecisionForValue:(double)arg1;
-- (id)initWithDecimalPrecision:(int)arg1;
-- (int)maximumDecimalPrecision;
-- (int)minimumDecimalPrecision;
+- (long long)decimalPrecision;
+- (long long)decimalPrecisionForValue:(double)arg1;
+- (id)initWithDecimalPrecision:(long long)arg1;
+- (long long)maximumDecimalPrecision;
+- (long long)minimumDecimalPrecision;
 - (id)numberFormatter;
-- (void)setDecimalPrecision:(int)arg1;
+- (void)setDecimalPrecision:(long long)arg1;
 
 @end

@@ -10,6 +10,6 @@
 - (void)didCollectURLsForPreFilling:(NSArray *)arg1 atURL:(NSURL *)arg2;
 - (void)didFillGeneratedPasswordInForm:(NSDictionary *)arg1 inFrame:(WBUFormAutoFillFrameHandle *)arg2;
 - (void)textDidChangeInTextField:(NSDictionary *)arg1 inForm:(NSData *)arg2 inFrame:(WBUFormAutoFillFrameHandle *)arg3;
-- (void)willNavigateFrame:(WBUFormAutoFillFrameHandle *)arg1 withUnsubmittedForm:(NSDictionary *)arg2 loadingIsDeferred:(BOOL)arg3;
+- (void)willNavigateFrame:(WBUFormAutoFillFrameHandle *)arg1 withUnsubmittedForm:(NSDictionary *)arg2 loadingIsDeferred:(bool)arg3;
 
 @end

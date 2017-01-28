@@ -5,25 +5,25 @@
 @interface _SFPageLoadErrorController : NSObject {
     NSMutableArray * _alerts;
     NSTimer * _crashCountResetTimer;
-    unsigned int  _crashesSinceLastSuccessfulLoad;
+    unsigned long long  _crashesSinceLastSuccessfulLoad;
     <_SFPageLoadErrorControllerDelegate> * _delegate;
     NSURLRequest * _failedRequest;
-    BOOL  _reloadAfterResume;
-    BOOL  _reloadingFailedRequest;
+    bool  _reloadAfterResume;
+    bool  _reloadingFailedRequest;
     WKWebView * _webView;
 }
 
-@property (nonatomic, readonly) unsigned int crashesSinceLastSuccessfulLoad;
+@property (nonatomic, readonly) unsigned long long crashesSinceLastSuccessfulLoad;
 @property (nonatomic) <_SFPageLoadErrorControllerDelegate> *delegate;
 @property (nonatomic, readonly) NSURLRequest *failedRequest;
-@property (nonatomic, readonly) BOOL reloadingFailedRequest;
+@property (nonatomic, readonly) bool reloadingFailedRequest;
 
 - (void).cxx_destruct;
-- (void)_continueAfterCertificateAlertWithURL:(id)arg1 trust:(struct __SecTrust { }*)arg2 recoveryAttempter:(id /* block */)arg3;
+- (void)_continueAfterCertificateAlertWithURL:(id)arg1 trust:(struct __SecTrust { }*)arg2 recoveryAttempter:(id)arg3;
 - (void)_continueWithoutCredentialsUsingAlertContext:(id)arg1;
 - (id)_genericMessageForError:(id)arg1;
-- (BOOL)_handleCertificateError:(id)arg1 forURL:(id)arg2 recoveryAttempter:(id /* block */)arg3;
-- (void)_handleFrameLoadError:(id)arg1 forURL:(id)arg2 recoveryAttempter:(id /* block */)arg3;
+- (bool)_handleCertificateError:(id)arg1 forURL:(id)arg2 recoveryAttempter:(id)arg3;
+- (void)_handleFrameLoadError:(id)arg1 forURL:(id)arg2 recoveryAttempter:(id)arg3;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_resetCrashCount:(id)arg1;
 - (void)_resetCrashCountSoon;
@@ -34,12 +34,12 @@
 - (void)addAlert:(id)arg1;
 - (void)addAlertWithTitle:(id)arg1 bodyText:(id)arg2;
 - (void)addDisallowedUseOfJavaScriptAlert;
-- (void)addFormAlertWithTitle:(id)arg1 decisionHandler:(id /* block */)arg2;
+- (void)addFormAlertWithTitle:(id)arg1 decisionHandler:(id)arg2;
 - (void)addInvalidURLAlert;
 - (id)alert;
 - (void)clearCrashCountResetTimer;
 - (void)clearFailedRequest;
-- (unsigned int)crashesSinceLastSuccessfulLoad;
+- (unsigned long long)crashesSinceLastSuccessfulLoad;
 - (void)dealloc;
 - (id)delegate;
 - (id)failedRequest;
@@ -48,11 +48,11 @@
 - (id)initWithWebView:(id)arg1;
 - (void)performAction:(int)arg1 forAlert:(id)arg2;
 - (void)reloadAfterError;
-- (BOOL)reloadingFailedRequest;
+- (bool)reloadingFailedRequest;
 - (void)scheduleResetCrashCount;
 - (void)setDelegate:(id)arg1;
 - (void)showErrorPageWithTitle:(id)arg1 bodyText:(id)arg2 forError:(id)arg3;
 - (void)showErrorPageWithTitle:(id)arg1 bodyText:(id)arg2 learnMoreLink:(id)arg3 forError:(id)arg4;
-- (BOOL)updateCrashesAndShowCrashError:(id)arg1 URLString:(id)arg2;
+- (bool)updateCrashesAndShowCrashError:(id)arg1 URLString:(id)arg2;
 
 @end

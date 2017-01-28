@@ -12,7 +12,7 @@
     NSString * _feetAbbreviation;
     NSNumberFormatter * _floatNumberFormatter;
     NSMutableDictionary * _formattedNumberCache;
-    int  _grQuality;
+    long long  _grQuality;
     NSString * _kilometersAbbreviation;
     int  _layoutCounter;
     UIColor * _lightSegmentColorRegular;
@@ -20,29 +20,29 @@
     double  _magicNumbers;
     NSString * _metersAbbreviation;
     NSString * _milesAbbreviation;
-    int  _oldNumberOfSegments;
+    long long  _oldNumberOfSegments;
     UIView * _outlineViewA;
     UIView * _outlineViewB;
     double  _resultSegmentLength;
     double  _resultSegmentLengthInMeters;
-    float  _segmentLengthInPixels;
+    double  _segmentLengthInPixels;
     NSMutableArray * _segments;
     _MKScaleUnitsView * _unitsView;
-    BOOL  _useLightText;
-    BOOL  _useMetric;
-    BOOL  _useYardsForShortDistances;
+    bool  _useLightText;
+    bool  _useMetric;
+    bool  _useYardsForShortDistances;
     NSString * _yardAbbreviation;
 }
 
 @property (nonatomic) double distanceInMeters;
-@property (nonatomic) BOOL useLightText;
+@property (nonatomic) bool useLightText;
 
 - (void).cxx_destruct;
 - (void)_calculateSegments;
-- (id)_formattedStringForFloat:(float)arg1;
-- (void)_localizedDistanceStringsWithMeters:(unsigned int)arg1 imperial:(double)arg2 useFeet:(BOOL)arg3 inMetric:(BOOL)arg4 displaysYardsForShortDistances:(BOOL)arg5 strings:(id)arg6;
-- (id)_scaleViewFormattedStringForFloat:(float)arg1;
-- (id)_scaleViewFormattedStringForInteger:(int)arg1;
+- (id)_formattedStringForFloat:(double)arg1;
+- (void)_localizedDistanceStringsWithMeters:(unsigned int)arg1 imperial:(double)arg2 useFeet:(bool)arg3 inMetric:(bool)arg4 displaysYardsForShortDistances:(bool)arg5 strings:(id)arg6;
+- (id)_scaleViewFormattedStringForFloat:(double)arg1;
+- (id)_scaleViewFormattedStringForInteger:(long long)arg1;
 - (void)_updateSegmentStrokes;
 - (void)_updateStrings;
 - (void)dealloc;
@@ -51,8 +51,8 @@
 - (void)layoutSubviews;
 - (void)memoryWarning:(id)arg1;
 - (void)setDistanceInMeters:(double)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setUseLightText:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (void)setUseLightText:(bool)arg1;
 - (void)updateLocale:(id)arg1;
 
 @end

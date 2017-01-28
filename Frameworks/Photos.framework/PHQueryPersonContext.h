@@ -6,7 +6,7 @@
     PHFetchOptions * _fetchOptions;
 }
 
-+ (unsigned int)peopleHomeUnverifiedFaceCountThreshold;
++ (unsigned long long)peopleHomeUnverifiedFaceCountThreshold;
 + (id)subpredicatesForFetchOptions:(id)arg1;
 
 - (void).cxx_destruct;

@@ -5,13 +5,13 @@
 @interface AppLaunchStatsSBSettings : NSObject <DuetLoggerProtocol> {
     NSUserDefaults * aplsSBSettingsDefault;
     NSObject<OS_dispatch_queue> * aplsSettingsQueue;
-    id /* block */  callbackBlock;
+    id  callbackBlock;
     AppLaunchStatsSaveAndRestore * saveAndRestoreContext;
     NSMutableDictionary * settingsBlacklist;
 }
 
 - (void).cxx_destruct;
-- (id)init:(id /* block */)arg1;
+- (id)init:(id)arg1;
 - (bool)isAppDisabledInSettingsList:(id)arg1;
 - (bool)isManagedConfigurationSettingOn;
 - (void)loadSettingsBlacklist;

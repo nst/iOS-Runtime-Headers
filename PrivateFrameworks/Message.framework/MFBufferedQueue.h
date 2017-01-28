@@ -14,21 +14,21 @@
 @property (nonatomic) unsigned int maximumSize;
 @property (nonatomic, readonly) unsigned int size;
 
-- (BOOL)_flush;
-- (BOOL)addItem:(id)arg1;
+- (bool)_flush;
+- (bool)addItem:(id)arg1;
 - (void)dealloc;
-- (BOOL)flush;
-- (BOOL)flushIfNecessary;
-- (BOOL)handleItems:(id)arg1;
+- (bool)flush;
+- (bool)flushIfNecessary;
+- (bool)handleItems:(id)arg1;
 - (id)init;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (double)maximumLatency;
 - (unsigned int)maximumSize;
 - (void)removeAllObjects;
 - (void)setMaximumLatency:(double)arg1;
 - (void)setMaximumSize:(unsigned int)arg1;
 - (unsigned int)size;
-- (unsigned int)sizeForItem:(id)arg1;
+- (unsigned long long)sizeForItem:(id)arg1;
 
 @end

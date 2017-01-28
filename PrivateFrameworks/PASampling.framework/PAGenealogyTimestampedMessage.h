@@ -12,9 +12,9 @@
 @property (readonly) NSString *message;
 
 - (unsigned long long)activityId;
-- (int)compareToOtherMessage:(id)arg1;
+- (long long)compareToOtherMessage:(id)arg1;
 - (id)initWithActivityId:(unsigned long long)arg1 atMachTime:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)machTime;
 - (id)message;
 

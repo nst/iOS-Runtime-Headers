@@ -16,13 +16,13 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (id)__componentsRequiredForScriptDetectionWithPhoneticDesired:(BOOL)arg1;
++ (id)__componentsRequiredForScriptDetectionWithPhoneticDesired:(bool)arg1;
 + (id)_allComponents;
 + (id)_allProperties;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_isEmpty;
-- (id)_scriptDeterminingStringRepresentationWithPhoneticDesired:(BOOL)arg1;
+- (bool)_isEmpty;
+- (id)_scriptDeterminingStringRepresentationWithPhoneticDesired:(bool)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -31,8 +31,8 @@
 - (id)givenName;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToComponents:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToComponents:(id)arg1;
 - (id)middleName;
 - (id)namePrefix;
 - (id)nameSuffix;
@@ -48,7 +48,7 @@
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
 
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 
@@ -63,7 +63,7 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
-- (BOOL)isGivenNameFirst;
+- (bool)isGivenNameFirst;
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 

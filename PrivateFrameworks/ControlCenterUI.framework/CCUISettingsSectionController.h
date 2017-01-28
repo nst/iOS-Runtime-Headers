@@ -4,14 +4,14 @@
 
 @interface CCUISettingsSectionController : CCUIButtonSectionController
 
-@property (nonatomic, readonly) BOOL usesCompactHeight;
+@property (nonatomic, readonly) bool usesCompactHeight;
 
 + (Class)buttonControllerClass;
 
-- (BOOL)buttonControllerShouldUseSmallButtons:(id)arg1;
+- (bool)buttonControllerShouldUseSmallButtons:(id)arg1;
 - (id)sectionIdentifier;
 - (id)settings;
-- (BOOL)usesCompactHeight;
-- (void)viewWillAppear:(BOOL)arg1;
+- (bool)usesCompactHeight;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

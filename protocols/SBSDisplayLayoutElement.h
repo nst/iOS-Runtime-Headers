@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isSpringBoardElement;
-- (int)layoutRole;
+- (bool)isSpringBoardElement;
+- (long long)layoutRole;
 
 @end

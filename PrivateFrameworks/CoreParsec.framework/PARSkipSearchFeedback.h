@@ -4,21 +4,21 @@
 
 @interface PARSkipSearchFeedback : SFFeedback {
     NSString * _input;
-    unsigned int  _triggerEvent;
+    unsigned long long  _triggerEvent;
 }
 
 @property (nonatomic, copy) NSString *input;
-@property (nonatomic) unsigned int triggerEvent;
+@property (nonatomic) unsigned long long triggerEvent;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithTriggerEvent:(unsigned int)arg1 input:(id)arg2;
+- (id)initWithTriggerEvent:(unsigned long long)arg1 input:(id)arg2;
 - (id)input;
 - (void)setInput:(id)arg1;
-- (void)setTriggerEvent:(unsigned int)arg1;
-- (unsigned int)triggerEvent;
+- (void)setTriggerEvent:(unsigned long long)arg1;
+- (unsigned long long)triggerEvent;
 
 @end

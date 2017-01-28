@@ -4,9 +4,9 @@
 
 @interface VKScene : NSObject <NSCopying> {
     GEOTileKeyList * _debugKeyList;
-    BOOL  _fullyLoaded;
+    bool  _fullyLoaded;
     VKTileKeyList * _keysInView;
-    BOOL  _mapIsOpaque;
+    bool  _mapIsOpaque;
     VKTileKeyList * _neighborKeys;
     NSSet * _neighborTiles;
     NSMutableArray * _rasterOverlayScenes;
@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic, retain) GEOTileKeyList *debugKeyList;
-@property (nonatomic) BOOL fullyLoaded;
+@property (nonatomic) bool fullyLoaded;
 @property (nonatomic, retain) VKTileKeyList *keysInView;
-@property (nonatomic) BOOL mapIsOpaque;
+@property (nonatomic) bool mapIsOpaque;
 @property (nonatomic, retain) VKTileKeyList *neighborKeys;
 @property (nonatomic, retain) NSSet *neighborTiles;
 @property (nonatomic, retain) NSSet *tilesToRender;
@@ -26,17 +26,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugKeyList;
-- (BOOL)fullyLoaded;
+- (bool)fullyLoaded;
 - (id)keysInView;
-- (BOOL)mapIsOpaque;
+- (bool)mapIsOpaque;
 - (id)neighborKeys;
 - (id)neighborTiles;
-- (id)rasterOverlaySceneAtLevel:(unsigned int)arg1;
+- (id)rasterOverlaySceneAtLevel:(unsigned long long)arg1;
 - (void)reset;
 - (void)setDebugKeyList:(id)arg1;
-- (void)setFullyLoaded:(BOOL)arg1;
+- (void)setFullyLoaded:(bool)arg1;
 - (void)setKeysInView:(id)arg1;
-- (void)setMapIsOpaque:(BOOL)arg1;
+- (void)setMapIsOpaque:(bool)arg1;
 - (void)setNeighborKeys:(id)arg1;
 - (void)setNeighborTiles:(id)arg1;
 - (void)setTilesToRender:(id)arg1;

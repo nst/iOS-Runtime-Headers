@@ -5,16 +5,16 @@
 @interface _DECAsset : NSObject {
     NSString * _fileName;
     int  _notificationToken;
-    id /* block */  _onUpdate;
+    id  _onUpdate;
     NSString * _resourcePath;
 }
 
 + (void)_downloadInitialAssetMetadata;
-+ (id)assetFromPlistWithClass:(Class)arg1 onUpdate:(id /* block */)arg2;
++ (id)assetFromPlistWithClass:(Class)arg1 onUpdate:(id)arg2;
 + (int)assetVersion;
 + (id)bundlePath;
 + (int)compatibilityVersion;
-+ (void)fetchAssetFromPlistWithClass:(Class)arg1 block:(id /* block */)arg2;
++ (void)fetchAssetFromPlistWithClass:(Class)arg1 block:(id)arg2;
 + (void)initialize;
 + (int)resourceVersion;
 + (void)updateAssetMetadata;
@@ -24,13 +24,13 @@
 - (void)_runUpdateBlock;
 - (void)_unregisterAssetUpdateNotification;
 - (id)abGroupContents;
-- (void)addABGroupAwareUpdateBlock:(id /* block */)arg1;
-- (void)addUpdateBlock:(id /* block */)arg1;
+- (void)addABGroupAwareUpdateBlock:(id)arg1;
+- (void)addUpdateBlock:(id)arg1;
 - (id)contentsAsDictionary;
 - (void)dealloc;
 - (id)init;
-- (id)initWithBundlePath:(id)arg1 fileName:(id)arg2 fileType:(id)arg3 onUpdate:(id /* block */)arg4;
-- (id)initWithFileName:(id)arg1 fileExtension:(id)arg2 onUpdate:(id /* block */)arg3;
+- (id)initWithBundlePath:(id)arg1 fileName:(id)arg2 fileType:(id)arg3 onUpdate:(id)arg4;
+- (id)initWithFileName:(id)arg1 fileExtension:(id)arg2 onUpdate:(id)arg3;
 - (id)path;
 - (id)rawContentsAsDictionary;
 

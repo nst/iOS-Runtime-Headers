@@ -19,7 +19,7 @@
 @property (nonatomic, retain) CNContactStore *contactStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <CNSchedulerProvider> *highLatencySchedulerProvider;
 @property (nonatomic, retain) CNUIIDSContactPropertyResolver *idsContactPropertyResolver;
 @property (nonatomic, retain) <CNMCProfileConnection> *profileConnection;

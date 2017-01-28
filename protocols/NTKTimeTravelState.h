@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)inTimeTravel;
-- (void)setInTimeTravel:(BOOL)arg1;
+- (bool)inTimeTravel;
+- (void)setInTimeTravel:(bool)arg1;
 
 @end

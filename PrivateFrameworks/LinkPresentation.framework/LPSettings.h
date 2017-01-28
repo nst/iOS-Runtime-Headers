@@ -5,6 +5,6 @@
 @interface LPSettings : NSObject
 
 + (void)initialize;
-+ (BOOL)showLayerBorders;
++ (bool)showLayerBorders;
 
 @end

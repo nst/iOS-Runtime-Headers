@@ -5,12 +5,12 @@
 
 @required
 
-- (BOOL)canMakeSpotlightChanges;
-- (BOOL)canModifyCalendarDatabase;
-- (BOOL)canModifySuggestedEventCalendar;
-- (BOOL)canSetAutomaticLocationGeocodingAllowedValue;
-- (BOOL)hasContactsUIEntitlement;
-- (BOOL)internalAccessLevelGranted;
-- (BOOL)testingAccessLevelGranted;
+- (bool)canMakeSpotlightChanges;
+- (bool)canModifyCalendarDatabase;
+- (bool)canModifySuggestedEventCalendar;
+- (bool)canSetAutomaticLocationGeocodingAllowedValue;
+- (bool)hasContactsUIEntitlement;
+- (bool)internalAccessLevelGranted;
+- (bool)testingAccessLevelGranted;
 
 @end

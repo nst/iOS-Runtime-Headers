@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NGSSettingsManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedSettingsManager;
@@ -18,17 +18,17 @@
 - (id)_fetchWatchKitGlances;
 - (void)_filterRemovedSystemAppsFromArray:(id)arg1;
 - (void)_handleLocaleChange:(id)arg1;
-- (unsigned int)_installStateForWatchKitInstallState:(int)arg1;
+- (unsigned long long)_installStateForWatchKitInstallState:(long long)arg1;
 - (void)_mergeAdditionalGlanceDefinitionsIntoArray:(id)arg1;
 - (void)_mergeWatchKitGlanceDefinitionsIntoArray:(id)arg1;
-- (BOOL)_shouldMergeGlanceDefinitions;
-- (BOOL)_shouldSaveGlanceDefinitions;
+- (bool)_shouldMergeGlanceDefinitions;
+- (bool)_shouldSaveGlanceDefinitions;
 - (void)_willSaveGlanceDefinitions;
 - (void)dealloc;
 - (id)delegate;
 - (void)didLoadGlanceDefinitions;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)updateInstallStateForApplication:(id)arg1 installState:(int)arg2;
+- (void)updateInstallStateForApplication:(id)arg1 installState:(long long)arg2;
 
 @end

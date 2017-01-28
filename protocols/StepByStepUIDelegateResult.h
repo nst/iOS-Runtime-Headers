@@ -5,6 +5,6 @@
 
 @required
 
-- (void)stepByStepNextStepResult:(long)arg1 withOptions:(NSDictionary *)arg2;
+- (void)stepByStepNextStepResult:(int)arg1 withOptions:(NSDictionary *)arg2;
 
 @end

@@ -3,37 +3,39 @@
  */
 
 @interface HUItemTableHeaderFooterView : UITableViewHeaderFooterView {
-    NSMutableArray * _constraints;
+    NSLayoutConstraint * _bottomSpacingConstraint;
+    NSArray * _constraints;
+    bool  _includeBottomSpacing;
     UILabel * _messageLabel;
-    struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
-    }  _messageLabelInsets;
 }
 
 @property (nonatomic, copy) NSAttributedString *attributedMessage;
-@property (nonatomic, retain) NSMutableArray *constraints;
+@property (nonatomic, retain) NSLayoutConstraint *bottomSpacingConstraint;
+@property (nonatomic, retain) NSArray *constraints;
+@property (nonatomic) bool includeBottomSpacing;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, retain) UILabel *messageLabel;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } messageLabelInsets;
-@property (nonatomic) unsigned int numberOfLines;
+@property (nonatomic) unsigned long long numberOfLines;
+
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
-- (void)_updateConstraints;
+- (double)_bottomSpacing;
 - (id)attributedMessage;
+- (id)bottomSpacingConstraint;
 - (id)constraints;
+- (bool)includeBottomSpacing;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (id)message;
 - (id)messageLabel;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })messageLabelInsets;
-- (unsigned int)numberOfLines;
+- (unsigned long long)numberOfLines;
 - (void)setAttributedMessage:(id)arg1;
+- (void)setBottomSpacingConstraint:(id)arg1;
 - (void)setConstraints:(id)arg1;
+- (void)setIncludeBottomSpacing:(bool)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageLabel:(id)arg1;
-- (void)setMessageLabelInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setNumberOfLines:(unsigned int)arg1;
+- (void)setNumberOfLines:(unsigned long long)arg1;
+- (void)updateConstraints;
 
 @end

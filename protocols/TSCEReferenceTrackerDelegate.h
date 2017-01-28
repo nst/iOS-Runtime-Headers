@@ -7,12 +7,12 @@
 
 - (NSArray *)cellRangeWasInserted:(struct { struct TSCERangeCoordinate { struct TSUCellCoord { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct TSUCellCoord { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
 - (void)referencedCellWasModified:(TSCETrackedReference *)arg1;
-- (BOOL)shouldRewriteOnCellMerge;
-- (BOOL)shouldRewriteOnRangeMove;
-- (BOOL)shouldRewriteOnSort;
-- (BOOL)shouldRewriteOnTableIDReassignment;
-- (BOOL)shouldRewriteOnTectonicShift;
-- (BOOL)shouldRewriteOnTranspose;
+- (bool)shouldRewriteOnCellMerge;
+- (bool)shouldRewriteOnRangeMove;
+- (bool)shouldRewriteOnSort;
+- (bool)shouldRewriteOnTableIDReassignment;
+- (bool)shouldRewriteOnTectonicShift;
+- (bool)shouldRewriteOnTranspose;
 - (void)trackedReferenceWasDeleted:(TSCETrackedReference *)arg1 fromOwnerID:(struct __CFUUID { }*)arg2;
 
 @optional

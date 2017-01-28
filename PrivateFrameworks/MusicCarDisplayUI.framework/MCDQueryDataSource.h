@@ -3,18 +3,24 @@
  */
 
 @interface MCDQueryDataSource : MPUCompletionQueryDataSource {
+    NSString * _albumSortPreferenceValue;
     MPMediaPredicate * _localPredicate;
 }
 
+@property (nonatomic, retain) NSString *albumSortPreferenceValue;
+
 - (void).cxx_destruct;
 - (void)_predicateBehaviorsChangedNotification:(id)arg1;
-- (id)_queryForNowPlayingComparisonAtIndex:(unsigned int)arg1;
-- (BOOL)_updateQueryPredicatesAndOrdering;
+- (id)_queryForNowPlayingComparisonAtIndex:(unsigned long long)arg1;
+- (bool)_updateQueryPredicatesAndOrdering;
+- (void)_userDefaultsDidChange:(id)arg1;
+- (id)albumSortPreferenceValue;
 - (void)dealloc;
-- (BOOL)entityIsNowPlayingAtIndex:(unsigned int)arg1;
-- (id)initWithQuery:(id)arg1 entityType:(int)arg2;
-- (id)playbackContextForIndex:(unsigned int)arg1;
-- (BOOL)queryIsNowPlayingAtIndex:(unsigned int)arg1;
-- (BOOL)showsIndexBar;
+- (bool)entityIsNowPlayingAtIndex:(unsigned long long)arg1;
+- (id)initWithQuery:(id)arg1 entityType:(long long)arg2;
+- (id)playbackContextForIndex:(unsigned long long)arg1;
+- (bool)queryIsNowPlayingAtIndex:(unsigned long long)arg1;
+- (void)setAlbumSortPreferenceValue:(id)arg1;
+- (bool)showsIndexBar;
 
 @end

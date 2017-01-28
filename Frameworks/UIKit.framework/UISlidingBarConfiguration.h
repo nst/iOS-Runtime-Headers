@@ -3,57 +3,57 @@
  */
 
 @interface UISlidingBarConfiguration : NSObject <NSCopying> {
-    BOOL  _allowMixedSideBySideAndOverlay;
+    bool  _allowMixedSideBySideAndOverlay;
     UIColor * _borderColor;
-    float  _leadingBorderWidth;
-    BOOL  _leadingMayBeHidden;
+    double  _leadingBorderWidth;
+    bool  _leadingMayBeHidden;
     NSArray * _leadingWidths;
-    float  _maximumMainWidth;
-    float  _minimumMainWidthFraction;
-    float  _minimumMainWidthFractionForSecondColumn;
-    float  _trailingBorderWidth;
-    BOOL  _trailingMayBeHidden;
+    double  _maximumMainWidth;
+    double  _minimumMainWidthFraction;
+    double  _minimumMainWidthFractionForSecondColumn;
+    double  _trailingBorderWidth;
+    bool  _trailingMayBeHidden;
     NSArray * _trailingWidths;
 }
 
-@property (nonatomic) BOOL allowMixedSideBySideAndOverlay;
+@property (nonatomic) bool allowMixedSideBySideAndOverlay;
 @property (nonatomic, retain) UIColor *borderColor;
-@property (nonatomic) float leadingBorderWidth;
-@property (nonatomic) BOOL leadingMayBeHidden;
+@property (nonatomic) double leadingBorderWidth;
+@property (nonatomic) bool leadingMayBeHidden;
 @property (nonatomic, copy) NSArray *leadingWidths;
-@property (nonatomic) float maximumMainWidth;
-@property (nonatomic) float minimumMainWidthFraction;
-@property (nonatomic) float minimumMainWidthFractionForSecondColumn;
-@property (nonatomic) float trailingBorderWidth;
-@property (nonatomic) BOOL trailingMayBeHidden;
+@property (nonatomic) double maximumMainWidth;
+@property (nonatomic) double minimumMainWidthFraction;
+@property (nonatomic) double minimumMainWidthFractionForSecondColumn;
+@property (nonatomic) double trailingBorderWidth;
+@property (nonatomic) bool trailingMayBeHidden;
 @property (nonatomic, copy) NSArray *trailingWidths;
 
 - (void).cxx_destruct;
-- (BOOL)allowMixedSideBySideAndOverlay;
+- (bool)allowMixedSideBySideAndOverlay;
 - (id)borderColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (float)leadingBorderWidth;
-- (BOOL)leadingMayBeHidden;
+- (bool)isEqual:(id)arg1;
+- (double)leadingBorderWidth;
+- (bool)leadingMayBeHidden;
 - (id)leadingWidths;
-- (float)maximumMainWidth;
-- (float)minimumMainWidthFraction;
-- (float)minimumMainWidthFractionForSecondColumn;
-- (void)setAllowMixedSideBySideAndOverlay:(BOOL)arg1;
+- (double)maximumMainWidth;
+- (double)minimumMainWidthFraction;
+- (double)minimumMainWidthFractionForSecondColumn;
+- (void)setAllowMixedSideBySideAndOverlay:(bool)arg1;
 - (void)setBorderColor:(id)arg1;
-- (void)setLeadingBorderWidth:(float)arg1;
-- (void)setLeadingMayBeHidden:(BOOL)arg1;
+- (void)setLeadingBorderWidth:(double)arg1;
+- (void)setLeadingMayBeHidden:(bool)arg1;
 - (void)setLeadingWidths:(id)arg1;
-- (void)setMaximumMainWidth:(float)arg1;
-- (void)setMinimumMainWidthFraction:(float)arg1;
-- (void)setMinimumMainWidthFractionForSecondColumn:(float)arg1;
-- (void)setTrailingBorderWidth:(float)arg1;
-- (void)setTrailingMayBeHidden:(BOOL)arg1;
+- (void)setMaximumMainWidth:(double)arg1;
+- (void)setMinimumMainWidthFraction:(double)arg1;
+- (void)setMinimumMainWidthFractionForSecondColumn:(double)arg1;
+- (void)setTrailingBorderWidth:(double)arg1;
+- (void)setTrailingMayBeHidden:(bool)arg1;
 - (void)setTrailingWidths:(id)arg1;
-- (float)trailingBorderWidth;
-- (BOOL)trailingMayBeHidden;
+- (double)trailingBorderWidth;
+- (bool)trailingMayBeHidden;
 - (id)trailingWidths;
 
 @end

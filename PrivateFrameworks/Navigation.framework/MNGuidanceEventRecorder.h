@@ -4,42 +4,42 @@
 
 @interface MNGuidanceEventRecorder : NSObject <MNGuidanceManagerDelegate> {
     NSMutableArray * _events;
-    BOOL  _isShowingSecondarySign;
+    bool  _isShowingSecondarySign;
     NSString * _lastAnnouncement;
     NSArray * _lastInstructions;
     MNLocation * _lastTrackedLocation;
-    unsigned int  _lastTrackedStepIndex;
-    unsigned int  _numPendingAnnouncements;
+    unsigned long long  _lastTrackedStepIndex;
+    unsigned long long  _numPendingAnnouncements;
     double  _timeAtStartOfRoute;
     MNTraceRecorder * _traceRecorder;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)GuidanceEvents;
 - (double)distanceToStartOfManeuver;
-- (void)guidanceManager:(id)arg1 announce:(id)arg2 shortPromptType:(unsigned int)arg3 stage:(unsigned int)arg4 hasSecondaryManeuver:(BOOL)arg5 completionBlock:(id /* block */)arg6;
-- (void)guidanceManager:(id)arg1 displayManeuverAlertForAnnouncementStage:(unsigned int)arg2;
-- (void)guidanceManager:(id)arg1 displayPrimaryStep:(id)arg2 instructions:(id)arg3 shieldType:(int)arg4 shieldText:(id)arg5 drivingSide:(int)arg6 maneuverStepIndex:(unsigned int)arg7 isSynthetic:(BOOL)arg8;
+- (void)guidanceManager:(id)arg1 announce:(id)arg2 shortPromptType:(unsigned long long)arg3 stage:(unsigned long long)arg4 hasSecondaryManeuver:(bool)arg5 completionBlock:(id)arg6;
+- (void)guidanceManager:(id)arg1 displayManeuverAlertForAnnouncementStage:(unsigned long long)arg2;
+- (void)guidanceManager:(id)arg1 displayPrimaryStep:(id)arg2 instructions:(id)arg3 shieldType:(int)arg4 shieldText:(id)arg5 drivingSide:(int)arg6 maneuverStepIndex:(unsigned long long)arg7 isSynthetic:(bool)arg8;
 - (void)guidanceManager:(id)arg1 displaySecondaryStep:(id)arg2 instructions:(id)arg3 shieldType:(int)arg4 shieldText:(id)arg5 drivingSide:(int)arg6;
 - (void)guidanceManager:(id)arg1 updatePointOfInterest:(struct { double x1; double x2; })arg2 focusStyle:(int)arg3;
-- (void)guidanceManager:(id)arg1 willAnnounce:(unsigned int)arg2 inSeconds:(double)arg3;
-- (void)guidanceManagerDidUpdateProgress:(id)arg1 currentStepIndex:(unsigned int)arg2 distanceUntilSign:(double)arg3 timeUntilSign:(double)arg4;
+- (void)guidanceManager:(id)arg1 willAnnounce:(unsigned long long)arg2 inSeconds:(double)arg3;
+- (void)guidanceManagerDidUpdateProgress:(id)arg1 currentStepIndex:(unsigned long long)arg2 distanceUntilSign:(double)arg3 timeUntilSign:(double)arg4;
 - (void)guidanceManagerHasArrived:(id)arg1 announce:(id)arg2;
 - (void)guidanceManagerHideSecondaryStep:(id)arg1;
-- (BOOL)guidanceManagerIsOffRoute:(id)arg1 location:(id)arg2 stepIndex:(unsigned int)arg3;
-- (void)guidanceManagerProceedingToRoute:(id)arg1 proceedToRouteDistance:(double)arg2 displayString:(id)arg3 closestStepIndex:(unsigned int)arg4;
+- (bool)guidanceManagerIsOffRoute:(id)arg1 location:(id)arg2 stepIndex:(unsigned long long)arg3;
+- (void)guidanceManagerProceedingToRoute:(id)arg1 proceedToRouteDistance:(double)arg2 displayString:(id)arg3 closestStepIndex:(unsigned long long)arg4;
 - (id)initWithTraceRecorder:(id)arg1;
 - (id)location;
 - (void)recordGuidanceEventChangedTransportType:(int)arg1;
 - (void)recordGuidanceEventRerouteReceived;
 - (void)recordGuidanceEventRerouteRequested;
 - (void)recordGuidanceEventStartedRoute;
-- (unsigned int)stage;
+- (unsigned long long)stage;
 - (double)timeSinceStartOfRoute;
 - (void)updateLocation:(id)arg1;
 

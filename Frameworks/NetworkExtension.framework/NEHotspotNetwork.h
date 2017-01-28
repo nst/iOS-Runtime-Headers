@@ -8,26 +8,26 @@
 
 @property (readonly) NSString *BSSID;
 @property (readonly) NSString *SSID;
-@property (getter=didAutoJoin, readonly) BOOL autoJoined;
-@property (getter=isChosenHelper, readonly) BOOL chosenHelper;
+@property (getter=didAutoJoin, readonly) bool autoJoined;
+@property (getter=isChosenHelper, readonly) bool chosenHelper;
 @property (readonly) NSString *interfaceName;
-@property (getter=didJustJoin, readonly) BOOL justJoined;
+@property (getter=didJustJoin, readonly) bool justJoined;
 @property struct __CNNetwork { }*network;
-@property (getter=isSecure, readonly) BOOL secure;
+@property (getter=isSecure, readonly) bool secure;
 @property (readonly) double signalStrength;
 
 - (id)BSSID;
 - (id)SSID;
 - (void)dealloc;
 - (id)description;
-- (BOOL)didAutoJoin;
-- (BOOL)didJustJoin;
+- (bool)didAutoJoin;
+- (bool)didJustJoin;
 - (id)initWithNetwork:(struct __CNNetwork { }*)arg1;
 - (id)interfaceName;
-- (BOOL)isChosenHelper;
-- (BOOL)isSecure;
+- (bool)isChosenHelper;
+- (bool)isSecure;
 - (struct __CNNetwork { }*)network;
-- (void)setConfidence:(int)arg1;
+- (void)setConfidence:(long long)arg1;
 - (void)setNetwork:(struct __CNNetwork { }*)arg1;
 - (void)setPassword:(id)arg1;
 - (double)signalStrength;

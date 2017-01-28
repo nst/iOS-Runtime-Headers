@@ -8,14 +8,14 @@
     ACAccount * _primaryAccount;
 }
 
-+ (BOOL)_isDisabledDataclass:(id)arg1;
++ (bool)_isDisabledDataclass:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_deviceSpecificLocalizedString:(id)arg1;
 - (id)_primaryAccount;
 - (id)init;
 - (id)initForDataclass:(id)arg1;
-- (BOOL)showIfNecessaryWithHandler:(id /* block */)arg1;
-- (void)showWithHandler:(id /* block */)arg1;
+- (bool)showIfNecessaryWithHandler:(id)arg1;
+- (void)showWithHandler:(id)arg1;
 
 @end

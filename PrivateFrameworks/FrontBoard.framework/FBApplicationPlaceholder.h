@@ -5,25 +5,25 @@
 @interface FBApplicationPlaceholder : FBBundleInfo {
     NSObject<OS_dispatch_queue> * _queue;
     double  _queue_cachedPercentComplete;
-    BOOL  _queue_installType;
-    BOOL  _queue_isNewsstand;
-    BOOL  _queue_isRestricted;
+    bool  _queue_installType;
+    bool  _queue_isNewsstand;
+    bool  _queue_isRestricted;
     NSMutableSet * _queue_observers;
     NSProgress * _queue_progress;
 }
 
-@property (getter=isCancellable, nonatomic, readonly) BOOL cancellable;
-@property (nonatomic, readonly) unsigned int installPhase;
-@property (nonatomic, readonly) unsigned int installState;
-@property (nonatomic, readonly) unsigned int installType;
-@property (getter=isNewsstand, nonatomic, readonly) BOOL newsstand;
-@property (getter=isPausable, nonatomic, readonly) BOOL pausable;
+@property (getter=isCancellable, nonatomic, readonly) bool cancellable;
+@property (nonatomic, readonly) unsigned long long installPhase;
+@property (nonatomic, readonly) unsigned long long installState;
+@property (nonatomic, readonly) unsigned long long installType;
+@property (getter=isNewsstand, nonatomic, readonly) bool newsstand;
+@property (getter=isPausable, nonatomic, readonly) bool pausable;
 @property (nonatomic, readonly) double percentComplete;
-@property (getter=isPrioritizable, nonatomic, readonly) BOOL prioritizable;
+@property (getter=isPrioritizable, nonatomic, readonly) bool prioritizable;
 @property (getter=_proxy, setter=_setProxy:, nonatomic, retain) LSApplicationProxy *proxy;
-@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
+@property (getter=isRestricted, nonatomic, readonly) bool restricted;
 
-- (void)_dispatchToObservers:(id)arg1 block:(id /* block */)arg2;
+- (void)_dispatchToObservers:(id)arg1 block:(id)arg2;
 - (id)_iconDictionary;
 - (id)_initWithApplicationProxy:(id)arg1;
 - (double)_normalizedProgress:(double)arg1;
@@ -31,7 +31,7 @@
 - (id)_proxy;
 - (id)_queue_observers;
 - (void)_queue_progressChanged;
-- (BOOL)_queue_setProgress:(id)arg1;
+- (bool)_queue_setProgress:(id)arg1;
 - (void)_queue_startObservingProgress:(id)arg1;
 - (void)_queue_stopObservingProgress:(id)arg1;
 - (void)_sendToObserversCancellabilityDidChange:(id)arg1;
@@ -42,19 +42,19 @@
 - (void)_sendToObserversPlaceholderDidChangeSignificantly:(id)arg1;
 - (void)_sendToObserversPrioritizableDidChange:(id)arg1;
 - (void)_setProxy:(id)arg1;
-- (void)_setProxy:(id)arg1 force:(BOOL)arg2;
+- (void)_setProxy:(id)arg1 force:(bool)arg2;
 - (void)addObserver:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)installPhase;
-- (unsigned int)installState;
-- (unsigned int)installType;
-- (BOOL)isCancellable;
-- (BOOL)isNewsstand;
-- (BOOL)isPausable;
-- (BOOL)isPrioritizable;
-- (BOOL)isRestricted;
+- (unsigned long long)installPhase;
+- (unsigned long long)installState;
+- (unsigned long long)installType;
+- (bool)isCancellable;
+- (bool)isNewsstand;
+- (bool)isPausable;
+- (bool)isPrioritizable;
+- (bool)isRestricted;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (double)percentComplete;

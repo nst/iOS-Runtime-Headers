@@ -5,8 +5,8 @@
 @interface AARequest : NSObject <NSURLSessionDataDelegate> {
     struct OpaqueCFHTTPCookieStorage { } * _cookieStorage;
     NSDictionary * _customHeaders;
-    BOOL  _flushCache;
-    id /* block */  _handler;
+    bool  _flushCache;
+    id  _handler;
     NSString * _initialURLString;
     NSString * _machineId;
     NSString * _oneTimePassword;
@@ -15,8 +15,8 @@
 @property (nonatomic, copy) NSDictionary *customHeaders;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL flushCache;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool flushCache;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (readonly) NSURLRequest *urlRequest;
 
@@ -29,15 +29,15 @@
 - (id)bodyDictionary;
 - (id)customHeaders;
 - (void)dealloc;
-- (BOOL)flushCache;
+- (bool)flushCache;
 - (id)initWithURLString:(id)arg1;
-- (void)performRequestWithHandler:(id /* block */)arg1;
+- (void)performRequestWithHandler:(id)arg1;
 - (id)redactedBodyStringWithPropertyList:(id)arg1;
 - (void)setCookieStorage:(struct OpaqueCFHTTPCookieStorage { }*)arg1;
 - (void)setCustomHeaders:(id)arg1;
 - (void)setDeviceProvisioningMachineId:(id)arg1;
 - (void)setDeviceProvisioningOneTimePassword:(id)arg1;
-- (void)setFlushCache:(BOOL)arg1;
+- (void)setFlushCache:(bool)arg1;
 - (id)urlCredential;
 - (id)urlRequest;
 - (id)urlString;

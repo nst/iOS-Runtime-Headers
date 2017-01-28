@@ -3,22 +3,22 @@
  */
 
 @interface _TimeStampValue : NSObject <GEOServerFormatTokenTimeStampValue> {
-    BOOL  _displayTimeZone;
+    bool  _displayTimeZone;
     double  _timeStamp;
     NSTimeZone * _timeZone;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL displayTimeZone;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool displayTimeZone;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeStamp;
 @property (nonatomic, readonly) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
-- (BOOL)displayTimeZone;
-- (id)initWithTimeStamp:(double)arg1 timeZone:(id)arg2 displayTimeZone:(BOOL)arg3;
+- (bool)displayTimeZone;
+- (id)initWithTimeStamp:(double)arg1 timeZone:(id)arg2 displayTimeZone:(bool)arg3;
 - (double)timeStamp;
 - (id)timeZone;
 

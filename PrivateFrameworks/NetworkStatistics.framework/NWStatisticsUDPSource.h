@@ -79,7 +79,7 @@
 @property (readonly) int epid;
 @property (readonly) unsigned long long eupid;
 @property (retain) NSUUID *euuid;
-@property (readonly) int interface;
+@property (readonly) long long interface;
 @property (readonly) bool interfaceAWDL;
 @property (readonly) bool interfaceCellular;
 @property (readonly) bool interfaceExpensive;
@@ -90,10 +90,10 @@
 @property (retain) NSData *localAddress;
 @property (readonly) int processID;
 @property (retain) NSString *processName;
-@property (readonly) int receiveBufferSize;
-@property (readonly) int receiveBufferUsed;
+@property (readonly) long long receiveBufferSize;
+@property (readonly) long long receiveBufferUsed;
 @property (retain) NSData *remoteAddress;
-@property (readonly) int trafficClass;
+@property (readonly) long long trafficClass;
 @property (readonly) unsigned long long uniqueProcessID;
 @property (retain) NSUUID *uuid;
 @property (retain) NSUUID *vuuid;
@@ -105,9 +105,9 @@
 - (int)epid;
 - (unsigned long long)eupid;
 - (id)euuid;
-- (BOOL)handleDescriptor:(void*)arg1 length:(unsigned long)arg2;
+- (bool)handleDescriptor:(void*)arg1 length:(unsigned long long)arg2;
 - (id)initWithManager:(id)arg1 local:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg2 remote:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg3;
-- (int)interface;
+- (long long)interface;
 - (bool)interfaceAWDL;
 - (bool)interfaceCellular;
 - (bool)interfaceExpensive;
@@ -118,8 +118,8 @@
 - (id)localAddress;
 - (int)processID;
 - (id)processName;
-- (int)receiveBufferSize;
-- (int)receiveBufferUsed;
+- (long long)receiveBufferSize;
+- (long long)receiveBufferUsed;
 - (id)remoteAddress;
 - (void)setEuuid:(id)arg1;
 - (void)setLocalAddress:(id)arg1;
@@ -127,7 +127,7 @@
 - (void)setRemoteAddress:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setVuuid:(id)arg1;
-- (int)trafficClass;
+- (long long)trafficClass;
 - (unsigned long long)uniqueProcessID;
 - (id)uuid;
 - (id)vuuid;

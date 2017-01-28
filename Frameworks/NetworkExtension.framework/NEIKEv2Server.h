@@ -5,7 +5,7 @@
 @interface NEIKEv2Server : NSObject <NSObject> {
     NSArray * _additionalIPv4ServerAddresses;
     NSArray * _additionalIPv6ServerAddresses;
-    unsigned int  _nextCount;
+    unsigned long long  _nextCount;
     NSObject<OS_dispatch_source> * _redirectTimer;
     NSString * _redirectedAddress;
     NSString * _redirectedFromAddress;
@@ -19,8 +19,8 @@
 @property (retain) NSArray *additionalIPv6ServerAddresses;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property unsigned int nextCount;
+@property (readonly) unsigned long long hash;
+@property unsigned long long nextCount;
 @property (retain) NSObject<OS_dispatch_source> *redirectTimer;
 @property (retain) NSString *redirectedAddress;
 @property (retain) NSString *redirectedFromAddress;
@@ -30,17 +30,17 @@
 @property (retain) NSString *serverAddress;
 @property (readonly) Class superclass;
 
-+ (id)getSynthesizedIPv6Address:(id)arg1 outgoingIf:(unsigned int)arg2 nat64Prefixes:(struct { int x1; unsigned char x2[12]; }*)arg3 numNat64Prefixes:(int)arg4;
++ (id)getSynthesizedIPv6Address:(id)arg1 outgoingIf:(unsigned long long)arg2 nat64Prefixes:(struct { int x1; unsigned char x2[12]; }*)arg3 numNat64Prefixes:(int)arg4;
 
 - (void).cxx_destruct;
 - (id)additionalIPv4ServerAddresses;
 - (id)additionalIPv6ServerAddresses;
-- (BOOL)checkRedirectCount;
-- (BOOL)chooseNextServerOrRedirectedResolvedAddress;
+- (bool)checkRedirectCount;
+- (bool)chooseNextServerOrRedirectedResolvedAddress;
 - (void)dealloc;
 - (id)getServerOrRedirectedAddress;
 - (id)getViableServerAddressForPath:(id)arg1;
-- (unsigned int)nextCount;
+- (unsigned long long)nextCount;
 - (id)redirectTimer;
 - (id)redirectedAddress;
 - (id)redirectedFromAddress;
@@ -50,7 +50,7 @@
 - (id)serverAddress;
 - (void)setAdditionalIPv4ServerAddresses:(id)arg1;
 - (void)setAdditionalIPv6ServerAddresses:(id)arg1;
-- (void)setNextCount:(unsigned int)arg1;
+- (void)setNextCount:(unsigned long long)arg1;
 - (void)setRedirectTimer:(id)arg1;
 - (void)setRedirectedAddress:(id)arg1;
 - (void)setRedirectedFromAddress:(id)arg1;
@@ -59,7 +59,7 @@
 - (void)setResolvedRedirectedAddresses:(id)arg1;
 - (void)setServerAddress:(id)arg1;
 - (void)setServerOrRedirectedResolvedAddress:(id)arg1;
-- (BOOL)startRedirectTimer;
+- (bool)startRedirectTimer;
 - (void)stopRedirectTimer;
 
 @end

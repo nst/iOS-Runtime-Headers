@@ -13,7 +13,7 @@
 - (id)connection;
 - (void)dealloc;
 - (id)init;
-- (BOOL)removeSystemApplicationWithBundleIdentifier:(id)arg1;
-- (BOOL)restoreSystemApplicationWithBundleIdentifier:(id)arg1;
+- (bool)removeSystemApplicationWithBundleIdentifier:(id)arg1;
+- (bool)restoreSystemApplicationWithBundleIdentifier:(id)arg1;
 
 @end

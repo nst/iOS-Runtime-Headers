@@ -4,31 +4,31 @@
 
 @interface _HDMoveAchievementState : _HDAchievementState {
     double  _bestCaloriesBurned;
-    int  _bestConsecutiveGoalsMet;
+    long long  _bestConsecutiveGoalsMet;
     double  _bestMetMoveGoalCalories;
     double  _latestGoalMetCalories;
-    int  _lifetimeGoalsMet;
+    long long  _lifetimeGoalsMet;
     double  _previousCaloriesBurnedToday;
 }
 
 @property (nonatomic) double bestCaloriesBurned;
-@property (nonatomic) int bestConsecutiveGoalsMet;
+@property (nonatomic) long long bestConsecutiveGoalsMet;
 @property (nonatomic) double bestMetMoveGoalCalories;
 @property (nonatomic) double latestGoalMetCalories;
-@property (nonatomic) int lifetimeGoalsMet;
+@property (nonatomic) long long lifetimeGoalsMet;
 @property (nonatomic) double previousCaloriesBurnedToday;
 
 - (double)bestCaloriesBurned;
-- (int)bestConsecutiveGoalsMet;
+- (long long)bestConsecutiveGoalsMet;
 - (double)bestMetMoveGoalCalories;
 - (double)latestGoalMetCalories;
-- (int)lifetimeGoalsMet;
+- (long long)lifetimeGoalsMet;
 - (double)previousCaloriesBurnedToday;
 - (void)setBestCaloriesBurned:(double)arg1;
-- (void)setBestConsecutiveGoalsMet:(int)arg1;
+- (void)setBestConsecutiveGoalsMet:(long long)arg1;
 - (void)setBestMetMoveGoalCalories:(double)arg1;
 - (void)setLatestGoalMetCalories:(double)arg1;
-- (void)setLifetimeGoalsMet:(int)arg1;
+- (void)setLifetimeGoalsMet:(long long)arg1;
 - (void)setPreviousCaloriesBurnedToday:(double)arg1;
 
 @end

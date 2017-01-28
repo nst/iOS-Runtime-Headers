@@ -5,40 +5,40 @@
 @interface NSItemProvider : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary * __loadHandlers;
     <_NSItemProviderLoading> * __loadOperator;
-    id /* block */  __previewImageHandler;
+    id  __previewImageHandler;
     NSDictionary * _userInfo;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *_loadHandlers;
 @property (nonatomic, retain) <_NSItemProviderLoading> *_loadOperator;
-@property (nonatomic, copy) id /* block */ previewImageHandler;
+@property (nonatomic, copy) id previewImageHandler;
 @property (nonatomic, readonly, copy) NSArray *registeredTypeIdentifiers;
 @property (nonatomic, copy) NSDictionary *userInfo;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_loadHandlers;
-- (void)_loadItemOfClass:(Class)arg1 forTypeIdentifier:(id)arg2 options:(id)arg3 coerceForCoding:(BOOL)arg4 completionHandler:(id /* block */)arg5;
-- (void)_loadItemOfClass:(Class)arg1 withLoadHandler:(id /* block */)arg2 options:(id)arg3 coerceForCoding:(BOOL)arg4 completionHandler:(id /* block */)arg5;
+- (void)_loadItemOfClass:(Class)arg1 forTypeIdentifier:(id)arg2 options:(id)arg3 coerceForCoding:(bool)arg4 completionHandler:(id)arg5;
+- (void)_loadItemOfClass:(Class)arg1 withLoadHandler:(id)arg2 options:(id)arg3 coerceForCoding:(bool)arg4 completionHandler:(id)arg5;
 - (id)_loadOperator;
-- (void)_loadPreviewImageOfClass:(Class)arg1 options:(id)arg2 coerceForCoding:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (void)_loadPreviewImageOfClass:(Class)arg1 options:(id)arg2 coerceForCoding:(bool)arg3 completionHandler:(id)arg4;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasItemConformingToTypeIdentifier:(id)arg1;
+- (bool)hasItemConformingToTypeIdentifier:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithItem:(id)arg1 typeIdentifier:(id)arg2;
-- (void)loadItemForTypeIdentifier:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)loadPreviewImageWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id /* block */)previewImageHandler;
-- (void)registerItemForTypeIdentifier:(id)arg1 loadHandler:(id /* block */)arg2;
+- (void)loadItemForTypeIdentifier:(id)arg1 options:(id)arg2 completionHandler:(id)arg3;
+- (void)loadPreviewImageWithOptions:(id)arg1 completionHandler:(id)arg2;
+- (id)previewImageHandler;
+- (void)registerItemForTypeIdentifier:(id)arg1 loadHandler:(id)arg2;
 - (id)registeredTypeIdentifiers;
-- (void)setPreviewImageHandler:(id /* block */)arg1;
+- (void)setPreviewImageHandler:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)set_loadHandlers:(id)arg1;
 - (void)set_loadOperator:(id)arg1;

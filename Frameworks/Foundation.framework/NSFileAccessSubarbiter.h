@@ -9,15 +9,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (oneway void)cancelAccessClaimForID:(id)arg1;
 - (void)dealloc;
-- (id)grantAccessClaim:(id)arg1 synchronouslyIfPossible:(BOOL)arg2;
+- (id)grantAccessClaim:(id)arg1 synchronouslyIfPossible:(bool)arg2;
 - (void)grantSubarbitrationClaim:(id)arg1 withServer:(id)arg2;
 - (id)initWithQueue:(id)arg1 listener:(id)arg2;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (oneway void)revokeAccessClaimForID:(id)arg1;
 - (oneway void)revokeSubarbitrationClaimForID:(id)arg1;
 - (void)stopArbitrating;

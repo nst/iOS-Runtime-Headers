@@ -5,23 +5,23 @@
 @interface CAMBadgeView : UIView {
     UIColor * __contentColor;
     UIColor * __fillColor;
-    float  __fillCornerRadius;
+    double  __fillCornerRadius;
 }
 
 @property (setter=_setContentColor:, nonatomic, retain) UIColor *_contentColor;
 @property (setter=_setFillColor:, nonatomic, retain) UIColor *_fillColor;
-@property (setter=_setFillCornerRadius:, nonatomic) float _fillCornerRadius;
+@property (setter=_setFillCornerRadius:, nonatomic) double _fillCornerRadius;
 
 - (void).cxx_destruct;
 - (id)_contentColor;
 - (id)_fillColor;
-- (float)_fillCornerRadius;
+- (double)_fillCornerRadius;
 - (id)_maskImage;
 - (void)_setContentColor:(id)arg1;
 - (void)_setFillColor:(id)arg1;
-- (void)_setFillCornerRadius:(float)arg1;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setFillCornerRadius:(double)arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

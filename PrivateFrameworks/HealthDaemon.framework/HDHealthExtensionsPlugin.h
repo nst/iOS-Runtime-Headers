@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <HDHealthDaemon> *healthDaemon;
 @property (nonatomic, retain) NSXPCListener *listener;
 @property (nonatomic, retain) NSMutableArray *servers;
@@ -23,7 +23,7 @@
 - (id)healthDaemon;
 - (id)initWithHealthDaemon:(id)arg1;
 - (id)listener;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)serverWithClient:(id)arg1 error:(id*)arg2;
 - (id)servers;
 - (void)setListener:(id)arg1;

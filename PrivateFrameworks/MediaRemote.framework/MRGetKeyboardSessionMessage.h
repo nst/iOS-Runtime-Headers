@@ -5,6 +5,6 @@
 @interface MRGetKeyboardSessionMessage : MRProtocolMessage
 
 - (id)init;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

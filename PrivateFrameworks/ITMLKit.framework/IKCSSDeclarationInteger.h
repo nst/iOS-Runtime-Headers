@@ -3,15 +3,15 @@
  */
 
 @interface IKCSSDeclarationInteger : IKCSSDeclaration {
-    int  _value;
+    long long  _value;
 }
 
-@property int value;
+@property long long value;
 
 - (id)description;
 - (id)initWithParseDeclaration:(id)arg1 info:(id)arg2;
-- (void)setValue:(int)arg1;
+- (void)setValue:(long long)arg1;
 - (id)stringValue;
-- (int)value;
+- (long long)value;
 
 @end

@@ -3,25 +3,25 @@
  */
 
 @interface TSCHStyleSemanticTag : NSObject <NSCopying> {
-    unsigned int  mIndex;
+    unsigned long long  mIndex;
     int  mType;
 }
 
-@property (nonatomic, readonly) unsigned int index;
-@property (nonatomic, readonly) BOOL isReferenceLine;
-@property (nonatomic, readonly) BOOL isSeries;
+@property (nonatomic, readonly) unsigned long long index;
+@property (nonatomic, readonly) bool isReferenceLine;
+@property (nonatomic, readonly) bool isSeries;
 @property (nonatomic, readonly) int type;
 
-+ (id)styleSemanticTagWithType:(int)arg1 index:(unsigned int)arg2;
++ (id)styleSemanticTagWithType:(int)arg1 index:(unsigned long long)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
-- (unsigned int)index;
-- (id)initWithType:(int)arg1 index:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isReferenceLine;
-- (BOOL)isSeries;
+- (unsigned long long)hash;
+- (unsigned long long)index;
+- (id)initWithType:(int)arg1 index:(unsigned long long)arg2;
+- (bool)isEqual:(id)arg1;
+- (bool)isReferenceLine;
+- (bool)isSeries;
 - (Class)styleClass;
 - (int)type;
 

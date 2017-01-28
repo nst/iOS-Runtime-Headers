@@ -3,7 +3,7 @@
  */
 
 @interface WLVideosMigrator : WLFileMigrationWebService {
-    BOOL  _didSaveVideo;
+    bool  _didSaveVideo;
     NSObject<OS_dispatch_semaphore> * _importSema;
     NSError * _saveError;
 }
@@ -13,8 +13,8 @@
 - (void).cxx_destruct;
 - (id)contentType;
 - (id)dataType;
-- (void)importRecordData:(id)arg1 summary:(id)arg2 account:(id)arg3 completion:(id /* block */)arg4;
+- (void)importRecordData:(id)arg1 summary:(id)arg2 account:(id)arg3 completion:(id)arg4;
 - (id)initWithSourceDevice:(id)arg1 urlSessionController:(id)arg2 delegate:(id)arg3;
-- (BOOL)shouldDownloadDataAsSeparateFileForSummary:(id)arg1 account:(id)arg2;
+- (bool)shouldDownloadDataAsSeparateFileForSummary:(id)arg1 account:(id)arg2;
 
 @end

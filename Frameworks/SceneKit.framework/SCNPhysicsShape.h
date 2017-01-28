@@ -18,7 +18,7 @@
 + (id)shapeWithGeometry:(id)arg1 options:(id)arg2;
 + (id)shapeWithNode:(id)arg1 options:(id)arg2;
 + (id)shapeWithShapes:(id)arg1 transforms:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)_customDecodingOfSCNPhysicsShape:(id)arg1;
 - (void)_customEncodingOfSCNPhysicsShape:(id)arg1;

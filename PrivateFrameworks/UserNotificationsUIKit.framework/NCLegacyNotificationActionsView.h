@@ -17,10 +17,10 @@
 - (void).cxx_destruct;
 - (void)_actionButton1Tapped:(id)arg1;
 - (void)_actionButton2Tapped:(id)arg1;
-- (id)_buttonForActionAtIndex:(int)arg1;
+- (id)_buttonForActionAtIndex:(long long)arg1;
 - (id)_buttonForNotificationAction:(id)arg1;
 - (void)_highlightButton:(id)arg1;
-- (void)_performActionForButtonAtIndex:(int)arg1;
+- (void)_performActionForButtonAtIndex:(long long)arg1;
 - (void)_unHighlightButton:(id)arg1;
 - (id)actions;
 - (id)delegate;
@@ -31,6 +31,6 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLeftButton:(id)arg1;
 - (void)setRightButton:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

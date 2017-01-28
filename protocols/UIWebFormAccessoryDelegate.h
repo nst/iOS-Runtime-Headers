@@ -8,6 +8,6 @@
 - (void)accessoryAutoFill;
 - (void)accessoryClear;
 - (void)accessoryDone;
-- (void)accessoryTab:(BOOL)arg1;
+- (void)accessoryTab:(bool)arg1;
 
 @end

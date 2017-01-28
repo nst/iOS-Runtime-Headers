@@ -4,23 +4,23 @@
 
 @interface FudInternalConnection : NSObject <FudConnection> {
     NSString * clientIdentifier;
-    BOOL  didStop;
+    bool  didStop;
     NSObject<OS_dispatch_queue> * handlerQueue;
-    id /* block */  messageHandler;
+    id  messageHandler;
     NSMutableDictionary * pendingRequests;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (long long)getNextMessageID;
 - (void)handleInboundNotification:(id)arg1;
-- (id)initWithClientIdentifier:(id)arg1 handlerQueue:(id)arg2 messageHandler:(id /* block */)arg3;
+- (id)initWithClientIdentifier:(id)arg1 handlerQueue:(id)arg2 messageHandler:(id)arg3;
 - (void)sendMessageToFud:(id)arg1;
-- (void)sendMessageToFud:(id)arg1 reply:(id /* block */)arg2;
+- (void)sendMessageToFud:(id)arg1 reply:(id)arg2;
 - (void)stop;
 
 @end

@@ -11,9 +11,9 @@
     NSObject<OS_dispatch_queue> * contentInformationCachingQueue;
     NSObject<OS_dispatch_queue> * delegateQueue;
     int  loadingCancelled;
-    long  makeResourceLoaderURLSessionSupportStuffOnlyOnce;
+    long long  makeResourceLoaderURLSessionSupportStuffOnlyOnce;
     NSMutableDictionary * pendingRequests;
-    BOOL  preloadsEligibleContentKeys;
+    bool  preloadsEligibleContentKeys;
     AVAssetResourceLoaderURLSessionDataDelegate * shimURLSessionDataDelegate;
     NSObject<OS_dispatch_queue> * stateQueue;
     NSOperation * waitForAssetURLSessionStuffOperation;

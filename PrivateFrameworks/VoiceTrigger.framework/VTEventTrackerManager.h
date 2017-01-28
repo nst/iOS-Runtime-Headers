@@ -12,6 +12,6 @@
 - (id)_dictionaryToJson:(id)arg1;
 - (id)_sortedURLsInDirectory:(id)arg1 matchingPattern:(id)arg2;
 - (id)init;
-- (void)voiceTriggerEvent:(id /* block */)arg1;
+- (void)voiceTriggerEvent:(id)arg1;
 
 @end

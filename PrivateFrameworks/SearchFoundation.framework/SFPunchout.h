@@ -16,11 +16,11 @@
 
 + (id)punchoutWithURL:(id)arg1;
 + (id)punchoutWithURLs:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
-- (BOOL)canOpenURL:(id)arg1;
+- (bool)canOpenURL:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)label;

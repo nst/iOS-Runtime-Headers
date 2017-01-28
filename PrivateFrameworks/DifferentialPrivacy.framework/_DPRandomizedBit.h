@@ -3,19 +3,19 @@
  */
 
 @interface _DPRandomizedBit : NSObject {
-    unsigned int  _index;
-    int  _value;
+    unsigned long long  _index;
+    long long  _value;
 }
 
-@property (nonatomic, readonly) unsigned int index;
-@property (nonatomic, readonly) int value;
+@property (nonatomic, readonly) unsigned long long index;
+@property (nonatomic, readonly) long long value;
 
-+ (id)randomizedBit:(int)arg1 atIndex:(unsigned int)arg2;
++ (id)randomizedBit:(long long)arg1 atIndex:(unsigned long long)arg2;
 
 - (id)description;
-- (unsigned int)index;
+- (unsigned long long)index;
 - (id)init;
-- (id)initBit:(int)arg1 atIndex:(unsigned int)arg2;
-- (int)value;
+- (id)initBit:(long long)arg1 atIndex:(unsigned long long)arg2;
+- (long long)value;
 
 @end

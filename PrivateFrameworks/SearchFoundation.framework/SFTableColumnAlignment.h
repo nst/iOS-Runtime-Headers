@@ -3,25 +3,25 @@
  */
 
 @interface SFTableColumnAlignment : NSObject <NSSecureCoding> {
-    unsigned int  _columnAlignment;
-    unsigned int  _dataAlignment;
-    BOOL  _isEqualWidth;
+    unsigned long long  _columnAlignment;
+    unsigned long long  _dataAlignment;
+    bool  _isEqualWidth;
 }
 
-@property unsigned int columnAlignment;
-@property unsigned int dataAlignment;
-@property BOOL isEqualWidth;
+@property unsigned long long columnAlignment;
+@property unsigned long long dataAlignment;
+@property bool isEqualWidth;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (unsigned int)columnAlignment;
-- (unsigned int)dataAlignment;
+- (unsigned long long)columnAlignment;
+- (unsigned long long)dataAlignment;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqualWidth;
-- (void)setColumnAlignment:(unsigned int)arg1;
-- (void)setDataAlignment:(unsigned int)arg1;
-- (void)setIsEqualWidth:(BOOL)arg1;
-- (int)textAlignment;
+- (bool)isEqualWidth;
+- (void)setColumnAlignment:(unsigned long long)arg1;
+- (void)setDataAlignment:(unsigned long long)arg1;
+- (void)setIsEqualWidth:(bool)arg1;
+- (long long)textAlignment;
 
 @end

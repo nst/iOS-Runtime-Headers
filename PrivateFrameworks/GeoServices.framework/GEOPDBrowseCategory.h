@@ -13,11 +13,11 @@
 }
 
 @property (nonatomic, retain) NSString *displayString;
-@property (nonatomic, readonly) BOOL hasDisplayString;
-@property (nonatomic, readonly) BOOL hasPopularDisplayToken;
-@property (nonatomic, readonly) BOOL hasShortDisplayString;
-@property (nonatomic, readonly) BOOL hasStyleAttributes;
-@property (nonatomic, readonly) BOOL hasSuggestionEntryMetadata;
+@property (nonatomic, readonly) bool hasDisplayString;
+@property (nonatomic, readonly) bool hasPopularDisplayToken;
+@property (nonatomic, readonly) bool hasShortDisplayString;
+@property (nonatomic, readonly) bool hasStyleAttributes;
+@property (nonatomic, readonly) bool hasSuggestionEntryMetadata;
 @property (nonatomic, retain) NSString *popularDisplayToken;
 @property (nonatomic, retain) NSString *shortDisplayString;
 @property (nonatomic, retain) GEOStyleAttributes *styleAttributes;
@@ -35,16 +35,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayString;
-- (BOOL)hasDisplayString;
-- (BOOL)hasPopularDisplayToken;
-- (BOOL)hasShortDisplayString;
-- (BOOL)hasStyleAttributes;
-- (BOOL)hasSuggestionEntryMetadata;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDisplayString;
+- (bool)hasPopularDisplayToken;
+- (bool)hasShortDisplayString;
+- (bool)hasStyleAttributes;
+- (bool)hasSuggestionEntryMetadata;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)popularDisplayToken;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDisplayString:(id)arg1;
 - (void)setPopularDisplayToken:(id)arg1;
 - (void)setShortDisplayString:(id)arg1;
@@ -53,9 +53,9 @@
 - (void)setSuggestionEntryMetadata:(id)arg1;
 - (id)shortDisplayString;
 - (id)styleAttributes;
-- (id)subCategoryAtIndex:(unsigned int)arg1;
+- (id)subCategoryAtIndex:(unsigned long long)arg1;
 - (id)subCategorys;
-- (unsigned int)subCategorysCount;
+- (unsigned long long)subCategorysCount;
 - (id)suggestionEntryMetadata;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

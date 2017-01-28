@@ -30,9 +30,9 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)snapshotContainerPath;
 - (id)snapshotContainerPathForGroupID:(id)arg1;
 - (id)snapshotContainerPathForSnapshot:(id)arg1;

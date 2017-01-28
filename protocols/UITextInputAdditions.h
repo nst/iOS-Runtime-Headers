@@ -5,19 +5,19 @@
 
 @required
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_caretRect;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_caretRect;
 - (void)beginSelectionChange;
 - (void)endSelectionChange;
 - (UITextInteractionAssistant *)interactionAssistant;
-- (BOOL)isEditable;
-- (BOOL)isEditing;
+- (bool)isEditable;
+- (bool)isEditing;
 - (UIView *)textInputView;
 
 @optional
 
-- (BOOL)_allowAnimatedUpdateSelectionRectViews;
+- (bool)_allowAnimatedUpdateSelectionRectViews;
 - (UIView *)_textInputViewForAddingGestureRecognizers;
-- (BOOL)_useGesturesForEditableContent;
+- (bool)_useGesturesForEditableContent;
 - (<UISelectionInteractionAssistant> *)selectionInteractionAssistant;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface ICImageTextAttachment : ICTextAttachment
 
-- (BOOL)requiresSpaceAfterAttachmentForPrinting;
-- (BOOL)supportsMultipleThumbnailsOnSameLine;
-- (BOOL)supportsThumbnailView;
+- (bool)requiresSpaceAfterAttachmentForPrinting;
+- (bool)supportsMultipleThumbnailsOnSameLine;
+- (bool)supportsThumbnailView;
 
 @end

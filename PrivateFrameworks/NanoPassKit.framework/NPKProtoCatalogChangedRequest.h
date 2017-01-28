@@ -13,8 +13,8 @@
 }
 
 @property (nonatomic, retain) NPKProtoCatalog *catalog;
-@property (nonatomic) BOOL hasLastKnownResyncID;
-@property (nonatomic) BOOL hasResyncID;
+@property (nonatomic) bool hasLastKnownResyncID;
+@property (nonatomic) bool hasResyncID;
 @property (nonatomic) unsigned int lastKnownResyncID;
 @property (nonatomic) unsigned int resyncID;
 
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLastKnownResyncID;
-- (BOOL)hasResyncID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLastKnownResyncID;
+- (bool)hasResyncID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)lastKnownResyncID;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)resyncID;
 - (void)setCatalog:(id)arg1;
-- (void)setHasLastKnownResyncID:(BOOL)arg1;
-- (void)setHasResyncID:(BOOL)arg1;
+- (void)setHasLastKnownResyncID:(bool)arg1;
+- (void)setHasResyncID:(bool)arg1;
 - (void)setLastKnownResyncID:(unsigned int)arg1;
 - (void)setResyncID:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

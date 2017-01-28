@@ -9,6 +9,6 @@
 
 @optional
 
-- (void)feedbackProvider:(_DECNowPlayingFeedbackProvider *)arg1 userEngaged:(BOOL)arg2;
+- (void)feedbackProvider:(_DECNowPlayingFeedbackProvider *)arg1 userEngaged:(bool)arg2;
 
 @end

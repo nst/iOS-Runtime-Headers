@@ -3,41 +3,41 @@
  */
 
 @interface PSUIHomeKitVisibilityArbitrator : NSObject <HFHomeManagerObserver, LSApplicationWorkspaceObserverProtocol> {
-    unsigned int  _homeAppInstallState;
+    unsigned long long  _homeAppInstallState;
     int  _homeKitPreferencesChangeNotifyToken;
-    BOOL  _homesConfigured;
-    unsigned int  _visibilityState;
-    id /* block */  _visibilityStateChangeHandler;
+    bool  _homesConfigured;
+    unsigned long long  _visibilityState;
+    id  _visibilityStateChangeHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int homeAppInstallState;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long homeAppInstallState;
 @property (nonatomic) int homeKitPreferencesChangeNotifyToken;
-@property (nonatomic) BOOL homesConfigured;
+@property (nonatomic) bool homesConfigured;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int visibilityState;
-@property (nonatomic, copy) id /* block */ visibilityStateChangeHandler;
+@property (nonatomic) unsigned long long visibilityState;
+@property (nonatomic, copy) id visibilityStateChangeHandler;
 
 - (void).cxx_destruct;
-- (void)_queryHomeAppInstallStateWithCompletion:(id /* block */)arg1;
-- (void)_reloadVisibilityStateIncludingInstallState:(BOOL)arg1;
+- (void)_queryHomeAppInstallStateWithCompletion:(id)arg1;
+- (void)_reloadVisibilityStateIncludingInstallState:(bool)arg1;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)dealloc;
-- (unsigned int)homeAppInstallState;
+- (unsigned long long)homeAppInstallState;
 - (int)homeKitPreferencesChangeNotifyToken;
-- (void)homeManager:(id)arg1 didUpdateThisDeviceIsResidentCapable:(BOOL)arg2;
-- (BOOL)homesConfigured;
+- (void)homeManager:(id)arg1 didUpdateThisDeviceIsResidentCapable:(bool)arg2;
+- (bool)homesConfigured;
 - (id)init;
 - (void)reloadVisibilityState;
-- (void)setHomeAppInstallState:(unsigned int)arg1;
+- (void)setHomeAppInstallState:(unsigned long long)arg1;
 - (void)setHomeKitPreferencesChangeNotifyToken:(int)arg1;
-- (void)setHomesConfigured:(BOOL)arg1;
-- (void)setVisibilityState:(unsigned int)arg1;
-- (void)setVisibilityStateChangeHandler:(id /* block */)arg1;
-- (unsigned int)visibilityState;
-- (id /* block */)visibilityStateChangeHandler;
+- (void)setHomesConfigured:(bool)arg1;
+- (void)setVisibilityState:(unsigned long long)arg1;
+- (void)setVisibilityStateChangeHandler:(id)arg1;
+- (unsigned long long)visibilityState;
+- (id)visibilityStateChangeHandler;
 
 @end

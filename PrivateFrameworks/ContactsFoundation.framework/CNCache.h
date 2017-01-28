@@ -19,12 +19,12 @@
 - (id)init;
 - (id)initWithResourceScheduler:(id)arg1;
 - (id)objectForKey:(id)arg1;
-- (id)objectForKey:(id)arg1 onCacheMiss:(id /* block */)arg2;
+- (id)objectForKey:(id)arg1 onCacheMiss:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
-- (void)performWithResourceLock:(id /* block */)arg1;
+- (void)performWithResourceLock:(id)arg1;
 - (void)removeAllObjects;
 - (id)resourceScheduler;
-- (id)resultWithResourceLock:(id /* block */)arg1;
+- (id)resultWithResourceLock:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)storage;

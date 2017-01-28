@@ -3,7 +3,7 @@
  */
 
 @interface IKAssetElement : IKViewElement {
-    BOOL  _infiniteDuration;
+    bool  _infiniteDuration;
 }
 
 @property (nonatomic, readonly, retain) NSString *actionParams;
@@ -11,24 +11,24 @@
 @property (nonatomic, readonly, retain) NSString *bookmarkID;
 @property (nonatomic, readonly, retain) NSString *contentID;
 @property (nonatomic, readonly, retain) NSString *externalID;
-@property (getter=isInfiniteDuration, nonatomic, readonly) BOOL infiniteDuration;
-@property (nonatomic, readonly) int keyDelivery;
+@property (getter=isInfiniteDuration, nonatomic, readonly) bool infiniteDuration;
+@property (nonatomic, readonly) long long keyDelivery;
 @property (nonatomic, readonly, retain) NSString *serviceID;
-@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly) long long type;
 @property (nonatomic, readonly, retain) NSURL *url;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (id)actionParams;
 - (id)adamID;
 - (id)bookmarkID;
 - (id)contentID;
 - (id)externalID;
-- (BOOL)infiniteDuration;
-- (BOOL)isInfiniteDuration;
-- (int)keyDelivery;
+- (bool)infiniteDuration;
+- (bool)isInfiniteDuration;
+- (long long)keyDelivery;
 - (id)serviceID;
-- (int)type;
+- (long long)type;
 - (id)url;
 
 @end

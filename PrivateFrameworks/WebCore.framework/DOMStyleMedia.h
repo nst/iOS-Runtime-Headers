@@ -7,7 +7,7 @@
 @property (readonly, copy) NSString *type;
 
 - (void)dealloc;
-- (BOOL)matchMedium:(id)arg1;
+- (bool)matchMedium:(id)arg1;
 - (id)type;
 
 @end

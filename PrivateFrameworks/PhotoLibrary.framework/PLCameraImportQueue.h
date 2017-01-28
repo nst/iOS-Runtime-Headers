@@ -3,7 +3,7 @@
  */
 
 @interface PLCameraImportQueue : NSObject {
-    unsigned int  _index;
+    unsigned long long  _index;
     NSMutableArray * _items;
 }
 
@@ -14,7 +14,7 @@
 - (id)description;
 - (void)didCompleteItem:(id)arg1;
 - (id)initWithItems:(id)arg1;
-- (BOOL)isCompleted;
+- (bool)isCompleted;
 - (id)items;
 - (id)itemsNotCompleted;
 - (void)setItems:(id)arg1;

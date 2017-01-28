@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, readonly) NSDate *expirationDate;
-@property (getter=isExpired, nonatomic, readonly) BOOL expired;
+@property (getter=isExpired, nonatomic, readonly) bool expired;
 @property (nonatomic, readonly) HAPFragmentationStream *fragmentationStream;
 @property (nonatomic, readonly) NSString *homeUUID;
 @property (nonatomic, retain) HMFMessage *lastMessage;
@@ -23,7 +23,7 @@
 - (id)fragmentationStream;
 - (id)homeUUID;
 - (id)initWithFragmentationStreamForHome:(id)arg1 delegate:(id)arg2;
-- (BOOL)isExpired;
+- (bool)isExpired;
 - (id)lastMessage;
 - (void)setLastMessage:(id)arg1;
 

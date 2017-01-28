@@ -13,8 +13,8 @@
 
 @property (nonatomic, retain) _INPBAppId *appId;
 @property (nonatomic, retain) _INPBBuildId *buildId;
-@property (nonatomic, readonly) BOOL hasAppId;
-@property (nonatomic, readonly) BOOL hasBuildId;
+@property (nonatomic, readonly) bool hasAppId;
+@property (nonatomic, readonly) bool hasBuildId;
 @property (nonatomic, retain) NSMutableArray *intentSupports;
 @property (nonatomic, retain) NSMutableArray *localizedProjects;
 @property (nonatomic, retain) NSMutableArray *supportedPlatforms;
@@ -37,26 +37,26 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAppId;
-- (BOOL)hasBuildId;
-- (unsigned int)hash;
-- (id)intentSupportAtIndex:(unsigned int)arg1;
+- (bool)hasAppId;
+- (bool)hasBuildId;
+- (unsigned long long)hash;
+- (id)intentSupportAtIndex:(unsigned long long)arg1;
 - (id)intentSupports;
-- (unsigned int)intentSupportsCount;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)intentSupportsCount;
+- (bool)isEqual:(id)arg1;
 - (id)localizedProjects;
-- (id)localizedProjectsAtIndex:(unsigned int)arg1;
-- (unsigned int)localizedProjectsCount;
+- (id)localizedProjectsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)localizedProjectsCount;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAppId:(id)arg1;
 - (void)setBuildId:(id)arg1;
 - (void)setIntentSupports:(id)arg1;
 - (void)setLocalizedProjects:(id)arg1;
 - (void)setSupportedPlatforms:(id)arg1;
 - (id)supportedPlatforms;
-- (id)supportedPlatformsAtIndex:(unsigned int)arg1;
-- (unsigned int)supportedPlatformsCount;
+- (id)supportedPlatformsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)supportedPlatformsCount;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;
 

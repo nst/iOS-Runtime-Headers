@@ -16,17 +16,17 @@
 @property (retain) NSLayoutConstraint *singleRowConstraint;
 @property (retain) SearchUIIconViewContainer *topContainer;
 
-+ (unsigned int)numberOfColumnsForCurrentOrientation;
++ (unsigned long long)numberOfColumnsForCurrentOrientation;
 
 - (void).cxx_destruct;
 - (id)bottomContainer;
 - (id)doubleRowConstraint;
 - (id)iconContainers;
-- (id)initWithResults:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
-- (BOOL)isExpandable;
+- (id)initWithResults:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (bool)isExpandable;
 - (void)layoutSubviews;
-- (unsigned int)numberOfVisibleColumns;
-- (unsigned int)numberOfVisibleResults;
+- (unsigned long long)numberOfVisibleColumns;
+- (unsigned long long)numberOfVisibleResults;
 - (id)results;
 - (void)setBottomContainer:(id)arg1;
 - (void)setDoubleRowConstraint:(id)arg1;
@@ -36,7 +36,7 @@
 - (id)singleRowConstraint;
 - (id)topContainer;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateExpanded:(BOOL)arg1;
+- (void)updateExpanded:(bool)arg1;
 - (void)updateNumberOfColumns;
 - (void)updateSpacerWidthsForPlatterInsets;
 - (void)updateWithResults:(id)arg1;

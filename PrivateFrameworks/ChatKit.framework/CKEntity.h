@@ -17,7 +17,7 @@
 @property (nonatomic, readonly, copy) NSString *fullName;
 @property (nonatomic, retain) IMHandle *handle;
 @property (nonatomic, readonly) int identifier;
-@property (nonatomic, readonly) BOOL isMe;
+@property (nonatomic, readonly) bool isMe;
 @property (nonatomic, readonly) UIImage *locationMapViewContactImage;
 @property (nonatomic, readonly) UIImage *locationShareBalloonContactImage;
 @property (nonatomic, readonly, copy) NSString *name;
@@ -43,11 +43,11 @@
 - (id)description;
 - (id)fullName;
 - (id)handle;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)identifier;
 - (id)initWithIMHandle:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isMe;
+- (bool)isEqual:(id)arg1;
+- (bool)isMe;
 - (id)locationMapViewContactImage;
 - (id)locationShareBalloonContactImage;
 - (id)name;

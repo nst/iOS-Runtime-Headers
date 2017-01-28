@@ -5,7 +5,7 @@
 @interface NGSInternalSettingsManager : NSObject {
     NSArray * _blacklistedWatchKitIDs;
     NSMutableArray * _glanceDefinitions;
-    BOOL  _hasSettings;
+    bool  _hasSettings;
     NSMutableDictionary * _installStatesByGlanceID;
     NSObject<OS_dispatch_queue> * _queue;
     NSString * _selectedGlanceIdentifier;
@@ -13,43 +13,43 @@
     NPSManager * _syncManager;
 }
 
-@property (nonatomic, readonly) unsigned int glanceCount;
-@property (nonatomic, readonly) BOOL hasSettings;
+@property (nonatomic, readonly) unsigned long long glanceCount;
+@property (nonatomic, readonly) bool hasSettings;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, copy) NSString *selectedGlanceIdentifier;
 
 - (void).cxx_destruct;
-- (unsigned int)_glanceCount;
-- (BOOL)_hasSettings;
+- (unsigned long long)_glanceCount;
+- (bool)_hasSettings;
 - (void)_loadBlacklistedWatchKitIDs;
 - (void)_mergeAdditionalGlanceDefinitionsIntoArray:(id)arg1;
-- (unsigned int)_numberOfActiveGlances;
+- (unsigned long long)_numberOfActiveGlances;
 - (void)_saveSettings;
 - (void)_saveSettings:(id)arg1;
-- (BOOL)_shouldMergeGlanceDefinitions;
-- (BOOL)_shouldSaveGlanceDefinitions;
-- (BOOL)_shouldSortGlanceDefinitions;
+- (bool)_shouldMergeGlanceDefinitions;
+- (bool)_shouldSaveGlanceDefinitions;
+- (bool)_shouldSortGlanceDefinitions;
 - (void)_sortGlanceDefinitions;
 - (void)_sortGlanceDefinitions:(id)arg1;
 - (id)_storedSettingsRepresentationFromGlanceDefinitions:(id)arg1;
 - (void)_willSaveGlanceDefinitions;
 - (void)addGlanceDefinition:(id)arg1;
 - (void)didLoadGlanceDefinitions;
-- (void)enumerateAllGlanceDefinitionsUsingBlock:(id /* block */)arg1;
-- (void)enumerateGlanceDefinitionsUsingBlock:(id /* block */)arg1;
-- (unsigned int)glanceCount;
+- (void)enumerateAllGlanceDefinitionsUsingBlock:(id)arg1;
+- (void)enumerateGlanceDefinitionsUsingBlock:(id)arg1;
+- (unsigned long long)glanceCount;
 - (id)glanceDefinitionForAppBundleIdentifier:(id)arg1;
 - (id)glanceDefinitionForGlanceIdentifier:(id)arg1;
 - (id)glanceDefinitionForWatchKitIdentifier:(id)arg1;
 - (id)glanceDefinitions;
-- (id)glanceIdentifierForGlanceDefinitionAtIndex:(unsigned int)arg1;
-- (BOOL)hasMaximumNumberOfActiveGlances;
-- (BOOL)hasSettings;
+- (id)glanceIdentifierForGlanceDefinitionAtIndex:(unsigned long long)arg1;
+- (bool)hasMaximumNumberOfActiveGlances;
+- (bool)hasSettings;
 - (id)init;
 - (void)invalidateAndReloadSettings;
-- (BOOL)isWatchKitBundleIDBlacklisted:(id)arg1;
+- (bool)isWatchKitBundleIDBlacklisted:(id)arg1;
 - (void)loadSettings;
-- (void)moveGlanceDefinitionFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (void)moveGlanceDefinitionFromIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (id)queue;
 - (void)removeGlanceDefinitionsInArray:(id)arg1;
 - (void)saveSettings;

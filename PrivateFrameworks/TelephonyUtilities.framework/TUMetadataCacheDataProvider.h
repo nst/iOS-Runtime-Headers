@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)init;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)metadataForDestinationID:(id)arg1;
 - (id)providerCache;
 - (void)removeMetadataForKey:(id)arg1;

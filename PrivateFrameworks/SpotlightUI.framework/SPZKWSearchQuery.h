@@ -4,20 +4,20 @@
 
 @interface SPZKWSearchQuery : SPSearchQuery {
     _DECCachedConsumer * _cachedConsumer;
-    BOOL  _springBoardIsActive;
+    bool  _springBoardIsActive;
 }
 
 @property (retain) _DECCachedConsumer *cachedConsumer;
-@property BOOL springBoardIsActive;
+@property bool springBoardIsActive;
 
 - (void).cxx_destruct;
 - (void)addApplicationResults:(id)arg1 toSection:(id)arg2 collectedResults:(id)arg3 queryIdent:(unsigned long long)arg4;
 - (void)addSuggestedResults:(id)arg1 toSection:(id)arg2 collectedResults:(id)arg3 queryIdent:(unsigned long long)arg4;
 - (id)cachedConsumer;
-- (void)execute:(id /* block */)arg1;
-- (unsigned int)maxZKWSuggestedQueries;
+- (void)execute:(id)arg1;
+- (unsigned long long)maxZKWSuggestedQueries;
 - (void)setCachedConsumer:(id)arg1;
-- (void)setSpringBoardIsActive:(BOOL)arg1;
-- (BOOL)springBoardIsActive;
+- (void)setSpringBoardIsActive:(bool)arg1;
+- (bool)springBoardIsActive;
 
 @end

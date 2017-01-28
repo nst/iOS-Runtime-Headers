@@ -5,9 +5,9 @@
 @interface WBSParsecSearchSimpleResult : WBSParsecSearchResult <WBSParsecSearchMapsResultFeedbackSenderClient, WBSParsecSearchResultPresentedInCard> {
     NSString * _descriptionLeadInText;
     NSNumber * _descriptionMaximumNumberOfLines;
-    BOOL  _descriptionTextCanWrap;
+    bool  _descriptionTextCanWrap;
     NSString * _footnote;
-    BOOL  _hasSingleLineDescriptionAndTitle;
+    bool  _hasSingleLineDescriptionAndTitle;
     WBSParsecSearchMapsResultFeedbackSender * _mapsFeedbackSender;
     NSArray * _moreIconRepresentations;
     <WBSParsecSearchSession> * _parsecSearchSession;
@@ -19,24 +19,24 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *descriptionLeadInText;
 @property (nonatomic, readonly) NSNumber *descriptionMaximumNumberOfLines;
-@property (nonatomic, readonly) BOOL descriptionTextCanWrap;
+@property (nonatomic, readonly) bool descriptionTextCanWrap;
 @property (nonatomic, readonly) NSString *footnote;
-@property (nonatomic, readonly) BOOL hasMoreIcons;
-@property (nonatomic, readonly) BOOL hasSingleLineDescriptionAndTitle;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasMoreIcons;
+@property (nonatomic, readonly) bool hasSingleLineDescriptionAndTitle;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) WBSParsecSearchMapsResultFeedbackSender *mapsFeedbackSender;
 @property (nonatomic, retain) <WBSParsecSearchSession> *parsecSearchSession;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSNumber *titleMaximumNumberOfLines;
-@property (nonatomic, readonly) BOOL willPresentResultInCard;
+@property (nonatomic, readonly) bool willPresentResultInCard;
 
 - (void).cxx_destruct;
 - (id)descriptionLeadInText;
 - (id)descriptionMaximumNumberOfLines;
-- (BOOL)descriptionTextCanWrap;
+- (bool)descriptionTextCanWrap;
 - (id)footnote;
-- (BOOL)hasMoreIcons;
-- (BOOL)hasSingleLineDescriptionAndTitle;
+- (bool)hasMoreIcons;
+- (bool)hasSingleLineDescriptionAndTitle;
 - (id)initWithDictionary:(id)arg1;
 - (id)mapsFeedbackSender;
 - (id)moreIconsWithSession:(id)arg1;
@@ -45,6 +45,6 @@
 - (void)setParsecSearchSession:(id)arg1;
 - (id)titleGlyphWithSession:(id)arg1;
 - (id)titleMaximumNumberOfLines;
-- (BOOL)willPresentResultInCard;
+- (bool)willPresentResultInCard;
 
 @end

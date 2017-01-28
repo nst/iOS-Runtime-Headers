@@ -8,7 +8,7 @@
     UIView * _backgroundFillView;
     HULayeredContentEffect * _contentEffect;
     UIVisualEffectView * _contentEffectView;
-    float  _cornerRadius;
+    double  _cornerRadius;
 }
 
 @property (nonatomic, retain) HULayeredBackgroundEffect *backgroundEffect;
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) HULayeredContentEffect *contentEffect;
 @property (nonatomic, retain) UIVisualEffectView *contentEffectView;
 @property (nonatomic, readonly) UIView *contentView;
-@property (nonatomic) float cornerRadius;
+@property (nonatomic) double cornerRadius;
 
 - (void).cxx_destruct;
 - (void)_applyCornerRadius;
@@ -30,15 +30,15 @@
 - (id)contentEffect;
 - (id)contentEffectView;
 - (id)contentView;
-- (float)cornerRadius;
+- (double)cornerRadius;
 - (id)initWithContentEffect:(id)arg1 backgroundEffect:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBackgroundEffect:(id)arg1;
 - (void)setBackgroundEffectView:(id)arg1;
 - (void)setBackgroundFillView:(id)arg1;
 - (void)setContentEffect:(id)arg1;
 - (void)setContentEffectView:(id)arg1;
-- (void)setCornerRadius:(float)arg1;
-- (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (void)setCornerRadius:(double)arg1;
+- (struct CGSize { double x1; double x2; })systemLayoutSizeFittingSize:(struct CGSize { double x1; double x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 
 @end

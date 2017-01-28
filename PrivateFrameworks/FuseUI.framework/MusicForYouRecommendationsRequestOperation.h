@@ -3,10 +3,10 @@
  */
 
 @interface MusicForYouRecommendationsRequestOperation : MPStoreModelRequestOperation {
-    unsigned int  _recommendationsRequestType;
+    unsigned long long  _recommendationsRequestType;
 }
 
 - (id)configurationForLoadingModelDataWithStoreBagDictionary:(id)arg1 error:(id*)arg2;
-- (void)produceResponseWithLoadedOutput:(id)arg1 completion:(id /* block */)arg2;
+- (void)produceResponseWithLoadedOutput:(id)arg1 completion:(id)arg2;
 
 @end

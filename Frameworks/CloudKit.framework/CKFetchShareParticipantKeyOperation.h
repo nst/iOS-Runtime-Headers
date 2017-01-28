@@ -6,18 +6,18 @@
     NSDictionary * _baseTokensByShareID;
     NSMutableDictionary * _errorsByShareID;
     NSArray * _shareIDs;
-    id /* block */  _shareParticipantKeyCompletionBlock;
-    id /* block */  _shareParticipantKeyFetchedBlock;
+    id  _shareParticipantKeyCompletionBlock;
+    id  _shareParticipantKeyFetchedBlock;
 }
 
 @property (nonatomic, retain) NSDictionary *baseTokensByShareID;
 @property (nonatomic, retain) NSMutableDictionary *errorsByShareID;
 @property (nonatomic, retain) NSArray *shareIDs;
-@property (nonatomic, copy) id /* block */ shareParticipantKeyCompletionBlock;
-@property (nonatomic, copy) id /* block */ shareParticipantKeyFetchedBlock;
+@property (nonatomic, copy) id shareParticipantKeyCompletionBlock;
+@property (nonatomic, copy) id shareParticipantKeyFetchedBlock;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
@@ -25,17 +25,17 @@
 - (id)errorsByShareID;
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
-- (BOOL)hasCKOperationCallbacksSet;
+- (bool)hasCKOperationCallbacksSet;
 - (id)initWithShareIDs:(id)arg1;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
 - (void)setBaseTokensByShareID:(id)arg1;
 - (void)setErrorsByShareID:(id)arg1;
 - (void)setShareIDs:(id)arg1;
-- (void)setShareParticipantKeyCompletionBlock:(id /* block */)arg1;
-- (void)setShareParticipantKeyFetchedBlock:(id /* block */)arg1;
+- (void)setShareParticipantKeyCompletionBlock:(id)arg1;
+- (void)setShareParticipantKeyFetchedBlock:(id)arg1;
 - (id)shareIDs;
-- (id /* block */)shareParticipantKeyCompletionBlock;
-- (id /* block */)shareParticipantKeyFetchedBlock;
+- (id)shareParticipantKeyCompletionBlock;
+- (id)shareParticipantKeyFetchedBlock;
 
 @end

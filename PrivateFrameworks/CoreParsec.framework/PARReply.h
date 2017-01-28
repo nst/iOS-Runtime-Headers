@@ -7,7 +7,7 @@
     NSURLRequest * _httpRequest;
     NSURLResponse * _httpResponse;
     NSArray * _rawResponse;
-    float  _scale;
+    double  _scale;
     PARTask * _task;
 }
 
@@ -15,10 +15,10 @@
 @property (nonatomic, retain) NSURLRequest *httpRequest;
 @property (nonatomic, retain) NSURLResponse *httpResponse;
 @property (nonatomic, retain) NSArray *rawResponse;
-@property (nonatomic) float scale;
+@property (nonatomic) double scale;
 @property (nonatomic) PARTask *task;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -27,12 +27,12 @@
 - (id)httpResponse;
 - (id)initWithCoder:(id)arg1;
 - (id)rawResponse;
-- (float)scale;
+- (double)scale;
 - (void)setGeoSessionEntityString:(id)arg1;
 - (void)setHttpRequest:(id)arg1;
 - (void)setHttpResponse:(id)arg1;
 - (void)setRawResponse:(id)arg1;
-- (void)setScale:(float)arg1;
+- (void)setScale:(double)arg1;
 - (void)setTask:(id)arg1;
 - (id)task;
 

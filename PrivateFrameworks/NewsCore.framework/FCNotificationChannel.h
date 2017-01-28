@@ -11,9 +11,9 @@
 
 - (void).cxx_destruct;
 - (id)channelID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithChannelID:(id)arg1;
 - (id)initWithPBNotificationChannel:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

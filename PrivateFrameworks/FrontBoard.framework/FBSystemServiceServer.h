@@ -11,12 +11,12 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
-- (BOOL)_areFacilityPrerequisitesSatisfied:(id)arg1;
+- (bool)_areFacilityPrerequisitesSatisfied:(id)arg1;
 - (void)_evaluateSuspendedFacilities;
 - (void)_evaluateSuspendedFacility:(id)arg1;
 - (void)_handleConnect:(id)arg1 forClient:(id)arg2 facilityID:(id)arg3;
@@ -24,7 +24,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)noteMilestoneReached:(id)arg1;
-- (BOOL)ping;
+- (bool)ping;
 - (Class)queue_classForNewClientConnection:(id)arg1;
 - (void)queue_clientAdded:(id)arg1;
 - (void)queue_clientRemoved:(id)arg1;

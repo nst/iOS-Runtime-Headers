@@ -3,18 +3,18 @@
  */
 
 @interface HUQuickControlStepperSegmentView : UIView {
-    float  _cornerRadius;
-    BOOL  _highlighted;
+    double  _cornerRadius;
+    bool  _highlighted;
     UIView * _highlightedOverlayView;
-    unsigned int  _segmentLocation;
+    unsigned long long  _segmentLocation;
     NSString * _title;
     UILabel * _titleLabel;
 }
 
-@property (nonatomic) float cornerRadius;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic) double cornerRadius;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
 @property (nonatomic, retain) UIView *highlightedOverlayView;
-@property (nonatomic) unsigned int segmentLocation;
+@property (nonatomic) unsigned long long segmentLocation;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UILabel *titleLabel;
 
@@ -23,16 +23,16 @@
 - (void)_createTitleLabelIfNecessary;
 - (void)_updateCornerMask;
 - (void)_updateTitleFontSize;
-- (float)cornerRadius;
+- (double)cornerRadius;
 - (id)highlightedOverlayView;
-- (BOOL)isHighlighted;
+- (bool)isHighlighted;
 - (void)layoutSubviews;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (unsigned int)segmentLocation;
-- (void)setCornerRadius:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (unsigned long long)segmentLocation;
+- (void)setCornerRadius:(double)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setHighlightedOverlayView:(id)arg1;
-- (void)setSegmentLocation:(unsigned int)arg1;
+- (void)setSegmentLocation:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleLabel:(id)arg1;
 - (id)title;

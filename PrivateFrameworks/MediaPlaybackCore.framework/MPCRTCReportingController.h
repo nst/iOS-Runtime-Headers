@@ -4,19 +4,19 @@
 
 @interface MPCRTCReportingController : MPCReportingController {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    unsigned int  _reportingState;
+    unsigned long long  _reportingState;
     NSMutableArray * _reportingStateLoadCompletionHandlers;
     RTCReporting * _rtcReporting;
-    BOOL  _shouldDeferEventFlushing;
+    bool  _shouldDeferEventFlushing;
 }
 
-@property (nonatomic) BOOL shouldDeferEventFlushing;
+@property (nonatomic) bool shouldDeferEventFlushing;
 
 - (void).cxx_destruct;
-- (BOOL)_getMethod:(unsigned short*)arg1 respCode:(unsigned short*)arg2 infoDictionary:(id*)arg3 fromReportingEvent:(id)arg4;
+- (bool)_getMethod:(unsigned short*)arg1 respCode:(unsigned short*)arg2 infoDictionary:(id*)arg3 fromReportingEvent:(id)arg4;
 - (void)_recordReportingEvents:(id)arg1;
 - (id)init;
-- (void)setShouldDeferEventFlushing:(BOOL)arg1;
-- (BOOL)shouldDeferEventFlushing;
+- (void)setShouldDeferEventFlushing:(bool)arg1;
+- (bool)shouldDeferEventFlushing;
 
 @end

@@ -7,17 +7,17 @@
     struct { 
         unsigned int pending : 1; 
     }  _has;
-    BOOL  _pending;
+    bool  _pending;
     NSData * _signatureInfoBytes;
     NSData * _signedData;
 }
 
 @property (nonatomic, retain) NSData *certsBytes;
-@property (nonatomic, readonly) BOOL hasCertsBytes;
-@property (nonatomic) BOOL hasPending;
-@property (nonatomic, readonly) BOOL hasSignatureInfoBytes;
-@property (nonatomic, readonly) BOOL hasSignedData;
-@property (nonatomic) BOOL pending;
+@property (nonatomic, readonly) bool hasCertsBytes;
+@property (nonatomic) bool hasPending;
+@property (nonatomic, readonly) bool hasSignatureInfoBytes;
+@property (nonatomic, readonly) bool hasSignedData;
+@property (nonatomic) bool pending;
 @property (nonatomic, retain) NSData *signatureInfoBytes;
 @property (nonatomic, retain) NSData *signedData;
 
@@ -27,18 +27,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCertsBytes;
-- (BOOL)hasPending;
-- (BOOL)hasSignatureInfoBytes;
-- (BOOL)hasSignedData;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCertsBytes;
+- (bool)hasPending;
+- (bool)hasSignatureInfoBytes;
+- (bool)hasSignedData;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)pending;
-- (BOOL)readFrom:(id)arg1;
+- (bool)pending;
+- (bool)readFrom:(id)arg1;
 - (void)setCertsBytes:(id)arg1;
-- (void)setHasPending:(BOOL)arg1;
-- (void)setPending:(BOOL)arg1;
+- (void)setHasPending:(bool)arg1;
+- (void)setPending:(bool)arg1;
 - (void)setSignatureInfoBytes:(id)arg1;
 - (void)setSignedData:(id)arg1;
 - (id)signatureInfoBytes;

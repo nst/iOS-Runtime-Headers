@@ -3,20 +3,20 @@
  */
 
 @interface TSTLayoutDynamicResizeInfoAccordion : TSTLayoutDynamicResizeInfo {
-    float  _heightFactor;
-    float  _widthFactor;
+    double  _heightFactor;
+    double  _widthFactor;
 }
 
-@property (nonatomic, readonly) float heightFactor;
-@property (nonatomic, readonly) float widthFactor;
+@property (nonatomic, readonly) double heightFactor;
+@property (nonatomic, readonly) double widthFactor;
 
-- (float)applyResizeHeightFactor:(float)arg1;
-- (float)applyResizeWidthFactor:(float)arg1;
+- (double)applyResizeHeightFactor:(double)arg1;
+- (double)applyResizeWidthFactor:(double)arg1;
 - (void)captureNewMinimumRowHeights:(id)arg1;
-- (float)heightFactor;
+- (double)heightFactor;
 - (id)initWithDynamicResizeInfo:(id)arg1;
 - (id)initWithMasterLayout:(id)arg1 columnRegion:(id)arg2 rowRegion:(id)arg3;
-- (float)p_applyAccordionResizeFactor:(float)arg1 region:(id)arg2 direction:(int)arg3 totalOfCaptured:(float)arg4 count:(unsigned short)arg5 capturedArray:(float*)arg6 currentArray:(float*)arg7 minimumArray:(float*)arg8;
-- (float)widthFactor;
+- (double)p_applyAccordionResizeFactor:(double)arg1 region:(id)arg2 direction:(long long)arg3 totalOfCaptured:(double)arg4 count:(unsigned short)arg5 capturedArray:(double*)arg6 currentArray:(double*)arg7 minimumArray:(double*)arg8;
+- (double)widthFactor;
 
 @end

@@ -8,25 +8,25 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) int direction;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int maximumNodeCount;
+@property (nonatomic) long long direction;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long maximumNodeCount;
 @property (readonly) Class superclass;
 
 + (id)enumeratorForDescendantLeafNodesInPlaylist:(id)arg1;
 + (id)enumeratorForDescendantLeafNodesInPlaylist:(id)arg1 startingAtNode:(id)arg2;
 
-- (BOOL)_callPerItemBlockForFigPlaylistNode:(struct { int x1; union { struct OpaqueFigPlaylist {} *x_2_1_1; struct OpaqueFigPlaylistItem {} *x_2_1_2; } x2; }*)arg1;
+- (bool)_callPerItemBlockForFigPlaylistNode:(struct { int x1; union { struct OpaqueFigPlaylist {} *x_2_1_1; struct OpaqueFigPlaylistItem {} *x_2_1_2; } x2; }*)arg1;
 - (void)_figPlaylistDidChange;
 - (void)_figPlaylistDidFinishEnumerationWithError:(id)arg1;
 - (void)_figPlaylistDidYieldNodes:(const struct __CFArray { }*)arg1;
 - (void)dealloc;
-- (int)direction;
+- (long long)direction;
 - (void)finalize;
 - (id)initWithFigPlaylist:(struct OpaqueFigPlaylist { }*)arg1 firstNode:(id)arg2;
-- (int)maximumNodeCount;
-- (void)setDirection:(int)arg1;
-- (void)setMaximumNodeCount:(int)arg1;
-- (void)startEnumerationWithBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (long long)maximumNodeCount;
+- (void)setDirection:(long long)arg1;
+- (void)setMaximumNodeCount:(long long)arg1;
+- (void)startEnumerationWithBlock:(id)arg1 completionHandler:(id)arg2;
 
 @end

@@ -13,7 +13,7 @@
 @property (nonatomic, retain) IDSBatchIDQueryController *batchQuerySearchVideoController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSMutableDictionary *idsFaceTimeAudioStatuses;
 @property (nonatomic, retain) NSMutableDictionary *idsFaceTimeVideoStatuses;
 @property (readonly) Class superclass;
@@ -21,10 +21,10 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (BOOL)_checkAvailabilityForItem:(id)arg1 withCache:(id)arg2;
+- (bool)_checkAvailabilityForItem:(id)arg1 withCache:(id)arg2;
 - (void)_populateWithCachedDataForItems:(id)arg1;
-- (BOOL)allCurrentItemsAreKnown:(id)arg1;
-- (BOOL)audioAvailableForItem:(id)arg1;
+- (bool)allCurrentItemsAreKnown:(id)arg1;
+- (bool)audioAvailableForItem:(id)arg1;
 - (id)batchQuerySearchAudioController;
 - (id)batchQuerySearchVideoController;
 - (void)beginQueryWithItems:(id)arg1;
@@ -38,6 +38,6 @@
 - (void)setBatchQuerySearchVideoController:(id)arg1;
 - (void)setIdsFaceTimeAudioStatuses:(id)arg1;
 - (void)setIdsFaceTimeVideoStatuses:(id)arg1;
-- (BOOL)videoAvailableForItem:(id)arg1;
+- (bool)videoAvailableForItem:(id)arg1;
 
 @end

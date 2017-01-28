@@ -9,18 +9,18 @@
 + (id)sharedVersionHelpers;
 + (id)systemVersionString;
 
-- (int)applicationVersionNumber;
+- (long long)applicationVersionNumber;
 - (id)init;
-- (int)integerRepresentationOfShortVersionString:(id)arg1;
-- (BOOL)isAppUpdateRequired;
-- (BOOL)isDeviceAbandoned;
-- (BOOL)isOSUpdateRequired;
-- (BOOL)isUpdateRequired;
-- (int)minimumOSVersionNumberForUpdate;
+- (long long)integerRepresentationOfShortVersionString:(id)arg1;
+- (bool)isAppUpdateRequired;
+- (bool)isDeviceAbandoned;
+- (bool)isOSUpdateRequired;
+- (bool)isUpdateRequired;
+- (long long)minimumOSVersionNumberForUpdate;
 - (id)minimumOSVersionStringForUpdate;
-- (int)minimumVersionNumber;
+- (long long)minimumVersionNumber;
 - (id)minimumVersionString;
-- (int)systemVersionNumber;
+- (long long)systemVersionNumber;
 - (void)updateAppObsolescenceState;
 - (id)updateInfos;
 

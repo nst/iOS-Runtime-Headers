@@ -3,26 +3,26 @@
  */
 
 @interface _HKWorkoutActivityTypeFilter : _HKFilter {
-    unsigned int  _operatorType;
-    unsigned int  _workoutActivityType;
+    unsigned long long  _operatorType;
+    unsigned long long  _workoutActivityType;
 }
 
-@property (nonatomic, readonly) unsigned int operatorType;
-@property (nonatomic, readonly) unsigned int workoutActivityType;
+@property (nonatomic, readonly) unsigned long long operatorType;
+@property (nonatomic, readonly) unsigned long long workoutActivityType;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
-+ (id)filterWithWorkoutActivityType:(unsigned int)arg1 operatorType:(unsigned int)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
++ (id)filterWithWorkoutActivityType:(unsigned long long)arg1 operatorType:(unsigned long long)arg2;
++ (bool)supportsSecureCoding;
 
-- (BOOL)acceptsDataObject:(id)arg1;
+- (bool)acceptsDataObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)operatorType;
-- (unsigned int)workoutActivityType;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)operatorType;
+- (unsigned long long)workoutActivityType;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 

@@ -7,10 +7,10 @@
 }
 
 - (void).cxx_destruct;
-- (void)applyToKeyboardOperations:(id /* block */)arg1;
+- (void)applyToKeyboardOperations:(id)arg1;
 - (void)completeAnimationWithState:(id)arg1;
 - (id)init;
-- (void)performAnimation:(id /* block */)arg1 afterStarted:(id /* block */)arg2 onCompletion:(id /* block */)arg3;
+- (void)performAnimation:(id)arg1 afterStarted:(id)arg2 onCompletion:(id)arg3;
 - (void)prepareForAnimationWithState:(id)arg1;
 - (void)runAnimationWithState:(id)arg1;
 

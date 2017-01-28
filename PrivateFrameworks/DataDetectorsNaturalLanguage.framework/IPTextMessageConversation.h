@@ -14,7 +14,7 @@
 @property (retain) NSMutableDictionary *messageByMessageIdentifierDictionary;
 
 - (void).cxx_destruct;
-- (void)_scanEventsInLastMessageOnly:(BOOL)arg1 synchronously:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)_scanEventsInLastMessageOnly:(bool)arg1 synchronously:(bool)arg2 completionHandler:(id)arg3;
 - (void)addMessage:(id)arg1;
 - (id)allMessages;
 - (id)eventsByMessageIdentifierDictionary;
@@ -23,7 +23,7 @@
 - (id)messageByMessageIdentifierDictionary;
 - (id)messageForIdentifier:(id)arg1;
 - (void)reset;
-- (void)scanEventsInLastMessageOnly:(BOOL)arg1 synchronously:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)scanEventsInLastMessageOnly:(bool)arg1 synchronously:(bool)arg2 completionHandler:(id)arg3;
 - (void)setAllMessages:(id)arg1;
 - (void)setEventsByMessageIdentifierDictionary:(id)arg1;
 - (void)setMessageByMessageIdentifierDictionary:(id)arg1;

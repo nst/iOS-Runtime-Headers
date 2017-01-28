@@ -4,19 +4,19 @@
 
 @interface TXRXCFileAttributes : NSObject {
     struct CGColorSpace { } * _colorSpace;
-    unsigned int  _fileFormat;
-    unsigned int  _origin;
+    unsigned long long  _fileFormat;
+    unsigned long long  _origin;
 }
 
 @property (nonatomic) struct CGColorSpace { }*colorSpace;
-@property (nonatomic) unsigned int fileFormat;
-@property (nonatomic) unsigned int origin;
+@property (nonatomic) unsigned long long fileFormat;
+@property (nonatomic) unsigned long long origin;
 
 - (struct CGColorSpace { }*)colorSpace;
-- (unsigned int)fileFormat;
-- (unsigned int)origin;
+- (unsigned long long)fileFormat;
+- (unsigned long long)origin;
 - (void)setColorSpace:(struct CGColorSpace { }*)arg1;
-- (void)setFileFormat:(unsigned int)arg1;
-- (void)setOrigin:(unsigned int)arg1;
+- (void)setFileFormat:(unsigned long long)arg1;
+- (void)setOrigin:(unsigned long long)arg1;
 
 @end

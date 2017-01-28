@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)popoverImageType;
+- (unsigned long long)popoverImageType;
 
 @end

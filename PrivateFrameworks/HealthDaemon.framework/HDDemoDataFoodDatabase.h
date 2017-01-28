@@ -60,7 +60,7 @@
 - (id)quakerInstantOatmealAppleCinnamonWithMilk;
 - (id)quakerInstantOatmealMapleWithMilk;
 - (id)quakerInstantOatmealRegularWithMilk;
-- (id)randomFoodForType:(int)arg1;
+- (id)randomFoodForType:(long long)arg1;
 - (id)randomFoodObjectFromArray:(id)arg1;
 - (id)redLobsterTilapiaWithRoastedVegetables;
 - (void)setBeverages:(id)arg1;

@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *alternateItems;
-@property (nonatomic, readonly) BOOL hasKeyPath;
+@property (nonatomic, readonly) bool hasKeyPath;
 @property (nonatomic, retain) NSString *keyPath;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -19,18 +19,18 @@
 - (void).cxx_destruct;
 - (void)addAlternateItems:(id)arg1;
 - (id)alternateItems;
-- (id)alternateItemsAtIndex:(unsigned int)arg1;
-- (unsigned int)alternateItemsCount;
+- (id)alternateItemsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)alternateItemsCount;
 - (void)clearAlternateItems;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasKeyPath;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasKeyPath;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)keyPath;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAlternateItems:(id)arg1;
 - (void)setKeyPath:(id)arg1;
 - (id)unknownFields;

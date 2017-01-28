@@ -5,9 +5,9 @@
 @interface PXMemoriesRelatedDiagnosticsService : PXDiagnosticsService
 
 - (id)_curationDebugStringForDictionary:(id)arg1;
-- (BOOL)canProvideConsoleDescription;
-- (BOOL)canProvideContextualViewController;
-- (BOOL)canProvideSettingsViewController;
+- (bool)canProvideConsoleDescription;
+- (bool)canProvideContextualViewController;
+- (bool)canProvideSettingsViewController;
 - (id)contextualViewController;
 - (id)settingsViewController;
 - (id)title;

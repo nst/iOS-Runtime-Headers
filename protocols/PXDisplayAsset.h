@@ -5,10 +5,10 @@
 
 @required
 
-- (unsigned int)isContentEqualTo:(id <PXDisplayAsset>)arg1;
-- (BOOL)isFavorite;
-- (unsigned int)mediaSubtypes;
-- (unsigned int)mediaType;
+- (unsigned long long)isContentEqualTo:(id <PXDisplayAsset>)arg1;
+- (bool)isFavorite;
+- (unsigned long long)mediaSubtypes;
+- (unsigned long long)mediaType;
 
 @optional
 

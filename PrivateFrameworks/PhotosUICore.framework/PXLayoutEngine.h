@@ -10,8 +10,8 @@
     PXLayoutGenerator * _layoutGenerator;
     PXLayoutSnapshot * _layoutSnapshot;
     struct { 
-        BOOL layoutData; 
-        BOOL layoutSnapshot; 
+        bool layoutData; 
+        bool layoutSnapshot; 
     }  _needsUpdateFlags;
     <PXLayoutItem> * _seedItem;
 }
@@ -21,20 +21,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXLayoutEngineDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXLayoutGenerator *layoutGenerator;
 @property (nonatomic, retain) PXLayoutSnapshot *layoutSnapshot;
 @property (nonatomic, readonly) <PXLayoutItem> *seedItem;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_needsUpdate;
+- (bool)_needsUpdate;
 - (void)_publishChanges;
 - (void)_setNeedsUpdate;
 - (void)_updateIfNeeded;
 - (void)_updateLayoutDataIfNeeded;
 - (void)_updateLayoutSnapshotIfNeeded;
-- (BOOL)canComputeLayoutSnapshot;
+- (bool)canComputeLayoutSnapshot;
 - (id)changeDetails;
 - (id)computeLayoutSnapshot;
 - (id)dataSourceSnapshot;
@@ -45,8 +45,8 @@
 - (void)invalidateLayoutSnapshot;
 - (id)layoutGenerator;
 - (id)layoutSnapshot;
-- (void)performChanges:(id /* block */)arg1;
-- (id)performChangesAndWait:(id /* block */)arg1;
+- (void)performChanges:(id)arg1;
+- (id)performChangesAndWait:(id)arg1;
 - (id)seedItem;
 - (void)setChangeDetails:(id)arg1;
 - (void)setDataSourceSnapshot:(id)arg1;

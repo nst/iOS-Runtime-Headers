@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *nameValueSeparator;
 @property (readonly, copy) NSString *suffix;
 
-+ (id)styleForEnum:(int)arg1;
++ (id)styleForEnum:(long long)arg1;
 
 - (void)dealloc;
 - (id)fieldSeparator;

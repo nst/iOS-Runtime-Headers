@@ -5,9 +5,9 @@
 @interface PXMemoriesDataSourceManager : PXSectionedDataSourceManager <PXPhotoLibraryUIChangeObserver> {
     NSMutableOrderedSet * __remainingMemoriesToFetch;
     PXMemoriesDataSourceState * __state;
-    BOOL  _hasCreatedInitialDataSource;
-    BOOL  _isWorking;
-    BOOL  _loadFromEnd;
+    bool  _hasCreatedInitialDataSource;
+    bool  _isWorking;
+    bool  _loadFromEnd;
     NSObject<OS_dispatch_queue> * _workerQueue;
 }
 
@@ -16,8 +16,8 @@
 @property (nonatomic, readonly) PXMemoriesDataSource *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL loadFromEnd;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool loadFromEnd;
 @property (nonatomic, readonly) PHFetchResult *memories;
 @property (readonly) Class superclass;
 
@@ -28,14 +28,14 @@
 - (void)_setRemainingMemoriesToFetch:(id)arg1;
 - (void)_setState:(id)arg1;
 - (id)_state;
-- (void)_workerQueue_fetchRemainingMemoriesInBatchesFromTheEnd:(BOOL)arg1;
+- (void)_workerQueue_fetchRemainingMemoriesInBatchesFromTheEnd:(bool)arg1;
 - (id)createInitialDataSource;
 - (id)initWithMemoriesFetchResult:(id)arg1;
-- (BOOL)loadFromEnd;
+- (bool)loadFromEnd;
 - (id)memories;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
-- (void)setLoadFromEnd:(BOOL)arg1;
+- (void)setLoadFromEnd:(bool)arg1;
 - (void)startLoadingIfNeeded;
 
 @end

@@ -10,14 +10,14 @@
 - (void)addDrawable:(id)arg1;
 - (void)addDrawables:(id)arg1;
 - (id)addedDrawables;
-- (BOOL)autoUpdateSmartFields;
+- (bool)autoUpdateSmartFields;
 - (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)multiTableRemapper;
 - (void)setMultiTableRemapper:(id)arg1;
-- (BOOL)syncChanges;
-- (BOOL)uniqueBookmarks;
-- (BOOL)wasPasted;
+- (bool)syncChanges;
+- (bool)uniqueBookmarks;
+- (bool)wasPasted;
 
 @end

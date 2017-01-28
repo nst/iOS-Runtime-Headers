@@ -4,42 +4,42 @@
 
 @interface CADynamicsBehavior : CABehavior
 
-@property float angularDrag;
+@property double angularDrag;
 @property double collisionInterval;
-@property float drag;
+@property double drag;
 @property (copy) NSArray *forceFields;
 @property double minimumTimeStep;
-@property BOOL reactsToCollisions;
-@property float springScale;
+@property bool reactsToCollisions;
+@property double springScale;
 @property (copy) NSArray *springs;
-@property float stoppedAngularVelocity;
-@property float stoppedVelocity;
+@property double stoppedAngularVelocity;
+@property double stoppedVelocity;
 @property double timeStep;
 
 + (id)defaultValueForKey:(id)arg1;
 
 - (struct Object { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; }*)CA_copyRenderValue;
-- (float)angularDrag;
+- (double)angularDrag;
 - (double)collisionInterval;
-- (float)drag;
+- (double)drag;
 - (id)forceFields;
 - (double)minimumTimeStep;
-- (BOOL)reactsToCollisions;
-- (void)setAngularDrag:(float)arg1;
+- (bool)reactsToCollisions;
+- (void)setAngularDrag:(double)arg1;
 - (void)setCollisionInterval:(double)arg1;
-- (void)setDrag:(float)arg1;
+- (void)setDrag:(double)arg1;
 - (void)setForceFields:(id)arg1;
 - (void)setMinimumTimeStep:(double)arg1;
-- (void)setReactsToCollisions:(BOOL)arg1;
-- (void)setSpringScale:(float)arg1;
+- (void)setReactsToCollisions:(bool)arg1;
+- (void)setSpringScale:(double)arg1;
 - (void)setSprings:(id)arg1;
-- (void)setStoppedAngularVelocity:(float)arg1;
-- (void)setStoppedVelocity:(float)arg1;
+- (void)setStoppedAngularVelocity:(double)arg1;
+- (void)setStoppedVelocity:(double)arg1;
 - (void)setTimeStep:(double)arg1;
-- (float)springScale;
+- (double)springScale;
 - (id)springs;
-- (float)stoppedAngularVelocity;
-- (float)stoppedVelocity;
+- (double)stoppedAngularVelocity;
+- (double)stoppedVelocity;
 - (double)timeStep;
 
 @end

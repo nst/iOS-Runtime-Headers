@@ -3,20 +3,20 @@
  */
 
 @interface PUAnimationGroup : NSObject {
-    id /* block */  _completionHandler;
-    BOOL  _paused;
+    id  _completionHandler;
+    bool  _paused;
     NSMutableArray * _subAnimationGroups;
     PUAnimationGroup * _superAnimationGroup;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic) double elapsedTime;
-@property (getter=isPaused, nonatomic) BOOL paused;
-@property (getter=isReadyToComplete, nonatomic, readonly) BOOL readyToComplete;
+@property (getter=isPaused, nonatomic) bool paused;
+@property (getter=isReadyToComplete, nonatomic, readonly) bool readyToComplete;
 @property (nonatomic, readonly) NSMutableArray *subAnimationGroups;
 @property (nonatomic) PUAnimationGroup *superAnimationGroup;
 
-+ (id)animationGroupWithAnimations:(id /* block */)arg1;
++ (id)animationGroupWithAnimations:(id)arg1;
 + (void)popAnimationGroup:(id)arg1;
 + (void)pushAnimationGroup:(id)arg1;
 
@@ -24,18 +24,18 @@
 - (void)addSubAnimationGroup:(id)arg1;
 - (void)complete;
 - (void)completeIfNeeded;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)dealloc;
 - (id)description;
 - (double)elapsedTime;
 - (void)finishImmediately;
-- (BOOL)isPaused;
-- (BOOL)isReadyToComplete;
+- (bool)isPaused;
+- (bool)isReadyToComplete;
 - (void)pauseAnimations;
 - (void)resumeAnimations;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setElapsedTime:(double)arg1;
-- (void)setPaused:(BOOL)arg1;
+- (void)setPaused:(bool)arg1;
 - (void)setSuperAnimationGroup:(id)arg1;
 - (id)subAnimationGroups;
 - (id)superAnimationGroup;

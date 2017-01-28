@@ -6,46 +6,46 @@
     NSObject<OS_dispatch_semaphore> * _backgroundReaderSemaphore;
     int  _backgroundReadersWaiting;
     NSMutableSet * _cache;
-    unsigned int  _cacheGeneration;
+    unsigned long long  _cacheGeneration;
     NSLock * _cacheLock;
-    unsigned int  _cacheSize;
+    unsigned long long  _cacheSize;
     NSLock * _checkoutLock;
     struct __CFDictionary { } * _checkoutMap;
     <MFSQLiteConnectionPoolDelegate> * _delegate;
-    unsigned int  _maxConcurrentBackgroundReaders;
-    unsigned int  _maxConcurrentWriters;
+    unsigned long long  _maxConcurrentBackgroundReaders;
+    unsigned long long  _maxConcurrentWriters;
     NSObject<OS_dispatch_source> * _terminationTimer;
     NSObject<OS_dispatch_semaphore> * _writerSemaphore;
     int  _writersWaiting;
 }
 
-@property (readonly) unsigned int backgroundReadersWaiting;
-@property unsigned int cacheSize;
+@property (readonly) unsigned long long backgroundReadersWaiting;
+@property unsigned long long cacheSize;
 @property <MFSQLiteConnectionPoolDelegate> *delegate;
-@property (readonly) unsigned int maxConcurrentBackgroundReaders;
-@property (readonly) unsigned int maxConcurrentWriters;
-@property (readonly) unsigned int writersWaiting;
+@property (readonly) unsigned long long maxConcurrentBackgroundReaders;
+@property (readonly) unsigned long long maxConcurrentWriters;
+@property (readonly) unsigned long long writersWaiting;
 
-- (id)_connectionWithType:(unsigned int)arg1;
+- (id)_connectionWithType:(unsigned long long)arg1;
 - (void)_interruptActiveConnections;
-- (id)_semaphoreForConnectionType:(unsigned int)arg1 waitCounter:(int**)arg2;
+- (id)_semaphoreForConnectionType:(unsigned long long)arg1 waitCounter:(int**)arg2;
 - (id)backgroundReaderConnection;
-- (unsigned int)backgroundReadersWaiting;
-- (unsigned int)cacheSize;
+- (unsigned long long)backgroundReadersWaiting;
+- (unsigned long long)cacheSize;
 - (void)cancelTerminationTimer;
 - (void)checkInConnection:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (void)flush;
-- (id)initWithDelegate:(id)arg1 maxConcurrentBackgroundReaders:(unsigned int)arg2;
+- (id)initWithDelegate:(id)arg1 maxConcurrentBackgroundReaders:(unsigned long long)arg2;
 - (void)interruptConnectionsAfterDelay:(double)arg1;
-- (unsigned int)maxConcurrentBackgroundReaders;
-- (unsigned int)maxConcurrentReaders;
-- (unsigned int)maxConcurrentWriters;
+- (unsigned long long)maxConcurrentBackgroundReaders;
+- (unsigned long long)maxConcurrentReaders;
+- (unsigned long long)maxConcurrentWriters;
 - (id)readerConnection;
-- (void)setCacheSize:(unsigned int)arg1;
+- (void)setCacheSize:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)writerConnection;
-- (unsigned int)writersWaiting;
+- (unsigned long long)writersWaiting;
 
 @end

@@ -12,16 +12,16 @@
 @property (retain) NSDictionary *peerTrackingDictionary;
 @property (retain) NSUUID *peerUUID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned char)clientType;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)peerTrackingDictionary;
 - (id)peerUUID;
 - (void)setClientType:(unsigned char)arg1;

@@ -8,12 +8,12 @@
 - (NSString *)backingTagID;
 - (NSDate *)creationDate;
 - (FCFeedEdition *)edition;
-- (int)groupType;
+- (long long)groupType;
 - (NSArray *)headlines;
 - (NSString *)identifier;
-- (unsigned int)mergeID;
+- (unsigned long long)mergeID;
 - (NSString *)name;
-- (unsigned int)options;
+- (unsigned long long)options;
 - (NSString *)sourceIdentifier;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface MPCRadioAVItem : MPAVItem {
     NSArray * _buyOffers;
-    BOOL  _heartbeatInvalid;
-    BOOL  _isInWishList;
+    bool  _heartbeatInvalid;
+    bool  _isInWishList;
     MPModelSong * _modelSong;
     MPModelResponse * _modelSongPersonalizationResponse;
     RadioTrack * _radioTrack;
@@ -18,9 +18,9 @@
 
 @property (nonatomic, readonly, copy) RadioArtworkCollection *_artworkCollection;
 @property (nonatomic, readonly) double _expectedDuration;
-@property (nonatomic, readonly) BOOL _hasLyrics;
-@property (getter=isHeartbeatInvalid, nonatomic) BOOL heartbeatInvalid;
-@property (nonatomic) BOOL isInWishList;
+@property (nonatomic, readonly) bool _hasLyrics;
+@property (getter=isHeartbeatInvalid, nonatomic) bool heartbeatInvalid;
+@property (nonatomic) bool isInWishList;
 @property (nonatomic, retain) RadioStation *station;
 @property (nonatomic, readonly) NSString *stationHash;
 @property (nonatomic, readonly) long long stationID;
@@ -35,17 +35,17 @@
 - (void)_beginUsingPlaybackLease;
 - (void)_contentTasteControllerDidChangeNotification:(id)arg1;
 - (double)_expectedDuration;
-- (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
-- (BOOL)_hasLyrics;
+- (void)_handleUpdatedLikedState:(long long)arg1 completion:(id)arg2;
+- (bool)_hasLyrics;
 - (void)_internalIsInWishlistDidChangeNotification:(id)arg1;
 - (void)_invalidateModelSong;
-- (BOOL)_isSubscriptionEligible;
-- (void)_loadMediaItemWithCompletionHandler:(id /* block */)arg1;
+- (bool)_isSubscriptionEligible;
+- (void)_loadMediaItemWithCompletionHandler:(id)arg1;
 - (void)_modelSongPersonalizationResponseDidInvalidateNotification:(id)arg1;
-- (int)_persistedLikedState;
+- (long long)_persistedLikedState;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
-- (void)_sendLikeOrBanRequestWithStatus:(int)arg1 completion:(id /* block */)arg2;
-- (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_sendLikeOrBanRequestWithStatus:(int)arg1 completion:(id)arg2;
+- (void)addDerivedStationForArtist:(bool)arg1 withCompletionHandler:(id)arg2;
 - (id)aggregateDictionaryItemType;
 - (id)album;
 - (long long)albumStoreID;
@@ -58,30 +58,30 @@
 - (id)copyrightText;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithRadioTrack:(id)arg1;
-- (BOOL)isCloudItem;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExplicitTrack;
-- (BOOL)isHeartbeatInvalid;
-- (BOOL)isInWishList;
-- (BOOL)isLikedStateEnabled;
-- (BOOL)isRadioItem;
-- (BOOL)isStreamable;
-- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (bool)isCloudItem;
+- (bool)isEqual:(id)arg1;
+- (bool)isExplicitTrack;
+- (bool)isHeartbeatInvalid;
+- (bool)isInWishList;
+- (bool)isLikedStateEnabled;
+- (bool)isRadioItem;
+- (bool)isStreamable;
+- (bool)isValidPlayerSubstituteForItem:(id)arg1;
 - (id)localizedAttributedPositionInPlaylistStringWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
 - (id)localizedPositionInPlaylistString;
 - (id)mainTitle;
 - (id)mediaItem;
 - (id)modelSong;
-- (unsigned int)mpcReporting_itemType;
-- (BOOL)mpcReporting_shouldReportPlayEventsToStore;
+- (unsigned long long)mpcReporting_itemType;
+- (bool)mpcReporting_shouldReportPlayEventsToStore;
 - (id)mpcReporting_trackInfo;
 - (unsigned long long)persistentID;
 - (id)radioTrack;
 - (void)reevaluateType;
-- (void)setHeartbeatInvalid:(BOOL)arg1;
-- (void)setIsInWishList:(BOOL)arg1;
+- (void)setHeartbeatInvalid:(bool)arg1;
+- (void)setIsInWishList:(bool)arg1;
 - (void)setStation:(id)arg1;
 - (id)station;
 - (id)stationHash;
@@ -90,11 +90,11 @@
 - (id)stationStringID;
 - (long long)storeItemInt64ID;
 - (long long)storeSubscriptionAdamID;
-- (BOOL)supportsLikedState;
-- (BOOL)supportsSettingCurrentTime;
+- (bool)supportsLikedState;
+- (bool)supportsSettingCurrentTime;
 - (id)title;
 - (id)titlesForTime:(double)arg1;
 - (id)urlTimeMarkers;
-- (BOOL)usesSubscriptionLease;
+- (bool)usesSubscriptionLease;
 
 @end

@@ -4,11 +4,11 @@
 
 @interface OADImageFill : OADFill {
     OADBlipRef * mBlipRef;
-    long  mDpi;
-    BOOL  mIsBlipRefOverridden;
-    BOOL  mIsDpiOverridden;
-    BOOL  mIsRotateWithShapeOverridden;
-    BOOL  mRotateWithShape;
+    int  mDpi;
+    bool  mIsBlipRefOverridden;
+    bool  mIsDpiOverridden;
+    bool  mIsRotateWithShapeOverridden;
+    bool  mRotateWithShape;
     OADRelativeRect * mSourceRect;
     OADImageFillTechnique * mTechnique;
 }
@@ -19,23 +19,23 @@
 - (id)color;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (long)dpi;
+- (int)dpi;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDefaults;
-- (BOOL)isAnythingOverridden;
-- (BOOL)isBlipRefOverridden;
-- (BOOL)isDpiOverridden;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isRotateWithShapeOverridden;
-- (BOOL)isSourceRectOverridden;
-- (BOOL)isTechniqueOverridden;
+- (bool)isAnythingOverridden;
+- (bool)isBlipRefOverridden;
+- (bool)isDpiOverridden;
+- (bool)isEqual:(id)arg1;
+- (bool)isRotateWithShapeOverridden;
+- (bool)isSourceRectOverridden;
+- (bool)isTechniqueOverridden;
 - (void)removeUnnecessaryOverrides;
-- (BOOL)rotateWithShape;
+- (bool)rotateWithShape;
 - (void)setBlipRef:(id)arg1;
-- (void)setDpi:(long)arg1;
+- (void)setDpi:(int)arg1;
 - (void)setParent:(id)arg1;
-- (void)setRotateWithShape:(BOOL)arg1;
+- (void)setRotateWithShape:(bool)arg1;
 - (void)setSourceRect:(id)arg1;
 - (void)setStyleColor:(id)arg1;
 - (void)setTechnique:(id)arg1;

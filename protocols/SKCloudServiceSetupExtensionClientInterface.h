@@ -5,7 +5,7 @@
 
 @required
 
-- (void)didFinishLoadingWithSuccess:(BOOL)arg1 error:(NSError *)arg2;
-- (void)dismissCloudServiceSetupViewControllerAnimated:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 6: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)didFinishLoadingWithSuccess:(bool)arg1 error:(NSError *)arg2;
+- (void)dismissCloudServiceSetupViewControllerAnimated:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 6: bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 
 @end

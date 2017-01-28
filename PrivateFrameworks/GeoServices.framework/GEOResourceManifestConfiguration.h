@@ -15,7 +15,7 @@
     NSString * _os;
     NSString * _osBuild;
     NSString * _osVersion;
-    BOOL  _requiresLegacyFormat;
+    bool  _requiresLegacyFormat;
     unsigned int  _tileGroupIdentifier;
 }
 
@@ -32,7 +32,7 @@
 @property (nonatomic, copy) NSString *os;
 @property (nonatomic, copy) NSString *osBuild;
 @property (nonatomic, copy) NSString *osVersion;
-@property (nonatomic, readonly) BOOL requiresLegacyFormat;
+@property (nonatomic, readonly) bool requiresLegacyFormat;
 @property (nonatomic) unsigned int tileGroupIdentifier;
 
 + (id)configurationWithPairedDevice:(id)arg1;
@@ -50,15 +50,15 @@
 - (id)disputedBorderRegionOverride;
 - (id)environment;
 - (id)hardwareIdentifier;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithConciseDictionaryRepresentation:(id)arg1;
-- (BOOL)isDefaultConfiguration;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDefaultConfiguration;
+- (bool)isEqual:(id)arg1;
 - (id)os;
 - (id)osBuild;
 - (id)osVersion;
-- (BOOL)requiresLegacyFormat;
+- (bool)requiresLegacyFormat;
 - (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
 - (void)setCountryCode:(id)arg1;

@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *formattedTextDelimiter;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSArray *markupList;
 @property (nonatomic, copy) NSArray *moreGlyphs;
 @property (nonatomic, copy) NSNumber *starRating;

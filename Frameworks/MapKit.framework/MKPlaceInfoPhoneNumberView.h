@@ -3,18 +3,18 @@
  */
 
 @interface MKPlaceInfoPhoneNumberView : MKPlaceInfoContactRowView {
-    BOOL  _optsOutOfAds;
+    bool  _optsOutOfAds;
     _MKUILabel * _optsOutOfAdsView;
 }
 
-@property (nonatomic) BOOL optsOutOfAds;
+@property (nonatomic) bool optsOutOfAds;
 
 - (void).cxx_destruct;
 - (id)_icon;
 - (id)_iconAccessibilityLabel;
 - (Class)_labeledValueExpectedValueType;
 - (id)_valueString;
-- (BOOL)optsOutOfAds;
-- (void)setOptsOutOfAds:(BOOL)arg1;
+- (bool)optsOutOfAds;
+- (void)setOptsOutOfAds:(bool)arg1;
 
 @end

@@ -19,7 +19,7 @@
         unsigned int width; 
         unsigned int height; 
     }  slice;
-    unsigned long  sourceRowbytes;
+    unsigned long long  sourceRowbytes;
 }
 
 @end

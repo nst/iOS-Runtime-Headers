@@ -5,12 +5,12 @@
 @interface EMChartsheetMapper : EMSheetMapper {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  mBox;
     EDChartSheet * mChartSheet;

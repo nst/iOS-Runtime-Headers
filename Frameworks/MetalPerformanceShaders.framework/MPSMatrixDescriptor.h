@@ -3,28 +3,28 @@
  */
 
 @interface MPSMatrixDescriptor : NSObject {
-    unsigned int  _columns;
+    unsigned long long  _columns;
     unsigned int  _dataType;
-    unsigned int  _rowBytes;
-    unsigned int  _rows;
+    unsigned long long  _rowBytes;
+    unsigned long long  _rows;
 }
 
-@property (nonatomic) unsigned int columns;
+@property (nonatomic) unsigned long long columns;
 @property (nonatomic) unsigned int dataType;
-@property (nonatomic) unsigned int rowBytes;
-@property (nonatomic) unsigned int rows;
+@property (nonatomic) unsigned long long rowBytes;
+@property (nonatomic) unsigned long long rows;
 
-+ (id)matrixDescriptorWithDimensions:(unsigned int)arg1 columns:(unsigned int)arg2 rowBytes:(unsigned int)arg3 dataType:(unsigned int)arg4;
-+ (unsigned long)rowBytesFromColumns:(unsigned int)arg1 dataType:(unsigned int)arg2;
++ (id)matrixDescriptorWithDimensions:(unsigned long long)arg1 columns:(unsigned long long)arg2 rowBytes:(unsigned long long)arg3 dataType:(unsigned int)arg4;
++ (unsigned long long)rowBytesFromColumns:(unsigned long long)arg1 dataType:(unsigned int)arg2;
 
-- (unsigned int)columns;
+- (unsigned long long)columns;
 - (unsigned int)dataType;
 - (id)init;
-- (unsigned int)rowBytes;
-- (unsigned int)rows;
-- (void)setColumns:(unsigned int)arg1;
+- (unsigned long long)rowBytes;
+- (unsigned long long)rows;
+- (void)setColumns:(unsigned long long)arg1;
 - (void)setDataType:(unsigned int)arg1;
-- (void)setRowBytes:(unsigned int)arg1;
-- (void)setRows:(unsigned int)arg1;
+- (void)setRowBytes:(unsigned long long)arg1;
+- (void)setRows:(unsigned long long)arg1;
 
 @end

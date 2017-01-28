@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSMutableDictionary *pcsInfoByZoneID;
 @property (nonatomic, retain) NSString *serviceIdentityInfo;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

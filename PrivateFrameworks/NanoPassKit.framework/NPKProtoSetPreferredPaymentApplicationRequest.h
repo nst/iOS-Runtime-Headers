@@ -7,8 +7,8 @@
     NSString * _preferredApplicationAID;
 }
 
-@property (nonatomic, readonly) BOOL hasPassID;
-@property (nonatomic, readonly) BOOL hasPreferredApplicationAID;
+@property (nonatomic, readonly) bool hasPassID;
+@property (nonatomic, readonly) bool hasPreferredApplicationAID;
 @property (nonatomic, retain) NSString *passID;
 @property (nonatomic, retain) NSString *preferredApplicationAID;
 
@@ -17,14 +17,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPassID;
-- (BOOL)hasPreferredApplicationAID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasPassID;
+- (bool)hasPreferredApplicationAID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)passID;
 - (id)preferredApplicationAID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setPassID:(id)arg1;
 - (void)setPreferredApplicationAID:(id)arg1;
 - (void)writeTo:(id)arg1;

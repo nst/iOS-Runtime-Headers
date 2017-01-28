@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) SKStoreProductViewController *productViewController;
 @property (readonly) Class superclass;
 
@@ -25,7 +25,7 @@
 - (void)setProductViewController:(id)arg1;
 - (void)setStatusBarHidden:(id)arg1 withAnimation:(id)arg2;
 - (void)setStatusBarStyle:(id)arg1 animated:(id)arg2;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

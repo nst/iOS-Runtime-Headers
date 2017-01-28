@@ -3,26 +3,26 @@
  */
 
 @interface SearchUIKeyboardableTableViewController : UITableViewController {
-    float  _keyboardHeight;
+    double  _keyboardHeight;
     UITextField * _textField;
 }
 
-@property float keyboardHeight;
+@property double keyboardHeight;
 @property (retain) UITextField *textField;
 
 - (void).cxx_destruct;
 - (void)addKeyCommandForKey:(id)arg1 action:(SEL)arg2;
-- (BOOL)canHighlightRowAtIndexPath:(id)arg1;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (bool)canHighlightRowAtIndexPath:(id)arg1;
+- (bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)deletePressed;
 - (void)downArrowPressed:(id)arg1;
 - (void)goBack;
 - (void)highlightRowAtIndexPath:(id)arg1;
 - (id)init;
-- (BOOL)isLeftToRightOrientation;
-- (BOOL)isOnCard;
+- (bool)isLeftToRightOrientation;
+- (bool)isOnCard;
 - (void)keyboardFrameChanged:(id)arg1;
-- (float)keyboardHeight;
+- (double)keyboardHeight;
 - (void)leftArrowPressed;
 - (void)moveCursorToBeginning;
 - (void)moveCursorToEnd;
@@ -31,10 +31,10 @@
 - (void)rightArrowPressed;
 - (void)scrollIndexPathToVisible:(id)arg1;
 - (void)selectHighlightedRow;
-- (void)setKeyboardHeight:(float)arg1;
+- (void)setKeyboardHeight:(double)arg1;
 - (void)setTextField:(id)arg1;
 - (id)textField;
 - (void)upArrowPressed:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

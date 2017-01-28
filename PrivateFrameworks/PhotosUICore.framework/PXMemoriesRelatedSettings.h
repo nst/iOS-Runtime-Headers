@@ -3,28 +3,28 @@
  */
 
 @interface PXMemoriesRelatedSettings : PXSettings {
-    unsigned int  _deleteBehavior;
-    BOOL  _enableFeedbackBannerUI;
-    BOOL  _enableFeedbackComboUI;
-    BOOL  _enableFeedbackUI;
-    BOOL  _enableMemoryBlurryHeader;
-    BOOL  _enableUI;
-    int  _minimumNumberOfCuratedAssetsForInterestingMoments;
-    int  _minimumNumberOfCuratedAssetsForMemories;
-    int  _minimumNumberOfCuratedAssetsForMovieHeader;
+    unsigned long long  _deleteBehavior;
+    bool  _enableFeedbackBannerUI;
+    bool  _enableFeedbackComboUI;
+    bool  _enableFeedbackUI;
+    bool  _enableMemoryBlurryHeader;
+    bool  _enableUI;
+    long long  _minimumNumberOfCuratedAssetsForInterestingMoments;
+    long long  _minimumNumberOfCuratedAssetsForMemories;
+    long long  _minimumNumberOfCuratedAssetsForMovieHeader;
     double  _refreshPhotoKitTimeout;
     double  _widgetRefreshTimeInterval;
 }
 
-@property (nonatomic) unsigned int deleteBehavior;
-@property (nonatomic) BOOL enableFeedbackBannerUI;
-@property (nonatomic) BOOL enableFeedbackComboUI;
-@property (nonatomic) BOOL enableFeedbackUI;
-@property (nonatomic) BOOL enableMemoryBlurryHeader;
-@property (nonatomic) BOOL enableUI;
-@property (nonatomic) int minimumNumberOfCuratedAssetsForInterestingMoments;
-@property (nonatomic) int minimumNumberOfCuratedAssetsForMemories;
-@property (nonatomic) int minimumNumberOfCuratedAssetsForMovieHeader;
+@property (nonatomic) unsigned long long deleteBehavior;
+@property (nonatomic) bool enableFeedbackBannerUI;
+@property (nonatomic) bool enableFeedbackComboUI;
+@property (nonatomic) bool enableFeedbackUI;
+@property (nonatomic) bool enableMemoryBlurryHeader;
+@property (nonatomic) bool enableUI;
+@property (nonatomic) long long minimumNumberOfCuratedAssetsForInterestingMoments;
+@property (nonatomic) long long minimumNumberOfCuratedAssetsForMemories;
+@property (nonatomic) long long minimumNumberOfCuratedAssetsForMovieHeader;
 @property (nonatomic) double refreshPhotoKitTimeout;
 @property (nonatomic) double widgetRefreshTimeInterval;
 
@@ -32,27 +32,27 @@
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
-- (unsigned int)deleteBehavior;
-- (BOOL)enableFeedbackBannerUI;
-- (BOOL)enableFeedbackComboUI;
-- (BOOL)enableFeedbackUI;
-- (BOOL)enableMemoryBlurryHeader;
-- (BOOL)enableUI;
-- (int)minimumNumberOfCuratedAssetsForInterestingMoments;
-- (int)minimumNumberOfCuratedAssetsForMemories;
-- (int)minimumNumberOfCuratedAssetsForMovieHeader;
+- (unsigned long long)deleteBehavior;
+- (bool)enableFeedbackBannerUI;
+- (bool)enableFeedbackComboUI;
+- (bool)enableFeedbackUI;
+- (bool)enableMemoryBlurryHeader;
+- (bool)enableUI;
+- (long long)minimumNumberOfCuratedAssetsForInterestingMoments;
+- (long long)minimumNumberOfCuratedAssetsForMemories;
+- (long long)minimumNumberOfCuratedAssetsForMovieHeader;
 - (void)performPostSaveActions;
 - (double)refreshPhotoKitTimeout;
 - (void)setDefaultValues;
-- (void)setDeleteBehavior:(unsigned int)arg1;
-- (void)setEnableFeedbackBannerUI:(BOOL)arg1;
-- (void)setEnableFeedbackComboUI:(BOOL)arg1;
-- (void)setEnableFeedbackUI:(BOOL)arg1;
-- (void)setEnableMemoryBlurryHeader:(BOOL)arg1;
-- (void)setEnableUI:(BOOL)arg1;
-- (void)setMinimumNumberOfCuratedAssetsForInterestingMoments:(int)arg1;
-- (void)setMinimumNumberOfCuratedAssetsForMemories:(int)arg1;
-- (void)setMinimumNumberOfCuratedAssetsForMovieHeader:(int)arg1;
+- (void)setDeleteBehavior:(unsigned long long)arg1;
+- (void)setEnableFeedbackBannerUI:(bool)arg1;
+- (void)setEnableFeedbackComboUI:(bool)arg1;
+- (void)setEnableFeedbackUI:(bool)arg1;
+- (void)setEnableMemoryBlurryHeader:(bool)arg1;
+- (void)setEnableUI:(bool)arg1;
+- (void)setMinimumNumberOfCuratedAssetsForInterestingMoments:(long long)arg1;
+- (void)setMinimumNumberOfCuratedAssetsForMemories:(long long)arg1;
+- (void)setMinimumNumberOfCuratedAssetsForMovieHeader:(long long)arg1;
 - (void)setRefreshPhotoKitTimeout:(double)arg1;
 - (void)setWidgetRefreshTimeInterval:(double)arg1;
 - (double)widgetRefreshTimeInterval;

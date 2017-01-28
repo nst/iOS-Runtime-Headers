@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)debugDescription;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 - (id)observable;
 - (void)setDebugDescription:(id)arg1;
 - (void)setObservable:(id)arg1;

@@ -4,16 +4,16 @@
 
 @interface GCControllerCBDelegate : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {
     CBCentralManager * _centralManager;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSMutableArray * _connectedPeripherals;
     NSMutableArray * _foundPeripherals;
 }
 
 @property (nonatomic, retain) CBCentralManager *centralManager;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -25,7 +25,7 @@
 - (void)centralManager:(id)arg1 didRetrieveConnectedPeripherals:(id)arg2;
 - (void)centralManager:(id)arg1 didRetrievePeripherals:(id)arg2;
 - (void)centralManagerDidUpdateState:(id)arg1;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)fireCompletionHandler;
 - (id)init;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristicsForService:(id)arg2 error:(id)arg3;
@@ -35,7 +35,7 @@
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didUpdateValueForDescriptor:(id)arg2 error:(id)arg3;
 - (void)setCentralManager:(id)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)startScan;
 - (void)startScanWithTimeout:(double)arg1;
 - (void)stopScan;

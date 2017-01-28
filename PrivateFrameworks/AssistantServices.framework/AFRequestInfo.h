@@ -38,7 +38,7 @@
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic, copy) NSString *utteranceSource;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)combinedRank;

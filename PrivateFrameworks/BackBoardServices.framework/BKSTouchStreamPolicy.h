@@ -3,12 +3,12 @@
  */
 
 @interface BKSTouchStreamPolicy : NSObject {
-    BOOL  _shouldSendAmbiguityRecommendations;
+    bool  _shouldSendAmbiguityRecommendations;
 }
 
-@property (nonatomic) BOOL shouldSendAmbiguityRecommendations;
+@property (nonatomic) bool shouldSendAmbiguityRecommendations;
 
-- (void)setShouldSendAmbiguityRecommendations:(BOOL)arg1;
-- (BOOL)shouldSendAmbiguityRecommendations;
+- (void)setShouldSendAmbiguityRecommendations:(bool)arg1;
+- (bool)shouldSendAmbiguityRecommendations;
 
 @end

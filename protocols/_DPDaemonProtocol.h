@@ -5,8 +5,8 @@
 
 @required
 
-- (void)recordNumbers:(void *)arg1 forKey:(void *)arg2 withReply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
-- (void)recordStrings:(void *)arg1 forKey:(void *)arg2 withReply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
-- (void)recordWords:(void *)arg1 forKey:(void *)arg2 withReply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)recordNumbers:(void *)arg1 forKey:(void *)arg2 withReply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, NSError *, void*
+- (void)recordStrings:(void *)arg1 forKey:(void *)arg2 withReply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, NSError *, void*
+- (void)recordWords:(void *)arg1 forKey:(void *)arg2 withReply:(void *)arg3; // needs 3 arg types, found 9: NSArray *, NSString *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, NSError *, void*
 
 @end

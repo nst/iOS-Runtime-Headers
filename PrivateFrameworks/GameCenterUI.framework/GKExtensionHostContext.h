@@ -10,14 +10,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) GKUIRemoteViewController *remoteViewController;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)extensionObjectProxy;
 - (id)game;
-- (void)hostApp:(id)arg1 grantingAccessExtensionSandbox:(id)arg2 replyWithEndpoint:(id /* block */)arg3;
+- (void)hostApp:(id)arg1 grantingAccessExtensionSandbox:(id)arg2 replyWithEndpoint:(id)arg3;
 - (void)nudge;
 - (void)performActivityType:(id)arg1 withActivityItemsAndSharingInfo:(id)arg2;
 - (id)remoteViewController;
@@ -26,8 +26,8 @@
 - (void)remoteViewControllerIsCanceling;
 - (void)remoteViewControllerIsFinishing;
 - (void)setGame:(id)arg1;
-- (void)setInitialState:(id)arg1 withReply:(id /* block */)arg2;
+- (void)setInitialState:(id)arg1 withReply:(id)arg2;
 - (void)setRemoteViewController:(id)arg1;
-- (void)setValue:(id)arg1 forKeyPath:(id)arg2 withReply:(id /* block */)arg3;
+- (void)setValue:(id)arg1 forKeyPath:(id)arg2 withReply:(id)arg3;
 
 @end

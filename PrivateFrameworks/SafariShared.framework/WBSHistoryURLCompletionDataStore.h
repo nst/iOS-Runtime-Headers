@@ -10,11 +10,11 @@
 }
 
 - (void).cxx_destruct;
-- (struct RefPtr<SafariShared::HistoryURLCompletionItem> { struct HistoryURLCompletionItem {} *x1; })_completionItemFromDatabase:(id)arg1 withVisitDatabaseID:(int)arg2;
+- (struct RefPtr<SafariShared::HistoryURLCompletionItem> { struct HistoryURLCompletionItem {} *x1; })_completionItemFromDatabase:(id)arg1 withVisitDatabaseID:(long long)arg2;
 - (struct Ref<SafariShared::HistoryURLCompletionItem> { struct HistoryURLCompletionItem {} *x1; })_completionItemFromRow:(id)arg1;
-- (void)_enumerateCompletionItemsForMostRecentVisitsFromDatabase:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)_enumerateCompletionItemsForMostRecentVisitsFromDatabase:(id)arg1 usingBlock:(id)arg2;
 - (void)_loadFromDatabaseIfNecessary;
-- (void)getSnapshotWithCompletionHandler:(id /* block */)arg1;
+- (void)getSnapshotWithCompletionHandler:(id)arg1;
 - (id)initWithHistoryService:(id)arg1;
 
 @end

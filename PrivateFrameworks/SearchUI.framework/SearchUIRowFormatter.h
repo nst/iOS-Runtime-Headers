@@ -3,57 +3,57 @@
  */
 
 @interface SearchUIRowFormatter : NSObject {
-    BOOL  _centerText;
+    bool  _centerText;
     UIFont * _descriptionFont;
     UIFont * _footnoteFont;
-    float  _interResultSpacing;
-    BOOL  _requiresTwoLineTitles;
-    float  _spacingBetweenDescriptionAndFootnote;
-    float  _spacingBetweenDescriptions;
-    float  _spacingBetweenTitleAndDescription;
-    float  _spacingBetweenTitleAndTopView;
-    BOOL  _thumbnailFillsWidth;
+    double  _interResultSpacing;
+    bool  _requiresTwoLineTitles;
+    double  _spacingBetweenDescriptionAndFootnote;
+    double  _spacingBetweenDescriptions;
+    double  _spacingBetweenTitleAndDescription;
+    double  _spacingBetweenTitleAndTopView;
+    bool  _thumbnailFillsWidth;
     UIFont * _titleFont;
 }
 
-@property BOOL centerText;
+@property bool centerText;
 @property (retain) UIFont *descriptionFont;
 @property (retain) UIFont *footnoteFont;
-@property float interResultSpacing;
-@property BOOL requiresTwoLineTitles;
-@property float spacingBetweenDescriptionAndFootnote;
-@property float spacingBetweenDescriptions;
-@property float spacingBetweenTitleAndDescription;
-@property float spacingBetweenTitleAndTopView;
-@property BOOL thumbnailFillsWidth;
+@property double interResultSpacing;
+@property bool requiresTwoLineTitles;
+@property double spacingBetweenDescriptionAndFootnote;
+@property double spacingBetweenDescriptions;
+@property double spacingBetweenTitleAndDescription;
+@property double spacingBetweenTitleAndTopView;
+@property bool thumbnailFillsWidth;
 @property (retain) UIFont *titleFont;
 
 - (void).cxx_destruct;
-- (BOOL)centerText;
+- (bool)centerText;
 - (id)descriptionFont;
 - (id)footnoteFont;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2;
-- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 scrollable:(BOOL)arg3;
-- (id)initWithResults:(id)arg1 style:(unsigned int)arg2;
-- (id)initWithRowType:(unsigned int)arg1 style:(unsigned int)arg2;
-- (float)interResultSpacing;
-- (BOOL)requiresTwoLineTitles;
-- (void)setCenterText:(BOOL)arg1;
+- (id)initWithResult:(id)arg1 style:(unsigned long long)arg2;
+- (id)initWithResult:(id)arg1 style:(unsigned long long)arg2 scrollable:(bool)arg3;
+- (id)initWithResults:(id)arg1 style:(unsigned long long)arg2;
+- (id)initWithRowType:(unsigned long long)arg1 style:(unsigned long long)arg2;
+- (double)interResultSpacing;
+- (bool)requiresTwoLineTitles;
+- (void)setCenterText:(bool)arg1;
 - (void)setDescriptionFont:(id)arg1;
 - (void)setFootnoteFont:(id)arg1;
-- (void)setInterResultSpacing:(float)arg1;
-- (void)setRequiresTwoLineTitles:(BOOL)arg1;
-- (void)setSpacingBetweenDescriptionAndFootnote:(float)arg1;
-- (void)setSpacingBetweenDescriptions:(float)arg1;
-- (void)setSpacingBetweenTitleAndDescription:(float)arg1;
-- (void)setSpacingBetweenTitleAndTopView:(float)arg1;
-- (void)setThumbnailFillsWidth:(BOOL)arg1;
+- (void)setInterResultSpacing:(double)arg1;
+- (void)setRequiresTwoLineTitles:(bool)arg1;
+- (void)setSpacingBetweenDescriptionAndFootnote:(double)arg1;
+- (void)setSpacingBetweenDescriptions:(double)arg1;
+- (void)setSpacingBetweenTitleAndDescription:(double)arg1;
+- (void)setSpacingBetweenTitleAndTopView:(double)arg1;
+- (void)setThumbnailFillsWidth:(bool)arg1;
 - (void)setTitleFont:(id)arg1;
-- (float)spacingBetweenDescriptionAndFootnote;
-- (float)spacingBetweenDescriptions;
-- (float)spacingBetweenTitleAndDescription;
-- (float)spacingBetweenTitleAndTopView;
-- (BOOL)thumbnailFillsWidth;
+- (double)spacingBetweenDescriptionAndFootnote;
+- (double)spacingBetweenDescriptions;
+- (double)spacingBetweenTitleAndDescription;
+- (double)spacingBetweenTitleAndTopView;
+- (bool)thumbnailFillsWidth;
 - (id)titleFont;
 
 @end

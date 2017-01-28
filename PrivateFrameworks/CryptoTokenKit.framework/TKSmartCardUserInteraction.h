@@ -12,17 +12,17 @@
 @property double initialTimeout;
 @property double interactionTimeout;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)cancel;
+- (bool)cancel;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (double)initialTimeout;
 - (double)interactionTimeout;
-- (void)runWithReply:(id /* block */)arg1;
+- (void)runWithReply:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInitialTimeout:(double)arg1;
 - (void)setInteractionTimeout:(double)arg1;

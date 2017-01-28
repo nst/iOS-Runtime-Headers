@@ -10,7 +10,9 @@
     CKDatabase * _publicDatabase;
     CKRecordZone * _recordZone;
     NSString * _recordZoneKey;
+    bool  _recordZoneOperationInProgress;
     NSString * _subscriptionKey;
+    bool  _subscriptionOperationInProgress;
 }
 
 @property (nonatomic, retain) CKContainer *cloudKitContainer;
@@ -18,42 +20,47 @@
 @property (nonatomic, retain) CKDatabase *publicDatabase;
 @property (nonatomic, retain) CKRecordZone *recordZone;
 @property (nonatomic, retain) NSString *recordZoneKey;
+@property (nonatomic) bool recordZoneOperationInProgress;
 @property (nonatomic, retain) NSString *subscriptionKey;
+@property (nonatomic) bool subscriptionOperationInProgress;
 
 - (void).cxx_destruct;
-- (void)_checkAccountStatusWithCompletionHandler:(id /* block */)arg1 withRetryCount:(unsigned int)arg2;
-- (void)_submitFetchRecordsOperation:(id)arg1 withPriority:(unsigned int)arg2 changeToken:(id)arg3 completionHandler:(id /* block */)arg4 retryCount:(unsigned int)arg5;
+- (void)_checkAccountStatusWithCompletionHandler:(id)arg1 withRetryCount:(unsigned long long)arg2;
+- (void)_submitFetchRecordsOperation:(id)arg1 withPriority:(unsigned long long)arg2 changeToken:(id)arg3 completionHandler:(id)arg4 retryCount:(unsigned long long)arg5;
 - (void)accountStatusDidChange:(id)arg1;
 - (id)cloudKitContainer;
 - (id)cloudKitDatabase;
 - (void)dealloc;
-- (void)didStoreLocalChangesForChangeToken:(id)arg1;
-- (void)fetchPublicRecordsWithNames:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)fetchRecordsWithPriority:(unsigned int)arg1 changeToken:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)fetchRecordsWithPriority:(unsigned int)arg1 changeToken:(id)arg2 completionHandler:(id /* block */)arg3 retryCount:(unsigned int)arg4;
+- (void)fetchPublicRecordsWithNames:(id)arg1 completionHandler:(id)arg2;
+- (void)fetchRecordsWithPriority:(unsigned long long)arg1 changeToken:(id)arg2 completionHandler:(id)arg3;
+- (void)fetchRecordsWithPriority:(unsigned long long)arg1 changeToken:(id)arg2 completionHandler:(id)arg3 retryCount:(unsigned long long)arg4;
 - (id)init;
 - (id)initWithRecordZoneName:(id)arg1;
-- (BOOL)isAccountAvailable;
+- (bool)isAccountAvailable;
 - (id)publicDatabase;
-- (void)queryAccountStatusWithCompletionHandler:(id /* block */)arg1;
+- (void)queryAccountStatusWithCompletionHandler:(id)arg1;
 - (id)recordIDForName:(id)arg1;
 - (id)recordWithName:(id)arg1 type:(id)arg2 attributes:(id)arg3;
 - (id)recordWithName:(id)arg1 type:(id)arg2 cloudData:(id)arg3 attributes:(id)arg4;
 - (id)recordZone;
 - (id)recordZoneKey;
+- (bool)recordZoneOperationInProgress;
 - (id)resolveConflicts:(id)arg1;
 - (void)setCloudKitContainer:(id)arg1;
 - (void)setCloudKitDatabase:(id)arg1;
 - (void)setPublicDatabase:(id)arg1;
 - (void)setRecordZone:(id)arg1;
 - (void)setRecordZoneKey:(id)arg1;
+- (void)setRecordZoneOperationInProgress:(bool)arg1;
 - (void)setSubscriptionKey:(id)arg1;
-- (void)setup;
-- (void)setupRecordZoneWithCompletionHandler:(id /* block */)arg1;
+- (void)setSubscriptionOperationInProgress:(bool)arg1;
+- (void)setupAccountDidChange:(bool)arg1;
+- (void)setupRecordZoneWithCompletionHandler:(id)arg1;
 - (void)setupSubscription;
 - (id)subscriptionKey;
-- (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
-- (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned int)arg3 completionHandler:(id /* block */)arg4 retryCount:(unsigned int)arg5;
+- (bool)subscriptionOperationInProgress;
+- (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned long long)arg3 completionHandler:(id)arg4;
+- (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned long long)arg3 completionHandler:(id)arg4 retryCount:(unsigned long long)arg5;
 - (id)userIdentity;
 
 @end

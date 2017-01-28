@@ -7,7 +7,7 @@
 }
 
 - (void).cxx_destruct;
-- (float)floatValueForFraction:(float)arg1;
+- (double)floatValueForFraction:(double)arg1;
 - (id)initWithFloatCurveElements:(id)arg1;
 
 @end

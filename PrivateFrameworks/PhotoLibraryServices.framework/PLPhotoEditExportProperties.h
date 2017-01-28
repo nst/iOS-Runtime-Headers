@@ -4,22 +4,22 @@
 
 @interface PLPhotoEditExportProperties : NSObject {
     double  _baseDuration;
-    int  _baseEXIFOrientation;
-    unsigned int  _imageHeight;
-    unsigned int  _imageWidth;
+    long long  _baseEXIFOrientation;
+    unsigned long long  _imageHeight;
+    unsigned long long  _imageWidth;
 }
 
 @property (nonatomic, readonly) double baseDuration;
-@property (nonatomic, readonly) int baseEXIFOrientation;
-@property (nonatomic, readonly) unsigned int imageHeight;
-@property (nonatomic, readonly) unsigned int imageWidth;
+@property (nonatomic, readonly) long long baseEXIFOrientation;
+@property (nonatomic, readonly) unsigned long long imageHeight;
+@property (nonatomic, readonly) unsigned long long imageWidth;
 
-+ (id)exportPropertiesWithImageWidth:(unsigned int)arg1 imageHeight:(unsigned int)arg2 exifOrientation:(int)arg3;
-+ (id)exportPropertiesWithImageWidth:(unsigned int)arg1 imageHeight:(unsigned int)arg2 exifOrientation:(int)arg3 duration:(double)arg4;
++ (id)exportPropertiesWithImageWidth:(unsigned long long)arg1 imageHeight:(unsigned long long)arg2 exifOrientation:(long long)arg3;
++ (id)exportPropertiesWithImageWidth:(unsigned long long)arg1 imageHeight:(unsigned long long)arg2 exifOrientation:(long long)arg3 duration:(double)arg4;
 
 - (double)baseDuration;
-- (int)baseEXIFOrientation;
-- (unsigned int)imageHeight;
-- (unsigned int)imageWidth;
+- (long long)baseEXIFOrientation;
+- (unsigned long long)imageHeight;
+- (unsigned long long)imageWidth;
 
 @end

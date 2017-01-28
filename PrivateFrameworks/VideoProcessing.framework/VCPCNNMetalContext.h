@@ -10,8 +10,8 @@
 @property (retain) <MTLCommandQueue> *commandQueue;
 @property (retain) <MTLDevice> *device;
 
-+ (BOOL)supportGPU;
-+ (BOOL)supportNeon;
++ (bool)supportGPU;
++ (bool)supportNeon;
 
 - (void).cxx_destruct;
 - (id)commandQueue;

@@ -3,15 +3,15 @@
  */
 
 @interface PDFDestinationPrivate : NSObject {
-    float  bottom;
+    double  bottom;
     PDFDocument * document;
-    float  left;
+    double  left;
     PDFPage * page;
     struct CGPDFDictionary { } * pageRef;
-    float  right;
-    float  top;
+    double  right;
+    double  top;
     int  type;
-    float  zoom;
+    double  zoom;
 }
 
 - (void).cxx_destruct;

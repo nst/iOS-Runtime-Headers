@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)personCellLayoutManager:(ABPersonCellLayoutManager *)arg1 isCellInFullEditMode:(UITableViewCell *)arg2;
+- (bool)personCellLayoutManager:(ABPersonCellLayoutManager *)arg1 isCellInFullEditMode:(UITableViewCell *)arg2;
 
 @end

@@ -5,7 +5,7 @@
 @interface AVDispatchGroup : NSObject {
     NSObject<OS_dispatch_queue> * _ivarAccessQueue;
     NSArray * _notifyBlocks;
-    int  _outstandingOperations;
+    long long  _outstandingOperations;
 }
 
 - (void)dealloc;
@@ -13,6 +13,6 @@
 - (void)finalize;
 - (id)init;
 - (void)leave;
-- (void)notifyUsingBlock:(id /* block */)arg1;
+- (void)notifyUsingBlock:(id)arg1;
 
 @end

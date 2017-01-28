@@ -41,8 +41,8 @@
 - (id)suggestedCategoryEventTracker;
 - (id)suggestedEventTracker;
 - (void)trackFailureWithSource:(unsigned char)arg1 reason:(unsigned char)arg2 categories:(id)arg3 locale:(id)arg4;
-- (void)trackSelectedWithSource:(unsigned char)arg1 position:(unsigned int)arg2 categories:(id)arg3 locale:(id)arg4;
-- (void)trackSuggestedWithSource:(unsigned char)arg1 count:(unsigned int)arg2 categories:(id)arg3 locale:(id)arg4;
+- (void)trackSelectedWithSource:(unsigned char)arg1 position:(unsigned long long)arg2 categories:(id)arg3 locale:(id)arg4;
+- (void)trackSuggestedWithSource:(unsigned char)arg1 count:(unsigned long long)arg2 categories:(id)arg3 locale:(id)arg4;
 - (void)trackTriggeredWithSource:(unsigned char)arg1 categories:(id)arg2 locale:(id)arg3;
 - (id)triggeredCategoryEventTracker;
 - (id)triggeredEventTracker;

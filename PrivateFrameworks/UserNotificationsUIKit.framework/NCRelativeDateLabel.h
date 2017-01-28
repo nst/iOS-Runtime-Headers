@@ -3,15 +3,15 @@
  */
 
 @interface NCRelativeDateLabel : NCDefaultDateLabel <NCRelativeDateTimerDelegate> {
-    int  _comparedToNow;
+    long long  _comparedToNow;
     NCRelativeDateTimer * _relativeDateTimer;
     int  _resolution;
-    unsigned int  _value;
+    unsigned long long  _value;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -19,6 +19,6 @@
 - (void)dealloc;
 - (void)prepareForReuse;
 - (void)setTimeZoneRelativeStartDate:(id)arg1 absoluteStartDate:(id)arg2;
-- (void)timerFiredWithValue:(unsigned int)arg1 forResolution:(int)arg2 comparedToNow:(int)arg3;
+- (void)timerFiredWithValue:(unsigned long long)arg1 forResolution:(int)arg2 comparedToNow:(long long)arg3;
 
 @end

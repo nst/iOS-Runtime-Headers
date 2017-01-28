@@ -7,14 +7,14 @@
     TSCH3DTexture * mParent;
 }
 
-- (BOOL)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;
+- (bool)canLoadCachedFullMipmapBufferForDataCache:(id)arg1;
 - (void)clearParent;
 - (id)databufferForDataCache:(id)arg1;
 - (void)dealloc;
 - (id)get;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithParent:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)optimizedMipmapBuffer;
 - (id)p_parent;
 

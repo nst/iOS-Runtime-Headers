@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 - (id)_filteredRealtimeEvents:(id)arg1;
-- (void)bannerViewForSearchables:(id)arg1 guid:(id)arg2 andCompletion:(id /* block */)arg3;
+- (void)bannerViewForSearchables:(id)arg1 guid:(id)arg2 andCompletion:(id)arg3;
 - (id)init;
 - (void)purgeCache:(id)arg1;
 - (void)setSuggestionsService:(id)arg1;

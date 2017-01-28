@@ -12,9 +12,9 @@
 }
 
 @property (nonatomic) int comparisonType;
-@property (nonatomic) BOOL hasComparisonType;
-@property (nonatomic, readonly) BOOL hasProperty;
-@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic) bool hasComparisonType;
+@property (nonatomic, readonly) bool hasProperty;
+@property (nonatomic, readonly) bool hasValue;
 @property (nonatomic, retain) NSString *property;
 @property (nonatomic, retain) MPPMediaPredicateValue *value;
 
@@ -25,15 +25,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasComparisonType;
-- (BOOL)hasProperty;
-- (BOOL)hasValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasComparisonType;
+- (bool)hasProperty;
+- (bool)hasValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)property;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setComparisonType:(int)arg1;
-- (void)setHasComparisonType:(BOOL)arg1;
+- (void)setHasComparisonType:(bool)arg1;
 - (void)setProperty:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;

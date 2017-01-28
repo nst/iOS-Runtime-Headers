@@ -13,12 +13,12 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 probability:(double)arg2;
 - (id)initWithMicroLocationResult:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)probability;
 - (void)setIdentifier:(id)arg1;
 - (void)setProbability:(double)arg1;

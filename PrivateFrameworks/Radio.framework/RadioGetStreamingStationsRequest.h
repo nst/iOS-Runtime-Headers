@@ -8,6 +8,6 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 
 @end

@@ -3,29 +3,29 @@
  */
 
 @interface LocationUsageMixin : NSObject {
-    unsigned int  _authLevel;
+    unsigned long long  _authLevel;
     UILabel * _authLevelLabel;
     PSTableCell * _cell;
     int  _usage;
     UIImageView * _usageIndicator;
-    float  horizontalOffset;
+    double  horizontalOffset;
 }
 
-@property (nonatomic) unsigned int authLevel;
-@property (nonatomic) float horizontalOffset;
+@property (nonatomic) unsigned long long authLevel;
+@property (nonatomic) double horizontalOffset;
 @property (nonatomic) int usage;
 
 - (void).cxx_destruct;
-- (id)_authLevelForMask:(unsigned int)arg1;
-- (struct CGSize { float x1; float x2; })_authLevelLabelSize:(unsigned int)arg1;
-- (unsigned int)authLevel;
-- (float)horizontalOffset;
+- (id)_authLevelForMask:(unsigned long long)arg1;
+- (struct CGSize { double x1; double x2; })_authLevelLabelSize:(unsigned long long)arg1;
+- (unsigned long long)authLevel;
+- (double)horizontalOffset;
 - (id)iconNameForUsage:(int)arg1;
-- (id)initWithTableCell:(id)arg1 withHorizontalOffset:(float)arg2;
-- (void)setAuthLevel:(unsigned int)arg1;
-- (void)setHorizontalOffset:(float)arg1;
+- (id)initWithTableCell:(id)arg1 withHorizontalOffset:(double)arg2;
+- (void)setAuthLevel:(unsigned long long)arg1;
+- (void)setHorizontalOffset:(double)arg1;
 - (void)setUsage:(int)arg1;
 - (int)usage;
-- (struct CGSize { float x1; float x2; })usageIndicatorSize;
+- (struct CGSize { double x1; double x2; })usageIndicatorSize;
 
 @end

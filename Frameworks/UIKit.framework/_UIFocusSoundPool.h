@@ -3,13 +3,13 @@
  */
 
 @interface _UIFocusSoundPool : NSObject {
-    int  _index;
-    unsigned long  _originalID;
+    long long  _index;
+    unsigned int  _originalID;
     NSArray * _queue;
 }
 
 - (void).cxx_destruct;
-- (id)initWithSystemSoundID:(unsigned long)arg1;
-- (void)playWithVolume:(float)arg1 pan:(float)arg2;
+- (id)initWithSystemSoundID:(unsigned int)arg1;
+- (void)playWithVolume:(double)arg1 pan:(double)arg2;
 
 @end

@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *entries;
-@property (nonatomic) BOOL hasVariantType;
+@property (nonatomic) bool hasVariantType;
 @property (nonatomic, retain) NSMutableArray *textEntries;
 @property (nonatomic) int variantType;
 
@@ -26,20 +26,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)entries;
-- (id)entriesAtIndex:(unsigned int)arg1;
-- (unsigned int)entriesCount;
-- (BOOL)hasVariantType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (id)entriesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)entriesCount;
+- (bool)hasVariantType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntries:(id)arg1;
-- (void)setHasVariantType:(BOOL)arg1;
+- (void)setHasVariantType:(bool)arg1;
 - (void)setTextEntries:(id)arg1;
 - (void)setVariantType:(int)arg1;
 - (id)textEntries;
-- (id)textEntriesAtIndex:(unsigned int)arg1;
-- (unsigned int)textEntriesCount;
+- (id)textEntriesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)textEntriesCount;
 - (int)variantType;
 - (void)writeTo:(id)arg1;
 

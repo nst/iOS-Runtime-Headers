@@ -4,22 +4,22 @@
 
 @interface CNPropertyFaceTimeAction : CNPropertyAction <CNPropertyBestIDSValueQueryDelegate> {
     CNPropertyBestIDSValueQuery * _bestFaceTimeQuery;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, retain) CNPropertyBestIDSValueQuery *bestFaceTimeQuery;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (void)_queryFaceTimeStatus;
 - (id)bestFaceTimeQuery;
-- (BOOL)canPerformAction;
+- (bool)canPerformAction;
 - (void)dealloc;
 - (id)initWithContact:(id)arg1 propertyItems:(id)arg2;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;
 - (void)queryComplete;
 - (void)setBestFaceTimeQuery:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

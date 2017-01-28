@@ -5,43 +5,43 @@
 @interface SCNMetalMesh : NSObject {
     NSArray * _buffers;
     NSArray * _elements;
-    long  _mutabilityTimestamp;
+    long long  _mutabilityTimestamp;
     MTLVertexDescriptor * _vertexDescriptor;
     <MTLBuffer> * _volatileBuffer;
-    unsigned int  vertexLayoutHash;
-    int  verticesCount;
-    int  volatileOffset;
-    int  volatileStride;
+    unsigned long long  vertexLayoutHash;
+    long long  verticesCount;
+    long long  volatileOffset;
+    long long  volatileStride;
 }
 
 @property (nonatomic, copy) NSArray *buffers;
 @property (nonatomic, copy) NSArray *elements;
-@property (nonatomic) long mutabilityTimestamp;
+@property (nonatomic) long long mutabilityTimestamp;
 @property (nonatomic, retain) MTLVertexDescriptor *vertexDescriptor;
-@property (nonatomic) unsigned int vertexLayoutHash;
-@property (nonatomic) int verticesCount;
+@property (nonatomic) unsigned long long vertexLayoutHash;
+@property (nonatomic) long long verticesCount;
 @property (nonatomic, retain) <MTLBuffer> *volatileBuffer;
-@property (nonatomic) int volatileOffset;
-@property (nonatomic) int volatileStride;
+@property (nonatomic) long long volatileOffset;
+@property (nonatomic) long long volatileStride;
 
 - (id)buffers;
 - (void)dealloc;
 - (id)elements;
-- (long)mutabilityTimestamp;
+- (long long)mutabilityTimestamp;
 - (void)setBuffers:(id)arg1;
 - (void)setElements:(id)arg1;
-- (void)setMutabilityTimestamp:(long)arg1;
+- (void)setMutabilityTimestamp:(long long)arg1;
 - (void)setVertexDescriptor:(id)arg1;
-- (void)setVertexLayoutHash:(unsigned int)arg1;
-- (void)setVerticesCount:(int)arg1;
+- (void)setVertexLayoutHash:(unsigned long long)arg1;
+- (void)setVerticesCount:(long long)arg1;
 - (void)setVolatileBuffer:(id)arg1;
-- (void)setVolatileOffset:(int)arg1;
-- (void)setVolatileStride:(int)arg1;
+- (void)setVolatileOffset:(long long)arg1;
+- (void)setVolatileStride:(long long)arg1;
 - (id)vertexDescriptor;
-- (unsigned int)vertexLayoutHash;
-- (int)verticesCount;
+- (unsigned long long)vertexLayoutHash;
+- (long long)verticesCount;
 - (id)volatileBuffer;
-- (int)volatileOffset;
-- (int)volatileStride;
+- (long long)volatileOffset;
+- (long long)volatileStride;
 
 @end

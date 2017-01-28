@@ -3,24 +3,24 @@
  */
 
 @interface BKSButtonDefinition : NSObject <NSSecureCoding> {
-    BOOL  _representsHomeButton;
+    bool  _representsHomeButton;
     BSMutableSettings * _settings;
 }
 
 @property (getter=_BSSettings, nonatomic, readonly, retain) BSSettings *BSSettings;
-@property (getter=isLongPressEnabled, nonatomic, readonly) int longPressEnabled;
+@property (getter=isLongPressEnabled, nonatomic, readonly) long long longPressEnabled;
 @property (nonatomic) double maximumLongPressTimeInterval;
 @property (nonatomic) double maximumMultiplePressTimeInterval;
-@property (nonatomic) int maximumPressCount;
-@property (nonatomic) int maximumTapCount;
+@property (nonatomic) long long maximumPressCount;
+@property (nonatomic) long long maximumTapCount;
 @property (nonatomic) double minimumLongPressTimeInterval;
 @property (nonatomic) double minimumMultiplePressTimeInterval;
-@property (nonatomic) BOOL representsHomeButton;
-@property (nonatomic) int screenshotType;
-@property (nonatomic) int stackshotType;
+@property (nonatomic) bool representsHomeButton;
+@property (nonatomic) long long screenshotType;
+@property (nonatomic) long long stackshotType;
 
 + (id)definitionForHomeButton;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_BSSettings;
 - (id)_initWithBSSettings:(id)arg1;
@@ -29,25 +29,25 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (int)isLongPressEnabled;
+- (long long)isLongPressEnabled;
 - (double)maximumLongPressTimeInterval;
 - (double)maximumMultiplePressTimeInterval;
-- (int)maximumPressCount;
-- (int)maximumTapCount;
+- (long long)maximumPressCount;
+- (long long)maximumTapCount;
 - (double)minimumLongPressTimeInterval;
 - (double)minimumMultiplePressTimeInterval;
-- (BOOL)representsHomeButton;
-- (int)screenshotType;
+- (bool)representsHomeButton;
+- (long long)screenshotType;
 - (void)setMaximumLongPressTimeInterval:(double)arg1;
 - (void)setMaximumMultiplePressTimeInterval:(double)arg1;
-- (void)setMaximumPressCount:(int)arg1;
-- (void)setMaximumTapCount:(int)arg1;
+- (void)setMaximumPressCount:(long long)arg1;
+- (void)setMaximumTapCount:(long long)arg1;
 - (void)setMinimumLongPressTimeInterval:(double)arg1;
 - (void)setMinimumMultiplePressTimeInterval:(double)arg1;
-- (void)setRepresentsHomeButton:(BOOL)arg1;
-- (void)setScreenshotType:(int)arg1;
-- (void)setStackshotType:(int)arg1;
-- (int)stackshotType;
-- (void)updateFromDefinition:(id)arg1 withChangeInspectorBlock:(id /* block */)arg2;
+- (void)setRepresentsHomeButton:(bool)arg1;
+- (void)setScreenshotType:(long long)arg1;
+- (void)setStackshotType:(long long)arg1;
+- (long long)stackshotType;
+- (void)updateFromDefinition:(id)arg1 withChangeInspectorBlock:(id)arg2;
 
 @end

@@ -5,8 +5,8 @@
 @interface SGDaemonConnection : NSObject {
     NSMutableArray * _abortBlocks;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _abortLock;
     NSObject<OS_dispatch_queue> * _connectLock;
     NSString * _machServiceName;
@@ -16,11 +16,11 @@
 
 - (void).cxx_destruct;
 - (void)_connectToServer;
-- (void)addConnectionInterruptedHandler:(id /* block */)arg1;
+- (void)addConnectionInterruptedHandler:(id)arg1;
 - (void)dealloc;
 - (void)disconnect;
 - (id)initWithMachServiceName:(id)arg1 xpcInterface:(id)arg2;
-- (id)waitUntilReturn:(id /* block */)arg1 error:(id*)arg2;
+- (id)waitUntilReturn:(id)arg1 error:(id*)arg2;
 - (id)xpcConnection;
 
 @end

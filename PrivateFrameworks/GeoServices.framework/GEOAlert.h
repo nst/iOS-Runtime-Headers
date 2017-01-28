@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) NSString *content;
-@property (nonatomic, readonly) BOOL hasContent;
-@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, readonly) bool hasContent;
+@property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, retain) NSString *title;
 
 - (id)content;
@@ -18,12 +18,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContent;
-- (BOOL)hasTitle;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContent;
+- (bool)hasTitle;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setContent:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

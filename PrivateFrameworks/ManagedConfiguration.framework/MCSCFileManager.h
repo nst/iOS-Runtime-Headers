@@ -6,7 +6,7 @@
 
 + (id)defaultManager;
 
-- (BOOL)atomicallyCreateDirectoryAtURL:(id)arg1 mode:(unsigned short)arg2 error:(id*)arg3;
-- (BOOL)atomicallyCreateFileAtURL:(id)arg1 mode:(unsigned short)arg2 error:(id*)arg3;
+- (bool)atomicallyCreateDirectoryAtURL:(id)arg1 mode:(unsigned short)arg2 error:(id*)arg3;
+- (bool)atomicallyCreateFileAtURL:(id)arg1 mode:(unsigned short)arg2 error:(id*)arg3;
 
 @end

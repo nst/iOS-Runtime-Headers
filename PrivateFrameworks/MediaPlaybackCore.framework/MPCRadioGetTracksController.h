@@ -12,7 +12,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)getTracksWithRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getTracksWithRequest:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (id)jinglePlayActivityReportingController;
 - (void)setJinglePlayActivityReportingController:(id)arg1;

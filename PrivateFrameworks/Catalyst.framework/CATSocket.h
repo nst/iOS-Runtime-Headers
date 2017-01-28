@@ -10,7 +10,7 @@
     NSObject<OS_dispatch_queue> * _socketQueue;
     NSObject<OS_dispatch_source> * _socketSource;
     NSObject<OS_dispatch_queue> * _userQueue;
-    BOOL  mIsInvalid;
+    bool  mIsInvalid;
     int  mState;
 }
 
@@ -24,18 +24,18 @@
 
 - (void).cxx_destruct;
 - (void)acceptPendingConnection;
-- (BOOL)connectToEndPoint:(id)arg1 error:(id*)arg2;
+- (bool)connectToEndPoint:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)delegateDidClose;
 - (void)delegateDidConnect;
 - (void)delegateDidFailWithError:(id)arg1;
 - (void)delegateDidReceiveData:(id)arg1;
-- (BOOL)delegateShouldAcceptNewSocket:(id)arg1;
+- (bool)delegateShouldAcceptNewSocket:(id)arg1;
 - (id)init;
 - (id)initWithNativeSocket:(int)arg1;
 - (void)invalidate;
-- (BOOL)listenWithEndPoint:(id)arg1 error:(id*)arg2;
+- (bool)listenWithEndPoint:(id)arg1 error:(id*)arg2;
 - (id)localEndPoint;
 - (int)nativeSocket;
 - (void)populateLocalEndPoint;

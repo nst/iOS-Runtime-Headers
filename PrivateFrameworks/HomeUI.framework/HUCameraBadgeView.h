@@ -6,9 +6,9 @@
     UIVisualEffectView * _blurEffectView;
     UILabel * _label;
     NSArray * _labelConstraints;
-    unsigned int  _size;
+    unsigned long long  _size;
     NSArray * _staticConstraints;
-    unsigned int  _style;
+    unsigned long long  _style;
     UIVisualEffectView * _vibrancyEffectView;
 }
 
@@ -16,27 +16,27 @@
 @property (nonatomic, readonly) UILabel *label;
 @property (nonatomic, retain) NSArray *labelConstraints;
 @property (nonatomic, copy) NSString *labelText;
-@property (nonatomic, readonly) unsigned int size;
+@property (nonatomic, readonly) unsigned long long size;
 @property (nonatomic, retain) NSArray *staticConstraints;
-@property (nonatomic) unsigned int style;
+@property (nonatomic) unsigned long long style;
 @property (nonatomic, readonly) UIVisualEffectView *vibrancyEffectView;
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (bool)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
 - (void)_applyStyle;
 - (id)blurEffectView;
-- (id)initWithSize:(unsigned int)arg1;
+- (id)initWithSize:(unsigned long long)arg1;
 - (id)label;
 - (id)labelConstraints;
 - (id)labelText;
 - (void)setLabelConstraints:(id)arg1;
 - (void)setLabelText:(id)arg1;
 - (void)setStaticConstraints:(id)arg1;
-- (void)setStyle:(unsigned int)arg1;
-- (unsigned int)size;
+- (void)setStyle:(unsigned long long)arg1;
+- (unsigned long long)size;
 - (id)staticConstraints;
-- (unsigned int)style;
+- (unsigned long long)style;
 - (void)updateConstraints;
 - (id)vibrancyEffectView;
 

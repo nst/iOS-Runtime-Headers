@@ -36,7 +36,7 @@
 - (id)logMsgStates;
 - (void)mergeLogContext:(id)arg1;
 - (void)registerLogMsgState:(id)arg1;
-- (void)registerUserSessionStateOfType:(unsigned int)arg1 isNavSessionAllowed:(BOOL)arg2;
+- (void)registerUserSessionStateOfType:(unsigned long long)arg1 isNavSessionAllowed:(bool)arg2;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
 - (void)unregisterLogMsgStateOfType:(int)arg1 stateOrigin:(id)arg2;
 

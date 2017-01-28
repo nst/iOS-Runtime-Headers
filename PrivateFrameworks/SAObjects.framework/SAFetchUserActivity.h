@@ -12,7 +12,7 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)internalGUID;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (void)setInternalGUID:(id)arg1;
 
 @end

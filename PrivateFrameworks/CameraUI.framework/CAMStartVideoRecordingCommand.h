@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)_request;
-- (int)_videoOrientationForCaptureOrientation:(int)arg1;
+- (long long)_videoOrientationForCaptureOrientation:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;

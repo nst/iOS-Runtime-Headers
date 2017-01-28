@@ -3,10 +3,10 @@
  */
 
 @interface TSUEncodedBlockInfoWithDecodedLengthInternal : TSUEncodedBlockInfoInternal {
-    unsigned long  _decodedLength;
+    unsigned long long  _decodedLength;
 }
 
-- (unsigned long)decodedLength;
-- (id)initWithEncodedLength:(unsigned long)arg1 decodedLength:(unsigned long)arg2;
+- (unsigned long long)decodedLength;
+- (id)initWithEncodedLength:(unsigned long long)arg1 decodedLength:(unsigned long long)arg2;
 
 @end

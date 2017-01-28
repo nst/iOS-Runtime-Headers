@@ -14,14 +14,14 @@
 - (id)p_supportedSymbolsIfSymbolsSupported;
 - (id)propertiesForReferenceColors;
 - (id)supportedValueLabelsAxisCombinations;
-- (BOOL)supportsFillSetFill;
-- (BOOL)supportsLineConnectionStyle;
-- (BOOL)supportsLineTypeNone;
-- (BOOL)supportsSeriesFill;
-- (BOOL)supportsSymbolDrawing;
-- (BOOL)supportsSymbolFillForSymbolType:(int)arg1;
-- (BOOL)supportsValueLabelsAxisOption;
-- (BOOL)supportsValueLabelsSeriesName;
-- (unsigned int)valueDimensions;
+- (bool)supportsFillSetFill;
+- (bool)supportsLineConnectionStyle;
+- (bool)supportsLineTypeNone;
+- (bool)supportsSeriesFill;
+- (bool)supportsSymbolDrawing;
+- (bool)supportsSymbolFillForSymbolType:(int)arg1;
+- (bool)supportsValueLabelsAxisOption;
+- (bool)supportsValueLabelsSeriesName;
+- (unsigned long long)valueDimensions;
 
 @end

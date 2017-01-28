@@ -4,22 +4,22 @@
 
 @interface MDLMeshBufferZoneDefault : NSObject <MDLMeshBufferZone> {
     <MDLMeshBufferAllocator> * _allocator;
-    unsigned int  _capacity;
-    unsigned int  _usedCapacity;
+    unsigned long long  _capacity;
+    unsigned long long  _usedCapacity;
 }
 
 @property (nonatomic, readonly, retain) <MDLMeshBufferAllocator> *allocator;
-@property (nonatomic, readonly) unsigned int capacity;
+@property (nonatomic, readonly) unsigned long long capacity;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)allocator;
-- (void)cancelMemory:(unsigned int)arg1;
-- (unsigned int)capacity;
-- (id)initWithCapacity:(unsigned int)arg1 allocator:(id)arg2;
-- (BOOL)reserveMemory:(unsigned int)arg1 allocator:(id)arg2;
+- (void)cancelMemory:(unsigned long long)arg1;
+- (unsigned long long)capacity;
+- (id)initWithCapacity:(unsigned long long)arg1 allocator:(id)arg2;
+- (bool)reserveMemory:(unsigned long long)arg1 allocator:(id)arg2;
 
 @end

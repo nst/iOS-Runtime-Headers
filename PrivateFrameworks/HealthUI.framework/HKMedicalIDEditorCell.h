@@ -7,21 +7,21 @@
     UIView * _horizontalSeparatorView;
     HKCaretOptionalTextField * _inputTextField;
     UILabel * _labelLabel;
-    float  _minimumLabelWidth;
+    double  _minimumLabelWidth;
     UIView * _verticalSeparatorView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <HKMedicalIDEditorCellEditDelegate> *editDelegate;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) HKCaretOptionalTextField *inputTextField;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic, readonly) UILabel *labelLabel;
-@property (nonatomic) float minimumLabelWidth;
+@property (nonatomic) double minimumLabelWidth;
 @property (readonly) Class superclass;
 
-+ (BOOL)showsLabelAndValue;
++ (bool)showsLabelAndValue;
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
@@ -31,16 +31,16 @@
 - (void)dealloc;
 - (id)editDelegate;
 - (id)formattedValue;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)inputTextField;
 - (id)label;
 - (id)labelLabel;
 - (void)layoutSubviews;
-- (float)minimumLabelWidth;
+- (double)minimumLabelWidth;
 - (void)setEditDelegate:(id)arg1;
 - (void)setLabel:(id)arg1;
-- (void)setMinimumLabelWidth:(float)arg1;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (void)setMinimumLabelWidth:(double)arg1;
+- (bool)textFieldShouldBeginEditing:(id)arg1;
 - (void)updateValueLabel;
 - (void)valueDidChange;
 

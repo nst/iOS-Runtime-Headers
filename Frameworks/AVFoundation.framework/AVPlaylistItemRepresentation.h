@@ -18,10 +18,10 @@
 - (id)description;
 - (void)finalize;
 - (id)gaplessInfo;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithURLAsset:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)serviceIdentifier;
 

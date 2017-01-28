@@ -3,15 +3,15 @@
  */
 
 @interface CKMessageAcknowledgmentDraftDescriptor : NSObject <CKMessageAcknowledgment> {
-    int  _messageAcknowledgmentType;
+    long long  _messageAcknowledgmentType;
 }
 
 @property (nonatomic, readonly) UIColor *acknowledgmentImageColor;
 @property (nonatomic, readonly) NSString *acknowledgmentImageName;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int messageAcknowledgmentType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) long long messageAcknowledgmentType;
 @property (nonatomic, readonly) UIColor *selectedAcknowledgmentImageColor;
 @property (nonatomic, readonly) UIColor *selectedBalloonColor;
 @property (readonly) Class superclass;
@@ -21,10 +21,10 @@
 
 - (id)acknowledgmentImageColor;
 - (id)acknowledgmentImageName;
-- (id)initWithMessageAcknowledgmentType:(int)arg1;
-- (int)messageAcknowledgmentType;
+- (id)initWithMessageAcknowledgmentType:(long long)arg1;
+- (long long)messageAcknowledgmentType;
 - (id)selectedAcknowledgmentImageColor;
 - (id)selectedBalloonColor;
-- (int)themeColor;
+- (long long)themeColor;
 
 @end

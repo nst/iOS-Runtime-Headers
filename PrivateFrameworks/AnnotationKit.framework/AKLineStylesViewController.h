@@ -11,28 +11,28 @@
 @property (nonatomic) AKController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSArray *lineWidthTags;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITableView *tableView;
 
-+ (id)generateLineImageForTag:(int)arg1 selected:(BOOL)arg2;
++ (id)generateLineImageForTag:(long long)arg1 selected:(bool)arg2;
 
 - (void).cxx_destruct;
 - (id)controller;
-- (int)currentLineWidthTag;
+- (long long)currentLineWidthTag;
 - (id)initWithController:(id)arg1;
 - (id)lineWidthTags;
-- (void)selectRowForTag:(int)arg1;
-- (void)selectedLineWidthChanged:(int)arg1;
+- (void)selectRowForTag:(long long)arg1;
+- (void)selectedLineWidthChanged:(long long)arg1;
 - (void)setController:(id)arg1;
 - (void)setLineWidthTags:(id)arg1;
 - (void)setTableView:(id)arg1;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

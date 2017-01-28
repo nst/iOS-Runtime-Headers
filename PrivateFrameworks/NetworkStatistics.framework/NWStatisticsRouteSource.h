@@ -106,10 +106,10 @@
 }
 
 @property (retain) NSData *destination;
-@property (readonly) unsigned int flags;
+@property (readonly) unsigned long long flags;
 @property (retain) NSData *gateway;
 @property (readonly) unsigned long long gatewayID;
-@property (readonly) int interface;
+@property (readonly) long long interface;
 @property (retain) NSData *mask;
 @property (readonly) unsigned long long parentID;
 @property (readonly) unsigned long long routeID;
@@ -118,12 +118,12 @@
 - (id)createCounts;
 - (id)description;
 - (id)destination;
-- (unsigned int)flags;
+- (unsigned long long)flags;
 - (id)gateway;
 - (unsigned long long)gatewayID;
-- (BOOL)handleDescriptor:(void*)arg1 length:(unsigned long)arg2;
+- (bool)handleDescriptor:(void*)arg1 length:(unsigned long long)arg2;
 - (id)initWithManager:(id)arg1 destination:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg2 mask:(const struct sockaddr { unsigned char x1; unsigned char x2; BOOL x3[14]; }*)arg3 interface:(unsigned int)arg4;
-- (int)interface;
+- (long long)interface;
 - (id)mask;
 - (unsigned long long)parentID;
 - (unsigned long long)routeID;

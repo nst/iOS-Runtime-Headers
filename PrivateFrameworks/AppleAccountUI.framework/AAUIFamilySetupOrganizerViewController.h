@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AAUIFamilySetupPageDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -21,7 +21,7 @@
 - (id)instructions;
 - (id)pageTitle;
 - (void)setDelegate:(id)arg1;
-- (BOOL)shouldShowInviteeInstructions;
+- (bool)shouldShowInviteeInstructions;
 - (id)titleForContinuebutton;
 - (void)viewDidLoad;
 

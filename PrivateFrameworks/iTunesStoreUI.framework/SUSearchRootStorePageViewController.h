@@ -9,6 +9,6 @@
 - (void)resetNavigationItem:(id)arg1;
 - (void)setParentViewController:(id)arg1;
 - (void)setSection:(id)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

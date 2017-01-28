@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) PXSectionedDataSource *fromDataSource;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSIndexSet *reloadedTileKindsOnObjectChanged;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PXSectionedDataSource *toDataSource;
@@ -24,9 +24,9 @@
 - (id)init;
 - (id)initWithFromDataSource:(id)arg1 toDataSource:(id)arg2 changeDetails:(id)arg3;
 - (id)reloadedTileKindsOnObjectChanged;
-- (BOOL)reverseTransformTileIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; }*)arg1;
+- (bool)reverseTransformTileIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; }*)arg1;
 - (void)setReloadedTileKindsOnObjectChanged:(id)arg1;
 - (id)toDataSource;
-- (BOOL)transformTileIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; }*)arg1 group:(unsigned int*)arg2;
+- (bool)transformTileIdentifier:(struct PXTileIdentifier { unsigned long long x1; unsigned long long x2[10]; }*)arg1 group:(unsigned long long*)arg2;
 
 @end

@@ -9,8 +9,8 @@
 }
 
 @property (nonatomic, retain) NSString *etag;
-@property (nonatomic, readonly) BOOL hasEtag;
-@property (nonatomic, readonly) BOOL hasUrl;
+@property (nonatomic, readonly) bool hasEtag;
+@property (nonatomic, readonly) bool hasUrl;
 @property (nonatomic) double timestamp;
 @property (nonatomic, retain) NSString *url;
 
@@ -20,12 +20,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)etag;
-- (BOOL)hasEtag;
-- (BOOL)hasUrl;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasEtag;
+- (bool)hasUrl;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEtag:(id)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setUrl:(id)arg1;

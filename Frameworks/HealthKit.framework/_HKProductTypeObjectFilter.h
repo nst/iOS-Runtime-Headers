@@ -3,27 +3,27 @@
  */
 
 @interface _HKProductTypeObjectFilter : _HKFilter {
-    unsigned int  _operatorType;
+    unsigned long long  _operatorType;
     NSString * _productType;
 }
 
-@property (nonatomic, readonly) unsigned int operatorType;
+@property (nonatomic, readonly) unsigned long long operatorType;
 @property (nonatomic, readonly) NSString *productType;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_filterMatchingProductType:(id)arg1 operator:(unsigned int)arg2;
-+ (BOOL)_supportsOperatorType:(unsigned int)arg1;
-+ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
-+ (BOOL)supportsSecureCoding;
++ (id)_filterMatchingProductType:(id)arg1 operator:(unsigned long long)arg2;
++ (bool)_supportsOperatorType:(unsigned long long)arg1;
++ (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)acceptsDataObject:(id)arg1;
+- (bool)acceptsDataObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)operatorType;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)operatorType;
 - (id)productType;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon

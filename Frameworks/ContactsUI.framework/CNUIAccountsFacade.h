@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)accountStore;
-- (void)fetchiCloudFamilyMembersWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchiCloudFamilyMembersWithCompletionHandler:(id)arg1;
 - (id)init;
 - (id)initWithAccountStore:(id)arg1 requestRunner:(id)arg2;
 - (id)requestRunner;

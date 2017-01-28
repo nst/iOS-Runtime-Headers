@@ -4,6 +4,6 @@
 
 @interface CNUIAccountsFacadeRequestRunner : NSObject
 
-- (void)performRequest:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)performRequest:(id)arg1 withHandler:(id)arg2;
 
 @end

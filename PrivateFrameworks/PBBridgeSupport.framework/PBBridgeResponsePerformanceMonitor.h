@@ -23,8 +23,8 @@
 + (id)shareMonitor;
 
 - (void).cxx_destruct;
-- (void)_logLocalMeasurements:(BOOL)arg1;
-- (void)_logMacroActivitiesLocal:(BOOL)arg1;
+- (void)_logLocalMeasurements:(bool)arg1;
+- (void)_logMacroActivitiesLocal:(bool)arg1;
 - (void)_logMeasurements;
 - (void)_logMilestones;
 - (void)addMeasurement:(double)arg1 timeSent:(double)arg2 activityType:(id)arg3 activityIdentifier:(id)arg4;

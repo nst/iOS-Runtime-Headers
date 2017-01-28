@@ -4,15 +4,15 @@
 
 @interface PACSRefWrapper : NSObject {
     struct _CSTypeRef { 
-        unsigned int _opaque_1; 
-        unsigned int _opaque_2; 
+        unsigned long long _opaque_1; 
+        unsigned long long _opaque_2; 
     }  _csRef;
 }
 
-@property (readonly) struct _CSTypeRef { unsigned int x1; unsigned int x2; } csRef;
+@property (readonly) struct _CSTypeRef { unsigned long long x1; unsigned long long x2; } csRef;
 
-- (struct _CSTypeRef { unsigned int x1; unsigned int x2; })csRef;
+- (struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })csRef;
 - (void)dealloc;
-- (id)initWithCSTypeRef:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
+- (id)initWithCSTypeRef:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

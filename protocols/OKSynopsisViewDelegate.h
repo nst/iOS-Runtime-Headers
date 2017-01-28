@@ -10,10 +10,10 @@
 
 @optional
 
-- (BOOL)shouldShowSynopsisView;
+- (bool)shouldShowSynopsisView;
 - (void)synopsisViewDidBegin:(OKSynopsisView *)arg1;
 - (void)synopsisViewDidEnd:(OKSynopsisView *)arg1;
-- (void)synopsisViewUpdated:(OKSynopsisView *)arg1 withProgress:(float)arg2;
+- (void)synopsisViewUpdated:(OKSynopsisView *)arg1 withProgress:(double)arg2;
 - (void)synopsisViewWillBegin:(OKSynopsisView *)arg1;
 
 @end

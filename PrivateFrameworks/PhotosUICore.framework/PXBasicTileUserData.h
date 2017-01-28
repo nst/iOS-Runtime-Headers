@@ -12,9 +12,9 @@
 
 - (void).cxx_destruct;
 - (id)_initWithViewSpec:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)viewSpec;
 
 @end

@@ -3,17 +3,17 @@
  */
 
 @interface PKPaymentConfirmationAlertController : UIAlertController {
-    int  _confirmationMethod;
+    long long  _confirmationMethod;
     <PKPaymentConfirmationAlertControllerDelegate> * _delegate;
 }
 
-@property (nonatomic, readonly) int confirmationMethod;
+@property (nonatomic, readonly) long long confirmationMethod;
 @property (nonatomic) <PKPaymentConfirmationAlertControllerDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (int)confirmationMethod;
+- (long long)confirmationMethod;
 - (id)delegate;
-- (id)initWithConfirmationMethod:(int)arg1 pass:(id)arg2 isPayment:(BOOL)arg3;
+- (id)initWithConfirmationMethod:(long long)arg1 pass:(id)arg2 isPayment:(bool)arg3;
 - (void)setDelegate:(id)arg1;
 
 @end

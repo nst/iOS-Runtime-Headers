@@ -10,36 +10,36 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (BOOL)diagnosticsVisible;
++ (bool)diagnosticsVisible;
 + (id)dumpRuntimeStateSpecifiers;
 + (id)linkSpecifier;
 
 - (void).cxx_destruct;
 - (void)_dismissSavingDataAlert;
 - (void)_presentNotesController;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (id)booleanPropertyWithSpecifier:(id)arg1;
 - (id)diagnosticSpecifiers;
 - (void)handleClearAllLogsForSpecifier:(id)arg1;
 - (void)handleDumpRuntimeStateForSpecifier:(id)arg1;
 - (void)handleSaveAllLogsForSpecifier:(id)arg1;
 - (void)handleSaveAllLogsStep2;
-- (BOOL)isLoggingEnabledForSpecifier:(id)arg1;
+- (bool)isLoggingEnabledForSpecifier:(id)arg1;
 - (id)pathsOfAllLogFiles;
 - (id)pathsOfPurgableFiles;
 - (void)purgeFileAtPath:(id)arg1;
 - (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2;
 - (void)runSimpleAlertWithTitle:(id)arg1 message:(id)arg2 dismissedSelector:(SEL)arg3;
-- (BOOL)saveFileAtPath:(id)arg1 toDirectory:(id)arg2 withExtension:(id)arg3 error:(id*)arg4;
+- (bool)saveFileAtPath:(id)arg1 toDirectory:(id)arg2 withExtension:(id)arg3 error:(id*)arg4;
 - (void)saveLogsWithNotes:(id)arg1;
 - (void)saveNotesInBackground:(id)arg1;
 - (id)savedLogsDirectoryNameForSpecifier:(id)arg1;
 - (void)setBooleanProperty:(id)arg1 withSpecifier:(id)arg2;
-- (void)setLoggingEnabled:(BOOL)arg1 forSpecifier:(id)arg2;
+- (void)setLoggingEnabled:(bool)arg1 forSpecifier:(id)arg2;
 - (id)specifiers;
 - (void)suspend;
 

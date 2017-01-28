@@ -3,18 +3,18 @@
  */
 
 @interface _DKDataProtectionStateMonitor : NSObject {
-    id /* block */  _changeHandler;
+    id  _changeHandler;
     NSUUID * _handlerUUID;
     _DKDataProtectionMaster * _master;
 }
 
-@property (copy) id /* block */ changeHandler;
+@property (copy) id changeHandler;
 
 - (void).cxx_destruct;
-- (id /* block */)changeHandler;
+- (id)changeHandler;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isDataAvailableFor:(id)arg1;
-- (void)setChangeHandler:(id /* block */)arg1;
+- (bool)isDataAvailableFor:(id)arg1;
+- (void)setChangeHandler:(id)arg1;
 
 @end

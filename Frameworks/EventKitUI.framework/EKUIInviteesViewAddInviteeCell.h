@@ -15,7 +15,7 @@
 + (id)_simpleTextLabelFont;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)persistentConstraints;
 - (void)setPersistentConstraints:(id)arg1;
 - (void)setSimpleText:(id)arg1;

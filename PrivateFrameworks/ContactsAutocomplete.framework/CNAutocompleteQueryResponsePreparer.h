@@ -14,7 +14,7 @@
 @property (nonatomic, retain) <CNFuture> *priorityResultsFuture;
 
 - (void).cxx_destruct;
-- (id)addDiagnosticLog:(id /* block */)arg1;
+- (id)addDiagnosticLog:(id)arg1;
 - (id)applyPriorityResultsOrder:(id)arg1;
 - (id)askDelegateToAdjustResults;
 - (id)delegate;

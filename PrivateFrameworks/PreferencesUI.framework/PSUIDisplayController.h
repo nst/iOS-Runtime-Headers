@@ -2,13 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIDisplayController : PSListController <PSMagnifyControllerDelegate> {
+@interface PSUIDisplayController : PSListController <PSListControllerTestableSpecifiers, PSMagnifyControllerDelegate> {
     NSDictionary * _autoLockTitleDictionary;
     NSArray * _autoLockValues;
     CBClient * _brightnessClient;
     NSMutableDictionary * _localizedAutoLockTitleDictionary;
     NSDateFormatter * _timeFormatter;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned long long hash;
+@property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
 
 - (void).cxx_destruct;
 - (void)_cleanupTransactionRef;
@@ -21,7 +28,7 @@
 - (id)controllerForSpecifier:(id)arg1;
 - (void)dealloc;
 - (id)getAutoWhiteBalanceEnabled:(id)arg1;
-- (void)handleBlueLightStatusChanged:(struct { BOOL x1; BOOL x2; BOOL x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long x6; }*)arg1;
+- (void)handleBlueLightStatusChanged:(struct { bool x1; bool x2; bool x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long long x6; }*)arg1;
 - (void)handleBrightnessChangedNotification:(id)arg1;
 - (id)init;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
@@ -40,12 +47,11 @@
 - (void)setBoldTextEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setLocksAndUnlocksWithCase:(id)arg1 specifier:(id)arg2;
 - (void)setScreenLock:(id)arg1 specifier:(id)arg2;
-- (BOOL)shouldShowAutoLock;
-- (BOOL)shouldShowCaseLockOption;
-- (BOOL)shouldShowRaiseToWake;
-- (void)showAlertToDisableAccessibilityFilters:(id /* block */)arg1 cancel:(id /* block */)arg2;
+- (bool)shouldShowAutoLock;
+- (bool)shouldShowCaseLockOption;
+- (void)showAlertToDisableAccessibilityFilters:(id)arg1 cancel:(id)arg2;
 - (id)specifiers;
 - (void)updateAutoLockSpecifier;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

@@ -11,8 +11,8 @@
 }
 
 @property (nonatomic, retain) GEOAddress *address;
-@property (nonatomic, readonly) BOOL hasAddress;
-@property (nonatomic) BOOL hasMuid;
+@property (nonatomic, readonly) bool hasAddress;
+@property (nonatomic) bool hasMuid;
 @property (nonatomic) unsigned long long muid;
 
 - (id)address;
@@ -21,15 +21,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAddress;
-- (BOOL)hasMuid;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAddress;
+- (bool)hasMuid;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)muid;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAddress:(id)arg1;
-- (void)setHasMuid:(BOOL)arg1;
+- (void)setHasMuid:(bool)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 - (void)writeTo:(id)arg1;
 

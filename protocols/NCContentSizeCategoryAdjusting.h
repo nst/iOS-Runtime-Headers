@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)adjustForContentSizeCategoryChange;
+- (bool)adjustForContentSizeCategoryChange;
 
 @optional
 

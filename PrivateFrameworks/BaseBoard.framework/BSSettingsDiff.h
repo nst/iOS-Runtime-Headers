@@ -12,15 +12,16 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <BSSettingDescriptionProvider> *descriptionProvider;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isEmpty;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isEmpty;
 @property (readonly) Class superclass;
 
-+ (id)_newHashTableWithInitialCapacity:(unsigned int)arg1;
++ (id)_newHashTableWithInitialCapacity:(unsigned long long)arg1;
 + (id)diffFromSettings:(id)arg1 toSettings:(id)arg2;
 
-- (unsigned int)_diffTypesForSetting:(unsigned int)arg1;
-- (void)_enumerateSettingsInTable:(id)arg1 withBlock:(id /* block */)arg2;
+- (void).cxx_destruct;
+- (unsigned long long)_diffTypesForSetting:(unsigned long long)arg1;
+- (void)_enumerateSettingsInTable:(id)arg1 withBlock:(id)arg2;
 - (id)_initWithChanges:(id)arg1 flagRemovals:(id)arg2 objectRemovals:(id)arg3;
 - (id)allSettings;
 - (void)applyToSettings:(id)arg1;
@@ -33,8 +34,8 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)init;
 - (id)initWithXPCDictionary:(id)arg1;
-- (void)inspectChangesWithBlock:(id /* block */)arg1;
-- (BOOL)isEmpty;
+- (void)inspectChangesWithBlock:(id)arg1;
+- (bool)isEmpty;
 - (void)setDescriptionProvider:(id)arg1;
 
 @end

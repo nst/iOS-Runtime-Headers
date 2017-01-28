@@ -5,27 +5,27 @@
 @interface SCNMTLBuffer : NSObject {
     <MTLBuffer> * _buffer;
     id  _dataSource;
-    int  _offset;
-    int  _usedCount;
+    long long  _offset;
+    long long  _usedCount;
 }
 
 @property (nonatomic, retain) <MTLBuffer> *buffer;
 @property (nonatomic, readonly) void*contents;
 @property (nonatomic) id dataSource;
-@property (nonatomic) int offset;
-@property int usedCount;
+@property (nonatomic) long long offset;
+@property long long usedCount;
 
 - (id)buffer;
 - (void*)contents;
 - (id)dataSource;
 - (void)dealloc;
-- (int)decrementUsedCount;
+- (long long)decrementUsedCount;
 - (void)incrementUsedCount;
-- (int)offset;
+- (long long)offset;
 - (void)setBuffer:(id)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setOffset:(int)arg1;
-- (void)setUsedCount:(int)arg1;
-- (int)usedCount;
+- (void)setOffset:(long long)arg1;
+- (void)setUsedCount:(long long)arg1;
+- (long long)usedCount;
 
 @end

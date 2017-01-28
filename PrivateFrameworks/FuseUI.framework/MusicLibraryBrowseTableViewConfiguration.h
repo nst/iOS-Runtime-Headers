@@ -3,13 +3,13 @@
  */
 
 @interface MusicLibraryBrowseTableViewConfiguration : MusicLibraryViewConfiguration {
-    unsigned int  _minimumNumberOfEntitiesToAllowSectionHeaders;
+    unsigned long long  _minimumNumberOfEntitiesToAllowSectionHeaders;
 }
 
-@property (nonatomic) unsigned int minimumNumberOfEntitiesToAllowSectionHeaders;
+@property (nonatomic) unsigned long long minimumNumberOfEntitiesToAllowSectionHeaders;
 
 - (id)init;
-- (unsigned int)minimumNumberOfEntitiesToAllowSectionHeaders;
-- (void)setMinimumNumberOfEntitiesToAllowSectionHeaders:(unsigned int)arg1;
+- (unsigned long long)minimumNumberOfEntitiesToAllowSectionHeaders;
+- (void)setMinimumNumberOfEntitiesToAllowSectionHeaders:(unsigned long long)arg1;
 
 @end

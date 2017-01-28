@@ -4,15 +4,15 @@
 
 @interface EKUICellContentViewWithPrimaryAndSecondaryFonts : EKUICellContentView
 
-+ (BOOL)allowLargestFontSizesForWidth:(float)arg1;
++ (bool)allowLargestFontSizesForWidth:(double)arg1;
 + (void)clearFontCaches;
 + (id)constrainedPrimaryTextLabelFont;
-+ (id)primaryTextLabelFontForWidth:(float)arg1;
++ (id)primaryTextLabelFontForWidth:(double)arg1;
 + (id)scalablePrimaryTextLabelFont;
 + (id)secondaryTextLabelFont;
 + (id)timeLabelsFont;
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
 - (id)primaryTextLabelFont;
 
 @end

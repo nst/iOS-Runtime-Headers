@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) double probability;
 
 + (id)microLocationResultWithDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

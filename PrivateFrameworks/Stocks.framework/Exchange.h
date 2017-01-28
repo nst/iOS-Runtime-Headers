@@ -6,36 +6,36 @@
     double  _lastUpdateTime;
     NSString * _name;
     NSDate * _nextOpenDate;
-    int  _status;
+    long long  _status;
     double  _streamInterval;
 }
 
 @property (nonatomic, readonly) double lastUpdateTime;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSDate *nextOpenDate;
-@property (nonatomic) int status;
+@property (nonatomic) long long status;
 @property (nonatomic) double streamInterval;
 
 + (id)formattedExchangeNameForName:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_updateWithDictionary:(id)arg1 newUpdate:(BOOL)arg2;
+- (void)_updateWithDictionary:(id)arg1 newUpdate:(bool)arg2;
 - (id)archiveDictionary;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)lastUpdateTime;
-- (BOOL)marketIsAfterHours;
-- (BOOL)marketIsOpen;
+- (bool)marketIsAfterHours;
+- (bool)marketIsOpen;
 - (id)name;
 - (id)nextOpenDate;
 - (void)setName:(id)arg1;
 - (void)setNextOpenDate:(id)arg1;
-- (void)setStatus:(int)arg1;
+- (void)setStatus:(long long)arg1;
 - (void)setStreamInterval:(double)arg1;
-- (int)status;
+- (long long)status;
 - (double)streamInterval;
 - (void)updateWithDictionary:(id)arg1;
 

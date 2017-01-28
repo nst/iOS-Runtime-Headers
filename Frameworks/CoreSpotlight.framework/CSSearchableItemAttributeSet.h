@@ -28,9 +28,9 @@
     }  _contentObj;
     NSMutableDictionary * _customAttributes;
     CSDecoder * _decoder;
-    BOOL  _hasCodedCustomAttributes;
+    bool  _hasCodedCustomAttributes;
     NSMutableDictionary * _mutableAttributes;
-    int  _searchableItemFlags;
+    long long  _searchableItemFlags;
 }
 
 @property (readonly) NSData *HTMLContentDataNoCopy;
@@ -53,7 +53,7 @@
 @property (retain) NSNumber *extendedContentRating;
 @property (retain) NSNumber *fileIdentifier;
 @property (copy) NSString *filename;
-@property (nonatomic, readonly) BOOL hasCodedCustomAttributes;
+@property (nonatomic, readonly) bool hasCodedCustomAttributes;
 @property (nonatomic, copy) NSString *ic_dataSourceIdentifier;
 @property (nonatomic, copy) NSString *ic_managedObjectIDURI;
 @property (copy) NSArray *mailAttachmentKinds;
@@ -76,7 +76,7 @@
 @property (readonly) NSArray *queryResultMatchedFields;
 @property (copy) NSString *queryResultRelevance;
 @property (copy) NSString *relatedAppBundleIdentifier;
-@property int searchableItemFlags;
+@property long long searchableItemFlags;
 @property (copy) NSString *subtitle;
 @property (readonly) NSString *textContentNoCopy;
 @property (copy) NSString *textSelected;
@@ -89,7 +89,7 @@
 + (id)_allKeys;
 + (id)_requiredAttributesForContentType:(id)arg1;
 + (id)_sharedAttributeKeySet;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)EXIFGPSVersion;
@@ -119,7 +119,7 @@
 - (void)_setStringValue:(id)arg1 forKey:(id)arg2;
 - (void)_setURLValue:(id)arg1 forKey:(id)arg2;
 - (void)_setValue:(id)arg1 withClass:(Class)arg2 forKey:(id)arg3;
-- (void)_setValue:(id)arg1 withClass:(Class)arg2 forKey:(id)arg3 copy:(BOOL)arg4;
+- (void)_setValue:(id)arg1 withClass:(Class)arg2 forKey:(id)arg3 copy:(bool)arg4;
 - (void)_updateDocumentInfoForContentURL:(id)arg1;
 - (id)accountHandles;
 - (id)accountIdentifier;
@@ -212,7 +212,7 @@
 - (id)emailAddresses;
 - (id)emailHeaders;
 - (void)encodeWithCSCoder:(id)arg1;
-- (void)encodeWithCSCoder:(id)arg1 includeText:(BOOL)arg2;
+- (void)encodeWithCSCoder:(id)arg1 includeText:(bool)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encodingApplications;
 - (id)endDate;
@@ -234,8 +234,8 @@
 - (id)fullyFormattedAddress;
 - (id)genre;
 - (id)hasAlphaChannel;
-- (BOOL)hasCodedCustomAttributes;
-- (unsigned int)hash;
+- (bool)hasCodedCustomAttributes;
+- (unsigned long long)hash;
 - (id)headline;
 - (id)hiddenAdditionalRecipients;
 - (id)identifier;
@@ -252,7 +252,7 @@
 - (id)instantMessageAddresses;
 - (id)instructions;
 - (id)isApplicationManaged;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)isExistingThread;
 - (id)isFlashOn;
 - (id)isFocalLength35mm;
@@ -262,7 +262,7 @@
 - (id)isPartiallyDownloaded;
 - (id)isRedEyeOn;
 - (id)isStreamable;
-- (BOOL)isValidAttributeSet;
+- (bool)isValidAttributeSet;
 - (id)keySignature;
 - (id)keywords;
 - (id)kind;
@@ -334,7 +334,7 @@
 - (id)resolutionWidthDPI;
 - (id)rights;
 - (id)role;
-- (int)searchableItemFlags;
+- (long long)searchableItemFlags;
 - (id)securityMethod;
 - (id)serializedAttributes;
 - (void)setAccountHandles:(id)arg1;
@@ -536,7 +536,7 @@
 - (void)setResolutionWidthDPI:(id)arg1;
 - (void)setRights:(id)arg1;
 - (void)setRole:(id)arg1;
-- (void)setSearchableItemFlags:(int)arg1;
+- (void)setSearchableItemFlags:(long long)arg1;
 - (void)setSecurityMethod:(id)arg1;
 - (void)setSpeed:(id)arg1;
 - (void)setStartDate:(id)arg1;

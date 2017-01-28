@@ -8,6 +8,6 @@
 
 - (id)initWithRecordingState:(unsigned int)arg1;
 - (unsigned int)state;
-- (unsigned int)type;
+- (unsigned long long)type;
 
 @end

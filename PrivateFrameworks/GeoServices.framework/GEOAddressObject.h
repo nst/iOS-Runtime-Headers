@@ -8,32 +8,32 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasKnownAccuracy;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasKnownAccuracy;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) int knownAccuracy;
 @property (readonly) Class superclass;
 
 + (unsigned char)_implementionType;
 + (id)addressObjectForPlaceData:(id)arg1;
 + (id)addressObjectWithPlaceDataAddressObject:(id)arg1 placeDataAddress:(id)arg2 placeDataInfo:(id)arg3 placeDataEntity:(id)arg4;
-+ (BOOL)isMarkingMMStrings;
-+ (BOOL)isUsingMM;
-+ (BOOL)isUsingV1Behavior;
++ (bool)isMarkingMMStrings;
++ (bool)isUsingMM;
++ (bool)isUsingV1Behavior;
 + (id)libraryVersion;
-+ (void)markMMStrings:(BOOL)arg1;
-+ (void)useMM:(BOOL)arg1;
-+ (void)useV1Behavior:(BOOL)arg1;
++ (void)markMMStrings:(bool)arg1;
++ (void)useMM:(bool)arg1;
++ (void)useV1Behavior:(bool)arg1;
 
 - (id)_implemention;
 - (id)address;
 - (id)addressDictionary;
-- (id)cityDisplayNameWithFallback:(BOOL)arg1;
+- (id)cityDisplayNameWithFallback:(bool)arg1;
 - (void)dealloc;
-- (id)fullAddressWithMultiline:(BOOL)arg1;
-- (BOOL)hasKnownAccuracy;
-- (unsigned int)hash;
+- (id)fullAddressWithMultiline:(bool)arg1;
+- (bool)hasKnownAccuracy;
+- (unsigned long long)hash;
 - (id)initWithPlaceDataAddressObject:(id)arg1 placeDataAddress:(id)arg2 placeDataInfo:(id)arg3 placeDataEntity:(id)arg4 language:(id)arg5 country:(id)arg6 phoneticLocale:(id)arg7;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (int)knownAccuracy;
 - (id)name;
 - (id)parkingDisplayName;

@@ -9,6 +9,6 @@
 
 - (id)_bagDefaultsDomain;
 - (id)init;
-- (BOOL)isInDebilitatedMode;
+- (bool)isInDebilitatedMode;
 
 @end

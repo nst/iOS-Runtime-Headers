@@ -4,6 +4,6 @@
 
 @interface MCMDataContainer : MCMContainer
 
-- (BOOL)wipeAllMyContainerContent:(id*)arg1;
+- (bool)wipeAllMyContainerContent:(id*)arg1;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface CalDAVPostCalendarItemRecurrenceSplitTask : CoreDAVPropertyFindBaseTask {
     CoreDAVResponseItem * _createdResponseItem;
-    BOOL  _isAllDay;
-    BOOL  _isFloating;
+    bool  _isAllDay;
+    bool  _isFloating;
     NSURL * _postURLWithQuery;
     NSString * _previousETag;
     NSString * _previousScheduleTag;
@@ -16,8 +16,8 @@
 }
 
 @property (nonatomic, retain) CoreDAVResponseItem *createdResponseItem;
-@property (nonatomic) BOOL isAllDay;
-@property (nonatomic) BOOL isFloating;
+@property (nonatomic) bool isAllDay;
+@property (nonatomic) bool isFloating;
 @property (nonatomic, retain) NSURL *postURLWithQuery;
 @property (nonatomic, retain) NSString *previousETag;
 @property (nonatomic, retain) NSString *previousScheduleTag;
@@ -42,17 +42,17 @@
 - (id)createdURL;
 - (id)description;
 - (id)httpMethod;
-- (id)initWithResourceURL:(id)arg1 recurrenceDate:(id)arg2 floating:(BOOL)arg3 allday:(BOOL)arg4;
-- (BOOL)isAllDay;
-- (BOOL)isFloating;
+- (id)initWithResourceURL:(id)arg1 recurrenceDate:(id)arg2 floating:(bool)arg3 allday:(bool)arg4;
+- (bool)isAllDay;
+- (bool)isFloating;
 - (id)postURLWithQuery;
 - (id)previousETag;
 - (id)previousScheduleTag;
 - (id)recurrenceDate;
 - (id)resourceURL;
 - (void)setCreatedResponseItem:(id)arg1;
-- (void)setIsAllDay:(BOOL)arg1;
-- (void)setIsFloating:(BOOL)arg1;
+- (void)setIsAllDay:(bool)arg1;
+- (void)setIsFloating:(bool)arg1;
 - (void)setPostURLWithQuery:(id)arg1;
 - (void)setPreviousETag:(id)arg1;
 - (void)setPreviousScheduleTag:(id)arg1;

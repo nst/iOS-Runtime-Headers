@@ -3,8 +3,8 @@
  */
 
 @interface SVAVerifier : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
-    BOOL  _canceledByUser;
-    id /* block */  _completionBlock;
+    bool  _canceledByUser;
+    id  _completionBlock;
     NSURLSessionDataTask * _dataTask;
     NSString * _password;
     NSMutableData * _responseData;
@@ -14,12 +14,12 @@
     NSString * _userName;
 }
 
-@property (nonatomic) BOOL canceledByUser;
-@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic) bool canceledByUser;
+@property (nonatomic, copy) id completionBlock;
 @property (nonatomic, retain) NSURLSessionDataTask *dataTask;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, retain) NSMutableData *responseData;
 @property (nonatomic, retain) NSString *serverAddress;
@@ -31,19 +31,19 @@
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
-- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
-- (BOOL)canceledByUser;
-- (id /* block */)completionBlock;
+- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id)arg4;
+- (bool)canceledByUser;
+- (id)completionBlock;
 - (id)dataTask;
 - (id)dataclassPropertiesFromProfilesDictionary:(id)arg1;
-- (void)handleAuthenticationChallenge:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)handleAuthenticationChallenge:(id)arg1 completionHandler:(id)arg2;
 - (id)password;
 - (id)responseData;
 - (id)serverAccountsErrorForURLSessionError:(id)arg1;
 - (id)serverAddress;
 - (id)session;
-- (void)setCanceledByUser:(BOOL)arg1;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setCanceledByUser:(bool)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setDataTask:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setResponseData:(id)arg1;
@@ -53,7 +53,7 @@
 - (void)setUserName:(id)arg1;
 - (id)trustedCertificates;
 - (id)userName;
-- (void)verifyAccount:(id)arg1 withTrustedCertificates:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)verifyAccount:(id)arg1 withTrustedCertificates:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)verifyAccount:(id)arg1 withTrustedCertificates:(id)arg2 completionHandler:(id)arg3;
+- (void)verifyAccount:(id)arg1 withTrustedCertificates:(id)arg2 withCompletionHandler:(id)arg3;
 
 @end

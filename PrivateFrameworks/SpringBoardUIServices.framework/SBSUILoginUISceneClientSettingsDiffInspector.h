@@ -4,9 +4,9 @@
 
 @interface SBSUILoginUISceneClientSettingsDiffInspector : UIApplicationSceneClientSettingsDiffInspector
 
-- (void)_observeOtherLoginUISetting:(unsigned int)arg1 withBlock:(id /* block */)arg2;
-- (void)observeIdleTimerModeWithBlock:(id /* block */)arg1;
-- (void)observeRotationModeWithBlock:(id /* block */)arg1;
-- (void)observeStatusBarUserNameOverrideWithBlock:(id /* block */)arg1;
+- (void)_observeOtherLoginUISetting:(unsigned long long)arg1 withBlock:(id)arg2;
+- (void)observeIdleTimerModeWithBlock:(id)arg1;
+- (void)observeRotationModeWithBlock:(id)arg1;
+- (void)observeStatusBarUserNameOverrideWithBlock:(id)arg1;
 
 @end

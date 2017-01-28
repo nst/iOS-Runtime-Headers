@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) NSData *tagID;
 @property (nonatomic, readonly) unsigned int technology;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)AppData;
 - (id)IDm;

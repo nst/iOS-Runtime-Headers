@@ -6,7 +6,7 @@
     PDFActionNamedPrivateVars * _private2;
 }
 
-@property (nonatomic) int name;
+@property (nonatomic) long long name;
 
 - (void).cxx_destruct;
 - (void)addNameToDictionaryRef:(struct __CFDictionary { }*)arg1;
@@ -15,9 +15,9 @@
 - (const struct __CFDictionary { }*)createDictionaryRef;
 - (id)description;
 - (id)initWithActionDictionary:(struct CGPDFDictionary { }*)arg1 forDocument:(id)arg2 forPage:(id)arg3;
-- (id)initWithName:(int)arg1;
-- (int)name;
-- (void)setName:(int)arg1;
+- (id)initWithName:(long long)arg1;
+- (long long)name;
+- (void)setName:(long long)arg1;
 - (id)toolTip;
 
 @end

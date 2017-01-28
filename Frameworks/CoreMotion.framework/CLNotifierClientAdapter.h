@@ -4,24 +4,24 @@
 
 @interface CLNotifierClientAdapter : NSObject <CLNotifierServiceClientProtocol> {
     struct CLNotifierClientBase { int (**x1)(); } * _client;
-    BOOL  _valid;
+    bool  _valid;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL valid;
+@property (nonatomic) bool valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
-+ (void)performSyncOnSilo:(id)arg1 invoker:(id /* block */)arg2;
++ (void)performSyncOnSilo:(id)arg1 invoker:(id)arg2;
 
 - (id)debugDescription;
 - (id)init;
 - (id)initWithClient:(struct CLNotifierClientBase { int (**x1)(); }*)arg1;
 - (void)invalidate;
 - (void)onNotification:(int)arg1 withData:(id)arg2;
-- (void)setValid:(BOOL)arg1;
-- (BOOL)valid;
+- (void)setValid:(bool)arg1;
+- (bool)valid;
 
 @end

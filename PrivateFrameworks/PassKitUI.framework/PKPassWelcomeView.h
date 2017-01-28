@@ -6,10 +6,10 @@
     UIButton * _appStoreButton;
 }
 
-+ (float)headerImageRegionHeight;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })margins;
-+ (id)messageAttributedString:(BOOL)arg1;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textInsets;
++ (double)headerImageRegionHeight;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })margins;
++ (id)messageAttributedString:(bool)arg1;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })textInsets;
 
 - (void).cxx_destruct;
 - (void)_appStorePressed;

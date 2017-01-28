@@ -3,12 +3,12 @@
  */
 
 @interface UIStatusBarThermalColorItemView : UIStatusBarItemView {
-    BOOL  _sunlightMode;
+    bool  _sunlightMode;
     int  _thermalColor;
 }
 
 - (id)_color;
 - (id)contentsImage;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

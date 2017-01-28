@@ -17,7 +17,7 @@
 - (void)scheduleTokenUpdate;
 - (void)setXpcConnection:(id)arg1;
 - (void)simulatePush;
-- (BOOL)supportsPerUserMDM;
+- (bool)supportsPerUserMDM;
 - (id)xpcConnection;
 
 @end

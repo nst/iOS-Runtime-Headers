@@ -5,7 +5,7 @@
 @interface ABPostalAddressEditorNavigationController : CNPostalAddressEditorNavigationController
 
 - (void)doneWithContact:(id)arg1 propertyKey:(id)arg2;
-- (id)initWithContact:(id)arg1 property:(int)arg2 editNames:(BOOL)arg3;
+- (id)initWithContact:(id)arg1 property:(int)arg2 editNames:(bool)arg3;
 - (id)initWithProperty:(int)arg1 label:(id)arg2;
 
 @end

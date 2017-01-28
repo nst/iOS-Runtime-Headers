@@ -4,7 +4,7 @@
 
 @interface ActiveDeviceLinkCell : PSTableCell
 
-+ (int)cellStyle;
++ (long long)cellStyle;
 
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 

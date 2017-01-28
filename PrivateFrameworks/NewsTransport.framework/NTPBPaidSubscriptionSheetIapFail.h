@@ -10,9 +10,9 @@
 
 @property (nonatomic, retain) NSString *articleId;
 @property (nonatomic, retain) NSString *failedIapId;
-@property (nonatomic, readonly) BOOL hasArticleId;
-@property (nonatomic, readonly) BOOL hasFailedIapId;
-@property (nonatomic, readonly) BOOL hasSourceChannelId;
+@property (nonatomic, readonly) bool hasArticleId;
+@property (nonatomic, readonly) bool hasFailedIapId;
+@property (nonatomic, readonly) bool hasSourceChannelId;
 @property (nonatomic, retain) NSString *sourceChannelId;
 
 - (void).cxx_destruct;
@@ -21,13 +21,13 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)failedIapId;
-- (BOOL)hasArticleId;
-- (BOOL)hasFailedIapId;
-- (BOOL)hasSourceChannelId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasArticleId;
+- (bool)hasFailedIapId;
+- (bool)hasSourceChannelId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArticleId:(id)arg1;
 - (void)setFailedIapId:(id)arg1;
 - (void)setSourceChannelId:(id)arg1;

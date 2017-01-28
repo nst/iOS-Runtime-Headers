@@ -4,28 +4,28 @@
 
 @interface CUIPSDLayerEffectInnerGlow : CUIPSDLayerEffectComponent {
     int  _blendMode;
-    unsigned int  _blurSize;
+    unsigned long long  _blurSize;
     CUIColor * _color;
-    float  _opacity;
+    double  _opacity;
 }
 
 @property int blendMode;
-@property unsigned int blurSize;
+@property unsigned long long blurSize;
 @property (retain) CUIColor *color;
-@property float opacity;
+@property double opacity;
 
 - (int)blendMode;
-- (unsigned int)blurSize;
+- (unsigned long long)blurSize;
 - (id)color;
 - (void)dealloc;
 - (unsigned int)effectType;
 - (id)init;
 - (id)initWithEffectFromPreset:(id)arg1 atIndex:(unsigned int)arg2;
-- (float)opacity;
+- (double)opacity;
 - (void)setBlendMode:(int)arg1;
-- (void)setBlurSize:(unsigned int)arg1;
+- (void)setBlurSize:(unsigned long long)arg1;
 - (void)setColor:(id)arg1;
-- (void)setOpacity:(float)arg1;
-- (BOOL)updateLayerEffectPreset:(id)arg1 error:(id*)arg2;
+- (void)setOpacity:(double)arg1;
+- (bool)updateLayerEffectPreset:(id)arg1 error:(id*)arg2;
 
 @end

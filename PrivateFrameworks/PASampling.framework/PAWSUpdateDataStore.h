@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)_printFrameReportExplanationToStream:(id)arg1;
@@ -18,12 +18,12 @@
 
 - (void).cxx_destruct;
 - (id)_getWSUpdateArraySnapshot;
-- (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
+- (bool)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg2;
 - (void)addSelfToSerializationDictionary:(struct NSMutableDictionary { Class x1; }*)arg1;
 - (void)dealloc;
 - (id)init;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
-- (void)printFrameRateReportWithStartSampleIndex:(unsigned int)arg1 andEndIndex:(unsigned int)arg2 andStartDisplayIndex:(unsigned int)arg3 withSampleDataStore:(id)arg4 toStream:(id)arg5;
-- (unsigned long)sizeInBytesForSerializedVersion;
+- (void)printFrameRateReportWithStartSampleIndex:(unsigned long long)arg1 andEndIndex:(unsigned long long)arg2 andStartDisplayIndex:(unsigned long long)arg3 withSampleDataStore:(id)arg4 toStream:(id)arg5;
+- (unsigned long long)sizeInBytesForSerializedVersion;
 
 @end

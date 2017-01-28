@@ -4,18 +4,18 @@
 
 @interface HMDXPCRequest : NSObject {
     NSString * _messageName;
-    id /* block */  _responseHandler;
+    id  _responseHandler;
     NSDate * _startTime;
 }
 
 @property (nonatomic, readonly) NSString *messageName;
-@property (nonatomic, readonly, copy) id /* block */ responseHandler;
+@property (nonatomic, readonly, copy) id responseHandler;
 @property (nonatomic, readonly) NSDate *startTime;
 
 - (void).cxx_destruct;
-- (id)initWithMessageName:(id)arg1 responseHandler:(id /* block */)arg2;
+- (id)initWithMessageName:(id)arg1 responseHandler:(id)arg2;
 - (id)messageName;
-- (id /* block */)responseHandler;
+- (id)responseHandler;
 - (id)startTime;
 
 @end

@@ -8,9 +8,9 @@
 
 + (Class)cellClass;
 
-- (unsigned int)focusableVariantCount;
+- (unsigned long long)focusableVariantCount;
 - (void)refreshSelectedCandidate;
-- (void)reloadDataByAppendingAtEnd:(BOOL)arg1;
+- (void)reloadDataByAppendingAtEnd:(bool)arg1;
 - (void)scrollViewDidChangeContentSize:(id)arg1;
 
 @end

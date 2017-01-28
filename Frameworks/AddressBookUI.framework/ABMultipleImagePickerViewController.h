@@ -5,20 +5,20 @@
 @interface ABMultipleImagePickerViewController : UITableViewController {
     <ABMultipleSourceImagePickerDelegate> * _delegate;
     NSMutableArray * _imageCellData;
-    unsigned int  _selectedImageIndex;
+    unsigned long long  _selectedImageIndex;
 }
 
 @property (nonatomic) <ABMultipleSourceImagePickerDelegate> *delegate;
 
-- (void)addImageData:(id)arg1 title:(id)arg2 isSelectedImage:(BOOL)arg3 person:(id)arg4;
+- (void)addImageData:(id)arg1 title:(id)arg2 isSelectedImage:(bool)arg3 person:(id)arg4;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithStyle:(int)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithStyle:(long long)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLoad;
 
 @end

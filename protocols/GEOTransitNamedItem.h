@@ -6,9 +6,9 @@
 @required
 
 - (NSString *)bestName;
-- (BOOL)hasMuid;
+- (bool)hasMuid;
 - (unsigned long long)muid;
-- (void)setHasMuid:(BOOL)arg1;
+- (void)setHasMuid:(bool)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 
 @end

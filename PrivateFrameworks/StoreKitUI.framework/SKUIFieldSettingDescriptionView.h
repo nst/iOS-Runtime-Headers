@@ -3,14 +3,14 @@
  */
 
 @interface SKUIFieldSettingDescriptionView : SKUISettingDescriptionView {
-    BOOL  _enabled;
+    bool  _enabled;
 }
 
-@property (nonatomic) BOOL enabled;
+@property (nonatomic) bool enabled;
 
 - (void)beginEdits;
 - (void)commitEdits;
-- (BOOL)enabled;
-- (void)setEnabled:(BOOL)arg1;
+- (bool)enabled;
+- (void)setEnabled:(bool)arg1;
 
 @end

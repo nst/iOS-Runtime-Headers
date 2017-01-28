@@ -8,24 +8,24 @@
     NSArray * _accountUserRecords;
     SLMicroBlogAccountsTableViewController * _accountViewController;
     SLPlace * _currentPlace;
-    BOOL  _isPresentingPlaces;
+    bool  _isPresentingPlaces;
     SLComposeSheetConfigurationItem * _locationConfigurationItem;
-    int  _maxURLLength;
-    BOOL  _mentionPendingStart;
-    unsigned int  _mentionStartLocation;
+    long long  _maxURLLength;
+    bool  _mentionPendingStart;
+    unsigned long long  _mentionStartLocation;
     SLMicroBlogMentionsViewController * _mentionsViewController;
     NSObject<SLMicroBlogSheetDelegate> * _microBlogSheetDelegate;
     SLSheetPlaceViewController * _placeViewController;
-    BOOL  _rotatedDuringAccountsPopover;
+    bool  _rotatedDuringAccountsPopover;
     SLMicroBlogUserRecord * _selectedAccountUserRecord;
     NSString * _serviceAccountTypeIdentifier;
-    int  _shortenedURLCost;
-    BOOL  _usingLocationOverride;
+    long long  _shortenedURLCost;
+    bool  _usingLocationOverride;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property NSObject<SLMicroBlogSheetDelegate> *microBlogSheetDelegate;
 @property (readonly) Class superclass;
 
@@ -34,9 +34,9 @@
 - (void).cxx_destruct;
 - (id)_accountConfigurationItem;
 - (void)_beginLoadingAccountProfileImages;
-- (int)_characterCountForText:(id)arg1;
+- (long long)_characterCountForText:(id)arg1;
 - (int)_charactersRemainingWithText:(id)arg1;
-- (BOOL)_countMediaAttachmentsTowardCharacterCount;
+- (bool)_countMediaAttachmentsTowardCharacterCount;
 - (void)_dismissMentionsViewController;
 - (void)_hostApplicationDidEnterBackground;
 - (void)_hostApplicationWillEnterForeground;
@@ -57,23 +57,23 @@
 - (id)configurationItems;
 - (void)didSelectPost;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isContentValid;
+- (bool)isContentValid;
 - (void)loadView;
 - (void)mentionsViewController:(id)arg1 finishedWithResult:(id)arg2;
 - (id)microBlogSheetDelegate;
 - (void)noteLocationInfoChanged:(id)arg1;
 - (void)placeViewController:(id)arg1 didSelectPlace:(id)arg2;
-- (void)placeViewController:(id)arg1 willDisappear:(BOOL)arg2;
+- (void)placeViewController:(id)arg1 willDisappear:(bool)arg2;
 - (void)presentNoAccountsAlert;
 - (void)presentationAnimationDidFinish;
 - (void)setGeotagStatus:(int)arg1;
 - (void)setMicroBlogSheetDelegate:(id)arg1;
-- (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;
+- (bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2 replacementText:(id)arg3;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidChangeSelection:(id)arg1;
 - (void)updateGeotagStatus;
 - (void)updateShortenedURLCost;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -5,16 +5,16 @@
 @interface ABSectionListVibrantHeaderView : ABSectionListHeaderView {
     _UIBackdropView * _backdrop;
     UIView * _plusDView;
-    BOOL  _wantsPlusDLayer;
+    bool  _wantsPlusDLayer;
 }
 
-@property (nonatomic) BOOL wantsPlusDLayer;
+@property (nonatomic) bool wantsPlusDLayer;
 
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)setBackdropGroupName:(id)arg1;
-- (void)setFloating:(BOOL)arg1;
-- (void)setWantsPlusDLayer:(BOOL)arg1;
-- (BOOL)wantsPlusDLayer;
+- (void)setFloating:(bool)arg1;
+- (void)setWantsPlusDLayer:(bool)arg1;
+- (bool)wantsPlusDLayer;
 
 @end

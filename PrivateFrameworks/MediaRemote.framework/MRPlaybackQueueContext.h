@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) NSString *revision;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;

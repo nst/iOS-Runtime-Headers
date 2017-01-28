@@ -6,29 +6,29 @@
     NSString * _account;
     NSString * _bundleId;
     _CDContact * _contact;
-    int  _mechanism;
+    long long  _mechanism;
     NSMutableSet * _reasons;
     double  _score;
-    int  _similarBidirectionalInteractionsCount;
-    int  _similarIncomingInteractionsCount;
-    int  _similarOutgoingInteractionsCount;
+    long long  _similarBidirectionalInteractionsCount;
+    long long  _similarIncomingInteractionsCount;
+    long long  _similarOutgoingInteractionsCount;
 }
 
 @property (retain) NSString *account;
 @property (retain) NSString *bundleId;
 @property (retain) _CDContact *contact;
-@property int mechanism;
+@property long long mechanism;
 @property (retain) NSSet *reasons;
 @property double score;
-@property int similarBidirectionalInteractionsCount;
-@property int similarIncomingInteractionsCount;
-@property int similarOutgoingInteractionsCount;
+@property long long similarBidirectionalInteractionsCount;
+@property long long similarIncomingInteractionsCount;
+@property long long similarOutgoingInteractionsCount;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)account;
-- (void)addReason:(int)arg1;
+- (void)addReason:(long long)arg1;
 - (void)addReasons:(id)arg1;
 - (id)bundleId;
 - (id)contact;
@@ -37,20 +37,20 @@
 - (id)descriptionOfReasons:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)mechanism;
+- (long long)mechanism;
 - (id)reasons;
 - (double)score;
 - (void)setAccount:(id)arg1;
 - (void)setBundleId:(id)arg1;
 - (void)setContact:(id)arg1;
-- (void)setMechanism:(int)arg1;
+- (void)setMechanism:(long long)arg1;
 - (void)setReasons:(id)arg1;
 - (void)setScore:(double)arg1;
-- (void)setSimilarBidirectionalInteractionsCount:(int)arg1;
-- (void)setSimilarIncomingInteractionsCount:(int)arg1;
-- (void)setSimilarOutgoingInteractionsCount:(int)arg1;
-- (int)similarBidirectionalInteractionsCount;
-- (int)similarIncomingInteractionsCount;
-- (int)similarOutgoingInteractionsCount;
+- (void)setSimilarBidirectionalInteractionsCount:(long long)arg1;
+- (void)setSimilarIncomingInteractionsCount:(long long)arg1;
+- (void)setSimilarOutgoingInteractionsCount:(long long)arg1;
+- (long long)similarBidirectionalInteractionsCount;
+- (long long)similarIncomingInteractionsCount;
+- (long long)similarOutgoingInteractionsCount;
 
 @end

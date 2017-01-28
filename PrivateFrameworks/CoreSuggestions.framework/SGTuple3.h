@@ -18,11 +18,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)first;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithFirst:(id)arg1 second:(id)arg2 third:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToTuple3:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToTuple3:(id)arg1;
 - (id)second;
 - (id)third;
 

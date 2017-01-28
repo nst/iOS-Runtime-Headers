@@ -12,10 +12,10 @@
     HMFNetAddress * _hostName;
     NSNetService * _internal;
     NSString * _name;
-    unsigned int  _port;
+    unsigned long long  _port;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     NSMutableArray * _resolveBlocks;
-    BOOL  _resolving;
+    bool  _resolving;
     NSString * _type;
 }
 
@@ -27,14 +27,14 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *domain;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly, copy) HMFNetAddress *hostName;
 @property (nonatomic, readonly) NSNetService *internal;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) unsigned int port;
+@property (nonatomic, readonly) unsigned long long port;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) NSMutableArray *resolveBlocks;
-@property (getter=isResolving, nonatomic) BOOL resolving;
+@property (getter=isResolving, nonatomic) bool resolving;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *type;
 
@@ -43,25 +43,25 @@
 
 - (void).cxx_destruct;
 - (id)TXTRecord;
-- (void)_reallyResolveWithTimeout:(double)arg1 completionHandler:(id /* block */)arg2;
+- (void)_reallyResolveWithTimeout:(double)arg1 completionHandler:(id)arg2;
 - (id)addresses;
 - (id)bestAddress;
 - (id)clientQueue;
-- (void)confirmWithTimeout:(double)arg1 completionHandler:(id /* block */)arg2;
+- (void)confirmWithTimeout:(double)arg1 completionHandler:(id)arg2;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
 - (id)delegateQueue;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)domain;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)hostName;
 - (id)init;
 - (id)initWithNetService:(id)arg1;
 - (id)internal;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isResolving;
+- (bool)isEqual:(id)arg1;
+- (bool)isResolving;
 - (id)name;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
@@ -70,15 +70,15 @@
 - (void)netServiceWillResolve:(id)arg1;
 - (void)notifyUpdatedAddresses:(id)arg1;
 - (void)notifyUpdatedTXTRecord:(id)arg1;
-- (unsigned int)port;
+- (unsigned long long)port;
 - (id)propertyQueue;
 - (void)removeAllTXTRecordObjects;
 - (id)resolveBlocks;
-- (void)resolveWithTimeout:(double)arg1 completionHandler:(id /* block */)arg2;
+- (void)resolveWithTimeout:(double)arg1 completionHandler:(id)arg2;
 - (void)setAddresses:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostname:(id)arg1;
-- (void)setResolving:(BOOL)arg1;
+- (void)setResolving:(bool)arg1;
 - (void)setTXTRecord:(id)arg1;
 - (id)shortDescription;
 - (void)startMonitoring;

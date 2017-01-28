@@ -14,9 +14,9 @@
 @property (nonatomic, readonly) NSString *dataSourceIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSIndexPath *indexPath;
-@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; } simpleIndexPath;
+@property (nonatomic, readonly) struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; } simpleIndexPath;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -25,11 +25,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataSourceIdentifier;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)indexPath;
 - (id)init;
 - (id)initWithAsset:(id)arg1 assetCollection:(id)arg2 indexPath:(id)arg3 dataSourceIdentifier:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })simpleIndexPath;
+- (bool)isEqual:(id)arg1;
+- (struct PXSimpleIndexPath { unsigned long long x1; long long x2; long long x3; long long x4; })simpleIndexPath;
 
 @end

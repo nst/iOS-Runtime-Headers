@@ -3,24 +3,24 @@
  */
 
 @interface SUScrollRequest : NSObject {
-    BOOL  _animated;
-    id /* block */  _completionHandler;
+    bool  _animated;
+    id  _completionHandler;
     NSValue * _contentOffsetValue;
     NSValue * _frameValue;
 }
 
-@property (getter=isAnimated, nonatomic) BOOL animated;
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (getter=isAnimated, nonatomic) bool animated;
+@property (nonatomic, copy) id completionHandler;
 @property (retain) NSValue *contentOffsetValue;
 @property (retain) NSValue *frameValue;
 
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)contentOffsetValue;
 - (void)dealloc;
 - (id)frameValue;
-- (BOOL)isAnimated;
-- (void)setAnimated:(BOOL)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (bool)isAnimated;
+- (void)setAnimated:(bool)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setContentOffsetValue:(id)arg1;
 - (void)setFrameValue:(id)arg1;
 

@@ -14,9 +14,9 @@
 
 @property (nonatomic, retain) _INPBString *entityName;
 @property (nonatomic) int entityType;
-@property (nonatomic, readonly) BOOL hasEntityName;
-@property (nonatomic) BOOL hasEntityType;
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
+@property (nonatomic, readonly) bool hasEntityName;
+@property (nonatomic) bool hasEntityType;
+@property (nonatomic, readonly) bool hasIntentMetadata;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -28,17 +28,17 @@
 - (id)dictionaryRepresentation;
 - (id)entityName;
 - (int)entityType;
-- (BOOL)hasEntityName;
-- (BOOL)hasEntityType;
-- (BOOL)hasIntentMetadata;
-- (unsigned int)hash;
+- (bool)hasEntityName;
+- (bool)hasEntityType;
+- (bool)hasIntentMetadata;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEntityName:(id)arg1;
 - (void)setEntityType:(int)arg1;
-- (void)setHasEntityType:(BOOL)arg1;
+- (void)setHasEntityType:(bool)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

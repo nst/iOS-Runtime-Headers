@@ -5,18 +5,17 @@
 
 @required
 
-- (id /* block */)cancelAction:(void *)arg1; // needs 1 arg types, found 5: id /* block */, BOOL, void*, id, SEL
-- (id /* block */)clearAction:(void *)arg1; // needs 1 arg types, found 5: id /* block */, BOOL, void*, id, SEL
-- (id /* block */)closeAction:(void *)arg1; // needs 1 arg types, found 5: id /* block */, BOOL, void*, id, SEL
-- (BOOL)cropThumbnail;
+- (id)cancelAction:(void *)arg1; // needs 1 arg types, found 5: id, bool, void*, id, SEL
+- (id)clearAction:(void *)arg1; // needs 1 arg types, found 5: id, bool, void*, id, SEL
+- (id)closeAction:(void *)arg1; // needs 1 arg types, found 5: id, bool, void*, id, SEL
 - (NSDate *)date;
-- (id /* block */)defaultAction:(void *)arg1; // needs 1 arg types, found 5: id /* block */, BOOL, void*, id, SEL
+- (id)defaultAction:(void *)arg1; // needs 1 arg types, found 5: id, bool, void*, id, SEL
 - (<NCNotificationStaticContentProvidingDelegate> *)delegate;
 - (NSString *)hintText;
 - (UIImage *)icon;
 - (NSArray *)interfaceActions;
-- (BOOL)isDateAllDay;
-- (unsigned int)messageNumberOfLines;
+- (bool)isDateAllDay;
+- (unsigned long long)messageNumberOfLines;
 - (NSString *)primarySubtitleText;
 - (NSString *)primaryText;
 - (NSString *)secondaryText;

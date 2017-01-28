@@ -5,42 +5,42 @@
 @interface SKUICountdown : NSObject {
     NSURL * _URL;
     <SKUIArtworkProviding> * _artworkProvider;
-    unsigned int  _dateFormat;
+    unsigned long long  _dateFormat;
     <SKUIArtworkProviding> * _endArtworkProvider;
     NSDate * _endDate;
     long long  _finalValue;
     UIColor * _flapBottomColor;
     UIColor * _flapTopColor;
-    BOOL  _flapped;
+    bool  _flapped;
     UIColor * _fontColor;
     long long  _initialValue;
-    BOOL  _isLoaded;
+    bool  _isLoaded;
     NSString * _numberFormat;
-    int  _rate;
+    long long  _rate;
     NSDate * _startDate;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, copy) NSURL *URL;
 @property (nonatomic, retain) <SKUIArtworkProviding> *artworkProvider;
-@property (nonatomic) unsigned int dateFormat;
+@property (nonatomic) unsigned long long dateFormat;
 @property (nonatomic, retain) <SKUIArtworkProviding> *endArtworkProvider;
 @property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic) long long finalValue;
 @property (nonatomic, copy) UIColor *flapBottomColor;
 @property (nonatomic, copy) UIColor *flapTopColor;
-@property (getter=isFlapped, nonatomic) BOOL flapped;
+@property (getter=isFlapped, nonatomic) bool flapped;
 @property (nonatomic, copy) UIColor *fontColor;
 @property (nonatomic) long long initialValue;
 @property (nonatomic, copy) NSString *numberFormat;
-@property (nonatomic) int rate;
+@property (nonatomic) long long rate;
 @property (nonatomic, copy) NSDate *startDate;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)URL;
 - (id)artworkProvider;
-- (unsigned int)dateFormat;
+- (unsigned long long)dateFormat;
 - (id)endArtworkProvider;
 - (id)endDate;
 - (long long)finalValue;
@@ -49,27 +49,27 @@
 - (id)fontColor;
 - (id)initWithCountdownDictionary:(id)arg1;
 - (long long)initialValue;
-- (BOOL)isFlapped;
-- (BOOL)isLoaded;
+- (bool)isFlapped;
+- (bool)isLoaded;
 - (id)numberFormat;
-- (int)rate;
+- (long long)rate;
 - (void)setArtworkProvider:(id)arg1;
-- (void)setDateFormat:(unsigned int)arg1;
+- (void)setDateFormat:(unsigned long long)arg1;
 - (void)setEndArtworkProvider:(id)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setFinalValue:(long long)arg1;
 - (void)setFlapBottomColor:(id)arg1;
 - (void)setFlapTopColor:(id)arg1;
-- (void)setFlapped:(BOOL)arg1;
+- (void)setFlapped:(bool)arg1;
 - (void)setFontColor:(id)arg1;
 - (void)setInitialValue:(long long)arg1;
 - (void)setNumberFormat:(id)arg1;
-- (void)setRate:(int)arg1;
+- (void)setRate:(long long)arg1;
 - (void)setStartDate:(id)arg1;
-- (void)setType:(int)arg1;
+- (void)setType:(long long)arg1;
 - (void)setURL:(id)arg1;
 - (id)startDate;
-- (int)type;
+- (long long)type;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

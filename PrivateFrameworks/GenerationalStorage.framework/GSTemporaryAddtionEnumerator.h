@@ -7,7 +7,7 @@
     NSDirectoryEnumerator * _enumerator;
     NSError * _error;
     NSString * _nameSpace;
-    unsigned int  _pos;
+    unsigned long long  _pos;
     GSTemporaryStorage * _storage;
     unsigned long long  _withOptions;
     unsigned long long  _withoutOption;

@@ -3,17 +3,17 @@
  */
 
 @interface SFSearchViewDisappearFeedback : SFFeedback {
-    int  _viewDisappearEvent;
+    long long  _viewDisappearEvent;
 }
 
-@property (nonatomic) int viewDisappearEvent;
+@property (nonatomic) long long viewDisappearEvent;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEvent:(int)arg1;
-- (void)setViewDisappearEvent:(int)arg1;
-- (int)viewDisappearEvent;
+- (id)initWithEvent:(long long)arg1;
+- (void)setViewDisappearEvent:(long long)arg1;
+- (long long)viewDisappearEvent;
 
 @end

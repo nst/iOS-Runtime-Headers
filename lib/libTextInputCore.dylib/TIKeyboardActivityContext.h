@@ -3,22 +3,22 @@
  */
 
 @interface TIKeyboardActivityContext : NSObject {
-    unsigned int  _excessMemoryInBytes;
-    unsigned int  _fromState;
-    unsigned int  _toState;
+    unsigned long long  _excessMemoryInBytes;
+    unsigned long long  _fromState;
+    unsigned long long  _toState;
 }
 
-@property (nonatomic) unsigned int excessMemoryInBytes;
-@property (nonatomic) unsigned int fromState;
-@property (nonatomic) unsigned int toState;
+@property (nonatomic) unsigned long long excessMemoryInBytes;
+@property (nonatomic) unsigned long long fromState;
+@property (nonatomic) unsigned long long toState;
 
-+ (id)contextFromState:(unsigned int)arg1 toState:(unsigned int)arg2;
++ (id)contextFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2;
 
-- (unsigned int)excessMemoryInBytes;
-- (unsigned int)fromState;
-- (void)setExcessMemoryInBytes:(unsigned int)arg1;
-- (void)setFromState:(unsigned int)arg1;
-- (void)setToState:(unsigned int)arg1;
-- (unsigned int)toState;
+- (unsigned long long)excessMemoryInBytes;
+- (unsigned long long)fromState;
+- (void)setExcessMemoryInBytes:(unsigned long long)arg1;
+- (void)setFromState:(unsigned long long)arg1;
+- (void)setToState:(unsigned long long)arg1;
+- (unsigned long long)toState;
 
 @end

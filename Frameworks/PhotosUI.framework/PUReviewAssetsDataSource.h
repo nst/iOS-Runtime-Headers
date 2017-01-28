@@ -26,8 +26,8 @@
 - (id)indexPathForAssetCollection:(id)arg1;
 - (id)indexPathForAssetReference:(id)arg1;
 - (id)initWithAssetsByIdentifier:(id)arg1 usingOrdering:(id)arg2 inAssetCollection:(id)arg3;
-- (BOOL)isEmpty;
-- (int)numberOfSubItemsAtIndexPath:(id)arg1;
+- (bool)isEmpty;
+- (long long)numberOfSubItemsAtIndexPath:(id)arg1;
 - (id)startingAssetReference;
 
 @end

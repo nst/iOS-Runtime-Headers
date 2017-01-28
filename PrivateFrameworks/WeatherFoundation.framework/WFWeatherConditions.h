@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSMutableDictionary *components;
 @property (retain) WFLocation *location;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_retrieveSunrise:(id*)arg1 sunset:(id*)arg2;
@@ -29,7 +29,7 @@
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setValue:(id)arg1 forComponent:(id)arg2;
 - (id)valueForComponent:(id)arg1;
-- (BOOL)wf_isDay;
-- (BOOL)wf_isDayIfSunrise:(id)arg1 sunset:(id)arg2;
+- (bool)wf_isDay;
+- (bool)wf_isDayIfSunrise:(id)arg1 sunset:(id)arg2;
 
 @end

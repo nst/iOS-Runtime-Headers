@@ -5,8 +5,8 @@
 
 @required
 
-- (int)numberOfPagesInPagingView:(OFUIPagingView *)arg1;
-- (UIView *)viewForPageInPagingView:(OFUIPagingView *)arg1 atIndex:(int)arg2;
+- (long long)numberOfPagesInPagingView:(OFUIPagingView *)arg1;
+- (UIView *)viewForPageInPagingView:(OFUIPagingView *)arg1 atIndex:(long long)arg2;
 
 @optional
 

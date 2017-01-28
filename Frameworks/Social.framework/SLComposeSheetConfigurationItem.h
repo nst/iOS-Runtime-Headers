@@ -4,28 +4,28 @@
 
 @interface SLComposeSheetConfigurationItem : NSObject {
     <SLComposeSheetConfigurationItemObserving> * _changeObserver;
-    id /* block */  _tapHandler;
+    id  _tapHandler;
     NSString * _title;
     NSString * _value;
-    BOOL  _valuePending;
+    bool  _valuePending;
 }
 
-@property (nonatomic, copy) id /* block */ tapHandler;
+@property (nonatomic, copy) id tapHandler;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *value;
-@property (nonatomic) BOOL valuePending;
+@property (nonatomic) bool valuePending;
 
 - (void).cxx_destruct;
 - (id)changeObserver;
 - (id)init;
 - (void)setChangeObserver:(id)arg1;
-- (void)setTapHandler:(id /* block */)arg1;
+- (void)setTapHandler:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)setValuePending:(BOOL)arg1;
-- (id /* block */)tapHandler;
+- (void)setValuePending:(bool)arg1;
+- (id)tapHandler;
 - (id)title;
 - (id)value;
-- (BOOL)valuePending;
+- (bool)valuePending;
 
 @end

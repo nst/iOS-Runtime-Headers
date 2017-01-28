@@ -6,6 +6,6 @@
 @required
 
 - (NSString *)downloadBackgroundTaskName;
-- (void)fileDownloadDidFinish:(_WKDownload *)arg1 withPath:(NSString *)arg2 withType:(int)arg3 withSourceURL:(NSURL *)arg4;
+- (void)fileDownloadDidFinish:(_WKDownload *)arg1 withPath:(NSString *)arg2 withType:(long long)arg3 withSourceURL:(NSURL *)arg4;
 
 @end

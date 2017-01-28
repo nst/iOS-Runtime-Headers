@@ -17,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property PHAExecutive *executive;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) NSObject<OS_dispatch_semaphore> *invalidationSemaphore;
 @property (retain) PHAManager *photoAnalysisManager;
 @property (retain) id serviceUnavailableHandler;
@@ -26,10 +26,10 @@
 @property (retain) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
-- (void)cancelOperationsWithIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
+- (void)cancelOperationsWithIdentifiers:(id)arg1 context:(id)arg2 reply:(id)arg3;
 - (id)cancelableOperationsById;
 - (id)clientBundleID;
-- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(bool)arg3;
 - (id)contextInformationFromInvocation:(id)arg1;
 - (id)description;
 - (id)executive;
@@ -49,7 +49,7 @@
 - (void)setXpcConnection:(id)arg1;
 - (id)sharedOperationLock;
 - (void)shutdown;
-- (void)submitBlockToExecutiveStateQueue:(id /* block */)arg1;
+- (void)submitBlockToExecutiveStateQueue:(id)arg1;
 - (id)xpcConnection;
 
 @end

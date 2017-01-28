@@ -16,7 +16,7 @@
 - (void)_addSubviews;
 - (id)amountText;
 - (id)descriptionText;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)setAmountText:(id)arg1;
 - (void)setDescriptionText:(id)arg1;

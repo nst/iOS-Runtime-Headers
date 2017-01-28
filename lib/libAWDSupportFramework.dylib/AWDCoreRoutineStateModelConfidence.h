@@ -16,10 +16,10 @@
 }
 
 @property (nonatomic) unsigned int confidence;
-@property (nonatomic) BOOL hasConfidence;
-@property (nonatomic) BOOL hasImpossibleTransitions;
-@property (nonatomic) BOOL hasNearbyLocations;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasConfidence;
+@property (nonatomic) bool hasImpossibleTransitions;
+@property (nonatomic) bool hasNearbyLocations;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned int impossibleTransitions;
 @property (nonatomic) unsigned int nearbyLocations;
 @property (nonatomic) unsigned long long timestamp;
@@ -29,21 +29,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConfidence;
-- (BOOL)hasImpossibleTransitions;
-- (BOOL)hasNearbyLocations;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
+- (bool)hasConfidence;
+- (bool)hasImpossibleTransitions;
+- (bool)hasNearbyLocations;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
 - (unsigned int)impossibleTransitions;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)nearbyLocations;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setConfidence:(unsigned int)arg1;
-- (void)setHasConfidence:(BOOL)arg1;
-- (void)setHasImpossibleTransitions:(BOOL)arg1;
-- (void)setHasNearbyLocations:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasConfidence:(bool)arg1;
+- (void)setHasImpossibleTransitions:(bool)arg1;
+- (void)setHasNearbyLocations:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setImpossibleTransitions:(unsigned int)arg1;
 - (void)setNearbyLocations:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

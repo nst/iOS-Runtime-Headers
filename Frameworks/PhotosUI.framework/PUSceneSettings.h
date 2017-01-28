@@ -3,16 +3,16 @@
  */
 
 @interface PUSceneSettings : PUSettings {
-    BOOL  _showConfidenceOverlay;
+    bool  _showConfidenceOverlay;
 }
 
-@property (nonatomic) BOOL showConfidenceOverlay;
+@property (nonatomic) bool showConfidenceOverlay;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
 
 - (void)setDefaultValues;
-- (void)setShowConfidenceOverlay:(BOOL)arg1;
-- (BOOL)showConfidenceOverlay;
+- (void)setShowConfidenceOverlay:(bool)arg1;
+- (bool)showConfidenceOverlay;
 
 @end

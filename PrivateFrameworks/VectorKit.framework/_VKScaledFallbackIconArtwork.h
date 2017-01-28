@@ -11,6 +11,6 @@
 - (id)_newImageWithText:(id)arg1 fontName:(id)arg2;
 - (id)_newScaledImage:(id)arg1;
 - (void)dealloc;
-- (id)initWithArtwork:(id)arg1 contentScale:(float)arg2;
+- (id)initWithArtwork:(id)arg1 contentScale:(double)arg2;
 
 @end

@@ -3,41 +3,34 @@
  */
 
 @interface FCEditorialCatchUpOperation : FCOperation {
+    id  _catchUpCompletionHandler;
     FCCloudContext * _context;
     NSDate * _date;
-    <FCChannelProviding> * _editorialChannel;
-    NSArray * _editorialSections;
     NSError * _error;
-    NSDictionary * _feedContextByFeedID;
-    NSArray * _feedItems;
+    NSArray * _sectionGroups;
 }
 
+@property (copy) id catchUpCompletionHandler;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, retain) NSDate *date;
-@property (copy) <FCChannelProviding> *editorialChannel;
-@property (copy) NSArray *editorialSections;
 @property (retain) NSError *error;
-@property (copy) NSDictionary *feedContextByFeedID;
-@property (copy) NSArray *feedItems;
+@property (copy) NSArray *sectionGroups;
 
 - (void).cxx_destruct;
-- (void)_checkShouldShowEditorialWithCompletionHandler:(id /* block */)arg1;
+- (void)_checkShouldShowEditorialWithCompletionHandler:(id)arg1;
+- (id)catchUpCompletionHandler;
 - (id)context;
 - (id)date;
-- (id)editorialChannel;
-- (id)editorialSections;
+- (void)enumerateEditorialSectionsByRecencyWithBlock:(id)arg1;
 - (id)error;
-- (id)feedContextByFeedID;
-- (id)feedItems;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (id)sectionGroups;
+- (void)setCatchUpCompletionHandler:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDate:(id)arg1;
-- (void)setEditorialChannel:(id)arg1;
-- (void)setEditorialSections:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setFeedContextByFeedID:(id)arg1;
-- (void)setFeedItems:(id)arg1;
-- (BOOL)validateOperation;
+- (void)setSectionGroups:(id)arg1;
+- (bool)validateOperation;
 
 @end

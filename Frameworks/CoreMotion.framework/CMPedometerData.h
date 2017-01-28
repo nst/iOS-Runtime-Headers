@@ -29,10 +29,10 @@
 @property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, readonly) NSNumber *floorsAscended;
 @property (nonatomic, readonly) NSNumber *floorsDescended;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSNumber *numberOfPushes;
 @property (nonatomic, readonly) NSNumber *numberOfSteps;
-@property (nonatomic, readonly) int recordId;
+@property (nonatomic, readonly) long long recordId;
 @property (nonatomic, readonly) NSUUID *sourceId;
 @property (nonatomic, readonly) NSDate *startDate;
 @property (readonly) Class superclass;
@@ -41,7 +41,7 @@
 // Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
 
 + (id)maxPedometerEntries;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)activeTime;
 - (id)averageActivePace;
@@ -56,12 +56,12 @@
 - (id)floorsAscended;
 - (id)floorsDescended;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorsAscended:(id)arg5 floorsDescended:(id)arg6 recordID:(int)arg7 currentPace:(id)arg8 currentCadence:(id)arg9 activeTime:(id)arg10 sourceId:(id)arg11 isOdometerDistance:(id)arg12 isOdometerPace:(id)arg13 pushes:(int)arg14 workoutType:(int)arg15;
-- (BOOL)isOdometerDistance;
-- (BOOL)isOdometerPace;
+- (id)initWithStartDate:(double)arg1 endDate:(double)arg2 steps:(int)arg3 distance:(double)arg4 floorsAscended:(id)arg5 floorsDescended:(id)arg6 recordID:(long long)arg7 currentPace:(id)arg8 currentCadence:(id)arg9 activeTime:(id)arg10 sourceId:(id)arg11 isOdometerDistance:(id)arg12 isOdometerPace:(id)arg13 pushes:(int)arg14 workoutType:(int)arg15;
+- (bool)isOdometerDistance;
+- (bool)isOdometerPace;
 - (id)numberOfPushes;
 - (id)numberOfSteps;
-- (int)recordId;
+- (long long)recordId;
 - (id)sourceId;
 - (id)startDate;
 - (id)workoutType;
@@ -69,6 +69,6 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 - (id)date;
-- (int)recordID;
+- (long long)recordID;
 
 @end

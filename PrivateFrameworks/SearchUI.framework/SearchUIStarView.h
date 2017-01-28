@@ -3,20 +3,20 @@
  */
 
 @interface SearchUIStarView : NUIContainerStackView {
-    float  _currentStarRating;
+    double  _currentStarRating;
 }
 
-@property float currentStarRating;
+@property double currentStarRating;
 
 + (id)emptyStar;
 + (id)fullStar;
 + (id)halfStar;
 + (id)starImageWithName:(id)arg1;
 
-- (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
-- (float)currentStarRating;
+- (struct CGSize { double x1; double x2; })_intrinsicSizeWithinSize:(struct CGSize { double x1; double x2; })arg1;
+- (double)currentStarRating;
 - (id)init;
-- (void)setCurrentStarRating:(float)arg1;
-- (void)updateStarRating:(float)arg1;
+- (void)setCurrentStarRating:(double)arg1;
+- (void)updateStarRating:(double)arg1;
 
 @end

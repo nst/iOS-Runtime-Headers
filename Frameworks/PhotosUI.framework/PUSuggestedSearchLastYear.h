@@ -5,7 +5,7 @@
 @interface PUSuggestedSearchLastYear : PUSuggestedSearch
 
 - (void)_inqRestart;
-- (void)_inqRestartSynchronous:(BOOL)arg1;
+- (void)_inqRestartSynchronous:(bool)arg1;
 - (id)init;
 
 @end

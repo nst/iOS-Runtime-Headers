@@ -16,11 +16,11 @@
 @property (nonatomic) <CXCallObserverDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_performDelegateCallback:(id /* block */)arg1;
+- (void)_performDelegateCallback:(id)arg1;
 - (id)calls;
 - (id)concurrentQueue;
 - (id)dataSource;

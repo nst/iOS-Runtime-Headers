@@ -6,11 +6,11 @@
 @required
 
 - (NSString *)articleID;
-- (unsigned int)articleLikingStatus;
-- (BOOL)hasArticleBeenConsumed;
-- (BOOL)hasArticleBeenMarkedOffensive;
-- (BOOL)hasArticleBeenRead;
-- (BOOL)hasArticleBeenSeen;
+- (unsigned long long)articleLikingStatus;
+- (bool)hasArticleBeenConsumed;
+- (bool)hasArticleBeenMarkedOffensive;
+- (bool)hasArticleBeenRead;
+- (bool)hasArticleBeenSeen;
 - (NSString *)identifier;
 - (NSDate *)lastVisitedAt;
 - (unsigned long long)maxVersionRead;

@@ -5,18 +5,18 @@
 @interface SKUIMediaSocialSuggestedHandlesOperation : SSVComplexOperation {
     SKUIClientContext * _clientContext;
     NSLock * _lock;
-    id /* block */  _outputBlock;
+    id  _outputBlock;
     NSArray * _words;
 }
 
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 @property (copy) NSArray *words;
 
 - (void).cxx_destruct;
 - (id)initWithClientContext:(id)arg1;
 - (void)main;
-- (id /* block */)outputBlock;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (id)outputBlock;
+- (void)setOutputBlock:(id)arg1;
 - (void)setWords:(id)arg1;
 - (id)words;
 

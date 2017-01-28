@@ -4,7 +4,7 @@
 
 @interface SearchUIKeyValueDataCardSectionView : SearchUICardSectionView
 
-- (id)containerOfVerticalStrings:(id)arg1 vibrant:(BOOL)arg2;
+- (id)containerOfVerticalStrings:(id)arg1 vibrant:(bool)arg2;
 - (id)initWithCardSection:(id)arg1 controller:(id)arg2;
 
 @end

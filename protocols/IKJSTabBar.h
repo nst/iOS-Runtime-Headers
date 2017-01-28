@@ -3,11 +3,4 @@
 
 @protocol IKJSTabBar <JSExport>
 
-@required
-
-- (IKJSTabBarItem *)selectedTab;
-- (void)setSelectedTab:(IKJSTabBarItem *)arg1;
-- (NSArray *)tabs;
-- (IKJSTabBarItem *)transientTab;
-
 @end

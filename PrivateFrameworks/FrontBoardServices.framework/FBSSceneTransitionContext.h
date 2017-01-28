@@ -15,7 +15,7 @@
 @property (nonatomic, copy) BSAnimationSettings *animationSettings;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
@@ -31,10 +31,10 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)otherSettings;
 - (void)setActions:(id)arg1;
@@ -43,10 +43,10 @@
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (id)transientLocalClientSettings;
-- (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-- (BOOL)isUISubclass;
+- (bool)isUISubclass;
 
 @end

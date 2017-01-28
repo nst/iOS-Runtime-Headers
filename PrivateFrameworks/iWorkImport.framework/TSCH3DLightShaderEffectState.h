@@ -39,12 +39,12 @@
 - (id).cxx_construct;
 - (void)addObject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (id)objectAtIndex:(unsigned int)arg1;
+- (bool)isEqual:(id)arg1;
+- (id)objectAtIndex:(unsigned long long)arg1;
 - (const struct LightingPackageShaderEffectState { struct array<glm::detail::tmat4x4<float>, 2> { struct tmat4x4<float> { struct tvec4<float> { union { float x_1_4_1; float x_1_4_2; float x_1_4_3; } x_1_3_1; union { float x_2_4_1; float x_2_4_2; float x_2_4_3; } x_1_3_2; union { float x_3_4_1; float x_3_4_2; float x_3_4_3; } x_1_3_3; union { float x_4_4_1; float x_4_4_2; float x_4_4_3; } x_1_3_4; } x_1_2_1[4]; } x_1_1_1[2]; } x1; }*)packageState;
 - (void)removeAllObjects;
 - (void)setPackageState:(const struct LightingPackageShaderEffectState { struct array<glm::detail::tmat4x4<float>, 2> { struct tmat4x4<float> { struct tvec4<float> { union { float x_1_4_1; float x_1_4_2; float x_1_4_3; } x_1_3_1; union { float x_2_4_1; float x_2_4_2; float x_2_4_3; } x_1_3_2; union { float x_3_4_1; float x_3_4_2; float x_3_4_3; } x_1_3_3; union { float x_4_4_1; float x_4_4_2; float x_4_4_3; } x_1_3_4; } x_1_2_1[4]; } x_1_1_1[2]; } x1; }*)arg1;

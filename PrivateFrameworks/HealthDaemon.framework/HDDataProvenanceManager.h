@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSNumber *deviceNoneID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSNumber *localDeviceID;
 @property (nonatomic, copy) NSString *localProductType;
 @property (nonatomic, readonly) NSNumber *localSourceID;

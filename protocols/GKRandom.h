@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)nextBool;
-- (int)nextInt;
-- (unsigned int)nextIntWithUpperBound:(unsigned int)arg1;
+- (bool)nextBool;
+- (long long)nextInt;
+- (unsigned long long)nextIntWithUpperBound:(unsigned long long)arg1;
 - (float)nextUniform;
 
 @end

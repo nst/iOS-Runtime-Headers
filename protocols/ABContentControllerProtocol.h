@@ -5,7 +5,7 @@
 
 @required
 
-- (void)back:(BOOL)arg1 save:(BOOL)arg2;
+- (void)back:(bool)arg1 save:(bool)arg2;
 - (void)reload;
 
 @end

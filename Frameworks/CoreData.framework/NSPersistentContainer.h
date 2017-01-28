@@ -27,12 +27,12 @@
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 managedObjectModel:(id)arg2;
-- (BOOL)load:(id*)arg1;
-- (void)loadPersistentStoresWithCompletionHandler:(id /* block */)arg1;
+- (bool)load:(id*)arg1;
+- (void)loadPersistentStoresWithCompletionHandler:(id)arg1;
 - (id)managedObjectModel;
 - (id)name;
 - (id)newBackgroundContext;
-- (void)performBackgroundTask:(id /* block */)arg1;
+- (void)performBackgroundTask:(id)arg1;
 - (id)persistentStoreCoordinator;
 - (id)persistentStoreDescriptions;
 - (void)setPersistentStoreDescriptions:(id)arg1;

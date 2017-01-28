@@ -4,6 +4,6 @@
 
 @interface IKHeadElement : IKViewElement
 
-+ (BOOL)shouldParseChildDOMElement:(id)arg1;
++ (bool)shouldParseChildDOMElement:(id)arg1;
 
 @end

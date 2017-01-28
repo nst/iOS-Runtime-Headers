@@ -6,7 +6,7 @@
 @required
 
 - (void)personalizationCellDidChangeValue:(PKPassPersonalizationCell *)arg1;
-- (BOOL)personalizationCellShouldBeginEditing:(PKPassPersonalizationCell *)arg1;
-- (BOOL)personalizationCellShouldReturn:(PKPassPersonalizationCell *)arg1;
+- (bool)personalizationCellShouldBeginEditing:(PKPassPersonalizationCell *)arg1;
+- (bool)personalizationCellShouldReturn:(PKPassPersonalizationCell *)arg1;
 
 @end

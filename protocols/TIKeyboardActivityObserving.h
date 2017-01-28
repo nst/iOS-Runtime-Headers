@@ -9,6 +9,6 @@
 
 @optional
 
-- (void)handleMemoryPressureLevel:(unsigned int)arg1 excessMemoryInBytes:(unsigned int)arg2;
+- (void)handleMemoryPressureLevel:(unsigned long long)arg1 excessMemoryInBytes:(unsigned long long)arg2;
 
 @end

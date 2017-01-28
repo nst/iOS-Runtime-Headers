@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic) TSTTableInfo *tableInfo;
 
@@ -27,12 +27,12 @@
 - (void)registerWithCalculationEngine:(id)arg1;
 - (void)setOwnerID:(struct __CFUUID { }*)arg1;
 - (void)setTableInfo:(id)arg1;
-- (BOOL)shouldRewriteOnCellMerge;
-- (BOOL)shouldRewriteOnRangeMove;
-- (BOOL)shouldRewriteOnSort;
-- (BOOL)shouldRewriteOnTableIDReassignment;
-- (BOOL)shouldRewriteOnTectonicShift;
-- (BOOL)shouldRewriteOnTranspose;
+- (bool)shouldRewriteOnCellMerge;
+- (bool)shouldRewriteOnRangeMove;
+- (bool)shouldRewriteOnSort;
+- (bool)shouldRewriteOnTableIDReassignment;
+- (bool)shouldRewriteOnTectonicShift;
+- (bool)shouldRewriteOnTranspose;
 - (id)tableInfo;
 - (void)trackedReferenceWasDeleted:(id)arg1 fromOwnerID:(struct __CFUUID { }*)arg2;
 - (void)unregisterFromCalculationEngine;

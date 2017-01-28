@@ -4,7 +4,7 @@
 
 @interface VMUProcessDescription : NSObject <VMULibraryLoadDelegate> {
     NSDictionary * _binaryImageHints;
-    BOOL  _binaryImagePostProcessingComplete;
+    bool  _binaryImagePostProcessingComplete;
     NSMutableArray * _binaryImages;
     NSDictionary * _buildVersionDictionary;
     int  _cpuType;
@@ -12,9 +12,9 @@
     NSMutableDictionary * _environment;
     unsigned long long  _executableLoadAddress;
     NSString * _executablePath;
-    BOOL  _executablePathNeedsCorrection;
+    bool  _executablePathNeedsCorrection;
     NSString * _hardwareModel;
-    BOOL  _is64Bit;
+    bool  _is64Bit;
     _VMULibraryLoadObserver * _loadUnloadObserver;
     NSDictionary * _lsApplicationInformation;
     struct mapped_memory_t { } * _mappedMemory;
@@ -24,20 +24,20 @@
     int  _pid;
     int  _ppid;
     struct timeval { 
-        int tv_sec; 
+        long long tv_sec; 
         int tv_usec; 
     }  _proc_starttime;
     NSString * _processName;
-    BOOL  _processNameNeedsCorrection;
+    bool  _processNameNeedsCorrection;
     NSArray * _sortedBinaryImages;
     unsigned int  _task;
-    BOOL  _taskIsCorpse;
+    bool  _taskIsCorpse;
     NSArray * _unreadableBinaryImagePaths;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)parseBinaryImagesDescription:(id)arg1;
@@ -47,7 +47,7 @@
 - (id)_buildVersionDictionary;
 - (id)_bundleLock;
 - (id)_cpuTypeDescription;
-- (void)_libraryLoaded:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
+- (void)_libraryLoaded:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
 - (id)_osVersionDictionary;
 - (id)_rangesOfBinaryImages:(id)arg1 forBacktraces:(id)arg2;
 - (id)_sanitizeVersion:(id)arg1;
@@ -65,12 +65,12 @@
 - (id)description;
 - (id)displayName;
 - (id)executablePath;
-- (BOOL)initFromCorpse;
+- (bool)initFromCorpse;
 - (void)initFromLiveProcess;
 - (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2;
-- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2 getBinariesList:(BOOL)arg3;
-- (BOOL)is64Bit;
-- (BOOL)isAppleApplication;
+- (id)initWithPid:(int)arg1 orTask:(unsigned int)arg2 getBinariesList:(bool)arg3;
+- (bool)is64Bit;
+- (bool)isAppleApplication;
 - (id)parentProcessName;
 - (int)pid;
 - (id)processDescriptionHeader;

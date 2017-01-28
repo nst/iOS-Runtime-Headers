@@ -6,11 +6,11 @@
 @required
 
 - (void)deliverWorkoutEvent:(_HKWorkoutEvent *)arg1 forSessionUUID:(NSUUID *)arg2;
-- (void)deliverWorkoutSessionChangedToState:(int)arg1 fromState:(int)arg2 date:(NSDate *)arg3 forSessionUUID:(NSUUID *)arg4;
+- (void)deliverWorkoutSessionChangedToState:(long long)arg1 fromState:(long long)arg2 date:(NSDate *)arg3 forSessionUUID:(NSUUID *)arg4;
 - (void)deliverWorkoutSessionError:(NSError *)arg1 forSessionUUID:(NSUUID *)arg2;
 - (_HKFirstPartyWorkoutSnapshot *)firstPartyWorkoutSnapshot;
 - (void)invalidate;
-- (void)pauseActiveWorkoutsWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)pauseActiveWorkoutsWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 - (void)start;
 
 @end

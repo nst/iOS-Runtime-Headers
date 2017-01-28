@@ -4,7 +4,7 @@
 
 @interface _HDAchievementState : NSObject {
     NSCalendar * _calendar;
-    int  _consecutiveGoalsMet;
+    long long  _consecutiveGoalsMet;
     long long  _firstCheckedActivitySummaryIndex;
     long long  _lastCheckedActivitySummaryIndex;
     NSDate * _lastPerfectWeekDate;
@@ -15,7 +15,7 @@
 }
 
 @property (nonatomic, readonly) NSCalendar *calendar;
-@property (nonatomic) int consecutiveGoalsMet;
+@property (nonatomic) long long consecutiveGoalsMet;
 @property (nonatomic) long long firstCheckedActivitySummaryIndex;
 @property (nonatomic) long long lastCheckedActivitySummaryIndex;
 @property (nonatomic, retain) NSDate *lastPerfectWeekDate;
@@ -26,14 +26,14 @@
 
 - (void).cxx_destruct;
 - (id)calendar;
-- (int)consecutiveGoalsMet;
+- (long long)consecutiveGoalsMet;
 - (long long)firstCheckedActivitySummaryIndex;
 - (id)initWithCalendar:(id)arg1 now:(id)arg2;
 - (long long)lastCheckedActivitySummaryIndex;
 - (id)lastPerfectWeekDate;
 - (long long)lastResetSummaryIndexForStreaks;
 - (id)now;
-- (void)setConsecutiveGoalsMet:(int)arg1;
+- (void)setConsecutiveGoalsMet:(long long)arg1;
 - (void)setFirstCheckedActivitySummaryIndex:(long long)arg1;
 - (void)setLastCheckedActivitySummaryIndex:(long long)arg1;
 - (void)setLastPerfectWeekDate:(id)arg1;

@@ -3,8 +3,9 @@
  */
 
 @interface _ATXAggregateLogger : NSObject {
+    PETScalarEventTracker * _allLaunchesPredictionTracker;
     PETScalarEventTracker * _appOutcomeTracker;
-    int  _buildType;
+    long long  _buildType;
     _ATXBundleIdSet * _bundleIdSet;
     PETScalarEventTracker * _conversionPositionTracker;
     PETScalarEventTracker * _conversionTracker;
@@ -19,19 +20,22 @@
     PETDistributionEventTracker * _scoreTracker;
 }
 
-+ (BOOL)isConversionOutcome:(unsigned int)arg1;
++ (id)_launchReasonToPropertyString;
++ (bool)isConversionOutcome:(unsigned long long)arg1;
 + (id)predictedItemOutcomesMapping;
 + (id)predictionOutcomesMapping;
++ (id)propertyStringForLaunchReason:(id)arg1;
 + (id)sharedInstance;
-+ (id)stringForPredictedItemOutcome:(unsigned int)arg1;
-+ (id)stringForPredictionOutcome:(unsigned int)arg1;
-+ (BOOL)yesWithProbability:(double)arg1;
++ (id)stringForPredictedItemOutcome:(unsigned long long)arg1;
++ (id)stringForPredictionOutcome:(unsigned long long)arg1;
++ (bool)yesWithProbability:(double)arg1;
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)logInputs:(double*)arg1 andScore:(double)arg2 withOutcome:(unsigned int)arg3;
-- (void)logPredictionEventWith:(unsigned int)arg1 shownItemsAndOutcome:(unsigned int)arg2 forABGroup:(id)arg3 consumerType:(unsigned int)arg4 andSubType:(unsigned char)arg5;
-- (void)logPredictionEventWithMagicalMoments:(BOOL)arg1 magicalMomentsOverlap:(BOOL)arg2 heroApp:(BOOL)arg3 heroAppOverlap:(BOOL)arg4 consumerType:(unsigned int)arg5 consumerSubType:(unsigned char)arg6 reason:(int)arg7 andOutcome:(unsigned int)arg8;
-- (void)logPredictionOfAppWithBundleId:(id)arg1 inputs:(double*)arg2 outcome:(unsigned int)arg3 rank:(int)arg4 score:(double)arg5 forABGroup:(id)arg6;
+- (void)logInputs:(double*)arg1 andScore:(double)arg2 withOutcome:(unsigned long long)arg3;
+- (void)logLaunchEventWithLaunchReason:(id)arg1 predicted:(bool)arg2 position:(long long)arg3;
+- (void)logPredictionEventWith:(unsigned long long)arg1 shownItemsAndOutcome:(unsigned long long)arg2 forABGroup:(id)arg3 consumerType:(unsigned long long)arg4 andSubType:(unsigned char)arg5;
+- (void)logPredictionEventWithMagicalMoments:(bool)arg1 magicalMomentsOverlap:(bool)arg2 heroApp:(bool)arg3 heroAppOverlap:(bool)arg4 consumerType:(unsigned long long)arg5 consumerSubType:(unsigned char)arg6 reason:(long long)arg7 andOutcome:(unsigned long long)arg8;
+- (void)logPredictionOfAppWithBundleId:(id)arg1 inputs:(double*)arg2 outcome:(unsigned long long)arg3 rank:(int)arg4 score:(double)arg5 forABGroup:(id)arg6;
 
 @end

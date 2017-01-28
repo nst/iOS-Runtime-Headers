@@ -4,8 +4,8 @@
 
 @interface RemoteUIWebViewController : UIViewController <UIWebViewDelegate> {
     <RemoteUIWebViewControllerDelegate> * _delegate;
-    id /* block */  _loadCompletion;
-    BOOL  _scalesPageToFit;
+    id  _loadCompletion;
+    bool  _scalesPageToFit;
     _UIBackdropView * _statusBarBackdrop;
     UIToolbar * _toolbar;
     UIWebView * _webView;
@@ -14,8 +14,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RemoteUIWebViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL scalesPageToFit;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool scalesPageToFit;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIToolbar *toolbar;
 @property (nonatomic, readonly) UIWebView *webView;
@@ -25,10 +25,10 @@
 - (id)delegate;
 - (void)donePressed:(id)arg1;
 - (void)loadURL:(id)arg1;
-- (void)loadURL:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)scalesPageToFit;
+- (void)loadURL:(id)arg1 completion:(id)arg2;
+- (bool)scalesPageToFit;
 - (void)setDelegate:(id)arg1;
-- (void)setScalesPageToFit:(BOOL)arg1;
+- (void)setScalesPageToFit:(bool)arg1;
 - (id)toolbar;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

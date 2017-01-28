@@ -6,9 +6,9 @@
 
 + (id)_extractElementURL:(id)arg1;
 + (id)_mailDropClassName:(id)arg1;
-+ (BOOL)isMailDropBanner:(id)arg1;
-+ (BOOL)isMailDropClass:(id)arg1;
-+ (BOOL)isMailDropItem:(id)arg1;
++ (bool)isMailDropBanner:(id)arg1;
++ (bool)isMailDropClass:(id)arg1;
++ (bool)isMailDropItem:(id)arg1;
 + (id)metadataWithDictionary:(id)arg1;
 + (id)parseElement:(id)arg1;
 

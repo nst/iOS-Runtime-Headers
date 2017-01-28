@@ -16,7 +16,7 @@
 @property (nonatomic, readonly) unsigned int languageOptionType;
 @property (nonatomic, readonly) NSString *languageTag;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)displayName;

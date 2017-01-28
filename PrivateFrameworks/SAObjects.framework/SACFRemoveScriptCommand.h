@@ -11,7 +11,7 @@
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)requiresResponse;
+- (bool)requiresResponse;
 - (id)scriptIdentifiers;
 - (void)setScriptIdentifiers:(id)arg1;
 

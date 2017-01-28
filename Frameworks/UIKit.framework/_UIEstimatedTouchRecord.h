@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)addTouchable:(id)arg1;
 - (id)contextID;
-- (void)dispatchUpdateWithPressure:(float)arg1 stillEstimated:(BOOL)arg2;
+- (void)dispatchUpdateWithPressure:(double)arg1 stillEstimated:(bool)arg2;
 - (id)frozenTouch;
 - (id)initWithLiveTouch:(id)arg1 freezeTouch:(id)arg2 contextID:(id)arg3;
 - (id)liveTouch;

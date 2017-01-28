@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSHashTable *delegates;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *devices;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSArray *inputDevices;
 @property (nonatomic, readonly) NSArray *outputDevices;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *serialQueue;

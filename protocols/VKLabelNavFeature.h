@@ -5,13 +5,13 @@
 
 @required
 
-- (int)intraRoadPriority;
-- (BOOL)isAwayFromRoute;
-- (BOOL)isGuidanceStepStart;
-- (BOOL)isInGuidance;
-- (BOOL)isOnRoute;
-- (BOOL)isRamp;
-- (BOOL)isStartOfRoadName;
+- (long long)intraRoadPriority;
+- (bool)isAwayFromRoute;
+- (bool)isGuidanceStepStart;
+- (bool)isInGuidance;
+- (bool)isOnRoute;
+- (bool)isRamp;
+- (bool)isStartOfRoadName;
 - (void)layoutWithNavContext:(struct NavContext { int (**x1)(); struct LabelManager {} *x2; }*)arg1;
 - (NSString *)name;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeOffset;

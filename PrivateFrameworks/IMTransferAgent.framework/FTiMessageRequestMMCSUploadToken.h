@@ -5,12 +5,12 @@
 @interface FTiMessageRequestMMCSUploadToken : IDSMessage <NSCopying> {
     NSData * _contentBody;
     NSString * _contentHeaders;
-    int  _contentVersion;
+    long long  _contentVersion;
     NSNumber * _length;
     NSString * _responseAuthToken;
     NSData * _responseContentBody;
     NSString * _responseContentHeaders;
-    int  _responseContentVersion;
+    long long  _responseContentVersion;
     NSString * _responseRequestURL;
     NSString * _responseRequestorID;
     NSData * _signature;
@@ -18,20 +18,20 @@
 
 @property (copy) NSData *contentBody;
 @property (copy) NSString *contentHeaders;
-@property int contentVersion;
+@property long long contentVersion;
 @property (copy) NSNumber *length;
 @property (copy) NSString *responseAuthToken;
 @property (copy) NSData *responseContentBody;
 @property (copy) NSString *responseContentHeaders;
-@property int responseContentVersion;
+@property long long responseContentVersion;
 @property (copy) NSString *responseRequestURL;
 @property (copy) NSString *responseRequestorID;
 @property (copy) NSData *signature;
 
-- (int)command;
+- (long long)command;
 - (id)contentBody;
 - (id)contentHeaders;
-- (int)contentVersion;
+- (long long)contentVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)handleResponseDictionary:(id)arg1;
@@ -40,20 +40,20 @@
 - (id)messageBody;
 - (id)requiredKeys;
 - (id)responseAuthToken;
-- (int)responseCommand;
+- (long long)responseCommand;
 - (id)responseContentBody;
 - (id)responseContentHeaders;
-- (int)responseContentVersion;
+- (long long)responseContentVersion;
 - (id)responseRequestURL;
 - (id)responseRequestorID;
 - (void)setContentBody:(id)arg1;
 - (void)setContentHeaders:(id)arg1;
-- (void)setContentVersion:(int)arg1;
+- (void)setContentVersion:(long long)arg1;
 - (void)setLength:(id)arg1;
 - (void)setResponseAuthToken:(id)arg1;
 - (void)setResponseContentBody:(id)arg1;
 - (void)setResponseContentHeaders:(id)arg1;
-- (void)setResponseContentVersion:(int)arg1;
+- (void)setResponseContentVersion:(long long)arg1;
 - (void)setResponseRequestURL:(id)arg1;
 - (void)setResponseRequestorID:(id)arg1;
 - (void)setSignature:(id)arg1;

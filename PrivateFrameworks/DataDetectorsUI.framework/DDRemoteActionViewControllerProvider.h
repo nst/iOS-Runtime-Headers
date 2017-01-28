@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)actionContext;
-- (void)createViewControllerWithCompletionHandler:(id /* block */)arg1;
+- (void)createViewControllerWithCompletionHandler:(id)arg1;
 - (id)initWithContext:(id)arg1;
 
 @end

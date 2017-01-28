@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)canHandleRequest:(WBSSiteMetadataRequest *)arg1;
-- (void)prepareResponseForRequest:(WBSSiteMetadataRequest *)arg1 allowDelayedResponse:(BOOL)arg2;
+- (bool)canHandleRequest:(WBSSiteMetadataRequest *)arg1;
+- (void)prepareResponseForRequest:(WBSSiteMetadataRequest *)arg1 allowDelayedResponse:(bool)arg2;
 - (<WBSSiteMetadataProviderDelegate> *)providerDelegate;
-- (WBSSiteMetadataResponse *)responseForRequest:(WBSSiteMetadataRequest *)arg1 willProvideUpdates:(BOOL*)arg2;
+- (WBSSiteMetadataResponse *)responseForRequest:(WBSSiteMetadataRequest *)arg1 willProvideUpdates:(bool*)arg2;
 - (void)setProviderDelegate:(id <WBSSiteMetadataProviderDelegate>)arg1;
 
 @optional

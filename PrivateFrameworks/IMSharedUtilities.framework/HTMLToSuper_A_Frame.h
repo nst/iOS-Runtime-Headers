@@ -3,7 +3,7 @@
  */
 
 @interface HTMLToSuper_A_Frame : HTMLToSuper_Default_Frame {
-    BOOL  _shouldPopLink;
+    bool  _shouldPopLink;
 }
 
 - (void)parser:(id)arg1 context:(id)arg2 didEndElement:(id)arg3 namespaceURI:(id)arg4 qualifiedName:(id)arg5;

@@ -20,11 +20,11 @@
 @property (nonatomic, readonly) MPPropertySet *requestedPropertySetExcludingInternalOnlyProperties;
 
 + (id)allSupportedInternalOnlyProperties;
-+ (id)allSupportedPropertiesIncludingInternalOnlyProperties:(BOOL)arg1;
++ (id)allSupportedPropertiesIncludingInternalOnlyProperties:(bool)arg1;
 
 - (void).cxx_destruct;
 - (id)initWithRequestedPropertySet:(id)arg1;
-- (id)modelObjectWithTitle:(id)arg1 loadAdditionalContentURL:(id)arg2 uniformContentItemType:(int)arg3 isMemberOfChartSet:(BOOL)arg4 isBrick:(BOOL)arg5 previouslyRetrievedNestedResponse:(id)arg6;
+- (id)modelObjectWithTitle:(id)arg1 loadAdditionalContentURL:(id)arg2 uniformContentItemType:(long long)arg3 isMemberOfChartSet:(bool)arg4 isBrick:(bool)arg5 previouslyRetrievedNestedResponse:(id)arg6;
 - (id)requestedPropertySet;
 - (id)requestedPropertySetExcludingInternalOnlyProperties;
 

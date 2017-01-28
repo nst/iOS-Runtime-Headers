@@ -3,9 +3,9 @@
  */
 
 @interface _NSOrderedSetDiffChange : _NSOrderedSetDiff {
-    unsigned int  _index;
+    unsigned long long  _index;
 }
 
-- (id)initWithObject:(id)arg1 index:(unsigned int)arg2;
+- (id)initWithObject:(id)arg1 index:(unsigned long long)arg2;
 
 @end

@@ -4,14 +4,14 @@
 
 @interface MusicSocialFollowOperation : MusicSocialAbstractOperation {
     NSString * _entityType;
-    BOOL  _follow;
+    bool  _follow;
     NSNumber * _storeEntityID;
 }
 
 @property (nonatomic, copy) NSNumber *storeEntityID;
 
 - (void).cxx_destruct;
-- (id)initWithEntityStoreID:(id)arg1 entityType:(id)arg2 shouldFollow:(BOOL)arg3;
+- (id)initWithEntityStoreID:(id)arg1 entityType:(id)arg2 shouldFollow:(bool)arg3;
 - (void)processResponse:(id)arg1 response:(id)arg2;
 - (id)serviceURL:(id)arg1;
 - (void)setStoreEntityID:(id)arg1;

@@ -3,15 +3,15 @@
  */
 
 @interface IFVectorOperation : NSObject <IFVectorOperation> {
-    id /* block */  _b;
+    id  _b;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)operationWithBlock:(id /* block */)arg1;
++ (id)operationWithBlock:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)operate:(id)arg1 v2:(id)arg2;

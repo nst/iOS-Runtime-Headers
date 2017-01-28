@@ -6,7 +6,7 @@
     AKController * _controller;
     NSMutableSet * _observedAnnotations;
     NSMutableSet * _observedPageModelControllers;
-    BOOL  _undoGroupHasChangesToMultipleProperties;
+    bool  _undoGroupHasChangesToMultipleProperties;
     NSMapTable * _undoGroupOldPropertiesPerAnnotation;
     NSString * _undoGroupPresentablePropertyName;
     NSUndoManager * _undoManager;
@@ -15,7 +15,7 @@
 @property AKController *controller;
 @property (retain) NSMutableSet *observedAnnotations;
 @property (retain) NSMutableSet *observedPageModelControllers;
-@property BOOL undoGroupHasChangesToMultipleProperties;
+@property bool undoGroupHasChangesToMultipleProperties;
 @property (retain) NSMapTable *undoGroupOldPropertiesPerAnnotation;
 @property (retain) NSString *undoGroupPresentablePropertyName;
 @property (retain) NSUndoManager *undoManager;
@@ -41,13 +41,13 @@
 - (void)setController:(id)arg1;
 - (void)setObservedAnnotations:(id)arg1;
 - (void)setObservedPageModelControllers:(id)arg1;
-- (void)setUndoGroupHasChangesToMultipleProperties:(BOOL)arg1;
+- (void)setUndoGroupHasChangesToMultipleProperties:(bool)arg1;
 - (void)setUndoGroupOldPropertiesPerAnnotation:(id)arg1;
 - (void)setUndoGroupPresentablePropertyName:(id)arg1;
 - (void)setUndoManager:(id)arg1;
 - (void)startObservingPageModelController:(id)arg1;
 - (void)stopObservingPageModelController:(id)arg1;
-- (BOOL)undoGroupHasChangesToMultipleProperties;
+- (bool)undoGroupHasChangesToMultipleProperties;
 - (id)undoGroupOldPropertiesPerAnnotation;
 - (id)undoGroupPresentablePropertyName;
 - (id)undoManager;

@@ -9,9 +9,9 @@
 - (struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })matrix;
 - (double)maximumTime;
 - (double)minimumTime;
-- (BOOL)resetsTransform;
+- (bool)resetsTransform;
 - (void)setMatrix:(struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x1[4]; })arg1;
-- (void)setResetsTransform:(BOOL)arg1;
+- (void)setResetsTransform:(bool)arg1;
 
 @optional
 

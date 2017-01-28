@@ -4,10 +4,10 @@
 
 @interface _UIDatePickerMode_YearMonth : _UIDatePickerMode_Date
 
-+ (int)datePickerMode;
-+ (unsigned int)extractableCalendarUnits;
++ (long long)datePickerMode;
++ (unsigned long long)extractableCalendarUnits;
 
-- (unsigned int)nextUnitLargerThanUnit:(unsigned int)arg1;
-- (unsigned int)nextUnitSmallerThanUnit:(unsigned int)arg1;
+- (unsigned long long)nextUnitLargerThanUnit:(unsigned long long)arg1;
+- (unsigned long long)nextUnitSmallerThanUnit:(unsigned long long)arg1;
 
 @end

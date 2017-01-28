@@ -10,7 +10,7 @@
     NSMutableArray * _packets;
 }
 
-@property (nonatomic) BOOL hasName;
+@property (nonatomic) bool hasName;
 @property (nonatomic) unsigned long long name;
 @property (nonatomic, retain) NSMutableArray *packets;
 
@@ -23,16 +23,16 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasName;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasName;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)name;
 - (id)packets;
-- (id)packetsAtIndex:(unsigned int)arg1;
-- (unsigned int)packetsCount;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasName:(BOOL)arg1;
+- (id)packetsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)packetsCount;
+- (bool)readFrom:(id)arg1;
+- (void)setHasName:(bool)arg1;
 - (void)setName:(unsigned long long)arg1;
 - (void)setPackets:(id)arg1;
 - (void)writeTo:(id)arg1;

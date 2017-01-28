@@ -7,7 +7,7 @@
     NSString * _emailAddress;
     NSData * _encryptedPersonalInfo;
     NSString * _phoneNumber;
-    BOOL  _shouldReportMissingIdentity;
+    bool  _shouldReportMissingIdentity;
     CKRecordID * _userRecordID;
 }
 
@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, retain) NSData *encryptedPersonalInfo;
 @property (nonatomic, copy) NSString *phoneNumber;
-@property (nonatomic) BOOL shouldReportMissingIdentity;
+@property (nonatomic) bool shouldReportMissingIdentity;
 @property (nonatomic, copy) CKRecordID *userRecordID;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
@@ -23,11 +23,11 @@
 + (id)lookupInfosWithEmails:(id)arg1;
 + (id)lookupInfosWithPhoneNumbers:(id)arg1;
 + (id)lookupInfosWithRecordIDs:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)CKDescriptionPropertiesWithPublic:(bool)arg1 private:(bool)arg2 shouldExpand:(bool)arg3;
 - (id)CKPropertiesDescription;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
 - (void)_stripPersonalInfo;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,28 +36,28 @@
 - (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;
 - (id)encryptedPersonalInfo;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1;
 - (id)initWithPhoneNumber:(id)arg1;
 - (id)initWithUserRecordID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (int)lookupField;
+- (bool)isEqual:(id)arg1;
+- (long long)lookupField;
 - (id)lookupValue;
 - (id)phoneNumber;
 - (void)setDsid:(id)arg1;
 - (void)setEmailAddress:(id)arg1;
 - (void)setEncryptedPersonalInfo:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
-- (void)setShouldReportMissingIdentity:(BOOL)arg1;
+- (void)setShouldReportMissingIdentity:(bool)arg1;
 - (void)setUserRecordID:(id)arg1;
-- (BOOL)shouldReportMissingIdentity;
+- (bool)shouldReportMissingIdentity;
 - (id)userRecordID;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (void)_decryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2 participantID:(id)arg3;
 - (void)_encryptPersonalInfoWithPCSBlob:(struct _OpaquePCSShareProtection { }*)arg1 pcsManager:(id)arg2 participantID:(id)arg3;
-- (BOOL)hasEncryptedPersonalInfo;
+- (bool)hasEncryptedPersonalInfo;
 
 @end

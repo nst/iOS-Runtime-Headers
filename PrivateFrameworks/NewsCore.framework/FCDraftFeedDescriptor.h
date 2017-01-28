@@ -14,8 +14,8 @@
 - (id)articleListID;
 - (id)feedGroupEmitters;
 - (id)feedName;
-- (int)feedType;
-- (void)fetchArticleIDsWithContext:(id)arg1 completionBlock:(id /* block */)arg2;
+- (long long)feedType;
+- (void)fetchArticleIDsWithContext:(id)arg1 completionBlock:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 articleListID:(id)arg2 name:(id)arg3;
 - (id)name;
 - (void)setFeedName:(id)arg1;

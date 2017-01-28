@@ -14,12 +14,12 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_forceDatabaseUpdateWithCompletionHandler:(id /* block */)arg1;
-- (void)_getDatabaseStatusWithCompletionHandler:(id /* block */)arg1;
-- (void)_getServiceStatusWithCompletionHandler:(id /* block */)arg1;
+- (void)_forceDatabaseUpdateWithCompletionHandler:(id)arg1;
+- (void)_getDatabaseStatusWithCompletionHandler:(id)arg1;
+- (void)_getServiceStatusWithCompletionHandler:(id)arg1;
 - (void)dealloc;
-- (void)getLastDatabaseUpdateTimeWithCompletionHandler:(id /* block */)arg1;
+- (void)getLastDatabaseUpdateTimeWithCompletionHandler:(id)arg1;
 - (id)init;
-- (void)lookUpURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)lookUpURL:(id)arg1 completionHandler:(id)arg2;
 
 @end

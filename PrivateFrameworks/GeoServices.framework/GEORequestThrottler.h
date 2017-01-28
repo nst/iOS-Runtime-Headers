@@ -10,10 +10,10 @@
 + (id)sharedThrottler;
 
 - (id)_throttlePolicyForKey:(id)arg1;
-- (BOOL)allowRequestForKey:(id)arg1;
+- (bool)allowRequestForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (unsigned int)throttleStateLevelForKey:(id)arg1;
+- (unsigned long long)throttleStateLevelForKey:(id)arg1;
 - (double)throttleStateResetTimeRemainingForKey:(id)arg1;
 
 @end

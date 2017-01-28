@@ -7,25 +7,25 @@
     UIColor * _foreground_color;
     NSString * _label;
     NTPBTopStoriesStyleConfig * _pbConfig;
-    unsigned int  _storyType;
+    unsigned long long  _storyType;
     NSString * _stringType;
 }
 
 @property (nonatomic, readonly) UIColor *background_color;
 @property (nonatomic, readonly) UIColor *foreground_color;
 @property (nonatomic, readonly) NSString *label;
-@property (nonatomic, readonly) unsigned int storyType;
+@property (nonatomic, readonly) unsigned long long storyType;
 @property (nonatomic, readonly) NSString *stringType;
 
 - (void).cxx_destruct;
 - (id)background_color;
 - (id)foreground_color;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithPBTopStoriesStyleConfig:(id)arg1;
-- (id)initWithStoryType:(unsigned int)arg1 label:(id)arg2 foregroundColor:(id)arg3 backgroundColor:(id)arg4 stringType:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithStoryType:(unsigned long long)arg1 label:(id)arg2 foregroundColor:(id)arg3 backgroundColor:(id)arg4 stringType:(id)arg5;
+- (bool)isEqual:(id)arg1;
 - (id)label;
-- (unsigned int)storyType;
+- (unsigned long long)storyType;
 - (id)stringType;
 
 @end

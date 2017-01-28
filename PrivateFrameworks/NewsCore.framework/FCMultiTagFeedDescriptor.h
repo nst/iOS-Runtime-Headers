@@ -4,11 +4,11 @@
 
 @interface FCMultiTagFeedDescriptor : FCFeedDescriptor
 
-- (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(BOOL)arg3 personalize:(BOOL)arg4 completionHandler:(id /* block */)arg5;
-- (int)feedFilterOptions;
+- (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(bool)arg3 personalize:(bool)arg4 completionHandler:(id)arg5;
+- (long long)feedFilterOptions;
 - (id)feedGroupEmitters;
-- (int)feedSortMethod;
-- (BOOL)isInboxStyleFeed;
+- (long long)feedSortMethod;
+- (bool)isInboxStyleFeed;
 - (id)name;
 
 @end

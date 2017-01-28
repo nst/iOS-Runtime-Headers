@@ -11,9 +11,9 @@
 
 - (void)activateScanner:(id)arg1;
 - (void)dealloc;
-- (id /* block */)dequeueJob;
-- (void)enqueueJob:(id /* block */)arg1;
-- (BOOL)full;
+- (id)dequeueJob;
+- (void)enqueueJob:(id)arg1;
+- (bool)full;
 - (id)getCachedScanner;
 - (id)initWithType:(int)arg1;
 - (void)pushBackScanner:(id)arg1;

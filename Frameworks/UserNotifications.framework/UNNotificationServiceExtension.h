@@ -6,11 +6,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)beginRequestWithExtensionContext:(id)arg1;
-- (void)didReceiveNotificationRequest:(id)arg1 withContentHandler:(id /* block */)arg2;
+- (void)didReceiveNotificationRequest:(id)arg1 withContentHandler:(id)arg2;
 - (id)init;
 - (void)serviceExtensionTimeWillExpire;
 

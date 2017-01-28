@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NGSGlance *glance;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) PSListController *listControllerDelegate;
 @property (nonatomic, retain) BPSInternalGlanceManager *manager;
 @property (readonly) Class superclass;

@@ -7,8 +7,8 @@
 }
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (float)rowHeight;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (double)rowHeight;
 - (void)setLabelsAndValues:(id)arg1;
 
 @end

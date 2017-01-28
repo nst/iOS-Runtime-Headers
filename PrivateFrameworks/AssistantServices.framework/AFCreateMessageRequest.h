@@ -6,7 +6,7 @@
     STSiriMessage * _message;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_initWithMessage:(id)arg1;

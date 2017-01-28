@@ -21,7 +21,7 @@
 - (void)applicationWillResignActive:(id)arg1;
 - (void)clearCallback;
 - (void)dealloc;
-- (BOOL)hasWirelessTargetsAvailable;
+- (bool)hasWirelessTargetsAvailable;
 - (id)initWithCallback:(struct MediaSessionManageriOS { int (**x1)(); int (**x2)(); int (**x3)(); unsigned int x4[4]; struct Vector<WebCore::PlatformMediaSession *, 0, WTF::CrashOnOverflow, 16> { struct PlatformMediaSession {} **x_5_1_1; unsigned int x_5_1_2; unsigned int x_5_1_3; } x5; struct unique_ptr<WebCore::RemoteCommandListener, std::__1::default_delete<WebCore::RemoteCommandListener> > { struct __compressed_pair<WebCore::RemoteCommandListener *, std::__1::default_delete<WebCore::RemoteCommandListener> > { struct RemoteCommandListener {} *x_1_2_1; } x_6_1_1; } x6; struct unique_ptr<WebCore::SystemSleepListener, std::__1::default_delete<WebCore::SystemSleepListener> > { struct __compressed_pair<WebCore::SystemSleepListener *, std::__1::default_delete<WebCore::SystemSleepListener> > { struct SystemSleepListener {} *x_1_2_1; } x_7_1_1; } x7; struct RefPtr<WebCore::AudioHardwareListener> { struct AudioHardwareListener {} *x_8_1_1; } x8; bool x9; bool x10; bool x11; struct RetainPtr<WebMediaSessionHelper> { void *x_12_1_1; } x12; double x13; double x14; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_15_1_1; } x15; }*)arg1;
 - (void)interruption:(id)arg1;
 - (void)setVolumeView:(struct RetainPtr<MPVolumeView> { void *x1; })arg1;

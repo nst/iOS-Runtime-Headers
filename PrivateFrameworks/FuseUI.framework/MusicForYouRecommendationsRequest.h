@@ -4,11 +4,11 @@
 
 @interface MusicForYouRecommendationsRequest : MPStoreModelRequest {
     MusicForYouRecommendationsResponse * _previousResponse;
-    unsigned int  _recommendationsRequestType;
+    unsigned long long  _recommendationsRequestType;
 }
 
 @property (nonatomic, retain) MusicForYouRecommendationsResponse *previousResponse;
-@property (nonatomic) unsigned int recommendationsRequestType;
+@property (nonatomic) unsigned long long recommendationsRequestType;
 
 + (id)allSupportedItemProperties;
 + (id)allSupportedSectionProperties;
@@ -17,10 +17,10 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id)arg1;
 - (id)previousResponse;
-- (unsigned int)recommendationsRequestType;
+- (unsigned long long)recommendationsRequestType;
 - (void)setPreviousResponse:(id)arg1;
-- (void)setRecommendationsRequestType:(unsigned int)arg1;
+- (void)setRecommendationsRequestType:(unsigned long long)arg1;
 
 @end

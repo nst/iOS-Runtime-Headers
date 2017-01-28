@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) id delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)initialize;
@@ -26,7 +26,7 @@
 - (void)finalize;
 - (void)getRetainedDelegate:(id*)arg1 retainedDelegateQueue:(id*)arg2;
 - (id)init;
-- (void)invokeDelegateCallbackWithBlock:(id /* block */)arg1;
+- (void)invokeDelegateCallbackWithBlock:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 
 @end

@@ -14,10 +14,10 @@
 }
 
 @property (nonatomic, retain) NSString *exceptionData;
-@property (nonatomic, readonly) BOOL hasExceptionData;
-@property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) BOOL hasType;
-@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic, readonly) bool hasExceptionData;
+@property (nonatomic) bool hasTimestamp;
+@property (nonatomic) bool hasType;
+@property (nonatomic, readonly) bool hasUuidReference;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int type;
 @property (nonatomic, retain) NSData *uuidReference;
@@ -28,17 +28,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)exceptionData;
-- (BOOL)hasExceptionData;
-- (BOOL)hasTimestamp;
-- (BOOL)hasType;
-- (BOOL)hasUuidReference;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasExceptionData;
+- (bool)hasTimestamp;
+- (bool)hasType;
+- (bool)hasUuidReference;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setExceptionData:(id)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
-- (void)setHasType:(BOOL)arg1;
+- (void)setHasTimestamp:(bool)arg1;
+- (void)setHasType:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setType:(unsigned int)arg1;
 - (void)setUuidReference:(id)arg1;

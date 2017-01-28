@@ -9,11 +9,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_headingImage:(struct CGPoint { float x1; float x2; }*)arg1;
+- (id)_headingImage:(struct CGPoint { double x1; double x2; }*)arg1;
 - (void)_updateHeadingImage;
 - (id)initWithUserLocationView:(id)arg1;
 - (void)updateHeading:(double)arg1;

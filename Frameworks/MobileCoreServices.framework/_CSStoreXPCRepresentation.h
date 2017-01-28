@@ -7,7 +7,7 @@
 }
 
 + (id)classesForXPCInterface;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (const struct __CSStore { }*)createCSStoreWithError:(id*)arg1;
 - (void)dealloc;

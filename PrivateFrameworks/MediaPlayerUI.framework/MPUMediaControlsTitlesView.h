@@ -5,37 +5,37 @@
 @interface MPUMediaControlsTitlesView : MPUNowPlayingTitlesView <MPUContentSizeCategoryChanging> {
     NSString * _appDisplayName;
     <MPUMediaControlsTitlesViewDelegate> * _delegate;
-    BOOL  _displayingAppName;
+    bool  _displayingAppName;
     CALayer * _edgesLayerMask;
-    BOOL  _highlighted;
-    int  _mediaControlsStyle;
+    bool  _highlighted;
+    long long  _mediaControlsStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MPUMediaControlsTitlesViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic, readonly) int mediaControlsStyle;
+@property (readonly) unsigned long long hash;
+@property (getter=isHighlighted, nonatomic) bool highlighted;
+@property (nonatomic, readonly) long long mediaControlsStyle;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_createEdgesLayerMask;
 - (id)_detailTextAttributes;
-- (BOOL)_isLockScreenMediaControlStyle;
-- (void)_setGlowEnabled:(BOOL)arg1 forLabel:(id)arg2;
+- (bool)_isLockScreenMediaControlStyle;
+- (void)_setGlowEnabled:(bool)arg1 forLabel:(id)arg2;
 - (id)_titleTextAttributes;
 - (void)_touchControlActivate:(id)arg1;
 - (void)_touchControlDeactivate:(id)arg1;
 - (void)_touchControlTapped:(id)arg1;
 - (id)delegate;
-- (id)detailTextColorHighlighted:(BOOL)arg1;
-- (id)initWithMediaControlsStyle:(int)arg1;
-- (BOOL)isHighlighted;
+- (id)detailTextColorHighlighted:(bool)arg1;
+- (id)initWithMediaControlsStyle:(long long)arg1;
+- (bool)isHighlighted;
 - (void)layoutSubviews;
-- (int)mediaControlsStyle;
+- (long long)mediaControlsStyle;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)updateNowPlayingAppDisplayName:(id)arg1;
 - (void)updateTextForContentSizeCategory:(id)arg1;
 - (void)updateTrackInformationWithNowPlayingInfo:(id)arg1;

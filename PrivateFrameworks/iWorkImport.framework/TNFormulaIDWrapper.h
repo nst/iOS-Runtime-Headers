@@ -15,9 +15,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (struct { unsigned int x1 : 24; unsigned int x2 : 8; })formulaID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithTNChartFormulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToTNFormulaIDWrapper:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToTNFormulaIDWrapper:(id)arg1;
 
 @end

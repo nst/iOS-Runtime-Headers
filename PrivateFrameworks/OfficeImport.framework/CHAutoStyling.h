@@ -10,7 +10,7 @@
 + (id)autoStylingWithChart:(id)arg1 drawingTheme:(id)arg2;
 
 - (void)dealloc;
-- (int)defaultMarkerStyleForSeriesIndex:(unsigned int)arg1;
+- (int)defaultMarkerStyleForSeriesIndex:(unsigned long long)arg1;
 - (id)drawingTheme;
 - (id)initWithChart:(id)arg1 drawingTheme:(id)arg2;
 - (void)replaceStrokeAndFillInEmptyMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2;

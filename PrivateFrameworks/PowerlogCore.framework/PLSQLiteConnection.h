@@ -3,7 +3,7 @@
  */
 
 @interface PLSQLiteConnection : NSObject {
-    int  _cacheSize;
+    long long  _cacheSize;
     NSString * _cachedClassName;
     struct sqlite3 { } * _dbConnection;
     NSObject<OS_dispatch_semaphore> * _dbSem;
@@ -16,7 +16,7 @@
     NSString * _transactionLock;
 }
 
-@property int cacheSize;
+@property long long cacheSize;
 @property (retain) NSString *cachedClassName;
 @property struct sqlite3 { }*dbConnection;
 @property (retain) NSObject<OS_dispatch_semaphore> *dbSem;
@@ -41,15 +41,15 @@
 - (void)beginTransaction;
 - (int)bindEntry:(id)arg1 toPreparedStatement:(id)arg2 atBindPosition:(int)arg3;
 - (void)buildColumnInsert:(id*)arg1 andValueInsert:(id*)arg2 forEntry:(id)arg3;
-- (int)cacheSize;
+- (long long)cacheSize;
 - (id)cachedClassName;
 - (void)clearTableHasTimestampColumnCache;
 - (void)closeConnection;
-- (BOOL)commonInitProcessWithFilePath:(id)arg1 withCacheSize:(int)arg2;
-- (BOOL)copyDatabaseToPath:(id)arg1;
-- (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3;
-- (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(BOOL)arg5;
-- (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(BOOL)arg5 withCacheSize:(int)arg6;
+- (bool)commonInitProcessWithFilePath:(id)arg1 withCacheSize:(long long)arg2;
+- (bool)copyDatabaseToPath:(id)arg1;
+- (bool)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3;
+- (bool)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(bool)arg5;
+- (bool)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withTableFilters:(id)arg4 vacuumDB:(bool)arg5 withCacheSize:(long long)arg6;
 - (void)createCoveringIndexOnTable:(id)arg1 forColumns:(id)arg2;
 - (void)createIndexOnTable:(id)arg1 forColumn:(id)arg2;
 - (void)createTableName:(id)arg1 withColumns:(id)arg2;
@@ -67,22 +67,22 @@
 - (id)entriesForKey:(id)arg1 withProperties:(id)arg2;
 - (id)entriesForKey:(id)arg1 withQuery:(id)arg2;
 - (int)entryCacheStorageSize;
-- (void)enumerateAllTablesWithBlock:(id /* block */)arg1;
+- (void)enumerateAllTablesWithBlock:(id)arg1;
 - (id)filePath;
 - (void)hashEntryKeyKeys:(id)arg1;
 - (id)init;
 - (id)initWithFilePath:(id)arg1;
-- (id)initWithFilePath:(id)arg1 withCacheSize:(int)arg2;
-- (id)initWithFilePath:(id)arg1 withCacheSize:(int)arg2 withFlags:(id)arg3;
+- (id)initWithFilePath:(id)arg1 withCacheSize:(long long)arg2;
+- (id)initWithFilePath:(id)arg1 withCacheSize:(long long)arg2 withFlags:(id)arg3;
 - (id)initWithFilePath:(id)arg1 withFlags:(id)arg2;
-- (BOOL)isTransactionInProgress;
+- (bool)isTransactionInProgress;
 - (void)loadArrayValuesIntoEntry:(id)arg1;
 - (void)loadDynamicValuesIntoEntry:(id)arg1;
 - (void)moveToPath:(id)arg1;
-- (BOOL)openCurrentFile;
-- (BOOL)openCurrentFileWithCacheSize:(int)arg1;
-- (BOOL)openCurrentFileWithCacheSize:(int)arg1 withFlags:(id)arg2;
-- (BOOL)passesIntegrityCheck;
+- (bool)openCurrentFile;
+- (bool)openCurrentFileWithCacheSize:(long long)arg1;
+- (bool)openCurrentFileWithCacheSize:(long long)arg1 withFlags:(id)arg2;
+- (bool)passesIntegrityCheck;
 - (id)performQuery:(id)arg1;
 - (id)performStatement:(id)arg1;
 - (id)preparedDynamicStatements;
@@ -97,7 +97,7 @@
 - (void)scheduleIntegrityCheck;
 - (double)schemaVersionForTable:(id)arg1;
 - (void)setAllNullValuesForEntryKey:(id)arg1 forKey:(id)arg2 toValue:(id)arg3 withFilters:(id)arg4;
-- (void)setCacheSize:(int)arg1;
+- (void)setCacheSize:(long long)arg1;
 - (void)setCachedClassName:(id)arg1;
 - (void)setDbConnection:(struct sqlite3 { }*)arg1;
 - (void)setDbSem:(id)arg1;
@@ -113,14 +113,14 @@
 - (id)sqlFormatedColumnNamesForTable:(id)arg1 withQuoteChar:(BOOL)arg2;
 - (id)sqlFormatedColumnNamesForTableInsert:(id)arg1;
 - (id)sqlFormatedColumnNamesForTableSelect:(id)arg1;
-- (BOOL)tableExistsForTableName:(id)arg1;
-- (BOOL)tableHasTimestampColumn:(id)arg1;
+- (bool)tableExistsForTableName:(id)arg1;
+- (bool)tableHasTimestampColumn:(id)arg1;
 - (id)tableInfo:(id)arg1;
 - (int)transactionInProgress;
 - (id)transactionLock;
 - (void)trimAllTablesFromDate:(id)arg1 toDate:(id)arg2;
 - (void)trimAllTablesFromDate:(id)arg1 toDate:(id)arg2 withTableFilters:(id)arg3;
-- (void)trimTable:(id)arg1 fromDate:(id)arg2 withFilter:(id)arg3 withTrimLimit:(long)arg4;
+- (void)trimTable:(id)arg1 fromDate:(id)arg2 withFilter:(id)arg3 withTrimLimit:(long long)arg4;
 - (void)updateEntry:(id)arg1;
 - (void)vacuum;
 - (id)workQueue;

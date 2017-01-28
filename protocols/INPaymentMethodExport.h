@@ -9,6 +9,10 @@
 - (NSString *)identificationHint;
 - (id)init;
 - (NSString *)name;
-- (int)type;
+- (void)setIcon:(INImage *)arg1;
+- (void)setIdentificationHint:(NSString *)arg1;
+- (void)setName:(NSString *)arg1;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

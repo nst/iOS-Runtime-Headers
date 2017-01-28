@@ -47,14 +47,14 @@
 - (void).cxx_destruct;
 - (id)activeInputModes;
 - (id)adaptationContext;
-- (void)addTokenString:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long)arg4;
+- (void)addTokenString:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long long)arg4;
 - (void)appleKeyboardsInternalSettingsChanged:(id)arg1;
 - (void)appleKeyboardsPreferencesChanged:(id)arg1;
-- (BOOL)bufferIsCompatibleWithContext:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg1 contextLength:(unsigned long)arg2;
+- (bool)bufferIsCompatibleWithContext:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg1 contextLength:(unsigned long long)arg2;
 - (id)bufferedTokenStrings;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)didProbabilityChangeSignificantly;
+- (bool)didProbabilityChangeSignificantly;
 - (void)feedBufferedTokenStringsToModel;
 - (id)fetchPreferredSecondaryInputMode;
 - (id)fetchUserEnabledInputModes;
@@ -70,7 +70,7 @@
 - (id)primaryInputMode;
 - (float)priorProbabilityForInputMode:(id)arg1;
 - (id)referenceInputModeProbabilities;
-- (void)removeTokenString:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long)arg4;
+- (void)removeTokenString:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long long)arg4;
 - (void)setActiveInputModes:(id)arg1;
 - (void)setAdaptationContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -79,8 +79,8 @@
 - (void)setPrimaryInputMode:(id)arg1;
 - (void)setReferenceInputModeProbabilities:(id)arg1;
 - (void)setUserEnabledInputModes:(id)arg1;
-- (void)updateActiveInputModesSuppressingNotification:(BOOL)arg1;
-- (BOOL)updateInputModeProbabilities;
+- (void)updateActiveInputModesSuppressingNotification:(bool)arg1;
+- (bool)updateInputModeProbabilities;
 - (id)userEnabledInputModes;
 
 @end

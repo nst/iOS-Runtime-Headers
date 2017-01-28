@@ -9,7 +9,7 @@
 @property (nonatomic) long long rowid;
 
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasRowid;
+- (bool)hasRowid;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (long long)rowid;

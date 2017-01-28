@@ -14,12 +14,12 @@
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
-- (id)descriptionWithPointer:(BOOL)arg1;
+- (id)descriptionWithPointer:(bool)arg1;
 - (id)device;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithTarget:(id)arg1;
 - (id)initWithTarget:(id)arg1 device:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)shortDescription;
 
 @end

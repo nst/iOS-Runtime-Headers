@@ -4,22 +4,22 @@
 
 @interface FLPreferencesController : NSObject {
     FLFollowUpController * _controller;
-    id /* block */  _itemChangeObserver;
+    id  _itemChangeObserver;
     int  _notifyToken;
 }
 
-@property (nonatomic, copy) id /* block */ itemChangeObserver;
+@property (nonatomic, copy) id itemChangeObserver;
 
 - (void).cxx_destruct;
-- (unsigned int)_countOfPendingFollowUpItemsToShowInSettings;
+- (unsigned long long)_countOfPendingFollowUpItemsToShowInSettings;
 - (id)_pendingFollowUpItemsToShowInSettings;
 - (id)_specifiersForFollowUpItem:(id)arg1;
 - (void)actionTapped:(id)arg1;
 - (void)dealloc;
 - (id)followUpItemSpecifiers;
 - (id)init;
-- (id /* block */)itemChangeObserver;
-- (void)setItemChangeObserver:(id /* block */)arg1;
+- (id)itemChangeObserver;
+- (void)setItemChangeObserver:(id)arg1;
 - (id)topLevelSpecifiers;
 
 @end

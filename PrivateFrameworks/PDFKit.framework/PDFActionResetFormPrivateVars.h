@@ -4,7 +4,7 @@
 
 @interface PDFActionResetFormPrivateVars : NSObject {
     NSArray * fields;
-    BOOL  included;
+    bool  included;
 }
 
 - (void).cxx_destruct;

@@ -10,11 +10,11 @@
 @property (nonatomic, copy) NSArray *embeddedImages;
 @property (nonatomic, copy) NSArray *embeddedLinks;
 @property (nonatomic, copy) NSArray *embeddedMentions;
-@property (nonatomic) int favoritesCount;
+@property (nonatomic) long long favoritesCount;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, retain) SAUIAppPunchOut *punchOut;
 @property (nonatomic, retain) SAMicroblogTwitterPostAuthor *retweetAuthor;
-@property (nonatomic) int retweetCount;
+@property (nonatomic) long long retweetCount;
 @property (nonatomic, copy) NSURL *webAddress;
 
 + (id)microblogSearchResultPost;
@@ -27,23 +27,23 @@
 - (id)embeddedLinks;
 - (id)embeddedMentions;
 - (id)encodedClassName;
-- (int)favoritesCount;
+- (long long)favoritesCount;
 - (id)groupIdentifier;
 - (id)location;
 - (id)punchOut;
 - (id)retweetAuthor;
-- (int)retweetCount;
+- (long long)retweetCount;
 - (void)setCreationTime:(id)arg1;
 - (void)setDecoratedContent:(id)arg1;
 - (void)setEmbeddedHashtags:(id)arg1;
 - (void)setEmbeddedImages:(id)arg1;
 - (void)setEmbeddedLinks:(id)arg1;
 - (void)setEmbeddedMentions:(id)arg1;
-- (void)setFavoritesCount:(int)arg1;
+- (void)setFavoritesCount:(long long)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setPunchOut:(id)arg1;
 - (void)setRetweetAuthor:(id)arg1;
-- (void)setRetweetCount:(int)arg1;
+- (void)setRetweetCount:(long long)arg1;
 - (void)setWebAddress:(id)arg1;
 - (id)webAddress;
 

@@ -23,7 +23,7 @@
 - (id)cssString;
 - (id)cssStringForName:(id)arg1;
 - (id)initWithColor:(id)arg1;
-- (BOOL)isEqualTo:(id)arg1;
+- (bool)isEqualTo:(id)arg1;
 - (id)value;
 
 @end

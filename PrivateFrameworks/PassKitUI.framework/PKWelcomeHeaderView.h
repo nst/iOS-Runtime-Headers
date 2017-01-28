@@ -7,29 +7,29 @@
     UIActivityIndicatorView * _activityIndicator;
     UILabel * _environmentLabel;
     NSString * _hintingLabel;
-    unsigned int  _passType;
-    BOOL  _showActivityIndicator;
-    BOOL  _showSEHinting;
+    unsigned long long  _passType;
+    bool  _showActivityIndicator;
+    bool  _showSEHinting;
     UIView * _titleView;
 }
 
 @property (nonatomic, copy) NSString *hintingLabel;
-@property (nonatomic, readonly) unsigned int passType;
-@property (nonatomic) BOOL showActivityIndicator;
-@property (nonatomic) BOOL showSEHinting;
+@property (nonatomic, readonly) unsigned long long passType;
+@property (nonatomic) bool showActivityIndicator;
+@property (nonatomic) bool showSEHinting;
 
 - (void).cxx_destruct;
 - (void)_addTapped;
 - (void)addTapped;
 - (id)hintingLabel;
 - (id)init;
-- (id)initWithPassType:(unsigned int)arg1;
+- (id)initWithPassType:(unsigned long long)arg1;
 - (void)layoutSubviews;
-- (unsigned int)passType;
+- (unsigned long long)passType;
 - (void)setHintingLabel:(id)arg1;
-- (void)setShowActivityIndicator:(BOOL)arg1;
-- (void)setShowSEHinting:(BOOL)arg1;
-- (BOOL)showActivityIndicator;
-- (BOOL)showSEHinting;
+- (void)setShowActivityIndicator:(bool)arg1;
+- (void)setShowSEHinting:(bool)arg1;
+- (bool)showActivityIndicator;
+- (bool)showSEHinting;
 
 @end

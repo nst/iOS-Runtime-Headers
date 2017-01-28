@@ -21,9 +21,9 @@
 - (id)feedbackKeyPaths;
 - (id)interactionProgressingFeedback;
 - (id)interactionUpdatedFeedback;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)progressingFeedbackDelay;
-- (int)requiredSupportLevel;
+- (long long)requiredSupportLevel;
 - (void)setInteractionProgressingFeedback:(id)arg1;
 - (void)setInteractionUpdatedFeedback:(id)arg1;
 - (void)setProgressingFeedbackDelay:(double)arg1;

@@ -6,16 +6,16 @@
     CalPreferences * _preferences;
 }
 
-@property (nonatomic) BOOL showInviteesAndMoreRegion;
-@property (nonatomic) BOOL showReportAProblemNotificationButton;
+@property (nonatomic) bool showInviteesAndMoreRegion;
+@property (nonatomic) bool showReportAProblemNotificationButton;
 
 + (id)shared;
 
 - (void).cxx_destruct;
 - (id)init;
-- (void)setShowInviteesAndMoreRegion:(BOOL)arg1;
-- (void)setShowReportAProblemNotificationButton:(BOOL)arg1;
-- (BOOL)showInviteesAndMoreRegion;
-- (BOOL)showReportAProblemNotificationButton;
+- (void)setShowInviteesAndMoreRegion:(bool)arg1;
+- (void)setShowReportAProblemNotificationButton:(bool)arg1;
+- (bool)showInviteesAndMoreRegion;
+- (bool)showReportAProblemNotificationButton;
 
 @end

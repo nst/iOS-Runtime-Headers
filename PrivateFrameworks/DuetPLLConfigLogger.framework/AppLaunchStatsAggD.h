@@ -5,8 +5,8 @@
 @interface AppLaunchStatsAggD : NSObject {
     int  BGReportToken;
     NSObject<OS_dispatch_queue> * aggDQueue;
-    id /* block */  appisFetchable;
-    unsigned long  blameReasons;
+    id  appisFetchable;
+    unsigned long long  blameReasons;
     bool  buildLaunchStats;
     int  currentFetchFailuresIndex;
     NSDate * cycleStart;
@@ -62,7 +62,7 @@
 - (void)fetchAttemptIncrement;
 - (void)fetchCountUpdate:(int)arg1;
 - (void)fetchDataCount:(int)arg1;
-- (void)fetchDeniedBecause:(bool)arg1 withPWBudget:(bool)arg2 wifiQual:(int)arg3 cellQual:(int)arg4 networkingDeferred:(bool)arg5 ignorePoorCell:(bool)arg6 incall:(bool)arg7 thermal:(bool)arg8;
+- (void)fetchDeniedBecause:(bool)arg1 withPWBudget:(bool)arg2 wifiQual:(long long)arg3 cellQual:(long long)arg4 networkingDeferred:(bool)arg5 ignorePoorCell:(bool)arg6 incall:(bool)arg7 thermal:(bool)arg8;
 - (void)fetchDeniedForReason:(int)arg1;
 - (void)fetchDeniedForReasons:(id)arg1;
 - (void)fetchDeniesIncrement;
@@ -74,13 +74,13 @@
 - (void)fetchPWCount:(int)arg1;
 - (void)fetchTimeUpdate:(long long)arg1;
 - (void)forceReleaseCount;
-- (void)incrementTriggerReason:(int)arg1;
+- (void)incrementTriggerReason:(long long)arg1;
 - (id)init;
 - (void)newCycleWithApps:(id)arg1;
 - (int)numSlotsAfterPrewarmForApp:(id)arg1 launchedAt:(id)arg2;
 - (id)pastCycle;
-- (void)populatePredictZones:(int)arg1 filter:(bool)arg2 callback:(id /* block */)arg3;
-- (void)populatePrewarmZones:(int)arg1 callback:(id /* block */)arg2;
+- (void)populatePredictZones:(int)arg1 filter:(bool)arg2 callback:(id)arg3;
+- (void)populatePrewarmZones:(int)arg1 callback:(id)arg2;
 - (void)pushAttemptIncrement:(int)arg1;
 - (void)pushDeniedBecause:(bool)arg1 withPWBudget:(bool)arg2 withConnection:(bool)arg3;
 - (void)pushDeniedForReason:(int)arg1;
@@ -93,7 +93,7 @@
 - (void)replacePredictionAtZone:(id)arg1 zoneid:(int)arg2;
 - (void)searchBlame:(id)arg1 inzone:(int)arg2 inminute:(int)arg3;
 - (void)setCollectLaunchStats;
-- (void)setFetchCapableCheck:(id /* block */)arg1;
+- (void)setFetchCapableCheck:(id)arg1;
 - (void)setPastCycle:(id)arg1;
 - (void)uploadData;
 

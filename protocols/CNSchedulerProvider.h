@@ -6,7 +6,7 @@
 @required
 
 - (<CNScheduler> *)backgroundScheduler;
-- (<CNScheduler> *)backgroundSchedulerWithQualityOfService:(unsigned int)arg1;
+- (<CNScheduler> *)backgroundSchedulerWithQualityOfService:(unsigned long long)arg1;
 - (<CNScheduler> *)immediateScheduler;
 - (<CNScheduler> *)mainThreadScheduler;
 - (<CNScheduler> *)newSerialSchedulerWithName:(NSString *)arg1;

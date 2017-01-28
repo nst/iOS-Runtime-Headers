@@ -4,8 +4,8 @@
 
 @interface KNAnimationTools : NSObject
 
-+ (BOOL)isAnimationEditorConnected;
-+ (BOOL)isAnimationImageTesterConnected;
++ (bool)isAnimationEditorConnected;
++ (bool)isAnimationImageTesterConnected;
 + (void)startAnimationToolsIfNecessary;
 
 @end

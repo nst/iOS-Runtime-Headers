@@ -4,24 +4,24 @@
 
 @interface VideosExtrasZoomingImageInteractiveTransitionSourceContext : NSObject {
     NSString * _identifier;
-    unsigned int  _itemIndex;
+    unsigned long long  _itemIndex;
     UIPinchGestureRecognizer * _pinchGestureRecognizer;
-    unsigned int  _supportedZoomingImageTransitionDirections;
+    unsigned long long  _supportedZoomingImageTransitionDirections;
 }
 
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) unsigned int itemIndex;
+@property (nonatomic) unsigned long long itemIndex;
 @property (nonatomic, retain) UIPinchGestureRecognizer *pinchGestureRecognizer;
-@property (nonatomic) unsigned int supportedZoomingImageTransitionDirections;
+@property (nonatomic) unsigned long long supportedZoomingImageTransitionDirections;
 
 - (void).cxx_destruct;
 - (id)identifier;
-- (unsigned int)itemIndex;
+- (unsigned long long)itemIndex;
 - (id)pinchGestureRecognizer;
 - (void)setIdentifier:(id)arg1;
-- (void)setItemIndex:(unsigned int)arg1;
+- (void)setItemIndex:(unsigned long long)arg1;
 - (void)setPinchGestureRecognizer:(id)arg1;
-- (void)setSupportedZoomingImageTransitionDirections:(unsigned int)arg1;
-- (unsigned int)supportedZoomingImageTransitionDirections;
+- (void)setSupportedZoomingImageTransitionDirections:(unsigned long long)arg1;
+- (unsigned long long)supportedZoomingImageTransitionDirections;
 
 @end

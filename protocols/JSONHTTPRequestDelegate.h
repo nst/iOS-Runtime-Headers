@@ -10,6 +10,6 @@
 
 @optional
 
-- (void)request:(JSONHTTPRequest *)arg1 hasWrittenBytes:(int)arg2 expectsToWrite:(int)arg3;
+- (void)request:(JSONHTTPRequest *)arg1 hasWrittenBytes:(long long)arg2 expectsToWrite:(long long)arg3;
 
 @end

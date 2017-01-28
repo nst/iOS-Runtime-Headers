@@ -5,7 +5,7 @@
 @interface SAUSRowCardSection : SAUSCardSection
 
 @property (nonatomic, retain) SAUIImageResource *image;
-@property (nonatomic) BOOL imageIsRightAligned;
+@property (nonatomic) bool imageIsRightAligned;
 @property (nonatomic, copy) NSString *leftText;
 @property (nonatomic, copy) NSString *rightText;
 
@@ -15,11 +15,11 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)image;
-- (BOOL)imageIsRightAligned;
+- (bool)imageIsRightAligned;
 - (id)leftText;
 - (id)rightText;
 - (void)setImage:(id)arg1;
-- (void)setImageIsRightAligned:(BOOL)arg1;
+- (void)setImageIsRightAligned:(bool)arg1;
 - (void)setLeftText:(id)arg1;
 - (void)setRightText:(id)arg1;
 

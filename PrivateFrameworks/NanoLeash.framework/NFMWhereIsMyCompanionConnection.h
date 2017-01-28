@@ -3,33 +3,33 @@
  */
 
 @interface NFMWhereIsMyCompanionConnection : NSObject <NFMWhereIsMyCompanionConnectionProtocol> {
-    id /* block */  _playSoundAndLEDCompletion;
-    id /* block */  _playSoundCompletion;
+    id  _playSoundAndLEDCompletion;
+    id  _playSoundCompletion;
     NSXPCConnection * _serverConnection;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ playSoundAndLEDCompletion;
-@property (nonatomic, copy) id /* block */ playSoundCompletion;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id playSoundAndLEDCompletion;
+@property (nonatomic, copy) id playSoundCompletion;
 @property (retain) NSXPCConnection *serverConnection;
 @property (readonly) Class superclass;
 
 + (id)sharedDeviceConnection;
 
 - (void).cxx_destruct;
-- (void)applicationIdentifierWithReply:(id /* block */)arg1;
+- (void)applicationIdentifierWithReply:(id)arg1;
 - (id)init;
-- (id /* block */)playSoundAndLEDCompletion;
-- (void)playSoundAndLightsOnCompanionWithCompletion:(id /* block */)arg1;
-- (id /* block */)playSoundCompletion;
-- (void)playSoundOnCompanionWithCompletion:(id /* block */)arg1;
-- (void)playedSound:(BOOL)arg1;
-- (void)playedSoundAndLED:(BOOL)arg1;
+- (id)playSoundAndLEDCompletion;
+- (void)playSoundAndLightsOnCompanionWithCompletion:(id)arg1;
+- (id)playSoundCompletion;
+- (void)playSoundOnCompanionWithCompletion:(id)arg1;
+- (void)playedSound:(bool)arg1;
+- (void)playedSoundAndLED:(bool)arg1;
 - (id)serverConnection;
-- (void)setPlaySoundAndLEDCompletion:(id /* block */)arg1;
-- (void)setPlaySoundCompletion:(id /* block */)arg1;
+- (void)setPlaySoundAndLEDCompletion:(id)arg1;
+- (void)setPlaySoundCompletion:(id)arg1;
 - (void)setServerConnection:(id)arg1;
 
 @end

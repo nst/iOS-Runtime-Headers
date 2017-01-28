@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double duration;
 @property (nonatomic, copy) NSData *fingerprint;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 

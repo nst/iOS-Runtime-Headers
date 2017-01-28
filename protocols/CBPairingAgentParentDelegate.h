@@ -6,7 +6,7 @@
 @required
 
 - (CBPeer *)peerWithInfo:(NSDictionary *)arg1;
-- (BOOL)sendMsg:(int)arg1 args:(NSDictionary *)arg2;
+- (bool)sendMsg:(int)arg1 args:(NSDictionary *)arg2;
 - (NSDictionary *)sendSyncMsg:(int)arg1 args:(NSDictionary *)arg2;
 
 @end

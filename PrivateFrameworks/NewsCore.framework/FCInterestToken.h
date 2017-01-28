@@ -3,19 +3,19 @@
  */
 
 @interface FCInterestToken : NSObject {
-    id /* block */  _removeInterestBlock;
+    id  _removeInterestBlock;
 }
 
-@property (nonatomic, copy) id /* block */ removeInterestBlock;
+@property (nonatomic, copy) id removeInterestBlock;
 
-+ (id)interestTokenWithCallbackQueue:(id)arg1 removeInterestBlock:(id /* block */)arg2;
-+ (id)interestTokenWithRemoveInterestBlock:(id /* block */)arg1;
++ (id)interestTokenWithCallbackQueue:(id)arg1 removeInterestBlock:(id)arg2;
++ (id)interestTokenWithRemoveInterestBlock:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCallbackQueue:(id)arg1 removeInterestBlock:(id /* block */)arg2;
-- (id /* block */)removeInterestBlock;
-- (void)setRemoveInterestBlock:(id /* block */)arg1;
+- (id)initWithCallbackQueue:(id)arg1 removeInterestBlock:(id)arg2;
+- (id)removeInterestBlock;
+- (void)setRemoveInterestBlock:(id)arg1;
 
 @end

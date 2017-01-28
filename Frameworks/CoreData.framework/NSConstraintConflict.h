@@ -18,7 +18,7 @@
 @property (readonly, retain) NSManagedObject *databaseObject;
 @property (readonly, retain) NSDictionary *databaseSnapshot;
 
-- (BOOL)_isDBConflict;
+- (bool)_isDBConflict;
 - (id)conflictingObjects;
 - (id)conflictingSnapshots;
 - (id)constraint;
@@ -28,6 +28,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithConstraint:(id)arg1 databaseObject:(id)arg2 databaseSnapshot:(id)arg3 conflictingObjects:(id)arg4 conflictingSnapshots:(id)arg5;
-- (BOOL)supportsSecureCoding;
+- (bool)supportsSecureCoding;
 
 @end

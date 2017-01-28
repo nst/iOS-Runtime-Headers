@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *fontName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
@@ -28,7 +28,7 @@
 - (id)initWithAssetCollection:(id)arg1;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 fontName:(id)arg3;
 - (id)mutableChangeObject;
-- (void)performChanges:(id /* block */)arg1;
+- (void)performChanges:(id)arg1;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)setFontName:(id)arg1;
 - (void)setSubtitle:(id)arg1;

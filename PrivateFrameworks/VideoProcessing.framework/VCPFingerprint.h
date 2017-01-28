@@ -17,7 +17,7 @@
 - (id)description;
 - (id)init;
 - (id)initWithMaster:(id)arg1 adjusted:(id)arg2;
-- (BOOL)isEqualToFingerprint:(id)arg1;
+- (bool)isEqualToFingerprint:(id)arg1;
 - (id)master;
 
 @end

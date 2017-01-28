@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id)_initWithSceneImpl:(id)arg1 invalidationAction:(id)arg2;
@@ -27,17 +27,17 @@
 - (id)display;
 - (id)fbsDisplay;
 - (id)identifier;
-- (BOOL)invalidateSnapshotWithContext:(id)arg1;
+- (bool)invalidateSnapshotWithContext:(id)arg1;
 - (id)layers;
-- (BOOL)performSnapshotWithContext:(id)arg1;
+- (bool)performSnapshotWithContext:(id)arg1;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
-- (void)scene:(id)arg1 didUpdateWithDiff:(id)arg2 transitionContext:(id)arg3 completion:(id /* block */)arg4;
+- (void)scene:(id)arg1 didUpdateWithDiff:(id)arg2 transitionContext:(id)arg3 completion:(id)arg4;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)settings;
 - (id)snapshotRequest;
 - (void)updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
-- (void)updateClientSettingsWithBlock:(id /* block */)arg1;
-- (void)updateClientSettingsWithTransitionBlock:(id /* block */)arg1;
+- (void)updateClientSettingsWithBlock:(id)arg1;
+- (void)updateClientSettingsWithTransitionBlock:(id)arg1;
 
 @end

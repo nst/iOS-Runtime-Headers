@@ -9,7 +9,7 @@
 - (oneway void)deletePlaybackPositionEntities;
 - (oneway void)deletePlaybackPositionEntity:(SBCPlaybackPositionEntity *)arg1;
 - (oneway void)endAccessingPlaybackPositionEntities;
-- (oneway void)savePlaybackPositionEntity:(SBCPlaybackPositionEntity *)arg1 isCheckpoint:(BOOL)arg2;
+- (oneway void)savePlaybackPositionEntity:(SBCPlaybackPositionEntity *)arg1 isCheckpoint:(bool)arg2;
 - (oneway void)updateForeignDatabaseWithValuesFromPlaybackPositionEntity:(SBCPlaybackPositionEntity *)arg1;
 
 @end

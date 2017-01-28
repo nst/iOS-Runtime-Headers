@@ -4,23 +4,23 @@
 
 @interface _DECAppPredictionFeedbackItem : NSObject <NSSecureCoding> {
     NSString * _bundleId;
-    int  _reason;
-    int  _source;
+    long long  _reason;
+    long long  _source;
 }
 
 @property (nonatomic, readonly) NSString *bundleId;
-@property (nonatomic, readonly) int reason;
-@property (nonatomic, readonly) int source;
+@property (nonatomic, readonly) long long reason;
+@property (nonatomic, readonly) long long source;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleId;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithBundleId:(id)arg1 source:(int)arg2 reason:(int)arg3;
+- (id)initWithBundleId:(id)arg1 source:(long long)arg2 reason:(long long)arg3;
 - (id)initWithCoder:(id)arg1;
-- (int)reason;
-- (int)source;
+- (long long)reason;
+- (long long)source;
 
 @end

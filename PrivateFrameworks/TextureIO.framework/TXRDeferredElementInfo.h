@@ -11,6 +11,6 @@
 
 - (void).cxx_destruct;
 - (id)faces;
-- (id)initAsCubemap:(BOOL)arg1;
+- (id)initAsCubemap:(bool)arg1;
 
 @end

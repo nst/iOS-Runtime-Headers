@@ -11,13 +11,13 @@
 @property (nonatomic, retain) CLRegion *region;
 
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)_configure:(id)arg1 eventTrigger:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
-- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)_serializeForAdd;
-- (void)_updateRegion:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateRegion:(id)arg1 completionHandler:(id)arg2;
 - (void)didUpdateAuthorization:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -26,6 +26,6 @@
 - (id)region;
 - (void)setLocationAuthorization:(int)arg1;
 - (void)setRegion:(id)arg1;
-- (void)updateRegion:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateRegion:(id)arg1 completionHandler:(id)arg2;
 
 @end

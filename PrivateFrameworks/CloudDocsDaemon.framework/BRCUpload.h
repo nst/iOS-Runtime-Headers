@@ -7,7 +7,7 @@
     unsigned long long  _doneSize;
     BRCItemID * _itemID;
     BRCProgress * _progress;
-    BOOL  _progressPublished;
+    bool  _progressPublished;
     CKRecord * _record;
     NSString * _stageID;
     long long  _throttleID;
@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) NSString *etag;
 @property (nonatomic, readonly) BRCItemID *itemID;
 @property (nonatomic, readonly) BRCProgress *progress;
-@property (nonatomic) BOOL progressPublished;
+@property (nonatomic) bool progressPublished;
 @property (nonatomic, retain) CKRecord *record;
 @property (nonatomic, readonly) CKRecordID *recordID;
 @property (nonatomic, retain) CKRecord *secondaryRecord;
@@ -35,13 +35,13 @@
 - (id)initWithDocument:(id)arg1 stageID:(id)arg2 transferSize:(unsigned long long)arg3;
 - (id)itemID;
 - (id)progress;
-- (BOOL)progressPublished;
+- (bool)progressPublished;
 - (id)record;
 - (id)recordID;
 - (id)secondaryRecord;
 - (id)secondaryRecordID;
 - (void)setDoneSize:(unsigned long long)arg1;
-- (void)setProgressPublished:(BOOL)arg1;
+- (void)setProgressPublished:(bool)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setSecondaryRecord:(id)arg1;
 - (id)stageID;

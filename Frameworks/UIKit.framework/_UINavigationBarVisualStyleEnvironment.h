@@ -3,26 +3,26 @@
  */
 
 @interface _UINavigationBarVisualStyleEnvironment : NSObject <NSCopying> {
-    BOOL  _containedInPopover;
-    int  _metrics;
+    bool  _containedInPopover;
+    long long  _metrics;
     _UINavigationBarVisualStyle * _primaryStyle;
     _UINavigationBarVisualStyle * _secondaryStyle;
-    BOOL  _wantsLetterpressContent;
+    bool  _wantsLetterpressContent;
 }
 
-@property (getter=isContainedInPopover, nonatomic, readonly) BOOL containedInPopover;
-@property (nonatomic, readonly) int metrics;
-@property (nonatomic, readonly) BOOL wantsLetterpressContent;
+@property (getter=isContainedInPopover, nonatomic, readonly) bool containedInPopover;
+@property (nonatomic, readonly) long long metrics;
+@property (nonatomic, readonly) bool wantsLetterpressContent;
 
-+ (id)environmentWithMetrics:(int)arg1 wantsLetterPress:(BOOL)arg2 inPopover:(BOOL)arg3;
++ (id)environmentWithMetrics:(long long)arg1 wantsLetterPress:(bool)arg2 inPopover:(bool)arg3;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (BOOL)isContainedInPopover;
-- (BOOL)isEqual:(id)arg1;
-- (int)metrics;
-- (id)visualStyleForIdiom:(int)arg1;
-- (BOOL)wantsLetterpressContent;
+- (unsigned long long)hash;
+- (bool)isContainedInPopover;
+- (bool)isEqual:(id)arg1;
+- (long long)metrics;
+- (id)visualStyleForIdiom:(long long)arg1;
+- (bool)wantsLetterpressContent;
 
 @end

@@ -3,15 +3,15 @@
  */
 
 @interface XBApplicationSnapshotImage : UIImage {
-    int  _interfaceOrientation;
+    long long  _interfaceOrientation;
     XBApplicationSnapshot * _snapshot;
 }
 
-@property (nonatomic, readonly) int interfaceOrientation;
+@property (nonatomic, readonly) long long interfaceOrientation;
 
 - (void)dealloc;
 - (id)description;
-- (id)initWithSnapshot:(id)arg1 interfaceOrientation:(int)arg2;
-- (int)interfaceOrientation;
+- (id)initWithSnapshot:(id)arg1 interfaceOrientation:(long long)arg2;
+- (long long)interfaceOrientation;
 
 @end

@@ -6,15 +6,15 @@
     CMNetworkActivityMonitor * _activityMonitor;
     int  _cmActivityPollingToken;
     int  _cmActivityToken;
-    BOOL  _registered;
-    BOOL  _valid;
+    bool  _registered;
+    bool  _valid;
 }
 
 @property (nonatomic, readonly) CMNetworkActivityMonitor *activityMonitor;
 
 + (id)registeredObserverForActivityMonitor:(id)arg1;
 
-- (void)_pollWithInterval:(double)arg1 networkActivityDidCompleteBlock:(id /* block */)arg2;
+- (void)_pollWithInterval:(double)arg1 networkActivityDidCompleteBlock:(id)arg2;
 - (id)activityMonitor;
 - (void)dealloc;
 - (id)initForActivityMonitor:(id)arg1;

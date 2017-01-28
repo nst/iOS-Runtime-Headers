@@ -4,9 +4,9 @@
 
 @interface NCVibrantHighContrastStyling : NCVibrantStyling
 
-- (float)alpha;
+- (double)alpha;
 - (id)blendMode;
 - (id)color;
-- (int)style;
+- (long long)style;
 
 @end

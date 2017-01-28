@@ -3,36 +3,36 @@
  */
 
 @interface HUGridSceneCellLayoutOptions : HUGridCellLayoutOptions {
-    float  _cellHeight;
+    double  _cellHeight;
     UIFont * _descriptionFont;
-    float  _iconInnerHorizontalMargin;
-    unsigned int  _numberOfTitleLines;
-    float  _titleDescriptionLineSpacing;
-    float  _titleInterLineSpacing;
+    double  _iconInnerHorizontalMargin;
+    unsigned long long  _numberOfTitleLines;
+    double  _titleDescriptionLineSpacing;
+    double  _titleInterLineSpacing;
 }
 
-@property (nonatomic) float cellHeight;
+@property (nonatomic) double cellHeight;
 @property (nonatomic, retain) UIFont *descriptionFont;
-@property (nonatomic) float iconInnerHorizontalMargin;
-@property (nonatomic) unsigned int numberOfTitleLines;
-@property (nonatomic) float titleDescriptionLineSpacing;
-@property (nonatomic) float titleInterLineSpacing;
+@property (nonatomic) double iconInnerHorizontalMargin;
+@property (nonatomic) unsigned long long numberOfTitleLines;
+@property (nonatomic) double titleDescriptionLineSpacing;
+@property (nonatomic) double titleInterLineSpacing;
 
-+ (id)defaultOptionsForCellSizeSubclass:(int)arg1;
++ (id)defaultOptionsForCellSizeSubclass:(long long)arg1;
 
 - (void).cxx_destruct;
-- (float)cellHeight;
+- (double)cellHeight;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)descriptionFont;
-- (float)iconInnerHorizontalMargin;
-- (unsigned int)numberOfTitleLines;
-- (void)setCellHeight:(float)arg1;
+- (double)iconInnerHorizontalMargin;
+- (unsigned long long)numberOfTitleLines;
+- (void)setCellHeight:(double)arg1;
 - (void)setDescriptionFont:(id)arg1;
-- (void)setIconInnerHorizontalMargin:(float)arg1;
-- (void)setNumberOfTitleLines:(unsigned int)arg1;
-- (void)setTitleDescriptionLineSpacing:(float)arg1;
-- (void)setTitleInterLineSpacing:(float)arg1;
-- (float)titleDescriptionLineSpacing;
-- (float)titleInterLineSpacing;
+- (void)setIconInnerHorizontalMargin:(double)arg1;
+- (void)setNumberOfTitleLines:(unsigned long long)arg1;
+- (void)setTitleDescriptionLineSpacing:(double)arg1;
+- (void)setTitleInterLineSpacing:(double)arg1;
+- (double)titleDescriptionLineSpacing;
+- (double)titleInterLineSpacing;
 
 @end

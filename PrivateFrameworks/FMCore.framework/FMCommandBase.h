@@ -3,14 +3,14 @@
  */
 
 @interface FMCommandBase : NSOperation {
-    BOOL  _commandTaskComplete;
+    bool  _commandTaskComplete;
     NSURLConnection * _connection;
     NSError * _error;
     NSString * _host;
     NSString * _originalHostname;
     NSString * _password;
     NSNumber * _port;
-    unsigned int  _redirectCount;
+    unsigned long long  _redirectCount;
     NSString * _redirectedHostname;
     NSURLRequest * _request;
     NSHTTPURLResponse * _response;
@@ -22,14 +22,14 @@
     NSString * _username;
 }
 
-@property (nonatomic) BOOL commandTaskComplete;
+@property (nonatomic) bool commandTaskComplete;
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (copy) NSError *error;
 @property (nonatomic, copy) NSString *host;
 @property (nonatomic, copy) NSString *originalHostname;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSNumber *port;
-@property (nonatomic) unsigned int redirectCount;
+@property (nonatomic) unsigned long long redirectCount;
 @property (nonatomic, copy) NSString *redirectedHostname;
 @property (nonatomic, retain) NSURLRequest *request;
 @property (nonatomic, retain) NSHTTPURLResponse *response;
@@ -45,7 +45,7 @@
 - (id)authHeaders;
 - (id)body;
 - (void)cancel;
-- (BOOL)commandTaskComplete;
+- (bool)commandTaskComplete;
 - (id)connection;
 - (id)error;
 - (void)finishWithError:(id)arg1;
@@ -53,16 +53,16 @@
 - (id)headers;
 - (id)host;
 - (id)init;
-- (BOOL)isConcurrent;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
-- (BOOL)isTransactionCompleteWithError:(id)arg1;
+- (bool)isConcurrent;
+- (bool)isExecuting;
+- (bool)isFinished;
+- (bool)isTransactionCompleteWithError:(id)arg1;
 - (id)method;
 - (id)originalHostname;
 - (id)password;
 - (id)path;
 - (id)port;
-- (unsigned int)redirectCount;
+- (unsigned long long)redirectCount;
 - (id)redirectedHostname;
 - (id)request;
 - (id)response;
@@ -70,14 +70,14 @@
 - (id)scheme;
 - (void)sendRequest;
 - (id)serverInteractionController;
-- (void)setCommandTaskComplete:(BOOL)arg1;
+- (void)setCommandTaskComplete:(bool)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setHost:(id)arg1;
 - (void)setOriginalHostname:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPort:(id)arg1;
-- (void)setRedirectCount:(unsigned int)arg1;
+- (void)setRedirectCount:(unsigned long long)arg1;
 - (void)setRedirectedHostname:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setResponse:(id)arg1;
@@ -92,7 +92,7 @@
 - (double)timeout;
 - (id)username;
 - (id)valueForResponseHTTPHeader:(id)arg1;
-- (BOOL)wasRedirected;
-- (BOOL)wasSuccessful;
+- (bool)wasRedirected;
+- (bool)wasSuccessful;
 
 @end

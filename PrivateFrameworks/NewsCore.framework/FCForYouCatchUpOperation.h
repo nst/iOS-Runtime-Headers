@@ -9,10 +9,8 @@
     FCEditorialCatchUpOperation * _editorialOperation;
     FCMyArticlesCatchUpOperation * _myArticlesOperation;
     NSOperationQueue * _operationQueue;
-    FCSavedStoriesCatchUpOperation * _savedStoriesOperation;
     FCTopStoriesCatchUpOperation * _topStoriesOperation;
     FCTrendingCatchUpOperation * _trendingOperation;
-    NSArray * _unreadSavedStories;
 }
 
 @property (nonatomic, readonly, copy) NSError *catchUpError;
@@ -25,15 +23,13 @@
 @property (nonatomic, retain) FCMyArticlesCatchUpOperation *myArticlesOperation;
 @property (nonatomic, readonly, copy) NSArray *nonEditorialFeedItems;
 @property (nonatomic, retain) NSOperationQueue *operationQueue;
-@property (nonatomic, readonly, copy) NSArray *savedHeadlines;
-@property (nonatomic, retain) FCSavedStoriesCatchUpOperation *savedStoriesOperation;
 @property (nonatomic, readonly, copy) NSArray *supplementalCoverArticleHeadlines;
+@property (nonatomic, readonly) FCArticleList *topStoriesArticleList;
 @property (nonatomic, readonly, copy) <FCChannelProviding> *topStoriesChannel;
-@property (nonatomic, readonly, copy) NSArray *topStoriesFeedItems;
+@property (nonatomic, readonly, copy) NSArray *topStoriesHeadlines;
 @property (nonatomic, retain) FCTopStoriesCatchUpOperation *topStoriesOperation;
 @property (nonatomic, readonly, copy) NSArray *trendingHeadlines;
 @property (nonatomic, retain) FCTrendingCatchUpOperation *trendingOperation;
-@property (nonatomic, copy) NSArray *unreadSavedStories;
 
 + (id)sharedCatchUpOperationForEdition:(id)arg1 context:(id)arg2;
 + (id)temporaryBackgroundCatchUpOperationForEdition:(id)arg1 context:(id)arg2;
@@ -49,35 +45,31 @@
 - (id)coverArticleHeadlines;
 - (id)coverArticlesOperation;
 - (id)editorialOperation;
-- (void)enumerateEditorialSectionsByRecencyAfterTransformation:(id)arg1 minFamilySize:(unsigned int)arg2 block:(id /* block */)arg3;
+- (void)enumerateEditorialSectionsByRecencyAfterTransformation:(id)arg1 minFamilySize:(unsigned long long)arg2 block:(id)arg3;
 - (id)feedContextByFeedID;
-- (id)initWithContext:(id)arg1 dateRange:(id)arg2 background:(BOOL)arg3;
+- (id)initWithContext:(id)arg1 dateRange:(id)arg2 background:(bool)arg3;
 - (id)myArticlesOperation;
 - (id)nonEditorialFeedItems;
 - (void)operationDidFinishWithError:(id)arg1;
 - (id)operationQueue;
-- (id)orphanedEditorialFeedItemsAfterTransformation:(id)arg1 minFamilySize:(unsigned int)arg2;
+- (id)orphanedEditorialHeadlinesAfterTransformation:(id)arg1 minFamilySize:(unsigned long long)arg2;
 - (void)performOperation;
-- (BOOL)satisfiesCondition:(id)arg1;
-- (id)savedHeadlines;
-- (id)savedStoriesOperation;
+- (bool)satisfiesCondition:(id)arg1;
 - (void)setConditionWaiters:(id)arg1;
 - (void)setConditionWaitersLock:(id)arg1;
 - (void)setCoverArticlesOperation:(id)arg1;
 - (void)setEditorialOperation:(id)arg1;
 - (void)setMyArticlesOperation:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
-- (void)setSavedStoriesOperation:(id)arg1;
 - (void)setTopStoriesOperation:(id)arg1;
 - (void)setTrendingOperation:(id)arg1;
-- (void)setUnreadSavedStories:(id)arg1;
 - (id)supplementalCoverArticleHeadlines;
+- (id)topStoriesArticleList;
 - (id)topStoriesChannel;
-- (id)topStoriesFeedItems;
+- (id)topStoriesHeadlines;
 - (id)topStoriesOperation;
 - (id)trendingHeadlines;
 - (id)trendingOperation;
-- (id)unreadSavedStories;
 - (void)waitForCondition:(id)arg1;
 - (void)waitForCondition:(id)arg1 withTimeout:(double)arg2;
 

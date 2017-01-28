@@ -10,12 +10,12 @@
 + (id)identifier;
 
 - (void).cxx_destruct;
-- (BOOL)_toggleState;
+- (bool)_toggleState;
 - (id)aggdKey;
 - (id)buttonActions;
 - (id)glyphImageForState:(int)arg1;
 - (id)init;
 - (int)orbBehavior;
-- (void)scheduleTimerInMinutes:(int)arg1;
+- (void)scheduleTimerInMinutes:(long long)arg1;
 
 @end

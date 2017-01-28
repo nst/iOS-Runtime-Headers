@@ -22,18 +22,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) FBApplicationProcess *systemApplicationProcess;
 
 + (id)sharedInstance;
 
-- (BOOL)_isWorkspaceLocked;
+- (bool)_isWorkspaceLocked;
 - (id)_processesQueue_processForPID:(int)arg1;
 - (id)_processesQueue_processesForBundleIdentifier:(id)arg1;
-- (void)_queue_addProcess:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_addProcess:(id)arg1 completion:(id)arg2;
 - (void)_queue_evaluateForegroundEventRouting;
-- (void)_queue_notifyObserversUsingBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)_queue_notifyObserversUsingBlock:(id)arg1 completion:(id)arg2;
 - (void)_queue_removeProcess:(id)arg1 withBundleID:(id)arg2 pid:(int)arg3;
 - (id)_serviceClientAddedWithProcessHandle:(id)arg1;
 - (void)_setPreferredForegroundApplicationProcess:(id)arg1;
@@ -53,7 +53,7 @@
 - (void)invalidateClientWorkspace:(id)arg1;
 - (void)noteProcess:(id)arg1 didUpdateState:(id)arg2;
 - (void)noteProcessDidExit:(id)arg1;
-- (BOOL)ping;
+- (bool)ping;
 - (id)processForPID:(int)arg1;
 - (id)processesForBundleIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;

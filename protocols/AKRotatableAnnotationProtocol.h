@@ -5,7 +5,7 @@
 
 @required
 
-- (float)rotationAngle;
-- (void)setRotationAngle:(float)arg1;
+- (double)rotationAngle;
+- (void)setRotationAngle:(double)arg1;
 
 @end

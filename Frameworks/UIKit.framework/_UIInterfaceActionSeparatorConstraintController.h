@@ -3,30 +3,30 @@
  */
 
 @interface _UIInterfaceActionSeparatorConstraintController : NSObject {
-    float  _constantAxisDimension;
-    int  _constantSizedAxis;
+    double  _constantAxisDimension;
+    long long  _constantSizedAxis;
     NSLayoutConstraint * _fixedHeightConstraint;
     NSLayoutConstraint * _fixedWidthConstraint;
     UIView<UIInterfaceActionVisualSeparatorDisplaying><UIInterfaceActionVisualSectionSeparatorDisplaying> * _separatorView;
 }
 
-@property (nonatomic) float constantAxisDimension;
-@property (nonatomic) int constantSizedAxis;
+@property (nonatomic) double constantAxisDimension;
+@property (nonatomic) long long constantSizedAxis;
 @property (nonatomic, readonly) NSLayoutConstraint *fixedHeightConstraint;
 @property (nonatomic, readonly) NSLayoutConstraint *fixedWidthConstraint;
 @property (nonatomic, readonly) UIView<UIInterfaceActionVisualSeparatorDisplaying><UIInterfaceActionVisualSectionSeparatorDisplaying> *separatorView;
 
 - (void).cxx_destruct;
-- (BOOL)_isFixedWidth;
+- (bool)_isFixedWidth;
 - (void)_updateConstantSizedConstraints;
-- (float)constantAxisDimension;
-- (int)constantSizedAxis;
+- (double)constantAxisDimension;
+- (long long)constantSizedAxis;
 - (id)fixedHeightConstraint;
 - (id)fixedWidthConstraint;
 - (id)initWithSeparatorView:(id)arg1;
 - (id)separatorView;
 - (void)separatorViewDidUpdateConstraints;
-- (void)setConstantAxisDimension:(float)arg1;
-- (void)setConstantSizedAxis:(int)arg1;
+- (void)setConstantAxisDimension:(double)arg1;
+- (void)setConstantSizedAxis:(long long)arg1;
 
 @end

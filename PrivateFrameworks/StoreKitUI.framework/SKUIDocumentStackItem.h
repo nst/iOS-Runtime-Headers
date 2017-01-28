@@ -7,11 +7,11 @@
     SKUINavigationDocumentController * _navigationDocumentController;
     UIPopoverPresentationController * _popoverPresentationController;
     NSDictionary * _presentationOptions;
-    BOOL  _usesNavigationControllerForModalPresentation;
+    bool  _usesNavigationControllerForModalPresentation;
     UIViewController * _viewController;
 }
 
-@property (getter=isAnimated, nonatomic, readonly) BOOL animated;
+@property (getter=isAnimated, nonatomic, readonly) bool animated;
 @property (nonatomic, readonly) IKAppDocument *document;
 @property (nonatomic, retain) SKUINavigationDocumentController *navigationDocumentController;
 @property (nonatomic, readonly) NSString *overlayType;
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) NSString *presentationType;
 @property (nonatomic, readonly) NSString *sheetType;
 @property (nonatomic, readonly) NSString *sourceElementIdentifier;
-@property (nonatomic) BOOL usesNavigationControllerForModalPresentation;
+@property (nonatomic) bool usesNavigationControllerForModalPresentation;
 @property (nonatomic, retain) UIViewController *viewController;
 
 - (void).cxx_destruct;
@@ -28,7 +28,7 @@
 - (id)document;
 - (id)init;
 - (id)initWithDocument:(id)arg1 presentationOptions:(id)arg2;
-- (BOOL)isAnimated;
+- (bool)isAnimated;
 - (id)navigationDocumentController;
 - (id)overlayType;
 - (id)popoverPresentationController;
@@ -36,11 +36,11 @@
 - (id)presentationType;
 - (void)setNavigationDocumentController:(id)arg1;
 - (void)setPopoverPresentationController:(id)arg1;
-- (void)setUsesNavigationControllerForModalPresentation:(BOOL)arg1;
+- (void)setUsesNavigationControllerForModalPresentation:(bool)arg1;
 - (void)setViewController:(id)arg1;
 - (id)sheetType;
 - (id)sourceElementIdentifier;
-- (BOOL)usesNavigationControllerForModalPresentation;
+- (bool)usesNavigationControllerForModalPresentation;
 - (id)viewController;
 
 @end

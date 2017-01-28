@@ -18,7 +18,7 @@
 - (id)_truncationSentinel;
 - (id)accessibilityLabelForSlotID:(unsigned int)arg1;
 - (id)accessibilityLabelsForInputs:(id)arg1 headers:(id)arg2 truncationSentinel:(id)arg3;
-- (struct __CFArray { }*)arrayOfContexts:(unsigned int)arg1 withRenderTraits:(id)arg2;
+- (struct __CFArray { }*)arrayOfContexts:(unsigned long long)arg1 withRenderTraits:(id)arg2;
 - (void)cacheAccessibilityLabel:(id)arg1 forSlotID:(unsigned int)arg2;
 - (id)cachedCandidateForSecureCandidate:(id)arg1;
 - (void)clearSecureCandidateCache;

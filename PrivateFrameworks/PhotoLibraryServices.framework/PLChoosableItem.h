@@ -16,15 +16,15 @@
 
 + (id)choosableItemsFromCloudResources:(id)arg1;
 
-- (int)compareUsingWidth:(id)arg1;
+- (long long)compareUsingWidth:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (int)height;
 - (id)initWithCloudResource:(id)arg1;
 - (id)initWithWidth:(int)arg1 height:(int)arg2 type:(int)arg3 uniformTypeIdentifier:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToChoosableItem:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToChoosableItem:(id)arg1;
 - (int)type;
 - (id)uniformTypeIdentifier;
 - (int)width;

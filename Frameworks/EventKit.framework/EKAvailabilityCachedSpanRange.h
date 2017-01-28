@@ -10,7 +10,7 @@
 + (id)_generateCachedSpansFromSpans:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_rangeCompletelyCoversPeriodBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (bool)_rangeCompletelyCoversPeriodBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (void)_validateCachedSpansIfDebugLoggingIsEnabled;
 - (id)description;
 - (id)gatherFreshlyCachedSpansBetweenStartDate:(id)arg1 endDate:(id)arg2;

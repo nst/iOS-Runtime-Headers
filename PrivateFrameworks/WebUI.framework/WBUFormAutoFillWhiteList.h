@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)_whiteListSettingsChanged:(id)arg1;
-- (BOOL)allowsURL:(id)arg1;
+- (bool)allowsURL:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

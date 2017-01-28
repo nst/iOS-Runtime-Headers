@@ -10,14 +10,14 @@
 @property (nonatomic) unsigned int applicationSDKVersion;
 @property (nonatomic, copy) NSString *debugIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (unsigned int)applicationSDKVersion;
 - (id)debugIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setApplicationSDKVersion:(unsigned int)arg1;
 - (void)setDebugIdentifier:(id)arg1;
 

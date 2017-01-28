@@ -5,24 +5,24 @@
 @interface XPCServiceBundle : NSObject <XPCServiceArchiver> {
     NSBundle * _bundle;
     NSString * _executablePath;
-    long  _executablePathPredicate;
+    long long  _executablePathPredicate;
     NSDictionary * _launchdJobDictionary;
-    long  _launchdJobDictionaryPredicate;
+    long long  _launchdJobDictionaryPredicate;
     NSString * _realExecutablePath;
-    long  _realExecutablePathPredicate;
+    long long  _realExecutablePathPredicate;
     NSDictionary * _serviceDictionary;
-    long  _serviceDictionaryPredicate;
+    long long  _serviceDictionaryPredicate;
     NSString * _serviceIdentifier;
-    long  _serviceIdentifierPredicate;
-    int  _serviceType;
-    long  _serviceTypePredicate;
+    long long  _serviceIdentifierPredicate;
+    long long  _serviceType;
+    long long  _serviceTypePredicate;
     NSObject<OS_xpc_object> * _xpcJobData;
-    long  _xpcJobDataPredicate;
+    long long  _xpcJobDataPredicate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)XPCServiceBundleAtPath:(id)arg1;
@@ -30,21 +30,21 @@
 + (id)XPCServiceBundleFromExecutableAtPath:(id)arg1;
 + (struct _launch_data { }*)createLaunchDataFromArray:(id)arg1;
 + (id)createXPCJobsArrayFromArray:(id)arg1;
-+ (BOOL)useRestrictiveRoleAccountSecurityPolicy;
++ (bool)useRestrictiveRoleAccountSecurityPolicy;
 
 - (id)archiveForCache;
 - (id)arrayForServiceDictionaryKey:(id)arg1;
-- (BOOL)boolForServiceDictionaryKey:(id)arg1;
+- (bool)boolForServiceDictionaryKey:(id)arg1;
 - (id)bundle;
 - (void)dealloc;
 - (id)description;
-- (id)descriptionWithIndent:(unsigned int)arg1;
+- (id)descriptionWithIndent:(unsigned long long)arg1;
 - (id)dictionaryForServiceDictionaryKey:(id)arg1;
 - (id)executablePath;
 - (id)identifier;
 - (id)initWithArchive:(id)arg1;
 - (id)initWithBundle:(id)arg1;
-- (BOOL)isSystemService;
+- (bool)isSystemService;
 - (id)launchdJobDictionary;
 - (struct _launch_data { }*)launchdJobLaunchData;
 - (id)launchdJobPropertyListData;
@@ -52,7 +52,7 @@
 - (id)objectForServiceDictionaryKey:(id)arg1;
 - (id)realExecutablePath;
 - (id)serviceDictionary;
-- (int)serviceType;
+- (long long)serviceType;
 - (id)stringForServiceDictionaryKey:(id)arg1;
 - (id)xpcJobData;
 

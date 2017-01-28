@@ -23,7 +23,7 @@
 - (id)initWithParentNodeID:(unsigned long long)arg1;
 - (id)metricsConfiguration;
 - (id)metricsPageEvent;
-- (void)startWithCachedCompletionHandler:(id /* block */)arg1 networkCompletionHandler:(id /* block */)arg2;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCachedCompletionHandler:(id)arg1 networkCompletionHandler:(id)arg2;
+- (void)startWithCompletionHandler:(id)arg1;
 
 @end

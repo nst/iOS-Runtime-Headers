@@ -15,7 +15,7 @@
 - (id)helpBookController;
 - (id)mergeDictionary:(id)arg1 withDictionary:(id)arg2;
 - (void)processData:(id)arg1 formattedData:(id)arg2;
-- (void)processFileURLWithCompletionHandler:(id /* block */)arg1;
+- (void)processFileURLWithCompletionHandler:(id)arg1;
 - (id)resultsWithSearchText:(id)arg1 localeCode:(id)arg2 searchTerms:(id*)arg3;
 - (id)searchIndex;
 - (id)searchTermsForSearchText:(id)arg1 localeCode:(id)arg2;

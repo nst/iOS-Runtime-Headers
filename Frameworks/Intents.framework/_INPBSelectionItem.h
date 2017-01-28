@@ -9,9 +9,9 @@
     NSString * _vocabularyValue;
 }
 
-@property (nonatomic, readonly) BOOL hasUuid;
-@property (nonatomic, readonly) BOOL hasValue;
-@property (nonatomic, readonly) BOOL hasVocabularyValue;
+@property (nonatomic, readonly) bool hasUuid;
+@property (nonatomic, readonly) bool hasValue;
+@property (nonatomic, readonly) bool hasVocabularyValue;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) NSString *uuid;
 @property (nonatomic, retain) _INPBIntentSlotValue *value;
@@ -23,13 +23,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasUuid;
-- (BOOL)hasValue;
-- (BOOL)hasVocabularyValue;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasUuid;
+- (bool)hasValue;
+- (bool)hasVocabularyValue;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setValue:(id)arg1;
 - (void)setVocabularyValue:(id)arg1;

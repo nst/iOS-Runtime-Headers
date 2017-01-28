@@ -4,17 +4,17 @@
 
 @interface SKUIMediaSocialAdminPermissionsOperation : SSVComplexOperation {
     SKUIClientContext * _clientContext;
-    id /* block */  _outputBlock;
+    id  _outputBlock;
 }
 
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
 - (id)_authorsWithResponseDictionary:(id)arg1;
 - (id)_lookupResponseForMissingAuthors:(id)arg1 error:(id*)arg2;
 - (id)initWithClientContext:(id)arg1;
 - (void)main;
-- (id /* block */)outputBlock;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (id)outputBlock;
+- (void)setOutputBlock:(id)arg1;
 
 @end

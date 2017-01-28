@@ -7,8 +7,8 @@
     NSString * _name;
 }
 
-@property (nonatomic, readonly) BOOL hasImage;
-@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) bool hasImage;
+@property (nonatomic, readonly) bool hasName;
 @property (nonatomic, retain) GEOPhoto *image;
 @property (nonatomic, retain) NSString *name;
 
@@ -17,14 +17,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasImage;
-- (BOOL)hasName;
-- (unsigned int)hash;
+- (bool)hasImage;
+- (bool)hasName;
+- (unsigned long long)hash;
 - (id)image;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)writeTo:(id)arg1;

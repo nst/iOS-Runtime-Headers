@@ -3,22 +3,22 @@
  */
 
 @interface _UISelectionFeedbackGeneratorConfiguration : _UIFeedbackGeneratorUserInteractionDrivenConfiguration {
-    float  _fastAudioVolume;
-    float  _fastHapticVolume;
+    double  _fastAudioVolume;
+    double  _fastHapticVolume;
     _UIFeedback<_UIFeedbackDiscretePlayable> * _feedback;
     double  _maxSpeed;
     double  _minimumInterval;
-    float  _slowAudioVolume;
-    float  _slowHapticVolume;
+    double  _slowAudioVolume;
+    double  _slowHapticVolume;
 }
 
-@property (nonatomic) float fastAudioVolume;
-@property (nonatomic) float fastHapticVolume;
+@property (nonatomic) double fastAudioVolume;
+@property (nonatomic) double fastHapticVolume;
 @property (nonatomic, retain) _UIFeedback<_UIFeedbackDiscretePlayable> *feedback;
 @property (nonatomic) double maxSpeed;
 @property (nonatomic) double minimumInterval;
-@property (nonatomic) float slowAudioVolume;
-@property (nonatomic) float slowHapticVolume;
+@property (nonatomic) double slowAudioVolume;
+@property (nonatomic) double slowHapticVolume;
 
 + (id)defaultConfiguration;
 + (id)lightConfiguration;
@@ -27,21 +27,21 @@
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (float)fastAudioVolume;
-- (float)fastHapticVolume;
+- (double)fastAudioVolume;
+- (double)fastHapticVolume;
 - (id)feedback;
 - (id)feedbackKeyPaths;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)maxSpeed;
 - (double)minimumInterval;
-- (void)setFastAudioVolume:(float)arg1;
-- (void)setFastHapticVolume:(float)arg1;
+- (void)setFastAudioVolume:(double)arg1;
+- (void)setFastHapticVolume:(double)arg1;
 - (void)setFeedback:(id)arg1;
 - (void)setMaxSpeed:(double)arg1;
 - (void)setMinimumInterval:(double)arg1;
-- (void)setSlowAudioVolume:(float)arg1;
-- (void)setSlowHapticVolume:(float)arg1;
-- (float)slowAudioVolume;
-- (float)slowHapticVolume;
+- (void)setSlowAudioVolume:(double)arg1;
+- (void)setSlowHapticVolume:(double)arg1;
+- (double)slowAudioVolume;
+- (double)slowHapticVolume;
 
 @end

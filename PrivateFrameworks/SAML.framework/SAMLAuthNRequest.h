@@ -15,8 +15,8 @@
 - (id)initWithElement:(id)arg1 schema:(id)arg2 error:(id*)arg3;
 - (id)issuer;
 - (id)requestElement;
-- (void)setForceAuthN:(BOOL)arg1;
-- (void)setIsPassive:(BOOL)arg1;
+- (void)setForceAuthN:(bool)arg1;
+- (void)setIsPassive:(bool)arg1;
 - (void)setIssuer:(id)arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setRequestElement:(id)arg1;

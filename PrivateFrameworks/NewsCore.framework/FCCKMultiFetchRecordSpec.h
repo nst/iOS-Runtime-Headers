@@ -6,13 +6,13 @@
     NSArray * _desiredKeys;
     NSArray * _fetchKeys;
     NSString * _recordType;
-    BOOL  _shortcut;
+    bool  _shortcut;
 }
 
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic, copy) NSArray *fetchKeys;
 @property (nonatomic, copy) NSString *recordType;
-@property (nonatomic) BOOL shortcut;
+@property (nonatomic) bool shortcut;
 
 - (void).cxx_destruct;
 - (id)desiredKeys;
@@ -21,7 +21,7 @@
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchKeys:(id)arg1;
 - (void)setRecordType:(id)arg1;
-- (void)setShortcut:(BOOL)arg1;
-- (BOOL)shortcut;
+- (void)setShortcut:(bool)arg1;
+- (bool)shortcut;
 
 @end

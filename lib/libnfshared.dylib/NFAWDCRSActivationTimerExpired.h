@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) unsigned int status;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int version;
@@ -17,7 +17,7 @@
 - (void)setStatus:(unsigned int)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (unsigned int)status;
-- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (unsigned long long)updateTransactionStateInfoWithPreviousState:(unsigned long long)arg1;
 - (unsigned int)version;
 
 @end

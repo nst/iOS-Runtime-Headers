@@ -37,7 +37,7 @@
 - (void)resume;
 - (id)serviceName;
 - (void)setDelegate:(id)arg1;
-- (void)setOptions:(unsigned int)arg1;
+- (void)setOptions:(unsigned long long)arg1;
 - (void)stop;
 - (void)suspend;
 

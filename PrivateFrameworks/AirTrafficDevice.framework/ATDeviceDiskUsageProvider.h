@@ -18,8 +18,8 @@
 - (void)_loadCurrentDiskUsage;
 - (void)_updatePurgeableStorageUsage;
 - (id)getCurrentUsage;
-- (void)getCurrentUsageWithUpdatedDataClasses:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)getUpdatedUsageWithCompletion:(id /* block */)arg1;
+- (void)getCurrentUsageWithUpdatedDataClasses:(id)arg1 withCompletion:(id)arg2;
+- (void)getUpdatedUsageWithCompletion:(id)arg1;
 - (id)init;
 
 @end

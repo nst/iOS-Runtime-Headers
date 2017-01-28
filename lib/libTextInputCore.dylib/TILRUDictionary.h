@@ -5,11 +5,11 @@
 @interface TILRUDictionary : NSObject {
     struct __CFDictionary { } * _dictionary;
     TILRUDictionaryNode * _head;
-    unsigned int  _maxCount;
+    unsigned long long  _maxCount;
     TILRUDictionaryNode * _tail;
 }
 
-+ (id)dictionaryWithMaximumCapacity:(unsigned int)arg1;
++ (id)dictionaryWithMaximumCapacity:(unsigned long long)arg1;
 
 - (void)_addNodeToFront:(id)arg1;
 - (void)_moveNodeToFront:(id)arg1;
@@ -18,11 +18,11 @@
 - (id)allKeys;
 - (id)allKeysInLRUOrder;
 - (id)allValuesInLRUOrder;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
-- (id)initWithMaximumCapacity:(unsigned int)arg1;
-- (unsigned int)linkedListCount;
+- (id)initWithMaximumCapacity:(unsigned long long)arg1;
+- (unsigned long long)linkedListCount;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyWithoutAffectingLRU:(id)arg1;
 - (void)removeAllObjects;

@@ -7,10 +7,10 @@
 
 - (<GEOTransitAttribution> *)attribution;
 - (<GEOEncyclopedicInfo> *)encyclopedicInfo;
-- (BOOL)hasEncyclopedicInfo;
-- (BOOL)hasIncidentComponent;
+- (bool)hasEncyclopedicInfo;
+- (bool)hasIncidentComponent;
 - (NSArray *)incidents;
-- (BOOL)isIncidentsTTLExpired;
+- (bool)isIncidentsTTLExpired;
 - (NSArray *)labelItems;
 - (GEOMapRegion *)mapRegion;
 

@@ -6,41 +6,41 @@
     NSArray * _DNSSearchDomainMatch;
     NSArray * _DNSServerAddressMatch;
     NSArray * _SSIDMatch;
-    int  _action;
-    int  _interfaceTypeMatch;
+    long long  _action;
+    long long  _interfaceTypeMatch;
     NSURL * _probeURL;
 }
 
 @property (copy) NSArray *DNSSearchDomainMatch;
 @property (copy) NSArray *DNSServerAddressMatch;
 @property (copy) NSArray *SSIDMatch;
-@property (readonly) int action;
-@property int interfaceTypeMatch;
+@property (readonly) long long action;
+@property long long interfaceTypeMatch;
 @property (copy) NSURL *probeURL;
 
 + (id)createOnDemandRulesFromLegacyDictionary:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)DNSSearchDomainMatch;
 - (id)DNSServerAddressMatch;
 - (id)SSIDMatch;
-- (int)action;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
+- (long long)action;
+- (bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;
-- (id)initWithAction:(int)arg1;
+- (id)initWithAction:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
-- (int)interfaceTypeMatch;
-- (BOOL)isEqual:(id)arg1;
+- (long long)interfaceTypeMatch;
+- (bool)isEqual:(id)arg1;
 - (id)probeURL;
 - (void)setDNSSearchDomainMatch:(id)arg1;
 - (void)setDNSServerAddressMatch:(id)arg1;
-- (void)setInterfaceTypeMatch:(int)arg1;
+- (void)setInterfaceTypeMatch:(long long)arg1;
 - (void)setProbeURL:(id)arg1;
 - (void)setSSIDMatch:(id)arg1;
 

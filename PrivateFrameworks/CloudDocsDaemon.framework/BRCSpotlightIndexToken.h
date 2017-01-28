@@ -10,7 +10,7 @@
 @property (nonatomic) NSString *databaseID;
 @property (nonatomic) unsigned long long notifRank;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)databaseID;
 - (id)description;

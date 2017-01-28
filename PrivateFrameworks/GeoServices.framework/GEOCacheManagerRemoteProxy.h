@@ -8,18 +8,18 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-- (void)_refreshMapItems:(id)arg1 updatedCoordinates:(id)arg2 xpcMessageName:(id)arg3 traits:(id)arg4 handler:(id /* block */)arg5;
-- (void)checkHasExpiredWithInvalidationDatas:(id)arg1 handler:(id /* block */)arg2;
+- (void)_refreshMapItems:(id)arg1 updatedCoordinates:(id)arg2 xpcMessageName:(id)arg3 traits:(id)arg4 handler:(id)arg5;
+- (void)checkHasExpiredWithInvalidationDatas:(id)arg1 handler:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (int)invalidationStateForComponent:(id)arg1;
-- (int)invalidationStateForPlace:(id)arg1;
-- (void)refreshLOIAssociatedMapItems:(id)arg1 updatedCoordinates:(id)arg2 traits:(id)arg3 handler:(id /* block */)arg4;
-- (void)refreshLOIReverseGeocodedMapItems:(id)arg1 updatedCoordinates:(id)arg2 traits:(id)arg3 handler:(id /* block */)arg4;
-- (void)snapshotWithFilePathArray:(id)arg1 handler:(id /* block */)arg2;
-- (void)versionsForDomains:(id)arg1 handler:(id /* block */)arg2;
+- (long long)invalidationStateForComponent:(id)arg1;
+- (long long)invalidationStateForPlace:(id)arg1;
+- (void)refreshLOIAssociatedMapItems:(id)arg1 updatedCoordinates:(id)arg2 traits:(id)arg3 handler:(id)arg4;
+- (void)refreshLOIReverseGeocodedMapItems:(id)arg1 updatedCoordinates:(id)arg2 traits:(id)arg3 handler:(id)arg4;
+- (void)snapshotWithFilePathArray:(id)arg1 handler:(id)arg2;
+- (void)versionsForDomains:(id)arg1 handler:(id)arg2;
 
 @end

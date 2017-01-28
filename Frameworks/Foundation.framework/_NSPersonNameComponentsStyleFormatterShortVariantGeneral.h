@@ -4,9 +4,9 @@
 
 @interface _NSPersonNameComponentsStyleFormatterShortVariantGeneral : _NSPersonNameComponentsStyleFormatter
 
-@property (readonly) int shortNameFormat;
+@property (readonly) long long shortNameFormat;
 
 - (id)fallbackStyleFormatter;
-- (int)shortNameFormat;
+- (long long)shortNameFormat;
 
 @end

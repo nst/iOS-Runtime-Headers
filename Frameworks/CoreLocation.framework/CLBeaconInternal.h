@@ -6,9 +6,9 @@
     double  accuracy;
     NSNumber * major;
     NSNumber * minor;
-    int  proximity;
+    long long  proximity;
     NSUUID * proximityUUID;
-    int  rssi;
+    long long  rssi;
 }
 
 @end

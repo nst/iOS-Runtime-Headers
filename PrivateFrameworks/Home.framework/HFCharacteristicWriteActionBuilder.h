@@ -18,9 +18,10 @@
 - (id)characteristic;
 - (id)commitItem;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
+- (bool)requiresDeviceUnlock;
 - (void)setCharacteristic:(id)arg1;
 - (void)setTargetValue:(id)arg1;
 - (id)targetValue;
-- (BOOL)updateWithActionBuilder:(id)arg1;
+- (bool)updateWithActionBuilder:(id)arg1;
 
 @end

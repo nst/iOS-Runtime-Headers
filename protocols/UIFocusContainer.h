@@ -8,11 +8,11 @@
 - (UIView *)focusedView;
 - (void)focusedViewDidChange;
 - (void)focusedViewWillChange;
-- (BOOL)isAncestorOfItem:(id <UIFocusContainer>)arg1;
+- (bool)isAncestorOfItem:(id <UIFocusContainer>)arg1;
 - (<UIFocusContainer> *)preferredFocusedItem;
 - (void)setNeedsPreferredFocusedItemUpdate;
-- (BOOL)shouldChangeFocusedItem:(id <UIFocusContainer>)arg1;
-- (BOOL)shouldChangeFocusedItem:(id <UIFocusContainer>)arg1 heading:(unsigned int)arg2;
+- (bool)shouldChangeFocusedItem:(id <UIFocusContainer>)arg1;
+- (bool)shouldChangeFocusedItem:(id <UIFocusContainer>)arg1 heading:(unsigned long long)arg2;
 - (void)updatePreferredFocusedItemIfNeeded;
 
 @end

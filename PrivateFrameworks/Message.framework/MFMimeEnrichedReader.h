@@ -4,7 +4,7 @@
 
 @interface MFMimeEnrichedReader : NSObject {
     struct __CFArray { } * _commandStack;
-    long  _currentIndex;
+    long long  _currentIndex;
     unsigned int  _eatOneNewline;
     float  _indentWidth;
     struct { 
@@ -13,13 +13,13 @@
         unsigned short *directUniCharBuffer; 
         char *directCStringBuffer; 
         struct { 
-            int location; 
-            int length; 
+            long long location; 
+            long long length; 
         } rangeToBuffer; 
-        int bufferedRangeStart; 
-        int bufferedRangeEnd; 
+        long long bufferedRangeStart; 
+        long long bufferedRangeEnd; 
     }  _inputBuffer;
-    long  _inputLength;
+    long long  _inputLength;
     unsigned int  _insideComment;
     int  _lastQuoteLevel;
     unsigned int  _noFillLevel;
@@ -49,7 +49,7 @@
 - (void)parseParameterString:(id)arg1;
 - (int)readTokenInto:(id*)arg1;
 - (void)resetStateWithString:(id)arg1 outputString:(id)arg2;
-- (void)setWantsHTML:(BOOL)arg1;
+- (void)setWantsHTML:(bool)arg1;
 - (void)setupFontStackEntry:(/* Warning: unhandled struct encoding: '{_CommandStackEntry=^{?}@}' */ struct _CommandStackEntry { struct { /* ? */ } *x1; id x2; }*)arg1;
 
 @end

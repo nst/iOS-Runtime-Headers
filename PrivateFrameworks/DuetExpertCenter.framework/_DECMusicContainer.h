@@ -14,7 +14,7 @@
 @property (nonatomic, readonly) NSDate *playTime;
 @property (nonatomic, readonly) NSString *trackIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleId;

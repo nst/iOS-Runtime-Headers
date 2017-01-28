@@ -6,7 +6,7 @@
 
 + (id)_complicationSlotDescriptors;
 + (id)_dateComplicationSlot;
-+ (unsigned int)_dateComplicationSlotSupportedStyles;
++ (unsigned long long)_dateComplicationSlotSupportedStyles;
 + (id)_defaultSelectedComplicationSlot;
 
 - (id)_orderedComplicationSlots;

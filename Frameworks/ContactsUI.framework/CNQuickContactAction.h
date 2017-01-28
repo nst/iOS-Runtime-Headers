@@ -3,17 +3,17 @@
  */
 
 @interface CNQuickContactAction : CNQuickAction <CNContactActionDelegate> {
-    id /* block */  _completionBlock;
+    id  _completionBlock;
     CNContactAction * _contactAction;
     <CNQuickContactActionDelegate> * _delegate;
 }
 
-@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, copy) id completionBlock;
 @property (nonatomic, retain) CNContactAction *contactAction;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CNQuickContactActionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -24,12 +24,12 @@
 - (void)actionDidFinish:(id)arg1;
 - (void)actionDidUpdate:(id)arg1;
 - (void)actionWasCanceled:(id)arg1;
-- (id /* block */)completionBlock;
+- (id)completionBlock;
 - (id)contactAction;
 - (id)delegate;
 - (id)initWithContactAction:(id)arg1;
-- (void)performWithCompletionBlock:(id /* block */)arg1;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (void)performWithCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id)arg1;
 - (void)setContactAction:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)storeForAction:(id)arg1;

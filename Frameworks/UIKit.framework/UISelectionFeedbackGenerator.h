@@ -12,7 +12,7 @@
 + (Class)_configurationClass;
 
 - (void)_deactivated;
-- (void)_playFeedbackWithSpeed:(float)arg1;
+- (void)_playFeedbackWithSpeed:(double)arg1;
 - (id)_retargetConfiguration;
 - (id)_stats_key;
 - (double)lastSelectionChangeTime;

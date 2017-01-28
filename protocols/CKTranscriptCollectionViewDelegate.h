@@ -6,8 +6,8 @@
 @required
 
 - (void)collectionViewDidInset:(CKTranscriptCollectionView *)arg1;
-- (void)collectionViewWillInset:(CKTranscriptCollectionView *)arg1 targetContentInset:(inout struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2;
-- (void)collectionViewWillProgrammaticallyScroll:(CKTranscriptCollectionView *)arg1 animated:(BOOL)arg2;
-- (void)collectionViewWillScroll:(CKTranscriptCollectionView *)arg1 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg2;
+- (void)collectionViewWillInset:(CKTranscriptCollectionView *)arg1 targetContentInset:(inout struct UIEdgeInsets { double x1; double x2; double x3; double x4; }*)arg2;
+- (void)collectionViewWillProgrammaticallyScroll:(CKTranscriptCollectionView *)arg1 animated:(bool)arg2;
+- (void)collectionViewWillScroll:(CKTranscriptCollectionView *)arg1 targetContentOffset:(inout struct CGPoint { double x1; double x2; }*)arg2;
 
 @end

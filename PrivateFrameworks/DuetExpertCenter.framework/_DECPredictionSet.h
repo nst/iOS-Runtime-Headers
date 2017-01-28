@@ -13,9 +13,9 @@
 - (void).cxx_destruct;
 - (id)allValues;
 - (id)description;
-- (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateKeysAndObjectsUsingBlock:(id)arg1;
 - (id)init;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)objectForKey:(struct NSString { Class x1; }*)arg1;
 - (id)objectForKeyedSubscript:(struct NSString { Class x1; }*)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(struct NSString { Class x1; }*)arg2;

@@ -16,25 +16,25 @@
 @property (nonatomic, copy) NSUUID *contactCollectionUUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedTIContactManager;
 
-- (id /* block */)addContactObserver:(id /* block */)arg1;
-- (void)addContactObserver:(id /* block */)arg1 addOnce:(BOOL)arg2;
+- (id)addContactObserver:(id)arg1;
+- (void)addContactObserver:(id)arg1 addOnce:(bool)arg2;
 - (id)contactCollectionUUID;
 - (void)contactStoreChanged;
 - (void)dealloc;
-- (void)doAdd:(id /* block */)arg1 addOnce:(BOOL)arg2;
+- (void)doAdd:(id)arg1 addOnce:(bool)arg2;
 - (void)doLoad;
-- (void)getOnce:(id /* block */)arg1;
-- (void)handleMemoryPressureLevel:(unsigned int)arg1 excessMemoryInBytes:(unsigned int)arg2;
+- (void)getOnce:(id)arg1;
+- (void)handleMemoryPressureLevel:(unsigned long long)arg1 excessMemoryInBytes:(unsigned long long)arg2;
 - (id)init;
 - (id)initWithLoader:(id)arg1;
 - (void)keyboardActivityDidTransition:(id)arg1;
 - (void)prepareForNotification:(id)arg1;
-- (void)removeContactObserver:(id /* block */)arg1;
+- (void)removeContactObserver:(id)arg1;
 - (void)setContactCollectionUUID:(id)arg1;
 - (void)sync;
 - (void)unload;

@@ -4,11 +4,11 @@
 
 @interface IDSAutoCleanup : NSObject {
     int  _accessCount;
-    id /* block */  _cleanupBlock;
+    id  _cleanupBlock;
 }
 
 - (void)dealloc;
 - (void)incrementAccessCount;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithBlock:(id)arg1;
 
 @end

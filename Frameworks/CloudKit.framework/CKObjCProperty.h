@@ -4,7 +4,7 @@
 
 @interface CKObjCProperty : NSObject {
     Class  _classHandle;
-    unsigned int  _flags;
+    unsigned long long  _flags;
     NSMethodSignature * _getterMethodSignature;
     SEL  _getterSelector;
     NSString * _getterSelectorName;
@@ -17,7 +17,7 @@
 }
 
 @property (nonatomic, readonly) Class classHandle;
-@property (nonatomic, readonly) unsigned int flags;
+@property (nonatomic, readonly) unsigned long long flags;
 @property (nonatomic, readonly) NSMethodSignature *getterMethodSignature;
 @property (nonatomic, readonly) SEL getterSelector;
 @property (nonatomic, readonly) NSString *getterSelectorName;
@@ -30,9 +30,9 @@
 
 - (void).cxx_destruct;
 - (Class)classHandle;
-- (int)compare:(id)arg1;
-- (int)compareToProperty:(id)arg1;
-- (unsigned int)flags;
+- (long long)compare:(id)arg1;
+- (long long)compareToProperty:(id)arg1;
+- (unsigned long long)flags;
 - (id)getFromObject:(id)arg1;
 - (id)getterMethodSignature;
 - (SEL)getterSelector;

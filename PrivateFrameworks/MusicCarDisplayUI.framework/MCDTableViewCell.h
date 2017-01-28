@@ -3,16 +3,16 @@
  */
 
 @interface MCDTableViewCell : UITableViewCell {
-    BOOL  _explicitContent;
+    bool  _explicitContent;
     UIImageView * _explicitImageView;
 }
 
-@property (getter=isExplicitContent, nonatomic) BOOL explicitContent;
+@property (getter=isExplicitContent, nonatomic) bool explicitContent;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isExplicitContent;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isExplicitContent;
 - (void)layoutSubviews;
-- (void)setExplicitContent:(BOOL)arg1;
+- (void)setExplicitContent:(bool)arg1;
 
 @end

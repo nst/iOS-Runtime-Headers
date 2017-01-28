@@ -12,10 +12,10 @@
 @property double maxValue;
 @property (retain) OITSUProgress *progress;
 
-- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
+- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isIndeterminate;
+- (bool)isIndeterminate;
 - (double)maxValue;
 - (void)p_addProgressObserverToProgressInQueue;
 - (void)p_removeProgressObserverFromProgressInQueue;

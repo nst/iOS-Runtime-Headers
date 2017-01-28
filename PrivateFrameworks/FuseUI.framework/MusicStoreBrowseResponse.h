@@ -8,12 +8,12 @@
 }
 
 @property (nonatomic, retain) MPChangeDetails *changeDetails;
-@property (nonatomic, readonly) BOOL hasAdditionalContentItems;
+@property (nonatomic, readonly) bool hasAdditionalContentItems;
 @property (nonatomic, retain) MusicStoreBrowseResponseParser *parser;
 
 - (void).cxx_destruct;
 - (id)changeDetails;
-- (BOOL)hasAdditionalContentItems;
+- (bool)hasAdditionalContentItems;
 - (id)parser;
 - (void)setChangeDetails:(id)arg1;
 - (void)setParser:(id)arg1;

@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setMediaDetailHeaderHeight:(float)arg1 withMaximumHeaderHeight:(float)arg2 transitionProgress:(float)arg3;
+- (void)setMediaDetailHeaderHeight:(double)arg1 withMaximumHeaderHeight:(double)arg2 transitionProgress:(double)arg3;
 
 @optional
 

@@ -3,16 +3,16 @@
  */
 
 @interface HUCheckmarkCell : UITableViewCell {
-    BOOL  _checked;
+    bool  _checked;
 }
 
-@property (nonatomic) BOOL checked;
+@property (nonatomic) bool checked;
 
 + (id)_emptyCheckmarkPlaceholderImage;
 
-- (BOOL)checked;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (bool)checked;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
-- (void)setChecked:(BOOL)arg1;
+- (void)setChecked:(bool)arg1;
 
 @end

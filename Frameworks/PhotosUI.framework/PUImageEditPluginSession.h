@@ -3,16 +3,16 @@
  */
 
 @interface PUImageEditPluginSession : PUEditPluginSession {
-    BOOL  _allowLivePhotoExtensions;
+    bool  _allowLivePhotoExtensions;
 }
 
-@property (nonatomic) BOOL allowLivePhotoExtensions;
+@property (nonatomic) bool allowLivePhotoExtensions;
 
-- (BOOL)allowLivePhotoExtensions;
+- (bool)allowLivePhotoExtensions;
 - (id)imageDataSource;
-- (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id /* block */)arg2;
-- (unsigned int)pluginManagerMediaType;
-- (void)setAllowLivePhotoExtensions:(BOOL)arg1;
-- (void)shouldLaunchPlugin:(id)arg1 completion:(id /* block */)arg2;
+- (void)loadItemProviderWithSupportedAdjustmentData:(id)arg1 loadHandler:(id)arg2;
+- (unsigned long long)pluginManagerMediaType;
+- (void)setAllowLivePhotoExtensions:(bool)arg1;
+- (void)shouldLaunchPlugin:(id)arg1 completion:(id)arg2;
 
 @end

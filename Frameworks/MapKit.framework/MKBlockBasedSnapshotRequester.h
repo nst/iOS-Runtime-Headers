@@ -3,20 +3,20 @@
  */
 
 @interface MKBlockBasedSnapshotRequester : NSObject <MKMapSnapshotCreatorRequester> {
-    id /* block */  handler;
+    id  handler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ handler;
-@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id handler;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (id)snapshotRequesterWitHandler:(id /* block */)arg1;
++ (id)snapshotRequesterWitHandler:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)handler;
+- (id)handler;
 - (void)mapSnapshotCreator:(id)arg1 didCreateSnapshot:(id)arg2 attributionString:(id)arg3 context:(id)arg4;
-- (void)setHandler:(id /* block */)arg1;
+- (void)setHandler:(id)arg1;
 
 @end

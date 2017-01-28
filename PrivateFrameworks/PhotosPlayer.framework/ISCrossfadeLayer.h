@@ -6,6 +6,7 @@
     CALayer * __contentLayer;
     CALayer * __heroLayer;
     ISCrossfadeItem * _crossfadeItem;
+    NSMapTable * _layerToImageData;
     ISPlaybackSpec * _playbackSpec;
     ISLayerPlayer * _player;
 }
@@ -15,7 +16,7 @@
 @property (nonatomic, retain) ISCrossfadeItem *crossfadeItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ISPlaybackSpec *playbackSpec;
 @property (nonatomic, retain) ISLayerPlayer *player;
 @property (readonly) Class superclass;

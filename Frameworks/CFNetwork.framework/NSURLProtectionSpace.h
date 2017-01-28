@@ -9,17 +9,17 @@
 @property (nonatomic, readonly, copy) NSString *_sf_highLevelDomainAndPort;
 @property (readonly, copy) NSString *authenticationMethod;
 @property (readonly, copy) NSString *host;
-@property (readonly) BOOL isProxy;
-@property (readonly) int port;
+@property (readonly) bool isProxy;
+@property (readonly) long long port;
 @property (readonly, copy) NSString *protocol;
 @property (readonly, copy) NSString *proxyType;
 @property (readonly, copy) NSString *realm;
-@property (readonly) BOOL receivesCredentialSecurely;
+@property (readonly) bool receivesCredentialSecurely;
 @property (nonatomic, readonly) struct __CFString { }*safari_protocolAsSecAttrProtocolValue;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (struct _CFURLProtectionSpace { }*)_CFURLProtectionSpace;
 - (struct _CFURLProtectionSpace { }*)_cfurlprtotectionspace;
@@ -31,19 +31,19 @@
 - (id)description;
 - (id)distinguishedNames;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)host;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithHost:(id)arg1 port:(int)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
-- (id)initWithProxyHost:(id)arg1 port:(int)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isProxy;
-- (int)port;
+- (id)initWithHost:(id)arg1 port:(long long)arg2 protocol:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (id)initWithProxyHost:(id)arg1 port:(long long)arg2 type:(id)arg3 realm:(id)arg4 authenticationMethod:(id)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isProxy;
+- (long long)port;
 - (id)protocol;
 - (id)proxyType;
 - (id)realm;
-- (BOOL)receivesCredentialSecurely;
+- (bool)receivesCredentialSecurely;
 - (struct __SecTrust { }*)serverTrust;
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
@@ -56,9 +56,9 @@
 
 - (id)safari_URL;
 - (id)safari_addressString;
-- (BOOL)safari_allowsCredentialSaving;
-- (int)safari_compareToHighLevelDomainFromProtectionSpace:(id)arg1;
-- (int)safari_compareToHighLevelDomainFromProtectionSpaceOrderingDecimalCharactersLast:(id)arg1;
+- (bool)safari_allowsCredentialSaving;
+- (long long)safari_compareToHighLevelDomainFromProtectionSpace:(id)arg1;
+- (long long)safari_compareToHighLevelDomainFromProtectionSpaceOrderingDecimalCharactersLast:(id)arg1;
 - (id)safari_creationDateOfCredentialWithUser:(id)arg1;
 - (id)safari_protectionSpaceByReplacingHostWithHighlevelDomain;
 - (struct __CFString { }*)safari_protocolAsSecAttrProtocolValue;

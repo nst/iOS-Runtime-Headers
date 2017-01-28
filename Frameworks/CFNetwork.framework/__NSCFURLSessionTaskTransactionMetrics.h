@@ -3,38 +3,38 @@
  */
 
 @interface __NSCFURLSessionTaskTransactionMetrics : NSURLSessionTaskTransactionMetrics <NSSecureCoding> {
-    BOOL  __cellular;
-    BOOL  __localCache;
+    bool  __cellular;
+    bool  __localCache;
     unsigned int  __redirected;
-    BOOL  __secureConnection;
-    BOOL  __serverPush;
+    bool  __secureConnection;
+    bool  __serverPush;
     NSDate * _connectEndDate;
     NSDate * _connectStartDate;
     NSDate * _domainLookupEndDate;
     NSDate * _domainLookupStartDate;
     NSDate * _fetchStartDate;
     NSString * _networkProtocolName;
-    BOOL  _proxyConnection;
+    bool  _proxyConnection;
     NSURLRequest * _request;
     NSDate * _requestEndDate;
     NSDate * _requestStartDate;
-    int  _resourceFetchType;
+    long long  _resourceFetchType;
     NSURLResponse * _response;
     NSDate * _responseEndDate;
     NSDate * _responseStartDate;
-    BOOL  _reusedConnection;
+    bool  _reusedConnection;
     NSDate * _secureConnectionEndDate;
     NSDate * _secureConnectionStartDate;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_cellular;
+- (bool)_cellular;
 - (id)_initWithPerformanceTiming:(struct __PerformanceTiming { }*)arg1;
-- (BOOL)_localCache;
+- (bool)_localCache;
 - (unsigned int)_redirected;
-- (BOOL)_secureConnection;
-- (BOOL)_serverPush;
+- (bool)_secureConnection;
+- (bool)_serverPush;
 - (id)connectEndDate;
 - (id)connectStartDate;
 - (void)dealloc;
@@ -45,13 +45,13 @@
 - (id)fetchStartDate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isProxyConnection;
-- (BOOL)isReusedConnection;
+- (bool)isProxyConnection;
+- (bool)isReusedConnection;
 - (id)networkProtocolName;
 - (id)request;
 - (id)requestEndDate;
 - (id)requestStartDate;
-- (int)resourceFetchType;
+- (long long)resourceFetchType;
 - (id)response;
 - (id)responseEndDate;
 - (id)responseStartDate;
@@ -63,21 +63,21 @@
 - (void)setDomainLookupStartDate:(id)arg1;
 - (void)setFetchStartDate:(id)arg1;
 - (void)setNetworkProtocolName:(id)arg1;
-- (void)setProxyConnection:(BOOL)arg1;
+- (void)setProxyConnection:(bool)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setRequestEndDate:(id)arg1;
 - (void)setRequestStartDate:(id)arg1;
-- (void)setResourceFetchType:(int)arg1;
+- (void)setResourceFetchType:(long long)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setResponseEndDate:(id)arg1;
 - (void)setResponseStartDate:(id)arg1;
-- (void)setReusedConnection:(BOOL)arg1;
+- (void)setReusedConnection:(bool)arg1;
 - (void)setSecureConnectionEndDate:(id)arg1;
 - (void)setSecureConnectionStartDate:(id)arg1;
-- (void)set_cellular:(BOOL)arg1;
-- (void)set_localCache:(BOOL)arg1;
+- (void)set_cellular:(bool)arg1;
+- (void)set_localCache:(bool)arg1;
 - (void)set_redirected:(unsigned int)arg1;
-- (void)set_secureConnection:(BOOL)arg1;
-- (void)set_serverPush:(BOOL)arg1;
+- (void)set_secureConnection:(bool)arg1;
+- (void)set_serverPush:(bool)arg1;
 
 @end

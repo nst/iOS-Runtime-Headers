@@ -5,19 +5,19 @@
 @interface HFRoomSuggestion : NSObject {
     NSSet * _aliases;
     NSString * _name;
-    int  _priority;
+    long long  _priority;
 }
 
 @property (nonatomic, readonly, copy) NSSet *aliases;
 @property (nonatomic, readonly, copy) NSString *name;
-@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) long long priority;
 
-+ (id)suggestionWithName:(id)arg1 priority:(int)arg2;
-+ (id)suggestionWithName:(id)arg1 priority:(int)arg2 aliases:(id)arg3;
++ (id)suggestionWithName:(id)arg1 priority:(long long)arg2;
++ (id)suggestionWithName:(id)arg1 priority:(long long)arg2 aliases:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)aliases;
 - (id)name;
-- (int)priority;
+- (long long)priority;
 
 @end

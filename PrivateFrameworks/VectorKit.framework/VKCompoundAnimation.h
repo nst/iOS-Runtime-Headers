@@ -4,27 +4,27 @@
 
 @interface VKCompoundAnimation : VKAnimation {
     NSMutableArray * _animations;
-    id /* block */  _groupStepHandler;
+    id  _groupStepHandler;
 }
 
 @property (nonatomic, readonly) NSMutableArray *animations;
-@property (nonatomic, copy) id /* block */ groupStepHandler;
+@property (nonatomic, copy) id groupStepHandler;
 
 - (id)animations;
 - (void)dealloc;
 - (double)duration;
-- (id /* block */)groupStepHandler;
+- (id)groupStepHandler;
 - (id)initWithAnimations:(id)arg1;
 - (void)onTimerFired:(double)arg1;
 - (void)pause;
 - (void)resume;
-- (BOOL)running;
-- (BOOL)runsForever;
+- (bool)running;
+- (bool)runsForever;
 - (void)setDuration:(double)arg1;
-- (void)setGroupStepHandler:(id /* block */)arg1;
-- (void)setRunsForever:(BOOL)arg1;
+- (void)setGroupStepHandler:(id)arg1;
+- (void)setRunsForever:(bool)arg1;
 - (void)startWithRunner:(id)arg1;
-- (void)stopAnimation:(BOOL)arg1;
-- (BOOL)timed;
+- (void)stopAnimation:(bool)arg1;
+- (bool)timed;
 
 @end

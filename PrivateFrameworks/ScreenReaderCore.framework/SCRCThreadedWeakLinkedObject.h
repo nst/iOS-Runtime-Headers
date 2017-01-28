@@ -3,7 +3,7 @@
  */
 
 @interface SCRCThreadedWeakLinkedObject : NSObject {
-    BOOL  _calledDealloc;
+    bool  _calledDealloc;
     int  _referenceCount;
     NSLock * _releaseLock;
 }
@@ -13,6 +13,6 @@
 - (void)invalidateThreadsWithWeakLinks;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

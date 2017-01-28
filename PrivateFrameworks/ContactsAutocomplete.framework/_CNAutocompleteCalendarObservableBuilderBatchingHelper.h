@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) _CNAutocompleteObservableBuilderBatchingHelper *helper;
 @property (readonly) Class superclass;
 
@@ -20,7 +20,7 @@
 - (void)addDuetObservable:(id)arg1;
 - (void)addSuggestionsObservable:(id)arg1;
 - (void)addSupplementalObservable:(id)arg1;
-- (BOOL)batchAtIndexIncludesServer:(unsigned int)arg1;
+- (bool)batchAtIndexIncludesServer:(unsigned long long)arg1;
 - (id)batchedObservables;
 - (id)helper;
 - (id)init;

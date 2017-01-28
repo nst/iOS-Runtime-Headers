@@ -3,37 +3,37 @@
  */
 
 @interface TSDConnectionLinePathSource : TSDBezierPathSource <TSDSmartPathSource> {
-    float  mOutsetFrom;
-    float  mOutsetTo;
+    double  mOutsetFrom;
+    double  mOutsetTo;
     int  mType;
 }
 
-@property (nonatomic) float outsetFrom;
-@property (nonatomic) float outsetTo;
+@property (nonatomic) double outsetFrom;
+@property (nonatomic) double outsetTo;
 @property (nonatomic) int type;
 
-+ (id)pathSourceAtAngleOfSize:(struct CGSize { float x1; float x2; })arg1 forType:(int)arg2;
-+ (id)pathSourceOfLength:(float)arg1;
++ (id)pathSourceAtAngleOfSize:(struct CGSize { double x1; double x2; })arg1 forType:(int)arg2;
++ (id)pathSourceOfLength:(double)arg1;
 
 - (void)bend;
 - (id)bezierPath;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (struct CGPoint { float x1; float x2; })fixedPointForControlKnobChange;
-- (struct CGPoint { float x1; float x2; })getControlKnobPosition:(unsigned int)arg1;
+- (struct CGPoint { double x1; double x2; })fixedPointForControlKnobChange;
+- (struct CGPoint { double x1; double x2; })getControlKnobPosition:(unsigned long long)arg1;
 - (id)initWithArchive:(const struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct PointPathSourceArchive {} *x5; struct ScalarPathSourceArchive {} *x6; struct BezierPathSourceArchive {} *x7; struct CalloutPathSourceArchive {} *x8; struct ConnectionLinePathSourceArchive {} *x9; struct EditableBezierPathSourceArchive {} *x10; bool x11; bool x12; }*)arg1;
 - (id)initWithBezierPath:(id)arg1;
-- (BOOL)isCircular;
-- (BOOL)isLineSegment;
-- (BOOL)isRectangular;
-- (unsigned int)numberOfControlKnobs;
-- (float)outsetFrom;
-- (float)outsetTo;
+- (bool)isCircular;
+- (bool)isLineSegment;
+- (bool)isRectangular;
+- (unsigned long long)numberOfControlKnobs;
+- (double)outsetFrom;
+- (double)outsetTo;
 - (void)p_setBezierPath:(id)arg1;
-- (int)pathElementIndexForKnobTag:(unsigned int)arg1;
+- (long long)pathElementIndexForKnobTag:(unsigned long long)arg1;
 - (void)saveToArchive:(struct PathSourceArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct PointPathSourceArchive {} *x5; struct ScalarPathSourceArchive {} *x6; struct BezierPathSourceArchive {} *x7; struct CalloutPathSourceArchive {} *x8; struct ConnectionLinePathSourceArchive {} *x9; struct EditableBezierPathSourceArchive {} *x10; bool x11; bool x12; }*)arg1;
-- (void)setOutsetFrom:(float)arg1;
-- (void)setOutsetTo:(float)arg1;
+- (void)setOutsetFrom:(double)arg1;
+- (void)setOutsetTo:(double)arg1;
 - (void)setType:(int)arg1;
 - (int)type;
 

@@ -4,18 +4,18 @@
 
 @interface SKUICountLimitViewElement : SKUILimitViewElement {
     NSString * _entityTypeString;
-    int  _limitValue;
+    long long  _limitValue;
 }
 
 @property (nonatomic, readonly, copy) NSString *entityTypeString;
-@property (nonatomic, readonly) int limitValue;
+@property (nonatomic, readonly) long long limitValue;
 
-+ (BOOL)shouldParseChildDOMElements;
++ (bool)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)entityTypeString;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (int)limitValue;
+- (long long)limitValue;
 
 @end

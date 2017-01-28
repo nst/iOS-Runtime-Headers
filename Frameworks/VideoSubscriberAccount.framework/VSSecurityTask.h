@@ -9,13 +9,13 @@
     int (* _copyValueForEntitlement;
     int (* _createFromSelf;
     int (* _createWithAuditToken;
-    unsigned int  _kind;
+    unsigned long long  _kind;
 }
 
 + (id)currentSecurityTask;
 + (id)securityTaskWithAuditToken:(struct { unsigned int x1[8]; })arg1;
 
-- (BOOL)getValue:(id*)arg1 forEntitlement:(id)arg2 error:(id*)arg3;
+- (bool)getValue:(id*)arg1 forEntitlement:(id)arg2 error:(id*)arg3;
 - (id)init;
 - (id)initWithAuditToken:(struct { unsigned int x1[8]; })arg1 createWithAuditTokenProc:(int (*)arg2 copyValueForEntitlementProc:(int (*)arg3;
 - (id)initWithCreateFromSelfProc:(int (*)arg1 copyValueForEntitlementProc:(int (*)arg2;

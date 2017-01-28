@@ -10,21 +10,21 @@
     void tapAction;
 }
 
-@property (nonatomic) long maximumNumberOfElements;
-@property (nonatomic, copy) id /* block */ showUrlHandler;
+@property (nonatomic) long long maximumNumberOfElements;
+@property (nonatomic, copy) id showUrlHandler;
 
-- (id /* block */).cxx_destruct;
-- (float)firstBaselineOffsetFromTop;
+- (id).cxx_destruct;
+- (double)firstBaselineOffsetFromTop;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (float)lastBaselineOffsetFromBottom;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (double)lastBaselineOffsetFromBottom;
 - (void)layoutSubviews;
-- (long)maximumNumberOfElements;
-- (void)refreshWithEvents:(id)arg1 reminders:(id)arg2;
-- (void)setMaximumNumberOfElements:(long)arg1;
-- (void)setShowUrlHandler:(id /* block */)arg1;
-- (id /* block */)showUrlHandler;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (long long)maximumNumberOfElements;
+- (void)refresh:(id)arg1 reminders:(id)arg2;
+- (void)setMaximumNumberOfElements:(long long)arg1;
+- (void)setShowUrlHandler:(id)arg1;
+- (id)showUrlHandler;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 - (void)tapped;
 
 @end

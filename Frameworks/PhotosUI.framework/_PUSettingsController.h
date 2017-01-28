@@ -3,15 +3,15 @@
  */
 
 @interface _PUSettingsController : PTSettingsController {
-    id /* block */  _onViewDidDisappearBlock;
+    id  _onViewDidDisappearBlock;
 }
 
-@property (nonatomic, copy) id /* block */ onViewDidDisappearBlock;
+@property (nonatomic, copy) id onViewDidDisappearBlock;
 
 - (void).cxx_destruct;
 - (void)callOnViewDidDisappearBlock;
-- (id /* block */)onViewDidDisappearBlock;
-- (void)setOnViewDidDisappearBlock:(id /* block */)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
+- (id)onViewDidDisappearBlock;
+- (void)setOnViewDidDisappearBlock:(id)arg1;
+- (void)viewDidDisappear:(bool)arg1;
 
 @end

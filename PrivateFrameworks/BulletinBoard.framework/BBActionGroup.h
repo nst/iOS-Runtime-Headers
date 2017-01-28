@@ -14,9 +14,9 @@
 - (id)actions;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (void)setActions:(id)arg1;
 

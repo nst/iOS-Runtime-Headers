@@ -5,11 +5,11 @@
 
 @required
 
-- (BOOL)_canScrollX;
-- (BOOL)_canScrollY;
-- (float)_scrollHysteresis;
+- (bool)_canScrollX;
+- (bool)_canScrollY;
+- (double)_scrollHysteresis;
 - (double)_touchDelayForScrollDetection;
-- (BOOL)delaysContentTouches;
-- (BOOL)touchesShouldBegin:(NSSet *)arg1 withEvent:(UIEvent *)arg2 inContentView:(UIView *)arg3;
+- (bool)delaysContentTouches;
+- (bool)touchesShouldBegin:(NSSet *)arg1 withEvent:(UIEvent *)arg2 inContentView:(UIView *)arg3;
 
 @end

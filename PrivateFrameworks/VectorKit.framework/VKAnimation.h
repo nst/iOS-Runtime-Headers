@@ -3,41 +3,41 @@
  */
 
 @interface VKAnimation : NSObject {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSString * _name;
-    int  _priority;
+    long long  _priority;
     <VKAnimationRunner> * _runner;
-    BOOL  _runsForever;
-    int  _state;
+    bool  _runsForever;
+    long long  _state;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic) double duration;
-@property (nonatomic, readonly) int priority;
-@property (nonatomic, readonly) BOOL running;
-@property (nonatomic) BOOL runsForever;
-@property (nonatomic, readonly) BOOL timed;
+@property (nonatomic, readonly) long long priority;
+@property (nonatomic, readonly) bool running;
+@property (nonatomic) bool runsForever;
+@property (nonatomic, readonly) bool timed;
 
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (void)dealloc;
 - (id)description;
 - (double)duration;
 - (id)initWithName:(id)arg1;
-- (id)initWithPriority:(int)arg1;
-- (id)initWithPriority:(int)arg1 name:(id)arg2;
+- (id)initWithPriority:(long long)arg1;
+- (id)initWithPriority:(long long)arg1 name:(id)arg2;
 - (void)onTimerFired:(double)arg1;
 - (void)pause;
-- (int)priority;
+- (long long)priority;
 - (void)resume;
-- (BOOL)running;
-- (BOOL)runsForever;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (bool)running;
+- (bool)runsForever;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setDuration:(double)arg1;
-- (void)setRunsForever:(BOOL)arg1;
+- (void)setRunsForever:(bool)arg1;
 - (void)startWithRunner:(id)arg1;
 - (void)stop;
-- (void)stopAnimation:(BOOL)arg1;
-- (BOOL)timed;
+- (void)stopAnimation:(bool)arg1;
+- (bool)timed;
 - (void)transferToRunner:(id)arg1;
 
 @end

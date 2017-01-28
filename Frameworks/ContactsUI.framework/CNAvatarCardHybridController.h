@@ -11,7 +11,7 @@
 @property (nonatomic, retain) CNAvatarCardViewController *cardViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -20,7 +20,7 @@
 - (id)_presentingViewControllerForSystemProvidedPresentationOfAlertController:(id)arg1;
 - (void)_setupAlertController;
 - (void)_setupCardViewControllerWithContacts:(id)arg1;
-- (BOOL)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { float x1; float x2; })arg2;
+- (bool)_shouldPerformSystemProvidedPresentationOfAlertController:(id)arg1 atSystemProvidedPresentationRegisteredViewLocation:(struct CGPoint { double x1; double x2; })arg2;
 - (void)_willBeginSystemProvidedPresentationOfAlertController:(id)arg1;
 - (id)alertController;
 - (id)cardViewController;
@@ -29,11 +29,11 @@
 - (void)cardViewControllerDidDismiss:(id)arg1;
 - (void)cardViewControllerDidUpdatePreferredSize:(id)arg1;
 - (void)cardViewControllerWillDismiss:(id)arg1;
-- (void)dismissAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)dismissAnimated:(bool)arg1 completionHandler:(id)arg2;
 - (id)init;
-- (BOOL)isVisible;
+- (bool)isVisible;
 - (id)preparedViewControllerForPresentationWithGestureRecognizer:(id)arg1;
-- (void)presentAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)presentAnimated:(bool)arg1 completionHandler:(id)arg2;
 - (void)setAlertController:(id)arg1;
 - (void)setCardViewController:(id)arg1;
 - (void)setContacts:(id)arg1;

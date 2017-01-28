@@ -4,24 +4,24 @@
 
 @interface SUCarrierDownloadPolicyProperties : NSObject <NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
+- (bool)_boolForKey:(id)arg1 defaultValue:(bool)arg2;
 - (id)_carrierSUProperties;
-- (int)_integerForKey:(id)arg1 defaultValue:(int)arg2;
-- (BOOL)_isValidHour:(int)arg1;
+- (long long)_integerForKey:(id)arg1 defaultValue:(long long)arg2;
+- (bool)_isValidHour:(long long)arg1;
 - (long long)_longLongForKey:(id)arg1 defaultValue:(long long)arg2;
 - (id)_numberForKey:(id)arg1;
-- (unsigned int)_unsignedIntegerForKey:(id)arg1 defaultValue:(int)arg2;
+- (unsigned long long)_unsignedIntegerForKey:(id)arg1 defaultValue:(long long)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isAutoDownloadAllowable;
-- (BOOL)isDownloadAllowable;
-- (BOOL)isDownloadAllowableOver2G;
-- (BOOL)isDownloadFree;
+- (bool)isAutoDownloadAllowable;
+- (bool)isDownloadAllowable;
+- (bool)isDownloadAllowableOver2G;
+- (bool)isDownloadFree;
 - (long long)maximumDownloadSizeInBytes;
-- (unsigned int)numberOfDaysToWaitForCellularAutoDownload;
-- (int)peakEndHour;
-- (int)peakStartHour;
+- (unsigned long long)numberOfDaysToWaitForCellularAutoDownload;
+- (long long)peakEndHour;
+- (long long)peakStartHour;
 
 @end

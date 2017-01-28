@@ -22,7 +22,7 @@
 @property (nonatomic, copy) NSString *statusText;
 @property (nonatomic, copy) NSString *text;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)albumStreamingCreateViewController:(PUCloudSharedCreateAlbumViewController *)arg1 didSucceed:(BOOL)arg2;
+- (void)albumStreamingCreateViewController:(PUCloudSharedCreateAlbumViewController *)arg1 didSucceed:(bool)arg2;
 
 @end

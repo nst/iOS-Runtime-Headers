@@ -5,7 +5,7 @@
 @interface HFCameraManager : NSObject <HFAccessoryObserver, HFCameraObserver> {
     NSError * _cachedStreamError;
     HMCameraProfile * _cameraProfile;
-    BOOL  _isRegisteredForEvents;
+    bool  _isRegisteredForEvents;
     <NACancelable> * _nextSnapshotEvent;
     NSHashTable * _snapshotRequesters;
     NSHashTable * _streamRequesters;
@@ -15,8 +15,8 @@
 @property (nonatomic, readonly) HMCameraProfile *cameraProfile;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isRegisteredForEvents;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isRegisteredForEvents;
 @property (nonatomic, retain) <NACancelable> *nextSnapshotEvent;
 @property (nonatomic, readonly) NSHashTable *snapshotRequesters;
 @property (nonatomic, readonly) NSHashTable *streamRequesters;
@@ -31,8 +31,8 @@
 - (void)_endContinuousStreaming;
 - (void)_endPeriodicSnapshots;
 - (void)_handleApplicationWillEnterForegroundNotification;
-- (BOOL)_hasSnapshotRequesters;
-- (BOOL)_hasStreamRequesters;
+- (bool)_hasSnapshotRequesters;
+- (bool)_hasStreamRequesters;
 - (void)_scheduleNextSnapshotEvent;
 - (double)_snapshotTimeInterval;
 - (void)_startStreaming;
@@ -51,10 +51,10 @@
 - (void)endContinuousStreamingWithRequester:(id)arg1;
 - (void)endPeriodicSnapshotsWithRequester:(id)arg1;
 - (id)initWithCameraProfile:(id)arg1;
-- (BOOL)isRegisteredForEvents;
+- (bool)isRegisteredForEvents;
 - (id)nextSnapshotEvent;
 - (void)setCachedStreamError:(id)arg1;
-- (void)setIsRegisteredForEvents:(BOOL)arg1;
+- (void)setIsRegisteredForEvents:(bool)arg1;
 - (void)setNextSnapshotEvent:(id)arg1;
 - (id)snapshotRequesters;
 - (id)streamRequesters;

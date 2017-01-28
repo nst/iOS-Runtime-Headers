@@ -4,11 +4,11 @@
 
 @interface TPFootnoteContainerRep : TSDContainerRep
 
-- (BOOL)canBeginEditingChildRepOnDoubleTap:(id)arg1;
+- (bool)canBeginEditingChildRepOnDoubleTap:(id)arg1;
 - (void)didUpdateLayer:(id)arg1;
-- (BOOL)directlyManagesLayerContent;
+- (bool)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (BOOL)p_hasContent;
+- (bool)p_hasContent;
 - (id)repForHandleSingleTap;
 
 @end

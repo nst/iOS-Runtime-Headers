@@ -3,17 +3,17 @@
  */
 
 @interface AppLaunchStatsLaunchObject : NSObject {
-    id /* block */  aplsLaunchQueueBlock;
+    id  aplsLaunchQueueBlock;
     NSString * bundleID;
 }
 
-@property (copy) id /* block */ aplsLaunchQueueBlock;
+@property (copy) id aplsLaunchQueueBlock;
 @property (nonatomic, retain) NSString *bundleID;
 
 - (void).cxx_destruct;
-- (id /* block */)aplsLaunchQueueBlock;
+- (id)aplsLaunchQueueBlock;
 - (id)bundleID;
-- (void)setAplsLaunchQueueBlock:(id /* block */)arg1;
+- (void)setAplsLaunchQueueBlock:(id)arg1;
 - (void)setBundleID:(id)arg1;
 
 @end

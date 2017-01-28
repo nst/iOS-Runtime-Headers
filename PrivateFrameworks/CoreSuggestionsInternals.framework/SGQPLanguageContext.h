@@ -28,7 +28,7 @@
 - (id)initWithParsecPredictor:(id)arg1 emotivePhrases:(id)arg2 responseKitPredictor:(id)arg3 finalOrderingPattern:(id)arg4 language:(id)arg5 abGroup:(id)arg6 metricsTracker:(id)arg7 finalThreshold:(double)arg8;
 - (id)language;
 - (id)parsecEntitiesInMessages:(id)arg1;
-- (id)predictionsFromMessages:(id)arg1 conversationId:(id)arg2 count:(unsigned int)arg3;
+- (id)predictionsFromMessages:(id)arg1 conversationId:(id)arg2 count:(unsigned long long)arg3;
 - (id)responseKitPredictionsFromMessages:(id)arg1;
 
 @end

@@ -10,15 +10,15 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *inputModeIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) TITypologyLog *typologyLog;
 @property (nonatomic, retain) TITypologyStatistic *typologyStatistic;
 
 + (id)generateStructuredDataReportForTypologyLog:(id)arg1;
-+ (void)pruneTypologyLogsToMaxNumBytes:(int)arg1 satisfyingPredicate:(id /* block */)arg2;
-+ (BOOL)shouldSubmitStructuredDataReportForTypologyLog:(id)arg1;
++ (void)pruneTypologyLogsToMaxNumBytes:(long long)arg1 satisfyingPredicate:(id)arg2;
++ (bool)shouldSubmitStructuredDataReportForTypologyLog:(id)arg1;
 + (void)submitAggregrateDictionaryReport:(id)arg1 inputModeIdentifier:(id)arg2;
 + (void)submitStructuredDataReportForTypologyLog:(id)arg1;
 + (void)writeHumanReadableTraceForTypologyLog:(id)arg1;
@@ -32,8 +32,8 @@
 - (id)inputModeIdentifier;
 - (void)logAutocorrections:(id)arg1 forKeyboardState:(id)arg2;
 - (void)logCandidateResultSet:(id)arg1 forKeyboardState:(id)arg2;
-- (void)logHitKeyCode:(int)arg1 forTouchEvent:(id)arg2 keyboardState:(id)arg3;
-- (void)logKeyboardConfig:(id)arg1 forAdjustedPhraseBoundaryInForwardDirection:(BOOL)arg2 granularity:(int)arg3 keyboardState:(id)arg4;
+- (void)logHitKeyCode:(long long)arg1 forTouchEvent:(id)arg2 keyboardState:(id)arg3;
+- (void)logKeyboardConfig:(id)arg1 forAdjustedPhraseBoundaryInForwardDirection:(bool)arg2 granularity:(int)arg3 keyboardState:(id)arg4;
 - (void)logKeyboardConfig:(id)arg1 forSyncToKeyboardState:(id)arg2;
 - (void)logKeyboardConfig:(id)arg1 textToCommit:(id)arg2 forAcceptedCandidate:(id)arg3 keyboardState:(id)arg4;
 - (void)logKeyboardOutput:(id)arg1 keyboardConfiguration:(id)arg2 forKeyboardInput:(id)arg3 keyboardState:(id)arg4;
@@ -49,8 +49,8 @@
 - (void)setInputModeIdentifier:(id)arg1;
 - (void)setTypologyLog:(id)arg1;
 - (void)setTypologyStatistic:(id)arg1;
-- (BOOL)shouldWriteToSyslogForKeyboardState:(id)arg1;
-- (BOOL)shouldWriteToTypologyLogForKeyboardState:(id)arg1;
+- (bool)shouldWriteToSyslogForKeyboardState:(id)arg1;
+- (bool)shouldWriteToTypologyLogForKeyboardState:(id)arg1;
 - (id)typologyLog;
 - (id)typologyStatistic;
 - (id)writeToFile;

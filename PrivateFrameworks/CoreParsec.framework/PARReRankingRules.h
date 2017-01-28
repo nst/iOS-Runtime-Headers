@@ -4,19 +4,19 @@
 
 @interface PARReRankingRules : NSObject {
     NSArray * _domainsToRerank;
-    unsigned int  _movementRange;
+    unsigned long long  _movementRange;
 }
 
 @property (nonatomic, retain) NSArray *domainsToRerank;
-@property (nonatomic) unsigned int movementRange;
+@property (nonatomic) unsigned long long movementRange;
 
 + (id)defaultValue;
 + (id)responseFromJSON:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)domainsToRerank;
-- (unsigned int)movementRange;
+- (unsigned long long)movementRange;
 - (void)setDomainsToRerank:(id)arg1;
-- (void)setMovementRange:(unsigned int)arg1;
+- (void)setMovementRange:(unsigned long long)arg1;
 
 @end

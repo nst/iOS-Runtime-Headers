@@ -11,14 +11,14 @@
 }
 
 @property (nonatomic, readonly) const float*averagePowerLevels;
-@property (nonatomic, readonly) int averagePowerLevelsCount;
+@property (nonatomic, readonly) long long averagePowerLevelsCount;
 @property (nonatomic, readonly) struct { double x1; double x2; } timeRange;
 
 + (id)_discontinuityRepairedSegmentsByGrowingToFillGapsInSegments:(id)arg1;
 + (id)_mergedSegmentByFastMergingWithMergeableSegments:(id)arg1 mergedLevelsDuration:(double)arg2;
 + (id)_mergedSegmentByResamplingWithMergeableSegments:(id)arg1 mergedLevelsDuration:(double)arg2;
 + (id)_segmentByMergingMergableSegments:(id)arg1;
-+ (id)_segmentsByJoiningSegment:(id)arg1 toSegmentIfNecessaryWithGreaterSegment:(id)arg2 averagePowerLevelJoinLimit:(unsigned int)arg3;
++ (id)_segmentsByJoiningSegment:(id)arg1 toSegmentIfNecessaryWithGreaterSegment:(id)arg2 averagePowerLevelJoinLimit:(unsigned long long)arg3;
 + (id)emptySegmentWithTimeRange:(struct { double x1; double x2; })arg1;
 + (void)initialize;
 + (id)segmentsByMergingSegments:(id)arg1 preferredSegmentDuration:(double)arg2;
@@ -28,21 +28,21 @@
 - (void).cxx_destruct;
 - (id)_initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelData:(id)arg2;
 - (id)_segmentWithValuesInContainedTimeRange:(struct { double x1; double x2; })arg1;
-- (id)_segmentsByJoiningIfNecessaryGreaterSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned int)arg2;
+- (id)_segmentsByJoiningIfNecessaryGreaterSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned long long)arg2;
 - (const float*)averagePowerLevels;
-- (int)averagePowerLevelsCount;
+- (long long)averagePowerLevelsCount;
 - (id)copyWithAdjustedTimeRange:(struct { double x1; double x2; })arg1;
 - (id)copyWithTimeRangeOffsetByTimeOffset:(double)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasUniformPowerLevel:(float)arg1;
+- (bool)hasUniformPowerLevel:(float)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelData:(id)arg2;
 - (id)initWithTimeRange:(struct { double x1; double x2; })arg1 averagePowerLevelVector:(struct vector<float, std::__1::allocator<float> > { float *x1; float *x2; struct __compressed_pair<float *, std::__1::allocator<float> > { float *x_3_1_1; } x3; }*)arg2;
-- (BOOL)isWaveformDataEqualToDataInSegment:(id)arg1;
+- (bool)isWaveformDataEqualToDataInSegment:(id)arg1;
 - (id)segmentByClippingToTimeRange:(struct { double x1; double x2; })arg1;
 - (id)segmentsByJoiningIfSmallSegment:(id)arg1;
-- (id)segmentsByJoiningIfSmallSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned int)arg2;
+- (id)segmentsByJoiningIfSmallSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned long long)arg2;
 - (id)simpleDescription;
 - (struct { double x1; double x2; })timeRange;
 - (id)verboseDescription;

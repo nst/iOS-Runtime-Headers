@@ -16,13 +16,13 @@
 - (id)buildConnnectionsRequestWithTrigger:(id)arg1;
 - (id)buildEventRequestWithTrigger:(id)arg1;
 - (id)buildPeopleRequestWithTrigger:(id)arg1;
-- (void)connectionsPredictionsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned int)arg3 timeout:(float)arg4 handler:(id /* block */)arg5;
-- (void)eventPredictionsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned int)arg3 timeout:(float)arg4 handler:(id /* block */)arg5;
+- (void)connectionsPredictionsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned long long)arg3 timeout:(float)arg4 handler:(id)arg5;
+- (void)eventPredictionsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned long long)arg3 timeout:(float)arg4 handler:(id)arg5;
 - (id)init;
 - (id)initForTesting;
-- (BOOL)isFirstPersonTrigger:(id)arg1;
-- (void)namesWithContactsLimit:(unsigned int)arg1 withFoundLimit:(unsigned int)arg2 timeout:(float)arg3 handler:(id /* block */)arg4;
-- (void)peoplePredictionsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned int)arg3 timeout:(float)arg4 handler:(id /* block */)arg5;
+- (bool)isFirstPersonTrigger:(id)arg1;
+- (void)namesWithContactsLimit:(unsigned long long)arg1 withFoundLimit:(unsigned long long)arg2 timeout:(float)arg3 handler:(id)arg4;
+- (void)peoplePredictionsWithProactiveTrigger:(id)arg1 searchContext:(id)arg2 limit:(unsigned long long)arg3 timeout:(float)arg4 handler:(id)arg5;
 - (id)pexBroker;
 - (void)resetBrokerForTesting;
 - (void)setPexBroker:(id)arg1;

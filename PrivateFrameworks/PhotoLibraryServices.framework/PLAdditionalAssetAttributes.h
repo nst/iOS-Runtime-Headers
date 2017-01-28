@@ -8,7 +8,7 @@
 
 @property (setter=_setCachedShiftedLocation:, nonatomic, retain) CLLocation *_cachedShiftedLocation;
 @property (nonatomic, copy) NSString *adjustedFingerPrint;
-@property (nonatomic) BOOL allowedForAnalysis;
+@property (nonatomic) bool allowedForAnalysis;
 @property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, retain) PLAssetDescription *assetDescription;
 @property (nonatomic) short cameraCaptureDevice;
@@ -58,7 +58,7 @@
 @property (nonatomic) long long shareCount;
 @property (nonatomic, retain) CLLocation *shiftedLocation;
 @property (nonatomic, retain) NSData *shiftedLocationData;
-@property (nonatomic) BOOL shiftedLocationIsValid;
+@property (nonatomic) bool shiftedLocationIsValid;
 @property (nonatomic, retain) NSString *timeZoneName;
 @property (nonatomic, retain) NSNumber *timeZoneOffset;
 @property (nonatomic, retain) NSString *title;
@@ -77,16 +77,16 @@
 - (id)_cachedShiftedLocation;
 - (void)_setCachedShiftedLocation:(id)arg1;
 - (void)dealloc;
-- (BOOL)isSyncableChange;
+- (bool)isSyncableChange;
 - (id)longDescription;
-- (BOOL)migrateReverseLocationDataFromKeyedArchiverFormat;
+- (bool)migrateReverseLocationDataFromKeyedArchiverFormat;
 - (void)setLongDescription:(id)arg1;
 - (void)setShiftedLocation:(id)arg1;
-- (void)setShiftedLocationIsValid:(BOOL)arg1;
+- (void)setShiftedLocationIsValid:(bool)arg1;
 - (id)shiftedLocation;
-- (BOOL)supportsCloudUpload;
-- (BOOL)validateForInsert:(id*)arg1;
-- (BOOL)validateForUpdate:(id*)arg1;
+- (bool)supportsCloudUpload;
+- (bool)validateForInsert:(id*)arg1;
+- (bool)validateForUpdate:(id*)arg1;
 - (void)willSave;
 
 @end

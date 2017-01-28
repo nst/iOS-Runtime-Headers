@@ -5,6 +5,6 @@
 
 @required
 
-- (void)alertSuppressionInvalidatedForSuppressionId:(NSString *)arg1 reason:(int)arg2;
+- (void)alertSuppressionInvalidatedForSuppressionId:(NSString *)arg1 reason:(long long)arg2;
 
 @end

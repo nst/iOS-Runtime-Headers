@@ -3,15 +3,15 @@
  */
 
 @interface _UIViewBlockVisitor : _UIViewVisitor {
-    id /* block */  _visitorBlock;
+    id  _visitorBlock;
 }
 
-@property (nonatomic, copy) id /* block */ visitorBlock;
+@property (nonatomic, copy) id visitorBlock;
 
-- (BOOL)_visitView:(id)arg1;
+- (bool)_visitView:(id)arg1;
 - (void)dealloc;
-- (id)initWithTraversalDirection:(unsigned int)arg1 visitorBlock:(id /* block */)arg2;
-- (void)setVisitorBlock:(id /* block */)arg1;
-- (id /* block */)visitorBlock;
+- (id)initWithTraversalDirection:(unsigned long long)arg1 visitorBlock:(id)arg2;
+- (void)setVisitorBlock:(id)arg1;
+- (id)visitorBlock;
 
 @end

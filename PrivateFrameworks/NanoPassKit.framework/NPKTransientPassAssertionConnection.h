@@ -3,14 +3,14 @@
  */
 
 @interface NPKTransientPassAssertionConnection : NSObject <NPKTransientPassAssertionServerProtocol> {
-    BOOL  _backgrounded;
+    bool  _backgrounded;
     NSXPCConnection * _connection;
     <NPKTransientPassAssertionConnectionDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _queue;
     NPKTransientPassRequest * _transientPassRequest;
 }
 
-@property (getter=isBackgrounded, nonatomic) BOOL backgrounded;
+@property (getter=isBackgrounded, nonatomic) bool backgrounded;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (nonatomic) <NPKTransientPassAssertionConnectionDelegate> *delegate;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
@@ -20,13 +20,13 @@
 - (id)connection;
 - (id)delegate;
 - (id)initWithConnection:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
-- (BOOL)isBackgrounded;
+- (bool)isBackgrounded;
 - (id)queue;
-- (void)setBackgrounded:(BOOL)arg1;
+- (void)setBackgrounded:(bool)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setServiceModeRequested:(BOOL)arg1;
+- (void)setServiceModeRequested:(bool)arg1;
 - (void)setTransientPassRequest:(id)arg1;
 - (void)setTransientPassUniqueID:(id)arg1;
 - (id)transientPassRequest;

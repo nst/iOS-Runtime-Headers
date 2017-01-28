@@ -8,7 +8,7 @@
 
 @property (nonatomic) _UIRemoteViewController *remoteViewController;
 
-+ (BOOL)_requiresWindowTouches;
++ (bool)_requiresWindowTouches;
 
 - (id)remoteViewController;
 - (void)setRemoteViewController:(id)arg1;

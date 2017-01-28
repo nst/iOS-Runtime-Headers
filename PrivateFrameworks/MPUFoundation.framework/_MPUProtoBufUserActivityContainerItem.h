@@ -12,9 +12,9 @@
 }
 
 @property (nonatomic) int containerItemType;
-@property (nonatomic) BOOL hasContainerItemType;
-@property (nonatomic, readonly) BOOL hasSelectedMultiverseIdentifier;
-@property (nonatomic, readonly) BOOL hasVisualReferenceMultiverseIdentifier;
+@property (nonatomic) bool hasContainerItemType;
+@property (nonatomic, readonly) bool hasSelectedMultiverseIdentifier;
+@property (nonatomic, readonly) bool hasVisualReferenceMultiverseIdentifier;
 @property (nonatomic, retain) MIPMultiverseIdentifier *selectedMultiverseIdentifier;
 @property (nonatomic, retain) MIPMultiverseIdentifier *visualReferenceMultiverseIdentifier;
 
@@ -24,16 +24,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasContainerItemType;
-- (BOOL)hasSelectedMultiverseIdentifier;
-- (BOOL)hasVisualReferenceMultiverseIdentifier;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasContainerItemType;
+- (bool)hasSelectedMultiverseIdentifier;
+- (bool)hasVisualReferenceMultiverseIdentifier;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)selectedMultiverseIdentifier;
 - (void)setContainerItemType:(int)arg1;
-- (void)setHasContainerItemType:(BOOL)arg1;
+- (void)setHasContainerItemType:(bool)arg1;
 - (void)setSelectedMultiverseIdentifier:(id)arg1;
 - (void)setVisualReferenceMultiverseIdentifier:(id)arg1;
 - (id)visualReferenceMultiverseIdentifier;

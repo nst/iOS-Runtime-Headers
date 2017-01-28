@@ -11,13 +11,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (unsigned int)expiringTilesetsCount;
++ (unsigned long long)expiringTilesetsCount;
 + (struct { unsigned int x1; double x2; }*)newExpiringTilesets;
 + (Class)simpleRequesterClass;
-+ (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
++ (bool)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (unsigned char)tileProviderIdentifier;
 
 - (void)_failedToReceiveActiveTileGroup:(id)arg1;

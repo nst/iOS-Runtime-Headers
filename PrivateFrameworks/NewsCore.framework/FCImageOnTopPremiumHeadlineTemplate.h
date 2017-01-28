@@ -9,13 +9,13 @@
 @property (nonatomic, copy) FCTextInfo *headlineSubtitleTextInfo;
 
 + (id)_defaultSubtitleTextColor;
-+ (id)debug_templateForHash:(unsigned int)arg1;
++ (id)debug_templateForHash:(unsigned long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_allThemePropertyNames;
 - (id)headlineSubtitleTextInfo;
-- (id)initWithJSONDictionary:(id)arg1 versionNumber:(int)arg2;
-- (id)initWithJSONDictionary:(id)arg1 versionNumber:(int)arg2 allowNil:(BOOL)arg3;
+- (id)initWithJSONDictionary:(id)arg1 versionNumber:(long long)arg2;
+- (id)initWithJSONDictionary:(id)arg1 versionNumber:(long long)arg2 allowNil:(bool)arg3;
 - (id)loadableFonts;
 - (void)setHeadlineSubtitleTextInfo:(id)arg1;
 

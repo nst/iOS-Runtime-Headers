@@ -5,17 +5,17 @@
 @interface HMHomeInvitationData : NSObject <NSSecureCoding> {
     NSDate * _endDate;
     NSUUID * _identifier;
-    int  _invitationState;
+    long long  _invitationState;
     NSDate * _startDate;
 }
 
 @property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
-@property (nonatomic) int invitationState;
+@property (nonatomic) long long invitationState;
 @property (nonatomic, readonly, copy) NSDate *startDate;
 
-+ (id)homeInvitationStateDescription:(int)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)homeInvitationStateDescription:(long long)arg1;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
@@ -23,10 +23,10 @@
 - (id)endDate;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInvitationState:(int)arg1 invitationIdentifier:(id)arg2 expiryDate:(id)arg3;
-- (int)invitationState;
+- (id)initWithInvitationState:(long long)arg1 invitationIdentifier:(id)arg2 expiryDate:(id)arg3;
+- (long long)invitationState;
 - (void)setEndDate:(id)arg1;
-- (void)setInvitationState:(int)arg1;
+- (void)setInvitationState:(long long)arg1;
 - (id)startDate;
 
 @end

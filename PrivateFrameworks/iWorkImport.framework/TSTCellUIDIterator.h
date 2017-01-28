@@ -60,11 +60,11 @@
         } _row; 
     }  _cellUID;
     TSTCellUIDList * _cellUIDList;
-    unsigned long  _columnIndex;
-    unsigned long  _columnRemainDup;
-    unsigned long  _index;
-    unsigned long  _lastColumnDiffPos;
-    unsigned long  _lastRowDiffPos;
+    unsigned long long  _columnIndex;
+    unsigned long long  _columnRemainDup;
+    unsigned long long  _index;
+    unsigned long long  _lastColumnDiffPos;
+    unsigned long long  _lastRowDiffPos;
     struct deque<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct __split_buffer<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { 
             struct UUIDData<TSP::UUIDData> {} **__first_; 
@@ -74,9 +74,9 @@
                 struct UUIDData<TSP::UUIDData> {} **__first_; 
             } __end_cap_; 
         } __map_; 
-        unsigned int __start_; 
+        unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
-            unsigned long __first_; 
+            unsigned long long __first_; 
         } __size_; 
     }  _recentColumnResults;
     struct deque<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
@@ -88,48 +88,48 @@
                 struct UUIDData<TSP::UUIDData> {} **__first_; 
             } __end_cap_; 
         } __map_; 
-        unsigned int __start_; 
+        unsigned long long __start_; 
         struct __compressed_pair<unsigned long, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
-            unsigned long __first_; 
+            unsigned long long __first_; 
         } __size_; 
     }  _recentRowResults;
-    unsigned long  _rowIndex;
-    unsigned long  _rowRemainDup;
+    unsigned long long  _rowIndex;
+    unsigned long long  _rowRemainDup;
 }
 
 @property (nonatomic) struct TSTCellUID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; } cellUID;
 @property (nonatomic, retain) TSTCellUIDList *cellUIDList;
-@property (nonatomic) unsigned long columnIndex;
-@property (nonatomic) unsigned long columnRemainDup;
-@property (nonatomic) unsigned long index;
-@property (nonatomic) unsigned long lastColumnDiffPos;
-@property (nonatomic) unsigned long lastRowDiffPos;
-@property (nonatomic) unsigned long rowIndex;
-@property (nonatomic) unsigned long rowRemainDup;
+@property (nonatomic) unsigned long long columnIndex;
+@property (nonatomic) unsigned long long columnRemainDup;
+@property (nonatomic) unsigned long long index;
+@property (nonatomic) unsigned long long lastColumnDiffPos;
+@property (nonatomic) unsigned long long lastRowDiffPos;
+@property (nonatomic) unsigned long long rowIndex;
+@property (nonatomic) unsigned long long rowRemainDup;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct TSTCellUID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; })cellUID;
 - (id)cellUIDList;
-- (unsigned long)columnIndex;
-- (unsigned long)columnRemainDup;
+- (unsigned long long)columnIndex;
+- (unsigned long long)columnRemainDup;
 - (void)dealloc;
-- (unsigned long)index;
+- (unsigned long long)index;
 - (id)initWithCellUIDList:(id)arg1;
-- (unsigned long)lastColumnDiffPos;
-- (unsigned long)lastRowDiffPos;
+- (unsigned long long)lastColumnDiffPos;
+- (unsigned long long)lastRowDiffPos;
 - (struct TSTCellUID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; })nextCellUID;
-- (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })p_nextCellRefIdWithUIDIndexList:(const struct vector<int, std::__1::allocator<int> > { int *x1; int *x2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_1_1; } x3; }*)arg1 UIDs:(const struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; }*)arg2 index:(unsigned int*)arg3 remainDup:(unsigned int*)arg4 lastDiffPos:(unsigned int*)arg5 recentResults:(struct deque<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct __split_buffer<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { struct UUIDData<TSP::UUIDData> {} **x_1_1_1; struct UUIDData<TSP::UUIDData> {} **x_1_1_2; struct UUIDData<TSP::UUIDData> {} **x_1_1_3; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> **, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { struct UUIDData<TSP::UUIDData> {} **x_4_2_1; } x_1_1_4; } x1; unsigned int x2; struct __compressed_pair<unsigned long, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { unsigned long x_3_1_1; } x3; }*)arg6;
-- (unsigned long)rowIndex;
-- (unsigned long)rowRemainDup;
+- (struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_1_1[16]; struct { unsigned char x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; unsigned char x_2_2_4; unsigned char x_2_2_5; unsigned char x_2_2_6; unsigned char x_2_2_7; unsigned char x_2_2_8; unsigned char x_2_2_9; unsigned char x_2_2_10; unsigned char x_2_2_11; unsigned char x_2_2_12; unsigned char x_2_2_13; unsigned char x_2_2_14; unsigned char x_2_2_15; unsigned char x_2_2_16; } x_1_1_2; struct { unsigned long long x_3_2_1; unsigned long long x_3_2_2; } x_1_1_3; } x1; })p_nextCellRefIdWithUIDIndexList:(const struct vector<int, std::__1::allocator<int> > { int *x1; int *x2; struct __compressed_pair<int *, std::__1::allocator<int> > { int *x_3_1_1; } x3; }*)arg1 UIDs:(const struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; }*)arg2 index:(unsigned long long*)arg3 remainDup:(unsigned long long*)arg4 lastDiffPos:(unsigned long long*)arg5 recentResults:(struct deque<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct __split_buffer<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { struct UUIDData<TSP::UUIDData> {} **x_1_1_1; struct UUIDData<TSP::UUIDData> {} **x_1_1_2; struct UUIDData<TSP::UUIDData> {} **x_1_1_3; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> **, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> *> > { struct UUIDData<TSP::UUIDData> {} **x_4_2_1; } x_1_1_4; } x1; unsigned long long x2; struct __compressed_pair<unsigned long, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { unsigned long long x_3_1_1; } x3; }*)arg6;
+- (unsigned long long)rowIndex;
+- (unsigned long long)rowRemainDup;
 - (void)setCellUID:(struct TSTCellUID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; })arg1;
 - (void)setCellUIDList:(id)arg1;
-- (void)setColumnIndex:(unsigned long)arg1;
-- (void)setColumnRemainDup:(unsigned long)arg1;
-- (void)setIndex:(unsigned long)arg1;
-- (void)setLastColumnDiffPos:(unsigned long)arg1;
-- (void)setLastRowDiffPos:(unsigned long)arg1;
-- (void)setRowIndex:(unsigned long)arg1;
-- (void)setRowRemainDup:(unsigned long)arg1;
+- (void)setColumnIndex:(unsigned long long)arg1;
+- (void)setColumnRemainDup:(unsigned long long)arg1;
+- (void)setIndex:(unsigned long long)arg1;
+- (void)setLastColumnDiffPos:(unsigned long long)arg1;
+- (void)setLastRowDiffPos:(unsigned long long)arg1;
+- (void)setRowIndex:(unsigned long long)arg1;
+- (void)setRowRemainDup:(unsigned long long)arg1;
 
 @end

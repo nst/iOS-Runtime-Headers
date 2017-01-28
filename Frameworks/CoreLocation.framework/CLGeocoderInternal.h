@@ -3,7 +3,7 @@
  */
 
 @interface CLGeocoderInternal : NSObject {
-    id /* block */  _geocodeCompletionHandler;
+    id  _geocodeCompletionHandler;
     NSObject<OS_dispatch_queue> * _queue;
     <GEOMapServiceTicket> * _ticket;
 }

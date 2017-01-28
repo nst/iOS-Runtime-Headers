@@ -19,7 +19,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *formattedAddress;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *postalCode;
 @property (nonatomic, copy) NSString *state;
 @property (nonatomic, copy) NSString *street;
@@ -29,7 +29,7 @@
 
 + (id)localizedStringForKey:(id)arg1;
 + (id)postalAddressWithDictionaryRepresentation:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)ISOCountryCode;
 - (id)city;
@@ -40,11 +40,11 @@
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)formattedAddress;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPostalAddress:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isValid:(id*)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isValid:(id*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)postalCode;
 - (void)setCity:(id)arg1;

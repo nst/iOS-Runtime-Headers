@@ -3,31 +3,31 @@
  */
 
 @interface ICQLink : NSObject {
-    int  _action;
-    int  _options;
+    long long  _action;
+    long long  _options;
     NSDictionary * _parameters;
     NSString * _text;
 }
 
-@property (nonatomic, readonly) int action;
-@property (nonatomic, readonly) int options;
+@property (nonatomic, readonly) long long action;
+@property (nonatomic, readonly) long long options;
 @property (nonatomic, readonly, copy) NSDictionary *parameters;
 @property (nonatomic, readonly, copy) NSString *text;
 
-+ (id)linkWithText:(id)arg1 action:(int)arg2 parameters:(id)arg3;
-+ (id)linkWithText:(id)arg1 options:(int)arg2 action:(int)arg3 parameters:(id)arg4;
-+ (BOOL)performAction:(int)arg1 parameters:(id)arg2 options:(int)arg3;
++ (id)linkWithText:(id)arg1 action:(long long)arg2 parameters:(id)arg3;
++ (id)linkWithText:(id)arg1 options:(long long)arg2 action:(long long)arg3 parameters:(id)arg4;
++ (bool)performAction:(long long)arg1 parameters:(id)arg2 options:(long long)arg3;
 
 - (void).cxx_destruct;
-- (int)action;
+- (long long)action;
 - (id)debugDescription;
 - (id)init;
-- (id)initWithText:(id)arg1 action:(int)arg2 parameters:(id)arg3;
-- (id)initWithText:(id)arg1 options:(int)arg2 action:(int)arg3 parameters:(id)arg4;
-- (int)options;
+- (id)initWithText:(id)arg1 action:(long long)arg2 parameters:(id)arg3;
+- (id)initWithText:(id)arg1 options:(long long)arg2 action:(long long)arg3 parameters:(id)arg4;
+- (long long)options;
 - (id)parameters;
-- (BOOL)performAction;
-- (BOOL)performActionWithOptions:(int)arg1;
+- (bool)performAction;
+- (bool)performActionWithOptions:(long long)arg1;
 - (id)text;
 
 @end

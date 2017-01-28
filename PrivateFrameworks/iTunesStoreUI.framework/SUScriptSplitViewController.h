@@ -13,7 +13,7 @@
 @property (retain) NSNumber *splitShadowRadius;
 @property (retain) NSString *splitType;
 @property (retain) NSString *title;
-@property BOOL usesSharedPlaceholder;
+@property bool usesSharedPlaceholder;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
@@ -35,13 +35,13 @@
 - (void)setSplitShadowRadius:(id)arg1;
 - (void)setSplitType:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setUsesSharedPlaceholder:(BOOL)arg1;
+- (void)setUsesSharedPlaceholder:(bool)arg1;
 - (id)splitPosition;
 - (id)splitShadowColor;
 - (id)splitShadowOpacity;
 - (id)splitShadowRadius;
 - (id)splitType;
 - (id)title;
-- (BOOL)usesSharedPlaceholder;
+- (bool)usesSharedPlaceholder;
 
 @end

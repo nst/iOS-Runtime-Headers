@@ -12,8 +12,8 @@
     }  forwardPlaybackStartTime;
     NSObject<OS_dispatch_queue> * ivarAccessQueue;
     AVPlayerItem * lastEnqueuedLoopingItem;
-    BOOL  listeningForItemFailedToPlayToEndTime;
-    int  loopCount;
+    bool  listeningForItemFailedToPlayToEndTime;
+    long long  loopCount;
     struct { 
         struct { 
             long long value; 
@@ -33,9 +33,9 @@
     NSMutableArray * loopingItemStatusKVOInvokers;
     AVQueuePlayer * loopingPlayer;
     <AVCallbackCancellation> * playerCurrentItemKVOInvoker;
-    int  playerOriginalActionAtItemEnd;
-    int  status;
-    BOOL  waitingForLastLoopingCopyToFinish;
+    long long  playerOriginalActionAtItemEnd;
+    long long  status;
+    bool  waitingForLastLoopingCopyToFinish;
     AVWeakReference * weakReference;
 }
 

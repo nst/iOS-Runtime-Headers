@@ -11,7 +11,7 @@
 @property (nonatomic, readonly) _MXExtensionProvider *extensionProvider;
 
 - (void).cxx_destruct;
-- (id)addExtensionsUpdateHandler:(id /* block */)arg1;
+- (id)addExtensionsUpdateHandler:(id)arg1;
 - (void)dispatchExtensions:(id)arg1 error:(id)arg2;
 - (id)extensionProvider;
 - (id)initWithExtensionProvider:(id)arg1;

@@ -6,8 +6,8 @@
     MPRadioController * _radioController;
 }
 
-@property (nonatomic, readonly) BOOL isEnabled;
-@property (nonatomic, readonly) unsigned int stationCount;
+@property (nonatomic, readonly) bool isEnabled;
+@property (nonatomic, readonly) unsigned long long stationCount;
 @property (nonatomic, readonly) NSArray *stations;
 
 + (id)defaultRadioLibrary;
@@ -17,12 +17,12 @@
 - (id)_radioModel;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_radioRecentStationsDidChangeNotification:(id)arg1;
-- (void)addStationBasedOnTrackIDs:(id)arg1 completion:(id /* block */)arg2;
+- (void)addStationBasedOnTrackIDs:(id)arg1 completion:(id)arg2;
 - (void)dealloc;
-- (void)getRecentStationGroupsWithCompletionHandler:(id /* block */)arg1;
+- (void)getRecentStationGroupsWithCompletionHandler:(id)arg1;
 - (id)init;
-- (BOOL)isEnabled;
-- (unsigned int)stationCount;
+- (bool)isEnabled;
+- (unsigned long long)stationCount;
 - (id)stationWithIdentifier:(long long)arg1;
 - (id)stations;
 

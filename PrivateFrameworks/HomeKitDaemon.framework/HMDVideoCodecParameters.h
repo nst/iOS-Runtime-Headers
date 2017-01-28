@@ -12,10 +12,10 @@
 @property (nonatomic, readonly, copy) NSArray *levels;
 @property (nonatomic, readonly, copy) NSArray *packetizationModes;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
+- (bool)_parseFromTLVData;
 - (void)description:(id)arg1 indent:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)h264Profiles;

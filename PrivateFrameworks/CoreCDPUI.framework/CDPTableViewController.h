@@ -3,7 +3,7 @@
  */
 
 @interface CDPTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     UIView * _containerView;
     NSString * _headerSubTitle;
     NSString * _headerTitle;
@@ -11,35 +11,35 @@
     UITableView * _tableView;
 }
 
-@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) id completionHandler;
 @property (nonatomic, retain) UIView *containerView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *deviceClass;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *headerSubTitle;
 @property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic, retain) CDPPaneHeaderView *headerView;
-@property (nonatomic, readonly) BOOL isIPad;
-@property (nonatomic, readonly) BOOL isiPhone5OrSmaller;
+@property (nonatomic, readonly) bool isIPad;
+@property (nonatomic, readonly) bool isiPhone5OrSmaller;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITableView *tableView;
-@property (nonatomic, readonly) BOOL uiTestMode;
+@property (nonatomic, readonly) bool uiTestMode;
 
 - (void).cxx_destruct;
-- (id /* block */)completionHandler;
+- (id)completionHandler;
 - (id)containerView;
 - (id)deviceClass;
 - (id)headerSubTitle;
 - (id)headerTitle;
 - (id)headerView;
-- (float)heightForHeaderInTableView:(id)arg1;
+- (double)heightForHeaderInTableView:(id)arg1;
 - (id)initWithTitle:(id)arg1 subTitle:(id)arg2;
-- (BOOL)isIPad;
-- (BOOL)isiPhone5OrSmaller;
+- (bool)isIPad;
+- (bool)isiPhone5OrSmaller;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)setCompletionHandler:(id /* block */)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)setCompletionHandler:(id)arg1;
 - (void)setContainerView:(id)arg1;
 - (void)setHeaderSubTitle:(id)arg1;
 - (void)setHeaderTitle:(id)arg1;
@@ -47,10 +47,10 @@
 - (void)setTableView:(id)arg1;
 - (id)tableView;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)uiTestMode;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (bool)uiTestMode;
 - (void)viewDidLayoutSubviews;
 - (id)viewForHeaderInTableView:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

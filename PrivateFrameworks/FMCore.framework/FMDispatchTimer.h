@@ -3,14 +3,14 @@
  */
 
 @interface FMDispatchTimer : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     double  _leewayTimeInterval;
     NSObject<OS_dispatch_queue> * _queue;
     double  _timeout;
     NSObject<OS_dispatch_source> * _timerSource;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (nonatomic) double leewayTimeInterval;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) double timeout;
@@ -18,12 +18,12 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id /* block */)completion;
+- (id)completion;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 timeout:(double)arg2 completion:(id /* block */)arg3;
+- (id)initWithQueue:(id)arg1 timeout:(double)arg2 completion:(id)arg3;
 - (double)leewayTimeInterval;
 - (id)queue;
-- (void)setCompletion:(id /* block */)arg1;
+- (void)setCompletion:(id)arg1;
 - (void)setLeewayTimeInterval:(double)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setTimeout:(double)arg1;

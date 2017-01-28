@@ -13,6 +13,6 @@
 - (id)initSKStarRatingAlertView;
 - (float)rating;
 - (void)setRating:(float)arg1;
-- (void)showWithCompletionBlock:(id /* block */)arg1;
+- (void)showWithCompletionBlock:(id)arg1;
 
 @end

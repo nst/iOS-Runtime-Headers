@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)_mergeWithNewObject:(id <HMObjectMerge>)arg1 operations:(HMObjectMergeOperations *)arg2;
+- (bool)_mergeWithNewObject:(id <HMObjectMerge>)arg1 operations:(HMObjectMergeOperations *)arg2;
 - (NSUUID *)uniqueIdentifier;
 
 @optional

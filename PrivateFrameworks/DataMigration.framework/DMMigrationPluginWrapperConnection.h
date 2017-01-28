@@ -7,6 +7,6 @@
 + (id)connection;
 
 - (void)handleMessage:(id)arg1;
-- (void)runPluginAtPath:(id)arg1 withContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)runPluginAtPath:(id)arg1 withContext:(id)arg2 completion:(id)arg3;
 
 @end

@@ -5,17 +5,17 @@
 @interface WLDaemonController : NSObject {
     NSXPCConnection * _daemonConn;
     NSLock * _daemonLock;
-    id /* block */  _interruptionHandler;
+    id  _interruptionHandler;
 }
 
-@property (nonatomic, copy) id /* block */ interruptionHandler;
+@property (nonatomic, copy) id interruptionHandler;
 
 - (void).cxx_destruct;
 - (id)daemonConnection;
-- (id)daemonWithErrorHandler:(id /* block */)arg1;
+- (id)daemonWithErrorHandler:(id)arg1;
 - (id)init;
-- (id /* block */)interruptionHandler;
+- (id)interruptionHandler;
 - (void)invalidateDaemonConnection;
-- (void)setInterruptionHandler:(id /* block */)arg1;
+- (void)setInterruptionHandler:(id)arg1;
 
 @end

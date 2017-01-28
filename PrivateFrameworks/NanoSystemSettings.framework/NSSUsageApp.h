@@ -20,7 +20,7 @@
 @property (nonatomic) unsigned long long staticSize;
 @property (nonatomic) unsigned long long totalSize;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;

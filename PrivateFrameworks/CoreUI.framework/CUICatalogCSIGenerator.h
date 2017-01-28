@@ -14,7 +14,7 @@
 - (id)baseKey;
 - (void)dealloc;
 - (id)flattenedBitmap;
-- (id)initWithLayerStackData:(id)arg1 withCanvasSize:(struct CGSize { float x1; float x2; })arg2 isOpaque:(BOOL)arg3;
+- (id)initWithLayerStackData:(id)arg1 withCanvasSize:(struct CGSize { double x1; double x2; })arg2 isOpaque:(bool)arg3;
 - (void)setBaseKey:(id)arg1;
 - (void)setFlattenedBitmap:(id)arg1;
 

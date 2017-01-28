@@ -12,7 +12,7 @@
     int  _sequence;
     NSDictionary * _serverRequest;
     NSData * _sessionToken;
-    int  _state;
+    long long  _state;
 }
 
 @property (retain) NSData *cdxTicket;
@@ -24,15 +24,15 @@
 @property (readonly) int sequence;
 @property (retain) NSDictionary *serverRequest;
 @property (retain) NSData *sessionToken;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 
 + (id)secureCodedPropertyKeys;
 
 - (int)_incrementSequence;
 - (id)cdxTicket;
 - (void)dealloc;
-- (BOOL)isCancelled;
-- (BOOL)isFinished;
+- (bool)isCancelled;
+- (bool)isFinished;
 - (id)matchRequest;
 - (id)matches;
 - (id)matchingGroup;
@@ -49,8 +49,8 @@
 - (void)setRid:(id)arg1;
 - (void)setServerRequest:(id)arg1;
 - (void)setSessionToken:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
-- (BOOL)transitionToState:(int)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
+- (bool)transitionToState:(long long)arg1;
 
 @end

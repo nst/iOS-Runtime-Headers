@@ -3,55 +3,55 @@
  */
 
 @interface CLKDateTextProvider : CLKTextProvider {
-    BOOL  _allowsNarrowUnits;
+    bool  _allowsNarrowUnits;
     NSString * _alternateCalendarLocaleID;
-    unsigned int  _calendarUnits;
+    unsigned long long  _calendarUnits;
     NSDate * _date;
     NSDateFormatter * _dateFormatter;
-    int  _formattingContext;
-    BOOL  _shortUnits;
+    long long  _formattingContext;
+    bool  _shortUnits;
     NSArray * _templateSeries;
     NSTimeZone * _timeZone;
 }
 
-@property (nonatomic) BOOL allowsNarrowUnits;
+@property (nonatomic) bool allowsNarrowUnits;
 @property (nonatomic, copy) NSString *alternateCalendarLocaleID;
-@property (nonatomic) unsigned int calendarUnits;
+@property (nonatomic) unsigned long long calendarUnits;
 @property (nonatomic, retain) NSDate *date;
-@property (nonatomic) int formattingContext;
-@property (nonatomic) BOOL shortUnits;
+@property (nonatomic) long long formattingContext;
+@property (nonatomic) bool shortUnits;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)textProviderWithDate:(id)arg1 units:(unsigned int)arg2;
-+ (id)textProviderWithDate:(id)arg1 units:(unsigned int)arg2 timeZone:(id)arg3;
++ (bool)supportsSecureCoding;
++ (id)textProviderWithDate:(id)arg1 units:(unsigned long long)arg2;
++ (id)textProviderWithDate:(id)arg1 units:(unsigned long long)arg2 timeZone:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
 - (id)_completeDateTemplateSeries;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
-- (id)_partialDateTemplateSeriesForUnits:(unsigned int)arg1;
-- (id)_sessionAttributedTextForIndex:(unsigned int)arg1 withStyle:(id)arg2;
+- (id)_partialDateTemplateSeriesForUnits:(unsigned long long)arg1;
+- (id)_sessionAttributedTextForIndex:(unsigned long long)arg1 withStyle:(id)arg2;
 - (void)_validate;
-- (BOOL)allowsNarrowUnits;
+- (bool)allowsNarrowUnits;
 - (id)alternateCalendarLocaleID;
-- (unsigned int)calendarUnits;
+- (unsigned long long)calendarUnits;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (int)formattingContext;
-- (unsigned int)hash;
+- (long long)formattingContext;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)setAllowsNarrowUnits:(BOOL)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setAllowsNarrowUnits:(bool)arg1;
 - (void)setAlternateCalendarLocaleID:(id)arg1;
-- (void)setCalendarUnits:(unsigned int)arg1;
+- (void)setCalendarUnits:(unsigned long long)arg1;
 - (void)setDate:(id)arg1;
-- (void)setFormattingContext:(int)arg1;
-- (void)setShortUnits:(BOOL)arg1;
+- (void)setFormattingContext:(long long)arg1;
+- (void)setShortUnits:(bool)arg1;
 - (void)setTimeZone:(id)arg1;
-- (BOOL)shortUnits;
+- (bool)shortUnits;
 - (id)timeZone;
 
 @end

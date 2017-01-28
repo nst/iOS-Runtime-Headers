@@ -3,19 +3,19 @@
  */
 
 @interface PSIQuery : NSObject {
-    BOOL  _didStart;
-    id /* block */  _earlyNotificationHandler;
+    bool  _didStart;
+    id  _earlyNotificationHandler;
     PSIDatabase * _idx;
-    BOOL  _isCanceled;
-    BOOL  _isWildcardQuery;
+    bool  _isCanceled;
+    bool  _isWildcardQuery;
     int  _queryId;
     NSString * _searchText;
     NSArray * _searchTokens;
     NSObject<OS_dispatch_queue> * _syncQueue;
 }
 
-@property (getter=isCanceled, readonly) BOOL canceled;
-@property (nonatomic, readonly) BOOL isWildcardQuery;
+@property (getter=isCanceled, readonly) bool canceled;
+@property (nonatomic, readonly) bool isWildcardQuery;
 @property (nonatomic, readonly) int queryId;
 @property (nonatomic, readonly, copy) NSString *searchText;
 @property (nonatomic, retain) NSArray *searchTokens;
@@ -23,14 +23,14 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithQueryId:(int)arg1 index:(id)arg2 searchText:(id)arg3 isWildcardQuery:(BOOL)arg4;
-- (BOOL)isCanceled;
-- (BOOL)isWildcardQuery;
+- (id)initWithQueryId:(int)arg1 index:(id)arg2 searchText:(id)arg3 isWildcardQuery:(bool)arg4;
+- (bool)isCanceled;
+- (bool)isWildcardQuery;
 - (int)queryId;
-- (void)runWithResultsHandler:(id /* block */)arg1;
+- (void)runWithResultsHandler:(id)arg1;
 - (id)searchText;
 - (id)searchTokens;
-- (void)setEarlyResultsNotificationHandler:(id /* block */)arg1;
+- (void)setEarlyResultsNotificationHandler:(id)arg1;
 - (void)setSearchTokens:(id)arg1;
 
 @end

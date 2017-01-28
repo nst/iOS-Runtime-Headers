@@ -14,13 +14,13 @@
 @property (nonatomic, readonly, copy) NSUUID *sessionID;
 @property (nonatomic, readonly, copy) HMDSRTPParameters *videoSrtpParameters;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_parseFromTLVData;
-- (BOOL)_parseFromTLVDataImpl;
-- (BOOL)_parseFromTLVDataOnFailure;
-- (BOOL)_parseFromTLVDataOnSuccess;
+- (bool)_parseFromTLVData;
+- (bool)_parseFromTLVDataImpl;
+- (bool)_parseFromTLVDataOnFailure;
+- (bool)_parseFromTLVDataOnSuccess;
 - (id)address;
 - (id)audioSrtpParameters;
 - (void)description:(id)arg1 indent:(id)arg2;

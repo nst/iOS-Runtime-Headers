@@ -9,6 +9,6 @@
 - (void).cxx_destruct;
 - (id)changeList;
 - (id)initWithStationSortOrdering:(id)arg1;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 
 @end

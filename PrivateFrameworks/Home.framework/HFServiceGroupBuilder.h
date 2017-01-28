@@ -11,9 +11,9 @@
 @property (nonatomic, readonly) NSArray *availableIconDescriptors;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <HFIconDescriptor> *iconDescriptor;
-@property (nonatomic) BOOL isFavorite;
+@property (nonatomic) bool isFavorite;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSString *originalName;
 @property (nonatomic, readonly) NSString *primaryServiceType;
@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) HFMutableSetDiff *serviceUUIDs;
 @property (nonatomic, readonly) NSArray *services;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsFavoriting;
+@property (nonatomic, readonly) bool supportsFavoriting;
 
 + (Class)homeKitRepresentationClass;
 
@@ -37,7 +37,7 @@
 - (void)addService:(id)arg1;
 - (id)commitItem;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
-- (BOOL)isFavorite;
+- (bool)isFavorite;
 - (id)name;
 - (id)originalName;
 - (id)primaryServiceType;
@@ -47,12 +47,12 @@
 - (id)serviceGroup;
 - (id)serviceUUIDs;
 - (id)services;
-- (void)setIsFavorite:(BOOL)arg1;
+- (void)setIsFavorite:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)setRoom:(id)arg1;
 - (void)setRoomBuilder:(id)arg1;
 - (void)setServiceGroup:(id)arg1;
-- (BOOL)shouldAllowAddingService:(id)arg1;
-- (BOOL)supportsFavoriting;
+- (bool)shouldAllowAddingService:(id)arg1;
+- (bool)supportsFavoriting;
 
 @end

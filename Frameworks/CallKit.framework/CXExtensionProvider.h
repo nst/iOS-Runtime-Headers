@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CXProviderExtensionVendorContext *extensionContext;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -18,9 +18,9 @@
 - (id)hostProtocolDelegate;
 - (void)invalidate;
 - (void)providerExtensionVendorContext:(id)arg1 handledActionTimeout:(id)arg2;
-- (void)providerExtensionVendorContext:(id)arg1 handledAudioSessionActivationStateChangedTo:(BOOL)arg2;
+- (void)providerExtensionVendorContext:(id)arg1 handledAudioSessionActivationStateChangedTo:(bool)arg2;
 - (void)providerExtensionVendorContext:(id)arg1 receivedCommittedTransaction:(id)arg2;
-- (BOOL)requiresProxyingAVAudioSessionState;
+- (bool)requiresProxyingAVAudioSessionState;
 - (void)setExtensionContext:(id)arg1;
 
 @end

@@ -6,14 +6,14 @@
     GKLabel * _activeMatchesLabel;
     NSLayoutConstraint * _iconLeadingConstraint;
     struct UIEdgeInsets { 
-        float top; 
-        float left; 
-        float bottom; 
-        float right; 
+        double top; 
+        double left; 
+        double bottom; 
+        double right; 
     }  _insets;
     GKLabel * _localPlayerTurnsLabel;
-    unsigned int  _numberOfActiveMatches;
-    unsigned int  _numberOfLocalPlayerTurns;
+    unsigned long long  _numberOfActiveMatches;
+    unsigned long long  _numberOfLocalPlayerTurns;
     NSLayoutConstraint * _statusImageTrailingConstraint;
     UIImageView * _statusImageView;
     NSLayoutConstraint * _textContainerTrailingConstraint;
@@ -22,16 +22,16 @@
 
 @property (nonatomic, retain) GKLabel *activeMatchesLabel;
 @property (nonatomic, retain) NSLayoutConstraint *iconLeadingConstraint;
-@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insets;
+@property (nonatomic) struct UIEdgeInsets { double x1; double x2; double x3; double x4; } insets;
 @property (nonatomic, retain) GKLabel *localPlayerTurnsLabel;
-@property (nonatomic) unsigned int numberOfActiveMatches;
-@property (nonatomic) unsigned int numberOfLocalPlayerTurns;
+@property (nonatomic) unsigned long long numberOfActiveMatches;
+@property (nonatomic) unsigned long long numberOfLocalPlayerTurns;
 @property (nonatomic, retain) NSLayoutConstraint *statusImageTrailingConstraint;
 @property (nonatomic, retain) UIImageView *statusImageView;
 @property (nonatomic, retain) NSLayoutConstraint *textContainerTrailingConstraint;
 @property (nonatomic, retain) GKContiguousContainerView *textContainerView;
 
-+ (float)defaultRowHeight;
++ (double)defaultRowHeight;
 + (id)itemHeightList;
 + (void)registerCellClassesForCollectionView:(id)arg1;
 
@@ -40,17 +40,17 @@
 - (void)didUpdateModel;
 - (void)establishConstraints;
 - (id)iconLeadingConstraint;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })insets;
 - (id)localPlayerTurnsLabel;
-- (unsigned int)numberOfActiveMatches;
-- (unsigned int)numberOfLocalPlayerTurns;
+- (unsigned long long)numberOfActiveMatches;
+- (unsigned long long)numberOfLocalPlayerTurns;
 - (void)setActiveMatchesLabel:(id)arg1;
 - (void)setIconLeadingConstraint:(id)arg1;
-- (void)setInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setInsets:(struct UIEdgeInsets { double x1; double x2; double x3; double x4; })arg1;
 - (void)setLocalPlayerTurnsLabel:(id)arg1;
-- (void)setNumberOfActiveMatches:(unsigned int)arg1;
-- (void)setNumberOfLocalPlayerTurns:(unsigned int)arg1;
+- (void)setNumberOfActiveMatches:(unsigned long long)arg1;
+- (void)setNumberOfLocalPlayerTurns:(unsigned long long)arg1;
 - (void)setStatusImageTrailingConstraint:(id)arg1;
 - (void)setStatusImageView:(id)arg1;
 - (void)setTextContainerTrailingConstraint:(id)arg1;

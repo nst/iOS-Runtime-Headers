@@ -12,7 +12,7 @@
 @property (nonatomic, readonly, copy) NSDate *date;
 @property (nonatomic, readonly) double uncertainty;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)confidence;

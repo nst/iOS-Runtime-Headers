@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)highlightsOnlyContentView;
-- (BOOL)isHighlighted;
+- (bool)highlightsOnlyContentView;
+- (bool)isHighlighted;
 - (void)reloadView;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 
 @end

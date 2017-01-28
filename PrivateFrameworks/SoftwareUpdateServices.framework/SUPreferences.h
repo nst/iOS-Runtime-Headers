@@ -5,54 +5,54 @@
 @interface SUPreferences : NSObject {
     NSObject<OS_os_log> * _SUOSLogDebug;
     NSObject<OS_os_log> * _SUOSLogInfo;
-    BOOL  _allowSameBuildUpdates;
-    BOOL  _disableAutoDownload;
-    BOOL  _disableAutoSU;
-    BOOL  _disableAvailabilityAlerts;
-    BOOL  _disableBuildNumberComparison;
-    BOOL  _disableFullReplacementFallback;
-    BOOL  _disableUserWiFiOnlyPeriod;
-    BOOL  _forceFullReplacement;
+    bool  _allowSameBuildUpdates;
+    bool  _disableAutoDownload;
+    bool  _disableAutoSU;
+    bool  _disableAvailabilityAlerts;
+    bool  _disableBuildNumberComparison;
+    bool  _disableFullReplacementFallback;
+    bool  _disableUserWiFiOnlyPeriod;
+    bool  _forceFullReplacement;
     int  _logLevel;
-    BOOL  _scanWeeklyInternally;
-    BOOL  _simulateAutoDownload;
+    bool  _scanWeeklyInternally;
+    bool  _simulateAutoDownload;
 }
 
 @property (nonatomic, readonly) NSObject<OS_os_log> *SUOSLogDebug;
 @property (nonatomic, readonly) NSObject<OS_os_log> *SUOSLogInfo;
-@property (nonatomic, readonly) BOOL allowSameBuildUpdates;
-@property (getter=isAutoDownloadDisabled, nonatomic, readonly) BOOL disableAutoDownload;
-@property (getter=isAutoSUDisabled, nonatomic, readonly) BOOL disableAutoSU;
-@property (nonatomic, readonly) BOOL disableAvailabilityAlerts;
-@property (nonatomic, readonly) BOOL disableBuildNumberComparison;
-@property (nonatomic, readonly) BOOL disableFullReplacementFallback;
-@property (nonatomic, readonly) BOOL disableUserWiFiOnlyPeriod;
-@property (nonatomic, readonly) BOOL forceFullReplacement;
+@property (nonatomic, readonly) bool allowSameBuildUpdates;
+@property (getter=isAutoDownloadDisabled, nonatomic, readonly) bool disableAutoDownload;
+@property (getter=isAutoSUDisabled, nonatomic, readonly) bool disableAutoSU;
+@property (nonatomic, readonly) bool disableAvailabilityAlerts;
+@property (nonatomic, readonly) bool disableBuildNumberComparison;
+@property (nonatomic, readonly) bool disableFullReplacementFallback;
+@property (nonatomic, readonly) bool disableUserWiFiOnlyPeriod;
+@property (nonatomic, readonly) bool forceFullReplacement;
 @property (nonatomic, readonly) int logLevel;
-@property (nonatomic, readonly) BOOL scanWeeklyInternally;
-@property (nonatomic, readonly) BOOL simulateAutoDownload;
+@property (nonatomic, readonly) bool scanWeeklyInternally;
+@property (nonatomic, readonly) bool simulateAutoDownload;
 
 + (id)sharedInstance;
 
 - (id)SUOSLogDebug;
 - (id)SUOSLogInfo;
-- (void*)_copyPreferenceForKey:(struct __CFString { }*)arg1 ofType:(unsigned long)arg2;
+- (void*)_copyPreferenceForKey:(struct __CFString { }*)arg1 ofType:(unsigned long long)arg2;
 - (int)_defaultLogLevel;
-- (BOOL)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(BOOL)arg2;
+- (bool)_getBooleanPreferenceForKey:(id)arg1 withDefaultValue:(bool)arg2;
 - (void)_loadPreferences;
-- (BOOL)allowSameBuildUpdates;
+- (bool)allowSameBuildUpdates;
 - (void)dealloc;
-- (BOOL)disableAvailabilityAlerts;
-- (BOOL)disableBuildNumberComparison;
-- (BOOL)disableFullReplacementFallback;
-- (BOOL)disableUserWiFiOnlyPeriod;
-- (BOOL)forceFullReplacement;
+- (bool)disableAvailabilityAlerts;
+- (bool)disableBuildNumberComparison;
+- (bool)disableFullReplacementFallback;
+- (bool)disableUserWiFiOnlyPeriod;
+- (bool)forceFullReplacement;
 - (id)init;
-- (BOOL)isAutoDownloadDisabled;
-- (BOOL)isAutoSUDisabled;
+- (bool)isAutoDownloadDisabled;
+- (bool)isAutoSUDisabled;
 - (int)logLevel;
 - (void)reload;
-- (BOOL)scanWeeklyInternally;
-- (BOOL)simulateAutoDownload;
+- (bool)scanWeeklyInternally;
+- (bool)simulateAutoDownload;
 
 @end

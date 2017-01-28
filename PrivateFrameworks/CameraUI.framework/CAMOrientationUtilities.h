@@ -4,10 +4,10 @@
 
 @interface CAMOrientationUtilities : NSObject
 
-+ (int)_imageOrientationFromCaptureOrientation:(int)arg1 usingFrontCamera:(BOOL)arg2;
-+ (int)captureOrientationFromPanoramaCaptureOrientation:(int)arg1;
-+ (int)imageOrientationForVideoRequest:(id)arg1;
-+ (int)imageOrientationOfResult:(id)arg1 withCaptureDevice:(int)arg2 captureOrientation:(int)arg3;
-+ (int)panoramaCaptureOrientationFromCaptureOrientation:(int)arg1;
++ (long long)_imageOrientationFromCaptureOrientation:(long long)arg1 usingFrontCamera:(bool)arg2;
++ (long long)captureOrientationFromPanoramaCaptureOrientation:(long long)arg1;
++ (long long)imageOrientationForVideoRequest:(id)arg1;
++ (long long)imageOrientationOfResult:(id)arg1 withCaptureDevice:(long long)arg2 captureOrientation:(long long)arg3;
++ (long long)panoramaCaptureOrientationFromCaptureOrientation:(long long)arg1;
 
 @end

@@ -8,14 +8,14 @@
 
 @property (nonatomic, retain) NSMutableString *loggedMessage;
 
-+ (BOOL)isLoggingEnabled;
++ (bool)isLoggingEnabled;
 
 - (void)beginLogging;
 - (void)dealloc;
-- (void)endLoggingForInput:(id)arg1 atFinalTimeMark:(unsigned int)arg2;
+- (void)endLoggingForInput:(id)arg1 atFinalTimeMark:(unsigned long long)arg2;
 - (id)logFilePath;
 - (id)loggedMessage;
-- (void)markTime:(unsigned int)arg1;
+- (void)markTime:(unsigned long long)arg1;
 - (void)setLoggedMessage:(id)arg1;
 - (void)writeLogToFile;
 

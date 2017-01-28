@@ -7,7 +7,7 @@
 @property (nonatomic, copy) NSArray *columns;
 @property (nonatomic, copy) NSArray *entities;
 @property (nonatomic, copy) NSArray *selectedEntities;
-@property (nonatomic) BOOL showCardinalPositions;
+@property (nonatomic) bool showCardinalPositions;
 
 + (id)standingsSnippet;
 + (id)standingsSnippetWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,7 +20,7 @@
 - (void)setColumns:(id)arg1;
 - (void)setEntities:(id)arg1;
 - (void)setSelectedEntities:(id)arg1;
-- (void)setShowCardinalPositions:(BOOL)arg1;
-- (BOOL)showCardinalPositions;
+- (void)setShowCardinalPositions:(bool)arg1;
+- (bool)showCardinalPositions;
 
 @end

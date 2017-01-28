@@ -7,6 +7,7 @@
     NSString * _displayName;
     struct { 
         unsigned int ingestedDate : 1; 
+        unsigned int supportsAutomaticSelection : 1; 
     }  _has;
     double  _ingestedDate;
     NSData * _manifestHash;
@@ -14,22 +15,25 @@
     NSMutableArray * _paymentApplications;
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountNumberSuffix;
+    bool  _supportsAutomaticSelection;
 }
 
 @property (nonatomic, retain) NSMutableArray *associatedWebDomains;
 @property (nonatomic, retain) NSString *displayName;
-@property (nonatomic, readonly) BOOL hasDisplayName;
-@property (nonatomic) BOOL hasIngestedDate;
-@property (nonatomic, readonly) BOOL hasManifestHash;
-@property (nonatomic, readonly) BOOL hasPassID;
-@property (nonatomic, readonly) BOOL hasPrimaryAccountIdentifier;
-@property (nonatomic, readonly) BOOL hasPrimaryAccountNumberSuffix;
+@property (nonatomic, readonly) bool hasDisplayName;
+@property (nonatomic) bool hasIngestedDate;
+@property (nonatomic, readonly) bool hasManifestHash;
+@property (nonatomic, readonly) bool hasPassID;
+@property (nonatomic, readonly) bool hasPrimaryAccountIdentifier;
+@property (nonatomic, readonly) bool hasPrimaryAccountNumberSuffix;
+@property (nonatomic) bool hasSupportsAutomaticSelection;
 @property (nonatomic) double ingestedDate;
 @property (nonatomic, retain) NSData *manifestHash;
 @property (nonatomic, retain) NSString *passID;
 @property (nonatomic, retain) NSMutableArray *paymentApplications;
 @property (nonatomic, retain) NSString *primaryAccountIdentifier;
 @property (nonatomic, retain) NSString *primaryAccountNumberSuffix;
+@property (nonatomic) bool supportsAutomaticSelection;
 
 + (Class)associatedWebDomainsType;
 + (Class)paymentApplicationsType;
@@ -38,8 +42,8 @@
 - (void)addAssociatedWebDomains:(id)arg1;
 - (void)addPaymentApplications:(id)arg1;
 - (id)associatedWebDomains;
-- (id)associatedWebDomainsAtIndex:(unsigned int)arg1;
-- (unsigned int)associatedWebDomainsCount;
+- (id)associatedWebDomainsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)associatedWebDomainsCount;
 - (void)clearAssociatedWebDomains;
 - (void)clearPaymentApplications;
 - (void)copyTo:(id)arg1;
@@ -47,33 +51,37 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (BOOL)hasDisplayName;
-- (BOOL)hasIngestedDate;
-- (BOOL)hasManifestHash;
-- (BOOL)hasPassID;
-- (BOOL)hasPrimaryAccountIdentifier;
-- (BOOL)hasPrimaryAccountNumberSuffix;
-- (unsigned int)hash;
+- (bool)hasDisplayName;
+- (bool)hasIngestedDate;
+- (bool)hasManifestHash;
+- (bool)hasPassID;
+- (bool)hasPrimaryAccountIdentifier;
+- (bool)hasPrimaryAccountNumberSuffix;
+- (bool)hasSupportsAutomaticSelection;
+- (unsigned long long)hash;
 - (double)ingestedDate;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)manifestHash;
 - (void)mergeFrom:(id)arg1;
 - (id)passID;
 - (id)paymentApplications;
-- (id)paymentApplicationsAtIndex:(unsigned int)arg1;
-- (unsigned int)paymentApplicationsCount;
+- (id)paymentApplicationsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)paymentApplicationsCount;
 - (id)primaryAccountIdentifier;
 - (id)primaryAccountNumberSuffix;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAssociatedWebDomains:(id)arg1;
 - (void)setDisplayName:(id)arg1;
-- (void)setHasIngestedDate:(BOOL)arg1;
+- (void)setHasIngestedDate:(bool)arg1;
+- (void)setHasSupportsAutomaticSelection:(bool)arg1;
 - (void)setIngestedDate:(double)arg1;
 - (void)setManifestHash:(id)arg1;
 - (void)setPassID:(id)arg1;
 - (void)setPaymentApplications:(id)arg1;
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
+- (void)setSupportsAutomaticSelection:(bool)arg1;
+- (bool)supportsAutomaticSelection;
 - (void)writeTo:(id)arg1;
 
 @end

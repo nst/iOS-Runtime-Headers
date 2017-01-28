@@ -3,28 +3,28 @@
  */
 
 @interface CAMFocusCommand : CAMCaptureCommand {
-    int  __focusMode;
+    long long  __focusMode;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  __focusPointOfInterest;
-    BOOL  __shouldUseSmoothFocus;
+    bool  __shouldUseSmoothFocus;
 }
 
-@property (nonatomic, readonly) int _focusMode;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } _focusPointOfInterest;
-@property (nonatomic, readonly) BOOL _shouldUseSmoothFocus;
+@property (nonatomic, readonly) long long _focusMode;
+@property (nonatomic, readonly) struct CGPoint { double x1; double x2; } _focusPointOfInterest;
+@property (nonatomic, readonly) bool _shouldUseSmoothFocus;
 
-- (int)_focusMode;
-- (struct CGPoint { float x1; float x2; })_focusPointOfInterest;
-- (BOOL)_shouldUseSmoothFocus;
+- (long long)_focusMode;
+- (struct CGPoint { double x1; double x2; })_focusPointOfInterest;
+- (bool)_shouldUseSmoothFocus;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)executeWithContext:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFocusMode:(int)arg1;
-- (id)initWithFocusMode:(int)arg1 atPointOfInterest:(struct CGPoint { float x1; float x2; })arg2;
-- (id)initWithFocusMode:(int)arg1 atPointOfInterest:(struct CGPoint { float x1; float x2; })arg2 smooth:(BOOL)arg3;
-- (id)initWithFocusMode:(int)arg1 smooth:(BOOL)arg2;
+- (id)initWithFocusMode:(long long)arg1;
+- (id)initWithFocusMode:(long long)arg1 atPointOfInterest:(struct CGPoint { double x1; double x2; })arg2;
+- (id)initWithFocusMode:(long long)arg1 atPointOfInterest:(struct CGPoint { double x1; double x2; })arg2 smooth:(bool)arg3;
+- (id)initWithFocusMode:(long long)arg1 smooth:(bool)arg2;
 
 @end

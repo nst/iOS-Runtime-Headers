@@ -5,6 +5,6 @@
 
 @required
 
-- (void)updateState:(unsigned int)arg1;
+- (void)updateState:(unsigned long long)arg1;
 
 @end

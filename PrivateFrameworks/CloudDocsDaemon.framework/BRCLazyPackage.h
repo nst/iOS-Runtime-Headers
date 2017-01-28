@@ -10,9 +10,9 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)addItem:(id)arg1 error:(id*)arg2;
+- (bool)addItem:(id)arg1 error:(id*)arg2;
 - (id)closeAndReturn;
 - (id)initWithRegistry:(id)arg1 stageID:(id)arg2 name:(id)arg3;
-- (unsigned int)itemCount;
+- (unsigned long long)itemCount;
 
 @end

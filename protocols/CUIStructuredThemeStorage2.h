@@ -6,7 +6,7 @@
 @required
 
 - (NSArray *)allImageNames;
-- (BOOL)canGetRenditionWithKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
+- (bool)canGetRenditionWithKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
 - (NSArray *)imagesWithName:(NSString *)arg1;
 - (const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)renditionKeyForName:(NSString *)arg1;
 

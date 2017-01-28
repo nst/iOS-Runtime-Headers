@@ -9,7 +9,7 @@
 - (void).cxx_destruct;
 - (void)addFormField:(id)arg1;
 - (void)addNeedsAppearanceToDictionaryRef:(struct __CFDictionary { }*)arg1;
-- (void)commonResetForm:(id)arg1 inclusive:(BOOL)arg2;
+- (void)commonResetForm:(id)arg1 inclusive:(bool)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __CFDictionary { }*)createDictionaryRef;
 - (void)dealloc;

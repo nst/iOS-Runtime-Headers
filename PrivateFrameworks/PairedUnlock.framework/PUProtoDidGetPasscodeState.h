@@ -3,29 +3,29 @@
  */
 
 @interface PUProtoDidGetPasscodeState : PBCodable <NSCopying> {
-    BOOL  _hasPasscode;
-    BOOL  _isLocked;
-    BOOL  _isUnlockOnly;
+    bool  _hasPasscode;
+    bool  _isLocked;
+    bool  _isUnlockOnly;
 }
 
-@property (nonatomic) BOOL hasPasscode;
-@property (nonatomic) BOOL isLocked;
-@property (nonatomic) BOOL isUnlockOnly;
+@property (nonatomic) bool hasPasscode;
+@property (nonatomic) bool isLocked;
+@property (nonatomic) bool isUnlockOnly;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasPasscode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isLocked;
-- (BOOL)isUnlockOnly;
+- (bool)hasPasscode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isLocked;
+- (bool)isUnlockOnly;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasPasscode:(BOOL)arg1;
-- (void)setIsLocked:(BOOL)arg1;
-- (void)setIsUnlockOnly:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasPasscode:(bool)arg1;
+- (void)setIsLocked:(bool)arg1;
+- (void)setIsUnlockOnly:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

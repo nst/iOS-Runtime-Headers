@@ -4,31 +4,31 @@
 
 @interface _GEOLocationShiftLocation : NSObject {
     double  _accuracy;
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     struct { 
         double latitude; 
         double longitude; 
     }  _coordinate;
-    id /* block */  _errorHandler;
-    id /* block */  _functionHandler;
-    id /* block */  _mustGoToNetworkCallback;
+    id  _errorHandler;
+    id  _functionHandler;
+    id  _mustGoToNetworkCallback;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _recordCacheInfo;
+    bool  _recordCacheInfo;
     struct __CFRunLoop { } * _runLoop;
 }
 
 @property (nonatomic, readonly) double accuracy;
 @property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
 
-- (id)_initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4 mustGoToNetworkCallback:(id /* block */)arg5;
-- (void)_performOnCallbackQueue:(id /* block */)arg1;
+- (id)_initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4 mustGoToNetworkCallback:(id)arg5;
+- (void)_performOnCallbackQueue:(id)arg1;
 - (double)accuracy;
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4 mustGoToNetworkCallback:(id /* block */)arg5 callbackQueue:(id)arg6;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4 mustGoToNetworkCallback:(id /* block */)arg5 callbackRunLoop:(struct __CFRunLoop { }*)arg6;
-- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 functionHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3 callbackQueue:(id)arg4;
-- (void)performCompletionHandlerWithShiftedCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 function:(id)arg3 wasFunctionCached:(BOOL)arg4;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4 mustGoToNetworkCallback:(id)arg5 callbackQueue:(id)arg6;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id)arg3 errorHandler:(id)arg4 mustGoToNetworkCallback:(id)arg5 callbackRunLoop:(struct __CFRunLoop { }*)arg6;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 functionHandler:(id)arg2 errorHandler:(id)arg3 callbackQueue:(id)arg4;
+- (void)performCompletionHandlerWithShiftedCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 function:(id)arg3 wasFunctionCached:(bool)arg4;
 - (void)performErrorHandler:(id)arg1;
 - (void)performMustGoToNetwork;
 

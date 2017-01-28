@@ -3,35 +3,35 @@
  */
 
 @interface ICScrollViewKeyboardResizer : NSObject {
-    BOOL  _autoResizing;
+    bool  _autoResizing;
     <ICScrollViewKeyboardResizerDelegate> * _delegate;
-    BOOL  _didResizeScrollView;
-    BOOL  _observingKeyboardNotifications;
+    bool  _didResizeScrollView;
+    bool  _observingKeyboardNotifications;
 }
 
-@property (getter=isAutoResizing, nonatomic) BOOL autoResizing;
+@property (getter=isAutoResizing, nonatomic) bool autoResizing;
 @property (nonatomic) <ICScrollViewKeyboardResizerDelegate> *delegate;
-@property (nonatomic) BOOL didResizeScrollView;
-@property (getter=isObservingKeyboardNotifications, nonatomic) BOOL observingKeyboardNotifications;
+@property (nonatomic) bool didResizeScrollView;
+@property (getter=isObservingKeyboardNotifications, nonatomic) bool observingKeyboardNotifications;
 @property (nonatomic, readonly) UIScrollView *scrollView;
 
 - (void).cxx_destruct;
-- (void)applyInsetsFromKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 duration:(double)arg2;
+- (void)applyInsetsFromKeyboardFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 duration:(double)arg2;
 - (void)clearInsetsWithDuration:(double)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)didResizeScrollView;
+- (bool)didResizeScrollView;
 - (void)handleKeyboardWillHide:(id)arg1;
 - (void)handleKeyboardWillShow:(id)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)isAutoResizing;
-- (BOOL)isObservingKeyboardNotifications;
+- (bool)isAutoResizing;
+- (bool)isObservingKeyboardNotifications;
 - (id)scrollView;
-- (void)setAutoResizing:(BOOL)arg1;
+- (void)setAutoResizing:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDidResizeScrollView:(BOOL)arg1;
-- (void)setObservingKeyboardNotifications:(BOOL)arg1;
+- (void)setDidResizeScrollView:(bool)arg1;
+- (void)setObservingKeyboardNotifications:(bool)arg1;
 - (void)startAutoResizing;
 - (void)stopAutoResizing;
 

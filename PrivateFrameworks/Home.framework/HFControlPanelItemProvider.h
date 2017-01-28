@@ -4,18 +4,18 @@
 
 @interface HFControlPanelItemProvider : HFItemProvider {
     NSSet * _controlPanelItems;
-    id /* block */  _filter;
+    id  _filter;
     HFItem<HFControlItemVendor> * _item;
 }
 
 @property (nonatomic, copy) NSSet *controlPanelItems;
-@property (nonatomic, copy) id /* block */ filter;
+@property (nonatomic, copy) id filter;
 @property (nonatomic, retain) HFItem<HFControlItemVendor> *item;
 
 - (void).cxx_destruct;
-- (id /* block */)controlPanelItemComparator;
+- (id)controlPanelItemComparator;
 - (id)controlPanelItems;
-- (id /* block */)filter;
+- (id)filter;
 - (id)initWithHome:(id)arg1;
 - (id)initWithHome:(id)arg1 item:(id)arg2;
 - (id)invalidationReasons;
@@ -23,7 +23,7 @@
 - (id)items;
 - (id)reloadItems;
 - (void)setControlPanelItems:(id)arg1;
-- (void)setFilter:(id /* block */)arg1;
+- (void)setFilter:(id)arg1;
 - (void)setItem:(id)arg1;
 
 @end

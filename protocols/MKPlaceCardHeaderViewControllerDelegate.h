@@ -12,6 +12,6 @@
 
 @optional
 
-- (float)placeCardHeaderViewControllerTrailingConstantForTitle:(MKPlaceCardHeaderViewController *)arg1;
+- (double)placeCardHeaderViewControllerTrailingConstantForTitle:(MKPlaceCardHeaderViewController *)arg1;
 
 @end

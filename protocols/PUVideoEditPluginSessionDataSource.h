@@ -5,6 +5,6 @@
 
 @required
 
-- (void)editPluginSession:(void *)arg1 loadVideoURLWithHandler:(void *)arg2; // needs 2 arg types, found 7: PUEditPluginSession *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, void*
+- (void)editPluginSession:(void *)arg1 loadVideoURLWithHandler:(void *)arg2; // needs 2 arg types, found 7: PUEditPluginSession *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSURL *, void*
 
 @end

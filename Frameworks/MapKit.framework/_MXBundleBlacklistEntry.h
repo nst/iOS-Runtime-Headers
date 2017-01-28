@@ -11,9 +11,9 @@
 + (id)blacklistEntriesFromDefaultsValue:(id)arg1;
 
 - (void).cxx_destruct;
-- (BOOL)_isVersionValueAllowed:(id)arg1;
+- (bool)_isVersionValueAllowed:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1 minimumDisallowedVersion:(id)arg2 maximumDisallowedVersion:(id)arg3;
-- (BOOL)isBundleProxyAllowed:(id)arg1;
-- (BOOL)isExtensionAllowed:(id)arg1;
+- (bool)isBundleProxyAllowed:(id)arg1;
+- (bool)isExtensionAllowed:(id)arg1;
 
 @end

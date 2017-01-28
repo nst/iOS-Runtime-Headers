@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly, copy) CNSocialProfile *socialProfile;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

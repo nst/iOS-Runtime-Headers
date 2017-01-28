@@ -4,60 +4,60 @@
 
 @interface LSUserActivityManager : NSObject <LSUserActivityClientResponseProtocol> {
     NSUUID * _activeUserActivityUUID;
-    BOOL  _activityContinuationIsEnabled;
+    bool  _activityContinuationIsEnabled;
     NSXPCConnection * _connection;
-    BOOL  _connectionInitializationSucceeded;
-    BOOL  _needToSendInitialMessage;
+    bool  _connectionInitializationSucceeded;
+    bool  _needToSendInitialMessage;
     NSObject<OS_dispatch_queue> * _serverQ;
-    BOOL  _supportsActivityContinuation;
+    bool  _supportsActivityContinuation;
     NSMapTable * _userActivitiesByUUID;
 }
 
 @property (copy) NSUUID *activeUserActivityUUID;
-@property (readonly) BOOL activityContinuationIsEnabled;
+@property (readonly) bool activityContinuationIsEnabled;
 @property (readonly, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSObject<OS_dispatch_queue> *serverQ;
 @property (readonly) Class superclass;
-@property (readonly) BOOL supportsActivityContinuation;
+@property (readonly) bool supportsActivityContinuation;
 @property (retain) NSMapTable *userActivitiesByUUID;
 
 + (id)defaultManager;
-+ (BOOL)shouldSupportActivityContinuation;
-+ (BOOL)userActivityContinuationSupported;
++ (bool)shouldSupportActivityContinuation;
++ (bool)userActivityContinuationSupported;
 
 - (id)_findUserActivityForUUID:(id)arg1;
 - (id)activeUserActivityUUID;
-- (BOOL)activityContinuationIsEnabled;
+- (bool)activityContinuationIsEnabled;
 - (void)addDynamicUserActivity:(id)arg1 matching:(id)arg2;
 - (void)addUserActivity:(id)arg1;
 - (void)askClientUserActivityToSave:(id)arg1;
-- (void)askClientUserActivityToSave:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)askClientUserActivityToSave:(id)arg1 completionHandler:(id)arg2;
 - (id)connection;
 - (id)createByDecodingUserActivity:(id)arg1;
 - (void)dealloc;
 - (void)didReceiveInputStreamWithUUID:(id)arg1 inputStream:(id)arg2 outputStream:(id)arg3;
 - (id)encodeUserActivity:(id)arg1;
-- (void)fetchUUID:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)fetchUUID:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)init;
 - (id)initWithConnection:(id)arg1;
 - (void)makeActive:(id)arg1;
 - (void)makeInactive:(id)arg1;
-- (void)markUserActivityAsDirty:(id)arg1 forceImmediate:(BOOL)arg2;
-- (void)pinUserActivity:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)markUserActivityAsDirty:(id)arg1 forceImmediate:(bool)arg2;
+- (void)pinUserActivity:(id)arg1 withCompletionHandler:(id)arg2;
 - (void)removeDynamicUserActivity:(id)arg1 matching:(id)arg2;
 - (void)removeUserActivity:(id)arg1;
 - (void)sendInitialMessage;
-- (void)sendUserActivityInfoToLSUserActivityd:(id)arg1 makeCurrent:(BOOL)arg2;
+- (void)sendUserActivityInfoToLSUserActivityd:(id)arg1 makeCurrent:(bool)arg2;
 - (id)serverQ;
 - (void)setActiveUserActivityUUID:(id)arg1;
 - (void)setUserActivitiesByUUID:(id)arg1;
-- (BOOL)supportsActivityContinuation;
+- (bool)supportsActivityContinuation;
 - (void)tellClientUserActivityItWasResumed:(id)arg1;
 - (void)tellDaemonAboutNewLSUserActivity:(id)arg1;
 - (id)userActivitiesByUUID;
-- (BOOL)userActivityIsActive:(id)arg1;
+- (bool)userActivityIsActive:(id)arg1;
 
 @end

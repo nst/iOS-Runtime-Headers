@@ -7,12 +7,12 @@
 }
 
 @property (nonatomic, retain) CRCarKitServiceClient *serviceClient;
-@property (nonatomic, readonly) BOOL shouldSuggestCarPlayTips;
+@property (nonatomic, readonly) bool shouldSuggestCarPlayTips;
 
 - (void).cxx_destruct;
 - (id)init;
 - (id)serviceClient;
 - (void)setServiceClient:(id)arg1;
-- (BOOL)shouldSuggestCarPlayTips;
+- (bool)shouldSuggestCarPlayTips;
 
 @end

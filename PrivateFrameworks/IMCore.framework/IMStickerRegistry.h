@@ -16,7 +16,7 @@
 - (void)addOrUpdateStickersWithHostAppBundleIdentifier:(id)arg1 version:(id)arg2 bundleURL:(id)arg3;
 - (id)allDownloadedStickerPacks;
 - (id)allDownloadedStickers;
-- (void)downloadStickerPackWithGUID:(id)arg1 isIncomingMessage:(BOOL)arg2 ignoreCache:(BOOL)arg3;
+- (void)downloadStickerPackWithGUID:(id)arg1 isIncomingMessage:(bool)arg2 ignoreCache:(bool)arg3;
 - (void)downloadStickerWithGUID:(struct NSString { Class x1; }*)arg1;
 - (void)handleIncomingStickerPacks:(id)arg1;
 - (void)handleIncomingStickers:(id)arg1;

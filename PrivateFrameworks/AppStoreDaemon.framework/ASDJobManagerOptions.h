@@ -5,16 +5,16 @@
 @interface ASDJobManagerOptions : NSObject <NSCopying, NSSecureCoding> {
     NSXPCListenerEndpoint * _listenerEndpoint;
     NSString * _persistenceIdentifier;
-    BOOL  _shouldFilterExternalOriginatedDownloads;
-    BOOL  _shouldReportDownloadProgress;
+    bool  _shouldFilterExternalOriginatedDownloads;
+    bool  _shouldReportDownloadProgress;
 }
 
 @property (nonatomic, retain) NSXPCListenerEndpoint *listenerEndpoint;
 @property (nonatomic, copy) NSString *persistenceIdentifier;
-@property (nonatomic) BOOL shouldFilterExternalOriginatedDownloads;
-@property (nonatomic) BOOL shouldReportDownloadProgress;
+@property (nonatomic) bool shouldFilterExternalOriginatedDownloads;
+@property (nonatomic) bool shouldReportDownloadProgress;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -25,9 +25,9 @@
 - (id)persistenceIdentifier;
 - (void)setListenerEndpoint:(id)arg1;
 - (void)setPersistenceIdentifier:(id)arg1;
-- (void)setShouldFilterExternalOriginatedDownloads:(BOOL)arg1;
-- (void)setShouldReportDownloadProgress:(BOOL)arg1;
-- (BOOL)shouldFilterExternalOriginatedDownloads;
-- (BOOL)shouldReportDownloadProgress;
+- (void)setShouldFilterExternalOriginatedDownloads:(bool)arg1;
+- (void)setShouldReportDownloadProgress:(bool)arg1;
+- (bool)shouldFilterExternalOriginatedDownloads;
+- (bool)shouldReportDownloadProgress;
 
 @end

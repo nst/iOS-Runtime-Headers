@@ -18,7 +18,7 @@
 - (id)byteRanges;
 - (id)error;
 - (id)init;
-- (BOOL)isContiguous;
+- (bool)isContiguous;
 - (void)setAssetContent:(id)arg1;
 - (void)setByteRanges:(id)arg1;
 - (void)setError:(id)arg1;

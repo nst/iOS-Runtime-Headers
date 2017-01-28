@@ -11,7 +11,7 @@
 
 @property (nonatomic, retain) NSMutableArray *alightNotificationFeedbacks;
 @property (nonatomic, retain) NSData *directionResponseID;
-@property (nonatomic, readonly) BOOL hasDirectionResponseID;
+@property (nonatomic, readonly) bool hasDirectionResponseID;
 @property (nonatomic, retain) NSMutableArray *stepFeedbacks;
 @property (nonatomic, retain) NSMutableArray *trafficRerouteFeedbacks;
 
@@ -22,9 +22,9 @@
 - (void)addAlightNotificationFeedback:(id)arg1;
 - (void)addStepFeedback:(id)arg1;
 - (void)addTrafficRerouteFeedback:(id)arg1;
-- (id)alightNotificationFeedbackAtIndex:(unsigned int)arg1;
+- (id)alightNotificationFeedbackAtIndex:(unsigned long long)arg1;
 - (id)alightNotificationFeedbacks;
-- (unsigned int)alightNotificationFeedbacksCount;
+- (unsigned long long)alightNotificationFeedbacksCount;
 - (void)clearAlightNotificationFeedbacks;
 - (void)clearStepFeedbacks;
 - (void)clearTrafficRerouteFeedbacks;
@@ -34,21 +34,21 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)directionResponseID;
-- (BOOL)hasDirectionResponseID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDirectionResponseID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAlightNotificationFeedbacks:(id)arg1;
 - (void)setDirectionResponseID:(id)arg1;
 - (void)setStepFeedbacks:(id)arg1;
 - (void)setTrafficRerouteFeedbacks:(id)arg1;
-- (id)stepFeedbackAtIndex:(unsigned int)arg1;
+- (id)stepFeedbackAtIndex:(unsigned long long)arg1;
 - (id)stepFeedbacks;
-- (unsigned int)stepFeedbacksCount;
-- (id)trafficRerouteFeedbackAtIndex:(unsigned int)arg1;
+- (unsigned long long)stepFeedbacksCount;
+- (id)trafficRerouteFeedbackAtIndex:(unsigned long long)arg1;
 - (id)trafficRerouteFeedbacks;
-- (unsigned int)trafficRerouteFeedbacksCount;
+- (unsigned long long)trafficRerouteFeedbacksCount;
 - (void)writeTo:(id)arg1;
 
 @end

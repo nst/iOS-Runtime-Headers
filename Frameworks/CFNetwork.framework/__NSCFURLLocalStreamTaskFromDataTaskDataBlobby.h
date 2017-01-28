@@ -3,7 +3,7 @@
  */
 
 @interface __NSCFURLLocalStreamTaskFromDataTaskDataBlobby : NSObject {
-    id /* block */  _completion;
+    id  _completion;
     NSObject<OS_dispatch_data> * _remainingData;
 }
 
@@ -11,6 +11,6 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (int)drain:(struct __CFWriteStream { }*)arg1;
-- (id)initWithData:(id)arg1 completion:(id /* block */)arg2;
+- (id)initWithData:(id)arg1 completion:(id)arg2;
 
 @end

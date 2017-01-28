@@ -3,21 +3,21 @@
  */
 
 @interface GEOGeocodeProvider : NSObject {
-    id /* block */  _batchSuccessHandler;
-    id /* block */  _errorHandler;
+    id  _batchSuccessHandler;
+    id  _errorHandler;
 }
 
-@property (nonatomic, copy) id /* block */ batchSuccessHandler;
-@property (nonatomic, copy) id /* block */ errorHandler;
+@property (nonatomic, copy) id batchSuccessHandler;
+@property (nonatomic, copy) id errorHandler;
 
 + (id)providerName;
 
-- (void)batchReverseGeocode:(id)arg1 success:(id /* block */)arg2 error:(id /* block */)arg3;
-- (id /* block */)batchSuccessHandler;
+- (void)batchReverseGeocode:(id)arg1 success:(id)arg2 error:(id)arg3;
+- (id)batchSuccessHandler;
 - (void)cancel;
 - (void)dealloc;
-- (id /* block */)errorHandler;
-- (void)setBatchSuccessHandler:(id /* block */)arg1;
-- (void)setErrorHandler:(id /* block */)arg1;
+- (id)errorHandler;
+- (void)setBatchSuccessHandler:(id)arg1;
+- (void)setErrorHandler:(id)arg1;
 
 @end

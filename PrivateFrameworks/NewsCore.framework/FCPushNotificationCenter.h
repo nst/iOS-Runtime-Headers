@@ -7,36 +7,36 @@
     FCCKDatabase * _privateDatabase;
     NSMapTable * _recordZoneObservers;
     NSMutableDictionary * _subscriptionsByID;
-    BOOL  _syncingEnabled;
+    bool  _syncingEnabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) FCAsyncSerialQueue *fetchQueue;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) FCCKDatabase *privateDatabase;
 @property (nonatomic, retain) NSMapTable *recordZoneObservers;
 @property (nonatomic, retain) NSMutableDictionary *subscriptionsByID;
 @property (readonly) Class superclass;
-@property (getter=isSyncingEnabled, nonatomic) BOOL syncingEnabled;
+@property (getter=isSyncingEnabled, nonatomic) bool syncingEnabled;
 
 - (void).cxx_destruct;
 - (void)_deleteLocalDataForRecordZoneIDs:(id)arg1;
 - (void)_fetchChangesForRecordZoneIDs:(id)arg1;
-- (void)_handlePrivateDatabaseNotification:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)_handleRecordZoneNotification:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_handlePrivateDatabaseNotification:(id)arg1 completionHandler:(id)arg2;
+- (void)_handleRecordZoneNotification:(id)arg1 completionHandler:(id)arg2;
 - (void)_saveDatabaseServerChangeToken:(id)arg1;
-- (void)addObserver:(id)arg1 forChangesToRecordZone:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)addObserver:(id)arg1 forChangesToRecordZone:(id)arg2 usingBlock:(id)arg3;
 - (void)deleteSubscriptionWithID:(id)arg1 inDatabase:(id)arg2;
 - (void)disableSyncing;
 - (void)enableSyncing;
-- (void)ensureSubscriptionExistsWithID:(id)arg1 database:(id)arg2 recordZone:(id)arg3 createBlock:(id /* block */)arg4;
+- (void)ensureSubscriptionExistsWithID:(id)arg1 database:(id)arg2 recordZone:(id)arg3 createBlock:(id)arg4;
 - (void)fetchAllSubscriptionsInDatabase:(id)arg1;
 - (id)fetchQueue;
-- (void)handleRemoteNotification:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)handleRemoteNotification:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (id)initWithPrivateDatabase:(id)arg1 storeDirectory:(id)arg2;
-- (BOOL)isSyncingEnabled;
+- (bool)isSyncingEnabled;
 - (void)prepareForUse;
 - (id)privateDatabase;
 - (id)recordZoneObservers;
@@ -47,7 +47,7 @@
 - (void)setPrivateDatabase:(id)arg1;
 - (void)setRecordZoneObservers:(id)arg1;
 - (void)setSubscriptionsByID:(id)arg1;
-- (void)setSyncingEnabled:(BOOL)arg1;
+- (void)setSyncingEnabled:(bool)arg1;
 - (id)subscriptionIDForRecordZoneWithName:(id)arg1;
 - (id)subscriptionsByID;
 

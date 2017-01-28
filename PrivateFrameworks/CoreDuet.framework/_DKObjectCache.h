@@ -4,22 +4,22 @@
 
 @interface _DKObjectCache : NSObject {
     NSMutableDictionary * _cache;
-    unsigned int  _maxSize;
+    unsigned long long  _maxSize;
 }
 
 @property (retain) NSMutableDictionary *cache;
-@property unsigned int maxSize;
+@property unsigned long long maxSize;
 
 - (void).cxx_destruct;
 - (id)cache;
 - (void)clear;
-- (unsigned int)count;
-- (id)initWithMaxSize:(unsigned int)arg1;
-- (BOOL)isFilled;
-- (unsigned int)maxSize;
+- (unsigned long long)count;
+- (id)initWithMaxSize:(unsigned long long)arg1;
+- (bool)isFilled;
+- (unsigned long long)maxSize;
 - (id)objectForKey:(id)arg1;
 - (void)setCache:(id)arg1;
-- (void)setMaxSize:(unsigned int)arg1;
-- (BOOL)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setMaxSize:(unsigned long long)arg1;
+- (bool)setObject:(id)arg1 forKey:(id)arg2;
 
 @end

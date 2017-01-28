@@ -37,7 +37,7 @@
 - (void)handleMsg:(id)arg1 forAgent:(id)arg2;
 - (id)init;
 - (id)rawData;
-- (void)registerWithHandlerAs:(id)arg1 forType:(unsigned int)arg2;
+- (void)registerWithHandlerAs:(id)arg1 forType:(unsigned long long)arg2;
 - (id)seqNum;
 - (void)setAgent:(id)arg1;
 - (void)setDate:(id)arg1;

@@ -3,14 +3,14 @@
  */
 
 @interface PXFeedbackCollectionUIViewController : UIViewController {
-    unsigned int  _feedbackCollectionType;
+    unsigned long long  _feedbackCollectionType;
     UINavigationController * _navigationController;
 }
 
 - (void).cxx_destruct;
 - (void)cancelFeedback:(id)arg1;
-- (id)initWithCollectionType:(unsigned int)arg1;
+- (id)initWithCollectionType:(unsigned long long)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

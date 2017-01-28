@@ -9,21 +9,21 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SFBrowserRemoveViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)exportedInterface;
-+ (id)requestViewControllerWithConnectionHandler:(id /* block */)arg1;
++ (id)requestViewControllerWithConnectionHandler:(id)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void).cxx_destruct;
 - (id)delegate;
-- (void)didFinishInitialLoad:(BOOL)arg1;
+- (void)didFinishInitialLoad:(bool)arg1;
 - (void)didLoadWebView;
 - (void)executeCustomActivityProxyID:(id)arg1;
 - (void)fetchHostAppCustomActivitiesForURL:(id)arg1 title:(id)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setRemoteSwipeGestureEnabled:(BOOL)arg1;
+- (void)setRemoteSwipeGestureEnabled:(bool)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)willDismissServiceViewController;
 - (void)willOpenURLInHostApplication:(id)arg1;

@@ -6,14 +6,14 @@
     NEConfiguration * _configuration;
     NSString * _description;
     <NEExtensionProviderHostProtocol> * _hostContext;
-    id /* block */  _stopCompletionHandler;
+    id  _stopCompletionHandler;
 }
 
 @property (retain) NEConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (copy) id /* block */ stopCompletionHandler;
+@property (readonly) unsigned long long hash;
+@property (copy) id stopCompletionHandler;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
@@ -24,19 +24,19 @@
 - (void)completeSession;
 - (id)configuration;
 - (id)description;
-- (void)displayMessage:(id)arg1 message:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)displayMessage:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
 - (void)dispose;
 - (id)hostContext;
-- (int)neStopReasonToProviderStopReason:(int)arg1;
+- (long long)neStopReasonToProviderStopReason:(int)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setConfiguration:(id)arg1;
 - (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2 deviceIdentifier:(id)arg3;
 - (void)setDescription:(id)arg1;
-- (void)setStopCompletionHandler:(id /* block */)arg1;
-- (void)sleepWithCompletionHandler:(id /* block */)arg1;
-- (void)startWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)setStopCompletionHandler:(id)arg1;
+- (void)sleepWithCompletionHandler:(id)arg1;
+- (void)startWithOptions:(id)arg1 completionHandler:(id)arg2;
 - (void)startedWithError:(id)arg1;
-- (id /* block */)stopCompletionHandler;
+- (id)stopCompletionHandler;
 - (void)stopWithReason:(int)arg1;
 - (void)wake;
 

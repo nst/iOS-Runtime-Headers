@@ -5,7 +5,7 @@
 @interface BRContainerCache : NSObject {
     <NSObject> * _containerStatusObserver;
     NSMutableDictionary * _containersByID;
-    BOOL  _didFetchAllContainers;
+    bool  _didFetchAllContainers;
     <BRContainerHelper> * _helper;
     br_pacer * _invalidationPacer;
     NSObject<OS_dispatch_source> * _memoryPressureSource;

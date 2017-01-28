@@ -3,7 +3,7 @@
  */
 
 @interface WBUPasswordPickerViewController : UINavigationController {
-    id /* block */  _completionHandler;
+    id  _completionHandler;
     NSString * _prompt;
 }
 
@@ -14,7 +14,7 @@
 - (void)_cancel;
 - (void)_pickSavedPassword:(id)arg1;
 - (void)dealloc;
-- (id)initWithPrompt:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)initWithPrompt:(id)arg1 completionHandler:(id)arg2;
 - (id)prompt;
 
 @end

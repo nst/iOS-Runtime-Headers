@@ -6,6 +6,6 @@
 
 - (void)cancelAllTasks;
 - (void)cancelTaskForToken:(struct NSNumber { Class x1; }*)arg1;
-- (struct NSNumber { Class x1; }*)scheduleTask:(id /* block */)arg1;
+- (struct NSNumber { Class x1; }*)scheduleTask:(id)arg1;
 
 @end

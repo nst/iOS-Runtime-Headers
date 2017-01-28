@@ -8,22 +8,22 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)beginListening;
 + (id)cacheSalt;
 + (id)sharedInstance;
 
-- (void)copyIconBitmapCacheConfigurationWithReply:(id /* block */)arg1;
-- (BOOL)getIconBitmapDataWithResourceDirectoryURL:(id)arg1 boundContainerURL:(id)arg2 dataContainerURL:(id)arg3 bundleIdentifier:(id)arg4 iconsDictionary:(id)arg5 cacheFileName:(id)arg6 variant:(int)arg7 bitmapData:(id*)arg8;
-- (void)getIconBitmapDataWithResourceDirectoryURL:(id)arg1 boundContainerURL:(id)arg2 dataContainerURL:(id)arg3 bundleIdentifier:(id)arg4 iconsDictionary:(id)arg5 cacheFileName:(id)arg6 variant:(int)arg7 reply:(id /* block */)arg8;
-- (BOOL)getIconBitmapDataWithResourceDirectoryURL:(id)arg1 bundleIdentifier:(id)arg2 roleIdentifier:(id)arg3 iconFiles:(id)arg4 variant:(int)arg5 options:(int)arg6 bitmapData:(id*)arg7;
-- (void)getIconBitmapDataWithResourceDirectoryURL:(id)arg1 bundleIdentifier:(id)arg2 roleIdentifier:(id)arg3 iconFiles:(id)arg4 variant:(int)arg5 options:(int)arg6 reply:(id /* block */)arg7;
+- (void)copyIconBitmapCacheConfigurationWithReply:(id)arg1;
+- (bool)getIconBitmapDataWithResourceDirectoryURL:(id)arg1 boundContainerURL:(id)arg2 dataContainerURL:(id)arg3 bundleIdentifier:(id)arg4 iconsDictionary:(id)arg5 cacheFileName:(id)arg6 variant:(int)arg7 bitmapData:(id*)arg8;
+- (void)getIconBitmapDataWithResourceDirectoryURL:(id)arg1 boundContainerURL:(id)arg2 dataContainerURL:(id)arg3 bundleIdentifier:(id)arg4 iconsDictionary:(id)arg5 cacheFileName:(id)arg6 variant:(int)arg7 reply:(id)arg8;
+- (bool)getIconBitmapDataWithResourceDirectoryURL:(id)arg1 bundleIdentifier:(id)arg2 roleIdentifier:(id)arg3 iconFiles:(id)arg4 variant:(int)arg5 options:(int)arg6 bitmapData:(id*)arg7;
+- (void)getIconBitmapDataWithResourceDirectoryURL:(id)arg1 bundleIdentifier:(id)arg2 roleIdentifier:(id)arg3 iconFiles:(id)arg4 variant:(int)arg5 options:(int)arg6 reply:(id)arg7;
 - (id)init;
-- (void)invalidateItemsForBundeID:(id)arg1 reply:(id /* block */)arg2;
-- (BOOL)invalidateItemsForBundleIdentifier:(id)arg1;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)invalidateItemsForBundeID:(id)arg1 reply:(id)arg2;
+- (bool)invalidateItemsForBundleIdentifier:(id)arg1;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)setIconData:(id)arg1 forKey:(id)arg2;
 
 @end

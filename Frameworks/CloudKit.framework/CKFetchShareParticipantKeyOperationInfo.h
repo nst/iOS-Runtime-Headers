@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSDictionary *baseTokensByShareID;
 @property (nonatomic, retain) NSArray *shareIDs;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)baseTokensByShareID;

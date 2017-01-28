@@ -12,7 +12,7 @@
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)calendarIdentifier;

@@ -6,12 +6,12 @@
     AKController * _annotationController;
     struct CGPDFDocument { } * _document;
     NSMutableArray * _mutableReplacedAnnotationMaps;
-    unsigned int  _pageCount;
+    unsigned long long  _pageCount;
 }
 
 @property AKController *annotationController;
 @property (readonly) struct CGPDFDocument { }*document;
-@property unsigned int pageCount;
+@property unsigned long long pageCount;
 @property (readonly) NSArray *replacedAnnotationMaps;
 
 - (void).cxx_destruct;
@@ -20,12 +20,12 @@
 - (void)dealloc;
 - (struct CGPDFDocument { }*)document;
 - (void)documentDidUnlock;
-- (BOOL)hasReadAnnotationsFromPageAtIndex:(unsigned int)arg1;
+- (bool)hasReadAnnotationsFromPageAtIndex:(unsigned long long)arg1;
 - (id)initWithDocument:(struct CGPDFDocument { }*)arg1 annotationController:(id)arg2;
-- (unsigned int)pageCount;
-- (void)readAnnotationsFromPageAtIndex:(unsigned int)arg1;
+- (unsigned long long)pageCount;
+- (void)readAnnotationsFromPageAtIndex:(unsigned long long)arg1;
 - (id)replacedAnnotationMaps;
 - (void)setAnnotationController:(id)arg1;
-- (void)setPageCount:(unsigned int)arg1;
+- (void)setPageCount:(unsigned long long)arg1;
 
 @end

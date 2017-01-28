@@ -3,24 +3,24 @@
  */
 
 @interface NSInPredicateOperator : NSPredicateOperator {
-    unsigned int  _flags;
+    unsigned long long  _flags;
     NSSubstringPredicateOperator * _stringVersion;
 }
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_setOptions:(unsigned int)arg1;
+- (void)_setOptions:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)flags;
+- (unsigned long long)flags;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOperatorType:(unsigned int)arg1 modifier:(unsigned int)arg2 options:(unsigned int)arg3;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)options;
-- (BOOL)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
+- (id)initWithOperatorType:(unsigned long long)arg1 modifier:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)options;
+- (bool)performPrimitiveOperationUsingObject:(id)arg1 andObject:(id)arg2;
 - (id)stringVersion;
 - (id)symbol;
 

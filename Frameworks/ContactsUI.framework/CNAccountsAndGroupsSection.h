@@ -5,19 +5,19 @@
 @interface CNAccountsAndGroupsSection : NSObject {
     NSArray * _items;
     NSString * _title;
-    id /* block */  _titleProvider;
+    id  _titleProvider;
 }
 
 @property (nonatomic, retain) NSArray *items;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, copy) id /* block */ titleProvider;
+@property (nonatomic, copy) id titleProvider;
 
 - (void).cxx_destruct;
 - (id)items;
 - (void)setItems:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)setTitleProvider:(id /* block */)arg1;
+- (void)setTitleProvider:(id)arg1;
 - (id)title;
-- (id /* block */)titleProvider;
+- (id)titleProvider;
 
 @end

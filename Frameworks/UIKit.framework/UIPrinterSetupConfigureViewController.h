@@ -3,58 +3,58 @@
  */
 
 @interface UIPrinterSetupConfigureViewController : UITableViewController <UITableViewDataSource, UITextFieldDelegate> {
-    BOOL  _addToNetwork;
+    bool  _addToNetwork;
     UIPrinterSetupConnectingView * _connectingView;
     NSString * _directPasscode;
-    BOOL  _directPrinting;
+    bool  _directPrinting;
     UIButton * _finishButton;
     PKPrinter * _printer;
 }
 
-@property (nonatomic) BOOL addToNetwork;
+@property (nonatomic) bool addToNetwork;
 @property (nonatomic, retain) UIPrinterSetupConnectingView *connectingView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *directPasscode;
-@property (nonatomic) BOOL directPrinting;
+@property (nonatomic) bool directPrinting;
 @property (nonatomic, retain) UIButton *finishButton;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PKPrinter *printer;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)addToNetwork;
+- (bool)addToNetwork;
 - (id)connectingView;
 - (void)dealloc;
 - (id)directPasscode;
-- (BOOL)directPrinting;
+- (bool)directPrinting;
 - (void)finish;
 - (id)finishButton;
-- (void)finished:(BOOL)arg1;
+- (void)finished:(bool)arg1;
 - (id)initWithPrinter:(id)arg1;
 - (void)loadView;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)printer;
-- (void)setAddToNetwork:(BOOL)arg1;
+- (void)setAddToNetwork:(bool)arg1;
 - (void)setConnectingView:(id)arg1;
 - (void)setDirectPasscode:(id)arg1;
-- (void)setDirectPrinting:(BOOL)arg1;
+- (void)setDirectPrinting:(bool)arg1;
 - (void)setFinishButton:(id)arg1;
 - (void)setPrinter:(id)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(long long)arg3;
+- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
 - (void)textDidChange:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (bool)textFieldShouldReturn:(id)arg1;
 - (void)toggleAddToNetwork:(id)arg1;
 - (void)toggleDirectPrinting:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

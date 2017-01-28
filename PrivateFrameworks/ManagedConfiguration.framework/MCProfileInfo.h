@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString *organization;
 @property (nonatomic, retain) NSString *profileDescription;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)UUID;

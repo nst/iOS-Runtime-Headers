@@ -5,7 +5,7 @@
 @interface WKFrameInfo : NSObject <NSCopying, WKObject> {
     struct ObjectStorage<API::FrameInfo> { 
         struct type { 
-            unsigned char __lx[216]; 
+            unsigned char __lx[280]; 
         } data; 
     }  _frameInfo;
 }
@@ -15,8 +15,8 @@
 @property (nonatomic, readonly, copy) NSString *_sf_titleForJavaScriptDialog;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isMainFrame, nonatomic, readonly) BOOL mainFrame;
+@property (readonly) unsigned long long hash;
+@property (getter=isMainFrame, nonatomic, readonly) bool mainFrame;
 @property (nonatomic, readonly, copy) NSURLRequest *request;
 @property (nonatomic, readonly) WKSecurityOrigin *securityOrigin;
 @property (readonly) Class superclass;
@@ -28,7 +28,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)isMainFrame;
+- (bool)isMainFrame;
 - (id)request;
 - (id)securityOrigin;
 

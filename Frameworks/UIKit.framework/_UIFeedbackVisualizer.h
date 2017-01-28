@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)_colorForEngine:(id)arg1;
-- (id)_colorForEngineState:(int)arg1;
+- (id)_colorForEngineState:(long long)arg1;
 - (id)_colorForFeedback:(id)arg1;
 - (void)_showVisualForFeedback:(id)arg1;
 - (void)_updateEngine:(id)arg1;

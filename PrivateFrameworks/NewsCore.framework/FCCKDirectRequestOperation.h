@@ -4,12 +4,12 @@
 
 @interface FCCKDirectRequestOperation : FCOperation {
     NSString * _containerName;
-    id /* block */  _criticalNodeFailureTest;
+    id  _criticalNodeFailureTest;
     FCNetworkEvent * _networkEvent;
-    BOOL  _operationFailsOnRequestFailure;
-    BOOL  _production;
-    id /* block */  _requestCompletionHandler;
-    int  _requestType;
+    bool  _operationFailsOnRequestFailure;
+    bool  _production;
+    id  _requestCompletionHandler;
+    long long  _requestType;
     NSString * _requestUUID;
     NSArray * _requests;
     NSError * _resultError;
@@ -19,12 +19,12 @@
 }
 
 @property (nonatomic, copy) NSString *containerName;
-@property (nonatomic, copy) id /* block */ criticalNodeFailureTest;
+@property (nonatomic, copy) id criticalNodeFailureTest;
 @property (nonatomic, retain) FCNetworkEvent *networkEvent;
-@property (nonatomic) BOOL operationFailsOnRequestFailure;
-@property (nonatomic) BOOL production;
-@property (nonatomic, copy) id /* block */ requestCompletionHandler;
-@property (nonatomic) int requestType;
+@property (nonatomic) bool operationFailsOnRequestFailure;
+@property (nonatomic) bool production;
+@property (nonatomic, copy) id requestCompletionHandler;
+@property (nonatomic) long long requestType;
 @property (nonatomic, copy) NSString *requestUUID;
 @property (nonatomic, copy) NSArray *requests;
 @property (nonatomic, retain) NSError *resultError;
@@ -42,28 +42,28 @@
 - (id)_requestBodyData;
 - (id)_requestHeadersWithBaseURL:(id)arg1;
 - (id)containerName;
-- (id /* block */)criticalNodeFailureTest;
+- (id)criticalNodeFailureTest;
 - (id)generateHTTPRequest;
 - (id)init;
 - (id)networkEvent;
-- (BOOL)operationFailsOnRequestFailure;
+- (bool)operationFailsOnRequestFailure;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (BOOL)production;
-- (id /* block */)requestCompletionHandler;
-- (int)requestType;
+- (bool)production;
+- (id)requestCompletionHandler;
+- (long long)requestType;
 - (id)requestUUID;
 - (id)requests;
 - (id)resultError;
 - (id)resultErrorsByRequestID;
 - (id)resultResponses;
 - (void)setContainerName:(id)arg1;
-- (void)setCriticalNodeFailureTest:(id /* block */)arg1;
+- (void)setCriticalNodeFailureTest:(id)arg1;
 - (void)setNetworkEvent:(id)arg1;
-- (void)setOperationFailsOnRequestFailure:(BOOL)arg1;
-- (void)setProduction:(BOOL)arg1;
-- (void)setRequestCompletionHandler:(id /* block */)arg1;
-- (void)setRequestType:(int)arg1;
+- (void)setOperationFailsOnRequestFailure:(bool)arg1;
+- (void)setProduction:(bool)arg1;
+- (void)setRequestCompletionHandler:(id)arg1;
+- (void)setRequestType:(long long)arg1;
 - (void)setRequestUUID:(id)arg1;
 - (void)setRequests:(id)arg1;
 - (void)setResultError:(id)arg1;
@@ -71,6 +71,6 @@
 - (void)setResultResponses:(id)arg1;
 - (void)setTimeoutIntervalForRequest:(double)arg1;
 - (double)timeoutIntervalForRequest;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 
 @end

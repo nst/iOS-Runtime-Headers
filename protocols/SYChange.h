@@ -5,7 +5,7 @@
 
 @required
 
-- (int)changeType;
+- (long long)changeType;
 - (NSString *)objectIdentifier;
 - (NSString *)sequencer;
 

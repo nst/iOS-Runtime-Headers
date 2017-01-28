@@ -6,8 +6,8 @@
 
 + (id)newDirectoryGroupWrapperWithAccountIdentifier:(id)arg1 store:(void*)arg2 addressBook:(void*)arg3;
 
-- (BOOL)isDirectoryWrapper;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isDirectoryWrapper;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 - (int)sourceType;
 

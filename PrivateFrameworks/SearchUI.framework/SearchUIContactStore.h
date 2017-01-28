@@ -18,7 +18,7 @@
 - (id)cachedContactForIdentifier:(id)arg1;
 - (id)contactCache;
 - (id)contactStore;
-- (void)fetchContactForIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchContactForIdentifier:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (void)setContactCache:(id)arg1;
 - (void)setContactStore:(id)arg1;

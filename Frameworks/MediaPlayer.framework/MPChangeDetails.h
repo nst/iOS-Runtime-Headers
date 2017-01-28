@@ -8,11 +8,11 @@
     NSArray * _insertedItemIndexPaths;
     NSIndexSet * _insertedSections;
     NSMutableDictionary * _itemMoves;
-    struct vector<std::__1::pair<int, int>, std::__1::allocator<std::__1::pair<int, int> > > { 
-        struct pair<int, int> {} *__begin_; 
-        struct pair<int, int> {} *__end_; 
-        struct __compressed_pair<std::__1::pair<int, int> *, std::__1::allocator<std::__1::pair<int, int> > > { 
-            struct pair<int, int> {} *__first_; 
+    struct vector<std::__1::pair<long, long>, std::__1::allocator<std::__1::pair<long, long> > > { 
+        struct pair<long, long> {} *__begin_; 
+        struct pair<long, long> {} *__end_; 
+        struct __compressed_pair<std::__1::pair<long, long> *, std::__1::allocator<std::__1::pair<long, long> > > { 
+            struct pair<long, long> {} *__first_; 
         } __end_cap_; 
     }  _sectionMoves;
     NSArray * _updatedItemIndexPaths;
@@ -29,13 +29,13 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)appendItemMoveFromIndexPath:(id)arg1 toIndexPath:(id)arg2;
-- (void)appendSectionMoveFromIndex:(int)arg1 toIndex:(int)arg2;
+- (void)appendSectionMoveFromIndex:(long long)arg1 toIndex:(long long)arg2;
 - (id)deletedItemIndexPaths;
 - (id)deletedSections;
 - (id)description;
-- (void)enumerateItemMovesWithBlock:(id /* block */)arg1;
-- (void)enumerateSectionMovesWithBlock:(id /* block */)arg1;
-- (id)initWithBlock:(id /* block */)arg1;
+- (void)enumerateItemMovesWithBlock:(id)arg1;
+- (void)enumerateSectionMovesWithBlock:(id)arg1;
+- (id)initWithBlock:(id)arg1;
 - (id)insertedItemIndexPaths;
 - (id)insertedSections;
 - (void)setDeletedItemIndexPaths:(id)arg1;

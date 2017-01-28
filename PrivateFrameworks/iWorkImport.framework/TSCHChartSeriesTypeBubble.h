@@ -18,10 +18,10 @@
 - (int)legendBadgeType;
 - (id)propertiesForReferenceColors;
 - (id)supportedValueLabelsAxisCombinations;
-- (BOOL)supportsFillSetFill;
-- (BOOL)supportsLineConnectionStyle;
-- (BOOL)supportsSeriesStroke;
-- (BOOL)supportsSymbolTypeEditing;
-- (unsigned int)valueDimensions;
+- (bool)supportsFillSetFill;
+- (bool)supportsLineConnectionStyle;
+- (bool)supportsSeriesStroke;
+- (bool)supportsSymbolTypeEditing;
+- (unsigned long long)valueDimensions;
 
 @end

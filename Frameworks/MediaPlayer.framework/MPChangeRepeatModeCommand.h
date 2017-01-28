@@ -3,15 +3,15 @@
  */
 
 @interface MPChangeRepeatModeCommand : MPRemoteCommand {
-    int  _currentRepeatType;
+    long long  _currentRepeatType;
 }
 
-@property (nonatomic) int currentRepeatType;
+@property (nonatomic) long long currentRepeatType;
 
 - (id)_mediaRemoteCommandInfoOptions;
-- (int)currentRepeatType;
-- (id)newCommandEventWithType:(int)arg1;
-- (id)newCommandEventWithType:(int)arg1 preservesRepeatMode:(BOOL)arg2;
-- (void)setCurrentRepeatType:(int)arg1;
+- (long long)currentRepeatType;
+- (id)newCommandEventWithType:(long long)arg1;
+- (id)newCommandEventWithType:(long long)arg1 preservesRepeatMode:(bool)arg2;
+- (void)setCurrentRepeatType:(long long)arg1;
 
 @end

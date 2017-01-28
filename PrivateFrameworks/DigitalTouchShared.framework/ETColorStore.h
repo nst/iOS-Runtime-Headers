@@ -4,12 +4,12 @@
 
 @interface ETColorStore : NSObject {
     NSMutableArray * _colors;
-    unsigned int  _selectedColorIndex;
-    BOOL  _selectedIndexLoaded;
+    unsigned long long  _selectedColorIndex;
+    bool  _selectedIndexLoaded;
 }
 
 @property (nonatomic, readonly) NSArray *colors;
-@property (nonatomic) unsigned int selectedColorIndex;
+@property (nonatomic) unsigned long long selectedColorIndex;
 
 + (id)defaultStore;
 
@@ -20,8 +20,8 @@
 - (void)dealloc;
 - (void)defaultsChanged:(id)arg1;
 - (id)init;
-- (void)saveColor:(id)arg1 forIndex:(unsigned int)arg2;
-- (unsigned int)selectedColorIndex;
-- (void)setSelectedColorIndex:(unsigned int)arg1;
+- (void)saveColor:(id)arg1 forIndex:(unsigned long long)arg2;
+- (unsigned long long)selectedColorIndex;
+- (void)setSelectedColorIndex:(unsigned long long)arg1;
 
 @end

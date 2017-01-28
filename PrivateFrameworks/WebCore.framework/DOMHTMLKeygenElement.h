@@ -4,9 +4,9 @@
 
 @interface DOMHTMLKeygenElement : DOMHTMLElement
 
-@property BOOL autofocus;
+@property bool autofocus;
 @property (copy) NSString *challenge;
-@property BOOL disabled;
+@property bool disabled;
 @property (readonly) DOMHTMLFormElement *form;
 @property (copy) NSString *keytype;
 @property (readonly) DOMNodeList *labels;
@@ -14,25 +14,25 @@
 @property (readonly, copy) NSString *type;
 @property (readonly, copy) NSString *validationMessage;
 @property (readonly) DOMValidityState *validity;
-@property (readonly) BOOL willValidate;
+@property (readonly) bool willValidate;
 
-- (BOOL)autofocus;
+- (bool)autofocus;
 - (id)challenge;
-- (BOOL)checkValidity;
-- (BOOL)disabled;
+- (bool)checkValidity;
+- (bool)disabled;
 - (id)form;
 - (id)keytype;
 - (id)labels;
 - (id)name;
-- (void)setAutofocus:(BOOL)arg1;
+- (void)setAutofocus:(bool)arg1;
 - (void)setChallenge:(id)arg1;
 - (void)setCustomValidity:(id)arg1;
-- (void)setDisabled:(BOOL)arg1;
+- (void)setDisabled:(bool)arg1;
 - (void)setKeytype:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)type;
 - (id)validationMessage;
 - (id)validity;
-- (BOOL)willValidate;
+- (bool)willValidate;
 
 @end

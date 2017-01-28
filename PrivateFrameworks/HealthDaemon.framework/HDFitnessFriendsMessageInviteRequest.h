@@ -3,6 +3,7 @@
  */
 
 @interface HDFitnessFriendsMessageInviteRequest : PBRequest <NSCopying> {
+    HDFitnessFriendsMessageActivityDataPreview * _activityDataPreview;
     NSString * _handshakeToken;
     struct { 
         unsigned int inviterVersion : 1; 
@@ -13,38 +14,43 @@
     unsigned int  _inviterVersion;
 }
 
+@property (nonatomic, retain) HDFitnessFriendsMessageActivityDataPreview *activityDataPreview;
 @property (nonatomic, retain) NSString *handshakeToken;
-@property (nonatomic, readonly) BOOL hasHandshakeToken;
-@property (nonatomic, readonly) BOOL hasInviterBuildNumber;
-@property (nonatomic, readonly) BOOL hasInviterCallerID;
-@property (nonatomic, readonly) BOOL hasInviterCloudKitAddress;
-@property (nonatomic) BOOL hasInviterVersion;
+@property (nonatomic, readonly) bool hasActivityDataPreview;
+@property (nonatomic, readonly) bool hasHandshakeToken;
+@property (nonatomic, readonly) bool hasInviterBuildNumber;
+@property (nonatomic, readonly) bool hasInviterCallerID;
+@property (nonatomic, readonly) bool hasInviterCloudKitAddress;
+@property (nonatomic) bool hasInviterVersion;
 @property (nonatomic, retain) NSString *inviterBuildNumber;
 @property (nonatomic, retain) NSString *inviterCallerID;
 @property (nonatomic, retain) NSString *inviterCloudKitAddress;
 @property (nonatomic) unsigned int inviterVersion;
 
 - (void).cxx_destruct;
+- (id)activityDataPreview;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)handshakeToken;
-- (BOOL)hasHandshakeToken;
-- (BOOL)hasInviterBuildNumber;
-- (BOOL)hasInviterCallerID;
-- (BOOL)hasInviterCloudKitAddress;
-- (BOOL)hasInviterVersion;
-- (unsigned int)hash;
+- (bool)hasActivityDataPreview;
+- (bool)hasHandshakeToken;
+- (bool)hasInviterBuildNumber;
+- (bool)hasInviterCallerID;
+- (bool)hasInviterCloudKitAddress;
+- (bool)hasInviterVersion;
+- (unsigned long long)hash;
 - (id)inviterBuildNumber;
 - (id)inviterCallerID;
 - (id)inviterCloudKitAddress;
 - (unsigned int)inviterVersion;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setActivityDataPreview:(id)arg1;
 - (void)setHandshakeToken:(id)arg1;
-- (void)setHasInviterVersion:(BOOL)arg1;
+- (void)setHasInviterVersion:(bool)arg1;
 - (void)setInviterBuildNumber:(id)arg1;
 - (void)setInviterCallerID:(id)arg1;
 - (void)setInviterCloudKitAddress:(id)arg1;

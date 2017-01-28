@@ -8,8 +8,8 @@
 }
 
 @property (nonatomic, retain) NSString *countryCode;
-@property (nonatomic, readonly) BOOL hasCountryCode;
-@property (nonatomic, readonly) BOOL hasRegion;
+@property (nonatomic, readonly) bool hasCountryCode;
+@property (nonatomic, readonly) bool hasRegion;
 @property (nonatomic, retain) NSString *region;
 
 - (void)copyTo:(id)arg1;
@@ -18,12 +18,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCountryCode;
-- (BOOL)hasRegion;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCountryCode;
+- (bool)hasRegion;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)region;
 - (void)setCountryCode:(id)arg1;
 - (void)setRegion:(id)arg1;

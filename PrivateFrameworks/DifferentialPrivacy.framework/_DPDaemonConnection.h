@@ -14,8 +14,8 @@
 - (id)daemonConnection;
 - (void)dealloc;
 - (id)init;
-- (void)recordNumbers:(id)arg1 forKey:(id)arg2 withReply:(id /* block */)arg3;
-- (void)recordStrings:(id)arg1 forKey:(id)arg2 withReply:(id /* block */)arg3;
-- (void)recordWords:(id)arg1 forKey:(id)arg2 withReply:(id /* block */)arg3;
+- (void)recordNumbers:(id)arg1 forKey:(id)arg2 withReply:(id)arg3;
+- (void)recordStrings:(id)arg1 forKey:(id)arg2 withReply:(id)arg3;
+- (void)recordWords:(id)arg1 forKey:(id)arg2 withReply:(id)arg3;
 
 @end

@@ -3,26 +3,26 @@
  */
 
 @interface MCSessionPeerConnectionData : NSObject {
-    int  _encryptionPreference;
+    long long  _encryptionPreference;
     NSData * _gckSessionConnectionData;
-    BOOL  _hasIdentitySet;
+    bool  _hasIdentitySet;
 }
 
-@property (nonatomic) int encryptionPreference;
+@property (nonatomic) long long encryptionPreference;
 @property (nonatomic, retain) NSData *gckSessionConnectionData;
-@property (nonatomic) BOOL hasIdentitySet;
+@property (nonatomic) bool hasIdentitySet;
 
-+ (id)connectionDataSegmentWithEncryptionPreference:(int)arg1 identitySet:(BOOL)arg2 gckSessionConnectionDataBytes:(void*)arg3 gckSessionConnectionDataLength:(unsigned long)arg4;
++ (id)connectionDataSegmentWithEncryptionPreference:(long long)arg1 identitySet:(bool)arg2 gckSessionConnectionDataBytes:(void*)arg3 gckSessionConnectionDataLength:(unsigned long long)arg4;
 
 - (void)dealloc;
-- (int)encryptionPreference;
+- (long long)encryptionPreference;
 - (id)gckSessionConnectionData;
-- (BOOL)hasIdentitySet;
+- (bool)hasIdentitySet;
 - (id)initWithConnectionDataBlob:(id)arg1;
-- (BOOL)parseConnectionDataBlob:(id)arg1;
-- (void)parseConnectionDataSegmentWithBytes:(char *)arg1 withLength:(unsigned long)arg2;
-- (void)setEncryptionPreference:(int)arg1;
+- (bool)parseConnectionDataBlob:(id)arg1;
+- (void)parseConnectionDataSegmentWithBytes:(char *)arg1 withLength:(unsigned long long)arg2;
+- (void)setEncryptionPreference:(long long)arg1;
 - (void)setGckSessionConnectionData:(id)arg1;
-- (void)setHasIdentitySet:(BOOL)arg1;
+- (void)setHasIdentitySet:(bool)arg1;
 
 @end

@@ -3,23 +3,23 @@
  */
 
 @interface FCAsyncBlockOperation : NSOperation {
-    id /* block */  _block;
-    BOOL  _executing;
-    BOOL  _finished;
+    id  _block;
+    bool  _executing;
+    bool  _finished;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ block;
+@property (nonatomic, readonly, copy) id block;
 
-+ (id)asyncBlockOperationWithBlock:(id /* block */)arg1;
-+ (id)asyncBlockOperationWithMainThreadBlock:(id /* block */)arg1;
++ (id)asyncBlockOperationWithBlock:(id)arg1;
++ (id)asyncBlockOperationWithMainThreadBlock:(id)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)block;
+- (id)block;
 - (id)init;
-- (id)initWithBlock:(id /* block */)arg1;
-- (BOOL)isAsynchronous;
-- (BOOL)isExecuting;
-- (BOOL)isFinished;
+- (id)initWithBlock:(id)arg1;
+- (bool)isAsynchronous;
+- (bool)isExecuting;
+- (bool)isFinished;
 - (void)start;
 
 @end

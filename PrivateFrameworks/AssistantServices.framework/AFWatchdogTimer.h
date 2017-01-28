@@ -3,23 +3,23 @@
  */
 
 @interface AFWatchdogTimer : NSObject {
-    id /* block */  _handler;
+    id  _handler;
     double  _interval;
     NSObject<OS_dispatch_queue> * _queue;
     double  _remainingTimeInterval;
     NSDate * _startTime;
     NSObject<OS_dispatch_source> * _timerSource;
-    unsigned int  _timerState;
+    unsigned long long  _timerState;
 }
 
 - (void).cxx_destruct;
 - (void)_scheduleTimer;
 - (void)_scheduleTimerWithInterval:(double)arg1;
 - (void)cancel;
-- (BOOL)cancelIfNotAlreadyCanceled;
+- (bool)cancelIfNotAlreadyCanceled;
 - (void)dealloc;
-- (id)initWithTimeoutInterval:(double)arg1 onQueue:(id)arg2 timeoutHandler:(id /* block */)arg3;
-- (id)initWithTimeoutInterval:(double)arg1 timeoutHandler:(id /* block */)arg2;
+- (id)initWithTimeoutInterval:(double)arg1 onQueue:(id)arg2 timeoutHandler:(id)arg3;
+- (id)initWithTimeoutInterval:(double)arg1 timeoutHandler:(id)arg2;
 - (void)pause;
 - (void)reset;
 - (void)resume;

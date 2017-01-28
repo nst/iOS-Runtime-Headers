@@ -5,7 +5,7 @@
 
 @optional
 
-- (BOOL)offerViewAnimateTransition:(SKUIOfferView *)arg1;
+- (bool)offerViewAnimateTransition:(SKUIOfferView *)arg1;
 - (void)offerViewDidAnimateTransition:(SKUIOfferView *)arg1;
 - (void)offerViewWillAnimateTransition:(SKUIOfferView *)arg1;
 

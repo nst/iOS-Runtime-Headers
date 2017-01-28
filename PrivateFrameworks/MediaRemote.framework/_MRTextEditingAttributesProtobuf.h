@@ -8,9 +8,9 @@
     NSString * _title;
 }
 
-@property (nonatomic, readonly) BOOL hasInputTraits;
-@property (nonatomic, readonly) BOOL hasPrompt;
-@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, readonly) bool hasInputTraits;
+@property (nonatomic, readonly) bool hasPrompt;
+@property (nonatomic, readonly) bool hasTitle;
 @property (nonatomic, retain) _MRTextInputTraitsProtobuf *inputTraits;
 @property (nonatomic, retain) NSString *prompt;
 @property (nonatomic, retain) NSString *title;
@@ -20,15 +20,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasInputTraits;
-- (BOOL)hasPrompt;
-- (BOOL)hasTitle;
-- (unsigned int)hash;
+- (bool)hasInputTraits;
+- (bool)hasPrompt;
+- (bool)hasTitle;
+- (unsigned long long)hash;
 - (id)inputTraits;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)prompt;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setInputTraits:(id)arg1;
 - (void)setPrompt:(id)arg1;
 - (void)setTitle:(id)arg1;

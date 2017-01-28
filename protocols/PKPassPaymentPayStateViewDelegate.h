@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)payStateView:(PKPassPaymentPayStateView *)arg1 revealingCheckmark:(BOOL)arg2;
+- (void)payStateView:(PKPassPaymentPayStateView *)arg1 revealingCheckmark:(bool)arg2;
 
 @end

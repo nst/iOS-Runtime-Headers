@@ -3,34 +3,34 @@
  */
 
 @interface EKUITableViewCell : UITableViewCell {
-    BOOL  _drawsOwnRowSeparators;
+    bool  _drawsOwnRowSeparators;
     UIColor * _rowSeparatorColor;
     UIVisualEffectView * _rowSeparatorParentView;
     UIVisualEffect * _rowSeparatorVisualEffect;
     RowSeparatorView * _separatorViewForNonOpaqueTables;
-    BOOL  _usesInsetMargin;
+    bool  _usesInsetMargin;
 }
 
-@property (nonatomic) BOOL drawsOwnRowSeparators;
+@property (nonatomic) bool drawsOwnRowSeparators;
 @property (nonatomic, retain) UIColor *rowSeparatorColor;
 @property (nonatomic, retain) UIVisualEffect *rowSeparatorVisualEffect;
-@property (nonatomic) BOOL usesInsetMargin;
+@property (nonatomic) bool usesInsetMargin;
 
 + (id)reuseIdentifier;
-+ (float)rowSeparatorThickness;
-+ (BOOL)vibrant;
++ (double)rowSeparatorThickness;
++ (bool)vibrant;
 
 - (void).cxx_destruct;
 - (void)_layoutSeparator;
-- (void)_setMarginExtendsToFullWidth:(BOOL)arg1;
-- (BOOL)drawsOwnRowSeparators;
+- (void)_setMarginExtendsToFullWidth:(bool)arg1;
+- (bool)drawsOwnRowSeparators;
 - (void)layoutSubviews;
 - (id)rowSeparatorColor;
 - (id)rowSeparatorVisualEffect;
-- (void)setDrawsOwnRowSeparators:(BOOL)arg1;
+- (void)setDrawsOwnRowSeparators:(bool)arg1;
 - (void)setRowSeparatorColor:(id)arg1;
 - (void)setRowSeparatorVisualEffect:(id)arg1;
-- (void)setUsesInsetMargin:(BOOL)arg1;
-- (BOOL)usesInsetMargin;
+- (void)setUsesInsetMargin:(bool)arg1;
+- (bool)usesInsetMargin;
 
 @end

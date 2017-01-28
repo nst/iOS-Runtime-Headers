@@ -5,8 +5,8 @@
 
 @required
 
-- (void)showFMFCallButton:(BOOL)arg1 withAction:(ABPersonTableAction *)arg2;
-- (void)showFMFFacetimeButton:(BOOL)arg1 withAction:(ABPersonTableAction *)arg2;
-- (void)showFMFMessageButton:(BOOL)arg1 withAction:(ABPersonTableAction *)arg2;
+- (void)showFMFCallButton:(bool)arg1 withAction:(ABPersonTableAction *)arg2;
+- (void)showFMFFacetimeButton:(bool)arg1 withAction:(ABPersonTableAction *)arg2;
+- (void)showFMFMessageButton:(bool)arg1 withAction:(ABPersonTableAction *)arg2;
 
 @end

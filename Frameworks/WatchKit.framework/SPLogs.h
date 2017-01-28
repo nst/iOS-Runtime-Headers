@@ -4,6 +4,6 @@
 
 @interface SPLogs : NSObject
 
-+ (BOOL)debugLogLevel;
++ (bool)debugLogLevel;
 
 @end

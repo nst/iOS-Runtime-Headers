@@ -11,8 +11,8 @@
 - (void)matchResult:(BiometricKitIdentity *)arg1;
 - (void)matchResult:(BiometricKitIdentity *)arg1 withDetails:(NSDictionary *)arg2;
 - (void)statusMessage:(unsigned int)arg1;
-- (void)taskResumeStatus:(long)arg1;
+- (void)taskResumeStatus:(int)arg1;
 - (void)templateUpdate:(BiometricKitIdentity *)arg1 withDetails:(NSDictionary *)arg2;
-- (void)touchIDButtonPressed:(BOOL)arg1;
+- (void)touchIDButtonPressed:(bool)arg1;
 
 @end

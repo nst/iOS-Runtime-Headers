@@ -15,13 +15,13 @@
 
 - (void).cxx_destruct;
 - (void)_searchOperation:(id)arg1 didFinishWithResults:(id)arg2;
-- (id)_searchPropertiesForGroupingType:(int)arg1;
-- (unsigned int)count;
+- (id)_searchPropertiesForGroupingType:(long long)arg1;
+- (unsigned long long)count;
 - (id)dataSource;
 - (void)dealloc;
 - (id)entities;
 - (void)filterResultsUsingSearchString:(id)arg1;
-- (void)filterResultsUsingSearchString:(id)arg1 completion:(id /* block */)arg2;
+- (void)filterResultsUsingSearchString:(id)arg1 completion:(id)arg2;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithDataSource:(id)arg1 operationQueue:(id)arg2;
 - (id)searchString;

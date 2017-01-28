@@ -4,7 +4,7 @@
 
 @interface TSCH3DGLStatistics : NSObject {
     NSMutableArray * mFrames;
-    unsigned int  mLifespan;
+    unsigned long long  mLifespan;
 }
 
 @property (nonatomic, readonly) TSCH3DGLStatisticsData *allFramesStatistics;

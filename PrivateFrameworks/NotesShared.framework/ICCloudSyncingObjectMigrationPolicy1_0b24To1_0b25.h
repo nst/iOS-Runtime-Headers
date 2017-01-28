@@ -4,6 +4,6 @@
 
 @interface ICCloudSyncingObjectMigrationPolicy1_0b24To1_0b25 : NSEntityMigrationPolicy
 
-- (BOOL)createDestinationInstancesForSourceInstance:(id)arg1 entityMapping:(id)arg2 manager:(id)arg3 error:(id*)arg4;
+- (bool)createDestinationInstancesForSourceInstance:(id)arg1 entityMapping:(id)arg2 manager:(id)arg3 error:(id*)arg4;
 
 @end

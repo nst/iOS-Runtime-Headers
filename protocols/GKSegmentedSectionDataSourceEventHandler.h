@@ -5,7 +5,7 @@
 
 @required
 
-- (void)segmentedSectionDataSource:(GKSegmentedSectionDataSource *)arg1 inSection:(unsigned int)arg2 didSelectDataSourceWithIndex:(int)arg3;
+- (void)segmentedSectionDataSource:(GKSegmentedSectionDataSource *)arg1 inSection:(unsigned long long)arg2 didSelectDataSourceWithIndex:(long long)arg3;
 
 @optional
 

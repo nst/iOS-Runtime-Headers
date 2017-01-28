@@ -7,6 +7,6 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)_animatorStep:(double)arg1;
+- (bool)_animatorStep:(double)arg1;
 
 @end

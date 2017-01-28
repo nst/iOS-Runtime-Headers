@@ -6,28 +6,28 @@
     NSSet * _abbreviatedKeys;
     NSArray * _fallbackDescriptor;
     _NSPersonNameComponentsStyleFormatter * _fallbackStyleFormatter;
-    BOOL  _isEnabled;
+    bool  _isEnabled;
     NSSet * _keysOfInterest;
     NSLocale * _locale;
     NSPersonNameComponentsFormatter * _masterFormatter;
     NSArray * _orderedTemplate;
-    int  _ordering;
-    BOOL  _shouldFallBack;
+    long long  _ordering;
+    bool  _shouldFallBack;
 }
 
 @property (readonly) NSSet *abbreviatedKeys;
 @property (readonly, copy) NSArray *fallbackDescriptor;
 @property (retain) _NSPersonNameComponentsStyleFormatter *fallbackStyleFormatter;
-@property (readonly) BOOL isEnabled;
+@property (readonly) bool isEnabled;
 @property (readonly) NSSet *keysOfInterest;
 @property (readonly, copy) NSPersonNameComponentsFormatter *masterFormatter;
 @property (readonly) NSArray *orderedKeysOfInterest;
 @property (readonly) NSArray *orderedTemplate;
-@property int ordering;
-@property (readonly) BOOL shouldFallBack;
-@property (readonly) BOOL shouldIgnoreComponentsContainingSpecialCharacters;
+@property long long ordering;
+@property (readonly) bool shouldFallBack;
+@property (readonly) bool shouldIgnoreComponentsContainingSpecialCharacters;
 
-- (id)_delimiterBetweenString:(id)arg1 andString:(id)arg2 isPhonetic:(BOOL)arg3;
+- (id)_delimiterBetweenString:(id)arg1 andString:(id)arg2 isPhonetic:(bool)arg3;
 - (id)_formattedStringFromOrderedKeys:(id)arg1 components:(id)arg2 attributesByRange:(id)arg3;
 - (id)_orderedNonEmptyKeysFromComponents:(id)arg1;
 - (void)_releaseIvars;
@@ -36,18 +36,18 @@
 - (void)dealloc;
 - (id)fallbackDescriptor;
 - (id)fallbackStyleFormatter;
-- (BOOL)fullComponentsAreValid:(id)arg1;
+- (bool)fullComponentsAreValid:(id)arg1;
 - (id)initWithMasterFormatter:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)keysOfInterest;
 - (id)masterFormatter;
 - (id)orderedKeysOfInterest;
 - (id)orderedTemplate;
-- (int)ordering;
+- (long long)ordering;
 - (void)setFallbackStyleFormatter:(id)arg1;
-- (void)setOrdering:(int)arg1;
-- (BOOL)shouldFallBack;
-- (BOOL)shouldIgnoreComponentsContainingSpecialCharacters;
+- (void)setOrdering:(long long)arg1;
+- (bool)shouldFallBack;
+- (bool)shouldIgnoreComponentsContainingSpecialCharacters;
 - (id)stringFromComponents:(id)arg1 attributesByRange:(id)arg2;
 
 @end

@@ -9,15 +9,15 @@
     }  _has;
     struct { 
         unsigned int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _sections;
 }
 
 @property (nonatomic) unsigned int defaultSectionIndex;
-@property (nonatomic) BOOL hasDefaultSectionIndex;
+@property (nonatomic) bool hasDefaultSectionIndex;
 @property (nonatomic, readonly) unsigned int*sections;
-@property (nonatomic, readonly) unsigned int sectionsCount;
+@property (nonatomic, readonly) unsigned long long sectionsCount;
 
 - (void)addSection:(unsigned int)arg1;
 - (void)clearSections;
@@ -27,17 +27,17 @@
 - (unsigned int)defaultSectionIndex;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDefaultSectionIndex;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDefaultSectionIndex;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (unsigned int)sectionAtIndex:(unsigned int)arg1;
+- (bool)readFrom:(id)arg1;
+- (unsigned int)sectionAtIndex:(unsigned long long)arg1;
 - (unsigned int*)sections;
-- (unsigned int)sectionsCount;
+- (unsigned long long)sectionsCount;
 - (void)setDefaultSectionIndex:(unsigned int)arg1;
-- (void)setHasDefaultSectionIndex:(BOOL)arg1;
-- (void)setSections:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setHasDefaultSectionIndex:(bool)arg1;
+- (void)setSections:(unsigned int*)arg1 count:(unsigned long long)arg2;
 - (void)writeTo:(id)arg1;
 
 @end

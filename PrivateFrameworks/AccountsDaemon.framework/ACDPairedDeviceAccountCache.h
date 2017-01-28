@@ -4,7 +4,7 @@
 
 @interface ACDPairedDeviceAccountCache : NSObject {
     NSArray * _accounts;
-    BOOL  _accountsIsValid;
+    bool  _accountsIsValid;
     NSMutableArray * _completions;
     NSObject<OS_dispatch_queue> * _synchronizationQueue;
 }
@@ -13,7 +13,7 @@
 
 - (void).cxx_destruct;
 - (void)_didFetchAccounts:(id)arg1 error:(id)arg2;
-- (void)accountsFromRemoteDeviceProxy:(id)arg1 completion:(id /* block */)arg2;
+- (void)accountsFromRemoteDeviceProxy:(id)arg1 completion:(id)arg2;
 - (id)init;
 - (void)invalidate;
 

@@ -10,7 +10,7 @@
 + (id)sharedBatterySaverWatcher;
 
 - (void)addDelegate:(id)arg1;
-- (BOOL)batterySaverModeEnabled;
+- (bool)batterySaverModeEnabled;
 - (void)dealloc;
 - (unsigned int)registerToBatterySaverModeNotification;
 - (void)removeDelegate:(id)arg1;

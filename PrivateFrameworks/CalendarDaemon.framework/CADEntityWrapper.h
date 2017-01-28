@@ -3,7 +3,7 @@
  */
 
 @interface CADEntityWrapper : NSObject <NSSecureCoding> {
-    BOOL  _deleted;
+    bool  _deleted;
     int  _entityType;
     NSArray * _loadedKeys;
     NSMutableDictionary * _loadedProperties;
@@ -12,12 +12,12 @@
     int  _rowID;
 }
 
-@property (nonatomic, readonly) BOOL deleted;
+@property (nonatomic, readonly) bool deleted;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)deleted;
+- (bool)deleted;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCalEntity:(void*)arg1;
 - (id)initWithCalEntity:(void*)arg1 propertiesToLoad:(id)arg2;

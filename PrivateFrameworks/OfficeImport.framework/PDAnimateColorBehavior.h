@@ -7,11 +7,11 @@
     int  mColorSpace;
     int  mDirection;
     OADColor * mFrom;
-    BOOL  mHasBy;
-    BOOL  mHasColorDirection;
-    BOOL  mHasColorSpace;
-    BOOL  mHasFrom;
-    BOOL  mHasTo;
+    bool  mHasBy;
+    bool  mHasColorDirection;
+    bool  mHasColorSpace;
+    bool  mHasFrom;
+    bool  mHasTo;
     OADColor * mTo;
 }
 
@@ -19,11 +19,11 @@
 - (int)colorSpace;
 - (int)direction;
 - (id)from;
-- (BOOL)hasBy;
-- (BOOL)hasColorDirection;
-- (BOOL)hasColorSpace;
-- (BOOL)hasFrom;
-- (BOOL)hasTo;
+- (bool)hasBy;
+- (bool)hasColorDirection;
+- (bool)hasColorSpace;
+- (bool)hasFrom;
+- (bool)hasTo;
 - (void)setBy:(double)arg1;
 - (void)setColorSpace:(int)arg1;
 - (void)setDirection:(int)arg1;

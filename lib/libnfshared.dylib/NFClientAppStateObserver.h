@@ -7,18 +7,18 @@
     NSMutableSet * _connections;
     <NFClientAppStateObserverDelegate> * _delegate;
     BKSApplicationStateMonitor * _monitor;
-    BOOL  _willSleep;
+    bool  _willSleep;
 }
 
-@property (readonly) BOOL willSleep;
+@property (readonly) bool willSleep;
 
 - (void)_applicationStateChanged:(id)arg1;
 - (id)_lookupClientBundleId:(id)arg1;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
-- (BOOL)isClientSuspended:(id)arg1;
+- (bool)isClientSuspended:(id)arg1;
 - (void)registerForStateChangesToConnection:(id)arg1;
 - (void)unregisterForStateChangesToConnection:(id)arg1;
-- (BOOL)willSleep;
+- (bool)willSleep;
 
 @end

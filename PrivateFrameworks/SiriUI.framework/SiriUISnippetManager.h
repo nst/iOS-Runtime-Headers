@@ -9,10 +9,10 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (BOOL)_compareObject:(id)arg1 toObject:(id)arg2 usingBlock:(id /* block */)arg3;
+- (bool)_compareObject:(id)arg1 toObject:(id)arg2 usingBlock:(id)arg3;
 - (id)_createDebugViewControllerForAceObject:(id)arg1;
-- (BOOL)_listItem:(id)arg1 isEqualToListItem:(id)arg2;
-- (BOOL)_listItem:(id)arg1 isPreferredOverListItem:(id)arg2;
+- (bool)_listItem:(id)arg1 isEqualToListItem:(id)arg2;
+- (bool)_listItem:(id)arg1 isPreferredOverListItem:(id)arg2;
 - (id)disambiguationItemForListItem:(id)arg1 disambiguationKey:(id)arg2;
 - (id)filteredDisambiguationListItems:(id)arg1;
 - (id)init;

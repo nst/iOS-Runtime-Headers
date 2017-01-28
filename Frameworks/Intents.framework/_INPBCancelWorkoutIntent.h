@@ -8,8 +8,8 @@
     _INPBDataString * _workoutName;
 }
 
-@property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasWorkoutName;
+@property (nonatomic, readonly) bool hasIntentMetadata;
+@property (nonatomic, readonly) bool hasWorkoutName;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBDataString *workoutName;
@@ -20,13 +20,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIntentMetadata;
-- (BOOL)hasWorkoutName;
-- (unsigned int)hash;
+- (bool)hasIntentMetadata;
+- (bool)hasWorkoutName;
+- (unsigned long long)hash;
 - (id)intentMetadata;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;
 - (void)setWorkoutName:(id)arg1;
 - (id)unknownFields;

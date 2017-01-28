@@ -3,13 +3,13 @@
  */
 
 @interface HMDSnapshotRequest : NSObject {
-    id /* block */  _completion;
+    id  _completion;
 }
 
-@property (nonatomic, readonly) id /* block */ completion;
+@property (nonatomic, readonly) id completion;
 
 - (void).cxx_destruct;
-- (id /* block */)completion;
-- (id)initWithCompletion:(id /* block */)arg1;
+- (id)completion;
+- (id)initWithCompletion:(id)arg1;
 
 @end

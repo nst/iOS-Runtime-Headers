@@ -16,7 +16,7 @@
 - (id)initWithScheduler:(id)arg1;
 - (void)resume;
 - (void)setBottomQueue:(id)arg1;
-- (void)setEventHandler:(id /* block */)arg1;
+- (void)setEventHandler:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
 - (void)signal;
 - (void)signalWithDeadline:(long long)arg1;

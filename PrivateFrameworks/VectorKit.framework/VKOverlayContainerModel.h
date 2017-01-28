@@ -11,7 +11,7 @@
     }  _arrowSharedResources;
     struct ClearItem { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; bool x3; float x4; unsigned char x5; unsigned int x6; } * _clearItem;
     <VKOverlayContainerDelegate> * _delegate;
-    BOOL  _isShowingOuterHaloOnLabels;
+    bool  _isShowingOuterHaloOnLabels;
     NSMutableArray * _overlayPainters;
     NSMutableSet * _overlaysToAdd;
     NSMapTable * _overlaysToPainters;
@@ -26,9 +26,9 @@
             struct RouteLineSharedResources {} *__first_; 
         } __ptr_; 
     }  _routeSharedResources;
-    BOOL  _shouldCheckForOcclusion;
-    BOOL  _shouldOccludeTraffic;
-    BOOL  _shouldShowTraffic;
+    bool  _shouldCheckForOcclusion;
+    bool  _shouldOccludeTraffic;
+    bool  _shouldShowTraffic;
     VKSkyModel * _skyModel;
     struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { 
         struct StylesheetManager<gss::PropertyID> {} *__ptr_; 
@@ -41,22 +41,22 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VKOverlayContainerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isInRealisticMode, nonatomic, readonly) BOOL inRealisticMode;
-@property (getter=isInTransitMode, nonatomic, readonly) BOOL inTransitMode;
-@property (nonatomic, readonly) BOOL isShowingOuterHaloOnLabels;
+@property (readonly) unsigned long long hash;
+@property (getter=isInRealisticMode, nonatomic, readonly) bool inRealisticMode;
+@property (getter=isInTransitMode, nonatomic, readonly) bool inTransitMode;
+@property (nonatomic, readonly) bool isShowingOuterHaloOnLabels;
 @property (nonatomic, readonly) NSSet *persistentOverlays;
 @property (nonatomic, retain) VKRouteContext *routeContext;
 @property (nonatomic, retain) <VKRouteMatchedAnnotationPresentation> *routeLineSplitAnnotation;
 @property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{RouteLineSharedResources={RouteLineSharedRenderStates={unique_ptr<ggl::RenderState' */ struct *routeSharedResources; /* unknown property attribute:  true> >=f}}}}} */
-@property (nonatomic) BOOL shouldCheckForOcclusion;
-@property (nonatomic) BOOL shouldOccludeTraffic;
-@property (nonatomic) BOOL shouldShowTraffic;
+@property (nonatomic) bool shouldCheckForOcclusion;
+@property (nonatomic) bool shouldOccludeTraffic;
+@property (nonatomic) bool shouldShowTraffic;
 @property (nonatomic, retain) VKSkyModel *skyModel;
 @property (nonatomic) struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 
-+ (BOOL)reloadOnStylesheetChange;
++ (bool)reloadOnStylesheetChange;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -67,12 +67,12 @@
 - (const struct RouteLineArrowSharedResources { struct RouteLineArrowSharedPipelineStates { struct shared_ptr<ggl::RouteLineArrow::BasePipelineState> { struct BasePipelineState {} *x_1_2_1; struct __shared_weak_count {} *x_1_2_2; } x_1_1_1; } x1; struct RouteLineArrowSharedRenderStates { struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_1_2_1; } x_2_1_1; struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { struct RenderState {} *x_1_3_1; } x_2_2_1; } x_2_1_2; } x2; struct shared_ptr<ggl::Texture2D> { struct Texture2D {} *x_3_1_1; struct __shared_weak_count {} *x_3_1_2; } x3; }*)arrowSharedResources;
 - (void)dealloc;
 - (id)delegate;
-- (void)didReceiveMemoryWarning:(BOOL)arg1;
+- (void)didReceiveMemoryWarning:(bool)arg1;
 - (void)gglLayoutScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)initWithTarget:(id)arg1 sharedResources:(id)arg2;
-- (BOOL)isInRealisticMode;
-- (BOOL)isInTransitMode;
-- (BOOL)isShowingOuterHaloOnLabels;
+- (bool)isInRealisticMode;
+- (bool)isInTransitMode;
+- (bool)isShowingOuterHaloOnLabels;
 - (void)layoutScene:(id)arg1 withContext:(struct LayoutContext { id x1; short x2; /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*x3; void*x4; const void*x5; double x6; void*x7; void*x8; void*x9; const void*x10; void*x11; double x12; SEL x13; SEL x14; oneway int x15; void*x16; void*x17; void*x18; const void*x19; in short x20; float x21; out const void*x22; void*x23; void*x24; struct ViewTransform {} *x25; struct __shared_weak_count {} *x26; }*)arg2;
 - (unsigned long long)mapLayerPosition;
 - (id)persistentOverlays;
@@ -86,15 +86,15 @@
 - (void)setDelegate:(id)arg1;
 - (void)setRouteContext:(id)arg1;
 - (void)setRouteLineSplitAnnotation:(id)arg1;
-- (void)setShouldCheckForOcclusion:(BOOL)arg1;
-- (void)setShouldOccludeTraffic:(BOOL)arg1;
-- (void)setShouldShowTraffic:(BOOL)arg1;
+- (void)setShouldCheckForOcclusion:(bool)arg1;
+- (void)setShouldOccludeTraffic:(bool)arg1;
+- (void)setShouldShowTraffic:(bool)arg1;
 - (void)setSkyModel:(id)arg1;
 - (void)setStyleManager:(struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })arg1;
-- (BOOL)shouldCheckForOcclusion;
-- (BOOL)shouldLayoutWithoutStyleManager;
-- (BOOL)shouldOccludeTraffic;
-- (BOOL)shouldShowTraffic;
+- (bool)shouldCheckForOcclusion;
+- (bool)shouldLayoutWithoutStyleManager;
+- (bool)shouldOccludeTraffic;
+- (bool)shouldShowTraffic;
 - (id)skyModel;
 - (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)stylesheetDidChange;

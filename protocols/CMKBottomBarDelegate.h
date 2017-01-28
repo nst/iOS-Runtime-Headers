@@ -5,9 +5,9 @@
 
 @required
 
-- (BOOL)bottomBarShouldHideElapsedTimeView:(CMKBottomBar *)arg1;
-- (BOOL)bottomBarShouldHideFlashButton:(CMKBottomBar *)arg1;
-- (BOOL)bottomBarShouldHideHDRButton:(CMKBottomBar *)arg1;
-- (BOOL)bottomBarShouldHideTimerButton:(CMKBottomBar *)arg1;
+- (bool)bottomBarShouldHideElapsedTimeView:(CMKBottomBar *)arg1;
+- (bool)bottomBarShouldHideFlashButton:(CMKBottomBar *)arg1;
+- (bool)bottomBarShouldHideHDRButton:(CMKBottomBar *)arg1;
+- (bool)bottomBarShouldHideTimerButton:(CMKBottomBar *)arg1;
 
 @end

@@ -11,8 +11,8 @@
 - (void)dealloc;
 - (id)description;
 - (id)formulaError;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initObjectWithFormulaError:(id)arg1 refCount:(unsigned int)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

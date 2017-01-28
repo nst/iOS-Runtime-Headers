@@ -12,7 +12,7 @@
 - (id)adviceEngine;
 - (id)advisorSettingsForName:(id)arg1 contactIdentifier:(id)arg2;
 - (void)augmentSuggestedContact:(id)arg1 interaction:(id)arg2 name:(id)arg3;
-- (BOOL)augmentSuggestedContact:(id)arg1 withDuetInteractionsForContact:(id)arg2;
+- (bool)augmentSuggestedContact:(id)arg1 withDuetInteractionsForContact:(id)arg2;
 - (id)filteredInteractions:(id)arg1 usingNameFromContact:(id)arg2;
 - (id)init;
 - (id)interactionsForContact:(id)arg1;

@@ -10,9 +10,9 @@
     NSArray * _cpuWhiteList;
     NSDate * _detectionStartTime;
     PLXPCListenerOperatorComposition * _detectorListener;
-    BOOL  _deviceIsPluggedIn;
+    bool  _deviceIsPluggedIn;
     NSString * _entryKeyPLCoalitionAgentEventIntervalCoalition;
-    BOOL  _pluggedInBetweenCoalitionSBC;
+    bool  _pluggedInBetweenCoalitionSBC;
 }
 
 @property (retain) PLEntryNotificationOperatorComposition *batteryCallback;
@@ -22,9 +22,9 @@
 @property (retain) NSArray *cpuWhiteList;
 @property (retain) NSDate *detectionStartTime;
 @property (retain) PLXPCListenerOperatorComposition *detectorListener;
-@property BOOL deviceIsPluggedIn;
+@property bool deviceIsPluggedIn;
 @property (readonly) NSString *entryKeyPLCoalitionAgentEventIntervalCoalition;
-@property BOOL pluggedInBetweenCoalitionSBC;
+@property bool pluggedInBetweenCoalitionSBC;
 
 + (id)defaults;
 + (id)entryAggregateDefinitionAppRunTime;
@@ -33,7 +33,7 @@
 
 - (void).cxx_destruct;
 - (id)batteryCallback;
-- (id)buildCallBack:(id)arg1 withGroup:(BOOL)arg2 withHandler:(id /* block */)arg3;
+- (id)buildCallBack:(id)arg1 withGroup:(bool)arg2 withHandler:(id)arg3;
 - (void)checkCpuUsage:(id)arg1 withNewCoaltionArray:(id)arg2;
 - (id)coalitionCallback;
 - (id)cpuThresholds;
@@ -42,7 +42,7 @@
 - (int)customLongTermCPUThreshold;
 - (id)detectionStartTime;
 - (id)detectorListener;
-- (BOOL)deviceIsPluggedIn;
+- (bool)deviceIsPluggedIn;
 - (id)entryKeyPLCoalitionAgentEventIntervalCoalition;
 - (double)getCPUTime:(id)arg1;
 - (void)handleBatteryCallback:(id)arg1;
@@ -53,7 +53,7 @@
 - (id)loadCPUWhitelist;
 - (id)loadCpuThresholds;
 - (int)matchingPidWithProcessName:(id)arg1 withBundleID:(id)arg2;
-- (BOOL)pluggedInBetweenCoalitionSBC;
+- (bool)pluggedInBetweenCoalitionSBC;
 - (void)sendEnergyIssueSignatureNotification:(id)arg1 withThreshold:(double)arg2;
 - (void)setBatteryCallback:(id)arg1;
 - (void)setCoalitionCallback:(id)arg1;
@@ -62,8 +62,8 @@
 - (void)setCpuWhiteList:(id)arg1;
 - (void)setDetectionStartTime:(id)arg1;
 - (void)setDetectorListener:(id)arg1;
-- (void)setDeviceIsPluggedIn:(BOOL)arg1;
-- (void)setPluggedInBetweenCoalitionSBC:(BOOL)arg1;
+- (void)setDeviceIsPluggedIn:(bool)arg1;
+- (void)setPluggedInBetweenCoalitionSBC:(bool)arg1;
 - (void)testService;
 
 @end

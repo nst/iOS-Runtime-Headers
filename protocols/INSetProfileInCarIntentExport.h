@@ -7,10 +7,10 @@
 
 - (NSNumber *)defaultProfile;
 - (id)init;
-- (NSString *)profileLabel;
+- (NSString *)profileName;
 - (NSNumber *)profileNumber;
 - (void)setDefaultProfile:(NSNumber *)arg1;
-- (void)setProfileLabel:(NSString *)arg1;
+- (void)setProfileName:(NSString *)arg1;
 - (void)setProfileNumber:(NSNumber *)arg1;
 
 @end

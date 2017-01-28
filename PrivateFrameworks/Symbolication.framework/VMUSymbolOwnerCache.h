@@ -4,6 +4,6 @@
 
 @interface VMUSymbolOwnerCache : NSObject
 
-+ (void)setMemoryLimit:(unsigned int)arg1;
++ (void)setMemoryLimit:(unsigned long long)arg1;
 
 @end

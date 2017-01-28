@@ -8,7 +8,7 @@
 
 @property (nonatomic, readonly) int _mapkit_source;
 @property (nonatomic, readonly) double altitude;
-@property (nonatomic, readonly) struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; } clientLocation;
+@property (nonatomic, readonly) struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; int x19; } clientLocation;
 @property (nonatomic, readonly) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (nonatomic, readonly) double course;
 @property (getter=_navigation_courseAccuracy, nonatomic, readonly) double courseAccuracy;
@@ -16,12 +16,12 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_navigation_detailedMatchInfo, nonatomic, readonly) GEONavigationMatchInfo *detailedMatchInfo;
 @property (nonatomic, readonly, copy) CLFloor *floor;
-@property (getter=_navigation_hasMatch, nonatomic, readonly) BOOL hasMatch;
-@property (getter=_navigation_hasValidCourse, nonatomic, readonly) BOOL hasValidCourse;
-@property (readonly) unsigned int hash;
+@property (getter=_navigation_hasMatch, nonatomic, readonly) bool hasMatch;
+@property (getter=_navigation_hasValidCourse, nonatomic, readonly) bool hasValidCourse;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) double horizontalAccuracy;
 @property (nonatomic, readonly) unsigned int integrity;
-@property (getter=_navigation_isStale, nonatomic, readonly) BOOL isStale;
+@property (getter=_navigation_isStale, nonatomic, readonly) bool isStale;
 @property (nonatomic, readonly) NSString *iso6709Notation;
 @property (getter=_navigation_locationDescription, nonatomic, readonly) NSString *locationDescription;
 @property (nonatomic, readonly) CLLocationMatchInfo *matchInfo;
@@ -40,11 +40,11 @@
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)_initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7 floor:(int)arg8;
 - (double)altitude;
-- (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; })clientLocation;
+- (struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; int x19; })clientLocation;
 - (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)course;
@@ -56,9 +56,9 @@
 - (double)getDistanceFrom:(id)arg1;
 - (double)horizontalAccuracy;
 - (id)init;
-- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; })arg1;
-- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; })arg1 matchInfo:(id)arg2;
-- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; })arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3;
+- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; int x19; })arg1;
+- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; int x19; })arg1 matchInfo:(id)arg2;
+- (id)initWithClientLocation:(struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; int x19; })arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
@@ -79,6 +79,7 @@
 - (id)timestamp;
 - (double)trustedTimestamp;
 - (int)type;
+- (void)unmatch;
 - (double)verticalAccuracy;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
@@ -97,8 +98,8 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
-- (unsigned int)cplSpecialHash;
-- (BOOL)cplSpecialIsEqual:(id)arg1;
+- (unsigned long long)cplSpecialHash;
+- (bool)cplSpecialIsEqual:(id)arg1;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 
@@ -109,10 +110,10 @@
 - (int)_navigation_clLocationTypeForGEOLocationType:(int)arg1;
 - (double)_navigation_courseAccuracy;
 - (id)_navigation_detailedMatchInfo;
-- (BOOL)_navigation_hasMatch;
-- (BOOL)_navigation_hasValidCourse;
-- (BOOL)_navigation_isEqualToLocationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
-- (BOOL)_navigation_isStale;
+- (bool)_navigation_hasMatch;
+- (bool)_navigation_hasValidCourse;
+- (bool)_navigation_isEqualToLocationCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
+- (bool)_navigation_isStale;
 - (id)_navigation_locationDescription;
 - (struct CLLocationCoordinate2D { double x1; double x2; })_navigation_rawShiftedCoordinate;
 - (id)_navigation_routeMatch;
@@ -131,6 +132,6 @@
 
 // Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
 
-- (BOOL)wf_isEquivalentToLocation:(id)arg1 tolerance:(double)arg2;
+- (bool)wf_isEquivalentToLocation:(id)arg1 tolerance:(double)arg2;
 
 @end

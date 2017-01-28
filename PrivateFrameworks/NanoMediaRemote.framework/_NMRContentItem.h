@@ -7,8 +7,8 @@
     _NMRContentItemMetadata * _metadata;
 }
 
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasMetadata;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasMetadata;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) _NMRContentItemMetadata *metadata;
 
@@ -17,14 +17,14 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasIdentifier;
-- (BOOL)hasMetadata;
-- (unsigned int)hash;
+- (bool)hasIdentifier;
+- (bool)hasMetadata;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)metadata;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)writeTo:(id)arg1;

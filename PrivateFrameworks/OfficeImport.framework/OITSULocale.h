@@ -13,8 +13,8 @@
     NSString * _decimalSeparator;
     NSString * _documentLanguageIdentifier;
     struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
+        long long __sig; 
+        BOOL __opaque[56]; 
     }  _formattersMutex;
     struct __CFLocale { } * _gregorianCalendarLocale;
     NSString * _groupingSeparator;
@@ -98,7 +98,7 @@
 - (id)groupingSeparator;
 - (unsigned int)groupingSize;
 - (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2;
-- (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2 useAutoupdating:(BOOL)arg3;
+- (id)initWithLocale:(id)arg1 documentLanguageIdentifier:(id)arg2 useAutoupdating:(bool)arg3;
 - (id)languageCode;
 - (id)listSeparator;
 - (id)locale;
@@ -106,11 +106,11 @@
 - (id)localeIdentifierWithLanguageAndRegionOnly;
 - (id)localeIdentifierWithLanguageScriptAndRegionOnly;
 - (id)localeSpecificStorageForKey:(id)arg1;
-- (int)localizedCaseInsensitiveCompare:(id)arg1 toString:(id)arg2;
-- (BOOL)localizedCaseInsensitiveIsEqual:(id)arg1 toString:(id)arg2;
-- (int)localizedCompare:(id)arg1 toString:(id)arg2;
+- (long long)localizedCaseInsensitiveCompare:(id)arg1 toString:(id)arg2;
+- (bool)localizedCaseInsensitiveIsEqual:(id)arg1 toString:(id)arg2;
+- (long long)localizedCompare:(id)arg1 toString:(id)arg2;
 - (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
-- (id)numberFormatterStringFromDouble:(double)arg1 withFormat:(id)arg2 useDecimalPlaces:(BOOL)arg3 minDecimalPlaces:(unsigned short)arg4 decimalPlaces:(unsigned short)arg5 showThousandsSeparator:(BOOL)arg6 currencyCode:(id)arg7 suppressMinusSign:(BOOL)arg8;
+- (id)numberFormatterStringFromDouble:(double)arg1 withFormat:(id)arg2 useDecimalPlaces:(bool)arg3 minDecimalPlaces:(unsigned short)arg4 decimalPlaces:(unsigned short)arg5 showThousandsSeparator:(bool)arg6 currencyCode:(id)arg7 suppressMinusSign:(bool)arg8;
 - (id)percentSymbol;
 - (void)returnNumberFormatter:(struct __CFNumberFormatter { }*)arg1;
 - (void)returnScientificNumberFormatter:(struct __CFNumberFormatter { }*)arg1;

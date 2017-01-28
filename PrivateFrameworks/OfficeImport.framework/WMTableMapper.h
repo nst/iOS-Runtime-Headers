@@ -9,11 +9,11 @@
     WDTable * mWdTable;
 }
 
-+ (BOOL)isTableDeleted:(id)arg1;
++ (bool)isTableDeleted:(id)arg1;
 
 - (id)columnInfo;
 - (id)copyColumnInfo;
-- (id)copyStopArrayForRow:(unsigned int)arg1;
+- (id)copyStopArrayForRow:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initWithWDTable:(id)arg1 parent:(id)arg2;
 - (id)insideBorders;

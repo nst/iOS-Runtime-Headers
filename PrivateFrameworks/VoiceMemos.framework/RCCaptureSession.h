@@ -3,20 +3,20 @@
  */
 
 @interface RCCaptureSession : NSObject <RCCaptureOutputWriterDelegate, RCWaveformDataSourceObserver> {
-    unsigned int  _backgroundTaskIdentifier;
-    BOOL  _captureBeginSoundEffectDisabled;
-    BOOL  _captureEndSoundEffectDisabled;
+    unsigned long long  _backgroundTaskIdentifier;
+    bool  _captureBeginSoundEffectDisabled;
+    bool  _captureEndSoundEffectDisabled;
     RCCaptureOutputWriter * _captureOutputWriter;
     RCAudioSessionRoutingAssertion * _captureRouteAssertion;
     NSDate * _captureStartDate;
     RCCaptureInputWaveformDataSource * _captureWaveformDataSource;
-    BOOL  _deleteCapturedOutWhenFinished;
-    BOOL  _destinationShouldBeDeleted;
+    bool  _deleteCapturedOutWhenFinished;
+    bool  _destinationShouldBeDeleted;
     NSObject<OS_dispatch_group> * _endCaptureTaskGroup;
-    BOOL  _handledFinishedCapturingAfterCompletionSound;
-    BOOL  _handlingDidFinishCapturing;
+    bool  _handledFinishedCapturingAfterCompletionSound;
+    bool  _handlingDidFinishCapturing;
     RCCaptureInputDevice * _inputDevice;
-    int  _sessionCaptureState;
+    long long  _sessionCaptureState;
     NSString * _sessionRouteName;
     NSHashTable * _weakObservers;
 }
@@ -26,34 +26,34 @@
 @property (nonatomic, readonly) RCCaptureInputWaveformDataSource *captureWaveformDataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) RCCaptureInputDevice *inputDevice;
-@property (nonatomic, readonly) BOOL isCaptureSessionFinished;
+@property (nonatomic, readonly) bool isCaptureSessionFinished;
 @property (readonly) double storeDemoTimeLimit;
 @property (readonly) Class superclass;
 
-+ (void)playCaptureDidFinishSoundEffectWithCompletionBlock:(id /* block */)arg1;
-+ (void)playCaptureWillStartSoundEffectWithCompletionBlock:(id /* block */)arg1;
++ (void)playCaptureDidFinishSoundEffectWithCompletionBlock:(id)arg1;
++ (void)playCaptureWillStartSoundEffectWithCompletionBlock:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)AVState;
 - (void)_applicationWillTerminateNotification:(id)arg1;
-- (BOOL)_attachInputToCaptureSession:(id)arg1;
-- (void)_beginAVCapturingToDestinationInitiallyPaused:(BOOL)arg1;
+- (bool)_attachInputToCaptureSession:(id)arg1;
+- (void)_beginAVCapturingToDestinationInitiallyPaused:(bool)arg1;
 - (void)_captureInputDeviceAvailabilityDidChangeNotification:(id)arg1;
 - (void)_captureInputDeviceRouteDidChangeNotification:(id)arg1;
 - (void)_closeCaptureSession;
 - (void)_deleteCaptureDestinationAndPostDidEndNotification:(id)arg1;
-- (void)_enumerateCaptureSessionObserversWithBlock:(id /* block */)arg1;
+- (void)_enumerateCaptureSessionObserversWithBlock:(id)arg1;
 - (void)_handleCaptureSessionDidError:(id)arg1;
-- (BOOL)_handleFinishWritingByRestartingCaptureForError:(id)arg1 testOnly:(BOOL)arg2;
+- (bool)_handleFinishWritingByRestartingCaptureForError:(id)arg1 testOnly:(bool)arg2;
 - (void)_onMainQueueHandleCaptureDidFinishCapturingAfterCompletionSound;
-- (BOOL)_openAVCaptureSessionAndWaitUntilRunning;
-- (void)_postToObserversWithBlock:(id /* block */)arg1;
-- (void)_setDisableSBMediaHUD:(BOOL)arg1;
-- (void)_setPostPrepareRequestedState:(int)arg1;
+- (bool)_openAVCaptureSessionAndWaitUntilRunning;
+- (void)_postToObserversWithBlock:(id)arg1;
+- (void)_setDisableSBMediaHUD:(bool)arg1;
+- (void)_setPostPrepareRequestedState:(long long)arg1;
 - (void)addCaptureSessionObserver:(id)arg1;
-- (BOOL)canResumeCapturingAtCompositionDestinationTime:(double)arg1;
+- (bool)canResumeCapturingAtCompositionDestinationTime:(double)arg1;
 - (double)captureDestinationComposedDuration;
 - (void)captureOutputWriter:(id)arg1 captureSessionDidTerminateWithError:(id)arg2;
 - (void)captureOutputWriter:(id)arg1 didFinishWritingToOutputFileAtURL:(id)arg2 error:(id)arg3;
@@ -72,12 +72,12 @@
 - (id)init;
 - (id)initWithInputDevice:(id)arg1 captureWaveformDataSource:(id)arg2;
 - (id)inputDevice;
-- (BOOL)isCaptureActive;
-- (BOOL)isCapturePaused;
-- (BOOL)isCaptureSessionFinished;
-- (BOOL)isPreparing;
+- (bool)isCaptureActive;
+- (bool)isCapturePaused;
+- (bool)isCaptureSessionFinished;
+- (bool)isPreparing;
 - (void)pauseCapturing;
-- (void)prepareToCaptureWithPreparedHandler:(id /* block */)arg1;
+- (void)prepareToCaptureWithPreparedHandler:(id)arg1;
 - (void)removeCaptureSessionObserver:(id)arg1;
 - (void)resumeCapturing;
 - (double)storeDemoTimeLimit;

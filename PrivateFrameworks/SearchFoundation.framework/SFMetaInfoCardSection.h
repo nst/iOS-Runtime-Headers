@@ -6,15 +6,15 @@
     SFImage * _badge;
     NSURL * _contentURL;
     NSURL * _hostPageURL;
-    BOOL  _trending;
+    bool  _trending;
 }
 
 @property (nonatomic, retain) SFImage *badge;
 @property (nonatomic, copy) NSURL *contentURL;
 @property (nonatomic, copy) NSURL *hostPageURL;
-@property (nonatomic) BOOL trending;
+@property (nonatomic) bool trending;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)badge;
@@ -25,7 +25,7 @@
 - (void)setBadge:(id)arg1;
 - (void)setContentURL:(id)arg1;
 - (void)setHostPageURL:(id)arg1;
-- (void)setTrending:(BOOL)arg1;
-- (BOOL)trending;
+- (void)setTrending:(bool)arg1;
+- (bool)trending;
 
 @end

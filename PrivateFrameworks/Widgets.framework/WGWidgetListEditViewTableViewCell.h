@@ -5,21 +5,21 @@
 @interface WGWidgetListEditViewTableViewCell : UITableViewCell {
     UIImageView * _dotImageView;
     UIButton * _insertWidgetAccessoryButton;
-    BOOL  _showsDot;
-    BOOL  _widgetEnabled;
+    bool  _showsDot;
+    bool  _widgetEnabled;
 }
 
 @property (nonatomic, readonly) UIButton *insertWidgetAccessoryButton;
-@property (nonatomic) BOOL showsDot;
-@property (getter=isWidgetEnabled, nonatomic) BOOL widgetEnabled;
+@property (nonatomic) bool showsDot;
+@property (getter=isWidgetEnabled, nonatomic) bool widgetEnabled;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)insertWidgetAccessoryButton;
-- (BOOL)isWidgetEnabled;
+- (bool)isWidgetEnabled;
 - (void)layoutSubviews;
-- (void)setShowsDot:(BOOL)arg1;
-- (void)setWidgetEnabled:(BOOL)arg1;
-- (BOOL)showsDot;
+- (void)setShowsDot:(bool)arg1;
+- (void)setWidgetEnabled:(bool)arg1;
+- (bool)showsDot;
 
 @end

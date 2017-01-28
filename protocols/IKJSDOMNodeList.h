@@ -5,7 +5,7 @@
 
 @required
 
-- (IKDOMNode *)item:(int)arg1;
-- (int)length;
+- (IKDOMNode *)item:(long long)arg1;
+- (long long)length;
 
 @end

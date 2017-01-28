@@ -3,65 +3,65 @@
  */
 
 @interface CLKRelativeDateTextProvider : CLKTextProvider {
-    unsigned int  _calendarUnits;
+    unsigned long long  _calendarUnits;
     NSDate * _date;
-    BOOL  _disableSmallCapUnits;
+    bool  _disableSmallCapUnits;
     double  _elapsedTime;
     NSDateComponentsFormatter * _formatter;
     NSDate * _overrideDate;
-    int  _relativeDateStyle;
+    long long  _relativeDateStyle;
     NSString * _sessionCacheKey;
     NSDateComponents * _sessionComponents;
-    int  _sessionTimePeriod;
-    unsigned int  _sessionVisibleUnits;
-    BOOL  _twoDigitMinuteZeroPadding;
-    BOOL  _wantsSubseconds;
+    long long  _sessionTimePeriod;
+    unsigned long long  _sessionVisibleUnits;
+    bool  _twoDigitMinuteZeroPadding;
+    bool  _wantsSubseconds;
 }
 
-@property (nonatomic) unsigned int calendarUnits;
+@property (nonatomic) unsigned long long calendarUnits;
 @property (nonatomic, retain) NSDate *date;
-@property (nonatomic) BOOL disableSmallCapUnits;
+@property (nonatomic) bool disableSmallCapUnits;
 @property (nonatomic, retain) NSDate *overrideDate;
-@property (nonatomic) int relativeDateStyle;
-@property (nonatomic) BOOL twoDigitMinuteZeroPadding;
-@property (nonatomic) BOOL wantsSubseconds;
+@property (nonatomic) long long relativeDateStyle;
+@property (nonatomic) bool twoDigitMinuteZeroPadding;
+@property (nonatomic) bool wantsSubseconds;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)textProviderWithDate:(id)arg1 style:(int)arg2 units:(unsigned int)arg3;
++ (bool)supportsSecureCoding;
++ (id)textProviderWithDate:(id)arg1 style:(long long)arg2 units:(unsigned long long)arg3;
 
 - (void).cxx_destruct;
 - (id)JSONObjectRepresentation;
-- (id)_componentsForDate:(id)arg1 visibleUnits:(unsigned int*)arg2;
-- (BOOL)_configureFormatterForFallbackIndex:(unsigned int)arg1;
+- (id)_componentsForDate:(id)arg1 visibleUnits:(unsigned long long*)arg2;
+- (bool)_configureFormatterForFallbackIndex:(unsigned long long)arg1;
 - (void)_configureFormatterForTimerStyle;
 - (void)_endSession;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
-- (id)_sessionAttributedTextForIndex:(unsigned int)arg1 withStyle:(id)arg2;
+- (id)_sessionAttributedTextForIndex:(unsigned long long)arg1 withStyle:(id)arg2;
 - (id)_sessionCacheKey;
 - (void)_startSessionWithDate:(id)arg1;
 - (id)_stringWithSign:(id)arg1;
-- (int)_timePeriodForElapsedTime:(double)arg1;
-- (int)_updateFrequency;
+- (long long)_timePeriodForElapsedTime:(double)arg1;
+- (long long)_updateFrequency;
 - (void)_validate;
-- (unsigned int)calendarUnits;
+- (unsigned long long)calendarUnits;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
-- (BOOL)disableSmallCapUnits;
+- (bool)disableSmallCapUnits;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)overrideDate;
-- (int)relativeDateStyle;
-- (void)setCalendarUnits:(unsigned int)arg1;
+- (long long)relativeDateStyle;
+- (void)setCalendarUnits:(unsigned long long)arg1;
 - (void)setDate:(id)arg1;
-- (void)setDisableSmallCapUnits:(BOOL)arg1;
+- (void)setDisableSmallCapUnits:(bool)arg1;
 - (void)setOverrideDate:(id)arg1;
-- (void)setRelativeDateStyle:(int)arg1;
-- (void)setTwoDigitMinuteZeroPadding:(BOOL)arg1;
-- (void)setWantsSubseconds:(BOOL)arg1;
-- (BOOL)twoDigitMinuteZeroPadding;
-- (BOOL)wantsSubseconds;
+- (void)setRelativeDateStyle:(long long)arg1;
+- (void)setTwoDigitMinuteZeroPadding:(bool)arg1;
+- (void)setWantsSubseconds:(bool)arg1;
+- (bool)twoDigitMinuteZeroPadding;
+- (bool)wantsSubseconds;
 
 @end

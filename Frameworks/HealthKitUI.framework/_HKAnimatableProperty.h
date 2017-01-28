@@ -6,8 +6,8 @@
     NSMutableArray * _animations;
     id  _currentValue;
     id  _endValue;
-    id /* block */  _getter;
-    id /* block */  _setter;
+    id  _getter;
+    id  _setter;
     id  _startValue;
 }
 
@@ -19,8 +19,8 @@
 - (void)addPropertyAnimation:(id)arg1;
 - (id)currentValue;
 - (id)endValue;
-- (id)initWithGetter:(id /* block */)arg1 setter:(id /* block */)arg2;
-- (BOOL)isFinishedAnimating;
+- (id)initWithGetter:(id)arg1 setter:(id)arg2;
+- (bool)isFinishedAnimating;
 - (void)removeAllPropertyAnimations;
 - (void)setCurrentValue:(id)arg1;
 - (void)setEndValue:(id)arg1;

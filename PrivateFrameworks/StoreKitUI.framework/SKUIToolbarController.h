@@ -21,7 +21,7 @@
 - (void)detachFromNavigationController:(id)arg1;
 - (id)initWithToolbarViewElement:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (BOOL)toolbarButtonsController:(id)arg1 shouldDispatchEventForButton:(id)arg2;
+- (bool)toolbarButtonsController:(id)arg1 shouldDispatchEventForButton:(id)arg2;
 - (id)toolbarItems;
 - (id)toolbarViewElement;
 - (void)updateToolbarForNavigationController:(id)arg1;

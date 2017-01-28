@@ -7,7 +7,7 @@
     NSError * _error;
     NSPredicate * _predicate;
     NSMutableSet * _usedKeysSet;
-    BOOL  _validated;
+    bool  _validated;
 }
 
 @property (nonatomic, retain) NSArray *allowedKeys;
@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSPredicate *predicate;
 @property (nonatomic, readonly, copy) NSArray *usedKeys;
 @property (nonatomic, retain) NSMutableSet *usedKeysSet;
-@property (nonatomic) BOOL validated;
+@property (nonatomic) bool validated;
 
 - (id)allowedKeys;
 - (id)allowedKeysSet;
@@ -29,11 +29,11 @@
 - (void)setError:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setUsedKeysSet:(id)arg1;
-- (void)setValidated:(BOOL)arg1;
+- (void)setValidated:(bool)arg1;
 - (id)usedKeys;
 - (id)usedKeysSet;
-- (BOOL)validateWithError:(id*)arg1;
-- (BOOL)validated;
+- (bool)validateWithError:(id*)arg1;
+- (bool)validated;
 - (void)visitPredicate:(id)arg1;
 - (void)visitPredicateExpression:(id)arg1;
 - (void)visitPredicateOperator:(id)arg1;

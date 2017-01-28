@@ -13,7 +13,7 @@
 - (void)_handleNewConnection:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (id)serviceName;
-- (BOOL)start;
+- (bool)start;
 - (void)stop;
 
 @end

@@ -5,8 +5,8 @@
 
 @required
 
-- (int)layoutOrientation;
-- (void)setLayoutOrientation:(int)arg1;
-- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)arg2;
+- (long long)layoutOrientation;
+- (void)setLayoutOrientation:(long long)arg1;
+- (void)setLayoutOrientation:(long long)arg1 withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)arg2;
 
 @end

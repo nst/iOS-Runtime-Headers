@@ -3,17 +3,17 @@
  */
 
 @interface PUEditingExtensionHostContext : NSExtensionContext <PUEditingExtensionHost> {
-    id /* block */  _contentEditingOutputCommitHandler;
+    id  _contentEditingOutputCommitHandler;
 }
 
-@property (copy) id /* block */ contentEditingOutputCommitHandler;
+@property (copy) id contentEditingOutputCommitHandler;
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
-- (void)commitContentEditingOutput:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (id /* block */)contentEditingOutputCommitHandler;
-- (void)setContentEditingOutputCommitHandler:(id /* block */)arg1;
+- (void)commitContentEditingOutput:(id)arg1 withCompletionHandler:(id)arg2;
+- (id)contentEditingOutputCommitHandler;
+- (void)setContentEditingOutputCommitHandler:(id)arg1;
 
 @end

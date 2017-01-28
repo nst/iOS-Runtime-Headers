@@ -4,12 +4,12 @@
 
 @interface _LSQuery : NSObject <NSCopying, NSSecureCoding>
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)_canResolveLocallyWithoutMappingDatabase;
-- (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
+- (bool)_canResolveLocallyWithoutMappingDatabase;
+- (void)_enumerateWithXPCConnection:(id)arg1 block:(id)arg2;
 - (id)_init;
-- (BOOL)_shouldCacheResolvedResults;
+- (bool)_shouldCacheResolvedResults;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

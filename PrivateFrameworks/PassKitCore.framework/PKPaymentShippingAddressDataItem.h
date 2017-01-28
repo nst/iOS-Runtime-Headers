@@ -4,14 +4,14 @@
 
 @interface PKPaymentShippingAddressDataItem : PKPaymentDataItem
 
-@property (nonatomic, readonly) BOOL isShippingEditable;
+@property (nonatomic, readonly) bool isShippingEditable;
 @property (nonatomic, readonly) CNContact *shippingAddress;
 @property (nonatomic, readonly) NSString *shippingType;
 
-+ (int)dataType;
++ (long long)dataType;
 
-- (BOOL)isShippingEditable;
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isShippingEditable;
+- (bool)isValidWithError:(id*)arg1;
 - (id)shippingAddress;
 - (id)shippingType;
 

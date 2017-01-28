@@ -10,10 +10,10 @@
 }
 
 @property (nonatomic, retain) GEODirectionsFeedbackLogMessage *directionsFeedbackLogMessage;
-@property (nonatomic, readonly) BOOL hasDirectionsFeedbackLogMessage;
-@property (nonatomic, readonly) BOOL hasTimeToLeaveHypothesisLogMessage;
-@property (nonatomic, readonly) BOOL hasTimeToLeaveInitialTravelTimeLogMessage;
-@property (nonatomic, readonly) BOOL hasTransitAppLaunchLogMessage;
+@property (nonatomic, readonly) bool hasDirectionsFeedbackLogMessage;
+@property (nonatomic, readonly) bool hasTimeToLeaveHypothesisLogMessage;
+@property (nonatomic, readonly) bool hasTimeToLeaveInitialTravelTimeLogMessage;
+@property (nonatomic, readonly) bool hasTransitAppLaunchLogMessage;
 @property (nonatomic, retain) GEOTimeToLeaveHypothesisLogMessage *timeToLeaveHypothesisLogMessage;
 @property (nonatomic, retain) GEOTimeToLeaveInitialTravelTimeLogMessage *timeToLeaveInitialTravelTimeLogMessage;
 @property (nonatomic, retain) GEOTransitAppLaunchLogMessage *transitAppLaunchLogMessage;
@@ -24,14 +24,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)directionsFeedbackLogMessage;
-- (BOOL)hasDirectionsFeedbackLogMessage;
-- (BOOL)hasTimeToLeaveHypothesisLogMessage;
-- (BOOL)hasTimeToLeaveInitialTravelTimeLogMessage;
-- (BOOL)hasTransitAppLaunchLogMessage;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDirectionsFeedbackLogMessage;
+- (bool)hasTimeToLeaveHypothesisLogMessage;
+- (bool)hasTimeToLeaveInitialTravelTimeLogMessage;
+- (bool)hasTransitAppLaunchLogMessage;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDirectionsFeedbackLogMessage:(id)arg1;
 - (void)setTimeToLeaveHypothesisLogMessage:(id)arg1;
 - (void)setTimeToLeaveInitialTravelTimeLogMessage:(id)arg1;

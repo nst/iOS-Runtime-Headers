@@ -3,7 +3,7 @@
  */
 
 @interface MKOfficialAppViewController : MKPlaceSectionViewController <MKOfficialAppViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate> {
-    BOOL  _isShowing;
+    bool  _isShowing;
     <MKOfficialAppViewControllerDelegate> * _officialAppDelegate;
     MKPlaceSectionHeaderView * _officialAppHeaderView;
     MKOfficialAppView * _officialAppView;
@@ -12,8 +12,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isShowing;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool isShowing;
 @property (nonatomic) <MKOfficialAppViewControllerDelegate> *officialAppDelegate;
 @property (nonatomic, retain) MKPlaceSectionHeaderView *officialAppHeaderView;
 @property (nonatomic, retain) MKOfficialAppView *officialAppView;
@@ -25,12 +25,12 @@
 - (void)dealloc;
 - (id)infoCardChildPossibleActions;
 - (id)initWithURLString:(id)arg1;
-- (BOOL)isShowing;
+- (bool)isShowing;
 - (id)officialAppDelegate;
 - (id)officialAppHeaderView;
 - (id)officialAppView;
 - (void)officialAppViewDidSelectPunchOutButton:(id)arg1;
-- (void)setIsShowing:(BOOL)arg1;
+- (void)setIsShowing:(bool)arg1;
 - (void)setOfficialAppDelegate:(id)arg1;
 - (void)setOfficialAppHeaderView:(id)arg1;
 - (void)setOfficialAppView:(id)arg1;

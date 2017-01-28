@@ -3,23 +3,23 @@
  */
 
 @interface AboutDataSource : PSSpecifierDataSource {
-    BOOL  _accessory;
+    bool  _accessory;
     PSSpecifier * _accessoryDividerSpecifier;
-    BOOL  _cancel;
+    bool  _cancel;
     int  _carrierCellState;
     NSString * _deviceNameToIgnoreOnce;
-    BOOL  _hasLoadedSpecifiers;
+    bool  _hasLoadedSpecifiers;
     PSSpecifier * _headsetSpecifier;
-    BOOL  _isGeneratingNotifications;
-    BOOL  _loaded;
+    bool  _isGeneratingNotifications;
+    bool  _loaded;
     NSString * _loading;
     NSLock * _lock;
     NSMutableDictionary * _mediaDict;
     <NSObject> * _photoVideoNotificationToken;
     NSTimer * _reloadTimer;
     NSString * _serviceProviderNameForSPN;
-    int  _simCellState;
-    BOOL  _threadRunning;
+    long long  _simCellState;
+    bool  _threadRunning;
 }
 
 @property (nonatomic, retain) NSString *deviceNameToIgnoreOnce;
@@ -33,13 +33,13 @@
 - (id)_NAIString:(id)arg1;
 - (id)_PRLString:(id)arg1;
 - (void)_accessoryDidUpdate:(id)arg1;
-- (void)_addKey:(id)arg1 isCopyable:(BOOL)arg2;
-- (void)_addKey:(id)arg1 value:(id)arg2 isCopyable:(BOOL)arg3;
+- (void)_addKey:(id)arg1 isCopyable:(bool)arg2;
+- (void)_addKey:(id)arg1 value:(id)arg2 isCopyable:(bool)arg3;
 - (id)_bluetoothMACAddress;
 - (id)_carrierVersion:(id)arg1;
 - (id)_cellularRegistrationInfo;
 - (id)_getCTMobileEquipmentInfo:(struct __CFString { }*)arg1;
-- (BOOL)_isUsingBootstrap;
+- (bool)_isUsingBootstrap;
 - (void)_loadMediaFinished:(id)arg1;
 - (void)_loadValues;
 - (id)_macAddress;
@@ -51,13 +51,13 @@
 - (void)_setValue:(id)arg1 forSpecifierWithKey:(id)arg2;
 - (id)_songs:(id)arg1;
 - (id)_videos:(id)arg1;
-- (BOOL)areSpecifiersLoaded;
+- (bool)areSpecifiersLoaded;
 - (void)cleanupMLReloadTimer;
 - (id)countForKey:(id)arg1;
 - (void)dealloc;
 - (id)deviceName:(id)arg1;
 - (id)deviceNameToIgnoreOnce;
-- (void)enableMLUpdates:(BOOL)arg1;
+- (void)enableMLUpdates:(bool)arg1;
 - (void)forceReloadMediaStats:(id)arg1;
 - (id)init;
 - (void)loadSpecifiers;
@@ -67,7 +67,7 @@
 - (void)reloadSpecifiers;
 - (void)setDeviceName:(id)arg1 specifier:(id)arg2;
 - (void)setDeviceNameToIgnoreOnce:(id)arg1;
-- (BOOL)shouldShowSIMSpecifier;
+- (bool)shouldShowSIMSpecifier;
 - (void)simStatusChangedToReady;
 - (id)specifiersForSpecifier:(id)arg1 observer:(id)arg2;
 - (void)updateCarrierSpecifier:(id)arg1;

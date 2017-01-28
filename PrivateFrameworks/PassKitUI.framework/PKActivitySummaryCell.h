@@ -13,8 +13,8 @@
 
 @property (nonatomic, retain) PKActivityEvent *event;
 
-+ (float)height;
-+ (float)separatorLeadingInset;
++ (double)height;
++ (double)separatorLeadingInset;
 + (id)unreadIndicatorImage;
 
 - (void).cxx_destruct;
@@ -23,7 +23,7 @@
 - (id)event;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setEvent:(id)arg1;

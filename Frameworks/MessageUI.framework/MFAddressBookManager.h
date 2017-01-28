@@ -10,7 +10,7 @@
     }  _lock;
 }
 
-+ (BOOL)isAuthorizedToUseAddressBook;
++ (bool)isAuthorizedToUseAddressBook;
 + (id)sharedManager;
 
 - (void)_applicationResumed:(id)arg1;

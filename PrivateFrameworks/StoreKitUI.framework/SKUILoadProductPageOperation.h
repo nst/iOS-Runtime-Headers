@@ -7,12 +7,12 @@
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     long long  _itemID;
     SSMetricsPageEvent * _metricsPageEvent;
-    id /* block */  _outputBlock;
+    id  _outputBlock;
     NSURLRequest * _urlRequest;
 }
 
 @property (readonly) SSMetricsPageEvent *metricsPageEvent;
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
 - (id)_initSKUILoadProductPageOperation;
@@ -20,7 +20,7 @@
 - (id)initWithProductPageURLRequest:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (id)metricsPageEvent;
-- (id /* block */)outputBlock;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (id)outputBlock;
+- (void)setOutputBlock:(id)arg1;
 
 @end

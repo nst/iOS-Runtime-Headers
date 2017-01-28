@@ -5,7 +5,7 @@
 @interface TSCH3DChartColumnSceneObject : TSCH3DChartAbstractBarSceneObject
 
 + (id)chartSeriesType;
-+ (BOOL)isHorizontalChart;
-+ (BOOL)isStacked;
++ (bool)isHorizontalChart;
++ (bool)isStacked;
 
 @end

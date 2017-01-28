@@ -23,7 +23,7 @@
 - (id)accountTypeIdentifier;
 - (id)extensions;
 - (id)init;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)recordsInfo;
 - (void)requestMoreItemsWithAge:(int)arg1;
 - (id)requestParametersForRecordsWithAge:(int)arg1 relativeTo:(id)arg2;
@@ -33,7 +33,7 @@
 - (id)servicePluginName;
 - (id)serviceType;
 - (void)setExtensions:(id)arg1;
-- (void)setShowItems:(BOOL)arg1 forExtension:(id)arg2;
-- (BOOL)showItemsForExtension:(id)arg1;
+- (void)setShowItems:(bool)arg1 forExtension:(id)arg2;
+- (bool)showItemsForExtension:(id)arg1;
 
 @end

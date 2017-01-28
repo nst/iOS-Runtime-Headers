@@ -14,7 +14,7 @@
 @property (nonatomic, readonly, retain) MFMailMessageStoreSearchResult *searchResult;
 
 - (void)dealloc;
-- (BOOL)handleItems:(id)arg1;
+- (bool)handleItems:(id)arg1;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 - (id)latestDateToAdd;
 - (void)resetDoneCondition;
@@ -24,6 +24,6 @@
 - (id)searchResult;
 - (void)setLatestDateToAdd:(id)arg1;
 - (void)waitUntilDone;
-- (BOOL)waitUntilDoneBeforeDate:(id)arg1;
+- (bool)waitUntilDoneBeforeDate:(id)arg1;
 
 @end

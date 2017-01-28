@@ -7,9 +7,9 @@
 + (id)tableViewBackgroundColor;
 + (id)tableViewCellBackgroundColor;
 + (Class)tableViewCellClass;
-+ (float)tableViewCellHeight;
++ (double)tableViewCellHeight;
 + (id)tableViewSeparatorColor;
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tableViewSeparatorInset;
-+ (int)tableViewSeparatorStyle;
++ (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })tableViewSeparatorInset;
++ (long long)tableViewSeparatorStyle;
 
 @end

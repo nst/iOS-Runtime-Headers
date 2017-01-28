@@ -14,9 +14,9 @@
 }
 
 @property (nonatomic) int cancelLocation;
-@property (nonatomic) BOOL hasCancelLocation;
-@property (nonatomic) BOOL hasReportConcernLocation;
-@property (nonatomic) BOOL hasResultType;
+@property (nonatomic) bool hasCancelLocation;
+@property (nonatomic) bool hasReportConcernLocation;
+@property (nonatomic) bool hasResultType;
 @property (nonatomic) int reportConcernLocation;
 @property (nonatomic) int resultType;
 
@@ -24,19 +24,19 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCancelLocation;
-- (BOOL)hasReportConcernLocation;
-- (BOOL)hasResultType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCancelLocation;
+- (bool)hasReportConcernLocation;
+- (bool)hasResultType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)reportConcernLocation;
 - (int)resultType;
 - (void)setCancelLocation:(int)arg1;
-- (void)setHasCancelLocation:(BOOL)arg1;
-- (void)setHasReportConcernLocation:(BOOL)arg1;
-- (void)setHasResultType:(BOOL)arg1;
+- (void)setHasCancelLocation:(bool)arg1;
+- (void)setHasReportConcernLocation:(bool)arg1;
+- (void)setHasResultType:(bool)arg1;
 - (void)setReportConcernLocation:(int)arg1;
 - (void)setResultType:(int)arg1;
 - (void)writeTo:(id)arg1;

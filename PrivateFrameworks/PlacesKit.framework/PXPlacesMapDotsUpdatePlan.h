@@ -9,7 +9,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <PXPlacesMapPipelineComponentProvider> *pipelineComponentProvider;
 @property (retain) NSArray *previouslyAddedOverlays;
 @property (readonly) Class superclass;

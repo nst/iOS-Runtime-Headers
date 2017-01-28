@@ -8,7 +8,7 @@
     NSArray * _frontFieldBuckets;
     NSString * _logoText;
     PKPassPersonalization * _personalization;
-    int  _transitType;
+    long long  _transitType;
 }
 
 @property (nonatomic, copy) NSArray *backFieldBuckets;
@@ -16,9 +16,9 @@
 @property (nonatomic, copy) NSArray *frontFieldBuckets;
 @property (nonatomic, copy) NSString *logoText;
 @property (nonatomic, copy) PKPassPersonalization *personalization;
-@property (nonatomic) int transitType;
+@property (nonatomic) long long transitType;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)backFieldBuckets;
@@ -35,7 +35,7 @@
 - (void)setFrontFieldBuckets:(id)arg1;
 - (void)setLogoText:(id)arg1;
 - (void)setPersonalization:(id)arg1;
-- (void)setTransitType:(int)arg1;
-- (int)transitType;
+- (void)setTransitType:(long long)arg1;
+- (long long)transitType;
 
 @end

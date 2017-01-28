@@ -4,8 +4,8 @@
 
 @interface UICollectionViewFocusUpdateContext : UIFocusUpdateContext {
     UICollectionView * _collectionView;
-    BOOL  _didSetNextFocusedIndexPath;
-    BOOL  _didSetPreviouslyFocusedIndexPath;
+    bool  _didSetNextFocusedIndexPath;
+    bool  _didSetPreviouslyFocusedIndexPath;
     NSIndexPath * _nextFocusedIndexPath;
     NSIndexPath * _previouslyFocusedIndexPath;
 }

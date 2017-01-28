@@ -10,14 +10,14 @@
 - (HFRoomBuilder *)room;
 - (void)setName:(NSString *)arg1;
 - (void)setRoom:(HFRoomBuilder *)arg1;
-- (BOOL)supportsFavoriting;
+- (bool)supportsFavoriting;
 
 @optional
 
 - (NSArray *)availableIconDescriptors;
 - (<HFIconDescriptor> *)iconDescriptor;
-- (BOOL)isFavorite;
+- (bool)isFavorite;
 - (void)setIconDescriptor:(id <HFIconDescriptor>)arg1;
-- (void)setIsFavorite:(BOOL)arg1;
+- (void)setIsFavorite:(bool)arg1;
 
 @end

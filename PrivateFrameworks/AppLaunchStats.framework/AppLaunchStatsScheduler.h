@@ -9,8 +9,8 @@
     PCPersistentTimer * pcpTimer;
     CDAttribute * screenUnlockAttribute;
     NSDate * startDate;
-    id /* block */  theCallback;
-    int  timeZoneSecondsFromGMT;
+    id  theCallback;
+    long long  timeZoneSecondsFromGMT;
     bool  usefulDate;
 }
 
@@ -18,7 +18,7 @@
 - (void)checkTimeZone;
 - (id)computeUserWakeupDate;
 - (void)generateFireDates;
-- (id)init:(id)arg1 withRunLoop:(id)arg2 withCallback:(id /* block */)arg3;
+- (id)init:(id)arg1 withRunLoop:(id)arg2 withCallback:(id)arg3;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)programTimer;

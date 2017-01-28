@@ -5,6 +5,6 @@
 
 @required
 
-- (void)snapShotSendFailed;
+- (void)snapShotSendFailed:(NSError *)arg1;
 
 @end

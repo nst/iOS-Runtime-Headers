@@ -4,6 +4,6 @@
 
 @interface TIResponseKitTrainer : NSObject
 
-+ (void)performTrainingForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
++ (void)performTrainingForClient:(id)arg1 withCompletionHandler:(id)arg2;
 
 @end

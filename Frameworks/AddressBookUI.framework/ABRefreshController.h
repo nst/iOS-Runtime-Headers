@@ -12,21 +12,21 @@
 
 + (id)sharedInstance;
 
-- (BOOL)_acAccountExistsForIdentifier:(id)arg1;
+- (bool)_acAccountExistsForIdentifier:(id)arg1;
 - (void)_actuallyRefreshOrphanedAccountsWithAddressBook:(void*)arg1;
 - (void)_addObjectToRefresh:(id)arg1 withObserver:(void*)arg2 toDictionary:(id*)arg3;
 - (void)_invalidateTimer;
 - (void)_postponeAllRefreshes;
 - (void)_proceedWithRefresh:(id)arg1;
-- (void)_refreshACAccountWithIdentifier:(id)arg1 isUserRequested:(BOOL)arg2;
-- (void)_refreshGroupListForACAccountWithIdentifier:(id)arg1 isUserRequested:(BOOL)arg2;
+- (void)_refreshACAccountWithIdentifier:(id)arg1 isUserRequested:(bool)arg2;
+- (void)_refreshGroupListForACAccountWithIdentifier:(id)arg1 isUserRequested:(bool)arg2;
 - (void)_resumeAllRefreshes;
 - (void)_scheduleRefreshTimerIfNeeded;
 - (void)_setRefreshDelay:(double)arg1;
 - (id)accountStore;
-- (BOOL)canRefreshAccountIdentifier:(id)arg1;
-- (BOOL)canRefreshContactsFilter:(id)arg1;
-- (BOOL)canRefreshSources:(id)arg1;
+- (bool)canRefreshAccountIdentifier:(id)arg1;
+- (bool)canRefreshContactsFilter:(id)arg1;
+- (bool)canRefreshSources:(id)arg1;
 - (void)cancelAllScheduledRefreshesWithObserver:(void*)arg1;
 - (void)dealloc;
 - (id)init;
@@ -37,6 +37,6 @@
 - (void)scheduleRefreshForAccountGroupList:(id)arg1 withObserver:(void*)arg2;
 - (void)scheduleRefreshForContactsFilter:(id)arg1 withObserver:(void*)arg2;
 - (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1;
-- (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1 afterDelay:(BOOL)arg2;
+- (void)startRefreshingOrphanedAccountsWithAddressBook:(void*)arg1 afterDelay:(bool)arg2;
 
 @end

@@ -4,23 +4,23 @@
 
 @interface CDAnonymousXPCService : CDXPCService {
     NSXPCListenerEndpoint * _endpoint;
-    BOOL  _haveCreatedHeartbeat;
+    bool  _haveCreatedHeartbeat;
     NSXPCConnection * _heartbeatConnection;
 }
 
 @property (nonatomic, readonly) NSXPCListenerEndpoint *endpoint;
-@property (nonatomic) BOOL haveCreatedHeartbeat;
+@property (nonatomic) bool haveCreatedHeartbeat;
 @property (nonatomic, retain) NSXPCConnection *heartbeatConnection;
 
 - (void).cxx_destruct;
-- (void)_servicePing:(id /* block */)arg1;
-- (BOOL)createHeartbeatConnection;
+- (void)_servicePing:(id)arg1;
+- (bool)createHeartbeatConnection;
 - (id)endpoint;
-- (BOOL)haveCreatedHeartbeat;
+- (bool)haveCreatedHeartbeat;
 - (id)heartbeatConnection;
 - (id)initWithInfo:(id)arg1 endpoint:(id)arg2;
-- (void)obtainXPCConnection:(id /* block */)arg1;
-- (void)setHaveCreatedHeartbeat:(BOOL)arg1;
+- (void)obtainXPCConnection:(id)arg1;
+- (void)setHaveCreatedHeartbeat:(bool)arg1;
 - (void)setHeartbeatConnection:(id)arg1;
 
 @end

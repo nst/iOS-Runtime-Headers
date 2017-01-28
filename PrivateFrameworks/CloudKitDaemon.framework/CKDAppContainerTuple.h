@@ -21,11 +21,11 @@
 - (id)containerID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithApplicationBundleID:(id)arg1 containerID:(id)arg2;
 - (id)initWithApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2 applicationContainerPath:(id)arg3 containerID:(id)arg4;
 - (id)initWithApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2 containerID:(id)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)pushTokenBundleID;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setApplicationContainerPath:(id)arg1;

@@ -14,7 +14,7 @@
 - (id)_managedObjectModel;
 - (id)_pathForPersistentStore;
 - (id)_persistentStoreCoordinator;
-- (BOOL)_removeSqliteFiles;
+- (bool)_removeSqliteFiles;
 - (id)_settingForKey:(id)arg1;
 - (id)_urlForPersistentStore;
 - (id)alarmsBetweenStartDate:(id)arg1 endDate:(id)arg2;
@@ -24,7 +24,7 @@
 - (id)initWithPath:(id)arg1;
 - (id)insertNewAlarm;
 - (id)nextAlarmFireTime;
-- (BOOL)refiringAlarmAlreadyExists:(int)arg1;
+- (bool)refiringAlarmAlreadyExists:(int)arg1;
 - (id)refiringAlarms;
 - (id)rootDirectory;
 - (void)setSetting:(id)arg1 forKey:(id)arg2;

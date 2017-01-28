@@ -13,10 +13,10 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_loadAllBookmarksWithRemainingAssets:(id)arg1 bookmarkTimes:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)_loadAllBookmarksWithRemainingAssets:(id)arg1 bookmarkTimes:(id)arg2 completionBlock:(id)arg3;
 - (id)_ubiquitousIdentifierForAsset:(id)arg1;
 - (id)init;
-- (void)pullBookmarksForAssets:(id)arg1 completionBlock:(id /* block */)arg2;
-- (BOOL)pushBookmarkForAsset:(id)arg1 bookmarkTime:(double)arg2 playedToNominalLength:(BOOL)arg3;
+- (void)pullBookmarksForAssets:(id)arg1 completionBlock:(id)arg2;
+- (bool)pushBookmarkForAsset:(id)arg1 bookmarkTime:(double)arg2 playedToNominalLength:(bool)arg3;
 
 @end

@@ -5,17 +5,17 @@
 
 @required
 
-- (BOOL)confirmContact:(SGRealtimeContact *)arg1 error:(id*)arg2;
-- (void)confirmContact:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRealtimeContact *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)confirmContactDetailRecord:(SGRecordId *)arg1 error:(id*)arg2;
-- (void)confirmContactDetailRecord:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRecordId *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)confirmRecord:(SGRecordId *)arg1 error:(id*)arg2;
-- (void)confirmRecord:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRecordId *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)rejectContact:(SGRealtimeContact *)arg1 error:(id*)arg2;
-- (void)rejectContact:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRealtimeContact *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)rejectContactDetailRecord:(SGRecordId *)arg1 error:(id*)arg2;
-- (void)rejectContactDetailRecord:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRecordId *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (BOOL)rejectRecord:(SGRecordId *)arg1 error:(id*)arg2;
-- (void)rejectRecord:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRecordId *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (bool)confirmContact:(SGRealtimeContact *)arg1 error:(id*)arg2;
+- (void)confirmContact:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRealtimeContact *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (bool)confirmContactDetailRecord:(SGRecordId *)arg1 error:(id*)arg2;
+- (void)confirmContactDetailRecord:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRecordId *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (bool)confirmRecord:(SGRecordId *)arg1 error:(id*)arg2;
+- (void)confirmRecord:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRecordId *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (bool)rejectContact:(SGRealtimeContact *)arg1 error:(id*)arg2;
+- (void)rejectContact:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRealtimeContact *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (bool)rejectContactDetailRecord:(SGRecordId *)arg1 error:(id*)arg2;
+- (void)rejectContactDetailRecord:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRecordId *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (bool)rejectRecord:(SGRecordId *)arg1 error:(id*)arg2;
+- (void)rejectRecord:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 7: SGRecordId *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
 
 @end

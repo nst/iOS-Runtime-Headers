@@ -3,13 +3,13 @@
  */
 
 @interface FBExtensionProcess : FBProcess {
-    BOOL  _XPCBundle;
+    bool  _XPCBundle;
     FBExtensionInfo * _extensionInfo;
     NSString * _hostBundleID;
     int  _hostPID;
 }
 
-@property (getter=isXPCBundle, nonatomic, readonly) BOOL XPCBundle;
+@property (getter=isXPCBundle, nonatomic, readonly) bool XPCBundle;
 @property (nonatomic, readonly, retain) FBExtensionInfo *extensionInfo;
 @property (nonatomic, readonly, copy) NSString *hostBundleID;
 @property (nonatomic, readonly) int hostPID;
@@ -21,8 +21,8 @@
 - (int)hostPID;
 - (id)hostProcess;
 - (id)initWithBundleID:(id)arg1 pid:(int)arg2 callOutQueue:(id)arg3;
-- (BOOL)isExtensionProcess;
-- (BOOL)isXPCBundle;
+- (bool)isExtensionProcess;
+- (bool)isXPCBundle;
 - (id)succinctDescriptionBuilder;
 
 @end

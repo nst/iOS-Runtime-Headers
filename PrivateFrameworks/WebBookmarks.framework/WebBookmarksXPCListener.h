@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <WebBookmarksXPCConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -21,7 +21,7 @@
 - (id)delegate;
 - (id)initListenerForMachService:(const char *)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHandler:(id /* block */)arg1 forMessageNamed:(const char *)arg2;
+- (void)setHandler:(id)arg1 forMessageNamed:(const char *)arg2;
 - (void)setMessageHandlers:(id)arg1;
 
 @end

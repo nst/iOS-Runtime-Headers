@@ -7,7 +7,7 @@
     NSMutableArray * _suggestionEntries;
 }
 
-@property (nonatomic, readonly) BOOL hasLocalizedSectionHeader;
+@property (nonatomic, readonly) bool hasLocalizedSectionHeader;
 @property (nonatomic, retain) NSString *localizedSectionHeader;
 @property (nonatomic, retain) NSMutableArray *suggestionEntries;
 
@@ -20,17 +20,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocalizedSectionHeader;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasLocalizedSectionHeader;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)localizedSectionHeader;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setLocalizedSectionHeader:(id)arg1;
 - (void)setSuggestionEntries:(id)arg1;
 - (id)suggestionEntries;
-- (id)suggestionEntriesAtIndex:(unsigned int)arg1;
-- (unsigned int)suggestionEntriesCount;
+- (id)suggestionEntriesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)suggestionEntriesCount;
 - (void)writeTo:(id)arg1;
 
 @end

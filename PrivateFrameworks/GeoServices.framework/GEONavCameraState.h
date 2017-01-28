@@ -10,17 +10,17 @@
         unsigned int upcomingManeuverType : 1; 
         unsigned int isGroupedManeuver : 1; 
     }  _has;
-    BOOL  _isGroupedManeuver;
+    bool  _isGroupedManeuver;
     int  _speedBucket;
     int  _upcomingManeuverType;
 }
 
 @property (nonatomic) int distanceToManeuver;
-@property (nonatomic) BOOL hasDistanceToManeuver;
-@property (nonatomic) BOOL hasIsGroupedManeuver;
-@property (nonatomic) BOOL hasSpeedBucket;
-@property (nonatomic) BOOL hasUpcomingManeuverType;
-@property (nonatomic) BOOL isGroupedManeuver;
+@property (nonatomic) bool hasDistanceToManeuver;
+@property (nonatomic) bool hasIsGroupedManeuver;
+@property (nonatomic) bool hasSpeedBucket;
+@property (nonatomic) bool hasUpcomingManeuverType;
+@property (nonatomic) bool isGroupedManeuver;
 @property (nonatomic) int speedBucket;
 @property (nonatomic) int upcomingManeuverType;
 
@@ -33,21 +33,21 @@
 - (id)dictionaryRepresentation;
 - (int)distanceToManeuver;
 - (id)distanceToManeuverAsString:(int)arg1;
-- (BOOL)hasDistanceToManeuver;
-- (BOOL)hasIsGroupedManeuver;
-- (BOOL)hasSpeedBucket;
-- (BOOL)hasUpcomingManeuverType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isGroupedManeuver;
+- (bool)hasDistanceToManeuver;
+- (bool)hasIsGroupedManeuver;
+- (bool)hasSpeedBucket;
+- (bool)hasUpcomingManeuverType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isGroupedManeuver;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDistanceToManeuver:(int)arg1;
-- (void)setHasDistanceToManeuver:(BOOL)arg1;
-- (void)setHasIsGroupedManeuver:(BOOL)arg1;
-- (void)setHasSpeedBucket:(BOOL)arg1;
-- (void)setHasUpcomingManeuverType:(BOOL)arg1;
-- (void)setIsGroupedManeuver:(BOOL)arg1;
+- (void)setHasDistanceToManeuver:(bool)arg1;
+- (void)setHasIsGroupedManeuver:(bool)arg1;
+- (void)setHasSpeedBucket:(bool)arg1;
+- (void)setHasUpcomingManeuverType:(bool)arg1;
+- (void)setIsGroupedManeuver:(bool)arg1;
 - (void)setSpeedBucket:(int)arg1;
 - (void)setUpcomingManeuverType:(int)arg1;
 - (int)speedBucket;

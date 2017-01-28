@@ -6,9 +6,9 @@
 
 + (void)disablePhoneLogging;
 + (void)enablePhoneLogging;
-+ (BOOL)isWalkaboutEnabled;
++ (bool)isWalkaboutEnabled;
 + (void)registerForShouldLogChangedNotification;
-+ (BOOL)sendDirectoryToCrashReporter:(id)arg1 error:(id*)arg2;
++ (bool)sendDirectoryToCrashReporter:(id)arg1 error:(id*)arg2;
 + (void)unregisterForShouldLogChangedNotification;
 
 @end

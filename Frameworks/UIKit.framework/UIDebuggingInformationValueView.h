@@ -12,7 +12,7 @@
 @property (nonatomic, retain) UIDebuggingInformationValue *value;
 @property (nonatomic) <UIDebuggingInformationValueViewObserver> *valueObserver;
 
-+ (Class)_viewClassForValueType:(int)arg1;
++ (Class)_viewClassForValueType:(long long)arg1;
 + (id)viewWithValue:(id)arg1;
 
 - (void).cxx_destruct;

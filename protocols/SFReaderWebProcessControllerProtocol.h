@@ -15,7 +15,7 @@
 - (void)prepareToTransitionToReader;
 - (void)setInitalArticleScrollPositionAsDictionary:(NSDictionary *)arg1;
 - (void)setReaderFont:(NSString *)arg1;
-- (void)setReaderInitialTopScrollOffset:(int)arg1 configuration:(NSDictionary *)arg2 userVisibleWidth:(double)arg3 isViewingArchive:(BOOL)arg4;
+- (void)setReaderInitialTopScrollOffset:(long long)arg1 configuration:(NSDictionary *)arg2 userVisibleWidth:(double)arg3 isViewingArchive:(bool)arg4;
 - (void)setReaderTheme:(NSString *)arg1;
 - (void)setReaderUserVisibleWidth:(double)arg1;
 

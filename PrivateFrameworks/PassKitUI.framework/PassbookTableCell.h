@@ -5,8 +5,8 @@
 @interface PassbookTableCell : PSTableCell
 
 - (void)_updateActivityIndicatorForSpecifier:(id)arg1;
-- (BOOL)canReload;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
+- (bool)canReload;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (void)refreshCellContentsWithSpecifier:(id)arg1;
 
 @end

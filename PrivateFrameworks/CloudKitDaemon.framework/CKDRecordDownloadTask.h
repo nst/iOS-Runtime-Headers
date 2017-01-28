@@ -24,7 +24,7 @@
 - (void)didDownloadAsset:(id)arg1 error:(id)arg2;
 - (id)error;
 - (id)group;
-- (id)initWithRecord:(id)arg1 trackProgress:(BOOL)arg2 assetsToDownload:(id)arg3 packageIndexSets:(id)arg4;
+- (id)initWithRecord:(id)arg1 trackProgress:(bool)arg2 assetsToDownload:(id)arg3 packageIndexSets:(id)arg4;
 - (id)packageIndexSets;
 - (id)progressTracker;
 - (id)record;

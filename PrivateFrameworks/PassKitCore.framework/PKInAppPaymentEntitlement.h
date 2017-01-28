@@ -3,18 +3,18 @@
  */
 
 @interface PKInAppPaymentEntitlement : NSObject {
-    BOOL  _ignoreMerchantIdentifiers;
+    bool  _ignoreMerchantIdentifiers;
     NSArray * _merchantIdentifiers;
 }
 
-@property (nonatomic, readonly) BOOL hasMerchantIdentifiers;
-@property (nonatomic, readonly) BOOL ignoreMerchantIdentifiers;
+@property (nonatomic, readonly) bool hasMerchantIdentifiers;
+@property (nonatomic, readonly) bool ignoreMerchantIdentifiers;
 
 - (void).cxx_destruct;
 - (void)_probeEntitlementsWithToken:(struct { unsigned int x1[8]; })arg1;
-- (BOOL)hasMerchantIdentifier:(id)arg1;
-- (BOOL)hasMerchantIdentifiers;
-- (BOOL)ignoreMerchantIdentifiers;
+- (bool)hasMerchantIdentifier:(id)arg1;
+- (bool)hasMerchantIdentifiers;
+- (bool)ignoreMerchantIdentifiers;
 - (id)initWithToken:(struct { unsigned int x1[8]; })arg1;
 
 @end

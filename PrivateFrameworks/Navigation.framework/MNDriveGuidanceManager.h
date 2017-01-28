@@ -11,14 +11,14 @@
 - (const struct { double x1; double x2; double x3; }*)_announceSettings;
 - (int)_continuePhase;
 - (double)_distanceForSign;
-- (BOOL)_hasSubsteps;
+- (bool)_hasSubsteps;
 - (id)_nameInfoForContinueSign;
 - (id)_nextSubstep;
 - (void)_resetStepState;
-- (BOOL)_updateConsiderContinueAnnouncement:(id)arg1 location:(id)arg2;
-- (BOOL)_updateConsiderExecuteAnnouncement:(id)arg1 location:(id)arg2;
-- (BOOL)_updateConsiderPrepareAnnouncement:(id)arg1 withMatch:(id)arg2;
-- (BOOL)_updateConsiderSubstepAnnouncement:(id)arg1 location:(id)arg2;
+- (bool)_updateConsiderContinueAnnouncement:(id)arg1 location:(id)arg2;
+- (bool)_updateConsiderExecuteAnnouncement:(id)arg1 location:(id)arg2;
+- (bool)_updateConsiderPrepareAnnouncement:(id)arg1 withMatch:(id)arg2;
+- (bool)_updateConsiderSubstepAnnouncement:(id)arg1 location:(id)arg2;
 - (void)_updatePrepareForNextStep;
 - (int)transportType;
 

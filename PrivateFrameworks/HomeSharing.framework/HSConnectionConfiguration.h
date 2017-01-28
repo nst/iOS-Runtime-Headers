@@ -20,7 +20,7 @@
 @property (nonatomic, copy) NSString *purchaseClientIdentifier;
 @property (nonatomic) long long requestReason;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)account;

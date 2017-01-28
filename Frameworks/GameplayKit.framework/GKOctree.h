@@ -15,7 +15,7 @@
 - (id)elementsInBox:(struct GKBox { })arg1;
 - (id)init;
 - (id)initWithBoundingBox:(struct GKBox { })arg1 minimumCellSize:(float)arg2;
-- (BOOL)removeElement:(id)arg1;
-- (BOOL)removeElement:(id)arg1 withNode:(id)arg2;
+- (bool)removeElement:(id)arg1;
+- (bool)removeElement:(id)arg1 withNode:(id)arg2;
 
 @end

@@ -12,11 +12,11 @@
 - (id)facetDefinitionsChangedSinceDate:(id)arg1;
 - (id)fontSizesChangedSinceDate:(id)arg1;
 - (id)fontsChangedSinceDate:(id)arg1;
-- (BOOL)foundDataChangesSinceDate:(id)arg1;
+- (bool)foundDataChangesSinceDate:(id)arg1;
 - (id)initWithDocument:(id)arg1;
 - (id)keySpecsForRenditionsRemovedSinceDate:(id)arg1;
 - (id)namedElementsChangedSinceDate:(id)arg1;
-- (id)productionsChangedSinceDate:(id)arg1 uuidNeedsReset:(BOOL*)arg2;
+- (id)productionsChangedSinceDate:(id)arg1 uuidNeedsReset:(bool*)arg2;
 - (id)productionsWithModifiedAssets;
 - (void)updateEntriesForManagedObjects:(id)arg1;
 

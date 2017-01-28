@@ -16,13 +16,13 @@
 @property (nonatomic) double debugInitialRequestDelay;
 @property (nonatomic) <MNETAManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double requestInterval;
 @property (nonatomic, retain) NSArray *routes;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_updateRouteWithETATrafficUpdateResponse:(id)arg1 currentStep:(id)arg2 percentOfCurrentStepRemaining:(double)arg3;
+- (bool)_updateRouteWithETATrafficUpdateResponse:(id)arg1 currentStep:(id)arg2 percentOfCurrentStepRemaining:(double)arg3;
 - (void)dealloc;
 - (double)debugBackgroundTimeWindow;
 - (double)debugInitialRequestDelay;
@@ -30,7 +30,7 @@
 - (id)etaRouteForRoute:(id)arg1;
 - (void)etaUpdater:(id)arg1 receivedETATrafficUpdateResponse:(id)arg2;
 - (void)etaUpdater:(id)arg1 receivedError:(id)arg2;
-- (BOOL)etaUpdater:(id)arg1 updateRouteWithETATrafficUpdateResponse:(id)arg2 step:(id)arg3 percentOfCurrentStepRemaining:(double)arg4;
+- (bool)etaUpdater:(id)arg1 updateRouteWithETATrafficUpdateResponse:(id)arg2 step:(id)arg3 percentOfCurrentStepRemaining:(double)arg4;
 - (void)etaUpdater:(id)arg1 willSendETATrafficUpdateRequest:(id)arg2;
 - (void)etaUpdaterReceivedInvalidRoute:(id)arg1 newRoute:(id)arg2 incidentsOnRoute:(id)arg3 incidentsOffRoute:(id)arg4;
 - (id)etaUpdaterRoutesForETATrafficUpdateRequest:(id)arg1;

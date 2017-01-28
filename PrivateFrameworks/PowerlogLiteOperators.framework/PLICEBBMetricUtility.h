@@ -5,6 +5,6 @@
 @interface PLICEBBMetricUtility : NSObject
 
 + (id)convertToStringData:(id)arg1;
-+ (BOOL)isInvalidMetricIdTag:(id)arg1 forClass:(Class)arg2;
++ (bool)isInvalidMetricIdTag:(id)arg1 forClass:(Class)arg2;
 
 @end

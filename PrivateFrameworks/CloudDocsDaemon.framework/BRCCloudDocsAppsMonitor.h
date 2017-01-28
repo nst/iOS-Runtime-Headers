@@ -7,7 +7,7 @@
     NSObject<OS_dispatch_queue> * _callbackQueue;
     NSMutableDictionary * _cloudDocsAppLibrariesByAppID;
     NSObject<OS_dispatch_queue> * _fetchInstalledAppsQueue;
-    BOOL  _hasFetchedInitialApps;
+    bool  _hasFetchedInitialApps;
     NSMutableSet * _observers;
     NSObject<OS_dispatch_queue> * _queue;
     br_pacer * _refetchPacer;
@@ -15,7 +15,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)cloudDocsAppsMonitor;
@@ -29,9 +29,9 @@
 - (id)containerIDsForApplicationIdentifier:(id)arg1;
 - (void)dumpToContext:(id)arg1;
 - (void)forceRefetchAppList;
-- (BOOL)hasFetchedInitialApps;
+- (bool)hasFetchedInitialApps;
 - (id)init;
-- (BOOL)isApplicationInstalledForContainerID:(id)arg1;
+- (bool)isApplicationInstalledForContainerID:(id)arg1;
 - (void)removeObserver:(id)arg1;
 
 @end

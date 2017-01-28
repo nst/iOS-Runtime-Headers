@@ -4,9 +4,9 @@
 
 @interface VMUProcList : NSObject {
     NSMapTable * allProcs;
-    BOOL  appsOnly;
+    bool  appsOnly;
     NSMapTable * filteredProcs;
-    BOOL  ownedOnly;
+    bool  ownedOnly;
     NSLock * procLock;
 }
 
@@ -16,8 +16,8 @@
 - (id)allPIDs;
 - (id)allPathNames;
 - (id)allProcInfos;
-- (BOOL)appsOnly;
-- (unsigned int)count;
+- (bool)appsOnly;
+- (unsigned long long)count;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
@@ -25,13 +25,13 @@
 - (id)newestProcInfoSatisfyingCondition:(SEL)arg1 forTarget:(id)arg2;
 - (id)newestProcInfoSatisfyingCondition:(SEL)arg1 forTarget:(id)arg2 withContext:(void*)arg3;
 - (id)newestProcInfoWithName:(id)arg1;
-- (BOOL)ownedOnly:(BOOL)arg1;
+- (bool)ownedOnly:(bool)arg1;
 - (id)procInfoWithPID:(int)arg1;
 - (void)removeProcInfo:(id)arg1;
-- (void)setAppsOnly:(BOOL)arg1;
-- (void)setOwnedOnly:(BOOL)arg1;
+- (void)setAppsOnly:(bool)arg1;
+- (void)setOwnedOnly:(bool)arg1;
 - (void)setProcInfos:(id)arg1;
-- (BOOL)update;
-- (BOOL)updateFromSystem;
+- (bool)update;
+- (bool)updateFromSystem;
 
 @end

@@ -5,13 +5,13 @@
 
 @required
 
-- (unsigned int)callCapabilities;
-- (int)callType;
+- (unsigned long long)callCapabilities;
+- (long long)callType;
 - (INDateComponentsRange *)dateCreated;
 - (id)init;
 - (INPerson *)recipient;
-- (void)setCallCapabilities:(unsigned int)arg1;
-- (void)setCallType:(int)arg1;
+- (void)setCallCapabilities:(unsigned long long)arg1;
+- (void)setCallType:(long long)arg1;
 - (void)setDateCreated:(INDateComponentsRange *)arg1;
 - (void)setRecipient:(INPerson *)arg1;
 

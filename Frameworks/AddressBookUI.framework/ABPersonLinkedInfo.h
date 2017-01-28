@@ -6,25 +6,25 @@
     NSString * _name;
     ABUIPerson * _person;
     NSString * _type;
-    BOOL  _unified;
+    bool  _unified;
 }
 
 @property (retain) NSString *name;
 @property (retain) ABUIPerson *person;
 @property (retain) NSString *type;
-@property (getter=isUnified) BOOL unified;
+@property (getter=isUnified) bool unified;
 
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUnified;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isUnified;
 - (id)name;
 - (id)person;
 - (void)setName:(id)arg1;
 - (void)setPerson:(id)arg1;
 - (void)setType:(id)arg1;
-- (void)setUnified:(BOOL)arg1;
+- (void)setUnified:(bool)arg1;
 - (id)type;
 
 @end

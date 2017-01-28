@@ -6,6 +6,6 @@
 
 + (void)beginCutting;
 + (void)endCutting;
-+ (BOOL)isCutting;
++ (bool)isCutting;
 
 @end

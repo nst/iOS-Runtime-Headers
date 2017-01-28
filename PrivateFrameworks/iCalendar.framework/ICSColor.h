@@ -8,7 +8,7 @@
     unsigned char  _red;
 }
 
-+ (BOOL)colorDetailsAreEffectivelyDifferentFirstColor:(id)arg1 secondColor:(id)arg2 firstSymbolicName:(id)arg3 secondSymbolicName:(id)arg4;
++ (bool)colorDetailsAreEffectivelyDifferentFirstColor:(id)arg1 secondColor:(id)arg2 firstSymbolicName:(id)arg3 secondSymbolicName:(id)arg4;
 + (id)symbolicColorForLegacyRGB:(id)arg1;
 
 - (unsigned char)blue;

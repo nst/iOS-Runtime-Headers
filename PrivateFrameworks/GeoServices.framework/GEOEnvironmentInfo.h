@@ -9,7 +9,7 @@
     NSString * _name;
     NSDictionary * _originalDictionaryRepresentation;
     NSString * _releaseName;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic, readonly) NSString *displayName;
@@ -17,22 +17,22 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *releaseName;
 @property (nonatomic, readonly) GEOResourceManifestDownload *resourceManifest;
-@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) long long state;
 
 - (id)_manifestURLString;
 - (void)dealloc;
 - (id)displayName;
 - (id)initWithName:(id)arg1 displayName:(id)arg2 dictionaryRepresentation:(id)arg3;
-- (BOOL)isActive;
+- (bool)isActive;
 - (id)lastLoadingError;
 - (void)makeActive;
 - (id)name;
 - (id)overrideURLs;
 - (id)releaseName;
-- (void)reloadManifestDataWithCompletionHandler:(id /* block */)arg1;
+- (void)reloadManifestDataWithCompletionHandler:(id)arg1;
 - (id)resourceManifest;
 - (id)serviceURLs;
-- (int)state;
+- (long long)state;
 - (void)updateWithURLs:(id)arg1;
 - (id)urlDictionary;
 

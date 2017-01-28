@@ -3,40 +3,40 @@
  */
 
 @interface _CNAutocompleteMutableSourceInclusionPolicy : NSObject <CNAutocompleteSourceInclusionPolicy> {
-    BOOL  _includeCalendarServers;
-    BOOL  _includeContacts;
-    BOOL  _includeDirectoryServers;
-    BOOL  _includePredictions;
-    BOOL  _includeRecents;
-    BOOL  _includeSuggestions;
-    BOOL  _includeSupplementalResults;
+    bool  _includeCalendarServers;
+    bool  _includeContacts;
+    bool  _includeDirectoryServers;
+    bool  _includePredictions;
+    bool  _includeRecents;
+    bool  _includeSuggestions;
+    bool  _includeSupplementalResults;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property BOOL includeCalendarServers;
-@property BOOL includeContacts;
-@property BOOL includeDirectoryServers;
-@property BOOL includePredictions;
-@property BOOL includeRecents;
-@property BOOL includeSuggestions;
-@property BOOL includeSupplementalResults;
+@property (readonly) unsigned long long hash;
+@property bool includeCalendarServers;
+@property bool includeContacts;
+@property bool includeDirectoryServers;
+@property bool includePredictions;
+@property bool includeRecents;
+@property bool includeSuggestions;
+@property bool includeSupplementalResults;
 @property (readonly) Class superclass;
 
-- (BOOL)includeCalendarServers;
-- (BOOL)includeContacts;
-- (BOOL)includeDirectoryServers;
-- (BOOL)includePredictions;
-- (BOOL)includeRecents;
-- (BOOL)includeSuggestions;
-- (BOOL)includeSupplementalResults;
-- (void)setIncludeCalendarServers:(BOOL)arg1;
-- (void)setIncludeContacts:(BOOL)arg1;
-- (void)setIncludeDirectoryServers:(BOOL)arg1;
-- (void)setIncludePredictions:(BOOL)arg1;
-- (void)setIncludeRecents:(BOOL)arg1;
-- (void)setIncludeSuggestions:(BOOL)arg1;
-- (void)setIncludeSupplementalResults:(BOOL)arg1;
+- (bool)includeCalendarServers;
+- (bool)includeContacts;
+- (bool)includeDirectoryServers;
+- (bool)includePredictions;
+- (bool)includeRecents;
+- (bool)includeSuggestions;
+- (bool)includeSupplementalResults;
+- (void)setIncludeCalendarServers:(bool)arg1;
+- (void)setIncludeContacts:(bool)arg1;
+- (void)setIncludeDirectoryServers:(bool)arg1;
+- (void)setIncludePredictions:(bool)arg1;
+- (void)setIncludeRecents:(bool)arg1;
+- (void)setIncludeSuggestions:(bool)arg1;
+- (void)setIncludeSupplementalResults:(bool)arg1;
 
 @end

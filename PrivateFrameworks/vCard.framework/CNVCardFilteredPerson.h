@@ -3,8 +3,8 @@
  */
 
 @interface CNVCardFilteredPerson : NSObject <CNVCardPerson> {
-    NSSet * _blacklist;
     <CNVCardPerson> * _person;
+    CNVCardFilteredPersonScope * _scope;
 }
 
 @property (readonly) NSDictionary *activityAlerts;
@@ -18,13 +18,13 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) NSArray *emailAddresses;
 @property (readonly) NSString *firstName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) NSDictionary *imageCropRects;
 @property (readonly) NSData *imageData;
 @property (readonly) NSArray *imageReferences;
 @property (readonly) NSArray *instantMessagingAddresses;
-@property (readonly) BOOL isCompany;
-@property (readonly) BOOL isMe;
+@property (readonly) bool isCompany;
+@property (readonly) bool isMe;
 @property (readonly) NSString *jobTitle;
 @property (readonly) NSDictionary *largeImageCropRects;
 @property (readonly) NSData *largeImageData;
@@ -57,7 +57,7 @@
 @property (readonly) NSArray *unknownProperties;
 @property (readonly) NSArray *urls;
 
-+ (id)filteredPersonWithPerson:(id)arg1 blacklistedFields:(id)arg2;
++ (id)filteredPersonWithPerson:(id)arg1 scope:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)activityAlerts;
@@ -73,12 +73,12 @@
 - (id)imageCropRects;
 - (id)imageData;
 - (id)imageReferences;
-- (id)initWithPerson:(id)arg1 blacklistedFields:(id)arg2;
+- (id)initWithPerson:(id)arg1 scope:(id)arg2;
 - (id)instantMessagingAddresses;
-- (BOOL)isCompany;
-- (BOOL)isMe;
+- (bool)isCompany;
+- (bool)isMe;
 - (id)jobTitle;
-- (id)jpegImageDataOfAllowableKinds:(id)arg1 maximumLength:(unsigned int)arg2 cropRects:(id*)arg3;
+- (id)jpegImageDataOfAllowableKinds:(id)arg1 maximumLength:(unsigned long long)arg2 cropRects:(id*)arg3;
 - (id)largeImageCropRects;
 - (id)largeImageData;
 - (id)largeImageHashOfType:(id)arg1;

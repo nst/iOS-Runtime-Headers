@@ -8,7 +8,7 @@
 
 @property (nonatomic, copy) NSDate *dateEnded;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)customDescription;

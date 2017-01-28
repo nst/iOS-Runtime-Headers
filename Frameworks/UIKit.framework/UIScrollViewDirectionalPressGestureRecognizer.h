@@ -3,16 +3,16 @@
  */
 
 @interface UIScrollViewDirectionalPressGestureRecognizer : _UIRepeatingPressGestureRecognizer {
-    int  _activePressType;
+    long long  _activePressType;
     UIScrollView * _scrollView;
 }
 
-@property (nonatomic, readonly) int activePressType;
+@property (nonatomic, readonly) long long activePressType;
 @property (nonatomic) UIScrollView *scrollView;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldReceivePress:(id)arg1;
-- (int)activePressType;
+- (bool)_shouldReceivePress:(id)arg1;
+- (long long)activePressType;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)reset;
 - (id)scrollView;

@@ -6,7 +6,7 @@
     NSData * _medicalIDBytes;
 }
 
-@property (nonatomic, readonly) BOOL hasMedicalIDBytes;
+@property (nonatomic, readonly) bool hasMedicalIDBytes;
 @property (nonatomic, retain) NSData *medicalIDBytes;
 
 - (void).cxx_destruct;
@@ -14,12 +14,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasMedicalIDBytes;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasMedicalIDBytes;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)medicalIDBytes;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setMedicalIDBytes:(id)arg1;
 - (void)writeTo:(id)arg1;
 

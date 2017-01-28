@@ -29,7 +29,7 @@
 - (void)invalidate;
 - (id)netService;
 - (id)peerID;
-- (void)sendData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
 - (id)sendDataBuffer;
 - (void)setConnection:(id)arg1;
 - (void)setNetService:(id)arg1;

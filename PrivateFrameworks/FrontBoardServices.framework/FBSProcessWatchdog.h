@@ -3,18 +3,18 @@
  */
 
 @interface FBSProcessWatchdog : NSObject <BSDescriptionProviding, FBSProcessExecutionProvisionDelegate> {
-    BOOL  _active;
-    id /* block */  _completion;
-    BOOL  _invalidated;
+    bool  _active;
+    id  _completion;
+    bool  _invalidated;
     NSString * _name;
     FBSProcessWatchdogPolicy * _policy;
     <FBSProcessInternal> * _process;
 }
 
-@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, copy) id completion;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) FBSProcessWatchdogPolicy *policy;
 @property (nonatomic, readonly) <FBSProcess> *process;
@@ -24,7 +24,7 @@
 - (void)_beginMonitoringConstraints;
 - (void)_stopMonitoringConstraints;
 - (void)activate;
-- (id /* block */)completion;
+- (id)completion;
 - (void)deactivate;
 - (void)dealloc;
 - (id)description;
@@ -36,8 +36,7 @@
 - (id)policy;
 - (id)process;
 - (void)provision:(id)arg1 wasViolatedWithError:(id)arg2;
-- (void)provisionMilestoneCompleted:(id)arg1;
-- (void)setCompletion:(id /* block */)arg1;
+- (void)setCompletion:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 

@@ -9,7 +9,7 @@
 @property (nonatomic, retain) SASyncAppMetaData *appMetaData;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *intentSlotName;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, copy) NSString *postGen;
@@ -48,6 +48,7 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
-- (BOOL)siriCore_bufferingAllowedDuringActiveSession;
+- (bool)siriCore_bufferingAllowedDuringActiveSession;
+- (bool)siriCore_isRetryable;
 
 @end

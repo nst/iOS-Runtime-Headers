@@ -3,30 +3,30 @@
  */
 
 @interface TSCEWarning : NSObject {
-    BOOL  mIgnored;
+    bool  mIgnored;
     NSDictionary * mMetadata;
 }
 
-+ (void)reportAutomaticUnitConversionWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=cc{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportBoolToNumberConversionWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=cc{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportComparisonWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=cc{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 leftType:(int)arg2 rightType:(int)arg3;
-+ (void)reportDayOutOfRangeWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=cc{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportLossOfUnitsWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=cc{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportMismatchedSizesWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=cc{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportMonthOutOfRangeWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=cc{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
-+ (void)reportNonNumericCellWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=cc{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { BOOL x1; BOOL x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 reference:(id)arg2;
-+ (BOOL)setHasVisibleWarnings:(id)arg1;
++ (void)reportAutomaticUnitConversionWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=BB{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { bool x1; bool x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportBoolToNumberConversionWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=BB{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { bool x1; bool x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportComparisonWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=BB{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { bool x1; bool x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 leftType:(int)arg2 rightType:(int)arg3;
++ (void)reportDayOutOfRangeWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=BB{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { bool x1; bool x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportLossOfUnitsWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=BB{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { bool x1; bool x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportMismatchedSizesWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=BB{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { bool x1; bool x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportMonthOutOfRangeWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=BB{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { bool x1; bool x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1;
++ (void)reportNonNumericCellWarningInContext:(/* Warning: unhandled struct encoding: '{TSCEWarningReportingContext=BB{ObjcSharedPtr<NSMutableSet>=@}}' */ struct TSCEWarningReportingContext { bool x1; bool x2; struct ObjcSharedPtr<NSMutableSet> { id x_3_1_1; } x3; }*)arg1 reference:(id)arg2;
++ (bool)setHasVisibleWarnings:(id)arg1;
 
 - (id)copyByRemappingEntityIDs:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)displayStringWithCalculationEngine:(id)arg1 forTable:(struct __CFUUID { }*)arg2 andCellID:(struct TSUCellCoord { unsigned short x1; unsigned char x2; unsigned char x3; })arg3;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isIgnored;
-- (void)setIgnored:(BOOL)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isIgnored;
+- (void)setIgnored:(bool)arg1;
 - (id)type;
 
 @end

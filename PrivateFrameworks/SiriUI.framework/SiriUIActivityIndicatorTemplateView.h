@@ -11,13 +11,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UILabel *detailTextLabel;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIActivityIndicatorView *spinnerView;
 @property (readonly) Class superclass;
 @property (nonatomic) <SiriUITemplatedView> *templatedSuperview;
 
 - (void).cxx_destruct;
-- (float)desiredHeight;
+- (double)desiredHeight;
 - (id)detailTextLabel;
 - (id)initWithDataSource:(id)arg1;
 - (void)layoutSubviews;

@@ -40,7 +40,7 @@
 - (void)setThresholdCharacteristicsSet:(id)arg1;
 - (id)stepValue;
 - (id)targetCharacteristicType;
-- (unsigned int)temperatureMode;
+- (unsigned long long)temperatureMode;
 - (id)thresholdCharacteristicsSet;
 - (id)valueForCharacteristicValues:(id)arg1;
 

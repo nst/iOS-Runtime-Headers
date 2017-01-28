@@ -3,21 +3,21 @@
  */
 
 @interface _MFKeyValueObserverHandler : NSObject <MFKVOObservation> {
-    id /* block */  _block;
+    id  _block;
     NSString * _keyPath;
     id  _object;
-    BOOL  _observing;
+    bool  _observing;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (id)initWithObject:(id)arg1 keyPath:(id)arg2 usingBlock:(id /* block */)arg3;
+- (id)initWithObject:(id)arg1 keyPath:(id)arg2 usingBlock:(id)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)startObservingWithOptions:(unsigned int)arg1;
+- (void)startObservingWithOptions:(unsigned long long)arg1;
 - (void)stopObserving;
 
 @end

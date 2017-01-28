@@ -5,21 +5,21 @@
 @interface _CKAcknowledgmentTally : NSObject {
     NSArray * _contacts;
     NSArray * _senders;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic, copy) NSArray *contacts;
 @property (nonatomic, copy) NSArray *senders;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 
 - (void).cxx_destruct;
 - (id)contacts;
 - (id)description;
-- (id)initWithType:(int)arg1 senders:(id)arg2;
+- (id)initWithType:(long long)arg1 senders:(id)arg2;
 - (id)senders;
 - (void)setContacts:(id)arg1;
 - (void)setSenders:(id)arg1;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (long long)type;
 
 @end

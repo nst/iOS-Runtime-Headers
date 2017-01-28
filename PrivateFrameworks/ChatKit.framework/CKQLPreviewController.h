@@ -3,24 +3,28 @@
  */
 
 @interface CKQLPreviewController : QLPreviewController <QLPreviewControllerDataSource> {
+    bool  _controllerWasDismissed;
     NSArray * _previewItems;
 }
 
+@property (nonatomic) bool controllerWasDismissed;
 @property (nonatomic, copy) NSArray *previewItems;
 
 - (void).cxx_destruct;
+- (bool)controllerWasDismissed;
 - (id)currentPreviewItem;
-- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissViewControllerAnimated:(bool)arg1 completion:(id)arg2;
 - (id)init;
 - (void)loadView;
-- (int)numberOfPreviewItemsInPreviewController:(id)arg1;
-- (int)preferredStatusBarStyle;
+- (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
+- (long long)preferredStatusBarStyle;
 - (id)previewActions;
-- (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
+- (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (id)previewItems;
+- (void)setControllerWasDismissed:(bool)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setPreviewItems:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

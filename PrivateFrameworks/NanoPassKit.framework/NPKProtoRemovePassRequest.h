@@ -15,10 +15,10 @@
 }
 
 @property (nonatomic, retain) NPKProtoCatalog *catalog;
-@property (nonatomic, readonly) BOOL hasCatalog;
-@property (nonatomic) BOOL hasLastKnownResyncID;
-@property (nonatomic, readonly) BOOL hasLibraryHash;
-@property (nonatomic) BOOL hasResyncID;
+@property (nonatomic, readonly) bool hasCatalog;
+@property (nonatomic) bool hasLastKnownResyncID;
+@property (nonatomic, readonly) bool hasLibraryHash;
+@property (nonatomic) bool hasResyncID;
 @property (nonatomic) unsigned int lastKnownResyncID;
 @property (nonatomic, retain) NPKProtoHash *libraryHash;
 @property (nonatomic, retain) NSString *passID;
@@ -30,21 +30,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCatalog;
-- (BOOL)hasLastKnownResyncID;
-- (BOOL)hasLibraryHash;
-- (BOOL)hasResyncID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCatalog;
+- (bool)hasLastKnownResyncID;
+- (bool)hasLibraryHash;
+- (bool)hasResyncID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (unsigned int)lastKnownResyncID;
 - (id)libraryHash;
 - (void)mergeFrom:(id)arg1;
 - (id)passID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)resyncID;
 - (void)setCatalog:(id)arg1;
-- (void)setHasLastKnownResyncID:(BOOL)arg1;
-- (void)setHasResyncID:(BOOL)arg1;
+- (void)setHasLastKnownResyncID:(bool)arg1;
+- (void)setHasResyncID:(bool)arg1;
 - (void)setLastKnownResyncID:(unsigned int)arg1;
 - (void)setLibraryHash:(id)arg1;
 - (void)setPassID:(id)arg1;

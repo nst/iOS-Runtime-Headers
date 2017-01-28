@@ -3,24 +3,24 @@
  */
 
 @interface StocksWatchPreferences : NSObject {
-    BOOL  _changeColorSwapped;
-    unsigned int  _textDirection;
+    bool  _changeColorSwapped;
+    unsigned long long  _textDirection;
     NPSDomainAccessor * _watchDefaults;
 }
 
-@property (nonatomic) int complicationDisplayMode;
+@property (nonatomic) long long complicationDisplayMode;
 @property (nonatomic) NSString *defaultStockSymbol;
 
 + (void)initialize;
 + (id)sharedPreferences;
 
 - (void).cxx_destruct;
-- (int)complicationDisplayMode;
+- (long long)complicationDisplayMode;
 - (void)dealloc;
 - (id)defaultStockSymbol;
 - (id)init;
 - (void)reactivateWatchNPSAccessor;
-- (void)setComplicationDisplayMode:(int)arg1;
+- (void)setComplicationDisplayMode:(long long)arg1;
 - (void)setDefaultStockSymbol:(id)arg1;
 - (void)syncChartInterval;
 - (void)syncKey:(id)arg1;

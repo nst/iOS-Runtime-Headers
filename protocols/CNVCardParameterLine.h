@@ -5,10 +5,10 @@
 
 @required
 
-- (void)addGroupedLine:(id <CNVCardLine>)arg1 withCounter:(int*)arg2;
+- (void)addGroupedLine:(id <CNVCardLine>)arg1 withCounter:(long long*)arg2;
 - (void)addParameterWithName:(NSString *)arg1 value:(NSString *)arg2;
-- (BOOL)canSerializeWithStrategy:(id <CNVCardLineSerialization>)arg1;
-- (void)insertParameterWithName:(NSString *)arg1 value:(NSString *)arg2 atIndex:(unsigned int)arg3;
+- (bool)canSerializeWithStrategy:(id <CNVCardLineSerialization>)arg1;
+- (void)insertParameterWithName:(NSString *)arg1 value:(NSString *)arg2 atIndex:(unsigned long long)arg3;
 - (void)serializeValueWithStrategy:(id <CNVCardLineSerialization>)arg1;
 
 @end

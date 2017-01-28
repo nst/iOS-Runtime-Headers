@@ -9,19 +9,19 @@
 - (void)assistantWaitingForResourcesComplete;
 - (void)assistantWaitingForResourcesStart;
 - (void)connectionVerificationSucceededForSelector:(int)arg1;
-- (void)doneWithAssistantResult:(long)arg1;
-- (void)presentUIForRecommendationResult:(long)arg1 paramDict:(NSDictionary *)arg2;
+- (void)doneWithAssistantResult:(int)arg1;
+- (void)presentUIForRecommendationResult:(int)arg1 paramDict:(NSDictionary *)arg2;
 - (void)presentUIForRecommendationStatus;
 - (void)presentUIForRecommmendationTargetInfo:(NSDictionary *)arg1;
-- (void)presentUIForSetupResult:(long)arg1 baseStationInfo:(NSDictionary *)arg2 withPrompt:(NSString *)arg3;
+- (void)presentUIForSetupResult:(int)arg1 baseStationInfo:(NSDictionary *)arg2 withPrompt:(NSString *)arg3;
 - (void)presentUIForSetupStatusWithRecommendationDict:(NSDictionary *)arg1;
 - (void)presentUIForStepByStepNextStep:(int)arg1 paramDict:(NSDictionary *)arg2;
-- (void)presentUIForStepByStepResult:(long)arg1;
+- (void)presentUIForStepByStepResult:(int)arg1;
 - (void)presentUIForStepByStepStart;
-- (void)showAskUserForPPPoECredentialsForStatus:(long)arg1 paramDict:(NSDictionary *)arg2;
-- (void)showAskUserSwapCablingForStatus:(long)arg1 paramDict:(NSDictionary *)arg2;
-- (void)showTellUserToPlugInEthernetForStatus:(long)arg1 paramDict:(NSDictionary *)arg2;
-- (void)showTellUserToResetBroadbandDeviceForStatus:(long)arg1 paramDict:(NSDictionary *)arg2;
+- (void)showAskUserForPPPoECredentialsForStatus:(int)arg1 paramDict:(NSDictionary *)arg2;
+- (void)showAskUserSwapCablingForStatus:(int)arg1 paramDict:(NSDictionary *)arg2;
+- (void)showTellUserToPlugInEthernetForStatus:(int)arg1 paramDict:(NSDictionary *)arg2;
+- (void)showTellUserToResetBroadbandDeviceForStatus:(int)arg1 paramDict:(NSDictionary *)arg2;
 - (void)showUIConfigPromptForGuestNetConfigWithParamDict:(NSDictionary *)arg1;
 - (void)showUIConfigPromptToSendDiagsUsageStatsWithParamDict:(NSDictionary *)arg1;
 

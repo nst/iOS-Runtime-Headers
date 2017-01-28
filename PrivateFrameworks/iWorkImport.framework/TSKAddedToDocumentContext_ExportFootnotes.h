@@ -5,6 +5,6 @@
 @interface TSKAddedToDocumentContext_ExportFootnotes : TSKAddedToDocumentContext
 
 - (id)description;
-- (BOOL)preserveChangeTracking;
+- (bool)preserveChangeTracking;
 
 @end

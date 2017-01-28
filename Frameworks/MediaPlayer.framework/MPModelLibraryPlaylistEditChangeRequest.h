@@ -5,7 +5,7 @@
 @interface MPModelLibraryPlaylistEditChangeRequest : NSObject <NSCopying> {
     NSString * _authorStoreIdentifier;
     NSNumber * _curatorPlaylist;
-    BOOL  _didSetPlaylistUserImage;
+    bool  _didSetPlaylistUserImage;
     NSNumber * _isOwner;
     MPMediaLibrary * _mediaLibrary;
     MPModelPlaylist * _parentPlaylist;
@@ -15,13 +15,13 @@
     NSString * _playlistName;
     UIImage * _playlistUserImage;
     NSNumber * _publicPlaylist;
-    BOOL  _shouldCreatePlaylist;
+    bool  _shouldCreatePlaylist;
     NSNumber * _visiblePlaylist;
 }
 
 @property (nonatomic, copy) NSString *authorStoreIdentifier;
 @property (getter=isCuratorPlaylist, nonatomic, copy) NSNumber *curatorPlaylist;
-@property (nonatomic, readonly) BOOL didSetPlaylistUserImage;
+@property (nonatomic, readonly) bool didSetPlaylistUserImage;
 @property (nonatomic, copy) NSNumber *isOwner;
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
 @property (nonatomic, retain) MPModelPlaylist *parentPlaylist;
@@ -31,7 +31,7 @@
 @property (nonatomic, copy) NSString *playlistName;
 @property (nonatomic, retain) UIImage *playlistUserImage;
 @property (getter=isPublicPlaylist, nonatomic, copy) NSNumber *publicPlaylist;
-@property (nonatomic) BOOL shouldCreatePlaylist;
+@property (nonatomic) bool shouldCreatePlaylist;
 @property (getter=isVisiblePlaylist, nonatomic, copy) NSNumber *visiblePlaylist;
 
 + (id)requiredPlaylistEntryProperties;
@@ -39,14 +39,14 @@
 - (void).cxx_destruct;
 - (id)authorStoreIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)didSetPlaylistUserImage;
+- (bool)didSetPlaylistUserImage;
 - (id)init;
 - (id)isCuratorPlaylist;
 - (id)isOwner;
 - (id)isPublicPlaylist;
 - (id)isVisiblePlaylist;
 - (id)mediaLibrary;
-- (id)newOperationWithLocalPersistenceResponseHandler:(id /* block */)arg1 completeResponseHandler:(id /* block */)arg2;
+- (id)newOperationWithLocalPersistenceResponseHandler:(id)arg1 completeResponseHandler:(id)arg2;
 - (id)parentPlaylist;
 - (id)playlist;
 - (id)playlistDescription;
@@ -64,8 +64,8 @@
 - (void)setPlaylistName:(id)arg1;
 - (void)setPlaylistUserImage:(id)arg1;
 - (void)setPublicPlaylist:(id)arg1;
-- (void)setShouldCreatePlaylist:(BOOL)arg1;
+- (void)setShouldCreatePlaylist:(bool)arg1;
 - (void)setVisiblePlaylist:(id)arg1;
-- (BOOL)shouldCreatePlaylist;
+- (bool)shouldCreatePlaylist;
 
 @end

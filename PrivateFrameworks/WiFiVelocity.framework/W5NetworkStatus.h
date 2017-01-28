@@ -30,18 +30,18 @@
 @property (nonatomic, copy) NSString *primaryIPv6ServiceID;
 @property (nonatomic, copy) NSString *primaryIPv6ServiceName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)conformsToProtocol:(id)arg1;
+- (bool)conformsToProtocol:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)isAppleReachable;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToNetworkStatus:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToNetworkStatus:(id)arg1;
 - (id)primaryDNSAddresses;
 - (id)primaryIPv4Addresses;
 - (id)primaryIPv4InterfaceName;

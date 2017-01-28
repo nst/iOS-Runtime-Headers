@@ -4,7 +4,7 @@
 
 @interface HFUpdateLogger : NSObject {
     NSString * _clientDescription;
-    BOOL  _didReachSoftTimeout;
+    bool  _didReachSoftTimeout;
     NSObject<OS_os_activity> * _loggerActivity;
     double  _softTimeoutInterval;
     NSTimer * _softTimeoutTimer;
@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) NSString *clientDescription;
-@property (nonatomic) BOOL didReachSoftTimeout;
+@property (nonatomic) bool didReachSoftTimeout;
 @property (nonatomic, retain) NSObject<OS_os_activity> *loggerActivity;
 @property (nonatomic) double softTimeoutInterval;
 @property (nonatomic, retain) NSTimer *softTimeoutTimer;
@@ -25,12 +25,12 @@
 - (void)_handleTimeout:(id)arg1;
 - (id)clientDescription;
 - (id)description;
-- (BOOL)didReachSoftTimeout;
+- (bool)didReachSoftTimeout;
 - (void)finish;
 - (id)initWithTimeout:(double)arg1 description:(id)arg2;
 - (id)loggerActivity;
 - (void)setClientDescription:(id)arg1;
-- (void)setDidReachSoftTimeout:(BOOL)arg1;
+- (void)setDidReachSoftTimeout:(bool)arg1;
 - (void)setLoggerActivity:(id)arg1;
 - (void)setSoftTimeoutInterval:(double)arg1;
 - (void)setSoftTimeoutTimer:(id)arg1;

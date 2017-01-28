@@ -4,7 +4,7 @@
 
 @interface LPiTunesMediaLookupTask : SSLookupRequest
 
-- (id)initWithIdentifier:(id)arg1 storefrontCountryCode:(id)arg2 type:(int)arg3;
-- (void)start:(id /* block */)arg1;
+- (id)initWithIdentifier:(id)arg1 storefrontCountryCode:(id)arg2 type:(long long)arg3;
+- (void)start:(id)arg1;
 
 @end

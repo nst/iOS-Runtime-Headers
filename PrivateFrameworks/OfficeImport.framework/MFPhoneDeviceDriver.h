@@ -5,69 +5,69 @@
 @interface MFPhoneDeviceDriver : NSObject <MFDeviceDriver> {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  m_canvas;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  m_canvasTransform;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  m_combinedTransform;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  m_viewBox;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  m_viewBoxTransform;
     struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
+        double a; 
+        double b; 
+        double c; 
+        double d; 
+        double tx; 
+        double ty; 
     }  m_worldToDeviceTransform;
 }
 
 + (int)getROP:(id)arg1;
 
-- (int)activateTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (int)alphaBlend:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(BOOL)arg12 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg13 :(unsigned int)arg14;
+- (int)activateTransform:(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; })arg1;
+- (int)alphaBlend:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(bool)arg12 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg13 :(unsigned int)arg14;
 - (int)angleArc:(id)arg1 :(int)arg2 :(int)arg3 :(unsigned int)arg4 :(double)arg5 :(double)arg6;
 - (void)applyTransformsToCurrentContext;
 - (int)arc:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (int)arcTo:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (int)bezier:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (int)bezierTo:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7;
-- (int)bitBlt:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(unsigned int)arg9 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg10 :(unsigned int)arg11;
+- (int)bitBlt:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(unsigned int)arg9 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg10 :(unsigned int)arg11;
 - (int)chord:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (id)createBitmap:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(const char *)arg6 :(unsigned int)arg7;
 - (id)createDIBitmap:(id)arg1 :(const char *)arg2 :(unsigned int)arg3 :(int)arg4;
@@ -78,34 +78,34 @@
 - (id)createHatchBrush:(id)arg1 :(int)arg2;
 - (id)createNullBrush;
 - (id)createPath;
-- (id)createPatternBrush:(id)arg1 usePaletteForBilevel:(BOOL)arg2;
+- (id)createPatternBrush:(id)arg1 usePaletteForBilevel:(bool)arg2;
 - (id)createPen;
 - (id)createPen:(int)arg1 :(int)arg2 :(id)arg3 :(double*)arg4;
 - (id)createRegionWithPath:(id)arg1;
 - (id)createRegionWithRects:(id)arg1 :(id)arg2;
 - (id)createSolidBrush:(id)arg1;
 - (void)dealloc;
-- (void)drawBezierPath:(id)arg1 dc:(id)arg2 fill:(BOOL)arg3 stroke:(BOOL)arg4;
+- (void)drawBezierPath:(id)arg1 dc:(id)arg2 fill:(bool)arg3 stroke:(bool)arg4;
 - (int)ellipse:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5;
-- (int)excludeClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)excludeClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)extTextOut:(id)arg1 :(int*)arg2 :(int*)arg3 :(id)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int*)arg10 :(int)arg11;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getCanvas;
-- (id)initWithCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)intersectClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })getCanvas;
+- (id)initWithCanvas:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (int)intersectClipRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)lineTo:(id)arg1 :(double)arg2 :(double)arg3;
-- (int)maskBlt:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(id)arg9 :(int)arg10 :(int)arg11 :(unsigned int)arg12 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg13 :(unsigned int)arg14;
+- (int)maskBlt:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(id)arg9 :(int)arg10 :(int)arg11 :(unsigned int)arg12 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg13 :(unsigned int)arg14;
 - (int)patBlt:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(unsigned int)arg6;
 - (int)pie:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
-- (int)plgBlt:(id)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(id)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(id)arg8 :(int)arg9 :(int)arg10 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg11 :(unsigned int)arg12;
-- (int)polyPolygon:(id)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int*)arg3 :(int)arg4;
-- (int)polyPolyline:(id)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int*)arg3 :(int)arg4;
-- (int)polygon:(id)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int)arg3;
-- (int)polyline:(id)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int)arg3;
+- (int)plgBlt:(id)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(id)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(id)arg8 :(int)arg9 :(int)arg10 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg11 :(unsigned int)arg12;
+- (int)polyPolygon:(id)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(int*)arg3 :(int)arg4;
+- (int)polyPolyline:(id)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(int*)arg3 :(int)arg4;
+- (int)polygon:(id)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(int)arg3;
+- (int)polyline:(id)arg1 :(struct CGPoint { double x1; double x2; }*)arg2 :(int)arg3;
 - (int)rectangle:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5;
 - (int)roundRect:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(double)arg6 :(double)arg7;
 - (int)setMetaRgn;
 - (int)setViewBox:(double)arg1 :(double)arg2 :(double)arg3 :(double)arg4;
-- (int)stretchBlt:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned int)arg11 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg12 :(unsigned int)arg13;
+- (int)stretchBlt:(id)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(id)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned int)arg11 :(struct CGAffineTransform { double x1; double x2; double x3; double x4; double x5; double x6; }*)arg12 :(unsigned int)arg13;
 - (int)textOut:(id)arg1 :(int*)arg2 :(int*)arg3 :(id)arg4;
 - (void)updateViewBoxTransform;
 

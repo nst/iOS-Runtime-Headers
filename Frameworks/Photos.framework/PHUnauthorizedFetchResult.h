@@ -3,14 +3,14 @@
  */
 
 @interface PHUnauthorizedFetchResult : PHFetchResult {
-    id /* block */  _fetchBlock;
+    id  _fetchBlock;
     NSString * _identifier;
     NSOrderedSet * _objectIDs;
     NSArray * _objects;
     PHFetchOptions * _options;
 }
 
-@property (readonly) id /* block */ fetchBlock;
+@property (readonly) id fetchBlock;
 @property (readonly) NSString *identifier;
 @property (readonly) NSOrderedSet *objectIDs;
 @property (readonly) NSArray *objects;
@@ -19,26 +19,26 @@
 - (void).cxx_destruct;
 - (id)changeHandlingKey;
 - (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
-- (int)collectionFetchType;
+- (long long)collectionFetchType;
 - (id)containerIdentifier;
 - (id)copyWithOptions:(id)arg1;
 - (id)description;
-- (id /* block */)fetchBlock;
+- (id)fetchBlock;
 - (id)fetchRequest;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;
 - (id)fetchedObjectIDs;
 - (id)fetchedObjects;
 - (void)getMediaTypeCounts;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
-- (id)initWithOptions:(id)arg1 fetchBlock:(id /* block */)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (id)objectIDAtIndex:(unsigned int)arg1;
+- (id)initWithOptions:(id)arg1 fetchBlock:(id)arg2;
+- (bool)isEqual:(id)arg1;
+- (id)objectIDAtIndex:(unsigned long long)arg1;
 - (id)objectIDs;
 - (id)objects;
 - (id)options;
 - (id)photoLibrary;
-- (unsigned int)possibleChangesForChange:(id)arg1;
+- (unsigned long long)possibleChangesForChange:(id)arg1;
 - (void)prefetchObjectsAtIndexes:(id)arg1;
 - (void)updateRegistrationForChangeNotificationDeltas;
 

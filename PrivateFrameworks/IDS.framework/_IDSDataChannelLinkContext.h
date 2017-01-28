@@ -3,16 +3,16 @@
  */
 
 @interface _IDSDataChannelLinkContext : NSObject {
-    unsigned int  _RATType;
-    int  _connectionType;
+    unsigned long long  _RATType;
+    long long  _connectionType;
     unsigned char  _flags;
     BOOL  _linkID;
     unsigned int  _maxBitrate;
     unsigned short  _maxMTU;
     unsigned char  _networkType;
-    int  _remoteConnectionType;
+    long long  _remoteConnectionType;
     unsigned char  _remoteNetworkType;
-    unsigned int  _remoteRATType;
+    unsigned long long  _remoteRATType;
 }
 
 - (id)description;

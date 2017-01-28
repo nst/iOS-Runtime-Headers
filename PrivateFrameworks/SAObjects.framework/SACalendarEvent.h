@@ -5,7 +5,7 @@
 @interface SACalendarEvent : SADomainObject
 
 @property (nonatomic, copy) NSArray *alerts;
-@property (nonatomic) BOOL allDay;
+@property (nonatomic) bool allDay;
 @property (nonatomic, copy) NSArray *attendees;
 @property (nonatomic, copy) NSURL *calendarId;
 @property (nonatomic, copy) NSURL *calendarPunchoutURI;
@@ -23,7 +23,7 @@
 + (id)eventWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)alerts;
-- (BOOL)allDay;
+- (bool)allDay;
 - (id)attendees;
 - (id)calendarId;
 - (id)calendarPunchoutURI;
@@ -36,7 +36,7 @@
 - (id)readOnly;
 - (id)recurrences;
 - (void)setAlerts:(id)arg1;
-- (void)setAllDay:(BOOL)arg1;
+- (void)setAllDay:(bool)arg1;
 - (void)setAttendees:(id)arg1;
 - (void)setCalendarId:(id)arg1;
 - (void)setCalendarPunchoutURI:(id)arg1;

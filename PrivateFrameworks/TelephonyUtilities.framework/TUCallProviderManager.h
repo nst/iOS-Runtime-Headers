@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TUCallProvider *emergencyProvider;
 @property (nonatomic, readonly) TUCallProvider *faceTimeProvider;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSArray *providers;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) TUCallProvider *voicemailProvider;
 
 + (id)defaultProviders;
-+ (int)serviceForProvider:(id)arg1 video:(BOOL)arg2;
++ (int)serviceForProvider:(id)arg1 video:(bool)arg2;
 
 - (void).cxx_destruct;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
@@ -40,10 +40,10 @@
 - (id)providerForFavoritesEntryActionBundleIdentifier:(id)arg1;
 - (id)providerForRecentCall:(id)arg1;
 - (id)providerWithIdentifier:(id)arg1;
-- (id)providerWithService:(int)arg1 video:(BOOL*)arg2;
+- (id)providerWithService:(int)arg1 video:(bool*)arg2;
 - (id)providers;
 - (void)providersChangedForDataSource:(id)arg1;
-- (id)providersPassingTest:(id /* block */)arg1;
+- (id)providersPassingTest:(id)arg1;
 - (id)queue;
 - (void)removeDelegate:(id)arg1;
 - (void)setDelegateToQueue:(id)arg1;

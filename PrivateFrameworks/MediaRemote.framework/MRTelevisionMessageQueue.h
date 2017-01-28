@@ -6,15 +6,15 @@
     MRPendingMessageQueue * _pendingMessageQueue;
     NSMutableDictionary * _pendingReplyQueue;
     NSObject<OS_dispatch_queue> * _queue;
-    BOOL  _stopped;
+    bool  _stopped;
 }
 
-- (void)_processNextMessages:(id /* block */)arg1;
+- (void)_processNextMessages:(id)arg1;
 - (void)dealloc;
-- (void)enqueueMessage:(id)arg1 reply:(id /* block */)arg2 queue:(id)arg3 createDataBlock:(id /* block */)arg4;
-- (id)initWithMaxLowPriorityMessagesAllowed:(unsigned int)arg1;
-- (void)processNextMessages:(id /* block */)arg1;
-- (BOOL)reply:(id)arg1;
+- (void)enqueueMessage:(id)arg1 reply:(id)arg2 queue:(id)arg3 createDataBlock:(id)arg4;
+- (id)initWithMaxLowPriorityMessagesAllowed:(unsigned long long)arg1;
+- (void)processNextMessages:(id)arg1;
+- (bool)reply:(id)arg1;
 - (void)stop;
 
 @end

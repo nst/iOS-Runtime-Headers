@@ -3,70 +3,70 @@
  */
 
 @interface PUFiltersToolController : PUPhotoEditToolController <UICollectionViewDataSource, UICollectionViewDelegate> {
-    unsigned int  __cachedSelectionIndex;
+    unsigned long long  __cachedSelectionIndex;
     UICollectionView * __collectionView;
     UICollectionViewFlowLayout * __collectionViewLayout;
-    BOOL  __needsThumbnails;
+    bool  __needsThumbnails;
     NSMutableDictionary * __thumbnailImages;
     NSArray * _collectionViewConstraints;
-    BOOL  _didPerformInitialScrollToReveal;
+    bool  _didPerformInitialScrollToReveal;
 }
 
-@property (setter=_setCachedSelectionIndex:, nonatomic) unsigned int _cachedSelectionIndex;
+@property (setter=_setCachedSelectionIndex:, nonatomic) unsigned long long _cachedSelectionIndex;
 @property (setter=_setCollectionView:, nonatomic, retain) UICollectionView *_collectionView;
 @property (setter=_setCollectionViewLayout:, nonatomic, retain) UICollectionViewFlowLayout *_collectionViewLayout;
-@property (nonatomic, readonly) BOOL _needsThumbnails;
+@property (nonatomic, readonly) bool _needsThumbnails;
 @property (setter=_setThumbnailImages:, nonatomic, retain) NSMutableDictionary *_thumbnailImages;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PUFiltersToolControllerSpec *spec;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (unsigned int)_cachedSelectionIndex;
-- (void)_changeModelEffect:(id)arg1 explicitly:(BOOL)arg2;
+- (unsigned long long)_cachedSelectionIndex;
+- (void)_changeModelEffect:(id)arg1 explicitly:(bool)arg2;
 - (id)_collectionView;
 - (id)_collectionViewLayout;
-- (void)_loadStateFromModelAnimated:(BOOL)arg1;
-- (BOOL)_needsThumbnails;
+- (void)_loadStateFromModelAnimated:(bool)arg1;
+- (bool)_needsThumbnails;
 - (void)_prepareThumbnailImagesIfNeeded;
-- (void)_saveThumbnail:(id)arg1 forIndex:(unsigned int)arg2;
-- (void)_scrollToNextEffectIfNecessaryIncludingOffscreen:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_scrollToSelectedEffectAnimated:(BOOL)arg1;
+- (void)_saveThumbnail:(id)arg1 forIndex:(unsigned long long)arg2;
+- (void)_scrollToNextEffectIfNecessaryIncludingOffscreen:(bool)arg1 animated:(bool)arg2;
+- (void)_scrollToSelectedEffectAnimated:(bool)arg1;
 - (id)_selectedIndexPath;
-- (void)_setCachedSelectionIndex:(unsigned int)arg1;
+- (void)_setCachedSelectionIndex:(unsigned long long)arg1;
 - (void)_setCollectionView:(id)arg1;
 - (void)_setCollectionViewLayout:(id)arg1;
 - (void)_setNeedsThumbnails;
 - (void)_setThumbnailImages:(id)arg1;
-- (id)_thumbnailImageForIndex:(unsigned int)arg1;
+- (id)_thumbnailImageForIndex:(unsigned long long)arg1;
 - (id)_thumbnailImages;
 - (void)_updateCollectionView;
 - (void)_updateCollectionViewInsets;
 - (void)_updateEffectSelection;
 - (void)basePhotoInvalidated;
-- (BOOL)canResetToDefaultValue;
+- (bool)canResetToDefaultValue;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)installLivePhotoPlaybackGestureRecognizer:(id)arg1;
-- (BOOL)installTogglePreviewGestureRecognizer:(id)arg1;
+- (bool)installLivePhotoPlaybackGestureRecognizer:(id)arg1;
+- (bool)installTogglePreviewGestureRecognizer:(id)arg1;
 - (id)localizedName;
 - (id)localizedResetToolActionTitle;
 - (void)photoEditModelDidChange;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
-- (void)resetToDefaultValueAnimated:(BOOL)arg1;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })preferredPreviewViewInsets;
+- (void)resetToDefaultValueAnimated:(bool)arg1;
 - (id)selectedToolbarIcon;
 - (void)setDelegate:(id)arg1;
-- (void)setLayoutOrientation:(int)arg1;
-- (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
+- (void)setLayoutOrientation:(long long)arg1;
+- (void)setLayoutOrientation:(long long)arg1 withTransitionCoordinator:(id)arg2;
 - (void)specDidChange;
 - (id)toolbarIcon;
 - (void)updateViewConstraints;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

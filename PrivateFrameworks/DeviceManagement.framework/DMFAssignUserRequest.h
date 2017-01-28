@@ -28,7 +28,7 @@
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *userIdentifier;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)appleID;

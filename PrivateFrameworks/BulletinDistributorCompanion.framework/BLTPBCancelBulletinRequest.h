@@ -15,10 +15,10 @@
 
 @property (nonatomic) double date;
 @property (nonatomic) unsigned int feed;
-@property (nonatomic) BOOL hasDate;
-@property (nonatomic) BOOL hasFeed;
-@property (nonatomic, readonly) BOOL hasPublisherMatchID;
-@property (nonatomic, readonly) BOOL hasUniversalSectionID;
+@property (nonatomic) bool hasDate;
+@property (nonatomic) bool hasFeed;
+@property (nonatomic, readonly) bool hasPublisherMatchID;
+@property (nonatomic, readonly) bool hasUniversalSectionID;
 @property (nonatomic, retain) NSString *publisherMatchID;
 @property (nonatomic, retain) NSString *universalSectionID;
 
@@ -29,19 +29,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)feed;
-- (BOOL)hasDate;
-- (BOOL)hasFeed;
-- (BOOL)hasPublisherMatchID;
-- (BOOL)hasUniversalSectionID;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDate;
+- (bool)hasFeed;
+- (bool)hasPublisherMatchID;
+- (bool)hasUniversalSectionID;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)publisherMatchID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDate:(double)arg1;
 - (void)setFeed:(unsigned int)arg1;
-- (void)setHasDate:(BOOL)arg1;
-- (void)setHasFeed:(BOOL)arg1;
+- (void)setHasDate:(bool)arg1;
+- (void)setHasFeed:(bool)arg1;
 - (void)setPublisherMatchID:(id)arg1;
 - (void)setUniversalSectionID:(id)arg1;
 - (id)universalSectionID;

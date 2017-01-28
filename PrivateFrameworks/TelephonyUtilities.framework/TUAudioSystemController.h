@@ -3,17 +3,18 @@
  */
 
 @interface TUAudioSystemController : TUAudioController {
+    NSArray * _currentPickableRoutes;
     NSObject<OS_dispatch_queue> * _downlinkMutedQueue;
     NSNumber * _isDownlinkMutedCached;
-    BOOL  _isRequestingDownlinkMuted;
-    BOOL  _isRequestingPickableRoutesForPhoneCall;
-    BOOL  _isRequestingPickableRoutesForPlayAndRecordRemoteVoice;
-    BOOL  _isRequestingPickableRoutesForPlayAndRecordVideo;
-    BOOL  _isRequestingPickableRoutesForPlayAndRecordVoice;
-    BOOL  _isRequestingPickableRoutesForTTY;
-    BOOL  _isRequestingPickableRoutesForVoicemail;
-    BOOL  _isRequestingTTY;
-    BOOL  _isRequestingUplinkMuted;
+    bool  _isRequestingDownlinkMuted;
+    bool  _isRequestingPickableRoutesForPhoneCall;
+    bool  _isRequestingPickableRoutesForPlayAndRecordRemoteVoice;
+    bool  _isRequestingPickableRoutesForPlayAndRecordVideo;
+    bool  _isRequestingPickableRoutesForPlayAndRecordVoice;
+    bool  _isRequestingPickableRoutesForTTY;
+    bool  _isRequestingPickableRoutesForVoicemail;
+    bool  _isRequestingTTY;
+    bool  _isRequestingUplinkMuted;
     NSNumber * _isTTYCached;
     NSNumber * _isUplinkMutedCached;
     unsigned long long  _lastDownlinkMutedRequestScheduleTime;
@@ -36,38 +37,41 @@
     NSObject<OS_dispatch_queue> * _uplinkMutedQueue;
 }
 
-@property (getter=isDownlinkMuted, nonatomic) BOOL downlinkMuted;
-@property (getter=isTTY, nonatomic, readonly) BOOL tty;
-@property (getter=isUplinkMuted, nonatomic) BOOL uplinkMuted;
+@property (getter=isDownlinkMuted, nonatomic) bool downlinkMuted;
+@property (getter=isTTY, nonatomic, readonly) bool tty;
+@property (getter=isUplinkMuted, nonatomic) bool uplinkMuted;
 
 + (id)sharedAudioSystemController;
 + (id)sharedSystemController;
 + (id)sourceIdentifierForRouteID:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_getPickableRoutesForCategory:(id)arg1 mode:(id)arg2 onlyKnownCombinations:(bool)arg3 completion:(id)arg4;
 - (void)_handleDownlinkMuteDidChangeNotification:(id)arg1;
 - (void)_handlePickableRoutesDidChangeNotification:(id)arg1;
 - (void)_handleServerConnectionDiedNotification:(id)arg1;
 - (void)_handleUplinkMuteDidChangeNotification:(id)arg1;
-- (id)_pickableRoutesForPhoneCallWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForPlayAndRecordRemoteVoiceWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForPlayAndRecordVideoWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForPlayAndRecordVoiceWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForTTYWithForceNewRequest:(BOOL)arg1;
-- (id)_pickableRoutesForVoiceMailWithForceNewRequest:(BOOL)arg1;
+- (void)_loadCurrentPickableRoutesWithCompletion:(id)arg1;
+- (id)_pickableRoutesForPhoneCallWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForPlayAndRecordRemoteVoiceWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForPlayAndRecordVideoWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForPlayAndRecordVoiceWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForTTYWithForceNewRequest:(bool)arg1;
+- (id)_pickableRoutesForVoiceMailWithForceNewRequest:(bool)arg1;
 - (void)_updateCachedState;
 - (id)bestGuessPickableRoutesForAnyCall;
 - (id)currentlyPickedRouteIdForCategory:(id)arg1 andMode:(id)arg2;
 - (void)dealloc;
+- (void)getPickableRoutesForCategory:(id)arg1 mode:(id)arg2 completion:(id)arg3;
 - (id)init;
-- (BOOL)isDownlinkMuted;
-- (BOOL)isTTY;
-- (BOOL)isUplinkMuted;
+- (bool)isDownlinkMuted;
+- (bool)isTTY;
+- (bool)isUplinkMuted;
 - (id)pickableRouteWithUniqueIdentifier:(id)arg1;
 - (id)pickableRoutesForCategory:(id)arg1 andMode:(id)arg2;
 - (id)pickableRoutesForTTY;
-- (void)setDownlinkMuted:(BOOL)arg1;
-- (void)setUplinkMuted:(BOOL)arg1;
-- (BOOL)shouldSuppressCallUsingRoute:(id)arg1;
+- (void)setDownlinkMuted:(bool)arg1;
+- (void)setUplinkMuted:(bool)arg1;
+- (bool)shouldSuppressCallUsingRoute:(id)arg1;
 
 @end

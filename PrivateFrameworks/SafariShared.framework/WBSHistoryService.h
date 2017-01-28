@@ -14,16 +14,16 @@
 @property (nonatomic, readonly) NSURL *databaseURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) WBSHistoryURLCompletionDataStore *urlCompletionDataStore;
 
 - (void).cxx_destruct;
-- (BOOL)_connectionIsEntitledToUseService:(id)arg1;
+- (bool)_connectionIsEntitledToUseService:(id)arg1;
 - (id)databaseAccessBroker;
 - (id)databaseURL;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)postHistoryNotificationToRegisteredConnections:(id)arg1;
 - (void)registerConnectionForHistoryNotifications:(id)arg1;
 - (void)resume;

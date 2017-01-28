@@ -4,55 +4,55 @@
 
 @interface TSKCustomFormatList : TSPObject <NSCopying> {
     NSMutableDictionary * mFormatsByKeyDictionary;
-    BOOL  mImporting;
-    BOOL  mImportingDone;
+    bool  mImporting;
+    bool  mImportingDone;
     TSUNoCopyDictionary * mIndexesByKey;
     TSUNoCopyDictionary * mKeysByFormatDictionary;
     TSUNoCopyDictionary * mKeysByFormatWithNameStemMatching;
     TSUSparseArray * mKeysByIndex;
     NSMutableSet * mNamesList;
-    BOOL  mUpgrading;
-    BOOL  mUpgradingDone;
+    bool  mUpgrading;
+    bool  mUpgradingDone;
 }
 
-@property (nonatomic) BOOL importing;
-@property (nonatomic) BOOL upgrading;
+@property (nonatomic) bool importing;
+@property (nonatomic) bool upgrading;
 
 + (void)archiveKeys:(id)arg1 message:(struct RepeatedPtrField<TSP::UUID> { void **x1; int x2; int x3; int x4; }*)arg2;
 + (id)unarchiveKeys:(const struct RepeatedPtrField<TSP::UUID> { void **x1; int x2; int x3; int x4; }*)arg1;
 
-- (id)addCustomFormat:(id)arg1 oldKey:(id)arg2 fuzzyNameMatching:(BOOL)arg3;
+- (id)addCustomFormat:(id)arg1 oldKey:(id)arg2 fuzzyNameMatching:(bool)arg3;
 - (void)addCustomFormatForUpgrade:(id)arg1 legacyKey:(unsigned int)arg2;
 - (id)addImportedCustomFormat:(id)arg1;
 - (id)addedKeysRelativeTo:(id)arg1;
 - (id)allKeys;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)customFormatForKey:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasFormatNamed:(id)arg1;
-- (BOOL)importing;
+- (bool)hasFormatNamed:(id)arg1;
+- (bool)importing;
 - (id)init;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;
-- (unsigned int)inspectorIndexForKey:(id)arg1;
+- (unsigned long long)inspectorIndexForKey:(id)arg1;
 - (id)keyForCustomFormat:(id)arg1;
-- (id)keyForInspectorIndex:(unsigned int)arg1;
+- (id)keyForInspectorIndex:(unsigned long long)arg1;
 - (void)p_addCustomFormatToNameStemDict:(id)arg1 key:(id)arg2;
 - (id)p_keyForFormatUsingNameStem:(id)arg1;
 - (void)p_removeCustomFormatFromNameStemDict:(id)arg1 key:(id)arg2;
 - (void)p_setCustomFormat:(id)arg1 key:(id)arg2;
 - (void)p_setCustomFormat:(id)arg1 key:(id)arg2 legacyKey:(unsigned int)arg3;
-- (BOOL)p_validateNameStemCount;
+- (bool)p_validateNameStemCount;
 - (void)remapCustomFormatKeysWithOldToNewKeyMap:(id)arg1;
 - (void)removeCustomFormatForKey:(id)arg1;
 - (void)removeCustomFormatsForKeys:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (void)setImporting:(BOOL)arg1;
-- (void)setUpgrading:(BOOL)arg1;
+- (void)setImporting:(bool)arg1;
+- (void)setUpgrading:(bool)arg1;
 - (void)updateCustomFormat:(id)arg1 oldKey:(id)arg2;
 - (id)upgradedCustomFormatKeyForLegacyID:(unsigned int)arg1;
-- (BOOL)upgrading;
+- (bool)upgrading;
 
 @end

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly, retain) BSAuditToken *auditToken;
 @property (nonatomic, readonly) int pid;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (id)taskNameForPID:(int)arg1;
 
 - (id)auditToken;

@@ -5,17 +5,17 @@
 @interface MTLArrayTypeInternal : MTLArrayType {
     unsigned int  _arrayLength;
     id  _details;
-    unsigned int  _elementType;
+    unsigned long long  _elementType;
     unsigned int  _stride;
 }
 
-- (unsigned int)arrayLength;
+- (unsigned long long)arrayLength;
 - (void)dealloc;
 - (id)describe;
 - (id)elementArrayType;
 - (id)elementStructType;
-- (unsigned int)elementType;
-- (id)initWithArrayLength:(unsigned int)arg1 elementType:(unsigned int)arg2 stride:(unsigned int)arg3 details:(id)arg4;
-- (unsigned int)stride;
+- (unsigned long long)elementType;
+- (id)initWithArrayLength:(unsigned long long)arg1 elementType:(unsigned long long)arg2 stride:(unsigned long long)arg3 details:(id)arg4;
+- (unsigned long long)stride;
 
 @end

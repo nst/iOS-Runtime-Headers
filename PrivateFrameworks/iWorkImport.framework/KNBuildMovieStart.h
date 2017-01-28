@@ -7,9 +7,9 @@
 + (int)animationCategory;
 + (id)animationFilter;
 + (id)animationName;
-+ (id)localizedMenuString:(int)arg1;
++ (id)localizedMenuString:(long long)arg1;
 + (id)supportedTypes;
-+ (id)thumbnailImageNameForType:(int)arg1;
++ (id)thumbnailImageNameForType:(long long)arg1;
 
 - (id)animationsWithContext:(id)arg1;
 

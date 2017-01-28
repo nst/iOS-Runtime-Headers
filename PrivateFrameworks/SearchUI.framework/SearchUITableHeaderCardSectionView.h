@@ -3,27 +3,27 @@
  */
 
 @interface SearchUITableHeaderCardSectionView : SearchUITableRowCardSectionView {
-    int  _firstTrailingIndex;
-    BOOL  _headerIsVibrant;
-    BOOL  _isCompactTable;
+    long long  _firstTrailingIndex;
+    bool  _headerIsVibrant;
+    bool  _isCompactTable;
 }
 
-@property int firstTrailingIndex;
-@property BOOL headerIsVibrant;
-@property BOOL isCompactTable;
+@property long long firstTrailingIndex;
+@property bool headerIsVibrant;
+@property bool isCompactTable;
 
-- (int)firstTrailingIndex;
-- (float)fontSize;
-- (BOOL)headerIsVibrant;
+- (long long)firstTrailingIndex;
+- (double)fontSize;
+- (bool)headerIsVibrant;
 - (id)initWithCardSection:(id)arg1 controller:(id)arg2;
-- (BOOL)isCompactTable;
-- (float)labelBottomBaselineSpacing;
-- (float)labelTopBaselineSpacing;
-- (BOOL)labelsAreVibrant;
-- (int)numberOfColumns;
-- (void)setFirstTrailingIndex:(int)arg1;
-- (void)setHeaderIsVibrant:(BOOL)arg1;
-- (void)setIsCompactTable:(BOOL)arg1;
+- (bool)isCompactTable;
+- (double)labelBottomBaselineSpacing;
+- (double)labelTopBaselineSpacing;
+- (bool)labelsAreVibrant;
+- (long long)numberOfColumns;
+- (void)setFirstTrailingIndex:(long long)arg1;
+- (void)setHeaderIsVibrant:(bool)arg1;
+- (void)setIsCompactTable:(bool)arg1;
 - (void)setupWithTableRowCardSectionViews:(id)arg1;
 
 @end

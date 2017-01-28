@@ -9,12 +9,12 @@
 
 @property (nonatomic, copy) NSArray *additionalPlaylistIdentifiers;
 @property (nonatomic, retain) MPChangeDetails *changeDetails;
-@property (nonatomic, readonly) BOOL hasAdditionalPlaylists;
+@property (nonatomic, readonly) bool hasAdditionalPlaylists;
 
 - (void).cxx_destruct;
 - (id)additionalPlaylistIdentifiers;
 - (id)changeDetails;
-- (BOOL)hasAdditionalPlaylists;
+- (bool)hasAdditionalPlaylists;
 - (void)setAdditionalPlaylistIdentifiers:(id)arg1;
 - (void)setChangeDetails:(id)arg1;
 

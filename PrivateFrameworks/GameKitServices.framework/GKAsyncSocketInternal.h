@@ -3,14 +3,14 @@
  */
 
 @interface GKAsyncSocketInternal : GKAsyncSocket {
-    id /* block */  _connectedHandler;
+    id  _connectedHandler;
     int  _connectionSocket;
     NSMutableData * _dataToSend;
-    BOOL  _invalidated;
-    id /* block */  _receiveDataHandler;
+    bool  _invalidated;
+    id  _receiveDataHandler;
     NSObject<OS_dispatch_source> * _receiveSource;
     NSObject<OS_dispatch_source> * _sendSource;
-    BOOL  _sendSourceSuspended;
+    bool  _sendSourceSuspended;
     NSString * _socketName;
     NSObject<OS_dispatch_queue> * _syncQueue;
     NSObject<OS_dispatch_queue> * _targetQueue;
@@ -19,19 +19,19 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *targetQueue;
 
 - (void)closeConnectionNow;
-- (id /* block */)connectedHandler;
+- (id)connectedHandler;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;
 - (void)receiveData;
-- (id /* block */)receiveDataHandler;
+- (id)receiveDataHandler;
 - (void)sendData;
-- (void)sendData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)setConnectedHandler:(id /* block */)arg1;
-- (void)setReceiveDataHandler:(id /* block */)arg1;
+- (void)sendData:(id)arg1 withCompletionHandler:(id)arg2;
+- (void)setConnectedHandler:(id)arg1;
+- (void)setReceiveDataHandler:(id)arg1;
 - (void)setSocketName:(id)arg1;
 - (void)setTargetQueue:(id)arg1;
-- (BOOL)setupSourcesWithSocket:(int)arg1 receiveEventHandler:(id /* block */)arg2 sendEventHandler:(id /* block */)arg3;
+- (bool)setupSourcesWithSocket:(int)arg1 receiveEventHandler:(id)arg2 sendEventHandler:(id)arg3;
 - (id)socketName;
 - (id)targetQueue;
 - (void)tcpAttachSocketDescriptor:(int)arg1;

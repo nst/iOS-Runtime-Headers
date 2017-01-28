@@ -11,28 +11,28 @@
 
 + (void)addObject:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (BOOL)autoreleasePoolExists;
-+ (unsigned int)autoreleasedObjectCount;
-+ (void)enableFreedObjectCheck:(BOOL)arg1;
-+ (void)enableRelease:(BOOL)arg1;
-+ (unsigned int)poolCountHighWaterMark;
-+ (unsigned int)poolCountHighWaterResolution;
++ (bool)autoreleasePoolExists;
++ (unsigned long long)autoreleasedObjectCount;
++ (void)enableFreedObjectCheck:(bool)arg1;
++ (void)enableRelease:(bool)arg1;
++ (unsigned long long)poolCountHighWaterMark;
++ (unsigned long long)poolCountHighWaterResolution;
 + (void)releaseAllPools;
 + (void)resetTotalAutoreleasedObjects;
-+ (void)setPoolCountHighWaterMark:(unsigned int)arg1;
-+ (void)setPoolCountHighWaterResolution:(unsigned int)arg1;
++ (void)setPoolCountHighWaterMark:(unsigned long long)arg1;
++ (void)setPoolCountHighWaterResolution:(unsigned long long)arg1;
 + (void)showPools;
-+ (unsigned int)topAutoreleasePoolCount;
-+ (unsigned int)totalAutoreleasedObjects;
++ (unsigned long long)topAutoreleasePoolCount;
++ (unsigned long long)totalAutoreleasedObjects;
 
 - (void)addObject:(id)arg1;
 - (id)autorelease;
 - (void)dealloc;
 - (void)drain;
 - (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
 - (oneway void)release;
 - (id)retain;
-- (unsigned int)retainCount;
+- (unsigned long long)retainCount;
 
 @end

@@ -3,18 +3,18 @@
  */
 
 @interface _HKValidationErrorTracker : NSObject {
-    int  _errorCount;
+    long long  _errorCount;
     NSMutableString * _errorMessage;
 }
 
-@property (nonatomic) int errorCount;
+@property (nonatomic) long long errorCount;
 @property (nonatomic, retain) NSMutableString *errorMessage;
 
 - (void).cxx_destruct;
-- (int)errorCount;
+- (long long)errorCount;
 - (id)errorMessage;
 - (id)init;
-- (void)setErrorCount:(int)arg1;
+- (void)setErrorCount:(long long)arg1;
 - (void)setErrorMessage:(id)arg1;
 
 @end

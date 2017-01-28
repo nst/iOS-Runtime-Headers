@@ -12,8 +12,8 @@
 - (void)_deleteRowWithRowId:(long long)arg1;
 - (long long)_dumpToDiskWithKey:(id)arg1 value:(id)arg2;
 - (id)_entryWithRowId:(long long)arg1;
-- (void)_enumerateAllEntriesWithHandler:(id /* block */)arg1;
-- (void)_enumerateAllForCacheEntriesWithHandler:(id /* block */)arg1;
+- (void)_enumerateAllEntriesWithHandler:(id)arg1;
+- (void)_enumerateAllForCacheEntriesWithHandler:(id)arg1;
 - (double)_nextTimeStampForRefreshTimer;
 - (long long)_numberOfEntries;
 - (id)_readValueWithKey:(id)arg1;

@@ -8,14 +8,11 @@
 - (NSString *)advertisingIdentifier;
 - (NSString *)appIdentifier;
 - (NSString *)appVersion;
-- (NSNumber *)capacity:(NSString *)arg1;
-- (BOOL)isAdvertisingTrackingEnabled;
-- (BOOL)isInRetailDemoMode;
+- (bool)isAdvertisingTrackingEnabled;
+- (bool)isNetworkReachable;
 - (NSString *)model;
-- (NSNumber *)pixelRatio;
 - (NSString *)productType;
 - (NSString *)systemVersion;
-- (NSString *)vendorID;
 - (NSString *)vendorIdentifier;
 
 @end

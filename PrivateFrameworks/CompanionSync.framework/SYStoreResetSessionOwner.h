@@ -4,18 +4,18 @@
 
 @interface SYStoreResetSessionOwner : SYStoreSessionOwner {
     NSMutableArray * _buffer;
-    int  _bufferedState;
-    id /* block */  _fetchNextBatch;
+    long long  _bufferedState;
+    id  _fetchNextBatch;
 }
 
-@property (nonatomic, copy) id /* block */ fetchNextBatch;
+@property (nonatomic, copy) id fetchNextBatch;
 
 - (void).cxx_destruct;
-- (int)_sendBufferedChanges:(id /* block */)arg1;
-- (id /* block */)fetchNextBatch;
+- (long long)_sendBufferedChanges:(id)arg1;
+- (id)fetchNextBatch;
 - (id)init;
-- (BOOL)isResetSync;
-- (void)setFetchNextBatch:(id /* block */)arg1;
-- (int)syncSession:(id)arg1 enqueueChanges:(id /* block */)arg2 error:(id*)arg3;
+- (bool)isResetSync;
+- (void)setFetchNextBatch:(id)arg1;
+- (long long)syncSession:(id)arg1 enqueueChanges:(id)arg2 error:(id*)arg3;
 
 @end

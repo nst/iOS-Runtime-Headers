@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic) unsigned int estimatedChangeCount;
-@property (nonatomic) BOOL hasEstimatedChangeCount;
+@property (nonatomic) bool hasEstimatedChangeCount;
 @property (nonatomic, retain) SYMessageHeader *header;
 @property (nonatomic, retain) NSString *syncID;
 
@@ -22,14 +22,14 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)estimatedChangeCount;
-- (BOOL)hasEstimatedChangeCount;
-- (unsigned int)hash;
+- (bool)hasEstimatedChangeCount;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setEstimatedChangeCount:(unsigned int)arg1;
-- (void)setHasEstimatedChangeCount:(BOOL)arg1;
+- (void)setHasEstimatedChangeCount:(bool)arg1;
 - (void)setHeader:(id)arg1;
 - (void)setSyncID:(id)arg1;
 - (id)syncID;

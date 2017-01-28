@@ -9,11 +9,11 @@
 
 @property (nonatomic, readonly, retain) TSCHChartDrawableInfo *chartInfo;
 @property (nonatomic, readonly, copy) TSCHSelectionPath *firstPath;
-@property (nonatomic, readonly) unsigned int pathCount;
+@property (nonatomic, readonly) unsigned long long pathCount;
 @property (nonatomic, readonly, copy) TSCHSelectionPathType *pathType;
 @property (nonatomic, readonly, copy) NSSet *pathTypes;
 @property (nonatomic, readonly, copy) NSArray *paths;
-@property (nonatomic, readonly) BOOL returnChartFrameForAutoscroll;
+@property (nonatomic, readonly) bool returnChartFrameForAutoscroll;
 
 + (Class)archivedSelectionClass;
 + (id)emptySelectionWithChartInfo:(id)arg1;
@@ -24,18 +24,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)firstPath;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initFromArchive:(const struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableSelectionArchive {} *x5; struct Reference {} *x6; struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; }*)arg1 unarchiver:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 path:(id)arg2;
 - (id)initWithChartInfo:(id)arg1 paths:(id)arg2;
 - (id)initWithPaths:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)pathCount;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)pathCount;
 - (id)pathType;
 - (id)pathTypes;
 - (id)paths;
-- (BOOL)returnChartFrameForAutoscroll;
+- (bool)returnChartFrameForAutoscroll;
 - (void)saveToArchive:(struct ChartSelectionArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableSelectionArchive {} *x5; struct Reference {} *x6; struct RepeatedPtrField<TSCH::ChartSelectionPathArchive> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; }*)arg1 archiver:(id)arg2;
 - (id)selectionByAddingPathsFromArray:(id)arg1;
 - (id)selectionByRemovingPathsFromArray:(id)arg1;

@@ -9,9 +9,9 @@
     PHLivePhotoView * __livePhotoView;
     NSString * __videoAssetURL;
     PHAsset * _asset;
-    BOOL  _isIris;
-    BOOL  _wantsLivePhotoResult;
-    BOOL  _wantsVideoURLResult;
+    bool  _isIris;
+    bool  _wantsLivePhotoResult;
+    bool  _wantsVideoURLResult;
 }
 
 @property (setter=_setAssetURL:, nonatomic, retain) NSURL *_assetURL;
@@ -21,13 +21,13 @@
 @property (setter=_setVideoAssetURL:, nonatomic, retain) NSString *_videoAssetURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_assetURL;
-- (void)_fetchLivePhotoWithCompletion:(id /* block */)arg1;
-- (void)_fetchVideoWithCompletion:(id /* block */)arg1;
+- (void)_fetchLivePhotoWithCompletion:(id)arg1;
+- (void)_fetchVideoWithCompletion:(id)arg1;
 - (void)_handleLivePhotoRequestResult:(id)arg1 info:(id)arg2;
 - (int)_imageManagerVideoRequestID;
 - (id)_irisPlayer;
@@ -39,14 +39,14 @@
 - (void)_setVideoAssetURL:(id)arg1;
 - (id)_videoAssetURL;
 - (void)cropOverlayWasOKed:(id)arg1;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2 expectsLivePhoto:(BOOL)arg3;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
+- (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2 expectsLivePhoto:(bool)arg3;
 - (id)irisPlayerView:(id)arg1 delegateForGestureRecognizer:(id)arg2;
 - (id)irisPlayerViewViewHostingGestureRecognizers:(id)arg1;
 - (void)loadView;
 - (void)setIrisPlayer:(id)arg1;
 - (void)set_irisPlayer:(id)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSString *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) AWDNFCHardwareExceptionEvent *metric;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int type;
@@ -18,7 +18,7 @@
 - (id)data;
 - (void)dealloc;
 - (id)getMetric;
-- (unsigned long)getMetricId;
+- (unsigned int)getMetricId;
 - (id)init;
 - (id)metric;
 - (void)setData:(id)arg1;

@@ -3,38 +3,38 @@
  */
 
 @interface NPTunnelFlowHTTP : NPTunnelFlow {
-    id /* block */  _postCompletionHandler;
-    BOOL  _receivedHeaders;
-    unsigned int  _responseContentLength;
+    id  _postCompletionHandler;
+    bool  _receivedHeaders;
+    unsigned long long  _responseContentLength;
     NSMutableData * _responseData;
-    BOOL  _responseSuccess;
+    bool  _responseSuccess;
     NSURL * _url;
 }
 
-@property (copy) id /* block */ postCompletionHandler;
-@property BOOL receivedHeaders;
-@property unsigned int responseContentLength;
+@property (copy) id postCompletionHandler;
+@property bool receivedHeaders;
+@property unsigned long long responseContentLength;
 @property (retain) NSMutableData *responseData;
-@property BOOL responseSuccess;
+@property bool responseSuccess;
 @property (retain) NSURL *url;
 
 - (void).cxx_destruct;
 - (void)closeClientFlowWithError:(id)arg1;
 - (id)initWithTunnel:(id)arg1 URL:(id)arg2 delegate:(id)arg3;
-- (BOOL)isClientFlowClosed;
-- (id /* block */)postCompletionHandler;
-- (void)postData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (BOOL)receivedHeaders;
+- (bool)isClientFlowClosed;
+- (id)postCompletionHandler;
+- (void)postData:(id)arg1 withCompletionHandler:(id)arg2;
+- (bool)receivedHeaders;
 - (id)remoteHostname;
-- (unsigned int)responseContentLength;
+- (unsigned long long)responseContentLength;
 - (id)responseData;
-- (BOOL)responseSuccess;
-- (void)sendDataToClient:(id)arg1 fromTunnel:(BOOL)arg2;
-- (void)setPostCompletionHandler:(id /* block */)arg1;
-- (void)setReceivedHeaders:(BOOL)arg1;
-- (void)setResponseContentLength:(unsigned int)arg1;
+- (bool)responseSuccess;
+- (void)sendDataToClient:(id)arg1 fromTunnel:(bool)arg2;
+- (void)setPostCompletionHandler:(id)arg1;
+- (void)setReceivedHeaders:(bool)arg1;
+- (void)setResponseContentLength:(unsigned long long)arg1;
 - (void)setResponseData:(id)arg1;
-- (void)setResponseSuccess:(BOOL)arg1;
+- (void)setResponseSuccess:(bool)arg1;
 - (void)setUrl:(id)arg1;
 - (id)url;
 

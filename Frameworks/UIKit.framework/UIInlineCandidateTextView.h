@@ -4,37 +4,37 @@
 
 @interface UIInlineCandidateTextView : UIView {
     SEL  _action;
-    BOOL  _arrowHighlighted;
+    bool  _arrowHighlighted;
     NSMutableArray * _candidateCellArray;
     NSArray * _candidates;
     _UIInlineCandidateCell * _currentlyPushedItem;
-    BOOL  _phraseEditable;
-    unsigned int  _selectedItem;
-    BOOL  _showingArrow;
+    bool  _phraseEditable;
+    unsigned long long  _selectedItem;
+    bool  _showingArrow;
     id  _target;
-    BOOL  m_animating;
+    bool  m_animating;
     int  m_edgeType;
     int  m_type;
 }
 
-- (BOOL)_arrowHighlighted;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
+- (bool)_arrowHighlighted;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_calculateRectForExpandedHitRegion;
 - (void)_cellSelected:(id)arg1;
-- (float)_layoutCandidates:(id)arg1 maxCount:(int)arg2 height:(float)arg3 maxScreenWidth:(float)arg4 hasExtensionCandidates:(BOOL)arg5;
+- (double)_layoutCandidates:(id)arg1 maxCount:(int)arg2 height:(double)arg3 maxScreenWidth:(double)arg4 hasExtensionCandidates:(bool)arg5;
 - (void)dealloc;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (int)edgeType;
-- (id)findCell:(struct CGPoint { float x1; float x2; })arg1;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 andOrientation:(int)arg2 candidates:(id)arg3 type:(int)arg4 maxScreenWidth:(float)arg5 hasExtensionCandidates:(BOOL)arg6;
-- (unsigned int)numberOfShownItems;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
-- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)findCell:(struct CGPoint { double x1; double x2; })arg1;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 andOrientation:(long long)arg2 candidates:(id)arg3 type:(int)arg4 maxScreenWidth:(double)arg5 hasExtensionCandidates:(bool)arg6;
+- (unsigned long long)numberOfShownItems;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
 - (void)redrawArrow;
-- (unsigned int)selectedItem;
-- (void)setAnimating:(BOOL)arg1;
+- (unsigned long long)selectedItem;
+- (void)setAnimating:(bool)arg1;
 - (void)setEdgeType:(int)arg1;
-- (void)setSelectedItem:(unsigned int)arg1;
+- (void)setSelectedItem:(unsigned long long)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (void)showHighlightedArrow;
 - (int)textEffectsVisibilityLevel;

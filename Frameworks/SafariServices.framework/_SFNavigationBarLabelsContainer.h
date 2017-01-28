@@ -3,13 +3,13 @@
  */
 
 @interface _SFNavigationBarLabelsContainer : UIView {
-    BOOL  _shouldAnimateBoundsChanges;
+    bool  _shouldAnimateBoundsChanges;
 }
 
-@property (nonatomic) BOOL shouldAnimateBoundsChanges;
+@property (nonatomic) bool shouldAnimateBoundsChanges;
 
-- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
-- (void)setShouldAnimateBoundsChanges:(BOOL)arg1;
-- (BOOL)shouldAnimateBoundsChanges;
+- (bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)setShouldAnimateBoundsChanges:(bool)arg1;
+- (bool)shouldAnimateBoundsChanges;
 
 @end

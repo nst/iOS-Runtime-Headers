@@ -5,7 +5,7 @@
 @interface SAUITemplateTabularDataValue : SAUITemplateBaseItem
 
 @property (nonatomic, retain) SAUITemplateAttributedString *attributedText;
-@property (nonatomic) BOOL highlighted;
+@property (nonatomic) bool highlighted;
 @property (nonatomic, retain) SAUIImageResource *image;
 
 + (id)tabularDataValue;
@@ -14,10 +14,10 @@
 - (id)attributedText;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (BOOL)highlighted;
+- (bool)highlighted;
 - (id)image;
 - (void)setAttributedText:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
 - (void)setImage:(id)arg1;
 
 @end

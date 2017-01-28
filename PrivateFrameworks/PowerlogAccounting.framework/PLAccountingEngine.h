@@ -7,7 +7,7 @@
     PLActivity * _chunkActivity;
     PLAccountingCorrectionManager * _correctionManager;
     PLAccountingDistributionManager * _distributionManager;
-    BOOL  _pluggedIn;
+    bool  _pluggedIn;
     PLAccountingQualificationManager * _qualificationManager;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
@@ -18,13 +18,13 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PLAccountingDistributionManager *distributionManager;
-@property (readonly) unsigned int hash;
-@property BOOL pluggedIn;
+@property (readonly) unsigned long long hash;
+@property bool pluggedIn;
 @property (nonatomic, retain) PLAccountingQualificationManager *qualificationManager;
 @property (readonly) Class superclass;
 @property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
-+ (BOOL)accountingDebugEnabled;
++ (bool)accountingDebugEnabled;
 + (id)allBBRootNodeIDs;
 + (id)allDistributionIDs;
 + (id)allQualificationIDs;
@@ -65,7 +65,7 @@
 - (void)createDistributionEventForwardWithDistributionID:(int)arg1 withRemovingChildNodeName:(id)arg2 withStartDate:(id)arg3;
 - (void)createDistributionEventIntervalWithDistributionID:(int)arg1 withChildNodeNameToWeight:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 - (void)createDistributionEventPointWithDistributionID:(int)arg1 withChildNodeNameToWeight:(id)arg2 withStartDate:(id)arg3;
-- (void)createEventWithEvent:(id)arg1 withActionBlock:(id /* block */)arg2;
+- (void)createEventWithEvent:(id)arg1 withActionBlock:(id)arg2;
 - (void)createPowerEventBackwardWithRootNodeID:(int)arg1 withPower:(double)arg2 withEndDate:(id)arg3;
 - (void)createPowerEventForwardWithRootNodeID:(int)arg1 withPower:(double)arg2 withStartDate:(id)arg3;
 - (void)createPowerEventIntervalWithRootNodeID:(int)arg1 withPower:(double)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
@@ -82,7 +82,7 @@
 - (void)didQualifyEnergyEvent:(id)arg1 withRootNodeID:(id)arg2 withQualificationID:(id)arg3;
 - (id)distributionManager;
 - (id)init;
-- (BOOL)pluggedIn;
+- (bool)pluggedIn;
 - (id)qualificationManager;
 - (void)reload;
 - (void)reloadLastDistributionEventsWithLastDeviceBootDate:(id)arg1;
@@ -93,7 +93,7 @@
 - (void)setChunkActivity:(id)arg1;
 - (void)setCorrectionManager:(id)arg1;
 - (void)setDistributionManager:(id)arg1;
-- (void)setPluggedIn:(BOOL)arg1;
+- (void)setPluggedIn:(bool)arg1;
 - (void)setQualificationManager:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)workQueue;

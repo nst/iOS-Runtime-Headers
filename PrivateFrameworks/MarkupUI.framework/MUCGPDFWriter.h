@@ -4,6 +4,6 @@
 
 @interface MUCGPDFWriter : NSObject
 
-- (BOOL)writeCGPDFDocument:(struct CGPDFDocument { }*)arg1 toConsumer:(struct CGDataConsumer { }*)arg2 withAnnotationsFromController:(id)arg3 replacedAnnotationMaps:(id)arg4 encryptionPassword:(id)arg5 error:(id*)arg6 delegateBlock:(id /* block */)arg7;
+- (bool)writeCGPDFDocument:(struct CGPDFDocument { }*)arg1 toConsumer:(struct CGDataConsumer { }*)arg2 withAnnotationsFromController:(id)arg3 replacedAnnotationMaps:(id)arg4 encryptionPassword:(id)arg5 error:(id*)arg6 delegateBlock:(id)arg7;
 
 @end

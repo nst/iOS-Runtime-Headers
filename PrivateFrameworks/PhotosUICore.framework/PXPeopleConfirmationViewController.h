@@ -14,33 +14,33 @@
     UILabel * _noneFoundStatusLabel;
     PXPeopleSuggestionManager * _suggestionManager;
     PXPeopleSuggestionView * _suggestionView;
-    BOOL  _suggestionsPresented;
+    bool  _suggestionsPresented;
     PXPeopleConfirmationSummaryViewController * _summaryViewController;
-    unsigned int  _viewState;
+    unsigned long long  _viewState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UILabel *descriptionLabel;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) PXAnimatedHeaderView *headerView;
 @property (retain) UIActivityIndicatorView *initialLoadingIndicator;
 @property (retain) UIActivityIndicatorView *interimLoadingIndicator;
 @property (retain) UILabel *interimLoadingLabel;
-@property (readonly) BOOL isSummaryViewShowing;
+@property (readonly) bool isSummaryViewShowing;
 @property (retain) NSTimer *loadingDelayTimer;
 @property (retain) UIView *loadingStatusView;
 @property (retain) UIView *loadingView;
 @property (retain) UILabel *noneFoundStatusLabel;
 @property (readonly) PXPeopleSuggestionManager *suggestionManager;
 @property (nonatomic, retain) PXPeopleSuggestionView *suggestionView;
-@property BOOL suggestionsPresented;
+@property bool suggestionsPresented;
 @property (retain) PXPeopleConfirmationSummaryViewController *summaryViewController;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int viewState;
+@property (nonatomic) unsigned long long viewState;
 
 - (void).cxx_destruct;
-- (unsigned int)autoConfirmedCountForSummaryViewController:(id)arg1;
+- (unsigned long long)autoConfirmedCountForSummaryViewController:(id)arg1;
 - (void)confirmTapped:(id)arg1;
 - (void)confirmationCountUpdatedForSuggestionManager:(id)arg1;
 - (void)denyTapped:(id)arg1;
@@ -53,7 +53,7 @@
 - (id)initialLoadingIndicator;
 - (id)interimLoadingIndicator;
 - (id)interimLoadingLabel;
-- (BOOL)isSummaryViewShowing;
+- (bool)isSummaryViewShowing;
 - (id)loadingDelayTimer;
 - (void)loadingMoreSuggestionsForSuggestionManager:(id)arg1;
 - (id)loadingStatusView;
@@ -62,7 +62,7 @@
 - (id)noneFoundStatusLabel;
 - (void)performUndo:(id)arg1;
 - (id)personForSummaryViewController:(id)arg1;
-- (void)presentSuggestion:(id)arg1 animated:(BOOL)arg2;
+- (void)presentSuggestion:(id)arg1 animated:(bool)arg2;
 - (void)setDescriptionLabel:(id)arg1;
 - (void)setHeaderView:(id)arg1;
 - (void)setInitialLoadingIndicator:(id)arg1;
@@ -73,20 +73,21 @@
 - (void)setLoadingView:(id)arg1;
 - (void)setNoneFoundStatusLabel:(id)arg1;
 - (void)setSuggestionView:(id)arg1;
-- (void)setSuggestionsPresented:(BOOL)arg1;
+- (void)setSuggestionsPresented:(bool)arg1;
 - (void)setSummaryViewController:(id)arg1;
-- (void)setViewState:(unsigned int)arg1;
+- (void)setViewState:(unsigned long long)arg1;
 - (void)suggestionDidDisplay;
 - (id)suggestionManager;
 - (void)suggestionManager:(id)arg1 hasNewSuggestionAvailable:(id)arg2;
 - (id)suggestionView;
-- (BOOL)suggestionsPresented;
+- (bool)suggestionsPresented;
 - (id)summaryViewController;
 - (void)undoConfirm:(id)arg1;
 - (void)undoDeny:(id)arg1;
-- (unsigned int)userConfirmedCountForSummaryViewController:(id)arg1;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)updateViewWithViewState:(unsigned long long)arg1;
+- (unsigned long long)userConfirmedCountForSummaryViewController:(id)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (unsigned int)viewState;
+- (unsigned long long)viewState;
 
 @end

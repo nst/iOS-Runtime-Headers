@@ -4,13 +4,13 @@
 
 @interface CKDDirectoryPurger : NSObject {
     NSArray * _paths;
-    id /* block */  _shouldRemoveFileBlock;
-    id /* block */  _shouldSkipFileBlock;
+    id  _shouldRemoveFileBlock;
+    id  _shouldSkipFileBlock;
 }
 
 @property (nonatomic, retain) NSArray *paths;
-@property (nonatomic, copy) id /* block */ shouldRemoveFileBlock;
-@property (nonatomic, copy) id /* block */ shouldSkipFileBlock;
+@property (nonatomic, copy) id shouldRemoveFileBlock;
+@property (nonatomic, copy) id shouldSkipFileBlock;
 
 + (void)purgeDirectoryAtPath:(id)arg1;
 
@@ -19,9 +19,9 @@
 - (id)paths;
 - (void)purge;
 - (void)setPaths:(id)arg1;
-- (void)setShouldRemoveFileBlock:(id /* block */)arg1;
-- (void)setShouldSkipFileBlock:(id /* block */)arg1;
-- (id /* block */)shouldRemoveFileBlock;
-- (id /* block */)shouldSkipFileBlock;
+- (void)setShouldRemoveFileBlock:(id)arg1;
+- (void)setShouldSkipFileBlock:(id)arg1;
+- (id)shouldRemoveFileBlock;
+- (id)shouldSkipFileBlock;
 
 @end

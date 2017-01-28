@@ -3,12 +3,12 @@
  */
 
 @interface OITSUBool : NSObject {
-    BOOL  _value;
+    bool  _value;
 }
 
-@property (nonatomic) BOOL value;
+@property (nonatomic) bool value;
 
-- (void)setValue:(BOOL)arg1;
-- (BOOL)value;
+- (void)setValue:(bool)arg1;
+- (bool)value;
 
 @end

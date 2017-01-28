@@ -7,7 +7,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) GKGame *game;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;
@@ -15,21 +15,21 @@
 
 - (id)extensionObjectProxy;
 - (void)finishWithMatch:(id)arg1;
-- (void)getMethodsImplementedByChallengeEventHandlerDelegate:(id /* block */)arg1;
+- (void)getMethodsImplementedByChallengeEventHandlerDelegate:(id)arg1;
 - (void)hostDidChangeLeaderboardIdentifier:(id)arg1;
 - (void)hostDidChangeLeaderboardTimeScope:(id)arg1;
 - (void)hostDidChangeViewState:(id)arg1;
 - (void)hostDidParseDashboardImageNames:(id)arg1 leaderboardSetNames:(id)arg2 leaderboardNames:(id)arg3;
-- (void)hostSupportsShowingPlayForChallenge:(BOOL)arg1;
-- (void)hostSupportsShowingPlayForTurnBasedMatch:(BOOL)arg1;
-- (void)hostSupportsShowingQuitForTurnBasedMatch:(BOOL)arg1;
+- (void)hostSupportsShowingPlayForChallenge:(bool)arg1;
+- (void)hostSupportsShowingPlayForTurnBasedMatch:(bool)arg1;
+- (void)hostSupportsShowingQuitForTurnBasedMatch:(bool)arg1;
 - (void)playPressedForChallenge:(id)arg1;
 - (void)playerQuitMatch:(id)arg1;
 - (void)remoteControllerDidChangeViewState:(id)arg1;
 - (void)remoteControllerDidSelectLeaderboardIdentifier:(id)arg1;
 - (void)remoteControllerDidSelectLeaderboardTimeScope:(id)arg1;
-- (void)requestDashboardLogoImageWithHandler:(id /* block */)arg1;
-- (void)requestImagesForLeaderboardSetsWithHandler:(id /* block */)arg1;
-- (void)requestImagesForLeaderboardsInSet:(id)arg1 handler:(id /* block */)arg2;
+- (void)requestDashboardLogoImageWithHandler:(id)arg1;
+- (void)requestImagesForLeaderboardSetsWithHandler:(id)arg1;
+- (void)requestImagesForLeaderboardsInSet:(id)arg1 handler:(id)arg2;
 
 @end

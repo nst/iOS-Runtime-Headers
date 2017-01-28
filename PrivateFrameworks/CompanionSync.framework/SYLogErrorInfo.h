@@ -19,11 +19,11 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)domain;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCocoaError:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCode:(long long)arg1;
 - (void)setDomain:(id)arg1;
 - (void)writeTo:(id)arg1;

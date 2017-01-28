@@ -8,14 +8,14 @@
     NSMutableArray * _recordIDsForDesiredAssets;
     NSMutableDictionary * _recordIDsToVersionETagsForDesiredAssets;
     BRCAccountSession * _session;
-    BOOL  _shouldFetchAnotherBatch;
+    bool  _shouldFetchAnotherBatch;
     BRCContainerMetadataSyncPersistedState * _state;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL shouldFetchAnotherBatch;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool shouldFetchAnotherBatch;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,10 +23,10 @@
 - (id)createActivity;
 - (id)initWithSession:(id)arg1 state:(id)arg2;
 - (void)main;
-- (void)performAfterCreatingZoneIfNeeded:(id /* block */)arg1;
-- (void)performAfterFetchingAssetContents:(id /* block */)arg1;
-- (void)performAfterFetchingRecordChanges:(id /* block */)arg1;
-- (BOOL)shouldFetchAnotherBatch;
-- (BOOL)shouldRetryForError:(id)arg1;
+- (void)performAfterCreatingZoneIfNeeded:(id)arg1;
+- (void)performAfterFetchingAssetContents:(id)arg1;
+- (void)performAfterFetchingRecordChanges:(id)arg1;
+- (bool)shouldFetchAnotherBatch;
+- (bool)shouldRetryForError:(id)arg1;
 
 @end

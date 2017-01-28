@@ -4,36 +4,36 @@
 
 @interface MusicHUDViewController : UIViewController {
     UIView * _contentView;
-    BOOL  _didPlayAnimation;
+    bool  _didPlayAnimation;
     double  _dismissalDelay;
     UIView * _hudView;
-    BOOL  _shouldDismissHUDWhenPossible;
-    BOOL  _shouldWaitForExplicitDismissal;
+    bool  _shouldDismissHUDWhenPossible;
+    bool  _shouldWaitForExplicitDismissal;
     NSString * _text;
-    int  _type;
+    long long  _type;
 }
 
 @property (nonatomic) double dismissalDelay;
-@property (nonatomic) BOOL shouldWaitForExplicitDismissal;
+@property (nonatomic) bool shouldWaitForExplicitDismissal;
 @property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
-- (void)_dismissHUDAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)_dismissHUDAnimated:(bool)arg1 completion:(id)arg2;
 - (void)_playAnimation;
 - (void)dismiss;
-- (void)dismissAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)dismissAnimated:(bool)arg1 completion:(id)arg2;
 - (double)dismissalDelay;
-- (id)initWithHUDType:(int)arg1;
+- (id)initWithHUDType:(long long)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)presentFromRootViewController;
 - (void)setDismissalDelay:(double)arg1;
-- (void)setShouldWaitForExplicitDismissal:(BOOL)arg1;
+- (void)setShouldWaitForExplicitDismissal:(bool)arg1;
 - (void)setText:(id)arg1;
-- (BOOL)shouldWaitForExplicitDismissal;
+- (bool)shouldWaitForExplicitDismissal;
 - (id)text;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

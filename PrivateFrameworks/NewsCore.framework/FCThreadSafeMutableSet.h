@@ -12,8 +12,8 @@
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;
-- (BOOL)containsObject:(id)arg1;
-- (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
+- (bool)containsObject:(id)arg1;
+- (void)enumerateObjectsUsingBlock:(id)arg1;
 - (id)init;
 - (id)readOnlySet;
 - (void)removeObject:(id)arg1;

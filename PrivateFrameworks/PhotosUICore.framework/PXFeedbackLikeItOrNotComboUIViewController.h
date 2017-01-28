@@ -4,12 +4,12 @@
 
 @interface PXFeedbackLikeItOrNotComboUIViewController : UIViewController {
     UIActivityIndicatorView * __activityIndicatorView;
-    BOOL  __showsActivityIndicator;
-    unsigned int  _feedbackCollectionType;
+    bool  __showsActivityIndicator;
+    unsigned long long  _feedbackCollectionType;
 }
 
 @property (nonatomic, readonly) UIActivityIndicatorView *_activityIndicatorView;
-@property (nonatomic) BOOL _showsActivityIndicator;
+@property (nonatomic) bool _showsActivityIndicator;
 
 - (void).cxx_destruct;
 - (id)_activityIndicatorView;
@@ -18,10 +18,10 @@
 - (void)_fileRadar:(id)arg1;
 - (void)_likedIt:(id)arg1;
 - (void)_provideFeedback:(id)arg1;
-- (BOOL)_showsActivityIndicator;
-- (id)initWithCollectionType:(unsigned int)arg1;
-- (void)setShowsActivityIndicator:(BOOL)arg1;
-- (void)set_showsActivityIndicator:(BOOL)arg1;
+- (bool)_showsActivityIndicator;
+- (id)initWithCollectionType:(unsigned long long)arg1;
+- (void)setShowsActivityIndicator:(bool)arg1;
+- (void)set_showsActivityIndicator:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

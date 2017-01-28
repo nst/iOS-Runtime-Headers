@@ -25,7 +25,7 @@
 - (void)setDelayedSubmissionQueue:(id)arg1;
 - (void)setLog:(id)arg1;
 - (void)setPenaltyBox:(id)arg1;
-- (BOOL)shouldDelaySubmissionOfActivity:(id)arg1;
+- (bool)shouldDelaySubmissionOfActivity:(id)arg1;
 - (void)submitActivity:(id)arg1 inGroup:(id)arg2 withScheduler:(id)arg3;
 - (void)submitActivity:(id)arg1 withScheduler:(id)arg2;
 

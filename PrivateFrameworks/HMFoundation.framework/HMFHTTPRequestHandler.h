@@ -4,26 +4,26 @@
 
 @interface HMFHTTPRequestHandler : NSObject {
     NSPredicate * _URLPredicate;
-    id /* block */  _matchBlock;
+    id  _matchBlock;
     NSPredicate * _methodPredicate;
-    id /* block */  _requestBlock;
+    id  _requestBlock;
 }
 
 @property (nonatomic, readonly, copy) NSPredicate *URLPredicate;
-@property (nonatomic, readonly, copy) id /* block */ matchBlock;
+@property (nonatomic, readonly, copy) id matchBlock;
 @property (nonatomic, readonly, copy) NSPredicate *methodPredicate;
-@property (nonatomic, copy) id /* block */ requestBlock;
+@property (nonatomic, copy) id requestBlock;
 
-+ (BOOL)_isValidMethodPrediate:(id)arg1;
-+ (BOOL)_isValidURLPredicate:(id)arg1;
++ (bool)_isValidMethodPrediate:(id)arg1;
++ (bool)_isValidURLPredicate:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)URLPredicate;
 - (id)init;
-- (id)initWithMethodPredicate:(id)arg1 URLPredicate:(id)arg2 matchBlock:(id /* block */)arg3;
-- (id /* block */)matchBlock;
+- (id)initWithMethodPredicate:(id)arg1 URLPredicate:(id)arg2 matchBlock:(id)arg3;
+- (id)matchBlock;
 - (id)methodPredicate;
-- (id /* block */)requestBlock;
-- (void)setRequestBlock:(id /* block */)arg1;
+- (id)requestBlock;
+- (void)setRequestBlock:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setPressed:(BOOL)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setPressed:(bool)arg1;
 
 @end

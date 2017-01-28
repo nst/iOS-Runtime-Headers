@@ -4,19 +4,19 @@
 
 @interface CKEntryViewButton : UIButton {
     UIColor * _ckTintColor;
-    int  _entryViewButtonType;
+    long long  _entryViewButtonType;
 }
 
 @property (nonatomic, retain) UIColor *ckTintColor;
-@property (nonatomic) int entryViewButtonType;
+@property (nonatomic) long long entryViewButtonType;
 
-+ (id)entryViewButtonOfType:(int)arg1;
-+ (id)imageNameForEntryViewButtonType:(int)arg1;
++ (id)entryViewButtonOfType:(long long)arg1;
++ (id)imageNameForEntryViewButtonType:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)ckTintColor;
-- (int)entryViewButtonType;
+- (long long)entryViewButtonType;
 - (void)setCkTintColor:(id)arg1;
-- (void)setEntryViewButtonType:(int)arg1;
+- (void)setEntryViewButtonType:(long long)arg1;
 
 @end

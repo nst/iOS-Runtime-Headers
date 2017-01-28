@@ -3,15 +3,15 @@
  */
 
 @interface HKDocumentQuery : HKQuery {
-    BOOL  _includeDocumentData;
-    unsigned int  _limit;
-    id /* block */  _resultsHandler;
+    bool  _includeDocumentData;
+    unsigned long long  _limit;
+    id  _resultsHandler;
     NSArray * _sortDescriptors;
 }
 
-@property (readonly) BOOL includeDocumentData;
-@property (readonly) unsigned int limit;
-@property (nonatomic, copy) id /* block */ resultsHandler;
+@property (readonly) bool includeDocumentData;
+@property (readonly) unsigned long long limit;
+@property (nonatomic, copy) id resultsHandler;
 @property (readonly, copy) NSArray *sortDescriptors;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
@@ -21,14 +21,14 @@
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (void)_queue_configureQueryServerDataObject:(id)arg1;
-- (id /* block */)_queue_errorHandler;
+- (id)_queue_errorHandler;
 - (void)_queue_validate;
 - (void)deliverSample:(id)arg1 forQuery:(id)arg2;
-- (BOOL)includeDocumentData;
-- (id)initWithDocumentType:(id)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 sortDescriptors:(id)arg4 includeDocumentData:(BOOL)arg5 resultsHandler:(id /* block */)arg6;
-- (unsigned int)limit;
-- (id /* block */)resultsHandler;
-- (void)setResultsHandler:(id /* block */)arg1;
+- (bool)includeDocumentData;
+- (id)initWithDocumentType:(id)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 sortDescriptors:(id)arg4 includeDocumentData:(bool)arg5 resultsHandler:(id)arg6;
+- (unsigned long long)limit;
+- (id)resultsHandler;
+- (void)setResultsHandler:(id)arg1;
 - (id)sortDescriptors;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon

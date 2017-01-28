@@ -3,34 +3,34 @@
  */
 
 @interface CVMLCluster : NSObject {
-    unsigned int  _clusterId;
+    unsigned long long  _clusterId;
     NSArray * _objects;
     NSDictionary * _representativenessById;
-    BOOL  _shouldUpdateRepresentative;
+    bool  _shouldUpdateRepresentative;
     NSArray * _suggestedIdsForRepresentative;
-    unsigned int  _totalObjectCount;
+    unsigned long long  _totalObjectCount;
 }
 
-@property unsigned int clusterId;
+@property unsigned long long clusterId;
 @property (retain) NSArray *objects;
 @property (retain) NSDictionary *representativenessById;
-@property BOOL shouldUpdateRepresentative;
+@property bool shouldUpdateRepresentative;
 @property (retain) NSArray *suggestedIdsForRepresentative;
-@property unsigned int totalObjectCount;
+@property unsigned long long totalObjectCount;
 
 - (void).cxx_destruct;
-- (unsigned int)clusterId;
+- (unsigned long long)clusterId;
 - (id)description;
 - (id)objects;
 - (id)representativenessById;
-- (void)setClusterId:(unsigned int)arg1;
+- (void)setClusterId:(unsigned long long)arg1;
 - (void)setObjects:(id)arg1;
 - (void)setRepresentativenessById:(id)arg1;
-- (void)setShouldUpdateRepresentative:(BOOL)arg1;
+- (void)setShouldUpdateRepresentative:(bool)arg1;
 - (void)setSuggestedIdsForRepresentative:(id)arg1;
-- (void)setTotalObjectCount:(unsigned int)arg1;
-- (BOOL)shouldUpdateRepresentative;
+- (void)setTotalObjectCount:(unsigned long long)arg1;
+- (bool)shouldUpdateRepresentative;
 - (id)suggestedIdsForRepresentative;
-- (unsigned int)totalObjectCount;
+- (unsigned long long)totalObjectCount;
 
 @end

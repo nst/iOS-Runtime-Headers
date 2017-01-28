@@ -9,7 +9,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *extSessionGuid;
 @property (nonatomic, copy) NSDate *extSessionGuidCreatedTimestamp;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SALocation *location;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSNumber *zoomLevel;

@@ -17,14 +17,14 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)clear;
-- (unsigned int)componentByteSize;
+- (unsigned long long)componentByteSize;
 - (int)componentType;
-- (unsigned int)components;
+- (unsigned long long)components;
 - (struct vector<TSCH3D::PODType<unsigned short>, std::__1::allocator<TSCH3D::PODType<unsigned short> > > { struct PODType<unsigned short> {} *x1; struct PODType<unsigned short> {} *x2; struct __compressed_pair<TSCH3D::PODType<unsigned short> *, std::__1::allocator<TSCH3D::PODType<unsigned short> > > { struct PODType<unsigned short> {} *x_3_1_1; } x3; }*)container;
-- (unsigned int)count;
+- (unsigned long long)count;
 - (const void*)data;
 - (id)elementsAtIndices:(id)arg1;
 - (void)fillCapacity;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)initWithCapacity:(unsigned long long)arg1;
 
 @end

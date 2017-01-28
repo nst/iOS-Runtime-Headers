@@ -13,7 +13,7 @@
 @property (nonatomic, retain) VSAccount *unsavedAccount;
 
 - (void).cxx_destruct;
-- (void)_didSaveAccount:(id)arg1 withResult:(BOOL)arg2 error:(id)arg3;
+- (void)_didSaveAccount:(id)arg1 withResult:(bool)arg2 error:(id)arg3;
 - (id)accountStore;
 - (void)executionDidBegin;
 - (id)init;

@@ -3,7 +3,7 @@
  */
 
 @interface br_pacer : NSObject {
-    id /* block */  event_block;
+    id  event_block;
     bool  ever_resumed;
     double  last_fire_time;
     double  min_fire_interval;

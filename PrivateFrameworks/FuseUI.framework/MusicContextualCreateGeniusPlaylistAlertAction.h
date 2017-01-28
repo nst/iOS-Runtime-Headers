@@ -4,6 +4,6 @@
 
 @interface MusicContextualCreateGeniusPlaylistAlertAction : MusicContextualAlertAction
 
-+ (id)contextualCreateGeniusPlaylistActionWithEntityValueContext:(id)arg1 presentingViewController:(id)arg2 allowDetailPush:(BOOL)arg3 didDismissHandler:(id /* block */)arg4;
++ (id)contextualCreateGeniusPlaylistActionWithEntityValueContext:(id)arg1 presentingViewController:(id)arg2 allowDetailPush:(bool)arg3 didDismissHandler:(id)arg4;
 
 @end

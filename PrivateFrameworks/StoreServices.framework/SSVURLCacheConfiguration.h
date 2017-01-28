@@ -4,16 +4,16 @@
 
 @interface SSVURLCacheConfiguration : NSObject {
     NSString * _sessionIdentifier;
-    BOOL  _supportsProcessSharing;
+    bool  _supportsProcessSharing;
 }
 
 @property (nonatomic, copy) NSString *sessionIdentifier;
-@property (nonatomic) BOOL supportsProcessSharing;
+@property (nonatomic) bool supportsProcessSharing;
 
 - (void).cxx_destruct;
 - (id)sessionIdentifier;
 - (void)setSessionIdentifier:(id)arg1;
-- (void)setSupportsProcessSharing:(BOOL)arg1;
-- (BOOL)supportsProcessSharing;
+- (void)setSupportsProcessSharing:(bool)arg1;
+- (bool)supportsProcessSharing;
 
 @end

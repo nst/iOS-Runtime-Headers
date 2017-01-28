@@ -3,16 +3,16 @@
  */
 
 @interface LogCounterObject : NSObject {
-    unsigned int  _count;
+    unsigned long long  _count;
 }
 
-@property (nonatomic) unsigned int count;
+@property (nonatomic) unsigned long long count;
 
 + (id)counter;
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (id)description;
 - (id)init;
-- (void)setCount:(unsigned int)arg1;
+- (void)setCount:(unsigned long long)arg1;
 
 @end

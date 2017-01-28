@@ -11,7 +11,7 @@
 @property (nonatomic, retain) SUBProgress *progress;
 
 + (id)downloadWithDescriptor:(id)arg1 andProgress:(id)arg2;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;

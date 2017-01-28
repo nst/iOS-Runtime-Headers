@@ -4,6 +4,6 @@
 
 @interface FCTableViewDataSourceDiffGenerator : NSObject
 
-+ (id)generateDiffOfSections:(id)arg1 againstSections:(id)arg2 withDataEqualityTest:(id /* block */)arg3 identityValueProvider:(id /* block */)arg4;
++ (id)generateDiffOfSections:(id)arg1 againstSections:(id)arg2 withDataEqualityTest:(id)arg3 identityValueProvider:(id)arg4;
 
 @end

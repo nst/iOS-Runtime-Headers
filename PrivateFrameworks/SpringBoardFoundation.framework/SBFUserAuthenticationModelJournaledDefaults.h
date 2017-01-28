@@ -6,21 +6,21 @@
     <SBFUserAuthenticationModelDelegate> * _delegate;
     NSString * _journalPath;
     NSDictionary * _originalDefaultsForRollback;
-    BOOL  _pendingWipe;
-    BOOL  _permanentlyBlocked;
+    bool  _pendingWipe;
+    bool  _permanentlyBlocked;
     NSObject<OS_dispatch_queue> * _persistentStateQueue;
     SBSecurityDefaults * _securityDefaults;
-    BOOL  _speculativePasscodeFailureChargeOutstanding;
+    bool  _speculativePasscodeFailureChargeOutstanding;
     double  _unblockTime;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBFUserAuthenticationModelDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (getter=isPermanentlyBlocked, nonatomic, readonly) BOOL permanentlyBlocked;
+@property (readonly) unsigned long long hash;
+@property (getter=isPermanentlyBlocked, nonatomic, readonly) bool permanentlyBlocked;
 @property (readonly) Class superclass;
-@property (getter=isTemporarilyBlocked, nonatomic, readonly) BOOL temporarilyBlocked;
+@property (getter=isTemporarilyBlocked, nonatomic, readonly) bool temporarilyBlocked;
 @property (nonatomic, readonly) double timeUntilUnblockedSinceReferenceDate;
 
 + (id)_journaledDefaultsAndTypes;
@@ -28,7 +28,7 @@
 - (void).cxx_destruct;
 - (id)_copyLockControllerDefaults;
 - (void)_evaluatePendingWipe;
-- (BOOL)_isDeviceWipePreferenceEnabled;
+- (bool)_isDeviceWipePreferenceEnabled;
 - (void)_loadLockControllerDefaults:(id)arg1;
 - (void)_loadLockControllerDefaultsJournalIfNecessary;
 - (void)_persistentStateQueue_beginSpeculativeFailureCharge;
@@ -43,16 +43,16 @@
 - (id)delegate;
 - (id)init;
 - (id)initWithJournalPath:(id)arg1;
-- (BOOL)isPermanentlyBlocked;
-- (BOOL)isTemporarilyBlocked;
+- (bool)isPermanentlyBlocked;
+- (bool)isTemporarilyBlocked;
 - (void)notePasscodeEntryBegan;
 - (void)notePasscodeEntryCancelled;
 - (void)notePasscodeUnlockFailedWithError:(id)arg1;
 - (void)notePasscodeUnlockSucceeded;
-- (void)performPasswordTest:(id /* block */)arg1;
+- (void)performPasswordTest:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)synchronize;
 - (double)timeUntilUnblockedSinceReferenceDate;
-- (id)updateLockControllerDefaultsWithBlock:(id /* block */)arg1 journaled:(BOOL)arg2;
+- (id)updateLockControllerDefaultsWithBlock:(id)arg1 journaled:(bool)arg2;
 
 @end

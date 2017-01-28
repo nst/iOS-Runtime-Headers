@@ -3,25 +3,25 @@
  */
 
 @interface MusicProductDescription : NSObject <NSCopying> {
-    int  _format;
+    long long  _format;
     NSString * _storeEditorNotes;
     NSString * _text;
 }
 
-@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
-@property (nonatomic, readonly) int format;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
+@property (nonatomic, readonly) long long format;
 @property (nonatomic, readonly) NSString *storeEditorNotes;
 @property (nonatomic, readonly) NSString *text;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)format;
-- (unsigned int)hash;
+- (long long)format;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithStoreEditorNotes:(id)arg1;
 - (id)initWithText:(id)arg1;
-- (BOOL)isEmpty;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEmpty;
+- (bool)isEqual:(id)arg1;
 - (id)storeEditorNotes;
 - (id)text;
 

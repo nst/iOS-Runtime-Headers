@@ -8,11 +8,11 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)audioSessionModeForItemAtIndex:(unsigned int)arg1;
+- (id)audioSessionModeForItemAtIndex:(unsigned long long)arg1;
 - (void)storeAVItem:(id)arg1 didReceiveResponseAssetDictionary:(id)arg2;
 
 @end

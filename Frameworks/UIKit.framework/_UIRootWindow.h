@@ -3,19 +3,19 @@
  */
 
 @interface _UIRootWindow : UIWindow {
-    BOOL  _isExternal;
-    BOOL  _mainDisplay;
+    bool  _isExternal;
+    bool  _mainDisplay;
 }
 
 - (void)_configureContextOptions:(id)arg1;
 - (void)_configureRootLayer:(id)arg1 transformLayer:(id)arg2;
 - (id)_context;
-- (BOOL)_isConstrainedByScreenJail;
-- (BOOL)_isWindowServerHostingManaged;
+- (bool)_isConstrainedByScreenJail;
+- (bool)_isWindowServerHostingManaged;
 - (void)_noteScreenDidChangeMode:(id)arg1;
-- (BOOL)_touchesInsideShouldHideCalloutBar;
-- (BOOL)_transformLayerIncludesScreenRotation;
-- (BOOL)_wantsSceneAssociation;
+- (bool)_touchesInsideShouldHideCalloutBar;
+- (bool)_transformLayerIncludesScreenRotation;
+- (bool)_wantsSceneAssociation;
 - (void)dealloc;
 - (id)initWithDisplay:(id)arg1;
 - (id)initWithScreen:(id)arg1;

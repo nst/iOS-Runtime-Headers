@@ -11,41 +11,41 @@
     NSMutableSet * _highLevelDomainsAndPortsToUseOnlyAvailableIdentityWithoutPrompting;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _inputViewScreenBoundsAfterRotation;
-    BOOL  _isSuspended;
+    bool  _isSuspended;
     UIView * _loadingView;
-    int  _orientation;
+    long long  _orientation;
     unsigned int  _rotationEdgePin;
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  _rotationRect;
     WBUSheetController * _sheetController;
     UIWindow * _window;
-    BOOL  snapshotHideTimeHasExpired;
+    bool  snapshotHideTimeHasExpired;
     NSTimer * snapshotHideTimer;
     UIWebClip * webClip;
     UIWebView * webView;
-    BOOL  webViewDidLayout;
-    BOOL  webViewHasFinishedLoading;
+    bool  webViewDidLayout;
+    bool  webViewHasFinishedLoading;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIWebClip *webClip;
 @property (nonatomic, readonly) UIWebView *webView;
@@ -63,20 +63,20 @@
 - (float)_minZoomScale;
 - (void)_setFallbackURLs:(id)arg1;
 - (void)_setPersistentStoragePathDefaults;
-- (void)_setTopScrollIndicatorInset:(float)arg1;
+- (void)_setTopScrollIndicatorInset:(double)arg1;
 - (id)_sheetController;
 - (void)addAlert:(id)arg1;
 - (void)addAlertWithTitle:(id)arg1 bodyText:(id)arg2 context:(id)arg3;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })browserFrameForOrientation:(int)arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })browserFrameForOrientation:(long long)arg1;
 - (void)cancelFromAuthenticationManager:(id)arg1 forChallenge:(id)arg2;
 - (id)containerViewForAuthenticationPanel;
 - (void)continueAfterCertificateAlertWithContext:(id)arg1;
 - (void)dealloc;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
+- (void)didRotateFromInterfaceOrientation:(long long)arg1;
 - (void)downloadManager:(id)arg1 downloadDidFail:(id)arg2;
 - (void)downloadManager:(id)arg1 hasData:(id)arg2 forFinishedDownload:(id)arg3;
 - (id)genericMessageForError:(id)arg1;
-- (BOOL)handleCertificateError:(id)arg1 inWebView:(id)arg2;
+- (bool)handleCertificateError:(id)arg1 inWebView:(id)arg2;
 - (id)initForWebClipURL:(id)arg1;
 - (void)layoutWebview;
 - (void)loadInputAddress:(id)arg1;
@@ -88,8 +88,8 @@
 - (id)sheetController:(id)arg1 viewControllerForAlert:(id)arg2;
 - (void)sheetControllerDidHideSheet:(id)arg1;
 - (void)sheetControllerDidShowSheet:(id)arg1;
-- (BOOL)shouldUseOnlyAvailableIdentityWithoutPromptingForProtectionSpace:(id)arg1;
-- (BOOL)shouldWindowUseOnePartInterfaceRotationAnimation:(id)arg1;
+- (bool)shouldUseOnlyAvailableIdentityWithoutPromptingForProtectionSpace:(id)arg1;
+- (bool)shouldWindowUseOnePartInterfaceRotationAnimation:(id)arg1;
 - (void)showGenericDownloadAlert;
 - (void)showProfileDownloadAlert;
 - (void)showProfileInstallAlert;
@@ -103,11 +103,11 @@
 - (void)uiWebView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 - (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)uiWebView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
-- (void)uiWebView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2 totalSpaceNeeded:(unsigned int)arg3;
+- (void)uiWebView:(id)arg1 exceededApplicationCacheOriginQuotaForSecurityOrigin:(id)arg2 totalSpaceNeeded:(unsigned long long)arg3;
 - (void)uiWebView:(id)arg1 frame:(id)arg2 exceededDatabaseQuotaForSecurityOrigin:(id)arg3 database:(id)arg4;
 - (id)uiWebView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;
 - (void)uiWebView:(id)arg1 printFrameView:(id)arg2;
-- (BOOL)uiWebView:(id)arg1 resource:(id)arg2 canAuthenticateAgainstProtectionSpace:(id)arg3 forDataSource:(id)arg4;
+- (bool)uiWebView:(id)arg1 resource:(id)arg2 canAuthenticateAgainstProtectionSpace:(id)arg3 forDataSource:(id)arg4;
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didCancelAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
@@ -121,9 +121,9 @@
 - (void)webView:(id)arg1 decidePolicyForNewWindowAction:(id)arg2 request:(id)arg3 newFrameName:(id)arg4 decisionListener:(id)arg5;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webView:(id)arg1 didFailProvisionalLoadWithError:(id)arg2;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1;
-- (BOOL)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(int)arg2;
+- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1;
+- (bool)window:(id)arg1 shouldAutorotateToInterfaceOrientation:(long long)arg2;
 
 @end

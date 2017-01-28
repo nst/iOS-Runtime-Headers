@@ -16,10 +16,10 @@
 - (id)borderLayer;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
-- (void)setAnimating:(BOOL)arg1;
+- (void)setAnimating:(bool)arg1;
 - (void)setBorderLayer:(id)arg1;
 - (void)setSticker:(id)arg1;
-- (void)showCellBorder:(BOOL)arg1;
+- (void)showCellBorder:(bool)arg1;
 - (id)sticker;
 - (id)stickerView;
 

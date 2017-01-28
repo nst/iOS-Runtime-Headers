@@ -9,9 +9,9 @@
 @property (nonatomic, retain) NSPredicate *predicate;
 
 - (void).cxx_destruct;
-- (BOOL)_validateThrottleParams:(id)arg1;
+- (bool)_validateThrottleParams:(id)arg1;
 - (id)initWithName:(id)arg1 andParameters:(id)arg2;
-- (BOOL)matchesItem:(id)arg1 nsecsToRetry:(unsigned long long*)arg2 now:(unsigned long long)arg3;
+- (bool)matchesItem:(id)arg1 nsecsToRetry:(unsigned long long*)arg2 now:(unsigned long long)arg3;
 - (id)predicate;
 - (void)setPredicate:(id)arg1;
 

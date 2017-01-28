@@ -3,15 +3,15 @@
  */
 
 @interface AVCaptureResolvedPhotoSettingsInternal : NSObject {
-    BOOL  HDREnabled;
-    BOOL  bravoImageFusionEnabled;
-    BOOL  flashEnabled;
+    bool  HDREnabled;
+    bool  dualCameraFusionEnabled;
+    bool  flashEnabled;
     struct { 
         int width; 
         int height; 
     }  livePhotoMovieDimensions;
-    BOOL  livePhotoMovieEnabled;
-    BOOL  originalPhotoDeliveryEnabled;
+    bool  livePhotoMovieEnabled;
+    bool  originalPhotoDeliveryEnabled;
     struct { 
         int width; 
         int height; 
@@ -24,10 +24,10 @@
         int width; 
         int height; 
     }  rawPhotoDimensions;
-    BOOL  shallowDepthOfFieldEffectEnabled;
-    BOOL  squareCropEnabled;
-    BOOL  stillImageStabilizationEnabled;
-    BOOL  turboModeEnabled;
+    bool  shallowDepthOfFieldEffectEnabled;
+    bool  squareCropEnabled;
+    bool  stillImageStabilizationEnabled;
+    bool  turboModeEnabled;
     long long  uniqueID;
 }
 

@@ -5,10 +5,10 @@
 @interface SBFCredentialSet : NSObject <NSSecureCoding> {
     struct __ACMHandle { } * _acmContext;
     NSData * _cachedCredentials;
-    BOOL  _ownsContext;
+    bool  _ownsContext;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)dealloc;

@@ -3,6 +3,7 @@
  */
 
 @interface HDFitnessFriendsMessageInviteResponse : PBCodable <NSCopying> {
+    HDFitnessFriendsMessageActivityDataPreview * _activityDataPreview;
     NSString * _handshakeToken;
     struct { 
         unsigned int inviteeVersion : 1; 
@@ -15,13 +16,15 @@
     int  _responseCode;
 }
 
+@property (nonatomic, retain) HDFitnessFriendsMessageActivityDataPreview *activityDataPreview;
 @property (nonatomic, retain) NSString *handshakeToken;
-@property (nonatomic, readonly) BOOL hasHandshakeToken;
-@property (nonatomic, readonly) BOOL hasInviteeBuildNumber;
-@property (nonatomic, readonly) BOOL hasInviteeCloudKitAddress;
-@property (nonatomic, readonly) BOOL hasInviteeShareLocations;
-@property (nonatomic) BOOL hasInviteeVersion;
-@property (nonatomic) BOOL hasResponseCode;
+@property (nonatomic, readonly) bool hasActivityDataPreview;
+@property (nonatomic, readonly) bool hasHandshakeToken;
+@property (nonatomic, readonly) bool hasInviteeBuildNumber;
+@property (nonatomic, readonly) bool hasInviteeCloudKitAddress;
+@property (nonatomic, readonly) bool hasInviteeShareLocations;
+@property (nonatomic) bool hasInviteeVersion;
+@property (nonatomic) bool hasResponseCode;
 @property (nonatomic, retain) NSString *inviteeBuildNumber;
 @property (nonatomic, retain) NSString *inviteeCloudKitAddress;
 @property (nonatomic, retain) HDFitnessFriendsMessageShareLocations *inviteeShareLocations;
@@ -29,29 +32,32 @@
 @property (nonatomic) int responseCode;
 
 - (void).cxx_destruct;
+- (id)activityDataPreview;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)handshakeToken;
-- (BOOL)hasHandshakeToken;
-- (BOOL)hasInviteeBuildNumber;
-- (BOOL)hasInviteeCloudKitAddress;
-- (BOOL)hasInviteeShareLocations;
-- (BOOL)hasInviteeVersion;
-- (BOOL)hasResponseCode;
-- (unsigned int)hash;
+- (bool)hasActivityDataPreview;
+- (bool)hasHandshakeToken;
+- (bool)hasInviteeBuildNumber;
+- (bool)hasInviteeCloudKitAddress;
+- (bool)hasInviteeShareLocations;
+- (bool)hasInviteeVersion;
+- (bool)hasResponseCode;
+- (unsigned long long)hash;
 - (id)inviteeBuildNumber;
 - (id)inviteeCloudKitAddress;
 - (id)inviteeShareLocations;
 - (unsigned int)inviteeVersion;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)responseCode;
+- (void)setActivityDataPreview:(id)arg1;
 - (void)setHandshakeToken:(id)arg1;
-- (void)setHasInviteeVersion:(BOOL)arg1;
-- (void)setHasResponseCode:(BOOL)arg1;
+- (void)setHasInviteeVersion:(bool)arg1;
+- (void)setHasResponseCode:(bool)arg1;
 - (void)setInviteeBuildNumber:(id)arg1;
 - (void)setInviteeCloudKitAddress:(id)arg1;
 - (void)setInviteeShareLocations:(id)arg1;

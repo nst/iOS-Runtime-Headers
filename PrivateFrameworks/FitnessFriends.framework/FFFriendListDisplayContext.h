@@ -3,19 +3,19 @@
  */
 
 @interface FFFriendListDisplayContext : NSObject {
-    int  _displayFilter;
-    int  _displayMode;
+    long long  _displayFilter;
+    long long  _displayMode;
 }
 
-@property (nonatomic) int displayFilter;
-@property (nonatomic) int displayMode;
+@property (nonatomic) long long displayFilter;
+@property (nonatomic) long long displayMode;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (int)displayFilter;
-- (int)displayMode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)setDisplayFilter:(int)arg1;
-- (void)setDisplayMode:(int)arg1;
+- (long long)displayFilter;
+- (long long)displayMode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (void)setDisplayFilter:(long long)arg1;
+- (void)setDisplayMode:(long long)arg1;
 
 @end

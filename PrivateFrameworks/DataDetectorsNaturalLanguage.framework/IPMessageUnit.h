@@ -7,7 +7,7 @@
     NSArray * _features;
     NSArray * _flatMessageThread;
     NSMutableArray * _followups;
-    int  _indexInOriginalMessage;
+    long long  _indexInOriginalMessage;
     NSString * _lowercaseText;
     IPMessage * _originalMessage;
     IPMessageUnit * _previous;
@@ -17,7 +17,7 @@
 
 @property (readonly) NSArray *features;
 @property (readonly) NSArray *followups;
-@property (readonly) int indexInOriginalMessage;
+@property (readonly) long long indexInOriginalMessage;
 @property (readonly, copy) NSString *lowercaseText;
 @property (readonly) IPMessage *originalMessage;
 @property (readonly) IPMessageUnit *previous;
@@ -28,8 +28,8 @@
 - (id)bestLanguageID;
 - (id)features;
 - (id)followups;
-- (int)indexInOriginalMessage;
-- (id)initWithText:(id)arg1 originalMessage:(id)arg2 index:(int)arg3;
+- (long long)indexInOriginalMessage;
+- (id)initWithText:(id)arg1 originalMessage:(id)arg2 index:(long long)arg3;
 - (id)lowercaseText;
 - (id)originalMessage;
 - (id)previous;

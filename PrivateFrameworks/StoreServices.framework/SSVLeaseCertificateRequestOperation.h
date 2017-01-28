@@ -6,12 +6,12 @@
     NSObject<OS_dispatch_semaphore> * _bagLoadSemaphore;
     NSString * _certificateURLBagKey;
     SSVPlaybackLeaseConfiguration * _configuration;
-    id /* block */  _outputBlock;
+    id  _outputBlock;
     SSURLBag * _urlBag;
 }
 
 @property (copy) NSString *certificateURLBagKey;
-@property (copy) id /* block */ outputBlock;
+@property (copy) id outputBlock;
 
 - (void).cxx_destruct;
 - (id)_resolveCertificateURLReturningError:(id*)arg1;
@@ -20,8 +20,8 @@
 - (id)initWithConfiguration:(id)arg1;
 - (id)initWithURLBag:(id)arg1;
 - (void)main;
-- (id /* block */)outputBlock;
+- (id)outputBlock;
 - (void)setCertificateURLBagKey:(id)arg1;
-- (void)setOutputBlock:(id /* block */)arg1;
+- (void)setOutputBlock:(id)arg1;
 
 @end

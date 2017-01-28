@@ -4,40 +4,40 @@
 
 @interface _LSSpringBoardCall : NSObject <NSCopying> {
     NSString * _applicationIdentifier;
-    BOOL  _callCompletionHandlerWhenFullyComplete;
+    bool  _callCompletionHandlerWhenFullyComplete;
     NSXPCConnection * _clientXPCConnection;
     NSDictionary * _launchOptions;
     NSString * _name;
-    BOOL  _promptForSchemeApprovalIfNeeded;
+    bool  _promptForSchemeApprovalIfNeeded;
 }
 
 @property (copy) NSString *applicationIdentifier;
-@property BOOL callCompletionHandlerWhenFullyComplete;
+@property bool callCompletionHandlerWhenFullyComplete;
 @property (retain) NSXPCConnection *clientXPCConnection;
 @property (copy) NSDictionary *launchOptions;
 @property (copy) NSString *name;
-@property BOOL promptForSchemeApprovalIfNeeded;
+@property bool promptForSchemeApprovalIfNeeded;
 
 + (id)queue;
 
 - (id)applicationIdentifier;
-- (BOOL)callCompletionHandlerWhenFullyComplete;
-- (void)callWithCompletionHandler:(id /* block */)arg1;
+- (bool)callCompletionHandlerWhenFullyComplete;
+- (void)callWithCompletionHandler:(id)arg1;
 - (id)clientXPCConnection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)launchOptions;
-- (void)lieWithCompletionHandler:(id /* block */)arg1;
+- (void)lieWithCompletionHandler:(id)arg1;
 - (id)name;
-- (void)prompt:(BOOL)arg1 forSchemeApproval:(id)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)promptForSchemeApprovalIfNeeded;
-- (void)promptForSchemeApprovalIfNeededWithCompletionHandler:(id /* block */)arg1 didNotPromptHandler:(id /* block */)arg2;
+- (void)prompt:(bool)arg1 forSchemeApproval:(id)arg2 completionHandler:(id)arg3;
+- (bool)promptForSchemeApprovalIfNeeded;
+- (void)promptForSchemeApprovalIfNeededWithCompletionHandler:(id)arg1 didNotPromptHandler:(id)arg2;
 - (void)setApplicationIdentifier:(id)arg1;
-- (void)setCallCompletionHandlerWhenFullyComplete:(BOOL)arg1;
+- (void)setCallCompletionHandlerWhenFullyComplete:(bool)arg1;
 - (void)setClientXPCConnection:(id)arg1;
 - (void)setLaunchOptions:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)setPromptForSchemeApprovalIfNeeded:(BOOL)arg1;
+- (void)setPromptForSchemeApprovalIfNeeded:(bool)arg1;
 
 @end

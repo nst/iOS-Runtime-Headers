@@ -6,7 +6,7 @@
 @required
 
 - (void)askClientUserActivityToSave:(NSUUID *)arg1;
-- (void)askClientUserActivityToSave:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 9: NSUUID *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, LSUserActivityInfo *, BOOL, NSError *, void*
+- (void)askClientUserActivityToSave:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 9: NSUUID *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, LSUserActivityInfo *, bool, NSError *, void*
 - (void)tellClientUserActivityItWasResumed:(NSUUID *)arg1;
 
 @end

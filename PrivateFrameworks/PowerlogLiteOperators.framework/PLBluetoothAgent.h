@@ -10,7 +10,7 @@
     unsigned char  _logCount;
     PLEntryNotificationOperatorComposition * _sbcChanged;
     PLEntryNotificationOperatorComposition * _wakeEntryNotifications;
-    BOOL  keepSessionAlive;
+    bool  keepSessionAlive;
     struct BTLocalDeviceImpl { } * localBluetoothDevice;
     struct BTSessionImpl { } * session;
 }
@@ -36,7 +36,7 @@
 - (void)attachSession;
 - (id)batteryLevelChanged;
 - (void)bluetoothDeviceEvent:(int)arg1 onDevice:(struct BTLocalDeviceImpl { }*)arg2 withResult:(int)arg3;
-- (BOOL)bluetoothPresent;
+- (bool)bluetoothPresent;
 - (void)bluetoothSessionEvent:(int)arg1 onSession:(struct BTSessionImpl { }*)arg2 withResult:(int)arg3;
 - (id)btHCIListener;
 - (id)btHardwareChipset;
@@ -44,9 +44,9 @@
 - (void)dealloc;
 - (id)init;
 - (void)initOperatorDependancies;
-- (BOOL)isConnectable;
-- (BOOL)isConnected;
-- (BOOL)isDiscoverable;
+- (bool)isConnectable;
+- (bool)isConnected;
+- (bool)isDiscoverable;
 - (id)leConnectionListener;
 - (struct BTLocalDeviceImpl { }*)localBluetoothDevice;
 - (void)log;
@@ -57,11 +57,11 @@
 - (void)logEventForwardPairedDevices;
 - (void)logEventIntervalConnectedDevices;
 - (void)logEventIntervalHCIRawData:(id)arg1;
-- (void)logEventIntervalLeConnectedDevices:(id)arg1 withRequest:(BOOL)arg2;
+- (void)logEventIntervalLeConnectedDevices:(id)arg1 withRequest:(bool)arg2;
 - (void)logwithBTOnCheck;
 - (void)modelBluetoothOffPower;
 - (void)modelBluetoothPower:(id)arg1;
-- (BOOL)modulePowered;
+- (bool)modulePowered;
 - (id)sbcChanged;
 - (void)sessionAttached:(struct BTSessionImpl { }*)arg1 withResult:(int)arg2;
 - (void)sessionTerminated:(struct BTSessionImpl { }*)arg1 withResult:(int)arg2;

@@ -3,17 +3,17 @@
  */
 
 @interface PRSFTETask : NSObject <PRSTriggerTask> {
-    id /* block */  _reply;
+    id  _reply;
 }
 
-@property (copy) id /* block */ reply;
+@property (copy) id reply;
 
 - (void).cxx_destruct;
-- (BOOL)allowLocation;
-- (id)initWithReply:(id /* block */)arg1;
-- (BOOL)needsBag;
-- (id /* block */)reply;
-- (void)setReply:(id /* block */)arg1;
-- (void)triggerQuery:(BOOL)arg1;
+- (bool)allowLocation;
+- (id)initWithReply:(id)arg1;
+- (bool)needsBag;
+- (id)reply;
+- (void)setReply:(id)arg1;
+- (void)triggerQuery:(bool)arg1;
 
 @end

@@ -4,8 +4,8 @@
 
 @interface GGLOpenGLESLayer : CAEAGLLayer <GGLLayer> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _backingSize;
     struct unique_ptr<ggl::OESContext, std::__1::default_delete<ggl::OESContext> > { 
         struct __compressed_pair<ggl::OESContext *, std::__1::default_delete<ggl::OESContext> > { 
@@ -25,23 +25,23 @@
 }
 
 @property (readonly) int backingFormat;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } backingSize;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } backingSize;
 @property <GGLLayerDelegate> *renderDelegate;
 @property (nonatomic, readonly) struct Texture { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; }*texture;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)_createLayerRenderBuffer;
+- (bool)_createLayerRenderBuffer;
 - (void)_deleteLayerRenderBuffer;
 - (int)backingFormat;
-- (struct CGSize { float x1; float x2; })backingSize;
+- (struct CGSize { double x1; double x2; })backingSize;
 - (void)dealloc;
 - (void)didEnterBackground;
 - (id)initWithDevice:(struct shared_ptr<ggl::OESDevice> { struct OESDevice {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)layoutSublayers;
 - (void)onTimerFired:(double)arg1;
 - (id)renderDelegate;
-- (void)setContentsScale:(float)arg1;
+- (void)setContentsScale:(double)arg1;
 - (void)setRenderDelegate:(id)arg1;
 - (struct Texture { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int (**x4)(); char *x5; int x6; int x7; int x8; int x9; }*)texture;
 

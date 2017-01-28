@@ -3,15 +3,15 @@
  */
 
 @interface GEOVoltaireAddressCorrectionProvider : NSObject <GEOPBSessionRequesterDelegate> {
-    id /* block */  _errorHandler;
-    id /* block */  _initFinishedHandler;
+    id  _errorHandler;
+    id  _initFinishedHandler;
     GEORequester * _requester;
-    id /* block */  _updateFinishedHandler;
+    id  _updateFinishedHandler;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) GEORequester *requester;
 @property (readonly) Class superclass;
 
@@ -25,7 +25,7 @@
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
 - (void)setRequester:(id)arg1;
-- (void)startInitRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
-- (void)startUpdateRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
+- (void)startInitRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startUpdateRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
 
 @end

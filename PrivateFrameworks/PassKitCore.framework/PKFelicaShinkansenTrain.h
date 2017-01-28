@@ -22,7 +22,7 @@
 @property (nonatomic, readonly, copy) NSNumber *seatRow;
 @property (nonatomic, readonly, copy) NSString *trainName;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)arrivalTime;

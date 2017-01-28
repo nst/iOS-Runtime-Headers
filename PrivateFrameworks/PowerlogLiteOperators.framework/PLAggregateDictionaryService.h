@@ -6,7 +6,7 @@
     PLCFNotificationOperatorComposition * _blmAggregateCFNotification;
     NSNumber * _currentMachWakeTime;
     PLMonotonicTimer * _dailyTaskTimer;
-    BOOL  _firstScreenOnAfterWake;
+    bool  _firstScreenOnAfterWake;
     struct AggState { 
         int state; 
         double level; 
@@ -23,7 +23,7 @@
 @property (retain) PLCFNotificationOperatorComposition *blmAggregateCFNotification;
 @property (retain) NSNumber *currentMachWakeTime;
 @property (retain) PLMonotonicTimer *dailyTaskTimer;
-@property BOOL firstScreenOnAfterWake;
+@property bool firstScreenOnAfterWake;
 @property struct AggState { int x1; double x2; double x3; } last_state;
 @property (retain) NSMutableArray *registeredNotifications;
 @property (retain) NSMutableDictionary *validReasonsDictionary;
@@ -47,7 +47,7 @@
 - (id)currentMachWakeTime;
 - (id)dailyTaskTimer;
 - (void)dailyTasks;
-- (BOOL)firstScreenOnAfterWake;
+- (bool)firstScreenOnAfterWake;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)initValidReasonsDictionary;
@@ -76,13 +76,13 @@
 - (void)setBlmAggregateCFNotification:(id)arg1;
 - (void)setCurrentMachWakeTime:(id)arg1;
 - (void)setDailyTaskTimer:(id)arg1;
-- (void)setFirstScreenOnAfterWake:(BOOL)arg1;
+- (void)setFirstScreenOnAfterWake:(bool)arg1;
 - (void)setLast_state:(struct AggState { int x1; double x2; double x3; })arg1;
 - (void)setRegisteredNotifications:(id)arg1;
 - (void)setValidReasonsDictionary:(id)arg1;
 - (void)setWakeReasonString:(id)arg1;
 - (void)setWakeReasons:(id)arg1;
-- (BOOL)shouldSample;
+- (bool)shouldSample;
 - (void)updateAggregateStateWithEntry:(id)arg1;
 - (id)validReasonsDictionary;
 - (id)wakeReasonString;

@@ -12,8 +12,8 @@
 }
 
 @property (nonatomic, retain) GEOLatLng *center;
-@property (nonatomic, readonly) BOOL hasCenter;
-@property (nonatomic) BOOL hasOpaqueGeoId;
+@property (nonatomic, readonly) bool hasCenter;
+@property (nonatomic) bool hasOpaqueGeoId;
 @property (nonatomic) unsigned long long opaqueGeoId;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -23,15 +23,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCenter;
-- (BOOL)hasOpaqueGeoId;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasCenter;
+- (bool)hasOpaqueGeoId;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)opaqueGeoId;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setCenter:(id)arg1;
-- (void)setHasOpaqueGeoId:(BOOL)arg1;
+- (void)setHasOpaqueGeoId:(bool)arg1;
 - (void)setOpaqueGeoId:(unsigned long long)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

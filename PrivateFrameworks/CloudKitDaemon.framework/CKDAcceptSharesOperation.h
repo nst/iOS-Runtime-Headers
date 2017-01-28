@@ -3,7 +3,7 @@
  */
 
 @interface CKDAcceptSharesOperation : CKDOperation {
-    id /* block */  _acceptCompletionBlock;
+    id  _acceptCompletionBlock;
     NSMutableArray * _acceptedShareURLsToFetch;
     NSMutableDictionary * _clientProvidedMetadatasByURL;
     int  _numShareAcceptAttempts;
@@ -11,7 +11,7 @@
     NSMutableArray * _shareURLsToAccept;
 }
 
-@property (nonatomic, copy) id /* block */ acceptCompletionBlock;
+@property (nonatomic, copy) id acceptCompletionBlock;
 @property (nonatomic, retain) NSMutableArray *acceptedShareURLsToFetch;
 @property (nonatomic, retain) NSMutableDictionary *clientProvidedMetadatasByURL;
 @property (nonatomic) int numShareAcceptAttempts;
@@ -19,29 +19,29 @@
 @property (nonatomic, retain) NSMutableArray *shareURLsToAccept;
 
 - (void).cxx_destruct;
-- (BOOL)_acceptShares;
+- (bool)_acceptShares;
 - (id)_addSelfIdentityToShareMetadataPublicPCS:(id)arg1 forShareWithURL:(id)arg2 error:(id*)arg3;
-- (BOOL)_callingParticipantOONForShareMetadata:(id)arg1;
+- (bool)_callingParticipantOONForShareMetadata:(id)arg1;
 - (void)_decryptShareMetadata;
 - (void)_fetchAcceptedShares;
 - (void)_fetchMetadataForShares;
-- (BOOL)_fillInPublicKeyIntoAcceptMetadata:(id)arg1 serviceType:(unsigned int)arg2 keyVersion:(unsigned int)arg3 error:(id*)arg4;
+- (bool)_fillInPublicKeyIntoAcceptMetadata:(id)arg1 serviceType:(unsigned long long)arg2 keyVersion:(unsigned long long)arg3 error:(id*)arg4;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleShareURLAccepted:(id)arg1 forShare:(id)arg2 responseCode:(id)arg3;
 - (id)_keySwapForOONParticipant:(id)arg1;
 - (void)_performCallbackForURL:(id)arg1 withShare:(id)arg2 error:(id)arg3;
 - (void)_prepareShareMetadata;
-- (BOOL)_validateInvitedPCSCanBeDecryptedForShare:(id)arg1;
-- (id /* block */)acceptCompletionBlock;
+- (bool)_validateInvitedPCSCanBeDecryptedForShare:(id)arg1;
+- (id)acceptCompletionBlock;
 - (id)acceptedShareURLsToFetch;
 - (id)activityCreate;
 - (id)clientProvidedMetadatasByURL;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (BOOL)makeStateTransition;
-- (id)nameForState:(unsigned int)arg1;
+- (bool)makeStateTransition;
+- (id)nameForState:(unsigned long long)arg1;
 - (int)numShareAcceptAttempts;
-- (void)setAcceptCompletionBlock:(id /* block */)arg1;
+- (void)setAcceptCompletionBlock:(id)arg1;
 - (void)setAcceptedShareURLsToFetch:(id)arg1;
 - (void)setClientProvidedMetadatasByURL:(id)arg1;
 - (void)setNumShareAcceptAttempts:(int)arg1;

@@ -14,7 +14,7 @@
 - (id)combineHashesWithSeed:(int)arg1 hashA:(id)arg2 hashB:(id)arg3 reuse:(id)arg4;
 - (id)computeHashesForString:(id)arg1 reuse:(id)arg2;
 - (id)computeHashesWithSeed:(int)arg1 forData:(id)arg2 reuse:(id)arg3;
-- (BOOL)getWithHashes:(id)arg1;
+- (bool)getWithHashes:(id)arg1;
 - (id)initDummy;
 - (id)initWithData:(id)arg1 numBits:(unsigned int)arg2 numHashFunctions:(int)arg3;
 - (id)newHashesArray;

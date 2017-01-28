@@ -3,57 +3,57 @@
  */
 
 @interface GEONavigationListener : NSObject <GEONavigationServerObserverXPCInterface> {
-    id /* block */  _activeRouteDetailsDataUpdatedHandler;
+    id  _activeRouteDetailsDataUpdatedHandler;
     NSXPCConnection * _connection;
-    id /* block */  _guidanceStateUpdatedHandler;
+    id  _guidanceStateUpdatedHandler;
     int  _navigationStartedToken;
     int  _navigationStoppedToken;
     NSObject<OS_dispatch_queue> * _queue;
-    id /* block */  _routeSummaryUpdatedHandler;
-    id /* block */  _selectedRideOptionUpdatedHandler;
-    id /* block */  _stepIndexUpdatedHandler;
-    id /* block */  _transitSummaryUpdatedHandler;
+    id  _rideSelectionsUpdatedHandler;
+    id  _routeSummaryUpdatedHandler;
+    id  _stepIndexUpdatedHandler;
+    id  _transitSummaryUpdatedHandler;
 }
 
-@property (nonatomic, copy) id /* block */ activeRouteDetailsDataUpdatedHandler;
+@property (nonatomic, copy) id activeRouteDetailsDataUpdatedHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ guidanceStateUpdatedHandler;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ routeSummaryUpdatedHandler;
-@property (nonatomic, copy) id /* block */ selectedRideOptionUpdatedHandler;
-@property (nonatomic, copy) id /* block */ stepIndexUpdatedHandler;
+@property (nonatomic, copy) id guidanceStateUpdatedHandler;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id rideSelectionsUpdatedHandler;
+@property (nonatomic, copy) id routeSummaryUpdatedHandler;
+@property (nonatomic, copy) id stepIndexUpdatedHandler;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) id /* block */ transitSummaryUpdatedHandler;
+@property (nonatomic, copy) id transitSummaryUpdatedHandler;
 
 - (void)_close;
 - (void)_connectToDaemonIfNeeded;
 - (void)_open;
-- (id /* block */)activeRouteDetailsDataUpdatedHandler;
+- (id)activeRouteDetailsDataUpdatedHandler;
 - (void)dealloc;
-- (id /* block */)guidanceStateUpdatedHandler;
+- (id)guidanceStateUpdatedHandler;
 - (id)initWithQueue:(id)arg1;
 - (void)requestActiveRouteDetailsData;
 - (void)requestGuidanceState;
+- (void)requestRideSelections;
 - (void)requestRouteSummary;
-- (void)requestSelectedRideOption;
 - (void)requestStepIndex;
 - (void)requestTransitSummary;
-- (id /* block */)routeSummaryUpdatedHandler;
+- (id)rideSelectionsUpdatedHandler;
+- (id)routeSummaryUpdatedHandler;
 - (void)routeSummaryUpdatedWithActiveRouteDetailsData:(id)arg1;
 - (void)routeSummaryUpdatedWithGuidanceStateData:(id)arg1;
 - (void)routeSummaryUpdatedWithNavigationRouteSummaryData:(id)arg1;
-- (void)routeSummaryUpdatedWithSelectedRideOptionData:(id)arg1;
+- (void)routeSummaryUpdatedWithRideSelectionData:(id)arg1;
 - (void)routeSummaryUpdatedWithStepIndexData:(id)arg1;
 - (void)routeSummaryUpdatedWithTransitSummaryData:(id)arg1;
-- (id /* block */)selectedRideOptionUpdatedHandler;
-- (void)setActiveRouteDetailsDataUpdatedHandler:(id /* block */)arg1;
-- (void)setGuidanceStateUpdatedHandler:(id /* block */)arg1;
-- (void)setRouteSummaryUpdatedHandler:(id /* block */)arg1;
-- (void)setSelectedRideOptionUpdatedHandler:(id /* block */)arg1;
-- (void)setStepIndexUpdatedHandler:(id /* block */)arg1;
-- (void)setTransitSummaryUpdatedHandler:(id /* block */)arg1;
-- (id /* block */)stepIndexUpdatedHandler;
-- (id /* block */)transitSummaryUpdatedHandler;
+- (void)setActiveRouteDetailsDataUpdatedHandler:(id)arg1;
+- (void)setGuidanceStateUpdatedHandler:(id)arg1;
+- (void)setRideSelectionsUpdatedHandler:(id)arg1;
+- (void)setRouteSummaryUpdatedHandler:(id)arg1;
+- (void)setStepIndexUpdatedHandler:(id)arg1;
+- (void)setTransitSummaryUpdatedHandler:(id)arg1;
+- (id)stepIndexUpdatedHandler;
+- (id)transitSummaryUpdatedHandler;
 
 @end

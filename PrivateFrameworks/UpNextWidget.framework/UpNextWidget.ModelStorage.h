@@ -12,9 +12,9 @@
 @property (nonatomic, copy) NSArray *events;
 @property (nonatomic, copy) NSArray *reminders;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (id /* block */).cxx_destruct;
+- (id).cxx_destruct;
 - (id)alarms;
 - (id)clone;
 - (void)encodeWithCoder:(id)arg1;

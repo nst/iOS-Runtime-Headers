@@ -11,13 +11,13 @@
 @property (nonatomic, readonly) id value;
 
 + (id)timestampedWithValue:(id)arg1 timestamp:(double)arg2;
-+ (id /* block */)wrapTransformWithScheduler:(id)arg1;
++ (id)wrapTransformWithScheduler:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithValue:(id)arg1 timestamp:(double)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (double)timestamp;
 - (id)value;
 

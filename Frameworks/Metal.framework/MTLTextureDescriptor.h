@@ -4,23 +4,23 @@
 
 @interface MTLTextureDescriptor : NSObject <NSCopying>
 
-@property (nonatomic) unsigned int arrayLength;
-@property (nonatomic) unsigned int cpuCacheMode;
-@property (nonatomic) unsigned int depth;
-@property (nonatomic) unsigned int height;
-@property (nonatomic) unsigned int mipmapLevelCount;
-@property (nonatomic) unsigned int pixelFormat;
-@property (nonatomic) unsigned int resourceOptions;
-@property (nonatomic) unsigned int sampleCount;
-@property (nonatomic) unsigned int storageMode;
-@property (nonatomic) unsigned int textureType;
-@property (nonatomic) unsigned int usage;
-@property (nonatomic) unsigned int width;
+@property (nonatomic) unsigned long long arrayLength;
+@property (nonatomic) unsigned long long cpuCacheMode;
+@property (nonatomic) unsigned long long depth;
+@property (nonatomic) unsigned long long height;
+@property (nonatomic) unsigned long long mipmapLevelCount;
+@property (nonatomic) unsigned long long pixelFormat;
+@property (nonatomic) unsigned long long resourceOptions;
+@property (nonatomic) unsigned long long sampleCount;
+@property (nonatomic) unsigned long long storageMode;
+@property (nonatomic) unsigned long long textureType;
+@property (nonatomic) unsigned long long usage;
+@property (nonatomic) unsigned long long width;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)texture2DDescriptorWithPixelFormat:(unsigned int)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3 mipmapped:(BOOL)arg4;
-+ (id)textureCubeDescriptorWithPixelFormat:(unsigned int)arg1 size:(unsigned int)arg2 mipmapped:(BOOL)arg3;
++ (id)texture2DDescriptorWithPixelFormat:(unsigned long long)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 mipmapped:(bool)arg4;
++ (id)textureCubeDescriptorWithPixelFormat:(unsigned long long)arg1 size:(unsigned long long)arg2 mipmapped:(bool)arg3;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 

@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)personTableTinyActionCell:(ABPersonTableTinyActionCell *)arg1 shouldShowAction:(ABPersonTableAction *)arg2;
+- (bool)personTableTinyActionCell:(ABPersonTableTinyActionCell *)arg1 shouldShowAction:(ABPersonTableAction *)arg2;
 
 @end

@@ -4,7 +4,7 @@
 
 @interface NTKFaceSnapshotClient : NSObject {
     NSXPCConnection * _connection;
-    BOOL  _registrationNeeded;
+    bool  _registrationNeeded;
 }
 
 + (id)sharedInstance;
@@ -16,7 +16,7 @@
 - (void)_registerIfNeeded;
 - (void)_setupConnection;
 - (void)_updateAllSnapshots;
-- (void)createFaceForPerformanceTesting:(int)arg1;
+- (void)createFaceForPerformanceTesting:(long long)arg1;
 - (void)dealloc;
 - (void)faceSnapshotChangedForKey:(id)arg1;
 - (id)init;

@@ -3,37 +3,37 @@
  */
 
 @interface _DPOBHFragmentRecord : _DPOBHSequenceRecord {
-    NSString * _fragment;
     long long  _fragmentBitPosition;
-    BOOL  _fragmentBitValue;
+    bool  _fragmentBitValue;
     short  _fragmentPosition;
     short  _fragmentWidth;
+    NSString * _plainFragment;
 }
 
-@property (nonatomic, copy) NSString *fragment;
 @property (nonatomic) long long fragmentBitPosition;
-@property (nonatomic) BOOL fragmentBitValue;
+@property (nonatomic) bool fragmentBitValue;
 @property (nonatomic) short fragmentPosition;
 @property (nonatomic) short fragmentWidth;
+@property (nonatomic, copy) NSString *plainFragment;
 
 + (id)entityName;
-+ (id)fragmentWithKey:(id)arg1 sequence:(id)arg2 sequenceBitPosition:(unsigned short)arg3 sequenceBitValue:(BOOL)arg4 fragmentPosition:(unsigned short)arg5 fragmentWidth:(unsigned short)arg6 fragment:(id)arg7 fragmentBitPosition:(long long)arg8 fragmentBitValue:(BOOL)arg9 creationDate:(double)arg10 submitted:(BOOL)arg11 objectId:(id)arg12;
++ (id)fragmentWithKey:(id)arg1 sequence:(id)arg2 sequenceBitPosition:(unsigned short)arg3 sequenceBitValue:(bool)arg4 fragmentPosition:(unsigned short)arg5 fragmentWidth:(unsigned short)arg6 fragment:(id)arg7 fragmentBitPosition:(long long)arg8 fragmentBitValue:(bool)arg9 creationDate:(double)arg10 submitted:(bool)arg11 objectId:(id)arg12;
 
 - (void).cxx_destruct;
-- (BOOL)copyFromManagedObject:(id)arg1;
-- (BOOL)copyToManagedObject:(id)arg1;
+- (bool)copyFromManagedObject:(id)arg1;
+- (bool)copyToManagedObject:(id)arg1;
 - (id)description;
-- (id)fragment;
 - (long long)fragmentBitPosition;
-- (BOOL)fragmentBitValue;
+- (bool)fragmentBitValue;
 - (short)fragmentPosition;
 - (short)fragmentWidth;
-- (id)initWithKey:(id)arg1 sequence:(id)arg2 sequenceBitPosition:(unsigned short)arg3 sequenceBitValue:(BOOL)arg4 fragmentPosition:(unsigned short)arg5 fragmentWidth:(unsigned short)arg6 fragment:(id)arg7 fragmentBitPosition:(long long)arg8 fragmentBitValue:(BOOL)arg9 creationDate:(double)arg10 submitted:(BOOL)arg11 objectId:(id)arg12;
+- (id)initWithKey:(id)arg1 sequence:(id)arg2 sequenceBitPosition:(unsigned short)arg3 sequenceBitValue:(bool)arg4 fragmentPosition:(unsigned short)arg5 fragmentWidth:(unsigned short)arg6 fragment:(id)arg7 fragmentBitPosition:(long long)arg8 fragmentBitValue:(bool)arg9 creationDate:(double)arg10 submitted:(bool)arg11 objectId:(id)arg12;
 - (id)jsonString;
-- (void)setFragment:(id)arg1;
+- (id)plainFragment;
 - (void)setFragmentBitPosition:(long long)arg1;
-- (void)setFragmentBitValue:(BOOL)arg1;
+- (void)setFragmentBitValue:(bool)arg1;
 - (void)setFragmentPosition:(short)arg1;
 - (void)setFragmentWidth:(short)arg1;
+- (void)setPlainFragment:(id)arg1;
 
 @end

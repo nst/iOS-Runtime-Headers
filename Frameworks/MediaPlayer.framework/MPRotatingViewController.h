@@ -3,12 +3,12 @@
  */
 
 @interface MPRotatingViewController : UIViewController {
-    id /* block */  _block;
+    id  _block;
 }
 
 - (void).cxx_destruct;
-- (id)initWithValidInterfaceOrientationsBlock:(id /* block */)arg1;
-- (BOOL)shouldAutorotate;
-- (unsigned int)supportedInterfaceOrientations;
+- (id)initWithValidInterfaceOrientationsBlock:(id)arg1;
+- (bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 
 @end

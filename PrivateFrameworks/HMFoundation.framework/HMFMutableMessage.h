@@ -8,7 +8,7 @@
 @property (nonatomic, copy) NSUUID *identifier;
 @property (nonatomic, copy) NSDictionary *messagePayload;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) id /* block */ responseHandler;
+@property (nonatomic, copy) id responseHandler;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

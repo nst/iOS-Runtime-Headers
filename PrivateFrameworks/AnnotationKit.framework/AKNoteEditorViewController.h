@@ -19,8 +19,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setTextView:(id)arg1;
 - (id)textView;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

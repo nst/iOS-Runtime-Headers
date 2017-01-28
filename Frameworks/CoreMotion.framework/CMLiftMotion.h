@@ -4,13 +4,13 @@
 
 @interface CMLiftMotion : NSObject <NSCopying, NSSecureCoding> {
     double  fDate;
-    unsigned int  fLiftTransition;
+    unsigned long long  fLiftTransition;
 }
 
 @property (nonatomic, readonly) NSDate *date;
-@property (nonatomic, readonly) unsigned int liftTransition;
+@property (nonatomic, readonly) unsigned long long liftTransition;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
@@ -18,7 +18,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDate:(double)arg1 liftTransition:(unsigned int)arg2;
-- (unsigned int)liftTransition;
+- (id)initWithDate:(double)arg1 liftTransition:(unsigned long long)arg2;
+- (unsigned long long)liftTransition;
 
 @end

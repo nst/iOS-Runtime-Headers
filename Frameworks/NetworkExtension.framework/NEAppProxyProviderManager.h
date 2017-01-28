@@ -4,7 +4,7 @@
 
 @interface NEAppProxyProviderManager : NETunnelProviderManager
 
-+ (void)loadAllFromPreferencesWithCompletionHandler:(id /* block */)arg1;
++ (void)loadAllFromPreferencesWithCompletionHandler:(id)arg1;
 
 - (id)init;
 

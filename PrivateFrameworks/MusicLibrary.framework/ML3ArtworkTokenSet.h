@@ -4,29 +4,29 @@
 
 @interface ML3ArtworkTokenSet : NSObject {
     NSDictionary * _artworkSourceToTokenMap;
-    int  _artworkType;
+    long long  _artworkType;
     NSString * _availableArtworkToken;
     ML3Entity * _entity;
-    BOOL  _faultedInBestTokens;
-    BOOL  _faultedInTokens;
-    int  _fetchableArtworkSourceType;
+    bool  _faultedInBestTokens;
+    bool  _faultedInTokens;
+    long long  _fetchableArtworkSourceType;
     NSString * _fetchableArtworkToken;
     double  _retrievalTime;
 }
 
 @property (nonatomic, readonly) NSString *availableArtworkToken;
-@property (nonatomic, readonly) int fetchableArtworkSourceType;
+@property (nonatomic, readonly) long long fetchableArtworkSourceType;
 @property (nonatomic, readonly) NSString *fetchableArtworkToken;
 @property (nonatomic) double retrievalTime;
 
 - (void).cxx_destruct;
 - (void)_faultInBestTokens;
 - (void)_faultInTokens;
-- (id)artworkTokenForSource:(int)arg1;
+- (id)artworkTokenForSource:(long long)arg1;
 - (id)availableArtworkToken;
-- (int)fetchableArtworkSourceType;
+- (long long)fetchableArtworkSourceType;
 - (id)fetchableArtworkToken;
-- (id)initWithEntity:(id)arg1 artworkType:(int)arg2;
+- (id)initWithEntity:(id)arg1 artworkType:(long long)arg2;
 - (double)retrievalTime;
 - (void)setRetrievalTime:(double)arg1;
 

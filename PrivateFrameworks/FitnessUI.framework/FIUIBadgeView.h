@@ -5,7 +5,7 @@
 @interface FIUIBadgeView : HKGLView <UIGestureRecognizerDelegate> {
     UIImage * _backAppleLogo;
     GLKTextureInfo * _backTexture;
-    BOOL  _backTextureNeedsRegeneration;
+    bool  _backTextureNeedsRegeneration;
     NSAttributedString * _backsideAttributedString;
     FIUIBadge * _badge;
     <FIUIBadgeViewDelegate> * _badgeDelegate;
@@ -14,7 +14,7 @@
     NSString * _badgeTexturePath;
     GLKTextureInfo * _colorTexture;
     EAGLContext * _context;
-    BOOL  _contextPushed;
+    bool  _contextPushed;
     GLKTextureInfo * _envTexture;
     unsigned int  _faceProgram;
     struct __UniformBindings { 
@@ -65,7 +65,7 @@
     }  _faceUniformBindings;
     int * _groupTriangleCounts;
     unsigned int  _indexBuffer;
-    BOOL  _magnetsEngaged;
+    bool  _magnetsEngaged;
     int * _materialIndices;
     union _GLKVector3 { 
         struct { 
@@ -124,11 +124,11 @@
         } ; 
         float m[16]; 
     }  _modelTransform;
-    BOOL  _modelUsesFullColorEnamel;
+    bool  _modelUsesFullColorEnamel;
     int  _numGroups;
     unsigned int  _program;
-    unsigned int  _shape;
-    id /* block */  _shortenedBadgeBacksideStringProvider;
+    unsigned long long  _shape;
+    id  _shortenedBadgeBacksideStringProvider;
     double  _spinRate;
     UIPanGestureRecognizer * _spinRecognizer;
     UITapGestureRecognizer * _tapRecognizer;
@@ -180,7 +180,7 @@
         } environmentSampler; 
     }  _uniformBindings;
     unsigned int  _vertexBuffer;
-    BOOL  _verticalPanningDisabled;
+    bool  _verticalPanningDisabled;
     union _GLKMatrix4 { 
         struct { 
             float m00; 
@@ -207,20 +207,20 @@
 @property (nonatomic) <FIUIBadgeViewDelegate> *badgeDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ shortenedBadgeBacksideStringProvider;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, copy) id shortenedBadgeBacksideStringProvider;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL verticalPanningDisabled;
+@property (nonatomic) bool verticalPanningDisabled;
 
-+ (float)badgeAspectRatio;
++ (double)badgeAspectRatio;
 
 - (void).cxx_destruct;
 - (void)_applyImpulse:(double)arg1;
-- (id)_attributedStringForUserName:(id)arg1 achievement:(id)arg2 usingSmallVariant:(BOOL)arg3 smallDateVariant:(BOOL)arg4;
+- (id)_attributedStringForUserName:(id)arg1 achievement:(id)arg2 usingSmallVariant:(bool)arg3 smallDateVariant:(bool)arg4;
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })_colorVectorFromString:(id)arg1;
 - (void)_context_createBuffers;
 - (void)_context_destroyBuffers;
-- (void)_context_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_context_drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)_context_loadBadgeModel;
 - (void)_context_loadShaders;
 - (void)_context_loadUniformsAndAttributes;
@@ -229,38 +229,38 @@
 - (id)_defaultTweaks;
 - (void)_disengageMagnets;
 - (void)_engageMagnets;
-- (void)_forEachProgram:(id /* block */)arg1;
+- (void)_forEachProgram:(id)arg1;
 - (void)_generateBackTexture;
 - (float)_normalizeAngle:(float)arg1;
 - (void)_panned:(id)arg1;
 - (void)_setBackTextureNeedsRegeneration;
 - (void)_tapped:(id)arg1;
 - (id)_valueForTweak:(id)arg1;
-- (void)_withContext:(id /* block */)arg1;
+- (void)_withContext:(id)arg1;
 - (id)badgeDelegate;
-- (void)configureForAchievement:(id)arg1 userName:(id)arg2 usingSmallVariant:(BOOL)arg3;
+- (void)configureForAchievement:(id)arg1 userName:(id)arg2 usingSmallVariant:(bool)arg3;
 - (void)dealloc;
-- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (unsigned int)drawInRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (double)playFlipInAnimation;
 - (double)playFlipOutAnimation;
 - (void)playRevealAnimationWithDuration:(double)arg1;
-- (int)preferredStatusBarStyle;
-- (void)render360RotationPNGSequenceWithNumberOfFrames:(unsigned int)arg1;
+- (long long)preferredStatusBarStyle;
+- (void)render360RotationPNGSequenceWithNumberOfFrames:(unsigned long long)arg1;
 - (void)resizeBadgeForCurrentViewSize;
 - (void)setBadgeBacksideAttributedString:(id)arg1;
 - (void)setBadgeBacksideIcon:(id)arg1;
 - (void)setBadgeDelegate:(id)arg1;
 - (void)setBadgeModelPath:(id)arg1 texturePath:(id)arg2 plistPath:(id)arg3;
-- (void)setFixedBadgeAngle:(float)arg1;
-- (void)setShortenedBadgeBacksideStringProvider:(id /* block */)arg1;
-- (void)setVerticalPanningDisabled:(BOOL)arg1;
-- (id /* block */)shortenedBadgeBacksideStringProvider;
-- (BOOL)shouldAutorotate;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (unsigned int)supportedInterfaceOrientations;
+- (void)setFixedBadgeAngle:(double)arg1;
+- (void)setShortenedBadgeBacksideStringProvider:(id)arg1;
+- (void)setVerticalPanningDisabled:(bool)arg1;
+- (id)shortenedBadgeBacksideStringProvider;
+- (bool)shouldAutorotate;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)update;
-- (BOOL)verticalPanningDisabled;
+- (bool)verticalPanningDisabled;
 
 @end

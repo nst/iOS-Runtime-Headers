@@ -5,21 +5,21 @@
 @interface MRPlaybackQueue : NSObject <NSSecureCoding> {
     NSArray * _contentItems;
     struct { 
-        int location; 
-        int length; 
+        long long location; 
+        long long length; 
     }  _range;
 }
 
 @property (nonatomic, readonly) NSArray *contentItems;
-@property (nonatomic, readonly) struct { int x1; int x2; } range;
+@property (nonatomic, readonly) struct { long long x1; long long x2; } range;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)contentItems;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContentItems:(id)arg1 range:(struct { int x1; int x2; })arg2;
-- (struct { int x1; int x2; })range;
+- (id)initWithContentItems:(id)arg1 range:(struct { long long x1; long long x2; })arg2;
+- (struct { long long x1; long long x2; })range;
 
 @end

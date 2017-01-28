@@ -4,25 +4,25 @@
 
 @interface CNPhoneNumberContactPredicate : CNPredicate <CNSuggestedContactPredicate> {
     CNPhoneNumber * _phoneNumber;
-    BOOL  _returnsMultipleResults;
+    bool  _returnsMultipleResults;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) CNPhoneNumber *phoneNumber;
-@property (nonatomic, readonly) BOOL returnsMultipleResults;
+@property (nonatomic, readonly) bool returnsMultipleResults;
 @property (readonly) Class superclass;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPhoneNumber:(id)arg1 returnMultipleResults:(BOOL)arg2;
+- (id)initWithPhoneNumber:(id)arg1 returnMultipleResults:(bool)arg2;
 - (id)phoneNumber;
-- (BOOL)returnsMultipleResults;
-- (id)sgContactMatchesWithSortOrder:(int)arg1 mutableObjects:(BOOL)arg2 service:(id)arg3 error:(id*)arg4;
+- (bool)returnsMultipleResults;
+- (id)sgContactMatchesWithSortOrder:(long long)arg1 mutableObjects:(bool)arg2 service:(id)arg3 error:(id*)arg4;
 
 @end

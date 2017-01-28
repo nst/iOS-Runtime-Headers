@@ -7,10 +7,10 @@
     NSString * mCacheName;
 }
 
-- (unsigned int)count;
+- (unsigned long long)count;
 - (void)dealloc;
 - (id)description;
-- (BOOL)hasFlushableContent;
+- (bool)hasFlushableContent;
 - (id)init;
 - (id)initWithName:(id)arg1;
 - (id)objectForKey:(id)arg1;

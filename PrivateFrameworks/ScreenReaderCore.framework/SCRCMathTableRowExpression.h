@@ -4,9 +4,9 @@
 
 @interface SCRCMathTableRowExpression : SCRCMathArrayExpression
 
-- (BOOL)canBeWrappedInLatexMathIndicators;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
-- (id)latexDescriptionInMathMode:(BOOL)arg1;
+- (bool)canBeWrappedInLatexMathIndicators;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
+- (id)latexDescriptionInMathMode:(bool)arg1;
 - (id)mathMLTag;
 
 @end

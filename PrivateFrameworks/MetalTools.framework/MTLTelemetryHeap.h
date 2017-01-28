@@ -9,9 +9,9 @@
 @property (nonatomic, readonly) MTLTelemetryDevice *telemetryDevice;
 
 - (id)initWithHeap:(id)arg1 descriptor:(id)arg2 device:(id)arg3;
-- (id)newBufferWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
+- (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)newTextureWithDescriptor:(id)arg1;
-- (unsigned int)setPurgeableState:(unsigned int)arg1;
+- (unsigned long long)setPurgeableState:(unsigned long long)arg1;
 - (id)telemetryDevice;
 
 @end

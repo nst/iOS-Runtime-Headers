@@ -8,14 +8,14 @@
     MFDAMessageStore * store;
 }
 
-@property (nonatomic, readonly) BOOL isUserRequested;
-@property (nonatomic, readonly) BOOL shouldSend;
+@property (nonatomic, readonly) bool isUserRequested;
+@property (nonatomic, readonly) bool shouldSend;
 
 - (id)deferredOperation;
 - (unsigned long long)generationNumber;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUserRequested;
-- (BOOL)shouldSend;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
+- (bool)isUserRequested;
+- (bool)shouldSend;
 
 @end

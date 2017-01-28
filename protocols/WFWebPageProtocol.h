@@ -6,8 +6,8 @@
 @required
 
 - (NSString *)URLString;
-- (BOOL)hasFrameset;
-- (BOOL)hasShortRefresh;
+- (bool)hasFrameset;
+- (bool)hasShortRefresh;
 - (NSArray *)images;
 - (NSArray *)links;
 - (NSString *)metaTagDescription;

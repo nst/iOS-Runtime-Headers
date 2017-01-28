@@ -15,7 +15,7 @@
 - (void)_commonInitWithDomain:(id)arg1 correctionsStore:(id)arg2;
 - (id)bestAvailableMetadataFromMetadata:(id)arg1;
 - (id)domain;
-- (void)enqueueCorrectionsRequestForFormMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)enqueueCorrectionsRequestForFormMetadata:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (id)initWithDomain:(id)arg1;
 

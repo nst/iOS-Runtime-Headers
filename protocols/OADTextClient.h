@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)hasText;
+- (bool)hasText;
 
 @end

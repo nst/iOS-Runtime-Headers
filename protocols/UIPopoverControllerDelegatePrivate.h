@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)popoverController:(UIPopoverController *)arg1 animationCompleted:(int)arg2;
+- (void)popoverController:(UIPopoverController *)arg1 animationCompleted:(long long)arg2;
 
 @end

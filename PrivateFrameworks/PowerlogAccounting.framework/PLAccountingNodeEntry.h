@@ -9,11 +9,11 @@
 + (id)entryKey;
 + (void)load;
 
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initEntryWithRawData:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (id)initWithRootNodeID:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)name;
 
 @end

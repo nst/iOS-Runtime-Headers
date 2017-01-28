@@ -10,7 +10,7 @@
 
 @property (nonatomic, retain) _INPBCondition *conditionType;
 @property (nonatomic, retain) NSMutableArray *dataStrings;
-@property (nonatomic, readonly) BOOL hasConditionType;
+@property (nonatomic, readonly) bool hasConditionType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 + (Class)dataStringType;
@@ -21,16 +21,16 @@
 - (void)clearDataStrings;
 - (id)conditionType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dataStringAtIndex:(unsigned int)arg1;
+- (id)dataStringAtIndex:(unsigned long long)arg1;
 - (id)dataStrings;
-- (unsigned int)dataStringsCount;
+- (unsigned long long)dataStringsCount;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasConditionType;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasConditionType;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setConditionType:(id)arg1;
 - (void)setDataStrings:(id)arg1;
 - (id)unknownFields;

@@ -11,7 +11,7 @@
 @property (nonatomic, copy) NSString *type;
 
 - (void).cxx_destruct;
-- (BOOL)appliesToType:(id)arg1;
+- (bool)appliesToType:(id)arg1;
 - (void)setSuffix:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)suffix;

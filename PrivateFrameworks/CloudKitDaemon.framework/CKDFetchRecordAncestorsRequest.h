@@ -3,19 +3,19 @@
  */
 
 @interface CKDFetchRecordAncestorsRequest : CKDURLRequest {
-    id /* block */  _ancestorFetchedBlock;
+    id  _ancestorFetchedBlock;
     NSMutableDictionary * _recordIDByRequestID;
     NSArray * _recordIDs;
-    id /* block */  _shareRecordFetchedBlock;
+    id  _shareRecordFetchedBlock;
 }
 
-@property (nonatomic, copy) id /* block */ ancestorFetchedBlock;
+@property (nonatomic, copy) id ancestorFetchedBlock;
 @property (nonatomic, retain) NSMutableDictionary *recordIDByRequestID;
 @property (nonatomic, retain) NSArray *recordIDs;
-@property (nonatomic, copy) id /* block */ shareRecordFetchedBlock;
+@property (nonatomic, copy) id shareRecordFetchedBlock;
 
 - (void).cxx_destruct;
-- (id /* block */)ancestorFetchedBlock;
+- (id)ancestorFetchedBlock;
 - (id)initWithRecordIDs:(id)arg1;
 - (int)operationType;
 - (id)recordIDByRequestID;
@@ -24,11 +24,11 @@
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setAncestorFetchedBlock:(id /* block */)arg1;
+- (void)setAncestorFetchedBlock:(id)arg1;
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
-- (void)setShareRecordFetchedBlock:(id /* block */)arg1;
-- (id /* block */)shareRecordFetchedBlock;
+- (void)setShareRecordFetchedBlock:(id)arg1;
+- (id)shareRecordFetchedBlock;
 - (id)zoneIDsToLock;
 
 @end

@@ -3,34 +3,34 @@
  */
 
 @interface PUBrowsingIrisPlayerChange : PUViewModelChange {
-    BOOL  _hasPendingVitalityHintDidChange;
-    BOOL  _isLivePhotoLoadingAllowedDidChange;
-    BOOL  _isLivePhotoPlaybackAllowedDidChange;
-    BOOL  _livePhotoLoadingAllowedDidChange;
-    BOOL  _livePhotoPlaybackAllowedDidChange;
-    BOOL  _playbackStateDidChange;
-    BOOL  _playerDidChange;
+    bool  _hasPendingVitalityHintDidChange;
+    bool  _isLivePhotoLoadingAllowedDidChange;
+    bool  _isLivePhotoPlaybackAllowedDidChange;
+    bool  _livePhotoLoadingAllowedDidChange;
+    bool  _livePhotoPlaybackAllowedDidChange;
+    bool  _playbackStateDidChange;
+    bool  _playerDidChange;
 }
 
-@property (setter=_setHasPendingVitalityHintDidChange:, nonatomic) BOOL hasPendingVitalityHintDidChange;
-@property (setter=_setLivePhotoLoadingAllowedDidChange:, nonatomic) BOOL isLivePhotoLoadingAllowedDidChange;
-@property (setter=_setLivePhotoPlaybackAllowedDidChange:, nonatomic) BOOL isLivePhotoPlaybackAllowedDidChange;
-@property (nonatomic, readonly) BOOL livePhotoLoadingAllowedDidChange;
-@property (nonatomic, readonly) BOOL livePhotoPlaybackAllowedDidChange;
-@property (setter=_setPlaybackStateDidChange:, nonatomic) BOOL playbackStateDidChange;
-@property (nonatomic, readonly) BOOL playerDidChange;
+@property (setter=_setHasPendingVitalityHintDidChange:, nonatomic) bool hasPendingVitalityHintDidChange;
+@property (setter=_setLivePhotoLoadingAllowedDidChange:, nonatomic) bool isLivePhotoLoadingAllowedDidChange;
+@property (setter=_setLivePhotoPlaybackAllowedDidChange:, nonatomic) bool isLivePhotoPlaybackAllowedDidChange;
+@property (nonatomic, readonly) bool livePhotoLoadingAllowedDidChange;
+@property (nonatomic, readonly) bool livePhotoPlaybackAllowedDidChange;
+@property (setter=_setPlaybackStateDidChange:, nonatomic) bool playbackStateDidChange;
+@property (nonatomic, readonly) bool playerDidChange;
 
-- (void)_setHasPendingVitalityHintDidChange:(BOOL)arg1;
-- (void)_setLivePhotoLoadingAllowedDidChange:(BOOL)arg1;
-- (void)_setLivePhotoPlaybackAllowedDidChange:(BOOL)arg1;
-- (void)_setPlaybackStateDidChange:(BOOL)arg1;
-- (BOOL)hasChanges;
-- (BOOL)hasPendingVitalityHintDidChange;
-- (BOOL)isLivePhotoLoadingAllowedDidChange;
-- (BOOL)isLivePhotoPlaybackAllowedDidChange;
-- (BOOL)livePhotoLoadingAllowedDidChange;
-- (BOOL)livePhotoPlaybackAllowedDidChange;
-- (BOOL)playbackStateDidChange;
-- (BOOL)playerDidChange;
+- (void)_setHasPendingVitalityHintDidChange:(bool)arg1;
+- (void)_setLivePhotoLoadingAllowedDidChange:(bool)arg1;
+- (void)_setLivePhotoPlaybackAllowedDidChange:(bool)arg1;
+- (void)_setPlaybackStateDidChange:(bool)arg1;
+- (bool)hasChanges;
+- (bool)hasPendingVitalityHintDidChange;
+- (bool)isLivePhotoLoadingAllowedDidChange;
+- (bool)isLivePhotoPlaybackAllowedDidChange;
+- (bool)livePhotoLoadingAllowedDidChange;
+- (bool)livePhotoPlaybackAllowedDidChange;
+- (bool)playbackStateDidChange;
+- (bool)playerDidChange;
 
 @end

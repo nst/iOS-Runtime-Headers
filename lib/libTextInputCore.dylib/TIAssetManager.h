@@ -3,7 +3,7 @@
  */
 
 @interface TIAssetManager : NSObject {
-    BOOL  _assetDownloadingEnabled;
+    bool  _assetDownloadingEnabled;
     NSMutableDictionary * _assetsByInputMode;
     NSMutableDictionary * _assetsByInputModeLevel;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
@@ -12,7 +12,7 @@
     TIMobileAssetTimer * _timer;
 }
 
-@property (nonatomic, readonly) BOOL assetDownloadingEnabled;
+@property (nonatomic, readonly) bool assetDownloadingEnabled;
 @property (nonatomic, readonly) NSMutableDictionary *assetsByInputMode;
 @property (nonatomic, readonly) NSMutableDictionary *assetsByInputModeLevel;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *dispatchQueue;
@@ -27,7 +27,7 @@
 - (void)appleKeyboardsInternalSettingsChanged:(id)arg1;
 - (void)appleKeyboardsPreferencesChanged:(id)arg1;
 - (id)assetContentItemsWithContentType:(id)arg1 inputMode:(id)arg2;
-- (BOOL)assetDownloadingEnabled;
+- (bool)assetDownloadingEnabled;
 - (id)assetsByInputMode;
 - (id)assetsByInputModeLevel;
 - (void)dealloc;
@@ -41,7 +41,7 @@
 - (id)mobileAssetMediator;
 - (void)newAssetInstalled:(id)arg1;
 - (void)performMaintenance;
-- (BOOL)purgeAsset:(id)arg1;
+- (bool)purgeAsset:(id)arg1;
 - (id)purgeableAssets;
 - (id)recursiveDescription;
 - (void)registerCacheDeleteCallbacks;

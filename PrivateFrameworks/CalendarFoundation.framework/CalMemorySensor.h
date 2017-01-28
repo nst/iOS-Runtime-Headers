@@ -3,26 +3,26 @@
  */
 
 @interface CalMemorySensor : NSObject {
-    id /* block */  _fireBlock;
-    unsigned int  _interval;
+    id  _fireBlock;
+    unsigned long long  _interval;
     NSObject<OS_dispatch_source> * _timer;
-    unsigned int  _usage;
+    unsigned long long  _usage;
 }
 
-@property (nonatomic, copy) id /* block */ fireBlock;
-@property (nonatomic, readonly) unsigned int usage;
+@property (nonatomic, copy) id fireBlock;
+@property (nonatomic, readonly) unsigned long long usage;
 
 - (void).cxx_destruct;
 - (void)_monitorMemory;
 - (void)_setupTimer;
 - (void)dealloc;
 - (void)defaultMessageTraceForApp:(id)arg1;
-- (id /* block */)fireBlock;
+- (id)fireBlock;
 - (id)init;
-- (id)initWithMonitorInterval:(unsigned int)arg1;
-- (void)setFireBlock:(id /* block */)arg1;
+- (id)initWithMonitorInterval:(unsigned long long)arg1;
+- (void)setFireBlock:(id)arg1;
 - (void)startMonitoringMemory;
 - (void)stopMonitoringMemory;
-- (unsigned int)usage;
+- (unsigned long long)usage;
 
 @end

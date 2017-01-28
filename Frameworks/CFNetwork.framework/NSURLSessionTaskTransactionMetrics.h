@@ -4,26 +4,26 @@
 
 @interface NSURLSessionTaskTransactionMetrics : NSObject
 
-@property BOOL _cellular;
-@property BOOL _localCache;
+@property bool _cellular;
+@property bool _localCache;
 @property unsigned int _redirected;
-@property BOOL _secureConnection;
-@property BOOL _serverPush;
+@property bool _secureConnection;
+@property bool _serverPush;
 @property (copy) NSDate *connectEndDate;
 @property (copy) NSDate *connectStartDate;
 @property (copy) NSDate *domainLookupEndDate;
 @property (copy) NSDate *domainLookupStartDate;
 @property (copy) NSDate *fetchStartDate;
 @property (copy) NSString *networkProtocolName;
-@property (getter=isProxyConnection) BOOL proxyConnection;
+@property (getter=isProxyConnection) bool proxyConnection;
 @property (copy) NSURLRequest *request;
 @property (copy) NSDate *requestEndDate;
 @property (copy) NSDate *requestStartDate;
-@property int resourceFetchType;
+@property long long resourceFetchType;
 @property (copy) NSURLResponse *response;
 @property (copy) NSDate *responseEndDate;
 @property (copy) NSDate *responseStartDate;
-@property (getter=isReusedConnection) BOOL reusedConnection;
+@property (getter=isReusedConnection) bool reusedConnection;
 @property (copy) NSDate *secureConnectionEndDate;
 @property (copy) NSDate *secureConnectionStartDate;
 

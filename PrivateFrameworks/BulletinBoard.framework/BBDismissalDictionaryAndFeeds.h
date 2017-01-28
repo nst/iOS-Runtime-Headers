@@ -14,7 +14,7 @@
 - (id)description;
 - (id)dismissalHash;
 - (double)dismissalTimeInterval;
-- (id)initWithDismissalDictionary:(id)arg1 andFeeds:(unsigned int)arg2;
-- (BOOL)matchDismissalDictionary:(id)arg1;
+- (id)initWithDismissalDictionary:(id)arg1 andFeeds:(unsigned long long)arg2;
+- (bool)matchDismissalDictionary:(id)arg1;
 
 @end

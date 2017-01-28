@@ -5,23 +5,23 @@
 @interface IFFeatureVector : NSObject <NSCopying> {
     NSDate * _date;
     NSArray * _features;
-    int  _interactionType;
+    long long  _interactionType;
     double  _interval;
 }
 
 @property (readonly) NSDate *date;
 @property (readonly, copy) NSArray *features;
-@property (readonly) int interactionType;
+@property (readonly) long long interactionType;
 @property (readonly) double interval;
 
-+ (id)featureVectorWithDate:(id)arg1 interval:(double)arg2 interactionType:(int)arg3 features:(id)arg4;
++ (id)featureVectorWithDate:(id)arg1 interval:(double)arg2 interactionType:(long long)arg3 features:(id)arg4;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)features;
-- (id)initWithDate:(id)arg1 interval:(double)arg2 interactionType:(int)arg3 features:(id)arg4;
-- (int)interactionType;
+- (id)initWithDate:(id)arg1 interval:(double)arg2 interactionType:(long long)arg3 features:(id)arg4;
+- (long long)interactionType;
 - (double)interval;
 
 @end

@@ -3,31 +3,31 @@
  */
 
 @interface CRCarPlayPreferences : NSObject <MCProfileConnectionObserver> {
-    BOOL  _cachedCarPlayAllowed;
+    bool  _cachedCarPlayAllowed;
     <CRCarPlayPreferencesDelegate> * _preferencesDelegate;
 }
 
-@property (nonatomic) BOOL cachedCarPlayAllowed;
+@property (nonatomic) bool cachedCarPlayAllowed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) <CRCarPlayPreferencesDelegate> *preferencesDelegate;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (BOOL)_isCarPlayAllowed;
+- (bool)_isCarPlayAllowed;
 - (void)_updateCarPlayAllowed;
-- (BOOL)cachedCarPlayAllowed;
+- (bool)cachedCarPlayAllowed;
 - (void)dealloc;
 - (void)handleAssistantLanguageChanged:(id)arg1;
 - (void)handleAssistantPreferencesChanged:(id)arg1;
 - (id)init;
-- (BOOL)isCarPlayAllowed;
-- (BOOL)isCarPlayCapable;
-- (BOOL)isWirelessCarPlayEnabled;
+- (bool)isCarPlayAllowed;
+- (bool)isCarPlayCapable;
+- (bool)isWirelessCarPlayEnabled;
 - (id)preferencesDelegate;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)setCachedCarPlayAllowed:(BOOL)arg1;
+- (void)setCachedCarPlayAllowed:(bool)arg1;
 - (void)setPreferencesDelegate:(id)arg1;
 
 @end

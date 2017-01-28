@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)_suggestionsFilePath;
 - (id)delegate;
-- (void)getSuggestedUtterancesWithCompletion:(id /* block */)arg1;
+- (void)getSuggestedUtterancesWithCompletion:(id)arg1;
 - (id)initWithLanguageCode:(id)arg1 delegate:(id)arg2;
 - (id)languageCode;
 - (void)setSuggestedUtterances:(id)arg1;

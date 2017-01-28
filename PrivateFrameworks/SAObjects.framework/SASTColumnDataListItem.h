@@ -8,7 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, copy) NSArray *decoratedRows;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) SAUINanoImageResource *imageResource;
 @property (nonatomic, copy) NSString *rowLayout;
 @property (readonly) Class superclass;

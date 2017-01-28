@@ -5,9 +5,9 @@
 
 @optional
 
-- (void)transportControlsView:(MPUTransportControlsView *)arg1 longPressBeginOnControlType:(int)arg2;
-- (void)transportControlsView:(MPUTransportControlsView *)arg1 longPressEndOnControlType:(int)arg2;
-- (void)transportControlsView:(MPUTransportControlsView *)arg1 tapOnControlType:(int)arg2;
-- (double)transportControlsView:(MPUTransportControlsView *)arg1 transportButtonUnhighlightAnimationDurationForControlType:(int)arg2;
+- (void)transportControlsView:(MPUTransportControlsView *)arg1 longPressBeginOnControlType:(long long)arg2;
+- (void)transportControlsView:(MPUTransportControlsView *)arg1 longPressEndOnControlType:(long long)arg2;
+- (void)transportControlsView:(MPUTransportControlsView *)arg1 tapOnControlType:(long long)arg2;
+- (double)transportControlsView:(MPUTransportControlsView *)arg1 transportButtonUnhighlightAnimationDurationForControlType:(long long)arg2;
 
 @end

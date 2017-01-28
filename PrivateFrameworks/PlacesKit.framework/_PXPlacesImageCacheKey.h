@@ -9,9 +9,9 @@
 
 - (void).cxx_destruct;
 - (id)geotaggable;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithGeotaggable:(id)arg1 andKey:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)key;
 
 @end

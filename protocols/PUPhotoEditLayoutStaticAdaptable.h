@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setupWithLayoutOrientation:(int)arg1;
+- (void)setupWithLayoutOrientation:(long long)arg1;
 
 @end

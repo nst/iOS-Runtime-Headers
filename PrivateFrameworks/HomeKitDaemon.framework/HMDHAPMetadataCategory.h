@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *uuidStr;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)catDescription;

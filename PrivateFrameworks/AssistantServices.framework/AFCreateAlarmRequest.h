@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) STAlarm *alarm;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)alarm;

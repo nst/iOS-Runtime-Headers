@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)checkForTimeChangeWithCurrentTime:(id)arg1;
-- (id)initWithTimeManager:(id)arg1 entryDefinitionKey:(id)arg2 timeReferenceType:(int)arg3;
+- (id)initWithTimeManager:(id)arg1 entryDefinitionKey:(id)arg2 timeReferenceType:(long long)arg3;
 - (void)initializeOffsetHistoryWithEntries:(id)arg1;
 - (void)initializeOffsetWithEntries:(id)arg1;
 - (id)lastQueryTime;
@@ -33,7 +33,7 @@
 - (id)offsetHistory;
 - (int)offsetHistoryHead;
 - (id)periodicCurrentTime;
-- (void)registerForTimeChangedCallbackWithIdentifier:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)registerForTimeChangedCallbackWithIdentifier:(id)arg1 usingBlock:(id)arg2;
 - (void)registerForTimeChangedNotification;
 - (id)removeTimeOffsetFromReferenceTime:(id)arg1;
 - (void)setLastQueryTime:(id)arg1;
@@ -44,7 +44,7 @@
 - (void)setTimeChangeBlocks:(id)arg1;
 - (void)setTooFarInFutureDistance:(double)arg1;
 - (void)setTooFarInPastDistance:(double)arg1;
-- (BOOL)shouldQueryCurrentTime;
+- (bool)shouldQueryCurrentTime;
 - (id)timeChangeBlocks;
 - (double)tooFarInFutureDistance;
 - (double)tooFarInPastDistance;

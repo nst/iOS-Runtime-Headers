@@ -4,16 +4,16 @@
 
 @interface WLMigrationCompletedViewController : WLWelcomeGroupViewController {
     UIButton * _continueButton;
-    id /* block */  _continueHandler;
+    id  _continueHandler;
     UIButton * _continueView;
 }
 
-@property (nonatomic, copy) id /* block */ continueHandler;
+@property (nonatomic, copy) id continueHandler;
 
 - (void).cxx_destruct;
 - (void)_continueTapped:(id)arg1;
-- (id /* block */)continueHandler;
+- (id)continueHandler;
 - (void)loadView;
-- (void)setContinueHandler:(id /* block */)arg1;
+- (void)setContinueHandler:(id)arg1;
 
 @end

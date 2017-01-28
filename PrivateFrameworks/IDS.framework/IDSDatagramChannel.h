@@ -18,19 +18,19 @@
 - (id)initWithDestination:(id)arg1;
 - (id)initWithSocketDescriptor:(int)arg1;
 - (void)invalidate;
-- (void)processMetadataForDatagram:(char *)arg1 size:(unsigned long)arg2 datagramInfo:(struct { BOOL x1; unsigned short x2; }*)arg3;
-- (void)readDatagramWithCompletionHandler:(id /* block */)arg1;
+- (void)processMetadataForDatagram:(char *)arg1 size:(unsigned long long)arg2 datagramInfo:(struct { BOOL x1; unsigned short x2; }*)arg3;
+- (void)readDatagramWithCompletionHandler:(id)arg1;
 - (void)readyToRead;
 - (void)removeIDSDataChannelLinkContext:(BOOL)arg1;
 - (void)selectDefaultLink:(BOOL)arg1;
 - (void)sendEventConnectedWithDummyLinkInfo;
 - (void)sendMetadata;
 - (void)setChannelPreferences:(id)arg1;
-- (void)setEventHandler:(id /* block */)arg1;
-- (void)setReadHandler:(id /* block */)arg1;
+- (void)setEventHandler:(id)arg1;
+- (void)setReadHandler:(id)arg1;
 - (void)start;
 - (int)underlyingFileDescriptor;
-- (void)writeDatagram:(const void*)arg1 datagramSize:(unsigned int)arg2 flags:(struct { BOOL x1; unsigned short x2; })arg3 completionHandler:(id /* block */)arg4;
-- (void)writeDatagrams:(const void**)arg1 datagramSizes:(unsigned int*)arg2 datagramInfo:(struct { BOOL x1; unsigned short x2; })arg3 datagramCount:(int)arg4 completionHandler:(id /* block */)arg5;
+- (void)writeDatagram:(const void*)arg1 datagramSize:(unsigned int)arg2 flags:(struct { BOOL x1; unsigned short x2; })arg3 completionHandler:(id)arg4;
+- (void)writeDatagrams:(const void**)arg1 datagramSizes:(unsigned int*)arg2 datagramInfo:(struct { BOOL x1; unsigned short x2; })arg3 datagramCount:(int)arg4 completionHandler:(id)arg5;
 
 @end

@@ -4,10 +4,10 @@
 
 @interface FCUserInfo : FCPrivateZoneController <FCAppConfigurationObserving, FCTagSettingsDelegate> {
     NSDate * _dateLastResetMeteredCount;
-    BOOL  _iCloudAccountChanged;
+    bool  _iCloudAccountChanged;
     FCTagSettings * _tagSettings;
     NSNumber * _totalMeteredCount;
-    BOOL  _useParsecResults;
+    bool  _useParsecResults;
     NTPBWidgetConfig * _widgetConfiguration;
 }
 
@@ -16,29 +16,30 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *feldsparID;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL iCloudAccountChanged;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool iCloudAccountChanged;
 @property (nonatomic, copy) NSNumber *monthlyMeteredCount;
 @property (nonatomic, readonly, copy) NSString *notificationsUserID;
 @property (nonatomic, copy) NSNumber *onboardingVersionNumber;
-@property (nonatomic, readonly) int personalizationTreatmentID;
+@property (nonatomic, readonly) long long personalizationTreatmentID;
+@property (nonatomic, readonly) bool shouldShowDefaultForYou;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCTagSettings *tagSettings;
 @property (nonatomic, copy) NSNumber *totalMeteredCount;
-@property (nonatomic, readonly) BOOL useParsecResults;
+@property (nonatomic, readonly) bool useParsecResults;
 @property (nonatomic, copy) NSDate *userStartDate;
 @property (nonatomic, retain) NTPBWidgetConfig *widgetConfiguration;
 
-+ (int)commandQueueUrgency;
++ (long long)commandQueueUrgency;
 + (id)commandStoreFileName;
 + (id)commandsToMergeLocalDataToCloud:(id)arg1;
 + (id)desiredKeys;
 + (id)iCloudDataKeys;
 + (id)localStoreFilename;
-+ (unsigned int)localStoreVersion;
-+ (BOOL)requiresBatchedSync;
-+ (BOOL)requiresHighPriorityFirstSync;
-+ (BOOL)requiresPushNotificationSupport;
++ (unsigned long long)localStoreVersion;
++ (bool)requiresBatchedSync;
++ (bool)requiresHighPriorityFirstSync;
++ (bool)requiresPushNotificationSupport;
 
 - (void).cxx_destruct;
 - (void)_persistNotificationsUserID:(id)arg1;
@@ -53,32 +54,35 @@
 - (id)feldsparID;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
 - (void)handleSyncWithUserInfoRecord:(id)arg1;
-- (BOOL)iCloudAccountChanged;
+- (bool)iCloudAccountChanged;
 - (void)incrementMonthlyMeteredCountByOneWithArticleID:(id)arg1;
-- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4 iCloudAccountChanged:(BOOL)arg5;
+- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4 iCloudAccountChanged:(bool)arg5;
 - (void)loadLocalCachesFromStore;
+- (void)maybeUpdateOnboardingVersion:(id)arg1;
 - (id)monthlyMeteredCount;
 - (id)notificationsUserID;
 - (id)onboardingVersionNumber;
-- (int)personalizationTreatmentID;
+- (long long)personalizationTreatmentID;
 - (void)prepareForUse;
 - (void)removeObserver:(id)arg1;
 - (void)setDateLastOpened:(id)arg1;
 - (void)setDateLastResetMeteredCount:(id)arg1;
 - (void)setFeldsparID:(id)arg1;
-- (void)setICloudAccountChanged:(BOOL)arg1;
+- (void)setICloudAccountChanged:(bool)arg1;
 - (void)setMonthlyMeteredCount:(id)arg1;
 - (void)setOnboardingVersionNumber:(id)arg1;
 - (void)setTagSettings:(id)arg1;
 - (void)setTotalMeteredCount:(id)arg1;
 - (void)setUserStartDate:(id)arg1;
 - (void)setWidgetConfiguration:(id)arg1;
+- (bool)shouldShowDefaultForYou;
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
+- (void)syncWithCompletion:(id)arg1;
 - (id)tagSettings;
 - (id)totalMeteredCount;
-- (BOOL)useParsecResults;
+- (bool)useParsecResults;
 - (id)userStartDate;
-- (void)validateIsMeteredLimitReachedWithArticleID:(id)arg1 completion:(id /* block */)arg2;
+- (void)validateIsMeteredLimitReachedWithArticleID:(id)arg1 completion:(id)arg2;
 - (id)widgetConfiguration;
 
 @end

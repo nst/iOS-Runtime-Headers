@@ -3,27 +3,27 @@
  */
 
 @interface MPSCNNPooling : MPSCNNKernel {
-    unsigned int  _kernelHeight;
-    unsigned int  _kernelWidth;
-    unsigned int  _strideInPixelsX;
-    unsigned int  _strideInPixelsY;
+    unsigned long long  _kernelHeight;
+    unsigned long long  _kernelWidth;
+    unsigned long long  _strideInPixelsX;
+    unsigned long long  _strideInPixelsY;
 }
 
-@property (nonatomic, readonly) unsigned int kernelHeight;
-@property (nonatomic, readonly) unsigned int kernelWidth;
-@property (nonatomic, readonly) unsigned int strideInPixelsX;
-@property (nonatomic, readonly) unsigned int strideInPixelsY;
+@property (nonatomic, readonly) unsigned long long kernelHeight;
+@property (nonatomic, readonly) unsigned long long kernelWidth;
+@property (nonatomic, readonly) unsigned long long strideInPixelsX;
+@property (nonatomic, readonly) unsigned long long strideInPixelsY;
 
 + (const struct MPSLibraryInfo { int x1; unsigned int x2; char *x3; struct MPSKernelInfo {} *x4; struct MPSKernelInfo {} *x5; struct MPSKernelInfo {} *x6; struct MPSKernelInfo {} *x7; struct MPSKernelInfo {} *x8; struct MPSKernelInfo {} *x9; struct MPSKernelInfo {} *x10; struct MPSKernelInfo {} *x11; struct MPSKernelInfo {} *x12; struct MPSKernelInfo {} *x13; struct MPSKernelInfo {} *x14; }*)libraryInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (id)debugDescription;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned int)arg2 kernelHeight:(unsigned int)arg3;
-- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned int)arg2 kernelHeight:(unsigned int)arg3 strideInPixelsX:(unsigned int)arg4 strideInPixelsY:(unsigned int)arg5;
-- (unsigned int)kernelHeight;
-- (unsigned int)kernelWidth;
-- (unsigned int)strideInPixelsX;
-- (unsigned int)strideInPixelsY;
+- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned long long)arg2 kernelHeight:(unsigned long long)arg3;
+- (id)initWithDevice:(id)arg1 kernelWidth:(unsigned long long)arg2 kernelHeight:(unsigned long long)arg3 strideInPixelsX:(unsigned long long)arg4 strideInPixelsY:(unsigned long long)arg5;
+- (unsigned long long)kernelHeight;
+- (unsigned long long)kernelWidth;
+- (unsigned long long)strideInPixelsX;
+- (unsigned long long)strideInPixelsY;
 
 @end

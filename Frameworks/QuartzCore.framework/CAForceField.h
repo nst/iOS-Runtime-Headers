@@ -3,13 +3,13 @@
  */
 
 @interface CAForceField : NSObject <NSCoding, NSCopying, NSMutableCopying> {
-    BOOL  _enabled;
+    bool  _enabled;
     CAValueFunction * _function;
     CALayer * _layer;
     NSString * _name;
 }
 
-@property (getter=isEnabled) BOOL enabled;
+@property (getter=isEnabled) bool enabled;
 @property (retain) CAValueFunction *function;
 @property (retain) CALayer *layer;
 @property (copy) NSString *name;
@@ -28,11 +28,11 @@
 - (id)function;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEnabled;
+- (bool)isEnabled;
 - (id)layer;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)name;
-- (void)setEnabled:(BOOL)arg1;
+- (void)setEnabled:(bool)arg1;
 - (void)setFunction:(id)arg1;
 - (void)setLayer:(id)arg1;
 - (void)setName:(id)arg1;

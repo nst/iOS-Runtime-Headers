@@ -3,11 +3,11 @@
  */
 
 @interface AVCaptureDeviceInputInternal : NSObject {
-    BOOL  authorizedForCamera;
+    bool  authorizedForCamera;
     AVCaptureDevice * device;
     <AVCallbackCancellation> * deviceOpenCallbackInvoker;
     NSArray * ports;
-    BOOL  ready;
+    bool  ready;
     AVWeakReference * weakReference;
 }
 

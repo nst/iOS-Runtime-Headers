@@ -5,28 +5,28 @@
 @interface PUBadgeTileViewController : PUTileViewController <PUAssetViewModelChangeObserver> {
     PUBadgeInfo * __badgeInfo;
     PLPhotoTileBadgeView * __badgeView;
-    BOOL  __isOverContent;
-    BOOL  __needsUpdateBadgeInfo;
-    BOOL  __needsUpdateBadgeView;
-    BOOL  __needsUpdateIrisBadge;
+    bool  __isOverContent;
+    bool  __needsUpdateBadgeInfo;
+    bool  __needsUpdateBadgeView;
+    bool  __needsUpdateIrisBadge;
     PUAssetViewModel * _assetViewModel;
 }
 
 @property (setter=_setBadgeInfo:, nonatomic, copy) PUBadgeInfo *_badgeInfo;
 @property (nonatomic, readonly) PLPhotoTileBadgeView *_badgeView;
-@property (setter=_setOverContent:, nonatomic) BOOL _isOverContent;
-@property (setter=_setNeedsUpdateBadgeInfo:, nonatomic) BOOL _needsUpdateBadgeInfo;
-@property (setter=_setNeedsUpdateBadgeView:, nonatomic) BOOL _needsUpdateBadgeView;
-@property (setter=_setNeedsUpdateIrisBadge:, nonatomic) BOOL _needsUpdateIrisBadge;
+@property (setter=_setOverContent:, nonatomic) bool _isOverContent;
+@property (setter=_setNeedsUpdateBadgeInfo:, nonatomic) bool _needsUpdateBadgeInfo;
+@property (setter=_setNeedsUpdateBadgeView:, nonatomic) bool _needsUpdateBadgeView;
+@property (setter=_setNeedsUpdateIrisBadge:, nonatomic) bool _needsUpdateIrisBadge;
 @property (nonatomic, retain) PUAssetViewModel *assetViewModel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })_badgeTileSizeForBadgeInfo:(id)arg1;
-+ (void)_configureBadgeView:(id)arg1 withBadgeInfo:(id)arg2 isOverContent:(BOOL)arg3;
-+ (struct CGSize { float x1; float x2; })badgeTileSizeForAssetViewModel:(id)arg1;
++ (struct CGSize { double x1; double x2; })_badgeTileSizeForBadgeInfo:(id)arg1;
++ (void)_configureBadgeView:(id)arg1 withBadgeInfo:(id)arg2 isOverContent:(bool)arg3;
++ (struct CGSize { double x1; double x2; })badgeTileSizeForAssetViewModel:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_badgeInfo;
@@ -34,17 +34,17 @@
 - (void)_invalidateBadgeInfo;
 - (void)_invalidateBadgeView;
 - (void)_invalidateIrisBadge;
-- (BOOL)_isOverContent;
-- (BOOL)_needsUpdate;
-- (BOOL)_needsUpdateBadgeInfo;
-- (BOOL)_needsUpdateBadgeView;
-- (BOOL)_needsUpdateIrisBadge;
+- (bool)_isOverContent;
+- (bool)_needsUpdate;
+- (bool)_needsUpdateBadgeInfo;
+- (bool)_needsUpdateBadgeView;
+- (bool)_needsUpdateIrisBadge;
 - (void)_setBadgeInfo:(id)arg1;
 - (void)_setNeedsUpdate;
-- (void)_setNeedsUpdateBadgeInfo:(BOOL)arg1;
-- (void)_setNeedsUpdateBadgeView:(BOOL)arg1;
-- (void)_setNeedsUpdateIrisBadge:(BOOL)arg1;
-- (void)_setOverContent:(BOOL)arg1;
+- (void)_setNeedsUpdateBadgeInfo:(bool)arg1;
+- (void)_setNeedsUpdateBadgeView:(bool)arg1;
+- (void)_setNeedsUpdateIrisBadge:(bool)arg1;
+- (void)_setOverContent:(bool)arg1;
 - (void)_updateBadgeInfoIfNeeded;
 - (void)_updateBadgeViewIfNeeded;
 - (void)_updateIfNeeded;

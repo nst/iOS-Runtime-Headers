@@ -9,15 +9,15 @@
     NSArray * _titleLabelConstraints;
     HUWheelControlView * _wheelView;
     NSArray * _wheelViewConstraints;
-    BOOL  _wheelViewVisible;
+    bool  _wheelViewVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UILabel *detailLabel;
 @property (nonatomic, copy) NSString *detailText;
-@property (getter=isDisabled, nonatomic, readonly) BOOL disabled;
-@property (readonly) unsigned int hash;
+@property (getter=isDisabled, nonatomic, readonly) bool disabled;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIView *seperatorView;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *titleLabel;
@@ -25,14 +25,14 @@
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, retain) HUWheelControlView *wheelView;
 @property (nonatomic, copy) NSArray *wheelViewConstraints;
-@property (nonatomic) BOOL wheelViewVisible;
+@property (nonatomic) bool wheelViewVisible;
 
 - (void).cxx_destruct;
 - (id)allControlViews;
 - (id)detailLabel;
 - (id)detailText;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (BOOL)isDisabled;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (bool)isDisabled;
 - (void)prepareForReuse;
 - (id)seperatorView;
 - (void)setDetailLabel:(id)arg1;
@@ -43,7 +43,7 @@
 - (void)setTitleText:(id)arg1;
 - (void)setWheelView:(id)arg1;
 - (void)setWheelViewConstraints:(id)arg1;
-- (void)setWheelViewVisible:(BOOL)arg1;
+- (void)setWheelViewVisible:(bool)arg1;
 - (id)titleLabel;
 - (id)titleLabelConstraints;
 - (id)titleText;
@@ -51,6 +51,6 @@
 - (void)wheelControlView:(id)arg1 didUpdateValue:(id)arg2;
 - (id)wheelView;
 - (id)wheelViewConstraints;
-- (BOOL)wheelViewVisible;
+- (bool)wheelViewVisible;
 
 @end

@@ -5,8 +5,8 @@
 
 @required
 
-- (NSArray *)assetUUIDsForPreviewWithCount:(unsigned int)arg1;
-- (unsigned int)searchIndexCategory;
+- (NSArray *)assetUUIDsForPreviewWithCount:(unsigned long long)arg1;
+- (unsigned long long)searchIndexCategory;
 - (NSString *)searchIndexContents;
 - (NSString *)uuid;
 

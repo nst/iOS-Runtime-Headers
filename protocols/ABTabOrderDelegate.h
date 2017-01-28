@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)ABTabToNextResponder:(BOOL)arg1 fromView:(UIView *)arg2;
+- (bool)ABTabToNextResponder:(bool)arg1 fromView:(UIView *)arg2;
 
 @end

@@ -19,13 +19,13 @@
 @property (nonatomic, copy) CIVector *inputPoint3;
 @property (nonatomic, copy) CIVector *inputPoint4;
 
-+ (id)curveImageFromPoints:(const struct CGPoint { float x1; float x2; }*)arg1;
-+ (id)curveImageFromPoints:(const struct CGPoint { float x1; float x2; }*)arg1 linear:(BOOL)arg2;
++ (id)curveImageFromPoints:(const struct CGPoint { double x1; double x2; }*)arg1;
++ (id)curveImageFromPoints:(const struct CGPoint { double x1; double x2; }*)arg1 linear:(bool)arg2;
 + (id)customAttributes;
-+ (void)splineCurveTable:(float*)arg1 tableSize:(int)arg2 gamma:(float)arg3 from:(const struct CGPoint { float x1; float x2; }*)arg4;
++ (void)splineCurveTable:(double*)arg1 tableSize:(int)arg2 gamma:(double)arg3 from:(const struct CGPoint { double x1; double x2; }*)arg4;
 
 - (id)_initFromProperties:(id)arg1;
-- (BOOL)_isIdentity;
+- (bool)_isIdentity;
 - (id)_kernel16;
 - (id)_outputProperties;
 - (void)dealloc;

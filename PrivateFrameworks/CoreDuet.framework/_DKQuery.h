@@ -4,19 +4,19 @@
 
 @interface _DKQuery : NSObject <NSSecureCoding>
 
-+ (id)endDateSortDescriptorAscending:(BOOL)arg1;
++ (id)endDateSortDescriptorAscending:(bool)arg1;
 + (id)exectuableQueryForQuery:(id)arg1;
 + (id)predicateForEventsBetweenStartDate:(id)arg1 endDate:(id)arg2;
-+ (id)predicateForEventsBetweenStartSecondOfDay:(unsigned int)arg1 endSecondOfDay:(unsigned int)arg2;
++ (id)predicateForEventsBetweenStartSecondOfDay:(unsigned long long)arg1 endSecondOfDay:(unsigned long long)arg2;
 + (id)predicateForEventsContainingDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsIntersectingDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithCategoryValue:(id)arg1;
-+ (id)predicateForEventsWithDayOfWeek:(unsigned int)arg1;
++ (id)predicateForEventsWithDayOfWeek:(unsigned long long)arg1;
 + (id)predicateForEventsWithDoubleValue:(double)arg1;
 + (id)predicateForEventsWithDoubleValueBetween:(double)arg1 and:(double)arg2;
 + (id)predicateForEventsWithEndInDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithIdentifierValue:(id)arg1;
-+ (id)predicateForEventsWithIntegerValue:(int)arg1;
++ (id)predicateForEventsWithIntegerValue:(long long)arg1;
 + (id)predicateForEventsWithQuantityValue:(id)arg1;
 + (id)predicateForEventsWithStartAndEndInDateRangeFrom:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithStartInDateRangeFrom:(id)arg1 to:(id)arg2;
@@ -27,8 +27,8 @@
 + (id)predicateForObjectWithUUID:(id)arg1;
 + (id)predicateForObjectsWithUUIDs:(id)arg1;
 + (id)queryNotExecutableError;
-+ (id)startDateSortDescriptorAscending:(BOOL)arg1;
-+ (BOOL)supportsSecureCoding;
++ (id)startDateSortDescriptorAscending:(bool)arg1;
++ (bool)supportsSecureCoding;
 
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

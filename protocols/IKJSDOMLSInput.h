@@ -6,10 +6,10 @@
 @required
 
 - (id)byteStream;
-- (BOOL)certifiedText;
+- (bool)certifiedText;
 - (NSString *)encoding;
 - (void)setByteStream:(id)arg1;
-- (void)setCertifiedText:(BOOL)arg1;
+- (void)setCertifiedText:(bool)arg1;
 - (void)setEncoding:(NSString *)arg1;
 - (void)setStringData:(NSString *)arg1;
 - (NSString *)stringData;

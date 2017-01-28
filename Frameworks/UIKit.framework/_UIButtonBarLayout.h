@@ -28,7 +28,7 @@
 - (bool)dirty;
 - (id)init;
 - (id)initWithLayoutMetrics:(id)arg1;
-- (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
+- (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (void)setDirty:(bool)arg1;
 
 @end

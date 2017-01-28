@@ -6,8 +6,8 @@
     struct _GEOGenericContainer<md::IconCacheKey, id, std::__1::hash<md::IconCacheKey>, std::__1::equal_to<md::IconCacheKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> { 
         struct mutex { 
             struct _opaque_pthread_mutex_t { 
-                long __sig; 
-                BOOL __opaque[40]; 
+                long long __sig; 
+                BOOL __opaque[56]; 
             } __m_; 
         } _lock; 
         struct list<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, std::__1::allocator<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr> > > { 
@@ -16,7 +16,7 @@
                 struct __list_node_base<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *> {} *__next_; 
             } __end_; 
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *> > > { 
-                unsigned long __first_; 
+                unsigned long long __first_; 
             } __size_alloc_; 
         } _list; 
         struct unordered_map<md::IconCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *>, std::__1::hash<md::IconCacheKey>, std::__1::equal_to<md::IconCacheKey>, std::__1::allocator<std::__1::pair<const md::IconCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *> > > > { 
@@ -26,7 +26,7 @@
                         struct __hash_node<std::__1::__hash_value_type<md::IconCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *> >, void *> {} **__first_; 
                         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::IconCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *> >, void *> *> > { 
                             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<md::IconCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *> >, void *> *> > { 
-                                unsigned long __first_; 
+                                unsigned long long __first_; 
                             } __data_; 
                         } __second_; 
                     } __ptr_; 
@@ -37,17 +37,17 @@
                     } __first_; 
                 } __p1_; 
                 struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<md::IconCacheKey, std::__1::__hash_value_type<md::IconCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *> >, std::__1::hash<md::IconCacheKey>, true> > { 
-                    unsigned long __first_; 
+                    unsigned long long __first_; 
                 } __p2_; 
                 struct __compressed_pair<float, std::__1::__unordered_map_equal<md::IconCacheKey, std::__1::__hash_value_type<md::IconCacheKey, std::__1::__list_iterator<geo::detail::_CacheItem<md::IconCacheKey, id, _value_ptr>, void *> >, std::__1::equal_to<md::IconCacheKey>, true> > { 
                     float __first_; 
                 } __p3_; 
             } __table_; 
         } _map; 
-        unsigned int _maxCapacity; 
-        unsigned int _maxCost; 
-        unsigned int _currentCost; 
-        unsigned int _currentCount; 
+        unsigned long long _maxCapacity; 
+        unsigned long long _maxCost; 
+        unsigned long long _currentCost; 
+        unsigned long long _currentCount; 
     }  _artworkPool;
     NSMapTable * _atlasToImages;
     NSLock * _atlasToImagesLock;
@@ -56,13 +56,13 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)_artworkForBaseImage:(struct CGImage { }*)arg1 additionalImage:(struct CGImage { }*)arg2 fullBleedColor:(struct CGColor { }*)arg3 style:(struct VKIconStyleInfo { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; unsigned char x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; unsigned char x7; unsigned char x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct Matrix<float, 2, 1> { float x_11_1_1[2]; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; bool x17; unsigned int x18; unsigned int x19; }*)arg4 contentScale:(float)arg5 hasText:(bool)arg6;
-- (struct CGImage { }*)_createImageForIconInfo:(id)arg1 contentScale:(float)arg2;
-- (struct CGImage { }*)_createImageForName:(id)arg1 contentScale:(float)arg2 size:(int)arg3;
-- (struct CGColor { }*)_newFullBleedColorForName:(id)arg1 contentScale:(float)arg2;
-- (id)artworkForName:(id)arg1 style:(struct VKIconStyleInfo { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; unsigned char x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; unsigned char x7; unsigned char x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct Matrix<float, 2, 1> { float x_11_1_1[2]; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; bool x17; unsigned int x18; unsigned int x19; }*)arg2 contentScale:(float)arg3 size:(int)arg4 hasText:(bool)arg5 includeFullBleedColor:(BOOL)arg6;
-- (id)artworkForStyleAttributeKey:(unsigned int)arg1 longValue:(unsigned long long)arg2 style:(struct VKIconStyleInfo { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; unsigned char x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; unsigned char x7; unsigned char x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct Matrix<float, 2, 1> { float x_11_1_1[2]; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; bool x17; unsigned int x18; unsigned int x19; }*)arg3 contentScale:(float)arg4 size:(int)arg5 includeFullBleedColor:(BOOL)arg6;
-- (id)artworkForStyleAttributeKey:(unsigned int)arg1 value:(unsigned int)arg2 style:(struct VKIconStyleInfo { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; unsigned char x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; unsigned char x7; unsigned char x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct Matrix<float, 2, 1> { float x_11_1_1[2]; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; bool x17; unsigned int x18; unsigned int x19; }*)arg3 contentScale:(float)arg4 size:(int)arg5 hasText:(bool)arg6 includeFullBleedColor:(BOOL)arg7;
+- (id)_artworkForBaseImage:(struct CGImage { }*)arg1 additionalImage:(struct CGImage { }*)arg2 fullBleedColor:(struct CGColor { }*)arg3 style:(struct VKIconStyleInfo { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; unsigned char x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; unsigned char x7; unsigned char x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct Matrix<float, 2, 1> { float x_11_1_1[2]; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; bool x17; unsigned int x18; unsigned int x19; }*)arg4 contentScale:(double)arg5 hasText:(bool)arg6;
+- (struct CGImage { }*)_createImageForIconInfo:(id)arg1 contentScale:(double)arg2;
+- (struct CGImage { }*)_createImageForName:(id)arg1 contentScale:(double)arg2 size:(long long)arg3;
+- (struct CGColor { }*)_newFullBleedColorForName:(id)arg1 contentScale:(double)arg2;
+- (id)artworkForName:(id)arg1 style:(struct VKIconStyleInfo { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; unsigned char x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; unsigned char x7; unsigned char x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct Matrix<float, 2, 1> { float x_11_1_1[2]; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; bool x17; unsigned int x18; unsigned int x19; }*)arg2 contentScale:(double)arg3 size:(long long)arg4 hasText:(bool)arg5 includeFullBleedColor:(bool)arg6;
+- (id)artworkForStyleAttributeKey:(unsigned int)arg1 longValue:(unsigned long long)arg2 style:(struct VKIconStyleInfo { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; unsigned char x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; unsigned char x7; unsigned char x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct Matrix<float, 2, 1> { float x_11_1_1[2]; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; bool x17; unsigned int x18; unsigned int x19; }*)arg3 contentScale:(double)arg4 size:(long long)arg5 includeFullBleedColor:(bool)arg6;
+- (id)artworkForStyleAttributeKey:(unsigned int)arg1 value:(unsigned int)arg2 style:(struct VKIconStyleInfo { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; struct Matrix<float, 4, 1> { float x_3_1_1[4]; } x3[2]; struct Matrix<float, 4, 1> { float x_4_1_1[4]; } x4; unsigned char x5; struct Matrix<float, 4, 1> { float x_6_1_1[4]; } x6; unsigned char x7; unsigned char x8; float x9; struct Matrix<float, 4, 1> { float x_10_1_1[4]; } x10; struct Matrix<float, 2, 1> { float x_11_1_1[2]; } x11; float x12; struct Matrix<float, 4, 1> { float x_13_1_1[4]; } x13; float x14; float x15; float x16; bool x17; unsigned int x18; unsigned int x19; }*)arg3 contentScale:(double)arg4 size:(long long)arg5 hasText:(bool)arg6 includeFullBleedColor:(bool)arg7;
 - (void)dealloc;
 - (id)init;
 - (id)initWithIconPack:(id)arg1;

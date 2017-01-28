@@ -12,11 +12,11 @@
 + (id)sharedSession;
 
 - (void).cxx_destruct;
-- (void)_continueMescalSetupWithVersion:(unsigned long)arg1 hardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; })arg2 session:(struct FPSAPContextOpaque_ { }*)arg3 data:(id)arg4 setupURL:(id)arg5 completionHandler:(id /* block */)arg6;
-- (BOOL)_prerequisitesHaveBeenSatisfied;
-- (void)_satisfySessionPrerequisitesIfNeededWithCompletion:(id /* block */)arg1;
-- (void)_setupNewSessionWithCompletion:(id /* block */)arg1;
+- (void)_continueMescalSetupWithVersion:(unsigned int)arg1 hardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; })arg2 session:(struct FPSAPContextOpaque_ { }*)arg3 data:(id)arg4 setupURL:(id)arg5 completionHandler:(id)arg6;
+- (bool)_prerequisitesHaveBeenSatisfied;
+- (void)_satisfySessionPrerequisitesIfNeededWithCompletion:(id)arg1;
+- (void)_setupNewSessionWithCompletion:(id)arg1;
 - (id)init;
-- (void)signData:(id)arg1 usingMescalWithCompletion:(id /* block */)arg2;
+- (void)signData:(id)arg1 usingMescalWithCompletion:(id)arg2;
 
 @end

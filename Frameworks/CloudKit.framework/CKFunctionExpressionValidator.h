@@ -17,6 +17,6 @@
 - (id)initWithFunctionName:(id)arg1 validators:(id)arg2;
 - (void)setArgumentValidators:(id)arg1;
 - (void)setFunctionName:(id)arg1;
-- (BOOL)validate:(id)arg1 error:(id*)arg2;
+- (bool)validate:(id)arg1 error:(id*)arg2;
 
 @end

@@ -214,8 +214,8 @@
 - (unsigned char)texturingEnabled;
 - (void)updateFshStringsWithRoot:(id)arg1 enabled:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg2;
 - (void)updateVshStringsWithRoot:(id)arg1 enabled:(struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; })arg2;
-- (BOOL)useColorAttrib;
-- (BOOL)useTexCoordAttrib;
+- (bool)useColorAttrib;
+- (bool)useTexCoordAttrib;
 - (struct GLKBigInt_s { unsigned long long x1; unsigned long long x2; }*)vshMask;
 - (unsigned int)vshMaskCt;
 - (char **)vshMaskStr;

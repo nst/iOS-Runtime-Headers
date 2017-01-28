@@ -3,14 +3,15 @@
  */
 
 @interface CCUIBrightnessContentView : CCUIControlCenterSectionView {
-    BOOL  _usesCompactHeight;
+    bool  _usesCompactHeight;
 }
 
-@property (nonatomic) BOOL usesCompactHeight;
+@property (nonatomic) bool usesCompactHeight;
 
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
-- (void)setUsesCompactHeight:(BOOL)arg1;
-- (BOOL)usesCompactHeight;
+- (struct CGSize { double x1; double x2; })intrinsicContentSize;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })layoutMargins;
+- (bool)pointInside:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (void)setUsesCompactHeight:(bool)arg1;
+- (bool)usesCompactHeight;
 
 @end

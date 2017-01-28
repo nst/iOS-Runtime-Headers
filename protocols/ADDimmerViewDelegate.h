@@ -5,7 +5,7 @@
 
 @required
 
-- (void)dimmerView:(ADDimmerView *)arg1 didReceiveTouchUpAtPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (BOOL)enableDimmerView:(ADDimmerView *)arg1;
+- (void)dimmerView:(ADDimmerView *)arg1 didReceiveTouchUpAtPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (bool)enableDimmerView:(ADDimmerView *)arg1;
 
 @end

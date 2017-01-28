@@ -15,13 +15,13 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)predictedLocationsOfInterestAtIndex:(unsigned int)arg1;
+- (id)predictedLocationsOfInterestAtIndex:(unsigned long long)arg1;
 - (id)predictedLocationsOfInterests;
-- (unsigned int)predictedLocationsOfInterestsCount;
-- (BOOL)readFrom:(id)arg1;
+- (unsigned long long)predictedLocationsOfInterestsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setPredictedLocationsOfInterests:(id)arg1;
 - (void)writeTo:(id)arg1;
 

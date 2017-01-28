@@ -6,13 +6,13 @@
     float  _alpha;
     float  _beta;
     float  _delta;
-    unsigned int  _kernelSize;
+    unsigned long long  _kernelSize;
 }
 
 @property (nonatomic) float alpha;
 @property (nonatomic) float beta;
 @property (nonatomic) float delta;
-@property (nonatomic, readonly) unsigned int kernelSize;
+@property (nonatomic, readonly) unsigned long long kernelSize;
 
 + (const struct MPSLibraryInfo { int x1; unsigned int x2; char *x3; struct MPSKernelInfo {} *x4; struct MPSKernelInfo {} *x5; struct MPSKernelInfo {} *x6; struct MPSKernelInfo {} *x7; struct MPSKernelInfo {} *x8; struct MPSKernelInfo {} *x9; struct MPSKernelInfo {} *x10; struct MPSKernelInfo {} *x11; struct MPSKernelInfo {} *x12; struct MPSKernelInfo {} *x13; struct MPSKernelInfo {} *x14; }*)libraryInfo;
 
@@ -21,8 +21,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1 device:(id)arg2;
 - (float)delta;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithDevice:(id)arg1 kernelSize:(unsigned int)arg2;
-- (unsigned int)kernelSize;
+- (id)initWithDevice:(id)arg1 kernelSize:(unsigned long long)arg2;
+- (unsigned long long)kernelSize;
 - (void)setAlpha:(float)arg1;
 - (void)setBeta:(float)arg1;
 - (void)setDelta:(float)arg1;

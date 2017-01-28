@@ -16,10 +16,10 @@
 
 @property (nonatomic) int activityType;
 @property (nonatomic) int eventType;
-@property (nonatomic) BOOL hasActivityType;
-@property (nonatomic) BOOL hasEventType;
-@property (nonatomic, readonly) BOOL hasSessionUUID;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasActivityType;
+@property (nonatomic) bool hasEventType;
+@property (nonatomic, readonly) bool hasSessionUUID;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) NSString *sessionUUID;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -34,20 +34,20 @@
 - (id)dictionaryRepresentation;
 - (int)eventType;
 - (id)eventTypeAsString:(int)arg1;
-- (BOOL)hasActivityType;
-- (BOOL)hasEventType;
-- (BOOL)hasSessionUUID;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasActivityType;
+- (bool)hasEventType;
+- (bool)hasSessionUUID;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)sessionUUID;
 - (void)setActivityType:(int)arg1;
 - (void)setEventType:(int)arg1;
-- (void)setHasActivityType:(BOOL)arg1;
-- (void)setHasEventType:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasActivityType:(bool)arg1;
+- (void)setHasEventType:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setSessionUUID:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

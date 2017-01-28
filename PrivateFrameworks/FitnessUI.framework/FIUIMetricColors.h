@@ -35,8 +35,8 @@
 + (id)keyColors;
 + (id)lapColors;
 + (id)lapsColors;
-+ (id)metricColorsForGoalTypeIdentifier:(unsigned int)arg1;
-+ (id)metricColorsForMetricType:(unsigned int)arg1;
++ (id)metricColorsForGoalTypeIdentifier:(unsigned long long)arg1;
++ (id)metricColorsForMetricType:(unsigned long long)arg1;
 + (struct CGGradient { }*)newGradientForStartColor:(id)arg1 endColor:(id)arg2;
 + (id)noMetricColors;
 + (id)paceColors;

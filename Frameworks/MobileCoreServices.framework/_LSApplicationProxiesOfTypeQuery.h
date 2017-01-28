@@ -3,22 +3,22 @@
  */
 
 @interface _LSApplicationProxiesOfTypeQuery : _LSQuery {
-    BOOL  _legacySPI;
-    unsigned int  _type;
+    bool  _legacySPI;
+    unsigned long long  _type;
 }
 
-@property (nonatomic, readonly) BOOL legacySPI;
-@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) bool legacySPI;
+@property (nonatomic, readonly) unsigned long long type;
 
-+ (id)queryWithType:(unsigned int)arg1 legacySPI:(BOOL)arg2;
-+ (BOOL)supportsSecureCoding;
++ (id)queryWithType:(unsigned long long)arg1 legacySPI:(bool)arg2;
++ (bool)supportsSecureCoding;
 
-- (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
+- (void)_enumerateWithXPCConnection:(id)arg1 block:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)legacySPI;
-- (unsigned int)type;
+- (bool)isEqual:(id)arg1;
+- (bool)legacySPI;
+- (unsigned long long)type;
 
 @end

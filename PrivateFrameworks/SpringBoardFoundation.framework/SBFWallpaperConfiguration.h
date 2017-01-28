@@ -5,40 +5,40 @@
 @interface SBFWallpaperConfiguration : NSObject <BSDescriptionProviding, NSCopying> {
     <SBFProceduralWallpaper> * _proceduralWallpaper;
     NSDictionary * _proceduralWallpaperInfo;
-    int  _variant;
+    long long  _variant;
     NSURL * _videoURL;
     SBFWallpaperConfigurationManager * _wallpaperConfigurationManager;
     SBWallpaperImage * _wallpaperImage;
     SBFWallpaperOptions * _wallpaperOptions;
-    int  _wallpaperType;
+    long long  _wallpaperType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) <SBFProceduralWallpaper> *proceduralWallpaper;
 @property (nonatomic, readonly, copy) NSString *proceduralWallpaperIdentifier;
 @property (nonatomic, copy) NSDictionary *proceduralWallpaperInfo;
 @property (nonatomic, readonly, copy) NSDictionary *proceduralWallpaperOptions;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) int variant;
+@property (nonatomic, readonly) long long variant;
 @property (nonatomic, copy) NSURL *videoURL;
 @property (nonatomic, readonly) SBFWallpaperConfigurationManager *wallpaperConfigurationManager;
 @property (nonatomic, retain) SBWallpaperImage *wallpaperImage;
 @property (nonatomic, copy) SBFWallpaperOptions *wallpaperOptions;
 @property (nonatomic, readonly) UIImage *wallpaperOriginalImage;
 @property (nonatomic, readonly) UIImage *wallpaperThumbnailImage;
-@property (nonatomic, readonly) int wallpaperType;
+@property (nonatomic, readonly) long long wallpaperType;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithWallpaperConfigurationManager:(id)arg1 variant:(int)arg2 type:(int)arg3;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithWallpaperConfigurationManager:(id)arg1 variant:(long long)arg2 type:(long long)arg3;
+- (bool)isEqual:(id)arg1;
 - (id)proceduralWallpaper;
 - (id)proceduralWallpaperIdentifier;
 - (id)proceduralWallpaperInfo;
@@ -49,7 +49,7 @@
 - (void)setWallpaperOptions:(id)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
-- (int)variant;
+- (long long)variant;
 - (id)videoURL;
 - (id)wallpaperConfigurationManager;
 - (id)wallpaperImage;
@@ -57,6 +57,6 @@
 - (id)wallpaperOriginalImage;
 - (id)wallpaperThumbnailImage;
 - (id)wallpaperThumbnailImageData;
-- (int)wallpaperType;
+- (long long)wallpaperType;
 
 @end

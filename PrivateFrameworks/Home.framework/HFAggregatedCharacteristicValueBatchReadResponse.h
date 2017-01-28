@@ -3,7 +3,7 @@
  */
 
 @interface HFAggregatedCharacteristicValueBatchReadResponse : NSObject {
-    id /* block */  _aggregationPolicyBlock;
+    id  _aggregationPolicyBlock;
     NSMutableSet * _allCharacteristicTypes;
     NSMutableSet * _allCharacteristics;
     <HFCharacteristicOperationContextProviding> * _contextProvider;
@@ -11,7 +11,7 @@
     NSMutableDictionary * _valuesByCharacteristicType;
 }
 
-@property (nonatomic, copy) id /* block */ aggregationPolicyBlock;
+@property (nonatomic, copy) id aggregationPolicyBlock;
 @property (nonatomic, readonly) NSSet *allCharacteristicTypes;
 @property (nonatomic, readonly) NSSet *allCharacteristics;
 @property (nonatomic, retain) <HFCharacteristicOperationContextProviding> *contextProvider;
@@ -21,25 +21,25 @@
 + (id)aggregatedResponseFromResponse:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_aggregatedValueForValues:(id)arg1 withAggregationPolicy:(unsigned int)arg2 metadata:(id)arg3;
+- (id)_aggregatedValueForValues:(id)arg1 withAggregationPolicy:(unsigned long long)arg2 metadata:(id)arg3;
 - (id)_averageValueForValues:(id)arg1 metadata:(id)arg2;
 - (id)_metadataForCharacteristicType:(id)arg1;
 - (id)_mostCommonValueForValues:(id)arg1;
 - (void)addCharacteristic:(id)arg1;
 - (void)addError:(id)arg1 forCharacteristic:(id)arg2;
 - (void)addValue:(id)arg1 forCharacteristic:(id)arg2;
-- (id /* block */)aggregationPolicyBlock;
+- (id)aggregationPolicyBlock;
 - (id)allCharacteristicTypes;
 - (id)allCharacteristics;
 - (id)allValuesForCharacteristicType:(id)arg1;
 - (id)contextProvider;
 - (id)errorForCharacteristicType:(id)arg1;
 - (id)errorsByCharacteristicType;
-- (BOOL)hasAnyErrors;
-- (BOOL)hasErrorForEveryCharacteristic;
+- (bool)hasAnyErrors;
+- (bool)hasErrorForEveryCharacteristic;
 - (id)init;
-- (BOOL)isValueAggregatedForCharacteristicType:(id)arg1;
-- (void)setAggregationPolicyBlock:(id /* block */)arg1;
+- (bool)isValueAggregatedForCharacteristicType:(id)arg1;
+- (void)setAggregationPolicyBlock:(id)arg1;
 - (void)setContextProvider:(id)arg1;
 - (id)valueForCharacteristicType:(id)arg1;
 - (id)valuesByCharacteristicType;

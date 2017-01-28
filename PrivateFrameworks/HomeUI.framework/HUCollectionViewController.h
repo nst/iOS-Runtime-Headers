@@ -13,7 +13,7 @@
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (id)installedChildViewControllersKeyedByCell;
-- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setEditing:(bool)arg1 animated:(bool)arg2;
 - (void)setInstalledChildViewControllersKeyedByCell:(id)arg1;
 
 @end

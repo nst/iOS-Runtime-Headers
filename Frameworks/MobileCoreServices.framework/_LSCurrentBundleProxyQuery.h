@@ -5,12 +5,12 @@
 @interface _LSCurrentBundleProxyQuery : _LSQuery
 
 + (id)currentBundleProxyQuery;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (void)_enumerateWithXPCConnection:(id)arg1 block:(id /* block */)arg2;
+- (void)_enumerateWithXPCConnection:(id)arg1 block:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

@@ -5,23 +5,23 @@
 @interface TCOfficeFontInfo : NSObject {
     NSString * _alphaFontName;
     NSString * _fontName;
-    BOOL  _isBold;
-    BOOL  _isItalic;
+    bool  _isBold;
+    bool  _isItalic;
 }
 
 @property (nonatomic, readonly) NSString *alphaFontName;
 @property (nonatomic, readonly) NSString *fontName;
-@property (nonatomic, readonly) BOOL isBold;
-@property (nonatomic, readonly) BOOL isItalic;
+@property (nonatomic, readonly) bool isBold;
+@property (nonatomic, readonly) bool isItalic;
 
-+ (id)officeFontInfoWithFontName:(id)arg1 alphaFontName:(id)arg2 isBold:(BOOL)arg3 isItalic:(BOOL)arg4;
++ (id)officeFontInfoWithFontName:(id)arg1 alphaFontName:(id)arg2 isBold:(bool)arg3 isItalic:(bool)arg4;
 
 - (id)alphaFontName;
 - (void)dealloc;
 - (id)description;
 - (id)fontName;
-- (id)initWithFontName:(id)arg1 alphaFontName:(id)arg2 isBold:(BOOL)arg3 isItalic:(BOOL)arg4;
-- (BOOL)isBold;
-- (BOOL)isItalic;
+- (id)initWithFontName:(id)arg1 alphaFontName:(id)arg2 isBold:(bool)arg3 isItalic:(bool)arg4;
+- (bool)isBold;
+- (bool)isItalic;
 
 @end

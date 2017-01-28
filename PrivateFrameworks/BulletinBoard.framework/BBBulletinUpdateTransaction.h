@@ -4,24 +4,24 @@
 
 @interface BBBulletinUpdateTransaction : NSObject <NSCopying, NSSecureCoding> {
     BBBulletinUpdate * _bulletinUpdate;
-    unsigned int  _transactionID;
+    unsigned long long  _transactionID;
 }
 
 @property (nonatomic, readonly, copy) BBBulletinUpdate *bulletinUpdate;
-@property (nonatomic, readonly) unsigned int transactionID;
+@property (nonatomic, readonly) unsigned long long transactionID;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)transactionWithBulletinUpdate:(id)arg1 transactionID:(unsigned int)arg2;
++ (bool)supportsSecureCoding;
++ (id)transactionWithBulletinUpdate:(id)arg1 transactionID:(unsigned long long)arg2;
 
 - (void).cxx_destruct;
-- (id)_initWithBulletinUpdate:(id)arg1 transactionID:(unsigned int)arg2;
+- (id)_initWithBulletinUpdate:(id)arg1 transactionID:(unsigned long long)arg2;
 - (id)bulletinUpdate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (unsigned int)transactionID;
+- (bool)isEqual:(id)arg1;
+- (unsigned long long)transactionID;
 
 @end

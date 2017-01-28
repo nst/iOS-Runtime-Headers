@@ -5,12 +5,12 @@
 
 @required
 
-- (int)backgroundStyle;
+- (long long)backgroundStyle;
 - (NSArray *)elementOverrides;
-- (BOOL)isHidden;
+- (bool)isHidden;
 - (SBLockScreenLegibilitySettings *)legibilitySettings;
-- (int)notificationBehavior;
-- (int)presentationStyle;
-- (unsigned int)restrictedCapabilities;
+- (long long)notificationBehavior;
+- (long long)presentationStyle;
+- (unsigned long long)restrictedCapabilities;
 
 @end

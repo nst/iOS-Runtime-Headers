@@ -3,7 +3,7 @@
  */
 
 @interface SKRemove : SKAction {
-    BOOL  _hasFired;
+    bool  _hasFired;
 }
 
 + (id)removeFromParent;

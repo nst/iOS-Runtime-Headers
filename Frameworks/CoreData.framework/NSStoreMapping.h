@@ -9,9 +9,9 @@
 - (void)copyValuesForReadOnlyFetch:(id)arg1;
 - (void)dealloc;
 - (id)externalName;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithExternalName:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setExternalName:(id)arg1;
 
 @end

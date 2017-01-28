@@ -15,9 +15,9 @@
 
 - (void).cxx_destruct;
 - (id)_eventKeyForUsageStatisticName:(id)arg1 groupingKey:(id)arg2;
-- (void)_incrementUsageCountForEventWithUsageStatisticName:(id)arg1 statisticType:(int)arg2;
+- (void)_incrementUsageCountForEventWithUsageStatisticName:(id)arg1 statisticType:(long long)arg2;
 - (void)_pushDistributionStatisticNamed:(id)arg1 value:(double)arg2;
-- (void)incrementUsageStatisticNamed:(id)arg1 statisticType:(int)arg2;
+- (void)incrementUsageStatisticNamed:(id)arg1 statisticType:(long long)arg2;
 - (id)initWithUsageStatisticsDomain:(id)arg1;
 - (void)pushDistributionStatisticNamed:(id)arg1 value:(double)arg2;
 - (id)usageStatisticsDomain;

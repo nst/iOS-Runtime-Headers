@@ -10,8 +10,8 @@
     double  _rightEyeX;
     double  _rightEyeY;
     double  _size;
-    unsigned int  _sourceHeight;
-    unsigned int  _sourceWidth;
+    unsigned long long  _sourceHeight;
+    unsigned long long  _sourceWidth;
 }
 
 @property (nonatomic, readonly) double centerX;
@@ -21,8 +21,8 @@
 @property (nonatomic, readonly) double rightEyeX;
 @property (nonatomic, readonly) double rightEyeY;
 @property (nonatomic, readonly) double size;
-@property (nonatomic, readonly) unsigned int sourceHeight;
-@property (nonatomic, readonly) unsigned int sourceWidth;
+@property (nonatomic, readonly) unsigned long long sourceHeight;
+@property (nonatomic, readonly) unsigned long long sourceWidth;
 
 - (double)centerX;
 - (double)centerY;
@@ -32,7 +32,7 @@
 - (double)rightEyeX;
 - (double)rightEyeY;
 - (double)size;
-- (unsigned int)sourceHeight;
-- (unsigned int)sourceWidth;
+- (unsigned long long)sourceHeight;
+- (unsigned long long)sourceWidth;
 
 @end

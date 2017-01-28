@@ -22,13 +22,13 @@
 - (id)dictionaryRepresentation;
 - (int)failedPrecondition;
 - (id)failedPreconditionAsString:(int)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)passIDs;
-- (id)passIDsAtIndex:(unsigned int)arg1;
-- (unsigned int)passIDsCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)passIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)passIDsCount;
+- (bool)readFrom:(id)arg1;
 - (void)setFailedPrecondition:(int)arg1;
 - (void)setPassIDs:(id)arg1;
 - (void)writeTo:(id)arg1;

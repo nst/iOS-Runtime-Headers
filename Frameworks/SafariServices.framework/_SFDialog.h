@@ -3,32 +3,32 @@
  */
 
 @interface _SFDialog : NSObject {
-    id /* block */  _completionHandler;
-    BOOL  _completionHandlerBlocksWebProcess;
+    id  _completionHandler;
+    bool  _completionHandlerBlocksWebProcess;
     NSString * _defaultText;
     NSString * _message;
     NSString * _primaryActionTitle;
     NSString * _secondaryActionTitle;
 }
 
-@property (nonatomic, readonly) BOOL completionHandlerBlocksWebProcess;
+@property (nonatomic, readonly) bool completionHandlerBlocksWebProcess;
 @property (nonatomic, readonly, copy) NSString *defaultText;
 @property (nonatomic, readonly, copy) NSString *message;
 @property (nonatomic, readonly, copy) NSString *primaryActionTitle;
 @property (nonatomic, readonly, copy) NSString *secondaryActionTitle;
 
-+ (id)javaScriptAlertDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (id)javaScriptConfirmDialogWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (id)javaScriptPromptDialogWithMessage:(id)arg1 defaultText:(id)arg2 completionHandler:(id /* block */)arg3;
-+ (id)mailNavigationDialogWithCompletionHandler:(id /* block */)arg1;
-+ (id)telephonyNavigationDialogWithCompletionHandler:(id /* block */)arg1;
++ (id)javaScriptAlertDialogWithMessage:(id)arg1 completionHandler:(id)arg2;
++ (id)javaScriptConfirmDialogWithMessage:(id)arg1 completionHandler:(id)arg2;
++ (id)javaScriptPromptDialogWithMessage:(id)arg1 defaultText:(id)arg2 completionHandler:(id)arg3;
++ (id)mailNavigationDialogWithCompletionHandler:(id)arg1;
++ (id)telephonyNavigationDialogWithCompletionHandler:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (BOOL)completionHandlerBlocksWebProcess;
+- (bool)completionHandlerBlocksWebProcess;
 - (id)defaultText;
-- (void)finishWithPrimaryAction:(BOOL)arg1 text:(id)arg2;
-- (id)initWithMessage:(id)arg1 defaultText:(id)arg2 primaryActionTitle:(id)arg3 secondaryActionTitle:(id)arg4 completionHandlerBlocksWebProcess:(BOOL)arg5 completionHandler:(id /* block */)arg6;
+- (void)finishWithPrimaryAction:(bool)arg1 text:(id)arg2;
+- (id)initWithMessage:(id)arg1 defaultText:(id)arg2 primaryActionTitle:(id)arg3 secondaryActionTitle:(id)arg4 completionHandlerBlocksWebProcess:(bool)arg5 completionHandler:(id)arg6;
 - (id)message;
 - (id)primaryActionTitle;
 - (id)secondaryActionTitle;

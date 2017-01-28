@@ -12,9 +12,9 @@
 @property (nonatomic, retain) UIDatePicker *datePicker;
 @property (nonatomic) <ABDatePickerViewControllerDismissDelegate> *dismissDelegate;
 
-+ (struct CGSize { float x1; float x2; })datePickerSize;
++ (struct CGSize { double x1; double x2; })datePickerSize;
 
-- (float)ab_heightToFitForViewInPopoverView;
+- (double)ab_heightToFitForViewInPopoverView;
 - (void*)context;
 - (id)datePicker;
 - (void)dealloc;
@@ -24,6 +24,6 @@
 - (void)setDatePicker:(id)arg1;
 - (void)setDismissDelegate:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -19,6 +19,6 @@
 - (void)deny;
 - (void)denyOnlyThisRequest;
 - (id)initWithPermissionRequestProxy:(struct PassRefPtr<WebKit::GeolocationPermissionRequestProxy> { struct GeolocationPermissionRequestProxy {} *x1; })arg1;
-- (BOOL)shouldClearCache;
+- (bool)shouldClearCache;
 
 @end

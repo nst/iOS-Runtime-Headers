@@ -4,14 +4,14 @@
 
 @interface FCFeedViewportRefreshOperation : FCOperation {
     FCFeedDescriptor * _feedDescriptor;
-    id /* block */  _refreshCompletionHandler;
+    id  _refreshCompletionHandler;
     FCFeedViewportDiff * _resultDiff;
     FCFeedViewport * _resultViewport;
     FCFeedViewport * _viewport;
 }
 
 @property (nonatomic, retain) FCFeedDescriptor *feedDescriptor;
-@property (nonatomic, copy) id /* block */ refreshCompletionHandler;
+@property (nonatomic, copy) id refreshCompletionHandler;
 @property (nonatomic, retain) FCFeedViewportDiff *resultDiff;
 @property (nonatomic, retain) FCFeedViewport *resultViewport;
 @property (nonatomic, retain) FCFeedViewport *viewport;
@@ -20,15 +20,15 @@
 - (id)feedDescriptor;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (id /* block */)refreshCompletionHandler;
+- (id)refreshCompletionHandler;
 - (id)resultDiff;
 - (id)resultViewport;
 - (void)setFeedDescriptor:(id)arg1;
-- (void)setRefreshCompletionHandler:(id /* block */)arg1;
+- (void)setRefreshCompletionHandler:(id)arg1;
 - (void)setResultDiff:(id)arg1;
 - (void)setResultViewport:(id)arg1;
 - (void)setViewport:(id)arg1;
-- (BOOL)validateOperation;
+- (bool)validateOperation;
 - (id)viewport;
 
 @end

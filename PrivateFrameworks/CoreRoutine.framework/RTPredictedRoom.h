@@ -15,7 +15,7 @@
 @property (nonatomic, retain) RTSource *source;
 
 + (id)allowedKeys;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)confidence;

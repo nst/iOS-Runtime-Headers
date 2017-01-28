@@ -4,6 +4,6 @@
 
 @interface CNUIContactPropertyRanker : NSObject
 
-+ (id /* block */)bestPropertyComparator;
++ (id)bestPropertyComparator;
 
 @end

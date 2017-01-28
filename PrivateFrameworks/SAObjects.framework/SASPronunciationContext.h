@@ -9,7 +9,7 @@
 @property (nonatomic, copy) NSURL *domainObjectIdentifier;
 @property (nonatomic, copy) NSString *domainObjectPropertyIdentifier;
 @property (nonatomic, copy) NSString *fullName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *language;
 @property (nonatomic, copy) NSString *orthography;
 @property (readonly) Class superclass;

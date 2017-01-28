@@ -4,6 +4,6 @@
 
 @interface GKRootlessActivityViewController : UIActivityViewController
 
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

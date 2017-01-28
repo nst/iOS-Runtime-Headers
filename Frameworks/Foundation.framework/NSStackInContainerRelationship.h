@@ -4,38 +4,38 @@
 
 @interface NSStackInContainerRelationship : NSObject <NSLayoutRelationship> {
     NSLayoutRect * _containingRect;
-    int  _orientation;
-    float  _spacing;
+    long long  _orientation;
+    double  _spacing;
     NSArray * _stackedRects;
 }
 
 @property (readonly, copy) NSLayoutRect *containingRect;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly, copy) NSString *identifier;
-@property (readonly) int orientation;
+@property (readonly) long long orientation;
 @property (readonly, copy) NSString *relationshipDescription;
-@property (readonly) float spacing;
+@property (readonly) double spacing;
 @property (readonly, copy) NSArray *stackedRects;
 @property (readonly) Class superclass;
 
-+ (id)horizontalStackWithRects:(id)arg1 inContainer:(id)arg2 spacing:(float)arg3;
-+ (id)stackWithOrientation:(int)arg1 stackedRects:(id)arg2 inContainer:(id)arg3 spacing:(float)arg4;
-+ (id)verticalStackWithRects:(id)arg1 inContainer:(id)arg2 spacing:(float)arg3;
++ (id)horizontalStackWithRects:(id)arg1 inContainer:(id)arg2 spacing:(double)arg3;
++ (id)stackWithOrientation:(long long)arg1 stackedRects:(id)arg2 inContainer:(id)arg3 spacing:(double)arg4;
++ (id)verticalStackWithRects:(id)arg1 inContainer:(id)arg2 spacing:(double)arg3;
 
 - (id)containingRect;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)identifier;
-- (id)initWithOrientation:(int)arg1 stackedRects:(id)arg2 containingRect:(id)arg3 spacing:(float)arg4;
-- (BOOL)isEqual:(id)arg1;
+- (id)initWithOrientation:(long long)arg1 stackedRects:(id)arg2 containingRect:(id)arg3 spacing:(double)arg4;
+- (bool)isEqual:(id)arg1;
 - (id)makeChildrenRelationships;
-- (int)orientation;
+- (long long)orientation;
 - (id)relationshipDescription;
-- (float)spacing;
+- (double)spacing;
 - (id)stackedRects;
 
 @end

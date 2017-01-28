@@ -3,7 +3,7 @@
  */
 
 @interface CUINamedTexture : CUINamedLookup {
-    float  _scale;
+    double  _scale;
     struct _cuintproperties { 
         unsigned int exifOrientation : 4; 
         unsigned int isAlphaCropped : 1; 
@@ -13,19 +13,19 @@
 }
 
 @property (nonatomic, readonly) int exifOrientation;
-@property (nonatomic, readonly) BOOL isAlphaCropped;
-@property (nonatomic, readonly) BOOL isOpaque;
-@property (nonatomic, readonly) float scale;
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) bool isAlphaCropped;
+@property (nonatomic, readonly) bool isOpaque;
+@property (nonatomic, readonly) double scale;
+@property (nonatomic, readonly) struct CGSize { double x1; double x2; } size;
 
-- (BOOL)_cacheRenditionProperties;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alphaCroppedRect;
+- (bool)_cacheRenditionProperties;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })alphaCroppedRect;
 - (id)description;
 - (int)exifOrientation;
-- (BOOL)isAlphaCropped;
-- (BOOL)isOpaque;
-- (float)scale;
-- (struct CGSize { float x1; float x2; })size;
+- (bool)isAlphaCropped;
+- (bool)isOpaque;
+- (double)scale;
+- (struct CGSize { double x1; double x2; })size;
 - (id)textureWithBufferAllocator:(id)arg1;
 
 @end

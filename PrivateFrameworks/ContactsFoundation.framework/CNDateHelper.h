@@ -4,15 +4,15 @@
 
 @interface CNDateHelper : NSObject
 
-+ (id)componentsForJanuary1WithYear:(int)arg1;
++ (id)componentsForJanuary1WithYear:(long long)arg1;
 + (id)componentsFromDate:(id)arg1;
-+ (int)currentGregorianYearInGMT;
-+ (id)dateWithYear:(int)arg1 month:(int)arg2 day:(int)arg3;
-+ (id)dateWithYear:(int)arg1 month:(int)arg2 day:(int)arg3 hour:(int)arg4 minute:(int)arg5 second:(int)arg6 timeZone:(id)arg7;
++ (long long)currentGregorianYearInGMT;
++ (id)dateWithYear:(long long)arg1 month:(long long)arg2 day:(long long)arg3;
++ (id)dateWithYear:(long long)arg1 month:(long long)arg2 day:(long long)arg3 hour:(long long)arg4 minute:(long long)arg5 second:(long long)arg6 timeZone:(id)arg7;
 + (id)gregorianCalendar;
 + (id)gregorianCalendarInGMT;
-+ (int)gregorianYearFromDate:(id)arg1;
-+ (int)gregorianYearInGMTFromDate:(id)arg1;
++ (long long)gregorianYearFromDate:(id)arg1;
++ (long long)gregorianYearInGMTFromDate:(id)arg1;
 + (bool)isComponentsEmpty:(id)arg1;
 
 @end

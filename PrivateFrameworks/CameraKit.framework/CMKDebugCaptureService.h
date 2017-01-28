@@ -4,20 +4,20 @@
 
 @interface CMKDebugCaptureService : CMKCaptureService {
     double  __enqueueTime;
-    BOOL  _debugLoggingEnabled;
+    bool  _debugLoggingEnabled;
 }
 
 @property (nonatomic, readonly) double _enqueueTime;
-@property (getter=isDebugLoggingEnabled, nonatomic) BOOL debugLoggingEnabled;
+@property (getter=isDebugLoggingEnabled, nonatomic) bool debugLoggingEnabled;
 
 - (double)_enqueueTime;
 - (void)didCaptureStillImageForRequest:(id)arg1;
-- (BOOL)isDebugLoggingEnabled;
+- (bool)isDebugLoggingEnabled;
 - (void)receivedStillImageForRequest:(id)arg1;
 - (void)requestWasEnqueued:(id)arg1;
 - (void)responseWasCompleted:(id)arg1 error:(id)arg2;
 - (void)responseWasGenerated:(id)arg1 error:(id)arg2;
-- (void)setDebugLoggingEnabled:(BOOL)arg1;
+- (void)setDebugLoggingEnabled:(bool)arg1;
 - (void)willCaptureStillImageForRequest:(id)arg1;
 
 @end

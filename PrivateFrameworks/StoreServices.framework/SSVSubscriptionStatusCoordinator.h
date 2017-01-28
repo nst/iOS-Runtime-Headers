@@ -5,7 +5,7 @@
 @interface SSVSubscriptionStatusCoordinator : NSObject {
     SSVSubscriptionStatusRequest * _activeRequest;
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    BOOL  _didReset;
+    bool  _didReset;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
     SSVSubscriptionStatus * _lastKnownStatus;
     NSDate * _lastStatusDate;
@@ -24,15 +24,15 @@
 - (id)_copyValidStatusForStatus:(id)arg1;
 - (void)_deviceStoreFrontChangedNotification;
 - (void)_externalChangeNotification;
-- (void)_fireStatusBlocksWithStatus:(id)arg1 isFinal:(BOOL)arg2 error:(id)arg3;
-- (void)_handleRequestResponseWithStatus:(id)arg1 isFinal:(BOOL)arg2 error:(id)arg3;
+- (void)_fireStatusBlocksWithStatus:(id)arg1 isFinal:(bool)arg2 error:(id)arg3;
+- (void)_handleRequestResponseWithStatus:(id)arg1 isFinal:(bool)arg2 error:(id)arg3;
 - (void)_invalidateLastKnownStatus;
 - (void)_validateLastKnownStatus;
 - (void)dealloc;
-- (void)getStatusWithOptions:(id)arg1 statusBlock:(id /* block */)arg2;
+- (void)getStatusWithOptions:(id)arg1 statusBlock:(id)arg2;
 - (id)init;
 - (id)lastKnownStatus;
-- (void)modifyLastKnownStatusUsingBlock:(id /* block */)arg1;
+- (void)modifyLastKnownStatusUsingBlock:(id)arg1;
 - (void)reset;
 
 @end

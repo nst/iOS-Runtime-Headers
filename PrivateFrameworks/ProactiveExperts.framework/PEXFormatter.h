@@ -6,12 +6,12 @@
     NSDateFormatter * _birthdayFormatter;
     NSDateFormatter * _chineseBirthdayFormatter;
     NSCache * _dateFormatCache;
-    long  _dateFormatCacheOnce;
+    long long  _dateFormatCacheOnce;
     NSDateFormatter * _dateFormatter;
     NSURL * _labeledValueLocalizationURL;
     NSLocale * _locale;
     NSCache * _localizedLabelCache;
-    long  _localizedLabelCacheOnce;
+    long long  _localizedLabelCacheOnce;
     NSDateFormatter * _longEventFormatter;
     NSDictionary * _queryCriteria;
     NSDateFormatter * _shortEventFormatter;
@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (id)_dateFormatForTemplate:(id)arg1;
 - (id)_dateFromComponents:(id)arg1 destinationCalendar:(id)arg2;
-- (BOOL)_isYearlessComponents:(id)arg1;
+- (bool)_isYearlessComponents:(id)arg1;
 - (id)_makeBirthdayFormatter;
 - (id)_makeChineseBirthdayFormatter;
 - (id)_makeLongEventFormatter;

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isAnyTouchOverActiveArea:(NSSet *)arg1;
-- (BOOL)shouldIgnoreWebTouch;
+- (bool)isAnyTouchOverActiveArea:(NSSet *)arg1;
+- (bool)shouldIgnoreWebTouch;
 
 @end

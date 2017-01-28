@@ -11,6 +11,7 @@
     NSObject<OS_dispatch_queue> * dataCachingQueue;
     AVAssetResourceLoadingDataRequest * dataRequest;
     struct OpaqueFigAsset { } * figAsset;
+    struct OpaqueFigCPECryptor { } * figCryptor;
     struct OpaqueFigAssetImageGenerator { } * figImageGenerator;
     struct OpaqueFigPlaybackItem { } * figPlaybackItem;
     int  finished;
@@ -18,7 +19,7 @@
     NSDictionary * requestDictionary;
     NSURLResponse * response;
     int  sentContentInfo;
-    id /* block */  streamingKeyRequestCompletionHandler;
+    id  streamingKeyRequestCompletionHandler;
     AVWeakReference * weakReference;
     AVWeakReference * weakReferenceToResourceLoader;
 }

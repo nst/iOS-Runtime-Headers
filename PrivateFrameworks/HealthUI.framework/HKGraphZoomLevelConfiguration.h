@@ -18,8 +18,8 @@
 @property (nonatomic, readonly) NSDateComponents *seriesPointIntervalComponents;
 @property (nonatomic, readonly) double zoomLevelThreshold;
 
-+ (id)_generateConfigurationForZoomLevel:(int)arg1;
-+ (id)configurationForZoomLevel:(int)arg1;
++ (id)_generateConfigurationForZoomLevel:(long long)arg1;
++ (id)configurationForZoomLevel:(long long)arg1;
 + (id)defaultCalendar;
 
 - (void).cxx_destruct;

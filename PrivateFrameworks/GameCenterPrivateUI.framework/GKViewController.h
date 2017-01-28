@@ -4,32 +4,32 @@
 
 @interface GKViewController : UIViewController {
     GKColorPalette * _colorPalette;
-    int  _gkFocusBubbleType;
+    long long  _gkFocusBubbleType;
     GKViewController * _rootViewController;
-    BOOL  _shouldUpdateContentOnlyWhenAuthenticated;
+    bool  _shouldUpdateContentOnlyWhenAuthenticated;
 }
 
 @property (nonatomic, retain) GKColorPalette *colorPalette;
-@property (nonatomic) int gkFocusBubbleType;
+@property (nonatomic) long long gkFocusBubbleType;
 @property (nonatomic, retain) GKViewController *rootViewController;
-@property (nonatomic) BOOL shouldUpdateContentOnlyWhenAuthenticated;
+@property (nonatomic) bool shouldUpdateContentOnlyWhenAuthenticated;
 
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
++ (bool)_shouldForwardViewWillTransitionToSize;
 
 - (id)colorPalette;
 - (void)dealloc;
-- (BOOL)displayUsingSplitNavigationBar;
-- (int)gkFocusBubbleType;
+- (bool)displayUsingSplitNavigationBar;
+- (long long)gkFocusBubbleType;
 - (void)loadView;
-- (void)popToRootViewControllerAnimated:(BOOL)arg1;
+- (void)popToRootViewControllerAnimated:(bool)arg1;
 - (id)rootViewController;
 - (void)setColorPalette:(id)arg1;
-- (void)setGkFocusBubbleType:(int)arg1;
+- (void)setGkFocusBubbleType:(long long)arg1;
 - (void)setRootViewController:(id)arg1;
-- (void)setShouldUpdateContentOnlyWhenAuthenticated:(BOOL)arg1;
-- (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
-- (BOOL)shouldUpdateContentOnlyWhenAuthenticated;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)setShouldUpdateContentOnlyWhenAuthenticated:(bool)arg1;
+- (bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (bool)shouldUpdateContentOnlyWhenAuthenticated;
+- (void)viewDidAppear:(bool)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

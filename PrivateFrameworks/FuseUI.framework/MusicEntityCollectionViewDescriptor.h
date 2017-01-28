@@ -4,19 +4,19 @@
 
 @interface MusicEntityCollectionViewDescriptor : MusicEntityViewDescriptor {
     MPULayoutInterpolator * _lateralContentInsetFromCollectionViewContainerWidthInterpolator;
-    float  _sectionHeaderBottomContentInset;
-    BOOL  _shouldFlattenToSingleSectionInRegularWidthAndHeight;
-    BOOL  _shouldShowOnlyFirstRowOfContent;
-    BOOL  _showsSectionHeaders;
+    double  _sectionHeaderBottomContentInset;
+    bool  _shouldFlattenToSingleSectionInRegularWidthAndHeight;
+    bool  _shouldShowOnlyFirstRowOfContent;
+    bool  _showsSectionHeaders;
     MPULayoutInterpolator * _textLateralEdgePaddingFromInteritemSpacingLayoutInterpolator;
     MPULayoutInterpolator * _verticalLockupWidthFromCollectionViewWidthInterpolator;
 }
 
 @property (nonatomic, copy) MPULayoutInterpolator *lateralContentInsetFromCollectionViewContainerWidthInterpolator;
-@property (nonatomic) float sectionHeaderBottomContentInset;
-@property (nonatomic) BOOL shouldFlattenToSingleSectionInRegularWidthAndHeight;
-@property (nonatomic) BOOL shouldShowOnlyFirstRowOfContent;
-@property (nonatomic) BOOL showsSectionHeaders;
+@property (nonatomic) double sectionHeaderBottomContentInset;
+@property (nonatomic) bool shouldFlattenToSingleSectionInRegularWidthAndHeight;
+@property (nonatomic) bool shouldShowOnlyFirstRowOfContent;
+@property (nonatomic) bool showsSectionHeaders;
 @property (nonatomic, copy) MPULayoutInterpolator *textLateralEdgePaddingFromInteritemSpacingLayoutInterpolator;
 @property (nonatomic, copy) MPULayoutInterpolator *verticalLockupWidthFromCollectionViewWidthInterpolator;
 
@@ -24,17 +24,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (id)lateralContentInsetFromCollectionViewContainerWidthInterpolator;
-- (float)sectionHeaderBottomContentInset;
+- (double)sectionHeaderBottomContentInset;
 - (void)setLateralContentInsetFromCollectionViewContainerWidthInterpolator:(id)arg1;
-- (void)setSectionHeaderBottomContentInset:(float)arg1;
-- (void)setShouldFlattenToSingleSectionInRegularWidthAndHeight:(BOOL)arg1;
-- (void)setShouldShowOnlyFirstRowOfContent:(BOOL)arg1;
-- (void)setShowsSectionHeaders:(BOOL)arg1;
+- (void)setSectionHeaderBottomContentInset:(double)arg1;
+- (void)setShouldFlattenToSingleSectionInRegularWidthAndHeight:(bool)arg1;
+- (void)setShouldShowOnlyFirstRowOfContent:(bool)arg1;
+- (void)setShowsSectionHeaders:(bool)arg1;
 - (void)setTextLateralEdgePaddingFromInteritemSpacingLayoutInterpolator:(id)arg1;
 - (void)setVerticalLockupWidthFromCollectionViewWidthInterpolator:(id)arg1;
-- (BOOL)shouldFlattenToSingleSectionInRegularWidthAndHeight;
-- (BOOL)shouldShowOnlyFirstRowOfContent;
-- (BOOL)showsSectionHeaders;
+- (bool)shouldFlattenToSingleSectionInRegularWidthAndHeight;
+- (bool)shouldShowOnlyFirstRowOfContent;
+- (bool)showsSectionHeaders;
 - (id)textLateralEdgePaddingFromInteritemSpacingLayoutInterpolator;
 - (id)verticalLockupWidthFromCollectionViewWidthInterpolator;
 

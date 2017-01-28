@@ -15,7 +15,7 @@
 - (id)_preferredTransitionAnimator;
 - (id)currentCommitEffectWindow;
 - (id)initWithPresentedViewController:(id)arg1;
-- (void)performTransitionWithPresentationBlock:(id /* block */)arg1 completion:(id /* block */)arg2;
+- (void)performTransitionWithPresentationBlock:(id)arg1 completion:(id)arg2;
 - (void)setCurrentCommitEffectWindow:(id)arg1;
 - (void)setViewController:(id)arg1;
 - (id)viewController;

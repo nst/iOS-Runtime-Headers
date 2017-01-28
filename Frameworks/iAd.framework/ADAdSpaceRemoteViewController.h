@@ -8,7 +8,7 @@
 
 @property (nonatomic) <ADAdSpaceRemoteViewControllerDelegate> *delegate;
 
-+ (void)adSpaceRemoteViewControllerWithCompletionHandler:(id /* block */)arg1;
++ (void)adSpaceRemoteViewControllerWithCompletionHandler:(id)arg1;
 + (id)serviceViewControllerInterface;
 
 - (void)dealloc;

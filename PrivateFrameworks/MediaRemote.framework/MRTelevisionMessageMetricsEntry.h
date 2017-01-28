@@ -3,31 +3,31 @@
  */
 
 @interface MRTelevisionMessageMetricsEntry : NSObject {
-    unsigned int  _avg;
-    unsigned int  _max;
-    unsigned int  _min;
-    unsigned int  _total;
+    unsigned long long  _avg;
+    unsigned long long  _max;
+    unsigned long long  _min;
+    unsigned long long  _total;
     NSMutableArray * _values;
 }
 
-@property (nonatomic) unsigned int avg;
-@property (nonatomic) unsigned int max;
-@property (nonatomic) unsigned int min;
-@property (nonatomic) unsigned int total;
+@property (nonatomic) unsigned long long avg;
+@property (nonatomic) unsigned long long max;
+@property (nonatomic) unsigned long long min;
+@property (nonatomic) unsigned long long total;
 @property (nonatomic) NSMutableArray *values;
 
-- (unsigned int)avg;
+- (unsigned long long)avg;
 - (id)description;
 - (id)init;
-- (unsigned int)max;
-- (unsigned int)min;
-- (void)setAvg:(unsigned int)arg1;
-- (void)setMax:(unsigned int)arg1;
-- (void)setMin:(unsigned int)arg1;
-- (void)setTotal:(unsigned int)arg1;
+- (unsigned long long)max;
+- (unsigned long long)min;
+- (void)setAvg:(unsigned long long)arg1;
+- (void)setMax:(unsigned long long)arg1;
+- (void)setMin:(unsigned long long)arg1;
+- (void)setTotal:(unsigned long long)arg1;
 - (void)setValues:(id)arg1;
-- (unsigned int)total;
-- (void)updateWithValue:(unsigned int)arg1;
+- (unsigned long long)total;
+- (void)updateWithValue:(unsigned long long)arg1;
 - (id)values;
 
 @end

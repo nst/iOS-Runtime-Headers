@@ -34,7 +34,7 @@
 @property (nonatomic, copy) NSSet *supportedDismissActions;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)altDSID;

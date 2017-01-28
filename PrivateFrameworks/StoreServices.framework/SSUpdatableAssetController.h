@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) SSUpdatableAssetManifest *currentManifest;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSURL *manifestURL;
 @property (nonatomic, readonly) SSUpdatableAssetManifest *newestCachedManifest;
 @property (readonly) Class superclass;
@@ -29,14 +29,14 @@
 - (id)_bundledManifestVersion;
 - (id)_connection;
 - (id)bundledManifestURL;
-- (void)clearCache:(id /* block */)arg1;
+- (void)clearCache:(id)arg1;
 - (id)currentManifest;
 - (void)dealloc;
 - (id)initWithBundledManifestURL:(id)arg1;
 - (id)initWithBundledManifestURL:(id)arg1 clientIdentifier:(id)arg2;
 - (id)manifestURL;
 - (id)newestCachedManifest;
-- (void)refreshCachedManifest:(id /* block */)arg1;
+- (void)refreshCachedManifest:(id)arg1;
 - (void)setManifestURL:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI

@@ -4,7 +4,7 @@
 
 @interface NSUnitLength : NSDimension <NSSecureCoding>
 
-+ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned int)arg2;
++ (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned long long)arg2;
 + (id)astronomicalUnits;
 + (id)baseUnit;
 + (id)centimeters;

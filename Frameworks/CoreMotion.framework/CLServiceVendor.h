@@ -4,13 +4,13 @@
 
 @interface CLServiceVendor : NSObject
 
-+ (BOOL)ensureServiceIsRunning:(id)arg1;
-+ (BOOL)getKeyClass:(Class*)arg1 andSilo:(id*)arg2 forServiceWithName:(id)arg3;
++ (bool)ensureServiceIsRunning:(id)arg1;
++ (bool)getKeyClass:(Class*)arg1 andSilo:(id*)arg2 forServiceWithName:(id)arg3;
 + (id)getServiceWithName:(id)arg1;
 + (id)getSiloForService:(id)arg1;
 + (void)initialize;
-+ (BOOL)isServiceEnabled:(id)arg1;
-+ (BOOL)isServiceRunning:(id)arg1;
++ (bool)isServiceEnabled:(id)arg1;
++ (bool)isServiceRunning:(id)arg1;
 + (id)proxyForService:(id)arg1;
 + (id)proxyForService:(id)arg1 forClient:(id)arg2;
 + (void)rereadConfiguration;

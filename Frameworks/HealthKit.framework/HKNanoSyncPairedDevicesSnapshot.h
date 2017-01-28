@@ -5,7 +5,7 @@
 @interface HKNanoSyncPairedDevicesSnapshot : NSObject <NSCopying> {
     HKNanoSyncPairedDeviceInfo * _activeDeviceInfo;
     NSSet * _allDeviceInfos;
-    unsigned int  _hash;
+    unsigned long long  _hash;
 }
 
 @property (readonly) HKNanoSyncPairedDeviceInfo *activeDeviceInfo;
@@ -16,8 +16,8 @@
 - (id)allDeviceInfos;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithPairedDeviceInfos:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 
 @end

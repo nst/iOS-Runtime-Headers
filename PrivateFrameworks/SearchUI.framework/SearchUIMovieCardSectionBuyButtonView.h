@@ -5,14 +5,22 @@
 @interface SearchUIMovieCardSectionBuyButtonView : UIView {
     SKUIItemOfferButton * _button;
     SearchUICardViewController * _controller;
+    bool  _hasBeenToggled;
+    bool  _isOnWatchList;
+    NSString * _itemIdentifier;
     SFPunchout * _punchout;
+    SFPunchout * _punchoutForFeedback;
     SFMediaInfoCardSection * _section;
     UILabel * _subtitleLabel;
 }
 
 @property (retain) SKUIItemOfferButton *button;
 @property SearchUICardViewController *controller;
+@property bool hasBeenToggled;
+@property bool isOnWatchList;
+@property (retain) NSString *itemIdentifier;
 @property (retain) SFPunchout *punchout;
+@property (retain) SFPunchout *punchoutForFeedback;
 @property (retain) SFMediaInfoCardSection *section;
 @property (retain) UILabel *subtitleLabel;
 
@@ -20,16 +28,30 @@
 - (id)button;
 - (void)buttonPressed;
 - (id)controller;
-- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 punchout:(id)arg3 adamID:(id)arg4 offerIdentifier:(id)arg5 controller:(id)arg6 section:(id)arg7;
+- (void)displayAsAlreadyOnWatchList;
+- (bool)hasBeenToggled;
+- (id)hitTest:(struct CGPoint { double x1; double x2; })arg1 withEvent:(id)arg2;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 punchout:(id)arg3 itemIdentifier:(id)arg4 offerIdentifier:(id)arg5 controller:(id)arg6 section:(id)arg7;
+- (bool)isOnWatchList;
+- (id)itemIdentifier;
 - (void)lookupPriceForAdamID:(id)arg1 offerIdentifier:(id)arg2;
 - (id)punchout;
+- (id)punchoutForFeedback;
 - (id)section;
 - (void)setButton:(id)arg1;
 - (void)setController:(id)arg1;
+- (void)setHasBeenToggled:(bool)arg1;
+- (void)setIsOnWatchList:(bool)arg1;
+- (void)setItemIdentifier:(id)arg1;
 - (void)setPunchout:(id)arg1;
+- (void)setPunchoutForFeedback:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (id)subtitleLabel;
+- (void)updateButtonWithAnimations:(id)arg1 animated:(bool)arg2;
+- (void)updatePunchoutWithURL:(id)arg1;
+- (void)updateSubtitleText:(id)arg1 animated:(bool)arg2;
+- (void)updateView:(id)arg1 withAnimations:(id)arg2 animated:(bool)arg3;
+- (void)updateWatchListStatus:(bool)arg1 animated:(bool)arg2;
 
 @end

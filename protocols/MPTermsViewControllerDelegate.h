@@ -5,8 +5,8 @@
 
 @required
 
-- (void)termsViewController:(void *)arg1 acceptTermsAndConditions:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: MPTermsViewController *, SSTermsAndConditions *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (void)termsViewController:(void *)arg1 loadTermsAndConditionsWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: MPTermsViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, SSTermsAndConditions *, NSError *, void*
+- (void)termsViewController:(void *)arg1 acceptTermsAndConditions:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 8: MPTermsViewController *, SSTermsAndConditions *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (void)termsViewController:(void *)arg1 loadTermsAndConditionsWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 8: MPTermsViewController *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, SSTermsAndConditions *, NSError *, void*
 - (void)termsViewControllerDidCancel:(MPTermsViewController *)arg1;
 - (void)termsViewControllerShouldDismiss:(MPTermsViewController *)arg1;
 

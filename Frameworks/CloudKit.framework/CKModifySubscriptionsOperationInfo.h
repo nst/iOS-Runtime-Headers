@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSArray *subscriptionIDsToDelete;
 @property (nonatomic, retain) NSArray *subscriptionsToSave;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

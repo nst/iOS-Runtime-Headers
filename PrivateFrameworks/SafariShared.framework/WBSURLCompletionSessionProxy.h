@@ -9,11 +9,11 @@
 }
 
 + (id)_cannedMatchesWithTypedString:(id)arg1;
-+ (BOOL)_shouldReturnCannedMatches;
++ (bool)_shouldReturnCannedMatches;
 
 - (void).cxx_destruct;
-- (void)_completionSessionWithCompletionHandler:(id /* block */)arg1;
-- (void)getBestMatchesForTypedString:(id)arg1 limit:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
+- (void)_completionSessionWithCompletionHandler:(id)arg1;
+- (void)getBestMatchesForTypedString:(id)arg1 limit:(unsigned long long)arg2 completionHandler:(id)arg3;
 - (id)init;
 - (void)userDidSelectCompletionMatch:(id)arg1 forTypedString:(id)arg2;
 

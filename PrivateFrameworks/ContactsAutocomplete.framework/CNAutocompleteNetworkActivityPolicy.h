@@ -6,13 +6,13 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)policyWithNoDelay;
 + (id)policyWithThrottlingDelayForString:(id)arg1;
 
 - (double)delayBeforeBeginningNetworkActivity;
-- (BOOL)shouldSearchServers;
+- (bool)shouldSearchServers;
 
 @end

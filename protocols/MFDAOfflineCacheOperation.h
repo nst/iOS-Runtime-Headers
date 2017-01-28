@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)performWithAccount:(DAMailAccount *)arg1 offlineCache:(MFDAOfflineCache *)arg2;
+- (bool)performWithAccount:(DAMailAccount *)arg1 offlineCache:(MFDAOfflineCache *)arg2;
 
 @end

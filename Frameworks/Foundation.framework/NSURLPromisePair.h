@@ -13,7 +13,7 @@
 
 + (id)pairWithLogicalURL:(id)arg1 physicalURL:(id)arg2;
 + (id)pairWithURL:(id)arg1;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (id)URL;
 - (void)dealloc;

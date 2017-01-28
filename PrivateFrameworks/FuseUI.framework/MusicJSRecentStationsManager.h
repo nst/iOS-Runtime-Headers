@@ -4,7 +4,7 @@
 
 @interface MusicJSRecentStationsManager : IKJSObject <MusicJSRecentStationsManager> {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _hasRefreshedStations;
+    bool  _hasRefreshedStations;
     RadioRecentStationsController * _recentStationsController;
 }
 
@@ -14,7 +14,7 @@
 - (id)_dictionaryFromStation:(id)arg1;
 - (id)_dictionaryFromStationGroup:(id)arg1;
 - (void)_recentStationsControllerStationsDidChangeNotification:(id)arg1;
-- (void)_refreshIfNeededWithCompletionHandler:(id /* block */)arg1;
+- (void)_refreshIfNeededWithCompletionHandler:(id)arg1;
 - (void)dealloc;
 - (void)getRecentStationGroups:(id)arg1 :(id)arg2;
 - (void)getRecentStations:(id)arg1 :(id)arg2;

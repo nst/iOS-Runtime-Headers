@@ -3,31 +3,31 @@
  */
 
 @interface MusicGeniusMixQueueFeeder : MusicQueryQueueFeeder <NSSecureCoding> {
-    unsigned int  _currentPlaylistOffset;
+    unsigned long long  _currentPlaylistOffset;
     <MusicGeniusMixQueueFeederDataSource> * _dataSource;
 }
 
 @property (nonatomic, retain) <MusicGeniusMixQueueFeederDataSource> *dataSource;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)dataSource;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)indexOfMediaItem:(id)arg1;
+- (unsigned long long)indexOfMediaItem:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (unsigned int)itemCount;
+- (unsigned long long)itemCount;
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
-- (id)mediaItemAtIndex:(unsigned int)arg1;
-- (unsigned int)numberOfPaths;
-- (id)pathAtIndex:(unsigned int)arg1;
+- (id)mediaItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfPaths;
+- (id)pathAtIndex:(unsigned long long)arg1;
 - (id)query;
-- (int)realRepeatType;
-- (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
+- (long long)realRepeatType;
+- (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id)arg2;
 - (void)setDataSource:(id)arg1;
-- (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
-- (int)shuffleType;
-- (BOOL)userCanChangeShuffleAndRepeatType;
+- (void)shuffleItemsWithAnchor:(unsigned long long*)arg1;
+- (long long)shuffleType;
+- (bool)userCanChangeShuffleAndRepeatType;
 
 @end

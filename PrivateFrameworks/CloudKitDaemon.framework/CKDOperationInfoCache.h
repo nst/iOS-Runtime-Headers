@@ -17,15 +17,15 @@
 
 - (void).cxx_destruct;
 - (id)_lockedResultForOperationWithID:(id)arg1;
-- (void)_locked_enumerateCallbackArgumentsForOperationWithID:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)_locked_enumerateCallbackArgumentsForOperationWithID:(id)arg1 usingBlock:(id)arg2;
 - (id)_locked_operationInfoForID:(id)arg1;
 - (id)allOutstandingOperationIDsForAppContainerTuple:(id)arg1;
 - (id)cacheDelegateQueue;
 - (id)cacheQueue;
 - (id)delegatesByOperationID;
 - (void)deleteAllInfoForOperationWithID:(id)arg1;
-- (void)enumerateCallbackArgumentsForOperationWithID:(id)arg1 usingBlock:(id /* block */)arg2;
-- (void)expungeWithCurrentAccountIdentifier:(id)arg1 forceRemove:(BOOL)arg2;
+- (void)enumerateCallbackArgumentsForOperationWithID:(id)arg1 usingBlock:(id)arg2;
+- (void)expungeWithCurrentAccountIdentifier:(id)arg1 forceRemove:(bool)arg2;
 - (id)init;
 - (id)operationInfoMetadataForOperationWithID:(id)arg1;
 - (id)outstandingOperationInfosForIDs:(id)arg1;
@@ -33,7 +33,7 @@
 - (void)registerCacheEvictionActivity;
 - (void)registerDelegate:(id)arg1 forOperationWithID:(id)arg2;
 - (id)resultForOperationWithID:(id)arg1;
-- (id)resumableOperationInfosByAppContainerTuplesWithProgressPurged:(BOOL)arg1;
+- (id)resumableOperationInfosByAppContainerTuplesWithProgressPurged:(bool)arg1;
 - (void)setCacheDelegateQueue:(id)arg1;
 - (void)setCacheQueue:(id)arg1;
 - (void)setDelegatesByOperationID:(id)arg1;

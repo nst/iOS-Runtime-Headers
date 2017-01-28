@@ -5,6 +5,6 @@
 @interface SVATrustHandler : NSObject
 
 + (id)certificatesFromTrust:(struct __SecTrust { }*)arg1;
-+ (void)promptUserForUntrustedCertificateError:(id)arg1 completionHandler:(id /* block */)arg2;
++ (void)promptUserForUntrustedCertificateError:(id)arg1 completionHandler:(id)arg2;
 
 @end

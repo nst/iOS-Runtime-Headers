@@ -4,6 +4,6 @@
 
 @interface HFUnknownConditionBuilder : HFConditionBuilder
 
-+ (BOOL)canHandlePredicate:(id)arg1;
++ (bool)canHandlePredicate:(id)arg1;
 
 @end

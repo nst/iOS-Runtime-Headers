@@ -8,15 +8,15 @@
         unsigned int rollback : 1; 
     }  _has;
     SYMessageHeader * _header;
-    BOOL  _rollback;
+    bool  _rollback;
     NSString * _sessionID;
 }
 
 @property (nonatomic, retain) SYErrorInfo *error;
-@property (nonatomic, readonly) BOOL hasError;
-@property (nonatomic) BOOL hasRollback;
+@property (nonatomic, readonly) bool hasError;
+@property (nonatomic) bool hasRollback;
 @property (nonatomic, retain) SYMessageHeader *header;
-@property (nonatomic) BOOL rollback;
+@property (nonatomic) bool rollback;
 @property (nonatomic, retain) NSString *sessionID;
 
 - (void).cxx_destruct;
@@ -25,19 +25,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)error;
-- (BOOL)hasError;
-- (BOOL)hasRollback;
-- (unsigned int)hash;
+- (bool)hasError;
+- (bool)hasRollback;
+- (unsigned long long)hash;
 - (id)header;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (BOOL)rollback;
+- (bool)readFrom:(id)arg1;
+- (bool)rollback;
 - (id)sessionID;
 - (void)setError:(id)arg1;
-- (void)setHasRollback:(BOOL)arg1;
+- (void)setHasRollback:(bool)arg1;
 - (void)setHeader:(id)arg1;
-- (void)setRollback:(BOOL)arg1;
+- (void)setRollback:(bool)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)writeTo:(id)arg1;
 

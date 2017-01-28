@@ -4,18 +4,18 @@
 
 @interface HMDArrayWrapper : HMDFieldWrapper {
     NSArray * _field;
-    id /* block */  _objectCreator;
+    id  _objectCreator;
 }
 
 @property (nonatomic, retain) NSArray *field;
-@property (nonatomic, copy) id /* block */ objectCreator;
+@property (nonatomic, copy) id objectCreator;
 
-+ (id)wrappertlv:(unsigned int)arg1 name:(id)arg2 objectCreator:(id /* block */)arg3;
++ (id)wrappertlv:(unsigned long long)arg1 name:(id)arg2 objectCreator:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)field;
-- (id /* block */)objectCreator;
+- (id)objectCreator;
 - (void)setField:(id)arg1;
-- (void)setObjectCreator:(id /* block */)arg1;
+- (void)setObjectCreator:(id)arg1;
 
 @end

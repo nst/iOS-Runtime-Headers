@@ -5,9 +5,9 @@
 
 @required
 
-- (void)advise:(int)arg1;
+- (void)advise:(long long)arg1;
 - (const void*)baseAddress;
-- (unsigned int)length;
+- (unsigned long long)length;
 
 @optional
 

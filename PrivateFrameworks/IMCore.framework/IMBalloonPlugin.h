@@ -6,7 +6,7 @@
     NSMutableArray * _balloonControllerPool;
     Class  _browserClass;
     NSString * _browserDisplayName;
-    int  _browserGroup;
+    long long  _browserGroup;
     NSString * _browserImageName;
     NSString * _browserImagePath;
     Class  _bubbleClass;
@@ -17,15 +17,15 @@
     NSString * _identifier;
     NSMutableDictionary * _messageToBalloonControllerMap;
     NSMutableDictionary * _messageToDatasourceMap;
-    BOOL  _pluginLoaded;
-    BOOL  _showInBrowser;
+    bool  _pluginLoaded;
+    bool  _showInBrowser;
 }
 
 @property (nonatomic, retain) NSMutableArray *balloonControllerPool;
-@property (getter=isBetaPlugin, nonatomic, readonly) BOOL betaPlugin;
+@property (getter=isBetaPlugin, nonatomic, readonly) bool betaPlugin;
 @property (nonatomic, retain) Class browserClass;
 @property (nonatomic, retain) NSString *browserDisplayName;
-@property (nonatomic) int browserGroup;
+@property (nonatomic) long long browserGroup;
 @property (nonatomic, retain) NSString *browserImageName;
 @property (nonatomic, retain) NSString *browserImagePath;
 @property (nonatomic, retain) Class bubbleClass;
@@ -36,8 +36,8 @@
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSMutableDictionary *messageToBalloonControllerMap;
 @property (nonatomic, retain) NSMutableDictionary *messageToDatasourceMap;
-@property (nonatomic) BOOL pluginLoaded;
-@property (nonatomic) BOOL showInBrowser;
+@property (nonatomic) bool pluginLoaded;
+@property (nonatomic) bool showInBrowser;
 @property (nonatomic, readonly) NSString *version;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
@@ -49,7 +49,7 @@
 - (id)balloonControllerPool;
 - (Class)browserClass;
 - (id)browserDisplayName;
-- (int)browserGroup;
+- (long long)browserGroup;
 - (id)browserImageName;
 - (id)browserImagePath;
 - (Class)bubbleClass;
@@ -64,15 +64,15 @@
 - (id)identifier;
 - (id)initWithBundle:(id)arg1;
 - (void)insertDataSource:(id)arg1 forGUID:(id)arg2;
-- (BOOL)isBetaPlugin;
+- (bool)isBetaPlugin;
 - (id)messageToBalloonControllerMap;
 - (id)messageToDatasourceMap;
 - (void)moveController:(id)arg1 toReusePoolFromChatItem:(id)arg2;
-- (BOOL)pluginLoaded;
+- (bool)pluginLoaded;
 - (void)setBalloonControllerPool:(id)arg1;
 - (void)setBrowserClass:(Class)arg1;
 - (void)setBrowserDisplayName:(id)arg1;
-- (void)setBrowserGroup:(int)arg1;
+- (void)setBrowserGroup:(long long)arg1;
 - (void)setBrowserImageName:(id)arg1;
 - (void)setBrowserImagePath:(id)arg1;
 - (void)setBubbleClass:(Class)arg1;
@@ -83,10 +83,10 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageToBalloonControllerMap:(id)arg1;
 - (void)setMessageToDatasourceMap:(id)arg1;
-- (void)setPluginLoaded:(BOOL)arg1;
-- (void)setShowInBrowser:(BOOL)arg1;
-- (BOOL)showInBrowser;
-- (BOOL)supportsControllerReuse;
+- (void)setPluginLoaded:(bool)arg1;
+- (void)setShowInBrowser:(bool)arg1;
+- (bool)showInBrowser;
+- (bool)supportsControllerReuse;
 - (void)unloadBundle;
 - (id)version;
 
@@ -97,9 +97,9 @@
 - (id)__ck_browserImage;
 - (id)__ck_statusImage;
 - (id)__ck_statusImageForTransport;
-- (id)__ck_statusJPEGImageDataForTransportWithCompressionFactor:(float)arg1;
+- (id)__ck_statusJPEGImageDataForTransportWithCompressionFactor:(double)arg1;
 - (id)_adamID;
-- (id)_scaledImage:(id)arg1 xscale:(float)arg2 yscale:(float)arg3;
+- (id)_scaledImage:(id)arg1 xscale:(double)arg2 yscale:(double)arg3;
 - (id)description;
 
 @end

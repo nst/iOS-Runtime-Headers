@@ -11,14 +11,14 @@
 + (struct __CFDateFormatter { }*)dateFormatterForKey:(id)arg1;
 + (id)dateFormatterForKey:(id)arg1 formatString:(id)arg2;
 + (id)dateFormatters;
-+ (BOOL)dateIsWeekend:(id)arg1;
++ (bool)dateIsWeekend:(id)arg1;
 + (id)formatKeyForHourString;
 + (void)generateAdditionalPrecodedFormatters:(id)arg1;
 + (void)generateDerivedTimeFormats:(id)arg1;
 + (void)generateLocalizedDateTimeFormats;
 + (void)generatePreferedOrders;
 + (void)generateStandardFormatters:(id)arg1;
-+ (BOOL)hasAMPM;
++ (bool)hasAMPM;
 + (void)initializeFormatters;
 + (id)intervalStringFromDate:(id)arg1 toDate:(id)arg2 withFormat:(id)arg3 options:(int)arg4;
 + (void)rebuildFormatters;
@@ -27,13 +27,13 @@
 + (void)setupFormatTemplate:(id)arg1 forKey:(id)arg2 locale:(id)arg3;
 + (void)setupFormatter:(struct __CFDateFormatter { }*)arg1 forKey:(id)arg2;
 + (id)sharedDateFormatter;
-+ (BOOL)shouldUseHourMinutesWithoutAMPMForHours;
++ (bool)shouldUseHourMinutesWithoutAMPMForHours;
 + (id)sizeOrderedAllDateFormatsWithoutYear;
 + (id)sizeOrderedDateFormats;
 + (id)sizeOrderedDateFormatsWithYear;
 + (id)sizeOrderedDateFormatsWithoutYear;
-+ (BOOL)uses24HourTime;
-+ (BOOL)weekdayIsWeekend:(int)arg1;
++ (bool)uses24HourTime;
++ (bool)weekdayIsWeekend:(long long)arg1;
 + (id)weekendDays;
 
 @end

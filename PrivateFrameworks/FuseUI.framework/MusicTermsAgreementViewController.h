@@ -3,12 +3,12 @@
  */
 
 @interface MusicTermsAgreementViewController : UIViewController {
-    BOOL  _accepting;
+    bool  _accepting;
     UIBarButtonItem * _acceptingBarButtonItem;
     UIBarButtonItem * _agreeBarButtonItem;
     UIBarButtonItem * _cancelBarButtonItem;
     <MusicTermsAgreementViewControllerDelegate> * _delegate;
-    BOOL  _loading;
+    bool  _loading;
     UIActivityIndicatorView * _loadingActivityIndicatorView;
     UILabel * _loadingLabel;
     UIBarButtonItem * _sendEmailBarButtonItem;
@@ -16,9 +16,9 @@
     UITextView * _termsTextView;
 }
 
-@property (getter=isAccepting, nonatomic) BOOL accepting;
+@property (getter=isAccepting, nonatomic) bool accepting;
 @property (nonatomic) <MusicTermsAgreementViewControllerDelegate> *delegate;
-@property (getter=isLoading, nonatomic) BOOL loading;
+@property (getter=isLoading, nonatomic) bool loading;
 @property (nonatomic, copy) NSString *termsText;
 
 - (void).cxx_destruct;
@@ -32,15 +32,15 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (BOOL)isAccepting;
-- (BOOL)isLoading;
-- (void)setAccepting:(BOOL)arg1;
+- (bool)isAccepting;
+- (bool)isLoading;
+- (void)setAccepting:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLoading:(BOOL)arg1;
+- (void)setLoading:(bool)arg1;
 - (void)setTermsText:(id)arg1;
 - (id)termsText;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

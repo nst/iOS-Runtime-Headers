@@ -5,7 +5,7 @@
 @interface EKUIAutocompleteSearchResult : NSObject {
     NSURL * _URL;
     NSArray * _alarms;
-    BOOL  _allDay;
+    bool  _allDay;
     NSArray * _attendees;
     EKCalendar * _calendar;
     UIColor * _calendarColor;
@@ -22,7 +22,7 @@
 
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic, retain) NSArray *alarms;
-@property (getter=isAllDay, nonatomic) BOOL allDay;
+@property (getter=isAllDay, nonatomic) bool allDay;
 @property (nonatomic, retain) NSArray *attendees;
 @property (nonatomic, retain) EKCalendar *calendar;
 @property (nonatomic, retain) UIColor *calendarColor;
@@ -36,7 +36,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *uniqueID;
 
-+ (BOOL)_participantShouldBeUsedForAutocomplete:(id)arg1;
++ (bool)_participantShouldBeUsedForAutocomplete:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -45,16 +45,16 @@
 - (id)calendar;
 - (id)calendarColor;
 - (id)endDate;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithUniqueID:(id)arg1;
-- (BOOL)isAllDay;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isAllDay;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (id)locationWithoutPrediction;
 - (id)notes;
 - (id)preferredLocation;
 - (void)setAlarms:(id)arg1;
-- (void)setAllDay:(BOOL)arg1;
+- (void)setAllDay:(bool)arg1;
 - (void)setAttendees:(id)arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setCalendarColor:(id)arg1;

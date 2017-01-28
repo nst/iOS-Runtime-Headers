@@ -3,37 +3,37 @@
  */
 
 @interface _UIDocumentPickerAuxiliaryOption : NSObject <NSSecureCoding> {
-    id /* block */  _handler;
+    id  _handler;
     NSString * _identifier;
     UIImage * _image;
-    BOOL  _newlyAdded;
-    unsigned int  _order;
+    bool  _newlyAdded;
+    unsigned long long  _order;
     NSString * _title;
 }
 
-@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, copy) id handler;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) UIImage *image;
-@property (getter=isNewlyAdded, nonatomic) BOOL newlyAdded;
-@property (nonatomic) unsigned int order;
+@property (getter=isNewlyAdded, nonatomic) bool newlyAdded;
+@property (nonatomic) unsigned long long order;
 @property (nonatomic, copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
-- (id /* block */)handler;
+- (id)handler;
 - (id)identifier;
 - (id)image;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isNewlyAdded;
-- (unsigned int)order;
-- (void)setHandler:(id /* block */)arg1;
+- (bool)isNewlyAdded;
+- (unsigned long long)order;
+- (void)setHandler:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setImage:(id)arg1;
-- (void)setNewlyAdded:(BOOL)arg1;
-- (void)setOrder:(unsigned int)arg1;
+- (void)setNewlyAdded:(bool)arg1;
+- (void)setOrder:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

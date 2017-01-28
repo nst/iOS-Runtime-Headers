@@ -3,12 +3,12 @@
  */
 
 @interface NPTunnelTuscanyLoopback : NPTunnelTuscany {
-    unsigned long  _blobSizes;
-    BOOL  _connected;
-    unsigned int  _currentBlobSizeIndex;
+    unsigned long long  _blobSizes;
+    bool  _connected;
+    unsigned long long  _currentBlobSizeIndex;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _currentRange;
     NSData * _dayPassBytes;
     NSData * _doneMarker;
@@ -17,8 +17,8 @@
     void * _window;
 }
 
-@property BOOL connected;
-@property unsigned int currentBlobSizeIndex;
+@property bool connected;
+@property unsigned long long currentBlobSizeIndex;
 @property (readonly) NSData *dayPassBytes;
 @property (retain) NSData *doneMarker;
 @property (retain) NPTunnelFlow *flow;
@@ -26,29 +26,29 @@
 @property void*window;
 
 - (void).cxx_destruct;
-- (BOOL)addNewFlow:(id)arg1;
-- (BOOL)canHandleMoreData;
+- (bool)addNewFlow:(id)arg1;
+- (bool)canHandleMoreData;
 - (void)cancelConnectionTimer;
-- (BOOL)connected;
-- (BOOL)createConnectionWithInitialData:(id)arg1;
+- (bool)connected;
+- (bool)createConnectionWithInitialData:(id)arg1;
 - (void)createTuscanyClient;
-- (unsigned int)currentBlobSizeIndex;
-- (int)currentMTU;
+- (unsigned long long)currentBlobSizeIndex;
+- (long long)currentMTU;
 - (id)dayPass;
 - (id)dayPassBytes;
 - (void)dealloc;
 - (id)doneMarker;
 - (id)flow;
 - (id)initWithConfiguration:(id)arg1 delegate:(id)arg2;
-- (unsigned int)initialWindowSize;
-- (BOOL)isConnectionAlive;
-- (unsigned int)maxFrameSize;
-- (void)readMinimumBytes:(unsigned int)arg1 maximumBytes:(unsigned int)arg2;
+- (unsigned long long)initialWindowSize;
+- (bool)isConnectionAlive;
+- (unsigned long long)maxFrameSize;
+- (void)readMinimumBytes:(unsigned long long)arg1 maximumBytes:(unsigned long long)arg2;
 - (void)removeFlow:(unsigned long long)arg1;
-- (BOOL)selectBestEdge;
+- (bool)selectBestEdge;
 - (id)sendBuffer;
-- (void)setConnected:(BOOL)arg1;
-- (void)setCurrentBlobSizeIndex:(unsigned int)arg1;
+- (void)setConnected:(bool)arg1;
+- (void)setCurrentBlobSizeIndex:(unsigned long long)arg1;
 - (void)setDayPass:(id)arg1;
 - (void)setDoneMarker:(id)arg1;
 - (void)setFlow:(id)arg1;

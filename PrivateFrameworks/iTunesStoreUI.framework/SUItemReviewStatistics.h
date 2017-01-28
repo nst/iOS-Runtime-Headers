@@ -4,30 +4,30 @@
 
 @interface SUItemReviewStatistics : NSObject <NSCopying> {
     float  _averageUserRating;
-    int  _numberOfUserRatings;
+    long long  _numberOfUserRatings;
     NSString * _numberOfUserRatingsString;
-    int  _numberOfUserReviews;
+    long long  _numberOfUserReviews;
     NSString * _numberOfUserReviewsString;
 }
 
 @property (nonatomic) float averageUserRating;
-@property (nonatomic) int numberOfUserRatings;
+@property (nonatomic) long long numberOfUserRatings;
 @property (nonatomic, copy) NSString *numberOfUserRatingsString;
-@property (nonatomic) int numberOfUserReviews;
+@property (nonatomic) long long numberOfUserReviews;
 @property (nonatomic, copy) NSString *numberOfUserReviewsString;
 
 - (float)averageUserRating;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-- (int)numberOfUserRatings;
+- (long long)numberOfUserRatings;
 - (id)numberOfUserRatingsString;
-- (int)numberOfUserReviews;
+- (long long)numberOfUserReviews;
 - (id)numberOfUserReviewsString;
 - (void)setAverageUserRating:(float)arg1;
-- (void)setNumberOfUserRatings:(int)arg1;
+- (void)setNumberOfUserRatings:(long long)arg1;
 - (void)setNumberOfUserRatingsString:(id)arg1;
-- (void)setNumberOfUserReviews:(int)arg1;
+- (void)setNumberOfUserReviews:(long long)arg1;
 - (void)setNumberOfUserReviewsString:(id)arg1;
 
 @end

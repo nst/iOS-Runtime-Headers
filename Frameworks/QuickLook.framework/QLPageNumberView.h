@@ -6,24 +6,24 @@
     UILabel * _backgroundLabel;
     NSNumberFormatter * _indexFormatter;
     UILabel * _label;
-    int  _pageCount;
-    int  _pageNumber;
+    long long  _pageCount;
+    long long  _pageNumber;
 }
 
-@property int pageCount;
-@property int pageNumber;
+@property long long pageCount;
+@property long long pageNumber;
 
 - (void).cxx_destruct;
-- (struct CGPath { }*)_copyMutablePathForRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 radius:(float)arg2 inverted:(BOOL)arg3;
+- (struct CGPath { }*)_copyMutablePathForRoundedRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 radius:(double)arg2 inverted:(bool)arg3;
 - (id)_indexFormatter;
 - (void)_updateString;
-- (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (int)pageCount;
-- (int)pageNumber;
-- (void)setPageCount:(int)arg1;
-- (void)setPageNumber:(int)arg1;
+- (long long)pageCount;
+- (long long)pageNumber;
+- (void)setPageCount:(long long)arg1;
+- (void)setPageNumber:(long long)arg1;
 - (void)sizeToFit;
 
 @end

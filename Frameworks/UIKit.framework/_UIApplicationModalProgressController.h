@@ -4,7 +4,7 @@
 
 @interface _UIApplicationModalProgressController : NSObject {
     UIAlertController * _alertController;
-    id /* block */  _dismissalHandler;
+    id  _dismissalHandler;
     double  _displayStartTime;
     NSTimer * _hideTimer;
     NSProgress * _progress;
@@ -14,7 +14,7 @@
 }
 
 @property (getter=_alertController, setter=_setAlertController:, nonatomic, retain) UIAlertController *alertController;
-@property (getter=_dismissalHandler, setter=_setDismissalHandler:, nonatomic, copy) id /* block */ dismissalHandler;
+@property (getter=_dismissalHandler, setter=_setDismissalHandler:, nonatomic, copy) id dismissalHandler;
 @property (getter=_displayStartTime, setter=_setDisplayStartTime:, nonatomic) double displayStartTime;
 @property (getter=_hideTimer, setter=_setHideTimer:, nonatomic, retain) NSTimer *hideTimer;
 @property (getter=_progress, setter=_setProgress:, nonatomic, retain) NSProgress *progress;
@@ -28,14 +28,14 @@
 - (id)_alertController;
 - (void)_callAndClearDismissalHandler;
 - (void)_dismissButtonAction:(id)arg1;
-- (id /* block */)_dismissalHandler;
+- (id)_dismissalHandler;
 - (double)_displayStartTime;
 - (void)_hideImmediately;
 - (id)_hideTimer;
 - (void)_hideTimerAction:(id)arg1;
 - (id)_progress;
 - (void)_setAlertController:(id)arg1;
-- (void)_setDismissalHandler:(id /* block */)arg1;
+- (void)_setDismissalHandler:(id)arg1;
 - (void)_setDisplayStartTime:(double)arg1;
 - (void)_setHideTimer:(id)arg1;
 - (void)_setProgress:(id)arg1;
@@ -44,12 +44,12 @@
 - (id)_showTimer;
 - (void)_showTimerAction:(id)arg1;
 - (id)_window;
-- (void)displayForCopyingFileAtURL:(id)arg1 toURL:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)displayForDownloadingURL:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)displayForDownloadingURL:(id)arg1 copyToURL:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)displayWithTitle:(id)arg1 message:(id)arg2 progress:(id)arg3 buttonTitle:(id)arg4 dismissalHandler:(id /* block */)arg5;
-- (void)hideAfterMinimumUptimeWithDismissalHandler:(id /* block */)arg1;
-- (void)reconfigureWithTitle:(id)arg1 message:(id)arg2 progress:(id)arg3 buttonTitle:(id)arg4 dismissalHandler:(id /* block */)arg5;
+- (void)displayForCopyingFileAtURL:(id)arg1 toURL:(id)arg2 completionHandler:(id)arg3;
+- (void)displayForDownloadingURL:(id)arg1 completionHandler:(id)arg2;
+- (void)displayForDownloadingURL:(id)arg1 copyToURL:(id)arg2 completionHandler:(id)arg3;
+- (void)displayWithTitle:(id)arg1 message:(id)arg2 progress:(id)arg3 buttonTitle:(id)arg4 dismissalHandler:(id)arg5;
+- (void)hideAfterMinimumUptimeWithDismissalHandler:(id)arg1;
+- (void)reconfigureWithTitle:(id)arg1 message:(id)arg2 progress:(id)arg3 buttonTitle:(id)arg4 dismissalHandler:(id)arg5;
 - (void)setUrlProgress:(id)arg1;
 - (id)urlProgress;
 

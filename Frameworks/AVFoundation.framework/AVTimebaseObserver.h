@@ -4,7 +4,7 @@
 
 @interface AVTimebaseObserver : NSObject {
     double  _currentRate;
-    BOOL  _invalid;
+    bool  _invalid;
     double  _lastRate;
     struct OpaqueCMTimebase { } * _timebase;
     NSObject<OS_dispatch_queue> * _timerQueue;
@@ -12,7 +12,7 @@
     AVWeakReference * _weakReference;
 }
 
-@property (nonatomic, readonly) BOOL invalidated;
+@property (nonatomic, readonly) bool invalidated;
 @property (readonly) struct OpaqueCMTimebase { }*timebase;
 @property (getter=_weakReference, nonatomic, readonly) AVWeakReference *weakReference;
 
@@ -30,7 +30,7 @@
 - (void)finalize;
 - (id)initWithTimebase:(struct OpaqueCMTimebase { }*)arg1 queue:(id)arg2;
 - (void)invalidate;
-- (BOOL)invalidated;
+- (bool)invalidated;
 - (struct OpaqueCMTimebase { }*)timebase;
 
 @end

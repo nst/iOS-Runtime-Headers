@@ -4,16 +4,16 @@
 
 @interface _UINavigationBarLegacyVisualStyle : _UINavigationBarPhonePadVisualStyle
 
-- (float)backButtonAnimationClippingPadding;
-- (id)buttonFontForStyle:(int)arg1;
-- (float)buttonFontSize;
-- (float)buttonImagePadding;
-- (float)headingFontSize;
-- (float)interBlockSpace;
-- (float)leftEdgeMargin;
-- (float)leftTitleMargin;
-- (float)maxBackButtonProportion;
-- (float)minBackTextWidth;
-- (float)rightTitleMargin;
+- (double)backButtonAnimationClippingPadding;
+- (id)buttonFontForStyle:(long long)arg1;
+- (double)buttonFontSize;
+- (double)buttonImagePadding;
+- (double)headingFontSize;
+- (double)interBlockSpace;
+- (double)leftEdgeMargin;
+- (double)leftTitleMargin;
+- (double)maxBackButtonProportion;
+- (double)minBackTextWidth;
+- (double)rightTitleMargin;
 
 @end

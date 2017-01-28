@@ -3,29 +3,29 @@
  */
 
 @interface CKDiscoverAllUserIdentitiesOperation : CKOperation {
-    id /* block */  _discoverAllUserIdentitiesCompletionBlock;
+    id  _discoverAllUserIdentitiesCompletionBlock;
     NSMutableArray * _discoveredIdentities;
-    id /* block */  _userIdentityDiscoveredBlock;
+    id  _userIdentityDiscoveredBlock;
 }
 
-@property (nonatomic, copy) id /* block */ discoverAllUserIdentitiesCompletionBlock;
+@property (nonatomic, copy) id discoverAllUserIdentitiesCompletionBlock;
 @property (nonatomic, retain) NSMutableArray *discoveredIdentities;
-@property (nonatomic, copy) id /* block */ userIdentityDiscoveredBlock;
+@property (nonatomic, copy) id userIdentityDiscoveredBlock;
 
 - (void).cxx_destruct;
-- (BOOL)CKOperationShouldRun:(id*)arg1;
+- (bool)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id)activityCreate;
-- (id /* block */)discoverAllUserIdentitiesCompletionBlock;
+- (id)discoverAllUserIdentitiesCompletionBlock;
 - (id)discoveredIdentities;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
-- (void)setDiscoverAllUserIdentitiesCompletionBlock:(id /* block */)arg1;
+- (void)setDiscoverAllUserIdentitiesCompletionBlock:(id)arg1;
 - (void)setDiscoveredIdentities:(id)arg1;
-- (void)setLongLived:(BOOL)arg1;
-- (void)setUserIdentityDiscoveredBlock:(id /* block */)arg1;
-- (id /* block */)userIdentityDiscoveredBlock;
+- (void)setLongLived:(bool)arg1;
+- (void)setUserIdentityDiscoveredBlock:(id)arg1;
+- (id)userIdentityDiscoveredBlock;
 
 @end

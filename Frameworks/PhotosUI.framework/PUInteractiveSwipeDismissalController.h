@@ -7,7 +7,7 @@
     PUChangeDirectionValueFilter * __dismissGestureDirectionValueFilter;
     UIPanGestureRecognizer * __panGestureRecognizer;
     PUSwipedDownTileTracker * __swipedDownTileTracker;
-    BOOL  _handlingPanGestureRecognizer;
+    bool  _handlingPanGestureRecognizer;
 }
 
 @property (nonatomic, readonly) NSHashTable *_dependentScrollViews;
@@ -16,24 +16,24 @@
 @property (setter=_setSwipedDownTileTracker:, nonatomic, retain) PUSwipedDownTileTracker *_swipedDownTileTracker;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=_isHandlingPanGestureRecognizer, setter=_setHandlingPanGestureRecognizer:, nonatomic) BOOL handlingPanGestureRecognizer;
-@property (readonly) unsigned int hash;
+@property (getter=_isHandlingPanGestureRecognizer, setter=_setHandlingPanGestureRecognizer:, nonatomic) bool handlingPanGestureRecognizer;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_dependentScrollViews;
 - (id)_dismissGestureDirectionValueFilter;
 - (void)_handlePanGestureRecognizer:(id)arg1;
-- (BOOL)_isHandlingPanGestureRecognizer;
+- (bool)_isHandlingPanGestureRecognizer;
 - (id)_panGestureRecognizer;
 - (void)_setDismissGestureDirectionValueFilter:(id)arg1;
-- (void)_setHandlingPanGestureRecognizer:(BOOL)arg1;
+- (void)_setHandlingPanGestureRecognizer:(bool)arg1;
 - (void)_setPanGestureRecognizer:(id)arg1;
 - (void)_setSwipedDownTileTracker:(id)arg1;
 - (id)_swipedDownTileTracker;
 - (void)dealloc;
-- (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
-- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
+- (bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
 - (void)updateGestureRecognizersWithHostingView:(id)arg1;
 

@@ -12,10 +12,10 @@
 @property (setter=_setContentIdentifier:, copy) NSString *_contentIdentifier;
 @property (setter=_setContentType:, copy) NSString *_contentType;
 @property (setter=_setContentUserAction:, copy) NSString *_contentUserAction;
-@property (getter=_isEligibleForUserActivityHandoff, setter=_setEligibleForUserActivityHandoff:) BOOL _eligibleForUserActivityHandoff;
-@property (getter=_isEligibleForUserActivityIndexing, setter=_setEligibleForUserActivityIndexing:) BOOL _eligibleForUserActivityIndexing;
-@property (getter=_isEligibleForUserActivityPublicIndexing, setter=_setEligibleForUserActivityPublicIndexing:) BOOL _eligibleForUserActivityPublicIndexing;
-@property (getter=_isEligibleForUserActivityReminders, setter=_setEligibleForUserActivityReminders:) BOOL _eligibleForUserActivityReminders;
+@property (getter=_isEligibleForUserActivityHandoff, setter=_setEligibleForUserActivityHandoff:) bool _eligibleForUserActivityHandoff;
+@property (getter=_isEligibleForUserActivityIndexing, setter=_setEligibleForUserActivityIndexing:) bool _eligibleForUserActivityIndexing;
+@property (getter=_isEligibleForUserActivityPublicIndexing, setter=_setEligibleForUserActivityPublicIndexing:) bool _eligibleForUserActivityPublicIndexing;
+@property (getter=_isEligibleForUserActivityReminders, setter=_setEligibleForUserActivityReminders:) bool _eligibleForUserActivityReminders;
 @property (setter=_setExpirationDate:, copy) NSDate *_expirationDate;
 @property (setter=_setFrameworkDelegate:) <NSUserActivityDelegate> *_frameworkDelegate;
 @property (setter=_setFrameworkPayload:, copy) NSDictionary *_frameworkPayload;
@@ -26,7 +26,7 @@
 @property (setter=_setOptions:, copy) NSDictionary *_options;
 @property (readonly, copy) NSUUID *_originalUniqueIdentifier;
 @property (setter=_setSubtitle:, copy) NSString *_subtitle;
-@property (readonly) int _suggestedActionType;
+@property (readonly) long long _suggestedActionType;
 @property (readonly, copy) NSString *_teamIdentifier;
 @property (readonly, retain) NSUUID *_uniqueIdentifier;
 @property (readonly, copy) NSString *activityType;
@@ -35,19 +35,19 @@
 @property (readonly, copy) NSString *debugDescription;
 @property <NSUserActivityDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (getter=isEligibleForHandoff) BOOL eligibleForHandoff;
-@property (getter=isEligibleForPublicIndexing) BOOL eligibleForPublicIndexing;
-@property (getter=isEligibleForSearch) BOOL eligibleForSearch;
+@property (getter=isEligibleForHandoff) bool eligibleForHandoff;
+@property (getter=isEligibleForPublicIndexing) bool eligibleForPublicIndexing;
+@property (getter=isEligibleForSearch) bool eligibleForSearch;
 @property (copy) NSDate *expirationDate;
 @property (nonatomic, copy) NSString *externalMediaContentIdentifier;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) INInteraction *interaction;
 @property (copy) NSSet *keywords;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property BOOL needsSave;
+@property bool needsSave;
 @property (copy) NSSet *requiredUserInfoKeys;
 @property (readonly) Class superclass;
-@property BOOL supportsContinuationStreams;
+@property bool supportsContinuationStreams;
 @property (copy) NSString *title;
 @property (copy) NSDictionary *userInfo;
 @property (copy) NSURL *webpageURL;
@@ -55,11 +55,11 @@
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)_currentUserActivityUUID;
-+ (BOOL)_currentUserActivityUUIDWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (void)_fetchUserActivityWithUUID:(id)arg1 completionHandler:(id /* block */)arg2;
-+ (id)_fetchUserActivityWithUUID:(id)arg1 intervalToWaitForDocumentSynchronizationToComplete:(double)arg2 completionHandler:(id /* block */)arg3;
++ (bool)_currentUserActivityUUIDWithOptions:(id)arg1 completionHandler:(id)arg2;
++ (void)_fetchUserActivityWithUUID:(id)arg1 completionHandler:(id)arg2;
++ (id)_fetchUserActivityWithUUID:(id)arg1 intervalToWaitForDocumentSynchronizationToComplete:(double)arg2 completionHandler:(id)arg3;
 + (void)_registerUserActivityType:(id)arg1 dynamicActivityType:(id)arg2;
-+ (BOOL)_supportsUserActivityAppLinks;
++ (bool)_supportsUserActivityAppLinks;
 + (void)_unregisterUserActivityType:(id)arg1 dynamicActivityType:(id)arg2;
 + (id)_userFacingErrorForLaunchServicesError:(id)arg1 userInfo:(id)arg2;
 
@@ -68,28 +68,28 @@
 - (id)_contentIdentifier;
 - (id)_contentType;
 - (id)_contentUserAction;
-- (BOOL)_createUserActivityDataWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
-- (BOOL)_createUserActivityStringsWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)_createUserActivityDataWithOptions:(id)arg1 completionHandler:(id)arg2;
+- (bool)_createUserActivityStringsWithOptions:(id)arg1 completionHandler:(id)arg2;
 - (id)_determineMatchingApplicationBundleIdentfierWithOptions:(id)arg1;
 - (id)_determineMatchingApplicationBundleIdentifierWithOptions:(id)arg1;
 - (id)_expirationDate;
 - (id)_frameworkDelegate;
 - (id)_frameworkPayload;
-- (id)_initWithTypeIdentifier:(id)arg1 suggestedActionType:(int)arg2 options:(id)arg3;
+- (id)_initWithTypeIdentifier:(id)arg1 suggestedActionType:(long long)arg2 options:(id)arg3;
 - (id)_initWithUserActivityData:(id)arg1;
 - (id)_initWithUserActivityStrings:(id)arg1 secondaryString:(id)arg2 optionalData:(id)arg3;
 - (id)_initWithUserActivityType:(id)arg1 dynamicActivityType:(id)arg2 options:(id)arg3;
 - (id)_internalUserActivity;
-- (BOOL)_isEligibleForUserActivityHandoff;
-- (BOOL)_isEligibleForUserActivityIndexing;
-- (BOOL)_isEligibleForUserActivityPublicIndexing;
-- (BOOL)_isEligibleForUserActivityReminders;
+- (bool)_isEligibleForUserActivityHandoff;
+- (bool)_isEligibleForUserActivityIndexing;
+- (bool)_isEligibleForUserActivityPublicIndexing;
+- (bool)_isEligibleForUserActivityReminders;
 - (id)_keywords;
 - (id)_lastActivityDate;
 - (id)_minimalRequiredUserInfoKeys;
 - (id)_options;
 - (id)_parentUserActivity;
-- (void)_prepareUserActivityForLaunchingWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_prepareUserActivityForLaunchingWithOptions:(id)arg1 completionHandler:(id)arg2;
 - (void)_removeFrameworkPayloadValueForKey:(id)arg1;
 - (void)_removeUserInfoValueForKey:(id)arg1;
 - (void)_resignCurrent;
@@ -97,10 +97,10 @@
 - (void)_setContentIdentifier:(id)arg1;
 - (void)_setContentType:(id)arg1;
 - (void)_setContentUserAction:(id)arg1;
-- (void)_setEligibleForUserActivityHandoff:(BOOL)arg1;
-- (void)_setEligibleForUserActivityIndexing:(BOOL)arg1;
-- (void)_setEligibleForUserActivityPublicIndexing:(BOOL)arg1;
-- (void)_setEligibleForUserActivityReminders:(BOOL)arg1;
+- (void)_setEligibleForUserActivityHandoff:(bool)arg1;
+- (void)_setEligibleForUserActivityIndexing:(bool)arg1;
+- (void)_setEligibleForUserActivityPublicIndexing:(bool)arg1;
+- (void)_setEligibleForUserActivityReminders:(bool)arg1;
 - (void)_setExpirationDate:(id)arg1;
 - (void)_setFrameworkDelegate:(id)arg1;
 - (void)_setFrameworkPayload:(id)arg1;
@@ -111,7 +111,7 @@
 - (void)_setParentUserActivity:(id)arg1;
 - (void)_setSubtitle:(id)arg1;
 - (id)_subtitle;
-- (int)_suggestedActionType;
+- (long long)_suggestedActionType;
 - (id)_teamIdentifier;
 - (id)_uniqueIdentifier;
 - (void)_updateFrameworkPayloadValue:(id)arg1 forKey:(id)arg2;
@@ -128,19 +128,19 @@
 - (void)didReceiveInputStream:(id)arg1 outputStream:(id)arg2;
 - (void)didSynchronizeActivity;
 - (id)expirationDate;
-- (void)getContinuationStreamsWithCompletionHandler:(id /* block */)arg1;
-- (unsigned int)hash;
+- (void)getContinuationStreamsWithCompletionHandler:(id)arg1;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithActivityType:(id)arg1;
 - (id)initWithInternalUserActivity:(id)arg1;
 - (id)initWithTypeIdentifier:(id)arg1;
 - (void)invalidate;
-- (BOOL)isEligibleForHandoff;
-- (BOOL)isEligibleForPublicIndexing;
-- (BOOL)isEligibleForSearch;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEligibleForHandoff;
+- (bool)isEligibleForPublicIndexing;
+- (bool)isEligibleForSearch;
+- (bool)isEqual:(id)arg1;
 - (id)keywords;
-- (BOOL)needsSave;
+- (bool)needsSave;
 - (id)requiredUserInfoKeys;
 - (void)resignCurrent;
 - (void)setContentAttributeSet:(id)arg1;
@@ -148,19 +148,19 @@
 - (void)setContentType:(id)arg1;
 - (void)setContentUserAction:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEligibleForHandoff:(BOOL)arg1;
-- (void)setEligibleForPublicIndexing:(BOOL)arg1;
-- (void)setEligibleForSearch:(BOOL)arg1;
+- (void)setEligibleForHandoff:(bool)arg1;
+- (void)setEligibleForPublicIndexing:(bool)arg1;
+- (void)setEligibleForSearch:(bool)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setKeywords:(id)arg1;
-- (void)setNeedsSave:(BOOL)arg1;
+- (void)setNeedsSave:(bool)arg1;
 - (void)setRequiredUserInfoKeys:(id)arg1;
-- (void)setSupportsContinuationStreams:(BOOL)arg1;
+- (void)setSupportsContinuationStreams:(bool)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (void)setWebPageURL:(id)arg1;
 - (void)setWebpageURL:(id)arg1;
-- (BOOL)supportsContinuationStreams;
+- (bool)supportsContinuationStreams;
 - (id)title;
 - (id)typeIdentifier;
 - (id)userInfo;
@@ -170,15 +170,15 @@
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
-+ (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(id /* block */)arg3;
++ (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(id)arg3;
 + (void)deleteAllInteractions;
 + (void)deleteInteractionsWithGroupIdentifier:(id)arg1;
 + (void)deleteInteractionsWithIdentifiers:(id)arg1;
 
 - (id)_intentsIdentifier;
-- (void)_setInteraction:(id)arg1 donate:(BOOL)arg2;
+- (void)_setInteraction:(id)arg1 donate:(bool)arg2;
 - (id)cacheIdentifier;
-- (void)generateCachePayloadWithCompletion:(id /* block */)arg1;
+- (void)generateCachePayloadWithCompletion:(id)arg1;
 - (id)inInteraction;
 - (id)interaction;
 - (void)setInInteraction:(id)arg1;
@@ -201,10 +201,10 @@
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 
 + (id)_cnui_searchMailUserActivityForContact:(id)arg1;
-+ (id)_cnui_sendMessageIntentWithDestinationID:(id)arg1 contact:(id)arg2;
-+ (id)_cnui_startAudioCallIntentWithDestinationID:(id)arg1 contact:(id)arg2;
-+ (id)_cnui_startVideoCallIntentWithDestinationID:(id)arg1 contact:(id)arg2;
-+ (id)_cnui_userActivityWithActivityType:(id)arg1 destinationID:(id)arg2 contact:(id)arg3 intentWithPerson:(id /* block */)arg4;
++ (id)_cnui_sendMessageIntentWithDestinationID:(id)arg1 customIdentifier:(id)arg2 contact:(id)arg3;
++ (id)_cnui_startAudioCallIntentWithDestinationID:(id)arg1 customIdentifier:(id)arg2 contact:(id)arg3;
++ (id)_cnui_startVideoCallIntentWithDestinationID:(id)arg1 customIdentifier:(id)arg2 contact:(id)arg3;
++ (id)_cnui_userActivityWithActivityType:(id)arg1 destinationID:(id)arg2 customIdentifier:(id)arg3 contact:(id)arg4 intentWithPerson:(id)arg5;
 
 // Image: /System/Library/PrivateFrameworks/UserActivity.framework/UserActivity
 
@@ -212,12 +212,12 @@
 - (id)_objectForIdentifier:(id)arg1;
 - (id)_originalUniqueIdentifier;
 - (id)_payloadForIdentifier:(id)arg1;
-- (id /* block */)_payloadUpdateBlockForIdentifier:(id)arg1;
+- (id)_payloadUpdateBlockForIdentifier:(id)arg1;
 - (void)_sendToCoreSpotlightIndexer;
-- (void)_setDirty:(BOOL)arg1 identifier:(id)arg2;
+- (void)_setDirty:(bool)arg1 identifier:(id)arg2;
 - (void)_setPayload:(id)arg1 object:(id)arg2 identifier:(id)arg3;
-- (void)_setPayload:(id)arg1 object:(id)arg2 identifier:(id)arg3 dirty:(BOOL)arg4;
-- (void)_setPayloadIdentifier:(id)arg1 object:(id)arg2 withBlock:(id /* block */)arg3;
+- (void)_setPayload:(id)arg1 object:(id)arg2 identifier:(id)arg3 dirty:(bool)arg4;
+- (void)_setPayloadIdentifier:(id)arg1 object:(id)arg2 withBlock:(id)arg3;
 - (void)_updateForwardToCoreSpotlightIndexer:(BOOL)arg1;
 - (id)contentAttributeSet;
 - (void)setContentAttributeSet:(id)arg1;

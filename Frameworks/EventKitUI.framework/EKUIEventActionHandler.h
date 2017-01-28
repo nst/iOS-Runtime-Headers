@@ -11,9 +11,9 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (unsigned int)_actionWithName:(id)arg1;
-- (void)_recordSignalWithAction:(unsigned int)arg1 onEvent:(id)arg2;
-- (void)_shouldRecordSignalWithCompletion:(id /* block */)arg1;
+- (unsigned long long)_actionWithName:(id)arg1;
+- (void)_recordSignalWithAction:(unsigned long long)arg1 onEvent:(id)arg2;
+- (void)_shouldRecordSignalWithCompletion:(id)arg1;
 - (void)handleAction:(id)arg1;
 - (id)serializedEventSnapshot;
 - (void)setEventBeingEdited:(id)arg1;

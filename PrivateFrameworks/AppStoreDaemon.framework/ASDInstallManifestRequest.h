@@ -3,7 +3,7 @@
  */
 
 @interface ASDInstallManifestRequest : ASDRequest {
-    id /* block */  _block;
+    id  _block;
     ASDInstallManifestRequestOptions * _options;
 }
 
@@ -11,6 +11,6 @@
 - (void)_handleResponse:(id)arg1 error:(id)arg2;
 - (id)init;
 - (id)initWithOptions:(id)arg1;
-- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithCompletionBlock:(id)arg1;
 
 @end

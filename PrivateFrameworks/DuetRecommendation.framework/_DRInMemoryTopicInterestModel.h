@@ -14,7 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)computeSummaryWithFilter:(id)arg1;
-- (void)enumerateTopicCountsWithFilter:(id)arg1 block:(id /* block */)arg2;
+- (void)enumerateTopicCountsWithFilter:(id)arg1 block:(id)arg2;
 - (id)init;
 - (void)purgeEntriesEarlierThanDate:(id)arg1;
 - (void)purgeEntriesWithPrefix:(id)arg1 earlierThanDate:(id)arg2;

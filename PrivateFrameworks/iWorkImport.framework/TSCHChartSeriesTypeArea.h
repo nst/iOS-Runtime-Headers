@@ -10,8 +10,8 @@
 - (id)genericToSpecificPropertyMap;
 - (id)init;
 - (int)legendBadgeType;
-- (BOOL)supportsSymbolDrawing;
-- (BOOL)supportsSymbolFillForSymbolType:(int)arg1;
-- (unsigned int)valueDimensions;
+- (bool)supportsSymbolDrawing;
+- (bool)supportsSymbolFillForSymbolType:(int)arg1;
+- (unsigned long long)valueDimensions;
 
 @end

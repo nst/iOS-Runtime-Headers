@@ -3,17 +3,17 @@
  */
 
 @interface PSYTestInput : NSObject <NSSecureCoding> {
-    int  _action;
+    long long  _action;
 }
 
-@property (nonatomic) int action;
+@property (nonatomic) long long action;
 
-+ (BOOL)supportsSecureCoding;
-+ (id)testInputWithAction:(int)arg1;
++ (bool)supportsSecureCoding;
++ (id)testInputWithAction:(long long)arg1;
 
-- (int)action;
+- (long long)action;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setAction:(int)arg1;
+- (void)setAction:(long long)arg1;
 
 @end

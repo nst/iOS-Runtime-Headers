@@ -3,33 +3,35 @@
  */
 
 @interface VSAccountMetadata : NSObject <NSCopying, NSSecureCoding> {
-    NSString * _SAMLAttributeQueryResponse;
     NSString * _accountProviderIdentifier;
+    VSAccountProviderResponse * _accountProviderResponse;
     NSDate * _authenticationExpirationDate;
     NSData * _verificationData;
 }
 
-@property (nonatomic, copy) NSString *SAMLAttributeQueryResponse;
+@property (nonatomic, readonly, copy) NSString *SAMLAttributeQueryResponse;
 @property (nonatomic, copy) NSString *accountProviderIdentifier;
+@property (nonatomic, retain) VSAccountProviderResponse *accountProviderResponse;
 @property (nonatomic, copy) NSDate *authenticationExpirationDate;
 @property (nonatomic, copy) NSData *verificationData;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)SAMLAttributeQueryResponse;
 - (id)accountProviderIdentifier;
+- (id)accountProviderResponse;
 - (id)authenticationExpirationDate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)setAccountProviderIdentifier:(id)arg1;
+- (void)setAccountProviderResponse:(id)arg1;
 - (void)setAuthenticationExpirationDate:(id)arg1;
-- (void)setSAMLAttributeQueryResponse:(id)arg1;
 - (void)setVerificationData:(id)arg1;
 - (id)verificationData;
 

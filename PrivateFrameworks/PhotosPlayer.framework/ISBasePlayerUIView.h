@@ -12,8 +12,8 @@
     UIView * _customPhotoView;
     ISBasePlayer * _player;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _scaleAnchorOffset;
 }
 
@@ -25,9 +25,9 @@
 @property (nonatomic, retain) UIView *customPhotoView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) ISBasePlayer *player;
-@property (nonatomic) struct CGPoint { float x1; float x2; } scaleAnchorOffset;
+@property (nonatomic) struct CGPoint { double x1; double x2; } scaleAnchorOffset;
 @property (readonly) Class superclass;
 
 + (Class)playerClass;
@@ -39,20 +39,20 @@
 - (id)_photoView;
 - (void)_setAudioSession:(id)arg1;
 - (id)_videoView;
-- (void)applyOutputInfo:(id)arg1 withTransitionOptions:(id)arg2 completion:(id /* block */)arg3;
+- (void)applyOutputInfo:(id)arg1 withTransitionOptions:(id)arg2 completion:(id)arg3;
 - (id)audioSession;
 - (void)audioSessionDidChange;
 - (id)customPhotoView;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)player;
 - (void)playerDidChange;
-- (struct CGPoint { float x1; float x2; })scaleAnchorOffset;
+- (struct CGPoint { double x1; double x2; })scaleAnchorOffset;
 - (void)setContent:(id)arg1;
-- (void)setContentMode:(int)arg1;
+- (void)setContentMode:(long long)arg1;
 - (void)setCustomPhotoView:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setScaleAnchorOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setScaleAnchorOffset:(struct CGPoint { double x1; double x2; })arg1;
 
 @end

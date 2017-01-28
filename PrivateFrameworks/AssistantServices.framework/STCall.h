@@ -5,10 +5,10 @@
 @interface STCall : STSiriModelObject {
     STContactAddress * _initiatorAddress;
     STContactAddress * _recipientAddress;
-    int  _service;
+    long long  _service;
 }
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)_aceContextObjectValue;
@@ -17,9 +17,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initiatorAddress;
 - (id)recipientAddress;
-- (int)service;
+- (long long)service;
 - (void)setInitiatorAddress:(id)arg1;
 - (void)setRecipientAddress:(id)arg1;
-- (void)setService:(int)arg1;
+- (void)setService:(long long)arg1;
 
 @end

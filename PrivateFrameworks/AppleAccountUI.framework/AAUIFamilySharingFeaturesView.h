@@ -3,9 +3,9 @@
  */
 
 @interface AAUIFamilySharingFeaturesView : UIView {
-    int  _context;
+    long long  _context;
     UIButton * _learnMoreButton;
-    BOOL  _shouldHideLocationSharing;
+    bool  _shouldHideLocationSharing;
     UIStackView * _stack;
 }
 
@@ -13,9 +13,9 @@
 
 - (void).cxx_destruct;
 - (id)_contextSensitiveLocalizedStringWithKey:(id)arg1;
-- (id)_imageViewWithIconNamed:(id)arg1 addBorder:(BOOL)arg2;
+- (id)_imageViewWithIconNamed:(id)arg1 addBorder:(bool)arg2;
 - (id)_labelWithStringAtKey:(id)arg1;
 - (void)_learnMoreButtonTapped:(id)arg1;
-- (id)initWithContext:(int)arg1 hideLocationSharing:(BOOL)arg2;
+- (id)initWithContext:(long long)arg1 hideLocationSharing:(bool)arg2;
 
 @end

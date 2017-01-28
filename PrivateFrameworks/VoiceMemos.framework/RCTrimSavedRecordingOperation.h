@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)destinationRecording;
-- (id)initWithSourceRecording:(id)arg1 destinationRecording:(id)arg2 timeRange:(struct { double x1; double x2; })arg3 trimMode:(int)arg4;
+- (id)initWithSourceRecording:(id)arg1 destinationRecording:(id)arg2 timeRange:(struct { double x1; double x2; })arg3 trimMode:(long long)arg4;
 - (void)main;
 - (id)sourceRecording;
 

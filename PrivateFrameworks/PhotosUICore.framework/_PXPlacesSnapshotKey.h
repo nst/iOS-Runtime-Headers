@@ -4,18 +4,18 @@
 
 @interface _PXPlacesSnapshotKey : NSObject <NSCopying> {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  __imageSize;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } _imageSize;
+@property (nonatomic) struct CGSize { double x1; double x2; } _imageSize;
 
-- (struct CGSize { float x1; float x2; })_imageSize;
+- (struct CGSize { double x1; double x2; })_imageSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (id)initWithImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (BOOL)isEqual:(id)arg1;
-- (void)set_imageSize:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned long long)hash;
+- (id)initWithImageSize:(struct CGSize { double x1; double x2; })arg1;
+- (bool)isEqual:(id)arg1;
+- (void)set_imageSize:(struct CGSize { double x1; double x2; })arg1;
 
 @end

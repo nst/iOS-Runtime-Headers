@@ -7,8 +7,8 @@
 - (id)_accountRecoveryDevicePickerEscapeOffer;
 - (id)_accountRecoveryEscapeOfferForDevice:(id)arg1;
 - (void)_presentRemoteSecretControllerWithNewestDevice:(id)arg1;
-- (void)_setupDevicePickerController:(id /* block */)arg1;
+- (void)_setupDevicePickerController:(id)arg1;
 - (void)devicePicker:(id)arg1 didSelectDevice:(id)arg2;
-- (BOOL)performingAccountRecovery;
+- (bool)performingAccountRecovery;
 
 @end

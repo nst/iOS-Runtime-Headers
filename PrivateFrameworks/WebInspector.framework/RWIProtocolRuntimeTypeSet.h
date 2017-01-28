@@ -4,34 +4,34 @@
 
 @interface RWIProtocolRuntimeTypeSet : RWIProtocolJSONObject
 
-@property (nonatomic) BOOL isBoolean;
-@property (nonatomic) BOOL isFunction;
-@property (nonatomic) BOOL isInteger;
-@property (nonatomic) BOOL isNull;
-@property (nonatomic) BOOL isNumber;
-@property (nonatomic) BOOL isObject;
-@property (nonatomic) BOOL isString;
-@property (nonatomic) BOOL isSymbol;
-@property (nonatomic) BOOL isUndefined;
+@property (nonatomic) bool isBoolean;
+@property (nonatomic) bool isFunction;
+@property (nonatomic) bool isInteger;
+@property (nonatomic) bool isNull;
+@property (nonatomic) bool isNumber;
+@property (nonatomic) bool isObject;
+@property (nonatomic) bool isString;
+@property (nonatomic) bool isSymbol;
+@property (nonatomic) bool isUndefined;
 
-- (id)initWithIsFunction:(BOOL)arg1 isUndefined:(BOOL)arg2 isNull:(BOOL)arg3 isBoolean:(BOOL)arg4 isInteger:(BOOL)arg5 isNumber:(BOOL)arg6 isString:(BOOL)arg7 isObject:(BOOL)arg8 isSymbol:(BOOL)arg9;
-- (BOOL)isBoolean;
-- (BOOL)isFunction;
-- (BOOL)isInteger;
-- (BOOL)isNull;
-- (BOOL)isNumber;
-- (BOOL)isObject;
-- (BOOL)isString;
-- (BOOL)isSymbol;
-- (BOOL)isUndefined;
-- (void)setIsBoolean:(BOOL)arg1;
-- (void)setIsFunction:(BOOL)arg1;
-- (void)setIsInteger:(BOOL)arg1;
-- (void)setIsNull:(BOOL)arg1;
-- (void)setIsNumber:(BOOL)arg1;
-- (void)setIsObject:(BOOL)arg1;
-- (void)setIsString:(BOOL)arg1;
-- (void)setIsSymbol:(BOOL)arg1;
-- (void)setIsUndefined:(BOOL)arg1;
+- (id)initWithIsFunction:(bool)arg1 isUndefined:(bool)arg2 isNull:(bool)arg3 isBoolean:(bool)arg4 isInteger:(bool)arg5 isNumber:(bool)arg6 isString:(bool)arg7 isObject:(bool)arg8 isSymbol:(bool)arg9;
+- (bool)isBoolean;
+- (bool)isFunction;
+- (bool)isInteger;
+- (bool)isNull;
+- (bool)isNumber;
+- (bool)isObject;
+- (bool)isString;
+- (bool)isSymbol;
+- (bool)isUndefined;
+- (void)setIsBoolean:(bool)arg1;
+- (void)setIsFunction:(bool)arg1;
+- (void)setIsInteger:(bool)arg1;
+- (void)setIsNull:(bool)arg1;
+- (void)setIsNumber:(bool)arg1;
+- (void)setIsObject:(bool)arg1;
+- (void)setIsString:(bool)arg1;
+- (void)setIsSymbol:(bool)arg1;
+- (void)setIsUndefined:(bool)arg1;
 
 @end

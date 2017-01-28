@@ -7,11 +7,11 @@
     AWDServerConnection * _awdServer;
     NSObject<OS_dispatch_queue> * _awdSubmissionQueue;
     NSData * _deviceExceptionUuid;
-    unsigned int  _middlewareExceptionCount;
-    unsigned int  _previousCardIngestionSessionState;
-    unsigned int  _previousExpressFelicaState;
-    unsigned int  _previousTransactionState;
-    unsigned int  _previousVASTransactionState;
+    unsigned long long  _middlewareExceptionCount;
+    unsigned long long  _previousCardIngestionSessionState;
+    unsigned long long  _previousExpressFelicaState;
+    unsigned long long  _previousTransactionState;
+    unsigned long long  _previousVASTransactionState;
     NSData * _tsmUuid;
     unsigned long long  _tsmUuidRefTimestamp;
     NSUserDefaults * _userDefault;
@@ -29,7 +29,7 @@
 - (void)enableQueryMetricsListener;
 - (id)generateUUID;
 - (unsigned long long)getTimestamp;
-- (BOOL)incrementMiddlewareExceptionCountWithReset:(BOOL)arg1;
+- (bool)incrementMiddlewareExceptionCountWithReset:(bool)arg1;
 - (id)init;
 - (void)postAWDAPNReceived;
 - (void)postAWDCRSActivationTimerExpiredWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
@@ -40,15 +40,15 @@
 - (void)postAWDCardIngestionReaderStateChangeWithType:(unsigned int)arg1 errorCode:(unsigned int)arg2;
 - (void)postAWDCardIngestionSessionStateChangeTo:(unsigned int)arg1;
 - (void)postAWDEvent:(id)arg1;
-- (void)postAWDExpressFelicaStarted:(BOOL)arg1;
-- (void)postAWDFieldEventWithFieldOn:(BOOL)arg1 withTechnology:(unsigned int)arg2;
+- (void)postAWDExpressFelicaStarted:(bool)arg1;
+- (void)postAWDFieldEventWithFieldOn:(bool)arg1 withTechnology:(unsigned int)arg2;
 - (void)postAWDHCIEndOfTransactionEventWithParameters:(id)arg1;
 - (void)postAWDHCIStartOfTransactionEventWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
-- (void)postAWDMiddlewareException:(unsigned int)arg1 errorType:(unsigned int)arg2 errorCode:(unsigned int)arg3 checkMaxExceptionCounter:(BOOL)arg4;
+- (void)postAWDMiddlewareException:(unsigned int)arg1 errorType:(unsigned int)arg2 errorCode:(unsigned int)arg3 checkMaxExceptionCounter:(bool)arg4;
 - (void)postAWDPLLUnlockEvent;
 - (void)postAWDReaderModeExceptionForType:(unsigned int)arg1 withErrorCode:(unsigned int)arg2;
-- (void)postAWDRestrictedModeFromContactlessMode:(BOOL)arg1 isIcf:(BOOL)arg2;
-- (void)postAWDSERemovedEvent:(unsigned int)arg1 isIcf:(BOOL)arg2 hasCardEmulationStarted:(BOOL)arg3 hasExpressTransitStarted:(BOOL)arg4;
+- (void)postAWDRestrictedModeFromContactlessMode:(bool)arg1 isIcf:(bool)arg2;
+- (void)postAWDSERemovedEvent:(unsigned int)arg1 isIcf:(bool)arg2 hasCardEmulationStarted:(bool)arg3 hasExpressTransitStarted:(bool)arg4;
 - (void)postAWDSESelectEventWithAID:(id)arg1;
 - (void)postAWDTSMConnectivityException:(unsigned int)arg1;
 - (void)postAWDTSMEndOfSession;
@@ -61,6 +61,6 @@
 - (void)postAWDVASTransactionException:(unsigned int)arg1 withSWStatus:(unsigned int)arg2;
 - (void)postAWDVersionInfo:(id)arg1;
 - (void)setActiveAID:(id)arg1;
-- (void)updateStats:(id)arg1 reset:(BOOL)arg2;
+- (void)updateStats:(id)arg1 reset:(bool)arg2;
 
 @end

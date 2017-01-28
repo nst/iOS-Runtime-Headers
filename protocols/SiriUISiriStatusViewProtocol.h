@@ -6,16 +6,16 @@
 @required
 
 - (<SiriUISiriStatusViewDelegate> *)delegate;
-- (float)disabledMicOpacity;
+- (double)disabledMicOpacity;
 - (UIView *)flamesContainerView;
-- (BOOL)flamesViewDeferred;
-- (float)flamesViewWidth;
-- (void)forceMicVisible:(BOOL)arg1;
-- (int)mode;
+- (bool)flamesViewDeferred;
+- (double)flamesViewWidth;
+- (void)forceMicVisible:(bool)arg1;
+- (long long)mode;
 - (void)setDelegate:(id <SiriUISiriStatusViewDelegate>)arg1;
-- (void)setDisabledMicOpacity:(float)arg1;
-- (void)setFlamesViewDeferred:(BOOL)arg1;
-- (void)setFlamesViewWidth:(float)arg1;
-- (void)setMode:(int)arg1;
+- (void)setDisabledMicOpacity:(double)arg1;
+- (void)setFlamesViewDeferred:(bool)arg1;
+- (void)setFlamesViewWidth:(double)arg1;
+- (void)setMode:(long long)arg1;
 
 @end

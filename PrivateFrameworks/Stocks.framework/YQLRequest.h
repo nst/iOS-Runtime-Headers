@@ -5,21 +5,21 @@
 @interface YQLRequest : NSObject <NSURLSessionDataDelegate, NSURLSessionDownloadDelegate> {
     NSURLSessionTask * _dataTask;
     NSURLSession * _defaultSession;
-    id /* block */  _finishEventsHandler;
+    id  _finishEventsHandler;
     NSMutableData * _rawData;
     NSURLRequest * _request;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ finishEventsHandler;
-@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id finishEventsHandler;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)appendDebugString:(id)arg1;
 + (void)saveDebugString;
-+ (void)setShouldGenerateOfflineData:(BOOL)arg1;
-+ (BOOL)shouldGenerateOfflineData;
++ (void)setShouldGenerateOfflineData:(bool)arg1;
++ (bool)shouldGenerateOfflineData;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
@@ -28,24 +28,24 @@
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(id)arg1;
 - (id)YQLCountryCode;
 - (id)YQLLanguageCode;
+- (void)_createDefaultSession;
 - (id)_yahooDoppelganger_taskForRequest:(id)arg1 delegate:(id)arg2;
 - (id)aggregateDictionaryDomain;
-- (id)arrayWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2 wrapResultIfDictionary:(BOOL)arg3;
+- (id)arrayWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2 wrapResultIfDictionary:(bool)arg3;
 - (void)cancel;
 - (id)dictionaryWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2;
 - (void)didParseData;
 - (void)failToParseWithData:(id)arg1;
 - (void)failToParseWithDataSeriesDictionary:(id)arg1;
 - (void)failWithError:(id)arg1;
-- (id /* block */)finishEventsHandler;
+- (id)finishEventsHandler;
 - (id)init;
-- (id)initWithSession:(id)arg1;
-- (BOOL)isLoading;
+- (bool)isLoading;
 - (void)loadRequest:(id)arg1;
 - (id)objectOfClass:(Class)arg1 withDictionaryKeyPath:(id)arg2 inJSONObject:(id)arg3;
 - (id)objectWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2;
 - (void)parseData:(id)arg1;
-- (void)setFinishEventsHandler:(id /* block */)arg1;
+- (void)setFinishEventsHandler:(id)arg1;
 - (id)taskForRequest:(id)arg1 delegate:(id)arg2;
 
 @end

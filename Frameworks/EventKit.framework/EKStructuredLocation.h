@@ -3,7 +3,7 @@
  */
 
 @interface EKStructuredLocation : EKObject <NSCopying> {
-    BOOL  _imprecise;
+    bool  _imprecise;
     RTPredictedLocationOfInterest * _predictedLOI;
 }
 
@@ -11,12 +11,12 @@
 @property (nonatomic, copy) NSString *addressBookEntityID;
 @property (nonatomic, copy) NSString *derivedFrom;
 @property (nonatomic, retain) CLLocation *geoLocation;
-@property (nonatomic, readonly) BOOL hasKnownSpatialData;
-@property (getter=isImprecise, nonatomic) BOOL imprecise;
-@property (nonatomic, readonly) BOOL isStructured;
+@property (nonatomic, readonly) bool hasKnownSpatialData;
+@property (getter=isImprecise, nonatomic) bool imprecise;
+@property (nonatomic, readonly) bool isStructured;
 @property (nonatomic, copy) NSData *mapKitHandle;
 @property (nonatomic, retain) RTPredictedLocationOfInterest *predictedLOI;
-@property (getter=isPrediction, nonatomic, readonly) BOOL prediction;
+@property (getter=isPrediction, nonatomic, readonly) bool prediction;
 @property (nonatomic) double radius;
 @property (nonatomic, retain) NSString *routing;
 @property (nonatomic, retain) NSString *title;
@@ -38,12 +38,12 @@
 - (id)description;
 - (id)geoLocation;
 - (id)geoURLString;
-- (BOOL)hasKnownSpatialData;
+- (bool)hasKnownSpatialData;
 - (id)init;
-- (BOOL)isEqualToLocation:(id)arg1;
-- (BOOL)isImprecise;
-- (BOOL)isPrediction;
-- (BOOL)isStructured;
+- (bool)isEqualToLocation:(id)arg1;
+- (bool)isImprecise;
+- (bool)isPrediction;
+- (bool)isStructured;
 - (id)mapKitHandle;
 - (id)predictedLOI;
 - (double)radius;
@@ -52,7 +52,7 @@
 - (void)setAddressBookEntityID:(id)arg1;
 - (void)setDerivedFrom:(id)arg1;
 - (void)setGeoLocation:(id)arg1;
-- (void)setImprecise:(BOOL)arg1;
+- (void)setImprecise:(bool)arg1;
 - (void)setMapKitHandle:(id)arg1;
 - (void)setPredictedLOI:(id)arg1;
 - (void)setRadius:(double)arg1;

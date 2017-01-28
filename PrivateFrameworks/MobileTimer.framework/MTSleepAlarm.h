@@ -4,25 +4,25 @@
 
 @interface MTSleepAlarm : NSObject <MTAlarmSoundInfoProvider, NAEquatable, NSCopying> {
     NSString * _alarmSoundIdentifier;
-    int  _alarmSoundType;
+    long long  _alarmSoundType;
     NSNumber * _alarmSoundVolume;
     NSNumber * _bedtimeReminderMinutes;
-    BOOL  _enabled;
-    int  _repeatSchedule;
+    bool  _enabled;
+    long long  _repeatSchedule;
     NSDateComponents * _sleepTime;
     NSString * _vibrationID;
     NSDateComponents * _wakeTime;
 }
 
 @property (nonatomic, copy) NSString *alarmSoundIdentifier;
-@property (nonatomic) int alarmSoundType;
+@property (nonatomic) long long alarmSoundType;
 @property (nonatomic, copy) NSNumber *alarmSoundVolume;
 @property (nonatomic, copy) NSNumber *bedtimeReminderMinutes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=isEnabled, nonatomic) BOOL enabled;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int repeatSchedule;
+@property (getter=isEnabled, nonatomic) bool enabled;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long repeatSchedule;
 @property (nonatomic, copy) NSDateComponents *sleepTime;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *vibrationID;
@@ -32,23 +32,23 @@
 - (id)_dictionaryRepresentation;
 - (id)_repeatString;
 - (id)alarmSoundIdentifier;
-- (int)alarmSoundType;
+- (long long)alarmSoundType;
 - (id)alarmSoundVolume;
 - (id)bedtimeReminderMinutes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (BOOL)isEnabled;
-- (BOOL)isEqual:(id)arg1;
-- (int)repeatSchedule;
+- (bool)isEnabled;
+- (bool)isEqual:(id)arg1;
+- (long long)repeatSchedule;
 - (void)setAlarmSoundIdentifier:(id)arg1;
-- (void)setAlarmSoundIdentifier:(id)arg1 ofType:(int)arg2;
-- (void)setAlarmSoundType:(int)arg1;
+- (void)setAlarmSoundIdentifier:(id)arg1 ofType:(long long)arg2;
+- (void)setAlarmSoundType:(long long)arg1;
 - (void)setAlarmSoundVolume:(id)arg1;
 - (void)setBedtimeReminderMinutes:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setRepeatSchedule:(int)arg1;
+- (void)setEnabled:(bool)arg1;
+- (void)setRepeatSchedule:(long long)arg1;
 - (void)setSleepTime:(id)arg1;
 - (void)setVibrationID:(id)arg1;
 - (void)setWakeTime:(id)arg1;

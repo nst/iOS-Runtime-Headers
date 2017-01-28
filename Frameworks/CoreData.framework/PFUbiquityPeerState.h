@@ -11,7 +11,7 @@
 @property (nonatomic, retain) NSNumber *transactionNumber;
 
 + (id)peerStateForStoreName:(id)arg1 andPeerID:(id)arg2 inManagedObjectContext:(id)arg3;
-+ (id)peerStateForStoreName:(id)arg1 andPeerID:(id)arg2 inManagedObjectContext:(id)arg3 createIfMissing:(BOOL)arg4;
++ (id)peerStateForStoreName:(id)arg1 andPeerID:(id)arg2 inManagedObjectContext:(id)arg3 createIfMissing:(bool)arg4;
 + (id)peerStatesMatchingStoreName:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)peerStatesMatchingStoreName:(id)arg1 inManagedObjectContext:(id)arg2 omittingLocalPeerID:(id)arg3;
 

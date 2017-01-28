@@ -4,9 +4,9 @@
 
 @interface SKUIPendingRentalCenter : NSObject {
     NSObject<OS_dispatch_queue> * _accessQueue;
-    BOOL  _loadingRentals;
+    bool  _loadingRentals;
     NSMutableDictionary * _mutableRentals;
-    BOOL  _userLoggedIn;
+    bool  _userLoggedIn;
 }
 
 + (id)_sharedDateFormatter;

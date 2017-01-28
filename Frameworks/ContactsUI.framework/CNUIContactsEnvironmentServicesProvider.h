@@ -10,5 +10,6 @@
 - (id)duetConsumer;
 - (id)fmfFacade;
 - (id)personaStore;
+- (id)suggestionsService;
 
 @end

@@ -10,10 +10,10 @@
 }
 
 - (void).cxx_destruct;
-- (void)_executeRetrievalBlock:(id /* block */)arg1 forKey:(id)arg2;
+- (void)_executeRetrievalBlock:(id)arg1 forKey:(id)arg2;
 - (void)_queue_executeDeliveryBlocksForKey:(id)arg1 withItem:(id)arg2;
 - (id)init;
 - (id)initWithCache:(id)arg1;
-- (void)retrieveItemForKey:(id)arg1 retrievalBlock:(id /* block */)arg2 deliveryBlock:(id /* block */)arg3;
+- (void)retrieveItemForKey:(id)arg1 retrievalBlock:(id)arg2 deliveryBlock:(id)arg3;
 
 @end

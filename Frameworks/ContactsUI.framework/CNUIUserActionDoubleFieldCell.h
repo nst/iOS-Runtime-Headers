@@ -19,7 +19,7 @@
 + (id)subtitleTextColor;
 
 - (void).cxx_destruct;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)setSubtitleLabel:(id)arg1;
 - (void)setSubtitleToTitleLabelYConstraint:(id)arg1;
 - (void)setSubtitleYToBottomConstraint:(id)arg1;

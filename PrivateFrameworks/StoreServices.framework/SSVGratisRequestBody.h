@@ -6,21 +6,21 @@
     NSNumber * _accountID;
     NSMutableDictionary * _additionalParameters;
     NSArray * _applications;
-    BOOL  _backgroundRequest;
+    bool  _backgroundRequest;
     NSArray * _bundleIdentifiers;
     NSArray * _itemIdentifiers;
-    int  _style;
+    long long  _style;
 }
 
 @property (nonatomic, readonly) NSData *JSONBodyData;
 @property (nonatomic, copy) NSNumber *accountIdentifier;
 @property (nonatomic, copy) NSArray *applications;
-@property (getter=isBackgroundRequest, nonatomic) BOOL backgroundRequest;
+@property (getter=isBackgroundRequest, nonatomic) bool backgroundRequest;
 @property (nonatomic, readonly) NSMutableDictionary *bodyDictionary;
 @property (nonatomic, copy) NSArray *bundleIdentifiers;
 @property (nonatomic, copy) NSArray *itemIdentifiers;
 @property (nonatomic, readonly) NSData *propertyListBodyData;
-@property (nonatomic, readonly) int requestStyle;
+@property (nonatomic, readonly) long long requestStyle;
 
 - (void).cxx_destruct;
 - (id)JSONBodyData;
@@ -30,14 +30,14 @@
 - (id)bundleIdentifiers;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)initWithRequestStyle:(int)arg1;
-- (BOOL)isBackgroundRequest;
+- (id)initWithRequestStyle:(long long)arg1;
+- (bool)isBackgroundRequest;
 - (id)itemIdentifiers;
 - (id)propertyListBodyData;
-- (int)requestStyle;
+- (long long)requestStyle;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setApplications:(id)arg1;
-- (void)setBackgroundRequest:(BOOL)arg1;
+- (void)setBackgroundRequest:(bool)arg1;
 - (void)setBundleIdentifiers:(id)arg1;
 - (void)setItemIdentifiers:(id)arg1;
 - (void)setValue:(id)arg1 forBodyParameter:(id)arg2;

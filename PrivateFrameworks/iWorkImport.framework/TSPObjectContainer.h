@@ -18,7 +18,7 @@
 - (id)packageLocator;
 - (void)prepareForComponentWriteWithDelayedObjects:(id)arg1;
 - (void)saveToArchiver:(id)arg1;
-- (BOOL)shouldDelayArchiving;
+- (bool)shouldDelayArchiving;
 - (long long)tsp_identifier;
 
 @end

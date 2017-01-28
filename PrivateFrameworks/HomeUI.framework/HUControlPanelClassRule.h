@@ -10,7 +10,7 @@
 @property (nonatomic, copy) NSSet *classes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) double priority;
 @property (readonly) Class superclass;
 
@@ -21,7 +21,7 @@
 - (id)classes;
 - (id)initWithControlItemClasses:(id)arg1;
 - (double)priority;
-- (BOOL)ruleMatchesItem:(id)arg1;
+- (bool)ruleMatchesItem:(id)arg1;
 - (void)setClasses:(id)arg1;
 - (void)setPriority:(double)arg1;
 

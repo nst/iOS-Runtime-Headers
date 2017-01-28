@@ -7,7 +7,7 @@
 
 - (void)done;
 - (void)getShortMatchLabelText:(id*)arg1 longMatchLabelText:(id*)arg2;
-- (BOOL)hasMatches;
+- (bool)hasMatches;
 - (void)next;
 - (void)previous;
 - (NSString *)textForToolbarLabel;

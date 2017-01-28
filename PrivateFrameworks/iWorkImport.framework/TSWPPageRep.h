@@ -16,11 +16,11 @@
 - (id)editingDidBeginTimer;
 - (void)p_createHeaderFooterBorderLayerIfNecessaryForType:(int)arg1;
 - (void)p_createHeaderFooterOverflowIndicatorLayerIfNecessaryForType:(int)arg1 fragment:(int)arg2;
-- (BOOL)p_hasValidHeaderFooterForType:(int)arg1;
-- (BOOL)p_headerFooterBorderVisibleForType:(int)arg1;
-- (BOOL)p_headerFooterIsVisibleAndInteractive:(int)arg1;
-- (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
-- (id)p_hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
+- (bool)p_hasValidHeaderFooterForType:(int)arg1;
+- (bool)p_headerFooterBorderVisibleForType:(int)arg1;
+- (bool)p_headerFooterIsVisibleAndInteractive:(int)arg1;
+- (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { double x1; double x2; })arg2;
+- (id)p_hitRep:(struct CGPoint { double x1; double x2; })arg1 passingTest:(id)arg2;
 - (void)p_updateBorderLayers;
 - (void)p_updateLayoutBordersVisibility;
 - (void)setEditingDidBeginTimer:(id)arg1;

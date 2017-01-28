@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)routingCell:(MPAVRoutingTableViewCell *)arg1 mirroringSwitchValueDidChange:(BOOL)arg2;
+- (void)routingCell:(MPAVRoutingTableViewCell *)arg1 mirroringSwitchValueDidChange:(bool)arg2;
 
 @end

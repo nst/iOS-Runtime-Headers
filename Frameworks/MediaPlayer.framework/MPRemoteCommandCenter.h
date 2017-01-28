@@ -12,7 +12,7 @@
     NSBundle * _bundle;
     MPPurchaseCommand * _buyAlbumCommand;
     MPPurchaseCommand * _buyTrackCommand;
-    BOOL  _canBeNowPlayingApplication;
+    bool  _canBeNowPlayingApplication;
     MPPurchaseCommand * _cancelDownloadCommand;
     MPChangePlaybackPositionCommand * _changePlaybackPositionCommand;
     MPChangePlaybackProgressCommand * _changePlaybackProgressCommand;
@@ -27,7 +27,7 @@
     MPFeedbackCommand * _likeCommand;
     void * _mediaRemoteCommandHandler;
     MPRemoteCommand * _nextTrackCommand;
-    BOOL  _observing;
+    bool  _observing;
     MPRemoteControlOrigin * _origin;
     MPRemoteCommand * _pauseCommand;
     MPRemoteCommand * _playCommand;
@@ -36,7 +36,7 @@
     MPRatingCommand * _ratingCommand;
     MPRemoteCommand * _removeFromPlaybackQueueCommand;
     MPReorderQueueCommand * _reorderQueueCommand;
-    BOOL  _scheduledSupportedCommandsChangedNotification;
+    bool  _scheduledSupportedCommandsChangedNotification;
     MPRemoteCommand * _seekBackwardCommand;
     MPRemoteCommand * _seekForwardCommand;
     NSObject<OS_dispatch_queue> * _serialQueue;
@@ -69,7 +69,7 @@
 @property (nonatomic, readonly) MPRemoteCommand *disableLanguageOptionCommand;
 @property (nonatomic, readonly) MPFeedbackCommand *dislikeCommand;
 @property (nonatomic, readonly) MPRemoteCommand *enableLanguageOptionCommand;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) MPInsertIntoPlaybackQueueCommand *insertIntoPlaybackQueueCommand;
 @property (nonatomic, readonly) MPFeedbackCommand *likeCommand;
 @property (nonatomic, readonly) MPRemoteCommand *nextTrackCommand;
@@ -99,7 +99,7 @@
 - (struct __CFArray { }*)_copySupportedCommands;
 - (id)_createRemoteCommandWithConcreteClass:(Class)arg1 mediaRemoteType:(unsigned int)arg2;
 - (id)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2;
-- (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id /* block */)arg3;
+- (void)_pushMediaRemoteCommand:(unsigned int)arg1 withOptions:(struct __CFDictionary { }*)arg2 completion:(id)arg3;
 - (void)_scheduleSupportedCommandsChanged;
 - (void)_setupMediaRemoteCommandHandler;
 - (void)_setupNotifications;
@@ -122,7 +122,7 @@
 - (void)dealloc;
 - (id)disableLanguageOptionCommand;
 - (id)dislikeCommand;
-- (void)dispatchCommandEvent:(id)arg1 completion:(id /* block */)arg2;
+- (void)dispatchCommandEvent:(id)arg1 completion:(id)arg2;
 - (id)enableLanguageOptionCommand;
 - (id)initWithOrigin:(id)arg1 bundle:(id)arg2;
 - (id)insertIntoPlaybackQueueCommand;

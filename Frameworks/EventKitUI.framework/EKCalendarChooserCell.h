@@ -3,38 +3,38 @@
  */
 
 @interface EKCalendarChooserCell : EKUIConstrainedFontsTableViewCell {
-    BOOL  _checked;
+    bool  _checked;
     UIImageView * _checkmarkView;
     UIImage * _colorDot;
     UIImage * _colorDotHighlighted;
     UIImageView * _colorDotView;
-    BOOL  _shouldAnimate;
-    BOOL  _showCheckmarksOnLeft;
-    BOOL  _showsColorDot;
+    bool  _shouldAnimate;
+    bool  _showCheckmarksOnLeft;
+    bool  _showsColorDot;
 }
 
-@property (nonatomic) BOOL checked;
-@property (nonatomic) BOOL shouldAnimate;
-@property (nonatomic) BOOL showCheckmarksOnLeft;
-@property (nonatomic) BOOL showsColorDot;
+@property (nonatomic) bool checked;
+@property (nonatomic) bool shouldAnimate;
+@property (nonatomic) bool showCheckmarksOnLeft;
+@property (nonatomic) bool showsColorDot;
 
 - (void).cxx_destruct;
-- (BOOL)checked;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (bool)checked;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
-- (void)setChecked:(BOOL)arg1;
+- (void)setChecked:(bool)arg1;
 - (void)setColorDotHighlightedImage:(id)arg1;
 - (void)setColorDotImage:(id)arg1;
-- (void)setContentAlpha:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShouldAnimate:(BOOL)arg1;
-- (void)setShowCheckmarksOnLeft:(BOOL)arg1;
-- (void)setShowCheckmarksOnLeft:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShowsColorDot:(BOOL)arg1;
-- (BOOL)shouldAnimate;
-- (BOOL)showCheckmarksOnLeft;
-- (BOOL)showsColorDot;
-- (float)textLeftIndent;
+- (void)setContentAlpha:(double)arg1;
+- (void)setHighlighted:(bool)arg1 animated:(bool)arg2;
+- (void)setShouldAnimate:(bool)arg1;
+- (void)setShowCheckmarksOnLeft:(bool)arg1;
+- (void)setShowCheckmarksOnLeft:(bool)arg1 animated:(bool)arg2;
+- (void)setShowsColorDot:(bool)arg1;
+- (bool)shouldAnimate;
+- (bool)showCheckmarksOnLeft;
+- (bool)showsColorDot;
+- (double)textLeftIndent;
 
 @end

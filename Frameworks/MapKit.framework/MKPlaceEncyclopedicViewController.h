@@ -6,7 +6,7 @@
     <MKPlaceCardEncyclopedicControllerDelegate> * _encyclopedicControllerDelegate;
     <GEOEncyclopedicInfo> * _encyclopedicInfo;
     NSMutableArray * _factoidCells;
-    BOOL  _textBlockExpanded;
+    bool  _textBlockExpanded;
     MKPlaceTextBlockCell * _textCell;
 }
 
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <MKPlaceCardEncyclopedicControllerDelegate> *encyclopedicControllerDelegate;
 @property (nonatomic, retain) <GEOEncyclopedicInfo> *encyclopedicInfo;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

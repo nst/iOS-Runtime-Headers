@@ -11,13 +11,13 @@
 @property (nonatomic, retain) UILabel *subtitleLabel;
 @property (nonatomic, copy) NSString *subtitleText;
 
-+ (float)defaultHeight;
++ (double)defaultHeight;
 
 - (void).cxx_destruct;
-- (void)_configureSubTitleLabelForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_configureSubTitleLabelForBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)attributedSubtitleText;
-- (float)desiredHeightForWidth:(float)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (double)desiredHeightForWidth:(double)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)setAttributedSubtitleText:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;

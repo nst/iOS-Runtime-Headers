@@ -5,11 +5,11 @@
 
 @required
 
-- (NSString *)irisIdentifierForOriginal:(BOOL)arg1;
-- (NSURL *)irisLocalVideoDestinationURLForOriginal:(BOOL)arg1;
-- (NSString *)irisStillImagePersistenceUUIDForOriginal:(BOOL)arg1;
-- (NSString *)irisVideoPersistenceUUIDForOriginal:(BOOL)arg1;
-- (BOOL)isOriginalLocalVideoDestinationURL:(NSURL *)arg1;
-- (BOOL)shouldPersistToLivePhotoDirectory;
+- (NSString *)irisIdentifierForOriginal:(bool)arg1;
+- (NSURL *)irisLocalVideoDestinationURLForOriginal:(bool)arg1;
+- (NSString *)irisStillImagePersistenceUUIDForOriginal:(bool)arg1;
+- (NSString *)irisVideoPersistenceUUIDForOriginal:(bool)arg1;
+- (bool)isOriginalLocalVideoDestinationURL:(NSURL *)arg1;
+- (bool)shouldPersistToLivePhotoDirectory;
 
 @end

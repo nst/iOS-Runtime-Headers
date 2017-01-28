@@ -7,13 +7,14 @@
 
 - (oneway void)clientDidBecomeActiveWithBundleID:(NSString *)arg1;
 - (oneway void)clientDidResignActiveWithBundleID:(NSString *)arg1;
-- (oneway void)discardRecordingWithHandler:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (oneway void)discardRecordingWithHandler:(void *)arg1; // needs 1 arg types, found 5: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, void*
 - (oneway void)pauseRecording;
 - (oneway void)resumeRecordingWithWindowLayerContextID:(unsigned int)arg1;
-- (oneway void)setMicrophoneEnabled:(BOOL)arg1;
-- (oneway void)setupBroadcastWithHostBundleID:(void *)arg1 broadcastExtensionBundleID:(void *)arg2 broadcastConfigurationData:(void *)arg3 userInfo:(void *)arg4 handler:(void *)arg5; // needs 5 arg types, found 10: NSString *, NSString *, NSData *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
-- (oneway void)startRecordingWindowLayerContextIDs:(void *)arg1 windowSize:(void *)arg2 microphoneEnabled:(void *)arg3 cameraEnabled:(void *)arg4 broadcast:(void *)arg5 systemRecording:(void *)arg6 withHandler:(void *)arg7; // needs 7 arg types, found 14: NSArray *, struct CGSize { float x1; float x2; }, BOOL, BOOL, BOOL, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, BOOL, BOOL, void*
-- (oneway void)stopRecordingWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSError *, void*
-- (oneway void)stopRecordingWithStartClipDuration:(void *)arg1 endClipDuration:(void *)arg2 handler:(void *)arg3; // needs 3 arg types, found 9: double, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSError *, void*
+- (oneway void)setMicrophoneEnabled:(bool)arg1;
+- (oneway void)setupBroadcastWithHostBundleID:(void *)arg1 broadcastExtensionBundleID:(void *)arg2 broadcastConfigurationData:(void *)arg3 userInfo:(void *)arg4 handler:(void *)arg5; // needs 5 arg types, found 10: NSString *, NSString *, NSData *, NSDictionary *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, void*
+- (oneway void)startRecordingWindowLayerContextIDs:(void *)arg1 windowSize:(void *)arg2 microphoneEnabled:(void *)arg3 cameraEnabled:(void *)arg4 broadcast:(void *)arg5 systemRecording:(void *)arg6 withHandler:(void *)arg7; // needs 7 arg types, found 14: NSArray *, struct CGSize { double x1; double x2; }, bool, bool, bool, bool, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSError *, bool, bool, void*
+- (oneway void)stopRecordingWithHandler:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSURL *, NSError *, void*
+- (oneway void)stopRecordingWithStartClipDuration:(void *)arg1 endClipDuration:(void *)arg2 handler:(void *)arg3; // needs 3 arg types, found 9: double, double, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, NSURL *, NSError *, void*
+- (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
 
 @end

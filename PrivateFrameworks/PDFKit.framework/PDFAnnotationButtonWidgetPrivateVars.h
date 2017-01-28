@@ -4,13 +4,13 @@
 
 @interface PDFAnnotationButtonWidgetPrivateVars : NSObject {
     PDFAppearanceCharacteristics * appearanceChars;
-    int  controlType;
+    long long  controlType;
     struct __CFDictionary { } * dictionary;
-    unsigned long  fieldFlags;
+    unsigned long long  fieldFlags;
     NSString * fieldName;
     UIFont * font;
     UIColor * fontColor;
-    BOOL  highlight;
+    bool  highlight;
     NSString * onState;
     unsigned int  parentID;
     PDFView * pdfView;

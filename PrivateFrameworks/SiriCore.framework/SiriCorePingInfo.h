@@ -5,18 +5,18 @@
 @interface SiriCorePingInfo : NSObject <NSCopying> {
     double  _avgPingTime;
     NSMapTable * _outstandingPings;
-    int  _pingCount;
+    long long  _pingCount;
 }
 
 @property (nonatomic, readonly) double avgPingTime;
-@property (nonatomic, readonly) int pingCount;
+@property (nonatomic, readonly) long long pingCount;
 
 - (void).cxx_destruct;
 - (double)avgPingTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)markPingSentWithIndex:(int)arg1;
-- (void)markPongReceivedWithIndex:(int)arg1;
-- (unsigned int)numberOfUnacknowledgedPings;
-- (int)pingCount;
+- (void)markPingSentWithIndex:(long long)arg1;
+- (void)markPongReceivedWithIndex:(long long)arg1;
+- (unsigned long long)numberOfUnacknowledgedPings;
+- (long long)pingCount;
 
 @end

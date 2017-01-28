@@ -5,17 +5,17 @@
 @interface IMCallMonitor : NSObject {
     id  _callCenter;
     NSDate * _lastCallDate;
-    BOOL  _wasOnCall;
+    bool  _wasOnCall;
 }
 
 @property (nonatomic, readonly, retain) NSDate *dateLastCallEnded;
-@property (nonatomic, readonly) BOOL isOnCall;
+@property (nonatomic, readonly) bool isOnCall;
 
 + (id)sharedInstance;
 
 - (id)dateLastCallEnded;
 - (void)dealloc;
 - (id)init;
-- (BOOL)isOnCall;
+- (bool)isOnCall;
 
 @end

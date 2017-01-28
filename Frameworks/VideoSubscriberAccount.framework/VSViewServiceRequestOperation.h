@@ -4,7 +4,7 @@
 
 @interface VSViewServiceRequestOperation : VSAsyncOperation <VSViewServiceHostViewControllerDelegate> {
     <VSViewServiceRequestOperationDelegate> * _delegate;
-    BOOL  _isPresentingViewController;
+    bool  _isPresentingViewController;
     NSUUID * _requestID;
     VSFailable * _result;
     VSViewServiceHostViewController * _viewServiceHostViewController;
@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSViewServiceRequestOperationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSUUID *requestID;
 @property (nonatomic, retain) VSFailable *result;
 @property (readonly) Class superclass;

@@ -9,15 +9,15 @@
 
 @property (nonatomic, retain) CAShapeLayer *actionsMaskLayer;
 @property (nonatomic) CNAvatarView *avatarView;
-@property (nonatomic) BOOL masksToAvatar;
+@property (nonatomic) bool masksToAvatar;
 
 - (void).cxx_destruct;
 - (id)actionsMaskLayer;
 - (id)avatarView;
 - (void)layoutSubviews;
-- (BOOL)masksToAvatar;
+- (bool)masksToAvatar;
 - (void)setActionsMaskLayer:(id)arg1;
 - (void)setAvatarView:(id)arg1;
-- (void)setMasksToAvatar:(BOOL)arg1;
+- (void)setMasksToAvatar:(bool)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface PHPersonChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest> {
-    BOOL  _clientEntitled;
+    bool  _clientEntitled;
     NSString * _clientName;
     int  _clientProcessID;
     PHRelationshipChangeRequestHelper * _facesHelper;
@@ -14,7 +14,7 @@
     PHRelationshipChangeRequestHelper * _rejectedFacesGroupHelper;
 }
 
-@property (getter=isClientEntitled, nonatomic, readonly) BOOL clientEntitled;
+@property (getter=isClientEntitled, nonatomic, readonly) bool clientEntitled;
 @property (nonatomic, readonly) NSString *clientName;
 @property (nonatomic, readonly) int clientProcessID;
 @property (readonly, copy) NSString *debugDescription;
@@ -22,23 +22,23 @@
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *facesHelper;
 @property (nonatomic, copy) NSString *fullName;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) PHChangeRequestHelper *helper;
 @property (nonatomic, copy) NSString *identifier;
-@property (nonatomic) BOOL inPersonNamingModel;
+@property (nonatomic) bool inPersonNamingModel;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *keyFaceHelper;
 @property (nonatomic, readonly) NSString *managedEntityName;
-@property (nonatomic) int manualOrder;
-@property (getter=isMutated, readonly) BOOL mutated;
-@property (getter=isNew, readonly) BOOL new;
+@property (nonatomic) long long manualOrder;
+@property (getter=isMutated, readonly) bool mutated;
+@property (getter=isNew, readonly) bool new;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
 @property (nonatomic, copy) NSString *personUri;
 @property (nonatomic, readonly) PHObjectPlaceholder *placeholderForCreatedPerson;
 @property (nonatomic, readonly) PHRelationshipChangeRequestHelper *rejectedFacesGroupHelper;
 @property (readonly) Class superclass;
-@property (nonatomic) int type;
+@property (nonatomic) long long type;
 @property (nonatomic, readonly) NSString *uuid;
-@property (nonatomic) BOOL verified;
+@property (nonatomic) bool verified;
 
 + (id)changeRequestForPerson:(id)arg1;
 + (id)creationRequestForPerson;
@@ -53,12 +53,12 @@
 - (void)_prepareKeyFaceHelperIfNeeded;
 - (void)_prepareRejectedFacesGroupHelperIfNeeded;
 - (void)_setOriginalPerson:(id)arg1;
-- (BOOL)_shouldSetPersonToVerified:(id)arg1;
+- (bool)_shouldSetPersonToVerified:(id)arg1;
 - (void)addFaces:(id)arg1;
 - (void)addRejectedFaces:(id)arg1;
-- (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
-- (BOOL)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
-- (BOOL)canGenerateUUIDLocally;
+- (bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id*)arg3;
+- (bool)applyMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)canGenerateUUIDLocally;
 - (id)clientName;
 - (int)clientProcessID;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
@@ -69,16 +69,16 @@
 - (id)fullName;
 - (id)helper;
 - (id)identifier;
-- (BOOL)inPersonNamingModel;
+- (bool)inPersonNamingModel;
 - (id)initForNewObject;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
-- (BOOL)isClientEntitled;
-- (BOOL)isMutated;
-- (BOOL)isNew;
+- (bool)isClientEntitled;
+- (bool)isMutated;
+- (bool)isNew;
 - (id)keyFaceHelper;
 - (id)managedEntityName;
-- (int)manualOrder;
+- (long long)manualOrder;
 - (id)mutations;
 - (id)objectID;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
@@ -91,17 +91,17 @@
 - (void)setDisplayName:(id)arg1;
 - (void)setFullName:(id)arg1;
 - (void)setIdentifier:(id)arg1;
-- (void)setInPersonNamingModel:(BOOL)arg1;
+- (void)setInPersonNamingModel:(bool)arg1;
 - (void)setKeyFace:(id)arg1;
-- (void)setManualOrder:(int)arg1;
+- (void)setManualOrder:(long long)arg1;
 - (void)setPersonUUID:(id)arg1;
 - (void)setPersonUri:(id)arg1;
-- (void)setType:(int)arg1;
-- (void)setVerified:(BOOL)arg1;
-- (int)type;
+- (void)setType:(long long)arg1;
+- (void)setVerified:(bool)arg1;
+- (long long)type;
 - (id)uuid;
-- (BOOL)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
-- (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
-- (BOOL)verified;
+- (bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id*)arg2;
+- (bool)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (bool)verified;
 
 @end

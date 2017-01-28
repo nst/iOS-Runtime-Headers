@@ -4,21 +4,21 @@
 
 @interface PHAssetMomentProperties : PHAssetPropertySet {
     NSData * _reverseLocationData;
-    BOOL  _reverseLocationDataIsValid;
+    bool  _reverseLocationDataIsValid;
 }
 
 @property (nonatomic, readonly) NSDictionary *locationAddressDictionary;
 @property (nonatomic, readonly) NSData *reverseLocationData;
-@property (nonatomic, readonly) BOOL reverseLocationDataIsValid;
+@property (nonatomic, readonly) bool reverseLocationDataIsValid;
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
 
 - (void).cxx_destruct;
-- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
-- (id)localizedGeoDescriptionIsHome:(BOOL*)arg1;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(bool)arg3;
+- (id)localizedGeoDescriptionIsHome:(bool*)arg1;
 - (id)locationAddressDictionary;
 - (id)reverseLocationData;
-- (BOOL)reverseLocationDataIsValid;
+- (bool)reverseLocationDataIsValid;
 
 @end

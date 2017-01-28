@@ -5,18 +5,18 @@
 @interface PSKeychainSyncHeaderView : UIView <PSHeaderFooterView> {
     UILabel * _detailLabel;
     UILabel * _titleLabel;
-    BOOL  _usesCompactLayout;
+    bool  _usesCompactLayout;
 }
 
-@property (nonatomic) BOOL usesCompactLayout;
+@property (nonatomic) bool usesCompactLayout;
 
 - (void).cxx_destruct;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
-- (float)preferredHeightForWidth:(float)arg1 inTableView:(id)arg2;
+- (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;
 - (void)setDetailText:(id)arg1;
 - (void)setTitleText:(id)arg1;
-- (void)setUsesCompactLayout:(BOOL)arg1;
-- (BOOL)usesCompactLayout;
+- (void)setUsesCompactLayout:(bool)arg1;
+- (bool)usesCompactLayout;
 
 @end

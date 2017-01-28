@@ -4,36 +4,36 @@
 
 @interface NEPathControllerNetworkAgent : NENetworkAgent {
     NWInterface * _advisoryInterface;
-    id /* block */  _internalAssertHandler;
-    id /* block */  _internalUnassertHandler;
+    id  _internalAssertHandler;
+    id  _internalUnassertHandler;
     NWInterface * _predictedInterface;
-    BOOL  _weakAdvisory;
+    bool  _weakAdvisory;
 }
 
 @property (retain) NWInterface *advisoryInterface;
-@property (copy) id /* block */ internalAssertHandler;
-@property (copy) id /* block */ internalUnassertHandler;
+@property (copy) id internalAssertHandler;
+@property (copy) id internalUnassertHandler;
 @property (retain) NWInterface *predictedInterface;
-@property BOOL weakAdvisory;
+@property bool weakAdvisory;
 
 + (id)agentFromData:(id)arg1;
 + (id)agentType;
 
 - (void).cxx_destruct;
 - (id)advisoryInterface;
-- (BOOL)assertAgentWithOptions:(id)arg1;
+- (bool)assertAgentWithOptions:(id)arg1;
 - (id)copyAgentData;
-- (id /* block */)internalAssertHandler;
-- (id /* block */)internalUnassertHandler;
+- (id)internalAssertHandler;
+- (id)internalUnassertHandler;
 - (id)predictedInterface;
 - (void)setAdvisoryInterface:(id)arg1;
-- (void)setAssertHandler:(id /* block */)arg1;
-- (void)setInternalAssertHandler:(id /* block */)arg1;
-- (void)setInternalUnassertHandler:(id /* block */)arg1;
+- (void)setAssertHandler:(id)arg1;
+- (void)setInternalAssertHandler:(id)arg1;
+- (void)setInternalUnassertHandler:(id)arg1;
 - (void)setPredictedInterface:(id)arg1;
-- (void)setUnassertHandler:(id /* block */)arg1;
-- (void)setWeakAdvisory:(BOOL)arg1;
+- (void)setUnassertHandler:(id)arg1;
+- (void)setWeakAdvisory:(bool)arg1;
 - (void)unassertAgentWithOptions:(id)arg1;
-- (BOOL)weakAdvisory;
+- (bool)weakAdvisory;
 
 @end

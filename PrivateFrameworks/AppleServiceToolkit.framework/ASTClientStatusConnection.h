@@ -5,48 +5,48 @@
 @interface ASTClientStatusConnection : NSObject <ASTConnection> {
     NSDictionary * _clientStatus;
     <ASTConnectionStatusDelegate> * _delegate;
-    id /* block */  _didReceiveResponse;
-    int  _networkDisconnectedRetryCount;
+    id  _didReceiveResponse;
+    long long  _networkDisconnectedRetryCount;
     NSURLRequest * _request;
-    BOOL  _retryOnNetworkDisconnected;
-    unsigned int  _rootOfTrust;
+    bool  _retryOnNetworkDisconnected;
+    unsigned long long  _rootOfTrust;
     NSString * _sessionID;
-    int  _state;
+    long long  _state;
 }
 
 @property (nonatomic, retain) NSDictionary *clientStatus;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ASTConnectionStatusDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ didReceiveResponse;
-@property (readonly) unsigned int hash;
-@property (nonatomic) int networkDisconnectedRetryCount;
+@property (nonatomic, copy) id didReceiveResponse;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) long long networkDisconnectedRetryCount;
 @property (nonatomic, retain) NSURLRequest *request;
-@property (nonatomic) BOOL retryOnNetworkDisconnected;
-@property (nonatomic, readonly) unsigned int rootOfTrust;
+@property (nonatomic) bool retryOnNetworkDisconnected;
+@property (nonatomic, readonly) unsigned long long rootOfTrust;
 @property (nonatomic, retain) NSString *sessionID;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)clientStatus;
 - (id)delegate;
-- (id /* block */)didReceiveResponse;
+- (id)didReceiveResponse;
 - (id)generateRequest;
 - (id)initWithClientStatus:(id)arg1 sessionID:(id)arg2;
-- (int)networkDisconnectedRetryCount;
+- (long long)networkDisconnectedRetryCount;
 - (id)request;
-- (BOOL)retryOnNetworkDisconnected;
-- (unsigned int)rootOfTrust;
+- (bool)retryOnNetworkDisconnected;
+- (unsigned long long)rootOfTrust;
 - (id)sessionID;
 - (void)setClientStatus:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDidReceiveResponse:(id /* block */)arg1;
-- (void)setNetworkDisconnectedRetryCount:(int)arg1;
+- (void)setDidReceiveResponse:(id)arg1;
+- (void)setNetworkDisconnectedRetryCount:(long long)arg1;
 - (void)setRequest:(id)arg1;
-- (void)setRetryOnNetworkDisconnected:(BOOL)arg1;
+- (void)setRetryOnNetworkDisconnected:(bool)arg1;
 - (void)setSessionID:(id)arg1;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setState:(long long)arg1;
+- (long long)state;
 
 @end

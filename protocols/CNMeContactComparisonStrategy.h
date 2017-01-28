@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)isContact:(CNContact *)arg1 equivalentToMeContact:(CNContact *)arg2;
+- (bool)isContact:(CNContact *)arg1 equivalentToMeContact:(CNContact *)arg2;
 
 @end

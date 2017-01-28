@@ -3,15 +3,15 @@
  */
 
 @interface IDSKVDeleteContext : NSObject {
-    unsigned int  _rowIDCutoff;
+    unsigned long long  _rowIDCutoff;
     BOOL  _valueType;
 }
 
-@property (nonatomic) unsigned int rowIDCutoff;
+@property (nonatomic) unsigned long long rowIDCutoff;
 @property (nonatomic) BOOL valueType;
 
-- (unsigned int)rowIDCutoff;
-- (void)setRowIDCutoff:(unsigned int)arg1;
+- (unsigned long long)rowIDCutoff;
+- (void)setRowIDCutoff:(unsigned long long)arg1;
 - (void)setValueType:(BOOL)arg1;
 - (BOOL)valueType;
 

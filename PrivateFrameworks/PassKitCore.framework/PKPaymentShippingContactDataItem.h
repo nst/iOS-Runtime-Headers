@@ -8,10 +8,10 @@
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *phone;
 
-+ (int)dataType;
++ (long long)dataType;
 
 - (id)email;
-- (BOOL)isValidWithError:(id*)arg1;
+- (bool)isValidWithError:(id*)arg1;
 - (id)name;
 - (id)phone;
 

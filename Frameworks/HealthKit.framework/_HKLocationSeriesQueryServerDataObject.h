@@ -3,21 +3,21 @@
  */
 
 @interface _HKLocationSeriesQueryServerDataObject : _HKQueryServerDataObject {
-    unsigned int  _batchCount;
+    unsigned long long  _batchCount;
     HKLocationSeriesSample * _locationSeries;
 }
 
-@property (nonatomic) unsigned int batchCount;
+@property (nonatomic) unsigned long long batchCount;
 @property (nonatomic, retain) HKLocationSeriesSample *locationSeries;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (unsigned int)batchCount;
+- (unsigned long long)batchCount;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)locationSeries;
-- (void)setBatchCount:(unsigned int)arg1;
+- (void)setBatchCount:(unsigned long long)arg1;
 - (void)setLocationSeries:(id)arg1;
 
 @end

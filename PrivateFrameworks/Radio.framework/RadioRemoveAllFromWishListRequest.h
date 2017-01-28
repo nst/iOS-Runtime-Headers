@@ -11,6 +11,6 @@
 - (id)init;
 - (id)initWithTrackStoreIDs:(id)arg1;
 - (id)initWithTracks:(id)arg1;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
+- (void)startWithCompletionHandler:(id)arg1;
 
 @end

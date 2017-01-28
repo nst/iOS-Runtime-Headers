@@ -12,12 +12,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RMSServiceProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSNetServiceBrowser *netServiceBrowser;
 @property (nonatomic, readonly) NSString *searchDomain;
 @property (nonatomic, readonly) NSString *searchScope;
 @property (nonatomic, readonly) NSString *searchType;
-@property (nonatomic, readonly) int serviceDiscoverySource;
+@property (nonatomic, readonly) long long serviceDiscoverySource;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -34,15 +34,15 @@
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
 - (id)netServiceBrowser;
-- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
-- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
+- (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(bool)arg3;
+- (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(bool)arg3;
 - (void)netServiceDidResolveAddress:(id)arg1;
 - (id)searchDomain;
 - (id)searchScope;
 - (id)searchType;
-- (int)serviceDiscoverySource;
-- (int)serviceLegacyFlagsFromTXTDictionary:(id)arg1;
-- (int)serviceTypeFromTXTDictionary:(id)arg1;
+- (long long)serviceDiscoverySource;
+- (long long)serviceLegacyFlagsFromTXTDictionary:(id)arg1;
+- (long long)serviceTypeFromTXTDictionary:(id)arg1;
 - (void)setDelegate:(id)arg1;
 
 @end

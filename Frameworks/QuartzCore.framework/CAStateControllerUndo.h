@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableArray *elements;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) CAStateControllerUndo *next;
 @property (nonatomic, retain) CAState *state;
 @property (readonly) Class superclass;

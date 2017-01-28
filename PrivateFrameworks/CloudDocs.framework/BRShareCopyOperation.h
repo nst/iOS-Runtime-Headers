@@ -3,20 +3,20 @@
  */
 
 @interface BRShareCopyOperation : BROperation {
-    id /* block */  _shareCopyCompletionBlock;
+    id  _shareCopyCompletionBlock;
     NSURL * _url;
 }
 
-@property (copy) id /* block */ shareCopyCompletionBlock;
+@property (copy) id shareCopyCompletionBlock;
 @property (nonatomic, retain) NSURL *url;
 
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (void)main;
-- (void)setShareCopyCompletionBlock:(id /* block */)arg1;
+- (void)setShareCopyCompletionBlock:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (id /* block */)shareCopyCompletionBlock;
+- (id)shareCopyCompletionBlock;
 - (id)url;
 
 @end

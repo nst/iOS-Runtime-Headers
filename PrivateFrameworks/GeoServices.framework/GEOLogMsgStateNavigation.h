@@ -15,10 +15,10 @@
 }
 
 @property (nonatomic) double distanceToDestination;
-@property (nonatomic) BOOL hasDistanceToDestination;
-@property (nonatomic) BOOL hasLineType;
-@property (nonatomic, readonly) BOOL hasNavCameraState;
-@property (nonatomic) BOOL hasNavState;
+@property (nonatomic) bool hasDistanceToDestination;
+@property (nonatomic) bool hasLineType;
+@property (nonatomic, readonly) bool hasNavCameraState;
+@property (nonatomic) bool hasNavState;
 @property (nonatomic) int lineType;
 @property (nonatomic, retain) GEONavCameraState *navCameraState;
 @property (nonatomic) int navState;
@@ -31,23 +31,23 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (double)distanceToDestination;
-- (BOOL)hasDistanceToDestination;
-- (BOOL)hasLineType;
-- (BOOL)hasNavCameraState;
-- (BOOL)hasNavState;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDistanceToDestination;
+- (bool)hasLineType;
+- (bool)hasNavCameraState;
+- (bool)hasNavState;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (int)lineType;
 - (id)lineTypeAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)navCameraState;
 - (int)navState;
 - (id)navStateAsString:(int)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDistanceToDestination:(double)arg1;
-- (void)setHasDistanceToDestination:(BOOL)arg1;
-- (void)setHasLineType:(BOOL)arg1;
-- (void)setHasNavState:(BOOL)arg1;
+- (void)setHasDistanceToDestination:(bool)arg1;
+- (void)setHasLineType:(bool)arg1;
+- (void)setHasNavState:(bool)arg1;
 - (void)setLineType:(int)arg1;
 - (void)setNavCameraState:(id)arg1;
 - (void)setNavState:(int)arg1;

@@ -3,11 +3,11 @@
  */
 
 @interface UIRuntimeEventConnection : UIRuntimeConnection {
-    unsigned int  eventMask;
+    unsigned long long  eventMask;
 }
 
 @property (readonly) SEL action;
-@property unsigned int eventMask;
+@property unsigned long long eventMask;
 @property (readonly) id target;
 
 - (SEL)action;
@@ -15,9 +15,9 @@
 - (void)connectForSimulator;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)eventMask;
+- (unsigned long long)eventMask;
 - (id)initWithCoder:(id)arg1;
-- (void)setEventMask:(unsigned int)arg1;
+- (void)setEventMask:(unsigned long long)arg1;
 - (id)target;
 
 @end

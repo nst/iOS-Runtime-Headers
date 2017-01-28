@@ -3,30 +3,29 @@
  */
 
 @interface FBSProcessExecutionProvision : NSObject <BSDescriptionProviding, NSCopying> {
-    BOOL  _activated;
+    bool  _activated;
     <FBSProcessExecutionProvisionDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateCalloutQueue;
     NSError * _error;
-    BOOL  _monitoring;
+    bool  _monitoring;
     <FBSProcess> * _process;
-    BOOL  _violated;
+    bool  _violated;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSProcessExecutionProvisionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSError *error;
-@property (readonly) unsigned int hash;
-@property (getter=isMonitoring, nonatomic, readonly) BOOL monitoring;
+@property (readonly) unsigned long long hash;
+@property (getter=isMonitoring, nonatomic, readonly) bool monitoring;
 @property (nonatomic, readonly) <FBSProcess> *process;
 @property (readonly) Class superclass;
-@property (getter=isViolated, nonatomic, readonly) BOOL violated;
+@property (getter=isViolated, nonatomic, readonly) bool violated;
 
 - (void).cxx_destruct;
 - (void)_beginMonitoring;
-- (void)_noteReachedProgressMilestone;
 - (void)_noteViolatedWithError:(id)arg1;
-- (void)_performDelegateCallout:(id /* block */)arg1;
+- (void)_performDelegateCallout:(id)arg1;
 - (void)_prepareForReuse;
 - (void)_stopMonitoring;
 - (void)_updateProgress;
@@ -38,9 +37,9 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)error;
 - (id)init;
-- (BOOL)isMonitoring;
-- (BOOL)isResourceProvision;
-- (BOOL)isViolated;
+- (bool)isMonitoring;
+- (bool)isResourceProvision;
+- (bool)isViolated;
 - (void)monitorProcess:(id)arg1;
 - (void)prepareForReuse;
 - (id)process;

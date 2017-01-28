@@ -4,6 +4,6 @@
 
 @interface CDPUISignOutController : CDPUIBaseController
 
-- (void)cdpContext:(id)arg1 promptToEnableStingrayCompletion:(id /* block */)arg2;
+- (void)cdpContext:(id)arg1 promptToEnableStingrayCompletion:(id)arg2;
 
 @end

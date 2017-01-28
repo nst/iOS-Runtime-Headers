@@ -8,14 +8,14 @@
         unsigned int discoveryTypes : 1; 
         unsigned int hasPairedNetworkNames : 1; 
     }  _has;
-    BOOL  _hasPairedNetworkNames;
+    bool  _hasPairedNetworkNames;
     NSMutableArray * _pairedNetworkNames;
 }
 
 @property (nonatomic) int discoveryTypes;
-@property (nonatomic) BOOL hasDiscoveryTypes;
-@property (nonatomic) BOOL hasHasPairedNetworkNames;
-@property (nonatomic) BOOL hasPairedNetworkNames;
+@property (nonatomic) bool hasDiscoveryTypes;
+@property (nonatomic) bool hasHasPairedNetworkNames;
+@property (nonatomic) bool hasPairedNetworkNames;
 @property (nonatomic, retain) NSMutableArray *pairedNetworkNames;
 
 - (void).cxx_destruct;
@@ -26,20 +26,20 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)discoveryTypes;
-- (BOOL)hasDiscoveryTypes;
-- (BOOL)hasHasPairedNetworkNames;
-- (BOOL)hasPairedNetworkNames;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDiscoveryTypes;
+- (bool)hasHasPairedNetworkNames;
+- (bool)hasPairedNetworkNames;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)pairedNetworkNames;
-- (id)pairedNetworkNamesAtIndex:(unsigned int)arg1;
-- (unsigned int)pairedNetworkNamesCount;
-- (BOOL)readFrom:(id)arg1;
+- (id)pairedNetworkNamesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)pairedNetworkNamesCount;
+- (bool)readFrom:(id)arg1;
 - (void)setDiscoveryTypes:(int)arg1;
-- (void)setHasDiscoveryTypes:(BOOL)arg1;
-- (void)setHasHasPairedNetworkNames:(BOOL)arg1;
-- (void)setHasPairedNetworkNames:(BOOL)arg1;
+- (void)setHasDiscoveryTypes:(bool)arg1;
+- (void)setHasHasPairedNetworkNames:(bool)arg1;
+- (void)setHasPairedNetworkNames:(bool)arg1;
 - (void)setPairedNetworkNames:(id)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -4,17 +4,17 @@
 
 @interface AKAnnotationPointOfInterestHelper : NSObject
 
-+ (unsigned int)_concreteDraggableAreaForPoint:(struct CGPoint { float x1; float x2; })arg1 onAnnotation:(id)arg2 withScale:(float)arg3 pageControllerForPixelAlignment:(id)arg4;
-+ (unsigned int)_concreteDraggableAreaForPointOfInterestWithIndex:(unsigned int)arg1 ofAnnotation:(id)arg2 onPageController:(id)arg3;
++ (unsigned long long)_concreteDraggableAreaForPoint:(struct CGPoint { double x1; double x2; })arg1 onAnnotation:(id)arg2 withScale:(double)arg3 pageControllerForPixelAlignment:(id)arg4;
++ (unsigned long long)_concreteDraggableAreaForPointOfInterestWithIndex:(unsigned long long)arg1 ofAnnotation:(id)arg2 onPageController:(id)arg3;
 + (void)_concretePointsOfInterest:(id*)arg1 withVisualStyle:(id*)arg2 ofAnnotation:(id)arg3 pageControllerForPixelAlignment:(id)arg4;
-+ (struct CGPoint { float x1; float x2; })_concreteValidatePoint:(struct CGPoint { float x1; float x2; })arg1 ofDraggableArea:(unsigned int)arg2 forAnnotation:(id)arg3 onPageController:(id)arg4;
++ (struct CGPoint { double x1; double x2; })_concreteValidatePoint:(struct CGPoint { double x1; double x2; })arg1 ofDraggableArea:(unsigned long long)arg2 forAnnotation:(id)arg3 onPageController:(id)arg4;
 + (Class)_poiHelperClassForAnnotation:(id)arg1;
-+ (BOOL)_point:(struct CGPoint { float x1; float x2; })arg1 isInCircleWithRadius:(float)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
-+ (BOOL)_point:(struct CGPoint { float x1; float x2; })arg1 isInRectWithSize:(float)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3;
-+ (unsigned int)draggableAreaForPoint:(struct CGPoint { float x1; float x2; })arg1 onAnnotation:(id)arg2 withScale:(float)arg3 pageControllerForPixelAlignment:(id)arg4;
-+ (float)draggableAreaScaleFactorForScaleFactor:(float)arg1;
-+ (struct CGPoint { float x1; float x2; })pointForDraggableArea:(unsigned int)arg1 onAnnotation:(id)arg2 pageControllerForPixelAlignment:(id)arg3;
++ (bool)_point:(struct CGPoint { double x1; double x2; })arg1 isInCircleWithRadius:(double)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
++ (bool)_point:(struct CGPoint { double x1; double x2; })arg1 isInRectWithSize:(double)arg2 atPoint:(struct CGPoint { double x1; double x2; })arg3;
++ (unsigned long long)draggableAreaForPoint:(struct CGPoint { double x1; double x2; })arg1 onAnnotation:(id)arg2 withScale:(double)arg3 pageControllerForPixelAlignment:(id)arg4;
++ (double)draggableAreaScaleFactorForScaleFactor:(double)arg1;
++ (struct CGPoint { double x1; double x2; })pointForDraggableArea:(unsigned long long)arg1 onAnnotation:(id)arg2 pageControllerForPixelAlignment:(id)arg3;
 + (void)pointsOfInterest:(id*)arg1 withVisualStyle:(id*)arg2 ofAnnotation:(id)arg3 pageControllerForPixelAlignment:(id)arg4;
-+ (struct CGPoint { float x1; float x2; })validatePoint:(struct CGPoint { float x1; float x2; })arg1 ofDraggableArea:(unsigned int)arg2 forAnnotation:(id)arg3 onPageController:(id)arg4;
++ (struct CGPoint { double x1; double x2; })validatePoint:(struct CGPoint { double x1; double x2; })arg1 ofDraggableArea:(unsigned long long)arg2 forAnnotation:(id)arg3 onPageController:(id)arg4;
 
 @end

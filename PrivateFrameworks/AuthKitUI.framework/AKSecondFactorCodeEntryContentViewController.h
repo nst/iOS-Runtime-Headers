@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *generatedCode;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, copy) NSString *reason;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) AKBasicLoginContentViewController *titleHeaderViewController;
@@ -36,11 +36,11 @@
 - (void)setActiveConstraints:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setCodeGeneratorView:(id)arg1;
-- (void)setPasscodeFieldDisabled:(BOOL)arg1;
+- (void)setPasscodeFieldDisabled:(bool)arg1;
 - (void)setReason:(id)arg1;
 - (void)setTitleHeaderViewController:(id)arg1;
 - (id)titleHeaderViewController;
 - (void)updateViewConstraints;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

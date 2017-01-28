@@ -3,7 +3,7 @@
  */
 
 @interface MPModelRequest : NSObject <NSCopying, NSSecureCoding> {
-    BOOL  _allowsDeferringExpensiveProperties;
+    bool  _allowsDeferringExpensiveProperties;
     Class  _itemClass;
     MPPropertySet * _itemProperties;
     NSArray * _itemSortDescriptors;
@@ -13,7 +13,7 @@
     NSArray * _sectionSortDescriptors;
 }
 
-@property (nonatomic) BOOL allowsDeferringExpensiveProperties;
+@property (nonatomic) bool allowsDeferringExpensiveProperties;
 @property (nonatomic) Class itemClass;
 @property (nonatomic, copy) MPPropertySet *itemProperties;
 @property (nonatomic, copy) NSArray *itemSortDescriptors;
@@ -25,10 +25,10 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)sharedQueue;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)allowsDeferringExpensiveProperties;
+- (bool)allowsDeferringExpensiveProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;
@@ -38,12 +38,12 @@
 - (id)itemProperties;
 - (id)itemSortDescriptors;
 - (id)label;
-- (id)newOperationWithResponseHandler:(id /* block */)arg1;
-- (void)performWithResponseHandler:(id /* block */)arg1;
+- (id)newOperationWithResponseHandler:(id)arg1;
+- (void)performWithResponseHandler:(id)arg1;
 - (Class)sectionClass;
 - (id)sectionProperties;
 - (id)sectionSortDescriptors;
-- (void)setAllowsDeferringExpensiveProperties:(BOOL)arg1;
+- (void)setAllowsDeferringExpensiveProperties:(bool)arg1;
 - (void)setItemClass:(Class)arg1;
 - (void)setItemProperties:(id)arg1;
 - (void)setItemSortDescriptors:(id)arg1;

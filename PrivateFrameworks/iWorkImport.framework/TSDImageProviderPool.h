@@ -3,20 +3,20 @@
  */
 
 @interface TSDImageProviderPool : NSObject <TSPDataCullingListener> {
-    BOOL  mHaveRaisedFileDescriptorLimit;
+    bool  mHaveRaisedFileDescriptorLimit;
     TSUPointerKeyDictionary * mImageDataToImageProviderMap;
-    unsigned int  mOpenFileDescriptorLimit;
+    unsigned long long  mOpenFileDescriptorLimit;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (Class)p_providerClassForData:(id)arg1;
-+ (Class)p_providerClassForData:(id)arg1 validateLength:(BOOL)arg2;
++ (Class)p_providerClassForData:(id)arg1 validateLength:(bool)arg2;
 + (id)sharedPool;
 
 - (void)addInterestInProviderForData:(id)arg1;
@@ -25,19 +25,19 @@
 - (void)dealloc;
 - (void)flushImageProviders;
 - (id)init;
-- (BOOL)isBitmapData:(id)arg1;
+- (bool)isBitmapData:(id)arg1;
 - (void)p_didReceiveMemoryWarning:(id)arg1;
-- (void)p_freeFileDescriptorsWithProviderCount:(unsigned int)arg1;
-- (id)p_providerForData:(id)arg1 temporary:(BOOL)arg2 shouldValidate:(BOOL)arg3;
-- (unsigned int)p_providerLimitForFileDescriptorLimit:(unsigned int)arg1;
-- (unsigned int)p_removeProvidersWithZeroInterest;
+- (void)p_freeFileDescriptorsWithProviderCount:(unsigned long long)arg1;
+- (id)p_providerForData:(id)arg1 temporary:(bool)arg2 shouldValidate:(bool)arg3;
+- (unsigned long long)p_providerLimitForFileDescriptorLimit:(unsigned long long)arg1;
+- (unsigned long long)p_removeProvidersWithZeroInterest;
 - (void)p_updateFileDescriptorLimit;
-- (id)providerForData:(id)arg1 shouldValidate:(BOOL)arg2;
+- (id)providerForData:(id)arg1 shouldValidate:(bool)arg2;
 - (oneway void)release;
 - (void)removeInterestInProviderForData:(id)arg1;
 - (id)retain;
-- (unsigned int)retainCount;
-- (id)temporaryProviderForData:(id)arg1 shouldValidate:(BOOL)arg2;
+- (unsigned long long)retainCount;
+- (id)temporaryProviderForData:(id)arg1 shouldValidate:(bool)arg2;
 - (void)willCloseDocumentContext:(id)arg1;
 - (void)willCullData:(id)arg1;
 

@@ -7,18 +7,18 @@
 
 - (IKDOMNode *)appendChild:(IKDOMNode *)arg1;
 - (IKDOMNodeList *)childNodes;
-- (IKDOMNode *)cloneNode:(BOOL)arg1;
-- (BOOL)contains:(IKDOMNode *)arg1;
+- (IKDOMNode *)cloneNode:(bool)arg1;
+- (bool)contains:(IKDOMNode *)arg1;
 - (IKDOMNode *)firstChild;
 - (IKJSObject *)getFeature:(NSString *)arg1 :(NSString *)arg2;
-- (BOOL)hasChildNodes;
+- (bool)hasChildNodes;
 - (IKDOMNode *)insertBefore:(IKDOMNode *)arg1 :(IKDOMNode *)arg2;
-- (BOOL)isEqualNode:(IKDOMNode *)arg1;
-- (BOOL)isSameNode:(IKDOMNode *)arg1;
+- (bool)isEqualNode:(IKDOMNode *)arg1;
+- (bool)isSameNode:(IKDOMNode *)arg1;
 - (IKDOMNode *)lastChild;
 - (IKDOMNode *)nextSibling;
 - (NSString *)nodeName;
-- (int)nodeType;
+- (long long)nodeType;
 - (NSString *)nodeValue;
 - (IKDOMDocument *)ownerDocument;
 - (IKDOMNode *)parentNode;

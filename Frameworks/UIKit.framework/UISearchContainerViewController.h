@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (void)_prepareForContainerTransition:(id)arg1;
 - (void)_presentSearchControllerIfNecessary;
-- (BOOL)_transitionsChildViewControllers;
+- (bool)_transitionsChildViewControllers;
 - (void)didMoveToParentViewController:(id)arg1;
 - (id)initWithSearchController:(id)arg1;
 - (id)searchController;

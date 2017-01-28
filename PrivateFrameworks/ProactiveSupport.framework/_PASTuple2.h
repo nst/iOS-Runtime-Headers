@@ -16,11 +16,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)first;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithFirst:(id)arg1 second:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToTuple2:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToTuple2:(id)arg1;
 - (id)second;
 
 @end

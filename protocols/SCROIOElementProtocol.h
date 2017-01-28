@@ -5,7 +5,7 @@
 
 @required
 
-- (long)identifier;
+- (int)identifier;
 - (unsigned int)ioObject;
 - (int)transport;
 

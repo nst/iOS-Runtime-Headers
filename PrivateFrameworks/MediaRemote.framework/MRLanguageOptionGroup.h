@@ -3,23 +3,23 @@
  */
 
 @interface MRLanguageOptionGroup : NSObject <NSSecureCoding> {
-    BOOL  _allowEmptySelection;
+    bool  _allowEmptySelection;
     MRLanguageOption * _defaultLanguageOption;
     NSArray * _languageOptions;
 }
 
-@property (nonatomic, readonly) BOOL allowEmptySelection;
+@property (nonatomic, readonly) bool allowEmptySelection;
 @property (nonatomic, readonly) MRLanguageOption *defaultLanguageOption;
 @property (nonatomic, readonly) NSArray *languageOptions;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
-- (BOOL)allowEmptySelection;
+- (bool)allowEmptySelection;
 - (void)dealloc;
 - (id)defaultLanguageOption;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLanguageOptions:(id)arg1 defaultLanguageOption:(void*)arg2 allowEmptySelection:(BOOL)arg3;
+- (id)initWithLanguageOptions:(id)arg1 defaultLanguageOption:(void*)arg2 allowEmptySelection:(bool)arg3;
 - (id)languageOptions;
 
 @end

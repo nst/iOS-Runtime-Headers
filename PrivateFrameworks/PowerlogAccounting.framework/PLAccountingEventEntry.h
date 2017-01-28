@@ -4,26 +4,26 @@
 
 @interface PLAccountingEventEntry : PLEntry {
     PLAccountingRange * _range;
-    BOOL  _used;
+    bool  _used;
 }
 
 @property (nonatomic, readonly) int instanceDirectionality;
 @property (nonatomic, retain) PLAccountingRange *range;
-@property (nonatomic) BOOL used;
+@property (nonatomic) bool used;
 
 + (int)classDirectionality;
 
 - (void).cxx_destruct;
-- (BOOL)canMergeWithEvent:(id)arg1;
+- (bool)canMergeWithEvent:(id)arg1;
 - (id)initWithRange:(id)arg1;
 - (int)instanceDirectionality;
-- (BOOL)isEmptyEvent;
-- (BOOL)isEqualContentsWithEvent:(id)arg1;
+- (bool)isEmptyEvent;
+- (bool)isEqualContentsWithEvent:(id)arg1;
 - (void)mergeWithEvent:(id)arg1;
 - (id)range;
 - (id)rangeSinceEvent:(id)arg1;
 - (void)setRange:(id)arg1;
-- (void)setUsed:(BOOL)arg1;
-- (BOOL)used;
+- (void)setUsed:(bool)arg1;
+- (bool)used;
 
 @end

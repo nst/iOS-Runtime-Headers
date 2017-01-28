@@ -4,52 +4,52 @@
 
 @interface MKPlaceCardActionsViewController : MKPlaceSectionViewController <MKPlaceCardActionSectionViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, _MKStackViewDelegate> {
     NSArray * _actionItemArray;
-    BOOL  _allowRowSelection;
+    bool  _allowRowSelection;
     <MKPlaceCardActionControllerDelegate> * _delegate;
-    BOOL  _haveTwoColumns;
+    bool  _haveTwoColumns;
     MKMapItem * _mapItem;
-    BOOL  _showTopSeparator;
-    BOOL  _useSmallFonts;
+    bool  _showTopSeparator;
+    bool  _useSmallFonts;
     NSArray * _viewArray;
 }
 
 @property (nonatomic, copy) NSArray *actionItemArray;
-@property (nonatomic) BOOL allowRowSelection;
+@property (nonatomic) bool allowRowSelection;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MKPlaceCardActionControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL haveTwoColumns;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool haveTwoColumns;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic) BOOL showTopSeparator;
+@property (nonatomic) bool showTopSeparator;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL useSmallFonts;
+@property (nonatomic) bool useSmallFonts;
 @property (nonatomic, retain) NSArray *viewArray;
 
 - (void).cxx_destruct;
 - (void)_setUpSectionViews;
 - (id)actionItemArray;
-- (BOOL)allowRowSelection;
+- (bool)allowRowSelection;
 - (id)delegate;
-- (BOOL)haveTwoColumns;
+- (bool)haveTwoColumns;
 - (id)infoCardChildPossibleActions;
 - (id)initWithMapItem:(id)arg1;
 - (id)mapItem;
 - (void)openURL:(id)arg1;
 - (void)placeCardActionSectionView:(id)arg1 buttonWithActionItemPressed:(id)arg2;
-- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)setActionItemArray:(id)arg1;
-- (void)setAllowRowSelection:(BOOL)arg1;
+- (void)setAllowRowSelection:(bool)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHaveTwoColumns:(BOOL)arg1;
+- (void)setHaveTwoColumns:(bool)arg1;
 - (void)setMapItem:(id)arg1;
-- (void)setShowTopSeparator:(BOOL)arg1;
-- (void)setUseSmallFonts:(BOOL)arg1;
+- (void)setShowTopSeparator:(bool)arg1;
+- (void)setUseSmallFonts:(bool)arg1;
 - (void)setViewArray:(id)arg1;
-- (BOOL)showTopSeparator;
-- (BOOL)useSmallFonts;
+- (bool)showTopSeparator;
+- (bool)useSmallFonts;
 - (id)viewArray;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 - (void)viewDidLoad;
 
 @end

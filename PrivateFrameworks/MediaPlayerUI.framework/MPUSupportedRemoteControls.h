@@ -7,15 +7,15 @@
 }
 
 @property (nonatomic, readonly) NSArray *commandInfoObjects;
-@property (nonatomic, readonly) BOOL interactiveScrubbingSupported;
+@property (nonatomic, readonly) bool interactiveScrubbingSupported;
 
 - (void).cxx_destruct;
-- (BOOL)_commandIsSupported:(unsigned int)arg1 andEnabled:(BOOL*)arg2 activated:(BOOL*)arg3;
+- (bool)_commandIsSupported:(unsigned int)arg1 andEnabled:(bool*)arg2 activated:(bool*)arg3;
 - (id)commandInfoObjects;
-- (BOOL)commandIsActivated:(unsigned int)arg1;
-- (BOOL)commandIsSupportedAndEnabled:(unsigned int)arg1;
+- (bool)commandIsActivated:(unsigned int)arg1;
+- (bool)commandIsSupportedAndEnabled:(unsigned int)arg1;
 - (id)init;
 - (id)initWithMediaRemoteCommands:(id)arg1;
-- (BOOL)interactiveScrubbingSupported;
+- (bool)interactiveScrubbingSupported;
 
 @end

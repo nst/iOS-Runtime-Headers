@@ -6,20 +6,18 @@
     struct GKCDecisionTree { struct GKCDecisionNode {} *x1; struct GKCDecisionNode {} *x2; } * _decisionTree;
     GKRandomSource * _randomSource;
     GKDecisionNode * _rootNode;
-    NSArray * forest;
 }
 
 @property (nonatomic, copy) GKRandomSource *randomSource;
 @property (nonatomic, retain) GKDecisionNode *rootNode;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)findActionForAnswers:(id)arg1;
-- (void)generateForestFromExamples:(id)arg1 andAttributes:(id)arg2;
 - (id)init;
 - (id)initWithAttribute:(id)arg1;
 - (id)initWithCoder:(id)arg1;

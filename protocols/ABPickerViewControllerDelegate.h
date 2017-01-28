@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)pickerViewController:(ABPickerViewController *)arg1 shouldDismissAfterSelectingItem:(id)arg2;
-- (BOOL)pickerViewControllerShouldDismissKeyboard:(ABPickerViewController *)arg1;
+- (bool)pickerViewController:(ABPickerViewController *)arg1 shouldDismissAfterSelectingItem:(id)arg2;
+- (bool)pickerViewControllerShouldDismissKeyboard:(ABPickerViewController *)arg1;
 
 @end

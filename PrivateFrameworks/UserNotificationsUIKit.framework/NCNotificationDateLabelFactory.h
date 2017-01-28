@@ -9,13 +9,13 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (id)_labelWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(BOOL)arg4 forStyle:(int)arg5 forType:(int)arg6;
+- (id)_labelWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(bool)arg4 forStyle:(long long)arg5 forType:(int)arg6;
 - (void)_purgeRecycledLabels;
-- (id)combinedDateLabelWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(BOOL)arg4 forStyle:(int)arg5;
-- (id)endLabelWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(BOOL)arg4 forStyle:(int)arg5;
+- (id)combinedDateLabelWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(bool)arg4 forStyle:(long long)arg5;
+- (id)endLabelWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(bool)arg4 forStyle:(long long)arg5;
 - (id)init;
 - (void)recycleLabel:(id)arg1;
-- (id)startLabelWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(BOOL)arg4 forStyle:(int)arg5;
-- (int)styleForLabel:(id)arg1;
+- (id)startLabelWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(bool)arg4 forStyle:(long long)arg5;
+- (long long)styleForLabel:(id)arg1;
 
 @end

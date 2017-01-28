@@ -18,26 +18,26 @@
 }
 
 - (void).cxx_destruct;
-- (id)_applySmartLimitingToCandidates:(id)arg1 clientLimit:(unsigned int)arg2;
+- (id)_applySmartLimitingToCandidates:(id)arg1 clientLimit:(unsigned long long)arg2;
 - (id)_decPredictionFromNameItemArray:(id)arg1;
 - (id)_lookupPeopleWithNamePrefix:(id)arg1 andRecipients:(id)arg2;
 - (id)_lookupPeopleWithNamePrefixUncached:(id)arg1 andRecipients:(id)arg2;
 - (id)_lookupScoredPeopleWithNamePrefix:(id)arg1 andRecipients:(id)arg2;
 - (id)_mePredictionCacheKeyForCriteria:(id)arg1;
 - (id)_nameItemsForAllContacts;
-- (void)_namesForAllFoundOnDeviceWithCompletion:(id /* block */)arg1;
-- (id)_predictMeCardDetailForCriteria:(id)arg1 limit:(unsigned int)arg2;
-- (id)_predictionForNamesCriteria:(id)arg1 limit:(unsigned int)arg2;
-- (id)_predictionForPeopleCriteria:(id)arg1 limit:(unsigned int)arg2;
+- (void)_namesForAllFoundOnDeviceWithCompletion:(id)arg1;
+- (id)_predictMeCardDetailForCriteria:(id)arg1 limit:(unsigned long long)arg2;
+- (id)_predictionForNamesCriteria:(id)arg1 limit:(unsigned long long)arg2;
+- (id)_predictionForPeopleCriteria:(id)arg1 limit:(unsigned long long)arg2;
 - (void)_preloadContacts;
 - (void)_registerForNotifications;
 - (void)dealloc;
 - (id)init;
-- (id)predictionForCriteria:(id)arg1 limit:(unsigned int)arg2;
+- (id)predictionForCriteria:(id)arg1 limit:(unsigned long long)arg2;
 - (void)setCachedNameLookup:(id)arg1;
 - (void)setContactScorer:(id)arg1;
 - (void)setContactService:(id)arg1;
 - (void)setStore:(id)arg1;
-- (id)uncachedPredictionForNamesCriteria:(id)arg1 limit:(unsigned int)arg2;
+- (id)uncachedPredictionForNamesCriteria:(id)arg1 limit:(unsigned long long)arg2;
 
 @end

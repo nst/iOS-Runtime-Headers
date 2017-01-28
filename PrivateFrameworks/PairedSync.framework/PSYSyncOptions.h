@@ -3,38 +3,38 @@
  */
 
 @interface PSYSyncOptions : NSObject <NSSecureCoding> {
-    BOOL  _dryRun;
+    bool  _dryRun;
     NSUUID * _pairingIdentifier;
     NSUUID * _sessionIdentifier;
-    unsigned int  _syncSessionType;
-    BOOL  _terminateDuringDryRun;
+    unsigned long long  _syncSessionType;
+    bool  _terminateDuringDryRun;
     PSYTestInput * _testInput;
 }
 
-@property (nonatomic) BOOL dryRun;
+@property (nonatomic) bool dryRun;
 @property (nonatomic, retain) NSUUID *pairingIdentifier;
 @property (nonatomic, retain) NSUUID *sessionIdentifier;
-@property (nonatomic) unsigned int syncSessionType;
-@property (nonatomic) BOOL terminateDuringDryRun;
+@property (nonatomic) unsigned long long syncSessionType;
+@property (nonatomic) bool terminateDuringDryRun;
 @property (nonatomic, retain) PSYTestInput *testInput;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)dryRun;
+- (bool)dryRun;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)pairingIdentifier;
 - (id)sessionIdentifier;
-- (void)setDryRun:(BOOL)arg1;
+- (void)setDryRun:(bool)arg1;
 - (void)setPairingIdentifier:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;
-- (void)setSyncSessionType:(unsigned int)arg1;
-- (void)setTerminateDuringDryRun:(BOOL)arg1;
+- (void)setSyncSessionType:(unsigned long long)arg1;
+- (void)setTerminateDuringDryRun:(bool)arg1;
 - (void)setTestInput:(id)arg1;
-- (unsigned int)syncSessionType;
-- (BOOL)terminateDuringDryRun;
+- (unsigned long long)syncSessionType;
+- (bool)terminateDuringDryRun;
 - (id)testInput;
 
 @end

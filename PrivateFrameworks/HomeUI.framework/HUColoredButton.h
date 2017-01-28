@@ -3,22 +3,22 @@
  */
 
 @interface HUColoredButton : UIButton {
-    float  _highlightedAlpha;
-    float  _highlightedTextAlpha;
+    double  _highlightedAlpha;
+    double  _highlightedTextAlpha;
 }
 
-@property (nonatomic) float cornerRadius;
-@property (nonatomic) float highlightedAlpha;
-@property (nonatomic) float highlightedTextAlpha;
+@property (nonatomic) double cornerRadius;
+@property (nonatomic) double highlightedAlpha;
+@property (nonatomic) double highlightedTextAlpha;
 
-- (float)cornerRadius;
-- (float)highlightedAlpha;
-- (float)highlightedTextAlpha;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 highlightedAlpha:(float)arg2 highlightedTextAlpha:(float)arg3;
-- (void)setCornerRadius:(float)arg1;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setHighlightedAlpha:(float)arg1;
-- (void)setHighlightedTextAlpha:(float)arg1;
+- (double)cornerRadius;
+- (double)highlightedAlpha;
+- (double)highlightedTextAlpha;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 highlightedAlpha:(double)arg2 highlightedTextAlpha:(double)arg3;
+- (void)setCornerRadius:(double)arg1;
+- (void)setHighlighted:(bool)arg1;
+- (void)setHighlightedAlpha:(double)arg1;
+- (void)setHighlightedTextAlpha:(double)arg1;
 
 @end

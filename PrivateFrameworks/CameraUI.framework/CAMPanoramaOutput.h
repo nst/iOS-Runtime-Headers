@@ -10,7 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)_engine;
-- (void)changeToDirection:(int)arg1;
+- (void)changeToDirection:(long long)arg1;
 - (id)initWithEngine:(id)arg1;
 
 @end

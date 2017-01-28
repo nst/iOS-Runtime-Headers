@@ -11,12 +11,12 @@
 @property (retain) QLItem *previewItem;
 
 - (void).cxx_destruct;
-- (BOOL)canEnterFullScreen;
-- (BOOL)canPinchToDismiss;
-- (BOOL)canSwipeToDismiss;
+- (bool)canEnterFullScreen;
+- (bool)canPinchToDismiss;
+- (bool)canSwipeToDismiss;
 - (id)error;
 - (id)errorView;
-- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadPreviewControllerWithPreviewItem:(id)arg1 completionHandler:(id)arg2;
 - (void)loadView;
 - (id)previewItem;
 - (void)setError:(id)arg1;

@@ -4,29 +4,29 @@
 
 @interface PUZoomableGridViewControllerPadSpec : PUZoomableGridViewControllerSpec
 
-- (BOOL)canDisplayMultipleRightBarButtonItems;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionsLevelSectionHeaderContentInset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionsLevelSectionHeaderHighlightInset;
-- (struct CGSize { float x1; float x2; })collectionsLevelThumbnailSize;
-- (float)collectionsSectionHeaderHeight;
-- (int)collectionsSectionHeaderStyle;
-- (void)configureCollectionsLevelGridLayout:(id)arg1 forWidth:(float)arg2;
-- (void)configureFullMomentsLevelGridLayout:(id)arg1 forWidth:(float)arg2;
-- (void)configureYearsLevelGridLayout:(id)arg1 forWidth:(float)arg2;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })fullMomentsLevelSectionHeaderHighlightInset;
-- (struct CGSize { float x1; float x2; })fullMomentsLevelThumbnailSize;
-- (unsigned int)fullMomentsSectionHeaderBackgroundStyle;
-- (float)fullMomentsSectionHeaderHeight;
-- (int)fullMomentsSectionHeaderStyle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })magnifiedDragEdgeInsets;
-- (struct CGSize { float x1; float x2; })magnifiedImageSize;
-- (float)magnifiedYOffset;
+- (bool)canDisplayMultipleRightBarButtonItems;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionsLevelSectionHeaderContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })collectionsLevelSectionHeaderHighlightInset;
+- (struct CGSize { double x1; double x2; })collectionsLevelThumbnailSize;
+- (double)collectionsSectionHeaderHeight;
+- (long long)collectionsSectionHeaderStyle;
+- (void)configureCollectionsLevelGridLayout:(id)arg1 forWidth:(double)arg2;
+- (void)configureFullMomentsLevelGridLayout:(id)arg1 forWidth:(double)arg2;
+- (void)configureYearsLevelGridLayout:(id)arg1 forWidth:(double)arg2;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })fullMomentsLevelSectionHeaderHighlightInset;
+- (struct CGSize { double x1; double x2; })fullMomentsLevelThumbnailSize;
+- (unsigned long long)fullMomentsSectionHeaderBackgroundStyle;
+- (double)fullMomentsSectionHeaderHeight;
+- (long long)fullMomentsSectionHeaderStyle;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })magnifiedDragEdgeInsets;
+- (struct CGSize { double x1; double x2; })magnifiedImageSize;
+- (double)magnifiedYOffset;
 - (id)mapViewControllerSpec;
 - (id)newGridSpec;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })yearsLevelSectionHeaderContentInset;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })yearsLevelSectionHeaderHighlightInset;
-- (struct CGSize { float x1; float x2; })yearsLevelThumbnailSize;
-- (float)yearsSectionHeaderHeight;
-- (int)yearsSectionHeaderStyle;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })yearsLevelSectionHeaderContentInset;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })yearsLevelSectionHeaderHighlightInset;
+- (struct CGSize { double x1; double x2; })yearsLevelThumbnailSize;
+- (double)yearsSectionHeaderHeight;
+- (long long)yearsSectionHeaderStyle;
 
 @end

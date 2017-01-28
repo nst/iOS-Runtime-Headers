@@ -16,10 +16,10 @@
 @property (nonatomic, retain) NSData *dataToSign;
 @property (nonatomic, retain) NSData *digestToSign;
 @property (nonatomic) int entanglementMode;
-@property (nonatomic, readonly) BOOL hasAid;
-@property (nonatomic, readonly) BOOL hasDataToSign;
-@property (nonatomic, readonly) BOOL hasDigestToSign;
-@property (nonatomic) BOOL hasEntanglementMode;
+@property (nonatomic, readonly) bool hasAid;
+@property (nonatomic, readonly) bool hasDataToSign;
+@property (nonatomic, readonly) bool hasDigestToSign;
+@property (nonatomic) bool hasEntanglementMode;
 
 - (void).cxx_destruct;
 - (int)StringAsEntanglementMode:(id)arg1;
@@ -32,19 +32,19 @@
 - (id)digestToSign;
 - (int)entanglementMode;
 - (id)entanglementModeAsString:(int)arg1;
-- (BOOL)hasAid;
-- (BOOL)hasDataToSign;
-- (BOOL)hasDigestToSign;
-- (BOOL)hasEntanglementMode;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAid;
+- (bool)hasDataToSign;
+- (bool)hasDigestToSign;
+- (bool)hasEntanglementMode;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAid:(id)arg1;
 - (void)setDataToSign:(id)arg1;
 - (void)setDigestToSign:(id)arg1;
 - (void)setEntanglementMode:(int)arg1;
-- (void)setHasEntanglementMode:(BOOL)arg1;
+- (void)setHasEntanglementMode:(bool)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

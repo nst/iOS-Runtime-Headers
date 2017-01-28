@@ -3,40 +3,40 @@
  */
 
 @interface NTKRing : NSObject {
-    float  _backgroundRingAlpha;
-    float  _fillFraction;
-    float  _radius;
-    int  _ringStyle;
-    float  _strokeWidth;
+    double  _backgroundRingAlpha;
+    double  _fillFraction;
+    double  _radius;
+    long long  _ringStyle;
+    double  _strokeWidth;
 }
 
-@property float backgroundRingAlpha;
-@property float fillFraction;
-@property float radius;
-@property int ringStyle;
-@property float strokeWidth;
+@property double backgroundRingAlpha;
+@property double fillFraction;
+@property double radius;
+@property long long ringStyle;
+@property double strokeWidth;
 
 + (id)_fillFractionStringForFillFraction:(float)arg1 withFormatter:(id)arg2;
 + (id)fillFractionStringForFillFraction:(float)arg1;
 + (id)fillFractionStringWithSymbolForFillFraction:(float)arg1;
 
-- (float)_validFillFraction:(float)arg1;
-- (float)backgroundRingAlpha;
-- (float)fillFraction;
-- (void)fillFraction:(float)arg1;
+- (double)_validFillFraction:(double)arg1;
+- (double)backgroundRingAlpha;
+- (double)fillFraction;
+- (void)fillFraction:(double)arg1;
 - (id)fillFractionString;
 - (id)fillFractionStringWithSymbol;
 - (id)init;
-- (id)initWithFillFraction:(float)arg1 style:(int)arg2;
-- (id)initWithFillFraction:(float)arg1 style:(int)arg2 radius:(float)arg3 strokeWidth:(float)arg4;
-- (float)radius;
+- (id)initWithFillFraction:(double)arg1 style:(long long)arg2;
+- (id)initWithFillFraction:(double)arg1 style:(long long)arg2 radius:(double)arg3 strokeWidth:(double)arg4;
+- (double)radius;
 - (id)ringImage;
-- (int)ringStyle;
-- (void)setBackgroundRingAlpha:(float)arg1;
-- (void)setFillFraction:(float)arg1;
-- (void)setRadius:(float)arg1;
-- (void)setRingStyle:(int)arg1;
-- (void)setStrokeWidth:(float)arg1;
-- (float)strokeWidth;
+- (long long)ringStyle;
+- (void)setBackgroundRingAlpha:(double)arg1;
+- (void)setFillFraction:(double)arg1;
+- (void)setRadius:(double)arg1;
+- (void)setRingStyle:(long long)arg1;
+- (void)setStrokeWidth:(double)arg1;
+- (double)strokeWidth;
 
 @end

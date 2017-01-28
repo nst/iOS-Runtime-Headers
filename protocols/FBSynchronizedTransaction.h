@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)isReadyForSynchronizedCommit;
+- (bool)isReadyForSynchronizedCommit;
 - (void)performSynchronizedCommit;
 - (void)setSynchronizationDelegate:(id <FBSynchronizedTransactionDelegate>)arg1;
 - (<FBSynchronizedTransactionDelegate> *)synchronizationDelegate;

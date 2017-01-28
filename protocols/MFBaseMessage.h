@@ -8,13 +8,13 @@
 - (long long)conversationHash;
 - (unsigned int)dateReceivedInterval;
 - (unsigned int)dateSentInterval;
-- (BOOL)deleted;
-- (BOOL)flagged;
-- (BOOL)isKnownToHaveAttachments;
-- (BOOL)isVIP;
+- (bool)deleted;
+- (bool)flagged;
+- (bool)isKnownToHaveAttachments;
+- (bool)isVIP;
 - (unsigned int)mailboxID;
 - (long long)messageIDHash;
-- (BOOL)read;
-- (unsigned long)uid;
+- (bool)read;
+- (unsigned int)uid;
 
 @end

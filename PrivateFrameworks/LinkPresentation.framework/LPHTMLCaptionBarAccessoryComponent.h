@@ -9,6 +9,6 @@
 + (id)ruleDictionaryForStyle:(id)arg1;
 + (id)styleSet;
 
-- (id)initWithType:(int)arg1 style:(id)arg2 themePath:(id)arg3 generator:(id)arg4;
+- (id)initWithType:(long long)arg1 style:(id)arg2 themePath:(id)arg3 generator:(id)arg4;
 
 @end

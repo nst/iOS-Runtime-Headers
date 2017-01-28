@@ -15,9 +15,9 @@
 
 - (void).cxx_destruct;
 - (void)_removePassword:(id)arg1;
-- (BOOL)canChangeSavedPassword:(id)arg1 toUser:(id)arg2 password:(id)arg3;
-- (BOOL)canSaveUser:(id)arg1 password:(id)arg2 forUserTypedSite:(id)arg3;
-- (BOOL)changeSavedPassword:(id)arg1 toUser:(id)arg2 password:(id)arg3;
+- (bool)canChangeSavedPassword:(id)arg1 toUser:(id)arg2 password:(id)arg3;
+- (bool)canSaveUser:(id)arg1 password:(id)arg2 forUserTypedSite:(id)arg3;
+- (bool)changeSavedPassword:(id)arg1 toUser:(id)arg2 password:(id)arg3;
 - (void)removePassword:(id)arg1;
 - (void)removeSite:(id)arg1 fromPassword:(id)arg2;
 - (void)reset;

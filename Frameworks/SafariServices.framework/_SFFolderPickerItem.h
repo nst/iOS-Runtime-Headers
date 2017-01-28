@@ -4,17 +4,17 @@
 
 @interface _SFFolderPickerItem : NSObject {
     WebBookmark * _bookmark;
-    unsigned int  _depth;
+    unsigned long long  _depth;
 }
 
 @property (nonatomic, readonly) WebBookmark *bookmark;
-@property (nonatomic, readonly) unsigned int depth;
+@property (nonatomic, readonly) unsigned long long depth;
 @property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
-- (id)_initWithBookmark:(id)arg1 depth:(unsigned int)arg2;
+- (id)_initWithBookmark:(id)arg1 depth:(unsigned long long)arg2;
 - (id)bookmark;
-- (unsigned int)depth;
+- (unsigned long long)depth;
 - (id)title;
 
 @end

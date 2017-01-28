@@ -10,8 +10,8 @@
     NSString * _url;
 }
 
-@property (nonatomic) BOOL hasSize;
-@property (nonatomic, readonly) BOOL hasUrl;
+@property (nonatomic) bool hasSize;
+@property (nonatomic, readonly) bool hasUrl;
 @property (nonatomic) int size;
 @property (nonatomic, retain) NSString *url;
 
@@ -21,14 +21,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSize;
-- (BOOL)hasUrl;
-- (unsigned int)hash;
+- (bool)hasSize;
+- (bool)hasUrl;
+- (unsigned long long)hash;
 - (id)initWithPlaceDataPhotoContent:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
-- (void)setHasSize:(BOOL)arg1;
+- (bool)readFrom:(id)arg1;
+- (void)setHasSize:(bool)arg1;
 - (void)setSize:(int)arg1;
 - (void)setUrl:(id)arg1;
 - (int)size;

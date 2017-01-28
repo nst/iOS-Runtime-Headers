@@ -4,12 +4,12 @@
 
 @interface _IDSDeviceConnection : NSObject <IDSDaemonListenerProtocol> {
     NSString * _connectionUUID;
-    BOOL  _hasTimedOut;
+    bool  _hasTimedOut;
     NSInputStream * _inputStreamForSocket;
-    BOOL  _isDefaultPairedDevice;
-    unsigned int  _mtu;
+    bool  _isDefaultPairedDevice;
+    unsigned long long  _mtu;
     NSString * _nsuuid;
-    id /* block */  _openSocketCompletionHandler;
+    id  _openSocketCompletionHandler;
     NSString * _openSocketCompletionHandlerID;
     NSObject<OS_dispatch_queue> * _openSocketCompletionHandlerQueue;
     NSOutputStream * _outputStreamForSocket;
@@ -21,9 +21,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, retain) NSInputStream *inputStream;
-@property (nonatomic, readonly) unsigned int mtu;
+@property (nonatomic, readonly) unsigned long long mtu;
 @property (nonatomic, readonly, retain) NSOutputStream *outputStream;
 @property (nonatomic, readonly) int socket;
 @property (readonly) Class superclass;
@@ -35,13 +35,13 @@
 - (void)close;
 - (void)dealloc;
 - (id)deviceConnectionKey;
-- (id)initWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3 queue:(id)arg4;
+- (id)initWithDevice:(id)arg1 options:(id)arg2 completionHandler:(id)arg3 queue:(id)arg4;
 - (id)inputStream;
-- (unsigned int)mtu;
+- (unsigned long long)mtu;
 - (id)outputStream;
 - (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
 - (int)socket;
-- (BOOL)updateConnectionWithOptions:(id)arg1 error:(id*)arg2;
+- (bool)updateConnectionWithOptions:(id)arg1 error:(id*)arg2;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 
 @end

@@ -13,7 +13,7 @@
 @property (nonatomic, retain) NSArray *plugins;
 
 - (void).cxx_destruct;
-- (void)_enumerateObjectsInArray:(id)arg1 conformingToProtocol:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)_enumerateObjectsInArray:(id)arg1 conformingToProtocol:(id)arg2 usingBlock:(id)arg3;
 - (id)_internalPluginsPath;
 - (Class)_loadPrincipalClassesConformingToProtocol:(id)arg1 withBundleAtPath:(id)arg2;
 - (id)_loadPrincipalClassesConformingToProtocol:(id)arg1 withBundleDirectoryPath:(id)arg2;

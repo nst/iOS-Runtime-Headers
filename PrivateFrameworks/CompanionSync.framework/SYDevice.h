@@ -3,29 +3,33 @@
  */
 
 @interface SYDevice : NSObject <NRDevicePropertyObserver, SYStateLoggable> {
+    bool  _cachedIsNearby;
+    bool  _hasCachedNearby;
     NRDevice * _nrDevice;
     NSUUID * _pairingID;
-    int  _state;
+    long long  _state;
 }
 
-@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (getter=isActive, nonatomic, readonly) bool active;
+@property (nonatomic) bool cachedIsNearby;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *deviceClass;
-@property (nonatomic, readonly) int deviceCode;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) long long deviceCode;
+@property (nonatomic) bool hasCachedNearby;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSDate *lastActiveDate;
 @property (nonatomic, readonly) NRDevice *nrDevice;
-@property (getter=isPaired, nonatomic, readonly) BOOL paired;
+@property (getter=isPaired, nonatomic, readonly) bool paired;
 @property (nonatomic, readonly) NSUUID *pairingID;
 @property (nonatomic, readonly, copy) NSString *pairingStorePath;
-@property (nonatomic) int state;
+@property (nonatomic) long long state;
 @property (nonatomic, readonly) PBCodable *stateForLogging;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsFileTransferMessageSend;
+@property (nonatomic, readonly) bool supportsFileTransferMessageSend;
 @property (nonatomic, readonly) NSString *systemBuildVersion;
 @property (nonatomic, readonly) NSString *systemVersion;
-@property (getter=isTargetable, nonatomic, readonly) BOOL targetable;
+@property (getter=isTargetable, nonatomic, readonly) bool targetable;
 
 + (id)deviceForIDSDevice:(id)arg1;
 + (id)deviceForIDSDeviceID:(id)arg1 fromList:(id)arg2;
@@ -34,27 +38,31 @@
 + (id)targetableDevice;
 
 - (void).cxx_destruct;
-- (void)_updateStateFlagsPostingNotifications:(BOOL)arg1;
+- (void)_updateStateFlagsPostingNotifications:(bool)arg1;
+- (bool)cachedIsNearby;
 - (id)debugDescription;
 - (id)description;
 - (void)device:(id)arg1 propertyDidChange:(id)arg2 fromValue:(id)arg3;
 - (id)deviceClass;
-- (int)deviceCode;
+- (long long)deviceCode;
 - (id)findMatchingIDSDeviceFromList:(id)arg1;
+- (bool)hasCachedNearby;
 - (id)init;
 - (id)initWithNRDevice:(id)arg1;
-- (BOOL)isActive;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isPaired;
-- (BOOL)isTargetable;
+- (bool)isActive;
+- (bool)isEqual:(id)arg1;
+- (bool)isPaired;
+- (bool)isTargetable;
 - (id)lastActiveDate;
 - (id)nrDevice;
 - (id)pairingID;
 - (id)pairingStorePath;
-- (void)setState:(int)arg1;
-- (int)state;
+- (void)setCachedIsNearby:(bool)arg1;
+- (void)setHasCachedNearby:(bool)arg1;
+- (void)setState:(long long)arg1;
+- (long long)state;
 - (id)stateForLogging;
-- (BOOL)supportsFileTransferMessageSend;
+- (bool)supportsFileTransferMessageSend;
 - (id)systemBuildVersion;
 - (id)systemVersion;
 

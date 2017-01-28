@@ -4,16 +4,16 @@
 
 @interface AWDMetricContainer : NSObject {
     PBCodable * _metric;
-    unsigned long  _metricId;
+    unsigned int  _metricId;
 }
 
 @property (nonatomic, retain) PBCodable *metric;
-@property (nonatomic, readonly) unsigned long metricId;
+@property (nonatomic, readonly) unsigned int metricId;
 
 - (void).cxx_destruct;
-- (id)initWithMetricId:(unsigned long)arg1;
+- (id)initWithMetricId:(unsigned int)arg1;
 - (id)metric;
-- (unsigned long)metricId;
+- (unsigned int)metricId;
 - (void)setMetric:(id)arg1;
 
 @end

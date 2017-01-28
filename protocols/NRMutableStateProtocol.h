@@ -8,7 +8,7 @@
 + (<NRDiffProtocol> *)diffFrom:(id <NRMutableStateProtocol>)arg1 to:(id <NRMutableStateProtocol>)arg2;
 
 - (<NRDiffProtocol> *)applyDiff:(id <NRDiffProtocol>)arg1;
-- (<NRDiffProtocol> *)applyDiff:(id <NRDiffProtocol>)arg1 upOnly:(BOOL)arg2 notifyParent:(BOOL)arg3 unconditional:(BOOL)arg4;
+- (<NRDiffProtocol> *)applyDiff:(id <NRDiffProtocol>)arg1 upOnly:(bool)arg2 notifyParent:(bool)arg3 unconditional:(bool)arg4;
 - (NSObject<OS_dispatch_queue> *)queue;
 
 @end

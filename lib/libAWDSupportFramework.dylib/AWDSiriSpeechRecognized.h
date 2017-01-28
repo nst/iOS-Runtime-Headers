@@ -15,9 +15,9 @@
 
 @property (nonatomic) unsigned long long durationFromVoiceRecordingEnd;
 @property (nonatomic) unsigned long long durationFromVoiceSendEnd;
-@property (nonatomic) BOOL hasDurationFromVoiceRecordingEnd;
-@property (nonatomic) BOOL hasDurationFromVoiceSendEnd;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasDurationFromVoiceRecordingEnd;
+@property (nonatomic) bool hasDurationFromVoiceSendEnd;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -26,18 +26,18 @@
 - (id)dictionaryRepresentation;
 - (unsigned long long)durationFromVoiceRecordingEnd;
 - (unsigned long long)durationFromVoiceSendEnd;
-- (BOOL)hasDurationFromVoiceRecordingEnd;
-- (BOOL)hasDurationFromVoiceSendEnd;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDurationFromVoiceRecordingEnd;
+- (bool)hasDurationFromVoiceSendEnd;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDurationFromVoiceRecordingEnd:(unsigned long long)arg1;
 - (void)setDurationFromVoiceSendEnd:(unsigned long long)arg1;
-- (void)setHasDurationFromVoiceRecordingEnd:(BOOL)arg1;
-- (void)setHasDurationFromVoiceSendEnd:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasDurationFromVoiceRecordingEnd:(bool)arg1;
+- (void)setHasDurationFromVoiceSendEnd:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

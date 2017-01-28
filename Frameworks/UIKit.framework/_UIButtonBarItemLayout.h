@@ -6,7 +6,7 @@
     NSLayoutConstraint * _groupSameSize;
     UIBarButtonItem * _item;
     UIView * _itemView;
-    id /* block */  _itemViewGenerator;
+    id  _itemViewGenerator;
     NSLayoutConstraint * _maximumAlignmentSize;
     NSLayoutConstraint * _popoverGuideHeight;
     NSLayoutConstraint * _popoverGuideLeading;
@@ -17,7 +17,7 @@
     bool  _useGroupSizing;
 }
 
-@property (nonatomic, copy) id /* block */ itemViewGenerator;
+@property (nonatomic, copy) id itemViewGenerator;
 @property (nonatomic, readonly) UILayoutGuide *popoverLayoutGuide;
 @property (nonatomic) bool useGroupSizing;
 
@@ -32,10 +32,10 @@
 - (id)description;
 - (id)initWithLayoutMetrics:(id)arg1;
 - (id)initWithLayoutMetrics:(id)arg1 barButtonItem:(id)arg2;
-- (id /* block */)itemViewGenerator;
-- (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
+- (id)itemViewGenerator;
+- (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (id)popoverLayoutGuide;
-- (void)setItemViewGenerator:(id /* block */)arg1;
+- (void)setItemViewGenerator:(id)arg1;
 - (void)setUseGroupSizing:(bool)arg1;
 - (bool)useGroupSizing;
 

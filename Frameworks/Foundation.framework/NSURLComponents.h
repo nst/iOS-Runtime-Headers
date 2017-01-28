@@ -18,14 +18,14 @@
 @property (copy) NSNumber *port;
 @property (copy) NSString *query;
 @property (copy) NSArray *queryItems;
-@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfFragment;
-@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfHost;
-@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfPassword;
-@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfPath;
-@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfPort;
-@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfQuery;
-@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfScheme;
-@property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfUser;
+@property (readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeOfFragment;
+@property (readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeOfHost;
+@property (readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeOfPassword;
+@property (readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeOfPath;
+@property (readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeOfPort;
+@property (readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeOfQuery;
+@property (readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeOfScheme;
+@property (readonly) struct _NSRange { unsigned long long x1; unsigned long long x2; } rangeOfUser;
 @property (copy) NSString *scheme;
 @property (readonly, copy) NSString *string;
 @property (copy) NSString *user;
@@ -34,7 +34,7 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)componentsWithString:(id)arg1;
-+ (id)componentsWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
++ (id)componentsWithURL:(id)arg1 resolvingAgainstBaseURL:(bool)arg2;
 
 - (id)URL;
 - (id)URLRelativeToURL:(id)arg1;
@@ -43,7 +43,7 @@
 - (id)host;
 - (id)init;
 - (id)initWithString:(id)arg1;
-- (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
+- (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(bool)arg2;
 - (id)password;
 - (id)path;
 - (id)percentEncodedFragment;
@@ -55,14 +55,14 @@
 - (id)port;
 - (id)query;
 - (id)queryItems;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfFragment;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfHost;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfPassword;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfPath;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfPort;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfQuery;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfScheme;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfUser;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfFragment;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfHost;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfPassword;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfPath;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfPort;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfQuery;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfScheme;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })rangeOfUser;
 - (id)scheme;
 - (void)setFragment:(id)arg1;
 - (void)setHost:(id)arg1;
@@ -88,7 +88,7 @@
 - (id)parsec_normalizedURLStringForDeepLinkWhitelist;
 - (id)parsec_normalizedURLStringForLDAModel;
 - (id)parsec_normalizedURLStringForTLDFeatures;
-- (id)parsec_normalizedURLStringWithOptions:(unsigned int)arg1;
+- (id)parsec_normalizedURLStringWithOptions:(unsigned long long)arg1;
 
 // Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
 
@@ -97,7 +97,7 @@
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
-- (BOOL)containsQueryItemWithName:(id)arg1;
+- (bool)containsQueryItemWithName:(id)arg1;
 - (id)firstQueryItemWithName:(id)arg1;
 
 @end

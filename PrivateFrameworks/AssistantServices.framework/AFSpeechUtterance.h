@@ -3,29 +3,29 @@
  */
 
 @interface AFSpeechUtterance : NSObject <NSSecureCoding> {
-    int  _confidenceScore;
+    long long  _confidenceScore;
     NSArray * _interpretationIndices;
-    int  _source;
+    long long  _source;
 }
 
-@property (nonatomic) int confidenceScore;
+@property (nonatomic) long long confidenceScore;
 @property (nonatomic, copy) NSArray *interpretationIndices;
-@property (nonatomic) int source;
+@property (nonatomic) long long source;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (int)confidenceScore;
+- (long long)confidenceScore;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInterpretationIndices:(id)arg1 confidenceScore:(int)arg2;
+- (id)initWithInterpretationIndices:(id)arg1 confidenceScore:(long long)arg2;
 - (id)interpretationIndices;
-- (BOOL)isEqual:(id)arg1;
-- (void)setConfidenceScore:(int)arg1;
+- (bool)isEqual:(id)arg1;
+- (void)setConfidenceScore:(long long)arg1;
 - (void)setInterpretationIndices:(id)arg1;
-- (void)setSource:(int)arg1;
-- (int)source;
+- (void)setSource:(long long)arg1;
+- (long long)source;
 
 @end

@@ -6,7 +6,7 @@
     NSDictionary * _componentDictionary;
     NSArray * _ineligibleGratisIdentifiers;
     NSDictionary * _items;
-    int  _layoutStyle;
+    long long  _layoutStyle;
     double  _pageGenerationTime;
     NSDictionary * _platformKeyProfileOverrides;
     NSMutableSet * _unavailableItems;
@@ -16,7 +16,7 @@
 @property (nonatomic, copy) NSDictionary *componentDictionary;
 @property (nonatomic, copy) NSArray *ineligibleGratisIdentifiers;
 @property (nonatomic, copy) NSDictionary *items;
-@property (nonatomic) int layoutStyle;
+@property (nonatomic) long long layoutStyle;
 @property (nonatomic, readonly) double pageGenerationTime;
 @property (nonatomic, copy) NSDictionary *platformKeyProfileOverrides;
 
@@ -27,16 +27,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)ineligibleGratisIdentifiers;
 - (id)init;
-- (BOOL)isUnavailableItemIdentifier:(id)arg1;
+- (bool)isUnavailableItemIdentifier:(id)arg1;
 - (id)itemForItemIdentifier:(id)arg1;
 - (id)items;
-- (int)layoutStyle;
+- (long long)layoutStyle;
 - (double)pageGenerationTime;
 - (id)platformKeyProfileOverrides;
 - (void)setComponentDictionary:(id)arg1;
 - (void)setIneligibleGratisIdentifiers:(id)arg1;
 - (void)setItems:(id)arg1;
-- (void)setLayoutStyle:(int)arg1;
+- (void)setLayoutStyle:(long long)arg1;
 - (void)setPlatformKeyProfileOverrides:(id)arg1;
 - (void)setUnavailableItemIdentifiers:(id)arg1;
 

@@ -4,11 +4,11 @@
 
 @interface ABVCardCardDAVRecord : ABVCardRecord
 
-+ (BOOL)includeABClipRectInVCardPhotos;
-+ (BOOL)includeImageURIInVCards;
-+ (BOOL)includeNotesInVCards;
-+ (BOOL)includeREVInVCards;
++ (bool)includeABClipRectInVCardPhotos;
++ (bool)includeImageURIInVCards;
++ (bool)includeNotesInVCards;
++ (bool)includeREVInVCards;
 
-- (BOOL)useThumbnailImageFormatIfAvailable;
+- (bool)useThumbnailImageFormatIfAvailable;
 
 @end

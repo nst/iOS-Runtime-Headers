@@ -12,7 +12,7 @@
 + (id)alternateTimeProposalFromICSCString:(id)arg1;
 + (int)statusFromICSString:(id)arg1;
 
-- (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+- (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 - (void)setStartDate:(id)arg1;
 - (void)setStatus:(int)arg1;
 - (id)startDate;

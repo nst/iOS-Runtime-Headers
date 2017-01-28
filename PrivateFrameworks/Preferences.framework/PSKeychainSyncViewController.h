@@ -14,7 +14,7 @@
 - (id)delegate;
 - (id)groupSpecifier;
 - (id)headerView;
-- (float)heightForHeaderInTableView:(id)arg1;
+- (double)heightForHeaderInTableView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)specifiers;

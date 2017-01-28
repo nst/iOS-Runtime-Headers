@@ -4,11 +4,11 @@
 
 @interface CUIKEventHeuristics : NSObject
 
-+ (BOOL)_shouldFilterEvent:(id)arg1 filterOptions:(unsigned int)arg2;
-+ (id)_sortedAndFilteredEventsForPredicate:(id)arg1 filterOptions:(unsigned int)arg2 sortMethod:(unsigned int)arg3 eventStore:(id)arg4;
-+ (id)_sortedEvents:(id)arg1 withMethod:(unsigned int)arg2;
-+ (id)todaysEventsInCalendars:(id)arg1 filterOptions:(unsigned int)arg2 sortMethod:(unsigned int)arg3 eventStore:(id)arg4;
-+ (id)tomorrowsEventsInCalendars:(id)arg1 filterOptions:(unsigned int)arg2 sortMethod:(unsigned int)arg3 eventStore:(id)arg4;
-+ (id)upcomingEventsInCalendars:(id)arg1 onlyReturnFirstEvents:(BOOL)arg2 filterOptions:(unsigned int)arg3 sortMethod:(unsigned int)arg4 eventStore:(id)arg5;
++ (bool)_shouldFilterEvent:(id)arg1 filterOptions:(unsigned long long)arg2;
++ (id)_sortedAndFilteredEventsForPredicate:(id)arg1 filterOptions:(unsigned long long)arg2 sortMethod:(unsigned long long)arg3 eventStore:(id)arg4;
++ (id)_sortedEvents:(id)arg1 withMethod:(unsigned long long)arg2;
++ (id)todaysEventsInCalendars:(id)arg1 filterOptions:(unsigned long long)arg2 sortMethod:(unsigned long long)arg3 eventStore:(id)arg4;
++ (id)tomorrowsEventsInCalendars:(id)arg1 filterOptions:(unsigned long long)arg2 sortMethod:(unsigned long long)arg3 eventStore:(id)arg4;
++ (id)upcomingEventsInCalendars:(id)arg1 onlyReturnFirstEvents:(bool)arg2 filterOptions:(unsigned long long)arg3 sortMethod:(unsigned long long)arg4 eventStore:(id)arg5;
 
 @end

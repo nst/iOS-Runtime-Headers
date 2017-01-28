@@ -4,10 +4,10 @@
 
 @interface CAMLowDiskSpaceAlertView : UIAlertView
 
-+ (id)lowDiskAlertControllerWithTitle:(id)arg1 message:(id)arg2 settingsActionHandler:(id /* block */)arg3;
++ (id)lowDiskAlertControllerWithTitle:(id)arg1 message:(id)arg2 settingsActionHandler:(id)arg3;
 + (void)showUsageSettings;
 
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
-- (id)initWithTitle:(id)arg1 message:(id)arg2 showSettingsButton:(BOOL)arg3 delegate:(id)arg4;
+- (id)initWithTitle:(id)arg1 message:(id)arg2 showSettingsButton:(bool)arg3 delegate:(id)arg4;
 
 @end

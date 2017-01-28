@@ -5,21 +5,21 @@
 
 @required
 
-- (void)asyncPeopleScanningProgress:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, float, unsigned int, void*
-- (BOOL)featureUnlockUserDefault;
-- (unsigned int)homeMembersCount;
+- (void)asyncPeopleScanningProgress:(void *)arg1; // needs 1 arg types, found 7: id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, double, unsigned long long, void*
+- (bool)featureUnlockUserDefault;
+- (unsigned long long)homeMembersCount;
 - (void)loadQueryData;
-- (unsigned int)pendingAssetCount;
-- (unsigned int)plusMembersCount;
-- (unsigned int)processedAssetCount;
-- (void)setFeatureUnlockUserDefault:(BOOL)arg1;
-- (float)syncPeopleScanningProgress;
-- (unsigned int)totalAssetCount;
-- (unsigned int)verifiedCount;
+- (unsigned long long)pendingAssetCount;
+- (unsigned long long)plusMembersCount;
+- (unsigned long long)processedAssetCount;
+- (void)setFeatureUnlockUserDefault:(bool)arg1;
+- (double)syncPeopleScanningProgress;
+- (unsigned long long)totalAssetCount;
+- (unsigned long long)verifiedCount;
 
 @optional
 
-- (unsigned int)cachedUnlockValue;
-- (void)setCachedUnlockValue:(unsigned int)arg1;
+- (unsigned long long)cachedUnlockValue;
+- (void)setCachedUnlockValue:(unsigned long long)arg1;
 
 @end

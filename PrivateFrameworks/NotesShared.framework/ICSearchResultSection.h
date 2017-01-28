@@ -20,7 +20,7 @@
 - (id)identifierToSearchResult;
 - (id)identifiers;
 - (id)init;
-- (BOOL)removeSearchResultForIdentifier:(id)arg1 forHiding:(BOOL)arg2;
+- (bool)removeSearchResultForIdentifier:(id)arg1 forHiding:(bool)arg2;
 - (void)resetToSearchResults:(id)arg1;
 - (id)searchResults;
 - (void)setHiddenSearchResults:(id)arg1;

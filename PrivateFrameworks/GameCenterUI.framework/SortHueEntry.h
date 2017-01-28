@@ -3,18 +3,18 @@
  */
 
 @interface SortHueEntry : NSObject {
-    int  _count;
-    int  _hue;
+    long long  _count;
+    long long  _hue;
 }
 
-@property (nonatomic) int count;
-@property (nonatomic) int hue;
+@property (nonatomic) long long count;
+@property (nonatomic) long long hue;
 
-- (int)count;
+- (long long)count;
 - (id)description;
-- (int)hue;
-- (id)initWithHue:(unsigned long)arg1 count:(unsigned long)arg2;
-- (void)setCount:(int)arg1;
-- (void)setHue:(int)arg1;
+- (long long)hue;
+- (id)initWithHue:(unsigned int)arg1 count:(unsigned int)arg2;
+- (void)setCount:(long long)arg1;
+- (void)setHue:(long long)arg1;
 
 @end

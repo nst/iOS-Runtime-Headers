@@ -5,16 +5,16 @@
 @interface WBUFormAutoFillMultipleLoginsAlertController : UIAlertController {
     id  _appDidEnterBackgroundObserver;
     UIAlertAction * _cancelAction;
-    BOOL  _cancelsWhenAppEntersBackground;
+    bool  _cancelsWhenAppEntersBackground;
 }
 
-@property (nonatomic) BOOL cancelsWhenAppEntersBackground;
+@property (nonatomic) bool cancelsWhenAppEntersBackground;
 
-+ (id)alertControllerWithMatches:(id)arg1 currentUser:(id)arg2 currentPassword:(id)arg3 lastGeneratedPassword:(id)arg4 formURL:(id)arg5 preferredStyle:(int)arg6 completionHandler:(id /* block */)arg7;
++ (id)alertControllerWithMatches:(id)arg1 currentUser:(id)arg2 currentPassword:(id)arg3 lastGeneratedPassword:(id)arg4 formURL:(id)arg5 preferredStyle:(long long)arg6 completionHandler:(id)arg7;
 
 - (void).cxx_destruct;
-- (BOOL)cancelsWhenAppEntersBackground;
-- (void)setCancelsWhenAppEntersBackground:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (bool)cancelsWhenAppEntersBackground;
+- (void)setCancelsWhenAppEntersBackground:(bool)arg1;
+- (void)viewWillDisappear:(bool)arg1;
 
 @end

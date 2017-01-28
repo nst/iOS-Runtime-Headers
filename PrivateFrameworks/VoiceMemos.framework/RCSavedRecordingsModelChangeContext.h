@@ -13,13 +13,13 @@
 @property (nonatomic, readonly, copy) NSArray *updatedObjects;
 
 - (void).cxx_destruct;
-- (id)_recordingURIsInArray:(id)arg1 includeTemporaryURIs:(BOOL)arg2;
+- (id)_recordingURIsInArray:(id)arg1 includeTemporaryURIs:(bool)arg2;
 - (id)deletedObjects;
-- (id)deletedRecordingURIsIncludingTemporaryURIs:(BOOL)arg1;
+- (id)deletedRecordingURIsIncludingTemporaryURIs:(bool)arg1;
 - (id)initWithStateFromManagedObjectContext:(id)arg1;
 - (id)insertedObjects;
-- (id)insertedRecordingURIsIncludingTemporaryURIs:(BOOL)arg1;
+- (id)insertedRecordingURIsIncludingTemporaryURIs:(bool)arg1;
 - (id)updatedObjects;
-- (id)updatedRecordingURIsIncludingTemporaryURIs:(BOOL)arg1;
+- (id)updatedRecordingURIsIncludingTemporaryURIs:(bool)arg1;
 
 @end

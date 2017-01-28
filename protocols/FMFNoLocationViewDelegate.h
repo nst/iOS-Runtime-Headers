@@ -5,7 +5,7 @@
 
 @required
 
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
+- (struct UIEdgeInsets { double x1; double x2; double x3; double x4; })edgeInsets;
 - (NSSet *)handlesShowingLocations;
 
 @end

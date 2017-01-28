@@ -16,8 +16,8 @@
 
 - (unsigned int)concernID;
 - (void)dealloc;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)message;
 - (id)player;
 - (void)setConcernID:(unsigned int)arg1;

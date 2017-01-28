@@ -3,9 +3,9 @@
  */
 
 @interface C3DAnimationBinding : NSObject {
-    struct __C3DModelTarget { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; void *x2; void *x3; short x4; short x5; int (*x6)(); int (*x7)(); int (*x8)(); } * _destination;
+    struct __C3DModelTarget { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; void *x2; void *x3; short x4; short x5; int (*x6)(); int (*x7)(); int (*x8)(); } * _destination;
     void * _owner;
-    struct __C3DModelTarget { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; void *x2; void *x3; short x4; short x5; int (*x6)(); int (*x7)(); int (*x8)(); } * _source;
+    struct __C3DModelTarget { struct __CFRuntimeBase { unsigned long long x_1_1_1; unsigned char x_1_1_2[4]; unsigned int x_1_1_3; } x1; void *x2; void *x3; short x4; short x5; int (*x6)(); int (*x7)(); int (*x8)(); } * _source;
 }
 
 - (void)dealloc;

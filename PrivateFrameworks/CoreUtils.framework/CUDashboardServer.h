@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)_readHandler:(int)arg1;
-- (long)activate;
+- (int)activate;
 - (void)dealloc;
 - (id)init;
 - (void)invalidate;

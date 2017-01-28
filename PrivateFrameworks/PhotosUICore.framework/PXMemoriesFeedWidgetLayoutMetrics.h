@@ -4,24 +4,24 @@
 
 @interface PXMemoriesFeedWidgetLayoutMetrics : PXMemoriesFeedLayoutMetrics {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _interitemSpacing;
-    unsigned int  _numberOfColumns;
-    unsigned int  _numberOfRows;
+    unsigned long long  _numberOfColumns;
+    unsigned long long  _numberOfRows;
 }
 
-@property (nonatomic) struct CGSize { float x1; float x2; } interitemSpacing;
-@property (nonatomic) unsigned int numberOfColumns;
-@property (nonatomic) unsigned int numberOfRows;
+@property (nonatomic) struct CGSize { double x1; double x2; } interitemSpacing;
+@property (nonatomic) unsigned long long numberOfColumns;
+@property (nonatomic) unsigned long long numberOfRows;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (struct CGSize { float x1; float x2; })interitemSpacing;
-- (unsigned int)numberOfColumns;
-- (unsigned int)numberOfRows;
-- (void)setInteritemSpacing:(struct CGSize { float x1; float x2; })arg1;
-- (void)setNumberOfColumns:(unsigned int)arg1;
-- (void)setNumberOfRows:(unsigned int)arg1;
+- (struct CGSize { double x1; double x2; })interitemSpacing;
+- (unsigned long long)numberOfColumns;
+- (unsigned long long)numberOfRows;
+- (void)setInteritemSpacing:(struct CGSize { double x1; double x2; })arg1;
+- (void)setNumberOfColumns:(unsigned long long)arg1;
+- (void)setNumberOfRows:(unsigned long long)arg1;
 
 @end

@@ -12,13 +12,13 @@
 @property (nonatomic, readonly, copy) NSUUID *inviteeUUID;
 @property (nonatomic, readonly, copy) NSString *inviteeUserID;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInviteeUserID:(id)arg1 inviteeName:(id)arg2 invitationState:(int)arg3 expiryDate:(id)arg4;
+- (id)initWithInviteeUserID:(id)arg1 inviteeName:(id)arg2 invitationState:(long long)arg3 expiryDate:(id)arg4;
 - (id)inviteeName;
 - (id)inviteeUUID;
 - (id)inviteeUserID;

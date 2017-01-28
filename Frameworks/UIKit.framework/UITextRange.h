@@ -4,18 +4,18 @@
 
 @interface UITextRange : NSObject
 
-@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
+@property (getter=isEmpty, nonatomic, readonly) bool empty;
 @property (nonatomic, readonly) UITextPosition *end;
-@property (getter=_isCaret, nonatomic, readonly) BOOL isCaret;
+@property (getter=_isCaret, nonatomic, readonly) bool isCaret;
 @property (getter=_isImpl, nonatomic, readonly) UITextRangeImpl *isImpl;
-@property (getter=_isRanged, nonatomic, readonly) BOOL isRanged;
+@property (getter=_isRanged, nonatomic, readonly) bool isRanged;
 @property (nonatomic, readonly) UITextPosition *start;
 
-- (BOOL)_isCaret;
+- (bool)_isCaret;
 - (id)_isImpl;
-- (BOOL)_isRanged;
+- (bool)_isRanged;
 - (id)end;
-- (BOOL)isEmpty;
+- (bool)isEmpty;
 - (id)start;
 
 @end

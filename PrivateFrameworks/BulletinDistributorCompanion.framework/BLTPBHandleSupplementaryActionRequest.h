@@ -11,11 +11,11 @@
 }
 
 @property (nonatomic, retain) BLTPBActionInformation *actionInfo;
-@property (nonatomic, readonly) BOOL hasActionInfo;
-@property (nonatomic, readonly) BOOL hasIdentifier;
-@property (nonatomic, readonly) BOOL hasPublisherBulletinID;
-@property (nonatomic, readonly) BOOL hasRecordID;
-@property (nonatomic, readonly) BOOL hasSectionID;
+@property (nonatomic, readonly) bool hasActionInfo;
+@property (nonatomic, readonly) bool hasIdentifier;
+@property (nonatomic, readonly) bool hasPublisherBulletinID;
+@property (nonatomic, readonly) bool hasRecordID;
+@property (nonatomic, readonly) bool hasSectionID;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *publisherBulletinID;
 @property (nonatomic, retain) NSString *recordID;
@@ -27,17 +27,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasActionInfo;
-- (BOOL)hasIdentifier;
-- (BOOL)hasPublisherBulletinID;
-- (BOOL)hasRecordID;
-- (BOOL)hasSectionID;
-- (unsigned int)hash;
+- (bool)hasActionInfo;
+- (bool)hasIdentifier;
+- (bool)hasPublisherBulletinID;
+- (bool)hasRecordID;
+- (bool)hasSectionID;
+- (unsigned long long)hash;
 - (id)identifier;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)publisherBulletinID;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)recordID;
 - (id)sectionID;
 - (void)setActionInfo:(id)arg1;

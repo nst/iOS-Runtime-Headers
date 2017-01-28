@@ -10,6 +10,6 @@
 - (Class)layoutClass;
 - (Class)repClass;
 - (Class)sageGeometeryHelperClass;
-- (BOOL)supportsIndividualShadowRendering;
+- (bool)supportsIndividualShadowRendering;
 
 @end

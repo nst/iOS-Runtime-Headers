@@ -8,12 +8,12 @@
     struct NSNumber { Class x1; } * _progressUpdateToken;
 }
 
-+ (BOOL)handlesComplicationTemplate:(id)arg1;
++ (bool)handlesComplicationTemplate:(id)arg1;
 + (void)load;
 
 - (void).cxx_destruct;
-- (void)_enumerateColoringStackedImagesViewsWithBlock:(id /* block */)arg1;
-- (void)_enumerateColoringViewsWithBlock:(id /* block */)arg1;
+- (void)_enumerateColoringStackedImagesViewsWithBlock:(id)arg1;
+- (void)_enumerateColoringViewsWithBlock:(id)arg1;
 - (void)_updateForTemplateChange;
 - (void)_updateWithImageProvider:(id)arg1;
 - (void)layoutSubviews;

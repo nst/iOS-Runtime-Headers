@@ -7,25 +7,25 @@
     struct { 
         unsigned int includeHistoricTravelTime : 1; 
     }  _has;
-    BOOL  _includeHistoricTravelTime;
+    bool  _includeHistoricTravelTime;
     GEOTransitOptions * _transitOptions;
     struct { 
         int *list; 
-        unsigned int count; 
-        unsigned int size; 
+        unsigned long long count; 
+        unsigned long long size; 
     }  _transportTypes;
     GEOWalkingOptions * _walkingOptions;
 }
 
 @property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
-@property (nonatomic, readonly) BOOL hasAutomobileOptions;
-@property (nonatomic) BOOL hasIncludeHistoricTravelTime;
-@property (nonatomic, readonly) BOOL hasTransitOptions;
-@property (nonatomic, readonly) BOOL hasWalkingOptions;
-@property (nonatomic) BOOL includeHistoricTravelTime;
+@property (nonatomic, readonly) bool hasAutomobileOptions;
+@property (nonatomic) bool hasIncludeHistoricTravelTime;
+@property (nonatomic, readonly) bool hasTransitOptions;
+@property (nonatomic, readonly) bool hasWalkingOptions;
+@property (nonatomic) bool includeHistoricTravelTime;
 @property (nonatomic, retain) GEOTransitOptions *transitOptions;
 @property (nonatomic, readonly) int*transportTypes;
-@property (nonatomic, readonly) unsigned int transportTypesCount;
+@property (nonatomic, readonly) unsigned long long transportTypesCount;
 @property (nonatomic, retain) GEOWalkingOptions *walkingOptions;
 
 - (int)StringAsTransportTypes:(id)arg1;
@@ -37,26 +37,26 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasAutomobileOptions;
-- (BOOL)hasIncludeHistoricTravelTime;
-- (BOOL)hasTransitOptions;
-- (BOOL)hasWalkingOptions;
-- (unsigned int)hash;
-- (BOOL)includeHistoricTravelTime;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasAutomobileOptions;
+- (bool)hasIncludeHistoricTravelTime;
+- (bool)hasTransitOptions;
+- (bool)hasWalkingOptions;
+- (unsigned long long)hash;
+- (bool)includeHistoricTravelTime;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setAutomobileOptions:(id)arg1;
-- (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
-- (void)setIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setHasIncludeHistoricTravelTime:(bool)arg1;
+- (void)setIncludeHistoricTravelTime:(bool)arg1;
 - (void)setTransitOptions:(id)arg1;
-- (void)setTransportTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setTransportTypes:(int*)arg1 count:(unsigned long long)arg2;
 - (void)setWalkingOptions:(id)arg1;
 - (id)transitOptions;
-- (int)transportTypeAtIndex:(unsigned int)arg1;
+- (int)transportTypeAtIndex:(unsigned long long)arg1;
 - (int*)transportTypes;
 - (id)transportTypesAsString:(int)arg1;
-- (unsigned int)transportTypesCount;
+- (unsigned long long)transportTypesCount;
 - (id)walkingOptions;
 - (void)writeTo:(id)arg1;
 

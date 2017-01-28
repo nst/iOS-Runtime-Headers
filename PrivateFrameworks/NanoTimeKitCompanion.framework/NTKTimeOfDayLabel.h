@@ -7,33 +7,33 @@
     NSString * _ampmLiteral;
     NSCalendar * _cal;
     NSDate * _date;
-    BOOL  _hideSuffix;
-    BOOL  _is24HourMode;
+    bool  _hideSuffix;
+    bool  _is24HourMode;
     NSDate * _midday;
     NSDate * _midnight;
     NSString * _pmSymbol;
     double  _startOfDayTime;
     double  _startOfTomorrowTime;
-    BOOL  _usePrefix;
+    bool  _usePrefix;
 }
 
 @property (nonatomic, retain) NSDate *date;
-@property (nonatomic) BOOL hideSuffix;
+@property (nonatomic) bool hideSuffix;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
-- (BOOL)_isMorning:(id)arg1;
+- (bool)_isMorning:(id)arg1;
 - (void)_localeChanged;
 - (id)_middayOf:(id)arg1;
 - (id)_midnightOf:(id)arg1;
 - (void)cacheDateInformation:(id)arg1;
 - (id)date;
 - (void)dealloc;
-- (BOOL)hideSuffix;
-- (id)initWithMonospacedFontOfSize:(float)arg1 color:(id)arg2;
+- (bool)hideSuffix;
+- (id)initWithMonospacedFontOfSize:(double)arg1 color:(id)arg2;
 - (id)prefix;
 - (void)setDate:(id)arg1;
-- (void)setHideSuffix:(BOOL)arg1;
+- (void)setHideSuffix:(bool)arg1;
 - (void)setTimeZone:(id)arg1;
 - (id)suffix;
 - (double)timeIntervalForDate:(id)arg1 sinceDate:(id)arg2 consideringDSTDifferenceForTimeZone:(id)arg3;

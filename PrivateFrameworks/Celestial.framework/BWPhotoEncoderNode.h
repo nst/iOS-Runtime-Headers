@@ -4,7 +4,7 @@
 
 @interface BWPhotoEncoderNode : BWNode {
     struct FigPhotoCompressionSession { } * _compressionSession;
-    BOOL  _croppingEnabled;
+    bool  _croppingEnabled;
     NSDictionary * _inputColorInfo;
     FigCapturePixelConverter * _jpegPixelConverter;
     NSObject<OS_dispatch_group> * _previewGenerationGroup;
@@ -17,16 +17,16 @@
 }
 
 + (void)_addQualityOptionsToDictionary:(id)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 stillImageSettings:(id)arg3;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cropRectForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenEnabled:(BOOL)arg3;
-+ (BOOL)_croppingRequiredForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenEnabled:(BOOL)arg3;
-+ (void)_updateMetadataForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenCroppingEnabled:(BOOL)arg3;
++ (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })_cropRectForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenEnabled:(bool)arg3;
++ (bool)_croppingRequiredForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenEnabled:(bool)arg3;
++ (void)_updateMetadataForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 whenCroppingEnabled:(bool)arg3;
 + (void)initialize;
 
-- (long)_addThumbnailFromBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 maxPixelSize:(unsigned long)arg4;
-- (struct __IOSurface { }*)_closeContainerAndCopySurfaceWithSurfaceSize:(unsigned int*)arg1;
-- (long)_encodePhotoForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 outputSurfaceImageSize:(struct CGSize { float x1; float x2; }*)arg4;
-- (long)_generatePreviewForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 previewPixelBuffer:(struct __CVBuffer {}**)arg4;
-- (BOOL)croppingEnabled;
+- (int)_addThumbnailFromBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 maxPixelSize:(unsigned long long)arg4;
+- (struct __IOSurface { }*)_closeContainerAndCopySurfaceWithSurfaceSize:(unsigned long long*)arg1;
+- (int)_encodePhotoForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 outputSurfaceImageSize:(struct CGSize { double x1; double x2; }*)arg4;
+- (int)_generatePreviewForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 stillImageSettings:(id)arg2 cropRect:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg3 previewPixelBuffer:(struct __CVBuffer {}**)arg4;
+- (bool)croppingEnabled;
 - (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (id)init;
@@ -35,7 +35,7 @@
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
-- (void)setCroppingEnabled:(BOOL)arg1;
+- (void)setCroppingEnabled:(bool)arg1;
 - (void)setInputColorInfo:(id)arg1;
 - (void)setSourceVideoDimensions:(struct { int x1; int x2; })arg1;
 - (struct { int x1; int x2; })sourceVideoDimensions;

@@ -4,46 +4,46 @@
 
 @interface NSParagraphArbitrator : NSObject {
     NSAttributedString * _attributedString;
-    float  _hyphenationFactor;
-    unsigned int  _lineBreakStrategy;
-    id /* block */  _lineWidth;
+    double  _hyphenationFactor;
+    unsigned long long  _lineBreakStrategy;
+    id  _lineWidth;
     struct _NSRange { 
-        unsigned int location; 
-        unsigned int length; 
+        unsigned long long location; 
+        unsigned long long length; 
     }  _paragraphRange;
-    int  _typesetterBehavior;
-    id /* block */  _validateLineBreakContext;
+    long long  _typesetterBehavior;
+    id  _validateLineBreakContext;
 }
 
 @property (retain) NSAttributedString *attributedString;
-@property float hyphenationFactor;
-@property unsigned int lineBreakStrategy;
-@property (copy) id /* block */ lineWidth;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } paragraphRange;
-@property int typesetterBehavior;
-@property (copy) id /* block */ validateLineBreakContext;
+@property double hyphenationFactor;
+@property unsigned long long lineBreakStrategy;
+@property (copy) id lineWidth;
+@property struct _NSRange { unsigned long long x1; unsigned long long x2; } paragraphRange;
+@property long long typesetterBehavior;
+@property (copy) id validateLineBreakContext;
 
-+ (id)paragraphArbitratorWithAttributedString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)paragraphArbitratorWithAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
 
-- (unsigned int)adjustedLineBreakIndexForProposedIndex:(unsigned int)arg1;
+- (unsigned long long)adjustedLineBreakIndexForProposedIndex:(unsigned long long)arg1;
 - (id)attributedString;
 - (void)dealloc;
-- (float)hyphenationFactor;
+- (double)hyphenationFactor;
 - (id)init;
-- (id)initWithAttributedString:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (struct { unsigned int x1; unsigned int x2; BOOL x3; })lineBreakContextBeforeIndex:(unsigned int)arg1 lineFragmentWidth:(float)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (unsigned int)lineBreakStrategy;
-- (id /* block */)lineWidth;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })paragraphRange;
+- (id)initWithAttributedString:(id)arg1 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg2;
+- (struct { unsigned long long x1; unsigned long long x2; bool x3; })lineBreakContextBeforeIndex:(unsigned long long)arg1 lineFragmentWidth:(double)arg2 range:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg3;
+- (unsigned long long)lineBreakStrategy;
+- (id)lineWidth;
+- (struct _NSRange { unsigned long long x1; unsigned long long x2; })paragraphRange;
 - (void)reset;
 - (void)setAttributedString:(id)arg1;
-- (void)setHyphenationFactor:(float)arg1;
-- (void)setLineBreakStrategy:(unsigned int)arg1;
-- (void)setLineWidth:(id /* block */)arg1;
-- (void)setParagraphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)setTypesetterBehavior:(int)arg1;
-- (void)setValidateLineBreakContext:(id /* block */)arg1;
-- (int)typesetterBehavior;
-- (id /* block */)validateLineBreakContext;
+- (void)setHyphenationFactor:(double)arg1;
+- (void)setLineBreakStrategy:(unsigned long long)arg1;
+- (void)setLineWidth:(id)arg1;
+- (void)setParagraphRange:(struct _NSRange { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setTypesetterBehavior:(long long)arg1;
+- (void)setValidateLineBreakContext:(id)arg1;
+- (long long)typesetterBehavior;
+- (id)validateLineBreakContext;
 
 @end

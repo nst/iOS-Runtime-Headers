@@ -5,7 +5,7 @@
 
 @required
 
-- (void)didDetectField:(BOOL)arg1;
+- (void)didDetectField:(bool)arg1;
 - (void)didDetectTechnology:(NFTechnologyEvent *)arg1;
 - (void)didStartSession:(NSError *)arg1;
 

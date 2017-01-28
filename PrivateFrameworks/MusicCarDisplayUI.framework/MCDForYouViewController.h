@@ -5,12 +5,12 @@
 @interface MCDForYouViewController : MCD_OLD_TableViewController <MCDErrorViewDelegate, UITableViewDelegate> {
     UIView * _MCD_tableView;
     UIActivityIndicatorView * _activityIndicator;
-    BOOL  _hasLoadedRecommendations;
+    bool  _hasLoadedRecommendations;
     MPWeakTimer * _loadingTimer;
     UINavigationController * _nowPlayingNavigationController;
     UIView * _placeholderView;
     MusicForYouRecommendationsResponse * _recommendationsResponse;
-    float  _screenScale;
+    double  _screenScale;
     NSIndexPath * _selectedIndexPath;
 }
 
@@ -18,13 +18,13 @@
 @property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL hasLoadedRecommendations;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool hasLoadedRecommendations;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) MPWeakTimer *loadingTimer;
 @property (nonatomic, retain) UINavigationController *nowPlayingNavigationController;
 @property (nonatomic, retain) UIView *placeholderView;
 @property (nonatomic, retain) MusicForYouRecommendationsResponse *recommendationsResponse;
-@property (nonatomic) float screenScale;
+@property (nonatomic) double screenScale;
 @property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (readonly) Class superclass;
 
@@ -36,32 +36,32 @@
 - (id)_normalizedStringStoreIDForRecommendationItem:(id)arg1;
 - (void)_setCurrentTableView;
 - (void)_showLoadingScreen;
-- (void)_updateViewForNetworkType:(int)arg1;
+- (void)_updateViewForNetworkType:(long long)arg1;
 - (id)activityIndicator;
 - (void)didStartPlaying:(id)arg1;
 - (void)errorViewDidTapButton:(id)arg1;
-- (BOOL)hasLoadedRecommendations;
+- (bool)hasLoadedRecommendations;
 - (id)initWithPlayer:(id)arg1 serviceProvider:(id)arg2;
 - (id)loadingTimer;
 - (id)nowPlayingNavigationController;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)placeholderView;
 - (id)recommendationsResponse;
-- (float)screenScale;
+- (double)screenScale;
 - (id)selectedIndexPath;
 - (void)setActivityIndicator:(id)arg1;
-- (void)setHasLoadedRecommendations:(BOOL)arg1;
+- (void)setHasLoadedRecommendations:(bool)arg1;
 - (void)setLoadingTimer:(id)arg1;
 - (void)setMCD_tableView:(id)arg1;
 - (void)setNowPlayingNavigationController:(id)arg1;
 - (void)setPlaceholderView:(id)arg1;
 - (void)setRecommendationsResponse:(id)arg1;
-- (void)setScreenScale:(float)arg1;
+- (void)setScreenScale:(double)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillAppear:(bool)arg1;
 
 @end

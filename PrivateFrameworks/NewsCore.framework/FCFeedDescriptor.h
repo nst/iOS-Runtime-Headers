@@ -4,7 +4,7 @@
 
 @interface FCFeedDescriptor : NSObject <FCFeedAdMetadataProviding, FCFeedHeadlineSource, NSCopying> {
     <FCContentContext> * _context;
-    int  _feedType;
+    long long  _feedType;
     NSString * _identifier;
 }
 
@@ -15,13 +15,13 @@
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) int feedFilterOptions;
+@property (nonatomic, readonly) long long feedFilterOptions;
 @property (nonatomic, readonly, copy) NSArray *feedGroupEmitters;
 @property (nonatomic, readonly) <FCFeedPaginating> *feedPaginator;
-@property (nonatomic, readonly) int feedSortMethod;
-@property (nonatomic) int feedType;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL hideAccessoryText;
+@property (nonatomic, readonly) long long feedSortMethod;
+@property (nonatomic) long long feedType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool hideAccessoryText;
 @property (nonatomic, readonly) NSArray *iAdCategories;
 @property (nonatomic, readonly) long long iAdContentProvider;
 @property (nonatomic, readonly) NSString *iAdFeedID;
@@ -30,8 +30,9 @@
 @property (nonatomic, readonly) NSString *iAdPrimaryAudience;
 @property (nonatomic, readonly) NSString *iAdSectionID;
 @property (nonatomic, readonly) NSString *identifier;
-@property (nonatomic, readonly) BOOL isSubscribable;
+@property (nonatomic, readonly) bool isSubscribable;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly, copy) NSArray *offlineFeedGroupEmitters;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <FCFeedTheming> *theme;
 
@@ -42,19 +43,19 @@
 - (id)backingTopicID;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(BOOL)arg3 personalize:(BOOL)arg4 completionHandler:(id /* block */)arg5;
+- (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(bool)arg3 personalize:(bool)arg4 completionHandler:(id)arg5;
 - (id)description;
-- (BOOL)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
-- (int)feedFilterOptions;
+- (bool)enableNotificationsWithSubscriptionController:(id)arg1 error:(id*)arg2;
+- (long long)feedFilterOptions;
 - (id)feedGroupEmitters;
 - (id)feedPaginator;
-- (int)feedSortMethod;
-- (int)feedType;
-- (void)fetchHeadlinesWithContext:(id)arg1 forIdentifiers:(id)arg2 downloadAssets:(BOOL)arg3 qualityOfService:(int)arg4 completion:(id /* block */)arg5;
+- (long long)feedSortMethod;
+- (long long)feedType;
+- (void)fetchHeadlinesWithContext:(id)arg1 forIdentifiers:(id)arg2 downloadAssets:(bool)arg3 qualityOfService:(long long)arg4 completion:(id)arg5;
 - (id)fetchOperationForHeadlinesWithIDs:(id)arg1 context:(id)arg2;
-- (BOOL)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
-- (unsigned int)hash;
-- (BOOL)hideAccessoryText;
+- (bool)hasNotificationsEnabledWithSubscriptionController:(id)arg1;
+- (unsigned long long)hash;
+- (bool)hideAccessoryText;
 - (id)iAdCategories;
 - (long long)iAdContentProvider;
 - (id)iAdFeedID;
@@ -65,16 +66,17 @@
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isSubscribable;
-- (BOOL)isSubscribedToWithSubscriptionController:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isSubscribable;
+- (bool)isSubscribedToWithSubscriptionController:(id)arg1;
 - (id)latestHeadlineResultsWithContext:(id)arg1;
 - (id)name;
+- (id)offlineFeedGroupEmitters;
 - (void)setContext:(id)arg1;
-- (void)setFeedType:(int)arg1;
-- (id)streamOfHeadlinesWithIDs:(id)arg1 context:(id)arg2 cachedOnly:(BOOL)arg3 maxCachedAge:(double)arg4;
+- (void)setFeedType:(long long)arg1;
+- (id)streamOfHeadlinesWithIDs:(id)arg1 context:(id)arg2 cachedOnly:(bool)arg3 maxCachedAge:(double)arg4;
 - (id)streamOfLatestHeadlinesWithContext:(id)arg1;
-- (BOOL)subscribeToWithSubscriptionController:(id)arg1 error:(id*)arg2;
+- (bool)subscribeToWithSubscriptionController:(id)arg1 error:(id*)arg2;
 - (id)theme;
 - (void)unsubscribeToWithSubscriptionController:(id)arg1;
 

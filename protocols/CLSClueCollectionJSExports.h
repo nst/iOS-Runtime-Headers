@@ -5,9 +5,9 @@
 
 @required
 
-- (unsigned int)numberOfDays;
-- (unsigned int)numberOfLocations;
-- (unsigned int)numberOfPeoples;
+- (unsigned long long)numberOfDays;
+- (unsigned long long)numberOfLocations;
+- (unsigned long long)numberOfPeoples;
 - (double)timeInterval;
 
 @end

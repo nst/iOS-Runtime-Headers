@@ -7,14 +7,14 @@
     UIImageView * _imageView;
     UILabel * _label;
     UIPreviewAction * _quickAction;
-    BOOL  _selected;
+    bool  _selected;
 }
 
 @property (nonatomic) UIImageView *backgroundViewImage;
 @property (nonatomic) UIImageView *imageView;
 @property (nonatomic) UILabel *label;
 @property (nonatomic, retain) UIPreviewAction *quickAction;
-@property (nonatomic) BOOL selected;
+@property (nonatomic) bool selected;
 
 - (void).cxx_destruct;
 - (void)_updateCircleBackgroundImage;
@@ -22,16 +22,16 @@
 - (id)centerYAnchor;
 - (id)imageView;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)label;
 - (void)layoutSubviews;
 - (id)quickAction;
-- (BOOL)selected;
+- (bool)selected;
 - (void)setBackgroundViewImage:(id)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setLabel:(id)arg1;
 - (void)setQuickAction:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+- (void)setSelected:(bool)arg1;
 - (void)updateFromQuickAction;
 
 @end

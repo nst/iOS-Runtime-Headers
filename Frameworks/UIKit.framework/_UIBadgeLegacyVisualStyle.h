@@ -4,11 +4,11 @@
 
 @interface _UIBadgeLegacyVisualStyle : _UIBadgeVisualStyle
 
-- (float)edgePadding;
+- (double)edgePadding;
 - (id)font;
-- (float)fontSize;
-- (float)horizontalInset;
-- (float)singleBadgeWidth;
-- (float)verticalInset;
+- (double)fontSize;
+- (double)horizontalInset;
+- (double)singleBadgeWidth;
+- (double)verticalInset;
 
 @end

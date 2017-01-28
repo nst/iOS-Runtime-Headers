@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)configuration;
 - (id)init;
-- (BOOL)send:(id)arg1;
+- (bool)send:(id)arg1;
 - (id)session;
 
 @end

@@ -8,7 +8,7 @@
     HKOrganDonationAddressCell * _cell;
     NSString * _city;
     <HKSimpleDataEntryItemDelegate> * _delegate;
-    unsigned int  _placeholderType;
+    unsigned long long  _placeholderType;
     NSArray * _sortedStateKeys;
     NSString * _state;
     UIPickerView * _statePicker;
@@ -19,8 +19,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HKSimpleDataEntryItemDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) unsigned int placeholderType;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) unsigned long long placeholderType;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -30,13 +30,13 @@
 - (id)formattedKeyAndValue;
 - (id)initWithRegistrant:(id)arg1;
 - (void)localeDidChange:(id)arg1;
-- (int)numberOfComponentsInPickerView:(id)arg1;
-- (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
-- (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
-- (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
-- (unsigned int)placeholderType;
+- (long long)numberOfComponentsInPickerView:(id)arg1;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
+- (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
+- (unsigned long long)placeholderType;
 - (void)setDelegate:(id)arg1;
-- (void)setPlaceholderType:(unsigned int)arg1;
+- (void)setPlaceholderType:(unsigned long long)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1 forCell:(id)arg2;
 - (void)textFieldDidChangeValue:(id)arg1 forCell:(id)arg2;
 - (void)textFieldDidEndEditing:(id)arg1 forCell:(id)arg2;

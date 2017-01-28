@@ -13,9 +13,9 @@
 
 @property (nonatomic, retain) GEOResource *desiredResource;
 @property (nonatomic, retain) GEOResource *fallbackResource;
-@property (nonatomic, readonly) BOOL hasDesiredResource;
-@property (nonatomic, readonly) BOOL hasFallbackResource;
-@property (nonatomic) BOOL hasOriginalTimestamp;
+@property (nonatomic, readonly) bool hasDesiredResource;
+@property (nonatomic, readonly) bool hasFallbackResource;
+@property (nonatomic) bool hasOriginalTimestamp;
 @property (nonatomic) double originalTimestamp;
 
 - (void)copyTo:(id)arg1;
@@ -25,17 +25,17 @@
 - (id)desiredResource;
 - (id)dictionaryRepresentation;
 - (id)fallbackResource;
-- (BOOL)hasDesiredResource;
-- (BOOL)hasFallbackResource;
-- (BOOL)hasOriginalTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasDesiredResource;
+- (bool)hasFallbackResource;
+- (bool)hasOriginalTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (double)originalTimestamp;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setDesiredResource:(id)arg1;
 - (void)setFallbackResource:(id)arg1;
-- (void)setHasOriginalTimestamp:(BOOL)arg1;
+- (void)setHasOriginalTimestamp:(bool)arg1;
 - (void)setOriginalTimestamp:(double)arg1;
 - (void)writeTo:(id)arg1;
 

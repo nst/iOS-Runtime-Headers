@@ -5,12 +5,12 @@
 @interface ICAnalyticsReporterBase : NSObject
 
 + (double)roundDoubleValue:(double)arg1;
-+ (int)roundIntegerValue:(int)arg1;
++ (long long)roundIntegerValue:(long long)arg1;
 
-- (void)addValue:(int)arg1 forKey:(id)arg2 withSignature:(id)arg3;
-- (void)addValue:(int)arg1 forScalarKey:(id)arg2;
+- (void)addValue:(long long)arg1 forKey:(id)arg2 withSignature:(id)arg3;
+- (void)addValue:(long long)arg1 forScalarKey:(id)arg2;
 - (id)instrumentationKeyForKey:(id)arg1;
 - (void)pushValue:(double)arg1 toDistributionKey:(id)arg2;
-- (void)setValue:(int)arg1 forScalarKey:(id)arg2;
+- (void)setValue:(long long)arg1 forScalarKey:(id)arg2;
 
 @end

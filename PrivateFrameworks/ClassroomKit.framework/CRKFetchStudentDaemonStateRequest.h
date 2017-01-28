@@ -4,7 +4,7 @@
 
 @interface CRKFetchStudentDaemonStateRequest : CATTaskRequest
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 
 @end

@@ -19,7 +19,7 @@
         struct __shared_weak_count {} *__cntrl_; 
     }  _gridMesh;
     double  _gridMix;
-    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct PipelineSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } * _gridRenderItem;
+    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct PipelineSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; } * _gridRenderItem;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
@@ -29,7 +29,7 @@
         float _e[4]; 
     }  _lineColor;
     VKMapModel * _mapModel;
-    BOOL  _needsUpdatedColor;
+    bool  _needsUpdatedColor;
     struct unique_ptr<ggl::Grid::GridPipelineSetup, std::__1::default_delete<ggl::Grid::GridPipelineSetup> > { 
         struct __compressed_pair<ggl::Grid::GridPipelineSetup *, std::__1::default_delete<ggl::Grid::GridPipelineSetup> > { 
             struct GridPipelineSetup {} *__first_; 
@@ -44,8 +44,8 @@
         struct ConstantDataTyped<ggl::SimpleGrid::Style> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _simpleConstantData;
-    BOOL  _simpleGridEnabled;
-    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct PipelineSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned int x_9_1_1; unsigned int x_9_1_2; } x9; struct Range {} *x10; unsigned int x11; } * _simpleGridRenderItem;
+    bool  _simpleGridEnabled;
+    struct RenderItem { int (**x1)(); char *x2; struct RenderState {} *x3; struct PipelineSetup {} *x4; unsigned int x5; unsigned int x6; float x7; struct Mesh {} *x8; struct Range { unsigned long long x_9_1_1; unsigned long long x_9_1_2; } x9; struct Range {} *x10; unsigned long long x11; } * _simpleGridRenderItem;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
@@ -69,14 +69,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  fillColor; /* unknown property attribute:  1>=[4f]} */
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) VKMapModel *mapModel;
 @property (nonatomic) unsigned char renderPass;
-@property (nonatomic) BOOL simpleGridEnabled;
+@property (nonatomic) bool simpleGridEnabled;
 @property (nonatomic, readonly) struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 
-+ (BOOL)reloadOnStylesheetChange;
++ (bool)reloadOnStylesheetChange;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -90,9 +90,9 @@
 - (void)setMapModel:(id)arg1;
 - (void)setNeedsUpdatedGridColor;
 - (void)setRenderPass:(unsigned char)arg1;
-- (void)setSimpleGridEnabled:(BOOL)arg1;
-- (BOOL)shouldLayoutWithoutStyleManager;
-- (BOOL)simpleGridEnabled;
+- (void)setSimpleGridEnabled:(bool)arg1;
+- (bool)shouldLayoutWithoutStyleManager;
+- (bool)simpleGridEnabled;
 - (struct shared_ptr<gss::StylesheetManager<gss::PropertyID> > { struct StylesheetManager<gss::PropertyID> {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)stylesheetDidChange;
 - (void)stylesheetDoneChanging;

@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)compactWidthConfiguration;
-- (void)enumerateContentViewConfigurationsUsingBlock:(id /* block */)arg1;
+- (void)enumerateContentViewConfigurationsUsingBlock:(id)arg1;
 - (id)init;
 - (id)loadCompactWidthConfiguration;
 - (id)loadRegularWidthConfiguration;

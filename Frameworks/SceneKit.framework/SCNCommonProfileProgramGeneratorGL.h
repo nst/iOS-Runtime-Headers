@@ -3,12 +3,12 @@
  */
 
 @interface SCNCommonProfileProgramGeneratorGL : SCNCommonProfileProgramGenerator {
-    long  _profile;
+    int  _profile;
 }
 
 - (struct __C3DFXProgram { }*)_programWithHashCode:(struct __C3DRendererElementProgramHashCode { }*)arg1 introspectionDataPtr:(void*)arg2;
 - (id)init;
-- (id)initWithProfile:(long)arg1;
-- (long)profile;
+- (id)initWithProfile:(int)arg1;
+- (int)profile;
 
 @end

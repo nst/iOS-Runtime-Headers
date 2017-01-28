@@ -10,7 +10,7 @@
 @property (copy) NSOrderedSet *candidates;
 @property (copy) NSString *title;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void)addCandidate:(id)arg1;
 - (id)candidates;
@@ -18,11 +18,11 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)hasAlternativeText;
-- (unsigned int)hash;
+- (bool)hasAlternativeText;
+- (unsigned long long)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 candidates:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)mutableCandidates;
 - (void)setCandidates:(id)arg1;
 - (void)setTitle:(id)arg1;

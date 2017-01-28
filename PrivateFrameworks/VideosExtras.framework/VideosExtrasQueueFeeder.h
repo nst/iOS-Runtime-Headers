@@ -6,21 +6,21 @@
     VideosExtrasPlaybackContext * _context;
 }
 
-@property (getter=isBackgroundContext, nonatomic, readonly) BOOL backgroundContext;
+@property (getter=isBackgroundContext, nonatomic, readonly) bool backgroundContext;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldReloadForContext:(id)arg1;
-- (id)copyRawItemAtIndex:(unsigned int)arg1;
-- (BOOL)hasValidItemAtIndex:(unsigned int)arg1;
-- (id)identifierAtIndex:(unsigned int)arg1;
-- (unsigned int)indexOfItemWithIdentifier:(id)arg1;
-- (BOOL)isBackgroundContext;
+- (bool)_shouldReloadForContext:(id)arg1;
+- (id)copyRawItemAtIndex:(unsigned long long)arg1;
+- (bool)hasValidItemAtIndex:(unsigned long long)arg1;
+- (id)identifierAtIndex:(unsigned long long)arg1;
+- (unsigned long long)indexOfItemWithIdentifier:(id)arg1;
+- (bool)isBackgroundContext;
 - (Class)itemClass;
-- (unsigned int)itemCount;
-- (int)itemTypeForIndex:(unsigned int)arg1;
-- (id)playbackInfoAtIndex:(unsigned int)arg1;
-- (BOOL)player:(id)arg1 shouldContinuePlaybackForNetworkType:(int)arg2 returningError:(id*)arg3;
-- (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
-- (int)repeatType;
+- (unsigned long long)itemCount;
+- (long long)itemTypeForIndex:(unsigned long long)arg1;
+- (id)playbackInfoAtIndex:(unsigned long long)arg1;
+- (bool)player:(id)arg1 shouldContinuePlaybackForNetworkType:(long long)arg2 returningError:(id*)arg3;
+- (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id)arg2;
+- (long long)repeatType;
 
 @end

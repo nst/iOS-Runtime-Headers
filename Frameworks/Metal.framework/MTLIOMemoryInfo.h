@@ -10,7 +10,7 @@
 
 + (id)initialize;
 
-- (void*)addDataSource:(id /* block */)arg1;
+- (void*)addDataSource:(id)arg1;
 - (void)addResourceToList:(id)arg1;
 - (struct __CFArray { }*)annotationList;
 - (void)dealloc;

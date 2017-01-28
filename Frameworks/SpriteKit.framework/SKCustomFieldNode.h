@@ -4,16 +4,16 @@
 
 @interface SKCustomFieldNode : SKFieldNode
 
-@property (nonatomic, copy) id /* block */ block;
+@property (nonatomic, copy) id block;
 
 - (id)_descriptionClassName;
 - (void)_initialize;
-- (id /* block */)batchBlock;
-- (id /* block */)block;
+- (id)batchBlock;
+- (id)block;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)setBatchBlock:(id /* block */)arg1;
-- (void)setBlock:(id /* block */)arg1;
+- (void)setBatchBlock:(id)arg1;
+- (void)setBlock:(id)arg1;
 
 @end

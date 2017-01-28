@@ -5,6 +5,6 @@
 
 @required
 
-- (void)greatestScreenScaleDidChange:(float)arg1;
+- (void)greatestScreenScaleDidChange:(double)arg1;
 
 @end

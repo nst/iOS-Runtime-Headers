@@ -17,20 +17,20 @@
 @property (nonatomic, readonly) NSString *webUrl;
 
 + (id)recentShareableItemWithBundleIdentifier:(id)arg1 title:(id)arg2 description:(id)arg3 webUrl:(id)arg4 thumbnailPath:(id)arg5;
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)_isEqualToDECRecentShareableItem:(id)arg1;
+- (bool)_isEqualToDECRecentShareableItem:(id)arg1;
 - (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithBundleIdentifier:(id)arg1 title:(id)arg2 description:(id)arg3 webUrl:(id)arg4 thumbnailPath:(id)arg5;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
-- (BOOL)isEquivalent:(id)arg1;
+- (bool)isEqual:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
+- (bool)isEquivalent:(id)arg1;
 - (id)subtitle;
 - (id)thumbnailPath;
 - (id)title;

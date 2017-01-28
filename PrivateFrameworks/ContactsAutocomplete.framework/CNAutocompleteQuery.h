@@ -18,7 +18,7 @@
 @property (retain) CNAutocompleteDelegateWrapper *delegate;
 @property <CNCancelable> *delegateToken;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (retain) <CNAutocompleteProbeProvider> *probeProvider;
 @property (copy) CNAutocompleteFetchRequest *request;
 @property (retain) <CNScheduler> *scheduler;
@@ -32,9 +32,9 @@
 + (id)observableForQuery:(id)arg1;
 + (id)observableWithSupplementalResultsForQuery:(id)arg1;
 + (id)queryWithRequest:(id)arg1 searchProvider:(id)arg2 delegate:(id)arg3 probeProvider:(id)arg4 scheduler:(id)arg5 userSession:(id)arg6 delegateToken:(id)arg7;
-+ (BOOL)searchTypeSupportsSuppressionOfAlreadyChosenAddresses:(unsigned int)arg1;
-+ (BOOL)shouldPerformQueryForRequest:(id)arg1;
-+ (BOOL)shouldSuppressAddressesAlreadyChosenForRequest:(id)arg1;
++ (bool)searchTypeSupportsSuppressionOfAlreadyChosenAddresses:(unsigned long long)arg1;
++ (bool)shouldPerformQueryForRequest:(id)arg1;
++ (bool)shouldSuppressAddressesAlreadyChosenForRequest:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)cancel;

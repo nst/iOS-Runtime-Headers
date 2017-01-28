@@ -5,8 +5,8 @@
 
 @required
 
-- (void)didEnableVolumeHUD:(BOOL)arg1;
+- (void)didEnableVolumeHUD:(bool)arg1;
 - (void)didFinishWithError:(NSError *)arg1;
-- (void)didSetScreenToBrightness:(float)arg1 animate:(BOOL)arg2;
+- (void)didSetScreenToBrightness:(float)arg1 animate:(bool)arg2;
 
 @end

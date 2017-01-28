@@ -5,7 +5,7 @@
 @interface _MDIndexExtension : NSObject {
     NSString * _containerID;
     NSString * _containerPath;
-    BOOL  _entitlementVerified;
+    bool  _entitlementVerified;
     NSExtension * _extension;
     NSString * _extensionID;
     NSObject<OS_dispatch_queue> * _queue;
@@ -13,32 +13,32 @@
 
 @property (nonatomic, retain) NSString *containerID;
 @property (nonatomic, retain) NSString *containerPath;
-@property (readonly) BOOL dontRunDuringMigration;
-@property (nonatomic) BOOL entitlementVerified;
+@property (readonly) bool dontRunDuringMigration;
+@property (nonatomic) bool entitlementVerified;
 @property (nonatomic, retain) NSExtension *extension;
 @property (nonatomic, retain) NSString *extensionID;
-@property (readonly) BOOL isEnabled;
-@property (readonly) BOOL isInternal;
+@property (readonly) bool isEnabled;
+@property (readonly) bool isInternal;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
-- (void)_performJob:(id)arg1 completionBlock:(id /* block */)arg2;
-- (BOOL)_verifyIntegrityWithHostContext:(id)arg1;
+- (void)_performJob:(id)arg1 completionBlock:(id)arg2;
+- (bool)_verifyIntegrityWithHostContext:(id)arg1;
 - (id)containerID;
 - (id)containerPath;
 - (id)description;
-- (BOOL)dontRunDuringMigration;
-- (BOOL)entitlementVerified;
+- (bool)dontRunDuringMigration;
+- (bool)entitlementVerified;
 - (id)extension;
 - (id)extensionID;
 - (id)initWithExtension:(id)arg1 queue:(id)arg2 containerPath:(id)arg3 containerID:(id)arg4;
-- (BOOL)isEnabled;
-- (BOOL)isInternal;
-- (void)performJob:(id)arg1 completionBlock:(id /* block */)arg2;
+- (bool)isEnabled;
+- (bool)isInternal;
+- (void)performJob:(id)arg1 completionBlock:(id)arg2;
 - (id)queue;
 - (void)setContainerID:(id)arg1;
 - (void)setContainerPath:(id)arg1;
-- (void)setEntitlementVerified:(BOOL)arg1;
+- (void)setEntitlementVerified:(bool)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setExtensionID:(id)arg1;
 - (void)setQueue:(id)arg1;

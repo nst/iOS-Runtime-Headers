@@ -27,10 +27,10 @@
 - (id)headline;
 - (id)headlineFetchOperation;
 - (id)init;
-- (id)initWithContext:(id)arg1 articleID:(id)arg2 forceArticleUpdate:(BOOL)arg3 qualityOfService:(int)arg4 relativePriority:(int)arg5;
+- (id)initWithContext:(id)arg1 articleID:(id)arg2 forceArticleUpdate:(bool)arg3 qualityOfService:(long long)arg4 relativePriority:(long long)arg5;
 - (id)initWithContext:(id)arg1 headline:(id)arg2;
-- (void)performBlockWhenContentManifestIsLoaded:(id /* block */)arg1;
-- (void)performBlockWhenFullyLoaded:(id /* block */)arg1;
+- (void)performBlockWhenContentManifestIsLoaded:(id)arg1;
+- (void)performBlockWhenFullyLoaded:(id)arg1;
 - (void)setContentManifest:(id)arg1;
 - (void)setFetchError:(id)arg1;
 - (void)setFetchGroup:(id)arg1;

@@ -4,20 +4,20 @@
 
 @interface PKProximityAdvertiser : NSObject {
     NSObject<OS_dispatch_queue> * _advertiserQueue;
-    BOOL  _isAdvertising;
+    bool  _isAdvertising;
     SFService * _sharingService;
     double  _timeoutDuration;
     NSObject<OS_dispatch_source> * _timer;
     NSObject<OS_dispatch_queue> * _timerQueue;
 }
 
-@property (nonatomic, readonly) BOOL isAdvertising;
+@property (nonatomic, readonly) bool isAdvertising;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)endAdvertising;
 - (id)init;
-- (BOOL)isAdvertising;
-- (void)startAdvertisingForDuration:(double)arg1 completion:(id /* block */)arg2;
+- (bool)isAdvertising;
+- (void)startAdvertisingForDuration:(double)arg1 completion:(id)arg2;
 
 @end

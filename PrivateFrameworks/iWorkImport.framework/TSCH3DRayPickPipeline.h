@@ -37,7 +37,7 @@
 - (id)pickedPoint;
 - (id)pickedPoints;
 - (void)rayPick:(id)arg1;
-- (BOOL)run;
+- (bool)run;
 - (void)setSlack:(float)arg1;
 - (float)slack;
 

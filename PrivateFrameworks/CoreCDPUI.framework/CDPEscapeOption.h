@@ -3,31 +3,31 @@
  */
 
 @interface CDPEscapeOption : NSObject {
-    id /* block */  _escapeAction;
+    id  _escapeAction;
     NSString * _progressLabel;
     NSString * _progressTitle;
-    unsigned int  _style;
+    unsigned long long  _style;
     NSString * _title;
 }
 
-@property (nonatomic, copy) id /* block */ escapeAction;
+@property (nonatomic, copy) id escapeAction;
 @property (nonatomic, copy) NSString *progressLabel;
 @property (nonatomic, copy) NSString *progressTitle;
-@property (nonatomic) unsigned int style;
+@property (nonatomic) unsigned long long style;
 @property (nonatomic, copy) NSString *title;
 
 + (id)cancelOption;
 
 - (void).cxx_destruct;
-- (id /* block */)escapeAction;
+- (id)escapeAction;
 - (id)progressLabel;
 - (id)progressTitle;
-- (void)setEscapeAction:(id /* block */)arg1;
+- (void)setEscapeAction:(id)arg1;
 - (void)setProgressLabel:(id)arg1;
 - (void)setProgressTitle:(id)arg1;
-- (void)setStyle:(unsigned int)arg1;
+- (void)setStyle:(unsigned long long)arg1;
 - (void)setTitle:(id)arg1;
-- (unsigned int)style;
+- (unsigned long long)style;
 - (id)title;
 
 @end

@@ -3,21 +3,21 @@
  */
 
 @interface MusicContextualLibraryUpdateAlertAction : MusicContextualAlertAction {
-    BOOL  _isAddAction;
-    BOOL  _isKeepLocalAction;
-    BOOL  _isRemoveAction;
+    bool  _isAddAction;
+    bool  _isKeepLocalAction;
+    bool  _isRemoveAction;
 }
 
-@property (nonatomic, readonly) BOOL isAddAction;
-@property (nonatomic, readonly) BOOL isKeepLocalAction;
-@property (nonatomic, readonly) BOOL isRemoveAction;
+@property (nonatomic, readonly) bool isAddAction;
+@property (nonatomic, readonly) bool isKeepLocalAction;
+@property (nonatomic, readonly) bool isRemoveAction;
 
-+ (void)getContextualLibraryAddAction:(id*)arg1 removeAction:(id*)arg2 keepLocalAction:(id*)arg3 forEntityValueContext:(id)arg4 overrideItemEntityProvider:(id)arg5 allowAssetRemoval:(BOOL)arg6 shouldDismissHandler:(id /* block */)arg7 additionalPresentationHandler:(id /* block */)arg8 didDismissHandler:(id /* block */)arg9;
-+ (id)newAddExplicitContentWarningAlertControllerWithContentItemType:(unsigned int)arg1 didDismissBlock:(id /* block */)arg2;
-+ (id)notificationTokenForOverrideItemEntityProvider:(id)arg1 queue:(id)arg2 usingBlock:(id /* block */)arg3;
++ (void)getContextualLibraryAddAction:(id*)arg1 removeAction:(id*)arg2 keepLocalAction:(id*)arg3 forEntityValueContext:(id)arg4 overrideItemEntityProvider:(id)arg5 allowAssetRemoval:(bool)arg6 shouldDismissHandler:(id)arg7 additionalPresentationHandler:(id)arg8 didDismissHandler:(id)arg9;
++ (id)newAddExplicitContentWarningAlertControllerWithContentItemType:(unsigned long long)arg1 didDismissBlock:(id)arg2;
++ (id)notificationTokenForOverrideItemEntityProvider:(id)arg1 queue:(id)arg2 usingBlock:(id)arg3;
 
-- (BOOL)isAddAction;
-- (BOOL)isKeepLocalAction;
-- (BOOL)isRemoveAction;
+- (bool)isAddAction;
+- (bool)isKeepLocalAction;
+- (bool)isRemoveAction;
 
 @end

@@ -3,20 +3,20 @@
  */
 
 @interface EDSheetReference : EDReference {
-    unsigned int  mSheetIndex;
+    unsigned long long  mSheetIndex;
 }
 
-+ (id)referenceWithSheetIndex:(unsigned int)arg1 firstRow:(int)arg2 lastRow:(int)arg3 firstColumn:(int)arg4 lastColumn:(int)arg5;
++ (id)referenceWithSheetIndex:(unsigned long long)arg1 firstRow:(int)arg2 lastRow:(int)arg3 firstColumn:(int)arg4 lastColumn:(int)arg5;
 
 - (id)description;
 - (bool)fullyAdjacentToReference:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
-- (id)initWithSheetIndex:(unsigned int)arg1 firstRow:(int)arg2 lastRow:(int)arg3 firstColumn:(int)arg4 lastColumn:(int)arg5;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isEqualToTableReference:(id)arg1;
+- (id)initWithSheetIndex:(unsigned long long)arg1 firstRow:(int)arg2 lastRow:(int)arg3 firstColumn:(int)arg4 lastColumn:(int)arg5;
+- (bool)isEqual:(id)arg1;
+- (bool)isEqualToTableReference:(id)arg1;
 - (bool)isSheedIndexValid;
-- (unsigned int)sheetIndex;
+- (unsigned long long)sheetIndex;
 - (void)unionWithReference:(id)arg1;
 
 @end

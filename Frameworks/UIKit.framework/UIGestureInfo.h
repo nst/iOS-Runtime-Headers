@@ -5,12 +5,12 @@
 @interface UIGestureInfo : NSObject {
     struct CGRect { 
         struct CGPoint { 
-            float x; 
-            float y; 
+            double x; 
+            double y; 
         } origin; 
         struct CGSize { 
-            float width; 
-            float height; 
+            double width; 
+            double height; 
         } size; 
     }  centerRect;
     id  delegate;
@@ -18,8 +18,8 @@
     float  endDegrees;
     float  endScale;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  endScrollPoint;
     struct { 
         unsigned int pushedRunLoop : 1; 
@@ -41,30 +41,30 @@
     UIScrollAnimation * scrollAnimation;
     float  startDegrees;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  startGestureInner;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  startGestureOuter;
     float  startScale;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  startScrollPoint;
     float  unadjustedScale;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  visibleSize;
     UIGestureAnimation * zoomAnimation;
     float  zoomAnimationProgress;
     float  zoomFailureDuration;
     float  zoomFailureStartScale;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  zoomFailureWindowPoint;
     float  zoomMultiplier;
     int  zoomRubberBandHysteresisCount;

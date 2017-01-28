@@ -14,11 +14,11 @@
     GEOCMTicketSubmissionResponse * _ticketSubmissionResponse;
 }
 
-@property (nonatomic) BOOL hasRequestType;
-@property (nonatomic) BOOL hasStatusCode;
-@property (nonatomic, readonly) BOOL hasTicketFollowupResponse;
-@property (nonatomic, readonly) BOOL hasTicketStatusResponse;
-@property (nonatomic, readonly) BOOL hasTicketSubmissionResponse;
+@property (nonatomic) bool hasRequestType;
+@property (nonatomic) bool hasStatusCode;
+@property (nonatomic, readonly) bool hasTicketFollowupResponse;
+@property (nonatomic, readonly) bool hasTicketStatusResponse;
+@property (nonatomic, readonly) bool hasTicketSubmissionResponse;
 @property (nonatomic) int requestType;
 @property (nonatomic) int statusCode;
 @property (nonatomic, retain) GEOCMTicketFollowupResponse *ticketFollowupResponse;
@@ -32,19 +32,19 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasRequestType;
-- (BOOL)hasStatusCode;
-- (BOOL)hasTicketFollowupResponse;
-- (BOOL)hasTicketStatusResponse;
-- (BOOL)hasTicketSubmissionResponse;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasRequestType;
+- (bool)hasStatusCode;
+- (bool)hasTicketFollowupResponse;
+- (bool)hasTicketStatusResponse;
+- (bool)hasTicketSubmissionResponse;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (int)requestType;
 - (id)requestTypeAsString:(int)arg1;
-- (void)setHasRequestType:(BOOL)arg1;
-- (void)setHasStatusCode:(BOOL)arg1;
+- (void)setHasRequestType:(bool)arg1;
+- (void)setHasStatusCode:(bool)arg1;
 - (void)setRequestType:(int)arg1;
 - (void)setStatusCode:(int)arg1;
 - (void)setTicketFollowupResponse:(id)arg1;

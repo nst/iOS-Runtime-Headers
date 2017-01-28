@@ -4,7 +4,7 @@
 
 @interface _UIFeedbackRetargetBehavior : UISelectionFeedbackGenerator
 
-+ (id)retargetBehaviorWithStyle:(int)arg1 coordinateSpace:(id)arg2;
++ (id)retargetBehaviorWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
 
 - (void)targetUpdated;
 

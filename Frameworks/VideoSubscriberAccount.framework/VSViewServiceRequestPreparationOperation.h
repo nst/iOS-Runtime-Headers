@@ -10,8 +10,8 @@
     }  _hostAuditToken;
     int  _hostProcessIdentifier;
     NSXPCConnection * _privacyServiceConnection;
-    BOOL  _requestAllowsPrivacyUI;
-    BOOL  _requestRequiresPrivacyUI;
+    bool  _requestAllowsPrivacyUI;
+    bool  _requestRequiresPrivacyUI;
     VSFailable * _result;
     NSArray * _supportedIdentityProviderIdentifiers;
 }
@@ -21,8 +21,8 @@
 @property (nonatomic) struct { unsigned int x1[8]; } hostAuditToken;
 @property (nonatomic) int hostProcessIdentifier;
 @property (nonatomic, retain) NSXPCConnection *privacyServiceConnection;
-@property (nonatomic) BOOL requestAllowsPrivacyUI;
-@property (nonatomic) BOOL requestRequiresPrivacyUI;
+@property (nonatomic) bool requestAllowsPrivacyUI;
+@property (nonatomic) bool requestRequiresPrivacyUI;
 @property (nonatomic, retain) VSFailable *result;
 @property (nonatomic, copy) NSArray *supportedIdentityProviderIdentifiers;
 
@@ -33,7 +33,7 @@
 - (void)_checkSupportedProviders;
 - (void)_determineProviderDisplayName;
 - (void)_finishWithError:(id)arg1;
-- (id)_privacyServiceWithErrorHandler:(id /* block */)arg1;
+- (id)_privacyServiceWithErrorHandler:(id)arg1;
 - (void)_promptForPrivacyWithDisplayName:(id)arg1;
 - (id)availabilityInfoCenter;
 - (void)cancel;
@@ -44,16 +44,16 @@
 - (int)hostProcessIdentifier;
 - (id)init;
 - (id)privacyServiceConnection;
-- (BOOL)requestAllowsPrivacyUI;
-- (BOOL)requestRequiresPrivacyUI;
+- (bool)requestAllowsPrivacyUI;
+- (bool)requestRequiresPrivacyUI;
 - (id)result;
 - (void)setAvailabilityInfoCenter:(id)arg1;
 - (void)setCurrentAccount:(id)arg1;
 - (void)setHostAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (void)setHostProcessIdentifier:(int)arg1;
 - (void)setPrivacyServiceConnection:(id)arg1;
-- (void)setRequestAllowsPrivacyUI:(BOOL)arg1;
-- (void)setRequestRequiresPrivacyUI:(BOOL)arg1;
+- (void)setRequestAllowsPrivacyUI:(bool)arg1;
+- (void)setRequestRequiresPrivacyUI:(bool)arg1;
 - (void)setResult:(id)arg1;
 - (void)setSupportedIdentityProviderIdentifiers:(id)arg1;
 - (id)supportedIdentityProviderIdentifiers;

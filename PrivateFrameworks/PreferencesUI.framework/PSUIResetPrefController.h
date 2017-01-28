@@ -7,23 +7,23 @@
     int  _codesNeeded;
     PSSpecifier * _currentSpecifier;
     PSSpecifier * _locationSpecifier;
-    int  _locationSpecifierIndex;
+    long long  _locationSpecifierIndex;
     NSString * _passcode;
-    BOOL  _requirePasscode;
-    BOOL  _requireRestrictionsCode;
-    BOOL  _returningFromPINSheetWithSuccess;
-    BOOL  _shouldEraseDataPlans;
-    BOOL  _shouldEraseWithFMiP;
-    BOOL  _shouldTryEraseAgainWithFMiP;
+    bool  _requirePasscode;
+    bool  _requireRestrictionsCode;
+    bool  _returningFromPINSheetWithSuccess;
+    bool  _shouldEraseDataPlans;
+    bool  _shouldEraseWithFMiP;
+    bool  _shouldTryEraseAgainWithFMiP;
 }
 
 - (void).cxx_destruct;
 - (void)_disablePhoneLocatorAndErase;
 - (void)_eraseSettingsAndContent;
-- (BOOL)_networkConnectivityAvailable;
+- (bool)_networkConnectivityAvailable;
 - (void)_postStockholmEraseSettingsAndContent:(id)arg1;
 - (void)_resetWithMode:(int)arg1;
-- (void)_showStockholmLocallyStoredValueOfflineWarningIfNeeded:(id /* block */)arg1;
+- (void)_showStockholmLocallyStoredValueOfflineWarningIfNeeded:(id)arg1;
 - (void)confirmEraseCellularSettings;
 - (void)confirmationSpecifierConfirmed:(id)arg1;
 - (void)dealloc;
@@ -46,6 +46,6 @@
 - (void)subscriberOptions:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)updateLocationResetSpecifier;
-- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidAppear:(bool)arg1;
 
 @end

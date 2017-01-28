@@ -7,21 +7,20 @@
     NCNotificationRequest * _notificationRequest;
 }
 
-@property (nonatomic, readonly, copy) id /* block */ cancelAction;
-@property (nonatomic, readonly, copy) id /* block */ clearAction;
-@property (nonatomic, readonly, copy) id /* block */ closeAction;
-@property (nonatomic, readonly) BOOL cropThumbnail;
+@property (nonatomic, readonly, copy) id cancelAction;
+@property (nonatomic, readonly, copy) id clearAction;
+@property (nonatomic, readonly, copy) id closeAction;
 @property (nonatomic, readonly, copy) NSDate *date;
-@property (getter=isDateAllDay, nonatomic, readonly) BOOL dateAllDay;
+@property (getter=isDateAllDay, nonatomic, readonly) bool dateAllDay;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly, copy) id /* block */ defaultAction;
+@property (nonatomic, readonly, copy) id defaultAction;
 @property (nonatomic) <NCNotificationStaticContentProvidingDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly, copy) NSString *hintText;
 @property (nonatomic, readonly) UIImage *icon;
 @property (nonatomic, readonly) NSArray *interfaceActions;
-@property (nonatomic, readonly) unsigned int messageNumberOfLines;
+@property (nonatomic, readonly) unsigned long long messageNumberOfLines;
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
 @property (nonatomic, readonly, copy) NSString *primarySubtitleText;
 @property (nonatomic, readonly, copy) NSString *primaryText;
@@ -32,22 +31,21 @@
 @property (nonatomic, readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
-- (id /* block */)_actionForNotificationAction:(id)arg1;
+- (id)_actionForNotificationAction:(id)arg1;
 - (id)_appBundleIdentifer;
-- (id /* block */)cancelAction;
-- (id /* block */)clearAction;
-- (id /* block */)closeAction;
-- (BOOL)cropThumbnail;
+- (id)cancelAction;
+- (id)clearAction;
+- (id)closeAction;
 - (id)date;
-- (id /* block */)defaultAction;
+- (id)defaultAction;
 - (id)delegate;
 - (id)hintText;
 - (id)icon;
 - (id)init;
 - (id)initWithNotificationRequest:(id)arg1;
 - (id)interfaceActions;
-- (BOOL)isDateAllDay;
-- (unsigned int)messageNumberOfLines;
+- (bool)isDateAllDay;
+- (unsigned long long)messageNumberOfLines;
 - (id)notificationRequest;
 - (id)primarySubtitleText;
 - (id)primaryText;

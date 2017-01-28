@@ -15,7 +15,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *destinationID;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) NSString *sendFileIdentifier;
 @property (nonatomic, retain) HMDSnapshotFile *snapshotFile;
 @property (readonly) Class superclass;
@@ -33,7 +33,7 @@
 - (id)logIdentifier;
 - (void)sendFile:(id)arg1;
 - (id)sendFileIdentifier;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(bool)arg4 error:(id)arg5;
 - (void)setDestinationID:(id)arg1;
 - (void)setSendFileIdentifier:(id)arg1;
 - (void)setSnapshotFile:(id)arg1;

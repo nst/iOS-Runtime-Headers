@@ -6,7 +6,7 @@
     HFMutableSetDiff * _actionBuilders;
     NSArray * _actions;
     <HFIconDescriptor> * _iconDescriptor;
-    BOOL  _isFavorite;
+    bool  _isFavorite;
     NSString * _name;
 }
 
@@ -15,10 +15,11 @@
 @property (nonatomic, readonly) NSArray *actions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) <HFIconDescriptor> *iconDescriptor;
-@property (nonatomic) BOOL isFavorite;
+@property (nonatomic) bool isFavorite;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) bool requiresDeviceUnlock;
 @property (readonly) Class superclass;
 
 + (Class)homeKitRepresentationClass;
@@ -36,14 +37,15 @@
 - (id)iconDescriptor;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
 - (id)initWithHome:(id)arg1;
-- (BOOL)isFavorite;
+- (bool)isFavorite;
 - (id)name;
 - (void)removeAction:(id)arg1;
 - (void)removeAllActions;
+- (bool)requiresDeviceUnlock;
 - (void)setActionBuilders:(id)arg1;
 - (void)setActionSet:(id)arg1;
 - (void)setIconDescriptor:(id)arg1;
-- (void)setIsFavorite:(BOOL)arg1;
+- (void)setIsFavorite:(bool)arg1;
 - (void)setName:(id)arg1;
 - (void)updateAction:(id)arg1;
 

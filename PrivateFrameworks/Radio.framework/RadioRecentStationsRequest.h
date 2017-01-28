@@ -6,25 +6,25 @@
     RadioStation * _currentStation;
     NSString * _currentStationStringID;
     SSURLConnectionRequest * _request;
-    BOOL  _shouldGroupResponses;
-    unsigned int  _stationCount;
+    bool  _shouldGroupResponses;
+    unsigned long long  _stationCount;
 }
 
-@property (nonatomic) BOOL shouldGroupResponses;
-@property (nonatomic) unsigned int stationCount;
+@property (nonatomic) bool shouldGroupResponses;
+@property (nonatomic) unsigned long long stationCount;
 
 - (void).cxx_destruct;
 - (void)_configureRequestPropertiesForCaching:(id)arg1 returningCacheKey:(id*)arg2;
 - (id)_newRecentStationsURLRequestPropertiesWithBaseURL:(id)arg1;
 - (id)_recentStationsResponseWithConnectionResponse:(id)arg1 returningError:(id*)arg2;
 - (void)cancel;
-- (void)getCachedRecentStationsResponseWithCompletionHandler:(id /* block */)arg1;
+- (void)getCachedRecentStationsResponseWithCompletionHandler:(id)arg1;
 - (id)initWithCurrentStation:(id)arg1;
 - (id)initWithCurrentStationStringID:(id)arg1;
-- (void)setShouldGroupResponses:(BOOL)arg1;
-- (void)setStationCount:(unsigned int)arg1;
-- (BOOL)shouldGroupResponses;
-- (void)startWithCompletionHandler:(id /* block */)arg1;
-- (unsigned int)stationCount;
+- (void)setShouldGroupResponses:(bool)arg1;
+- (void)setStationCount:(unsigned long long)arg1;
+- (bool)shouldGroupResponses;
+- (void)startWithCompletionHandler:(id)arg1;
+- (unsigned long long)stationCount;
 
 @end

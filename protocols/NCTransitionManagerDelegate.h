@@ -7,7 +7,7 @@
 
 - (NCNotificationViewController *)longLookViewControllerForTransitionManager:(NCTransitionManager *)arg1;
 - (UIViewController *)presentingViewControllerForTransitionManager:(NCTransitionManager *)arg1;
-- (BOOL)transitionManager:(NCTransitionManager *)arg1 shouldBeginInteractionWithSource:(id)arg2;
+- (bool)transitionManager:(NCTransitionManager *)arg1 shouldBeginInteractionWithSource:(id)arg2;
 - (void)transitionManagerDidEndUserInteraction:(NCTransitionManager *)arg1;
 - (void)transitionManagerWillBeginUserInteraction:(NCTransitionManager *)arg1;
 
@@ -15,8 +15,8 @@
 
 - (void)longLookWillDismissForTransitionManager:(NCTransitionManager *)arg1;
 - (void)longLookWillPresentForTransitionManager:(NCTransitionManager *)arg1 withSource:(id)arg2;
-- (void)transitionManager:(NCTransitionManager *)arg1 didDismissLongLook:(BOOL)arg2;
-- (void)transitionManager:(NCTransitionManager *)arg1 didPresentLongLook:(BOOL)arg2;
-- (void)transitionManager:(void *)arg1 shouldFinishInteractionWithCompletionBlock:(void *)arg2; // needs 2 arg types, found 7: NCTransitionManager *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)transitionManager:(NCTransitionManager *)arg1 didDismissLongLook:(bool)arg2;
+- (void)transitionManager:(NCTransitionManager *)arg1 didPresentLongLook:(bool)arg2;
+- (void)transitionManager:(void *)arg1 shouldFinishInteractionWithCompletionBlock:(void *)arg2; // needs 2 arg types, found 7: NCTransitionManager *, id, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id, bool, void*
 
 @end

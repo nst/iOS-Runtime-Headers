@@ -9,12 +9,12 @@
     NSString * _lyricsID;
     MPModelPlayEvent * _modelPlayEvent;
     MPModelSong * _modelSong;
-    unsigned int  _overrideItemType;
+    unsigned long long  _overrideItemType;
     NSString * _playbackSessionID;
     NSData * _recommendationData;
     NSString * _requestingBundleIdentifier;
     NSString * _requestingBundleVersion;
-    BOOL  _shouldReportPlayEventsToStore;
+    bool  _shouldReportPlayEventsToStore;
     NSData * _trackInfo;
 }
 
@@ -24,12 +24,12 @@
 @property (nonatomic, copy) NSString *lyricsID;
 @property (nonatomic, retain) MPModelPlayEvent *modelPlayEvent;
 @property (nonatomic, retain) MPModelSong *modelSong;
-@property (nonatomic) unsigned int overrideItemType;
+@property (nonatomic) unsigned long long overrideItemType;
 @property (nonatomic, copy) NSString *playbackSessionID;
 @property (nonatomic, copy) NSData *recommendationData;
 @property (nonatomic, copy) NSString *requestingBundleIdentifier;
 @property (nonatomic, copy) NSString *requestingBundleVersion;
-@property (nonatomic) BOOL shouldReportPlayEventsToStore;
+@property (nonatomic) bool shouldReportPlayEventsToStore;
 @property (nonatomic, copy) NSData *trackInfo;
 
 - (void).cxx_destruct;
@@ -40,7 +40,7 @@
 - (id)lyricsID;
 - (id)modelPlayEvent;
 - (id)modelSong;
-- (unsigned int)overrideItemType;
+- (unsigned long long)overrideItemType;
 - (id)playbackSessionID;
 - (id)recommendationData;
 - (id)requestingBundleIdentifier;
@@ -51,14 +51,14 @@
 - (void)setLyricsID:(id)arg1;
 - (void)setModelPlayEvent:(id)arg1;
 - (void)setModelSong:(id)arg1;
-- (void)setOverrideItemType:(unsigned int)arg1;
+- (void)setOverrideItemType:(unsigned long long)arg1;
 - (void)setPlaybackSessionID:(id)arg1;
 - (void)setRecommendationData:(id)arg1;
 - (void)setRequestingBundleIdentifier:(id)arg1;
 - (void)setRequestingBundleVersion:(id)arg1;
-- (void)setShouldReportPlayEventsToStore:(BOOL)arg1;
+- (void)setShouldReportPlayEventsToStore:(bool)arg1;
 - (void)setTrackInfo:(id)arg1;
-- (BOOL)shouldReportPlayEventsToStore;
+- (bool)shouldReportPlayEventsToStore;
 - (id)trackInfo;
 
 @end

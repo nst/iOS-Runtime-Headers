@@ -10,8 +10,8 @@
 @property (nonatomic, retain) IMBalloonPluginDataSource *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isFromMe;
+@property (readonly) unsigned long long hash;
+@property (nonatomic, readonly) bool isFromMe;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) NSString *type;
 @property (nonatomic, readonly) NSData *typingIndicatorIcon;

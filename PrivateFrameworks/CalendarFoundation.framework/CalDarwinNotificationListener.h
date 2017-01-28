@@ -3,41 +3,41 @@
  */
 
 @interface CalDarwinNotificationListener : NSObject <CalActivatable> {
-    id /* block */  _callback;
+    id  _callback;
     NSObject<OS_dispatch_queue> * _callbackQueue;
-    BOOL  _listening;
+    bool  _listening;
     NSString * _notificationName;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
-@property (nonatomic, readonly) BOOL active;
-@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, readonly) bool active;
+@property (nonatomic, copy) id callback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic) BOOL listening;
+@property (readonly) unsigned long long hash;
+@property (nonatomic) bool listening;
 @property (nonatomic, retain) NSString *notificationName;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
-- (BOOL)_addObserver;
+- (bool)_addObserver;
 - (void)_notificationWithNameReceived:(id)arg1;
-- (BOOL)_removeObserver;
+- (bool)_removeObserver;
 - (void)activate;
-- (BOOL)active;
-- (id /* block */)callback;
+- (bool)active;
+- (id)callback;
 - (id)callbackQueue;
 - (void)deactivate;
 - (void)dealloc;
 - (id)description;
-- (id)initWithNotificationName:(id)arg1 callback:(id /* block */)arg2;
-- (BOOL)listening;
+- (id)initWithNotificationName:(id)arg1 callback:(id)arg2;
+- (bool)listening;
 - (id)notificationName;
-- (void)setCallback:(id /* block */)arg1;
+- (void)setCallback:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
-- (void)setListening:(BOOL)arg1;
+- (void)setListening:(bool)arg1;
 - (void)setNotificationName:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (id)workQueue;

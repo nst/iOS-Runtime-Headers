@@ -5,7 +5,7 @@
 @interface TIUserDictionaryWord : NSObject
 
 + (id)managedObjectModelURL;
-+ (BOOL)userWord:(id)arg1 duplicatesTarget:(id)arg2 andShortcut:(id)arg3;
-+ (int)validateTransaction:(id)arg1 existingEntries:(id)arg2;
++ (bool)userWord:(id)arg1 duplicatesTarget:(id)arg2 andShortcut:(id)arg3;
++ (long long)validateTransaction:(id)arg1 existingEntries:(id)arg2;
 
 @end

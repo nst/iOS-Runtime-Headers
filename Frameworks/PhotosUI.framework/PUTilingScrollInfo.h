@@ -4,34 +4,34 @@
 
 @interface PUTilingScrollInfo : NSObject {
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _interpageSpacing;
-    float  _pagingFrictionAdjustment;
-    float  _pagingSpringPullAdjustment;
-    int  _scrollDirections;
-    BOOL  _shouldEnablePaging;
+    double  _pagingFrictionAdjustment;
+    double  _pagingSpringPullAdjustment;
+    long long  _scrollDirections;
+    bool  _shouldEnablePaging;
 }
 
-@property (setter=_setInterpageSpacing:, nonatomic) struct CGSize { float x1; float x2; } interpageSpacing;
-@property (setter=_setPagingFrictionAdjustment:, nonatomic) float pagingFrictionAdjustment;
-@property (setter=_setPagingSpringPullAdjustment:, nonatomic) float pagingSpringPullAdjustment;
-@property (setter=_setScrollDirections:, nonatomic) int scrollDirections;
-@property (setter=_setShouldEnablePaging:, nonatomic) BOOL shouldEnablePaging;
+@property (setter=_setInterpageSpacing:, nonatomic) struct CGSize { double x1; double x2; } interpageSpacing;
+@property (setter=_setPagingFrictionAdjustment:, nonatomic) double pagingFrictionAdjustment;
+@property (setter=_setPagingSpringPullAdjustment:, nonatomic) double pagingSpringPullAdjustment;
+@property (setter=_setScrollDirections:, nonatomic) long long scrollDirections;
+@property (setter=_setShouldEnablePaging:, nonatomic) bool shouldEnablePaging;
 
-+ (id)scrollInfoWithScrollDirections:(int)arg1;
-+ (id)scrollInfoWithScrollDirections:(int)arg1 enabledPagingWithInterpageSpacing:(struct CGSize { float x1; float x2; })arg2;
-+ (id)scrollInfoWithScrollDirections:(int)arg1 enabledPagingWithInterpageSpacing:(struct CGSize { float x1; float x2; })arg2 pagingSpringPullAdjustment:(float)arg3 pagingFrictionAdjustment:(float)arg4;
++ (id)scrollInfoWithScrollDirections:(long long)arg1;
++ (id)scrollInfoWithScrollDirections:(long long)arg1 enabledPagingWithInterpageSpacing:(struct CGSize { double x1; double x2; })arg2;
++ (id)scrollInfoWithScrollDirections:(long long)arg1 enabledPagingWithInterpageSpacing:(struct CGSize { double x1; double x2; })arg2 pagingSpringPullAdjustment:(double)arg3 pagingFrictionAdjustment:(double)arg4;
 
-- (void)_setInterpageSpacing:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setPagingFrictionAdjustment:(float)arg1;
-- (void)_setPagingSpringPullAdjustment:(float)arg1;
-- (void)_setScrollDirections:(int)arg1;
-- (void)_setShouldEnablePaging:(BOOL)arg1;
-- (struct CGSize { float x1; float x2; })interpageSpacing;
-- (float)pagingFrictionAdjustment;
-- (float)pagingSpringPullAdjustment;
-- (int)scrollDirections;
-- (BOOL)shouldEnablePaging;
+- (void)_setInterpageSpacing:(struct CGSize { double x1; double x2; })arg1;
+- (void)_setPagingFrictionAdjustment:(double)arg1;
+- (void)_setPagingSpringPullAdjustment:(double)arg1;
+- (void)_setScrollDirections:(long long)arg1;
+- (void)_setShouldEnablePaging:(bool)arg1;
+- (struct CGSize { double x1; double x2; })interpageSpacing;
+- (double)pagingFrictionAdjustment;
+- (double)pagingSpringPullAdjustment;
+- (long long)scrollDirections;
+- (bool)shouldEnablePaging;
 
 @end

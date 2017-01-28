@@ -14,11 +14,11 @@
 
 - (void).cxx_destruct;
 - (id)_init;
-- (void)_resetPrivacySettingsForAppContainerTuple:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_resetPrivacySettingsForAppContainerTuple:(id)arg1 completionHandler:(id)arg2;
 - (id)init;
 - (id)privacyManagerQueue;
 - (id)requests;
-- (void)resetPrivacySettingsWithCompletionHandler:(id /* block */)arg1;
+- (void)resetPrivacySettingsWithCompletionHandler:(id)arg1;
 - (void)setPrivacyManagerQueue:(id)arg1;
 - (void)setRequests:(id)arg1;
 

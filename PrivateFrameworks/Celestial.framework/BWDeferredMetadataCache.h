@@ -24,7 +24,7 @@
 - (void)addMetadataAttachmentToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 withDutyCycleMetadataCache:(id)arg2;
 - (void)dealloc;
 - (void)flush;
-- (id)initWithCaptureStream:(struct OpaqueFigCaptureStream { }*)arg1 atomicTransactions:(BOOL)arg2;
+- (id)initWithCaptureStream:(struct OpaqueFigCaptureStream { }*)arg1 atomicTransactions:(bool)arg2;
 - (int)numberOfExpectedSampleBuffersForEachPTS;
 - (void)setNumberOfExpectedSampleBuffersForEachPTS:(int)arg1;
 

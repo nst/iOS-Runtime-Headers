@@ -6,6 +6,7 @@
 @required
 
 - (CKInvisibleInkEffectController *)invisibleInkEffectControllerForPreviewController:(CKQLPreviewController *)arg1;
+- (void)previewControllerDidCancelDismiss:(QLPreviewController *)arg1;
 
 @optional
 

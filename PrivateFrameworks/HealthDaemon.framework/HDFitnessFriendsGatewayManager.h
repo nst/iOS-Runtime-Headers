@@ -3,8 +3,8 @@
  */
 
 @interface HDFitnessFriendsGatewayManager : NSObject <HDFitnessFriendsCloudKitManagerChangesObserver, HDFitnessFriendsManagerReadyObserver> {
-    BOOL  _allPairedWatchesMeetMinimumVersion;
     HDFitnessFriendsCloudKitManager * _cloudKitManager;
+    bool  _currentlyPairedWatchMeetsMinimumVersion;
     HDFitnessFriendsFriendListManager * _friendListManager;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSHashTable * _observers;
@@ -13,8 +13,8 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasReachedMaximumNumberOfFriends;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) bool hasReachedMaximumNumberOfFriends;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -23,12 +23,12 @@
 - (void)beginObserving;
 - (void)cloudKitManagerDidUpdateAccountStatus:(id)arg1;
 - (void)fitnessFriendsManagerReady:(id)arg1;
-- (void)gatewayStatusWithCompletion:(id /* block */)arg1;
-- (BOOL)hasReachedMaximumNumberOfFriends;
+- (void)gatewayStatusWithCompletion:(id)arg1;
+- (bool)hasReachedMaximumNumberOfFriends;
 - (id)init;
-- (BOOL)isInviteVersionCompatible:(unsigned int)arg1;
+- (bool)isInviteVersionCompatible:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1;
-- (BOOL)shouldFilterIncomingMessageFrom:(id)arg1;
+- (bool)shouldFilterIncomingMessageFrom:(id)arg1;
 - (void)updateState;
 
 @end

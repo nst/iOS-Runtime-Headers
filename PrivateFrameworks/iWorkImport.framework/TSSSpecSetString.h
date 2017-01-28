@@ -3,7 +3,7 @@
  */
 
 @interface TSSSpecSetString : TSSSpecString {
-    BOOL  _unset;
+    bool  _unset;
     NSString * _value;
 }
 
@@ -12,12 +12,12 @@
 
 - (id)apply:(id)arg1;
 - (id)description;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initSpecSetStringWithArchive:(const struct SpecSetStringArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; bool x6; }*)arg1 unarchiver:(id)arg2;
 - (id)initUnsetSpec;
 - (id)initWithCurrentProperty:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isUnsetSpec;
+- (bool)isEqual:(id)arg1;
+- (bool)isUnsetSpec;
 - (id)operationPropertyName;
 - (void)saveSpecSetStringToArchive:(struct SpecSetStringArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; bool x6; }*)arg1 archiver:(id)arg2;
 

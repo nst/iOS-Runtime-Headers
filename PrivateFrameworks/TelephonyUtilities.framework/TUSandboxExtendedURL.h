@@ -14,7 +14,7 @@
 @property (nonatomic) long long sandboxExtensionHandle;
 @property (nonatomic, copy) NSString *sandboxExtensionToken;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)URL;

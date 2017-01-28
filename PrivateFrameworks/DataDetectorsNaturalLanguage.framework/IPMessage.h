@@ -28,7 +28,7 @@
 @property (retain) NSString *type;
 
 - (void).cxx_destruct;
-- (void)addDetectectedKeyword:(id)arg1 classificationTypeIdentifier:(id)arg2;
+- (void)addDetectedKeyword:(id)arg1 classificationTypeIdentifier:(id)arg2;
 - (void)addMessageUnit:(id)arg1;
 - (id)dateSent;
 - (id)detectedKeywordsDictionary;

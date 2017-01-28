@@ -8,9 +8,9 @@
 
 - (id)audioClip;
 - (id)initWithAudioClip:(id)arg1;
-- (BOOL)isLikedStateEnabled;
+- (bool)isLikedStateEnabled;
 - (void)loadAssetAndPlayerItem;
-- (BOOL)supportsSkip;
+- (bool)supportsSkip;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

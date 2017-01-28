@@ -3,15 +3,15 @@
  */
 
 @interface FLLogController : NSObject {
-    BOOL  _logToFile;
-    BOOL  _logToSyslog;
-    unsigned int  _maxLogLevel;
+    bool  _logToFile;
+    bool  _logToSyslog;
+    unsigned long long  _maxLogLevel;
 }
 
 + (id)sharedLogger;
 
 - (void)_reloadLogPreferences;
 - (id)init;
-- (void)logMessageWithLevel:(unsigned int)arg1 format:(id)arg2 args:(void*)arg3;
+- (void)logMessageWithLevel:(unsigned long long)arg1 format:(id)arg2 args:(char *)arg3;
 
 @end

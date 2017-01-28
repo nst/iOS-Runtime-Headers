@@ -17,7 +17,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (void)powerlog:(id)arg1 eventData:(id)arg2;
@@ -26,10 +26,10 @@
 - (void)_applicationStateChanged:(id)arg1;
 - (double)_assertionTimeout;
 - (id)_bundleIdentifier;
-- (BOOL)_createBudgetWithName:(id)arg1 parentBudgetName:(id)arg2 attribute:(id)arg3 error:(id*)arg4;
-- (BOOL)_deleteBudgetWithName:(id)arg1;
+- (bool)_createBudgetWithName:(id)arg1 parentBudgetName:(id)arg2 attribute:(id)arg3 error:(id*)arg4;
+- (bool)_deleteBudgetWithName:(id)arg1;
 - (void)_deleteDuetAttributesForAccountWithUniqueId:(id)arg1;
-- (id)_duetAttributeForAccountWithUniqueId:(id)arg1 discretionary:(BOOL)arg2;
+- (id)_duetAttributeForAccountWithUniqueId:(id)arg1 discretionary:(bool)arg2;
 - (void)_initDuet;
 - (void)_lowPowerModeChangedNotification:(id)arg1;
 - (void)_releaseAssertion_nts;
@@ -40,9 +40,9 @@
 - (void)dealloc;
 - (id)duetIdentifier;
 - (id)init;
-- (BOOL)isBatterySaverModeEnabled;
-- (BOOL)isHoldingAssertion;
-- (BOOL)isPluggedIn;
+- (bool)isBatterySaverModeEnabled;
+- (bool)isHoldingAssertion;
+- (bool)isPluggedIn;
 - (void)recordDuetEventForAccount:(id)arg1 event:(id)arg2;
 - (void)releaseAssertionWithIdentifier:(id)arg1;
 - (void)retainAssertionWithIdentifier:(id)arg1;

@@ -8,7 +8,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) NSString *headerTitle;
 @property (nonatomic, retain) NSArray *peopleNames;
 @property (nonatomic, readonly) NSString *subtitle;
@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)headerTitle;
 - (id)peopleNames;
-- (void)requestPeopleNamesUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)requestPeopleNamesUpdateWithCompletionHandler:(id)arg1;
 - (void)resetToDefault;
 - (void)setPeopleNames:(id)arg1;
 - (id)title;

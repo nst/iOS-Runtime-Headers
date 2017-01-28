@@ -18,7 +18,7 @@
 - (id)extensionIdentifier;
 - (id)init;
 - (id)initWithQueue:(id)arg1;
-- (void)requestTransaction:(id)arg1 completion:(id /* block */)arg2;
+- (void)requestTransaction:(id)arg1 completion:(id)arg2;
 - (void)setCallObserver:(id)arg1;
 - (void)setCompletionQueue:(id)arg1;
 - (void)setExtensionIdentifier:(id)arg1;

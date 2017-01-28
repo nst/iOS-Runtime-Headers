@@ -3,18 +3,18 @@
  */
 
 @interface UIStatusBarPersonNameItemView : UIStatusBarItemView {
-    float  _letterSpacing;
-    float  _maxWidth;
+    double  _letterSpacing;
+    double  _maxWidth;
     NSString * _personNameString;
 }
 
 - (void).cxx_destruct;
-- (BOOL)_updateWithPersonName:(id)arg1 maxWidth:(float)arg2;
-- (float)addContentOverlap:(float)arg1;
+- (bool)_updateWithPersonName:(id)arg1 maxWidth:(double)arg2;
+- (double)addContentOverlap:(double)arg1;
 - (id)contentsImage;
-- (int)legibilityStyle;
-- (float)resetContentOverlap;
-- (float)standardPadding;
-- (BOOL)updateForNewData:(id)arg1 actions:(int)arg2;
+- (long long)legibilityStyle;
+- (double)resetContentOverlap;
+- (double)standardPadding;
+- (bool)updateForNewData:(id)arg1 actions:(int)arg2;
 
 @end

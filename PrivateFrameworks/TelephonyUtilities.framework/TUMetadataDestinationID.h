@@ -25,13 +25,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)destinationID;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)init;
 - (id)initWithCall:(id)arg1;
 - (id)initWithDestinationID:(id)arg1 countryCode:(id)arg2;
 - (id)initWithRecentCall:(id)arg1;
 - (id)initWithVMVoicemail:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (struct __CFPhoneNumber { }*)phoneNumber;
 - (void)setCacheKey:(id)arg1;
 - (void)setPhoneNumber:(struct __CFPhoneNumber { }*)arg1;

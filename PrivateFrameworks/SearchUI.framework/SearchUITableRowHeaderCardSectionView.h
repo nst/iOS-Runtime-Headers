@@ -4,9 +4,9 @@
 
 @interface SearchUITableRowHeaderCardSectionView : SearchUITableRowCardSectionView
 
-- (float)fontSize;
-- (float)labelBottomBaselineSpacing;
-- (float)labelTopBaselineSpacing;
-- (BOOL)labelsAreVibrant;
+- (double)fontSize;
+- (double)labelBottomBaselineSpacing;
+- (double)labelTopBaselineSpacing;
+- (bool)labelsAreVibrant;
 
 @end

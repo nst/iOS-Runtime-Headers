@@ -8,14 +8,14 @@
 
 @property (readonly) _DECItem *item;
 
-+ (BOOL)supportsSecureCoding;
++ (bool)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItem:(id)arg1;
-- (BOOL)isDecAppResult;
-- (BOOL)isDecQueryResult;
+- (bool)isDecAppResult;
+- (bool)isDecQueryResult;
 - (id)item;
 
 @end

@@ -10,16 +10,16 @@
         double w; 
     }  _attitude;
     GCController * _controller;
-    BOOL  _emulatedMotionEnabled;
+    bool  _emulatedMotionEnabled;
     struct { 
         double x; 
         double y; 
         double z; 
     }  _gravity;
-    id /* block */  _internalValueChangedHandler;
-    BOOL  _motionLite;
+    id  _internalValueChangedHandler;
+    bool  _motionLite;
     CMMotionManager * _motionMgr;
-    BOOL  _motionUpdatedEnabled;
+    bool  _motionUpdatedEnabled;
     struct { 
         double x; 
         double y; 
@@ -37,7 +37,7 @@
         double y; 
         double z; 
     }  _userAcceleration;
-    id /* block */  _valueChangedHandler;
+    id  _valueChangedHandler;
 }
 
 @property (nonatomic, readonly) struct GCQuaternion { double x1; double x2; double x3; double x4; } attitude;
@@ -45,14 +45,14 @@
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } gravity;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } rotationRate;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } userAcceleration;
-@property (nonatomic, copy) id /* block */ valueChangedHandler;
+@property (nonatomic, copy) id valueChangedHandler;
 
 - (void).cxx_destruct;
-- (BOOL)_isUpdatingDeviceMotion;
-- (void)_pauseMotionUpdates:(BOOL)arg1;
+- (bool)_isUpdatingDeviceMotion;
+- (void)_pauseMotionUpdates:(bool)arg1;
 - (void)_setAttitude:(struct GCQuaternion { double x1; double x2; double x3; double x4; })arg1;
 - (void)_setGravity:(struct { double x1; double x2; double x3; })arg1;
-- (void)_setMotionLite:(BOOL)arg1;
+- (void)_setMotionLite:(bool)arg1;
 - (void)_setRotationRate:(struct { double x1; double x2; double x3; })arg1;
 - (void)_setUserAcceleration:(struct { double x1; double x2; double x3; })arg1;
 - (void)_startDeviceMotionUpdates;
@@ -63,12 +63,12 @@
 - (id)controller;
 - (struct { double x1; double x2; double x3; })gravity;
 - (id)initWithController:(id)arg1;
-- (id /* block */)internalValueChangedHandler;
-- (BOOL)isEmulatedMicroGamepad;
+- (id)internalValueChangedHandler;
+- (bool)isEmulatedMicroGamepad;
 - (struct { double x1; double x2; double x3; })rotationRate;
-- (void)setInternalValueChangedHandler:(id /* block */)arg1;
-- (void)setValueChangedHandler:(id /* block */)arg1;
+- (void)setInternalValueChangedHandler:(id)arg1;
+- (void)setValueChangedHandler:(id)arg1;
 - (struct { double x1; double x2; double x3; })userAcceleration;
-- (id /* block */)valueChangedHandler;
+- (id)valueChangedHandler;
 
 @end

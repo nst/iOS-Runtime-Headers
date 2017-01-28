@@ -12,6 +12,6 @@
 - (void).cxx_destruct;
 - (id)initWithInternalSessionHandle:(id)arg1;
 - (void)invalidateSession;
-- (BOOL)isFirstInQueue;
+- (bool)isFirstInQueue;
 
 @end

@@ -13,9 +13,9 @@
 }
 
 @property (nonatomic) long long arrivalDate;
-@property (nonatomic) BOOL hasArrivalDate;
-@property (nonatomic, readonly) BOOL hasLocation;
-@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) bool hasArrivalDate;
+@property (nonatomic, readonly) bool hasLocation;
+@property (nonatomic) bool hasTimestamp;
 @property (nonatomic, retain) HDAWDHealthKitRoutineLocation *location;
 @property (nonatomic) unsigned long long timestamp;
 
@@ -25,17 +25,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasArrivalDate;
-- (BOOL)hasLocation;
-- (BOOL)hasTimestamp;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasArrivalDate;
+- (bool)hasLocation;
+- (bool)hasTimestamp;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (id)location;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (void)setArrivalDate:(long long)arg1;
-- (void)setHasArrivalDate:(BOOL)arg1;
-- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasArrivalDate:(bool)arg1;
+- (void)setHasTimestamp:(bool)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;

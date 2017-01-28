@@ -5,10 +5,10 @@
 
 @required
 
-- (BOOL)isActive;
-- (BOOL)isMuted;
-- (BOOL)isPlaying;
-- (void)setActive:(BOOL)arg1;
-- (BOOL)usesSharedAudioSession;
+- (bool)isActive;
+- (bool)isMuted;
+- (bool)isPlaying;
+- (void)setActive:(bool)arg1;
+- (bool)usesSharedAudioSession;
 
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)_libraryLoaded:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg1;
+- (void)_libraryLoaded:(struct _CSTypeRef { unsigned long long x1; unsigned long long x2; })arg1;
 
 @end

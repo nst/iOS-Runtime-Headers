@@ -6,13 +6,13 @@
     NSObject<OS_dispatch_queue> * queue;
 }
 
-@property (readonly) BOOL featureDisabled;
+@property (readonly) bool featureDisabled;
 
 - (void).cxx_destruct;
-- (BOOL)featureDisabled;
+- (bool)featureDisabled;
 - (id)init;
-- (void)registerHandlerForDatabaseChangeNotification:(id /* block */)arg1;
-- (void)registerHandlerForDeleteDataNotification:(id /* block */)arg1;
-- (void)registerHandlerForFeatureDisabledNotification:(id /* block */)arg1;
+- (void)registerHandlerForDatabaseChangeNotification:(id)arg1;
+- (void)registerHandlerForDeleteDataNotification:(id)arg1;
+- (void)registerHandlerForFeatureDisabledNotification:(id)arg1;
 
 @end

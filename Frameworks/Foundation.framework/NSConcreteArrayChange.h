@@ -3,17 +3,17 @@
  */
 
 @interface NSConcreteArrayChange : NSArrayChange {
-    unsigned int  _changeType;
-    unsigned int  _destinationIndex;
-    unsigned int  _sourceIndex;
+    unsigned long long  _changeType;
+    unsigned long long  _destinationIndex;
+    unsigned long long  _sourceIndex;
     id  _value;
 }
 
-- (unsigned int)changeType;
+- (unsigned long long)changeType;
 - (void)dealloc;
-- (unsigned int)destinationIndex;
-- (id)initWithType:(unsigned int)arg1 sourceIndex:(unsigned int)arg2 destinationIndex:(unsigned int)arg3 value:(id)arg4;
-- (unsigned int)sourceIndex;
+- (unsigned long long)destinationIndex;
+- (id)initWithType:(unsigned long long)arg1 sourceIndex:(unsigned long long)arg2 destinationIndex:(unsigned long long)arg3 value:(id)arg4;
+- (unsigned long long)sourceIndex;
 - (id)value;
 
 @end

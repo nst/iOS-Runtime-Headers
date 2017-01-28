@@ -5,26 +5,24 @@
 
 @required
 
-- (UIView *)colorInfusionView;
-- (struct CGSize { float x1; float x2; })contentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })contentSizeForSize:(struct CGSize { double x1; double x2; })arg1;
 - (UIView *)customContentView;
 - (NSDate *)date;
-- (int)dateFormatStyle;
+- (long long)dateFormatStyle;
 - (UIImage *)icon;
 - (UIButton *)iconButton;
-- (BOOL)isBackgroundBlurred;
-- (BOOL)isBanner;
-- (BOOL)isDateAllDay;
-- (void)setBackgroundBlurred:(BOOL)arg1;
-- (void)setBanner:(BOOL)arg1;
-- (void)setColorInfusionView:(UIView *)arg1;
+- (bool)isBackgroundBlurred;
+- (bool)isBanner;
+- (bool)isDateAllDay;
+- (void)setBackgroundBlurred:(bool)arg1;
+- (void)setBanner:(bool)arg1;
 - (void)setDate:(NSDate *)arg1;
-- (void)setDateAllDay:(BOOL)arg1;
-- (void)setDateFormatStyle:(int)arg1;
+- (void)setDateAllDay:(bool)arg1;
+- (void)setDateFormatStyle:(long long)arg1;
 - (void)setIcon:(UIImage *)arg1;
 - (void)setTimeZone:(NSTimeZone *)arg1;
 - (void)setTitle:(NSString *)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFitsContentWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFitsContentWithSize:(struct CGSize { double x1; double x2; })arg1;
 - (NSTimeZone *)timeZone;
 - (NSString *)title;
 - (UIButton *)utilityButton;

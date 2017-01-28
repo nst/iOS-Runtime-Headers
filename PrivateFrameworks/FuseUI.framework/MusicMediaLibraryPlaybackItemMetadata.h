@@ -4,7 +4,7 @@
 
 @interface MusicMediaLibraryPlaybackItemMetadata : MPMediaLibraryPlaybackItemMetadata
 
-+ (BOOL)_shouldRespectMusicCellularDataSetting;
-+ (BOOL)_shouldRespectStoreCellularDataSetting;
++ (bool)_shouldRespectMusicCellularDataSetting;
++ (bool)_shouldRespectStoreCellularDataSetting;
 
 @end

@@ -4,28 +4,28 @@
 
 @interface HDCollectionCalculator : NSObject {
     NSArray * _bucketBoundaries;
-    unsigned int  _currentBucket;
+    unsigned long long  _currentBucket;
     double  _currentEndDate;
     double  _currentStartDate;
-    BOOL  _detailBySource;
+    bool  _detailBySource;
 }
 
 @property (nonatomic, readonly) NSArray *bucketBoundaries;
-@property (nonatomic, readonly) unsigned int currentBucket;
+@property (nonatomic, readonly) unsigned long long currentBucket;
 @property (nonatomic, readonly) double currentEndDate;
 @property (nonatomic, readonly) double currentStartDate;
-@property (nonatomic) BOOL detailBySource;
+@property (nonatomic) bool detailBySource;
 
 - (void).cxx_destruct;
 - (void)addValue:(double)arg1 startTime:(double)arg2 endTime:(double)arg3 sourceID:(long long)arg4;
-- (BOOL)advanceBucket;
+- (bool)advanceBucket;
 - (id)bucketBoundaries;
-- (unsigned int)currentBucket;
+- (unsigned long long)currentBucket;
 - (double)currentEndDate;
 - (double)currentStartDate;
-- (BOOL)detailBySource;
-- (BOOL)hasData;
+- (bool)detailBySource;
+- (bool)hasData;
 - (id)initWithBucketBoundaries:(id)arg1;
-- (void)setDetailBySource:(BOOL)arg1;
+- (void)setDetailBySource:(bool)arg1;
 
 @end

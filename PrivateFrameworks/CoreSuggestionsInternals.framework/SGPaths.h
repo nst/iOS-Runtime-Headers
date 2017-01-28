@@ -5,10 +5,10 @@
 @interface SGPaths : NSObject
 
 + (id)suggestionsDirectory;
-+ (id)suggestionsDirectoryAfterCreatingIfNeeded:(BOOL)arg1;
++ (id)suggestionsDirectoryAfterCreatingIfNeeded:(bool)arg1;
 + (id)suggestionsDirectoryFile:(id)arg1;
-+ (id)suggestionsDirectoryFile:(id)arg1 creatingSuggestionsDirectoryIfNeeded:(BOOL)arg2;
++ (id)suggestionsDirectoryFile:(id)arg1 creatingSuggestionsDirectoryIfNeeded:(bool)arg2;
 + (id)suggestionsSubdirectory:(id)arg1;
-+ (id)suggestionsSubdirectory:(id)arg1 creatingDirectoriesIfNeeded:(BOOL)arg2;
++ (id)suggestionsSubdirectory:(id)arg1 creatingDirectoriesIfNeeded:(bool)arg2;
 
 @end

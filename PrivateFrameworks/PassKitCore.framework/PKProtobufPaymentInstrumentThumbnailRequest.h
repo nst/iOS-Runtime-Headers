@@ -13,10 +13,10 @@
     double  _width;
 }
 
-@property (nonatomic) BOOL hasHeight;
-@property (nonatomic, readonly) BOOL hasManifestHash;
-@property (nonatomic, readonly) BOOL hasPassIdentifier;
-@property (nonatomic) BOOL hasWidth;
+@property (nonatomic) bool hasHeight;
+@property (nonatomic, readonly) bool hasManifestHash;
+@property (nonatomic, readonly) bool hasPassIdentifier;
+@property (nonatomic) bool hasWidth;
 @property (nonatomic) double height;
 @property (nonatomic, retain) NSString *manifestHash;
 @property (nonatomic, retain) NSString *passIdentifier;
@@ -27,21 +27,21 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasHeight;
-- (BOOL)hasManifestHash;
-- (BOOL)hasPassIdentifier;
-- (BOOL)hasWidth;
-- (unsigned int)hash;
+- (bool)hasHeight;
+- (bool)hasManifestHash;
+- (bool)hasPassIdentifier;
+- (bool)hasWidth;
+- (unsigned long long)hash;
 - (double)height;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEqual:(id)arg1;
 - (id)manifestHash;
 - (void)mergeFrom:(id)arg1;
 - (id)passIdentifier;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
-- (void)setHasHeight:(BOOL)arg1;
-- (void)setHasWidth:(BOOL)arg1;
+- (void)setHasHeight:(bool)arg1;
+- (void)setHasWidth:(bool)arg1;
 - (void)setHeight:(double)arg1;
 - (void)setManifestHash:(id)arg1;
 - (void)setPassIdentifier:(id)arg1;

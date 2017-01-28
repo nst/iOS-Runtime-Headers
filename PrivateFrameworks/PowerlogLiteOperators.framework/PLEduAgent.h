@@ -17,7 +17,7 @@
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
-- (void)logEventPointMode:(BOOL)arg1;
+- (void)logEventPointMode:(bool)arg1;
 - (void)setSyncBubbleStatusNotification:(id)arg1;
 - (id)syncBubbleStatusNotification;
 

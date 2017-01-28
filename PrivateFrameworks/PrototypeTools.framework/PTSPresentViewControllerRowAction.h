@@ -3,17 +3,17 @@
  */
 
 @interface PTSPresentViewControllerRowAction : PTSRowAction {
-    id /* block */  _viewControllerCreator;
+    id  _viewControllerCreator;
 }
 
-@property (nonatomic, copy) id /* block */ viewControllerCreator;
+@property (nonatomic, copy) id viewControllerCreator;
 
-+ (id)actionWithViewControllerCreator:(id /* block */)arg1;
++ (id)actionWithViewControllerCreator:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)setViewControllerCreator:(id /* block */)arg1;
-- (id /* block */)viewControllerCreator;
+- (void)setViewControllerCreator:(id)arg1;
+- (id)viewControllerCreator;
 
 @end

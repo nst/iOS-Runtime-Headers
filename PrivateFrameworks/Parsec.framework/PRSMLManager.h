@@ -38,13 +38,13 @@
 - (id)coreDuet;
 - (id)dictCoreDuetInfo;
 - (void)dumpPredictionStatsToFlatFiles;
-- (unsigned int)getCountForCategory:(id)arg1;
+- (unsigned long long)getCountForCategory:(id)arg1;
 - (id)getLastSavedCategoryRankings;
-- (id)getRankedCategoriesAsDictionaryForDays:(int)arg1;
+- (id)getRankedCategoriesAsDictionaryForDays:(long long)arg1;
 - (double)getTimeStampWhenLastLogged;
 - (id)getTopHitResultForQuery:(id)arg1 resultSet:(id)arg2;
-- (unsigned int)getTotalResultsUsedCount;
-- (unsigned int)getTotalResultsUsedCountForDuet;
+- (unsigned long long)getTotalResultsUsedCount;
+- (unsigned long long)getTotalResultsUsedCountForDuet;
 - (id)initManager;
 - (id)mapPredictionEnginesToClasses;
 - (id)mapPredictionEnginesToCountFiles;
@@ -61,7 +61,7 @@
 - (void)setMapPredictionEnginesToCounts:(id)arg1;
 - (void)setMapPredictionEnginesToPredictedTopHit:(id)arg1;
 - (void)setTimeStampWhenLastLogged:(double)arg1;
-- (void)setTotalResultsUsedCount:(unsigned int)arg1;
+- (void)setTotalResultsUsedCount:(unsigned long long)arg1;
 - (void)trackQueryCountsForQuery:(id)arg1 resultSet:(id)arg2 staticModelTopHit:(id)arg3;
 - (void)updateCountsForUsedResult:(id)arg1;
 

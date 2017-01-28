@@ -12,10 +12,10 @@
 @property (nonatomic, copy) NSNumber *remotePhase;
 
 + (id)invalidRemoteTaskWithRequest:(id)arg1 error:(id)arg2;
-+ (BOOL)isCancelable;
++ (bool)isCancelable;
 
 - (void).cxx_destruct;
-- (BOOL)canSendNotificationWithName:(id)arg1 userInfo:(id)arg2;
+- (bool)canSendNotificationWithName:(id)arg1 userInfo:(id)arg2;
 - (void)cancel;
 - (void)cancelOperationIfNeeded;
 - (id)client;
@@ -23,14 +23,14 @@
 - (void)fetchProgress;
 - (id)initWithRequest:(id)arg1 client:(id)arg2;
 - (id)initWithRequest:(id)arg1 clientError:(id)arg2;
-- (BOOL)isAsynchronous;
+- (bool)isAsynchronous;
 - (void)main;
 - (void)operationWillFinish;
 - (void)processMessage:(id)arg1;
 - (void)processNotificationMessage:(id)arg1;
 - (id)remotePhase;
 - (void)setRemotePhase:(id)arg1;
-- (void)updateCompletedUnitCount:(int)arg1 andTotalUnitCount:(int)arg2;
+- (void)updateCompletedUnitCount:(long long)arg1 andTotalUnitCount:(long long)arg2;
 - (void)updateProgressWithRemoteProgress:(id)arg1;
 
 @end

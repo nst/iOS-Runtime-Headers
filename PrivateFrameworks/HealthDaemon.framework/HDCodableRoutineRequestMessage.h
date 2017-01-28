@@ -13,10 +13,10 @@
 }
 
 @property (nonatomic, retain) HDCodableRoutineLocationRequest *fetchLocationRequest;
-@property (nonatomic, readonly) BOOL hasFetchLocationRequest;
-@property (nonatomic, readonly) BOOL hasRequestIdentifier;
-@property (nonatomic) BOOL hasRequestType;
-@property (nonatomic, readonly) BOOL hasScenarioTriggeredRequest;
+@property (nonatomic, readonly) bool hasFetchLocationRequest;
+@property (nonatomic, readonly) bool hasRequestIdentifier;
+@property (nonatomic) bool hasRequestType;
+@property (nonatomic, readonly) bool hasScenarioTriggeredRequest;
 @property (nonatomic, retain) NSString *requestIdentifier;
 @property (nonatomic) int requestType;
 @property (nonatomic, retain) HDCodableRoutineScenarioTriggeredRequest *scenarioTriggeredRequest;
@@ -27,19 +27,19 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)fetchLocationRequest;
-- (BOOL)hasFetchLocationRequest;
-- (BOOL)hasRequestIdentifier;
-- (BOOL)hasRequestType;
-- (BOOL)hasScenarioTriggeredRequest;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
+- (bool)hasFetchLocationRequest;
+- (bool)hasRequestIdentifier;
+- (bool)hasRequestType;
+- (bool)hasScenarioTriggeredRequest;
+- (unsigned long long)hash;
+- (bool)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)readFrom:(id)arg1;
+- (bool)readFrom:(id)arg1;
 - (id)requestIdentifier;
 - (int)requestType;
 - (id)scenarioTriggeredRequest;
 - (void)setFetchLocationRequest:(id)arg1;
-- (void)setHasRequestType:(BOOL)arg1;
+- (void)setHasRequestType:(bool)arg1;
 - (void)setRequestIdentifier:(id)arg1;
 - (void)setRequestType:(int)arg1;
 - (void)setScenarioTriggeredRequest:(id)arg1;

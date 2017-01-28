@@ -7,7 +7,7 @@
     double  _fadeInDuration;
     double  _fadeOutDelay;
     double  _fadeOutDuration;
-    BOOL  _shouldMoveSnapshotView;
+    bool  _shouldMoveSnapshotView;
     NSMutableArray * _siblingViews;
     UIView * _snapshotView;
     UIView * _view;
@@ -17,7 +17,7 @@
 @property (nonatomic) double fadeInDuration;
 @property (nonatomic) double fadeOutDelay;
 @property (nonatomic) double fadeOutDuration;
-@property (nonatomic) BOOL shouldMoveSnapshotView;
+@property (nonatomic) bool shouldMoveSnapshotView;
 @property (nonatomic, readonly) NSArray *siblingViews;
 @property (nonatomic, readonly) UIView *snapshotView;
 @property (nonatomic, readonly) UIView *view;
@@ -37,8 +37,8 @@
 - (void)setFadeInDuration:(double)arg1;
 - (void)setFadeOutDelay:(double)arg1;
 - (void)setFadeOutDuration:(double)arg1;
-- (void)setShouldMoveSnapshotView:(BOOL)arg1;
-- (BOOL)shouldMoveSnapshotView;
+- (void)setShouldMoveSnapshotView:(bool)arg1;
+- (bool)shouldMoveSnapshotView;
 - (id)siblingViews;
 - (id)snapshotView;
 - (id)view;

@@ -10,7 +10,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 
 + (id)sharedInstance;
@@ -20,10 +20,10 @@
 - (void)assetLinkController:(id)arg1 didFinishAsset:(id)arg2;
 - (void)assetLinkController:(id)arg1 didUpdateAsset:(id)arg2;
 - (void)assetLinkController:(id)arg1 didUpdateAssetState:(id)arg2;
-- (void)getAllDownloadsWithReplyBlock:(id /* block */)arg1;
-- (void)getDownloadProgressForItemIdentifier:(id)arg1 withReplyBlock:(id /* block */)arg2;
+- (void)getAllDownloadsWithReplyBlock:(id)arg1;
+- (void)getDownloadProgressForItemIdentifier:(id)arg1 withReplyBlock:(id)arg2;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;
 - (void)stop;
 

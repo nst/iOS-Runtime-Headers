@@ -4,21 +4,21 @@
 
 @interface SCNHeadMountedDisplayRenderingTechnique : SCNTechnique <SCNStereoscopicRenderingTechnique>
 
-@property (nonatomic) float barrelDistortionInputScale;
-@property (nonatomic) struct CGPoint { float x1; float x2; } barrelDistortionLensCenter;
-@property (nonatomic) float barrelDistortionOutputScale;
+@property (nonatomic) double barrelDistortionInputScale;
+@property (nonatomic) struct CGPoint { double x1; double x2; } barrelDistortionLensCenter;
+@property (nonatomic) double barrelDistortionOutputScale;
 @property (nonatomic) struct SCNVector4 { float x1; float x2; float x3; float x4; } barrelDistortionWarpCoefficients;
 @property (nonatomic) double interaxialDistance;
 
-- (float)barrelDistortionInputScale;
-- (struct CGPoint { float x1; float x2; })barrelDistortionLensCenter;
-- (float)barrelDistortionOutputScale;
+- (double)barrelDistortionInputScale;
+- (struct CGPoint { double x1; double x2; })barrelDistortionLensCenter;
+- (double)barrelDistortionOutputScale;
 - (struct SCNVector4 { float x1; float x2; float x3; float x4; })barrelDistortionWarpCoefficients;
 - (id)init;
 - (double)interaxialDistance;
-- (void)setBarrelDistortionInputScale:(float)arg1;
-- (void)setBarrelDistortionLensCenter:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setBarrelDistortionOutputScale:(float)arg1;
+- (void)setBarrelDistortionInputScale:(double)arg1;
+- (void)setBarrelDistortionLensCenter:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setBarrelDistortionOutputScale:(double)arg1;
 - (void)setBarrelDistortionWarpCoefficients:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1;
 - (void)setInteraxialDistance:(double)arg1;
 

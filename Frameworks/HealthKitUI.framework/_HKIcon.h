@@ -3,62 +3,62 @@
  */
 
 @interface _HKIcon : HKAnimatableObject {
-    float  _alpha;
+    double  _alpha;
     UIColor * _color;
-    float  _coloration;
-    int  _currentFrameIndex;
+    double  _coloration;
+    long long  _currentFrameIndex;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _firstFrameOrigin;
-    int  _frameColumns;
-    int  _frameCount;
+    long long  _frameColumns;
+    long long  _frameCount;
     struct CGSize { 
-        float width; 
-        float height; 
+        double width; 
+        double height; 
     }  _frameSize;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _position;
-    float  _size;
+    double  _size;
 }
 
-@property (nonatomic) float alpha;
+@property (nonatomic) double alpha;
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic) float coloration;
-@property (nonatomic) int currentFrameIndex;
-@property (nonatomic) struct CGPoint { float x1; float x2; } firstFrameOrigin;
-@property (nonatomic) int frameColumns;
-@property (nonatomic) int frameCount;
-@property (nonatomic) struct CGSize { float x1; float x2; } frameSize;
-@property (nonatomic) struct CGPoint { float x1; float x2; } position;
-@property (nonatomic) float size;
+@property (nonatomic) double coloration;
+@property (nonatomic) long long currentFrameIndex;
+@property (nonatomic) struct CGPoint { double x1; double x2; } firstFrameOrigin;
+@property (nonatomic) long long frameColumns;
+@property (nonatomic) long long frameCount;
+@property (nonatomic) struct CGSize { double x1; double x2; } frameSize;
+@property (nonatomic) struct CGPoint { double x1; double x2; } position;
+@property (nonatomic) double size;
 
 - (void).cxx_destruct;
-- (id)_newAnimatablePropertyForType:(unsigned int)arg1;
-- (void)addAnimation:(id)arg1 forRingGroupPropertyType:(unsigned int)arg2;
-- (float)alpha;
+- (id)_newAnimatablePropertyForType:(unsigned long long)arg1;
+- (void)addAnimation:(id)arg1 forRingGroupPropertyType:(unsigned long long)arg2;
+- (double)alpha;
 - (id)color;
-- (float)coloration;
-- (int)currentFrameIndex;
-- (struct CGPoint { float x1; float x2; })firstFrameOrigin;
-- (int)frameColumns;
-- (int)frameCount;
-- (struct CGSize { float x1; float x2; })frameSize;
+- (double)coloration;
+- (long long)currentFrameIndex;
+- (struct CGPoint { double x1; double x2; })firstFrameOrigin;
+- (long long)frameColumns;
+- (long long)frameCount;
+- (struct CGSize { double x1; double x2; })frameSize;
 - (id)init;
-- (BOOL)isDrawable;
-- (struct CGPoint { float x1; float x2; })position;
-- (void)setAlpha:(float)arg1;
+- (bool)isDrawable;
+- (struct CGPoint { double x1; double x2; })position;
+- (void)setAlpha:(double)arg1;
 - (void)setColor:(id)arg1;
-- (void)setColoration:(float)arg1;
-- (void)setCurrentFrameIndex:(int)arg1;
-- (void)setFirstFrameOrigin:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setFrameColumns:(int)arg1;
-- (void)setFrameCount:(int)arg1;
-- (void)setFrameSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPosition:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setSize:(float)arg1;
-- (float)size;
+- (void)setColoration:(double)arg1;
+- (void)setCurrentFrameIndex:(long long)arg1;
+- (void)setFirstFrameOrigin:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setFrameColumns:(long long)arg1;
+- (void)setFrameCount:(long long)arg1;
+- (void)setFrameSize:(struct CGSize { double x1; double x2; })arg1;
+- (void)setPosition:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setSize:(double)arg1;
+- (double)size;
 
 @end

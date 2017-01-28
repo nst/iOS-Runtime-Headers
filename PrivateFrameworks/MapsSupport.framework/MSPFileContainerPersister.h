@@ -11,10 +11,10 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (void)commitEditedContents:(id)arg1 completion:(id /* block */)arg2;
+- (void)commitEditedContents:(id)arg1 completion:(id)arg2;
 - (id)contentsFromData:(id)arg1;
 - (id)dataForContents:(id)arg1 error:(out id*)arg2;
-- (void)fetchContentsWithCompletion:(id /* block */)arg1;
+- (void)fetchContentsWithCompletion:(id)arg1;
 - (id)init;
 - (id)initWithPersistenceFileAtURL:(id)arg1;
 - (id)persistenceFileURL;

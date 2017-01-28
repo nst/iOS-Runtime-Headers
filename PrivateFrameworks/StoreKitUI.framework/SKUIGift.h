@@ -3,9 +3,9 @@
  */
 
 @interface SKUIGift : NSObject <NSCopying> {
-    int  _category;
+    long long  _category;
     NSDate * _deliveryDate;
-    int  _giftAmount;
+    long long  _giftAmount;
     NSString * _giftAmountString;
     SKUIItem * _item;
     NSString * _message;
@@ -17,9 +17,9 @@
 }
 
 @property (nonatomic, copy) NSDate *deliveryDate;
-@property (nonatomic) int giftAmount;
+@property (nonatomic) long long giftAmount;
 @property (nonatomic, copy) NSString *giftAmountString;
-@property (nonatomic, readonly) int giftCategory;
+@property (nonatomic, readonly) long long giftCategory;
 @property (nonatomic, readonly) SKUIItem *item;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSArray *recipientAddresses;
@@ -32,10 +32,10 @@
 - (id)HTTPBodyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)deliveryDate;
-- (int)giftAmount;
+- (long long)giftAmount;
 - (id)giftAmountString;
-- (int)giftCategory;
-- (id)initWithGiftCategory:(int)arg1;
+- (long long)giftCategory;
+- (id)initWithGiftCategory:(long long)arg1;
 - (id)initWithItem:(id)arg1;
 - (id)item;
 - (id)message;
@@ -44,7 +44,7 @@
 - (id)senderEmailAddress;
 - (id)senderName;
 - (void)setDeliveryDate:(id)arg1;
-- (void)setGiftAmount:(int)arg1;
+- (void)setGiftAmount:(long long)arg1;
 - (void)setGiftAmountString:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setRecipientAddresses:(id)arg1;

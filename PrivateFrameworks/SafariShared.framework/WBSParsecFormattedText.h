@@ -3,14 +3,14 @@
  */
 
 @interface WBSParsecFormattedText : WBSParsecModel {
-    BOOL  _emphasized;
+    bool  _emphasized;
     WBSParsecImageRepresentation * _glyphRepresentation;
     NSNumber * _spaceAfterInPoints;
     NSNumber * _spaceBeforeInPoints;
     NSString * _text;
 }
 
-@property (getter=isEmphasized, nonatomic, readonly) BOOL emphasized;
+@property (getter=isEmphasized, nonatomic, readonly) bool emphasized;
 @property (nonatomic, readonly) WBSParsecImageRepresentation *glyphRepresentation;
 @property (nonatomic, readonly) NSNumber *spaceAfterInPoints;
 @property (nonatomic, readonly) NSNumber *spaceBeforeInPoints;
@@ -21,10 +21,10 @@
 - (void).cxx_destruct;
 - (id)glyphRepresentation;
 - (id)glyphWithSession:(id)arg1;
-- (unsigned int)hash;
+- (unsigned long long)hash;
 - (id)initWithDictionary:(id)arg1;
-- (BOOL)isEmphasized;
-- (BOOL)isEqual:(id)arg1;
+- (bool)isEmphasized;
+- (bool)isEqual:(id)arg1;
 - (id)spaceAfterInPoints;
 - (id)spaceBeforeInPoints;
 - (id)text;

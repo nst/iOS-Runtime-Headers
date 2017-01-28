@@ -3,20 +3,20 @@
  */
 
 @interface CUISingleNamedAssetCreator : NSObject {
-    int  _compressionType;
-    float  _flattenedCompressionQuality;
+    long long  _compressionType;
+    double  _flattenedCompressionQuality;
     NSMutableArray * _generators;
-    float  _layersCompressionQuality;
+    double  _layersCompressionQuality;
     NSMutableArray * _names;
-    unsigned int  _primaryIndex;
+    unsigned long long  _primaryIndex;
     NSString * _primaryName;
-    float  _radiosityCompressionQuaility;
+    double  _radiosityCompressionQuaility;
     CUIMutableCommonAssetStorage * _store;
 }
 
 @property (retain) NSMutableArray *generators;
 @property (retain) NSMutableArray *names;
-@property unsigned int primaryIndex;
+@property unsigned long long primaryIndex;
 @property (retain) NSString *primaryName;
 @property (retain) CUIMutableCommonAssetStorage *store;
 
@@ -24,9 +24,9 @@
 - (void)_addImageAsJPEG:(struct CGImage { }*)arg1 withBaseKey:(id)arg2 withName:(id)arg3;
 - (void)_configureDefaultStorageParameters;
 - (id)_defaultBaseKey;
-- (BOOL)_distillNameEntries:(id*)arg1;
-- (BOOL)_distillRenditions:(id*)arg1;
-- (BOOL)_extractFlattenedImages:(id*)arg1;
+- (bool)_distillNameEntries:(id*)arg1;
+- (bool)_distillRenditions:(id*)arg1;
+- (bool)_extractFlattenedImages:(id*)arg1;
 - (void)_finalizeNameIdentifiers;
 - (id)_flattenedImageBaseKey;
 - (id)_generatorForName:(id)arg1;
@@ -37,29 +37,29 @@
 - (void)addImage:(struct CGImage { }*)arg1 withName:(id)arg2;
 - (void)addImageAsJPEG:(struct CGImage { }*)arg1 withName:(id)arg2;
 - (void)addLayerReference:(id)arg1 forImage:(struct CGImage { }*)arg2 toLayerStackWithName:(id)arg3;
-- (void)addLayerStackWithSize:(struct CGSize { float x1; float x2; })arg1 stackData:(id)arg2 name:(id)arg3;
-- (float)compressionQuality;
-- (int)compressionType;
+- (void)addLayerStackWithSize:(struct CGSize { double x1; double x2; })arg1 stackData:(id)arg2 name:(id)arg3;
+- (double)compressionQuality;
+- (long long)compressionType;
 - (void)dealloc;
-- (BOOL)distillAndSave:(id*)arg1;
-- (float)flattenedLossyCompressionQuality;
+- (bool)distillAndSave:(id*)arg1;
+- (double)flattenedLossyCompressionQuality;
 - (id)generators;
 - (id)initWithOutputURL:(id)arg1 versionString:(id)arg2;
-- (float)layersLossyCompressionQuality;
+- (double)layersLossyCompressionQuality;
 - (id)names;
 - (id)path;
-- (unsigned int)primaryIndex;
+- (unsigned long long)primaryIndex;
 - (id)primaryName;
-- (float)radiosityLossyCompressionQuality;
-- (void)setCompressionQuality:(float)arg1;
-- (void)setCompressionType:(int)arg1;
-- (void)setFlattenedLossyCompressionQuality:(float)arg1;
+- (double)radiosityLossyCompressionQuality;
+- (void)setCompressionQuality:(double)arg1;
+- (void)setCompressionType:(long long)arg1;
+- (void)setFlattenedLossyCompressionQuality:(double)arg1;
 - (void)setGenerators:(id)arg1;
-- (void)setLayersLossyCompressionQuality:(float)arg1;
+- (void)setLayersLossyCompressionQuality:(double)arg1;
 - (void)setNames:(id)arg1;
-- (void)setPrimaryIndex:(unsigned int)arg1;
+- (void)setPrimaryIndex:(unsigned long long)arg1;
 - (void)setPrimaryName:(id)arg1;
-- (void)setRadiosityLossyCompressionQuality:(float)arg1;
+- (void)setRadiosityLossyCompressionQuality:(double)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
 

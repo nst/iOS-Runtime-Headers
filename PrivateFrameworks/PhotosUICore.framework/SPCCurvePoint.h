@@ -4,44 +4,44 @@
 
 @interface SPCCurvePoint : NSObject {
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _leftTangentPoint;
     struct CGPoint { 
-        float x; 
-        float y; 
+        double x; 
+        double y; 
     }  _rightTangentPoint;
-    float  _roundness;
-    float  _smoothness;
-    float  _x;
-    float  _y;
+    double  _roundness;
+    double  _smoothness;
+    double  _x;
+    double  _y;
 }
 
-@property struct CGPoint { float x1; float x2; } CGPoint;
-@property struct CGPoint { float x1; float x2; } leftTangentPoint;
-@property struct CGPoint { float x1; float x2; } rightTangentPoint;
-@property float roundness;
-@property float smoothness;
-@property float x;
-@property float y;
+@property struct CGPoint { double x1; double x2; } CGPoint;
+@property struct CGPoint { double x1; double x2; } leftTangentPoint;
+@property struct CGPoint { double x1; double x2; } rightTangentPoint;
+@property double roundness;
+@property double smoothness;
+@property double x;
+@property double y;
 
-+ (id)pointWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
-+ (id)pointWithX:(float)arg1 y:(float)arg2;
++ (id)pointWithCGPoint:(struct CGPoint { double x1; double x2; })arg1;
++ (id)pointWithX:(double)arg1 y:(double)arg2;
 
-- (struct CGPoint { float x1; float x2; })CGPoint;
-- (id)initWithX:(float)arg1 y:(float)arg2;
-- (struct CGPoint { float x1; float x2; })leftTangentPoint;
-- (struct CGPoint { float x1; float x2; })rightTangentPoint;
-- (float)roundness;
-- (void)setCGPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setLeftTangentPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRightTangentPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)setRoundness:(float)arg1;
-- (void)setSmoothness:(float)arg1;
-- (void)setX:(float)arg1;
-- (void)setY:(float)arg1;
-- (float)smoothness;
-- (float)x;
-- (float)y;
+- (struct CGPoint { double x1; double x2; })CGPoint;
+- (id)initWithX:(double)arg1 y:(double)arg2;
+- (struct CGPoint { double x1; double x2; })leftTangentPoint;
+- (struct CGPoint { double x1; double x2; })rightTangentPoint;
+- (double)roundness;
+- (void)setCGPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setLeftTangentPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRightTangentPoint:(struct CGPoint { double x1; double x2; })arg1;
+- (void)setRoundness:(double)arg1;
+- (void)setSmoothness:(double)arg1;
+- (void)setX:(double)arg1;
+- (void)setY:(double)arg1;
+- (double)smoothness;
+- (double)x;
+- (double)y;
 
 @end

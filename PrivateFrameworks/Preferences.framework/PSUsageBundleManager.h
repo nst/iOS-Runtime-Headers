@@ -9,8 +9,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)_loadUsageBundlesWithHandler:(id /* block */)arg1;
+- (void)_loadUsageBundlesWithHandler:(id)arg1;
 - (id)allUsageBundleApps;
-- (void)vendUsageBundleAppsWithHandler:(id /* block */)arg1;
+- (void)vendUsageBundleAppsWithHandler:(id)arg1;
 
 @end

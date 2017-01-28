@@ -6,7 +6,7 @@
 
 + (id)_addButtonTextForContacts:(id)arg1;
 + (id)_addButtonTextForEvents:(id)arg1;
-+ (BOOL)_areEventsInSameDay:(id)arg1;
++ (bool)_areEventsInSameDay:(id)arg1;
 + (id)_dateStringForMultipleEvents:(id)arg1;
 + (id)_dateStringForSingleEvent:(id)arg1;
 + (id)_dateStringForTwoEvents:(id)arg1;
@@ -29,7 +29,7 @@
 + (id)descriptionTextForRealtimeContact:(id)arg1;
 + (id)eventKitEventForRealtimeEvent:(id)arg1;
 + (id)eventsForRealtimeEvents:(id)arg1;
-+ (BOOL)isRealtimeContactNew:(id)arg1;
-+ (BOOL)isRealtimeEventExisting:(id)arg1;
++ (bool)isRealtimeContactNew:(id)arg1;
++ (bool)isRealtimeEventExisting:(id)arg1;
 
 @end

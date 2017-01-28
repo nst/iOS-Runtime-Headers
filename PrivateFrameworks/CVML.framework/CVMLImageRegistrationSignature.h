@@ -5,13 +5,13 @@
 @interface CVMLImageRegistrationSignature : NSObject {
     struct FastRegistration_Signatures { 
         float *piRow; 
-        unsigned int nPiRow; 
+        unsigned long long nPiRow; 
         struct Projections_meanStdTable { 
             float *sumTable; 
             float *sumSqTable; 
         } piRowTable; 
         float *piCol; 
-        unsigned int nPiCol; 
+        unsigned long long nPiCol; 
         struct Projections_meanStdTable { 
             float *sumTable; 
             float *sumSqTable; 
@@ -22,6 +22,6 @@
 
 - (void)dealloc;
 - (id)initWithImageBuffer:(id)arg1 andOptions:(id)arg2 error:(id*)arg3;
-- (const struct FastRegistration_Signatures { float *x1; unsigned int x2; struct Projections_meanStdTable { float *x_3_1_1; float *x_3_1_2; } x3; float *x4; unsigned int x5; struct Projections_meanStdTable { float *x_6_1_1; float *x_6_1_2; } x6; char *x7; }*)signature;
+- (const struct FastRegistration_Signatures { float *x1; unsigned long long x2; struct Projections_meanStdTable { float *x_3_1_1; float *x_3_1_2; } x3; float *x4; unsigned long long x5; struct Projections_meanStdTable { float *x_6_1_1; float *x_6_1_2; } x6; char *x7; }*)signature;
 
 @end

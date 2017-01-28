@@ -11,15 +11,15 @@
 @property (nonatomic) <CKMessageAcknowledgmentPickerBarDelegate> *delegate;
 
 - (void).cxx_destruct;
-- (void)adjustTailRelativeSiblingViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calculateFrameRelativeToSiblingViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withinBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)adjustTailRelativeSiblingViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })calculateFrameRelativeToSiblingViewFrame:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg1 withinBounds:(struct CGRect { struct CGPoint { double x_1_1_1; double x_1_1_2; } x1; struct CGSize { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)chatItem;
 - (id)delegate;
 - (id)initWithChatItem:(id)arg1;
 - (void)loadView;
-- (void)performCancelAnimation:(id /* block */)arg1;
-- (void)performSendAnimation:(id /* block */)arg1;
-- (void)performShowAnimation:(id /* block */)arg1;
+- (void)performCancelAnimation:(id)arg1;
+- (void)performSendAnimation:(id)arg1;
+- (void)performShowAnimation:(id)arg1;
 - (void)pickerBarItemViewSelectionDidChange:(id)arg1;
 - (id)pickerView;
 - (void)setChatItem:(id)arg1;

@@ -12,7 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)initWithName:(id)arg1 throttleParameters:(id)arg2 queue:(id)arg3 handler:(id /* block */)arg4;
+- (id)initWithName:(id)arg1 throttleParameters:(id)arg2 queue:(id)arg3 handler:(id)arg4;
 - (void)reset;
 - (void)resume;
 - (void)scheduleNextEvent;

@@ -3,36 +3,36 @@
  */
 
 @interface TSSStyleMapper : NSObject <TSKStyleMapper> {
-    BOOL  _clientsMustRemap;
+    bool  _clientsMustRemap;
     NSMutableSet * _createdStyles;
-    BOOL  _forceMatchStyle;
+    bool  _forceMatchStyle;
     NSMutableArray * _mappingContext;
     TSURetainedPointerKeyDictionary * _styleMap;
     TSSStylesheet * _targetStylesheet;
 }
 
-@property (nonatomic) BOOL clientsMustRemap;
+@property (nonatomic) bool clientsMustRemap;
 @property (nonatomic, readonly) NSSet *createdStyles;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL forceMatchStyle;
-@property (readonly) unsigned int hash;
+@property (nonatomic) bool forceMatchStyle;
+@property (readonly) unsigned long long hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) TSSStylesheet *targetStylesheet;
 
-- (id)_mappedStyleForStyle:(id)arg1 depth:(unsigned int)arg2;
-- (BOOL)clientsMustRemap;
+- (id)_mappedStyleForStyle:(id)arg1 depth:(unsigned long long)arg2;
+- (bool)clientsMustRemap;
 - (id)createRootStyleForStyle:(id)arg1 withPropertyMap:(id)arg2;
 - (id)createdStyles;
 - (void)dealloc;
-- (BOOL)forceMatchStyle;
+- (bool)forceMatchStyle;
 - (id)initWithTargetStylesheet:(id)arg1;
 - (id)mappedStyleForStyle:(id)arg1;
 - (void)popMappingContext:(id)arg1;
 - (void)pushMappingContext:(id)arg1;
-- (void)setClientsMustRemap:(BOOL)arg1;
-- (void)setForceMatchStyle:(BOOL)arg1;
-- (BOOL)shouldMapParentOfStyle:(id)arg1;
+- (void)setClientsMustRemap:(bool)arg1;
+- (void)setForceMatchStyle:(bool)arg1;
+- (bool)shouldMapParentOfStyle:(id)arg1;
 - (id)stylesheetForNewRootStyleFromStyle:(id)arg1;
 - (id)targetParentByContentTagMatchForStyle:(id)arg1;
 - (id)targetParentByIdentifierExactMatchForStyle:(id)arg1;

@@ -9,12 +9,12 @@
 }
 
 - (void).cxx_destruct;
-- (void)_discardWithHandler:(id /* block */)arg1;
-- (BOOL)_validate:(id)arg1 withError:(id*)arg2;
+- (void)_discardWithHandler:(id)arg1;
+- (bool)_validate:(id)arg1 withError:(id*)arg2;
 - (void)dealloc;
-- (void)finishSeriesWithMetadata:(id)arg1 completion:(id /* block */)arg2;
+- (void)finishSeriesWithMetadata:(id)arg1 completion:(id)arg2;
 - (id)init;
 - (id)initWithHealthStore:(id)arg1 device:(id)arg2;
-- (void)insertSeriesData:(id)arg1 completion:(id /* block */)arg2;
+- (void)insertSeriesData:(id)arg1 completion:(id)arg2;
 
 @end

@@ -3,8 +3,8 @@
  */
 
 @interface HAPAccessoryServerRelay : HAPAccessoryServer <HAPFragmentationStreamDelegate, HAPSecuritySessionDelegate, HAPStreamDelegate, HMFTimerDelegate> {
-    unsigned int  _configurationNumber;
-    BOOL  _discovered;
+    unsigned long long  _configurationNumber;
+    bool  _discovered;
     HAPFragmentationStream * _fragmentationStream;
     unsigned short  _nextRequestTransactionIdentifier;
     NSOperationQueue * _pairVerifyOperationQueue;
@@ -13,17 +13,17 @@
     HMFExponentialBackoffTimer * _reachabilityProbeTimer;
     NSOperationQueue * _requestOperationQueue;
     HAPSecuritySession * _securitySession;
-    BOOL  _securitySessionOpening;
-    BOOL  _shouldDiscover;
+    bool  _securitySessionOpening;
+    bool  _shouldDiscover;
     HAPRelayStream * _stream;
 }
 
-@property (nonatomic) unsigned int configurationNumber;
+@property (nonatomic) unsigned long long configurationNumber;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=hasDiscovered, nonatomic) BOOL discovered;
+@property (getter=hasDiscovered, nonatomic) bool discovered;
 @property (nonatomic, readonly) HAPFragmentationStream *fragmentationStream;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, readonly) unsigned short nextRequestTransactionIdentifier;
 @property (nonatomic, readonly) NSOperationQueue *pairVerifyOperationQueue;
 @property (nonatomic, readonly) NSMutableArray *pendingRequests;
@@ -31,8 +31,8 @@
 @property (nonatomic, retain) HMFExponentialBackoffTimer *reachabilityProbeTimer;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
 @property (nonatomic, retain) HAPSecuritySession *securitySession;
-@property (getter=isSecuritySessionOpening, nonatomic) BOOL securitySessionOpening;
-@property (nonatomic) BOOL shouldDiscover;
+@property (getter=isSecuritySessionOpening, nonatomic) bool securitySessionOpening;
+@property (nonatomic) bool shouldDiscover;
 @property (nonatomic, readonly) HAPRelayStream *stream;
 @property (readonly) Class superclass;
 
@@ -43,8 +43,8 @@
 - (void)_endReachabilityProbe;
 - (void)_enqueueRequest:(id)arg1;
 - (void)_establishSecuritySession;
-- (void)_handleCharacteristicReadResponse:(id)arg1 characteristics:(id)arg2 error:(id)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;
-- (void)_handleCharacteristicWriteResponse:(id)arg1 characteristicWriteRequestTuples:(id)arg2 error:(id)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)_handleCharacteristicReadResponse:(id)arg1 characteristics:(id)arg2 error:(id)arg3 completionQueue:(id)arg4 completionHandler:(id)arg5;
+- (void)_handleCharacteristicWriteResponse:(id)arg1 characteristicWriteRequestTuples:(id)arg2 error:(id)arg3 completionQueue:(id)arg4 completionHandler:(id)arg5;
 - (void)_handleFragmentedResponse:(id)arg1 transactionIdentifier:(unsigned short)arg2 error:(id)arg3;
 - (void)_handleNotificationResponse:(id)arg1;
 - (void)_handleReachabilityProbeFire;
@@ -53,36 +53,35 @@
 - (unsigned short)_nextTransactionIdentifier;
 - (void)_parseAttributeDatabase:(id)arg1 configurationNumber:(id)arg2;
 - (void)_resumeAllOperations;
-- (void)_sendRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_sendRequest:(id)arg1 completionHandler:(id)arg2;
 - (void)_startReachabilityProbe;
 - (void)_suspendAllOperations;
-- (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
-- (unsigned int)configurationNumber;
+- (bool)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(bool)arg3 queue:(id)arg4 completion:(id)arg5;
+- (unsigned long long)configurationNumber;
 - (void)continuePairingAfterAuthPrompt;
 - (void)dealloc;
 - (void)discoverAccessories;
-- (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
+- (void)enableEvents:(bool)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
 - (id)fragmentationStream;
 - (void)fragmentationStream:(id)arg1 didCloseWithError:(id)arg2;
 - (void)fragmentationStream:(id)arg1 didReceiveData:(id)arg2 transactionIdentifier:(unsigned short)arg3 error:(id)arg4;
-- (id)getLocalPairingIdentityAndAllowCreation:(BOOL)arg1 error:(id*)arg2;
-- (BOOL)hasDiscovered;
-- (BOOL)hasPairings;
-- (void)identifyWithCompletion:(id /* block */)arg1;
+- (id)getLocalPairingIdentityAndAllowCreation:(bool)arg1 error:(id*)arg2;
+- (bool)hasDiscovered;
+- (bool)hasPairings;
+- (void)identifyWithCompletion:(id)arg1;
 - (id)initWithStream:(id)arg1 name:(id)arg2 identifier:(id)arg3 keyStore:(id)arg4;
-- (BOOL)isPaired;
-- (BOOL)isSecuritySessionOpening;
-- (int)linkType;
-- (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (bool)isPaired;
+- (bool)isSecuritySessionOpening;
+- (long long)linkType;
+- (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id)arg2;
 - (unsigned short)nextRequestTransactionIdentifier;
 - (id)pairVerifyOperationQueue;
 - (id)pendingRequests;
 - (id)pendingResponses;
 - (id)reachabilityProbeTimer;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
-- (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id)arg4;
+- (bool)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id)arg2;
+- (bool)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id)arg4;
 - (id)requestOperationQueue;
 - (id)securitySession;
 - (void)securitySession:(id)arg1 didCloseWithError:(id)arg2;
@@ -91,15 +90,15 @@
 - (void)securitySession:(id)arg1 didReceiveSetupExchangeData:(id)arg2;
 - (void)securitySessionDidOpen:(id)arg1;
 - (void)securitySessionIsOpening:(id)arg1;
-- (void)setConfigurationNumber:(unsigned int)arg1;
-- (void)setDiscovered:(BOOL)arg1;
+- (void)setConfigurationNumber:(unsigned long long)arg1;
+- (void)setDiscovered:(bool)arg1;
 - (void)setReachabilityProbeTimer:(id)arg1;
 - (void)setSecuritySession:(id)arg1;
-- (void)setSecuritySessionOpening:(BOOL)arg1;
-- (void)setShouldDiscover:(BOOL)arg1;
-- (BOOL)shouldDiscover;
+- (void)setSecuritySessionOpening:(bool)arg1;
+- (void)setShouldDiscover:(bool)arg1;
+- (bool)shouldDiscover;
 - (void)startPairing;
-- (BOOL)stopPairingWithError:(id*)arg1;
+- (bool)stopPairingWithError:(id*)arg1;
 - (id)stream;
 - (void)stream:(id)arg1 didCloseWithError:(id)arg2;
 - (void)stream:(id)arg1 didFailToWriteDataWithIdentifier:(id)arg2 error:(id)arg3;
@@ -107,8 +106,7 @@
 - (void)streamDidResume:(id)arg1;
 - (void)streamDidSuspend:(id)arg1;
 - (void)timerDidFire:(id)arg1;
-- (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (bool)tryPairingPassword:(id)arg1 error:(id*)arg2;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id)arg4;
 
 @end

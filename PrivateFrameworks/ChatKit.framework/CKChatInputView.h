@@ -20,7 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) NSObject<CKChatInputViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic, retain) UIButton *photoButton;
 @property (nonatomic, retain) UIButton *searchButton;
 @property (nonatomic, retain) UIButton *sendButton;
@@ -36,13 +36,13 @@
 - (void)layoutSubviews;
 - (void)messageEntryContentView:(id)arg1 didPasteURL:(id)arg2;
 - (void)messageEntryContentView:(id)arg1 didTapMediaObject:(id)arg2;
-- (BOOL)messageEntryContentView:(id)arg1 shouldInsertMediaObjects:(id)arg2;
+- (bool)messageEntryContentView:(id)arg1 shouldInsertMediaObjects:(id)arg2;
 - (void)messageEntryContentViewDidBeginEditing:(id)arg1;
 - (void)messageEntryContentViewDidChange:(id)arg1;
 - (void)messageEntryContentViewDidEndEditing:(id)arg1;
 - (void)messageEntryContentViewDidTapHandwritingKey:(id)arg1;
-- (BOOL)messageEntryContentViewShouldBeginEditing:(id)arg1;
-- (void)messageEntryContentViewWasTapped:(id)arg1 isLongPress:(BOOL)arg2;
+- (bool)messageEntryContentViewShouldBeginEditing:(id)arg1;
+- (void)messageEntryContentViewWasTapped:(id)arg1 isLongPress:(bool)arg2;
 - (id)photoButton;
 - (id)searchButton;
 - (id)sendButton;
@@ -54,6 +54,6 @@
 - (void)setPhotoButton:(id)arg1;
 - (void)setSearchButton:(id)arg1;
 - (void)setSendButton:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { double x1; double x2; })sizeThatFits:(struct CGSize { double x1; double x2; })arg1;
 
 @end

@@ -3,20 +3,20 @@
  */
 
 @interface RTRoutineManagerRegistrantRoomPrediction : RTRoutineManagerRegistrant {
-    id /* block */  _predictedRoomsHandler;
-    BOOL  _registered;
+    id  _predictedRoomsHandler;
+    bool  _registered;
 }
 
-@property (nonatomic, copy) id /* block */ predictedRoomsHandler;
-@property (nonatomic) BOOL registered;
+@property (nonatomic, copy) id predictedRoomsHandler;
+@property (nonatomic) bool registered;
 
 - (void).cxx_destruct;
 - (void)onPredictedRooms:(id)arg1 error:(id)arg2;
-- (id /* block */)predictedRoomsHandler;
-- (BOOL)registered;
-- (void)setPredictedRoomsHandler:(id /* block */)arg1;
-- (void)setRegistered:(BOOL)arg1;
-- (id)startMonitoringForPredictedRoomsWithHandler:(id /* block */)arg1;
+- (id)predictedRoomsHandler;
+- (bool)registered;
+- (void)setPredictedRoomsHandler:(id)arg1;
+- (void)setRegistered:(bool)arg1;
+- (id)startMonitoringForPredictedRoomsWithHandler:(id)arg1;
 - (id)stopMonitoringForPredictedRooms;
 
 @end

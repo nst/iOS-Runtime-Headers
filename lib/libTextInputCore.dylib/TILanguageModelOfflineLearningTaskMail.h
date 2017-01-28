@@ -13,7 +13,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)forwardedMessageSeparators;
-- (id)initWithClientIdentifier:(id)arg1 oneTimeTask:(BOOL)arg2;
+- (id)initWithClientIdentifier:(id)arg1 oneTimeTask:(bool)arg2;
 - (id)linePaddingCharacters;
 
 @end

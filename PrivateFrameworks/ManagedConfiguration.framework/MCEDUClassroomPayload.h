@@ -54,10 +54,10 @@
 - (id)memberPayloadCertificateAnchorUUID;
 - (id)organizationName;
 - (id)organizationUUID;
-- (id)parseDepartmentFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
-- (id)parseDeviceGroupFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
-- (id)parseGroupFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
-- (id)parseUserFromDictionary:(id)arg1 isStub:(BOOL)arg2 outError:(id*)arg3;
+- (id)parseDepartmentFromDictionary:(id)arg1 isStub:(bool)arg2 outError:(id*)arg3;
+- (id)parseDeviceGroupFromDictionary:(id)arg1 isStub:(bool)arg2 outError:(id*)arg3;
+- (id)parseGroupFromDictionary:(id)arg1 isStub:(bool)arg2 outError:(id*)arg3;
+- (id)parseUserFromDictionary:(id)arg1 isStub:(bool)arg2 outError:(id*)arg3;
 - (id)payloadCertificatePersistentID;
 - (id)payloadCertificateUUID;
 - (id)payloadDescriptionKeyValueSections;

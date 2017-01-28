@@ -8,7 +8,7 @@
     struct CGColor { } * _glyphColor;
     struct CGColor { } * _haloColor;
     VKImage * _image;
-    int  _style;
+    long long  _style;
 }
 
 @property (nonatomic) struct CGColor { }*fillColor;
@@ -16,7 +16,7 @@
 @property (nonatomic) struct CGColor { }*glyphColor;
 @property (nonatomic) struct CGColor { }*haloColor;
 @property (nonatomic, retain) VKImage *image;
-@property (nonatomic) int style;
+@property (nonatomic) long long style;
 
 - (void)dealloc;
 - (struct CGColor { }*)fillColor;
@@ -29,7 +29,7 @@
 - (void)setGlyphColor:(struct CGColor { }*)arg1;
 - (void)setHaloColor:(struct CGColor { }*)arg1;
 - (void)setImage:(id)arg1;
-- (void)setStyle:(int)arg1;
-- (int)style;
+- (void)setStyle:(long long)arg1;
+- (long long)style;
 
 @end

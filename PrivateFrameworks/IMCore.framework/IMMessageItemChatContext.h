@@ -3,7 +3,7 @@
  */
 
 @interface IMMessageItemChatContext : IMItemChatContext {
-    BOOL  _invitation;
+    bool  _invitation;
     IMMessage * _message;
 }
 

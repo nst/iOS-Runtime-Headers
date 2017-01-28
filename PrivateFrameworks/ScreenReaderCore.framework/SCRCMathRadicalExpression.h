@@ -10,12 +10,12 @@
 @property (nonatomic, retain) SCRCMathExpression *radicand;
 @property (nonatomic, retain) SCRCMathExpression *rootIndex;
 
-- (BOOL)_isCubeRoot;
-- (BOOL)_isSquareRoot;
+- (bool)_isCubeRoot;
+- (bool)_isSquareRoot;
 - (void)dealloc;
 - (id)description;
-- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;
-- (unsigned int)fractionLevel;
+- (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
+- (unsigned long long)fractionLevel;
 - (id)initWithDictionary:(id)arg1;
 - (id)latexMathModeDescription;
 - (id)mathMLString;
@@ -23,8 +23,8 @@
 - (id)rootIndex;
 - (void)setRadicand:(id)arg1;
 - (void)setRootIndex:(id)arg1;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
-- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned int)arg2 treePosition:(id)arg3;
+- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(bool)arg2;
+- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned long long)arg2 treePosition:(id)arg3;
 - (id)subExpressions;
 
 @end

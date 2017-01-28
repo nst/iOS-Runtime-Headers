@@ -10,7 +10,7 @@
     <CVMLModelFile> * mFaceBoxAlignerModelFileHandle;
 }
 
-+ (BOOL)shouldDumpDebugIntermediates;
++ (bool)shouldDumpDebugIntermediates;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -6,8 +6,8 @@
     NSHTTPURLResponse * _currentResponse;
     <AAUIChildAccountCreationDelegate> * _delegate;
     AAGrandSlamSigner * _grandSlamSigner;
-    BOOL  _isPendingDismissal;
-    BOOL  _isShowingSpinner;
+    bool  _isPendingDismissal;
+    bool  _isShowingSpinner;
     NSURL * _launchingURL;
     RUILoader * _loader;
     UINavigationController * _navigationController;
@@ -24,7 +24,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AAUIChildAccountCreationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (readonly) unsigned long long hash;
 @property (nonatomic) UINavigationController *navigationController;
 @property (readonly) Class superclass;
 
@@ -35,9 +35,9 @@
 - (void)_createChildAccount;
 - (void)_displayConnectionErrorAndCancel;
 - (void)_hideActivitySpinner;
-- (void)_popObjectModelAnimated:(BOOL)arg1;
-- (BOOL)_pressedLink:(id)arg1 comesFromBarButtonItem:(id)arg2 objectModel:(id)arg3;
-- (void)_renewCredentialsWithCompletionHandler:(id /* block */)arg1;
+- (void)_popObjectModelAnimated:(bool)arg1;
+- (bool)_pressedLink:(id)arg1 comesFromBarButtonItem:(id)arg2 objectModel:(id)arg3;
+- (void)_renewCredentialsWithCompletionHandler:(id)arg1;
 - (void)_sendUserToiTunesSettings;
 - (void)_showActivitySpinnerInNavigationBar;
 - (void)_showActivitySpinnerInToolbar:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)loadRemoteUI;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned int)arg3;
+- (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(unsigned long long)arg3;
 - (id)navigationController;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (void)objectModel:(id)arg1 pressedLink:(id)arg2 httpMethod:(id)arg3;
@@ -57,6 +57,6 @@
 - (id)parentViewControllerForObjectModel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setNavigationController:(id)arg1;
-- (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
+- (unsigned long long)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 
 @end

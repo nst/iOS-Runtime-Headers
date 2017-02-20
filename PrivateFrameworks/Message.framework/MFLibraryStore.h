@@ -100,6 +100,7 @@
 - (id)newObjectCache;
 - (unsigned int)nonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
 - (long long)oldestKnownConversation;
+- (id)oldestKnownMessage;
 - (void)openSynchronously;
 - (void)purgeMessages:(id)arg1;
 - (void)purgeMessagesBeyondLimit:(unsigned int)arg1 keepingMessage:(id)arg2;

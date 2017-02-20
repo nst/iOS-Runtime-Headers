@@ -5,14 +5,22 @@
 @interface SearchUIMovieCardSectionBuyButtonView : UIView {
     SKUIItemOfferButton * _button;
     SearchUICardViewController * _controller;
+    BOOL  _hasBeenToggled;
+    BOOL  _isOnWatchList;
+    NSString * _itemIdentifier;
     SFPunchout * _punchout;
+    SFPunchout * _punchoutForFeedback;
     SFMediaInfoCardSection * _section;
     UILabel * _subtitleLabel;
 }
 
 @property (retain) SKUIItemOfferButton *button;
 @property SearchUICardViewController *controller;
+@property BOOL hasBeenToggled;
+@property BOOL isOnWatchList;
+@property (retain) NSString *itemIdentifier;
 @property (retain) SFPunchout *punchout;
+@property (retain) SFPunchout *punchoutForFeedback;
 @property (retain) SFMediaInfoCardSection *section;
 @property (retain) UILabel *subtitleLabel;
 
@@ -20,16 +28,30 @@
 - (id)button;
 - (void)buttonPressed;
 - (id)controller;
+- (void)displayAsAlreadyOnWatchList;
+- (BOOL)hasBeenToggled;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 punchout:(id)arg3 adamID:(id)arg4 offerIdentifier:(id)arg5 controller:(id)arg6 section:(id)arg7;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 punchout:(id)arg3 itemIdentifier:(id)arg4 offerIdentifier:(id)arg5 controller:(id)arg6 section:(id)arg7;
+- (BOOL)isOnWatchList;
+- (id)itemIdentifier;
 - (void)lookupPriceForAdamID:(id)arg1 offerIdentifier:(id)arg2;
 - (id)punchout;
+- (id)punchoutForFeedback;
 - (id)section;
 - (void)setButton:(id)arg1;
 - (void)setController:(id)arg1;
+- (void)setHasBeenToggled:(BOOL)arg1;
+- (void)setIsOnWatchList:(BOOL)arg1;
+- (void)setItemIdentifier:(id)arg1;
 - (void)setPunchout:(id)arg1;
+- (void)setPunchoutForFeedback:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setSubtitleLabel:(id)arg1;
 - (id)subtitleLabel;
+- (void)updateButtonWithAnimations:(id /* block */)arg1 animated:(BOOL)arg2;
+- (void)updatePunchoutWithURL:(id)arg1;
+- (void)updateSubtitleText:(id)arg1 animated:(BOOL)arg2;
+- (void)updateView:(id)arg1 withAnimations:(id /* block */)arg2 animated:(BOOL)arg3;
+- (void)updateWatchListStatus:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

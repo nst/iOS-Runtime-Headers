@@ -10,6 +10,7 @@
 @property (nonatomic, retain) NSString *installError;
 @property (nonatomic) unsigned int installStatus;
 @property (nonatomic) unsigned int installType;
+@property (nonatomic) long long jobID;
 
 + (unsigned int)_installStatusForString:(id)arg1;
 + (unsigned int)_installTypeForString:(id)arg1;
@@ -24,6 +25,7 @@
 - (id)installError;
 - (unsigned int)installStatus;
 - (unsigned int)installType;
+- (long long)jobID;
 - (BOOL)requiresDiagnosticSendingPermission;
 - (void)setBuildVersion:(id)arg1;
 - (void)setBundleID:(id)arg1;
@@ -31,5 +33,6 @@
 - (void)setInstallError:(id)arg1;
 - (void)setInstallStatus:(unsigned int)arg1;
 - (void)setInstallType:(unsigned int)arg1;
+- (void)setJobID:(long long)arg1;
 
 @end

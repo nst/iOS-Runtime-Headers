@@ -9,6 +9,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void)oneUpPresentation:(id)arg1 commitPreviewViewController:(id)arg2;
+- (void)oneUpPresentation:(id)arg1 didDismissPreviewViewController:(id)arg2 committing:(BOOL)arg3;
 - (BOOL)oneUpPresentation:(id)arg1 handlePresentingPinchGestureRecognizer:(id)arg2;
 - (void)oneUpPresentation:(id)arg1 presentingViewControllerViewDidAppear:(BOOL)arg2;
 - (void)oneUpPresentation:(id)arg1 presentingViewControllerViewDidDisappear:(BOOL)arg2;

@@ -32,6 +32,7 @@
 - (void)finalizeCompositionValues;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 sourceAccountManagement:(int)arg2;
 - (id)mailComposeDelegate;
 - (void)recoverAutosavedMessageWithIdentifier:(id)arg1;
 - (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id /* block */)arg2;

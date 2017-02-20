@@ -66,7 +66,6 @@
 - (void)p_buildSidebarOrder;
 - (id)p_chartsWantingDeferredUpgrade;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_contentFrameToCaptureForSheet:(id)arg1;
-- (id)p_fixedUpSelectionPathForNearestDisplayableSheet:(id)arg1;
 - (float)p_imageBorderForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)p_previewImageWithImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)p_removeSidebarNodeForSheet:(id)arg1;

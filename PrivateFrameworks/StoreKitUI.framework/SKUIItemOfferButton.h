@@ -7,7 +7,10 @@
     float  _borderColorAlphaMultiplier;
     BOOL  _borderCornerRadiusMatchesHalfBoundingDimension;
     UIView * _borderView;
+    UIImage * _borderedImage;
+    UIImageView * _borderedImageView;
     SKUIBuyButtonDescriptor * _buttonDescriptor;
+    NSString * _buyType;
     SKUIFocusedTouchGestureRecognizer * _cancelGestureRecognizer;
     id /* block */  _centerImageProvider;
     UIImage * _cloudImage;
@@ -43,7 +46,9 @@
 }
 
 @property (nonatomic) float borderColorAlphaMultiplier;
+@property (nonatomic, retain) UIImage *borderedImage;
 @property (nonatomic, retain) SKUIBuyButtonDescriptor *buttonDescriptor;
+@property (nonatomic, copy) NSString *buyType;
 @property (nonatomic, copy) id /* block */ centerImageProvider;
 @property (nonatomic, copy) UIColor *cloudTintColor;
 @property (nonatomic, copy) NSString *confirmationTitle;
@@ -64,6 +69,7 @@
 @property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
 @property (nonatomic) BOOL showsConfirmationState;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsPlayButton;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) int titleStyle;
 @property (getter=isUniversal, nonatomic) BOOL universal;
@@ -88,11 +94,13 @@
 
 - (void).cxx_destruct;
 - (void)_adjustViewOrderingForProperties:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_borderedImageViewFrame;
 - (id)_buttonPropertiesForState:(id)arg1;
 - (void)_cancelGestureAction:(id)arg1;
 - (float)_horizontalInsetForTitleStyle:(int)arg1;
 - (id)_imageForProgressType:(int)arg1;
 - (void)_insertBorderView;
+- (void)_insertBorderedImageView;
 - (void)_insertCancelGestureRecognizer;
 - (void)_insertImageView;
 - (void)_insertLabel;
@@ -104,6 +112,7 @@
 - (void)_sendDidAnimate;
 - (void)_sendWillAnimate;
 - (BOOL)_touchInBounds:(id)arg1;
+- (void)_transitionFromBorderedImage:(id)arg1 toTitle:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
 - (void)_transitionFromImage:(id)arg1 toImage:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
 - (void)_transitionFromProgress:(id)arg1 toProgress:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
 - (void)_transitionFromProgress:(id)arg1 toTitleOrImage:(id)arg2 withDuration:(float)arg3 completion:(id /* block */)arg4;
@@ -113,7 +122,9 @@
 - (void)_updateForChangedTitleProperty;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (float)borderColorAlphaMultiplier;
+- (id)borderedImage;
 - (id)buttonDescriptor;
+- (id)buyType;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (id /* block */)centerImageProvider;
 - (id)cloudTintColor;
@@ -127,7 +138,8 @@
 - (id)element;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (int)fillStyle;
-- (BOOL)hasImage;
+- (BOOL)hasBorderedImage;
+- (BOOL)hasNonBorderedImage;
 - (id)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDisabledButSelectable;
@@ -143,7 +155,9 @@
 - (BOOL)restores;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBorderColorAlphaMultiplier:(float)arg1;
+- (void)setBorderedImage:(id)arg1;
 - (void)setButtonDescriptor:(id)arg1;
+- (void)setBuyType:(id)arg1;
 - (void)setCenterImageProvider:(id /* block */)arg1;
 - (void)setCloudTintColor:(id)arg1;
 - (void)setColoringWithAppearance:(id)arg1;
@@ -172,6 +186,7 @@
 - (void)showCloudImage;
 - (BOOL)showsConfirmationState;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)supportsPlayButton;
 - (void)tintColorDidChange;
 - (id)title;
 - (int)titleStyle;

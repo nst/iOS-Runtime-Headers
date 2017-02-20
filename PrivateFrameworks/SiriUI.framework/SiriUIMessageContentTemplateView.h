@@ -9,6 +9,7 @@
 @property (nonatomic) <SiriUIMessageContentTemplateModel> *dataSource;
 
 - (void).cxx_destruct;
+- (struct CGSize { float x1; float x2; })_textBalloonViewBoundingSize;
 - (float)desiredHeight;
 - (id)initWithDataSource:(id)arg1;
 - (void)layoutSubviews;

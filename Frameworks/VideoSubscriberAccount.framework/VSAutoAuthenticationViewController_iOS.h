@@ -7,7 +7,7 @@
     UIBarButtonItem * _cancelButtonItem;
     BOOL  _cancellationAllowed;
     id  _contentSizeCategoryObserver;
-    <VSAutoAuthenticationViewControllerDelegate> * _delegate;
+    <VSAuthenticationViewControllerDelegate> * _delegate;
     VSIdentityProviderLogoView * _logoView;
     UIButton * _manualSignInButton;
     UILabel * _manualSignInTitleLabel;
@@ -24,7 +24,7 @@
 @property (getter=isCancellationAllowed, nonatomic) BOOL cancellationAllowed;
 @property (nonatomic) id contentSizeCategoryObserver;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <VSAutoAuthenticationViewControllerDelegate> *delegate;
+@property (nonatomic) <VSAuthenticationViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) VSIdentityProviderLogoView *logoView;
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic, retain) UIBarButtonItem *signInButtonItem;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) VSAutoAuthenticationViewModel *viewModel;
+@property (nonatomic, readonly) VSViewModel *viewModel;
 
 - (void).cxx_destruct;
 - (void)_cancelButtonPressed:(id)arg1;

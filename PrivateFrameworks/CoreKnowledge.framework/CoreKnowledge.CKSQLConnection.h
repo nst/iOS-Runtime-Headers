@@ -11,17 +11,18 @@
     void queueContext.storage;
 }
 
-@property (nonatomic, readonly) long changes;
+@property (nonatomic, readonly) int changes;
 @property (nonatomic, readonly) NSString *description;
 @property (nonatomic, readonly) void*handle;
 @property (nonatomic, readonly) _TtC13CoreKnowledge8CKLogger *log;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) BOOL readonly;
-@property (nonatomic, readonly) long totalChanges;
+@property (nonatomic, readonly) int totalChanges;
 
 - (id /* block */).cxx_destruct;
-- (long)changes;
+- (int)changes;
+- (void)closeConnection;
 - (void)dealloc;
 - (id)description;
 - (BOOL)execute:(id)arg1 error:(id*)arg2;
@@ -34,6 +35,6 @@
 - (id)name;
 - (id)path;
 - (BOOL)readonly;
-- (long)totalChanges;
+- (int)totalChanges;
 
 @end

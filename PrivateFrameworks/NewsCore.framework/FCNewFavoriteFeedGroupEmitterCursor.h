@@ -3,19 +3,15 @@
  */
 
 @interface FCNewFavoriteFeedGroupEmitterCursor : NSObject <NSCoding, NSCopying> {
-    BOOL  _finished;
     NSSet * _tagIDsReturned;
 }
 
-@property (nonatomic) BOOL finished;
 @property (nonatomic, copy) NSSet *tagIDsReturned;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)finished;
 - (id)initWithCoder:(id)arg1;
-- (void)setFinished:(BOOL)arg1;
 - (void)setTagIDsReturned:(id)arg1;
 - (id)tagIDsReturned;
 

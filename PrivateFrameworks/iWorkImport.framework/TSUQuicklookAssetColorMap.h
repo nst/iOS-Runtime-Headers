@@ -13,6 +13,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)colorForResource:(id)arg1;
 + (BOOL)hasAppAssets;
++ (id)locatorForSageChartTextureSet:(id)arg1 image:(id)arg2;
 + (id)quicklookAssetMap;
 
 - (id)appAssetPath;

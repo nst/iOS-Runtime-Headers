@@ -5,6 +5,7 @@
 @interface SUICApplicationStateHelper : NSObject <FBSDisplayLayoutObserver> {
     BKSApplicationStateMonitor * _appStateMonitor;
     NSMutableArray * _foregroundAppInfos;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

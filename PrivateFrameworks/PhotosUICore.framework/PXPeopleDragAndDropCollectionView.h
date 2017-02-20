@@ -30,7 +30,6 @@
 - (void)_autoscrollForReordering:(id)arg1;
 - (id)_footerAttributes;
 - (float)_highestVisibleCellZOrder;
-- (void)animateDropToFavoriteSection:(id /* block */)arg1;
 - (void)animateDropToFavoriteShelf:(id /* block */)arg1;
 - (BOOL)animatingFavorite;
 - (BOOL)beginInteractiveMovementAtLocation:(struct CGPoint { float x1; float x2; })arg1 forItemAtIndexPath:(id)arg2;

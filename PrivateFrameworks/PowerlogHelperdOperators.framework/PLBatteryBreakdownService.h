@@ -10,7 +10,6 @@
     NSDictionary * _installedBundleIDToDisplayName;
     NSDictionary * _installedPluginBundleIDToPluginEntry;
     NSSet * _intermediateRootNodes;
-    NSSet * _internalAppNames;
     NSDictionary * _nodeIDToNodeName;
     NSSet * _nonAppNames;
     NSDictionary * _rootNodeNameToRootNodeEnergyKey;
@@ -26,7 +25,6 @@
 @property (nonatomic, retain) NSDictionary *installedBundleIDToDisplayName;
 @property (nonatomic, retain) NSDictionary *installedPluginBundleIDToPluginEntry;
 @property (nonatomic, retain) NSSet *intermediateRootNodes;
-@property (nonatomic, retain) NSSet *internalAppNames;
 @property (nonatomic, retain) NSDictionary *nodeIDToNodeName;
 @property (nonatomic, retain) NSSet *nonAppNames;
 @property (nonatomic, retain) NSDictionary *rootNodeNameToRootNodeEnergyKey;
@@ -66,7 +64,6 @@
 - (id)installedBundleIDToDisplayName;
 - (id)installedPluginBundleIDToPluginEntry;
 - (id)intermediateRootNodes;
-- (id)internalAppNames;
 - (id)mapCloudDocsToAppsWithEnergyEntries:(id)arg1;
 - (id)mapDeletedAppsWithEnergyEntries:(id)arg1;
 - (id)mapGizmoToAppsWithEnergyEntries:(id)arg1;
@@ -90,7 +87,6 @@
 - (void)setInstalledBundleIDToDisplayName:(id)arg1;
 - (void)setInstalledPluginBundleIDToPluginEntry:(id)arg1;
 - (void)setIntermediateRootNodes:(id)arg1;
-- (void)setInternalAppNames:(id)arg1;
 - (void)setNodeIDToNodeName:(id)arg1;
 - (void)setNonAppNames:(id)arg1;
 - (void)setRootNodeNameToRootNodeEnergyKey:(id)arg1;

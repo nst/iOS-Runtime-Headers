@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNAvatarView : UIControl <CNAvatarCardControllerDelegate, CNCardTransitioning, CNContactChangesObserver> {
+@interface CNAvatarView : UIView <CNAvatarCardControllerDelegate, CNCardTransitioning, CNContactChangesObserver> {
     BOOL  _allowsAnimation;
     BOOL  _asynchronousRendering;
     BOOL  _autoUpdateContact;
@@ -80,6 +80,11 @@
 + (BOOL)defaultThreeDTouchSupport;
 + (id)descriptorForRequiredKeys;
 + (id)descriptorForRequiredKeysWithThreeDTouchEnabled:(BOOL)arg1;
++ (Class)likenessProviderViewClassForProvider:(id)arg1;
++ (void)setLikenessProvider:(id)arg1 onImageView:(id)arg2 circular:(BOOL)arg3;
++ (void)setLikenessProvider:(id)arg1 onPRLikenessView:(id)arg2 circular:(BOOL)arg3;
++ (void)setLikenessProvider:(id)arg1 onView:(id)arg2;
++ (void)setLikenessProvider:(id)arg1 onView:(id)arg2 circular:(BOOL)arg3;
 
 - (void).cxx_destruct;
 - (float)_diameter;
@@ -113,6 +118,7 @@
 - (void)didMoveToWindow;
 - (BOOL)disableCornerRadiusForAvatar;
 - (void)dismissContactViewController:(id)arg1;
+- (BOOL)enabled;
 - (id)forcePressView;
 - (id)imageForTransitioningToFullScreen;
 - (id)init;
@@ -149,6 +155,7 @@
 - (void)setContacts:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisableCornerRadiusForAvatar:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setForcePressView:(id)arg1;
 - (void)setLikenessProviders:(id)arg1;
 - (void)setLikenessResolver:(id)arg1;

@@ -5,11 +5,13 @@
 @interface HFActionBuilder : HFItemBuilder
 
 @property (nonatomic, readonly) HMAction *action;
+@property (nonatomic, readonly) BOOL requiresDeviceUnlock;
 
 + (id)actionBuilderForAction:(id)arg1 inHome:(id)arg2;
 + (Class)homeKitRepresentationClass;
 
 - (id)action;
+- (BOOL)requiresDeviceUnlock;
 - (void)setAction:(id)arg1;
 - (BOOL)updateWithActionBuilder:(id)arg1;
 

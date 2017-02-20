@@ -21,5 +21,6 @@
 - (id)imageForSizedArtwork:(id)arg1 view:(id)arg2;
 - (id)initWithArtworkManager:(id)arg1;
 - (void)purge;
+- (BOOL)shouldReverseImageForShieldType:(long long)arg1 onView:(id)arg2;
 
 @end

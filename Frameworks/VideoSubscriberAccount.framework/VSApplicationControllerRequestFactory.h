@@ -9,7 +9,7 @@
 + (id)_logoutSAMLRequestStringWithError:(id*)arg1;
 + (id)sharedFactory;
 
-- (id)_applicationControllerRequestWithType:(int)arg1 SAMLRequestString:(id)arg2 authenticationToken:(id)arg3 requestorVerificationToken:(id)arg4 userInfo:(id)arg5;
+- (id)_applicationControllerRequestWithType:(int)arg1 SAMLRequestString:(id)arg2 authenticationTokenBody:(id)arg3 requestorVerificationToken:(id)arg4 attributeNames:(id)arg5 userInfo:(id)arg6;
 - (id)accountMetadataApplicationControllerRequestWithAccountMetadataRequest:(id)arg1 authenticationToken:(id)arg2;
 - (id)authenticationApplicationControllerRequestWithAuthenticationToken:(id)arg1 forcedAuthentication:(BOOL)arg2;
 - (id)logoutApplicationControllerRequest;

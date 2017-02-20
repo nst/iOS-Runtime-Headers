@@ -101,6 +101,7 @@
 - (id)enrichments;
 - (void)enumeratePeople:(id /* block */)arg1;
 - (void)enumeratePlainTextLines:(id /* block */)arg1;
+- (unsigned int)eventEnrichmentsCount;
 - (BOOL)hasEventEnrichment;
 - (BOOL)hasFullDownloadBeenRequested;
 - (unsigned int*)htmlOffsets;

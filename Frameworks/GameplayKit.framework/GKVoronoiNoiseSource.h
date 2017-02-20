@@ -16,7 +16,7 @@
 
 + (id)voronoiNoiseWithFrequency:(double)arg1 displacement:(double)arg2 distanceEnabled:(BOOL)arg3 seed:(int)arg4;
 
-- (struct Module { int (**x1)(); struct Module {} **x2; }*)__newModule;
+- (id)cloneModule;
 - (double)displacement;
 - (double)frequency;
 - (id)init;
@@ -27,5 +27,6 @@
 - (void)setDistanceEnabled:(BOOL)arg1;
 - (void)setFrequency:(double)arg1;
 - (void)setSeed:(int)arg1;
+- (double)valueAt;
 
 @end

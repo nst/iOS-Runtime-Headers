@@ -64,6 +64,7 @@
         float height; 
     }  _peekingScrollViewPeekSize;
     BOOL  _playsSoundOnFocusChange;
+    _UIFocusMovementInfo * _previousJoystickFocusMovementInfo;
     double  _previousJoystickFocusMovementTime;
     double  _previousJoystickRegionEntryTime;
     struct CGVector { 
@@ -125,11 +126,12 @@
 - (float)_effortRequiredForFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (void)_ensureFocusedViewIsOnscreen:(id)arg1;
 - (void)_exitJoystickModeForReal:(id)arg1;
-- (id)_findFocusCandidateByExhaustivelySearchingScrollView:(id)arg1 forFocusMovement:(id)arg2 fromItem:(id)arg3;
+- (id)_findFocusCandidateByExhaustivelySearchingScrollView:(id)arg1 forFocusMovement:(id)arg2 fromItem:(id)arg3 didFindSpeedBump:(out BOOL*)arg4;
 - (id)_findFocusCandidateBySearchingLinearFocusMovementSequencesForMovement:(id)arg1 fromItem:(id)arg2;
-- (id)_findFocusCandidateWithoutLoadingScrollViewContent:(id)arg1 forFocusMovement:(id)arg2 fromItem:(id)arg3 minimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (id)_findFocusCandidateWithoutLoadingScrollViewContent:(id)arg1 forFocusMovement:(id)arg2 fromItem:(id)arg3 minimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 didFindSpeedBump:(out BOOL*)arg5;
 - (id)_focusMap:(id)arg1 preferredDefaultFocusItemInEnvironment:(id)arg2;
 - (id)_focusMap:(id)arg1 preferredDestinationItemForFocusMovement:(id)arg2;
+- (id)_focusMovementForJoystickPosition:(struct CGPoint { float x1; float x2; })arg1 usingMinimumRadius:(float)arg2 focusMovementStyle:(int)arg3;
 - (id)_focusedItem;
 - (id)_focusedItemInfo;
 - (float)_frictionInterpolationForMomentumSpeed:(float)arg1 totalDistance:(float)arg2 slope:(float)arg3 shortDistance:(float)arg4 longDistance:(float)arg5;
@@ -147,12 +149,13 @@
 - (BOOL)_isScrollingScrollView:(id)arg1;
 - (BOOL)_joystickAttemptFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (void)_joystickDisplayLinkHeartbeat:(id)arg1;
+- (BOOL)_joystickFocusMovement:(id)arg1 shouldBeConsideredEqualToFocusMovement:(id)arg2;
 - (void)_joystickGestureBegan:(id)arg1;
 - (void)_joystickGestureEnded:(id)arg1;
 - (void)_joystickGestureUpdated:(id)arg1;
 - (void)_joystickPerformRepeat:(id)arg1;
 - (double)_joystickRepeatDurationForTimeInMovementZone:(double)arg1;
-- (struct CGVector { float x1; float x2; })_joystickVelocityForHeading:(unsigned int)arg1 timeInMovementZone:(double)arg2;
+- (struct CGVector { float x1; float x2; })_joystickVelocityForHeading:(unsigned int)arg1;
 - (void)_loadScrollViewContentForFocusMovement:(id)arg1 fromItem:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minimumSearchAreaForContainerView:(id)arg1;
 - (void)_momentumHeartbeat:(id)arg1;

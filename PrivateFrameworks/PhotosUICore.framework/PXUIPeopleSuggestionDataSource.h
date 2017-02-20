@@ -13,7 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)cancelSuggestionForPerson:(id)arg1 withToken:(int)arg2 error:(id*)arg3;
+- (BOOL)cancelSuggestionForPerson:(id)arg1 withToken:(int)arg2 error:(id*)arg3;
 - (id)cancelledTokens;
 - (void)commitSuggestionsForPerson:(id)arg1 withConfirmedSuggestions:(id)arg2 andRejectedSuggestions:(id)arg3;
 - (id)init;

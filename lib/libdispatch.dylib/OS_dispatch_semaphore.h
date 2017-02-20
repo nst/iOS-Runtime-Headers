@@ -9,8 +9,15 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+// Image: /usr/lib/system/introspection/libdispatch.dylib
+
 + (void)load;
 
 - (id)init;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftDispatch.dylib
+
+- (int)signal;
+- (void)wait;
 
 @end

@@ -36,7 +36,6 @@
 - (void)audioSessionErrorDidOccur:(id)arg1;
 - (void)audioSessionRecordBufferAvailable:(id)arg1;
 - (void)audioSessionUnsupportedAudioRoute;
-- (void)checkAudioRoute;
 - (void)closeSessionWithCompletion:(id /* block */)arg1;
 - (void)closeSessionWithStatus:(int)arg1 successfully:(BOOL)arg2;
 - (void)closeSessionWithStatus:(int)arg1 successfully:(BOOL)arg2 complete:(id /* block */)arg3;

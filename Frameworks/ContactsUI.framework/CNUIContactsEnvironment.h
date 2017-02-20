@@ -10,6 +10,8 @@
     <CNUIPRLikenessResolver> * _cachingLikenessResolver;
     long  _cachingLikenessResolver_once;
     CNContactsEnvironment * _cnEnvironment;
+    CNContactChangesNotifier * _contactChangesNotifier;
+    long  _contactChangesNotifier_once;
     CNContactStore * _contactStore;
     long  _contactStore_once;
     <CNSchedulerProvider> * _defaultSchedulerProvider;
@@ -33,6 +35,7 @@
 @property (nonatomic, retain) <CNUIUserActionDiscoveringEnvironment> *actionDiscoveringEnvironment;
 @property (nonatomic, retain) <CNUIPRLikenessResolver> *cachingLikenessResolver;
 @property (nonatomic, readonly) CNContactsEnvironment *cnEnvironment;
+@property (nonatomic, retain) CNContactChangesNotifier *contactChangesNotifier;
 @property (nonatomic, retain) CNContactStore *contactStore;
 @property (nonatomic, retain) <CNSchedulerProvider> *defaultSchedulerProvider;
 @property (nonatomic, retain) _DECConsumer *duetConsumer;
@@ -50,6 +53,7 @@
 - (id)actionDiscoveringEnvironment;
 - (id)cachingLikenessResolver;
 - (id)cnEnvironment;
+- (id)contactChangesNotifier;
 - (id)contactStore;
 - (id)defaultSchedulerProvider;
 - (id)duetConsumer;
@@ -64,6 +68,7 @@
 - (void)setAccountsFacade:(id)arg1;
 - (void)setActionDiscoveringEnvironment:(id)arg1;
 - (void)setCachingLikenessResolver:(id)arg1;
+- (void)setContactChangesNotifier:(id)arg1;
 - (void)setContactStore:(id)arg1;
 - (void)setDefaultSchedulerProvider:(id)arg1;
 - (void)setDuetConsumer:(id)arg1;

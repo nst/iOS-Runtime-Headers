@@ -34,6 +34,7 @@
 
 - (void).cxx_destruct;
 - (void)_databaseChanged;
+- (BOOL)_hasTCCAccessToEntityWithObjectIDUsingDeepInspection:(struct { int x1; int x2; })arg1;
 - (void)_loadAccessPermissionsIfNeeded;
 - (id)_restrictedStoreRowIDs;
 - (BOOL)_shouldUseMCToBlacklist;
@@ -48,6 +49,7 @@
 - (id)delegate;
 - (void)dumpState;
 - (BOOL)eventAccessGranted;
+- (BOOL)hasTCCAccessToEntityWithObjectID:(struct { int x1; int x2; })arg1;
 - (id)identity;
 - (id)initWithXPCConnection:(id)arg1;
 - (void)insertObject:(void*)arg1 key:(id)arg2;

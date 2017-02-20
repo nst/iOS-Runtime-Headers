@@ -17,6 +17,7 @@
     float  _auraMinSubdivisionLevel;
     int  _auraProgramHandle;
     unsigned int  _auraVertexCircles;
+    int  _currentContextCount;
     FlameGroup * _currentFlameGroup;
     <SUICFlamesViewDelegate> * _delegate;
     float  _dictationBlueColor;
@@ -44,10 +45,12 @@
     unsigned int  _numWaveIndices;
     UIImage * _overlayImage;
     UIImageView * _overlayImageView;
+    EAGLContext * _previousContext;
     BOOL  _reduceFrameRate;
     BOOL  _reduceMotionEnabled;
     BOOL  _renderInBackground;
     unsigned int  _renderbufferHandle;
+    NSMutableSet * _renderingDisabledReasons;
     UIScreen * _screen;
     BOOL  _shadersAreCompiled;
     BOOL  _showAura;
@@ -63,6 +66,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } activeFrame;
 @property (nonatomic) <SUICFlamesViewDelegate> *delegate;
 @property (nonatomic, retain) UIColor *dictationColor;
+@property (nonatomic, readonly) BOOL isRenderingEnabled;
 @property (nonatomic) int mode;
 @property (nonatomic, retain) UIImage *overlayImage;
 @property (nonatomic) BOOL reduceFrameRate;
@@ -76,6 +80,9 @@
 + (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 fidelity:(int)arg3 prewarmInBackground:(BOOL)arg4;
 
 - (void).cxx_destruct;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
 - (void)_cleanupGL;
 - (float)_currentMicPowerLevel;
 - (int)_generateIndicesForNumCircleShapes:(int)arg1 withMaxSubdivisionLevel:(float)arg2 startingWithNumSubdivisionLevel:(float)arg3 forIndices:(unsigned int**)arg4 atStartIndex:(int)arg5 withFill:(BOOL)arg6 withCullingForAura:(BOOL)arg7 forVertices:(struct { }*)arg8;
@@ -85,6 +92,8 @@
 - (void)_prewarmShaders;
 - (void)_reduceMotionStatusChanged:(id)arg1;
 - (BOOL)_resizeFromLayer:(id)arg1;
+- (void)_restoreCurrentContext;
+- (BOOL)_setCurrentContext;
 - (void)_setValuesForFidelity:(int)arg1;
 - (void)_setupDisplayLink;
 - (BOOL)_setupFramebuffer;
@@ -102,6 +111,7 @@
 - (BOOL)inSiriMode;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 screen:(id)arg2 fidelity:(int)arg3;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 screenScale:(float)arg2 fidelity:(int)arg3;
+- (BOOL)isRenderingEnabled;
 - (void)layoutSubviews;
 - (int)mode;
 - (id)overlayImage;
@@ -119,6 +129,7 @@
 - (void)setOverlayImage:(id)arg1;
 - (void)setReduceFrameRate:(BOOL)arg1;
 - (void)setRenderInBackground:(BOOL)arg1;
+- (void)setRenderingEnabled:(BOOL)arg1 forReason:(id)arg2;
 - (void)setShowAura:(BOOL)arg1;
 - (void)setState:(int)arg1;
 - (BOOL)showAura;

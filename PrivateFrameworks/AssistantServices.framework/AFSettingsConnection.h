@@ -35,6 +35,7 @@
 - (void)dealloc;
 - (void)deleteAccountWithIdentifier:(id)arg1;
 - (void)disableDESWithCompletion:(id /* block */)arg1;
+- (void)fetchEventRecordsFromAnalyticsStoreAtPath:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchSiriDisabledAppIDsWithCompletion:(id /* block */)arg1;
 - (void)fetchSiriIntegrationEnabledForAppID:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchSupportedLanguageCodes:(id /* block */)arg1;
@@ -45,6 +46,8 @@
 - (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (void)killDaemon;
+- (void)purgeAnalyticsStoreWithCompletion:(id /* block */)arg1;
+- (void)resetAnalyticsStoreWithCompletion:(id /* block */)arg1;
 - (void)runAdaptationRecipeEvaluation:(id)arg1 language:(id)arg2 completion:(id /* block */)arg3;
 - (void)runLiveAdaptationRecipeEvaluationWithBaseURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)saveAccount:(id)arg1 setActive:(BOOL)arg2;

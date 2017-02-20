@@ -11,6 +11,7 @@
 @property (nonatomic) BOOL canPlaySound;
 @property (nonatomic) BOOL canTurnOnDisplay;
 @property (nonatomic) BOOL coalescesWhenLocked;
+@property (nonatomic) unsigned int contentPreviewSetting;
 @property (nonatomic) BOOL dismissAutomatically;
 @property (nonatomic) BOOL hideClearActionInList;
 @property (nonatomic) BOOL ignoreAttachmentImageThumbnailCrop;
@@ -20,12 +21,13 @@
 @property (nonatomic) BOOL overridesPocketMode;
 @property (nonatomic) BOOL overridesQuietMode;
 @property (nonatomic) BOOL preemptsPresentedNotification;
+@property (nonatomic) BOOL preventsAutomaticLock;
 @property (nonatomic) unsigned int realertCount;
 @property (nonatomic) BOOL requestsFullScreenPresentation;
+@property (nonatomic) BOOL revealsAdditionalContentIfNoDefaultAction;
 @property (nonatomic) BOOL revealsAdditionalContentOnPresentation;
 @property (nonatomic) BOOL silencedByMenuButtonPress;
 @property (nonatomic) BOOL suppressesAlertsWhenAppIsActive;
-@property (nonatomic) BOOL suppressesMessageWhenLocked;
 @property (nonatomic) BOOL suppressesSubtitleWhenLocked;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -36,6 +38,7 @@
 - (void)setCanPlaySound:(BOOL)arg1;
 - (void)setCanTurnOnDisplay:(BOOL)arg1;
 - (void)setCoalescesWhenLocked:(BOOL)arg1;
+- (void)setContentPreviewSetting:(unsigned int)arg1;
 - (void)setDismissAutomatically:(BOOL)arg1;
 - (void)setHideClearActionInList:(BOOL)arg1;
 - (void)setIgnoreAttachmentImageThumbnailCrop:(BOOL)arg1;
@@ -45,12 +48,13 @@
 - (void)setOverridesPocketMode:(BOOL)arg1;
 - (void)setOverridesQuietMode:(BOOL)arg1;
 - (void)setPreemptsPresentedNotification:(BOOL)arg1;
+- (void)setPreventsAutomaticLock:(BOOL)arg1;
 - (void)setRealertCount:(unsigned int)arg1;
 - (void)setRequestsFullScreenPresentation:(BOOL)arg1;
+- (void)setRevealsAdditionalContentIfNoDefaultAction:(BOOL)arg1;
 - (void)setRevealsAdditionalContentOnPresentation:(BOOL)arg1;
 - (void)setSilencedByMenuButtonPress:(BOOL)arg1;
 - (void)setSuppressesAlertsWhenAppIsActive:(BOOL)arg1;
-- (void)setSuppressesMessageWhenLocked:(BOOL)arg1;
 - (void)setSuppressesSubtitleWhenLocked:(BOOL)arg1;
 
 @end

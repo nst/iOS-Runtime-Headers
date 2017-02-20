@@ -20,6 +20,7 @@
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSemaphore:(id)arg1;
+- (void)_removeAssertionWithIdentifier:(id)arg1;
 - (void)acquireAssertionOfType:(unsigned int)arg1 withReason:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)assertionExistsOfType:(unsigned int)arg1;
 - (void)dealloc;

@@ -12,6 +12,7 @@
 - (BOOL)constrainToPresentingVCBounds;
 - (BOOL)forceWindowedPresentation;
 - (void)loadView;
+- (int)preferredStatusBarStyle;
 - (BOOL)preserveModalPresentationStyle;
 - (BOOL)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;

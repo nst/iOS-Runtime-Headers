@@ -189,6 +189,7 @@
 - (id)assistantUILocalizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)assistantUILocalizedStringFromSiriLanguageForKey:(id)arg1 table:(id)arg2;
+- (id)assistantUILocalizedStringFromSystemLanguageForKey:(id)arg1 table:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
 
@@ -337,6 +338,11 @@
 - (id)suic_localizedStringForKey:(id)arg1;
 - (id)suic_localizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)suic_localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (id)tv_imageNamed:(id)arg1;
+- (id)tv_launchImage;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

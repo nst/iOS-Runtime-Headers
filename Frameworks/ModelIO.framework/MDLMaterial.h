@@ -32,6 +32,7 @@
 - (id)name;
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
+- (id)propertiesWithSemantic:(unsigned int)arg1;
 - (id)propertyNamed:(id)arg1;
 - (id)propertyWithSemantic:(unsigned int)arg1;
 - (void)removeAllProperties;

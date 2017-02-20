@@ -80,6 +80,7 @@
 - (BOOL)persistentCardEmulationQueued;
 - (BOOL)queuePersistentCardEmulation;
 - (void)resetExpressState;
+- (BOOL)resetPersistentCardEmulation;
 - (void)setDelegate:(id)arg1;
 - (void)setState:(unsigned int)arg1;
 - (unsigned int)state;

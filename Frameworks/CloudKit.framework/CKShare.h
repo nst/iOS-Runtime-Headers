@@ -52,7 +52,7 @@
 
 - (void).cxx_destruct;
 - (void)CKAssignToContainerWithID:(id)arg1;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
+- (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (void)_addOwnerParticipant;
 - (void)_addParticipantBypassingChecks:(id)arg1;
 - (void)_addParticipantEmails:(id)arg1 phoneNumbers:(id)arg2 asReadWrite:(BOOL)arg3 inContainer:(id)arg4 completionHandler:(id /* block */)arg5;

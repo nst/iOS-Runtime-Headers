@@ -13,6 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_curationValueForSuggestedValue:(id)arg1 userAction:(id)arg2 localizedAppName:(id)arg3;
 - (id)contactStore;
 - (id)curateUserAction:(id)arg1;
 - (id)initWithContactStore:(id)arg1;

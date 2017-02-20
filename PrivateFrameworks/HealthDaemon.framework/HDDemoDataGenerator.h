@@ -61,8 +61,8 @@
 - (void)_queue_setupDemoDataSampleGenerators;
 - (BOOL)_queue_unarchiveFromDirectoryPath:(id)arg1;
 - (void)_runAchievementDoctorWithCompletion:(id /* block */)arg1;
-- (void)_setupRepeatingDemoDataGeneration;
 - (id)_stateDirectory;
+- (void)_triggerDemoDataGenerationAfterTimeInterval:(double)arg1;
 - (id)_unarchiveDataWithClass:(Class)arg1 atDirectoryPath:(id)arg2;
 - (void)_updateWorkoutConfigurationInGeneratorState;
 - (id)_watchProvenanceWithPerson:(id)arg1;

@@ -9,6 +9,7 @@
 - (UIColor *)backgroundColorWhileHosting;
 - (UIColor *)backgroundColorWhileNotHosting;
 - (unsigned int)hostedLayerTypes;
+- (BOOL)isClippingDisabled;
 - (BOOL)isContextHosted;
 - (BOOL)isHosting;
 - (float)level;
@@ -16,6 +17,7 @@
 - (void)setAppearanceStyle:(unsigned int)arg1;
 - (void)setBackgroundColorWhileHosting:(UIColor *)arg1;
 - (void)setBackgroundColorWhileNotHosting:(UIColor *)arg1;
+- (void)setClippingDisabled:(BOOL)arg1;
 - (void)setHostedLayerTypes:(unsigned int)arg1;
 
 @end

@@ -15,7 +15,9 @@
     HDFitnessFriendsGatewayManager * _gatewayManager;
     BOOL  _hasPendingContactsReconcile;
     NSDictionary * _messageCenters;
+    NSMutableDictionary * _placeholderFriendshipBeganTokens;
     NSMutableDictionary * _relationshipRecordsToReconcile;
+    NSMutableDictionary * _remoteRelationshipRecordsToProcess;
     NSObject<OS_dispatch_queue> * _serialQueue;
 }
 
@@ -30,9 +32,13 @@
 - (id)_contactWithInviteRequest:(id)arg1 fromSender:(id)arg2;
 - (id)_contactWithOutgoingHandshakeToken:(id)arg1;
 - (id)_contactWithRemoteRelationshipRecordZoneID:(id)arg1;
+- (id)_contactWithUUIDPreferringPlaceholders:(id)arg1;
+- (id)_currentActivityDataPreview;
 - (void)_insertInviteForContact:(id)arg1 destination:(id)arg2 serviceIdentifier:(id)arg3;
 - (id)_insertPlaceholderContactWithUUID:(id)arg1 event:(int)arg2;
+- (id)_insertPlaceholderFriendshipDidBeginForContactWithUUID:(id)arg1;
 - (void)_performFriendListTransaction:(id /* block */)arg1;
+- (void)_processActivityDataPreview:(id)arg1 friendUUID:(id)arg2;
 - (void)_processPersistedMessagesIfNeeded;
 - (void)_queue_acceptShares:(id)arg1 forRelationship:(id)arg2 contact:(id)arg3 completion:(id /* block */)arg4;
 - (void)_queue_addPersonWithCloudKitAddress:(id)arg1 toShares:(id)arg2 completion:(id /* block */)arg3;
@@ -40,11 +46,14 @@
 - (id)_queue_allRelationshipsByRecordID;
 - (void)_queue_fetchSharesForRelationship:(id)arg1 completion:(id /* block */)arg2;
 - (id)_queue_handleSavedRecords:(id)arg1 forContact:(id)arg2;
+- (void)_queue_processRemoteRelationships:(id)arg1 completion:(id /* block */)arg2;
 - (void)_queue_reconcileAddressBookAgainstRelationships:(id)arg1;
 - (void)_queue_reconcileCloudKitRelationships:(id)arg1;
 - (void)_queue_saveRelationship:(id)arg1 contact:(id)arg2 completion:(id /* block */)arg3;
 - (void)_queue_saveRelationshipAndFetchOrCreateShares:(id)arg1 contact:(id)arg2 completion:(id /* block */)arg3;
 - (void)_removeFriendWithUUID:(id)arg1 eventType:(int)arg2 completion:(id /* block */)arg3;
+- (void)_savePlaceholderFriendshipBeganToken:(id)arg1 forFriendWithUUID:(id)arg2;
+- (void)acceptInviteRequestFromFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)beginReceivingMessages;
 - (void)bulletinProvider:(id)arg1 didReceiveActionResponse:(int)arg2 fromContactWithUUID:(id)arg3;
 - (void)cloudKitManager:(id)arg1 didRecieveNewRelationships:(id)arg2 fromRecordZoneWithID:(id)arg3 moreComing:(BOOL)arg4 changesProcessedHandler:(id /* block */)arg5;
@@ -61,7 +70,6 @@
 - (void)messageCenter:(id)arg1 didReceiveWithdrawInviteRequest:(id)arg2 fromSenderAddress:(id)arg3 messageHandledCompletion:(id /* block */)arg4;
 - (void)processRetryMessages;
 - (void)removeFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
-- (void)sendInviteResponse:(int)arg1 toFriendWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendInviteToPersonWithDestination:(id)arg1 callerID:(id)arg2 serviceIdentifier:(id)arg3 completion:(id /* block */)arg4;
 - (void)sendWithdrawInviteRequestToFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setActivityDataVisible:(BOOL)arg1 toFriendWithUUID:(id)arg2 completion:(id /* block */)arg3;

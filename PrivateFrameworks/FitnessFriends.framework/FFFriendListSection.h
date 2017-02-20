@@ -7,11 +7,13 @@
     NSDate * _startDate;
 }
 
+@property (nonatomic, readonly) NSDate *endDate;
 @property (nonatomic, retain) NSArray *rows;
 @property (nonatomic, retain) NSDate *startDate;
 
 - (void).cxx_destruct;
 - (BOOL)containsFriendListRow:(id)arg1;
+- (id)endDate;
 - (id)initWithDate:(id)arg1 andRows:(id)arg2;
 - (id)rows;
 - (void)setRows:(id)arg1;

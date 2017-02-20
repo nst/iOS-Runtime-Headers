@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSAutoAuthenticationViewModel : VSViewModel {
+@interface VSAutoAuthenticationViewModel : VSCuratedViewModel {
     NSString * _accountName;
     <VSAutoAuthenticationViewModelDelegate> * _delegate;
     NSString * _manualSignInButtonText;

@@ -4,16 +4,16 @@
 
 @interface _INPBSaveProfileInCarIntent : PBCodable <NSCopying> {
     _INPBIntentMetadata * _intentMetadata;
-    _INPBString * _profileLabel;
+    _INPBString * _profileName;
     _INPBInteger * _profileNumber;
     PBUnknownFields * _unknownFields;
 }
 
 @property (nonatomic, readonly) BOOL hasIntentMetadata;
-@property (nonatomic, readonly) BOOL hasProfileLabel;
+@property (nonatomic, readonly) BOOL hasProfileName;
 @property (nonatomic, readonly) BOOL hasProfileNumber;
 @property (nonatomic, retain) _INPBIntentMetadata *intentMetadata;
-@property (nonatomic, retain) _INPBString *profileLabel;
+@property (nonatomic, retain) _INPBString *profileName;
 @property (nonatomic, retain) _INPBInteger *profileNumber;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
@@ -24,17 +24,17 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasIntentMetadata;
-- (BOOL)hasProfileLabel;
+- (BOOL)hasProfileName;
 - (BOOL)hasProfileNumber;
 - (unsigned int)hash;
 - (id)intentMetadata;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (id)profileLabel;
+- (id)profileName;
 - (id)profileNumber;
 - (BOOL)readFrom:(id)arg1;
 - (void)setIntentMetadata:(id)arg1;
-- (void)setProfileLabel:(id)arg1;
+- (void)setProfileName:(id)arg1;
 - (void)setProfileNumber:(id)arg1;
 - (id)unknownFields;
 - (void)writeTo:(id)arg1;

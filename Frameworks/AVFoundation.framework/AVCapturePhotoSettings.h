@@ -6,6 +6,7 @@
     AVCapturePhotoSettingsInternal * _internal;
 }
 
+@property (getter=isAutoDualCameraFusionEnabled, nonatomic) BOOL autoDualCameraFusionEnabled;
 @property (getter=isAutoStillImageStabilizationEnabled, nonatomic) BOOL autoStillImageStabilizationEnabled;
 @property (nonatomic, readonly) NSArray *availablePreviewPhotoPixelFormatTypes;
 @property (nonatomic) int flashMode;
@@ -28,7 +29,7 @@
 
 - (int)HDRMode;
 - (id)_description;
-- (id)_initWithFormat:(id)arg1 rawPixelFormatType:(unsigned long)arg2 uniqueID:(long long)arg3;
+- (id)_initWithFormat:(id)arg1 rawPixelFormatType:(unsigned long)arg2 uniqueID:(long long)arg3 exceptionReason:(id*)arg4;
 - (id)_sanitizedLivePhotoMovieMetadataForArray:(id)arg1 exceptionReason:(id*)arg2;
 - (id)availablePreviewPhotoPixelFormatTypes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -39,6 +40,7 @@
 - (unsigned long)formatFourCC;
 - (id)init;
 - (BOOL)isAutoBravoImageFusionEnabled;
+- (BOOL)isAutoDualCameraFusionEnabled;
 - (BOOL)isAutoShallowDepthOfFieldEffectEnabled;
 - (BOOL)isAutoStillImageStabilizationEnabled;
 - (BOOL)isHighResolutionPhotoEnabled;
@@ -56,6 +58,7 @@
 - (id)previewPhotoFormat;
 - (unsigned long)rawPhotoPixelFormatType;
 - (void)setAutoBravoImageFusionEnabled:(BOOL)arg1;
+- (void)setAutoDualCameraFusionEnabled:(BOOL)arg1;
 - (void)setAutoShallowDepthOfFieldEffectEnabled:(BOOL)arg1;
 - (void)setAutoStillImageStabilizationEnabled:(BOOL)arg1;
 - (void)setFlashMode:(int)arg1;

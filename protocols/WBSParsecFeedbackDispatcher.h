@@ -5,7 +5,7 @@
 
 @required
 
-- (void)didDisplayCompletionListItems:(NSArray *)arg1 forQuery:(WBSCompletionQuery *)arg2;
+- (void)didDisplayCompletionListItems:(NSArray *)arg1 forQuery:(WBSCompletionQuery *)arg2 forEvent:(int)arg3;
 - (void)didReceiveLocalResultsForQuery:(WBSCompletionQuery *)arg1;
 - (void)didReceiveWebSuggestionsForQuery:(WBSCompletionQuery *)arg1 fromSearchProvider:(NSString *)arg2 responseSize:(long long)arg3 statusCode:(int)arg4 networkTimingData:(NSDictionary *)arg5;
 - (void)userDidCancelSession;

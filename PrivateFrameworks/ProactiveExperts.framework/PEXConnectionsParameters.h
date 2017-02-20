@@ -4,6 +4,7 @@
 
 @interface PEXConnectionsParameters : NSObject {
     NSDictionary * _assets;
+    NSObject<OS_dispatch_queue> * _queue;
 }
 
 + (id)sharedInstance;

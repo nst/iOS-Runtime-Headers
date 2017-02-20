@@ -45,6 +45,7 @@
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)headersForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2;
 - (id)init;
+- (BOOL)messageCanBeTriaged:(id)arg1;
 - (id)newObjectCache;
 - (id)objectCache;
 - (void)setMessageClass:(Class)arg1;

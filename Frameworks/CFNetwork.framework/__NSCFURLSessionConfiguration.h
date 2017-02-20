@@ -22,6 +22,7 @@
     BOOL  _allowsResponseMonitoringDuringBodyTranmission;
     BOOL  _allowsRetryForBackgroundDataTasks;
     BOOL  _allowsTCPFastOpen;
+    BOOL  _allowsTLSSessionResumption;
     BOOL  _allowsTLSSessionTickets;
     <NSURLSessionAppleIDContext> * _appleIDContext;
     NSData * _atsContext;
@@ -34,6 +35,8 @@
     NSString * _connectionPoolName;
     id  _connectionProxyDictionary;
     NSArray * _contentDispHeadEncFallback;
+    unsigned int  _customReadBufferSize;
+    double  _customReadBufferTimeout;
     NSURL * _directoryForDownloadedFiles;
     BOOL  _disablesOutOfProcessDirectWiFiUsage;
     BOOL  _disablesUseOfProxySession;
@@ -119,6 +122,7 @@
 - (BOOL)_allowsResponseMonitoringDuringBodyTranmission;
 - (BOOL)_allowsRetryForBackgroundDataTasks;
 - (BOOL)_allowsTCPFastOpen;
+- (BOOL)_allowsTLSSessionResumption;
 - (BOOL)_allowsTLSSessionTickets;
 - (id)_appleIDContext;
 - (id)_atsContext;
@@ -131,6 +135,8 @@
 - (id)_contentDispHeadEncFallback;
 - (void*)_copyAttribute:(struct __CFString { }*)arg1;
 - (struct OpaqueCFHTTPCookieStorage { }*)_copyCFCookieStorage;
+- (unsigned int)_customReadBufferSize;
+- (double)_customReadBufferTimeout;
 - (id)_directoryForDownloadedFiles;
 - (BOOL)_disablesOutOfProcessDirectWiFiUsage;
 - (BOOL)_disablesUseOfProxySession;
@@ -240,6 +246,7 @@
 - (void)set_allowsResponseMonitoringDuringBodyTranmission:(BOOL)arg1;
 - (void)set_allowsRetryForBackgroundDataTasks:(BOOL)arg1;
 - (void)set_allowsTCPFastOpen:(BOOL)arg1;
+- (void)set_allowsTLSSessionResumption:(BOOL)arg1;
 - (void)set_allowsTLSSessionTickets:(BOOL)arg1;
 - (void)set_appleIDContext:(id)arg1;
 - (void)set_atsContext:(id)arg1;
@@ -250,6 +257,8 @@
 - (void)set_connectionCachePurgeTimeout:(double)arg1;
 - (void)set_connectionPoolName:(id)arg1;
 - (void)set_contentDispHeadEncFallback:(id)arg1;
+- (void)set_customReadBufferSize:(unsigned int)arg1;
+- (void)set_customReadBufferTimeout:(double)arg1;
 - (void)set_directoryForDownloadedFiles:(id)arg1;
 - (void)set_disablesOutOfProcessDirectWiFiUsage:(BOOL)arg1;
 - (void)set_disablesUseOfProxySession:(BOOL)arg1;

@@ -38,6 +38,7 @@
 - (void)_attachToModalViewForRemainerOfInteraction:(id)arg1;
 - (BOOL)_delegateRespondsToCommitStateTransitions;
 - (BOOL)_delegateRespondsToPreviewStateCancellations;
+- (void)_endContinuousEvaluation;
 - (void)_endInteractionIfNeeded;
 - (void)_endInteractiveStateTransitions;
 - (void)_endUsingFeedbackIfNeeded;

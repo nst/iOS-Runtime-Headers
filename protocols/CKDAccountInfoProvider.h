@@ -10,6 +10,7 @@
 - (NSURL *)baseURLForServerType:(int)arg1 partitionType:(int)arg2;
 - (NSString *)bundleID;
 - (BOOL)canAccessAccount;
+- (BOOL)canAuthWithCloudKit;
 - (void)cloudKitAuthTokenWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSString *, NSError *, void*
 - (CKDServerConfiguration *)config;
 - (CKContainerID *)containerID;

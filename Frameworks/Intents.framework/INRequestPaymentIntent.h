@@ -12,10 +12,12 @@
 @property (nonatomic, readonly, copy) INPerson *payer;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (id)currencyAmount;
+- (id)description;
 - (id)initWithPayer:(id)arg1 currencyAmount:(id)arg2 note:(id)arg3;
 - (id)note;
 - (id)payer;

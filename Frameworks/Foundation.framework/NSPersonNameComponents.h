@@ -48,7 +48,7 @@
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
+- (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
 

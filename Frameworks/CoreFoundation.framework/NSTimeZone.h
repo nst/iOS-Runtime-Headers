@@ -81,6 +81,10 @@
 - (id)JSONObjectRepresentation;
 - (id)initWithJSONObjectRepresentation:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
++ (id)gmt;
+
 // Image: /System/Library/PrivateFrameworks/Navigation.framework/Navigation
 
 - (BOOL)_navigation_hasSameOffsetFromGMTAsTimeZone:(id)arg1;

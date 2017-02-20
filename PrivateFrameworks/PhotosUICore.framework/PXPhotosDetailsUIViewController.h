@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPhotosDetailsUIViewController : UIViewController <PXActionPerformerDelegate, PXChangeObserver, PXPurgeableController, PXScrollViewControllerObserver, PXUIViewControllerZoomTransitionEndPoint, PXWidgetCompositionDelegate, UIViewControllerPreviewingDelegate> {
+@interface PXPhotosDetailsUIViewController : UIViewController <PXActionPerformerDelegate, PXChangeObserver, PXPurgeableController, PXScrollViewControllerObserver, PXUIViewControllerZoomTransitionEndPoint, PXWidgetCompositionDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     Class  __barsControllerClass;
     PXWidgetComposition * __composition;
     BOOL  __hasAppeared;
@@ -138,6 +138,7 @@
 - (id)contentScrollView;
 - (id)context;
 - (void)dealloc;
+- (void)didDismissPreviewViewController:(id)arg1 committing:(BOOL)arg2;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContext:(id)arg1 configuration:(id)arg2;

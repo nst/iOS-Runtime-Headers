@@ -7,6 +7,7 @@
 + (id)entryEventForwardDefinitionActivityStates;
 + (id)entryEventForwardDefinitionConfiguration;
 + (id)entryEventForwardDefinitionSchemaChange;
++ (id)entryEventForwardDefinitionTaskingMode;
 + (id)entryEventForwardDefinitionTimeOffset;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventIntervalDefinitionCacheSize;
@@ -15,6 +16,7 @@
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitionArchive;
 + (id)entryEventPointDefinitionCacheFlush;
++ (id)entryEventPointDefinitionMobileAssets;
 + (id)entryEventPointDefinitionOTA;
 + (id)entryEventPointDefinitionPLLog;
 + (id)entryEventPointDefinitionTimeCorrection;
@@ -26,9 +28,11 @@
 - (void)log;
 - (void)logEventForwardConfiguration:(id)arg1;
 - (void)logEventForwardSchemaChange:(id)arg1;
+- (void)logEventForwardTaskingMode:(id)arg1;
 - (void)logEventForwardTimeOffset:(id)arg1;
 - (void)logEventPointArchive:(id)arg1;
 - (void)logEventPointCacheFlush:(id)arg1;
+- (void)logEventPointMobileAssets:(id)arg1;
 - (void)logEventPointOTA:(id)arg1;
 - (void)logEventPointPLLog:(id)arg1;
 - (void)logEventPointTimeCorrection:(id)arg1;

@@ -85,6 +85,7 @@
 - (int)style;
 - (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)tapGestureRecognizer;
+- (void)tintColorDidChange;
 - (id)title;
 - (id)titleLabel;
 - (id)type;

@@ -7,6 +7,7 @@
     int  _activationStyle;
     Class  _clientClass;
     BOOL  _enabled;
+    int  _outputMode;
     id /* block */  _preparationBlock;
     BOOL  _prepared;
     BOOL  _settingsEnabled;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) NSString *descriptionKey;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (nonatomic, readonly) NSArray *feedbackKeyPaths;
+@property (nonatomic) int outputMode;
 @property (nonatomic, copy) id /* block */ preparationBlock;
 @property (getter=isPrepared, nonatomic) BOOL prepared;
 @property (nonatomic, readonly) int requiredSupportLevel;
@@ -35,6 +37,7 @@
 - (BOOL)_hasMutableFeedbackKeyPaths;
 - (void)_preferencesUpdated:(id)arg1;
 - (BOOL)_prepareRegardlessOfPreferences:(BOOL)arg1;
+- (BOOL)_shouldEnable;
 - (id)_stats_key;
 - (void)_updateEnabled;
 - (int)activationStyle;
@@ -49,11 +52,13 @@
 - (BOOL)isEnabled;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPrepared;
+- (int)outputMode;
 - (id /* block */)preparationBlock;
 - (int)requiredSupportLevel;
 - (void)setActivationStyle:(int)arg1;
 - (void)setClientClass:(Class)arg1;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setOutputMode:(int)arg1;
 - (void)setPreparationBlock:(id /* block */)arg1;
 - (void)setPrepared:(BOOL)arg1;
 - (void)setSettingsEnabled:(BOOL)arg1;

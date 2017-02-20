@@ -18,15 +18,17 @@
 @property (nonatomic, readonly) BOOL requiresForYouCatchUpOperation;
 @property (readonly) Class superclass;
 
+- (BOOL)canEmitGroupsWithType:(int)arg1;
 - (int)desiredArticlesCount;
 - (BOOL)emitsSingletonGroups;
 - (id)groupEmitterIdentifier;
 - (id)initWithMinPrecedingTopicGroups:(unsigned int)arg1 desiredArticlesCount:(int)arg2;
 - (unsigned int)minPrecedingTopicGroups;
-- (id)operationToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (BOOL)requiresForYouCatchUpOperation;
 - (void)setDesiredArticlesCount:(int)arg1;
 - (void)setMinPrecedingTopicGroups:(unsigned int)arg1;
 - (BOOL)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 
 @end

@@ -8,26 +8,25 @@
 
 + (id)sharedPreferencesController;
 
-- (id)_domainForType:(int)arg1;
+- (void)_configurePreferences;
 - (BOOL)boolForKey:(int)arg1;
-- (BOOL)boolForKeyString:(id)arg1 domainType:(int)arg2 default:(BOOL)arg3;
-- (BOOL)costlyCapture;
+- (BOOL)boolForPreferenceKey:(id)arg1;
 - (void)dealloc;
 - (int)handBias;
 - (id)init;
-- (int)intForKeyString:(id)arg1 domainType:(int)arg2 default:(int)arg3;
-- (BOOL)isKeyLockedDown:(int)arg1;
+- (BOOL)isPreferenceKeyLockedDown:(id)arg1;
 - (void)preferencesControllerChanged:(id)arg1;
 - (float)rivenSizeFactor:(float)arg1;
 - (void)saveInputModes:(id)arg1;
 - (void)setHandBias:(int)arg1;
 - (void)setLanguageAwareInputModeLastUsed:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(int)arg2;
+- (void)setValue:(id)arg1 forPreferenceKey:(id)arg2;
 - (BOOL)spaceConfirmationEnabled;
 - (void)synchronizePreferences;
 - (void)touchSynchronizePreferencesTimer;
 - (BOOL)typologyEnabled;
 - (id)valueForKey:(int)arg1;
-- (id)valueForKeyString:(id)arg1 domainType:(int)arg2 default:(id)arg3;
+- (id)valueForPreferenceKey:(id)arg1;
 
 @end

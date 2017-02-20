@@ -5,6 +5,8 @@
 
 @required
 
+- (NSDictionary *)activitiesWithSourceBundleIdentifier:(NSString *)arg1 intent:(INIntent *)arg2 error:(id*)arg3;
+- (NSDictionary *)activityWithIdentifier:(NSString *)arg1;
 - (NSDictionary *)recordedActivityWithIdentifier:(NSString *)arg1;
 
 @end

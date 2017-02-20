@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NSNumber *contentRatingRanking;
 @property (nonatomic, retain) NSString *description;
 @property (nonatomic, retain) NSString *externalID;
+@property (nonatomic, retain) NSDictionary *extraMetadata;
 @property (nonatomic, retain) NSArray *interstitials;
 @property (nonatomic) BOOL isExplicit;
 @property (nonatomic, readonly) IKJSMediaItem *jsMediaItem;
@@ -40,6 +41,7 @@
 - (id)contentRatingRanking;
 - (id)description;
 - (id)externalID;
+- (id)extraMetadata;
 - (id)initWithAppContext:(id)arg1 jsMediaItem:(id)arg2;
 - (id)interstitials;
 - (BOOL)isExplicit;
@@ -58,6 +60,7 @@
 - (void)setContentRatingRanking:(id)arg1;
 - (void)setDescription:(id)arg1;
 - (void)setExternalID:(id)arg1;
+- (void)setExtraMetadata:(id)arg1;
 - (void)setInterstitials:(id)arg1;
 - (void)setIsExplicit:(BOOL)arg1;
 - (void)setRatingBadge:(id)arg1;

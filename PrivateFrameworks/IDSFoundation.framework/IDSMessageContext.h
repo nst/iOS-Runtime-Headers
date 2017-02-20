@@ -14,6 +14,7 @@
 @property (nonatomic) long long connectionType;
 @property (nonatomic) BOOL expectsPeerResponse;
 @property (nonatomic, copy) NSString *fromID;
+@property (nonatomic) BOOL fromServerStorage;
 @property (nonatomic, copy) NSString *incomingResponseIdentifier;
 @property (nonatomic) NSNumber *originalCommand;
 @property (nonatomic, copy) NSString *originalDestinationDevice;
@@ -34,6 +35,7 @@
 - (void)dealloc;
 - (BOOL)expectsPeerResponse;
 - (id)fromID;
+- (BOOL)fromServerStorage;
 - (id)incomingResponseIdentifier;
 - (id)initWithDictionary:(id)arg1 boostContext:(id)arg2;
 - (id)objectForKey:(id)arg1;
@@ -48,6 +50,7 @@
 - (void)setConnectionType:(long long)arg1;
 - (void)setExpectsPeerResponse:(BOOL)arg1;
 - (void)setFromID:(id)arg1;
+- (void)setFromServerStorage:(BOOL)arg1;
 - (void)setIncomingResponseIdentifier:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setOriginalCommand:(id)arg1;

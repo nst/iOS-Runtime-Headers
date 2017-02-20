@@ -28,12 +28,13 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (void)getMetricsContext:(id /* block */)arg1;
+
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 betterRouteDiscoveredForStreamTask:(id)arg2;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 streamTask:(id)arg2 didBecomeInputStream:(id)arg3 outputStream:(id)arg4;
 - (void)_getConfiguredStreamPair:(id /* block */)arg1;
-- (id)_siriCoreConnectionErrorWithCode:(int)arg1;
 - (id)analysisInfo;
 - (void)close;
 - (id)connectionType;

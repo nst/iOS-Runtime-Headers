@@ -10,7 +10,9 @@
     CKDatabase * _publicDatabase;
     CKRecordZone * _recordZone;
     NSString * _recordZoneKey;
+    BOOL  _recordZoneOperationInProgress;
     NSString * _subscriptionKey;
+    BOOL  _subscriptionOperationInProgress;
 }
 
 @property (nonatomic, retain) CKContainer *cloudKitContainer;
@@ -18,7 +20,9 @@
 @property (nonatomic, retain) CKDatabase *publicDatabase;
 @property (nonatomic, retain) CKRecordZone *recordZone;
 @property (nonatomic, retain) NSString *recordZoneKey;
+@property (nonatomic) BOOL recordZoneOperationInProgress;
 @property (nonatomic, retain) NSString *subscriptionKey;
+@property (nonatomic) BOOL subscriptionOperationInProgress;
 
 - (void).cxx_destruct;
 - (void)_checkAccountStatusWithCompletionHandler:(id /* block */)arg1 withRetryCount:(unsigned int)arg2;
@@ -27,7 +31,6 @@
 - (id)cloudKitContainer;
 - (id)cloudKitDatabase;
 - (void)dealloc;
-- (void)didStoreLocalChangesForChangeToken:(id)arg1;
 - (void)fetchPublicRecordsWithNames:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchRecordsWithPriority:(unsigned int)arg1 changeToken:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)fetchRecordsWithPriority:(unsigned int)arg1 changeToken:(id)arg2 completionHandler:(id /* block */)arg3 retryCount:(unsigned int)arg4;
@@ -41,17 +44,21 @@
 - (id)recordWithName:(id)arg1 type:(id)arg2 cloudData:(id)arg3 attributes:(id)arg4;
 - (id)recordZone;
 - (id)recordZoneKey;
+- (BOOL)recordZoneOperationInProgress;
 - (id)resolveConflicts:(id)arg1;
 - (void)setCloudKitContainer:(id)arg1;
 - (void)setCloudKitDatabase:(id)arg1;
 - (void)setPublicDatabase:(id)arg1;
 - (void)setRecordZone:(id)arg1;
 - (void)setRecordZoneKey:(id)arg1;
+- (void)setRecordZoneOperationInProgress:(BOOL)arg1;
 - (void)setSubscriptionKey:(id)arg1;
-- (void)setup;
+- (void)setSubscriptionOperationInProgress:(BOOL)arg1;
+- (void)setupAccountDidChange:(BOOL)arg1;
 - (void)setupRecordZoneWithCompletionHandler:(id /* block */)arg1;
 - (void)setupSubscription;
 - (id)subscriptionKey;
+- (BOOL)subscriptionOperationInProgress;
 - (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (void)updateRecords:(id)arg1 deleteRecordIDs:(id)arg2 withPriority:(unsigned int)arg3 completionHandler:(id /* block */)arg4 retryCount:(unsigned int)arg5;
 - (id)userIdentity;

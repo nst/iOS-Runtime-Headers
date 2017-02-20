@@ -12,6 +12,7 @@
 + (id)_orderedValues;
 + (id)_resourceBaseNameForTheme:(unsigned int)arg1;
 + (id)_resourceNameForTheme:(unsigned int)arg1 videoIndex:(int)arg2;
++ (id)_resourceNameForThemeWithoutDeviceSize:(unsigned int)arg1 videoIndex:(int)arg2;
 + (id)_snapshotKeyForValue:(unsigned int)arg1;
 + (id)optionWithTimelapseTheme:(unsigned int)arg1;
 

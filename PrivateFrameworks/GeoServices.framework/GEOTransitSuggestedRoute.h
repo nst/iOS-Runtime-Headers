@@ -51,6 +51,7 @@
 @property (nonatomic, retain) GEOPBTransitRoutingIncidentMessage *transitIncidentMessage;
 @property (nonatomic) unsigned int travelTimeAggressiveEstimate;
 @property (nonatomic) unsigned int travelTimeConservativeEstimate;
+@property (getter=isWalkingOnlyRoute, nonatomic, readonly) BOOL walkingOnlyRoute;
 
 + (Class)routePlanningArtworkType;
 + (Class)sectionOptionType;

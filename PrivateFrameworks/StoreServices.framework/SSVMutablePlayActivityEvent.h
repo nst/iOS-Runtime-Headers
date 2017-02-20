@@ -16,6 +16,7 @@
 @property (nonatomic) unsigned int eventType;
 @property (nonatomic, copy) NSString *externalID;
 @property (nonatomic, copy) NSString *featureName;
+@property (getter=isInternalBuild, nonatomic) BOOL internalBuild;
 @property (nonatomic) double itemDuration;
 @property (nonatomic) double itemEndTime;
 @property (nonatomic, copy) SSVPlayActivityEventItemIDs *itemIDs;
@@ -50,6 +51,7 @@
 - (void)setEventType:(unsigned int)arg1;
 - (void)setExternalID:(id)arg1;
 - (void)setFeatureName:(id)arg1;
+- (void)setInternalBuild:(BOOL)arg1;
 - (void)setItemDuration:(double)arg1;
 - (void)setItemEndTime:(double)arg1;
 - (void)setItemIDs:(id)arg1;

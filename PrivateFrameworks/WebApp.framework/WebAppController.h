@@ -5,7 +5,6 @@
 @interface WebAppController : NSObject <UIApplicationDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate, WebPolicyDelegate> {
     NSMutableArray * _alerts;
     WebUIAuthenticationManager * _authenticationManager;
-    NSDictionary * _connectionProperties;
     WebUIDownloadManager * _downloadManager;
     NSArray * _fallbackURLs;
     NSMutableSet * _highLevelDomainsAndPortsToUseOnlyAvailableIdentityWithoutPrompting;
@@ -99,7 +98,6 @@
 - (void)timeLimitForLoadCompletionExpired;
 - (id)titleForError:(id)arg1;
 - (void)tryMultipleURLs:(id)arg1;
-- (id)uiWebView:(id)arg1 connectionPropertiesForResource:(id)arg2 dataSource:(id)arg3;
 - (void)uiWebView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 - (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)uiWebView:(id)arg1 didFirstLayoutInFrame:(id)arg2;

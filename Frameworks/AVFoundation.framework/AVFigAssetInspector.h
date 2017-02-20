@@ -60,6 +60,7 @@
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
 - (id)originalNetworkContentURL;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;

@@ -18,8 +18,8 @@
 - (id)logMsgStateForMapSettingsWithStateOrigin:(id)arg1 prefferedTransportMode:(int)arg2 avoidTolls:(BOOL)arg3 avoidHighways:(BOOL)arg4 headingEnabled:(BOOL)arg5 speedLimitEnabled:(BOOL)arg6 navVoiceVolume:(int)arg7 pauseSpokenAudioEnabled:(BOOL)arg8 findMyCarEnabled:(BOOL)arg9 trafficEnabled:(BOOL)arg10 labelEnabled:(BOOL)arg11;
 - (id)logMsgStateForMapViewLocationWithLocationBucket:(int)arg1 currentLocationInViewport:(BOOL)arg2;
 - (id)logMsgStateForMapViewLocationWithStateOrigin:(id)arg1 locationBucket:(int)arg2 currentLocationInViewport:(BOOL)arg3;
-- (id)logMsgStateForMapViewWithMapRegion:(id)arg1 zoomLevel:(double)arg2;
-- (id)logMsgStateForMapViewWithStateOrigin:(id)arg1 mapRegion:(id)arg2 zoomLevel:(double)arg3;
+- (id)logMsgStateForMapViewWithMapRegion:(id)arg1 zoomLevel:(double)arg2 mapType:(int)arg3;
+- (id)logMsgStateForMapViewWithStateOrigin:(id)arg1 mapRegion:(id)arg2 zoomLevel:(double)arg3 mapType:(int)arg4;
 - (id)logMsgStateForMapsServerWithMapsResultsDisplayed:(id)arg1;
 - (id)logMsgStateForMapsServerWithSearchCategoriesDisplayed:(id)arg1 selectedSearchCategory:(id)arg2;
 - (id)logMsgStateForMapsServerWithSearchCategoriesDisplayedAsNSData:(id)arg1 selectedSearchCategory:(id)arg2;

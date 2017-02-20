@@ -48,6 +48,7 @@
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 - (id)_newChatItems;
+- (id)_newChatItemsWithFilteredChat:(BOOL)arg1;
 - (BOOL)isCancelTypingMessage;
 - (BOOL)isIncomingTypingMessage;
 - (BOOL)isIncomingTypingOrCancelTypingMessage;

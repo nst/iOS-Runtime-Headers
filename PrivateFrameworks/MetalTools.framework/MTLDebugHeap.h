@@ -4,6 +4,7 @@
 
 @interface MTLDebugHeap : MTLToolsHeap {
     MTLDebugDevice * _debugDevice;
+    int  _historyLock;
     struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; } * _latestEvent;
     struct HeapHistoryEvent { struct HeapHistoryEvent {} *x1; void *x2; BOOL x3; } * _oldestEvent;
 }

@@ -51,6 +51,7 @@
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (BOOL)hasCKOperationCallbacksSet;
+- (id)init;
 - (id)initWithRecordZoneID:(id)arg1 previousServerChangeToken:(id)arg2;
 - (BOOL)moreComing;
 - (Class)operationInfoClass;

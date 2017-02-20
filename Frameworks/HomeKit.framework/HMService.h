@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMService : NSObject <HFFavoritable, HFHomeStatusVisible, HFNotificationPreferences, HFPrettyDescription, HFReorderableHomeKitObject, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
+@interface HMService : NSObject <HFFavoritable, HFHomeStatusVisible, HFNotificationPreferences, HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     HMAccessory * _accessory;
     HMApplicationData * _applicationData;
     NSString * _associatedServiceType;
@@ -142,9 +142,10 @@
 - (BOOL)hf_isLegacyService;
 - (BOOL)hf_isShowNotificationsStatus;
 - (BOOL)hf_isVisibleInHomeStatus;
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
 - (id)hf_requiredCharacteristicTypesForDisplayMetadata;
 - (id)hf_room;
+- (id)hf_serializedStateDumpRepresentation;
 - (id)hf_serviceNameComponents;
 - (BOOL)hf_supportsGroups;
 - (BOOL)hf_supportsNotifications;

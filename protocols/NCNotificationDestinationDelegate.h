@@ -9,5 +9,7 @@
 - (void)destination:(void *)arg1 requestPermissionToExecuteAction:(void *)arg2 forNotificationRequest:(void *)arg3 withParameters:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: <NCNotificationDestination> *, NCNotificationAction *, NCNotificationRequest *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequests:(NSSet *)arg2;
 - (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequests:(NSSet *)arg2 fromDestinations:(NSSet *)arg3;
+- (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequestsFromDate:(NSDate *)arg2 toDate:(NSDate *)arg3 inSections:(NSSet *)arg4;
+- (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequestsInSections:(NSSet *)arg2;
 
 @end

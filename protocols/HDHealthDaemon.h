@@ -6,6 +6,7 @@
 @required
 
 - (HDAchievementAssetManager *)achievementAssetManager;
+- (HDAchievementDefinitionAlertManager *)achievementDefinitionAlertManager;
 - (<HDNanoAlertSuppressionService> *)alertSuppressionService;
 - (HDAuthorizationManager *)authorizationManager;
 - (HDBackgroundTaskScheduler *)backgroundTaskScheduler;
@@ -37,6 +38,7 @@
 - (HDRoutineGateway *)routineGateway;
 - (HDServiceConnectionManager *)serviceConnectionManager;
 - (void)setAchievementAssetManager:(HDAchievementAssetManager *)arg1;
+- (void)setAchievementDefinitionAlertManager:(HDAchievementDefinitionAlertManager *)arg1;
 - (void)setAlertSuppressionService:(id <HDNanoAlertSuppressionService>)arg1;
 - (void)setCurrentActivityCacheOverrideDate:(void *)arg1 timeZone:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSDate *, NSTimeZone *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)setDataCollectionOptions:(NSDictionary *)arg1 forKey:(NSString *)arg2 type:(HKSampleType *)arg3 clientUUID:(NSUUID *)arg4;

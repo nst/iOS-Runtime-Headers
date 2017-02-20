@@ -7,7 +7,7 @@
     NSCalendar * _calendar;
     HDFitnessFriendsCloudKitManager * _cloudKitManager;
     NSObject<OS_dispatch_queue> * _cloudKitManagerObserverQueue;
-    HDFitnessFriendsContactsManager * _contactsManager;
+    NSSet * _currentAchievements;
     HKActivitySummary * _currentActivitySummary;
     HKActivitySummary * _currentLastPushedActivitySummary;
     HDFitnessFriendsFriendListManager * _friendListManager;
@@ -27,7 +27,9 @@
 }
 
 @property (nonatomic) HDFitnessFriendsCloudKitManager *cloudKitManager;
-@property (nonatomic) HDFitnessFriendsContactsManager *contactsManager;
+@property (nonatomic, readonly) NSSet *currentAchievements;
+@property (nonatomic, readonly) _HKFitnessFriendActivitySnapshot *currentActivitySnapshot;
+@property (nonatomic, readonly) NSSet *currentWorkouts;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) HDFitnessFriendsFriendListManager *friendListManager;
@@ -49,11 +51,10 @@
 - (BOOL)_queue_deleteAllFitnessFriendsActivityData;
 - (BOOL)_queue_getAndHandleAllFitnessFriendsData;
 - (void)_queue_handleNewSnapshots:(id)arg1 workouts:(id)arg2 achievements:(id)arg3;
-- (void)_queue_insertIndividualSamples:(id)arg1;
 - (void)_queue_insertSamples:(id)arg1;
 - (void)_queue_samplesAdded:(id)arg1;
 - (void)_queue_saveFitnessFriendActivitySnapshots:(id)arg1 workouts:(id)arg2 achievements:(id)arg3;
-- (id)_unhiddenSamplesInFilterableSamples:(id)arg1;
+- (id)_unhiddenSamplesInFilterableSamples:(id)arg1 friendTimeZones:(id)arg2;
 - (id)_workoutsAfterAnchor:(id*)arg1 withPredicate:(id)arg2 profile:(id)arg3;
 - (void)_workoutsForActivitySnapshot:(id)arg1 anchor:(id)arg2 completion:(id /* block */)arg3;
 - (id)achievementsForFriendWithUUID:(id)arg1;
@@ -63,9 +64,12 @@
 - (void)cloudKitManager:(id)arg1 didRecieveNewActivitySnapshots:(id)arg2 moreComing:(BOOL)arg3 changesProcessedHandler:(id /* block */)arg4;
 - (void)cloudKitManager:(id)arg1 didRecieveNewFriendAchievements:(id)arg2 moreComing:(BOOL)arg3 changesProcessedHandler:(id /* block */)arg4;
 - (void)cloudKitManager:(id)arg1 didRecieveNewFriendWorkouts:(id)arg2 moreComing:(BOOL)arg3 changesProcessedHandler:(id /* block */)arg4;
-- (id)contactsManager;
+- (id)currentAchievement;
+- (id)currentAchievements;
+- (id)currentActivitySnapshot;
 - (void)currentActivitySummaryHelper:(id)arg1 didUpdateTodayActivitySummary:(id)arg2 changedFields:(unsigned int)arg3;
 - (void)currentActivitySummaryHelper:(id)arg1 didUpdateYesterdayActivitySummary:(id)arg2 changedFields:(unsigned int)arg3;
+- (id)currentWorkouts;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
 - (void)dealloc;
 - (BOOL)deleteActivityDataForFriendWithUUID:(id)arg1;
@@ -84,7 +88,6 @@
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)saveActivitySnapshots:(id)arg1 workouts:(id)arg2 achievements:(id)arg3;
 - (void)setCloudKitManager:(id)arg1;
-- (void)setContactsManager:(id)arg1;
 - (void)setFriendListManager:(id)arg1;
 - (void)setHasInitialProtectedDataFetchBeenPerformed:(BOOL)arg1;
 - (void)setHealthDaemon:(id)arg1;

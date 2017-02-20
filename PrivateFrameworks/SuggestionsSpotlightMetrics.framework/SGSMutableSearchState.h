@@ -3,32 +3,49 @@
  */
 
 @interface SGSMutableSearchState : NSObject {
+    unsigned char  _contactConversionCount;
+    unsigned char  _contactLossCount;
     SGMContactOpportunityInSpotlight * _contactOpportunity;
+    unsigned short  _contactOpportunityCount;
     SGMContactResultInSpotlight * _contactResult;
+    unsigned short  _contactResultCount;
     SGMContactResultSelectedInSpotlight * _contactSelected;
-    int  _conversionContactCount;
-    int  _conversionEventCount;
+    unsigned short  _curatedOrPseudoContactOpportunityCount;
+    unsigned char  _eventConversionCount;
+    unsigned char  _eventLossCount;
     SGMEventOpportunityInSpotlight * _eventOpportunity;
+    unsigned short  _eventOpportunityCount;
     SGMEventResultInSpotlight * _eventResult;
+    unsigned short  _eventResultCount;
     SGMEventResultSelectedInSpotlight * _eventSelected;
-    int  _nonOpportunity;
+    BOOL  _justEngaged;
+    unsigned char  _nonOpportunityCount;
     SGMNoResultSelectedInSpotlight * _noneSelected;
-    int  _opportunityContactCount;
-    int  _opportunityEventCount;
     SGMOtherResultSelectedInSpotlight * _otherSelected;
-    int  _resultContactCount;
-    int  _resultEventCount;
+    unsigned char  _otherSelectedCount;
+    NSMutableSet * _resultsSeen;
 }
 
 - (void).cxx_destruct;
 - (void)commit;
+- (id)description;
 - (id)init;
+- (BOOL)isFirstTimeSeeingResult:(id)arg1;
+- (BOOL)justEngaged;
+- (void)resetConversionCounts;
+- (void)resetCounts;
+- (void)resetJustEngaged;
 - (void)scoreAsContactConversion;
+- (void)scoreAsContactLoss;
 - (void)scoreAsContactOpportunity;
 - (void)scoreAsContactResult;
+- (void)scoreAsCuratedOrPseudoContactOpportunity;
 - (void)scoreAsEventConversion;
+- (void)scoreAsEventLoss;
 - (void)scoreAsEventOpportunity;
 - (void)scoreAsEventResult;
 - (void)scoreAsNonOpportunity;
+- (void)scoreAsOtherConversion;
+- (void)setJustEngaged;
 
 @end

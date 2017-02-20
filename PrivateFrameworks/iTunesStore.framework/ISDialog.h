@@ -64,6 +64,7 @@
 
 + (int)displayCountForKey:(id)arg1;
 
+- (void).cxx_destruct;
 - (int)_kindForString:(id)arg1;
 - (BOOL)allowDuplicates;
 - (BOOL)allowsBioAuthorization;

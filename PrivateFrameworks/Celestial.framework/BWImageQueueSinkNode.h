@@ -6,6 +6,7 @@
     NSMutableArray * _bufferIDsInQueue;
     unsigned int  _enqueuedBufferContextCount;
     struct _EnqueuedBufferContext {} ** _enqueuedBufferContexts;
+    unsigned int  _framesSinceLastHarmonicCompensation;
     NSObject<OS_os_transaction> * _holdingBuffersForClientAssertion;
     struct _CAImageQueue { } * _imageQueue;
     unsigned int  _imageQueueCapacity;
@@ -19,6 +20,7 @@
     unsigned int  _numFramesReceived;
     struct OpaqueFigPreviewSynchronizer { } * _previewSynchronizer;
     <BWImageQueueSinkNodePreviewTapDelegate> * _previewTapDelegate;
+    double  _previousFrameDuration;
     BOOL  _resetPreviewSynchronizerOnNextFrame;
     unsigned long long * _sharedBufferIDs;
     unsigned int  _sharedSurfaceCount;

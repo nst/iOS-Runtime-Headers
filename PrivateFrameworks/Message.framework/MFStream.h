@@ -39,7 +39,6 @@
 - (void)close;
 - (void)dealloc;
 - (void)enableThroughputMonitoring:(BOOL)arg1;
-- (id)init;
 - (id)initCallBack:(id /* block */)arg1 onDispatchQueue:(id)arg2;
 - (BOOL)isOpen;
 - (void)openToHostName:(id)arg1 port:(int)arg2;

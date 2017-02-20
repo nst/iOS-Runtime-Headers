@@ -5,6 +5,7 @@
 
 @optional
 
+- (struct CGImage { }*)_cnui_imageForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (PRLikeness *)_cnui_likeness;
 - (PRLikeness *)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1;
 - (PRLikeness *)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;

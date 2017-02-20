@@ -14,7 +14,6 @@
     unsigned int  _isDraftMessage;
     unsigned int  _isEditableMessage;
     unsigned int  _isOutgoingMessage;
-    BOOL  _isReload;
     int  _loadAlternative;
     unsigned int  _loadIncrement;
     MFActivityMonitor * _loadTask;
@@ -81,7 +80,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)failedToLoad;
-- (void)forceReload;
 - (BOOL)hasAnalyzedMessage;
 - (BOOL)hasAnalyzedMessageWithTimeout:(id)arg1;
 - (BOOL)hasLoaded;
@@ -117,6 +115,5 @@
 - (id)signers;
 - (id)suggestions;
 - (id)uniqueID;
-- (void)unload;
 
 @end

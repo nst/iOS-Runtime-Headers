@@ -9,7 +9,9 @@
     NSString * _customLabel;
     struct { 
         unsigned int lastUpdateDate : 1; 
+        unsigned int hasSubmittedRAP : 1; 
     }  _has;
+    BOOL  _hasSubmittedRAP;
     double  _lastUpdateDate;
 }
 
@@ -21,7 +23,9 @@
 @property (nonatomic, readonly) BOOL hasCorrectedAddressSecondaryStreetLine;
 @property (nonatomic, readonly) BOOL hasCorrectedCoordinate;
 @property (nonatomic, readonly) BOOL hasCustomLabel;
+@property (nonatomic) BOOL hasHasSubmittedRAP;
 @property (nonatomic) BOOL hasLastUpdateDate;
+@property (nonatomic) BOOL hasSubmittedRAP;
 @property (nonatomic) double lastUpdateDate;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
@@ -39,7 +43,9 @@
 - (BOOL)hasCorrectedAddressSecondaryStreetLine;
 - (BOOL)hasCorrectedCoordinate;
 - (BOOL)hasCustomLabel;
+- (BOOL)hasHasSubmittedRAP;
 - (BOOL)hasLastUpdateDate;
+- (BOOL)hasSubmittedRAP;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (double)lastUpdateDate;
@@ -49,7 +55,9 @@
 - (void)setCorrectedAddressSecondaryStreetLine:(id)arg1;
 - (void)setCorrectedCoordinate:(id)arg1;
 - (void)setCustomLabel:(id)arg1;
+- (void)setHasHasSubmittedRAP:(BOOL)arg1;
 - (void)setHasLastUpdateDate:(BOOL)arg1;
+- (void)setHasSubmittedRAP:(BOOL)arg1;
 - (void)setLastUpdateDate:(double)arg1;
 - (void)writeTo:(id)arg1;
 

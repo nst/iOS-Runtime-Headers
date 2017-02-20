@@ -34,6 +34,7 @@
 @property (nonatomic, retain) NSArray *keysToFetch;
 @property (nonatomic, readonly) NSDictionary *localizedSectionHeaders;
 @property (nonatomic, readonly) NSDictionary *localizedSectionIndices;
+@property (nonatomic, readonly) NSString *mainStorePreferredForNameMeContactIdentifier;
 @property (nonatomic, copy) CNContact *meContact;
 @property (nonatomic, readonly) NSString *meContactIdentifier;
 @property (nonatomic, readonly) NSDictionary *sectionHeadersDictionary;
@@ -72,7 +73,8 @@
 - (id)keysToFetch;
 - (id)localizedSectionHeaders;
 - (id)localizedSectionIndices;
-- (id)mainStoreMeContactWithKeysToFetch:(id)arg1;
+- (id)mainStorePreferredForNameMeContactIdentifier;
+- (id)mainStorePreferredForNameMeContactWithKeysToFetch:(id)arg1;
 - (id)meContact;
 - (id)meContactIdentifier;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

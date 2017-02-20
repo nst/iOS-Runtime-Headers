@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSIdentityProviderController : NSObject <VSAutoAuthenticationViewControllerDelegate, VSCredentialEntryViewControllerDelegate, VSIdentityProviderRequestManagerDelegate, VSLoadingViewControllerDelegate> {
+@interface VSIdentityProviderController : NSObject <VSAuthenticationViewControllerDelegate, VSIdentityProviderRequestManagerDelegate, VSLoadingViewControllerDelegate> {
     BOOL  _cancellationAllowed;
     <VSIdentityProviderControllerDelegate> * _delegate;
     BOOL  _didShowAuthenticationViewController;
@@ -39,6 +39,8 @@
 - (void)_completeRequestWithResult:(id)arg1;
 - (void)_configureAutoAuthenticationViewModel:(id)arg1 forRequest:(id)arg2;
 - (void)_configureCredentialEntryViewModel:(id)arg1 forRequest:(id)arg2;
+- (void)_configureCuratedViewModel:(id)arg1 forRequest:(id)arg2;
+- (void)_configureOnscreenCodeViewModel:(id)arg1 forRequest:(id)arg2;
 - (void)_configureViewModel:(id)arg1 forRequest:(id)arg2;
 - (void)_didCancel;
 - (void)_hideViewController;
@@ -52,8 +54,7 @@
 - (void)_showLoadingViewController;
 - (void)_showViewController:(id)arg1;
 - (void)_showViewController:(id)arg1 currentlyShowingViewController:(BOOL)arg2;
-- (void)autoAuthenticationViewControllerDidCancel:(id)arg1;
-- (void)credentialEntryViewControllerDidCancel:(id)arg1;
+- (void)authenticationViewControllerDidCancel:(id)arg1;
 - (id)delegate;
 - (BOOL)didShowAuthenticationViewController;
 - (BOOL)didShowViewController;

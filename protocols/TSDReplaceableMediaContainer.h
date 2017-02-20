@@ -3,8 +3,4 @@
 
 @protocol TSDReplaceableMediaContainer <NSObject>
 
-@required
-
-- (NSDictionary *)datasForReplacingMediaContentsWithAssociatedHints;
-
 @end

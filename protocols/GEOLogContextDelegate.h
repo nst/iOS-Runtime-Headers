@@ -3,13 +3,10 @@
 
 @protocol GEOLogContextDelegate <NSObject>
 
-@required
+@optional
 
 - (int)currentMapViewTargetForAnalytics;
 - (int)currentUITargetForAnalytics;
-
-@optional
-
 - (GEOLogContext *)logContextForLogMsgEvent:(GEOLogMsgEvent *)arg1;
 - (int)searchFieldTypeForAnalytics;
 

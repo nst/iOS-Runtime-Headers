@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) int sendersOperator;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
@@ -32,6 +33,7 @@
 - (id)contents;
 - (int)contentsOperator;
 - (id)dateTimeRange;
+- (id)description;
 - (id)groupNames;
 - (int)groupNamesOperator;
 - (id)identifiers;

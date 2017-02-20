@@ -33,19 +33,22 @@
 - (id)_newTransitionManager;
 - (id)_notificationShortLookViewIfLoaded;
 - (void)_notificationViewControllerViewDidLoad;
+- (void)_presentLongLookForScrollAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)_presentedLongLookViewController;
-- (void)_resizeViewToFitContainerView;
+- (Class)_scrollViewClass;
 - (void)_setAudioAccessoryView:(id)arg1;
 - (BOOL)_setDelegate:(id)arg1;
 - (BOOL)_setNotificationRequest:(id)arg1;
 - (BOOL)_shouldAddHintTextToLookView;
+- (BOOL)_shouldPadScrollViewContentSizeHeight;
 - (id)_transitionManager;
 - (BOOL)_tryDismissingShortLookInScrollView:(id)arg1;
+- (void)_updateScrollViewContentSize;
 - (void)_updateWithProvidedStaticContent;
 - (void)addAudioAccessoryViewObserver:(id)arg1;
 - (void)customContent:(id)arg1 didLoadAudioAccessoryView:(id)arg2;
 - (void)customContentDidLoadExtension:(id)arg1;
-- (void)didReceiveNotificationRequest:(id)arg1;
+- (BOOL)didReceiveNotificationRequest:(id)arg1;
 - (BOOL)dismissPresentedViewControllerAndClearNotification:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)expandAndPlayAudioMessage;
 - (BOOL)hasCommittedToPresentingCustomContentProvidingViewController;
@@ -75,5 +78,6 @@
 - (void)transitioningDelegate:(id)arg1 animatorDidCommitToTransitionWithCoordinator:(id)arg2;
 - (void)transitioningDelegate:(id)arg1 didFinishDismissalOfViewController:(id)arg2 completed:(BOOL)arg3;
 - (void)viewWillLayoutSubviews;
+- (BOOL)wantsUseableContainerHeightForTransitionWithDelegate:(id)arg1;
 
 @end

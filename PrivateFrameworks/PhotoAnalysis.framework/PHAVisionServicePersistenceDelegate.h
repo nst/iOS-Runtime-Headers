@@ -37,6 +37,7 @@
 - (void)autonameFaceClusters:(id)arg1 faceComparer:(id)arg2 recallThreshold:(float)arg3;
 - (id)clusterSequenceNumbersOfKeyFacesFromAlgorithmicGroupsContainingFacesWithLocalIdentifiers:(id)arg1 includeSingletons:(BOOL)arg2 error:(id*)arg3;
 - (unsigned int)countOfAlgorithmicFaceGroups:(id*)arg1;
+- (unsigned int)countOfClusteringEligibleFaces;
 - (unsigned int)countOfFaces;
 - (BOOL)deleteEmptyGroupsOfType:(int)arg1 error:(id*)arg2;
 - (BOOL)deleteFaceGroupsOfType:(int)arg1 error:(id*)arg2;
@@ -65,7 +66,7 @@
 - (void)logPVErrorMessage:(id)arg1;
 - (void)logPVInfoMessage:(id)arg1;
 - (void)logPVWarningMessage:(id)arg1;
-- (BOOL)persistChangesToAlgorithmicFaceGroups:(id)arg1 andFaces:(id)arg2 returnFaceGroupsWithoutKeyFace:(id*)arg3 deletedFaceCSNs:(id)arg4 toBeReclusteredFaceIds:(id)arg5 error:(id*)arg6;
+- (BOOL)persistChangesToAlgorithmicFaceGroups:(id)arg1 andFaces:(id)arg2 withCanceler:(id)arg3 returningPersistedClusters:(id*)arg4 faceGroupsWithoutKeyFace:(id*)arg5 csnsToBeRemovedFromClusterState:(id)arg6 toBeReclusteredFaceIds:(id)arg7 error:(id*)arg8;
 - (BOOL)persistFaces:(id)arg1 deleteFaces:(id)arg2 forAsset:(id)arg3 persistedFaces:(id*)arg4 error:(id*)arg5;
 - (id)personWithFaceLocalIdentifier:(id)arg1 error:(id*)arg2;
 - (id)personsForLocalIdentifiers:(id)arg1 error:(id*)arg2;

@@ -73,6 +73,7 @@
 @property BOOL automationHitpointWarpingEnabled;
 @property BOOL automationLocalizedStringLookupInfoEnabled;
 @property (readonly) NSString *automationPreferredLocalization;
+@property (nonatomic) int brokenHomeButtonCount;
 @property BOOL buttonShapesEnabled;
 @property (nonatomic) double characterFeedbackDelayDuration;
 @property (nonatomic) int characterVoicesUsageCount;
@@ -390,6 +391,7 @@
 - (BOOL)automationHitpointWarpingEnabled;
 - (BOOL)automationLocalizedStringLookupInfoEnabled;
 - (id)automationPreferredLocalization;
+- (int)brokenHomeButtonCount;
 - (BOOL)buttonShapesEnabled;
 - (double)characterFeedbackDelayDuration;
 - (int)characterVoicesUsageCount;
@@ -489,6 +491,7 @@
 - (void)registerUpdateBlock:(id /* block */)arg1 forRetrieveSelector:(SEL)arg2 withListener:(id)arg3;
 - (id)registeredNotifications;
 - (void)saveRecipe:(id)arg1;
+- (id)selectedSpeechVoiceIdentifiers;
 - (void)setAlexLocalAssetURL:(id)arg1;
 - (void)setAllowHearingAidControlOnLockScreen:(BOOL)arg1;
 - (void)setApplicationAccessibilityEnabled:(BOOL)arg1;
@@ -543,6 +546,7 @@
 - (void)setAutomationFauxCollectionViewCellsEnabled:(BOOL)arg1;
 - (void)setAutomationHitpointWarpingEnabled:(BOOL)arg1;
 - (void)setAutomationLocalizedStringLookupInfoEnabled:(BOOL)arg1;
+- (void)setBrokenHomeButtonCount:(int)arg1;
 - (void)setButtonShapesEnabled:(BOOL)arg1;
 - (void)setCharacterFeedbackDelayDuration:(double)arg1;
 - (void)setCharacterVoicesUsageCount:(int)arg1;

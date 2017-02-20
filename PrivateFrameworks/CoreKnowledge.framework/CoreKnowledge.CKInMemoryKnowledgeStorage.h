@@ -14,7 +14,8 @@
 @property (nonatomic, readonly) NSArray *values;
 
 - (id /* block */).cxx_destruct;
-- (char *)closed:(void *)arg1; // needs 1 arg types, found 20: /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, unsigned long, /* Warning: Unrecognized filer type: '?' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'H' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*
+- (/* Warning: Unrecognized filer type: '
+' using 'void*' */ void*)closed;
 - (id)init;
 - (id)keys;
 - (id)kv;

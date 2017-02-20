@@ -7,6 +7,7 @@
 
 - (int)audioSource;
 - (float)averagePower;
+- (BOOL)hasAudioRoute;
 - (BOOL)hasCorrectAudioRoute;
 - (BOOL)isRecording;
 - (BOOL)prepareRecord;

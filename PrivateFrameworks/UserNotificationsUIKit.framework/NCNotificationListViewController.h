@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface NCNotificationListViewController : UICollectionViewController <NCNotificationListCellDelegate, NCNotificationViewControllerDelegatePrivate, UIGestureRecognizerDelegate> {
+@interface NCNotificationListViewController : UICollectionViewController <NCNotificationListCellDelegate, NCNotificationListCollectionViewDelegate, NCNotificationViewControllerDelegatePrivate, UIGestureRecognizerDelegate> {
     BOOL  _backgroundBlurred;
     NCNotificationListCell * _cellWithRevealedActions;
     NSMutableDictionary * _cellsSizesCaches;
@@ -40,6 +40,7 @@
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } insetMargins;
 @property (nonatomic) BOOL needsReloadData;
 @property (nonatomic) BOOL notificationRequestRemovedWhileInLongLook;
+@property (nonatomic, readonly, retain) NCNotificationRequest *notificationRequestWithHintText;
 @property (nonatomic, retain) NCNotificationViewController *notificationViewControllerForSizing;
 @property (nonatomic, retain) NSHashTable *observers;
 @property (readonly) Class superclass;
@@ -53,14 +54,18 @@
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_forceTouchAvailabilityDidChange:(id)arg1;
 - (BOOL)_forwardRequestToLongLookIfPresented:(id)arg1 forCoalescedNotification:(id)arg2;
+- (id)_groupName;
 - (void)_handleEatenTouch:(id)arg1;
 - (void)_installTouchEater;
 - (BOOL)_isPointInWindowSpace:(struct CGPoint { float x1; float x2; })arg1 insideCell:(id)arg2;
+- (id)_materialSettings;
 - (void)_performCollectionViewOperationBlock:(id /* block */)arg1;
 - (void)_performCollectionViewOperationBlockIfNecessary:(id /* block */)arg1;
 - (void)_reloadCollectionViewDataIfNecessary;
+- (void)_reloadRequestsAtIndices:(id)arg1;
 - (void)_removeCachedSizesForNotificationRequest:(id)arg1;
 - (void)addContentObserver:(id)arg1;
+- (id)captureOnlyMaterialViewForCurrentState;
 - (id)cellWithRevealedActions;
 - (id)cellsSizesCaches;
 - (id)childPreferredContentSizeChangeCoordinator;
@@ -86,24 +91,30 @@
 - (BOOL)hasContent;
 - (BOOL)hasVisibleContent;
 - (void)hideRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
+- (id)indexPathForNotificationRequest:(id)arg1;
 - (id)init;
 - (BOOL)insertNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })insetMargins;
 - (BOOL)isBackgroundBlurred;
 - (BOOL)isContentExtensionVisible:(id)arg1;
+- (void)loadView;
 - (void)longLookWillPresentForNotificationViewController:(id)arg1;
+- (id)materialSettingsForNotificationViewController:(id)arg1;
 - (BOOL)modifyNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 - (BOOL)needsReloadData;
 - (void)notificationListCell:(id)arg1 requestsClearingNotificationRequest:(id)arg2;
 - (void)notificationListCell:(id)arg1 requestsPerformAction:(id)arg2 forNotificationRequest:(id)arg3 completion:(id /* block */)arg4;
-- (void)notificationListCell:(id)arg1 requestsPresentingLongLookForNotificationRequest:(id)arg2;
+- (void)notificationListCell:(id)arg1 requestsPresentingLongLookForNotificationRequest:(id)arg2 completion:(id /* block */)arg3;
 - (void)notificationListCellDidSignificantUserInteraction:(id)arg1;
-- (void)notificationListCellHideCellActions:(id)arg1;
+- (void)notificationListCellHideCellActions:(id)arg1 resetCellScrollPosition:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)notificationListCellRevealCellActions:(id)arg1;
 - (BOOL)notificationListCellShouldShowActionsForNotificationRequest:(id)arg1;
+- (void)notificationListCollectionView:(id)arg1 willSetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)notificationRequestAtIndexPath:(id)arg1;
 - (id)notificationRequestInLongLook;
 - (BOOL)notificationRequestRemovedWhileInLongLook;
+- (id)notificationRequestWithHintText;
+- (id)notificationRequestsPassingTest:(id /* block */)arg1;
 - (void)notificationViewController:(id)arg1 didDismissLongLook:(BOOL)arg2;
 - (void)notificationViewController:(id)arg1 didPresentLongLook:(BOOL)arg2;
 - (void)notificationViewController:(id)arg1 executeAction:(id)arg2 withParameters:(id)arg3 completion:(id /* block */)arg4;
@@ -117,6 +128,7 @@
 - (void)notifyContentObservers;
 - (id)observers;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)reloadNotificationRequest:(id)arg1;
 - (void)reloadRequestsWithSuppressedContent;
 - (void)removeContentObserver:(id)arg1;
 - (void)removeNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;

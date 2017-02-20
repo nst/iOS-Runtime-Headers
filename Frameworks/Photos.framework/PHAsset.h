@@ -67,6 +67,8 @@
 @property (nonatomic, readonly) double clsContentScore;
 @property (nonatomic, readonly) NSDate *clsDate;
 @property (nonatomic, readonly) NSData *clsDistanceIdentity;
+@property (nonatomic, readonly) BOOL clsIsHDR;
+@property (nonatomic, readonly) BOOL clsIsSDOF;
 @property (nonatomic, readonly) CLLocation *clsLocation;
 @property (nonatomic, readonly) unsigned int clsPeopleCount;
 @property (nonatomic, readonly) NSArray *clsPeopleNames;
@@ -105,6 +107,7 @@
 @property (nonatomic, readonly) int imageOrientation;
 @property (nonatomic, readonly) NSDictionary *imageProperties;
 @property (getter=isInPlaceVideoTrimAllowed, nonatomic, readonly) BOOL inPlaceVideoTrimAllowed;
+@property (nonatomic, readonly) BOOL isBlurry;
 @property (nonatomic, readonly) BOOL isFavorite;
 @property (nonatomic, readonly) BOOL isHDVideo;
 @property (nonatomic, readonly) BOOL isJPEG;
@@ -180,6 +183,7 @@
 + (id)fetchAssetsForFaces:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsForPersons:(id)arg1 options:(id)arg2;
++ (id)fetchAssetsGroupedByFaceUUIDForFaces:(id)arg1;
 + (id)fetchAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsInBoundingBoxWithTopLeftLocation:(id)arg1 bottomRightLocation:(id)arg2 options:(id)arg3;
 + (id)fetchAssetsInFaceCollection:(id)arg1 options:(id)arg2;
@@ -414,26 +418,39 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
-+ (float)_videoScoreForAsset:(id)arg1;
-+ (id)clsAllAssetsFromFetchResult:(id)arg1 prefetchPersons:(BOOL)arg2 prefetchPersonCount:(BOOL)arg3 prefetchScenes:(BOOL)arg4;
++ (id)clsAllAssetsFromFetchResult:(id)arg1 prefetchPersons:(BOOL)arg2 prefetchPersonCount:(BOOL)arg3 prefetchScenes:(BOOL)arg4 prefetchMediaAnalyses:(BOOL)arg5;
++ (float)clsSharpnessScoreThresholdToNotBeBlurry;
 + (id)contextForItems:(id)arg1;
 + (BOOL)isUtilityForAsset:(id)arg1;
++ (void)prefetchPersonsForFetchedAssets:(id)arg1 orFetchResult:(id)arg2;
 + (double)scoreForAsset:(id)arg1 withContext:(id)arg2;
 
 - (id)_256SpecificAssetResource;
+- (void)_clsSetSharpnessScore:(float)arg1;
+- (void)_clsSetVideoScore:(float)arg1;
+- (float)_clsSharpnessScore:(BOOL)arg1;
+- (float)_clsUnprefetchedSharpnessScore:(BOOL)arg1;
+- (float)_clsUnprefetchedVideoScore;
 - (id)_imageDataForAssetResource:(id)arg1 networkAccessAllowed:(BOOL)arg2 error:(id*)arg3;
 - (double)clsContentScore;
 - (id)clsDate;
 - (id)clsDistanceIdentity;
+- (BOOL)clsIsHDR;
+- (BOOL)clsIsSDOF;
 - (id)clsLocation;
+- (BOOL)clsMediaAnalysisIsPrefetched;
 - (unsigned int)clsPeopleCount;
+- (BOOL)clsPeopleCountIsPrefetched;
 - (id)clsPeopleNames;
+- (BOOL)clsPeopleNamesArePrefetched;
 - (int)clsPlayCount;
 - (id)clsSceneClassifications;
+- (BOOL)clsSceneClassificationsArePrefetched;
 - (void)clsSetPeopleCount:(id)arg1;
 - (void)clsSetPeopleNames:(id)arg1;
 - (void)clsSetSceneClassifications:(id)arg1;
 - (int)clsShareCount;
+- (float)clsSharpnessScore;
 - (id)clsUnprefetchedPeopleNames;
 - (id)clsUnprefetchedSceneClassifications;
 - (float)clsVideoScore;
@@ -442,6 +459,9 @@
 - (id)date;
 - (id)dateComponents;
 - (unsigned int)facesCount;
+- (BOOL)hasSharpnessScore;
+- (BOOL)isBlurry;
+- (BOOL)isBlurryForcingAnalysisIfNeeded;
 - (BOOL)isScreenshot;
 - (BOOL)isSubtype:(unsigned int)arg1;
 - (BOOL)isUtility;
@@ -483,6 +503,8 @@
 - (id)vcp_getAdjustmentPath;
 - (BOOL)vcp_isLivePhoto;
 - (BOOL)vcp_isPano;
+- (BOOL)vcp_isSdofPhoto;
+- (BOOL)vcp_isShortMovie;
 - (BOOL)vcp_isVideoSlowmo;
 - (id)vcp_modificationDate;
 - (struct CGSize { float x1; float x2; })vcp_originalSize;

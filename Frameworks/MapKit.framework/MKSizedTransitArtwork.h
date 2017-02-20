@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, readonly) <GEOTransitArtworkDataSource> *artwork;
-@property (nonatomic, readonly) MKArtworkDataSourceCache *artworkCache;
+@property (nonatomic, retain) MKArtworkDataSourceCache *artworkCache;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -25,6 +25,7 @@
 - (id)initWithArtwork:(id)arg1 shieldSize:(int)arg2 artworkCache:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToTransitArtworkViewMode:(id)arg1;
+- (void)setArtworkCache:(id)arg1;
 - (int)shieldSize;
 
 @end

@@ -7,13 +7,15 @@
     <FCContentContext> * _context;
     id /* block */  _headlinesCompletionHandler;
     double  _maximumCachedAgeForArticleList;
+    NSDictionary * _resultArticleListsByID;
     NSDictionary * _resultHeadlinesByArticleListID;
 }
 
 @property (nonatomic, copy) NSArray *articleListIDs;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (nonatomic, copy) id /* block */ headlinesCompletionHandler;
-@property double maximumCachedAgeForArticleList;
+@property (nonatomic) double maximumCachedAgeForArticleList;
+@property (nonatomic, retain) NSDictionary *resultArticleListsByID;
 @property (nonatomic, retain) NSDictionary *resultHeadlinesByArticleListID;
 
 - (void).cxx_destruct;
@@ -24,11 +26,13 @@
 - (double)maximumCachedAgeForArticleList;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (id)resultArticleListsByID;
 - (id)resultHeadlinesByArticleListID;
 - (void)setArticleListIDs:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setHeadlinesCompletionHandler:(id /* block */)arg1;
 - (void)setMaximumCachedAgeForArticleList:(double)arg1;
+- (void)setResultArticleListsByID:(id)arg1;
 - (void)setResultHeadlinesByArticleListID:(id)arg1;
 - (BOOL)validateOperation;
 

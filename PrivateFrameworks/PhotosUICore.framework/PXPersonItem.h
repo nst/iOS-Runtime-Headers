@@ -3,31 +3,39 @@
  */
 
 @interface PXPersonItem : NSObject {
+    NSString * _displayName;
     UIImage * _faceImage;
     id /* block */  _faceImageLoadingCompletionBlock;
     int  _faceImageRequestID;
+    id /* block */  _fastDisplayBlock;
     id  _modelObject;
     NSString * _name;
     unsigned int  _photosCount;
 }
 
-@property (nonatomic, retain) UIImage *faceImage;
-@property (nonatomic, copy) id /* block */ faceImageLoadingCompletionBlock;
-@property (nonatomic) int faceImageRequestID;
+@property (nonatomic, copy) NSString *displayName;
+@property UIImage *faceImage;
+@property (copy) id /* block */ faceImageLoadingCompletionBlock;
+@property int faceImageRequestID;
+@property (copy) id /* block */ fastDisplayBlock;
 @property (nonatomic, retain) id modelObject;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) unsigned int photosCount;
 
 - (void).cxx_destruct;
+- (id)displayName;
 - (id)faceImage;
 - (id /* block */)faceImageLoadingCompletionBlock;
 - (int)faceImageRequestID;
+- (id /* block */)fastDisplayBlock;
 - (id)modelObject;
 - (id)name;
 - (unsigned int)photosCount;
+- (void)setDisplayName:(id)arg1;
 - (void)setFaceImage:(id)arg1;
 - (void)setFaceImageLoadingCompletionBlock:(id /* block */)arg1;
 - (void)setFaceImageRequestID:(int)arg1;
+- (void)setFastDisplayBlock:(id /* block */)arg1;
 - (void)setModelObject:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPhotosCount:(unsigned int)arg1;

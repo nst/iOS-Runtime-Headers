@@ -167,8 +167,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pauseAnimation;
 - (void)pauseAnimationTransiently;
-- (void)reverseAnimation;
-- (void)reverseAnimationWithTimingParameters:(id)arg1 durationFactor:(float)arg2;
+- (void)reverseAnimation:(BOOL)arg1;
+- (void)reverseAnimation:(BOOL)arg1 withTimingParameters:(id)arg2 durationFactor:(float)arg3;
 - (void)setAnimationDescriptionMap:(id)arg1;
 - (void)setFractionComplete:(float)arg1;
 - (void)setInternalDuration:(double)arg1;

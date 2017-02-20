@@ -19,9 +19,11 @@
 
 @optional
 
+- (void)addDelegate:(id <PKPaymentDataProviderDelegate>)arg1;
 - (NSString *)defaultExpressFelicaTransitPassIdentifier;
 - (void)deletePaymentTransactionWithIdentifier:(NSString *)arg1 forPassWithUniqueIdentifier:(NSString *)arg2;
 - (void)felicaStateWithPassUniqueIdentifier:(void *)arg1 paymentApplication:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSString *, PKPaymentApplication *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKFelicaTransitAppletState *, void*
+- (void)removeDelegate:(id <PKPaymentDataProviderDelegate>)arg1;
 - (void)setDefaultExpressFelicaTransitPassIdentifier:(void *)arg1 withCredential:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSString *, void*
 - (void)startServiceModeForPassWithUniqueIdentifier:(NSString *)arg1 visibleViewController:(id)arg2;
 - (BOOL)supportsInAppPaymentsForPass:(PKPass *)arg1;

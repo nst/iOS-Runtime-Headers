@@ -10,6 +10,8 @@
 - (double)clsContentScore;
 - (NSDate *)clsDate;
 - (NSData *)clsDistanceIdentity;
+- (BOOL)clsIsHDR;
+- (BOOL)clsIsSDOF;
 - (CLLocation *)clsLocation;
 - (NSArray *)clsPeopleNames;
 - (int)clsPlayCount;
@@ -20,6 +22,7 @@
 - (struct CGImage { }*)createThumbnailWithResolution:(unsigned int)arg1 fillMode:(BOOL)arg2 networkAllowed:(BOOL)arg3;
 - (NSDate *)date;
 - (NSDateComponents *)dateComponents;
+- (BOOL)isBlurry;
 - (BOOL)isFavorite;
 - (BOOL)isScreenshot;
 - (BOOL)isUtility;

@@ -6,6 +6,7 @@
     unsigned int  _capabilities;
     NSMapTable * _changeHandlers;
     SKCloudServiceController * _cloudServiceController;
+    BOOL  _hasUpdatedCapabilities;
     NSString * _storefrontIdentifier;
 }
 

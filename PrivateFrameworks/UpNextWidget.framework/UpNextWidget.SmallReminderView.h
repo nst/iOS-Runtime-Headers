@@ -11,7 +11,7 @@
     void title;
 }
 
-@property (nonatomic, retain) NSDate *dueDate;
+@property (nonatomic, copy) NSDate *dueDate;
 @property (nonatomic, retain) UIColor *listColor;
 @property (nonatomic, copy) NSString *title;
 

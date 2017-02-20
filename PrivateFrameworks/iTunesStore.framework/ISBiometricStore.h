@@ -24,6 +24,7 @@
 - (BOOL)canPerformExtendedTouchIDActionsForAccountIdentifier:(id)arg1;
 - (void)clearLastRegisteredAccountIdentifier;
 - (id)createAttestationDataForAccountIdentifier:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteKeychainTokensForAccountIdentifier:(id)arg1 error:(id*)arg2;
 - (unsigned int)identityMapCount;
 - (id)initWithBagListener;
 - (id)lastRegisteredAccountIdentifier;
@@ -32,6 +33,6 @@
 - (void)saveIdentityMapForAccountIdentifier:(id)arg1;
 - (void)setBiometricState:(int)arg1;
 - (BOOL)shouldUseTouchID2;
-- (id)signData:(id)arg1 withPrompt:(id)arg2 forAccountIdentifier:(id)arg3 error:(id*)arg4;
+- (id)signData:(id)arg1 reason:(id)arg2 fallback:(id)arg3 cancel:(id)arg4 forAccountIdentifier:(id)arg5 error:(id*)arg6;
 
 @end

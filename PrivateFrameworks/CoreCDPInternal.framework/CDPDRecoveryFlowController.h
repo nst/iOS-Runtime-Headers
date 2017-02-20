@@ -5,6 +5,7 @@
 @interface CDPDRecoveryFlowController : NSObject <CDPDDeviceSecretValidatorDelegate> {
     CDPDCircleController * _circleController;
     CDPDRecoveryFlowContext * _recoveryContext;
+    NSObject<OS_os_activity> * _recoveryFlow;
     CDPDSecureBackupController * _secureBackupController;
     <CDPStateUIProviderInternal> * _uiProvider;
     <CDPRemoteDeviceSecretValidatorProtocol> * _validator;

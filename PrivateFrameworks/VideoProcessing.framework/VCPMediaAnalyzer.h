@@ -18,6 +18,7 @@
 - (void)assetsAnalyzedSinceDate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)cancelAnalysisWithRequestID:(int)arg1;
 - (void)checkDuplicate:(id)arg1 withAsset:(id)arg2 duplicate:(int*)arg3;
+- (id)curateMovieAssetsForCollection:(id)arg1 withAlreadyCuratedAssets:(id)arg2 andDesiredCount:(unsigned int)arg3 allowOnDemand:(BOOL)arg4;
 - (void)distanceFromAsset:(id)arg1 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 toAsset:(id)arg3 timeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg4 duplicate:(int*)arg5 distance:(float*)arg6;
 - (void)distanceFromAsset:(id)arg1 toAsset:(id)arg2 duplicate:(int*)arg3 distance:(float*)arg4;
 - (void)getSceneDescriptors:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1 featureResults:(id)arg2 descriptorArray:(id)arg3;

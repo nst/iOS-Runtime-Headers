@@ -15,6 +15,7 @@
 @property (nonatomic, readonly, copy) NSString *localizedVideoTitle;
 @property (nonatomic, copy) NSString *requestingAppDisplayName;
 @property (nonatomic) BOOL requiresPrivacyUI;
+@property (nonatomic, readonly, copy) NSArray *supportedAccountProviderAuthenticationSchemes;
 @property (nonatomic, readonly, copy) NSArray *supportedIdentityProviderIdentifiers;
 
 + (BOOL)supportsSecureCoding;
@@ -37,6 +38,7 @@
 - (void)setAllowsPrivacyUI:(BOOL)arg1;
 - (void)setRequestingAppDisplayName:(id)arg1;
 - (void)setRequiresPrivacyUI:(BOOL)arg1;
+- (id)supportedAccountProviderAuthenticationSchemes;
 - (id)supportedIdentityProviderIdentifiers;
 
 @end

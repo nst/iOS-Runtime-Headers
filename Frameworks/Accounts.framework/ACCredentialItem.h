@@ -17,6 +17,7 @@
 @property (getter=isDirty, nonatomic, readonly) BOOL dirty;
 @property (nonatomic, readonly) NSSet *dirtyProperties;
 @property (nonatomic, retain) NSDate *expirationDate;
+@property (getter=isExpired, nonatomic, readonly) BOOL expired;
 @property (nonatomic, retain) NSURL *objectID;
 @property (getter=isPersistent, nonatomic) BOOL persistent;
 @property (nonatomic, readonly) NSString *serviceName;
@@ -39,6 +40,7 @@
 - (id)initWithManagedCredentialItem:(id)arg1;
 - (id)initWithManagedCredentialItem:(id)arg1 accountStore:(id)arg2;
 - (BOOL)isDirty;
+- (BOOL)isExpired;
 - (BOOL)isPersistent;
 - (BOOL)isPropertyDirty:(id)arg1;
 - (void)markAllPropertiesDirty;

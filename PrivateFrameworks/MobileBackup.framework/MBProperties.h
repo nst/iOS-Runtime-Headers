@@ -19,9 +19,11 @@
 @property (nonatomic, readonly) NSString *deviceName;
 @property (nonatomic) BOOL encrypted;
 @property (nonatomic, readonly) BOOL hasCorruptSQLiteDBs;
+@property (nonatomic, readonly) BOOL hasEncryptedManifestDB;
 @property (nonatomic, readonly) BOOL hasManifestDB;
 @property (nonatomic, retain) NSData *keybagData;
 @property (nonatomic, retain) NSDictionary *lockdownKeys;
+@property (nonatomic) NSData *manifestEncryptionKey;
 @property (nonatomic) double maxSupportedVersion;
 @property (nonatomic) double minSupportedVersion;
 @property (getter=wasPasscodeSet, nonatomic) BOOL passcodeSet;
@@ -58,6 +60,7 @@
 - (id)deviceName;
 - (BOOL)encrypted;
 - (BOOL)hasCorruptSQLiteDBs;
+- (BOOL)hasEncryptedManifestDB;
 - (BOOL)hasManifestDB;
 - (id)init;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
@@ -66,6 +69,7 @@
 - (BOOL)isProtected;
 - (id)keybagData;
 - (id)lockdownKeys;
+- (id)manifestEncryptionKey;
 - (double)maxSupportedVersion;
 - (double)minSupportedVersion;
 - (id)objectForKey:(id)arg1;
@@ -79,6 +83,7 @@
 - (void)setEncrypted:(BOOL)arg1;
 - (void)setKeybagData:(id)arg1;
 - (void)setLockdownKeys:(id)arg1;
+- (void)setManifestEncryptionKey:(id)arg1;
 - (void)setMaxSupportedVersion:(double)arg1;
 - (void)setMinSupportedVersion:(double)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

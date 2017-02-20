@@ -27,6 +27,5 @@
 - (void)setGameModel:(id)arg1;
 - (void)setRandomSource:(id)arg1;
 - (BOOL)validateGameModel:(id)arg1;
-- (BOOL)validateRandomSource;
 
 @end

@@ -9,6 +9,6 @@
 + (id)parseSocialProfileURL:(id)arg1;
 + (id)parseURLStringByInference:(id)arg1;
 + (id)parseURLStringWithRegularExpressions:(id)arg1;
-+ (id)serivicesDictionary;
++ (id)servicesDictionary;
 
 @end

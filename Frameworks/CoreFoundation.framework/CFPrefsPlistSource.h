@@ -3,20 +3,18 @@
  */
 
 @interface CFPrefsPlistSource : CFPrefsSource {
-    struct { 
-        unsigned int _isByHost : 1; 
-        unsigned int _volatile : 1; 
-        unsigned int _readonly : 1; 
-        unsigned int _avoidsDaemonCache : 1; 
-        unsigned int _restrictedAccess : 1; 
-        unsigned int _checkedInvalidHome : 1; 
-        unsigned int _lastWriteFailed : 1; 
-        unsigned int _observing : 1; 
-        unsigned int _disableBackup : 1; 
-    }  _flags;
-    struct __CFDictionary { } * _locallySetDict;
+    bool  _avoidsDaemonCache;
+    bool  _checkedInvalidHome;
+    bool  _disableBackup;
+    bool  _isByHost;
+    bool  _lastWriteFailed;
+    /* Warning: Unrecognized filer type: '^' using 'void*' */ void* _locallySetDict;
+    bool  _observing;
+    bool  _readonly;
+    bool  _restrictedAccess;
     NSObject<OS_dispatch_group> * _synchGroup;
-    const char * accessPath;
+    bool  _volatile;
+    char * accessPath;
     struct __CFString { } * container;
     struct __CFString { } * domainIdentifier;
     struct __CFString { } * userIdentifier;

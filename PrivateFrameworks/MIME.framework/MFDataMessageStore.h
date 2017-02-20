@@ -21,6 +21,7 @@
 - (id)initWithData:(id)arg1;
 - (id)mailboxUid;
 - (id)message;
+- (BOOL)messageCanBeTriaged:(id)arg1;
 - (void)setMessageClass:(Class)arg1;
 - (void)setStoragePath:(id)arg1;
 - (id)storagePath;

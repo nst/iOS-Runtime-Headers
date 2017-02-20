@@ -11,8 +11,8 @@
 - (void)previewItemViewController:(QLItemViewController *)arg1 wantsFullScreen:(BOOL)arg2;
 - (void)previewItemViewController:(QLItemViewController *)arg1 wantsToOpenURL:(NSURL *)arg2;
 - (void)previewItemViewControllerDidEditPreview:(QLItemViewController *)arg1;
-- (void)previewItemViewControllerEnteredEditMode:(QLItemViewController *)arg1;
 - (void)previewItemViewControllerWantsToShowNoInternetConnectivityAlert:(QLItemViewController *)arg1;
+- (void)previewItemViewControllerWantsToUpdateRotation:(QLItemViewController *)arg1;
 - (void)previewItemViewControllerWantsUpdateKeyCommands:(QLItemViewController *)arg1;
 - (void)previewItemViewControllerWantsUpdatePrinter:(QLItemViewController *)arg1;
 - (void)previewItemViewControllerWantsUpdateToolbar:(QLItemViewController *)arg1 animated:(BOOL)arg2;

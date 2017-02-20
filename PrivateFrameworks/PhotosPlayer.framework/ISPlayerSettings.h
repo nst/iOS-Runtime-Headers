@@ -11,6 +11,7 @@
     BOOL  _assumeCroppedVideo;
     float  _audioRampDuration;
     double  _crossfadeDuration;
+    float  _crossfadeFrameRate;
     float  _crossfadeTargetBlur;
     float  _forceScrubMaximumInteractiveRate;
     float  _forceScrubMaximumPressure;
@@ -42,6 +43,7 @@
 @property (nonatomic) BOOL assumeCroppedVideo;
 @property (nonatomic) float audioRampDuration;
 @property (nonatomic) double crossfadeDuration;
+@property (nonatomic) float crossfadeFrameRate;
 @property (nonatomic) float crossfadeTargetBlur;
 @property (nonatomic) float forceScrubMaximumInteractiveRate;
 @property (nonatomic) float forceScrubMaximumPressure;
@@ -75,6 +77,7 @@
 - (BOOL)assumeCroppedVideo;
 - (float)audioRampDuration;
 - (double)crossfadeDuration;
+- (float)crossfadeFrameRate;
 - (float)crossfadeTargetBlur;
 - (float)forceScrubMaximumInteractiveRate;
 - (float)forceScrubMaximumPressure;
@@ -99,6 +102,7 @@
 - (void)setAssumeCroppedVideo:(BOOL)arg1;
 - (void)setAudioRampDuration:(float)arg1;
 - (void)setCrossfadeDuration:(double)arg1;
+- (void)setCrossfadeFrameRate:(float)arg1;
 - (void)setCrossfadeTargetBlur:(float)arg1;
 - (void)setDefaultValues;
 - (void)setForceScrubMaximumInteractiveRate:(float)arg1;

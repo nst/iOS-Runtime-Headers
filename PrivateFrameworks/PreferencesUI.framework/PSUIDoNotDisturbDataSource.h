@@ -2,11 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIDoNotDisturbDataSource : PSSpecifierDataSource <PSTimeRangeCellDelegate> {
+@interface PSUIDoNotDisturbDataSource : PSSpecifierDataSource <PSListControllerTestableSpecifiers, PSTimeRangeCellDelegate> {
     PSSpecifier * _dndRangeSpec;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) PSSpecifier *dndRangeSpec;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
 
 - (void).cxx_destruct;
 - (id)_allowedGroupsFooterText;

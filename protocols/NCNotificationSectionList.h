@@ -8,6 +8,7 @@
 - (NSSet *)allNotificationRequests;
 - (void)clearAllSections;
 - (void)clearSectionWithIdentifier:(NSString *)arg1;
+- (NSDate *)dateForSectionIdentifier:(NSString *)arg1;
 - (<NCNotificationSectionListDelegate> *)delegate;
 - (void)hideRequestsForNotificationSectionIdentifier:(NSString *)arg1 subSectionIdentifier:(NSString *)arg2;
 - (NSString *)identifierForSectionIndex:(unsigned int)arg1;

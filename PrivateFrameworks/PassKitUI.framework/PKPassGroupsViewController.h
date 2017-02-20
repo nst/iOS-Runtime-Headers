@@ -62,7 +62,7 @@
 - (void)_regionConfigurationDidChangeNotification;
 - (void)_registerForExpressFelicaTransitNotifications:(BOOL)arg1;
 - (void)_startPassViewedNotificationTimer;
-- (void)_updateFooterSuppression;
+- (void)_updateFooterSuppressionAnimated:(BOOL)arg1;
 - (void)_updateFooterSuppressionWithContext:(id)arg1;
 - (void)_updateStatusBarGradientOpacity:(BOOL)arg1;
 - (void)addVASPassWithIdentifier:(id)arg1;

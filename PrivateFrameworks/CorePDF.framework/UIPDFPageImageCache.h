@@ -7,7 +7,9 @@
     unsigned int  _jobCount;
     id * _jobsByPage;
     id * _jobsPrioritized;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     unsigned int  _lookAhead;
     float  _lookAheadResolution;
     unsigned int  _nextJobIndex;

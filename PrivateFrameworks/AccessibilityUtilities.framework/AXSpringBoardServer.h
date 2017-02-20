@@ -40,6 +40,7 @@
 - (id)accessQueue;
 - (void)acquireAssertionWithType:(id)arg1 identifier:(id)arg2;
 - (id)actionHandlers;
+- (void)activateSOSMode;
 - (int)activeApplicationOrientation;
 - (int)activeInterfaceOrientation;
 - (void)activeInterfaceOrientation:(id /* block */)arg1;
@@ -76,6 +77,7 @@
 - (void)isMediaPlayingForApp:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)isMultiTaskingActive;
 - (BOOL)isNotificationCenterVisible;
+- (BOOL)isNotificationVisible;
 - (BOOL)isNowPlayingUIVisible;
 - (BOOL)isOrientationLocked;
 - (BOOL)isPointInsideAccessibilityInspector:(id)arg1;
@@ -91,7 +93,6 @@
 - (BOOL)isSiriVisible;
 - (BOOL)isSoftwareUpdateUIVisible;
 - (BOOL)isSpeakThisTemporarilyDisabled;
-- (BOOL)isStickyNotificationVisible;
 - (BOOL)isSyncingRestoringResettingOrUpdating;
 - (BOOL)isSystemAppFrontmost;
 - (void)isSystemAppFrontmost:(id /* block */)arg1;

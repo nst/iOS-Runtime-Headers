@@ -7,12 +7,13 @@
 + (id)SPURLQueryAllowedCharacterSet;
 + (id)UIColorFromString:(id)arg1;
 + (BOOL)appExtensionFirstUnlock;
-+ (id)companionConnectionClientIdentifier:(BOOL)arg1;
++ (id)companionConnectionClientIdentifier:(BOOL)arg1 isNotification:(BOOL)arg2;
 + (id)deserializeObject:(id)arg1;
 + (void)dispatchAsyncToMainThread:(id /* block */)arg1;
 + (void)dispatchSyncToMainThread:(id /* block */)arg1;
 + (unsigned long long)folderSizeAtPath:(id)arg1 volumeBlockSize:(unsigned int)arg2;
 + (BOOL)isApplicationCompanionConnectionClientIdentifier:(id)arg1;
++ (BOOL)isNotificationCompanionConnectionClientIdentifier:(id)arg1;
 + (BOOL)isRTL;
 + (BOOL)isRunningInAnyDemoMode;
 + (BOOL)isRunningInF201DemoMode;

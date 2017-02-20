@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface NCShortLookView : UIView <NCLookView, NCLookViewInternal> {
+@interface NCShortLookView : UIView <NCLookView, NCLookViewInternal, _UISettingsKeyObserver> {
     BOOL  _backgroundBlurred;
     UIView * _backgroundView;
     BOOL  _banner;
@@ -13,6 +13,7 @@
     UIView * _headerOverlayView;
     UIView * _mainContainerView;
     UIView * _mainOverlayView;
+    NCMaterialSettings * _materialSettings;
     UIImageView * _shadowView;
     BOOL  _usesBackgroundView;
 }
@@ -21,7 +22,6 @@
 @property (getter=isBackgroundBlurred, nonatomic) BOOL backgroundBlurred;
 @property (nonatomic, retain) UIView *backgroundView;
 @property (getter=isBanner, nonatomic) BOOL banner;
-@property (nonatomic, retain) UIView *colorInfusionView;
 @property (nonatomic) float cornerRadius;
 @property (nonatomic, readonly) UIView *customContentView;
 @property (nonatomic, copy) NSDate *date;
@@ -43,6 +43,7 @@
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_shadowImage:(id)arg1 frameForShortLookBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (id)_shadowImageMask;
++ (unsigned int)_styleOptionsForBackgroundWithBlur:(BOOL)arg1;
 + (float)titleInset;
 
 - (void).cxx_destruct;
@@ -61,17 +62,18 @@
 - (BOOL)adjustForContentSizeCategoryChange;
 - (BOOL)adjustsFontForContentSizeCategory;
 - (id)backgroundView;
-- (id)colorInfusionView;
 - (struct CGSize { float x1; float x2; })contentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)cornerRadius;
 - (id)customContentView;
 - (id)date;
 - (int)dateFormatStyle;
+- (void)dealloc;
 - (id)groupName;
 - (BOOL)headerHeedsHorizontalLayoutMargins;
 - (id)icon;
 - (id)iconButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithMaterialSettings:(id)arg1;
 - (BOOL)isBackgroundBlurred;
 - (BOOL)isBanner;
 - (BOOL)isDateAllDay;
@@ -82,7 +84,6 @@
 - (void)setBackgroundBlurred:(BOOL)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBanner:(BOOL)arg1;
-- (void)setColorInfusionView:(id)arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDateAllDay:(BOOL)arg1;
@@ -95,6 +96,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setUsesBackgroundView:(BOOL)arg1;
 - (void)setUtilityView:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFitsContentWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)timeZone;
 - (id)title;

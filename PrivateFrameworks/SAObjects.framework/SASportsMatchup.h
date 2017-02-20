@@ -12,6 +12,8 @@
 @property (nonatomic, copy) NSString *currentPeriod;
 @property (nonatomic, copy) NSNumber *expectedLineScoreCount;
 @property (nonatomic, copy) NSString *favoredEntity;
+@property (nonatomic, copy) NSString *gameSummary;
+@property (nonatomic, copy) NSString *gameType;
 @property (nonatomic, retain) SASportsEntity *homeEntity;
 @property (nonatomic, copy) NSArray *homeLineScores;
 @property (nonatomic, copy) NSString *homeScore;
@@ -50,6 +52,8 @@
 - (id)encodedClassName;
 - (id)expectedLineScoreCount;
 - (id)favoredEntity;
+- (id)gameSummary;
+- (id)gameType;
 - (id)groupIdentifier;
 - (id)homeEntity;
 - (id)homeLineScores;
@@ -74,6 +78,8 @@
 - (void)setCurrentPeriod:(id)arg1;
 - (void)setExpectedLineScoreCount:(id)arg1;
 - (void)setFavoredEntity:(id)arg1;
+- (void)setGameSummary:(id)arg1;
+- (void)setGameType:(id)arg1;
 - (void)setHomeEntity:(id)arg1;
 - (void)setHomeLineScores:(id)arg1;
 - (void)setHomeScore:(id)arg1;

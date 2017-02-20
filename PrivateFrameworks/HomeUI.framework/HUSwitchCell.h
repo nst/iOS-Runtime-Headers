@@ -29,9 +29,11 @@
 - (void)prepareForReuse;
 - (void)setDelegate:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setItem:(id)arg1;
 - (void)setOn:(BOOL)arg1;
 - (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 
 @end

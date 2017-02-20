@@ -8,7 +8,9 @@
     FCMutexLock * _itemsLock;
 }
 
+@property (nonatomic, readonly) NSSet *allConsumedArticleIDs;
 @property (nonatomic, readonly) NSSet *allReadArticleIDs;
+@property (nonatomic, readonly) NSSet *allSeenArticleIDs;
 @property (nonatomic, retain) NSMutableDictionary *itemsByArticleID;
 @property (nonatomic, retain) NSMutableDictionary *itemsByIdentifier;
 @property (nonatomic, retain) FCMutexLock *itemsLock;
@@ -33,7 +35,9 @@
 - (id)_sortedReadingHistoryItemsWithMaxCount:(unsigned int)arg1;
 - (void)addHeadlineToHistory:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)allConsumedArticleIDs;
 - (id)allReadArticleIDs;
+- (id)allSeenArticleIDs;
 - (id)allSortedArticleIDsInReadingHistory;
 - (void)clearHistory;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;

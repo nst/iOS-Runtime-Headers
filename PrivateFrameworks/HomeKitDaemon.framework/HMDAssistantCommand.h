@@ -9,7 +9,6 @@
     NSUUID * _currentHomeUUID;
     HMDAssistantGather * _gather;
     NSArray * _homeKitObjects;
-    HMHAPMetadata * _metadata;
     int  _numberOfHomes;
     NSString * _primaryHomeName;
     NSUUID * _primaryHomeUUID;
@@ -25,7 +24,6 @@
 @property (nonatomic, retain) HMDAssistantGather *gather;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSArray *homeKitObjects;
-@property (nonatomic, retain) HMHAPMetadata *metadata;
 @property (nonatomic) int numberOfHomes;
 @property (nonatomic, retain) NSString *primaryHomeName;
 @property (nonatomic, retain) NSUUID *primaryHomeUUID;
@@ -52,13 +50,13 @@
 - (void)executeActionSet:(id)arg1 action:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)filterObjects:(id)arg1 byAttribute:(id)arg2 forActionType:(id)arg3;
 - (id)filterObjects:(id)arg1 byCharacteristicType:(id)arg2;
-- (id)filterObjects:(id)arg1 forCharacteristicType:(id)arg2;
+- (id)filterObjects:(id)arg1 forCharacteristicTypes:(id)arg2;
 - (id)filterObjects:(id)arg1 forCharacteristics:(id)arg2;
 - (id)filterObjects:(id)arg1 forGroup:(id)arg2;
 - (id)filterObjects:(id)arg1 forRoom:(id)arg2 andZone:(id)arg3;
 - (id)gather;
 - (id)getLocaleUnits:(id)arg1;
-- (id)getReportingUnits:(id)arg1 hapCharacteristicType:(id)arg2;
+- (id)getReportingUnits:(id)arg1 hapCharacteristicType:(id)arg2 attribute:(id)arg3;
 - (id)getValueOfType:(id)arg1 action:(id)arg2;
 - (id)getoverridingHomeUUIDFromName:(id)arg1;
 - (void)handleCommandWithCompletionHandler:(id /* block */)arg1;
@@ -71,7 +69,6 @@
 - (void)handleUpdateActionTypes:(id)arg1 serviceType:(id)arg2 forObjects:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)homeKitObjects;
 - (BOOL)isAttributeValue:(id)arg1 equalTo:(id)arg2;
-- (id)metadata;
 - (int)numberOfHomes;
 - (id)objectsWithIdentifierList:(id)arg1;
 - (id)objectsWithSearchFilter:(id)arg1 inHome:(id)arg2;
@@ -96,7 +93,6 @@
 - (void)setCurrentHomeUUID:(id)arg1;
 - (void)setGather:(id)arg1;
 - (void)setHomeKitObjects:(id)arg1;
-- (void)setMetadata:(id)arg1;
 - (void)setNumberOfHomes:(int)arg1;
 - (void)setPrimaryHomeName:(id)arg1;
 - (void)setPrimaryHomeUUID:(id)arg1;

@@ -51,6 +51,7 @@
 
 - (void).cxx_destruct;
 - (void)_updateEntry:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)addAggdModeKeys;
 - (id)aggregateEntriesForKey:(id)arg1 withBucketLength:(double)arg2 inTimeIntervalRange:(struct _PLTimeIntervalRange { double x1; double x2; })arg3;
 - (id)archivesResponder;
 - (id)blPathResponder;

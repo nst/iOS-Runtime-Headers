@@ -2,13 +2,19 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristicEvent : HMEvent <NSSecureCoding> {
+@interface HMCharacteristicEvent : HMEvent <HFPrettyDescription, HFStateDumpSerializable, NSSecureCoding> {
     HMCharacteristic * _characteristic;
     <NSCopying> * _triggerValue;
 }
 
 @property (nonatomic, retain) HMCharacteristic *characteristic;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) <NSCopying> *triggerValue;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
 + (BOOL)supportsSecureCoding;
@@ -26,5 +32,10 @@
 - (void)setTriggerValue:(id)arg1;
 - (id)triggerValue;
 - (void)updateTriggerValue:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

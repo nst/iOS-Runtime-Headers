@@ -7,6 +7,7 @@
     CKAvatarPickerViewController * _avatarPickerViewController;
     CKNavigationBarCanvasView * _canvasView;
     CKConversation * _conversation;
+    UILabel * _defaultTitleLabel;
     <CKFullScreenAppNavbarManagerDelegate> * _delegate;
     UIButton * _dismissButton;
     NSTimer * _notificationTimer;
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) CKNavigationBarCanvasView *canvasView;
 @property (nonatomic, retain) CKConversation *conversation;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) UILabel *defaultTitleLabel;
 @property (nonatomic) <CKFullScreenAppNavbarManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIButton *dismissButton;
@@ -32,15 +34,20 @@
 
 - (void).cxx_destruct;
 - (void)_addNotificationViewToQueue;
+- (BOOL)_canShowAvatarView;
 - (void)_configureCanvasView;
+- (void)_contactPhotosEnabledChangedNotification:(id)arg1;
 - (void)_dequeueNotificationViews:(id)arg1;
 - (BOOL)_didReceiveMessageChatItem:(id)arg1 addedChatItems:(id)arg2;
+- (void)_handleChatDisplayNameChange:(id)arg1;
 - (void)_handleChatItemDidChange:(id)arg1;
 - (void)_invalidateTimer;
 - (void)_removeAllNotifications;
 - (BOOL)_shouldStartnotificationQueue;
 - (void)_startNotificationQueue;
 - (void)_updateDismissButton;
+- (void)_updateTitleLabelText;
+- (void)_updateTitleView;
 - (int)_viewModeForCalloutView;
 - (id)appIconButton;
 - (void)avatarNotificationCalloutViewDidFinishFadeOut:(id)arg1;
@@ -50,6 +57,7 @@
 - (id)canvasView;
 - (id)conversation;
 - (void)dealloc;
+- (id)defaultTitleLabel;
 - (id)delegate;
 - (id)dismissButton;
 - (void)dismissNotifications;
@@ -61,6 +69,7 @@
 - (void)setAvatarPickerViewController:(id)arg1;
 - (void)setCanvasView:(id)arg1;
 - (void)setConversation:(id)arg1;
+- (void)setDefaultTitleLabel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDismissButton:(id)arg1;
 - (void)setNotificationTimer:(id)arg1;

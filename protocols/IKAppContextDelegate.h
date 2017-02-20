@@ -22,5 +22,6 @@
 - (<IKAppPlayer> *)objectForPlayer:(IKAppPlayerBridge *)arg1;
 - (<IKAppPlaylist> *)objectForPlaylist:(IKAppPlaylistBridge *)arg1;
 - (IKAppTabBar *)tabBarForContext:(IKAppContext *)arg1;
+- (NSURLSessionConfiguration *)xhrSessionConfigurationForContext:(IKAppContext *)arg1;
 
 @end

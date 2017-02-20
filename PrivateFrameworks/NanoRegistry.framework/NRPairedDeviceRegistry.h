@@ -78,6 +78,7 @@
 + (id /* block */)activePairedDeviceSelectorBlock;
 + (id /* block */)pairedDevicesSelectorBlock;
 + (id)sharedInstance;
++ (BOOL)shouldBoostProcess;
 
 - (void).cxx_destruct;
 - (void)_addRemoveRecoveryStepBackup:(BOOL)arg1 withPairingDeviceID:(id)arg2;
@@ -166,6 +167,7 @@
 - (int)idleNotifyToken;
 - (id)init;
 - (void)initNotifyTokens;
+- (id)initWithBoost:(BOOL)arg1;
 - (BOOL)initialLastCompatibilityStateHasBeenSent;
 - (BOOL)initialStatusHasBeenSent;
 - (void)initializeWithShouldMakeEmptyDeviceCollection:(BOOL)arg1;

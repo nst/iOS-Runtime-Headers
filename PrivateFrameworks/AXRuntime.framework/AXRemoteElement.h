@@ -31,6 +31,7 @@
 + (id)remoteElementForBlock:(id /* block */)arg1;
 + (id)remoteElementForContextId:(unsigned int)arg1;
 
+- (void).cxx_destruct;
 - (id)_accessibilityActiveKeyboard;
 - (id)_accessibilityFirstElement;
 - (void)_accessibilityIncreaseSelection:(id)arg1;

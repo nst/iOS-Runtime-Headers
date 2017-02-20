@@ -3,7 +3,7 @@
  */
 
 @interface SKTileSet : NSObject <NSCoding, NSCopying> {
-    unsigned int  _defaultTileGroupIndex;
+    SKTileGroup * _defaultTileGroup;
     struct CGSize { 
         float width; 
         float height; 

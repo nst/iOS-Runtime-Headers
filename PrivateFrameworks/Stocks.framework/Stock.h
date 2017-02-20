@@ -40,6 +40,7 @@
 @property (nonatomic, retain) NSString *high;
 @property (nonatomic, retain) NSURL *infoURL;
 @property (nonatomic, retain) NSString *low;
+@property (nonatomic, readonly) NSString *marketStatusDescription;
 @property (nonatomic, retain) NSString *marketcap;
 @property (nonatomic, retain) NSString *open;
 @property (nonatomic, retain) NSString *peRatio;
@@ -110,6 +111,7 @@
 - (id)listNameWithMaxIndexNameLength:(unsigned int)arg1;
 - (id)low;
 - (BOOL)marketIsOpen;
+- (id)marketStatusDescription;
 - (id)marketcap;
 - (id)open;
 - (id)peRatio;

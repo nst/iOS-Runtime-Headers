@@ -4,11 +4,13 @@
 
 @interface HUQuickControlSliderValueOverlayView : UIView {
     BOOL  _off;
+    unsigned int  _primaryGrabberLocation;
     BOOL  _showsSecondGrabber;
 }
 
 @property (nonatomic, readonly) CAShapeLayer *layer;
 @property (getter=isOff, nonatomic) BOOL off;
+@property (nonatomic) unsigned int primaryGrabberLocation;
 @property (nonatomic) BOOL showsSecondGrabber;
 
 + (Class)layerClass;
@@ -19,7 +21,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isOff;
 - (void)layoutSubviews;
+- (unsigned int)primaryGrabberLocation;
 - (void)setOff:(BOOL)arg1;
+- (void)setPrimaryGrabberLocation:(unsigned int)arg1;
 - (void)setShowsSecondGrabber:(BOOL)arg1;
 - (BOOL)showsSecondGrabber;
 

@@ -11,5 +11,10 @@
 - (id)init;
 - (NSArray *)recipients;
 - (INPerson *)sender;
+- (void)setContent:(NSString *)arg1;
+- (void)setDateSent:(NSDate *)arg1;
+- (void)setIdentifier:(NSString *)arg1;
+- (void)setRecipients:(NSArray *)arg1;
+- (void)setSender:(INPerson *)arg1;
 
 @end

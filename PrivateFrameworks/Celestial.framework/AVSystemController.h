@@ -16,6 +16,7 @@
 - (BOOL)changeActiveCategoryVolumeBy:(float)arg1 forRoute:(id)arg2 andDeviceIdentifier:(id)arg3;
 - (BOOL)changeVolumeBy:(float)arg1 forCategory:(id)arg2;
 - (BOOL)changeVolumeForAccessoryBy:(float)arg1 forCategory:(id)arg2 accessoryRoute:(id)arg3 andAccessoryDeviceIdentifier:(id)arg4;
+- (BOOL)changeVolumeForRouteBy:(float)arg1 forCategory:(id)arg2 mode:(id)arg3 route:(id)arg4 deviceIdentifier:(id)arg5 andRouteSubtype:(id)arg6;
 - (BOOL)currentRouteHasVolumeControl;
 - (void)dealloc;
 - (BOOL)didCancelRoutePicking:(id)arg1;
@@ -29,6 +30,7 @@
 - (BOOL)getVibeIntensity:(float*)arg1;
 - (BOOL)getVolume:(float*)arg1 forCategory:(id)arg2;
 - (BOOL)getVolumeForAccessory:(float*)arg1 forCategory:(id)arg2 accessoryRoute:(id)arg3 andAccessoryDeviceIdentifier:(id)arg4;
+- (BOOL)getVolumeForRoute:(float*)arg1 forCategory:(id)arg2 mode:(id)arg3 route:(id)arg4 deviceIdentifier:(id)arg5 andRouteSubtype:(id)arg6;
 - (void)handleServerDied;
 - (id)init;
 - (void)makeError:(id*)arg1 withDescription:(id)arg2 code:(long)arg3;
@@ -46,6 +48,7 @@
 - (BOOL)setPickedRouteWithPassword:(id)arg1 withPassword:(id)arg2;
 - (BOOL)setVibeIntensityTo:(float)arg1;
 - (BOOL)setVolumeForAccessoryTo:(float)arg1 forCategory:(id)arg2 accessoryRoute:(id)arg3 andAccessoryDeviceIdentifier:(id)arg4;
+- (BOOL)setVolumeForRouteTo:(float)arg1 forCategory:(id)arg2 mode:(id)arg3 route:(id)arg4 deviceIdentifier:(id)arg5 andRouteSubtype:(id)arg6;
 - (BOOL)setVolumeTo:(float)arg1 forCategory:(id)arg2;
 - (BOOL)toggleActiveCategoryMuted;
 - (BOOL)toggleActiveCategoryMutedForRoute:(id)arg1 andDeviceIdentifier:(id)arg2;

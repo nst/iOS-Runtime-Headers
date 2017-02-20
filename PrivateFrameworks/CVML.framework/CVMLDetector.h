@@ -10,13 +10,15 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *processingQueue;
 
 + (BOOL)bestImageWidth:(unsigned int*)arg1 height:(unsigned int*)arg2 format:(unsigned int*)arg3;
++ (id)detectorName;
 
 - (void).cxx_destruct;
-- (id)getArrayFromOptions:(id)arg1 withOptionName:(id)arg2 andEnsureClass:(Class)arg3 error:(id*)arg4;
 - (id)initWithOptions:(id)arg1 error:(id*)arg2;
 - (BOOL)initializeMetalContext:(id)arg1 error:(id*)arg2;
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 warningRecorder:(id)arg3 error:(id*)arg4;
 - (id)processingQueue;
 - (void)setProcessingQueue:(id)arg1;
+- (BOOL)validateImageBuffer:(id)arg1 error:(id*)arg2;
+- (id)validatedImageBufferFromOptions:(id)arg1 error:(id*)arg2;
 
 @end

@@ -6,10 +6,15 @@
 
 + (unsigned char)componentsPerPixel:(unsigned int)arg1;
 + (BOOL)hasAlpha:(unsigned int)arg1;
++ (BOOL)isASTC:(unsigned int)arg1;
++ (BOOL)isBC1to5:(unsigned int)arg1;
++ (BOOL)isBC6to7:(unsigned int)arg1;
 + (BOOL)isCompressed:(unsigned int)arg1;
++ (BOOL)isETC2:(unsigned int)arg1;
 + (BOOL)isFloat:(unsigned int)arg1;
 + (BOOL)isGammaEncoded:(unsigned int)arg1;
 + (BOOL)isInteger:(unsigned int)arg1;
++ (BOOL)isPVRTC:(unsigned int)arg1;
 + (BOOL)isSRGB:(unsigned int)arg1;
 + (struct TXRImageMemoryLayout { unsigned int x1; unsigned int x2; })packedMemoryLayoutForFormat:(void *)arg1 dimensions:(void *)arg2; // needs 2 arg types, found 1: unsigned int
 + (unsigned char)pixelBytes:(unsigned int)arg1;

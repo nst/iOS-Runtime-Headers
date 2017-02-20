@@ -3,7 +3,9 @@
  */
 
 @interface HDDataManager : NSObject <HDDiagnosticObject, HDHealthDataManager> {
+    BBDataProviderConnection * _dataProviderConnection;
     NSNumber * _lastAnchor;
+    SOSContactsManager * _legacySOSContactsManager;
     NSObject<OS_dispatch_queue> * _notificationQueue;
     NSMutableDictionary * _observersByDataType;
     unsigned int  _openTransactions;
@@ -39,12 +41,15 @@
 - (id)_queue_observersForDataType:(id)arg1 sourceBundleIdentifier:(id)arg2 createIfNil:(BOOL)arg3;
 - (id)_queue_observersForKey:(id)arg1 createIfNil:(BOOL)arg2;
 - (void)_shouldNotifyForDeletedSamplesOfTypes:(id)arg1 anchor:(id)arg2;
+- (id)_unarchiveMedicalIDDataWithRawData:(id)arg1;
 - (void)_updateShowMedicalIdOnWatch:(BOOL)arg1;
 - (void)addObserver:(id)arg1 forDataType:(id)arg2;
 - (void)addObserver:(id)arg1 forDataType:(id)arg2 sourceBundleIdentifier:(id)arg3;
 - (void)addObserverForAllTypes:(id)arg1;
+- (void)badgeHealthAppForEmergencyContactConsolidationWithCompletion:(id /* block */)arg1;
 - (void)closeObserverTransaction;
 - (BOOL)containsDataObject:(id)arg1;
+- (void)dealloc;
 - (BOOL)deleteDataObjects:(id)arg1 restrictedSourceEntity:(id)arg2 failIfNotFound:(BOOL)arg3 recursiveDeleteAuthorizationBlock:(id /* block */)arg4 error:(id*)arg5;
 - (BOOL)deleteDataObjectsOfClass:(Class)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 deletedSampleCount:(unsigned int*)arg4 notifyObservers:(BOOL)arg5 generateDeletedObjects:(BOOL)arg6 recursiveDeleteAuthorizationBlock:(id /* block */)arg7 error:(id*)arg8;
 - (BOOL)deleteMedicalIDData:(id*)arg1;
@@ -59,6 +64,7 @@
 - (BOOL)insertDataObjects:(id)arg1 withProvenance:(id)arg2 creationDate:(double)arg3 error:(id*)arg4;
 - (BOOL)insertDataObjects:(id)arg1 withProvenance:(id)arg2 creationDate:(double)arg3 skipInsertionFilter:(BOOL)arg4 error:(id*)arg5;
 - (id)medicalIDDataCreateIfNecessary:(BOOL)arg1;
+- (id)medicalIDEmergencyContacts;
 - (void)openObserverTransaction;
 - (id)profile;
 - (void)removeObserver:(id)arg1 forDataType:(id)arg2;

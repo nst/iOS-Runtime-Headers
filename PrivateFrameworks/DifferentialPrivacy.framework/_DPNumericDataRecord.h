@@ -8,6 +8,7 @@
     NSString * _key;
     NSManagedObjectID * _objectId;
     double  _privateNumber;
+    long long  _reportVersion;
     BOOL  _submitted;
 }
 
@@ -16,6 +17,7 @@
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, retain) NSManagedObjectID *objectId;
 @property (nonatomic) double privateNumber;
+@property (nonatomic) long long reportVersion;
 @property (nonatomic) BOOL submitted;
 
 + (id)createRecordFromManagedObject:(id)arg1;
@@ -41,11 +43,13 @@
 - (id)key;
 - (id)objectId;
 - (double)privateNumber;
+- (long long)reportVersion;
 - (void)setClearNumber:(double)arg1;
 - (void)setCreationDate:(double)arg1;
 - (void)setKey:(id)arg1;
 - (void)setObjectId:(id)arg1;
 - (void)setPrivateNumber:(double)arg1;
+- (void)setReportVersion:(long long)arg1;
 - (void)setSubmitted:(BOOL)arg1;
 - (BOOL)submitted;
 

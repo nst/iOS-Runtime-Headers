@@ -12,6 +12,7 @@
     BOOL  _heedsHorizontalLayoutMargins;
     UIButton * _iconButton;
     int  _lookStyle;
+    UILabel * _outgoingTitleLabel;
     NSString * _preferredContentSizeCategory;
     NSTimeZone * _timeZone;
     UILabel * _titleLabel;
@@ -30,10 +31,12 @@
 @property (nonatomic, retain) UIImage *icon;
 @property (nonatomic, readonly) UIButton *iconButton;
 @property (nonatomic, readonly) int lookStyle;
+@property (getter=_outgoingTitleLabel, setter=_setOutgoingTitleLabel:, nonatomic, retain) UILabel *outgoingTitleLabel;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic, copy) NSString *title;
+@property (getter=_titleLabel, setter=_setTitleLabel:, nonatomic, retain) UILabel *titleLabel;
 @property (nonatomic, readonly) UIButton *utilityButton;
 @property (nonatomic, retain) UIView *utilityView;
 
@@ -45,10 +48,9 @@
 - (void)_configureDateLabelIfNecessary;
 - (void)_configureIconButtonForLongLook;
 - (void)_configureIconButtonIfNecessary;
-- (void)_configureTitleLabelForLongLook;
-- (void)_configureTitleLabelForShortLook;
-- (void)_configureTitleLabelForStyle:(int)arg1;
-- (void)_configureTitleLabelIfNecessary;
+- (void)_configureTitleLabel:(id)arg1 forStyle:(int)arg2;
+- (void)_configureTitleLabelForLongLook:(id)arg1;
+- (void)_configureTitleLabelForShortLook:(id)arg1;
 - (void)_configureUtilityButtonIfNecessary;
 - (id)_dateLabel;
 - (void)_fixTitleOverlapIfNecessary;
@@ -65,13 +67,20 @@
 - (void)_layoutTitleLabelForShortLookWithScale:(float)arg1;
 - (void)_layoutTitleLabelForStyle:(int)arg1 withScale:(float)arg2;
 - (void)_layoutUtilityButtonForStyle:(int)arg1 withScale:(float)arg2;
+- (id)_lazyOutgoingTitleLabel;
+- (id)_lazyTitleLabel;
+- (id)_newTitleLabel;
+- (id)_outgoingTitleLabel;
 - (void)_recycleDateLabel;
 - (void)_setFontProvider:(id)arg1;
+- (void)_setOutgoingTitleLabel:(id)arg1;
+- (void)_setText:(id)arg1 withFinalLabel:(id)arg2 setter:(id /* block */)arg3 andTransitionLabel:(id)arg4 setter:(id /* block */)arg5;
+- (void)_setTitleLabel:(id)arg1;
+- (void)_tearDownDateLabel;
 - (id)_titleLabel;
 - (float)_titleLabelBaselineOffset;
-- (void)_updateDateLabel;
 - (void)_updateDateLabelFontForShortLook;
-- (void)_updateTitleLabelFontForStyle:(int)arg1;
+- (void)_updateTitleLabelFont:(id)arg1 forStyle:(int)arg2;
 - (void)_updateUtilityButtonFont;
 - (BOOL)adjustForContentSizeCategoryChange;
 - (BOOL)adjustsFontForContentSizeCategory;

@@ -100,6 +100,7 @@
 - (void)_utilityServerProxyWithCompletion:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
 - (void)_weeklySummaryInfoForDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)_workoutServerProxyWithCompletion:(id /* block */)arg1 errorHandler:(id /* block */)arg2;
+- (void)acceptInviteRequestFromFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)addHealthServicePairing:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)addSamples:(id)arg1 toWorkout:(id)arg2 completion:(id /* block */)arg3;
 - (void)addSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 completion:(id /* block */)arg3;
@@ -107,6 +108,7 @@
 - (void)allAuthorizationRecordsForType:(id)arg1 completion:(id /* block */)arg2;
 - (void)allSourcesWithCompletion:(id /* block */)arg1;
 - (int)authorizationStatusForType:(id)arg1;
+- (void)badgeHealthAppForEmergencyContactsConsolidationWithCompletion:(id /* block */)arg1;
 - (void)beginAuthorizationDelegateTransactionWithSessionIdentifier:(id)arg1 sourceHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3;
 - (id)biologicalSexWithError:(id*)arg1;
 - (id)bloodTypeWithError:(id*)arg1;
@@ -150,10 +152,12 @@
 - (void)endWorkoutSession:(id)arg1;
 - (void)executeQuery:(id)arg1;
 - (void)fetchAllDevicesWithCompletion:(id /* block */)arg1;
+- (void)fetchAllFitnessFriendsActivityDataIfTimeSinceLastFetchIsGreaterThan:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (void)fetchAllFitnessFriendsActivityDataWithCompletion:(id /* block */)arg1;
 - (void)fetchAreMultipleDevicesSharingDataForSnapshotIndex:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchMedicalIDDataCreateIfNecessary:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchMedicalIDDataWithCompletion:(id /* block */)arg1;
+- (void)fetchMedicalIDEmergencyContactsWithCompletion:(id /* block */)arg1;
 - (void)finishLocationSeries:(id)arg1 withMetadata:(id)arg2 completion:(id /* block */)arg3;
 - (void)fitnessFriendsCloudKitAccountStatusWithCompletion:(id /* block */)arg1;
 - (id)fitzpatrickSkinTypeWithError:(id*)arg1;
@@ -204,7 +208,6 @@
 - (void)saveObjects:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)select:(id)arg1 from:(id)arg2 where:(id)arg3 groupBy:(id)arg4 orderBy:(id)arg5 limit:(int)arg6 completion:(id /* block */)arg7;
 - (void)sendFitnessFriendInviteRequestToDestination:(id)arg1 callerID:(id)arg2 serviceIdentifier:(id)arg3 completion:(id /* block */)arg4;
-- (void)sendFitnessFriendsInviteResponse:(int)arg1 toFriendWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendFitnessFriendsWithdrawInviteRequestToFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setActivityDataVisible:(BOOL)arg1 toFriendWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)setAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;

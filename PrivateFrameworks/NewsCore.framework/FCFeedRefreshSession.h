@@ -3,33 +3,46 @@
  */
 
 @interface FCFeedRefreshSession : NSObject {
+    NSSet * _activeGroupEmitterIDs;
     NSDictionary * _cursorsByGroupEmitterID;
     NSString * _identifier;
+    BOOL  _isOffline;
     FCFeedEdition * _lastCompletedEdition;
     NSDate * _modificationDate;
+    NSArray * _pendingGroups;
     BOOL  _reachedEnd;
     NSDate * _refreshDate;
 }
 
+@property (nonatomic, readonly, copy) NSSet *activeGroupEmitterIDs;
 @property (nonatomic, readonly, copy) NSDictionary *cursorsByGroupEmitterID;
 @property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) BOOL isOffline;
 @property (nonatomic, readonly) FCFeedEdition *lastCompletedEdition;
 @property (nonatomic, readonly) NSDate *modificationDate;
+@property (nonatomic, readonly, copy) NSArray *pendingGroups;
 @property (nonatomic, readonly) BOOL reachedEnd;
 @property (nonatomic, readonly) NSDate *refreshDate;
 
 - (void).cxx_destruct;
-- (id)copyWithModificationDate:(id)arg1 lastCompletedEdition:(id)arg2 cursorsByGroupEmitterID:(id)arg3 reachedEnd:(BOOL)arg4;
+- (id)activeGroupEmitterIDs;
+- (id)copyByRemovingPendingGroupIdenticalTo:(id)arg1;
+- (id)copyWithAdditionalPendingGroups:(id)arg1 cursors:(id)arg2;
+- (id)copyWithAllGroupEmittersExhausted;
+- (id)copyWithExhaustedGroupEmitterID:(id)arg1 cursors:(id)arg2;
+- (id)copyWithModificationDate:(id)arg1 lastCompletedEdition:(id)arg2 cursorsByGroupEmitterID:(id)arg3 pendingGroups:(id)arg4 activeGroupEmitterIDs:(id)arg5 reachedEnd:(BOOL)arg6 isOffline:(BOOL)arg7;
 - (id)currentEditionFromPaginator:(id)arg1;
 - (id)cursorsByGroupEmitterID;
 - (id)description;
 - (unsigned int)hash;
 - (id)identifier;
-- (id)initWithIdentifier:(id)arg1 refreshDate:(id)arg2 modificationDate:(id)arg3 lastCompletedEdition:(id)arg4 cursorsByGroupEmitterID:(id)arg5 reachedEnd:(BOOL)arg6;
-- (id)initWithRefreshDate:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 refreshDate:(id)arg2 modificationDate:(id)arg3 lastCompletedEdition:(id)arg4 cursorsByGroupEmitterID:(id)arg5 pendingGroups:(id)arg6 activeGroupEmitterIDs:(id)arg7 reachedEnd:(BOOL)arg8 isOffline:(BOOL)arg9;
+- (id)initWithRefreshDate:(id)arg1 activeGroupEmitterIDs:(id)arg2 isOffline:(BOOL)arg3;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isOffline;
 - (id)lastCompletedEdition;
 - (id)modificationDate;
+- (id)pendingGroups;
 - (BOOL)reachedEnd;
 - (id)refreshDate;
 

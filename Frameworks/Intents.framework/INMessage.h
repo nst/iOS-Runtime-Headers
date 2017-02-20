@@ -23,10 +23,12 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)cacheableObjects;
 - (id)content;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateSent;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)identifier;

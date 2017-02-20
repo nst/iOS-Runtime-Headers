@@ -2,13 +2,20 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIDisplayController : PSListController <PSMagnifyControllerDelegate> {
+@interface PSUIDisplayController : PSListController <PSListControllerTestableSpecifiers, PSMagnifyControllerDelegate> {
     NSDictionary * _autoLockTitleDictionary;
     NSArray * _autoLockValues;
     CBClient * _brightnessClient;
     NSMutableDictionary * _localizedAutoLockTitleDictionary;
     NSDateFormatter * _timeFormatter;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
 
 - (void).cxx_destruct;
 - (void)_cleanupTransactionRef;
@@ -42,7 +49,6 @@
 - (void)setScreenLock:(id)arg1 specifier:(id)arg2;
 - (BOOL)shouldShowAutoLock;
 - (BOOL)shouldShowCaseLockOption;
-- (BOOL)shouldShowRaiseToWake;
 - (void)showAlertToDisableAccessibilityFilters:(id /* block */)arg1 cancel:(id /* block */)arg2;
 - (id)specifiers;
 - (void)updateAutoLockSpecifier;

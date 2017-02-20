@@ -369,6 +369,7 @@
 @property (nonatomic, readonly, retain) <UILayoutSupport><_UILayoutItem> *topLayoutGuide;
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
 @property (nonatomic) <UIViewControllerTransitioningDelegate> *transitioningDelegate;
+@property (setter=tv_setIdentifier:, nonatomic, copy) NSString *tvIdentifier;
 @property (nonatomic, retain) UIView *view;
 @property (nonatomic, readonly) SUViewControllerFactory *viewControllerFactory;
 @property (nonatomic, readonly) UIView *viewIfLoaded;
@@ -1533,6 +1534,7 @@
 - (BOOL)px_canPerformPinchTransitionWithMasterViewController:(id)arg1;
 - (BOOL)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
 - (BOOL)px_canPerformZoomTransitionWithMasterViewController:(id)arg1;
+- (BOOL)px_canPresentViewControllerAnimated:(BOOL)arg1;
 - (id)px_defaultTransitionEndPoint;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
 - (void)px_enableBarAppearance;
@@ -1542,6 +1544,7 @@
 - (void)px_enumerateDescendantViewControllersWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (id)px_extendedTraitCollection;
 - (id)px_gridPresentation;
+- (BOOL)px_isDescendantOfViewController:(id)arg1;
 - (BOOL)px_isSnapBackDestination;
 - (BOOL)px_isVisible;
 - (id)px_oneUpPresentation;
@@ -1578,6 +1581,17 @@
 - (void)setNeedsNestedPagingScrollViewUpdate;
 - (void)setNeedsScrollingSegmentContentScrollViewUpdate;
 - (void)setSKUIStackedBarSplit:(float)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (id)customAnimatorForNavigationControllerOperation:(int)arg1 fromViewController:(id)arg2;
+- (id)customAnimatorForNavigationControllerOperation:(int)arg1 toViewController:(id)arg2;
+- (id)tvIdentifier;
+- (float)tv_containedBottomLayoutGuideLength;
+- (float)tv_containedTopLayoutGuideLength;
+- (void)tv_setIdentifier:(id)arg1;
+- (void)tv_updateViewLayout;
+- (void)tvmlkit_setNeedsNavigationBarAppearanceUpdate;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
 

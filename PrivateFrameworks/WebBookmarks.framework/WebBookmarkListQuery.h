@@ -3,6 +3,7 @@
  */
 
 @interface WebBookmarkListQuery : NSObject {
+    BOOL  _countShouldUseNumChildrenIfPossible;
     BOOL  _customQuery;
     int  _folderID;
     BOOL  _includeHidden;
@@ -18,7 +19,7 @@
 @property (nonatomic, readonly) int folderID;
 
 - (void).cxx_destruct;
-- (int)_childCountInDatabaseForBookmarkFolder:(int)arg1 collection:(id)arg2 skipCountingInDatabaseBookmarksThatAreDeletedInMemory:(BOOL)arg3;
+- (int)_childCountInDatabaseForFolderFetchInCollection:(id)arg1 skipCountingInDatabaseBookmarksThatAreDeletedInMemory:(BOOL)arg2;
 - (id)_filterBookmarks:(id)arg1;
 - (int)_inMemoryAddedChildrenCountForBookmarkFolder:(int)arg1 collection:(id)arg2 skipCountingBookmarksThatAreDeletedInMemory:(BOOL)arg3;
 - (int)_listQueryType;

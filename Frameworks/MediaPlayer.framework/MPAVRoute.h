@@ -6,6 +6,7 @@
     NSArray * _auxiliaryDevices;
     NSDictionary * _avRouteDescription;
     MPAVBatteryLevel * _batteryLevel;
+    BOOL  _carplayRoute;
     int  _displayRouteType;
     int  _pickableRouteType;
     BOOL  _picked;
@@ -24,6 +25,7 @@
 @property (nonatomic, readonly) MPAVBatteryLevel *batteryLevel;
 @property (getter=isBeatsSoloRoute, nonatomic, readonly) BOOL beatsSoloRoute;
 @property (getter=isBeatsXRoute, nonatomic, readonly) BOOL beatsXRoute;
+@property (getter=isCarplayRoute, nonatomic, readonly) BOOL carplayRoute;
 @property (nonatomic, readonly) BOOL displayIsPicked;
 @property (nonatomic, readonly) int displayRouteType;
 @property (nonatomic, readonly) BOOL isDeviceRoute;
@@ -57,6 +59,7 @@
 - (BOOL)isAirpodsRoute;
 - (BOOL)isBeatsSoloRoute;
 - (BOOL)isBeatsXRoute;
+- (BOOL)isCarplayRoute;
 - (BOOL)isDeviceRoute;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isPicked;

@@ -10,9 +10,11 @@
 @property (nonatomic, retain) CKDispatchCache *dispatchCache;
 @property (nonatomic, retain) CKMultiDict *pendingBlocks;
 
++ (void)_invalidateStickerPreviewCache;
 + (id)detailsPreviewCache;
 + (id)mapThumbnailQueue;
 + (id)snapshotCache;
++ (id)stickerPreviewCache;
 + (id)transcriptPreviewCache;
 
 - (void).cxx_destruct;

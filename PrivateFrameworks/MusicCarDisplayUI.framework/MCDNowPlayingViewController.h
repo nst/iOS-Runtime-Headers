@@ -11,6 +11,7 @@
     <MCDNowPlayingViewControllerDelegate> * _delegate;
     UILongPressGestureRecognizer * _fastForwardButtonLongPressRecognizer;
     NSString * _forwardTransportButtonImageIdentifier;
+    BOOL  _handledWillAppear;
     int  _heldAction;
     BOOL  _highTouchMode;
     BOOL  _isScrubbing;
@@ -59,6 +60,7 @@
 - (void)_fastForwardButtonLongPress:(id)arg1;
 - (void)_fastForwardButtonTouchDown:(id)arg1;
 - (void)_fastForwardButtonTouchUp:(id)arg1;
+- (void)_handleWillAppear;
 - (void)_initializeTransportControls;
 - (void)_itemChanged:(id)arg1;
 - (void)_leftButtonLongPress:(id)arg1;
@@ -117,6 +119,8 @@
 - (id)titleView;
 - (id)transportControlView;
 - (void)updatePlayControlsWithElapsedTime:(double)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

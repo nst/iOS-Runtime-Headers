@@ -29,6 +29,7 @@
 @property (nonatomic, readonly) BOOL hasRecurrenceRules;
 @property (nonatomic, copy) NSDate *lastModifiedDate;
 @property (nonatomic, copy) EKPersistentLocation *location;
+@property (nonatomic) unsigned int modifiedProperties;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, retain) EKPersistentOrganizer *organizer;
 @property (nonatomic, retain) EKPersistentCalendarItem *originalItem;
@@ -98,6 +99,7 @@
 - (BOOL)isDetached;
 - (id)lastModifiedDate;
 - (id)location;
+- (unsigned int)modifiedProperties;
 - (id)notes;
 - (id)organizer;
 - (id)originalItem;
@@ -134,6 +136,7 @@
 - (void)setExternalModificationTag:(id)arg1;
 - (void)setLastModifiedDate:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setModifiedProperties:(unsigned int)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setOrganizer:(id)arg1;
 - (void)setOriginalItem:(id)arg1;

@@ -7,6 +7,7 @@
     WGWidgetDiscoveryController * _discoveryController;
     unsigned int  _lastWidgetCount;
     unsigned int  _location;
+    BOOL  _shouldBlurContent;
     NSMapTable * _transitionCoordinatorToTargetColumnMode;
     NSArray * _widgetListViewControllers;
 }
@@ -18,6 +19,7 @@
 @property (nonatomic) unsigned int location;
 @property (nonatomic, readonly) UIScrollView *majorScrollView;
 @property (nonatomic, readonly) UIScrollView *minorScrollView;
+@property (nonatomic) BOOL shouldBlurContent;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int widgetCount;
 
@@ -43,11 +45,11 @@
 - (void)editViewWillDisappear:(id)arg1;
 - (id)initWithWidgetDiscoveryController:(id)arg1;
 - (void)invalidateVisibleWidgets;
-- (void)invalidateWidgetBackgroundViews;
 - (BOOL)isWidgetExtensionVisible:(id)arg1;
 - (unsigned int)location;
 - (id)majorScrollView;
 - (void)makeVisibleWidgetWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (id)materialSettingsForWidgetListViewController:(id)arg1;
 - (id)minorScrollView;
 - (void)presentEditViewWithCompletion:(id /* block */)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -62,7 +64,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setLocation:(unsigned int)arg1;
+- (void)setShouldBlurContent:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)shouldBlurContent;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

@@ -6,6 +6,7 @@
     unsigned int  _appearanceStyle;
     UIColor * _backgroundColorWhileHosting;
     UIColor * _backgroundColorWhileNotHosting;
+    BOOL  _clippingDisabled;
     <FBSceneHostViewDelegate> * _delegate;
     NSMutableSet * _hiddenLayers;
     FBSceneLayerHostContainerView * _hostContainerView;
@@ -20,6 +21,7 @@
 @property (nonatomic) unsigned int appearanceStyle;
 @property (nonatomic, retain) UIColor *backgroundColorWhileHosting;
 @property (nonatomic, retain) UIColor *backgroundColorWhileNotHosting;
+@property (getter=isClippingDisabled, nonatomic) BOOL clippingDisabled;
 @property (getter=isContextHosted, nonatomic, readonly) BOOL contextHosted;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSceneHostViewDelegate> *delegate;
@@ -61,6 +63,7 @@
 - (id)hostingDisabledLayers;
 - (id)initWithScene:(id)arg1 requester:(id)arg2;
 - (void)invalidate;
+- (BOOL)isClippingDisabled;
 - (BOOL)isContextHosted;
 - (BOOL)isHosting;
 - (id)layersForHostContainerView:(id)arg1;
@@ -72,6 +75,7 @@
 - (void)setAppearanceStyle:(unsigned int)arg1;
 - (void)setBackgroundColorWhileHosting:(id)arg1;
 - (void)setBackgroundColorWhileNotHosting:(id)arg1;
+- (void)setClippingDisabled:(BOOL)arg1;
 - (void)setDefaultHostedLayerTypes:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHostContainerView:(id)arg1;

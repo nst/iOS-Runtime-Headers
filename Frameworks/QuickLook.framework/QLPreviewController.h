@@ -46,6 +46,7 @@
     BOOL  _previousStatusBarHidden;
     <QLPrintingProtocol> * _printer;
     unsigned int  _quickLookVisibility;
+    BOOL  _rotationEnabled;
     UIRotationGestureRecognizer * _rotationGesture;
     UIDocumentInteractionController * _sharingInteractionController;
     BOOL  _showActionAsDefaultButton;
@@ -260,6 +261,7 @@
 - (void)setPrinter:(id)arg1;
 - (void)setQuickLookVisibility:(unsigned int)arg1;
 - (void)setQuickLookVisibility:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)setRotationEnabled:(BOOL)arg1;
 - (void)setRotationGesture:(id)arg1;
 - (void)setSharingInteractionController:(id)arg1;
 - (void)setShowActionAsDefaultButton:(BOOL)arg1;
@@ -272,6 +274,7 @@
 - (void)setUseCustomActionButton:(BOOL)arg1;
 - (void)setWillTransitionToInternalView:(BOOL)arg1;
 - (id)sharingInteractionController;
+- (BOOL)shouldAutorotate;
 - (BOOL)showActionAsDefaultButton;
 - (void)showNoDataViewIfNeeded;
 - (id)slideGesture;

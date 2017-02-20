@@ -70,7 +70,6 @@
 @property (nonatomic) <PUOneUpPresentationHelperAssetDisplayDelegate> *assetDisplayDelegate;
 @property (setter=_setBrowsingSession:, nonatomic, retain) PUBrowsingSession *browsingSession;
 @property (nonatomic) BOOL cachesScrubberView;
-@property (nonatomic, readonly) BOOL canPresentOneUpViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUOneUpPresentationHelperDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -147,7 +146,7 @@
 - (BOOL)cachesScrubberView;
 - (id)cameraPreviewTransitionDelegateWithSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sourceImage:(id)arg2;
 - (BOOL)canDismissOneUpViewController;
-- (BOOL)canPresentOneUpViewController;
+- (BOOL)canPresentOneUpViewControllerAnimated:(BOOL)arg1;
 - (void)cancelCommitTransitionForPreviewViewController:(id)arg1 completion:(id /* block */)arg2;
 - (void)commitPreviewViewController:(id)arg1;
 - (void)dealloc;

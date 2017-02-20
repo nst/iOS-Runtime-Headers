@@ -14,6 +14,7 @@
     NSString * _categoryID;
     BOOL  _clearable;
     BBContent * _content;
+    int  _contentPreviewSetting;
     NSDictionary * _context;
     unsigned int  _counter;
     NSDate * _date;
@@ -25,7 +26,6 @@
     unsigned int  _expirationEvents;
     BOOL  _expiresOnPublisherDeath;
     BOOL  _hasEventDate;
-    BOOL  _hasPrivateContent;
     BBSectionIcon * _icon;
     BOOL  _ignoresQuietMode;
     NSArray * _intentIDs;
@@ -80,6 +80,7 @@
 @property (nonatomic) BOOL clearable;
 @property (nonatomic, readonly) BOOL coalescesWhenLocked;
 @property (nonatomic, retain) BBContent *content;
+@property (nonatomic) int contentPreviewSetting;
 @property (nonatomic, retain) NSDictionary *context;
 @property (nonatomic) unsigned int counter;
 @property (nonatomic, retain) NSDate *date;
@@ -211,6 +212,7 @@
 - (struct CGSize { float x1; float x2; })composedAttachmentImageSizeWithObserver:(id)arg1;
 - (id)composedAttachmentImageWithObserver:(id)arg1;
 - (id)content;
+- (int)contentPreviewSetting;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)counter;
@@ -304,6 +306,7 @@
 - (void)setCategoryID:(id)arg1;
 - (void)setClearable:(BOOL)arg1;
 - (void)setContent:(id)arg1;
+- (void)setContentPreviewSetting:(int)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCounter:(unsigned int)arg1;
 - (void)setDate:(id)arg1;

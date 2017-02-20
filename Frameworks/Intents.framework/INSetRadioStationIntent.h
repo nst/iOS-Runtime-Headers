@@ -14,10 +14,12 @@
 @property (nonatomic, readonly, copy) NSString *stationName;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (id)channel;
+- (id)description;
 - (id)frequency;
 - (id)initWithRadioType:(int)arg1 frequency:(id)arg2 stationName:(id)arg3 channel:(id)arg4 presetNumber:(id)arg5;
 - (id)presetNumber;

@@ -6,6 +6,7 @@
     NSString * _applicationID;
     NSString * _clientID;
     NSMutableDictionary * _familyToTemplate;
+    NSObject<OS_dispatch_queue> * _internalQueue;
     NSMutableSet * _supportedFamilies;
 }
 
@@ -15,6 +16,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_commonInit;
 - (id)applicationID;
 - (id)clientID;
 - (void)encodeWithCoder:(id)arg1;

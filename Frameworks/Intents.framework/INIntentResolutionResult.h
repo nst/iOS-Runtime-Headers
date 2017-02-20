@@ -52,9 +52,12 @@
 - (id)_dataForIntentSlotDescription:(id)arg1;
 - (id)_initWithResultCode:(int)arg1;
 - (id)_intentSlotValueForObject:(id)arg1 slotDescription:(id)arg2;
+- (id)_stringForResultCode:(int)arg1;
 - (id)_vocabularyValueForObject:(id)arg1 slotDescription:(id)arg2;
 - (id)alternatives;
 - (id)conflictingParameterKeyPath;
+- (id)description;
+- (id)dictionaryRepresentation;
 - (id)disambiguationItems;
 - (id)incompleteParameterKeyPaths;
 - (id)incompleteValue;

@@ -15,6 +15,7 @@
     unsigned int  _eventType;
     NSString * _externalID;
     NSString * _featureName;
+    BOOL  _internalBuild;
     double  _itemDuration;
     double  _itemEndTime;
     SSVPlayActivityEventItemIDs * _itemIDs;
@@ -50,6 +51,7 @@
 @property (nonatomic, readonly) unsigned int eventType;
 @property (nonatomic, readonly, copy) NSString *externalID;
 @property (nonatomic, readonly, copy) NSString *featureName;
+@property (getter=isInternalBuild, nonatomic, readonly) BOOL internalBuild;
 @property (nonatomic, readonly) double itemDuration;
 @property (nonatomic, readonly) double itemEndTime;
 @property (nonatomic, readonly, copy) SSVPlayActivityEventItemIDs *itemIDs;
@@ -95,6 +97,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDataRepresentation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isInternalBuild;
 - (BOOL)isOffline;
 - (BOOL)isSBEnabled;
 - (double)itemDuration;

@@ -37,7 +37,6 @@
 @property (nonatomic, retain) UIViewController *presentationViewController;
 @property (nonatomic) NSObject<CKBrowserViewControllerSendDelegate> *sendDelegate;
 @property (nonatomic, readonly) BOOL shouldShowChatChrome;
-@property (nonatomic, retain) NSURL *storeLaunchURL;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL supportsQuickView;
 @property (nonatomic, readonly) BOOL wantsDarkUI;

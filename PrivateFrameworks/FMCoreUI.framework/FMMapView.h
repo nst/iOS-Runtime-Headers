@@ -159,6 +159,7 @@
 - (void)initialize;
 - (void)invalidateLayoutTimer;
 - (BOOL)isAllAnnotationsShown;
+- (BOOL)isCurrentlyRotated;
 - (BOOL)isFingerOnAnnotation;
 - (BOOL)isFingerOnMap;
 - (BOOL)isGoingBackToAllAnnotation;

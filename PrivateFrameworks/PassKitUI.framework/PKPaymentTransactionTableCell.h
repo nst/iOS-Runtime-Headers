@@ -9,6 +9,7 @@
     UIColor * _secondaryColor;
     UILabel * _secondaryLabel;
     NSString * _secondaryString;
+    BOOL  _sizeLabels;
     UIColor * _tertiaryColor;
     UILabel * _tertiaryLabel;
     NSString * _tertiaryString;

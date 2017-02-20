@@ -34,7 +34,7 @@
 
 - (void)OTRTestCallback:(id)arg1 time:(double)arg2 error:(id)arg3;
 - (id /* block */)_acknowledgementBlockWithDelegateIdentifier:(id)arg1;
-- (void)_callDelegatesForDevicesChangedWithService:(id)arg1;
+- (void)_callDelegatesForDevicesChanged;
 - (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4;
 - (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4 group:(id)arg5;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1;
@@ -74,6 +74,7 @@
 - (void)connection:(id)arg1 messageIdentifier:(id)arg2 alternateCallbackID:(id)arg3 updatedWithResponseCode:(int)arg4 error:(id)arg5 lastCall:(BOOL)arg6;
 - (void)connection:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)daemonConnected;
+- (id)daemonController;
 - (id)datagramChannelForSessionDestination:(id)arg1 error:(id*)arg2;
 - (id)datagramChannelForSocketDescriptor:(int)arg1 error:(id*)arg2;
 - (id)datagramConnectionForSessionDestination:(id)arg1 error:(id*)arg2;
@@ -92,6 +93,7 @@
 - (BOOL)manuallyAckMessages;
 - (SEL)protobufActionForType:(unsigned short)arg1 isResponse:(BOOL)arg2;
 - (void)removeDelegate:(id)arg1;
+- (void)resendSubServicesToDaemonForCurrentDevice;
 - (BOOL)sendAccessoryData:(id)arg1 toAccessoryID:(id)arg2 accessToken:(id)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
 - (void)sendAckForMessageWithContext:(id)arg1;
 - (BOOL)sendData:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(int)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;

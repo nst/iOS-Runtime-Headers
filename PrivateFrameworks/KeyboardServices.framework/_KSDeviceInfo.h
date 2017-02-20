@@ -26,6 +26,5 @@
 - (void)setNeedsUpdate:(BOOL)arg1;
 - (void)setSwVersion:(id)arg1;
 - (id)swVersion;
-- (BOOL)swVersionIsPostCloudKitSwitch;
 
 @end

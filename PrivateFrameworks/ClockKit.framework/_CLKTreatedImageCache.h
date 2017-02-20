@@ -4,13 +4,14 @@
 
 @interface _CLKTreatedImageCache : NSObject {
     NSMutableDictionary * _cache;
+    NSObject<OS_dispatch_queue> * _internalQueue;
     NSMutableArray * _recentlyUsedKeys;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_pruneCacheIfNecessary;
+- (void)_queue_pruneCacheIfNecessary;
 - (id)imageForRawImage:(id)arg1 scale:(float)arg2 maskToCircle:(BOOL)arg3;
 - (id)init;
 

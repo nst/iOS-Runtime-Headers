@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIAirStuffSectionController : CCUIControlCenterSectionViewController <MPAVRoutingControllerDelegate, SFAirDropDiscoveryAlertControllerDelegate, SFAirDropDiscoveryControllerDelegate, UIPopoverControllerDelegate> {
+@interface CCUIAirStuffSectionController : CCUIControlCenterSectionViewController <CCUIControlCenterButtonDelegate, MPAVRoutingControllerDelegate, SFAirDropDiscoveryAlertControllerDelegate, SFAirDropDiscoveryControllerDelegate, UIPopoverControllerDelegate> {
     UIAlertController * _airDropAlertController;
     SFAirDropDiscoveryController * _airDropDiscoveryController;
     CCUIControlCenterPushButton * _airDropSection;
@@ -39,6 +39,7 @@
 - (void)_updateForAirPlayStateChange;
 - (void)_updateLayoutForSizeCategoryChange;
 - (void)_updateSubsectionVisibility;
+- (void)buttonTapped:(id)arg1;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;
 - (void)dealloc;
@@ -48,6 +49,7 @@
 - (BOOL)dismissModalFullScreenIfNeeded;
 - (BOOL)enabled;
 - (id)init;
+- (BOOL)isInternal;
 - (unsigned int)mode;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;

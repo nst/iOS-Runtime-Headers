@@ -17,6 +17,7 @@
 - (id)init;
 - (void)isInstalledApplicationWithBundleIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)isRemovedSystemApplicationWithBundleIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)playableApplicationsWithBundleIdentifiers:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)refreshReceiptsWithCompletionBlock:(id /* block */)arg1;
 - (void)restoreAllDemotedApplicationsWithOptions:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)restoreDemotedApplicationWithBundleIdentifier:(id)arg1 options:(id)arg2 completionBlock:(id /* block */)arg3;

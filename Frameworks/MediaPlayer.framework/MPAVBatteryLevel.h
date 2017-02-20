@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (id)casePercentage;
 - (id)initWithRouteDescription:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)leftPercentage;
 - (id)rightPercentage;
 - (id)singlePercentage;

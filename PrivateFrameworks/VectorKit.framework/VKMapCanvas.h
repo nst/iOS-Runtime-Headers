@@ -227,7 +227,7 @@
 - (void)transferStateFromCanvas:(id)arg1;
 - (id)transitLineMarkersForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)transitLineMarkersInCurrentViewport;
-- (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 cameraController:(id)arg3 pounceCompletionHandler:(id /* block */)arg4;
+- (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 startLocation:(struct { double x1; double x2; })arg3 cameraController:(id)arg4 pounceCompletionHandler:(id /* block */)arg5;
 - (void)updateCameraForFrameResize;
 - (struct VehicleState { bool x1; })vehicleState;
 - (id)visibleTileSets;

@@ -22,9 +22,11 @@
 - (id)iconTitle;
 - (id)iconURL;
 - (BOOL)isFamilyShareable;
+- (BOOL)isHiddenFromSpringBoard;
 - (BOOL)isNewsstand;
 - (id)longTitle;
 - (unsigned int)minimumOS;
+- (id)ovalIconURLString;
 - (id)redownloadParams;
 - (BOOL)supportsIPad;
 - (BOOL)supportsIPhone;

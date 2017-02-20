@@ -34,6 +34,7 @@
     NSPointerArray * _targetNodes;
     NSMutableDictionary * _uniformData;
     NSMutableArray * _uniforms;
+    BOOL  _usesPathLengthUniform;
     BOOL  _usesSpriteSizeUniform;
     BOOL  _usesTimeUniform;
 }
@@ -73,6 +74,7 @@
 - (void)_removeTargetNode:(id)arg1;
 - (void)_setUniformsDirty;
 - (id)_textureUniforms;
+- (BOOL)_usesPathLengthUniform;
 - (BOOL)_usesTimeUniform;
 - (void)addUniform:(id)arg1;
 - (id)attributes;

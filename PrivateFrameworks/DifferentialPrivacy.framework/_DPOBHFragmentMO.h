@@ -4,10 +4,10 @@
 
 @interface _DPOBHFragmentMO : _DPOBHSequenceMO
 
-@property (nonatomic, retain) NSString *fragment;
 @property (nonatomic) long long fragmentBitPosition;
 @property (nonatomic) BOOL fragmentBitValue;
 @property (nonatomic) short fragmentPosition;
 @property (nonatomic) short fragmentWidth;
+@property (nonatomic, copy) NSString *plainFragment;
 
 @end

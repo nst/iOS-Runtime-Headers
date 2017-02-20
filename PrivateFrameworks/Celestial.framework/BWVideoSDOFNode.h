@@ -2,50 +2,59 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWVideoSDOFNode : BWNode {
+@interface BWVideoSDOFNode : BWNode <BWDetectedFacesFilterDelegate> {
     struct __CVBuffer { } * _alphaBuffer;
     BOOL  _alwaysPreviewSDOFEffect;
-    double  _averageRenderDuration;
     float  _deltaShift;
+    NSMutableDictionary * _detectedFacesVisibility;
     BWFigVideoCaptureDevice * _device;
-    BOOL  _deviceFramerateThrottled;
     NSObject<OS_dispatch_queue> * _deviceQueue;
     struct opaqueCMFormatDescription { } * _formatDescription;
-    BOOL  _framerateThrottlingEnabled;
+    int  _frameratesByThermalPressureLevel;
+    int  _framesSinceLastStableFocus;
     struct _OpaqueCVAFusion { } * _fusionRef;
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    }  _lastInputPTS;
+    float  _lastDeviceFramerate;
     BWRamp * _lensApertureRamp;
-    unsigned long  _numFramesSinceLastSwitch;
+    struct { struct __CVBuffer {} *x1; unsigned int x2; BOOL x3; } * _mostRecentRelativeShiftBuffer;
     float  _rawFocusShift;
     BOOL  _receivedFirstFrameWithDepth;
-    struct __CVBuffer { } * _relativeShiftBuffer;
+    struct { 
+        struct __CVBuffer {} *buffer; 
+        unsigned int readCount; 
+        BOOL lockedForWriting; 
+    }  _relativeShiftBuffers;
+    int  _relativeShiftBuffersLock;
     NSObject<OS_dispatch_group> * _renderingGroup;
     BOOL  _sdofEffectEnabled;
     BWPixelBufferPool * _sdofOutputPool;
     BOOL  _setupDone;
     unsigned long  _shiftHeight;
     unsigned long  _shiftWidth;
-    int  _targetFramerate;
-    int  _throttledFramerate;
+    int  _thermalPressureNotificationToken;
+    BOOL  _thermalThrottlingEnabled;
     struct _OpaqueCVAVideoMatting { } * _videoMattingRef;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) BWPixelBufferPool *sdofOutputPool;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 
-- (void)_provideBackPressureIfNeededForRenderDuration:(double)arg1 sbufPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 didDropPDEBuffers:(BOOL)arg3 isTele:(BOOL)arg4;
+- (void)_filterFacesVisibility:(id)arg1;
+- (struct { struct __CVBuffer {} *x1; unsigned int x2; BOOL x3; }*)_lockRelativeShiftBufferForWriting:(BOOL)arg1;
+- (void)_registerForThermalNotificationsAndSetInitialDeviceFramerate;
 - (void)_setDeviceFramerate:(int)arg1;
 - (long)_setupCVA;
+- (void)_unlockRelativeShiftBuffer:(struct { struct __CVBuffer {} *x1; unsigned int x2; BOOL x3; }*)arg1 updated:(BOOL)arg2;
+- (void)_updateThermalPressureLevelAndSetDeviceFramerate;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
+- (void)filterDetectedFacesInSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (id)initWithCaptureDevice:(id)arg1;
 - (id)nodeSubType;
 - (id)nodeType;

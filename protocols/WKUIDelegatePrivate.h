@@ -6,6 +6,7 @@
 @optional
 
 - (NSArray *)_attachmentListForWebView:(WKWebView *)arg1;
+- (NSArray *)_attachmentListForWebView:(WKWebView *)arg1 sourceIsManaged:(BOOL*)arg2;
 - (NSDictionary *)_dataDetectionContextForWebView:(WKWebView *)arg1;
 - (UIViewController *)_presentingViewControllerForWebView:(WKWebView *)arg1;
 - (NSArray *)_webView:(WKWebView *)arg1 actionsForElement:(_WKActivatedElementInfo *)arg2 defaultActions:(NSArray *)arg3;

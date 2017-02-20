@@ -4,6 +4,7 @@
 
 @interface VSApplicationControllerRequest : NSObject {
     NSString * _SAMLRequest;
+    NSArray * _attributeNames;
     NSString * _authenticationToken;
     NSString * _requestorVerificationToken;
     int  _type;
@@ -11,6 +12,7 @@
 }
 
 @property (nonatomic, copy) NSString *SAMLRequest;
+@property (nonatomic, copy) NSArray *attributeNames;
 @property (nonatomic, copy) NSString *authenticationToken;
 @property (nonatomic, copy) NSString *requestorVerificationToken;
 @property (nonatomic) int type;
@@ -18,8 +20,10 @@
 
 - (void).cxx_destruct;
 - (id)SAMLRequest;
+- (id)attributeNames;
 - (id)authenticationToken;
 - (id)requestorVerificationToken;
+- (void)setAttributeNames:(id)arg1;
 - (void)setAuthenticationToken:(id)arg1;
 - (void)setRequestorVerificationToken:(id)arg1;
 - (void)setSAMLRequest:(id)arg1;

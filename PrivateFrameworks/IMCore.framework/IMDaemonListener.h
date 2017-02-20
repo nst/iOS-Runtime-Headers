@@ -103,6 +103,7 @@
 - (void)pinCodeAlertCompleted:(id)arg1 deviceName:(id)arg2 deviceType:(id)arg3 phoneNumber:(id)arg4 responseFromDevice:(BOOL)arg5 wasCancelled:(BOOL)arg6;
 - (id)properties;
 - (void)property:(id)arg1 changedTo:(id)arg2 from:(id)arg3;
+- (void)qosClassWhileServicingRequestsResponse:(unsigned int)arg1 identifier:(id)arg2;
 - (void)releaseHeldChatMessages;
 - (void)removeHandler:(id)arg1;
 - (void)service:(id)arg1 properties:(id)arg2 defaults:(id)arg3 defaultAccountSettings:(id)arg4 allAccounts:(id)arg5 activeAccounts:(id)arg6;

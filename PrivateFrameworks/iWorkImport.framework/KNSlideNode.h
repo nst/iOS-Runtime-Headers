@@ -80,7 +80,6 @@
 - (id)classicUniqueID;
 - (void)clearRemappedTableNames;
 - (void)clearSlideSpecificLinkMap;
-- (id)commandsToRemoveTableSlideSpecificHyperlinksForSlideNodeUUIDString:(id)arg1;
 - (void)dealloc;
 - (unsigned int)depth;
 - (id)descendants;

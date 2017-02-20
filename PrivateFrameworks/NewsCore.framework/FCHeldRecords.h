@@ -15,6 +15,8 @@
 @property (nonatomic, readonly) id onlyRecord;
 @property (nonatomic, retain) NSDictionary *recordsByID;
 
++ (id)heldRecordsByMerging:(id)arg1 with:(id)arg2;
+
 - (void).cxx_destruct;
 - (id)allRecordIDs;
 - (id)allRecords;
@@ -30,6 +32,7 @@
 - (id)recordsByID;
 - (void)setInterestTokensByID:(id)arg1;
 - (void)setRecordsByID:(id)arg1;
+- (id)transformRecordsByIDWithBlock:(id /* block */)arg1;
 - (id)transformRecordsInOrder:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)transformRecordsWithBlock:(id /* block */)arg1;
 

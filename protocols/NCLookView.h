@@ -5,7 +5,6 @@
 
 @required
 
-- (UIView *)colorInfusionView;
 - (struct CGSize { float x1; float x2; })contentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (UIView *)customContentView;
 - (NSDate *)date;
@@ -17,7 +16,6 @@
 - (BOOL)isDateAllDay;
 - (void)setBackgroundBlurred:(BOOL)arg1;
 - (void)setBanner:(BOOL)arg1;
-- (void)setColorInfusionView:(UIView *)arg1;
 - (void)setDate:(NSDate *)arg1;
 - (void)setDateAllDay:(BOOL)arg1;
 - (void)setDateFormatStyle:(int)arg1;

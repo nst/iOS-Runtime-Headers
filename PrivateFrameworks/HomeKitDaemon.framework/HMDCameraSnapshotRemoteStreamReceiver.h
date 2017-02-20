@@ -28,6 +28,6 @@
 - (id)relayReceiver;
 - (void)relayReceiver:(id)arg1 didReceiveFile:(id)arg2;
 - (void)setRelayReceiver:(id)arg1;
-- (void)snapShotSendFailed;
+- (void)snapShotSendFailed:(id)arg1;
 
 @end

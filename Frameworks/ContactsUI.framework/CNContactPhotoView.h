@@ -18,6 +18,7 @@
     PRLikeness * _originalLikeness;
     CNMutableContact * _pendingEditContact;
     <CNContactPhotoViewDelegate> * _photoViewDelegate;
+    UITapGestureRecognizer * _tapGestureRecognizer;
     NSArray * _variableConstraints;
 }
 
@@ -42,6 +43,7 @@
 @property (nonatomic) <CNContactPhotoViewDelegate> *photoViewDelegate;
 @property (nonatomic) BOOL prohibitsPersonaFetch;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, retain) NSArray *variableConstraints;
 
 + (BOOL)requiresConstraintBasedLayout;
@@ -118,7 +120,9 @@
 - (void)setPendingEditContact:(id)arg1;
 - (void)setPhotoViewDelegate:(id)arg1;
 - (void)setProhibitsPersonaFetch:(BOOL)arg1;
+- (void)setTapGestureRecognizer:(id)arg1;
 - (void)setVariableConstraints:(id)arg1;
+- (id)tapGestureRecognizer;
 - (void)updateAttributionBadge;
 - (void)updateConstraints;
 - (void)updateFontSizes;

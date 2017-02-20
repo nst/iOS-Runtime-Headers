@@ -3,12 +3,14 @@
  */
 
 @interface IMTranscriptPluginChatItem : IMMessagePartChatItem <IMPluginChatItemProtocol> {
+    NSString * _bundleIdentifier;
     IMBalloonPluginDataSource * _dataSource;
     BOOL  _hasSetIsLastChatItemOfPluginType;
     IMPluginPayload * _initialPayload;
     BOOL  _isLastChatItemOfPluginType;
 }
 
+@property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) IMBalloonPluginDataSource *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -29,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1 initialPayload:(id)arg2 messagePartRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (id)bundleIdentifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataSource;
 - (id)description;
@@ -40,6 +43,7 @@
 - (BOOL)isSaved;
 - (unsigned int)playbackType;
 - (id)pluginSessionGUID;
+- (void)setBundleIdentifier:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setHasSetIsLastChatItemOfPluginType:(BOOL)arg1;
 - (void)setInitialPayload:(id)arg1;

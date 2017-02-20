@@ -3,6 +3,7 @@
  */
 
 @interface CUINamedLookup : NSObject {
+    unsigned int  _distilledInVersion;
     CUIRenditionKey * _key;
     NSString * _name;
     unsigned int  _odContent;
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) BOOL representsOnDemandContent;
 
 - (BOOL)_cacheRenditionProperties;
+- (unsigned int)_distilledInVersion;
 - (id)_rendition;
 - (id)_renditionForSpecificKey:(id)arg1;
 - (void)dealloc;

@@ -14,9 +14,11 @@
 @property (nonatomic, readonly, copy) INSpeakableString *rideOptionName;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
+- (id)description;
 - (id)dropOffLocation;
 - (id)initWithPickupLocation:(id)arg1 dropOffLocation:(id)arg2 rideOptionName:(id)arg3 partySize:(id)arg4 paymentMethod:(id)arg5;
 - (id)partySize;

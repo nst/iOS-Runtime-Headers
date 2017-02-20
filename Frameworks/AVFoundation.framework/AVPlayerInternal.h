@@ -33,7 +33,6 @@
     struct OpaqueFigPlayer { } * figPlayer;
     BOOL  hadAssociatedOnscreenPlayerLayerWhenSuspended;
     BOOL  hostApplicationInForeground;
-    BOOL  iapdExtendedModeIsActive;
     NSMutableSet * items;
     NSArray * itemsInFigPlayQueue;
     NSObject<OS_dispatch_queue> * ivarAccessQueue;

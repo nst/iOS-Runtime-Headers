@@ -9,8 +9,7 @@
 
 @property (nonatomic) unsigned int desiredFieldOptions;
 
-+ (unsigned int)defaultFetchOperationCachePolicy;
-+ (double)defaultFetchOperationMaximumCachedAge;
++ (id)defaultCachePolicy;
 + (unsigned long long)highThresholdDataSizeLimit;
 + (unsigned long long)lowThresholdDataSizeLimit;
 + (id)recordType;

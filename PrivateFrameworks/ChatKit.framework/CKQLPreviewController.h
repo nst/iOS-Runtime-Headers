@@ -3,12 +3,15 @@
  */
 
 @interface CKQLPreviewController : QLPreviewController <QLPreviewControllerDataSource> {
+    BOOL  _controllerWasDismissed;
     NSArray * _previewItems;
 }
 
+@property (nonatomic) BOOL controllerWasDismissed;
 @property (nonatomic, copy) NSArray *previewItems;
 
 - (void).cxx_destruct;
+- (BOOL)controllerWasDismissed;
 - (id)currentPreviewItem;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)init;
@@ -18,6 +21,7 @@
 - (id)previewActions;
 - (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
 - (id)previewItems;
+- (void)setControllerWasDismissed:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setPreviewItems:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

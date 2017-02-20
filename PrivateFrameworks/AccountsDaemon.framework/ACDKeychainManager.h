@@ -8,7 +8,7 @@
 + (BOOL)_accountSyncItemExistsForServiceName:(id)arg1 username:(id)arg2;
 + (void)_accountTypeIdentifierFromComponents:(id)arg1 handler:(id /* block */)arg2;
 + (void)_createNoSyncOAuthTokens:(id)arg1 account:(id)arg2 clientID:(id)arg3;
-+ (id)_credentialForAccountWithID:(id)arg1 accountTypeID:(id)arg2 credentialType:(id)arg3 clientID:(id)arg4 options:(id)arg5 error:(id*)arg6;
++ (id)_credentialForAccountWithID:(id)arg1 accountTypeID:(id)arg2 credentialType:(id)arg3 clientID:(id)arg4 allowAdditionalAccountTypeSegment:(BOOL)arg5 options:(id)arg6 error:(id*)arg7;
 + (BOOL)_dataclassSyncItemExistsForServiceName:(id)arg1 username:(id)arg2;
 + (void)_fallbackToUnsyncedOAuthTokens:(id)arg1;
 + (id)_fetchOptionsForAccount:(id)arg1;
@@ -43,7 +43,7 @@
 + (id)keychainDeletedContactAccounts;
 + (id)keychainDeletedHostnameAccounts;
 + (id)keychainHostnameAccounts;
-+ (id)keychainServiceNameForClientID:(id)arg1 accountTypeIdentifier:(id)arg2 key:(id)arg3;
++ (id)keychainServiceNameForClientID:(id)arg1 accountTypeIdentifier:(id)arg2 additionalAccountTypeSegment:(id)arg3 key:(id)arg4;
 + (void)removeAccountSyncItemForAccount:(id)arg1 clientID:(id)arg2 properties:(id)arg3 error:(id*)arg4;
 + (void)removeCredentialForAccount:(id)arg1;
 + (void)removeCredentialForAccount:(id)arg1 clientID:(id)arg2;

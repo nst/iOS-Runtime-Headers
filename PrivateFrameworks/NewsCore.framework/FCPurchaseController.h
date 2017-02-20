@@ -17,6 +17,7 @@
 }
 
 @property (nonatomic, readonly) NSSet *allPurchasedTagIDs;
+@property (nonatomic, readonly) NSSet *allTagIDs;
 @property (nonatomic, retain) FCCloudContext *cloudContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -38,20 +39,23 @@
 - (id)_allPurchasedTagIDs;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_initializeAppStorePurchaseDiscoveredList;
+- (void)_notifyPurchaseListChangedWithTagIDs:(id)arg1;
 - (id)_ongoingPurchaseEntryIDForProductIdentifier:(id)arg1;
 - (id)_purchaseLookUpEntryIDForTagID:(id)arg1;
-- (void)_removeFromPurchasedChannelsListWithTagIDs:(id)arg1;
 - (id)_webAccessEntryIDForTagID:(id)arg1;
 - (void)addAppStoreDiscoveredChannelsToFavorites:(id)arg1;
 - (void)addAppStorePurchaseWithTagID:(id)arg1 purchaseID:(id)arg2;
+- (void)addExpiredPurchaseWithTagID:(id)arg1 purchaseID:(id)arg2 purchaseType:(unsigned int)arg3 isNewsAppPurchase:(BOOL)arg4 expirationDate:(id)arg5;
 - (void)addPurchaseWithTagID:(id)arg1 purchaseID:(id)arg2 purchaseType:(unsigned int)arg3 isNewsAppPurchase:(BOOL)arg4;
 - (void)addToPurchasedChannelsListWithEntry:(id)arg1;
 - (void)addToWebAccessEntryListWithEntry:(id)arg1;
 - (id)allAppStorePurchasedTagIDs;
 - (id)allAppStorePurchasedTagIDsByPurchaseID;
 - (id)allPurchasedTagIDs;
+- (id)allTagIDs;
 - (BOOL)atleastOneValidAppStorePurchase;
 - (void)checkIntegrityOfPurchaseWithID:(id)arg1 callbackQueue:(id)arg2 completion:(id /* block */)arg3;
+- (void)cleanupExpiredPurchaseLookupEntriesIfNeeded;
 - (void)cleanupStaleOngoingPurchaseEntries;
 - (void)clearAllAppStorePurchases;
 - (void)clearAllPurchases;
@@ -69,6 +73,7 @@
 - (void)handleAccessTokenVerificationSuccessWithTagID:(id)arg1 subscribed:(BOOL)arg2;
 - (void)handleWebAcccessFailureWithTagID:(id)arg1 purchaseID:(id)arg2 email:(id)arg3 purchaseReceipt:(id)arg4;
 - (void)handleWebAccessSuccessWithTagID:(id)arg1;
+- (void)hasShownRenewalNoticeForPurchasedChannelsListWithTagIDs:(id)arg1;
 - (id)init;
 - (id)initWithCloudContext:(id)arg1;
 - (BOOL)isPaidSubscriber;
@@ -117,7 +122,9 @@
 - (void)submitWebAccessWithTagID:(id)arg1 purchaseID:(id)arg2 emailAddress:(id)arg3 purchaseReceipt:(id)arg4 serialCompletion:(id /* block */)arg5 completion:(id /* block */)arg6;
 - (id)subscriptionNotSupportedChannelIDs;
 - (void)updatePurchaseEntryToExpired:(id)arg1;
+- (void)updatePurchaseEntryToExpiredForTagIDs:(id)arg1;
 - (void)updatePurchaseEntryToSubcsriptionNotSupported:(id)arg1;
+- (void)updatePurchaseEntryToValid:(id)arg1;
 - (void)userInfo:(id)arg1 didAddAccessTokenForTagID:(id)arg2;
 - (void)userInfo:(id)arg1 didChangeAccessTokenForTagID:(id)arg2;
 - (void)verifyAccessTokenWithTagID:(id)arg1 accessToken:(id)arg2 serialCompletion:(id /* block */)arg3 callbackQueue:(id)arg4 completion:(id /* block */)arg5;

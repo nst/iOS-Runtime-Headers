@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1 datasource:(id)arg2 statusText:(id)arg3 optionFlags:(unsigned int)arg4;
-- (void)configureStatusTextWithParticipants:(id)arg1 account:(id)arg2;
+- (void)configureStatusTextWithAccount:(id)arg1;
 - (id)dataSource;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

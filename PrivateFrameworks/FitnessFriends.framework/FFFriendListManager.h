@@ -48,6 +48,7 @@
 - (id)allDestinationsForActiveOrPendingFriends;
 - (void)dealloc;
 - (void)enumerateValidDisplayModesForFilter:(int)arg1 usingBlock:(id /* block */)arg2;
+- (void)fetchActivitySharingDataIfTimeSinceLastFetchIsGreaterThan:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (id)friendWithUUID:(id)arg1;
 - (BOOL)hasAnyFriendsSetup;
 - (BOOL)hasReachedMaxNumberOfFriends;

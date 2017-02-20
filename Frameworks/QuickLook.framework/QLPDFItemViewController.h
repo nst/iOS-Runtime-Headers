@@ -7,6 +7,7 @@
     BOOL  _isFullScreen;
     long  _lastSavedEditNumber;
     QLMUViewController * _markupViewController;
+    BOOL  _showingSignatureManagerView;
     BOOL  _showingSignatureView;
     float  _topInset;
 }
@@ -31,8 +32,10 @@
 - (void)buttonPressedWithIdentifier:(id)arg1;
 - (BOOL)canEnterFullScreen;
 - (BOOL)canPinchToDismiss;
+- (BOOL)canRotate;
 - (BOOL)canShowToolBar;
 - (BOOL)canSwipeToDismiss;
+- (BOOL)controller:(id)arg1 shouldOpenLinkAtURL:(id)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customEdgeInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customSketchOverlayInsets;
 - (BOOL)hasChangesToUndo;
@@ -46,6 +49,7 @@
 - (void)setHasChangesToUndo:(BOOL)arg1;
 - (void)setTopInset:(float)arg1;
 - (BOOL)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (void)showingSignatureManagerView:(BOOL)arg1;
 - (void)showingSignatureView:(BOOL)arg1;
 - (id)toolbarButtons;
 - (float)topInset;

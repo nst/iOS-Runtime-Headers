@@ -38,6 +38,7 @@
 - (id)allNotificationRequests;
 - (void)clearAllSections;
 - (void)clearSectionWithIdentifier:(id)arg1;
+- (id)dateForSectionIdentifier:(id)arg1;
 - (id)debugDescription;
 - (id)delegate;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

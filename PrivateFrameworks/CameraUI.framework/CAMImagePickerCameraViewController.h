@@ -12,6 +12,7 @@
     NSDictionary * _mostRecentPhotoProperties;
     NSDictionary * _mostRecentVideoProperties;
     int  _photoSavingOptions;
+    BOOL  _statusBarWasHidden;
     BOOL  _usingTelephonyUI;
     BOOL  _videoEditingAllowed;
 }
@@ -32,6 +33,7 @@
 @property (getter=_mostRecentVideoProperties, setter=_setMostRecentVideoProperties:, nonatomic, copy) NSDictionary *mostRecentVideoProperties;
 @property (getter=_photoSavingOptions, setter=_setPhotoSavingOptions:, nonatomic) int photoSavingOptions;
 @property (getter=isShowingStandardControls, nonatomic) BOOL showingStandardControls;
+@property (getter=_statusBarWasHidden, setter=_setStatusBarWasHidden:, nonatomic) BOOL statusBarWasHidden;
 @property (readonly) Class superclass;
 @property (getter=_isUsingTelephonyUI, setter=_setUsingTelephonyUI:, nonatomic) BOOL usingTelephonyUI;
 @property (getter=_isVideoEditingAllowed, setter=_setVideoEditingAllowed:, nonatomic) BOOL videoEditingAllowed;
@@ -80,10 +82,12 @@
 - (void)_setMostRecentVideoProperties:(id)arg1;
 - (void)_setPhotoSavingOptions:(int)arg1;
 - (void)_setShowsCameraControls:(BOOL)arg1;
+- (void)_setStatusBarWasHidden:(BOOL)arg1;
 - (void)_setUsingTelephonyUI:(BOOL)arg1;
 - (void)_setVideoEditingAllowed:(BOOL)arg1;
 - (BOOL)_showsCameraControls;
 - (BOOL)_startVideoCapture;
+- (BOOL)_statusBarWasHidden;
 - (void)_stopVideoCapture;
 - (void)_takePicture;
 - (void)_updateFromEditabilityChange;
@@ -118,5 +122,6 @@
 - (void)videoViewIsReadyToBeginPlayback:(id)arg1;
 - (float)videoViewScrubberYOrigin:(id)arg1 forOrientation:(int)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

@@ -38,7 +38,7 @@
     double  _distanceWhenPrepareAnnounced;
     double  _estimateOfTimeToSpeakExecutionAnnouncement;
     int  _guidanceState;
-    double  _lastUpdateTime;
+    GEORouteMatch * _lastRouteMatch;
     double  _minExecutionDistance;
     MNNavigationSession * _navigationSession;
     unsigned int  _pointIndexForCurrentRoadInfo;

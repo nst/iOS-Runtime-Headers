@@ -52,7 +52,6 @@
 - (void)_updateForArrival;
 - (void)_updateForLocation:(id)arg1;
 - (void)_updateForReroute:(id)arg1;
-- (void)_updateForTunnelProjection:(id)arg1 coord:(struct { double x1; double x2; })arg2;
 - (void)_updateShouldLocalizeRoadNames;
 - (void)_updateStateForLocation:(id)arg1;
 - (void)_updateSwitchTransportTypeForLocation:(id)arg1;

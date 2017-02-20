@@ -18,9 +18,9 @@
 - (id)_group;
 - (id)_repopulateStackViewWithWidgetIdentifiers:(id)arg1 forColumnMode:(int)arg2;
 - (id)footerView;
-- (void)invalidateWidgetBackgroundViews;
 - (void)orderOfVisibleWidgetsDidChange:(id)arg1;
 - (void)presentEditView:(id)arg1;
+- (void)setShouldBlurContent:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visibleWidgetIdentifiersForColumnMode:(int)arg1;
 - (void)widgetDiscoveryController:(id)arg1 widgetWithIdentifier:(id)arg2 shouldBecomeHiddenInGroup:(id)arg3;

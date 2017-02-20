@@ -4,6 +4,7 @@
 
 @interface SAUserActivity : SADomainObject
 
+@property (nonatomic, copy) NSArray *eligibileFunctions;
 @property (nonatomic, copy) NSString *internalGUID;
 @property (nonatomic) BOOL isEligibleForAppPunchout;
 @property (nonatomic) BOOL isEligibleForDirections;
@@ -15,6 +16,7 @@
 + (id)userActivity;
 + (id)userActivityWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)eligibileFunctions;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)internalGUID;
@@ -24,6 +26,7 @@
 - (BOOL)isEligibleForPublicIndexing;
 - (BOOL)isEligibleForReminders;
 - (BOOL)isEligibleForSearch;
+- (void)setEligibileFunctions:(id)arg1;
 - (void)setInternalGUID:(id)arg1;
 - (void)setIsEligibleForAppPunchout:(BOOL)arg1;
 - (void)setIsEligibleForDirections:(BOOL)arg1;

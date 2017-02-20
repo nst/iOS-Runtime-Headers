@@ -27,8 +27,10 @@
 + (id)_bagValueForKey:(id)arg1;
 + (double)_localTimeIntervalToServerTimeInterval:(double)arg1;
 + (id)_resolvedIPAddressFromTask:(id)arg1;
++ (BOOL)_shouldCreateLocalCache;
 + (double)_timingDataMetricToServerTimeInterval:(id)arg1;
 + (id)eventFromTimingData:(id)arg1 task:(id)arg2;
++ (id)eventFromTimingData:(id)arg1 task:(id)arg2 error:(id)arg3;
 
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

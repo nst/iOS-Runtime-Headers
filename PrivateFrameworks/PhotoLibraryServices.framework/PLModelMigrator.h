@@ -55,6 +55,7 @@
 + (BOOL)_fixLocalPathForVideoCmplDerivativesInStore:(id)arg1;
 + (BOOL)_fixLocallyAvailableFlagForThumbnailsInStore:(id)arg1;
 + (BOOL)_fixMemoriesWithAssetLists:(id)arg1;
++ (BOOL)_fixMergedPeopleThatShouldBeVerified:(id)arg1;
 + (BOOL)_fixNonDuplicatedAssets:(id)arg1 adjusted:(BOOL)arg2;
 + (void)_fixPathForResource:(id)arg1 withPath:(id)arg2;
 + (BOOL)_fixPersonAndFaceGroup:(id)arg1;
@@ -155,6 +156,7 @@
 + (BOOL)_resetThumbnailsAndInitiateRebuildRequestIfNeeded;
 + (BOOL)_resetUploadAttempts:(id)arg1;
 + (BOOL)_saveChangesToPhotoIrisInStore:(id)arg1 matchingPredicate:(id)arg2 countChanged:(unsigned int*)arg3 error:(id*)arg4 changeBlock:(id /* block */)arg5;
++ (void)_setIsPostProcessingLightWeightMigration:(BOOL)arg1;
 + (void)_setLastWelcomedDBVersion;
 + (BOOL)_setUserTypeOnKeyFace:(id)arg1;
 + (BOOL)_setupRootFolderInStore:(id)arg1;

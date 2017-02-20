@@ -69,9 +69,6 @@
 - (int)StringAsParticipantType:(id)arg1;
 - (int)StringAsPermission:(id)arg1;
 - (int)StringAsState:(id)arg1;
-- (id)_participantTypeCKLogValue;
-- (id)_permissionCKLogValue;
-- (id)_stateCKLogValue;
 - (long long)acceptTimestamp;
 - (BOOL)acceptedInProcess;
 - (id)contactInformation;

@@ -11,9 +11,8 @@
 }
 
 @property (nonatomic, copy) NSString *address;
-@property (nonatomic) struct CLLocationCoordinate2D { double x1; double x2; } coordinate;
 @property (nonatomic, readonly) BOOL hasKnownSpatialData;
-@property (nonatomic, retain) NSData *mapItemHandle;
+@property (nonatomic, copy) NSData *mapItemHandle;
 @property (nonatomic, readonly) NSString *shallowDescription;
 @property (nonatomic, copy) NSString *title;
 
@@ -21,7 +20,6 @@
 
 - (id /* block */).cxx_destruct;
 - (id)address;
-- (struct CLLocationCoordinate2D { double x1; double x2; })coordinate;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasKnownSpatialData;
 - (id)init;
@@ -29,7 +27,6 @@
 - (id)initWithTitle:(id)arg1;
 - (id)mapItemHandle;
 - (void)setAddress:(id)arg1;
-- (void)setCoordinate:(struct CLLocationCoordinate2D { double x1; double x2; })arg1;
 - (void)setMapItemHandle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)shallowDescription;

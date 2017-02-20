@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) NSString *endpointConnectionClientID;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL iCloudAccountChanged;
+@property (nonatomic, readonly) BOOL isContentStoreFrontSupported;
 @property (nonatomic, copy) NSString *overrideContentStoreFrontID;
 @property (getter=isPrivateDataSyncingEnabled, nonatomic, readonly) BOOL privateDataSyncingEnabled;
 @property (readonly) Class superclass;
@@ -37,6 +38,7 @@
 - (BOOL)iCloudAccountChanged;
 - (id)iTunesAccountName;
 - (id)init;
+- (BOOL)isContentStoreFrontSupported;
 - (BOOL)isPrivateDataSyncingEnabled;
 - (BOOL)isUserSignedInToiCloud;
 - (BOOL)isUserSignedIntoiTunes;

@@ -2,46 +2,19 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCameraStreamMetrics : HMDLogEvent <HMDAWDLogEvent> {
-    HMDAccessory * _accessory;
-    BOOL  _isLocal;
-    NSMutableArray * _resolutionTypes;
-    NSString * _sessionID;
-    BOOL  _streamStarted;
-    double  _timeStreamStarted;
+@interface HMDCameraStreamMetrics : NSObject {
+    HMDCameraMetricsStreamLogEvent * _cameraStreamMetricsLogEvent;
+    NSError * _error;
 }
 
-@property (nonatomic, readonly) HMDAccessory *accessory;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) BOOL isLocal;
-@property (nonatomic, readonly) NSMutableArray *resolutionTypes;
-@property (nonatomic, readonly) NSString *sessionID;
-@property (getter=isStreamStarted, nonatomic) BOOL streamStarted;
-@property (readonly) Class superclass;
-@property (nonatomic) double timeStreamStarted;
-
-+ (id)cameraStreamMetricWithID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(BOOL)arg3;
-+ (void)initialize;
-+ (id)uuid;
+@property (nonatomic, readonly) HMDCameraMetricsStreamLogEvent *cameraStreamMetricsLogEvent;
+@property (nonatomic, retain) NSError *error;
 
 - (void).cxx_destruct;
-- (unsigned int)AWDMessageType;
-- (id)accessory;
-- (id)initWithID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(BOOL)arg3;
-- (BOOL)isLocal;
-- (BOOL)isStreamStarted;
-- (id)metricForAWD;
-- (void)negotiationComplete:(id)arg1;
-- (void)reportError:(id)arg1;
-- (id)resolutionTypes;
-- (id)sessionID;
-- (void)setStreamStarted:(BOOL)arg1;
-- (void)setTimeStreamStarted:(double)arg1;
-- (double)startDelay;
-- (void)streamStarted;
-- (void)streamStopped;
-- (double)timeStreamStarted;
+- (id)cameraStreamMetricsLogEvent;
+- (void)dealloc;
+- (id)error;
+- (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(BOOL)arg3;
+- (void)setError:(id)arg1;
 
 @end

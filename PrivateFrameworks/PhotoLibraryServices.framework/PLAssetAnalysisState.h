@@ -37,7 +37,7 @@
 + (void)removeAnalysisRecordsWithNoAssetUUID;
 + (void)requestAnalysisCountsWithCompletion:(id /* block */)arg1;
 + (void)requestCountOfAnalysisRecordsForDeletedAssetsWithCompletion:(id /* block */)arg1;
-+ (void)requestTotalProgressCountsWithCompletion:(id /* block */)arg1;
++ (void)requestTotalProgressCountsForWorkerType:(short)arg1 states:(id)arg2 completion:(id /* block */)arg3;
 + (BOOL)resetPendingStatesWithError:(id*)arg1;
 + (id)supportedWorkerTypes;
 + (id)workInfoForAnalysisWithWorkerType:(short)arg1 additionalStatesToExclude:(id)arg2 fetchLimit:(unsigned int)arg3 inLibrary:(id)arg4 error:(id*)arg5;

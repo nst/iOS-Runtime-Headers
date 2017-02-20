@@ -7,7 +7,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void)widgetActiveDisplayModeDidChangeWithActiveDisplayMode:(int)arg1 withMaximumSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)widgetPerformUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)widgetActiveDisplayModeDidChange:(int)arg1 withMaximumSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)widgetPerformUpdate:(id /* block */)arg1;
 
 @end

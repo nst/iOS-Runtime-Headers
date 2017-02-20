@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSXMLHTTPRequest : IKJSEventListenerObject <IKJSXMLHTTPRequest, ISStoreURLOperationDelegate> {
+@interface IKJSXMLHTTPRequest : IKJSEventListenerObject <IKJSXMLHTTPRequest, ISStoreURLOperationDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegate> {
     BOOL  _async;
     NSString * _dataToSend;
     BOOL  _inProgress;
@@ -31,6 +31,8 @@
     NSURLConnection * _urlConnection;
     NSMutableURLRequest * _urlRequest;
     NSHTTPURLResponse * _urlResponse;
+    NSURLSession * _urlSession;
+    NSURLSessionConfiguration * _urlSessionConfiguration;
     NSString * _user;
     unsigned long  timeout;
 }
@@ -67,17 +69,28 @@
 @property (nonatomic, retain) NSURLConnection *urlConnection;
 @property (nonatomic, retain) NSMutableURLRequest *urlRequest;
 @property (nonatomic, retain) NSHTTPURLResponse *urlResponse;
+@property (nonatomic, retain) NSURLSession *urlSession;
+@property (nonatomic, copy) NSURLSessionConfiguration *urlSessionConfiguration;
 @property (nonatomic, retain) NSString *user;
 
 + (id)xhrOperationQueue;
 
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_abort;
 - (void)_clearAllReadyStateChangeMessagesAndSquashFutureOnes;
 - (id)_constructProgressEventData;
 - (id)_createStoreOperation:(id)arg1;
 - (id)_dequeueReadyStateChangeMessage;
 - (BOOL)_isPrimeError:(int)arg1 output:(id)arg2;
+- (void)_loadingDidFailWithError:(id)arg1;
+- (void)_loadingDidFinish;
+- (void)_loadingDidReceiveData:(id)arg1;
+- (void)_loadingDidReceiveResponse:(id)arg1;
+- (id)_loadingWillSendRequest:(id)arg1 redirectResponse:(id)arg2;
 - (void)_openWithMethod:(id)arg1 url:(id)arg2 async:(BOOL)arg3 user:(id)arg4 password:(id)arg5;
 - (void)_operationFinished:(id)arg1;
 - (void)_prime:(id)arg1;
@@ -149,6 +162,8 @@
 - (void)setUrlConnection:(id)arg1;
 - (void)setUrlRequest:(id)arg1;
 - (void)setUrlResponse:(id)arg1;
+- (void)setUrlSession:(id)arg1;
+- (void)setUrlSessionConfiguration:(id)arg1;
 - (void)setUser:(id)arg1;
 - (unsigned int)status;
 - (id)statusText;
@@ -156,6 +171,8 @@
 - (id)urlConnection;
 - (id)urlRequest;
 - (id)urlResponse;
+- (id)urlSession;
+- (id)urlSessionConfiguration;
 - (id)user;
 
 @end

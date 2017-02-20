@@ -31,5 +31,6 @@
 - (oneway void)stopRecordingWithHandler:(id /* block */)arg1;
 - (oneway void)stopRecordingWithStartClipDuration:(double)arg1 endClipDuration:(double)arg2 handler:(id /* block */)arg3;
 - (oneway void)updateBroadcastServiceInfo:(id)arg1;
+- (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
 
 @end

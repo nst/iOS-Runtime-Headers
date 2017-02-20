@@ -16,6 +16,7 @@
     NSMutableSet * _checkedOutTiles;
     <PXMemoriesFeedWidgetViewControllerDelegate> * _delegate;
     BOOL  _hasAnyMemories;
+    BOOL  _hasAppeared;
     id /* block */  _refreshMemoriesCompletionHandler;
     int  _waitForDataSourceChangeRequestDismissalID;
 }
@@ -70,6 +71,7 @@
 - (void)invalidateReferenceSize;
 - (void)loadView;
 - (void)memoriesFeedViewControllerHelper:(id)arg1 configureMetrics:(id)arg2;
+- (BOOL)memoriesFeedViewControllerHelperFeedIsVisible:(id)arg1;
 - (id)memoriesFeedViewControllerHelperReloadedTileKindsOnObjectChanged:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
 - (void)refreshMemoriesWithCompletionHandler:(id /* block */)arg1;
@@ -77,6 +79,7 @@
 - (void)setHasAnyMemories:(BOOL)arg1;
 - (int)userInterfaceFeature;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillLayoutSubviews;
 

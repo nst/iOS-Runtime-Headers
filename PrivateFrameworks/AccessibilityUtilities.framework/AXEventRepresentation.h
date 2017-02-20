@@ -26,6 +26,7 @@
         float y; 
     }  _location;
     int  _pid;
+    BOOL  _redirectEvent;
     long long  _scrollAmount;
     unsigned long long  _senderID;
     int  _subtype;
@@ -73,6 +74,7 @@
 @property (nonatomic, retain) AXEventKeyInfoRepresentation *keyInfo;
 @property (nonatomic) struct CGPoint { float x1; float x2; } location;
 @property (nonatomic) int pid;
+@property (getter=isRedirectEvent, nonatomic) BOOL redirectEvent;
 @property (nonatomic) long long scrollAmount;
 @property (nonatomic) unsigned long long senderID;
 @property (nonatomic) int subtype;
@@ -97,6 +99,7 @@
 + (id)representationWithData:(id)arg1;
 + (id)representationWithEventRecord:(struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned long long x11; unsigned char x12[0]; }*)arg1;
 + (id)representationWithHIDEvent:(struct __IOHIDEvent { }*)arg1 hidStreamIdentifier:(id)arg2;
++ (id)representationWithHIDEvent:(struct __IOHIDEvent { }*)arg1 hidStreamIdentifier:(id)arg2 clientID:(id)arg3 taskPort:(unsigned int)arg4;
 + (id)representationWithLocation:(struct CGPoint { float x1; float x2; })arg1 windowLocation:(struct CGPoint { float x1; float x2; })arg2 handInfo:(id)arg3;
 + (id)representationWithType:(unsigned int)arg1 subtype:(int)arg2 time:(unsigned long long)arg3 location:(struct CGPoint { float x1; float x2; })arg4 windowLocation:(struct CGPoint { float x1; float x2; })arg5 handInfo:(id)arg6;
 + (BOOL)supportsSecureCoding;
@@ -148,6 +151,7 @@
 - (BOOL)isInRangeLift;
 - (BOOL)isLift;
 - (BOOL)isMove;
+- (BOOL)isRedirectEvent;
 - (BOOL)isTouchDown;
 - (BOOL)isUpdate;
 - (id)keyInfo;
@@ -183,6 +187,7 @@
 - (void)setKeyInfo:(id)arg1;
 - (void)setLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPid:(int)arg1;
+- (void)setRedirectEvent:(BOOL)arg1;
 - (void)setScrollAmount:(long long)arg1;
 - (void)setSenderID:(unsigned long long)arg1;
 - (void)setSubtype:(int)arg1;

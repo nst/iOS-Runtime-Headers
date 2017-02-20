@@ -154,6 +154,10 @@
 - (id)initCellularPlanDatabaseClient;
 - (id)initVinylTestClient;
 
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (id)sgd_clientName;
+
 // Image: /System/Library/PrivateFrameworks/Pegasus.framework/Pegasus
 
 - (id)PG_remoteObjectProxyWithDebugMethodAndPointerProem:(id)arg1;

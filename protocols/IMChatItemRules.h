@@ -9,7 +9,6 @@
 - (NSArray *)_chatItemsForItem:(IMItem *)arg1 previousItem:(IMItem *)arg2;
 - (void)_didProcessChatItems:(NSMutableArray *)arg1;
 - (id)_initWithChat:(IMChat *)arg1;
-- (void)_invalidate;
 - (IMItem *)_itemWithChatItemsDeleted:(NSArray *)arg1 fromItem:(IMItem *)arg2;
 - (NSArray *)_items;
 - (IMChatItem *)_nextStaleChatItem;

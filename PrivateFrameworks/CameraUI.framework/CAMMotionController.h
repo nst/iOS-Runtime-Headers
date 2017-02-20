@@ -19,7 +19,6 @@
 @property (readonly, copy) NSString *description;
 @property (setter=_setDominantPhysicalButton:, nonatomic) int dominantPhysicalButton;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int interfaceOrientation;
 @property (nonatomic, readonly) int panoramaCaptureOrientation;
 @property (readonly) Class superclass;
 
@@ -42,7 +41,6 @@
 - (int)dominantPhysicalButton;
 - (void)endGeneratingDominantPhysicalButtonNotifications;
 - (id)init;
-- (int)interfaceOrientation;
 - (int)panoramaCaptureOrientation;
 
 @end

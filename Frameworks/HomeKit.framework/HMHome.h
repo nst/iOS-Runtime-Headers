@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMHome : NSObject <HFCharacteristicValueReader, HFCharacteristicValueWriter, HFReorderableHomeKitObject, HFWallaperHost, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding, _HMLocationHandlerDelegate> {
+@interface HMHome : NSObject <HFCharacteristicValueReader, HFCharacteristicValueWriter, HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HFWallaperHost, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding, _HMLocationHandlerDelegate> {
     BOOL  _adminUser;
     HMApplicationData * _applicationData;
     NSObject<OS_dispatch_queue> * _clientQueue;
@@ -125,6 +125,7 @@
 - (void)_executeActionSet:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_getContainerForAppData:(id)arg1;
 - (void)_handleAccessoryAddedNotification:(id)arg1;
+- (void)_handleAccessoryInfoUpdatedNotification:(id)arg1;
 - (void)_handleAccessoryRemovedNotification:(id)arg1;
 - (void)_handleActionSetAddedNotification:(id)arg1;
 - (void)_handleActionSetRemovedNotification:(id)arg1;
@@ -384,11 +385,13 @@
 - (BOOL)hf_isCurrentLocationHome;
 - (BOOL)hf_isUserAtHome;
 - (id)hf_notesApplicationData;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
 - (unsigned int)hf_remoteAccessState;
 - (id)hf_reorderableActionSetsList;
 - (id)hf_reorderableRoomsList;
 - (id)hf_reorderableServicesList;
 - (id)hf_roomWithIdentifier:(id)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 - (id)hf_serviceGroupsForService:(id)arg1;
 - (id)hf_serviceWithIdentifier:(id)arg1;
 - (id)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:(BOOL)arg1;

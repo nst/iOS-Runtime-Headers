@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, copy) NSArray *sources;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *syncReason;
 @property (nonatomic, copy) NSArray *watchAppMetaDataList;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
@@ -31,12 +32,15 @@
 - (void)setCustomVocabSources:(id)arg1;
 - (void)setIncludeAllKnownAnchors:(BOOL)arg1;
 - (void)setSources:(id)arg1;
+- (void)setSyncReason:(id)arg1;
 - (void)setWatchAppMetaDataList:(id)arg1;
 - (id)sources;
+- (id)syncReason;
 - (id)watchAppMetaDataList;
 
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
 - (BOOL)siriCore_bufferingAllowedDuringActiveSession;
+- (BOOL)siriCore_isRetryable;
 
 @end

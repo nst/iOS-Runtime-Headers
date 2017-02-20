@@ -46,7 +46,7 @@
 - (id)_iconImageDataForDate:(id)arg1 calendar:(id)arg2;
 - (void)_receivedHypothesis:(id)arg1 forEventWithExternalURL:(id)arg2;
 - (void)_recordDisplayOfInitialTimeToLeaveAlert;
-- (void)_recordDisplayOfInitialTimeToLeaveAlertWithDate:(id)arg1 event:(id)arg2 hypothesis:(id)arg3;
+- (void)_recordDisplayOfInitialTimeToLeaveAlertWithDate:(id)arg1 event:(id)arg2 hypothesis:(id)arg3 wasFoundInApps:(BOOL)arg4;
 - (void)_recordUpcomingEventAlertSuppression;
 - (void)_refreshTimerFired:(id)arg1;
 - (void)_removeRefreshTimerForEventWithExternalURL:(id)arg1;

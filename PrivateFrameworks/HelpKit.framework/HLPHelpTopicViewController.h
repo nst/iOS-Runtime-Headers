@@ -6,6 +6,7 @@
     BOOL  _RTL;
     HLPURLSession * _URLSession;
     UIBarButtonItem * _backBarButtonItem;
+    BOOL  _canShowTOC;
     HLPHelpTopicHistoryItem * _currentTopicHistoryItem;
     <HLPHelpTopicViewControllerDelegate> * _delegate;
     BOOL  _displayHelpTopicsOnly;
@@ -85,6 +86,7 @@
 - (void)updateNavigationButtons;
 - (void)updateScrollPositionForCurrentTopicItem;
 - (id)usageController;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

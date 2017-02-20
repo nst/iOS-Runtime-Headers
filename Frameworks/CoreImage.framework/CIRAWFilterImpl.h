@@ -15,12 +15,10 @@
         float width; 
         float height; 
     }  _nativeSize;
-    NSArray * _neutralColour;
     NSDictionary * _rawDictionary;
     NSDictionary * _rawReconstructionDefaultsDictionary;
     NSArray * _supportedDecoderVersions;
     NSArray * _supportedSushiModes;
-    CIImage * _tempImage;
     NSObject * _typeIdentifierHint;
     NSNumber * inputBaselineExposure;
     NSNumber * inputBias;
@@ -102,8 +100,8 @@
 - (id)defaultNeutralTemperature;
 - (id)defaultNeutralTint;
 - (id)filters;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getOrientationTransform;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getScaleTransform;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getOrientationTransform:(id)arg1;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })getScaleTransform:(id)arg1;
 - (void)getWhitePointVectorsR:(id*)arg1 g:(id*)arg2 b:(id*)arg3;
 - (id)init;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer { }*)arg1 properties:(id)arg2 options:(id)arg3;
@@ -175,6 +173,7 @@
 - (id)supportedDecoderVersions;
 - (id)supportedSushiModes;
 - (id)sushiMode;
+- (id)transformedImageIgnoringOrientation:(BOOL)arg1;
 - (void)updateChomaticityXAndY;
 - (void)updateTemperatureAndTint;
 - (id)whitePoint;

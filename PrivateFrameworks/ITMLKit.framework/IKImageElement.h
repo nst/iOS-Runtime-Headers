@@ -2,23 +2,34 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKImageElement : IKViewElement {
-    NSURL * _defaultURL;
+@interface IKImageElement : IKViewElement <IKAppDocumentStyleChangeObserving> {
     unsigned int  _imageType;
+    NSURL * _resolvedURL;
     float  _srcHeight;
     float  _srcWidth;
     NSDictionary * _srcset;
+    NSArray * _srcsetRules;
 }
 
 @property (nonatomic, readonly) UIColor *borderColor;
-@property (nonatomic, retain) NSURL *defaultURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) int fill;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) float height;
 @property (nonatomic, readonly) unsigned int imageType;
 @property (nonatomic, readonly, retain) NSURL *placeholderURL;
 @property (nonatomic, readonly) unsigned int position;
 @property (nonatomic, readonly) int reflect;
+@property (nonatomic, retain) NSURL *resolvedURL;
 @property (nonatomic, readonly, retain) NSDictionary *srcset;
+@property (nonatomic, retain) NSArray *srcsetRules;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) TVImageProxy *tv_imageProxy;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } tv_imageScaleToSize;
+@property (nonatomic, readonly) int tv_imageType;
+@property (nonatomic, readonly) BOOL tv_isResource;
+@property (nonatomic, readonly) UIImage *tv_resourceImage;
 @property (nonatomic, readonly) NSURL *url;
 @property (nonatomic, readonly) float width;
 
@@ -28,8 +39,9 @@
 
 - (void).cxx_destruct;
 - (unsigned int)_imageTypeForTagName:(id)arg1;
+- (void)_parseSrcset:(id)arg1;
+- (void)appDocumentDidMarkStylesDirty;
 - (id)borderColor;
-- (id)defaultURL;
 - (int)fill;
 - (float)height;
 - (unsigned int)imageType;
@@ -37,10 +49,23 @@
 - (id)placeholderURL;
 - (unsigned int)position;
 - (int)reflect;
-- (void)setDefaultURL:(id)arg1;
+- (id)resolvedURL;
+- (void)setResolvedURL:(id)arg1;
+- (void)setSrcsetRules:(id)arg1;
 - (id)srcset;
+- (id)srcsetRules;
 - (id)url;
 - (float)width;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (void)_imageProxy:(id*)arg1 andScaleToSize:(struct CGSize { float x1; float x2; }*)arg2;
+- (id)tv_associatedViewElement;
+- (id)tv_imageProxy;
+- (struct CGSize { float x1; float x2; })tv_imageScaleToSize;
+- (int)tv_imageType;
+- (BOOL)tv_isResource;
+- (id)tv_resourceImage;
 
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 

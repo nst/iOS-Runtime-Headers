@@ -15,7 +15,7 @@
 + (void)end;
 
 - (void)didFetchResultSuggested:(BOOL)arg1;
-- (void)didSelectResultSuggested:(BOOL)arg1;
+- (void)didSelectResult:(id)arg1;
 - (BOOL)pendingResults;
 - (BOOL)pendingSuggestionsResults;
 - (void)searchStringDidChange;

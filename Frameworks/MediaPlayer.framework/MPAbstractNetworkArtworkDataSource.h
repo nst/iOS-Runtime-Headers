@@ -5,17 +5,17 @@
 @interface MPAbstractNetworkArtworkDataSource : NSObject <MPArtworkDataSource, NSURLSessionDataDelegate> {
     NSURLSession * _URLSession;
     NSObject<OS_dispatch_queue> * _accessQueue;
-    NSCache * _artworkRepresentationCache;
     NSMapTable * _catalogTaskMap;
+    NSCache * _fallbackArtworkRepresentationCache;
 }
 
 @property (nonatomic, retain) NSURLSession *URLSession;
 @property (nonatomic, readonly) NSURLSessionConfiguration *URLSessionConfiguration;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *accessQueue;
-@property (nonatomic, retain) NSCache *artworkRepresentationCache;
 @property (nonatomic, retain) NSMapTable *catalogTaskMap;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSCache *fallbackArtworkRepresentationCache;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
@@ -30,20 +30,20 @@
 - (void)_performSyncBlock:(id /* block */)arg1;
 - (id)accessQueue;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
-- (id)artworkRepresentationCache;
 - (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
 - (id)catalogTaskMap;
 - (id)existingArtworkEffectResultForEffectType:(int)arg1 catalog:(id)arg2 options:(id)arg3;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
+- (id)fallbackArtworkRepresentationCache;
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (void)loadArtworkEffectResultForEffectType:(int)arg1 catalog:(id)arg2 options:(id)arg3 systemEffectHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)requestForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)setAccessQueue:(id)arg1;
-- (void)setArtworkRepresentationCache:(id)arg1;
 - (void)setCatalogTaskMap:(id)arg1;
+- (void)setFallbackArtworkRepresentationCache:(id)arg1;
 - (void)setURLSession:(id)arg1;
 - (BOOL)shouldLookForLargerRepresentationsWhenBestRepresentationIsUnavailable;
 - (id)sortedSupportedSizesForCatalog:(id)arg1;

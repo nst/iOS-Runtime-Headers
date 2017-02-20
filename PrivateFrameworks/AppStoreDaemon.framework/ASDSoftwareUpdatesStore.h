@@ -24,6 +24,7 @@
 - (BOOL)hasEntitlement;
 - (void)hideApplicationBadgeForPendingUpdates;
 - (id)init;
+- (void)refreshUpdateCountWithCompletionBlock:(id /* block */)arg1;
 - (void)reloadForSettingsFromServerWithCompletionBlock:(id /* block */)arg1;
 - (void)reloadFromServerInBackgroundWithCompletionBlock:(id /* block */)arg1;
 - (void)reloadFromServerWithCompletionBlock:(id /* block */)arg1;

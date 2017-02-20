@@ -4,14 +4,12 @@
 
 @interface AKHighlightAnnotation : AKAnnotation <AKParentAnnotationProtocol> {
     UIColor * _color;
-    NSString * _contents;
     NSArray * _quadPoints;
     unsigned int  _style;
 }
 
 @property AKAnnotation *childAnnotation;
 @property (retain) UIColor *color;
-@property (copy) NSString *contents;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -26,7 +24,6 @@
 
 - (void).cxx_destruct;
 - (id)color;
-- (id)contents;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
 - (void)flattenModelExifOrientation:(int)arg1 withModelSize:(struct CGSize { float x1; float x2; })arg2;
@@ -36,7 +33,6 @@
 - (id)keysForValuesToObserveForUndo;
 - (id)quadPoints;
 - (void)setColor:(id)arg1;
-- (void)setContents:(id)arg1;
 - (void)setQuadPoints:(id)arg1;
 - (void)setStyle:(unsigned int)arg1;
 - (unsigned int)style;

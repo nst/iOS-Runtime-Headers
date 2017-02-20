@@ -7,7 +7,7 @@
     NSObject<OS_dispatch_queue> * _connectionQueue;
     EABluetoothAccessoryPicker * _picker;
     id /* block */  _pickerCompletion;
-    NSObject<OS_dispatch_queue> * _pickerQueue;
+    NSRecursiveLock * _pickerLock;
     NSTimer * _pickerTimer;
     NSString * _selectedBluetoothAddress;
     BOOL  _sequesterNewAccessories;
@@ -30,8 +30,8 @@
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_cameraInfoUpdated:(id)arg1;
-- (void)_checkForConnectedAccessories:(BOOL)arg1;
-- (void)_cleanUpForTaskSuspend;
+- (void)_checkForConnectedAccessories:(BOOL)arg1 backgroundTaskIdentifier:(unsigned int)arg2;
+- (void)_cleanUpForTaskSuspendWithTaskIdentifier:(unsigned int)arg1;
 - (id)_connectedAccessories;
 - (void)_ephemerisURLAvailable:(id)arg1;
 - (void)_externalAccessoryConnected:(id)arg1;

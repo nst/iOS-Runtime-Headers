@@ -41,8 +41,18 @@
 
 - (id)mf_debugDescription;
 
+// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+
+- (id)fc_description;
+
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/Frameworks/MediaMiningKit.framework/MediaMiningKit
 
 - (void)enumerateObjectsSortedByCountUsingBlock:(id /* block */)arg1 ascending:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/PhotosGraph
+
+- (id)pg_objectWithMaxCount;
+- (id)pg_objectWithMinCount;
+- (id)pg_sortedArrayByCountAscending:(BOOL)arg1;
 
 @end

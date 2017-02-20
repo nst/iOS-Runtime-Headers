@@ -7,6 +7,7 @@
 
 - (void)controller:(MarkupViewController *)arg1 didChangeToPDFPageIndex:(unsigned int)arg2;
 - (void)controller:(MarkupViewController *)arg1 didReadCGPDFDocument:(struct CGPDFDocument { }*)arg2;
+- (BOOL)controller:(MarkupViewController *)arg1 shouldOpenLinkAtURL:(NSURL *)arg2;
 - (NSArray *)controller:(MarkupViewController *)arg1 willSetToolbarItems:(NSArray *)arg2;
 - (void)controller:(MarkupViewController *)arg1 willWriteCGPDFDocument:(struct CGPDFDocument { }*)arg2 toContext:(struct CGContext { }*)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customEdgeInsets;

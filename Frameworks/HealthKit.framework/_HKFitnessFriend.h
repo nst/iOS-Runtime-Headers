@@ -12,21 +12,27 @@
 
 @property (nonatomic, readonly) BOOL canSeeMyActivityData;
 @property (nonatomic, retain) _HKFitnessFriendContact *contact;
+@property (nonatomic, readonly) NSNumber *currentCacheIndex;
+@property (nonatomic, readonly) _HKFitnessFriendActivitySnapshot *currentSnapshot;
+@property (nonatomic, readonly) _HKFitnessFriendActivitySnapshot *currentSnapshotWithGoalsCarriedForward;
+@property (nonatomic, readonly) NSDate *dateActivityDataBecameVisibleToMe;
 @property (nonatomic, readonly) NSDate *dateForLatestDataHidden;
 @property (nonatomic, readonly) NSDate *dateForLatestDataHiddenFromMe;
-@property (nonatomic, readonly) NSDate *dateForLatestDataShown;
-@property (nonatomic, readonly) NSDate *dateForLatestDataShownToMe;
 @property (nonatomic, readonly) NSDate *dateForLatestOutgoingInviteRequest;
 @property (nonatomic, readonly) NSDate *dateForLatestRelationshipStart;
 @property (nonatomic, retain) NSDictionary *friendAchievements;
 @property (readonly) NSUUID *friendUUID;
 @property (nonatomic, retain) NSDictionary *friendWorkouts;
+@property (nonatomic, readonly) NSString *fullName;
 @property (nonatomic, readonly) BOOL hasInviteRequestFromMe;
 @property (nonatomic, readonly) BOOL inviteRequestToMeWasAccepted;
 @property (nonatomic, readonly) BOOL isActivityDataCurrentlyVisibleToMe;
 @property (nonatomic, readonly) BOOL isAwaitingInviteResponseFromMe;
 @property (nonatomic, readonly) BOOL isFriendshipCurrentlyActive;
 @property (nonatomic, readonly) BOOL isMuted;
+@property (getter=isMe, nonatomic, readonly) BOOL me;
+@property (nonatomic, readonly) _HKFitnessFriendActivitySnapshot *mostRecentSnapshot;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) BOOL sentInviteRequestToMe;
 @property (nonatomic, retain) NSDictionary *snapshots;
 
@@ -35,16 +41,15 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_mostRecentSnapshot;
 - (BOOL)canSeeMyActivityData;
 - (id)contact;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)currentCacheIndex;
 - (id)currentDateComponents;
 - (id)currentSnapshot;
+- (id)dateActivityDataBecameVisibleToMe;
 - (id)dateForLatestDataHidden;
 - (id)dateForLatestDataHiddenFromMe;
-- (id)dateForLatestDataShown;
-- (id)dateForLatestDataShownToMe;
 - (id)dateForLatestOutgoingInviteRequest;
 - (id)dateForLatestRelationshipStart;
 - (id)description;
@@ -61,7 +66,9 @@
 - (BOOL)isActivityDataVisibleToMeForDate:(id)arg1;
 - (BOOL)isAwaitingInviteResponseFromMe;
 - (BOOL)isFriendshipCurrentlyActive;
+- (BOOL)isHidingDataFromMeForDate:(id)arg1;
 - (BOOL)isMuted;
+- (id)mostRecentSnapshot;
 - (BOOL)sentInviteRequestToMe;
 - (void)setContact:(id)arg1;
 - (void)setFriendAchievements:(id)arg1;
@@ -72,6 +79,8 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessFriends.framework/FitnessFriends
 
+- (id)_emptySnapshotWithGoalsCarriedForwardForIndex:(int)arg1;
+- (id)currentSnapshotWithGoalsCarriedForward;
 - (id)detailedSharingDurationString;
 - (id)fullName;
 - (id)invitedDurationString;
@@ -79,6 +88,6 @@
 - (id)name;
 - (id)simpleHiddenFromString;
 - (id)simpleSharingDurationString;
-- (id)snapshotForIndex:(int)arg1;
+- (id)snapshotWithGoalsCarriedForwardForIndex:(id)arg1;
 
 @end

@@ -11,10 +11,12 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (int)defroster;
+- (id)description;
 - (id)enable;
 - (id)initWithEnable:(id)arg1 defroster:(int)arg2;
 - (void)setDefroster:(int)arg1;

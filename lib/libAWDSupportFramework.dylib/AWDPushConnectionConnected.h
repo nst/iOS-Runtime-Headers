@@ -5,31 +5,39 @@
 @interface AWDPushConnectionConnected : PBCodable <NSCopying> {
     unsigned int  _connectDuration;
     unsigned int  _connectionType;
+    unsigned int  _dnsDuration;
     unsigned int  _dualChannelState;
     NSString * _guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int connectDuration : 1; 
         unsigned int connectionType : 1; 
+        unsigned int dnsDuration : 1; 
         unsigned int dualChannelState : 1; 
         unsigned int linkQuality : 1; 
+        unsigned int tlsDuration : 1; 
     }  _has;
     int  _linkQuality;
     unsigned long long  _timestamp;
+    unsigned int  _tlsDuration;
 }
 
 @property (nonatomic) unsigned int connectDuration;
 @property (nonatomic) unsigned int connectionType;
+@property (nonatomic) unsigned int dnsDuration;
 @property (nonatomic) unsigned int dualChannelState;
 @property (nonatomic, retain) NSString *guid;
 @property (nonatomic) BOOL hasConnectDuration;
 @property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasDnsDuration;
 @property (nonatomic) BOOL hasDualChannelState;
 @property (nonatomic, readonly) BOOL hasGuid;
 @property (nonatomic) BOOL hasLinkQuality;
 @property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTlsDuration;
 @property (nonatomic) int linkQuality;
 @property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int tlsDuration;
 
 - (unsigned int)connectDuration;
 - (unsigned int)connectionType;
@@ -38,14 +46,17 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (unsigned int)dnsDuration;
 - (unsigned int)dualChannelState;
 - (id)guid;
 - (BOOL)hasConnectDuration;
 - (BOOL)hasConnectionType;
+- (BOOL)hasDnsDuration;
 - (BOOL)hasDualChannelState;
 - (BOOL)hasGuid;
 - (BOOL)hasLinkQuality;
 - (BOOL)hasTimestamp;
+- (BOOL)hasTlsDuration;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (int)linkQuality;
@@ -53,16 +64,21 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setConnectDuration:(unsigned int)arg1;
 - (void)setConnectionType:(unsigned int)arg1;
+- (void)setDnsDuration:(unsigned int)arg1;
 - (void)setDualChannelState:(unsigned int)arg1;
 - (void)setGuid:(id)arg1;
 - (void)setHasConnectDuration:(BOOL)arg1;
 - (void)setHasConnectionType:(BOOL)arg1;
+- (void)setHasDnsDuration:(BOOL)arg1;
 - (void)setHasDualChannelState:(BOOL)arg1;
 - (void)setHasLinkQuality:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTlsDuration:(BOOL)arg1;
 - (void)setLinkQuality:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTlsDuration:(unsigned int)arg1;
 - (unsigned long long)timestamp;
+- (unsigned int)tlsDuration;
 - (void)writeTo:(id)arg1;
 
 @end

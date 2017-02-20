@@ -10,7 +10,6 @@
 @property (nonatomic) int participantStatus;
 @property (nonatomic) int participantType;
 @property (nonatomic) int pendingStatus;
-@property (nonatomic, readonly) NSDate *proposedStartDate;
 @property (nonatomic) BOOL proposedStartDateChanged;
 @property (nonatomic) BOOL statusChanged;
 
@@ -34,7 +33,6 @@
 - (int)participantStatus;
 - (int)participantType;
 - (int)pendingStatus;
-- (id)proposedStartDate;
 - (BOOL)proposedStartDateChanged;
 - (void)setCommentChanged:(BOOL)arg1;
 - (void)setParticipantRole:(int)arg1;

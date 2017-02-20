@@ -53,12 +53,16 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_characteristicTypeFromUTI:(id)arg1;
+- (id)aliasedHAPCharacteristicTypes;
+- (id)aliasedHAPServiceTypes;
 - (id)assistantCharacteristics;
 - (id)assistantServices;
 - (id)assistantUnits;
 - (void)augmentMissingInformation:(id)arg1;
 - (id)categoryForIdentifier:(id)arg1;
 - (id)categoryForOther;
+- (id)characteristicValueUnit:(id)arg1;
 - (BOOL)checkTuples:(id)arg1 forCharacteristic:(id)arg2 service:(id)arg3;
 - (BOOL)checkTuples:(id)arg1 forService:(id)arg2;
 - (id)createHAPMetadata:(id)arg1;
@@ -74,6 +78,10 @@
 - (id)generateHAPMetadataTuplesDictionary:(id)arg1;
 - (id)generateHMDHAPMetadataTupleArrayFromDict:(id)arg1;
 - (id)generateHMDictionary;
+- (id)getAliasedCharacteristicType:(id)arg1;
+- (id)getAliasedServiceType:(id)arg1;
+- (id)getCharacteristicTypeAlias:(id)arg1;
+- (id)getServiceTypeAlias:(id)arg1;
 - (id)hapCharacteristics;
 - (id)hapMetadata;
 - (id)hapProperties;
@@ -93,6 +101,16 @@
 - (id)initWithDictionary:(id)arg1 hapMetadata:(id)arg2 error:(id*)arg3;
 - (BOOL)isStandardCharacteristicType:(id)arg1;
 - (BOOL)isStandardServiceType:(id)arg1;
+- (id)mapCharacteristicValueType:(id)arg1;
+- (id)mapFromAssistantCharacteristicValue:(id)arg1 name:(id)arg2;
+- (id)mapFromAssistantServiceName:(id)arg1;
+- (id)mapFromAssistantUnitName:(id)arg1;
+- (id)mapReadCharacteristicFromAssistantName:(id)arg1;
+- (id)mapToAssistantCharacteristicName:(id)arg1;
+- (id)mapToAssistantCharacteristicValue:(id)arg1 name:(id)arg2 getActionType:(BOOL)arg3;
+- (id)mapToAssistantServiceName:(id)arg1;
+- (id)mapToAssistantUnitName:(id)arg1;
+- (id)mapWriteCharacteristicFromAssistantName:(id)arg1;
 - (id)parseAssistantCharacteristics:(id)arg1;
 - (BOOL)parseAssistantMetadata:(id)arg1;
 - (id)parseAssistantUnits:(id)arg1;
@@ -103,6 +121,7 @@
 - (BOOL)parseNotificationMetadata:(id)arg1;
 - (BOOL)parseRequiresDeviceUnlockMetadata:(id)arg1;
 - (BOOL)requiresDeviceUnlock:(id)arg1 forService:(id)arg2;
+- (BOOL)requiresTimedWrite:(id)arg1 forService:(id)arg2;
 - (id)schemaVersion;
 - (void)setAssistantCharacteristics:(id)arg1;
 - (void)setAssistantServices:(id)arg1;
@@ -126,14 +145,14 @@
 - (void)setVersion:(id)arg1;
 - (BOOL)shouldAllowHomeNotificationForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (BOOL)shouldAutoEnableNotificationForCharacteristic:(id)arg1 ofService:(id)arg2;
-- (BOOL)shouldEnableBulletinBoardForCharacteristic:(id)arg1 ofService:(id)arg2;
-- (BOOL)shouldEnableBulletinBoardForService:(id)arg1;
 - (BOOL)shouldFilterCharacteristicOfType:(id)arg1;
 - (BOOL)shouldFilterCharacteristicOfTypeFromApp:(id)arg1;
 - (BOOL)shouldFilterServiceOfType:(id)arg1;
 - (BOOL)shouldFilterServiceOfTypeFromApp:(id)arg1;
+- (BOOL)shouldHomeAppShowTileForServiceType:(id)arg1;
 - (BOOL)shouldNotCacheCharacteristicOfType:(id)arg1;
 - (BOOL)supportsAuthorizationData:(id)arg1 forService:(id)arg2;
+- (BOOL)supportsLocalization:(id)arg1;
 - (id)validateAssociatedServiceType:(id)arg1 forService:(id)arg2;
 - (id)version;
 

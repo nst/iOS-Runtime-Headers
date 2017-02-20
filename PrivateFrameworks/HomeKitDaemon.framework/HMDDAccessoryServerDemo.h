@@ -32,8 +32,7 @@
 - (int)linkType;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)processCharacteristicWrite:(id)arg1 value:(id)arg2;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)setAccessoryInfo:(id)arg1;
@@ -43,7 +42,6 @@
 - (void)startPairing;
 - (BOOL)stopPairingWithError:(id*)arg1;
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

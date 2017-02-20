@@ -68,6 +68,7 @@
 - (int)port;
 - (id)principalURL;
 - (void)promptUserForNewCoreDAVPasswordWithCompletionBlock:(id /* block */)arg1;
+- (BOOL)renewCredential;
 - (id)scheme;
 - (id)serverComplianceClasses;
 - (id)serverHeaders;
@@ -93,6 +94,7 @@
 - (BOOL)shouldHandleHTTPCookiesForURL:(id)arg1;
 - (BOOL)shouldRetryUnauthorizedConnection:(id)arg1;
 - (BOOL)shouldSendClientInfoHeaderForURL:(id)arg1;
+- (BOOL)shouldTryRenewingCredential;
 - (BOOL)shouldTurnModalOnBadPassword;
 - (BOOL)shouldUseOpportunisticSockets;
 - (BOOL)started;

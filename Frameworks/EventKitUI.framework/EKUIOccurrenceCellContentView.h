@@ -18,7 +18,7 @@
     NSLayoutConstraint * _countdownLabelBaseling_to_contentBottom_Constraint;
     NSLayoutConstraint * _countdownLabelRightMarginConstraint;
     NSString * _countdownLabelString;
-    NSTimer * _countdownLabelUpdateTimer;
+    NSObject<OS_dispatch_source> * _countdownLabelUpdateTimer;
     BOOL  _declined;
     BOOL  _doesNotUseTemplate;
     NSArray * _ekUIOccurrenceCellConstraints;
@@ -113,21 +113,22 @@
 + (BOOL)vibrant;
 
 - (void).cxx_destruct;
-- (void)_countdownTimerFired:(id)arg1;
-- (void)_countdownTimerKill;
-- (void)_countdownTimerStart;
+- (void)_countdownTimerFired;
 - (id)_createParentVisualEffectViewWithVisualEffect:(id)arg1;
 - (void)_createViews;
 - (BOOL)_eventIsNow;
+- (void)_installCountdownTimerWithFireDate:(id)arg1;
 - (float)_leftMarginForTimeViewsFromTimeWidth:(float)arg1;
+- (void)_resetCountdownTimerBasedOnCurrentDateForStringGeneration:(id)arg1;
 - (float)_rightMarginForTimeViewsFromTimeWidth:(float)arg1;
 - (id)_selectedBackgroundViewWithColor:(id)arg1;
 - (void)_setUpConstraints;
 - (id)_sharedNumberFormatter;
 - (id)_textForBottomTimeLabel;
-- (id)_textForCountdownLabel;
+- (id)_textForCountdownLabelWithCurrentDate:(id)arg1;
 - (id)_textForDepartureTimeLabel;
 - (id)_textForTopTimeLabel;
+- (void)_uninstallCountdownTimer;
 - (void)_updateAccessoryImage;
 - (void)_updateAngleBackgroundColor;
 - (void)_updateBottomTimeLabel;

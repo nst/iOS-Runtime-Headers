@@ -46,6 +46,7 @@
 - (id)cryptoSession;
 - (void)dealloc;
 - (id)delegate;
+- (void)forceDisconnect;
 - (id)initWithInputStream:(id)arg1 outputStream:(id)arg2 runLoop:(id)arg3;
 - (id)inputStream;
 - (id)outputStream;

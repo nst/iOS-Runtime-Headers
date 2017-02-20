@@ -30,7 +30,7 @@
 - (void)handleConnectionWithError:(id)arg1;
 - (void)handleDisconnectionWithError:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (unsigned int)hapBLEProtocolVersion;
-- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 stateChanged:(BOOL)arg6 category:(id)arg7 connectionIdleTime:(unsigned char)arg8 browser:(id)arg9 keyStore:(id)arg10;
+- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 stateChanged:(BOOL)arg6 configNumber:(id)arg7 category:(id)arg8 connectionIdleTime:(unsigned char)arg9 browser:(id)arg10 keyStore:(id)arg11;
 - (int)linkType;
 - (void)notifyDelegateUdpatedStateNumber;
 - (BOOL)notifyingCharacteristicUpdated;

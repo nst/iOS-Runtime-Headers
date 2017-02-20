@@ -4,6 +4,7 @@
 
 @interface __NSURLBackgroundSession : __NSCFURLSession <NDBackgroundSessionClient, NSURLSessionSubclass> {
     NSString * _appWakeUUID;
+    BOOL  _appWasLaunchedForBackgroundSessionSeen;
     NSURL * _assetDownloadDirectory;
     BOOL  _companionAvailable;
     NSURL * _downloadDirectory;

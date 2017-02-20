@@ -24,7 +24,6 @@
     NSMutableArray * _pendingResponses;
     NSOperationQueue * _requestOperationQueue;
     HAPSecuritySession * _securitySession;
-    BOOL  _securitySessionOpening;
     id /* block */  _setupCodeCompletionHandler;
     BOOL  _supportsMFiPairSetup;
     BOOL  _verified;
@@ -54,7 +53,6 @@
 @property (nonatomic, readonly) NSMutableArray *pendingResponses;
 @property (nonatomic, readonly) NSOperationQueue *requestOperationQueue;
 @property (nonatomic, retain) HAPSecuritySession *securitySession;
-@property (getter=isSecuritySessionOpening, nonatomic) BOOL securitySessionOpening;
 @property (nonatomic, copy) id /* block */ setupCodeCompletionHandler;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL supportsMFiPairSetup;
@@ -180,11 +178,11 @@
 - (unsigned int)hapBLEProtocolVersion;
 - (id)identifyCharacteristic;
 - (void)identifyWithCompletion:(id /* block */)arg1;
-- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 stateChanged:(BOOL)arg6 category:(id)arg7 connectionIdleTime:(unsigned char)arg8 browser:(id)arg9 keyStore:(id)arg10;
+- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 stateChanged:(BOOL)arg6 configNumber:(id)arg7 category:(id)arg8 connectionIdleTime:(unsigned char)arg9 browser:(id)arg10 keyStore:(id)arg11;
 - (BOOL)isBadSetupCode;
 - (BOOL)isHAPCharacteristic:(id)arg1;
 - (BOOL)isPairing;
-- (BOOL)isSecuritySessionOpening;
+- (BOOL)isSecuritySessionOpen;
 - (BOOL)isVerified;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)markNotifyingCharacteristicUpdatedforCharacteristic:(id)arg1;
@@ -212,8 +210,7 @@
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didUpdateValueForDescriptor:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didWriteValueForCharacteristic:(id)arg2 error:(id)arg3;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (id)requestOperationQueue;
@@ -238,7 +235,7 @@
 - (void)setPairingFeaturesCharacteristic:(id)arg1;
 - (void)setPairingsCharacteristic:(id)arg1;
 - (void)setSecuritySession:(id)arg1;
-- (void)setSecuritySessionOpening:(BOOL)arg1;
+- (void)setSecuritySessionOpen:(BOOL)arg1;
 - (void)setSetupCodeCompletionHandler:(id /* block */)arg1;
 - (void)setSupportsMFiPairSetup:(BOOL)arg1;
 - (void)setVerified:(BOOL)arg1;
@@ -252,7 +249,6 @@
 - (void)timerDidFire:(id)arg1;
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
 - (void)updateConnectionIdleTime:(unsigned char)arg1;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

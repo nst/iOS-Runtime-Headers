@@ -17,7 +17,7 @@
     TUCallDisplayContext * _displayContext;
     TUCallProvider * _displayProvider;
     BOOL  _downlinkMuted;
-    BOOL  _emergencyCall;
+    BOOL  _emergency;
     NSString * _endedErrorString;
     NSString * _endedReasonString;
     NSDictionary * _endedReasonUserInfo;
@@ -59,6 +59,7 @@
         } size; 
     }  _remoteVideoContentRect;
     NSMutableDictionary * _remoteVideoModeToLayer;
+    BOOL  _sos;
     double  _startTime;
     BOOL  _thirdPartyVideo;
     int  _ttyType;
@@ -85,7 +86,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) TUCallDisplayContext *displayContext;
 @property (nonatomic, retain) TUCallProvider *displayProvider;
-@property (getter=isEmergencyCall, nonatomic) BOOL emergencyCall;
+@property (getter=isEmergency, nonatomic) BOOL emergency;
 @property (nonatomic, copy) NSString *endedErrorString;
 @property (nonatomic, copy) NSString *endedReasonString;
 @property (nonatomic, copy) NSDictionary *endedReasonUserInfo;
@@ -109,8 +110,10 @@
 @property (nonatomic, retain) AVCRemoteVideoClient *remoteVideo;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } remoteVideoContentRect;
 @property (nonatomic, retain) NSMutableDictionary *remoteVideoModeToLayer;
+@property (getter=isSOS, setter=setSOS:, nonatomic) BOOL sos;
 @property (nonatomic) double startTime;
 @property (readonly) Class superclass;
+@property (getter=isThirdPartyVideo, nonatomic) BOOL thirdPartyVideo;
 @property (nonatomic) int ttyType;
 @property (getter=isUsingBaseband, nonatomic) BOOL usingBaseband;
 @property (getter=isVideoDegraded, nonatomic) BOOL videoDegraded;
@@ -151,10 +154,11 @@
 - (id)initWithUniqueProxyIdentifier:(id)arg1 endpointOnCurrentDevice:(BOOL)arg2;
 - (BOOL)isBlocked;
 - (BOOL)isDownlinkMuted;
-- (BOOL)isEmergencyCall;
+- (BOOL)isEmergency;
 - (BOOL)isHostedOnCurrentDevice;
 - (BOOL)isMediaStalled;
 - (BOOL)isOutgoing;
+- (BOOL)isSOS;
 - (BOOL)isSendingAudio;
 - (BOOL)isSendingVideo;
 - (BOOL)isThirdPartyVideo;
@@ -202,7 +206,7 @@
 - (void)setDisplayContext:(id)arg1;
 - (void)setDisplayProvider:(id)arg1;
 - (void)setDownlinkMuted:(BOOL)arg1;
-- (void)setEmergencyCall:(BOOL)arg1;
+- (void)setEmergency:(BOOL)arg1;
 - (void)setEndedErrorString:(id)arg1;
 - (void)setEndedReasonString:(id)arg1;
 - (void)setEndedReasonUserInfo:(id)arg1;
@@ -230,8 +234,10 @@
 - (void)setRemoteVideoModeToLayer:(id)arg1;
 - (void)setRemoteVideoPresentationSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRemoteVideoPresentationState:(int)arg1;
+- (void)setSOS:(BOOL)arg1;
 - (void)setShouldSuppressRingtone:(BOOL)arg1;
 - (void)setStartTime:(double)arg1;
+- (void)setThirdPartyVideo:(BOOL)arg1;
 - (void)setTransitionStatus:(int)arg1;
 - (void)setTtyType:(int)arg1;
 - (void)setUplinkMuted:(BOOL)arg1;

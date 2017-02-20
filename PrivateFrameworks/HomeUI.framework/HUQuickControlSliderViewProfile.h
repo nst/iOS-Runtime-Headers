@@ -5,6 +5,7 @@
 @interface HUQuickControlSliderViewProfile : HUQuickControlViewProfile <HUQuickControlIncrementalConvertibleProfile> {
     BOOL  _hasOffState;
     BOOL  _hasSecondaryValue;
+    unsigned int  _preferredFillSection;
     double  _stepValue;
 }
 
@@ -13,6 +14,7 @@
 @property (nonatomic) BOOL hasOffState;
 @property (nonatomic) BOOL hasSecondaryValue;
 @property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int preferredFillSection;
 @property (nonatomic) double stepValue;
 @property (readonly) Class superclass;
 
@@ -21,8 +23,10 @@
 - (BOOL)hasSecondaryValue;
 - (id)init;
 - (double)percentageValueForViewValue:(id)arg1;
+- (unsigned int)preferredFillSection;
 - (void)setHasOffState:(BOOL)arg1;
 - (void)setHasSecondaryValue:(BOOL)arg1;
+- (void)setPreferredFillSection:(unsigned int)arg1;
 - (void)setStepValue:(double)arg1;
 - (double)stepValue;
 - (id)viewValueForPercentageValue:(double)arg1 round:(BOOL)arg2;

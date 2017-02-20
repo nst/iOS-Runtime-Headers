@@ -37,6 +37,7 @@
 @property (nonatomic, readonly) PKPaymentRequirementsResponse *requirementsResponse;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL suppressDefaultCardholderNameField;
 @property (nonatomic, readonly) PKPaymentWebService *webService;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
@@ -94,6 +95,7 @@
 - (void)retrieveRemoteCredentials:(id /* block */)arg1;
 - (void)setState:(int)arg1;
 - (int)state;
+- (BOOL)suppressDefaultCardholderNameField;
 - (void)updatePaymentSetupProductModelWithCompletionHandler:(id /* block */)arg1;
 - (void)validatePreconditions:(id /* block */)arg1;
 - (void)validatePreconditionsAndRegister:(id /* block */)arg1;

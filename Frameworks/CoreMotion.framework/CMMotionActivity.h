@@ -15,6 +15,8 @@
         int exitState; 
         double estExitTime; 
         double startTime; 
+        int rawType; 
+        int rawConfidence; 
     }  fState;
 }
 
@@ -37,7 +39,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; })arg1;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; int x12; int x13; })arg1;
 - (BOOL)isVehicleConnected;
 - (BOOL)running;
 - (id)startDate;

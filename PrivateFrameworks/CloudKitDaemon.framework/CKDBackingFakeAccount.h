@@ -28,6 +28,7 @@
 - (id)accountBag;
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (id)altDsid;
+- (BOOL)canAuthWithCloudKit;
 - (id)ckAccount;
 - (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (BOOL)cloudKitIsEnabled;
@@ -42,6 +43,7 @@
 - (id)password;
 - (id)primaryEmail;
 - (void)renewAuthTokenInStore:(id)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)saveVerifiedAccountInStore:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setAccountBag:(id)arg1;
 - (void)setAltDsid:(id)arg1;
 - (void)setDsid:(id)arg1;

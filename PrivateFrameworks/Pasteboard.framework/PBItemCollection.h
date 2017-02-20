@@ -6,6 +6,7 @@
     NSDate * _creationDate;
     NSUUID * _itemQueue_UUID;
     NSXPCListener * _itemQueue_dataConsumersListener;
+    BOOL  _itemQueue_deviceLockedPasteboard;
     BOOL  _itemQueue_isDataProvider;
     NSArray * _itemQueue_items;
     NSDictionary * _itemQueue_metadata;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) NSXPCListenerEndpoint *dataConsumersEndpoint;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isDeviceLockedPasteboard, nonatomic) BOOL deviceLockedPasteboard;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isDataProvider;
@@ -30,6 +32,7 @@
 @property (nonatomic) BOOL isRemote;
 @property (nonatomic, retain) NSUUID *itemQueue_UUID;
 @property (nonatomic, retain) NSXPCListener *itemQueue_dataConsumersListener;
+@property (getter=itemQueue_isDeviceLockedPasteboard, nonatomic) BOOL itemQueue_deviceLockedPasteboard;
 @property (nonatomic) BOOL itemQueue_isDataProvider;
 @property (nonatomic, copy) NSArray *itemQueue_items;
 @property (nonatomic, copy) NSDictionary *itemQueue_metadata;
@@ -78,6 +81,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItems:(id)arg1;
 - (BOOL)isDataProvider;
+- (BOOL)isDeviceLockedPasteboard;
 - (BOOL)isGeneralPasteboard;
 - (BOOL)isLocalOnly;
 - (BOOL)isPersistent;
@@ -88,6 +92,7 @@
 - (id)itemQueue_UUID;
 - (id)itemQueue_dataConsumersListener;
 - (BOOL)itemQueue_isDataProvider;
+- (BOOL)itemQueue_isDeviceLockedPasteboard;
 - (id)itemQueue_items;
 - (id)itemQueue_metadata;
 - (id)itemQueue_originatorBundleID;
@@ -106,10 +111,12 @@
 - (id)privateMetadata;
 - (void)setChangeCount:(int)arg1;
 - (void)setDataProviderEndpoint:(id)arg1;
+- (void)setDeviceLockedPasteboard:(BOOL)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setIsRemote:(BOOL)arg1;
 - (void)setItemQueue_UUID:(id)arg1;
 - (void)setItemQueue_dataConsumersListener:(id)arg1;
+- (void)setItemQueue_deviceLockedPasteboard:(BOOL)arg1;
 - (void)setItemQueue_isDataProvider:(BOOL)arg1;
 - (void)setItemQueue_items:(id)arg1;
 - (void)setItemQueue_metadata:(id)arg1;

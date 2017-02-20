@@ -171,13 +171,14 @@
 - (void)assetsScene:(id)arg1 willTransitionToDataSource:(id)arg2;
 - (void)checkInTile:(void*)arg1 withIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg2;
 - (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1 layout:(id)arg2;
-- (void)commitPreviewViewController:(struct NSObject { Class x1; }*)arg1;
+- (void)commitPreviewViewController:(id)arg1;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 forCoordinateSpace:(id)arg2;
 - (int)contentLayoutStyle;
 - (id)contentTilingController;
 - (id)context;
 - (id)dataSourceManager;
 - (void)dealloc;
+- (void)didDismissPreviewViewController:(id)arg1 committing:(BOOL)arg2;
 - (float)engineDrivenLayout:(id)arg1 aspectRatioForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })engineDrivenLayout:(id)arg1 contentsRectForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2 forAspectRatio:(float)arg3;
 - (float)engineDrivenLayout:(id)arg1 zPositionForItemAtIndexPath:(struct PXSimpleIndexPath { unsigned int x1; int x2; int x3; int x4; })arg2;

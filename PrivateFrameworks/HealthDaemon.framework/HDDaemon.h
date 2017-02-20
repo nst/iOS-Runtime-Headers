@@ -6,6 +6,7 @@
     HDAchievementAssetManager * _achievementAssetManager;
     HDAchievementDefinitionAlertManager * _achievementDefinitionAlertManager;
     <HDAchievementDefinitionAlertNotifier> * _achievementDefinitionAlertNotifier;
+    <HDAchievementDefinitionAlertSuppressor> * _achievementDefinitionAlertSuppressor;
     HDAchievementDoctorManager * _achievementDoctorManager;
     <HDNanoAlertSuppressionService> * _alertSuppressionService;
     HDAppLauncher * _appLauncher;
@@ -29,6 +30,7 @@
     HDFitnessAppBadgeManager * _fitnessAppBadgeManager;
     HDFitnessFriendsManager * _fitnessFriendsManager;
     NSString * _homeDirectoryPath;
+    int  _languageChangeNotifyToken;
     NSObject<OS_dispatch_queue> * _mainQueue;
     HDNanoSyncManager * _nanoSyncManager;
     HDPluginManager * _pluginManager;
@@ -89,7 +91,7 @@
 - (id)IDSServiceWithIdentifier:(id)arg1;
 - (void)_applyPPTUpdatesWithDatabase:(id)arg1;
 - (void)_handleSigterm;
-- (void)_localeChanged:(id)arg1;
+- (void)_localeOrLanguageChanged:(id)arg1;
 - (BOOL)_motionTrackingAvailable;
 - (id)_newAWDSubmissionManager;
 - (id)_newBehavior;

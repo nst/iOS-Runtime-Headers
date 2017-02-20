@@ -131,6 +131,7 @@
 - (void)remote_allObjectAuthorizationRecordsForSampleWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_allSourcesWithCompletion:(id /* block */)arg1;
 - (void)remote_authorizationStatusForType:(id)arg1 completion:(id /* block */)arg2;
+- (void)remote_badgeHealthAppForEmergencyContactsConsolidationWithCompletion:(id /* block */)arg1;
 - (void)remote_beginAuthorizationDelegateTransactionWithSessionIdentifier:(id)arg1 handler:(id /* block */)arg2;
 - (void)remote_clientResumedWithCompletion:(id /* block */)arg1;
 - (void)remote_clientWillSuspendWithCompletion:(id /* block */)arg1;

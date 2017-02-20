@@ -213,7 +213,6 @@
 - (BOOL)becomeFirstResponder;
 - (void)beginSelectionChange;
 - (BOOL)canBecomeFirstResponder;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canResignFirstResponder;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
@@ -267,6 +266,12 @@
 - (void)updateUserActivityState:(id)arg1;
 - (id)userActivity;
 
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 + (id)currentFirstResponder;
@@ -280,6 +285,10 @@
 // Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
 
 - (id)_SKUIView;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (void)tvmlkit_handleEvent:(id)arg1 forElement:(id)arg2 andSourceView:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
 

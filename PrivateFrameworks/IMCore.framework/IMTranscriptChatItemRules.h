@@ -20,7 +20,6 @@
 - (id)_chatItemsForItem:(id)arg1 previousItem:(id)arg2;
 - (void)_didProcessChatItems:(id)arg1;
 - (id)_initWithChat:(id)arg1;
-- (void)_invalidate;
 - (id)_itemWithChatItemsDeleted:(id)arg1 fromItem:(id)arg2;
 - (id)_items;
 - (id)_nextStaleChatItem;

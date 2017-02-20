@@ -84,6 +84,7 @@
 - (id)summaryViewController;
 - (void)undoConfirm:(id)arg1;
 - (void)undoDeny:(id)arg1;
+- (void)updateViewWithViewState:(unsigned int)arg1;
 - (unsigned int)userConfirmedCountForSummaryViewController:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;

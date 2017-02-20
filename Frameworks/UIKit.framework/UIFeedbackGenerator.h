@@ -12,7 +12,6 @@
     NSSet * _engines;
     int  _externalActivationCount;
     BOOL  _hasMutableFeedbackKeyPaths;
-    BOOL  _muted;
     NSMutableDictionary * _preparationTimers;
     int  _styleActivationCount;
     NSSet * _usedFeedbacks;
@@ -60,6 +59,7 @@
 - (BOOL)_isAutoDeactivated;
 - (BOOL)_isEnabled;
 - (BOOL)_isMuted;
+- (int)_outputMode;
 - (id)_playCountStatistics;
 - (void)_playFeedback:(id)arg1;
 - (void)_playFeedback:(id)arg1 withMinimumIntervalPassed:(double)arg2 since:(double*)arg3 prefersRegularPace:(BOOL)arg4;
@@ -71,6 +71,7 @@
 - (void)_resetAutoDeactivationTimeout;
 - (void)_setConfiguration:(id)arg1;
 - (void)_setMuted:(BOOL)arg1;
+- (void)_setOutputMode:(int)arg1;
 - (void)_setPreparationTimer:(id)arg1 forStyle:(int)arg2;
 - (void)_setupAutoDeactivateTimer;
 - (void)_setupEnginesIfNeeded;

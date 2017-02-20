@@ -19,7 +19,7 @@
 - (void)_ignoreAlreadyRequestedTilesAndUpdateGlobalListWithNonDuplicatesForTileKeyList:(id)arg1;
 - (void)_loadPlacecardsForBatch:(id)arg1;
 - (void)_loadTilesForBatch:(id)arg1;
-- (void)_makeBatchForTilesAroundStationsForAllSteps:(id)arg1;
+- (void)_makeBatchForTilesAroundStationsForSteps:(id)arg1;
 - (void)_makeBatchesForSteps:(id)arg1;
 - (void)_makePreloadBatchForGraph;
 - (void)_makePreloadBatchForPlaceDataOnSteps:(id)arg1;

@@ -16,6 +16,7 @@
     NSHashTable * _observersForAllDownloads;
     SSPurchaseManager * _purchaseManager;
     NSMapTable * _storeIdentifiersToDownloads;
+    NSMutableArray * _userDownloads;
 }
 
 @property (nonatomic, readonly) NSArray *activeDownloads;
@@ -24,6 +25,7 @@
 @property (nonatomic, readonly) NSArray *downloads;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *userDownloads;
 @property (getter=isUsingNetwork, nonatomic, readonly) BOOL usingNetwork;
 
 + (id)sharedManager;
@@ -76,5 +78,6 @@
 - (void)requestPermissionToDownloadWithType:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)restartDownloads:(id)arg1;
 - (void)resumeDownloads:(id)arg1;
+- (id)userDownloads;
 
 @end

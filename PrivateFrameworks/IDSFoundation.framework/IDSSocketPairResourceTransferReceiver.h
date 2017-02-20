@@ -6,6 +6,7 @@
     BOOL  _compressed;
     BOOL  _done;
     BOOL  _expectsPeerResponse;
+    NSDate * _expiryDate;
     int  _fileDescriptor;
     BOOL  _isResuming;
     NSString * _messageUUID;
@@ -20,6 +21,8 @@
     BOOL  _wantsAppAck;
 }
 
+@property (nonatomic, readonly, retain) NSDate *expiryDate;
+@property (nonatomic, readonly, retain) NSString *messageUUID;
 @property (nonatomic, readonly) unsigned long long totalBytesReceived;
 
 + (id)incomingFilePath;
@@ -28,8 +31,10 @@
 - (void)abortTransfer;
 - (BOOL)appendMessage:(id)arg1 receiverError:(unsigned char*)arg2;
 - (void)dealloc;
+- (id)expiryDate;
 - (id)finalizedMessageDictionaryIfDone;
 - (id)initWithMessage:(id)arg1 resumeResourceTransfers:(BOOL)arg2 receiverError:(unsigned char*)arg3;
+- (id)messageUUID;
 - (unsigned long long)totalBytesReceived;
 - (BOOL)writeResourceData:(id)arg1;
 - (BOOL)writeResourceData:(id)arg1 resourceByteOffset:(unsigned long long)arg2;

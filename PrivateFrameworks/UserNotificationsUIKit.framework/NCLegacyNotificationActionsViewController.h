@@ -15,13 +15,14 @@
 @property (nonatomic, readonly) NCNotificationRequest *notificationRequest;
 @property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (BOOL)allowManualDismiss;
 - (unsigned int)customContentLocation;
 - (BOOL)defaultContentHidden;
 - (id)delegate;
-- (void)didReceiveNotificationRequest:(id)arg1;
+- (BOOL)didReceiveNotificationRequest:(id)arg1;
 - (id)initWithNotificationRequest:(id)arg1;
 - (void)loadView;
 - (void)notificationActionsView:(id)arg1 performAction:(id)arg2;

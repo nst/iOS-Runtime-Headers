@@ -10,7 +10,7 @@
     unsigned int  _pendingCount;
     PHFetchResult * _plusResult;
     unsigned int  _processedCount;
-    NSLock * _queryLock;
+    NSObject<OS_dispatch_queue> * _scanningProgressQueue;
     unsigned int  _totalCount;
     PHFetchResult * _verifyResult;
 }
@@ -26,7 +26,7 @@
 @property (nonatomic) unsigned int pendingCount;
 @property (nonatomic, retain) PHFetchResult *plusResult;
 @property (nonatomic) unsigned int processedCount;
-@property (readonly) NSLock *queryLock;
+@property (readonly) NSObject<OS_dispatch_queue> *scanningProgressQueue;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int totalCount;
 @property (nonatomic, retain) PHFetchResult *verifyResult;
@@ -51,7 +51,7 @@
 - (id)plusResult;
 - (unsigned int)processedAssetCount;
 - (unsigned int)processedCount;
-- (id)queryLock;
+- (id)scanningProgressQueue;
 - (void)setCachedUnlockValue:(unsigned int)arg1;
 - (void)setCountCacheValid:(BOOL)arg1;
 - (void)setFavResult:(id)arg1;

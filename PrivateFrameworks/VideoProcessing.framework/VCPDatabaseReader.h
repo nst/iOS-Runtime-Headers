@@ -16,6 +16,7 @@
 - (long)openDatabase;
 - (id)queryAnalysisForAsset:(id)arg1;
 - (id)queryAnalysisForAsset:(id)arg1 withTypes:(id)arg2;
+- (id)queryAnalysisPropertiesForAsset:(id)arg1;
 - (id)queryAssetsAnalyzedSince:(id)arg1;
 - (long)queryHeaderForAsset:(id)arg1 analysis:(id*)arg2 assetId:(long long*)arg3;
 - (long)queryResultsForAssetId:(long long)arg1 analysis:(id)arg2;

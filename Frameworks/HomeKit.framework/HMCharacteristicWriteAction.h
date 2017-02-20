@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristicWriteAction : HMAction <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
+@interface HMCharacteristicWriteAction : HMAction <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge, NSSecureCoding> {
     HMCharacteristic * _characteristic;
     id  _targetValue;
 }
@@ -39,6 +39,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

@@ -2,13 +2,23 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDPlaylistsViewController : MCDTableViewController
+@interface MCDPlaylistsViewController : MCDTableViewController {
+    NSString * _playlistSortSetting;
+}
+
+@property (nonatomic, retain) NSString *playlistSortSetting;
 
 + (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
 
+- (void).cxx_destruct;
 - (void)_limitedUIDidChange;
+- (void)_updateQuery;
+- (void)_userDefaultsChanged:(id)arg1;
+- (id)playlistSortSetting;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
+- (void)setPlaylistSortSetting:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (void)viewDidLoad;
 
 @end

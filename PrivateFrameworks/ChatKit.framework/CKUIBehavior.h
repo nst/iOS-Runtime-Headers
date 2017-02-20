@@ -18,8 +18,10 @@
 @property (nonatomic, readonly) NSString *aggregateAcknowledgmentBottomMiddleName;
 @property (nonatomic, readonly) NSString *aggregateAcknowledgmentBottomTopName;
 @property (nonatomic, readonly) NSString *aggregateAcknowledgmentMiddleName;
-@property (nonatomic, readonly) NSString *aggregateAcknowledgmentStackBackgroundName;
-@property (nonatomic, readonly) NSString *aggregateAcknowledgmentStackName;
+@property (nonatomic, readonly) NSString *aggregateAcknowledgmentStackBackgroundName2;
+@property (nonatomic, readonly) NSString *aggregateAcknowledgmentStackBackgroundName3;
+@property (nonatomic, readonly) NSString *aggregateAcknowledgmentStackName2;
+@property (nonatomic, readonly) NSString *aggregateAcknowledgmentStackName3;
 @property (nonatomic, readonly) NSString *aggregateAcknowledgmentTopBackgroundName;
 @property (nonatomic, readonly) NSString *aggregateAcknowledgmentTopName;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } aggregateAcknowledgmentTranscriptBalloonSize;
@@ -275,6 +277,7 @@
 @property (nonatomic, readonly) BOOL shouldShowDisclosureChevronInRecipientAtoms;
 @property (nonatomic, readonly) BOOL shouldShowSearchBarInConversationList;
 @property (nonatomic, readonly) BOOL shouldSizeInitialViewingMessageCount;
+@property (nonatomic, readonly) BOOL shouldSuppressDynamicsOnKeyboardPresentation;
 @property (nonatomic, readonly) BOOL shouldSuppressRotationInNewCompose;
 @property (nonatomic, readonly) BOOL shouldUseDynamicGradient;
 @property (nonatomic, readonly) BOOL shouldUseDynamicScrolling;
@@ -386,8 +389,10 @@
 - (id)aggregateAcknowledgmentBottomMiddleName;
 - (id)aggregateAcknowledgmentBottomTopName;
 - (id)aggregateAcknowledgmentMiddleName;
-- (id)aggregateAcknowledgmentStackBackgroundName;
-- (id)aggregateAcknowledgmentStackName;
+- (id)aggregateAcknowledgmentStackBackgroundName2;
+- (id)aggregateAcknowledgmentStackBackgroundName3;
+- (id)aggregateAcknowledgmentStackName2;
+- (id)aggregateAcknowledgmentStackName3;
 - (id)aggregateAcknowledgmentTopBackgroundName;
 - (id)aggregateAcknowledgmentTopName;
 - (struct CGSize { float x1; float x2; })aggregateAcknowledgmentTranscriptBalloonSize;
@@ -444,6 +449,7 @@
 - (id)balloonTextFont;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })balloonTranscriptInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })bigEmojiAlignmentRectInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })bigEmojiBalloonMaskAlignmentRectInsets;
 - (id)bigEmojiFont;
 - (id)blue_chevronImage;
 - (float)bottomConversationListSpace;
@@ -696,6 +702,7 @@
 - (BOOL)shouldShowDisclosureChevronInRecipientAtoms;
 - (BOOL)shouldShowSearchBarInConversationList;
 - (BOOL)shouldSizeInitialViewingMessageCount;
+- (BOOL)shouldSuppressDynamicsOnKeyboardPresentation;
 - (BOOL)shouldSuppressRotationInNewCompose;
 - (BOOL)shouldUseDynamicGradient;
 - (BOOL)shouldUseDynamicScrolling;

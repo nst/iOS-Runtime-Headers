@@ -25,7 +25,6 @@
 - (void)addExternalDocumentReferenceTo:(id)arg1 forPid:(int)arg2 inContainer:(id)arg3 underParent:(id)arg4 reply:(id /* block */)arg5;
 - (void)boostFilePresenterAtURL:(id)arg1 reply:(id /* block */)arg2;
 - (oneway void)bundleDidAccessExternalDocument:(id)arg1;
-- (void)canLogoutSafely:(id /* block */)arg1;
 - (oneway void)checkinAskClientIfUsingUbiquity:(BOOL)arg1;
 - (void)computePurgableSpaceWithUrgency:(int)arg1 reply:(id /* block */)arg2;
 - (void)copyBulkShareIDsAtURLs:(id)arg1 reply:(id /* block */)arg2;
@@ -86,6 +85,7 @@
 - (void)joinShareAtURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)lookupExcludedExtensionsForLogoutWithReply:(id /* block */)arg1;
 - (void)lookupExcludedFilenamesForLogoutWithReply:(id /* block */)arg1;
+- (void)moveBRSecurityBookmarkAtURL:(id)arg1 toURL:(id)arg2 reply:(id /* block */)arg3;
 - (void)overwriteAccessTimeForItemAtURL:(id)arg1 atime:(unsigned long long)arg2 reply:(id /* block */)arg3;
 - (void)performSelfCheck:(id)arg1 reply:(id /* block */)arg2;
 - (void)postiCloudDriveAppInstallationNotificaionWithReply:(id /* block */)arg1;

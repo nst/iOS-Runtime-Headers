@@ -19,12 +19,7 @@
 + (void)trackEventFiredTTLAlertWithAlertType:(unsigned int)arg1 transportType:(unsigned int)arg2 etaType:(unsigned int)arg3 travelState:(unsigned int)arg4 hasSuggestedLocation:(BOOL)arg5 isOnSharedCalendar:(BOOL)arg6;
 + (void)trackIsTTLEnabled:(BOOL)arg1;
 + (void)trackSignificantEventHasSuggestedLocation:(BOOL)arg1 isOnSharedCalendar:(BOOL)arg2;
-+ (void)trackTTLAlertDirectionsEngaged;
-+ (void)trackTTLAlertFired;
 + (void)trackTTLCandidateEventHasSuggestedLocation:(BOOL)arg1 isOnSharedCalendar:(BOOL)arg2;
-+ (void)trackTTLEventCandidate;
-+ (id)ttlAlertDirectionsEngagedEventTracker;
-+ (id)ttlAlertFiredEventTracker;
 + (id)ttlCandidateEventTracker;
 
 @end

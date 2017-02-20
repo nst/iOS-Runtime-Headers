@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
  */
 
-@interface CAMViewfinderViewController : UIViewController <CAMAvailabilityDelegate, CAMBurstDelegate, CAMCameraRollControllerImageWellDelegate, CAMCameraRollControllerPresentationDelegate, CAMCameraRollControllerSessionDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRecoveryDelegate, CAMCaptureRunningDelegate, CAMClosedViewfinderControllerDelegate, CAMConfigurationDelegate, CAMControlVisibilityDelegate, CAMControlVisibilityUpdateDelegate, CAMEffectsRendererDelegate, CAMFacesDelegate, CAMModeDialDataSource, CAMPanoramaCaptureRequestDelegate, CAMPortraitModeDescriptionOverlayViewDelegate, CAMPreviewViewControllerDelegate, CAMRemoteShutterDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMStillImageCaptureRequestDelegate, CAMStillImageCapturingVideoDelegate, CAMSuggestionDelegate, CAMTimelapseControllerDelegate, CAMTimerButtonDelegate, CAMVideoCaptureRequestDelegate, CAMZoomControlDelegate, CAMZoomDelegate, CAMZoomSliderDelegate, UIGestureRecognizerDelegate> {
+@interface CAMViewfinderViewController : UIViewController <CAMAvailabilityDelegate, CAMBurstDelegate, CAMCameraRollControllerImageWellDelegate, CAMCameraRollControllerPresentationDelegate, CAMCameraRollControllerSessionDelegate, CAMCaptureInterruptionDelegate, CAMCaptureRecoveryDelegate, CAMCaptureRunningDelegate, CAMClosedViewfinderControllerDelegate, CAMConfigurationDelegate, CAMControlVisibilityDelegate, CAMControlVisibilityUpdateDelegate, CAMEffectsRendererDelegate, CAMFacesDelegate, CAMModeDialDataSource, CAMPanoramaCaptureRequestDelegate, CAMPhysicalCaptureNotifierDelegate, CAMPortraitModeDescriptionOverlayViewDelegate, CAMPreviewViewControllerDelegate, CAMRemoteShutterDelegate, CAMShallowDepthOfFieldStatusDelegate, CAMStillImageCaptureRequestDelegate, CAMStillImageCapturingVideoDelegate, CAMSuggestionDelegate, CAMTimelapseControllerDelegate, CAMTimerButtonDelegate, CAMVideoCaptureRequestDelegate, CAMZoomControlDelegate, CAMZoomDelegate, CAMZoomSliderDelegate, UIGestureRecognizerDelegate> {
     CAMHDRBadge * __HDRBadge;
     CAMHDRButton * __HDRButton;
     CAMBottomBar * __bottomBar;
@@ -61,6 +61,7 @@
     BOOL  __performingFilterTransition;
     BOOL  __performingTopBarOrientationChange;
     int  __photoModeEffectFilterType;
+    CAMPhysicalCaptureNotifier * __physicalCaptureNotifier;
     CAMPhysicalCaptureRecognizer * __physicalCaptureRecognizer;
     CAMPortraitModeDescriptionOverlayView * __portraitModeDescriptionOverlayView;
     CAMPortraitModeInstructionLabel * __portraitModeInstructionLabel;
@@ -116,6 +117,7 @@
     int  _imagePickerVideoConfiguration;
     double  _maximumVideoRecordingDuration;
     BOOL  _performingReviewUsingOverlay;
+    BOOL  _performingTileTransition;
     unsigned int  _persistenceBehavior;
     <CAMViewfinderReviewButtonSource> * _reviewButtonSource;
     BOOL  _showingStandardControls;
@@ -184,6 +186,7 @@
 @property (getter=_isPerformingFilterTransition, setter=_setPerformingFilterTransition:, nonatomic) BOOL _performingFilterTransition;
 @property (getter=_isPerformingTopBarOrientationChange, setter=_setPerformingTopBarOrientationChange:, nonatomic) BOOL _performingTopBarOrientationChange;
 @property (setter=_setPhotoModeEffectFilterType:, nonatomic) int _photoModeEffectFilterType;
+@property (nonatomic, retain) CAMPhysicalCaptureNotifier *_physicalCaptureNotifier;
 @property (nonatomic, retain) CAMPhysicalCaptureRecognizer *_physicalCaptureRecognizer;
 @property (setter=_setPortraitModeDescriptionOverlayView:, nonatomic, retain) CAMPortraitModeDescriptionOverlayView *_portraitModeDescriptionOverlayView;
 @property (nonatomic, readonly) CAMPortraitModeInstructionLabel *_portraitModeInstructionLabel;
@@ -243,6 +246,7 @@
 @property (nonatomic) int livePhotoMode;
 @property (nonatomic) double maximumVideoRecordingDuration;
 @property (getter=isPerformingReviewUsingOverlay, nonatomic) BOOL performingReviewUsingOverlay;
+@property (getter=isPerformingTileTransition, nonatomic) BOOL performingTileTransition;
 @property (nonatomic) unsigned int persistenceBehavior;
 @property (getter=isRecording, nonatomic, readonly) BOOL recording;
 @property (nonatomic) <CAMViewfinderReviewButtonSource> *reviewButtonSource;
@@ -272,9 +276,7 @@
 - (struct __CFString { }*)_aggregateDictionaryKeyForPhysicalButtonType:(int)arg1;
 - (BOOL)_allowsPhysicalCaptureInteraction;
 - (void)_applyAutorotationCorrectingTransformForOrientation:(int)arg1;
-- (void)_applyPreviewTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_applyTransformsForAutorotationStyle:(int)arg1;
-- (void)_applyViewfinderAndPreviewTransformIfNecessaryWithTransitionCoordinator:(id)arg1;
 - (int)_appropriateLayoutStyleForSize:(struct CGSize { float x1; float x2; })arg1;
 - (int)_aspectRatioForMode:(int)arg1;
 - (id)_automaticallyAdjustedCaptureModes;
@@ -325,7 +327,7 @@
 - (void)_createOrDestroyGridViewIfNecessary;
 - (void)_createPanoramaControlsIfNecessary;
 - (void)_createPanoramaViewControllerIfNecessary;
-- (void)_createPhysicalCaptureRecognizerIfNecessary;
+- (void)_createPhysicalCaptureRecognizerOrNotifierIfNecessary;
 - (void)_createPortraitModeControlsIfNecessary;
 - (void)_createPortraitModeDescriptionOverlayViewIfNecessary;
 - (void)_createPortraitModeInstructionLabelIfNecessary;
@@ -435,6 +437,8 @@
 - (void)_handleUserChangedToDevice:(int)arg1;
 - (void)_handleUserChangedToMode:(int)arg1;
 - (void)_handleUserChangedToMode:(int)arg1 device:(int)arg2;
+- (void)_handleUserSetDesiredFlashMode:(int)arg1;
+- (void)_handleUserSetDesiredTorchMode:(int)arg1;
 - (void)_handleZoomButtonWasTapped:(id)arg1;
 - (void)_handleZoomPinchGestureRecognizer:(id)arg1;
 - (BOOL)_hasInFlightConfiguration;
@@ -494,6 +498,7 @@
 - (void)_performCaptureAnimation;
 - (int)_persistenceOptionsForBehavior:(unsigned int)arg1 allowingOptionalLocalPersistence:(BOOL)arg2;
 - (int)_photoModeEffectFilterType;
+- (id)_physicalCaptureNotifier;
 - (id)_physicalCaptureRecognizer;
 - (id)_portraitModeDescriptionOverlayView;
 - (id)_portraitModeInstructionLabel;
@@ -511,9 +516,7 @@
 - (unsigned int)_remainingCaptureTimerTicks;
 - (id)_remoteShutterController;
 - (void)_resetAggregateInfoForPhotoFilters;
-- (void)_resetAutorotationCorrectingTransform;
 - (BOOL)_resetTimerDurationAfterDelayedCapture;
-- (void)_resetViewfinderAndPreviewTransform;
 - (void)_resolveAndUpdatePotentiallyConflictingControls:(BOOL)arg1;
 - (void)_resolvePotentiallyConflictingControlsForGraphConfiguration:(id)arg1 resolvedFlashMode:(int*)arg2 resolvedHDRMode:(int*)arg3 resolvedLivePhotoMode:(int*)arg4;
 - (int)_resolvedFlashMode;
@@ -693,6 +696,7 @@
 - (void)_updateEnabledControlsWithReason:(id)arg1 forceLog:(BOOL)arg2;
 - (void)_updateFilterAggregateDictionariesForRequest:(id)arg1;
 - (void)_updateFilterButtonOnState;
+- (void)_updateFlashButtonAvailability;
 - (void)_updateFlashButtonForMode:(int)arg1;
 - (void)_updateFlashModeOnControllerIfNecessaryForMode:(int)arg1;
 - (void)_updateFocusAfterZoomIfNecessary;
@@ -713,6 +717,7 @@
 - (void)_updatePanoramaViewVisibilityForViewfinderTransition;
 - (void)_updatePausingOfCameraRollAudioHandlingForCapture;
 - (void)_updatePhysicalButtonCapturedEnabledResigningActiveOrDisappearing:(BOOL)arg1;
+- (void)_updatePortraitModeCustomRenderedAggregateDictionariesForRequest:(id)arg1 response:(id)arg2;
 - (void)_updatePropertiesForCaptureConfiguration:(id)arg1 conflictingControlConfiguration:(id)arg2;
 - (void)_updateSphereAggregateDictionariesForResponse:(id)arg1;
 - (void)_updateStillImageCaptureTypeAggregateDictionariesForRequest:(id)arg1 response:(id)arg2;
@@ -740,6 +745,7 @@
 - (id)_zoomSlider;
 - (void)_zoomSliderValueDidChange:(id)arg1 forEvent:(id)arg2;
 - (float)_zoomSliderValueForZoomFactor:(float)arg1;
+- (void)_zoomUIDidChangeToFactor:(float)arg1;
 - (void)applyCaptureConfiguration:(id)arg1 conflictingControlConfiguration:(id)arg2;
 - (BOOL)automaticallyAdjustsApplicationIdleTimer;
 - (BOOL)automaticallyAdjustsAutorotationStyle;
@@ -821,6 +827,7 @@
 - (BOOL)isDisablingMultipleCaptureFeatures;
 - (BOOL)isEmulatingImagePicker;
 - (BOOL)isPerformingReviewUsingOverlay;
+- (BOOL)isPerformingTileTransition;
 - (BOOL)isRecording;
 - (BOOL)isShowingStandardControls;
 - (BOOL)isUserInteractionLoggingEnabled;
@@ -835,6 +842,7 @@
 - (void)panoramaRequestDidStartCapturing:(id)arg1;
 - (void)panoramaRequestDidStopCapturing:(id)arg1;
 - (unsigned int)persistenceBehavior;
+- (void)physicalCaptureNotifierDidChangeState:(id)arg1;
 - (void)portraitModeDescriptionOverlayViewDidAcknowledge:(id)arg1;
 - (int)preferredWhitePointAdaptivityStyle;
 - (BOOL)prefersStatusBarHidden;
@@ -873,12 +881,14 @@
 - (void)setLivePhotoMode:(int)arg1;
 - (void)setMaximumVideoRecordingDuration:(double)arg1;
 - (void)setPerformingReviewUsingOverlay:(BOOL)arg1;
+- (void)setPerformingTileTransition:(BOOL)arg1;
 - (void)setPersistenceBehavior:(unsigned int)arg1;
 - (void)setReviewButtonSource:(id)arg1;
 - (void)setShowingStandardControls:(BOOL)arg1;
 - (void)setTimerDuration:(int)arg1;
 - (void)setTorchMode:(int)arg1;
 - (void)setUserInteractionLoggingEnabled:(BOOL)arg1;
+- (void)set_physicalCaptureNotifier:(id)arg1;
 - (void)set_physicalCaptureRecognizer:(id)arg1;
 - (void)set_reviewButton:(id)arg1;
 - (BOOL)shouldAutorotate;

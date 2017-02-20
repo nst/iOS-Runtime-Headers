@@ -29,7 +29,6 @@
     PKLinkedApplication * _linkedApplication;
     PKSettingTableCell * _messagesSwitch;
     BOOL  _navigationControllerHidesShadow;
-    NSNumberFormatter * _numberFormatter;
     PKPaymentPass * _pass;
     PKPassHeaderView * _passHeaderView;
     <PKPassLibraryDataProvider> * _passLibraryDataProvider;
@@ -106,6 +105,7 @@
 - (float)_heightForPassStateSectionWithTableView:(id)arg1;
 - (id)_infoCellWithDescription:(id)arg1 forTableView:(id)arg2;
 - (id)_infoCellWithPrimaryText:(id)arg1 detailText:(id)arg2 cellStyle:(int)arg3 forTableView:(id)arg4;
+- (BOOL)_isJapaneseRegion;
 - (id)_linkCellWithText:(id)arg1 forTableView:(id)arg2;
 - (id)_linkedAppCellForTableView:(id)arg1;
 - (id)_linkedApplicationCellForTableView:(id)arg1;
@@ -128,6 +128,7 @@
 - (void)_reloadTransactionSection;
 - (void)_reloadTransactionsWithCompletion:(id /* block */)arg1;
 - (void)_reloadView;
+- (void)_setFelicaProperties:(id)arg1;
 - (BOOL)_shouldShowAutomaticPresentation;
 - (BOOL)_shouldShowBillingAddressCell;
 - (BOOL)_shouldShowContactCell;

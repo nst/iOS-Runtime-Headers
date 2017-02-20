@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) NCNotificationRequest *notificationRequest;
 @property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_loadContentViewControllerForNotificationRequest:(id)arg1;
@@ -36,11 +37,12 @@
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
 - (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)customContentDidLoadExtension:(id)arg1;
+- (void)customContentDidUpdateTitle:(id)arg1;
 - (unsigned int)customContentLocation;
 - (void)customContentRequestsDismiss:(id)arg1;
 - (BOOL)defaultContentHidden;
 - (id)delegate;
-- (void)didReceiveNotificationRequest:(id)arg1;
+- (BOOL)didReceiveNotificationRequest:(id)arg1;
 - (id)initWithNotificationRequest:(id)arg1;
 - (id)inputAccessoryView;
 - (void)loadAudioAccessoryView;
@@ -55,6 +57,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setInputAccessoryView:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)title;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;

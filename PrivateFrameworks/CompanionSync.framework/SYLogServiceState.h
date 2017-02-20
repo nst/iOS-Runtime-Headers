@@ -5,9 +5,13 @@
 @interface SYLogServiceState : PBCodable <NSCopying> {
     SYLogEngineState * _engine;
     int  _enqueuedSyncType;
+    struct { 
+        unsigned int serviceType : 1; 
+    }  _has;
     NSString * _name;
     NSString * _peerGenerationID;
     NSString * _peerID;
+    int  _serviceType;
     SYLogSessionState * _session;
     BOOL  _sessionQueueRunning;
     SYLogDeviceState * _targetedDevice;
@@ -20,11 +24,13 @@
 @property (nonatomic, readonly) BOOL hasEngine;
 @property (nonatomic, readonly) BOOL hasPeerGenerationID;
 @property (nonatomic, readonly) BOOL hasPeerID;
+@property (nonatomic) BOOL hasServiceType;
 @property (nonatomic, readonly) BOOL hasSession;
 @property (nonatomic, readonly) BOOL hasTargetedDevice;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSString *peerGenerationID;
 @property (nonatomic, retain) NSString *peerID;
+@property (nonatomic) int serviceType;
 @property (nonatomic, retain) SYLogSessionState *session;
 @property (nonatomic) BOOL sessionQueueRunning;
 @property (nonatomic, retain) SYLogDeviceState *targetedDevice;
@@ -34,6 +40,7 @@
 
 - (void).cxx_destruct;
 - (int)StringAsEnqueuedSyncType:(id)arg1;
+- (int)StringAsServiceType:(id)arg1;
 - (void)addTransportOptions:(id)arg1;
 - (void)clearTransportOptions;
 - (id)cocoaTransportOptions;
@@ -47,6 +54,7 @@
 - (BOOL)hasEngine;
 - (BOOL)hasPeerGenerationID;
 - (BOOL)hasPeerID;
+- (BOOL)hasServiceType;
 - (BOOL)hasSession;
 - (BOOL)hasTargetedDevice;
 - (unsigned int)hash;
@@ -56,14 +64,18 @@
 - (id)peerGenerationID;
 - (id)peerID;
 - (BOOL)readFrom:(id)arg1;
+- (int)serviceType;
+- (id)serviceTypeAsString:(int)arg1;
 - (id)session;
 - (BOOL)sessionQueueRunning;
 - (void)setCocoaTransportOptions:(id)arg1;
 - (void)setEngine:(id)arg1;
 - (void)setEnqueuedSyncType:(int)arg1;
+- (void)setHasServiceType:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setPeerGenerationID:(id)arg1;
 - (void)setPeerID:(id)arg1;
+- (void)setServiceType:(int)arg1;
 - (void)setSession:(id)arg1;
 - (void)setSessionQueueRunning:(BOOL)arg1;
 - (void)setTargetedDevice:(id)arg1;

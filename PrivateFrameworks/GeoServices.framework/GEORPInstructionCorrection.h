@@ -6,17 +6,21 @@
     NSString * _comments;
     struct { 
         unsigned int routeStepIndex : 1; 
+        unsigned int routeStepSubstepIndex : 1; 
     }  _has;
     GEORPPhotoWithMetadata * _photo;
     unsigned int  _routeStepIndex;
+    unsigned int  _routeStepSubstepIndex;
 }
 
 @property (nonatomic, retain) NSString *comments;
 @property (nonatomic, readonly) BOOL hasComments;
 @property (nonatomic, readonly) BOOL hasPhoto;
 @property (nonatomic) BOOL hasRouteStepIndex;
+@property (nonatomic) BOOL hasRouteStepSubstepIndex;
 @property (nonatomic, retain) GEORPPhotoWithMetadata *photo;
 @property (nonatomic) unsigned int routeStepIndex;
+@property (nonatomic) unsigned int routeStepSubstepIndex;
 
 - (id)comments;
 - (void)copyTo:(id)arg1;
@@ -27,16 +31,20 @@
 - (BOOL)hasComments;
 - (BOOL)hasPhoto;
 - (BOOL)hasRouteStepIndex;
+- (BOOL)hasRouteStepSubstepIndex;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)photo;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)routeStepIndex;
+- (unsigned int)routeStepSubstepIndex;
 - (void)setComments:(id)arg1;
 - (void)setHasRouteStepIndex:(BOOL)arg1;
+- (void)setHasRouteStepSubstepIndex:(BOOL)arg1;
 - (void)setPhoto:(id)arg1;
 - (void)setRouteStepIndex:(unsigned int)arg1;
+- (void)setRouteStepSubstepIndex:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

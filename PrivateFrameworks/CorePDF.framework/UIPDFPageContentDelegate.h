@@ -26,7 +26,9 @@
     UIPDFDocument * _document;
     struct CGColor { } * _highlightColor;
     BOOL  _isCancelled;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     CALayer * _owner;
     unsigned int  _pageIndex;
     unsigned int  _pageRotation;

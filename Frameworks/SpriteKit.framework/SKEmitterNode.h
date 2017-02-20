@@ -16,6 +16,7 @@
     SKNode * _target;
 }
 
+@property (nonatomic, copy) NSDictionary *attributeValues;
 @property (nonatomic) float emissionAngle;
 @property (nonatomic) float emissionAngleRange;
 @property (nonatomic) unsigned int fieldBitMask;

@@ -289,6 +289,7 @@
 - (void)_updateLastSetTimeForCurrentItemIfNeeded;
 - (void)_updatePlaybackModeForItem:(id)arg1;
 - (void)_updateProgress:(struct __CFRunLoopTimer { }*)arg1;
+- (void)_updatePropertiesForLoadedTimeRangeUpdate;
 - (void)_updateScanningRate;
 - (void)_updateSeekingIntervalsForStreaming;
 - (void)_updateTypeForItem:(id)arg1;

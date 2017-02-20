@@ -65,6 +65,11 @@
 - (void)_cn_trimLeadingWhitespace;
 - (void)_cn_trimTrailingWhitespace;
 
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
+- (void)appendString:(id)arg1 withSeparator:(id)arg2;
+- (void)convertLineEndingsTo:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
 
 - (void)dd_appendSpaces:(unsigned int)arg1;

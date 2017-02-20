@@ -721,6 +721,10 @@
 - (void)didDismissMiniAlert;
 - (void)didReceiveMemoryWarning;
 - (int)doubleHeightMode;
+- (void)emitPPTEndTracePointForSubTestName:(id)arg1 identifier:(unsigned int)arg2;
+- (void)emitPPTEndTracePointForTestName:(id)arg1 identifier:(unsigned int)arg2;
+- (void)emitPPTStartTracePointForSubTestName:(id)arg1 identifier:(unsigned int)arg2 testIdentifier:(unsigned int)arg3;
+- (void)emitPPTStartTracePointForTestName:(id)arg1 identifier:(unsigned int)arg2;
 - (void)enableFramebufferStatisticsGathering;
 - (unsigned int)enabledRemoteNotificationTypes;
 - (void)endBackgroundTask:(unsigned int)arg1;
@@ -1014,6 +1018,11 @@
 // Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
 
 - (void)px_navigateToMomentsViewRevealingAsset:(id)arg1 completionHandler:(id /* block */)arg2;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (BOOL)SKUI_isFullscreen;
+- (BOOL)SKUI_isMedusaActive;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

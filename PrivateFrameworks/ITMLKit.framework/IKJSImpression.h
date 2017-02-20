@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSImpression : IKJSObject <IKJSImpression, JSExport> {
+@interface IKJSImpression : IKJSObject <IKJSImpression, NSObject, _IKJSImpression, _IKJSImpressionProxy> {
     long  _indexInParent;
     NSString * _metricsData;
     NSString * _metricsTag;
@@ -13,6 +13,9 @@
 
 @property (nonatomic, readonly) NSArray *children;
 @property (nonatomic, readonly) NSString *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *impressionQueueTag;
 @property (nonatomic, readonly) long index;
 @property (nonatomic) long indexInParent;
@@ -22,11 +25,13 @@
 @property (nonatomic, retain) NSMutableArray *mutableTimestamps;
 @property (nonatomic, readonly) id parent;
 @property (nonatomic) IKJSImpression *parentImpression;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *timestamps;
 
 - (void).cxx_destruct;
 - (void)addChild:(id)arg1;
 - (void)addTimestamp:(long long)arg1;
+- (id)asPrivateIKJSImpression;
 - (id)children;
 - (id)data;
 - (id)description;

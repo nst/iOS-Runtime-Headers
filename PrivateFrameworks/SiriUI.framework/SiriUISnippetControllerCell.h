@@ -5,6 +5,7 @@
 @interface SiriUISnippetControllerCell : UICollectionViewCell <SiriUIReusableView> {
     SiriUIKeyline * _bottomKeyline;
     UILabel * _cancelledLabel;
+    UIView * _cancelledTouchPreventionView;
     BOOL  _cellIsUsingPlatterStyle;
     UIView * _clippingContainerView;
     UICollectionReusableView<SiriUIReusableView> * _footerView;

@@ -17,7 +17,6 @@
 - (id)asDirectory;
 - (BOOL)changedAtRelativePath:(id)arg1 scanPackage:(BOOL)arg2;
 - (BOOL)evictInTask:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
-- (BOOL)fixupItemAfterCrossZoneMovedCreationWithLookup:(id)arg1;
 - (BOOL)hasDeadChildren;
 - (BOOL)hasLiveChildren;
 - (BOOL)hasLostChildren;

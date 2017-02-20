@@ -137,8 +137,8 @@
 - (id)_pairVerifyHAPCharacteristic;
 - (BOOL)_parseBTLECharacteristicDescriptor:(id)arg1 existingDescriptors:(id)arg2 characteristics:(id)arg3;
 - (id)_parseBTLEService:(id)arg1 withInstanceId:(id)arg2;
-- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)_readValueForCharacteristic:(id)arg1 withCompletionHandler:(id /* block */)arg2 queue:(id)arg3;
+- (void)_readCharacteristicValues:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_readValueForCharacteristic:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_reallyEstablishSecureSession;
 - (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)_resetState;
@@ -173,7 +173,7 @@
 - (id)identifyCharacteristic;
 - (void)identifyWithCompletion:(id /* block */)arg1;
 - (double)idleConnectionTimeoutInSec;
-- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 stateChanged:(BOOL)arg6 category:(id)arg7 connectionIdleTime:(unsigned char)arg8 browser:(id)arg9 keyStore:(id)arg10;
+- (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 stateChanged:(BOOL)arg6 configNumber:(id)arg7 category:(id)arg8 connectionIdleTime:(unsigned char)arg9 browser:(id)arg10 keyStore:(id)arg11;
 - (BOOL)isDisconnecting;
 - (BOOL)isSecuritySessionOpening;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -197,7 +197,7 @@
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didUpdateValueForDescriptor:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didWriteValueForCharacteristic:(id)arg2 error:(id)arg3;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)removeOnDisconnect;
 - (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
@@ -254,7 +254,6 @@
 - (id /* block */)unpairedIdentifyCompletionBlock;
 - (BOOL)unpairedIdentifyRequested;
 - (void)updateConnectionIdleTime:(unsigned char)arg1;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

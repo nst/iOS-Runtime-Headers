@@ -33,6 +33,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)lockAuxiliaryTable;
+- (BOOL)primaryAndAuxiliaryTranslatorsAreIdentical;
 - (id)primaryTableIdentifier;
 - (BOOL)primaryTableSupportsContractedBraille;
 - (BOOL)primaryTableSupportsEightDotBraille;

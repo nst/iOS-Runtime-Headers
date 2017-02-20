@@ -7,10 +7,12 @@
     _HKShapeView * _maskView;
     float  _ringInsetPercentage;
     HKRingsView * _ringsView;
+    BOOL  _shouldBypassApplicationStateChecking;
 }
 
 @property (nonatomic, retain) HKActivitySummary *activitySummary;
 @property (getter=_ringInsetPercentage, setter=_setRingInsetPercentage:, nonatomic) float ringInsetPercentage;
+@property (getter=_shouldBypassApplicationStateChecking, setter=_setShouldBypassApplicationStateChecking:, nonatomic) BOOL shouldBypassApplicationStateChecking;
 
 + (id)_iconSpriteImage;
 
@@ -23,8 +25,10 @@
 - (void)_setActivitySummary:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)_setRingDiameter:(float)arg1 ringInterspacing:(float)arg2 ringThickness:(float)arg3;
 - (void)_setRingInsetPercentage:(float)arg1;
+- (void)_setShouldBypassApplicationStateChecking:(BOOL)arg1;
 - (void)_setUpAfterInit;
 - (void)_setUpRingsView;
+- (BOOL)_shouldBypassApplicationStateChecking;
 - (id)_snapshotImage;
 - (void)_updateAndInterpolateRingsViewDiameterForWidth:(float)arg1 lowerDirective:(id)arg2 higherDirective:(id)arg3;
 - (void)_updateMaskPath;

@@ -122,7 +122,7 @@
 - (BOOL)isSpecifierHiddenDueToRestrictions:(id)arg1;
 - (void)lazyLoadSpecialBundleForSpecifier:(id)arg1;
 - (void)loadPPTTestSpecifiers:(int)arg1;
-- (void)loadThirdPartySpecifierForBundleID:(id)arg1;
+- (void)loadThirdPartySpecifierIfNeededForBundleID:(id)arg1;
 - (void)networkChanged;
 - (id)passbookSpecifier;
 - (id)phoneStatusForSpecifier:(id)arg1;

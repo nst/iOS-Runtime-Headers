@@ -35,13 +35,16 @@
 @property (nonatomic, readonly) BOOL isITunesU;
 @property (nonatomic, readonly) BOOL isRental;
 @property (nonatomic, readonly) BOOL isUsableAsRepresentativeItem;
+@property (getter=wlk_jsPropertyStrings, nonatomic, readonly) NSSet *jsPropertyStrings;
 @property (nonatomic, copy) NSDate *lastPlayedDate;
 @property (nonatomic, copy) NSDate *lastSkippedDate;
 @property (nonatomic, readonly) NSString *lyrics;
 @property (nonatomic, readonly) unsigned int mediaType;
+@property (getter=wlk_mediaTypeString, nonatomic, readonly, copy) NSString *mediaTypeString;
 @property (nonatomic, readonly) unsigned long long persistentID;
 @property (nonatomic, readonly) unsigned int playCount;
 @property (nonatomic) unsigned int playCountSinceSync;
+@property (getter=wlk_playState, nonatomic, readonly, copy) NSString *playState;
 @property (nonatomic, readonly) double playbackDuration;
 @property (nonatomic, readonly) unsigned long long podcastPersistentID;
 @property (nonatomic, readonly) NSString *podcastTitle;
@@ -197,5 +200,19 @@
 
 - (id)SAMPMediaItemRepresentation;
 - (id)albumImageWithFallbackForSize:(struct CGSize { float x1; float x2; })arg1 doubleLineRow:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
+
++ (id)wlk_JSgenericProperties;
++ (id)wlk_JSmovieProperties;
++ (id)wlk_JStvShowProperties;
++ (id)wlk_mediaItemForPersistentIdentifier:(id)arg1;
++ (id)wlk_mediaItemForStoreIdentifier:(id)arg1;
+
+- (id)wlk_jsPropertyStrings;
+- (id)wlk_mediaTypeString;
+- (id)wlk_playState;
+- (id)wlk_stringIdentifierForProperty:(id)arg1;
+- (id)wlk_stringIdentifierForSeason;
 
 @end

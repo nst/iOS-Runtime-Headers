@@ -28,6 +28,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
+- (void)_applyFrozen;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyShowContentForUnadornedSnapshot;
@@ -74,5 +75,6 @@
 - (void)endScrubbingAnimated:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 
 @end

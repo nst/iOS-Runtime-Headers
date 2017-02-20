@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
  */
 
-@interface VSCredentialEntryViewModel : VSViewModel {
+@interface VSCredentialEntryViewModel : VSCuratedViewModel {
     NSArray * _fields;
     NSString * _linkTitle;
     NSURL * _linkURL;
@@ -18,6 +18,8 @@
 
 - (void).cxx_destruct;
 - (void)_setNeedsUpdateValidationButtonState;
+- (void)_startObservingFields:(id)arg1;
+- (void)_stopObservingFields:(id)arg1;
 - (void)_updateValidationButtonState;
 - (void)dealloc;
 - (id)fields;

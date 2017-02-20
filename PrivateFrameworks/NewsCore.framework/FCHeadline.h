@@ -8,11 +8,13 @@
     NSString * _articleID;
     unsigned long long  _backendArticleVersion;
     NSArray * _blockedStorefrontIDs;
+    BOOL  _canBePurchased;
     NSString * _clusterID;
     unsigned long long  _contentType;
     NSURL * _contentURL;
     FCCoverArt * _coverArt;
     BOOL  _deleted;
+    NSDate * _displayDate;
     NSArray * _endOfArticleTopicIDs;
     NSString * _excerpt;
     BOOL  _featureCandidate;
@@ -90,6 +92,7 @@
 @property (nonatomic, readonly) unsigned long long articleRecordModificationDateMilliseconds;
 @property (nonatomic, readonly) unsigned long long backendArticleVersion;
 @property (nonatomic, readonly, copy) NSArray *blockedStorefrontIDs;
+@property (nonatomic, readonly) BOOL canBePurchased;
 @property (nonatomic, readonly, copy) NSString *clusterID;
 @property (nonatomic) unsigned long long contentType;
 @property (nonatomic, readonly, copy) NSURL *contentURL;
@@ -97,6 +100,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (getter=isDeleted, nonatomic) BOOL deleted;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDate *displayDate;
 @property (nonatomic, readonly, copy) NSArray *endOfArticleTopicIDs;
 @property (nonatomic, copy) NSString *excerpt;
 @property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
@@ -141,8 +145,8 @@
 @property (nonatomic, readonly, copy) NSString *sourceFeedID;
 @property (nonatomic, copy) NSString *sourceName;
 @property (getter=isSponsored, nonatomic, readonly) BOOL sponsored;
-@property (nonatomic, readonly) FCTopStoriesStyleConfiguration *storyStyle;
-@property (nonatomic, readonly) unsigned int storyType;
+@property (nonatomic, retain) FCTopStoriesStyleConfiguration *storyStyle;
+@property (nonatomic) unsigned int storyType;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *surfacedByBinID;
@@ -177,8 +181,10 @@
 - (unsigned long long)articleContentType;
 - (id)articleID;
 - (unsigned long long)articleRecordModificationDateMilliseconds;
+- (void)assignStoryType:(unsigned int)arg1 withAppConfig:(id)arg2;
 - (unsigned long long)backendArticleVersion;
 - (id)blockedStorefrontIDs;
+- (BOOL)canBePurchased;
 - (id)clusterID;
 - (id)contentManifestWithContext:(id)arg1;
 - (unsigned long long)contentType;
@@ -186,6 +192,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArt;
 - (id)description;
+- (id)displayDate;
 - (id)endOfArticleTopicIDs;
 - (id)excerpt;
 - (int)feedElementType;
@@ -221,6 +228,7 @@
 - (id)moreFromPublisherArticleIDs;
 - (BOOL)needsRapidUpdates;
 - (unsigned long long)order;
+- (void)overrideDisplayDate:(id)arg1;
 - (id)primaryAudience;
 - (id)publishDate;
 - (unsigned long long)publishDateMilliseconds;
@@ -234,6 +242,7 @@
 - (void)setArticleID:(id)arg1;
 - (void)setContentType:(unsigned long long)arg1;
 - (void)setDeleted:(BOOL)arg1;
+- (void)setDisplayDate:(id)arg1;
 - (void)setExcerpt:(id)arg1;
 - (void)setFeedOrder:(unsigned long long)arg1;
 - (void)setGlobalUserFeedback:(double)arg1;
@@ -244,6 +253,8 @@
 - (void)setShowSubscriptionRequiredText:(BOOL)arg1;
 - (void)setSourceChannel:(id)arg1;
 - (void)setSourceName:(id)arg1;
+- (void)setStoryStyle:(id)arg1;
+- (void)setStoryType:(unsigned int)arg1;
 - (void)setSurfacedByBinID:(id)arg1;
 - (void)setSurfacedByChannelID:(id)arg1;
 - (void)setSurfacedBySectionID:(id)arg1;

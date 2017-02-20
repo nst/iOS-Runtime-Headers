@@ -47,6 +47,7 @@
     NSArray * _currentToolViewConstraints;
     BOOL  _didLoadTools;
     PUFiltersToolController * _filtersController;
+    int  _inProgressSaveRequestID;
     UIButton * _irisButton;
     struct CGSize { 
         float width; 
@@ -91,6 +92,7 @@
     PUProgressIndicatorView * _progressIndicatorView;
     NSArray * _progressIndicatorViewConstraints;
     UIButton * _redEyeButton;
+    NSObject<OS_dispatch_source> * _saveProgressTimer;
     UIButton * _secondMainActionButton;
     UIButton * _secondSecondActionButton;
     NSArray * _secondaryToolButtons;
@@ -186,6 +188,7 @@
 - (BOOL)_isPreviewingOriginal;
 - (BOOL)_isReadyToRender;
 - (BOOL)_isRevertingToOriginal;
+- (BOOL)_isSaveProgressAvailable;
 - (BOOL)_isWaitingForAssetChange;
 - (BOOL)_isWaitingForSaveCompletion;
 - (struct CGSize { float x1; float x2; })_layoutReferenceSize;
@@ -254,8 +257,10 @@
 - (BOOL)_shouldBePreviewingOriginal;
 - (BOOL)_shouldDisplayRedEyeTool;
 - (void)_showCancelAndRevertOptionsAllowResetTool:(BOOL)arg1;
+- (void)_startMonitoringSaveProgressIfNeeded;
 - (void)_startWaitingForAssetChange;
 - (void)_startWaitingForSaveRequestID:(int)arg1;
+- (void)_stopMonitoringSaveProgress;
 - (void)_stopWaitingForAssetChangeWithAsset:(id)arg1 success:(BOOL)arg2;
 - (void)_stopWaitingForSaveRequestWithAsset:(id)arg1;
 - (void)_switchToEditingTool:(id)arg1 animated:(BOOL)arg2;
@@ -282,6 +287,7 @@
 - (void)_updatePreviewingOriginalBadge;
 - (void)_updateProgressIndicatorAnimated:(BOOL)arg1;
 - (void)_updateRenderedPreviewForceRender:(BOOL)arg1;
+- (void)_updateSaveProgress;
 - (void)_updateScrollViewCentering;
 - (void)_updateScrollViewContentSize;
 - (void)_updateScrollViewForProxyZooming;

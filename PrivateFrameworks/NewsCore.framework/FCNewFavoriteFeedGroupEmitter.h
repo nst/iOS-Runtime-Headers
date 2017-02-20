@@ -13,8 +13,10 @@
 @property (nonatomic, readonly) BOOL requiresForYouCatchUpOperation;
 @property (readonly) Class superclass;
 
+- (BOOL)canEmitGroupsWithType:(int)arg1;
 - (id)groupEmitterIdentifier;
-- (id)operationToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (BOOL)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 
 @end

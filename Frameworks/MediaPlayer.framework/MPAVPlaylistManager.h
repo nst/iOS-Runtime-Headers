@@ -8,6 +8,7 @@
     BOOL  _changingPlayer;
     BOOL  _changingPlaylistFeeder;
     MPAVItem * _currentItem;
+    BOOL  _currentItemDidLoadDurationTimeRange;
     <MPAVItemQueueIdentifier> * _currentItemQueueIdentifier;
     MPQueueFeeder * _currentQueueFeeder;
     <MPAVPlaylistManagerDelegate> * _delegate;
@@ -60,11 +61,12 @@
 - (int)_prepareToQueuePlaybackIndex:(int)arg1 selectionDirection:(int)arg2;
 - (id)_queuePlayerFeederItemForIndex:(int)arg1;
 - (void)_reloadQueuedItemsIfPathBecameAvailable;
-- (void)_setStateForPlaylistFeeder:(id)arg1 startIndex:(unsigned int)arg2;
+- (void)_setCurrentItemDidLoadDurationTimeRange:(BOOL)arg1;
 - (void)_storePlayWhileDownloadControllerDidFinishPlayWhileDownloadSessionNotification:(id)arg1;
 - (void)_streamingDownloadSessionControllerDidFailDownloadSessionNotification:(id)arg1;
 - (id)_stringForPlaylistIdentifier:(id)arg1;
 - (void)_updateAudioSessionModeWithIndex:(unsigned int)arg1;
+- (void)_updateMaximumQueueDepthForItemIndex:(int)arg1 inQueueFeeder:(id)arg2;
 - (void)_willFinishReloadWithQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
 - (BOOL)allowsUserVisibleUpcomingItems;
 - (id)audioSessionModeOverride;
@@ -107,6 +109,7 @@
 - (void)queueCoordinator:(id)arg1 failedToLoadItem:(id)arg2;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
 - (void)queueCoordinator:(id)arg1 willInsertItem:(id)arg2 afterItem:(id)arg3;
+- (void)queueCoordinatorDidChangeItems:(id)arg1;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithPreferredStartIndex:(unsigned int)arg2 error:(id)arg3;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithReplacementPlaybackContext:(id)arg2;
 - (void)queueFeederDidInvalidateAssets:(id)arg1;

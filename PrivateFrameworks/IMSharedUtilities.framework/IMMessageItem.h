@@ -3,6 +3,8 @@
  */
 
 @interface IMMessageItem : IMItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
+    BOOL  _backwardsCompatibleVersion;
+    BOOL  _blockingRichLinks;
     NSAttributedString * _body;
     NSData * _bodyData;
     NSData * _contactsAvatarRecipeData;
@@ -24,6 +26,8 @@
     BOOL  _updatingDataSourcePayload;
 }
 
+@property (nonatomic) BOOL backwardsCompatibleVersion;
+@property (nonatomic) BOOL blockingRichLinks;
 @property (nonatomic, retain) NSAttributedString *body;
 @property (nonatomic, retain) NSData *bodyData;
 @property (nonatomic, readonly, copy) NSAttributedString *breadcrumbText;
@@ -72,6 +76,8 @@
 - (void)_regenerateBodyText;
 - (void)_updateFlags:(unsigned long long)arg1;
 - (void)adjustIsEmptyFlag;
+- (BOOL)backwardsCompatibleVersion;
+- (BOOL)blockingRichLinks;
 - (id)body;
 - (id)bodyData;
 - (id)breadcrumbText;
@@ -121,6 +127,8 @@
 - (id)plainBody;
 - (long long)replaceID;
 - (id)sender;
+- (void)setBackwardsCompatibleVersion:(BOOL)arg1;
+- (void)setBlockingRichLinks:(BOOL)arg1;
 - (void)setBody:(id)arg1;
 - (void)setBodyData:(id)arg1;
 - (void)setContactsAvatarRecipeData:(id)arg1;
@@ -160,6 +168,7 @@
 - (BOOL)_hasMessageChatItem;
 - (BOOL)_isInvitation;
 - (id)_newChatItems;
+- (id)_newChatItemsWithFilteredChat:(BOOL)arg1;
 - (id)_service;
 - (void)_setInivtation:(BOOL)arg1;
 - (id)descriptionForPurpose:(int)arg1 isGroupMessage:(BOOL)arg2 messageDataSource:(id /* block */)arg3 attachmentDataSource:(id /* block */)arg4;

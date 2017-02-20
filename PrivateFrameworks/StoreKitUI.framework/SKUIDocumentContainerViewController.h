@@ -52,7 +52,6 @@
 - (void)_enqueueLoadURLOperation;
 - (void)_finishLegacyProtocolOperationForResponse:(id)arg1 dataProvider:(id)arg2 dictionary:(id)arg3;
 - (void)_finishLoadOperationWithResponse:(id)arg1 error:(id)arg2;
-- (BOOL)_isFullScreen;
 - (BOOL)_makeSearchBarFirstResponderOnLoad;
 - (id)_navigationBarViewElement;
 - (void)_networkTypeChangeNotification:(id)arg1;

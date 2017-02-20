@@ -5,9 +5,9 @@
 
 @required
 
-- (long)count;
-- (long)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(long)arg3;
+- (int)count;
+- (int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(int)arg3;
 - (void)getObjects:(id*)arg1 range:(struct { int x1; int x2; })arg2;
-- (id)objectAtIndex:(long)arg1;
+- (id)objectAtIndex:(int)arg1;
 
 @end

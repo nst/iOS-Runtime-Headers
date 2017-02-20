@@ -23,7 +23,6 @@
 - (id)activeIdentifiers;
 - (id)cellIdentifiers;
 - (id)defaultFuseIdentifiers;
-- (id)init;
 - (id)localizedStrings;
 - (float)maxImageWidth;
 - (id)orderedIdentifiers;

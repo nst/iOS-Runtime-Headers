@@ -5,6 +5,7 @@
 @interface PKPaymentCardManualEntryViewController : PKPaymentSetupProvisioningFieldsViewController <PKPaymentCameraCaptureViewControllerDelegate, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupDisambiguationViewControllerDelegate> {
     PKPaymentSetupBrowseProductsViewController * _findWithoutNumberBrowser;
     PKPaymentSetupFindWithoutNumberFooterView * _findWithoutNumberFooterView;
+    NSArray * _pendingCameraCaptureObjects;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,6 +22,7 @@
 - (void)_performInlineSecondaryWithCompletion:(id /* block */)arg1;
 - (void)_performRequirementsWithCompletion:(id /* block */)arg1;
 - (void)_performSecondaryWithCompletion:(id /* block */)arg1;
+- (void)_processPendingCameraCaptureObjects;
 - (void)_pushSecondaryPaymentSetupViewControllerWithCompletion:(id /* block */)arg1;
 - (BOOL)_shouldUseInlineSecondaryProvisioningFlow;
 - (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2 withCompletionHandler:(id /* block */)arg3;

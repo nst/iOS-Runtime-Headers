@@ -38,6 +38,8 @@
     int  _observedRTTSampleSize;
     double  _probeFrequency;
     int  _probePause;
+    BOOL  _reprocessAfterCancelled;
+    BOOL  _reprocessCancelled;
     BOOL  _reprocessPending;
     int  _reprocessSampleCount;
     int  _reprocessSampleSize;
@@ -101,6 +103,8 @@
 @property (readonly) double probeFrequency;
 @property int probePause;
 @property (readonly) unsigned int probeSize;
+@property BOOL reprocessAfterCancelled;
+@property BOOL reprocessCancelled;
 @property BOOL reprocessPending;
 @property int reprocessSampleCount;
 @property (readonly) int reprocessSampleSize;
@@ -192,6 +196,8 @@
 - (id)rebuildLatencyMap:(id)arg1 latencyMap:(id)arg2;
 - (BOOL)rebuildLatencyMaps:(id)arg1;
 - (void)refreshDayPassesWithCompletionHandler:(id /* block */)arg1;
+- (BOOL)reprocessAfterCancelled;
+- (BOOL)reprocessCancelled;
 - (BOOL)reprocessPending;
 - (int)reprocessSampleCount;
 - (int)reprocessSampleSize;
@@ -235,6 +241,8 @@
 - (void)setNetworkInformation:(id)arg1;
 - (void)setNextProbeDates:(id)arg1;
 - (void)setProbePause:(int)arg1;
+- (void)setReprocessAfterCancelled:(BOOL)arg1;
+- (void)setReprocessCancelled:(BOOL)arg1;
 - (void)setReprocessPending:(BOOL)arg1;
 - (void)setReprocessSampleCount:(int)arg1;
 - (void)setReprocessSamplingTimer:(id)arg1;

@@ -438,18 +438,21 @@
 
 - (BOOL)_br_isInSyncedLocationStrictly:(BOOL)arg1;
 - (id)br_URLByResolvingExternalDocumentReferenceWithError:(id*)arg1;
+- (id)br_URLByResolvingInProcessExternalDocumentReferenceWithProperties:(id)arg1;
 - (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 error:(id*)arg3;
 - (id)br_addFakeConflictLoserFromItemAtURL:(id)arg1 lastEditorDeviceName:(id)arg2 lastEditorUserName:(id)arg3 error:(id*)arg4;
 - (void)br_addPhysicalProperty;
 - (void)br_bookmarkableStringForRemoteOpeningAppWithBundleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)br_bookmarkableStringWithEtag:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)br_cloudDocsContainer;
+- (id)br_cloudDocsContainerWithResolveInnerSharedContainerID:(BOOL)arg1;
 - (id)br_containerID;
 - (id)br_containerIDIfIsDesktopOrDocumentsURL;
 - (id)br_containerIDIfIsDocumentsContainerURL;
 - (id)br_containerIDWithResolveInnerSharedContainerID:(BOOL)arg1;
 - (void)br_containerIDsWithExternalReferencesWithHandler:(id /* block */)arg1;
 - (id)br_debugDescription;
+- (id)br_externalDocumentPropertiesWithError:(id*)arg1;
 - (BOOL)br_getTagNames:(id*)arg1 error:(id*)arg2;
 - (void)br_isConflictedWithHandler:(id /* block */)arg1;
 - (BOOL)br_isDocumentsContainer;
@@ -775,9 +778,19 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isStoreServicesURL;
 
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
-- (id)initWithFileReferenceLiteral:(id)arg1;
+- (int)tv_imageURLType;
+- (BOOL)tv_isAppIconURL;
+- (BOOL)tv_isResourceURL;
+- (id)tv_resourceName;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
++ (id)launchQueryForValue:(id)arg1;
++ (id)tp_inCallServiceURLWithReason:(int)arg1;
+
+- (BOOL)tp_isInCallServiceURLWithReason:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 

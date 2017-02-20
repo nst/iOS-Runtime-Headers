@@ -39,6 +39,7 @@
 
 - (void)_determineEncryptionStatusWithNewRecipients:(id)arg1;
 - (void)_determineEncryptionStatusWithSendingAddress:(id)arg1;
+- (void)_determineRevocationStatusWithIdentity:(struct __SecIdentity { }*)arg1 sendingAddress:(id)arg2;
 - (void)_determineSigningStatusWithSendingAddress:(id)arg1;
 - (void)_notifyDelegateEncryptionStatusDidChange:(int)arg1 certsByRecipient:(id)arg2 errorsByRecipient:(id)arg3 identity:(struct __SecIdentity { }*)arg4 error:(id)arg5;
 - (void)_notifyDelegateSigningStatusDidChange:(int)arg1 identity:(struct __SecIdentity { }*)arg2 error:(id)arg3;

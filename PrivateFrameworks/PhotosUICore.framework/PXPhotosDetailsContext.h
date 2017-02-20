@@ -55,6 +55,7 @@
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (void)setAssetCollections:(id)arg1;
 - (void)setAssetsByCollection:(id)arg1;
+- (void)setKeyAssetsFetchResult:(id)arg1;
 - (void)setLocalizedSubtitle:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;
 - (void)setPeople:(id)arg1;

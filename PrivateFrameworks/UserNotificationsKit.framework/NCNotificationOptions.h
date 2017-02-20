@@ -10,6 +10,7 @@
     BOOL  _canPlaySound;
     BOOL  _canTurnOnDisplay;
     BOOL  _coalescesWhenLocked;
+    unsigned int  _contentPreviewSetting;
     BOOL  _dismissAutomatically;
     BOOL  _hideClearActionInList;
     BOOL  _ignoreAttachmentImageThumbnailCrop;
@@ -19,12 +20,13 @@
     BOOL  _overridesPocketMode;
     BOOL  _overridesQuietMode;
     BOOL  _preemptsPresentedNotification;
+    BOOL  _preventsAutomaticLock;
     unsigned int  _realertCount;
     BOOL  _requestsFullScreenPresentation;
+    BOOL  _revealsAdditionalContentIfNoDefaultAction;
     BOOL  _revealsAdditionalContentOnPresentation;
     BOOL  _silencedByMenuButtonPress;
     BOOL  _suppressesAlertsWhenAppIsActive;
-    BOOL  _suppressesMessageWhenLocked;
     BOOL  _suppressesSubtitleWhenLocked;
 }
 
@@ -35,6 +37,7 @@
 @property (nonatomic, readonly) BOOL canPlaySound;
 @property (nonatomic, readonly) BOOL canTurnOnDisplay;
 @property (nonatomic, readonly) BOOL coalescesWhenLocked;
+@property (nonatomic, readonly) unsigned int contentPreviewSetting;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL dismissAutomatically;
@@ -47,14 +50,14 @@
 @property (nonatomic, readonly) BOOL overridesPocketMode;
 @property (nonatomic, readonly) BOOL overridesQuietMode;
 @property (nonatomic, readonly) BOOL preemptsPresentedNotification;
+@property (nonatomic, readonly) BOOL preventsAutomaticLock;
 @property (nonatomic, readonly) unsigned int realertCount;
 @property (nonatomic, readonly) BOOL requestsFullScreenPresentation;
+@property (nonatomic, readonly) BOOL revealsAdditionalContentIfNoDefaultAction;
 @property (nonatomic, readonly) BOOL revealsAdditionalContentOnPresentation;
 @property (nonatomic, readonly) BOOL silencedByMenuButtonPress;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL suppressesAlertsWhenAppIsActive;
-@property (nonatomic, readonly) BOOL suppressesContentWhenLocked;
-@property (nonatomic, readonly) BOOL suppressesMessageWhenLocked;
 @property (nonatomic, readonly) BOOL suppressesSubtitleWhenLocked;
 
 - (void).cxx_destruct;
@@ -65,6 +68,7 @@
 - (BOOL)canPlaySound;
 - (BOOL)canTurnOnDisplay;
 - (BOOL)coalescesWhenLocked;
+- (unsigned int)contentPreviewSetting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)description;
@@ -83,15 +87,15 @@
 - (BOOL)overridesPocketMode;
 - (BOOL)overridesQuietMode;
 - (BOOL)preemptsPresentedNotification;
+- (BOOL)preventsAutomaticLock;
 - (unsigned int)realertCount;
 - (BOOL)requestsFullScreenPresentation;
+- (BOOL)revealsAdditionalContentIfNoDefaultAction;
 - (BOOL)revealsAdditionalContentOnPresentation;
 - (BOOL)silencedByMenuButtonPress;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (BOOL)suppressesAlertsWhenAppIsActive;
-- (BOOL)suppressesContentWhenLocked;
-- (BOOL)suppressesMessageWhenLocked;
 - (BOOL)suppressesSubtitleWhenLocked;
 
 @end

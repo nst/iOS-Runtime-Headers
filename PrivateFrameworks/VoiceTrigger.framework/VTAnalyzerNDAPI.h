@@ -20,10 +20,14 @@
 - (BOOL)getDoSupervectorSecondaryTest;
 - (double)getExtraSamplesAtStart;
 - (double)getLoggingThreshold;
-- (int)getNumExplicitRetraining;
 - (id)getRecognizerConfig;
 - (double)getRecognizerThresholdOffset;
 - (double)getRecognizerWaitTime;
+- (int)getRetrainNumExplicitUtt;
+- (int)getRetrainNumImplicitUtt;
+- (id)getRetrainSamplingPolicy;
+- (double)getRetrainThresholdSAT;
+- (double)getRetrainThresholdTrigger;
 - (int)getSATVectorCount;
 - (const struct _ndsvscore { float x1; }*)getScoreSuperVector:(const float*)arg1 size:(unsigned int)arg2;
 - (double)getSecondChanceThreshold;

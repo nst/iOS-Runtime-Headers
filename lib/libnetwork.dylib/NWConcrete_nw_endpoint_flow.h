@@ -6,6 +6,8 @@
     NSObject<OS_nw_channel> * channel;
     NSObject<OS_nw_path> * connected_path;
     NSObject<OS_nw_path_evaluator> * connected_path_evaluator;
+    NSObject<OS_dispatch_data> * final_data;
+    int  final_error;
     NSObject<OS_nw_endpoint> * flow_divert_endpoint;
     NSObject<OS_xpc_object> * flow_divert_token;
     bool  has_connected;

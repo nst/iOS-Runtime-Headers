@@ -32,11 +32,13 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)_initCompleted:(BOOL)arg1 canceledByService:(BOOL)arg2 missedPickup:(BOOL)arg3 amount:(id)arg4 outstanding:(BOOL)arg5;
 - (id)_initWithValue:(id)arg1;
 - (id)_newValue;
 - (id)completionUserActivity;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCanceled;

@@ -8,6 +8,7 @@
     id  _contentFetchedObject;
     FCCloudContext * _context;
     FCHeadline * _headline;
+    id  _thumbnailFetchedObject;
 }
 
 @property (nonatomic, copy) NSString *articleID;
@@ -15,6 +16,7 @@
 @property (nonatomic, retain) id contentFetchedObject;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (nonatomic, retain) FCHeadline *headline;
+@property (nonatomic, retain) id thumbnailFetchedObject;
 
 - (void).cxx_destruct;
 - (id)articleID;
@@ -33,5 +35,7 @@
 - (void)setContentFetchedObject:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setHeadline:(id)arg1;
+- (void)setThumbnailFetchedObject:(id)arg1;
+- (id)thumbnailFetchedObject;
 
 @end

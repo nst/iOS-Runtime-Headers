@@ -12,16 +12,22 @@
         unsigned int flags; 
         long long epoch; 
     }  _lastEmittedPTS;
+    BWMotionDataPreserver * _motionDataPreserver;
+    BOOL  _preservesMotionDataFromDroppedStillBracketFrames;
 }
 
 + (void)initialize;
 
+- (void)dealloc;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (BOOL)dropsStillBracketFramesToMaintainConsistentFrameRate;
 - (id)init;
 - (id)nodeSubType;
 - (id)nodeType;
+- (void)prepareForCurrentConfigurationToBecomeLive;
+- (BOOL)preservesMotionDataFromDroppedStillBracketFrames;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setDropsStillBracketFramesToMaintainConsistentFrameRate:(BOOL)arg1;
+- (void)setPreservesMotionDataFromDroppedStillBracketFrames:(BOOL)arg1;
 
 @end

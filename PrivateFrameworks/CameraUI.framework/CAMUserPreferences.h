@@ -10,6 +10,9 @@
     BOOL  _lockAsShutterEnabled;
     int  _overriddenBackCaptureInterval;
     int  _overriddenFrontCaptureInterval;
+    BOOL  _preserveCaptureMode;
+    BOOL  _preserveEffectFilter;
+    BOOL  _preserveLivePhoto;
     int  _previewViewAspectMode;
     NSDate * _resetTimeoutDate;
     BOOL  _shouldCaptureHDREV0;
@@ -29,6 +32,9 @@
 @property (getter=isLockAsShutterEnabled, nonatomic, readonly) BOOL lockAsShutterEnabled;
 @property (nonatomic, readonly) int overriddenBackCaptureInterval;
 @property (nonatomic, readonly) int overriddenFrontCaptureInterval;
+@property (nonatomic, readonly) BOOL preserveCaptureMode;
+@property (nonatomic, readonly) BOOL preserveEffectFilter;
+@property (nonatomic, readonly) BOOL preserveLivePhoto;
 @property (nonatomic) int previewViewAspectMode;
 @property (setter=_setResetTimeoutDate:, nonatomic, retain) NSDate *resetTimeoutDate;
 @property (nonatomic, readonly) BOOL shouldCaptureHDREV0;
@@ -55,6 +61,9 @@
 - (BOOL)isLockAsShutterEnabled;
 - (int)overriddenBackCaptureInterval;
 - (int)overriddenFrontCaptureInterval;
+- (BOOL)preserveCaptureMode;
+- (BOOL)preserveEffectFilter;
+- (BOOL)preserveLivePhoto;
 - (int)previewViewAspectMode;
 - (void)readPreferences;
 - (BOOL)readPreferencesWithLaunchOptions:(id)arg1 emulationMode:(int)arg2;

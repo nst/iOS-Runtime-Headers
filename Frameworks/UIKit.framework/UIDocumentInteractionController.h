@@ -134,7 +134,7 @@
 - (void)_openDocumentInPlaceWithApplication:(id)arg1;
 - (void)_openDocumentWithApplication:(id)arg1;
 - (void)_openDocumentWithApplication:(id)arg1 userInfo:(id)arg2;
-- (void)_openDocumentWithCurrentApplication;
+- (void)_openDocumentWithApplicationAfterUnzippingIfNecessary:(id)arg1;
 - (id)_openWithAppActivitiesForDocumentProxy:(id)arg1;
 - (id)_pathsInArchive:(id /* block */)arg1;
 - (BOOL)_performingActivity;

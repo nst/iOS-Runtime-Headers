@@ -52,7 +52,6 @@
 - (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
 - (int)archiveDestination;
 - (BOOL)canCompact;
-- (BOOL)canDeleteMessage:(id)arg1;
 - (BOOL)canFetchMessageIDs;
 - (BOOL)canFetchSearchResults;
 - (void)cancelOpen;

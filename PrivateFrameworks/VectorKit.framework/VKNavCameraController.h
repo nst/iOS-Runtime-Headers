@@ -334,7 +334,7 @@
 - (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)startWithPounce:(BOOL)arg1 pounceCompletionHandler:(id /* block */)arg2;
+- (void)startWithPounce:(BOOL)arg1 startLocation:(struct { double x1; double x2; })arg2 pounceCompletionHandler:(id /* block */)arg3;
 - (void)stop;
 - (void)stopAnimations;
 - (void)stopPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;

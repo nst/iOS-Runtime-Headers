@@ -9,7 +9,9 @@
     NSObject<SFPersonCollectionViewCellDelegate> * _delegate;
     UIColor * _fadedSecondLabelColor;
     SFPersonImageView * _imageView;
+    UIImpactFeedbackGenerator * _impactHaptic;
     UILabel * _nameLabel;
+    UINotificationFeedbackGenerator * _notificationHaptic;
     SFAirDropNode * _person;
     NSProgress * _progress;
     NSArray * _progressKeyPaths;
@@ -17,6 +19,7 @@
     UILabel * _secondLabel;
     NSLayoutConstraint * _secondLabelFBConstraint;
     NSArray * _secondLabelVisibleConstraintsArray;
+    UISelectionFeedbackGenerator * _selectionHaptic;
     NSString * _sessionID;
     BOOL  _stateBeingRestored;
 }
@@ -27,7 +30,9 @@
 @property (nonatomic) NSObject<SFPersonCollectionViewCellDelegate> *delegate;
 @property (nonatomic, retain) UIColor *fadedSecondLabelColor;
 @property (nonatomic, retain) SFPersonImageView *imageView;
+@property (nonatomic, retain) UIImpactFeedbackGenerator *impactHaptic;
 @property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UINotificationFeedbackGenerator *notificationHaptic;
 @property (nonatomic, retain) SFAirDropNode *person;
 @property (nonatomic, retain) NSProgress *progress;
 @property (nonatomic, retain) NSArray *progressKeyPaths;
@@ -35,6 +40,7 @@
 @property (nonatomic, retain) UILabel *secondLabel;
 @property (nonatomic, retain) NSLayoutConstraint *secondLabelFBConstraint;
 @property (nonatomic, retain) NSArray *secondLabelVisibleConstraintsArray;
+@property (nonatomic, retain) UISelectionFeedbackGenerator *selectionHaptic;
 @property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic) BOOL stateBeingRestored;
 
@@ -43,18 +49,23 @@
 - (int)cellState;
 - (id)circleProgressView;
 - (BOOL)darkStyleOnLegacyApp;
+- (void)deactivateHaptics;
 - (void)dealloc;
 - (id)delegate;
 - (id)fadedSecondLabelColor;
+- (void)fireHapticsForState:(int)arg1;
 - (void)handleKVOUpdateForPerson:(id)arg1 keyPath:(id)arg2;
 - (void)handleKVOUpdateForProgress:(id)arg1 keyPath:(id)arg2;
 - (id)imageView;
+- (id)impactHaptic;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)nameLabel;
+- (id)notificationHaptic;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)person;
 - (void)prepareForReuse;
+- (void)prepareHaptics;
 - (id)progress;
 - (id)progressKeyPaths;
 - (id)progressToken;
@@ -63,6 +74,7 @@
 - (id)secondLabel;
 - (id)secondLabelFBConstraint;
 - (id)secondLabelVisibleConstraintsArray;
+- (id)selectionHaptic;
 - (id)sessionID;
 - (void)setCellState:(int)arg1;
 - (void)setCellState:(int)arg1 animated:(BOOL)arg2;
@@ -71,7 +83,9 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFadedSecondLabelColor:(id)arg1;
 - (void)setImageView:(id)arg1;
+- (void)setImpactHaptic:(id)arg1;
 - (void)setNameLabel:(id)arg1;
+- (void)setNotificationHaptic:(id)arg1;
 - (void)setPerson:(id)arg1;
 - (void)setProgress:(id)arg1;
 - (void)setProgressKeyPaths:(id)arg1;
@@ -81,6 +95,7 @@
 - (void)setSecondLabelText:(id)arg1 withTextColor:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)setSecondLabelVisibleConstraintsArray:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (void)setSelectionHaptic:(id)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)setStateBeingRestored:(BOOL)arg1;
 - (BOOL)stateBeingRestored;

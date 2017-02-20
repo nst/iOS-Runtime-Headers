@@ -211,6 +211,14 @@
 - (void)webViewMainFrameDidFirstVisuallyNonEmptyLayoutInFrame:(id)arg1;
 - (void)webViewSupportedOrientationsUpdated:(id)arg1;
 
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (void)_accessibilityPauseSpeaking:(id)arg1;
+- (void)_accessibilitySpeak:(id)arg1;
+- (id)_accessibilitySpeakSelectionTextInputResponder;
+
 // Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
 
 - (int)highlightAllOccurencesOfTokens:(id)arg1;

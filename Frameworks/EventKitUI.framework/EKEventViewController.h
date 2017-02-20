@@ -14,6 +14,7 @@
     BOOL  _calendarPreviewIsInlineDayView;
     UIViewController * _confirmationAlertPresentationSourceViewController;
     struct NSDictionary { Class x1; } * _context;
+    BOOL  _countedAppearance;
     EKEventDetailItem * _currentEditItem;
     NSArray * _currentSections;
     BOOL  _dead;

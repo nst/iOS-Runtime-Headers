@@ -182,6 +182,7 @@
 - (void)_animateCollapseInteractive:(BOOL)arg1;
 - (void)_animateExpand;
 - (void)_setupWaveformView;
+- (BOOL)_shouldNotAnimateCollapseInteractive;
 - (void)_updateUIForEntryFieldCollapsedStateChange;
 - (void)actionMenuControllerDidDismissActionMenu:(id)arg1;
 - (void)actionMenuControllerWillDismissActionMenu:(id)arg1 animated:(BOOL)arg2;

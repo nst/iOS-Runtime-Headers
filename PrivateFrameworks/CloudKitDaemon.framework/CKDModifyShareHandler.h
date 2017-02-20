@@ -4,10 +4,12 @@
 
 @interface CKDModifyShareHandler : CKDModifyRecordHandler {
     BOOL  _haveAddedOwnerToShare;
+    BOOL  _isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
     CKDModifyShareTokenURLRequest * _request;
 }
 
 @property (nonatomic) BOOL haveAddedOwnerToShare;
+@property (nonatomic) BOOL isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
 @property (nonatomic, retain) CKDModifyShareTokenURLRequest *request;
 @property (nonatomic, readonly) CKShare *share;
 @property (nonatomic, readonly) CKRecordID *shareID;
@@ -35,6 +37,7 @@
 - (void)clearProtectionDataForRecord;
 - (void)fetchSharePCSData;
 - (BOOL)haveAddedOwnerToShare;
+- (BOOL)isALegacyPublicShareThatNeedsOwnerPPPCSUpgrade;
 - (BOOL)isCloudDocsContainer;
 - (BOOL)isShare;
 - (void)noteSideEffectRecordAbsent:(id)arg1;
@@ -45,6 +48,7 @@
 - (void)savePCSDataToCache;
 - (unsigned int)serviceType;
 - (void)setHaveAddedOwnerToShare:(BOOL)arg1;
+- (void)setIsALegacyPublicShareThatNeedsOwnerPPPCSUpgrade:(BOOL)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setServerRecord:(id)arg1;
 - (id)share;

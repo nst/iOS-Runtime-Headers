@@ -75,6 +75,7 @@
 }
 
 @property (nonatomic) BOOL automaticBrailleTranslationEnabled;
+@property (nonatomic, readonly) unsigned long long brailleLineGenerationID;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL delegateWantsDisplayCallback;
 @property (readonly, copy) NSString *description;
@@ -130,6 +131,7 @@
 - (BOOL)automaticBrailleTranslationEnabled;
 - (void)beginUpdates;
 - (id)brailleInputManager;
+- (unsigned long long)brailleLineGenerationID;
 - (id)configuration;
 - (void)dealloc;
 - (BOOL)delegateWantsDisplayCallback;

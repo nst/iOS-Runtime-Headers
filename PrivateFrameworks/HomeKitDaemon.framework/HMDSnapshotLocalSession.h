@@ -6,6 +6,6 @@
 
 - (void)addMessage:(id)arg1;
 - (id)description;
-- (id)initWithSessionID:(id)arg1 snapshotGetter:(id)arg2 message:(id)arg3 waitPeriod:(double)arg4 reachabilityPath:(unsigned int)arg5 cameraLocallyReachable:(BOOL)arg6;
+- (id)initWithSessionID:(id)arg1 accessory:(id)arg2 snapshotGetter:(id)arg3 message:(id)arg4 waitPeriod:(double)arg5 reachabilityPath:(unsigned int)arg6 cameraLocallyReachable:(BOOL)arg7 snapshotForNotification:(BOOL)arg8;
 
 @end

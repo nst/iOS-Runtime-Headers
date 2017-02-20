@@ -16,7 +16,9 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (int)code;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCode:(int)arg1 userActivity:(id)arg2;
 - (id)initWithCoder:(id)arg1;

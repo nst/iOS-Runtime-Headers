@@ -19,9 +19,9 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)CKPropertiesDescription;
 - (id)CKPropertiesDescriptionWithProperties:(id)arg1;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
 - (id)CKXPCSuitableString;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -42,6 +42,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
+- (id)_itemIDWithLibraryRowID:(id)arg1 session:(id)arg2;
 - (id)brc_appLibraryDocumentsZoneName;
 - (id)brc_appLibraryRootZoneName;
 - (BOOL)brc_isAppLibraryDocumentsRecordID;

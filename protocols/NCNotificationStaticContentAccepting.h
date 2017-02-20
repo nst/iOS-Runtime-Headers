@@ -31,11 +31,7 @@
 - (void)setAccessoryView:(UIView *)arg1;
 - (void)setHintText:(NSString *)arg1;
 - (void)setMessageNumberOfLines:(unsigned int)arg1;
-- (void)setShowAdditionalMessageLines:(BOOL)arg1;
 - (void)setThumbnail:(UIImage *)arg1;
-- (void)setThumbnailViewContentMode:(int)arg1;
-- (BOOL)showAdditionalMessageLines;
 - (UIImage *)thumbnail;
-- (int)thumbnailViewContentMode;
 
 @end

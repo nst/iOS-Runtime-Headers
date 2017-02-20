@@ -14,8 +14,6 @@
 @property (nonatomic) float maximumPressure;
 @property (nonatomic) float minimumPressure;
 
-+ (BOOL)isGlutenFree;
-
 - (void).cxx_destruct;
 - (void)_updateForce;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

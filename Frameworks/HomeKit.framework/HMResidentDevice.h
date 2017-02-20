@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMResidentDevice : NSObject <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
+@interface HMResidentDevice : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge, NSSecureCoding> {
     unsigned int  _capabilities;
     NSObject<OS_dispatch_queue> * _clientQueue;
     BOOL  _currentDevice;
@@ -70,6 +70,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

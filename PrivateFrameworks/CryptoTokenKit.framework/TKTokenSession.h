@@ -8,6 +8,7 @@
     NSObject<OS_xpc_object> * _clientConnection;
     <TKTokenSessionDelegate> * _delegate;
     NSDictionary * _parameters;
+    NSObject<OS_dispatch_queue> * _sessionQueue;
     TKToken * _token;
 }
 

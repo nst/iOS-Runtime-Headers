@@ -65,10 +65,6 @@
 
 - (void)CDVAddItemParserMappingWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
 
-// Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
-
-- (id)physicalDeviceWithAddress:(unsigned int)arg1;
-
 // Image: /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/DuetActivityScheduler
 
 - (void)_DAS_addOrReplaceObject:(id)arg1;
@@ -98,6 +94,8 @@
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 - (void)fc_removeObjectsFromArray:(id)arg1;
+- (void)fc_safelyAddObject:(id)arg1;
+- (void)fc_safelyAddObjects:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

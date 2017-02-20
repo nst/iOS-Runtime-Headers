@@ -8,6 +8,7 @@
     SKUIProductImageDataConsumer * _generalImageConsumer;
     SKUIStyledImageDataConsumer * _iconConsumer;
     SKUIProductImageDataConsumer * _letterboxConsumer;
+    SKUIStyledImageDataConsumer * _messagesIconConsumer;
     SKUIStyledImageDataConsumer * _newsstandConsumer;
     NSMutableDictionary * _placeholders;
     SKUIProductImageDataConsumer * _posterConsumer;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) SKUIProductImageDataConsumer *generalConsumer;
 @property (nonatomic, retain) SKUIStyledImageDataConsumer *iconConsumer;
 @property (nonatomic, retain) SKUIProductImageDataConsumer *letterboxConsumer;
+@property (nonatomic, retain) SKUIStyledImageDataConsumer *messagesIconConsumer;
 @property (nonatomic, retain) SKUIStyledImageDataConsumer *newsstandConsumer;
 @property (nonatomic, retain) SKUIProductImageDataConsumer *posterConsumer;
 
@@ -37,6 +39,7 @@
 - (struct CGSize { float x1; float x2; })largestImageSizeForItems:(id)arg1;
 - (struct CGSize { float x1; float x2; })largestImageSizeForLockups:(id)arg1;
 - (id)letterboxConsumer;
+- (id)messagesIconConsumer;
 - (id)newsstandConsumer;
 - (id)placeholderImageForItem:(id)arg1;
 - (id)posterConsumer;
@@ -45,6 +48,7 @@
 - (void)setGeneralConsumer:(id)arg1;
 - (void)setIconConsumer:(id)arg1;
 - (void)setLetterboxConsumer:(id)arg1;
+- (void)setMessagesIconConsumer:(id)arg1;
 - (void)setNewsstandConsumer:(id)arg1;
 - (void)setPosterConsumer:(id)arg1;
 

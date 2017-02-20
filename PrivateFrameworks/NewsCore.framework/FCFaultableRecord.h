@@ -6,7 +6,9 @@
     PBCodable * _record;
     NTPBRecordBase * _recordBase;
     NSData * _recordData;
-    int  _recordLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _recordLock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +17,7 @@
 @property (nonatomic, retain) PBCodable *record;
 @property (nonatomic, retain) NTPBRecordBase *recordBase;
 @property (nonatomic, retain) NSData *recordData;
-@property (nonatomic) int recordLock;
+@property (nonatomic) struct os_unfair_lock_s { unsigned int x1; } recordLock;
 @property (readonly) Class superclass;
 
 + (id)faultableRecordWithRecord:(id)arg1;
@@ -28,11 +30,11 @@
 - (id)record;
 - (id)recordBase;
 - (id)recordData;
-- (int)recordLock;
+- (struct os_unfair_lock_s { unsigned int x1; })recordLock;
 - (void)setRecord:(id)arg1;
 - (void)setRecordBase:(id)arg1;
 - (void)setRecordData:(id)arg1;
-- (void)setRecordLock:(int)arg1;
+- (void)setRecordLock:(struct os_unfair_lock_s { unsigned int x1; })arg1;
 - (void)writeToKeyValuePair:(id)arg1;
 
 @end

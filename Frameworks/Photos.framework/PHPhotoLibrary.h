@@ -72,11 +72,13 @@
 - (void).cxx_destruct;
 - (void)_addObserver:(id)arg1;
 - (void)_beginTransaction;
+- (void)_cancelTransaction:(id /* block */)arg1;
 - (void)_checkForPeopleUIFeatureWithFetchRequest:(id)arg1 comparator:(id /* block */)arg2;
 - (void)_commitTransaction:(id /* block */)arg1;
 - (void)_processPendingChanges;
 - (void)_removeObserver:(id)arg1;
 - (void)_requestAnalysisProgressWithCompletion:(id /* block */)arg1;
+- (void)_unauthorized:(id /* block */)arg1 error:(id*)arg2;
 - (id)allSocialGroupsForPersonIdentifier:(id)arg1 error:(id*)arg2;
 - (void)assertTransaction;
 - (id)assetIdentifiersForPersonIdentifiers:(id)arg1 error:(id*)arg2;
@@ -99,6 +101,7 @@
 - (id)exportGraphForPurpose:(id)arg1 error:(id*)arg2;
 - (id)externalObservers;
 - (id)faceClusterSequenceNumbersOfKeyFacesInAlgorithmicFaceGroupsForPerson:(id)arg1 verifiedClusterSequenceNumbers:(id)arg2;
+- (void)faceProcessingStatusForUserInterface:(id /* block */)arg1;
 - (id)faceSuggestionsForFaceClusterSequenceNumbers:(id)arg1 excludeFaceLocalIdentifers:(id)arg2;
 - (BOOL)featureEnabledForWorkerType:(short)arg1;
 - (BOOL)featureEnabledForWorkerType:(short)arg1 completion:(id /* block */)arg2;
@@ -130,6 +133,8 @@
 - (id)memoryDebugInformationForMemoryWithLocalIdentifier:(id)arg1 precision:(unsigned int)arg2 error:(id*)arg3;
 - (id)objectFetchingContextForCurrentQueueQoS;
 - (id)objectFetchingManagedObjectContextForObject:(id)arg1 propertySet:(id)arg2;
+- (void)performCancellableChanges:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)performCancellableChangesAndWait:(id /* block */)arg1 error:(id*)arg2;
 - (void)performChanges:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)performChangesAndWait:(id /* block */)arg1 error:(id*)arg2;
 - (id)photoLibrary;
@@ -154,6 +159,7 @@
 - (void)requestGraphRebuildProgressWithCompletion:(id /* block */)arg1;
 - (void)requestGraphRebuildWithProgress:(id)arg1 completion:(id /* block */)arg2;
 - (void)requestPermissionToDownloadFaceResourcesOfCount:(unsigned int)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)requestTotalProgressCountsForWorkerType:(short)arg1 states:(id)arg2 completion:(id /* block */)arg3;
 - (void)requestTotalProgressCountsWithCompletion:(id /* block */)arg1;
 - (BOOL)resetPendingAnalysisStatesWithError:(id*)arg1;
 - (id)saveTokensToKnownUUIDs;

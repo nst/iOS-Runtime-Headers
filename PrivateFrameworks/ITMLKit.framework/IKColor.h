@@ -18,6 +18,9 @@
 @property (nonatomic, readonly, copy) NSArray *gradientPoints;
 @property (nonatomic) int gradientType;
 
++ (id)colorMap;
++ (void)registerColorNameMap:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)color;
 - (int)colorType;

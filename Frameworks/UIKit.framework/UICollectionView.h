@@ -100,6 +100,7 @@
     UITouch * _currentTouch;
     UICollectionViewUpdate * _currentUpdate;
     <UICollectionViewDataSource_Private> * _dataSource;
+    NSMutableDictionary * _dataSourceToLayoutIndexPathMappingDict;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -327,7 +328,8 @@
 - (void)_highlightFirstVisibleItemIfAppropriate;
 - (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
 - (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
-- (id)_indexPathForView:(id)arg1 ofType:(unsigned int)arg2;
+- (id)_indexPathForCell:(id)arg1 includePrefetchedCells:(BOOL)arg2;
+- (id)_indexPathForView:(id)arg1 ofType:(unsigned int)arg2 includePrefetchedCells:(BOOL)arg3;
 - (BOOL)_indexPathIsValid:(id)arg1;
 - (id)_indexPathsForVisibleDecorationViewsOfKind:(id)arg1;
 - (id)_indexPathsForVisibleSupplementaryViewsOfKind:(id)arg1;
@@ -336,6 +338,7 @@
 - (void)_invalidateLayoutWithContext:(id)arg1;
 - (void)_invalidateWithBlock:(id /* block */)arg1;
 - (BOOL)_isEditing;
+- (BOOL)_isReordering;
 - (BOOL)_isViewInReuseQueue:(id)arg1;
 - (BOOL)_itemIndexPathIsReordered:(id)arg1;
 - (BOOL)_keepsFirstResponderVisibleOnBoundsChange;
@@ -593,5 +596,13 @@
 - (void)_gkRegisterNib:(id)arg1 forCellClass:(Class)arg2;
 - (id)_gkReuseIdentifierForClass:(Class)arg1;
 - (id)_gkVisibleCellForIndexPath:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (id)tv_indexPathsForIndexSet:(id)arg1 withOptions:(unsigned int)arg2 prefix:(id)arg3;
+- (void)tv_updateItemsInSection:(unsigned int)arg1 withChange:(id)arg2;
+- (void)tv_updateItemsInSection:(unsigned int)arg1 withChanges:(id)arg2;
+- (void)tv_updateSectionsWithChange:(id)arg1;
+- (void)tv_updateSectionsWithChanges:(id)arg1;
 
 @end

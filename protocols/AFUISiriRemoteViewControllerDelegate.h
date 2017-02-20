@@ -12,7 +12,7 @@
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didEncounterUnexpectedServiceError:(NSError *)arg2;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 didReadBulletinWithIdentifier:(NSString *)arg2;
 - (void)siriRemoteViewController:(void *)arg1 handlePasscodeUnlockWithCompletion:(void *)arg2; // needs 2 arg types, found 7: AFUISiriRemoteViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
-- (void)siriRemoteViewController:(void *)arg1 launchApplicationWithBundleIdentifier:(void *)arg2 withURL:(void *)arg3 launchOverSiri:(void *)arg4 replyHandler:(void *)arg5; // needs 5 arg types, found 10: AFUISiriRemoteViewController *, NSString *, NSURL *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)siriRemoteViewController:(void *)arg1 launchApplicationWithBundleIdentifier:(void *)arg2 withURL:(void *)arg3 launchOptions:(void *)arg4 replyHandler:(void *)arg5; // needs 5 arg types, found 10: AFUISiriRemoteViewController *, NSString *, NSURL *, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (BOOL)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 openURL:(NSURL *)arg2 appBundleID:(NSString *)arg3 allowSiriDismissal:(BOOL)arg4;
 - (BOOL)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 openURL:(NSURL *)arg2 delaySessionEndForTTS:(BOOL)arg3;
 - (void)siriRemoteViewController:(AFUISiriRemoteViewController *)arg1 setBugReportingAvailable:(BOOL)arg2;

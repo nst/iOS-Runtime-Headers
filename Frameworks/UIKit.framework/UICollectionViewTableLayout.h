@@ -241,7 +241,7 @@
 - (BOOL)_shouldHaveFooterViewForSection:(int)arg1;
 - (BOOL)_shouldHaveGlobalViewForElementOfKind:(id)arg1;
 - (BOOL)_shouldHaveHeaderViewForSection:(int)arg1;
-- (BOOL)_shouldHaveViewForElementOfKind:(id)arg1 atSection:(int)arg2;
+- (BOOL)_shouldHaveViewForElementOfKind:(id)arg1 atSection:(int)arg2 useRowData:(BOOL)arg3;
 - (BOOL)_shouldIndentWhileEditingForRowAtIndexPath:(id)arg1;
 - (BOOL)_shouldStripHeaderTopPaddingForSection:(int)arg1;
 - (BOOL)_shouldUseNewHeaderFooterBehavior;

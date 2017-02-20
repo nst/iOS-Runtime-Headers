@@ -14,7 +14,7 @@
 @property (nonatomic) int octaveCount;
 @property (nonatomic) int seed;
 
-- (struct Module { int (**x1)(); struct Module {} **x2; }*)__newModule;
+- (id)cloneModule;
 - (double)frequency;
 - (double)lacunarity;
 - (int)octaveCount;
@@ -23,5 +23,6 @@
 - (void)setLacunarity:(double)arg1;
 - (void)setOctaveCount:(int)arg1;
 - (void)setSeed:(int)arg1;
+- (double)valueAt;
 
 @end

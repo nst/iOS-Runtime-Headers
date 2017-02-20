@@ -101,6 +101,7 @@
 - (id)displayableText;
 - (double)durationFromExternalMetadata;
 - (long long)equivalencySourceAdamID;
+- (id)externalContentIdentifier;
 - (id)genre;
 - (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
 - (BOOL)hasAlternatesForTypes:(unsigned int)arg1;

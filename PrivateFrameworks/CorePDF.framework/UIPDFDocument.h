@@ -10,14 +10,20 @@
     NSString * _documentID;
     NSString * _documentName;
     unsigned int  _imageCacheCount;
-    int  _imageCacheLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _imageCacheLock;
     unsigned int  _imageCacheLookAhead;
     float  _imageCacheResolution;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     unsigned int  _numberOfPages;
     UIPDFPageImageCache * _pageImageCache;
     UIPDFPageImageCache * _thumbnailCache;
-    int  _thumbnailLock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _thumbnailLock;
 }
 
 @property (readonly) struct CGPDFDocument { }*CGDocument;

@@ -21,7 +21,7 @@
 - (void)_setRequestCounter:(int)arg1;
 - (void)cancelRequestWithID:(int)arg1;
 - (id)init;
-- (int)requestCrossfadeItemForVideoAsset:(id)arg1 sourceStartTime:(double)arg2 stillPhoto:(struct CGImage { }*)arg3 photoEXIFOrientation:(int)arg4 crossfadeDuration:(double)arg5 numberOfFrames:(unsigned int)arg6 targetSize:(struct CGSize { float x1; float x2; })arg7 videoComposition:(id)arg8 resultHandler:(id /* block */)arg9;
+- (int)requestCrossfadeItemForVideoAsset:(id)arg1 sourceStartTime:(double)arg2 stillPhoto:(struct CGImage { }*)arg3 photoEXIFOrientation:(int)arg4 crossfadeDuration:(double)arg5 minimumFrameInterval:(float)arg6 targetSize:(struct CGSize { float x1; float x2; })arg7 videoComposition:(id)arg8 resultHandler:(id /* block */)arg9;
 - (int)requestCrossfadeItemForVideoAsset:(id)arg1 stillPhoto:(struct CGImage { }*)arg2 stillPhotoEXIFOrientation:(int)arg3 sourceStartTime:(double)arg4 targetSize:(struct CGSize { float x1; float x2; })arg5 videoComposition:(id)arg6 resultHandler:(id /* block */)arg7;
 
 @end

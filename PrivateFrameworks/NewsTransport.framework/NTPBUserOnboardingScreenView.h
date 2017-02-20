@@ -4,11 +4,13 @@
 
 @interface NTPBUserOnboardingScreenView : PBCodable <NSCopying> {
     int  _countOfNotificationsSelected;
+    BOOL  _fromPersonalizeNews;
     struct { 
         unsigned int countOfNotificationsSelected : 1; 
         unsigned int onboardingScreenType : 1; 
         unsigned int previouslyCompletedOnboardingOsVersion : 1; 
         unsigned int userAction : 1; 
+        unsigned int fromPersonalizeNews : 1; 
     }  _has;
     int  _onboardingScreenType;
     int  _previouslyCompletedOnboardingOsVersion;
@@ -19,7 +21,9 @@
 }
 
 @property (nonatomic) int countOfNotificationsSelected;
+@property (nonatomic) BOOL fromPersonalizeNews;
 @property (nonatomic) BOOL hasCountOfNotificationsSelected;
+@property (nonatomic) BOOL hasFromPersonalizeNews;
 @property (nonatomic) BOOL hasOnboardingScreenType;
 @property (nonatomic) BOOL hasPreviouslyCompletedOnboardingOsVersion;
 @property (nonatomic, readonly) BOOL hasReferringSourceApplication;
@@ -38,7 +42,9 @@
 - (int)countOfNotificationsSelected;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)fromPersonalizeNews;
 - (BOOL)hasCountOfNotificationsSelected;
+- (BOOL)hasFromPersonalizeNews;
 - (BOOL)hasOnboardingScreenType;
 - (BOOL)hasPreviouslyCompletedOnboardingOsVersion;
 - (BOOL)hasReferringSourceApplication;
@@ -54,7 +60,9 @@
 - (id)referringSourceApplication;
 - (id)referringUrl;
 - (void)setCountOfNotificationsSelected:(int)arg1;
+- (void)setFromPersonalizeNews:(BOOL)arg1;
 - (void)setHasCountOfNotificationsSelected:(BOOL)arg1;
+- (void)setHasFromPersonalizeNews:(BOOL)arg1;
 - (void)setHasOnboardingScreenType:(BOOL)arg1;
 - (void)setHasPreviouslyCompletedOnboardingOsVersion:(BOOL)arg1;
 - (void)setHasUserAction:(BOOL)arg1;

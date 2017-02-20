@@ -3,6 +3,7 @@
  */
 
 @interface AFUISpeechSynthesisElement : NSObject {
+    NSDictionary * _analyticsContext;
     NSString * _animationIdentifier;
     id /* block */  _completion;
     <AFUISpeechSynthesisElementDelegate> * _delegate;
@@ -16,6 +17,7 @@
     NSString * _text;
 }
 
+@property (nonatomic, readonly) NSDictionary *analyticsContext;
 @property (nonatomic, readonly) NSString *animationIdentifier;
 @property (getter=_completion, nonatomic, readonly) id /* block */ completion;
 @property (nonatomic) <AFUISpeechSynthesisElementDelegate> *delegate;
@@ -35,13 +37,14 @@
 - (void)_setPreparationBlockCompleted:(BOOL)arg1;
 - (void)_setText:(id)arg1;
 - (void)_updateSynthesisEligibility;
+- (id)analyticsContext;
 - (id)animationIdentifier;
 - (id)delegate;
 - (id)description;
 - (BOOL)durationHasElapsed;
 - (void)executeCompletion;
 - (id)init;
-- (id)initWithText:(id)arg1 provisional:(BOOL)arg2 eligibleAfterDuration:(double)arg3 preparation:(id /* block */)arg4 completion:(id /* block */)arg5 animationIdentifier:(id)arg6;
+- (id)initWithText:(id)arg1 provisional:(BOOL)arg2 eligibleAfterDuration:(double)arg3 preparation:(id /* block */)arg4 completion:(id /* block */)arg5 animationIdentifier:(id)arg6 analyticsContext:(id)arg7;
 - (BOOL)isEligibleForSynthesis;
 - (BOOL)isPhonetic;
 - (BOOL)isProvisional;

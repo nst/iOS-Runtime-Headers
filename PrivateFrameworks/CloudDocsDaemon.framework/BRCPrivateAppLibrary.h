@@ -15,7 +15,6 @@
 
 - (void).cxx_destruct;
 - (unsigned int)_activateState:(unsigned int)arg1 origState:(unsigned int)arg2;
-- (BOOL)_crossZoneMoveDocumentsFromClientZone:(id)arg1 toZone:(id)arg2;
 - (BOOL)_isInCloudDocsZone;
 - (id)_unwrappedDescriptionWithContext:(id)arg1;
 - (void)_updateContainerMetadataFromRecord:(id)arg1 stripIcons:(BOOL)arg2;
@@ -30,7 +29,7 @@
 - (id)documentsPath;
 - (id)fetchRootItem;
 - (id)fetchRootItemInDB:(id)arg1;
-- (id)initWithName:(id)arg1 ownerName:(id)arg2 dbRowID:(id)arg3 zoneRowID:(id)arg4 db:(id)arg5 plist:(id)arg6 session:(id)arg7 initialCreation:(BOOL)arg8 createdRootOnDisk:(BOOL)arg9 rootFileID:(id)arg10;
+- (id)initWithName:(id)arg1 ownerName:(id)arg2 dbRowID:(id)arg3 zoneRowID:(id)arg4 db:(id)arg5 plist:(id)arg6 session:(id)arg7 initialCreation:(BOOL)arg8 createdRootOnDisk:(BOOL)arg9 createdCZMMoved:(BOOL)arg10 rootFileID:(id)arg11;
 - (BOOL)isPrivateAppLibrary;
 - (void)notifyClient:(id)arg1 whenFaultingIsDone:(id /* block */)arg2;
 - (id)pathRelativeToRoot;

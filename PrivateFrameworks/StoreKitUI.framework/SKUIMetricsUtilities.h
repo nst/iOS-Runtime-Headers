@@ -7,7 +7,7 @@
 + (id)jsTimeFromTimeInterval:(double)arg1;
 + (id)newErrorPageEvent;
 + (id)newErrorRetryClickEvent;
-+ (BOOL)shouldCollectNativeMetrics;
++ (BOOL)shouldLogTimingMetrics;
 + (BOOL)showEventNotifications;
 + (double)timeIntervalFromJSTime:(id)arg1;
 + (BOOL)trackAllEvents;

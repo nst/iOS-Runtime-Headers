@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) unsigned long long articleRecordModificationDateMilliseconds;
 @property (nonatomic, readonly) unsigned long long backendArticleVersion;
 @property (nonatomic, readonly, copy) NSArray *blockedStorefrontIDs;
+@property (nonatomic, readonly) BOOL canBePurchased;
 @property (nonatomic, readonly, copy) NSString *clusterID;
 @property (nonatomic, readonly) unsigned long long contentType;
 @property (nonatomic, readonly, copy) NSURL *contentURL;
@@ -21,6 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (getter=isDeleted, nonatomic, readonly) BOOL deleted;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSDate *displayDate;
 @property (nonatomic, readonly, copy) NSArray *endOfArticleTopicIDs;
 @property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
 @property (getter=isFeatureCandidate, nonatomic, readonly) BOOL featureCandidate;
@@ -101,12 +103,14 @@
 - (unsigned long long)articleRecordModificationDateMilliseconds;
 - (unsigned long long)backendArticleVersion;
 - (id)blockedStorefrontIDs;
+- (BOOL)canBePurchased;
 - (id)clusterID;
 - (unsigned long long)contentType;
 - (id)contentURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArt;
 - (id)description;
+- (id)displayDate;
 - (id)endOfArticleTopicIDs;
 - (int)feedElementType;
 - (unsigned long long)feedHalfLifeMilliseconds;

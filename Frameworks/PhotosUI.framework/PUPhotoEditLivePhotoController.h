@@ -59,6 +59,7 @@
 - (void)_updateRenderedLivePhotoIfNeeded;
 - (id)_videoRenderer;
 - (id)baseLivePhoto;
+- (void)cancelRendering;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithBaseLivePhoto:(id)arg1 editRenderer:(id)arg2;

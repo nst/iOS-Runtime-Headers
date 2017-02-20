@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDRadioViewController : MCD_OLD_TableViewController <MCDErrorViewDelegate, MCDRadioContentManagerDelegate, MCDRadioDataSourceDelegate> {
+@interface MCDRadioViewController : MCD_OLD_TableViewController <MCDErrorViewDelegate, MCDRadioContentManagerDelegate> {
     UIView * _MCD_tableView;
     UIActivityIndicatorView * _activityIndicator;
     unsigned int  _allStationsIndex;
     id  _currentlyPlayingRadioStation;
-    MCDRadioDataSource * _dataSource;
     BOOL  _didInitiatePlayback;
     NSArray * _featuredStations;
     BOOL  _featuredStationsFinishedLoading;

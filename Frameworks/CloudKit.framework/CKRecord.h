@@ -60,6 +60,7 @@
 @property (nonatomic, readonly) BOOL containsPackageValues;
 @property (nonatomic, copy) NSDate *creationDate;
 @property (nonatomic, copy) CKRecordID *creatorUserRecordID;
+@property (nonatomic, retain) NSData *data;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSData *encryptedFullTokenData;
@@ -67,6 +68,7 @@
 @property (nonatomic, retain) NSString *etag;
 @property (nonatomic, readonly) NSString *fullToken;
 @property (nonatomic, readonly) BOOL hasEncryptedData;
+@property (nonatomic) BOOL hasLargeDataAsset;
 @property (nonatomic, readonly) BOOL hasModifiedEncryptedData;
 @property (nonatomic, readonly) BOOL hasModifiedPropertiesRequiringEncryption;
 @property (nonatomic, readonly) BOOL hasPropertiesRequiringDecryption;
@@ -75,6 +77,7 @@
 @property (nonatomic) BOOL hasUpdatedShare;
 @property (readonly) unsigned int hash;
 @property (getter=isKnownToServer, nonatomic) BOOL knownToServer;
+@property (nonatomic, retain) CKAsset *largeDataAsset;
 @property (nonatomic, copy) CKRecordID *lastModifiedUserRecordID;
 @property (nonatomic, copy) NSDate *modificationDate;
 @property (nonatomic, copy) NSString *modifiedByDevice;
@@ -108,6 +111,7 @@
 @property (nonatomic) BOOL trackChanges;
 @property (nonatomic) BOOL useLightweightPCS;
 @property (nonatomic, retain) NSDictionary *values;
+@property (nonatomic, retain) NSNumber *version;
 @property (nonatomic) BOOL wantsChainPCS;
 @property (nonatomic) BOOL wantsPublicSharingKey;
 @property (nonatomic) BOOL wasCached;
@@ -125,7 +129,7 @@
 
 - (void).cxx_destruct;
 - (void)CKAssignToContainerWithID:(id)arg1;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
+- (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)URL;
 - (id)_allStrings;
 - (BOOL)_checkProperties:(BOOL)arg1 withValueCheckBlock:(id /* block */)arg2;
@@ -266,6 +270,17 @@
 - (BOOL)wantsPublicSharingKey;
 - (BOOL)wasCached;
 - (id)zoneProtectionEtag;
+
+// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
+
+- (id)data;
+- (BOOL)hasLargeDataAsset;
+- (id)largeDataAsset;
+- (void)setData:(id)arg1;
+- (void)setHasLargeDataAsset:(BOOL)arg1;
+- (void)setLargeDataAsset:(id)arg1;
+- (void)setVersion:(id)arg1;
+- (id)version;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 

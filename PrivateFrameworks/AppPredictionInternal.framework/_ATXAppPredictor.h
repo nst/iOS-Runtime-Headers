@@ -26,6 +26,7 @@
 - (id)appDictionaryForAppAtIndex:(int)arg1;
 - (id)appInstallMonitor;
 - (id)appLaunchMonitor;
+- (id)constructSessionLogDictionaryWithEngagedBundle:(id)arg1 resultsShown:(int)arg2 consumerType:(unsigned int)arg3 outcome:(unsigned int)arg4 annotation:(id)arg5;
 - (id)constructSessionLogDictionaryWithFeedback:(id)arg1 consumerType:(unsigned int)arg2 outcome:(unsigned int)arg3;
 - (void)dealloc;
 - (id)getParseTree;

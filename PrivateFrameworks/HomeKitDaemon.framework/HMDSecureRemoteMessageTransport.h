@@ -77,6 +77,7 @@
 - (void)setCurrentHomeConfigurations:(id)arg1;
 - (void)setSessionNotifications:(id)arg1;
 - (id)shortDescription;
+- (void)start;
 - (id)transports;
 - (void)updateHome:(id)arg1 configurationVersion:(int)arg2;
 

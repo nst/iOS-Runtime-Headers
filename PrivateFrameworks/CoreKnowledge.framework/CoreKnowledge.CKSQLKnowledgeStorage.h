@@ -18,6 +18,7 @@
 
 - (id /* block */).cxx_destruct;
 - (BOOL)closed;
+- (void)dealloc;
 - (id)init;
 - (id)initWithPath:(id)arg1 name:(id)arg2;
 - (id)keys;
@@ -28,7 +29,7 @@
 - (void)setKeys:(id)arg1;
 - (void)setKv:(id)arg1;
 - (void)setValues:(id)arg1;
-- (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)sql;
+- (long)sql:(void *)arg1; // needs 1 arg types, found 5: /* Warning: unhandled bit fieldencoding: 'b' */ unsigned int, /* Warning: Unrecognized filer type: 'y' using 'void*' */ void*, /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, short
 - (id)tripleComponentsMatching:(id)arg1 error:(id*)arg2;
 - (id)values;
 - (BOOL)wipeAndReturnError:(id*)arg1;

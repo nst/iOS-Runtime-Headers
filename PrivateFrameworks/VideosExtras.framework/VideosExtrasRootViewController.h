@@ -45,7 +45,6 @@
 - (void)_attemptRestart;
 - (id)_createDataStorageForIdentifier:(id)arg1;
 - (void)_finalizeMainTemplateOffset:(BOOL)arg1;
-- (void)_registerIKStylesAndElements;
 - (BOOL)_setMainDocumentWithViewController:(id)arg1;
 - (void)_setNavigationController:(id)arg1;
 - (void)_setUpForApplication;
@@ -60,6 +59,7 @@
 - (BOOL)appIsTrusted;
 - (id)appJSURL;
 - (id)appLaunchParams;
+- (BOOL)appUsesDefaultStyleSheets;
 - (id)applicationContext;
 - (id)artworkDataSource;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
@@ -106,6 +106,7 @@
 - (id)vendorStorage;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (id)viewElementRegistry;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

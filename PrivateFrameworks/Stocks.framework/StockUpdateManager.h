@@ -10,6 +10,7 @@
     NSHashTable * _updateObservers;
 }
 
+@property (nonatomic, readonly) NSURLSession *backgroundSession;
 @property (nonatomic, readonly) BackgroundStockUpdater *backgroundUpdater;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -27,6 +28,7 @@
 - (void)_updaterDidCancelOrFinish:(id)arg1;
 - (void)addUpdateObserver:(id)arg1;
 - (id)availableStockUpdater;
+- (id)backgroundSession;
 - (void)backgroundUpdateAllStocksBasic:(id)arg1 withCompletion:(id /* block */)arg2 finishEventsHandler:(id /* block */)arg3;
 - (id)backgroundUpdater;
 - (void)cancel;
@@ -35,6 +37,7 @@
 - (BOOL)hadError;
 - (id)init;
 - (BOOL)isLoading;
+- (void)reestablishBackgroundSession;
 - (void)removeUpdateObserver:(id)arg1;
 - (void)reset;
 - (void)resetUpdaters;

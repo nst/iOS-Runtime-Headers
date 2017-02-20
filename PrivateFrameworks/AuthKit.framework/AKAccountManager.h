@@ -48,6 +48,7 @@
 - (id)passwordResetTokenForAccount:(id)arg1;
 - (void)removeAllPasswordResetTokens;
 - (void)removeContinuationTokenForAccount:(id)arg1;
+- (void)removeMasterTokenForAccount:(id)arg1;
 - (void)removeUnusedAuthKitAccounts;
 - (unsigned int)securityLevelForAccount:(id)arg1;
 - (id)servicesUsingAccount:(id)arg1;
@@ -58,5 +59,6 @@
 - (void)setSecurityLevel:(unsigned int)arg1 forAccount:(id)arg2;
 - (void)setStore:(id)arg1;
 - (id)store;
+- (id)transportableAuthKitAccount:(id)arg1;
 
 @end

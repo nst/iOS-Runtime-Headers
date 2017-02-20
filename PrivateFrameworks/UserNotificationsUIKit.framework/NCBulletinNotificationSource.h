@@ -26,6 +26,8 @@
 - (id)dispatcher;
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequests:(id)arg2;
 - (void)dispatcher:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
+- (void)dispatcher:(id)arg1 requestsClearingNotificationRequestsFromDate:(id)arg2 toDate:(id)arg3 inSections:(id)arg4;
+- (void)dispatcher:(id)arg1 requestsClearingNotificationRequestsInSections:(id)arg2;
 - (id)init;
 - (id)initWithDispatcher:(id)arg1;
 - (id)initWithDispatcher:(id)arg1 observer:(id)arg2;

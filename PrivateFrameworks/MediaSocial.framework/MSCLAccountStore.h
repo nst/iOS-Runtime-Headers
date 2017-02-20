@@ -4,26 +4,36 @@
 
 @interface MSCLAccountStore : NSObject {
     ACAccountStore * _accountStore;
+    NSMutableDictionary * _accounts;
     SKUIMediaSocialAuthor * _author;
     NSMutableDictionary * _externalServices;
+    NSOperationQueue * _operationQueue;
 }
 
 @property (nonatomic, readonly) SKUIMediaSocialAuthor *author;
+@property (nonatomic) int preferredFacebookAutopostingDestination;
 
 - (void).cxx_destruct;
 - (id)_facebookAppId;
 - (void)_handleAccountStoreDidChange:(id)arg1;
+- (id)_ssvServiceIdentifierForMSCLServiceIdentifier:(id)arg1;
+- (void)_updateAccountInfoWithServiceIdentifier:(id)arg1;
+- (id)_userDefaultsEnabledServiceKeyForServiceIdentifier:(id)arg1;
 - (id)accountForServiceIdentifier:(id)arg1;
 - (id)author;
-- (id)createAccountForServiceIdentifier:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)initWithAuthor:(id)arg1;
-- (BOOL)permissionForServiceIdentifier:(id)arg1;
+- (BOOL)isAccountEnabledForServiceIdentifier:(id)arg1;
+- (int)preferredFacebookAutopostingDestination;
 - (void)registerExternalDestination:(id)arg1 forAccount:(id)arg2 completionBlock:(id /* block */)arg3;
 - (BOOL)removeAccount:(id)arg1;
 - (void)renewCredentialsForAccount:(id)arg1 withCompletionBlock:(id /* block */)arg2;
-- (void)requestAccessToAccountForServiceIdentifier:(id)arg1 permissions:(id)arg2 withCompletionBlock:(id /* block */)arg3;
+- (void)requestAccessToAccountForServiceIdentifier:(id)arg1 permissions:(id)arg2 authenticationPresentingViewController:(id)arg3 withCompletionBlock:(id /* block */)arg4;
 - (BOOL)saveAccount:(id)arg1;
+- (void)setAccountEnabled:(BOOL)arg1 forServiceIdentifier:(id)arg2;
+- (void)setPreferredFacebookAutopostingDestination:(int)arg1;
+- (void)unlinkAccount:(id)arg1;
+- (void)updateFacebookPreferredPageIdentifier:(id)arg1 forAccount:(id)arg2;
 - (void)verifyUserName:(id)arg1 password:(id)arg2 serviceIdentifier:(id)arg3 withCompletionBlock:(id /* block */)arg4;
 
 @end

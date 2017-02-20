@@ -3,16 +3,20 @@
  */
 
 @interface FCReadingList : FCPrivateZoneController <FCReadingListContentControllerObserving> {
+    NSArray * _allSortedEntriesInReadingList;
     FCCloudContext * _cloudContext;
     NSMutableDictionary * _entriesByArticleID;
+    FCMutexLock * _itemsLock;
     FCReadingListContentController * _readingListContentController;
 }
 
+@property (nonatomic, retain) NSArray *allSortedEntriesInReadingList;
 @property (nonatomic, retain) FCCloudContext *cloudContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableDictionary *entriesByArticleID;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) FCMutexLock *itemsLock;
 @property (nonatomic, retain) FCReadingListContentController *readingListContentController;
 @property (readonly) Class superclass;
 
@@ -29,27 +33,35 @@
 - (void).cxx_destruct;
 - (void)_addedArticleIDs:(id)arg1 removedArticleIDs:(id)arg2;
 - (id)_entryIDForArticleID:(id)arg1;
+- (void)_invalidateAllSortedEntriesInReadingList;
+- (unsigned int)_maxCountOfArticlesAvailableOffline;
 - (void)addArticleToReadingList:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)allNonConsumedArticleIDsInReadingList;
+- (id)allNonConsumedArticleIDsInReadingListForOfflineReading;
 - (id)allSortedArticleIDsInReadingList;
-- (id)allUnreadArticleIDsInReadingList;
+- (id)allSortedEntriesInReadingList;
+- (id)articleIDsAvailableForOfflineReading;
 - (id)cloudContext;
 - (id)dateArticleWasAdded:(id)arg1;
 - (void)enableDownloadingForOfflineReading;
 - (id)entriesByArticleID;
+- (void)expressInterestInOfflineArticlesWithCompletionHandler:(id /* block */)arg1;
 - (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4;
 - (BOOL)isArticleAvailableForOfflineReading:(id)arg1;
 - (BOOL)isArticleOnReadingList:(id)arg1;
+- (id)itemsLock;
 - (void)loadLocalCachesFromStore;
 - (void)notifyWhenFinishedDownloadingForOfflineReadingWithTimeout:(unsigned long long)arg1 block:(id /* block */)arg2;
-- (void)prepareForUse;
 - (id)readingListContentController;
 - (void)readingListContentControllerDidUpdateArticleAvailabilityInOfflineMode:(id)arg1;
 - (void)removeArticleFromReadingList:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (void)setAllSortedEntriesInReadingList:(id)arg1;
 - (void)setCloudContext:(id)arg1;
 - (void)setEntriesByArticleID:(id)arg1;
+- (void)setItemsLock:(id)arg1;
 - (void)setReadingListContentController:(id)arg1;
 - (BOOL)shouldHideHeadline:(id)arg1;
 - (void)toggleArticleIsOnReadingList:(id)arg1;

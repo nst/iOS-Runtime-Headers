@@ -21,6 +21,7 @@
     BOOL  _inHideUnlockViewanimation;
     BOOL  _inShowUnlockViewAnimation;
     BOOL  _keepStatusViewHidden;
+    SiriUIKeyboardButton * _keyboardButton;
     UIView<SBUIPasscodeLockView> * _lockView;
     int  _mode;
     UIView * _remoteContentView;
@@ -62,6 +63,9 @@
 - (void)_helpButtonTapped:(id)arg1;
 - (void)_hideLockViewWithResult:(int)arg1;
 - (void)_hideLockViewWithResult:(int)arg1 hideCompletion:(id /* block */)arg2;
+- (id)_keyboardButton;
+- (void)_keyboardButtonLongPressed:(id)arg1;
+- (void)_keyboardButtonTapped;
 - (void)_layoutReportBugButton;
 - (void)_loadReportBugButtonTemplateImageInBackgroundWithCompletion:(id /* block */)arg1;
 - (id)_lockViewBackgroundColor;
@@ -113,7 +117,7 @@
 - (void)setSiriSessionState:(int)arg1;
 - (void)setStatusViewHidden:(BOOL)arg1;
 - (void)setStatusViewUserInteractionEnabled:(BOOL)arg1;
-- (void)showPasscodeUnlockWithStatusText:(id)arg1 completion:(id /* block */)arg2;
+- (void)showPasscodeUnlockWithStatusText:(id)arg1 completionHandler:(id /* block */)arg2 unlockCompletionHandler:(id /* block */)arg3;
 - (void)siriDidActivateFromSource:(int)arg1;
 - (int)siriSessionState;
 - (void)siriStatusViewHoldDidBegin:(id)arg1;

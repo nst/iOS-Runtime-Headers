@@ -5,7 +5,7 @@
 
 @required
 
-- (void)peopleHomeDataSource:(PXPeopleHomeDataSource *)arg1 didApplyIncrementalChanges:(NSArray *)arg2;
+- (void)peopleHomeDataSourceDidReceivePersonChanges:(PXPeopleHomeDataSource *)arg1;
 - (void)peopleHomeDataSourceMembersChanged:(PXPeopleHomeDataSource *)arg1;
 
 @end

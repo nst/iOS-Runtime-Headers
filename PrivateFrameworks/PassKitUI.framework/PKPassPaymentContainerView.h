@@ -65,6 +65,7 @@
 - (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_applyPaymentFailureState:(BOOL)arg1;
+- (void)_applyPaymentIndefiniteSuccessState;
 - (void)_applyPaymentSuccessfulState;
 - (void)_applyPaymentSuccessfulStateAndReset:(BOOL)arg1;
 - (void)_applyPresentationPayState:(int)arg1;
@@ -164,6 +165,7 @@
 - (void)contactlessInterfaceSessionDidFailTransaction:(id)arg1 forPaymentApplication:(id)arg2 paymentPass:(id)arg3;
 - (void)contactlessInterfaceSessionDidReceiveActivityTimeout:(id)arg1;
 - (void)contactlessInterfaceSessionDidSelectPayment:(id)arg1;
+- (void)contactlessInterfaceSessionDidStartTransaction:(id)arg1;
 - (void)contactlessInterfaceSessionDidTimeout:(id)arg1 forPaymentApplication:(id)arg2 paymentPass:(id)arg3 valueAddedServicePasses:(id)arg4;
 - (void)contactlessInterfaceSessionHasPendingServerRequest:(id)arg1;
 - (void)dealloc;

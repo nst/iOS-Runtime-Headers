@@ -11,9 +11,9 @@
     unsigned int  _maximumNumberOfMembers;
     NSArray * _members;
     NSString * _name;
-    <NSFastEnumeration> * _objects;
+    PHFetchResult * _objects;
     NSArray * _originalMembers;
-    <NSFastEnumeration> * _originalObjects;
+    PHFetchResult * _originalObjects;
     id /* block */  _reloadBlock;
     NSObject<OS_dispatch_queue> * _reloadQueue;
     id /* block */  _sortComparator;
@@ -29,9 +29,9 @@
 @property (nonatomic, retain) NSArray *members;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) unsigned int numberOfMembers;
-@property (nonatomic, retain) <NSFastEnumeration> *objects;
+@property (nonatomic, retain) PHFetchResult *objects;
 @property (nonatomic, retain) NSArray *originalMembers;
-@property (nonatomic, retain) <NSFastEnumeration> *originalObjects;
+@property (nonatomic, retain) PHFetchResult *originalObjects;
 @property (nonatomic, copy) id /* block */ reloadBlock;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *reloadQueue;
 @property (nonatomic, copy) id /* block */ sortComparator;
@@ -39,6 +39,7 @@
 
 - (void).cxx_destruct;
 - (void)_asyncLoadImageForItem:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletionBlock:(id /* block */)arg3;
+- (void)_asyncLoadImageForItem:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletionBlock:(id /* block */)arg3 fastDisplayBlock:(id /* block */)arg4;
 - (id)_itemsArrayFromObjects:(id)arg1;
 - (void)_setObjectsWithoutUpdate:(id)arg1;
 - (void)_updateMembers;
@@ -47,6 +48,7 @@
 - (id)delegate;
 - (id)filterPredicate;
 - (void)imageAtIndex:(unsigned int)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletionBlock:(id /* block */)arg3;
+- (void)imageAtIndex:(unsigned int)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletionBlock:(id /* block */)arg3 fastDisplayBlock:(id /* block */)arg4;
 - (unsigned int)indexOfMember:(id)arg1;
 - (id)initWithName:(id)arg1 objects:(id)arg2;
 - (id)initWithName:(id)arg1 objectsReloadBlock:(id /* block */)arg2;

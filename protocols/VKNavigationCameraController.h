@@ -10,7 +10,7 @@
 - (void)setMapCanvas:(VKMapCanvas *)arg1;
 - (void)setMapModel:(VKMapModel *)arg1;
 - (void)setZoomScale:(double)arg1;
-- (void)startWithPounce:(void *)arg1 pounceCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)startWithPounce:(void *)arg1 startLocation:(void *)arg2 pounceCompletionHandler:(void *)arg3; // needs 3 arg types, found 8: BOOL, struct { double x1; double x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)stop;
 - (double)zoomScale;
 

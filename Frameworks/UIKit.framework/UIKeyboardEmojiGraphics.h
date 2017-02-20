@@ -6,7 +6,7 @@
 
 + (BOOL)boldText;
 + (unsigned char)colCount:(BOOL)arg1;
-+ (id)emojiCategoryImagePath:(id)arg1;
++ (id)emojiCategoryImagePath:(id)arg1 forRenderConfig:(id)arg2;
 + (id)emojiFontAttributes;
 + (id)emojiFontAttributesForPortrait:(BOOL)arg1;
 + (float)emojiPageControlYOffset:(BOOL)arg1;

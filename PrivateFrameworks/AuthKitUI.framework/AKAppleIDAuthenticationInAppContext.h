@@ -7,6 +7,7 @@
     RUIObjectModel * _currentRemoteOM;
     <AKAppleIDAuthenticationInAppContextDelegate> * _delegate;
     BOOL  _isPresentingServerUI;
+    NSHTTPURLResponse * _latestReadResponse;
     UINavigationController * _modalRemoteUINavController;
     UINavigationController * _navController;
     UIViewController * _presentingViewController;

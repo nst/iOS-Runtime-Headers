@@ -47,7 +47,7 @@
 - (void)homeKitStoppedScanning:(id)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)probeReachabilityForTrackedAccessories;
-- (void)resetReachabilityForTrackedAccessories:(id)arg1;
+- (void)resetLastSeenForTrackedAccessories:(id)arg1;
 - (void)retrieveStateForTrackedAccessoryWithIdentifier:(id)arg1 onQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (BOOL)scanInBackground;
 - (void)setCurrentScanState:(int)arg1;
@@ -58,6 +58,7 @@
 - (void)stopTrackingHAPBLEAccessoriesWithIdentifiers:(id)arg1;
 - (id)trackedIdentifiers;
 - (id)trackedPeripherals;
+- (void)updateStateForIdentifier:(id)arg1 stateNumber:(id)arg2;
 - (id)workQueue;
 - (id)wpHomeKit;
 

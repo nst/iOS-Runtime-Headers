@@ -3,11 +3,11 @@
  */
 
 @interface HULinkedApplicationItemProvider : HFItemProvider {
-    NSSet * _accessories;
+    id /* block */  _filter;
     NSSet * _linkedApplicationItems;
 }
 
-@property (nonatomic, retain) NSSet *accessories;
+@property (nonatomic, copy) id /* block */ filter;
 @property (nonatomic, retain) NSSet *linkedApplicationItems;
 
 + (BOOL)prefersNonBlockingReloads;
@@ -19,15 +19,15 @@
 - (id)_itemForLibraryItem:(id)arg1;
 - (id)_itemForStoreItem:(id)arg1;
 - (id)_loadStoreIconWithArtwork:(id)arg1 results:(id)arg2;
-- (id)_performLibraryLookup;
+- (id)_performLibraryLookupForAccessories:(id)arg1;
 - (id)_performStoreLookupWithLibraryResult:(id)arg1;
-- (id)accessories;
-- (id)initWithHome:(id)arg1 accessories:(id)arg2;
+- (id /* block */)filter;
+- (id)initWithHome:(id)arg1;
 - (id)invalidationReasons;
 - (id)items;
 - (id)linkedApplicationItems;
 - (id)reloadItems;
-- (void)setAccessories:(id)arg1;
+- (void)setFilter:(id /* block */)arg1;
 - (void)setLinkedApplicationItems:(id)arg1;
 
 @end

@@ -3,20 +3,19 @@
  */
 
 @interface CXCallDirectoryBlockingEntryData : CXCallDirectoryEntryData {
-    NSMutableData * _phoneNumberData;
+    NSData * _phoneNumberData;
 }
 
-@property (nonatomic, retain) NSMutableData *phoneNumberData;
+@property (nonatomic, retain) NSData *phoneNumberData;
 @property (nonatomic, readonly) const long long*phoneNumbers;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)appendPhoneNumber:(long long)arg1;
 - (unsigned int)count;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCapacity:(unsigned int)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (long long)phoneNumberAtIndex:(unsigned int)arg1;
 - (id)phoneNumberData;

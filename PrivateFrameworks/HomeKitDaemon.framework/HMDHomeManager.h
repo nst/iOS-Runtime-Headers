@@ -464,6 +464,7 @@
 - (void)handleHomeKitAppInForeground:(id)arg1;
 - (void)handleIsAtHome:(id)arg1;
 - (void)handleNoHomeKitAppInForeground:(id)arg1;
+- (void)handleVendorInfoUpdated:(id)arg1;
 - (BOOL)homeDataLoadedFromArchive;
 - (unsigned int)homeDatabaseSize;
 - (id)homeNames;
@@ -499,6 +500,7 @@
 - (id)nominateCurrentHomeUUID;
 - (void)notifyClientsResidentCapable:(BOOL)arg1;
 - (void)notifyPrimaryHomeUpdated:(id)arg1;
+- (int)numberOfAccessoryWithNewFirmwareAvailable;
 - (int)numberOfPendingIncomingInvitation;
 - (id)pairedAccessories;
 - (id)pairedSync;

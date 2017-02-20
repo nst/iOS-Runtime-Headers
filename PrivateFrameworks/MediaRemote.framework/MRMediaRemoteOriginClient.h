@@ -3,6 +3,8 @@
  */
 
 @interface MRMediaRemoteOriginClient : NSObject {
+    NSArray * _applicationPickedRoutes;
+    id /* block */  _audioAmplitudeSamplesCallback;
     BOOL  _canBeNowPlayingApp;
     NSMutableDictionary * _commandHandlerBlocks;
     BOOL  _isOverrideApp;
@@ -16,8 +18,11 @@
     NSObject<OS_dispatch_queue> * _serialQueue;
     NSArray * _supportedCommands;
     NSMutableDictionary * _transactionCallbacks;
+    id /* block */  _videoThumbnailsCallback;
 }
 
+@property (nonatomic, copy) NSArray *applicationPickedRoutes;
+@property (nonatomic, copy) id /* block */ audioAmplitudeSamplesCallback;
 @property (nonatomic) BOOL canBeNowPlayingApp;
 @property (nonatomic, readonly, copy) NSArray *commandHandlerBlocks;
 @property (nonatomic) BOOL isOverrideApp;
@@ -27,10 +32,13 @@
 @property (nonatomic, copy) id /* block */ playbackQueueCallback;
 @property (nonatomic) unsigned int routeDiscoveryMode;
 @property (nonatomic, copy) NSArray *supportedCommands;
+@property (nonatomic, copy) id /* block */ videoThumbnailsCallback;
 
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
 - (void)_registerDefaultCallbacks;
 - (void)addCommandHandlerBlock:(id /* block */)arg1 forKey:(id)arg2;
+- (id)applicationPickedRoutes;
+- (id /* block */)audioAmplitudeSamplesCallback;
 - (BOOL)canBeNowPlayingApp;
 - (id)commandHandlerBlocks;
 - (void)dealloc;
@@ -42,6 +50,8 @@
 - (id /* block */)playbackQueueCallback;
 - (void)removeCommandHandlerBlockForKey:(id)arg1;
 - (unsigned int)routeDiscoveryMode;
+- (void)setApplicationPickedRoutes:(id)arg1;
+- (void)setAudioAmplitudeSamplesCallback:(id /* block */)arg1;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
 - (void)setIsOverrideApp:(BOOL)arg1;
 - (void)setNowPlayingArtwork:(id)arg1;
@@ -50,7 +60,9 @@
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (void)setTransactionCallback:(id /* block */)arg1 forName:(unsigned long long)arg2;
+- (void)setVideoThumbnailsCallback:(id /* block */)arg1;
 - (id)supportedCommands;
 - (id /* block */)transactionCallbackForName:(unsigned long long)arg1;
+- (id /* block */)videoThumbnailsCallback;
 
 @end

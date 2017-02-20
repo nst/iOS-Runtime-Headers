@@ -4,6 +4,7 @@
 
 @interface BLTRemoteObject : NSObject <IDSServiceDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
+    NSObject<OS_dispatch_queue> * _connectionStatusQueue;
     <BLTAbstractIDSDevice> * _defaultPairedDevice;
     NSLock * _defaultPairedDeviceLock;
     BOOL  _full;
@@ -35,9 +36,11 @@
 - (void)_deviceConnectionStatusChanged:(id)arg1;
 - (void)_handleDebugException;
 - (void)_handleNewSessionState:(unsigned int)arg1;
+- (BOOL)_idsQueueCallSendCompletionHandlerWithSuccess:(BOOL)arg1 identifier:(id)arg2 error:(id)arg3;
 - (void)_queueHandleIDSProtobuf:(id)arg1;
 - (void)_queuePerformSend:(id /* block */)arg1 responseToRequest:(id)arg2 withTimeout:(id)arg3 withDescription:(id)arg4 shortDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8;
 - (void)_queueSendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8 didQueue:(id /* block */)arg9;
+- (void)_queueUpdateConnectionStatus;
 - (void)_removeAndHandleResponseHandler:(id)arg1;
 - (void)_resetDefaultPairedDevice;
 - (void)_sendAckInitialSequenceNumberForSession:(id)arg1 sessionState:(unsigned int)arg2;
@@ -47,7 +50,7 @@
 - (BOOL)_sequenceErrorDidHappenAndHandled:(int)arg1 service:(id)arg2 incomingIdentifier:(id)arg3;
 - (void)_setStandaloneTestModeEnabled:(BOOL)arg1;
 - (void)_storeProtobufAction:(SEL)arg1 messageType:(unsigned short)arg2 messageSendType:(int)arg3;
-- (unsigned int)_updateConnectionStatus;
+- (void)_updateConnectionStatus;
 - (id)_wrapError:(id)arg1 identifier:(id)arg2;
 - (id)clientQueue;
 - (unsigned int)connectionStatus;

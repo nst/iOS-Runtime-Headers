@@ -11,7 +11,6 @@
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
-- (BOOL)canPresentPaymentInterface;
 - (id)delegate;
 - (id)init;
 - (void)presentContinuityPaymentInterfaceWithRemotePaymentRequest:(id)arg1 completion:(id /* block */)arg2;

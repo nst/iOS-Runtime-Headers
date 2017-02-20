@@ -5,10 +5,12 @@
 @interface UIRecentInputTableCell : UITableViewCell {
     int  _blurEffectStyle;
     UILabel * _floatingLabel;
+    UITextInputTraits * _textInputTraits;
 }
 
 @property (nonatomic) int blurEffectStyle;
 @property (nonatomic, retain) UILabel *floatingLabel;
+@property (nonatomic, retain) UITextInputTraits *textInputTraits;
 @property (nonatomic, readonly) _UIFloatingContentView *tvFloatingView;
 
 + (id)backgroundColorForBlurEffectStyle:(int)arg1;
@@ -26,6 +28,8 @@
 - (void)setFloatingLabel:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setInputText:(id)arg1 withBlurStyle:(int)arg2;
+- (void)setTextInputTraits:(id)arg1;
+- (id)textInputTraits;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)tvFloatingView;
 

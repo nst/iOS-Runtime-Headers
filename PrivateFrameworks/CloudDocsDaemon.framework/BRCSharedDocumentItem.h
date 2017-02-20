@@ -7,7 +7,7 @@
 @property (nonatomic, readonly) NSString *enclosurePathRelativeToRoot;
 @property (nonatomic, readonly) BOOL isShareAcceptationFault;
 
-- (id)aliasItemIDForAppLibrary:(id)arg1;
+- (id)aliasItemID;
 - (id)asSharedDocument;
 - (void)deleteShareAcceptationFault;
 - (id)enclosurePathRelativeToRoot;

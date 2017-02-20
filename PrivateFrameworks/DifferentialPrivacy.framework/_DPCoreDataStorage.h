@@ -44,6 +44,7 @@
 - (unsigned int)deleteOldObjectsToLimitTotalNumber:(unsigned int)arg1 entities:(id)arg2 limit:(unsigned int)arg3;
 - (BOOL)deleteStorageFor:(id)arg1 obliterate:(BOOL)arg2;
 - (unsigned int)deleteSubmittedRecords:(unsigned int)arg1 entities:(id)arg2 limit:(unsigned int)arg3;
+- (unsigned int)deleteVersionMismatchRecords:(unsigned int)arg1 entities:(id)arg2 limit:(unsigned int)arg3;
 - (void)handleDataProtectionChangeFor:(id)arg1 willBeAvailable:(BOOL)arg2;
 - (void)handleDatabaseErrors:(id)arg1 forPSC:(id)arg2 protectionClass:(id)arg3;
 - (id)init;

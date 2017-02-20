@@ -7,7 +7,9 @@
     <CNPropertyCellDelegate> * _delegate;
     UIResponder * _firstResponderItem;
     BOOL  _forceSuggested;
+    BOOL  _highlightedProperty;
     BOOL  _ignoreSuggested;
+    BOOL  _important;
     float  _labelWidth;
     <CNPresenterDelegate> * _presentingDelegate;
     id  _property;
@@ -17,12 +19,15 @@
 @property (nonatomic) <CNPropertyCellDelegate> *delegate;
 @property (nonatomic, readonly) UIResponder *firstResponderItem;
 @property (nonatomic) BOOL forceSuggested;
+@property (getter=isHighlightedProperty, nonatomic) BOOL highlightedProperty;
 @property (nonatomic) BOOL ignoreSuggested;
+@property (getter=isImportant, nonatomic) BOOL important;
 @property (nonatomic) float labelWidth;
 @property (nonatomic) <CNPresenterDelegate> *presentingDelegate;
 @property (nonatomic) id property;
 @property (nonatomic, readonly) CNPropertyGroupItem *propertyItem;
 @property (getter=isSuggested, nonatomic, readonly) BOOL suggested;
+@property (nonatomic, readonly) BOOL supportsTintColorValue;
 
 - (void).cxx_destruct;
 - (BOOL)allowsEditing;
@@ -32,6 +37,8 @@
 - (BOOL)forceSuggested;
 - (BOOL)ignoreSuggested;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isHighlightedProperty;
+- (BOOL)isImportant;
 - (BOOL)isSuggested;
 - (id)labelString;
 - (float)labelWidth;
@@ -44,11 +51,15 @@
 - (void)setCardGroupItem:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForceSuggested:(BOOL)arg1;
+- (void)setHighlightedProperty:(BOOL)arg1;
 - (void)setIgnoreSuggested:(BOOL)arg1;
+- (void)setImportant:(BOOL)arg1;
 - (void)setLabelWidth:(float)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (void)setProperty:(id)arg1;
 - (void)setPropertyItem:(id)arg1;
+- (BOOL)supportsTintColorValue;
+- (void)tintColorDidChange;
 - (void)updateValueWithPropertyItem:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
 - (id)valueString;

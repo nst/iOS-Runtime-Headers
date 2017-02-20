@@ -8,26 +8,28 @@
 }
 
 @property (nonatomic, readonly) NSString *description;
-@property (nonatomic, readonly) long hash;
-@property (nonatomic, readonly) long hashValue;
+@property (nonatomic, readonly) int hash;
+@property (nonatomic, readonly) int hashValue;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) _TtC13CoreKnowledge16CKKnowledgeStore *store;
 
 - (id /* block */).cxx_destruct;
 - (id)description;
-- (long)hash;
-- (long)hashValue;
-- (/* Warning: Unrecognized filer type: '' using 'void*' */ void*)identifier;
+- (int)hash;
+- (/* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*)hashValue;
+- (long)identifier:(void *)arg1; // needs 1 arg types, found 5: /* Warning: unhandled bit fieldencoding: 'b' */ unsigned int, /* Warning: Unrecognized filer type: 'y' using 'void*' */ void*, /* Warning: Unrecognized filer type: 't' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*, short
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 knowledgeStore:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
+- (void)linkTo:(id)arg1 withPredicate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)linkTo:(id)arg1 withPredicate:(id)arg2 error:(id*)arg3;
-- (id)linksTo:(id)arg1 matchType:(long)arg2 error:(id*)arg3;
+- (void)linksTo:(id)arg1 matchType:(int)arg2 completionHandler:(id /* block */)arg3;
+- (id)linksTo:(id)arg1 matchType:(int)arg2 error:(id*)arg3;
 /* MISSING HEADER DESCRIPTION FOR METHOD objectForKeyedSubscript: */
-- (/* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*)removeObjectForKey:(void *)arg1 error:(void *)arg2; // needs 2 arg types, found 51: /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: '	' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, unsigned long, id, /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*, unsigned int, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: '
-' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'H' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'u' using 'void*' */ void*, /* Warning: Unrecognized filer type: '}' using 'void*' */ void*, long double, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*, /* Warning: Unrecognized filer type: '' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*, /* Warning: Unrecognized filer type: ')' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'h' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, unsigned long, /* Warning: Unrecognized filer type: 'P' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'F' using 'void*' */ void*, unsigned int, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, unsigned int, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'P' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Ã' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'Â' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'p' using 'void*' */ void*, /* Warning: Unrecognized filer type: 'x' using 'void*' */ void*, long double
+- (BOOL)removeObjectForKey:(id)arg1 error:(id*)arg2;
 /* MISSING HEADER DESCRIPTION FOR METHOD setObject:forKeyedSubscript: */
 - (id)store;
+- (void)unlinkTo:(id)arg1 withPredicate:(id)arg2 ignoreWeights:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)unlinkTo:(id)arg1 withPredicate:(id)arg2 ignoreWeights:(BOOL)arg3 error:(id*)arg4;
 
 @end

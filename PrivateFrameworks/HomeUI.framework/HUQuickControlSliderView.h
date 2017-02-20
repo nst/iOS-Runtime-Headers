@@ -30,7 +30,7 @@
 @property (nonatomic, retain) HUQuickControlSliderValueOverlayView *valueOverlayView;
 
 - (void).cxx_destruct;
-- (float)_minDisplayedValue;
+- (struct { float x1; float x2; })_permittedValueRange;
 - (id)backgroundView;
 - (id)initWithProfile:(id)arg1;
 - (void)layoutSubviews;

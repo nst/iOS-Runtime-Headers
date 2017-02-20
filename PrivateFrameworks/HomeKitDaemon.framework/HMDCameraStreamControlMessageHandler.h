@@ -57,9 +57,9 @@
 - (BOOL)_isSetAudioStreamSettingMessage:(id)arg1;
 - (BOOL)_isStartMessage:(id)arg1;
 - (BOOL)_isStopMessage:(id)arg1;
-- (void)_resetCurrentStreamState;
-- (void)_sendStreamStoppedNotification;
-- (void)_stopStream;
+- (void)_resetCurrentStreamState:(id)arg1;
+- (void)_sendStreamStoppedNotification:(id)arg1;
+- (void)_stopStream:(id)arg1;
 - (id)accessory;
 - (void)dealloc;
 - (void)handleAccessoryIsNotReachable:(id)arg1;
@@ -84,7 +84,7 @@
 - (id)settingsControlManager;
 - (void)streamControlManager:(id)arg1 didFail:(id)arg2;
 - (void)streamControlManagerDidNegotiateStream:(id)arg1 selectedParameters:(id)arg2;
-- (void)streamControlManagerDidReceiveFirstFrame:(id)arg1 audioStreamSetting:(unsigned int)arg2 aspectRatio:(id)arg3;
+- (void)streamControlManagerDidReceiveFirstFrame:(id)arg1 audioStreamSetting:(unsigned int)arg2 aspectRatio:(id)arg3 slotIdentifier:(id)arg4;
 - (void)streamControlManagerDidReconfigureStream:(id)arg1;
 - (void)streamControlManagerDidSetupRemoteConnection:(id)arg1;
 - (void)streamControlManagerDidStartStream:(id)arg1 slotIdentifier:(id)arg2;

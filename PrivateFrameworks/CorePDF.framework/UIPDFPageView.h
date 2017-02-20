@@ -35,7 +35,9 @@
     BOOL  _enableLightMemoryFootprint;
     struct CGColor { } * _highLightColor;
     NSMutableArray * _highlights;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     float  _margin;
     UIPDFPage * _page;
     unsigned int  _pageIndex;

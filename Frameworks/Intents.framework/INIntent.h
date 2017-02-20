@@ -23,15 +23,18 @@
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
 + (id)intentDescription;
++ (void)load;
 + (BOOL)supportsSecureCoding;
 + (id)typeName;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)_impl;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)backingStore;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)identifier;

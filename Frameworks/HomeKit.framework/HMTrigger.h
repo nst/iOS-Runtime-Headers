@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMTrigger : NSObject <HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
+@interface HMTrigger : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMFMessageReceiver, HMObjectMerge, NSSecureCoding> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMThreadSafeMutableArrayCollection * _currentActionSets;
     HMDelegateCaller * _delegateCaller;
@@ -95,6 +95,7 @@
 
 + (id)_hf_sanitizeTriggerName:(id)arg1 home:(id)arg2;
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

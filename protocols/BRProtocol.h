@@ -15,7 +15,6 @@
 - (void)addExternalDocumentReferenceTo:(void *)arg1 forPid:(void *)arg2 inContainer:(void *)arg3 underParent:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 15: NSURL *, int, NSString *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSURL *, NSData *, NSURL *, NSData *, NSError *, void*
 - (void)boostFilePresenterAtURL:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (oneway void)bundleDidAccessExternalDocument:(NSFileHandle *)arg1;
-- (void)canLogoutSafely:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (oneway void)checkinAskClientIfUsingUbiquity:(BOOL)arg1;
 - (void)computePurgableSpaceWithUrgency:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 7: int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, void*
 - (void)copyBulkShareIDsAtURLs:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
@@ -75,6 +74,7 @@
 - (void)joinShareAtURL:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 9: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSURL *, NSError *, void*
 - (void)lookupExcludedExtensionsForLogoutWithReply:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, NSError *, void*
 - (void)lookupExcludedFilenamesForLogoutWithReply:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, NSError *, void*
+- (void)moveBRSecurityBookmarkAtURL:(void *)arg1 toURL:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: NSURL *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)overwriteAccessTimeForItemAtURL:(void *)arg1 atime:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: NSURL *, unsigned long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)performSelfCheck:(void *)arg1 reply:(void *)arg2; // needs 2 arg types, found 8: NSFileHandle *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)postiCloudDriveAppInstallationNotificaionWithReply:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*

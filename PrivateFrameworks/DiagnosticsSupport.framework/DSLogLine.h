@@ -21,15 +21,20 @@
 + (id)logLinesFromArray:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)blankingStringFromFieldAtIndex:(int)arg1;
+- (BOOL)boolFromFieldAtIndex:(int)arg1;
 - (id)bundleID;
 - (id)date;
+- (double)doubleFromFieldAtIndex:(int)arg1;
 - (id)exception;
 - (id)fields;
 - (id)initWithLine:(id)arg1;
 - (id)initWithLogLine:(id)arg1;
+- (int)integerFromFieldAtIndex:(int)arg1;
 - (BOOL)isUsable;
+- (long long)longLongFromFieldAtIndex:(int)arg1;
+- (id)nilableStringFromFieldAtIndex:(int)arg1;
 - (void)setType:(id)arg1;
 - (id)type;
-- (int)valueFromFieldAtIndex:(int)arg1;
 
 @end

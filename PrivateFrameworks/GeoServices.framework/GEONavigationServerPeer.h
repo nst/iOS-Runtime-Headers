@@ -2,18 +2,22 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEONavigationServerPeer : GEONavdPeer {
+@interface GEONavigationServerPeer : GEONavdPeer <GEONavigationServerRequestStateXPCInterface> {
     GEONavigationServer * _delegate;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) GEONavigationServer *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)delegate;
 - (void)requestActiveRouteDetailsData;
 - (void)requestGuidanceState;
+- (void)requestRideSelections;
 - (void)requestRouteSummary;
-- (void)requestSelectedRideOption;
 - (void)requestStepIndex;
 - (void)requestTransitSummary;
 - (void)requestUpdates;

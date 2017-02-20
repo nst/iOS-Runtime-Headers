@@ -4,6 +4,7 @@
 
 @interface BluetoothDevice : NSObject {
     NSString * _address;
+    unsigned int  _connectingServiceMask;
     struct BTDeviceImpl { } * _device;
     NSString * _name;
 }
@@ -27,6 +28,7 @@
 - (void)disconnect;
 - (unsigned int)doubleTapAction;
 - (void)endVoiceCommand;
+- (unsigned int)getConnectingServiceMask;
 - (id)getServiceSetting:(unsigned int)arg1 key:(id)arg2;
 - (BOOL)inEarDetectEnabled;
 - (id)initWithDevice:(struct BTDeviceImpl { }*)arg1 address:(id)arg2;
@@ -42,6 +44,7 @@
 - (BOOL)paired;
 - (unsigned int)productId;
 - (id)scoUID;
+- (void)setConnectingServicemask:(unsigned int)arg1;
 - (void)setDevice:(struct BTDeviceImpl { }*)arg1;
 - (BOOL)setDoubleTapAction:(unsigned int)arg1;
 - (BOOL)setInEarDetectEnabled:(BOOL)arg1;

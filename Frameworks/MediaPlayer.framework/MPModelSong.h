@@ -39,7 +39,9 @@
     BOOL  _storeRedownloadable;
     NSString * _title;
     int  _trackNumber;
+    float  _userRating;
     float  _volumeNormalization;
+    int  _year;
 }
 
 @property (nonatomic, retain) MPModelAlbum *album;
@@ -78,7 +80,9 @@
 @property (getter=isStoreRedownloadable, nonatomic) BOOL storeRedownloadable;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) int trackNumber;
+@property (nonatomic) float userRating;
 @property (nonatomic) float volumeNormalization;
+@property (nonatomic) int year;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -112,7 +116,9 @@
 + (id)__MPModelPropertySongStoreRedownloadable__PROPERTY;
 + (id)__MPModelPropertySongTitle__PROPERTY;
 + (id)__MPModelPropertySongTrackNumber__PROPERTY;
++ (id)__MPModelPropertySongUserRating__PROPERTY;
 + (id)__MPModelPropertySongVolumeNormalization__PROPERTY;
++ (id)__MPModelPropertySongYear__PROPERTY;
 + (id)__MPModelRelationshipSongAlbum__PROPERTY;
 + (id)__MPModelRelationshipSongArtist__PROPERTY;
 + (id)__MPModelRelationshipSongComposer__PROPERTY;
@@ -155,7 +161,9 @@
 + (id)__storeRedownloadable__KEY;
 + (id)__title__KEY;
 + (id)__trackNumber__KEY;
++ (id)__userRating__KEY;
 + (id)__volumeNormalization__KEY;
++ (id)__year__KEY;
 + (id)requiredKeepLocalStatusObservationProperties;
 + (id)requiredLibraryAddStatusObservationProperties;
 + (id)requiredLibraryRemovalProperties;
@@ -239,7 +247,9 @@
 - (void)setStoreRedownloadable:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTrackNumber:(int)arg1;
+- (void)setUserRating:(float)arg1;
 - (void)setVolumeNormalization:(float)arg1;
+- (void)setYear:(int)arg1;
 - (BOOL)shouldRememberBookmarkTime;
 - (BOOL)shouldReportPlayEventsToStore;
 - (BOOL)shouldShowComposer;
@@ -247,7 +257,9 @@
 - (id)storeRedownloadParameters;
 - (id)title;
 - (int)trackNumber;
+- (float)userRating;
 - (float)volumeNormalization;
+- (int)year;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlaybackCore.framework/MediaPlaybackCore
 

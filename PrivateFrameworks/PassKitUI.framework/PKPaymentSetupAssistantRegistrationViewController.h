@@ -4,6 +4,8 @@
 
 @interface PKPaymentSetupAssistantRegistrationViewController : PKPaymentSetupViewController <PKPaymentSetupViewControllerDelegate> {
     <PKPaymentSetupViewControllerDelegate> * _externalDelegate;
+    NSObject<OS_dispatch_group> * _preflightGroup;
+    BOOL  _preflightResult;
     UIButton * _skipButton;
 }
 

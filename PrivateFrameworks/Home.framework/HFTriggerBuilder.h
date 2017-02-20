@@ -17,6 +17,7 @@
 @property (nonatomic) BOOL enabled;
 @property (nonatomic, readonly) BOOL hasActions;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) BOOL requiresConfirmationToRun;
 @property (nonatomic, readonly) HMTrigger *trigger;
 
 + (Class)homeKitRepresentationClass;
@@ -49,6 +50,7 @@
 - (void)removeActionSet:(id)arg1;
 - (void)removeAllActionsAndActionSets;
 - (void)removeCondition:(id)arg1;
+- (BOOL)requiresConfirmationToRun;
 - (void)setActionSetBuilders:(id)arg1;
 - (void)setAnonymousActionSetBuilder:(id)arg1;
 - (void)setConditions:(id)arg1;

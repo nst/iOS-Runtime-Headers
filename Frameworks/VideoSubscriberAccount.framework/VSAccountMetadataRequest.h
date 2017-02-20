@@ -11,6 +11,7 @@
     BOOL  _interruptionAllowed;
     NSString * _localizedVideoTitle;
     NSArray * _supportedAccountProviderIdentifiers;
+    NSArray * _supportedAuthenticationSchemes;
     NSString * _verificationToken;
 }
 
@@ -22,6 +23,7 @@
 @property (getter=isInterruptionAllowed, nonatomic) BOOL interruptionAllowed;
 @property (nonatomic, copy) NSString *localizedVideoTitle;
 @property (nonatomic, copy) NSArray *supportedAccountProviderIdentifiers;
+@property (nonatomic, copy) NSArray *supportedAuthenticationSchemes;
 @property (nonatomic, copy) NSString *verificationToken;
 
 + (BOOL)supportsSecureCoding;
@@ -49,8 +51,10 @@
 - (void)setInterruptionAllowed:(BOOL)arg1;
 - (void)setLocalizedVideoTitle:(id)arg1;
 - (void)setSupportedAccountProviderIdentifiers:(id)arg1;
+- (void)setSupportedAuthenticationSchemes:(id)arg1;
 - (void)setVerificationToken:(id)arg1;
 - (id)supportedAccountProviderIdentifiers;
+- (id)supportedAuthenticationSchemes;
 - (id)verificationToken;
 
 @end

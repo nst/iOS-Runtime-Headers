@@ -58,6 +58,7 @@
 - (id)firstParameterWithName:(id)arg1;
 - (id)firstValueForKey:(id)arg1 inExtension:(id)arg2;
 - (id)firstValueForKey:(id)arg1 inExtensionGroup:(id)arg2;
+- (id)firstValueForParameterWithName:(id)arg1;
 - (id)genericLabelForProperty:(id)arg1;
 - (SEL)handlerSelectorForParameterName:(id)arg1;
 - (BOOL)hasImportErrors;

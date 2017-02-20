@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PassKitUIFoundation.framework/PassKitUIFoundation
  */
 
-@interface PKGlyphView : UIView <PKSubglyphViewDelegate> {
+@interface PKGlyphView : UIView <PKFingerprintGlyphViewDelegate> {
     PKCheckGlyphLayer * _checkLayer;
     struct CGImage { } * _customImage;
     struct UIEdgeInsets { 
@@ -13,6 +13,7 @@
     }  _customImageAlignmentEdgeInsets;
     CALayer * _customImageLayer;
     <PKGlyphViewDelegate> * _delegate;
+    PKFingerprintGlyphView * _fingerprintView;
     double  _lastAnimationWillFinish;
     struct { 
         unsigned int showingPhone : 1; 
@@ -27,7 +28,6 @@
     UIColor * _secondaryColor;
     int  _state;
     int  _style;
-    PKSubglyphView * _subglyphView;
     NSMutableArray * _transitionCompletionHandlers;
     unsigned int  _transitionIndex;
     BOOL  _transitioning;
@@ -72,6 +72,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)fadeOnRecognized;
+- (void)fingerprintGlyphView:(id)arg1 didLayoutContentLayer:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
@@ -88,7 +89,6 @@
 - (void)setState:(int)arg1;
 - (void)setState:(int)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (int)state;
-- (void)subglyphView:(id)arg1 didLayoutContentLayer:(id)arg2;
 - (void)updateRasterizationScale:(float)arg1;
 
 @end

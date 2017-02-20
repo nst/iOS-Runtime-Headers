@@ -66,6 +66,10 @@
 - (void).cxx_destruct;
 - (void)_activationTriggerDidRelease:(id)arg1;
 - (void)_addStatusBar;
+- (void)_applicationDidBecomeActive:(id)arg1;
+- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
+- (BOOL)_canIgnoreHoldToTalkThreshold;
 - (id)_currentRequestOptions;
 - (void)_enqueueRemoteViewControllerMessageBlock:(id /* block */)arg1;
 - (void)_enqueueRemoteViewControllerMessageBlockWithWeaklyReferencedRemoteViewController:(id /* block */)arg1;
@@ -80,6 +84,7 @@
 - (void)_holdToTalkTriggerDidReleaseFromSource:(int)arg1;
 - (void)_informRemoteViewControllerOfParentIfNecessary;
 - (BOOL)_isInHoldToTalkMode;
+- (BOOL)_isInitialSpeechRequest;
 - (double)_manualEndpointingThreshold;
 - (void)_presentDeferredFlamesViewIfNecessary;
 - (void)_presentRemoteViewController;
@@ -98,6 +103,7 @@
 - (void)_setHasCalledBeginAppearanceTransition:(BOOL)arg1;
 - (void)_setHasCalledEndAppearanceTransition:(BOOL)arg1;
 - (void)_setInHoldToTalkMode:(BOOL)arg1;
+- (void)_setKeyboardEnabled:(BOOL)arg1;
 - (void)_setRecordingStartedTimeValue:(id)arg1;
 - (void)_setShowAudioRoutePicker:(BOOL)arg1;
 - (void)_setStatusBar:(id)arg1;
@@ -135,6 +141,7 @@
 - (id)init;
 - (id)initWithConnection:(id)arg1 configuration:(id)arg2;
 - (BOOL)isEyesFree;
+- (BOOL)isInitialBringUp;
 - (BOOL)isListening;
 - (BOOL)isPreventingActivationGesture;
 - (BOOL)isProcessingAcousticIdRequest;
@@ -178,7 +185,7 @@
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id /* block */)arg2;
-- (void)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3 launchOverSiri:(BOOL)arg4 replyHandler:(id /* block */)arg5;
+- (void)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3 launchOptions:(int)arg4 replyHandler:(id /* block */)arg5;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 appBundleID:(id)arg3 allowSiriDismissal:(BOOL)arg4;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(BOOL)arg3;
 - (void)siriRemoteViewController:(id)arg1 setBugReportingAvailable:(BOOL)arg2;
@@ -215,6 +222,7 @@
 - (void)siriViewDidReceiveAudioRouteAction:(id)arg1;
 - (void)siriViewDidReceiveBugButtonLongPress:(id)arg1;
 - (void)siriViewDidReceiveHelpAction:(id)arg1;
+- (void)siriViewDidReceiveKeyboardAction:(id)arg1;
 - (void)siriViewDidReceiveReportBugAction:(id)arg1;
 - (void)siriViewDidRecieveStatusViewHoldDidBeginAction:(id)arg1;
 - (void)siriViewDidRecieveStatusViewHoldDidEndAction:(id)arg1;

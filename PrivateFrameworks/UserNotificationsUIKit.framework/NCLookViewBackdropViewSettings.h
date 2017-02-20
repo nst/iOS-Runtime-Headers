@@ -9,6 +9,8 @@
 
 + (id)lookViewBackdropViewSettingsWithBlur:(BOOL)arg1;
 + (id)lookViewBackdropViewSettingsWithBlur:(BOOL)arg1 darken:(BOOL)arg2;
++ (id)lookViewBackdropViewSettingsWithBlur:(BOOL)arg1 darken:(BOOL)arg2 materialSettings:(id)arg3;
++ (void)updateSettings:(id)arg1 withMaterialSettings:(id)arg2 blur:(BOOL)arg3 darken:(BOOL)arg4 captureOnly:(BOOL)arg5;
 
 - (BOOL)_isBlurred;
 - (BOOL)_isDarkened;

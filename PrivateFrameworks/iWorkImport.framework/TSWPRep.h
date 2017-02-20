@@ -136,6 +136,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_paragraphModeRectangleForColumn:(id)arg1 selection:(id)arg2;
 - (struct CGPoint { float x1; float x2; })p_pinPoint:(struct CGPoint { float x1; float x2; })arg1 toRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)p_shouldShowCommentsIncludingHighlights:(BOOL)arg1;
+- (BOOL)p_singleAnchoredDrawableAttachmentSelection:(id)arg1;
 - (void)p_teardown;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })p_topicDragRectForSelection:(id)arg1;
 - (void)p_updateLayersForInsertionPointSelection:(id)arg1;

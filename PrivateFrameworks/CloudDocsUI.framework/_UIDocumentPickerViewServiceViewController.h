@@ -37,7 +37,6 @@
 + (id)_urlByResolvingExternalDocumentReferenceForURL:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_checkFileStatus;
 - (void)_cloudEnabledStatusDidChange:(id)arg1;
 - (void)_createBookmarkAndDismissWithCloudURL:(id)arg1;
 - (void)_didInstantiateThirdPartyPickerWithDescription:(id)arg1 placeholder:(id)arg2;
@@ -61,6 +60,7 @@
 - (void)_setTintColor:(id)arg1;
 - (void)_setUploadURL:(id)arg1;
 - (void)_setUploadURLWrapper:(id)arg1;
+- (BOOL)_shouldWarnForSharing;
 - (void)_showDefaultPicker;
 - (void)_showExistsAlertForFile:(id)arg1 withSourceURL:(id)arg2;
 - (void)_showLocationPopup:(id)arg1;
@@ -71,6 +71,8 @@
 - (void)_tryExportingFile:(id)arg1 toLocation:(id)arg2;
 - (void)_updateDefaultPicker;
 - (struct CGSize { float x1; float x2; })_updatedContentSizeForPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_warnSharingForTarget:(id)arg1 completion:(id /* block */)arg2;
+- (void)_warnSharingPreMove;
 - (void)_willAppearInRemoteViewController;
 - (id)auxiliaryOptions;
 - (void)beginDownloadingURL:(id)arg1 completion:(id /* block */)arg2;

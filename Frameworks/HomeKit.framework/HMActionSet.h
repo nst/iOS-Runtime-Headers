@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMActionSet : NSObject <HFFavoritable, HFPrettyDescription, HFReorderableHomeKitObject, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
+@interface HMActionSet : NSObject <HFFavoritable, HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     NSString * _actionSetType;
     HMApplicationData * _applicationData;
     NSObject<OS_dispatch_queue> * _clientQueue;
@@ -116,7 +116,8 @@
 - (id)hf_iconDescriptor;
 - (BOOL)hf_isAnonymous;
 - (BOOL)hf_isFavorite;
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIconDescriptor:(id)arg1;
 - (id)hf_updateIsFavorite:(BOOL)arg1;

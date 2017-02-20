@@ -60,6 +60,7 @@
         unsigned int prohibitsDetachmentOnCommentChange : 1; 
         unsigned int allowsProposeNewTime : 1; 
         unsigned int prohibitsICSImport : 1; 
+        unsigned int supportsAutoGeocodingStructuredLocations : 1; 
     }  _flags;
     int  _maxAlarmsAllowed;
     int  _maxRecurrencesAllowed;
@@ -107,6 +108,7 @@
 @property (nonatomic) BOOL supportsAlarmTriggerIntervals;
 @property (nonatomic) BOOL supportsAlarmsTriggeringAfterStartDate;
 @property (nonatomic) BOOL supportsAllDayDueDates;
+@property (nonatomic) BOOL supportsAutoGeocodingStructuredLocations;
 @property (nonatomic) BOOL supportsAvailabilityRequests;
 @property (nonatomic) BOOL supportsEventForwarding;
 @property (nonatomic) BOOL supportsIgnoringEventsInAvailabilityRequests;
@@ -200,6 +202,7 @@
 - (void)setSupportsAlarmTriggerIntervals:(BOOL)arg1;
 - (void)setSupportsAlarmsTriggeringAfterStartDate:(BOOL)arg1;
 - (void)setSupportsAllDayDueDates:(BOOL)arg1;
+- (void)setSupportsAutoGeocodingStructuredLocations:(BOOL)arg1;
 - (void)setSupportsAvailabilityRequests:(BOOL)arg1;
 - (void)setSupportsEventForwarding:(BOOL)arg1;
 - (void)setSupportsIgnoringEventsInAvailabilityRequests:(BOOL)arg1;
@@ -224,6 +227,7 @@
 - (BOOL)supportsAlarmTriggerIntervals;
 - (BOOL)supportsAlarmsTriggeringAfterStartDate;
 - (BOOL)supportsAllDayDueDates;
+- (BOOL)supportsAutoGeocodingStructuredLocations;
 - (BOOL)supportsAvailabilityRequests;
 - (BOOL)supportsEventForwarding;
 - (BOOL)supportsIgnoringEventsInAvailabilityRequests;

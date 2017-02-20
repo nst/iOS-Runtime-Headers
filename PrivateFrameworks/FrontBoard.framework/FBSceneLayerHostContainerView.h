@@ -3,6 +3,7 @@
  */
 
 @interface FBSceneLayerHostContainerView : UIView <FBSceneLayerManagerObserver, _FBSceneGeometryObserver> {
+    BOOL  _clippingDisabled;
     <FBSceneLayerHostContainerViewDataSource> * _dataSource;
     <FBSceneLayerHostContainerViewDelegate> * _delegate;
     NSMutableArray * _hostViews;
@@ -10,6 +11,7 @@
     FBScene * _scene;
 }
 
+@property (getter=isClippingDisabled, nonatomic) BOOL clippingDisabled;
 @property (nonatomic) <FBSceneLayerHostContainerViewDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSceneLayerHostContainerViewDelegate> *delegate;
@@ -37,9 +39,11 @@
 - (id)hostedLayers;
 - (id)init;
 - (id)initWithScene:(id)arg1;
+- (BOOL)isClippingDisabled;
 - (BOOL)isHosting;
 - (void)rebuildLayers;
 - (id)scene;
+- (void)setClippingDisabled:(BOOL)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)succinctDescription;

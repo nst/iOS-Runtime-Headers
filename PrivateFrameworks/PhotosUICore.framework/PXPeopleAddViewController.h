@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPeopleAddViewController : UICollectionViewController <PXPeopleDataSourceDelegate, UICollectionViewDataSourcePrefetching, UICollectionViewDelegateFlowLayout> {
+@interface PXPeopleAddViewController : UICollectionViewController <PXPeopleDataSourceDelegate, UICollectionViewDelegateFlowLayout> {
     UIBarButtonItem * _addItem;
     UIBarButtonItem * _cancelItem;
     PXPeoplePersonDataSource * _dataSource;
@@ -55,8 +55,6 @@
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
-- (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
-- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)commonInit;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)dataSource;

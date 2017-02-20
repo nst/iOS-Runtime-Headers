@@ -36,7 +36,6 @@
 - (void)safariActivity:(id)arg1 didFinish:(BOOL)arg2;
 - (void)setIsRunningTransitionAnimation:(BOOL)arg1;
 - (void)setShowingLinkPreview:(BOOL)arg1;
-- (void)setTintColor:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

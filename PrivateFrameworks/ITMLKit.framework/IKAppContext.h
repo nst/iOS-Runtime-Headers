@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKAppContext : NSObject <ISURLOperationDelegate> {
+@interface IKAppContext : NSObject <IKAppCacheDelegate, ISURLOperationDelegate> {
     <IKApplication> * _app;
+    IKAppCache * _appCache;
     <IKAppScriptFallbackHandler> * _appScriptFallbackHandler;
     double  _appScriptTimeoutInterval;
+    BOOL  _appUsesDefaultStyleSheets;
     IKJSArrayBufferStore * _arrayBufferStore;
     BOOL  _canAccessPendingQueue;
     <IKAppContextDelegate> * _delegate;
@@ -17,19 +19,26 @@
     NSObject<OS_dispatch_source> * _lowMemoryWarningSource;
     BOOL  _mescalPrimeEnabledForXHRRequests;
     unsigned int  _mode;
+    NSString * _nextJSChecksum;
+    NSMutableArray * _onStartQueue;
     NSMutableArray * _pendingQueue;
     NSMutableArray * _postEvaluationBlocks;
+    BOOL  _privileged;
     id  _reloadData;
     BOOL  _remoteInspectionEnabled;
+    BOOL  _respondsToTraitCollection;
     NSError * _responseError;
     NSString * _responseScript;
     BOOL  _trusted;
+    IKViewElementRegistry * _viewElementRegistry;
     IKJSInspectorController * _webInspectorController;
 }
 
 @property (nonatomic, readonly) <IKApplication> *app;
+@property (nonatomic, readonly) IKAppCache *appCache;
 @property (nonatomic, retain) <IKAppScriptFallbackHandler> *appScriptFallbackHandler;
 @property (nonatomic) double appScriptTimeoutInterval;
+@property (nonatomic, readonly) BOOL appUsesDefaultStyleSheets;
 @property (nonatomic, readonly) IKJSArrayBufferStore *arrayBufferStore;
 @property (nonatomic) BOOL canAccessPendingQueue;
 @property (readonly, copy) NSString *debugDescription;
@@ -41,24 +50,32 @@
 @property (nonatomic, retain) IKJSFoundation *jsFoundation;
 @property (nonatomic) BOOL mescalPrimeEnabledForXHRRequests;
 @property (nonatomic, readonly) unsigned int mode;
+@property (nonatomic, copy) NSString *nextJSChecksum;
+@property (nonatomic, readonly) NSMutableArray *onStartQueue;
 @property (nonatomic, retain) NSMutableArray *pendingQueue;
 @property (nonatomic, retain) NSMutableArray *postEvaluationBlocks;
+@property (getter=isPrivileged, nonatomic) BOOL privileged;
 @property (nonatomic, retain) id reloadData;
 @property (nonatomic) BOOL remoteInspectionEnabled;
 @property (nonatomic, retain) NSError *responseError;
 @property (nonatomic, copy) NSString *responseScript;
 @property (readonly) Class superclass;
 @property (getter=isTrusted, nonatomic) BOOL trusted;
+@property (nonatomic, readonly) IKViewElementRegistry *viewElementRegistry;
 @property (nonatomic, retain) IKJSInspectorController *webInspectorController;
 
 + (id)currentAppContext;
++ (void)initialize;
 + (void)load;
 + (void)registerPrivateProtocols:(id)arg1 forClass:(Class)arg2;
 
 - (void).cxx_destruct;
 - (void)_addStopRecordToPendingQueueWithReload:(BOOL)arg1;
+- (id)_appTraitCollection;
 - (void)_dispatchError:(id)arg1;
 - (void)_doEvaluate:(id /* block */)arg1;
+- (void)_drainOnStartQueue;
+- (void)_enqueueOnStartOrExecute:(id /* block */)arg1;
 - (id)_errorWithMessage:(id)arg1;
 - (void)_evaluate:(id /* block */)arg1;
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
@@ -73,17 +90,27 @@
 - (void)_stopAndReload:(BOOL)arg1;
 - (void)addPostEvaluateBlock:(id /* block */)arg1;
 - (id)app;
+- (id)appCache;
+- (void)appCache:(id)arg1 didUpdateWithChecksum:(id)arg2;
 - (id)appScriptFallbackHandler;
 - (double)appScriptTimeoutInterval;
+- (void)appTraitCollectionChanged:(id)arg1;
+- (BOOL)appUsesDefaultStyleSheets;
 - (id)arrayBufferStore;
 - (BOOL)canAccessPendingQueue;
+- (void)contextDidFailWithError:(id)arg1;
+- (void)contextDidStartWithJS:(id)arg1 options:(id)arg2;
+- (void)contextDidStopWithOptions:(id)arg1;
 - (id)delegate;
 - (void)evaluate:(id /* block */)arg1 completionBlock:(id /* block */)arg2;
 - (void)evaluateDelegateBlockSync:(id /* block */)arg1;
 - (void)evaluateFoundationJS;
 - (void)exitAppWithOptions:(id)arg1;
+- (void)handleCacheUpdate;
 - (void)handleReloadWithUrgencyType:(unsigned int)arg1 minInterval:(double)arg2 data:(id)arg3;
+- (id)initWithApplication:(id)arg1 mode:(unsigned int)arg2 cache:(BOOL)arg3 delegate:(id)arg4;
 - (id)initWithApplication:(id)arg1 mode:(unsigned int)arg2 delegate:(id)arg3;
+- (BOOL)isPrivileged;
 - (BOOL)isTrusted;
 - (BOOL)isValid;
 - (id)jsContext;
@@ -91,6 +118,8 @@
 - (void)launchAppWithOptions:(id)arg1;
 - (BOOL)mescalPrimeEnabledForXHRRequests;
 - (unsigned int)mode;
+- (id)nextJSChecksum;
+- (id)onStartQueue;
 - (void)openURLWithOptions:(id)arg1;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
@@ -110,8 +139,10 @@
 - (void)setJsContext:(id)arg1;
 - (void)setJsFoundation:(id)arg1;
 - (void)setMescalPrimeEnabledForXHRRequests:(BOOL)arg1;
+- (void)setNextJSChecksum:(id)arg1;
 - (void)setPendingQueue:(id)arg1;
 - (void)setPostEvaluationBlocks:(id)arg1;
+- (void)setPrivileged:(BOOL)arg1;
 - (void)setReloadData:(id)arg1;
 - (void)setRemoteInspectionEnabled:(BOOL)arg1;
 - (void)setResponseError:(id)arg1;
@@ -122,6 +153,7 @@
 - (void)stop;
 - (void)suspendWithOptions:(id)arg1;
 - (BOOL)validateDOMDocument:(id)arg1 error:(id*)arg2;
+- (id)viewElementRegistry;
 - (id)webInspectorController;
 
 @end

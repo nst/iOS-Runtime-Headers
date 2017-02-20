@@ -201,10 +201,10 @@
 // Image: /System/Library/PrivateFrameworks/ContactsUICore.framework/ContactsUICore
 
 + (id)_cnui_searchMailUserActivityForContact:(id)arg1;
-+ (id)_cnui_sendMessageIntentWithDestinationID:(id)arg1 contact:(id)arg2;
-+ (id)_cnui_startAudioCallIntentWithDestinationID:(id)arg1 contact:(id)arg2;
-+ (id)_cnui_startVideoCallIntentWithDestinationID:(id)arg1 contact:(id)arg2;
-+ (id)_cnui_userActivityWithActivityType:(id)arg1 destinationID:(id)arg2 contact:(id)arg3 intentWithPerson:(id /* block */)arg4;
++ (id)_cnui_sendMessageIntentWithDestinationID:(id)arg1 customIdentifier:(id)arg2 contact:(id)arg3;
++ (id)_cnui_startAudioCallIntentWithDestinationID:(id)arg1 customIdentifier:(id)arg2 contact:(id)arg3;
++ (id)_cnui_startVideoCallIntentWithDestinationID:(id)arg1 customIdentifier:(id)arg2 contact:(id)arg3;
++ (id)_cnui_userActivityWithActivityType:(id)arg1 destinationID:(id)arg2 customIdentifier:(id)arg3 contact:(id)arg4 intentWithPerson:(id /* block */)arg5;
 
 // Image: /System/Library/PrivateFrameworks/UserActivity.framework/UserActivity
 

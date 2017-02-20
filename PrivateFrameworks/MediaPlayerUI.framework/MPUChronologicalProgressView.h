@@ -21,7 +21,7 @@
     UISlider<MPDetailedScrubbing><_MPUSliderScrubForwarding> * _slider;
     int  _style;
     int  _substyle;
-    MPUTimeFormatter * _timeFormatter;
+    AVTimeFormatter * _timeFormatter;
     double  _totalDuration;
 }
 
@@ -37,7 +37,7 @@
 @property (nonatomic, readonly) int style;
 @property (nonatomic) int substyle;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) MPUTimeFormatter *timeFormatter;
+@property (nonatomic, retain) AVTimeFormatter *timeFormatter;
 @property (nonatomic) double totalDuration;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackRect;
 

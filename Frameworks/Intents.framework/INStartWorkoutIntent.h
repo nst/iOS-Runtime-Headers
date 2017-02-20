@@ -14,9 +14,11 @@
 @property (nonatomic, readonly) int workoutLocationType;
 @property (nonatomic, readonly, copy) INSpeakableString *workoutName;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
+- (id)description;
 - (id)goalValue;
 - (id)initWithWorkoutName:(id)arg1 goalValue:(id)arg2 workoutGoalUnitType:(int)arg3 workoutLocationType:(int)arg4 isOpenEnded:(id)arg5;
 - (id)isOpenEnded;

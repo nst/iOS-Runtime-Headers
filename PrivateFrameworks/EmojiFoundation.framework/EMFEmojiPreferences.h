@@ -9,36 +9,48 @@
     NSObject<OS_dispatch_queue> * _differentialPrivacyQueue;
     BOOL  _isDefaultDirty;
     unsigned int  _maximumRecentsCount;
-    NSString * _previouslyUsedCategory;
-    NSArray * _recentEmojis;
     NSMutableArray * _recents;
     NSMutableDictionary * _skinToneBaseKeyPreferences;
+    NSMutableDictionary * _typingNames;
     NSMutableDictionary * _usageHistory;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasDisplayedSkinToneHelp;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int maximumRecentsCount;
-@property (nonatomic, retain) NSString *previouslyUsedCategory;
-@property (nonatomic, retain) NSArray *recentEmojis;
+@property (nonatomic, readonly) NSString *previouslyUsedCategory;
+@property (nonatomic, readonly) NSArray *recentEmojis;
 @property (readonly) Class superclass;
 
++ (id)_cacheDomain;
++ (id)_cachedFlagCategoryEmoji:(id /* block */)arg1;
++ (id)_recentEmojiStrings;
 + (id)defaultsDomain;
 + (id)differentialPrivacyDomain;
 + (id)differentialPrivacyRecorderForEmoji:(id)arg1 usageMode:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_cleanUpOldFlagsCaches;
 - (void)_readPreferencesFromDefaults;
+- (void)didDisplaySkinToneHelp;
 - (void)didUseEmoji:(id)arg1;
 - (void)didUseEmoji:(id)arg1 usageMode:(id)arg2;
+- (void)didUseEmoji:(id)arg1 usageMode:(id)arg2 typingName:(id)arg3;
 - (void)didViewEmojiIndex:(int)arg1 forCategory:(id)arg2;
+- (BOOL)hasDisplayedSkinToneHelp;
+- (BOOL)hasLastUsedVariantForEmoji:(id)arg1;
 - (id)init;
+- (id)lastUsedVariantEmojiForEmoji:(id)arg1;
 - (void)loadDefaultsIfNecessary;
 - (unsigned int)maximumRecentsCount;
+- (void)migrateFromMajorOSVersion:(int)arg1;
+- (void)migrateInDidDisplaySkinToneHelp:(BOOL)arg1;
 - (void)migrateInPreviouslyUsedCategory:(id)arg1;
 - (void)migrateInPreviouslyUsedCategoryIndexes:(id)arg1;
-- (void)migrateInRecentEmoji:(id)arg1 usages:(id)arg2;
+- (void)migrateInRecentEmoji:(id)arg1 usages:(id)arg2 typingNames:(id)arg3;
+- (void)migrateInSkinTonePreferences:(id)arg1;
 - (id)previouslyUsedCategory;
 - (unsigned int)previouslyUsedIndexInCategory:(id)arg1;
 - (void)readEmojiDefaults;
@@ -48,8 +60,7 @@
 - (double)scoreForEmojiString:(id)arg1;
 - (double)scoreForSequence:(int)arg1;
 - (void)setMaximumRecentsCount:(unsigned int)arg1;
-- (void)setPreviouslyUsedCategory:(id)arg1;
-- (void)setRecentEmojis:(id)arg1;
+- (id)typingNameForEmoji:(id)arg1;
 - (void)writeEmojiDefaults;
 
 @end

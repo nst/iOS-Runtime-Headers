@@ -49,7 +49,6 @@
 
 - (void).cxx_destruct;
 - (int)StringAsPublicAccess:(id)arg1;
-- (id)_publicAccessCKLogValue;
 - (void)addInvitedKeyToRemove:(id)arg1;
 - (void)addParticipant:(id)arg1;
 - (void)addPotentialMatch:(id)arg1;

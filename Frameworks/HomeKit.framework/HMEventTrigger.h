@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMEventTrigger : HMTrigger <HFTriggerProtocol, NSSecureCoding> {
+@interface HMEventTrigger : HMTrigger <HFPrettyDescription, HFStateDumpSerializable, HFTriggerProtocol, NSSecureCoding> {
     HMThreadSafeMutableArrayCollection * _currentEvents;
     NSPredicate * _predicate;
     NSArray * _recurrences;
@@ -84,6 +84,8 @@
 + (id)hf_triggerValueNaturalLanguageDescriptionWithCharacteristics:(id)arg1 triggerValue:(id)arg2;
 
 - (id)hf_naturalLanguageNameWithHome:(id)arg1 type:(unsigned int)arg2;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 - (unsigned int)hf_triggerType;
 
 @end

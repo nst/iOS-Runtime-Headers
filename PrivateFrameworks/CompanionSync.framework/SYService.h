@@ -3,6 +3,7 @@
  */
 
 @interface SYService : NSObject <SYStateLoggable, SYSyncEngineResponder> {
+    NSArray * _aggdKeys;
     SYSession * _currentSession;
     NSDictionary * _customIDSOptions;
     double  _defaultMessageTimeout;
@@ -47,6 +48,7 @@
     SYVectorClock * _vectorClock;
 }
 
+@property (nonatomic, readonly, copy) NSArray *aggdKeys;
 @property (nonatomic, readonly) SYSession *currentSession;
 @property (nonatomic, copy) NSDictionary *customIDSOptions;
 @property (readonly, copy) NSString *debugDescription;
@@ -69,6 +71,7 @@
 @property (nonatomic, readonly) PBCodable *stateForLogging;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) SYSyncEngine *syncEngine;
+@property (nonatomic, readonly) BOOL targetIsInProximity;
 
 - (void).cxx_destruct;
 - (id)_chooseBetweenCollidingSessions:(id)arg1 :(id)arg2;
@@ -130,8 +133,11 @@
 - (void)_vectorClockUpdated;
 - (void)_whenSessionEnds:(id /* block */)arg1;
 - (void)_wrapUpCurrentSession:(id)arg1;
+- (id)aggdKeys;
+- (void)currentDeviceProximityChanged:(BOOL)arg1;
 - (id)currentSession;
 - (id)customIDSOptions;
+- (void)dataStreamWithMetadata:(id)arg1 options:(struct NSDictionary { Class x1; }*)arg2 completion:(id /* block */)arg3;
 - (id)dataStreamWithMetadata:(id)arg1 options:(struct NSDictionary { Class x1; }*)arg2 identifier:(id*)arg3 error:(id*)arg4;
 - (void)dealloc;
 - (double)defaultMessageTimeout;
@@ -155,6 +161,7 @@
 - (int)priority;
 - (id)queue;
 - (BOOL)resume:(id*)arg1;
+- (void)sendData:(id)arg1 options:(struct NSDictionary { Class x1; }*)arg2 completion:(id /* block */)arg3;
 - (BOOL)sendData:(id)arg1 options:(struct NSDictionary { Class x1; }*)arg2 identifier:(id*)arg3 error:(id*)arg4;
 - (void)sentMessageWithID:(id)arg1 context:(id)arg2;
 - (void)serializeForIncomingSession:(id /* block */)arg1;
@@ -175,6 +182,7 @@
 - (id)stateForLogging;
 - (void)suspend;
 - (id)syncEngine;
+- (BOOL)targetIsInProximity;
 - (BOOL)willAcceptMessageWithHeader:(id)arg1 messageID:(id)arg2;
 
 @end

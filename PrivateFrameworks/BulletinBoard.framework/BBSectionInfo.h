@@ -31,6 +31,7 @@
 @property (nonatomic, copy) NSString *appName;
 @property (nonatomic) unsigned int bulletinCount;
 @property (nonatomic) int carPlaySetting;
+@property (nonatomic) int contentPreviewSetting;
 @property (nonatomic, copy) NSArray *dataProviderIDs;
 @property (nonatomic, copy) NSString *displayName;
 @property (nonatomic) BOOL displaysCriticalBulletins;
@@ -52,7 +53,6 @@
 @property (nonatomic) int sectionType;
 @property (nonatomic) BOOL showsInLockScreen;
 @property (nonatomic) BOOL showsInNotificationCenter;
-@property (nonatomic) BOOL showsMessagePreview;
 @property (nonatomic) BOOL showsOnExternalDevices;
 @property (nonatomic, copy) NSString *subsectionID;
 @property (nonatomic) int subsectionPriority;
@@ -82,6 +82,7 @@
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (unsigned int)bulletinCount;
 - (int)carPlaySetting;
+- (int)contentPreviewSetting;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataProviderIDs;
 - (id)description;
@@ -120,6 +121,7 @@
 - (void)setAppName:(id)arg1;
 - (void)setBulletinCount:(unsigned int)arg1;
 - (void)setCarPlaySetting:(int)arg1;
+- (void)setContentPreviewSetting:(int)arg1;
 - (void)setDataProviderIDs:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setDisplaysCriticalBulletins:(BOOL)arg1;

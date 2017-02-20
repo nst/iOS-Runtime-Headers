@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
  */
 
-@interface FCForYouConfig : NSObject {
+@interface FCForYouConfig : NSObject <NSCopying> {
     FCGroupConfig * _coverArticlesGroupConfig;
     NSArray * _editorialGroupConfigs;
     NTPBForYouConfigRecord * _forYouConfigRecord;
@@ -24,6 +24,7 @@
 @property (nonatomic, retain) FCGroupConfig *trendingGroupConfig;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)coverArticlesArticleListID;
 - (id)coverArticlesGroupConfig;
 - (id)editorialArticleListIDs;

@@ -2,19 +2,23 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMDocument : IKDOMNode <IKJSDOMDocument, IKJSDOMXPathEvaluator, JSExport> {
+@interface IKDOMDocument : IKDOMNode <IKJSDOMDocument, IKJSDOMXPathEvaluator, NSObject, _IKJSDOMDocument, _IKJSDOMDocumentProxy> {
     <IKJSDOMDocumentAppBridge> * _appBridge;
     unsigned int  _itmlIDSequence;
 }
 
 @property (nonatomic) <IKJSDOMDocumentAppBridge> *appBridge;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) IKDOMElement *documentElement;
 @property (nonatomic, retain) NSString *documentURI;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) IKDOMImplementation *implementation;
 @property (nonatomic, readonly, retain) NSString *inputEncoding;
 @property (nonatomic) unsigned int itmlIDSequence;
 @property (nonatomic) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic) BOOL strictErrorChecking;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) NSString *xmlEncoding;
 @property (nonatomic) BOOL xmlStandalone;
 @property (nonatomic, retain) NSString *xmlVersion;
@@ -25,6 +29,7 @@
 - (void)_updateITMLIDRecursivelyForNodePtr:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
 - (id)adoptNode:(id)arg1;
 - (id)appBridge;
+- (id)asPrivateIKJSDOMDocument;
 - (id)createCDATASection:(id)arg1;
 - (id)createComment:(id)arg1;
 - (id)createDocumentFragment;

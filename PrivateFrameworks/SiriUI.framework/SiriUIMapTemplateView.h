@@ -12,6 +12,7 @@
     MKMapView * _mapView;
     BOOL  _needsToNotifyDelegateOfLocationUpdate;
     MKPinAnnotationView * _pinAnnotationView;
+    UITapGestureRecognizer * _tapRecognizer;
 }
 
 @property (nonatomic) <SiriUIMapTemplateModel> *dataSource;
@@ -25,6 +26,7 @@
 - (id)_configuredFootnoteDescriptorLabel;
 - (id)_configuredFootnoteLabel;
 - (id)_configuredLabel;
+- (void)_handleTapGesture:(id)arg1;
 - (void)_mapButtonPressed:(id)arg1;
 - (void)_notifyDelegateOfLocationUpdateIfNeededWithPlacemark:(id)arg1;
 - (id)delegate;

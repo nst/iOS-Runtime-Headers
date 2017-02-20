@@ -36,7 +36,6 @@
 - (id)policy;
 - (id)process;
 - (void)provision:(id)arg1 wasViolatedWithError:(id)arg2;
-- (void)provisionMilestoneCompleted:(id)arg1;
 - (void)setCompletion:(id /* block */)arg1;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;

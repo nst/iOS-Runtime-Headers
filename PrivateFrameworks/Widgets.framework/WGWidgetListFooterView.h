@@ -15,9 +15,11 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) <WGWidgetListFooterViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *groupName;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int layoutMode;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic) BOOL shouldBlurContent;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -25,20 +27,21 @@
 - (id)_referenceFont;
 - (void)_updateForContentCategorySizeDidChange;
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
-- (id)backgroundView;
 - (id)delegate;
+- (id)groupName;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)invalidateFooterBackgroundViews;
 - (void)invalidateSubviewGeometery;
 - (int)layoutMode;
 - (void)layoutSubviews;
 - (id)legibilitySettings;
-- (void)setBackgroundView:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setGroupName:(id)arg1;
 - (void)setLayoutMode:(int)arg1;
 - (void)setLegibilitySettings:(id)arg1;
+- (void)setShouldBlurContent:(BOOL)arg1;
 - (void)setVisibleWidgetsIDs:(id)arg1;
+- (BOOL)shouldBlurContent;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 interaction:(int)arg4;
 - (void)traitCollectionDidChange:(id)arg1;

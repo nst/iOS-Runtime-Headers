@@ -38,10 +38,11 @@
 - (id)init;
 - (id)placeholderContactWithUUID:(id)arg1;
 - (id)placeholderContacts;
+- (void)removeAllPlaceholderContacts;
 - (void)removeObserver:(id)arg1;
-- (void)removePlaceholderContact:(id)arg1;
+- (void)removePlaceholderContactWithToken:(id)arg1;
 - (void)saveContact:(id)arg1;
-- (void)savePlaceholderContact:(id)arg1;
+- (id)savePlaceholderContact:(id)arg1;
 - (void)setContacts:(id)arg1;
 - (void)setContactsUsingTransaction:(id /* block */)arg1;
 

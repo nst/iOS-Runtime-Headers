@@ -23,11 +23,17 @@
     BOOL  _hasReportedError;
     struct __CFHTTPMessage { } * _httpResponseHeader;
     SiriCoreDataDecompressor * _inputDecompressor;
+    unsigned int  _inputLengthUnchangedCounter;
     BOOL  _isCanceled;
     BOOL  _isOpened;
+    void * _lastInputDataPointer;
+    unsigned int  _lastInputLength;
+    void * _lastOutputDataPointer;
+    unsigned int  _lastOutputLength;
     unsigned int  _metricsCount;
     NSMutableArray * _outgoingCommandsWithSendCompletions;
     SiriCoreDataCompressor * _outputCompressor;
+    unsigned int  _outputLengthUnchangedCounter;
     NSMutableDictionary * _outstandingBarriers;
     Class  _peerProviderClass;
     NSString * _peerType;
@@ -61,13 +67,14 @@
 
 - (void).cxx_destruct;
 - (void)_aceHeaderTimeoutFired:(id)arg1 afterTimeout:(double)arg2;
-- (void)_acknowledgePing:(unsigned int)arg1;
 - (id)_activeBufferedOutputData;
 - (void)_addOutgoingCommandForSendCompletion:(id)arg1;
 - (id)_bestErrorBetweenError:(id)arg1 peerError:(id)arg2;
 - (BOOL)_canFallBackFromError:(id)arg1;
 - (void)_cancelForExtendedValidationFailureWithTrustInfo:(id)arg1;
 - (void)_cancelOutstandingBarriers;
+- (int)_checkForProgressOnReadingData;
+- (int)_checkPings;
 - (void)_closeConnection;
 - (void)_closeConnectionAndPrepareForReconnect:(BOOL)arg1;
 - (id)_connectionMethodDescription;
@@ -105,7 +112,6 @@
 - (void)_sendData:(id)arg1 bufferedOutputData:(id)arg2;
 - (void)_sendGeneralData:(id)arg1;
 - (void)_sendProviderHeader;
-- (BOOL)_shouldDeferAcePingTimer;
 - (BOOL)_shouldTrySameConnectionMethodForMethod:(int)arg1 error:(id)arg2;
 - (void)_startWithConnectionInfo:(id)arg1 allowFallbackToNewConnectionMethod:(BOOL)arg2;
 - (BOOL)_tcpInfoIndicatesPoorLinkQuality;

@@ -7,6 +7,7 @@
     SSAuthenticationContext * _authenticationContext;
     SSURLBagContext * _bagContext;
     ISBiometricAuthenticationContext * _biometricAuthenticationContext;
+    <ISBiometricSessionDelegate> * _biometricSessionDelegate;
     long long  _contentLength;
     NSString * _contentType;
     int  _errorHandlerResponseType;
@@ -19,6 +20,7 @@
 @property (retain) SSAuthenticationContext *authenticationContext;
 @property (retain) SSURLBagContext *bagContext;
 @property (retain) ISBiometricAuthenticationContext *biometricAuthenticationContext;
+@property <ISBiometricSessionDelegate> *biometricSessionDelegate;
 @property long long contentLength;
 @property (retain) NSString *contentType;
 @property int errorHandlerResponseType;
@@ -29,11 +31,13 @@
 + (id)provider;
 
 - (void).cxx_destruct;
+- (void)_performActionsForButton:(id)arg1 withDialog:(id)arg2;
 - (BOOL)_runServerAuthenticationOperation:(id)arg1 error:(id*)arg2;
 - (id)authenticatedAccountDSID;
 - (id)authenticationContext;
 - (id)bagContext;
 - (id)biometricAuthenticationContext;
+- (id)biometricSessionDelegate;
 - (BOOL)canStreamContentLength:(long long)arg1 error:(id*)arg2;
 - (id)closeStream;
 - (void)configureFromProvider:(id)arg1;
@@ -51,11 +55,12 @@
 - (void)resetStream;
 - (BOOL)runAuthorizationDialog:(id)arg1 error:(id*)arg2;
 - (BOOL)runSubOperation:(id)arg1 error:(id*)arg2;
-- (BOOL)runTouchIDAuthorizationDialog:(id)arg1 error:(id*)arg2;
+- (BOOL)runTouchIDAuthorizationDialog:(id)arg1 fallbackDialog:(id)arg2 error:(id*)arg3;
 - (void)setAuthenticatedAccountDSID:(id)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setBagContext:(id)arg1;
 - (void)setBiometricAuthenticationContext:(id)arg1;
+- (void)setBiometricSessionDelegate:(id)arg1;
 - (void)setContentLength:(long long)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setErrorHandlerResponseType:(int)arg1;

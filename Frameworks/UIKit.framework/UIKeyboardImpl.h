@@ -228,8 +228,6 @@
 + (id)normalizedInputModesFromPreference;
 + (struct CGPoint { float x1; float x2; })normalizedPersistentOffset;
 + (struct CGPoint { float x1; float x2; })normalizedPersistentOffsetIgnoringState;
-+ (int)persistentDictationTargetZone;
-+ (struct CGPoint { float x1; float x2; })persistentDictationWindowOffset;
 + (struct CGPoint { float x1; float x2; })persistentOffset;
 + (float)persistentSplitProgress;
 + (void)refreshRivenStateWithTraits:(id)arg1 isKeyboard:(BOOL)arg2;
@@ -242,8 +240,6 @@
 + (void)setFloating:(BOOL)arg1;
 + (void)setFloating:(BOOL)arg1 positionedWithLayout:(id)arg2;
 + (void)setParentTestForProfiling:(id)arg1;
-+ (void)setPersistentDictationTargetZone:(int)arg1;
-+ (void)setPersistentDictationWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
 + (void)setPersistentOffset:(struct CGPoint { float x1; float x2; })arg1;
 + (void)setPersistentSplitProgress:(float)arg1;
 + (id)sharedInstance;
@@ -743,6 +739,7 @@
 - (BOOL)shouldRapidDelete;
 - (BOOL)shouldRapidDeleteWithDelegate;
 - (BOOL)shouldShowCandidateBar;
+- (BOOL)shouldShowCandidateBarIfReceivedCandidatesInCurrentInputMode:(BOOL)arg1;
 - (BOOL)shouldSkipCandidateSelection;
 - (BOOL)shouldSwitchFromInputManagerMode:(id)arg1 toInputMode:(id)arg2;
 - (BOOL)shouldSwitchInputMode:(id)arg1;

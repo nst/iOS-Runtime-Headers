@@ -19,6 +19,7 @@
 @property (nonatomic, retain) <HFIconDescriptor> *iconDescriptor;
 @property (nonatomic) BOOL isFavorite;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) BOOL requiresDeviceUnlock;
 @property (readonly) Class superclass;
 
 + (Class)homeKitRepresentationClass;
@@ -40,6 +41,7 @@
 - (id)name;
 - (void)removeAction:(id)arg1;
 - (void)removeAllActions;
+- (BOOL)requiresDeviceUnlock;
 - (void)setActionBuilders:(id)arg1;
 - (void)setActionSet:(id)arg1;
 - (void)setIconDescriptor:(id)arg1;

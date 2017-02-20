@@ -17,6 +17,7 @@
         float lineHeight; 
         BOOL isLineHeightInitialized; 
     }  _defaultFontMetrics;
+    float  _defaultPointSizeAdjustment;
     int  _leadingAdjustment;
     UIFont * _preferredFont;
     struct { 
@@ -40,6 +41,7 @@
 
 @property (nonatomic, readonly) UIFont *defaultFont;
 @property (nonatomic, readonly) float defaultFontLineHeight;
+@property (nonatomic, readonly) float defaultPointSizeAdjustment;
 @property (nonatomic, readonly) int leadingAdjustment;
 @property (nonatomic, readonly) UIFont *preferredFont;
 @property (nonatomic, readonly) float preferredFontAscender;
@@ -55,7 +57,7 @@
 
 + (id)_adjustedNativeFontDescriptorWithBaseNativeFontDescriptor:(id)arg1 forCustomTextStyle:(int)arg2;
 + (id)_baseNativeTextStyleForTextStyle:(int)arg1;
-+ (id)_fontDescriptorWithTextStyle:(int)arg1 leadingAdjustment:(int)arg2 weight:(int)arg3 systemFontSize:(float)arg4;
++ (id)_fontDescriptorWithTextStyle:(int)arg1 leadingAdjustment:(int)arg2 weight:(int)arg3 systemFontSize:(float)arg4 defaultPointSizeAdjustment:(float)arg5;
 + (id)_fontPointSizeLayoutInterpolatorForTextStyle:(int)arg1;
 + (void)_getNativeFontDescriptorSymbolicTraits:(unsigned int*)arg1 nativeTextStyleAttribute:(id*)arg2 forWeight:(int)arg3;
 + (float)_layoutInterpolatorReferenceMetricForContentSizeCategory:(id)arg1;
@@ -68,6 +70,7 @@
 + (id)fontDescriptorWithTextStyle:(int)arg1;
 + (id)fontDescriptorWithTextStyle:(int)arg1 leadingAdjustment:(int)arg2;
 + (id)fontDescriptorWithTextStyle:(int)arg1 leadingAdjustment:(int)arg2 weight:(int)arg3;
++ (id)fontDescriptorWithTextStyle:(int)arg1 leadingAdjustment:(int)arg2 weight:(int)arg3 defaultPointSizeAdjustment:(float)arg4;
 + (id)fontDescriptorWithTextStyle:(int)arg1 weight:(int)arg2;
 + (id)invalidationHandler;
 
@@ -87,6 +90,7 @@
 - (float)defaultFontCapHeight;
 - (float)defaultFontDescender;
 - (float)defaultFontLineHeight;
+- (float)defaultPointSizeAdjustment;
 - (id)description;
 - (unsigned int)hash;
 - (id)init;

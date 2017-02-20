@@ -9,7 +9,6 @@
 @property (nonatomic, copy) NSString *comment;
 @property (nonatomic, readonly, copy) NSDate *creationDate;
 @property (nonatomic, copy) NSNumber *creatorCode;
-@property (nonatomic, copy) NSData *data;
 @property (nonatomic, copy) NSString *generic;
 @property (getter=isInvisible, nonatomic) BOOL invisible;
 @property (nonatomic, copy) NSString *itemDescription;
@@ -20,13 +19,13 @@
 @property (getter=isSynchronizable, nonatomic) BOOL synchronizable;
 @property (nonatomic, copy) NSNumber *typeCode;
 
+- (id)_faultWhileAccessingPrimitiveValueForKey:(id)arg1;
 - (void)_notifyWhileSettingPrimitiveValue:(id)arg1 forKey:(id)arg2;
 - (id)accessGroup;
 - (id)account;
 - (id)comment;
 - (id)creationDate;
 - (id)creatorCode;
-- (id)data;
 - (id)generic;
 - (id)init;
 - (BOOL)isInvisible;
@@ -40,7 +39,6 @@
 - (void)setAccount:(id)arg1;
 - (void)setComment:(id)arg1;
 - (void)setCreatorCode:(id)arg1;
-- (void)setData:(id)arg1;
 - (void)setGeneric:(id)arg1;
 - (void)setInvisible:(BOOL)arg1;
 - (void)setItemDescription:(id)arg1;

@@ -14,6 +14,7 @@
 - (id)_destinationItemForFocusMovement:(id)arg1 inMap:(id)arg2;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (unsigned int)_focusableBoundaries;
+- (int)_preferredDistanceComparisonType;
 - (BOOL)_shouldBeOccludedByRegion:(id)arg1;
 - (BOOL)_shouldCropRegionToSearchArea;
 - (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;

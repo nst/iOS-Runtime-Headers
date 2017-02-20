@@ -12,15 +12,18 @@
     NSString * _altDSID;
     BOOL  _canCreateNewAccount;
     BOOL  _canSetActiveAccount;
+    NSString * _cancelButtonLabel;
     NSString * _clientIdentifierHeader;
     BOOL  _demoAccount;
     BOOL  _displaysOnLockScreen;
     NSDictionary * _httpHeaders;
     NSString * _initialPassword;
+    NSString * _okButtonLabel;
     BOOL  _persistsAcrossDeviceLock;
     BOOL  _persistsPasswordFallback;
     NSString * _preferredITunesStoreClient;
     int  _promptStyle;
+    NSString * _promptTitle;
     NSString * _reasonDescription;
     NSDictionary * _requestParameters;
     NSNumber * _requiredUniqueIdentifier;
@@ -44,6 +47,7 @@
 @property (nonatomic, readonly, copy) NSString *altDSID;
 @property (nonatomic, readonly) BOOL canCreateNewAccount;
 @property (nonatomic, readonly) BOOL canSetActiveAccount;
+@property (nonatomic, readonly, copy) NSString *cancelButtonLabel;
 @property (nonatomic, readonly, copy) NSString *clientIdentifierHeader;
 @property (readonly, copy) NSString *debugDescription;
 @property (getter=isDemoAccount, nonatomic, readonly) BOOL demoAccount;
@@ -51,10 +55,12 @@
 @property (nonatomic, readonly) BOOL displaysOnLockScreen;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSString *initialPassword;
+@property (nonatomic, readonly, copy) NSString *okButtonLabel;
 @property (nonatomic, readonly) BOOL persistsAcrossDeviceLock;
 @property (nonatomic, readonly) BOOL persistsPasswordFallback;
 @property (nonatomic, readonly, copy) NSString *preferredITunesStoreClient;
 @property (nonatomic, readonly) int promptStyle;
+@property (nonatomic, readonly, copy) NSString *promptTitle;
 @property (nonatomic, readonly, copy) NSString *reasonDescription;
 @property (nonatomic, readonly, copy) NSDictionary *requestParameters;
 @property (nonatomic, readonly, retain) NSNumber *requiredUniqueIdentifier;
@@ -69,6 +75,7 @@
 
 + (id)contextForSignIn;
 
+- (void).cxx_destruct;
 - (id)HTTPHeaders;
 - (id)URLBagContext;
 - (BOOL)_allowCreateAccount;
@@ -82,10 +89,10 @@
 - (id)altDSID;
 - (BOOL)canCreateNewAccount;
 - (BOOL)canSetActiveAccount;
+- (id)cancelButtonLabel;
 - (id)clientIdentifierHeader;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
-- (void)dealloc;
 - (id)description;
 - (BOOL)displaysOnLockScreen;
 - (id)init;
@@ -96,10 +103,12 @@
 - (BOOL)isAccountNameEditable;
 - (BOOL)isDemoAccount;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)okButtonLabel;
 - (BOOL)persistsAcrossDeviceLock;
 - (BOOL)persistsPasswordFallback;
 - (id)preferredITunesStoreClient;
 - (int)promptStyle;
+- (id)promptTitle;
 - (id)reasonDescription;
 - (id)requestParameters;
 - (id)requiredUniqueIdentifier;

@@ -26,7 +26,6 @@
 
 @property (getter=isAudioOnly, nonatomic) BOOL audioOnly;
 @property (nonatomic, retain) TSPData *audioOnlyImageData;
-@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double endTime;

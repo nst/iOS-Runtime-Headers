@@ -7,6 +7,7 @@
     NSDate * _bucketStartDate;
     NSMutableDictionary * _calculatorByTypes;
     NSCalendar * _calendar;
+    NSMutableDictionary * _datesByDataType;
     NSNumber * _lastAnchor;
     NSMutableDictionary * _lastIntervalInfoByTypes;
     NSMutableArray * _lastUpdatedDataTypes;
@@ -16,7 +17,6 @@
     NSDate * _sleepStartDate;
     NSMutableDictionary * _statisticsByTypes;
     NSMutableDictionary * _summariesByTypes;
-    NSMutableDictionary * _timestampByDataType;
 }
 
 @property (nonatomic, retain) NSNumber *lastAnchor;
@@ -24,32 +24,29 @@
 
 - (void).cxx_destruct;
 - (BOOL)_addSleepSample:(id)arg1;
+- (BOOL)_addWorkoutSample:(id)arg1;
 - (id)_calculatedSummariesForDayWithDatabase:(id)arg1 error:(id*)arg2;
-- (id)_calculatedSummariesWithFilterTypes:(id)arg1 database:(id)arg2 error:(id*)arg3;
 - (id)_calculatedValuesForDatabase:(id)arg1 error:(id*)arg2;
-- (id)_enumerateFilteredSampleTypes:(id)arg1 database:(id)arg2 handler:(id /* block */)arg3 error:(id*)arg4;
-- (void)_enumerateSamplesWithDatabase:(id)arg1 handler:(id /* block */)arg2;
-- (BOOL)_enumerateSummaries:(id)arg1 withDatabase:(id)arg2 handler:(id /* block */)arg3 error:(id*)arg4;
+- (BOOL)_enumerateSamplesWithDatabase:(id)arg1 handler:(id /* block */)arg2;
 - (id)_latestAnchorFromDatabase:(id)arg1 withError:(id*)arg2;
 - (id)_predicateForAllTypes;
 - (id)_predicateForObjectsOfTypes:(id)arg1;
 - (id)_predicateForTypesWithSleep:(id)arg1;
 - (id)_predicateForTypesWithoutSleep:(id)arg1;
-- (double)_relevantValueForType:(int)arg1;
+- (BOOL)_queryForSleepSamplesWithDatabase:(id)arg1 error:(id*)arg2;
+- (BOOL)_queryForWorkoutSamplesWithDatabase:(id)arg1 error:(id*)arg2;
 - (BOOL)_resetCalculatorForDataType:(int)arg1 bucketStartTime:(double)arg2 bucketEndTime:(double)arg3;
+- (BOOL)_setIfLatestDate:(id)arg1 forObjectType:(id)arg2;
 - (BOOL)_setIfLatestTimestamp:(double)arg1 forObjectType:(id)arg2;
 - (id)_sleepDatePredicate;
 - (id)_sleepQueryResultBuilder;
-- (id)_sleepSamplesWithDatabase:(id)arg1 error:(id*)arg2;
 - (id)_sleepTypePredicate;
 - (id)_sqlListPlaceholderOfCount:(int)arg1;
-- (id)_summariesByDate:(id)arg1;
 - (void)_updateStatisticsForAllCalculators;
 - (void)_updateStatisticsForDataType:(id)arg1;
 - (void)_updateSummaryTypeFromSample:(id)arg1;
 - (BOOL)addCategorySamplesForType:(int)arg1 value:(double)arg2 startTime:(double)arg3 endTime:(double)arg4 sourceId:(long long)arg5 enforceLatest:(BOOL)arg6;
 - (BOOL)addQuantitySamplesForType:(int)arg1 value:(double)arg2 bucketStartTime:(double)arg3 bucketEndTime:(double)arg4 startTime:(double)arg5 endTime:(double)arg6 sourceId:(long long)arg7 enforceLatest:(BOOL)arg8;
-- (BOOL)addWorkoutSamplesWithStartTime:(double)arg1 endTime:(double)arg2 sourceId:(long long)arg3;
 - (id)calculatedQuantitiesByDataType;
 - (id)collectionCalculatorForType:(id)arg1 from:(double)arg2 to:(double)arg3;
 - (id)initWithProfile:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 sleepStartDate:(id)arg4 sleepEndDate:(id)arg5 calendar:(id)arg6;
@@ -58,7 +55,6 @@
 - (void)setShouldStopProcessing:(id /* block */)arg1;
 - (id /* block */)shouldStopProcessing;
 - (id)summariesForDayWithError:(id*)arg1;
-- (id)summariesWithFilterTypes:(id)arg1 error:(id*)arg2;
 - (id)timeIntervalCalculatorForType:(id)arg1;
 - (void)updateValuesWithAddedSample:(id)arg1 anchor:(id)arg2;
 - (id)updatedSummaries;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@interface CoreDAVTask : NSObject <CoreDAVSubmittable> {
+@interface CoreDAVTask : NSObject <CoreDAVSubmittable, DATask> {
     <CoreDAVAccountInfoProvider> * _accountInfoProvider;
     BOOL  _allowAutomaticRedirects;
     id /* block */  _completionBlock;
@@ -168,5 +168,11 @@
 + (double)bdv_overrideTimeoutInterval;
 
 - (void)bdv_applyOverrideTimeoutIntervalIfNeeded;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACoreDAVGlue.framework/DACoreDAVGlue
+
+- (void)cancelTaskWithReason:(int)arg1 underlyingError:(id)arg2;
+- (void)finishWithError:(id)arg1;
+- (void)performTask;
 
 @end

@@ -30,6 +30,7 @@
     CNContainer * _parentContainer;
     CNGroup * _parentGroup;
     CNPolicy * _policy;
+    NSArray * _preEditLeftBarButtonItems;
     NSString * _primaryPropertyKey;
     BOOL  _requiresSetup;
     BOOL  _shouldShowLinkedContacts;
@@ -66,6 +67,7 @@
 @property (nonatomic, retain) CNContainer *parentContainer;
 @property (nonatomic, retain) CNGroup *parentGroup;
 @property (nonatomic, readonly) CNPolicy *policy;
+@property (nonatomic, retain) NSArray *preEditLeftBarButtonItems;
 @property (nonatomic, retain) NSString *primaryPropertyKey;
 @property (nonatomic, readonly) <CNContactViewControllerPrivateDelegate> *privateDelegate;
 @property (nonatomic) BOOL requiresSetup;
@@ -132,6 +134,7 @@
 - (id)parentContainer;
 - (id)parentGroup;
 - (id)policy;
+- (id)preEditLeftBarButtonItems;
 - (id)primaryPropertyKey;
 - (id)privateDelegate;
 - (BOOL)requiresSetup;
@@ -161,6 +164,7 @@
 - (void)setMessage:(id)arg1;
 - (void)setParentContainer:(id)arg1;
 - (void)setParentGroup:(id)arg1;
+- (void)setPreEditLeftBarButtonItems:(id)arg1;
 - (void)setPrimaryPropertyKey:(id)arg1;
 - (void)setRequiresSetup:(BOOL)arg1;
 - (void)setShouldShowLinkedContacts:(BOOL)arg1;

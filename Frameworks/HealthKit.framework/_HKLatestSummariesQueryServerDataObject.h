@@ -4,28 +4,20 @@
 
 @interface _HKLatestSummariesQueryServerDataObject : _HKQueryServerDataObject {
     NSCalendar * _calendar;
-    NSDate * _endDate;
-    NSDate * _startDate;
-    NSSet * _typeFilters;
+    NSDate * _summaryDate;
 }
 
 @property (nonatomic, retain) NSCalendar *calendar;
-@property (nonatomic, retain) NSDate *endDate;
-@property (nonatomic, retain) NSDate *startDate;
-@property (nonatomic, retain) NSSet *typeFilters;
+@property (nonatomic, retain) NSDate *summaryDate;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)calendar;
 - (void)encodeWithCoder:(id)arg1;
-- (id)endDate;
 - (id)initWithCoder:(id)arg1;
 - (void)setCalendar:(id)arg1;
-- (void)setEndDate:(id)arg1;
-- (void)setStartDate:(id)arg1;
-- (void)setTypeFilters:(id)arg1;
-- (id)startDate;
-- (id)typeFilters;
+- (void)setSummaryDate:(id)arg1;
+- (id)summaryDate;
 
 @end

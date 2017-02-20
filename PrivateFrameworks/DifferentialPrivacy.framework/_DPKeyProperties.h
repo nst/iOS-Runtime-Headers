@@ -16,6 +16,7 @@
     unsigned int  _privatizationAlgorithm;
     NSString * _propertiesName;
     NSString * _serverAlgorithmString;
+    unsigned int  _submissionPriority;
     unsigned int  _transport;
     _DPValueRange * _trimmedScale;
 }
@@ -33,11 +34,12 @@
 @property (nonatomic, readonly) unsigned int privatizationAlgorithm;
 @property (nonatomic, readonly, copy) NSString *propertiesName;
 @property (nonatomic, readonly, copy) NSString *serverAlgorithmString;
+@property (nonatomic, readonly) unsigned int submissionPriority;
 @property (nonatomic, readonly) unsigned int transport;
 @property (nonatomic, readonly) _DPValueRange *trimmedScale;
 
 + (id)defaultPropertiesWithKey:(id)arg1;
-+ (id)keyPropertiesForKey:(id)arg1;
++ (id)keyPropertiesForName:(id)arg1;
 + (id)keyPropertiesFromDictionary:(id)arg1;
 + (id)propertiesFromFile:(id)arg1;
 
@@ -59,6 +61,7 @@
 - (id)privatizationAlgorithmString;
 - (id)propertiesName;
 - (id)serverAlgorithmString;
+- (unsigned int)submissionPriority;
 - (unsigned int)transport;
 - (id)trimmedScale;
 

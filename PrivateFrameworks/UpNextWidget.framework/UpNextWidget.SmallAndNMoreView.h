@@ -7,7 +7,7 @@
     void numberOfElements;
 }
 
-@property (nonatomic) long numberOfElements;
+@property (nonatomic) int numberOfElements;
 
 - (id /* block */).cxx_destruct;
 - (float)firstBaselineOffsetFromTop;
@@ -15,8 +15,8 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)lastBaselineOffsetFromBottom;
 - (void)layoutSubviews;
-- (long)numberOfElements;
-- (void)setNumberOfElements:(long)arg1;
+- (int)numberOfElements;
+- (void)setNumberOfElements:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

@@ -5,7 +5,6 @@
 @interface HMXpcClient : HMFMessageTransport <HMXPCMessageTransport> {
     NSObject<OS_dispatch_queue> * _callbackQueue;
     BOOL  _connectionValid;
-    HMFMessageDispatcher * _messageDispatcher;
     int  _notifyRegisterToken;
     BOOL  _notifyRegistered;
     id /* block */  _reconnectionHandler;
@@ -18,7 +17,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) HMFMessageDispatcher *messageDispatcher;
 @property (nonatomic) int notifyRegisterToken;
 @property (nonatomic) BOOL notifyRegistered;
 @property (nonatomic, copy) id /* block */ reconnectionHandler;
@@ -34,7 +32,6 @@
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(id /* block */)arg5;
 - (id)init;
-- (id)messageDispatcher;
 - (int)notifyRegisterToken;
 - (BOOL)notifyRegistered;
 - (void)recheckinIfRequired:(id)arg1;

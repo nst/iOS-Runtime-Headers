@@ -56,9 +56,9 @@
     NSMutableSet * _playingMessages;
     SKScene * _scene;
     DTSSceneView * _sceneView;
-    BOOL  _sendMessageOnTouchesEndedWithoutDelay;
     NSTimer * _sendMessageTimer;
     BOOL  _setAlwaysPaused;
+    BOOL  _sketchDidReachSizeLimit;
     UITapGestureRecognizer * _tapRecognizer;
     <ETMessageTimeSource> * _timeSource;
     double  _touchesBeganTimestamp;
@@ -100,6 +100,7 @@
 - (void)_clearSendMessageTimer;
 - (void)_configureAngerRecognizer;
 - (void)_createSketchViewWithColor:(id)arg1 time:(double)arg2 message:(id)arg3;
+- (void)_doodleEndedWithTouches:(id)arg1 cancelled:(BOOL)arg2;
 - (void)_endMessage:(id)arg1 withSend:(BOOL)arg2;
 - (void)_fastTapAllowableMovementTimerFired;
 - (void)_heartbeatRecognized:(id)arg1;

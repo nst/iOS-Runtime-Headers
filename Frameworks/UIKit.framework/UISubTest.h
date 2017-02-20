@@ -3,6 +3,7 @@
  */
 
 @interface UISubTest : NSObject {
+    NSMutableDictionary * _data;
     NSMutableArray * _fps;
     BOOL  _showFps;
     BOOL  _showTime;
@@ -12,9 +13,14 @@
     NSMutableArray * _time;
 }
 
+@property (readonly) NSNumber *startTime;
+
 - (void).cxx_destruct;
+- (id)getObjectForKey:(id)arg1;
 - (id)initWithName:(id)arg1 metrics:(id)arg2;
 - (id)outputData;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
+- (id)startTime;
 - (void)startWithFrameCount:(id)arg1;
 - (void)stopWithFrameCount:(id)arg1;
 

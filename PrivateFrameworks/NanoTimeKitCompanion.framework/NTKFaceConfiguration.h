@@ -33,5 +33,6 @@
 - (void)setComplication:(id)arg1 forSlot:(id)arg2;
 - (void)setName:(id)arg1;
 - (void)setOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
+- (id)validationString;
 
 @end

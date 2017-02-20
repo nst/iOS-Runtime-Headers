@@ -23,6 +23,7 @@
 - (void)setProperty:(id)arg1;
 - (void)setShouldUseMapTiles:(BOOL)arg1;
 - (BOOL)shouldUseMapTiles;
+- (BOOL)supportsTintColorValue;
 - (void)tapGesture:(id)arg1;
 - (id)variableConstraints;
 

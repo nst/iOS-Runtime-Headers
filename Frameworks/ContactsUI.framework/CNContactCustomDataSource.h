@@ -30,7 +30,7 @@
 @property (nonatomic, retain) NSMapTable *identifiersToIndexes;
 @property (nonatomic, readonly) NSArray *indexSections;
 @property (nonatomic, retain) NSArray *keysToFetch;
-@property (nonatomic, readonly) NSString *meContactIdentifier;
+@property (nonatomic, readonly) NSString *mainStorePreferredForNameMeContactIdentifier;
 @property (nonatomic) BOOL observingContacts;
 @property (nonatomic, readonly) NSArray *sections;
 @property (nonatomic, readonly) BOOL shouldReturnToAccountsAndGroupsViewAfterSearchIsCanceled;
@@ -63,7 +63,7 @@
 - (id)initWithContacts:(id)arg1 keysToFetch:(id)arg2;
 - (id)initWithContacts:(id)arg1 keysToFetch:(id)arg2 filter:(id)arg3;
 - (id)keysToFetch;
-- (id)meContactIdentifier;
+- (id)mainStorePreferredForNameMeContactIdentifier;
 - (BOOL)observingContacts;
 - (id)sections;
 - (void)setAllContacts:(id)arg1;

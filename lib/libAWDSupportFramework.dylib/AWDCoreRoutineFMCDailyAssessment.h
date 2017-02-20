@@ -15,9 +15,13 @@
         unsigned int duration : 1; 
         unsigned int engagedParkingEvents : 1; 
         unsigned int engagements : 1; 
+        unsigned int locationType : 1; 
         unsigned int parkingEvents : 1; 
+        unsigned int suppressedParkingEvents : 1; 
     }  _has;
+    int  _locationType;
     int  _parkingEvents;
+    int  _suppressedParkingEvents;
     unsigned long long  _timestamp;
 }
 
@@ -31,9 +35,13 @@
 @property (nonatomic) BOOL hasDuration;
 @property (nonatomic) BOOL hasEngagedParkingEvents;
 @property (nonatomic) BOOL hasEngagements;
+@property (nonatomic) BOOL hasLocationType;
 @property (nonatomic) BOOL hasParkingEvents;
+@property (nonatomic) BOOL hasSuppressedParkingEvents;
 @property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) int locationType;
 @property (nonatomic) int parkingEvents;
+@property (nonatomic) int suppressedParkingEvents;
 @property (nonatomic) unsigned long long timestamp;
 
 - (int)assistances;
@@ -50,10 +58,13 @@
 - (BOOL)hasDuration;
 - (BOOL)hasEngagedParkingEvents;
 - (BOOL)hasEngagements;
+- (BOOL)hasLocationType;
 - (BOOL)hasParkingEvents;
+- (BOOL)hasSuppressedParkingEvents;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (int)locationType;
 - (void)mergeFrom:(id)arg1;
 - (int)parkingEvents;
 - (BOOL)readFrom:(id)arg1;
@@ -67,10 +78,15 @@
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasEngagedParkingEvents:(BOOL)arg1;
 - (void)setHasEngagements:(BOOL)arg1;
+- (void)setHasLocationType:(BOOL)arg1;
 - (void)setHasParkingEvents:(BOOL)arg1;
+- (void)setHasSuppressedParkingEvents:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setLocationType:(int)arg1;
 - (void)setParkingEvents:(int)arg1;
+- (void)setSuppressedParkingEvents:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (int)suppressedParkingEvents;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;
 

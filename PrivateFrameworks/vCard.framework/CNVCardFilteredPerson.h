@@ -3,8 +3,8 @@
  */
 
 @interface CNVCardFilteredPerson : NSObject <CNVCardPerson> {
-    NSSet * _blacklist;
     <CNVCardPerson> * _person;
+    CNVCardFilteredPersonScope * _scope;
 }
 
 @property (readonly) NSDictionary *activityAlerts;
@@ -57,7 +57,7 @@
 @property (readonly) NSArray *unknownProperties;
 @property (readonly) NSArray *urls;
 
-+ (id)filteredPersonWithPerson:(id)arg1 blacklistedFields:(id)arg2;
++ (id)filteredPersonWithPerson:(id)arg1 scope:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)activityAlerts;
@@ -73,7 +73,7 @@
 - (id)imageCropRects;
 - (id)imageData;
 - (id)imageReferences;
-- (id)initWithPerson:(id)arg1 blacklistedFields:(id)arg2;
+- (id)initWithPerson:(id)arg1 scope:(id)arg2;
 - (id)instantMessagingAddresses;
 - (BOOL)isCompany;
 - (BOOL)isMe;

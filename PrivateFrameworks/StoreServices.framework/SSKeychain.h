@@ -10,8 +10,10 @@
 - (void).cxx_destruct;
 - (void)_sendMessage:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)createAttestationDataForAccountIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)deleteKeychainTokensForAccountIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)getPublicKeyDataForAccountIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)init;
+- (void)signData:(id)arg1 reason:(id)arg2 fallback:(id)arg3 cancel:(id)arg4 forAccountIdentifier:(id)arg5 completionBlock:(id /* block */)arg6;
 - (void)signData:(id)arg1 withPrompt:(id)arg2 forAccountIdentifier:(id)arg3 completionBlock:(id /* block */)arg4;
 
 @end

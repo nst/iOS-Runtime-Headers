@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> * _remoteDaemonLockQueue;
     NSObject<OS_dispatch_queue> * _remoteMessageQueue;
     IMRemoteObject<IMRemoteDaemonProtocol> * _remoteObject;
+    NSMutableDictionary * _requestQOSClassCompletionBlocks;
     BOOL  _requestingConnection;
     struct __CFRunLoopSource { } * _runLoopSource;
     NSMutableArray * _services;
@@ -45,6 +46,7 @@
 @property (nonatomic, readonly) BOOL isConnected;
 @property (nonatomic, readonly) BOOL isConnecting;
 @property (nonatomic, readonly) IMDaemonListener *listener;
+@property (nonatomic, retain) NSMutableDictionary *requestQOSClassCompletionBlocks;
 @property (getter=isRequestingConnection, nonatomic, readonly) BOOL requestingConnection;
 
 + (BOOL)_applicationWillTerminate;
@@ -68,6 +70,7 @@
 - (double)_connectionTimeout;
 - (void)_disconnectFromDaemonWithForce:(BOOL)arg1;
 - (void)_handleDaemonException:(id)arg1;
+- (void)_handleReceivedQOSClassWhileServicingRequestsNotification:(id)arg1;
 - (id)_listenerID;
 - (void)_listenerSetUpdated;
 - (void)_localObjectCleanup;
@@ -112,6 +115,8 @@
 - (void)remoteObjectDiedNotification:(id)arg1;
 - (BOOL)remoteObjectExists;
 - (BOOL)removeListenerID:(id)arg1;
+- (id)requestQOSClassCompletionBlocks;
+- (void)requestQOSClassOfAgentWhileServicingRequests:(id /* block */)arg1;
 - (void)sendABInformationToDaemon;
 - (BOOL)setCapabilities:(unsigned int)arg1 forListenerID:(id)arg2;
 - (void)setDaemonLogsOutWithoutStatusListeners:(BOOL)arg1;
@@ -121,6 +126,7 @@
 - (void)setMyProfile:(id)arg1;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2;
 - (void)setMyStatus:(unsigned int)arg1 message:(id)arg2 forAccount:(id)arg3;
+- (void)setRequestQOSClassCompletionBlocks:(id)arg1;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationDidResume;
 - (void)systemApplicationDidSuspend;

@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSNumber : NSValue <CKDParsedObject, CKRecordValue, LPCSSText, NSFetchRequestResult, PQLValuable, TSCHChartGridValue, TSDMixing>
+@interface NSNumber : NSValue <ASParsingLeafNode, CKRecordValue, HFPropertyListConvertible, LPCSSText, NSFetchRequestResult, PQLValuable, SiriCoreSQLiteValue, TSCHChartGridValue, TSDMixing>
 
+@property (nonatomic, readonly) float CGFloatValue;
 @property (nonatomic, readonly) unsigned int PXDataSourceIdentifierValue;
 @property (readonly) BOOL boolValue;
 @property (readonly) BOOL charValue;
@@ -138,10 +139,6 @@
 
 - (id)__ck_localizedString;
 
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
-
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 - (id)initWithCPLArchiver:(id)arg1;
@@ -167,6 +164,18 @@
 - (unsigned int)cr_CRContactGroupKindValue;
 - (long long)cr_CRContactIDValue;
 - (long long)cr_CRRecentIDValue;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)expectsContent;
++ (BOOL)frontingBasicTypes;
++ (BOOL)notifyOfUnknownTokens;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (id)initWithASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 lengthUntilEndOfTerminator:(int)arg6;
+- (int)parsingState;
 
 // Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
 
@@ -205,6 +214,7 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
+- (float)CGFloatValue;
 - (BOOL)fc_isGreaterThan:(id)arg1;
 - (BOOL)fc_isLessThan:(id)arg1;
 - (BOOL)fc_isLessThanOrEqualTo:(id)arg1;
@@ -227,6 +237,16 @@
 
 - (BOOL)sd_isEqualToNumber:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (double)siriCoreSQLiteValue_doubleRepresentation;
+- (id)siriCoreSQLiteValue_escapedString:(BOOL)arg1;
+- (long long)siriCoreSQLiteValue_integerRepresentation;
+- (id)siriCoreSQLiteValue_toData;
+- (id)siriCoreSQLiteValue_toNumber;
+- (id)siriCoreSQLiteValue_toString;
+- (int)siriCoreSQLiteValue_type;
+
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
 + (id)numberWithItemIdentifier:(unsigned long long)arg1;
@@ -238,7 +258,7 @@
 
 - (id)initWithBooleanLiteral:(BOOL)arg1;
 - (id)initWithFloatLiteral:(double)arg1;
-- (id)initWithIntegerLiteral:(long)arg1;
+- (id)initWithIntegerLiteral:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

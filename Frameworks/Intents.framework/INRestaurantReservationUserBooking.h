@@ -25,9 +25,11 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)advisementText;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateStatusModified;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)guest;
 - (id)guestProvidedSpecialRequestText;

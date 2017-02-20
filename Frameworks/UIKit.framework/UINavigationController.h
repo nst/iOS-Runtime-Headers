@@ -679,7 +679,6 @@
 + (id)px_navigationControllerShouldUseBuiltinInteractionController:(id)arg1;
 
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint { float x1; float x2; })arg1 inCoordinateSpace:(id)arg2;
-- (BOOL)px_isTopViewControllerDescendant:(id)arg1;
 - (BOOL)px_preparePopToViewController:(id)arg1 forced:(BOOL)arg2;
 - (id)px_snapBackController;
 

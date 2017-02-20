@@ -9,10 +9,11 @@
 - (unsigned int)customContentLocation;
 - (BOOL)defaultContentHidden;
 - (<NCNotificationCustomContentDelegate> *)delegate;
-- (void)didReceiveNotificationRequest:(NCNotificationRequest *)arg1;
+- (BOOL)didReceiveNotificationRequest:(NCNotificationRequest *)arg1;
 - (BOOL)performAction:(NCNotificationAction *)arg1 forNotification:(NCNotificationRequest *)arg2;
 - (BOOL)performAction:(NCNotificationAction *)arg1 forNotification:(NCNotificationRequest *)arg2 withUserInfo:(NSDictionary *)arg3;
 - (void)setDelegate:(id <NCNotificationCustomContentDelegate>)arg1;
+- (NSString *)title;
 
 @optional
 

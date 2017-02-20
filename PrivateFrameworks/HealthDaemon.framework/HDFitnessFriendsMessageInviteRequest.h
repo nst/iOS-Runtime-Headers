@@ -3,6 +3,7 @@
  */
 
 @interface HDFitnessFriendsMessageInviteRequest : PBRequest <NSCopying> {
+    HDFitnessFriendsMessageActivityDataPreview * _activityDataPreview;
     NSString * _handshakeToken;
     struct { 
         unsigned int inviterVersion : 1; 
@@ -13,7 +14,9 @@
     unsigned int  _inviterVersion;
 }
 
+@property (nonatomic, retain) HDFitnessFriendsMessageActivityDataPreview *activityDataPreview;
 @property (nonatomic, retain) NSString *handshakeToken;
+@property (nonatomic, readonly) BOOL hasActivityDataPreview;
 @property (nonatomic, readonly) BOOL hasHandshakeToken;
 @property (nonatomic, readonly) BOOL hasInviterBuildNumber;
 @property (nonatomic, readonly) BOOL hasInviterCallerID;
@@ -25,11 +28,13 @@
 @property (nonatomic) unsigned int inviterVersion;
 
 - (void).cxx_destruct;
+- (id)activityDataPreview;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)handshakeToken;
+- (BOOL)hasActivityDataPreview;
 - (BOOL)hasHandshakeToken;
 - (BOOL)hasInviterBuildNumber;
 - (BOOL)hasInviterCallerID;
@@ -43,6 +48,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setActivityDataPreview:(id)arg1;
 - (void)setHandshakeToken:(id)arg1;
 - (void)setHasInviterVersion:(BOOL)arg1;
 - (void)setInviterBuildNumber:(id)arg1;

@@ -46,6 +46,7 @@
 - (void)_queue_nanoRegistryInfoChanged;
 - (BOOL)_shouldCompleteSetup;
 - (void)_waitUntilSubmanagersReady;
+- (void)acceptInviteRequestFromFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (id)activityDataManager;
 - (id)activityDataNotificationManager;
 - (void)addFriendsListObserver:(id)arg1;
@@ -57,7 +58,8 @@
 - (void)dealloc;
 - (id)deviceLocalActivitySharingKeyValueDomain;
 - (id)fakingManager;
-- (void)fetchAndUpdateActivityDataForAllFriendsWithCompletion:(id /* block */)arg1;
+- (void)fetchAllDataIfTimeSinceLastFetchIsGreaterThan:(unsigned int)arg1 completion:(id /* block */)arg2;
+- (void)fetchAllDataWithCompletion:(id /* block */)arg1;
 - (void)fetchAreMultipleDevicesSharingDataForSnapshotIndex:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)friendListManager;
 - (id)friends;
@@ -74,7 +76,6 @@
 - (void)removeFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeFriendsListObserver:(id)arg1;
 - (void)sendInviteRequestToDestination:(id)arg1 callerID:(id)arg2 serviceIdentifier:(id)arg3 completion:(id /* block */)arg4;
-- (void)sendInviteResponse:(int)arg1 toFriendWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendWithdrawInviteRequestToFriendWithUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setActivityDataVisible:(BOOL)arg1 toFriendWithUUID:(id)arg2 completion:(id /* block */)arg3;
 - (void)setMuteEnabled:(BOOL)arg1 forFriendWithUUID:(id)arg2 completion:(id /* block */)arg3;

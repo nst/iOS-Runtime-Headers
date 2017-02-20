@@ -16,6 +16,7 @@
     BOOL  _playbackAllowed;
     NSMutableSet * _playbackFilters;
     BOOL  _playingVitality;
+    int  _targetReadiness;
     ISLivePhotoVitalityFilter * _vitalityFilter;
 }
 
@@ -36,6 +37,7 @@
 @property (nonatomic, readonly) NSSet *playbackFilters;
 @property (getter=isPlayingVitality, setter=_setPlayingVitality:, nonatomic) BOOL playingVitality;
 @property (readonly) Class superclass;
+@property (nonatomic) int targetReadiness;
 @property (nonatomic, retain) ISLivePhotoVitalityFilter *vitalityFilter;
 
 - (void).cxx_destruct;
@@ -67,9 +69,11 @@
 - (BOOL)_shouldPrepareForVitalityWhenReady;
 - (int)_styleToPlayWhenReady;
 - (void)_updateHintingAndVitality;
+- (void)_updatePlayerItemLoadingTarget;
 - (id)_vitalityTimeoutDate;
 - (void)activeBehaviorDidChange;
 - (void)addPlaybackFilter:(id)arg1;
+- (void)configurePlayerItem;
 - (int)currentPlaybackStyle;
 - (BOOL)immediatelyShowsPhotoWhenPlaybackEnds;
 - (id)init;
@@ -88,6 +92,7 @@
 - (void)removePlaybackFilter:(id)arg1;
 - (void)setImmediatelyShowsPhotoWhenPlaybackEnds:(BOOL)arg1;
 - (void)setPlaybackAllowed:(BOOL)arg1;
+- (void)setTargetReadiness:(int)arg1;
 - (void)setVitalityFilter:(id)arg1;
 - (void)showPlaybackHintWithProgress:(float)arg1;
 - (void)startPlaybackWithStyle:(int)arg1;
@@ -97,6 +102,7 @@
 - (void)statusDidChange;
 - (void)stopPlayback;
 - (void)stopPlaybackAnimated:(BOOL)arg1;
+- (int)targetReadiness;
 - (double)videoWillPlayToEndInterval;
 - (void)vitalityBehaviorDidBeginPlaying:(id)arg1;
 - (void)vitalityBehaviorDidEndPlaying:(id)arg1;

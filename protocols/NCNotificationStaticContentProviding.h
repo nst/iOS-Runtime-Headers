@@ -8,7 +8,6 @@
 - (id /* block */)cancelAction:(void *)arg1; // needs 1 arg types, found 5: id /* block */, BOOL, void*, id, SEL
 - (id /* block */)clearAction:(void *)arg1; // needs 1 arg types, found 5: id /* block */, BOOL, void*, id, SEL
 - (id /* block */)closeAction:(void *)arg1; // needs 1 arg types, found 5: id /* block */, BOOL, void*, id, SEL
-- (BOOL)cropThumbnail;
 - (NSDate *)date;
 - (id /* block */)defaultAction:(void *)arg1; // needs 1 arg types, found 5: id /* block */, BOOL, void*, id, SEL
 - (<NCNotificationStaticContentProvidingDelegate> *)delegate;

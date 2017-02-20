@@ -54,6 +54,7 @@
 - (BOOL)pendingMigration;
 - (void)pullMigrationSettings;
 - (void)pushAllLocalRecordsOnceIfNeeded;
+- (void)recordSyncStatus;
 - (void)requestSyncWithCompletionBlock:(id /* block */)arg1;
 - (void)resetMigrationState;
 - (void)respondToMigrationCompletion;

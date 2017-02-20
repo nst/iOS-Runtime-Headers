@@ -7,7 +7,6 @@
     NSSQLForeignKey * _foreignKey;
     NSSQLForeignOrderKey * _foreignOrderKey;
     BOOL  _isVirtual;
-    unsigned int  _slot;
 }
 
 - (void)_setForeignOrderKey:(id)arg1;

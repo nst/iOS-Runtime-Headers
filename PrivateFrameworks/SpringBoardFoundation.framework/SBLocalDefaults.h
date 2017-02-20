@@ -27,6 +27,7 @@
     SBSecurityDefaults * _lazy_securityDefaults;
     SBSetupDefaults * _lazy_setupDefaults;
     SBSoftwareUpdateDefaults * _lazy_softwareUpdateDefaults;
+    SBSOSDefaults * _lazy_sosDefaults;
     SBSoundDefaults * _lazy_soundDefaults;
     SBStatusBarDefaults * _lazy_statusBarDefaults;
     SBThermalDefaults * _lazy_thermalDefaults;
@@ -60,6 +61,7 @@
 @property (nonatomic, readonly, retain) SBSecurityDefaults *securityDefaults;
 @property (nonatomic, readonly, retain) SBSetupDefaults *setupDefaults;
 @property (nonatomic, readonly, retain) SBSoftwareUpdateDefaults *softwareUpdateDefaults;
+@property (nonatomic, readonly, retain) SBSOSDefaults *sosDefaults;
 @property (nonatomic, readonly, retain) SBSoundDefaults *soundDefaults;
 @property (nonatomic, readonly, retain) SBStatusBarDefaults *statusBarDefaults;
 @property (nonatomic, readonly, retain) SBThermalDefaults *thermalDefaults;
@@ -94,6 +96,7 @@
 - (id)securityDefaults;
 - (id)setupDefaults;
 - (id)softwareUpdateDefaults;
+- (id)sosDefaults;
 - (id)soundDefaults;
 - (id)statusBarDefaults;
 - (id)thermalDefaults;

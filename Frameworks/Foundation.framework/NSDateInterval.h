@@ -8,6 +8,8 @@
 @property (readonly, copy) NSDate *endDate;
 @property (readonly, copy) NSDate *startDate;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)supportsSecureCoding;
 
@@ -28,5 +30,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDateInterval:(id)arg1;
 - (id)startDate;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)hk_dateIntervalWithStart:(double)arg1 end:(double)arg2;
 
 @end

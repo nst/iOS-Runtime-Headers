@@ -5,19 +5,33 @@
 @interface ISBiometricTouchIDDialogOperation : ISOperation {
     ISBiometricAuthenticationContext * _context;
     ISDialog * _dialog;
+    ISDialog * _fallbackDialog;
+    NSURL * _redirectURL;
+    ISDialogButton * _selectedButton;
+    ISTouchIDDialog * _touchIDDialog;
 }
 
 @property (retain) ISBiometricAuthenticationContext *biometricAuthenticationContext;
-@property (retain) ISDialog *dialog;
+@property (readonly) ISDialog *dialog;
+@property (retain) ISDialog *fallbackDialog;
+@property (readonly) NSURL *redirectURL;
+@property (readonly) ISDialogButton *selectedButton;
+@property (retain) ISTouchIDDialog *touchIDDialog;
 
 - (void).cxx_destruct;
+- (void)_findSelectedButtonForButtons:(id)arg1;
 - (BOOL)_runAuthkitOperationWithError:(id)arg1 returningError:(id*)arg2;
 - (BOOL)_runSignatureOperationReturningError:(id*)arg1;
 - (id)biometricAuthenticationContext;
 - (id)dialog;
-- (id)initWithDialog:(id)arg1;
+- (id)fallbackDialog;
+- (id)initWithTouchIDDialog:(id)arg1 fallbackDialog:(id)arg2;
+- (id)redirectURL;
 - (void)run;
+- (id)selectedButton;
 - (void)setBiometricAuthenticationContext:(id)arg1;
-- (void)setDialog:(id)arg1;
+- (void)setFallbackDialog:(id)arg1;
+- (void)setTouchIDDialog:(id)arg1;
+- (id)touchIDDialog;
 
 @end

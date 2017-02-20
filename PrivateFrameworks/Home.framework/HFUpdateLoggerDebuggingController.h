@@ -23,6 +23,7 @@
 - (int)_queue_iteration;
 - (id)_queue_runningLoggers;
 - (void)_removeRunningLogger:(id)arg1;
+- (id)_runningLoggerStrings;
 - (id)_runningLoggers;
 - (id)init;
 - (id)queue;

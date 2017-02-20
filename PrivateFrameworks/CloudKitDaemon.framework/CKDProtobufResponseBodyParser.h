@@ -25,7 +25,7 @@
 - (BOOL)_parseObjects:(BOOL)arg1;
 - (unsigned int)curObjectLength;
 - (void)finishWithCompletion:(id /* block */)arg1;
-- (id)initWithRequest:(id)arg1;
+- (id)initWithQoS:(int)arg1;
 - (BOOL)isParsing;
 - (struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })mescalSignature;
 - (Class)messageClass;

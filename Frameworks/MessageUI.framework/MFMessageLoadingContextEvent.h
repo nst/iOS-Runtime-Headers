@@ -24,9 +24,12 @@
 @property (nonatomic, readonly) NSError *smimeError;
 
 - (void).cxx_destruct;
+- (id)_descriptionForDebugging:(BOOL)arg1;
 - (id)content;
 - (id)context;
 - (void)dealloc;
+- (id)debugDescription;
+- (id)description;
 - (id)error;
 - (BOOL)hasLoadedBestAlternativePart;
 - (BOOL)hasLoadedCompleteBody;

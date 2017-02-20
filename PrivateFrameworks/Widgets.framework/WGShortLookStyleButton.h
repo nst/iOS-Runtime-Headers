@@ -3,16 +3,19 @@
  */
 
 @interface WGShortLookStyleButton : UIControl {
-    UIView * _backgroundView;
+    BOOL  _backgroundBlurred;
+    NCMaterialView * _backgroundView;
     float  _dimension;
     NCLookViewFontProvider * _fontProvider;
     UILabel * _titleLabel;
 }
 
-@property (nonatomic, retain) UIView *backgroundView;
+@property (getter=isBackgroundBlurred, nonatomic) BOOL backgroundBlurred;
+@property (nonatomic, retain) NSString *groupName;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
+- (float)_backgroundViewCornerRadius;
 - (void)_configureBackgroundViewIfNecessary;
 - (void)_configureMaskIfNecessary;
 - (void)_configureTitleLabelIfNecessary;
@@ -20,11 +23,14 @@
 - (id)_fontProvider;
 - (void)_layoutTitleLabel;
 - (float)_minimumScaleFactorForFont:(id)arg1;
+- (void)_setBackgroundViewCornerRadius:(float)arg1;
 - (void)_updateTitleLabelFont;
-- (id)backgroundView;
+- (id)groupName;
 - (void)invalidateCachedGeometry;
+- (BOOL)isBackgroundBlurred;
 - (void)layoutSubviews;
-- (void)setBackgroundView:(id)arg1;
+- (void)setBackgroundBlurred:(BOOL)arg1;
+- (void)setGroupName:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)title;

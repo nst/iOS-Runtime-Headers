@@ -6,6 +6,7 @@
     IKAppContext * _appContext;
     VSAppDeviceConfig * _appDeviceConfig;
     NSURL * _bootURL;
+    NSHTTPCookieStorage * _cookieStorage;
     <VSApplicationDelegate> * _delegate;
     BOOL  _shouldAllowRemoteInspection;
 }
@@ -13,6 +14,7 @@
 @property (nonatomic, retain) IKAppContext *appContext;
 @property (nonatomic, retain) VSAppDeviceConfig *appDeviceConfig;
 @property (nonatomic, readonly, copy) NSURL *bootURL;
+@property (nonatomic, retain) NSHTTPCookieStorage *cookieStorage;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <VSApplicationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -40,6 +42,7 @@
 - (id)appJSURL;
 - (id)appLaunchParams;
 - (id)bootURL;
+- (id)cookieStorage;
 - (void)dealloc;
 - (id)delegate;
 - (id)deviceConfigForContext:(id)arg1;
@@ -53,6 +56,7 @@
 - (void)sendErrorWithMessage:(id)arg1;
 - (void)setAppContext:(id)arg1;
 - (void)setAppDeviceConfig:(id)arg1;
+- (void)setCookieStorage:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setShouldAllowRemoteInspection:(BOOL)arg1;
 - (BOOL)shouldAllowRemoteInspection;
@@ -62,5 +66,6 @@
 - (id)userDefaultsStorage;
 - (id)vendorIdentifier;
 - (id)vendorStorage;
+- (id)xhrSessionConfigurationForContext:(id)arg1;
 
 @end

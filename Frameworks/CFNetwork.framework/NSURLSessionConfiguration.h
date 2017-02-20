@@ -25,6 +25,7 @@
 @property BOOL _allowsResponseMonitoringDuringBodyTranmission;
 @property BOOL _allowsRetryForBackgroundDataTasks;
 @property BOOL _allowsTCPFastOpen;
+@property BOOL _allowsTLSSessionResumption;
 @property BOOL _allowsTLSSessionTickets;
 @property (copy) <NSURLSessionAppleIDContext> *_appleIDContext;
 @property (copy) NSData *_atsContext;
@@ -35,6 +36,8 @@
 @property double _connectionCachePurgeTimeout;
 @property (copy) NSString *_connectionPoolName;
 @property (copy) NSArray *_contentDispHeadEncFallback;
+@property unsigned int _customReadBufferSize;
+@property double _customReadBufferTimeout;
 @property (copy) NSURL *_directoryForDownloadedFiles;
 @property BOOL _disablesOutOfProcessDirectWiFiUsage;
 @property BOOL _disablesUseOfProxySession;
@@ -122,6 +125,8 @@
 - (id)initWithDisposition:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)_geo_ephemeralSessionConfiguration;
 
 - (void)applyNSURLConnectionProperties:(id)arg1;
 

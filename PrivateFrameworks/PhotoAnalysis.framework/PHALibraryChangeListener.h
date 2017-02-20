@@ -4,8 +4,9 @@
 
 @interface PHALibraryChangeListener : NSOperation <PHPhotoLibraryChangeObserver> {
     NSObject<OS_dispatch_queue> * _changeObservationQueue;
-    NSHashTable * _momentChangeObservers;
+    NSHashTable * _changeObservers;
     PHFetchResult * _momentFetchResult;
+    PHFetchResult * _personsFetchResult;
     PHAManager * _photoAnalysisManager;
 }
 
@@ -19,9 +20,11 @@
 - (void)beginListeningForChanges;
 - (id)init;
 - (id)initWithPhotoAnalysisManager:(id)arg1;
-- (id)libraryMomentChangeDetailsForChanges:(id)arg1;
+- (id)libraryChangeDetailsForFetchResult:(id*)arg1 changes:(id)arg2;
+- (id)momentChangeDetailsForChanges:(id)arg1;
+- (id)personsChangeDetailsForChanges:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
-- (void)registerChangeObserver:(id)arg1 withInterest:(unsigned int)arg2;
+- (void)registerChangeObserver:(id)arg1;
 - (void)unregisterChangeObserver:(id)arg1;
 
 @end

@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)applyAcknowledgedAnchorMap:(id <HDSyncAnchorMap>)arg1 forStore:(id <HDSyncStore>)arg2 resetNext:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)applyAcknowledgedAnchorMap:(id <HDSyncAnchorMap>)arg1 forStore:(id <HDSyncStore>)arg2 resetNext:(BOOL)arg3 resetInvalid:(BOOL)arg4 error:(id*)arg5;
 - (BOOL)applySyncChange:(id <HDSyncChange>)arg1 forStore:(id <HDSyncStore>)arg2 error:(id*)arg3;
 - (BOOL)applySyncObjectCollection:(id <HDSyncObjectCollection>)arg1 forStore:(id <HDSyncStore>)arg2 error:(id*)arg3;
 - (BOOL)getReceivedAnchorMap:(id <HDSyncAnchorMap>)arg1 forStore:(id <HDSyncStore>)arg2 error:(id*)arg3;

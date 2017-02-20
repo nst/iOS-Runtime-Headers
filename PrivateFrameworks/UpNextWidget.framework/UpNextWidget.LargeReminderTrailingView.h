@@ -15,7 +15,7 @@
     void topBaselineDistance;
 }
 
-@property (nonatomic, retain) NSDate *dueDate;
+@property (nonatomic, copy) NSDate *dueDate;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, copy) NSString *title;

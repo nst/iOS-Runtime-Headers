@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface NCNotificationLongLookViewController : NCNotificationViewController <NCLongLookPresentationControllerDelegate, NCLongLookTransitionDelegateObserver> {
+@interface NCNotificationLongLookViewController : NCNotificationViewController <NCLongLookPresentationControllerDelegate, NCLongLookTransitionDelegateObserver, NCNotificationCustomContentDelegate> {
     NCLongLookTransitionDelegate * _longLookTransitionDelegate;
     NCNotificationShortLookViewController * _presentingNotificationViewController;
 }
@@ -28,12 +28,14 @@
 - (void)_setPreferredCustomContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_shouldPadScrollViewContentSizeHeight;
 - (float)_translationWithVelocity:(float)arg1 acceleration:(float)arg2;
+- (void)_updateTitleWithProvidedCustomContent;
 - (void)_updateWithProvidedCustomContent;
 - (void)_updateWithProvidedStaticContent;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canResignFirstResponder;
 - (void)contentProviderDismissCustomContent:(id)arg1 animated:(BOOL)arg2;
+- (void)customContentDidUpdateTitle:(id)arg1;
 - (BOOL)dismissPresentedViewControllerAndClearNotification:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)isContentExtensionVisible:(id)arg1;
 - (BOOL)isLookStyleLongLook;

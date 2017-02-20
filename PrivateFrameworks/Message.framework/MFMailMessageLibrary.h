@@ -71,6 +71,7 @@
 - (unsigned int)_includesMeCountForAggregatedMailboxes:(id)arg1;
 - (id)_indexSetOfMessagesDeleted;
 - (BOOL)_insertThreadReferences:(id)arg1 toMessageWithLibraryID:(unsigned int)arg2 usingDatabase:(struct sqlite3 { }*)arg3;
+- (unsigned int)_libraryIDForOldestKnownMessageInMailbox:(id)arg1;
 - (id)_libraryMessageCache;
 - (id)_libraryMessageWithLibraryID:(unsigned int)arg1 wasCached:(BOOL*)arg2;
 - (id)_mailboxesClauseForAccounts:(id)arg1;
@@ -226,6 +227,7 @@
 - (void)notifyNewDataAvailableForMessages:(id)arg1;
 - (id)offlineCacheOperationsForAccount:(int)arg1 lastTemporaryID:(unsigned int*)arg2;
 - (long long)oldestKnownConversationInMailbox:(id)arg1;
+- (id)oldestKnownMessageInMailbox:(id)arg1;
 - (id)oldestMessageInMailbox:(id)arg1;
 - (id)orderedBatchOfMessagesEndingAtRowId:(unsigned int)arg1 limit:(unsigned int)arg2 success:(BOOL*)arg3;
 - (id)pathForMailboxURL:(id)arg1;

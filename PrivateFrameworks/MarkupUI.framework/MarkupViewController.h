@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MarkupUI.framework/MarkupUI
  */
 
-@interface MarkupViewController : UIViewController <AKControllerDelegateProtocol, UINavigationBarDelegate, UIToolbarDelegate> {
+@interface MarkupViewController : UIViewController <AKControllerDelegateProtocol, MUPDFContentViewControllerDelegate, UINavigationBarDelegate, UIToolbarDelegate> {
     NSUndoManager * _akUndoManager;
     BOOL  _allowShakeToUndo;
     BOOL  _alreadyLoggedSavingForThisDocument;
@@ -148,6 +148,7 @@
 - (void)clearHighlightableSelectionForAnnotationController:(id)arg1;
 - (id)contentContainerView;
 - (id)contentViewController;
+- (BOOL)controller:(id)arg1 shouldHandleURL:(id)arg2;
 - (void)controller:(id)arg1 willPlaceSingleShotAnnotation:(id)arg2 onProposedPageModelController:(id*)arg3;
 - (id)controller:(id)arg1 willSetToolbarItems:(id)arg2;
 - (void)controllerDidEnterToolMode:(id)arg1;

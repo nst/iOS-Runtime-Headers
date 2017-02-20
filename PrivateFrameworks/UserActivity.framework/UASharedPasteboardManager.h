@@ -3,6 +3,7 @@
  */
 
 @interface UASharedPasteboardManager : NSObject <UASharedPasteboardManagerResponseProtocol> {
+    NSSet * _bomCheckTypes;
     id /* block */  _completionBlock;
     NSXPCConnection * _connection;
     UAPasteboardGeneration * _currentGeneration;
@@ -13,9 +14,11 @@
     BOOL  _remotePasteboardAvaliable;
     NSObject<OS_dispatch_queue> * _serverQ;
     NSDictionary * _typeAliases;
+    NSDictionary * _typeBOMs;
     BOOL  _updateScheduled;
 }
 
+@property (retain) NSSet *bomCheckTypes;
 @property id /* block */ completionBlock;
 @property (retain) NSXPCConnection *connection;
 @property (retain) UAPasteboardGeneration *currentGeneration;
@@ -30,6 +33,7 @@
 @property (retain) NSObject<OS_dispatch_queue> *serverQ;
 @property (readonly) Class superclass;
 @property (retain) NSDictionary *typeAliases;
+@property (retain) NSDictionary *typeBOMs;
 @property BOOL updateScheduled;
 
 + (BOOL)dontConnectToServer;
@@ -38,6 +42,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)addData:(id)arg1 toItemAtIndex:(unsigned int)arg2 generation:(unsigned int)arg3;
+- (id)bomCheckTypes;
 - (void)clearLocalPasteboardInformation;
 - (id /* block */)completionBlock;
 - (id)connection;
@@ -60,6 +65,7 @@
 - (id)serializeItem:(id)arg1 intoInfo:(id)arg2 withFile:(id)arg3;
 - (id)serializeType:(id)arg1 intoInfo:(id)arg2 withFile:(id)arg3;
 - (id)serverQ;
+- (void)setBomCheckTypes:(id)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setCurrentGeneration:(id)arg1;
@@ -70,9 +76,11 @@
 - (void)setRemotePasteboardAvaliable:(BOOL)arg1;
 - (void)setServerQ:(id)arg1;
 - (void)setTypeAliases:(id)arg1;
+- (void)setTypeBOMs:(id)arg1;
 - (void)setUpdateScheduled:(BOOL)arg1;
 - (void)tellClientDebuggingEnabled:(BOOL)arg1 logFileHandle:(id)arg2;
 - (id)typeAliases;
+- (id)typeBOMs;
 - (BOOL)updateScheduled;
 - (void)writeLocalPasteboardToFile:(id)arg1 withCompletion:(id /* block */)arg2;
 

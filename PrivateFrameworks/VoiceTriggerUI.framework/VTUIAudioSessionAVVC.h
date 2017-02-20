@@ -17,10 +17,12 @@
 - (void).cxx_destruct;
 - (BOOL)_hasCorrectInputAudioRoute;
 - (BOOL)_hasCorrectOutputAudioRoute;
+- (BOOL)_hasInputAudioRoute;
 - (int)audioSource;
 - (float)averagePower;
 - (int)convertStopReason:(int)arg1;
 - (id)delegate;
+- (BOOL)hasAudioRoute;
 - (BOOL)hasCorrectAudioRoute;
 - (id)init;
 - (BOOL)isRecording;

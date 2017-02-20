@@ -9,7 +9,8 @@
 - (void)reconfigureStream:(NSDictionary *)arg1;
 - (void)remoteSetup:(NSString *)arg1;
 - (void)startStream:(NSDictionary *)arg1;
-- (void)stopStream;
+- (void)stopStream:(NSError *)arg1;
+- (HMDCameraStreamMetrics *)streamMetrics;
 - (void)updateAudioSetting:(unsigned int)arg1;
 
 @end

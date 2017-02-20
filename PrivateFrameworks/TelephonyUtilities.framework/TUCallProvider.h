@@ -7,6 +7,7 @@
     unsigned int  _audioSessionID;
     NSString * _bundleIdentifier;
     NSURL * _bundleURL;
+    NSArray * _emergencyLabeledHandles;
     NSArray * _handoffIdentifiers;
     NSData * _iconTemplateImageData;
     NSString * _identifier;
@@ -26,6 +27,7 @@
 @property (nonatomic) unsigned int audioSessionID;
 @property (nonatomic, copy) NSString *bundleIdentifier;
 @property (nonatomic, copy) NSURL *bundleURL;
+@property (nonatomic, copy) NSArray *emergencyLabeledHandles;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
 @property (getter=isFaceTimeProvider, nonatomic, readonly) BOOL faceTimeProvider;
 @property (nonatomic, copy) NSArray *handoffIdentifiers;
@@ -55,6 +57,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayAppBundleIdentifier;
+- (id)emergencyLabeledHandles;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handoffIdentifiers;
 - (BOOL)hasRestrictionsInRetailEnvironment;
@@ -81,6 +84,7 @@
 - (void)setAudioSessionID:(unsigned int)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setBundleURL:(id)arg1;
+- (void)setEmergencyLabeledHandles:(id)arg1;
 - (void)setHandoffIdentifiers:(id)arg1;
 - (void)setIconTemplateImageData:(id)arg1;
 - (void)setIdentifier:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMOutgoingHomeInvitation : HMHomeInvitation <HFPrettyDescription> {
+@interface HMOutgoingHomeInvitation : HMHomeInvitation <HFPrettyDescription, HFStateDumpSerializable> {
     HMThreadSafeMutableArrayCollection * _accessoryInvitations;
     HMUser * _invitee;
 }
@@ -34,6 +34,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

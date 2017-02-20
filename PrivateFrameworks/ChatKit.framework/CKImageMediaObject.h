@@ -6,7 +6,7 @@
     NSURL * _appendedBundleURL;
     CKImageData * _backgroundImageData;
     CKImageData * _imageData;
-    BOOL  _isIrisAsset;
+    NSString * _irisVideoPath;
     BOOL  _isSticker;
     struct CGSize { 
         float width; 
@@ -16,7 +16,7 @@
 }
 
 @property (nonatomic, readonly) CKImageData *imageData;
-@property (nonatomic) BOOL isIrisAsset;
+@property (nonatomic, readonly) BOOL isIrisAsset;
 @property (nonatomic, readonly) BOOL isSticker;
 @property (nonatomic, retain) UIImage *thumbnail;
 
@@ -29,17 +29,18 @@
 
 - (void).cxx_destruct;
 - (id)_getIrisBundleURL;
-- (id)_getIrisVideoPath;
 - (id)_getTempIrisBundleLocation;
 - (id)_getTempIrisFolder;
 - (void)_removeAppendedBundle;
 - (struct CGSize { float x1; float x2; })bbSize;
+- (id)calculateIrisVideoPath;
 - (BOOL)canExport;
 - (BOOL)canShareItem;
 - (void)dealloc;
 - (void)export:(id)arg1;
 - (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (id)getIrisVideoPath;
 - (id)imageData;
 - (id)initWithTransfer:(id)arg1;
 - (BOOL)isIrisAsset;
@@ -50,7 +51,6 @@
 - (id)pasteboardItem;
 - (id)previewItemTitle;
 - (id)previewItemURL;
-- (void)setIsIrisAsset:(BOOL)arg1;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;
 

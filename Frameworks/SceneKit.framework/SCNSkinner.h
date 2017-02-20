@@ -18,7 +18,7 @@
 @property (nonatomic, retain) SCNNode *skeleton;
 
 + (struct __C3DSkinner { }*)_createSkinnerWithCompressedData:(id)arg1 bonesCount:(unsigned int)arg2 vertexCount:(unsigned int)arg3;
-+ (struct __C3DSkinner { }*)_createSkinnerWithVertexCount:(int)arg1 bones:(id)arg2 boneWeights:(id)arg3 boneIndices:(id)arg4;
++ (struct __C3DSkinner { }*)_createSkinnerWithVertexCount:(int)arg1 bones:(id)arg2 boneWeights:(id)arg3 boneIndices:(id)arg4 baseGeometry:(id)arg5;
 + (id)_skinnerWithBaseGeometry:(id)arg1 skinnableGeometry:(id)arg2 bones:(id)arg3 boneInverseBindTransforms:(id)arg4 bindMatrix:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg5;
 + (struct __C3DSkinner { }*)createSkinnerWithBaseGeometry:(id)arg1 bones:(id)arg2 boneWeights:(id)arg3 boneIndices:(id)arg4;
 + (id)skinnerWithBaseGeometry:(id)arg1 bones:(id)arg2 boneInverseBindTransforms:(id)arg3 boneWeights:(id)arg4 boneIndices:(id)arg5;

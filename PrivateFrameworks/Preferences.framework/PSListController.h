@@ -78,6 +78,7 @@
 @property (nonatomic, retain) NSDictionary *pendingURLResourceDictionary;
 @property (nonatomic, retain) UIColor *segmentedSliderTrackColor;
 @property (nonatomic, retain) UIColor *separatorColor;
+@property (nonatomic, retain) <PSSpecifierDataSource> *specifierDataSource;
 @property (nonatomic, copy) NSString *specifierIDPendingPush;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *textColor;
@@ -164,6 +165,8 @@
 - (BOOL)getGroup:(int*)arg1 row:(int*)arg2 ofSpecifier:(id)arg3;
 - (BOOL)getGroup:(int*)arg1 row:(int*)arg2 ofSpecifierAtIndex:(int)arg3;
 - (BOOL)getGroup:(int*)arg1 row:(int*)arg2 ofSpecifierID:(id)arg3;
+- (id)getGroupSpecifierForSpecifier:(id)arg1;
+- (id)getGroupSpecifierForSpecifierID:(id)arg1;
 - (BOOL)handlePendingURL;
 - (void)handleURL:(id)arg1;
 - (void)highlightSpecifierWithID:(id)arg1;
@@ -265,6 +268,7 @@
 - (void)setSegmentedSliderTrackColor:(id)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSpecifier:(id)arg1;
+- (void)setSpecifierDataSource:(id)arg1;
 - (void)setSpecifierID:(id)arg1;
 - (void)setSpecifierIDPendingPush:(id)arg1;
 - (void)setSpecifiers:(id)arg1;

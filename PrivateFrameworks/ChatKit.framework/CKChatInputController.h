@@ -82,6 +82,7 @@
 - (void)_openContainingBundleID:(id)arg1 applicationService:(id)arg2 withURL:(id)arg3 pluginID:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_reconfigurePluginDataSourceWithBalloonControllerIfNecessary;
 - (void)_restoreDimmingWindow;
+- (id)_senderIdentifier;
 - (void)_setupObserverForLaunchAppExtensionForDebugging;
 - (BOOL)_shouldSendTypingIndicatorDataForPluginIdentifier:(id)arg1;
 - (void)_showFullScreenBrowser:(id)arg1;

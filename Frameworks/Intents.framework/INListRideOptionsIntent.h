@@ -11,9 +11,11 @@
 @property (nonatomic, readonly, copy) CLPlacemark *pickupLocation;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
+- (id)description;
 - (id)dropOffLocation;
 - (id)initWithPickupLocation:(id)arg1 dropOffLocation:(id)arg2;
 - (id)pickupLocation;

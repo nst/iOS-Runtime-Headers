@@ -10,12 +10,15 @@
 @property (nonatomic, copy) BBAction *acknowledgeAction;
 @property (nonatomic, copy) NSArray *additionalAttachments;
 @property (nonatomic) int addressBookRecordID;
+@property (nonatomic, copy) NSSet *alertSuppressionAppIDs_deprecated;
 @property (nonatomic, copy) NSSet *alertSuppressionContexts;
 @property (nonatomic, copy) BBAction *alternateAction;
 @property (nonatomic, copy) NSString *bulletinID;
 @property (nonatomic, copy) NSArray *buttons;
 @property (nonatomic, copy) NSString *categoryID;
 @property (nonatomic) BOOL clearable;
+@property (nonatomic) int contentPreviewSetting;
+@property (nonatomic, retain) NSDictionary *context;
 @property (nonatomic) unsigned int counter;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic) int dateFormatStyle;
@@ -32,15 +35,19 @@
 @property (nonatomic, retain) BBSectionIcon *icon;
 @property (nonatomic) BOOL ignoresQuietMode;
 @property (nonatomic, copy) NSArray *intentIDs;
+@property (nonatomic, retain) NSDate *lastInterruptDate;
 @property (getter=isLoading, nonatomic) BOOL loading;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, retain) BBContent *modalAlertContent;
+@property (nonatomic, copy) NSString *parentSectionID;
 @property (nonatomic, copy) NSArray *peopleIDs;
 @property (nonatomic, copy) BBAttachmentMetadata *primaryAttachment;
 @property (nonatomic) int primaryAttachmentType;
+@property (nonatomic, retain) NSDate *publicationDate;
 @property (nonatomic, copy) NSString *publisherBulletinID;
 @property (nonatomic, copy) BBAction *raiseAction;
 @property (nonatomic) unsigned int realertCount;
+@property (nonatomic) unsigned int realertCount_deprecated;
 @property (nonatomic, retain) NSDate *recencyDate;
 @property (nonatomic, copy) NSString *recordID;
 @property (nonatomic, copy) NSString *section;
@@ -59,6 +66,8 @@
 @property (nonatomic, retain) NSTimeZone *timeZone;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) BOOL turnsOnDisplay;
+@property (nonatomic, copy) NSString *universalSectionID;
+@property (nonatomic, copy) NSString *unlockActionLabelOverride;
 @property (nonatomic) BOOL usesExternalSync;
 @property (nonatomic) BOOL wantsFullscreenPresentation;
 
@@ -68,6 +77,7 @@
 - (void)addAlertSuppressionAppID:(id)arg1;
 - (void)addAttachmentOfType:(int)arg1;
 - (void)addButton:(id)arg1;
+- (id)awakeAfterUsingCoder:(id)arg1;
 - (unsigned int)expirationEvents;
 - (void)generateBulletinID;
 - (void)generateNewBulletinID;
@@ -75,6 +85,7 @@
 - (void)publish;
 - (void)publish:(BOOL)arg1;
 - (unsigned int)realertCount;
+- (id)replacementObjectForCoder:(id)arg1;
 - (void)setContextValue:(id)arg1 forKey:(id)arg2;
 - (void)setExpirationEvents:(unsigned int)arg1;
 - (void)setPrimaryAttachmentType:(int)arg1;

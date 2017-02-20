@@ -3,33 +3,20 @@
  */
 
 @interface MSCLFacebookPage : NSObject <NSCopying> {
-    NSString * _accessToken;
-    NSString * _categoryName;
     NSString * _identifier;
     NSString * _name;
-    int  _numberOfLikes;
 }
 
-@property (nonatomic, copy) NSString *accessToken;
-@property (nonatomic, copy) NSString *categoryName;
-@property (nonatomic, copy) NSString *identifier;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic) int numberOfLikes;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly, copy) NSString *name;
 
 - (void).cxx_destruct;
-- (id)accessToken;
-- (id)categoryName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
 - (id)identifier;
-- (id)initWithGraphDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 name:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)name;
-- (int)numberOfLikes;
-- (void)setAccessToken:(id)arg1;
-- (void)setCategoryName:(id)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)setName:(id)arg1;
-- (void)setNumberOfLikes:(int)arg1;
 
 @end

@@ -5,6 +5,7 @@
 @interface UIVisualEffectView : UIView <NSSecureCoding> {
     BOOL  __blurDisabled;
     _UIVisualEffectBackdropView * _backdropSubview;
+    float  _backdropViewBackgroundColorAlpha;
     _UIVisualEffectFilterView * _colorBurnSubview;
     _UIVisualEffectFilterView * _colorSubview;
     _UIVisualEffectContentView * _contentView;
@@ -26,6 +27,7 @@
     UIVisualEffect * _overrideEffect;
 }
 
+@property (getter=_backdropViewBackgroundColorAlpha, setter=_setBackdropViewBackgroundColorAlpha:, nonatomic) float _backdropViewBackgroundColorAlpha;
 @property (getter=_isBlurDisabled, setter=_setBlurDisabled:, nonatomic) BOOL _blurDisabled;
 @property (setter=_setCornerRadius:, nonatomic) float _cornerRadius;
 @property (nonatomic, readonly) NSArray *_effectViews;
@@ -42,6 +44,7 @@
 - (void)_applyCornerRadiusToSubviews;
 - (void)_applyGroupNameToSubviews;
 - (id)_backdropSubview;
+- (float)_backdropViewBackgroundColorAlpha;
 - (void)_commonInit;
 - (void)_configureBackgroundColorForEffectIfNeeded;
 - (void)_configureForCurrentEffect;
@@ -57,6 +60,7 @@
 - (id)_maskViewImageMask;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rebuildEffectViewForCurrentEffect;
+- (void)_setBackdropViewBackgroundColorAlpha:(float)arg1;
 - (void)_setBlurDisabled:(BOOL)arg1;
 - (void)_setContinuousCornerRadius:(float)arg1;
 - (void)_setCornerRadius:(float)arg1;

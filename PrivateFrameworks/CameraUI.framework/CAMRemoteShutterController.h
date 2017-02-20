@@ -66,9 +66,12 @@
 - (int)cameraConnectionIrisMode:(id)arg1;
 - (int)cameraConnectionIrisSupport:(id)arg1;
 - (BOOL)cameraConnectionIsMirrored:(id)arg1;
+- (unsigned int)cameraConnectionMode:(id)arg1;
 - (int)cameraConnectionOrientation:(id)arg1;
 - (void)cameraConnectionToggleCameraDevice:(id)arg1;
+- (BOOL)cameraConnectionToggleCameraDeviceSupport:(id)arg1;
 - (float)cameraConnectionZoomAmount:(id)arg1;
+- (BOOL)cameraConnectionZoomSupport:(id)arg1;
 - (int)captureDevice;
 - (int)captureMode;
 - (void)closeConnection;

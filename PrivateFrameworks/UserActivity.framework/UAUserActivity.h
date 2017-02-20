@@ -20,7 +20,6 @@
     BOOL  _eligibleForReminders;
     BOOL  _eligibleForSearch;
     BOOL  _encodedContainsUnsynchronizedCloudDocument;
-    double  _encodedContainsUnsynchronizedCloudDocumentBackoffInterval;
     BOOL  _encodedFileProviderURL;
     NSDate * _expirationDate;
     BOOL  _forceImmediateSendToServer;
@@ -29,17 +28,18 @@
     long long  _inWillSaveCallback;
     BOOL  _indexInProcess;
     BOOL  _invalidated;
-    NSMutableSet * _keywords;
+    NSSet * _keywords;
     double  _lastSaveTime;
     UAUserActivityManager * _manager;
     BOOL  _needsSave;
+    BOOL  _needsSaveValueAtEndOfWillSaveCallback;
     NSDictionary * _options;
     NSUUID * _originalUniqueIdentifier;
     unsigned long long  _os_state_handler;
     NSMutableDictionary * _payloadDataCache;
     NSMutableDictionary * _payloadObjects;
     NSMutableDictionary * _payloadUpdateBlocks;
-    NSMutableSet * _requiredUserInfoKeys;
+    NSSet * _requiredUserInfoKeys;
     SFCompanionAdvertiser * _resumerAdvertiser;
     BOOL  _saveScheduled;
     BOOL  _sendToServerPending;
@@ -50,12 +50,14 @@
     NSString * _typeIdentifier;
     NSUUID * _uniqueIdentifier;
     BOOL  _userActivityWasCreatedSent;
-    NSMutableDictionary * _userInfo;
+    NSDictionary * _userInfo;
+    BOOL  _userInfoContainsFileURLs;
     NSURL * _webpageURL;
+    NSObject<OS_dispatch_queue> * _willCallSaveSerializationQueue;
 }
 
 @property (readonly) BOOL activityHasBeenSentToServer;
-@property (retain) NSData *cachedEncodedUserInfo;
+@property (copy) NSData *cachedEncodedUserInfo;
 @property BOOL canCreateStreams;
 @property (copy) CSSearchableItemAttributeSet *contentAttributeSet;
 @property (copy) NSString *contentIdentifier;
@@ -73,7 +75,6 @@
 @property (getter=isEligibleForReminders) BOOL eligibleForReminders;
 @property (getter=isEligibleForSearch) BOOL eligibleForSearch;
 @property BOOL encodedContainsUnsynchronizedCloudDocument;
-@property double encodedContainsUnsynchronizedCloudDocumentBackoffInterval;
 @property BOOL encodedFileProviderURL;
 @property (copy) NSDate *expirationDate;
 @property BOOL forceImmediateSendToServer;
@@ -102,7 +103,9 @@
 @property (copy) NSString *typeIdentifier;
 @property (readonly, copy) NSUUID *uniqueIdentifier;
 @property (copy) NSDictionary *userInfo;
+@property BOOL userInfoContainsFileURLs;
 @property (copy) NSURL *webpageURL;
+@property (readonly, retain) NSObject<OS_dispatch_queue> *willCallSaveSerializationQueue;
 
 + (id)_decodeFromScanner:(id)arg1;
 + (id)_decodeFromString:(id)arg1;
@@ -139,7 +142,7 @@
 - (void)addKeywordsFromArray:(id)arg1;
 - (void)addUserInfoEntriesFromDictionary:(id)arg1;
 - (void)advertiser:(id)arg1 didReceiveInputStream:(id)arg2 outputStream:(id)arg3;
-- (id)archiveURL:(id)arg1 error:(id*)arg2;
+- (BOOL)archiveURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
 - (void)becomeCurrent;
 - (id)cachedEncodedUserInfo;
@@ -168,9 +171,9 @@
 - (void)displayInDtrace;
 - (id)dynamicIdentifier;
 - (id)encodeUserInfo:(id)arg1;
+- (BOOL)encodeUserInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)encodeUserInfo:(id)arg1 error:(id*)arg2;
 - (BOOL)encodedContainsUnsynchronizedCloudDocument;
-- (double)encodedContainsUnsynchronizedCloudDocumentBackoffInterval;
 - (BOOL)encodedFileProviderURL;
 - (id)expirationDate;
 - (BOOL)forceImmediateSendToServer;
@@ -196,6 +199,7 @@
 - (BOOL)isInvalidated;
 - (BOOL)isPayloadDirty:(id)arg1;
 - (id)keywords;
+- (id)keywords;
 - (id)manager;
 - (BOOL)needsSave;
 - (id)objectForIdentifier:(id)arg1;
@@ -214,10 +218,10 @@
 - (int)priority;
 - (void)removeContentAttribute:(id)arg1;
 - (id)requiredUserInfoKeys;
+- (id)requiredUserInfoKeys;
 - (void)resignCurrent;
 - (void)scheduleSendUserActivityInfoToLSUserActivityd;
 - (void)sendToCoreSpotlightIndexer;
-- (void)sendToServer:(BOOL)arg1;
 - (BOOL)sendToServerPending;
 - (void)sendUserActivityInfoToLSUserActivityd:(BOOL)arg1 onAsyncQueue:(BOOL)arg2;
 - (void)setCachedEncodedUserInfo:(id)arg1;
@@ -239,10 +243,10 @@
 - (void)setEligibleForReminders:(BOOL)arg1;
 - (void)setEligibleForSearch:(BOOL)arg1;
 - (void)setEncodedContainsUnsynchronizedCloudDocument:(BOOL)arg1;
-- (void)setEncodedContainsUnsynchronizedCloudDocumentBackoffInterval:(double)arg1;
 - (void)setEncodedFileProviderURL:(BOOL)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setForceImmediateSendToServer:(BOOL)arg1;
+- (void)setKeywords:(id)arg1;
 - (void)setKeywords:(id)arg1;
 - (void)setNeedsSave:(BOOL)arg1;
 - (void)setOptions:(id)arg1;
@@ -254,6 +258,7 @@
 - (void)setPayloadObjects:(id)arg1;
 - (void)setPayloadUpdateBlocks:(id)arg1;
 - (void)setRequiredUserInfoKeys:(id)arg1;
+- (void)setRequiredUserInfoKeys:(id)arg1;
 - (void)setSendToServerPending:(BOOL)arg1;
 - (void)setStreamsData:(id)arg1;
 - (void)setSubtitle:(id)arg1;
@@ -262,6 +267,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setTypeIdentifier:(id)arg1;
 - (void)setUserInfo:(id)arg1;
+- (void)setUserInfoContainsFileURLs:(BOOL)arg1;
 - (void)setWebpageURL:(id)arg1;
 - (id)stateString;
 - (id)streamsData;
@@ -280,7 +286,9 @@
 - (id)userActivityInfoForSelf;
 - (id)userActivityInfoForSelfWithPayload:(BOOL)arg1;
 - (id)userInfo;
+- (BOOL)userInfoContainsFileURLs;
 - (id)webpageURL;
+- (id)willCallSaveSerializationQueue;
 - (void)willSynchronizeUserActivityWithHandler:(id /* block */)arg1;
 
 @end

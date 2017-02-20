@@ -29,6 +29,6 @@
 - (void)relayReceiver:(id)arg1 didReceiveFile:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setRelayReceiver:(id)arg1;
-- (void)snapShotSendFailed;
+- (void)snapShotSendFailed:(id)arg1;
 
 @end

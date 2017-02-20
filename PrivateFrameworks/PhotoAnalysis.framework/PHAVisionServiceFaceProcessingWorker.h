@@ -7,6 +7,9 @@
     PHAVisionServicePersistenceDelegate * _persistenceDelegate;
     PhotoVision * _photoVision;
     BOOL  _reclusteringRequired;
+    NSURL * _suggestionLoggingDirectory;
+    BOOL  _suggestionLoggingSessionOpen;
+    BOOL  _suggestionsLoggingEnabled;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -21,17 +24,22 @@
 - (void).cxx_destruct;
 - (unsigned int)_analyzeAsset:(id)arg1 withAttributes:(id)arg2 usingPVImageProvidedByBlock:(id /* block */)arg3 error:(id*)arg4;
 - (id)_analyzePVImage:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
-- (id)_changeAsset:(id)arg1 faceDetectionState:(int)arg2 error:(id*)arg3;
+- (void)_appendToSuggestionsLog:(id)arg1;
+- (void)_closeSuggestionsLoggingSession;
+- (void)_copyImageAtURLToSuggestionsLoggingSession:(id)arg1;
 - (void)_didPerformFaceClustering;
 - (id)_faceDescriptionsOfFacesInImageWithSRGBImageData:(id)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 bytesPerRow:(unsigned long)arg4 bitmapInfo:(unsigned int)arg5 error:(id*)arg6;
 - (id)_faceSuggestionsForFacesWithLocalIdentifiers:(id)arg1 operation:(id)arg2 error:(id*)arg3;
-- (id)_faceSuggestionsForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 operation:(id)arg4 error:(id*)arg5;
-- (id)_faceSuggestionsFromKeyFaceClustSeqNums:(id)arg1 excludeFaceLocalIdentifers:(id)arg2 operation:(id)arg3;
+- (id)_faceSuggestionsForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceSuggestions:(id)arg2 toBeRejectedFaceSuggestions:(id)arg3 operation:(id)arg4 error:(id*)arg5;
+- (id)_faceSuggestionsFromKeyFaceClustSeqNums:(id)arg1 excludeFaceLocalIdentifers:(id)arg2 operation:(id)arg3 error:(id*)arg4;
+- (void)_finalizeSuggestionsLog;
 - (void)_handleNilReplyBlockForSelector:(SEL)arg1;
 - (void)_interruptPhotoVision;
+- (void)_logFaceToSuggestionsLog:(id)arg1;
 - (id)_newFaceGroupsFetchOptions;
 - (id)_newFacesFetchOptions;
 - (id)_newPersonsFetchOptions;
+- (void)_openSuggestionsLoggingSession;
 - (BOOL)_performFaceClusteringWithCompletion:(id /* block */)arg1;
 - (void)_performForcedFaceClustering:(BOOL)arg1 whileKeepingAliveJob:(id)arg2;
 - (void)_performFullCVMLCleanup;
@@ -45,7 +53,6 @@
 - (BOOL)_renderFaceTilesForFaceLocalIdentifiers:(id)arg1 inAssetWithLocalIdentifier:(id)arg2 error:(id*)arg3;
 - (BOOL)_resetFaceClusteringStateWithContext:(id)arg1 error:(id*)arg2;
 - (BOOL)_scheduleFaceProcessingOnAssetsWithLocalIdentifiers:(id)arg1 priority:(int)arg2 error:(id*)arg3;
-- (BOOL)_shouldPerformFaceAnalysisForAsset:(id)arg1;
 - (BOOL)_synchronouslyGenerateFaceTilesForFaces:(id)arg1 fromAsset:(id)arg2 assetImage:(id)arg3 error:(id*)arg4;
 - (void)_terminatePhotoVision;
 - (BOOL)_validateAsset:(id)arg1 error:(id*)arg2;
@@ -54,6 +61,7 @@
 - (unsigned int)analyzeImageData:(id)arg1 forAsset:(id)arg2 withAttributes:(id)arg3 error:(id*)arg4;
 - (void)cooldown;
 - (void)faceClusteringInformation:(unsigned int)arg1 withContext:(id)arg2 reply:(id /* block */)arg3;
+- (void)faceProcessingStatusForUserInterfaceWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (BOOL)getLocallyAvailableAssetResource:(id*)arg1 forAnalyzingAsset:(id)arg2 error:(id*)arg3;
 - (void)handlePVNotification:(id)arg1;
 - (BOOL)hasAdditionalJobsForScenario:(unsigned int)arg1;
@@ -73,7 +81,7 @@
 - (void)shutdown;
 - (BOOL)stopAnalysisJob:(id)arg1 error:(id*)arg2;
 - (void)suggestFacesForFacesWithLocalIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
-- (void)suggestFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 context:(id)arg4 reply:(id /* block */)arg5;
+- (void)suggestFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceSuggestions:(id)arg2 toBeRejectedFaceSuggestions:(id)arg3 context:(id)arg4 reply:(id /* block */)arg5;
 - (void)suggestPersonForFaceWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)willCompleteJob:(id)arg1;
 

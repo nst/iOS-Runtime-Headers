@@ -6,19 +6,25 @@
     NSObject<OS_xpc_object> * _job;
 }
 
+@property (nonatomic) BOOL allowsPowerOptimizedScheduling;
 @property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic) BOOL shiftsDatesWithSystemClockChanges;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic, retain) NSDictionary *userContext;
 
 - (void).cxx_destruct;
 - (id)_initWithJob:(id)arg1;
 - (id)_job;
+- (BOOL)allowsPowerOptimizedScheduling;
 - (id)description;
 - (id)endDate;
 - (id)init;
+- (void)setAllowsPowerOptimizedScheduling:(BOOL)arg1;
 - (void)setEndDate:(id)arg1;
+- (void)setShiftsDatesWithSystemClockChanges:(BOOL)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setUserContext:(id)arg1;
+- (BOOL)shiftsDatesWithSystemClockChanges;
 - (id)startDate;
 - (BOOL)taskExpired;
 - (BOOL)taskSatisfied;

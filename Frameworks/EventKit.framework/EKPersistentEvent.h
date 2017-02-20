@@ -30,7 +30,6 @@
 @property (nonatomic) unsigned int invitationStatus;
 @property (nonatomic) int locationPredictionState;
 @property (getter=isMeeting, nonatomic, readonly) BOOL meeting;
-@property (nonatomic) unsigned int modifiedProperties;
 @property (nonatomic) BOOL needsOccurrenceCacheUpdate;
 @property (nonatomic, copy) NSDate *originalStartDate;
 @property (nonatomic) int participationStatus;
@@ -82,7 +81,6 @@
 - (BOOL)isInvitation;
 - (BOOL)isMeeting;
 - (int)locationPredictionState;
-- (unsigned int)modifiedProperties;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (id)organizer;
 - (id)originalStartDate;
@@ -101,7 +99,6 @@
 - (void)setFiredTTL:(BOOL)arg1;
 - (void)setInvitationStatus:(unsigned int)arg1;
 - (void)setLocationPredictionState:(int)arg1;
-- (void)setModifiedProperties:(unsigned int)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
 - (void)setOriginalStartDate:(id)arg1;
 - (void)setParticipationStatus:(int)arg1;

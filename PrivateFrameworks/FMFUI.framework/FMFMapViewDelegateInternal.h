@@ -36,7 +36,6 @@
 - (void)endTouches;
 - (id)fmfOverlayColor;
 - (id)fmfOverlayColorSatellite;
-- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)gr;
 - (id)initWithDelegate:(id)arg1 mapView:(id)arg2;
 - (BOOL)isMapCenteringDisabled;

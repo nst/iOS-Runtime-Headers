@@ -14,6 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (readonly) BOOL didEnd;
 @property (readonly) unsigned int hash;
 @property (readonly) unsigned int state;
 @property (readonly) Class superclass;
@@ -23,6 +24,7 @@
 - (void)_endProxySession;
 - (id)callbackQueue;
 - (void)dealloc;
+- (BOOL)didEnd;
 - (void)didEndUnexpectedly;
 - (void)didStartSession:(id)arg1;
 - (void)didStartSessionWithoutQueue:(id)arg1;

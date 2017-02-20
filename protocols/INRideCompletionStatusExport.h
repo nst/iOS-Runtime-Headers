@@ -20,6 +20,11 @@
 - (BOOL)isMissedPickup;
 - (BOOL)isOutstanding;
 - (INCurrencyAmount *)paymentAmount;
+- (void)setCanceledByService:(BOOL)arg1;
+- (void)setCompleted:(BOOL)arg1;
 - (void)setCompletionUserActivity:(NSUserActivity *)arg1;
+- (void)setMissedPickup:(BOOL)arg1;
+- (void)setOutstanding:(BOOL)arg1;
+- (void)setPaymentAmount:(INCurrencyAmount *)arg1;
 
 @end

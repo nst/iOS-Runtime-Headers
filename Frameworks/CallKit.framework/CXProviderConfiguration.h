@@ -4,6 +4,7 @@
 
 @interface CXProviderConfiguration : NSObject <CXCopying, NSCopying, NSSecureCoding> {
     unsigned int  _audioSessionID;
+    NSArray * _emergencyLabeledHandles;
     NSArray * _emergencyNumbers;
     NSArray * _handoffIdentifiers;
     NSData * _iconTemplateImageData;
@@ -21,6 +22,7 @@
 @property (nonatomic) unsigned int audioSessionID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *emergencyLabeledHandles;
 @property (nonatomic, copy) NSArray *emergencyNumbers;
 @property (nonatomic, copy) NSArray *handoffIdentifiers;
 @property (readonly) unsigned int hash;
@@ -43,6 +45,7 @@
 - (unsigned int)audioSessionID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)emergencyLabeledHandles;
 - (id)emergencyNumbers;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handoffIdentifiers;
@@ -58,6 +61,7 @@
 - (id)sanitizedCopy;
 - (id)sanitizedCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setAudioSessionID:(unsigned int)arg1;
+- (void)setEmergencyLabeledHandles:(id)arg1;
 - (void)setEmergencyNumbers:(id)arg1;
 - (void)setHandoffIdentifiers:(id)arg1;
 - (void)setIconTemplateImageData:(id)arg1;

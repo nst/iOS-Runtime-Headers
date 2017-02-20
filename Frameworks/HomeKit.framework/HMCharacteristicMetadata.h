@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristicMetadata : NSObject <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
+@interface HMCharacteristicMetadata : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge, NSSecureCoding> {
     NSString * _format;
     NSString * _manufacturerDescription;
     NSNumber * _maxLength;
@@ -70,6 +70,7 @@
 - (BOOL)hf_isValidValue:(id)arg1;
 - (id)hf_normalizedValueForValue:(id)arg1;
 - (id)hf_percentageForCharacteristicValue:(id)arg1;
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

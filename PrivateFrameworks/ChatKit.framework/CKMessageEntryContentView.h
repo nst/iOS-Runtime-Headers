@@ -12,6 +12,7 @@
     BOOL  _isCompositionExpirable;
     float  _maxContentWidthWhenExpanded;
     BOOL  _needsEnsureSelectionVisible;
+    BOOL  _needsEnsureTextViewVisible;
     BOOL  _needsTextLayout;
     NSString * _overridePlaceholderText;
     BOOL  _pendingShelfPayloadWillAnimateIn;
@@ -43,6 +44,7 @@
 @property (nonatomic) BOOL isCompositionExpirable;
 @property (nonatomic) float maxContentWidthWhenExpanded;
 @property (nonatomic) BOOL needsEnsureSelectionVisible;
+@property (nonatomic) BOOL needsEnsureTextViewVisible;
 @property (nonatomic) BOOL needsTextLayout;
 @property (nonatomic, retain) NSString *overridePlaceholderText;
 @property (nonatomic) BOOL pendingShelfPayloadWillAnimateIn;
@@ -84,6 +86,7 @@
 - (id)conversation;
 - (void)dealloc;
 - (void)ensureSelectionVisibleIfNeeded;
+- (void)ensureTextViewVisibleIfNeeded;
 - (BOOL)ignoreEndEditing;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 shouldShowSubject:(BOOL)arg2;
 - (void)invalidateComposition;
@@ -101,6 +104,7 @@
 - (void)messageEntryRichTextViewDidTapHandwritingKey:(id)arg1;
 - (void)messageEntryRichTextViewWasTapped:(id)arg1 isLongPress:(BOOL)arg2;
 - (BOOL)needsEnsureSelectionVisible;
+- (BOOL)needsEnsureTextViewVisible;
 - (BOOL)needsTextLayout;
 - (id)overridePlaceholderText;
 - (BOOL)pendingShelfPayloadWillAnimateIn;
@@ -125,6 +129,7 @@
 - (void)setIsCompositionExpirable:(BOOL)arg1;
 - (void)setMaxContentWidthWhenExpanded:(float)arg1;
 - (void)setNeedsEnsureSelectionVisible:(BOOL)arg1;
+- (void)setNeedsEnsureTextViewVisible:(BOOL)arg1;
 - (void)setNeedsTextLayout:(BOOL)arg1;
 - (void)setOverridePlaceholderText:(id)arg1;
 - (void)setPendingShelfPayloadWillAnimateIn:(BOOL)arg1;

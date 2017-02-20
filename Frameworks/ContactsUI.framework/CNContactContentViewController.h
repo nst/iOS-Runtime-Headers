@@ -12,6 +12,7 @@
     CNContactAddNewFieldAction * _addNewFieldAction;
     CNContactAddToExistingContactAction * _addToExistingContactAction;
     BOOL  _allowsActions;
+    BOOL  _allowsActionsModel;
     BOOL  _allowsAddToFavorites;
     BOOL  _allowsAddingToAddressBook;
     BOOL  _allowsCardActions;
@@ -94,6 +95,7 @@
     CNGroup * _parentGroup;
     UIViewController * _personHeaderViewController;
     CNPolicy * _policy;
+    NSArray * _preEditLeftBarButtonItems;
     <CNPresenterDelegate> * _presentingDelegate;
     NSString * _primaryProperty;
     NSDictionary * _propertyGroups;
@@ -119,6 +121,7 @@
 @property (nonatomic, retain) CNContactAddNewFieldAction *addNewFieldAction;
 @property (nonatomic, retain) CNContactAddToExistingContactAction *addToExistingContactAction;
 @property (nonatomic) BOOL allowsActions;
+@property (nonatomic) BOOL allowsActionsModel;
 @property (nonatomic) BOOL allowsAddToFavorites;
 @property (nonatomic) BOOL allowsAddingToAddressBook;
 @property (nonatomic) BOOL allowsCardActions;
@@ -203,6 +206,7 @@
 @property (nonatomic, retain) UIView *personHeaderView;
 @property (nonatomic, retain) UIViewController *personHeaderViewController;
 @property (nonatomic, retain) CNPolicy *policy;
+@property (nonatomic, retain) NSArray *preEditLeftBarButtonItems;
 @property (nonatomic) <CNPresenterDelegate> *presentingDelegate;
 @property (nonatomic, retain) NSString *primaryProperty;
 @property (nonatomic, readonly) NSDictionary *propertyGroups;
@@ -223,6 +227,7 @@
 + (id)boolStateRestorationProperties;
 + (id)createActionsControllerWithActionListDataSource:(id)arg1;
 + (id)descriptorForRequiredKeys;
++ (id)descriptorForRequiredKeysForContact:(id)arg1;
 + (id)descriptorForRequiredKeysWithDescription:(id)arg1;
 + (BOOL)enablesTransportButtons;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
@@ -320,6 +325,7 @@
 - (void)adjustInsetsForKeyboardOverlap:(float)arg1;
 - (void)adjustPreferredContentSize;
 - (BOOL)allowsActions;
+- (BOOL)allowsActionsModel;
 - (BOOL)allowsAddToFavorites;
 - (BOOL)allowsAddingToAddressBook;
 - (BOOL)allowsCardActions;
@@ -456,6 +462,7 @@
 - (id)personHeaderView;
 - (id)personHeaderViewController;
 - (id)policy;
+- (id)preEditLeftBarButtonItems;
 - (void)prepareCell:(id)arg1;
 - (void)presentViewController:(id)arg1 sourceView:(id)arg2;
 - (id)presentingDelegate;
@@ -494,6 +501,7 @@
 - (void)setAddNewFieldAction:(id)arg1;
 - (void)setAddToExistingContactAction:(id)arg1;
 - (void)setAllowsActions:(BOOL)arg1;
+- (void)setAllowsActionsModel:(BOOL)arg1;
 - (void)setAllowsAddToFavorites:(BOOL)arg1;
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;
 - (void)setAllowsCardActions:(BOOL)arg1;
@@ -575,6 +583,7 @@
 - (void)setPersonHeaderView:(id)arg1;
 - (void)setPersonHeaderViewController:(id)arg1;
 - (void)setPolicy:(id)arg1;
+- (void)setPreEditLeftBarButtonItems:(id)arg1;
 - (void)setPresentingDelegate:(id)arg1;
 - (void)setPrimaryProperty:(id)arg1;
 - (void)setSaveCommand:(id)arg1;

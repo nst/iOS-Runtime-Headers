@@ -34,6 +34,7 @@
 - (void)_setActiveDisplayMode:(int)arg1 requestIdentifier:(id)arg2;
 - (void)_setMaximumSize:(struct CGSize { float x1; float x2; })arg1 forDisplayMode:(int)arg2;
 - (void)_setValid:(BOOL)arg1;
+- (void)_updateVisibilityState:(int)arg1;
 - (void)_viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 requestIdentifier:(id)arg2;
 - (void)dealloc;
 - (id)disconnect;

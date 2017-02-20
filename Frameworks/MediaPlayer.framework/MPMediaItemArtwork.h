@@ -20,5 +20,7 @@
 - (id)init;
 - (id)initWithBoundsSize:(struct CGSize { float x1; float x2; })arg1 requestHandler:(id /* block */)arg2;
 - (id)initWithImage:(id)arg1;
+- (id)jpegDataWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)pngDataWithSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

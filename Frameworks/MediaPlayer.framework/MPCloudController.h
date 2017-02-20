@@ -101,6 +101,7 @@
 - (BOOL)shouldProhibitMusicActionForCurrentNetworkConditions;
 - (BOOL)shouldProhibitStoreAppsActionForCurrentNetworkConditions;
 - (BOOL)shouldProhibitVideosActionForCurrentNetworkConditions;
+- (void)updateJaliscoMediaLibraryWithReason:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateSubscribedPlaylistWithSagaID:(unsigned long long)arg1 ignoreMinRefreshInterval:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)uploadArtworkForPlaylist:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)uploadCloudItemProperties;

@@ -15,7 +15,6 @@
     float  _maxVelocity;
     float  _minVelocity;
     float  _oldBounceFriction;
-    float  _platterWallpaperAlpha;
     CCUIControlCenterSettingsSectionSettings * _settingsSectionSettings;
     CCUIControlCenterShortcutSectionSettings * _shortcutSectionSettings;
     BOOL  _useNewBounce;
@@ -33,7 +32,6 @@
 @property float maxVelocity;
 @property float minVelocity;
 @property float oldBounceFriction;
-@property float platterWallpaperAlpha;
 @property (retain) CCUIControlCenterSettingsSectionSettings *settingsSectionSettings;
 @property (retain) CCUIControlCenterShortcutSectionSettings *shortcutSectionSettings;
 @property BOOL useNewBounce;
@@ -53,7 +51,6 @@
 - (float)maxVelocity;
 - (float)minVelocity;
 - (float)oldBounceFriction;
-- (float)platterWallpaperAlpha;
 - (void)setAttachmentFrequencyAbove:(float)arg1;
 - (void)setAttachmentFrequencyBelow:(float)arg1;
 - (void)setAttachmentMaxDamping:(float)arg1;
@@ -67,7 +64,6 @@
 - (void)setMaxVelocity:(float)arg1;
 - (void)setMinVelocity:(float)arg1;
 - (void)setOldBounceFriction:(float)arg1;
-- (void)setPlatterWallpaperAlpha:(float)arg1;
 - (void)setSettingsSectionSettings:(id)arg1;
 - (void)setShortcutSectionSettings:(id)arg1;
 - (void)setUseNewBounce:(BOOL)arg1;

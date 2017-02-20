@@ -3,33 +3,49 @@
  */
 
 @interface NTPBArticleListRecord : PBCodable <NSCopying> {
-    NSMutableArray * _articleIds;
+    NSMutableArray * _articleIDs;
     NTPBRecordBase * _base;
+    struct { 
+        unsigned int type : 1; 
+    }  _has;
+    NSString * _metadata;
+    int  _type;
 }
 
-@property (nonatomic, retain) NSMutableArray *articleIds;
+@property (nonatomic, retain) NSMutableArray *articleIDs;
 @property (nonatomic, retain) NTPBRecordBase *base;
 @property (nonatomic, readonly) BOOL hasBase;
+@property (nonatomic, readonly) BOOL hasMetadata;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSString *metadata;
+@property (nonatomic) int type;
 
-+ (Class)articleIdsType;
++ (Class)articleIDsType;
 
-- (void)addArticleIds:(id)arg1;
-- (id)articleIds;
-- (id)articleIdsAtIndex:(unsigned int)arg1;
-- (unsigned int)articleIdsCount;
+- (void)addArticleIDs:(id)arg1;
+- (id)articleIDs;
+- (id)articleIDsAtIndex:(unsigned int)arg1;
+- (unsigned int)articleIDsCount;
 - (id)base;
-- (void)clearArticleIds;
+- (void)clearArticleIDs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBase;
+- (BOOL)hasMetadata;
+- (BOOL)hasType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)metadata;
 - (BOOL)readFrom:(id)arg1;
-- (void)setArticleIds:(id)arg1;
+- (void)setArticleIDs:(id)arg1;
 - (void)setBase:(id)arg1;
+- (void)setHasType:(BOOL)arg1;
+- (void)setMetadata:(id)arg1;
+- (void)setType:(int)arg1;
+- (int)type;
 - (void)writeTo:(id)arg1;
 
 @end

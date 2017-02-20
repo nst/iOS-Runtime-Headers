@@ -19,7 +19,7 @@
     BOOL  _invisibleInkEffectPaused;
     UILongPressGestureRecognizer * _longPressGestureRecognizer;
     BOOL  _orientation;
-    CKBalloonImageView * _overlay;
+    UIImageView * _overlay;
     BOOL  _showingMenu;
     UITapGestureRecognizer * _tapGestureRecognizer;
     struct UIEdgeInsets { 
@@ -56,7 +56,7 @@
 @property (nonatomic, retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
 @property (nonatomic, readonly) BOOL needsGroupOpacity;
 @property (nonatomic) BOOL orientation;
-@property (nonatomic, retain) CKBalloonImageView *overlay;
+@property (nonatomic, retain) UIImageView *overlay;
 @property (nonatomic, readonly) UIColor *overlayColor;
 @property (getter=isShowingMenu, nonatomic, readonly) BOOL showingMenu;
 @property (readonly) Class superclass;

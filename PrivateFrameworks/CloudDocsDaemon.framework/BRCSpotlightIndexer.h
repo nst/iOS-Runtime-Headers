@@ -41,7 +41,7 @@
 - (void)cancel;
 - (void)close;
 - (void)dealloc;
-- (void)docID:(unsigned long long)arg1 wasDeletedForNotifRank:(unsigned long long)arg2;
+- (void)docID:(unsigned long long)arg1 isNoLongerIndexableForNotifRank:(unsigned long long)arg2 itemIsLive:(BOOL)arg3;
 - (void)dropIndexForClientZone:(id)arg1;
 - (void)garbageCollectSupersededRanks;
 - (id)indexingArbiter;

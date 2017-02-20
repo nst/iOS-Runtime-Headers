@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIGeneralController : PSListController <CRCarPlayPreferencesDelegate, DevicePINControllerDelegate, PSUIHomeButtonCustomizeControllerDelegate> {
+@interface PSUIGeneralController : PSListController <CRCarPlayPreferencesDelegate, DevicePINControllerDelegate, PSListControllerTestableSpecifiers, PSUIHomeButtonCustomizeControllerDelegate> {
     CRCarPlayPreferences * _carPreferences;
     PSUITVOutManager * _tvOutManager;
     PSSpecifier * _tvOutSpecifier;
@@ -14,6 +14,8 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
 
 - (void).cxx_destruct;
 - (id)EDGEEnabled:(id)arg1;

@@ -58,8 +58,7 @@
 - (void)saveSnapshotForBrowserViewController;
 - (void)setAdamID:(NSNumber *)arg1;
 - (void)setCurrentBrowserConsumer:(int)arg1;
-- (void)setStoreLaunchURL:(NSURL *)arg1;
-- (NSURL *)storeLaunchURL;
+- (void)setStoreLaunchURL:(NSURL *)arg1 sourceApplication:(NSString *)arg2;
 - (void)unloadRemoteView;
 - (void)viewDidTransitionToCompactPresentation;
 - (void)viewDidTransitionToExpandedPresentation;

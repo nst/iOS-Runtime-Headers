@@ -11,6 +11,7 @@
     BOOL  _currentUnread;
     int  _displayMode;
     int  _firstToken;
+    unsigned long long  _generationID;
     int  _lastToken;
     int  _lineFocus;
     int  _lineOffset;
@@ -20,14 +21,15 @@
     struct __CFDictionary { } * _tokenDictionary;
 }
 
+@property (nonatomic, readonly) unsigned long long generationID;
 @property (nonatomic) int lineFocus;
 @property (nonatomic) int lineOffset;
 
-- (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5;
-- (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 technical:(BOOL)arg6;
-- (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4 token:(int)arg5 focused:(BOOL)arg6 technical:(BOOL)arg7;
-- (void)addText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4;
-- (void)addText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4 technical:(BOOL)arg5;
+- (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 isEditableText:(BOOL)arg6;
+- (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 token:(int)arg4 focused:(BOOL)arg5 technical:(BOOL)arg6 isEditableText:(BOOL)arg7;
+- (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4 token:(int)arg5 focused:(BOOL)arg6 technical:(BOOL)arg7 isEditableText:(BOOL)arg8;
+- (void)addText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4 isEditableText:(BOOL)arg5;
+- (void)addText:(id)arg1 selection:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 token:(int)arg3 focused:(BOOL)arg4 technical:(BOOL)arg5 isEditableText:(BOOL)arg6;
 - (BOOL)anyUnread;
 - (id)appToken;
 - (struct __CFArray { }*)chunkArray;
@@ -40,6 +42,7 @@
 - (id)description;
 - (int)displayMode;
 - (int)firstToken;
+- (unsigned long long)generationID;
 - (id)initWithContractionMode:(int)arg1 showEightDot:(BOOL)arg2 showDotsSevenAndEight:(BOOL)arg3;
 - (int)lastToken;
 - (int)lineFocus;

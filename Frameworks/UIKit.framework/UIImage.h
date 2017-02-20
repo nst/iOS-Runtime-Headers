@@ -33,7 +33,6 @@
 @property (readonly) int _gkImageOrientation;
 @property (readonly) float _gkScale;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
-@property (nonatomic, readonly) MPArtworkCatalog *artworkCatalog;
 @property (nonatomic, readonly) NSURL *artworkCatalogBackingFileURL;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } capInsets;
 @property (readonly, copy) NSString *debugDescription;
@@ -136,6 +135,7 @@
 - (void)_encodePropertiesWithCoder:(id)arg1;
 - (id)_flatImageWithColor:(id)arg1;
 - (id)_flatImageWithWhite:(float)arg1 alpha:(float)arg2;
+- (BOOL)_hasDecompressionInfo;
 - (id)_imageForLegibilitySettings:(id)arg1 strength:(float)arg2;
 - (id)_imageForLegibilityStyle:(int)arg1;
 - (int)_imageOrientationConsideringRTL;
@@ -284,7 +284,6 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-- (id)artworkCatalog;
 - (id)artworkCatalogBackingFileURL;
 - (id)imageWithEtchedBorderOfColor:(id)arg1 radius:(float)arg2;
 - (id)imageWithShadow:(id)arg1;
@@ -324,6 +323,10 @@
 + (id)ak_underlineTextStyleImage;
 
 - (struct CGImage { }*)akCGImage;
+
+// Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
+
+- (BOOL)blt_hasAlpha;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
@@ -631,12 +634,15 @@
 + (id)sbf_imageFromBGRAContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 colorSpace:(struct CGColorSpace { }*)arg3 withAlpha:(BOOL)arg4 pool:(id)arg5 drawing:(id /* block */)arg6 encapsulation:(id /* block */)arg7;
 + (id)sbf_imageFromContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5;
 + (id)sbf_imageFromContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5 encapsulation:(id /* block */)arg6;
++ (id)sbf_imageWithIOSurface:(struct __IOSurface { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
 
+- (id)sbf_ASTCSafeImage;
 - (id)sbf_CGImageBackedImage;
 - (int)sbf_EXIFOrientation;
 - (struct CGColorSpace { }*)sbf_colorSpace;
 - (id)sbf_cropImageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 outputSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)sbf_cropImageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 outputSize:(struct CGSize { float x1; float x2; })arg2 preservingAspectRatio:(BOOL)arg3;
+- (id)sbf_imageByConvertingToColorSpace:(struct CGColorSpace { }*)arg1 type:(int)arg2;
 - (id)sbf_imageByManipulatingInDeviceColorSpaceWithBlock:(id /* block */)arg1;
 - (id)sbf_imageMaskedByColor:(id)arg1;
 - (id)sbf_memoryMappedImageWithPool:(id)arg1;
@@ -647,7 +653,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftUIKit.dylib
 
-- (id)initWithImageLiteral:(id)arg1;
+- (id)initWithImageLiteralResourceName:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 
@@ -679,6 +685,12 @@
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 
 + (id)imageForPlaceholderURL:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
+
++ (unsigned long)sbg_bytesNeededForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 withContextType:(int)arg3;
++ (id)sbg_imageFromContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5;
++ (id)sbg_imageFromContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5 encapsulation:(id /* block */)arg6;
 
 // Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
 

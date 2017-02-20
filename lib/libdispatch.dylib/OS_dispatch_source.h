@@ -9,9 +9,20 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+// Image: /usr/lib/system/introspection/libdispatch.dylib
+
 + (void)load;
 
 - (void)_xref_dispose;
 - (id)init;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftDispatch.dylib
+
++ (id)makeMachReceiveSourceWithPort:(unsigned int)arg1 queue:(id)arg2;
++ (id)makeReadSourceWithFileDescriptor:(int)arg1 queue:(id)arg2;
++ (id)makeSignalSourceWithSignal:(int)arg1 queue:(id)arg2;
++ (id)makeUserDataAddSourceWithQueue:(id)arg1;
++ (id)makeUserDataOrSourceWithQueue:(id)arg1;
++ (id)makeWriteSourceWithFileDescriptor:(int)arg1 queue:(id)arg2;
 
 @end

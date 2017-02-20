@@ -4,6 +4,7 @@
 
 @interface _UIKeyboardUsageTracking : NSObject
 
++ (void)dualStringsKeyFlickUpCount;
 + (void)inputSwitcherSetPredictionPreference:(BOOL)arg1;
 + (void)keyboardExtensionCrashed;
 + (void)keyboardExtensionPrimaryLanguageChanged;
@@ -18,9 +19,13 @@
 + (void)keyboardReachabilityDistribution:(float)arg1;
 + (void)keyboardSetToInputMode:(id)arg1 fromPrevious:(id)arg2;
 + (void)keyboardTotalOnScreenTime:(double)arg1 orientation:(int)arg2;
++ (void)panAlternateKeyFlickDownCount;
 + (void)predictionViewState:(BOOL)arg1 forInputMode:(id)arg2;
++ (void)redoKeyCount;
 + (void)selectedPredictiveInputCandidate:(id)arg1 isAutocorrection:(BOOL)arg2;
 + (void)showCharacterPreviewPreference:(BOOL)arg1;
 + (void)showLowercaseKeyplanePreference:(BOOL)arg1;
++ (void)singleStringKeyFlickUpCount;
++ (void)undoKeyCount;
 
 @end

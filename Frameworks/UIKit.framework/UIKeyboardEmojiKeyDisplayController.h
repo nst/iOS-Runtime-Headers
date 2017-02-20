@@ -24,10 +24,14 @@
 - (void)dealloc;
 - (void)emojiUsed:(id)arg1;
 - (void)emojiUsed:(id)arg1 language:(id)arg2;
+- (id)emojiWithoutDuplicateRecents:(id)arg1;
+- (BOOL)hasLastUsedVariantForEmojiString:(id)arg1;
 - (id)init;
 - (id)inputView;
+- (id)lastUsedVariantEmojiForEmojiString:(id)arg1;
 - (id)lastViewedCategory;
 - (int)lastVisibleFirstEmojiIndexforCategory:(id)arg1;
+- (id)recentEmojiAtIndex:(int)arg1 size:(unsigned int*)arg2;
 - (id)recents;
 - (int)reloadCategoryForOffsetPercentage:(float)arg1 withSender:(id)arg2;
 - (void)reloadForCategory:(int)arg1 withSender:(id)arg2;

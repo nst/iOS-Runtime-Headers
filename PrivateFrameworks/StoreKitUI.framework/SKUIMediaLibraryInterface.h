@@ -16,6 +16,7 @@
 - (id)_storePlatformKindForMediaItem:(id)arg1;
 - (void)enumerateStatesForLibraryItems:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)exposedPlatformItemKinds;
+- (BOOL)isItemLocalAudiobook:(id)arg1;
 - (BOOL)performActionForLibraryItem:(id)arg1;
 - (void)removeMediaItemsForLibraryItems:(id)arg1;
 - (id)stateForLibraryItem:(id)arg1;

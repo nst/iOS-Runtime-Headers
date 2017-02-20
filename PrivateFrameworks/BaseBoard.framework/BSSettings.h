@@ -16,6 +16,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_applyToSettings:(id)arg1;
 - (void)_enumerateSettingsForFlagsWithBlock:(id /* block */)arg1;
 - (void)_enumerateSettingsForObjectsWithBlock:(id /* block */)arg1;

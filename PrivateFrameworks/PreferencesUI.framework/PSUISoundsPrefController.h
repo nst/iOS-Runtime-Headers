@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUISoundsPrefController : PSListController {
+@interface PSUISoundsPrefController : PSListController <PSListControllerTestableSpecifiers> {
     BOOL  _hasTelephony;
     int  _lastPlayedSound;
     double  _lastTime;
@@ -12,6 +12,13 @@
     float  _volume;
     BOOL  _volumeHUDSupressed;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
 
 - (void).cxx_destruct;
 - (BOOL)_canChangeRingtoneWithButtons;

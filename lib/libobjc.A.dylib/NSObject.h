@@ -2,10 +2,11 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface NSObject <CAAnimatableValue, CARenderValue, CKDParsedObject, NSObject, PQLResultSetInitializer> {
+@interface NSObject <CAAnimatableValue, CARenderValue, NSObject, PQLResultSetInitializer> {
     Class  isa;
 }
 
+@property (nonatomic, readonly) NSString *_atvaccessibilityITMLAccessibilityContent;
 @property (setter=_px_setReuseIdentifier:, nonatomic) int _px_reuseIdentifier;
 @property (nonatomic) struct CGPoint { float x1; float x2; } accessibilityActivationPoint;
 @property (nonatomic, retain) NSArray *accessibilityCustomActions;
@@ -30,7 +31,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSString *fm_logID;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) long hashValue;
+@property (nonatomic, readonly) int hashValue;
+@property (getter=_hf_briefDescription, nonatomic, readonly, copy) NSString *hf_briefDescription;
+@property (nonatomic, readonly, copy) NSString *hf_prettyDescription;
+@property (getter=_hf_stateDumpDescription, nonatomic, readonly, copy) NSString *hf_stateDumpDescription;
 @property (nonatomic) BOOL isAccessibilityElement;
 @property (nonatomic, readonly, retain) NSString *logID;
 @property void*observationInfo;
@@ -125,15 +129,42 @@
 - (Class)superclass;
 - (struct _NSZone { }*)zone;
 
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
+- (void)_accessibilityCacheContentIfNecessary;
+- (void)_accessibilityHandleFinishSpeaking;
+- (void)_accessibilityPauseSpeaking:(id)arg1;
+- (BOOL)_accessibilityQScanPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (BOOL)_accessibilityQuickSpeakContentIsSpeakable;
+- (void)_accessibilityQuickSpeakTextRectsWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 string:(id)arg2 highlightRects:(id)arg3 sentenceRects:(id)arg4 singleTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
+- (BOOL)_accessibilityShouldShowPauseBubble;
+- (BOOL)_accessibilityShouldShowSpeakBubble;
+- (BOOL)_accessibilityShouldShowSpeakLanguageBubble;
+- (BOOL)_accessibilityShouldShowSpeakSpellOut;
+- (BOOL)_accessibilityShouldUpdateQuickSpeakContent;
+- (void)_accessibilitySpeak:(id)arg1;
+- (void)_accessibilitySpeakLanguageSelection:(id)arg1;
+- (id)_accessibilitySpeakSelectionAssociatedScrollView;
+- (id)_accessibilitySpeakSelectionTextInputResponder;
+- (void)_accessibilitySpeakSentence:(id)arg1;
+- (void)_accessibilitySpeakSpellOut:(id)arg1;
+- (void)_accessibilitySpeakWithLanguage:(id)arg1;
+- (BOOL)_accessibilitySystemShouldShowPauseBubble;
+- (BOOL)_accessibilitySystemShouldShowSpeakBubble;
+- (BOOL)_accessibilitySystemShouldShowSpeakBubbleCommon;
+- (BOOL)_accessibilitySystemShouldShowSpeakLanguageBubble;
+- (BOOL)_accessibilitySystemShouldShowSpeakSentence;
+- (BOOL)_accessibilitySystemShouldShowSpeakSpellOut;
+
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (id)CKSQLiteClassName;
 
 - (void)CKAssignToContainerWithID:(id)arg1;
 - (id)CKDescription;
+- (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)CKPropertiesDescription;
-- (id)CKPropertiesDescriptionWithProperties:(id)arg1;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
+- (id)CKPropertiesDescriptionStringFromProperties:(id)arg1;
 - (id)CKStatusReport;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
@@ -450,6 +481,16 @@
 - (void)_setAccessibilityAttributedLocalizedString:(id)arg1;
 - (BOOL)isAXAttributedString;
 
+// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AccessibilityUIUtilities.framework/AccessibilityUIUtilities
+
+- (id)_accessibilityBadgeTextForTextElement:(id)arg1;
+- (id)_atvAccessibilityITMLAccessibilityContentWithElement:(id)arg1;
+- (id)_atvaccessibilityAncestorHasAXID:(id)arg1;
+- (id)_atvaccessibilityClosestElementAbove:(id)arg1;
+- (id)_atvaccessibilityGeometricNearestHeader;
+- (id)_atvaccessibilityITMLAccessibilityContent;
+- (id)_atvaccessibilityITMLClass;
+
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
 + (void)_accessibilityPerformValidations:(id)arg1;
@@ -571,11 +612,6 @@
 + (BOOL)brc_swizzleClassMethod:(SEL)arg1 with:(SEL)arg2;
 + (BOOL)brc_swizzleInstanceMethod:(SEL)arg1 with:(SEL)arg2;
 
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-- (void)CKLogToFileHandle:(id)arg1;
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
-
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 + (void)_addPropertyAttributeMapToPropertyMapLocked:(id)arg1;
@@ -679,6 +715,13 @@
 
 - (BOOL)hk_animatable;
 - (id)hk_midPointToValue:(id)arg1 percentage:(float)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)_hf_briefDescription;
+- (id)_hf_prettyDescriptionOfType:(unsigned int)arg1 baseDescription:(id)arg2 extraDescription:(id)arg3;
+- (id)_hf_stateDumpDescription;
+- (id)hf_prettyDescription;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -842,7 +885,17 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftObjectiveC.dylib
 
-- (long)hashValue;
+- (int)hashValue;
+
+// Image: /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
+
+- (id)clipsStringRepresentation;
+- (bool)isCLIPSSymbol;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (id)tv_associatedIKViewElement;
+- (void)tv_setAssociatedIKViewElement:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
 
@@ -862,6 +915,7 @@
 + (void)_accessibilityUpdateOpaqueFocusStateForTechnology:(id)arg1 oldElement:(id)arg2 newElement:(id)arg3;
 + (id)accessibilityBundles;
 + (void)accessibilityInitializeBundle;
++ (Class)safeCategoryBaseClass;
 
 - (BOOL)__accessibilityReadAllOnFocus;
 - (id)__accessibilityRetrieveFrameOrPathDelegate;
@@ -997,6 +1051,7 @@
 - (void)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
 - (id)_accessibilityEquivalenceTag;
 - (int)_accessibilityExpandedStatus;
+- (unsigned int)_accessibilityExplorerElementReadPriority;
 - (id)_accessibilityExplorerElements;
 - (id)_accessibilityExtendedLabelForFocusParcelWithLabel:(id)arg1;
 - (BOOL)_accessibilityFauxCollectionViewCellsDisabled;
@@ -1013,6 +1068,8 @@
 - (id)_accessibilityFirstElementForFocus;
 - (id)_accessibilityFirstOpaqueElement;
 - (id)_accessibilityFirstOpaqueElementForFocus;
+- (id)_accessibilityFirstResponderForKeyWindow;
+- (id)_accessibilityFirstResponderForWindow:(id)arg1;
 - (id)_accessibilityFirstVisibleItem;
 - (id)_accessibilityFocusAbsoluteFirstOpaqueElementForTechnology:(id)arg1;
 - (id)_accessibilityFocusAbsoluteLastOpaqueElementForTechnology:(id)arg1;
@@ -1022,6 +1079,7 @@
 - (id)_accessibilityFrameDelegate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityFrameForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityFrameForSorting;
+- (BOOL)_accessibilityFullscreenVideoViewIsVisible;
 - (id)_accessibilityFuzzyHitTestElements;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityGesturePracticeRegion;
 - (void)_accessibilityHandleATFocused:(BOOL)arg1 assistiveTech:(id)arg2;
@@ -1113,6 +1171,7 @@
 - (BOOL)_accessibilityIsSpeakThisElement;
 - (BOOL)_accessibilityIsStarkElement;
 - (BOOL)_accessibilityIsTableCell;
+- (BOOL)_accessibilityIsTextInput;
 - (BOOL)_accessibilityIsTitleElement;
 - (BOOL)_accessibilityIsTouchContainer;
 - (BOOL)_accessibilityIsTourGuideRunning;
@@ -1215,6 +1274,8 @@
 - (void)_accessibilityProcessScannerGroupElementPieces:(id)arg1;
 - (id)_accessibilityPublicCustomRotorName:(id)arg1;
 - (id)_accessibilityPublicCustomRotors;
+- (id)_accessibilityQuickSpeakContent;
+- (id)_accessibilityQuickSpeakEnclosingSentence:(id*)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForLineNumber:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForLineNumberAndColumn:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForTextMarker:(id)arg1;
@@ -1235,6 +1296,8 @@
 - (BOOL)_accessibilityRepresentsInfiniteCollection;
 - (void)_accessibilityResetContainerElements;
 - (BOOL)_accessibilityRespectsTableScrollEnabledFlag;
+- (id)_accessibilityResponderChainForKeyWindow;
+- (id)_accessibilityResponderChainForWindow:(id)arg1;
 - (id)_accessibilityResponderElement;
 - (BOOL)_accessibilityRetainsCustomRotorActionSetting;
 - (id)_accessibilityRetrieveImagePathLabel:(id)arg1;
@@ -1320,6 +1383,7 @@
 - (void)_accessibilitySetUserTestingIsDefaultButton:(BOOL)arg1;
 - (void)_accessibilitySetUserTestingIsDestructiveButton:(BOOL)arg1;
 - (void)_accessibilitySetUserTestingIsPreferredButton:(BOOL)arg1;
+- (void)_accessibilitySetUsesScrollParentForOrdering:(BOOL)arg1;
 - (void)_accessibilitySetValue:(id)arg1;
 - (void)_accessibilitySetVisibleContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_accessibilitySetWantsOpaqueElementProviders:(BOOL)arg1;
@@ -1344,6 +1408,7 @@
 - (id)_accessibilitySiriContentNativeFocusableElements;
 - (id)_accessibilitySoftwareMimicKeyboard;
 - (BOOL)_accessibilitySortCollectionViewLogically;
+- (id)_accessibilitySortExplorerElements:(id)arg1;
 - (int)_accessibilitySortPriority;
 - (id)_accessibilitySortPriorityContainer;
 - (int)_accessibilitySortPriorityWithReturningView:(id*)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface HDFitnessFriendsMessageInviteResponse : PBCodable <NSCopying> {
+    HDFitnessFriendsMessageActivityDataPreview * _activityDataPreview;
     NSString * _handshakeToken;
     struct { 
         unsigned int inviteeVersion : 1; 
@@ -15,7 +16,9 @@
     int  _responseCode;
 }
 
+@property (nonatomic, retain) HDFitnessFriendsMessageActivityDataPreview *activityDataPreview;
 @property (nonatomic, retain) NSString *handshakeToken;
+@property (nonatomic, readonly) BOOL hasActivityDataPreview;
 @property (nonatomic, readonly) BOOL hasHandshakeToken;
 @property (nonatomic, readonly) BOOL hasInviteeBuildNumber;
 @property (nonatomic, readonly) BOOL hasInviteeCloudKitAddress;
@@ -29,11 +32,13 @@
 @property (nonatomic) int responseCode;
 
 - (void).cxx_destruct;
+- (id)activityDataPreview;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)handshakeToken;
+- (BOOL)hasActivityDataPreview;
 - (BOOL)hasHandshakeToken;
 - (BOOL)hasInviteeBuildNumber;
 - (BOOL)hasInviteeCloudKitAddress;
@@ -49,6 +54,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)responseCode;
+- (void)setActivityDataPreview:(id)arg1;
 - (void)setHandshakeToken:(id)arg1;
 - (void)setHasInviteeVersion:(BOOL)arg1;
 - (void)setHasResponseCode:(BOOL)arg1;

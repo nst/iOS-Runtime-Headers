@@ -19,7 +19,7 @@
     NSNumber * _statusFlags;
 }
 
-@property (nonatomic, readonly) unsigned int advertisementFormat;
+@property (nonatomic) unsigned int advertisementFormat;
 @property (nonatomic, readonly) NSMapTable *cachedCharacteristicSignatures;
 @property (nonatomic, readonly) NSMutableDictionary *cachedDescriptors;
 @property (nonatomic, readonly) NSMapTable *cachedServiceSignatures;
@@ -48,6 +48,7 @@
 - (BOOL)monitorState;
 - (BOOL)notifyingCharacteristicUpdated;
 - (id)peripheral;
+- (void)setAdvertisementFormat:(unsigned int)arg1;
 - (void)setCategoryIdentifier:(id)arg1;
 - (void)setConfigNumber:(id)arg1;
 - (void)setConnectionPriority:(unsigned int)arg1;

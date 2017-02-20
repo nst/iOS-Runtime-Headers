@@ -59,7 +59,7 @@
 - (id)_indexPathForIndex:(unsigned int)arg1;
 - (void)_insertObjectInFetchedObjects:(id)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)_keyPathContainsNonPersistedProperties:(id)arg1;
-- (void)_lowerMoveOperationsToUpdatesWithInsertedObjects:(id)arg1 deletedObjects:(id)arg2 updatedObjects:(id)arg3;
+- (void)_lowerMoveOperationsToUpdatesForSection:(id)arg1 withInsertedObjects:(id)arg2 deletedObjects:(id)arg3 updatedObjects:(id)arg4;
 - (void)_makeMutableFetchedObjects;
 - (void)_managedObjectContextDidChange:(id)arg1;
 - (void)_managedObjectContextDidChangeObjectIDs:(id)arg1;
@@ -76,7 +76,7 @@
 - (id)_sectionNameForObject:(id)arg1;
 - (unsigned int)_sectionNumberForIndex:(unsigned int)arg1;
 - (id)_sections;
-- (void)_updateCachedStoreInfo;
+- (BOOL)_updateCachedStoreInfo;
 - (BOOL)_updateFetchedObjectsWithDeleteChange:(id)arg1;
 - (BOOL)_updateFetchedObjectsWithInsertChange:(id)arg1;
 - (BOOL)_updateFetchedObjectsWithInsertedObjects:(id)arg1 deletedObjects:(id)arg2 updatedObjects:(id)arg3;

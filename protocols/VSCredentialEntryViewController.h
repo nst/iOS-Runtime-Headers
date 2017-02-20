@@ -5,8 +5,6 @@
 
 @required
 
-- (<VSCredentialEntryViewControllerDelegate> *)delegate;
-- (void)setDelegate:(id <VSCredentialEntryViewControllerDelegate>)arg1;
 - (void)setViewModel:(VSCredentialEntryViewModel *)arg1;
 - (VSCredentialEntryViewModel *)viewModel;
 

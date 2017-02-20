@@ -10,6 +10,7 @@
     BOOL  _hasReceivedLocalSpeechRecognized;
     BOOL  _hasReceivedServerSpeechRecognized;
     BOOL  _hasRecognizedAnything;
+    NSUUID * _instanceUUID;
     NSArray * _localPhrases;
     NSArray * _localUtterances;
     NSObject<OS_dispatch_queue> * _queue;
@@ -46,7 +47,7 @@
 - (void)finishAudio;
 - (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (id)initWithDelegate:(id)arg1;
+- (id)initWithDelegate:(id)arg1 instanceUUID:(id)arg2;
 - (void)invalidate;
 - (void)runAdaptationRecipeEvaluation:(id)arg1 localSpeechDESRecord:(id)arg2 completion:(id /* block */)arg3;
 - (oneway void)speechServiceDidFinishRecognitionWithError:(id)arg1;

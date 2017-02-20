@@ -9,6 +9,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (id)currentSizeClasses;
 - (BOOL)isTimeZoneSet;
 - (unsigned int)preferredVideoFormat;
 - (unsigned int)preferredVideoPreviewFormat;

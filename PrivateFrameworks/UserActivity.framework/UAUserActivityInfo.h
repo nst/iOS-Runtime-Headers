@@ -19,6 +19,7 @@
     NSError * _error;
     NSDate * _expirationDate;
     NSSet * _keywords;
+    NSDate * _lastInterestingTime;
     NSDictionary * _options;
     BOOL  _payloadAvailable;
     BOOL  _payloadRequested;
@@ -50,6 +51,7 @@
 @property (copy) NSError *error;
 @property (copy) NSDate *expirationDate;
 @property (copy) NSSet *keywords;
+@property (copy) NSDate *lastInterestingTime;
 @property (copy) NSDictionary *options;
 @property (getter=isPayloadAvailable) BOOL payloadAvailable;
 @property (getter=isPayloadRequested) BOOL payloadRequested;
@@ -97,6 +99,7 @@
 - (BOOL)isPayloadAvailable;
 - (BOOL)isPayloadRequested;
 - (id)keywords;
+- (id)lastInterestingTime;
 - (id)logString;
 - (id)optionalUserActivityData;
 - (id)options;
@@ -121,6 +124,7 @@
 - (void)setError:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setKeywords:(id)arg1;
+- (void)setLastInterestingTime:(id)arg1;
 - (void)setOptions:(id)arg1;
 - (BOOL)setPayload:(id)arg1 identifier:(id)arg2;
 - (void)setPayloadAvailable:(BOOL)arg1;

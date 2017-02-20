@@ -3,12 +3,14 @@
  */
 
 @interface CKNavigationBarCanvasView : UIView {
+    BOOL  _enforceLeftItemViewsAlignmentToCenter;
     UIView * _leftItemView;
     float  _preferredHeight;
     UIView * _rightItemView;
     UIView * _titleView;
 }
 
+@property (nonatomic) BOOL enforceLeftItemViewsAlignmentToCenter;
 @property (nonatomic, retain) UIView *leftItemView;
 @property (nonatomic) float preferredHeight;
 @property (nonatomic, retain) UIView *rightItemView;
@@ -20,7 +22,9 @@
 + (float)preferredLandscapeHeightForRegularWidth;
 
 - (void).cxx_destruct;
+- (BOOL)_shouldUseTallHeight;
 - (void)clearAllItemViews;
+- (BOOL)enforceLeftItemViewsAlignmentToCenter;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 preferredHeight:(float)arg2;
@@ -28,6 +32,7 @@
 - (id)leftItemView;
 - (float)preferredHeight;
 - (id)rightItemView;
+- (void)setEnforceLeftItemViewsAlignmentToCenter:(BOOL)arg1;
 - (void)setLeftItemView:(id)arg1;
 - (void)setPreferredHeight:(float)arg1;
 - (void)setRightItemView:(id)arg1;

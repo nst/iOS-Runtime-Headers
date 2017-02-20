@@ -14,7 +14,7 @@
     void viewTapped;
 }
 
-@property (nonatomic, retain) NSDate *dueDate;
+@property (nonatomic, copy) NSDate *dueDate;
 @property (nonatomic, retain) UIColor *listColor;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *notes;
@@ -38,7 +38,7 @@
 - (void)setTitle:(id)arg1;
 - (void)setViewTapped:(id /* block */)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)tappedWithGestureRecognizer:(id)arg1;
+- (void)tapped:(id)arg1;
 - (id)title;
 - (id /* block */)viewTapped;
 

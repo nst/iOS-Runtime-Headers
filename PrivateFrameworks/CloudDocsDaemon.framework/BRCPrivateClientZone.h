@@ -30,7 +30,6 @@
 - (BOOL)existsByParentID:(id)arg1 andName:(id)arg2 db:(id)arg3;
 - (id)faultByParentID:(id)arg1 andDisplayName:(id)arg2;
 - (id)faultByParentID:(id)arg1 andDisplayName:(id)arg2 db:(id)arg3;
-- (void)fixupItemsOnInitialZoneCreation;
 - (BOOL)isDocumentScopePublic;
 - (BOOL)isPrivateZone;
 - (id)itemByParentID:(id)arg1 andName:(id)arg2;

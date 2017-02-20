@@ -18,7 +18,7 @@
 @property (nonatomic, readonly) unsigned int indexType;
 @property (nonatomic, retain) MDLMaterial *material;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, readonly, retain) MDLSubmeshTopology *topology;
+@property (nonatomic, retain) MDLSubmeshTopology *topology;
 
 // Image: /System/Library/Frameworks/ModelIO.framework/ModelIO
 
@@ -39,6 +39,7 @@
 - (id)name;
 - (void)setMaterial:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setTopology:(id)arg1;
 - (id)topology;
 
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit

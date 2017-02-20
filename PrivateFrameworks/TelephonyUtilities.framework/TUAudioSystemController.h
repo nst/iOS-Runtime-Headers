@@ -3,6 +3,7 @@
  */
 
 @interface TUAudioSystemController : TUAudioController {
+    NSArray * _currentPickableRoutes;
     NSObject<OS_dispatch_queue> * _downlinkMutedQueue;
     NSNumber * _isDownlinkMutedCached;
     BOOL  _isRequestingDownlinkMuted;
@@ -45,10 +46,12 @@
 + (id)sourceIdentifierForRouteID:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_getPickableRoutesForCategory:(id)arg1 mode:(id)arg2 onlyKnownCombinations:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)_handleDownlinkMuteDidChangeNotification:(id)arg1;
 - (void)_handlePickableRoutesDidChangeNotification:(id)arg1;
 - (void)_handleServerConnectionDiedNotification:(id)arg1;
 - (void)_handleUplinkMuteDidChangeNotification:(id)arg1;
+- (void)_loadCurrentPickableRoutesWithCompletion:(id /* block */)arg1;
 - (id)_pickableRoutesForPhoneCallWithForceNewRequest:(BOOL)arg1;
 - (id)_pickableRoutesForPlayAndRecordRemoteVoiceWithForceNewRequest:(BOOL)arg1;
 - (id)_pickableRoutesForPlayAndRecordVideoWithForceNewRequest:(BOOL)arg1;
@@ -59,6 +62,7 @@
 - (id)bestGuessPickableRoutesForAnyCall;
 - (id)currentlyPickedRouteIdForCategory:(id)arg1 andMode:(id)arg2;
 - (void)dealloc;
+- (void)getPickableRoutesForCategory:(id)arg1 mode:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (BOOL)isDownlinkMuted;
 - (BOOL)isTTY;

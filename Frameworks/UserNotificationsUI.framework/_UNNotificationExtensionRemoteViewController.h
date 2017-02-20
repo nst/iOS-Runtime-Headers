@@ -44,6 +44,7 @@
 - (void)notificationContentExtension:(id)arg1 setDismissEnabled:(BOOL)arg2;
 - (void)notificationContentExtensionDismiss:(id)arg1;
 - (id)notificationExtensionContext;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setDidCheckActionResponseDelegate:(BOOL)arg1;
 - (void)setExtensionViewController:(id)arg1;

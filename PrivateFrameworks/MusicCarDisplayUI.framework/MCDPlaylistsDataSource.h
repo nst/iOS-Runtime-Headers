@@ -7,7 +7,6 @@
     NSCache * _cachedCounts;
     NSCache * _cachedDurations;
     NSCache * _cachedRepresentativeItems;
-    BOOL  _hasParentPlaylist;
 }
 
 - (void).cxx_destruct;

@@ -237,6 +237,7 @@
 - (id)_baselineLayoutLabel;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_baselineLeftViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_becomeFirstResponder;
+- (int)_blurEffectStyle;
 - (int)_blurEffectStyleForAppearance;
 - (BOOL)_blurEnabled;
 - (BOOL)_canDrawContent;
@@ -359,6 +360,7 @@
 - (void)_setSystemBackgroundViewActive:(BOOL)arg1;
 - (void)_setUpBaselineLayoutConstraintsForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_share:(id)arg1;
+- (BOOL)_shouldDetermineInterfaceStyleTextColor;
 - (BOOL)_shouldEndEditing;
 - (BOOL)_shouldObscureInput;
 - (BOOL)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
@@ -698,6 +700,13 @@
 - (void)willAttachFieldEditor:(id)arg1;
 - (void)willDetachFieldEditor:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (id)_accessibilityQuickSpeakContent;
+- (BOOL)_accessibilitySystemShouldShowSpeakBubbleCommon;
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 

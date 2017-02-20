@@ -105,6 +105,7 @@
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
 - (id)preferredMediaSelection;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
@@ -156,6 +157,7 @@
 - (id)vcp_enabledTracksWithMediaType:(id)arg1;
 - (id)vcp_firstEnabledTrackWithMediaType:(id)arg1;
 - (BOOL)vcp_isMontage;
+- (BOOL)vcp_isShortMovie;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

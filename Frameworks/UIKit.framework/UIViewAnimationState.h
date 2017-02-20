@@ -22,6 +22,7 @@
     int  _didEndCount;
     SEL  _didEndSelector;
     BOOL  _disallowAdditiveAnimations;
+    unsigned int  _disallowCaptureWithinPropertyAnimator;
     double  _duration;
     int  _filter;
     float  _filterValue;

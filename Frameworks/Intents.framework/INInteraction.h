@@ -26,12 +26,16 @@
 + (void)deleteAllInteractionsWithCompletion:(id /* block */)arg1;
 + (void)deleteInteractionsWithGroupIdentifier:(id)arg1 completion:(id /* block */)arg2;
 + (void)deleteInteractionsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
++ (void)load;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
+- (void)_donateInteractionWithBundleId:(id)arg1 completion:(id /* block */)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)dateInterval;
+- (id)description;
 - (int)direction;
 - (id)domainIdentifier;
 - (void)donateInteractionWithCompletion:(id /* block */)arg1;

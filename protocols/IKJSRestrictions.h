@@ -5,13 +5,9 @@
 
 @required
 
-- (BOOL)allowArtistActivity;
 - (BOOL)allowsErotica;
 - (BOOL)allowsExplicit;
-- (BOOL)appAnalyticsAllowed;
-- (BOOL)appInstallationAllowed;
-- (int)maxAppRank;
-- (NSString *)maxAppRating;
+- (BOOL)allowsITunes;
 - (int)maxMovieRank;
 - (NSString *)maxMovieRatingForCountry:(JSValue *)arg1;
 - (int)maxTVShowRank;

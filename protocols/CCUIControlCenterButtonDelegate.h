@@ -6,6 +6,7 @@
 @required
 
 - (void)buttonTapped:(CCUIControlCenterButton *)arg1;
+- (<CCUIControlCenterSystemAgent> *)controlCenterSystemAgent;
 - (BOOL)isInternal;
 
 @optional

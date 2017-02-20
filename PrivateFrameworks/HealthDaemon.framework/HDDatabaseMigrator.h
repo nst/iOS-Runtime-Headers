@@ -52,6 +52,10 @@
 - (int)_clearMenstrualFlowAndSexualActivitySamples:(id*)arg1;
 - (int)_clearSamplesWithoutSourcesWithError:(id*)arg1;
 - (int)_clearSourceOrderingWithError:(id*)arg1;
+- (int)_corry_fixHFDProtectionClassWithError:(id*)arg1;
+- (int)_corry_rewriteHFDStep1WithError:(id*)arg1;
+- (int)_corry_rewriteHFDStep2WithError:(id*)arg1;
+- (id)_corry_temporaryHFDURL;
 - (int)_createAchievementsAndActivityCachesTablesWithError:(id*)arg1;
 - (int)_createActivityCachesTableWithError:(id*)arg1;
 - (int)_createCorrelationsObjectIdIndexWithError:(id*)arg1;
@@ -119,6 +123,8 @@
 - (id)boulderUnprotectedMigrationSteps;
 - (id)butlerProtectedMigrationSteps;
 - (id)butlerUnprotectedMigrationSteps;
+- (id)corryProtectedMigrationSteps;
+- (id)corryUnprotectedMigrationSteps;
 - (id)database;
 - (id)eagleProtectedMigrationSteps;
 - (id)eagleUnprotectedMigrationSteps;

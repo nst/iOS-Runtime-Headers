@@ -3,28 +3,28 @@
  */
 
 @interface FCTrendingCatchUpOperation : FCOperation {
+    id /* block */  _catchUpCompletionHandler;
     <FCContentContext> * _context;
     NSError * _error;
     NSArray * _headlines;
-    double  _maximumCachedAge;
 }
 
+@property (copy) id /* block */ catchUpCompletionHandler;
 @property (nonatomic, retain) <FCContentContext> *context;
 @property (retain) NSError *error;
 @property (copy) NSArray *headlines;
-@property double maximumCachedAge;
 
 - (void).cxx_destruct;
+- (id /* block */)catchUpCompletionHandler;
 - (id)context;
 - (id)error;
 - (id)headlines;
-- (id)init;
-- (double)maximumCachedAge;
+- (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
+- (void)setCatchUpCompletionHandler:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setHeadlines:(id)arg1;
-- (void)setMaximumCachedAge:(double)arg1;
 - (BOOL)validateOperation;
 
 @end

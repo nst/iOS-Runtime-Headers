@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (id)iconView;
 - (id)image;
+- (void)layoutSubviews;
 - (void)setImage:(id)arg1;
 
 @end

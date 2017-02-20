@@ -6,6 +6,7 @@
     NSXPCConnection * _connection;
     NSMutableDictionary * _createdInstallProgresses;
     LSInstallProgressDelegate * _delegateProxy;
+    BOOL  _enhancedAppValidationEnabled;
     LSInstallProgressList * _observedInstallProgresses;
     LSApplicationWorkspaceRemoteObserver * _remoteObserver;
 }
@@ -58,6 +59,7 @@
 - (id)deviceIdentifierForVendor;
 - (id)directionsApplications;
 - (BOOL)downgradeApplicationToPlaceholder:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
+- (BOOL)enhancedAppLoggingEnabled;
 - (void)enumerateApplicationsForSiriWithBlock:(id /* block */)arg1;
 - (void)enumerateApplicationsOfType:(unsigned int)arg1 block:(id /* block */)arg2;
 - (void)enumerateApplicationsOfType:(unsigned int)arg1 legacySPI:(BOOL)arg2 block:(id /* block */)arg3;
@@ -69,6 +71,7 @@
 - (BOOL)getClaimedActivityTypes:(id*)arg1 domains:(id*)arg2;
 - (unsigned int)getInstallTypeForOptions:(id)arg1 andApp:(id)arg2;
 - (void)getKnowledgeUUID:(id*)arg1 andSequenceNumber:(id*)arg2;
+- (id)init;
 - (BOOL)installApplication:(id)arg1 withOptions:(id)arg2;
 - (BOOL)installApplication:(id)arg1 withOptions:(id)arg2 error:(id*)arg3;
 - (BOOL)installApplication:(id)arg1 withOptions:(id)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;

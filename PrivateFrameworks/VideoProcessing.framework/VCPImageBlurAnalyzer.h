@@ -3,11 +3,13 @@
  */
 
 @interface VCPImageBlurAnalyzer : VCPImageAnalyzer {
+    float  _contrast;
     NSArray * _faces;
     VCPCNNData * _input;
     float  _irisSharpness;
     VCPCNNModel * _model;
     NSArray * _objects;
+    BOOL  _sdof;
     float  _sharpness;
     float  _sharpnessBlocks;
     BOOL  _useGPU;
@@ -27,7 +29,7 @@
 - (float)computeRegionSharpness:(char *)arg1 width:(int)arg2 height:(int)arg3 stride:(int)arg4;
 - (long)initInputFromCVPixelBuffer:(struct __CVBuffer { }*)arg1 height:(int)arg2 width:(int)arg3;
 - (long)initModel;
-- (id)initWithFaceResults:(id)arg1 objectRect:(id)arg2;
+- (id)initWithFaceResults:(id)arg1 objectRect:(id)arg2 sdof:(BOOL)arg3;
 - (float)irisSharpness;
 - (float)sharpness;
 - (void)spatialPooling;

@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
 @property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)_contentView;
@@ -34,7 +35,7 @@
 - (void)customContentRequestsDismiss:(id)arg1;
 - (BOOL)defaultContentHidden;
 - (id)delegate;
-- (void)didReceiveNotificationRequest:(id)arg1;
+- (BOOL)didReceiveNotificationRequest:(id)arg1;
 - (BOOL)hasMinimalActions;
 - (id)initWithNotificationRequest:(id)arg1;
 - (void)loadAudioAccessoryView;

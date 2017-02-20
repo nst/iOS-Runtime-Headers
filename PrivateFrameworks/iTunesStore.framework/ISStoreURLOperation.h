@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISStoreURLOperation : ISURLOperation {
+@interface ISStoreURLOperation : ISURLOperation <ISBiometricSessionDelegate> {
     int  _activeMachineDataStyle;
     NSNumber * _authenticatedDSID;
     ISBiometricAuthenticationContext * _biometricAuthenticationContext;
-    <ISBiometricPurchaseDelegate> * _biometricDelegate;
+    <ISBiometricSessionDelegate> * _biometricSessionDelegate;
     BOOL  _canSendGUIDParameter;
     BOOL  _ignorePreexistingSecureToken;
     BOOL  _isURLBagRequest;
@@ -25,9 +25,12 @@
 @property (getter=isURLBagRequest, nonatomic) BOOL URLBagRequest;
 @property (retain) NSNumber *authenticatedDSID;
 @property (retain) ISBiometricAuthenticationContext *biometricAuthenticationContext;
-@property <ISBiometricPurchaseDelegate> *biometricDelegate;
+@property <ISBiometricSessionDelegate> *biometricSessionDelegate;
 @property BOOL canSendGUIDParameter;
+@property (readonly, copy) NSString *debugDescription;
 @property <ISStoreURLOperationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL ignorePreexistingSecureToken;
 @property int machineDataStyle;
 @property BOOL needsAuthentication;
@@ -35,6 +38,7 @@
 @property BOOL needsURLBag;
 @property BOOL performsMachineDataActions;
 @property BOOL shouldSendXTokenHeader;
+@property (readonly) Class superclass;
 @property BOOL urlKnownToBeTrusted;
 @property BOOL useUserSpecificURLBag;
 
@@ -71,7 +75,7 @@
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
 - (id)biometricAuthenticationContext;
-- (id)biometricDelegate;
+- (id)biometricSessionDelegate;
 - (BOOL)canSendGUIDParameter;
 - (BOOL)handleRedirectFromDataProvider:(id)arg1 error:(id*)arg2;
 - (void)handleResponse:(id)arg1;
@@ -85,9 +89,10 @@
 - (id)newRequestWithURL:(id)arg1;
 - (BOOL)performsMachineDataActions;
 - (void)run;
+- (void)sender:(id)arg1 didFallbackToPassword:(BOOL)arg2;
 - (void)setAuthenticatedDSID:(id)arg1;
 - (void)setBiometricAuthenticationContext:(id)arg1;
-- (void)setBiometricDelegate:(id)arg1;
+- (void)setBiometricSessionDelegate:(id)arg1;
 - (void)setCanSendGUIDParameter:(BOOL)arg1;
 - (void)setIgnorePreexistingSecureToken:(BOOL)arg1;
 - (void)setMachineDataStyle:(int)arg1;

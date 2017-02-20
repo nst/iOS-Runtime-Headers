@@ -3,15 +3,19 @@
  */
 
 @interface PXPeopleFaceTileImageManager : NSObject <NSCacheDelegate, PXPhotoLibraryUIChangeObserver> {
+    <NSObject> * _backgroundEntraceObserver;
     BOOL  _concurrencyEnabled;
     NSObject<OS_dispatch_queue> * _cropCacheQueue;
     NSMapTable * _faceTileRequestByRequestID;
     NSObject<OS_dispatch_queue> * _fetchQueue;
+    NSMapTable * _highPriorityCachedIdentifiers;
+    NSObject<OS_dispatch_queue> * _highPriorityCachedIdentifiersQueue;
     PXLRUMemoryCache * _memoryCache;
     <NSObject> * _memoryWarningObserver;
     NSObject<OS_dispatch_queue> * _requestLookupIsolationQueue;
 }
 
+@property (nonatomic, retain) <NSObject> *backgroundEntraceObserver;
 @property (getter=isConcurrencyEnabled, nonatomic) BOOL concurrencyEnabled;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -25,32 +29,43 @@
 
 - (void).cxx_destruct;
 - (void)_addRequestResult:(id)arg1 forIdentifier:(id)arg2;
-- (id)_cachedResultForIdentifier:(id)arg1 params:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; })arg2 allowVeryLowQuality:(BOOL)arg3 isLowResResult:(BOOL*)arg4;
-- (id)_cachedResultForIdentifier:(id)arg1 params:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; })arg2 isLowResResult:(BOOL*)arg3;
-- (void)_cropImage:(id)arg1 cacheResult:(BOOL)arg2 isDegraded:(BOOL)arg3 forRequest:(id)arg4 completionBlock:(id /* block */)arg5;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_boundedCropRectForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withTargetAspectRatio:(float)arg3;
+- (id)_cachedResultForIdentifier:(id)arg1 params:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; })arg2 allowVeryLowQuality:(BOOL)arg3 isLowResResult:(BOOL*)arg4;
+- (id)_cachedResultForIdentifier:(id)arg1 params:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; })arg2 isLowResResult:(BOOL*)arg3;
+- (void)_cropImage:(id)arg1 cacheResult:(BOOL)arg2 isDegraded:(BOOL)arg3 forRequest:(id)arg4 didCallFastBlock:(BOOL)arg5 completionBlock:(id /* block */)arg6;
 - (BOOL)_deliverCachedResultIfPossibleForRequest:(id)arg1 allowDegradedDelivery:(BOOL)arg2 allowVeryLowQuality:(BOOL)arg3 completionBlock:(id /* block */)arg4;
 - (BOOL)_deliverCachedResultIfPossibleForRequest:(id)arg1 allowDegradedDelivery:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (BOOL)_doesChange:(id)arg1 containVisibleChangesToPHAssetWithOID:(id)arg2;
+- (id)_fetchAssetFromFace:(id)arg1;
 - (id)_fetchKeyFaceFromFaceCollection:(id)arg1 error:(id*)arg2;
 - (id)_fetchKeyFaceFromPerson:(id)arg1 error:(id*)arg2;
+- (void)_handleMemoryClearRequest;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageFaceRectForFace:(id)arg1;
-- (void)_requestFaceTileImageFromFace:(id)arg1 fromPHObject:(id)arg2 faceImageRequest:(id)arg3 cacheResult:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (void)_requestFaceTileImageFromFace:(id)arg1 fromPHObject:(id)arg2 imageRequest:(id)arg3 faceImageRequest:(id)arg4 cacheResult:(BOOL)arg5 completionBlock:(id /* block */)arg6 fastDisplayBlock:(id /* block */)arg7;
+- (int)_requestFaceTileImageFromRequest:(id)arg1 withTargetSize:(struct CGSize { float x1; float x2; })arg2 cropFactor:(unsigned int)arg3 round:(BOOL)arg4 cacheResult:(BOOL)arg5 completionBlock:(id /* block */)arg6 fastDisplayBlock:(id /* block */)arg7;
 - (void)_startListeningForChanges;
 - (void)_stopListeningForChanges;
+- (void)addHighPriorityCachedItemIdentifier:(id)arg1 forOwner:(id)arg2;
+- (id)backgroundEntraceObserver;
 - (void)cancelRequest:(int)arg1;
 - (void)clearMemoryCache;
 - (void)dealloc;
 - (id)init;
 - (void)invalidateCacheForPerson:(id)arg1;
+- (BOOL)isActiveRequestWithRequestID:(int)arg1;
 - (BOOL)isConcurrencyEnabled;
 - (id)memoryCache;
 - (id)memoryWarningObserver;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
+- (void)removeHighPriorityCachedItemIdentifier:(id)arg1 forOwner:(id)arg2;
 - (int)requestFaceTileImageFromFace:(id)arg1 withTargetSize:(struct CGSize { float x1; float x2; })arg2 cropFactor:(unsigned int)arg3 round:(BOOL)arg4 cacheResult:(BOOL)arg5 completionBlock:(id /* block */)arg6;
+- (int)requestFaceTileImageFromFace:(id)arg1 withTargetSize:(struct CGSize { float x1; float x2; })arg2 cropFactor:(unsigned int)arg3 round:(BOOL)arg4 cacheResult:(BOOL)arg5 completionBlock:(id /* block */)arg6 fastDisplayBlock:(id /* block */)arg7;
 - (int)requestFaceTileImageFromFace:(id)arg1 withTargetSize:(struct CGSize { float x1; float x2; })arg2 cropFactor:(unsigned int)arg3 round:(BOOL)arg4 completionBlock:(id /* block */)arg5;
 - (int)requestFaceTileImageFromFaceCollection:(id)arg1 withTargetSize:(struct CGSize { float x1; float x2; })arg2 cropFactor:(unsigned int)arg3 round:(BOOL)arg4 cacheResult:(BOOL)arg5 boundFaceRect:(BOOL)arg6 completionBlock:(id /* block */)arg7;
 - (int)requestFaceTileImageFromPerson:(id)arg1 withTargetSize:(struct CGSize { float x1; float x2; })arg2 cropFactor:(unsigned int)arg3 round:(BOOL)arg4 cacheResult:(BOOL)arg5 completionBlock:(id /* block */)arg6;
 - (int)requestFaceTileImageFromPerson:(id)arg1 withTargetSize:(struct CGSize { float x1; float x2; })arg2 cropFactor:(unsigned int)arg3 round:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (int)requestFastFaceTileImageFromRequest:(id)arg1 withTargetSize:(struct CGSize { float x1; float x2; })arg2 cropFactor:(unsigned int)arg3 round:(BOOL)arg4 completionBlock:(id /* block */)arg5 fastDisplayBlock:(id /* block */)arg6;
+- (void)setBackgroundEntraceObserver:(id)arg1;
 - (void)setConcurrencyEnabled:(BOOL)arg1;
 - (void)setMemoryWarningObserver:(id)arg1;
 

@@ -34,7 +34,6 @@
 - (void).cxx_destruct;
 - (id)_deviceInformationForDevice:(id)arg1;
 - (void)_handleGlobalReachabilityChange;
-- (void)_notifyDeviceReachabilityChange:(BOOL)arg1 forDevice:(id)arg2;
 - (void)_sendPingToDevice:(id)arg1;
 - (void)_startActivelyMonitoringDevice:(id)arg1;
 - (void)_stopActivelyMonitoringDevice:(id)arg1;
@@ -57,12 +56,14 @@
 - (id)netMonitor;
 - (void)networkMonitorIsReachable:(id)arg1;
 - (void)networkMonitorIsUnreachable:(id)arg1;
+- (void)notifyDeviceReachabilityChange:(BOOL)arg1 forDevice:(id)arg2;
 - (id)propertyQueue;
 - (id)service;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5 context:(id)arg6;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)setDelegate:(id)arg1;
 - (void)setReachable:(BOOL)arg1;
+- (void)start;
 - (void)startMonitoringDevice:(id)arg1;
 - (void)stopMonitoringDevice:(id)arg1;
 - (void)timerDidFire:(id)arg1;

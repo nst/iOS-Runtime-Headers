@@ -14,5 +14,6 @@
 - (void)messageCenter:(NMSMessageCenter *)arg1 didSuccessfullyDeliverRequestWithIdentifier:(NSString *)arg2 userInfo:(NSDictionary *)arg3;
 - (void)messageCenter:(NMSMessageCenter *)arg1 didSuccessfullySendRequestWithIdentifier:(NSString *)arg2 userInfo:(NSDictionary *)arg3;
 - (void)messageCenter:(NMSMessageCenter *)arg1 failedToSendMessageWithIdentifier:(NSString *)arg2 error:(NSError *)arg3 userInfo:(NSDictionary *)arg4;
+- (void)messageCenter:(NMSMessageCenter *)arg1 nearbyDevicesChanged:(NSArray *)arg2;
 
 @end

@@ -26,7 +26,9 @@
 - (id)clusterState;
 - (id)getClusteredFaceIds;
 - (id)getClustersForClusterIds:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)getDistanceBetweenClustersWithFaceIds:(id)arg1;
 - (id)getDistances:(id)arg1 to:(id)arg2;
+- (id)getGroupedClusteredFaceIdsForFaceId:(id)arg1;
 - (id)getRepresentativenessForFaces:(id)arg1 error:(id*)arg2;
 - (id)initWithOptions:(id)arg1 error:(id*)arg2;
 - (id)matrix;
@@ -37,6 +39,7 @@
 - (BOOL)restoreClusterState:(id)arg1 cacheFolderPath:(id)arg2;
 - (void)setMatrix:(id)arg1;
 - (id)suggestionsForClusterIds:(id)arg1 affinityThreshold:(float)arg2 error:(id*)arg3;
+- (id)suggestionsForClusterIdsWithFlags:(id)arg1 affinityThreshold:(float)arg2 error:(id*)arg3;
 - (BOOL)useClusterObservation;
 
 @end

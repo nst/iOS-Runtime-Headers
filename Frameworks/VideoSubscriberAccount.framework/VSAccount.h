@@ -6,7 +6,7 @@
     NSString * _accountDescription;
     VSAccountStore * _accountStore;
     NSString * _accountTypeDescription;
-    NSString * _authenticationToken;
+    <VSAuthenticationToken> * _authenticationToken;
     NSString * _identityProviderDisplayName;
     NSString * _identityProviderID;
     NSString * _username;
@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *accountDescription;
 @property (nonatomic) VSAccountStore *accountStore;
 @property (nonatomic, copy) NSString *accountTypeDescription;
-@property (nonatomic, copy) NSString *authenticationToken;
+@property (nonatomic, retain) <VSAuthenticationToken> *authenticationToken;
 @property (nonatomic, copy) NSString *identityProviderDisplayName;
 @property (nonatomic, copy) NSString *identityProviderID;
 @property (nonatomic, retain) VSKeychainGenericPassword *keychainItem;

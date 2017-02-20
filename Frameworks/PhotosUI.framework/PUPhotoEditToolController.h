@@ -77,6 +77,7 @@
 - (id)preferredPreviewBackgroundColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
 - (unsigned int)preferredRenderMode;
+- (void)prepareForSave;
 - (void)resetForZoomAndPan;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(float)arg3;

@@ -6,7 +6,7 @@
     <CKDetailsAddGroupNameViewDelegate> * _delegate;
     BOOL  _enabled;
     NSString * _groupName;
-    UITextField * _inputField;
+    CKDetailsViewAddGroupNameViewUITextField * _inputField;
     UILabel * _placeholderLabel;
 }
 
@@ -16,7 +16,7 @@
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (nonatomic, copy) NSString *groupName;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) UITextField *inputField;
+@property (nonatomic, retain) CKDetailsViewAddGroupNameViewUITextField *inputField;
 @property (nonatomic, retain) UILabel *placeholderLabel;
 @property (readonly) Class superclass;
 
@@ -37,6 +37,7 @@
 - (void)setInputField:(id)arg1;
 - (void)setPlaceholderLabel:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 

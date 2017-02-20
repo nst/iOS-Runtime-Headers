@@ -83,6 +83,7 @@
 - (id)otherAccountsWithDefaultValue:(id)arg1;
 - (double)packageGCGracePeriod;
 - (double)packageGCPeriod;
+- (BOOL)pipelineFetchAllChangesRequests;
 - (id)primaryAccountEmailOverride;
 - (id)primaryAccountPasswordOverride;
 - (id)productName;
@@ -139,7 +140,6 @@
 - (double)shareAcceptorRetrievingDialogDelay;
 - (double)shareAcceptorRetrievingDialogMinPeriod;
 - (BOOL)shouldDecryptRecordsBeforeSave;
-- (BOOL)shouldLogProtobufBinary;
 - (BOOL)shouldProfileSQL;
 - (int)sqlBatchCount;
 - (double)sqlBatchTime;

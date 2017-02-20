@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CallKit.framework/CallKit
  */
 
-@interface CXStartCallAction : CXCallAction {
+@interface CXStartCallAction : CXCallAction <CXVideoAspectRatioDescriptor> {
     NSString * _contactIdentifier;
     NSDate * _dateStarted;
     BOOL  _emergency;
@@ -24,11 +24,15 @@
 
 @property (nonatomic, copy) NSString *contactIdentifier;
 @property (nonatomic, copy) NSDate *dateStarted;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (getter=isEmergency, nonatomic) BOOL emergency;
 @property (nonatomic, copy) CXHandle *handle;
+@property (readonly) unsigned int hash;
 @property (nonatomic) struct CGSize { float x1; float x2; } localLandscapeAspectRatio;
 @property (nonatomic) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
 @property (getter=isRelay, nonatomic) BOOL relay;
+@property (readonly) Class superclass;
 @property (setter=setTTYType:, nonatomic) int ttyType;
 @property (getter=isUpgrade, nonatomic) BOOL upgrade;
 @property (getter=isVideo, nonatomic) BOOL video;

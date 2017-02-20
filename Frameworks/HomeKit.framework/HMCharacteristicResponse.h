@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristicResponse : NSObject <HFPrettyDescription> {
+@interface HMCharacteristicResponse : NSObject <HFPrettyDescription, HFStateDumpSerializable> {
     NSError * _error;
     HMCharacteristicRequest * _request;
 }
@@ -25,6 +25,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

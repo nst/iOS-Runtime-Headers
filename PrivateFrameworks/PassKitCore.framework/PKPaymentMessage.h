@@ -4,24 +4,25 @@
 
 @interface PKPaymentMessage : NSObject <NSSecureCoding> {
     BOOL  _allowDeepLink;
-    BOOL  _archiveOnNextTransaction;
     BOOL  _archived;
     NSString * _content;
     NSDate * _expirationDate;
     BOOL  _hasAssociatedPaymentApplication;
     NSString * _identifier;
     NSDate * _messageDate;
+    unsigned int  _messageType;
     NSString * _serviceIdentifier;
 }
 
 @property (nonatomic) BOOL allowDeepLink;
-@property (nonatomic) BOOL archiveOnNextTransaction;
+@property (nonatomic, readonly) BOOL archiveOnNextTransaction;
 @property (getter=isArchived, nonatomic) BOOL archived;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSDate *expirationDate;
 @property (nonatomic) BOOL hasAssociatedPaymentApplication;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSDate *messageDate;
+@property (nonatomic) unsigned int messageType;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
@@ -45,15 +46,16 @@
 - (BOOL)isEqualToPaymentMessage:(id)arg1;
 - (BOOL)isValid;
 - (id)messageDate;
+- (unsigned int)messageType;
 - (id)serviceIdentifier;
 - (void)setAllowDeepLink:(BOOL)arg1;
-- (void)setArchiveOnNextTransaction:(BOOL)arg1;
 - (void)setArchived:(BOOL)arg1;
 - (void)setContent:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
 - (void)setHasAssociatedPaymentApplication:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageDate:(id)arg1;
+- (void)setMessageType:(unsigned int)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 
 @end

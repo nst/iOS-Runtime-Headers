@@ -8,6 +8,7 @@
 - (void)composeChatController:(CKComposeChatController *)arg1 didSelectNewConversation:(CKConversation *)arg2;
 - (BOOL)composeChatControllerCanEditRecipients;
 - (void)composeChatControllerDidCancelComposition:(CKComposeChatController *)arg1;
+- (BOOL)composeChatControllerShouldShowBackButtonViewDuringSendAnimation:(CKComposeChatController *)arg1;
 
 @optional
 

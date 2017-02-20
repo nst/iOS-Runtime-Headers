@@ -10,6 +10,7 @@
     BOOL  _isInDocumentScope;
     BOOL  _isInTrashScope;
     BRCItemID * _itemID;
+    NSString * _oldAppLibraryID;
     unsigned long long  _oldParentFileID;
     BRCItemID * _parentID;
     NSSet * _parentIDs;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) BOOL isInDocumentScope;
 @property (nonatomic, readonly) BOOL isInTrashScope;
 @property (nonatomic, readonly) BRCItemID *itemID;
+@property (nonatomic, readonly) NSString *oldAppLibraryID;
 @property (nonatomic, readonly) unsigned long long oldParentFileID;
 @property (nonatomic, readonly) BRFileObjectID *oldParentFileObjectID;
 @property (nonatomic, readonly) BRFileObjectID *parentFileObjectID;
@@ -52,6 +54,7 @@
 - (id)itemID;
 - (void)merge:(id)arg1;
 - (id)notificationByStrippingSharingInfoIfNeeded;
+- (id)oldAppLibraryID;
 - (unsigned long long)oldParentFileID;
 - (id)oldParentFileObjectID;
 - (id)parentFileObjectID;

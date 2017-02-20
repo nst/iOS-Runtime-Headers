@@ -20,6 +20,7 @@
 - (id)initWithChannelID:(id)arg1 client:(id)arg2;
 - (void)invalidate;
 - (BOOL)scheduleParameterCurve:(unsigned int)arg1 curve:(id)arg2 atTime:(double)arg3 error:(id*)arg4;
+- (BOOL)sendEvents:(id)arg1 atTime:(double)arg2 error:(id*)arg3;
 - (void)setChanID:(unsigned int)arg1;
 - (void)setClient:(id)arg1;
 - (void)setEventBehavior:(unsigned int)arg1;

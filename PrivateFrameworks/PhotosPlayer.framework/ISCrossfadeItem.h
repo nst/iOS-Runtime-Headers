@@ -8,6 +8,14 @@
     int  _firstImageOrientation;
     NSArray * _images;
     unsigned int  _numberOfFrames;
+    struct CGAffineTransform { 
+        float a; 
+        float b; 
+        float c; 
+        float d; 
+        float tx; 
+        float ty; 
+    }  _preferredTransform;
     struct { 
         long long value; 
         int timescale; 
@@ -21,6 +29,7 @@
 @property (nonatomic, readonly) int firstImageOrientation;
 @property (nonatomic, readonly, copy) NSArray *images;
 @property (nonatomic, readonly) unsigned int numberOfFrames;
+@property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } videoDuration;
 
 - (void).cxx_destruct;
@@ -30,6 +39,7 @@
 - (id)images;
 - (id)initWithImages:(id)arg1 firstImageOrientation:(int)arg2 animations:(id)arg3 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4 crossfadeDuration:(double)arg5;
 - (unsigned int)numberOfFrames;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoDuration;
 
 @end

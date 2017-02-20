@@ -71,7 +71,6 @@
 - (void).cxx_destruct;
 - (int)StringAsPermission:(id)arg1;
 - (void)_inflateFieldsFromData:(id)arg1;
-- (id)_permissionAsString;
 - (void)addConflictLoserEtags:(id)arg1;
 - (void)addFields:(id)arg1;
 - (void)addPluginFields:(id)arg1;

@@ -220,6 +220,14 @@
 - (struct HUGridPosition { int x1; int x2; })gridPositionValue;
 - (struct HUGridSize { int x1; int x2; })gridSizeValue;
 
+// Image: /System/Library/PrivateFrameworks/IOAccessoryManager.framework/IOAccessoryManager
+
++ (id)valueWithDockState:(struct DockState { int x1; struct UnsignedWide { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct UnsignedWide { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; unsigned long long x4; unsigned char x5[6]; unsigned long long x6; unsigned char x7; unsigned long long x8; unsigned long long x9; bool x10; bool x11; double x12; double x13; bool x14; bool x15; id x16; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x17; void*x18; bool x19; unsigned int x20; unsigned int x21; })arg1;
++ (id)valueWithEventReportEx:(struct IOAccVoltageDetectEventReportEx { struct IOAccVoltageDetectEventReport { unsigned int x_1_1_1; struct UnsignedWide { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; unsigned char x_1_1_3; unsigned char x_1_1_4; unsigned char x_1_1_5[6]; unsigned char x_1_1_6[6]; unsigned char x_1_1_7[6]; unsigned short x_1_1_8[6]; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned int x_1_1_11; unsigned char x_1_1_12; unsigned char x_1_1_13; unsigned char x_1_1_14; unsigned long long x_1_1_15; } x1; struct UnsignedWide { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; unsigned int x3; })arg1;
+
+- (struct DockState { int x1; struct UnsignedWide { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct UnsignedWide { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; unsigned long long x4; unsigned char x5[6]; unsigned long long x6; unsigned char x7; unsigned long long x8; unsigned long long x9; bool x10; bool x11; double x12; double x13; bool x14; bool x15; id x16; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x17; void*x18; bool x19; unsigned int x20; unsigned int x21; })dockStateValue;
+- (struct IOAccVoltageDetectEventReportEx { struct IOAccVoltageDetectEventReport { unsigned int x_1_1_1; struct UnsignedWide { unsigned int x_2_2_1; unsigned int x_2_2_2; } x_1_1_2; unsigned char x_1_1_3; unsigned char x_1_1_4; unsigned char x_1_1_5[6]; unsigned char x_1_1_6[6]; unsigned char x_1_1_7[6]; unsigned short x_1_1_8[6]; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned int x_1_1_11; unsigned char x_1_1_12; unsigned char x_1_1_13; unsigned char x_1_1_14; unsigned long long x_1_1_15; } x1; struct UnsignedWide { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; unsigned int x3; })eventReportExValue;
+
 // Image: /System/Library/PrivateFrameworks/LinkPresentation.framework/LinkPresentation
 
 + (id)_lp_valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -263,6 +271,14 @@
 - (struct CLLocationCoordinate2D { double x1; double x2; })CLLocationCoordinate2DValue;
 - (struct { struct CLLocationCoordinate2D { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })MKCoordinateRegionValue;
 
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
++ (id)tv_valueWithCellMetrics:(struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; })arg1;
++ (id)tv_valueWithRowMetrics:(struct TVRowMetrics { int x1; float x2; struct { float x_3_1_1; float x_3_1_2; } x3; struct { float x_4_1_1; float x_4_1_2; } x4; struct { float x_5_1_1; float x_5_1_2; } x5; struct { float x_6_1_1; float x_6_1_2; } x6; })arg1;
+
+- (struct TVCellMetrics { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct UIEdgeInsets { float x_2_1_1; float x_2_1_2; float x_2_1_3; float x_2_1_4; } x2; struct UIEdgeInsets { float x_3_1_1; float x_3_1_2; float x_3_1_3; float x_3_1_4; } x3; struct UIEdgeInsets { float x_4_1_1; float x_4_1_2; float x_4_1_3; float x_4_1_4; } x4; struct UIEdgeInsets { float x_5_1_1; float x_5_1_2; float x_5_1_3; float x_5_1_4; } x5; })tv_cellMetricsValue;
+- (struct TVRowMetrics { int x1; float x2; struct { float x_3_1_1; float x_3_1_2; } x3; struct { float x_4_1_1; float x_4_1_2; } x4; struct { float x_5_1_1; float x_5_1_2; } x5; struct { float x_6_1_1; float x_6_1_2; } x6; })tv_rowMetricsValue;
+
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 + (id)_web_valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -273,11 +289,5 @@
 
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
-
-// Image: /usr/lib/libIOAccessoryManager.dylib
-
-+ (id)valueWithDockState:(struct DockState { int x1; struct UnsignedWide { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct UnsignedWide { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; unsigned long long x4; unsigned char x5[6]; bool x6; bool x7; double x8; double x9; bool x10; bool x11; })arg1;
-
-- (struct DockState { int x1; struct UnsignedWide { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; struct UnsignedWide { unsigned int x_3_1_1; unsigned int x_3_1_2; } x3; unsigned long long x4; unsigned char x5[6]; bool x6; bool x7; double x8; double x9; bool x10; bool x11; })dockStateValue;
 
 @end

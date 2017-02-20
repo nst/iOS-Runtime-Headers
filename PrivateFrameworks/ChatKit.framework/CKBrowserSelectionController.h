@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKBrowserSelectionController : CKBrowserViewController <CKBrowserCellDelegate, CKBrowserSelectionFlowLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
+@interface CKBrowserSelectionController : UIViewController <CKBrowserCellDelegate, CKBrowserSelectionFlowLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     UIVisualEffectView * _backgroundView;
     UICollectionView * _collectionView;
     BOOL  _deferringInteractiveMoveUntilGestureChange;

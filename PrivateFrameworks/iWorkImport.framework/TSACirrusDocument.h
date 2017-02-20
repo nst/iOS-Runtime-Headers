@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSACirrusDocument : NSObject <TSADocumentRootDelegate, TSPObjectContextDelegate> {
+@interface TSACirrusDocument : NSObject <TSPObjectContextDelegate> {
     TSPObjectContext * _context;
     NSString * _documentPasswordHint;
     NSURL * _fileURL;
@@ -16,9 +16,7 @@
 @property (nonatomic, readonly) NSUUID *baseUUIDForObjectUUID;
 @property (nonatomic, retain) TSPObjectContext *context;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) NSString *defaultDraftName;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSString *documentCachePath;
 @property (nonatomic, readonly) NSString *documentPasswordHint;
 @property (nonatomic, readonly) TSADocumentRoot *documentRoot;
 @property (nonatomic, readonly) <NSFilePresenter> *filePresenter;
@@ -26,8 +24,6 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL ignoreDocumentSupport;
 @property (nonatomic, readonly) BOOL isDocumentSupportTemporary;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) TSAUbiquitousRefreshQueue *refreshQueue;
 @property (nonatomic, readonly) BOOL skipDocumentUpgrade;
 @property (readonly) Class superclass;
 

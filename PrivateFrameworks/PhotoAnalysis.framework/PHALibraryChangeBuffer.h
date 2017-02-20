@@ -5,30 +5,38 @@
 @interface PHALibraryChangeBuffer : NSObject {
     NSMutableDictionary * _assetIdentifierToFlagsMap;
     NSMutableArray * _momentChanges;
+    NSMutableArray * _personChanges;
     NSMutableSet * _representedAssetJobScenarios;
 }
 
 @property (retain) NSMutableDictionary *assetIdentifierToFlagsMap;
 @property (retain) NSMutableArray *momentChanges;
+@property (retain) NSMutableArray *personChanges;
 @property (retain) NSMutableSet *representedAssetJobScenarios;
+@property (readonly) unsigned int uniqueChangeObjectCount;
 
 - (void).cxx_destruct;
 - (void)addMomentChange:(id)arg1;
+- (void)addPersonChange:(id)arg1;
 - (id)assetIdentifierToFlagsMap;
 - (id)changedAssetIdentifiers;
 - (void)drain;
 - (BOOL)hasAssetChanges;
 - (BOOL)hasChanges;
 - (BOOL)hasMomentChanges;
+- (BOOL)hasPersonChanges;
 - (id)init;
 - (void)mergeFlags:(int)arg1 forAssetWithIdentifier:(id)arg2;
 - (void)mergeRepresentedJobScenario:(unsigned int)arg1;
 - (id)momentChanges;
+- (id)personChanges;
 - (id)representedAssetJobScenarios;
 - (BOOL)representsUserForegroundJobScenario;
 - (void)setAssetIdentifierToFlagsMap:(id)arg1;
 - (void)setMomentChanges:(id)arg1;
+- (void)setPersonChanges:(id)arg1;
 - (void)setRepresentedAssetJobScenarios:(id)arg1;
 - (id)snapshotAndDrain;
+- (unsigned int)uniqueChangeObjectCount;
 
 @end

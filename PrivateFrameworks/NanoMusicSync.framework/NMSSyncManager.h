@@ -13,6 +13,7 @@
     ATSession * _observedSession;
     BOOL  _syncPending;
     BOOL  _syncing;
+    BOOL  _waitingForActiveSyncSessionIdentifierChange;
 }
 
 @property (nonatomic, retain) id activeSyncSessionIdentifier;
@@ -39,6 +40,7 @@
 - (unsigned int)_estimatedArtworkSizeInBytes;
 - (unsigned int)_estimatedAssetPlaylistAggregateItemSizeInBytes;
 - (unsigned int)_estimatedAssetPlaylistAverageItemSizeInBytes;
+- (void)_handleSyncPreferencesDidChangeNotification;
 - (void)_invokeOnMainThread:(id /* block */)arg1;
 - (BOOL)_isPendingAssetPlaylistSync;
 - (unsigned int)_numberOfAssetPlaylistItems;

@@ -5,6 +5,7 @@
 @interface CAMCameraViewController : UIViewController <CAMCaptureResultDelegate, CAMPersistenceResultDelegate, CAMViewfinderReviewButtonSource, NSCoding, NSSecureCoding> {
     NSObject<OS_dispatch_queue> * __resultProcessingQueue;
     NSMutableDictionary * __resultQueuePendingLivePhotoProperties;
+    NSMutableDictionary * __resultQueuePendingPortraitPhotoProperties;
     CAMThumbnailGenerator * __resultQueueThumbnailGenerator;
     CAMReviewButton * __reviewButton;
     BOOL  _automaticallyManagesCameraSession;
@@ -28,6 +29,7 @@
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_resultProcessingQueue;
 @property (nonatomic, readonly) NSMutableDictionary *_resultQueuePendingLivePhotoProperties;
+@property (nonatomic, readonly) NSMutableDictionary *_resultQueuePendingPortraitPhotoProperties;
 @property (nonatomic, readonly) CAMThumbnailGenerator *_resultQueueThumbnailGenerator;
 @property (nonatomic, readonly) CAMReviewButton *_reviewButton;
 @property (nonatomic) BOOL automaticallyAdjustsApplicationIdleTimer;
@@ -51,6 +53,7 @@
 @property (nonatomic, readonly) CAMLocationController *locationController;
 @property (nonatomic, readonly) CAMMotionController *motionController;
 @property (nonatomic, readonly) CAMNebulaDaemonProxyManager *nebulaDaemonProxyManager;
+@property (getter=isPerformingTileTransition, nonatomic) BOOL performingTileTransition;
 @property (nonatomic) unsigned int persistenceBehavior;
 @property (nonatomic, readonly) CAMPersistenceController *persistenceController;
 @property (nonatomic, readonly) CAMPowerController *powerController;
@@ -81,10 +84,13 @@
 - (id)_resultProcessingQueue;
 - (void)_resultQueueHandleFallbackPhotoForPairingIdentifierIfNecessary:(id)arg1;
 - (id)_resultQueuePendingLivePhotoProperties;
+- (id)_resultQueuePendingPortraitPhotoProperties;
 - (id)_resultQueueProcessLivePhotoForPairingIdentifier:(id)arg1 combinedProperties:(out id*)arg2 error:(id*)arg3;
+- (void)_resultQueueProcessSingleCapturePortraitResultForPersistenceUUID:(id)arg1;
 - (id)_resultQueueSafeImageFromSurface:(void*)arg1 imageOrientation:(int)arg2;
 - (id)_resultQueueThumbnailGenerator;
 - (BOOL)_resultQueueUpdatePendingLivePhotoForPairingIdentifier:(id)arg1 withProperties:(id)arg2;
+- (void)_resultQueueUpdateSingleCapturePortraitPhotoForPersistenceUUID:(id)arg1 properties:(id)arg2 captureError:(id)arg3;
 - (id)_reviewButton;
 - (unsigned int)_viewfinderPersistenceBehaviorForCapturePersistenceBehavior:(unsigned int)arg1;
 - (BOOL)automaticallyAdjustsApplicationIdleTimer;
@@ -111,6 +117,7 @@
 - (id)irisVideoController;
 - (BOOL)isDisablingAdditionalCaptures;
 - (BOOL)isDisablingMultipleCaptureFeatures;
+- (BOOL)isPerformingTileTransition;
 - (BOOL)isRecording;
 - (id)keepAliveController;
 - (int)livePhotoMode;
@@ -139,6 +146,7 @@
 - (void)setFlashMode:(int)arg1;
 - (void)setHDRMode:(int)arg1;
 - (void)setLivePhotoMode:(int)arg1;
+- (void)setPerformingTileTransition:(BOOL)arg1;
 - (void)setPersistenceBehavior:(unsigned int)arg1;
 - (void)setPresentationDelegate:(id)arg1;
 - (void)setTimerDuration:(int)arg1;

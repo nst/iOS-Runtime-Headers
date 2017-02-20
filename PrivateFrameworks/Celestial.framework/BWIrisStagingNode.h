@@ -59,6 +59,7 @@
         long long epoch; 
     }  _masterMovieStartPTS;
     NSURL * _masterMovieURL;
+    BWMotionDataPreserver * _motionDataPreserver;
     int  _numEODMessagesReceived;
     struct { 
         long long value; 
@@ -98,7 +99,6 @@
 - (void)_enqueueIrisRequest:(id)arg1;
 - (BOOL)_fillInRefMovieStartAndTrimTimesForStillImageTimesBeforeTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (BOOL)_fillInStartAndTrimTimesForMasterMovieWithInfo:(id)arg1;
-- (void)_forceConstantFramerateAdjustmentIfSampleBufferIsFromSISBracketSequence:(struct opaqueCMSampleBuffer { }*)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_hostPTSForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (unsigned int)_indexOfBufferBeforeOrEqualToHostPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 inputIndex:(unsigned int)arg2 tolerance:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (unsigned int)_indexOfBufferBeforeOrEqualToPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 inputIndex:(unsigned int)arg2;

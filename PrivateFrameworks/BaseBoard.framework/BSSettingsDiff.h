@@ -19,6 +19,7 @@
 + (id)_newHashTableWithInitialCapacity:(unsigned int)arg1;
 + (id)diffFromSettings:(id)arg1 toSettings:(id)arg2;
 
+- (void).cxx_destruct;
 - (unsigned int)_diffTypesForSetting:(unsigned int)arg1;
 - (void)_enumerateSettingsInTable:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)_initWithChanges:(id)arg1 flagRemovals:(id)arg2 objectRemovals:(id)arg3;

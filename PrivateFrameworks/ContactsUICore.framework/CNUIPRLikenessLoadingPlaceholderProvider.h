@@ -15,6 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (struct CGImage { }*)_cnui_imageForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (id)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)_cnui_likenessForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (unsigned int)_cnui_likenessType;

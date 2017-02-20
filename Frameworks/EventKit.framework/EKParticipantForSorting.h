@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKParticipantForSorting : NSObject {
+@interface EKParticipantForSorting : NSObject <NSCopying> {
     NSString * _cachedDisplayName;
     NSString * _firstName;
     BOOL  _isEmail;
@@ -10,16 +10,29 @@
     EKParticipant * _participant;
 }
 
+@property (nonatomic, copy) NSString *cachedDisplayName;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic) BOOL isEmail;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic) EKParticipant *participant;
+
 + (id)contactStore;
++ (id)participantForSortingWithEKParticipant:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)cachedDisplayName;
 - (int)compare:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)displayName;
 - (id)firstName;
-- (id)initWithEKParticipant:(id)arg1;
 - (BOOL)isEmail;
 - (id)lastName;
 - (id)participant;
+- (void)setCachedDisplayName:(id)arg1;
+- (void)setFirstName:(id)arg1;
+- (void)setIsEmail:(BOOL)arg1;
+- (void)setLastName:(id)arg1;
+- (void)setParticipant:(id)arg1;
 
 @end

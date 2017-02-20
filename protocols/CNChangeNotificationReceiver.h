@@ -5,8 +5,11 @@
 
 @required
 
+- (double)externalNotificationCoalescingDelay;
 - (BOOL)forwardsSelfGeneratedDistributedSaveNotifications;
+- (void)receiveExternalNotificationName:(NSString *)arg1;
 - (void)receiveNotificationName:(NSString *)arg1 fromSender:(id <NSObject>)arg2 saveIdentifier:(NSString *)arg3 userInfo:(NSDictionary *)arg4 isFromExternalProcess:(BOOL)arg5;
+- (void)setExternalNotificationCoalescingDelay:(double)arg1;
 - (void)setForwardsSelfGeneratedDistributedSaveNotifications:(BOOL)arg1;
 
 @end

@@ -6,6 +6,7 @@
 
 @property (nonatomic, retain) NSString *DNSServers;
 @property (nonatomic, retain) NSString *clientCorrelationKey;
+@property (nonatomic, retain) NSString *clientError;
 @property (nonatomic) double connectionEndTime;
 @property (nonatomic) BOOL connectionReused;
 @property (nonatomic) unsigned int connectionStartNStatRXBytes;
@@ -32,8 +33,6 @@
 @property (setter=setXPSamplingPercentageUsers:, nonatomic) double xpSamplingPercentageUsers;
 @property (setter=setXPSessionDuration:, nonatomic) double xpSessionDuration;
 
-+ (id)_bagPerformanceValues;
-+ (id)_bagValueForKey:(id)arg1;
 + (double)_randomDouble;
 + (void)_setTimingMetricsWindowStartTime:(id)arg1;
 + (id)_timingMetricsWindowStartTime;
@@ -43,6 +42,7 @@
 
 - (id)DNSServers;
 - (id)clientCorrelationKey;
+- (id)clientError;
 - (double)connectionEndTime;
 - (BOOL)connectionReused;
 - (unsigned int)connectionStartNStatRXBytes;
@@ -66,6 +66,7 @@
 - (double)responseStartTime;
 - (double)secureConnectionStartTime;
 - (void)setClientCorrelationKey:(id)arg1;
+- (void)setClientError:(id)arg1;
 - (void)setConnectionEndTime:(double)arg1;
 - (void)setConnectionReused:(BOOL)arg1;
 - (void)setConnectionStartNStatRXBytes:(unsigned int)arg1;

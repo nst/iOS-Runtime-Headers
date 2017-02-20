@@ -22,8 +22,10 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)availableBookings;
 - (int)code;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAvailableBookings:(id)arg1 code:(int)arg2 userActivity:(id)arg3;
 - (id)initWithBackingStore:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSITunesStore : IKJSObject <IKJSITunesStore, JSExport> {
+@interface IKJSITunesStore : IKJSObject <IKJSITunesStore, NSObject, _IKJSITunesStore, _IKJSITunesStoreProxy> {
     struct os_unfair_lock_s { 
         unsigned int _os_unfair_lock_opaque; 
     }  _bagOperationLock;
@@ -21,10 +21,14 @@
 @property (nonatomic, readonly) NSDictionary *accountInfo;
 @property (nonatomic, retain) id cookie;
 @property (nonatomic, retain) NSString *cookieURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (getter=isManagedAppleID, nonatomic, readonly) BOOL managedAppleID;
 @property (nonatomic, readonly) NSString *networkConnectionType;
 @property (nonatomic) ISLoadURLBagOperation *pendingBagOperation;
 @property (nonatomic, retain) NSString *storefront;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *userAgent;
 
 + (id)_URLBagContext;
@@ -40,6 +44,7 @@
 - (void)_updateBag:(BOOL)arg1;
 - (void)_updateWithBag:(id)arg1;
 - (id)accountInfo;
+- (id)asPrivateIKJSITunesStore;
 - (void)authenticate:(id)arg1 :(id)arg2;
 - (void)clearCookies;
 - (id)cookie;

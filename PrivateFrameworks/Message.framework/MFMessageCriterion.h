@@ -78,6 +78,7 @@
 - (BOOL)_evaluateAddressHistoryCriterion:(id)arg1;
 - (BOOL)_evaluateAttachmentCriterion:(id)arg1;
 - (BOOL)_evaluateCompoundCriterion:(id)arg1;
+- (BOOL)_evaluateConversationIDCriterion:(id)arg1;
 - (BOOL)_evaluateDateCriterion:(id)arg1;
 - (id)_evaluateFTSCriterionWithIndex:(id)arg1 mailboxIDs:(id)arg2;
 - (BOOL)_evaluateFlagCriterion:(id)arg1;

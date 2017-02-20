@@ -15,6 +15,8 @@
     double  _nextRestingCaloriesSampleTime;
     double  _nextStepsSampleTime;
     double  _nextUVIndexSampleTime;
+    HDProfile * _profile;
+    HDDataOriginProvenance * _provenance;
     _HDDemoDataActivityWorkoutState * _workoutState;
 }
 
@@ -30,6 +32,8 @@
 @property (nonatomic) double nextRestingCaloriesSampleTime;
 @property (nonatomic) double nextStepsSampleTime;
 @property (nonatomic) double nextUVIndexSampleTime;
+@property (nonatomic) HDProfile *profile;
+@property (nonatomic, retain) HDDataOriginProvenance *provenance;
 @property (nonatomic, retain) _HDDemoDataActivityWorkoutState *workoutState;
 
 - (void).cxx_destruct;
@@ -69,6 +73,8 @@
 - (double)nextRestingCaloriesSampleTime;
 - (double)nextStepsSampleTime;
 - (double)nextUVIndexSampleTime;
+- (id)profile;
+- (id)provenance;
 - (id)restingCaloriesForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (void)setLastActivityCache:(id)arg1;
 - (void)setLastUVExposure:(double)arg1;
@@ -82,6 +88,9 @@
 - (void)setNextRestingCaloriesSampleTime:(double)arg1;
 - (void)setNextStepsSampleTime:(double)arg1;
 - (void)setNextUVIndexSampleTime:(double)arg1;
+- (void)setProfile:(id)arg1;
+- (void)setProfile:(id)arg1 provenance:(id)arg2;
+- (void)setProvenance:(id)arg1;
 - (void)setWorkoutState:(id)arg1;
 - (void)setupWithDemoDataGenerator:(id)arg1;
 - (id)stepsForDemoPerson:(id)arg1 atTime:(double)arg2;

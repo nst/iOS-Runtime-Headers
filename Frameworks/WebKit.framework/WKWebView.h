@@ -214,6 +214,7 @@
 @property (nonatomic, readonly) NSString *_suggestedFilenameForDisplayedPDF;
 @property (nonatomic, readonly) BOOL _supportsTextZoom;
 @property (setter=_setTextZoomFactor:, nonatomic) double _textZoomFactor;
+@property (nonatomic, readonly) NSArray *_uiTextSelectionRectViews;
 @property (nonatomic, readonly) NSURL *_unreachableURL;
 @property (nonatomic, readonly) NSString *_userAgent;
 @property (setter=_setUserContentExtensionsEnabled:, nonatomic) BOOL _userContentExtensionsEnabled;
@@ -284,11 +285,11 @@
 - (void)_didFinishLoadForMainFrame;
 - (void)_didFinishLoadingDataForCustomContentProviderWithSuggestedFilename:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1 data:(id)arg2;
 - (void)_didFinishScrolling;
-- (void)_didFirstVisuallyNonEmptyLayoutForMainFrame;
 - (void)_didInvokeUIScrollViewDelegateCallback;
 - (void)_didRelaunchProcess;
 - (void)_didSameDocumentNavigationForMainFrame:(int)arg1;
 - (void)_didScroll;
+- (void)_disableBackForwardSnapshotVolatilityForTesting;
 - (void)_doAfterNextPresentationUpdate:(id /* block */)arg1;
 - (void)_dynamicViewportUpdateChangedTargetToScale:(double)arg1 position:(struct CGPoint { float x1; float x2; })arg2 nextValidLayerTreeTransactionID:(unsigned long long)arg3;
 - (void)_enclosingScrollerScrollingEnded:(id)arg1;
@@ -385,7 +386,6 @@
 - (void)_setHistoryDelegate:(id)arg1;
 - (void)_setInputDelegate:(id)arg1;
 - (void)_setInterfaceOrientationOverride:(int)arg1;
-- (void)_setIsBlankBeforeFirstNonEmptyLayout:(BOOL)arg1;
 - (void)_setLayoutMode:(unsigned int)arg1;
 - (void)_setMaximumUnobscuredSizeOverride:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setMinimumLayoutSizeOverride:(struct CGSize { float x1; float x2; })arg1;
@@ -410,6 +410,7 @@
 - (struct PassRefPtr<WebKit::ViewSnapshot> { struct ViewSnapshot {} *x1; })_takeViewSnapshot;
 - (float)_targetContentZoomScaleForRect:(const struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 currentScale:(double)arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5;
 - (double)_textZoomFactor;
+- (id)_uiTextSelectionRectViews;
 - (id)_unreachableURL;
 - (void)_updateContentRectsWithState:(BOOL)arg1;
 - (void)_updateScrollViewBackground;

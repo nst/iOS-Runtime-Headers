@@ -28,7 +28,9 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (BOOL)emailAddressEditable;
 - (BOOL)emailAddressFieldShouldBeDisplayed;
 - (void)encodeWithCoder:(id)arg1;

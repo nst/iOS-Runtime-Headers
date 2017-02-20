@@ -3,22 +3,22 @@
  */
 
 @interface AFConnection : NSObject {
+    int  _activeRequestType;
     int  _activeRequestUsefulUserResultType;
     unsigned int  _audioSessionID;
     NSArray * _cachedBulletins;
     unsigned int  _clientStateIsInSync;
     NSXPCConnection * _connection;
     <AFAssistantUIService> * _delegate;
-    BOOL  _hasActiveRequest;
     BOOL  _hasActiveTimeout;
     unsigned int  _hasOutstandingRequest;
     unsigned int  _isCapturingSpeech;
     NSError * _lastRetryError;
-    void * _levelsSharedMem;
+    NSData * _levelsSharedData;
     NSObject<OS_dispatch_source> * _levelsTimer;
     NSString * _outstandingRequestClass;
     NSMutableDictionary * _replyHandlerForAceId;
-    unsigned long  _sharedMemSize;
+    NSString * _requestIdString;
     unsigned int  _shouldSpeak;
     NSObject<OS_dispatch_group> * _speechCallbackGroup;
     <AFSpeechDelegate> * _speechDelegate;
@@ -68,6 +68,7 @@
 - (void)_setAudioSessionID:(unsigned int)arg1;
 - (void)_setLevelsWithSharedMem:(id)arg1;
 - (void)_setShouldSpeak:(BOOL)arg1;
+- (void)_speechRecordingDidFailWithError:(id)arg1;
 - (void)_startRequestWithInfo:(id)arg1 analyticsEventProvider:(id /* block */)arg2;
 - (void)_stopLevelUpdates;
 - (void)_tellDelegateAudioSessionDidBeginInterruption;

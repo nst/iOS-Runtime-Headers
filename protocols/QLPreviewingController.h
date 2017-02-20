@@ -11,6 +11,7 @@
 
 - (BOOL)canEnterFullScreen;
 - (BOOL)canPinchToDismiss;
+- (BOOL)canRotate;
 - (BOOL)canShowToolBar;
 - (BOOL)canSwipeToDismiss;
 - (void)previewBecameFullScreen:(BOOL)arg1 animated:(BOOL)arg2;

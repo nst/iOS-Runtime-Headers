@@ -5,7 +5,7 @@
 @interface VSCredentialEntryViewController_iOS : ACUIViewController <VSCredentialEntryViewController> {
     BOOL  _cancellationAllowed;
     NSArray * _credentialEntryFieldSpecifiers;
-    <VSCredentialEntryViewControllerDelegate> * _delegate;
+    <VSAuthenticationViewControllerDelegate> * _delegate;
     UIProgressHUD * _deletingAccountHUD;
     float  _keyboardHeight;
     id  _keyboardWillHideObserver;
@@ -19,7 +19,7 @@
 @property (getter=isCancellationAllowed, nonatomic) BOOL cancellationAllowed;
 @property (nonatomic, retain) NSArray *credentialEntryFieldSpecifiers;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <VSCredentialEntryViewControllerDelegate> *delegate;
+@property (nonatomic) <VSAuthenticationViewControllerDelegate> *delegate;
 @property (nonatomic, retain) UIProgressHUD *deletingAccountHUD;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -31,7 +31,7 @@
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredLogoSize;
 @property (readonly) Class superclass;
 @property (nonatomic) id textFieldTextDidChangeObserver;
-@property (nonatomic, retain) VSCredentialEntryViewModel *viewModel;
+@property (nonatomic, readonly) VSViewModel *viewModel;
 
 - (void).cxx_destruct;
 - (id)_credentialEntryFieldForSpecifier:(id)arg1;
@@ -44,7 +44,9 @@
 - (void)_showDeletingAccountHUD;
 - (void)_showNavigationBarButtons;
 - (id)_specifierForTextField:(id)arg1;
+- (void)_startObservingViewModel:(id)arg1;
 - (void)_startValidation;
+- (void)_stopObservingViewModel:(id)arg1;
 - (void)_stopValidationAndShowButtons:(BOOL)arg1;
 - (id)_textFieldForSpecifier:(id)arg1;
 - (id)_textForSpecifier:(id)arg1;

@@ -198,6 +198,10 @@
 - (BOOL)getRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 ofAttribute:(id)arg2;
 - (BOOL)getRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 ofAttribute:(id)arg2 withValue:(id)arg3;
 
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithWidth:(float)arg1 lines:(unsigned int)arg2;
+
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
 - (id)_UIKBStringWideAttributeValueForKey:(id)arg1;

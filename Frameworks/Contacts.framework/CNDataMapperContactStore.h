@@ -24,12 +24,14 @@
 - (id)batchEnumeratorForFetchRequest:(id)arg1;
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id*)arg2;
 - (BOOL)clearChangeHistoryForClient:(id)arg1 toSequenceNumber:(int)arg2 error:(id*)arg3;
+- (id)contactIdentifierWithMatchingDictionary:(id)arg1;
 - (id)contactIdentifiersForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
 - (id)contactsInContainerWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
 - (id)containersMatchingPredicate:(id)arg1 error:(id*)arg2;
 - (void)dealloc;
 - (id)defaultContainerIdentifier;
+- (id)descriptorForRequiredKeysForMatchingDictionary;
 - (BOOL)enumerateContactsAndMatchInfoWithFetchRequest:(id)arg1 error:(id*)arg2 usingBlock:(id /* block */)arg3;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (BOOL)executeSaveRequest:(id)arg1 error:(id*)arg2;
@@ -43,6 +45,7 @@
 - (id)initWithEnvironment:(id)arg1;
 - (BOOL)isValidSaveRequest:(id)arg1 error:(id*)arg2;
 - (id)mapper;
+- (id)matchingDictionaryForContact:(id)arg1;
 - (id)meContactIdentifierWithError:(id*)arg1;
 - (id)membersOfGroupWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id*)arg2;

@@ -173,6 +173,7 @@
 - (struct CGSize { float x1; float x2; })imageDimensionsWithData:(id)arg1;
 - (unsigned int)imageScalingFlags;
 - (BOOL)isCalendarFile;
+- (BOOL)isCameraRollCompatibleVideo;
 - (BOOL)isContentCompressed;
 - (BOOL)isContentOpenable;
 - (BOOL)isDisplayableByWebKit;

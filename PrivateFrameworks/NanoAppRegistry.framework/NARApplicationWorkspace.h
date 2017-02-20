@@ -15,6 +15,7 @@
 - (void)_loadConnectionIfNeeded;
 - (id)_workspaceServiceWithErrorHandler:(id /* block */)arg1;
 - (id)connection;
+- (void)dealloc;
 - (void)getWorkspaceInfoIncludingHiddenApps:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)getWorkspaceInfoWithCompletion:(id /* block */)arg1;
 - (id)init;

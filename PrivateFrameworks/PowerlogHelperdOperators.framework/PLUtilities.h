@@ -23,6 +23,7 @@
 + (void)dispatchSyncWithoutDeadlockOnQueue:(id)arg1 withBlock:(id /* block */)arg2;
 + (unsigned long long)dispatchTimeInSeconds:(double)arg1;
 + (void)exitWithReason:(short)arg1;
++ (void)exitWithReasonSync:(short)arg1;
 + (id)extractDateStringAndUUIDStringFromFilePath:(id)arg1;
 + (BOOL)gasGaugeEnabled;
 + (int)getCameraTypeOfDevice;
@@ -54,6 +55,7 @@
 + (BOOL)isPowerlogHelperd;
 + (BOOL)isSiriEnabled;
 + (BOOL)isSoCClass:(int)arg1;
++ (BOOL)isTaskMode;
 + (BOOL)isTorchClass:(int)arg1;
 + (BOOL)isValidString:(id)arg1;
 + (BOOL)isVrrSupported;

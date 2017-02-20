@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPModelLibraryRequest : MPModelRequest <MPMediaLibraryEntityTranslatingContext, MPModelRequestDetailedKeepLocalStatusRequesting> {
+@interface MPModelLibraryRequest : MPModelRequest <MPMediaLibraryEntityTranslatingContext, MPModelPlaybackRequesting, MPModelRequestDetailedKeepLocalStatusRequesting> {
     NSArray * _allowedItemIdentifiers;
     struct _NSRange { 
         unsigned int location; 
@@ -23,6 +23,7 @@
 @property (nonatomic, retain) MPMediaLibrary *mediaLibrary;
 @property (getter=isMultiQuery, nonatomic, readonly) BOOL multiQuery;
 @property (nonatomic, copy) NSArray *scopedContainers;
+@property (nonatomic) BOOL shouldExcludeNonShuffleItems;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL wantsDetailedKeepLocalRequestableResponse;
 
@@ -37,13 +38,16 @@
 - (BOOL)isMultiQuery;
 - (id)mediaLibrary;
 - (id)newOperationWithResponseHandler:(id /* block */)arg1;
+- (void)performWithResponseHandler:(id /* block */)arg1;
 - (id)scopedContainers;
 - (void)setAllowedItemIdentifiers:(id)arg1;
 - (void)setContentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setFilteringOptions:(unsigned int)arg1;
 - (void)setMediaLibrary:(id)arg1;
 - (void)setScopedContainers:(id)arg1;
+- (void)setShouldExcludeNonShuffleItems:(BOOL)arg1;
 - (void)setWantsDetailedKeepLocalRequestableResponse:(BOOL)arg1;
+- (BOOL)shouldExcludeNonShuffleItems;
 - (BOOL)wantsDetailedKeepLocalRequestableResponse;
 
 @end

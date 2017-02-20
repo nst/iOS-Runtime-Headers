@@ -10,5 +10,6 @@
 - (struct CGPoint { float x1; float x2; })numberPadKeyPrimaryTextOffset;
 - (struct CGPoint { float x1; float x2; })numberPadKeySecondaryTextOffset;
 - (struct CGPoint { float x1; float x2; })numberPadVBarSecondaryTextOffset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })wideShadowPaddleInsets;
 
 @end

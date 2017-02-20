@@ -8,6 +8,8 @@
 + (id)_localizedStateForValue:(id)arg1 characteristicType:(id)arg2;
 + (id)_presentationTypeForType:(id)arg1;
 + (id)_secureStateMap;
++ (id)_sensorMap;
++ (BOOL)isSensorDetectedCharacteristic:(id)arg1;
 + (id)localizedStateForCharacteristic:(id)arg1;
 + (id)presentationValueForValue:(id)arg1 type:(id)arg2;
 + (id)trimLeadingAndTailingSpacesInName:(id)arg1;

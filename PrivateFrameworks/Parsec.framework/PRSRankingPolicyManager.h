@@ -7,8 +7,11 @@
 + (id)getSharedRankingPolicyManager;
 
 - (void)computeNewFeaturesForProperty:(id)arg1 query:(id)arg2 qr_prop_query_norm_min_ordered_span:(double*)arg3 qr_prop_query_norm_min_unordered_span:(double*)arg4 qr_query_min_pair_dist_in_title:(double*)arg5 prefix_match_norm_count:(double*)arg6;
+- (void)computeNewFeaturesForProperty:(id)arg1 query:(id)arg2 qr_prop_query_norm_min_ordered_span:(double*)arg3 qr_prop_query_norm_min_unordered_span:(double*)arg4 qr_query_min_pair_dist_in_title:(double*)arg5 prefix_match_norm_count:(double*)arg6 ordered_first_term_position:(double*)arg7 prefixMatch:(BOOL)arg8;
+- (void)computeNewFeaturesForProperty:(id)arg1 query:(id)arg2 qr_prop_query_norm_min_ordered_span:(double*)arg3 qr_prop_query_norm_min_unordered_span:(double*)arg4 qr_query_min_pair_dist_in_title:(double*)arg5 prefix_match_norm_count:(double*)arg6 prefixMatch:(BOOL)arg7;
 - (id)cookSQFOnClientWithServerProbabilities:(id)arg1 qiCEPValues:(id)arg2 localResultOrder:(id)arg3 poorTextMatchCategories:(id)arg4 minimumBagCEP:(double)arg5 cook_sqf_topdown:(BOOL)arg6 cook_sqf_fallback_qi_cep:(BOOL)arg7;
+- (double)cosineSimularityUsingWordToMatchesInCorpusMap:(id)arg1 andField:(id)arg2 withTotalCorpusCount:(double)arg3 useInverseDocFrequency:(BOOL)arg4;
 - (BOOL)doesOrderedSpanExistWithStartingIndex:(unsigned int)arg1 nextArray:(id)arg2 arrayOfIndexArrays:(id)arg3 level:(unsigned int)arg4 currentOrderedSpan:(int*)arg5;
-- (void)minimumAnyOrderSpanWithStartingIndex:(int)arg1 nextArray:(id)arg2 arrayOfIndexArrays:(id)arg3 level:(unsigned int)arg4 currentAnyOrderSpan:(int)arg5 minimumSpan:(int*)arg6 minimumDistancePair:(int*)arg7 isReversed:(BOOL)arg8;
+- (void)minimumAnyOrderSpanWithStartingIndex:(int)arg1 nextArray:(id)arg2 arrayOfIndexArrays:(id)arg3 level:(unsigned int)arg4 currentAnyOrderSpan:(int)arg5 minimumSpan:(int*)arg6 minimumDistancePair:(int*)arg7 currentMinimumIndex:(int)arg8 currentMaximumIndex:(int)arg9;
 
 @end

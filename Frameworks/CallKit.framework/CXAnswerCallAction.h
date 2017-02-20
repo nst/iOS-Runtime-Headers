@@ -15,8 +15,6 @@
 }
 
 @property (nonatomic, copy) NSDate *dateConnected;
-@property (nonatomic) struct CGSize { float x1; float x2; } localLandscapeAspectRatio;
-@property (nonatomic) struct CGSize { float x1; float x2; } localPortraitAspectRatio;
 
 + (BOOL)supportsSecureCoding;
 + (double)timeout;

@@ -47,7 +47,6 @@
 
 - (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 - (void)addListValue:(id)arg1;
 - (id)assetValue;
 - (id)bytesValue;

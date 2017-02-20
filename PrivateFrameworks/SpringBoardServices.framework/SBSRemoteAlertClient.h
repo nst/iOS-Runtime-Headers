@@ -22,7 +22,7 @@
 - (id)handleObserverQueue;
 - (id)initWithIdentifier:(id)arg1 calloutQueue:(id)arg2;
 - (id)queue;
-- (void)queue_activateRemoteAlertForHandle:(id)arg1 withOptions:(id)arg2;
+- (void)queue_activateRemoteAlertForHandle:(id)arg1 withContext:(id)arg2;
 - (void)queue_invalidateRemoteAlertForHandle:(id)arg1;
 - (void)queue_lookupHandlesForRemoteAlertWithConfiguration:(id)arg1 creatingIfNone:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (id)queue_newHandleForRemoteAlertWithConfiguration:(id)arg1;

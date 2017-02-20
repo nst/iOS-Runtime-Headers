@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic) int algorithm;
-@property (nonatomic, retain) <_HKStreamingDestination> *destination;
+@property (nonatomic) <_HKStreamingDestination> *destination;
 @property (nonatomic, retain) NSMutableData *destinationBuffer;
 @property (nonatomic) int operation;
 @property (nonatomic, readonly) NSMutableData *sinkContent;

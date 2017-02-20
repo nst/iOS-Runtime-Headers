@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUINightShiftSectionController : CCUIControlCenterSectionViewController {
+@interface CCUINightShiftSectionController : CCUIControlCenterSectionViewController <CCUIControlCenterButtonDelegate> {
     CBBlueLightClient * _blueLightReductionClient;
     struct { 
         BOOL active; 
@@ -21,7 +21,13 @@
         } schedule; 
         unsigned long disableFlags; 
     }  _currentStatus;
+    UIAlertController * _presentedAlertController;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_defaultFontTight;
 + (id)_displayName;
@@ -46,7 +52,10 @@
 - (void)_updateLayoutForSizeCategoryChange;
 - (void)_updateState;
 - (BOOL)_uses24HourTimeForLocale:(id)arg1;
+- (void)buttonTapped:(id)arg1;
+- (BOOL)dismissModalFullScreenIfNeeded;
 - (BOOL)enabled;
+- (BOOL)isInternal;
 - (id)sectionIdentifier;
 - (id)statusUpdate;
 - (id)view;

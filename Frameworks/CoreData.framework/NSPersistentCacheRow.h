@@ -43,6 +43,7 @@
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
 - (double)timestampForProperty:(id)arg1;
+- (unsigned int)toManyOffsetForProperty:(id)arg1;
 - (void)updateMissingRelationshipCachesFromOriginal:(id)arg1;
 - (unsigned long long)version;
 

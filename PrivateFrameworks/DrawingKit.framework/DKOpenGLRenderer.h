@@ -33,7 +33,10 @@
     void mCanvasOffset;
     void mCanvasSize;
     unsigned int  mColorProg;
+    int  mColorProgColorUniformLocation;
+    int  mColorProgModelViewProjectionUniformLocation;
     unsigned int  mCompositeProg;
+    int  mCompositeProgViewportUniformLocation;
     struct vector<Vertex, std::__1::allocator<Vertex> > { 
         struct Vertex {} *__begin_; 
         struct Vertex {} *__end_; 
@@ -52,6 +55,7 @@
         } size; 
     }  mDirtyCanvasRegion;
     unsigned int  mDryPaintProg;
+    int  mDryPaintProgXCoordOffsetUniformLocation;
     struct vector<std::__1::pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))>, std::__1::allocator<std::__1::pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))> > >="__begin_"^{pair<float __attribute__((ext_vector_type(2))), float __attribute__((ext_vector_type(2)))> {}  mNonCollisionSegments;
     struct vector<Page, std::__1::allocator<Page> > { 
         struct Page {} *__begin_; 
@@ -63,6 +67,7 @@
     unsigned int  mPaperTex;
     float  mParticleLifespan;
     unsigned int  mTextureProg;
+    int  mTextureProgModelViewProjectionUniformLocation;
     float  mTime;
     float  mTimeWetBecameDirty;
     unsigned int  mVbo;
@@ -77,11 +82,13 @@
         unsigned int location; 
         unsigned int length; 
     }  mVertexRange;
-    unsigned int  mWetPaintBufferDB;
     unsigned int  mWetPaintBufferFBO;
     void mWetPaintBufferSize;
     unsigned int  mWetPaintBufferT;
     unsigned int  mWetPaintProg;
+    int  mWetPaintProgLifespanUniformLocation;
+    int  mWetPaintProgSubtractEndPointsOnlyUniformLocation;
+    int  mWetPaintProgTimeUniformLocation;
     void mWinSize;
 }
 
@@ -135,7 +142,7 @@
 - (void)redrawEntireDrawingImmediatelyWithLayeredBlending:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })regionWithVertices:(struct vector<Vertex, std::__1::allocator<Vertex> > { struct Vertex {} *x1; struct Vertex {} *x2; struct __compressed_pair<Vertex *, std::__1::allocator<Vertex> > { struct Vertex {} *x_3_1_1; } x3; })arg1 withInflationAmount:(float)arg2;
 - (void)removeVertexHistoryElement;
-- (void)renderToComposite;
+- (void)renderToComposite:(BOOL)arg1;
 - (void)renderToDryPaintBuffer;
 - (void)renderToWetPaintBufferWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)resetRendererState;
@@ -150,6 +157,7 @@
 - (void)setNumPages:(int)arg1;
 - (void)setUndoEnabled:(BOOL)arg1;
 - (id)snapshot;
+- (void)teardown;
 - (void)undo;
 - (void)update;
 - (void)updateDryCycleIncludingComposite:(BOOL)arg1;

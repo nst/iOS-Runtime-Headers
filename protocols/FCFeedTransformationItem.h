@@ -7,6 +7,7 @@
 
 - (NSString *)articleID;
 - (unsigned long long)articleRecordModificationDateMilliseconds;
+- (BOOL)canBePurchased;
 - (NSString *)clusterID;
 - (unsigned long long)contentType;
 - (unsigned long long)feedHalfLifeMilliseconds;

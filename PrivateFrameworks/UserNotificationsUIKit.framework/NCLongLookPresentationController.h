@@ -47,6 +47,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (getter=_keyboardFrame, setter=_setKeyboardFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } keyboardFrame;
 @property (nonatomic) <NCLongLookPresentationControllerDelegate> *longLookPresentationControllerDelegate;
 @property (getter=isPresenting, nonatomic) BOOL presenting;
 @property (readonly) Class superclass;
@@ -65,17 +66,19 @@
 - (id)_animationFactoryForLongLookPresentation:(BOOL)arg1;
 - (void)_configureDismissFeedbackIfNecessary;
 - (void)_configureDismissLabelIfNecessary;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetForPresentedViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsetWithPresentedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContainerViewWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForPresentedLongLookView:(struct UIView { Class x1; }*)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_dismissLabelContainerViewFrameForPresentedViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTransitionViewInPresentationSuperview:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfPresentedViewInContainerViewWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_initialBackgroundBlurSettings;
 - (BOOL)_isTransitionAnimated;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_keyboardFrame;
 - (void)_popDismissLabel;
 - (id)_presentedAnimatableBlurringView;
 - (id)_presentedBackgroundBlurSettings;
 - (id)_presentedNotificationViewController;
+- (void)_setKeyboardFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_shouldMakePresentedViewControllerFirstResponder;
 - (BOOL)_shouldPresentInCurrentContext;
 - (BOOL)_shouldRespectDefinesPresentationContext;

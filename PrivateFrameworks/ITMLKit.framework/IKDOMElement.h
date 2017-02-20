@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMElement : IKDOMNode <IKJDOMParsingElement, IKJSDOMElement, IKJSDOMParentNode, IKStyleableElement, JSExport> {
+@interface IKDOMElement : IKDOMNode <IKJDOMParsingElement, IKJSDOMElement, IKJSDOMParentNode, IKStyleableElement, NSObject, _IKJSDOMElement, _IKJSDOMElementProxy> {
+    NSDictionary * _cachedAttributes;
+    NSArray * _cachedChildElements;
     NSMutableDictionary * _metadataDict;
     <IKStyleableElement> * parentStyleableElement;
     IKViewElementStyleComposer * styleComposer;
@@ -11,23 +13,33 @@
 @property (nonatomic, readonly, copy) IKDOMNamedNodeMap *attributes;
 @property (nonatomic, readonly) unsigned long childElementCount;
 @property (nonatomic, readonly) IKDOMHTMLCollection *children;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, copy) NSString *elementName;
 @property (nonatomic, readonly) IKDOMElement *firstElementChild;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *innerHTML;
 @property (nonatomic, readonly) IKDOMElement *lastElementChild;
 @property (nonatomic, retain) NSString *outerHTML;
 @property (nonatomic, readonly) <IKStyleableElement> *parentStyleableElement;
 @property (nonatomic, retain) IKViewElementStyleComposer *styleComposer;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) NSString *tagName;
 
 - (void).cxx_destruct;
 - (id)_attributes;
+- (id)asPrivateIKJSDOMElement;
 - (id)attributes;
 - (id)childElementByTagName:(id)arg1;
 - (unsigned long)childElementCount;
 - (id)childElements;
 - (id)childElementsByTagName:(id)arg1;
 - (id)children;
+- (void)childrenUpdatedWithUpdatedChildNodes:(id)arg1 notify:(BOOL)arg2;
+- (id)domb_dataBinding;
+- (void)domb_setDataBinding:(id)arg1;
+- (id)dse_appDataSet;
+- (void)dse_setAppDataSet:(id)arg1;
 - (id)elementName;
 - (id)firstElementChild;
 - (id)getAttribute:(id)arg1;

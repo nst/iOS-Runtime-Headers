@@ -46,6 +46,7 @@
         int floor; 
         unsigned int integrity; 
         int referenceFrame; 
+        int rawReferenceFrame; 
     }  fLocation;
     NSString * fLocationEventType;
     double  fLocationRequestTimeout;

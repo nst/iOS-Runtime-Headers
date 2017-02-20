@@ -25,6 +25,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_availableTextRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forEditing:(BOOL)arg2;
 - (void)_becomeFirstResponder;
 - (BOOL)_becomeFirstResponderWhenPossible;
+- (int)_blurEffectStyle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bookmarkViewRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_clearBackgroundViews;
 - (id)_clearButtonImageForState:(unsigned int)arg1;
@@ -45,11 +46,13 @@
 - (void)_setPreventSelectionViewActivation:(BOOL)arg1;
 - (void)_setSearchTextOffetValue:(id)arg1;
 - (BOOL)_shouldCenterPlaceholder;
+- (BOOL)_shouldDetermineInterfaceStyleTextColor;
 - (BOOL)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_suffixFrame;
 - (int)_suffixLabelTextAlignment;
 - (Class)_systemBackgroundViewClass;
 - (int)_textInputSource;
+- (id)_tvDefaultTextColor;
 - (void)_updateBackgroundView:(id)arg1 withStyle:(unsigned int)arg2 filter:(id)arg3;
 - (void)_updateBackgroundViewsAnimated:(BOOL)arg1;
 - (BOOL)canBecomeFirstResponder;

@@ -9,6 +9,7 @@
     HDPluginManager * _pluginManager;
     <HDSyncEngine> * _syncEngine;
     HDAchievementAssetManager * achievementAssetManager;
+    HDAchievementDefinitionAlertManager * achievementDefinitionAlertManager;
     <HDNanoAlertSuppressionService> * alertSuppressionService;
     HDAuthorizationManager * authorizationManager;
     HDCurrentActivitySummaryHelper * currentActivitySummaryHelper;
@@ -25,6 +26,7 @@
 }
 
 @property (nonatomic, retain) HDAchievementAssetManager *achievementAssetManager;
+@property (nonatomic, retain) HDAchievementDefinitionAlertManager *achievementDefinitionAlertManager;
 @property (nonatomic, retain) <HDNanoAlertSuppressionService> *alertSuppressionService;
 @property (nonatomic, readonly) HDAuthorizationManager *authorizationManager;
 @property (retain) HDBackgroundTaskScheduler *backgroundTaskScheduler;
@@ -58,6 +60,7 @@
 
 - (void).cxx_destruct;
 - (id)achievementAssetManager;
+- (id)achievementDefinitionAlertManager;
 - (id)alertSuppressionService;
 - (id)authorizationManager;
 - (id)backgroundTaskScheduler;
@@ -96,6 +99,7 @@
 - (id)routineGateway;
 - (id)serviceConnectionManager;
 - (void)setAchievementAssetManager:(id)arg1;
+- (void)setAchievementDefinitionAlertManager:(id)arg1;
 - (void)setAlertSuppressionService:(id)arg1;
 - (void)setBackgroundTaskScheduler:(id)arg1;
 - (void)setContentProtectionManager:(id)arg1;

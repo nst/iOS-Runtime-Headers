@@ -5,11 +5,12 @@
 
 @required
 
+- (NSDictionary *)activities;
 - (_TtC13CoreKnowledge16CKKnowledgeStore *)backingStore;
 - (BOOL)deleteActivityWithIdentifier:(NSString *)arg1 error:(id*)arg2;
 - (NSDictionary *)recordedActivities;
 - (BOOL)setFirstSeen:(NSDate *)arg1 forActivityId:(NSString *)arg2 error:(id*)arg3;
-- (BOOL)setFrequency:(long)arg1 forActivityId:(NSString *)arg2 error:(id*)arg3;
+- (BOOL)setFrequency:(int)arg1 forActivityId:(NSString *)arg2 error:(id*)arg3;
 - (BOOL)setLastDuration:(double)arg1 forActivityId:(NSString *)arg2 error:(id*)arg3;
 - (BOOL)setLastSeen:(NSDate *)arg1 forActivityId:(NSString *)arg2 error:(id*)arg3;
 - (BOOL)setTotalDuration:(double)arg1 forActivityId:(NSString *)arg2 error:(id*)arg3;

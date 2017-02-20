@@ -8,18 +8,22 @@
     NSNumber * _nameRecordID;
     NSString * _phoneNumber;
     NSString * _phoneNumberContactIdentifier;
+    NSString * _phoneNumberLabel;
     NSNumber * _phoneNumberPropertyID;
     NSString * _relationship;
 }
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *nameContactIdentifier;
-@property (nonatomic, copy) NSNumber *nameRecordID;
+@property (nonatomic, retain) NSNumber *nameRecordID;
 @property (nonatomic, copy) NSString *phoneNumber;
 @property (nonatomic, copy) NSString *phoneNumberContactIdentifier;
-@property (nonatomic, copy) NSNumber *phoneNumberPropertyID;
+@property (nonatomic, copy) NSString *phoneNumberLabel;
+@property (nonatomic, retain) NSNumber *phoneNumberPropertyID;
 @property (nonatomic, copy) NSString *relationship;
 
++ (id)emergencyContactWithContact:(id)arg1 property:(id)arg2;
++ (id)nameForContact:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -27,14 +31,17 @@
 - (void)_migrateToContactsWithAddressBook:(void*)arg1;
 - (void)_migrateToSchemaVersion:(int)arg1 withAddressBook:(void*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (id)nameContactIdentifier;
 - (id)nameRecordID;
 - (id)phoneNumber;
 - (id)phoneNumberContactIdentifier;
+- (id)phoneNumberLabel;
 - (id)phoneNumberPropertyID;
 - (id)relationship;
 - (void)setName:(id)arg1;
@@ -42,6 +49,7 @@
 - (void)setNameRecordID:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setPhoneNumberContactIdentifier:(id)arg1;
+- (void)setPhoneNumberLabel:(id)arg1;
 - (void)setPhoneNumberPropertyID:(id)arg1;
 - (void)setRelationship:(id)arg1;
 

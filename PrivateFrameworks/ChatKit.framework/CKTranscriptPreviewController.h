@@ -55,6 +55,7 @@
 - (void)transcriptCollectionViewControllerChatItemsDidChange:(id)arg1;
 - (void)transcriptCollectionViewControllerDidInsertAssociatedChatItem:(id)arg1;
 - (void)transcriptCollectionViewControllerDidInset:(id)arg1;
+- (BOOL)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(id)arg1;
 - (void)transcriptCollectionViewControllerPlayingAudioDidChange:(id)arg1;
 - (void)transcriptCollectionViewControllerReportSpamButtonTapped:(id)arg1;
 - (BOOL)transcriptCollectionViewControllerShouldLayoutFullscreenEffects:(id)arg1;

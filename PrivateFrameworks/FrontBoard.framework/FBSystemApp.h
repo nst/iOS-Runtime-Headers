@@ -16,6 +16,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
+
 + (Class)_applicationInfoClass;
 + (void)initializeSystemServices;
 + (void)postFrontBoardInitializationHook;
@@ -71,5 +73,11 @@
 - (void)unregisterHost:(id)arg1;
 - (BOOL)wasBootedDark;
 - (BOOL)willObserveLayersManually;
+
+// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXFrontBoardUtils.framework/AXFrontBoardUtils
+
+- (void)_accessibilityAddRecentlyActivatedBundleIdFromSwitcher:(id)arg1;
+- (id)_accessibilityRecentlyActivatedApplicationBundleIdentifiers;
+- (void)_accessibilityRemoveRecentlyActivatedBundleIdFromSwitcher:(id)arg1;
 
 @end

@@ -67,6 +67,7 @@
 - (void)_setTitle:(id)arg1 animated:(BOOL)arg2;
 - (void)_transferFinishedNotification:(id)arg1;
 - (void)_transferRestoredNotification:(id)arg1;
+- (void)_updateForNewPreferredService;
 - (void)_updateNavigationButtons;
 - (void)_updateTitleAnimated:(BOOL)arg1;
 - (void)_willSendComposition:(id)arg1 inConversation:(id)arg2;

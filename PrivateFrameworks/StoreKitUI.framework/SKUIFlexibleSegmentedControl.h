@@ -12,6 +12,7 @@
     int  _previousSelectedSegmentIndex;
     UISegmentedControl * _segmentedControl;
     int  _selectedSegmentIndex;
+    BOOL  _sizesSegmentsToFitWidth;
 }
 
 @property (nonatomic) <SKUIFlexibleSegmentedControlDelegate> *delegate;
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) int moreListIndex;
 @property (nonatomic, copy) NSString *moreListTitle;
 @property (nonatomic) int selectedSegmentIndex;
+@property (nonatomic) BOOL sizesSegmentsToFitWidth;
 
 - (void).cxx_destruct;
 - (void)_configureSegmentedControl:(id)arg1 withTitles:(id)arg2 boundingSize:(struct CGSize { float x1; float x2; })arg3;
@@ -44,6 +46,8 @@
 - (void)setMaximumNumberOfVisibleItems:(int)arg1;
 - (void)setMoreListTitle:(id)arg1;
 - (void)setSelectedSegmentIndex:(int)arg1;
+- (void)setSizesSegmentsToFitWidth:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)sizesSegmentsToFitWidth;
 
 @end

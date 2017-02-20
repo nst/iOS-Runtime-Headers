@@ -12,7 +12,7 @@
 
 @property (nonatomic) BOOL allHappenToday;
 @property (nonatomic) BOOL allHappenTomorrow;
-@property (nonatomic, retain) NSDate *time;
+@property (nonatomic, copy) NSDate *time;
 
 - (id /* block */).cxx_destruct;
 - (BOOL)allHappenToday;

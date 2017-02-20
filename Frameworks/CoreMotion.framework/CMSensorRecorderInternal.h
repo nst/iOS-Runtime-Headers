@@ -8,15 +8,17 @@
     NSObject<OS_dispatch_source> * fWatchdogTimer;
 }
 
-- (id)_newAccelMetaUsingMessage:(const char *)arg1 withIdentifier:(unsigned long long)arg2;
+- (id)_newMetaUsingMessage:(const char *)arg1 withIdentifier:(unsigned long long)arg2 forType:(int)arg3;
 - (void)_startWatchdogCheckins;
 - (void)_stopWatchdogCheckins;
 - (void)dealloc;
 - (id)init;
-- (id)newAccelDataByID:(unsigned long long)arg1 metaID:(unsigned long long)arg2;
-- (id)newAccelMetaByID:(unsigned long long)arg1;
-- (id)newAccelMetaFrom:(double)arg1 to:(double)arg2;
-- (id)newAccelMetaSinceID:(unsigned long long)arg1;
+- (id)newDataByID:(unsigned long long)arg1 metaID:(unsigned long long)arg2 forType:(int)arg3;
+- (id)newMetaByID:(unsigned long long)arg1 forType:(int)arg2;
+- (id)newMetaFrom:(double)arg1 to:(double)arg2 forType:(int)arg3;
+- (id)newMetaSinceID:(unsigned long long)arg1 forType:(int)arg2;
+- (BOOL)setSensorSampleRate:(unsigned int)arg1 forType:(int)arg2;
 - (void)teardown;
+- (BOOL)writeSensorDataToFile:(id)arg1 from:(double)arg2 to:(double)arg3 forType:(int)arg4;
 
 @end

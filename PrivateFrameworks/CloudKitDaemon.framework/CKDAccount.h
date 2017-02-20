@@ -11,6 +11,7 @@
     BOOL  _haveWarnedAboutServerPreferredPushEnvironment;
     BOOL  _isAnonymousAccount;
     BOOL  _isUnitTestingAccount;
+    NSString * _lastFailedCloudKitAuthToken;
 }
 
 @property (nonatomic, retain) ACAccountType *acAccountType;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *authTokenQueue;
 @property (nonatomic, readonly) CKDBackingAccount *backingAccount;
 @property (nonatomic, readonly) BOOL canAccessAccount;
+@property (nonatomic, readonly) BOOL canAuthWithCloudKit;
 @property (nonatomic, readonly) BOOL cloudKitIsEnabled;
 @property (nonatomic, readonly) BOOL cloudPhotosIsEnabled;
 @property (nonatomic) CKDClientContext *context;
@@ -34,6 +36,7 @@
 @property (nonatomic) BOOL isAnonymousAccount;
 @property (nonatomic, readonly) BOOL isFakeAccount;
 @property (nonatomic) BOOL isUnitTestingAccount;
+@property (nonatomic, copy) NSString *lastFailedCloudKitAuthToken;
 @property (nonatomic, readonly) NSString *primaryEmail;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *username;
@@ -58,6 +61,7 @@
 - (id)baseURLForServerType:(int)arg1 partitionType:(int)arg2;
 - (id)bundleID;
 - (BOOL)canAccessAccount;
+- (BOOL)canAuthWithCloudKit;
 - (void)cloudKitAuthTokenWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)cloudKitIsEnabled;
 - (BOOL)cloudPhotosIsEnabled;
@@ -89,6 +93,7 @@
 - (BOOL)isFakeAccount;
 - (BOOL)isUnitTestingAccount;
 - (id)languageCode;
+- (id)lastFailedCloudKitAuthToken;
 - (id)mescalSession;
 - (void)noteFailedNetworkRequest;
 - (void)noteFailedProtocolRequest;
@@ -107,6 +112,7 @@
 - (void)setHaveWarnedAboutServerPreferredPushEnvironment:(BOOL)arg1;
 - (void)setIsAnonymousAccount:(BOOL)arg1;
 - (void)setIsUnitTestingAccount:(BOOL)arg1;
+- (void)setLastFailedCloudKitAuthToken:(id)arg1;
 - (BOOL)shouldFailAllTasks;
 - (id)trafficContainerIdentifier;
 - (id)username;

@@ -13,6 +13,7 @@
     BOOL  _cep_sort_of_tophits;
     double  _cep_top_hit_threshold;
     <PRSSessionController> * _client;
+    BOOL  _collectAnonymousData;
     NSDictionary * _correctionDict;
     NSURL * _correctionDictURL;
     NSArray * _enabledDomains;
@@ -41,6 +42,7 @@
 @property (nonatomic) BOOL cep_sort_of_tophits;
 @property (nonatomic) double cep_top_hit_threshold;
 @property <PRSSessionController> *client;
+@property (nonatomic) BOOL collectAnonymousData;
 @property (retain) NSDictionary *correctionDict;
 @property (retain) NSURL *correctionDictURL;
 @property (nonatomic, retain) NSArray *enabledDomains;
@@ -72,6 +74,7 @@
 - (BOOL)cep_sort_of_tophits;
 - (double)cep_top_hit_threshold;
 - (id)client;
+- (BOOL)collectAnonymousData;
 - (id)correctionDict;
 - (id)correctionDictURL;
 - (void)deactivate;
@@ -104,6 +107,7 @@
 - (void)setCep_sort_of_tophits:(BOOL)arg1;
 - (void)setCep_top_hit_threshold:(double)arg1;
 - (void)setClient:(id)arg1;
+- (void)setCollectAnonymousData:(BOOL)arg1;
 - (void)setCorrectionDict:(id)arg1;
 - (void)setCorrectionDictURL:(id)arg1;
 - (void)setEnabledDomains:(id)arg1;

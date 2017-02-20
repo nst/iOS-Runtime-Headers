@@ -10,7 +10,6 @@
 @property (nonatomic, readonly, copy) id /* block */ cancelAction;
 @property (nonatomic, readonly, copy) id /* block */ clearAction;
 @property (nonatomic, readonly, copy) id /* block */ closeAction;
-@property (nonatomic, readonly) BOOL cropThumbnail;
 @property (nonatomic, readonly, copy) NSDate *date;
 @property (getter=isDateAllDay, nonatomic, readonly) BOOL dateAllDay;
 @property (readonly, copy) NSString *debugDescription;
@@ -37,7 +36,6 @@
 - (id /* block */)cancelAction;
 - (id /* block */)clearAction;
 - (id /* block */)closeAction;
-- (BOOL)cropThumbnail;
 - (id)date;
 - (id /* block */)defaultAction;
 - (id)delegate;

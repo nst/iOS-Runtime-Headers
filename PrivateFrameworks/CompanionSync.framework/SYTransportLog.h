@@ -5,9 +5,11 @@
 @interface SYTransportLog : NSObject {
     NSString * _facility;
     NSObject<OS_os_log> * _log;
+    NSObject<OS_os_log> * _oslog;
 }
 
 @property (nonatomic, copy) NSString *facility;
+@property (nonatomic, readonly) NSObject<OS_os_log> *oslog;
 
 + (id)sharedInstance;
 
@@ -18,6 +20,7 @@
 - (id)init;
 - (void)logMessage:(id)arg1;
 - (void)logMessage:(id)arg1 args:(void*)arg2;
+- (id)oslog;
 - (void)setFacility:(id)arg1;
 
 @end

@@ -6,6 +6,7 @@
     TUAudioDeviceController * _audioDeviceController;
     TUCallServicesInterface * _callServicesInterface;
     CNContactStore * _contactStore;
+    id /* block */  _disconnectCallPreflight;
     struct CGSize { 
         float width; 
         float height; 
@@ -42,6 +43,7 @@
 @property (nonatomic, readonly) TUCall *currentVideoCall;
 @property (nonatomic, readonly) unsigned int currentVideoCallCount;
 @property (nonatomic, readonly, copy) NSArray *currentVideoCalls;
+@property (nonatomic, copy) id /* block */ disconnectCallPreflight;
 @property (nonatomic, readonly, copy) NSArray *displayedCalls;
 @property (getter=isEndAndAnswerAllowed, nonatomic, readonly) BOOL endAndAnswerAllowed;
 @property (nonatomic, readonly) BOOL hasCurrentAudioCalls;
@@ -74,6 +76,7 @@
 - (id)_dialWithRequest:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)_existingCallsAllowDialRequest:(id)arg1 allowVoiceWithData:(BOOL)arg2;
 - (BOOL)_isCallingAvailableOnSecondaryDeviceWithRelayCallingAvailability:(int)arg1 isProviderAvailable:(BOOL)arg2 isRelayAllowed:(BOOL)arg3 shouldUseRelay:(BOOL*)arg4;
+- (void)_preflightDisconnectForCalls:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)activeVideoCall;
 - (BOOL)allCallsAreOfService:(int)arg1;
 - (BOOL)allCallsPassTest:(id /* block */)arg1;
@@ -134,6 +137,7 @@
 - (void)disconnectAllCalls;
 - (void)disconnectCall:(id)arg1;
 - (void)disconnectCall:(id)arg1 withReason:(int)arg2;
+- (id /* block */)disconnectCallPreflight;
 - (void)disconnectCurrentCallAndActivateHeld;
 - (id)displayedCall;
 - (id)displayedCallFromCalls:(id)arg1;
@@ -186,6 +190,7 @@
 - (void)setAudioDeviceController:(id)arg1;
 - (void)setCallServicesInterface:(id)arg1;
 - (void)setContactStore:(id)arg1;
+- (void)setDisconnectCallPreflight:(id /* block */)arg1;
 - (void)setLocalLandscapeAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (void)setLocalPortraitAspectRatio:(struct CGSize { float x1; float x2; })arg1;
 - (void)setProviderManager:(id)arg1;
@@ -194,6 +199,7 @@
 - (void)swapCalls;
 - (void)ungroupCall:(id)arg1;
 - (void)unholdCall:(id)arg1;
+- (void)updateCall:(id)arg1 withAnswerRequest:(id)arg2;
 - (id)videoCallWithStatus:(int)arg1;
 
 @end

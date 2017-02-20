@@ -4,15 +4,25 @@
 
 @interface SFMediaInfoCardSection : SFCardSection {
     NSArray * _details;
+    BOOL  _isMediaContainer;
     SFMediaItem * _mediaItem;
     NSArray * _offers;
     SFActionItem * _playAction;
+    NSString * _watchListButtonLabel;
+    NSString * _watchListConfirmationText;
+    NSString * _watchListContinuationText;
+    NSString * _watchListIdentifier;
 }
 
 @property (nonatomic, copy) NSArray *details;
+@property (nonatomic) BOOL isMediaContainer;
 @property (nonatomic, retain) SFMediaItem *mediaItem;
 @property (nonatomic, copy) NSArray *offers;
 @property (nonatomic, retain) SFActionItem *playAction;
+@property (nonatomic, copy) NSString *watchListButtonLabel;
+@property (nonatomic, copy) NSString *watchListConfirmationText;
+@property (nonatomic, copy) NSString *watchListContinuationText;
+@property (nonatomic, copy) NSString *watchListIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
@@ -20,12 +30,22 @@
 - (id)details;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isMediaContainer;
 - (id)mediaItem;
 - (id)offers;
 - (id)playAction;
 - (void)setDetails:(id)arg1;
+- (void)setIsMediaContainer:(BOOL)arg1;
 - (void)setMediaItem:(id)arg1;
 - (void)setOffers:(id)arg1;
 - (void)setPlayAction:(id)arg1;
+- (void)setWatchListButtonLabel:(id)arg1;
+- (void)setWatchListConfirmationText:(id)arg1;
+- (void)setWatchListContinuationText:(id)arg1;
+- (void)setWatchListIdentifier:(id)arg1;
+- (id)watchListButtonLabel;
+- (id)watchListConfirmationText;
+- (id)watchListContinuationText;
+- (id)watchListIdentifier;
 
 @end

@@ -34,6 +34,7 @@
 - (id)URL;
 - (struct MDLAABB { })_bounds;
 - (void)_commonInit;
+- (void)_conformVertexBuffers:(id)arg1 error:(id*)arg2;
 - (void)addObject:(id)arg1;
 - (struct { })boundingBox;
 - (struct { })boundingBoxAtTime:(double)arg1;
@@ -43,6 +44,7 @@
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (double)endTime;
+- (void)enumerateChildObjectsOfClass:(Class)arg1 usingBlock:(id /* block */)arg2 stopPointer:(BOOL*)arg3;
 - (BOOL)exportAssetToURL:(id)arg1;
 - (BOOL)exportAssetToURL:(id)arg1 error:(id*)arg2;
 - (double)frameInterval;

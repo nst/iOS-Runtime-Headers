@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) unsigned int count;
 @property (nonatomic, readonly) int groupingType;
 @property (nonatomic, readonly) NSArray *items;
+@property (getter=wlk_jsPropertyStrings, nonatomic, readonly) NSSet *jsPropertyStrings;
 @property (nonatomic, readonly) unsigned int mediaTypes;
 @property (nonatomic, readonly) MPMediaItem *representativeItem;
 
@@ -60,5 +61,11 @@
 + (void)_MPU_getContentItemIdentifierCollectionItemType:(unsigned int*)arg1 storeAdamIDProperty:(id*)arg2 forGroupingType:(int)arg3;
 
 - (id)MPU_contentItemIdentifierCollection;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
+
++ (id)wlk_JSgenericProperties;
+
+- (id)wlk_jsPropertyStrings;
 
 @end

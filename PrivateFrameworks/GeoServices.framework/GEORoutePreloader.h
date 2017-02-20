@@ -3,7 +3,6 @@
  */
 
 @interface GEORoutePreloader : NSObject <GEOResourceManifestTileGroupObserver, GEORoutePreloadSession> {
-    BOOL  _allStationTilesBatchMade;
     id /* block */  _batteryHandler;
     double  _currentRoutePosition;
     <GEORoutePreloadSessionDelegate> * _delegate;

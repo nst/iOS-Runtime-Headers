@@ -22,7 +22,7 @@
 - (BOOL)_synchronizeSyncEntityClass:(Class)arg1 session:(id)arg2 predicate:(id)arg3 startAnchor:(long long*)arg4 finalAnchor:(long long)arg5 postTransactionBlocks:(id)arg6 error:(id*)arg7;
 - (int)_validateAnchorsForSyncChange:(id)arg1 store:(id)arg2 error:(id*)arg3;
 - (BOOL)_validateSequenceNumberForSyncChange:(id)arg1 store:(id)arg2 error:(id*)arg3;
-- (BOOL)applyAcknowledgedAnchorMap:(id)arg1 forStore:(id)arg2 resetNext:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)applyAcknowledgedAnchorMap:(id)arg1 forStore:(id)arg2 resetNext:(BOOL)arg3 resetInvalid:(BOOL)arg4 error:(id*)arg5;
 - (BOOL)applySyncChange:(id)arg1 forStore:(id)arg2 error:(id*)arg3;
 - (BOOL)applySyncObjectCollection:(id)arg1 forStore:(id)arg2 error:(id*)arg3;
 - (BOOL)getReceivedAnchorMap:(id)arg1 forStore:(id)arg2 error:(id*)arg3;

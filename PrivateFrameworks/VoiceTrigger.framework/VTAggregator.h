@@ -3,6 +3,7 @@
  */
 
 @interface VTAggregator : NSObject {
+    NSString * _assetString;
     double  _cumulativeDowntime;
     double  _cumulativeUptime;
     unsigned int  _currentState;
@@ -17,15 +18,24 @@
 + (id)sharedAggregator;
 
 - (void).cxx_destruct;
+- (void)_addValueForScalarKey:(id)arg1 withValue:(long long)arg2;
 - (void)_logUptime;
+- (id)_makeKey:(id)arg1;
+- (id)_makeKeyWithLanguageAndAssetString:(id)arg1;
+- (id)_makeKeyWithLanguageCode:(id)arg1;
+- (void)_pushValueForDistributionKey:(id)arg1 withValue:(double)arg2;
 - (void)cumulativeUptime:(id*)arg1 cumulativeDowntime:(id*)arg2 reset:(BOOL)arg3;
 - (id)init;
 - (void)logActivation;
 - (void)logFalseWakeUp:(BOOL)arg1;
-- (void)logRecognizerTimedOut:(id)arg1;
+- (void)logProfileUpdateNumDeletedUttsPHS:(int)arg1;
+- (void)logProfileUpdateNumDeletedUttsStrategy:(int)arg1;
+- (void)logProfileUpdateScoreMSE:(double)arg1;
+- (void)logRecognizerTimedOut;
 - (void)logSecondPassResult:(BOOL)arg1;
 - (void)logTimeVoiceTriggerTransitionsToState:(unsigned int)arg1;
 - (void)logZeroRunAudio:(int)arg1;
+- (void)setAssetString:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
 
 @end

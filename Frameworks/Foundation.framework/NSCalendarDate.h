@@ -63,4 +63,13 @@
 - (id)ekmsuidGMTDateToDateInTimeZone:(id)arg1;
 - (id)ekmsuidStringForYearMonthDay;
 
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
++ (id)combinedDateWithYMDFrom:(id)arg1 HMSFrom:(id)arg2 componentDatesTimezone:(id)arg3;
+
+- (void)getGregorianDate:(struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; }*)arg1;
+- (id)gmtDateToDateInTimeZone:(id)arg1;
+- (id)nearestMidnight;
+- (id)tzDateToDateInGMT:(id)arg1;
+
 @end

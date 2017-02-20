@@ -8,7 +8,6 @@
     NSHashTable * _changeObservers;
     NSObject<OS_dispatch_queue> * _internalQueue;
     NSObject<OS_dispatch_queue> * _observerCallbackQueue;
-    NSMutableArray * _topGalleryFeaturedComplicationApps;
 }
 
 @property (nonatomic, retain) NSMutableArray *allGalleryFeaturedComplicationApps;
@@ -20,11 +19,12 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *observerCallbackQueue;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) NSMutableArray *topGalleryFeaturedComplicationApps;
+@property (nonatomic, readonly) NSArray *topGalleryFeaturedComplicationApps;
 
 + (id)sharedAppLibrary;
 
 - (void).cxx_destruct;
+- (void)_iterateObserversWithBlock:(id /* block */)arg1;
 - (void)_notifyAppAdded:(id)arg1;
 - (void)_notifyAppIconUpdated:(id)arg1;
 - (void)_notifyAppRemoved:(id)arg1;
@@ -49,7 +49,6 @@
 - (void)setChangeObservers:(id)arg1;
 - (void)setInternalQueue:(id)arg1;
 - (void)setObserverCallbackQueue:(id)arg1;
-- (void)setTopGalleryFeaturedComplicationApps:(id)arg1;
 - (id)topGalleryFeaturedComplicationApps;
 
 @end

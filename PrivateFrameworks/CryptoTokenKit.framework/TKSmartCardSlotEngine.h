@@ -11,7 +11,7 @@
     BOOL  _idlePowerDownPending;
     unsigned int  _lastId;
     NSXPCListener * _listener;
-    struct __asl_object_s { } * _log;
+    NSObject<OS_os_log> * _log;
     int  _maxInputLength;
     int  _maxOutputLength;
     NSString * _name;
@@ -61,7 +61,7 @@
 - (id)init;
 - (void)leaveSession:(id)arg1 reply:(id /* block */)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)logMessage:(id)arg1 bytes:(id)arg2;
+- (void)logWithBytes:(id)arg1 handler:(id /* block */)arg2;
 - (int)maxInputLength;
 - (int)maxOutputLength;
 - (id)name;

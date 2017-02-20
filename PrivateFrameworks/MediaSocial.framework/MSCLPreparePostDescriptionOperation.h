@@ -11,6 +11,7 @@
     SKUIClientContext * _clientContext;
     MSCLStoreItem * _contentItem;
     NSArray * _enabledExternalServices;
+    int  _facebookDestination;
     id /* block */  _outputBlock;
     NSString * _text;
 }
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (nonatomic, copy) MSCLStoreItem *contentItem;
 @property (nonatomic, copy) NSArray *enabledExternalServices;
+@property (nonatomic) int facebookDestination;
 @property (nonatomic, copy) id /* block */ outputBlock;
 @property (nonatomic, copy) NSString *text;
 
@@ -46,6 +48,7 @@
 - (id)clientContext;
 - (id)contentItem;
 - (id)enabledExternalServices;
+- (int)facebookDestination;
 - (BOOL)isAttributed;
 - (void)main;
 - (id /* block */)outputBlock;
@@ -57,6 +60,7 @@
 - (void)setClientContext:(id)arg1;
 - (void)setContentItem:(id)arg1;
 - (void)setEnabledExternalServices:(id)arg1;
+- (void)setFacebookDestination:(int)arg1;
 - (void)setOutputBlock:(id /* block */)arg1;
 - (void)setText:(id)arg1;
 - (id)text;

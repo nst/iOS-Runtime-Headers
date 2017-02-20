@@ -8,6 +8,8 @@
     unsigned int  _connectionState;
     id /* block */  _connectionStateCallback;
     NSObject<OS_dispatch_queue> * _connectionStateCallbackQueue;
+    id /* block */  _customDataCallback;
+    NSObject<OS_dispatch_queue> * _customDataCallbackQueue;
     struct _MROrigin { } * _customOrigin;
     MRDeviceInfo * _deviceInfo;
     MRDeviceInfoObserver * _deviceInfoObserver;
@@ -47,6 +49,8 @@
 @property (nonatomic, readonly) unsigned int connectionState;
 @property (nonatomic, copy) id /* block */ connectionStateCallback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *connectionStateCallbackQueue;
+@property (nonatomic, copy) id /* block */ customDataCallback;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *customDataCallbackQueue;
 @property (nonatomic) struct _MROrigin { }*customOrigin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -91,6 +95,7 @@
 + (id)_deviceInfoFromTXTRecordData:(id)arg1;
 
 - (void)_addArtwork:(id)arg1 toNowPlayingInfo:(id)arg2;
+- (void)_callCientCustomDataCallback:(id)arg1 name:(id)arg2;
 - (void)_callCientHiliteModeCallback;
 - (void)_callClientAllowsPairingCallback;
 - (void)_callClientConnectionStateCallback:(id)arg1;
@@ -104,6 +109,7 @@
 - (id)_errorForCurrentState;
 - (void)_handleCryptoPairingMessage:(id)arg1;
 - (void)_handleDeviceInfoUpdateMessage:(id)arg1;
+- (void)_handleGenericMessage:(id)arg1;
 - (void)_handleHiliteModeMessage:(id)arg1;
 - (void)_handleKeyboardMessage:(id)arg1;
 - (void)_handleNotificationMessage:(id)arg1;
@@ -131,6 +137,8 @@
 - (unsigned int)connectionState;
 - (id /* block */)connectionStateCallback;
 - (id)connectionStateCallbackQueue;
+- (id /* block */)customDataCallback;
+- (id)customDataCallbackQueue;
 - (struct _MROrigin { }*)customOrigin;
 - (void)dealloc;
 - (void)deleteBackwardInActiveTextEditingSession;
@@ -175,6 +183,7 @@
 - (void)registerTouchDeviceWithDescriptor:(id)arg1 replyQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)registerVoiceInputDeviceWithDescriptor:(id)arg1 replyQueue:(id)arg2 completion:(id /* block */)arg3;
 - (void)sendButtonEvent:(struct _MRHIDButtonEvent { unsigned int x1; unsigned int x2; bool x3; })arg1;
+- (void)sendCustomData:(id)arg1 withName:(id)arg2;
 - (void)sendGameControllerEvent:(const struct { int x1; union { struct { struct { double x_1_3_1; double x_1_3_2; double x_1_3_3; } x_1_2_1; struct { double x_2_3_1; double x_2_3_2; double x_2_3_3; } x_1_2_2; } x_2_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; } x_2_1_2; struct { struct { float x_1_3_1; float x_1_3_2; float x_1_3_3; } x_3_2_1; float x_3_2_2; float x_3_2_3; float x_3_2_4; float x_3_2_5; float x_3_2_6; float x_3_2_7; float x_3_2_8; float x_3_2_9; float x_3_2_10; float x_3_2_11; float x_3_2_12; float x_3_2_13; } x_2_1_3; struct { float x_4_2_1; float x_4_2_2; bool x_4_2_3; unsigned long long x_4_2_4; } x_2_1_4; } x2; }*)arg1 controllerID:(unsigned long long)arg2;
 - (void)sendHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)sendTouchEvent:(struct _MRHIDTouchEvent { union _MRHIDPoint { struct { float x_1_2_1; float x_1_2_2; } x_1_1_1; float x_1_1_2[2]; } x1; unsigned int x2; unsigned long long x3; unsigned int x4; })arg1 toVirtualDeviceWithID:(unsigned long long)arg2;
@@ -183,6 +192,9 @@
 - (void)setConnectionStateCallback:(id /* block */)arg1;
 - (void)setConnectionStateCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setConnectionStateCallbackQueue:(id)arg1;
+- (void)setCustomDataCallback:(id /* block */)arg1;
+- (void)setCustomDataCallback:(id /* block */)arg1 withQueue:(id)arg2;
+- (void)setCustomDataCallbackQueue:(id)arg1;
 - (void)setCustomOrigin:(struct _MROrigin { }*)arg1;
 - (void)setDeviceInfo:(id)arg1;
 - (void)setGameControllerInputMode:(unsigned int)arg1;
@@ -198,6 +210,7 @@
 - (void)setHiliteModeCallbackQueue:(id)arg1;
 - (void)setIsCallingClientCallback:(BOOL)arg1;
 - (void)setIsCoalescingClientStateUpdatesConfigMessages:(BOOL)arg1;
+- (void)setName:(id)arg1;
 - (void)setNameCallback:(id /* block */)arg1;
 - (void)setNameCallback:(id /* block */)arg1 withQueue:(id)arg2;
 - (void)setNameCallbackQueue:(id)arg1;

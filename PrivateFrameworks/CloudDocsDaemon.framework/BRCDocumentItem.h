@@ -66,7 +66,7 @@
 - (void)_updateRecursivePropertiesInDB:(id)arg1 dbRowID:(unsigned long long)arg2 diffs:(unsigned long long)arg3;
 - (void)_updateUploadThrottleIfNeededWithDiffs:(unsigned long long)arg1;
 - (void)addResolvedConflictLoserEtag:(id)arg1;
-- (id)aliasItemIDForAppLibrary:(id)arg1;
+- (id)aliasItemID;
 - (id)anyReverseAliasInAppLibrary:(id)arg1;
 - (void)appDidResolveConflictLoserWithEtag:(id)arg1;
 - (id)asDocument;

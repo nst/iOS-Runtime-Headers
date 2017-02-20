@@ -12,11 +12,12 @@
         float right; 
     }  _clientMarginInsets;
     NSString * _containerIdentifier;
-    UIViewController<NCWidgetProviding> * _contentProvidingViewController;
+    UIViewController<NCWidgetProvidingPrivate> * _contentProvidingViewController;
     struct { 
         unsigned int implementsPerformUpdateWithCompletionHandler : 1; 
         unsigned int implementsMarginInsets : 1; 
         unsigned int implementsActiveDisplayModeDidChange : 1; 
+        unsigned int implementsDidBecomeForeground : 1; 
     }  _contentProvidingViewControllerFlags;
     UIView * _contentView;
     struct CGRect { 
@@ -34,18 +35,20 @@
     NSObject<OS_dispatch_queue> * _remoteViewControllerProxyQueue;
     UIScrollViewDelayedTouchesBeganGestureRecognizer * _touchDelayGestureRecognizer;
     <UIViewControllerAnimatedTransitioning> * _transitionController;
+    int  _visibilityState;
     NSString * _widgetIdentifier;
     NSMapTable * _wrappedAppearStatesToOpenTransactionIDs;
 }
 
 @property (getter=_activeTransitionContextsByRequestID, nonatomic, retain) NSMapTable *activeTransitionContextsByRequestID;
 @property (getter=_containerIdentifier, nonatomic, copy) NSString *containerIdentifier;
-@property (getter=_contentProvidingViewController, nonatomic, retain) UIViewController<NCWidgetProviding> *contentProvidingViewController;
+@property (getter=_contentProvidingViewController, nonatomic, retain) UIViewController<NCWidgetProvidingPrivate> *contentProvidingViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (getter=_pendingSizeTransitionUUIDStack, nonatomic, readonly) NSMutableArray *pendingSizeTransitionUUIDStack;
 @property (readonly) Class superclass;
+@property (getter=_visibilityState, setter=_setVisibilityState:, nonatomic) int visibilityState;
 @property (getter=_widgetIdentifier, nonatomic, copy) NSString *widgetIdentifier;
 
 + (id)_exportedInterface;
@@ -62,6 +65,7 @@
 - (void)__requestEncodedLayerTreeToURL:(id)arg1 withReplyHandler:(id /* block */)arg2;
 - (void)__setActiveDisplayMode:(int)arg1 requestIdentifier:(id)arg2;
 - (void)__setMaximumSize:(struct CGSize { float x1; float x2; })arg1 forDisplayMode:(int)arg2;
+- (void)__updateVisibilityState:(int)arg1;
 - (void)__viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 requestIdentifier:(id)arg2;
 - (id)_activeTransitionContextsByRequestID;
 - (int)_clientLargestSupportedDisplayMode;
@@ -81,14 +85,18 @@
 - (id)_existingTransitionContextForRequestIdentifier:(id)arg1;
 - (id)_pendingSizeTransitionUUIDStack;
 - (void)_performUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)_processInputItems:(id)arg1 initialActiveDisplayMode:(int*)arg2;
 - (void)_requestMarginInsets;
 - (void)_requestPreferredViewHeight:(float)arg1 usingAutolayout:(BOOL)arg2;
 - (void)_requestPreferredViewHeight:(float)arg1 usingAutolayout:(BOOL)arg2 force:(BOOL)arg3;
 - (void)_setActiveDisplayMode:(int)arg1 requestIdentifier:(id)arg2 force:(BOOL)arg3;
 - (void)_setContentProvidingViewController:(id)arg1;
 - (void)_setMaximumWidth:(float)arg1 forDisplayMode:(int)arg2;
+- (void)_setVisibilityState:(int)arg1;
+- (void)_setVisibilityState:(int)arg1 force:(BOOL)arg2;
 - (BOOL)_shouldRemoveViewFromHierarchyOnDisappear;
 - (id)_transitionContextForRequestIdentifier:(id)arg1 usingAutolayout:(BOOL)arg2 createIfNecessary:(BOOL)arg3;
+- (int)_visibilityState;
 - (id)_widgetExtensionContext;
 - (id)_widgetIdentifier;
 - (void)_willAppearInRemoteViewController;

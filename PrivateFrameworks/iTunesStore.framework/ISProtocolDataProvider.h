@@ -30,6 +30,7 @@
 - (void)_refreshSubscriptionStatus;
 - (void)_selectFooterSection:(id)arg1;
 - (BOOL)_shouldFailWithTokenErrorForDialog:(id)arg1 dictionary:(id)arg2 error:(id*)arg3;
+- (id)_touchIDDialogForResponse:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (BOOL)parseData:(id)arg1 returningError:(id*)arg2;

@@ -19,8 +19,9 @@
     NSString * _name;
     unsigned int  _retryCount;
     BOOL  _retryOnDetach;
+    NSObject<OS_dispatch_source> * _retryTimer;
     double  _startTime;
-    NSObject<OS_dispatch_source> * _timer;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
     NSObject<OS_os_transaction> * _transaction;
     struct LogCategory { int x1; int x2; char *x3; unsigned int x4; char *x5; char *x6; int x7; struct LogCategory {} *x8; struct LogOutput {} *x9; struct LogOutput {} *x10; unsigned long long x11; unsigned long long x12; unsigned int x13; unsigned int x14; char *x15; struct LogCategoryPrivate {} *x16; } * _ucat;
     WPClient * _wpClient;

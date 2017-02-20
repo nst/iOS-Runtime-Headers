@@ -9,6 +9,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (void)adjustCodable:(id)arg1;
 + (id)decodeSyncObjectWithData:(id)arg1;
 + (BOOL)generateSyncObjectsForStore:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 maxEncodedBytesPerMessage:(int)arg4 profile:(id)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
 + (int)nanoSyncObjectType;

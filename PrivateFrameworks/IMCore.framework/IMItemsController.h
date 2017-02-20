@@ -33,6 +33,7 @@
 - (BOOL)_trimIfNeeded;
 - (id)_typingMessage;
 - (unsigned int)capacity;
+- (void)dealloc;
 - (id)init;
 - (BOOL)isMoreToLoad;
 - (void)setCapacity:(unsigned int)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface PHLivePhotoView : UIView <ISChangeObserver> {
+    BOOL  __playbackRequested;
     ISPlayerItem * __playerItem;
     BOOL  __playingVitality;
     int  _currentPlaybackStyle;
@@ -29,6 +30,7 @@
     int  _targetReadiness;
 }
 
+@property (setter=_setPlaybackRequested:, nonatomic) BOOL _playbackRequested;
 @property (setter=_setPlayerItem:, nonatomic, retain) ISPlayerItem *_playerItem;
 @property (setter=_setPlayingVitality:, nonatomic) BOOL _playingVitality;
 @property (readonly, copy) NSString *debugDescription;
@@ -52,14 +54,16 @@
 - (void).cxx_destruct;
 - (void)_commonPHLivePhotoViewInitialization;
 - (void)_handlePlayerItemStatusChanged;
+- (BOOL)_playbackRequested;
 - (void)_playerDidBeginHinting;
 - (id)_playerItem;
 - (BOOL)_playingVitality;
+- (void)_setPlaybackRequested:(BOOL)arg1;
 - (void)_setPlayerItem:(id)arg1;
 - (void)_setPlayingVitality:(BOOL)arg1;
 - (void)_updateCurrentPlaybackStyle;
 - (void)_updatePlayerAudioEnabled;
-- (void)_updatePlayerItemLoadingTarget;
+- (void)_updatePlayerTargetReadiness;
 - (void)_updatePlayingVitality;
 - (void)_updateStatusBorder;
 - (id)delegate;

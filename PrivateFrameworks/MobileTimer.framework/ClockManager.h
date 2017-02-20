@@ -47,6 +47,7 @@
 - (void)removeNotificationObserver:(id)arg1;
 - (void)resetUpdatesToLocalNotificationsCache;
 - (void)scheduleLocalNotification:(id)arg1;
+- (void)scheduleLocalNotifications:(id)arg1;
 - (id)scheduledLocalNotificationsCache;
 - (void)setIgnoringNotificationPostRequests:(BOOL)arg1;
 - (void)setNotificationObservers:(id)arg1;

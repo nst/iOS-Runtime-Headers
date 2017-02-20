@@ -14,8 +14,6 @@
     TIKeyboardState * _keyboardState;
     TIKeyboardLayoutState * _layoutState;
     unsigned int  _maxCandidateCount;
-    BOOL  m_didAttemptUpdateEmojiPreferences;
-    EMFEmojiPreferencesClient * m_emojiPreferencesClient;
 }
 
 @property (nonatomic, copy) id /* block */ candidateGenerationCompletionHandler;
@@ -65,6 +63,7 @@
 - (void)closeCandidateGenerationContextWithResults:(id)arg1;
 - (BOOL)commitsAcceptedCandidate;
 - (id)contextBeforeWithDesiredLength:(unsigned int)arg1;
+- (id)currentInputModeIdentifier;
 - (id)currentState;
 - (void)dealloc;
 - (id)defaultCandidate;
@@ -188,7 +187,6 @@
 - (id)titleForSortingMethod:(id)arg1;
 - (void)trackProactiveMetrics:(id)arg1 keyboardState:(id)arg2;
 - (void)trimInput;
-- (void)updateEmojiPreferencesClient;
 - (id)usageTrackingKeyForStatistic:(id)arg1;
 - (BOOL)usesAutoDeleteWord;
 - (BOOL)usesCandidateSelection;

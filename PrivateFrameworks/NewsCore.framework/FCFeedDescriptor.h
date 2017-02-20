@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) BOOL isSubscribable;
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly, copy) NSArray *offlineFeedGroupEmitters;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <FCFeedTheming> *theme;
 
@@ -70,6 +71,7 @@
 - (BOOL)isSubscribedToWithSubscriptionController:(id)arg1;
 - (id)latestHeadlineResultsWithContext:(id)arg1;
 - (id)name;
+- (id)offlineFeedGroupEmitters;
 - (void)setContext:(id)arg1;
 - (void)setFeedType:(int)arg1;
 - (id)streamOfHeadlinesWithIDs:(id)arg1 context:(id)arg2 cachedOnly:(BOOL)arg3 maxCachedAge:(double)arg4;

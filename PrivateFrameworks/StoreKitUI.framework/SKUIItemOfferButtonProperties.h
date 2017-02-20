@@ -11,6 +11,7 @@
     float  _borderCornerRadius;
     BOOL  _borderCornerRadiusMatchesHalfBoundingDimension;
     float  _borderWidth;
+    UIImage * _borderedImage;
     BOOL  _cancelRecognizer;
     int  _confirmationTitleStyle;
     BOOL  _hasBorderView;
@@ -33,6 +34,7 @@
 @property (nonatomic) float borderCornerRadius;
 @property (nonatomic) BOOL borderCornerRadiusMatchesHalfBoundingDimension;
 @property (nonatomic) float borderWidth;
+@property (nonatomic, retain) UIImage *borderedImage;
 @property (nonatomic) BOOL cancelRecognizer;
 @property (nonatomic) int confirmationTitleStyle;
 @property (nonatomic) BOOL hasBorderView;
@@ -55,6 +57,7 @@
 - (float)borderCornerRadius;
 - (BOOL)borderCornerRadiusMatchesHalfBoundingDimension;
 - (float)borderWidth;
+- (id)borderedImage;
 - (BOOL)cancelRecognizer;
 - (int)confirmationTitleStyle;
 - (BOOL)hasBorderView;
@@ -72,6 +75,7 @@
 - (void)setBorderCornerRadius:(float)arg1;
 - (void)setBorderCornerRadiusMatchesHalfBoundingDimension:(BOOL)arg1;
 - (void)setBorderWidth:(float)arg1;
+- (void)setBorderedImage:(id)arg1;
 - (void)setCancelRecognizer:(BOOL)arg1;
 - (void)setConfirmationTitleStyle:(int)arg1;
 - (void)setHasBorderView:(BOOL)arg1;

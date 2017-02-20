@@ -23,9 +23,11 @@
 - (BOOL)isCompatibleStatus:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (long long)objectAnchor;
+- (BOOL)readingEnabled;
 - (int)request;
 - (BOOL)requestedReading;
 - (BOOL)requestedSharing;
+- (BOOL)sharingEnabled;
 - (int)status;
 
 @end

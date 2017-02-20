@@ -4,6 +4,7 @@
 
 @interface MUPDFContentViewController : MUContentViewController <MUContentViewControllerAKControllerSubdelegate, MUContentViewControllerProtocol, PDFPageVisibilityDelegate, PDFViewDelegatePrivate> {
     BOOL  _constraintsAreHorizontal;
+    <MUPDFContentViewControllerDelegate> * _delegate;
     BOOL  _didSetup;
     struct UIEdgeInsets { 
         float top; 
@@ -36,6 +37,7 @@
 @property (nonatomic) BOOL centersIgnoringContentInsets;
 @property BOOL constraintsAreHorizontal;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MUPDFContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property BOOL didSetup;
 @property (nonatomic, readonly) NSString *documentUnlockedWithPassword;
@@ -62,6 +64,7 @@
 @property float viewTransitionPreviousScale;
 
 - (void).cxx_destruct;
+- (BOOL)PDFView:(id)arg1 shouldHandleLink:(id)arg2;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_compensatingAffineTransformForPage:(id)arg1;
 - (void)_createPDFView;
 - (void)_installOverlayForPageView:(id)arg1 ofPage:(id)arg2 atIndex:(unsigned int)arg3;
@@ -88,6 +91,7 @@
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromModelToOverlayWithPageIndex:(unsigned int)arg2;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromOverlayToModelWithPageIndex:(unsigned int)arg2;
 - (void)dealloc;
+- (id)delegate;
 - (void)didEnterToolMode;
 - (void)didExitToolMode;
 - (BOOL)didSetup;
@@ -118,6 +122,7 @@
 - (BOOL)pdfViewShouldPopulateMenu:(id)arg1;
 - (id)quadPointsForCharacterIndexes:(id)arg1 onPageAtIndex:(unsigned int)arg2;
 - (void)setConstraintsAreHorizontal:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setDidSetup:(BOOL)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setForcesPDFViewTopAlignment:(BOOL)arg1;

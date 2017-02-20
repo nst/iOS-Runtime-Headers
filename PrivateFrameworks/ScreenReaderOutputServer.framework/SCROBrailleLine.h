@@ -16,6 +16,7 @@
     char * _displayFilter;
     int  _displayMode;
     int  _firstToken;
+    unsigned long long  _generationID;
     int  _iBeamLocation;
     int  _insetSize;
     BOOL  _isPanning;
@@ -43,6 +44,7 @@
 }
 
 @property (nonatomic) BOOL displayEnabled;
+@property (nonatomic) unsigned long long generationID;
 @property (nonatomic) int lineOffset;
 @property (nonatomic, readonly) BOOL needsDisplayFlush;
 
@@ -64,6 +66,7 @@
 - (BOOL)displayEnabled;
 - (int)displayMode;
 - (int)firstToken;
+- (unsigned long long)generationID;
 - (BOOL)getStatusRouterIndex:(int*)arg1 forRawIndex:(int)arg2;
 - (id)initWithDriver:(id)arg1 mainSize:(int)arg2 statusSize:(int)arg3;
 - (int)lastToken;
@@ -80,6 +83,7 @@
 - (void)setDisplayEnabled:(BOOL)arg1;
 - (void)setDisplayMode:(int)arg1;
 - (void)setFormatter:(id)arg1;
+- (void)setGenerationID:(unsigned long long)arg1;
 - (void)setLineFocus:(int)arg1;
 - (void)setLineOffset:(int)arg1;
 - (void)setMainSize:(int)arg1;

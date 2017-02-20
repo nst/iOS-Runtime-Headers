@@ -18,7 +18,9 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (int)code;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)guest;
 - (id)guestDisplayPreferences;

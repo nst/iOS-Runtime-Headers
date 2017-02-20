@@ -4,11 +4,13 @@
 
 @interface IKStyleMediaQuery : NSObject {
     NSDictionary * _featureValues;
+    NSString * _identifier;
     BOOL  _isNegated;
     NSString * _mediaType;
 }
 
 @property (nonatomic, readonly, retain) NSDictionary *featureValues;
+@property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) BOOL isNegated;
 @property (nonatomic, readonly, retain) NSString *mediaType;
 
@@ -16,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)featureValues;
+- (id)identifier;
 - (id)initWithMediaType:(id)arg1 featureValues:(id)arg2 isNegated:(BOOL)arg3;
 - (BOOL)isNegated;
 - (id)mediaType;

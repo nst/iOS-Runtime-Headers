@@ -54,7 +54,7 @@
 - (BOOL)deleteIdentityWithError:(id*)arg1;
 - (id)device;
 - (id)encryptData:(id)arg1 withError:(id*)arg2;
-- (BOOL)handlePairingExchangeData:(id)arg1 withError:(id*)arg2;
+- (void)handlePairingExchangeData:(id)arg1 completion:(id /* block */)arg2;
 - (void)handlePairingFailureWithStatus:(long)arg1;
 - (id)initWithRole:(unsigned int)arg1 device:(id)arg2;
 - (id)inputKey;

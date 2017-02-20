@@ -10,7 +10,7 @@
 }
 
 @property (nonatomic, retain) WAForecastModel *forecastModel;
-@property (nonatomic, readonly) NSDate *lastUpdateDate;
+@property (nonatomic, retain) NSDate *lastUpdateDate;
 
 + (id)autoupdatingLocationModelWithPreferences:(id)arg1 effectiveBundleIdentifier:(id)arg2;
 + (id)modelWithLocation:(id)arg1;
@@ -33,5 +33,6 @@
 - (id)location;
 - (void)removeObserver:(id)arg1;
 - (void)setForecastModel:(id)arg1;
+- (void)setLastUpdateDate:(id)arg1;
 
 @end

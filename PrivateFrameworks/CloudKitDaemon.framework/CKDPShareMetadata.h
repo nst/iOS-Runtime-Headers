@@ -39,9 +39,6 @@
 - (int)StringAsParticipantPermission:(id)arg1;
 - (int)StringAsParticipantState:(id)arg1;
 - (int)StringAsParticipantType:(id)arg1;
-- (id)_participantPermissionCKLogValue;
-- (id)_participantStateCKLogValue;
-- (id)_participantTypeCKLogValue;
 - (id)callerParticipant;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

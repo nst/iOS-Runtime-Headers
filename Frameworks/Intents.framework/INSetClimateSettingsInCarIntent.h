@@ -20,11 +20,13 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSMeasurement *temperature;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (int)airCirculationMode;
 - (int)climateZone;
+- (id)description;
 - (id)enableAirConditioner;
 - (id)enableAutoMode;
 - (id)enableClimateControl;

@@ -7,6 +7,7 @@
     NSArray * _conversationCache;
     NSNumber * _currentSearchTaskID;
     <CKContactsSearchManagerDelegate> * _delegate;
+    NSCharacterSet * _emojiCharacterSet;
     NSArray * _enteredRecipients;
     MFContactsSearchManager * _searchManager;
     NSMutableArray * _searchResults;
@@ -20,6 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKContactsSearchManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSCharacterSet *emojiCharacterSet;
 @property (nonatomic, retain) NSArray *enteredRecipients;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MFContactsSearchManager *searchManager;
@@ -29,7 +31,9 @@
 @property (nonatomic) BOOL suppressGroupSuggestions;
 
 - (void).cxx_destruct;
+- (id)_cullOldResults:(id)arg1;
 - (void)_generateConversationCache;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeForSearchTerm:(id)arg1 inTarget:(id)arg2 tokenizedByCharacterSet:(id)arg3;
 - (id)_sortResultsByDate:(id)arg1;
 - (id)_sortSearchResultsWithCoreRecentsResults:(id)arg1 displayNameMatches:(id)arg2 participantNameMatches:(id)arg3;
 - (void)beganNetworkActivity;
@@ -42,6 +46,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didSelectRecipient:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)emojiCharacterSet;
 - (void)endedNetworkActivity;
 - (id)enteredRecipients;
 - (void)finishedSearchingForAutocompleteResults;
@@ -56,6 +61,7 @@
 - (void)setConversationCache:(id)arg1;
 - (void)setCurrentSearchTaskID:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setEmojiCharacterSet:(id)arg1;
 - (void)setEnteredRecipients:(id)arg1;
 - (void)setSearchManager:(id)arg1;
 - (void)setSearchResults:(id)arg1;

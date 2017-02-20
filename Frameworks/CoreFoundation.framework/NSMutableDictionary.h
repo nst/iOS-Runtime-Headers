@@ -125,6 +125,14 @@
 - (void)logCounter_incrementForSubtype_internal:(id)arg1;
 - (BOOL)logCounter_isLog:(id)arg1 byKey:(id)arg2 count:(unsigned int*)arg3 withinLimit:(unsigned int*)arg4 withOptions:(id)arg5;
 
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACardDAV.framework/DACardDAV
+
+- (void)addObjectsAndKeys:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
+- (void)setObject:(id)arg1 forInt:(int)arg2;
+
 // Image: /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/DifferentialPrivacy
 
 - (void)dp_addBoolForKey:(id)arg1;
@@ -263,6 +271,15 @@
 // Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
 
 - (void)setSafeObject:(id)arg1 forKey:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+
+/* MISSING HEADER DESCRIPTION FOR METHOD _swift_objectForKeyedSubscript: */
+/* MISSING HEADER DESCRIPTION FOR METHOD _swift_setObject:forKeyedSubscript: */
+
+// Image: /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
+
+- (void)setActions:(id)arg1 forProcess:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 

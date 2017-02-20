@@ -258,6 +258,7 @@
 - (BOOL)isSpellCheckAllowed;
 - (BOOL)isSpotlightInternetResultsAllowed;
 - (BOOL)isSupervised;
+- (BOOL)isTVAllowed;
 - (BOOL)isTeslaCloudConfigurationAvailable;
 - (BOOL)isTodayViewAllowed;
 - (BOOL)isTodayViewModificationAllowed;
@@ -419,6 +420,7 @@
 - (void)setPasscodeWasSetInBackup:(BOOL)arg1;
 - (void)setPredictiveKeyboardAllowed:(BOOL)arg1;
 - (void)setSpellCheckAllowed:(BOOL)arg1;
+- (void)setTVAllowed:(BOOL)arg1;
 - (void)setTrustedCodeSigningIdentities:(id)arg1;
 - (void)setUserBookmarks:(id)arg1;
 - (void)setUserInfo:(id)arg1 forClientUUID:(id)arg2;

@@ -5,6 +5,7 @@
 @interface RPScreenRecorder : NSObject <RPPreviewViewControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate> {
     RPBroadcastController * _activeBroadcastController;
     BOOL  _available;
+    BOOL  _broadcasting;
     BOOL  _cameraEnabled;
     UIView * _cameraPreviewView;
     <RPScreenRecorderDelegate> * _delegate;
@@ -15,6 +16,7 @@
     RPPipViewController * _pipViewController;
     NSString * _previousAudioCategory;
     unsigned int  _previousAudioSessionOptions;
+    int  _processIDForAudioCapture;
     BOOL  _recording;
     id /* block */  _saveVideoToCameraRollCompletionBlock;
     BOOL  _systemRecording;
@@ -28,6 +30,7 @@
 
 @property (nonatomic, retain) RPBroadcastController *activeBroadcastController;
 @property (getter=isAvailable, nonatomic) BOOL available;
+@property (nonatomic) BOOL broadcasting;
 @property (getter=isCameraEnabled, nonatomic) BOOL cameraEnabled;
 @property (nonatomic, retain) UIView *cameraPreviewView;
 @property (readonly, copy) NSString *debugDescription;
@@ -41,6 +44,7 @@
 @property (nonatomic, retain) RPPipViewController *pipViewController;
 @property (nonatomic, retain) NSString *previousAudioCategory;
 @property (nonatomic) unsigned int previousAudioSessionOptions;
+@property (setter=updateProcessIDForAudioCapture:, nonatomic) int processIDForAudioCapture;
 @property (getter=isRecording, nonatomic) BOOL recording;
 @property (nonatomic, copy) id /* block */ saveVideoToCameraRollCompletionBlock;
 @property (readonly) Class superclass;
@@ -60,6 +64,7 @@
 - (void)_startRecordingWithMicrophoneEnabled:(BOOL)arg1 cameraEnabled:(BOOL)arg2 streamingEnabled:(BOOL)arg3 handler:(id /* block */)arg4;
 - (id)activeBroadcastController;
 - (id)applicationWindow;
+- (BOOL)broadcasting;
 - (id)cameraPreviewView;
 - (void)clientDidBecomeActive;
 - (void)clientWillResignActive;
@@ -83,11 +88,13 @@
 - (id)pipViewController;
 - (id)previousAudioCategory;
 - (unsigned int)previousAudioSessionOptions;
+- (int)processIDForAudioCapture;
 - (void)restoreAudioSession;
 - (void)resumeRecording;
 - (id /* block */)saveVideoToCameraRollCompletionBlock;
 - (void)setActiveBroadcastController:(id)arg1;
 - (void)setAvailable:(BOOL)arg1;
+- (void)setBroadcasting:(BOOL)arg1;
 - (void)setCameraEnabled:(BOOL)arg1;
 - (void)setCameraPreviewView:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -125,6 +132,7 @@
 - (id)systemRecordingControlCenterStartClipEndTime;
 - (id)systemRecordingControlCenterStartClipStartTime;
 - (id)systemRecordingIndicatorWindow;
+- (void)updateProcessIDForAudioCapture:(int)arg1;
 - (void)updateRecordingAvailability;
 - (void)video:(id)arg1 didFinishSavingToCameraRollWithError:(id)arg2 contextInfo:(void*)arg3;
 - (id)windowToRecord;

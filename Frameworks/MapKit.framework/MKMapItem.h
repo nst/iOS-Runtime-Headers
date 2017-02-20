@@ -129,6 +129,8 @@
 + (void)_openHandleInMaps:(id)arg1 withLaunchOptions:(id)arg2 completionHandler:(id /* block */)arg3;
 + (id)_sharedSessionURLForPunchoutURL:(id)arg1;
 + (id)_sharedSessionUserInfoForPunchoutUserInfo:(id)arg1;
++ (id)_sourceAppIdFromLaunchURL:(id)arg1;
++ (id)_sourceAppIdFromLaunchUserInfo:(id)arg1;
 + (id)_urlForMapItemHandles:(id)arg1 options:(id)arg2;
 + (id)contactsAddressDictionaryFromGeoAddressDictionary:(id)arg1;
 + (id)contactsAddressKeysForGeoAddressKeys;

@@ -79,6 +79,7 @@
 - (int)type;
 - (int)weight;
 - (unsigned int)wordCount;
+- (unsigned short)wordDictionaryReadingLengthAtIndex:(unsigned int)arg1;
 - (id)wordIDs;
 - (BOOL)wordIsFromSystemDictionaryAtIndex:(unsigned int)arg1;
 - (unsigned short)wordLengthAtIndex:(unsigned int)arg1;

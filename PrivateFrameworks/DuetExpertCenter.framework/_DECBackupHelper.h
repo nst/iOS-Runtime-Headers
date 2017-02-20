@@ -16,6 +16,7 @@
 - (BOOL)canRestore;
 - (BOOL)createBackupDirectoriesIfMissing;
 - (BOOL)finishBackup;
+- (void)fixupDataProtection;
 - (id)init;
 - (BOOL)isClassCLocked;
 - (BOOL)markRestoreAsNotDone;

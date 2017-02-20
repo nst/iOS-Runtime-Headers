@@ -4,6 +4,8 @@
 
 @interface SYSession : NSObject <SYChangeSerializer, SYStateLoggable> {
     double  _birthDate;
+    unsigned int  _bytesTransferred;
+    unsigned int  _changeCount;
     <SYSessionDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSError * _error;
@@ -28,8 +30,10 @@
 }
 
 @property (nonatomic) double birthDate;
+@property (nonatomic, readonly) unsigned int bytesTransferred;
 @property BOOL canRestart;
 @property BOOL canRollback;
+@property (nonatomic, readonly) unsigned int changeCount;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SYSessionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -87,10 +91,12 @@
 - (void)_supercededWithSession:(id)arg1;
 - (BOOL)_willAcquiesceToNewSessionFromPeer:(id)arg1;
 - (double)birthDate;
+- (unsigned int)bytesTransferred;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
 - (void)cancel;
 - (void)cancelWithError:(id)arg1;
+- (unsigned int)changeCount;
 - (id)changeFromData:(id)arg1 ofType:(int)arg2;
 - (id)combinedEngineOptions:(id)arg1;
 - (id)dataFromChange:(id)arg1;

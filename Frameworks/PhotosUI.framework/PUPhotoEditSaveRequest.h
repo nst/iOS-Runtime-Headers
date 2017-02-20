@@ -13,6 +13,7 @@
     PUPhotoEditIrisModel * _irisModel;
     PUPhotoKitAdjustmentSaveNode * _outputNode;
     PHAsset * _photo;
+    PUVideoCompositionExportNode * _videoExportNode;
     int  _workImageVersion;
 }
 
@@ -26,7 +27,9 @@
 @property (nonatomic, readonly) int identifier;
 @property (nonatomic, readonly, copy) PUPhotoEditIrisModel *irisModel;
 @property (nonatomic, readonly) PHAsset *photo;
+@property (nonatomic, readonly) double progress;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsProgress;
 @property (nonatomic, readonly) int workImageVersion;
 
 - (void).cxx_destruct;
@@ -36,6 +39,7 @@
 - (void)_performRevertToOriginalOperation;
 - (void)_performSaveContentEditingOutput;
 - (void)_performSaveEditsOperation;
+- (BOOL)_requiresVideoRender;
 - (id)_runGraph;
 - (void)_setRunGraph:(id)arg1;
 - (void)_transitionToState:(int)arg1;
@@ -53,8 +57,10 @@
 - (id)initWithPhotoToRevertToOriginal:(id)arg1;
 - (id)irisModel;
 - (id)photo;
+- (double)progress;
 - (void)runNode:(id)arg1 didCancelWithError:(id)arg2;
 - (void)runNode:(id)arg1 didCompleteWithError:(id)arg2;
+- (BOOL)supportsProgress;
 - (int)workImageVersion;
 
 @end

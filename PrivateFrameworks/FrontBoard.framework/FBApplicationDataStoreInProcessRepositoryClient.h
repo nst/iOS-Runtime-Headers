@@ -33,6 +33,7 @@
 - (id)init;
 - (id)initWithDataStore:(id)arg1;
 - (void)invalidate;
+- (id)objectForKey:(id)arg1 forApplication:(id)arg2 checkPrefetch:(BOOL)arg3;
 - (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3;
 - (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3 checkPrefetch:(BOOL)arg4;
 - (struct NSMutableDictionary { Class x1; }*)prefetchedKeyValues;

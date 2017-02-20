@@ -34,7 +34,6 @@
 @property (nonatomic, readonly) unsigned int buildCount;
 @property (nonatomic, copy) NSSet *builds;
 @property (nonatomic, readonly) NSArray *buildsGroupedByDeliveryGroup;
-@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned int deliveryGroupCount;
 @property (readonly, copy) NSString *description;
@@ -101,7 +100,6 @@
 - (id)childInfos;
 - (id)chunksForDrawable:(id)arg1 animationType:(int)arg2;
 - (void)clearBackPointerToParentInfoIfNeeded:(id)arg1;
-- (id)compatibilityCheckerForData:(id)arg1 associatedHint:(id)arg2;
 - (BOOL)containsProperty:(int)arg1;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
@@ -155,7 +153,6 @@
 - (BOOL)isTitleVisible;
 - (Class)layoutClass;
 - (void)loadFromArchive:(const struct SlideArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; struct Reference {} *x4; struct RepeatedPtrField<TSP::Reference> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<KN::BuildChunkArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct TransitionArchive {} *x8; struct Reference {} *x9; struct Reference {} *x10; struct Reference {} *x11; struct Reference {} *x12; struct RepeatedPtrField<TSP::Reference> { void **x_13_1_1; int x_13_1_2; int x_13_1_3; int x_13_1_4; } x13; struct RepeatedPtrField<TSP::Reference> { void **x_14_1_1; int x_14_1_2; int x_14_1_3; int x_14_1_4; } x14; struct RepeatedPtrField<KN::SlideArchive_SageTagMapEntry> { void **x_15_1_1; int x_15_1_2; int x_15_1_3; int x_15_1_4; } x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 unarchiver:(id)arg2;
-- (int)mediaCompatibilityTypeForData:(id)arg1 associatedHint:(id)arg2;
 - (void)moveChildren:(id)arg1 toIndexes:(id)arg2;
 - (id)objectForProperty:(int)arg1;
 - (id)objectPlaceholder;

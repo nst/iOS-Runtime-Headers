@@ -21,6 +21,7 @@
 + (id)indices;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id*)arg5;
 + (id)mostRecentSampleWithType:(id)arg1 profile:(id)arg2 encodingOptions:(id)arg3 predicate:(id)arg4 anchor:(id*)arg5 error:(id*)arg6;
++ (id)numberOfPeriodsWithSampleTypes:(id)arg1 startingInDateInterval:(id)arg2 periodInterval:(double)arg3 profile:(id)arg4 error:(id*)arg5;
 + (id /* block */)objectInsertionFilterForProfile:(id)arg1;
 + (id)oldestSampleWithType:(id)arg1 profile:(id)arg2 encodingOptions:(id)arg3 predicate:(id)arg4 error:(id*)arg5;
 + (int)preferredEntityType;

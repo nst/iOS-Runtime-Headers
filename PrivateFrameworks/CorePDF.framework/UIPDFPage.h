@@ -6,7 +6,9 @@
     NSMutableArray * _annotations;
     struct CGPDFPage { } * _cgPage;
     UIPDFDocument * _document;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     UIImage * _pageImage;
     unsigned int  _pageIndex;
     unsigned int  _pageNumber;

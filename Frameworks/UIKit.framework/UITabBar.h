@@ -177,7 +177,6 @@
 - (int)_tabBarSizing;
 - (float)_tabButtonWidth;
 - (float)_totalDimensionForItems:(id)arg1 spacing:(float)arg2 dimension:(float)arg3 scaleFactor:(float)arg4;
-- (void)_updateBackgroundColorForTraitCollection:(id)arg1;
 - (void)_updateTabBarItemView:(id)arg1;
 - (void)_updateTintedImages:(id)arg1 selected:(BOOL)arg2;
 - (BOOL)_vibrantLabels;

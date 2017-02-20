@@ -30,6 +30,7 @@
 - (id)afterDelay:(double)arg1 performBlock:(id /* block */)arg2 qualityOfService:(unsigned int)arg3;
 - (unsigned int)clock;
 - (id)description;
+- (BOOL)hasJobsScheduled;
 - (id)init;
 - (void)performBlock:(id /* block */)arg1;
 - (void)performBlock:(id /* block */)arg1 qualityOfService:(unsigned int)arg2;

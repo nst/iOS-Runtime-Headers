@@ -30,7 +30,6 @@
     NSMutableDictionary * _clearedSections;
     NSXPCListener * _conduitListener;
     unsigned int  _currentSystemState;
-    NSMutableDictionary * _dataProviderFactoriesBySection;
     BBDataProviderManager * _dataProviderManager;
     NSDateComponents * _defaultExpirationComponents;
     int  _demo_lockscreen_token;
@@ -249,7 +248,7 @@
 - (void)_updateSectionInfoForSectionID:(id)arg1 handler:(id /* block */)arg2;
 - (void)_updateSectionParametersForDataProvider:(id)arg1;
 - (void)_updateShowsMessagePreviewForBulletin:(id)arg1;
-- (void)_validateExpirationDateForBulletin:(id)arg1;
+- (void)_validateExpirationDateForBulletinRequest:(id)arg1;
 - (BOOL)_verifyBulletinRequest:(id)arg1 forDataProvider:(id)arg2;
 - (void)_writeBehaviorOverrides;
 - (void)_writeClearedSections;

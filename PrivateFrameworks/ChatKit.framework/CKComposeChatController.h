@@ -5,6 +5,7 @@
 @interface CKComposeChatController : CKChatController <CKComposeRecipientSelectionControllerDelegate> {
     UIBarButtonItem * _composeCancelItem;
     CKComposeRecipientSelectionController * _composeRecipientSelectionController;
+    CKComposeNavbarManager * _navbarManager;
     BOOL  _newComposeCancelled;
     CKComposition * _prepopulatedComposition;
     NSArray * _prepopulatedRecipients;
@@ -16,6 +17,7 @@
 @property (nonatomic) <CKComposeChatControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKComposeNavbarManager *navbarManager;
 @property (nonatomic) BOOL newComposeCancelled;
 @property (nonatomic, retain) CKComposition *prepopulatedComposition;
 @property (nonatomic, retain) NSArray *prepopulatedRecipients;
@@ -45,6 +47,7 @@
 - (void)messageEntryViewDidChange:(id)arg1;
 - (void)messageEntryViewSendButtonHit:(id)arg1;
 - (void)messageEntryViewSendButtonHitWhileDisabled:(id)arg1;
+- (id)navbarManager;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })navigationBarInsetsForRecipientSelectionController:(id)arg1;
 - (BOOL)newComposeCancelled;
 - (id)outgoingComposeViewForSendAnimation;
@@ -62,9 +65,11 @@
 - (void)recipientSelectionControllerReturnPressed:(id)arg1;
 - (void)recipientSelectionControllerSearchListDidShowOrHide:(id)arg1;
 - (void)reloadEntryViewIfNeeded;
+- (void)sendAnimationManagerWillStartAnimation:(id)arg1 context:(id)arg2;
 - (void)sendComposition:(id)arg1;
 - (void)setComposeCancelItem:(id)arg1;
 - (void)setComposeRecipientSelectionController:(id)arg1;
+- (void)setNavbarManager:(id)arg1;
 - (void)setNewComposeCancelled:(BOOL)arg1;
 - (void)setPrepopulatedComposition:(id)arg1;
 - (void)setPrepopulatedRecipients:(id)arg1;
@@ -74,6 +79,7 @@
 - (BOOL)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(id)arg1;
 - (id)unatomizedRecipientText;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

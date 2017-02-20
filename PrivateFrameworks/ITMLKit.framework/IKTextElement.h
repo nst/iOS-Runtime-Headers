@@ -34,6 +34,14 @@
 - (id)text;
 - (unsigned int)textStyle;
 
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (id)tv_associatedViewElement;
+- (id)tv_attributedString;
+- (id)tv_attributedStringWithForegroundColor:(id)arg1 textAlignment:(int)arg2;
+- (id)tv_textAttributes;
+- (int)tv_textStyle;
+
 // Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
 
 - (id)textAttributes;

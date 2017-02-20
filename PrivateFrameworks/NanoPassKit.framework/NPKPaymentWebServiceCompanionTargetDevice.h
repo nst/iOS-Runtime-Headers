@@ -56,12 +56,12 @@
 - (BOOL)felicaSecureElementIsAvailable;
 - (void)getPairingInfoResponse:(id)arg1;
 - (void)handleDeletePaymentTransactionWithIdentifier:(id)arg1 passUniqueIdentifier:(id)arg2;
-- (void)handlePaymentOptionsDefaultsChanged;
 - (void)handlePaymentTransactions:(id)arg1;
 - (void)handlePendingRemovalOfPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)handlePreferredAID:(id)arg1 forPassWithUniqueID:(id)arg2 completion:(id /* block */)arg3;
 - (void)handleRemovedTransaction:(id)arg1;
 - (void)handleShowPaymentSetupRequest:(id)arg1;
+- (void)handleTransactionDefaultsNeededRequest:(id)arg1;
 - (void)handleUpdatedAppletState:(id)arg1;
 - (void)handleValueAddedServiceTransactions:(id)arg1;
 - (void)handleWebServiceContextNeededRequest:(id)arg1;
@@ -110,6 +110,7 @@
 - (void)secureElementGetAppletsResponse:(id)arg1;
 - (id)secureElementIdentifiers;
 - (void)secureElementRemoveAppletsResponse:(id)arg1;
+- (void)sendPaymentOptionsDefaultsToWatch;
 - (void)sendWebServiceContextToWatch:(id)arg1;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;

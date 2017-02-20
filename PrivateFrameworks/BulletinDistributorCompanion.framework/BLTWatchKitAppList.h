@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTWatchKitAppList : NSObject {
+@interface BLTWatchKitAppList : NSObject <BLTDebugObserverWatchKitAppList> {
     NSDictionary * _appsByAppBundleID;
     <BLTWatchKitAppListDelegate> * _delegate;
     BOOL  _loaded;
@@ -14,8 +14,12 @@
     }  _lock;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BLTWatchKitAppListDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (getter=isLoaded) BOOL loaded;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_fetchWatchKitInfo;

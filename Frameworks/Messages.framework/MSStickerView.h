@@ -37,8 +37,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITapGestureRecognizer *tapRecognizer;
 
-+ (id)stickerPreviewCache;
-
 - (void).cxx_destruct;
 - (void)_configureStickerView;
 - (void)_loadAnimatedStickerfIfNecessary;

@@ -17,6 +17,7 @@
 }
 
 @property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic, readonly) HDFitnessFriendsCloudKitCodableWorkout *codableWorkout;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double duration;
@@ -71,11 +72,13 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (id)fitnessFriendWorkoutWithCodableWorkout:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendWorkoutWithRecord:(id)arg1 friendUUID:(id)arg2;
 + (Class)hd_dataEntityClass;
 
 - (BOOL)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
+- (id)codableWorkout;
 - (id)filter_date;
 - (id)filter_friendUUID;
 - (id)recordWithZoneID:(id)arg1;

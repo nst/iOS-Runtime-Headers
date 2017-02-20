@@ -63,6 +63,7 @@
 - (void)dataForPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
 - (void)declineFriendshipRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)decryptPayload:(id)arg1 withToken:(id)arg2 completion:(id /* block */)arg3;
 - (id)delegate;
 - (id)delegateQueue;
 - (oneway void)didAddFollowerHandle:(id)arg1;
@@ -81,6 +82,7 @@
 - (oneway void)didUpdatePendingOffersForHandles:(id)arg1;
 - (void)dispatchOnDelegateQueue:(id /* block */)arg1;
 - (void)dumpStateWithCompletion:(id /* block */)arg1;
+- (void)encryptPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)exit5XXGracePeriod;
 - (void)extendFriendshipOfferToHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(id /* block */)arg5;
 - (oneway void)failedToGetLocationForHandle:(id)arg1 error:(id)arg2;

@@ -3,14 +3,7 @@
  */
 
 @interface BWIrisSequenceAdjuster : NSObject {
-    BOOL  _adjustVideoTimesUntilReset;
     int  _audioOffsetForOriginalStillImageTimeMaximumFrameLatency;
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    }  _bufferingTime;
     NSMutableArray * _discontinuities;
     struct { 
         long long value; 
@@ -32,6 +25,7 @@
         long long epoch; 
     }  _masterMovieOriginalStartTime;
     unsigned int * _mediaTypes;
+    BWMotionDataPreserver * _motionDataPreserver;
     struct { 
         long long value; 
         int timescale; 
@@ -43,7 +37,7 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    }  _targetFrameDuration;
+    }  _previewFrameDuration;
     NSMutableArray * _timeSkews;
 }
 
@@ -58,29 +52,24 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_adjustedTimeForMetadataBufferWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_adjustedTimeForVideoBufferWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_audioOffsetForOriginalStillImageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 adjustedStillImageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (void)_getPreviousTimeSkewOut:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; }*)arg1 andNextTimeSkewOut:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; }*)arg2 forTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
+- (void)_getPreviousTimeSkewOut:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; struct { long long x_3_1_1; int x_3_1_2; unsigned int x_3_1_3; long long x_3_1_4; } x3; BOOL x4; BOOL x5; }*)arg1 andNextTimeSkewOut:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; struct { long long x_3_1_1; int x_3_1_2; unsigned int x_3_1_3; long long x_3_1_4; } x3; BOOL x4; BOOL x5; }*)arg2 forTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (int)_indexOfTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_originalDurationForVideoBufferWithTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)adjustMovieInfoTimes:(id)arg1;
-- (void)adjustVideoTimesUntilReset;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })adjustedTimeForStillImageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })adjustedTimeForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })audioOffsetForOriginalStillImageTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (int)audioOffsetForOriginalStillImageTimeMaximumFrameLatency;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })bufferingTime;
 - (void)dealloc;
 - (struct opaqueCMSampleBuffer { }*)dequeueAndRetainAdjustedSampleBufferForMediaTypeWithIndex:(int)arg1;
 - (void)enqueueSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forMediaTypeWithIndex:(int)arg2;
-- (void)enqueueVideoBufferTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)enqueueVideoBufferTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 nativeTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 isBracketFrame:(BOOL)arg3 isSISFrame:(BOOL)arg4;
 - (id)initWithMediaTypes:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })masterMovieOriginalEndTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })masterMovieOriginalStartTime;
 - (void)reset;
 - (void)setAudioOffsetForOriginalStillImageTimeMaximumFrameLatency:(int)arg1;
-- (void)setBufferingTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMasterMovieOriginalEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMasterMovieOriginalStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)setTargetFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (struct { long long x1; int x2; unsigned int x3; long long x4; })targetFrameDuration;
 
 @end

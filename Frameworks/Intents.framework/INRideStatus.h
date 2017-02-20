@@ -41,10 +41,12 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)additionalActionActivities;
 - (id)cacheableObjects;
 - (id)completionStatus;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (id)driver;
 - (id)dropOffLocation;
 - (void)encodeWithCoder:(id)arg1;

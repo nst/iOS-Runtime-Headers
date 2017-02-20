@@ -9,7 +9,7 @@
     JSValue * _applicationReadyCallback;
     <VSApplicationControllerDelegate> * _delegate;
     VSIdentityProvider * _identityProvider;
-    VSJSSAMLRequest * _javascriptRequest;
+    VSJSRequest * _javascriptRequest;
     VSPreferences * _preferences;
     NSOperationQueue * _privateQueue;
     VSApplicationControllerRequest * _request;
@@ -25,7 +25,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) VSIdentityProvider *identityProvider;
-@property (nonatomic, retain) VSJSSAMLRequest *javascriptRequest;
+@property (nonatomic, retain) VSJSRequest *javascriptRequest;
 @property (nonatomic, retain) VSPreferences *preferences;
 @property (nonatomic, retain) NSOperationQueue *privateQueue;
 @property (nonatomic, retain) VSApplicationControllerRequest *request;
@@ -36,12 +36,13 @@
 
 - (void).cxx_destruct;
 - (id)_applicationLaunchParams;
-- (void)_applicationReadyWithSuccess:(BOOL)arg1 javascriptError:(id)arg2;
+- (void)_applicationReadyWithSuccess:(BOOL)arg1 javascriptErrorValue:(id)arg2;
+- (void)_beginAuthentication;
 - (id)_bootURL;
 - (void)_cleanUpStoppedApp;
-- (void)_completeRequestWithJavascriptResponse:(id)arg1 javascriptError:(id)arg2;
+- (void)_completeRequestWithJavascriptResponse:(id)arg1 javascriptErrorValue:(id)arg2;
 - (void)_completeRequestWithResult:(id)arg1;
-- (id)_errorForJavascriptError:(id)arg1;
+- (id)_errorForJavascriptErrorValueValue:(id)arg1;
 - (id)_javascriptRequestForRequest:(id)arg1 withVerificationData:(id)arg2;
 - (id)_javascriptShowUserInterfacePurposeForAuthenticationUserInterfacePurpose:(int)arg1;
 - (id)_makeJavaScriptRequest;

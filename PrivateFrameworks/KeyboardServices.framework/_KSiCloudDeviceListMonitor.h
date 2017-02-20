@@ -5,10 +5,20 @@
 @interface _KSiCloudDeviceListMonitor : NSObject {
     ACAccount * _account;
     ACAccountStore * _accountStore;
+    int  _majorVersForCloudKitSyncMacOS;
+    int  _majorVersForCloudKitSynciOS;
+    int  _minorSubversionForCloudKitSyncMacOS;
+    int  _minorVersForCloudKitSyncMacOS;
+    int  _minorVersForCloudKitSynciOS;
 }
 
 @property (nonatomic, retain) ACAccount *account;
 @property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic) int majorVersForCloudKitSyncMacOS;
+@property (nonatomic) int majorVersForCloudKitSynciOS;
+@property (nonatomic) int minorSubversionForCloudKitSyncMacOS;
+@property (nonatomic) int minorVersForCloudKitSyncMacOS;
+@property (nonatomic) int minorVersForCloudKitSynciOS;
 
 + (id)iCloudDeviceListMonitor;
 
@@ -21,8 +31,21 @@
 - (void)fetchCloudKitDevicesWithCompletionBlock:(id /* block */)arg1;
 - (void)fetchSoftwareVersionsFromICloudWithCompletionBlock:(id /* block */)arg1;
 - (id)init;
+- (void)isAccountCompatibleForCloudKitSyncingWithCompletionBlock:(id /* block */)arg1;
+- (BOOL)isSWVersionCloudKitSyncCompatible:(id)arg1;
+- (int)majorVersForCloudKitSyncMacOS;
+- (int)majorVersForCloudKitSynciOS;
+- (int)minorSubversionForCloudKitSyncMacOS;
+- (int)minorVersForCloudKitSyncMacOS;
+- (int)minorVersForCloudKitSynciOS;
 - (void)queryMigrationState;
+- (void)resetDataNoAccount;
 - (void)setAccount:(id)arg1;
 - (void)setAccountStore:(id)arg1;
+- (void)setMajorVersForCloudKitSyncMacOS:(int)arg1;
+- (void)setMajorVersForCloudKitSynciOS:(int)arg1;
+- (void)setMinorSubversionForCloudKitSyncMacOS:(int)arg1;
+- (void)setMinorVersForCloudKitSyncMacOS:(int)arg1;
+- (void)setMinorVersForCloudKitSynciOS:(int)arg1;
 
 @end

@@ -6,6 +6,7 @@
     NSString * _identifier;
     BOOL  _invalidateWhenBackgrounded;
     id /* block */  _invalidationHandler;
+    NSLock * _invalidationLock;
     NSString * _reason;
     int  _state;
     unsigned int  _type;

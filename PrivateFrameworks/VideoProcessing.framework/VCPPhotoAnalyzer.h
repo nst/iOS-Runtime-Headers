@@ -17,6 +17,7 @@
     NSDictionary * _phFaceResults;
     unsigned int  _requestedAnalyses;
     NSMutableDictionary * _results;
+    BOOL  _sdof;
     int  _status;
     struct CGAffineTransform { 
         float a; 

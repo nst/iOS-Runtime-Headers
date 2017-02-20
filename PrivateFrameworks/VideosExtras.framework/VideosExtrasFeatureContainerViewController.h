@@ -13,7 +13,7 @@
 @property (nonatomic) float collectionViewHeight;
 @property (nonatomic, readonly) VideosExtrasContext *context;
 @property (nonatomic) UIView *menuBarView;
-@property (nonatomic, retain) UIViewController *videoPlaybackViewController;
+@property (nonatomic, retain) UIViewController<VideosExtrasVideoPlaybackViewController> *videoPlaybackViewController;
 
 - (void).cxx_destruct;
 - (void)_menuBarHeightChange:(id)arg1;

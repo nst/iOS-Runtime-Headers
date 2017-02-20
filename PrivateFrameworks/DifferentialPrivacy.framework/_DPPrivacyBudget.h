@@ -9,10 +9,10 @@
 }
 
 @property (nonatomic, readonly) _DPPrivacyBudgetProperties *budgetProperties;
-@property (nonatomic, readonly) _DPPrivacyBudgetRecord *budgetRecord;
+@property (retain) _DPPrivacyBudgetRecord *budgetRecord;
 @property (nonatomic, readonly, copy) NSString *name;
 
-+ (long long)balanceForbudgetWithName:(id)arg1;
++ (long long)balanceForBudgetWithName:(id)arg1;
 + (id)budgetWithName:(id)arg1;
 + (void)createBudgetRecordsIn:(id)arg1;
 + (BOOL)createDatabaseRecordIfMissingIn:(id)arg1 key:(id)arg2 balance:(long long)arg3;
@@ -20,21 +20,16 @@
 + (BOOL)debit:(unsigned int)arg1 budgetWithName:(id)arg2;
 + (id)fetchBudgetRecordFrom:(id)arg1 key:(id)arg2;
 + (void)initialize;
-+ (void)saveAllBudgetsIn:(id)arg1;
 + (void)updateAllBudgetsIn:(id)arg1;
 
 - (void).cxx_destruct;
-- (long long)balanceUnsafe;
 - (id)budgetProperties;
 - (id)budgetRecord;
-- (BOOL)credit:(unsigned int)arg1;
-- (BOOL)creditUnsafe:(unsigned int)arg1;
-- (BOOL)debit:(unsigned int)arg1;
-- (BOOL)debitUnsafe:(unsigned int)arg1;
 - (id)description;
 - (id)init;
 - (id)initWithName:(id)arg1 budgetProperties:(id)arg2;
 - (BOOL)initializeBudgetRecordFrom:(id)arg1;
 - (id)name;
+- (void)setBudgetRecord:(id)arg1;
 
 @end

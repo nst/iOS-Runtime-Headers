@@ -7,6 +7,7 @@
 }
 
 @property (getter=isAntialiased, nonatomic) BOOL antialiased;
+@property (nonatomic, copy) NSDictionary *attributeValues;
 @property (nonatomic) int blendMode;
 @property (nonatomic, retain) UIColor *fillColor;
 @property (nonatomic, retain) SKShader *fillShader;

@@ -105,6 +105,7 @@
 - (void)_removeFacebookAppVersionAccessKey;
 - (void)_removeFacebookPermissionGroupAccessKey;
 - (void)_removeLiverpoolTypes;
+- (void)_removeMessengerFromYahooSupportedDataclasses;
 - (id)_resultsForEntityNamed:(id)arg1;
 - (void)_setCloudKitCredentialType;
 - (void)_setOwningBundleIDForNativeAccountTypes;

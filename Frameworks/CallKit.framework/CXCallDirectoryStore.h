@@ -3,11 +3,25 @@
  */
 
 @interface CXCallDirectoryStore : NSObject {
+    NSString * _addBlockingEntriesInsertPhoneNumberBlockingEntrySQL;
+    NSString * _addIdentificationEntriesInsertLabelsSQL;
+    NSString * _addIdentificationEntriesInsertPhoneNumberIdentificationEntrySQL;
+    NSString * _addPhoneNumbersSQL;
     CXDatabase * _database;
+    int  _lastAddBlockingEntriesCount;
+    int  _lastAddIdentificationEntriesCount;
+    int  _lastAddPhoneNumbersCount;
     BOOL  _temporary;
 }
 
+@property (nonatomic, copy) NSString *addBlockingEntriesInsertPhoneNumberBlockingEntrySQL;
+@property (nonatomic, copy) NSString *addIdentificationEntriesInsertLabelsSQL;
+@property (nonatomic, copy) NSString *addIdentificationEntriesInsertPhoneNumberIdentificationEntrySQL;
+@property (nonatomic, copy) NSString *addPhoneNumbersSQL;
 @property (nonatomic, retain) CXDatabase *database;
+@property (nonatomic) int lastAddBlockingEntriesCount;
+@property (nonatomic) int lastAddIdentificationEntriesCount;
+@property (nonatomic) int lastAddPhoneNumbersCount;
 @property (nonatomic, readonly) long long schemaVersion;
 @property (getter=isTemporary, nonatomic) BOOL temporary;
 @property (nonatomic, readonly) NSURL *url;
@@ -17,6 +31,9 @@
 + (BOOL)initializeDatabaseIfNecessaryWithURL:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;
+- (BOOL)_addBlockingEntriesWithData:(id)arg1 startIndex:(unsigned int)arg2 count:(unsigned int)arg3 extensionID:(long long)arg4 error:(id*)arg5;
+- (BOOL)_addIdentificationEntriesWithData:(id)arg1 startIndex:(unsigned int)arg2 count:(unsigned int)arg3 extensionID:(long long)arg4 error:(id*)arg5;
+- (BOOL)_addPhoneNumbersWithEntryData:(id)arg1 startIndex:(unsigned int)arg2 count:(unsigned int)arg3 error:(id*)arg4;
 - (BOOL)_containsBlockingEntryWithSQL:(id)arg1 bindings:(id)arg2 error:(id*)arg3;
 - (long long)_findOrCreateIDForPhoneNumber:(long long)arg1 error:(id*)arg2;
 - (id)_firstIdentificationEntriesForSQL:(id)arg1 bindings:(id)arg2 error:(id*)arg3;
@@ -31,13 +48,17 @@
 - (id)_sqlStringListPlaceholderStringWithNumberOfEntries:(int)arg1;
 - (id)_sqlValuesListPlaceholderStringWithNumberOfEntries:(int)arg1 entryString:(id)arg2;
 - (id)_storeIdentificationEntryWithExtensionBundleID:(id)arg1 localizedLabel:(id)arg2;
+- (id)addBlockingEntriesInsertPhoneNumberBlockingEntrySQL;
 - (BOOL)addBlockingEntriesWithData:(id)arg1 extensionID:(long long)arg2 error:(id*)arg3;
 - (BOOL)addBlockingEntryWithPhoneNumber:(long long)arg1 extensionID:(long long)arg2 error:(id*)arg3;
 - (long long)addExtensionWithIdentifier:(id)arg1 error:(id*)arg2;
 - (long long)addExtensionWithIdentifier:(id)arg1 priority:(long long)arg2 error:(id*)arg3;
+- (id)addIdentificationEntriesInsertLabelsSQL;
+- (id)addIdentificationEntriesInsertPhoneNumberIdentificationEntrySQL;
 - (BOOL)addIdentificationEntriesWithData:(id)arg1 extensionID:(long long)arg2 error:(id*)arg3;
 - (BOOL)addIdentificationEntryWithPhoneNumber:(long long)arg1 labelID:(long long)arg2 extensionID:(long long)arg3 error:(id*)arg4;
 - (long long)addLabel:(id)arg1 error:(id*)arg2;
+- (id)addPhoneNumbersSQL;
 - (BOOL)containsBlockingEntryWithPhoneNumber:(id)arg1 error:(id*)arg2;
 - (BOOL)containsBlockingEntryWithPhoneNumberInArray:(id)arg1 error:(id*)arg2;
 - (BOOL)containsExtensionWithIdentifier:(id)arg1 priority:(long long*)arg2 error:(id*)arg3;
@@ -46,6 +67,7 @@
 - (id)description;
 - (id)firstIdentificationEntriesForPhoneNumbers:(id)arg1 error:(id*)arg2;
 - (id)firstIdentificationEntryForPhoneNumber:(id)arg1 error:(id*)arg2;
+- (long long)idForExtensionWithIdentifier:(id)arg1 error:(id*)arg2;
 - (long long)idForLabel:(id)arg1 error:(id*)arg2;
 - (long long)idForPhoneNumber:(long long)arg1 error:(id*)arg2;
 - (id)identificationEntriesForPhoneNumber:(id)arg1 error:(id*)arg2;
@@ -54,12 +76,24 @@
 - (id)initForReadingWithError:(id*)arg1;
 - (id)initReadOnly:(BOOL)arg1 temporary:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)isTemporary;
+- (int)lastAddBlockingEntriesCount;
+- (int)lastAddIdentificationEntriesCount;
+- (int)lastAddPhoneNumbersCount;
 - (BOOL)performTransactionWithBlock:(id /* block */)arg1 error:(id*)arg2;
 - (id)prioritizedExtensionIdentifiersWithError:(id*)arg1;
+- (BOOL)removeBlockingEntriesForExtensionWithID:(long long)arg1 error:(id*)arg2;
 - (BOOL)removeExtensionWithIdentifier:(id)arg1 error:(id*)arg2;
+- (BOOL)removeIdentificationEntriesForExtensionWithID:(long long)arg1 error:(id*)arg2;
 - (BOOL)removeUnreferencedRecordsWithError:(id*)arg1;
 - (long long)schemaVersion;
+- (void)setAddBlockingEntriesInsertPhoneNumberBlockingEntrySQL:(id)arg1;
+- (void)setAddIdentificationEntriesInsertLabelsSQL:(id)arg1;
+- (void)setAddIdentificationEntriesInsertPhoneNumberIdentificationEntrySQL:(id)arg1;
+- (void)setAddPhoneNumbersSQL:(id)arg1;
 - (void)setDatabase:(id)arg1;
+- (void)setLastAddBlockingEntriesCount:(int)arg1;
+- (void)setLastAddIdentificationEntriesCount:(int)arg1;
+- (void)setLastAddPhoneNumbersCount:(int)arg1;
 - (BOOL)setPrioritizedExtensionIdentifiers:(id)arg1 error:(id*)arg2;
 - (void)setTemporary:(BOOL)arg1;
 - (id)url;

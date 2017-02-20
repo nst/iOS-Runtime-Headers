@@ -13,7 +13,9 @@
     HDFitnessFriendsCloudKitUtility * _cloudKitUtility;
     CKContainer * _container;
     unsigned int  _currentFetchPriority;
+    NSDate * _dateOfLastSuccessfulFetch;
     HDFitnessFriendsManager * _fitnessFriendsManager;
+    NSDictionary * _friendUUIDsByZoneID;
     BOOL  _hasCompletedFirstFetch;
     NSObject<OS_dispatch_source> * _newAccountTasksTimer;
     HDFitnessFriendsNotificationStep * _notificationEventNotificationStep;
@@ -32,6 +34,7 @@
 
 @property (nonatomic, retain) HDFitnessFriendsCloudKitUtility *cloudKitUtility;
 @property (nonatomic, retain) CKContainer *container;
+@property (nonatomic, retain) NSDate *dateOfLastSuccessfulFetch;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL hasCompletedFirstFetch;
@@ -53,10 +56,11 @@
 - (void)_enumerateRecordsByRecordZoneID:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)_fetchAllChangesWithPriority:(int)arg1 completion:(id /* block */)arg2 waitingForSuccessfulFetchCompletion:(id /* block */)arg3;
 - (void)_fetchCloudKitAccountStatusAndNotifyOfChanges;
-- (id)_friendUUIDForActivityDataShareRecordZoneID:(id)arg1;
 - (void)_handleAccountStatusChange:(int)arg1;
 - (void)_handleIncomingNotification:(id)arg1;
 - (void)_handleNewPrivateDatabaseRecordChanges:(id)arg1 sharedDatabaseRecordChanges:(id)arg2;
+- (void)_observerQueue_clearFriendUUIDByZoneIDCache;
+- (id)_observerQueue_friendUUIDForActivityDataShareRecordZoneID:(id)arg1;
 - (void)_observerQueue_notifyObserversOfBeginUpdates;
 - (void)_observerQueue_notifyObserversOfEndUpdates;
 - (void)_observerQueue_performNotificationStep:(id)arg1 onRecords:(id)arg2 dispatchGroup:(id)arg3;
@@ -90,7 +94,9 @@
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (id)container;
 - (void)createShareWithRootRecord:(id)arg1 otherRecordsToSave:(id)arg2 completion:(id /* block */)arg3;
+- (id)dateOfLastSuccessfulFetch;
 - (void)dealloc;
+- (void)fetchAllChangesIfTimeSinceLastFetchIsGreaterThan:(unsigned int)arg1 priority:(int)arg2 completion:(id /* block */)arg3;
 - (void)fetchAllChangesWithPriority:(int)arg1 completion:(id /* block */)arg2;
 - (void)fetchAllChangesWithPriority:(int)arg1 waitingForSuccessfulFetchCompletion:(id /* block */)arg2;
 - (void)fetchAndHandleAccountStatus;
@@ -106,6 +112,7 @@
 - (void)saveRecordsIntoPrivateDatabase:(id)arg1 priority:(int)arg2 completion:(id /* block */)arg3;
 - (void)setCloudKitUtility:(id)arg1;
 - (void)setContainer:(id)arg1;
+- (void)setDateOfLastSuccessfulFetch:(id)arg1;
 - (void)setHasCompletedFirstFetch:(BOOL)arg1;
 - (id)shareURLForShare:(id)arg1;
 

@@ -5,9 +5,10 @@
 
 @optional
 
-- (void)commitPreviewViewController:(struct NSObject { Class x1; }*)arg1;
+- (void)commitPreviewViewController:(UIViewController *)arg1;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 forCoordinateSpace:(id <UICoordinateSpace>)arg2;
 - (void)controllerTraitCollectionDidChangeFrom:(UITraitCollection *)arg1 to:(UITraitCollection *)arg2;
+- (void)didDismissPreviewViewController:(UIViewController *)arg1 committing:(BOOL)arg2;
 - (void)environmentDidUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
 - (PXOneUpPresentation *)oneUpPresentation;
 - (void)preloadWithSourceRegionOfInterest:(PXRegionOfInterest *)arg1 forContext:(PXPhotosDetailsContext *)arg2;

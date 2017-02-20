@@ -14,6 +14,7 @@
 
 - (BOOL)_deleteFromDB:(id)arg1 keepAliases:(BOOL)arg2;
 - (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
+- (void)_removeAliasAndMarkDead;
 - (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (id)asBRAlias;
 - (BOOL)changedAtRelativePath:(id)arg1 scanPackage:(BOOL)arg2;
@@ -29,7 +30,9 @@
 - (id)targetAppLibrary;
 - (id)targetAppLibraryID;
 - (id)targetClientZone;
+- (id)targetDocument;
 - (id)targetItemID;
+- (void)targetMovedToThisAppLibrary;
 - (void)targetMovedToTrashOrDeleted;
 - (id)targetReference;
 - (BOOL)updateOnDiskWithAliasTarget:(id)arg1 forServerEdit:(BOOL)arg2;

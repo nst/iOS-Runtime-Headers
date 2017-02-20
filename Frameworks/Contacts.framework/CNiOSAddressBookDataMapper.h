@@ -36,6 +36,7 @@
 - (BOOL)canExecuteSaveRequest:(id)arg1 error:(id*)arg2;
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id*)arg2;
 - (BOOL)clearChangeHistoryForClient:(id)arg1 toSequenceNumber:(int)arg2 error:(id*)arg3;
+- (id)contactIdentifierWithMatchingDictionary:(id)arg1;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
 - (id)contactsForFetchRequest:(id)arg1 error:(id*)arg2;
 - (id)contactsForFetchRequest:(id)arg1 matchInfos:(id*)arg2 error:(id*)arg3;
@@ -44,6 +45,7 @@
 - (void)dealloc;
 - (id)defaultContainerIdentifier;
 - (id)defaultContainerIdentifierForAddressBook:(void*)arg1;
+- (id)descriptorForRequiredKeysForMatchingDictionary;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (BOOL)executeSaveRequest:(id)arg1 error:(id*)arg2;
 - (BOOL)executeSaveRequest:(id)arg1 response:(id*)arg2 error:(id*)arg3;
@@ -53,6 +55,7 @@
 - (id)init;
 - (id)initWithAddressBook:(id)arg1;
 - (id)initWithContactsEnvironment:(id)arg1;
+- (id)matchingDictionaryForContact:(id)arg1;
 - (id)meContactIdentifierWithError:(id*)arg1;
 - (id)membersOfGroupWithIdentifier:(id)arg1 keysToFetch:(id)arg2 error:(id*)arg3;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id*)arg2;

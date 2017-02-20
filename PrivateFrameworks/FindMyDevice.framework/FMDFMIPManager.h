@@ -71,6 +71,7 @@
 - (void)setNeedsLocateAckLostModeFileURL:(id)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)setXpcConnectionCreationQueue:(id)arg1;
+- (void)signatureHeadersWithData:(id)arg1 completion:(id /* block */)arg2;
 - (void)userDidAckManagedLostModeLocateWithCompletion:(id /* block */)arg1;
 - (void)userNotifiedOfActivationLockForAllPairedDevices;
 - (void)userNotifiedOfActivationLockForPairedDevices:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosUICore.framework/PhotosUICore
  */
 
-@interface PXPeopleWidgetDataSource : PXPeopleDataSource {
+@interface PXPeopleWidgetDataSource : PXPeopleDataSource <PHPhotoLibraryChangeObserver> {
     BOOL  _containsSocialGroups;
     PXPeopleDetailsContext * _context;
     NSObject<OS_dispatch_queue> * _fetchQueue;
@@ -12,9 +12,13 @@
 
 @property (nonatomic) BOOL containsSocialGroups;
 @property (nonatomic, retain) PXPeopleDetailsContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isForOneUp;
 @property (nonatomic, readonly) NSArray *members;
 @property (nonatomic) BOOL prefetchingStarted;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_socialGroupsForIdentifiers:(id)arg1;
@@ -26,6 +30,7 @@
 - (id)initWithName:(id)arg1 objectsReloadBlock:(id /* block */)arg2;
 - (BOOL)isForOneUp;
 - (void)loadMembersWithCompletionBlock:(id /* block */)arg1;
+- (void)photoLibraryDidChange:(id)arg1;
 - (void)prefetchThumbnailsForTargetSize:(struct CGSize { float x1; float x2; })arg1 maxFetchCount:(unsigned int)arg2;
 - (BOOL)prefetchingStarted;
 - (void)setContainsSocialGroups:(BOOL)arg1;

@@ -27,15 +27,20 @@
 @property (nonatomic) int type;
 @property (nonatomic) BOOL verified;
 
++ (id)_persistenceUpdateQueue;
++ (id)_stringFromContact:(id)arg1 preferGivenName:(BOOL)arg2;
 + (id)allPersonsInManagedObjectContext:(id)arg1;
++ (void)batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
 + (void)batchFetchPersonsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(id /* block */)arg3;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1 inManagedObjectContext:(id)arg2;
 + (void)deleteAllPersonsInManagedObjectContext:(id)arg1;
++ (id)displayNameFromContact:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (void)enumerateAssetUUIDsForSearchIndexingWithPersonUUID:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(id /* block */)arg3;
 + (id)fetchPersonCountByAssetUUIDForAssetUUIDs:(id)arg1 predicate:(id)arg2 error:(id*)arg3;
++ (id)fullNameFromContact:(id)arg1;
 + (id)insertIntoManagedObjectContext:(id)arg1 withPersonUUID:(id)arg2 fullName:(id)arg3 verified:(BOOL)arg4;
 + (id)insertIntoPhotoLibrary:(id)arg1 withPersonUUID:(id)arg2 fullName:(id)arg3 verified:(BOOL)arg4;
 + (id)peopleToUploadInPhotoLibrary:(id)arg1 limit:(int)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDWatchManager : NSObject <IDSServiceDelegate> {
+@interface HMDWatchManager : NSObject <HMFLogging, IDSServiceDelegate> {
     NSObject<OS_dispatch_queue> * _clientQueue;
     NSMutableSet * _connectedWatches;
     <HMDWatchManagerDelegate> * _delegate;
@@ -24,6 +24,8 @@
 @property (nonatomic, readonly, copy) NSArray *watches;
 
 + (BOOL)isCompatibleWatchDevice:(id)arg1;
++ (id)logCategory;
++ (id)shortDescription;
 
 - (void).cxx_destruct;
 - (void)__initializeConnectedDevices;
@@ -31,7 +33,10 @@
 - (void)addConnectedWatch:(id)arg1;
 - (id)clientQueue;
 - (id)connectedWatches;
+- (id)debugDescription;
 - (id)delegate;
+- (id)description;
+- (id)descriptionWithPointer:(BOOL)arg1;
 - (id)init;
 - (BOOL)isPairedWithWatch;
 - (void)notifyDelegateOfAddedConnectedWatch:(id)arg1;
@@ -40,8 +45,10 @@
 - (void)removeConnectedWatch:(id)arg1;
 - (id)service;
 - (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
+- (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setPairedWithWatch:(BOOL)arg1;
+- (id)shortDescription;
 - (id)watches;
 
 @end

@@ -32,6 +32,7 @@
 + (Class)dataMessageStoreToUse;
 + (id)messageWithRFC822Data:(id)arg1;
 + (id)messageWithRFC822Data:(id)arg1 withParentPart:(id)arg2;
++ (id)messageWithRFC822Data:(id)arg1 withParentPart:(id)arg2 generateMessageIDHash:(BOOL)arg3;
 + (void)setMessageClassForStore:(id)arg1;
 
 - (void)_calculateAttachmentInfoFromBody:(id)arg1;
@@ -53,7 +54,7 @@
 - (id)bodyDataIsComplete:(BOOL*)arg1 isPartial:(BOOL*)arg2 downloadIfNecessary:(BOOL)arg3;
 - (void)calculateAttachmentInfoFromBody:(id)arg1;
 - (BOOL)calculatedNumberOfAttachments;
-- (BOOL)canBeDeleted;
+- (BOOL)canBeTriaged;
 - (id)cc;
 - (id)ccIfCached;
 - (id)contentType;

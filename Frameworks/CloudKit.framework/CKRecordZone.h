@@ -34,8 +34,8 @@
 
 - (void).cxx_destruct;
 - (void)CKAssignToContainerWithID:(id)arg1;
+- (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)CKPropertiesDescription;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
 - (id)_initZoneWithIdentifier:(id)arg1 capabilities:(unsigned int)arg2;
 - (long long)assetQuotaUsage;
 - (unsigned int)capabilities;

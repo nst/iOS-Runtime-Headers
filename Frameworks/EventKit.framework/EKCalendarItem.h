@@ -40,6 +40,7 @@
 - (id)_recurrencesRelation;
 - (id)_selfAttendeeRelation;
 - (id)_startLocationRelation;
+- (void)_updateModifiedAlarmByAcknowledging;
 - (id)action;
 - (unsigned int)actionsState;
 - (void)addAlarm:(id)arg1;
@@ -83,12 +84,14 @@
 - (BOOL)isEditable;
 - (BOOL)isExternallyOrganizedInvitation;
 - (BOOL)isFloating;
+- (BOOL)isOnlyAlarmAcknowledgedPropertyDirty;
 - (BOOL)isOrganizedBySharedCalendarOwner;
 - (BOOL)isSelfOrganized;
 - (BOOL)isSelfOrganizedInvitation;
 - (id)lastModifiedDate;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)location;
+- (unsigned int)modifiedProperties;
 - (void)moveToCalendar:(id)arg1;
 - (id)notes;
 - (id)organizer;
@@ -125,6 +128,7 @@
 - (void)setExternalModificationTag:(id)arg1;
 - (void)setLastModifiedDate:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setModifiedProperties:(unsigned int)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setOrganizer:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;

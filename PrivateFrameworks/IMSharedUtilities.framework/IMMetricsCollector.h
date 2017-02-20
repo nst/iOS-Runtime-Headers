@@ -11,12 +11,15 @@
 
 - (void*)_ADClientAddValueForScalarKeyApiInit;
 - (void*)_ADClientPushValueForDistributionKeyApiInit;
+- (void*)_ADClientSetValueForScalarKeyApiInit;
 - (BOOL)_isAllowedEvent:(id)arg1;
 - (void)_trackEvent:(id)arg1;
+- (void)_trackEvent:(id)arg1 withCount:(id)arg2;
 - (void)_trackEvent:(id)arg1 withStatistic:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (BOOL)trackEvent:(id)arg1;
+- (BOOL)trackEvent:(id)arg1 withCount:(id)arg2;
 - (BOOL)trackEvent:(id)arg1 withStatistic:(id)arg2;
 
 @end

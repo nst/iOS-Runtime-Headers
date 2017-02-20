@@ -134,9 +134,9 @@
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (int)_graphicsQualityIncludingMediumN41:(BOOL)arg1;
 - (id)_highQualityDevicesForHomeFolders;
-- (id)_highQualityDevicesForSearchTransitions;
 - (id)_lowQualityDevicesForDashBoardPresentation;
 - (id)_lowQualityDevicesForHomescreenFolders;
+- (id)_lowQualityDevicesForSearchTransitions;
 - (id)_mediumQualityProductsIncludingN41:(BOOL)arg1;
 - (int)sbf_bannerGraphicsQuality;
 - (int)sbf_controlCenterGraphicsQuality;

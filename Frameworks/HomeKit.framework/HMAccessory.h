@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAccessory : NSObject <HFFavoritable, HFPrettyDescription, HFReorderableHomeKitObject, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
+@interface HMAccessory : NSObject <HFFavoritable, HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     HMThreadSafeMutableArrayCollection * _accessories;
     NSNumber * _accessoryFlags;
     HMThreadSafeMutableArrayCollection * _accessoryProfiles;
@@ -11,12 +11,14 @@
     BOOL  _blocked;
     BOOL  _bridgeSupportsConfiguration;
     BOOL  _bridgedAccessory;
+    NSString * _bundleID;
     HMAccessoryCategory * _category;
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMThreadSafeMutableArrayCollection * _currentServices;
     <HMAccessoryDelegate> * _delegate;
     HMDelegateCaller * _delegateCaller;
     BOOL  _discoveredBridgeableAccessory;
+    BOOL  _firmwareUpdateAvailable;
     NSString * _firmwareVersion;
     HMHome * _home;
     NSString * _manufacturer;
@@ -29,6 +31,7 @@
     int  _reachableTransports;
     HMRoom * _room;
     NSString * _serialNumber;
+    NSString * _storeID;
     unsigned int  _transportTypes;
     NSUUID * _uniqueIdentifier;
     NSArray * _uniqueIdentifiersForBridgeAccessories;
@@ -45,6 +48,7 @@
 @property (nonatomic) BOOL bridgeSupportsConfiguration;
 @property (getter=isBridged, nonatomic, readonly) BOOL bridged;
 @property (nonatomic) BOOL bridgedAccessory;
+@property (retain) NSString *bundleID;
 @property (nonatomic, readonly, copy) NSArray *cameraProfiles;
 @property (nonatomic, retain) HMAccessoryCategory *category;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
@@ -54,14 +58,20 @@
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL discoveredBridgeableAccessory;
+@property (nonatomic) BOOL firmwareUpdateAvailable;
 @property (retain) NSString *firmwareVersion;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int hf_appPunchOutReason;
 @property (nonatomic, readonly, copy) NSDate *hf_dateAdded;
 @property (nonatomic, readonly, copy) NSString *hf_displayName;
+@property (nonatomic, readonly) NSSet *hf_displayNamesForVisibleTiles;
 @property (nonatomic, readonly) BOOL hf_hasSetFavorite;
+@property (nonatomic, readonly) BOOL hf_isBridge;
+@property (nonatomic, readonly) BOOL hf_isCamera;
 @property (nonatomic, readonly) BOOL hf_isFavorite;
 @property (nonatomic, readonly) BOOL hf_requiresFirmwareUpdate;
 @property (nonatomic, readonly) HFServiceNameComponents *hf_serviceNameComponents;
+@property (nonatomic, readonly) NSSet *hf_visibleServices;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 @property (nonatomic, readonly, copy) NSArray *identifiersForBridgedAccessories;
@@ -78,6 +88,7 @@
 @property (nonatomic) HMRoom *room;
 @property (retain) NSString *serialNumber;
 @property (nonatomic, readonly, copy) NSArray *services;
+@property (retain) NSString *storeID;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int transportTypes;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
@@ -150,6 +161,7 @@
 - (id)description;
 - (BOOL)discoveredBridgeableAccessory;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)firmwareUpdateAvailable;
 - (id)firmwareVersion;
 - (id)home;
 - (id)identifier;
@@ -160,6 +172,7 @@
 - (BOOL)isAdditionalSetupRequired;
 - (BOOL)isBlocked;
 - (BOOL)isBridged;
+- (BOOL)isFirmwareUpdateAvailable;
 - (BOOL)isReachable;
 - (id)manufacturer;
 - (id)messageReceiveQueue;
@@ -182,12 +195,14 @@
 - (void)setBlocked:(BOOL)arg1;
 - (void)setBridgeSupportsConfiguration:(BOOL)arg1;
 - (void)setBridgedAccessory:(BOOL)arg1;
+- (void)setBundleID:(id)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setClientQueue:(id)arg1;
 - (void)setCurrentServices:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateCaller:(id)arg1;
 - (void)setDiscoveredBridgeableAccessory:(BOOL)arg1;
+- (void)setFirmwareUpdateAvailable:(BOOL)arg1;
 - (void)setFirmwareVersion:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setManufacturer:(id)arg1;
@@ -200,6 +215,7 @@
 - (void)setReachableTransports:(int)arg1;
 - (void)setRoom:(id)arg1;
 - (void)setSerialNumber:(id)arg1;
+- (void)setStoreID:(id)arg1;
 - (void)setTransportTypes:(unsigned int)arg1;
 - (void)setUniqueIdentifiersForBridgeAccessories:(id)arg1;
 - (void)setUniqueIdentifiersForBridgedAccessories:(id)arg1;
@@ -209,6 +225,7 @@
 - (id)uniqueIdentifier;
 - (id)uniqueIdentifiersForBridgeAccessories;
 - (id)uniqueIdentifiersForBridgedAccessories;
+- (void)updateAccessoryInfo:(id)arg1;
 - (void)updateApplicationData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateApplicationData:(id)arg1 forService:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -219,14 +236,17 @@
 - (int)hf_appPunchOutReason;
 - (id)hf_dateAdded;
 - (id)hf_displayName;
+- (id)hf_displayNamesForVisibleTiles;
 - (BOOL)hf_hasSetFavorite;
 - (BOOL)hf_isBridge;
 - (BOOL)hf_isCamera;
 - (BOOL)hf_isFavorite;
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
 - (BOOL)hf_requiresFirmwareUpdate;
+- (id)hf_serializedStateDumpRepresentation;
 - (id)hf_serviceNameComponents;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateIsFavorite:(BOOL)arg1;
+- (id)hf_visibleServices;
 
 @end

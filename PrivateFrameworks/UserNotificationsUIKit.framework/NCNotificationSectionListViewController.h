@@ -17,7 +17,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_reloadRequestsAtIndices:(id)arg1;
+- (id)_requestSectionsForNotificationRequests:(id)arg1;
+- (id)allNotificationRequests;
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
@@ -29,6 +30,7 @@
 - (id)headerViewInClearState;
 - (id)headerViewInForceTouchState;
 - (void)hideRequestsForNotificationSectionIdentifier:(id)arg1 subSectionIdentifier:(id)arg2;
+- (id)indexPathForNotificationRequest:(id)arg1;
 - (id)init;
 - (BOOL)insertNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
 - (BOOL)modifyNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;

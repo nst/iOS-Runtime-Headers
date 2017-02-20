@@ -5,7 +5,6 @@
 @interface HAPAccessoryServerIP : HAPAccessoryServer <HAPHTTPClientDebugDelegate, HAPHTTPClientDelegate> {
     NSDictionary * _bonjourDeviceInfo;
     HAPAccessoryServerBrowserIP * _browser;
-    unsigned int  _configNumber;
     BOOL  _continuingLegacyWACpairing;
     NSString * _controllerUsername;
     BOOL  _establishingSecureConnection;
@@ -27,12 +26,12 @@
     BOOL  _wacComplete;
     NSDictionary * _wacDeviceInfo;
     BOOL  _wacLegacy;
+    BOOL  _wacStarted;
 }
 
 @property (getter=isAddingViaWAC, nonatomic, readonly) BOOL addingViaWAC;
 @property (nonatomic, retain) NSDictionary *bonjourDeviceInfo;
 @property (nonatomic) HAPAccessoryServerBrowserIP *browser;
-@property (nonatomic) unsigned int configNumber;
 @property (getter=isContinuingLegacyWACpairing, nonatomic) BOOL continuingLegacyWACpairing;
 @property (nonatomic, retain) NSString *controllerUsername;
 @property (readonly, copy) NSString *debugDescription;
@@ -57,6 +56,7 @@
 @property (getter=isWacComplete, nonatomic) BOOL wacComplete;
 @property (nonatomic, readonly, copy) NSDictionary *wacDeviceInfo;
 @property (getter=isWacLegacy, nonatomic) BOOL wacLegacy;
+@property (getter=isWacStarted, nonatomic) BOOL wacStarted;
 
 + (id)sharedPairOperationQueue;
 
@@ -92,6 +92,7 @@
 - (BOOL)_isSessionEstablished;
 - (BOOL)_mergeExistingAccessory:(id)arg1 withNewAccessory:(id)arg2;
 - (BOOL)_mergeExistingService:(id)arg1 withNewService:(id)arg2;
+- (void)_notifyDelegatesPairingStopped:(id)arg1;
 - (void)_pairSetupContinueWAC;
 - (long)_pairSetupStart;
 - (void)_pairSetupStartWAC;
@@ -110,9 +111,9 @@
 - (void)_processQueuedOperationsWithError:(id)arg1;
 - (void)_queueAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (void)_queueEnableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
-- (void)_queueReadCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)_queueWriteCharacteristicValues:(id)arg1 queue:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_queueReadCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)_queueWriteCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)_readCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)_requestResource:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_reset;
@@ -122,11 +123,10 @@
 - (BOOL)_updateAccessories:(id)arg1;
 - (void)_updateWithBonjourDeviceInfo:(id)arg1;
 - (BOOL)_updatewithNewAccessories:(id)arg1 associated:(BOOL)arg2;
-- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_writeCharacteristicValues:(id)arg1 timeout:(double)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (id)bonjourDeviceInfo;
 - (id)browser;
-- (unsigned int)configNumber;
 - (void)continuePairingAfterAuthPrompt;
 - (id)controllerUsername;
 - (void)dealloc;
@@ -147,7 +147,7 @@
 - (id)initCommon:(id)arg1 browser:(id)arg2;
 - (id)initWithBonjourDeviceInfo:(id)arg1 keyStore:(id)arg2 browser:(id)arg3;
 - (id)initWithWACDeviceDictionary:(id)arg1 keyStore:(id)arg2 browser:(id)arg3;
-- (void)invalidate;
+- (void)invalidateWithCompletionHandler:(id /* block */)arg1;
 - (id)ipServices;
 - (BOOL)isAddingViaWAC;
 - (BOOL)isContinuingLegacyWACpairing;
@@ -155,6 +155,7 @@
 - (BOOL)isWacAccessory;
 - (BOOL)isWacComplete;
 - (BOOL)isWacLegacy;
+- (BOOL)isWacStarted;
 - (int)linkType;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)model;
@@ -166,15 +167,14 @@
 - (id)primaryAccessoryForServer;
 - (id)protocolVersion;
 - (id)queuedOperations;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)reconfirm;
 - (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)requestResource:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)services;
 - (void)setBonjourDeviceInfo:(id)arg1;
 - (void)setBrowser:(id)arg1;
-- (void)setConfigNumber:(unsigned int)arg1;
 - (void)setContinuingLegacyWACpairing:(BOOL)arg1;
 - (void)setControllerUsername:(id)arg1;
 - (void)setEstablishingSecureConnection:(BOOL)arg1;
@@ -193,6 +193,7 @@
 - (void)setStatusFlags:(unsigned int)arg1;
 - (void)setWacComplete:(BOOL)arg1;
 - (void)setWacLegacy:(BOOL)arg1;
+- (void)setWacStarted:(BOOL)arg1;
 - (id)sourceVersion;
 - (void)startPairing;
 - (unsigned int)statusFlags;
@@ -201,7 +202,6 @@
 - (void)updateWithBonjourDeviceInfo:(id)arg1;
 - (void)updateWithWACDevice:(id)arg1;
 - (id)wacDeviceInfo;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

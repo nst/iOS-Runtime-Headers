@@ -17,7 +17,6 @@
 
 - (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

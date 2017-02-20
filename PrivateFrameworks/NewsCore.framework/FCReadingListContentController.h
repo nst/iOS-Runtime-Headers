@@ -3,9 +3,9 @@
  */
 
 @interface FCReadingListContentController : NSObject <FCKeyedOperationQueueDelegate, FCNetworkReachabilityObserving, FCOperationThrottlerDelegate> {
-    NSArray * _allSortedArticleIDsInReadingList;
     NSObject<OS_dispatch_group> * _articleContentDownloadGroup;
     FCKeyedOperationQueue * _articleContentDownloadKeyQueue;
+    NSArray * _articleIDsAvailableForOfflineReading;
     NSArray * _articleIDsOfInterest;
     FCCloudContext * _context;
     NSMutableSet * _fetchResults;
@@ -13,14 +13,15 @@
     NSDictionary * _holdInterestTokensByArticleID;
     NSOperationQueue * _operationSerialQueue;
     NSMutableDictionary * _outstandingOperationsByArticleID;
+    FCThreadSafeMutableSet * _readingListAvailableForOfflineReading;
     NSObject<OS_dispatch_queue> * _updateHoldInterestTokensQueue;
     <FCOperationThrottler> * _updateHoldInterestTokensThrottler;
     <FCReadingListContentControllerObserving> * observer;
 }
 
-@property (nonatomic, copy) NSArray *allSortedArticleIDsInReadingList;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *articleContentDownloadGroup;
 @property (nonatomic, retain) FCKeyedOperationQueue *articleContentDownloadKeyQueue;
+@property (nonatomic, copy) NSArray *articleIDsAvailableForOfflineReading;
 @property (nonatomic, copy) NSArray *articleIDsOfInterest;
 @property (nonatomic, retain) FCCloudContext *context;
 @property (readonly, copy) NSString *debugDescription;
@@ -32,6 +33,8 @@
 @property (nonatomic) <FCReadingListContentControllerObserving> *observer;
 @property (nonatomic, retain) NSOperationQueue *operationSerialQueue;
 @property (nonatomic, retain) NSMutableDictionary *outstandingOperationsByArticleID;
+@property (nonatomic, retain) FCThreadSafeMutableSet *readingListAvailableForOfflineReading;
+@property (nonatomic, readonly) NSSet *readingListForOfflineReading;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *updateHoldInterestTokensQueue;
 @property (nonatomic, retain) <FCOperationThrottler> *updateHoldInterestTokensThrottler;
@@ -39,13 +42,14 @@
 - (void).cxx_destruct;
 - (void)_fetchHoldInterestTokensForArticleIDs:(id)arg1 completion:(id /* block */)arg2;
 - (void)_updateInterestsIfNeeded;
-- (id)allSortedArticleIDsInReadingList;
 - (id)articleContentDownloadGroup;
 - (id)articleContentDownloadKeyQueue;
+- (id)articleIDsAvailableForOfflineReading;
 - (id)articleIDsOfInterest;
 - (id)context;
 - (void)dealloc;
 - (void)enableDownloadingForOfflineReading;
+- (void)expressInterestInOfflineArticlesWithCompletionHandler:(id /* block */)arg1;
 - (id)fetchResults;
 - (BOOL)hasBeenEnabled;
 - (id)holdInterestTokensByArticleID;
@@ -59,9 +63,11 @@
 - (id)operationSerialQueue;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(id /* block */)arg2;
 - (id)outstandingOperationsByArticleID;
-- (void)setAllSortedArticleIDsInReadingList:(id)arg1;
+- (id)readingListAvailableForOfflineReading;
+- (id)readingListForOfflineReading;
 - (void)setArticleContentDownloadGroup:(id)arg1;
 - (void)setArticleContentDownloadKeyQueue:(id)arg1;
+- (void)setArticleIDsAvailableForOfflineReading:(id)arg1;
 - (void)setArticleIDsOfInterest:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setFetchResults:(id)arg1;
@@ -70,6 +76,7 @@
 - (void)setObserver:(id)arg1;
 - (void)setOperationSerialQueue:(id)arg1;
 - (void)setOutstandingOperationsByArticleID:(id)arg1;
+- (void)setReadingListAvailableForOfflineReading:(id)arg1;
 - (void)setUpdateHoldInterestTokensQueue:(id)arg1;
 - (void)setUpdateHoldInterestTokensThrottler:(id)arg1;
 - (id)updateHoldInterestTokensQueue;

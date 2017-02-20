@@ -65,12 +65,13 @@
 - (BOOL)_canDrawContent;
 - (BOOL)_controlsOwnScaleFactor;
 - (void)_createFramebuffer;
+- (void)_createFramebuffer:(int*)arg1;
 - (void)_deleteFramebuffer;
 - (void)_display:(BOOL)arg1;
 - (void)_initCommon;
 - (BOOL)_presentFramebuffer;
 - (void)_resolveAndDiscard;
-- (void)_setFramebuffer:(BOOL*)arg1;
+- (void)_setFramebuffer:(int*)arg1;
 - (void)bindDrawable;
 - (id)context;
 - (void)dealloc;

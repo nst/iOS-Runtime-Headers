@@ -117,6 +117,7 @@
         unsigned int systemLayoutFittingSizeNeedsUpdate : 1; 
         unsigned int systemLayoutFittingSizeNeedsUpdateInWholeSubtree : 1; 
         unsigned int isCalculatingSystemLayoutFittingSize : 1; 
+        unsigned int suppressEncapsulationConstraints : 1; 
         unsigned int stayHiddenAwaitingReuse : 1; 
         unsigned int stayHiddenAfterReuse : 1; 
         unsigned int skippedLayoutWhileHiddenForReuse : 1; 
@@ -217,6 +218,7 @@
 @property (setter=_setMayRemainFocused:, nonatomic) BOOL _mayRemainFocused;
 @property (nonatomic, readonly, retain) NSISVariable *_minXVariable;
 @property (nonatomic, readonly, retain) NSISVariable *_minYVariable;
+@property (setter=_setMultilineContextWidth:, nonatomic) float _multilineContextWidth;
 @property (nonatomic, readonly, retain) NSMutableArray *_mutableLayoutArrangements;
 @property (nonatomic, readonly, retain) NSMutableArray *_mutableLayoutGuides;
 @property (setter=_setNeedsContentsFormatUpdate:, nonatomic) BOOL _needsContentsFormatUpdate;
@@ -551,7 +553,7 @@
 - (id)_boundsWidthVariable;
 - (BOOL)_cachedTraitCollectionIsValid;
 - (float)_calculatedIntrinsicHeight;
-- (struct CGSize { float x1; float x2; })_calculatedSystemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3 hasIntentionallyCollapsedHeight:(BOOL*)arg4 shouldFlush:(BOOL)arg5;
+- (struct CGSize { float x1; float x2; })_calculatedSystemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3 hasIntentionallyCollapsedHeight:(BOOL*)arg4;
 - (BOOL)_canBeParentTraitEnvironment;
 - (BOOL)_canBeReusedInPickerView;
 - (BOOL)_canBecomeFirstResponderWhenPossible;
@@ -683,6 +685,7 @@
 - (void)_endSuspendingMotionEffects;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_engineFrameAtScreenScaleForItem:(id)arg1 inEngine:(id)arg2;
 - (void)_engineHostConstraints_frameDidChange;
+- (id)_engineHostingWidthConstraint;
 - (void)_enumerateDescendentViews:(id /* block */)arg1;
 - (void)_evaluateContentsFormat;
 - (BOOL)_fakeShouldAnimatePropertyWithKey:(id)arg1;
@@ -841,7 +844,7 @@
 - (id)_lowerExpressionOneLevelWithCurrentXExpression:(id)arg1 YExpression:(id)arg2 vertical:(BOOL)arg3 container:(id)arg4;
 - (void)_makeSubtreePerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)_makeSubtreePerformSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3 copySublayers:(BOOL)arg4;
-- (void)_makeTemporaryInternalConstraintsWithEngine:(id)arg1 ignoreAutoresizingMaskConstraints:(BOOL)arg2 returningConstraintsForViewsNeedingSecondPass:(id*)arg3;
+- (void)_makeTemporaryInternalConstraintsWithEngine:(id)arg1 ignoreAutoresizingMaskConstraints:(BOOL)arg2 returningConstraintsForViewsNeedingSecondPass:(id*)arg3 currentTargetWidth:(float)arg4;
 - (void)_markClippingDetected;
 - (id)_maskView;
 - (BOOL)_mayRemainFocused;
@@ -852,6 +855,7 @@
 - (id)_motionEffects;
 - (BOOL)_motionEffectsAreSuspended;
 - (void)_movedToFront;
+- (float)_multilineContextWidth;
 - (id)_mutableLayoutArrangements;
 - (id)_mutableLayoutArrangementsCreateIfNecessary;
 - (id)_mutableLayoutGuides;
@@ -920,7 +924,7 @@
 - (BOOL)_recordBaselineLoweringInfo;
 - (void)_recordConstraintBrokenWhileUnsatisfiableConstraintsLoggingSuspended:(id)arg1;
 - (id)_recursiveAutolayoutTraceAtLevel:(int)arg1;
-- (void)_recursiveCollectTemporaryInternalConstraintsWithEngine:(id)arg1 ignoreAutoresizingMaskConstraints:(BOOL)arg2 returningConstraintsForViewsNeedingSecondPass:(id*)arg3;
+- (void)_recursiveCollectTemporaryInternalConstraintsWithEngine:(id)arg1 ignoreAutoresizingMaskConstraints:(BOOL)arg2 returningConstraintsForViewsNeedingSecondPass:(id*)arg3 currentTargetWidth:(float)arg4;
 - (id)_recursiveConstraintsTraceAtLevel:(int)arg1;
 - (void)_recursiveInvalidateDescendantsNeedingDoubleUpdateConstraints;
 - (id)_recursiveLayoutEngineDescription;
@@ -1046,6 +1050,7 @@
 - (void)_setMaskView:(id)arg1;
 - (void)_setMayRemainFocused:(BOOL)arg1;
 - (void)_setMonitorsSubtree:(BOOL)arg1;
+- (void)_setMultilineContextWidth:(float)arg1;
 - (void)_setNeedsContentsFormatUpdate;
 - (void)_setNeedsContentsFormatUpdate:(BOOL)arg1;
 - (void)_setNeedsNonDeferredFocusUpdate;
@@ -1163,9 +1168,9 @@
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
 - (void)_updateConstraintsAsNecessaryAndApplyLayoutFromEngine;
 - (void)_updateConstraintsAtEngineLevelIfNeeded;
-- (void)_updateConstraintsAtEngineLevelIfNeededPostponeVariableChangeNotifications:(BOOL)arg1;
+- (void)_updateConstraintsAtEngineLevelIfNeededWithViewForVariableChangeNotifications:(id)arg1;
 - (void)_updateConstraintsIfNeededCollectingViews:(id)arg1 forSecondPass:(BOOL)arg2;
-- (void)_updateConstraintsIfNeededPostponeVariableChangeNotifications:(BOOL)arg1;
+- (void)_updateConstraintsIfNeededWithViewForVariableChangeNotifications:(id)arg1;
 - (void)_updateContentSizeConstraints;
 - (void)_updateDirectionalConstraintsIfNeeded;
 - (void)_updateInferredLayoutMargins;
@@ -2196,6 +2201,43 @@
 - (id)_SKUIView;
 - (id)skui_apparentBackgroundColor;
 
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (void)didSelect;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2 withAnimationCoordinator:(id)arg3;
+- (void)setValue:(id)arg1 forTVViewStyle:(id)arg2;
+- (void)transferLayoutStylesFromElement:(id)arg1;
+- (id)tv_AccessibilityText;
+- (int)tv_alignment;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tv_alignmentInsetsForExpectedWidth:(float)arg1;
+- (id)tv_backgroundColor;
+- (int)tv_contentAlignment;
+- (unsigned int)tv_elementType;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tv_focusMargin;
+- (id)tv_highlightColor;
+- (float)tv_interitemSpacing;
+- (float)tv_itemHeight;
+- (float)tv_itemWidth;
+- (float)tv_lineSpacing;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tv_margin;
+- (BOOL)tv_marqueeOnHighlight;
+- (float)tv_maxHeight;
+- (float)tv_maxWidth;
+- (float)tv_minHeight;
+- (float)tv_minWidth;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tv_padding;
+- (int)tv_position;
+- (void)tv_setAccessibilityText:(id)arg1;
+- (void)tv_setSiriData:(id)arg1;
+- (void)tv_setValue:(id)arg1 forTVViewTag:(id)arg2;
+- (BOOL)tv_showOnHighlight;
+- (id)tv_siriData;
+- (struct CGSize { float x1; float x2; })tv_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })tv_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withSizeCalculation:(id /* block */)arg2;
+- (id)tv_valueForTVViewTag:(id)arg1;
+- (id)valueForTVViewStyle:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 
 + (void)tpSetSemanticContentAttribute_recursive:(int)arg1 startingAtView:(id)arg2;
@@ -2291,6 +2333,13 @@
 - (void)rc_setNamedConstraints:(id)arg1 forName:(id)arg2;
 - (void)rc_showAllViewBoundsRecursively:(BOOL)arg1;
 - (void)rc_updateConstraintsAndLayoutSubtree;
+
+// Image: /System/Library/PrivateFrameworks/Widgets.framework/Widgets
+
+- (void)_wg_innerWalkSubviewTreeWithBlock:(id /* block */)arg1 stop:(BOOL*)arg2;
+- (BOOL)wg_imageContentsDrawWithinBounds;
+- (BOOL)wg_supportsBottomCornerRadiusGivenRootView:(id)arg1 withCornerRadius:(float)arg2 supportedCorners:(unsigned int*)arg3;
+- (void)wg_walkSubviewTreeWithBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

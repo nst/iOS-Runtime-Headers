@@ -28,7 +28,6 @@
 @property (nonatomic, readonly, copy) NSString *serviceType;
 @property (readonly) Class superclass;
 
-+ (id)controlBrowser;
 + (id)homeSharingBrowserWithGroupID:(id)arg1;
 
 - (void).cxx_destruct;

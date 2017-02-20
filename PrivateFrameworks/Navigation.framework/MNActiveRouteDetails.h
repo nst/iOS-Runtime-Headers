@@ -20,6 +20,12 @@
     NSData * _routeDetailsID;
     unsigned int  _routeIndex;
     GEOTransitSuggestedRoute * _suggestedRoute;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _trafficIncidentOffsets;
+    NSMutableArray * _trafficIncidents;
     int  _transportType;
 }
 
@@ -46,13 +52,23 @@
 @property (nonatomic, retain) NSData *routeDetailsID;
 @property (nonatomic) unsigned int routeIndex;
 @property (nonatomic, retain) GEOTransitSuggestedRoute *suggestedRoute;
+@property (nonatomic, readonly) unsigned int*trafficIncidentOffsets;
+@property (nonatomic, readonly) unsigned int trafficIncidentOffsetsCount;
+@property (nonatomic, retain) NSMutableArray *trafficIncidents;
 @property (nonatomic) int transportType;
+
++ (Class)trafficIncidentsType;
 
 - (void).cxx_destruct;
 - (int)StringAsNavigationType:(id)arg1;
 - (int)StringAsTransportType:(id)arg1;
+- (void)addTrafficIncidentOffsets:(unsigned int)arg1;
+- (void)addTrafficIncidents:(id)arg1;
+- (void)clearTrafficIncidentOffsets;
+- (void)clearTrafficIncidents;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)decoderData;
 - (id)description;
 - (id)destination;
@@ -97,8 +113,16 @@
 - (void)setRouteDetailsID:(id)arg1;
 - (void)setRouteIndex:(unsigned int)arg1;
 - (void)setSuggestedRoute:(id)arg1;
+- (void)setTrafficIncidentOffsets:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (void)setTrafficIncidents:(id)arg1;
 - (void)setTransportType:(int)arg1;
 - (id)suggestedRoute;
+- (unsigned int*)trafficIncidentOffsets;
+- (unsigned int)trafficIncidentOffsetsAtIndex:(unsigned int)arg1;
+- (unsigned int)trafficIncidentOffsetsCount;
+- (id)trafficIncidents;
+- (id)trafficIncidentsAtIndex:(unsigned int)arg1;
+- (unsigned int)trafficIncidentsCount;
 - (int)transportType;
 - (id)transportTypeAsString:(int)arg1;
 - (void)writeTo:(id)arg1;

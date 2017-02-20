@@ -3,20 +3,25 @@
  */
 
 @interface SCROScriptClient : NSObject {
+    NSObject<OS_dispatch_queue> * __scriptDispatchQueue;
     SCROConnection * _connection;
     BOOL  _isReady;
     NSLock * _lock;
     SCRCTargetSelectorTimer * _timer;
 }
 
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *_scriptDispatchQueue;
+
 + (id)sharedClient;
 
 - (BOOL)_isReady;
 - (void)_killConnection;
 - (id)_lazyConnection;
+- (id)_scriptDispatchQueue;
 - (void)dealloc;
 - (void)handleCallback:(id)arg1;
 - (id)init;
 - (BOOL)runScriptFile:(id)arg1;
+- (void)set_scriptDispatchQueue:(id)arg1;
 
 @end

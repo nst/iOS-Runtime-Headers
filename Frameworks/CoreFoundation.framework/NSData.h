@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSData : NSObject <CKDParsedObject, CKRecordValue, FCKeyValueStoreCoding, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, TSPSplitableData>
+@interface NSData : NSObject <ASParsingLeafNode, CKRecordValue, FCKeyValueStoreCoding, HFPropertyListConvertible, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, SiriCoreSQLiteValue, TSPSplitableData>
 
 @property (nonatomic, readonly) NSData *NRSHA256;
 @property (nonatomic, readonly) NSData *SHA1Data;
@@ -218,10 +218,6 @@
 - (BOOL)brc_signatureIsPendingPlaceHolder;
 - (BOOL)brc_signatureIsValid;
 
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
-
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 - (id)cplQueryCursorDescription;
@@ -279,6 +275,23 @@
 - (id)da_hexString;
 - (id)da_lowercaseHexStringWithoutSpaces;
 - (id)da_uppercaseHexStringWithoutSpaces;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)expectsContent;
++ (BOOL)frontingBasicTypes;
++ (BOOL)notifyOfUnknownTokens;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (id)initForLengthTokenOfLength:(unsigned int)arg1;
+- (id)initWithASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 lengthUntilEndOfTerminator:(int)arg6;
+- (int)parsingState;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DASubCal.framework/DASubCal
+
+- (id)digestForSubCal;
 
 // Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
 
@@ -375,6 +388,10 @@
 
 - (id)hexRepresentationWithSpaces_AS:(BOOL)arg1;
 
+// Image: /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
+
+- (unsigned long long)_hashCKMigration;
+
 // Image: /System/Library/PrivateFrameworks/KeychainCircle.framework/KeychainCircle
 
 + (id)dataWithEncodedSequenceData:(id)arg1 data:(id)arg2 error:(id*)arg3;
@@ -416,9 +433,7 @@
 + (id)MCDataWithCFData:(struct __CFData { }*)arg1;
 + (id)MCDataWithHexString:(id)arg1;
 
-- (id)MCBase64String;
 - (id)MCHexString;
-- (id)MCInitWithBase64String:(id)arg1;
 - (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2;
 - (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
@@ -557,6 +572,15 @@
 - (id)pu_hex;
 - (int)sd_compare:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (const void*)siriCoreSQLiteValue_blobRepresentationWithLength:(unsigned long long*)arg1;
+- (id)siriCoreSQLiteValue_escapedString:(BOOL)arg1;
+- (id)siriCoreSQLiteValue_toData;
+- (id)siriCoreSQLiteValue_toNumber;
+- (id)siriCoreSQLiteValue_toString;
+- (int)siriCoreSQLiteValue_type;
+
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
 + (BOOL)AES128CheckVerifier:(id)arg1 withPassword:(id)arg2;
@@ -589,10 +613,21 @@
 - (id)_SBKDataByDeflatingWithNoZipHeaderWithCompression:(unsigned int)arg1;
 - (id)_SBKDataByInflatingWithNoZipHeader;
 
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (id)tv_MD5Digest;
+- (id)tv_SHA1Digest;
+- (id)tv_SHA256Digest;
+- (id)tv_lowercaseHexString;
+
 // Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
 
 - (id)TR_compressedGzipData;
 - (id)TR_decompressedGzipData;
+
+// Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
+
++ (id)uns_PNGDataForImage:(struct CGImage { }*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
 

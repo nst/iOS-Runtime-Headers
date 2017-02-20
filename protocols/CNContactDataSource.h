@@ -12,7 +12,7 @@
 - (<CNContactDataSourceDelegate> *)delegate;
 - (NSIndexPath *)indexPathForContact:(CNContact *)arg1;
 - (NSArray *)indexSections;
-- (NSString *)meContactIdentifier;
+- (NSString *)mainStorePreferredForNameMeContactIdentifier;
 - (NSArray *)sections;
 - (void)setDelegate:(id <CNContactDataSourceDelegate>)arg1;
 

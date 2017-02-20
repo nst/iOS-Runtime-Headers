@@ -96,9 +96,6 @@
 - (int)StringAsApplicationContainerEnvironment:(id)arg1;
 - (int)StringAsIsolationLevel:(id)arg1;
 - (int)StringAsTargetDatabase:(id)arg1;
-- (id)_applicationContainerEnvironmentCKLogValue;
-- (id)_isolationLevelCKLogValue;
-- (id)_targetDatabaseCKLogValue;
 - (id)applicationBundle;
 - (unsigned long long)applicationConfigVersion;
 - (id)applicationContainer;

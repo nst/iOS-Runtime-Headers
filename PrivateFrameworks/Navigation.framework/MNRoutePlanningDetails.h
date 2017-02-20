@@ -18,6 +18,7 @@
     }  _has;
     BOOL  _isForReconnecting;
     BOOL  _isTraceRecording;
+    GEOLocation * _lastLocation;
     int  _navigationType;
     GEOComposedWaypoint * _origin;
     GEODirectionsRequest * _request;
@@ -37,6 +38,7 @@
 @property (nonatomic) BOOL hasGuidancePromptsEnabled;
 @property (nonatomic) BOOL hasIsForReconnecting;
 @property (nonatomic) BOOL hasIsTraceRecording;
+@property (nonatomic, readonly) BOOL hasLastLocation;
 @property (nonatomic) BOOL hasNavigationType;
 @property (nonatomic, readonly) BOOL hasOrigin;
 @property (nonatomic, readonly) BOOL hasRequest;
@@ -48,6 +50,7 @@
 @property (nonatomic) BOOL hasTransportType;
 @property (nonatomic) BOOL isForReconnecting;
 @property (nonatomic) BOOL isTraceRecording;
+@property (nonatomic, retain) GEOLocation *lastLocation;
 @property (nonatomic) int navigationType;
 @property (nonatomic, retain) GEOComposedWaypoint *origin;
 @property (nonatomic, retain) GEODirectionsRequest *request;
@@ -73,6 +76,7 @@
 - (BOOL)hasGuidancePromptsEnabled;
 - (BOOL)hasIsForReconnecting;
 - (BOOL)hasIsTraceRecording;
+- (BOOL)hasLastLocation;
 - (BOOL)hasNavigationType;
 - (BOOL)hasOrigin;
 - (BOOL)hasRequest;
@@ -86,6 +90,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isForReconnecting;
 - (BOOL)isTraceRecording;
+- (id)lastLocation;
 - (void)mergeFrom:(id)arg1;
 - (int)navigationType;
 - (id)navigationTypeAsString:(int)arg1;
@@ -108,6 +113,7 @@
 - (void)setHasTransportType:(BOOL)arg1;
 - (void)setIsForReconnecting:(BOOL)arg1;
 - (void)setIsTraceRecording:(BOOL)arg1;
+- (void)setLastLocation:(id)arg1;
 - (void)setNavigationType:(int)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setRequest:(id)arg1;

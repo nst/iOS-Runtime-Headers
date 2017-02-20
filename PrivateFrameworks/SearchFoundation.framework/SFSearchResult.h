@@ -47,6 +47,7 @@
     double  _personalizationScore;
     unsigned int  _placement;
     BOOL  _preventThumbnailImageScaling;
+    BOOL  _publiclyIndexable;
     NSString * _publishDate;
     SFPunchout * _punchout;
     unsigned long long  _queryId;
@@ -126,6 +127,7 @@
 @property (nonatomic) double personalizationScore;
 @property (nonatomic) unsigned int placement;
 @property (nonatomic) BOOL preventThumbnailImageScaling;
+@property (nonatomic) BOOL publiclyIndexable;
 @property (nonatomic, copy) NSString *publishDate;
 @property (nonatomic, retain) SFPunchout *punchout;
 @property (nonatomic) unsigned long long queryId;
@@ -208,6 +210,7 @@
 - (double)personalizationScore;
 - (unsigned int)placement;
 - (BOOL)preventThumbnailImageScaling;
+- (BOOL)publiclyIndexable;
 - (id)publishDate;
 - (id)punchout;
 - (unsigned long long)queryId;
@@ -268,6 +271,7 @@
 - (void)setPersonalizationScore:(double)arg1;
 - (void)setPlacement:(unsigned int)arg1;
 - (void)setPreventThumbnailImageScaling:(BOOL)arg1;
+- (void)setPubliclyIndexable:(BOOL)arg1;
 - (void)setPublishDate:(id)arg1;
 - (void)setPunchout:(id)arg1;
 - (void)setQueryId:(unsigned long long)arg1;

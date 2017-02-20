@@ -33,6 +33,7 @@
     CKDURLRequest * _request;
     NSMutableArray * _requestUUIDs;
     NSMutableDictionary * _responseHTTPHeadersByRequestUUID;
+    BOOL  _shouldPipelineFetchAllChangesRequests;
     NSString * _sourceApplicationBundleIdentifier;
     NSString * _sourceApplicationSecondaryIdentifier;
     NSDate * _startDate;
@@ -83,6 +84,7 @@
 @property (nonatomic, retain) NSMutableArray *requestUUIDs;
 @property (nonatomic, retain) NSMutableDictionary *responseHTTPHeadersByRequestUUID;
 @property (nonatomic, readonly) BOOL shouldCheckAppVersion;
+@property (nonatomic) BOOL shouldPipelineFetchAllChangesRequests;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
 @property (nonatomic, retain) NSString *sourceApplicationSecondaryIdentifier;
 @property (nonatomic, retain) NSDate *startDate;
@@ -203,6 +205,7 @@
 - (void)setRequest:(id)arg1;
 - (void)setRequestUUIDs:(id)arg1;
 - (void)setResponseHTTPHeadersByRequestUUID:(id)arg1;
+- (void)setShouldPipelineFetchAllChangesRequests:(BOOL)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setStartDate:(id)arg1;
@@ -215,6 +218,7 @@
 - (void)setUserSyncTask:(id)arg1;
 - (void)setW3cNavigationTimingByRequestUUID:(id)arg1;
 - (BOOL)shouldCheckAppVersion;
+- (BOOL)shouldPipelineFetchAllChangesRequests;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
 - (void)start;

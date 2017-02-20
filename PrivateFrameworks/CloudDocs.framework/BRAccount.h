@@ -16,7 +16,6 @@
 + (void)startAccountTokenChangeObserverIfNeeded;
 
 - (void).cxx_destruct;
-- (BOOL)canLogoutSafely;
 - (id)containerWithPendingChanges;
 - (void)evictOldDocumentsWithHandler:(id /* block */)arg1;
 - (BOOL)getEvictableSpace:(id*)arg1 error:(id*)arg2;

@@ -45,6 +45,7 @@
         unsigned int groupType : 1; 
         unsigned int maxActiveTimeSpent : 1; 
         unsigned int maxVerticalScrollPositionEnding : 1; 
+        unsigned int nextArticleAffordanceType : 1; 
         unsigned int paidSubscriberToFeedType : 1; 
         unsigned int parentFeedType : 1; 
         unsigned int previousArticleHostViewTypeIfSwipe : 1; 
@@ -85,6 +86,8 @@
     int  _maxActiveTimeSpent;
     float  _maxVerticalScrollPositionEnding;
     NSMutableArray * _namedEntities;
+    int  _nextArticleAffordanceType;
+    NSString * _nextArticleAffordanceTypeFeedId;
     NSString * _notificationId;
     int  _paidSubscriberToFeedType;
     NSString * _parentFeedId;
@@ -174,6 +177,8 @@
 @property (nonatomic, readonly) BOOL hasLanguage;
 @property (nonatomic) BOOL hasMaxActiveTimeSpent;
 @property (nonatomic) BOOL hasMaxVerticalScrollPositionEnding;
+@property (nonatomic) BOOL hasNextArticleAffordanceType;
+@property (nonatomic, readonly) BOOL hasNextArticleAffordanceTypeFeedId;
 @property (nonatomic, readonly) BOOL hasNotificationId;
 @property (nonatomic) BOOL hasPaidSubscriberToFeedType;
 @property (nonatomic, readonly) BOOL hasParentFeedId;
@@ -212,6 +217,8 @@
 @property (nonatomic) int maxActiveTimeSpent;
 @property (nonatomic) float maxVerticalScrollPositionEnding;
 @property (nonatomic, retain) NSMutableArray *namedEntities;
+@property (nonatomic) int nextArticleAffordanceType;
+@property (nonatomic, retain) NSString *nextArticleAffordanceTypeFeedId;
 @property (nonatomic, retain) NSString *notificationId;
 @property (nonatomic) int paidSubscriberToFeedType;
 @property (nonatomic, retain) NSString *parentFeedId;
@@ -241,6 +248,7 @@
 - (int)StringAsFeedCellHostType:(id)arg1;
 - (int)StringAsFeedPresentationReason:(id)arg1;
 - (int)StringAsGroupType:(id)arg1;
+- (int)StringAsNextArticleAffordanceType:(id)arg1;
 - (int)StringAsPaidSubscriberToFeedType:(id)arg1;
 - (int)StringAsParentFeedType:(id)arg1;
 - (int)activeTimeSpent;
@@ -318,6 +326,8 @@
 - (BOOL)hasLanguage;
 - (BOOL)hasMaxActiveTimeSpent;
 - (BOOL)hasMaxVerticalScrollPositionEnding;
+- (BOOL)hasNextArticleAffordanceType;
+- (BOOL)hasNextArticleAffordanceTypeFeedId;
 - (BOOL)hasNotificationId;
 - (BOOL)hasPaidSubscriberToFeedType;
 - (BOOL)hasParentFeedId;
@@ -361,6 +371,9 @@
 - (id)namedEntities;
 - (id)namedEntitiesAtIndex:(unsigned int)arg1;
 - (unsigned int)namedEntitiesCount;
+- (int)nextArticleAffordanceType;
+- (id)nextArticleAffordanceTypeAsString:(int)arg1;
+- (id)nextArticleAffordanceTypeFeedId;
 - (id)notificationId;
 - (int)paidSubscriberToFeedType;
 - (id)paidSubscriberToFeedTypeAsString:(int)arg1;
@@ -431,6 +444,7 @@
 - (void)setHasIsVideoInFeed:(BOOL)arg1;
 - (void)setHasMaxActiveTimeSpent:(BOOL)arg1;
 - (void)setHasMaxVerticalScrollPositionEnding:(BOOL)arg1;
+- (void)setHasNextArticleAffordanceType:(BOOL)arg1;
 - (void)setHasPaidSubscriberToFeedType:(BOOL)arg1;
 - (void)setHasParentFeedType:(BOOL)arg1;
 - (void)setHasPersonalizationTreatmentId:(BOOL)arg1;
@@ -455,6 +469,8 @@
 - (void)setMaxActiveTimeSpent:(int)arg1;
 - (void)setMaxVerticalScrollPositionEnding:(float)arg1;
 - (void)setNamedEntities:(id)arg1;
+- (void)setNextArticleAffordanceType:(int)arg1;
+- (void)setNextArticleAffordanceTypeFeedId:(id)arg1;
 - (void)setNotificationId:(id)arg1;
 - (void)setPaidSubscriberToFeedType:(int)arg1;
 - (void)setParentFeedId:(id)arg1;

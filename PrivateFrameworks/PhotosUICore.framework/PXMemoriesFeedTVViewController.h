@@ -10,13 +10,18 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) PXMemoriesFeedUIViewController *memoriesFeedController;
+@property (nonatomic, readonly) UIScrollView *ppt_scrollView;
 @property (nonatomic, readonly) PXMemoriesSpecManager *specManager;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_specDidChange:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)memoriesFeedController;
 - (void)observable:(id)arg1 didChange:(unsigned int)arg2 context:(void*)arg3;
+- (id)ppt_scrollView;
+- (void)setMemoriesFeedController:(id)arg1;
 - (id)specManager;
 - (void)viewDidLoad;
 

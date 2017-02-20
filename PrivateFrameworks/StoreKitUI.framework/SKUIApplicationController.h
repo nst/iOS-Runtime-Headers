@@ -67,7 +67,6 @@
 + (id)applicationOptionsWithLaunchOptions:(id)arg1;
 + (id)configurationPreloader;
 + (void)finishedWithConfigurationPreloader;
-+ (void)load;
 + (void)prepareForLaunch;
 
 - (void).cxx_destruct;

@@ -12,7 +12,7 @@
 @property (nonatomic) BOOL enabled;
 @property (nonatomic) float enabledAlpha;
 @property (nonatomic, retain) _UIFeedbackImpactBehavior *impactFeedbackBehavior;
-@property (nonatomic, retain) <UISwitchControl> *switchControl;
+@property (nonatomic) <UISwitchControl> *switchControl;
 
 + (struct CGSize { float x1; float x2; })preferredContentSize;
 

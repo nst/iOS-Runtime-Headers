@@ -146,6 +146,7 @@
 - (id)databaseSizeInBytesExcludingHFD;
 - (id)diagnosticDescription;
 - (BOOL)didRunPostMigrationUpdates;
+- (BOOL)discardHighFrequencyDataStoreWithError:(id*)arg1;
 - (id)dumpSchemaAndReturnError:(id*)arg1;
 - (id)extendedDatabaseTransactionForIdentifier:(id)arg1;
 - (id)extendedTransactions;
@@ -153,6 +154,7 @@
 - (id)firstUnlockBlocks;
 - (BOOL)hasScheduledCheckpoint;
 - (id)hfdQueue;
+- (id)highFrequencyDataStoreURL;
 - (id)homeDirectoryPath;
 - (id)initWithHomeDirectoryPath:(id)arg1 profile:(id)arg2;
 - (BOOL)integrityCheckInProgress;

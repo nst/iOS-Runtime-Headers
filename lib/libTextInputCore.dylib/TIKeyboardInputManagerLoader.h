@@ -3,6 +3,7 @@
  */
 
 @interface TIKeyboardInputManagerLoader : NSObject {
+    NSMutableDictionary * _activeInputManagers;
     NSMutableDictionary * _availableInputManagers;
     NSMutableDictionary * _lastUsedDate;
     TIKeyboardInputManagerBase * _mostRecentlyRequested;
@@ -12,8 +13,10 @@
 
 + (id)sharedLoader;
 
+- (id)activeInputModeIdentifiers;
 - (void)cacheInputManager:(id)arg1;
 - (void)dealloc;
+- (BOOL)hasActiveInputManagers;
 - (id)init;
 - (id)inputManagerForInputMode:(id)arg1 withClass:(Class)arg2;
 - (id)mostRecentlyRequested;

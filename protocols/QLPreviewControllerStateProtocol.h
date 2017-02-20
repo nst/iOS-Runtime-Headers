@@ -15,6 +15,7 @@
 - (void)setCanChangeCurrentPage:(BOOL)arg1;
 - (void)setFullScreen:(BOOL)arg1;
 - (void)setPrinter:(id <QLPrintingProtocol>)arg1;
+- (void)setRotationEnabled:(BOOL)arg1;
 - (void)setToolbarCanBeVisible:(BOOL)arg1;
 - (void)updateKeyCommands;
 - (void)updateOverlayButtons:(BOOL)arg1;

@@ -9,8 +9,8 @@
     int  _navigationStartedToken;
     int  _navigationStoppedToken;
     NSObject<OS_dispatch_queue> * _queue;
+    id /* block */  _rideSelectionsUpdatedHandler;
     id /* block */  _routeSummaryUpdatedHandler;
-    id /* block */  _selectedRideOptionUpdatedHandler;
     id /* block */  _stepIndexUpdatedHandler;
     id /* block */  _transitSummaryUpdatedHandler;
 }
@@ -20,8 +20,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ guidanceStateUpdatedHandler;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ rideSelectionsUpdatedHandler;
 @property (nonatomic, copy) id /* block */ routeSummaryUpdatedHandler;
-@property (nonatomic, copy) id /* block */ selectedRideOptionUpdatedHandler;
 @property (nonatomic, copy) id /* block */ stepIndexUpdatedHandler;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ transitSummaryUpdatedHandler;
@@ -35,22 +35,22 @@
 - (id)initWithQueue:(id)arg1;
 - (void)requestActiveRouteDetailsData;
 - (void)requestGuidanceState;
+- (void)requestRideSelections;
 - (void)requestRouteSummary;
-- (void)requestSelectedRideOption;
 - (void)requestStepIndex;
 - (void)requestTransitSummary;
+- (id /* block */)rideSelectionsUpdatedHandler;
 - (id /* block */)routeSummaryUpdatedHandler;
 - (void)routeSummaryUpdatedWithActiveRouteDetailsData:(id)arg1;
 - (void)routeSummaryUpdatedWithGuidanceStateData:(id)arg1;
 - (void)routeSummaryUpdatedWithNavigationRouteSummaryData:(id)arg1;
-- (void)routeSummaryUpdatedWithSelectedRideOptionData:(id)arg1;
+- (void)routeSummaryUpdatedWithRideSelectionData:(id)arg1;
 - (void)routeSummaryUpdatedWithStepIndexData:(id)arg1;
 - (void)routeSummaryUpdatedWithTransitSummaryData:(id)arg1;
-- (id /* block */)selectedRideOptionUpdatedHandler;
 - (void)setActiveRouteDetailsDataUpdatedHandler:(id /* block */)arg1;
 - (void)setGuidanceStateUpdatedHandler:(id /* block */)arg1;
+- (void)setRideSelectionsUpdatedHandler:(id /* block */)arg1;
 - (void)setRouteSummaryUpdatedHandler:(id /* block */)arg1;
-- (void)setSelectedRideOptionUpdatedHandler:(id /* block */)arg1;
 - (void)setStepIndexUpdatedHandler:(id /* block */)arg1;
 - (void)setTransitSummaryUpdatedHandler:(id /* block */)arg1;
 - (id /* block */)stepIndexUpdatedHandler;

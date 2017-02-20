@@ -3,19 +3,19 @@
  */
 
 @interface CXCallDirectoryExtensionDataRequest : NSObject <CXCallDirectoryExtensionDataRequest, CXCallDirectoryProviderHostProtocol> {
+    id /* block */  _completionHandler;
     CXCallDirectoryExtensionHostContext * _context;
     <CXCallDirectoryExtensionDataRequestDelegate> * _delegate;
-    NSObject<OS_dispatch_queue> * _delegateQueue;
     NSExtension * _extension;
     NSError * _hostCancellationError;
     NSObject<OS_dispatch_queue> * _queue;
     <NSCopying> * _requestIdentifier;
 }
 
+@property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic, retain) CXCallDirectoryExtensionHostContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CXCallDirectoryExtensionDataRequestDelegate> *delegate;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSExtension *extension;
 @property (readonly) unsigned int hash;
@@ -26,24 +26,22 @@
 
 - (void).cxx_destruct;
 - (void)_cancelWithError:(id)arg1;
-- (void)_performDelegateCallback:(id /* block */)arg1;
 - (oneway void)addBlockingEntriesWithData:(id)arg1 reply:(id /* block */)arg2;
 - (oneway void)addIdentificationEntriesWithData:(id)arg1 reply:(id /* block */)arg2;
 - (void)beginWithCompletion:(id /* block */)arg1;
 - (oneway void)completeRequestWithReply:(id /* block */)arg1;
+- (id /* block */)completionHandler;
 - (id)context;
 - (id)delegate;
-- (id)delegateQueue;
 - (id)extension;
 - (id)hostCancellationError;
 - (id)init;
-- (id)initWithExtension:(id)arg1;
+- (id)initWithExtension:(id)arg1 queue:(id)arg2;
 - (id)queue;
 - (id)requestIdentifier;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (void)setDelegateQueue:(id)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setHostCancellationError:(id)arg1;
 - (void)setQueue:(id)arg1;

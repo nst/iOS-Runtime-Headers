@@ -3,6 +3,11 @@
  */
 
 @interface NTPBFeedViewportGap : PBCodable <NSCopying> {
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    }  _activeGroupEmitterIDRefs;
     NSMutableArray * _cursors;
     struct { 
         int *list; 
@@ -10,35 +15,51 @@
         unsigned int size; 
     }  _groupEmitterIDRefs;
     struct { 
+        unsigned int isOffline : 1; 
         unsigned int reachedEnd : 1; 
     }  _has;
     NSString * _identifier;
+    BOOL  _isOffline;
     NTPBFeedViewportEdition * _lastCompletedEdition;
     NTPBDate * _modificationDate;
+    NSMutableArray * _pendingGroups;
     BOOL  _reachedEnd;
     NTPBDate * _refreshDate;
 }
 
+@property (nonatomic, readonly) int*activeGroupEmitterIDRefs;
+@property (nonatomic, readonly) unsigned int activeGroupEmitterIDRefsCount;
 @property (nonatomic, retain) NSMutableArray *cursors;
 @property (nonatomic, readonly) int*groupEmitterIDRefs;
 @property (nonatomic, readonly) unsigned int groupEmitterIDRefsCount;
 @property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasIsOffline;
 @property (nonatomic, readonly) BOOL hasLastCompletedEdition;
 @property (nonatomic, readonly) BOOL hasModificationDate;
 @property (nonatomic) BOOL hasReachedEnd;
 @property (nonatomic, readonly) BOOL hasRefreshDate;
 @property (nonatomic, retain) NSString *identifier;
+@property (nonatomic) BOOL isOffline;
 @property (nonatomic, retain) NTPBFeedViewportEdition *lastCompletedEdition;
 @property (nonatomic, retain) NTPBDate *modificationDate;
+@property (nonatomic, retain) NSMutableArray *pendingGroups;
 @property (nonatomic) BOOL reachedEnd;
 @property (nonatomic, retain) NTPBDate *refreshDate;
 
 + (Class)cursorsType;
++ (Class)pendingGroupsType;
 
+- (int*)activeGroupEmitterIDRefs;
+- (int)activeGroupEmitterIDRefsAtIndex:(unsigned int)arg1;
+- (unsigned int)activeGroupEmitterIDRefsCount;
+- (void)addActiveGroupEmitterIDRefs:(int)arg1;
 - (void)addCursors:(id)arg1;
 - (void)addGroupEmitterIDRef:(int)arg1;
+- (void)addPendingGroups:(id)arg1;
+- (void)clearActiveGroupEmitterIDRefs;
 - (void)clearCursors;
 - (void)clearGroupEmitterIDRefs;
+- (void)clearPendingGroups;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)cursors;
 - (id)cursorsAtIndex:(unsigned int)arg1;
@@ -50,6 +71,7 @@
 - (int*)groupEmitterIDRefs;
 - (unsigned int)groupEmitterIDRefsCount;
 - (BOOL)hasIdentifier;
+- (BOOL)hasIsOffline;
 - (BOOL)hasLastCompletedEdition;
 - (BOOL)hasModificationDate;
 - (BOOL)hasReachedEnd;
@@ -57,18 +79,26 @@
 - (unsigned int)hash;
 - (id)identifier;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isOffline;
 - (id)lastCompletedEdition;
 - (void)mergeFrom:(id)arg1;
 - (id)modificationDate;
+- (id)pendingGroups;
+- (id)pendingGroupsAtIndex:(unsigned int)arg1;
+- (unsigned int)pendingGroupsCount;
 - (BOOL)reachedEnd;
 - (BOOL)readFrom:(id)arg1;
 - (id)refreshDate;
+- (void)setActiveGroupEmitterIDRefs:(int*)arg1 count:(unsigned int)arg2;
 - (void)setCursors:(id)arg1;
 - (void)setGroupEmitterIDRefs:(int*)arg1 count:(unsigned int)arg2;
+- (void)setHasIsOffline:(BOOL)arg1;
 - (void)setHasReachedEnd:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setIsOffline:(BOOL)arg1;
 - (void)setLastCompletedEdition:(id)arg1;
 - (void)setModificationDate:(id)arg1;
+- (void)setPendingGroups:(id)arg1;
 - (void)setReachedEnd:(BOOL)arg1;
 - (void)setRefreshDate:(id)arg1;
 - (void)writeTo:(id)arg1;

@@ -7,6 +7,7 @@
     CNContactFormatter * _contactFormatter;
     CNContactMatchInfo * _contactMatchInfo;
     BOOL  _isMeCard;
+    id /* block */  _selectedBackgroundViewConfiguration;
     <ABStyleProvider> * _styleProvider;
 }
 
@@ -14,22 +15,24 @@
 @property (nonatomic, retain) CNContactFormatter *contactFormatter;
 @property (nonatomic, retain) CNContactMatchInfo *contactMatchInfo;
 @property (nonatomic) BOOL isMeCard;
+@property (nonatomic, copy) id /* block */ selectedBackgroundViewConfiguration;
 @property (nonatomic, readonly) <ABStyleProvider> *styleProvider;
 
-+ (void)contentSizeCategoryDidChange:(id)arg1;
-+ (void)initialize;
-
 - (void).cxx_destruct;
+- (void)_cnui_applyContactStyle;
 - (id)contact;
 - (id)contactFormatter;
 - (id)contactMatchInfo;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isMeCard;
+- (id /* block */)selectedBackgroundViewConfiguration;
 - (void)setContact:(id)arg1;
 - (void)setContactFormatter:(id)arg1;
 - (void)setContactMatchInfo:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setIsMeCard:(BOOL)arg1;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelectedBackgroundViewConfiguration:(id /* block */)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)styleProvider;
 

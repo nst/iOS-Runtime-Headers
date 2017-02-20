@@ -48,9 +48,11 @@
 - (id)actionManager;
 - (BOOL)canStart;
 - (BOOL)canStop;
+- (void)commitPreviewViewController:(id)arg1;
 - (id)currentImageForAssetReference:(id)arg1;
 - (id)dataSourceManager;
 - (id)delegate;
+- (void)didDismissPreviewViewController:(id)arg1 committing:(BOOL)arg2;
 - (BOOL)handlePresentingPinchGestureRecognizer:(id)arg1;
 - (id)implementationDelegate;
 - (id)init;

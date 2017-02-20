@@ -5,18 +5,22 @@
 @interface AFDictationConnection : NSObject <AFNetworkAvailabilityObserver> {
     NSXPCConnection * _connection;
     <AFDictationDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
     BOOL  _hasActiveRequest;
+    NSObject<OS_dispatch_queue> * _internalQueue;
     BOOL  _isCapturingSpeech;
     BOOL  _isWaitingForAudioFile;
     NSSet * _knownOfflineInstalledLanguages;
     NSString * _lastUsedLanguage;
-    void * _levelsSharedMem;
-    unsigned long  _sharedMemSize;
+    NSData * _levelsSharedData;
+    NSString * _requestIdString;
     NSObject<OS_dispatch_group> * _speechCallbackGroup;
+    NSObject<OS_dispatch_source> * _timeoutTimer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AFDictationDelegate> *delegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -35,6 +39,7 @@
 - (void)_connectionClearedForInterruption:(BOOL)arg1;
 - (id)_dictationService;
 - (id)_dictationServiceWithErrorHandler:(id /* block */)arg1;
+- (void)_dispatchAsync:(id /* block */)arg1;
 - (void)_dispatchCallbackGroupBlock:(id /* block */)arg1;
 - (void)_extendRequestTimeout;
 - (void)_invokeRequestTimeout;
@@ -44,6 +49,7 @@
 - (void)_setLevelsWithSharedMem:(id)arg1;
 - (void)_stopLevelUpdates;
 - (void)_tellSpeechDelegateAudioFileFinished:(id)arg1 error:(id)arg2;
+- (void)_tellSpeechDelegateAvailabilityChanged;
 - (void)_tellSpeechDelegateDidProcessAudioDuration:(double)arg1;
 - (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 languageModel:(id)arg2 correctionIdentifier:(id)arg3;
 - (void)_tellSpeechDelegateDidRecognizeSpeechTokens:(id)arg1 languageModel:(id)arg2;
@@ -58,7 +64,7 @@
 - (void)_willCancelDictation;
 - (void)_willCompleteDictation;
 - (void)_willFailDictationWithError:(id)arg1;
-- (void)_willStartDictationWithOptions:(id)arg1;
+- (void)_willStartDictationWithLanguageCode:(id)arg1 options:(id)arg2 speechOptions:(id)arg3 machAbsoluteTime:(unsigned long long)arg4;
 - (void)addRecordedSpeechSampleData:(id)arg1;
 - (float)averagePower;
 - (void)beginAvailabilityMonitoring;
@@ -66,9 +72,11 @@
 - (void)cancelSpeech;
 - (void)dealloc;
 - (id)delegate;
+- (id)delegateQueue;
 - (BOOL)dictationIsAvailableForLanguage:(id)arg1;
 - (void)endSession;
 - (BOOL)forcedOfflineDictationIsAvailableForLanguage:(id)arg1;
+- (id)init;
 - (void)networkAvailability:(id)arg1 isAvailable:(BOOL)arg2;
 - (float)peakPower;
 - (void)preheat;
@@ -77,6 +85,7 @@
 - (void)sendEngagementFeedback:(int)arg1 voiceQueryIdentifier:(id)arg2;
 - (void)sendSpeechCorrection:(id)arg1 forIdentifier:(id)arg2;
 - (void)setDelegate:(id)arg1;
+- (void)setDelegateQueue:(id)arg1;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2;
 - (void)startDictationWithLanguageCode:(id)arg1 options:(id)arg2 speechOptions:(id)arg3;
 - (void)startDictationWithSpeechFileAtURL:(id)arg1 isNarrowBand:(BOOL)arg2 options:(id)arg3 forLanguage:(id)arg4;

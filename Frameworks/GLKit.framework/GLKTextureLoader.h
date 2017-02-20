@@ -5,10 +5,14 @@
 @interface GLKTextureLoader : NSObject {
     EAGLContext * _glContext;
     NSLock * _nsLock;
+    BOOL  _supportsASTC_LDR;
+    BOOL  _supportsETC2;
 }
 
 @property (retain) EAGLContext *glContext;
 @property (retain) NSLock *nsLock;
+@property BOOL supportsASTC_LDR;
+@property BOOL supportsETC2;
 
 + (id)_textureWithTexture:(id)arg1 error:(id*)arg2;
 + (id)_textureWithTextureTXR:(id)arg1 error:(id*)arg2;
@@ -38,6 +42,10 @@
 - (id)nsLock;
 - (void)setGlContext:(id)arg1;
 - (void)setNsLock:(id)arg1;
+- (void)setSupportsASTC_LDR:(BOOL)arg1;
+- (void)setSupportsETC2:(BOOL)arg1;
+- (BOOL)supportsASTC_LDR;
+- (BOOL)supportsETC2;
 - (void)textureWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)textureWithContentsOfData:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)textureWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;

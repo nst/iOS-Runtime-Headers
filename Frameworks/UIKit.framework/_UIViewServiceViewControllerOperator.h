@@ -8,6 +8,7 @@
     id /* block */  __traitsDidChangeHandler;
     id /* block */  __traitsWillChangeHandler;
     BOOL  _canShowTextServices;
+    NSMutableArray * _deferredToViewDidAppear;
     <_UIViewServiceViewControllerOperatorDelegate> * _delegate;
     NSMutableArray * _deputyRotationDelegates;
     BOOL  _disableAutomaticKeyboardBehavior;

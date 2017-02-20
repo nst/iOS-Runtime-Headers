@@ -4,7 +4,6 @@
 
 @interface NCBulletinAttachmentFactory : NSObject
 
-+ (float)_attachmentHeight;
 + (id)_genericImageForAttachmentType:(int)arg1;
 + (id)_imageByCroppingOrPaddingImage:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
 + (id)_imageFromPNGData:(id)arg1;

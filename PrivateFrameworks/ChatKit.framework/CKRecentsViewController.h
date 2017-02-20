@@ -75,6 +75,7 @@
 - (BOOL)stickerBrowserView:(id)arg1 shouldDrawBorderAroundSticker:(id)arg2;
 - (id)stickerBrowserView:(id)arg1 stickerAtIndex:(int)arg2;
 - (id)stickerCache;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 

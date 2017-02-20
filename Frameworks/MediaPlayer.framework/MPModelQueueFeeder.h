@@ -31,7 +31,7 @@
         } __tree_; 
     }  _retrievedIndexToIdentifiers;
     MPShuffleController * _shuffleController;
-    MPIdentifierSet * _startItemIdentifiers;
+    _MPModelQueueFeederIdentifier * _startItemIdentifier;
     NSDictionary * _startTimeModifications;
 }
 
@@ -54,7 +54,7 @@
 - (id)_equivalencySourceAdamIDForIdentifierSet:(id)arg1;
 - (void)_handleFinalResponseWithPreferredStartIndex:(unsigned int)arg1;
 - (BOOL)_hasPlaceholderItemAtIndex:(unsigned int)arg1;
-- (id)_identifiersAtIndex:(unsigned int)arg1;
+- (id)_identifierSetAtIndex:(unsigned int)arg1;
 - (unsigned int)_indexOfItemWithIdentifier:(id)arg1 shouldIgnoreShuffle:(BOOL)arg2;
 - (id)_modelObjectAtIndex:(unsigned int)arg1;
 - (id)_modelObjectPlaybackItemMetadataAtIndex:(unsigned int)arg1;

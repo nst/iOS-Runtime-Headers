@@ -30,6 +30,7 @@
 
 + (BOOL)hasSlowBootArgs;
 + (BOOL)isWakeGestureAvailable;
++ (id)stringForGestureState:(int)arg1;
 + (id)stringForMode:(unsigned char)arg1;
 + (id)stringForNotification:(unsigned char)arg1;
 + (id)stringForStartPose:(unsigned char)arg1;

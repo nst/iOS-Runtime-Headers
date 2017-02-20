@@ -19,6 +19,7 @@
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (BOOL)_requiresCustomPresentationController;
 - (void)_setChildViewController:(id)arg1;
+- (void)dealloc;
 - (void)disconnectRoute;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

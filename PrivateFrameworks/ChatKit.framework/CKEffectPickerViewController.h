@@ -35,7 +35,7 @@
 - (void)effectSelectedWithIdentifier:(id)arg1;
 - (void)handleTouchMoved:(struct CGPoint { float x1; float x2; })arg1;
 - (void)handleTouchUp:(struct CGPoint { float x1; float x2; })arg1;
-- (id)initWithComposition:(id)arg1 sendButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 balloonViewOrigin:(struct CGPoint { float x1; float x2; })arg3;
+- (id)initWithComposition:(id)arg1 sendButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 balloonViewOrigin:(struct CGPoint { float x1; float x2; })arg3 color:(BOOL)arg4;
 - (id)pickerView;
 - (void)presentPicker;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sendButtonFrame;
@@ -48,6 +48,7 @@
 - (void)setText:(id)arg1;
 - (id)text;
 - (void)touchUpInsideCloseButton;
+- (void)updateColor:(BOOL)arg1;
 - (void)updateHintTransition:(float)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

@@ -66,6 +66,7 @@
 - (BOOL)prewarmed;
 - (void)releaseResources;
 - (BOOL)running;
+- (BOOL)sendEvents:(id)arg1 atTime:(double)arg2 channel:(unsigned int)arg3 error:(id*)arg4;
 - (id)serverDelegate;
 - (int)serverProcessID;
 - (BOOL)setChannelEventBehavior:(unsigned int)arg1 channel:(unsigned int)arg2;

@@ -13,11 +13,13 @@
 
 // Image: /System/Library/Frameworks/Intents.framework/Intents
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (int)audioRoute;
 - (id)contacts;
+- (id)description;
 - (id)initWithContacts:(id)arg1;
 - (void)setAudioRoute:(int)arg1;
 - (void)setContacts:(id)arg1;

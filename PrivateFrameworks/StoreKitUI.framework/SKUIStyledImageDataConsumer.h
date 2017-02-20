@@ -82,6 +82,7 @@
 + (id)productImageConsumerWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)productPageProductImageConsumer;
 + (id)purchasedIconConsumer;
++ (id)purchasedMessagesConsumer;
 + (id)purchasedProductImageConsumer;
 + (id)roomIconConsumer;
 + (id)roomProductImageConsumer;

@@ -8,28 +8,20 @@
     TSKAnnotationAuthorStorage * _annotationAuthorStorage;
     TSKAnnotationAuthor * _authorForFiltering;
     TSKChangeNotifier * _changeNotifier;
-    TSKCollaborationCommandHistory * _collaborationCommandHistory;
     TSKCollaborationDocumentSessionState * _collaborationSessionState;
     TSKCollaborationDocumentSessionState * _collaborationSessionStateIfAvailable;
-    TSKCommandHistory * _commandHistory;
     TSUWeakReference * _delegateReference;
     TSULocale * _documentCreationLocale;
     TSULocale * _documentLocale;
     TSKDocumentSupport * _documentSupport;
     TSKDocumentSupport * _documentSupportIfAvailable;
-    BOOL  _hasCommands;
     NSMutableArray * _iCloudTeardownStack;
     NSObject<OS_dispatch_queue> * _iCloudTeardownStackQueue;
     BOOL  _isBeingLocalized;
-    BOOL  _isCommandControllerConfiguredForCollaboration;
     BOOL  _isFindActive;
     TSKPasteboardController * _pasteboardController;
     BOOL  _preventImageConversionOnOpen;
-    NSString * _redoActionString;
-    unsigned int  _redoCount;
     TSKSelectionDispatcher * _selectionDispatcher;
-    NSString * _undoActionString;
-    unsigned int  _undoCount;
 }
 
 @property (nonatomic, readonly) TSKAccessController *accessController;
@@ -39,11 +31,9 @@
 @property (nonatomic, readonly) unsigned int applicationType;
 @property (nonatomic, retain) TSKAnnotationAuthor *authorForFiltering;
 @property (nonatomic, readonly) TSKChangeNotifier *changeNotifier;
-@property (nonatomic, readonly) TSKCollaborationCommandHistory *collaborationCommandHistory;
 @property (nonatomic, readonly) TSKCollaborationDocumentSessionState *collaborationSessionState;
 @property (nonatomic, readonly) TSKCollaborationDocumentSessionState *collaborationSessionStateIfAvailable;
 @property (nonatomic, readonly) TSKCollaborationState *collaborationState;
-@property (nonatomic, readonly) TSKCommandHistory *commandHistory;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <TSKDocumentRootDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -53,22 +43,16 @@
 @property (nonatomic, readonly) TSKDocumentSupport *documentSupport;
 @property (nonatomic, readonly) TSKDocumentSupport *documentSupportIfAvailable;
 @property (getter=isFindActive, nonatomic) BOOL findActive;
-@property (nonatomic, readonly) BOOL hasCommands;
 @property (nonatomic, readonly) BOOL hasICloudConflict;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isBeingLocalized;
-@property (nonatomic, readonly) BOOL isCommandControllerConfiguredForCollaboration;
 @property (nonatomic, readonly) unsigned long long maxMediaItemFileSize;
 @property (nonatomic, retain) TSKPasteboardController *pasteboardController;
-@property (nonatomic, readonly) NSString *redoActionString;
-@property (nonatomic, readonly) unsigned int redoCount;
 @property (nonatomic, readonly) TSKSelectionDispatcher *selectionDispatcher;
 @property (nonatomic) BOOL shouldPreventImageConversionOnOpen;
 @property (nonatomic, readonly) TSSStylesheet *stylesheet;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) TSSTheme *theme;
-@property (nonatomic, readonly) NSString *undoActionString;
-@property (nonatomic, readonly) unsigned int undoCount;
 @property (nonatomic, readonly) unsigned int writingDirection;
 @property (nonatomic, readonly) unsigned int writingDirectionForStorage;
 
@@ -86,13 +70,11 @@
 - (id)calculationEngine;
 - (void)changeDocumentCacheFileProtection:(id)arg1;
 - (id)changeNotifier;
-- (id)collaborationCommandHistory;
 - (id)collaborationSessionState;
 - (id)collaborationSessionStateIfAvailable;
 - (id)collaborationState;
 - (void)collaborationStateDidUpdate:(id)arg1;
 - (id)commandForRemovingCommentsFromDrawables:(id)arg1 context:(id)arg2;
-- (id)commandHistory;
 - (id)customFormatList;
 - (id)dataFromDocumentCachePath:(id)arg1;
 - (void)dealloc;
@@ -112,12 +94,10 @@
 - (void)gilligan_documentDidRemoveObject:(id)arg1;
 - (void)gilligan_documentWillInsertObject:(id)arg1;
 - (void)gilligan_documentWillRemoveObject:(id)arg1;
-- (BOOL)hasCommands;
 - (BOOL)hasICloudConflict;
 - (BOOL)hasICloudTeardownObserver;
 - (id)initWithContext:(id)arg1;
 - (BOOL)isBeingLocalized;
-- (BOOL)isCommandControllerConfiguredForCollaboration;
 - (BOOL)isDirectionRightToLeft;
 - (BOOL)isFindActive;
 - (void)loadFromArchive:(const struct DocumentArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct Reference {} *x6; struct RepeatedPtrField<TSP::Reference> { void **x_7_1_1; int x_7_1_2; int x_7_1_3; int x_7_1_4; } x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; bool x9; }*)arg1 unarchiver:(id)arg2;
@@ -146,8 +126,6 @@
 - (void)pauseRecalculation;
 - (void)pauseRecalculationForBlock:(id /* block */)arg1;
 - (void)pauseRecalculationSometimeSoon;
-- (id)redoActionString;
-- (unsigned int)redoCount;
 - (void)removeCommentsFromDrawables:(id)arg1;
 - (void)removeICloudTeardownObserver:(long long)arg1;
 - (void)resumeRecalculation;
@@ -170,8 +148,6 @@
 - (id)tableIdRemappingCommandsForTablesInDrawables:(id)arg1;
 - (id)tableIdRemappingCommandsForTablesInStorages:(id)arg1;
 - (id)theme;
-- (id)undoActionString;
-- (unsigned int)undoCount;
 - (id)uniqueDocumentCachePathForProposedPath:(id)arg1;
 - (void)updateAnnotationAuthorList:(id)arg1;
 - (void)updateDocumentLocaleToCurrent;

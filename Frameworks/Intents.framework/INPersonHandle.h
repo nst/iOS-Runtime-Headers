@@ -3,6 +3,7 @@
  */
 
 @interface INPersonHandle : NSObject <INPersonHandleExport, NSCopying, NSSecureCoding> {
+    NSString * _label;
     int  _type;
     NSString * _value;
 }
@@ -10,6 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *label;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly, copy) NSString *value;
@@ -17,12 +19,16 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithValue:(id)arg1 type:(int)arg2;
+- (id)initWithValue:(id)arg1 type:(int)arg2 label:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
+- (id)label;
 - (int)type;
 - (id)value;
 

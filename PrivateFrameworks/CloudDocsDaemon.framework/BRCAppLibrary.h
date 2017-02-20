@@ -21,9 +21,7 @@
     long long  _maxLostStamp;
     BOOL  _needsSave;
     NSString * _ownerName;
-    NSMutableIndexSet * _pendingCoordinatedIOs;
-    NSMutableSet * _pendingReadFileCoordinators;
-    NSMutableSet * _pendingWriteFileCoordinators;
+    NSMutableDictionary * _pendingFileCoordinators;
     BRCAccountSession * _session;
     unsigned int  _state;
     NSMutableSet * _targetAppLibraries;
@@ -52,6 +50,7 @@
 @property (readonly) BOOL hasActiveRecursiveQueries;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) BOOL isCloudDocsAppLibrary;
 @property (nonatomic, readonly) BOOL isForeground;
 @property (nonatomic, readonly) BOOL isGreedy;
 @property (nonatomic, readonly) BOOL isPrivateAppLibrary;
@@ -62,7 +61,6 @@
 @property (nonatomic) BOOL needsSave;
 @property (nonatomic, readonly) NSString *ownerName;
 @property (nonatomic, readonly) NSString *pathRelativeToRoot;
-@property (nonatomic, readonly) NSMutableIndexSet *pendingCoordinatedIOs;
 @property (nonatomic, readonly) NSMutableDictionary *plist;
 @property (nonatomic, readonly) BRCRelativePath *root;
 @property (nonatomic, retain) BRCAccountSession *session;
@@ -100,6 +98,7 @@
 - (void)cancelDeepScan;
 - (void)cancelFileCoordinators;
 - (void)cancelFileProviders;
+- (void)cancelWriteCoordinatorForItem:(id)arg1;
 - (void)clearStateBits:(unsigned int)arg1;
 - (id)clientZone;
 - (void)close;
@@ -115,8 +114,6 @@
 - (void)didCreateDocumentScopedItem;
 - (void)didFindLostItem:(id)arg1 oldAppLibrary:(id)arg2;
 - (void)didReceiveHandoffRequest;
-- (id)directoryItemIDByFileID:(unsigned long long)arg1;
-- (id)directoryItemIDByFileID:(unsigned long long)arg1 db:(id)arg2;
 - (unsigned long long)documentCount;
 - (unsigned long long)documentEvictableSizeUsage;
 - (unsigned long long)documentEvictableSizeUsageWithAccessTimeDelta:(double)arg1;
@@ -140,8 +137,9 @@
 - (id)identifier;
 - (BOOL)includesDataScope;
 - (id)init;
-- (id)initWithName:(id)arg1 ownerName:(id)arg2 dbRowID:(id)arg3 zoneRowID:(id)arg4 db:(id)arg5 plist:(id)arg6 session:(id)arg7 initialCreation:(BOOL)arg8 createdRootOnDisk:(BOOL)arg9 rootFileID:(id)arg10;
+- (id)initWithName:(id)arg1 ownerName:(id)arg2 dbRowID:(id)arg3 zoneRowID:(id)arg4 db:(id)arg5 plist:(id)arg6 session:(id)arg7 initialCreation:(BOOL)arg8 createdRootOnDisk:(BOOL)arg9 createdCZMMoved:(BOOL)arg10 rootFileID:(id)arg11;
 - (BOOL)isCloudDocsAppLibrary;
+- (BOOL)isCoordinationPendingForItem:(id)arg1;
 - (BOOL)isDesktopAppLibrary;
 - (BOOL)isDocumentsAppLibrary;
 - (BOOL)isEqual:(id)arg1;
@@ -151,10 +149,6 @@
 - (BOOL)isSharedAppLibrary;
 - (BOOL)isStillTargetingAppLibrary:(id)arg1;
 - (BOOL)isiCloudDesktopAppLibrary;
-- (id)itemByDocumentID:(unsigned int)arg1;
-- (id)itemByDocumentID:(unsigned int)arg1 db:(id)arg2;
-- (id)itemByFileID:(unsigned long long)arg1;
-- (id)itemByFileID:(unsigned long long)arg1 db:(id)arg2;
 - (id)itemByRowID:(unsigned long long)arg1;
 - (id)itemByRowID:(unsigned long long)arg1 db:(id)arg2;
 - (id)itemIDByRowID:(unsigned long long)arg1;
@@ -170,7 +164,6 @@
 - (BOOL)needsSave;
 - (id)ownerName;
 - (id)pathRelativeToRoot;
-- (id)pendingCoordinatedIOs;
 - (id)plist;
 - (void)recomputeShouldEvictState;
 - (void)registerQueryWithAliases:(BOOL)arg1 isRecursive:(BOOL)arg2;

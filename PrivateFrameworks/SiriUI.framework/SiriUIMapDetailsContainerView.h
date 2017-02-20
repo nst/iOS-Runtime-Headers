@@ -10,23 +10,28 @@
         float bottom; 
         float right; 
     }  _backgroundInsets;
+    float  _centerMargin;
     UIView * _detailsView;
     UIView * _mapView;
 }
 
 @property (nonatomic) BOOL autoCenteringDisabled;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } backgroundInsets;
+@property (nonatomic) float centerMargin;
 @property (nonatomic, retain) UIView *detailsView;
 @property (nonatomic, retain) UIView *mapView;
 
 - (void).cxx_destruct;
 - (BOOL)autoCenteringDisabled;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })backgroundInsets;
+- (float)centerMargin;
 - (id)detailsView;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)mapView;
 - (void)setAutoCenteringDisabled:(BOOL)arg1;
 - (void)setBackgroundInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setCenterMargin:(float)arg1;
 - (void)setDetailsView:(id)arg1;
 - (void)setMapView:(id)arg1;
 

@@ -10,7 +10,6 @@
     unsigned int  _textureFormat;
     int  filteringMode;
     BOOL  hasAlpha;
-    BOOL  isLoaded;
     BOOL  isPOT;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
@@ -32,7 +31,6 @@
 @property (nonatomic) struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; } backingTexture;
 @property (nonatomic) int filteringMode;
 @property (nonatomic) BOOL hasAlpha;
-@property (nonatomic) BOOL isLoaded;
 @property (nonatomic) BOOL isPOT;
 @property (getter=getLock, nonatomic, readonly) struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; }*lock;
 @property (nonatomic) char *pixelData;
@@ -51,14 +49,12 @@
 - (struct _opaque_pthread_mutex_t { long x1; BOOL x2[40]; }*)getLock;
 - (BOOL)hasAlpha;
 - (id)init;
-- (BOOL)isLoaded;
 - (BOOL)isPOT;
 - (char *)pixelData;
 - (struct CGSize { float x1; float x2; })pixelSize;
 - (void)setBackingTexture:(struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setFilteringMode:(int)arg1;
 - (void)setHasAlpha:(BOOL)arg1;
-- (void)setIsLoaded:(BOOL)arg1;
 - (void)setIsPOT:(BOOL)arg1;
 - (void)setPixelData:(char *)arg1;
 - (void)setPixelSize:(struct CGSize { float x1; float x2; })arg1;

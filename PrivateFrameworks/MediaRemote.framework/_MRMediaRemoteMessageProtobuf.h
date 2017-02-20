@@ -12,6 +12,7 @@
     unsigned int  _errorCode;
     _MRGameControllerMessageProtobuf * _gameController;
     _MRGameControllerPropertiesMessageProtobuf * _gameControllerProperties;
+    _MRGenericMessageProtobuf * _genericMessage;
     _MRGetKeyboardSessionProtobuf * _getKeyboardMessage;
     _MRGetPlaybackQueueMessageProtobuf * _getPlaybackQueue;
     _MRGetStateMessageProtobuf * _getStateMessage;
@@ -62,6 +63,7 @@
 @property (nonatomic) unsigned int errorCode;
 @property (nonatomic, retain) _MRGameControllerMessageProtobuf *gameController;
 @property (nonatomic, retain) _MRGameControllerPropertiesMessageProtobuf *gameControllerProperties;
+@property (nonatomic, retain) _MRGenericMessageProtobuf *genericMessage;
 @property (nonatomic, retain) _MRGetKeyboardSessionProtobuf *getKeyboardMessage;
 @property (nonatomic, retain) _MRGetPlaybackQueueMessageProtobuf *getPlaybackQueue;
 @property (nonatomic, retain) _MRGetStateMessageProtobuf *getStateMessage;
@@ -76,6 +78,7 @@
 @property (nonatomic) BOOL hasErrorCode;
 @property (nonatomic, readonly) BOOL hasGameController;
 @property (nonatomic, readonly) BOOL hasGameControllerProperties;
+@property (nonatomic, readonly) BOOL hasGenericMessage;
 @property (nonatomic, readonly) BOOL hasGetKeyboardMessage;
 @property (nonatomic, readonly) BOOL hasGetPlaybackQueue;
 @property (nonatomic, readonly) BOOL hasGetStateMessage;
@@ -155,6 +158,7 @@
 - (unsigned int)errorCode;
 - (id)gameController;
 - (id)gameControllerProperties;
+- (id)genericMessage;
 - (id)getKeyboardMessage;
 - (id)getPlaybackQueue;
 - (id)getStateMessage;
@@ -169,6 +173,7 @@
 - (BOOL)hasErrorCode;
 - (BOOL)hasGameController;
 - (BOOL)hasGameControllerProperties;
+- (BOOL)hasGenericMessage;
 - (BOOL)hasGetKeyboardMessage;
 - (BOOL)hasGetPlaybackQueue;
 - (BOOL)hasGetStateMessage;
@@ -235,6 +240,7 @@
 - (void)setErrorCode:(unsigned int)arg1;
 - (void)setGameController:(id)arg1;
 - (void)setGameControllerProperties:(id)arg1;
+- (void)setGenericMessage:(id)arg1;
 - (void)setGetKeyboardMessage:(id)arg1;
 - (void)setGetPlaybackQueue:(id)arg1;
 - (void)setGetStateMessage:(id)arg1;

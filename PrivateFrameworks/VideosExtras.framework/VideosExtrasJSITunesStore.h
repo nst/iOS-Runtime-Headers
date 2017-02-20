@@ -6,19 +6,11 @@
     UIViewController * _formPresentationViewController;
 }
 
-@property (nonatomic, readonly) NSString *DSID;
-@property (nonatomic, readonly) NSDictionary *accountInfo;
-@property (nonatomic, retain) id cookie;
-@property (nonatomic, retain) NSString *cookieURL;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) UIViewController *formPresentationViewController;
 @property (readonly) unsigned int hash;
-@property (getter=isManagedAppleID, nonatomic, readonly) BOOL managedAppleID;
-@property (nonatomic, readonly) NSString *networkConnectionType;
-@property (nonatomic, retain) NSString *storefront;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSString *userAgent;
 
 - (void).cxx_destruct;
 - (id)formPresentationViewController;

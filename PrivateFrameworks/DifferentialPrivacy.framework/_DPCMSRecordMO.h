@@ -6,6 +6,7 @@
 
 @property (nonatomic) double creationDate;
 @property (nonatomic, retain) NSString *key;
+@property (nonatomic) long long reportVersion;
 @property (nonatomic) BOOL submitted;
 
 @end

@@ -25,6 +25,7 @@
     NSString * _name;
     GEOMapItemStorage * _origin;
     unsigned int  _originalDuration;
+    NSData * _originalRouteID;
     GEOTransitSuggestedRoute * _originalSuggestedRoute;
     GEODirectionsRequest * _request;
     GEODirectionsResponse * _response;
@@ -61,6 +62,7 @@
 @property (nonatomic, readonly) BOOL hasName;
 @property (nonatomic, readonly) BOOL hasOrigin;
 @property (nonatomic) BOOL hasOriginalDuration;
+@property (nonatomic, readonly) BOOL hasOriginalRouteID;
 @property (nonatomic, readonly) BOOL hasOriginalSuggestedRoute;
 @property (nonatomic, readonly) BOOL hasRequest;
 @property (nonatomic, readonly) BOOL hasResponse;
@@ -72,6 +74,7 @@
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) GEOMapItemStorage *origin;
 @property (nonatomic) unsigned int originalDuration;
+@property (nonatomic, retain) NSData *originalRouteID;
 @property (nonatomic, retain) GEOTransitSuggestedRoute *originalSuggestedRoute;
 @property (nonatomic, retain) GEODirectionsRequest *request;
 @property (nonatomic, retain) GEODirectionsResponse *response;
@@ -118,6 +121,7 @@
 - (BOOL)hasName;
 - (BOOL)hasOrigin;
 - (BOOL)hasOriginalDuration;
+- (BOOL)hasOriginalRouteID;
 - (BOOL)hasOriginalSuggestedRoute;
 - (BOOL)hasRequest;
 - (BOOL)hasResponse;
@@ -134,6 +138,7 @@
 - (id)name;
 - (id)origin;
 - (unsigned int)originalDuration;
+- (id)originalRouteID;
 - (id)originalSuggestedRoute;
 - (BOOL)readFrom:(id)arg1;
 - (id)request;
@@ -155,6 +160,7 @@
 - (void)setName:(id)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setOriginalDuration:(unsigned int)arg1;
+- (void)setOriginalRouteID:(id)arg1;
 - (void)setOriginalSuggestedRoute:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setResponse:(id)arg1;

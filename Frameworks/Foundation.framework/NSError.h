@@ -9,13 +9,14 @@
     NSDictionary * _userInfo;
 }
 
-@property (nonatomic, readonly) long _code;
+@property (nonatomic, readonly) int _code;
 @property (nonatomic, readonly) NSString *_domain;
 @property (getter=_mapkit_isCLDenied, nonatomic, readonly) BOOL _mapkit_CLDenied;
 @property (getter=_mapkit_isCLErrorNetwork, nonatomic, readonly) BOOL _mapkit_CLErrorNetwork;
 @property (getter=_mapkit_isCLHeadingFailure, nonatomic, readonly) BOOL _mapkit_CLHeadingFailure;
 @property (getter=_mapkit_isCLLocationUnknown, nonatomic, readonly) BOOL _mapkit_CLLocationUnknown;
 @property (nonatomic, readonly, retain) NSURL *_mapkit_locationErrorSettingsURL;
+@property (nonatomic, readonly) id _userInfo;
 @property (readonly) int code;
 @property (getter=isComparisonError, nonatomic, readonly) BOOL comparisonError;
 @property (readonly, copy) NSString *debugDescription;
@@ -113,9 +114,9 @@
 + (id)CKErrorWithPOSIXCode:(int)arg1;
 
 - (id)CKClientSuitableError;
+- (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (BOOL)CKIsNotFoundError;
 - (BOOL)CKIsPOSIXErrorCode:(int)arg1;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
 - (BOOL)isComparisonError;
 
 // Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
@@ -169,6 +170,8 @@
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 + (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
++ (id)hmInternalErrorWithCode:(int)arg1;
++ (id)hmInternalErrorWithCode:(int)arg1 underlyingError:(id)arg2;
 
 - (BOOL)isHMError;
 
@@ -183,6 +186,7 @@
 - (BOOL)_mapkit_isCLLocationUnknown;
 - (BOOL)_mapkit_isDirectionsError;
 - (id)_mapkit_locationErrorSettingsURL;
+- (id)_mapkit_transitIncident;
 - (int)_mapkit_underlyingGEOError;
 
 // Image: /System/Library/Frameworks/Metal.framework/Metal
@@ -262,6 +266,7 @@
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 
 + (id)ak_errorWithCode:(int)arg1;
++ (id)ak_errorWithCode:(int)arg1 underlyingError:(id)arg2;
 + (id)ak_wrappedAnisetteError:(long)arg1;
 
 - (BOOL)ak_isUserCancelError;
@@ -338,6 +343,8 @@
 - (BOOL)_brc_isCloudKitInternalErrorCode:(int)arg1;
 - (BOOL)_brc_isCloudKitInternalErrorSafeToSyncUpWithoutSyncDown;
 - (BOOL)_brc_isCloudKitPluginErrorCode:(int)arg1;
+- (BOOL)_brc_isCloudKitZoneNotFoundError;
+- (BOOL)_brc_isCloudKitZoneUserDeletedError;
 - (id)br_cloudKitErrorForIdentifier:(id)arg1;
 - (double)br_suggestedRetryTimeInterval;
 - (BOOL)brc_checkErrorsFromCloudKit:(id /* block */)arg1;
@@ -351,6 +358,7 @@
 - (BOOL)brc_isBlacklistError;
 - (BOOL)brc_isCloudKitAssetFileModified;
 - (BOOL)brc_isCloudKitCancellationError;
+- (BOOL)brc_isCloudKitErrorImplyingZoneNeedsCreation;
 - (BOOL)brc_isCloudKitErrorNeedsPCSPrep;
 - (BOOL)brc_isCloudKitErrorRequiringAssetRescan;
 - (BOOL)brc_isCloudKitErrorRequiringAssetReupload;
@@ -362,8 +370,6 @@
 - (BOOL)brc_isCloudKitErrorZoneUndergoingMigration;
 - (BOOL)brc_isCloudKitOutOfQuota;
 - (BOOL)brc_isCloudKitUnknownItemError;
-- (BOOL)brc_isCloudKitZoneNotFoundError;
-- (BOOL)brc_isCloudKitZoneUserDeletedError;
 - (BOOL)brc_isEverRetriable;
 - (BOOL)brc_isOutOfSpaceError;
 - (BOOL)brc_isResetError;
@@ -417,6 +423,8 @@
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 + (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
++ (id)hmInternalErrorWithCode:(int)arg1;
++ (id)hmInternalErrorWithCode:(int)arg1 underlyingError:(id)arg2;
 
 - (BOOL)isHAPError;
 - (BOOL)isHMError;
@@ -454,17 +462,14 @@
 - (void)_MSApplyBlock:(id /* block */)arg1;
 - (id)_MSVerboseDescriptionRecursionCount:(int)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
-
-+ (id)cecAcknowledgementErrorWithUnderlyingError:(id)arg1;
-+ (id)cecFeatureAbortErrorWithOpCode:(unsigned char)arg1 reason:(unsigned char)arg2 method:(id)arg3;
-+ (id)cecIOErrorWithUnderlyingError:(id)arg1;
-
-- (BOOL)isCECAcknowledgementError;
-
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
 - (id)DAExtendedDescription;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DASubCal.framework/DASubCal
+
+- (BOOL)isSubCalAuthError;
+- (BOOL)isSubCalReachabilityError;
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
@@ -549,6 +554,8 @@
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 + (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
++ (id)hmInternalErrorWithCode:(int)arg1;
++ (id)hmInternalErrorWithCode:(int)arg1 underlyingError:(id)arg2;
 
 - (id)conciseCKError;
 - (id)hmErrorFromCKError;
@@ -773,8 +780,10 @@
 
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
-- (long)_code;
+- (int)_code;
 - (id)_domain;
+- (id)_getEmbeddedNSError;
+- (id)_userInfo;
 
 // Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
 

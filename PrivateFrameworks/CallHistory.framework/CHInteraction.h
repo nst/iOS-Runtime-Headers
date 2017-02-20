@@ -9,8 +9,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (void)deleteInteractionWithCall:(id)arg1;
-+ (void)deleteInteractionWithCalls:(id)arg1;
-+ (void)donateCallHistoryInteractionWithCall:(id)arg1;
+- (void)deleteInteractionWithCall:(id)arg1;
+- (void)deleteInteractionWithCalls:(id)arg1;
+- (void)donateCallHistoryInteractionWithCall:(id)arg1;
 
 @end

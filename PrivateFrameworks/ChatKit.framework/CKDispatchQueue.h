@@ -28,7 +28,6 @@
 - (void)addBlock:(id /* block */)arg1 withQueuePriority:(int)arg2;
 - (void)addBlock:(id /* block */)arg1 withQueuePriority:(int)arg2 forKey:(id)arg3;
 - (id)allKeysOfOutstandingBlocks;
-- (void)cancelOustandingBlocks;
 - (BOOL)containsOutstandingBlockForKey:(id)arg1;
 - (void)dealloc;
 - (id)dispatchQueue;

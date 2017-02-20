@@ -4,6 +4,7 @@
 
 @interface SKUIMetricsPageRenderEvent : SSMetricsBaseEvent <SKUIInspectableObject> {
     NSMutableArray * _domChanges;
+    NSDictionary * _metricsBase;
     NSMutableArray * _requests;
 }
 
@@ -13,6 +14,7 @@
 @property (nonatomic, readonly, copy) NSArray *domChanges;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *launchCorrelationKey;
+@property (nonatomic, copy) NSDictionary *metricsBase;
 @property (nonatomic) double pageAppearTime;
 @property (nonatomic) double pageDisappearTime;
 @property (nonatomic) double pageRequestedTime;
@@ -33,6 +35,9 @@
 @property (setter=setXPSamplingPercentageUsers:, nonatomic) double xpSamplingPercentageUsers;
 @property (setter=setXPSessionDuration:, nonatomic) double xpSessionDuration;
 
++ (double)_randomDouble;
++ (id)_sampleWindowStartTime;
++ (void)_setSampleWindowStartTime:(id)arg1;
 + (BOOL)shouldCollectPageRenderData;
 + (BOOL)shouldCollectPageRenderDataForDocument:(id)arg1;
 
@@ -43,10 +48,12 @@
 - (void)appendPropertiesToBody:(id)arg1;
 - (void)appendSamplingPropertiesFromClientContext:(id)arg1;
 - (id)clientCorrelationKey;
+- (id)description;
 - (id)domChanges;
 - (id)init;
 - (BOOL)isReadyForSubmission;
 - (id)launchCorrelationKey;
+- (id)metricsBase;
 - (double)pageAppearTime;
 - (double)pageDisappearTime;
 - (double)pageRequestedTime;
@@ -64,6 +71,7 @@
 - (double)resourceRequestStartTime;
 - (void)setClientCorrelationKey:(id)arg1;
 - (void)setLaunchCorrelationKey:(id)arg1;
+- (void)setMetricsBase:(id)arg1;
 - (void)setPageAppearTime:(double)arg1;
 - (void)setPageDisappearTime:(double)arg1;
 - (void)setPageRequestedTime:(double)arg1;

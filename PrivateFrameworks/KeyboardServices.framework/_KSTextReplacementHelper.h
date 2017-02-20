@@ -11,6 +11,8 @@
 + (id)errorWithCode:(int)arg1 forEntry:(id)arg2;
 + (void)extractAggdMetricsForTextReplacement:(id)arg1;
 + (id)fetchConfigurationPlist;
++ (void)fetchConfigurationPlistIfNeeded;
++ (void)logAggdValueForSyncIsPull:(BOOL)arg1 success:(BOOL)arg2;
 + (void)logPhraseWordCount:(int)arg1;
 + (id)multipleAddErrors:(id)arg1 removeErrors:(id)arg2;
 + (id)sampleShortcut;

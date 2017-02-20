@@ -17,17 +17,20 @@
     NSAttributedString * _transcriptButtonText;
 }
 
+@property (nonatomic, readonly) BOOL allowsEffectAutoPlayback;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } buttonSize;
 @property (getter=isButtonSizeLoaded, nonatomic) BOOL buttonSizeLoaded;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } buttonTextAlignmentInsets;
 @property (nonatomic, readonly) int buttonType;
 @property (nonatomic, copy) NSAttributedString *transcriptButtonText;
 
++ (id)createImageAsTextAttachment;
 + (id)thePastDateFormatter;
 + (id)thisWeekRelativeDateFormatter;
 + (id)todayDateFormatter;
 
 - (void).cxx_destruct;
+- (BOOL)allowsEffectAutoPlayback;
 - (struct CGSize { float x1; float x2; })buttonSize;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })buttonTextAlignmentInsets;
 - (int)buttonType;

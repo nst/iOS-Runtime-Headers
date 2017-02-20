@@ -9,6 +9,7 @@
     NSArray * _balloonFilters;
     float  _contentAlpha;
     int  _direction;
+    UIColor * _textColor;
     CAFilter * _textCompositingFilter;
     int  _type;
 }
@@ -19,6 +20,7 @@
 @property (nonatomic, copy) NSArray *balloonFilters;
 @property (nonatomic) float contentAlpha;
 @property (nonatomic) int direction;
+@property (nonatomic, copy) UIColor *textColor;
 @property (nonatomic, copy) CAFilter *textCompositingFilter;
 @property (nonatomic) int type;
 
@@ -36,8 +38,10 @@
 - (void)setBalloonFilters:(id)arg1;
 - (void)setContentAlpha:(float)arg1;
 - (void)setDirection:(int)arg1;
+- (void)setTextColor:(id)arg1;
 - (void)setTextCompositingFilter:(id)arg1;
 - (void)setType:(int)arg1;
+- (id)textColor;
 - (id)textCompositingFilter;
 - (int)type;
 

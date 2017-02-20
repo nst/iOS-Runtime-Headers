@@ -40,7 +40,7 @@
 + (id)p_textureSetFromRep:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 includeListLabel:(BOOL)arg3 desiredContentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 
 - (void)addAdditionalChildLayersToArray:(id)arg1;
-- (BOOL)canMakePathEditable;
+- (BOOL)canSelectChildRep:(id)arg1;
 - (id)childReps;
 - (id)containedRep;
 - (id)containerInfo;
@@ -59,6 +59,7 @@
 - (void)recursivelyPerformSelector:(SEL)arg1 withObject:(id)arg2;
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1;
 - (void)recursivelyPerformSelectorIfImplemented:(SEL)arg1 withObject:(id)arg2;
+- (void)selectChildRep:(id)arg1 extendingSelection:(BOOL)arg2;
 - (id)stageChunks;
 - (int)stageIndexForStorageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)textStorageForTexture;

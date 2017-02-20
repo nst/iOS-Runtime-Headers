@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMAccessoryProfile : NSObject <HFPrettyDescription, HMObjectMerge> {
+@interface HMAccessoryProfile : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge> {
     _HMAccessoryProfile * _accessoryProfile;
 }
 
@@ -30,6 +30,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

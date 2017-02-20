@@ -10,6 +10,7 @@
 @property (readonly) Class superclass;
 
 - (id)performanceProbe;
+- (id)suggestionsProbe;
 - (id)usageMonitorProbe;
 
 @end

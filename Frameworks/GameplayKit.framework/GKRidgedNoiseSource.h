@@ -2,12 +2,15 @@
    Image: /System/Library/Frameworks/GameplayKit.framework/GameplayKit
  */
 
-@interface GKRidgedNoiseSource : GKCoherentNoiseSource
+@interface GKRidgedNoiseSource : GKCoherentNoiseSource {
+    double  m_weights;
+}
 
 + (id)ridgedNoiseSourceWithFrequency:(double)arg1 octaveCount:(int)arg2 lacunarity:(double)arg3 seed:(int)arg4;
 
-- (struct Module { int (**x1)(); struct Module {} **x2; }*)__newModule;
+- (id)cloneModule;
 - (id)init;
 - (id)initWithFrequency:(double)arg1 octaveCount:(int)arg2 lacunarity:(double)arg3 seed:(int)arg4;
+- (double)valueAt;
 
 @end

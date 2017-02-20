@@ -7,17 +7,19 @@
         struct LmeDataFactory {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _dataFactory;
-    struct shared_ptr<quasar::G2P> { 
-        struct G2P {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<quasar::G2P, std::__1::default_delete<quasar::G2P> > { 
+        struct __compressed_pair<quasar::G2P *, std::__1::default_delete<quasar::G2P> > { 
+            struct G2P {} *__first_; 
+        } __ptr_; 
     }  _g2p;
     struct shared_ptr<quasar::PronCache<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > > > { 
         struct PronCache<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char> > > > {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     }  _pronCache;
-    struct shared_ptr<quasar::LmeData> { 
-        struct LmeData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<quasar::LmeData, std::__1::default_delete<quasar::LmeData> > { 
+        struct __compressed_pair<quasar::LmeData *, std::__1::default_delete<quasar::LmeData> > { 
+            struct LmeData {} *__first_; 
+        } __ptr_; 
     }  _quasarLmeData;
     struct BasicTextSanitizer { 
         int (**_vptr$TextSanitizer)(); 
@@ -89,9 +91,10 @@
             } __table_; 
         } unicode_map; 
     }  _sanitizer;
-    struct shared_ptr<sdapi::SdapiTokenizer> { 
-        struct SdapiTokenizer {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
+    struct unique_ptr<sdapi::SdapiTokenizer, std::__1::default_delete<sdapi::SdapiTokenizer> > { 
+        struct __compressed_pair<sdapi::SdapiTokenizer *, std::__1::default_delete<sdapi::SdapiTokenizer> > { 
+            struct SdapiTokenizer {} *__first_; 
+        } __ptr_; 
     }  _tokenizer;
     struct map<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > >, std::__1::less<std::__1::basic_string<char> >, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > > > > { 
         struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > >, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > >, std::__1::less<std::__1::basic_string<char> >, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> >, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word> > > > > > > { 

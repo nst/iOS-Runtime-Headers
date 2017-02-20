@@ -16,7 +16,6 @@
     BOOL  _hasNavigationStartedToken;
     GEOLocation * _lastLocation;
     NSData * _lastSentCompanionRouteContext;
-    unsigned int  _legIndex;
     BOOL  _locationUnreliable;
     NSXPCConnection * _nanomapscdConnection;
     NSXPCConnection * _navdConnection;
@@ -24,7 +23,7 @@
     unsigned int  _nextAnnouncementStage;
     double  _remainingDistance;
     double  _remainingTime;
-    unsigned int  _rideIndex;
+    NSArray * _rideSelections;
     GEOComposedRoute * _route;
     GEORouteMatch * _routeMatch;
     GEONavigationRouteSummary * _routeSummary;
@@ -47,8 +46,8 @@
 - (void)_sendCompanionRouteDetails:(id)arg1 routeStatus:(id)arg2 routeContext:(id)arg3;
 - (void)_sendCompanionRouteStatus;
 - (void)_sendGuidanceState;
+- (void)_sendRideSelections;
 - (void)_sendRouteSummary;
-- (void)_sendSelectedRideOption;
 - (void)_sendStepIndex;
 - (void)_sendTransitSummary;
 - (void)_updateCompanionRouteStatus;
@@ -68,7 +67,6 @@
 - (void)setNextAnnouncementStage:(unsigned int)arg1 timeUntilNextAnnouncement:(double)arg2;
 - (void)setRemainingDistance:(double)arg1;
 - (void)setRemainingTime:(double)arg1;
-- (void)setRideIndex:(unsigned int)arg1 forLegIndex:(unsigned int)arg2;
 - (void)setRoute:(id)arg1;
 - (void)setRouteMatch:(id)arg1;
 - (void)setStepIndex:(unsigned int)arg1;

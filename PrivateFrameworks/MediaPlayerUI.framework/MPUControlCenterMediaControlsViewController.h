@@ -6,6 +6,7 @@
     BOOL  _controlCenterPageIsVisible;
     MPWeakTimer * _controlCenterPageVisibilityUpdateTimer;
     <CCUIControlCenterPageContentViewControllerDelegate> * _delegate;
+    MPWeakTimer * _pendingRouteStateTimer;
     MPAVRoutingController * _routingController;
     MPAVRoutingViewController * _routingViewController;
     BOOL  _routingViewVisible;

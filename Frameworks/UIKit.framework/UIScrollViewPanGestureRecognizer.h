@@ -5,7 +5,6 @@
 @interface UIScrollViewPanGestureRecognizer : UIPanGestureRecognizer {
     unsigned int  _caughtDeceleratingScrollView;
     unsigned int  _directionalLockEnabled;
-    unsigned int  _hasChildScrollView;
     unsigned int  _hasParentScrollView;
     unsigned int  _lastLockingAxis;
     unsigned int  _lockingAxis;

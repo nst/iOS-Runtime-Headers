@@ -30,7 +30,6 @@
 - (id)_cachedTagsForTagIDs:(id)arg1;
 - (void)_fetchTagForTagID:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_fetchTagsForTagIDs:(id)arg1 qualityOfService:(int)arg2 callbackQueue:(id)arg3 completionHandler:(id /* block */)arg4;
-- (int)_inferRelativePriorityForQualityOfService:(int)arg1;
 - (id)assetManager;
 - (id)cachedTagForID:(id)arg1;
 - (id)cachedTagsForIDs:(id)arg1;

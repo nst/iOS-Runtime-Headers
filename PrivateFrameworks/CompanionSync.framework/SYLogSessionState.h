@@ -48,12 +48,12 @@
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSMutableArray *transportOptions;
 
-+ (Class)peersType;
++ (Class)peerType;
 + (Class)transportOptionsType;
 
 - (void).cxx_destruct;
 - (int)StringAsState:(id)arg1;
-- (void)addPeers:(id)arg1;
+- (void)addPeer:(id)arg1;
 - (void)addTransportOptions:(id)arg1;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
@@ -81,8 +81,8 @@
 - (BOOL)isSending;
 - (unsigned long long)maxConcurrentMessages;
 - (void)mergeFrom:(id)arg1;
+- (id)peerAtIndex:(unsigned int)arg1;
 - (id)peers;
-- (id)peersAtIndex:(unsigned int)arg1;
 - (unsigned int)peersCount;
 - (double)perMessageTimeout;
 - (BOOL)readFrom:(id)arg1;

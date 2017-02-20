@@ -11,7 +11,7 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-+ (void)initialize;
++ (void)load;
 
 - (void)_deliverIntent:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)_errorHandlingHostProxy;

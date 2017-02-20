@@ -42,7 +42,7 @@
 @property (nonatomic) BOOL usesStillImageStabilization;
 @property (nonatomic, copy) NSString *videoPersistenceUUID;
 @property (nonatomic) BOOL wantsAudioForCapture;
-@property (nonatomic) BOOL wantsAutoDuoImageFusion;
+@property (nonatomic) BOOL wantsAutoDualCameraFusion;
 @property (nonatomic) BOOL wantsHighResolutionStills;
 @property (nonatomic) BOOL wantsPortraitEffect;
 @property (nonatomic) BOOL wantsSquareCrop;
@@ -85,7 +85,7 @@
 - (void)setUsesStillImageStabilization:(BOOL)arg1;
 - (void)setVideoPersistenceUUID:(id)arg1;
 - (void)setWantsAudioForCapture:(BOOL)arg1;
-- (void)setWantsAutoDuoImageFusion:(BOOL)arg1;
+- (void)setWantsAutoDualCameraFusion:(BOOL)arg1;
 - (void)setWantsHighResolutionStills:(BOOL)arg1;
 - (void)setWantsPortraitEffect:(BOOL)arg1;
 - (void)setWantsSquareCrop:(BOOL)arg1;

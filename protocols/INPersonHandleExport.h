@@ -6,6 +6,10 @@
 @required
 
 - (id)init;
+- (NSString *)label;
+- (void)setLabel:(NSString *)arg1;
+- (void)setType:(int)arg1;
+- (void)setValue:(NSString *)arg1;
 - (int)type;
 - (NSString *)value;
 

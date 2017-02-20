@@ -301,6 +301,11 @@
 - (id)incrementalURLInDirectory:(id)arg1 withFilename:(id)arg2 andExtension:(id)arg3;
 - (id)unarchiveItemAtPath:(id)arg1 toDirectory:(id)arg2 withProgressionBlock:(id /* block */)arg3;
 
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (unsigned long long)tv_onDiskSizeOfDirectoryAtPath:(id)arg1 status:(int*)arg2;
+- (unsigned long long)tv_onDiskSizeOfFileAtPath:(id)arg1 status:(int*)arg2;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
 - (BOOL)uns_moveOrDeleteItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;

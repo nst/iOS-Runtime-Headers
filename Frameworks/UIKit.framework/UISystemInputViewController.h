@@ -7,7 +7,7 @@
     NSMutableDictionary * _accessoryViewControllers;
     int  _blurEffectStyle;
     UILexicon * _cachedRecents;
-    UITraitCollection * _containingResponderTraitCollection;
+    UIResponder<UITraitEnvironment> * _containingResponder;
     UIView * _containingView;
     UIView * _contentLayoutView;
     BOOL  _didDisplayRecents;
@@ -37,7 +37,7 @@
 @property (nonatomic, retain) UILabel *_promptLabel;
 @property (nonatomic) int blurEffectStyle;
 @property (nonatomic, retain) UILexicon *cachedRecents;
-@property (nonatomic, retain) UITraitCollection *containingResponderTraitCollection;
+@property (nonatomic, retain) UIResponder<UITraitEnvironment> *containingResponder;
 @property (nonatomic, retain) UIView *containingView;
 @property (nonatomic, retain) UIView *contentLayoutView;
 @property (readonly, copy) NSString *debugDescription;
@@ -96,7 +96,7 @@
 - (void)configureRecentsVCIfNecessary;
 - (id)constraintFromView:(id)arg1 attribute:(int)arg2 toView:(id)arg3 attribute:(int)arg4;
 - (id)constraintsForEdge:(int)arg1;
-- (id)containingResponderTraitCollection;
+- (id)containingResponder;
 - (id)containingView;
 - (id)contentLayoutView;
 - (void)dealloc;
@@ -131,7 +131,7 @@
 - (void)setBlurEffectStyle:(int)arg1;
 - (void)setCachedRecents:(id)arg1;
 - (void)setConstraints:(id)arg1 forEdge:(int)arg2;
-- (void)setContainingResponderTraitCollection:(id)arg1;
+- (void)setContainingResponder:(id)arg1;
 - (void)setContainingView:(id)arg1;
 - (void)setContentLayoutView:(id)arg1;
 - (void)setDidDisplayRecents:(BOOL)arg1;

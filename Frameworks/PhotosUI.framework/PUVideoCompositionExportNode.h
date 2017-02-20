@@ -3,7 +3,9 @@
  */
 
 @interface PUVideoCompositionExportNode : PXRunNode <PUVideoURLNode> {
+    BOOL  _beganExport;
     AVAssetExportSession * _exportSession;
+    NSObject<OS_dispatch_queue> * _exportSessionAccessQueue;
     unsigned int  _quality;
     <PUVideoCompositionNode> * _videoCompositionNode;
     NSURL * _videoURL;
@@ -16,6 +18,7 @@
 @property (nonatomic, readonly, copy) NSArray *dependencies;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) double progress;
 @property (nonatomic, readonly) unsigned int quality;
 @property (getter=isRunning, readonly) BOOL running;
 @property (readonly) unsigned int state;
@@ -30,6 +33,7 @@
 - (id)_newOutputURL;
 - (void)didCancel;
 - (id)initWithVideoCompositionNode:(id)arg1 quality:(unsigned int)arg2;
+- (double)progress;
 - (unsigned int)quality;
 - (void)run;
 - (id)videoCompositionNode;

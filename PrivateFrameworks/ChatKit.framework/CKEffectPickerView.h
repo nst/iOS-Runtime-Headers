@@ -16,6 +16,7 @@
     CALayer * _blueContrastLayer;
     UIButton * _closeButton;
     NSLayoutConstraint * _closeButtonBottomConstraint;
+    BOOL  _controlColor;
     <CKEffectPickerViewDelegate> * _delegate;
     CKChatControllerDummyAnimator * _dummyAnimator;
     NSMutableArray * _effectDescriptiveLabels;
@@ -34,6 +35,7 @@
     NSArray * _momentIdentifiers;
     UILabel * _momentTitleLabel;
     UICollectionView * _momentsCollectionView;
+    BOOL  _needsSwitcherAnimation;
     UIPageControl * _pageControl;
     UIPanGestureRecognizer * _panGestureRecognizer;
     NSMutableDictionary * _pausedAnimatedCells;
@@ -58,6 +60,7 @@
 @property (nonatomic, retain) CALayer *blueContrastLayer;
 @property (nonatomic, retain) UIButton *closeButton;
 @property (nonatomic, retain) NSLayoutConstraint *closeButtonBottomConstraint;
+@property (nonatomic) BOOL controlColor;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKEffectPickerViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -79,6 +82,7 @@
 @property (nonatomic, copy) NSArray *momentIdentifiers;
 @property (nonatomic, retain) UILabel *momentTitleLabel;
 @property (nonatomic, retain) UICollectionView *momentsCollectionView;
+@property (nonatomic) BOOL needsSwitcherAnimation;
 @property (nonatomic, retain) UIPageControl *pageControl;
 @property (nonatomic, retain) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, retain) NSMutableDictionary *pausedAnimatedCells;
@@ -110,10 +114,10 @@
 - (id)_defaultSendAnimationContextForAnimationPreview;
 - (id)_glyphLayerForButtonAnimationWithGlyphName:(id)arg1;
 - (BOOL)_keyboardIsOnTopOfEffectPickerWindow;
-- (BOOL)_needsSwitcherAnimation;
 - (void)_panGesture:(id)arg1;
 - (void)_resizeBalloon;
 - (void)_setBalloonText:(id)arg1 withColor:(id)arg2;
+- (void)_setNeedsSwitcherAnimationIfNecessary;
 - (void)_startSwitcherAnimationIfNecessary;
 - (void)_stopBalloonAnimation;
 - (void)_touchUpInsideCloseButton:(id)arg1;
@@ -143,6 +147,7 @@
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (BOOL)controlColor;
 - (void)dealloc;
 - (id)delegate;
 - (id)dummyAnimator;
@@ -159,7 +164,7 @@
 - (id)hintBlackText;
 - (id)hintContainer;
 - (id)hintSendButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sendButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 balloonViewOrigin:(struct CGPoint { float x1; float x2; })arg3 composition:(id)arg4;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 sendButtonFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 balloonViewOrigin:(struct CGPoint { float x1; float x2; })arg3 composition:(id)arg4 color:(BOOL)arg5;
 - (void)invalidateAllAnimationTimers;
 - (BOOL)isAnimating;
 - (void)layoutSubviews;
@@ -168,6 +173,7 @@
 - (id)momentIdentifiers;
 - (id)momentTitleLabel;
 - (id)momentsCollectionView;
+- (BOOL)needsSwitcherAnimation;
 - (id)pageControl;
 - (void)pageControlChanged:(id)arg1;
 - (id)panGestureRecognizer;
@@ -195,6 +201,7 @@
 - (void)setCloseButton:(id)arg1;
 - (void)setCloseButtonBottomConstraint:(id)arg1;
 - (void)setCloseButtonYPosition:(float)arg1;
+- (void)setControlColor:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDummyAnimator:(id)arg1;
 - (void)setEffectDescriptiveLabels:(id)arg1;
@@ -213,6 +220,7 @@
 - (void)setMomentIdentifiers:(id)arg1;
 - (void)setMomentTitleLabel:(id)arg1;
 - (void)setMomentsCollectionView:(id)arg1;
+- (void)setNeedsSwitcherAnimation:(BOOL)arg1;
 - (void)setPageControl:(id)arg1;
 - (void)setPanGestureRecognizer:(id)arg1;
 - (void)setPausedAnimatedCells:(id)arg1;
@@ -228,6 +236,7 @@
 - (void)startAnimationPreviewForIdentifier:(id)arg1;
 - (id)typeSegmentedControl;
 - (id)typeSegmentedControlBottomConstraint;
+- (void)updateColor:(BOOL)arg1;
 - (void)updateHintTransition:(float)arg1;
 - (void)updateMomentTitle:(BOOL)arg1;
 - (BOOL)usesDarkVibrancyForLayers;

@@ -28,6 +28,8 @@
 - (void)siriCore_addSendCompletion:(id /* block */)arg1;
 - (BOOL)siriCore_bufferingAllowedDuringActiveSession;
 - (void)siriCore_dispatchSendCompletionsWithResult:(int)arg1 error:(id)arg2;
+- (BOOL)siriCore_isRestartable;
+- (BOOL)siriCore_isRetryable;
 - (void)siriCore_logDiagnostics;
 - (id)siriCore_serializedAceDataError:(id*)arg1;
 - (BOOL)siriCore_supportsSendCompletions;

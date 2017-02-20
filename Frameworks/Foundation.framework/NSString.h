@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSString : NSObject <CKDParsedObject, CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CNUIURLDestinationID, CSCoderEncoder, FCKeyValueStoreCoding, HFStringGenerator, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, SBFFileCacheFileIdentifier>
+@interface NSString : NSObject <ASParsingLeafNode, CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CNUIURLDestinationID, CSCoderEncoder, FCKeyValueStoreCoding, HFPropertyListConvertible, HFStringGenerator, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, SBFFileCacheFileIdentifier, SiriCoreSQLiteValue>
 
 @property (nonatomic, retain) NSString *IPASpeechPhonemes;
 @property (nonatomic, readonly) NSData *_FTDataFromBase64String;
@@ -314,8 +314,8 @@
 - (BOOL)cnui_shouldTransliterateToLatin;
 - (BOOL)cnui_shouldUseJapaneseTransliteration;
 - (BOOL)cnui_shouldUseZhuyinTransliteration;
-- (id)cnui_stringByTransliteratingToKana;
-- (id)cnui_stringByTransliteratingToPhoneticCharactersAsFamilyName:(BOOL)arg1;
+- (id)cnui_stringByTransliteratingToKanaAsName:(BOOL)arg1;
+- (id)cnui_stringByTransliteratingToPhoneticCharactersForProperty:(id)arg1;
 
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
@@ -521,6 +521,10 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })ax_sentenceFromPosition:(int)arg1 inDirection:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })ax_wordFromPosition:(int)arg1 inDirection:(unsigned int)arg2;
 
+// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
+
+- (unsigned long long)unsignedLongLongValue;
+
 // Image: /System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/AccessibilitySharedSupport
 
 - (id)axss_stringByTrimmingToLength:(unsigned int)arg1 encoding:(unsigned int)arg2;
@@ -584,6 +588,11 @@
 - (id)_af_stringByRemovingSuffix:(id)arg1;
 - (BOOL)_afpreferences_isLanguageCodePrefix;
 - (id)_afpreferences_languageCodePrefix;
+
+// Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
+
+- (id)ak_SHA256;
+- (id)ak_SHA256String;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -766,10 +775,10 @@
 - (id)CKDPIdentifier_User;
 - (id)CKDPIdentifier_Zone;
 - (id)_CKDPIdentifierWithType:(int)arg1;
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
+- (id)cplStringByAppendingPathExtension:(id)arg1 fallbackExtension:(id)arg2;
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 
@@ -903,6 +912,42 @@
 - (id)da_stringByURLEscapingPathComponent;
 - (id)da_trimWhiteSpace;
 - (id)stringByURLQuoting;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACalDAV.framework/DACalDAV
+
+- (BOOL)hasMailto;
+- (BOOL)resemblesEmailAddress;
+- (id)stringAddingMailto;
+- (id)stringRemovingMailto;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACardDAV.framework/DACardDAV
+
+- (id)prettyStringForDisplayName;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
++ (BOOL)acceptsTopLevelLeaves;
++ (BOOL)expectsContent;
++ (BOOL)frontingBasicTypes;
++ (BOOL)notifyOfUnknownTokens;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (id)initWithASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 lengthUntilEndOfTerminator:(int)arg6;
+- (int)parsingState;
+- (id)stringByConvertingLineEndingsTo:(id)arg1;
+- (id)stringByTrimmingNotesJunk;
+- (id)stringFormattedForMSVersioning;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DALDAP.framework/DALDAP
+
+- (id)ldapHumanReadableStringFromSearchBase;
+- (id)ldapSanitizedAddress;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DASubCal.framework/DASubCal
+
+- (BOOL)isSubCalURLString;
+- (id)modTagForSubCal;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
 
@@ -1601,6 +1646,7 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Frameworks/PhotosGraph.framework/PhotosGraph
 
+- (unsigned int)pg_levenshteinDistanceToString:(id)arg1;
 - (id)pg_stringByTrailingCharactersInSet:(id)arg1 options:(unsigned int)arg2;
 - (id)sha1HashData;
 - (id)sha1HashString;
@@ -1614,6 +1660,7 @@
 - (BOOL)containsDigits;
 - (int)digits;
 - (BOOL)px_hasPrefixIgnoringCaseAndDiacritics:(id)arg1;
+- (BOOL)px_hasStringIgnoringCaseAndDiacritics:(id)arg1;
 - (long long)px_platformAgnosticHash;
 - (id)px_stringByApplyingCapitalization:(int)arg1;
 - (id)px_stringByIndentingNewLines;
@@ -1670,6 +1717,10 @@
 - (id)stringByEscapingXMLEntities;
 - (id)stringByUnescapingXMLEntities;
 - (id)uppercaseFirstWordString;
+
+// Image: /System/Library/PrivateFrameworks/SOS.framework/SOS
+
++ (id)stringWithPositionalSpecifiersFormat:(id)arg1 arguments:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
@@ -1736,6 +1787,15 @@
 
 - (int)_brailleTableCompare:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (id)siriCoreSQLiteValue_escapedString:(BOOL)arg1;
+- (const char *)siriCoreSQLiteValue_textRepresentation;
+- (id)siriCoreSQLiteValue_toData;
+- (id)siriCoreSQLiteValue_toNumber;
+- (id)siriCoreSQLiteValue_toString;
+- (int)siriCoreSQLiteValue_type;
+
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
 - (id)siriUIAttributedStringWithSubscriptAtRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 font:(id)arg2;
@@ -1799,9 +1859,18 @@
 - (BOOL)sb_containsEmoji;
 - (BOOL)sb_isEntirelyCharactersInSet:(struct USet { }*)arg1;
 
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+// Image: /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/SymptomEvaluator
 
-- (id)_swiftInitWithString_NSString:(id)arg1;
+- (id)maximumLogLevelString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
++ (id)tv_lowercaseHexStringWithBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)tvs_hexStringWithBytes:(const char *)arg1 length:(unsigned int)arg2 lowercase:(BOOL)arg3;
+
+- (id)tv_MD5String;
+- (id)tv_SHA256String;
+- (id)tv_filenameSafeString;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
 
@@ -2011,6 +2080,8 @@
 
 // Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
 
+- (id)_wb_stringByDeletingTrailingSlash;
+- (id)_wb_stringByStandardizingDAVServerID;
 - (BOOL)_webBookmarks_hasCaseInsensitivePrefix:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis

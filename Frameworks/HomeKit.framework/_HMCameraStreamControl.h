@@ -17,8 +17,9 @@
 - (void).cxx_destruct;
 - (void)_callVideoStartedDelegate;
 - (void)_callVideoStoppedDelegate:(id)arg1;
-- (void)_handleNegotiateStreamResponse:(id)arg1 error:(id)arg2;
-- (void)_handleVideoStreamStartResponse:(id)arg1 error:(id)arg2;
+- (void)_handleNegotiateStreamResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
+- (void)_handleVideoStopResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
+- (void)_handleVideoStreamStartResponse:(id)arg1 error:(id)arg2 sessionID:(id)arg3;
 - (void)_handleVideoStreamStopped:(id)arg1;
 - (void)_registerNotificationHandlers;
 - (void)_resetState:(id)arg1;

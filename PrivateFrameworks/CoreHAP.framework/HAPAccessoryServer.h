@@ -8,18 +8,18 @@
     <HAPAccessoryServerForBridgeDelegate> * _bridgeDelegate;
     NSNumber * _category;
     NSObject<OS_dispatch_queue> * _clientQueue;
+    unsigned int  _configNumber;
     <HAPAccessoryServerDelegate> * _delegate;
     NSObject<OS_dispatch_queue> * _delegateQueue;
     NSArray * _discoveredAccessories;
     BOOL  _hasPairings;
-    NSString * _homeName;
     NSString * _identifier;
     BOOL  _incompatibleUpdate;
     NSObject<OS_dispatch_queue> * _internalDelegateQueue;
     NSHashTable * _internalDelegates;
     <HAPKeyStore> * _keyStore;
+    int  _linkType;
     NSString * _name;
-    NSString * _pairSetupPassword;
     HAPAccessory * _primaryAccessory;
     NSObject<OS_dispatch_queue> * _propertyQueue;
     BOOL  _reachable;
@@ -31,11 +31,11 @@
 @property <HAPAccessoryServerForBridgeDelegate> *bridgeDelegate;
 @property (nonatomic, copy) NSNumber *category;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
+@property (nonatomic) unsigned int configNumber;
 @property (readonly) <HAPAccessoryServerDelegate> *delegate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (nonatomic, copy) NSArray *discoveredAccessories;
 @property (nonatomic) BOOL hasPairings;
-@property (nonatomic, copy) NSString *homeName;
 @property (nonatomic, copy) NSString *identifier;
 @property (getter=isIncompatibleUpdate, nonatomic) BOOL incompatibleUpdate;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *internalDelegateQueue;
@@ -43,7 +43,6 @@
 @property (nonatomic, readonly) <HAPKeyStore> *keyStore;
 @property (nonatomic, readonly) int linkType;
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *pairSetupPassword;
 @property (getter=isPaired, nonatomic, readonly) BOOL paired;
 @property (nonatomic, retain) HAPAccessory *primaryAccessory;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -60,6 +59,7 @@
 - (id)bridgeDelegate;
 - (id)category;
 - (id)clientQueue;
+- (unsigned int)configNumber;
 - (void)continuePairingAfterAuthPrompt;
 - (id)delegate;
 - (id)delegateQueue;
@@ -69,7 +69,6 @@
 - (void)enumerateInternalDelegatesUsingBlock:(id /* block */)arg1;
 - (void)handleUpdatesForCharacteristics:(id)arg1;
 - (BOOL)hasPairings;
-- (id)homeName;
 - (id)identifier;
 - (void)identifyWithCompletion:(id /* block */)arg1;
 - (id)init;
@@ -87,11 +86,10 @@
 - (void)notifyDelegateUpdatedCategory:(id)arg1;
 - (void)notifyDelegateUpdatedHasPairings:(BOOL)arg1;
 - (void)notifyDelegateUpdatedName:(id)arg1;
-- (id)pairSetupPassword;
 - (id)primaryAccessory;
 - (id)propertyQueue;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)reconfirm;
 - (void)removeInternalDelegate:(id)arg1;
 - (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
@@ -99,14 +97,13 @@
 - (void)setAssociatedAccessories:(id)arg1;
 - (void)setBridgeDelegate:(id)arg1;
 - (void)setCategory:(id)arg1;
+- (void)setConfigNumber:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDiscoveredAccessories:(id)arg1;
 - (void)setHasPairings:(BOOL)arg1;
-- (void)setHomeName:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIncompatibleUpdate:(BOOL)arg1;
 - (void)setName:(id)arg1;
-- (void)setPairSetupPassword:(id)arg1;
 - (void)setPrimaryAccessory:(id)arg1;
 - (void)setReachable:(BOOL)arg1;
 - (void)setSecuritySessionOpen:(BOOL)arg1;
@@ -114,7 +111,6 @@
 - (void)startPairing;
 - (BOOL)stopPairingWithError:(id*)arg1;
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

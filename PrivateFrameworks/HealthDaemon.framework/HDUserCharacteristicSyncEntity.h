@@ -5,7 +5,7 @@
 @interface HDUserCharacteristicSyncEntity : HDKeyValueSyncEntity
 
 + (int)category;
-+ (void)didReceiveKeysAndValuesWithProfile:(id)arg1;
++ (void)didReceiveValuesForKeys:(id)arg1 profile:(id)arg2;
 + (int)nanoSyncObjectType;
 + (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (BOOL)supportsSpeculativeNanoSyncChanges;

@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (void)handleMCEffectiveSettingsChanged;
 - (void)handleMCRemovedSystemAppsChanged;
+- (id)identifierForRemovedAppPrompt:(id)arg1;
 - (id)init;
 - (BOOL)isAdTrackingEnabled;
 - (BOOL)isAppExtensionRestricted:(id)arg1;

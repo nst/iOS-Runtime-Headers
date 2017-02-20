@@ -63,9 +63,9 @@
 - (id)newUpdateStatementWithRow:(id)arg1 originalRow:(id)arg2 withMask:(struct __CFBitVector { }*)arg3;
 - (id)rtreeTableNameForEntity:(id)arg1 attribute:(id)arg2;
 - (id)sqlCore;
-- (unsigned int)sqlTypeForExpressionConstantValue:(id)arg1;
+- (unsigned char)sqlTypeForExpressionConstantValue:(id)arg1;
 - (id)sqliteVersion;
 - (id)typeStringForColumn:(id)arg1;
-- (id)typeStringForSQLType:(unsigned int)arg1;
+- (id)typeStringForSQLType:(unsigned char)arg1;
 
 @end

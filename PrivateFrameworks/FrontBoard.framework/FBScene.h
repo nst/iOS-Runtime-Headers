@@ -17,6 +17,7 @@
     BOOL  _lockedForMutation;
     FBSMutableSceneSettings * _mutableSettings;
     FBSSceneSettings * _settings;
+    <BSInvalidatable> * _stateCaptureAssertion;
     unsigned int  _transactionID;
     BOOL  _valid;
     BOOL  _waitingForResponse;
@@ -48,6 +49,8 @@
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 @property (getter=isWaitingForResponse, nonatomic, readonly) BOOL waitingForResponse;
 @property (nonatomic, readonly, copy) NSString *workspaceIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
 - (void)_addSceneGeometryObserver:(id)arg1;
 - (unsigned int)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
@@ -105,5 +108,24 @@
 - (void)updateUISettingsWithBlock:(id /* block */)arg1;
 - (void)updateUISettingsWithTransitionBlock:(id /* block */)arg1;
 - (id)workspaceIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXFrontBoardUtils.framework/AXFrontBoardUtils
+
+- (BOOL)accessibilityIsSceneOccluded;
+- (BOOL)accessibilityIsSceneOnMainScreen;
+- (BOOL)accessibilityIsShowingSheet;
+- (BOOL)accessibilitySceneBelongsToTheSystemApp;
+- (id)accessibilitySceneDescription;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilitySceneFrame;
+- (id)accessibilitySceneIdentifier;
+- (BOOL)accessibilitySceneIsDeactivatedBySidebar;
+- (BOOL)accessibilitySceneIsDeactivatedBySwitcher;
+- (BOOL)accessibilitySceneIsForegroundVisible;
+- (BOOL)accessibilitySceneIsRunningInForeground;
+- (BOOL)accessibilitySceneIsSuspended;
+- (float)accessibilitySceneLevel;
+- (BOOL)accessibilitySceneOwnerIsAUIApplication;
+- (id)accessibilityScenePID;
+- (id)accessibilitySceneProcess;
 
 @end

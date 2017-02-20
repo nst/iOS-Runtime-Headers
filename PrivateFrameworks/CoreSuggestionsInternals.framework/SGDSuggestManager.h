@@ -4,6 +4,7 @@
 
 @interface SGDSuggestManager : NSObject <SGDSuggestManagerAllProtocol> {
     SGAsset * _asset;
+    NSString * _clientName;
     NSXPCConnection * _connection;
     SGServiceContext * _context;
     struct SGDSuggestManagerCTSCriteriaState { 
@@ -26,6 +27,7 @@
     BOOL  _xpcActivity;
 }
 
+@property (nonatomic, readonly) NSString *clientName;
 @property (nonatomic, readonly) SGServiceContext *context;
 
 + (void)initialize;
@@ -34,6 +36,7 @@
 
 - (void).cxx_destruct;
 - (void)_adjustCriteriaForCTS;
+- (struct SGMContactDetailUsedApp_ { unsigned int x1; })_appEnumForBundleId:(id)arg1;
 - (BOOL)_attemptToProcessSearchableItemWithoutDissection:(id)arg1;
 - (BOOL)_canBannerUseStoredDissection:(id)arg1 needsOptionalDissectorsToRun:(BOOL*)arg2 options:(unsigned int)arg3;
 - (BOOL)_clientIsMail;
@@ -66,6 +69,7 @@
 - (void)clearCachesFully:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)clearContactAggregator;
 - (void)clearContactAggregatorConversation:(id)arg1;
+- (id)clientName;
 - (void)cnContactMatchesForRecordId:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)cnContactMatchesForRecordIds:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)confirmContact:(id)arg1 completion:(id /* block */)arg2;
@@ -106,7 +110,7 @@
 - (void)drainQueueCompletelyWithCompletion:(id /* block */)arg1;
 - (id)ekStore;
 - (void)emailAddressIsSignificant:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)enqueueSearchableItems:(id)arg1;
+- (void)enqueueSearchableItems:(id)arg1 completion:(id /* block */)arg2;
 - (void)eventFromRecordId:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)eventFromUniqueId:(id)arg1 completion:(id /* block */)arg2;
 - (void)eventsInFutureLimitTo:(unsigned int)arg1 options:(unsigned int)arg2 withCompletion:(id /* block */)arg3;
@@ -123,8 +127,15 @@
 - (id)initWithStore:(id)arg1 xpcActivity:(BOOL)arg2;
 - (void)isEnabledWithCompletion:(id /* block */)arg1;
 - (void)keepDirty:(BOOL)arg1;
+- (void)logMetricAutocompleteUserSelectedRecordId:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
+- (void)logMetricContactCreated:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
+- (void)logMetricContactSearchResultSelected:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
+- (void)logMetricSearchResultsIncludedPureSuggestionWithBundleId:(id)arg1;
+- (void)logMetricSuggestedContactDetailShown:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
+- (void)logMetricSuggestedContactDetailUsed:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
 - (void)messagesToRefreshWithCompletion:(id /* block */)arg1;
 - (void)namesForDetail:(id)arg1 limitTo:(unsigned int)arg2 prependMaybe:(BOOL)arg3 withCompletion:(id /* block */)arg4;
+- (void)noopWithCompletion:(id /* block */)arg1;
 - (void)originFromRecordId:(id)arg1 completion:(id /* block */)arg2;
 - (void)predictedCCEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 completion:(id /* block */)arg6;
 - (void)predictedToEmailAddressesWithToAddresses:(id)arg1 ccAddresses:(id)arg2 fromAddress:(id)arg3 date:(double)arg4 bounds:(id)arg5 completion:(id /* block */)arg6;

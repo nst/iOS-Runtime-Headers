@@ -18,6 +18,8 @@
 @property (nonatomic) int itemChangeType;
 @property (nonatomic, retain) id serverId;
 
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
 - (void).cxx_destruct;
 - (void)_setChangedItem:(id)arg1;
 - (int)changeId;
@@ -48,5 +50,12 @@
 - (void)setServerId:(id)arg1;
 - (id)stringForItemChangeType:(int)arg1;
 - (/* Warning: unhandled struct encoding: '{ASToDo=#@@ii@i@?i@}' */ struct ASToDo { Class x1; id x2; int x3; int x4; id x5; id /* block */ x6; int x7; id x8; }*)toDo;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
+- (void)appendApplicationDataForTask:(id)arg1 toWBXMLData:(id)arg2;
+- (id)asClientID;
+- (id)asInstanceID;
+- (id)asServerID;
 
 @end

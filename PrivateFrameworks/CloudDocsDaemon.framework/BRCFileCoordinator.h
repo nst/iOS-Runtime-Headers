@@ -5,6 +5,7 @@
 @interface BRCFileCoordinator : NSFileCoordinator {
     BOOL  _cancelled;
     id /* block */  _doneHandler;
+    BOOL  _forRead;
     BOOL  _isUpdateForReconnecting;
     BRCAccountSession * _session;
     unsigned long long  _startStamp;
@@ -13,6 +14,7 @@
     NSURL * _url2;
 }
 
+@property (nonatomic, readonly) BOOL forRead;
 @property (nonatomic) BOOL isUpdateForReconnecting;
 
 + (void)itemAtPath:(id)arg1 didBounceToName:(id)arg2;
@@ -26,7 +28,8 @@
 - (void)_willRequestCoordinationWithContext:(id)arg1 url1:(id)arg2 url2:(id)arg3;
 - (void)cancel;
 - (void)cancelAfterDelay:(double)arg1;
-- (id)initWithSession:(id)arg1 doneHandler:(id /* block */)arg2;
+- (BOOL)forRead;
+- (id)initWithSession:(id)arg1 forRead:(BOOL)arg2 doneHandler:(id /* block */)arg3;
 - (BOOL)isUpdateForReconnecting;
 - (void)scheduleDeleteOfItemAtURL:(id)arg1 queue:(id)arg2 taskTracker:(id)arg3 accessor:(id /* block */)arg4;
 - (void)scheduleReadOfItemAtURL:(id)arg1 queue:(id)arg2 taskTracker:(id)arg3 accessor:(id /* block */)arg4;

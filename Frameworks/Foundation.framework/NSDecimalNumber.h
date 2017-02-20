@@ -17,6 +17,8 @@
 @property (readonly) double doubleValue;
 @property (readonly) const char *objCType;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)decimalNumberWithDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })arg1;
 + (id)decimalNumberWithMantissa:(unsigned long long)arg1 exponent:(short)arg2 isNegative:(BOOL)arg3;
@@ -92,5 +94,10 @@
 - (unsigned long long)unsignedLongLongValue;
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
+
+// Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
+
+- (const char *)siriCoreSQLiteValue_textRepresentation;
+- (int)siriCoreSQLiteValue_type;
 
 @end

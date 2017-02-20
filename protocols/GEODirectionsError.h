@@ -7,6 +7,7 @@
 
 - (int)firstDirectionsErrorCode;
 - (BOOL)hasError:(int)arg1;
+- (<GEOTransitRoutingIncidentMessage> *)incidentMessage;
 - (NSString *)localizedDescription;
 - (NSString *)localizedTitle;
 

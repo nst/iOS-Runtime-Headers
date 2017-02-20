@@ -20,7 +20,6 @@
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProperties:(id)arg1 relationships:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

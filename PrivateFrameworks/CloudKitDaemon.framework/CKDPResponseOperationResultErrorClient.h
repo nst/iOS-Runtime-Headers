@@ -20,7 +20,6 @@
 
 - (void).cxx_destruct;
 - (int)StringAsType:(id)arg1;
-- (id)_typeCKLogValue;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

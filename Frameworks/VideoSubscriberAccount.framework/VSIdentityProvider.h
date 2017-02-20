@@ -8,8 +8,10 @@
     NSURL * _authenticationURL;
     BOOL  _developer;
     NSString * _nameForSorting;
+    BOOL  _prohibitedByStore;
     NSString * _providerID;
-    BOOL  _supported;
+    NSArray * _supportedAuthenticationSchemes;
+    NSArray * _supportedTemplates;
     NSString * _uniqueID;
 }
 
@@ -19,8 +21,12 @@
 @property (getter=isDeveloper, nonatomic) BOOL developer;
 @property (nonatomic, readonly, copy) NSString *displayName;
 @property (nonatomic, copy) NSString *nameForSorting;
+@property (getter=isProhibitedByStore, nonatomic) BOOL prohibitedByStore;
 @property (nonatomic, copy) NSString *providerID;
-@property (getter=isSupported, nonatomic) BOOL supported;
+@property (nonatomic, copy) NSArray *supportedAuthenticationSchemes;
+@property (nonatomic, copy) NSArray *supportedTemplates;
+@property (nonatomic, readonly) BOOL supportsTemplatesSufficientForCurrentPlatform;
+@property (nonatomic, readonly) BOOL supportsTemplatesSufficientForSomeKnownPlatform;
 @property (nonatomic, copy) NSString *uniqueID;
 
 + (id)keyPathsForValuesAffectingDisplayName;
@@ -39,7 +45,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isDeveloper;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isSupported;
+- (BOOL)isProhibitedByStore;
 - (id)nameForSorting;
 - (id)providerID;
 - (void)setAppAdamID:(id)arg1;
@@ -47,9 +53,16 @@
 - (void)setAuthenticationURL:(id)arg1;
 - (void)setDeveloper:(BOOL)arg1;
 - (void)setNameForSorting:(id)arg1;
+- (void)setProhibitedByStore:(BOOL)arg1;
 - (void)setProviderID:(id)arg1;
-- (void)setSupported:(BOOL)arg1;
+- (void)setSupportedAuthenticationSchemes:(id)arg1;
+- (void)setSupportedTemplates:(id)arg1;
 - (void)setUniqueID:(id)arg1;
+- (id)supportedAuthenticationSchemes;
+- (id)supportedTemplates;
+- (BOOL)supportsRequestsExpectingAuthenticationSchemes:(id)arg1;
+- (BOOL)supportsTemplatesSufficientForCurrentPlatform;
+- (BOOL)supportsTemplatesSufficientForSomeKnownPlatform;
 - (id)uniqueID;
 
 @end

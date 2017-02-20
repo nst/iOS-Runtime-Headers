@@ -24,7 +24,6 @@
 
 - (void).cxx_destruct;
 - (void)_beginMonitoring;
-- (void)_noteReachedProgressMilestone;
 - (void)_noteViolatedWithError:(id)arg1;
 - (void)_performDelegateCallout:(id /* block */)arg1;
 - (void)_prepareForReuse;

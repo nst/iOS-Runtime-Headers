@@ -31,6 +31,7 @@
 - (id)appDocument;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)document:(id)arg1 evaluateStyleMediaQuery:(id)arg2;
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
 - (id)init;

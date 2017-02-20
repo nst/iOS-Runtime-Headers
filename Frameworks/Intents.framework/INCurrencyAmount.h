@@ -17,9 +17,11 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)amount;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyCode;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithAmount:(id)arg1 currencyCode:(id)arg2;

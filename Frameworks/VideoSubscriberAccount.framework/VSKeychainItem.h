@@ -6,6 +6,7 @@
     NSMutableDictionary * _committedValues;
     BOOL  _deleted;
     VSKeychainEditingContext * _editingContext;
+    BOOL  _hasFaultForData;
     BOOL  _inserted;
     VSKeychainItemKind * _itemKind;
     NSMutableDictionary * _primitiveValues;
@@ -13,9 +14,11 @@
 }
 
 @property (nonatomic, retain) NSMutableDictionary *committedValues;
+@property (nonatomic, copy) NSData *data;
 @property (getter=isDeleted, nonatomic) BOOL deleted;
 @property (nonatomic) VSKeychainEditingContext *editingContext;
 @property (nonatomic, readonly) BOOL hasChanges;
+@property (nonatomic) BOOL hasFaultForData;
 @property (nonatomic, readonly) BOOL hasPersistentChangedValues;
 @property (getter=isInserted, nonatomic) BOOL inserted;
 @property (nonatomic, readonly, copy) VSKeychainItemKind *itemKind;
@@ -27,9 +30,12 @@
 - (id)committedValueForKey:(id)arg1;
 - (id)committedValues;
 - (id)committedValuesForKeys:(id)arg1;
+- (id)data;
 - (id)description;
+- (void)didAccessValueForKey:(id)arg1;
 - (id)editingContext;
 - (BOOL)hasChanges;
+- (BOOL)hasFaultForData;
 - (BOOL)hasPersistentChangedValues;
 - (id)init;
 - (id)initWithItemKind:(id)arg1 insertIntoEditingContext:(id)arg2;
@@ -40,11 +46,14 @@
 - (id)primitiveValueForKey:(id)arg1;
 - (id)primitiveValues;
 - (void)setCommittedValues:(id)arg1;
+- (void)setData:(id)arg1;
 - (void)setDeleted:(BOOL)arg1;
 - (void)setEditingContext:(id)arg1;
+- (void)setHasFaultForData:(BOOL)arg1;
 - (void)setInserted:(BOOL)arg1;
 - (void)setPrimitiveValue:(id)arg1 forKey:(id)arg2;
 - (void)setPrimitiveValues:(id)arg1;
 - (void)setUpdated:(BOOL)arg1;
+- (void)willAccessValueForKey:(id)arg1;
 
 @end

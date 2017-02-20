@@ -98,7 +98,6 @@
 - (id)currentNameLabelFont;
 - (id)dataSource;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (BOOL)hasContentForCurrentInput;
 - (BOOL)hasStartedLoadingDataSource;
 - (id)initWithViewType:(unsigned int)arg1;
 - (BOOL)isSummaryMode;

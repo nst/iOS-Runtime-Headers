@@ -2,12 +2,13 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDate : NSObject <CKDParsedObject, CKRecordValue, FCKeyValueStoreCoding, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
+@interface NSDate : NSObject <CKRecordValue, FCKeyValueStoreCoding, HFPropertyListConvertible, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
 
 @property (nonatomic, readonly) NSString *briefFormattedDate;
 @property (nonatomic, readonly) int chartGridValueType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL fc_isWeekend;
 @property (readonly) double fc_timeIntervalUntilNow;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isToday;
@@ -122,9 +123,11 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
+- (id)_afui_dateStringUsingCurrentLocaleFromTemplate:(id)arg1;
 - (BOOL)_afui_isSameDayAsDate:(id)arg1;
 - (BOOL)afui_isToday;
 - (BOOL)afui_isTomorrow;
+- (id)afui_longYearString;
 
 // Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
 
@@ -251,12 +254,6 @@
 - (id)JSONObjectRepresentation;
 - (id)initWithJSONObjectRepresentation:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-+ (id)CKSharedCalendar;
-
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
-
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 - (id)initWithCPLArchiver:(id)arg1;
@@ -269,14 +266,6 @@
 - (id)cd_dateWithFloorForAlignment:(double)arg1;
 - (id)cd_dateWithFloorForAlignment:(double)arg1 withOffset:(double)arg2 inTimeZone:(id)arg3;
 
-// Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
-
-+ (id)relevantPredicateLabels;
-
-- (id)dateTimeComponents;
-- (BOOL)isSameAsDate:(id)arg1 upTo:(unsigned int)arg2;
-- (id)toString:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
 
 - (id)dateByRoundingWithTimeQuantization:(int)arg1;
@@ -284,6 +273,24 @@
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
 - (id)sg_descriptionForMimeHeaders;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
++ (BOOL)acceptsTopLevelLeaves;
++ (id)dateWithActiveSyncString:(id)arg1;
++ (id)dateWithActiveSyncStringFromYearMonthDay:(id)arg1;
++ (id)dateWithActiveSyncStringWithoutSeparators:(id)arg1;
++ (BOOL)frontingBasicTypes;
++ (BOOL)notifyOfUnknownTokens;
++ (BOOL)parsingLeafNode;
++ (BOOL)parsingWithSubItems;
+
+- (id)activeSyncString;
+- (id)activeSyncStringForYearMonthDay;
+- (id)activeSyncStringWithoutSeparators;
+- (id)gmtDateToDateInTimeZone:(id)arg1;
+- (id)nearestMidnight;
+- (id)tzDateToDateInGMT:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
 
@@ -384,6 +391,8 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
++ (id)dateFromString:(id)arg1 possibleFormats:(id)arg2;
++ (id)dateFromStringWithISO8601Format:(id)arg1;
 + (id)dateWithPBDate:(id)arg1;
 + (id)fc_dateWithMillisecondsTimeIntervalSince1970:(unsigned long long)arg1;
 + (int)keyValuePairType;
@@ -393,9 +402,12 @@
 - (id)fc_dateBySubtractingTimeInterval:(double)arg1;
 - (BOOL)fc_isEarlierThan:(id)arg1;
 - (BOOL)fc_isLaterThan:(id)arg1;
+- (BOOL)fc_isSameDayAs:(id)arg1;
+- (BOOL)fc_isWeekend;
 - (BOOL)fc_isWithinTimeInterval:(double)arg1 ofDate:(id)arg2;
 - (unsigned long long)fc_millisecondTimeIntervalSince1970;
 - (double)fc_timeIntervalUntilNow;
+- (BOOL)isToday;
 - (id)pbDate;
 - (void)writeToKeyValuePair:(id)arg1;
 
@@ -495,6 +507,10 @@
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
 - (id)summary;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
+
++ (id)wlk_dateWithMillisecondsSince1970:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
 

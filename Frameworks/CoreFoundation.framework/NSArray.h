@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSArray : NSObject <CKDParsedObject, CKRecordValue, CSCoderEncoder, FCOrderedCollectionAdditions, HFPrettyDescription, INIntentResolutionResultDataProviding, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSArray : NSObject <CKRecordValue, CSCoderEncoder, FCOrderedCollectionAdditions, HFPrettyDescription, HFPropertyListConvertible, HFStateDumpSerializable, INIntentResolutionResultDataProviding, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
 @property (nonatomic, readonly) IMMessageItem *__imLastMessageItem;
 @property (nonatomic, readonly) NSDictionary *bw_builtInMicRouteDictionary;
@@ -230,6 +230,10 @@
 - (id)mf_commaSeparatedRecipientListWithWidth:(float)arg1 forFont:(id)arg2 usingSelector:(SEL)arg3;
 - (unsigned int)mf_indexOfRecipientWithEmailAddress:(id)arg1;
 
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+
++ (id)arrayByFilteringLaunchProhibitedAppsFrom:(id)arg1;
+
 // Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
 
 - (id)copyDeep_MC;
@@ -280,6 +284,11 @@
 - (id)un_nonEmptyCopy;
 - (id)un_safeArrayContainingClass:(Class)arg1;
 - (id)un_safeArrayContainingClasses:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
+
+- (id)programThatMatchesProgram:(id)arg1;
+- (void)setProgram:(id)arg1 withOtherSidePrograms:(id)arg2 selected:(BOOL)arg3;
 
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
@@ -383,7 +392,6 @@
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (id)CKSortedForUpload;
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -535,7 +543,8 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 // Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
 
@@ -715,6 +724,7 @@
 - (id)fc_randomlyMergeWithArray:(id)arg1;
 - (double)fc_reduceArrayWithDouble:(double)arg1 block:(id /* block */)arg2;
 - (id)fc_reduceArrayWithInitial:(id)arg1 block:(id /* block */)arg2;
+- (id)fc_rotateElementsFromTheIndexOfSelectedItem:(unsigned int)arg1;
 - (id)fc_safeSubarrayWithCountFromBack:(unsigned int)arg1;
 - (id)fc_safeSubarrayWithCountFromFront:(unsigned int)arg1;
 - (id)fc_setByTransformingWithBlock:(id /* block */)arg1;
@@ -901,9 +911,10 @@
 
 - (id)sp_copyForFeedback;
 
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
-- (id)_swiftInitWithArray_NSArray:(id)arg1;
+- (id)tv_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
+- (id)tv_randomizedArray;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
 

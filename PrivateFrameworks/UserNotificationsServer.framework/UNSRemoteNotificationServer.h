@@ -14,7 +14,6 @@
     NSMutableSet * _debuggingBundleIdentifiers;
     NSMutableDictionary * _environmentsToConnections;
     NSObject<OS_dispatch_queue> * _extensionQueue;
-    NSObject<OS_dispatch_semaphore> * _extensionSemaphore;
     NSMutableSet * _foregroundBundleIdentifiers;
     NSMutableSet * _importantBundleIdentifiers;
     UNSNotificationRepository * _notificationRepository;

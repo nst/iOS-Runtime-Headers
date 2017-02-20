@@ -4,19 +4,25 @@
 
 @interface MCDSongsViewController : MCDTableViewController {
     BOOL  _playlistMode;
+    NSString * _sortSongsPreferenceValue;
 }
 
 @property (getter=isPlaylistMode, nonatomic) BOOL playlistMode;
+@property (nonatomic, retain) NSString *sortSongsPreferenceValue;
 
 + (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
 
+- (void).cxx_destruct;
 - (void)_limitedUIDidChange;
 - (void)_updateQuery;
+- (void)_userDefaultsDidChange:(id)arg1;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (BOOL)isPlaylistMode;
 - (void)setPlaylistMode:(BOOL)arg1;
+- (void)setSortSongsPreferenceValue:(id)arg1;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
+- (id)sortSongsPreferenceValue;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 

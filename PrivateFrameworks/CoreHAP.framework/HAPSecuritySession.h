@@ -10,6 +10,7 @@
     NSData * _outputKey;
     NSMutableData * _outputNonce;
     struct PairingSessionPrivate { } * _pairingSession;
+    NSObject<OS_dispatch_queue> * _propertyQueue;
     unsigned long long  _resumeSessionID;
     unsigned int  _role;
     unsigned int  _state;
@@ -19,12 +20,15 @@
 @property (readonly) <HAPSecuritySessionDelegate> *delegate;
 @property (nonatomic, retain) NSData *inputKey;
 @property (nonatomic, retain) NSMutableData *inputNonce;
+@property (getter=isOpen, readonly) BOOL open;
+@property (getter=isOpening, readonly) BOOL opening;
 @property (nonatomic, retain) NSData *outputKey;
 @property (nonatomic, retain) NSMutableData *outputNonce;
 @property (nonatomic) struct PairingSessionPrivate { }*pairingSession;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) unsigned long long resumeSessionID;
 @property (nonatomic, readonly) unsigned int role;
-@property (nonatomic) unsigned int state;
+@property unsigned int state;
 
 - (void).cxx_destruct;
 - (void)_closeWithError:(id)arg1;
@@ -51,10 +55,14 @@
 - (id)initWithRole:(unsigned int)arg1 resumeSessionID:(unsigned long long)arg2 delegate:(id)arg3;
 - (id)inputKey;
 - (id)inputNonce;
+- (BOOL)isOpen;
+- (BOOL)isOpening;
 - (void)open;
 - (id)outputKey;
 - (id)outputNonce;
 - (struct PairingSessionPrivate { }*)pairingSession;
+- (id)propertyQueue;
+- (void)reallyOpen;
 - (void)receivedSetupExchangeData:(id)arg1 error:(id)arg2;
 - (unsigned long long)resumeSessionID;
 - (unsigned int)role;

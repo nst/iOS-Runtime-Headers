@@ -24,6 +24,8 @@
 @property (nonatomic, retain) id value;
 @property (nonatomic, copy) id /* block */ valueLoader;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
 - (void).cxx_destruct;
 - (int)_sortByChapterIndex:(id)arg1;
 - (id)artworkCatalog;
@@ -50,5 +52,9 @@
 - (id)title;
 - (id)value;
 - (id /* block */)valueLoader;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
+
+- (id)wlk_dictionaryRepresentation;
 
 @end

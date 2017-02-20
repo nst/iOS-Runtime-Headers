@@ -31,6 +31,7 @@
 - (float)_keylinePaddingForState:(int)arg1;
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (void)_layoutTimeTravelCaptionView:(id)arg1;
+- (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
 - (void)_loadLayoutRules;
 - (void)_loadSnapshotContentViews;
 - (BOOL)_needsForegroundContainerView;

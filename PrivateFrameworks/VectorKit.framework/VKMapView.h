@@ -461,7 +461,7 @@
 - (id)transitLineMarkersForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)transitLineMarkersInCurrentViewport;
 - (BOOL)transitLinesDisabled;
-- (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 pounceCompletionHandler:(id /* block */)arg3;
+- (void)transitionToTracking:(BOOL)arg1 mapMode:(int)arg2 startLocation:(struct { double x1; double x2; })arg3 pounceCompletionHandler:(id /* block */)arg4;
 - (BOOL)updateDisplayLinkStatus;
 - (void)updateOnscreenTimestamps;
 - (void)updatePanWithTranslation:(struct CGPoint { float x1; float x2; })arg1;

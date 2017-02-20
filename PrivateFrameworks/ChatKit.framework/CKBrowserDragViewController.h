@@ -52,6 +52,7 @@
         float x; 
         float y; 
     }  _peelLayerStartPosition;
+    NSMutableDictionary * _peelMaskImageCache;
     CALayer * _peelMaskLayer;
     CALayer * _perspectiveLayer;
     BOOL  _pressed;
@@ -124,6 +125,7 @@
 @property (nonatomic, retain) CALayer *peelImageLayer;
 @property (nonatomic) CALayer *peelLayer;
 @property (nonatomic) struct CGPoint { float x1; float x2; } peelLayerStartPosition;
+@property (nonatomic, retain) NSMutableDictionary *peelMaskImageCache;
 @property (nonatomic, retain) CALayer *peelMaskLayer;
 @property (nonatomic) CALayer *perspectiveLayer;
 @property (getter=isPressed, nonatomic) BOOL pressed;
@@ -196,6 +198,7 @@
 - (id)peelImageLayer;
 - (id)peelLayer;
 - (struct CGPoint { float x1; float x2; })peelLayerStartPosition;
+- (id)peelMaskImageCache;
 - (id)peelMaskImageFromImage:(id)arg1;
 - (id)peelMaskLayer;
 - (id)perspectiveLayer;
@@ -235,6 +238,7 @@
 - (void)setPeelImageLayer:(id)arg1;
 - (void)setPeelLayer:(id)arg1;
 - (void)setPeelLayerStartPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setPeelMaskImageCache:(id)arg1;
 - (void)setPeelMaskLayer:(id)arg1;
 - (void)setPerspectiveLayer:(id)arg1;
 - (void)setPressed:(BOOL)arg1;

@@ -46,6 +46,7 @@
     BOOL  _showsTravelTime;
     UIView * _startResizeHandle;
     BOOL  _tentative;
+    float  _topYBoundaryForText;
     unsigned int  _touchKeptInsideOccurrence;
     BOOL  _touchesAreBeingTracked;
     UIImageView * _travelBackgroundView;
@@ -114,6 +115,7 @@
 @property (nonatomic, retain) UIColor *timeTextColor;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIColor *titleTextColor;
+@property (nonatomic) float topYBoundaryForText;
 @property (nonatomic) BOOL touchesAreBeingTracked;
 @property (nonatomic) double travelTime;
 @property (nonatomic) float travelTimeSubviewHeightInPoints;
@@ -250,6 +252,7 @@
 - (void)setTimeTextColor:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleTextColor:(id)arg1;
+- (void)setTopYBoundaryForText:(float)arg1;
 - (void)setTouchesAreBeingTracked:(BOOL)arg1;
 - (void)setTravelTime:(double)arg1;
 - (void)setTravelTimeSubviewHeightInPoints:(float)arg1;
@@ -262,6 +265,7 @@
 - (id)timeTextColor;
 - (id)title;
 - (id)titleTextColor;
+- (float)topYBoundaryForText;
 - (BOOL)touchesAreBeingTracked;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

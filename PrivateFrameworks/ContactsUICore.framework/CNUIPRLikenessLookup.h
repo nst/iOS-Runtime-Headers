@@ -9,7 +9,7 @@
     CNUIPRPersonaStoreObservableProvider * _personaStoreProvider;
     <CNUIPlaceholderProviderFactory> * _placeholderProviderFactory;
     int  _prohibitedSources;
-    CNSchedulerProvider * _schedulerProvider;
+    <CNSchedulerProvider> * _schedulerProvider;
 }
 
 @property (nonatomic, readonly) CNContactStore *contactStore;
@@ -21,14 +21,14 @@
 @property (nonatomic, retain) CNUIPRPersonaStoreObservableProvider *personaStoreProvider;
 @property (nonatomic, retain) <CNUIPlaceholderProviderFactory> *placeholderProviderFactory;
 @property (nonatomic) int prohibitedSources;
-@property (nonatomic, readonly) CNSchedulerProvider *schedulerProvider;
+@property (nonatomic, readonly) <CNSchedulerProvider> *schedulerProvider;
 @property (readonly) Class superclass;
 
 + (id)basicMonogramObservableForContactFuture:(id)arg1;
 + (id)contactFuture:(id)arg1 contactStore:(id)arg2 scheduler:(id)arg3;
 + (id)descriptorForRequiredKeys;
 + (id)observableFromLikenessProviderBlock:(id /* block */)arg1 withScheduler:(id)arg2;
-+ (id)photoObservableWithPhotoFuture:(id)arg1;
++ (id)photoObservableWithPhotoFuture:(id)arg1 scheduler:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)basicMonogramObservableWithContactFuture:(id)arg1;
@@ -48,8 +48,8 @@
 - (id)personaLikenessObservableWithContactFuture:(id)arg1;
 - (id)personaStore;
 - (id)personaStoreProvider;
-- (id)photoFutureForContactFuture:(id)arg1;
 - (id)photoFutureForContactFuture:(id)arg1 photoFuture:(id)arg2 allowingFallbackForMeCard:(BOOL)arg3;
+- (id)photoFutureForContactFuture:(id)arg1 scheduler:(id)arg2;
 - (id)placeholderProviderFactory;
 - (int)prohibitedSources;
 - (id)remoteImagesObservableWithContactFuture:(id)arg1;

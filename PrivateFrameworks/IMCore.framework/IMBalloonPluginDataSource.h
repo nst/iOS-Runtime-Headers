@@ -59,12 +59,13 @@
 + (id)previewSummary;
 + (id)previewSummaryForPluginBundle:(id)arg1;
 + (id)previewSummaryForPluginPayload:(id)arg1 withBundleID:(id)arg2 previewAttachmentURL:(id*)arg3 previewAttachmentUTI:(id*)arg4;
++ (id)replaceHandleWithContactNameInString:(id)arg1 forAccount:(id)arg2 additionalHandles:(id)arg3;
 + (BOOL)supportsIndividualPreviewSummaries;
 + (BOOL)supportsURL:(id)arg1;
++ (id)unlocalizedPreviewSummaryForPluginBundle:(id)arg1 pluginDisplayName:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)URLToOpenOnTapAction;
-- (id)_handlesByIdentifier;
 - (id)_imMessageGUID;
 - (void)_reloadLatestUnconsumedBreadcrumb;
 - (void)_removeTemporaryAttachmentURLs;
@@ -83,7 +84,6 @@
 - (void)datasourceWasMovedToNewGuid:(id)arg1;
 - (id)description;
 - (void)didTapStatusItem;
-- (id)displayNameForHandleIdentifier:(id)arg1 handlesByIdentifier:(id)arg2;
 - (void)endShowingLastConsumedBreadcrumb;
 - (id)guidOfLastMessageInSession;
 - (BOOL)hasInvalidatedSize;

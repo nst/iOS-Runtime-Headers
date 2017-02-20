@@ -36,10 +36,13 @@
 - (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsCoalescedWith:(id)arg2;
 - (void)destination:(id)arg1 didBecomeReadyToReceiveNotificationsPassingTest:(id /* block */)arg2;
 - (void)destination:(id)arg1 didDismissNotificationRequest:(id)arg2;
+- (void)destination:(id)arg1 didPresentNotificationRequest:(id)arg2;
 - (void)destination:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(id /* block */)arg5;
 - (void)destination:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(id /* block */)arg5;
 - (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2;
 - (void)destination:(id)arg1 requestsClearingNotificationRequests:(id)arg2 fromDestinations:(id)arg3;
+- (void)destination:(id)arg1 requestsClearingNotificationRequestsFromDate:(id)arg2 toDate:(id)arg3 inSections:(id)arg4;
+- (void)destination:(id)arg1 requestsClearingNotificationRequestsInSections:(id)arg2;
 - (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2;
 - (void)destination:(id)arg1 willPresentNotificationRequest:(id)arg2 suppressAlerts:(BOOL)arg3;
 - (void)destinationDidBecomeReadyToReceiveNotifications:(id)arg1;

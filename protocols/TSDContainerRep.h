@@ -6,7 +6,9 @@
 @required
 
 - (void)addAdditionalChildLayersToArray:(NSMutableArray *)arg1;
+- (BOOL)canSelectChildRep:(TSDRep *)arg1;
 - (NSArray *)childReps;
 - (NSObject<TSDContainerInfo> *)containerInfo;
+- (void)selectChildRep:(TSDRep *)arg1 extendingSelection:(BOOL)arg2;
 
 @end

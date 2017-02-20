@@ -9,6 +9,7 @@
     HMDCameraResidentMessageHandler * _residentMessageHandler;
     HMDCameraSessionID * _sessionID;
     HMDSnapshotFile * _snapshotFile;
+    HMDCameraSnapshotMetrics * _snapshotMetrics;
     HMDSnapshotRequestHandler * _snapshotRequestHandler;
     NSUUID * _uniqueIdentifier;
     NSObject<OS_dispatch_queue> * _workQueue;
@@ -23,6 +24,7 @@
 @property (nonatomic, readonly) HMDCameraResidentMessageHandler *residentMessageHandler;
 @property (nonatomic, readonly) HMDCameraSessionID *sessionID;
 @property (nonatomic, retain) HMDSnapshotFile *snapshotFile;
+@property (nonatomic, retain) HMDCameraSnapshotMetrics *snapshotMetrics;
 @property (nonatomic, readonly) HMDSnapshotRequestHandler *snapshotRequestHandler;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
@@ -41,7 +43,9 @@
 - (id)residentMessageHandler;
 - (id)sessionID;
 - (void)setSnapshotFile:(id)arg1;
+- (void)setSnapshotMetrics:(id)arg1;
 - (id)snapshotFile;
+- (id)snapshotMetrics;
 - (id)snapshotRequestHandler;
 - (id)uniqueIdentifier;
 - (id)workQueue;

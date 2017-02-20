@@ -4,6 +4,7 @@
 
 @interface SKUIRedeemNativeResultsViewController : SKUIRedeemResultsViewController <SKUIItemStateCenterObserver, SKUIRedeemResultsViewDelegate> {
     UIButton * _anotherButton;
+    unsigned int  _currentItemStateFlag;
     BOOL  _extendedMessageIsExpanded;
     SKUITextLayout * _extendedMessageTextLayout;
     SKUITextBoxView * _extendedMessageView;
@@ -17,6 +18,7 @@
 }
 
 @property (nonatomic, retain) UIButton *anotherButton;
+@property (nonatomic) unsigned int currentItemStateFlag;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL extendedMessageIsExpanded;
@@ -56,6 +58,7 @@
 - (void)_setItemImage:(id)arg1;
 - (float)_tableWidth;
 - (id)anotherButton;
+- (unsigned int)currentItemStateFlag;
 - (void)dealloc;
 - (BOOL)extendedMessageIsExpanded;
 - (id)extendedMessageTextLayout;
@@ -72,6 +75,7 @@
 - (id)passbookLockup;
 - (void)redeemResultsView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)setAnotherButton:(id)arg1;
+- (void)setCurrentItemStateFlag:(unsigned int)arg1;
 - (void)setExtendedMessageIsExpanded:(BOOL)arg1;
 - (void)setExtendedMessageTextLayout:(id)arg1;
 - (void)setExtendedMessageView:(id)arg1;

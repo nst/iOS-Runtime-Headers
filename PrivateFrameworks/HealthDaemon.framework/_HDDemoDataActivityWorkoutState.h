@@ -34,10 +34,11 @@
 
 - (void).cxx_destruct;
 - (void)addAssociatedObjectUUID:(id)arg1;
+- (void)addLocationSeriesSamplesFromFilePath:(id)arg1 profile:(id)arg2 provenance:(id)arg3;
 - (void)addWorkoutEvent:(id)arg1;
 - (id)associatedObjectUUIDs;
 - (void)encodeWithCoder:(id)arg1;
-- (id)generateWorkoutWithEndDate:(id)arg1;
+- (id)generateWorkoutWithEndDate:(id)arg1 profile:(id)arg2 provenance:(id)arg3;
 - (id)goal;
 - (unsigned int)goalType;
 - (id)init;

@@ -10,8 +10,10 @@
     UIViewController<NCNotificationCustomContent> * _customContentProvidingViewController;
     <NCNotificationViewControllerDelegate> * _delegate;
     BOOL  _didQueryCanPan;
+    NSString * _groupName;
     BOOL  _interactionEnabled;
     struct UIView { Class x1; } * _lookView;
+    NCMaterialSettings * _materialSettings;
     int  _ncTransitionAnimationState;
     NCNotificationRequest * _notificationRequest;
     NCNotificationAction * _presentationSourceAction;
@@ -31,9 +33,11 @@
 @property (nonatomic) <NCNotificationViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (getter=isDragging, nonatomic, readonly) BOOL dragging;
+@property (nonatomic, retain) NSString *groupName;
 @property (readonly) unsigned int hash;
 @property (getter=isInteractionEnabled, nonatomic) BOOL interactionEnabled;
 @property (getter=isLookStyleLongLook, nonatomic, readonly) BOOL lookStyleLongLook;
+@property (nonatomic, retain) NCMaterialSettings *materialSettings;
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
 @property (getter=_notificationViewControllerView, nonatomic, readonly) _NCNotificationViewControllerView *notificationViewControllerView;
 @property (nonatomic, copy) NSString *preferredContentSizeCategory;
@@ -71,6 +75,7 @@
 - (struct CGSize { float x1; float x2; })_preferredCustomContentSizeForSize:(struct CGSize { float x1; float x2; })arg1 parentContentContainerBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_presentedLongLookViewController;
 - (id)_scrollView;
+- (Class)_scrollViewClass;
 - (void)_setActiveTransitionCoordinator:(id)arg1;
 - (void)_setCustomContentProvidingViewController:(id)arg1;
 - (BOOL)_setDelegate:(id)arg1;
@@ -90,6 +95,7 @@
 - (BOOL)adjustsFontForContentSizeCategory;
 - (id)associatedView;
 - (void)contentProvider:(id)arg1 performAction:(id)arg2 animated:(BOOL)arg3;
+- (void)contentProvider:(id)arg1 requestsPresentingLongLookAnimated:(BOOL)arg2;
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
 - (void)customContent:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)customContentProvider;
@@ -99,10 +105,11 @@
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
-- (void)didReceiveNotificationRequest:(id)arg1;
+- (BOOL)didReceiveNotificationRequest:(id)arg1;
 - (BOOL)dismissPresentedViewControllerAndClearNotification:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)dismissViewControllerWithTransition:(int)arg1 completion:(id /* block */)arg2;
 - (void)expandAndPlayAudioMessage;
+- (id)groupName;
 - (BOOL)hasCommittedToPresentingCustomContentProvidingViewController;
 - (id)initWithNotificationRequest:(id)arg1;
 - (id)initWithNotificationRequest:(id)arg1 revealingAdditionalContentOnPresentation:(BOOL)arg2;
@@ -112,6 +119,7 @@
 - (BOOL)isLookStyleLongLook;
 - (BOOL)isShortLook;
 - (void)loadView;
+- (id)materialSettings;
 - (int)ncTransitionAnimationState;
 - (id)notificationRequest;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
@@ -126,8 +134,10 @@
 - (void)setAssociatedView:(id)arg1;
 - (void)setCustomContentProvider:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setGroupName:(id)arg1;
 - (void)setHasUpdatedContent;
 - (void)setInteractionEnabled:(BOOL)arg1;
+- (void)setMaterialSettings:(id)arg1;
 - (void)setNCTransitionAnimationState:(int)arg1;
 - (void)setNotificationRequest:(id)arg1;
 - (void)setPresentationSourceAction:(id)arg1;
@@ -143,5 +153,6 @@
 - (void)updateContent;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

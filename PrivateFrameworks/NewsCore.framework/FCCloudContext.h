@@ -74,7 +74,7 @@
 - (id)endpointCommandQueue;
 - (id)endpointConnection;
 - (id)feedManager;
-- (id)fetchEndOfArticleDataForHeadline:(id)arg1 initialRelatedHeadlineCount:(unsigned int)arg2 initialPublisherHeadlineCount:(unsigned int)arg3 totalRelatedHeadlineCount:(unsigned int)arg4 totalPublisherHeadlineCount:(unsigned int)arg5 completion:(id /* block */)arg6;
+- (id)fetchEndOfArticleDataForHeadline:(id)arg1 initialRelatedHeadlineCount:(unsigned int)arg2 initialPublisherHeadlineCount:(unsigned int)arg3 totalRelatedHeadlineCount:(unsigned int)arg4 totalPublisherHeadlineCount:(unsigned int)arg5 fetchRelatedHeadline:(BOOL)arg6 fetchAllTopics:(BOOL)arg7 completion:(id /* block */)arg8;
 - (id)flintHelper;
 - (id)flintResourceManager;
 - (void)getCoverImageForFeed:(id)arg1 completion:(id /* block */)arg2;

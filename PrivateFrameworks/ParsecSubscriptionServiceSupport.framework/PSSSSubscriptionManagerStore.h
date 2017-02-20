@@ -3,11 +3,11 @@
  */
 
 @interface PSSSSubscriptionManagerStore : NSObject {
-    NSDistributedNotificationCenter * _notificationCenter;
+    NSNotificationCenter * _notificationCenter;
     NSMutableDictionary * _store;
 }
 
-@property (nonatomic, retain) NSDistributedNotificationCenter *notificationCenter;
+@property (nonatomic, retain) NSNotificationCenter *notificationCenter;
 @property (nonatomic, retain) NSMutableDictionary *store;
 
 + (id)_subscriptionStoreDirectoryPath;

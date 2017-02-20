@@ -20,7 +20,7 @@
 - (id)_takeStartSearchFeedbackForSearchOfType:(int)arg1 forQuery:(id)arg2;
 - (void)didBeginSearchOfType:(int)arg1 withQuery:(id)arg2 endpoint:(unsigned int)arg3;
 - (void)didBeginSearchOfType:(int)arg1 withQuery:(id)arg2 urlString:(id)arg3 headers:(id)arg4 endpoint:(unsigned int)arg5;
-- (void)didDisplayCompletionListItems:(id)arg1 forQuery:(id)arg2;
+- (void)didDisplayCompletionListItems:(id)arg1 forQuery:(id)arg2 forEvent:(int)arg3;
 - (void)didGenerateCompletionListItemsWithRankingObserver:(id)arg1;
 - (void)didRankSections:(id)arg1 blendingDuration:(double)arg2 feedbackForHiddenAndDuplicateResults:(id)arg3;
 - (void)didReceiveLocalResultsForQuery:(id)arg1;

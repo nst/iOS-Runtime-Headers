@@ -55,7 +55,6 @@
     BOOL  _nearMissLogPending;
     int  _nearMissLogPreDelayTimer;
     NSMutableArray * _nonceTriggerEvents;
-    unsigned int  _numExplicitRetraining;
     int  _numFramesFromPreTrigger;
     BOOL  _phraseSpotterBypassed;
     BOOL  _phraseSpotterEnabled;
@@ -69,6 +68,11 @@
     BOOL  _registeredForPhraseSpotterNotification;
     BOOL  _registeredforVoiceTriggerEnabledNotification;
     NSString * _resourcePath;
+    unsigned int  _retrainNumExplicitUtt;
+    unsigned int  _retrainNumImplicitUtt;
+    NSString * _retrainSamplingPolicy;
+    double  _retrainThresholdSAT;
+    double  _retrainThresholdTrigger;
     unsigned int  _sampleCountAtFirstChance;
     unsigned int  _samplecount;
     unsigned int  _samplecountAtLastTriggerEnd;
@@ -122,6 +126,7 @@
 - (void).cxx_destruct;
 - (void)VTAssetMonitor:(id)arg1 didReceiveNewAssetAvailable:(BOOL)arg2;
 - (void)VTLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
+- (id)_analyzeEnrollmentUtts:(id)arg1 enrollmentUtts:(id)arg2 thresholdTrigger:(double)arg3 thresholdSAT:(double)arg4 isUpdatingModel:(BOOL)arg5 extraUtts:(id*)arg6;
 - (id)_analyzeEvents:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
 - (id)_analyzeMakeResult:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1 eventKind:(unsigned char)arg2 satScore:(double)arg3;
 - (void)_analyzeReset;
@@ -131,6 +136,7 @@
 - (void)_clearDeviceHandHeld;
 - (void)_commonInit;
 - (double)_computeSATScore:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
+- (double)_computeSamplingMSE:(id)arg1 selectedUtts:(id)arg2 beforeScores:(id)arg3;
 - (BOOL)_configureWithConfig:(id)arg1 resourcePath:(id)arg2;
 - (BOOL)_configureWithDefaults;
 - (void)_createFirstChanceMeta:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1;
@@ -138,6 +144,7 @@
 - (void)_firstUnlockedAndSpringBoardStarted;
 - (id)_getAssetHashFromConfigPath:(id)arg1;
 - (BOOL)_getSecondChanceEffective;
+- (id)_getSortedEnrollmentUtterances;
 - (id)_getSpeakerModelPath:(id)arg1 createDirectory:(BOOL)arg2;
 - (void)_handleAssetChangeForLanguageCode:(id)arg1;
 - (id)_handleTriggerEvent:(const struct _ndresult { unsigned int x1; unsigned int x2; unsigned int x3; float x4; bool x5; }*)arg1 num_new_samples:(unsigned int)arg2 satScore:(double)arg3;
@@ -149,14 +156,18 @@
 - (void)_notifyAssetChangedCallback;
 - (void)_performReadyCompletion;
 - (void)_phraseSpotterEnabledDidChange;
+- (id)_randomSubset:(id)arg1 numSelected:(unsigned int)arg2;
 - (id)_recordTrainingSamples;
 - (BOOL)_removeInvalidSATModel;
+- (unsigned int)_removeUnusedUttsFrom:(id)arg1 selectedUtts:(id)arg2;
 - (void)_resetCounters;
-- (BOOL)_retrainingSATModel:(id)arg1 satAudioPath:(id)arg2 numExplicitUtt:(unsigned int)arg3;
+- (BOOL)_retrainingSATModel:(id)arg1 spkrFile:(id)arg2;
 - (void)_safeConfigureWithAnalyzer:(id)arg1 path:(id)arg2 data:(id)arg3 resourcePath:(id)arg4;
 - (void)_safeReconfig;
+- (id)_sampleFromSortedArray:(id)arg1 numSelected:(unsigned int)arg2;
 - (void)_setDeviceHandHeld;
 - (void)_setSecondChance;
+- (BOOL)_shouldCreateAudioBuffer;
 - (void)_storeFirstChanceAudio;
 - (void)_voiceTriggerEnabledDidChange;
 - (id)analyze:(struct AudioBuffer { unsigned int x1; unsigned int x2; void *x3; })arg1;

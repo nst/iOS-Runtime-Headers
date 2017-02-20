@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIControlCenterViewController : UIViewController <CCUIControlCenterContainerViewDelegate, CCUIControlCenterObserver, CCUIControlCenterPageContainerViewControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate, _UISettingsKeyObserver> {
+@interface CCUIControlCenterViewController : UIViewController <CCUIControlCenterContainerViewDelegate, CCUIControlCenterObserver, CCUIControlCenterPageContainerViewControllerDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     NSMutableArray * _allPageContainerViewControllers;
     CCUIControlCenterContainerView * _containerView;
-    NSMapTable * _containerViewControllersToWallpaperViews;
     <CCUIControlCenterViewControllerDelegate> * _delegate;
     UITapGestureRecognizer * _iPadScrollToAdjacentPageGesture;
     BOOL  _needsViewControllerVisibilityUpdate;
@@ -66,7 +65,6 @@
 - (void)_setContentViewContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)_updatePageControl;
 - (void)_updateScrollViewContentSize;
-- (void)_updateWallpaperColorInfusionVisibility;
 - (void)abortAnimatedTransition;
 - (void)containerViewController:(id)arg1 backdropViewDidUpdate:(id)arg2;
 - (void)containerViewControllerWantsDismissal:(id)arg1;
@@ -79,7 +77,6 @@
 - (void)controlCenterWillBeginTransition;
 - (void)controlCenterWillFinishTransitionOpen:(BOOL)arg1 withDuration:(double)arg2;
 - (void)controlCenterWillPresent;
-- (void)dealloc;
 - (id)delegate;
 - (BOOL)dismissModalFullScreenIfNeeded;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -106,7 +103,6 @@
 - (void)setRevealPercentage:(float)arg1;
 - (void)setTransitioning:(BOOL)arg1;
 - (void)set_selectedViewController:(id)arg1;
-- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (id)sortedVisibleViewControllers;
 - (id)view;
 - (id)viewControllers;

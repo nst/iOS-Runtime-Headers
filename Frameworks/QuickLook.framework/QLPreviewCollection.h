@@ -105,8 +105,8 @@
 - (void)previewItemViewController:(id)arg1 wantsFullScreen:(BOOL)arg2;
 - (void)previewItemViewController:(id)arg1 wantsToOpenURL:(id)arg2;
 - (void)previewItemViewControllerDidEditPreview:(id)arg1;
-- (void)previewItemViewControllerEnteredEditMode:(id)arg1;
 - (void)previewItemViewControllerWantsToShowNoInternetConnectivityAlert:(id)arg1;
+- (void)previewItemViewControllerWantsToUpdateRotation:(id)arg1;
 - (void)previewItemViewControllerWantsUpdateKeyCommands:(id)arg1;
 - (void)previewItemViewControllerWantsUpdatePrinter:(id)arg1;
 - (void)previewItemViewControllerWantsUpdateToolbar:(id)arg1 animated:(BOOL)arg2;

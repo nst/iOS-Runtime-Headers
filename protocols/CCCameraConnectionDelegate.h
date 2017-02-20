@@ -27,9 +27,12 @@
 - (int)cameraConnectionHDRSupport:(CCCameraConnection *)arg1;
 - (int)cameraConnectionIrisMode:(CCCameraConnection *)arg1;
 - (int)cameraConnectionIrisSupport:(CCCameraConnection *)arg1;
+- (unsigned int)cameraConnectionMode:(CCCameraConnection *)arg1;
 - (int)cameraConnectionOrientation:(CCCameraConnection *)arg1;
 - (unsigned int)cameraConnectionSupportedModes:(CCCameraConnection *)arg1;
 - (void)cameraConnectionToggleCameraDevice:(CCCameraConnection *)arg1;
+- (BOOL)cameraConnectionToggleCameraDeviceSupport:(CCCameraConnection *)arg1;
 - (float)cameraConnectionZoomAmount:(CCCameraConnection *)arg1;
+- (BOOL)cameraConnectionZoomSupport:(CCCameraConnection *)arg1;
 
 @end

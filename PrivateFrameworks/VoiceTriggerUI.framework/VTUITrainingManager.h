@@ -65,6 +65,7 @@
 - (void)setSuspendAudio:(BOOL)arg1;
 - (BOOL)setupAudioSession;
 - (BOOL)shouldPerformRMS;
+- (BOOL)shouldShowHeadsetDisconnectionMessage;
 - (BOOL)speechRecognizerAvailable;
 - (BOOL)startAudioSession;
 - (void)startRMS;

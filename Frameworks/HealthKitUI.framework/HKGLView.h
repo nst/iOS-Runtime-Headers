@@ -9,7 +9,9 @@
     unsigned int  _latestDrawErrror;
     BOOL  _needsRender;
     float  _preferredFramesPerSecond;
+    BKSProcessAssertion * _renderingAssertion;
     UIScreen * _screen;
+    BOOL  _shouldBypassApplicationStateChecking;
     BOOL  _synchronizesWithCA;
     BOOL  _viewIsVisible;
     BOOL  _viewWillMoveToWindow;
@@ -17,12 +19,14 @@
 
 @property (getter=isPaused, nonatomic) BOOL paused;
 @property (nonatomic) float preferredFramesPerSecond;
+@property (nonatomic) BOOL shouldBypassApplicationStateChecking;
 @property (nonatomic) BOOL synchronizesWithCA;
 @property (nonatomic, readonly) double timeSinceLastUpdate;
 
 + (void)_clearCachedProgramForVertexShader:(id)arg1 fragmentShader:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_acquireRenderingAssertionIfNeeded;
 - (void)_commonInit;
 - (void)_createDisplayLinkForScreen:(id)arg1;
 - (void)_displayLinkFired;
@@ -30,11 +34,13 @@
 - (BOOL)_isLastUpdateTimeValid;
 - (void)_loadVertexShader:(id)arg1 fragmentShader:(id)arg2 inBundle:(id)arg3 forProgram:(unsigned int*)arg4 cache:(BOOL)arg5;
 - (void)_loadVertexShaderSource:(id)arg1 fragmentShaderSource:(id)arg2 forProgram:(unsigned int*)arg3;
-- (void)_pauseByNotification;
-- (void)_resumeByNotification;
+- (void)_pauseByNotification:(id)arg1;
+- (void)_releaseRenderingAssertion;
+- (void)_resumeByNotification:(id)arg1;
 - (void)_update;
 - (void)_updateGLLayerIsAsynchronous;
 - (void)_updateScreenIfChanged;
+- (void)_willResignActive:(id)arg1;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (unsigned int)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -47,7 +53,9 @@
 - (void)setNeedsRender;
 - (void)setPaused:(BOOL)arg1;
 - (void)setPreferredFramesPerSecond:(float)arg1;
+- (void)setShouldBypassApplicationStateChecking:(BOOL)arg1;
 - (void)setSynchronizesWithCA:(BOOL)arg1;
+- (BOOL)shouldBypassApplicationStateChecking;
 - (id)snapshot;
 - (BOOL)synchronizesWithCA;
 - (double)timeSinceLastUpdate;

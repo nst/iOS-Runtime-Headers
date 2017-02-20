@@ -95,6 +95,7 @@
 - (void)behavior:(id)arg1 setVideoForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)behavior:(id)arg1 setVideoPlayRate:(float)arg2;
 - (void)behavior:(id)arg1 setVideoVolume:(float)arg2;
+- (void)configurePlayerItem;
 - (id)crossfadePlayer;
 - (double)currentCrossfadeTime;
 - (void)dealloc;

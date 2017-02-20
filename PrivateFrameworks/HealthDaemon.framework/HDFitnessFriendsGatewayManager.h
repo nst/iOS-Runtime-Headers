@@ -3,8 +3,8 @@
  */
 
 @interface HDFitnessFriendsGatewayManager : NSObject <HDFitnessFriendsCloudKitManagerChangesObserver, HDFitnessFriendsManagerReadyObserver> {
-    BOOL  _allPairedWatchesMeetMinimumVersion;
     HDFitnessFriendsCloudKitManager * _cloudKitManager;
+    BOOL  _currentlyPairedWatchMeetsMinimumVersion;
     HDFitnessFriendsFriendListManager * _friendListManager;
     NSObject<OS_dispatch_queue> * _observerQueue;
     NSHashTable * _observers;

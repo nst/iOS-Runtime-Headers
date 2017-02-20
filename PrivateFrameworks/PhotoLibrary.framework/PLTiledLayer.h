@@ -55,7 +55,6 @@
 - (void)flushCache;
 - (id)initWithJPEGData:(id)arg1 placeholderImage:(struct CGImage { }*)arg2 screenSize:(struct CGSize { float x1; float x2; })arg3;
 - (struct CGSize { float x1; float x2; })jpegImageSize;
-- (struct CGColorSpace { }*)newColorSpaceFromSession:(struct ajdec { }*)arg1 imageInfo:(struct applejpeg_image_info { int x1; int x2; int x3; int x4; int x5; int x6; int x7; int x8[3]; }*)arg2 imageData:(id)arg3;
 - (void)prepareForDecoding;
 - (void)removeAllTiles;
 - (void)runMetalConversionOnSurface:(struct __IOSurface { }*)arg1 completionHandler:(id /* block */)arg2;

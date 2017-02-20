@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) SYService *service;
 @property (nonatomic, readonly) PBCodable *stateForLogging;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL targetIsNearby;
 @property (nonatomic, readonly) NSObject<OS_os_activity> *transportActivity;
 
 - (void).cxx_destruct;
@@ -39,6 +40,7 @@
 - (void)setResponder:(id)arg1;
 - (id)stateForLogging;
 - (void)suspend;
+- (BOOL)targetIsNearby;
 - (id)transportActivity;
 
 @end

@@ -4,7 +4,6 @@
 
 @interface MRDeviceInfoUpdateMessage : MRDeviceInfoMessage
 
-- (BOOL)requiresAuthentication;
 - (unsigned int)type;
 
 @end

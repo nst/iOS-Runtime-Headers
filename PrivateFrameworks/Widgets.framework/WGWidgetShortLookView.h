@@ -38,6 +38,7 @@
 - (BOOL)isShowingMoreContent;
 - (void)layoutSubviews;
 - (void)setAddWidgetButtonVisible:(BOOL)arg1;
+- (void)setBackgroundBlurred:(BOOL)arg1;
 - (void)setButtonMode:(int)arg1;
 - (void)setShowMoreButtonVisible:(BOOL)arg1;
 - (void)setShowingMoreContent:(BOOL)arg1;

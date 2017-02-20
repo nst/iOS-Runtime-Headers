@@ -29,6 +29,7 @@
 - (void)isEmergencyChangedForCall:(id)arg1;
 - (void)isOnHoldChangedForCall:(id)arg1;
 - (void)isSendingAudioChangedForCall:(id)arg1;
+- (void)isThirdPartyVideoChangedForCall:(id)arg1;
 - (void)isUplinkMutedChangedForCall:(id)arg1;
 - (void)isUsingBasebandChangedForCall:(id)arg1;
 - (void)mediaPropertiesChangedForCall:(id)arg1 remoteAspectRatioDidChange:(BOOL)arg2 remoteCameraOrientationDidChange:(BOOL)arg3;

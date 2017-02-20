@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentPreferencesViewController : UIViewController <CNContactPickerDelegate, CNPostalAddressEditorDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
+    UITextField * _currentEditingField;
     id /* block */  _handler;
     PKPassSnapshotter * _passSnapshotter;
     id /* block */  _pickedContactHandler;
@@ -60,6 +61,7 @@
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;

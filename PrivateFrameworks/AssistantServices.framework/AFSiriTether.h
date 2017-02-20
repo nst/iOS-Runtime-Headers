@@ -7,6 +7,7 @@
     NSObject<OS_xpc_object> * _connection;
     BOOL  _isAttached;
     int  _notifyToken;
+    NSMutableArray * _pendingEvents;
     NSObject<OS_dispatch_queue> * _queue;
 }
 
@@ -17,6 +18,7 @@
 - (void)_connectionInterrupted:(id)arg1;
 - (void)_connectionInvalid:(id)arg1;
 - (void)_listenForLaunchNotification;
+- (void)_logEvent:(id)arg1;
 - (void)attach:(id /* block */)arg1;
 - (void)dealloc;
 - (id)init;

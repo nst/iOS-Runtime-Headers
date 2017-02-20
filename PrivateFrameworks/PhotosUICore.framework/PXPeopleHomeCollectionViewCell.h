@@ -5,16 +5,26 @@
 @interface PXPeopleHomeCollectionViewCell : UICollectionViewCell {
     UIView * _actionIndicatorView;
     UIImageView * _avatarView;
-    UIImage * _image;
     BOOL  _isFavorite;
     BOOL  _isReordering;
     NSString * _name;
     UILabel * _nameLabel;
     unsigned int  _photoQuantity;
     UILabel * _quantityLabel;
+    NSNumberFormatter * _quantityNumberFormatter;
     PXRoundedCornerOverlayView * _roundCornerOverlay;
     UIView * _selectionView;
     float  _textAlpha;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    }  _unitRect;
 }
 
 @property (getter=isActionIndicatorHidden, nonatomic) BOOL actionIndicatorHidden;
@@ -34,6 +44,7 @@
 + (float)preferredHeightForWidth:(float)arg1 forAvatarPercentage:(float)arg2 withSizeClass:(int)arg3 isFavorite:(BOOL)arg4;
 
 - (void).cxx_destruct;
+- (struct UIColor { Class x1; }*)_placeHolderColor;
 - (int)_preferredSizeClass;
 - (void)_updateType;
 - (id)actionIndicatorView;
@@ -57,6 +68,7 @@
 - (void)setActionIndicatorHidden:(BOOL)arg1;
 - (void)setActionIndicatorView:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setImage:(id)arg1 normalizedFaceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)setIsFavorite:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setNameLabel:(id)arg1;

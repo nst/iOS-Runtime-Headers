@@ -15,6 +15,7 @@
 + (id)layoutsFileName;
 + (id)sharedKeyboardFactory;
 
+- (void)_createDecoderIfNecessary;
 - (void)dealloc;
 - (id)decoder;
 - (id)init;

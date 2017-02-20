@@ -20,6 +20,9 @@
     BOOL  _isInEditMode;
     BOOL  _isInFocus;
     BOOL  _isUserTransformingTile;
+    struct { 
+        BOOL videoPlayersLoadingAllowed; 
+    }  _isValid;
     int  _lastAccessoryViewVisibilityChangeReason;
     int  _lastContentOffsetChangeReason;
     PUOperationStatus * _loadingStatus;
@@ -87,7 +90,7 @@
 - (BOOL)_shouldPauseAndRewindVideo;
 - (void)_updateFavoriteState;
 - (void)_updateVideoPlayersIfNeeded;
-- (void)_updateVideoPlayersLoadingAllowed;
+- (void)_updateVideoPlayersLoadingAllowedIfNeeded;
 - (void)_updateWantsIrisBadgeVisible;
 - (id)asset;
 - (id)assetReference;
@@ -98,6 +101,7 @@
 - (id)currentChange;
 - (void)dealloc;
 - (id)debugDetailedDescription;
+- (void)didPerformChanges;
 - (float)focusValue;
 - (BOOL)forceBadgesVisible;
 - (id)init;

@@ -23,6 +23,7 @@
 + (BOOL)isDocumentsItemIDWithSQLiteValue:(struct Mem { }*)arg1;
 + (BOOL)isRootItemIDWithSQLiteValue:(struct Mem { }*)arg1;
 + (BOOL)migrateItemIDsToVersion5WithDB:(id)arg1 serverTruth:(BOOL)arg2;
++ (BOOL)migrateItemIDsToVersion8WithDB:(id)arg1 serverTruth:(BOOL)arg2;
 + (id)newFromSqliteValue:(struct Mem { }*)arg1;
 + (id)newItemIDFromEnclosureUUID:(id)arg1 libraryRowID:(id)arg2;
 + (id)parseMangledItemID:(id)arg1 mangledContainerID:(id*)arg2 etag:(id*)arg3 session:(id)arg4;
@@ -36,7 +37,7 @@
 - (id)contentsRecordIDInZoneID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugItemIDString;
-- (id)derivedAliasItemIDWithOwnerName:(id)arg1 libraryRowID:(id)arg2;
+- (id)derivedAliasItemIDWithOwnerName:(id)arg1;
 - (id)description;
 - (id)directoryReferenceInZoneID:(id)arg1 action:(unsigned int)arg2;
 - (id)directoryStructureRecordIDInZoneID:(id)arg1;
@@ -45,7 +46,7 @@
 - (unsigned int)hash;
 - (id)init;
 - (id)initAsDocumentsWithAppLibraryRowID:(id)arg1;
-- (id)initWithAliasUUID:(id)arg1 aliasLibraryRowID:(id)arg2;
+- (id)initWithAliasUUID:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithItemID:(id)arg1;
 - (id)initWithRootObject:(struct RootItemObject { unsigned char x1; unsigned int x2; }*)arg1;

@@ -21,6 +21,7 @@
 - (id)_findIDSAccountsInStore:(id)arg1 withCriteria:(id /* block */)arg2;
 - (id)_keychainAuthTokenForUsername:(id)arg1 service:(id)arg2;
 - (id)_keychainPasswordForUsername:(id)arg1 service:(id)arg2;
+- (id)_primaryAppleAccount;
 - (id)_profileIDForUsername:(id)arg1 inStore:(id)arg2;
 - (void)_setKeychainAuthToken:(id)arg1 forUsername:(id)arg2 service:(id)arg3;
 - (void)_setKeychainPassword:(id)arg1 forUsername:(id)arg2 service:(id)arg3;
@@ -31,6 +32,7 @@
 - (void)fetchPasswordForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;
 - (id)init;
 - (id)initWithUserNotificationCenter:(id)arg1;
+- (BOOL)isiCloudSignedIn;
 - (id)profileIDForACAccount:(id)arg1;
 - (void)requestAuthTokenForProfileID:(id)arg1 username:(id)arg2 service:(id)arg3 badPassword:(BOOL)arg4 showForgotPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
 - (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;

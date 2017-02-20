@@ -16,7 +16,6 @@
     BOOL  _filterAllButFirstMessage;
     CKFullScreenEffectManager * _fullscreenEffectManager;
     UIView<CKGradientReferenceView> * _gradientReferenceView;
-    CKImpactEffectHapticsGenerator * _hapticsGenerator;
     BOOL  _hasHiddenItems;
     NSIndexSet * _hiddenBalloonViews;
     NSIndexSet * _hiddenItems;
@@ -69,7 +68,6 @@
 @property (nonatomic) BOOL filterAllButFirstMessage;
 @property (nonatomic, retain) CKFullScreenEffectManager *fullscreenEffectManager;
 @property (nonatomic, retain) UIView<CKGradientReferenceView> *gradientReferenceView;
-@property (nonatomic, retain) CKImpactEffectHapticsGenerator *hapticsGenerator;
 @property (nonatomic) BOOL hasHiddenItems;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSIndexSet *hiddenBalloonViews;
@@ -126,7 +124,7 @@
 - (void)_showLoggingAlertIfNecessary;
 - (void)_startPlaybackWithIndexPaths:(id)arg1;
 - (void)_tearDownLoggingTapGestureRecognizer;
-- (void)_updateEffectViewFocusPoint:(id)arg1 effect:(id)arg2;
+- (void)_updateEffectViewMessageRect:(id)arg1 effect:(id)arg2;
 - (void)_updatePluginPlaybackManagerForInsertedChatItems:(id)arg1;
 - (void)addInvisibleInkEffectPauseReasons:(int)arg1;
 - (void)addressBookChanged:(id)arg1;
@@ -198,10 +196,10 @@
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)effectManager:(id)arg1 didStartEffect:(id)arg2;
 - (void)effectManager:(id)arg1 didStopEffect:(id)arg2;
+- (void)endHoldingUpdatesAfterQuicklookCancelsDismiss;
 - (BOOL)filterAllButFirstMessage;
 - (id)fullscreenEffectManager;
 - (id)gradientReferenceView;
-- (id)hapticsGenerator;
 - (BOOL)hasHiddenItems;
 - (id)hiddenBalloonViews;
 - (id)hiddenItems;
@@ -272,7 +270,6 @@
 - (void)setFilterAllButFirstMessage:(BOOL)arg1;
 - (void)setFullscreenEffectManager:(id)arg1;
 - (void)setGradientReferenceView:(id)arg1;
-- (void)setHapticsGenerator:(id)arg1;
 - (void)setHasHiddenItems:(BOOL)arg1;
 - (void)setHiddenBalloonViews:(id)arg1;
 - (void)setHiddenItems:(id)arg1;
@@ -323,7 +320,7 @@
 - (void)transferUpdated:(id)arg1;
 - (BOOL)transitionedFromComposing;
 - (id)updateAnimationGroup;
-- (void)updateEffectViewFocusPoints;
+- (void)updateEffectViewMessageRects;
 - (void)updateInvisibleInkEffectsPaused;
 - (void)updateTranscript:(id /* block */)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(BOOL)arg6 completion:(id /* block */)arg7;

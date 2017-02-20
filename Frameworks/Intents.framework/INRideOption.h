@@ -37,10 +37,12 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)availablePartySizeOptions;
 - (id)availablePartySizeOptionsSelectionPrompt;
 - (id)cacheableObjects;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (id)disclaimerMessage;
 - (void)encodeWithCoder:(id)arg1;
 - (id)estimatedPickupDate;

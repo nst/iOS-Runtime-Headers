@@ -43,9 +43,9 @@
 - (void)_setIrisGlyphLayer:(id)arg1;
 - (void)_setProgressArcLayer:(id)arg1;
 - (void)_setSliceLayer:(id)arg1;
-- (void)_setupSubviews;
 - (id)_sliceLayer;
 - (void)_updateSublayersContentsScale;
+- (void)_updateSubviews;
 - (void)_updateUIProgress;
 - (void)dealloc;
 - (void)didMoveToWindow;

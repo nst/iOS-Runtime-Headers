@@ -27,7 +27,8 @@
 - (void)deleteDataForBundle:(id)arg1;
 - (void)deleteDataForBundles:(id)arg1;
 - (id)initWithPreviousLaunch:(id)arg1 dataStore:(id)arg2;
-- (id)initWithPreviousLaunch:(id)arg1 subsequentLaunchCounts:(id)arg2 dataStore:(id)arg3;
+- (id)initWithPreviousLaunch:(id)arg1 dataStore:(id)arg2 allowSimulatedCrashes:(BOOL)arg3;
+- (id)initWithPreviousLaunch:(id)arg1 subsequentLaunchCounts:(id)arg2 dataStore:(id)arg3 allowSimulatedCrashes:(BOOL)arg4;
 - (double)launchCountForBundle:(id)arg1;
 - (double)likelyhoodForBundleId:(id)arg1;
 - (BOOL)previousAppDeleted;

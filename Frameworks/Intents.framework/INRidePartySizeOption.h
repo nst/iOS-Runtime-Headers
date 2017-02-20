@@ -22,7 +22,9 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPartySizeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 sizeDescription:(id)arg2 priceRange:(id)arg3;

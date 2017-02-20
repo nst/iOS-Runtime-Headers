@@ -48,6 +48,7 @@
 - (id)achievementDefinitionForIdentifier:(id)arg1;
 - (id)allAchievementDefinitionIdentifiers;
 - (id)allAchievementDefinitions;
+- (id)allRemotelyDefinedDefinitionIdentifiers;
 - (id)init;
 - (BOOL)isDefinitionWithIdentifierLoaded:(id)arg1;
 - (BOOL)isDefinitionWithIdentifierRemotelyDefined:(id)arg1;

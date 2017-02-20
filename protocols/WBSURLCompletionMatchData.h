@@ -20,4 +20,8 @@
 - (NSString *)userVisibleURLStringAtIndex:(unsigned int)arg1;
 - (NSString *)userVisibleURLStringForPageTitleAtIndex:(unsigned int)arg1;
 
+@optional
+
+- (int)visitCount;
+
 @end

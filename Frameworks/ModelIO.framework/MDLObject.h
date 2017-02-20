@@ -26,6 +26,7 @@
 - (struct { })boundingBoxAtTime:(double)arg1;
 - (id)children;
 - (id)componentConformingToProtocol:(id)arg1;
+- (void)enumerateChildObjectsOfClass:(Class)arg1 root:(id)arg2 usingBlock:(id /* block */)arg3 stopPointer:(BOOL*)arg4;
 - (BOOL)hidden;
 - (id)init;
 - (id)instance;

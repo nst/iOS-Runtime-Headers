@@ -23,8 +23,10 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)_responseMessagePBRepresentation;
 - (int)code;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expirationDate;
 - (id)init;

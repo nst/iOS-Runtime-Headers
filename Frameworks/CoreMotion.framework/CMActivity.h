@@ -15,6 +15,8 @@
         int exitState; 
         double estExitTime; 
         double startTime; 
+        int rawType; 
+        int rawConfidence; 
     }  fActivity;
 }
 
@@ -28,14 +30,14 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; })activity;
+- (struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; int x12; int x13; })activity;
 - (int)confidence;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasExitedVehicle;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; })arg1;
+- (id)initWithMotionActivity:(struct CLMotionActivity { int x1; int x2; int x3; int x4; bool x5; float x6; double x7; bool x8; int x9; double x10; double x11; int x12; int x13; })arg1;
 - (BOOL)isDriving;
 - (BOOL)isMoving;
 - (BOOL)isRunning;

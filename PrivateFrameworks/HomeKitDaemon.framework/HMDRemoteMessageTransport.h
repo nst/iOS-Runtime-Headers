@@ -32,5 +32,6 @@
 - (void)postDidReceiveRemoteMessageWithNoListenerFromDevice:(id)arg1;
 - (int)qualityOfService;
 - (id)remoteMessageFromMessage:(id)arg1;
+- (void)start;
 
 @end

@@ -38,6 +38,7 @@
 @property (readonly) BOOL isProtectedWithPasscode;
 @property (readonly) BOOL isUnlocked;
 @property (setter=setLinkType:) unsigned int linkType;
+@property (readonly) NSString *localUserUUID;
 @property (copy) NSLocale *locale;
 @property (readonly) NSString *mobileEquipmentIdentifier;
 @property (copy) NSString *modelNumber;
@@ -94,6 +95,7 @@
 - (BOOL)isProtectedWithPasscode;
 - (BOOL)isUnlocked;
 - (unsigned int)linkType;
+- (id)localUserUUID;
 - (id)locale;
 - (id)mobileEquipmentIdentifier;
 - (id)modelNumber;

@@ -21,6 +21,7 @@
 + (int)debugDefault;
 + (void)initialize;
 + (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
++ (void)setDebugDefault:(int)arg1;
 
 - (id)_cacheNodePropertiesFromObject:(id)arg1;
 - (id)_cachedRowForObjectWithID:(id)arg1 generation:(id)arg2;
@@ -32,6 +33,7 @@
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (Class)_objectIDClass;
 - (id)_sanityCheckToken;
+- (id)_storeInfoForEntityDescription:(id)arg1;
 - (void)_updateRollbackCacheForObjectWithID:(id)arg1 relationship:(id)arg2 withValuesFrom:(id)arg3;
 - (void)cacheContents:(id)arg1 ofRelationship:(id)arg2 onObjectWithID:(id)arg3 generation:(id)arg4;
 - (void)cacheContents:(id)arg1 ofRelationship:(id)arg2 onObjectWithID:(id)arg3 withTimestamp:(double)arg4 generation:(id)arg5;

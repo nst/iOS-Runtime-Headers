@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUI.framework/ControlCenterUI
  */
 
-@interface CCUIControlCenterPagePlatterView : UIView {
+@interface CCUIControlCenterPagePlatterView : UIView <_UISettingsKeyObserver> {
     NCMaterialView * _baseMaterialView;
     NSLayoutConstraint * _bottomMargin;
     UIView * _contentView;
     <CCUIControlCenterPagePlatterViewDelegate> * _delegate;
     NSLayoutConstraint * _leadingMargin;
+    NCMaterialSettings * _materialSettings;
     NSSet * _renderedPunchOutMasks;
     NSLayoutConstraint * _topMargin;
     NSLayoutConstraint * _trailingMargin;
@@ -15,7 +16,11 @@
 }
 
 @property (nonatomic, retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_recursivelyVisitSubviewsOfView:(id)arg1 forPunchedThroughView:(id)arg2 collectingMasksIn:(id)arg3;
@@ -33,5 +38,6 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
 - (void)setContentView:(id)arg1;
 - (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 
 @end

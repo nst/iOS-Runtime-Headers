@@ -14,6 +14,7 @@
 - (id)initWithType:(NSString *)arg1 :(NSString *)arg2;
 - (NSArray *)interstitials;
 - (BOOL)isExplicit;
+- (NSDictionary *)metadata;
 - (NSNumber *)resumeTime;
 - (void)setArtworkImageURL:(NSString *)arg1;
 - (void)setContentRatingDomain:(NSString *)arg1;
@@ -23,6 +24,7 @@
 - (void)setHighlightGroups:(NSArray *)arg1;
 - (void)setInterstitials:(NSArray *)arg1;
 - (void)setIsExplicit:(BOOL)arg1;
+- (void)setMetadata:(NSDictionary *)arg1;
 - (void)setResumeTime:(NSNumber *)arg1;
 - (void)setSubtitle:(NSString *)arg1;
 - (void)setTitle:(NSString *)arg1;

@@ -6,6 +6,7 @@
     CALayer * __contentLayer;
     CALayer * __heroLayer;
     ISCrossfadeItem * _crossfadeItem;
+    NSMapTable * _layerToImageData;
     ISPlaybackSpec * _playbackSpec;
     ISLayerPlayer * _player;
 }

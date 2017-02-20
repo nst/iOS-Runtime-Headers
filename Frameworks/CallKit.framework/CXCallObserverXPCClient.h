@@ -5,7 +5,7 @@
 @interface CXCallObserverXPCClient : NSObject <CXCallObserverDataSource> {
     NSObject<OS_dispatch_queue> * _concurrentQueue;
     NSXPCConnection * _connection;
-    <CXCallObserverDataSourceDelegate> * _delegate;
+    NSHashTable * _delegates;
     NSMutableDictionary * _mutableCallUUIDToCallMap;
     int  _notifyToken;
 }
@@ -14,34 +14,42 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *concurrentQueue;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <CXCallObserverDataSourceDelegate> *delegate;
+@property (nonatomic, retain) NSHashTable *delegates;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSMutableDictionary *mutableCallUUIDToCallMap;
 @property (nonatomic) int notifyToken;
 @property (readonly) Class superclass;
 
++ (void)releaseSharedXPCClient;
++ (id)sharedXPCClient;
++ (id)sharedXPCClientSemaphore;
+
 - (void).cxx_destruct;
 - (void)_addOrUpdateCall:(id)arg1;
+- (id)_init;
+- (void)_invalidate;
 - (void)_markAllCallsAsEnded;
 - (id)_remoteObjectProxyWithErrorHandler:(id /* block */)arg1 isSynchronous:(BOOL)arg2;
 - (void)_removeCall:(id)arg1;
 - (void)_requestCalls;
+- (void)addDelegate:(id)arg1;
 - (oneway void)addOrUpdateCall:(id)arg1;
 - (id)callUUIDToCallMap;
 - (id)concurrentQueue;
 - (id)connection;
 - (void)dealloc;
-- (id)delegate;
-- (id)initWithConcurrentQueue:(id)arg1;
+- (id)delegates;
+- (id)init;
 - (void)invalidate;
 - (id)mutableCallUUIDToCallMap;
 - (int)notifyToken;
 - (oneway void)removeCall:(id)arg1;
+- (void)removeDelegate:(id)arg1;
 - (void)requestTransaction:(id)arg1 forExtensionIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)setConcurrentQueue:(id)arg1;
 - (void)setConnection:(id)arg1;
-- (void)setDelegate:(id)arg1;
+- (void)setDelegates:(id)arg1;
 - (void)setMutableCallUUIDToCallMap:(id)arg1;
 - (void)setNotifyToken:(int)arg1;
 

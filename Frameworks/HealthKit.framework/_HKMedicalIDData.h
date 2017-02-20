@@ -48,6 +48,7 @@
 - (id)allergyInfo;
 - (id)birthdate;
 - (int)bloodType;
+- (id)consolidatedSOSContactsWithSOSContactsManager:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateSaved;
 - (id)emergencyContacts;
@@ -91,6 +92,7 @@
 + (id)contactKeysToLoadForMedicalID;
 
 - (id)_contactKeysToFetch;
+- (BOOL)_updateIdentifierByPhoneNumberForEmergencyContact:(id)arg1 contactStore:(id)arg2;
 - (void)loadDataFromCNContact:(id)arg1;
 - (BOOL)updateEmergencyContacts;
 

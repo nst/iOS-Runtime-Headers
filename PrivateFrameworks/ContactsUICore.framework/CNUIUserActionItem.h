@@ -40,7 +40,7 @@
 + (id)textItemWithLabel:(id)arg1 targetHandle:(id)arg2 url:(id)arg3 bundleIdentifier:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;
 + (id)textItemWithLabel:(id)arg1 targetHandle:(id)arg2 userActivity:(id)arg3 bundleIdentifier:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;
 + (id)textItemWithLabel:(id)arg1 targetPhoneNumber:(id)arg2 url:(id)arg3 bundleIdentifier:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;
-+ (id)thirdPartyCallActionItemForTargetHandle:(id)arg1 contactProperty:(id)arg2 actionType:(id)arg3 bundleIdentifier:(id)arg4 callProviderManager:(id)arg5;
++ (id)thirdPartyCallActionItemForTargetHandle:(id)arg1 contactProperty:(id)arg2 actionType:(id)arg3 bundleIdentifier:(id)arg4 customIdentifier:(id)arg5 callProviderManager:(id)arg6;
 + (id)ttyItemWithLabel:(id)arg1 targetHandle:(id)arg2 url:(id)arg3 bundleIdentifier:(id)arg4;
 + (id)ttyRelayItemWithLabel:(id)arg1 targetHandle:(id)arg2 url:(id)arg3 bundleIdentifier:(id)arg4;
 + (id)videoItemWithLabel:(id)arg1 targetHandle:(id)arg2 dialRequest:(id)arg3 bundleIdentifier:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;

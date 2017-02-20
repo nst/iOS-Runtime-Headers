@@ -216,6 +216,7 @@
 - (BOOL)paginateDuringLayoutEnabled;
 - (id)pictographFontFamily;
 - (BOOL)plugInSnapshottingEnabled;
+- (BOOL)preferLowPowerWebGLRendering;
 - (BOOL)privateBrowsingEnabled;
 - (BOOL)requestAnimationFrameEnabled;
 - (BOOL)resourceLoadStatisticsEnabled;
@@ -317,6 +318,7 @@
 - (void)setPictographFontFamily:(id)arg1;
 - (void)setPlugInSnapshottingEnabled:(BOOL)arg1;
 - (void)setPlugInsEnabled:(BOOL)arg1;
+- (void)setPreferLowPowerWebGLRendering:(BOOL)arg1;
 - (void)setPrivateBrowsingEnabled:(BOOL)arg1;
 - (void)setQTKitEnabled:(BOOL)arg1;
 - (void)setRequestAnimationFrameEnabled:(BOOL)arg1;

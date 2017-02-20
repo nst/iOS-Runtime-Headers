@@ -3,6 +3,7 @@
  */
 
 @interface GKPlayerCredential : GKInternalRepresentation {
+    NSString * _DSID;
     NSString * _accountName;
     NSString * _altDSID;
     NSString * _authenticationToken;
@@ -13,6 +14,7 @@
     NSDate * _scopeModificationDate;
 }
 
+@property (retain) NSString *DSID;
 @property (retain) NSString *accountName;
 @property (retain) NSString *altDSID;
 @property (retain) NSString *authenticationToken;
@@ -25,6 +27,7 @@
 
 + (id)secureCodedPropertyKeys;
 
+- (id)DSID;
 - (id)accountName;
 - (id)altDSID;
 - (id)authenticationToken;
@@ -41,6 +44,7 @@
 - (void)setAccountName:(id)arg1;
 - (void)setAltDSID:(id)arg1;
 - (void)setAuthenticationToken:(id)arg1;
+- (void)setDSID:(id)arg1;
 - (void)setEnvironment:(int)arg1;
 - (void)setPlayerInternal:(id)arg1;
 - (void)setRawPassword:(id)arg1;

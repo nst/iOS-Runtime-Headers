@@ -3,10 +3,12 @@
  */
 
 @interface BSTimer : NSObject {
+    NSObject<OS_dispatch_queue> * _callOutQueue;
     unsigned int  _fireCount;
     double  _fireInterval;
     id /* block */  _handler;
     double  _leewayInterval;
+    BOOL  _oneShot;
     NSObject<OS_dispatch_queue> * _queue;
     double  _repeatInterval;
     BOOL  _scheduled;
@@ -22,6 +24,8 @@
 
 + (id)scheduledTimerWithFireInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 
+- (void)_queue_cancel;
+- (void)_queue_noteTimerFired;
 - (void)cancel;
 - (void)dealloc;
 - (unsigned int)fireCount;

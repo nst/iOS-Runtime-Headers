@@ -34,12 +34,13 @@
 - (void)handleUpdatePaymentPassWithTypeIdentifier:(id)arg1;
 - (id)init;
 - (void)loadWebService;
+- (void)sendPaymentOptionsDefaultsToWatch;
 - (void)sendWebServiceContextToWatch;
 - (void)setCompanionAgentConnection:(id)arg1;
 - (void)setNewAuthRandom:(id /* block */)arg1;
 - (void)setTargetDevice:(id)arg1;
 - (void)setWebService:(id)arg1;
-- (void)showPaymentSetupForAppDisplayNamea:(id)arg1;
+- (void)showPaymentSetupForAppDisplayName:(id)arg1;
 - (id)targetDevice;
 - (id)webService;
 

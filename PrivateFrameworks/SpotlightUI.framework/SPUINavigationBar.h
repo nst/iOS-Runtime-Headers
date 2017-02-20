@@ -22,6 +22,7 @@
 - (void)performUpdateBlurProgress:(float)arg1 animated:(BOOL)arg2;
 - (void)pushNavigationItem:(id)arg1;
 - (void)setCurrentBlurProgress:(float)arg1;
+- (void)setRoundedCornerVisible:(BOOL)arg1;
 - (void)setTopDividerView:(id)arg1;
 - (void)showSeparator:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)topDividerView;

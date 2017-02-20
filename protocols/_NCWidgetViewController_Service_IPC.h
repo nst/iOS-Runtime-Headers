@@ -10,6 +10,7 @@
 - (void)__performUpdateWithReplyHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, unsigned int, BOOL, void*
 - (void)__prepareForAnimationsForRequestWithIdentifier:(void *)arg1 withReplyHandler:(void *)arg2; // needs 2 arg types, found 6: NSUUID *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)__requestEncodedLayerTreeToURL:(void *)arg1 withReplyHandler:(void *)arg2; // needs 2 arg types, found 7: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)__updateVisibilityState:(int)arg1;
 - (void)__viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 requestIdentifier:(NSUUID *)arg2;
 
 @optional

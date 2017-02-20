@@ -158,6 +158,7 @@
 - (id)_menuTitleForChatItem:(id)arg1;
 - (id)_navigationControllerToPop;
 - (void)_performResume;
+- (void)_presentBrowserOrAppStoreForAdamID:(id)arg1;
 - (void)_presentDetailsViewController;
 - (void)_presentEffectPicker;
 - (void)_raiseToListenSettingChanged:(id)arg1;
@@ -186,6 +187,7 @@
 - (void)_transferRestoredNotification:(id)arg1;
 - (void)_updateActionsToolbarItems;
 - (void)_updateEntryViewFrameIfNeeded:(BOOL)arg1;
+- (void)_updateForNewPreferredService;
 - (void)_updateInputViewFrameIfNecessary;
 - (void)_updateNavigationButtons;
 - (void)_updateTranscriptInlineNotification;
@@ -301,6 +303,8 @@
 - (BOOL)isShowingPreview;
 - (BOOL)isShowingVideoMessageRecordingView;
 - (BOOL)isTransitioningSize;
+- (void)keyboardDidShowOrHide:(id)arg1;
+- (void)keyboardWillShowOrHide:(id)arg1;
 - (int)lastKnownDeviceOrientation;
 - (void)loadChatInputController;
 - (void)loadView;
@@ -351,6 +355,7 @@
 - (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
 - (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2 uncroppedSourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 realSize:(struct CGSize { float x1; float x2; }*)arg4;
 - (void)previewController:(id)arg1 willTransitionToState:(int)arg2;
+- (void)previewControllerDidCancelDismiss:(id)arg1;
 - (void)previewControllerDidDismiss:(id)arg1;
 - (void)previewControllerWillDismiss:(id)arg1;
 - (void)previewInteraction:(id)arg1 didUpdateCommitTransition:(float)arg2 ended:(BOOL)arg3;
@@ -467,6 +472,7 @@
 - (float)throwAnimationManagerAccessoryViewHeight:(id)arg1;
 - (id)throwAnimationManagerEntryView:(id)arg1;
 - (void)throwAnimationManagerPrepareForThrowAnimation:(id)arg1 context:(id)arg2;
+- (float)throwAnimationManagerTopHeaderHeight:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })throwAnimationWindowFrame:(id)arg1;
 - (id)throwBalloonsForSendAnimationContext:(id)arg1;
 - (float)topInsetPadding;

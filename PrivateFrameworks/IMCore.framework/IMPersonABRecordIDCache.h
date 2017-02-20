@@ -17,12 +17,12 @@
 - (void)_forceCachePersist;
 - (void)_persistCache;
 - (void)_persistCache:(BOOL)arg1;
+- (id)abUniqueID;
 - (int)cacheSequenceNumber;
 - (id)cachedRecordResultForQuery:(id)arg1 sequenceNumber:(int)arg2;
 - (void)clearExistingPreferencesCache;
 - (void)clearInMemoryCache;
 - (double)coalescingPeriod;
-- (id)copyABUniqueID;
 - (id)description;
 - (id)filePath;
 - (void)setCacheSequenceNumber:(int)arg1;

@@ -5,6 +5,7 @@
 @interface BLTDebugObserverHolder : NSObject <BBObserverDelegate> {
     BLTDebugMetricsRatioOnInterval * _exceedeExpirationDebugMetric;
     BBObserver * _observer;
+    <BLTDebugObserverWatchKitAppList> * _wkAppList;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,13 +13,13 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (void)startWithExceededExpirationDebugMetric:(id)arg1;
++ (void)startWithExceededExpirationDebugMetric:(id)arg1 wkAppList:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)_reconnectObserver;
 - (void)dealloc;
 - (id)init;
-- (id)initWithExceededExpirationDebugMetric:(id)arg1;
+- (id)initWithExceededExpirationDebugMetric:(id)arg1 wkAppList:(id)arg2;
 - (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 withReply:(id /* block */)arg5;
 - (void)observer:(id)arg1 noteServerConnectionStateChanged:(BOOL)arg2;
 

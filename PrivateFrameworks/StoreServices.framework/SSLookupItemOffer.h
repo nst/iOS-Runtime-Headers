@@ -23,8 +23,8 @@
 - (id)offerType;
 - (id)price;
 
-// Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/MDM.framework/MDM
 
-- (id)storeExternalVersion;
+- (id)MCExternalVersionIdentifier;
 
 @end

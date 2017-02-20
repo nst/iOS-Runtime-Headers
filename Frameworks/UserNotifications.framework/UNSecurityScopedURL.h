@@ -3,19 +3,17 @@
  */
 
 @interface UNSecurityScopedURL : NSURL {
-    id /* block */  _sandboxExtensionIssuingBlock;
+    NSString * _sandboxExtensionClass;
 }
-
-@property (nonatomic, copy) id /* block */ sandboxExtensionIssuingBlock;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (BOOL)_allowsDirectEncoding;
+- (id)_issueSandboxExtension;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initFileURLWithPath:(id)arg1 sandboxExtensionClass:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id /* block */)sandboxExtensionIssuingBlock;
-- (void)setSandboxExtensionIssuingBlock:(id /* block */)arg1;
 
 @end

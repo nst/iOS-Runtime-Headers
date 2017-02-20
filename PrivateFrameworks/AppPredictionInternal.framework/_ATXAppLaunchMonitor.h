@@ -11,12 +11,18 @@
     NSMutableArray * _deltaLog;
     _ATXDuetHelper * _duetHelper;
     NSMutableDictionary * _launchedBundleIds;
+    NSObject<OS_dispatch_queue> * _logQueue;
     NSMutableSet * _registrations;
     PETScalarEventTracker * _updateLaunchHistoryTracker;
 }
 
++ (int)_predictionPositionForBundleId:(id)arg1 forPredictions:(id)arg2;
+
 - (void).cxx_destruct;
 - (void)_addLaunchWithBundleIdNoLock:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
+- (void)_logPredictionForBundleId:(id)arg1 launchReason:(id)arg2;
+- (void)_shadowSessionLoggingForBundleId:(id)arg1 launchReason:(id)arg2;
+- (void)_syncForTests;
 - (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
 - (id)appInfoManager;
 - (id)appLaunchHistogramManager;
@@ -36,7 +42,6 @@
 - (void)stop;
 - (id)stopDeltaRecording;
 - (void)swapDuetHelper:(id)arg1;
-- (void)syncForTests;
 - (void)updateLaunchHistoryFromDuet;
 - (void)updateLaunchHistoryFromDuet:(double)arg1 completionBlock:(id /* block */)arg2;
 

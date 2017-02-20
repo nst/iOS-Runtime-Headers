@@ -27,7 +27,7 @@
 @property (nonatomic, copy) CNContactStoreFilter *filter;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *indexSections;
-@property (nonatomic, readonly) NSString *meContactIdentifier;
+@property (nonatomic, readonly) NSString *mainStorePreferredForNameMeContactIdentifier;
 @property (nonatomic, retain) <CNSchedulerProvider> *reloadSchedulerProvider;
 @property (nonatomic, retain) CNManualObservable *reloadStream;
 @property (nonatomic, retain) NSMutableArray *resultingContacts;
@@ -56,7 +56,7 @@
 - (void)invalidate;
 - (void)invalidateResults;
 - (void)invalidateSearch;
-- (id)meContactIdentifier;
+- (id)mainStorePreferredForNameMeContactIdentifier;
 - (void)reload;
 - (id)reloadSchedulerProvider;
 - (id)reloadStream;

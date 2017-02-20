@@ -20,6 +20,7 @@
 + (id)_imageByApplyingLegibilityDarkeningToImage:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_addLegibilityDarkeningFilterToStaticImageContentView:(id)arg1;
 - (id)_averageColorInContentViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 smudgeRadius:(float)arg2;
 - (id)_blurredImage;
 - (id)_computeAverageColor;
@@ -27,18 +28,20 @@
 - (void)_disableLegibilityDarkening;
 - (id)_displayedImage;
 - (void)_enableLegibilityDarkening;
-- (id)_fallbackImageWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)_fallbackImageWithOriginalSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_handleVariantChange;
 - (id)_imageByApplyingLegibilityDarkeningToImage:(id)arg1;
 - (id)_imageByDarkeningHighlightsInImage:(id)arg1;
 - (id)_imageForBackdropParameters:(struct { int x1; int x2; int x3; float x4; float x5; float x6; float x7; BOOL x8; })arg1 includeTint:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })_imageSize;
 - (id)_mappedImageKeyForParameters:(struct { int x1; int x2; int x3; float x4; float x5; float x6; float x7; BOOL x8; })arg1 includingTint:(BOOL)arg2 andLegibilityDarkening:(BOOL)arg3;
+- (BOOL)_needsFallbackImageForImage:(id)arg1;
 - (id)_repeatingGradientImageWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (void)_resetColorBoxes;
 - (void)_setDisplayedImage:(id)arg1;
 - (void)_setImage:(id)arg1;
 - (void)_setSampleImage:(id)arg1;
+- (void)_setUpStaticImageContentView:(id)arg1;
 - (void)_setupContentView;
 - (void)_setupWallpaperImage:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)_shouldApplyLegibilityDarkeningForVariant:(int)arg1;
@@ -59,6 +62,7 @@
 - (void)setContentView:(id)arg1;
 - (void)setContentsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 zoomScale:(float)arg2;
+- (void)setVariantsThatDarkenContentsToEnsureLegibility:(int)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (id)snapshotImage;
 - (id)wallpaperImage;

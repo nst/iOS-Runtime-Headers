@@ -33,6 +33,7 @@
 - (void)_queue_triggerDidFireForRegion:(id)arg1;
 - (void)_queue_triggerDidFireForTimer:(id)arg1;
 - (id)_sanitizeNotificationRecords:(id)arg1;
+- (void)_setLastLocalNotificationFireDate:(id)arg1;
 - (void)_setMonitoredRegions:(id)arg1;
 - (void)_setPendingNotificationRecords:(id)arg1;
 - (void)_setRequestDateForPendingNotificationRecords:(id)arg1;

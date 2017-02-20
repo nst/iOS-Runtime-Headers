@@ -80,6 +80,7 @@
 - (void)contactlessInterfaceSessionDidReceiveActivityTimeout:(id)arg1;
 - (void)contactlessInterfaceSessionDidSelectPayment:(id)arg1;
 - (void)contactlessInterfaceSessionDidSelectValueAddedService:(id)arg1;
+- (void)contactlessInterfaceSessionDidStartTransaction:(id)arg1;
 - (void)contactlessInterfaceSessionDidTimeout:(id)arg1 forPaymentApplication:(id)arg2 paymentPass:(id)arg3 valueAddedServicePasses:(id)arg4;
 - (void)contactlessInterfaceSessionHasPendingServerRequest:(id)arg1;
 - (id)contactlessSession;

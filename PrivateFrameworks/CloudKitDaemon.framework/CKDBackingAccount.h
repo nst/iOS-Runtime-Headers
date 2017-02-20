@@ -2,8 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDBackingAccount : NSObject
+@interface CKDBackingAccount : NSObject {
+    BOOL  _canAuthWithCloudKit;
+}
 
+@property (nonatomic, readonly) BOOL canAuthWithCloudKit;
 @property (nonatomic, readonly) BOOL cloudKitIsEnabled;
 @property (nonatomic, readonly) BOOL cloudPhotosIsEnabled;
 @property (nonatomic, readonly) NSString *dsid;
@@ -27,6 +30,7 @@
 
 - (id)_init;
 - (id)accountPropertiesForDataclass:(id)arg1;
+- (BOOL)canAuthWithCloudKit;
 - (id)ckAccount;
 - (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (BOOL)cloudKitIsEnabled;
@@ -40,12 +44,14 @@
 - (id)init;
 - (BOOL)isDataclassEnabled:(id)arg1;
 - (BOOL)isFakeAccount;
+- (id)parentAppleAccount;
 - (id)primaryEmail;
 - (id)privateCloudDBURL;
 - (id)privateCodeServiceURL;
 - (id)privateDeviceServiceURL;
 - (id)privateShareServiceURL;
 - (void)renewAuthTokenInStore:(id)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)saveVerifiedAccountInStore:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)serverPreferredPushEnvironment;
 - (void)updateAccountProperiesInStore:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)username;

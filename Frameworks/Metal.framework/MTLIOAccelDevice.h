@@ -44,6 +44,7 @@
 @property (readonly) unsigned int hwResourcePoolCount;
 @property (readonly) id*hwResourcePools;
 @property (readonly) int numCommandBuffers;
+@property (readonly) unsigned long long recommendedMaxWorkingSetSize;
 @property (readonly) unsigned long long sharedMemorySize;
 
 + (void)registerDevices;

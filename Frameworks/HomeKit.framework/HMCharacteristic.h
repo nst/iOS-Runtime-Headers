@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristic : NSObject <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
+@interface HMCharacteristic : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge, NSSecureCoding> {
     NSString * _characteristicType;
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMDelegateCaller * _delegateCaller;
@@ -116,7 +116,8 @@
 - (id)hf_defaultValue;
 - (BOOL)hf_isReadable;
 - (BOOL)hf_isWritable;
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 - (int)hf_sortPriority;
 
 @end

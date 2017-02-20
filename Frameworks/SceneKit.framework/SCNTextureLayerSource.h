@@ -17,8 +17,10 @@
 - (void)dealloc;
 - (id)layer;
 - (struct CGSize { float x1; float x2; })layerSizeInPixels;
+- (BOOL)prefersGL3;
 - (void)renderWithEngineContext:(struct __C3DEngineContext { }*)arg1 nextFrameTime:(double*)arg2;
 - (void)setLayer:(id)arg1;
+- (BOOL)supportsMetal;
 - (struct __C3DTexture { }*)textureWithEngineContext:(struct __C3DEngineContext { }*)arg1 textureSampler:(struct __C3DTextureSampler { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; long x2; long x3; long x4; long x5; long x6; long x7; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_8_1_1; } x8; float x9; unsigned char x10; long x11; unsigned int x12; }*)arg2 nextFrameTime:(double*)arg3;
 
 @end

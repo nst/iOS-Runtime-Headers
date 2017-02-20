@@ -10,12 +10,14 @@
 - (int)clsPlayCount;
 - (NSSet *)clsSceneClassifications;
 - (int)clsShareCount;
+- (float)clsSharpnessScore;
 - (float)clsVideoScore;
 - (int)clsViewCount;
 - (double)duration;
 - (unsigned int)facesCount;
 - (BOOL)hasAdjustments;
 - (BOOL)isAudio;
+- (BOOL)isBlurry;
 - (BOOL)isFavorite;
 - (BOOL)isHidden;
 - (BOOL)isIncludedInCloudFeeds;

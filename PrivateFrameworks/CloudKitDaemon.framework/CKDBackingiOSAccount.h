@@ -20,6 +20,7 @@
 - (id)_initWithParentAccount:(id)arg1 inStore:(id)arg2;
 - (id)accountPropertiesForDataclass:(id)arg1;
 - (id)accountStore;
+- (BOOL)canAuthWithCloudKit;
 - (id)ckAccount;
 - (id)cloudKitAuthTokenWithError:(id*)arg1;
 - (BOOL)cloudKitIsEnabled;
@@ -32,6 +33,7 @@
 - (BOOL)isDataclassEnabled:(id)arg1;
 - (id)parentAppleAccount;
 - (id)primaryEmail;
+- (void)saveVerifiedAccountInStore:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setParentAppleAccount:(id)arg1;
 - (void)updateAccountProperiesInStore:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)username;

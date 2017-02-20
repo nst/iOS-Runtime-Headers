@@ -30,6 +30,7 @@
 - (id /* block */)connectionReadyHandler;
 - (id /* block */)errorHandler;
 - (void)establishConnectionWithHandler:(id /* block */)arg1;
+- (void)finishBroadcastWithError:(id)arg1;
 - (id)initWithBroadcastUploadExtension:(id)arg1;
 - (void)invalidateConnection;
 - (id)listener;

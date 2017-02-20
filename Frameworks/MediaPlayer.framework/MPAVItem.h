@@ -26,6 +26,7 @@
     float  _currentPlaybackRate;
     float  _defaultPlaybackRate;
     BOOL  _didAttemptToLoadAsset;
+    NSString * _externalContentIdentifier;
     MPQueueFeeder * _feeder;
     unsigned int  _handledFinishTime;
     BOOL  _hasLoadedPlaybackMode;
@@ -118,6 +119,7 @@
 @property (nonatomic, readonly) BOOL durationIsValid;
 @property (nonatomic, readonly) RadioArtworkCollection *effectiveArtworkCollection;
 @property (getter=isExplicitTrack, nonatomic, readonly) BOOL explicitTrack;
+@property (nonatomic, readonly, copy) NSString *externalContentIdentifier;
 @property (nonatomic) MPQueueFeeder *feeder;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } forwardPlaybackEndTime;
 @property (nonatomic, readonly) NSString *genre;
@@ -285,6 +287,7 @@
 - (double)durationIfAvailable;
 - (double)durationInSeconds;
 - (BOOL)durationIsValid;
+- (id)externalContentIdentifier;
 - (id)feeder;
 - (void)flushNowPlayingCaches;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })forwardPlaybackEndTime;

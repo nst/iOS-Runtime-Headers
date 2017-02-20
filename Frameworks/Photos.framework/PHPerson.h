@@ -29,14 +29,16 @@
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
 + (id)_convertFaceSuggestionToFaceCollection:(id)arg1 options:(id)arg2;
-+ (id)_faceLocalIdentifiersFromFaceCollection:(id)arg1 options:(id)arg2;
 + (int)_faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 fromClient:(id)arg5 completion:(id /* block */)arg6;
++ (id)_faceSuggestionMarkedAsConfirmed:(BOOL)arg1 fromFaceCollection:(id)arg2 options:(id)arg3;
 + (id)_packageSuggestionList:(id)arg1 options:(id)arg2;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)displayNameFromContact:(id)arg1;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4;
 + (int)faceSuggestionForPerson:(id)arg1 confirmedFaceCollections:(id)arg2 rejectedFaceCollections:(id)arg3 options:(id)arg4 completion:(id /* block */)arg5;
 + (id)fetchAssociatedPersonForFaceGroup:(id)arg1 withOptions:(id)arg2;
++ (id)fetchHomePersonUUIDsGroupedByAssetUUIDForAssetUUIDs:(id)arg1 options:(id)arg2;
 + (id)fetchPersonCountGroupedByAssetLocalIdentifierForAssets:(id)arg1 options:(id)arg2;
 + (id)fetchPersonWithFace:(id)arg1 options:(id)arg2;
 + (id)fetchPersonsForAssetCollection:(id)arg1 options:(id)arg2;
@@ -47,6 +49,7 @@
 + (id)fetchPersonsWithType:(int)arg1 options:(id)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchType;
++ (id)fullNameFromContact:(id)arg1;
 + (id)identifierCode;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsPersonFilters;
@@ -73,6 +76,7 @@
 + (id)px_titleStringForPeople:(id)arg1;
 
 - (unsigned int)numberOfAssets;
+- (id)px_displayName;
 - (void)requestFaceTileImageWithTargetSize:(struct CGSize { float x1; float x2; })arg1 cropFactor:(unsigned int)arg2 round:(BOOL)arg3 cacheResult:(BOOL)arg4 completionBlock:(id /* block */)arg5;
 
 @end

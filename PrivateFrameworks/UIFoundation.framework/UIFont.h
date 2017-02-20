@@ -207,7 +207,6 @@
 
 + (id)cui_cameraFontForContentSize:(id)arg1;
 + (id)cui_cameraFontOfSize:(float)arg1;
-+ (id)cui_cameraFontOfSize:(float)arg1 weight:(float)arg2;
 + (id)cui_cameraKerningForFont:(id)arg1;
 + (id)cui_cameraModeDialApproximateFontForContentSize:(id)arg1;
 + (id)cui_cameraModeDialFontForContentSize:(id)arg1;

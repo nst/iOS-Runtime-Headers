@@ -16,7 +16,7 @@
     unsigned int  _firmwareVersionRelease;
     BOOL  _forceSilentUpdate;
     iAUPServer * _iAUPServer;
-    BOOL  _isExpectingReconnect;
+    int  _isExpectingReconnect;
     NSMutableData * _outputData;
     unsigned int  _productIDCode;
     id /* block */  _progressHandler;
@@ -85,7 +85,7 @@
 - (void)setProtocolString:(id)arg1;
 - (void)setServer:(id)arg1;
 - (void)setSession:(id)arg1;
-- (void)startReconnectTimer;
+- (void)startReconnectTimer:(int)arg1;
 - (void)stopReconnectTimer;
 - (void)stream:(id)arg1 handleEvent:(unsigned int)arg2;
 - (id)supportedProtocolForAccessory:(id)arg1;

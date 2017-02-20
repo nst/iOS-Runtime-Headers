@@ -6,9 +6,11 @@
     NSMutableDictionary * _cancelTouchesAssertionsByWidgetID;
     <WGWidgetListViewControllerDelegate> * _delegate;
     WGWidgetDiscoveryController * _discoveryController;
+    NCMaterialSettings * _materialSettings;
     NSArray * _previouslyVisibleWidgetIDs;
     WGWidgetShortLookView * _shortLookViewForMeasuring;
     NSMutableDictionary * _shortLookViewsByWidgetID;
+    BOOL  _shouldBlurContent;
     UIStackView * _stackView;
 }
 
@@ -20,6 +22,7 @@
 @property (getter=_group, nonatomic, readonly) NSString *group;
 @property (readonly) unsigned int hash;
 @property (getter=_previouslyVisibleWidgetIDs, setter=_setPreviouslyVisibleWidgetIDs:, nonatomic, retain) NSArray *previouslyVisibleWidgetIDs;
+@property (nonatomic) BOOL shouldBlurContent;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int widgetCount;
 @property (nonatomic, readonly) UIScrollView *widgetListView;
@@ -33,6 +36,7 @@
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)_group;
 - (id /* block */)_insert:(BOOL)arg1 widgetView:(id)arg2 withOrderedIdentifiers:(id)arg3 animated:(BOOL)arg4;
+- (unsigned int)_insertionIndexOfWidgetView:(id)arg1 intoWidgetViews:(id)arg2 withOrderedIdentifiers:(id)arg3;
 - (void)_invalidateAllCancelTouchesAssertions;
 - (void)_invokeBlock:(id /* block */)arg1 withShortLookViewsPassingTest:(id /* block */)arg2;
 - (void)_invokeBlockWithShortLookViewsVisibleInBounds:(id /* block */)arg1;
@@ -51,11 +55,11 @@
 - (void)_updateWidgetViewStateWithPreviouslyVisibleWidgetIdentifiers:(id)arg1;
 - (void)_validateWidgetHostStateForShortLook:(id)arg1;
 - (id)_widgetIdentifiersForShortLookViewsVisibleInBounds;
+- (void)brokenViewDidAppearForWidget:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithWidgetDiscoveryController:(id)arg1;
-- (void)invalidateWidgetBackgroundViews;
 - (BOOL)isWidgetExtensionVisible:(id)arg1;
 - (void)loadView;
 - (void)makeVisibleWidgetWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
@@ -76,7 +80,9 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setDelegate:(id)arg1;
+- (void)setShouldBlurContent:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)shouldBlurContent;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

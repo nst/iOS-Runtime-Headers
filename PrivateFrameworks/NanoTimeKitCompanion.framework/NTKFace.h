@@ -79,6 +79,7 @@
 - (BOOL)_allowsEditing;
 - (BOOL)_applyConfiguration:(id)arg1 allowFailure:(BOOL)arg2;
 - (void)_cleanupEditOptions;
+- (void)_commonInit;
 - (BOOL)_complication:(id)arg1 appearsInDailySnapshotForSlot:(id)arg2;
 - (id)_complicationMigrationPaths;
 - (id)_configurationFromOldEncodingWithCoder:(id)arg1;
@@ -153,6 +154,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEditable;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEquivalentToFace:(id)arg1;
 - (BOOL)isLibraryFace;
 - (BOOL)isSingular;

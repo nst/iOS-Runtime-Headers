@@ -3,14 +3,14 @@
  */
 
 @interface FCFetchOperationResult : NSObject {
-    BOOL  _anyCacheMisses;
+    BOOL  _anyMissingObjects;
     NSError * _error;
     unsigned int  _fetchResult;
     id  _fetchedObject;
     unsigned int  _status;
 }
 
-@property (nonatomic) BOOL anyCacheMisses;
+@property (nonatomic) BOOL anyMissingObjects;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) unsigned int fetchResult;
 @property (nonatomic, readonly) id fetchedObject;
@@ -19,12 +19,12 @@
 + (id)resultWithStatus:(unsigned int)arg1 fetchedObject:(id)arg2 error:(id)arg3;
 
 - (void).cxx_destruct;
-- (BOOL)anyCacheMisses;
+- (BOOL)anyMissingObjects;
 - (id)error;
 - (unsigned int)fetchResult;
 - (id)fetchedObject;
 - (id)initWithStatus:(unsigned int)arg1 fetchedObject:(id)arg2 fetchResult:(unsigned int)arg3 error:(id)arg4;
-- (void)setAnyCacheMisses:(BOOL)arg1;
+- (void)setAnyMissingObjects:(BOOL)arg1;
 - (unsigned int)status;
 
 @end

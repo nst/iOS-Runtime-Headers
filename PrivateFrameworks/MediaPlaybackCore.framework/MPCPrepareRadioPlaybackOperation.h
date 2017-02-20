@@ -3,6 +3,7 @@
  */
 
 @interface MPCPrepareRadioPlaybackOperation : NSOperation {
+    SSAuthenticateRequest * _authenticateRequest;
     id /* block */  _firstTrackBlock;
     MPCRadioGetTracksOperation * _getTracksOperation;
     NSLock * _lock;

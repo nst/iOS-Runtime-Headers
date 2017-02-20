@@ -3,6 +3,7 @@
  */
 
 @interface FCFeedTransformationFilter : NSObject <FCFeedTransforming> {
+    NSString * _briefingsTagID;
     int  _filterOptions;
     NSSet * _mutedChannelTagIDs;
     NSSet * _otherArticleIDs;
@@ -10,6 +11,7 @@
     NSSet * _purchasedTagIDs;
 }
 
+@property (nonatomic, copy) NSString *briefingsTagID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int filterOptions;
@@ -21,14 +23,16 @@
 @property (readonly) Class superclass;
 
 + (id)transformationWithFilterOptions:(int)arg1 context:(id)arg2;
-+ (id)transformationWithFilterOptions:(int)arg1 otherArticleIDs:(id)arg2 otherClusterIDs:(id)arg3 mutedChannelTagIDs:(id)arg4 purchasedTagIDs:(id)arg5;
++ (id)transformationWithFilterOptions:(int)arg1 otherArticleIDs:(id)arg2 otherClusterIDs:(id)arg3 mutedChannelTagIDs:(id)arg4 purchasedTagIDs:(id)arg5 briefingsTagID:(id)arg6;
 
 - (void).cxx_destruct;
+- (id)briefingsTagID;
 - (int)filterOptions;
 - (id)mutedChannelTagIDs;
 - (id)otherArticleIDs;
 - (id)otherClusterIDs;
 - (id)purchasedTagIDs;
+- (void)setBriefingsTagID:(id)arg1;
 - (void)setFilterOptions:(int)arg1;
 - (void)setMutedChannelTagIDs:(id)arg1;
 - (void)setOtherArticleIDs:(id)arg1;

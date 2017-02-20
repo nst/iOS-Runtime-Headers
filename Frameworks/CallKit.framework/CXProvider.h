@@ -47,7 +47,7 @@
 - (id)delegateQueue;
 - (oneway void)handleActionTimeout:(id)arg1;
 - (oneway void)handleAudioSessionActivationStateChangedTo:(BOOL)arg1;
-- (void)handleConnectionInvalidation;
+- (void)handleConnectionInterruption;
 - (void)handleMediaServicesWereResetNotification:(id)arg1;
 - (id)hostProtocolDelegate;
 - (id)init;

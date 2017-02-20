@@ -5,6 +5,7 @@
 @interface PSFooterHyperlinkView : UIView <PSHeaderFooterView, UITextViewDelegate> {
     NSURL * _URL;
     SEL  _action;
+    UIImageView * _iconView;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -19,6 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (retain) UIImageView *iconView;
 @property struct _NSRange { unsigned int x1; unsigned int x2; } linkRange;
 @property (readonly) Class superclass;
 @property id target;
@@ -28,11 +30,13 @@
 - (id)URL;
 - (void)_linkify;
 - (SEL)action;
+- (id)iconView;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })linkRange;
 - (float)preferredHeightForWidth:(float)arg1;
 - (void)setAction:(SEL)arg1;
+- (void)setIconView:(id)arg1;
 - (void)setLinkRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setTarget:(id)arg1;
 - (void)setText:(id)arg1;

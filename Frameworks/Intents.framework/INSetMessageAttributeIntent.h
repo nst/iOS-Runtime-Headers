@@ -11,10 +11,12 @@
 @property (nonatomic, readonly, copy) NSArray *identifiers;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (int)attribute;
+- (id)description;
 - (id)identifiers;
 - (id)initWithIdentifiers:(id)arg1 attribute:(int)arg2;
 - (void)setAttribute:(int)arg1;

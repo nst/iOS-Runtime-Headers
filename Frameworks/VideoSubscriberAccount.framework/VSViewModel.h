@@ -3,71 +3,27 @@
  */
 
 @interface VSViewModel : NSObject {
-    BOOL  _beginValidationButtonEnabled;
-    NSString * _beginValidationButtonTitle;
     unsigned int  _deleteAccountState;
     NSError * _error;
-    NSString * _footerText;
-    NSString * _identityProviderDisplayName;
-    UIImage * _logo;
-    NSString * _logoAccessibilityLabel;
-    NSItemProvider * _logoProvider;
-    NSString * _message;
-    NSString * _notice;
-    BOOL  _showDeleteAccountButton;
-    BOOL  _showFooter;
     NSString * _title;
     unsigned int  _validationState;
     unsigned int  _viewState;
 }
 
-@property (getter=isBeginValidationButtonEnabled, nonatomic) BOOL beginValidationButtonEnabled;
-@property (nonatomic, copy) NSString *beginValidationButtonTitle;
 @property (nonatomic) unsigned int deleteAccountState;
 @property (nonatomic, retain) NSError *error;
-@property (nonatomic, copy) NSString *footerText;
-@property (nonatomic, copy) NSString *identityProviderDisplayName;
-@property (nonatomic, retain) UIImage *logo;
-@property (nonatomic, copy) NSString *logoAccessibilityLabel;
-@property (nonatomic, retain) NSItemProvider *logoProvider;
-@property (nonatomic, copy) NSString *message;
-@property (nonatomic, copy) NSString *notice;
-@property (nonatomic) BOOL showDeleteAccountButton;
-@property (nonatomic) BOOL showFooter;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) unsigned int validationState;
 @property (nonatomic) unsigned int viewState;
 
 - (void).cxx_destruct;
-- (id)beginValidationButtonTitle;
 - (unsigned int)deleteAccountState;
 - (id)error;
-- (id)footerText;
-- (id)identityProviderDisplayName;
-- (BOOL)isBeginValidationButtonEnabled;
-- (id)logo;
-- (id)logoAccessibilityLabel;
-- (id)logoProvider;
-- (id)message;
-- (id)notice;
-- (void)setBeginValidationButtonEnabled:(BOOL)arg1;
-- (void)setBeginValidationButtonTitle:(id)arg1;
 - (void)setDeleteAccountState:(unsigned int)arg1;
 - (void)setError:(id)arg1;
-- (void)setFooterText:(id)arg1;
-- (void)setIdentityProviderDisplayName:(id)arg1;
-- (void)setLogo:(id)arg1;
-- (void)setLogoAccessibilityLabel:(id)arg1;
-- (void)setLogoProvider:(id)arg1;
-- (void)setMessage:(id)arg1;
-- (void)setNotice:(id)arg1;
-- (void)setShowDeleteAccountButton:(BOOL)arg1;
-- (void)setShowFooter:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setValidationState:(unsigned int)arg1;
 - (void)setViewState:(unsigned int)arg1;
-- (BOOL)showDeleteAccountButton;
-- (BOOL)showFooter;
 - (id)title;
 - (unsigned int)validationState;
 - (unsigned int)viewState;

@@ -31,6 +31,7 @@
         BOOL round; 
         BOOL cropBounded; 
         BOOL acceptsVeryLowQuality; 
+        BOOL wantsNonVisibleFaceCompletion; 
     }  _params;
 }
 
@@ -41,7 +42,7 @@
 @property (nonatomic) BOOL isVeryLowQuality;
 @property (nonatomic) struct CGSize { float x1; float x2; } originalImageSize;
 @property (nonatomic, retain) id originalObjectID;
-@property (nonatomic) struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; } params;
+@property (nonatomic) struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; } params;
 
 - (void).cxx_destruct;
 - (id)assetObjectID;
@@ -53,11 +54,11 @@
 - (BOOL)isVeryLowQuality;
 - (struct CGSize { float x1; float x2; })originalImageSize;
 - (id)originalObjectID;
-- (struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; })params;
+- (struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; })params;
 - (void)setAssetObjectID:(id)arg1;
 - (void)setIsVeryLowQuality:(BOOL)arg1;
 - (void)setOriginalImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setOriginalObjectID:(id)arg1;
-- (void)setParams:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; })arg1;
+- (void)setParams:(struct PXFaceTileImageParams { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; unsigned int x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; })arg1;
 
 @end

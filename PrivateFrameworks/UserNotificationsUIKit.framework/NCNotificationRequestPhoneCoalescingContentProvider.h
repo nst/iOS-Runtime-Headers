@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (void)_addNotificationRequestToCoalesce:(id)arg1;
+- (id)_formattedCountStringForTopic:(id)arg1 count:(unsigned int)arg2;
 - (id)_formattedDecimalStringForNumber:(id)arg1;
 - (id)init;
 - (id)initWithNotificationRequest:(id)arg1;

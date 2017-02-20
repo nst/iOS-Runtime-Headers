@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFStaticItem : HFItem {
+@interface HFStaticItem : HFItem <NSCopying> {
     id /* block */  _resultsBlock;
     NSDictionary * _staticResults;
 }
@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
 - (id)initWithResults:(id)arg1;
 - (id)initWithResultsBlock:(id /* block */)arg1;

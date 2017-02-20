@@ -8,11 +8,12 @@
     <UILayoutSupport> * _badgeTopLayoutGuide;
     HUCameraBadgeView * _badgeView;
     NSLayoutConstraint * _cameraAspectRatioConstraint;
+    HURemoteContextHostingView * _cameraContainerView;
     UIView * _cameraDimmingView;
     UIView * _cameraOverlayView;
-    HMCameraView * _cameraView;
     HUCameraErrorContent * _errorContent;
     HUCameraErrorView * _errorView;
+    unsigned int  _maskedCameraCorners;
     HUDecayingTimer * _snapshotAgeUpdateTimer;
     NSArray * _staticConstraints;
 }
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) <UILayoutSupport> *badgeTopLayoutGuide;
 @property (nonatomic, readonly) HUCameraBadgeView *badgeView;
 @property (nonatomic, retain) NSLayoutConstraint *cameraAspectRatioConstraint;
+@property (nonatomic, readonly) HURemoteContextHostingView *cameraContainerView;
 @property (nonatomic) int cameraContentMode;
 @property (nonatomic, readonly) UIView *cameraContentSnapshot;
 @property (nonatomic, retain) UIView *cameraDimmingView;
@@ -31,21 +33,26 @@
 @property (nonatomic, readonly) HMCameraView *cameraView;
 @property (nonatomic, retain) HUCameraErrorContent *errorContent;
 @property (nonatomic, retain) HUCameraErrorView *errorView;
+@property (nonatomic) unsigned int maskedCameraCorners;
 @property (nonatomic, retain) HUDecayingTimer *snapshotAgeUpdateTimer;
 @property (nonatomic, retain) NSArray *staticConstraints;
 
 + (BOOL)requiresConstraintBasedLayout;
 
 - (void).cxx_destruct;
+- (float)_continuousCornerRadius;
 - (void)_scheduleNextSnapshotAgeUpdateForCaptureDate:(id)arg1;
+- (void)_setContinuousCornerRadius:(float)arg1;
 - (void)_updateBadgeView;
 - (void)_updateBadgeViewReschedulingTimerIfNecessary:(BOOL)arg1;
 - (void)_updateErrorVisibilityStateAnimated:(BOOL)arg1;
+- (void)_updateMaskedCameraCorners;
 - (float)badgeInset;
 - (id)badgeInsetConstraints;
 - (id)badgeTopLayoutGuide;
 - (id)badgeView;
 - (id)cameraAspectRatioConstraint;
+- (id)cameraContainerView;
 - (int)cameraContentMode;
 - (id)cameraContentSnapshot;
 - (id)cameraDimmingView;
@@ -58,6 +65,8 @@
 - (id)errorView;
 - (id)init;
 - (id)initWithBadgeView:(id)arg1;
+- (void)layoutSubviews;
+- (unsigned int)maskedCameraCorners;
 - (void)setBadgeInset:(float)arg1;
 - (void)setBadgeInsetConstraints:(id)arg1;
 - (void)setBadgeTopLayoutGuide:(id)arg1;
@@ -65,9 +74,11 @@
 - (void)setCameraContentMode:(int)arg1;
 - (void)setCameraDimmingView:(id)arg1;
 - (void)setCameraSource:(id)arg1;
+- (void)setCameraSource:(id)arg1 animated:(BOOL)arg2;
 - (void)setErrorContent:(id)arg1;
 - (void)setErrorContent:(id)arg1 animated:(BOOL)arg2;
 - (void)setErrorView:(id)arg1;
+- (void)setMaskedCameraCorners:(unsigned int)arg1;
 - (void)setSnapshotAgeUpdateTimer:(id)arg1;
 - (void)setStaticConstraints:(id)arg1;
 - (id)snapshotAgeUpdateTimer;

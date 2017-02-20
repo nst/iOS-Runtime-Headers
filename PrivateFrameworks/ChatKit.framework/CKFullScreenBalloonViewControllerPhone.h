@@ -6,7 +6,6 @@
     BOOL  _animationsDisabledForTesting;
     UIView * _balloonView;
     float  _balloonYOffsetFromTranscript;
-    CKImpactEffectHapticsGenerator * _hapticsGenerator;
     NSArray * _interfaceActions;
     CKActionSheetMenuView * _menuView;
     BOOL  _shouldLayoutViews;
@@ -18,7 +17,6 @@
 @property (nonatomic) float balloonYOffsetFromTranscript;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) CKImpactEffectHapticsGenerator *hapticsGenerator;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSArray *interfaceActions;
 @property (nonatomic, retain) CKActionSheetMenuView *menuView;
@@ -38,7 +36,6 @@
 - (void)dealloc;
 - (void)disableAnimationsForTesting;
 - (void)dismissTapGestureRecognized:(id)arg1;
-- (id)hapticsGenerator;
 - (id)initWithChatItem:(id)arg1 title:(id)arg2 interfaceActions:(id)arg3 gradientReferenceView:(id)arg4 isGroupConversation:(BOOL)arg5 showActionMenu:(BOOL)arg6 pluginBalloonSnapshot:(id)arg7 delegate:(id)arg8;
 - (void)interactionStartedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(id)arg1;
@@ -50,7 +47,6 @@
 - (void)setAnimationsDisabledForTesting:(BOOL)arg1;
 - (void)setBalloonView:(id)arg1;
 - (void)setBalloonYOffsetFromTranscript:(float)arg1;
-- (void)setHapticsGenerator:(id)arg1;
 - (void)setInterfaceActions:(id)arg1;
 - (void)setMenuView:(id)arg1;
 - (void)setVotingViewController:(id)arg1;

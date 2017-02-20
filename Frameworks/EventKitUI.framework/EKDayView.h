@@ -54,6 +54,7 @@
     float  _todayScrollSecondBuffer;
     float  _topContentInset;
     UIImageView * _topVerticalGridExtension;
+    float  _topYBoundaryForOccurrenceText;
     BOOL  _userScrolling;
     BOOL  _usesVibrantGridDrawing;
     float  _verticalContentInset;
@@ -111,6 +112,7 @@
 @property (nonatomic, retain) UIVisualEffect *timeViewVisualEffect;
 @property (nonatomic) float todayScrollSecondBuffer;
 @property (nonatomic) float topContentInset;
+@property (nonatomic) float topYBoundaryForOccurrenceText;
 @property (nonatomic) BOOL usesVibrantGridDrawing;
 @property (nonatomic) float verticalContentInset;
 
@@ -274,6 +276,7 @@
 - (void)setTimeZone:(id)arg1;
 - (void)setTodayScrollSecondBuffer:(float)arg1;
 - (void)setTopContentInset:(float)arg1;
+- (void)setTopYBoundaryForOccurrenceText:(float)arg1;
 - (void)setUsesVibrantGridDrawing:(BOOL)arg1;
 - (void)setVerticalContentInset:(float)arg1;
 - (BOOL)shouldEverShowTimeIndicators;
@@ -288,6 +291,7 @@
 - (id)timeViewVisualEffect;
 - (float)todayScrollSecondBuffer;
 - (float)topContentInset;
+- (float)topYBoundaryForOccurrenceText;
 - (void)updateMarkerPosition;
 - (BOOL)usesVibrantGridDrawing;
 - (float)verticalContentInset;

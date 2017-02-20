@@ -4,16 +4,16 @@
 
 @interface CXCallDirectoryExtensionContext : NSExtensionContext <CXCallDirectoryProviderVendorProtocol> {
     <CXCallDirectoryExtensionContextDelegate> * _delegate;
-    CXCallDirectoryBlockingEntryData * _pendingBlockingEntryData;
-    CXCallDirectoryIdentificationEntryData * _pendingIdentificationEntryData;
+    CXCallDirectoryBlockingEntryMutableData * _pendingBlockingEntryData;
+    CXCallDirectoryIdentificationEntryMutableData * _pendingIdentificationEntryData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CXCallDirectoryExtensionContextDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) CXCallDirectoryBlockingEntryData *pendingBlockingEntryData;
-@property (nonatomic, retain) CXCallDirectoryIdentificationEntryData *pendingIdentificationEntryData;
+@property (nonatomic, retain) CXCallDirectoryBlockingEntryMutableData *pendingBlockingEntryData;
+@property (nonatomic, retain) CXCallDirectoryIdentificationEntryMutableData *pendingIdentificationEntryData;
 @property (readonly) Class superclass;
 
 + (id)_extensionAuxiliaryHostProtocol;

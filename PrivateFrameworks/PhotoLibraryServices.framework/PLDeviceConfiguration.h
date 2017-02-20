@@ -29,7 +29,7 @@
 + (id)defaultDeviceConfiguration;
 
 - (id)description;
-- (id)initWithLogicalScreenSize:(struct CGSize { float x1; float x2; })arg1 screenScale:(float)arg2 isRidingCrudSnow:(BOOL)arg3 isRidingPowderSnow:(BOOL)arg4;
+- (id)initWithLogicalScreenSize:(struct CGSize { float x1; float x2; })arg1 screenScale:(float)arg2 deviceClass:(void*)arg3 isRidingCrudSnow:(BOOL)arg4 isRidingPowderSnow:(BOOL)arg5;
 - (BOOL)isPad;
 - (BOOL)isRetina;
 - (BOOL)isRidingCrudSnow;

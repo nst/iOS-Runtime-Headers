@@ -132,6 +132,8 @@
 - (void)setShortExcerpt:(id)arg1;
 - (void)setSourceChannel:(id)arg1;
 - (void)setSourceName:(id)arg1;
+- (void)setStoryStyle:(id)arg1;
+- (void)setStoryType:(unsigned int)arg1;
 - (void)setThumbnailFocalFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTopicIDs:(id)arg1;

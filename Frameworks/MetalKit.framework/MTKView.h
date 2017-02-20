@@ -100,6 +100,7 @@
 - (void)didMoveToWindow;
 - (void)displayLayer:(id)arg1;
 - (void)draw;
+- (void)drawLayer:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (unsigned int)drawableAttachmentIndex;
 - (struct CGSize { float x1; float x2; })drawableSize;
 - (BOOL)enableSetNeedsDisplay;

@@ -41,6 +41,7 @@
 }
 
 @property (nonatomic, copy) id /* block */ bluetoothStateChangedHandler;
+@property (nonatomic, readonly) int connectionState;
 @property (nonatomic, copy) id /* block */ connectionStateChangedHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -70,6 +71,7 @@
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManagerDidUpdateState:(id)arg1;
+- (int)connectionState;
 - (id /* block */)connectionStateChangedHandler;
 - (void)dealloc;
 - (id)description;

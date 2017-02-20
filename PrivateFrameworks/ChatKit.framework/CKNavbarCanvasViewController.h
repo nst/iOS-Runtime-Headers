@@ -40,9 +40,11 @@
 
 - (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
+- (BOOL)_canShowAvatarView;
 - (void)_chatUnreadCountDidChange:(id)arg1;
 - (void)_configureForDefaultMode;
 - (void)_configureForEditMode;
+- (void)_contactPhotosEnabledChangedNotification:(id)arg1;
 - (void)_initializeForTraitCollection:(id)arg1;
 - (id)_leftItemViewForTraitCollection:(id)arg1;
 - (float)_preferredHeightForTraitCollection:(id)arg1;

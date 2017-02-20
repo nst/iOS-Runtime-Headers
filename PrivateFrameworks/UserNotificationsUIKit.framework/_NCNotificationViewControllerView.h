@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (id)blurringView;
 - (id)contentView;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (float)inputRadius;
 - (void)setBlurringView:(id)arg1;
 - (void)setContentView:(id)arg1;

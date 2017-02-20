@@ -33,6 +33,7 @@
     unsigned int  _maximumParallaxImages;
     float  _minimumFocusDuration;
     float  _overlayDepth;
+    BOOL  _overlayFixedFrame;
     UIImage * _placeholderImage;
     float  _pressedDuration;
     float  _pressedScaleAdjustment;
@@ -87,6 +88,7 @@
 @property (nonatomic) unsigned int maximumParallaxImages;
 @property (nonatomic) float minimumFocusDuration;
 @property (nonatomic) float overlayDepth;
+@property (nonatomic) BOOL overlayFixedFrame;
 @property (nonatomic, retain) UIImage *placeholderImage;
 @property (nonatomic) float pressedDuration;
 @property (nonatomic) float pressedScaleAdjustment;
@@ -142,6 +144,7 @@
 - (unsigned int)maximumParallaxImages;
 - (float)minimumFocusDuration;
 - (float)overlayDepth;
+- (BOOL)overlayFixedFrame;
 - (id)placeholderImage;
 - (float)pressedDuration;
 - (float)pressedScaleAdjustment;
@@ -181,6 +184,7 @@
 - (void)setMaximumParallaxImages:(unsigned int)arg1;
 - (void)setMinimumFocusDuration:(float)arg1;
 - (void)setOverlayDepth:(float)arg1;
+- (void)setOverlayFixedFrame:(BOOL)arg1;
 - (void)setPlaceholderImage:(id)arg1;
 - (void)setPressedDuration:(float)arg1;
 - (void)setPressedScaleAdjustment:(float)arg1;

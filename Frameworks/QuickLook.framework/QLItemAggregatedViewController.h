@@ -23,6 +23,7 @@
 - (void)buttonPressedWithIdentifier:(id)arg1;
 - (BOOL)canEnterFullScreen;
 - (BOOL)canPinchToDismiss;
+- (BOOL)canRotate;
 - (BOOL)canShowToolBar;
 - (BOOL)canSwipeToDismiss;
 - (id)currentPreviewViewController;

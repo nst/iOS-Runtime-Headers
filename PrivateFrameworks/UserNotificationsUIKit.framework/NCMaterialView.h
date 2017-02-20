@@ -2,44 +2,50 @@
    Image: /System/Library/PrivateFrameworks/UserNotificationsUIKit.framework/UserNotificationsUIKit
  */
 
-@interface NCMaterialView : UIView {
+@interface NCMaterialView : UIView <_UISettingsKeyObserver> {
     _UIBackdropView * _backdropView;
-    UIView * _colorInfusionView;
-    float  _colorInfusionViewAlpha;
+    BOOL  _captureOnly;
+    BOOL  _cornerRadiusIsContinuous;
     UIView * _cutoutOverlayView;
     UIView * _lightOverlayView;
+    NCMaterialSettings * _settings;
     unsigned int  _styleOptions;
     float  _subviewsContinuousCornerRadius;
     UIView * _whiteOverlayView;
 }
 
-@property (nonatomic, retain) UIView *colorInfusionView;
-@property (getter=_colorInfusionViewAlpha, setter=_setColorInfusionViewAlpha:, nonatomic) float colorInfusionViewAlpha;
+@property (nonatomic) float cornerRadius;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) float grayscaleValue;
 @property (nonatomic, copy) NSString *groupName;
+@property (readonly) unsigned int hash;
 @property (getter=_subviewsContinuousCornerRadius, setter=_setSubviewsContinuousCornerRadius:, nonatomic) float subviewsContinuousCornerRadius;
+@property (readonly) Class superclass;
 
 + (id)materialViewWithStyleOptions:(unsigned int)arg1;
++ (id)materialViewWithStyleOptions:(unsigned int)arg1 materialSettings:(id)arg2;
++ (id)materialViewWithStyleOptions:(unsigned int)arg1 materialSettings:(id)arg2 captureOnly:(BOOL)arg3;
 
 - (void).cxx_destruct;
-- (float)_colorInfusionViewAlpha;
 - (void)_configureBackdropViewIfNecessary;
-- (void)_configureColorInfusionViewIfNecessary;
 - (void)_configureCutoutOverlayViewIfNecessary;
 - (void)_configureIfNecessary;
 - (void)_configureLightOverlayViewIfNecessary;
 - (void)_configureWhiteOverlayViewIfNecessary;
+- (float)_continuousCornerRadius;
 - (void)_reduceTransparencyStatusDidChange;
-- (void)_setColorInfusionViewAlpha:(float)arg1;
+- (void)_setContinuousCornerRadius:(float)arg1;
 - (void)_setSubviewsContinuousCornerRadius:(float)arg1;
 - (float)_subviewsContinuousCornerRadius;
-- (id)colorInfusionView;
+- (float)cornerRadius;
 - (void)dealloc;
 - (float)grayscaleValue;
 - (id)groupName;
-- (id)initWithStyleOptions:(unsigned int)arg1;
-- (void)setColorInfusionView:(id)arg1;
+- (id)initWithStyleOptions:(unsigned int)arg1 materialSettings:(id)arg2 captureOnly:(BOOL)arg3;
+- (void)setCornerRadius:(float)arg1;
 - (void)setGrayscaleValue:(float)arg1;
 - (void)setGroupName:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 
 @end

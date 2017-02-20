@@ -33,6 +33,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *userID;
 @property (nonatomic, copy) NSUUID *uuid;
+@property (getter=isValid, readonly) BOOL valid;
 
 + (id)currentUserWithPrivilege:(unsigned int)arg1;
 + (id)destinationWithUserID:(id)arg1;
@@ -57,6 +58,7 @@
 - (BOOL)isOwner;
 - (BOOL)isRemoteAccessAllowed;
 - (BOOL)isRemoteGateway;
+- (BOOL)isValid;
 - (BOOL)mergeFromUser:(id)arg1 dataVersion:(int)arg2;
 - (id)pairingIdentity;
 - (id)pairingUsername;

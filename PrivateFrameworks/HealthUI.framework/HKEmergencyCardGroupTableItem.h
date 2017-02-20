@@ -27,6 +27,5 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndex:(int)arg2;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndex:(int)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndex:(int)arg2;
-- (id)titleForFooter;
 
 @end

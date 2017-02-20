@@ -7,6 +7,7 @@
     double  _automaticEndpointingSuspensionEndTime;
     BOOL  _communicatedEndpointDetection;
     BOOL  _communicatedStartPointDetection;
+    double  _delay;
     <AFAudioAnalyzerDelegate> * _delegate;
     BOOL  _detectedOneShotEndpoint;
     BOOL  _detectedOneShotStartpoint;
@@ -31,10 +32,12 @@
     double  _startWaitTime;
     int  _style;
     NSDictionary * _topLevelParameterDict;
+    double  _totalSamples;
 }
 
 @property (nonatomic) double automaticEndpointingSuspensionEndTime;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) double delay;
 @property (nonatomic) <AFAudioAnalyzerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property double endWaitTime;
@@ -54,6 +57,7 @@
 - (double)automaticEndpointingSuspensionEndTime;
 - (BOOL)configureWithASBD:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1 andFrameRate:(unsigned long)arg2;
 - (void)dealloc;
+- (double)delay;
 - (id)delegate;
 - (double)endWaitTime;
 - (int)endpointMode;
@@ -67,6 +71,7 @@
 - (void)reset;
 - (void)saveSamplesSeenOnNextReset;
 - (void)setAutomaticEndpointingSuspensionEndTime:(double)arg1;
+- (void)setDelay:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEndWaitTime:(double)arg1;
 - (void)setEndpointMode:(int)arg1;

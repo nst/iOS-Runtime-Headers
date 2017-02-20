@@ -8,6 +8,7 @@
     TIKeyboardSecureCandidateRenderer * _secureCandidateRenderer;
 }
 
+@property (nonatomic, readonly) NSString *currentInputModeIdentifier;
 @property (nonatomic, readonly) BOOL hasHandledInput;
 @property (nonatomic, readonly) TIInputMode *inputMode;
 @property (nonatomic, retain) TIKeyboardSecureCandidateRenderer *secureCandidateRenderer;
@@ -18,6 +19,7 @@
 - (void)candidateRejected:(id)arg1;
 - (void)clearHumanReadableTrace;
 - (id)configurationPropertyList;
+- (id)currentInputModeIdentifier;
 - (void)dealloc;
 - (int)deletionCountForString:(id)arg1;
 - (id)generateAutocorrectionsWithKeyboardState:(id)arg1;

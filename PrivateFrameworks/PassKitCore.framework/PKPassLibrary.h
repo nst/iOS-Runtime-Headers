@@ -85,12 +85,15 @@
 - (void)hasInAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2 withHandler:(id /* block */)arg3;
 - (void)hasInAppPaymentPassesForNetworks:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)hasInAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)hasInAppPrivateLabelPaymentPassesForWebDomain:(id)arg1 withHandler:(id /* block */)arg2;
 - (BOOL)hasPassesOfType:(unsigned int)arg1;
 - (void)hasWebPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2 withHandler:(id /* block */)arg3;
 - (id)inAppPaymentPassesForNetworks:(id)arg1;
 - (id)inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2;
 - (id)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1;
 - (void)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
+- (id)inAppPrivateLabelPaymentPassesForWebDomain:(id)arg1;
+- (void)inAppPrivateLabelPaymentPassesForWebDomain:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1 resumeNotificationName:(id)arg2 interfaceType:(unsigned int)arg3;
 - (void)introduceDatabaseIntegrityProblem;

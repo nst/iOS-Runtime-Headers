@@ -2,7 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIControlCenterListController : PSListController
+@interface PSUIControlCenterListController : PSListController <PSListControllerTestableSpecifiers>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
 
 - (id)allowedWithinApps:(id)arg1;
 - (void)dealloc;

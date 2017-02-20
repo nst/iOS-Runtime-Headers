@@ -31,7 +31,6 @@
 @property (nonatomic) BOOL adjustsFontForContentSizeCategory;
 @property (getter=isBackgroundBlurred, nonatomic) BOOL backgroundBlurred;
 @property (getter=isBanner, nonatomic) BOOL banner;
-@property (nonatomic, retain) UIView *colorInfusionView;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSizeExcludingActions;
 @property (nonatomic) unsigned int customContentLocation;
 @property (nonatomic) struct CGSize { float x1; float x2; } customContentSize;
@@ -54,11 +53,9 @@
 @property (nonatomic, copy) NSString *primaryText;
 @property (getter=_scrollView, nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic, copy) NSString *secondaryText;
-@property (nonatomic) BOOL showAdditionalMessageLines;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } sizeExcludingActions;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImage *thumbnail;
-@property (nonatomic) int thumbnailViewContentMode;
 @property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, readonly) UIButton *utilityButton;
@@ -89,9 +86,9 @@
 - (BOOL)_lookViewTapGestureRecognizerShouldReceiveTouch:(id)arg1;
 - (id)_scrollView;
 - (struct CGSize { float x1; float x2; })_sizeThatFitsContentExcludingActionsWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })actionsSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)adjustForContentSizeCategoryChange;
 - (BOOL)adjustsFontForContentSizeCategory;
-- (id)colorInfusionView;
 - (struct CGSize { float x1; float x2; })contentSizeExcludingActions;
 - (struct CGSize { float x1; float x2; })contentSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)customContentLocation;
@@ -115,12 +112,12 @@
 - (id)primaryText;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })scrollViewFrame;
 - (id)secondaryText;
 - (void)setActionsHidden:(BOOL)arg1;
 - (void)setAdjustsFontForContentSizeCategory:(BOOL)arg1;
 - (void)setBackgroundBlurred:(BOOL)arg1;
 - (void)setBanner:(BOOL)arg1;
-- (void)setColorInfusionView:(id)arg1;
 - (void)setCustomContentLocation:(unsigned int)arg1;
 - (void)setCustomContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDate:(id)arg1;

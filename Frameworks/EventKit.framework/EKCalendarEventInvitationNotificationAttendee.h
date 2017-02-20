@@ -41,7 +41,7 @@
 - (BOOL)commentChanged;
 - (id)emailAddress;
 - (id)firstName;
-- (id)initWithParticipant:(id)arg1;
+- (id)initWithParticipant:(id)arg1 forEvent:(id)arg2;
 - (BOOL)isCurrentUser;
 - (id)lastName;
 - (id)name;

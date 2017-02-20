@@ -9,8 +9,8 @@
     void title;
 }
 
-@property (nonatomic, retain) NSURL *clockAppSectionURL;
-@property (nonatomic, retain) NSDate *fireDate;
+@property (nonatomic, copy) NSURL *clockAppSectionURL;
+@property (nonatomic, copy) NSDate *fireDate;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) NSString *shallowDescription;
 @property (nonatomic, copy) NSString *title;

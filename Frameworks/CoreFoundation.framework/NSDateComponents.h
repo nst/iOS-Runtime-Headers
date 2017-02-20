@@ -144,11 +144,6 @@
 - (BOOL)isSameYearAsComponents:(id)arg1;
 - (id)representedDate;
 
-// Image: /System/Library/PrivateFrameworks/CoreKnowledge.framework/CoreKnowledge
-
-- (BOOL)storeLinksFromEntity:(id)arg1 error:(id*)arg2;
-- (id)toDate;
-
 // Image: /System/Library/PrivateFrameworks/HMFoundation.framework/HMFoundation
 
 - (id)localTimeDescription;

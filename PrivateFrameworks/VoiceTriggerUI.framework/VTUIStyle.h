@@ -69,5 +69,12 @@
 - (float)subtitleLineHeight;
 - (float)tickMarkHorizontalSizeRatio;
 - (float)titleBaselineOffsetFromTop;
+- (id)turnOnSiriContinueButtonFont;
+- (float)turnOnSiriContinueButtonHeight;
+- (float)turnOnSiriContinueButtonWidth;
+- (float)turnOnSiriHorizontalPaddingLandscape;
+- (float)turnOnSiriHorizontalPaddingPortrait;
+- (float)turnOnSiriImageOffsetFromTopLandscape;
+- (float)turnOnSiriImageOffsetFromTopPortrait;
 
 @end

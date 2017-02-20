@@ -43,7 +43,7 @@
 - (void)_handleRemoteChangeIgnoringSenderPID:(BOOL)arg1;
 - (void)_migrateDataIfNecessary;
 - (void)_perDeviceSettingsDidResetNotification:(id)arg1;
-- (id)_playlistPersistentIDForKind:(int)arg1;
+- (id)_playlistPersistentIDForPlaylistName:(id)arg1;
 - (void)_reloadPropertiesFromDefaults;
 - (void)_resetDomainAccessor;
 - (void)_setNeedsSynchronize;

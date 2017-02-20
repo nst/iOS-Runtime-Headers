@@ -6,12 +6,14 @@
     double  _creationDate;
     NSString * _key;
     NSManagedObjectID * _objectId;
+    long long  _reportVersion;
     BOOL  _submitted;
 }
 
 @property (nonatomic) double creationDate;
 @property (nonatomic, copy) NSString *key;
 @property (nonatomic, retain) NSManagedObjectID *objectId;
+@property (nonatomic) long long reportVersion;
 @property (nonatomic) BOOL submitted;
 
 + (id)createRecordFromManagedObject:(id)arg1;
@@ -34,9 +36,11 @@
 - (BOOL)isEqualToCMSRecord:(id)arg1;
 - (id)key;
 - (id)objectId;
+- (long long)reportVersion;
 - (void)setCreationDate:(double)arg1;
 - (void)setKey:(id)arg1;
 - (void)setObjectId:(id)arg1;
+- (void)setReportVersion:(long long)arg1;
 - (void)setSubmitted:(BOOL)arg1;
 - (BOOL)submitted;
 

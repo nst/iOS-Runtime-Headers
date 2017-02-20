@@ -19,4 +19,8 @@
 - (void)setObject:(void *)arg1 forKey:(void *)arg2 forApplication:(void *)arg3 withCompletion:(void *)arg4; // needs 4 arg types, found 9: id, NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)synchronizeWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 
+@optional
+
+- (id)objectForKey:(NSString *)arg1 forApplication:(NSString *)arg2 checkPrefetch:(BOOL)arg3;
+
 @end

@@ -71,6 +71,11 @@
 
 - (void)logStateOperationCountGreaterThan:(int)arg1;
 
+// Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
+
++ (id)wlkDefaultConcurrentQueue;
++ (id)wlkDefaultQueue;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)tsu_newSerialOperationQueueWithName:(id)arg1;

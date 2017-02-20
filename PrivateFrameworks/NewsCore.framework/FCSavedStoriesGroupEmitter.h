@@ -3,14 +3,11 @@
  */
 
 @interface FCSavedStoriesGroupEmitter : NSObject <FCFeedGroupEmitting> {
-    <FCContentContext> * _context;
     int  _desiredArticlesCount;
     unsigned int  _minPrecedingTopicGroups;
     FCReadingList * _readingList;
-    NSArray * _unreadSavedStories;
 }
 
-@property (nonatomic, retain) <FCContentContext> *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) int desiredArticlesCount;
@@ -22,24 +19,21 @@
 @property (nonatomic, retain) FCReadingList *readingList;
 @property (nonatomic, readonly) BOOL requiresForYouCatchUpOperation;
 @property (readonly) Class superclass;
-@property (nonatomic, copy) NSArray *unreadSavedStories;
 
 - (void).cxx_destruct;
-- (id)context;
+- (BOOL)canEmitGroupsWithType:(int)arg1;
 - (int)desiredArticlesCount;
 - (BOOL)emitsSingletonGroups;
 - (id)groupEmitterIdentifier;
-- (id)initWithDesiredArticlesCount:(int)arg1 listOfUnreadArticles:(id)arg2;
+- (id)initWithDesiredArticlesCount:(int)arg1;
 - (unsigned int)minPrecedingTopicGroups;
-- (id)operationToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (id)readingList;
 - (BOOL)requiresForYouCatchUpOperation;
-- (void)setContext:(id)arg1;
 - (void)setDesiredArticlesCount:(int)arg1;
 - (void)setMinPrecedingTopicGroups:(unsigned int)arg1;
 - (void)setReadingList:(id)arg1;
-- (void)setUnreadSavedStories:(id)arg1;
-- (id)unreadSavedStories;
 - (BOOL)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 
 @end

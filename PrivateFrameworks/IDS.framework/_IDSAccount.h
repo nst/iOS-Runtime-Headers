@@ -29,6 +29,7 @@
 @property (nonatomic, readonly, retain) NSString *displayName;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, readonly) BOOL isInTransientRegistrationState;
 @property (nonatomic, readonly) BOOL isUserDisabled;
 @property (nonatomic, retain) NSString *loginID;
 @property (nonatomic, readonly, retain) NSArray *nearbyDevices;
@@ -100,6 +101,7 @@
 - (id)initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3 delegateContext:(id)arg4;
 - (id)initWithLoginID:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3 delegateContext:(id)arg4;
 - (BOOL)isActive;
+- (BOOL)isInTransientRegistrationState;
 - (BOOL)isUserDisabled;
 - (id)loginID;
 - (id)nearbyDevices;

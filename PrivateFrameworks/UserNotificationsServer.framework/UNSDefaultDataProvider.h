@@ -23,8 +23,6 @@
 @property (nonatomic, retain) BBDataProviderProxy *proxy;
 @property (readonly) Class superclass;
 
-+ (struct CGSize { float x1; float x2; })_sizeFromSizeConstraint:(id)arg1 originalSize:(struct CGSize { float x1; float x2; })arg2;
-
 - (void).cxx_destruct;
 - (int)_BBActionBehaviorForUNAction:(id)arg1;
 - (id)_BBActionBehaviorParametersForUNAction:(id)arg1;

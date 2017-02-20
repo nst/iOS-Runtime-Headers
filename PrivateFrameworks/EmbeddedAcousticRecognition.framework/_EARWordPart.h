@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/EmbeddedAcousticRecognition
  */
 
-@interface _EARWordPart : NSObject <_EARWordPart_JSExport> {
+@interface _EARWordPart : NSObject {
     unsigned int  _frequency;
     NSString * _orthography;
     NSSet * _pronunciations;
@@ -18,9 +18,6 @@
 
 - (void).cxx_destruct;
 - (unsigned int)frequency;
-- (id)getOrthography;
-- (id)getPronuncations;
-- (id)getTagName;
 - (id)initWithOrthography:(id)arg1 pronunciations:(id)arg2 tag:(int)arg3;
 - (id)initWithOrthography:(id)arg1 pronunciations:(id)arg2 tagName:(id)arg3 frequency:(unsigned int)arg4;
 - (id)orthography;

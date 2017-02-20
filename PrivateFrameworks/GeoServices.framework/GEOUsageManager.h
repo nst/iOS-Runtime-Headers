@@ -20,7 +20,7 @@
 - (void)captureForcePurgeMetricWithState:(int)arg1 fromLogFrameworkAdaptor:(BOOL)arg2;
 - (void)captureListInteractionSessionEventWithListType:(int)arg1 listResultItems:(id)arg2 searchString:(id)arg3 traits:(id)arg4;
 - (void)captureLogFrameworkEventForMetricType:(int)arg1 metricState:(int)arg2 messageCount:(int)arg3 messageSize:(long long)arg4 retryCount:(int)arg5 traits:(id)arg6;
-- (void)captureMapLaunchEventWithLaunchUrl:(id)arg1 sourceAppId:(id)arg2 ttlEventTime:(id)arg3 traits:(id)arg4;
+- (void)captureMapLaunchEventWithLaunchUrl:(id)arg1 sourceAppId:(id)arg2 isLaunchedFromTTL:(BOOL)arg3 ttlEventTime:(id)arg4 traits:(id)arg5;
 - (void)captureMapsResultsDisplayedFeedbackForQueryString:(id)arg1 resultsArray:(id)arg2;
 - (void)captureMapsWidgetsInteractionForType:(int)arg1 endState:(int)arg2 widgetSpecificObject:(id)arg3 wasLocked:(BOOL)arg4 startDate:(id)arg5 forDuration:(double)arg6;
 - (void)captureNetworkEventForLoadingTiles:(id)arg1 requestDataSize:(int)arg2 responseDataSize:(int)arg3 responseTime:(int)arg4 traits:(id)arg5;
@@ -46,6 +46,8 @@
 - (void)captureStaleResourcesEventForResources:(id)arg1;
 - (void)captureStateTransition:(id)arg1 force:(BOOL)arg2;
 - (void)captureStateTransitionEventWithStates:(id)arg1 generateOnlyIfStateChanged:(BOOL)arg2 traits:(id)arg3;
+- (void)captureTelemetricEntityCountForEventKey:(int)arg1 eventDetail:(id)arg2;
+- (void)captureTelemetricEntityForEventKey:(int)arg1 eventValue:(unsigned long long)arg2 eventDetail:(id)arg3;
 - (void)captureTileSetStateEventForType:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4 traits:(id)arg5;
 - (void)captureTileStateForGridCoverage:(double)arg1 oldCoverage:(double)arg2 durationInLastState:(double)arg3;
 - (void)captureTileStateForLoadCoverage:(double)arg1 oldCoverage:(double)arg2 durationInLastState:(double)arg3;
@@ -57,7 +59,7 @@
 - (void)captureTransitPlaceCardUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 resultIndex:(int)arg6 targetID:(unsigned long long)arg7 providerID:(id)arg8 animationID:(unsigned long long)arg9 transitCardCategory:(int)arg10 transitSystem:(id)arg11 transitDepartureSequence:(id)arg12 transitIncident:(id)arg13 traits:(id)arg14;
 - (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 categoriesDisplayed:(id)arg4 categorySelected:(id)arg5 traits:(id)arg6;
 - (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 categoriesMetadataDisplayed:(id)arg4 categoryMetadataSelected:(id)arg5 traits:(id)arg6;
-- (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapRegion:(id)arg4 zoomLevel:(double)arg5 traits:(id)arg6;
+- (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapRegion:(id)arg4 zoomLevel:(double)arg5 mapType:(int)arg6 traits:(id)arg7;
 - (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 placeActionDetails:(id)arg4 traits:(id)arg5;
 - (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 resultsArray:(id)arg4 traits:(id)arg5;
 - (void)captureUserActionAsString:(id)arg1 onTarget:(int)arg2 eventValue:(id)arg3 routeDetails:(id)arg4 traits:(id)arg5;

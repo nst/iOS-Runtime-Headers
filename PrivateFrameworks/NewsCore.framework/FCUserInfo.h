@@ -22,6 +22,7 @@
 @property (nonatomic, readonly, copy) NSString *notificationsUserID;
 @property (nonatomic, copy) NSNumber *onboardingVersionNumber;
 @property (nonatomic, readonly) int personalizationTreatmentID;
+@property (nonatomic, readonly) BOOL shouldShowDefaultForYou;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) FCTagSettings *tagSettings;
 @property (nonatomic, copy) NSNumber *totalMeteredCount;
@@ -57,6 +58,7 @@
 - (void)incrementMonthlyMeteredCountByOneWithArticleID:(id)arg1;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 recordZone:(id)arg3 storeDirectory:(id)arg4 iCloudAccountChanged:(BOOL)arg5;
 - (void)loadLocalCachesFromStore;
+- (void)maybeUpdateOnboardingVersion:(id /* block */)arg1;
 - (id)monthlyMeteredCount;
 - (id)notificationsUserID;
 - (id)onboardingVersionNumber;
@@ -73,7 +75,9 @@
 - (void)setTotalMeteredCount:(id)arg1;
 - (void)setUserStartDate:(id)arg1;
 - (void)setWidgetConfiguration:(id)arg1;
+- (BOOL)shouldShowDefaultForYou;
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
+- (void)syncWithCompletion:(id /* block */)arg1;
 - (id)tagSettings;
 - (id)totalMeteredCount;
 - (BOOL)useParsecResults;

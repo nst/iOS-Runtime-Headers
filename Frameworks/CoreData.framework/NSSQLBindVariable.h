@@ -8,7 +8,7 @@
     unsigned int  _flags;
     unsigned int  _index;
     long long  _int64;
-    unsigned int  _sqlType;
+    unsigned char  _sqlType;
     id  _value;
 }
 
@@ -19,10 +19,10 @@
 - (void)dealloc;
 - (BOOL)hasObjectValue;
 - (unsigned int)index;
-- (id)initWithInt64:(long long)arg1 sqlType:(unsigned int)arg2;
-- (id)initWithUnsignedInt:(unsigned int)arg1 sqlType:(unsigned int)arg2;
-- (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3;
-- (id)initWithValue:(id)arg1 sqlType:(unsigned int)arg2 attributeDescription:(id)arg3 allowCoercion:(BOOL)arg4;
+- (id)initWithInt64:(long long)arg1 sqlType:(unsigned char)arg2;
+- (id)initWithUnsignedInt:(unsigned int)arg1 sqlType:(unsigned char)arg2;
+- (id)initWithValue:(id)arg1 sqlType:(unsigned char)arg2 attributeDescription:(id)arg3;
+- (id)initWithValue:(id)arg1 sqlType:(unsigned char)arg2 attributeDescription:(id)arg3 allowCoercion:(BOOL)arg4;
 - (long long)int64;
 - (oneway void)release;
 - (id)retain;
@@ -31,7 +31,7 @@
 - (void)setInt64:(long long)arg1;
 - (void)setUnsignedInt:(unsigned int)arg1;
 - (void)setValue:(id)arg1;
-- (unsigned int)sqlType;
+- (unsigned char)sqlType;
 - (unsigned int)unsignedInt;
 - (id)value;
 

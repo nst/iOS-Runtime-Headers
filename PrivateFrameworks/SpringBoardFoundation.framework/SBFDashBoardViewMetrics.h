@@ -14,7 +14,10 @@
 + (float)dateAlphaProgressForScrollOffset:(float)arg1 withPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (float)dateBaselineToListY;
 + (id)dateFont;
++ (float)dateOnlyLabelToLunarDateLabelBaselineDifferenceY;
++ (id)dateOnlyLunarDateFont;
 + (unsigned int)dateTimeLayoutForPage:(unsigned int)arg1;
++ (id)dateTimeLunarDateFont;
 + (float)dateTimeMinimumInset;
 + (BOOL)layoutCentersContent:(unsigned int)arg1;
 + (BOOL)layoutHitsMaximumWidth:(unsigned int)arg1;
@@ -26,7 +29,6 @@
 + (float)listToPageBottomInsetYForPage:(unsigned int)arg1;
 + (float)listWidthForNotificationCenter;
 + (float)listWidthForPage:(unsigned int)arg1;
-+ (id)lunarDateFont;
 + (float)searchBarWidth;
 + (float)searchClippingLineMaxY;
 + (BOOL)searchSizeUsesMargins;
@@ -39,7 +41,7 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })suggestedFrameForDateTimeViewInScreenCoordinates:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 centeredX:(BOOL)arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })suggestedFrameForListForPage:(unsigned int)arg1 pageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })suggestedFrameForListForPage:(unsigned int)arg1 pageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
-+ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })suggestedFrameForMediaArtworkForControlsFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })suggestedFrameForMediaArtworkForControlsFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 bottomInset:(float)arg2 inPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })suggestedFrameForMediaControlsForPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })suggestedFrameForPageControlForPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 desiredSize:(struct CGSize { float x1; float x2; })arg2;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })suggestedFrameForSearchControllerForPageBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

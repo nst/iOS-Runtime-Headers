@@ -3,9 +3,12 @@
  */
 
 @interface TLAlertQueuePlayerController : NSObject <TLAlertPlaybackBackEndController> {
+    TLAlert * _alertForAudioEnvironmentSetup;
     NSObject<OS_dispatch_queue> * _audioEventQueue;
     NSString * _audioEventQueueLabel;
     unsigned int  _audioSessionDeactivationPreventionRequestsCount;
+    BOOL  _isAlertActivationAssertionAcquired;
+    BOOL  _isAudioEnvironmentSetup;
     BOOL  _isAudioSessionActive;
     BOOL  _isBypassingRingerSwitchPolicy;
     BOOL  _isObservingAudioSessionInterruptionNotification;
@@ -44,12 +47,15 @@
 - (void)_didEndPlayingAlert;
 - (void)_endPreventingAudioSessionDeactivation;
 - (id)_fallbackToneIdentifierForPlayingAlert;
+- (void)_handleActivationAssertionStatusChangeForAlert:(id)arg1 updatedStatus:(BOOL)arg2;
 - (void)_handleAudioSessionInterruptionNotification:(id)arg1;
 - (void)_handleAudioSessionInterruptionOfType:(unsigned int)arg1 withOptions:(unsigned int)arg2;
 - (void)_playAlert:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_prepareAudioEnvironment;
 - (void)_queuePlayer:(id)arg1 currentItemStatusWasUpdatedToValue:(int)arg2;
 - (void)_queuePlayer:(id)arg1 currentItemWasUpdatedFromValue:(id)arg2;
 - (void)_reloadPlaybackForPlayingAlertWithToneIdentifier:(id)arg1;
+- (void)_restoreAudioEnvironment;
 - (void)_startObservingAudioSessionInterruptionNotifications;
 - (void)_startObservingQueuePlayer;
 - (void)_startPlaybackForAssetWithLoadedProperties:(id)arg1 alert:(id)arg2;
@@ -62,6 +68,7 @@
 - (void)_willBeginPlayingAlert;
 - (void)dealloc;
 - (id)description;
+- (void)handleActivationAssertionStatusChangeForAlert:(id)arg1 updatedStatus:(BOOL)arg2;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)performBlockOnAudioEventQueue:(id /* block */)arg1;

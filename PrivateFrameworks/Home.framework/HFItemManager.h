@@ -2,11 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Home.framework/Home
  */
 
-@interface HFItemManager : NSObject <HFAccessoryObserver, HFCameraObserver, HFHomeManagerObserver, HFHomeObserver, HFResidentDeviceObserver, HFTemperatureUnitObserver> {
+@interface HFItemManager : NSObject <HFAccessoryObserver, HFCameraObserver, HFHomeManagerObserver, HFHomeObserver, HFResidentDeviceObserver, HFStateDumpSerializable, HFTemperatureUnitObserver> {
+    HFItemManagerBatchedDelegateAdapter * _batchedDelegateAdapterAllowingReads;
+    HFItemManagerBatchedDelegateAdapter * _batchedDelegateAdapterDisallowingReads;
     <HFItemManagerDelegate> * _delegate;
     NSMutableSet * _disableUpdateReasons;
     NAFuture * _firstFastUpdateFuture;
     NAFuture * _firstFullUpdateFuture;
+    BOOL  _hasCreatedItemProviders;
     HMHome * _home;
     BOOL  _isRunningFastInitialUpdate;
     HMHome * _lastUpdatedHome;
@@ -18,12 +21,15 @@
 
 @property (nonatomic, readonly) NSSet *allDisplayedItems;
 @property (nonatomic, readonly) NSSet *allItems;
+@property (nonatomic, retain) HFItemManagerBatchedDelegateAdapter *batchedDelegateAdapterAllowingReads;
+@property (nonatomic, retain) HFItemManagerBatchedDelegateAdapter *batchedDelegateAdapterDisallowingReads;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HFItemManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSMutableSet *disableUpdateReasons;
 @property (nonatomic, readonly) NAFuture *firstFastUpdateFuture;
 @property (nonatomic, readonly) NAFuture *firstFullUpdateFuture;
+@property (getter=_hasCreatedItemProviders, setter=_setHasCreatedItemProviders:, nonatomic) BOOL hasCreatedItemProviders;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) HMHome *home;
 @property (nonatomic) BOOL isRunningFastInitialUpdate;
@@ -48,12 +54,17 @@
 - (id)_cameraForCameraStream:(id)arg1;
 - (id /* block */)_comparatorForSectionIdentifier:(id)arg1;
 - (void)_createItemProvidersWithHome:(id)arg1;
+- (id)_debug_itemDescriptions;
+- (id)_debug_itemManagerDescription;
+- (id)_debug_itemProviderDescriptions;
+- (void)_debug_registerForStateDump;
 - (id)_dependentHomeKitObjectsOfClass:(Class)arg1 inHomeKitObjects:(id)arg2;
 - (void)_didFinishUpdateTransactionWithAffectedItems:(id)arg1;
 - (void)_didUpdateResultsForItem:(id)arg1;
 - (id)_directItemDependenciesForHomeKitObjects:(id)arg1 class:(Class)arg2;
 - (id)_footerTitleForSectionWithIdentifier:(id)arg1;
 - (void)_handleAssertionFailureForComparatorMovingUnchangedItemsFrom:(id)arg1 to:(id)arg2;
+- (BOOL)_hasCreatedItemProviders;
 - (id)_homeFuture;
 - (id)_identifierForSection:(unsigned int)arg1;
 - (id)_indexPathForItem:(id)arg1 inDisplayedItemsArray:(id)arg2;
@@ -84,12 +95,10 @@
 - (BOOL)_notifyDelegateOfMoveIfNeededForItem:(id)arg1 oldDisplayedItemArray:(id)arg2 updatedDisplayedItemArray:(id)arg3 addedItems:(id)arg4 removedItems:(id)arg5 logger:(id)arg6;
 - (unsigned int)_numberOfSections;
 - (id)_performUpdateForItem:(id)arg1 isInternal:(BOOL)arg2 logger:(id)arg3 options:(id)arg4;
-- (id /* block */)_readValidatorAllowingNoReads;
 - (void)_registerForExternalUpdates;
 - (id)_reloadAllItemProvidersFromSenderSelector:(SEL)arg1;
 - (id)_reloadAndUpdateItemsForProviders:(id)arg1 updateItems:(id)arg2 senderSelector:(SEL)arg3;
 - (id)_reloadItemProviders:(id)arg1 updateItems:(id)arg2 shouldUpdateExistingItems:(BOOL)arg3 senderSelector:(SEL)arg4 readValidator:(id /* block */)arg5;
-- (id)_reloadItemProvidersWithInvalidationReasons:(id)arg1 updateItems:(id)arg2 senderSelector:(SEL)arg3 updatedHome:(id)arg4 readValidator:(id /* block */)arg5;
 - (void)_removeDelegateNotifications;
 - (BOOL)_requiresNotificationsForCharacteristic:(id)arg1;
 - (unsigned int)_sectionForItem:(id)arg1;
@@ -100,6 +109,7 @@
 - (id)_sectionInfosEnsuringLoaded;
 - (id)_serviceGroupItemForServiceGroup:(id)arg1 inItems:(id)arg2;
 - (id)_serviceItemsToHideInSet:(id)arg1 allServiceGroupItems:(id)arg2;
+- (void)_setHasCreatedItemProviders:(BOOL)arg1;
 - (void)_setupDelegateNotifications;
 - (BOOL)_shouldHideServiceItem:(id)arg1 containedInServiceGroupItem:(id)arg2;
 - (BOOL)_shouldPerformFastInitialUpdates;
@@ -120,8 +130,12 @@
 - (void)_willUpdateSections;
 - (void)accessory:(id)arg1 didUpdateApplicationDataForService:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateAssociatedServiceTypeForService:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateBundleID:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateFirmwareUpdateAvailable:(BOOL)arg2;
+- (void)accessory:(id)arg1 didUpdateFirmwareVersion:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateHasAuthorizationDataForCharacteristic:(id)arg2;
 - (void)accessory:(id)arg1 didUpdateNameForService:(id)arg2;
+- (void)accessory:(id)arg1 didUpdateStoreID:(id)arg2;
 - (void)accessory:(id)arg1 service:(id)arg2 didUpdateValueForCharacteristic:(id)arg3;
 - (void)accessoryDidUpdateAdditionalSetupRequired:(id)arg1;
 - (void)accessoryDidUpdateApplicationData:(id)arg1;
@@ -130,6 +144,8 @@
 - (void)accessoryDidUpdateServices:(id)arg1;
 - (id)allDisplayedItems;
 - (id)allItems;
+- (id)batchedDelegateAdapterAllowingReads;
+- (id)batchedDelegateAdapterDisallowingReads;
 - (void)beginSuppressingUpdatesForCharacteristics:(id)arg1 withReason:(id)arg2;
 - (void)cameraSnapshotControl:(id)arg1 didTakeSnapshot:(id)arg2 error:(id)arg3;
 - (void)cameraSnapshotControlDidUpdateMostRecentSnapshot:(id)arg1;
@@ -149,6 +165,7 @@
 - (id)firstFastUpdateFuture;
 - (id)firstFullUpdateFuture;
 - (id)footerTitleForSection:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 - (id)home;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;
 - (void)home:(id)arg1 didAddActionSet:(id)arg2;
@@ -200,10 +217,12 @@
 - (void)homeManager:(id)arg1 didRemoveHome:(id)arg2;
 - (void)homeManager:(id)arg1 didUpdateStateForIncomingInvitations:(id)arg2;
 - (void)homeManager:(id)arg1 residentProvisioningStatusChanged:(unsigned int)arg2;
+- (void)homeManagerDidEndBatchNotifications:(id)arg1;
 - (void)homeManagerDidFinishInitialDatabaseLoad:(id)arg1;
 - (void)homeManagerDidFinishUnknownChange:(id)arg1;
 - (void)homeManagerDidUpdateCurrentHome:(id)arg1;
 - (void)homeManagerDidUpdatePrimaryHome:(id)arg1;
+- (void)homeManagerWillStartBatchNotifications:(id)arg1;
 - (id)indexPathForItem:(id)arg1;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
@@ -221,6 +240,8 @@
 - (void)residentDevice:(id)arg1 didUpdateStatus:(unsigned int)arg2;
 - (unsigned int)sectionIndexForDisplayedSectionIdentifier:(id)arg1;
 - (id)sectionInfos;
+- (void)setBatchedDelegateAdapterAllowingReads:(id)arg1;
+- (void)setBatchedDelegateAdapterDisallowingReads:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setIsRunningFastInitialUpdate:(BOOL)arg1;

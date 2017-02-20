@@ -34,6 +34,7 @@
 - (id)faceTopology;
 - (unsigned int)holeCount;
 - (id)holes;
+- (id)initWithSubmesh:(id)arg1;
 - (void)setEdgeCreaseCount:(unsigned int)arg1;
 - (void)setEdgeCreaseIndices:(id)arg1;
 - (void)setEdgeCreases:(id)arg1;

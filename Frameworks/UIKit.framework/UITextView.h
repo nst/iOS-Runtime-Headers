@@ -37,6 +37,7 @@
     NSLayoutManager * _layoutManager;
     id  _linkInteractionItem;
     NSDictionary * _linkTextAttributes;
+    float  _multilineContextWidth;
     float  _offsetFromScrollPosition;
     UILabel * _placeholderLabel;
     float  _preferredMaxLayoutWidth;
@@ -216,6 +217,7 @@
 - (void)_layoutPlaceholder;
 - (id)_linkTextAttributesForLink:(id)arg1 forCharacterAtIndex:(unsigned int)arg2;
 - (BOOL)_mightHaveSelection;
+- (float)_multilineContextWidth;
 - (BOOL)_needsDoubleUpdateConstraintsPass;
 - (void)_observedTextViewDidChange:(id)arg1;
 - (BOOL)_ownsInputAccessoryView;
@@ -256,6 +258,7 @@
 - (void)_setFrameOrBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromOldRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 settingAction:(id /* block */)arg3;
 - (void)_setFreezeTextContainerSize:(BOOL)arg1;
 - (void)_setInteractiveTextSelectionDisabled:(BOOL)arg1;
+- (void)_setMultilineContextWidth:(float)arg1;
 - (void)_setPreferredMaxLayoutWidth:(float)arg1;
 - (void)_setTextColor:(id)arg1;
 - (void)_setWhitelistedTypingAttributes:(id)arg1;

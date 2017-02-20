@@ -31,5 +31,6 @@
 - (void)setPurchaseController:(id)arg1;
 - (id)transformFeedItems:(id)arg1;
 - (id)transformHeadlines:(id)arg1;
+- (id)transformItems:(id)arg1 isPaidBlock:(id /* block */)arg2 sourceChannelIDProvider:(id /* block */)arg3;
 
 @end

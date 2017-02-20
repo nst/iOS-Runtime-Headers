@@ -6,6 +6,7 @@
     NSString * _applicationBundleIdentifier;
     SFImage * _baseIcon;
     NSString * _contactIdentifier;
+    NSString * _email;
     SFImage * _icon;
     BOOL  _isITunes;
     BOOL  _isOverlay;
@@ -28,6 +29,7 @@
 @property (nonatomic, copy) NSString *applicationBundleIdentifier;
 @property (nonatomic, retain) SFImage *baseIcon;
 @property (nonatomic, copy) NSString *contactIdentifier;
+@property (nonatomic, copy) NSString *email;
 @property (nonatomic, retain) SFImage *icon;
 @property (nonatomic) BOOL isITunes;
 @property (nonatomic) BOOL isOverlay;
@@ -52,6 +54,7 @@
 - (id)applicationBundleIdentifier;
 - (id)baseIcon;
 - (id)contactIdentifier;
+- (id)email;
 - (void)encodeWithCoder:(id)arg1;
 - (id)icon;
 - (id)initWithCoder:(id)arg1;
@@ -72,6 +75,7 @@
 - (void)setApplicationBundleIdentifier:(id)arg1;
 - (void)setBaseIcon:(id)arg1;
 - (void)setContactIdentifier:(id)arg1;
+- (void)setEmail:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setIsITunes:(BOOL)arg1;
 - (void)setIsOverlay:(BOOL)arg1;

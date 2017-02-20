@@ -20,7 +20,7 @@
 - (void)deleteArticleWithID:(id)arg1;
 - (void)deleteFeedID:(id)arg1;
 - (id)feedQueryEndpoint;
-- (id)initWithDatabase:(id)arg1 middleware:(id)arg2;
+- (id)initWithDatabase:(id)arg1 middleware:(id)arg2 networkBehaviorMonitor:(id)arg3;
 - (void)insertArticleID:(id)arg1 atBottomOfFeedID:(id)arg2;
 - (void)insertArticleID:(id)arg1 atTopOfFeedID:(id)arg2;
 - (void)insertArticleID:(id)arg1 inFeedID:(id)arg2 withOrder:(unsigned long long)arg3;

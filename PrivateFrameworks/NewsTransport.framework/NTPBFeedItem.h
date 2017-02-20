@@ -40,6 +40,7 @@
 @property (nonatomic, readonly, copy) NSString *articleID;
 @property (nonatomic, retain) NSString *articleID;
 @property (nonatomic, readonly) unsigned long long articleRecordModificationDateMilliseconds;
+@property (nonatomic, readonly) BOOL canBePurchased;
 @property (nonatomic, readonly, copy) NSString *clusterID;
 @property (nonatomic, retain) NSString *clusterID;
 @property (nonatomic, readonly) unsigned long long contentType;
@@ -183,6 +184,7 @@
 
 - (unsigned long long)articleContentType;
 - (unsigned long long)articleRecordModificationDateMilliseconds;
+- (BOOL)canBePurchased;
 - (int)compareOrder:(id)arg1;
 - (int)compareOrderDescending:(id)arg1;
 - (id)description;

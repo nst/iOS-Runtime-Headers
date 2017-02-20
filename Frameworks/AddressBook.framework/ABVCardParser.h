@@ -40,6 +40,7 @@
     NSMutableArray * _relatedNames;
     NSMutableArray * _socialProfiles;
     void * _source;
+    ABVCardWatchdogTimer * _timer;
     NSString * _uid;
     NSMutableArray * _untypedIMs;
     NSMutableArray * _urls;
@@ -88,6 +89,7 @@
 - (BOOL)importToPerson:(void*)arg1 foundProperties:(const struct __CFArray {}**)arg2;
 - (BOOL)importToValueSetter:(id)arg1;
 - (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 watchdogTimer:(id)arg2;
 - (void)noteLackOfValueForImageData;
 - (void)noteLackOfValueForProperty:(unsigned int)arg1;
 - (BOOL)parseABDATE;

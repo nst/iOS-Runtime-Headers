@@ -241,6 +241,7 @@
 - (BOOL)isShowingStandardControls;
 - (int)layoutStyle;
 - (void)loadView;
+- (void)notifyCaptureSessionDidStopRunning;
 - (void)notifyDidStopCapture;
 - (void)notifyShutterButtonPressed;
 - (void)notifyWillStartCapturing;

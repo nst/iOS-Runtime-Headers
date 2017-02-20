@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMHomeManager : NSObject <HMFMessageReceiver, HMMutableApplicationData> {
+@interface HMHomeManager : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMFMessageReceiver, HMMutableApplicationData> {
     BOOL  _accessAllowedWhenLocked;
     HMApplicationData * _applicationData;
     NSObject<OS_dispatch_queue> * _clientQueue;
@@ -229,6 +229,8 @@
 - (id)hf_homeWithIdentifier:(id)arg1;
 - (id)hf_orderedHomes;
 - (id)hf_orderedHomesList;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 - (id)hf_setHasSeenOnboardingWelcomeView:(BOOL)arg1;
 - (id)hf_setOrderedHomes:(id)arg1;
 

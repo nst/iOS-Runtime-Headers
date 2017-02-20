@@ -4,6 +4,6 @@
 
 @interface VSPrivacyService : VSServiceListener
 
-+ (id)sharedService;
+- (id)init;
 
 @end

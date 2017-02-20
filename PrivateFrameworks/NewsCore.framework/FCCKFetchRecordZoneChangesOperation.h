@@ -12,6 +12,8 @@
     NSDictionary * _optionsByRecordZoneID;
     NSMutableDictionary * _recordZoneChangeResultsByRecordZoneID;
     NSArray * _recordZoneIDs;
+    NSMutableDictionary * _unfinishedOptionsByRecordZoneID;
+    NSMutableArray * _unfinishedRecordZoneIDs;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *changedRecordsByRecordType;
@@ -23,6 +25,8 @@
 @property (nonatomic, copy) NSDictionary *optionsByRecordZoneID;
 @property (nonatomic, retain) NSMutableDictionary *recordZoneChangeResultsByRecordZoneID;
 @property (nonatomic, copy) NSArray *recordZoneIDs;
+@property (nonatomic, retain) NSMutableDictionary *unfinishedOptionsByRecordZoneID;
+@property (nonatomic, retain) NSMutableArray *unfinishedRecordZoneIDs;
 
 - (void).cxx_destruct;
 - (void)_fetchRecordZoneChanges;
@@ -36,6 +40,7 @@
 - (void)operationWillFinishWithError:(id)arg1;
 - (id)optionsByRecordZoneID;
 - (void)performOperation;
+- (void)prepareOperation;
 - (id)recordZoneChangeResultsByRecordZoneID;
 - (id)recordZoneIDs;
 - (void)resetForRetry;
@@ -48,6 +53,10 @@
 - (void)setOptionsByRecordZoneID:(id)arg1;
 - (void)setRecordZoneChangeResultsByRecordZoneID:(id)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
+- (void)setUnfinishedOptionsByRecordZoneID:(id)arg1;
+- (void)setUnfinishedRecordZoneIDs:(id)arg1;
+- (id)unfinishedOptionsByRecordZoneID;
+- (id)unfinishedRecordZoneIDs;
 - (BOOL)validateOperation;
 
 @end

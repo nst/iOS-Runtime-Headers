@@ -7,6 +7,7 @@
     NSString * _displayName;
     struct { 
         unsigned int ingestedDate : 1; 
+        unsigned int supportsAutomaticSelection : 1; 
     }  _has;
     double  _ingestedDate;
     NSData * _manifestHash;
@@ -14,6 +15,7 @@
     NSMutableArray * _paymentApplications;
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountNumberSuffix;
+    BOOL  _supportsAutomaticSelection;
 }
 
 @property (nonatomic, retain) NSMutableArray *associatedWebDomains;
@@ -24,12 +26,14 @@
 @property (nonatomic, readonly) BOOL hasPassID;
 @property (nonatomic, readonly) BOOL hasPrimaryAccountIdentifier;
 @property (nonatomic, readonly) BOOL hasPrimaryAccountNumberSuffix;
+@property (nonatomic) BOOL hasSupportsAutomaticSelection;
 @property (nonatomic) double ingestedDate;
 @property (nonatomic, retain) NSData *manifestHash;
 @property (nonatomic, retain) NSString *passID;
 @property (nonatomic, retain) NSMutableArray *paymentApplications;
 @property (nonatomic, retain) NSString *primaryAccountIdentifier;
 @property (nonatomic, retain) NSString *primaryAccountNumberSuffix;
+@property (nonatomic) BOOL supportsAutomaticSelection;
 
 + (Class)associatedWebDomainsType;
 + (Class)paymentApplicationsType;
@@ -53,6 +57,7 @@
 - (BOOL)hasPassID;
 - (BOOL)hasPrimaryAccountIdentifier;
 - (BOOL)hasPrimaryAccountNumberSuffix;
+- (BOOL)hasSupportsAutomaticSelection;
 - (unsigned int)hash;
 - (double)ingestedDate;
 - (BOOL)isEqual:(id)arg1;
@@ -68,12 +73,15 @@
 - (void)setAssociatedWebDomains:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setHasIngestedDate:(BOOL)arg1;
+- (void)setHasSupportsAutomaticSelection:(BOOL)arg1;
 - (void)setIngestedDate:(double)arg1;
 - (void)setManifestHash:(id)arg1;
 - (void)setPassID:(id)arg1;
 - (void)setPaymentApplications:(id)arg1;
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
+- (void)setSupportsAutomaticSelection:(BOOL)arg1;
+- (BOOL)supportsAutomaticSelection;
 - (void)writeTo:(id)arg1;
 
 @end

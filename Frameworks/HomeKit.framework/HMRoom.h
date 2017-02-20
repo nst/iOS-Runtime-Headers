@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMRoom : NSObject <HFPrettyDescription, HFReorderableHomeKitObject, HFWallaperHost, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
+@interface HMRoom : NSObject <HFPrettyDescription, HFReorderableHomeKitObject, HFStateDumpSerializable, HFWallaperHost, HMFMessageReceiver, HMMutableApplicationData, HMObjectMerge, NSSecureCoding> {
     HMApplicationData * _applicationData;
     NSObject<OS_dispatch_queue> * _clientQueue;
     HMDelegateCaller * _delegateCaller;
@@ -81,7 +81,8 @@
 - (id)hf_allServices;
 - (id)hf_dateAdded;
 - (id)hf_displayName;
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 - (id)hf_updateDateAdded:(id)arg1;
 - (id)hf_updateWallpaperImage:(id)arg1;
 - (id)hf_wallpaperImage;

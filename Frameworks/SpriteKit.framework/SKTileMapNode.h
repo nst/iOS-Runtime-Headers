@@ -21,6 +21,7 @@
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic, copy) NSDictionary *attributeValues;
 @property (nonatomic) int blendMode;
 @property (nonatomic, retain) UIColor *color;
 @property (nonatomic) float colorBlendFactor;

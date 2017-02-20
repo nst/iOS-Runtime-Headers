@@ -78,7 +78,7 @@
 - (BOOL)_hasPriorityOverEventType:(id)arg1;
 - (BOOL)_hasPriorityOverEventTypes:(id)arg1;
 - (id)_mealClassificationTypeUsingStartDate:(id)arg1;
-- (void)addEvents:(id)arg1;
+- (void)addEventPatterns:(id)arg1;
 - (id)adjustedEventClassificationTypeWithStartDate:(id)arg1;
 - (id)adjustedEventTitleForMessageUnits:(id)arg1;
 - (id)adjustedEventTitleForMessageUnits:(id)arg1 subject:(id)arg2 isDateInSubject:(BOOL)arg3;
@@ -109,6 +109,7 @@
 - (double)minutesBeforeDefaultStartingTime;
 - (id)parent;
 - (id)properCasedTitleForTitle:(id)arg1 locale:(id)arg2;
+- (BOOL)questionMarkInString:(id)arg1;
 - (void)setAllDayAllowed:(BOOL)arg1;
 - (void)setChildren:(id)arg1;
 - (void)setClassificationDepth:(unsigned int)arg1;

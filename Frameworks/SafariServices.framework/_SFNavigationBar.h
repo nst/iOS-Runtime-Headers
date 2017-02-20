@@ -43,6 +43,9 @@
     float  _minimumBackdropHeight;
     float  _offsetOfURLInExpandedURL;
     UIColor * _preferredBarTintColor;
+    BOOL  _preferredBarTintColorIsDark;
+    BOOL  _preferredBarTintColorIsExtreme;
+    BOOL  _preferredBarTintColorIsGreen;
     UIColor * _preferredControlsTintColor;
     _SFFluidProgressView * _progressView;
     _SFDimmingButton * _readerAppearanceButton;
@@ -137,7 +140,6 @@
 - (id)_newNavigationButtonWithImage:(id)arg1 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 action:(SEL)arg3;
 - (id)_placeholderColor;
 - (id)_placeholderText;
-- (BOOL)_preferredTintColorIsSimilarToEVCertLockAndTextColor;
 - (void)_readerAppearanceButtonPressed;
 - (void)_readerButtonTapped:(id)arg1;
 - (void)_reloadButtonLongPressed:(id)arg1;
@@ -153,6 +155,7 @@
 - (void)_updateBackdropFrame;
 - (void)_updateBackdropGroupName;
 - (void)_updateBackdropStyle;
+- (void)_updateBarTintColorMetrics;
 - (void)_updateControlTints;
 - (void)_updateFakeViews;
 - (void)_updateLockIconHasEVCertificateTint;

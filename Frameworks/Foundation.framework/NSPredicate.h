@@ -94,8 +94,9 @@
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
-+ (id)vcp_localAssetsPredicate;
-+ (id)vcp_localMoviesPredicate;
-+ (id)vcp_localPhotosPredicate;
++ (id)vcp_livePhotosPredicate:(BOOL)arg1;
++ (id)vcp_moviesPredicate:(BOOL)arg1;
++ (id)vcp_photosPredicate:(BOOL)arg1;
++ (id)vcp_stillPhotosPredicate:(BOOL)arg1;
 
 @end

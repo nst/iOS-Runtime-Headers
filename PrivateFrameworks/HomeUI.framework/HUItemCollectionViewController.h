@@ -56,6 +56,7 @@
 - (void)setItemManager:(id)arg1;
 - (void)setWantsPreferredContentSize:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
+- (BOOL)shouldCoalesceBatchUpdatesBeforeViewDidAppear;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

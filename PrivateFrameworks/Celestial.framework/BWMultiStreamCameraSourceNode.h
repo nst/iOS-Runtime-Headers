@@ -21,6 +21,7 @@
     BOOL  _deferMetadataCreation;
     BOOL  _deferProcessingSessionMetadataCreation;
     BWDeferredMetadataCache * _deferredMetadataCache;
+    <BWDetectedFacesFilterDelegate> * _detectedFacesFilterDelegate;
     BWNodeOutput * _detectedFacesOutput;
     NSDictionary * _detectedFacesOutputConfiguration;
     BOOL  _detectedFacesOutputEnabled;
@@ -36,6 +37,7 @@
     int  _maxIntegrationTimeOverride;
     float  _minFrameRate;
     int  _motionAttachmentsSource;
+    BWMotionDataPreserver * _motionDataPreserver;
     struct CGSize { 
         float width; 
         float height; 
@@ -134,6 +136,8 @@
 - (id)_initWithCaptureDevice:(id)arg1 captureStream:(id)arg2;
 - (float)_ispAppliedZoomFactorFromSampleBufferMetadataDictionary:(id)arg1 outputIndex:(int)arg2;
 - (void)_markEndOfLiveOutput;
+- (void)_prependPreservedMotionDataToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (void)_preserveMotionDataForSoonToBeDroppedSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_reflectStillSampleBufferOnStreamingOutputs:(struct opaqueCMSampleBuffer { }*)arg1 captureType:(int)arg2;
 - (void)_registerForStreamNotifications;
 - (void)_registerStreamOutputHandlers;
@@ -167,6 +171,7 @@
 - (struct { int x1; int x2; })cropAspectRatio;
 - (BOOL)cropsOverscanFromFirmwareStillImageOutput;
 - (void)dealloc;
+- (id)detectedFacesFilterDelegate;
 - (id)detectedFacesOutput;
 - (id)detectedFacesOutputConfiguration;
 - (BOOL)detectedFacesOutputEnabled;
@@ -200,6 +205,7 @@
 - (void)setColorSpaceProperties:(int)arg1;
 - (void)setCropAspectRatio:(struct { int x1; int x2; })arg1;
 - (void)setCropsOverscanFromFirmwareStillImageOutput:(BOOL)arg1;
+- (void)setDetectedFacesFilterDelegate:(id)arg1;
 - (void)setDetectedFacesOutputConfiguration:(id)arg1;
 - (void)setDetectedFacesOutputEnabled:(BOOL)arg1;
 - (void)setDiscardsUnstableSphereVideoFrames:(BOOL)arg1;

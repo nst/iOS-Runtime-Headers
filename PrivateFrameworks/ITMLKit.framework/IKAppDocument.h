@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridge, IKStyleMediaQueryEvaluator> {
+@interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridgeInternal, IKStyleMediaQueryEvaluator> {
     IKAppContext * _appContext;
     <IKAppDocumentDelegate> * _delegate;
     NSError * _error;
@@ -11,8 +11,10 @@
     double  _impressionThreshold;
     NSMutableDictionary * _impressions;
     IKDOMDocument * _jsDocument;
+    NSMutableDictionary * _mediaQueryCache;
     IKViewElement * _navigationBarElement;
     IKJSObject * _owner;
+    BOOL  _parsingDOM;
     NSHashTable * _styleChangeObservers;
     IKViewElementStyleFactory * _styleFactory;
     BOOL  _subtreeUpdated;
@@ -46,6 +48,7 @@
 - (void).cxx_destruct;
 - (void)_addStyleChangeObserver:(id)arg1;
 - (BOOL)_clearUpdatesForElement:(id)arg1;
+- (BOOL)_isUpdateAllowed;
 - (void)_removeStyleChangeObserver:(id)arg1;
 - (void)_setViewElementStylesDirty;
 - (void)_updateWithXML:(id)arg1;

@@ -10,6 +10,7 @@
     double  _energyBurned;
     double  _energyBurnedGoal;
     NSUUID * _friendUUID;
+    BOOL  _hasCarriedForwardGoals;
     double  _pushCount;
     long long  _snapshotIndex;
     NSDate * _snapshotUploadedDate;
@@ -26,6 +27,7 @@
 @property (nonatomic) double briskMinutes;
 @property (nonatomic) double briskMinutesGoal;
 @property (nonatomic, readonly) double briskMinutesGoalPercentage;
+@property (nonatomic, readonly) HDFitnessFriendsCloudKitCodableActivitySnapshot *codableSnapshot;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double energyBurned;
@@ -34,6 +36,7 @@
 @property (nonatomic, readonly) NSDate *filter_date;
 @property (nonatomic, readonly) NSUUID *filter_friendUUID;
 @property (nonatomic, retain) NSUUID *friendUUID;
+@property (nonatomic) BOOL hasCarriedForwardGoals;
 @property (readonly) unsigned int hash;
 @property (nonatomic) double pushCount;
 @property (nonatomic) long long snapshotIndex;
@@ -68,6 +71,7 @@
 - (double)energyBurnedGoal;
 - (double)energyBurnedGoalPercentage;
 - (id)friendUUID;
+- (BOOL)hasCarriedForwardGoals;
 - (id)initWithCoder:(id)arg1;
 - (double)pushCount;
 - (void)setActiveHours:(double)arg1;
@@ -77,6 +81,7 @@
 - (void)setEnergyBurned:(double)arg1;
 - (void)setEnergyBurnedGoal:(double)arg1;
 - (void)setFriendUUID:(id)arg1;
+- (void)setHasCarriedForwardGoals:(BOOL)arg1;
 - (void)setPushCount:(double)arg1;
 - (void)setSnapshotIndex:(long long)arg1;
 - (void)setSnapshotUploadedDate:(id)arg1;
@@ -104,11 +109,13 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (id)fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1 friendUUID:(id)arg2 uploadedDate:(id)arg3;
 + (id)fitnessFriendActivitySnapshotWithRecord:(id)arg1 friendUUID:(id)arg2;
 + (Class)hd_dataEntityClass;
 
 - (BOOL)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
+- (id)codableSnapshot;
 - (id)filter_date;
 - (id)filter_friendUUID;
 - (id)recordWithZoneID:(id)arg1;

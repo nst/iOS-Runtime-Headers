@@ -7,6 +7,7 @@
     BOOL  _compressPhotos;
     BOOL  _includeNotes;
     BOOL  _includePhotos;
+    BOOL  _includePrivateBundleIdentifiers;
     BOOL  _includePrivateFields;
     BOOL  _includeUserSettings;
     unsigned int  _maximumEncodingLength;
@@ -21,6 +22,7 @@
 @property BOOL compressPhotos;
 @property BOOL includeNotes;
 @property BOOL includePhotos;
+@property BOOL includePrivateBundleIdentifiers;
 @property BOOL includePrivateFields;
 @property BOOL includeUserSettings;
 @property unsigned int maximumEncodingLength;
@@ -37,6 +39,7 @@
 - (BOOL)compressPhotos;
 - (BOOL)includeNotes;
 - (BOOL)includePhotos;
+- (BOOL)includePrivateBundleIdentifiers;
 - (BOOL)includePrivateFields;
 - (BOOL)includeUserSettings;
 - (unsigned int)maximumEncodingLength;
@@ -47,6 +50,7 @@
 - (void)setCompressPhotos:(BOOL)arg1;
 - (void)setIncludeNotes:(BOOL)arg1;
 - (void)setIncludePhotos:(BOOL)arg1;
+- (void)setIncludePrivateBundleIdentifiers:(BOOL)arg1;
 - (void)setIncludePrivateFields:(BOOL)arg1;
 - (void)setIncludeUserSettings:(BOOL)arg1;
 - (void)setMaximumEncodingLength:(unsigned int)arg1;

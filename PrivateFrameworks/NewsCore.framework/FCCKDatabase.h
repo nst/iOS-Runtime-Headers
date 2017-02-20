@@ -8,6 +8,7 @@
     <FCCKDatabaseDelegate> * _delegate;
     BOOL  _hasBeenRateLimited;
     NSArray * _middleware;
+    FCNetworkBehaviorMonitor * _networkBehaviorMonitor;
     NSArray * _operationMiddleware;
     NSMutableArray * _pendingOperations;
     BOOL  _preferAnonymousRequests;
@@ -28,6 +29,7 @@
 @property (nonatomic, readonly) BOOL hasBeenRateLimited;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSArray *middleware;
+@property (nonatomic, retain) FCNetworkBehaviorMonitor *networkBehaviorMonitor;
 @property (nonatomic, retain) NSArray *operationMiddleware;
 @property (nonatomic, retain) NSMutableArray *pendingOperations;
 @property BOOL preferAnonymousRequests;
@@ -55,7 +57,6 @@
 - (id)_mapRecords:(id)arg1 client:(BOOL)arg2;
 - (void)_performStartUpWithCompletion:(id /* block */)arg1;
 - (BOOL)_preflightOperation:(id)arg1;
-- (void)_preflightRecordsInChangesOperation:(id)arg1;
 - (void)_preflightRecordsInFetchOperation:(id)arg1;
 - (void)_preflightRecordsInModifyOperation:(id)arg1;
 - (void)_preflightRecordsInQueryOperation:(id)arg1;
@@ -83,10 +84,11 @@
 - (void)fetchRecordsWithIDs:(id)arg1 desiredKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)fetchRecordsWithIDs:(id)arg1 desiredKeys:(id)arg2 qualityOfService:(int)arg3 completionHandler:(id /* block */)arg4;
 - (BOOL)hasBeenRateLimited;
-- (id)initWithDatabase:(id)arg1 middleware:(id)arg2;
-- (id)initWithDatabase:(id)arg1 middleware:(id)arg2 startUp:(BOOL)arg3;
+- (id)initWithDatabase:(id)arg1 middleware:(id)arg2 networkBehaviorMonitor:(id)arg3;
+- (id)initWithDatabase:(id)arg1 middleware:(id)arg2 networkBehaviorMonitor:(id)arg3 startUp:(BOOL)arg4;
 - (BOOL)isReady;
 - (id)middleware;
+- (id)networkBehaviorMonitor;
 - (id)operationMiddleware;
 - (void)operationWasRateLimitedWithError:(id)arg1;
 - (id)pendingOperations;
@@ -113,6 +115,7 @@
 - (void)setDatabase:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMiddleware:(id)arg1;
+- (void)setNetworkBehaviorMonitor:(id)arg1;
 - (void)setOperationMiddleware:(id)arg1;
 - (void)setPendingOperations:(id)arg1;
 - (void)setPreferAnonymousRequests:(BOOL)arg1;

@@ -9,14 +9,10 @@
     NSURLSession * _connectionSession;
     int  _connectionState;
     int  _connectionType;
-    unsigned int  _controlKey;
-    unsigned int  _controlPort;
     unsigned int  _databaseID;
     unsigned int  _databaseRevision;
     HSFairPlayInfo * _fairPlayInfo;
     NSString * _homeSharingGroupID;
-    unsigned int  _interfaceID;
-    unsigned int  _promptID;
     NSObject<OS_dispatch_queue> * _serialQueue;
     unsigned int  _sessionID;
 }
@@ -25,14 +21,10 @@
 @property (nonatomic, readonly) NSURL *baseURL;
 @property (nonatomic) int connectionState;
 @property (nonatomic, readonly) int connectionType;
-@property (nonatomic) unsigned int controlKey;
-@property (nonatomic) unsigned int controlPort;
 @property (nonatomic) unsigned int databaseID;
 @property (nonatomic) unsigned int databaseRevision;
 @property (retain) HSFairPlayInfo *fairPlayInfo;
 @property (copy) NSString *homeSharingGroupID;
-@property (nonatomic) unsigned int interfaceID;
-@property (nonatomic) unsigned int promptID;
 @property (nonatomic) unsigned int sessionID;
 
 - (void).cxx_destruct;
@@ -42,15 +34,12 @@
 - (void)_onSerialQueue_sendRequest:(id)arg1 withInternalResponseHandler:(id /* block */)arg2;
 - (unsigned int)_sapVersionForConnectionType;
 - (void)_sendRequest:(id)arg1 withInternalResponseHandler:(id /* block */)arg2;
-- (void)_setupControlConnectionWithInternalConnectionCompletionHandler:(id /* block */)arg1;
 - (unsigned int)basePlaylistContainerID;
 - (id)baseURL;
 - (void)checkForDatabaseUpdatesWithCompletionHandler:(id /* block */)arg1;
 - (void)connectWithCompletionHandler:(id /* block */)arg1;
 - (int)connectionState;
 - (int)connectionType;
-- (unsigned int)controlKey;
-- (unsigned int)controlPort;
 - (unsigned int)databaseID;
 - (unsigned int)databaseRevision;
 - (void)dealloc;
@@ -59,21 +48,14 @@
 - (id)homeSharingGroupID;
 - (id)initWithBaseURL:(id)arg1;
 - (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
-- (unsigned int)interfaceID;
-- (id)newControlConnection;
-- (unsigned int)promptID;
 - (void)sendRequest:(id)arg1 withResponseHandler:(id /* block */)arg2;
 - (unsigned int)sessionID;
 - (void)setBasePlaylistContainerID:(unsigned int)arg1;
 - (void)setConnectionState:(int)arg1;
-- (void)setControlKey:(unsigned int)arg1;
-- (void)setControlPort:(unsigned int)arg1;
 - (void)setDatabaseID:(unsigned int)arg1;
 - (void)setDatabaseRevision:(unsigned int)arg1;
 - (void)setFairPlayInfo:(id)arg1;
 - (void)setHomeSharingGroupID:(id)arg1;
-- (void)setInterfaceID:(unsigned int)arg1;
-- (void)setPromptID:(unsigned int)arg1;
 - (void)setSessionID:(unsigned int)arg1;
 - (id)signedRequestFromURLRequest:(id)arg1;
 

@@ -17,12 +17,13 @@
 - (id)_findOrCreateItemForCommittedValues:(id)arg1 withItemKind:(id)arg2;
 - (void)_populateErrors:(id)arg1 withResult:(long)arg2 affectingItem:(id)arg3;
 - (void)_populateQuery:(struct __CFDictionary { }*)arg1 usingPredicate:(id)arg2 withItemKind:(id)arg3;
-- (void)_populateResult:(id)arg1 withItemOfKind:(id)arg2 fromMatch:(struct __CFDictionary { }*)arg3;
+- (void)_populateResult:(id)arg1 forRequest:(id)arg2 fromMatch:(struct __CFDictionary { }*)arg3;
 - (void)_populateUserInfoDictionary:(id)arg1 withSecErrorCode:(long)arg2;
 - (id)_subsetOfRegisteredItemsWithKeyPath:(id)arg1;
 - (void)deleteItem:(id)arg1;
 - (id)deletedItems;
 - (id)executeFetchRequest:(id)arg1 error:(id*)arg2;
+- (void)fulfillFault:(id)arg1;
 - (id)init;
 - (void)insertItem:(id)arg1;
 - (id)insertedItems;

@@ -47,6 +47,7 @@
 - (void)markAchievementsAlerted:(id)arg1 completion:(id /* block */)arg2;
 - (void)nextScheduledAchievementDefinitionAlertTaskDateWithCompletion:(id /* block */)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (void)resetAchievementDefinitionAlertedStates:(BOOL)arg1 availabilityStates:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)runAchievementsFixupAsDryRun:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)serverInterface;
 - (void)setAchievementAssetsServerURL:(id)arg1 completion:(id /* block */)arg2;

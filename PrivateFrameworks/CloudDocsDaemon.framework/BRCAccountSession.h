@@ -131,9 +131,9 @@
 
 - (void).cxx_destruct;
 - (BOOL)PCSMigrationComplete;
-- (id)__getOrCreateAppLibrary:(id)arg1 ownerName:(id)arg2 rowID:(id)arg3 createOnDisk:(BOOL)arg4 alreadyExists:(BOOL*)arg5 zoneID:(id)arg6 withClientZone:(id)arg7;
-- (id)__getOrCreateClientZone:(id)arg1 ownerName:(id)arg2 zoneID:(id)arg3 withServerZone:(id)arg4;
-- (id)__getOrCreateServerZone:(id)arg1 ownerName:(id)arg2 zoneID:(id)arg3;
+- (id)__getOrCreateAppLibrary:(id)arg1 ownerName:(id)arg2 rowID:(id)arg3 createOnDisk:(BOOL)arg4 alreadyExists:(BOOL*)arg5 withClientZone:(id)arg6 createCZMMoved:(BOOL)arg7;
+- (id)__getOrCreateClientZone:(id)arg1 ownerName:(id)arg2 withServerZone:(id)arg3;
+- (id)__getOrCreateServerZone:(id)arg1 ownerName:(id)arg2;
 - (void)__registerServerZone:(id)arg1 clientZone:(id)arg2 appLibrary:(id)arg3 isShared:(BOOL)arg4;
 - (BOOL)_checkIntegrity:(id)arg1 serverTruth:(BOOL)arg2 error:(id*)arg3;
 - (void)_clearNeedsUpgradeErrorsIfNeeded:(id)arg1 brVersion:(id)arg2;
@@ -155,7 +155,7 @@
 - (BOOL)_dumpClientZoneStatus:(id)arg1 toContext:(id)arg2 error:(id*)arg3;
 - (void)_enumerateAccountHandlerSupportedFolderTypes:(id /* block */)arg1;
 - (void)_enumerateAppLibraryRowIDs:(id)arg1 usingBlock:(id /* block */)arg2;
-- (id)_getOrCreateAppLibraryAndZonesIfNecessary:(id)arg1 ownerName:(id)arg2 alreadyExistsAndResumed:(BOOL*)arg3;
+- (id)_getOrCreateAppLibraryAndZonesIfNecessary:(id)arg1 ownerName:(id)arg2 creationFlags:(unsigned int*)arg3;
 - (BOOL)_getRootPathXattrValue:(id*)arg1 forRootPath:(id)arg2 error:(id*)arg3;
 - (void)_loadClientZonesFromDisk;
 - (BOOL)_openClientTruthConnectionWithError:(id*)arg1;
@@ -168,7 +168,6 @@
 - (void)_recreateSymlinkIfNecessaryForDocumentsPath:(id)arg1 folderName:(id)arg2 destinationPath:(id)arg3;
 - (BOOL)_recursivelyPrepareFolderForLogOutAtURL:(id)arg1 pruneEmptyFolders:(BOOL)arg2 pruneEmptyTopLevelFolder:(BOOL)arg3 maxDepth:(unsigned int)arg4;
 - (void)_registerLastBootIfNeeded:(id)arg1 table:(struct NSObject { Class x1; }*)arg2;
-- (void)_removeDesktopSymlink:(BOOL)arg1 andDocumentsSymlink:(BOOL)arg2;
 - (id)_reserveRowIDForLibrary:(id)arg1 owner:(id)arg2;
 - (void)_resolvePathInMobileDocsRoot:(id)arg1 appLibrary:(id*)arg2 clientZone:(id*)arg3;
 - (BOOL)_setRootPathXattrValue:(id)arg1 forRootPath:(id)arg2 error:(id*)arg3;
@@ -244,8 +243,6 @@
 - (void)destroySharedClientZone:(id)arg1;
 - (id)deviceKeyForName:(id)arg1 db:(id)arg2;
 - (id)dirPathForSyncedFolderType:(unsigned int)arg1;
-- (id)directoryItemIDByFileID:(unsigned long long)arg1;
-- (id)directoryItemIDByFileID:(unsigned long long)arg1 db:(id)arg2;
 - (void)disableDatabaseProfilingForDB:(id)arg1;
 - (BOOL)disableSyncforSyncedFolderType:(unsigned int)arg1 isInitialCreation:(BOOL)arg2 error:(id*)arg3;
 - (id)diskReclaimer;
@@ -273,12 +270,15 @@
 - (id)fsReader;
 - (id)fsUploader;
 - (id)fsWriter;
-- (id)getOrCreatePrivateAppLibrary:(id)arg1 withRowID:(id)arg2 onDisk:(BOOL)arg3 withExistingClientZone:(id)arg4;
 - (id)getOrCreatePrivateAppLibraryAndZonesIfNecessary:(id)arg1;
 - (id)getOrCreatePrivateAppLibraryAndZonesIfNecessary:(id)arg1 appLibraryExists:(BOOL*)arg2;
 - (id)getOrCreateSharedAppLibraryAndZones:(id)arg1 ownerName:(id)arg2;
 - (id)getOrCreateSharedAppLibraryAndZones:(id)arg1 ownerName:(id)arg2 needsActivate:(BOOL*)arg3;
 - (id)getOrReserveLibraryRowIDForLibrary:(id)arg1 ownerName:(id)arg2;
+- (id)globalItemByDocumentID:(unsigned int)arg1;
+- (id)globalItemByDocumentID:(unsigned int)arg1 db:(id)arg2;
+- (id)globalItemByFileID:(unsigned long long)arg1;
+- (id)globalItemByFileID:(unsigned long long)arg1 db:(id)arg2;
 - (id)globalProgress;
 - (BOOL)hasFSEventsMonitorForSyncedFolderType:(unsigned int)arg1;
 - (BOOL)hasOptimizeStorageEnabled;
@@ -288,10 +288,6 @@
 - (BOOL)initializeOfflineDatabase:(id*)arg1;
 - (BOOL)isCancelled;
 - (BOOL)isGreedy;
-- (id)itemByDocumentID:(unsigned int)arg1;
-- (id)itemByDocumentID:(unsigned int)arg1 db:(id)arg2;
-- (id)itemByFileID:(unsigned long long)arg1;
-- (id)itemByFileID:(unsigned long long)arg1 db:(id)arg2;
 - (id)itemByRowID:(unsigned long long)arg1;
 - (id)itemByRowID:(unsigned long long)arg1 db:(id)arg2;
 - (id)itemIDByRowID:(unsigned long long)arg1;
@@ -326,6 +322,7 @@
 - (id)recentDocumentsService;
 - (void)recreateDesktopSymlinksIfNecessary;
 - (void)registerClient:(id)arg1;
+- (void)removeDesktopSymlink:(BOOL)arg1 andDocumentsSymlink:(BOOL)arg2;
 - (void)removeFSEventsMonitorForSyncedFolderType:(unsigned int)arg1;
 - (void)removeRootForSyncedFolderType:(unsigned int)arg1;
 - (id)resetQueue;

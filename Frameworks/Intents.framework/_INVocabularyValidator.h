@@ -4,7 +4,7 @@
 
 @interface _INVocabularyValidator : NSObject
 
-+ (void)initialize;
++ (void)load;
 
 - (BOOL)_bundleID:(id)arg1 isWhitelistedForVocabularyType:(int)arg2;
 - (void)_confirmExistenceOfWatchAppForCompanionBundleID:(id)arg1 handlingIntents:(id)arg2 completion:(id /* block */)arg3;

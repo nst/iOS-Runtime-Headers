@@ -6,7 +6,7 @@
     void externalURL;
 }
 
-@property (nonatomic, retain) NSURL *externalURL;
+@property (nonatomic, copy) NSURL *externalURL;
 
 - (id /* block */).cxx_destruct;
 - (id)externalURL;

@@ -15,6 +15,7 @@
 - (id)_initWithJSONObjectRepresentation:(id)arg1;
 - (id)_localizedStringForKey:(id)arg1 withBundle:(id)arg2 forLocalization:(id)arg3;
 - (id)_localizedTextProviderWithBundle:(id)arg1 forLocalization:(id)arg2;
+- (id)_sessionAttributedTextForIndex:(unsigned int)arg1 withStyle:(id)arg2;
 - (void)_validate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

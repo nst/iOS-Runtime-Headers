@@ -238,6 +238,7 @@
 - (void)mf_moveObjectAtIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (unsigned int)mf_removeObject:(id)arg1 usingComparator:(id /* block */)arg2;
 - (unsigned int)mf_removeObject:(id)arg1 usingSortFunction:(int (*)arg2 context:(void*)arg3;
+- (void)mf_reverseObjects;
 
 // Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
 

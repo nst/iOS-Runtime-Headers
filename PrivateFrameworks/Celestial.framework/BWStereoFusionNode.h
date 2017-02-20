@@ -47,6 +47,7 @@
 - (void)_endSequence;
 - (void)_handleError:(long)arg1 forSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 input:(id)arg3;
 - (id)_initWithTelephotoSensorIDDictionary:(id)arg1 processingType:(int)arg2 cameraAlignmentInfo:(id)arg3 cameraInfoByPortType:(id)arg4 sbpCreationFunction:(int (*)arg5 treatSoftErrorsAsHardErrors:(BOOL)arg6;
+- (unsigned int)_numberOfNodeErrorsToEmit;
 - (void)_processCachedSampleBufferInSampleBufferProcessor;
 - (void)_processSampleBufferInSampleBufferProcessor:(struct opaqueCMSampleBuffer { }*)arg1 metadataDictionary:(id)arg2;
 - (void)_processSequenceInSampleBufferProcessor;

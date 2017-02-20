@@ -262,6 +262,7 @@
 - (BOOL)anyRowsHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)anyRowsUserHiddenInCellRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)bandedFillObject;
+- (void)beginDynamicMode:(id)arg1;
 - (float)calculatedTableNameHeight;
 - (float)calculatedTableNameHeightIncludingDynamicResize:(BOOL)arg1;
 - (void)captureDynamicResizeInfo;
@@ -312,6 +313,7 @@
 - (float)dynamicWidthResize;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsFromPadding:(id)arg1;
 - (BOOL)emptyFilteredTable;
+- (void)endDynamicMode;
 - (void)enumerateMergedStrokesAndCapsForGridColumn:(unsigned int)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateMergedStrokesAndCapsForGridRow:(unsigned int)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateMergedStrokesForGridColumn:(unsigned int)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
@@ -453,6 +455,7 @@
 - (id)tempWPColumnCache;
 - (float)unwrappedFittingWidthsForColumnInCellRegionWorker:(id)arg1;
 - (id)unwrappedFittingWidthsForColumnsInCellRegion:(id)arg1;
+- (void)updateDynamicFontColor:(id)arg1 andRange:(struct TSUCellRect { struct TSUCellCoord { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (void)updateDynamicResizeInfo:(id)arg1;
 - (void)updateDynamicTableNameSize:(float)arg1;
 - (void)updateWHCForMergeRanges;

@@ -14,6 +14,7 @@
 - (unsigned long long)contentType;
 - (NSURL *)contentURL;
 - (FCCoverArt *)coverArt;
+- (NSDate *)displayDate;
 - (NSArray *)endOfArticleTopicIDs;
 - (unsigned long long)feedOrder;
 - (double)globalUserFeedback;

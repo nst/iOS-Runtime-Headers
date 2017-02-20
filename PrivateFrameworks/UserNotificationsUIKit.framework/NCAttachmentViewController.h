@@ -18,6 +18,7 @@
 @property (nonatomic, retain) NCNotificationRequest *notificationRequest;
 @property (nonatomic) NCNotificationAction *presentationSourceAction;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *title;
 
 + (id)attachmentViewControllerForAttachment:(id)arg1 notificationRequest:(id)arg2;
 
@@ -29,7 +30,7 @@
 - (unsigned int)customContentLocation;
 - (BOOL)defaultContentHidden;
 - (id)delegate;
-- (void)didReceiveNotificationRequest:(id)arg1;
+- (BOOL)didReceiveNotificationRequest:(id)arg1;
 - (id)initWithAttachment:(id)arg1 forNotificationRequest:(id)arg2;
 - (id)notificationRequest;
 - (BOOL)performAction:(id)arg1 forNotification:(id)arg2;

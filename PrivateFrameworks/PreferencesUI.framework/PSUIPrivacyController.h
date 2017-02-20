@@ -2,11 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIPrivacyController : PSListController {
+@interface PSUIPrivacyController : PSListController <PSListControllerTestableSpecifiers> {
     ACAccountStore * _accountStore;
     PSSpecifier * _locationSpecifier;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
++ (id)booleanCapabilitiesToTest;
 + (void)formatSearchEntries:(id)arg1 parent:(id)arg2;
 
 - (void).cxx_destruct;

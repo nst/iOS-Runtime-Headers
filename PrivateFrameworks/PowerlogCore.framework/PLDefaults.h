@@ -37,6 +37,7 @@
 + (BOOL)objectExistsForKey:(id)arg1;
 + (id)objectForKey:(id)arg1;
 + (id)objectForKey:(id)arg1 forApplicationID:(id)arg2 synchronize:(BOOL)arg3;
++ (id)objectForKey:(id)arg1 ifNotSet:(id)arg2;
 + (id)objectForKey:(id)arg1 synchronize:(BOOL)arg2;
 + (void)resetUserDefaultCacheForKey:(id)arg1;
 + (void)resetUserDefaultCacheForKey:(id)arg1 forApplicationID:(id)arg2;
@@ -48,6 +49,7 @@
 + (void)setObject:(id)arg1 forKey:(id)arg2 forApplicationID:(id)arg3 saveToDisk:(BOOL)arg4;
 + (void)setObject:(id)arg1 forKey:(id)arg2 saveToDisk:(BOOL)arg3;
 + (id)sharedDefaults;
++ (BOOL)taskFlagSet;
 
 - (void).cxx_destruct;
 - (BOOL)debugEnabled;

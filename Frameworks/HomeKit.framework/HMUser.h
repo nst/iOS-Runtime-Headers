@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMUser : NSObject <HFPrettyDescription, HMObjectMerge, NSSecureCoding> {
+@interface HMUser : NSObject <HFPrettyDescription, HFStateDumpSerializable, HMObjectMerge, NSSecureCoding> {
     BOOL  _administrator;
     NSObject<OS_dispatch_queue> * _clientQueue;
     BOOL  _currentUser;
@@ -75,6 +75,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

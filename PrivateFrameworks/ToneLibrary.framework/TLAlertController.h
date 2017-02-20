@@ -32,6 +32,7 @@
 - (void)_stopRepeatedlyPlayingAlert:(id)arg1 withOptions:(unsigned int)arg2 completionHandler:(id /* block */)arg3 targetQueue:(id)arg4;
 - (id)_systemSoundController;
 - (void)dealloc;
+- (void)handleActivationAssertionStatusChangeForAlert:(id)arg1 updatedStatus:(BOOL)arg2;
 - (id)init;
 - (void)performBlockOnAudioEventQueue:(id /* block */)arg1;
 - (void)playAlert:(id)arg1 withCompletionHandler:(id /* block */)arg2;

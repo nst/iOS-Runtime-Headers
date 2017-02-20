@@ -12,6 +12,7 @@
     NSString * _primaryAccountIdentifier;
     NSString * _primaryAccountNumberSuffix;
     PKPaymentApplication * _primaryPaymentApplication;
+    BOOL  _supportsAutomaticSelection;
 }
 
 @property (nonatomic, retain) NSArray *associatedWebDomains;
@@ -23,6 +24,7 @@
 @property (nonatomic, copy) NSString *primaryAccountIdentifier;
 @property (nonatomic, copy) NSString *primaryAccountNumberSuffix;
 @property (nonatomic, retain) PKPaymentApplication *primaryPaymentApplication;
+@property (nonatomic) BOOL supportsAutomaticSelection;
 
 + (id)remotePaymentInstrumentWithProtobuf:(id)arg1;
 + (id)sortDescriptorForDefaultPaymentInstrument:(id)arg1 supportedNetworks:(id)arg2 merchantCapabilities:(unsigned int)arg3;
@@ -56,5 +58,7 @@
 - (void)setPrimaryAccountIdentifier:(id)arg1;
 - (void)setPrimaryAccountNumberSuffix:(id)arg1;
 - (void)setPrimaryPaymentApplication:(id)arg1;
+- (void)setSupportsAutomaticSelection:(BOOL)arg1;
+- (BOOL)supportsAutomaticSelection;
 
 @end

@@ -9,6 +9,8 @@
 }
 
 @property (nonatomic, readonly, copy) NSString *clientName;
+@property (nonatomic, readonly) BOOL collectAnonymousMetadata;
+@property (nonatomic, readonly) BOOL collectScores;
 @property (nonatomic, readonly) NSURL *crowdsourcingURL;
 @property (nonatomic, readonly, copy) NSString *customFlight;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
@@ -28,6 +30,7 @@
 @property (nonatomic, readonly, copy) NSDictionary *rawBag;
 @property (nonatomic, readonly, copy) NSArray *recentlyUsedAppIdentifierWhitelist;
 @property (nonatomic, readonly, copy) NSDictionary *resources;
+@property (nonatomic, readonly) BOOL sampleFeatures;
 @property (nonatomic, readonly) NSNumber *searchRenderTimeout;
 @property (nonatomic, readonly) NSURL *searchURL;
 @property (nonatomic, readonly) BOOL sendGeoEnvironmentHeader;
@@ -35,6 +38,7 @@
 @property (nonatomic, readonly) NSArray *subscriptionProviderDomainWhitelist;
 @property (nonatomic, readonly) double subscriptionTTL;
 @property (nonatomic, readonly) NSArray *supportedGeoLocationSources;
+@property (nonatomic, readonly) double timeoutIntervalForRequest;
 @property (nonatomic, readonly, copy) NSString *userAgent;
 @property (nonatomic, readonly, copy) NSString *version;
 @property (nonatomic, readonly) NSURL *warmURL;
@@ -51,6 +55,8 @@
 - (id)bag_numberForKey:(id)arg1;
 - (id)bag_stringForKey:(id)arg1;
 - (id)clientName;
+- (BOOL)collectAnonymousMetadata;
+- (BOOL)collectScores;
 - (id)crowdsourcingURL;
 - (id)customFlight;
 - (id)enabledDomains;
@@ -74,6 +80,7 @@
 - (id)rawBag;
 - (id)recentlyUsedAppIdentifierWhitelist;
 - (id)resources;
+- (BOOL)sampleFeatures;
 - (id)searchRenderTimeout;
 - (id)searchURL;
 - (BOOL)sendGeoEnvironmentHeader;
@@ -81,6 +88,7 @@
 - (id)subscriptionProviderDomainWhitelist;
 - (double)subscriptionTTL;
 - (id)supportedGeoLocationSources;
+- (double)timeoutIntervalForRequest;
 - (id)urlForIdentifier:(id)arg1;
 - (id)userAgent;
 - (id)version;

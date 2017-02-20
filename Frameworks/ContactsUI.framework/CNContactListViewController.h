@@ -11,7 +11,7 @@
     <CNContactListViewControllerDelegate> * _delegate;
     CNUIContactsEnvironment * _environment;
     CNUIPeopleGroupsGridViewController * _groupsGridController;
-    CNContact * _mainStoreMeContact;
+    CNContact * _mainStorePreferredForNameMeContact;
     CNAvatarViewController * _meBannerAvatarController;
     CNContactListBannerView * _meContactBanner;
     NSString * _meContactBannerFootnoteLabel;
@@ -42,7 +42,7 @@
 @property (nonatomic, readonly) CNUIContactsEnvironment *environment;
 @property (nonatomic, retain) CNUIPeopleGroupsGridViewController *groupsGridController;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) CNContact *mainStoreMeContact;
+@property (nonatomic, retain) CNContact *mainStorePreferredForNameMeContact;
 @property (nonatomic, retain) CNAvatarViewController *meBannerAvatarController;
 @property (nonatomic, retain) CNContactListBannerView *meContactBanner;
 @property (nonatomic, copy) NSString *meContactBannerFootnoteLabel;
@@ -69,7 +69,7 @@
 - (id)_contactAtIndexPath:(id)arg1;
 - (void)_searchBarDidEndEditing:(id)arg1;
 - (id)_sections;
-- (void)_updateCountString;
+- (void)_updateCountStringNow:(BOOL)arg1;
 - (BOOL)allowsSearching;
 - (int)avatarCardController:(id)arg1 presentationResultForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)bannerView:(id)arg1 wasSelectedToPresentMeContact:(id)arg2;
@@ -101,7 +101,7 @@
 - (BOOL)isHandlingSearch;
 - (BOOL)isSearching;
 - (void)loadView;
-- (id)mainStoreMeContact;
+- (id)mainStorePreferredForNameMeContact;
 - (id)meBannerAvatarController;
 - (id)meContactBanner;
 - (id)meContactBannerFootnoteLabel;
@@ -134,7 +134,7 @@
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGroupsGridController:(id)arg1;
-- (void)setMainStoreMeContact:(id)arg1;
+- (void)setMainStorePreferredForNameMeContact:(id)arg1;
 - (void)setMeBannerAvatarController:(id)arg1;
 - (void)setMeContactBanner:(id)arg1;
 - (void)setMeContactBannerFootnoteLabel:(id)arg1;

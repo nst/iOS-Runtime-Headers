@@ -4,6 +4,6 @@
 
 @interface VSDeveloperService : VSServiceListener
 
-+ (id)sharedService;
+- (id)init;
 
 @end

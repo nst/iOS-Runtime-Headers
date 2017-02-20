@@ -33,7 +33,7 @@
     NSString * _shinkansenTrainName;
     NSDateComponents * _shinkansenValidityStartDate;
     NSNumber * _shinkansenValidityTerm;
-    NSNumber * _transitBalance;
+    NSDecimalNumber * _transitBalance;
 }
 
 @property (nonatomic, copy) NSString *appletFormat;
@@ -66,7 +66,7 @@
 @property (nonatomic, copy) NSString *shinkansenTrainName;
 @property (nonatomic, copy) NSDateComponents *shinkansenValidityStartDate;
 @property (nonatomic, copy) NSNumber *shinkansenValidityTerm;
-@property (nonatomic, copy) NSNumber *transitBalance;
+@property (nonatomic, copy) NSDecimalNumber *transitBalance;
 
 + (id)passPropertiesForPass:(id)arg1;
 + (BOOL)supportsSecureCoding;

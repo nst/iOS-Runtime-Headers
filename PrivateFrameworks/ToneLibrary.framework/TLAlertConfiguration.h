@@ -10,6 +10,7 @@
     NSDictionary * _externalVibrationPattern;
     BOOL  _forPreview;
     BOOL  _hasCustomAudioVolume;
+    BOOL  _hasCustomRepeatingFlag;
     BOOL  _isFrozen;
     double  _maximumDuration;
     BOOL  _shouldIgnoreRingerSwitch;

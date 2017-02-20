@@ -12,6 +12,7 @@
     BOOL  _locationIsAConferenceRoom;
     NSData * _locationMapKitHandle;
     NSString * _locationString;
+    NSString * _locationStringWithoutPrediction;
     NSDate * _startDate;
     int  _transportTypeOverride;
 }
@@ -25,6 +26,7 @@
 @property (nonatomic) BOOL locationIsAConferenceRoom;
 @property (nonatomic, retain) NSData *locationMapKitHandle;
 @property (nonatomic, retain) NSString *locationString;
+@property (nonatomic, retain) NSString *locationStringWithoutPrediction;
 @property (nonatomic, retain) NSDate *startDate;
 @property (nonatomic) int transportTypeOverride;
 
@@ -40,6 +42,7 @@
 - (BOOL)locationIsAConferenceRoom;
 - (id)locationMapKitHandle;
 - (id)locationString;
+- (id)locationStringWithoutPrediction;
 - (void)setAutomaticGeocodingAllowed:(BOOL)arg1;
 - (void)setEndDate:(id)arg1;
 - (void)setEventExternalURL:(id)arg1;
@@ -49,6 +52,7 @@
 - (void)setLocationIsAConferenceRoom:(BOOL)arg1;
 - (void)setLocationMapKitHandle:(id)arg1;
 - (void)setLocationString:(id)arg1;
+- (void)setLocationStringWithoutPrediction:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (void)setTransportTypeOverride:(int)arg1;
 - (id)startDate;

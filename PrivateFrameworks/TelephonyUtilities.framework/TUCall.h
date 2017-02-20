@@ -81,6 +81,7 @@
 @property (nonatomic, readonly, copy) NSString *displayName;
 @property (nonatomic, readonly) TUCallProvider *displayProvider;
 @property (getter=isDownlinkMuted, nonatomic) BOOL downlinkMuted;
+@property (getter=isEmergency, nonatomic, readonly) BOOL emergency;
 @property (getter=isEmergencyCall, nonatomic, readonly) BOOL emergencyCall;
 @property (nonatomic, readonly) NSString *endedErrorString;
 @property (nonatomic, readonly) NSString *endedReasonString;
@@ -130,6 +131,7 @@
 @property (nonatomic, readonly) BOOL shouldDisplayLocationIfAvailable;
 @property (nonatomic, readonly) BOOL shouldPlayDTMFTone;
 @property (nonatomic) BOOL shouldSuppressRingtone;
+@property (getter=isSOS, nonatomic, readonly) BOOL sos;
 @property (nonatomic) int soundRegion;
 @property (nonatomic, copy) NSString *sourceIdentifier;
 @property (nonatomic, readonly) double startTime;
@@ -232,6 +234,7 @@
 - (BOOL)isConnecting;
 - (BOOL)isDialRequestVideoUpgrade:(id)arg1;
 - (BOOL)isDownlinkMuted;
+- (BOOL)isEmergency;
 - (BOOL)isEmergencyCall;
 - (BOOL)isEndpointOnCurrentDevice;
 - (BOOL)isEqual:(id)arg1;
@@ -243,6 +246,7 @@
 - (BOOL)isMuted;
 - (BOOL)isOnHold;
 - (BOOL)isOutgoing;
+- (BOOL)isSOS;
 - (BOOL)isSendingAudio;
 - (BOOL)isSendingVideo;
 - (BOOL)isTTY;

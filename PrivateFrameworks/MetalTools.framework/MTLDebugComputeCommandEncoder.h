@@ -35,6 +35,19 @@
     BOOL  canSetComputePipelineState;
     BOOL  hasEndEncoding;
     BOOL  hasSetComputePipelineState;
+    BOOL  hasSetStageInRegion;
+    struct { 
+        struct { 
+            unsigned int x; 
+            unsigned int y; 
+            unsigned int z; 
+        } origin; 
+        struct { 
+            unsigned int width; 
+            unsigned int height; 
+            unsigned int depth; 
+        } size; 
+    }  stageInRegion;
     struct deque<__weak id, std::__1::allocator<__weak id> > { 
         /* Warning: unhandled struct encoding: '{__split_buffer<__weak id *, std::__1::allocator<__weak id *> >="__first_"^^@"__begin_"^^@"__end_"^^@"__end_cap_"{__compressed_pair<__weak id **, std::__1::allocator<__weak id *> >="__first_"^^@}}"__start_"I"__size_"{__compressed_pair<unsigned long, std::__1::allocator<__weak id> >="__first_"L}}' */ struct __split_buffer<__weak id *, std::__1::allocator<__weak id *> > { 
             __begin_ ***__first_; 
@@ -73,6 +86,7 @@
 - (void)setTextures:(const id*)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)setThreadgroupMemoryLength:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)updateFence:(id)arg1;
+- (void)validateStageInRegion:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1;
 - (void)waitForFence:(id)arg1;
 
 @end

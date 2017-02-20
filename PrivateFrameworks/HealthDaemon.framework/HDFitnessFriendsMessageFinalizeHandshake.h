@@ -3,21 +3,26 @@
  */
 
 @interface HDFitnessFriendsMessageFinalizeHandshake : PBCodable <NSCopying> {
+    HDFitnessFriendsMessageActivityDataPreview * _activityDataPreview;
     NSString * _handshakeToken;
     HDFitnessFriendsMessageShareLocations * _inviterShareLocations;
 }
 
+@property (nonatomic, retain) HDFitnessFriendsMessageActivityDataPreview *activityDataPreview;
 @property (nonatomic, retain) NSString *handshakeToken;
+@property (nonatomic, readonly) BOOL hasActivityDataPreview;
 @property (nonatomic, readonly) BOOL hasHandshakeToken;
 @property (nonatomic, readonly) BOOL hasInviterShareLocations;
 @property (nonatomic, retain) HDFitnessFriendsMessageShareLocations *inviterShareLocations;
 
 - (void).cxx_destruct;
+- (id)activityDataPreview;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)handshakeToken;
+- (BOOL)hasActivityDataPreview;
 - (BOOL)hasHandshakeToken;
 - (BOOL)hasInviterShareLocations;
 - (unsigned int)hash;
@@ -25,6 +30,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setActivityDataPreview:(id)arg1;
 - (void)setHandshakeToken:(id)arg1;
 - (void)setInviterShareLocations:(id)arg1;
 - (void)writeTo:(id)arg1;

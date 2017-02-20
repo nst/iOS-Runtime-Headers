@@ -4,9 +4,11 @@
 
 @interface NTPBUserOnboardingChannelPickerComplete : PBCodable <NSCopying> {
     NSMutableArray * _channelIds;
+    BOOL  _fromPersonalizeNews;
     struct { 
         unsigned int totalChannelSelections : 1; 
         unsigned int totalTopicSelections : 1; 
+        unsigned int fromPersonalizeNews : 1; 
     }  _has;
     NSMutableArray * _topicIds;
     int  _totalChannelSelections;
@@ -14,6 +16,8 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *channelIds;
+@property (nonatomic) BOOL fromPersonalizeNews;
+@property (nonatomic) BOOL hasFromPersonalizeNews;
 @property (nonatomic) BOOL hasTotalChannelSelections;
 @property (nonatomic) BOOL hasTotalTopicSelections;
 @property (nonatomic, retain) NSMutableArray *topicIds;
@@ -34,6 +38,8 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)fromPersonalizeNews;
+- (BOOL)hasFromPersonalizeNews;
 - (BOOL)hasTotalChannelSelections;
 - (BOOL)hasTotalTopicSelections;
 - (unsigned int)hash;
@@ -41,6 +47,8 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setChannelIds:(id)arg1;
+- (void)setFromPersonalizeNews:(BOOL)arg1;
+- (void)setHasFromPersonalizeNews:(BOOL)arg1;
 - (void)setHasTotalChannelSelections:(BOOL)arg1;
 - (void)setHasTotalTopicSelections:(BOOL)arg1;
 - (void)setTopicIds:(id)arg1;

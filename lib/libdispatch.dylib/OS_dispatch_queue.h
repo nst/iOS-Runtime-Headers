@@ -9,10 +9,17 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+// Image: /usr/lib/system/introspection/libdispatch.dylib
+
 + (void)load;
 
 - (void)_xref_dispose;
 - (id)description;
 - (id)init;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftDispatch.dylib
+
++ (void)concurrentPerformWithIterations:(int)arg1 execute:(id /* block */)arg2;
++ (id)main;
 
 @end

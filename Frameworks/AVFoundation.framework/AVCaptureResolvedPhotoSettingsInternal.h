@@ -4,7 +4,7 @@
 
 @interface AVCaptureResolvedPhotoSettingsInternal : NSObject {
     BOOL  HDREnabled;
-    BOOL  bravoImageFusionEnabled;
+    BOOL  dualCameraFusionEnabled;
     BOOL  flashEnabled;
     struct { 
         int width; 

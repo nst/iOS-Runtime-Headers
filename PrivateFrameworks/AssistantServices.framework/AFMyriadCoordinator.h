@@ -5,6 +5,7 @@
 @interface AFMyriadCoordinator : NSObject <WPHeySiriProtocol> {
     unsigned int  _advertisingState;
     BOOL  _clientIsDirectActivating;
+    BOOL  _clientIsListeningAfterRecentWin;
     BOOL  _clientLostDueToTrumping;
     BOOL  _clientRecentlyLostElection;
     BOOL  _coordinationEnabled;
@@ -15,6 +16,7 @@
     int  _deviceAdjust;
     NSString * _deviceClass;
     WPHeySiri * _heySiriBTLE;
+    unsigned short  _lastPHash;
     NSDate * _lastSiriActivationTime;
     BOOL  _listenTimerIsRunning;
     NSObject<OS_dispatch_queue> * _myriadListenQueue;
@@ -37,7 +39,6 @@
 - (void)_cancelTimer;
 - (void)_handleRecentClientElectionLoss;
 - (void)_initDeviceClassAndAdjustments;
-- (id)_responseObject:(unsigned short)arg1;
 - (BOOL)_shouldContinueFor:(id)arg1;
 - (id)_sortedReplies;
 - (void)_startListenTimer;
@@ -64,6 +65,7 @@
 - (void)logCoreDuetResults:(id)arg1;
 - (unsigned short)recentEventBump;
 - (void)resetReplies;
+- (id)responseObject:(unsigned short)arg1;
 - (void)startAdvertising:(id)arg1 afterDelay:(float)arg2 maxInterval:(float)arg3;
 - (void)startAdvertisingFromDirectTrigger;
 - (void)startAdvertisingFromVoiceTrigger;

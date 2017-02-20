@@ -27,6 +27,7 @@
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *losses;
 @property (nonatomic, copy) NSString *monogram;
+@property (nonatomic, copy) NSString *netRunRate;
 @property (nonatomic, copy) NSArray *news;
 @property (nonatomic, copy) NSString *overtimeLosses;
 @property (nonatomic, copy) NSString *points;
@@ -76,6 +77,7 @@
 - (id)location;
 - (id)losses;
 - (id)monogram;
+- (id)netRunRate;
 - (id)news;
 - (id)overtimeLosses;
 - (id)points;
@@ -109,6 +111,7 @@
 - (void)setLocation:(id)arg1;
 - (void)setLosses:(id)arg1;
 - (void)setMonogram:(id)arg1;
+- (void)setNetRunRate:(id)arg1;
 - (void)setNews:(id)arg1;
 - (void)setOvertimeLosses:(id)arg1;
 - (void)setPoints:(id)arg1;

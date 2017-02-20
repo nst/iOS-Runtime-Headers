@@ -7,6 +7,7 @@
 }
 
 - (void)dealloc;
+- (id)initWithPathToXSD:(id)arg1;
 - (id)initWithXSD:(id)arg1;
 - (BOOL)validateXML:(id)arg1 simpleError:(id*)arg2 detailedErrors:(id*)arg3;
 

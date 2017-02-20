@@ -3,9 +3,12 @@
  */
 
 @interface PKPaymentDefaultDataProvider : NSObject <PKPaymentDataProvider, PKPaymentServiceDelegate> {
+    <PKPaymentDataProviderDelegate> * _delegate;
+    NSObject<OS_dispatch_queue> * _delegateQueue;
+    NSHashTable * _delegates;
     PKPaymentService * _paymentService;
+    NSObject<OS_dispatch_queue> * _replyQueue;
     PKSecureElement * _secureElement;
-    <PKPaymentDataProviderDelegate> * delegate;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +23,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_accessDelegatesWithHandler:(id /* block */)arg1;
+- (void)addDelegate:(id)arg1;
 - (void)dealloc;
 - (id)defaultExpressFelicaTransitPassIdentifier;
 - (id)defaultPaymentApplicationForPassUniqueIdentifier:(id)arg1;
@@ -35,6 +40,7 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithFelicaPassProperties:(id)arg2;
+- (void)removeDelegate:(id)arg1;
 - (id)secureElementIdentifier;
 - (BOOL)secureElementIsProductionSigned;
 - (void)setDefaultExpressFelicaTransitPassIdentifier:(id)arg1 withCredential:(id)arg2 completion:(id /* block */)arg3;

@@ -11,8 +11,8 @@
 @property (nonatomic, retain) NSString *defaultPaymentPassUniqueIdentifier;
 @property (nonatomic) <PKPaymentServiceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasOutstandingExpressActivityTimeout;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int outstandingExpressTransactionState;
 @property (nonatomic, readonly) PKFieldProperties *paymentDeviceFieldProperties;
 @property (nonatomic, retain) PKPaymentWebServiceContext *sharedPaymentWebServiceContext;
 @property (readonly) Class superclass;
@@ -41,7 +41,6 @@
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(id)arg1;
 - (void)downloadAllPaymentPasses;
 - (void)felicaStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(id /* block */)arg3;
-- (BOOL)hasOutstandingExpressActivityTimeout;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
 - (void)initializeSecureElementIfNecessaryWithCompletion:(id /* block */)arg1;
@@ -49,6 +48,7 @@
 - (void)insertOrUpdateValueAddedServiceTransaction:(id)arg1 forPassUniqueIdentifier:(id)arg2 paymentTransaction:(id)arg3 completion:(id /* block */)arg4;
 - (id)messagesAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1;
 - (void)messagesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (unsigned int)outstandingExpressTransactionState;
 - (void)passWithUniqueIdentifier:(id)arg1 didReceiveValueAddedServiceTransaction:(id)arg2;
 - (void)passbookUIServiceDidLaunch;
 - (void)paymentDeviceDidEnterFieldWithProperties:(id)arg1;

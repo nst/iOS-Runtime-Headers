@@ -29,6 +29,7 @@
 @property (nonatomic, copy) NSString *token;
 @property (nonatomic, copy) NSDate *tokenExpiryDate;
 
++ (id)additionalServiceSegmentForAccountTypeIdentifier:(id)arg1;
 + (id)allSupportedKeys;
 + (id)credentialPolicyForAccountType:(id)arg1 key:(id)arg2 clientID:(id)arg3;
 + (id)credentialWithOAuthToken:(id)arg1 tokenSecret:(id)arg2;

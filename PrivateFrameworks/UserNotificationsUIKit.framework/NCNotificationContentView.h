@@ -16,7 +16,6 @@
     NCLookViewFontProvider * _fontProvider;
     UILabel * _hintTextLabel;
     int  _lookStyle;
-    unsigned int  _messageNumberOfLines;
     UILabel * _outgoingPrimaryLabel;
     UILabel * _outgoingPrimarySubtitleLabel;
     UILabel * _outgoingSecondaryLabel;
@@ -24,9 +23,7 @@
     UILabel * _primaryLabel;
     UILabel * _primarySubtitleLabel;
     UILabel * _secondaryLabel;
-    BOOL  _showAdditionalMessageLines;
     UIImageView * _thumbnailImageView;
-    int  _thumbnailViewContentMode;
 }
 
 @property (nonatomic, retain) UIView *accessoryView;
@@ -46,10 +43,8 @@
 @property (nonatomic, retain) NSString *primaryText;
 @property (getter=_secondaryLabel, setter=_setSecondaryLabel:, nonatomic, retain) UILabel *secondaryLabel;
 @property (nonatomic, retain) NSString *secondaryText;
-@property (nonatomic) BOOL showAdditionalMessageLines;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImage *thumbnail;
-@property (nonatomic) int thumbnailViewContentMode;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInsets;
@@ -93,7 +88,6 @@
 - (void)_setSecondaryLabel:(id)arg1;
 - (void)_setText:(id)arg1 withFinalLabel:(id)arg2 setter:(id /* block */)arg3 andTransitionLabel:(id)arg4 setter:(id /* block */)arg5;
 - (struct CGSize { float x1; float x2; })_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 withContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
-- (void)_tearDownSecondaryLabel;
 - (void)_updateFontForHintTextLabel:(id)arg1 withStyle:(int)arg2;
 - (void)_updateFontForPrimaryLabel:(id)arg1 withStyle:(int)arg2;
 - (void)_updateFontForSecondaryLabel:(id)arg1 withStyle:(int)arg2;
@@ -116,13 +110,9 @@
 - (void)setPrimarySubtitleText:(id)arg1;
 - (void)setPrimaryText:(id)arg1;
 - (void)setSecondaryText:(id)arg1;
-- (void)setShowAdditionalMessageLines:(BOOL)arg1;
 - (void)setThumbnail:(id)arg1;
-- (void)setThumbnailViewContentMode:(int)arg1;
-- (BOOL)showAdditionalMessageLines;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)thumbnail;
-- (int)thumbnailViewContentMode;
 - (void)traitCollectionDidChange:(id)arg1;
 
 @end

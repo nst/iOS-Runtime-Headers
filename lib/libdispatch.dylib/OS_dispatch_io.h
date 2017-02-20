@@ -9,8 +9,18 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+// Image: /usr/lib/system/introspection/libdispatch.dylib
+
 + (void)load;
 
 - (id)init;
+
+// Image: /System/Library/PrivateFrameworks/Swift/libswiftDispatch.dylib
+
++ (void)readFromFileDescriptor:(int)arg1 maxLength:(int)arg2 runningHandlerOn:(id)arg3 handler:(id /* block */)arg4;
++ (void)writeToFileDescriptor:(int)arg1 data:(id)arg2 runningHandlerOn:(id)arg3 handler:(id /* block */)arg4;
+
+- (void)readWithOffset:(long long)arg1 length:(int)arg2 queue:(id)arg3 ioHandler:(id /* block */)arg4;
+- (void)writeWithOffset:(long long)arg1 data:(id)arg2 queue:(id)arg3 ioHandler:(id /* block */)arg4;
 
 @end

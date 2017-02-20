@@ -72,6 +72,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)_canStartSentenceAfterString:(id)arg1 maxRecursionDepth:(unsigned int)arg2;
 - (void)acceptInput;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })acceptableRangeFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inText:(id)arg2 withSelectionLocation:(unsigned int)arg3;
 - (BOOL)acceptsCharacter:(unsigned long)arg1;
@@ -108,9 +109,6 @@
 - (id)completionCandidates;
 - (id)config;
 - (id)configurationPropertyList;
-- (struct __CFArray { }*)copyEmojiTokenRefsFromEmojiStrings:(struct __CFArray { }*)arg1 localeData:(struct __EmojiLocaleDataWrapper { }*)arg2;
-- (struct __EmojiTokenWrapper { }*)copyRecentEmojiTokenForEmoji:(struct __EmojiTokenWrapper { }*)arg1 skinTones:(id)arg2;
-- (struct __CFArray { }*)copySkinToneSensitiveEmojis:(struct __CFArray { }*)arg1;
 - (unsigned int)countOfWordsIninputStem:(id)arg1;
 - (id)createAndAddEmojiTokensFrom:(struct __CFArray { }*)arg1 inArray:(id)arg2 forInputString:(id)arg3;
 - (id)currentWordStem;
@@ -140,7 +138,6 @@
 - (id)emojiAdornmentCandidates:(id)arg1;
 - (id)emojiAppendCandidates:(id)arg1;
 - (id)emojiReplacementCandidates:(id)arg1;
-- (id)emojiSkinTonePreferences;
 - (id)enumerateForEmojiCandidatesIn:(id)arg1 forEmojiLocaleData:(struct __EmojiLocaleDataWrapper { }*)arg2 asReplacementCandidate:(BOOL)arg3;
 - (void)enumerateWordSuffixesOfString:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id /* block */)arg3;
 - (id)extendedAutocorrection:(id)arg1 spanningInputsForCandidates:(id)arg2 emojis:(id)arg3;
@@ -148,13 +145,15 @@
 - (id)externalStringForDictionaryString:(id)arg1;
 - (id)externalStringToInternal:(id)arg1;
 - (id)extractTokensForEmojiComputation:(id)arg1;
-- (struct TITokenID { unsigned int x1; unsigned int x2; })findTokenIDForWord:(id)arg1 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long)arg3 tokenLookupMode:(unsigned int)arg4 surfaceFormPtr:(id*)arg5;
+- (struct TITokenID { unsigned int x1; unsigned int x2; })findTokenIDForWord:(id)arg1 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long)arg3 tokenLookupMode:(unsigned int)arg4;
+- (struct TITokenID { unsigned int x1; unsigned int x2; })findTokenIDForWord:(id)arg1 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned long)arg3 tokenLookupMode:(unsigned int)arg4 surfaceFormPtr:(id*)arg5 hasCaseInsensitiveStaticVariant:(BOOL*)arg6;
 - (id)generateEmojiAdornmentCandidates:(id)arg1;
+- (id)getSkinToneSensitiveEmojis:(id)arg1;
 - (BOOL)hasLegacyInputStem;
 - (BOOL)hasLegacyInputString;
 - (id)humanReadableTrace;
 - (BOOL)inHardwareKeyboardMode;
-- (void)incrementLanguageModelCount:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long)arg4;
+- (void)incrementLanguageModelCount:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 context:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg3 contextLength:(unsigned long)arg4 saveToDifferentialPrivacy:(BOOL)arg5;
 - (void)incrementUnigramCount:(id)arg1 tokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 usageFlags:(unsigned int)arg3;
 - (void)incrementUsageTrackingKeysForDeleteFromInput;
 - (id)indexesOfDuplicatesInCandidates:(id)arg1;
@@ -267,7 +266,7 @@
 - (BOOL)shouldUpdateDictionary;
 - (BOOL)shouldUpdateLanguageModel;
 - (unsigned int)simulateAutoshiftIfNecessaryForFlags:(unsigned int)arg1;
-- (id)skinToneModifiedAdornmentEmojis:(struct __CFArray { }*)arg1 forLocale:(struct __EmojiLocaleDataWrapper { }*)arg2;
+- (id)skinToneModifiedAdornmentEmojis:(id)arg1 forLocale:(struct __EmojiLocaleDataWrapper { }*)arg2 forInput:(id)arg3;
 - (BOOL)spaceAndNextInputWouldStartSentence;
 - (id)staticDictionaryPathForInputMode:(id)arg1;
 - (void)storeLanguageModelDynamicDataIncludingCache;

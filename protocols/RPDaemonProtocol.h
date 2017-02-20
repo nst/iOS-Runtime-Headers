@@ -15,5 +15,6 @@
 - (oneway void)startRecordingWindowLayerContextIDs:(void *)arg1 windowSize:(void *)arg2 microphoneEnabled:(void *)arg3 cameraEnabled:(void *)arg4 broadcast:(void *)arg5 systemRecording:(void *)arg6 withHandler:(void *)arg7; // needs 7 arg types, found 14: NSArray *, struct CGSize { float x1; float x2; }, BOOL, BOOL, BOOL, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, BOOL, BOOL, void*
 - (oneway void)stopRecordingWithHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSError *, void*
 - (oneway void)stopRecordingWithStartClipDuration:(void *)arg1 endClipDuration:(void *)arg2 handler:(void *)arg3; // needs 3 arg types, found 9: double, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSURL *, NSError *, void*
+- (oneway void)updateProcessIDForAudioCaptureWithPID:(int)arg1;
 
 @end

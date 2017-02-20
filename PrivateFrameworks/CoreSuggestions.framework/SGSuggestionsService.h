@@ -100,6 +100,12 @@
 - (BOOL)isEnabledWithError:(id*)arg1;
 - (void)keepDirty:(BOOL)arg1;
 - (void)keysForSchemas:(id)arg1 completion:(id /* block */)arg2;
+- (void)logMetricAutocompleteUserSelectedRecordId:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
+- (void)logMetricContactCreated:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
+- (void)logMetricContactSearchResultSelected:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
+- (void)logMetricSearchResultsIncludedPureSuggestionWithBundleId:(id)arg1;
+- (void)logMetricSuggestedContactDetailShown:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
+- (void)logMetricSuggestedContactDetailUsed:(id)arg1 contactIdentifier:(id)arg2 bundleId:(id)arg3;
 - (void)messagesToRefreshWithCompletion:(id /* block */)arg1;
 - (id)messagesToRefreshWithError:(id*)arg1;
 - (id)namesForDetail:(id)arg1 limitTo:(unsigned int)arg2 prependMaybe:(BOOL)arg3 error:(id*)arg4;

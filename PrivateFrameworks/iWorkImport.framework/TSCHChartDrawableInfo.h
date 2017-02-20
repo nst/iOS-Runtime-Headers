@@ -10,7 +10,6 @@
 
 @property (nonatomic, readonly) TSCHChartInfo *chart;
 @property (nonatomic, readonly) TSCHChunkManager *chunkManager;
-@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

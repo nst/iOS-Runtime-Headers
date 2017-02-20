@@ -10,6 +10,7 @@
 @optional
 
 - (int)activeLayoutModeForWidget:(WGWidgetHostingViewController *)arg1;
+- (void)brokenViewDidAppearForWidget:(WGWidgetHostingViewController *)arg1;
 - (void)contentAvailabilityDidChangeForWidget:(WGWidgetHostingViewController *)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsetsForWidget:(WGWidgetHostingViewController *)arg1;
 - (void)remoteViewControllerDidConnectForWidget:(WGWidgetHostingViewController *)arg1;

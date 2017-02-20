@@ -29,6 +29,7 @@
 - (id)init;
 - (BOOL)isObservinglsd;
 - (id)localObservers;
+- (BOOL)messageObserversWithSelector:(SEL)arg1 andApps:(id)arg2;
 - (void)networkUsageChanged:(BOOL)arg1;
 - (void)pluginsDidInstall:(id)arg1;
 - (void)pluginsDidUninstall:(id)arg1;

@@ -9,9 +9,9 @@
         unsigned int prevStateDurMs : 1; 
         unsigned int rrcState : 1; 
     }  _has;
-    unsigned int  _newRrcState;
+    int  _newRrcState;
     unsigned int  _prevStateDurMs;
-    unsigned int  _rrcState;
+    int  _rrcState;
     unsigned long long  _timestamp;
 }
 
@@ -19,9 +19,9 @@
 @property (nonatomic) BOOL hasPrevStateDurMs;
 @property (nonatomic) BOOL hasRrcState;
 @property (nonatomic) BOOL hasTimestamp;
-@property (nonatomic) unsigned int newRrcState;
+@property (nonatomic) int newRrcState;
 @property (nonatomic) unsigned int prevStateDurMs;
-@property (nonatomic) unsigned int rrcState;
+@property (nonatomic) int rrcState;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
@@ -35,17 +35,17 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (unsigned int)newRrcState;
+- (int)newRrcState;
 - (unsigned int)prevStateDurMs;
 - (BOOL)readFrom:(id)arg1;
-- (unsigned int)rrcState;
+- (int)rrcState;
 - (void)setHasNewRrcState:(BOOL)arg1;
 - (void)setHasPrevStateDurMs:(BOOL)arg1;
 - (void)setHasRrcState:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
-- (void)setNewRrcState:(unsigned int)arg1;
+- (void)setNewRrcState:(int)arg1;
 - (void)setPrevStateDurMs:(unsigned int)arg1;
-- (void)setRrcState:(unsigned int)arg1;
+- (void)setRrcState:(int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (unsigned long long)timestamp;
 - (void)writeTo:(id)arg1;

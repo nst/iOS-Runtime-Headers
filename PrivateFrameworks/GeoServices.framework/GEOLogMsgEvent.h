@@ -24,6 +24,7 @@
     GEOLogMsgEventStateTiming * _stateTimingEvent;
     LOGMSGEVENTLogMsgEventTableBookedSession * _tableBookedSession;
     LOGMSGEVENTLogMsgEventTableBookingSession * _tableBookingSession;
+    GEOLogMsgEventTelemetric * _telemetric;
     GEOLogMsgEventTileSetState * _tileSetStateEvent;
     GEOLogMsgEventTimeToLeaveHypothesis * _timeToLeaveHypothesisEvent;
     GEOLogMsgEventTimeToLeaveInitialTravelTime * _timeToLeaveInitialTravelTimeEvent;
@@ -51,6 +52,7 @@
 @property (nonatomic, readonly) BOOL hasStateTimingEvent;
 @property (nonatomic, readonly) BOOL hasTableBookedSession;
 @property (nonatomic, readonly) BOOL hasTableBookingSession;
+@property (nonatomic, readonly) BOOL hasTelemetric;
 @property (nonatomic, readonly) BOOL hasTileSetStateEvent;
 @property (nonatomic, readonly) BOOL hasTimeToLeaveHypothesisEvent;
 @property (nonatomic, readonly) BOOL hasTimeToLeaveInitialTravelTimeEvent;
@@ -71,6 +73,7 @@
 @property (nonatomic, retain) GEOLogMsgEventStateTiming *stateTimingEvent;
 @property (nonatomic, retain) LOGMSGEVENTLogMsgEventTableBookedSession *tableBookedSession;
 @property (nonatomic, retain) LOGMSGEVENTLogMsgEventTableBookingSession *tableBookingSession;
+@property (nonatomic, retain) GEOLogMsgEventTelemetric *telemetric;
 @property (nonatomic, retain) GEOLogMsgEventTileSetState *tileSetStateEvent;
 @property (nonatomic, retain) GEOLogMsgEventTimeToLeaveHypothesis *timeToLeaveHypothesisEvent;
 @property (nonatomic, retain) GEOLogMsgEventTimeToLeaveInitialTravelTime *timeToLeaveInitialTravelTimeEvent;
@@ -115,6 +118,7 @@
 - (BOOL)hasStateTimingEvent;
 - (BOOL)hasTableBookedSession;
 - (BOOL)hasTableBookingSession;
+- (BOOL)hasTelemetric;
 - (BOOL)hasTileSetStateEvent;
 - (BOOL)hasTimeToLeaveHypothesisEvent;
 - (BOOL)hasTimeToLeaveInitialTravelTimeEvent;
@@ -162,6 +166,7 @@
 - (void)setStateTimingEvent:(id)arg1;
 - (void)setTableBookedSession:(id)arg1;
 - (void)setTableBookingSession:(id)arg1;
+- (void)setTelemetric:(id)arg1;
 - (void)setTileSetStateEvent:(id)arg1;
 - (void)setTimeToLeaveHypothesisEvent:(id)arg1;
 - (void)setTimeToLeaveInitialTravelTimeEvent:(id)arg1;
@@ -171,6 +176,7 @@
 - (id)stateTimingEvent;
 - (id)tableBookedSession;
 - (id)tableBookingSession;
+- (id)telemetric;
 - (id)tileSetStateEvent;
 - (id)timeToLeaveHypothesisEvent;
 - (id)timeToLeaveInitialTravelTimeEvent;

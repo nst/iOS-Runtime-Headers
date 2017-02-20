@@ -17,7 +17,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (id)_displayableErrorForSPStatusCode:(unsigned int)arg1;
++ (id)_displayableErrorForSPStatusCode:(unsigned int)arg1 seldError:(id)arg2;
 + (id)debugDescriptionForStatus:(unsigned int)arg1;
 
 - (void).cxx_destruct;

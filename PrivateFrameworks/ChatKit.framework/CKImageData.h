@@ -5,6 +5,7 @@
 @interface CKImageData : NSObject {
     unsigned int  _count;
     NSData * _data;
+    UIImage * _image;
     struct CGImageSource { } * _imageSource;
     BOOL  _initializedProperties;
     int  _orientation;
@@ -19,7 +20,7 @@
 @property (nonatomic, readonly, copy) NSString *UTIType;
 @property (nonatomic, readonly) unsigned int count;
 @property (nonatomic, retain) NSData *data;
-@property (nonatomic, readonly) UIImage *image;
+@property (nonatomic, retain) UIImage *image;
 @property (nonatomic, readonly) int orientation;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } ptSize;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } pxSize;
@@ -45,6 +46,7 @@
 - (struct CGSize { float x1; float x2; })ptSize;
 - (struct CGSize { float x1; float x2; })pxSize;
 - (void)setData:(id)arg1;
+- (void)setImage:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)thumbnailAtIndex:(unsigned int)arg1 fillToSize:(struct CGSize { float x1; float x2; })arg2 maxCount:(unsigned int)arg3;
 - (id)thumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1;

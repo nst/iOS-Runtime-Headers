@@ -20,6 +20,7 @@
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
 @property (getter=isConfirming, nonatomic) BOOL confirming;
+@property (getter=isCurrentDeviceAvaliableResident, nonatomic, readonly) BOOL currentDeviceAvaliableResident;
 @property (readonly, copy) NSString *debugDescription;
 @property <HMDResidentDeviceManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -83,6 +84,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isConfirming;
+- (BOOL)isCurrentDeviceAvaliableResident;
 - (BOOL)isResidentAvailable;
 - (BOOL)isResidentSupported;
 - (int)lastAtHomeLevel;

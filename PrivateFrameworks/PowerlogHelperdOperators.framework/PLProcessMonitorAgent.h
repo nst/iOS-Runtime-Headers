@@ -29,6 +29,7 @@
 + (id)entryEventForwardDefinitions;
 + (id)entryEventForwardProcessID;
 + (id)entryEventIntervalDefinitionProcessMonitorDiff;
++ (id)entryEventIntervalDefinitionQoSUsage;
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
@@ -40,7 +41,9 @@
 - (id)batteryLevelChanged;
 - (id)currentCachedDate;
 - (double)currentCachedTotalCPUTime;
+- (void)debugProcessMonitorAgent;
 - (id)eventForwardProcessIDForPID:(int)arg1;
+- (void)fillQoSTime:(unsigned long long)arg1 withEntry:(id)arg2 withCPUTimeKey:(id)arg3 withCPUTimeDiffKey:(id)arg4;
 - (BOOL)firstBoot;
 - (void)getCpuUsageForPid:(int)arg1 withBuffer:(void*)arg2 withNewProcessArray:(id)arg3 withTotalCpu:(double*)arg4 withActiveProcesses:(id)arg5;
 - (id)init;

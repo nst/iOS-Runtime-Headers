@@ -13,6 +13,7 @@
     }  _has;
     _INPBImageValue * _image;
     NSString * _lastName;
+    NSString * _relationship;
     int  _suggestionType;
     PBUnknownFields * _unknownFields;
     _INPBValueMetadata * _valueMetadata;
@@ -29,10 +30,12 @@
 @property (nonatomic, readonly) BOOL hasFullName;
 @property (nonatomic, readonly) BOOL hasImage;
 @property (nonatomic, readonly) BOOL hasLastName;
+@property (nonatomic, readonly) BOOL hasRelationship;
 @property (nonatomic) BOOL hasSuggestionType;
 @property (nonatomic, readonly) BOOL hasValueMetadata;
 @property (nonatomic, retain) _INPBImageValue *image;
 @property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSString *relationship;
 @property (nonatomic) int suggestionType;
 @property (nonatomic, readonly) PBUnknownFields *unknownFields;
 @property (nonatomic, retain) _INPBValueMetadata *valueMetadata;
@@ -60,6 +63,7 @@
 - (BOOL)hasFullName;
 - (BOOL)hasImage;
 - (BOOL)hasLastName;
+- (BOOL)hasRelationship;
 - (BOOL)hasSuggestionType;
 - (BOOL)hasValueMetadata;
 - (unsigned int)hash;
@@ -68,6 +72,7 @@
 - (id)lastName;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (id)relationship;
 - (void)setAliases:(id)arg1;
 - (void)setContactHandle:(id)arg1;
 - (void)setCustomIdentifier:(id)arg1;
@@ -76,6 +81,7 @@
 - (void)setHasSuggestionType:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLastName:(id)arg1;
+- (void)setRelationship:(id)arg1;
 - (void)setSuggestionType:(int)arg1;
 - (void)setValueMetadata:(id)arg1;
 - (int)suggestionType;

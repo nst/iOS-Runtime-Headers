@@ -37,9 +37,6 @@
 - (void).cxx_destruct;
 - (id)_associatedForYouCatchUpOperationForEdition:(id)arg1;
 - (id)_groupsFromRefreshSessionContainingGap:(id)arg1 internalElements:(id)arg2;
-- (id)_nextFeedGroupEmitterWithContext:(id)arg1 gap:(id)arg2 restrictToGroupEmitterIdentifier:(id)arg3 cursor:(id*)arg4 toCursor:(id*)arg5;
-- (BOOL)_reachedEndOfGap:(id)arg1 internalElements:(id)arg2;
-- (id)_restrictedGroupEmitterIdentifierForBoardingGroup:(id)arg1 andGroup:(id)arg2;
 - (id)context;
 - (unsigned int)desiredHeadlineCount;
 - (id /* block */)expandGapCompletionHandler;

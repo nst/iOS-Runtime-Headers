@@ -6,9 +6,11 @@
     GEOAlert * _alert;
     struct GEOProblemDetail { int x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } * _problemDetails;
     unsigned int  _problemDetailsCount;
+    <GEOTransitRoutingIncidentMessage> * _routingIncidentMessage;
 }
 
 @property (nonatomic, readonly) int firstDirectionsErrorCode;
+@property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *incidentMessage;
 @property (nonatomic, readonly) NSString *localizedDescription;
 @property (nonatomic, readonly) NSString *localizedTitle;
 
@@ -19,6 +21,7 @@
 - (id)description;
 - (int)firstDirectionsErrorCode;
 - (BOOL)hasError:(int)arg1;
+- (id)incidentMessage;
 - (id)initWithResponse:(id)arg1;
 - (id)initWithWaypointIndex:(unsigned int)arg1;
 - (id)localizedDescription;

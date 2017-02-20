@@ -84,7 +84,6 @@
 - (id)cryptoMasterKey;
 - (id)cryptoPassphraseVerifier;
 - (int)databaseScope;
-- (void)dealloc;
 - (void)decrementFailureCounts;
 - (void)decryptAndMergeEncryptedJSON:(id)arg1;
 - (id)decryptedValueForKey:(id)arg1;

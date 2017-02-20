@@ -16,10 +16,12 @@
 @property (nonatomic) BOOL hasGroupName;
 @property (nonatomic, copy) NSNumber *isAudioMessage;
 @property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *messageType;
 @property (nonatomic, copy) NSArray *msgRecipients;
 @property (nonatomic, retain) SAPersonAttribute *msgSender;
 @property (nonatomic, copy) NSNumber *outgoing;
 @property (nonatomic, copy) NSArray *recipients;
+@property (nonatomic, retain) SASmsSms *referencedMessage;
 @property (nonatomic, copy) NSString *sender;
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, copy) NSString *timezoneId;
@@ -43,10 +45,12 @@
 - (BOOL)hasGroupName;
 - (id)isAudioMessage;
 - (id)message;
+- (id)messageType;
 - (id)msgRecipients;
 - (id)msgSender;
 - (id)outgoing;
 - (id)recipients;
+- (id)referencedMessage;
 - (id)sender;
 - (void)setAppInfo:(id)arg1;
 - (void)setAttachment:(id)arg1;
@@ -60,10 +64,12 @@
 - (void)setHasGroupName:(BOOL)arg1;
 - (void)setIsAudioMessage:(id)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setMessageType:(id)arg1;
 - (void)setMsgRecipients:(id)arg1;
 - (void)setMsgSender:(id)arg1;
 - (void)setOutgoing:(id)arg1;
 - (void)setRecipients:(id)arg1;
+- (void)setReferencedMessage:(id)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setTimezoneId:(id)arg1;

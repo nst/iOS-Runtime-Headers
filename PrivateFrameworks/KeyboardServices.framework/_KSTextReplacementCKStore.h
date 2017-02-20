@@ -46,6 +46,7 @@
 - (void)queryTextReplacementsWithCallback:(id /* block */)arg1;
 - (void)queryTextReplacementsWithPredicate:(id)arg1 callback:(id /* block */)arg2;
 - (id)queryUpdatedLocalEntries;
+- (void)recordSyncStatus;
 - (void)removeAllEntries;
 - (void)removeAllEntriesWithCompletionHandler:(id /* block */)arg1;
 - (void)requestSyncWithCompletionBlock:(id /* block */)arg1;

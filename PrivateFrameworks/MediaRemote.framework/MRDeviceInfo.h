@@ -23,7 +23,7 @@
 @property (nonatomic, readonly) NSString *uniqueIdentifier;
 
 + (id)_persistentDeviceID;
-+ (id)_persistentDeviceIDFromFile:(id)arg1;
++ (BOOL)_persistentDeviceIDFromFile:(id)arg1 deviceID:(id*)arg2;
 + (id)currentDeviceInfo;
 + (double)processorTimeScale;
 

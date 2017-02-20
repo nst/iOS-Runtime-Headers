@@ -6,6 +6,7 @@
     NSURLRequest * _activeURLRequest;
     SSAuthenticationContext * _authenticationContext;
     NSMutableData * _dataBuffer;
+    NSObject<OS_dispatch_queue> * _dataBufferAccessQueue;
     ISDataProvider * _dataProvider;
     BOOL  _loadsHTTPFailures;
     int  _networkRetryCount;

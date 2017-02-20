@@ -93,6 +93,7 @@
 + (id)fetchKeyFaceForFaceCollection:(id)arg1 options:(id)arg2;
 + (id)fetchKeyFaceForFaceGroup:(id)arg1 options:(id)arg2;
 + (id)fetchKeyFaceForPerson:(id)arg1 options:(id)arg2;
++ (id)fetchKeyFacesGroupedByPersons:(id)arg1;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchRejectedFacesForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchSingletonFacesWithOptions:(id)arg1;

@@ -3,13 +3,18 @@
  */
 
 @interface PKPassPaymentConfirmationView : PKPassFooterContentView <PKPassPaymentPayStateViewDelegate, PKPaymentServiceDelegate> {
+    NSObject<OS_dispatch_source> * _activityResolutionTimer;
     bool  _animated;
-    NSObject<OS_dispatch_source> * _checkmarkHoldTimer;
-    int  _expressFinishedNotifyToken;
-    bool  _holdingCheckmark;
+    bool  _animatingCheckmark;
+    int  _expressFinishNotifyToken;
+    unsigned int  _expressState;
+    int  _expressTimeoutNotifyToken;
+    bool  _needsResolution;
     PKPassPaymentPayStateView * _payStateView;
     PKPaymentService * _paymentService;
-    bool  _shouldHoldCheckmark;
+    bool  _receivedExit;
+    bool  _receivedTransaction;
+    bool  _showingCheckmark;
     PKFooterTransactionView * _transactionView;
     NSDate * _visibleDate;
 }
@@ -20,10 +25,12 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_finishHoldingCheckmarkAfterDelay:(double)arg1;
-- (void)_finishHoldingCheckmarkIfPossible;
 - (void)_handleNotifyToken:(int)arg1;
-- (void)_registerForExpressFelicaTransitNotifications:(BOOL)arg1;
+- (bool)_isRegisteredForAllExpressFelicaTransitNotifications;
+- (bool)_isRegisteredForAnyExpressFelicaTransitNotifications;
+- (void)_presentCheckmarkIfNecessary;
+- (void)_registerForExpressFelicaTransitNotifications:(bool)arg1;
+- (void)_resolveActivityIfNecessary;
 - (void)_updateContentViewsWithFelicaProperties:(id)arg1;
 - (void)_updateContentViewsWithTransaction:(id)arg1;
 - (void)_updateContentViewsWithTransaction:(id)arg1 felicaProperties:(id)arg2;

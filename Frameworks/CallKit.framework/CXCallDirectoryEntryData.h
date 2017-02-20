@@ -10,8 +10,7 @@
 
 - (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
+- (long long)phoneNumberAtIndex:(unsigned int)arg1;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMApplicationData : NSObject {
+@interface HMApplicationData : NSObject <HFPrettyDescription, HFStateDumpSerializable> {
     NSSet * _allowedObjectClasses;
     NSMutableDictionary * _applicationData;
 }
@@ -11,6 +11,12 @@
 @property (nonatomic, readonly, copy) NSArray *allValues;
 @property (nonatomic, retain) NSSet *allowedObjectClasses;
 @property (nonatomic, retain) NSMutableDictionary *applicationData;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 - (void).cxx_destruct;
 - (id)allKeys;
@@ -31,5 +37,10 @@
 - (void)setApplicationData:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Home.framework/Home
+
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 @end

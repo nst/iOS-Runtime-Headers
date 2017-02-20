@@ -13,11 +13,11 @@
 }
 
 @property (nonatomic, retain) struct CGColor { }*calendarColor;
-@property (nonatomic, retain) NSDate *endDate;
-@property (nonatomic, retain) NSURL *externalURL;
+@property (nonatomic, copy) NSDate *endDate;
+@property (nonatomic, copy) NSURL *externalURL;
 @property (nonatomic, retain) _TtC12UpNextWidget8Location *location;
 @property (nonatomic, readonly) NSString *shallowDescription;
-@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, copy) NSDate *startDate;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) int transportType;
 

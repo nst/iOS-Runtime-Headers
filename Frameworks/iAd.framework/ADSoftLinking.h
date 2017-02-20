@@ -36,11 +36,13 @@
 @property (nonatomic, readonly) Class EKReminderViewController;
 @property (nonatomic, readonly) int (*IOSurfaceCreate;
 @property (nonatomic, readonly) int (*IOSurfaceCreateXPCObject;
+@property (nonatomic, readonly) int (*IOSurfaceDecrementUseCount;
 @property (nonatomic, readonly) int (*IOSurfaceGetAllocSize;
 @property (nonatomic, readonly) int (*IOSurfaceGetBaseAddress;
 @property (nonatomic, readonly) int (*IOSurfaceGetBytesPerRow;
 @property (nonatomic, readonly) int (*IOSurfaceGetHeight;
 @property (nonatomic, readonly) int (*IOSurfaceGetWidth;
+@property (nonatomic, readonly) int (*IOSurfaceIncrementUseCount;
 @property (nonatomic, readonly) int (*IOSurfaceLock;
 @property (nonatomic, readonly) int (*IOSurfaceLookupFromXPCObject;
 @property (nonatomic, readonly) int (*IOSurfaceUnlock;
@@ -116,11 +118,13 @@
 - (Class)EKReminderViewController;
 - (int (*)IOSurfaceCreate;
 - (int (*)IOSurfaceCreateXPCObject;
+- (int (*)IOSurfaceDecrementUseCount;
 - (int (*)IOSurfaceGetAllocSize;
 - (int (*)IOSurfaceGetBaseAddress;
 - (int (*)IOSurfaceGetBytesPerRow;
 - (int (*)IOSurfaceGetHeight;
 - (int (*)IOSurfaceGetWidth;
+- (int (*)IOSurfaceIncrementUseCount;
 - (int (*)IOSurfaceLock;
 - (int (*)IOSurfaceLookupFromXPCObject;
 - (int (*)IOSurfaceUnlock;

@@ -10,5 +10,6 @@
 - (int)ncTransitionAnimationState;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setNCTransitionAnimationState:(int)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

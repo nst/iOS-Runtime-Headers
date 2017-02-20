@@ -335,6 +335,7 @@
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })preferredPreviewViewInsets;
 - (void)prepareForPopoverPresentation:(id)arg1;
+- (void)prepareForSave;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (id)selectedToolbarIcon;
 - (void)setDelegate:(id)arg1;

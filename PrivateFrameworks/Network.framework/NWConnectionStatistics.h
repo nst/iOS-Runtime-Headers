@@ -160,8 +160,10 @@
 @property (nonatomic, readonly) BOOL connected;
 @property (nonatomic, readonly) int connectedInterfaceType;
 @property (nonatomic, readonly) unsigned int connectionEstablishmentTimeMsecs;
+@property (nonatomic, readonly) BOOL delegated;
 @property (nonatomic, readonly) BOOL dnsAnswersCached;
 @property (nonatomic, readonly) unsigned int dnsResolvedTimeMsecs;
+@property (nonatomic, readonly) BOOL fallbackEligible;
 @property (nonatomic, readonly) unsigned int flowDurationMsecs;
 @property (nonatomic, readonly) int interfaceType;
 @property (nonatomic, readonly) BOOL kernelReportedStalls;
@@ -208,8 +210,10 @@
 - (BOOL)connected;
 - (int)connectedInterfaceType;
 - (unsigned int)connectionEstablishmentTimeMsecs;
+- (BOOL)delegated;
 - (BOOL)dnsAnswersCached;
 - (unsigned int)dnsResolvedTimeMsecs;
+- (BOOL)fallbackEligible;
 - (unsigned int)flowDurationMsecs;
 - (id)initWithTCPReport:(struct netcore_stats_tcp_report { bool x1; bool x2; union { struct { int x_1_2_1; struct netcore_stats_tcp_statistics_report { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned int x_2_3_3; bool x_2_3_4; int x_2_3_5; unsigned int x_2_3_6; unsigned int x_2_3_7; unsigned int x_2_3_8; unsigned int x_2_3_9; int x_2_3_10; bool x_2_3_11; unsigned int x_2_3_12; bool x_2_3_13; bool x_2_3_14; bool x_2_3_15; bool x_2_3_16; bool x_2_3_17; bool x_2_3_18; unsigned long long x_2_3_19; unsigned long long x_2_3_20; unsigned long long x_2_3_21; unsigned long long x_2_3_22; unsigned long long x_2_3_23; unsigned long long x_2_3_24; unsigned long long x_2_3_25; unsigned long long x_2_3_26; unsigned long long x_2_3_27; unsigned long long x_2_3_28; unsigned int x_2_3_29; unsigned int x_2_3_30; unsigned int x_2_3_31; unsigned int x_2_3_32; unsigned int x_2_3_33; bool x_2_3_34; unsigned int x_2_3_35; unsigned int x_2_3_36; unsigned int x_2_3_37; unsigned int x_2_3_38; } x_1_2_2; struct netcore_stats_tcp_cell_fallback_report { bool x_3_3_1; int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; struct netcore_stats_network_event { int x_5_4_1; unsigned int x_5_4_2; } x_3_3_5[20]; unsigned int x_3_3_6; struct netcore_stats_data_usage_snapshot { unsigned long long x_7_4_1; unsigned long long x_7_4_2; } x_3_3_7[20]; } x_1_2_3; } x_3_1_1; } x3; }*)arg1 length:(unsigned long)arg2 clientIdentifier:(id)arg3 sourceIdentifier:(id)arg4;
 - (int)interfaceType;

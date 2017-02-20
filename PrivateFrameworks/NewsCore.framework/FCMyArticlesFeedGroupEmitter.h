@@ -3,7 +3,6 @@
  */
 
 @interface FCMyArticlesFeedGroupEmitter : NSObject <FCFeedGroupEmitting> {
-    NSSet * _emittableGroupTypes;
     <FCHeadlineClusterOrdering> * _headlineClusterOrderer;
     <FCHeadlineClustering> * _headlineClusterer;
 }
@@ -11,7 +10,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL emitsSingletonGroups;
-@property (nonatomic, retain) NSSet *emittableGroupTypes;
 @property (nonatomic, readonly, copy) NSString *groupEmitterIdentifier;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) <FCHeadlineClusterOrdering> *headlineClusterOrderer;
@@ -21,18 +19,18 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (BOOL)canEmitGroupsWithType:(int)arg1;
 - (BOOL)canMergeHeadlinesFromGroup:(id)arg1 intoGroup:(id)arg2;
-- (id)emittableGroupTypes;
 - (id)groupEmitterIdentifier;
 - (id)headlineClusterOrderer;
 - (id)headlineClusterer;
-- (id)initWithHeadlineClusterer:(id)arg1 headlineClusterOrderer:(id)arg2 canEmitTopicGroups:(BOOL)arg3 canEmitOrphanGroups:(BOOL)arg4;
-- (id)operationToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (id)initWithHeadlineClusterer:(id)arg1 headlineClusterOrderer:(id)arg2;
+- (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (BOOL)requiresForYouCatchUpOperation;
-- (void)setEmittableGroupTypes:(id)arg1;
 - (void)setHeadlineClusterOrderer:(id)arg1;
 - (void)setHeadlineClusterer:(id)arg1;
 - (BOOL)supportsPagination;
 - (BOOL)wantsToEmitGroupInContext:(id)arg1 withCursor:(id)arg2 toCursor:(id)arg3;
+- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 
 @end

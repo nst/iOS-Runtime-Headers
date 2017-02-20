@@ -7,7 +7,7 @@
     void negatedBody;
 }
 
-@property (nonatomic, readonly) long hash;
+@property (nonatomic, readonly) int hash;
 @property (nonatomic, readonly) NSString *identifier;
 
 + (id)ifExistsLink:(id)arg1 to:(id)arg2;
@@ -17,7 +17,7 @@
 - (id)and:(id)arg1;
 - (id)andExistsLink:(id)arg1 to:(id)arg2 error:(id*)arg3;
 - (id)andNotExistsLink:(id)arg1 to:(id)arg2 error:(id*)arg3;
-- (long)hash;
+- (int)hash;
 - (id)identifier;
 - (id)init;
 

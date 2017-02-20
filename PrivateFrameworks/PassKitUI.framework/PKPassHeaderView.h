@@ -4,6 +4,7 @@
 
 @interface PKPassHeaderView : UIView {
     <PKPassHeaderViewDelegate> * _delegate;
+    PKFelicaPassProperties * _felicaProperties;
     BOOL  _largeStyle;
     UIImageView * _maskShadow;
     UILabel * _modificationDate;
@@ -18,9 +19,12 @@
     unsigned int  _suppressedContent;
     UILabel * _title;
     UILabel * _type;
+    UILabel * _value;
+    UILabel * _valueTitle;
 }
 
 @property (nonatomic) <PKPassHeaderViewDelegate> *delegate;
+@property (nonatomic, retain) PKFelicaPassProperties *felicaProperties;
 @property (getter=isLargeStyle, nonatomic) BOOL largeStyle;
 @property (nonatomic, readonly) PKPass *pass;
 @property (nonatomic, retain) <PKPassLibraryDataProvider> *passLibraryOverride;
@@ -35,8 +39,10 @@
 - (id)_primaryTextColor;
 - (id)_secondaryTextColor;
 - (void)_updateContent;
+- (void)_updateTextContent;
 - (void)dealloc;
 - (id)delegate;
+- (id)felicaProperties;
 - (id)initWithPass:(id)arg1;
 - (BOOL)isLargeStyle;
 - (void)layoutSubviews;
@@ -48,6 +54,7 @@
 - (id)primaryTextColor;
 - (id)secondaryTextColor;
 - (void)setDelegate:(id)arg1;
+- (void)setFelicaProperties:(id)arg1;
 - (void)setLargeStyle:(BOOL)arg1;
 - (void)setPassLibraryOverride:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;

@@ -20,21 +20,30 @@
 @property (nonatomic) HMDHomeManager *homeManager;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (id)_supportedNonSecureServices;
++ (id)_supportedSecureServices;
 + (void)archive;
++ (id)bulletinSupportedCharacteristicsForService:(id)arg1;
 + (id)characteristicTupleKeyFromServiceContextID:(id)arg1 currentType:(id)arg2;
 + (void)initializeMapping;
++ (BOOL)isBulletinSupportedForCharacteristicType:(id)arg1 serviceType:(id)arg2;
++ (BOOL)isBulletinSupportedForNonSecureCharacteristicType:(id)arg1 serviceType:(id)arg2;
++ (BOOL)isCriticalNonSecureServiceType:(id)arg1;
++ (BOOL)presentationValueOfCharacteristic:(id)arg1 equalTo:(id)arg2;
 + (id)sharedBulletinBoard;
 + (BOOL)supportsSecureCoding;
 + (id)unarchive;
-+ (BOOL)valueOfCharacteristic:(id)arg1 equalTo:(id)arg2;
 
 - (void).cxx_destruct;
+- (id)_bulletinWithRecordID:(id)arg1;
 - (BOOL)_hasDuplicateBulletinForCharacteristic:(id)arg1;
 - (id)_insertBulletinWithTitle:(id)arg1 snapshotData:(id)arg2 message:(id)arg3 recordID:(id)arg4 bulletinType:(unsigned int)arg5 actionURL:(id)arg6 bulletinContext:(struct NSDictionary { Class x1; }*)arg7 actionContext:(struct NSDictionary { Class x1; }*)arg8;
 - (id)_insertImageBulletinsForChangedCharacteristics:(id)arg1 snapshotData:(id)arg2;
 - (id)_lookupBulletinForCharacteristic:(id)arg1;
 - (void)_removeBulletinsUsingPredicate:(id)arg1;
+- (BOOL)_shouldPostBulletinOnCurrentValueChangeForCharacteristic:(id)arg1;
 - (void)_updateBulletin:(id)arg1;
+- (void)_updateCharacteristicTupleFor:(id)arg1 withCurrentType:(id)arg2 changedByThisDevice:(BOOL)arg3;
 - (id)bulletinProvider;
 - (id)categories;
 - (id)characteristicTuples;
@@ -50,9 +59,7 @@
 - (void)insertBulletinsForChangedCharacteristics:(id)arg1 changedByThisDevice:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)insertImageBulletinsForChangedCharacteristics:(id)arg1 snapshotData:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)isEnabled;
-- (BOOL)isSupportedCharacteristicForBulletin:(id)arg1;
 - (BOOL)isTargetCharacteristic:(id)arg1 matchCurrentCharacteristic:(id)arg2;
-- (BOOL)isTargetValueChangedByThisDevice:(id)arg1;
 - (void)refreshHomeBadgeNumber;
 - (void)refreshHomeConfiguration;
 - (void)reloadDefaultSectionInfo;
@@ -68,8 +75,7 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (id)trimMatchedCharacteristics:(id)arg1;
-- (void)updateCharacteristicTupleFor:(id)arg1 withCurrentType:(id)arg2;
+- (id)updateBulletinForFirmwareUpdateInHome:(id)arg1;
 - (id)workQueue;
 
 @end

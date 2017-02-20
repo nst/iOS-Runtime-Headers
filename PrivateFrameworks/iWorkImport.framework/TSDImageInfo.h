@@ -25,7 +25,6 @@
 @property (getter=isAnchoredToText, nonatomic, readonly) BOOL anchoredToText;
 @property (getter=isAttachedToBodyText, nonatomic, readonly) BOOL attachedToBodyText;
 @property (nonatomic, readonly) BOOL canPasteAsPDF;
-@property (nonatomic, readonly) NSDictionary *datasForReplacingMediaContentsWithAssociatedHints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) TSPData *enhancedImageData;

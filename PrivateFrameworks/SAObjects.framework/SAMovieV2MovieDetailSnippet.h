@@ -9,11 +9,14 @@
 @property (nonatomic, copy) NSArray *alternateProviderPunchouts;
 @property (nonatomic, copy) NSNumber *availableOnItunesForPurchase;
 @property (nonatomic, copy) NSNumber *availableOnItunesForRent;
+@property (nonatomic) BOOL canBeFavorited;
+@property (nonatomic, copy) NSString *canonicalId;
 @property (nonatomic, copy) NSArray *directors;
 @property (nonatomic, copy) NSArray *genres;
 @property (nonatomic, copy) NSURL *hiresTrailerUri;
 @property (nonatomic, copy) NSURL *iTunesUri;
 @property (nonatomic) BOOL is3d;
+@property (nonatomic) BOOL isContainerItem;
 @property (nonatomic, copy) NSURL *lowresTrailerUri;
 @property (nonatomic, copy) NSURL *movieIdentifier;
 @property (nonatomic, retain) SAMovieV2ReviewListSnippet *movieReviewListSnippet;
@@ -30,6 +33,7 @@
 @property (nonatomic, retain) SAMovieV2TheaterShowtimeListSnippet *theaterShowtimeListSnippet;
 @property (nonatomic, copy) NSString *theaterShowtimeSearchRegionDescription;
 @property (nonatomic, copy) NSDate *theatricalReleaseDate;
+@property (nonatomic, retain) SAUIAppPunchOut *videosPunchout;
 
 + (id)movieDetailSnippet;
 + (id)movieDetailSnippetWithDictionary:(id)arg1 context:(id)arg2;
@@ -39,6 +43,8 @@
 - (id)alternateProviderPunchouts;
 - (id)availableOnItunesForPurchase;
 - (id)availableOnItunesForRent;
+- (BOOL)canBeFavorited;
+- (id)canonicalId;
 - (id)directors;
 - (id)encodedClassName;
 - (id)genres;
@@ -46,6 +52,7 @@
 - (id)hiresTrailerUri;
 - (id)iTunesUri;
 - (BOOL)is3d;
+- (BOOL)isContainerItem;
 - (id)lowresTrailerUri;
 - (id)movieIdentifier;
 - (id)movieReviewListSnippet;
@@ -61,11 +68,14 @@
 - (void)setAlternateProviderPunchouts:(id)arg1;
 - (void)setAvailableOnItunesForPurchase:(id)arg1;
 - (void)setAvailableOnItunesForRent:(id)arg1;
+- (void)setCanBeFavorited:(BOOL)arg1;
+- (void)setCanonicalId:(id)arg1;
 - (void)setDirectors:(id)arg1;
 - (void)setGenres:(id)arg1;
 - (void)setHiresTrailerUri:(id)arg1;
 - (void)setITunesUri:(id)arg1;
 - (void)setIs3d:(BOOL)arg1;
+- (void)setIsContainerItem:(BOOL)arg1;
 - (void)setLowresTrailerUri:(id)arg1;
 - (void)setMovieIdentifier:(id)arg1;
 - (void)setMovieReviewListSnippet:(id)arg1;
@@ -82,11 +92,13 @@
 - (void)setTheaterShowtimeListSnippet:(id)arg1;
 - (void)setTheaterShowtimeSearchRegionDescription:(id)arg1;
 - (void)setTheatricalReleaseDate:(id)arg1;
+- (void)setVideosPunchout:(id)arg1;
 - (id)showtimeSnippet;
 - (id)studios;
 - (id)synopsis;
 - (id)theaterShowtimeListSnippet;
 - (id)theaterShowtimeSearchRegionDescription;
 - (id)theatricalReleaseDate;
+- (id)videosPunchout;
 
 @end

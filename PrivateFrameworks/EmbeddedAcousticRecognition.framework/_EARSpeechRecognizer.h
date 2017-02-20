@@ -10,6 +10,7 @@
     _EARFormatter * _formatter;
     NSObject<OS_dispatch_queue> * _formatterQueue;
     double  _maximumRecognitionDuration;
+    NSDictionary * _recognitionConfidenceSubtraction;
     NSObject<OS_dispatch_queue> * _recognitionQueue;
     NSDictionary * _recognitionReplacements;
     struct unique_ptr<quasar::SpeechRecognizer, std::__1::default_delete<quasar::SpeechRecognizer> > { 
@@ -24,6 +25,7 @@
 @property (nonatomic) BOOL detectUtterances;
 @property (nonatomic) double maximumRecognitionDuration;
 @property (nonatomic, readonly) _EARSpeechModelInfo *modelInfo;
+@property (nonatomic, copy) NSDictionary *recognitionConfidenceSubtraction;
 @property (nonatomic, copy) NSDictionary *recognitionReplacements;
 @property (nonatomic, copy) NSData *userProfileData;
 
@@ -45,6 +47,7 @@
 - (id)initWithConfiguration:(id)arg1 withLanguage:(id)arg2 withSdapiConfig:(id)arg3;
 - (double)maximumRecognitionDuration;
 - (id)modelInfo;
+- (id)recognitionConfidenceSubtraction;
 - (id)recognitionReplacements;
 - (id)recognitionResultsWithAudioData:(id)arg1 userProfileData:(id)arg2 language:(id)arg3 task:(id)arg4 samplingRate:(unsigned int)arg5 extraLanguageModel:(id)arg6;
 - (id)recognitionStatistics;
@@ -54,6 +57,7 @@
 - (void)setConcatenateUtterances:(BOOL)arg1;
 - (void)setDetectUtterances:(BOOL)arg1;
 - (void)setMaximumRecognitionDuration:(double)arg1;
+- (void)setRecognitionConfidenceSubtraction:(id)arg1;
 - (void)setRecognitionReplacements:(id)arg1;
 - (void)setUserProfileData:(id)arg1;
 - (void)updateUserProfileData:(id)arg1;

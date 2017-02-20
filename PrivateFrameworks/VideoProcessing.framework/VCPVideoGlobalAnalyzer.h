@@ -4,8 +4,13 @@
 
 @interface VCPVideoGlobalAnalyzer : NSObject
 
-- (float)analyzeOverallInterestingness:(id)arg1;
 - (float)analyzeOverallQuality:(id)arg1;
+- (float)assetActionScoreFromAnalysis:(id)arg1;
+- (float)assetCameraMotionScoreFromAnalysis:(id)arg1;
+- (float)assetExpressionScoreFromAnalysis:(id)arg1;
+- (float)assetJunkScoreFromAnalysis:(id)arg1;
+- (float)assetQualityScoreFromAnalysis:(id)arg1;
+- (float)assetVoiceScoreFromAnalysis:(id)arg1;
 - (long)setIrisRecommend:(id)arg1;
 
 @end

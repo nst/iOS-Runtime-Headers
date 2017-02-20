@@ -15,6 +15,7 @@
 - (id)_fallbackFocusItemForMovement:(id)arg1 inFocusMap:(id)arg2;
 - (unsigned int)_focusableBoundaries;
 - (BOOL)_isEnabledForFocusedRegion:(id)arg1;
+- (int)_preferredDistanceComparisonType;
 - (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
 - (BOOL)_shouldOccludeRegion:(id)arg1;
 - (id)_visualRepresentationColor;

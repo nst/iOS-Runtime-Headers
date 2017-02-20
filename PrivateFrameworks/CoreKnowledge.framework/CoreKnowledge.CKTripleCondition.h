@@ -15,7 +15,7 @@
 - (id)and:(id)arg1;
 - (BOOL)evaluateOn:(id)arg1;
 - (id)init;
-- (id)init:(long)arg1 value:(id)arg2 negated:(BOOL)arg3;
+- (id)init:(int)arg1 value:(id)arg2 negated:(BOOL)arg3;
 - (id)initWithSubject:(id)arg1 predicate:(id)arg2 object:(id)arg3;
 - (id)initWithValue:(BOOL)arg1;
 - (BOOL)negated;

@@ -3,7 +3,6 @@
  */
 
 @interface PHALibraryChangeDetails : NSObject {
-    unsigned int  _changeType;
     NSDictionary * _changedAssetIdentifierToWorkerFlagsMap;
     PHFetchResult * _changedAssetsFetchResult;
     NSArray * _deletes;
@@ -11,27 +10,26 @@
     NSArray * _updates;
 }
 
+@property (readonly) NSArray *allChangedObjects;
 @property (retain) NSDictionary *changedAssetIdentifierToWorkerFlagsMap;
 @property (retain) PHFetchResult *changedAssetsFetchResult;
 @property (setter=_setDeletes:, copy) NSArray *deletes;
 @property (setter=_setInserts:, copy) NSArray *inserts;
-@property (readonly) unsigned int type;
 @property (setter=_setUpdates:, copy) NSArray *updates;
 
-+ (id)changeDetailsForUpdatedMoments:(id)arg1;
++ (id)changeDetailsForUpdatedObjects:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_setDeletes:(id)arg1;
 - (void)_setInserts:(id)arg1;
 - (void)_setUpdates:(id)arg1;
+- (id)allChangedObjects;
 - (id)changedAssetIdentifierToWorkerFlagsMap;
 - (id)changedAssetsFetchResult;
 - (id)deletes;
-- (id)initWithType:(unsigned int)arg1;
 - (id)inserts;
 - (void)setChangedAssetIdentifierToWorkerFlagsMap:(id)arg1;
 - (void)setChangedAssetsFetchResult:(id)arg1;
-- (unsigned int)type;
 - (id)updates;
 
 @end

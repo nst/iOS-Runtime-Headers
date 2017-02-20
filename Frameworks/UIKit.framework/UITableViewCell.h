@@ -608,7 +608,9 @@
 
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
+- (void)_cnui_applyCommonContactStyle:(id)arg1;
 - (void)_cnui_applyContactStyle;
+- (void)_cnui_applySelectedBackgroundViewStyle:(id)arg1;
 
 // Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
 

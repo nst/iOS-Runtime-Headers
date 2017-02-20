@@ -21,6 +21,7 @@
 - (unsigned int)columns;
 - (id)data;
 - (unsigned int)dataType;
+- (void)dealloc;
 - (id)device;
 - (id)init;
 - (id)initWithBuffer:(id)arg1 descriptor:(id)arg2;

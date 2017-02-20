@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)_cancelLoadingWebView;
+- (void)_failWithError:(id)arg1;
 - (void)_finish;
 - (void)_startLoadingWebView;
 - (void)cancel;
@@ -35,6 +36,7 @@
 - (void)start;
 - (id)webView;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
+- (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 
 @end

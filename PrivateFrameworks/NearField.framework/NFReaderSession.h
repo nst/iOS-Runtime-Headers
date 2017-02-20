@@ -21,6 +21,7 @@
 - (void)didEndUnexpectedly;
 - (BOOL)disconnectTag;
 - (void)endSession;
+- (id)felicaRequestService:(id)arg1;
 - (id)felicaState;
 - (id)felicaStateForSystemCode:(id)arg1 withRequestService:(id)arg2 withBlockReadList:(id)arg3 performSearchServiceCode:(BOOL)arg4;
 - (BOOL)formatNdefWithKey:(id)arg1;

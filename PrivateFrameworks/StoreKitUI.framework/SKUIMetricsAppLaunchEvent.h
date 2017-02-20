@@ -27,6 +27,8 @@
 @property (nonatomic) BOOL usedBootstrapFallback;
 
 + (id)consumePendingLaunchEvent;
++ (void)createPendingLaunchEvent;
++ (void)load;
 + (double)processStartTime;
 + (void)resetPendingLaunchEventForTesting;
 + (void)withPendingLaunchEvent:(id /* block */)arg1;
@@ -37,6 +39,7 @@
 - (double)bootstrapEndTime;
 - (double)bootstrapStartTime;
 - (double)clientConfigurationLoadTime;
+- (id)description;
 - (id)init;
 - (double)initialTabRequestStartTime;
 - (double)initialTabResponseEndTime;

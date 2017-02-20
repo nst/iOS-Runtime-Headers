@@ -3,6 +3,7 @@
  */
 
 @interface _ATXAggregateLogger : NSObject {
+    PETScalarEventTracker * _allLaunchesPredictionTracker;
     PETScalarEventTracker * _appOutcomeTracker;
     int  _buildType;
     _ATXBundleIdSet * _bundleIdSet;
@@ -19,9 +20,11 @@
     PETDistributionEventTracker * _scoreTracker;
 }
 
++ (id)_launchReasonToPropertyString;
 + (BOOL)isConversionOutcome:(unsigned int)arg1;
 + (id)predictedItemOutcomesMapping;
 + (id)predictionOutcomesMapping;
++ (id)propertyStringForLaunchReason:(id)arg1;
 + (id)sharedInstance;
 + (id)stringForPredictedItemOutcome:(unsigned int)arg1;
 + (id)stringForPredictionOutcome:(unsigned int)arg1;
@@ -30,6 +33,7 @@
 - (void).cxx_destruct;
 - (id)init;
 - (void)logInputs:(double*)arg1 andScore:(double)arg2 withOutcome:(unsigned int)arg3;
+- (void)logLaunchEventWithLaunchReason:(id)arg1 predicted:(BOOL)arg2 position:(int)arg3;
 - (void)logPredictionEventWith:(unsigned int)arg1 shownItemsAndOutcome:(unsigned int)arg2 forABGroup:(id)arg3 consumerType:(unsigned int)arg4 andSubType:(unsigned char)arg5;
 - (void)logPredictionEventWithMagicalMoments:(BOOL)arg1 magicalMomentsOverlap:(BOOL)arg2 heroApp:(BOOL)arg3 heroAppOverlap:(BOOL)arg4 consumerType:(unsigned int)arg5 consumerSubType:(unsigned char)arg6 reason:(int)arg7 andOutcome:(unsigned int)arg8;
 - (void)logPredictionOfAppWithBundleId:(id)arg1 inputs:(double*)arg2 outcome:(unsigned int)arg3 rank:(int)arg4 score:(double)arg5 forABGroup:(id)arg6;

@@ -3,17 +3,10 @@
  */
 
 @interface NSAttributeDescription : NSPropertyDescription {
-    struct __attributeDescriptionFlags { 
-        unsigned int _hasMaxValueInExtraIvars : 1; 
-        unsigned int _hasMinValueInExtraIvars : 1; 
-        unsigned int _storeBinaryDataExternally : 1; 
-        unsigned int _reservedAttributeFlagOne : 1; 
-        unsigned int _reservedAttributeDescription : 28; 
-    }  _attributeDescriptionFlags;
     Class  _attributeValueClass;
     NSString * _attributeValueClassName;
     id  _defaultValue;
-    unsigned int  _type;
+    unsigned short  _type;
     NSString * _valueTransformerName;
 }
 
@@ -36,7 +29,6 @@
 - (id)_initWithName:(id)arg1 type:(unsigned int)arg2;
 - (id)_initWithName:(id)arg1 type:(unsigned int)arg2 withClassName:(id)arg3;
 - (id)_initWithType:(unsigned int)arg1;
-- (BOOL)_isTriggerBacked;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (unsigned int)_propertyType;
 - (id)_rawValidationPredicates;

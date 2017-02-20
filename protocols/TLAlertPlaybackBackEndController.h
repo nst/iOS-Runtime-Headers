@@ -10,6 +10,7 @@
 
 @optional
 
+- (void)handleActivationAssertionStatusChangeForAlert:(TLAlert *)arg1 updatedStatus:(BOOL)arg2;
 - (void)updateAudioVolumeDynamicallyForAlert:(TLAlert *)arg1 toValue:(float)arg2;
 
 @end

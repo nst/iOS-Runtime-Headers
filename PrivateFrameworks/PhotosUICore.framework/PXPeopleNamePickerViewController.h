@@ -3,14 +3,12 @@
  */
 
 @interface PXPeopleNamePickerViewController : UIViewController <UIAdaptivePresentationControllerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDelegate, UITextFieldDelegate> {
-    id  _appBackgroundedNotificationObserver;
     <PXPeopleNamePickerViewControllerDelegate> * _delegate;
     PXPeopleNamePickerResultsTableViewController * _resultsController;
     NSArray * _savedRightBarItems;
     PXPeopleNamePickerTitleView * _titleView;
 }
 
-@property (nonatomic, retain) id appBackgroundedNotificationObserver;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PXPeopleNamePickerViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -21,14 +19,15 @@
 @property (nonatomic, readonly) PXPeopleNamePickerTitleView *titleView;
 
 - (void).cxx_destruct;
+- (void)_applicationDidEnterBackground;
 - (void)_hideResultsView;
+- (void)_keyboardWillChangeFrame:(id)arg1;
+- (void)_refreshResultsViewSizeWithNewKeyboardHeight:(float)arg1;
 - (void)_setupNavigationBarForEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)_shouldPresentResultsInPopover;
 - (void)_showResultsView;
 - (float)_titleViewMaxWidthForEditing:(BOOL)arg1;
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
-- (id)appBackgroundedNotificationObserver;
-- (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -37,7 +36,6 @@
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (id)resultsController;
 - (id)savedRightBarItems;
-- (void)setAppBackgroundedNotificationObserver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setResultsController:(id)arg1;
 - (void)setSavedRightBarItems:(id)arg1;

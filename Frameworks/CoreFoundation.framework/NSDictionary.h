@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDictionary : NSObject <CKDParsedObject, CSCoderEncoder, NSCopying, NSFastEnumeration, NSFetchRequestResult, NSMutableCopying, NSSecureCoding, PHFetchDictionaryAccessing, PQLBindable>
+@interface NSDictionary : NSObject <CSCoderEncoder, HFPropertyListConvertible, NSCopying, NSFastEnumeration, NSFetchRequestResult, NSMutableCopying, NSSecureCoding, PHFetchDictionaryAccessing, PQLBindable>
 
 @property (nonatomic, readonly) NSNumber *__im_associatedMessageContentType;
+@property (nonatomic, readonly) NSString *__im_associatedMessagePluginBundleID;
+@property (nonatomic, readonly) NSString *__im_associatedMessagePluginDisplayName;
 @property (nonatomic, readonly) NSString *__im_associatedMessageSummary;
 @property (nonatomic, readonly) float averageRating;
 @property (nonatomic, readonly) NSString *bundleId;
@@ -109,7 +111,7 @@
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 - (void)CKAssignToContainerWithID:(id)arg1;
-- (id)CKPropertiesToDescribe:(BOOL)arg1;
+- (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
@@ -186,6 +188,12 @@
 - (id)locationFromDataForKey:(id)arg1;
 - (id)regionFromDataForKey:(id)arg1;
 
+// Image: /System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/DaemonUtils
+
++ (id)dictionaryByMerging:(id)arg1 with:(id)arg2;
+
+- (id)dictionaryByMergingWith:(id)arg1;
+
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (id)_defaultOffer;
@@ -257,6 +265,7 @@
 // Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
 
 - (id)vs_arrayForKey:(id)arg1;
+- (id)vs_arrayOfStringsForKey:(id)arg1;
 - (id)vs_dictionaryForKey:(id)arg1;
 - (id)vs_numberForKey:(id)arg1;
 - (id)vs_objectOfClass:(Class)arg1 forKey:(id)arg2;
@@ -364,7 +373,6 @@
 
 - (id)CKObjectForKeyCaseInsensitive:(id)arg1;
 - (id)CKPercentEscapedQueryString;
-- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -448,13 +456,9 @@
 - (id)sf_asTitleCardSection:(id)arg1;
 - (id)sf_asTrack:(id)arg1;
 - (id)sf_asTrackListCardSection:(id)arg1;
-- (void)sf_baseCardSection:(id)arg1;
+- (void)sf_baseCardSection:(id)arg1 reply:(id)arg2;
 - (id)sf_imageForKey:(id)arg1 reply:(id)arg2;
 - (unsigned int)sf_textColorForKey:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
-
-- (BOOL)getLinkState:(BOOL*)arg1 physicalAddress:(unsigned int*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
@@ -464,6 +468,10 @@
 
 - (id)DAMergeOverrideDictionary:(id)arg1;
 - (id)DAObjectForKeyCaseInsensitive:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DAEAS.framework/DAEAS
+
+- (id)objectForInt:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
@@ -598,10 +606,12 @@
 
 // Image: /System/Library/PrivateFrameworks/IMSharedUtilities.framework/IMSharedUtilities
 
-+ (id)dictionaryWithAssociatedMessageSummary:(id)arg1 contentType:(unsigned char)arg2;
++ (id)dictionaryWithAssociatedMessageSummary:(id)arg1 contentType:(unsigned char)arg2 pluginBundleID:(id)arg3 pluginDisplayName:(id)arg4;
 + (id)dictionaryWithMessageSummaryInfoData:(id)arg1;
 
 - (id)__im_associatedMessageContentType;
+- (id)__im_associatedMessagePluginBundleID;
+- (id)__im_associatedMessagePluginDisplayName;
 - (id)__im_associatedMessageSummary;
 
 // Image: /System/Library/PrivateFrameworks/IntlPreferences.framework/IntlPreferences
@@ -827,6 +837,16 @@
 // Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 
 - (id)_swiftInitWithDictionary_NSDictionary:(id)arg1;
+/* MISSING HEADER DESCRIPTION FOR METHOD _swift_objectForKeyedSubscript: */
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (id)tv_arrayForKey:(id)arg1;
+- (BOOL)tv_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
+- (id)tv_dictionaryForKey:(id)arg1;
+- (id)tv_lookupValueForKey:(id)arg1 expectedClass:(Class)arg2;
+- (id)tv_numberForKey:(id)arg1;
+- (id)tv_stringForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
@@ -870,6 +890,20 @@
 // Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
 
 - (BOOL)writeToFile:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKit.framework/WatchListKit
+
+- (id)_lookupValueForKey:(id)arg1 expectedClass:(Class)arg2;
+- (id)wlk_arrayForKey:(id)arg1;
+- (id)wlk_artworkVariantListingForKey:(id)arg1;
+- (BOOL)wlk_boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
+- (id)wlk_dataForKey:(id)arg1;
+- (id)wlk_dateForKey:(id)arg1;
+- (id)wlk_dateFromMillisecondsSince1970ForKey:(id)arg1;
+- (unsigned int)wlk_deepHash;
+- (id)wlk_dictionaryForKey:(id)arg1;
+- (id)wlk_numberForKey:(id)arg1;
+- (id)wlk_stringForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WeatherFoundation.framework/WeatherFoundation
 

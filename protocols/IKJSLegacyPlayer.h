@@ -3,8 +3,4 @@
 
 @protocol IKJSLegacyPlayer <JSExport>
 
-@required
-
-- (IKDOMElement *)currentAVMediaElement;
-
 @end

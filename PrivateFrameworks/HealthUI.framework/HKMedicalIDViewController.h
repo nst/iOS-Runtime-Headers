@@ -7,6 +7,7 @@
     BOOL  _allowsEditing;
     HKEmergencyCardContactsTableItem * _contactsItem;
     <HKMedicalIDViewControllerDelegate> * _delegate;
+    int  _emergencyContactsNotificationToken;
     NSArray * _footers;
     HKEmergencyCardGroupTableItem * _groupItem;
     HKHealthStore * _healthStore;
@@ -60,6 +61,7 @@
 - (void)_refreshEmergencyContactsAndReload:(BOOL)arg1;
 - (int)_rowIndexForTableItem:(id)arg1 atIndexPath:(id)arg2;
 - (BOOL)_shouldShowOrganDonation;
+- (void)_showMedicalIDPreviewAsNext;
 - (id)_tableItemForIndexPath:(id)arg1;
 - (void)_updateMedicalIDNameWithDemographicsInformation:(id)arg1;
 - (BOOL)allowsEditing;
@@ -79,6 +81,7 @@
 - (void)medicalIDViewControllerDidSave:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (int)preferredStatusBarStyle;
+- (void)reloadMedicalIDDataAndView;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHealthStore:(id)arg1;

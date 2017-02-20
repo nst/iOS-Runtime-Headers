@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)cleanup;
+- (unsigned int)countEntriesWithPredicate:(id)arg1;
 - (void)dealloc;
 - (void)deleteTextReplacementsFromLocalStoreWithNames:(id)arg1 excludeSavesToCloud:(BOOL)arg2;
 - (void)deleteTextReplacementsWithPredicate:(id)arg1;

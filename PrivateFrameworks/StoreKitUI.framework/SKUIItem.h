@@ -19,6 +19,7 @@
     BOOL  _gameControllerSupported;
     BOOL  _hasInAppPurchases;
     BOOL  _hasMessagesExtension;
+    BOOL  _isHiddenFromSpringBoard;
     long long  _itemIdentifier;
     int  _itemKind;
     NSString * _itemKindString;
@@ -60,6 +61,7 @@
 @property (nonatomic, readonly) BOOL hasInAppPurchases;
 @property (nonatomic, readonly) BOOL hasMessagesExtension;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isHiddenFromSpringBoard;
 @property (nonatomic, readonly) long long itemIdentifier;
 @property (nonatomic, readonly) int itemKind;
 @property (nonatomic, readonly) NSString *itemKindString;
@@ -111,6 +113,7 @@
 - (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithLookupDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isHiddenFromSpringBoard;
 - (BOOL)isNewsstandApp;
 - (long long)itemIdentifier;
 - (int)itemKind;

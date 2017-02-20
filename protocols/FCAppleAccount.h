@@ -11,6 +11,7 @@
 - (NSString *)endpointConnectionClientID;
 - (BOOL)iCloudAccountChanged;
 - (NSString *)iTunesAccountName;
+- (BOOL)isContentStoreFrontSupported;
 - (BOOL)isPrivateDataSyncingEnabled;
 - (BOOL)isUserSignedInToiCloud;
 - (BOOL)isUserSignedIntoiTunes;

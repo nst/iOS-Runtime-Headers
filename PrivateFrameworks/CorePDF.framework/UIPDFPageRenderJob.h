@@ -5,7 +5,9 @@
 @interface UIPDFPageRenderJob : NSObject {
     SEL  _callback;
     UIImage * _image;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     UIPDFPageRenderOperation * _operation;
     UIPDFPage * _page;
     unsigned int  _pageIndex;

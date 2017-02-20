@@ -62,7 +62,6 @@
 - (id)contact;
 - (id)contactFormatter;
 - (id)delegate;
-- (BOOL)isHighlighted;
 - (float)maximumActionsWidth;
 - (int)monogrammerStyle;
 - (id)nameLabel;
@@ -79,7 +78,6 @@
 - (void)setContact:(id)arg1;
 - (void)setContactFormatter:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
 - (void)setMonogrammerStyle:(int)arg1;
 - (void)setNameLabel:(id)arg1;
 - (void)setNameTextAttributes:(id)arg1;

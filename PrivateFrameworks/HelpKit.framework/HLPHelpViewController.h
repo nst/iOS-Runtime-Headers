@@ -22,6 +22,7 @@
     NSString * _selectedHelpTopicName;
     BOOL  _showTopicNameAsTitle;
     BOOL  _showTopicViewOnLoad;
+    BOOL  _showingHelpTopic;
     NSString * _subpath;
     HLPHelpTableOfContentViewController * _tableOfContentViewController;
     HLPHelpTopicViewController * _topicViewController;
@@ -108,6 +109,7 @@
 - (void)updateDoneButton;
 - (void)updateTOCButton;
 - (id)version;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

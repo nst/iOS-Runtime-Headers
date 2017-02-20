@@ -32,6 +32,7 @@
 - (void)openURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setWidgetLargestAvailableDisplayMode:(int)arg1;
 - (int)widgetActiveDisplayMode;
+- (BOOL)widgetIsForeground;
 - (int)widgetLargestAvailableDisplayMode;
 - (struct CGSize { float x1; float x2; })widgetMaximumSizeForDisplayMode:(int)arg1;
 

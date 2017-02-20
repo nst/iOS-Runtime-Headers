@@ -16,6 +16,7 @@
 - (void)_migrateFromSkiHillWithCoder:(id)arg1;
 - (BOOL)appearsInDailySnapshotForFamily:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)customDailySnapshotKey;
 - (unsigned int)dateStyle;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

@@ -36,6 +36,7 @@
 
 - (void)siriCore_addSendCompletion:(id /* block */)arg1;
 - (void)siriCore_dispatchSendCompletionsWithResult:(int)arg1 error:(id)arg2;
+- (BOOL)siriCore_isRetryable;
 - (BOOL)siriCore_supportsSendCompletions;
 
 @end

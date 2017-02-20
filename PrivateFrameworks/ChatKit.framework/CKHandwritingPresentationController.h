@@ -10,6 +10,7 @@
     NSObject<CKHandwritingViewControllerSendDelegate> * _cachedSendDelegate;
     NSObject<CKHandwritingPresentationControllerDelegate> * _delegate;
     CKDeviceOrientationManager * _deviceOrientationManager;
+    BOOL  _foregrounded;
     CKHandwritingWindow * _handwritingWindow;
     int  _initialInterfaceOrientation;
     BOOL  _requestedVisibility;
@@ -24,6 +25,7 @@
 @property (nonatomic) NSObject<CKHandwritingViewControllerSendDelegate> *cachedSendDelegate;
 @property (nonatomic) NSObject<CKHandwritingPresentationControllerDelegate> *delegate;
 @property (nonatomic, retain) CKDeviceOrientationManager *deviceOrientationManager;
+@property (nonatomic) BOOL foregrounded;
 @property (nonatomic, retain) CKHandwritingWindow *handwritingWindow;
 @property (nonatomic) int initialInterfaceOrientation;
 @property (readonly) NSString *pluginBundleID;
@@ -36,6 +38,9 @@
 
 - (void).cxx_destruct;
 - (void)_doInitialization;
+- (void)_flushHandwritingWindowCacheIfNeeded;
+- (void)_handleApplicationDidEnterBackground:(id)arg1;
+- (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (void)_loadCachedPayloadIntoBrowser;
 - (void)_updateVisibilityState;
 - (BOOL)actualVisibility;
@@ -46,6 +51,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)deviceOrientationManager;
+- (BOOL)foregrounded;
 - (id)handwritingWindow;
 - (id)init;
 - (int)initialInterfaceOrientation;
@@ -61,6 +67,7 @@
 - (void)setCachedSendDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceOrientationManager:(id)arg1;
+- (void)setForegrounded:(BOOL)arg1;
 - (void)setHandwritingWindow:(id)arg1;
 - (void)setInitialInterfaceOrientation:(int)arg1;
 - (void)setPluginPayload:(id)arg1;

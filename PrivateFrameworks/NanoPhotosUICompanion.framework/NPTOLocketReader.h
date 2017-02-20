@@ -3,12 +3,12 @@
  */
 
 @interface NPTOLocketReader : NSObject <NSCopying> {
-    NPTOCachingFetchResult * _albumContents;
+    PHFetchResult * _albumContents;
     id /* block */  _albumContentsLoaderBlock;
     NPTOLocketSyncProgress * _syncProgress;
 }
 
-@property (nonatomic, retain) NPTOCachingFetchResult *albumContents;
+@property (nonatomic, retain) PHFetchResult *albumContents;
 @property (nonatomic, copy) id /* block */ albumContentsLoaderBlock;
 @property (nonatomic, readonly) unsigned int numberOfLoadedPhotos;
 @property (nonatomic, readonly) unsigned int numberOfTotalPhotos;

@@ -41,6 +41,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) CLHeading *heading;
 @property (nonatomic) int headingOrientation;
+@property (nonatomic, readonly) BOOL isHeadingServicesAvailable;
 @property (nonatomic, readonly) BOOL isLastLocationStale;
 @property (nonatomic, readonly) MNLocation *lastLocation;
 @property (nonatomic, copy) id /* block */ locationCorrector;
@@ -58,6 +59,7 @@
 - (void)_reportLocationReset;
 - (void)_reportLocationStatus:(SEL)arg1;
 - (void)_reportLocationSuccess;
+- (void)_setLastLocationReceivedFromMaps:(id)arg1;
 - (void)_setTrackingHeading:(BOOL)arg1;
 - (void)_setTrackingLocation:(BOOL)arg1;
 - (void)_startLocationUpdateWithObserver:(id)arg1 desiredAccuracy:(double)arg2;

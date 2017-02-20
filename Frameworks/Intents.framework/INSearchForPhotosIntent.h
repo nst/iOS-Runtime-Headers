@@ -18,11 +18,13 @@
 @property (nonatomic, readonly) int searchTermsOperator;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (id)albumName;
 - (id)dateCreated;
+- (id)description;
 - (unsigned int)excludedAttributes;
 - (unsigned int)includedAttributes;
 - (id)initWithDateCreated:(id)arg1 locationCreated:(id)arg2 albumName:(id)arg3 searchTerms:(id)arg4 includedAttributes:(unsigned int)arg5 excludedAttributes:(unsigned int)arg6 peopleInPhoto:(id)arg7;

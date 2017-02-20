@@ -8,6 +8,8 @@
     BOOL  _backgroundPurchase;
     int  _batchIdentifier;
     NSString * _buyParameters;
+    NSNumber * _buyParamsCreatesDownloads;
+    NSNumber * _buyParamsCreatesJobs;
     BOOL  _createsDownloads;
     BOOL  _createsJobs;
     NSObject<OS_dispatch_queue> * _dispatchQueue;
@@ -66,6 +68,9 @@
 + (id)purchaseWithBuyParameters:(id)arg1;
 
 - (void)_addEntriesToDatabaseEncoding:(id)arg1;
+- (id)_buyParametersValueForKey:(id)arg1 fromBuyParams:(id)arg2;
+- (bool)_createsDownloadsWithOverride;
+- (bool)_createsJobsWithOverride;
 - (id)_initSSPurchase;
 - (void)_setValuesUsingDatabaseEncoding:(id)arg1;
 - (id)accountIdentifier;

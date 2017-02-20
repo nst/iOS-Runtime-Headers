@@ -20,9 +20,11 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)_formattedStringWithLocale:(id)arg1 componentsFormatString:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currencyCode;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMaximumPrice:(id)arg1 currencyCode:(id)arg2;

@@ -66,6 +66,7 @@
 - (id)retrieveNextBatchOfLogMessagesWithLimitCount:(int)arg1 limitSize:(int)arg2;
 - (void)setEncryptionEnabled:(BOOL)arg1;
 - (void)setOldestLogMessageInCache:(id)arg1;
+- (BOOL)shouldFlushLogMessageCache;
 - (void)updateCurrentlyRetrievedLogMessagesRetryCount;
 
 @end

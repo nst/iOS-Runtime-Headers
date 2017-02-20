@@ -3,7 +3,7 @@
  */
 
 @interface CAMetalLayer : CALayer {
-    struct _CAMetalLayerPrivate { struct Atomic { struct { int x_1_2_1; } x_1_1_1; } x1; struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct SpinLock { struct { int x_1_2_1; } x_3_1_1; } x3; struct _CAImageQueue {} *x4; id x5; struct List<_CAMetalDrawablePrivate *> {} x6; unsigned int x7; struct _CAMetalDrawablePrivate {} *x8; id x9; struct CGSize { float x_10_1_1; float x_10_1_2; } x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; id x16; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x17; out void*x18; int x19; BOOL x20; void*x21; struct { int x_22_1_1; } x22; } * _priv;
+    struct _CAMetalLayerPrivate { struct Atomic { struct { int x_1_2_1; } x_1_1_1; } x1; struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct SpinLock { struct { int x_1_2_1; } x_3_1_1; } x3; struct _CAImageQueue {} *x4; id x5; struct List<_CAMetalDrawablePrivate *> {} x6; unsigned int x7; struct _CAMetalDrawablePrivate {} *x8; id x9; struct CGSize { float x_10_1_1; float x_10_1_2; } x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; struct Atomic { struct { int x_1_2_1; } x_15_1_1; } x15; id x16; /* Warning: Unrecognized filer type: 't' using 'void*' */ void*x17; out void*x18; int x19; BOOL x20; void*x21; struct { int x_22_1_1; } x22; } * _priv;
 }
 
 @property (retain) <MTLDevice> *device;

@@ -4,7 +4,6 @@
 
 @interface MSCLTwitterServiceSetupTableViewSection : MSCLSocialServiceSetupTableViewSection
 
-- (id)_selectedFacebookPageForAccount:(id)arg1;
 - (id)performActionForIndexPath:(id)arg1 parentViewController:(id)arg2;
 - (void)registerReusableCellsWithTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

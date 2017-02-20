@@ -2,21 +2,29 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDApplicationMonitor : NSObject {
+@interface HMDApplicationMonitor : NSObject <HMFTimerDelegate> {
     HMDApplicationRegistry * _appRegistry;
     <HMDApplicationMonitorDelegate> * _delegate;
+    HMFTimer * _homeUIServiceTerminationDelayTimer;
     BKSApplicationStateMonitor * _monitor;
     NSMutableSet * _processes;
+    BOOL  _sendHomeUIServiceTerminatedNotification;
     NSObject<OS_dispatch_queue> * _workQueue;
 }
 
 @property (nonatomic, readonly) BOOL activeHomeKitApps;
 @property (nonatomic) HMDApplicationRegistry *appRegistry;
 @property (nonatomic, readonly) NSSet *backgroundApps;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HMDApplicationMonitorDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSSet *foregroundApps;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) HMFTimer *homeUIServiceTerminationDelayTimer;
 @property (nonatomic, readonly) BKSApplicationStateMonitor *monitor;
 @property (nonatomic, readonly) NSMutableSet *processes;
+@property (nonatomic) BOOL sendHomeUIServiceTerminatedNotification;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)applicationStateDescription:(unsigned int)arg1;
@@ -26,6 +34,7 @@
 - (void)_callAppStateChangeDelegate:(id)arg1;
 - (BOOL)_delegateConformsAndRespondsToSelector:(SEL)arg1;
 - (void)_handleAppStateChangedInfo:(id)arg1;
+- (void)_postAppTerminatedNotification:(id)arg1;
 - (unsigned int)_translateApplicationState:(unsigned int)arg1;
 - (void)_updateProcessInfo:(id)arg1 info:(id)arg2;
 - (BOOL)activeHomeKitApps;
@@ -40,15 +49,20 @@
 - (id)delegate;
 - (id)foregroundAppIdentifiers;
 - (id)foregroundApps;
+- (id)homeUIServiceTerminationDelayTimer;
 - (BOOL)infoIsForViewService:(id)arg1;
 - (id)init;
 - (id)monitor;
 - (id)processInfoForPID:(int)arg1;
 - (id)processes;
 - (void)removeProcess:(id)arg1;
+- (BOOL)sendHomeUIServiceTerminatedNotification;
 - (void)setAppRegistry:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setHomeUIServiceTerminationDelayTimer:(id)arg1;
+- (void)setSendHomeUIServiceTerminatedNotification:(BOOL)arg1;
 - (void)start;
+- (void)timerDidFire:(id)arg1;
 - (unsigned int)translateApplicationStateForInfo:(id)arg1 processInfo:(id)arg2;
 - (id)workQueue;
 

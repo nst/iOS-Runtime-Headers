@@ -4,6 +4,7 @@
 
 @interface MPUMutableFontDescriptor : MPUFontDescriptor
 
+@property (nonatomic) float defaultPointSizeAdjustment;
 @property (nonatomic) int leadingAdjustment;
 @property (nonatomic) float systemFontSize;
 @property (nonatomic) int textStyle;
@@ -14,6 +15,7 @@
 - (id)_copyAllowingGlobalCacheLookup:(BOOL)arg1;
 - (void)_resetToDefaultValues;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)setDefaultPointSizeAdjustment:(float)arg1;
 - (void)setLeadingAdjustment:(int)arg1;
 - (void)setSystemFontSize:(float)arg1;
 - (void)setTextStyle:(int)arg1;

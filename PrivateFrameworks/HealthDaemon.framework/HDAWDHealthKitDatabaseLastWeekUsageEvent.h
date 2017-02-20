@@ -7,6 +7,8 @@
     struct { 
         unsigned int databaseSizeMB : 1; 
         unsigned int highFrequencyDataSizeMB : 1; 
+        unsigned int lastMonthDatabaseSizeIncreaseMB : 1; 
+        unsigned int lastMonthRowsAdded : 1; 
         unsigned int manuallyEnteredTypesCount : 1; 
         unsigned int percentageDeletedObjects : 1; 
         unsigned int rowCountObjects : 1; 
@@ -18,6 +20,8 @@
     }  _has;
     BOOL  _hasWatchSource;
     long long  _highFrequencyDataSizeMB;
+    long long  _lastMonthDatabaseSizeIncreaseMB;
+    long long  _lastMonthRowsAdded;
     long long  _manuallyEnteredTypesCount;
     long long  _percentageDeletedObjects;
     int  _rowCountCDA;
@@ -31,6 +35,8 @@
 @property (nonatomic) BOOL hasDatabaseSizeMB;
 @property (nonatomic) BOOL hasHasWatchSource;
 @property (nonatomic) BOOL hasHighFrequencyDataSizeMB;
+@property (nonatomic) BOOL hasLastMonthDatabaseSizeIncreaseMB;
+@property (nonatomic) BOOL hasLastMonthRowsAdded;
 @property (nonatomic) BOOL hasManuallyEnteredTypesCount;
 @property (nonatomic) BOOL hasPercentageDeletedObjects;
 @property (nonatomic) BOOL hasRowCountCDA;
@@ -40,6 +46,8 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasWatchSource;
 @property (nonatomic) long long highFrequencyDataSizeMB;
+@property (nonatomic) long long lastMonthDatabaseSizeIncreaseMB;
+@property (nonatomic) long long lastMonthRowsAdded;
 @property (nonatomic) long long manuallyEnteredTypesCount;
 @property (nonatomic) long long percentageDeletedObjects;
 @property (nonatomic) int rowCountCDA;
@@ -57,6 +65,8 @@
 - (BOOL)hasDatabaseSizeMB;
 - (BOOL)hasHasWatchSource;
 - (BOOL)hasHighFrequencyDataSizeMB;
+- (BOOL)hasLastMonthDatabaseSizeIncreaseMB;
+- (BOOL)hasLastMonthRowsAdded;
 - (BOOL)hasManuallyEnteredTypesCount;
 - (BOOL)hasPercentageDeletedObjects;
 - (BOOL)hasRowCountCDA;
@@ -68,6 +78,8 @@
 - (unsigned int)hash;
 - (long long)highFrequencyDataSizeMB;
 - (BOOL)isEqual:(id)arg1;
+- (long long)lastMonthDatabaseSizeIncreaseMB;
+- (long long)lastMonthRowsAdded;
 - (long long)manuallyEnteredTypesCount;
 - (void)mergeFrom:(id)arg1;
 - (long long)percentageDeletedObjects;
@@ -79,6 +91,8 @@
 - (void)setHasDatabaseSizeMB:(BOOL)arg1;
 - (void)setHasHasWatchSource:(BOOL)arg1;
 - (void)setHasHighFrequencyDataSizeMB:(BOOL)arg1;
+- (void)setHasLastMonthDatabaseSizeIncreaseMB:(BOOL)arg1;
+- (void)setHasLastMonthRowsAdded:(BOOL)arg1;
 - (void)setHasManuallyEnteredTypesCount:(BOOL)arg1;
 - (void)setHasPercentageDeletedObjects:(BOOL)arg1;
 - (void)setHasRowCountCDA:(BOOL)arg1;
@@ -88,6 +102,8 @@
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasWatchSource:(BOOL)arg1;
 - (void)setHighFrequencyDataSizeMB:(long long)arg1;
+- (void)setLastMonthDatabaseSizeIncreaseMB:(long long)arg1;
+- (void)setLastMonthRowsAdded:(long long)arg1;
 - (void)setManuallyEnteredTypesCount:(long long)arg1;
 - (void)setPercentageDeletedObjects:(long long)arg1;
 - (void)setRowCountCDA:(int)arg1;

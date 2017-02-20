@@ -41,6 +41,7 @@
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (BOOL)hasCKOperationCallbacksSet;
+- (id)init;
 - (id)initWithRecordZoneIDs:(id)arg1 optionsByRecordZoneID:(id)arg2;
 - (id)optionsByRecordZoneID;
 - (id)perItemErrors;

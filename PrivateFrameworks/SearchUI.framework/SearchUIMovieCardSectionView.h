@@ -2,8 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SearchUI.framework/SearchUI
  */
 
-@interface SearchUIMovieCardSectionView : SearchUICardSectionView
+@interface SearchUIMovieCardSectionView : SearchUICardSectionView {
+    SearchUIMovieCardSectionBuyButtonView * _playButton;
+    SearchUIMovieCardSectionBuyButtonView * _watchListButton;
+}
 
+@property (retain) SearchUIMovieCardSectionBuyButtonView *playButton;
+@property (retain) SearchUIMovieCardSectionBuyButtonView *watchListButton;
+
+- (void).cxx_destruct;
 - (id)initWithCardSection:(id)arg1 controller:(id)arg2;
+- (void)lookupWatchListStatusForCardSection:(id)arg1;
+- (id)playButton;
+- (void)setPlayButton:(id)arg1;
+- (void)setWatchListButton:(id)arg1;
+- (void)updateButtonsIsWatchListed:(BOOL)arg1 playables:(id)arg2 continuationText:(id)arg3;
+- (id)watchListButton;
 
 @end

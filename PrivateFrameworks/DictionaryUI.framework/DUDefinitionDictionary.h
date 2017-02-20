@@ -4,6 +4,7 @@
 
 @interface DUDefinitionDictionary : NSObject {
     BOOL  _activated;
+    ASAsset * _assetToUpgrade;
     NSString * _definitionLanguage;
     struct __DCSDictionary { } * _dictionary;
     BOOL  _isAppleDictionary;
@@ -12,7 +13,7 @@
     ASAsset * _rawAsset;
 }
 
-@property BOOL activated;
+@property (nonatomic) BOOL activated;
 @property (readonly) NSString *definitionLanguage;
 @property BOOL isAppleDictionary;
 @property BOOL isTTYDictionary;
@@ -45,6 +46,7 @@
 - (float)progress;
 - (id)rawAsset;
 - (void)setActivated:(BOOL)arg1;
+- (void)setAssetToUpgrade:(id)arg1;
 - (void)setIsAppleDictionary:(BOOL)arg1;
 - (void)setIsTTYDictionary:(BOOL)arg1;
 - (void)setProgress:(float)arg1;

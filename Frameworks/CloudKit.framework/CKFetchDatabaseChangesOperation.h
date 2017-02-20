@@ -37,6 +37,7 @@
 - (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (BOOL)hasCKOperationCallbacksSet;
+- (id)init;
 - (id)initWithPreviousServerChangeToken:(id)arg1;
 - (void)performCKOperation;
 - (id)previousServerChangeToken;

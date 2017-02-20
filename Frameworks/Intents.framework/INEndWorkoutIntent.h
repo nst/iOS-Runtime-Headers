@@ -10,9 +10,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) INSpeakableString *workoutName;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
+- (id)description;
 - (id)initWithWorkoutName:(id)arg1;
 - (void)setWorkoutName:(id)arg1;
 - (id)workoutName;

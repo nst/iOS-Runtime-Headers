@@ -12,6 +12,7 @@
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (id)_csff:(id)arg1;
++ (id)_csfi:(id)arg1;
 + (id)_groupContainerCookieStorages;
 + (id)_groupContainerStoragesLock;
 + (void)_setSharedHTTPCookieStorage:(id)arg1;
@@ -29,6 +30,7 @@
 - (id)_initWithIdentifier:(id)arg1 private:(bool)arg2;
 - (void)_saveCookies;
 - (void)_setPrivateBrowsingEnabled:(BOOL)arg1;
+- (void)_testingOfStoringOfCookie:(id)arg1;
 - (unsigned int)cookieAcceptPolicy;
 - (id)cookieRequestHeaderFieldsForURL:(id)arg1;
 - (id)cookies;
@@ -45,6 +47,12 @@
 - (void)setCookiesFromResponseHeader:(id)arg1 forURL:(id)arg2 policyBaseURL:(id)arg3;
 - (id)sortedCookiesUsingDescriptors:(id)arg1;
 - (void)storeCookies:(id)arg1 forTask:(id)arg2;
+
+// Image: /System/Library/Frameworks/VideoSubscriberAccount.framework/VideoSubscriberAccount
+
++ (id)vs_sharedCookieStorage;
+
+- (void)vs_saveCookies;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 

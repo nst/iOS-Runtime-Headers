@@ -63,7 +63,7 @@
 - (id)_touchGestureRecognizer;
 - (void)checkInTile:(void*)arg1 withIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg2;
 - (void*)checkOutTileForIdentifier:(struct PXTileIdentifier { unsigned int x1; unsigned int x2[10]; })arg1 layout:(id)arg2;
-- (void)commitPreviewViewController:(struct NSObject { Class x1; }*)arg1;
+- (void)commitPreviewViewController:(id)arg1;
 - (BOOL)containsPoint:(struct CGPoint { float x1; float x2; })arg1 forCoordinateSpace:(id)arg2;
 - (id)createTileAnimator;
 - (void)environmentDidUpdateFocusInContext:(id)arg1;

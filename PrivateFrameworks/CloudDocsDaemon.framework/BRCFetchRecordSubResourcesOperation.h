@@ -31,6 +31,7 @@
 - (void)main;
 - (id)recordsByID;
 - (void)removeAllRecords;
+- (void)removeRecordByID:(id)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (void)startWithParentOperation:(struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; }*)arg1;
 - (void)stop;

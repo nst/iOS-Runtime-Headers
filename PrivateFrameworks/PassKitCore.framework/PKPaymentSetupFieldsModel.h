@@ -9,7 +9,6 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
-+ (id)defaultPaymentSetupFields;
 + (id)defaultPaymentSetupProvisioningFields;
 + (id)fakePaymentSetupProvisioningFields;
 

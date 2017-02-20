@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) double lastVisitedTimeInterval;
 @property (nonatomic, readonly) NSString *originalURLString;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) int visitCount;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -35,5 +36,6 @@
 - (float)topSitesScoreForURLStringAtIndex:(unsigned int)arg1 atTime:(double)arg2;
 - (id)userVisibleURLStringAtIndex:(unsigned int)arg1;
 - (id)userVisibleURLStringForPageTitleAtIndex:(unsigned int)arg1;
+- (int)visitCount;
 
 @end

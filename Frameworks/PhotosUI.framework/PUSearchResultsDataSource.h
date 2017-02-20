@@ -11,12 +11,15 @@
     bool  _didMerge;
     BOOL  _ignorePastResults;
     unsigned int  _maxGroupedResultsCount;
+    BOOL  _needsAggdSearchLogging;
     PLPhotoLibrary * _photoLibrary;
     PSIQuery * _query;
     unsigned int  _queryTag;
     NSObject<OS_dispatch_queue> * _queue;
     NSArray * _results;
     PSIDatabase * _searchIndex;
+    unsigned int  _searchResultsCount;
+    double  _searchTime;
     unsigned int  _uncommittedMaxGroupedResultsCount;
     NSArray * _uncommittedResults;
     unsigned int  _unprocessedSearchResultsCount;
@@ -26,7 +29,10 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL needsAggdSearchLogging;
 @property (nonatomic, retain) PSIDatabase *searchIndex;
+@property (nonatomic) unsigned int searchResultsCount;
+@property (nonatomic) double searchTime;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -41,14 +47,21 @@
 - (BOOL)hasPendingChanges;
 - (id)initWithSearchIndex:(id)arg1;
 - (void)mergePendingChanges;
+- (BOOL)needsAggdSearchLogging;
 - (unsigned int)numberOfSearchResults;
+- (void)performAggdSearchLogIfNeeded;
 - (id)searchIndex;
 - (BOOL)searchIsFinished:(id)arg1;
+- (unsigned int)searchResultsCount;
+- (double)searchTime;
 - (void)setChangeObserver:(id)arg1;
+- (void)setNeedsAggdSearchLogging:(BOOL)arg1;
 - (void)setSearchIndex:(id)arg1;
+- (void)setSearchResultsCount:(unsigned int)arg1;
 - (void)setSearchString:(id)arg1;
 - (void)setSearchString:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setSearchString:(id)arg1 withWildcardSearch:(BOOL)arg2 andEarlyNotifyOfResults:(id /* block */)arg3 andCompletion:(id /* block */)arg4;
+- (void)setSearchTime:(double)arg1;
 - (id)valueAtIndex:(unsigned int)arg1;
 
 @end

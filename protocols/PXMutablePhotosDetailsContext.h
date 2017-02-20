@@ -7,11 +7,13 @@
 
 - (PHFetchResult *)assetCollections;
 - (NSDictionary *)assetsByCollection;
+- (PHFetchResult *)keyAssetsFetchResult;
 - (NSString *)localizedSubtitle;
 - (NSString *)localizedTitle;
 - (PHFetchResult *)people;
 - (void)setAssetCollections:(PHFetchResult *)arg1;
 - (void)setAssetsByCollection:(NSDictionary *)arg1;
+- (void)setKeyAssetsFetchResult:(PHFetchResult *)arg1;
 - (void)setLocalizedSubtitle:(NSString *)arg1;
 - (void)setLocalizedTitle:(NSString *)arg1;
 - (void)setPeople:(PHFetchResult *)arg1;

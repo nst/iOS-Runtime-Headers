@@ -161,7 +161,6 @@
 - (float)fakeSync;
 - (id)fetchParentFileIDs;
 - (id)fileID;
-- (BOOL)fixupItemAfterCrossZoneMovedCreationWithLookup:(id)arg1;
 - (void)fixupStagedItemAtStartup;
 - (void)handleUnknownItemError;
 - (BOOL)hasShareIDAndIsOwnedByMe;
@@ -206,7 +205,6 @@
 - (id)logicalName;
 - (void)markBounceFailed;
 - (void)markBounceFinished;
-- (void)markCrossZoneMovedToUncreatedZone:(id)arg1;
 - (void)markDead;
 - (void)markForceNeedsSyncUp;
 - (void)markForceNotify;
@@ -221,6 +219,7 @@
 - (void)markLostWithoutBackoff;
 - (void)markMetadataLive;
 - (void)markNeedsDeleteForRescheduleOfItem:(id)arg1;
+- (void)markNeedsDeleteWhenAlreadyDeadInServerTruth;
 - (void)markNeedsOSUpgradeToSyncUpWithName:(id)arg1;
 - (void)markNeedsUploadOrSyncingUp;
 - (void)markRemovedFromFilesystemForServerEdit:(BOOL)arg1;

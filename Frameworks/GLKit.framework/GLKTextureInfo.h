@@ -8,6 +8,7 @@
     BOOL  containsMipmaps;
     unsigned int  depth;
     unsigned int  height;
+    BOOL  lossyCompressedSource;
     unsigned int  mimapLevelCount;
     unsigned int  name;
     unsigned int  target;
@@ -36,6 +37,7 @@
 - (unsigned int)height;
 - (id)initWithTexture:(id)arg1 textureName:(unsigned int)arg2;
 - (id)initWithTextureTXR:(id)arg1 textureName:(unsigned int)arg2;
+- (BOOL)lossyCompressedSource;
 - (unsigned int)mimapLevelCount;
 - (unsigned int)name;
 - (unsigned int)target;

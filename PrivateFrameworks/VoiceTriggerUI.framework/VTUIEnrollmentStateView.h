@@ -11,6 +11,7 @@
     UILabel * _instructionLabel;
     UILabel * _subtitleLabel;
     UILabel * _titleLabel;
+    BOOL  _usingFallbackImage;
 }
 
 @property (nonatomic, readonly) UIButton *finishEnrollmentButton;

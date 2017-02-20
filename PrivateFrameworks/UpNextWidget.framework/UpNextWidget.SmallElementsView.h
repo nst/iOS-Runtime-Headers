@@ -10,7 +10,7 @@
     void tapAction;
 }
 
-@property (nonatomic) long maximumNumberOfElements;
+@property (nonatomic) int maximumNumberOfElements;
 @property (nonatomic, copy) id /* block */ showUrlHandler;
 
 - (id /* block */).cxx_destruct;
@@ -19,9 +19,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)lastBaselineOffsetFromBottom;
 - (void)layoutSubviews;
-- (long)maximumNumberOfElements;
-- (void)refreshWithEvents:(id)arg1 reminders:(id)arg2;
-- (void)setMaximumNumberOfElements:(long)arg1;
+- (int)maximumNumberOfElements;
+- (void)refresh:(id)arg1 reminders:(id)arg2;
+- (void)setMaximumNumberOfElements:(int)arg1;
 - (void)setShowUrlHandler:(id /* block */)arg1;
 - (id /* block */)showUrlHandler;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

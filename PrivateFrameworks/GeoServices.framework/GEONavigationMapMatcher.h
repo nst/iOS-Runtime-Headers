@@ -28,6 +28,5 @@
 - (void)setRoute:(id)arg1;
 - (int)transportType;
 - (id)updateForReroute:(id)arg1 location:(id)arg2;
-- (void)updateForTunnelProjection:(id)arg1 coord:(struct { double x1; double x2; })arg2;
 
 @end

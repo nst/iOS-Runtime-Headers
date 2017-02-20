@@ -8,6 +8,7 @@
     NWConcrete_nw_endpoint_handler * connected_child;
     NSObject<OS_nw_array> * failed_child_endpoint_handlers;
     bool  failed_to_start_next_child;
+    int  last_resolver_status;
     unsigned int  next_child_endpoint_index;
     NSObject<OS_nw_array> * ready_child_endpoint_handlers;
     NSObject<OS_nw_resolver> * resolver;

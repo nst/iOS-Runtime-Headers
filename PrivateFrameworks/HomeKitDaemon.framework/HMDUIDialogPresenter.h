@@ -46,7 +46,7 @@
 - (struct __CFUserNotification { }*)currentNotification;
 - (void)dismissPendingDialogDueToPeerDeviceSelection:(BOOL)arg1 context:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)dismissPendingDialogWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)displayExecutionErrorOfTrigger:(id)arg1 context:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)displayExecutionErrorOfTrigger:(id)arg1 partialSuccess:(BOOL)arg2 context:(id)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)displayInternalErrorWithContext:(id)arg1 message:(id)arg2;
 - (void)displayKeychainSyncForHome:(id)arg1 withContext:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)displayUpgradeNeededWithContext:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;

@@ -19,6 +19,7 @@
 - (void)dispatchBlockWithoutBoost:(id /* block */)arg1;
 - (id)dumpAnalysisStatusError:(id*)arg1;
 - (id)faceClusteringInformation:(unsigned int)arg1 error:(id*)arg2;
+- (void)faceProcessingStatusForUserInterface:(id /* block */)arg1;
 - (void)generateMemoriesRelatedDiagnosticsLogsWithReply:(id /* block */)arg1;
 - (void)generateMemoriesWithOptions:(id)arg1 reply:(id /* block */)arg2;
 - (id)init;
@@ -72,6 +73,7 @@
 - (id)requestSortedArrayOfFaceCollectionIdentifiers:(id)arg1 withError:(id*)arg2;
 - (BOOL)requestTitleForAssetCollectionWithLocalIdentifier:(id)arg1 format:(int)arg2 title:(id*)arg3 subtitle:(id*)arg4 error:(id*)arg5;
 - (BOOL)requestTitleForCollectionMomentListWithLocalIdentifier:(id)arg1 format:(int)arg2 title:(id*)arg3 subtitle:(id*)arg4 error:(id*)arg5;
+- (BOOL)requestTitleForMemoryWithLocalIdentifier:(id)arg1 title:(id*)arg2 subtitle:(id*)arg3 error:(id*)arg4;
 - (BOOL)requestTitleForPersonIdentifiers:(id)arg1 format:(int)arg2 title:(id*)arg3 subtitle:(id*)arg4 error:(id*)arg5;
 - (id)requestWriteAdditionalDataToSnapshotResults:(id)arg1 forFilenameKey:(id)arg2 error:(id*)arg3;
 - (BOOL)resetFaceClusteringState:(id*)arg1;
@@ -83,7 +85,7 @@
 - (void)setJobProcessingConstraintsWithValues:(id)arg1 mask:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setupXpcConnection;
 - (id)suggestedFacesForFacesWithLocalIdentifiers:(id)arg1 error:(id*)arg2;
-- (int)suggestedFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 completion:(id /* block */)arg4;
+- (int)suggestedFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceSuggestions:(id)arg2 toBeRejectedFaceSuggestions:(id)arg3 completion:(id /* block */)arg4;
 - (id)suggestedPersonLocalIdentifierForFaceWithLocalIdentifier:(id)arg1 error:(id*)arg2;
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)xpcConnection;

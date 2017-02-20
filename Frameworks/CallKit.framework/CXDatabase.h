@@ -24,7 +24,9 @@
 - (BOOL)enableForeignKeysWithError:(id*)arg1;
 - (BOOL)executeSQL:(id)arg1 error:(id*)arg2;
 - (BOOL)executeSQL:(id)arg1 withBindings:(id)arg2 error:(id*)arg3;
+- (BOOL)executeSQL:(id)arg1 withBindings:(id)arg2 transient:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)executeSQL:(id)arg1 withStatementPreparationBlock:(id /* block */)arg2 error:(id*)arg3;
+- (BOOL)executeSQL:(id)arg1 withStatementPreparationBlock:(id /* block */)arg2 transient:(BOOL)arg3 error:(id*)arg4;
 - (id)init;
 - (id)initWithURL:(id)arg1 readOnly:(BOOL)arg2 error:(id*)arg3;
 - (long long)lastInsertedRowID;

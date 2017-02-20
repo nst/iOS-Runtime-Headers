@@ -16,7 +16,9 @@
         int location; 
         int length; 
     }  _initialRange;
-    int  _lock;
+    struct os_unfair_lock_s { 
+        unsigned int _os_unfair_lock_opaque; 
+    }  _lock;
     BOOL  _moving;
     UIPDFPageView * _pageView;
     struct CGPoint { 

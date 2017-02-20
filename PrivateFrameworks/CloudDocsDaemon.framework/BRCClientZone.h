@@ -102,6 +102,7 @@
 - (void)_appendToString:(id)arg1 descriptionOfFieldNamed:(id)arg2 inResultSet:(id)arg3 pos:(int*)arg4 containsSize:(BOOL)arg5 context:(id)arg6;
 - (id)_cancelAllOperationsForReset;
 - (void)_createCloudKitZoneWithCompletion:(id /* block */)arg1;
+- (BOOL)_crossZoneMoveDocumentsToZone:(id)arg1;
 - (void)_decreaseSyncUpBatchSizeAfterError;
 - (BOOL)_dumpItemsToContext:(id)arg1 error:(id*)arg2;
 - (void)_dumpRecursivePropertiesOfItemByRowID:(unsigned long long)arg1 context:(id)arg2 depth:(int)arg3;
@@ -162,8 +163,8 @@
 - (void)didClearOutOfQuota;
 - (void)didGCTombstoneRanks:(id)arg1;
 - (void)didSyncDownRequestID:(unsigned long long)arg1 maxApplyRank:(long long)arg2 caughtUpWithServer:(BOOL)arg3 syncDownDate:(id)arg4;
-- (id)directoryItemIDByFileID:(unsigned long long)arg1;
-- (id)directoryItemIDByFileID:(unsigned long long)arg1 db:(id)arg2;
+- (id)directoryOrRootItemIDByFileID:(unsigned long long)arg1;
+- (id)directoryOrRootItemIDByFileID:(unsigned long long)arg1 db:(id)arg2;
 - (void)disconnectNSMDQListenerAsync;
 - (id)documentItemByItemID:(id)arg1;
 - (id)documentItemByItemID:(id)arg1 db:(id)arg2;
@@ -174,6 +175,7 @@
 - (BOOL)existsByItemID:(id)arg1;
 - (BOOL)existsByItemID:(id)arg1 db:(id)arg2;
 - (struct PQLResultSet { Class x1; }*)faultsEnumerator;
+- (void)flushAppliedTombstones;
 - (void)handleRootRecordDeletion;
 - (BOOL)handleZoneLevelErrorIfNeeded:(id)arg1;
 - (BOOL)hasCompletedInitialSyncDownOnce;

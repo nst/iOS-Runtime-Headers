@@ -10,6 +10,7 @@
     BOOL  _didPrepareDataSource;
     PXPeoplePersonDataSource * _favoriteDS;
     NSMutableDictionary * _fetchedContainers;
+    NSObject<OS_dispatch_queue> * _fetchedContainersIsolationQueue;
     NSMutableArray * _imageCache;
     struct CGSize { 
         float width; 

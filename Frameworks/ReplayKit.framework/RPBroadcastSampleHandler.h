@@ -25,6 +25,7 @@
 - (void)broadcastStartedWithSetupInfo:(id)arg1;
 - (id)connection;
 - (id)daemonProxy;
+- (void)finishBroadcastWithError:(id)arg1;
 - (void)processPayload:(id)arg1 completion:(id /* block */)arg2;
 - (void)processSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 withType:(int)arg2;
 - (void)setConnection:(id)arg1;

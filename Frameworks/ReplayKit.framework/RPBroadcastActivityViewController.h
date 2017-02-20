@@ -15,6 +15,7 @@
 @property (nonatomic, retain) UIPopoverPresentationController *popoverPresentationControllerProxy;
 
 + (void)loadBroadcastActivityViewControllerWithHandler:(id /* block */)arg1;
++ (void)loadBroadcastActivityViewControllerWithHandler:(id /* block */)arg1 broadcastActivitiesNotInstalledAlertTitle:(id)arg2 broadcastActivitiesNotInstalledAlertMessage:(id)arg3;
 + (void)viewControllerForExtension:(id)arg1 inputItems:(id)arg2 completionHandler:(id /* block */)arg3;
 
 - (void).cxx_destruct;

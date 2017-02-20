@@ -4,13 +4,7 @@
 
 @interface GKNoise : NSObject {
     NSDictionary * _gradientColors;
-    struct vector<noise::module::Module *, std::__1::allocator<noise::module::Module *> > { 
-        struct Module {} **__begin_; 
-        struct Module {} **__end_; 
-        struct __compressed_pair<noise::module::Module **, std::__1::allocator<noise::module::Module *> > { 
-            struct Module {} **__first_; 
-        } __end_cap_; 
-    }  _modules;
+    NSMutableArray * _modules;
 }
 
 @property (nonatomic, copy) NSDictionary *gradientColors;
@@ -20,19 +14,18 @@
 + (id)noiseWithNoiseSource:(id)arg1;
 + (id)noiseWithNoiseSource:(id)arg1 gradientColors:(id)arg2;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)__blendWithNoise:(id)arg1 selectionNoise:(id)arg2 selectionRangeLowerBound:(double)arg3 selectionRangeUpperBound:(double)arg4 selectionBoundaryBlendDistance:(double)arg5;
-- (struct vector<noise::module::Module *, std::__1::allocator<noise::module::Module *> > { struct Module {} **x1; struct Module {} **x2; struct __compressed_pair<noise::module::Module **, std::__1::allocator<noise::module::Module *> > { struct Module {} **x_3_1_1; } x3; }*)__modules;
+- (id)__modules;
 - (void)addWithNoise:(id)arg1;
 - (void)applyAbsoluteValue;
 - (void)applyTurbulenceWithFrequency:(double)arg1 power:(double)arg2 roughness:(int)arg3 seed:(int)arg4;
-- (void)cacheBinaryModule:(struct Module { int (**x1)(); struct Module {} **x2; }*)arg1 rhsNoise:(id)arg2;
-- (void)cacheQuaternaryModule:(struct Module { int (**x1)(); struct Module {} **x2; }*)arg1 xDisplacementNoise:(id)arg2 yDisplacementNoise:(id)arg3 zDisplacementNoise:(id)arg4;
-- (void)cacheTernaryModule:(struct Module { int (**x1)(); struct Module {} **x2; }*)arg1 rhsNoise:(id)arg2 selectionNoise:(id)arg3;
-- (void)cacheUnaryModule:(struct Module { int (**x1)(); struct Module {} **x2; }*)arg1;
+- (void)cacheBinaryModule:(id)arg1 rhsNoise:(id)arg2;
+- (void)cacheQuaternaryModule:(id)arg1 xDisplacementNoise:(id)arg2 yDisplacementNoise:(id)arg3 zDisplacementNoise:(id)arg4;
+- (void)cacheTernaryModule:(id)arg1 rhsNoise:(id)arg2 selectionNoise:(id)arg3;
+- (void)cacheUnaryModule:(id)arg1;
 - (void)clampWithLowerBound:(double)arg1 upperBound:(double)arg2;
-- (const struct Module { int (**x1)(); struct Module {} **x2; }*)cloneRecursive:(const struct Module { int (**x1)(); struct Module {} **x2; }*)arg1;
+- (id)cloneRecursive:(id)arg1;
 - (void)dealloc;
 - (void)displaceXWithNoise:(id)arg1 yWithNoise:(id)arg2 zWithNoise:(id)arg3;
 - (id)gradientColors;

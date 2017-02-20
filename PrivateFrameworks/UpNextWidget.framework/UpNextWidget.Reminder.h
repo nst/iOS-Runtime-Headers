@@ -11,8 +11,8 @@
     void title;
 }
 
-@property (nonatomic, retain) NSDate *dueDate;
-@property (nonatomic, retain) NSURL *externalURL;
+@property (nonatomic, copy) NSDate *dueDate;
+@property (nonatomic, copy) NSURL *externalURL;
 @property (nonatomic, retain) struct CGColor { }*listColor;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *notes;

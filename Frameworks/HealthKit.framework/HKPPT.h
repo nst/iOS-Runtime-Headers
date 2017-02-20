@@ -22,7 +22,7 @@
 - (id)initWithHKPPTInterface:(id)arg1 usingQueue:(id)arg2;
 - (BOOL)performDateRangeQueryPPTTest:(id)arg1;
 - (BOOL)performJournalMergePPTTest:(id)arg1 healthDirectory:(id)arg2;
-- (BOOL)performLatestSummaryQueryPPTTest:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 types:(id)arg4;
+- (BOOL)performLatestSummaryQueryPPTTest:(id)arg1 date:(id)arg2;
 - (BOOL)performPPTTest:(id)arg1 anchoredQueryForType:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 withLimit:(int)arg5 anchor:(int)arg6;
 - (BOOL)performPPTTest:(id)arg1 collectionQueryForType:(id)arg2 anchorDate:(id)arg3 startDate:(id)arg4 endDate:(id)arg5 dateIntervalsString:(id)arg6 separateBySource:(BOOL)arg7 average:(BOOL)arg8 minimum:(BOOL)arg9 maximum:(BOOL)arg10 sum:(BOOL)arg11;
 - (BOOL)performPPTTest:(id)arg1 enumerateLocationSeriesWithDatumCount:(int)arg2;

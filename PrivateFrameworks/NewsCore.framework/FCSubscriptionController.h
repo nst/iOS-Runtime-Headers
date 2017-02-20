@@ -3,6 +3,7 @@
  */
 
 @interface FCSubscriptionController : NSObject <FCSubscriptionListObserving> {
+    FCAppConfiguration * _appConfiguration;
     FCThreadSafeMutableSet * _newlyAddedSubscriptions;
     FCNotificationController * _notificationController;
     long long  _notificationEnabledChannelsRefreshFrequency;
@@ -13,6 +14,7 @@
     FCTagController * _tagController;
 }
 
+@property (nonatomic, retain) FCAppConfiguration *appConfiguration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -41,6 +43,7 @@
 - (void)addPendingSubscription:(id)arg1;
 - (BOOL)addSubscriptionToTag:(id)arg1 error:(id*)arg2;
 - (BOOL)addSubscriptionToTag:(id)arg1 notificationsEnabled:(BOOL)arg2 error:(id*)arg3;
+- (id)appConfiguration;
 - (BOOL)canAddSubscription;
 - (void)fetchSubscribedTagsWithCallbackQueue:(id)arg1 preferCache:(BOOL)arg2 completion:(id /* block */)arg3;
 - (BOOL)hasNotificationsEnabledForTag:(id)arg1;
@@ -61,6 +64,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)removePendingSubscription:(id)arg1;
 - (void)removeSubscriptionToTag:(id)arg1;
+- (void)setAppConfiguration:(id)arg1;
 - (void)setNewlyAddedSubscriptions:(id)arg1;
 - (void)setNotificationController:(id)arg1;
 - (void)setNotificationEnabledChannelsRefreshFrequency:(long long)arg1;

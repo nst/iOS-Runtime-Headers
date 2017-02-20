@@ -5,10 +5,12 @@
 
 @required
 
+- (void)beginRewriteForCalculationEngine:(TSCECalculationEngine *)arg1 spec:(TSCEFormulaRewriteSpec *)arg2;
 - (void)invalidateForCalculationEngine:(TSCECalculationEngine *)arg1;
 - (struct { BOOL x1; BOOL x2; BOOL x3; })recalculateForCalculationEngine:(TSCECalculationEngine *)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 isInCycle:(BOOL)arg3 hasCalculatedPrecedents:(BOOL)arg4;
 - (void)releaseForCalculationEngine:(TSCECalculationEngine *)arg1;
 - (void)retainForCalculationEngine:(TSCECalculationEngine *)arg1;
+- (void)rewriteForCalculationEngine:(TSCECalculationEngine *)arg1 formulaID:(struct { unsigned int x1 : 24; unsigned int x2 : 8; })arg2 rewriteSpec:(TSCEFormulaRewriteSpec *)arg3;
 - (void)writeResultsForCalculationEngine:(TSCECalculationEngine *)arg1;
 
 @end

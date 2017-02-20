@@ -3,12 +3,12 @@
  */
 
 @interface _DPOBHSequenceRecord : _DPOBHRecord {
-    NSString * _sequence;
+    NSString * _plainSequence;
     long long  _sequenceBitPosition;
     BOOL  _sequenceBitValue;
 }
 
-@property (nonatomic, retain) NSString *sequence;
+@property (nonatomic, retain) NSString *plainSequence;
 @property (nonatomic) long long sequenceBitPosition;
 @property (nonatomic) BOOL sequenceBitValue;
 
@@ -21,10 +21,10 @@
 - (id)description;
 - (id)initWithKey:(id)arg1 sequence:(id)arg2 bitPosition:(long long)arg3 bitValue:(BOOL)arg4 creationDate:(double)arg5 submitted:(BOOL)arg6 objectId:(id)arg7;
 - (id)jsonString;
-- (id)sequence;
+- (id)plainSequence;
 - (long long)sequenceBitPosition;
 - (BOOL)sequenceBitValue;
-- (void)setSequence:(id)arg1;
+- (void)setPlainSequence:(id)arg1;
 - (void)setSequenceBitPosition:(long long)arg1;
 - (void)setSequenceBitValue:(BOOL)arg1;
 

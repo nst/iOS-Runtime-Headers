@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@interface NTKCharacterFace : NTKFace
+@interface NTKCharacterFace : NTKFace {
+    NSMutableDictionary * _previousCharacterColors;
+}
 
 + (id)_complicationSlotDescriptors;
 + (int)_customEditModeForUniqueConfiguration;
@@ -11,6 +13,7 @@
 + (id)_defaultSelectedComplicationSlot;
 + (id)_localizedNameOverrideForCustomEditMode:(int)arg1;
 
+- (void).cxx_destruct;
 - (id)_defaultName;
 - (int)_editModeForOldEncodingIndex:(int)arg1;
 - (id)_faceDescriptionKey;

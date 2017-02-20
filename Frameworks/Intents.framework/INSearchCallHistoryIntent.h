@@ -13,12 +13,14 @@
 @property (nonatomic, readonly, copy) INPerson *recipient;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (unsigned int)callCapabilities;
 - (int)callType;
 - (id)dateCreated;
+- (id)description;
 - (id)initWithCallType:(int)arg1 dateCreated:(id)arg2 recipient:(id)arg3 callCapabilities:(unsigned int)arg4;
 - (id)recipient;
 - (void)setCallCapabilities:(unsigned int)arg1;

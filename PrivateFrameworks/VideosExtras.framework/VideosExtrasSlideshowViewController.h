@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VideosExtras.framework/VideosExtras
  */
 
-@interface VideosExtrasSlideshowViewController : UIViewController <VideosExtrasZoomingImageTransitionParticipant> {
+@interface VideosExtrasSlideshowViewController : UIViewController <CAAnimationDelegate, VideosExtrasZoomingImageTransitionParticipant> {
     BOOL  _animatingTransition;
     <VideosExtrasSlideshowViewControllerDataSource> * _dataSource;
     VideosExtrasConstrainedArtworkContainerView * _disappearingImageContainerView;

@@ -6,6 +6,7 @@
     UIButton * _cancelButton;
     NSLayoutConstraint * _cancelButtonTrailingConstraint;
     <SPUISearchHeaderDelegate> * _delegate;
+    BOOL  _isShowingCornerRadius;
     _UILegibilitySettings * _legibilitySettings;
     SPUITextField * _searchField;
     NSLayoutConstraint * _searchFieldTrailingConstraint;
@@ -22,6 +23,7 @@
 @property <SPUISearchHeaderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isShowingCornerRadius;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (retain) SPUITextField *searchField;
 @property (retain) NSLayoutConstraint *searchFieldTrailingConstraint;
@@ -47,6 +49,7 @@
 - (void)focusSearchField;
 - (id)init;
 - (BOOL)isOnDarkBackground;
+- (BOOL)isShowingCornerRadius;
 - (id)legibilitySettings;
 - (void)linkWithKeyboardController:(id)arg1;
 - (id)nextResponder;
@@ -56,7 +59,9 @@
 - (void)setCancelButton:(id)arg1;
 - (void)setCancelButtonTrailingConstraint:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsShowingCornerRadius:(BOOL)arg1;
 - (void)setLegibilitySettings:(id)arg1;
+- (void)setRoundedCornerVisible:(BOOL)arg1;
 - (void)setSearchField:(id)arg1;
 - (void)setSearchFieldTrailingConstraint:(id)arg1;
 - (void)setSuggestionID:(unsigned int)arg1;

@@ -4,9 +4,8 @@
 
 @interface _HKLatestSummariesQuery : HKQuery {
     NSCalendar * _calendar;
-    NSDate * _endDate;
     id /* block */  _resultsHandler;
-    NSDate * _startDate;
+    NSDate * _summaryDate;
     NSSet * _typeFilters;
     id /* block */  _updateHandler;
 }
@@ -29,7 +28,6 @@
 - (void)deliverSummaries:(id)arg1 forQuery:(id)arg2;
 - (void)deliverUpdatedSummaries:(id)arg1 forQuery:(id)arg2;
 - (id)initWithDate:(id)arg1 calendar:(id)arg2 resultsHandler:(id /* block */)arg3;
-- (id)initWithSearchStartDate:(id)arg1 searchEndDate:(id)arg2 calendar:(id)arg3 typeFilters:(id)arg4 resultsHandler:(id /* block */)arg5;
 - (id /* block */)resultsHandler;
 - (void)setUpdateHandler:(id /* block */)arg1;
 - (id /* block */)updateHandler;

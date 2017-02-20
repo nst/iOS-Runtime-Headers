@@ -26,6 +26,7 @@
     BOOL  _isPath;
     BOOL  _isRepeatable;
     BOOL  _isRotated;
+    BOOL  _needsExtrusionWorkaround;
     NSString * _originalAtlasName;
     SKTexture * _originalTexture;
     BOOL  _performFullCapture;
@@ -68,6 +69,7 @@
 @property (nonatomic) BOOL isFlipped;
 @property (nonatomic, readonly) BOOL isRepeatable;
 @property (nonatomic) BOOL isRotated;
+@property (getter=_needsExtrusionWorkaround, nonatomic) BOOL needsExtrusionWorkaround;
 @property (nonatomic, copy) NSString *originalAtlasName;
 @property BOOL performFullCapture;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } pixelSize;
@@ -113,6 +115,7 @@
 - (void)_ensureImageData;
 - (id)_generateNormalMap:(float)arg1 contrast:(float)arg2 multiPass:(unsigned long)arg3;
 - (id)_initWithGLTextureId:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (BOOL)_needsExtrusionWorkaround;
 - (struct CGImage { }*)_newTextureFromGLCache;
 - (void)_savePngFromGLCache:(id)arg1;
 - (void)_setImageName:(id)arg1;
@@ -156,6 +159,7 @@
 - (void)setFilteringMode:(int)arg1;
 - (void)setIsFlipped:(BOOL)arg1;
 - (void)setIsRotated:(BOOL)arg1;
+- (void)setNeedsExtrusionWorkaround:(BOOL)arg1;
 - (void)setOriginalAtlasName:(id)arg1;
 - (void)setPerformFullCapture:(BOOL)arg1;
 - (void)setRootAtlas:(id)arg1;

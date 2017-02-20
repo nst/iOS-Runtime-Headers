@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSArray *highlightGroups;
 @property (nonatomic, retain) NSArray *interstitials;
 @property (nonatomic) BOOL isExplicit;
+@property (nonatomic, retain) NSDictionary *metadata;
 @property (nonatomic, retain) NSNumber *resumeTime;
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) NSString *title;
@@ -39,6 +40,7 @@
 - (void)loadCertificateDataForURI:(id)arg1 withCallback:(id /* block */)arg2;
 - (void)loadContentIdentifierDataForURI:(id)arg1 withCallback:(id /* block */)arg2;
 - (void)loadKeyDataForURI:(id)arg1 requestData:(id)arg2 withCallback:(id /* block */)arg3;
+- (id)metadata;
 - (id)ratingBadge;
 - (id)resumeTime;
 - (void)setArtworkImageURL:(id)arg1;
@@ -51,6 +53,7 @@
 - (void)setHighlightGroups:(id)arg1;
 - (void)setInterstitials:(id)arg1;
 - (void)setIsExplicit:(BOOL)arg1;
+- (void)setMetadata:(id)arg1;
 - (void)setRatingBadge:(id)arg1;
 - (void)setResumeTime:(id)arg1;
 - (void)setSubtitle:(id)arg1;

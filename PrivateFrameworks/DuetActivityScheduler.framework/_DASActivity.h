@@ -90,8 +90,8 @@
 @property (nonatomic) BOOL requiresPlugin;
 @property (nonatomic, retain) NSArray *schedulerRecommendedApplications;
 @property (nonatomic) unsigned int schedulingPriority;
-@property (nonatomic, retain) NSDate *startAfter;
-@property (nonatomic, retain) NSDate *startBefore;
+@property (retain) NSDate *startAfter;
+@property (retain) NSDate *startBefore;
 @property (retain) NSDate *startDate;
 @property (nonatomic, copy) id /* block */ startHandler;
 @property (nonatomic, retain) NSDate *submitDate;

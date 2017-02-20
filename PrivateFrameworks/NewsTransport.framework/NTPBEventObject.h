@@ -15,6 +15,7 @@
     NTPBComscoreEventSend * _comscoreEventSend;
     NTPBCoverArticleWidgetExposure * _coverArticleWidgetExposure;
     NTPBCoverArticleWidgetView * _coverArticleWidgetView;
+    NTPBDiscoverMoreInterstitialExposure * _discoverMoreInterstitialExposure;
     NTPBEmailOptInInvite * _emailOptInInvite;
     NTPBEndOfArticleExposure * _endOfArticleExposure;
     NTPBFeedCellExposure * _feedCellExposure;
@@ -72,6 +73,7 @@
 @property (nonatomic, retain) NTPBComscoreEventSend *comscoreEventSend;
 @property (nonatomic, retain) NTPBCoverArticleWidgetExposure *coverArticleWidgetExposure;
 @property (nonatomic, retain) NTPBCoverArticleWidgetView *coverArticleWidgetView;
+@property (nonatomic, retain) NTPBDiscoverMoreInterstitialExposure *discoverMoreInterstitialExposure;
 @property (nonatomic, retain) NTPBEmailOptInInvite *emailOptInInvite;
 @property (nonatomic, retain) NTPBEndOfArticleExposure *endOfArticleExposure;
 @property (nonatomic, retain) NTPBFeedCellExposure *feedCellExposure;
@@ -92,6 +94,7 @@
 @property (nonatomic, readonly) BOOL hasComscoreEventSend;
 @property (nonatomic, readonly) BOOL hasCoverArticleWidgetExposure;
 @property (nonatomic, readonly) BOOL hasCoverArticleWidgetView;
+@property (nonatomic, readonly) BOOL hasDiscoverMoreInterstitialExposure;
 @property (nonatomic, readonly) BOOL hasEmailOptInInvite;
 @property (nonatomic, readonly) BOOL hasEndOfArticleExposure;
 @property (nonatomic, readonly) BOOL hasFeedCellExposure;
@@ -187,6 +190,7 @@
 - (id)coverArticleWidgetView;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)discoverMoreInterstitialExposure;
 - (id)emailOptInInvite;
 - (id)endOfArticleExposure;
 - (id)feedCellExposure;
@@ -207,6 +211,7 @@
 - (BOOL)hasComscoreEventSend;
 - (BOOL)hasCoverArticleWidgetExposure;
 - (BOOL)hasCoverArticleWidgetView;
+- (BOOL)hasDiscoverMoreInterstitialExposure;
 - (BOOL)hasEmailOptInInvite;
 - (BOOL)hasEndOfArticleExposure;
 - (BOOL)hasFeedCellExposure;
@@ -290,6 +295,7 @@
 - (void)setComscoreEventSend:(id)arg1;
 - (void)setCoverArticleWidgetExposure:(id)arg1;
 - (void)setCoverArticleWidgetView:(id)arg1;
+- (void)setDiscoverMoreInterstitialExposure:(id)arg1;
 - (void)setEmailOptInInvite:(id)arg1;
 - (void)setEndOfArticleExposure:(id)arg1;
 - (void)setFeedCellExposure:(id)arg1;

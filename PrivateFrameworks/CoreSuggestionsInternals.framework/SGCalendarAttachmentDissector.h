@@ -2,11 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGCalendarAttachmentDissector : SGPipelineDissector
+@interface SGCalendarAttachmentDissector : SGPipelineDissector {
+    SGAccountsAdapter * _accountsAdapter;
+    SGMEventICSOpportunity * _icsOpportunityTracker;
+}
 
+- (void).cxx_destruct;
+- (struct SGMEventICSSourceType_ { unsigned int x1; })accountTypeFor:(id)arg1;
 - (BOOL)array:(id)arg1 hasIntersectionWith:(id)arg2;
 - (void)dissectInternal:(id)arg1 inContext:(id)arg2;
 - (id)downloadedCalendarAttachmentsFrom:(id)arg1;
+- (BOOL)hasCalendarAccountForOneOf:(id)arg1;
+- (id)init;
 - (BOOL)shouldIgnoreEntity:(id)arg1;
 
 @end

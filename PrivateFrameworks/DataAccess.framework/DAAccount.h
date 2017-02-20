@@ -67,6 +67,8 @@
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic) BOOL wasUserInitiated;
 
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
+
 + (id)_leafAccountTypes;
 + (id)daAccountSubclassWithBackingAccountInfo:(id)arg1;
 + (id)oneshotListOfAccountIDs;
@@ -285,5 +287,19 @@
 - (id)usernameWithoutDomain;
 - (BOOL)wasUserInitiated;
 - (void)webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id /* block */)arg3;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DABookmarkDAV.framework/DABookmarkDAV
+
+- (BOOL)isBookmarkDAVAccount;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DACardDAV.framework/DACardDAV
+
+- (BOOL)isCardDAVAccount;
+
+// Image: /System/Library/PrivateFrameworks/DataAccess.framework/Frameworks/DADaemonSupport.framework/DADaemonSupport
+
+- (Class)agentClass;
+- (void)deviceDidWake;
+- (void)deviceWillSleep;
 
 @end

@@ -38,6 +38,7 @@
 - (void)_auditURL:(id)arg1;
 - (id)_auditedURLFromPath:(id)arg1;
 - (BOOL)_canCreateAppLibraryWithID:(id)arg1 error:(id*)arg2;
+- (id)_createBookmarkWithTarget:(id)arg1 targetPath:(id)arg2 parentPath:(id)arg3 aliasName:(id)arg4 error:(id*)arg5;
 - (BOOL)_entitlementBooleanValueForKey:(id)arg1;
 - (id)_entitlementValueForKey:(id)arg1 ofClass:(Class)arg2;
 - (BOOL)_hasAccessToAppLibraryID:(id)arg1 error:(id*)arg2;

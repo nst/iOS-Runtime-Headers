@@ -47,6 +47,6 @@
 
 // Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
 
-- (id)languageOfRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)languageOfRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withPreferredLanguages:(id)arg2;
 
 @end

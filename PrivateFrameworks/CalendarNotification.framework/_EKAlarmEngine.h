@@ -11,8 +11,6 @@
     int  _lastDBSequence;
     CLLocationManager * _locationManager;
     NSMutableDictionary * _monitoredRegions;
-    BOOL  _monitoringForConnections;
-    BOOL  _monitoringForDisconnections;
     BOOL  _needsAlarmTablePopulation;
     NSDate * _nextFireDate;
     BOOL  _pendingChanges;
@@ -22,7 +20,6 @@
     RTRoutineManager * _routineManager;
     BOOL  _shouldUpdateWithForceForAlarmTable;
     BOOL  _shouldUpdateWithForceForFences;
-    BOOL  _shouldUpdateWithForceForVehicleTriggers;
     NSTimer * _syncTimer;
     EKTimedEventStorePurger * _timedEventStorePurger;
     NSDate * _tomorrow;
@@ -43,7 +40,6 @@
 
 - (void).cxx_destruct;
 - (void)_adjustFences:(id)arg1;
-- (void)_adjustVehicleTriggersWithEventStore:(id)arg1;
 - (id)_alertInfoAlarmIDFromEKAlarm:(id)arg1;
 - (id)_alertInfoAlarmIDFromSideAlarm:(id)arg1;
 - (BOOL)_allowConservativeEntry;
@@ -61,7 +57,7 @@
 - (void)_killSyncTimer;
 - (void)_killTimer;
 - (void)_locationDaemonDidLaunch;
-- (void)_motionUpdatedWithConnectionState:(int)arg1 activity:(id)arg2;
+- (void)_motionUpdatedWithConnectionState:(int)arg1;
 - (void)_notifyAlarmsFired:(id)arg1;
 - (BOOL)_populateAlarmTable:(id)arg1;
 - (void)_populateFinished;
@@ -86,7 +82,7 @@
 - (void)_timeZoneChanged:(id)arg1;
 - (void)_timerFired;
 - (void)_updateRegionMonitoringForRegion:(id)arg1 withLocationOfInterest:(id)arg2 forLocation:(struct CLLocationCoordinate2D { double x1; double x2; })arg3;
-- (void)_updateWithForceForAlarmTable:(BOOL)arg1 forFences:(BOOL)arg2 forVehicleTriggers:(BOOL)arg3;
+- (void)_updateWithForceForAlarmTable:(BOOL)arg1 forFences:(BOOL)arg2;
 - (void)_vehicleTriggerFired:(BOOL)arg1;
 - (void)dealloc;
 - (void)handleBTAJob:(id)arg1 named:(const char *)arg2;

@@ -16,7 +16,6 @@
     <CNSchedulerProvider> * _schedulerProvider;
     NSArray * _supportedActionTypes;
     NSArray * _tokens;
-    BOOL  _trackingChanges;
     int  _viewStyle;
     <CNUIObjectViewControllerDelegate> * objectViewControllerDelegate;
 }
@@ -40,7 +39,6 @@
 @property (nonatomic, copy) NSArray *supportedActionTypes;
 @property (nonatomic, readonly) double throttleDelay;
 @property (nonatomic, copy) NSArray *tokens;
-@property (nonatomic) BOOL trackingChanges;
 @property (nonatomic, readonly) UIView *view;
 @property (nonatomic) int viewStyle;
 
@@ -87,13 +85,11 @@
 - (void)setSchedulerProvider:(id)arg1;
 - (void)setSupportedActionTypes:(id)arg1;
 - (void)setTokens:(id)arg1;
-- (void)setTrackingChanges:(BOOL)arg1;
 - (void)setViewStyle:(int)arg1;
 - (void)showDisambiguationFromSourceView:(id)arg1 actionType:(id)arg2;
 - (id)supportedActionTypes;
 - (double)throttleDelay;
 - (id)tokens;
-- (BOOL)trackingChanges;
 - (void)viewDidLoad;
 - (int)viewStyle;
 

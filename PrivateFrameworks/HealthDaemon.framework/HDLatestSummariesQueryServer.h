@@ -7,11 +7,10 @@
     BOOL  _deliversUpdates;
     NSDate * _endDate;
     BOOL  _initialResultsDelivered;
-    BOOL  _singleDay;
+    _HKFilter * _nonSleepStartEndFilter;
     _HKFilter * _sleepStartEndFilter;
     NSDate * _startDate;
     HDListByTypeStatisticsBuilder * _statisticsBuilder;
-    NSSet * _typeFilters;
 }
 
 - (void).cxx_destruct;

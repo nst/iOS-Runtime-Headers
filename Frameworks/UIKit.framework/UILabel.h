@@ -33,6 +33,7 @@
     int  _measuredNumberOfLines;
     float  _minimumFontSize;
     float  _minimumScaleFactor;
+    float  _multilineContextWidth;
     int  _numberOfLines;
     float  _preferredMaxLayoutWidth;
     float  _previousBaselineOffsetFromBottom;
@@ -164,6 +165,7 @@
 - (void)_evaluateContentsFormat;
 - (id)_fallbackTextColorForUserInterfaceStyle:(int)arg1;
 - (float)_firstBaselineOffsetFromTop;
+- (float)_firstLineBaseline;
 - (float)_firstLineBaselineFrameOriginY;
 - (float)_firstLineBaselineOffsetFromBoundsTop;
 - (float)_firstLineCapFrameOriginY;
@@ -182,6 +184,7 @@
 - (float)_maximumMarqueeTextWidth;
 - (int)_measuredNumberOfLines;
 - (float)_minimumFontSize;
+- (float)_multilineContextWidth;
 - (BOOL)_needsDoubleUpdateConstraintsPass;
 - (void)_noteInstanceCustomizationForAttributedString:(id)arg1 attributes:(id)arg2;
 - (float)_preferredMaxLayoutWidth;
@@ -203,6 +206,7 @@
 - (void)_setLastLineBaselineFrameOriginY:(float)arg1;
 - (void)_setLineBreakMode:(int)arg1;
 - (void)_setMinimumFontSize:(float)arg1;
+- (void)_setMultilineContextWidth:(float)arg1;
 - (void)_setNeedsDisplayForInvalidatedContents;
 - (void)_setNeedsUpdateConstraintsNeedingLayout:(BOOL)arg1;
 - (void)_setShadow:(id)arg1;
@@ -390,6 +394,14 @@
 + (id)SKUITrending_defaultTitleColor;
 + (id)SKUITrending_defaultTitleFont;
 + (id)SKUITrending_titleLabelWithElement:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tv_alignmentInsetsForExpectedWidth:(float)arg1;
+- (float)tv_heightToFirstBaseline;
+- (float)tv_scaledValueForValue:(float)arg1;
+- (struct CGSize { float x1; float x2; })tv_textSizeForSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })tv_textSizeForWidth:(float)arg1;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

@@ -10,7 +10,7 @@
 + (BOOL)deviceIsRemotePeripheral:(unsigned long)arg1;
 + (unsigned long)localPeripheral;
 + (id)localPeripheralName;
-+ (id)logEvent:(char *)arg1 length:(unsigned short)arg2 timeStamp:(unsigned long long)arg3;
++ (void)logEvent:(char *)arg1 length:(unsigned short)arg2 timeStamp:(unsigned long long)arg3 intoBuffer:(char *)arg4;
 + (unsigned long)midiDeviceForUUID:(id)arg1;
 + (unsigned long)midiDeviceForUUID:(id)arg1 isLocalPeripheral:(BOOL)arg2 isRemotePeripheral:(BOOL)arg3;
 + (id)nameForMIDIDevice:(unsigned long)arg1;

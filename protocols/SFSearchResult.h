@@ -49,6 +49,7 @@
 - (double)personalizationScore;
 - (unsigned int)placement;
 - (BOOL)preventThumbnailImageScaling;
+- (BOOL)publiclyIndexable;
 - (NSString *)publishDate;
 - (SFPunchout *)punchout;
 - (unsigned long long)queryId;
@@ -109,6 +110,7 @@
 - (void)setPersonalizationScore:(double)arg1;
 - (void)setPlacement:(unsigned int)arg1;
 - (void)setPreventThumbnailImageScaling:(BOOL)arg1;
+- (void)setPubliclyIndexable:(BOOL)arg1;
 - (void)setPublishDate:(NSString *)arg1;
 - (void)setPunchout:(SFPunchout *)arg1;
 - (void)setQueryId:(unsigned long long)arg1;

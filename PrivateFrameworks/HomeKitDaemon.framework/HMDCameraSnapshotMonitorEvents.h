@@ -8,6 +8,7 @@
     NSString * _bulletinImagesDirectory;
     NSMutableSet * _characteristicsList;
     NSString * _logID;
+    NSMutableSet * _monitoredCharacteristicsList;
     HMFMessageDispatcher * _msgDispatcher;
     HMDNotificationRegistration * _notificationRegistration;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) NSString *logID;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, readonly) NSMutableSet *monitoredCharacteristicsList;
 @property (nonatomic, retain) HMFMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly) HMDNotificationRegistration *notificationRegistration;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -40,7 +42,7 @@
 
 - (void).cxx_destruct;
 - (void)_characteristicsUpdated:(id)arg1 modifiedCharacteristics:(id)arg2;
-- (void)_enableNotificationForCharacteristics:(id)arg1;
+- (void)_enableNotificationForCharacteristics:(id)arg1 newMonitoredCharacteristicsList:(id)arg2;
 - (void)_handleAccessoryCharacteristicsChangedNotification:(id)arg1;
 - (void)_handleRemoteNotification:(id)arg1;
 - (void)_handleSnapshotResponse:(id)arg1 cameraSessionID:(id)arg2 changedCharacteristics:(id)arg3 response:(id)arg4 responseTimer:(id)arg5;
@@ -61,6 +63,7 @@
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (void)monitorForEventsForServices:(id)arg1;
+- (id)monitoredCharacteristicsList;
 - (id)msgDispatcher;
 - (id)notificationRegistration;
 - (void)processPostedBulletin:(id)arg1 responseTimer:(id)arg2;

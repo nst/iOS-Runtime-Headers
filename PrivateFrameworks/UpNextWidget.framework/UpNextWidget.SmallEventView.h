@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic, retain) UIColor *calendarColor;
-@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, copy) NSDate *startDate;
 @property (nonatomic, copy) NSString *title;
 
 - (id /* block */).cxx_destruct;

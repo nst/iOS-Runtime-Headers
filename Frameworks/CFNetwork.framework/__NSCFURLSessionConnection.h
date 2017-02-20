@@ -28,6 +28,7 @@
 - (void)resume;
 - (void)setBytesPerSecondLimit:(long long)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setIsDownload:(BOOL)arg1;
 - (void)setPoolPriority:(long long)arg1;
 - (void)setPriorityHint:(float)arg1;
 - (void)setTask:(id)arg1;

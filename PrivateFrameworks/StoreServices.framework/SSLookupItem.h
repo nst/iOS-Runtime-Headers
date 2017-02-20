@@ -53,7 +53,7 @@
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
 - (id)appAdamID;
-- (BOOL)isPeriodValid:(id)arg1 includeDays:(BOOL)arg2;
+- (BOOL)isPeriodValid:(id)arg1;
 - (id)offerName;
 - (id)subscriptionPeriodInISO_8601;
 - (id)trialPeriodInISO_8601;

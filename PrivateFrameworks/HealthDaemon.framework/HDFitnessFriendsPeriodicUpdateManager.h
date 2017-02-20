@@ -7,7 +7,6 @@
     HDFitnessFriendsCloudKitManager * _cloudKitManager;
     HDFitnessFriendsFriendListManager * _friendListManager;
     BOOL  _hasRegisteredForUpdates;
-    int  _intervalExecutionCount;
     BOOL  _isWatch;
     HDFitnessFriendsRelationshipManager * _relationshipManager;
     NSObject<OS_dispatch_queue> * _serialQueue;

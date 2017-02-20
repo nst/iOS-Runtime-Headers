@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSAImportController : NSObject <NSFilePresenter, TSADocumentRootDelegate, TSKImportExportDelegate, TSPObjectContextDelegate> {
+@interface TSAImportController : NSObject <NSFilePresenter, TSKImportExportDelegate, TSPObjectContextDelegate> {
     NSMutableArray * _deferredWriters;
     <TSAImportDelegate> * _delegate;
     TSPObjectContext * _documentContext;
@@ -33,10 +33,8 @@
 @property (nonatomic, readonly) BOOL areNewExternalReferencesToDataAllowed;
 @property (nonatomic, readonly) NSUUID *baseUUIDForObjectUUID;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic, readonly) NSString *defaultDraftName;
 @property (nonatomic) <TSAImportDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSString *documentCachePath;
 @property (nonatomic, readonly) TSPObjectContext *documentContext;
 @property (nonatomic, readonly) int documentTypeCategory;
 @property (nonatomic, readonly) NSError *error;
@@ -52,13 +50,11 @@
 @property (nonatomic, readonly) BOOL isDocumentSupportTemporary;
 @property (nonatomic, readonly) BOOL isImportCancelled;
 @property (nonatomic, readonly) BOOL isPasswordProtected;
-@property (nonatomic, readonly) NSString *name;
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
 @property (nonatomic) BOOL preserveDocumentAfterImport;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
 @property (nonatomic, retain) TSUProgressContext *progressContext;
-@property (nonatomic, readonly) TSAUbiquitousRefreshQueue *refreshQueue;
 @property (nonatomic, readonly) NSString *sourcePath;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *temporaryURL;

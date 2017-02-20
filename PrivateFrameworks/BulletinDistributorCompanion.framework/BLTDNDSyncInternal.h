@@ -21,10 +21,24 @@
 @property (nonatomic, retain) BBSettingsGateway *settingsGateway;
 
 - (void).cxx_destruct;
-- (void)_isChangeToDNDSettingObsoleteAtDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)_clearDomainDefaults;
+- (void)_disableDNDMirroring;
+- (void)_enableDNDMirroring;
+- (BOOL)_isChangeToDNDSettingMadeAtDate:(id)arg1 obsoleteAtDate:(id)arg2 withOverride:(id)arg3;
+- (BOOL)_isChangeToDNDSettingMadeAtDate:(id)arg1 obsoleteAtDate:(id)arg2 withOverrides:(id)arg3;
+- (BOOL)_isNPSDateLaterThanAllowed:(id)arg1 currentDate:(id)arg2;
+- (id)_latestValidNPSDateWithCurrentDate:(id)arg1;
+- (void)_loadDNDEnabledStateFromNPS:(id /* block */)arg1;
+- (BOOL)_loadDNDMirrorStateFromDefaults;
+- (id)_newDomainAccessor;
+- (void)_resolveDNDStateWithBBState:(unsigned int)arg1 bbDate:(id)arg2 npsState:(unsigned int)arg3 npsDate:(id)arg4 currentDate:(id)arg5 deviceIsCompanion:(BOOL)arg6 triggeredBySource:(unsigned int)arg7 behaviorOverrides:(id)arg8 completion:(id /* block */)arg9;
+- (void)_saveDNDEnabledStateToNPS:(BOOL)arg1 date:(id)arg2;
 - (void)_setAssertionOnBehalfOfActive:(BOOL)arg1;
 - (void)_settingsGatewayReconnected:(id)arg1;
 - (void)_transportConnectionStatusChanged:(id)arg1;
+- (void)_updateDNDMirrorState;
+- (void)_updateDNDStateChangedByPreferencesSync:(BOOL)arg1;
+- (void)_updateDNDStateWithSource:(unsigned int)arg1 state:(unsigned int)arg2 date:(id)arg3;
 - (void)_updateOnBehalfOfAssertActiveWithConnectionStatus:(unsigned int)arg1 updateObserver:(BOOL)arg2;
 - (void)_updateSettingsGatewayTo:(BOOL)arg1 changeDate:(id)arg2;
 - (void)_updateTransportConnectionStatusObserver:(BOOL)arg1;
@@ -49,7 +63,5 @@
 - (void)setPrivilegedSenderTypes:(unsigned int)arg1;
 - (void)setSettingsGateway:(id)arg1;
 - (id)settingsGateway;
-- (void)updateDNDMirrorState;
-- (void)updateDNDStateChangedByPreferencesSync:(BOOL)arg1;
 
 @end

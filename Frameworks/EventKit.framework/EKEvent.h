@@ -24,7 +24,7 @@
 @property (nonatomic, readonly) NSString *birthdayPersonUniqueID;
 @property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic, readonly) NSString *eventIdentifier;
-@property BOOL ipsos_allDayPrefered;
+@property BOOL ipsos_allDayPreferred;
 @property (readonly) double ipsos_duration;
 @property (retain) IPEventClassificationType *ipsos_eventClassificationType;
 @property BOOL ipsos_isDateTimeTenseDependent;
@@ -33,7 +33,6 @@
 @property BOOL ipsos_isTimeApproximate;
 @property BOOL ipsos_usesDefaultClassificationTypeStartTime;
 @property (nonatomic, readonly) BOOL isDetached;
-@property (nonatomic, readonly) unsigned int modifiedProperties;
 @property (nonatomic, readonly) NSDate *occurrenceDate;
 @property (nonatomic, copy) EKCalendarDate *occurrenceEndDate;
 @property (nonatomic) BOOL occurrenceIsAllDay;
@@ -151,7 +150,6 @@
 - (BOOL)locationIsAConferenceRoom;
 - (int)locationPredictionState;
 - (id)locationWithoutPrediction;
-- (unsigned int)modifiedProperties;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (id)occurrenceDate;
 - (id)occurrenceEndDate;
@@ -189,7 +187,6 @@
 - (void)setInvitationStatus:(unsigned int)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLocationPredictionState:(int)arg1;
-- (void)setModifiedProperties:(unsigned int)arg1;
 - (void)setNeedsOccurrenceCacheUpdate:(BOOL)arg1;
 - (void)setOccurrenceEndDate:(id)arg1;
 - (void)setOccurrenceIsAllDay:(BOOL)arg1;
@@ -232,6 +229,7 @@
 - (double)travelTime;
 - (id)uniqueId;
 - (BOOL)updateEventToEvent:(id)arg1;
+- (void)updateWithGeocodedMapItemAndSaveWithCommit:(id)arg1 eventStore:(id)arg2 error:(id*)arg3;
 - (BOOL)validateRecurrenceRule:(id)arg1 error:(id*)arg2;
 - (BOOL)validateWithSpan:(int)arg1 error:(id*)arg2;
 
@@ -252,7 +250,7 @@
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsNaturalLanguage.framework/DataDetectorsNaturalLanguage
 
-- (BOOL)ipsos_allDayPrefered;
+- (BOOL)ipsos_allDayPreferred;
 - (id)ipsos_betterDescription;
 - (double)ipsos_duration;
 - (id)ipsos_eventClassificationType;
@@ -261,7 +259,7 @@
 - (BOOL)ipsos_isEventTimeOnlyAndReferrengingToSentDate;
 - (BOOL)ipsos_isTimeApproximate;
 - (BOOL)ipsos_usesDefaultClassificationTypeStartTime;
-- (void)setIpsos_allDayPrefered:(BOOL)arg1;
+- (void)setIpsos_allDayPreferred:(BOOL)arg1;
 - (void)setIpsos_eventClassificationType:(id)arg1;
 - (void)setIpsos_isDateTimeTenseDependent:(BOOL)arg1;
 - (void)setIpsos_isEndTimeApproximate:(BOOL)arg1;

@@ -78,6 +78,8 @@
 
 // Image: /System/Library/PrivateFrameworks/NewsCore.framework/NewsCore
 
+- (BOOL)fc_isCachedAgeGreaterThan:(double)arg1;
+- (BOOL)fc_isCachedAgeLessThan:(double)arg1;
 - (BOOL)hasExpiredAssetURLs;
 - (BOOL)needsAssetURLRefresh;
 

@@ -28,7 +28,7 @@
 
 - (void)acceptCurrentSentence;
 - (void)acceptText:(id)arg1 isAutoshifted:(BOOL)arg2;
-- (void)acceptToken:(id)arg1 withContext:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned int)arg3;
+- (void)acceptToken:(id)arg1 withContext:(const struct TITokenID { unsigned int x1; unsigned int x2; }*)arg2 contextLength:(unsigned int)arg3 saveToDifferentialPrivacy:(BOOL)arg4;
 - (void)acceptTokensInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)addRevisedTokenString:(id)arg1 withTokenID:(struct TITokenID { unsigned int x1; unsigned int x2; })arg2 inDocumentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 toRevision:(id)arg4;
 - (void)adjustTokenOffsetAfterDeletedTokenRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withDeletedCharacterCount:(unsigned int)arg2;

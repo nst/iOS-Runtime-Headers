@@ -52,7 +52,7 @@
 + (id)logCategory;
 
 - (void).cxx_destruct;
-- (void)_endSession:(id)arg1;
+- (void)_endSession:(id)arg1 error:(id)arg2;
 - (id)_findSessionWithID:(id)arg1;
 - (void)_handleCreateSnapshotFromBulletinContext:(id)arg1;
 - (void)_handleReleaseSnapshot:(id)arg1;

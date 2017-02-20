@@ -4,7 +4,7 @@
 
 @interface NSPropertyDescription : NSObject <NSCoding, NSCopying> {
     NSEntityDescription * _entity;
-    long  _entitysReferenceIDForProperty;
+    short  _entitysReferenceIDForProperty;
     void * _extraIvars;
     NSString * _name;
     struct __propertyDescriptionFlags { 
@@ -17,9 +17,12 @@
         unsigned int _isStoredInExternalRecord : 1; 
         unsigned int _extraIvarsAreInDataBlob : 1; 
         unsigned int _isOrdered : 1; 
-        unsigned int _reservedPropertyDescription : 23; 
+        unsigned int _hasMaxValueInExtraIvars : 1; 
+        unsigned int _hasMinValueInExtraIvars : 1; 
+        unsigned int _storeBinaryDataExternally : 1; 
+        unsigned int _reservedAttributeFlagOne : 1; 
+        unsigned int _reservedPropertyDescription : 3; 
     }  _propertyDescriptionFlags;
-    id  _underlyingProperty;
     NSMutableDictionary * _userInfo;
     NSArray * _validationPredicates;
     NSArray * _validationWarnings;
@@ -49,12 +52,15 @@
 - (long)_entitysReferenceID;
 - (BOOL)_epsilonEquals:(id)arg1 rhs:(id)arg2 withFlags:(int)arg3;
 - (struct _NSExtraPropertyIVars { id x1; long long x2; }*)_extraIVars;
+- (BOOL)_hasMaxValueInExtraIvars;
+- (BOOL)_hasMinValueInExtraIvars;
 - (id)_initWithName:(id)arg1;
 - (void)_initializeExtraIVars;
 - (BOOL)_isEditable;
 - (BOOL)_isOrdered;
 - (BOOL)_isRelationship;
 - (BOOL)_isToManyRelationship;
+- (BOOL)_isTriggerBacked;
 - (BOOL)_nonPredicateValidateValue:(id*)arg1 forKey:(id)arg2 inObject:(id)arg3 error:(id*)arg4;
 - (unsigned int)_propertyType;
 - (id)_rawValidationPredicates;
@@ -65,8 +71,10 @@
 - (void)_setEntitysReferenceID:(long)arg1;
 - (void)_setOrdered:(BOOL)arg1;
 - (BOOL)_skipValidation;
+- (BOOL)_storeBinaryDataExternally;
 - (void)_stripForMigration;
 - (void)_throwIfNotEditable;
+- (id)_underlyingProperty;
 - (void)_versionHash:(char *)arg1 inStyle:(unsigned int)arg2;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 entitiesSlots:(id)arg6 fetchRequests:(id)arg7;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

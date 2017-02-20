@@ -74,8 +74,10 @@
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingResourceAtURL:(id)arg3 metadata:(id)arg4 fromID:(id)arg5 context:(id)arg6;
 - (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(id /* block */)arg3;
+- (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)setCustomIDSOptions:(id)arg1;
 - (id)stateForLogging;
 - (void)suspend;
+- (BOOL)targetIsNearby;
 
 @end

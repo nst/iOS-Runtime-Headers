@@ -5,8 +5,10 @@
 @interface NTPBFeedViewportHeadline : PBCodable <NSCopying> {
     NSString * _articleID;
     NSString * _clusterID;
+    NTPBDate * _displayDate;
     struct { 
         unsigned int tileProminenceScore : 1; 
+        unsigned int storyType : 1; 
         unsigned int surfacedByBinIDRef : 1; 
         unsigned int surfacedByChannelIDRef : 1; 
         unsigned int surfacedBySectionIDRef : 1; 
@@ -15,6 +17,7 @@
         unsigned int usesImageOnTopLayout : 1; 
     }  _has;
     BOOL  _isTopStory;
+    int  _storyType;
     int  _surfacedByBinIDRef;
     int  _surfacedByChannelIDRef;
     int  _surfacedBySectionIDRef;
@@ -25,9 +28,12 @@
 
 @property (nonatomic, retain) NSString *articleID;
 @property (nonatomic, retain) NSString *clusterID;
+@property (nonatomic, retain) NTPBDate *displayDate;
 @property (nonatomic, readonly) BOOL hasArticleID;
 @property (nonatomic, readonly) BOOL hasClusterID;
+@property (nonatomic, readonly) BOOL hasDisplayDate;
 @property (nonatomic) BOOL hasIsTopStory;
+@property (nonatomic) BOOL hasStoryType;
 @property (nonatomic) BOOL hasSurfacedByBinIDRef;
 @property (nonatomic) BOOL hasSurfacedByChannelIDRef;
 @property (nonatomic) BOOL hasSurfacedBySectionIDRef;
@@ -35,6 +41,7 @@
 @property (nonatomic) BOOL hasTileProminenceScore;
 @property (nonatomic) BOOL hasUsesImageOnTopLayout;
 @property (nonatomic) BOOL isTopStory;
+@property (nonatomic) int storyType;
 @property (nonatomic) int surfacedByBinIDRef;
 @property (nonatomic) int surfacedByChannelIDRef;
 @property (nonatomic) int surfacedBySectionIDRef;
@@ -48,9 +55,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)displayDate;
 - (BOOL)hasArticleID;
 - (BOOL)hasClusterID;
+- (BOOL)hasDisplayDate;
 - (BOOL)hasIsTopStory;
+- (BOOL)hasStoryType;
 - (BOOL)hasSurfacedByBinIDRef;
 - (BOOL)hasSurfacedByChannelIDRef;
 - (BOOL)hasSurfacedBySectionIDRef;
@@ -64,7 +74,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setArticleID:(id)arg1;
 - (void)setClusterID:(id)arg1;
+- (void)setDisplayDate:(id)arg1;
 - (void)setHasIsTopStory:(BOOL)arg1;
+- (void)setHasStoryType:(BOOL)arg1;
 - (void)setHasSurfacedByBinIDRef:(BOOL)arg1;
 - (void)setHasSurfacedByChannelIDRef:(BOOL)arg1;
 - (void)setHasSurfacedBySectionIDRef:(BOOL)arg1;
@@ -72,12 +84,14 @@
 - (void)setHasTileProminenceScore:(BOOL)arg1;
 - (void)setHasUsesImageOnTopLayout:(BOOL)arg1;
 - (void)setIsTopStory:(BOOL)arg1;
+- (void)setStoryType:(int)arg1;
 - (void)setSurfacedByBinIDRef:(int)arg1;
 - (void)setSurfacedByChannelIDRef:(int)arg1;
 - (void)setSurfacedBySectionIDRef:(int)arg1;
 - (void)setSurfacedByTopicIDRef:(int)arg1;
 - (void)setTileProminenceScore:(double)arg1;
 - (void)setUsesImageOnTopLayout:(BOOL)arg1;
+- (int)storyType;
 - (int)surfacedByBinIDRef;
 - (int)surfacedByChannelIDRef;
 - (int)surfacedBySectionIDRef;

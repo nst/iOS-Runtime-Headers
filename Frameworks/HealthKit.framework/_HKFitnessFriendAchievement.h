@@ -10,6 +10,7 @@
     unsigned int  _workoutActivityType;
 }
 
+@property (nonatomic, readonly) HDFitnessFriendsCloudKitCodableAchievement *codableAchievement;
 @property (nonatomic, retain) NSDate *completedDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) NSString *definitionIdentifier;
@@ -47,10 +48,12 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (id)fitnessFriendAchievementWithCodableAchievement:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendAchievementWithRecord:(id)arg1 friendUUID:(id)arg2;
 + (Class)hd_dataEntityClass;
 
 - (BOOL)addCodableRepresentationToCollection:(id)arg1;
+- (id)codableAchievement;
 - (id)codableRepresentationForSync;
 - (id)filter_date;
 - (id)filter_friendUUID;

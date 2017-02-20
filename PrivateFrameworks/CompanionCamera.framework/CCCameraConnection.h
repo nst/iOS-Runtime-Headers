@@ -39,9 +39,12 @@
 - (int)_hdrSupport;
 - (int)_irisMode;
 - (int)_irisSupport;
+- (int)_mode;
 - (void)_performPreviewStateTransitionsIfNeeded;
 - (BOOL)_shouldReportEvent;
+- (BOOL)_toggleCameraDeviceSupport;
 - (float)_zoomAmount;
+- (BOOL)_zoomSupport;
 - (void)_zoomTimerFired;
 - (void)burstCaptureDidStop;
 - (void)burstCaptureNumberOfPhotosDidChange:(unsigned int)arg1;

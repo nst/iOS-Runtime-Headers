@@ -3,6 +3,7 @@
  */
 
 @interface MKTransitInfoLabelView : _MKUILabel {
+    MKArtworkDataSourceCache * _artworkCache;
     BOOL  _containsText;
     BOOL  _hasCustomFont;
     BOOL  _hasCustomIconSize;
@@ -17,6 +18,7 @@
     BOOL  _truncateBySwitchingToTextOnly;
 }
 
+@property (nonatomic, retain) MKArtworkDataSourceCache *artworkCache;
 @property (nonatomic, readonly) BOOL containsText;
 @property (nonatomic) int iconSize;
 @property (nonatomic, copy) NSArray *labelItems;
@@ -38,6 +40,7 @@
 - (void)_setupLabelInfo;
 - (int)_shieldSizeForContentSizeCategory:(id)arg1;
 - (id)_stringAttributes;
+- (id)artworkCache;
 - (BOOL)containsText;
 - (void)dealloc;
 - (int)iconSize;
@@ -47,6 +50,7 @@
 - (id)labelItems;
 - (id)mapItem;
 - (float)maxWidth;
+- (void)setArtworkCache:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setIconSize:(int)arg1;
 - (void)setLabelItems:(id)arg1;

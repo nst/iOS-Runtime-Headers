@@ -24,8 +24,8 @@
 @property (nonatomic, copy) NSData *archivedRemoteActivityDataShareID;
 @property (nonatomic, copy) NSData *archivedRemoteRelationshipShareID;
 @property (nonatomic, copy) NSString *cloudKitAddress;
+@property (nonatomic, readonly) NSDate *dateActivityDataBecameVisible;
 @property (nonatomic, readonly) NSDate *dateForLatestDataHidden;
-@property (nonatomic, readonly) NSDate *dateForLatestDataShown;
 @property (nonatomic, readonly) NSDate *dateForLatestOutgoingInviteRequest;
 @property (nonatomic, readonly) NSDate *dateForLatestRelationshipStart;
 @property (readonly, copy) NSString *debugDescription;
@@ -63,8 +63,8 @@
 - (id)archivedRemoteRelationshipShareID;
 - (id)cloudKitAddress;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)dateActivityDataBecameVisible;
 - (id)dateForLatestDataHidden;
-- (id)dateForLatestDataShown;
 - (id)dateForLatestOutgoingInviteRequest;
 - (id)dateForLatestRelationshipStart;
 - (id)description;
@@ -80,6 +80,7 @@
 - (BOOL)isActivityDataVisibleForDate:(id)arg1;
 - (BOOL)isAwaitingInviteResponse;
 - (BOOL)isFriendshipCurrentlyActive;
+- (BOOL)isHidingActivityDataForDate:(id)arg1;
 - (BOOL)isMuteEnabled;
 - (id)outgoingHandshakeToken;
 - (id)preferredReachableAddress;

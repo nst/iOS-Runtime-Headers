@@ -81,6 +81,7 @@
 - (id)af_dialogIdentifier;
 - (BOOL)af_isUserUtterance;
 - (BOOL)af_isUtterance;
+- (id)af_text;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 

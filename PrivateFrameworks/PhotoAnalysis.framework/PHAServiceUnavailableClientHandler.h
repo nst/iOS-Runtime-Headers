@@ -8,6 +8,7 @@
 - (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (id)error;
 - (void)faceClusteringInformation:(unsigned int)arg1 withContext:(id)arg2 reply:(id /* block */)arg3;
+- (void)faceProcessingStatusForUserInterfaceWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (void)generateMemoriesRelatedDiagnosticsLogsWithContext:(id)arg1 reply:(id /* block */)arg2;
 - (void)generateMemoriesWithOptions:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)localizedLabelForSceneIdentifier:(unsigned int)arg1 context:(id)arg2 reply:(id /* block */)arg3;
@@ -55,6 +56,7 @@
 - (void)requestSortedArrayOfFaceCollectionIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)requestTitleForAssetCollectionWithLocalIdentifier:(id)arg1 format:(int)arg2 context:(id)arg3 reply:(id /* block */)arg4;
 - (void)requestTitleForCollectionMomentListWithLocalIdentifier:(id)arg1 format:(int)arg2 context:(id)arg3 reply:(id /* block */)arg4;
+- (void)requestTitleForMemoryWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)requestTitleForPersonIdentifiers:(id)arg1 format:(int)arg2 context:(id)arg3 reply:(id /* block */)arg4;
 - (void)requestWriteAdditionalDataToSnapshotResults:(id)arg1 forFilenameKey:(id)arg2 context:(id)arg3 reply:(id /* block */)arg4;
 - (void)resetFaceClusteringStateWithContext:(id)arg1 reply:(id /* block */)arg2;
@@ -65,7 +67,7 @@
 - (void)searchResultNodesForSceneIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 - (void)setJobProcessingConstraintsWithValues:(id)arg1 mask:(id)arg2 context:(id)arg3 reply:(id /* block */)arg4;
 - (void)suggestFacesForFacesWithLocalIdentifiers:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
-- (void)suggestFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceLocalIdentifiers:(id)arg2 toBeRejectedFaceLocalIdentifiers:(id)arg3 context:(id)arg4 reply:(id /* block */)arg5;
+- (void)suggestFacesForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedFaceSuggestions:(id)arg2 toBeRejectedFaceSuggestions:(id)arg3 context:(id)arg4 reply:(id /* block */)arg5;
 - (void)suggestPersonForFaceWithLocalIdentifier:(id)arg1 context:(id)arg2 reply:(id /* block */)arg3;
 
 @end

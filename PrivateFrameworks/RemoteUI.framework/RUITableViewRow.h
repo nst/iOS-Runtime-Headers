@@ -10,6 +10,7 @@
     NSDate * _date;
     NSDate * _dateMax;
     NSDate * _dateMin;
+    NSDateFormatter * _datePickerFormatter;
     int  _datePickerMode;
     <RUITableViewRowDelegate> * _delegate;
     NSDictionary * _deleteAction;
@@ -70,6 +71,7 @@
 - (id)control;
 - (id)data;
 - (id)date;
+- (id)dateFormatterCalendarIdentifier;
 - (id)dateMax;
 - (id)dateMin;
 - (int)datePickerMode;

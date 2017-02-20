@@ -3,7 +3,7 @@
  */
 
 @interface SGRemoteObjectProxy : NSObject <SGDSuggestManagerAllProtocol> {
-    NSXPCConnection * _connection;
+    SGDaemonConnection * _connection;
 }
 
 + (void)initialize;

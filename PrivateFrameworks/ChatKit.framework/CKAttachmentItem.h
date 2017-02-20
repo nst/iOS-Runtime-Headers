@@ -7,6 +7,7 @@
     NSDate * _createdDate;
     NSURL * _fileURL;
     NSString * _guid;
+    NSString * _irisVideoPath;
     BOOL  _isIrisAsset;
     BOOL  _isSticker;
     NSURL * _previewURL;
@@ -23,6 +24,7 @@
 @property (nonatomic, copy) NSURL *fileURL;
 @property (nonatomic, copy) NSString *guid;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *irisVideoPath;
 @property (nonatomic) BOOL isIrisAsset;
 @property (nonatomic) BOOL isSticker;
 @property (nonatomic, readonly) NSString *previewItemTitle;
@@ -48,6 +50,7 @@
 - (void)_savePreview:(id)arg1;
 - (id)_savedPreviewFromURL:(id)arg1;
 - (id)cachedPreview;
+- (id)calculateIrisVideoPath;
 - (BOOL)canShareItem;
 - (id)createdDate;
 - (void)dealloc;
@@ -58,6 +61,7 @@
 - (id)guid;
 - (id)imageData;
 - (id)initWithFileURL:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 transferGUID:(id)arg3 guid:(id)arg4 createdDate:(id)arg5;
+- (id)irisVideoPath;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIrisAsset;
 - (BOOL)isSticker;
@@ -67,6 +71,7 @@
 - (void)setCreatedDate:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setGuid:(id)arg1;
+- (void)setIrisVideoPath:(id)arg1;
 - (void)setIsIrisAsset:(BOOL)arg1;
 - (void)setIsSticker:(BOOL)arg1;
 - (void)setPreviewURL:(id)arg1;

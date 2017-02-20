@@ -12,6 +12,8 @@
     NSLock * _logMessageCollectionRequesterLock;
     NSObject<OS_dispatch_queue> * _logMessageSendQueue;
     NSURL * _remoteURL;
+    id /* block */  _shouldDeferXPCActivityBlock;
+    NSLock * _shouldDeferXPCActivityBlockLock;
     NSLock * _xpcActivityInfoLock;
     NSString * _xpcActivityName;
 }
@@ -50,6 +52,7 @@
 - (void)dealloc;
 - (id)debugRequestName;
 - (void)flushLogs;
+- (void)forceFlushLogs;
 - (void)incrementXpcActivityTriggerCount;
 - (id)initWithRemoteURL:(id)arg1 debugRequestName:(id)arg2 supportedTypes:(id)arg3 supportedSubTypes:(id)arg4;
 - (BOOL)isLogFrameworkAdaptor;

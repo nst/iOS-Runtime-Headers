@@ -7,6 +7,7 @@
     float  _currentVolume;
     <CKFullScreenEffectDelegate> * _delegate;
     NSString * _identifier;
+    BOOL  _triggeredByResponseKit;
     CKMessagePartChatItem * _triggeringChatItem;
 }
 
@@ -16,6 +17,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL triggeredByResponseKit;
 @property (nonatomic, retain) CKMessagePartChatItem *triggeringChatItem;
 
 + (id)_monochromeDimmingFilterWithType:(int)arg1;
@@ -30,6 +32,7 @@
 - (int)_filterTypeForCell:(id)arg1 caresAboutOrientation:(BOOL*)arg2 orientation:(BOOL*)arg3;
 - (BOOL)_supportsSoundEffects;
 - (void)applyMessageFiltersToCells:(id)arg1;
+- (void)applyMessageFiltersToTriggeringCell:(id)arg1;
 - (void)audioController:(id)arg1 didPrepareMediaObjectToPlay:(id)arg2 successfully:(BOOL)arg3;
 - (void)audioController:(id)arg1 mediaObjectProgressDidChange:(id)arg2 currentTime:(double)arg3 duration:(double)arg4;
 - (id)backgroundColor;
@@ -40,17 +43,20 @@
 - (BOOL)effectIsDark;
 - (Class)effectViewClass;
 - (id)identifier;
+- (BOOL)isForegroundEffect;
 - (unsigned int)layerCount;
 - (id)messageFilters;
 - (void)playSoundEffect;
 - (void)prepareSoundEffect;
 - (void)setDelegate:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setTriggeredByResponseKit:(BOOL)arg1;
 - (void)setTriggeringChatItem:(id)arg1;
 - (BOOL)shouldDrawOverNavigationBar;
 - (id)soundEffectFileURL;
 - (BOOL)soundEffectHasHapticTrack;
 - (void)stopSoundEffect;
+- (BOOL)triggeredByResponseKit;
 - (id)triggeringChatItem;
 
 @end

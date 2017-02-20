@@ -358,6 +358,10 @@
 
 + (id)_iAd_colorWithRGBA:(unsigned int)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AccessibilityUIUtilities.framework/AccessibilityUIUtilities
+
+- (float)_atvaccessibilityAlphaComponent;
+
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
 + (id)akBoxBorderColor;
@@ -587,6 +591,7 @@
 
 + (id)siriui_glyphColor;
 + (id)siriui_highlightColor;
++ (id)siriui_insertionPointColor;
 + (id)siriui_keylineColor;
 + (id)siriui_keylineColorStark;
 + (id)siriui_maskingColor;
@@ -611,15 +616,21 @@
 
 - (BOOL)skui_isOpaque;
 
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftUIKit.dylib
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
 
-- (id)initWithColorLiteralRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
++ (id)tvmlkit_keyColor;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 
 - (id)colorByAlteringOpacityToPercentage:(float)arg1;
 - (id)darkerColorByPercentage:(float)arg1;
 - (id)tpImageFromColor;
+
+// Image: /System/Library/PrivateFrameworks/WatchListKitUI.framework/WatchListKitUI
+
++ (id)wlk_textColor;
++ (id)wlk_textColorForDarkMode;
++ (id)wlk_textModalColor;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

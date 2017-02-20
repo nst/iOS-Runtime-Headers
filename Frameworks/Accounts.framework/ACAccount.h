@@ -271,6 +271,7 @@
 
 + (id)aa_dataclassesBoundToPrimaryAppleAccount;
 + (id)aa_dataclassesBoundToSingleAppleAccount;
++ (void)load;
 
 - (void)_aa_clearRawPassword;
 - (id)_aa_rawPassword;

@@ -28,6 +28,7 @@
     UIBarButtonItem * _backButton;
     double  _elapsedTime;
     NSString * _expectedPlaybackBundleIdentifier;
+    BOOL  _handledWillAppear;
     BOOL  _isScrubbing;
     MCDPCModel * _model;
     MPUNowPlayingController * _nowPlayingController;
@@ -54,6 +55,7 @@
 - (unsigned int)_bestCommandForFastForwardPosition;
 - (unsigned int)_bestCommandForRewindPosition;
 - (void)_handleActionSheet;
+- (void)_handleWillAppear;
 - (struct _MRMediaRemoteCommandInfo { }*)_mediaCommandInfoForCommand:(unsigned int)arg1;
 - (void)_nowPlayingAppChangedIsPlaying:(id)arg1;
 - (BOOL)_nowPlayingBundleIDMatchesExpectedID;
@@ -109,8 +111,10 @@
 - (int)shuffleTypeForNowPlayingViewController:(id)arg1;
 - (id)titleForNowPlayingController:(id)arg1;
 - (id)transportControlImages;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

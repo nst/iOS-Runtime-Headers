@@ -3,7 +3,6 @@
  */
 
 @interface NSSQLCore : NSPersistentStore <NSFilePresenter> {
-    NSMutableArray * _activeGenerations;
     NSSQLiteAdapter * _adapter;
     NSSQLCoreDispatchManager * _dispatchManager;
     NSString * _externalDataLinksDirectory;
@@ -12,7 +11,6 @@
     BOOL  _metadataIsClean;
     NSSQLModel * _model;
     id  _observer;
-    id * _prefetchRequestsByEntity;
     NSSQLiteConnection * _queryGenerationTrackingConnection;
     NSSQLiteConnection * _schemaValidationConnection;
     struct _sqlCoreFlags { 
@@ -23,7 +21,8 @@
         unsigned int initializationComplete : 1; 
         unsigned int connectionsAreLocal : 1; 
         unsigned int isXPCDelegate : 1; 
-        unsigned int _RESERVED : 23; 
+        unsigned int queryGenerationInitializationFailed : 1; 
+        unsigned int _RESERVED : 22; 
     }  _sqlCoreFlags;
     int  _sqlCoreStateLock;
     NSMutableDictionary * _storeMetadata;
@@ -76,14 +75,14 @@
 - (void)_fixPrimaryKeyTableFromEntitiesAndJoinsUsingConnection:(id)arg1;
 - (void)_fixPrimaryKeyTableFromEntitiesUsingConnection:(id)arg1;
 - (BOOL)_fixPrimaryKeyTablesUsingConnection:(id)arg1;
-- (id)_initializeQueryGenerationTrackingConnection;
+- (void)_initializeQueryGenerationTrackingConnection;
 - (id)_loadAndSetMetadata;
 - (id)_loadAndSetMetadataReadOnly;
 - (id)_newObjectIDForEntity:(id)arg1 referenceData64:(unsigned long long)arg2;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (id)_newReservedKeysForEntities:(id)arg1 counts:(id)arg2;
-- (id)_newRowDataForXPCFetch:(id)arg1 context:(id)arg2 error:(id*)arg3;
+- (id)_newRowDataForXPCFetch:(id)arg1 variables:(id)arg2 context:(id)arg3 error:(id*)arg4;
 - (id)_newValuesForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
 - (Class)_objectIDClass;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
@@ -92,8 +91,6 @@
 - (BOOL)_refreshTriggerValues:(id*)arg1;
 - (BOOL)_registerNewQueryGenerationIdentifier:(id)arg1;
 - (void)_repairDatabaseCorrelationTables:(id)arg1 brokenHashModel:(id)arg2 storeVersionNumber:(id)arg3 recurse:(BOOL)arg4 usingConnection:(id)arg5;
-- (id)_retainedRegisterPrefetchRequest:(id)arg1 forKey:(id)arg2 entityID:(unsigned int)arg3;
-- (id)_runQueryGenerationBarrier;
 - (void)_setMetadata:(id)arg1;
 - (void)_setMetadata:(id)arg1 clean:(BOOL)arg2;
 - (id)_storeInfoForEntityDescription:(id)arg1;
@@ -132,7 +129,6 @@
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)identifier;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
-- (id)inverseIsToOnePrefetchRequestForRelationshipNamed:(id)arg1 onEntity:(id)arg2;
 - (BOOL)isInitialized;
 - (BOOL)isUbiquitized;
 - (BOOL)load:(id*)arg1;
@@ -141,8 +137,6 @@
 - (void)managedObjectContextDidRegisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
-- (id)manyToManyPrefetchRequestsForRelationshipNamed:(id)arg1 onEntity:(id)arg2;
-- (id)manyToOnePrefetchRequestForRelationshipNamed:(id)arg1 onEntity:(id)arg2;
 - (id)metadata;
 - (id)metadataToWrite;
 - (id)model;
@@ -164,6 +158,7 @@
 - (id)processRefreshObjects:(id)arg1 inContext:(id)arg2;
 - (id)processSaveChanges:(id)arg1 forContext:(id)arg2;
 - (void)recomputePrimaryKeyMaxForEntities:(id)arg1;
+- (void)removeRowCacheForGenerationWithIdentifier:(id)arg1;
 - (void)removeUbiquityMetadata;
 - (void)replaceUbiquityKnowledgeVector:(id)arg1;
 - (void)resetExternalDataReferencesDirectories;

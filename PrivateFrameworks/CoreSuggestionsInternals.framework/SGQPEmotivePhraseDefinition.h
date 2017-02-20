@@ -3,9 +3,9 @@
  */
 
 @interface SGQPEmotivePhraseDefinition : NSObject {
-    BOOL  _anchoredAtWordBoundaries;
-    BOOL  _matchReceived;
-    BOOL  _matchSent;
+    unsigned int  _anchoredAtWordBoundaries;
+    unsigned int  _matchReceived;
+    unsigned int  _matchSent;
     NSString * _pattern;
     unsigned short  _phraseId;
     NSString * _predictions;

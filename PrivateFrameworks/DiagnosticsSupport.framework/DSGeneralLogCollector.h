@@ -17,12 +17,9 @@
 
 - (void).cxx_destruct;
 - (void)enumerateLogLinesWithBlock:(id /* block */)arg1;
-- (int)exceptionTypeFromString:(id)arg1;
 - (id)friendlyAppNamesDictionary;
 - (void)getLogFiles;
 - (id)initWithLogIDs:(id)arg1;
-- (BOOL)isHangException:(int)arg1;
-- (BOOL)isTermalException:(int)arg1;
 - (id)logFiles;
 - (id)logFilesFromEnumerator:(id)arg1;
 - (id)logIDs;

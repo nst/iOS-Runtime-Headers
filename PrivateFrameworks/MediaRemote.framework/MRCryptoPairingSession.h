@@ -22,7 +22,7 @@
 - (id)delegate;
 - (BOOL)deleteIdentityWithError:(id*)arg1;
 - (id)encryptData:(id)arg1 withError:(id*)arg2;
-- (BOOL)handlePairingExchangeData:(id)arg1 withError:(id*)arg2;
+- (void)handlePairingExchangeData:(id)arg1 completion:(id /* block */)arg2;
 - (void)handlePairingFailureWithStatus:(long)arg1;
 - (id)init;
 - (id)initWithRole:(unsigned int)arg1 peerIdentifier:(id)arg2;

@@ -10,9 +10,11 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
+- (id)description;
 - (id)entities;
 - (id)initWithEntities:(id)arg1;
 - (void)setEntities:(id)arg1;

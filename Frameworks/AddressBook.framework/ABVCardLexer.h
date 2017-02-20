@@ -10,6 +10,7 @@
     int  _errorCount;
     unsigned int  _length;
     unsigned int  _peakedPoint;
+    ABVCardWatchdogTimer * _timer;
     BOOL  _unicode;
 }
 
@@ -32,7 +33,7 @@
 - (void)dealloc;
 - (int)errorCount;
 - (void)finalize;
-- (id)initWithData:(id)arg1;
+- (id)initWithData:(id)arg1 watchdogTimer:(id)arg2;
 - (id)nextArraySeperatedByToken:(int)arg1 stoppingAt:(int)arg2 inEncoding:(unsigned int)arg3;
 - (id)nextBase64Data;
 - (id)nextBase64Line:(BOOL*)arg1;

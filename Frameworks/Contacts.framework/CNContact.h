@@ -412,10 +412,22 @@
 
 + (id)mf_contactWithPersonNameComponents:(id)arg1 emailAddress:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AXHearingSupport.framework/AXHearingSupport
+
++ (id)contactForPhoneNumber:(id)arg1;
+
+- (BOOL)ttyIsMe;
+
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (id)identifierForKey:(id)arg1 withDestination:(id)arg2;
 - (id)identifierForKey:(id)arg1 withDestination:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (BOOL)hasEmailAddress:(id)arg1;
+- (BOOL)hasPhoneNumber:(id)arg1;
+- (BOOL)hasPostalAddress:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
@@ -436,6 +448,7 @@
 - (id)pkFullName;
 - (id)pkSingleLineFormattedContactAddress;
 - (id)recentContact;
+- (id)sanitizedContact;
 - (void)setContactSource:(unsigned int)arg1;
 - (void)setRecentContact:(id)arg1;
 

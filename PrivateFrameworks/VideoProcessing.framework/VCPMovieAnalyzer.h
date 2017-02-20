@@ -9,6 +9,7 @@
     float  _irisPhotoExposureSec;
     float  _irisPhotoOffsetSec;
     BOOL  _isIris;
+    BOOL  _isShortMovie;
     BOOL  _isSlowmo;
     unsigned int  _requestedAnalyses;
     int  _status;

@@ -48,6 +48,7 @@
 - (id)initWithHomeManager:(id)arg1;
 - (BOOL)isPeerAvailable;
 - (id)logIdentifier;
+- (void)resetConfig;
 - (void)setBroadcastFailure:(BOOL)arg1;
 - (void)setBroadcastGroup:(id)arg1;
 - (void)setBroadcastNotifiedDevices:(id)arg1;

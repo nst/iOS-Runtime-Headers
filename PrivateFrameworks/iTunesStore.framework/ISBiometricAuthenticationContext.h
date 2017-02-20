@@ -7,6 +7,7 @@
     NSString * _accountName;
     NSString * _challenge;
     BOOL  _didAuthenticate;
+    BOOL  _didBuyParamsChange;
     BOOL  _didFallbackToPassword;
     NSString * _reason;
     NSURL * _redirectURL;
@@ -19,6 +20,7 @@
 @property (copy) NSString *accountName;
 @property (copy) NSString *challenge;
 @property BOOL didAuthenticate;
+@property BOOL didBuyParamsChange;
 @property BOOL didFallbackToPassword;
 @property (copy) NSString *reason;
 @property (copy) NSURL *redirectURL;
@@ -32,6 +34,7 @@
 - (id)challenge;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)didAuthenticate;
+- (BOOL)didBuyParamsChange;
 - (BOOL)didFallbackToPassword;
 - (id)reason;
 - (id)redirectURL;
@@ -39,6 +42,7 @@
 - (void)setAccountName:(id)arg1;
 - (void)setChallenge:(id)arg1;
 - (void)setDidAuthenticate:(BOOL)arg1;
+- (void)setDidBuyParamsChange:(BOOL)arg1;
 - (void)setDidFallbackToPassword:(BOOL)arg1;
 - (void)setReason:(id)arg1;
 - (void)setRedirectURL:(id)arg1;

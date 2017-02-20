@@ -55,6 +55,7 @@
 - (void)remote_nextScheduledAchievementDefinitionAlertTaskDateWithCompletion:(id /* block */)arg1;
 - (void)remote_registerForAchievementDefinitionNotificationsWithCompletion:(id /* block */)arg1;
 - (void)remote_registerForAchievementNotificationsAndFetchUnalertedCountWithCompletion:(id /* block */)arg1;
+- (void)remote_resetAchievementDefinitionAlertedStates:(BOOL)arg1 availabilityStates:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)remote_runAchievementsFixupAsDryRun:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)remote_setAchievementAssetsServerURL:(id)arg1 completion:(id /* block */)arg2;
 - (void)remote_setCurrentActivityCacheOverrideDate:(id)arg1 timeZone:(id)arg2 completion:(id /* block */)arg3;

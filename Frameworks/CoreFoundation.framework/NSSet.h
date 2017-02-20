@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSSet : NSObject <HFPrettyDescription, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSSet : NSObject <HFPrettyDescription, HFStateDumpSerializable, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
 @property (readonly) unsigned int count;
 @property (readonly, copy) NSString *debugDescription;
@@ -195,7 +195,8 @@
 
 // Image: /System/Library/PrivateFrameworks/Home.framework/Home
 
-- (id)hf_prettyDescription;
+- (id)hf_prettyDescriptionOfType:(unsigned int)arg1;
+- (id)hf_serializedStateDumpRepresentation;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -283,10 +284,6 @@
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 - (id)safari_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
-
-// Image: /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
-
-- (id)_swiftInitWithSet_NSSet:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
 

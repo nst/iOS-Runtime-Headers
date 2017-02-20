@@ -41,9 +41,11 @@
         unsigned int mediaType : 1; 
         unsigned int reasonHintType : 1; 
         unsigned int sourceType : 1; 
+        unsigned int internalBuild : 1; 
         unsigned int offline : 1; 
         unsigned int sBEnabled : 1; 
     }  _has;
+    BOOL  _internalBuild;
     unsigned long long  _itemCloudID;
     double  _itemDuration;
     double  _itemEndTime;
@@ -104,6 +106,7 @@
 @property (nonatomic, readonly) BOOL hasExternalID;
 @property (nonatomic, readonly) BOOL hasFeatureName;
 @property (nonatomic, readonly) BOOL hasGlobalPlaylistID;
+@property (nonatomic) BOOL hasInternalBuild;
 @property (nonatomic) BOOL hasItemCloudID;
 @property (nonatomic) BOOL hasItemDuration;
 @property (nonatomic) BOOL hasItemEndTime;
@@ -132,6 +135,7 @@
 @property (nonatomic) BOOL hasSubscriptionAdamID;
 @property (nonatomic, readonly) BOOL hasTimedMetadata;
 @property (nonatomic, readonly) BOOL hasTrackInfo;
+@property (nonatomic) BOOL internalBuild;
 @property (nonatomic) unsigned long long itemCloudID;
 @property (nonatomic) double itemDuration;
 @property (nonatomic) double itemEndTime;
@@ -206,6 +210,7 @@
 - (BOOL)hasExternalID;
 - (BOOL)hasFeatureName;
 - (BOOL)hasGlobalPlaylistID;
+- (BOOL)hasInternalBuild;
 - (BOOL)hasItemCloudID;
 - (BOOL)hasItemDuration;
 - (BOOL)hasItemEndTime;
@@ -235,6 +240,7 @@
 - (BOOL)hasTimedMetadata;
 - (BOOL)hasTrackInfo;
 - (unsigned int)hash;
+- (BOOL)internalBuild;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)itemCloudID;
 - (double)itemDuration;
@@ -282,6 +288,7 @@
 - (void)setHasEventDateTimestamp:(BOOL)arg1;
 - (void)setHasEventSecondsFromGMT:(BOOL)arg1;
 - (void)setHasEventType:(BOOL)arg1;
+- (void)setHasInternalBuild:(BOOL)arg1;
 - (void)setHasItemCloudID:(BOOL)arg1;
 - (void)setHasItemDuration:(BOOL)arg1;
 - (void)setHasItemEndTime:(BOOL)arg1;
@@ -298,6 +305,7 @@
 - (void)setHasStationID:(BOOL)arg1;
 - (void)setHasStoreAccountID:(BOOL)arg1;
 - (void)setHasSubscriptionAdamID:(BOOL)arg1;
+- (void)setInternalBuild:(BOOL)arg1;
 - (void)setItemCloudID:(unsigned long long)arg1;
 - (void)setItemDuration:(double)arg1;
 - (void)setItemEndTime:(double)arg1;

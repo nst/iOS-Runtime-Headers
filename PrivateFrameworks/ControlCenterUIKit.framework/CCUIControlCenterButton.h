@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ControlCenterUIKit.framework/ControlCenterUIKit
  */
 
-@interface CCUIControlCenterButton : SBFButton {
+@interface CCUIControlCenterButton : SBFButton <_UISettingsKeyObserver> {
     UIImageView * _alteredStateGlyphImageView;
     UILabel * _alteredStateLabel;
     BOOL  _animatesStateChanges;
@@ -20,15 +20,19 @@
 }
 
 @property (nonatomic) BOOL animatesStateChanges;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CCUIControlCenterButtonDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic, retain) UIImage *glyphImage;
+@property (readonly) unsigned int hash;
 @property (getter=isInternal, nonatomic, readonly) BOOL internal;
 @property (nonatomic) float naturalHeight;
 @property (nonatomic) int numberOfLines;
 @property (nonatomic) unsigned int roundCorners;
 @property (nonatomic, retain) UIImage *selectedGlyphImage;
 @property (getter=isShowingMenu, nonatomic) BOOL showingMenu;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *text;
 
 + (id)_buttonWithSelectedColor:(id)arg1 text:(id)arg2 type:(unsigned int)arg3;
@@ -95,6 +99,7 @@
 - (void)setSelectedGlyphImage:(id)arg1;
 - (void)setShowingMenu:(BOOL)arg1;
 - (void)setText:(id)arg1;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)text;
 

@@ -13,7 +13,9 @@
     AKController * _controller;
     BOOL  _ignoreAnnotationAndSelectionKVO;
     AKSmoothPathView * _intelligentSketchOverlayView;
+    BOOL  _isPreviousCandidateAnnotationUndecided;
     BOOL  _isShowingOverlay;
+    BOOL  _isWaitingToCoalesceStrokes;
     CHDrawing * _lastDrawing;
     AKPageModelController * _modelControllerToObserveForAnnotationsAndSelections;
     id /* block */  _performRecognitionBlock;
@@ -50,7 +52,9 @@
 @property (readonly) unsigned int hash;
 @property BOOL ignoreAnnotationAndSelectionKVO;
 @property (nonatomic, retain) AKSmoothPathView *intelligentSketchOverlayView;
+@property BOOL isPreviousCandidateAnnotationUndecided;
 @property BOOL isShowingOverlay;
+@property BOOL isWaitingToCoalesceStrokes;
 @property (retain) CHDrawing *lastDrawing;
 @property (nonatomic, retain) AKPageModelController *modelControllerToObserveForAnnotationsAndSelections;
 @property (nonatomic, copy) id /* block */ performRecognitionBlock;
@@ -112,8 +116,10 @@
 - (void)inputView:(id)arg1 didCollectPrestrokedPath:(struct CGPath { }*)arg2;
 - (void)inputViewWillStartDrawing:(id)arg1;
 - (id)intelligentSketchOverlayView;
+- (BOOL)isPreviousCandidateAnnotationUndecided;
 - (BOOL)isShowingCandidatePicker;
 - (BOOL)isShowingOverlay;
+- (BOOL)isWaitingToCoalesceStrokes;
 - (id)lastDrawing;
 - (void)logLastDrawingToDisk;
 - (id)modelControllerToObserveForAnnotationsAndSelections;
@@ -136,7 +142,9 @@
 - (void)setController:(id)arg1;
 - (void)setIgnoreAnnotationAndSelectionKVO:(BOOL)arg1;
 - (void)setIntelligentSketchOverlayView:(id)arg1;
+- (void)setIsPreviousCandidateAnnotationUndecided:(BOOL)arg1;
 - (void)setIsShowingOverlay:(BOOL)arg1;
+- (void)setIsWaitingToCoalesceStrokes:(BOOL)arg1;
 - (void)setLastDrawing:(id)arg1;
 - (void)setModelControllerToObserveForAnnotationsAndSelections:(id)arg1;
 - (void)setPerformRecognitionBlock:(id /* block */)arg1;

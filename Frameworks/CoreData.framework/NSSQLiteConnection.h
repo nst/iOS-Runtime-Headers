@@ -3,6 +3,7 @@
  */
 
 @interface NSSQLiteConnection : NSObject {
+    NSMutableArray * _activeGenerations;
     NSSQLiteStatement * _beginStatement;
     struct __CFDictionary { } * _cachedEntityConstrainedValuesUpdateStatements;
     struct __CFDictionary { } * _cachedEntityUpdateStatements;
@@ -12,7 +13,6 @@
     NSString * _dbPath;
     NSString * _dbPathRegisteredWithBackupd;
     unsigned long long  _debugInode;
-    int  _debugLogLevel;
     void * _extraBuffersForRegisteredFunctions;
     struct sqlite3_stmt { } * _fetchPKStatement;
     NSSQLEntity * _finalEntity;
@@ -21,6 +21,7 @@
     NSMutableSet * _mObjectIDsUpdatedByTriggers;
     NSArray * _metadataColumns;
     NSMutableDictionary * _pragmaSettings;
+    NSSQLitePrefetchRequestCache * _prefetchRequestCache;
     NSObject<OS_dispatch_queue> * _queue;
     NSSQLiteStatement * _rollbackStatement;
     int  _rowsProcessedCount;
@@ -80,6 +81,7 @@
 - (void)_configurePageSize;
 - (void)_configurePragmaOptions:(int)arg1 createdSchema:(BOOL)arg2;
 - (void)_configureSynchronousMode;
+- (id)_currentQueryGenerationIdentifier:(id*)arg1;
 - (id)_decompressedModelWithData:(id)arg1;
 - (void)_endFetch;
 - (void)_endPowerAssertionWithAssert:(unsigned int)arg1 andApp:(id)arg2;
@@ -92,8 +94,10 @@
 - (long long)_fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (void)_finalizeStatement;
 - (void)_forceDisconnectOnError;
+- (void)_freeQueryGenerationIdentifier:(id)arg1;
 - (long long)_getCurrentAutoVacuumValue;
 - (BOOL)_hasTableWithName:(id)arg1;
+- (BOOL)_isQueryGenerationTrackingConnection;
 - (id)_newValueForColumn:(id)arg1 atIndex:(unsigned int)arg2 inStatement:(struct sqlite3_stmt { }*)arg3;
 - (void)_performPostSaveTasks;
 - (void)_registerExtraFunctions;
@@ -136,7 +140,7 @@
 - (void)createTableForEntity:(id)arg1;
 - (void)createTablesForEntities:(id)arg1;
 - (void)createTriggersForEntities:(id)arg1;
-- (id)currentQueryGenerationIdentifier:(id*)arg1;
+- (id)currentQueryGenerationIdentifier;
 - (BOOL)databaseIsEmpty;
 - (void)dealloc;
 - (BOOL)deleteRow:(id)arg1 forRequestContext:(id)arg2;
@@ -156,13 +160,14 @@
 - (id)fetchTableNames;
 - (id)fetchUbiquityKnowledgeVector;
 - (void)forceTransactionClosed;
-- (void)freeQueryGenerationIdentifier:(id)arg1;
+- (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
 - (void)handleCorruptedDB:(id)arg1;
 - (BOOL)hasCachedModelTable;
 - (BOOL)hasMetadataTable;
 - (BOOL)hasOpenTransaction;
 - (BOOL)hasPrimaryKeyTable;
+- (id)initAsQueryGenerationTrackingConnectionForSQLCore:(id)arg1;
 - (id)initForSQLCore:(id)arg1;
 - (void)insertRow:(id)arg1;
 - (BOOL)isFetchInProgress;
@@ -174,6 +179,7 @@
 - (id)newFetchedArray;
 - (void)performAndWait:(id /* block */)arg1;
 - (BOOL)performIntegrityCheck;
+- (id)prefetchRequestCache;
 - (void)prepareAndExecuteSQLStatement:(id)arg1;
 - (void)prepareSQLStatement:(id)arg1;
 - (id)queue;
@@ -181,6 +187,7 @@
 - (void)recreateIndices;
 - (void)registerCurrentQueryGenerationWithStore:(id)arg1;
 - (void)registerCurrentQueryGenerationWithStore:(id)arg1 retries:(unsigned int)arg2;
+- (BOOL)registerNewQueryGenerationIdentifier:(id)arg1;
 - (void)releaseSQLStatement;
 - (void)replaceUbiquityKnowledgeVector:(id)arg1;
 - (void)resetSQLStatement;

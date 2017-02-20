@@ -11,10 +11,12 @@
 @property (nonatomic, readonly) int relativeAudioSourceReference;
 @property (readonly) Class superclass;
 
+- (id)_dictionaryRepresentation;
 - (id)_metadata;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1;
 - (id)_typedBackingStore;
 - (int)audioSource;
+- (id)description;
 - (id)initWithAudioSource:(int)arg1 relativeAudioSourceReference:(int)arg2;
 - (int)relativeAudioSourceReference;
 - (void)setAudioSource:(int)arg1;

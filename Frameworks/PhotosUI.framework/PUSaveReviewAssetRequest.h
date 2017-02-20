@@ -14,6 +14,7 @@
     int  _identifier;
     PUPhotoEditIrisModel * _irisModel;
     PUReviewCreateAssetNode * _outputNode;
+    PUVideoCompositionExportNode * _videoExportNode;
     int  _workImageVersion;
 }
 
@@ -28,7 +29,9 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int identifier;
 @property (nonatomic, readonly, copy) PUPhotoEditIrisModel *irisModel;
+@property (nonatomic, readonly) double progress;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsProgress;
 @property (nonatomic, readonly) int workImageVersion;
 
 - (void).cxx_destruct;
@@ -37,6 +40,7 @@
 - (int)_imageRequestVersion;
 - (void)_performInternalSaveOperation;
 - (void)_performSaveOperation;
+- (BOOL)_requiresVideoRender;
 - (void)_transitionToState:(int)arg1;
 - (int)_videoRequestVersion;
 - (void)beginSaveOperationWithCompletionHandler:(id /* block */)arg1;
@@ -55,8 +59,10 @@
 - (id)initWithAssetForCopying:(id)arg1 mediaProvider:(id)arg2 directory:(id)arg3 resourceURL:(id)arg4 contentEditingOutput:(id)arg5 workImageVersion:(int)arg6 irisEditModel:(id)arg7;
 - (id)initWithAssetForRevertToOriginal:(id)arg1 mediaProvider:(id)arg2 directory:(id)arg3;
 - (id)irisModel;
+- (double)progress;
 - (void)runNode:(id)arg1 didCancelWithError:(id)arg2;
 - (void)runNode:(id)arg1 didCompleteWithError:(id)arg2;
+- (BOOL)supportsProgress;
 - (int)workImageVersion;
 
 @end

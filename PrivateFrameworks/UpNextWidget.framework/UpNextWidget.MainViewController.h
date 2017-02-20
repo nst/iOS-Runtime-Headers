@@ -32,7 +32,7 @@
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)widgetActiveDisplayModeDidChangeWithActiveDisplayMode:(int)arg1 withMaximumSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)widgetPerformUpdateWithCompletionHandler:(id /* block */)arg1;
+- (void)widgetActiveDisplayModeDidChange:(int)arg1 withMaximumSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)widgetPerformUpdate:(id /* block */)arg1;
 
 @end

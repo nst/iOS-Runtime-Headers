@@ -171,7 +171,7 @@
 - (id)geoRoute;
 - (void)getFormOfWay:(int*)arg1 roadClass:(int*)arg2 at:(unsigned int)arg3;
 - (id)getHallForStop:(id)arg1;
-- (id)getSnappedPathsForLocation:(struct { double x1; double x2; })arg1 observer:(id)arg2;
+- (id)getSnappedPathsForLocation:(struct { double x1; double x2; })arg1 radius:(double)arg2 observer:(id)arg3;
 - (id)getSnappedPathsForVisibleRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 rectsToSnap:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 rectsToSnapCount:(unsigned long)arg3 observer:(id)arg4;
 - (id)getStationForHall:(id)arg1;
 - (id)getStationForStop:(id)arg1;
@@ -286,6 +286,7 @@
 - (int)transportTypeForStep:(id)arg1;
 - (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1;
 - (void)updateManeuverDisplayEndpointsAtMetersPerPoint:(double)arg1 startOffsetInPoints:(double)arg2 endOffsetInPoints:(double)arg3 roadWidthInPoints:(double)arg4;
+- (void)updateRouteWithRideSelections:(id)arg1;
 - (BOOL)usesZilch;
 - (id)zilchDataFromStepIndex:(unsigned int)arg1;
 

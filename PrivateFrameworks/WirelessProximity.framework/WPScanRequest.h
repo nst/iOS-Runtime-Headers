@@ -8,6 +8,7 @@
     NSData * _blobValue;
     unsigned char  _clientType;
     NSData * _maskValue;
+    int  _nearbyScanMode;
     NSDictionary * _options;
     NSArray * _peers;
     NSNumber * _rssiThreshold;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) NSData *blobValue;
 @property unsigned char clientType;
 @property (nonatomic, retain) NSData *maskValue;
+@property int nearbyScanMode;
 @property (retain) NSDictionary *options;
 @property (retain) NSArray *peers;
 @property (retain) NSNumber *rssiThreshold;
@@ -47,6 +49,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)maskValue;
+- (int)nearbyScanMode;
 - (id)options;
 - (id)peers;
 - (id)rssiThreshold;
@@ -58,6 +61,7 @@
 - (void)setBlobValue:(id)arg1;
 - (void)setClientType:(unsigned char)arg1;
 - (void)setMaskValue:(id)arg1;
+- (void)setNearbyScanMode:(int)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setPeers:(id)arg1;
 - (void)setRssiThreshold:(id)arg1;

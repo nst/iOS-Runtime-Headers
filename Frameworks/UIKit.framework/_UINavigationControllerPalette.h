@@ -116,4 +116,9 @@
 - (void)SKUI_endHidingPaletteShadow;
 - (void)resetBackgroundConstraints;
 
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
+- (void)tvmlkit_beginHidingPaletteShadow;
+- (void)tvmlkit_endHidingPaletteShadow;
+
 @end

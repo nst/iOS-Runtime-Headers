@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Messages.framework/Messages
  */
 
-@interface MSStickerBrowserView : UIView <UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface MSStickerBrowserView : UIView <UICollectionViewDataSource, UICollectionViewDataSourcePrefetching, UICollectionViewDelegate> {
     BOOL  _animating;
     NSTimer * _animationTimer;
     struct CGSize { 
@@ -21,6 +21,8 @@
         float x; 
         float y; 
     }  _restoredContentOffset;
+    NSMutableDictionary * _stickerCache;
+    CKDispatchQueue * _stickerCacheQueue;
     int  _stickerSize;
 }
 
@@ -42,6 +44,8 @@
 @property (nonatomic, retain) MSStickerBrowserViewLayoutSpec *layoutSpec;
 @property (nonatomic) struct CGPoint { float x1; float x2; } restoredContentOffset;
 @property (nonatomic, readonly) NSDictionary *stateRestorationInfo;
+@property (nonatomic, retain) NSMutableDictionary *stickerCache;
+@property (nonatomic, retain) CKDispatchQueue *stickerCacheQueue;
 @property (nonatomic, readonly) int stickerSize;
 @property (nonatomic, readonly) int stickerSizeClass;
 @property (readonly) Class superclass;
@@ -59,6 +63,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)configureStickerView;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
@@ -66,6 +71,7 @@
 - (unsigned int)currentlyAnimatingIndex;
 - (id)dataSource;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (id)displayDelegate;
 - (id)flowLayout;
 - (id)initWithCoder:(id)arg1;
@@ -98,8 +104,12 @@
 - (void)setIsRestoringContentOffset:(BOOL)arg1;
 - (void)setLayoutSpec:(id)arg1;
 - (void)setRestoredContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setStickerCache:(id)arg1;
+- (void)setStickerCacheQueue:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;
 - (id)stateRestorationInfo;
+- (id)stickerCache;
+- (id)stickerCacheQueue;
 - (int)stickerSize;
 - (int)stickerSizeClass;
 

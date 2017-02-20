@@ -11,6 +11,12 @@
 - (INPerson *)payee;
 - (INPerson *)payer;
 - (INPaymentMethod *)paymentMethod;
+- (void)setCurrencyAmount:(INCurrencyAmount *)arg1;
+- (void)setNote:(NSString *)arg1;
+- (void)setPayee:(INPerson *)arg1;
+- (void)setPayer:(INPerson *)arg1;
+- (void)setPaymentMethod:(INPaymentMethod *)arg1;
+- (void)setStatus:(int)arg1;
 - (int)status;
 
 @end

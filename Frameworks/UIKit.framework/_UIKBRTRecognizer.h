@@ -82,7 +82,7 @@
 - (void)notifyDelegateOfSuccessfulTouch:(id)arg1;
 - (unsigned int)numProlongedTouches;
 - (void)processTouchInfo:(id)arg1;
-- (BOOL)queryDelegateOfIgnoringTouch:(id)arg1;
+- (BOOL)queryDelegateOfIgnoringTouch:(id)arg1 forOtherTouch:(BOOL)arg2;
 - (BOOL)queryDelegateOfRestingTouch:(id)arg1;
 - (BOOL)queryDelegateToBeginTouch:(id)arg1 forBeginState:(unsigned int)arg2 restartIfNecessary:(BOOL)arg3;
 - (BOOL)removedFromActiveTouches:(id)arg1;

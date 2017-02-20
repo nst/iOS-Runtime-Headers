@@ -34,6 +34,7 @@
 @property (readonly) unsigned int hash;
 @property (getter=isIndeterminate, readonly) BOOL indeterminate;
 @property (nonatomic) unsigned int installPhase;
+@property (nonatomic, readonly) NSString *installPhaseString;
 @property (nonatomic) unsigned int installState;
 @property (copy) NSString *kind;
 @property (copy) NSString *localizedAdditionalDescription;
@@ -164,6 +165,7 @@
 - (void)_LSResume;
 - (id)initWithParent:(id)arg1 bundleID:(id)arg2 andPhase:(unsigned int)arg3;
 - (unsigned int)installPhase;
+- (id)installPhaseString;
 - (unsigned int)installState;
 - (void)setInstallPhase:(unsigned int)arg1;
 - (void)setInstallState:(unsigned int)arg1;

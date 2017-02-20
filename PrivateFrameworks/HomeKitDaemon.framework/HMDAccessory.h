@@ -14,6 +14,7 @@
     HMDAccessory * _bridge;
     NSSet * _cameraProfiles;
     HMAccessoryCategory * _category;
+    unsigned int  _configNumber;
     NSString * _configurationAppIdentifier;
     unsigned int  _currentRelayAccessoryState;
     HMDCharacteristic * _currentTimeCharacteristic;
@@ -21,7 +22,7 @@
     NSMutableSet * _discoveredBridgeableAccessories;
     BOOL  _discoveredBridgeableAccessory;
     NSMutableArray * _discoveredServices;
-    NSString * _firmwareVersion;
+    HMDAccessoryVersion * _firmwareVersion;
     HMDBridgeInformation * _hmdBridgeInformation;
     HMDHome * _home;
     NSString * _identifier;
@@ -33,7 +34,6 @@
     NSString * _name;
     BOOL  _paired;
     unsigned int  _pairingAttempts;
-    NSObject<OS_dispatch_source> * _pairingRetryTimer;
     NSString * _pairingUsername;
     BOOL  _primary;
     NSObject<OS_dispatch_queue> * _propertyQueue;
@@ -71,6 +71,8 @@
 @property (nonatomic) HMDAccessory *bridge;
 @property (nonatomic, retain) NSSet *cameraProfiles;
 @property (nonatomic, retain) HMAccessoryCategory *category;
+@property (getter=isClientRegisteredForNotifications, readonly) BOOL clientRegisteredForNotifications;
+@property (nonatomic) unsigned int configNumber;
 @property (nonatomic, retain) NSString *configurationAppIdentifier;
 @property (nonatomic, readonly, copy) NSString *contextID;
 @property (nonatomic, readonly, copy) NSUUID *contextSPIUniqueIdentifier;
@@ -82,7 +84,7 @@
 @property (nonatomic, retain) NSMutableSet *discoveredBridgeableAccessories;
 @property (getter=isDiscoveredBridgeableAccessory, nonatomic) BOOL discoveredBridgeableAccessory;
 @property (nonatomic, retain) NSMutableArray *discoveredServices;
-@property (nonatomic, readonly, copy) NSString *firmwareVersion;
+@property (nonatomic, readonly, copy) HMDAccessoryVersion *firmwareVersion;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) HMDBridgeInformation *hmdBridgeInformation;
 @property (nonatomic) HMDHome *home;
@@ -97,7 +99,6 @@
 @property (getter=getName, nonatomic, copy) NSString *name;
 @property (getter=isPaired, nonatomic) BOOL paired;
 @property (nonatomic) unsigned int pairingAttempts;
-@property (nonatomic, retain) NSObject<OS_dispatch_source> *pairingRetryTimer;
 @property (nonatomic, retain) NSString *pairingUsername;
 @property (getter=isPrimary, nonatomic) BOOL primary;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
@@ -125,6 +126,7 @@
 @property (nonatomic) BOOL unblockPending;
 @property (nonatomic, retain) NSString *uniqueIdentifier;
 @property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic, readonly, copy) HMDVendorModelEntry *vendorInfo;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (unsigned int)getAWDTransportTypeWithLinkType:(int)arg1;
@@ -162,7 +164,7 @@
 - (void)_handleDiscoverBridgedAccessories:(id)arg1 startDiscovery:(BOOL)arg2;
 - (void)_handleDiscoveryBackoffTimerFired;
 - (void)_handleIdentify:(id)arg1;
-- (void)_handleMultipleCharacteristicsUpdated:(id)arg1 filterUnmodifiedCharacteristics:(BOOL)arg2 queue:(id)arg3 remoteDevice:(id)arg4 notificationUpdateIdentifier:(id)arg5 completionHandler:(id /* block */)arg6;
+- (void)_handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_handleRename:(id)arg1;
 - (void)_handleRenameService:(id)arg1;
 - (void)_handleSetAppData:(id)arg1;
@@ -195,6 +197,7 @@
 - (void)_relayWriteToCharacteristic:(id)arg1 toResidentForMessage:(id)arg2 viaDevice:(id)arg3;
 - (void)_remoteAccessEnabled:(BOOL)arg1;
 - (void)_removeAllDiscoveredBridgeableAccessories;
+- (void)_removeBackedoffAccessoryForStateNumber:(id)arg1;
 - (void)_removeBridgeFromDiscoveredAccessory:(id)arg1;
 - (void)_removeBridgesFromDiscoveredAccessory;
 - (void)_removeDiscoveredBridgeableAccessory:(id)arg1;
@@ -235,6 +238,7 @@
 - (void)_updateName:(id)arg1;
 - (void)_updateReachability;
 - (void)_updateRelayEnabled:(BOOL)arg1 notifyRelayManager:(BOOL)arg2;
+- (void)_updateStateForTrackedAccessory:(id)arg1 stateNumber:(id)arg2;
 - (void)_writeCharacteristicValues:(id)arg1 hapAccessory:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_writeCharacteristicValues:(id)arg1 localOperationRequired:(BOOL)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4 errorBlock:(id /* block */)arg5;
 - (void)_writeConfigureBridgeValue:(id)arg1 forCharacteristic:(id)arg2 accessory:(id)arg3 toAdd:(BOOL)arg4 hapAccessory:(id)arg5 authorizationData:(id)arg6 identifier:(id)arg7 queue:(id)arg8 completionHandler:(id /* block */)arg9;
@@ -280,11 +284,13 @@
 - (id)cameraProfiles;
 - (id)category;
 - (id)characteristicsPassingTest:(id /* block */)arg1;
+- (unsigned int)configNumber;
 - (id)configurationAppIdentifier;
 - (void)configure:(id)arg1 msgDispatcher:(id)arg2 accessoryConfigureGroup:(id)arg3;
 - (void)configureBulletinNotification:(id /* block */)arg1;
 - (void)configureWithAccessory:(id)arg1 reAddServices:(BOOL)arg2 homeNotificationsEnabled:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (void)configureWithMsgDispatcher:(id)arg1;
+- (BOOL)containsCameraService;
 - (id)contextID;
 - (id)contextSPIUniqueIdentifier;
 - (id)currentAssociatingAccessory;
@@ -311,11 +317,11 @@
 - (id)findCharacteristicType:(id)arg1 forServiceType:(id)arg2;
 - (id)findService:(id)arg1;
 - (id)firmwareVersion;
-- (void)fixupServices:(id)arg1 idsDataSync:(BOOL)arg2;
+- (void)fixupServices:(id)arg1 idsDataSync:(BOOL)arg2 dataVersion:(int)arg3;
 - (id)getConfiguredName;
 - (id)getName;
 - (id)getPrimaryHAPAccessories;
-- (void)handleMultipleCharacteristicsUpdated:(id)arg1 filterUnmodifiedCharacteristics:(BOOL)arg2 queue:(id)arg3 remoteDevice:(id)arg4 notificationUpdateIdentifier:(id)arg5 completionHandler:(id /* block */)arg6;
+- (void)handleMultipleCharacteristicsUpdated:(id)arg1 message:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)handleReachabilityChange:(BOOL)arg1;
 - (void)handleRemoteGatewayNotificationRegistration:(id)arg1 enable:(BOOL)arg2 enableTime:(id)arg3;
 - (void)handleStartDiscoveringBridgedAcessories:(id)arg1;
@@ -332,6 +338,7 @@
 - (id)initWithAccessory:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isBlocked;
+- (BOOL)isClientRegisteredForNotifications;
 - (BOOL)isDiscoveredBridgeableAccessory;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNonClientNotificationEnabled;
@@ -340,7 +347,7 @@
 - (BOOL)isPaired;
 - (BOOL)isPrimary;
 - (BOOL)isReachable;
-- (BOOL)isReadingRequiredAccessoryInformationCharacteristic:(id)arg1 providedName:(id)arg2;
+- (BOOL)isReadingRequiredAccessoryInformationCharacteristic:(id)arg1 providedName:(id)arg2 forceReadFWVersion:(BOOL)arg3;
 - (BOOL)isRelayEnabled;
 - (BOOL)isRemoteAccessEnabled;
 - (BOOL)isRemoteReachable;
@@ -366,9 +373,9 @@
 - (id)messageTargetUUID;
 - (id)model;
 - (id)msgDispatcher;
+- (id)namesOfServicesShowingTilesInHomeApp;
 - (void)notifyValue:(id)arg1 previousValue:(id)arg2 error:(id)arg3 forCharacteristic:(id)arg4 requestMessage:(id)arg5;
 - (unsigned int)pairingAttempts;
-- (id)pairingRetryTimer;
 - (id)pairingUsername;
 - (void)performOperation:(int)arg1 linkType:(int)arg2 operationBlock:(id /* block */)arg3 errorBlock:(id /* block */)arg4;
 - (void)populateHMDCharacteristicResponses:(id)arg1 hapResponses:(id)arg2 mapping:(id)arg3 overallError:(id)arg4 requests:(id)arg5;
@@ -383,7 +390,6 @@
 - (id)relayIdentifier;
 - (void)remoteAccessEnabled:(BOOL)arg1;
 - (void)removeAllTransportInformationInstances;
-- (void)removeBackedoffAccessoryForStateNumber:(id)arg1;
 - (void)removeBridgeFromDiscoveredAccessory:(id)arg1;
 - (void)removeBridgedAccessory:(id)arg1;
 - (void)removeBridgesFromDiscoveredAccessory;
@@ -415,6 +421,7 @@
 - (void)setBridge:(id)arg1;
 - (void)setCameraProfiles:(id)arg1;
 - (void)setCategory:(id)arg1;
+- (void)setConfigNumber:(unsigned int)arg1;
 - (void)setConfigurationAppIdentifier:(id)arg1;
 - (void)setCurrentTimeCharacteristic:(id)arg1;
 - (void)setDayOfTheWeekCharacteristic:(id)arg1;
@@ -435,7 +442,6 @@
 - (void)setName:(id)arg1;
 - (void)setPaired:(BOOL)arg1;
 - (void)setPairingAttempts:(unsigned int)arg1;
-- (void)setPairingRetryTimer:(id)arg1;
 - (void)setPairingUsername:(id)arg1;
 - (void)setPairingUsername:(id)arg1 publicKey:(id)arg2;
 - (void)setPrimary:(BOOL)arg1;
@@ -490,12 +496,14 @@
 - (void)updateAccessoryFlagsAndNotifyClients:(id)arg1;
 - (void)updateAccessoryInformation:(id)arg1;
 - (void)updateCategory:(id)arg1;
+- (void)updateManufacturer:(id)arg1 model:(id)arg2 firmwareVersion:(id)arg3 serialNumber:(id)arg4;
 - (void)updateName:(id)arg1;
 - (void)updateReachability;
 - (void)updateRoom:(id)arg1;
 - (BOOL)updateTimeInformationCharacteristicsForAccessory:(id)arg1;
 - (id)url;
 - (id)uuid;
+- (id)vendorInfo;
 - (void)verifyPairingWithCompletionHandler:(id /* block */)arg1;
 - (id)workQueue;
 - (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;

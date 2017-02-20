@@ -254,6 +254,7 @@
 + (id)assetsWithUUIDs:(id)arg1 options:(unsigned int)arg2 inLibrary:(id)arg3;
 + (id)assetsWithUUIDs:(id)arg1 options:(unsigned int)arg2 inManagedObjectContext:(id)arg3;
 + (id)baseSearchIndexPredicate;
++ (void)batchFetchAssetsByFaceUUIDWithFaceUUIDs:(id)arg1 completion:(id /* block */)arg2;
 + (id)bestCreationDateForAssetAtURL:(id)arg1 modificationDate:(id*)arg2 creationDateString:(id*)arg3;
 + (BOOL)canPlayPhotoIrisWithPhotoIris:(BOOL)arg1 photoIrisPlaceholder:(BOOL)arg2 hasAdjustments:(BOOL)arg3 videoCpVisibilityState:(unsigned short)arg4;
 + (id)cloudSharedAssetsWithGUIDs:(id)arg1 inLibrary:(id)arg2;
@@ -348,10 +349,11 @@
 - (void)_applyPropertiesFromCloudMaster:(id)arg1;
 - (void)_applyResourceChangeToCPLAsset:(id)arg1 withIdentifier:(id)arg2 forChangeType:(unsigned int)arg3 shouldGenerateDerivatives:(BOOL)arg4 inLibrary:(id)arg5;
 - (void)_asyncGenerateRenderImageFileWithSize:(struct CGSize { float x1; float x2; })arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 adjustmentDataBlob:(id)arg4 originalImageFilePath:(id)arg5 originalImageEXIFOrientation:(int)arg6 renderedImageFilePath:(id)arg7 completionHandler:(id /* block */)arg8;
-- (id)_availableCloudResourcesForPhotosRequireUnadjusted:(BOOL)arg1;
+- (id)_availableCloudResourcesForPhotosRequireUnadjusted:(BOOL)arg1 allowPenultimate:(BOOL)arg2;
 - (int)_avalancheTypeFromCplBurstFlags:(unsigned int)arg1;
 - (int)_calculateStateForWorkerType:(short)arg1;
 - (void)_cleanSubstandardFile;
+- (void)_cleanupPenultimateResources;
 - (id)_compactDebugDescription;
 - (void)_computePreCropThumbnailSize:(struct CGSize { float x1; float x2; }*)arg1 andPostCropSize:(struct CGSize { float x1; float x2; }*)arg2 forOrientedOriginalSize:(struct CGSize { float x1; float x2; })arg3 andCroppedSize:(struct CGSize { float x1; float x2; })arg4 isLargeThumbnail:(BOOL)arg5;
 - (void)_copyResourceFileFrom:(id)arg1 to:(id)arg2;
@@ -448,7 +450,7 @@
 - (id)assetURLForSidecarFile:(id)arg1;
 - (id)assetURLWithExtension:(id)arg1;
 - (id)assetsLibraryURL;
-- (id)availableAdjustedCloudResourcesForPhotos;
+- (id)availableAdjustedCloudResourcesForPhotos:(BOOL)arg1;
 - (id)availableUnadjustedCloudResourcesForPhotos;
 - (id)avalanchePickDescription;
 - (BOOL)avalanchePickTypeIsVisible;

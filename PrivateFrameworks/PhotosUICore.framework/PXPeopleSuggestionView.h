@@ -38,6 +38,7 @@
 - (void)_fetchImageForSuggestion:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 withCompletion:(id /* block */)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_scaledFaceRect;
 - (void)_updateSpotlightAnimated:(BOOL)arg1;
+- (void)_updateSuggestionImageWithAnimatedSpotlight:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)commonInit;
 - (void)dealloc;
 - (id)dimView;
@@ -60,7 +61,6 @@
 - (id)spotlightLayer;
 - (id)suggestion;
 - (id)suggestionView;
-- (void)updateSuggestionImageWithAnimatedSpotlight:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)validSpotlight;
 - (void)viewScaleDidChange;
 

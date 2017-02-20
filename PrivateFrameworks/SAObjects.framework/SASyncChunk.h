@@ -49,5 +49,6 @@
 // Image: /System/Library/PrivateFrameworks/SiriCore.framework/SiriCore
 
 - (BOOL)siriCore_bufferingAllowedDuringActiveSession;
+- (BOOL)siriCore_isRetryable;
 
 @end

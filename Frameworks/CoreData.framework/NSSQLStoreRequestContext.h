@@ -5,7 +5,6 @@
 @interface NSSQLStoreRequestContext : NSObject {
     NSSQLiteConnection * _connection;
     NSManagedObjectContext * _context;
-    int  _debugLogLevel;
     NSError * _error;
     NSException * _exception;
     NSPersistentStoreRequest * _persistentStoreRequest;

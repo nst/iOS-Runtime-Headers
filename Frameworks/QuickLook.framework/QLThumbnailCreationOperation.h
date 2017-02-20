@@ -20,6 +20,7 @@
     BOOL  _generateIfNeeded;
     UIImage * _image;
     float  _maximumDimension;
+    NSOperationQueue * _operationQueue;
     float  _scaleFactor;
     unsigned int  _useMode;
 }

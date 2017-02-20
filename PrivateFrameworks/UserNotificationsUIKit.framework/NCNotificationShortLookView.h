@@ -21,10 +21,8 @@
 @property (nonatomic, copy) NSString *primarySubtitleText;
 @property (nonatomic, copy) NSString *primaryText;
 @property (nonatomic, copy) NSString *secondaryText;
-@property (nonatomic) BOOL showAdditionalMessageLines;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIImage *thumbnail;
-@property (nonatomic) int thumbnailViewContentMode;
 @property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic, copy) NSString *title;
 
@@ -57,13 +55,9 @@
 - (void)setPrimarySubtitleText:(id)arg1;
 - (void)setPrimaryText:(id)arg1;
 - (void)setSecondaryText:(id)arg1;
-- (void)setShowAdditionalMessageLines:(BOOL)arg1;
 - (void)setThumbnail:(id)arg1;
-- (void)setThumbnailViewContentMode:(int)arg1;
-- (BOOL)showAdditionalMessageLines;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFitsContentWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)thumbnail;
-- (int)thumbnailViewContentMode;
 
 @end

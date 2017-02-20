@@ -164,6 +164,7 @@
 - (float)_availableBoundsWidth;
 - (float)_availableBoundsWidthForSize:(struct CGSize { float x1; float x2; })arg1;
 - (unsigned int)_backdropStyle;
+- (id)_backgroundBlurEffectForPresentation;
 - (id)_backgroundView;
 - (float)_barHeightForBarMetrics:(int)arg1;
 - (int)_barMetricsForOrientation:(int)arg1;

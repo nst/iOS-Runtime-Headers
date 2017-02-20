@@ -22,11 +22,13 @@
 + (int)_errorCodeFromCode:(int)arg1;
 + (int)_intentHandlingStatusFromCode:(int)arg1;
 + (int)_typeFromCode:(int)arg1;
++ (void)load;
 + (id)responseFailure;
 + (id)responseSuccess;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_dictionaryRepresentation;
 - (id)_impl;
 - (int)_intentHandlingStatus;
 - (id)_payloadResponseMessageData;
@@ -35,6 +37,7 @@
 - (id)cacheableObjects;
 - (int)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithBackingStore:(id)arg1;

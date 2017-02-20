@@ -35,6 +35,7 @@
 @property (nonatomic, readonly) BOOL dbProfiled;
 @property (nonatomic, readonly) long long dbReclaimableSpaceThreshold;
 @property (nonatomic, readonly) BOOL dbTraced;
+@property (nonatomic, readonly) double defaultOnDiskAccessTimeDefaultForEviction;
 @property (nonatomic, readonly) double defaultTimeDeltaForEviction;
 @property (nonatomic, readonly) BOOL destroyiWorkShares;
 @property (nonatomic, readonly) double diskSpaceCheckInterval;
@@ -46,6 +47,7 @@
 @property (nonatomic, readonly) unsigned int downloadWillRetryProgressMaxCount;
 @property (nonatomic, readonly) NSSet *excludedExtensionsWorthPreserving;
 @property (nonatomic, readonly) NSSet *excludedFilenamesWorthPreserving;
+@property (nonatomic, readonly) NSSet *excludedFilenamesWorthWarningAtLogout;
 @property (nonatomic, readonly) NSSet *extensionsSkippingBundleBitFixup;
 @property (nonatomic, readonly) BOOL forceBatchFailureWhenReceivingAssetTokenExpiration;
 @property (nonatomic, readonly) double forceForegroundGracePeriod;
@@ -90,6 +92,10 @@
 @property (nonatomic, readonly) unsigned int notifGatherUpTo;
 @property (nonatomic, readonly) unsigned int notifOverflowLimit;
 @property (nonatomic, readonly) BOOL nsurlsessiondEnabled;
+@property (nonatomic, readonly) double onDiskAccessTimeDeltaInHighUrgency;
+@property (nonatomic, readonly) double onDiskAccessTimeDeltaInLowUrgency;
+@property (nonatomic, readonly) double onDiskAccessTimeDeltaInMedUrgency;
+@property (nonatomic, readonly) double onDiskAccessTimeDeltaInVeryHighUrgency;
 @property (nonatomic, readonly) BOOL onlyTreatCaughtUpAsConsistent;
 @property (nonatomic, readonly) NSDictionary *operationFailureThrottleParams;
 @property (nonatomic, readonly) double packageExtensionPlistWriteInterval;
@@ -116,6 +122,7 @@
 @property (nonatomic, readonly) unsigned long long sharedDbSyncDownCoalesceNanoseconds;
 @property (nonatomic, readonly) double shortcutServicePacerInterval;
 @property (nonatomic, readonly) BOOL shouldAppLibraryBeGreedy;
+@property (nonatomic, readonly) BOOL shouldAutoMigrateToCloudDocs;
 @property (nonatomic, readonly) BOOL shouldDisplayUploadNotification;
 @property (nonatomic, readonly) BOOL shouldFetchAllChanges;
 @property (nonatomic, readonly) BOOL shouldFixupBundleBitOnPackages;
@@ -187,6 +194,7 @@
 - (float)_defaultSyncUpHourlyBudget;
 - (float)_defaultSyncUpMinutelyBudget;
 - (id)_extensionSetForKey:(id)arg1 startingWithExtensions:(id)arg2;
+- (id)_serverDefaultForKey:(id)arg1;
 - (unsigned short)_umaskForKey:(id)arg1;
 - (double)accessTimeDeltaInHighUrgency;
 - (double)accessTimeDeltaInLowUrgency;
@@ -216,6 +224,7 @@
 - (BOOL)dbProfiled;
 - (long long)dbReclaimableSpaceThreshold;
 - (BOOL)dbTraced;
+- (double)defaultOnDiskAccessTimeDefaultForEviction;
 - (double)defaultTimeDeltaForEviction;
 - (BOOL)destroyiWorkShares;
 - (double)diskSpaceCheckInterval;
@@ -228,6 +237,7 @@
 - (unsigned int)downloadWillRetryProgressMaxCount;
 - (id)excludedExtensionsWorthPreserving;
 - (id)excludedFilenamesWorthPreserving;
+- (id)excludedFilenamesWorthWarningAtLogout;
 - (id)extensionsSkippingBundleBitFixup;
 - (float)floatForKey:(id)arg1 inheritFromGlobal:(BOOL)arg2 min:(float)arg3 max:(float)arg4 byDefault:(float)arg5;
 - (float)floatForKey:(id)arg1 min:(float)arg2 max:(float)arg3 byDefault:(float)arg4;
@@ -278,6 +288,10 @@
 - (unsigned int)notifOverflowLimit;
 - (BOOL)nsurlsessiondEnabled;
 - (id)objectForKey:(id)arg1 inheritFromGlobal:(BOOL)arg2 validateWithBlock:(id /* block */)arg3;
+- (double)onDiskAccessTimeDeltaInHighUrgency;
+- (double)onDiskAccessTimeDeltaInLowUrgency;
+- (double)onDiskAccessTimeDeltaInMedUrgency;
+- (double)onDiskAccessTimeDeltaInVeryHighUrgency;
 - (BOOL)onlyTreatCaughtUpAsConsistent;
 - (id)operationFailureThrottleParams;
 - (double)packageExtensionPlistWriteInterval;
@@ -304,6 +318,7 @@
 - (unsigned long long)sharedDbSyncDownCoalesceNanoseconds;
 - (double)shortcutServicePacerInterval;
 - (BOOL)shouldAppLibraryBeGreedy;
+- (BOOL)shouldAutoMigrateToCloudDocs;
 - (BOOL)shouldDisplayUploadNotification;
 - (BOOL)shouldFetchAllChanges;
 - (BOOL)shouldFixupBundleBitOnPackages;

@@ -30,6 +30,7 @@
 + (id)decodeValue:(id)arg1 forTransformableAttribute:(id)arg2;
 + (void)deleteFileForPFExternalReferenceData:(id)arg1;
 + (id)encodeObjectValue:(id)arg1 forTransformableAttribute:(id)arg2;
++ (id)fetchHeterogeneousCollectionByObjectIDs:(id)arg1 intoContext:(id)arg2;
 + (void)getIndexes:(unsigned int*)arg1 fromCollection:(id)arg2 forObjectsInCollection:(id)arg3;
 + (void)initialize;
 + (BOOL)isUbiquitousItemAtURL:(id)arg1;

@@ -5,9 +5,7 @@
 @interface SAMovieV2TheaterShowtimeListSnippet : SAUISnippet
 
 @property (nonatomic, retain) SAMovieV2MovieDetailSnippet *movieDetailSnippet;
-@property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSArray *theaterShowtimeListCells;
-@property (nonatomic, copy) NSString *title;
 
 + (id)theaterShowtimeListSnippet;
 + (id)theaterShowtimeListSnippetWithDictionary:(id)arg1 context:(id)arg2;
@@ -16,11 +14,7 @@
 - (id)groupIdentifier;
 - (id)movieDetailSnippet;
 - (void)setMovieDetailSnippet:(id)arg1;
-- (void)setSubtitle:(id)arg1;
 - (void)setTheaterShowtimeListCells:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (id)subtitle;
 - (id)theaterShowtimeListCells;
-- (id)title;
 
 @end

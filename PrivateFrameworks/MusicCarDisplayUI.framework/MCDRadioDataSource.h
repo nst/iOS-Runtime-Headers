@@ -15,7 +15,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MCDRadioDataSourceDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSArray *featuredStations;
+@property (nonatomic, retain) NSArray *featuredStations;
 @property (readonly) unsigned int hash;
 @property (getter=isOptedInToRadio, nonatomic, readonly) BOOL optedInToRadio;
 @property (nonatomic, retain) MCDRadioPlaybackCoordinator *playbackCoordinator;
@@ -51,6 +51,7 @@
 - (void)pushNotificationControllerDidReceiveSyncRequest:(id)arg1 toGlobalVersion:(unsigned long long)arg2;
 - (void)refreshFeaturedStations;
 - (void)setDelegate:(id)arg1;
+- (void)setFeaturedStations:(id)arg1;
 - (void)setPlaybackCoordinator:(id)arg1;
 - (id)stations;
 - (void)synchronizeStationsAsAutomaticUpdate:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;

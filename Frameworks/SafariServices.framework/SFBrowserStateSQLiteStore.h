@@ -37,7 +37,9 @@
 - (void)_updateBrowserWindowWithData:(id)arg1 tabs:(id)arg2;
 - (void)_updateOrInsertTabStateWithData:(id)arg1;
 - (BOOL)_updateTabStateWithData:(id)arg1;
+- (void)_vacuum;
 - (id)browserWindowUUIDs;
+- (void)checkPointWriteAheadLog;
 - (void)closeDatabase;
 - (void)dealloc;
 - (BOOL)deleteAllSavedStates;
@@ -48,6 +50,7 @@
 - (void)readTabStatesWithBrowserWindowUUID:(id)arg1 completion:(id /* block */)arg2;
 - (void)removeTabWithTabData:(id)arg1;
 - (void)saveTabStateWithDictionary:(id)arg1;
+- (void)setSecureDeleteEnabled:(BOOL)arg1;
 - (id)tabStatesWithBrowserWindowUUID:(id)arg1;
 - (void)updateBrowserWindowStateWithDictionary:(id)arg1 completion:(id /* block */)arg2;
 - (void)updateBrowserWindowWithData:(id)arg1 tabs:(id)arg2;

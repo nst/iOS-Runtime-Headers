@@ -243,6 +243,18 @@
 
 - (id)__ck_messagesPluginKitProxy;
 
+// Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/MDM.framework/MDM
+
++ (BOOL)applicationProxyIsMISAuthorizedForBundleID:(id)arg1;
+
+- (BOOL)isMISAuthorized;
+
+// Image: /System/Library/PrivateFrameworks/TVMLKit.framework/TVMLKit
+
++ (id)tvmlKitBundle;
+
+- (id)tv_applicationLaunchImageName;
+
 // Image: /System/Library/PrivateFrameworks/UserNotificationsServer.framework/UserNotificationsServer
 
 + (id)uns_bundleForBundleIdentifier:(id)arg1;

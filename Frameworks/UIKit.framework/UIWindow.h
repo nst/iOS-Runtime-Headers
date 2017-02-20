@@ -443,7 +443,7 @@
 - (void)_unregisterScrollToTopView:(id)arg1;
 - (void)_unregisterViewForSubtreeMonitoring:(id)arg1;
 - (void)_updateAppTintView;
-- (void)_updateConstraintsIfNeededPostponeVariableChangeNotifications:(BOOL)arg1;
+- (void)_updateConstraintsIfNeededWithViewForVariableChangeNotifications:(id)arg1;
 - (void)_updateCurrentTintView;
 - (void)_updateCurrentTintViewForPotentialTintView:(id)arg1;
 - (void)_updateInterfaceOrientationFromActiveInterfaceOrientation;

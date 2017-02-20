@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKHaAcknowledgmentGlyphView : CKHeartAcknowledgmentGlyphView
+@interface CKHaAcknowledgmentGlyphView : CKSimpleAcknowledgementGlyphView
 
 - (int)acknowledgmentType;
 - (void)animateWithDelay:(double)arg1 completionDelay:(double)arg2 completion:(id /* block */)arg3;
+- (struct CGPoint { float x1; float x2; })glyphOffset;
 
 @end
